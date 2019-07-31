@@ -1,7 +1,7 @@
 +++
 title = "Credits"
 description = "Credits"
-weight = 5
+hidden = true
 +++
 
 # Credits
