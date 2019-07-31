@@ -1,0 +1,15 @@
+---
+language: go
+install:
+  - gem install mdl
+  - mkdir $HOME/src
+  - cd $HOME/src
+  - git clone https://github.com/gohugoio/hugo.git
+  - cd hugo
+  - go install --tags extended
+script:
+  # Linting
+  # https://github.com/markdownlint/markdownlint
+  - mdl -s relaxed content/
+  # building static content with hugo
+  - hugo
