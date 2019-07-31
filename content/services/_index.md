@@ -7,4 +7,5 @@ alwaysopen = true
 
 # Documentation for the EGI Services
 
-* [FedCloud]({{%relref "services/_fedcloud.md" %}})
+* [DataHub]({{%relref "services/datahub.md" %}})
+* [FedCloud]({{%relref "services/fedcloud.md" %}})
