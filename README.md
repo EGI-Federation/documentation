@@ -8,6 +8,24 @@ Sources to build EGI documentation static pages.
 
 ## Usage
 
+### Cloning the submodule to publish changes
+
+Contributors allowed to push to the
+https://github.com/EGI-Foundation/EGI-Foundation.github.io repository can
+download the submodule.
+
+```console
+# Enter repository clone
+cd documentation
+# Clone submodules
+git submodule update --init --recursive
+```
+
+### Updating the theme
+
+To keep complete control over the [docdock](https://docdock.netlify.com/) theme it was
+decided to use a snapshot of its master branch.
+
 ### Testing locally
 
 ```console
