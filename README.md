@@ -31,5 +31,6 @@ The website is available locally at: http://localhost:1313/
 
 To speed up the travis run a binary version of Hugo (extended version) for
 Linux 64 bit is included in the repository under `binaries`.
+Updates can be downloaded at https://github.com/gohugoio/hugo/releases.
 
 Travis will automatically deploy a new version when a PR is merged to master.
