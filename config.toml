@@ -4,7 +4,6 @@ languageCode = "en-us"
 DefaultContentLanguage = "en"
 title = "EGI Foundation Documentation"
 theme = "hugo-theme-docdock-master"
-# themesdir = "../.."
 pygmentsCodeFences = true
 pygmentsStyle = "monokailight"
 
@@ -12,19 +11,8 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
-# [Languages]
-# [Languages.en]
-# title = "Documentation for Hugo docDock"
-# weight = 1
-# languageName = "English"
-# 
-# [Languages.fr]
-# title = "Documentation du thème docDock"
-# weight = 2
-# languageName = "Français"
-
 [params]
-editURL = "https://github.com/EGI-Foundation/documentation/edit/master/content/"
+editURL = "https://github.com/EGI-Foundation/documentation/edit/master/content"
 showVisitedLinks = true # default is false
 themeStyle = "flex" # "original" or "flex" # default "flex"
 themeVariant = "" # choose theme variant "green", "gold" , "gray", "blue" (default)
@@ -48,14 +36,14 @@ weight = 10
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-cloud-download'></i> <label>Download</label>"
-url = "https://github.com/EGI-Foundation/documentation/archive/master.zip"
+url = "https://github.com/EGI-Foundation/EGI-Foundation.github.io/archive/master.zip"
 weight = 11
 
-# [[menu.shortcuts]]
-# name = "<i class='fa fa-bookmark'></i> <label>Hugo Documentation</label>"
-# identifier = "hugodoc"
-# url = "https://gohugo.io/"
-# weight = 20
+[[menu.shortcuts]]
+name = "<i class='fa fa-bookmark'></i> <label>EGI</label>"
+identifier = "egi"
+url = "https://www.egi.eu/"
+weight = 20
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-bullhorn'></i> <label>Credits</label>"
