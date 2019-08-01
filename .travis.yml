@@ -1,5 +1,7 @@
 ---
 language: go
+git:
+  submodules: false
 install:
   - gem install mdl
   - mkdir $HOME/src
