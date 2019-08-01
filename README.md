@@ -2,26 +2,17 @@
 
 [![Build Status](https://travis-ci.org/EGI-Foundation/documentation.svg?branch=master)](https://travis-ci.org/EGI-Foundation/documentation)
 
-Sources to build EGI documentation static pages.
+Sources to build [EGI documentation static pages](https://egi-foundation.github.io/).
 
 * [Hugo](https://gohugo.io/) is used to build a static website.
 * The theme [docdock](https://docdock.netlify.com/) is used.
-* The static site is [deployed on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/) using a dedicated [GitHub repository](https://github.com/EGI-Foundation/EGI-Foundation.github.io) linked as a submodule under `public/`.
+* The static site is [deployed on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/) using a
+  dedicated [GitHub repository](https://github.com/EGI-Foundation/EGI-Foundation.github.io).
 
 ## Usage
 
-### Cloning the submodule to publish changes
-
-Contributors allowed to push to the
-https://github.com/EGI-Foundation/EGI-Foundation.github.io repository can
-download the submodule.
-
-```console
-# Enter repository clone
-cd documentation
-# Clone submodules
-git submodule update --init --recursive
-```
+Please refer to [Hugo documentation](https://gohugo.io/documentation/) and
+[docdock theme documentation](https://docdock.netlify.com/).
 
 ### Updating the theme
 
@@ -34,10 +25,8 @@ decided to use a snapshot of its master branch.
 hugo server -D
 ```
 
-Now open http://localhost:1313/
+The website is available locally at: http://localhost:1313/
 
 ### Deploying to the EGI organisation pages
 
-```console
-./deploy.sh
-```
+Travis will automatically deploy a new version when a PR is merged to master.
