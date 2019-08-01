@@ -1,1 +1,3 @@
 /resources/_gen/
+/public/*
+!/public/.gitkeep
