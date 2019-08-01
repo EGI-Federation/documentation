@@ -1,6 +1,8 @@
 ---
 dist: xenial
 language: ruby
+git:
+  submodules: false
 install:
   - gem install mdl
 script:
