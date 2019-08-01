@@ -23,7 +23,7 @@ git submodule update --init --recursive
 
 ### Updating the theme
 
-To keep complete over the [docdock](https://docdock.netlify.com/) theme it was
+To keep complete control over the [docdock](https://docdock.netlify.com/) theme it was
 decided to use a snapshot of its master branch, thus allowing to keep complete
 control over the updates.
 
