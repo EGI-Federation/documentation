@@ -23,7 +23,7 @@ deploy:
   # Commit with identity of GITHUB_TOKEN
   commiter_from_gh: true
   # Source directory
-  local_dir: content/
+  local_dir: public
   # Target repository
   repo: EGI-Foundation/EGI-Foundation.github.io
   # Target branch
