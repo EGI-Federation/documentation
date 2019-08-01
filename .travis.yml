@@ -11,3 +11,22 @@ script:
   - mdl -s relaxed content/
   # building static content with hugo
   - hugo
+deploy:
+  # https://docs.travis-ci.com/user/deployment/pages/
+  provider: pages
+  # Keep generated files before uploading, required
+  skip_cleanup: true
+  # Be verbose for debugging
+  vebose: true
+  # Set in the settings page of the repository, as a secure variable
+  github_token: $GITHUB_TOKEN
+  # Commit with identity of GITHUB_TOKEN
+  commiter_from_gh: true
+  # Source directory
+  local_dir: content/
+  # Target repository
+  repo: EGI-Foundation/EGI-Foundation.github.io
+  # Target branch
+  target_branch: master
+  on:
+    branch: master
