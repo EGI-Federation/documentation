@@ -1,5 +1,6 @@
 ---
-language: go
+dist: xenial
+language: ruby
 install:
   - gem install mdl
 script:
