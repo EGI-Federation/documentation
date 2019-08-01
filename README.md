@@ -1,5 +1,7 @@
 # EGI documentation
 
+[![Build Status](https://travis-ci.org/EGI-Foundation/documentation.svg?branch=master)](https://travis-ci.org/EGI-Foundation/documentation)
+
 Sources to build EGI documentation static pages.
 
 * [Hugo](https://gohugo.io/) is used to build a static website.
