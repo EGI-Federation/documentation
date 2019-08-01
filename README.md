@@ -29,4 +29,7 @@ The website is available locally at: http://localhost:1313/
 
 ### Deploying to the EGI organisation pages
 
+To speed up the travis run a binary version of Hugo (extended version) for
+Linux 64 bit is included in the repository under `binaries`.
+
 Travis will automatically deploy a new version when a PR is merged to master.

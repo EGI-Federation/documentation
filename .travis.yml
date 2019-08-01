@@ -1,16 +1,13 @@
 ---
 language: go
-git:
-  submodules: false
 install:
   - gem install mdl
-  - go get --tags extended github.com/gohugoio/hugo
 script:
   # Linting
   # https://github.com/markdownlint/markdownlint
   - mdl -s relaxed content/
   # building static content with hugo
-  - hugo
+  - ./binaries/linux64/hugo
 deploy:
   # https://docs.travis-ci.com/user/deployment/pages/
   provider: pages
