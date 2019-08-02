@@ -7,6 +7,11 @@ description = "Documentation related to EGI activities"
 
 Welcome to EGI documentation.
 
+{{% notice warning %}}
+Please note that this documentation is at an early stage and a work in progtress.
+This is not (yet) an official source of documentation.
+{{% /notice %}}
+
 ## Main sections
 
 * [Services]({{%relref "services/_index.md" %}})
