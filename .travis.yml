@@ -28,5 +28,7 @@ deploy:
   repo: EGI-Foundation/EGI-Foundation.github.io
   # Target branch
   target_branch: master
+  # Custom FQDN for GitHub pages
+  fqdn: docs.egi.eu
   on:
     branch: master
