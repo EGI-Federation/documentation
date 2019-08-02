@@ -2,7 +2,7 @@ baseURL = "/"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-title = "EGI Foundation Documentation"
+title = "EGI Documentation"
 theme = "hugo-theme-docdock-master"
 pygmentsCodeFences = true
 pygmentsStyle = "monokailight"
