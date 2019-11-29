@@ -4,10 +4,17 @@
 
 Sources to build [EGI documentation static pages](https://egi-foundation.github.io/).
 
-* [Hugo](https://gohugo.io/) is used to build a static website.
-* The theme [docdock](https://docdock.netlify.com/) is used.
-* The static site is [deployed on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/) using a
+- [Hugo](https://gohugo.io/) is used to build a static website.
+- The theme [docsy](https://www.docsy.dev) is used.
+- The static site is [deployed on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/) using a
   dedicated [GitHub repository](https://github.com/EGI-Foundation/EGI-Foundation.github.io).
+
+### Requirements
+
+- hugo
+- NodeJS
+  - postcss-cli
+  - autoprofixer
 
 ## Usage
 
@@ -16,8 +23,8 @@ Please refer to [Hugo documentation](https://gohugo.io/documentation/) and
 
 ### Updating the theme
 
-To keep complete control over the [docdock](https://docdock.netlify.com/) theme it was
-decided to use a snapshot of its master branch.
+To ease management the [docsy](https://www.docsy.dev/docs/getting-started/)
+theme has been cloned as a git submodule.
 
 ### Testing locally
 
