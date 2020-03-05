@@ -11,7 +11,8 @@ install:
 script:
   # Markdown linting
   # https://github.com/markdownlint/markdownlint
-  - mdl -s relaxed content/
+  # MD002: first level header is managed by hugo theme
+  - mdl -s relaxed -r ~MD002 content/
   # building static content with hugo
   - ./binaries/linux64/hugo
 deploy:
