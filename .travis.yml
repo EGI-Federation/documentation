@@ -5,6 +5,7 @@ git:
   submodules: true
 install:
   - gem install mdl
+  - npm install -g postcss-cli
 script:
   # Markdown linting
   # https://github.com/markdownlint/markdownlint
