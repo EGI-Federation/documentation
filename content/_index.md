@@ -10,8 +10,8 @@ description: "Documentation related to EGI activities"
   </p>
 
 <div class="mx-auto">
-  <a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/services" >}}">
-    Learn More about our services <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+  <a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/users" >}}">
+    User documentation <i class="fas fa-arrow-alt-circle-right ml-2"></i>
   </a>
 
   <a class="btn btn-lg btn-primary mr-3 mb-4" href="https://www.egi.eu">
