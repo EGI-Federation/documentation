@@ -1,9 +1,10 @@
 ---
-title: "FedCloud"
-linkTitle: "FedCloud"
-weight: 1
+title: "Cloud Compute"
+linkTitle: "Cloud Compute"
+type: docs
+weight: 20
 description: >
-  Documentation related to EGI Federated Cloud (FedCloud)
+  Documentation related to EGI Cloud Compute and Cloud Container Compute (FedCloud)
 ---
 
 {{% pageinfo %}}
