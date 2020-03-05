@@ -26,6 +26,12 @@ Please refer to [Hugo documentation](https://gohugo.io/documentation/) and
 To ease management the [docsy](https://www.docsy.dev/docs/getting-started/)
 theme has been cloned as a git submodule.
 
+Updating the submodule
+
+```console
+git submodule foreach git pull
+```
+
 ### Testing locally
 
 ```console
