@@ -1,6 +1,6 @@
 ---
-title: "For Users"
-linkTitle: "For Users"
+title: "Users"
+linkTitle: "Users"
 weight: 10
 type: "docs"
 menu:

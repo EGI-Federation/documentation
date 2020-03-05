@@ -1,4 +1,5 @@
 ---
+os: linux
 dist: xenial
 language: ruby
 git:
@@ -10,7 +11,8 @@ install:
 script:
   # Markdown linting
   # https://github.com/markdownlint/markdownlint
-  - mdl -s relaxed -r ~MD035,~MD029,~MD004,~MD002,~MD026,~MD046 content/
+  # MD002: first level header is managed by hugo theme
+  - mdl -s relaxed -r ~MD002 content/
   # building static content with hugo
   - ./binaries/linux64/hugo
 deploy:

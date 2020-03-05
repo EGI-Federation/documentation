@@ -1,5 +1,5 @@
 ---
-title: "For Service Providers"
+title: "Service Providers"
 description: "Service providers documentation"
 weight: 20
 type: "docs"
