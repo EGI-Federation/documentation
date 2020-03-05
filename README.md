@@ -16,6 +16,9 @@ Sources to build [EGI documentation static pages](https://egi-foundation.github.
   - postcss-cli
   - autoprofixer
 
+
+The `.travis.yml` can be used as an example to see how to build the documentation.
+
 ## Usage
 
 Please refer to [Hugo documentation](https://gohugo.io/documentation/) and
@@ -30,12 +33,15 @@ Updating the submodule
 
 ```console
 git submodule foreach git pull
+git ci themes/docsy -m 'Update theme'
 ```
 
 ### Testing locally
 
+The supported Hugo version packages are available under the `binaries` folder.
+
 ```console
-hugo server -D
+./binaries/<platform>/hugo server -D
 ```
 
 The website is available locally at: http://localhost:1313/
