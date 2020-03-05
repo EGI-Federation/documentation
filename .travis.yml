@@ -6,6 +6,7 @@ git:
 install:
   - gem install mdl
   - npm install -g postcss-cli
+  - npm install -g autoprefixer
 script:
   # Markdown linting
   # https://github.com/markdownlint/markdownlint
