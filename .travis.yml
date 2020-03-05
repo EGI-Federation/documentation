@@ -6,9 +6,9 @@ git:
 install:
   - gem install mdl
 script:
-  # XXX Linting with mdl is disabled as md files include non markdown code
+  # Markdown linting
   # https://github.com/markdownlint/markdownlint
-  #- mdl -s relaxed content/
+  - mdl -s relaxed content/
   # building static content with hugo
   - ./binaries/linux64/hugo
 deploy:
