@@ -10,7 +10,7 @@ install:
 script:
   # Markdown linting
   # https://github.com/markdownlint/markdownlint
-  - mdl -s relaxed -r ~MD035,~MD029,~MD004,~MD002,~MD026 content/
+  - mdl -s relaxed -r ~MD035,~MD029,~MD004,~MD002,~MD026,~MD046 content/
   # building static content with hugo
   - ./binaries/linux64/hugo
 deploy:
