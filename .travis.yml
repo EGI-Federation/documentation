@@ -2,11 +2,13 @@
 dist: xenial
 language: ruby
 git:
-  submodules: false
+  submodules: true
 install:
   - gem install mdl
+  - npm install postcss-cli
+  - npm install autoprefixer
 script:
-  # Linting
+  # Markdown linting
   # https://github.com/markdownlint/markdownlint
   - mdl -s relaxed content/
   # building static content with hugo
