@@ -1,6 +1,7 @@
 ---
 title: "DataHub"
 linkTitle: "DataHub"
+type: docs
 description: "Documentation related to EGI DataHub"
 weight: 30
 date: 2019-11-29
