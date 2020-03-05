@@ -56,10 +56,6 @@ anchor = "smart"
 # Additional menu items
 
 [[menu.main]]
-    name = "EGI homepage"
-    weight = 40
-    url = "https://www.egi.eu"
-[[menu.main]]
     name = "GitHub"
     weight = 50
     url = "https://github.com/EGI-Foundation/documentation/"
