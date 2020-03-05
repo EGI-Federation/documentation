@@ -5,8 +5,8 @@ git:
   submodules: true
 install:
   - gem install mdl
-  - npm install -g postcss-cli
-  - npm install -g autoprefixer
+  - npm install postcss-cli
+  - npm install autoprefixer
 script:
   # Markdown linting
   # https://github.com/markdownlint/markdownlint
