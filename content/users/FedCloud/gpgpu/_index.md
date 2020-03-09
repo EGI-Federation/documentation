@@ -1,9 +1,9 @@
 ---
-title: "GPUs on EGI Cloud"
+title: "GPGPUs"
 type: docs
 weight: 60
 description: >
-  GPU resources on EGI Cloud 
+  GPGPU resources on EGI Cloud
 ---
 
 GPGPUs resources are available on selected providers of the EGI Cloud.
