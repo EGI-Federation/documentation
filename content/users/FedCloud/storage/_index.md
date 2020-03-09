@@ -1,5 +1,5 @@
 ---
-title: "Storage on EGI Cloud"
+title: "Storage"
 type: docs
 weight: 50
 description: >

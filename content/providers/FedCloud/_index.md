@@ -1,6 +1,6 @@
 ---
-title: "EGI Cloud providers integration"
-description: "Service providers documentation"
+title: "Cloud Compute"
+description: "IaaS Service providers documentation"
 weight: 20
 type: "docs"
 ---
