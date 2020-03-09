@@ -72,13 +72,16 @@ site. The names are default and can be changed if required.
 | `openldap`    | cloud-info-provider/BDII | Service account for **cloud-info-provider/BDII**. Just a service account, no access required. |
 | `cloudkeeper` | cloudkeeper | Service account for **cloudkeeper**. Just a service account, no access required. |
 | `cloudkeeper-one` | cloudkeeper-one | Service account for **cloudkeeper-one**. Just a service account, no access required. |
+
 ## EGI Virtual Machine Management
 
 ### Prerequisites
 
 Enable EPEL and install the following packages prior to installation:
 
-    yum install -y epel-release wget
+``` {.console}
+yum install -y epel-release wget
+```
 
 ### Installation
 
@@ -89,22 +92,22 @@ very similar.
 
 -   Register `rOCCI-server` repositories
 
-<!-- -->
-
+    ``` {.console}
     wget http://repository.egi.eu/community/software/rocci.server/2.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/rocci-server.repo
+    ```
 
 -   Install package
 
-<!-- -->
-
+    ``` {.console}
     yum install -y occi-server
+    ```
 
 ### Configuration
 
 -   Make rOCCI-server listen on a public interface
 
-<!-- -->
 
+    ``` {.console}
     mkdir -p /etc/systemd/system/occi-server.socket.d
     cat > /etc/systemd/system/occi-server.socket.d/override.conf <<EOS
     [Socket]
@@ -114,12 +117,12 @@ very similar.
     EOS
 
     sed -i 's/HOST=127.0.0.1/HOST=0.0.0.0/g' /etc/occi-server/variables
+    ```
 
 -   Uncomment and configure optional parameters in
     */etc/occi-server/variables*
 
-<!-- -->
-
+    ``` {.console}
     export HOST_CERT=/path/to/cert                                     # host certificate readable by the rocci user
     export HOST_KEY=/path/to/key                                       # host key readable by the rocci user
 
@@ -130,51 +133,53 @@ very similar.
     export ROCCI_SERVER_ENCRYPTION_TOKEN_CIPHER=                       # crypto options MUST MATCH keystorm's crypto options, see /etc/keystorm/variables
     export ROCCI_SERVER_ENCRYPTION_TOKEN_KEY=                          # crypto options MUST MATCH keystorm's crypto options, see /etc/keystorm/variables
     export ROCCI_SERVER_ENCRYPTION_TOKEN_IV=                           # crypto options MUST MATCH keystorm's crypto options, see /etc/keystorm/variables
+    ```
 
 -   Enable and start the service
 
-<!-- -->
-
+    ``` {.console}
     systemctl enable occi-server
     systemctl start occi-server
+    ```
 
 ### Runtime
 
 -   Import resource templates to OpenNebula
 
-<!-- -->
-
+    ``` {.console}
     /opt/occi-server/bin/oneresource create --endpoint http://one.example.org:2633/RPC2 # --username PRIVILEGED_USER --password PASSWD
     # re-run with `--resources /opt/occi-server/embedded/app/rOCCI-server/lib/resources/gpu/` to enable GPU resource templates
+    ```
 
 -   In OpenNebula, set flags for groups by adding attributes:
 
-<!-- -->
-
+    ```
     DEFAULT_CLUSTER_ID="0"              # Default cluster for this group
     DEFAULT_CONNECTIVITY="public"       # Default connectivity for this group: public|nat|private
+    ```
 
 -   In OpenNebula, set network type on networks used via OCCI by adding
     an attribute:
 
-<!-- -->
 
+    ```
     NETWORK_TYPE="public"               # Supported types: public|nat|private
+    ```
 
 -   In OpenNebula, set flag for networks that should be treated as
     public IP pools (for IP reservations) by adding an attribute:
 
-<!-- -->
-
+    ```
     FLOATING_IP_POOL="yes"
+    ```
 
 -   In OpenNebula, set additional network attributes:
 
-<!-- -->
-
+    ```
     NETWORK_ADDRESS=""                  # e.g., "172.16.100.0"
     NETWORK_MASK=""                     # e.g., "255.255.255.0"
     GATEWAY=""                          # e.g., "172.16.100.1"
+    ```
 
 ### Migration from v1 to v2
 
@@ -191,36 +196,34 @@ accounts, perform the following steps.
 -   Merge multiple single-group accounts into one account with multiple
     groups
 
-<!-- -->
-
     Single-group accounts owned by the same person can be identified as having:
 
-    * `NAME` following the naming convention $VONAME_$ID where the same user always has the same $ID
-    * `TEMPLATE/X509_DN` where the same user always has the same DN
+    - `NAME` following the naming convention $VONAME_$ID where the same user always has the same $ID
+    - `TEMPLATE/X509_DN` where the same user always has the same DN
 
     Name of the merged user MUST be a SHA256 digest of the `TEMPLATE/X509_DN` attribute value.
 
     In ruby, SHA256 digest can be generated as:
 
+    ``` {.ruby}
     require 'digest'
     Digest::SHA256.hexdigest 'DN_STRING_HERE'
+    ```
 
 -   Manually add user attributes
 
-<!-- -->
-
     For each user, add the following attributes:
 
-    * TEMPLATE/ID
-    * TEMPLATE/NAME
-    * TEMPLATE/IDENTITY
-    * TEMPLATE/AUTHENTICATION
+    - TEMPLATE/ID
+    - TEMPLATE/NAME
+    - TEMPLATE/IDENTITY
+    - TEMPLATE/AUTHENTICATION
 
     Where
 
-    * `TEMPLATE/ID` is a SHA256 digest of the `TEMPLATE/X509_DN` attribute value
-    * `TEMPLATE/IDENTITY` and `TEMPLATE/NAME` contain the old `TEMPLATE/X509_DN` value
-    * `TEMPLATE/AUTHENTICATION` is a static value 'voms'
+    - `TEMPLATE/ID` is a SHA256 digest of the `TEMPLATE/X509_DN` attribute value
+    - `TEMPLATE/IDENTITY` and `TEMPLATE/NAME` contain the old `TEMPLATE/X509_DN` value
+    - `TEMPLATE/AUTHENTICATION` is a static value 'voms'
 
 -   *chown* all user-owned resources to the new user
 
@@ -230,7 +233,9 @@ accounts, perform the following steps.
 
 Enable EPEL and install the following packages prior to installation:
 
-    yum install -y epel-release wget
+``` {.console}
+yum install -y epel-release wget
+```
 
 ### Installation
 
@@ -241,37 +246,37 @@ very similar.
 
 -   Register `keystorm` repositories
 
-<!-- -->
-
+    ``` {.console}
     wget http://repository.egi.eu/community/software/keystorm/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/keystorm.repo
+    ```
 
 -   Install package
 
-<!-- -->
-
+    ``` {.console}
     yum install -y keystorm
+    ```
 
 ### Configuration
 
 -   Uncomment and configure optional parameters in
     */etc/keystorm/variables*
 
-<!-- -->
-
+    ```
     export KEYSTORM_OPENNEBULA_ENDPOINT=http://localhost:2633/RPC2     # URL pointing to OpenNebula installation
     export KEYSTORM_OPENNEBULA_SECRET=oneadmin:opennebula              # Privileged OpenNebula credentials (with user and group management permissions)
+    ```
 
 -   Enable and start the service
 
-<!-- -->
-
+    ``` {.console}
     systemctl enable keystorm
     systemctl start keystorm
+    ```
 
 -   Configure Apache2/httpd
 
-<!-- -->
 
+    ``` {.console}
     # on Ubuntu/Debian only
     a2enmod ssl && \
       a2enmod headers && \
@@ -287,11 +292,11 @@ very similar.
 
     # make sure the following directory exists
     SSLCACertificatePath /etc/grid-security/certificates
+    ```
 
 -   Enable and start Apache2/httpd
 
-<!-- -->
-
+    ``` {.console}
     # on Ubuntu/Debian only
     systemctl enable apache2
     systemctl restart apache2
@@ -299,6 +304,7 @@ very similar.
     # on CentOS/SL only
     systemctl enable httpd
     systemctl start httpd
+    ```
 
 -   Enable support for EGI VOs via VOMS: [VOMS
     configuraton](https://wiki.egi.eu/wiki/HOWTO16)
@@ -309,9 +315,9 @@ very similar.
 -   In OpenNebula, create empty groups for *fedcloud.egi.eu*, *ops*, and
     *dteam* with group attribute:
 
-<!-- -->
-
+    ```
     KEYSTORM="YES"                  # Allow keystorm to manage membership for this group
+    ```
 
 ## EGI Accounting
 
@@ -327,7 +333,9 @@ default, accounting records are placed in
 Enable EPEL and install the following packages prior to oneacct-export
 installation: :
 
-    yum install -y epel-release wget
+``` {.console}
+yum install -y epel-release wget
+```
 
 ### Installation
 
@@ -338,22 +346,21 @@ very similar.
 
 -   Register `oneacct-export` repositories
 
-<!-- -->
-
+    ``` {.console}
     wget http://repository.egi.eu/community/software/oneacct.export/0.4.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/oneacct-export.repo
+    ```
 
 -   Install package
 
-<!-- -->
-
+    ``` {.console}
     yum install -y oneacct-export
+    ```
 
 ### Configuration
 
 -   Edit `/etc/oneacct-export/conf.yml`
 
-<!-- -->
-
+    ```
     apel:
       site_name: Undefined                     # Usually a short provider name, e.g. CESNET
       cloud_type: OpenNebula                   # CMF type, only OpenNebula is supported
@@ -362,25 +369,27 @@ very similar.
     xml_rpc:
       secret: oneadmin:opennebula            # OpenNebula credentials, privileged
       endpoint: http://localhost:2633/RPC2 # OpenNebula XML RPC endpoint
+    ```
 
 -   Add the following lines to `/etc/one/oned.conf` and restart
     OpenNebula
 
-<!-- -->
-
+    ```
     INHERIT_IMAGE_ATTR = "VMCATCHER_EVENT_AD_MPURI"
     INHERIT_IMAGE_ATTR = "VMCATCHER_EVENT_DC_IDENTIFIER"
     INHERIT_IMAGE_ATTR = "VMCATCHER_EVENT_IL_DC_IDENTIFIER"
     INHERIT_IMAGE_ATTR = "VMCATCHER_EVENT_SL_CHECKSUM_SHA512"
     INHERIT_IMAGE_ATTR = "VMCATCHER_EVENT_HV_VERSION"
+    ```
 
 -   Set benchmark values on CLUSTERs (applies to all hosts in the
     cluster) or HOSTs (only for that host) in OpenNebula
 
-<!-- -->
 
+    ```
     BENCHMARK_TYPE  = "HEP-SPEC06" # benchmark type
     BENCHMARK_VALUE = "84.46"      # represents a per-core measured value of said benchmark
+    ```
 
 -   Use `/etc/oneacct-export/groups.include` or
     `/etc/oneacct-export/groups.exclude` to control which information
@@ -390,31 +399,31 @@ very similar.
 
 -   Enable and register service \'redis\'
 
-<!-- -->
-
+    ``` {.console}
     service redis start
     chkconfig redis on
+    ```
 
 -   Enable and register service \'oneacct-export-sidekiq\'
 
-<!-- -->
-
+    ``` {.console}
     service oneacct-export-sidekiq start
     chkconfig oneacct-export-sidekiq on
+    ```
 
 -   Perform the first export manually
 
-<!-- -->
-
+    ``` {.console}
     # This process may take a long time, consider using **tmux** or **screen**
     sudo -u apel /usr/bin/oneacct-export-cron --all
+    ```
 
 -   Enable and register service \'oneacct-export-cron\'
 
-<!-- -->
-
+    ``` {.console}
     service oneacct-export-cron start
     chkconfig oneacct-export-cron on
+    ```
 
 This service registers a cron job which will run oneacct-export every 2
 hours.
@@ -455,9 +464,9 @@ documentation for more information.
 
 -   Install recent `qemu-img` and `wget`
 
-<!-- -->
-
+    ``` {.console}
     yum install -y centos-release-qemu-ev wget sudo
+    ```
 
 ### Installation
 
@@ -468,16 +477,16 @@ supported distribution is very similar.
 
 -   Register `cloudkeeper` and `cloudkeeper-one` repositories
 
-<!-- -->
-
+    ``` {.console}
     wget http://repository.egi.eu/community/software/cloudkeeper/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/cloudkeeper.repo
     wget http://repository.egi.eu/community/software/cloudkeeper.one/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/cloudkeeper-one.repo
+    ```
 
 -   Install `cloudkeeper` and `cloudkeeper-one`
 
-<!-- -->
-
+    ``` {.console}
     yum install -y cloudkeeper cloudkeeper-one
+    ```
 
 ### `cloudkeeper` configuration
 
@@ -489,9 +498,11 @@ image-lists
 :   URLs of image lists containing appliances which you want to
     synchronize to your cloud. Must contain authentication token.
 
-        image-lists: # List of image lists to sync against
-         - https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/somevo/image.list
-         - https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/othervo/image.list
+```
+image-lists: # List of image lists to sync against
+ - https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/somevo/image.list
+ - https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/othervo/image.list
+```
 
 authentication
 
@@ -601,36 +612,38 @@ image
 **For compatibility with other integration components, add the following
 lines to \`\`image.rb\`\`:**
 
-    VMCATCHER_EVENT_AD_MPURI="<%= appliance.mpuri %>"
-    VMCATCHER_EVENT_HV_VERSION="<%= appliance.version %>"
-    VMCATCHER_EVENT_DC_DESCRIPTION="<%= appliance.description %>"
-    VMCATCHER_EVENT_DC_TITLE="<%= appliance.title %>"
+```
+VMCATCHER_EVENT_AD_MPURI="<%= appliance.mpuri %>"
+VMCATCHER_EVENT_HV_VERSION="<%= appliance.version %>"
+VMCATCHER_EVENT_DC_DESCRIPTION="<%= appliance.description %>"
+VMCATCHER_EVENT_DC_TITLE="<%= appliance.title %>"
+```
 
 ### Usage
 
 -   Start and enable `cloudkeeper-one` service
 
-<!-- -->
-
+    ``` {.console}
     systemctl enable cloudkeeper-one
     systemctl start cloudkeeper-one
+    ```
 
 `cloudkeeper-one` will be now listening for communication from
 `cloudkeeper`.
 
 -   Perform the first synchronization manually
 
-<!-- -->
-
+    ``` {.console}
     # This MAY take a long time, keep checking for successful exit with `systemctl status cloudkeeper`
     systemctl start cloudkeeper
+    ```
 
 -   Start and enable systemd timer for `cloudkeeper`
 
-<!-- -->
-
+    ``` {.console}
     systemctl enable cloudkeeper.timer
     systemctl start cloudkeeper.timer
+    ```
 
 This service registers a systemd timer which will run `cloudkeeper`
 approx. every 2 hours.

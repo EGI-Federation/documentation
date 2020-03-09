@@ -120,13 +120,13 @@ extended/renewed upon request.
 
 1.  Login to the [EGI Marketplace](https://marketplace.egi.eu) with the
     EGI AAI Check-In service.
-2.  Setup a profile, including details about your affiliation and role
+1.  Setup a profile, including details about your affiliation and role
     within a research institute/project/team.
-3.  Navigate the marketplace top-menu and click on the category:
+1.  Navigate the marketplace top-menu and click on the category:
     **Applications**.
-4.  Click on the **Applications on Demand** service and submit an order
+1.  Click on the **Applications on Demand** service and submit an order
     for one of the available applications.
-5.  When the request is approved, run the requested application(s) as
+1.  When the request is approved, run the requested application(s) as
     described below.
 
 Please check the [EGI Marketplace

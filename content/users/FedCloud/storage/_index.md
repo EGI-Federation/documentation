@@ -68,7 +68,7 @@ application running on a single VM. If you need to have your data
 exposed within portals or shared between different steps of your
 processing workflow, it is usually best to use the object storage.
 
-## Block Storage
+## Block Storage
 
 Block storage is created and managed via requests to specific APIs. Once
 the storage is attached to a VM, it is managed as a regular disk that

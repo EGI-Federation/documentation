@@ -32,7 +32,7 @@ please [open a ticket](https://ggus.egi.eu) or contact us at
 1.  Log into the [VMOps dashboard](https://dashboard.appdb.egi.eu/vmops)
     using EGI Check-in.
 
-2.  Click on \"Create a new VM Topology\" to start the topology builder,
+1.  Click on \"Create a new VM Topology\" to start the topology builder,
     this will guide you through a set of steps:
 
     1.  Select the Virtual Appliance you want to start, these are the
@@ -42,15 +42,15 @@ please [open a ticket](https://ggus.egi.eu) or contact us at
 
         ![Select the VA](vmops_va_select.png)
 
-    2.  select the VO to use when instantiating the VA;
+    1.  select the VO to use when instantiating the VA;
 
-    3.  select the provider where to instantiate the VA; and finally
+    1.  select the provider where to instantiate the VA; and finally
 
-    4.  select the template (VM instance type) of the instance that will
+    1.  select the template (VM instance type) of the instance that will
         determine the number of cores, memory and disk space used in
         your VM.
 
-3.  Now you will be presented with a summary page where you can further
+1.  Now you will be presented with a summary page where you can further
     customise your VM by:
 
     -   Adding more VMs to the topology
@@ -60,7 +60,7 @@ please [open a ticket](https://ggus.egi.eu) or contact us at
 
     ![Topology settings](vmops_settings.png)
 
-4.  Click on \"Launch\" and your deployment will be submitted to the
+1.  Click on \"Launch\" and your deployment will be submitted to the
     infrastructure.
 
 The topology you just created will appear on your \"Topologies\" with

@@ -28,11 +28,14 @@ You can start that image as any other VA available from AppDB:
 
 1.  Go to the [EGI Docker image entry in
     AppDB](https://appdb.egi.eu/store/vappliance/docker.ubuntu.16.04).
-2.  Check the identifiers of the endpoint, image and flavor you want to
+
+1.  Check the identifiers of the endpoint, image and flavor you want to
     use at the provider.
-3.  Use a ssh key when, so you can log into the VM once it\'s
+
+1.  Use a ssh key when, so you can log into the VM once it\'s
     instantiated.
-4.  Once up, just ssh in the VM and start using docker as usual.
+
+1.  Once up, just ssh in the VM and start using docker as usual.
 
 ### Using docker from inside the VM
 

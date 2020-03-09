@@ -31,7 +31,7 @@ of this guide will focus on CLI/API access.
 
 ## Installation
 
-**TBC**
+TBC
 
 ``` {.console}
 pip install requests

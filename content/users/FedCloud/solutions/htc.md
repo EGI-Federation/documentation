@@ -367,7 +367,7 @@ sleep 5
 Submit to the batch queue:
 
 ``` {.console}
-$ qsub -l nodes=2 test.sh
+qsub -l nodes=2 test.sh
 ```
 
 ## Destroy the cluster

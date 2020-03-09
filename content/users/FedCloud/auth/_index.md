@@ -42,10 +42,12 @@ to prototype and validate applications. It can be used for up to 6 month
 by any new user.
 
 {{% alert title="Warning" color="warning" %}}
+
 -   After the 6-month long membership in the vo.access.egi.eu VO, you
     will need to move to a production VO, or establish a new VO.
 -   The resources are not guaranteed and may be removed without notice
     by providers. **Back-up frequently to avoid loosing your work!**
+
 {{% /alert %}}
 
 For joining this VO, just place an order in the [EGI
@@ -87,10 +89,10 @@ The process for authentication is as follows:
 1.  Obtain a valid OAuth2.0 access token from Check-in. Access tokens
     are short-lived credentials that can be obtained by recognised
     Check-in clients once a user has been authenticated.
-2.  Interchange the Check-in access token for a valid unscoped Keystone
+1.  Interchange the Check-in access token for a valid unscoped Keystone
     token.
-3.  Discover available projects from Keystone using the unscoped token.
-4.  Use the unscoped Keystone token to get a scoped token for a valid
+1.  Discover available projects from Keystone using the unscoped token.
+1.  Use the unscoped Keystone token to get a scoped token for a valid
     project. Scoped tokens will allow the user to perform operations on
     the provider.
 

@@ -24,52 +24,60 @@ EGI:
 
 1.  Create a group where users belongig to the VO will be mapped to: :
 
-        group_id=$(openstack group create -f value -c id <new_group>)
+    ``` {.console}
+    group_id=$(openstack group create -f value -c id <new_group>)
+    ```
 
-2.  Add that group to the desired local project: :
+1.  Add that group to the desired local project: :
 
-        openstack role add member --group $group_id --project <your project>
+    ``` {.console}
+    openstack role add member --group $group_id --project <your project>
+    ```
 
-3.  Expand your mapping.json with the VO membership to the created group
+1.  Expand your mapping.json with the VO membership to the created group
     (substitute `group_id` and `vo_name` as appropriate): :
 
-        [
-            <existing mappings>,
-            {
-                "local": [
-                    {
-                        "user": {
-                            "name": "{0}"
-                        },
-                        "group": {
-                            "id": "<group_id>"
-                        }
-                    }
-                ],
-                "remote": [
-                    {
-                        "type": "HTTP_OIDC_SUB"
+    ```
+    [
+        <existing mappings>,
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}"
                     },
-                    {
-                        "type": "HTTP_OIDC_ISS",
-                        "any_one_of": [
-                            "https://aai-dev.egi.eu/oidc/"
-                        ]
-                    },
-                    {
-                        "type": "OIDC-eduperson_entitlement",
-                        "regex": true,
-                        "any_one_of": [
-                            "^urn:mace:egi.eu:group:<vo_name>:role=vm_operator#aai.egi.eu$"
-                        ]
+                    "group": {
+                        "id": "<group_id>"
                     }
-                ]
-            }
-        ]
+                }
+            ],
+            "remote": [
+                {
+                    "type": "HTTP_OIDC_SUB"
+                },
+                {
+                    "type": "HTTP_OIDC_ISS",
+                    "any_one_of": [
+                        "https://aai-dev.egi.eu/oidc/"
+                    ]
+                },
+                {
+                    "type": "OIDC-eduperson_entitlement",
+                    "regex": true,
+                    "any_one_of": [
+                        "^urn:mace:egi.eu:group:<vo_name>:role=vm_operator#aai.egi.eu$"
+                    ]
+                }
+            ]
+        }
+    ]
+    ```
 
-4.  Update the mapping in your Keystone IdP: :
+1.  Update the mapping in your Keystone IdP: :
 
-        openstack mapping set --rules mapping.json egi-mapping
+    ``` {.console}
+    openstack mapping set --rules mapping.json egi-mapping
+    ```
 
 #### Legacy VOs (VOMS)
 
@@ -79,42 +87,48 @@ When using the Keystone-VOMS module, you should follow these steps:
     documentation](http://italiangrid.github.io/voms/documentation/voms-clients-guide/3.0.3/#voms-trust),
     e.g.: :
 
-        mkdir -p /etc/grid-security/vomsdir/ops
+    ``` {.console}
+    mkdir -p /etc/grid-security/vomsdir/ops
 
-        cat > /etc/grid-security/vomsdir/ops/lcg-voms2.cern.ch.lsc << EOF
-        /DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch
-        /DC=ch/DC=cern/CN=CERN Grid Certification Authority
-        EOF
+    cat > /etc/grid-security/vomsdir/ops/lcg-voms2.cern.ch.lsc << EOF
+    /DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch
+    /DC=ch/DC=cern/CN=CERN Grid Certification Authority
+    EOF
 
-        cat > /etc/grid-security/vomsdir/ops/voms2.cern.ch.lsc << EOF
-        /DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch
-        /DC=ch/DC=cern/CN=CERN Grid Certification Authority
-        EOF
+    cat > /etc/grid-security/vomsdir/ops/voms2.cern.ch.lsc << EOF
+    /DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch
+    /DC=ch/DC=cern/CN=CERN Grid Certification Authority
+    EOF
+    ```
 
-2.  Add the mapping to your `voms.json` mapping. It must be proper JSON
+1.  Add the mapping to your `voms.json` mapping. It must be proper JSON
     (you can check its correctness [online](http://jsonlint.com/) or
     with `python -mjson.tool /etc/keystone/voms.json`). Edit the file,
     and add an entry like this:
 
-        {
-            "<voname|FQAN>": {
-                "tenant": "<project_name>"
-            }
+    ```
+    {
+        "<voname|FQAN>": {
+            "tenant": "<project_name>"
         }
+    }
+    ```
 
     Note that you can use the FQAN from the incoming proxy, so you can
     map a group within a VO into a tenant, like this:
 
-        {
-            "dteam": {
-                "tenant": "dteam"
-            },
-            "/dteam/NGI_IBERGRID": {
-                "tenant": "dteam_ibergrid"
-            }
+    ```
+    {
+        "dteam": {
+            "tenant": "dteam"
+        },
+        "/dteam/NGI_IBERGRID": {
+            "tenant": "dteam_ibergrid"
         }
+    }
+    ```
 
-3.  Restart Apache server, and it\'s done.
+1.  Restart Apache server, and it\'s done.
 
 ### OpenNebula
 
@@ -128,20 +142,26 @@ Add the project supporting the VO to cASO:
 
 1.  `projects` in `/etc/caso/caso.conf` :
 
-        projects = vo_project1, vo_project2, <your_new_vo_project>
+    ```
+    projects = vo_project1, vo_project2, <your_new_vo_project>
+    ```
 
-2.  as a new mapping in `/etc/caso/voms.json` :
+1.  as a new mapping in `/etc/caso/voms.json` :
 
-        {
-            "<your new vo>": {
-                "projects": ["<your new vo project>"]
-             }
-        }
+    ```
+    {
+        "<your new vo>": {
+            "projects": ["<your new vo project>"]
+         }
+    }
+    ```
 
 Be sure to include the user running cASO as member of the project if it
 does not have admin privileges:
 
-    openstack role add member --user <your caso user> --project <your new vo project>
+``` {.console}
+openstack role add member --user <your caso user> --project <your new vo project>
+```
 
 ### OpenNebula
 
@@ -156,7 +176,9 @@ from the new group. Specify one group name per line.
 Add the user configured in your cloud-info-provider as member of the new
 project:
 
-    openstack role add member --user <your cloud-info-provider user> --project <your new vo project>
+``` {.console}
+openstack role add member --user <your cloud-info-provider user> --project <your new vo project>
+```
 
 ## EGI VM Image Management
 
@@ -167,19 +189,25 @@ Add the new image list to the `cloudkeeper` configuration in
 `/etc/cloudkeeper/image-lists.conf` if using the appliance), new entry
 should look similar to:
 
-    https://<APPDB_TOKEN>:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/<your new vo>/image.list:
+```
+https://<APPDB_TOKEN>:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/<your new vo>/image.list:
+```
 
 ### OpenStack
 
 Add the user configured in cloudkeeper-os as member of the new project:
 
-    openstack role add member --user <your cloudkeeper-os user> --project <your new vo project>
+``` {.console}
+openstack role add member --user <your cloudkeeper-os user> --project <your new vo project>
+```
 
 Add the mapping of the project to the VO in
 `/etc/cloudkeeper-os/voms.json`:
 
-    {
-        "<your new vo>": {
-             "tenant": "<your new vo project>"
-        }
+```
+{
+    "<your new vo>": {
+         "tenant": "<your new vo project>"
     }
+}
+```

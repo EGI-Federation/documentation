@@ -26,12 +26,10 @@ description: >
 
 ## Do I lose control on who can access my resources if I join federated cloud?
 
-**No**
-
-EGI uses the concept of Virtual Organisation (VO) to group users. The
-resource provider has complete control on which VOs he wants to allow on
-its resources and which quotas or restrictions to assign to each VO. In
-the case of OpenStack, each VO is mapped to a regular OpenStack project
+**No**. EGI uses the concept of Virtual Organisation (VO) to group users.
+The resource provider has complete control on which VOs he wants to allow
+on its resources and which quotas or restrictions to assign to each VO.
+In the case of OpenStack, each VO is mapped to a regular OpenStack project
 that can be managed as any other and are isolated to other projects you
 may have configured in your deployment. Although not recommended, you
 can even restrict the automatic access of users within a VO and manually
