@@ -6,7 +6,6 @@ description: "Documentation related to EGI Notebooks"
 weight: 40
 ---
 
-
 The more you go in data analysis, the more you understand that the most
 suitable tool for coding and visualizing is not a pure code, or SQL IDE,
 or even simplified data manipulation diagrams (aka workflows or jobs).
@@ -54,4 +53,3 @@ We offer different service modes depending on your needs:
     discipline-specific analysis libraries) or have fine grained control
     on who can access the instance (based on the information available
     to the EGI Check-in AAI service).
-
