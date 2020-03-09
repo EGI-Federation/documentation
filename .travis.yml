@@ -12,7 +12,8 @@ script:
   # Markdown linting
   # https://github.com/markdownlint/markdownlint
   # MD002: first level header is managed by hugo theme
-  - mdl -s relaxed -r ~MD002 content/
+  # MD024: several sections repeat the header name, may be reviewed later
+  - mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
   # building static content with hugo
   - ./binaries/linux64/hugo
 deploy:
