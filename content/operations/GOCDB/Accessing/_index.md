@@ -9,9 +9,9 @@ The GOCDB can be accessed at https://goc.egi.eu.
 
 To access the web interface, users can:
 
-- use an X509 digital certificate installed in the browser, delivered by
+- use an [X509 digital certificate installed in the browser](#using-an-x509-digital-certificate), delivered by
   one of the recognised EU-Grid-PMA Certification Authorities ;
-- use EGI Check-in to access the GOCDB with their institutional account.
+- use EGI Check-in to [access the GOCDB with an institutional account](#using-institutional-account-via-egi-check-in).
 
 Users can access the system as soon as they are authenticated however they will
 only be able to update information based on their roles.
