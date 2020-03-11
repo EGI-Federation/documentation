@@ -1,5 +1,5 @@
 ---
-title: "Accessing"
+title: "Access"
 description: "Accessing GOCDB"
 weight: 20
 type: "docs"
