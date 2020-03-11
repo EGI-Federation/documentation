@@ -1,25 +1,26 @@
 ---
 title: "About"
-description: "About EGI"
+description: "About EGI Documentation"
+type: docs
 menu:
   main:
     weight: 40
 ---
 
-{{< blocks/cover title="About EGI Documentation" image_anchor="bottom" height="min" >}}
+{{% alert %}}
+The documentation is maintained by the EGI Community, you can participate at
+[EGI Documentation](https://github.com/EGI-Foundation/documentation).
+{{% /alert %}}
 
-<p class="lead mt-5">EGI Foundation documentation</p>
+## Style guide
 
-{{< /blocks/cover >}}
+{{% alert %}}
+The documentation should follow those guidelines:
+{{% /alert %}}
 
-{{% blocks/lead %}}
-This documentation is guilt using the <a href="https://github.com/google/docsy">Docsy</a> Hugo theme.
-{{% /blocks/lead %}}
+- all files and folders should be lower case
 
-{{< blocks/section >}}
+## Acknowledgement
 
-<div class="col-12">
-<h1 class="text-center">The documentation is maintained by the EGI Community</h1>
-<p class="text-center">You can participate at <a href="https://github.com/EGI-Foundation/documentation">EGI Documentation</a> GitHub repository.</p>
-</div>
-{{< /blocks/section >}}
+- This documentation is built using the
+  [Docsy](https://github.com/google/docsy) Hugo theme.

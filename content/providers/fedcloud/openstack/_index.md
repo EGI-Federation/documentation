@@ -45,7 +45,7 @@ and configure it approprietely to interact with your services.
 The integration is performed by a set of EGI components that interact
 with the OpenStack services APIs:
 
-![image](OpenStackSite.png)
+![image](openstacksite.png)
 
 -   Authentication of EGI users into your system is performed by
     configuring the native OpenID Connect support of Keystone. Support

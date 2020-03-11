@@ -28,7 +28,7 @@ need advice on how to install and configure OpenNebula itself.
     OpenNebula-based sites.
 -   OpenNebula GUI integration is **not** supported.
 
-![image](OpenNebulaSite.png)
+![image](opennebulasite.png)
 
 The following **components** must be installed:
 
@@ -449,7 +449,7 @@ and
 are tools used to ensure synchronization of virtual appliances with an
 [OpenNebula](https://opennebula.org/)-based cloud.
 
-![image](Cloudkeeper-setup.png)
+![image](cloudkeeper-setup.png)
 
 ### Prerequisites
 
