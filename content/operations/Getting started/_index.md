@@ -8,5 +8,8 @@ description: >
 ---
 
 {{% pageinfo %}}
-This is a placeholder page.
+This is a work in progress page.
 {{% /pageinfo %}}
+
+In order to discover and update information about the infrastructure providers
+can use the [GODCB](../GOCDB/Access).
