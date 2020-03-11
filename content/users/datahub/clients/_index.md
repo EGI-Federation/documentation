@@ -21,7 +21,7 @@ credentials.
 
 ![EGI DataHub landing page](datahub-welcome-screen.png)
 
-On this page it\'s possible to have an overview of all the spaces and
+On this page it's possible to have an overview of all the spaces and
 their supporting providers.
 
 ![Information about spaces supported by a Oneprovider](datahub-space-info.png)
@@ -31,14 +31,14 @@ specific provider is displayed.
 
 ![Information about spaces supported by a Oneprovider](datahub-browse-space.png)
 
-The data space can be managed (ie. uploading/downloading/managing files
-and metadata, managing space access) using the web browser.
+The data space can be managed (i.e. uploading/downloading/managing files and
+metadata, managing space access) using the web browser.
 
 ## Generating tokens for using Oneclient or APIs
 
 {{% alert title="Important" color="warning" %}}
-In order to be able to access your spaces using [Oneclient]({{< ref "Clients" >}})
-or [APIs](../api), it\'s required to generate an access token.
+In order to be able to access your spaces using [Oneclient](../clients) or
+[APIs](../api), it's required to generate an access token.
 {{% /alert %}}
 
 Tokens have to be generated from the **EGI DataHub** (Onezone) interface.
@@ -62,8 +62,7 @@ The following variables have to be exported in the container:
   should connect to.
 
 {{% alert title="Important" color="warning" %}}
-In order to be able to use FUSE, the container should run in
-[privileged]{.title-ref} mode.
+In order to be able to use FUSE, the container should run in **privileged** mode.
 {{% /alert %}}
 
 ```shell
@@ -92,7 +91,7 @@ container as a source for a volume mounted into another container.
 Docker containers for the Oneclient are available, the existing versions
 can be seen on the [Oneclient docker hub](https://hub.docker.com/r/onedata/oneclient/tags).
 
-It\'s possible to use the most recent version by specifying the `latest`
+It's possible to use the most recent version by specifying the `latest`
 tag. We also recommend using the same version as shown on the Onezone
 and Oneprovider pages.
 
@@ -105,7 +104,7 @@ The following variables have to be exported to be used in the container:
 
 {{% alert title="Important" color="warning" %}}
 In order to be able to use FUSE, the container should run in
-`privileged` mode.
+**privileged** mode.
 {{% /alert %}}
 
 ```shell
@@ -148,7 +147,7 @@ will mount manually the Onedata spaces.
 
 {{% alert title="Important" color="warning" %}}
 In order to be able to use FUSE, the container should run in
-[privileged]{.title-ref} mode.
+**privileged** mode.
 {{% /alert %}}
 
 ```shell
