@@ -225,7 +225,7 @@ Every VO needs two different pieces of information:
 You can check specific configuration for your VO at the [Operations
 portal](https://operations-portal.egi.eu/vo). Normally each VOMS server
 has a *Configuration Info* link where the exact information to include
-in the [vomses]{.title-ref} and [.lsc]{.title-ref} files.
+in the *vomses* and *.lsc* files.
 
 Valid configuration for `fedcloud.egi.eu` is available on the [FedCloud
 client VM](https://appdb.egi.eu/store/vappliance/egi.fedcloud.clients)

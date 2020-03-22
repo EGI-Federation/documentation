@@ -137,8 +137,7 @@ This is Work in progress, expect changes!
 [Accounting
 module](https://github.com/EGI-Foundation/egi-notebooks-accounting)
 generates VM-like accounting records for each of the notebooks started
-at the service. It\'s available as a [helm chart
-\<https://egi-foundation.github.io/egi-notebooks-chart/\>\_]{.title-ref}
+at the service. It\'s available as a [helm chart](https://egi-foundation.github.io/egi-notebooks-chart/)
 that can be deployed in the same namespace as the JupyterHub chart. The
 only needed configuration for the chart is an IGTF-recognised
 certificate for the host registered in GOCDB as accounting.
@@ -156,8 +155,7 @@ ssm:
 [Monitoring](https://github.com/EGI-Foundation/egi-notebooks-monitoring)
 is performed by trying to execute a user notebook every hour. This is
 accomplished by registering a new service in the hub that has admin
-permissions. Monitoring is then deployed as a [helm chart
-\<https://egi-foundation.github.io/egi-notebooks-chart/\>\_]{.title-ref}
+permissions. Monitoring is then deployed as a [helm chart](https://egi-foundation.github.io/egi-notebooks-chart/)
 that must be deployed in the same namespace as the JupyterHub chart.
 Configuration of JupyterHub must include this section:
 

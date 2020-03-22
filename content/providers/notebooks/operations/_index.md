@@ -134,7 +134,15 @@ $ terraform apply
 ```
 
 Your VMs are up and running, it\'s time to get kubernetes configured and
-running with ansible:
+running with ansible.
+
+The following ansible role needs to be installed first:
+
+``` {.shell}
+$ ansible-galaxy install grycap.kubernetes
+```
+
+and then:
 
 ``` {.shell}
 $ cd ..   # you should be now in <new provider>
@@ -185,7 +193,7 @@ $ terraform destroy
 
 Once the k8s cluster is up and running, you can deploy a notebooks
 instance. For each deployment you should create a file in the
-[deployments]{.title-ref} directory following the template provided:
+*deployments* directory following the template provided:
 
 ``` {.shell}
 $ cp deployments/hub.yaml.template deployments/hub.yaml
@@ -202,7 +210,7 @@ management](https://aai-demo.egi.eu/oidc/manage/admin/clients). Use the
 following as redirect URL:
 `https://<your host domain name>/hub/oauth_callback`.
 
-In the [Access]{.title-ref} tab, add `offline_access` to the list of
+In the *Access* tab, add `offline_access` to the list of
 scopes. Save the client and take note of the client ID and client secret
 for later.
 
@@ -336,4 +344,4 @@ Note that this is still an alpha release! If you have questions, feel free to
 
 ### Updating a deployment
 
-Just edit the deployment description file and run ansible again. The
+Just edit the deployment description file and run ansible again. The helm will be upgraded at the cluster.
