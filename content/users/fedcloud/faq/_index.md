@@ -105,7 +105,7 @@ first allocating a new public IP and then assigning it to the VM.
 
 If you need a domain name for your VMs, we offer a Dynamic DNS service
 that allows any EGI user to create names for VMs under the
-[fedcloud.eu]{.title-ref} domain.
+*fedcloud.eu* domain.
 
 Just go to [EGI Cloud nsupdate](https://nsupdate.fedcloud.eu) and login
 with your Check-in account. Once in, you can click on \"Add host\" to
@@ -142,7 +142,7 @@ This will generate two files:
 -   `fedcloud.pub`, the public key. That will be sent to your VM.
 
 To inject the public SSH key into the VM you can use the
-[key-name]{.title-ref} option when creating the VM in OpenStack. Check
+`key-name` option when creating the VM in OpenStack. Check
 [keypair
 management](https://docs.openstack.org/python-openstackclient/pike/cli/command-objects/keypair.html)
 option in OpenStack documentation. This key will be available for the
@@ -201,4 +201,3 @@ correct public keys in the VMs to be able to access.
 If you don\'t have public IPs for all the VMs to be managed, you can
 also use one as a gateway as described in the [Ansible
 FAQ](https://docs.ansible.com/ansible/latest/reference_appendices/faq.html#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to).
-
