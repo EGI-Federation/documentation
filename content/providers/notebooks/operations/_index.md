@@ -193,7 +193,7 @@ $ terraform destroy
 
 Once the k8s cluster is up and running, you can deploy a notebooks
 instance. For each deployment you should create a file in the
-*deployments* directory following the template provided:
+`deployments` directory following the template provided:
 
 ``` {.shell}
 $ cp deployments/hub.yaml.template deployments/hub.yaml
