@@ -111,7 +111,7 @@ the sections below some useful commands for the EGI Cloud.
 
 It\'s possible to register an ssh key that can later be used as the
 default ssh key for the default user of the VM (via the `--key-name`
-argument to *openstack server create*:
+argument to `openstack server create`:
 
 ``` {.console}
 openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
