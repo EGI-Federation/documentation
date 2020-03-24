@@ -31,7 +31,6 @@ npm install autoprefixer
 ```
 The supported Hugo version packages are available under the `binaries` folder.
 
-
 To build the site, from the repository root
 
 ```console
