@@ -17,7 +17,7 @@ Sources to build [EGI documentation static pages](https://egi-foundation.github.
   - postcss-cli
   - autoprofixer
 
-### Local installation and build
+### Installing dependencies, building and testing
 
 To install npm+nodejs please check the instructions at:
 https://www.npmjs.com/get-npm
