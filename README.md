@@ -11,13 +11,40 @@ Sources to build [EGI documentation static pages](https://egi-foundation.github.
 
 ### Requirements
 
+- mdl
 - hugo
 - NodeJS
   - postcss-cli
   - autoprofixer
 
+### Installing dependencies, building and testing
 
-The `.travis.yml` can be used as an example to see how to build the documentation.
+To install npm+nodejs please check the instructions at:
+https://www.npmjs.com/get-npm
+
+The rest of the tools can be installed as follows:
+
+```console
+gem install mdl
+npm install postcss-cli
+npm install autoprefixer
+```
+The supported Hugo version packages are available under the `binaries` folder.
+
+To build the site, from the repository root
+
+```console
+mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
+./binaries/<platform>/hugo
+```
+
+To test your changes:
+
+```console
+./binaries/<platform>/hugo server -D
+```
+
+The website is available locally at: http://localhost:1313/
 
 ## Usage
 
@@ -35,16 +62,6 @@ Updating the submodule
 git submodule foreach git pull
 git ci themes/docsy -m 'Update theme'
 ```
-
-### Testing locally
-
-The supported Hugo version packages are available under the `binaries` folder.
-
-```console
-./binaries/<platform>/hugo server -D
-```
-
-The website is available locally at: http://localhost:1313/
 
 ### Deploying to the EGI organisation pages
 
