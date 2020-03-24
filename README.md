@@ -35,6 +35,7 @@ To build the site, from the repository root
 
 ```console
 mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
+<<<<<<< HEAD
 ./binaries/<platform>/hugo
 ```
 
@@ -45,6 +46,9 @@ To test your changes:
 ```
 
 The website is available locally at: http://localhost:1313/
+=======
+
+```
 
 ## Usage
 
