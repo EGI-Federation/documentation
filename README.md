@@ -36,7 +36,7 @@ To build the site, from the repository root
 
 ```console
 mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
-./binaries/<platform>/hugo 
+./binaries/<platform>/hugo
 ```
 
 To test your changes:
