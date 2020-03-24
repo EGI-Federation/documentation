@@ -35,7 +35,6 @@ To build the site, from the repository root
 
 ```console
 mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
-<<<<<<< HEAD
 ./binaries/<platform>/hugo
 ```
 
@@ -45,17 +44,6 @@ To test your changes:
 ./binaries/<platform>/hugo server -D
 ```
 
-=======
-./binaries/<platform>/hugo 
-```
-
-To test your changes:
-
-```console
-./binaries/<platform>/hugo server -D
-```
-
->>>>>>> merge installation and testing section
 The website is available locally at: http://localhost:1313/
 
 ## Usage
