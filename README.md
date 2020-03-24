@@ -29,9 +29,8 @@ The rest of the tools can be installed as follows:
 gem install mdl
 npm install postcss-cli
 npm install autoprefixer
+brew install hugo
 ```
-
-Binary versions of Hugo for Linux 64 bit and MacOS 64 are included in the repository under `binaries`.
 
 To build the site, from the repository root
 
