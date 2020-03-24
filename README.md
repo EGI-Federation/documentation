@@ -20,7 +20,6 @@ Sources to build [EGI documentation static pages](https://egi-foundation.github.
 ### Local installation and build
 
 To install npm+nodejs please check the instructions at:
-
 https://www.npmjs.com/get-npm
 
 The rest of the tools can be installed as follows:
