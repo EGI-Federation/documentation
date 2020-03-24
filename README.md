@@ -17,7 +17,7 @@ Sources to build [EGI documentation static pages](https://egi-foundation.github.
   - postcss-cli
   - autoprofixer
 
-#### Installation and build
+### Installation and build
 
 To install npm+nodejs please check the instructions at 
 
@@ -37,7 +37,7 @@ To build the site, from the repository root
 
 ```console
 mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
-
+hugo
 ```
 
 ## Usage
