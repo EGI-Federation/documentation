@@ -28,7 +28,6 @@ offers:
     partition,
 -   Chipster (v3.16.3).
 
-
 For accessing this testbed you need to be a member of the [Applications
 on Demand](https://www.egi.eu/services/applications-on-demand/).
 
