@@ -24,9 +24,9 @@ offers:
 -   8 vCPU cores,
 -   32GB of RAM,
 -   1TB of block storage in /data,
--   Software and tools (v3.12.3) are in available under the
-    /cvmfs/chipster.egi.eu/ partition,
--   Chipster (v3.12.3).
+-   Software and tools are in available under the `/cvmfs/tools_*`
+    partition,
+-   Chipster (v3.16.3).
 
 For accessing this testbed you need to be a member of the [Applications
 on Demand](https://www.egi.eu/services/applications-on-demand/).
