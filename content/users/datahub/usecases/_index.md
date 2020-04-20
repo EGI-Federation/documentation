@@ -6,7 +6,7 @@ description: "EGI DataHub Use Cases"
 weight: 20
 ---
 
-An overiew of the use cases and possible deployment scenarios of the EGI DataHub
+An overview of the use cases and possible deployment scenarios of the EGI DataHub
 
 ## Transparent data access
 
