@@ -6,8 +6,6 @@ description: "Documentation for installation/configuration of OneProvider to joi
 weight: 20
 ---
 
-=======
-
 This documentation covers how to install and configure a OneData OneProvider in order to join 
 a new or existing DataHub space.
 In particular 2 types of installations are available, depending if the provider wants to support the 
@@ -73,7 +71,7 @@ empty storage.
 
 When adding support to an existing or new space you should select from the EGI DataHub GUI the tab : `Expose Existing dat set` and there you will have just to copy the command having already the correct parameters for the OneZone to use (datahub.egi.eu) and the space to join.
 
-![image](add-support-oneprovider-expose.png)
+![image](onedatify-oneprovider-expose.png)
 
 ### Run the command on the host
 
