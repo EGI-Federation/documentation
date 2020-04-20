@@ -6,6 +6,8 @@ description: "Documentation for installation/configuration of OneProvider to joi
 weight: 20
 ---
 
+=======
+
 This documentation covers how to install and configure a OneData OneProvider in order to join 
 a new or existing DataHub space.
 In particular 2 types of installations are available, depending if the provider wants to support the 
@@ -76,8 +78,6 @@ When adding support to an existing or new space you should select from the EGI D
 ### Run the command on the host
 
 Paste the copied command in the terminal on the OneProvider machine (as superuser) and follow the instructions as for the case of an empty storage.
-
-The only difference is that at the end of the installation and configuration process the existing files will be automatically imported to the OneProvider. You can monitor the import activity from the WebUI Admin panel at port 9443:
 
 ![image](onedatify_step_6.png)
 
