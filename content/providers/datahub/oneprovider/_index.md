@@ -64,7 +64,7 @@ After the deployment is complete, the following message will be shown, with conn
 
 ![image](onedatify_step_5.png)
 
-The WebUI Admin portal at port 9443 can be used to administer the OneProvider installation.
+The WebUI Admin portal at port 9443 can be used to administer the OneProvider installation
 
 ##  Installation and expose existing data to the EGI DataHub
 
