@@ -77,9 +77,8 @@ When adding support to an existing or new space you should select from the EGI D
 
 Paste the copied command in the terminal on the OneProvider machine (as superuser) and follow the instructions as for the case of an empty storage.
 
-The only difference is that at the end of the installation and configuration process the existing files will be automatically imported to the OneProvider. You can monitor the import activity from the WebUI Admin panel at port 9443
+The only difference is that at the end of the installation and configuration process the existing files will be automatically imported to the OneProvider. You can monitor the import activity from the WebUI Admin panel at port 9443:
 
 ![image](onedatify_step_6.png)
-
 
 ![image](onedata-logo.png)
