@@ -66,8 +66,7 @@ The WebUI Admin portal at port 9443 can be used to administer the OneProvider in
 
 ##  Installation and expose existing data to the EGI DataHub
 
-The installation of a new OneProvider to expose existing data sets to an EGI DataHub space is similar to the installation with an 
-empty storage.
+The installation of a new OneProvider to expose existing data sets to an EGI DataHub space is similar to the installation with an empty storage.
 
 When adding support to an existing or new space you should select from the EGI DataHub GUI the tab : `Expose Existing dat set` and there you will have just to copy the command having already the correct parameters for the OneZone to use (datahub.egi.eu) and the space to join.
 
@@ -76,6 +75,10 @@ When adding support to an existing or new space you should select from the EGI D
 ### Run the command on the host
 
 Paste the copied command in the terminal on the OneProvider machine (as superuser) and follow the instructions as for the case of an empty storage.
+
+The only difference is that at the end of the installation and configuration process the existing files will be automatically imported to the OneProvider. 
+
+You can monitor the import activity from the WebUI Admin panel at port 9443
 
 ![image](onedatify_step_6.png)
 
