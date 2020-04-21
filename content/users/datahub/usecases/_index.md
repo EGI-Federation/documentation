@@ -6,7 +6,7 @@ description: "EGI DataHub Use Cases"
 weight: 20
 ---
 
-An overview of the use cases and possible deployment scenarios of the EGI DataHub
+An overview of the use cases and possible deployment scenarios of the EGI DataHub.
 
 ## Transparent data access
 
@@ -44,6 +44,3 @@ An overview of the use cases and possible deployment scenarios of the EGI DataHu
 ## Integrating DataHub and EGI Notebooks
 
 ![image](datahub-notebooks-integration.png)
-
-
-
