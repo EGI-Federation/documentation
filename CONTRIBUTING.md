@@ -27,7 +27,7 @@ made in two ways:
   viewing (See [GitHub
   documented](https://help.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository)).
   You will be guided through the required steps.
-- for more complete contributions and when you want to preview and test changes
+- for more complex contributions and when you want to preview and test changes
   locally you should fork the repository as documented below.
 
 ### Contributing via a Pull Request
