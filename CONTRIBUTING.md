@@ -22,7 +22,7 @@ including a wider community scope.
 All contributions have to go through a review process, and contributions can be
 made in two ways:
 
-- for simple contribution you can contribute from your browser by clickink the
+- for simple contribution you can contribute from your browser by clicking the
   **pencil** `Edit this file` icon shown at the top of a page that you are
   viewing (See [GitHub
   documented](https://help.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository)).
