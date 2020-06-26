@@ -1,10 +1,14 @@
 ---
 os: linux
 dist: xenial
-language: ruby
+language: node_js
+# NodeJS 12 is maintained until 2022-04-30
+# https://nodejs.org/en/about/releases/
+node_js:
+  - 12
 git:
   submodules: true
-install:
+before_install:
   - gem install mdl
   - npm install postcss-cli
   - npm install autoprefixer
