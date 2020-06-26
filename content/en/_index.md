@@ -18,12 +18,12 @@ description: "Documentation related to EGI activities"
     Learn More about EGI <i class="fas fa-arrow-alt-circle-right ml-2"></i>
   </a>
 
-  <a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/EGI-Foundation/documentation">
+  <a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/EGI-Foundation/documentation/blog/master/CONTRIBUTING.md">
     Contribute <i class="fab fa-github ml-2 "></i>
   </a>
   <p class="lead mt-5">EGI Documentation for users and service providers.</p>
 
-  {{< blocks/link-down color="info" >}}
+{{< blocks/link-down color="info" >}}
 
 </div>
 {{< /blocks/cover >}}
