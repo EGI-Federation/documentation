@@ -1,13 +1,15 @@
 ---
 os: linux
 dist: xenial
-language: ruby
+language: node_js
+node_js:
+  - lts/12
 git:
   submodules: true
-install:
+before_install:
   - gem install mdl
-  - npm install postcss-cli
-  - npm install autoprefixer
+  - npm install -g postcss-cli
+  - npm install -g autoprefixer
 script:
   # Markdown linting
   # https://github.com/markdownlint/markdownlint
