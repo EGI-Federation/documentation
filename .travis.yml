@@ -2,8 +2,9 @@
 os: linux
 dist: xenial
 language: node_js
+# NodeJS 12 is maintained until 2020-04-30
 node_js:
-  - lts/12
+  - 12
 git:
   submodules: true
 before_install:
