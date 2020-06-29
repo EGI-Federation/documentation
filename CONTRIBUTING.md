@@ -19,22 +19,37 @@ including a wider community scope.
 
 ## Contribution Process
 
+All contributions have to go through a review process, and contributions can be
+made in two ways:
+
+- for simple contribution you can contribute from your browser by clicking the
+  **pencil** `Edit this file` icon shown at the top of a page that you are
+  viewing (See [GitHub
+  documented](https://help.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository)).
+  You will be guided through the required steps.
+- for more complex contributions and when you want to preview and test changes
+  locally you should fork the repository as documented below.
+
+### Contributing via a Pull Request
+
 Before proposing a contribution via pull request, ideally there is an open
 issue describing the need for your contribution (refer to this issue number
-when you submit the pull request). We have a 3 step process for contributions.
+when you submit the pull request). We have a 3 steps process for contributions.
 
-  1. Fork the project if you have not, and commit changes to a git branch
-  1. Create a GitHub Pull Request for your change, following the instructions
-     in the pull request template.
-  1. Perform a [Code Review](#code-review-process) with the maintainers on the
-     pull request.
+1. Fork the project if you have not, and commit changes to a git branch.
+   Documentation on building the documentation locally is available in the
+   [README.md](README.md)
+1. Create a GitHub Pull Request for your change, following the instructions
+   in the pull request template.
+1. Perform a [Code Review](#code-review-process) with the maintainers on the
+   pull request.
 
 ### Pull Request Requirements
 
-  1. **Explain your contribution in plain language.** To assist the maintainers
-     in understanding and appreciating your pull request, please use the
-     template to explain _why_ you are making this contribution, rather than
-     just _what_ the contribution entails.
+1. **Explain your contribution in plain language.** To assist the maintainers
+   in understanding and appreciating your pull request, please use the
+   template to explain _why_ you are making this contribution, rather than
+   just _what_ the contribution entails.
 
 ### Code Review Process
 
@@ -48,7 +63,7 @@ follows:
 
 1. A maintainer will review your code and merge it if no changes are necessary.
    Your change will be merged into the repository's `master` branch.
-1. If a maintainer has feedback or questions on your changes they they will set
+1. If a maintainer has feedback or questions on your changes then they will set
    `request changes` in the review and provide an explanation.
 
 ## Using git
@@ -64,7 +79,7 @@ You should submit your patch as a git branch named after the Github issue, such
 as `#3`\. This is called a _topic branch_ and allows users to associate a
 branch of code with the issue.
 
-It is a best practice to have your commit message have a _summary line_ that
+It is the best practice to have your commit message have a _summary line_ that
 includes the issue number, followed by an empty line and then a brief
 description of the commit. This also helps other contributors understand the
 purpose of changes to the code.
