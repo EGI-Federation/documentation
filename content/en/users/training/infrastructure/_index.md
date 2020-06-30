@@ -3,11 +3,11 @@ title: "Training Infrastructure"
 type: docs
 weight: 100
 description: >
-  The training infrastructure on EGI Cloud 
+  The training infrastructure on EGI Cloud
 ---
 
 The training infrastructure is a resource pool within the EGI Federated
-Cloud infrascture providing IaaS as well ass access services (login,
+Cloud infrascture providing IaaS as well as access services (login,
 application catalogue and application management portal) for
 face-to-face events, online training courses or self-paced learning
 modules.
@@ -29,26 +29,26 @@ from EGI Community Forum 2015, Bari. (Outdated in some parts).
 
 The training infrastructure is suitable for two types of courses:
 
--   Cloud computing courses: Such courses teach students about IaaS
-    clouds and on how Virtual Appliances, Virtual Machines, block
-    storage and other types of 'low level' resources are managed. For
-    such courses, the trainer does not need to deploy applications or
-    online services in advance of the course. The applications/services
-    will be deployed by the students themselves as training exercises.
-    Such courses typically target developers or other rather technical
-    members of scientific communities or projects.
--   Scientific courses: Such courses teach scientists or developers
-    about a specific software suite relevant for their work. For example
-    a specific gene sequence analysis application, an earthquake
-    visualisation tool, or a data processing pipeline. In this
-    operational mode, the trainer deploys the domain specific
-    application/tool on the training infrastructure before the training
-    and the students interact directly with those applications/tools
-    without even knowing where those are deployed and running. Depending
-    on how computationally or data intensive the exercises are, multiple
-    students may share a single software deployment instance, or each
-    student can have their own. The configuration can be controlled by
-    the trainer when the setup is deployed.
+- Cloud computing courses: Such courses teach students about IaaS
+  clouds and on how Virtual Appliances, Virtual Machines, block
+  storage and other types of 'low level' resources are managed. For
+  such courses, the trainer does not need to deploy applications or
+  online services in advance of the course. The applications/services
+  will be deployed by the students themselves as training exercises.
+  Such courses typically target developers or other rather technical
+  members of scientific communities or projects.
+- Scientific courses: Such courses teach scientists or developers
+  about a specific software suite relevant for their work. For example
+  a specific gene sequence analysis application, an earthquake
+  visualisation tool, or a data processing pipeline. In this
+  operational mode, the trainer deploys the domain specific
+  application/tool on the training infrastructure before the training
+  and the students interact directly with those applications/tools
+  without even knowing where those are deployed and running. Depending
+  on how computationally or data intensive the exercises are, multiple
+  students may share a single software deployment instance, or each
+  student can have their own. The configuration can be controlled by
+  the trainer when the setup is deployed.
 
 In both cases the deployment of applications/tools/services can happen
 in the form of 'Virtual Appliances' (VAs), and block storage - the
@@ -107,55 +107,55 @@ on the 3 providers.
 The presentations and hands-on materials from the events are available
 here:
 
--   [EGI Federated Cloud tutorial package (Software Carpentry Bootcamp,
-    17 July 2015 Feltham, London,
-    UK)](https://documents.egi.eu/document/2551).
--   [EGI Federated Cloud tutorial package (HPCS 2015 conference, 20-24
-    July 2015, Amsterdam, NL)](https://documents.egi.eu/document/2553).
--   [EGI Federated Cloud for users (Training for MTA SZTAKI, 14 October
-    2015, Budapest, HU)](https://documents.egi.eu/document/2622).
--   [Next Generation Sequencing Analysis Training Workshop (21 October,
-    2015, Thessaloniki, GR)](https://documents.egi.eu/document/2641).
--   [Tutorials at the EGI Community Forum (10-12 November 2015, Bari,
-    IT)](https://indico.egi.eu/indico/internalPage.py?pageId=7&confId=2544).
-    -   Introduction to the EGI Federated Cloud -- the user perspective
-    -   Dos and Don\'ts for Virtual Appliance Preparation
-    -   DIRAC Service tutorial
-    -   Running Chipster data analysis platform in EGI Federated Cloud
-    -   NGS Data Analysis Training Workshop
-    -   Programming Distributed Computing Platforms with COMPSs
-    -   A Tutorial on Hybrid Data Infrastructures: D4Science as a case
-        study
--   EGI Technical Support for ENVRI+ Use Cases Workshop (May 2016,
-    Zandvoord, NL).
--   [Running CHIPSTER, Galaxy, Jupyter Notebook on the EGI Federated
-    Cloud (ELIXIR-FI workshop)](https://documents.egi.eu/document/2822).
--   [EGI Federated Cloud for developers (DI4R, 28 September 2016,
-    Krakow,
-    PL)](https://www.digitalinfrastructures.eu/content/egi-federated-cloud-developers).
--   [UberCloud - EGI webinar: Cloud for SMEs in CAE -- OpenFOAM demo (20
-    October 2016)](https://www.egi.eu/blog/egi-and-ubercloud-webinar-for-smes-cae-openfoam-demo-20oct2016/);
-    [Webinar recording](https://www.youtube.com/watch?v=DU6LghOtrFs&feature=youtu.be).
--   [EGI training (ENVRIplus week, 14-18 November 2016, Prague,
-    CZ)](https://documents.egi.eu/document/3005).
--   [MEDGENET-Workshop INAB (15 December 2016, Thessaloniki,
-    GR)](http://tinyurl.com/medgenet).
--   [Cloud Tutorial at EUDAT summer School (03-07 July 2017, Heraklion,
-    GR)](https://www.eudat.eu/eudat-summer-school).
--   [CODATA-RDA Research Data Science Summer School (21 July, 2017,
-    Trieste, IT)](https://documents.egi.eu/document/3168).
--   [Scipion tutorial on Cloud (17-19 January 2017, Madrid,
-    ES)](http://i2pc.es/instruct-course-on-image-processing-for-electron-microscopy-in-the-cloud-madrid-january-17-19-2018/).
--   [CODATA-RDA Research Data Science Summer School (17 August 2018,
-    Trieste,
-    IT)](https://documents.egi.eu/public/ShowDocument?docid=3349).
--   [NGSchool 2018](https://ngschool.eu/).
--   [3rd Int\'l Summer School on Data Science
-    (SSDS 2018)](https://sites.google.com/site/ssdatascience2018/).
--   [Training for PhD students at the University of Genoa (04
-    June 2019)](http://dottorato.dicca.unige.it/eng/schede_corsi_2019/eScience%20new%20information%20technologies%20for%20research.pdf).
--   [Introduction to Jupyter and Open Science - Training (27 September
-    2019, Yervan)](http://go.egi.eu/eapec2019).
+- [EGI Federated Cloud tutorial package (Software Carpentry Bootcamp,
+  17 July 2015 Feltham, London,
+  UK)](https://documents.egi.eu/document/2551).
+- [EGI Federated Cloud tutorial package (HPCS 2015 conference, 20-24
+  July 2015, Amsterdam, NL)](https://documents.egi.eu/document/2553).
+- [EGI Federated Cloud for users (Training for MTA SZTAKI, 14 October
+  2015, Budapest, HU)](https://documents.egi.eu/document/2622).
+- [Next Generation Sequencing Analysis Training Workshop (21 October,
+  2015, Thessaloniki, GR)](https://documents.egi.eu/document/2641).
+- [Tutorials at the EGI Community Forum (10-12 November 2015, Bari,
+  IT)](https://indico.egi.eu/indico/internalPage.py?pageId=7&confId=2544).
+  - Introduction to the EGI Federated Cloud -- the user perspective
+  - Dos and Don\'ts for Virtual Appliance Preparation
+  - DIRAC Service tutorial
+  - Running Chipster data analysis platform in EGI Federated Cloud
+  - NGS Data Analysis Training Workshop
+  - Programming Distributed Computing Platforms with COMPSs
+  - A Tutorial on Hybrid Data Infrastructures: D4Science as a case
+    study
+- EGI Technical Support for ENVRI+ Use Cases Workshop (May 2016,
+  Zandvoord, NL).
+- [Running CHIPSTER, Galaxy, Jupyter Notebook on the EGI Federated
+  Cloud (ELIXIR-FI workshop)](https://documents.egi.eu/document/2822).
+- [EGI Federated Cloud for developers (DI4R, 28 September 2016,
+  Krakow,
+  PL)](https://www.digitalinfrastructures.eu/content/egi-federated-cloud-developers).
+- [UberCloud - EGI webinar: Cloud for SMEs in CAE -- OpenFOAM demo (20
+  October 2016)](https://www.egi.eu/blog/egi-and-ubercloud-webinar-for-smes-cae-openfoam-demo-20oct2016/);
+  [Webinar recording](https://www.youtube.com/watch?v=DU6LghOtrFs&feature=youtu.be).
+- [EGI training (ENVRIplus week, 14-18 November 2016, Prague,
+  CZ)](https://documents.egi.eu/document/3005).
+- [MEDGENET-Workshop INAB (15 December 2016, Thessaloniki,
+  GR)](http://tinyurl.com/medgenet).
+- [Cloud Tutorial at EUDAT summer School (03-07 July 2017, Heraklion,
+  GR)](https://www.eudat.eu/eudat-summer-school).
+- [CODATA-RDA Research Data Science Summer School (21 July, 2017,
+  Trieste, IT)](https://documents.egi.eu/document/3168).
+- [Scipion tutorial on Cloud (17-19 January 2017, Madrid,
+  ES)](http://i2pc.es/instruct-course-on-image-processing-for-electron-microscopy-in-the-cloud-madrid-january-17-19-2018/).
+- [CODATA-RDA Research Data Science Summer School (17 August 2018,
+  Trieste,
+  IT)](https://documents.egi.eu/public/ShowDocument?docid=3349).
+- [NGSchool 2018](https://ngschool.eu/).
+- [3rd Int\'l Summer School on Data Science
+  (SSDS 2018)](https://sites.google.com/site/ssdatascience2018/).
+- [Training for PhD students at the University of Genoa (04
+  June 2019)](http://dottorato.dicca.unige.it/eng/schede_corsi_2019/eScience%20new%20information%20technologies%20for%20research.pdf).
+- [Introduction to Jupyter and Open Science - Training (27 September
+  2019, Yervan)](http://go.egi.eu/eapec2019).
 
 ## Booking the infrastructure
 
@@ -163,4 +163,4 @@ The infrastructure currently includes enough capacity to scale up to
 class-room size audiences, approximately up to 100 participants.
 
 Do you want to book the infrastructure for a course? Please send a
-request through <https://www.egi.eu/services/training-infrastructure/>
+request through [our website](https://www.egi.eu/services/training-infrastructure/).
