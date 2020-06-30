@@ -20,9 +20,14 @@ content/*/users/ @enolfc @glaroccca @andrea-manzi
 
 # DataHub
 content/*/users/datahub/ @andrea-manzi
+content/*/providers/datahub/ @andrea-manzi
 
 # FedCloud
 content/*/users/fedcloud/ @enolfc
+content/*/providers/fedcloud/ @enolfc
+
+# Notebooks
+content/*/providers/notebooks/ @enolfc @andrea-manzi
 
 # Training
 content/*/training/ @glaroccca
