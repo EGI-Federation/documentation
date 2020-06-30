@@ -28,4 +28,4 @@ content/*/*/fedcloud/ @enolfc
 content/*/*/notebooks/ @enolfc @andrea-manzi
 
 # Training
-content/*/training/ @glaroccca
+content/*/users/training/ @glaroccca
