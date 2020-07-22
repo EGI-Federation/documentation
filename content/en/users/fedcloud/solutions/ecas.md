@@ -94,7 +94,7 @@ Specifically, the general wizard steps include:
 -   **Cluster's size and name**: the name of the cluster and the maximum
     number of nodes of the cluster, without including the front-end.
     This value indicates the maximum number of working nodes that the
-    cluster can scale. Initially, the cluster is created with the
+    cluster can scale to. Initially, the cluster is created with the
     front-end and only one working node: the other working nodes will be
     powered on on-demand.
 
