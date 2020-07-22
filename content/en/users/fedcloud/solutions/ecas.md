@@ -142,7 +142,7 @@ Last login: Mon Nov 18 11:37:29 2019 from torito.i3m.upv.es
 ```
 
 Both the front-end and the working node are configured by Ansible. This
-process usually takes some time. User can monitor the status of the
+process usually takes some time. The user can monitor the status of the
 cluster configuration using the `is_cluster_ready` command-line tool:
 
 ``` {.console}
