@@ -34,6 +34,7 @@ The supported Hugo version packages are available under the `binaries` folder.
 To build the site, from the repository root
 
 ```console
+git submodule update --init --recursive --depth 1
 mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
 ./binaries/<platform>/hugo
 ```
