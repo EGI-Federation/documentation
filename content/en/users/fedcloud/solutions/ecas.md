@@ -87,7 +87,7 @@ Specifically, the general wizard steps include:
 ![Operating System selection.](../ecas-os.png)
 
 -   **Instance details**, in terms of CPU and RAM to allocate for the
-    front-endu and the working nodes.
+    front-end and the working nodes.
 
 ![Instance details.](../ecas-instance.png)
 
