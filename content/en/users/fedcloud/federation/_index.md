@@ -261,7 +261,7 @@ user. A table defining v0.2 of the format is shown below:
 | GlobalUserName | `varchar(255)` | No | See Cloud Usage Record |
 | FQAN | `varchar(255)` | No | See Cloud Usage Record |
 | IPVersion | `byte` | No | 4 or 6 |
-| IPCount | `int(11)` | No | The number of IP addresses of IPType this user currently assigned to them |
+| IPCount | `int(11)` | No | The number of IP addresses of IPVersion this user currently assigned to them |
 
 A JSON schema defining a valid Public IP Usage message can be found at:
 <https://github.com/apel/apel/blob/9476bd86424f6162c3b87b6daf6b4270ceb8fea6/apel/db/__init__.py>
