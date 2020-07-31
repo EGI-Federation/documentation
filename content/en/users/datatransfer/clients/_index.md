@@ -1,8 +1,9 @@
 ---
-title: "Data Transfer"
-linkTitle: "Data Transfer"
+---
+title: "Clients"
+linkTitle: "Clients"
 type: docs
-description: "Documentation related to EGI Data Transfer"
+description: "Documentation related to EGI Data Transfer Clients"
 weight: 30
 ---
 

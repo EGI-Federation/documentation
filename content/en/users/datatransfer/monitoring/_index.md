@@ -1,8 +1,8 @@
 ---
-title: "Data Transfer"
-linkTitle: "Data Transfer"
+title: "Monitoring"
+linkTitle: "Monitoring"
 type: docs
-description: "Documentation related to EGI Data Transfer"
+description: "Documentation related to EGI Data Transfer Monitoring"
 weight: 30
 ---
 

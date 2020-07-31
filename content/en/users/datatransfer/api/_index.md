@@ -1,8 +1,8 @@
 ---
-title: "Data Transfer"
-linkTitle: "Data Transfer"
+title: "API"
+linkTitle: "API"
 type: docs
-description: "Documentation related to EGI Data Transfer"
+description: "Documentation EGI Data Transfer API"
 weight: 30
 ---
 
@@ -44,12 +44,12 @@ FTS3 REST
 
 FTS3 Monitoring  
 
-: A Web interface to  monitor transfers actovity and server parameters
+: A Web interface to  monitor transfers activity and server parameters
  
 
 WebFTS
 
-: A web interface that provides a file transfer and management solution in order to allow users to invoke reliable, managed data transfers on distributed infrastructures
+: A Web interface that provides a file transfer and management solution 
 
 
 

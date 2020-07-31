@@ -1,8 +1,8 @@
 ---
-title: "Data Transfer"
-linkTitle: "Data Transfer"
+title: "WebFTS"
+linkTitle: "WebFTS"
 type: docs
-description: "Documentation related to EGI Data Transfer"
+description: "Documentation related to EGI Data Transfer Web Interface"
 weight: 30
 ---
 
