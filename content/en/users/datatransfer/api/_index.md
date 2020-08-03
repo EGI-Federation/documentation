@@ -156,7 +156,6 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
 ### Cancelling a job
 
 ```sh
-=======
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY \
   https://fts3-pilot.cern.ch:8446/jobs/a40b82b7-1132-459f-a641-f8b49137a713 -X DELETE
 ```
