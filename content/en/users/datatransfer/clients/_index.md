@@ -108,7 +108,7 @@ Options
 #### Example
 
 ```console
-$  fts-rest-delegate -s https://fts3-public.cern.ch:8446
+$ fts-rest-delegate -s https://fts3-public.cern.ch:8446
 Delegation id: 9ab8068853808c6b
 ```
 
@@ -275,7 +275,7 @@ Options
 #### Example
 
 ```console
-$ fts-rest-transfer-status -s  https://fts3-public.cern.ch:8446 7e02b4fa-d568-11ea-9c80-02163e018681
+$ fts-rest-transfer-status -s https://fts3-public.cern.ch:8446 7e02b4fa-d568-11ea-9c80-02163e018681
 Request ID: 7e02b4fa-d568-11ea-9c80-02163e018681
 Status: FAILED
 Client DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi

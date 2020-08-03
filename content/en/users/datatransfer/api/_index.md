@@ -181,7 +181,7 @@ The Python bindings for FTS can be installed from the EPEL package repository
 yum install python-fts -y
 ```
 
-For using the  bindings, you need to import `fts3.rest.client.easy`, although for 
+For using the bindings, you need to import `fts3.rest.client.easy`, although for 
 convenience it can be renamed as something else:
 
 ```console

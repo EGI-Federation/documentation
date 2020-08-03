@@ -13,7 +13,7 @@ It allows you to move any type of data files asynchronously from one storage to 
 The service includes dedicated interfaces to display statistics of on-going transfers
 and manage storage resources parameters.
 
-The EGI  Data Transfer is ideal to move large amounts of files or very large files as
+The EGI Data Transfer is ideal to move large amounts of files or very large files as
 the service has mechanisms to verify checksums and ensure automatic retry in case of 
 failures.
 
@@ -21,7 +21,7 @@ failures.
 
 Simplicity
 
-: Easy user interfaces for submitting transfers:  CLI, Python Bindings, WebFTS and Web 
+: Easy user interfaces for submitting transfers: CLI, Python Bindings, WebFTS and Web 
 Monitoring.  
 
 Reliability
@@ -50,7 +50,7 @@ FTS3 REST
 
 FTS3 Monitoring  
 
-: A Web interface to  monitor transfers activity and server parameters
+: A Web interface to monitor transfers activity and server parameters
 
 WebFTS
 

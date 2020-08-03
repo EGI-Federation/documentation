@@ -55,7 +55,7 @@ Browse the content and select all the files you want to transfer. `CTRL` and `SH
 for selecting multiple entries at once.
 
 If you need to filter the list of files and folders, you can use the available filters: 
-name, size and date.  Once you have loaded both endpoints and selected the files, the transfer 
+name, size and date. Once you have loaded both endpoints and selected the files, the transfer 
 buttons will be enabled.
 Click the button with the correct direction. A success or error message will appear above the 
 endpoints' containers. 
