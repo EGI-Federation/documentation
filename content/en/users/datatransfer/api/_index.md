@@ -171,7 +171,6 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509
 }
 ```
 
-
 ## Python Bindings
 
 The Python bindings for FTS can be installed from the EPEL package repository 
@@ -206,7 +205,7 @@ for instance ```https://fts3-public.cern.ch:8446```
 If you are using a proxy certificate, you can either specify only user_certificate, 
 or point both parameters to the proxy. user_certificate and user_key can be safely 
 omitted, and the program will use the values defined in the environment variables 
-X509_USER_PROXY or X509_USER_CERT + X509_USER_KEY.
+`X509_USER_PROXY` or `X509_USER_CERT` + `X509_USER_KEY`.
 
 If verify is False, the server certificate will not be verified.
 

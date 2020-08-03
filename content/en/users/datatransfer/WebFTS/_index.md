@@ -9,8 +9,8 @@ weight: 30
 ## Overview 
 
 The WebFTS interface offers end users a way to graphically execute and monitor file 
-transfer between storages using different protocols. You can check CERN WebFTS 
-[documentation](https://fts3-docs.web.cern.ch/fts3-docs/docs/webfts/userguide.html) and 
+transfer between storages using different protocols. You can check CERN [WebFTS 
+documentation](https://fts3-docs.web.cern.ch/fts3-docs/docs/webfts/userguide.html) and 
 [FAQ](https://fts3-docs.web.cern.ch/fts3-docs/docs/webfts/faq.html) for more details.
 
 ### Credential Delegation

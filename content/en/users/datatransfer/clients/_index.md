@@ -326,7 +326,3 @@ $ fts-rest-transfer-cancel -s https://fts3-public.cern.ch:8446
 9a28d204-d568-11ea-9c80-02163e018681
 CANCELED
 ```
-
-
-
-
