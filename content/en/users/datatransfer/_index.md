@@ -25,7 +25,7 @@ Reliability
 
 Flexibility
 
-: Multiprotocol support (Webdav/https, GridFTP, xroot, SRM). 
+: Multi-protocol support (Webdav/https, GridFTP, xrootd, SRM, S3, GCloud). 
 
 Intelligence
 
@@ -35,22 +35,40 @@ Intelligence
 
 FTS3 Server 
 
-: The service is responsible of the aysnchronous execution of the file transfer, checksumming and retries in case of errors
+: The service is responsible of the asynchronous execution of the file transfer, checksumming and retries in case of errors
 
 FTS3 REST  
 
-: The RESTFul server which is contanted by clients via REST APIs, CLI and Python bindings
+: The RESTFul server which is contacted by clients via REST APIs, CLI and Python bindings
 
 
 FTS3 Monitoring  
 
-: A Web interface to  monitor transfers actovity and server parameters
+: A Web interface to  monitor transfers activity and server parameters
  
 
 WebFTS
 
 : A web interface that provides a file transfer and management solution in order to allow users to invoke reliable, managed data transfers on distributed infrastructures
 
+## Service Instances
 
+EGI has signed OLAs with 2 Providers, CERN and STFC, in order to access their FTS3 Service instances.
+
+The following endpoints are available:
+
+### CERN
+
+- [FTS REST](https://fts3-public.cern.ch:8446/)
+
+- [FTS Mon](https://fts3-public.cern.ch/fts3/ftsmon/#/)
+
+- [WebFTS](https://webfts.cern.ch/)
+
+### STFC
+
+- [FTS REST](https://lcgfts3.gridpp.rl.ac.uk:8446)
+
+- [FTS Mon](https://lcgfts3.gridpp.rl.ac.uk:8449/fts3/ftsmon/#/)
 
 

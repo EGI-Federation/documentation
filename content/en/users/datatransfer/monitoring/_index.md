@@ -7,50 +7,28 @@ weight: 30
 ---
 
 ## Overview 
-
-The EGI Data Transfer Service is based on the FTS3 service, developed at CERN. It allows you to move any type of data files asynchronously from one storage to another. The service includes dedicated interfaces to display statistics of on-going transfers and manage storage resources parameters.
-
-The EGI  Data Transfer is ideal to move large amounts of files or very large files as the service has mechanisms to ensure automatic retry in case of failures and checksumming.
+Each instance of the FTS3 service, offers a Web monitoring interface, that can be accessed by end-users in order to monitor their submitted transfers and obtain statistics.
 
 
 ## Features
 
-Simplicity
+The Web monitoring can be accessed without user authentication, only access to the transfer log files needs an X509 user certificate installed on the browser.
 
-: Easy user interfaces for submitting transfers:  CLI, Python Bindings, WebFTS and Web Monitoring.  
+### Overview page  
 
-Reliability
+The Overview page offers a way to access the information about the transfers submitted and executed in the last 6 hours. Users can filter transfers per Virtual Organization, source or destination storage or JobId.
 
-: Checksums and retries are provided per transfer
+![image](ftsmon_overview.png)
 
-Flexibility
+### Job details page
 
-: Multiprotocol support (Webdav/https, GridFTP, xroot, SRM). 
+By selecting a specific job the information about the job details are displayed. Each transfer part of the job is listed with his own information. From this page it's also possible to access the transfer logs (upon authentication).
 
-Intelligence
-
-: Parallel transfers optimization to get the most from network without burning the storages. Priorities/Activities support for transfers classification. 
-
-## Components 
-
-FTS3 Server 
-
-: The service is responsible of the aysnchronous execution of the file transfer, checksumming and retries in case of errors
-
-FTS3 REST  
-
-: The RESTFul server which is contanted by clients via REST APIs, CLI and Python bindings
+![image](ftsmon_details.png)
 
 
-FTS3 Monitoring  
+### Optimizer page  
 
-: A Web interface to  monitor transfers actovity and server parameters
- 
+The Optimizer page shows Optimizer information about a specific link, detailing the throughput evolution and the parallel transfer/stream per link at a given time
 
-WebFTS
-
-: A web interface that provides a file transfer and management solution in order to allow users to invoke reliable, managed data transfers on distributed infrastructures
-
-
-
-
+![image](ftsmon_optimizer.png)

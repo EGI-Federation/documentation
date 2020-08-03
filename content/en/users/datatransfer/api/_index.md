@@ -13,27 +13,27 @@ we are focusing on the User API.
 
 2 APIs are available to users:
 
-* Python Easy Bindings
 * RESTFul API
+* Python Easy Bindings
 
-In both cases users needs a way to be Authenticated and Authorized and this is explained
+
+In both cases users need a way to be authenticated and authorised and this is explained
 in the next section.
 
 ## Authentication & Authorisation
 
 {{% alert title="Warning" color="warning" %}}
 
-Users have to authenticate using a X509 User certificate.The integration 
-with EGI Checkin in order to use OIDC tokens  
+Users have to authenticate using a X509 User certificate. The integration 
+with EGI Check-in in order to authenticate via OIDC tokens  
 is under development and will be soon made available in production endpoints.
 
 {{% /alert %}}
 
-During the Authentication phase, credentials are delegated to the FTS service, which will contact 
+During the authentication phase, credentials are delegated to the FTS service, which will contact 
 the storages to steer the data transfers on behalf of the users.
 
-The FTS service supports both plain X509 proxies than [VOMS](https://italiangrid.github.io/voms/index.html)  X.509 proxies
-extended with VO information for authentication and authorisation.
+The FTS service supports both plain X509 proxies than [VOMS](https://italiangrid.github.io/voms/index.html)  X.509 proxies extended with VO information for authentication and authorisation.
 
 
 ### VOMS configuration
@@ -76,13 +76,13 @@ voms-proxy-init --rfc
 
 ## RESTFul API
 
-The User RESTFul APIs can be used to submit transfers jobs ( collections of single transfers), monitor and cancel existing transfers.
+The User RESTFul APIs can be used to submit transfers jobs (collections of single transfers), monitor and cancel existing transfers.
 
-An overiview of the available API is at:
+An overview of the available API is at:
 
 https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/api.html
 
-Here we will provide some exaples usage using the Curl client.
+Here we will provide some examples usage using the Curl client.
 
 ### Checking how the server sees us
 
@@ -178,7 +178,7 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509
 
 ## Python Bindings
 
-The Python bindins for FTS can be installed from the EPEL package repository (EL6 and EL7 packages are available)
+The Python bindings for FTS can be installed from the EPEL package repository (EL6 and EL7 packages are available)
 
 Python 2.7 is supported
 
@@ -186,7 +186,7 @@ Python 2.7 is supported
 yum install python-fts -y
 ```
 
-For using the  bindings, you need to import fts3.rest.client.easy, althought for convenience it can be renamed as something else
+For using the  bindings, you need to import fts3.rest.client.easy, although for convenience it can be renamed as something else
 
 ``` {.console}
 import fts3.rest.client.easy as fts3
@@ -278,8 +278,6 @@ b6191212-d347-11ea-8a47-fa163e45cbc4
     u'verify_checksum': u't',
     u'vo_name': u'dteam'}
 ```
-
-
 
 Full documentation is available at
 
