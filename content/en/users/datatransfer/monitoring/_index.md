@@ -35,6 +35,6 @@ possible to access the transfer logs (upon authentication).
 ### Optimizer page  
 
 The Optimizer page shows Optimizer information about a specific link, detailing the 
-throughput evolution and the parallel transfer/stream per link at a given time
+throughput evolution and the parallel transfer/stream per link at a given time.
 
 ![image](ftsmon_optimizer.png)

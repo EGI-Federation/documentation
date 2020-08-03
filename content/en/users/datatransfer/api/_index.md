@@ -10,7 +10,7 @@ weight: 30
 
 The EGI Data Transfer service offers API both for Users and Admins, in this section 
 we are focusing on the User API.
-2 APIs are available to users:
+Two APIs are available to users:
 
 - RESTFul API
 - Python Easy Bindings
@@ -28,31 +28,29 @@ is under development and will be later made available in production endpoints.
 
 {{% /alert %}}
 
-During the authentication phase, credentials are delegated to the FTS service, which will \
+During the authentication phase, credentials are delegated to the FTS service, which will
 contact the storages to steer the data transfers on behalf of the users.
 
 The FTS service supports both plain X509 proxies than 
 [VOMS](https://italiangrid.github.io/voms/index.html) X.509 proxies extended with VO 
 information for authentication and authorisation.
 
-
 ### VOMS configuration
 
 Every VO needs two different pieces of information:
 
--   the `vomses` configuration files, where the details of the VO are
-    stored (e.g. name, server, ports). These are stored by default at
-    `/etc/vomses` and are normally named following this convention:
-    `<vo name>.<server name>` 
--   the `.lsc` files that describe the trust chain of the VOMS server.
-    These are stored at `/etc/grid-security/vomsdir/<vo name>` and there
-    should be one file for each of the VOMS server of the VO.
+- the `vomses` configuration files, where the details of the VO are
+  stored (e.g. name, server, ports). These are stored by default at
+  `/etc/vomses` and are normally named following this convention:
+  `<vo name>.<server name>` 
+- the `.lsc` files that describe the trust chain of the VOMS server.
+  These are stored at `/etc/grid-security/vomsdir/<vo name>` and there
+  should be one file for each of the VOMS server of the VO.
 
 You can check specific configuration for your VO at the [Operations
 portal](https://operations-portal.egi.eu/vo). Normally each VOMS server
 has a *Configuration Info* link where the exact information to include
-in the *vomses* and *.lsc* files.
-
+in the `vomses` and `.lsc` files.
 
 VOMS client expects your certificate and private key to be available at
 `$HOME/.globus/usercert.pem` and `$HOME/.globus/userkey.pem`
@@ -68,7 +66,7 @@ create a VOMS proxy to be used with clients (voms-clients package) with:
 voms-proxy-init --voms <name of the vo> --rfc
 ```
 
-Plain proxies can still be created via 
+Plain proxies can still be created via:
 
 ```console
 voms-proxy-init --rfc
@@ -81,7 +79,7 @@ transfers), monitor and cancel existing transfers. Please check the CERN [
 documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/api.html) for the 
 full API details. Here we will provide some examples usage using the Curl client.
 
-### Checking how the server sees us
+### Checking how the server sees the identity of the user
 
 ```console
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY 
@@ -112,13 +110,13 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY
 }
 ```
 
-### Get a List of Jobs Running
+### Getting a list of jobs running
 
 Filtered by VO
 
 ```console
-bash-4.2# curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY 
---cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/jobs?vo_name=dteam 
+curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
+  --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/jobs?vo_name=dteam 
 
 [
   {
@@ -155,13 +153,14 @@ bash-4.2# curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY
 ]
 ```
 
-### Cancel a Job
+### Cancelling a job
 
 ```console
-curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY  https://fts3-pilot.cern.ch:8446/jobs/a40b82b7-1132-459f-a641-f8b49137a713 -X DELETE
+curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY \
+  https://fts3-pilot.cern.ch:8446/jobs/a40b82b7-1132-459f-a641-f8b49137a713 -X DELETE
 ```
 
-### Get Expiration time of delegated credentials
+### Getting expiration time of delegated credentials
 
 ```console
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/delegation/9ab8068853808c6b 
@@ -182,8 +181,8 @@ The Python bindings for FTS can be installed from the EPEL package repository
 yum install python-fts -y
 ```
 
-For using the  bindings, you need to import fts3.rest.client.easy, although for 
-convenience it can be renamed as something else
+For using the  bindings, you need to import `fts3.rest.client.easy`, although for 
+convenience it can be renamed as something else:
 
 ```console
 import fts3.rest.client.easy as fts3
@@ -191,8 +190,8 @@ import fts3.rest.client.easy as fts3
 
 In the following code snippets, an import as above is assumed.
 
-In order to be able to do any operation, some state about the user credentials and
- remote endpoint need to be kept. That's the purpose of a Context.
+In order to be able to do any operation, information about the state of the user credentials and
+remote endpoint needs to be kept. That's the purpose of a Context.
 ```console
 context = fts3.Context(endpoint, ucert, ukey, verify=True)
 ```
@@ -200,19 +199,19 @@ context = fts3.Context(endpoint, ucert, ukey, verify=True)
 The endpoint to use corresponds to the FTS instance REST server and it must have
 the following format:
 
-https://\<host>:\<port>
+`https://\<host>:\<port>`
 
 for instance ```https://fts3-public.cern.ch:8446```
 
-If you are using a proxy certificate, you can either specify only user_certificate, 
-or point both parameters to the proxy. user_certificate and user_key can be safely 
+If you are using a proxy certificate, you can either specify only `user_certificate`, 
+or point both parameters to the proxy. `user_certificate` and `user_key` can be safely 
 omitted, and the program will use the values defined in the environment variables 
 `X509_USER_PROXY` or `X509_USER_CERT` + `X509_USER_KEY`.
 
-If verify is False, the server certificate will not be verified.
+If verify is `False`, the server certificate will not be verified.
 
-Here some examples on how to create a context, submit a job with a single transfer 
-and get the job status:
+Here are some examples about creating a context, submitting a job with a single transfer 
+and getting the job status:
 
 ```console
 # pretty print the json outputs

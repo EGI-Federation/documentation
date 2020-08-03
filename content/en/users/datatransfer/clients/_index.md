@@ -73,7 +73,7 @@ Base id: 01874efb-4735-4595-bc9c-591aef8240c9
 
 ### fts-rest-delegate
 
-This command can be used to (re)delegate your credentials to the FTS3 server
+This command can be used to (re)delegate your credentials to the FTS3 server.
 
 #### Usage
 
@@ -244,7 +244,7 @@ Job id: 9a28d204-d568-11ea-9c80-02163e018681
 
 ### fts-rest-transfer-status
 
-This command can be used to check the current status of a given job
+This command can be used to check the current status of a given job.
 
 #### Usage
 
@@ -290,9 +290,9 @@ VO Name: dteam
 
 This command can be used to cancel a running job. It returns the final state of 
 the cancelled job. Please, mind that if the job is already in a final state 
-(FINISHEDDIRTY, FINISHED, FAILED), this command will return this state. 
+`(FINISHEDDIRTY`, `FINISHED`, `FAILED`), this command will return this state. 
 You can additionally cancel only a subset appending a comma-separated list of 
-file ids
+file ids.
 
 #### Usage
 
