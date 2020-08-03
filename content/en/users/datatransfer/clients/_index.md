@@ -236,7 +236,7 @@ Job id: 9a28d204-d568-11ea-9c80-02163e018681
 
 This command can be used to check the current status of a given job
 
-#### Usage:
+#### Usage
 
 ``` {.console}
 fts-rest-transfer-status [options] JOB_ID
@@ -261,7 +261,7 @@ Options
 --access-token : Oauth2 access token (supported only by some endpoints, takes precedence)
 ```
 
-#### Example:
+#### Example
 
 ``` {.console}
 $ fts-rest-transfer-status -s  https://fts3-public.cern.ch:8446 7e02b4fa-d568-11ea-9c80-02163e018681
@@ -279,6 +279,7 @@ VO Name: dteam
 This command can be used to cancel a running job. It returns the final state of the cancelled job. Please, mind that if the job is already in a final state (FINISHEDDIRTY, FINISHED, FAILED), this command will return this state. You can additionally cancel only a subset appending a comma-separated list of file ids
 
 #### Usage
+
 ``` {.console}
 fts-rest-transfer-cancel [options]
 Options
