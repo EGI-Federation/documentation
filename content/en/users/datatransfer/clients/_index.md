@@ -117,8 +117,6 @@ Delegation id: 9ab8068853808c6b
 This command can be used to submit new jobs to FTS3. It supports simple and 
 bulk submissions.
 The bulk format is as follows:
-
-
 ```sh
 {
   "files": [
