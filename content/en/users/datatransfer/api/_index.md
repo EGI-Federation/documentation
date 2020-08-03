@@ -153,7 +153,6 @@ bash-4.2# curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY
 ]
 ```
 
-
 ### Cancel a Job
 
 ```console
