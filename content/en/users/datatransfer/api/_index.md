@@ -10,12 +10,10 @@ weight: 30
 
 The EGI Data Transfer service offers API both for Users and Admins, in this section 
 we are focusing on the User API.
-
 2 APIs are available to users:
 
-* RESTFul API
-* Python Easy Bindings
-
+- RESTFul API
+- Python Easy Bindings
 
 In both cases users need a way to be authenticated and authorised and this is explained
 in the next section.
@@ -64,29 +62,23 @@ Once you have the VO information configured (`vomses` and `.lsc`) and
 your certificate available in your `$HOME/.globus` directory you can
 create a VOMS proxy to be used with clients (voms-clients package) with:
 
-``` {.console}
+```console
 voms-proxy-init --voms <name of the vo> --rfc
 ```
 
 Plain proxies can still be created via 
 
-``` {.console}
+```console
 voms-proxy-init --rfc
 ```
 
 ## RESTFul API
 
-The User RESTFul APIs can be used to submit transfers jobs (collections of single transfers), monitor and cancel existing transfers.
-
-An overview of the available API is at:
-
-https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/api.html
-
-Here we will provide some examples usage using the Curl client.
+The User RESTFul APIs can be used to submit transfers jobs (collections of single transfers), monitor and cancel existing transfers. Please check the CERN [documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/api.html) for the full API details. Here we will provide some examples usage using the Curl client.
 
 ### Checking how the server sees us
 
-``` {.console}
+```console
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/whoami
 {
   "dn": [
@@ -114,12 +106,11 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509
 }
 ```
 
-
 ### Get a List of Jobs Running
 
 Filtered by VO
 
-``` {.console}
+```console
 bash-4.2# curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/jobs?vo_name=dteam 
 
 [
@@ -159,13 +150,13 @@ bash-4.2# curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --ca
 
 ### Cancel a Job
 
-``` {.console}
+```console
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY  https://fts3-pilot.cern.ch:8446/jobs/a40b82b7-1132-459f-a641-f8b49137a713 -X DELETE
 ```
 
 ### Get Expiration time of delegated credentials
 
-``` {.console}
+```console
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/delegation/9ab8068853808c6b 
 {
   "voms_attrs": [
@@ -178,25 +169,22 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509
 
 ## Python Bindings
 
-The Python bindings for FTS can be installed from the EPEL package repository (EL6 and EL7 packages are available)
+The Python bindings for FTS can be installed from the EPEL package repository (EL6 and EL7 packages are available) with Python 2.7 being supported.
 
-Python 2.7 is supported
-
-``` {.console}
+```console
 yum install python-fts -y
 ```
 
 For using the  bindings, you need to import fts3.rest.client.easy, although for convenience it can be renamed as something else
 
-``` {.console}
+```console
 import fts3.rest.client.easy as fts3
 ```
 
 In the following code snippets, an import as above is assumed.
 
-
 In order to be able to do any operation, some state about the user credentials and remote endpoint need to be kept. That's the purpose of a Context.
-``` {.console}
+```console
 context = fts3.Context(endpoint, ucert, ukey, verify=True)
 ```
 
@@ -204,18 +192,15 @@ The endpoint to use corresponds to the FTS instance REST server and it must have
 
 https://\<host>:\<port>
 
-for instance https://fts3-public.cern.ch:8446
+for instance ```https://fts3-public.cern.ch:8446```
 
-If you are using a proxy certificate, you can either specify only user_certificate, or point both parameters to the proxy.
-
-user_certificate and user_key can be safely omitted, and the program will use the values defined in the environment variables X509_USER_PROXY or X509_USER_CERT + X509_USER_KEY.
+If you are using a proxy certificate, you can either specify only user_certificate, or point both parameters to the proxy. user_certificate and user_key can be safely omitted, and the program will use the values defined in the environment variables X509_USER_PROXY or X509_USER_CERT + X509_USER_KEY.
 
 If verify is False, the server certificate will not be verified.
 
-
 Here some examples on how to create a context, submit a job with a single transfer and get the job status:
 
-``` {.console}
+```console
 # pretty print the json outputs
 >>> import pprint
 >>> pp = pprint.PrettyPrinter(indent=4)
@@ -279,6 +264,4 @@ b6191212-d347-11ea-8a47-fa163e45cbc4
     u'vo_name': u'dteam'}
 ```
 
-Full documentation is available at
-
-https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html
+Full [documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html) is also available.
