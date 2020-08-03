@@ -40,7 +40,6 @@ FTS3 REST
 
 : The RESTFul server which is contacted by clients via REST APIs, CLI and Python bindings
 
-
 FTS3 Monitoring  
 
 : A Web interface to  monitor transfers activity and server parameters
@@ -69,4 +68,3 @@ The following endpoints are available:
 - [FTS REST](https://lcgfts3.gridpp.rl.ac.uk:8446)
 
 - [FTS Mon](https://lcgfts3.gridpp.rl.ac.uk:8449/fts3/ftsmon/#/)
-
