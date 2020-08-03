@@ -16,10 +16,13 @@ content/*/operations/ @gwarf @paolini78
 content/*/providers/ @gwarf @paolini78
 
 # Users
-content/*/users/ @enolfc @glaroccca @andrea-manzi
+content/*/users/ @enolfc @glaroccca @andrea-manzi @gwarf
 
 # DataHub
 content/*/*/datahub/ @andrea-manzi
+
+# Data Transfer
+content/*/*/datatransfer/ @andrea-manzi
 
 # FedCloud
 content/*/*/fedcloud/ @enolfc
