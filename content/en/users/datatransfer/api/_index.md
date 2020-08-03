@@ -28,10 +28,12 @@ is under development and will be later made available in production endpoints.
 
 {{% /alert %}}
 
-During the authentication phase, credentials are delegated to the FTS service, which will contact 
-the storages to steer the data transfers on behalf of the users.
+During the authentication phase, credentials are delegated to the FTS service, which will \
+contact the storages to steer the data transfers on behalf of the users.
 
-The FTS service supports both plain X509 proxies than [VOMS](https://italiangrid.github.io/voms/index.html) X.509 proxies extended with VO information for authentication and authorisation.
+The FTS service supports both plain X509 proxies than 
+[VOMS](https://italiangrid.github.io/voms/index.html) X.509 proxies extended with VO 
+information for authentication and authorisation.
 
 
 ### VOMS configuration
@@ -74,8 +76,8 @@ voms-proxy-init --rfc
 
 ## RESTFul API
 
-The User RESTFul APIs can be used to submit transfers jobs (collections of single transfers), 
-monitor and cancel existing transfers. Please check the CERN [
+The User RESTFul APIs can be used to submit transfers jobs (collections of single 
+transfers), monitor and cancel existing transfers. Please check the CERN [
 documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/api.html) for the 
 full API details. Here we will provide some examples usage using the Curl client.
 
