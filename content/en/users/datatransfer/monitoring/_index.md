@@ -31,7 +31,6 @@ part of the job is listed with his own information. From this page it's also pos
 
 ![image](ftsmon_details.png)
 
-
 ### Optimizer page  
 
 The Optimizer page shows Optimizer information about a specific link, detailing the throughput
