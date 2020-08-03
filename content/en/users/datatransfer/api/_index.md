@@ -24,7 +24,7 @@ in the next section.
 
 Users have to authenticate using a X509 User certificate. The integration 
 with EGI Check-in in order to authenticate via OIDC tokens  
-is under development and will be later be made available in production endpoints.
+is under development and will be later made available in production endpoints.
 
 {{% /alert %}}
 

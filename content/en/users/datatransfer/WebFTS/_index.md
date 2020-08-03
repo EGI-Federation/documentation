@@ -18,7 +18,7 @@ transfer between storages using different protocols. You can check CERN WebFTS
 
 In order to move files between storage endpoints, named also Storage Elements (SE), 
 the authentication is done using an X509 certificate which needs to be installed on the browser. 
-The Integration with EGI Check-in is under development and will be available at a latter date in the production instance.
+The Integration with EGI Check-in is under development and will be available at a later date in the production instance.
 
 A pop-up window appears when you choose the "My jobs" or "Submit a transfer" tabs. 
 There, you will need to paste the private RSA key of your certificate. 
