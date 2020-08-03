@@ -19,8 +19,8 @@ The Web monitoring can be accessed without user authentication, only access to t
 ### Overview page  
 
 The Overview page offers a way to access the information about the transfers submitted and
- executed in the last 6 hours. Users can filter transfers per Virtual Organization, source 
- or destination storage or JobId.
+executed in the last 6 hours. Users can filter transfers per Virtual Organization, source 
+or destination storage or JobId.
 
 ![image](ftsmon_overview.png)
 
