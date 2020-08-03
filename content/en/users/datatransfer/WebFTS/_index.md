@@ -17,7 +17,7 @@ documentation](https://fts3-docs.web.cern.ch/fts3-docs/docs/webfts/userguide.htm
 
 In order to move files between storage endpoints, named also Storage Elements (SE), 
 the authentication is done using an X509 certificate which needs to be installed on the 
-browser.  The Integration with EGI Check-in is under development and will be available at 
+browser. The Integration with EGI Check-in is under development and will be available at 
 a later date in the production instance.
 
 A pop-up window appears when you choose the "My jobs" or "Submit a transfer" tabs. 
@@ -48,10 +48,11 @@ From the right button where the remaining time for the current delegation is sho
 Open the "Submit a transfer" tab and Load origin and destination storage elements 
 as endpoints.
 If one endpoint URL is not known, there is an autocompletion once 3 characters have been typed.
- You should also specify the protocol, the address of the endpoint and the path. (Ex: ```gsiftp://lxfsra10a01.cern.ch/dpm/cern.ch/home/```). 
+You should also specify the protocol, the address of the endpoint and the path. (Ex:
+```gsiftp://lxfsra10a01.cern.ch/dpm/cern.ch/home/```). 
 
-Browse the content and select all the files you want to transfer. CTRL and SHIFT keys can be used
-for selecting.
+Browse the content and select all the files you want to transfer. `CTRL` and `SHIFT` keys can be used
+for selecting multiple entries at once.
 
 If you need to filter the list of files and folders, you can use the available filters: 
 name, size and date.  Once you have loaded both endpoints and selected the files, the transfer 
@@ -72,7 +73,7 @@ You can resubmit transfer jobs, but you would need to delegate your credentials 
 do it before. You can do this at any state by clicking the "Resubmit" button.
 
 The transfer states are: YELLOW if still running, GREEN if successfully completed and RED if 
-something was wrong.
+something went wrong.
 
 The transfers that are not completed have a "Cancel" button on the left of the "Resubmit" button.
 Clicking this button will cancel that transfer.

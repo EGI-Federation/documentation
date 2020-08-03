@@ -51,7 +51,6 @@ FTS3 REST
 FTS3 Monitoring  
 
 : A Web interface to  monitor transfers activity and server parameters
- 
 
 WebFTS
 
@@ -68,13 +67,10 @@ The following endpoints are available:
 ### CERN
 
 - [FTS REST](https://fts3-public.cern.ch:8446/)
-
 - [FTS Mon](https://fts3-public.cern.ch/fts3/ftsmon/#/)
-
 - [WebFTS](https://webfts.cern.ch/)
 
 ### STFC
 
 - [FTS REST](https://lcgfts3.gridpp.rl.ac.uk:8446)
-
 - [FTS Mon](https://lcgfts3.gridpp.rl.ac.uk:8449/fts3/ftsmon/#/)
