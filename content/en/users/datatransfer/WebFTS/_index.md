@@ -13,7 +13,6 @@ transfer between storages using different protocols. You can check CERN WebFTS
 [documentation](https://fts3-docs.web.cern.ch/fts3-docs/docs/webfts/userguide.html) and 
 [FAQ](https://fts3-docs.web.cern.ch/fts3-docs/docs/webfts/faq.html) for more details.
 
-
 ### Credential Delegation
 
 In order to move files between storage endpoints, named also Storage Elements (SE), 
@@ -71,4 +70,3 @@ The transfer states are: YELLOW if still running, GREEN if successfully complete
 The transfers that are not completed have a "Cancel" button on the left of the "Resubmit" button. Clicking this button will cancel that transfer.
 
 ![image](webfts_monitor.png)
-
