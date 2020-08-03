@@ -236,8 +236,8 @@ Job id: 9a28d204-d568-11ea-9c80-02163e018681
 
 This command can be used to check the current status of a given job
 
-
 #### Usage:
+
 ``` {.console}
 fts-rest-transfer-status [options] JOB_ID
 Options
@@ -262,6 +262,7 @@ Options
 ```
 
 #### Example:
+
 ``` {.console}
 $ fts-rest-transfer-status -s  https://fts3-public.cern.ch:8446 7e02b4fa-d568-11ea-9c80-02163e018681
 Request ID: 7e02b4fa-d568-11ea-9c80-02163e018681
