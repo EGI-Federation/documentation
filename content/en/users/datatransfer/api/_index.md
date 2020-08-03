@@ -74,12 +74,16 @@ voms-proxy-init --rfc
 
 ## RESTFul API
 
-The User RESTFul APIs can be used to submit transfers jobs (collections of single transfers), monitor and cancel existing transfers. Please check the CERN [documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/api.html) for the full API details. Here we will provide some examples usage using the Curl client.
+The User RESTFul APIs can be used to submit transfers jobs (collections of single transfers), 
+monitor and cancel existing transfers. Please check the CERN [
+documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/api.html) for the 
+full API details. Here we will provide some examples usage using the Curl client.
 
 ### Checking how the server sees us
 
 ```console
-curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/whoami
+curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY 
+--cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/whoami
 {
   "dn": [
     "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi",
@@ -111,12 +115,14 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509
 Filtered by VO
 
 ```console
-bash-4.2# curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/jobs?vo_name=dteam 
+bash-4.2# curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY 
+--cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/jobs?vo_name=dteam 
 
 [
   {
     "cred_id": "1426115d1660de4d",
-    "user_dn": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=ftssuite/CN=737188/CN=Robot: fts3 testsuite",
+    "user_dn": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=ftssuite/CN=737188/CN=Robot: 
+    fts3 testsuite",
     "job_type": "N",
     "retry": -1,
     "job_id": "94560e74-7ca3-11e9-97dd-02163e00d613",
@@ -169,13 +175,15 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509
 
 ## Python Bindings
 
-The Python bindings for FTS can be installed from the EPEL package repository (EL6 and EL7 packages are available) with Python 2.7 being supported.
+The Python bindings for FTS can be installed from the EPEL package repository 
+(EL6 and EL7 packages are available) with Python 2.7 being supported.
 
 ```console
 yum install python-fts -y
 ```
 
-For using the  bindings, you need to import fts3.rest.client.easy, although for convenience it can be renamed as something else
+For using the  bindings, you need to import fts3.rest.client.easy, although for 
+convenience it can be renamed as something else
 
 ```console
 import fts3.rest.client.easy as fts3
@@ -183,22 +191,28 @@ import fts3.rest.client.easy as fts3
 
 In the following code snippets, an import as above is assumed.
 
-In order to be able to do any operation, some state about the user credentials and remote endpoint need to be kept. That's the purpose of a Context.
+In order to be able to do any operation, some state about the user credentials and
+ remote endpoint need to be kept. That's the purpose of a Context.
 ```console
 context = fts3.Context(endpoint, ucert, ukey, verify=True)
 ```
 
-The endpoint to use corresponds to the FTS instance REST server and it must have the following format:
+The endpoint to use corresponds to the FTS instance REST server and it must have
+the following format:
 
 https://\<host>:\<port>
 
 for instance ```https://fts3-public.cern.ch:8446```
 
-If you are using a proxy certificate, you can either specify only user_certificate, or point both parameters to the proxy. user_certificate and user_key can be safely omitted, and the program will use the values defined in the environment variables X509_USER_PROXY or X509_USER_CERT + X509_USER_KEY.
+If you are using a proxy certificate, you can either specify only user_certificate, 
+or point both parameters to the proxy. user_certificate and user_key can be safely 
+omitted, and the program will use the values defined in the environment variables 
+X509_USER_PROXY or X509_USER_CERT + X509_USER_KEY.
 
 If verify is False, the server certificate will not be verified.
 
-Here some examples on how to create a context, submit a job with a single transfer and get the job status:
+Here some examples on how to create a context, submit a job with a single transfer 
+and get the job status:
 
 ```console
 # pretty print the json outputs
@@ -251,7 +265,8 @@ b6191212-d347-11ea-8a47-fa163e45cbc4
     u'max_time_in_queue': None,
     u'overwrite_flag': False,
     u'priority': 3,
-    u'reason': u'One or more files failed. Please have a look at the details for more information',
+    u'reason': u'One or more files failed. Please have a look at the details for 
+    more information',
     u'retry': -1,
     u'retry_delay': 0,
     u'source_se': u'gsiftp://source',
@@ -264,4 +279,5 @@ b6191212-d347-11ea-8a47-fa163e45cbc4
     u'vo_name': u'dteam'}
 ```
 
-Full [documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html) is also available.
+Full [documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html)
+ is also available.

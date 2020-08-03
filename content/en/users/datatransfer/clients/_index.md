@@ -12,7 +12,8 @@ The FTS3 service offers a command line client to ease the interaction with the s
 
 ## Installation
 
-The CLI can be installed on any RHEL 6 and 7 derivative OSs, with the following package to be installed from EPEL:
+The CLI can be installed on any RHEL 6 and 7 derivative OSs, with the following package
+ to be installed from EPEL:
 
 ```console
 yum install fts-rest-cli -y
@@ -20,7 +21,10 @@ yum install fts-rest-cli -y
 
 ## Commands 
 
-This section describes some of the commands that can be issues via the FTS CLI. As per the API, in order to authenticate to the FTS REST server you need an X509 User certificate, please refer to this [section](../api/#authentication--authorisation)  for more information.
+This section describes some of the commands that can be issues via the FTS CLI. 
+As per the API, in order to authenticate to the FTS REST server you need an X509 
+User certificate, please refer to this [section](../api/#authentication--authorisation)  
+for more information.
 
 Full documentation about the FTS CLI is available at:
 
@@ -110,7 +114,9 @@ Delegation id: 9ab8068853808c6b
 
 ### fts-rest-transfer-submit
 
-This command can be used to submit new jobs to FTS3. It supports simple and bulk submissions. The bulk format is as follows:
+This command can be used to submit new jobs to FTS3. It supports simple and 
+bulk submissions.
+The bulk format is as follows:
 
 
 ```console
