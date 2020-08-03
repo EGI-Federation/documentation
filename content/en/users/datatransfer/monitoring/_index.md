@@ -3,7 +3,7 @@ title: "Monitoring"
 linkTitle: "Monitoring"
 type: docs
 description: "Documentation related to EGI Data Transfer Monitoring"
-weight: 30
+weight: 40
 ---
 
 ## Overview 

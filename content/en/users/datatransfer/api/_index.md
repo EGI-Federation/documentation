@@ -62,13 +62,13 @@ Once you have the VO information configured (`vomses` and `.lsc`) and
 your certificate available in your `$HOME/.globus` directory you can
 create a VOMS proxy to be used with clients (voms-clients package) with:
 
-```console
+```sh
 voms-proxy-init --voms <name of the vo> --rfc
 ```
 
 Plain proxies can still be created via:
 
-```console
+```sh
 voms-proxy-init --rfc
 ```
 
@@ -81,7 +81,7 @@ full API details. Here we will provide some examples usage using the Curl client
 
 ### Checking how the server sees the identity of the user
 
-```console
+```sh
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY 
 --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/whoami
 {
@@ -114,7 +114,7 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY
 
 Filtered by VO
 
-```console
+```sh
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
   --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/jobs?vo_name=dteam 
 
@@ -155,14 +155,14 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
 
 ### Cancelling a job
 
-```console
+```sh
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY \
   https://fts3-pilot.cern.ch:8446/jobs/a40b82b7-1132-459f-a641-f8b49137a713 -X DELETE
 ```
 
 ### Getting expiration time of delegated credentials
 
-```console
+```sh
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/delegation/9ab8068853808c6b 
 {
   "voms_attrs": [
@@ -177,14 +177,14 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509
 The Python bindings for FTS can be installed from the EPEL package repository 
 (EL6 and EL7 packages are available) with Python 2.7 being supported.
 
-```console
+```sh
 yum install python-fts -y
 ```
 
 For using the bindings, you need to import `fts3.rest.client.easy`, although for 
 convenience it can be renamed as something else:
 
-```console
+```sh
 import fts3.rest.client.easy as fts3
 ```
 
@@ -192,7 +192,7 @@ In the following code snippets, an import as above is assumed.
 
 In order to be able to do any operation, information about the state of the user credentials and
 remote endpoint needs to be kept. That's the purpose of a Context.
-```console
+```sh
 context = fts3.Context(endpoint, ucert, ukey, verify=True)
 ```
 
@@ -213,7 +213,7 @@ If verify is `False`, the server certificate will not be verified.
 Here are some examples about creating a context, submitting a job with a single transfer 
 and getting the job status:
 
-```console
+```sh
 # pretty print the json outputs
 >>> import pprint
 >>> pp = pprint.PrettyPrinter(indent=4)

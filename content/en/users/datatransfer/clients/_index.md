@@ -3,7 +3,7 @@ title: "Clients"
 linkTitle: "Clients"
 type: docs
 description: "Documentation related to EGI Data Transfer Clients"
-weight: 30
+weight: 10
 ---
 
 ## Overview 
@@ -15,7 +15,7 @@ The FTS3 service offers a command line client to ease the interaction with the s
 The CLI can be installed on any RHEL 6 and 7 derivative OSs, with the following package
  to be installed from EPEL:
 
-```console
+```sh
 yum install fts-rest-cli -y
 ```
 
@@ -36,7 +36,7 @@ This command can be used to check, as the name suggests, who are we for the serv
 
 #### Usage
 
-```console
+```sh
 fts-rest-whoami [options]
 Options
 
@@ -62,7 +62,7 @@ Options
 
 #### Example
 
-```console
+```sh
 $ fts-rest-whoami -s https://fts3-public.cern.ch:8446
 User DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi
 VO: dteam
@@ -77,7 +77,7 @@ This command can be used to (re)delegate your credentials to the FTS3 server.
 
 #### Usage
 
-```console
+```sh
 fts-rest-delegate [options]
 Options
 
@@ -107,7 +107,7 @@ Options
 
 #### Example
 
-```console
+```sh
 $ fts-rest-delegate -s https://fts3-public.cern.ch:8446
 Delegation id: 9ab8068853808c6b
 ```
@@ -119,7 +119,7 @@ bulk submissions.
 The bulk format is as follows:
 
 
-```console
+```sh
 {
   "files": [
     {
@@ -151,7 +151,7 @@ The bulk format is as follows:
 
 #### Usage
 
-```console
+```sh
 fts-rest-transfer-submit [options] SOURCE DESTINATION [CHECKSUM]
 Options
 
@@ -232,7 +232,7 @@ If negative, there will be no retries.
 
 #### Example
 
-```console
+```sh
 $ fts-rest-transfer-submit -s https://fts3-public.cern.ch:8446 gsiftp://source.host/file gsiftp://destination.host/file
 Job successfully submitted.
 Job id: 7e02b4fa-d568-11ea-9c80-02163e018681
@@ -248,7 +248,7 @@ This command can be used to check the current status of a given job.
 
 #### Usage
 
-```console
+```sh
 fts-rest-transfer-status [options] JOB_ID
 Options
 
@@ -274,7 +274,7 @@ Options
 
 #### Example
 
-```console
+```sh
 $ fts-rest-transfer-status -s https://fts3-public.cern.ch:8446 7e02b4fa-d568-11ea-9c80-02163e018681
 Request ID: 7e02b4fa-d568-11ea-9c80-02163e018681
 Status: FAILED
@@ -296,7 +296,7 @@ file ids.
 
 #### Usage
 
-```console
+```sh
 fts-rest-transfer-cancel [options]
 Options
 
@@ -321,7 +321,7 @@ Options
 ````
 
 #### Example
-```console
+```sh
 $ fts-rest-transfer-cancel -s https://fts3-public.cern.ch:8446 
 9a28d204-d568-11ea-9c80-02163e018681
 CANCELED
