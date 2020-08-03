@@ -8,12 +8,12 @@ weight: 30
 
 ## Overview 
 
-The FTS3 service offers command line clients both on C++ and Python. As the CLI in C++ is deprecated we are going to focus this section on the python CLI.
+The FTS3 service offers command line clients both in C++ and Python. As the CLI in C++ is deprecated we are going to focus this section on the python CLI.
 
 
 ## Installation
 
-The CLI can be installed on any RHEL 6 and 7 derivative OSs, with the following package to be installed from EPEL
+The CLI can be installed on any RHEL 6 and 7 derivative OSs, with the following package to be installed from EPEL:
 
 ``` {.console}
 yum install fts-rest-cli -y
@@ -308,7 +308,6 @@ Options
 $ fts-rest-transfer-cancel -s https://fts3-public.cern.ch:8446 9a28d204-d568-11ea-9c80-02163e018681
 CANCELED
 ```
-
 
 
 

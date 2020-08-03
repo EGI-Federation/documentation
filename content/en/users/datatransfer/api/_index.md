@@ -26,14 +26,14 @@ in the next section.
 
 Users have to authenticate using a X509 User certificate. The integration 
 with EGI Check-in in order to authenticate via OIDC tokens  
-is under development and will be soon made available in production endpoints.
+is under development and will be later be made available in production endpoints.
 
 {{% /alert %}}
 
 During the authentication phase, credentials are delegated to the FTS service, which will contact 
 the storages to steer the data transfers on behalf of the users.
 
-The FTS service supports both plain X509 proxies than [VOMS](https://italiangrid.github.io/voms/index.html)  X.509 proxies extended with VO information for authentication and authorisation.
+The FTS service supports both plain X509 proxies than [VOMS](https://italiangrid.github.io/voms/index.html) X.509 proxies extended with VO information for authentication and authorisation.
 
 
 ### VOMS configuration
@@ -282,4 +282,3 @@ b6191212-d347-11ea-8a47-fa163e45cbc4
 Full documentation is available at
 
 https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html
-

@@ -10,8 +10,7 @@ weight: 30
 
 The EGI Data Transfer Service is based on the FTS3 service, developed at CERN. It allows you to move any type of data files asynchronously from one storage to another. The service includes dedicated interfaces to display statistics of on-going transfers and manage storage resources parameters.
 
-The EGI  Data Transfer is ideal to move large amounts of files or very large files as the service has mechanisms to ensure automatic retry in case of failures and checksumming.
-
+The EGI  Data Transfer is ideal to move large amounts of files or very large files as the service has mechanisms to verify checksums and ensure automatic retry in case of failures.
 
 ## Features
 
@@ -70,5 +69,4 @@ The following endpoints are available:
 - [FTS REST](https://lcgfts3.gridpp.rl.ac.uk:8446)
 
 - [FTS Mon](https://lcgfts3.gridpp.rl.ac.uk:8449/fts3/ftsmon/#/)
-
 

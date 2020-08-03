@@ -21,9 +21,9 @@ https://fts3-docs.web.cern.ch/fts3-docs/docs/webfts/faq.html
 
 ### Credential Delegation
 
-The authentication with the  Storage Elements (SE) is done based on X509 certificate which needs to be installed on the browser. The Integration with EGI Check-in is under development and will be available soon in the production instance.
+The authentication with the  Storage Elements (SE) is done using an X509 certificate which needs to be installed on the browser. The Integration with EGI Check-in is under development and will be available at a latter date in the production instance.
 
-A pop-up window appears when you choose the "My jobs" or "Submit a transfer" tabs. There, you will need to paste the private RSA key of your certificate. The private key WILL NOT BE TRANSMITTED ANYWHERE. It is only used locally (within the user's browser) to generate the proxies needed to have access to the FTS services.
+A pop-up window appears when you choose the "My jobs" or "Submit a transfer" tabs. There, you will need to paste the private RSA key of your certificate. The private key **WILL NOT BE TRANSMITTED ANYWHERE**. It is only used locally (within the user's browser) to generate the proxies needed to have access to the FTS services.
 
 ![image](webfts_delegate.png)
 
@@ -42,12 +42,12 @@ From the right button where the remaining time for the current delegation is sho
 ### Submitting transfers
 
 Open the "Submit a transfer" tab and Load origin and destination storage elements as endpoints.
-If one endpoint url is not known, there is an autocomplete option just after 3 characters have been typed. You should also specify the protocol, the address of the endpoint and the path. (Ex: gsiftp://lxfsra10a01.cern.ch/dpm/cern.ch/home/). 
+If one endpoint URL is not known, there is an autocompletion once 3 characters have been typed. You should also specify the protocol, the address of the endpoint and the path. (Ex: gsiftp://lxfsra10a01.cern.ch/dpm/cern.ch/home/). 
 
 Browse the content and select all the files you want to transfer. CTRL and SHIFT keys can be use for selecting.
 
 If you need to filter the list of files and folders, you can use the available filters: name, size and date.  Once you have loaded both endpoints and selected the files, the transfer buttons will be enabled.
-Click the button with the correct direction. A success or an error message will appear above the endpoints containers. 
+Click the button with the correct direction. A success or error message will appear above the endpoints' containers. 
 
 You can now check the status of you transfer in the "My jobs" tab.
 
@@ -64,5 +64,4 @@ The transfer states are: YELLOW if still running, GREEN if successfully complete
 The transfers that are not completed have a "Cancel" button on the left of the "Resubmit" button. Clicking this button will cancel that transfer.
 
 ![image](webfts_monitor.png)
-
 
