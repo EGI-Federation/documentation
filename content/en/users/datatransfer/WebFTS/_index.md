@@ -3,7 +3,7 @@ title: "WebFTS"
 linkTitle: "WebFTS"
 type: docs
 description: "Documentation related to EGI Data Transfer Web Interface"
-weight: 30
+weight: 20
 ---
 
 ## Overview 
@@ -30,7 +30,7 @@ services.
 
 To obtain the private key, you can run in the console:
 
-```console
+```sh
 openssl pkcs12 -in yourCert.p12 -nocerts -nodes | openssl rsa
 ```
 
