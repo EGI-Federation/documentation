@@ -82,8 +82,8 @@ full API details. Here we will provide some examples usage using the Curl client
 ### Checking how the server sees the identity of the user
 
 ```sh
-curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY 
---cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/whoami
+curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
+  --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/whoami
 {
   "dn": [
     "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi",
@@ -156,14 +156,18 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
 ### Cancelling a job
 
 ```sh
-curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY \
-  https://fts3-pilot.cern.ch:8446/jobs/a40b82b7-1132-459f-a641-f8b49137a713 -X DELETE
+curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
+  --cacert $X509_USER_PROXY \
+   -X DELETE \
+  https://fts3-pilot.cern.ch:8446/jobs/a40b82b7-1132-459f-a641-f8b49137a713
 ```
 
 ### Getting expiration time of delegated credentials
 
 ```sh
-curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/delegation/9ab8068853808c6b 
+curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
+  --cacert $X509_USER_PROXY \
+  https://fts3-public.cern.ch:8446/delegation/9ab8068853808c6b 
 {
   "voms_attrs": [
     "/dteam/Role=NULL/Capability=NULL"

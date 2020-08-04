@@ -233,7 +233,8 @@ If negative, there will be no retries.
 #### Example
 
 ```sh
-$ fts-rest-transfer-submit -s https://fts3-public.cern.ch:8446 gsiftp://source.host/file gsiftp://destination.host/file
+fts-rest-transfer-submit -s https://fts3-public.cern.ch:8446 \
+  gsiftp://source.host/file gsiftp://destination.host/file
 Job successfully submitted.
 Job id: 7e02b4fa-d568-11ea-9c80-02163e018681
 
@@ -275,7 +276,8 @@ Options
 #### Example
 
 ```sh
-$ fts-rest-transfer-status -s https://fts3-public.cern.ch:8446 7e02b4fa-d568-11ea-9c80-02163e018681
+fts-rest-transfer-status -s https://fts3-public.cern.ch:8446 \
+  7e02b4fa-d568-11ea-9c80-02163e018681
 Request ID: 7e02b4fa-d568-11ea-9c80-02163e018681
 Status: FAILED
 Client DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi
@@ -322,7 +324,7 @@ Options
 
 #### Example
 ```sh
-$ fts-rest-transfer-cancel -s https://fts3-public.cern.ch:8446 
+fts-rest-transfer-cancel -s https://fts3-public.cern.ch:8446 
 9a28d204-d568-11ea-9c80-02163e018681
 CANCELED
 ```
