@@ -28,7 +28,8 @@ made in two ways:
   documented](https://help.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository)).
   You will be guided through the required steps.
 - for more complex contributions and when you want to preview and test changes
-  locally you should fork the repository as documented below.
+  locally you should fork the repository as documented below in the **Using
+  git** section.
 
 ### Contributing via a Pull Request
 
@@ -72,6 +73,13 @@ For collaboration purposes, it is best if you create a GitHub account and fork
 the repository to your own account. Once you do this you will be able to push
 your changes to your GitHub repository for others to see and use, and it will
 be easier to send pull requests.
+
+If you are new to `git` and **GitHub** you are advised to start by the two
+following articles providing simple tutorials:
+- https://opensource.com/article/18/1/step-step-guide-git
+- https://opensource.com/article/19/7/create-pull-request-github
+
+GitHub official documentaiton is available at https://docs.github.com/en/github.
 
 ### Branches and Commits
 
