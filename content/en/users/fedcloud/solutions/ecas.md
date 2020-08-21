@@ -47,10 +47,11 @@ This guide will show how to:
 ## Deploy an ECAS cluster with EC3
 
 In the latest release of the EC3 platform, tailored to support the EGI
-Applications on Demand (AoD) service, a new Ansible receipt is now
-available for researchers interested to deploy ECAS cluster on the EGI
-Infrastuctrure. Additional details on how to configure and deploy an
-ECAS cluster on EGI resources are provided in the next sections.
+[Applications on Demand (AoD) service]({{< ref "../aod/aod" >}}), a new
+Ansible receipt is now available for researchers interested to deploy
+ECAS cluster on the EGI Infrastuctrure. Additional details on how to
+configure and deploy an ECAS cluster on EGI resources are provided in
+the next sections.
 
 ECAS in now available in the latest release of the EC3 platform
 supporting the EGI Applications on Demand (AoD). The next sections
@@ -59,14 +60,14 @@ resources.
 
 ### Configure and deploy the cluster
 
-To configure and deploy a Virtual Elastic Cluster using EC3aaS, access
+To configure and deploy a Virtual Elastic Cluster using EC3, access
 the [EC3 platform front
 page](https://servproject.i3m.upv.es/ec3-ltos/index.php) and click on
 the **\"Deploy your cluster\"** link as shown in the figure below:
 
 ![EC3 front page.](../ecas-front.png)
 
-A wizard will guide the user during the cluster configuration process.
+A wizard will guide you through the cluster configuration process.
 Specifically, the general wizard steps include:
 
 -   **LRMS selection**: choose **ECAS** from the list of LRMSs (Local
@@ -107,7 +108,7 @@ Specifically, the general wizard steps include:
 ![Resume and Launch.](../ecas-summary.png)
 
 When the front-end node of the cluster has been successfully deployed,
-the user will be notified with the credentials to access via SSH.
+you will be notified with the credentials to access via SSH.
 
 ![ECAS cluster connection details.](../ecas-end.png)
 
@@ -127,7 +128,7 @@ completion before starting to start using the cluster.
 
 ### Accessing the cluster
 
-To access the front-end of the elastics cluster:
+To access the front-end of the cluster:
 
 -   download the SSH private key provided by the EC3 portal;
 -   change its permissions to `600`;
@@ -142,7 +143,7 @@ Last login: Mon Nov 18 11:37:29 2019 from torito.i3m.upv.es
 ```
 
 Both the front-end and the working node are configured by Ansible. This
-process usually takes some time. The user can monitor the status of the
+process usually takes some time. You can monitor the status of the
 cluster configuration using the `is_cluster_ready` command-line tool:
 
 ``` {.console}
@@ -171,7 +172,7 @@ debug*       up   infinite   1   idle oph-io1
 
 ### Accessing the scientific eco-system
 
-ECASLab provides two different ways to get access to its scientific
+ECAS provides two different ways to get access to its scientific
 eco-system: Ophidia client (`oph_term`) and JupyterHub.
 
 #### Perform some basic operations with Ophidia
@@ -227,7 +228,7 @@ configuration file (see the `c.Authenticator.whitelist` and
 
 ![JupyterHub login.](../ecas-jupyterhub.png)
 
-From JupyterHub in ECASLab you can do several things such as:
+From JupyterHub in ECAS you can do several things such as:
 
 -   create and run a Jupyter Notebook exploiting PyOphidia and Python
     libraries for visualization and plotting (e.g. matplotlib, basemap,
@@ -236,7 +237,7 @@ From JupyterHub in ECASLab you can do several things such as:
     folder;
 -   execute operators and workflows directly from the Ophidia Terminal.
 
-To get started with the ECASLab environment capabilities, open the
+To get started with the ECAS environment capabilities, open the
 `ECAS_Basics.ipynb` notebook available under the `notebooks/` folder in
 the home directory.
 
