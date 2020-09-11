@@ -85,8 +85,9 @@ More information can be found at: [info](https://ca.cern.ch/ca/Help/)
 ### Register to a VO 
 Visit [Operation Portal](https://operations-portal.egi.eu) with the web-browser containing your personal certificate. Search for existing VOs
 
-1. If there are any community VOs matching your requirements (with _Registry System_ is _VOMS_), then click _Action_-> _Details_ to look at the VO information. In the _VO Id Card_ page, click the link for _Enrollment Url_, it will take you to the VO VOMS page. __You should have already discussed with the EGI support team, they would help you to contact the VO managers and get approval for your access.__  
-![Register to a VO](../htc_vo_registeration.png)
+1. If there are any community VOs matching your requirements (with _Registry System_ is _VOMS_), then click _Action_-> _Details_ to look at the VO information. In the _VO Id Card_ page, click the link for _Enrollment Url_, it will take you to the VO VOMS page. __You should have already discussed with the EGI support team, they would help you to contact the VO managers and get approval for your access.__ 
+
+![Register to a VO](htc_vo_registeration.png)
 1. If there are no relevant VOs, you can send a request [to register a new VO](ttps://operations-portal.egi.eu/vo/registration). (Note, for EGI HTC service, you should request for `VOMS configuration`, once VO is configured, you will be notified about your VO VOMS link). More information can be found at [Guideline for VO registration](https://wiki.egi.eu/wiki/PROC14_VO_Registration). **Again, this is usually guided by the EGI support team. You should already have a meeting with them to discuss your requirements. They will help you to get resources from EGI HTC providers, and sign [SLA](https://wiki.egi.eu/wiki/EGI_OLA_SLA_framework#Service_Level_Agreemens) with you.** 
 1. Request your VO membership at VO VOMS page. You will have to enter required information and then wait for approval. For example, you can [register to the EGI catch-all vo _fedcloud.egi.eu_](https://perun.metacentrum.cz/perun-registrar-cert/?vo=fedcloud.egi.eu):
 ![Register to fedcloud vo](htc_regiter_fedcloud_vo.png)
@@ -103,7 +104,7 @@ Once you have the VO information configured (`vomses` and `.lsc`) and your certi
 ##### DIRAC4EGI Web Portal 
 The EGI Woakload Manager (old name DIRAC4EGI), is an EGI instance of DIRAC service. To connect to the web portal, browse to https://dirac.egi.eu/DIRAC/. 
 
-![DIRAC4EGI web portal](../dirac4egi_web_portal.png)
+![DIRAC4EGI web portal](dirac4egi_web_portal.png)
 - If you are a new user, you can see the welcome page where you can find links to [user documentations](https://dirac.readthedocs.io/en/latest/UserGuide/WebAppUserGuide/index.html).
 - _VO options_: you can switch to different VOs that you have membership
 - _Log In options_: the service supports both X509. Certificate and Check-in log-in
@@ -113,16 +114,16 @@ The EGI Woakload Manager (old name DIRAC4EGI), is an EGI instance of DIRAC servi
 ###### Upload Proxy
 Before submitting your job, you need to upload your Proxy. Go to _Menu_ -> _Tools_ -> _Proxy Upload_, enter your certificates `.p12` file and the pass, click _Upload_.
 
-![DIRAC4EGI upload proxy](../dirac4egi_upload_proxy.png)
+![DIRAC4EGI upload proxy](dirac4egi_upload_proxy.png)
 
 ###### Job Submission
 Go to _Menu_ -> _Tools_ -> _Job Launchpad_.  First check the _Proxy Status_, click it until it shows `Valid` in green color. In the Job Launchpad, you can select your jobs from the list; add parameters, indicating the output Sandbox location. Now, select _Helloworld_ from the  job list, and click _Submit_, you just launch your very first job to EGI HTC cluster. 
 
-![DIRAC4EGI job submission](../dirac4egi_job_submission.png)
+![DIRAC4EGI job submission](dirac4egi_job_submission.png)
 
 ###### Monitor Job status
 Go to _Menu_ -> _Applications_ -> _Job Monitor’. The left panel gives all kinds of search options for your jobs. Set your search criteria, and click ‘Submit’, the jobs will list on the right panel. Try the various options to view different information about the jobs.
-![DIRAC4EGI Job monitoring](../dirac4egi_job_monitoring.png)
+![DIRAC4EGI Job monitoring](dirac4egi_job_monitoring.png)
 
 ###### Get Results from Sandbox
 On the _Job Monitor_ panel, once the job has been successfully processed, the _Status_ of the job will change to green. Right click the job, select _Sandbox_ -> _Get Output file(s)_, you can get the result file(s).
