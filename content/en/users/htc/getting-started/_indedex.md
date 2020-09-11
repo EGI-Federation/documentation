@@ -90,6 +90,7 @@ Visit [Operation Portal](https://operations-portal.egi.eu) with the web-browser 
 ![Register to a VO](htc_vo_registeration.png)
 1. If there are no relevant VOs, you can send a request [to register a new VO](ttps://operations-portal.egi.eu/vo/registration). (Note, for EGI HTC service, you should request for `VOMS configuration`, once VO is configured, you will be notified about your VO VOMS link). More information can be found at [Guideline for VO registration](https://wiki.egi.eu/wiki/PROC14_VO_Registration). **Again, this is usually guided by the EGI support team. You should already have a meeting with them to discuss your requirements. They will help you to get resources from EGI HTC providers, and sign [SLA](https://wiki.egi.eu/wiki/EGI_OLA_SLA_framework#Service_Level_Agreemens) with you.** 
 1. Request your VO membership at VO VOMS page. You will have to enter required information and then wait for approval. For example, you can [register to the EGI catch-all vo _fedcloud.egi.eu_](https://perun.metacentrum.cz/perun-registrar-cert/?vo=fedcloud.egi.eu):
+
 ![Register to fedcloud vo](htc_regiter_fedcloud_vo.png)
 
 ### First job submission 
