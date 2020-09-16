@@ -104,7 +104,7 @@ Using the project id and the site name, you can create the authorisation files
 needed for ec3:
 
 ``` {.sh}
-$ egicli endpoint ec3-auth --site CESGA --project-id 3a8e9d966e644405bf19b536adf7743d
+$ egicli endpoint ec3 --site CESGA --project-id 3a8e9d966e644405bf19b536adf7743d
 ```
 
 This will generate an `auth.dat` file with your credentials to access the site
