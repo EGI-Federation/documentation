@@ -1,7 +1,7 @@
 ---
 title: "Storage"
 type: docs
-weight: 50
+weight: 60
 description: >
   Storage features of the EGI Cloud
 ---

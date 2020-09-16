@@ -1,7 +1,7 @@
 ---
 title: "VMOps Dashboard"
 type: docs
-weight: 30
+weight: 40
 description: >
   The VMOPs Dashboard for management of VMs on the federation
 ---
