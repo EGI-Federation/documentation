@@ -1,7 +1,7 @@
 ---
 title: "GPGPUs"
 type: docs
-weight: 60
+weight: 70
 description: >
   GPGPU resources on EGI Cloud
 ---

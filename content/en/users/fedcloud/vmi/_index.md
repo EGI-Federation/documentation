@@ -1,7 +1,7 @@
 ---
 title: "Virtual Machine Image Management"
 type: docs
-weight: 20
+weight: 30
 description: >
   Managing VM images in the EGI Cloud
 ---

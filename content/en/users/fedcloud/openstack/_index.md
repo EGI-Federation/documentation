@@ -1,7 +1,7 @@
 ---
 title: "Using OpenStack providers"
 type: docs
-weight: 40
+weight: 50
 description: >
   How to interact with the OpenStack providers APIs in the EGI Cloud 
 ---
