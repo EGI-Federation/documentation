@@ -4,7 +4,7 @@ linkTitle: "Cloud Compute"
 type: docs
 weight: 20
 description: >
-  EGI Cloud Compute and Cloud Container Compute (FedCloud)
+  EGI Cloud Compute (FedCloud)
 ---
 
 The EGI Cloud service offers a multi-cloud IaaS federation that brings
