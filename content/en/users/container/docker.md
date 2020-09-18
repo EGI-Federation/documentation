@@ -15,7 +15,7 @@ ready-to-use Virtual Machine Image with
 You can start that image as any other VA available from AppDB:
 
 1. Go to the [EGI Docker image entry in
-   AppDB](https://appdb.egi.eu/store/vappliance/docker.ubuntu.16.04).
+   AppDB](https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04).
 
 1. Check the identifiers of the endpoint, image and flavor you want to
    use at the provider.
