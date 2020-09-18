@@ -1,41 +1,29 @@
 ---
-title: "Cloud Container Compute"
+title: "Docker VM"
 type: docs
-weight: 100
+weight: 20
 description: >
-  Run containers on the EGI Cloud 
+  Run containers on the EGI Cloud on a single VM with Docker
 ---
 
-You can run containers on EGI Cloud by:
-
--   Using a pre-configured image with docker (see EGI Docker VA) below;
--   installing docker on top of an existing VM (by following [docker
-    installation
-    instructions](https://docs.docker.com/engine/installation/); or
--   running a container orchestration platform that manages the
-    applications on top of a set of nodes (Kubernetes, Docker Swarm and
-    Mesos are examples of such orchestration platforms).
-
-## EGI Docker VA
-
 The [EGI Docker
-VA](https://appdb.egi.eu/store/vappliance/docker.ubuntu.16.04) is a
+VA](https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04) is a
 ready-to-use Virtual Machine Image with
 [docker](https://www.docker.com/) and
 [docker-compose](https://docs.docker.com/compose/) pre-installed.
 
 You can start that image as any other VA available from AppDB:
 
-1.  Go to the [EGI Docker image entry in
-    AppDB](https://appdb.egi.eu/store/vappliance/docker.ubuntu.16.04).
+1. Go to the [EGI Docker image entry in
+   AppDB](https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04).
 
-1.  Check the identifiers of the endpoint, image and flavor you want to
-    use at the provider.
+1. Check the identifiers of the endpoint, image and flavor you want to
+   use at the provider.
 
-1.  Use a ssh key when, so you can log into the VM once it\'s
-    instantiated.
+1. Use a ssh key when, so you can log into the VM once it\'s
+   instantiated.
 
-1.  Once up, just ssh in the VM and start using docker as usual.
+1. Once up, just ssh in the VM and start using docker as usual.
 
 ### Using docker from inside the VM
 
@@ -72,14 +60,6 @@ For more examples and ideas, visit:
  https://docs.docker.com/userguide/
 ```
 
-## Kubernetes
-
-You can run several docker clusters management tools on the EGI Cloud,
-each tool has its own specifics, but there are plenty of helpers to aid
-in their setup. Here we cover how to configure Kubernetes by using
-[ansible](https://www.ansible.com/).
-
-{{% alert title="Note" color="info" %}}
-We are preparing new instructions to get kubernetes running on EGI
-Cloud. Stay tuned!
-{{% /alert %}}
+Docker-compose can be also used to execute applications with more than one container
+running together, [follow this documentation](https://docs.docker.com/compose/)
+to learn more.
