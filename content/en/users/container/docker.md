@@ -7,7 +7,7 @@ description: >
 ---
 
 The [EGI Docker
-VA](https://appdb.egi.eu/store/vappliance/docker.ubuntu.16.04) is a
+VA](https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04) is a
 ready-to-use Virtual Machine Image with
 [docker](https://www.docker.com/) and
 [docker-compose](https://docs.docker.com/compose/) pre-installed.
