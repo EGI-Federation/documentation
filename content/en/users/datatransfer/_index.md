@@ -3,7 +3,7 @@ title: "Data Transfer"
 linkTitle: "Data Transfer"
 type: docs
 description: "Documentation related to EGI Data Transfer"
-weight: 30
+weight: 40
 ---
 
 ## Overview 
