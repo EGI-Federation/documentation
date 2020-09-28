@@ -181,7 +181,7 @@ $ openstack server create --flavor <your-flavor> --image <your image> \
 {{% alert title="Note" color="info" %}}
 We recommend using `cloud-init` for contextualisation. EGI images in
 AppDB do support `cloud-init`. Check the
-[documentation](http://cloudinit.readthedocs.org/%20cloud-init) for more
+[documentation](https://cloudinit.readthedocs.io/) for more
 information.
 {{% /alert %}}
 

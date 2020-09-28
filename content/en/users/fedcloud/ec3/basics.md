@@ -62,7 +62,7 @@ your cluster:
 
 We will use `egicli` to discover all needed details, set your credentials
 (Check-in client id, client secret and refresh tokens) as shown in
-[the authentication guide](../auth/#oidc-auth-using-check-in) and start by
+[the authentication guide](../../auth/#oidc-auth-using-check-in) and start by
 listing the available sites:
 
 ``` {.sh}
