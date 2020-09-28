@@ -60,6 +60,6 @@ Please provide appropriate acknowledgement of the use in scientific
 publications. You can use this The following acknowledgement text this
 purpose:
 
-*This work used the EGI Applications on Demand service, which is
-co-funded by the EOSC-hub project (grant number 777536)*
+**This work used the EGI Applications on Demand service, which is
+co-funded by the EOSC-hub project (grant number 777536)**
 {{% /alert %}}
