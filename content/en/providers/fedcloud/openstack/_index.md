@@ -88,10 +88,10 @@ optionally converting it to your preferred format with qemu-img:
 
 ``` {.console}
 # get image and extract VMDK
-curl https://cephrgw01.ifca.es:8080/swift/v1/egi_endorsed_vas/FedCloud-Appliance.Ubuntu.16.04-2017.08.09.ova | \
-       tar x FedCloud-Appliance.Ubuntu.16.04-2017.08.09-disk001.vmdk
+$ curl $(curl "https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict" | jq -r .url) | \
+    tar x "*.vmdk"
 # convert to qcow2
-qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.16.04-2017.08.09-disk001.vmdk fedcloud-appliance.qcow2
+$ qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.qcow2
 ```
 
 The appliance running at your OpenStack must:
