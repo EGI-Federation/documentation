@@ -71,7 +71,7 @@ The following endpoints are available:
 - [FTS Mon](https://fts3-public.cern.ch/fts3/ftsmon/#/) 
 - [WebFTS](https://webfts.cern.ch/) - N.B. Needs personal x509 certificate installed in your Browser
 
-### STFC 
+### STFC
 
 - [FTS REST](https://lcgfts3.gridpp.rl.ac.uk:8446) 
 - [FTS Mon](https://lcgfts3.gridpp.rl.ac.uk:8449/fts3/ftsmon/#/)
