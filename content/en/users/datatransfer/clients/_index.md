@@ -10,10 +10,17 @@ weight: 20
 
 The FTS3 service offers a command line client to ease the interaction with the service.
 
+## Prerequisites
+
+The client software is available for RHEL 6 and 7 derivatives. 
+
+Please note that the RHEL 6 support is ending the 30/11/2020 and the implementation for RHEL 8 is on-going.
+
+Users from other distributions should refer to the [RESTFul API section](../api/#restful-api).
+
 ## Installation
 
-The CLI can be installed on any RHEL 6 and 7 derivative OSs, with the following package
- to be installed from EPEL:
+The CLI can be installed from the EPEL repositories with the following package:
 
 ```sh
 yum install fts-rest-cli -y

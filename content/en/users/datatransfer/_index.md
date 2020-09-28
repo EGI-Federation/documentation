@@ -64,13 +64,19 @@ instances.
 
 The following endpoints are available:
 
+
 ### CERN
 
 - [FTS REST](https://fts3-public.cern.ch:8446/)
 - [FTS Mon](https://fts3-public.cern.ch/fts3/ftsmon/#/)
-- [WebFTS](https://webfts.cern.ch/)
+- [WebFTS](https://webfts.cern.ch/) - N.B. Needs personal x509 certificate installed in your Browser
 
 ### STFC
 
 - [FTS REST](https://lcgfts3.gridpp.rl.ac.uk:8446)
 - [FTS Mon](https://lcgfts3.gridpp.rl.ac.uk:8449/fts3/ftsmon/#/)
+
+N.B. if you access the endpoints via Browser the following CA certificates need to be installed:
+
+- [CERN CA certificates](https://cafiles.cern.ch/cafiles/certificates/) 
+- [UK eScience CA certificates](http://www.ngs.ac.uk/ukca/certificates/cacerts.html)
