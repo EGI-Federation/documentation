@@ -39,8 +39,8 @@ sites that offer:
     aggregates and allows visualisation of usage information across the
     whole federation.
 -   [Monitoring of Availability and Reliability of the
-    providers](http://argo.egi.eu/status-fedcloud) to ensure SLAs are
-    met.
+    providers](https://argo.egi.eu/egi/report-status/Critical/SITES?filter=FedCloud)
+    to ensure SLAs are met.
 
 The flexibility of the Infrastructure as a Service can benefit various
 use cases and usage models. Besides serving compute/data intensive
@@ -62,8 +62,8 @@ have emerged:
         Services](https://www.egi.eu/use-cases/scientific-applications-tools/nbis-toolkit/),
         [Peachnote analysis
         platform](https://www.egi.eu/news/peachnote-in-unison-with-egi/).
--   **Compute and data intensive**: applications needing considerable
-    amount of resources in term of computation and/or memory and/or
+-   **Compute and data intensive applications**: for those applications needing
+    considerable amount of resources in term of computation and/or memory and/or
     intensive I/O. Ad-hoc computing environments can be created in the
     EGI cloud providers to satisfy very hard HW resource requirements.
     -   Example: [VERCE

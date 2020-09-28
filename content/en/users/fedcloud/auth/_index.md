@@ -30,8 +30,8 @@ Some users roles have special consideration in VOs:
 
 -   Users with VO Manager, VO Deputy or VO Expert Role have extra
     privileges in the AppDB for managing the Virtual Appliances to be
-    available at every provider. Check the `vmi`{.interpreted-text
-    role="doc"} for more information.
+    available at every provider. Check the [Virtual Machine Image
+    Management documentation](../vmi/) for more information.
 
 ### Pilot VO
 
@@ -58,17 +58,16 @@ approved you will be able to interact with the infrastructure.
 
 Pre-existing VOs of EGI can be also used on IaaS cloud providers.
 Consult with your VO manager or browse the existing VOs at the [EGI
-Operations Portal](https://operations-portal.egi.eu/vo/search) (filter
-for cloud in the middleware column). Joining these VOs may require a
-personal X.509 certificate. For getting one certificate, the easiest
-option is to get an 'eScience Personal' certificate online from the
-Terena Certificate Service CA. Check the countries where this is
-available, and follow the link to the respective CA page at the TCS
-participants list.
+Operations Portal](https://operations-portal.egi.eu/vo/). Joining these
+VOs may require a personal X.509 certificate. For getting such certificate,
+the easiest option is to get an 'eScience Personal' certificate online
+from the Terena Certificate Service CA. [Check the countries where this is
+available](https://www.terena.org/activities/tcs/participants.html).
+
 
 If eScience Personal certificate is not available in your country, then
-obtain a certificate from a regular IGTF CA (this may require a personal
-visit at the Certification Authority).
+obtain a certificate from a regular [IGTF CA](https://www.igtf.net/pmamap)
+(this may require a personal visit at the Certification Authority).
 
 ## Authentication {#oidc-auth-using-check-in}
 
@@ -129,8 +128,9 @@ project can be considered equivalent to a VO allocation). In order to
 discover which projects are available you can do that using the Keystone
 API.
 
-You can use the `egicli` to simplify the discovery of projects. First,
-define these variables in the environment:
+You can use the [`egicli`](https://github.com/EGI-Foundation/egicli)
+to simplify the discovery of projects. First, define these variables in
+your environment:
 
 -   `CHECKIN_CLIENT_ID`: Your Check-in client id (get it from [FedCloud
     Check-in client](https://aai.egi.eu/fedcloud))
