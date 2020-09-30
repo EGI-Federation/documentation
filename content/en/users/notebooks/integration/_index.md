@@ -7,27 +7,91 @@ weight: 20
 ---
 
 Notebooks running on EGI can access other existing computing and storage
-services. The centrally operated EGI Notebooks instance is using
-resources from the access.egi.eu Virtual Organisation. We are open to
-suggestions on which services you would like to access to create
-guidelines and extend the service with tools to ease these tasks.
+services from EGI or other e-Infrastructures. For data services, check
+[data section of the documentation](../data)
 
-## AGINFRA+/D4Science
+## EGI services: access tokens
 
-An instance of the EGI notebooks is deployed for the
-[AGINFRA+](http://plus.aginfra.eu/) project and made available via
-selected [D4Science VREs](https://www.d4science.org/). Besides the
-features available in the catch-all instance of Notebooks, this
-instance has been further customised to support:
+Most services integrated with EGI Check-in can handle valid access tokens
+for authorising users. These are short-lived (normally less than 1-hour)
+and need to be renewed for longer usage. EGI Notebooks provides a ready
+to use access token that can be accessed from your notebooks and is
+automatically refreshed so you can always have a valid one.
 
--   Embedding the EGI notebooks interface into the community we portal,
-    no separate web browser windows or tab to access the notebooks
-    functionality.
--   Integration of AAI between Notebooks and the community portal for
-    single-sign on. Enabled users are automatically recognised by the
-    notebooks.
--   Access to other VRE services from the notebooks using their personal
-    token easily available in the notebooks environment.
--   File sharing between notebooks and the community web portal file
-    space.
+The token is available at `/etc/egi/CHECKIN_TOKEN` and you can use it
+for example to access cloud providers of the EGI cloud. See the following
+sample code where a list of VMs is obtained for CESGA:
 
+``` python
+from keystoneauth1.identity import v3
+from keystoneauth1 import session
+from novaclient import client
+
+
+with open("/etc/egi/CHECKIN_TOKEN") as f:
+    access_token = f.read()
+
+auth = v3.OidcAccessToken(auth_url="https://fedcloud-osservices.egi.cesga.es:5000/v3",
+                          identity_provider="egi.eu",
+                          protocol="openid",
+                          project_id="3a8e9d966e644405bf19b536adf7743d",
+                          access_token=access_token)
+sess = session.Session(auth=auth)
+nova = client.Client(session=sess, version=2)
+nova.servers.list()
+```
+
+## D4Science
+
+If you are using a Notebooks instance integrated with D4Science, you can
+easily invoke DataMiner or any other D4Science functionality as the
+service will provide the `GCUBE_TOKEN` environment variable with a valid
+token.
+
+This code will print the list of DataMiner methods available within your VRE:
+
+``` python
+import os
+from owslib.wps import WebProcessingService
+
+# init http header parameter and base folders for gCube REST API
+gcube_vre_token_header = {'gcube-token': os.environ["GCUBE_TOKEN"]}
+# init WPS access for DataMiner algorithms
+dataminer_url = 'http://dataminer-prototypes.d4science.org/wps/WebProcessingService'
+wps = WebProcessingService(dataminer_url, headers=gcube_vre_token_header)
+
+for process in wps.processes:
+    print('- Name: ', process.title)
+```
+
+DataMiner algorithms can be invoked also from Notebooks, this code shows a
+sample:
+
+``` python
+from owslib.wps import ComplexDataInput, monitorExecution
+
+# define processid and inputs
+processid = 'org.gcube.dataanalysis.wps.statisticalmanager.synchserver.mappedclasses.transducerers.WOFOST_CLOUD_V0_2_1'
+inputs = [
+    ('ClassToRun', 'nl.wur.wofostsystem.App'),
+    ('FileInput',
+        ComplexDataInput(
+            'https://data.d4science.org/shub/E_eVhZTzBWWktOaVJxQjJkdTUxR3FHaTFFdE9BTDYrZkZxQnFWcGMyaVVJbXptejdDOEFpSVNmam82RllkRUJ6cA==',
+            mimeType="text/xml")
+    )
+]
+
+# execute the process
+execution = wps.execute(processid, inputs)
+monitorExecution(execution, sleepSecs=5, download=True)
+print(execution.status)
+```
+
+Note that inputs that point to a URL should be specified using the
+`ComplextDataInput` class as shown above.
+
+## Other 3rd party services
+
+We are open for integration with other services that may be relevant for your
+research. Please contact `support _at_ egi.eu` with your request so we can
+investigate the best way to support your needs.

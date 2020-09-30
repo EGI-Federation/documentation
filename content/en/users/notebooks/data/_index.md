@@ -6,35 +6,82 @@ description: >
 weight: 10
 ---
 
-1GB persistent storage for the notebooks is available as your home
-directory. **Please note that files stored on any other folder will be
-lost when your notebook server is closed (which can happen if there is
-no activity for more than 1 hour!)**.
+Every user of the EGI Notebooks catch-all instance has a 1GB persistent
+home to store any notebooks and associated data. The content of this
+home directory will be kept even if your notebook server is stopped (which
+can happen if there is no activity for more than 1 hour). **Modifications
+to the notebooks environment outside the home directory are not kept**
+(e.g. installation of libraries). if you need those changes to
+persist, let us know via a  [GGUS ticket to the Notebooks Support
+Unit](https://ggus.eu). You can also ask for increasing the 1GB home
+via ticket.
 
-If you need to increase your persistent storage space, open a [GGUS
-ticket to the Notebooks Support Unit](https://ggus.eu)
+## Getting data in/out
 
-Access to other kinds of persistent storage for community specific
-instances that can be tailored to your specific needs and available
-storage systems.
-
-## Getting your data in
-
-Your notebooks have full outgoing internet connectivity so you can
-connect to any external service to bring data in for analysis. We are
-evaluating integration with EOSC-hub services for facilitating the
-access to input data, with EGI DataHub as first target. Please contact
-<support@egi.eu> if you are interested in other I/O integrations.
-
-## Deposit output data
-
+Your notebooks have outgoing internet connectivity so you can
+connect to any external service to bring data in for analysis.
 As with input data, you can connect to any external service to deposit
 the notebooks output.
 
-## Interfacing with EUDAT B2DROP
+This is convenient for smaller datasets but not practical for
+larger ones, for those cases we can offer integration with
+several data services. These are not enabled in the catch-all
+instance but can be made available on demand.
 
-The Notebooks service is interoperable with the EUDAT B2DROP service,
-allowing a user to access files stored under his/her B2DROP account from
-the Notebooks. To use this feature you should sign up for a B2DROP
-account, upload files into it, then register the account in your
-Notebooks session. User guide about the steps is coming soon.
+### EGI DataHub
+
+[DataHub](../../datahub) provides a scalable distributed data
+infrastructre. It offers a tight integration with Jupyter and
+notebooks with specific drivers that make the DataHub Spaces
+accessible from any notebook.
+
+The folders are browseable from the notebooks interface. Opening
+files from your code requires you to use the
+[`fs-onedatafs`](https://github.com/onedata/fs-onedatafs) library:
+
+``` python
+from fs.onedatafs import OnedataFS
+
+# create the OnedataFS driver
+odfs = OnedataFS(os.environ['ONEPROVIDER_HOST'],
+                 os.environ['ONECLIENT_ACCESS_TOKEN'],
+                 force_direct_io=True)
+
+# use it to open a file
+f = odfs.open("<datahub file path>")
+```
+
+The `ONEPROVIDER_HOST` and `ONECLIENT_ACCESS_TOKEN` variables
+are obtained as part of the login process and made available in
+the notebooks environment automatically.
+
+### EUDAT B2DROP
+
+[EUDAT B2DROP](https://b2drop.eudat.eu/) offers a WebDAV interface
+that can be used to mount your files from the notebooks. Files are
+accessed as any regular file from the notebooks interface or from
+your code. This feature requires users to create a client in B2DROP
+and provide the client's credentials to the EGI notebooks service.
+
+### D4Science Workspace
+
+[D4Science](https://www.d4science.org/) VREs provide a shared
+workspace via a dedicated [API](https://gcube.wiki.gcube-system.org/gcube/StorageHub_REST_API).
+EGI Notebooks embedded in D4Science VREs will automatically
+show the user's workspace at the `workspace` directory. You can
+browse and use as any regular file.
+
+### Shared folders
+
+The Notebooks service can enable shared folders for users, either
+in read-only or read-write mode. These are specially meant for
+community instances for easing the sharing of data between all the
+users of the service. In the catch-all instance the `datasets`
+directory serves as an example of such feature.
+
+### Other services
+
+We are open for integration with other services for facilitating the
+access to input and output data. Please contact `support _at_ egi.eu`
+with your request so we can investigate the best way to support your
+needs.
