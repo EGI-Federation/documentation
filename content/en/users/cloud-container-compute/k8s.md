@@ -3,23 +3,23 @@ title: "Kubernetes"
 type: docs
 weight: 20
 description: >
-  Run containers on the EGI Cloud with Kubernetes 
+  Run containers on the EGI Cloud with Kubernetes
 ---
 
 There are several container management tools available, on the EGI Cloud we use
 [Kubernetes](https://kubernetes.io) as the default platform for our service. This
-guide explains how to get a running scalable Kubernetes deployment for your 
-applications with EC3. 
+guide explains how to get a running scalable Kubernetes deployment for your
+applications with EC3.
 
 ## Getting started
 
 Before getting your kubernetes cluster deployed, you need to get access to the
-Cloud Compute service, check the [Authentication and Authorisation guide](../fedcloud/auth)
+Cloud Compute service, check the [Authentication and Authorisation guide](../cloud-compute/auth)
 for more information. You should also get [`egicli`](https://github.com/EGI-Foundation/egcli/)
-installed to get EC3 templates needed to start deployment. 
+installed to get EC3 templates needed to start deployment.
 
 Your kubernetes deployment needs to be performed at an specific provider (site)
-and project. Discover them using `egicli` as described in the [EC3 tutorial](../fedcloud/ec3/basics).
+and project. Discover them using `egicli` as described in the [EC3 tutorial](../cloud-compute/ec3/basics).
 
 ### EC3 Templates
 
@@ -31,10 +31,10 @@ your kubernetes deployment:
 $ mkdir k8s
 $ cd k8s
 $ egicli endpoint ec3 --site <your site> --project-id <project_id>
-``` 
+```
 
 You will also need a base image template for the deployment. Please refer to the
-[EC3 tutorial](../fedcloud/ec3/basics) to create such file. Below you can 
+[EC3 tutorial](../cloud-compute/ec3/basics) to create such file. Below you can
 see an example for IFCA-LCG2 site with project related to `vo.access.egi.eu`:
 
 ```
@@ -176,7 +176,7 @@ defaultBackend:
   tolerations:
   - effect: NoSchedule
     key: node-role.kubernetes.io/master
-``` 
+```
 
 and install:
 
@@ -362,7 +362,7 @@ and attach it to a pod, see this example:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: test-pvc 
+  name: test-pvc
 spec:
   storageClassName: nfs-client
   accessModes:
@@ -383,7 +383,7 @@ spec:
     persistentVolumeClaim:
       claimName: test-pvc
   containers:
-  - name: test 
+  - name: test
     image: "busybox"
     command: ["sleep", "1d"]
     volumeMounts:
