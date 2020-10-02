@@ -1,8 +1,8 @@
 ---
 title: "HTC"
-dlinkTitle: "HTC"
+dlinkTitle: "High Throughput Compute"
 type: docs
-weight: 20
+weight: 60
 description: >
   EGI High Throughput Compute (HTC)
 ---

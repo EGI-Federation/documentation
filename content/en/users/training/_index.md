@@ -2,7 +2,7 @@
 title: "Training"
 linkTitle: "Training"
 type: docs
-weight: 70
+weight: 120
 description: >
   Training on using EGI resources and services
 ---
