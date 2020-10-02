@@ -13,7 +13,7 @@ High Throughput Compute (HTC) can be described as a use case for an infrastructu
 ### The EGI HTC Infrastructure
 EGI HTC infrastructure is the federation of GRID resources provided by EGI providers, that aims to share and federate in a secure way distributed IT resources as part of the EGI infrastructure. It comprises
 - Computer resources -- execution environment of computing tasks in clusters distributed in many different resource centers over Europe and outside Europe ; 
-- Data infrastructure -- storage servers where users can upload and their data/files in a distributed manner in the different resource centers 
+- Data infrastructure -- storage servers where users can upload and download their data/files in a distributed manner in the different resource centers 
 - Federated operations -- a set of federated operations that are constituted of global tasks (central activities/ services, e.g., AAI, accounting, helpdesk) that are needed to federate the heterogeneous resources from different resource centers and their operation activities that are carried out by the different National Grid Initiative (NGIs). 
 - User supports --  NGIs also carry out user support. EGI.eu provides the central user support and coordinates NGIs’ support activities.
 
