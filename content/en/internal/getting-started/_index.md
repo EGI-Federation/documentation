@@ -4,10 +4,9 @@ linkTitle: "Getting Started"
 type: docs
 weight: 10
 description: >
-  Getting started as as Service Provider.
+  Getting started as with Internal Services.
 ---
 
-{{% alert title="Information" color="info" %}}
-In order to discover and update information about the infrastructure service
-providers can use the [GODCB](../gocdb/access).
-{{% /alert %}}
+{{% pageinfo %}}
+This is a placeholder page.
+{{% /pageinfo %}}

@@ -4,7 +4,7 @@ linkTitle: "Getting Support"
 type: docs
 weight: 20
 description: >
-  Getting started as as Service Provider.
+  Getting support for Internal Services.
 ---
 
 {{% pageinfo %}}
