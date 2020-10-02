@@ -18,9 +18,9 @@ and need to be renewed for longer usage. EGI Notebooks provides a ready
 to use access token that can be accessed from your notebooks and is
 automatically refreshed so you can always have a valid one.
 
-The token is available at `/etc/egi/CHECKIN_TOKEN` and you can use it
-for example to access cloud providers of the EGI cloud. See the following
-sample code where a list of VMs is obtained for CESGA:
+The token is available at `/var/run/secrets/egi.eu/access_token` and you can
+use it for example to access cloud providers of the EGI cloud. See the
+following sample code where a list of VMs is obtained for CESGA:
 
 ``` python
 from keystoneauth1.identity import v3
@@ -28,7 +28,7 @@ from keystoneauth1 import session
 from novaclient import client
 
 
-with open("/etc/egi/CHECKIN_TOKEN") as f:
+with open("/var/run/secrets/egi.eu/access_token") as f:
     access_token = f.read()
 
 auth = v3.OidcAccessToken(auth_url="https://fedcloud-osservices.egi.cesga.es:5000/v3",
@@ -40,6 +40,8 @@ sess = session.Session(auth=auth)
 nova = client.Client(session=sess, version=2)
 nova.servers.list()
 ```
+
+A valid ID token is also available at `/var/run/secrets/egi.eu/id_token`.
 
 ## D4Science
 
