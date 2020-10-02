@@ -5,6 +5,5 @@ type: docs
 weight: 30
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+Check the [contributing guide at GitHub](https://github.com/EGI-Foundation/documentation/blob/master/CONTRIBUTING.md)
+
