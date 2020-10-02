@@ -37,12 +37,16 @@ accessible from any notebook.
 
 The folders are browseable from the notebooks interface. Opening
 files from your code requires you to use the
-[`fs-onedatafs`](https://github.com/onedata/fs-onedatafs) library:
+[`fs-onedatafs`](https://github.com/onedata/fs-onedatafs) library.
+For convenience, the `ONEPROVIDER_HOST` environment variable
+will point to the default oneprovider for the Notebooks and
+the `ONECLIENT_ACCESS_TOKEN` variable will contain a valid
+access token for the service.
 
 ``` python
 from fs.onedatafs import OnedataFS
 
-# create the OnedataFS driver
+# create the OnedataFS driver using defaults from env
 odfs = OnedataFS(os.environ['ONEPROVIDER_HOST'],
                  os.environ['ONECLIENT_ACCESS_TOKEN'],
                  force_direct_io=True)
@@ -53,7 +57,8 @@ f = odfs.open("<datahub file path>")
 
 The `ONEPROVIDER_HOST` and `ONECLIENT_ACCESS_TOKEN` variables
 are obtained as part of the login process and made available in
-the notebooks environment automatically.
+the notebooks environment automatically. You can also specify
+your a different oneprovider host if needed.
 
 ### EUDAT B2DROP
 
