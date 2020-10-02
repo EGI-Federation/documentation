@@ -1,7 +1,7 @@
 ---
 title: "VMOps Dashboard"
 type: docs
-weight: 30
+weight: 40
 description: >
   The VMOPs Dashboard for management of VMs on the federation
 ---
@@ -11,9 +11,9 @@ web GUI for management of Virtual Machines (VMs) on the federated
 infrastructure.
 
 This GUI is available for a set of [selected
-VOs](https://wiki.appdb.egi.eu/main:faq:which_vos_are_supported_by_the_vmops_dashboard)
+VOs](https://wiki.appdb.egi.eu/main:faq:which_vos_are_supported_by_the_vmops_dashboard).
 If your VO is not listed and you are interested in getting support,
-please [open a ticket](https://ggus.egi.eu) or contact us at
+please [open a ticket](https://ggus.eu) or contact us at
 `support _at_ egi.eu`.
 
 ## Main user features
@@ -58,7 +58,7 @@ please [open a ticket](https://ggus.egi.eu) or contact us at
     -   Define contextualisation parameters (e.g. add new users, execute
         some script)
 
-    ![Topology settings](vmops_settings.png)
+        ![Topology settings](vmops_settings.png)
 
 1.  Click on \"Launch\" and your deployment will be submitted to the
     infrastructure.

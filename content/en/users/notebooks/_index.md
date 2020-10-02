@@ -3,7 +3,7 @@ title: "Notebooks"
 linkTitle: "Notebooks"
 type: docs
 description: "Documentation related to EGI Notebooks"
-weight: 40
+weight: 60
 ---
 
 The more you go in data analysis, the more you understand that the most

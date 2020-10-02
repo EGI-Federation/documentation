@@ -1,7 +1,7 @@
 ---
 title: "Using OpenStack providers"
 type: docs
-weight: 40
+weight: 50
 description: >
   How to interact with the OpenStack providers APIs in the EGI Cloud 
 ---
@@ -83,7 +83,7 @@ expecting your credentials to be available in the environment:
     obtaining it)
 
 Optionally set the `CHECKIN_URL` to the Check-in endpoint
-(<https://aai-dev.eu.eu/> if testing on the devel environment).
+(e.g. `https://aai-dev.egi.eu/` if testing on the devel environment).
 
 ``` {.console}
 # Export OIDC env

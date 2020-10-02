@@ -26,8 +26,8 @@ The rest of the tools can be installed as follows:
 
 ```console
 gem install mdl
-npm install postcss-cli
-npm install autoprefixer
+npm install postcss-cli@7.1.2
+npm install autoprefixer@9.0
 ```
 The supported Hugo version packages are available under the `binaries` folder.
 

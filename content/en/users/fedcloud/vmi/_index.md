@@ -1,7 +1,7 @@
 ---
 title: "Virtual Machine Image Management"
 type: docs
-weight: 20
+weight: 30
 description: >
   Managing VM images in the EGI Cloud
 ---
@@ -131,10 +131,6 @@ as possible following these guidelines:
     rm -rf /bigemptyfile
     ```
 
-    Check [this compacting a vmdk VM disk
-    guide](http://splatoperator.com/2012/07/compacting-a-vmdk-virtual-machine-disk-format-image/)
-    for more info.
-
 -   **DO** use a single partition (no /boot, no swap) for the disk
     layout and avoid LVM. This will allow the cloud provider to easily
     resize your partition when instantiated and to modify files in it if
@@ -142,13 +138,11 @@ as possible following these guidelines:
 
 ### Contextualization and credentials
 
-::: {.danger}
-::: {.admonition-title}
-Danger
-:::
+{{% alert title="Danger" color="danger" %}}
 
 **Do NOT include any credentials on your images**.
-:::
+
+{{% /alert %}}
 
 You should never include any kind of credentials on your images, instead
 you should use contextualization.

@@ -238,11 +238,10 @@ portals/gateways:
 
 ### FutureGateway Science Gateway
 
-The [FutureGateway Science Gateway
-(FGSG)](http://www.catania-science-gateways.it/) is a programmable
-interface of a RESTful API Server, compliant with CSGF APIs
-specifications, able to provide an easy access to the PaaS layer by
-leveraging on recent Web technologies.
+The [FutureGateway Science Gateway (FGSG)](https://fgsg.ct.infn.it/)
+is a programmable interface of a RESTful API Server, compliant with
+CSGF APIs specifications, able to provide an easy access to the PaaS
+layer by leveraging on recent Web technologies.
 
 -   The FGSG incorporates several applications and offers these \"as
     services\" for the user.

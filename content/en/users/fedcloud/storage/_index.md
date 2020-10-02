@@ -1,7 +1,7 @@
 ---
 title: "Storage"
 type: docs
-weight: 50
+weight: 60
 description: >
   Storage features of the EGI Cloud
 ---
@@ -37,7 +37,7 @@ is accounted for the entire block storage device, regardless how much of
 it is actually used.
 
 **Object storage** is a standalone service that stores data as sets of
-individual objects organized within containers (e.g. folders). Each
+individual objects organized within containers. Each
 object has its own URL, which can be used to access the resource, to
 share the file with other people, and to setup custom metadata and
 access control lists. These objects are accessed and managed via a REST
@@ -90,7 +90,7 @@ are listed below:
 | `server remove volume <server> <volume>` | Dettach a volume from a server |
 
 For using the legacy OCCI interface refer to [OCCI
-How-to](https://wiki.egi.eu/wiki/HOWTO11_How_to_use_the_rOCCI_Client).
+How-to](https://wiki.egi.eu/wiki/HOWTO11_How_to_use_the_rOCCI_Client#How_to_create_block_storage.3F).
 
 ### Using block storage from your VMs
 

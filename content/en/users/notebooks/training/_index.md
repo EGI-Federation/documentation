@@ -7,12 +7,12 @@ weight: 30
 ---
 
 EGI provides a training instance of the Notebooks service for training
-events. This instance may not use the same software version as in
-production and may not be always available.
+events.
 
-{{% alert title="Note" color="info" %}}
-The training environment for the Notebooks is available at
-<https://training.notebooks.egi.eu>.
+{{% alert title="Note" color="warning" %}}
+This instance may not use the same software version as in
+production and may not be always available, as it is tipically configured
+for specific training events.
 {{% /alert %}}
 
 To get started:

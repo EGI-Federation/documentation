@@ -1,10 +1,10 @@
 ---
 title: "ECAS"
 type: docs
-weight: 20
+weight: 30
 description: >
   Using Elastic Cloud Computing Cluster (EC3) platform to create
-  ECAS environment.
+  an ECAS environment.
 ---
 
 The following guide is intended for researchers who want to use ECAS, a
@@ -16,7 +16,7 @@ catalog and aims to:
 
 1.  provide server-based computation,
 2.  avoid data transfer, and
-3.  improve reusability of data and workflows (FAIR approach).
+3.  improve reusability of data and workflows.
 
 It relies on [Ophidia](http://ophidia.cmcc.it/), a data analytics
 framework for eScience, which provides declarative, server-side, and
@@ -117,14 +117,10 @@ deployed clusters\" link on the front page:
 
 ![Manage your clusters.](../ecas-manage.png)
 
-::: {.note}
-::: {.title}
-Note
-:::
-
+{{% alert title="Note" color="primary" %}}
 The configuration of the cluster may take some time. Please wait for its
 completion before starting to start using the cluster.
-:::
+{{% /alert %}}
 
 ### Accessing the cluster
 
