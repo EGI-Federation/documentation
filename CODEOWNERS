@@ -24,6 +24,9 @@ content/*/*/datahub/ @andrea-manzi
 # Data Transfer
 content/*/*/data-transfer/ @andrea-manzi
 
+# Data Transfer
+content/*/*/online-storage/ @andrea-manzi
+
 # FedCloud
 content/*/*/cloud-*/ @enolfc
 
