@@ -1,7 +1,7 @@
 ---
 title: "Cloud Compute"
 description: "IaaS Service providers documentation"
-weight: 20
+weight: 30
 type: "docs"
 ---
 
