@@ -11,7 +11,7 @@ description: >
 
 You need to sign up for an account for accessing the EGI services. This process
 is not about creating yet another (username/password) credential but to link
-your existing existing credential (for example using an eduGAIN IdP) with EGI.
+your existing credential (for example using an eduGAIN IdP) with EGI.
 
 Follow the [sign up process](../check-in/signup/) to get started.
 
