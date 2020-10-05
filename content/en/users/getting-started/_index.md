@@ -39,4 +39,4 @@ full list of available VOs.
 Some services require the use of X.509 certificates for user authentication and
 authorisation. These use [VOMS](https://italiangrid.github.io/voms/index.html)
 for managing VO membership. Learn about how to get certificates and join a VOMS
-based Virtual Organisation in the [HTC getting started guide](../htc/getting-started).
+based Virtual Organisation in the [Check-in documentation](../check-in/voms).
