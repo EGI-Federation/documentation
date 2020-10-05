@@ -97,7 +97,7 @@ In summary, the main feature of the EGI HTC service are as follows:
 ![EGI HTC architecture](htc_archtecture.png)
 
 Key Components:
-* [Data Transfer Service (FTS)](../datatransfer/)
+* [Data Transfer Service (FTS)](../data-transfer/)
 * [Storage Services](../online-storage/)
 * _Computing Elements (CE)_: Computing resources are made available through
   GRID interfaces called Computing Elements. Several implementations of CE
