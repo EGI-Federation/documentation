@@ -7,7 +7,7 @@ description: >
   Register an account with Check-in to get access to EGI services
 ---
 
-You need to sign up for an account for accessing the EGI serives. As part of
+You need to sign up for an account for accessing the EGI services. As part of
 this process you will be assigned a personal unique **EGI ID** which will be
 then used across all EGI tools and services. Follow the instructions below
 to get started:
