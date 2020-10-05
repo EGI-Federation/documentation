@@ -105,6 +105,6 @@ Key Components:
 
 #### Access Models
 
-Access to HTC resources is based on [Virtual Organisationss](../getting-started/#virtual-organisations-vos),
+Access to HTC resources is based on [Virtual Organisations](../getting-started/#virtual-organisations-vos),
 you will need to enrol into one VO before using the service. VOs for the HTC
 service relies on [X.509 proxy certificates with VOMS extensions](../check-in/voms).
