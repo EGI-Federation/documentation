@@ -9,7 +9,7 @@ description: >
 
 ## EGI Account
 
-You need to sign up for an account for accessing the EGI serives. This process
+You need to sign up for an account for accessing the EGI services. This process
 is not about creating yet another (username/password) credential but to link
 your existing existing credential (for example using an eduGAIN IdP) with EGI.
 
