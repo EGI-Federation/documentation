@@ -34,7 +34,7 @@ sites that offer:
     pre-configured Virtual Machine images that are automatically
     replicated to every provider based on your community needs.
 -   Resource discovery features to easily understand which providers are
-    support your community and what are their capabilities.
+    supporting  your community and what are their capabilities.
 -   [Global accounting](https://accounting.egi.eu/cloud/) that
     aggregates and allows visualisation of usage information across the
     whole federation.
