@@ -2,7 +2,7 @@
 title: "Cloud Compute"
 linkTitle: "Cloud Compute"
 type: docs
-weight: 20
+weight: 40
 description: >
   EGI Cloud Compute (FedCloud)
 ---

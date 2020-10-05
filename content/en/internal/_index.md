@@ -1,6 +1,6 @@
 ---
-title: "Federation Operations"
-description: "Federation Operations documentation"
+title: "Internal Services"
+description: "Internal Services documentation"
 weight: 30
 type: "docs"
 menu:

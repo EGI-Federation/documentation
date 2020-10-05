@@ -1,7 +1,7 @@
 ---
-title: "GOCDB"
-description: "GOCDB documentation"
-weight: 20
+title: "Configuration Database"
+description: "Configuration DataBase (GOCDB) documentation"
+weight: 30
 type: "docs"
 ---
 

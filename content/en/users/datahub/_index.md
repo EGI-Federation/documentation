@@ -3,7 +3,7 @@ title: "DataHub"
 linkTitle: "DataHub"
 type: docs
 description: "Documentation related to EGI DataHub"
-weight: 50
+weight: 90
 ---
 
 ## Motivation

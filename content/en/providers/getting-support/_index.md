@@ -1,8 +1,8 @@
 ---
-title: "Getting Started"
-linkTitle: "Getting Started"
+title: "Getting Support"
+linkTitle: "Getting Support"
 type: docs
-weight: 10
+weight: 20
 ---
 
 {{% pageinfo %}}

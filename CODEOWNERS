@@ -10,25 +10,40 @@
 * @enolfc @glarocca @gwarf @andrea-manzi
 
 # Operations
-content/*/operations/ @gwarf @paolini78
+content/*/internal/ @gwarf @paolini78
 
 # Providers
 content/*/providers/ @gwarf @paolini78
 
 # Users
-content/*/users/ @enolfc @glaroccca @andrea-manzi @gwarf
+content/*/users/ @enolfc @glarocca @andrea-manzi @gwarf
 
 # DataHub
 content/*/*/datahub/ @andrea-manzi
 
 # Data Transfer
-content/*/*/datatransfer/ @andrea-manzi
+content/*/*/data-transfer/ @andrea-manzi
+
+# Online Storage
+content/*/*/online-storage/ @andrea-manzi
 
 # FedCloud
-content/*/*/fedcloud/ @enolfc
+content/*/*/cloud-*/ @enolfc
 
 # Notebooks
 content/*/*/notebooks/ @enolfc @andrea-manzi
 
+# Aod
+content/*/*/applications-on-demand/ @glarocca
+
 # Training
-content/*/users/training/ @glaroccca
+content/*/users/training/ @glarocca
+
+# HTC
+content/*/*/htc/ @CatalinCondurache
+
+# Workload Manager
+content/*/*/workload-manager/ @CatalinCondurache
+
+# Check-in 
+content/*/*/check-in/ @vardizzo-lab

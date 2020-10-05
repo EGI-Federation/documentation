@@ -1,8 +1,10 @@
 ---
-title: "Getting Started"
-linkTitle: "Getting Started"
+title: "Check-in"
+linkTitle: "Check-in"
 type: docs
-weight: 10
+weight: 30
+description: >
+  Check-in 
 ---
 
 {{% pageinfo %}}

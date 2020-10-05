@@ -1,7 +1,7 @@
 ---
 title: "Applications on Demand (AoD)"
 type: docs
-weight: 90
+weight: 100
 description: >
   The Applications on Demand (AoD) service
 ---
