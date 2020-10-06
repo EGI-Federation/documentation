@@ -126,23 +126,4 @@ required in the application logic.
 
 ## Object Storage
 
-{{% alert title="Note" color="info" %}}
-We are currently re-evaluating the object storage capabilities of EGI
-Cloud and will update this documentation as soon as possible.
-{{% /alert %}}
-
-OpenStack SWIFT offers a RESTful API to manage your storage. As with
-block storage you can manage it via the OpenStack CLI or web dashboard.
-
-Available SWIFT providers resources can be discovered in
-[GOCDB](https://goc.egi.eu/portal/index.php?Page_Type=Services&serviceType=org.openstack.swift&selectItemserviceType=org.openstack.swift&ngi=&searchTerm=&production=TRUE&monitored=TRUE&certStatus=Certified&scopeMatch=all&servKeyNames=&servKeyValue=).
-For accessing the endpoint check the `URL` of the specific provider.
-
-### Usage from your application
-
-Integration of the block storage within your application will require a
-client or set of libraries to be integrated within your application that
-perform the REST operations on the service endpoints. Check the complete
-[OpenStack object store
-API](https://docs.openstack.org/api-ref/object-store/) for more
-information.
+Information about object storage in EGI are available under the [Online storage](../../online-storage/object-storage) section  
