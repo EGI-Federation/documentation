@@ -215,10 +215,13 @@ git push --set-upstream
 Once done `git` output will show a URL that you can click to generate a Pull
 Request (PR).
 
-If needed GitHub CLI can also be used:
+Accessing GitHub upstream or fork repositories may also propose you to submit a
+PR.
+
+If needed GitHub CLI can also be used to prepare the PR:
 
 ```sh
-gh pr create --web
+gh pr create <your_username>:<feature_branch> --web
 ```
 
 ### Updating a repository clone with the upstream changes
