@@ -43,9 +43,10 @@ made in two ways:
 
 ### Contributing via a Pull Request
 
-Before proposing a contribution via pull request, ideally there is an open
-issue describing the need for your contribution (refer to this issue number
-when you submit the pull request). We have a 3 steps process for contributions.
+Before proposing a contribution via a so-called Pull Request (PR), ideally
+there is an open issue describing the need for your contribution (refer to this
+issue number when you submit the pull request). We have a 3 steps process for
+contributions.
 
 1. Fork the project if you have not, and commit changes to a git branch.
    Documentation on building the documentation locally is available in the
@@ -57,6 +58,8 @@ when you submit the pull request). We have a 3 steps process for contributions.
 
 ### Pull Request Requirements
 
+1. If the PR is not finalised mark it as draft using the GitHub web interface,
+   so that it's clear it's not yet ready to be reviewed.
 1. **Explain your contribution in plain language.** To assist the maintainers
    in understanding and appreciating your pull request, please use the
    template to explain _why_ you are making this contribution, rather than
