@@ -209,7 +209,7 @@ From inside a feature branch you can push it to your remote fork.
 
 ```sh
 # Ask git to keep trace of the link between local and remote branches
-git push --upstream
+git push --set-upstream
 ```
 
 Once done `git` output will show a URL that you can click to generate a Pull
