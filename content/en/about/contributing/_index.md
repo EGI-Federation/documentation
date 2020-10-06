@@ -23,7 +23,7 @@ Be sure to follow it when proposing changes.
 
 If you wish to discuss anything related to the project, please open an issue or
 start a topic on the [EGI Community Forum](https://community.egi.eu).
-The maintainers will sometimes move issues off of GitHub to the community forum
+The maintainers will sometimes move issues off from GitHub to the community forum
 if it is thought that longer, more open-ended discussion would be beneficial,
 including a wider community scope.
 
