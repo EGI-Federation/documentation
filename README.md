@@ -2,12 +2,15 @@
 
 [![Build Status](https://travis-ci.org/EGI-Foundation/documentation.svg?branch=master)](https://travis-ci.org/EGI-Foundation/documentation)
 
-Sources to build [EGI documentation static pages](https://egi-foundation.github.io/).
+Sources to build
+[EGI documentation static pages](https://egi-foundation.github.io/).
 
 - [Hugo](https://gohugo.io/) is used to build a static website.
 - The theme [docsy](https://www.docsy.dev) is used.
-- The static site is [deployed on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/) using a
-  dedicated [GitHub repository](https://github.com/EGI-Foundation/EGI-Foundation.github.io).
+- The static site is
+  [deployed on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+  using a dedicated
+  [GitHub repository](https://github.com/EGI-Foundation/EGI-Foundation.github.io).
 
 ### Requirements
 
@@ -29,6 +32,7 @@ gem install mdl
 npm install postcss-cli@7.1.2
 npm install autoprefixer@9.0
 ```
+
 The supported Hugo version packages are available under the `binaries` folder.
 
 To build the site, from the repository root
@@ -66,8 +70,8 @@ git ci themes/docsy -m 'Update theme'
 
 ### Deploying to the EGI organisation pages
 
-To speed up the travis run a binary version of Hugo (extended version) for
-Linux 64 bit is included in the repository under `binaries`.
-Updates can be downloaded at https://github.com/gohugoio/hugo/releases.
+To speed up the travis run a binary version of Hugo (extended version) for Linux
+64 bit is included in the repository under `binaries`. Updates can be downloaded
+at https://github.com/gohugoio/hugo/releases.
 
 Travis will automatically deploy a new version when a PR is merged to master.
