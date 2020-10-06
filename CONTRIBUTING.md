@@ -67,7 +67,7 @@ follows:
 1. If a maintainer has feedback or questions on your changes then they will set
    `request changes` in the review and provide an explanation.
 
-## Using git
+## Using git and GitHub
 
 For collaboration purposes, it is best if you create a GitHub account and fork
 the repository to your own account. Once you do this you will be able to push
@@ -76,16 +76,109 @@ be easier to send pull requests.
 
 If you are new to `git` and **GitHub** you are advised to start by the two
 following articles providing simple tutorials:
+
 - https://opensource.com/article/18/1/step-step-guide-git
 - https://opensource.com/article/19/7/create-pull-request-github
 
-GitHub official documentaiton is available at https://docs.github.com/en/github.
+GitHub official documentation is available at https://docs.github.com/en/github.
+
+Some documentation about the main steps for working with GitHub is also
+available her after.
+
+### Summary of the GitHub flow
+
+In order to be able to send code update to the repository you need to:
+
+- fork the repository to your GitHub account
+- clone the repository on your local computer
+- create a _feature branch_ where you will commit your changes
+- push the _feature branch_ to the repository fork in your GitHub account
+- open a Pull Request (PR) against the upstream repository
+
+### Adding an SSH key to your GitHub account
+
+The most convenient way to authenticate with GitHub is to use SSH keys over the
+SSH protocol.
+
+You can add an SSH _public_ key to your GitHub account in the `Settings` on GitHub, at
+https://github.com/settings/keys.
+
+Refer to [Connecting to GitHub with
+SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
+for an extensive documentation on using SSH keys with GitHub.
+
+It's worth to mention that your ssh _public_ keys can easily be retrieved using
+an URL like https://github.com/<your_username>.keys.
+
+In order to manage repositories over ssh, you will will have to clone them via
+SSH, not HTTPS.
+
+If you already have a local clone of a repository created via HTTPS, you can
+switch it to SSH by following [Switching remote URLs from HTTPS to
+SSH](https://docs.github.com/en/free-pro-team@latest/github/using-git/changing-a-remotes-url#switching-remote-urls-from-https-to-ssh).
+
+### Starting with the GitHub CLI
+
+The GitHub Command Line Interface greatly helps with working with GitHub
+repositories from a terminal.
+
+It can be installed using the packages available on https://cli.github.com/.
+The manual is available at https://cli.github.com/manual/.
+
+Once installed you will have to start by setting up authentication.
+
+```sh
+# Authenticate with GitHub
+gh auth login
+# Favor ssh protocol
+gh config set git_protocol ssh
+```
+
+### Forking the repository
+
+The easiest way is to do it via the GitHub CLI that will also clone it locally.
+But it can also be done via the web interface, using the _fork_ button and then
+cloning it locally manually.
+
+#### Forking and cloning the repository
+
+This command will fork the repository to your GitHub account and clone a local
+copy for you to work with.
+
+```sh
+gh repo fork EGI-Foundation/documentation
+```
+
+#### Cloning the repository fork created using the web interface
+
+If you want to clone an existing fork you should use:
+
+```sh
+gh repo clone <your_username>/documentation
+```
 
 ### Branches and Commits
 
-You should submit your patch as a git branch named after the Github issue, such
-as `#3`\. This is called a _topic branch_ and allows users to associate a
-branch of code with the issue.
+You should submit your patch as a git branch ideally named with a meaningful
+name related to the changes you want to propose.
+This is called a _feature branch_ (sometimes also named _topic branch_).
+You will commit your modifications to this _feature branch_ and submit a Pull
+Request (PR) based on the differences between the upstream master branch and
+your _feature branch_.
+
+#### Creating a feature branch
+
+Try to avoid committing changes to the _master_ branch of your clone to
+simplify management, creating a dedicated _feature branch_ helps a lot.
+Try to pick a meaningful name for the branch (my_nice_update in the example).
+
+```sh
+# This should be done from the up-to-date master branch
+# Read furthermore to see documentation on updating a local clone
+git checkout -b my_nice_update
+```
+
+#### Committing changes
 
 It is the best practice to have your commit message have a _summary line_ that
 includes the issue number, followed by an empty line and then a brief
@@ -101,6 +194,78 @@ purpose of changes to the code.
     * GH-692 - delete config files dropped off by packages in conf.d
     * dropped debian 4 support because all other platforms have the same
       values, and it is older than "old stable" debian release
+```
+
+```sh
+# Select the modified files to be committed
+git add files1 path2/
+# Commit the changes
+git commit -m <commit_message>
+```
+
+#### Pushing your feature branch to your fork for preparing a PR
+
+From inside a feature branch you can push it to your remote fork.
+
+```sh
+# Ask git to keep trace of the link between local and remote branches
+git push --upstream
+```
+
+Once done `git` output will show a URL that you can click to generate a Pull
+Request (PR).
+
+If needed GitHub CLI can also be used:
+
+```sh
+gh pr create --web
+```
+
+### Updating a repository clone with the upstream changes
+
+```sh
+# If you are still in a branch created for a previous PR, move to master
+git checkout master
+# Get the latest data from the upstream repository
+git fetch upstream
+# Update your local copy with this data
+git rebase upstream/master master
+# Update your remote GiHhub fork with those changes
+git push
+```
+
+### Cloning a Pull Request to test it locally
+
+It's possible to clone a Pull Request to a local branch to test it locally.
+It's done using the PR number.
+
+```sh
+# List available PR and their identifiers.
+gh pri list
+# Clone  specific PR
+gh pr checkout XX
+# You can also update your local clone
+# It will ask you to merge changes
+git pull
+```
+
+Then you can refer to the `README.md` to see how to test it locally.
+
+#### Cleaning a local clone of a PR
+
+In case you have troubles updating the local clone, as it can happens if
+changes were forced pushed to it, it maybe easier to delete the local copy of
+the PR and recreate it.
+
+```sh
+# Switch to main branch
+git checkout master
+# Check local branches
+git branch -vv
+# Delete a specific branch
+git branch -d <branch_name>
+# If you need to force the deletion use -D
+git branch -D <branch_name>
 ```
 
 ## Release cycle
