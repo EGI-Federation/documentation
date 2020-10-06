@@ -49,7 +49,7 @@ when you submit the pull request). We have a 3 steps process for contributions.
 
 1. Fork the project if you have not, and commit changes to a git branch.
    Documentation on building the documentation locally is available in the
-   [README.md](README.md)
+   [README.md](https://github.com/EGI-Foundation/documentation/blob/master/README.md)
 1. Create a GitHub Pull Request for your change, following the instructions
    in the pull request template.
 1. Perform a [Code Review](#code-review-process) with the maintainers on the
