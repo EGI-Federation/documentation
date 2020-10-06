@@ -38,8 +38,8 @@ made in two ways:
   documentation](https://help.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository)).
   You will be guided through the required steps.
 - for more complex contributions and when you want to preview and test changes
-  locally you should fork the repository as documented below in the **Using
-  git** section.
+  locally you should fork the repository as documented below in the [Using
+  git and GitHub](#using-git-and-github) section.
 
 ### Contributing via a Pull Request
 
