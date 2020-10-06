@@ -39,3 +39,26 @@ Configuration is provided in `.prettierrc`, options can be set as follow:
 - Lines should end with a Line Feed character ("\n")
 - Files should end with a Line Feed character ("\n"), but not including an
   empty line.
+
+## Markdown tips
+
+### Linking to another page
+
+You can use the path to the other page:
+
+```markdown
+This is a link to [another page](../my-other-page).
+```
+
+### Linking to another section in the same page
+
+You need to use an anchor targeting the section name, putting it in lower case
+and adding dashes to separate words:
+
+```markdown
+This is a test of linking to a specic [section](#the-section-header)
+
+## The section header
+
+Second section content.
+```
