@@ -1,6 +1,4 @@
 ---
-# Configuration for prettier
-https://prettier.io/docs/en/configuration.html
 proseWrap: "always"
 tabWidth: 2
 printWidth: 80
