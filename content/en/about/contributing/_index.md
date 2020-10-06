@@ -14,6 +14,11 @@ to have their contributions accepted.
 Please take a few moments to read this short guide on how to contribute; bear
 in mind that contributions regarding how to best contribute are also welcome.
 
+## Style guide
+
+A summary of the style guide is available at [style guide](../style/).
+Be sure to follow it when proposing changes.
+
 ## Feedback and Questions
 
 If you wish to discuss anything related to the project, please open an issue or
