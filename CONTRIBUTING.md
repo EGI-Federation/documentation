@@ -178,6 +178,19 @@ Try to pick a meaningful name for the branch (my_nice_update in the example).
 git checkout -b my_nice_update
 ```
 
+#### Writing changes
+
+The documentation being made of plain text files you are free to use whatever
+text editor or Integrated Development Environment (IDE) suits you, from
+[neovim](https://neovim.io/) to [Visual Studio
+Code](https://code.visualstudio.com/).
+
+Some environments may provide you plugins helping with syntax or offering a
+preview, they are worth checking.
+
+Be sure to commit files with a working markdown syntax and with lines cut
+around 80 characters.
+
 #### Committing changes
 
 It is the best practice to have your commit message have a _summary line_ that
