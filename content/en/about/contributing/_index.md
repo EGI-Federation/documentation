@@ -219,8 +219,8 @@ text editor or Integrated Development Environment (IDE) suits you, from
 Some environments may provide you plugins helping with syntax or offering a
 preview, they are worth checking.
 
-Be sure to commit files with a working markdown syntax and with lines cut around
-80 characters.
+Be sure to commit files with having been formated using
+[Prettier](https://prettier.io/) as documented in our [style guide](../style/).
 
 #### Committing changes
 
