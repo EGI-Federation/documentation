@@ -17,6 +17,8 @@ Style should be enforced via the usage of [Prettier](https://prettier.io/).
 Prettier can be integrated with various editors:
 https://prettier.io/docs/en/editors.html.
 
+With VIM/neovim it can be used via [ALE](https://github.com/dense-analysis/ale).
+
 Configuration is provided in `.prettierrc`, options can be set as follow:
 
 
