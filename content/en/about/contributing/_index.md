@@ -43,18 +43,18 @@ made in two ways:
 
 ### Contributing via a Pull Request
 
-Before proposing a contribution via a so-called Pull Request (PR), ideally
+Before proposing a contribution via the so-called Pull Request (PR), ideally
 there is an open issue describing the need for your contribution (refer to this
-issue number when you submit the pull request). We have a 3 steps process for
+issue number when you submit the Pull Request). We have a 3 steps process for
 contributions.
 
 1. Fork the project if you have not, and commit changes to a git branch.
    Documentation on building the documentation locally is available in the
    [README.md](https://github.com/EGI-Foundation/documentation/blob/master/README.md)
 1. Create a GitHub Pull Request for your change, following the instructions
-   in the pull request template.
+   in the Pull Request template.
 1. Perform a [Code Review](#code-review-process) with the maintainers on the
-   pull request.
+   Pull Request.
 
 ### Pull Request Requirements
 
@@ -106,7 +106,7 @@ In order to be able to send code update to the repository you need to:
 - clone the repository on your local computer
 - create a _feature branch_ where you will commit your changes
 - push the _feature branch_ to the repository fork in your GitHub account
-- open a Pull Request (PR) against the upstream repository
+- open a Pull Request against the upstream repository
 
 In this process three git repositories are used:
 
@@ -120,8 +120,8 @@ In this process three git repositories are used:
 The most convenient way to authenticate with GitHub is to use SSH keys over the
 SSH protocol.
 
-You can add an SSH _public_ key to your GitHub account in the `Settings` on GitHub, at
-https://github.com/settings/keys.
+You can add an SSH _public_ key to your GitHub account in the `Settings` on
+GitHub, at https://github.com/settings/keys.
 
 Refer to [Connecting to GitHub with
 SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
