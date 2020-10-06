@@ -301,7 +301,7 @@ It's done using the PR number.
 
 ```sh
 # List available PR and their identifiers.
-gh pri list
+gh pr list
 # Clone  specific PR
 gh pr checkout XX
 # You can also update your local clone
