@@ -11,7 +11,7 @@ To access the web interface, users can:
 
 - use EGI Check-in to [access the GOCDB with an institutional
   account](#using-institutional-account-via-egi-check-in).
-- use an [X509 digital certificate installed in the
+- use an [X.509 digital certificate installed in the
   browser](#using-an-x509-digital-certificate), delivered by
   one of the recognised EU-Grid-PMA Certification Authorities ;
 
@@ -48,7 +48,7 @@ specific group. Using a compliant IdP is the preferable solution.
    group](https://aai.egi.eu/registry/co_petitions/start/coef:41) ;
 1. The access request will be managed by the EGI Operations team.
 
-## Using an X509 digital certificate
+## Using an X.509 digital certificate
 
 Please note, GOCDB does not support single or double quotes in the certificate
 Distinguished Name (DN).

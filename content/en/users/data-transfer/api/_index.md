@@ -22,7 +22,7 @@ in the next section.
 
 {{% alert title="Warning" color="warning" %}}
 
-Users have to authenticate using a X509 User certificate. The integration 
+Users have to authenticate using a X.509 User certificate. The integration 
 with EGI Check-in in order to authenticate via OIDC tokens  
 is under development and will be later made available in production endpoints.
 
@@ -31,7 +31,7 @@ is under development and will be later made available in production endpoints.
 During the authentication phase, credentials are delegated to the FTS service, which will
 contact the storages to steer the data transfers on behalf of the users.
 
-The FTS service supports both plain X509 proxies than 
+The FTS service supports both plain X.509 proxies than 
 [VOMS](https://italiangrid.github.io/voms/index.html) X.509 proxies extended with VO 
 information for authentication and authorisation.
 

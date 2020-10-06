@@ -165,7 +165,7 @@ export EGI_SITE=<NAME_OF_THE_SITE>
 eval "$(egicli endpoint token)"
 ```
 
-## Legacy x.509 AAI
+## Legacy X.509 AAI
 
 {{% alert title="Warning" color="warning" %}}
 

@@ -8,7 +8,7 @@ description: >
 ---
 
 ## Authentication
-Some EGI services authentication is based on [X509](https://tools.ietf.org/html/rfc5280)
+Some EGI services authentication is based on [X.509](https://tools.ietf.org/html/rfc5280)
 certificates. The certificates are issued by Certification Authorities (CAs)
 part of the [EUGridPMA](https://www.eugridpma.org/) federation which is also
 part of [IGTF](https://www.igtf.net/) (International Global Trust Federation).

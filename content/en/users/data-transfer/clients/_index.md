@@ -29,7 +29,7 @@ yum install fts-rest-cli -y
 ## Commands 
 
 This section describes some of the commands that can be issues via the FTS CLI. 
-As per the API, in order to authenticate to the FTS REST server you need an X509 
+As per the API, in order to authenticate to the FTS REST server you need an X.509 
 User certificate, please refer to this [section](../api/#authentication--authorisation)  
 for more information.
 

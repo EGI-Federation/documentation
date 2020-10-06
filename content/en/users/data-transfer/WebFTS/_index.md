@@ -16,7 +16,7 @@ documentation](https://fts3-docs.web.cern.ch/fts3-docs/docs/webfts/userguide.htm
 ### Credential Delegation
 
 In order to move files between storage endpoints, named also Storage Elements (SE), 
-the authentication is done using an X509 certificate which needs to be installed on the 
+the authentication is done using an X.509 certificate which needs to be installed on the 
 browser. The Integration with EGI Check-in is under development and will be available at 
 a later date in the production instance.
 
