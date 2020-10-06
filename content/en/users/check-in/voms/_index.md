@@ -8,12 +8,13 @@ description: >
 ---
 
 ## Authentication
+
 Some EGI services authentication is based on [X.509](https://tools.ietf.org/html/rfc5280)
 certificates. The certificates are issued by Certification Authorities (CAs)
 part of the [EUGridPMA](https://www.eugridpma.org/) federation which is also
 part of [IGTF](https://www.igtf.net/) (International Global Trust Federation).
 
-The role of a Certification Authorities (CA) is to guarantee that users are who
+The role of a Certification Authoritie (CA) is to guarantee that users are who
 they claim to be and are entitled to own their certificate. It is up to the
 users to discover which CA they should contact. In general, CAs are organised
 geographically and by research institutes. Each CA has its own procedure to
@@ -36,7 +37,26 @@ Certificate Service CA. [Check the countries where this is
 available](https://www.terena.org/activities/tcs/participants.html).
 
 If eScience Personal certificate is not available in your country, then
-obtain a certificate from a regular [IGTF CA](https://www.igtf.net/pmamap).
+request a certificate from a regular [IGTF CA](https://www.igtf.net/pmamap).
+The request is normally generated using either a web-based interface or console
+commands. Details of which type of request a particular CA accepts can be
+found on each CA's website.
+
+For a web-based certificate request, a form must usually be filled in with
+information such as the name of the user, home institute, etc. After submission,
+a pair of private and public keys are generated, together with a request for
+the certificate containing the public key and the user data. The request is
+then sent to the CA, while the private key stays in the browser, hence the
+same browser must be used to retrieve the certificate once it is issued.
+
+Users must usually install the CA root certificate in their browser first.
+This is because the CA has to sign the user certificate using its private key,
+and the user's browser must be able to validate the signature.
+
+For some CAs, the certificate requests are generated using a command line
+interface. The details of the exact command and the requirements of each CA
+will vary and can be found on the CA's website.
+
 Once received the request, the CA will have to confirm your authenticity through
 your certificate. This usually involves a physical meeting or a phone call with
 a Registration Authority (RA). A RA is delegated by the CA to verify the
@@ -44,7 +64,6 @@ legitimacy of a request, and approve it if it is valid. The RA is usually
 someone at your home institute, and will generally need some kind of ID to
 prove your identity.
 
-More information can be found at [info](https://wiki.egi.eu/wiki/USG_Getting_Certificate#Requesting_the_Certificate).
 
 ### Install a Certificate
 
@@ -52,11 +71,12 @@ After approval, the certificate is generated and delivered to you.
 This can be done via e-mail, or by giving instructions to you to download it
 from a web page.
 
-### Browser installation
+#### Browser installation
+
 Install the certificate in your browser. If you don’t know how to upload your
 certificate in your browser have a look at the [examples](https://ca.cern.ch/ca/Help/).
 
-### Install a Grid Host Certificate
+#### Host installation
 
 To use EGI services with your certificate, you must first save your certificate
 to disk.
@@ -69,6 +89,7 @@ The latter is the most common for certificates exported from a browser
 (e.g. Internet Explorer, Mozilla and Firefox), but the `PEM` format is
 currently needed on EGI user interface. The certificates can be converted from
 one format to the other using the `openssl` command.
+
 If the certificate is in `PKCS12` format, then it can be converted to `PEM`
 using `pkcs12`:
 
@@ -110,7 +131,60 @@ Once in PEM format, the two files, `userkey.pem` and `usercert.pem`, should be
 copied to a _User Interface (UI)_. For example, the ‘standard’ location for
 Mac would be `.globus` directory in your `$HOME`. I.e. `$HOME/.globus/`
 
-More information can be found at: [info](https://ca.cern.ch/ca/Help/)
+### Renewing the Certificate
+
+CAs issue certificates with a limited duration (usually one year); this implies
+the need to renew them periodically. The renewal procedure usually requires
+that the certificate holder sends a request for renewal signed with the old
+certificate and/or that the request is confirmed by a phone call; the details
+depend on the policy of the CA. The certificate usually needs to be renewed
+before the old certificate expires; CAs may send an email to remind users that
+renewal is necessary, but users should try to be aware of the renewal date,
+and take appropriate action if they are away for extended periods of time.
+
+### Taking Care of Private Keys
+
+A private key is the essence of your identity. Anyone who steals it can
+impersonate the owner and if it is lost, it is no longer possible to do
+anything. Certificates are issued personally to individuals, and must never be
+shared with other users. To user EGI services, users must agree to an
+Acceptable Use Policy, which among other things requires them to keep their
+private key secure.
+
+On a UNIX UI, the certificate and private key are stored in two files.
+Typically they are in a directory called `$HOME/.globus` and are named
+`usercert.pem` and `userkey.pem`, and it is strongly recommended that they are
+not changed. The certificate is public and world-readable, but the key must
+only be readable by the owner. The key should be stored on a disk local to the
+user's UI rather than, for example, an NFS-mounted disk. If a certificate has
+been exported from a browser, a PKCS12-format file (`.p12` or `.pfx`), which
+contains the private key, will have been locally stored and this file must be
+either encrypted, hidden or have its access rights restricted to only the owner.
+
+If a private key is stored under the Andrew File System (AFS), access is
+controlled by the AFS Access Control Lists (ACL) rather than the normal file
+permissions, so users must ensure that the key is not in a publicly-readable
+area.
+
+Web browsers also store private keys internally, and these also need to be
+protected. The details vary depending on the browser, but password protection
+should be used if available; this may not be the default (it is not with
+Internet Explorer). The most secure mode is one in which every use of the
+private key needs the password to be entered, but this can cause problems as
+some web sites ask for the certificate many times. Reaching a compromise
+between security and convenience is vital here, so that neither come too short.
+
+It is important not to lose the private key, as this implies loss of all
+access to the services, and registration will have to be started again from
+scratch. Having several securely protected copies in different places is
+strongly advised, so the certificate can be used from a web browser and
+several UI machines.
+
+A private key stored on a UI must be encrypted, meaning that a passphrase must
+be typed whenever it is used. A key must never be stored without a passphrase.
+The passphrase should follow similar rules to any computer password. Users
+should be aware of the usual risks, like people watching them type or
+transmitting the passphrase over an insecure link.
 
 ## Authorisation
 
@@ -168,10 +242,9 @@ existing VOs
    get resources from EGI providers, and sign [SLA](https://wiki.egi.eu/wiki/EGI_OLA_SLA_framework#Service_Level_Agreemens) with you.**
 
 1. Request your VO membership at VO VOMS page. You will have to enter required
-   information and then wait for approval. For example, you can
-   [register to the EGI catch-all vo _fedcloud.egi.eu_](https://perun.metacentrum.cz/perun-registrar-cert/?vo=fedcloud.egi.eu):
+   information and then wait for approval.
 
-   ![Register to fedcloud vo](register_fedcloud_vo.png)
+   ![Register to enmr.eu vo](register_enmr_vo.png)
 
 ## Creating a proxy
 
