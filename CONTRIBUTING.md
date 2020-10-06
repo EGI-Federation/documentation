@@ -95,6 +95,13 @@ In order to be able to send code update to the repository you need to:
 - push the _feature branch_ to the repository fork in your GitHub account
 - open a Pull Request (PR) against the upstream repository
 
+In this process three git repositories are used:
+
+- The _upstream_ repository: EGI-Foundation/documentation
+- Your fork, also named _origin_: <your_username>/documentation
+- A local clone of your fork, containing references to your fork, its _origin_
+  and to the _upstream_ repository
+
 ### Adding an SSH key to your GitHub account
 
 The most convenient way to authenticate with GitHub is to use SSH keys over the
@@ -155,6 +162,19 @@ If you want to clone an existing fork you should use:
 
 ```sh
 gh repo clone <your_username>/documentation
+```
+
+#### Verifying your local clone is ready to be used
+
+If your local clone of you fork is correctly setup you should see references to
+the origin and upstream repositories.
+
+```sh
+$ git remote -v
+origin  git@github.com:<your_username>/documentation (fetch)
+origin  git@github.com:<your_username>/documentation (push)
+upstream        git@github.com:EGI-Foundation/documentation.git (fetch)
+upstream        git@github.com:EGI-Foundation/documentation.git (push)
 ```
 
 ### Branches and Commits
@@ -236,6 +256,20 @@ If needed GitHub CLI can also be used to prepare the PR:
 ```sh
 gh pr create <your_username>:<feature_branch> --web
 ```
+
+#### Updating local feature branch with changes made on the PR
+
+Once you PR have been opened it will be reviewed, and reviewers can propose and
+commit changes to your PR.
+If you need to make further changes be sure to update the local clone with the
+remote changes.
+
+```sh
+# Retrieve changes made on your PR in the upstream repository
+gh pull
+```
+
+Then you can commit new changes and push them to your remote fork.
 
 ### Updating a repository clone with the upstream changes
 
