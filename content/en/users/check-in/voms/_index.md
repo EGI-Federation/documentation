@@ -265,7 +265,7 @@ Every VO needs two different pieces of information:
 You can check specific configuration for your VO at the [Operations
 portal](https://operations-portal.egi.eu/vo). Normally each VOMS server
 has a *Configuration Info* link where the exact information to include
-in the `vomses` and `.lsc` files.
+in the `vomses` and `.lsc` files is shown.
 
 ### Proxy creation
 
