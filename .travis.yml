@@ -20,7 +20,8 @@ script:
   # MD024: several sections repeat the header name, may be reviewed later
   - mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
   # Check files using prettier
-  - prettier --check .
+  # XXX disabled until we review all the content
+  # - prettier --check content/en README.md
   # building static content with hugo
   - ./binaries/linux64/hugo
 deploy:
