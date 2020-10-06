@@ -35,42 +35,7 @@ The FTS service supports both plain X.509 proxies than
 [VOMS](https://italiangrid.github.io/voms/index.html) X.509 proxies extended with VO 
 information for authentication and authorisation.
 
-### VOMS configuration
-
-Every VO needs two different pieces of information:
-
-- the `vomses` configuration files, where the details of the VO are
-  stored (e.g. name, server, ports). These are stored by default at
-  `/etc/vomses` and are normally named following this convention:
-  `<vo name>.<server name>` 
-- the `.lsc` files that describe the trust chain of the VOMS server.
-  These are stored at `/etc/grid-security/vomsdir/<vo name>` and there
-  should be one file for each of the VOMS server of the VO.
-
-You can check specific configuration for your VO at the [Operations
-portal](https://operations-portal.egi.eu/vo). Normally each VOMS server
-has a *Configuration Info* link where the exact information to include
-in the `vomses` and `.lsc` files.
-
-VOMS client expects your certificate and private key to be available at
-`$HOME/.globus/usercert.pem` and `$HOME/.globus/userkey.pem`
-respectively.
-
-### Creating a proxy
-
-Once you have the VO information configured (`vomses` and `.lsc`) and
-your certificate available in your `$HOME/.globus` directory you can
-create a VOMS proxy to be used with clients (voms-clients package) with:
-
-```sh
-voms-proxy-init --voms <name of the vo> --rfc
-```
-
-Plain proxies can still be created via:
-
-```sh
-voms-proxy-init --rfc
-```
+Learn about [VOMS configuration and proxy creation](../../check-in/voms/#creating-a-proxy).
 
 ## RESTFul API
 
