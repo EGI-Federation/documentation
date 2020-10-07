@@ -14,7 +14,7 @@ Content moved from HTC, to be improved.
 
 ## Request for information
 
-You can ask for more information about the service at: [here](https://www.egi.eu/more-information/)
+You can ask for more information about the services at: [here](https://www.egi.eu/more-information/)
 
 ## Ordering EGI services
 
