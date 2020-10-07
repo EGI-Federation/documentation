@@ -59,7 +59,7 @@ approved you will be able to interact with the infrastructure.
 Pre-existing VOs of EGI can be also used on IaaS cloud providers.
 Consult with your VO manager or browse the existing VOs at the [EGI
 Operations Portal](https://operations-portal.egi.eu/vo/). Joining these
-VOs may require a personal X.509 certificate. For getting such certificate,
+VOs may require a personal X.509 certificate. For getting this certificate,
 the easiest option is to get an 'eScience Personal' certificate online
 from the Terena Certificate Service CA. [Check the countries where this is
 available](https://www.terena.org/activities/tcs/participants.html).
