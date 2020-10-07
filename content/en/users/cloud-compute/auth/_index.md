@@ -65,7 +65,7 @@ from the Terena Certificate Service CA. [Check the countries where this is
 available](https://www.terena.org/activities/tcs/participants.html).
 
 
-If eScience Personal certificate is not available in your country, then
+If an eScience Personal certificate is not available in your country, then
 obtain a certificate from a regular [IGTF CA](https://www.igtf.net/pmamap)
 (this may require a personal visit at the Certification Authority).
 
