@@ -65,7 +65,7 @@ have emerged:
 -   **Compute and data intensive applications**: for those applications needing
     considerable amount of resources in term of computation and/or memory and/or
     intensive I/O. Ad-hoc computing environments can be created in the
-    EGI cloud providers to satisfy very hard HW resource requirements.
+    EGI cloud providers to satisfy extremly intensive HW resource requirements.
     -   Example: [VERCE
         platform](https://www.egi.eu/news/new-egi-use-case-a-close-look-at-the-amatrice-earthquake/),
         [The Genetics of Salmonella
