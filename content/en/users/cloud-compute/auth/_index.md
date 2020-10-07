@@ -3,7 +3,7 @@ title: "Authentication and Authorisation"
 type: docs
 weight: 20
 description: >
-  Authentication and Authorisation on EGI Cloud 
+  Authentication and Authorisation on EGI Cloud
 ---
 
 
@@ -12,7 +12,7 @@ description: >
 Cloud Compute service is accessed through **Virtual Organisations
 (VOs)**. A VO is a grouping of IaaS cloud providers from the federation,
 who allocate capacity for a specific user group. Users with similar
-interest/requirements can join or form a VO to gather resources from EGI
+interestes/requirements can join or form a VO to gather resources from EGI
 cloud providers - typically for a given project, experiment or use case.
 There are generic VOs too, for example the vo.access.egi.eu VO, which is
 open for any user who wants to experiment with the service. **You have
@@ -46,7 +46,7 @@ by any new user.
 -   After the 6-month long membership in the vo.access.egi.eu VO, you
     will need to move to a production VO, or establish a new VO.
 -   The resources are not guaranteed and may be removed without notice
-    by providers. **Back-up frequently to avoid loosing your work!**
+    by providers. **Back-up frequently to avoid losing your work!**
 
 {{% /alert %}}
 
