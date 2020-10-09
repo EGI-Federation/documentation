@@ -226,7 +226,7 @@ For haproxy
 # crt: concatenated cert, key and CA
 # ca-file: all IGTF CAs, concatenated as one file
 # crl-file: all IGTF CRLs, concatenated as one file
-# verify: enable optional X509 client authentication
+# verify: enable optional X.509 client authentication
 bind XXX.XXX.XXX.XXX:443 ssl crt /etc/haproxy/certs/host-cert-with-key-and-ca.pem ca-file /etc/haproxy/certs/igtf-cas-bundle.pem crl-file /etc/haproxy/certs/igtf-crls-bundle.pem verify optional
 ```
 

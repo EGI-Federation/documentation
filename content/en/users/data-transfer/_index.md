@@ -69,7 +69,7 @@ The following endpoints are available:
 
 - [FTS REST](https://fts3-public.cern.ch:8446/)
 - [FTS Mon](https://fts3-public.cern.ch/fts3/ftsmon/#/)
-- [WebFTS](https://webfts.cern.ch/) - N.B. Needs personal x509 certificate installed in your Browser
+- [WebFTS](https://webfts.cern.ch/) - N.B. Needs personal X.509 certificate installed in your Browser
 
 ### STFC
 
