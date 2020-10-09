@@ -40,7 +40,7 @@ understand your requirements:
   user bases, pay-for-use or not, etc.). These will help us identify better
   resources matching your needs.
 * What is your requirements details (how much CPU cores, RAM per CPU,
-  software services, how long do you need, etc. )
+  software services, how long do you need, etc.)
 
 If we are able to support your case, there will be two options:
 
