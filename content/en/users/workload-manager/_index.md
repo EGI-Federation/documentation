@@ -122,7 +122,7 @@ There are several options to access the service:
 
 ## Getting Started
 
-## Submit a service order via the Marketplace
+### Submit a service order via the Marketplace
 
 User can request access to the service submitting a service-order to use the EGI
 HTC service directly from the EOSC or the EGI Marketplace:
@@ -136,9 +136,9 @@ EGI Marketplace:
 Service orders are usually handled within 5 working days by the EGI User Support
 Team on shift.
 
-## Before to start
+### Before to start
 
-## Apply for your user credentials
+#### Apply for your user credentials
 
 DIRAC uses X509 certificates to identify and authenticate users.  These
 certificates are delivered to each individual by trusted certification
@@ -149,7 +149,7 @@ this page and follow the instructions.  Your certificate may take a few days to
 be delivered, so please ask for your certificate well in advance and in any
 case, before the tutorial starts.
 
-## Export your credentials from your browser
+#### Export your credentials from your browser
 
 Your personal certificate is usually delivered to you via a web site and is
 automatically loaded in your browser.  You need to export it from the browser
@@ -157,7 +157,7 @@ and put it in the appropriate format for DIRAC to use.  This is a one-time
 operation.  Please follow the instructions in this document to export your
 certificate to a local file and named $HOME/MyCertificate.
 
-## Install your credentials
+#### Install your credentials
 
 You can user the commands below in any Unix machine to get your user credentials
 in the format and location expected by DIRAC:
@@ -170,7 +170,7 @@ $ openssl pkcs12 -in  $HOME/MyCertificate\ -nocerts -out $HOME/.globus/userkey.p
 $ chmod 600 $HOME/.globus/usercert.pem $HOME/.globus/userkey.pem ```
 ```
 
-## Send your certificate's subject to the DIRAC team
+#### Send your certificate's subject to the DIRAC team
 
 In order to configure the DIRAC server so that you get registered as a user, the
 team needs to know your certificate's subject.
@@ -182,7 +182,7 @@ Tsaregorodtsev (atsareg \<AT> in2p3 \<DOT>fr):
 $ openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
 ```
 
-## The EGI Workload Manager Web Portal
+### The EGI Workload Manager Web Portal
 
 To access the EGI Workload Manager open a web browser to:
 [https://dirac.egi.eu/DIRAC/](https://dirac.egi.eu/DIRAC/)
@@ -197,7 +197,7 @@ membership.  Log In options: the service supports both X509. Certificate and
 Check-in log-in.  View options: allow to choose either desktop or tabs layout.
 Menu: a list of tools that enable the selected VO.
 
-## Upload Proxy
+#### Upload Proxy
 
 Before submitting your job, you need to upload your Proxy.  Login to the portal.
 Go to:  
@@ -209,7 +209,9 @@ the passphrase, click `Upload`.
 
 Fig. 3 - The wizard to upload the .p12 proxy certificate
 
-Job Submission Go to:  
+#### Job Submission
+
+Go to:  
 `Menu` > `Tools` > `Job Launchpad`.  First check the `Proxy Status`, click it
 until it shows `Valid` in green color.
 
@@ -223,7 +225,7 @@ your very first job to the EGI HTC cluster.
 
 Fig. 4 - Submit a job with the Job Launchpad
 
-## Monitor Job status
+#### Monitor Job status
 
 Go to:  
 `Menu` > `Applications` > `Job Monitor`.  The left panel gives all kinds
@@ -235,18 +237,18 @@ different information about the jobs.
 
 Fig. 5 - Monitor the job execution with the Job Monitor panel
 
-## Get Results from Sandbox
+#### Get Results from Sandbox
 
 Once the job has been successfully processed, the `Status` of the job will
 change to green.  Right click the job, select:  
 `Sandbox` > `Get Output file(s)`,
 you can get the result file(s).
 
-## Full User Guide for DIRAC Web Portal
+#### Full User Guide for DIRAC Web Portal
 
 For further instructions, please refer to DIRAC Web Portal Guide
 
-## The DIRAC client tool
+### The DIRAC client tool
 
 The easiest way to install the client is via Docker Container.  If you have a
 Docker client installed in your machine, install the DIRAC CLI as follows:
@@ -355,7 +357,7 @@ username     : glarocca
 properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 ```
 
-## Managing simple jobs
+#### Managing simple jobs
 
 In the following table there is a comparison between the glite-WMS CLI and the
 DIRAC one:
@@ -412,7 +414,7 @@ $ dirac-wms-job-get-output --Dir joboutput/ 53755998 Job output sandbox
 retrieved in joboutput/53755998/
 ```
 
-## Jobs with Input Sandbox and Output Sandbox
+#### Jobs with Input Sandbox and Output Sandbox
 
 In most cases the job input data or executable files are available locally and
 should be transferred to the grid to run the job.  In this case the InputSandbox
@@ -442,7 +444,7 @@ command:
 $ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 ```
 
-## More details
+#### More details
 
 * JDL language and simple jobs submission:
   [JDLs and Job Management](http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JDLsAndJobManagementBasic/index.html)
@@ -450,7 +452,7 @@ $ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
   [Advanced Job Management](http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html)
 * [Past tutorials](https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11)
 
-## Technical Support DIRAC User Guide
+#### Technical Support DIRAC User Guide
 
 [https://dirac.readthedocs.io/en/latest/UserGuide/](https://dirac.readthedocs.io/en/latest/UserGuide/)
 
