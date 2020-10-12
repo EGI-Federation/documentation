@@ -8,7 +8,7 @@ description: >
 ---
 
 The EGI Online Storage includes a wide category of services which allows
-storing, sharing accessing files on the EGI infrastructure. The service
+storing, sharing and accessing files on the EGI infrastructure. The service
 comprises different categories of storage services depending on the technology
 and usage that is foreseen. The 3 following service offerings are available:
 

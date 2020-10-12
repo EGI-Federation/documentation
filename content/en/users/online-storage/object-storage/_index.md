@@ -140,10 +140,10 @@ Openstack SWIFT is compatible with S3 protocol, therefore if the SWIFT
 deployment are properly configured they can be accessed as any other S3
 compatible storage.
 
-In order to access the storage via S3 you need to create first the∏ EC2
+In order to access the storage via S3 you need to create first the EC2
 credentials from the Openstack deployment.
 
-The following command is needed
+The following command is needed:
 
 ```sh
 openstack ec2 credentials create
@@ -166,10 +166,9 @@ S3 protocol
 
 A lot of clients are available to access S3 compatible storages (awscli, s3cmd,
 etc). In EGI we are using the Davix client (https://davix.web.cern.ch), which
-has been developed at CERN and is available both in EPEL and in UMD
-repositories.
+has been developed at CERN and is available both in RHEL and Debian environments.
 
-In order to list via S3 protocol the SWIFT server just type
+In order to list via S3 protocol the SWIFT server just type:
 
 ```sh
 davix-ls --s3accesskey 'access' --s3secretkey 'secret'  --s3alternate s3s://api.cloud.ifca.es:8080/swift/v1/test-egi
@@ -186,7 +185,7 @@ to/from Object storages using the S3 protocol.
 
 This will require to upload the EC2 access keys to the EGI Data Transfer
 service, which will be then entitled to generate the proper signed URL to access
-the storage
+the storage.
 
 Please contact the support (_suppor_at_egi_dot_eu_) in order to have more
 details.
