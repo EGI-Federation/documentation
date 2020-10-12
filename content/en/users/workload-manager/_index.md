@@ -62,7 +62,7 @@ running on EGI resources (HTC, CLOUD, HPC) supporting multi-VO.  All the DIRAC
 services are at or above TRL8.  The main service components include: Workload
 Management System (WMS) architecture is composed of multiple loosely coupled
 components working together in a collaborative manner with the help of a common
-Configuration Services ensuring reliable service discovery functionality.  The
+Configuration Services ensuring reliable service discovery functionality. The
 modular architecture allows to easily incorporate new types of computing
 resources as well as new task scheduling algorithms in response to evolving user
 requirements.  DIRAC services can run on multiple geographically distributed
