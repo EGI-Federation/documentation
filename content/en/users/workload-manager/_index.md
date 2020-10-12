@@ -234,7 +234,7 @@ $ docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
 ```
 
 Once the client software is installed, it should be configured in order to
-access the EGI Workload Manager service
+access the EGI Workload Manager service:
 
 ```sh
 $ source /opt/dirac/bashrc
