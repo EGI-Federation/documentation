@@ -16,7 +16,7 @@ of HTC and cloud resource pools from the EGI Federation.
 This pool of computing resources can be easily extended and customized to
 support the needs of new scientific communities.
 In the LHCb experiment the service has proven production scalability up to peaks
-of more than 100 thousand concurrently running jobs.
+of more than 100.000 concurrently running jobs.
 WeNMR, the structural biology community, uses the service for a number of
 community services.
 The community reported an improvement of jobs submission from previous 70% to
