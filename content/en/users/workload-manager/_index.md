@@ -244,8 +244,10 @@ For further instructions, please refer to
 
 ### The DIRAC client tool
 
-The easiest way to install the client is via Docker Container. If you have a
-Docker client installed in your machine, install the DIRAC CLI as follows:
+The easiest way to install the client is via
+[Docker Container](https://www.docker.com/).
+If you have a Docker client installed in your machine, install the DIRAC CLI
+as follows:
 
 ```sh
 $ docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
