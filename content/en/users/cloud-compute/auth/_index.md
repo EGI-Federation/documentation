@@ -6,6 +6,31 @@ description: >
   Authentication and Authorisation on EGI Cloud
 ---
 
+## Authentication {#oidc-auth-using-check-in}
+
+[OpenID Connect](http://openid.net/connect/) is the main authentication
+protocol used on the EGI Cloud. It replaces the legacy VOMS-based
+authentication for all OpenStack providers.
+
+Authentication to web based services (like the AppDB) will redirect you
+to the EGI Check-in authentication page. Just select your institution or
+social login and follow the regular authentication process.
+
+Access to APIs or via Command Line Interfaces (CLI) requires the use of
+OAuth2.0 tokens and interaction with the OpenStack Keystone
+[OS-FEDERATION
+API](https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api).
+The process for authentication is as follows:
+
+1.  Obtain a valid OAuth2.0 access token from Check-in. Access tokens
+    are short-lived credentials that can be obtained by recognised
+    Check-in clients once a user has been authenticated.
+1.  Interchange the Check-in access token for a valid unscoped Keystone
+    token.
+1.  Discover available projects from Keystone using the unscoped token.
+1.  Use the unscoped Keystone token to get a scoped token for a valid
+    project. Scoped tokens will allow the user to perform operations on
+    the provider.
 
 ## Authorisation
 
@@ -64,7 +89,6 @@ the easiest option is to get an 'eScience Personal' certificate online
 from the Terena Certificate Service CA. [Check the countries where this is
 available](https://www.terena.org/activities/tcs/participants.html).
 
-
 If an eScience Personal certificate is not available in your country, then
 obtain a certificate from a regular [IGTF CA](https://www.igtf.net/pmamap)
 (this may require a personal visit at the Certification Authority).
@@ -95,9 +119,8 @@ The process for authentication is as follows:
     project. Scoped tokens will allow the user to perform operations on
     the provider.
 
-The sections below detail how to achieve this as a EGI Cloud user.
 
-### Check-in Access tokens
+## Check-in and access tokens
 
 Access tokens can be obtained via several mechanisms, usually involving
 the use of a web server and a browser. Command line clients/APIs without
@@ -186,16 +209,7 @@ export EGI_SITE=<NAME_OF_THE_SITE>
 eval "$(egicli endpoint token)"
 ```
 
-### Technical details
-
-{{% alert title="Note" color="info" %}}
-You can safely ignore this section. It details the API call used to
-refresh tokens and use them for authentication at the providers.
-{{% /alert %}}
-
-Getting access tokens from refresh tokens uses OAuth2.0 token refresh:
-
-## Legacy x.509 AAI
+## Legacy X.509 AAI
 
 {{% alert title="Warning" color="warning" %}}
 
@@ -206,26 +220,10 @@ applications.
 
 [VOMS](https://italiangrid.github.io/voms/index.html) uses X.509 proxies
 extended with VO information for authentication and authorisation on the
-providers.
+providers. You can learn about X.509 certificates and VOMS in the [Check-in
+documentation](../../check-in/vom).
 
 ### VOMS configuration
-
-Every VO needs two different pieces of information:
-
--   the `vomses` configuration files, where the details of the VO are
-    stored (e.g. name, server, ports). These are stored by default at
-    `/etc/vomses` and are normally named following this convention:
-    `<vo name>.<server name>` (e.g. for fedcloud.egi.eu VO, you would
-    have `fedcloud.egi.eu.voms1.grid.cesnet.cz` and
-    `fedcloud.egi.eu.voms2.grid.cesnet.cz`.
--   the `.lsc` files that describe the trust chain of the VOMS server.
-    These are stored at `/etc/grid-security/vomsdir/<vo name>` and there
-    should be one file for each of the VOMS server of the VO.
-
-You can check specific configuration for your VO at the [Operations
-portal](https://operations-portal.egi.eu/vo). Normally each VOMS server
-has a *Configuration Info* link where the exact information to include
-in the *vomses* and *.lsc* files.
 
 Valid configuration for `fedcloud.egi.eu` is available on the [FedCloud
 client VM](https://appdb.egi.eu/store/vappliance/egi.fedcloud.clients)
@@ -235,29 +233,6 @@ script](https://raw.githubusercontent.com/EGI-FCTF/fedcloud-userinterface/master
 VOMS client expects your certificate and private key to be available at
 `$HOME/.globus/usercert.pem` and `$HOME/.globus/userkey.pem`
 respectively.
-
-### Creating a proxy
-
-Once you have the VO information configured (`vomses` and `.lsc`) and
-your certificate available in your `$HOME/.globus` directory you can
-create a VOMS proxy to be used with clients with:
-
-``` {.console}
-voms-proxy-init --voms <name of the vo> --rfc
-```
-
-For fedcloud.egi.eu VO:
-
-``` {.console}
-voms-proxy-init --voms fedcloud.egi.eu --rfc
-Enter GRID pass phrase:
-Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=EGI/OU=UCST/CN=Enol Fernandez
-Creating temporary proxy ......................................................... Done
-Contacting  voms1.grid.cesnet.cz:15002 [/DC=cz/DC=cesnet-ca/O=CESNET/CN=voms1.grid.cesnet.cz] "fedcloud.egi.eu" Done
-Creating proxy ................................................................... Done
-
-Your proxy is valid until Mon Feb  4 23:37:21 2019
-```
 
 ### Access the providers
 

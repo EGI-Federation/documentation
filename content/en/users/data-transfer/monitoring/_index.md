@@ -14,7 +14,7 @@ statistics.
 ## Features
 
 The Web monitoring can be accessed without user authentication, only access to the 
-transfer log files needs an X509 user certificate installed on the browser.
+transfer log files needs an X.509 user certificate installed on the browser.
 
 ### Overview page  
 

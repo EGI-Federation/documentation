@@ -12,12 +12,16 @@ before_install:
   - gem install mdl
   - npm install postcss-cli@7.1.2
   - npm install autoprefixer@9.0
+  - npm install --save-dev --save-exact prettier
 script:
   # Markdown linting
   # https://github.com/markdownlint/markdownlint
   # MD002: first level header is managed by hugo theme
   # MD024: several sections repeat the header name, may be reviewed later
   - mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
+  # Check files using prettier
+  # XXX disabled until we review all the content
+  # - prettier --check content/en README.md
   # building static content with hugo
   - ./binaries/linux64/hugo
 deploy:
