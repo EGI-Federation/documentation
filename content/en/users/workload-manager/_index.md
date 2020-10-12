@@ -182,11 +182,13 @@ To access the EGI Workload Manager open a web browser to:
 
 Fig. 2 - The EGI Workload Manager service Web portal
 
-If you are a new user, you can see the welcome page where you can find links to
-user documentations.  VO options: you can switch to different VOs that you have
-membership.  Log In options: the service supports both X.509, Certificate and
-Check-in log-in.  View options: allow to choose either desktop or tabs layout.
-Menu: a list of tools that enable the selected VO.
+* If you are a new user, you can see the welcome page where you can find links to
+user documentations.
+* *VO options*: you can switch to different VOs that you have membership.
+* *Log In options*: the service supports both X.509, Certificate and Check-in
+log-in.
+* *View options*: allow to choose either desktop or tabs layout.
+* *Menu*: a list of tools that enable the selected VO.
 
 #### Upload Proxy
 
