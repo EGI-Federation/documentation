@@ -221,10 +221,10 @@ Fig. 4 - Submit a job with the Job Launchpad
 #### Monitor Job status
 
 Go to:  
-`Menu` > `Applications` > `Job Monitor`.  The left panel gives all kinds
-of search options for your jobs.  Set your search criteria, and click ‘Submit’,
-the jobs will list on the right panel.  Try the various options to view
-different information about the jobs.
+`Menu` > `Applications` > `Job Monitor`.  
+The left panel gives all kinds of search options for your jobs. Set your search
+criteria, and click `Submit`, the jobs will list on the right panel.  
+Try the various options to view different information about the jobs.
 
 ![Fig. 5 - Monitor the job execution with the Job Monitor panel](./figure_5.png)
 
