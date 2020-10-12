@@ -4,34 +4,8 @@ linkTitle: "Workload Manager"
 type: docs
 weight: 70
 description: >
-  Workload Manager
+  The EGI Workload Manager
 ---
-
-# Table of Contents
-
-* [What is the EGI Workload Manager?](#what-is-the-egi-workload-manager)
-* [Main Features](#main-features)
-* [Target User Group](#target-user-groups)
-* [Architecture](#architecture)
-* [How to access the EGI Workload Manager service](#how-to-access-the-egi-workload-manager-service)
-* [Getting Started](#getting-started)
-  * [Submit a service order via the Marketplace](#submit-a-service-order-via-the-marketplace)
-  * [Before to start](#before-to-start)
-    * [Apply for your user credentials](#apply-for-your-user-credentials)
-    * [Export your credentials from your browser](#eport-your-credentials-from-your-browser)
-    * [Install your credentials](#install-your-credentials)
-    * [Send your certificate's subject to the DIRAC team](#send-your-certificates-subject-to-the-dirac-team)
-  * [The EGI Workload Manager Web Portal](#the-egi-workload-manager-web-portal)
-    * [Upload Proxy](#upload-proxy)
-    * [Job Submission](#job-submission)
-    * [Monitor Job status](#monitor-job-status)
-    * [Get Results from Sandbox](#get-results-from-sandbox)
-    * [Full User Guide for DIRAC Web Portal](#full-user-guide-for-dirac-web-portal)
-  * [The DIRAC client tool](#the-dira-client-tool)
-    * [Managing simple jobs](#managing-simple-jobs)
-    * [Jobs with Input Sandbox and Output Sandbox](#jobs-with-input-sandbox-and-output-sandbox)
-    * [More details](#more-details)
-    * [Technical Support](#technical-support)
 
 ## What is the EGI Workload Manager?
 
