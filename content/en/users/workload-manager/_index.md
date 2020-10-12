@@ -122,7 +122,7 @@ EGI Marketplace:
 Service orders are usually handled within 5 working days by the EGI User Support
 Team on shift.
 
-### Before to start
+### Before starting
 
 #### Apply for your user credentials
 
