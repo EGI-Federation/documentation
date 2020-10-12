@@ -52,8 +52,8 @@ DIRAC services.
 
 The service suits for the established Virtual Organization communities, long
 tail of users, SMEs and Industry
-EGI and EGI Federation participants
-Research communities
+* EGI and EGI Federation participants
+* Research communities
 
 ## Architecture
 
