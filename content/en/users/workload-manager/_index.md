@@ -33,7 +33,7 @@ description: >
 * [More details](#more-datails)
 * [Technical Support](#technical-support)
 
-## What is the EGI Workload Manager"?"
+## What is the EGI Workload Manager?
 
 The EGI Workload Manager is a service provided to the EGI community to
 efficiently manage and distribute computing workloads on the EGI infrastructure.
@@ -98,6 +98,8 @@ Web portal provides simple and intuitive access to most of the DIRAC
 functionalities including management of computing tasks and distributed data.
 It also has a modular architecture designed specifically to allow easy extension
 for the needs of particular applications.
+
+![Fig. 1 - The DIRAC Web portal](./figure_1.png)
 
 Fig. 1 - The DIRAC Web portal
 
@@ -185,6 +187,8 @@ $ openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
 To access the EGI Workload Manager open a web browser to:
 [https://dirac.egi.eu/DIRAC/](https://dirac.egi.eu/DIRAC/)
 
+![Fig. 2 - The EGI Workload Manager service Web portal](./figure_2.png)
+
 Fig. 2 - The EGI Workload Manager service Web portal
 
 If you are a new user, you can see the welcome page where you can find links to
@@ -200,7 +204,12 @@ Go to:
 `Menu` > `Tools` > `Proxy Upload`, enter your certificates .p12 file and
 the passphrase, click `Upload`.
 
-Fig. 3 - The wizard to upload the .p12 proxy certificate Job Submission Go to:  
+![Fig. 3 - The wizard to upload the .p12 proxy certificate](./figure_3.png)
+![Fig. 3.1 - The wizard to upload the .p12 proxy certificate](./figure_3_1.png)
+
+Fig. 3 - The wizard to upload the .p12 proxy certificate
+
+Job Submission Go to:  
 `Menu` > `Tools` > `Job Launchpad`.  First check the `Proxy Status`, click it
 until it shows `Valid` in green color.
 
@@ -209,6 +218,8 @@ indicating the output Sandbox location.
 
 Now, select `Helloworld` from the  job list, and click `Submit`, you just launch
 your very first job to the EGI HTC cluster.
+
+![Fig. 4 - Submit a job with the Job Launchpad](./figure_4.png)
 
 Fig. 4 - Submit a job with the Job Launchpad
 
@@ -219,6 +230,8 @@ Go to:
 of search options for your jobs.  Set your search criteria, and click ‘Submit’,
 the jobs will list on the right panel.  Try the various options to view
 different information about the jobs.
+
+![Fig. 5 - Monitor the job execution with the Job Monitor panel](./figure_5.png)
 
 Fig. 5 - Monitor the job execution with the Job Monitor panel
 
