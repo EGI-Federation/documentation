@@ -417,8 +417,10 @@ OutputSandbox = {"StdOut","StdErr"};
 Create a simple shell script (`testJob.sh`)
 
 ```sh
-#!/bin/bash /bin/hostname
-/bin/date /bin/ls -la
+#!/bin/bash
+/bin/hostname
+/bin/date
+/bin/ls -la
 ```
 
 After creation of JDL file the next step is to submit the job, using the
