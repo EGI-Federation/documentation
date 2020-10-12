@@ -118,7 +118,7 @@ Team on shift.
 DIRAC uses X.509 certificates to identify and authenticate users. These
 certificates are delivered to each individual by trusted certification
 authorities.  If you have a personal certificate issued by a EUGridPMA-certified
-authority you can use it for this tutorial.  Otherwise, IHEP certification
+authority you can use it for this tutorial. Otherwise, IHEP certification
 authority can deliver one for you.  Click on the link Online for User Request on
 this page and follow the instructions.  Your certificate may take a few days to
 be delivered, so please ask for your certificate well in advance and in any
