@@ -226,7 +226,7 @@ For further instructions, please refer to DIRAC Web Portal Guide
 
 ### The DIRAC client tool
 
-The easiest way to install the client is via Docker Container.  If you have a
+The easiest way to install the client is via Docker Container. If you have a
 Docker client installed in your machine, install the DIRAC CLI as follows:
 
 ```sh
