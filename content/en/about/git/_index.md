@@ -214,7 +214,7 @@ git checkout master
 git fetch upstream
 # Update your local copy with this data
 git rebase upstream/master master
-# Update your remote GiHhub fork with those changes
+# Update your remote GitHub fork with those changes
 git push
 ```
 
@@ -228,12 +228,31 @@ done using the PR number.
 gh pr list
 # Clone  specific PR
 gh pr checkout XX
-# You can also update your local clone
+```
+
+Once done it's possible to build and run the site locally:
+
+```sh
+# For Mac OS X
+./binaries/macos64/hugo server -D
+```
+
+The documentation will then be accessible on
+[http://localhost:1313](http://localhost:1313).
+
+### Updating a local clone of a PR
+
+```sh
 # It will ask you to merge changes
 git pull
 ```
 
 Then you can refer to the `README.md` to see how to test it locally.
+
+In case the PR got commits that were forced pushed you may have troubles, in
+that case it may be easier to
+[delete the local branch](#cleaning-a-local-clone-of-a-pr) and do another
+[checkout of the PR](#cloning-a-pull-request-to-test-and-review-it-locally).
 
 ### Cleaning a local clone of a PR
 
