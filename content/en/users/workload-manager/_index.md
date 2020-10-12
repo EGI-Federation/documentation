@@ -23,11 +23,11 @@ experiment the service has proven production scalability up to peaks of more
 than 100.000 concurrently running jobs.
 WeNMR, the structural biology community, uses the service for a number of
 community services.
-The community reported an improvement of jobs submission from previous 70% to
-99% with the EGI Workload Manager service.
+The community reported an improvement of jobs submission in the infrastructure
+from previous 70% to 99% with the EGI Workload Manager service.
 The delivery of the service is coordinated by the EGI Foundation and operated by
 [IN2P3](https://in2p3.cnrs.fr/)
-on resources provided by 
+on resources provided by
 [CYFRONET](http://www.cyfronet.krakow.pl/).
 
 ## Main Features
