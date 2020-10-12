@@ -253,7 +253,7 @@ Enter Certificate password:
 Now the client can be configured to work in conjunction with the EGI Workload
 Manager service:
 
-```
+```sh
 $ dirac-configure defaults-egi.cfg Executing:
 /home/larocca/DIRAC/DIRAC/Core/scripts/dirac-configure.py defaults-egi.cfg
 
