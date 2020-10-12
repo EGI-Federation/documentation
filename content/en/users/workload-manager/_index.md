@@ -129,8 +129,8 @@ case, before the tutorial starts.
 
 Your personal certificate is usually delivered to you via a web site and is
 automatically loaded in your browser.  You need to export it from the browser
-and put it in the appropriate format for DIRAC to use.  This is a one-time
-operation.  Please follow the instructions in this document to export your
+and put it in the appropriate format for DIRAC to use. This is a one-time
+operation. Please follow the instructions in this document to export your
 certificate to a local file and named $HOME/MyCertificate.
 
 #### Install your credentials
