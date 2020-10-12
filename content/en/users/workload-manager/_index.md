@@ -27,6 +27,7 @@ IN2P3 on resources provided by CYFRONET.
 ## Main Features
 
 The EGI Workload Manager:
+
 * Maximizes usage efficiency by choosing appropriately computing and storage
 resources on real-time.
 * Provides a large-scale distributed environment to manage and handle data
@@ -52,6 +53,7 @@ DIRAC services.
 
 The service suits for the established Virtual Organization communities, long
 tail of users, SMEs and Industry
+
 * EGI and EGI Federation participants
 * Research communities
 
@@ -60,6 +62,7 @@ tail of users, SMEs and Industry
 The EGI Workload Manager service (DIRAC4EGI) is a cluster of DIRAC services
 running on EGI resources (HTC, CLOUD, HPC) supporting multi-VO.  All the DIRAC
 services are at or above TRL8.  The main service components include:
+
 * Workload Management System (WMS) architecture is composed of multiple loosely
 coupled components working together in a collaborative manner with the help of
 a common Configuration Services ensuring reliable service discovery
@@ -310,15 +313,20 @@ larocca@egi.eu | access.egi.eu_admin | 2021/09/14 23:54
 larocca@egi.eu | wenmr_user          | 2021/09/14 23:54
 ```
 
-As a result of this command, several operations are accomplished: A long user
-proxy (with the length of the validity of the certificate) is uploaded to the
-DIRAC ProxyManager service, equivalent of the gLite MyProxy service; A short
-user proxy is created with the DIRAC extension carrying the DIRAC group name and
-with the VOMS extension corresponding to the DIRAC group if the gLite UI
-environment is available.  If the gLite UI environment is not available, the
-VOMS extensions will not be loaded into the proxy.  This is not a serious
-problem, still most of the operations will be possible.  For checking the
-details of you proxy, run the following command:
+As a result of this command, several operations are accomplished:
+
+*A long user proxy (with the length of the validity of the certificate) is
+uploaded to the DIRAC ProxyManager service, equivalent of the gLite MyProxy
+service;
+* A short user proxy is created with the DIRAC extension carrying the DIRAC
+group name and with the VOMS extension corresponding to the DIRAC group if the
+gLite UI environment is available.
+
+If the gLite UI environment is not available, the VOMS extensions will not be
+loaded into the proxy.  This is not a serious problem, still most of the
+operations will be possible.
+
+For checking the details of you proxy, run the following command:
 
 ```sh
 $ dirac-proxy-info
