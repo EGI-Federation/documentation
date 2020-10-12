@@ -315,7 +315,7 @@ larocca@egi.eu | wenmr_user          | 2021/09/14 23:54
 
 As a result of this command, several operations are accomplished:
 
-*A long user proxy (with the length of the validity of the certificate) is
+* A long user proxy (with the length of the validity of the certificate) is
 uploaded to the DIRAC ProxyManager service, equivalent of the gLite MyProxy
 service;
 * A short user proxy is created with the DIRAC extension carrying the DIRAC
