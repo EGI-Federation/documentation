@@ -153,7 +153,7 @@ to export your certificate to a local file and named $HOME/MyCertificate.
 You can user the commands below in any Unix machine to get your user credentials
 in the format and location expected by DIRAC:
 
-```
+```sh
 $ mkdir -p $HOME/.globus
 $ chmod 700 $HOME/.globus
 $ openssl pkcs12 -in $HOME/MyCertificate \ -clcerts -nokeys -out $HOME/.globus/usercert.pem
