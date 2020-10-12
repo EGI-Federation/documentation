@@ -30,7 +30,7 @@ description: >
   * [The DIRAC client tool](#the-dira-client-tool)
     * [Managing simple jobs](#managing-simple-jobs)
     * [Jobs with Input Sandbox and Output Sandbox](#jobs-with-input-sandbox-and-output-sandbox)
-    * [More details](#more-datails)
+    * [More details](#more-details)
     * [Technical Support](#technical-support)
 
 ## What is the EGI Workload Manager?
@@ -176,7 +176,7 @@ In order to configure the DIRAC server so that you get registered as a user, the
 team needs to know your certificate's subject.
 
 Please use the command below on any Unix machine and send its output to Andrei
-Tsaregorodtsev (atsareg \<AT> in2p3 \<DOT>fr):
+Tsaregorodtsev (atsareg`<AT>`in2p3`<DOT>`fr):
 
 ```sh
 $ openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
@@ -418,8 +418,9 @@ retrieved in joboutput/53755998/
 
 In most cases the job input data or executable files are available locally and
 should be transferred to the grid to run the job.  In this case the InputSandbox
-attribute can be used to move the files together with the job.  Create the
-`InputAndOuputSandbox.jdl`
+attribute can be used to move the files together with the job.
+
+Create the `InputAndOuputSandbox.jdl`
 
 ```sh
 JobName    = "InputAndOuputSandbox";
@@ -452,10 +453,11 @@ $ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
   [Advanced Job Management](http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html)
 * [Past tutorials](https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11)
 
-#### Technical Support DIRAC User Guide
+#### Technical Support
 
-[https://dirac.readthedocs.io/en/latest/UserGuide/](https://dirac.readthedocs.io/en/latest/UserGuide/)
+* DIRAC User Guide:
+  [https://dirac.readthedocs.io/en/latest/UserGuide/](https://dirac.readthedocs.io/en/latest/UserGuide/)
 
-For technical issues and bug reports, please submit a ticket in
+* For technical issues and bug reports, please submit a ticket in
 [GGUS](https://ggus.eu/?mode=ticket_submit), in `Assign to support unit`, indicate:  
-`EGI Services and Service Components` > `Workload Manager (DIRAC)`.
+  `EGI Services and Service Components` > `Workload Manager (DIRAC)`.
