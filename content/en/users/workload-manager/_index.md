@@ -27,25 +27,25 @@ IN2P3 on resources provided by CYFRONET.
 ## Main Features
 
 The EGI Workload Manager:
-Maximizes usage efficiency by choosing appropriately computing and storage
+* Maximizes usage efficiency by choosing appropriately computing and storage
 resources on real-time.
-Provides a large-scale distributed environment to manage and handle data
+* Provides a large-scale distributed environment to manage and handle data
 storage, datamovement, accessing and processing.
-Handles job submission and workload distribution in a transparent way.
-Improves the general job throughput compared with native management of EGI
+* Handles job submission and workload distribution in a transparent way.
+* Improves the general job throughput compared with native management of EGI
 grid or cloud computing resources.
-Offers pilot-based task scheduling method, that submits pilot jobs to
+* Offers pilot-based task scheduling method, that submits pilot jobs to
 resources to check the execution environment before to start the user's jobs.
 From a technical standpoint, the user's job description is delivered to the
 pilot, which prepares its execution environment and executes the user application.
 The pilot-based scheduling feature solves many problems of using
 heterogeneity and unstable distributed computing resources.
-Includes easy extensions to customize the environment checks to address the
+* Includes easy extensions to customize the environment checks to address the
 needs of a particular community.
 Users can choose appropriately computing and storage resources maximising their
 usage efficiency for particular user requirements.
-Handles different storage supporting both cloud and grid capacity.
-Provides a user-friendly interface that allows users to choose among different
+* Handles different storage supporting both cloud and grid capacity.
+* Provides a user-friendly interface that allows users to choose among different
 DIRAC services.
 
 ## Target User Groups
