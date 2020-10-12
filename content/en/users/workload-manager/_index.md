@@ -65,7 +65,7 @@ components working together in a collaborative manner with the help of a common
 Configuration Services ensuring reliable service discovery functionality. The
 modular architecture allows to easily incorporate new types of computing
 resources as well as new task scheduling algorithms in response to evolving user
-requirements.  DIRAC services can run on multiple geographically distributed
+requirements. DIRAC services can run on multiple geographically distributed
 servers which increases the overall reliability and excellent scalability
 properties.  REST server providing language neutral interface to DIRAC service.
 Web portal provides simple and intuitive access to most of the DIRAC
