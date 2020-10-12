@@ -400,7 +400,7 @@ retrieved in joboutput/53755998/
 #### Jobs with Input Sandbox and Output Sandbox
 
 In most cases the job input data or executable files are available locally and
-should be transferred to the grid to run the job.  In this case the InputSandbox
+should be transferred to the grid to run the job. In this case the `InputSandbox`
 attribute can be used to move the files together with the job.
 
 Create the `InputAndOuputSandbox.jdl`
