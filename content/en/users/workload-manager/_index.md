@@ -9,20 +9,26 @@ description: >
 
 ## What is the EGI Workload Manager?
 
-The EGI Workload Manager is a service provided to the EGI community to
-efficiently manage and distribute computing workloads on the EGI infrastructure.
-The service, based on the DIRAC technology, is configured to support a number
-of HTC and cloud resource pools from the EGI Federation.
-This pool of computing resources can be easily extended and customized to
-support the needs of new scientific communities.
-In the LHCb experiment the service has proven production scalability up to peaks
-of more than 100.000 concurrently running jobs.
+The
+[EGI Workload Manager](https://www.egi.eu/services/workload-manager/)
+is a service provided to the EGI community to efficiently manage and distribute
+computing workloads on the EGI infrastructure. The service, based on the
+[DIRAC technology](http://diracgrid.org/),
+is configured to support a number of HTC and cloud resource pools from the
+EGI Federation. This pool of computing resources can be easily extended and
+customized to support the needs of new scientific communities.
+In the
+[LHCb](https://home.cern/science/experiments/lhcb)
+experiment the service has proven production scalability up to peaks of more
+than 100.000 concurrently running jobs.
 WeNMR, the structural biology community, uses the service for a number of
 community services.
 The community reported an improvement of jobs submission from previous 70% to
 99% with the EGI Workload Manager service.
 The delivery of the service is coordinated by the EGI Foundation and operated by
-IN2P3 on resources provided by CYFRONET.
+[IN2P3](https://in2p3.cnrs.fr/)
+on resources provided by 
+[CYFRONET](http://www.cyfronet.krakow.pl/).
 
 ## Main Features
 
@@ -86,8 +92,10 @@ Fig. 1 - The DIRAC Web portal
 There are several options to access the service:
 
 1. Members of a scientific community whose resources pool is already configured
-   in the DIRAC4EGI instance > can use the DIRAC4EGI web portal to access the
-   service, or use DIRAC Client.
+   in the DIRAC4EGI instance > can use the
+   [DIRAC4EGI web portal](https://dirac.egi.eu:9443/DIRAC/)
+   to access the service, or use
+   [DIRAC Client](https://wiki.egi.eu/wiki/HOWTO22#Using_DIRAC_through_the_client).
 1. Individual researchers who want to do some number crunching for a limited
    period of time, with a reasonable (not too high) number of CPUs > can use
    the catch-all VO resource pool (vo.access.egi.eu). Submit a request for this
@@ -121,10 +129,13 @@ Team on shift.
 DIRAC uses X.509 certificates to identify and authenticate users. These
 certificates are delivered to each individual by trusted certification
 authorities.  
-If you have a personal certificate issued by a EUGridPMA-certified
+If you have a personal certificate issued by a
+[EUGridPMA-certified](http://www.eugridpma.org/)
 authority you can use it for this tutorial. Otherwise, IHEP certification
-authority can deliver one for you. Click on the link Online for User Request on
-this page and follow the instructions. Your certificate may take a few days to
+authority can deliver one for you. Click on the link `Online for User Request`
+on this
+[page](https://ihepca.ihep.ac.cn/reqForUser.html)
+and follow the instructions. Your certificate may take a few days to
 be delivered, so please ask for your certificate well in advance and in any
 case, before the tutorial starts.
 
@@ -133,8 +144,9 @@ case, before the tutorial starts.
 Your personal certificate is usually delivered to you via a web site and is
 automatically loaded in your browser.  You need to export it from the browser
 and put it in the appropriate format for DIRAC to use. This is a one-time
-operation. Please follow the instructions in this document to export your
-certificate to a local file and named $HOME/MyCertificate.
+operation. Please follow the instructions in this
+[document](http://www.chosensecurity.com/stuff/contentmgr/files/0/6d2fc0a807106169f266443672dc9ef2/document/web_browsers_with_certificates___chosensecurity.pdf)
+to export your certificate to a local file and named $HOME/MyCertificate.
 
 #### Install your credentials
 
@@ -225,7 +237,8 @@ you can get the result file(s).
 
 #### Full User Guide for DIRAC Web Portal
 
-For further instructions, please refer to DIRAC Web Portal Guide
+For further instructions, please refer to
+[DIRAC Web Portal Guide](https://dirac.readthedocs.io/en/latest/UserGuide/WebAppUserGuide/index.html)
 
 ### The DIRAC client tool
 
@@ -358,8 +371,9 @@ of transitions for a DIRAC job |
 
 Table. 1 - gLte-WMS vs. DIRAC commands
 
-Have a look at the official command reference documentation for the complete
-list of the Workload Management commands.
+Have a look at the official
+[command reference documentation](http://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html)
+for the complete list of the Workload Management commands.
 
 In general, you can submit jobs, check their status, and retrieve the output in
 the same way as the glite-WMS. For example:
