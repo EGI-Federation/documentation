@@ -280,8 +280,7 @@ Checking DN /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca
 larocca@egi.eu
 Username is glarocca
 Creating proxy for glarocca@wenmr_user
-(/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca
-larocca@egi.eu)
+(/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca larocca@egi.eu)
 Requested adding a VOMS extension but no VOMS attribute defined for group wenmr_user
 Uploading proxy for wenmr_user...
 Uploading wenmr_user proxy to ProxyManager...
