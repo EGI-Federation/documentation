@@ -265,7 +265,7 @@ Created vomsdir file
 /home/larocca/DIRAC/etc/grid-security/vomsdir/fedcloud.egi.eu/voms2.grid.cesnet.cz.lsc
 Created vomses file `/home/larocca/DIRAC/etc/grid-security/vomses/fedcloud.egi.eu`
 ```
-Generate the proxy containing the credentials of your VO. Specify the VO in the "--group" option:
+Generate the proxy containing the credentials of your VO. Specify the VO in the `--group` option:
 
 **In this example, we are going to use the resources allocated for the WeNMR
 project.**
