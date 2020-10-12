@@ -43,7 +43,7 @@ This pool of computing resources can be easily extended and customized to
 support the needs of new scientific communities.
 In the LHCb experiment the service has proven production scalability up to peaks
 of more than 100 thousand concurrently running jobs.
-WeNMR, the structured biology community, uses the service for a number of
+WeNMR, the structural biology community, uses the service for a number of
 community services.
 The community reported an improvement of jobs submission from previous 70% to
 99% with the EGI Workload Manager service.
@@ -140,7 +140,7 @@ Team on shift.
 
 #### Apply for your user credentials
 
-DIRAC uses X509 certificates to identify and authenticate users.  These
+DIRAC uses X.509 certificates to identify and authenticate users.  These
 certificates are delivered to each individual by trusted certification
 authorities.  If you have a personal certificate issued by a EUGridPMA-certified
 authority you can use it for this tutorial.  Otherwise, IHEP certification
@@ -193,7 +193,7 @@ Fig. 2 - The EGI Workload Manager service Web portal
 
 If you are a new user, you can see the welcome page where you can find links to
 user documentations.  VO options: you can switch to different VOs that you have
-membership.  Log In options: the service supports both X509. Certificate and
+membership.  Log In options: the service supports both X.509, Certificate and
 Check-in log-in.  View options: allow to choose either desktop or tabs layout.
 Menu: a list of tools that enable the selected VO.
 
