@@ -146,7 +146,7 @@ automatically loaded in your browser.  You need to export it from the browser
 and put it in the appropriate format for DIRAC to use. This is a one-time
 operation. Please follow the instructions in this
 [document](http://www.chosensecurity.com/stuff/contentmgr/files/0/6d2fc0a807106169f266443672dc9ef2/document/web_browsers_with_certificates___chosensecurity.pdf)
-to export your certificate to a local file and named $HOME/MyCertificate.
+to export your certificate to a local file and named `$HOME/MyCertificate`.
 
 #### Install your credentials
 
