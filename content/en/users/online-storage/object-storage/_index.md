@@ -17,7 +17,7 @@ via a REST API. There is virtually no limit to the amount of data you can store,
 only the space used is accounted, you can access the data from any location
 (from any VM running at any EGI provider or even from other cloud providers or
 from your own laptop/browser), you can expose the data via external portals
-(using HTTP as transport protocols), you can set access control lists per
+(using HTTP as transport protocol), you can set access control lists per
 container and even make the data publicly available. On the other hand, data is
 accessed via a API requests, thus integration with existing applications may
 require a change to the application logic.
@@ -45,7 +45,7 @@ The Openstack CLI can be used to perform operations over the SWIFT endpoints
 available on the infrastructure.
 
 First the Openstack environment needs to be properly setup, and for this purpose
-the 'egicli' components is quite handy. For instance to setup the access to the
+the `egicli` components is quite handy. For instance to setup the access to the
 SWIFT endpoint at IFCA-LCG2 via the Pilot VO (vo.access.egi.eu) the following is
 needed:
 
@@ -187,5 +187,5 @@ This will require to upload the EC2 access keys to the EGI Data Transfer
 service, which will be then entitled to generate the proper signed URL to access
 the storage.
 
-Please contact the support (_suppor_at_egi_dot_eu_) in order to have more
+Please contact the support (_support_at_egi_dot_eu_) in order to have more
 details.

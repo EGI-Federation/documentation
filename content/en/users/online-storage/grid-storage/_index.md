@@ -151,7 +151,7 @@ performed within the Data Management framework used by Collaborations and
 Experiments.
 
 In EGI for instance, the EGI Workload Management System
-[DIRAC](../../workload-manager/), provides a way to efficiently access grid
+[EGI Workload Manager](../../workload-manager/), provides a way to efficiently access grid
 storage endpoints in order to read and store files on the infrastructures and to
 catalogue the existing file and related location.
 
