@@ -126,7 +126,7 @@ Team on shift.
 
 #### Apply for your user credentials
 
-DIRAC uses X.509 certificates to identify and authenticate users. These
+DIRAC uses [X.509 certificates](../check-in/voms/) to identify and authenticate users. These
 certificates are delivered to each individual by trusted certification
 authorities.  
 If you have a personal certificate issued by a
