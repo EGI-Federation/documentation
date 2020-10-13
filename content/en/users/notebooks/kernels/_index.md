@@ -10,7 +10,6 @@ Jupyter is an extensible environment that supports different programming
 languages. Each language is available as a different
 [kernel](https://jupyter.readthedocs.io/en/latest/projects/kernels.html).
 
-
 For the EGI service we have enabled a set of kernels that are automatically
 built from the [EGI-Foundation/egi-notebooks-images](https://github.com/EGI-Foundation/egi-notebooks-images)
 GitHub repository.
