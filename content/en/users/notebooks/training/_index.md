@@ -28,12 +28,12 @@ To get started:
     If this is the first time you access an EGI service, Check-in will
     guide you through a registration process.
 
-    ![image](checkin.png)
+    ![Check-in auth](checkin.png)
 
 1.  You will see the Jupyter interface once your personal server is
     started
 
-    ![image](classic.png)
+    ![Classic Jupyter Notebook](classic.png)
 
 ## Launching a notebook
 
@@ -42,7 +42,7 @@ Click on the New \> Python 3 option to launch your notebook with Python
 with a notebook named `Untitled.ipynb`. You can easily
 rename it by right-clicking on the current name.
 
-![image](new-classic.png)
+![New notebook](new-classic.png)
 
 ### Structure of a notebook
 
