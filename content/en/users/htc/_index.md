@@ -102,7 +102,7 @@ Key Components:
 * [Storage Services](../online-storage/)
 * _Computing Elements (CE)_: Computing resources are made available through
   GRID interfaces called Computing Elements. The most common implementations of CEs
-  in the EGI infrastructure are  [HTCondor-CE](https://htcondor-ce.readthedocs.io/en/latest/) 
+  in the EGI infrastructure are [HTCondor-CE](https://htcondor-ce.readthedocs.io/en/latest/) 
   and [ARC-CE](http://www.nordugrid.org/arc/ce/).
 
 #### Access Models
