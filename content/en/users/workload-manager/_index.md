@@ -85,7 +85,7 @@ for the needs of particular applications.
 
 ![Fig. 1 - The DIRAC Web portal](./figure_1.png)
 
-Fig. 1 - The DIRAC Web portal
+The DIRAC Web portal
 
 ## How to access the EGI Workload Manager service
 
@@ -180,7 +180,7 @@ To access the EGI Workload Manager open a web browser to:
 
 ![Fig. 2 - The EGI Workload Manager service Web portal](./figure_2.png)
 
-Fig. 2 - The EGI Workload Manager service Web portal
+The EGI Workload Manager service Web portal
 
 * If you are a new user, you can see the welcome page where you can find links to
 user documentations.
@@ -200,7 +200,7 @@ the passphrase, click `Upload`.
 ![Fig. 3 - The wizard to upload the .p12 proxy certificate](./figure_3.png)
 ![Fig. 3.1 - The wizard to upload the .p12 proxy certificate](./figure_3_1.png)
 
-Fig. 3 - The wizard to upload the .p12 proxy certificate
+The wizard to upload the .p12 proxy certificate
 
 #### Job Submission
 
@@ -216,7 +216,7 @@ your very first job to the EGI HTC cluster.
 
 ![Fig. 4 - Submit a job with the Job Launchpad](./figure_4.png)
 
-Fig. 4 - Submit a job with the Job Launchpad
+Submit a job with the Job Launchpad
 
 #### Monitor Job status
 
@@ -228,7 +228,7 @@ Try the various options to view different information about the jobs.
 
 ![Fig. 5 - Monitor the job execution with the Job Monitor panel](./figure_5.png)
 
-Fig. 5 - Monitor the job execution with the Job Monitor panel
+Monitor the job execution with the Job Monitor panel
 
 #### Get Results from Sandbox
 
@@ -373,7 +373,7 @@ of transitions for a DIRAC job |
 | glite-wms-job-output | dirac-wms-job-get-output | To retrieve the job output |
 | glite-wms-job-submit | dirac-wms-job-submit | To submit a job |
 
-Table. 1 - gLte-WMS vs. DIRAC commands
+gLte-WMS vs. DIRAC commands
 
 Have a look at the official
 [command reference documentation](http://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html)
