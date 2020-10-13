@@ -58,7 +58,7 @@ f = odfs.open("<datahub file path>")
 The `ONEPROVIDER_HOST` and `ONECLIENT_ACCESS_TOKEN` variables
 are obtained as part of the login process and made available in
 the notebooks environment automatically. You can also specify
-your a different oneprovider host if needed.
+a different oneprovider host if needed.
 
 ### EUDAT B2DROP
 
