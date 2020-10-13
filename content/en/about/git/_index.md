@@ -200,7 +200,7 @@ the local clone with the remote changes.
 
 ```sh
 # Retrieve changes made on your PR in the upstream repository
-gh pull
+git pull
 ```
 
 Then you can commit new changes and push them to your remote fork.
@@ -233,7 +233,8 @@ gh pr checkout XX
 Once done it's possible to build and run the site locally:
 
 ```sh
-# For Mac OS X
+# From the root of the repository clone
+# Here on MacOS X, adapt depending on your platform
 ./binaries/macos64/hugo server -D
 ```
 
