@@ -283,15 +283,15 @@ Manager service:
 
 ```
 $ dirac-configure defaults-egi.cfg Executing:
-/home/larocca/DIRAC/DIRAC/Core/scripts/dirac-configure.py defaults-egi.cfg
+/home/jdoe/DIRAC/DIRAC/Core/scripts/dirac-configure.py defaults-egi.cfg
 
 
-Checking DIRAC installation at "/home/larocca/DIRAC" Created vomsdir file
-/home/larocca/DIRAC/etc/grid-security/vomsdir/vo.formation.idgrilles.fr/cclcgvomsli01.in2p3.fr.lsc
+Checking DIRAC installation at "/home/jdoe/DIRAC" Created vomsdir file
+/home/jdoe/DIRAC/etc/grid-security/vomsdir/vo.formation.idgrilles.fr/cclcgvomsli01.in2p3.fr.lsc
 [..]
 Created vomsdir file
-/home/larocca/DIRAC/etc/grid-security/vomsdir/fedcloud.egi.eu/voms2.grid.cesnet.cz.lsc
-Created vomses file `/home/larocca/DIRAC/etc/grid-security/vomses/fedcloud.egi.eu`
+/home/jdoe/DIRAC/etc/grid-security/vomsdir/fedcloud.egi.eu/voms2.grid.cesnet.cz.lsc
+Created vomses file `/home/jdoe/DIRAC/etc/grid-security/vomses/fedcloud.egi.eu`
 ```
 Generate the proxy containing the credentials of your VO. Specify the VO in the "--group" option:
 
@@ -304,39 +304,39 @@ $ dirac-proxy-init --debug --group wenmr_user -U --rfc
 Generating proxy...
 Enter Certificate password:
 Contacting CS...
-Checking DN /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca
-larocca@egi.eu
-Username is glarocca
-Creating proxy for glarocca@wenmr_user
-(/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca
-larocca@egi.eu)
+Checking DN /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe
+jdoe@egi.eu
+Username is jdoe
+Creating proxy for jdoe@wenmr_user
+(/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe
+jdoe@egi.eu)
 Requested adding a VOMS extension but no VOMS attribute defined for group wenmr_user
 Uploading proxy for wenmr_user...
 Uploading wenmr_user proxy to ProxyManager...
 Loading user proxy Uploading proxy on-the-fly
-Cert file /home/larocca/.globus/usercert.pem Key file
-/home/larocca/.globus/userkey.pem
+Cert file /home/jdoe/.globus/usercert.pem Key file
+/home/jdoe/.globus/userkey.pem
 Loading cert and key User credentials loaded
 Uploading...  Proxy uploaded Proxy generated:
-subject      : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca larocca@egi.eu/CN=5721279051
-issuer       : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca larocca@egi.eu
-identity     : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca larocca@egi.eu
+subject      : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu/CN=0123456789
+issuer       : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu
+identity     : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu
 timeleft     : 23:59:58
 DIRAC group  : wenmr_user
 rfc          : True
 path         : /tmp/x509up_u0
-username     : glarocca
+username     : jdoe
 properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 
 Proxies uploaded: DN
 | Group               | Until (GMT) /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting
-EGI/CN=Giuseppe La Rocca larocca@egi.eu | access.egi.eu_user  | 2021/09/14 23:54
-/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca
-larocca@egi.eu | fedcloud_user       | 2021/09/14 23:54
-/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca
-larocca@egi.eu | access.egi.eu_admin | 2021/09/14 23:54
-/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca
-larocca@egi.eu | wenmr_user          | 2021/09/14 23:54
+EGI/CN=Jane Doe jdoe@egi.eu | access.egi.eu_user  | 2021/09/14 23:54
+/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe
+jdoe@egi.eu | fedcloud_user       | 2021/09/14 23:54
+/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe
+jdoe@egi.eu | access.egi.eu_admin | 2021/09/14 23:54
+/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe
+jdoe@egi.eu | wenmr_user          | 2021/09/14 23:54
 ```
 
 As a result of this command, several operations are accomplished: A long user
@@ -351,13 +351,13 @@ details of you proxy, run the following command:
 
 ```sh
 $ dirac-proxy-info
-subject      : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca larocca@egi.eu/CN=5721279051
-issuer       : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca larocca@egi.eu
-identity     : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Giuseppe La Rocca larocca@egi.eu timeleft     : 23:59:26
+subject      : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu/CN=0123456789
+issuer       : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu
+identity     : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu timeleft     : 23:59:26
 DIRAC group  : wenmr_user
 rfc          : True
 path         : /tmp/x509up_u0
-username     : glarocca
+username     : jdoe
 properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 ```
 
