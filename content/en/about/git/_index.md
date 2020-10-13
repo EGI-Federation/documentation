@@ -113,6 +113,48 @@ upstream        git@github.com:EGI-Foundation/documentation.git (fetch)
 upstream        git@github.com:EGI-Foundation/documentation.git (push)
 ```
 
+## Running the documentation site locally
+
+The documentation webiste is built from the source files using
+[Hugo](https://gohugo.io/).
+The repository
+[README](https://github.com/EGI-Foundation/documentation/blob/master/README.md)
+can be used as a reference for building instructions.
+
+### Requirements
+
+- mdl
+- hugo
+- NodeJS
+  - postcss-cli
+  - autoprofixer
+
+### Installing dependencies, building and testing
+
+To install npm+nodejs please check the instructions at:
+[https://www.npmjs.com/get-npm](https://www.npmjs.com/get-npm)
+
+The rest of the tools can be installed as follows:
+
+```sh
+gem install mdl
+npm install postcss-cli@7.1.2
+npm install autoprefixer@9.0
+```
+
+The supported Hugo version packages are available under the `binaries` folder.
+
+To build and run the site, from the repository root
+
+```sh
+git submodule update --init --recursive --depth 1
+mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
+# Pick the repository specific to your platform
+./binaries/<platform>/hugo server -D
+```
+
+The website is available at: [http://localhost:1313/](http://localhost:1313/).
+
 ## Branches and Commits
 
 You should submit your patch as a git branch ideally named with a meaningful
