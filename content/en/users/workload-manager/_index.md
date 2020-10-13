@@ -83,7 +83,7 @@ functionalities including management of computing tasks and distributed data.
 It also has a modular architecture designed specifically to allow easy extension
 for the needs of particular applications.
 
-![Fig. 1 - The DIRAC Web portal](./figure_1.png)
+![The DIRAC Web portal](./dirac_web_portal.png)
 
 The DIRAC Web portal
 
@@ -178,7 +178,7 @@ $ openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
 To access the EGI Workload Manager open a web browser to:
 [https://dirac.egi.eu/DIRAC/](https://dirac.egi.eu/DIRAC/)
 
-![Fig. 2 - The EGI Workload Manager service Web portal](./figure_2.png)
+![The EGI Workload Manager service Web portal](./egi_workload_manager_web_portal.png)
 
 The EGI Workload Manager service Web portal
 
@@ -197,8 +197,8 @@ Go to:
 `Menu` > `Tools` > `Proxy Upload`, enter your certificates .p12 file and
 the passphrase, click `Upload`.
 
-![Fig. 3 - The wizard to upload the .p12 proxy certificate](./figure_3.png)
-![Fig. 3.1 - The wizard to upload the .p12 proxy certificate](./figure_3_1.png)
+![The wizard to upload the .p12 proxy certificate](./proxy_cert_upload_1.png)
+![The wizard to upload the .p12 proxy certificate](./proxy_cert_upload_2.png)
 
 The wizard to upload the .p12 proxy certificate
 
@@ -214,7 +214,7 @@ indicating the output Sandbox location.
 Now, select `Helloworld` from the  job list, and click `Submit`, you just launch
 your very first job to the EGI HTC cluster.
 
-![Fig. 4 - Submit a job with the Job Launchpad](./figure_4.png)
+![Submit a job with the Job Launchpad](./job_submit.png)
 
 Submit a job with the Job Launchpad
 
@@ -226,7 +226,7 @@ The left panel gives all kinds of search options for your jobs. Set your search
 criteria, and click `Submit`, the jobs will list on the right panel.  
 Try the various options to view different information about the jobs.
 
-![Fig. 5 - Monitor the job execution with the Job Monitor panel](./figure_5.png)
+![Monitor the job execution with the Job Monitor panel](./job_monitor.png)
 
 Monitor the job execution with the Job Monitor panel
 
