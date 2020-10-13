@@ -9,29 +9,30 @@ description: >
 
 ## What is High Throughput Compute?
 
-High Throughput Compute (HTC) can be described as a use case for an
-infrastructure that includes a big number of tasks (that could be data analysis
-tasks, also computing jobs for analysing data or other similar tasks) that are
-submitted in big numbers and loosely coupled. They can be executed individually
-and don’t need to interact with each other (too much). Users usually submit
-these tasks to the infrastructure in a big number of them and once the jobs
-have been scheduled and executed in the distributed resources of the
-infrastructure, the user can collect the output from the services that have
+High Throughput Compute (HTC) can be described as computing paradigm that focuses 
+on the efficient execution of a large number of loosely-coupled tasks (that could 
+be data analysis tasks, also computing jobs for analysing data or other similar 
+tasks). HTC systems are independent jobs that can be individually 
+scheduled  on many different computing resources across multiple administrative 
+boundaries. 
+Users usually submit these tasks to the infrastructure as jobs and 
+once the jobs have been scheduled and executed in the distributed resources of 
+theinfrastructure, the user can collect the output from the services that have
 executed their jobs.
 
-EGI High Throughput Compute service is provided by a distributed network of
+The EGI High Throughput Compute service is provided by a distributed network of
 computing centres, accessible via a standard interface and membership of a
 Virtual Organisation.
 
 ## The EGI HTC Infrastructure
 
-EGI HTC infrastructure is the federation of GRID resources provided by
+The EGI HTC infrastructure is the federation of GRID resources provided by
 EGI providers, that aims to share and federate in a secure way distributed IT
 resources as part of the EGI infrastructure. It comprises:
 * Computer resources -- execution environment of computing tasks in
   clusters distributed in many different resource centers over Europe and
   outside Europe ;
-* Data infrastructure -- storage servers where users can upload and downloado
+* Data infrastructure -- storage servers where users can upload and download
   their data/files in a distributed manner in the different resource centers
 * Federated operations -- a set of federated operations that are constituted of
   global tasks (central activities/ services, e.g., AAI, accounting, helpdesk)
@@ -57,7 +58,7 @@ coordinated operation of the resources that are not currently uniformly
 accessible. In addition, nowadays, many researcher collaborations generate a
 big amount of data, and managing such big data is time consuming and error prone.
 
-EGI HTC not only provides the basic access to resources but also offers a set
+The EGI HTC not only provides the basic access to resources but also offers a set
 of high-level tools allowing users to manage a large amount of data in a
 collaborative, for example, there are authorization and access control tools
 that can be regulated by the research collaboration in a central manner and
@@ -100,8 +101,9 @@ Key Components:
 * [Data Transfer Service (FTS)](../data-transfer/)
 * [Storage Services](../online-storage/)
 * _Computing Elements (CE)_: Computing resources are made available through
-  GRID interfaces called Computing Elements. Several implementations of CE
-  include, HTCondor, ARC-CE.
+  GRID interfaces called Computing Elements. The most common implementations of CEs
+  in the EGI infrastructure are  [HTCondor-CE](https://htcondor-ce.readthedocs.io/en/latest/) 
+  and [ARC-CE](http://www.nordugrid.org/arc/ce/).
 
 #### Access Models
 
