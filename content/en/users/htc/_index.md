@@ -17,7 +17,7 @@ scheduled  on many different computing resources across multiple administrative
 boundaries. 
 Users usually submit these tasks to the infrastructure as jobs and 
 once the jobs have been scheduled and executed in the distributed resources of 
-theinfrastructure, the user can collect the output from the services that have
+the infrastructure, the user can collect the output from the services that have
 executed their jobs.
 
 The EGI High Throughput Compute service is provided by a distributed network of
