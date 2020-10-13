@@ -22,7 +22,7 @@ Once installed you can import the libray as usual.
 
 {{% alert title="Warning" color="warning" %}}
 Any modifications to the libraries/software of your notebooks will be
-lost when your notebook server is stoped (automatically after 1 hour of
+lost when your notebook server is stopped (automatically after 1 hour of
 inactivity)!
 {{% /alert %}}
 
