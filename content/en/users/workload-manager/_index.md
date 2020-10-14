@@ -103,9 +103,8 @@ There are several options to access the service:
    `Compute` > `Workload Manager` from the top menu
 1. Representatives of a community who want to try DIRAC and EGI > Same as #2.
 1. Representative of a community who wants to request DIRAC for the community's
-   own resource pool > Submit a request via the Marketplace, CST to call back
-   and discuss the details (which resource pool, what number of users, AAI,
-   etc.).
+   own resource pool > Submit a request through the EGI Marketplace selecting  
+   `Compute` > `Workload Manager` from the top menu
 
 ## Getting Started
 
