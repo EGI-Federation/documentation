@@ -139,27 +139,14 @@ and follow the instructions. Your certificate may take a few days to
 be delivered, so please ask for your certificate well in advance and in any
 case, before the tutorial starts.
 
-#### Export your credentials from your browser
+#### Install your credentials
 
 Your personal certificate is usually delivered to you via a web site and is
 automatically loaded in your browser. You need to export it from the browser
 and put it in the appropriate format for DIRAC to use. This is a one-time
-operation. Please follow the instructions in this
-[document](http://www.chosensecurity.com/stuff/contentmgr/files/0/6d2fc0a807106169f266443672dc9ef2/document/web_browsers_with_certificates___chosensecurity.pdf)
-to export your certificate to a local file and named `$HOME/MyCertificate`.
-
-#### Install your credentials
-
-You can user the commands below in any Unix machine to get your user credentials
-in the format and location expected by DIRAC:
-
-```sh
-$ mkdir -p $HOME/.globus
-$ chmod 700 $HOME/.globus
-$ openssl pkcs12 -in $HOME/MyCertificate \ -clcerts -nokeys -out $HOME/.globus/usercert.pem
-$ openssl pkcs12 -in $HOME/MyCertificate\ -nocerts -out $HOME/.globus/userkey.pem
-$ chmod 600 $HOME/.globus/usercert.pem $HOME/.globus/userkey.pem ```
-```
+operation. Please follow the instructions in detailed in
+[VOMS documentation page](../check-in/voms/)
+to export and in install your certificate.
 
 #### Send your certificate's subject to the DIRAC team
 
