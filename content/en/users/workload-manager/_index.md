@@ -65,9 +65,9 @@ tail of users, SMEs and Industry
 
 ## Architecture
 
-The EGI Workload Manager service (DIRAC4EGI) is a cluster of DIRAC services
-running on EGI resources (HTC, CLOUD, HPC) supporting multi-VO.  All the DIRAC
-services are at or above TRL8.  The main service components include:
+The EGI Workload Manager service is a cluster of DIRAC services running on EGI
+resources (HTC, CLOUD, HPC) supporting multi-VO. All the DIRAC services are at
+or above TRL8.  The main service components include:
 
 * Workload Management System (WMS) architecture is composed of multiple loosely
 coupled components working together in a collaborative manner with the help of
@@ -92,8 +92,8 @@ The DIRAC Web portal
 There are several options to access the service:
 
 1. Members of a scientific community whose resources pool is already configured
-   in the DIRAC4EGI instance > can use the
-   [DIRAC4EGI web portal](https://dirac.egi.eu:9443/DIRAC/)
+   in the EGI Workload Manager instance > can use the
+   [EGI Workload Manager web portal](https://dirac.egi.eu:9443/DIRAC/)
    to access the service, or use
    [DIRAC Client](https://wiki.egi.eu/wiki/HOWTO22#Using_DIRAC_through_the_client).
 1. Individual researchers who want to do some number crunching for a limited
