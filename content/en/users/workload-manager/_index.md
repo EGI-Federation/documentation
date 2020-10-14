@@ -324,15 +324,7 @@ jdoe@egi.eu | wenmr_user          | 2021/09/14 23:54
 As a result of this command, several operations are accomplished:
 
 * A long user proxy (with the length of the validity of the certificate) is
-uploaded to the DIRAC ProxyManager service, equivalent of the gLite MyProxy
-service;
-* A short user proxy is created with the DIRAC extension carrying the DIRAC
-group name and with the VOMS extension corresponding to the DIRAC group if the
-gLite UI environment is available.
-
-If the gLite UI environment is not available, the VOMS extensions will not be
-loaded into the proxy. This is not a serious problem, still most of the
-operations will be possible.
+uploaded to the DIRAC ProxyManager service
 
 For checking the details of you proxy, run the following command:
 
@@ -364,8 +356,8 @@ Have a look at the official
 [command reference documentation](http://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html)
 for the complete list of the Workload Management commands.
 
-In general, you can submit jobs, check their status, and retrieve the output in
-the same way as the glite-WMS. For example:
+In general, you can submit jobs, check their status, and retrieve the output.
+For example:
 
 Create a simple JDL file (test.jdl) to submit the job:
 
