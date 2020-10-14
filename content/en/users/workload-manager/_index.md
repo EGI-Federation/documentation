@@ -152,8 +152,8 @@ to export and in install your certificate.
 In order to configure the DIRAC server so that you get registered as a user, the
 team needs to know your certificate's subject.
 
-Please use the command below on any Unix machine and send its output to Andrei
-Tsaregorodtsev (atsareg`<AT>`in2p3`<DOT>`fr):
+Please use the command below on any Unix machine and send its output to  
+`dirac-support` `<AT>` `mailman.egi.eu`
 
 ```sh
 $ openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
