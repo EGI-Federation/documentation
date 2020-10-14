@@ -360,21 +360,15 @@ properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 
 #### Managing simple jobs
 
-In the following table there is a comparison between the glite-WMS CLI and the
-DIRAC one:
+|DIRAC commands |Note|
+|---|---|
+|dirac-wms-job-status |To check the status of a job|
+|dirac-wms-job-delete |To delete a job|
+|dirac-wms-job-logging-info |To retrieve history of transitions for a DIRAC job|
+|dirac-wms-job-get-output |To retrieve the job output|
+|dirac-wms-job-submit |To submit a job|
 
-| gLite-WMS commands | DIRAC commands | Note |
-|---|---|---|
-| glite-wms-job-delegate-proxy | ------ | Not needed |
-| glite-wms-job-list-match | ------ | Not needed |
-| glite-wms-job-status | dirac-wms-job-status | To check the status of a job |
-| glite-wms-job-cancel | dirac-wms-job-delete | To delete a job |
-| glite-wms-job-logging-info | dirac-wms-job-logging-info | To retrieve history
-of transitions for a DIRAC job |
-| glite-wms-job-output | dirac-wms-job-get-output | To retrieve the job output |
-| glite-wms-job-submit | dirac-wms-job-submit | To submit a job |
-
-gLte-WMS vs. DIRAC commands
+DIRAC commands
 
 Have a look at the official
 [command reference documentation](http://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html)
