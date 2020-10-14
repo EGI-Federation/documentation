@@ -67,7 +67,7 @@ tail of users, SMEs and Industry
 
 The EGI Workload Manager service is a cluster of DIRAC services running on EGI
 resources (HTC, CLOUD, HPC) supporting multi-VO. All the DIRAC services are at
-or above TRL8.  The main service components include:
+or above TRL8. The main service components include:
 
 * Workload Management System (WMS) architecture is composed of multiple loosely
 coupled components working together in a collaborative manner with the help of
@@ -143,7 +143,7 @@ case, before the tutorial starts.
 #### Export your credentials from your browser
 
 Your personal certificate is usually delivered to you via a web site and is
-automatically loaded in your browser.  You need to export it from the browser
+automatically loaded in your browser. You need to export it from the browser
 and put it in the appropriate format for DIRAC to use. This is a one-time
 operation. Please follow the instructions in this
 [document](http://www.chosensecurity.com/stuff/contentmgr/files/0/6d2fc0a807106169f266443672dc9ef2/document/web_browsers_with_certificates___chosensecurity.pdf)
@@ -158,7 +158,7 @@ in the format and location expected by DIRAC:
 $ mkdir -p $HOME/.globus
 $ chmod 700 $HOME/.globus
 $ openssl pkcs12 -in $HOME/MyCertificate \ -clcerts -nokeys -out $HOME/.globus/usercert.pem
-$ openssl pkcs12 -in  $HOME/MyCertificate\ -nocerts -out $HOME/.globus/userkey.pem
+$ openssl pkcs12 -in $HOME/MyCertificate\ -nocerts -out $HOME/.globus/userkey.pem
 $ chmod 600 $HOME/.globus/usercert.pem $HOME/.globus/userkey.pem ```
 ```
 
@@ -185,15 +185,19 @@ The EGI Workload Manager service Web portal
 
 * If you are a new user, you can see the welcome page where you can find links to
 user documentations.
+
 * *VO options*: you can switch to different VOs that you have membership.
+
 * *Log In options*: the service supports both X.509, Certificate and Check-in
 log-in.
+
 * *View options*: allow to choose either desktop or tabs layout.
+
 * *Menu*: a list of tools that enable the selected VO.
 
 #### Upload Proxy
 
-Before submitting your job, you need to upload your Proxy.  Login to the portal.
+Before submitting your job, you need to upload your Proxy. Login to the portal.
 Go to:  
 `Menu` > `Tools` > `Proxy Upload`, enter your certificates .p12 file and
 the passphrase, click `Upload`.
@@ -206,13 +210,13 @@ The wizard to upload the .p12 proxy certificate
 #### Job Submission
 
 Go to:  
-`Menu` > `Tools` > `Job Launchpad`.  First check the `Proxy Status`, click it
+`Menu` > `Tools` > `Job Launchpad`. First check the `Proxy Status`, click it
 until it shows `Valid` in green color.
 
 In the Job Launchpad, you can select your jobs from the list; add parameters,
 indicating the output Sandbox location.
 
-Now, select `Helloworld` from the  job list, and click `Submit`, you just launch
+Now, select `Helloworld` from the job list, and click `Submit`, you just launch
 your very first job to the EGI HTC cluster.
 
 ![Submit a job with the Job Launchpad](./job_submit.png)
@@ -234,7 +238,7 @@ Monitor the job execution with the Job Monitor panel
 #### Get Results from Sandbox
 
 Once the job has been successfully processed, the `Status` of the job will
-change to green.  Right click the job, select:  
+change to green. Right click the job, select:  
 `Sandbox` > `Get Output file(s)`,
 you can get the result file(s).
 
@@ -342,7 +346,7 @@ group name and with the VOMS extension corresponding to the DIRAC group if the
 gLite UI environment is available.
 
 If the gLite UI environment is not available, the VOMS extensions will not be
-loaded into the proxy.  This is not a serious problem, still most of the
+loaded into the proxy. This is not a serious problem, still most of the
 operations will be possible.
 
 For checking the details of you proxy, run the following command:
