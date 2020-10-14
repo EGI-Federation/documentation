@@ -321,10 +321,8 @@ jdoe@egi.eu | access.egi.eu_admin | 2021/09/14 23:54
 jdoe@egi.eu | wenmr_user          | 2021/09/14 23:54
 ```
 
-As a result of this command, several operations are accomplished:
-
-* A long user proxy (with the length of the validity of the certificate) is
-uploaded to the DIRAC ProxyManager service
+As a result of this command a user proxy with the same validity period of the
+certificate is uploaded to the DIRAC ProxyManager service.
 
 For checking the details of you proxy, run the following command:
 
