@@ -108,7 +108,7 @@ There are several options to access the service:
 1. Individual researchers who want to do some number crunching for a limited
    period of time, with a reasonable (not too high) number of CPUs > can use
    the catch-all VO resource pool (`vo.access.egi.eu`). Submit a request through
-   the EGI Marketplace selecting:
+   the EGI Marketplace selecting:  
    `Compute` > `Workload Manager` from the top menu
 1. Representatives of a community who want to try DIRAC and EGI > Same as #2.
 1. Representative of a community who wants to request DIRAC for the community's
