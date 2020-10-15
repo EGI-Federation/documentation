@@ -108,11 +108,11 @@ There are several options to access the service:
 1. Individual researchers who want to do some number crunching for a limited
    period of time, with a reasonable (not too high) number of CPUs > can use
    the catch-all VO resource pool (`vo.access.egi.eu`). Submit a request through
-   the EGI Marketplace selecting:  
+   the EGI Marketplace selecting:\
    `Compute` > `Workload Manager` from the top menu
 1. Representatives of a community who want to try DIRAC and EGI > Same as #2.
 1. Representative of a community who wants to request DIRAC for the community's
-   own resource pool > Submit a request through the EGI Marketplace selecting  
+   own resource pool > Submit a request through the EGI Marketplace selecting\
    `Compute` > `Workload Manager` from the top menu
 
 ## Getting Started
@@ -138,7 +138,7 @@ Team on shift.
 DIRAC uses
 [X.509 certificates](../check-in/voms/)
 to identify and authenticate users. These certificates are delivered to each
-individual by trusted certification authorities.  
+individual by trusted certification authorities.\
 If you have a personal certificate issued by a
 [EUGridPMA-certified](http://www.eugridpma.org/)
 authority you can use it for this tutorial. Otherwise refer to the information
@@ -162,7 +162,7 @@ to export and in install your certificate.
 In order to configure the DIRAC server so that you get registered as a user, the
 team needs to know your certificate's subject.
 
-Please use the command below on any Unix machine and send its output to  
+Please use the command below on any Unix machine and send its output to\
 `dirac-support` `<AT>` `mailman.egi.eu`
 
 ```sh
@@ -193,7 +193,7 @@ The EGI Workload Manager service Web portal
 #### Upload Proxy
 
 Before submitting your job, you need to upload your Proxy. Login to the portal.
-Go to:  
+Go to:\
 `Menu` > `Tools` > `Proxy Upload`, enter your certificates .p12 file and
 the passphrase, click `Upload`.
 
@@ -204,7 +204,7 @@ The wizard to upload the .p12 proxy certificate
 
 #### Job Submission
 
-Go to:  
+Go to:\
 `Menu` > `Tools` > `Job Launchpad`. First check the `Proxy Status`, click it
 until it shows `Valid` in green color.
 
@@ -220,10 +220,10 @@ Submit a job with the Job Launchpad
 
 #### Monitor Job status
 
-Go to:  
-`Menu` > `Applications` > `Job Monitor`.  
+Go to:\
+`Menu` > `Applications` > `Job Monitor`.\
 The left panel gives all kinds of search options for your jobs. Set your search
-criteria, and click `Submit`, the jobs will list on the right panel.  
+criteria, and click `Submit`, the jobs will list on the right panel.\
 Try the various options to view different information about the jobs.
 
 ![Monitor the job execution with the Job Monitor panel](./job_monitor.png)
@@ -233,7 +233,7 @@ Monitor the job execution with the Job Monitor panel
 #### Get Results from Sandbox
 
 Once the job has been successfully processed, the `Status` of the job will
-change to green. Right click the job, select:  
+change to green. Right click the job, select:\
 `Sandbox` > `Get Output file(s)`,
 you can get the result file(s).
 
@@ -451,5 +451,5 @@ $ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 
 * For technical issues and bug reports, please submit a ticket in
   [GGUS](https://ggus.eu/?mode=ticket_submit), in `Assign to support unit`,
-  indicate:  
+  indicate:\
   `EGI Services and Service Components` > `Workload Manager (DIRAC)`.
