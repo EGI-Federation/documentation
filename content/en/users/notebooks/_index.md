@@ -26,25 +26,27 @@ service](https://www.egi.eu/services/cloud-compute/).
 EGI Notebooks provides the well-known Jupyter interface for notebooks
 with the following added features:
 
--   Integration with EGI Check-in for authentication, login with any
+*   Integration with EGI Check-in for authentication, login with any
     EduGAIN or social accounts (e.g. Google, Facebook)
--   Persistent storage associated to each user, available in the
+*   Persistent storage associated to each user, available in the
     notebooks environment.
--   Customisable with new notebook environments, expose any existing
+*   Customisable with new notebook environments, expose any existing
     notebook to your users.
--   Runs on EGI e-Infrastructure so can easily use EGI compute and
+*   Runs on EGI e-Infrastructure so can easily use EGI compute and
     storage from your notebooks.
 
 ## Service Modes
 
 We offer different service modes depending on your needs:
 
--   Individual users can use the centrally operated service from EGI.
-    Users, after lightweight approval, can login, write and play and
-    re-play notebooks. Notebooks can use storage and compute capacity
-    from the access.egi.eu Virtual Organisation. Request access via [EGI
-    marketplace](https://marketplace.egi.eu/applications-on-demand-beta/65-jupyter.html).
--   User communities can have their customised EGI Notebooks service
+*   Individual users can use the centrally operated service from EGI.
+    Users can login, write and play and re-play notebooks just by
+    [creating an EGI account](../check-in/signup). This instance has
+    limits on the amount of resources available for each user (1 CPU core,
+    1 GB RAM and 10 GB of storage). It will also kill inactive sessions after
+    1 hour.
+
+*   User communities can have their customised EGI Notebooks service
     instance. EGI offers consultancy and support, as well as can operate
     the setup. Contact `support _at_ egi.eu` to make an arrangement. A
     community specific setup allows the community to use the

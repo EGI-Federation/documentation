@@ -2,7 +2,7 @@
 title: "Style guide"
 description: "Style guide for EGI documentation"
 type: docs
-weight: 30
+weight: 40
 ---
 
 [Hugo](https://gohugo.io/getting-started/configuration-markup/), the tool used
