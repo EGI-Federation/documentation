@@ -159,7 +159,7 @@ to export and in install your certificate.
 
 #### Send your certificate's subject to the DIRAC team
 
-In order to configure the DIRAC server so that you get registered as a user, the
+In order to configure the DIRAC server so that you gets registered as a user, the
 team needs to know your certificate's subject.
 
 Please use the command below on any Unix machine and send its output to\
