@@ -35,25 +35,32 @@ on resources provided by
 The EGI Workload Manager:
 
 * Maximizes usage efficiency by choosing appropriately computing and storage
-resources on real-time.
+  resources on real-time.
+
 * Provides a large-scale distributed environment to manage and handle data
-storage, datamovement, accessing and processing.
+  storage, data movement, accessing and processing.
+
 * Handles job submission and workload distribution in a transparent way.
+
 * Improves the general job throughput compared with native management of EGI
-grid or cloud computing resources.
+  grid or cloud computing resources.
+
 * Offers pilot-based task scheduling method, that submits pilot jobs to
-resources to check the execution environment before to start the user's jobs.
-From a technical standpoint, the user's job description is delivered to the
-pilot, which prepares its execution environment and executes the user application.
-The pilot-based scheduling feature solves many problems of using
-heterogeneity and unstable distributed computing resources.
+  resources to check the execution environment before to start the user's jobs.
+  From a technical standpoint, the user's job description is delivered to the
+  pilot, which prepares its execution environment and executes the user application.
+  The pilot-based scheduling feature solves many problems of using
+  heterogeneity and unstable distributed computing resources.
+
 * Includes easy extensions to customize the environment checks to address the
-needs of a particular community.
-Users can choose appropriately computing and storage resources maximising their
-usage efficiency for particular user requirements.
+  needs of a particular community.
+  Users can choose appropriately computing and storage resources maximising their
+  usage efficiency for particular user requirements.
+
 * Handles different storage supporting both cloud and grid capacity.
+
 * Provides a user-friendly interface that allows users to choose among different
-DIRAC services.
+  DIRAC services.
 
 ## Target User Groups
 
@@ -70,18 +77,20 @@ resources (HTC, CLOUD, HPC) supporting multi-VO. All the DIRAC services are at
 or above TRL8. The main service components include:
 
 * Workload Management System (WMS) architecture is composed of multiple loosely
-coupled components working together in a collaborative manner with the help of
-a common Configuration Services ensuring reliable service discovery
-functionality. The modular architecture allows to easily incorporate new types
-of computing resources as well as new task scheduling algorithms in response to
-evolving user requirements. DIRAC services can run on multiple geographically
-distributed servers which increases the overall reliability and excellent
-scalability properties.
+  coupled components working together in a collaborative manner with the help of
+  a common Configuration Services ensuring reliable service discovery
+  functionality. The modular architecture allows to easily incorporate new types
+  of computing resources as well as new task scheduling algorithms in response to
+  evolving user requirements. DIRAC services can run on multiple geographically
+  distributed servers which increases the overall reliability and excellent
+  scalability properties.
+
 * REST server providing language neutral interface to DIRAC service.
+
 * Web portal provides simple and intuitive access to most of the DIRAC
-functionalities including management of computing tasks and distributed data.
-It also has a modular architecture designed specifically to allow easy extension
-for the needs of particular applications.
+  functionalities including management of computing tasks and distributed data.
+  It also has a modular architecture designed specifically to allow easy extension
+  for the needs of particular applications.
 
 ![The DIRAC Web portal](./dirac_web_portal.png)
 
@@ -99,7 +108,7 @@ There are several options to access the service:
 1. Individual researchers who want to do some number crunching for a limited
    period of time, with a reasonable (not too high) number of CPUs > can use
    the catch-all VO resource pool (`vo.access.egi.eu`). Submit a request through
-   the EGI Marketplace selecting:   
+   the EGI Marketplace selecting:
    `Compute` > `Workload Manager` from the top menu
 1. Representatives of a community who want to try DIRAC and EGI > Same as #2.
 1. Representative of a community who wants to request DIRAC for the community's
@@ -126,9 +135,10 @@ Team on shift.
 
 #### Apply for your user credentials
 
-DIRAC uses [X.509 certificates](../check-in/voms/) to identify and authenticate users. These
-certificates are delivered to each individual by trusted certification
-authorities.  
+DIRAC uses
+[X.509 certificates](../check-in/voms/)
+to identify and authenticate users. These certificates are delivered to each
+individual by trusted certification authorities.  
 If you have a personal certificate issued by a
 [EUGridPMA-certified](http://www.eugridpma.org/)
 authority you can use it for this tutorial. Otherwise refer to the information
@@ -169,12 +179,12 @@ To access the EGI Workload Manager open a web browser to:
 The EGI Workload Manager service Web portal
 
 * If you are a new user, you can see the welcome page where you can find links to
-user documentations.
+  user documentations.
 
 * *VO options*: you can switch to different VOs that you have membership.
 
 * *Log In options*: the service supports both X.509, Certificate and Check-in
-log-in.
+  log-in.
 
 * *View options*: allow to choose either desktop or tabs layout.
 
@@ -275,7 +285,9 @@ Created vomsdir file
 /home/jdoe/DIRAC/etc/grid-security/vomsdir/fedcloud.egi.eu/voms2.grid.cesnet.cz.lsc
 Created vomses file `/home/jdoe/DIRAC/etc/grid-security/vomses/fedcloud.egi.eu`
 ```
-Generate the proxy containing the credentials of your VO. Specify the VO in the `--group` option:
+
+Generate the proxy containing the credentials of your VO. Specify the VO in the
+`--group` option:
 
 **In this example, we are going to use the resources allocated for the WeNMR
 project.**
@@ -330,7 +342,8 @@ For checking the details of you proxy, run the following command:
 $ dirac-proxy-info
 subject      : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu/CN=0123456789
 issuer       : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu
-identity     : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu timeleft     : 23:59:26
+identity     : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu
+timeleft     : 23:59:26
 DIRAC group  : wenmr_user
 rfc          : True
 path         : /tmp/x509up_u0
@@ -437,5 +450,6 @@ $ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
   [https://dirac.readthedocs.io/en/latest/UserGuide/](https://dirac.readthedocs.io/en/latest/UserGuide/)
 
 * For technical issues and bug reports, please submit a ticket in
-[GGUS](https://ggus.eu/?mode=ticket_submit), in `Assign to support unit`, indicate:  
+  [GGUS](https://ggus.eu/?mode=ticket_submit), in `Assign to support unit`,
+  indicate:  
   `EGI Services and Service Components` > `Workload Manager (DIRAC)`.
