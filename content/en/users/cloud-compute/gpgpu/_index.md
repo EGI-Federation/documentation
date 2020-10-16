@@ -25,7 +25,7 @@ The table below summarises the available options:
 
 GPUs sites can be accessed by different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like common Horizon dashboard,
-VMOps dashboard, Infrastructure manager.
+VMOps dashboard, or Infrastructure manager.
 
 Site-specific dashboards and endpoints are described in the folling table:
 
