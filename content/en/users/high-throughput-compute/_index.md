@@ -1,5 +1,5 @@
 ---
-title: "HTC"
+title: "High Throughput Compute"
 dlinkTitle: "High Throughput Compute"
 type: docs
 weight: 60
