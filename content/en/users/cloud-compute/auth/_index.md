@@ -89,33 +89,6 @@ VOs may require a personal X.509 certificate. This
 of the VOMS documentation, explains how to obtain a certificate
 and provides further information about X.509 certificates.
 
-## Authentication {#oidc-auth-using-check-in}
-
-[OpenID Connect](http://openid.net/connect/) is the main authentication
-protocol used on the EGI Cloud. It replaces the legacy VOMS-based
-authentication for all OpenStack providers.
-
-Authentication to web based services (like the AppDB) will redirect you
-to the EGI Check-in authentication page. Just select your institution or
-social login and follow the regular authentication process.
-
-Access to APIs or via Command Line Interfaces (CLI) requires the use of
-OAuth2.0 tokens and interaction with the OpenStack Keystone
-[OS-FEDERATION
-API](https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api).
-The process for authentication is as follows:
-
-1.  Obtain a valid OAuth2.0 access token from Check-in. Access tokens
-    are short-lived credentials that can be obtained by recognised
-    Check-in clients once a user has been authenticated.
-1.  Interchange the Check-in access token for a valid unscoped Keystone
-    token.
-1.  Discover available projects from Keystone using the unscoped token.
-1.  Use the unscoped Keystone token to get a scoped token for a valid
-    project. Scoped tokens will allow the user to perform operations on
-    the provider.
-
-
 ## Check-in and access tokens
 
 Access tokens can be obtained via several mechanisms, usually involving
