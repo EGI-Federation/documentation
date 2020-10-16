@@ -35,16 +35,7 @@ The process for authentication is as follows:
 ## Authorisation
 
 Cloud Compute service is accessed through **Virtual Organisations
-(VOs)**. A VO is a grouping of IaaS cloud providers from the federation,
-who allocate capacity for a specific user group. Users with similar
-interestes/requirements can join or form a VO to gather resources from EGI
-cloud providers - typically for a given project, experiment or use case.
-There are generic VOs too, for example the vo.access.egi.eu VO, which is
-open for any user who wants to experiment with the service. **You have
-to join a VO before you can interact with the cloud resources**, while
-higher level services (PaaS, SaaS) do not always require VO membership.
-
-Users that are members of a VO will have access to the providers
+(VOs)**. Users that are members of a VO will have access to the providers
 supporting that VO: they will be able to manage VMs, block storage and
 object storage available to the VO. Resources (VMs and storage) are
 shared across all members of the VO, please do not interfere with the
