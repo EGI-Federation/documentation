@@ -74,11 +74,7 @@ approved you will be able to interact with the infrastructure.
 
 Pre-existing VOs of EGI can be also used on IaaS cloud providers.
 Consult with your VO manager or browse the existing VOs at the [EGI
-Operations Portal](https://operations-portal.egi.eu/vo/). Joining these
-VOs may require a personal X.509 certificate. This
-[section](../../check-in/voms/#get-a-certificate)
-of the VOMS documentation, explains how to obtain a certificate
-and provides further information about X.509 certificates.
+Operations Portal](https://operations-portal.egi.eu/vo/).
 
 ## Check-in and access tokens
 
