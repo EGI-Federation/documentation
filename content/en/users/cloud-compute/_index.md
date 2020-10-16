@@ -27,14 +27,14 @@ sites that offer:
 
 -   Single Sign-On via [EGI
     Check-in](https://www.egi.eu/services/check-in/), users can login
-    into every provider with their institutional credentials and using
+    into every provider with their institutional credentials and use
     modern industry standards like [OpenID
     Connect](https://openid.net/connect/).
 -   Global VM image catalogue at [AppDB](https://appdb.egi.eu) with
     pre-configured Virtual Machine images that are automatically
     replicated to every provider based on your community needs.
 -   Resource discovery features to easily understand which providers are
-    support your community and what are their capabilities.
+    supporting  your community and what are their capabilities.
 -   [Global accounting](https://accounting.egi.eu/cloud/) that
     aggregates and allows visualisation of usage information across the
     whole federation.
@@ -63,9 +63,9 @@ have emerged:
         [Peachnote analysis
         platform](https://www.egi.eu/news/peachnote-in-unison-with-egi/).
 -   **Compute and data intensive applications**: for those applications needing
-    considerable amount of resources in term of computation and/or memory and/or
+    considerable amount of resources in terms of computation and/or memory and/or
     intensive I/O. Ad-hoc computing environments can be created in the
-    EGI cloud providers to satisfy very hard HW resource requirements.
+    EGI cloud providers to satisfy extremly intensive HW resource requirements.
     -   Example: [VERCE
         platform](https://www.egi.eu/news/new-egi-use-case-a-close-look-at-the-amatrice-earthquake/),
         [The Genetics of Salmonella
