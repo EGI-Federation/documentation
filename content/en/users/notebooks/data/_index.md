@@ -11,7 +11,7 @@ home to store any notebooks and associated data. The content of this
 home directory will be kept even if your notebook server is stopped (which
 can happen if there is no activity for more than 1 hour). **Modifications
 to the notebooks environment outside the home directory are not kept**
-(e.g. installation of libraries). if you need those changes to
+(e.g. installation of libraries). If you need those changes to
 persist, let us know via a  [GGUS ticket to the Notebooks Support
 Unit](https://ggus.eu). You can also ask for increasing the 1GB home
 via ticket.
@@ -31,7 +31,7 @@ instance but can be made available on demand.
 ### EGI DataHub
 
 [DataHub](../../datahub) provides a scalable distributed data
-infrastructre. It offers a tight integration with Jupyter and
+infrastructure. It offers a tight integration with Jupyter and
 notebooks with specific drivers that make the DataHub Spaces
 accessible from any notebook.
 
