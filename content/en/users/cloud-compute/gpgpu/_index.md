@@ -22,7 +22,7 @@ The table below summarises the available options:
 | IFCA-LCG2 | up to 4 NVIDIA GT200GL, up to 1 NVIDIA TITAN X, up to 10 NVIDIA GeForce GTX 1080Ti | | | Pay-per-use |
 | CESNET-MCC | up to 2 NVIDIA T4 | hpc.8core-64ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-1080-glados, hpc.38core-372ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-2080-glados, hpc.38core-372ram-nvidia-2080-glados | vo.clarin.eu, biomed, eosc-synergy.eu, peachnote.com |Sponsored, conditions to be negotiated |
 
-# Access to GPU resources on EGI Cloud:
+# Access to GPU resources on EGI Cloud
 
 GPUs sites can be accessed by different ways: via site-specific dashboards and endpoints or via common federated-cloud services like common Horizon dashboard, VMOps dashboard, Infrastructure manager.
 
