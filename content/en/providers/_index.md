@@ -8,7 +8,4 @@ menu:
     weight: 20
 ---
 
-{{% pageinfo %}}
-This is a placeholder page for Service providers documentation.
-{{% /pageinfo %}}
 
