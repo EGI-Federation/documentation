@@ -7,6 +7,4 @@ description: >
   Training events
 ---
 
-{{% pageinfo %}}
-This is a placeholder page.
-{{% /pageinfo %}}
+
