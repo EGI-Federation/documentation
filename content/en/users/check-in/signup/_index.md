@@ -7,6 +7,8 @@ description: >
   Register an account with Check-in to get access to EGI services
 ---
 
+## Sign up
+
 You need to sign up for an account for accessing the EGI services. As part of
 this process you will be assigned a personal unique **EGI ID** which will be
 then used across all EGI tools and services. Follow the instructions below
@@ -69,3 +71,33 @@ to get started:
 
 Note: After your registration has been completed, you can manage your profile
 through the [EGI Account Registry portal](https://aai.egi.eu/registry).
+
+## Viewing user profile information
+
+The profile includes all the information related to the user. This information
+can be categorised as follows:
+
+### Basic profile
+
+Includes the basic information about your profile:
+
+* Name
+* Identifiers
+* Email addresses
+
+![User profile](./check-in-profile-basic.png)
+
+
+### VO/Group membership and roles
+
+Includes information about the Virtual Organisations and groups the user if
+member of and the roles assigned to the user within those Virtual Organisation.
+
+![VO/Group membership](./check-in-profile-vos.png)
+
+### Linked identities
+
+Information about identites linked to your account. Check the [guide for linking
+accounts](../check-in/linking) for more information.
+
+![Linked identities](./check-in-profile-linked.png)
