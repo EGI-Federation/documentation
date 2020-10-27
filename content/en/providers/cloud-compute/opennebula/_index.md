@@ -12,7 +12,7 @@ additional requirements placed on internal site architecture. Follow
 [OpenNebula documentation](http://opennebula.org/documentation/) if you need
 advice on how to install and configure OpenNebula itself.
 
-**Supprted OpenNebula versions:**
+**Supported OpenNebula versions:**
 
 - OpenNebula v5.2.x
 - OpenNebula v5.4.x
@@ -42,6 +42,8 @@ The following **components** must be installed:
   System.
 
 ## Open Ports
+
+<!-- markdownlint-disable-file line-length -->
 
 The following **ports** must be open to allow access to an OpenNebula-based
 FedCloud site:
@@ -243,7 +245,8 @@ installation on any other supported distribution is very similar.
 - Register `keystorm` repositories
 
   ```sh
-  wget http://repository.egi.eu/community/software/keystorm/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/keystorm.repo
+  wget http://repository.egi.eu/community/software/keystorm/1.x/releases/repofiles/sl-7-x86_64.repo \
+    -O /etc/yum.repos.d/keystorm.repo
   ```
 
 - Install package
@@ -339,7 +342,8 @@ installation on any other supported distribution is very similar.
 - Register `oneacct-export` repositories
 
   ```sh
-  wget http://repository.egi.eu/community/software/oneacct.export/0.4.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/oneacct-export.repo
+  wget http://repository.egi.eu/community/software/oneacct.export/0.4.x/releases/repofiles/sl-7-x86_64.repo \
+    -O /etc/yum.repos.d/oneacct-export.repo
   ```
 
 - Install package
@@ -352,20 +356,20 @@ installation on any other supported distribution is very similar.
 
 - Edit `/etc/oneacct-export/conf.yml`
 
-  ```
+  ```yaml
   apel:
-    site_name: Undefined                     # Usually a short provider name, e.g. CESNET
-    cloud_type: OpenNebula                   # CMF type, only OpenNebula is supported
+    site_name: Undefined # Usually a short provider name, e.g. CESNET
+    cloud_type: OpenNebula # CMF type, only OpenNebula is supported
     endpoint: https://localhost.edu:11443/ # Public URL of your OCCI endpoint
 
   xml_rpc:
-    secret: oneadmin:opennebula            # OpenNebula credentials, privileged
+    secret: oneadmin:opennebula # OpenNebula credentials, privileged
     endpoint: http://localhost:2633/RPC2 # OpenNebula XML RPC endpoint
   ```
 
 - Add the following lines to `/etc/one/oned.conf` and restart OpenNebula
 
-  ```
+  ```ini
   INHERIT_IMAGE_ATTR = "VMCATCHER_EVENT_AD_MPURI"
   INHERIT_IMAGE_ATTR = "VMCATCHER_EVENT_DC_IDENTIFIER"
   INHERIT_IMAGE_ATTR = "VMCATCHER_EVENT_IL_DC_IDENTIFIER"
@@ -465,8 +469,10 @@ distribution is very similar.
 - Register `cloudkeeper` and `cloudkeeper-one` repositories
 
   ```sh
-  wget http://repository.egi.eu/community/software/cloudkeeper/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/cloudkeeper.repo
-  wget http://repository.egi.eu/community/software/cloudkeeper.one/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/cloudkeeper-one.repo
+  wget http://repository.egi.eu/community/software/cloudkeeper/1.x/releases/repofiles/sl-7-x86_64.repo \
+    -O /etc/yum.repos.d/cloudkeeper.repo
+  wget http://repository.egi.eu/community/software/cloudkeeper.one/1.x/releases/repofiles/sl-7-x86_64.repo \
+    -O /etc/yum.repos.d/cloudkeeper-one.repo
   ```
 
 - Install `cloudkeeper` and `cloudkeeper-one`
@@ -485,10 +491,10 @@ image-lists
 : URLs of image lists containing appliances which you want to synchronize to
 your cloud. Must contain authentication token.
 
-```
+```yaml
 image-lists: # List of image lists to sync against
- - https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/somevo/image.list
- - https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/othervo/image.list
+  - https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/somevo/image.list
+  - https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/othervo/image.list
 ```
 
 authentication
@@ -597,7 +603,7 @@ image
 **For compatibility with other integration components, add the following lines
 to \`\`image.rb\`\`:**
 
-```
+```ini
 VMCATCHER_EVENT_AD_MPURI="<%= appliance.mpuri %>"
 VMCATCHER_EVENT_HV_VERSION="<%= appliance.version %>"
 VMCATCHER_EVENT_DC_DESCRIPTION="<%= appliance.description %>"
