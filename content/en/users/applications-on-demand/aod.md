@@ -267,7 +267,8 @@ Access the [EC3 portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
 
 Main scientific paper describing the service and status:
 
-- [EGI Applications On Demand Service - Catering for the computational needs of the long tail of science](https://documents.egi.eu/document/3132)
+- EGI Applications On Demand Service -
+  [Catering for the computational needs of the long tail of science](https://documents.egi.eu/document/3132)
   (May 2017).
   - [IWSG2017 Proceeding](http://ceur-ws.org/Vol-2363/paper9.pdf).
 
