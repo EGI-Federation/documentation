@@ -5,7 +5,6 @@ weight: 10
 type: "docs"
 ---
 
-
 This page contains information about integrating your identity
 provider with [Check-in](https://www.egi.eu/services/check-in/)
 in order to allow users in your community to access EGI tools and
