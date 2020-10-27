@@ -34,7 +34,7 @@ Follow these steps if you are using OpenID Connect to integrate with EGI:
    ```
 
 1. Expand your mapping.json with the VO membership to the created group
-   (substitute `group_id` and `vo_name` as appropriate): :
+   (substitute `group_id` and `vo_name` as appropriate):
 
    ```json
    [
