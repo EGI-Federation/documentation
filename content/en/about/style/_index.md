@@ -5,13 +5,29 @@ type: docs
 weight: 40
 ---
 
-[Hugo](https://gohugo.io/getting-started/configuration-markup/), the tool used
-to generate the static site from the source code, is using
-[goldmark](https://github.com/yuin/goldmark/) to parse and render markdown.
+## General recommendations
 
-It's compliant with [CommonMark](https://spec.commonmark.org/0.29/) and
-[GitHub Flavored Markdown](https://github.github.com/gfm/) is based on
+- All files and folders should be lower case;
+- EGI Services should be named exactly as in the
+  [EGI Services Portfolio](https://www.egi.eu/services/);
+- Acronyms should be used only when it makes sense;
+- Service names should never be replaced by acronyms;
+- In the introduction of services it is appropriate to have a link to the
+  service public page, if any:
+
+  ```markdown
+  [EGI High Throughput Compute](https://www.egi.eu/services/high-throughput-compute/)
+  ```
+
+## Writing markdown
+
+Files have to be written in Markdown, using code compliant with
+[CommonMark](https://spec.commonmark.org/0.29/) and
+[GitHub Flavored Markdown](https://github.github.com/gfm/) which is based on
 CommonMark.
+
+{{% alert title="Note" color="info" %}} Syntax examples that can be used in the
+files is documented in the [syntax section](../syntax). {{% /alert %}}
 
 Style should be enforced via the usage of [Prettier](https://prettier.io/).
 Prettier can be integrated with various editors:
@@ -29,7 +45,7 @@ Configuration is provided in `.prettierrc`, options can be set as follow:
 --print-width 80 --tab-width 2 --prose-wrap always
 ```
 
-## Notable points
+### Notable points
 
 - Lines should be wrapped at 80 characters.
 - Sentences should be separated by one space only.
@@ -38,26 +54,3 @@ Configuration is provided in `.prettierrc`, options can be set as follow:
 - Lines should end with a Line Feed character ("\n")
 - Files should end with a Line Feed character ("\n"), but not including an empty
   line.
-
-## Markdown tips
-
-### Linking to another page
-
-You can use the path to the other page:
-
-```markdown
-This is a link to [another page](../my-other-page).
-```
-
-### Linking to another section in the same page
-
-You need to use an anchor targeting the section name, putting it in lower case
-and adding dashes to separate words:
-
-```markdown
-This is a test of linking to a specic [section](#the-section-header)
-
-## The section header
-
-Second section content.
-```

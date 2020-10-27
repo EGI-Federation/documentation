@@ -12,6 +12,9 @@ Sources to build
   using a dedicated
   [GitHub repository](https://github.com/EGI-Foundation/EGI-Foundation.github.io).
 
+> If you are interested in contributing please check the
+> [Contributing Guide](https://docs.egi.eu/about/contributing/).
+
 ### Requirements
 
 - mdl

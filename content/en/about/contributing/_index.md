@@ -15,12 +15,14 @@ contribute are also welcome.
 
 ## Style guide
 
-A summary of the style guide is available at [style guide](../style/). Be sure
-to follow it when proposing changes.
+{{% alert %}} A summary of the style guide is available at
+[style guide](../style/). Be sure to follow it when proposing changes.
+{{% /alert %}}
 
 ## Feedback and Questions
 
-If you wish to discuss anything related to the project, please open an issue or
+If you wish to discuss anything related to the project, please open a
+[GitHub issue](https://github.com/EGI-Foundation/documentation/issues/new) or
 start a topic on the [EGI Community Forum](https://community.egi.eu). The
 maintainers will sometimes move issues off from GitHub to the community forum if
 it is thought that longer, more open-ended discussion would be beneficial,
@@ -35,12 +37,20 @@ made in two ways:
   **pencil** `Edit this file` icon shown at the top of a page that you are
   viewing (See
   [GitHub documentation](https://help.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository)).
-  You will be guided through the required steps.
+  You will be guided through the required steps. Be sure to quickly save your
+  changes quickly as the repository may be updated by someone else in the
+  meantime.
 - for more complex contributions and when you want to preview and test changes
   locally you should fork the repository as documented below in the
   [Using git and GitHub](../git) page.
 
 ### Contributing via a Pull Request
+
+{{% alert title="Note" color="info" %}} If you need to discuss your change
+beforehand, like for adding a new section of if you have any doubts, you can ask
+the maintainers it by creating a
+[GitHub issue](https://github.com/EGI-Foundation/documentation/issues/new).
+{{% /alert %}}
 
 Before proposing a contribution via the so-called Pull Request (PR), ideally
 there is an open issue describing the need for your contribution (refer to this
