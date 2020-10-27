@@ -3,6 +3,8 @@ title: "EGI documentation"
 description: "Documentation related to EGI activities"
 ---
 
+<!-- markdownlint-disable no-inline-html -->
+
 {{< blocks/cover title="Welcome to EGI Documentation!" image_anchor="top" height="full" color="blue" >}}
 
   <p class="lead mt-5">
@@ -50,3 +52,5 @@ Find out about new features and how our users are using EGI.
 {{% /blocks/feature %}}
 
 {{< /blocks/section >}}
+
+<!-- markdownlint-enable no-inline-html -->

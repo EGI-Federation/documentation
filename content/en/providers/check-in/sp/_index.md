@@ -86,10 +86,14 @@ integration follows a two-step process:
 The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.
 
+<!-- markdownlint-disable line-length -->
+
 | Protocol       | Development environment                                      | Demo environment                                              | Production environment                                   |
 | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------- | -------------------------------------------------------- |
 | SAML           | https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php          | https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php          | https://aai.egi.eu/proxy/saml2/idp/metadata.php          |
 | OpenID Connect | https://aai-dev.egi.eu/oidc/.well-known/openid-configuration | https://aai-demo.egi.eu/oidc/.well-known/openid-configuration | https://aai.egi.eu/oidc/.well-known/openid-configuration |
+
+<!-- markdownlint-enable line-length -->
 
 ## SAML Service Provider
 
@@ -119,9 +123,13 @@ issued by a trusted certificate authority.
 You can get the metadata of the EGI Check-in IdP Proxy on a dedicated URL that
 depends on the integration environment being used:
 
+<!-- markdownlint-disable line-length -->
+
 | Development environment                             | Demo environment                                     | Production environment                          |
 | --------------------------------------------------- | ---------------------------------------------------- | ----------------------------------------------- |
 | https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php | https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php | https://aai.egi.eu/proxy/saml2/idp/metadata.php |
+
+<!-- markdownlint-enable line-length -->
 
 ### Metadata
 
@@ -161,6 +169,8 @@ the R&S attribute bundle:
 A more extensive list of all the attributes that may be made available to
 Service Providers is included in the following table:
 
+<!-- markdownlint-disable -->
+
 | Attribute friendly name      | Attribute OID                       | Example value                                                                                                                                                |
 | ---------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `eduPersonUniqueId`          | `urn:oid:1.3.6.1.4.1.5923.1.1.1.13` | `ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu`                                                                                    |
@@ -186,6 +196,8 @@ attributes that are relevant for user authorisation:
 | ----------------------------------------------------------------------------------------------- | ---------------------- |
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduPersonEntitlement` |
 | [Level of Assurance (LoA)](#level-of-assurance)                                                 | `eduPersonAssurance`   |
+
+<!-- markdownlint-restore -->
 
 ### References
 
@@ -352,6 +364,8 @@ Check-in supports the following OpenID Connect/OAuth2 grant types:
 
 The most important OIDC/OAuth2 endpoints are listed below:
 
+<!-- markdownlint-disable -->
+
 | Endpoint               | Development environment                                      | Demo environment                                                                                    | Production environment                                                                              |
 | ---------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | Provider configuration | https://aai-dev.egi.eu/oidc/.well-known/openid-configuration | https://aai-demo.egi.eu/oidc/.well-known/openid-configuration                                       | https://aai.egi.eu/oidc/.well-known/openid-configuration                                            |
@@ -361,6 +375,8 @@ The most important OIDC/OAuth2 endpoints are listed below:
 | JSON Web Key(jwt)      | https://aai-dev.egi.eu/oidc/jwk                              | https://aai-demo.egi.eu/oidc/jwk                                                                    | https://aai.egi.eu/oidc/jwk                                                                         |
 | User Info              | https://aai-dev.egi.eu/oidc/userinfo                         | https://aai-demo.egi.eu/oidc/userinfo                                                               | https://aai.egi.eu/oidc/userinfo                                                                    |
 | Introspection          | https://aai-dev.egi.eu/oidc/introspect                       | https://aai-demo.egi.eu/oidc/introspect                                                             | https://aai.egi.eu/oidc/introspect                                                                  |
+
+<!-- markdownlint-restore -->
 
 #### Authorization Endpoint
 
@@ -394,11 +410,19 @@ Depending on the grant type, the following parameters are required:
 
 ##### Authorization Code
 
-| Parameter      | Presence | Values                                                                                             |
-| -------------- | -------- | -------------------------------------------------------------------------------------------------- |
-| `grant_type`   | Required | `authorization_code`                                                                               |
-| `code`         | Required | The value of the code in the response from authorization endpoint.                                 |
-| `redirect_uri` | Required | URI to which the response will be sent (must be the same as the request to authorization endpoint) |
+<!-- markdownlint-disable line-length -->
+
+| Parameter    | Presence | Values               |
+| ------------ | -------- | -------------------- |
+| `grant_type` | Required | `authorization_code` |
+
+<!-- markdownlint-disable -->
+
+| `code` | Required | The value of the code in the response from authorization
+endpoint. | | `redirect_uri` | Required | URI to which the response will be sent
+(must be the same as the request to authorization endpoint) |
+
+<!-- markdownlint-enable line-length -->
 
 ##### Refresh request
 
@@ -443,6 +467,8 @@ curl -X POST -u "${client_id}":"${client_secret}" \
 To get a token from client B using a token issued for client A, the parameters
 of the request are:
 
+<!-- markdownlint-disable line-length -->
+
 | Parameter            | Presence | Values                                                                                                    |
 | -------------------- | -------- | --------------------------------------------------------------------------------------------------------- |
 | `grant_type`         | Required | `urn:ietf:params:oauth:grant-type:token-exchange`                                                         |
@@ -450,6 +476,8 @@ of the request are:
 | `subject_token`      | Required | The value of the access token                                                                             |
 | `subject_token_type` | Required | `urn:ietf:params:oauth:token-type:access_token` (because this feature accepts access tokens only)         |
 | `scope`              | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
+
+<!-- markdownlint-enable line-length -->
 
 **Example request**
 
