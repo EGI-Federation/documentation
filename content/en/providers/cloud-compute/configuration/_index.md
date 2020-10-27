@@ -82,52 +82,52 @@ Follow these steps if you are using OpenID Connect to integrate with EGI:
 
 When using the Keystone-VOMS module, you should follow these steps:
 
-1.  Configure your LSC files according to the
-    [VOMS documentation](http://italiangrid.github.io/voms/documentation/voms-clients-guide/3.0.3/#voms-trust),
-    e.g.: :
+1. Configure your LSC files according to the
+   [VOMS documentation](http://italiangrid.github.io/voms/documentation/voms-clients-guide/3.0.3/#voms-trust),
+   e.g.: :
 
-    ```sh
-    mkdir -p /etc/grid-security/vomsdir/ops
+   ```sh
+   mkdir -p /etc/grid-security/vomsdir/ops
 
-    cat > /etc/grid-security/vomsdir/ops/lcg-voms2.cern.ch.lsc << EOF
-    /DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch
-    /DC=ch/DC=cern/CN=CERN Grid Certification Authority
-    EOF
+   cat > /etc/grid-security/vomsdir/ops/lcg-voms2.cern.ch.lsc << EOF
+   /DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch
+   /DC=ch/DC=cern/CN=CERN Grid Certification Authority
+   EOF
 
-    cat > /etc/grid-security/vomsdir/ops/voms2.cern.ch.lsc << EOF
-    /DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch
-    /DC=ch/DC=cern/CN=CERN Grid Certification Authority
-    EOF
-    ```
+   cat > /etc/grid-security/vomsdir/ops/voms2.cern.ch.lsc << EOF
+   /DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch
+   /DC=ch/DC=cern/CN=CERN Grid Certification Authority
+   EOF
+   ```
 
-1.  Add the mapping to your `voms.json` mapping. It must be proper JSON (you can
-    check its correctness [online](http://jsonlint.com/) or with
-    `python -mjson.tool /etc/keystone/voms.json`). Edit the file, and add an
-    entry like this:
+1. Add the mapping to your `voms.json` mapping. It must be proper JSON (you can
+   check its correctness [online](http://jsonlint.com/) or with
+   `python -mjson.tool /etc/keystone/voms.json`). Edit the file, and add an
+   entry like this:
 
-    ```
-    {
-        "<voname|FQAN>": {
-            "tenant": "<project_name>"
-        }
-    }
-    ```
+   ```json
+   {
+     "<voname|FQAN>": {
+       "tenant": "<project_name>"
+     }
+   }
+   ```
 
-    Note that you can use the FQAN from the incoming proxy, so you can map a
-    group within a VO into a tenant, like this:
+   Note that you can use the FQAN from the incoming proxy, so you can map a
+   group within a VO into a tenant, like this:
 
-    ```
-    {
-        "dteam": {
-            "tenant": "dteam"
-        },
-        "/dteam/NGI_IBERGRID": {
-            "tenant": "dteam_ibergrid"
-        }
-    }
-    ```
+   ```json
+   {
+     "dteam": {
+       "tenant": "dteam"
+     },
+     "/dteam/NGI_IBERGRID": {
+       "tenant": "dteam_ibergrid"
+     }
+   }
+   ```
 
-1.  Restart Apache server, and it\'s done.
+1. Restart Apache server, and it\'s done.
 
 ### OpenNebula
 
@@ -141,17 +141,17 @@ Add the project supporting the VO to cASO:
 
 1.  `projects` in `/etc/caso/caso.conf` :
 
-    ```
+    ```ini
     projects = vo_project1, vo_project2, <your_new_vo_project>
     ```
 
 1.  as a new mapping in `/etc/caso/voms.json` :
 
-    ```
+    ```json
     {
-        "<your new vo>": {
-            "projects": ["<your new vo project>"]
-         }
+      "<your new vo>": {
+        "projects": ["<your new vo project>"]
+      }
     }
     ```
 
@@ -176,7 +176,8 @@ Add the user configured in your cloud-info-provider as member of the new
 project:
 
 ```sh
-openstack role add member --user <your cloud-info-provider user> --project <your new vo project>
+openstack role add member --user <your cloud-info-provider user> \
+    --project <your new vo project>
 ```
 
 ## EGI VM Image Management
@@ -187,9 +188,7 @@ Add the new image list to the `cloudkeeper` configuration in
 `/etc/cloudkeeper/cloudkeeper.yml` (or `/etc/cloudkeeper/image-lists.conf` if
 using the appliance), new entry should look similar to:
 
-```
-https://<APPDB_TOKEN>:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/<your new vo>/image.list:
-```
+`https://<APPDB_TOKEN>:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/<your new vo>/image.list:`
 
 ### OpenStack
 

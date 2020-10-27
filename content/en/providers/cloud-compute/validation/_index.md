@@ -24,7 +24,8 @@ Extra checks for your installation:
 - Check that you are publishing cloud information in your site BDII: :
 
   ```sh
-  ldapsearch -x -h <site bdii host> -p 2170 -b Glue2GroupID=cloud,Glue2DomainID=<your site name>,o=glue
+  ldapsearch -x -h <site bdii host> -p 2170 \
+    -b Glue2GroupID=cloud,Glue2DomainID=<your site name>,o=glue
   ```
 
 - Check that all the images listed in the AppDB for the VOs you support (e.g.
@@ -33,7 +34,10 @@ Extra checks for your installation:
   registered in your BDII: :
 
   ```sh
-  ldapsearch -x -h <site bdii host> -p 2170 -b Glue2GroupID=cloud,Glue2DomainID=<your site name>,o=glue objectClass=GLUE2ApplicationEnvironment GLUE2ApplicationEnvironmentRepository
+  ldapsearch -x -h <site bdii host> -p 2170 \
+    -b Glue2GroupID=cloud,Glue2DomainID=<your site name>,o=glue \
+    objectClass=GLUE2ApplicationEnvironment \
+    GLUE2ApplicationEnvironmentRepository
   ```
 
 - Try to start one of those images in your cloud. You can do it with
