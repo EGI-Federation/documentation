@@ -15,7 +15,6 @@ this [form](https://documents.egi.eu/document/3086) in case the IdP is
 not publishing R&S and Sirtfi compliance in eduGAIN. A PDF scan of a
 printed and signed copy should be sent to `operations_at_egi.eu`
 
-
 ## Identity Provider integration workflow
 
 To integrate your Identity Provider with the EGI Check-in service, you
