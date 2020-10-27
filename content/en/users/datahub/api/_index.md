@@ -123,6 +123,8 @@ The following variables should be set:
 - `ONEPROVIDER_HOST`: name or IP of the Oneprovider host (to use Oneprovider
   API)
 
+<!-- markdownlint-disable line-length -->
+
 ```sh
 # Getting the IDs of the available Handle Services
 curl -sS --tlsv1.2 -H "X-Auth-Token: $API_ACCESS_TOKEN" \
@@ -178,3 +180,5 @@ HANDLE_ID=<HANDLE_ID>
 curl --tlsv1.2 -H "X-Auth-Token: $API_ACCESS_TOKEN" \
   "$ONEZONE_HOST/api/v3/onezone/user/handles/$HANDLE_ID"
 ```
+
+<!-- markdownlint-enable line-length -->

@@ -115,7 +115,7 @@ Oneclient has been successfully mounted in '/mnt/oneclient'
 Now the client will run in the background and the data will be available through
 **samba/CIFS** or **nfs** protocols:
 
-```shell
+```sh
 # Identifying the IP of the container
 docker inspect --format "{{ .NetworkSettings.IPAddress }}" $(docker ps -ql)
 172.17.0.2
@@ -143,10 +143,12 @@ mount manually the Onedata spaces.
 {{% alert title="Important" color="warning" %}} In order to be able to use FUSE,
 the container should run in **privileged** mode. {{% /alert %}}
 
-```shell
+```sh
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
-docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:19.02.0-rc2
+docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN \
+  -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST \
+  -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:19.02.0-rc2
 root@aca612a84fb4:/tmp# oneclient /mnt/oneclient
 Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '1641165171427694510'...
 Getting configuration...
