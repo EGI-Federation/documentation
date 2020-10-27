@@ -5,5 +5,5 @@ type: docs
 weight: 20
 ---
 
-{{% pageinfo %}} This is a placeholder page that shows you how to use this
-template site. {{% /pageinfo %}}
+{{% pageinfo %}} The EGI Glossary is currently available on the
+[EGI Wiki](https://wiki.egi.eu/wiki/Glossary_V3). {{% /pageinfo %}}
