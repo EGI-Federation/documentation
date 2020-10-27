@@ -22,6 +22,7 @@ You can order EGI services from:
 ### Payments Model
 
 The payment models of EGI services can be:
+
 * Sponsored use for policy-based access
 * [Pay-as-you-go](https://wiki.egi.eu/wiki/VT_EGI_Pay-for-Use_Service/Price_Overview)
   for market-based access
@@ -32,6 +33,7 @@ EGI user support team will handle your order within 5 working days.
 
 We normally contact you to have a short virtual meeting in order to better
 understand your requirements:
+
 * What is your research project background (science domain, partners countries,
   user bases, pay-for-use or not, etc.). These will help us identify better
   resources matching your needs.
