@@ -97,7 +97,7 @@ Will render as:
 
 {{% alert title="Note" color="info" %}} This is a Note. {{% /alert %}}
 
-#### Information message
+#### Warning message
 
 The following code:
 
@@ -114,7 +114,17 @@ Will render as:
 The code should be surrounded with three backticks and include the file type as
 a parameter.
 
-The following code for a shell excerpt:
+The supported languages are dependant on the syntax highlighter, which depends
+itself on the mardkown parser.
+
+{{% alert title="Note" color="8info" %}} For [Hugo](https://gohugo.io/) the
+[goldmark parser](https://github.com/yuin/goldmark) is used and it relies on the
+[Chroma highlighter](https://github.com/alecthomas/chroma). {{% /alert %}}
+
+The list of languages supported by chroma can be found in their
+[GitHub repository](https://github.com/alecthomas/chroma#supported-languages).
+
+The following code should be used for a shell excerpt:
 
 ````markdown
 ```sh
@@ -126,4 +136,19 @@ Will render as:
 
 ```sh
 ssh-keygen -f fedcloud
+```
+
+### Including images
+
+The image files should be stored next to the markdown file that is including
+them.
+
+{{% alert title="Note" color="info" %}} The image files should have a meaningful
+name (like `datahub-replica-management.png`). {{% /alert %}}
+
+The following code is used to include an image, providing a meaningful
+alternative text:
+
+```markdown
+![Viewing file distribution over the Oneproviders](datahub-replica-management.png)
 ```
