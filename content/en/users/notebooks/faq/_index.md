@@ -18,7 +18,7 @@ can be used in a cell of your notebooks to do so, e.g. installing
 %conda install rdkit
 ```
 
-Once installed you can import the libray as usual.
+Once installed you can import the library as usual.
 
 {{% alert title="Warning" color="warning" %}}
 Any modifications to the libraries/software of your notebooks will be

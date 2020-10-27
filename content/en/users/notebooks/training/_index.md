@@ -9,31 +9,31 @@ weight: 30
 EGI provides a training instance of the Notebooks service for training
 events.
 
-{{% alert title="Note" color="warning" %}}
-This instance may not use the same software version as in
-production and may not be always available, as it is tipically configured
-for specific training events.
-{{% /alert %}}
-
 To get started:
 
-1.  Go to <https://training.notebooks.egi.eu>
+1. Go to <https://training.notebooks.egi.eu>. 
 
-1.  Start the authentication process by clicking on **Start your
-    notebooks!** button
+   {{% alert title="Note" color="warning" %}}
+   This instance may not use the same software version as in production and
+   may not be always available, as it is typically configured only for
+   specific training events.
+   {{% /alert %}}
 
-    ![image](training-front.png)
+1. Start the authentication process by clicking on **Start your
+   notebooks!** button
 
-1.  Select the Identity Provider you belong to from the discovery page.
-    If this is the first time you access an EGI service, Check-in will
-    guide you through a registration process.
+   ![image](training-front.png)
 
-    ![Check-in auth](checkin.png)
+1. Select the Identity Provider you belong to from the discovery page.
+   If this is the first time you access an EGI service, Check-in will
+   guide you through a registration process.
 
-1.  You will see the Jupyter interface once your personal server is
-    started
+   ![Check-in auth](checkin.png)
 
-    ![Classic Jupyter Notebook](classic.png)
+1. You will see the Jupyter interface once your personal server is
+   started
+
+   ![Classic Jupyter Notebook](classic.png)
 
 ## Launching a notebook
 

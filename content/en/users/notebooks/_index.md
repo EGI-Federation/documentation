@@ -28,7 +28,7 @@ with the following added features:
 
 *   Integration with EGI Check-in for authentication, login with any
     EduGAIN or social accounts (e.g. Google, Facebook)
-*   Persistent storage associated to each user, available in the
+*   Persistent storage associated with each user, available in the
     notebooks environment.
 *   Customisable with new notebook environments, expose any existing
     notebook to your users.
@@ -47,9 +47,8 @@ We offer different service modes depending on your needs:
     1 hour.
 
 *   User communities can have their customised EGI Notebooks service
-    instance. EGI offers consultancy and support, as well as can operate
-    the setup. Contact `support _at_ egi.eu` to make an arrangement. A
-    community specific setup allows the community to use the
+    instance. EGI offers consultancy, support, and can operate the setup as
+    well. A community specific setup allows the community to use the
     community\'s own Virtual Organisation (i.e. federated compute and
     storage sites) for Jupyter, add custom libraries into Jupyter (e.g.
     discipline-specific analysis libraries) or have fine grained control
