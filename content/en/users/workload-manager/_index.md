@@ -9,57 +9,52 @@ description: >
 
 ## What is the EGI Workload Manager?
 
-The
-[EGI Workload Manager](https://www.egi.eu/services/workload-manager/)
-is a service provided to the EGI community to efficiently manage and distribute
+The [EGI Workload Manager](https://www.egi.eu/services/workload-manager/) is a
+service provided to the EGI community to efficiently manage and distribute
 computing workloads on the EGI infrastructure. The service, based on the
-[DIRAC technology](http://diracgrid.org/),
-is configured to support a number of HTC and cloud resource pools from the
-EGI Federation. This pool of computing resources can be easily extended and
-customized to support the needs of new scientific communities.
-In the
-[LHCb](https://home.cern/science/experiments/lhcb)
-experiment the service has proven production scalability up to peaks of more
-than 100.000 concurrently running jobs.
-WeNMR, the structural biology community, uses the service for a number of
-community services.
-The community reported an improvement of jobs submission in the infrastructure
-from previous 70% to 99% with the EGI Workload Manager service.
-The delivery of the service is coordinated by the EGI Foundation and operated by
-[IN2P3](https://in2p3.cnrs.fr/)
-on resources provided by
-[CYFRONET](http://www.cyfronet.krakow.pl/).
+[DIRAC technology](http://diracgrid.org/), is configured to support a number of
+HTC and cloud resource pools from the EGI Federation. This pool of computing
+resources can be easily extended and customized to support the needs of new
+scientific communities. In the
+[LHCb](https://home.cern/science/experiments/lhcb) experiment the service has
+proven production scalability up to peaks of more than 100.000 concurrently
+running jobs. WeNMR, the structural biology community, uses the service for a
+number of community services. The community reported an improvement of jobs
+submission in the infrastructure from previous 70% to 99% with the EGI Workload
+Manager service. The delivery of the service is coordinated by the EGI
+Foundation and operated by [IN2P3](https://in2p3.cnrs.fr/) on resources provided
+by [CYFRONET](http://www.cyfronet.krakow.pl/).
 
 ## Main Features
 
 The EGI Workload Manager:
 
-* Maximizes usage efficiency by choosing appropriately computing and storage
+- Maximizes usage efficiency by choosing appropriately computing and storage
   resources on real-time.
 
-* Provides a large-scale distributed environment to manage and handle data
+- Provides a large-scale distributed environment to manage and handle data
   storage, data movement, accessing and processing.
 
-* Handles job submission and workload distribution in a transparent way.
+- Handles job submission and workload distribution in a transparent way.
 
-* Improves the general job throughput compared with native management of EGI
+- Improves the general job throughput compared with native management of EGI
   grid or cloud computing resources.
 
-* Offers pilot-based task scheduling method, that submits pilot jobs to
+- Offers pilot-based task scheduling method, that submits pilot jobs to
   resources to check the execution environment before to start the user's jobs.
   From a technical standpoint, the user's job description is delivered to the
-  pilot, which prepares its execution environment and executes the user application.
-  The pilot-based scheduling feature solves many problems of using
+  pilot, which prepares its execution environment and executes the user
+  application. The pilot-based scheduling feature solves many problems of using
   heterogeneity and unstable distributed computing resources.
 
-* Includes easy extensions to customize the environment checks to address the
-  needs of a particular community.
-  Users can choose appropriately computing and storage resources maximising their
-  usage efficiency for particular user requirements.
+- Includes easy extensions to customize the environment checks to address the
+  needs of a particular community. Users can choose appropriately computing and
+  storage resources maximising their usage efficiency for particular user
+  requirements.
 
-* Handles different storage supporting both cloud and grid capacity.
+- Handles different storage supporting both cloud and grid capacity.
 
-* Provides a user-friendly interface that allows users to choose among different
+- Provides a user-friendly interface that allows users to choose among different
   DIRAC services.
 
 ## Target User Groups
@@ -67,8 +62,8 @@ The EGI Workload Manager:
 The service suits for the established Virtual Organization communities, long
 tail of users, SMEs and Industry
 
-* EGI and EGI Federation participants
-* Research communities
+- EGI and EGI Federation participants
+- Research communities
 
 ## Architecture
 
@@ -76,21 +71,21 @@ The EGI Workload Manager service is a cluster of DIRAC services running on EGI
 resources (HTC, CLOUD, HPC) supporting multi-VO. All the DIRAC services are at
 or above TRL8. The main service components include:
 
-* Workload Management System (WMS) architecture is composed of multiple loosely
+- Workload Management System (WMS) architecture is composed of multiple loosely
   coupled components working together in a collaborative manner with the help of
   a common Configuration Services ensuring reliable service discovery
   functionality. The modular architecture allows to easily incorporate new types
-  of computing resources as well as new task scheduling algorithms in response to
-  evolving user requirements. DIRAC services can run on multiple geographically
-  distributed servers which increases the overall reliability and excellent
-  scalability properties.
+  of computing resources as well as new task scheduling algorithms in response
+  to evolving user requirements. DIRAC services can run on multiple
+  geographically distributed servers which increases the overall reliability and
+  excellent scalability properties.
 
-* REST server providing language neutral interface to DIRAC service.
+- REST server providing language neutral interface to DIRAC service.
 
-* Web portal provides simple and intuitive access to most of the DIRAC
+- Web portal provides simple and intuitive access to most of the DIRAC
   functionalities including management of computing tasks and distributed data.
-  It also has a modular architecture designed specifically to allow easy extension
-  for the needs of particular applications.
+  It also has a modular architecture designed specifically to allow easy
+  extension for the needs of particular applications.
 
 ![The DIRAC Web portal](./dirac_web_portal.png)
 
@@ -102,13 +97,13 @@ There are several options to access the service:
 
 1. Members of a scientific community whose resources pool is already configured
    in the EGI Workload Manager instance > can use the
-   [EGI Workload Manager web portal](https://dirac.egi.eu:9443/DIRAC/)
-   to access the service, or use
+   [EGI Workload Manager web portal](https://dirac.egi.eu:9443/DIRAC/) to access
+   the service, or use
    [DIRAC Client](https://wiki.egi.eu/wiki/HOWTO22#Using_DIRAC_through_the_client).
 1. Individual researchers who want to do some number crunching for a limited
-   period of time, with a reasonable (not too high) number of CPUs > can use
-   the catch-all VO resource pool (`vo.access.egi.eu`). Submit a request through
-   the EGI Marketplace selecting:\
+   period of time, with a reasonable (not too high) number of CPUs > can use the
+   catch-all VO resource pool (`vo.access.egi.eu`). Submit a request through the
+   EGI Marketplace selecting:\
    `Compute` > `Workload Manager` from the top menu
 1. Representatives of a community who want to try DIRAC and EGI > Same as #2.
 1. Representative of a community who wants to request DIRAC for the community's
@@ -135,32 +130,28 @@ Team on shift.
 
 #### Apply for your user credentials
 
-DIRAC uses
-[X.509 certificates](../check-in/voms/)
-to identify and authenticate users. These certificates are delivered to each
-individual by trusted certification authorities.\
-If you have a personal certificate issued by a
-[EUGridPMA-certified](http://www.eugridpma.org/)
-authority you can use it for this tutorial. Otherwise refer to the information
-available in this
-[section](../check-in/voms/#get-a-certificate),
-to obtain a certificate.
-Your certificate may take a few days to be delivered, so please ask for your
-certificate well in advance and in any case, before the tutorial starts.
+DIRAC uses [X.509 certificates](../check-in/voms/) to identify and authenticate
+users. These certificates are delivered to each individual by trusted
+certification authorities.\
+If you have a personal certificate issued by a [EUGridPMA-certified](http://www.eugridpma.org/)
+authority you can use it for this tutorial. Otherwise refer to the information available
+in this [section](../check-in/voms/#get-a-certificate), to obtain a certificate.
+Your certificate may take a few days to be delivered, so please ask for your certificate
+well in advance and in any case, before the tutorial starts.
 
 #### Install your credentials
 
 Your personal certificate is usually delivered to you via a web site and is
-automatically loaded in your browser. You need to export it from the browser
-and put it in the appropriate format for DIRAC to use. This is a one-time
-operation. Please follow the instructions in detailed in
-[VOMS documentation page](../check-in/voms/)
-to export and in install your certificate.
+automatically loaded in your browser. You need to export it from the browser and
+put it in the appropriate format for DIRAC to use. This is a one-time operation.
+Please follow the instructions in detailed in
+[VOMS documentation page](../check-in/voms/) to export and in install your
+certificate.
 
 #### Send your certificate's subject to the DIRAC team
 
-In order to configure the DIRAC server so that you gets registered as a user, the
-team needs to know your certificate's subject.
+In order to configure the DIRAC server so that you gets registered as a user,
+the team needs to know your certificate's subject.
 
 Please use the command below on any Unix machine and send its output to\
 `dirac-support` `<AT>` `mailman.egi.eu`
@@ -178,24 +169,24 @@ To access the EGI Workload Manager open a web browser to:
 
 The EGI Workload Manager service Web portal
 
-* If you are a new user, you can see the welcome page where you can find links to
-  user documentations.
+- If you are a new user, you can see the welcome page where you can find links
+  to user documentations.
 
-* *VO options*: you can switch to different VOs that you have membership.
+- _VO options_: you can switch to different VOs that you have membership.
 
-* *Log In options*: the service supports both X.509, Certificate and Check-in
+- _Log In options_: the service supports both X.509, Certificate and Check-in
   log-in.
 
-* *View options*: allow to choose either desktop or tabs layout.
+- _View options_: allow to choose either desktop or tabs layout.
 
-* *Menu*: a list of tools that enable the selected VO.
+- _Menu_: a list of tools that enable the selected VO.
 
 #### Upload Proxy
 
 Before submitting your job, you need to upload your Proxy. Login to the portal.
 Go to:\
-`Menu` > `Tools` > `Proxy Upload`, enter your certificates .p12 file and
-the passphrase, click `Upload`.
+`Menu` > `Tools` > `Proxy Upload`, enter your certificates .p12 file and the passphrase,
+click `Upload`.
 
 ![The wizard to upload the .p12 proxy certificate](./proxy_cert_upload_1.png)
 ![The wizard to upload the .p12 proxy certificate](./proxy_cert_upload_2.png)
@@ -205,8 +196,8 @@ The wizard to upload the .p12 proxy certificate
 #### Job Submission
 
 Go to:\
-`Menu` > `Tools` > `Job Launchpad`. First check the `Proxy Status`, click it
-until it shows `Valid` in green color.
+`Menu` > `Tools` > `Job Launchpad`. First check the `Proxy Status`, click it until
+it shows `Valid` in green color.
 
 In the Job Launchpad, you can select your jobs from the list; add parameters,
 indicating the output Sandbox location.
@@ -234,8 +225,7 @@ Monitor the job execution with the Job Monitor panel
 
 Once the job has been successfully processed, the `Status` of the job will
 change to green. Right click the job, select:\
-`Sandbox` > `Get Output file(s)`,
-you can get the result file(s).
+`Sandbox` > `Get Output file(s)`, you can get the result file(s).
 
 #### Full User Guide for DIRAC Web Portal
 
@@ -245,9 +235,8 @@ For further instructions, please refer to
 ### The DIRAC client tool
 
 The easiest way to install the client is via
-[Docker Container](https://www.docker.com/).
-If you have a Docker client installed in your machine, install the DIRAC CLI
-as follows:
+[Docker Container](https://www.docker.com/). If you have a Docker client
+installed in your machine, install the DIRAC CLI as follows:
 
 ```sh
 $ docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
@@ -353,13 +342,13 @@ properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 
 #### Managing simple jobs
 
-|DIRAC commands |Note|
-|---|---|
-|dirac-wms-job-status |To check the status of a job|
-|dirac-wms-job-delete |To delete a job|
-|dirac-wms-job-logging-info |To retrieve history of transitions for a DIRAC job|
-|dirac-wms-job-get-output |To retrieve the job output|
-|dirac-wms-job-submit |To submit a job|
+| DIRAC commands             | Note                                               |
+| -------------------------- | -------------------------------------------------- |
+| dirac-wms-job-status       | To check the status of a job                       |
+| dirac-wms-job-delete       | To delete a job                                    |
+| dirac-wms-job-logging-info | To retrieve history of transitions for a DIRAC job |
+| dirac-wms-job-get-output   | To retrieve the job output                         |
+| dirac-wms-job-submit       | To submit a job                                    |
 
 DIRAC commands
 
@@ -406,8 +395,8 @@ retrieved in joboutput/53755998/
 #### Jobs with Input Sandbox and Output Sandbox
 
 In most cases the job input data or executable files are available locally and
-should be transferred to the grid to run the job. In this case the `InputSandbox`
-attribute can be used to move the files together with the job.
+should be transferred to the grid to run the job. In this case the
+`InputSandbox` attribute can be used to move the files together with the job.
 
 Create the `InputAndOuputSandbox.jdl`
 
@@ -438,18 +427,18 @@ $ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 
 #### More details
 
-* JDL language and simple jobs submission:
+- JDL language and simple jobs submission:
   [JDLs and Job Management](http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JDLsAndJobManagementBasic/index.html)
-* Basic Submitting Parametric and MPI jobs, using DIRAC API:
+- Basic Submitting Parametric and MPI jobs, using DIRAC API:
   [Advanced Job Management](http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html)
-* [Past tutorials](https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11)
+- [Past tutorials](https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11)
 
 #### Technical Support
 
-* DIRAC User Guide:
+- DIRAC User Guide:
   [https://dirac.readthedocs.io/en/latest/UserGuide/](https://dirac.readthedocs.io/en/latest/UserGuide/)
 
-* For technical issues and bug reports, please submit a ticket in
+- For technical issues and bug reports, please submit a ticket in
   [GGUS](https://ggus.eu/?mode=ticket_submit), in `Assign to support unit`,
   indicate:\
   `EGI Services and Service Components` > `Workload Manager (DIRAC)`.
