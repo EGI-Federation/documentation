@@ -3,10 +3,9 @@ title: "HTC"
 type: docs
 weight: 20
 description: >
-  Using Elastic Cloud Computing Cluster (EC3) platform to create
-  elastic virtual clusters on the EGI Cloud.
+  Using Elastic Cloud Computing Cluster (EC3) platform to create elastic virtual
+  clusters on the EGI Cloud.
 ---
-
 
 ## Templates
 
@@ -28,10 +27,9 @@ We will use the following templates:
 
 You can find the content below (make sure that you adapt them to your needs):
 
-
 `templates/ubuntu-1604.radl` specifies the VM image to use in the deployment:
 
-``` {.}
+```{.}
 description ubuntu-1604 (
     kind = 'images' and
     short = 'Ubuntu 16.04' and
@@ -59,8 +57,7 @@ system wn (
 `templates/cluster_configure.radl` customises the torque deployment to match our
 needs:
 
-
-``` {.}
+```{.}
 configure front (
 @begin
 ---
@@ -162,7 +159,7 @@ configure wn (
 
 Deploy the cluster using ec3 docker image:
 
-``` {.console}
+```{.console}
 $ docker run -it -v $PWD:/root/ -w /root \
 	   grycap/ec3 launch torque_cluster \
 	   torque nfs ubuntu-1604 refresh cluster_configure \
@@ -180,7 +177,7 @@ Front-end ready!
 
 To access the cluster, use the command:
 
-``` {.console}
+```{.console}
 docker run -ti -v $PWD:/root/ -w /root grycap/ec3 ssh torque_cluster
 
 Warning: Permanently added '212.189.145.140' (ECDSA) to the list of known hosts.
@@ -195,20 +192,20 @@ Last login: Tue Feb 19 13:04:45 2019 from servproject.i3m.upv.es
 
 Change settings in `/etc/ssh/sshd_config`
 
-``` {.}
+```{.}
 # Change to no to disable tunnelled clear text passwords
 PasswordAuthentication yes
 ```
 
 and restart the ssh daemon:
 
-``` {.console}
+```{.console}
 sudo service ssh restart
 ```
 
 ### Configure the number of processors of the cluster
 
-``` {.console}
+```{.console}
 $ cat /var/spool/torque/server_priv/nodes
 wn1 np=XX
 wn2 np=XX
@@ -217,7 +214,7 @@ wn2 np=XX
 
 To obtain the number of CPU/cores (np) in Linux, use the command:
 
-``` {.console}
+```{.console}
 $ lscpu | grep -i CPU
 CPU op-mode(s):         32-bit, 64-bit
 CPU(s):                 16
@@ -233,7 +230,7 @@ NUMA node1 CPU(s):      4-7,12-15
 
 Create a simple test script:
 
-``` {.console}
+```{.console}
 $ cat test.sh
 #!/bin/bash
 #PBS -N job
@@ -246,7 +243,7 @@ sleep 5
 
 Submit to the batch queue:
 
-``` {.console}
+```{.console}
 qsub -l nodes=2 test.sh
 ```
 
@@ -254,7 +251,7 @@ qsub -l nodes=2 test.sh
 
 To destroy the running cluster, use the command:
 
-``` {.console}
+```{.console}
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 destroy torque_cluster
 WARNING: you are going to delete the infrastructure (including frontend and nodes).
 Continue [y/N]? y
