@@ -31,7 +31,7 @@ using a
 [Check-in documentation on EGI Wiki](https://wiki.egi.eu/wiki/AAI) for more
 information.
 
-```shell
+```sh
 CLIENT_ID=<CLIENT_ID>
 CLIENT_SECRET=<CLIENT_SECRET>
 REFRESH_TOKEN=<REFRESH_TOKEN>
@@ -49,7 +49,7 @@ The following variables should be set:
 - `ONEPROVIDER_HOST`: name or IP of the Oneprovider host (to use Oneprovider
   API).
 
-```shell
+```sh
 ONEZONE_HOST=https://datahub.egi.eu
 OIDC_TOKEN=<OIDC_ACCESS_TOKEN>
 curl -H "X-Auth-Token: egi:$OIDC_TOKEN" -X POST \
@@ -63,7 +63,7 @@ A docker container with clients acting as wrappers around the API calls is
 available: `onedata/rest-cli`. It\'s very convenient for discovering and testing
 the **Onezone** and **Oneprovider** API.
 
-```shell
+```sh
 docker run -it onedata/rest-cli
 # Exporting env for Onezone API
 export ONEZONE_HOST=https://datahub.egi.eu
@@ -74,7 +74,7 @@ onezone-rest-cli getCurrentUSer | jq '.'
 onezone-rest-cli listEffectiveUserSpaces | jq '.'
 ```
 
-```shell
+```sh
 docker run -it onedata/rest-cli
 # Exporting env for Oneprovider API
 export ONEPROVIDER_HOST=https://plg-cyfronet-01.datahub.egi.eu
@@ -90,7 +90,7 @@ oneprovider-rest-cli listFiles path='EGI Foundation/CS3_dataset'
 
 Raw REST calls (used with `curl`) can be printed using the `--dry-run` switch.
 
-```shell
+```sh
 docker run -it onedata/rest-cli
 export ONEZONE_HOST=https://datahub.egi.eu
 export ONEZONE_API_KEY=<ACCESS_TOKEN>
@@ -123,7 +123,7 @@ The following variables should be set:
 - `ONEPROVIDER_HOST`: name or IP of the Oneprovider host (to use Oneprovider
   API)
 
-```shell
+```sh
 # Getting the IDs of the available Handle Services
 curl -sS --tlsv1.2 -H "X-Auth-Token: $API_ACCESS_TOKEN" \
   "$ONEZONE_HOST/api/v3/onezone/user/handle_services"
