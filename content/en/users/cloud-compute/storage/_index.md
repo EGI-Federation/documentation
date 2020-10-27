@@ -6,17 +6,15 @@ description: >
   Storage features of the EGI Cloud
 ---
 
-This page aims to give a brief description of the storage features
-provided by the EGI Cloud and a basic tutorial on how to use and
-integrate them into your application.
-
 If you are in need of more storage than the one provided within image
 disk of your VMs, or need to persist data independently from the VMs
-storage, you will need to use one of the solutions available on the [EGI
-service catalogue](https://www.egi.eu/services/).
+storage, you will need to use one of the solutions available as part
+of the [EGI online storage service](../../online-storage/).
 
-There are two kind of storage services, Block and Object. Both of them
-have their own set of advantages and disadvantages
+This page describes the Block Storage offering of the online
+storage which is only accessible from VMs running on the EGI Cloud.
+
+## Block Storage
 
 **Block storage** provides additional storage blocks which can be
 attached to a virtual machine. A storage block is a virtual disk of a
@@ -35,40 +33,6 @@ limit to the maximum size of such virtual disks. These values will
 depend on the particular provider and your SLA. Moreover, the disk space
 is accounted for the entire block storage device, regardless how much of
 it is actually used.
-
-**Object storage** is a standalone service that stores data as sets of
-individual objects organized within containers. Each
-object has its own URL, which can be used to access the resource, to
-share the file with other people, and to setup custom metadata and
-access control lists. These objects are accessed and managed via a REST
-API ([OpenStack
-SWIFT](https://docs.openstack.org/api-ref/object-store/index.html)).
-Differently from the block storage, there is virtually no limit to the
-amount of data you can store, only the space used is accounted, you can
-access the data from any location (from any VM running at any EGI
-provider or even from other cloud providers or from your own
-laptop/browser), you can expose the data via external portals (using
-HTTP as transport protocols), you can set access control lists per
-container and even make the data publicly available. On the other hand,
-data is accessed via a API requests, thus integration with existing
-applications may require a change to the application logic.
-
-A summary of the main differences between Block and Object Storage is
-reported in the following table.
-
-| Access | Sharing | Accounting | Usage |
-| ------ | ------- | ---------- | ----- |
-| **Block Storage** | only from within a VM only at the same site the VM is located | Not possible | for the entire block | POSIX access, use as local disk |
-| **Object Storage** | from any device connected to the internet | Possible | only for the data stored | via HTTP requests to server |
-
-According to your application needs, you may select one technology over
-the other. In general, block storage is a good and simple solution for
-temporary data and data which you do not need to share beside the single
-application running on a single VM. If you need to have your data
-exposed within portals or shared between different steps of your
-processing workflow, it is usually best to use the object storage.
-
-## Block Storage
 
 Block storage is created and managed via requests to specific APIs. Once
 the storage is attached to a VM, it is managed as a regular disk that
@@ -123,7 +87,3 @@ With that you can access `/<path>` where all your data will be
 available. Applications will not see any difference between a block
 storage device and a regular disk, thus no major changes should be
 required in the application logic.
-
-## Object Storage
-
-Information about object storage in EGI are available under the [Online storage](../../online-storage/object-storage) section  
