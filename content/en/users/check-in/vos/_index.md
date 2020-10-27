@@ -311,8 +311,9 @@ be supported in the future.
 1. Retrieving the VO membership information for a given EGI Check-in ePUID:
 
    ```sh
-   $ curl -vX GET https://aai.egi.eu/api/v1/VoMembers/01234567890123456789@egi.eu \
-          --user "example-client":"veryverysecret"
+   curl -vX GET \
+      https://aai.egi.eu/api/v1/VoMembers/01234567890123456789@egi.eu \
+      --user "example-client":"veryverysecret"
    ```
 
    output:

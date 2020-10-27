@@ -40,6 +40,8 @@ You will also need a base image template for the deployment. Please refer to the
 [EC3 tutorial](../cloud-compute/ec3/basics) to create such file. Below you can
 see an example for IFCA-LCG2 site with project related to `vo.access.egi.eu`:
 
+<!-- markdownlint-disable line-length -->
+
 ```radl
 description ubuntu-ifca (
     kind = 'images' and
@@ -74,6 +76,8 @@ system wn (
 )
 ```
 
+<!-- markdownlint-enable line-length -->
+
 Now you are ready to deploy the cluster using `launch` command of ec3 with:
 
 1. the name of the deployment, `k8s` in this case
@@ -85,7 +89,8 @@ Now you are ready to deploy the cluster using `launch` command of ec3 with:
 1. the credentials to access the site with `-a auth.dat`
 
 ```sh
-$ docker run -it -v $PWD:/root/ -w /root grycap/ec3 launch k8s kubernetes ubuntu refresh -a auth.dat
+$ docker run -it -v $PWD:/root/ -w /root grycap/ec3 launch k8s \
+    kubernetes ubuntu refresh -a auth.dat
 Creating infrastructure
 Infrastructure successfully created with ID: b9577c34-f818-11ea-a644-2e0fc3c063db
 Front-end configured with IP 193.144.46.249
@@ -129,6 +134,8 @@ kubeserver.localdomain   Ready    master   23h   v1.18.3
 The cluster will only have one node (the master) and will start new nodes as you
 create pods. Alternatively you can poweron nodes manually:
 
+<!-- markdownlint-disable line-length -->
+
 ```sh
 cloudadm@kubeserver:~$ clues status
 node                          state    enabled   time stable   (cpu,mem) used   (cpu,mem) total
@@ -145,6 +152,8 @@ NAME                     STATUS   ROLES    AGE     VERSION
 kubeserver.localdomain   Ready    master   24h     v1.18.3
 wn1.localdomain          Ready    <none>   6m49s   v1.18.3
 ```
+
+<!-- markdownlint-enable line-length -->
 
 ## Exposing services outside the cluster
 
@@ -187,7 +196,8 @@ defaultBackend:
 and install:
 
 ```sh
-cloudadm@kubeserver:~$ sudo helm install ingress -n kube-system -f ingress.yaml ingress-nginx/ingress-nginx
+cloudadm@kubeserver:~$ sudo helm install ingress -n kube-system \
+    -f ingress.yaml ingress-nginx/ingress-nginx
 ```
 
 Now you are ready to expose your services using a valid hostname. Use the
@@ -298,7 +308,9 @@ Volumes on these deployments can be supported with NFS volume driver. You can
 either manually configure the server on one of the nodes or use EC3 to deploy it
 and configure it for you. Create a `templates/nfs.radl` to do so:
 
-```
+<!-- markdownlint-disable line-length -->
+
+```radl
 description nfs (
     kind = 'component' and
     short = 'Tool to configure shared directories inside a network.' and
@@ -340,11 +352,14 @@ configure wn (
 )
 ```
 
+<!-- markdownlint-enable line-length -->
+
 if you have a running cluster, you can add the NFS support by reconfiguring the
 cluster:
 
-```shell
-$ docker run -it -v $PWD:/root/ -w /root grycap/ec3 reconfigure k8s -a auth.dat -t nfs
+```sh
+$ docker run -it -v $PWD:/root/ -w /root grycap/ec3 reconfigure k8s \
+    -a auth.dat -t nfs
 Reconfiguring infrastructure
 Front-end configured with IP 193.144.46.249
 Transferring infrastructure
@@ -353,10 +368,11 @@ Front-end ready!
 
 And then install the NFS driver in kubernetes with helm:
 
-```shell
-cloudadm@kubeserver:~$ sudo helm install nfs-provisioner stable/nfs-client-provisioner \
-                     		 --namespace kube-system \
-                     		 --set nfs.server=192.168.10.9 \
+```sh
+cloudadm@kubeserver:~$ sudo helm install nfs-provisioner \
+                        stable/nfs-client-provisioner \
+                        --namespace kube-system \
+                        --set nfs.server=192.168.10.9 \
                                  --set storageClass.defaultClass=true \
                                  --set nfs.path=/volumes \
                                  --set tolerations[0].effect=NoSchedule,tolerations[0].key=node-role.kubernetes.io/master
@@ -404,7 +420,7 @@ spec:
 Once you apply the yaml, you will see the new PVC gets bounded to a PV created
 in NFS:
 
-```shell
+```sh
 cloudadm@kubeserver:~$ sudo kubectl get pvc
 NAME       STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 test-pvc   Bound    pvc-39f970de-eaad-44d7-b49f-90dc9de54a14   3Gi        RWO            nfs-client     9m46s
@@ -415,8 +431,9 @@ test-pvc   Bound    pvc-39f970de-eaad-44d7-b49f-90dc9de54a14   3Gi        RWO   
 Once you don't need the cluster anymore, you can undeploy with the `destroy`
 command of EC3:
 
-```shell
-$ egicli endpoint ec3-refresh # refresh your credentials to interact with the cluster
+```sh
+# refresh your credentials to interact with the cluster
+$ egicli endpoint ec3-refresh
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 destroy k8s -y -a auth.dat
 WARNING: you are going to delete the infrastructure (including frontend and nodes).
 Success deleting the cluster!
