@@ -42,7 +42,7 @@ Learn about
 
 The User RESTFul APIs can be used to submit transfers jobs (collections of
 single transfers), monitor and cancel existing transfers. Please check the CERN
-[ documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/api.html)
+[documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/api.html)
 for the full API details. Here we will provide some examples usage using the
 Curl client.
 

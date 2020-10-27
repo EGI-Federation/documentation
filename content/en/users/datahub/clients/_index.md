@@ -104,7 +104,9 @@ the container should run in **privileged** mode. {{% /alert %}}
 ```shell
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
-docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST onedata/oneclient:19.02.0-rc2
+docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN \
+  -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST \
+  onedata/oneclient:19.02.0-rc2
 Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '4138963898952098752'...
 Getting configuration...
 Oneclient has been successfully mounted in '/mnt/oneclient'

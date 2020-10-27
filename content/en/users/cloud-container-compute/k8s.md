@@ -30,17 +30,17 @@ EC3 relies on a set of _templates_ that will determine what will be deployed on
 the infrastructure. `egicli` helps you to get an initial set of templates for
 your kubernetes deployment:
 
-```shell
-$ mkdir k8s
-$ cd k8s
-$ egicli endpoint ec3 --site <your site> --project-id <project_id>
+```sh
+mkdir k8s
+cd k8s
+egicli endpoint ec3 --site <your site> --project-id <project_id>
 ```
 
 You will also need a base image template for the deployment. Please refer to the
 [EC3 tutorial](../cloud-compute/ec3/basics) to create such file. Below you can
 see an example for IFCA-LCG2 site with project related to `vo.access.egi.eu`:
 
-```
+```radl
 description ubuntu-ifca (
     kind = 'images' and
     short = 'ubuntu18-ifca' and
@@ -84,7 +84,7 @@ Now you are ready to deploy the cluster using `launch` command of ec3 with:
 
 1. the credentials to access the site with `-a auth.dat`
 
-```shell
+```sh
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 launch k8s kubernetes ubuntu refresh -a auth.dat
 Creating infrastructure
 Infrastructure successfully created with ID: b9577c34-f818-11ea-a644-2e0fc3c063db
@@ -95,7 +95,7 @@ Front-end ready!
 
 Your kubernetes deployment is now ready, log in with the `ssh` command of ec3:
 
-```shell
+```sh
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 ssh k8s
 Warning: Permanently added '193.144.46.249' (ECDSA) to the list of known hosts.
 Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-109-generic x86_64)
@@ -120,7 +120,7 @@ cloudadm@kubeserver:~$
 
 You can interact with the kubernetes cluster with the `kubectl` command:
 
-```shell
+```sh
 cloudadm@kubeserver:~$ sudo kubectl get nodes
 NAME                     STATUS   ROLES    AGE   VERSION
 kubeserver.localdomain   Ready    master   23h   v1.18.3
@@ -129,7 +129,7 @@ kubeserver.localdomain   Ready    master   23h   v1.18.3
 The cluster will only have one node (the master) and will start new nodes as you
 create pods. Alternatively you can poweron nodes manually:
 
-```shell
+```sh
 cloudadm@kubeserver:~$ clues status
 node                          state    enabled   time stable   (cpu,mem) used   (cpu,mem) total
 -----------------------------------------------------------------------------------------------
@@ -186,7 +186,7 @@ defaultBackend:
 
 and install:
 
-```shell
+```sh
 cloudadm@kubeserver:~$ sudo helm install ingress -n kube-system -f ingress.yaml ingress-nginx/ingress-nginx
 ```
 
@@ -196,7 +196,7 @@ hostnames if you need. Assign as IP the public IP of the master node. Once you
 have a hostname assigned to the master IP, the ingress will be able to reply to
 requests already:
 
-```shell
+```sh
 $ curl ingress.test.fedcloud.eu
 <html>
 <head><title>404 Not Found</title></head>
