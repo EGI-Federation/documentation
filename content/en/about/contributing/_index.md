@@ -35,7 +35,9 @@ made in two ways:
   **pencil** `Edit this file` icon shown at the top of a page that you are
   viewing (See
   [GitHub documentation](https://help.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository)).
-  You will be guided through the required steps.
+  You will be guided through the required steps. Be sure to quickly save your
+  changes quickly as the repository may be updated by someone else in the
+  meantime.
 - for more complex contributions and when you want to preview and test changes
   locally you should fork the repository as documented below in the
   [Using git and GitHub](../git) page.
