@@ -20,11 +20,15 @@ and usage that is foreseen. The 3 following service offerings are available:
 A summary of the main differences between Grid, Block and Object Storage is
 reported in the following table.
 
+<!-- markdownlint-disable line-length -->
+
 | Access             | Sharing                                                       | Accounting                        | Usage                                   |
 | ------------------ | ------------------------------------------------------------- | --------------------------------- | --------------------------------------- |
 | **Grid Storage**   | from any device connected to the internet                     | Available for the data stored     | Grid protocols and HTTP/Webdav requests |
 | **Block Storage**  | only from within a VM only at the same site the VM is located | Not possible for the entire block | POSIX access, use as local disk         |
 | **Object Storage** | from any device connected to the internet                     | Possible only for the data stored | via HTTP requests to server             |
+
+<!-- markdownlint-enable line-length -->
 
 Grid Storage is mainly serving data access and storage for EGI High Throughput
 Compute scenarios. For EGI Federated Cloud use cases it depends on the
