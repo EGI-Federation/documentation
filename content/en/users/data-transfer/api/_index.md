@@ -6,43 +6,45 @@ description: "Documentation for EGI Data Transfer API"
 weight: 30
 ---
 
-## Overview 
+## Overview
 
-The EGI Data Transfer service offers API both for Users and Admins, in this section 
-we are focusing on the User API.
-Two APIs are available to users:
+The EGI Data Transfer service offers API both for Users and Admins, in this
+section we are focusing on the User API. Two APIs are available to users:
 
 - RESTFul API
 - Python Easy Bindings
 
-In both cases users need a way to be authenticated and authorised and this is explained
-in the next section.
+In both cases users need a way to be authenticated and authorised and this is
+explained in the next section.
 
 ## Authentication & Authorisation
 
 {{% alert title="Warning" color="warning" %}}
 
-Users have to authenticate using a X.509 User certificate. The integration 
-with EGI Check-in in order to authenticate via OIDC tokens  
+Users have to authenticate using a X.509 User certificate. The integration with
+EGI Check-in in order to authenticate via OIDC tokens  
 is under development and will be later made available in production endpoints.
 
 {{% /alert %}}
 
-During the authentication phase, credentials are delegated to the FTS service, which will
-contact the storages to steer the data transfers on behalf of the users.
+During the authentication phase, credentials are delegated to the FTS service,
+which will contact the storages to steer the data transfers on behalf of the
+users.
 
-The FTS service supports both plain X.509 proxies than 
-[VOMS](https://italiangrid.github.io/voms/index.html) X.509 proxies extended with VO 
-information for authentication and authorisation.
+The FTS service supports both plain X.509 proxies than
+[VOMS](https://italiangrid.github.io/voms/index.html) X.509 proxies extended
+with VO information for authentication and authorisation.
 
-Learn about [VOMS configuration and proxy creation](../../check-in/voms/#creating-a-proxy).
+Learn about
+[VOMS configuration and proxy creation](../../check-in/voms/#creating-a-proxy).
 
 ## RESTFul API
 
-The User RESTFul APIs can be used to submit transfers jobs (collections of single 
-transfers), monitor and cancel existing transfers. Please check the CERN [
-documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/api.html) for the 
-full API details. Here we will provide some examples usage using the Curl client.
+The User RESTFul APIs can be used to submit transfers jobs (collections of
+single transfers), monitor and cancel existing transfers. Please check the CERN
+[ documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/api.html)
+for the full API details. Here we will provide some examples usage using the
+Curl client.
 
 ### Checking how the server sees the identity of the user
 
@@ -81,12 +83,12 @@ Filtered by VO
 
 ```sh
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
-  --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/jobs?vo_name=dteam 
+  --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/jobs?vo_name=dteam
 
 [
   {
     "cred_id": "1426115d1660de4d",
-    "user_dn": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=ftssuite/CN=737188/CN=Robot: 
+    "user_dn": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=ftssuite/CN=737188/CN=Robot:
     fts3 testsuite",
     "job_type": "N",
     "retry": -1,
@@ -132,7 +134,7 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
 ```sh
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
   --cacert $X509_USER_PROXY \
-  https://fts3-public.cern.ch:8446/delegation/9ab8068853808c6b 
+  https://fts3-public.cern.ch:8446/delegation/9ab8068853808c6b
 {
   "voms_attrs": [
     "/dteam/Role=NULL/Capability=NULL"
@@ -143,14 +145,14 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
 
 ## Python Bindings
 
-The Python bindings for FTS can be installed from the EPEL package repository 
+The Python bindings for FTS can be installed from the EPEL package repository
 (EL6 and EL7 packages are available) with Python 2.7 being supported.
 
 ```sh
 yum install python-fts -y
 ```
 
-For using the bindings, you need to import `fts3.rest.client.easy`, although for 
+For using the bindings, you need to import `fts3.rest.client.easy`, although for
 convenience it can be renamed as something else:
 
 ```sh
@@ -159,8 +161,10 @@ import fts3.rest.client.easy as fts3
 
 In the following code snippets, an import as above is assumed.
 
-In order to be able to do any operation, information about the state of the user credentials and
-remote endpoint needs to be kept. That's the purpose of a Context.
+In order to be able to do any operation, information about the state of the user
+credentials and remote endpoint needs to be kept. That's the purpose of a
+Context.
+
 ```sh
 context = fts3.Context(endpoint, ucert, ukey, verify=True)
 ```
@@ -170,17 +174,18 @@ the following format:
 
 `https://\<host>:\<port>`
 
-for instance ```https://fts3-public.cern.ch:8446```
+for instance `https://fts3-public.cern.ch:8446`
 
-If you are using a proxy certificate, you can either specify only `user_certificate`, 
-or point both parameters to the proxy. `user_certificate` and `user_key` can be safely 
-omitted, and the program will use the values defined in the environment variables 
-`X509_USER_PROXY` or `X509_USER_CERT` + `X509_USER_KEY`.
+If you are using a proxy certificate, you can either specify only
+`user_certificate`, or point both parameters to the proxy. `user_certificate`
+and `user_key` can be safely omitted, and the program will use the values
+defined in the environment variables `X509_USER_PROXY` or `X509_USER_CERT` +
+`X509_USER_KEY`.
 
 If verify is `False`, the server certificate will not be verified.
 
-Here are some examples about creating a context, submitting a job with a single transfer 
-and getting the job status:
+Here are some examples about creating a context, submitting a job with a single
+transfer and getting the job status:
 
 ```sh
 # pretty print the json outputs
@@ -205,7 +210,7 @@ and getting the job status:
     u'vos': [u'dteam'],
     u'vos_id': [u'6b10f4e4-8fdc-5555-baa2-7d4850d4f406']}
 
-# creating a new transfer and submiting a job 
+# creating a new transfer and submiting a job
 >>> transfer = fts3.new_transfer(
 ...   'gsiftp://source/path', 'gsiftp://destination/path',
 ...   checksum='ADLER32:1234', filesize=1024,
@@ -233,7 +238,7 @@ b6191212-d347-11ea-8a47-fa163e45cbc4
     u'max_time_in_queue': None,
     u'overwrite_flag': False,
     u'priority': 3,
-    u'reason': u'One or more files failed. Please have a look at the details for 
+    u'reason': u'One or more files failed. Please have a look at the details for
     more information',
     u'retry': -1,
     u'retry_delay': 0,
@@ -247,5 +252,6 @@ b6191212-d347-11ea-8a47-fa163e45cbc4
     u'vo_name': u'dteam'}
 ```
 
-Full [documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html)
- is also available.
+Full
+[documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html)
+is also available.
