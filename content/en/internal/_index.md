@@ -8,6 +8,6 @@ menu:
     weight: 30
 ---
 
-{{% pageinfo %}}
-This is a placeholder page.
-{{% /pageinfo %}}
+This section contains documentation about the EGI Internal Services, that are
+being operated centrally on behalf of EGI and supporting the coordination of
+the Federation.
