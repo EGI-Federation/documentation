@@ -338,8 +338,9 @@ access_token = r.json()['access_token']
 
 OpenStack = get_driver(Provider.OPENSTACK)
 # first parameter is the identity provider: "egi.eu"
-# Second parameter is the access_token
-# The protocol 'openid' is specified in ex_tenant_name, and tenant/project cannot be selected :(
+# Second parameter is the access_token
+# The protocol 'openid' is specified in ex_tenant_name,
+# and tenant/project cannot be selected :(
 driver = OpenStack('egi.eu', access_token, ex_tenant_name='openid',
                    ex_force_auth_url='https://keystone_url:5000',
                    ex_force_auth_version='3.x_oidc_access_token')
