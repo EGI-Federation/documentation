@@ -3,37 +3,35 @@ title: "Using OpenStack providers"
 type: docs
 weight: 50
 description: >
-  How to interact with the OpenStack providers APIs in the EGI Cloud 
+  How to interact with the OpenStack providers APIs in the EGI Cloud
 ---
 
-[OpenStack](https://openstack.org) providers of the EGI Cloud Compute
-service offer native OpenStack features via native APIs integrated with
-EGI Check-in accounts.
+[OpenStack](https://openstack.org) providers of the EGI Cloud Compute service
+offer native OpenStack features via native APIs integrated with EGI Check-in
+accounts.
 
-The extensive [OpenStack user
-documentation](https://docs.openstack.org/user/) includes details on
-every OpenStack project, most providers offer access to:
+The extensive [OpenStack user documentation](https://docs.openstack.org/user/)
+includes details on every OpenStack project, most providers offer access to:
 
--   keystone, for identity
--   nova, for VM management
--   glance, for VM image management
--   cinder, for block storage
--   neutron, for network management
--   horizon, as a web dashboard
+- keystone, for identity
+- nova, for VM management
+- glance, for VM image management
+- cinder, for block storage
+- neutron, for network management
+- horizon, as a web dashboard
 
 Web-dashboard of the integrated providers can be accessed using your EGI
-Check-in credentials directly: select *OpenID Connect* or *EGI Check-in*
-in the **Authenticate using** drop-down menu of the login screen. You
-can explore [Horizon dashboard
-documentation](https://docs.openstack.org/horizon/rocky/user/) for more
-information on how to manage your resources from the browser. The rest
+Check-in credentials directly: select _OpenID Connect_ or _EGI Check-in_ in the
+**Authenticate using** drop-down menu of the login screen. You can explore
+[Horizon dashboard documentation](https://docs.openstack.org/horizon/rocky/user/)
+for more information on how to manage your resources from the browser. The rest
 of this guide will focus on CLI/API access.
 
 ## Installation
 
 TBC
 
-``` {.console}
+```{.console}
 pip install requests
 pip install openstackclient
 ```
@@ -42,24 +40,23 @@ pip install openstackclient
 
 Add IGTF CA to python\'s CA store:
 
-``` {.console}
+```{.console}
 cat /etc/grid-security/certificates/*.pem >> $(python -m requests.certs)
 ```
 
 ## Authentication
 
 Check the documentation at `oidc-auth-using-check-in`{.interpreted-text
-role="ref"} on how to get the right credentials for accessing the
-providers.
+role="ref"} on how to get the right credentials for accessing the providers.
 
 ### OpenStack token for other clients
 
-Most OpenStack clients allow authentication with tokens, so you can
-easily use them with EGI Cloud providers just doing a first step for
-obtaining the token. With the OpenStack client you can use the following
-command to set the OS\_TOKEN variable with the needed token:
+Most OpenStack clients allow authentication with tokens, so you can easily use
+them with EGI Cloud providers just doing a first step for obtaining the token.
+With the OpenStack client you can use the following command to set the OS_TOKEN
+variable with the needed token:
 
-``` {.console}
+```{.console}
 $ OS_TOKEN=$(openstack --os-auth-type v3oidcaccesstoken \
             --os-protocol openid --os-identity-provider egi.eu \
             --os-auth-url <keystone  url> \
@@ -67,25 +64,24 @@ $ OS_TOKEN=$(openstack --os-auth-type v3oidcaccesstoken \
             --os-project-id <your project id> token issue -c id -f value)
 ```
 
-You can refresh the access token and obtain an OpenStack token in a
-single `../get-token.py`{.interpreted-text role="download"} script
-expecting your credentials to be available in the environment:
+You can refresh the access token and obtain an OpenStack token in a single
+`../get-token.py`{.interpreted-text role="download"} script expecting your
+credentials to be available in the environment:
 
--   `CHECKIN_CLIENT_ID`: Your Check-in client id (get it from [FedCloud
-    Check-in client](https://aai.egi.eu/fedcloud))
--   `CHECKIN_CLIENT_SECRET`: Your Check-in client secret (get it from
-    [FedCloud Check-in client](https://aai.egi.eu/fedcloud))
--   `CHECKIN_REFRESH_TOKEN`: Your Check-in refresh token (get it from
-    [FedCloud Check-in client](https://aai.egi.eu/fedcloud))
--   `OS_AUTH_URL`: Keystone URL (depends on the provider, you can get it
-    in [GOCDB](https://goc.egi.eu))
--   `OS_PROJECT_ID`: OpenStack project to use (See script above for
-    obtaining it)
+- `CHECKIN_CLIENT_ID`: Your Check-in client id (get it from
+  [FedCloud Check-in client](https://aai.egi.eu/fedcloud))
+- `CHECKIN_CLIENT_SECRET`: Your Check-in client secret (get it from
+  [FedCloud Check-in client](https://aai.egi.eu/fedcloud))
+- `CHECKIN_REFRESH_TOKEN`: Your Check-in refresh token (get it from
+  [FedCloud Check-in client](https://aai.egi.eu/fedcloud))
+- `OS_AUTH_URL`: Keystone URL (depends on the provider, you can get it in
+  [GOCDB](https://goc.egi.eu))
+- `OS_PROJECT_ID`: OpenStack project to use (See script above for obtaining it)
 
-Optionally set the `CHECKIN_URL` to the Check-in endpoint
-(e.g. `https://aai-dev.egi.eu/` if testing on the devel environment).
+Optionally set the `CHECKIN_URL` to the Check-in endpoint (e.g.
+`https://aai-dev.egi.eu/` if testing on the devel environment).
 
-``` {.console}
+```{.console}
 # Export OIDC env
 export CHECKIN_CLIENT_ID=<CLIENT_ID>
 export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
@@ -102,24 +98,24 @@ echo $OS_TOKEN
 
 ## Useful commands with OpenStack CLI
 
-Please refer to the [nova
-documentation](https://docs.openstack.org/nova/rocky/user/) for a
-complete guide on the VM management features of OpenStack. We list in
-the sections below some useful commands for the EGI Cloud.
+Please refer to the
+[nova documentation](https://docs.openstack.org/nova/rocky/user/) for a complete
+guide on the VM management features of OpenStack. We list in the sections below
+some useful commands for the EGI Cloud.
 
 ### Registering an existing ssh key
 
-It\'s possible to register an ssh key that can later be used as the
-default ssh key for the default user of the VM (via the `--key-name`
-argument to `openstack server create`:
+It\'s possible to register an ssh key that can later be used as the default ssh
+key for the default user of the VM (via the `--key-name` argument to
+`openstack server create`:
 
-``` {.console}
+```{.console}
 openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
 ```
 
 ### Creating a VM
 
-``` {.console}
+```{.console}
 openstack flavor list
 FLAVOR=<FLAVOR_NAME>
 openstack image list
@@ -144,69 +140,61 @@ openstack server delete <SERVER_ID>
 openstack floating ip delete <IP>
 ```
 
--   [OpenStack: launch an instance on the provider
-    network](https://docs.openstack.org/mitaka/install-guide-obs/launch-instance-provider.html)
--   [OpenStack: Manging IP
-    addresses](https://docs.openstack.org/ocata/user-guide/cli-manage-ip-addresses.html)
+- [OpenStack: launch an instance on the provider network](https://docs.openstack.org/mitaka/install-guide-obs/launch-instance-provider.html)
+- [OpenStack: Manging IP addresses](https://docs.openstack.org/ocata/user-guide/cli-manage-ip-addresses.html)
 
 ### Using cloud-init
 
-``` {.console}
+```{.console}
 openstack server create --flavor m3.medium \
   --image d0a89aa8-9644-408d-a023-4dcc1148ca01 \
   --user-data userdata.txt --key-name My_Key server01.example.com
 ```
 
--   [OpenStack: providing user data
-    (cloud-init)](https://docs.openstack.org/nova/queens/user/user-data.html)
--   [cloudinit
-    documentation](https://cloudinit.readthedocs.io/en/latest/index.html)
+- [OpenStack: providing user data (cloud-init)](https://docs.openstack.org/nova/queens/user/user-data.html)
+- [cloudinit documentation](https://cloudinit.readthedocs.io/en/latest/index.html)
 
 #### Shell script data as user data
 
-``` {.shell}
+```{.shell}
 #!/bin/sh
 adduser --disabled-password --gecos "" clouduser
 ```
 
 #### cloud-config data as user data
 
-``` {.yaml}
+```{.yaml}
 #cloud-config
 hostname: mynode
 fqdn: mynode.example.com
 manage_etc_hosts: true
 ```
 
--   [Official cloud-config
-    examples](https://cloudinit.readthedocs.io/en/latest/topics/examples.html#yaml-examples)
--   [Cloud-init
-    example](https://www.zetta.io/en/help/articles-tutorials/customizing-instance-deployment-cloud-init/)
+- [Official cloud-config examples](https://cloudinit.readthedocs.io/en/latest/topics/examples.html#yaml-examples)
+- [Cloud-init example](https://www.zetta.io/en/help/articles-tutorials/customizing-instance-deployment-cloud-init/)
 
 ### Creating a snapshot image from running VM
 
-You can create a new image from a snapshot of an existing VM that will
-allow you to easily recover a previous version of your VM or to use it
-as a template to clone a given VM.
+You can create a new image from a snapshot of an existing VM that will allow you
+to easily recover a previous version of your VM or to use it as a template to
+clone a given VM.
 
-``` {.console}
+```{.console}
 openstack server image create <your VM> --name <name of the snapshot>
 ```
 
-Once the snapshot is ready
-(`openstack image show <name of the snapshot>` will give your the
-details you can use it as any other image at the provider:
+Once the snapshot is ready (`openstack image show <name of the snapshot>` will
+give your the details you can use it as any other image at the provider:
 
-``` {.console}
+```{.console}
 openstack server create --flavor <flavor> \
   --image <name of the snapshot> \
   <name of the new VM>
 ```
 
-You can override files in the snapshot if needed, e.g. changing the SSH
-keys:
+You can override files in the snapshot if needed, e.g. changing the SSH keys:
 
-``` {.console}
+```{.console}
 openstack server create --flavor <flavor> \
   --image <name of the snapshot> \
   --file /home/ubuntu/.ssh/authorized_keys=my_new_keys \
@@ -215,12 +203,11 @@ openstack server create --flavor <flavor> \
 
 ## Terraform
 
-[Terraform](https://terraform.io) supports EGI Cloud OpenStack providers
-by using valid access tokens for Keystone. For using this, just
-configure your provider as usual in Terraform, but do not include
-user/password information:
+[Terraform](https://terraform.io) supports EGI Cloud OpenStack providers by
+using valid access tokens for Keystone. For using this, just configure your
+provider as usual in Terraform, but do not include user/password information:
 
-``` {.terraform}
+```{.terraform}
 # Configure the OpenStack Provider
 provider "openstack" {
   project_id = "<your project id>"
@@ -233,12 +220,12 @@ resource "openstack_compute_instance_v2" "test-server" {
 }
 ```
 
-when launching Terraform, set the `OS_TOKEN` environment variable to a
-valid token as shown in :ref:OpenStack token for other clients. You may
-also set the Keystone URL and project id in the `OS_AUTH_URL` and
-`OS_PROJECT_ID` environment variables:
+when launching Terraform, set the `OS_TOKEN` environment variable to a valid
+token as shown in :ref:OpenStack token for other clients. You may also set the
+Keystone URL and project id in the `OS_AUTH_URL` and `OS_PROJECT_ID` environment
+variables:
 
-``` {.terraform}
+```{.terraform}
 provider "openstack" {
 }
 
@@ -264,7 +251,7 @@ resource "openstack_compute_instance_v2" "vm" {
 }
 ```
 
-``` {.console}
+```{.console}
 $ export CHECKIN_CLIENT_ID=<CLIENT_ID>
 $ export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
 $ export CHECKIN_REFRESH_TOKEN=<REFRESH_TOKEN>
@@ -316,21 +303,20 @@ can't guarantee that exactly these actions will be performed if
 "terraform apply" is subsequently run.
 ```
 
-Note that as in the example above you can get images using information
-from AppDB if needed.
+Note that as in the example above you can get images using information from
+AppDB if needed.
 
 ## libcloud
 
-[Apache libcloud](https://libcloud.apache.org/index.html) support
-OpenStack and EGI authentication mechanisms by setting the
-`ex_force_auth_version` to `3.x_oidc_access_token` or `2.0_voms`
-respectively. Check the [libcloud docs on connecting to
-OpenStack](https://libcloud.readthedocs.io/en/latest/compute/drivers/openstack.html#connecting-to-the-openstack-installation)
+[Apache libcloud](https://libcloud.apache.org/index.html) support OpenStack and
+EGI authentication mechanisms by setting the `ex_force_auth_version` to
+`3.x_oidc_access_token` or `2.0_voms` respectively. Check the
+[libcloud docs on connecting to OpenStack](https://libcloud.readthedocs.io/en/latest/compute/drivers/openstack.html#connecting-to-the-openstack-installation)
 for details. See below two code samples for using them
 
 ### OpenID Connect
 
-``` {.python}
+```{.python}
 import requests
 
 from libcloud.compute.types import Provider
@@ -361,7 +347,7 @@ driver = OpenStack('egi.eu', access_token, ex_tenant_name='openid',
 
 ### VOMS
 
-``` {.python}
+```{.python}
 from libcloud.compute.types import Provider
 from libcloud.compute.providers import get_driver
 
