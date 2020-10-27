@@ -116,7 +116,7 @@ the discovery of projects. First, define these variables in your environment:
 
 And use them to get the list of projects:
 
-```{.console}
+```sh
 # Export OIDC env
 export CHECKIN_CLIENT_ID=<CLIENT_ID>
 export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
@@ -131,7 +131,7 @@ egicli endpoint projects
 Once you know which project to use, you can use your regular openstack cli
 commands for performing actual operations in the provider:
 
-```{.console}
+```sh
 # Export OIDC env
 export CHECKIN_CLIENT_ID=<CLIENT_ID>
 export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
@@ -147,7 +147,7 @@ openstack image list
 For 3rd party tools that can use token based authentication in OpenStack, use
 the following command (after setting the environment as shown above):
 
-```{.console}
+```sh
 # Export OIDC env
 export CHECKIN_CLIENT_ID=<CLIENT_ID>
 export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
@@ -186,14 +186,16 @@ technology used. There are 3 different cases handled automatically by the
 `rOCCI-cli`. For accessing native OpenStack sites there are two different
 plugins available for Keystone that are installed with a single library:
 
-```{.console}
+```sh
 pip install openstack-voms-auth-type
 ```
 
 For Keystone-VOMS based installations (Keystone URL ending on `/v2.0`), just
 define the location of your proxy and `v2voms` as authorisation plugin:
 
-```{.console}
+<!-- markdownlint-disable line-length -->
+
+```sh
 openstack --os-auth-url https://<keystone-url>/v2.0 \
           --os-auth-type v2voms --os-x509-user-proxy /tmp/x509up_u1000 \
           token issue
@@ -206,11 +208,15 @@ openstack --os-auth-url https://<keystone-url>/v2.0 \
 +---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ```
 
+<!-- markdownlint-enable line-length -->
+
 For those Keystone installations supporting only `v3`, specify `v3voms` as
 authorisation plugin, `egi.eu` as identity provider, `mapped` as protocol, and
 the location of your proxy:
 
-```{.console}
+<!-- markdownlint-disable line-length -->
+
+```sh
 openstack --os-auth-url https://<keystone url>/v3 \
           --os-auth-type v3voms --os-x509-user-proxy /tmp/x509up_u1000 \
           --os-identity-provider egi.eu --os-protocol mapped \
@@ -223,3 +229,5 @@ openstack --os-auth-url https://<keystone url>/v3 \
 | user_id | 50fa8516b2554daeae652619ba9ebf96                                                                                                                                                                             |
 +---------+----------------------------------------------------------------------------------------------------------------------------------------
 ```
+
+<!-- markdownlint-enable line-length -->

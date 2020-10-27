@@ -145,6 +145,8 @@ credentials from the Openstack deployment.
 
 The following command is needed:
 
+<!-- markdownlint-disable line-length -->
+
 ```sh
 openstack ec2 credentials create
 
@@ -161,6 +163,8 @@ openstack ec2 credentials create
 
 ```
 
+<!-- markdownlint-enable line-length -->
+
 The `access` and `secret` values are needed in order to access the SWIFT via the
 S3 protocol
 
@@ -172,7 +176,8 @@ environments.
 In order to list via S3 protocol the SWIFT server just type:
 
 ```sh
-davix-ls --s3accesskey 'access' --s3secretkey 'secret'  --s3alternate s3s://api.cloud.ifca.es:8080/swift/v1/test-egi
+davix-ls --s3accesskey 'access' --s3secretkey 'secret' \
+  --s3alternate s3s://api.cloud.ifca.es:8080/swift/v1/test-egi
 ```
 
 `davix-get`, `davix-put` and `davix-del` are also available to download, store
