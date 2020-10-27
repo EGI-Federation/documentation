@@ -19,8 +19,8 @@ and with whom. Main features:
 -   Control the data you share
 -   Organise your data using a flexible hierarchical structure
 
-Grid Storage file access is based on GridFTP and WebDav/HTTP protocols together
-with XRootD and legacy SRM (under deprecation at some of the endpoints).
+Grid Storage file access is based on [gridFTP](https://en.wikipedia.org/wiki/GridFTPw) and [WebDav/HTTP](https://en.wikipedia.org/wiki/WebDAV) protocols together
+with [XRootD](https://xrootd.slac.stanford.edu/) and legacy [SRM](https://www.gridpp.ac.uk/wiki/SRM) (under deprecation at some of the endpoints).
 
 Several Grid storage implementation are available on the infrastructure, the
 most common are the following:
@@ -71,7 +71,7 @@ The client widely used to access grid-storage is
 available for installation both on RHEL and Debian compatible systems.
 
 In particular, gfal2 provides and abstraction layer on top of several storage
-protocols (RFIO, XRootD, WebDAV, SRM, gsiftp, etc) and therefore is quite
+protocols (XRootD, WebDAV, SRM, gsiftp, etc) and therefore is quite
 convenient as the same API can be used to access different protocols.
 
 The gfal2 CLI can be installed as follows (for RHEL compatible systems):
