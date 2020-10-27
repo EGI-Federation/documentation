@@ -116,8 +116,7 @@ upstream        git@github.com:EGI-Foundation/documentation.git (push)
 ## Running the documentation site locally
 
 The documentation webiste is built from the source files using
-[Hugo](https://gohugo.io/).
-The repository
+[Hugo](https://gohugo.io/). The repository
 [README](https://github.com/EGI-Foundation/documentation/blob/master/README.md)
 can be used as a reference for building instructions.
 
@@ -259,6 +258,26 @@ git rebase upstream/master master
 # Update your remote GitHub fork with those changes
 git push
 ```
+
+## Updating local feature branch with changes made on the master branch
+
+In case the _master_ branch evolved since the feature branch was created, it may
+be required to merge the new changes in the feature branch.
+
+It can easily be done via the PR page on the GitHub web interface, but it can
+also be done in your repository clone using `git rebase`.
+
+```sh
+# Retrieve changes made in the upstream repository
+git fetch upstream
+# Check out the feature branch
+git checkout feature_branch
+# Apply the new changes on main to your feature branch
+git rebase upstream/master
+```
+
+In case some files have been changed on both sides you will will have to merge
+the conflicts manually.
 
 ## Cloning a Pull Request to test and review it locally
 
