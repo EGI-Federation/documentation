@@ -5,7 +5,16 @@ type: docs
 weight: 40
 ---
 
-Files have to be written in Markdown, using code s compliant with
+## General recommendations
+
+- EGI Services should be named exactly as in the
+  [EGI Services Portfolio](https://www.egi.eu/services/);
+- Acronyms should be used only when it makes sense;
+- Service names should never be replaced by acronyms.
+
+## Writing markdown
+
+Files have to be written in Markdown, using code compliant with
 [CommonMark](https://spec.commonmark.org/0.29/) and
 [GitHub Flavored Markdown](https://github.github.com/gfm/) which is based on
 CommonMark.
@@ -29,7 +38,7 @@ Configuration is provided in `.prettierrc`, options can be set as follow:
 --print-width 80 --tab-width 2 --prose-wrap always
 ```
 
-## Notable points
+### Notable points
 
 - Lines should be wrapped at 80 characters.
 - Sentences should be separated by one space only.
