@@ -82,10 +82,11 @@ converting it to your preferred format with qemu-img:
 
 ```sh
 # get image and extract VMDK
-$ curl $(curl "https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict" | jq -r .url) | \
+curl $(curl "https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict" \
+  | jq -r .url) | \
     tar x "*.vmdk"
 # convert to qcow2
-$ qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.qcow2
+qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.qcow2
 ```
 
 The appliance running at your OpenStack must:
@@ -113,6 +114,8 @@ The following **services** must be accessible to allow access to an
 OpenStack-based FedCloud site (default ports listed below, can be adjusted to
 your installation)
 
+<!-- markdownlint-disable line-length -->
+
 | Port         | Application            | Note                                      |
 | ------------ | ---------------------- | ----------------------------------------- |
 | **5000**/TCP | **OpenStack**/Keystone | Authentication to your OpenStack.         |
@@ -134,6 +137,8 @@ site, these accounts can be merged as needed for your deployment:
 | cloud-keeper | Permission to manage the images for all the projects supporting EGI VOs                      |
 | Other users  | Automatically created by Keystone and permission set as configured in the mappings           |
 
+<!-- markdownlint-enable line-length -->
+
 ## EGI AAI
 
 ### OpenID Connect Support
@@ -141,12 +146,12 @@ site, these accounts can be merged as needed for your deployment:
 The integration of OpenStack service providers into the EGI Check-in is a
 two-step process:
 
-1.  Test integration with the development instance of EGI Check-in. This will
-    allow you to check complete the complete functionality of the system without
-    affecting the production Check-in service.
-1.  Once the integration is working correctly, register your provider with the
-    production instance of EGI Check-in to allow members of the EGI User
-    Community to access your service.
+1. Test integration with the development instance of EGI Check-in. This will
+   allow you to check complete the complete functionality of the system without
+   affecting the production Check-in service.
+1. Once the integration is working correctly, register your provider with the
+   production instance of EGI Check-in to allow members of the EGI User
+   Community to access your service.
 
 #### Registration into Check-in development instance
 
@@ -179,14 +184,14 @@ following steps
 
 ##### Pre-requisites
 
-1.  Keystone must run as a WSGI application behind an HTTP server (Apache is
-    used in this documentation, but any server should be possible if it has
-    OpenID connect/OAuth2.0 support). Keystone project has deprecated eventlet,
-    so you should be already running Keystone in such way.
-1.  Keystone must be run with SSL
-1.  You need to install
-    [mod_auth_openidc](https://github.com/pingidentity/mod_auth_openidc) for
-    adding support for OpenID Connect to Apache.
+1. Keystone must run as a WSGI application behind an HTTP server (Apache is used
+   in this documentation, but any server should be possible if it has OpenID
+   connect/OAuth2.0 support). Keystone project has deprecated eventlet, so you
+   should be already running Keystone in such way.
+1. Keystone must be run with SSL
+1. You need to install
+   [mod_auth_openidc](https://github.com/pingidentity/mod_auth_openidc) for
+   adding support for OpenID Connect to Apache.
 
 {{% alert title="IGTF CAs" color="info" %}} EGI monitoring checks that your
 Keystone accepts clients with certificates from the IGTF CAs. Please ensure that
@@ -255,7 +260,7 @@ perl -pe 's/----------/-----\n-----/' -i /etc/haproxy/certs/igtf-crls-bundle.pem
 Include this configuration on the Apache config for the virtual host of your
 Keystone service, using the client id and secret obtained above:
 
-```
+```apache
 OIDCResponseType "code"
 OIDCClaimPrefix "OIDC-"
 OIDCClaimDelimiter ;
@@ -395,41 +400,38 @@ openstack role add member --group ops --project ops
 Define a mapping of users from EGI Check-in to the group just created and
 restrict with the `OIDC-eduperson_entitlement` the VOs you want to support for
 that group. Substitute the group id and the allowed entitlements for the
-adequate values for your deployment:
+adequate values for your deployment, cf `mapping.egi.json`:
 
-```sh
-$ cat mapping.egi.json
+```json
 [
-    {
-        "local": [
-            {
-                "user": {
-            "name": "{0}"
+  {
+    "local": [
+      {
+        "user": {
+          "name": "{0}"
         },
-                "group": {
-                    "id": "89cf5b6708354094942d9d16f0f29f8f"
-                }
-            }
-        ],
-        "remote": [
-            {
-                "type": "HTTP_OIDC_SUB"
-            },
-            {
-                "type": "HTTP_OIDC_ISS",
-                "any_one_of": [
-                    "https://aai-dev.egi.eu/oidc/"
-                ]
-            },
-            {
-                "type": "OIDC-eduperson_entitlement",
-                "regex": true,
-                "any_one_of": [
-                    "^urn:mace:egi.eu:group:ops:role=vm_operator#aai.egi.eu$"
-                ]
-            }
+        "group": {
+          "id": "89cf5b6708354094942d9d16f0f29f8f"
+        }
+      }
+    ],
+    "remote": [
+      {
+        "type": "HTTP_OIDC_SUB"
+      },
+      {
+        "type": "HTTP_OIDC_ISS",
+        "any_one_of": ["https://aai-dev.egi.eu/oidc/"]
+      },
+      {
+        "type": "OIDC-eduperson_entitlement",
+        "regex": true,
+        "any_one_of": [
+          "^urn:mace:egi.eu:group:ops:role=vm_operator#aai.egi.eu$"
         ]
-    }
+      }
+    ]
+  }
 ]
 ```
 
@@ -651,7 +653,7 @@ SSLVerifyClient         optional
 SSLVerifyDepth          10
 SSLOptions              +StdEnvVars +ExportCertData
 
-# Adapt this URL if needed for your deployment
+# Adapt this URL if needed for your deployment
 <Location /v3/OS-FEDERATION/identity_providers/egi.eu/protocols/mapped/auth>
     # populate ENV variables
     GridSiteEnvs on
