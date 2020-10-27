@@ -86,24 +86,6 @@ AppDB](https://appdb.egi.eu/store/vo/training.egi.eu). The VO is also
 described at the [EGI Operations Portal training.egi.eu VO id
 card](http://operations-portal.egi.eu/vo/view/voname/training.egi.eu).
 
-## Modules and examples
-
-The training infrastructure was used in July 2015 for two face-to-face
-training courses that trained programmers about the use of the EGI Cloud
-(the first operational model above). The focus of these courses was on
-the use of the rOCCI client to interact with the providers (instantiate,
-delete, access VMs). During these courses the training infrastructure
-included three providers (CESNET, BIFI, UKIM) and hosted approx. 25
-student per event. Before each event the trainers prepared a basic VM
-that included the rOCCI client (with the training VO pre-configured in
-it), one user account for each student with a short-term certificate
-copied under each (with 24h lifetime). One instance of the VM was
-started on the infrastructure by the trainers before the event and the
-students were provided with login details for the user accounts. After
-logging in the students could use the OCCI commands of the rOCCI client
-with their own short-term certificates and could manage virtual machines
-on the 3 providers.
-
 ## Booking the infrastructure
 
 The infrastructure currently includes enough capacity to scale up to
