@@ -72,7 +72,7 @@ Follow these steps if you are using OpenID Connect to integrate with EGI:
    ]
    ```
 
-1. Update the mapping in your Keystone IdP: :
+1. Update the mapping in your Keystone IdP:
 
    ```sh
    openstack mapping set --rules mapping.json egi-mapping
