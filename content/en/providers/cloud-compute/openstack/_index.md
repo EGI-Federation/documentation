@@ -6,6 +6,8 @@ description: >
   Integration of OpenStack providers
 ---
 
+<!-- markdownlint-disable-file line-length -->
+
 This manual provides information on how to set up a Resource Centre providing
 cloud resources in the EGI infrastructure. Integration with FedCloud requires a
 _working OpenStack installation_ as a pre-requirement (see
@@ -114,8 +116,6 @@ The following **services** must be accessible to allow access to an
 OpenStack-based FedCloud site (default ports listed below, can be adjusted to
 your installation)
 
-<!-- markdownlint-disable line-length -->
-
 | Port         | Application            | Note                                      |
 | ------------ | ---------------------- | ----------------------------------------- |
 | **5000**/TCP | **OpenStack**/Keystone | Authentication to your OpenStack.         |
@@ -136,8 +136,6 @@ site, these accounts can be merged as needed for your deployment:
 | accounting   | Member of all projects and able to list users (allowed to `identity:list_users` in keystone) |
 | cloud-keeper | Permission to manage the images for all the projects supporting EGI VOs                      |
 | Other users  | Automatically created by Keystone and permission set as configured in the mappings           |
-
-<!-- markdownlint-enable line-length -->
 
 ## EGI AAI
 
@@ -201,7 +199,7 @@ For Apache HTTPd
 
 : HTTPd is able to use CAs and CRLs contained in a directory :
 
-```
+```apache
 SSLCACertificatePath    /etc/grid-security/certificates
 SSLCARevocationPath     /etc/grid-security/certificates
 ```
@@ -213,7 +211,7 @@ For haproxy
     Client verification should be set as optional otherwise accepted CAs
     won\'t be presented to the EGI monitoring. :
 
-```
+```haproxy
 # crt: concatenated cert, key and CA
 # ca-file: all IGTF CAs, concatenated as one file
 # crl-file: all IGTF CRLs, concatenated as one file
@@ -228,7 +226,7 @@ For nginx
     Client verification should be set as optional otherwise accepted CAs
     won\'t be presented to the EGI monitoring. :
 
-```
+```nginx
 ssl_client_certificate /etc/ssl/certs/igtf-cas-bundle.pem;
 ssl_crl /etc/ssl/certs/igtf-crls-bundle.pem;
 ssl_verify_client optional;
@@ -310,7 +308,7 @@ sudo a2enmod auth_openidc
 sure to correctly set the X-Forwarded-Proto and X-Forwarded-Port request
 headers, e.g. for haproxy:
 
-```
+```haproxy
 http-request set-header X-Forwarded-Proto https if { ssl_fc }
 http-request set-header X-Forwarded-Proto http if !{ ssl_fc }
 http-request set-header X-Forwarded-Port %[dst_port]
@@ -323,7 +321,7 @@ http-request set-header X-Forwarded-Port %[dst_port]
 Configure your `keystone.conf` to include in the `[auth]` section `openid` in
 the list of authentication methods:
 
-```
+```ini
 [auth]
 
 # This may change in your installation, add openid to the list of the methods you support
@@ -332,7 +330,7 @@ methods = password, token, openid
 
 Add a `[openid]` section as follows:
 
-```
+```ini
 [openid]
 # this is the attribute in the Keystone environment that will define the identity provider
 remote_id_attribute = HTTP_OIDC_ISS
@@ -340,7 +338,7 @@ remote_id_attribute = HTTP_OIDC_ISS
 
 Add your horizon host as trusted dashboard to the `[federation]` section:
 
-```
+```ini
 [federation]
 trusted_dashboard = https://<your horizon>/dashboard/auth/websso/
 ```
@@ -472,7 +470,7 @@ Keystone is now ready to accept EGI Check-in credentials.
 
 Edit your local_settings.py to include the following values:
 
-```
+```python
 # Enables keystone web single-sign-on if set to True.
 WEBSSO_ENABLED = True
 
@@ -599,7 +597,7 @@ the request. Besides you will need to update your configuration as follows:
 - Update Apache configuration to use [aai.egi.eu]{.title-ref} instead of
   \`aai-dev.egi.eu\`:
 
-  ```
+  ```apache
   OIDCProviderMetadataURL https://aai.egi.eu/oidc/.well-known/openid-configuration
   OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/oidc/introspect
   ```
@@ -643,7 +641,7 @@ a2enmod zgridsite
 Include these lines on your Apache config for the virtual host of your Keystone
 service:
 
-```
+```apache
 # Use the IGTF trust anchors for CAs and CRLs
 SSLCACertificatePath /etc/grid-security/certificates/
 SSLCARevocationPath /etc/grid-security/certificates/
@@ -672,7 +670,7 @@ SSLOptions              +StdEnvVars +ExportCertData
 Make sure that `mapped` authentication method exists in your `keystone.conf` in
 the `[auth]` section:
 
-```
+```ini
 [auth]
 
 # This may change in your installation, add mapped to the list of the methods you support
@@ -836,7 +834,7 @@ Notes:
     other service that needs to check keystone tokens.
   - Update the URLs of the services directly in the database:
 
-  ```
+  ```mysql
   mysql> use keystone;
   mysql> update endpoint set url="https://<keystone-host>:5000/v2.0" where url="http://<keystone-host>:5000/v2.0";
   mysql> update endpoint set url="https://<keystone-host>:35357/v2.0" where url="http://<keystone-host>:35357/v2.0";
