@@ -72,7 +72,7 @@ EGI Check-in can be easily configured as a OAuth2.0 provider for
 See below a sample configuration for the helm chart using Check-in production
 environment:
 
-```{.yaml}
+```yaml
 hub:
   extraEnv:
     OAUTH2_AUTHORIZE_URL: https://aai.egi.eu/oidc/authorize
@@ -91,7 +91,14 @@ auth:
       username_key: "sub"
       token_url: "https://aai.egi.eu/oidc/token"
       userdata_url: "https://aai.egi.eu/oidc/userinfo"
-      scope: ["openid", "profile", "email", "eduperson_scoped_affiliation", "eduperson_entitlement"]
+      scope:
+        [
+          "openid",
+          "profile",
+          "email",
+          "eduperson_scoped_affiliation",
+          "eduperson_entitlement",
+        ]
 ```
 
 To simplify the configuration and to add refresh capabilities to the
@@ -99,7 +106,7 @@ credentials, we have created a new
 [EGI Check-in authenticator](https://github.com/enolfc/oauthenticator) that can
 be configued as follows:
 
-```{.yaml}
+```yaml
 auth:
   state:
     enabled: true
@@ -111,7 +118,15 @@ auth:
       client_id: "<your client id>"
       client_secret: "<your client secret>"
       oauth_callback_url: "https://<your host>/hub/oauth_callback"
-      scope: ["openid", "profile", "email", "offline_access", "eduperson_scoped_affiliation", "eduperson_entitlement"]
+      scope:
+        [
+          "openid",
+          "profile",
+          "email",
+          "offline_access",
+          "eduperson_scoped_affiliation",
+          "eduperson_entitlement",
+        ]
 ```
 
 The `auth.state` configuration allows to store refresh tokens for the users that
@@ -131,7 +146,7 @@ deployed in the same namespace as the JupyterHub chart. The only needed
 configuration for the chart is an IGTF-recognised certificate for the host
 registered in GOCDB as accounting.
 
-```{.yaml}
+```yaml
 ssm:
   hostcert: |-
     <hostcert>
@@ -149,18 +164,18 @@ is then deployed as a
 deployed in the same namespace as the JupyterHub chart. Configuration of
 JupyterHub must include this section:
 
-```{.yaml}
+```yaml
 hub:
   services:
     status:
-       url: "http://status-web/"
-       admin: true
-       apiToken: "<a unique API token>"
+      url: "http://status-web/"
+      admin: true
+      apiToken: "<a unique API token>"
 ```
 
 Likewise the monitoring chart is configured as follows:
 
-```{.yaml}
+```yaml
 service:
   api_token: "<same API token as above>"
 ```
@@ -205,7 +220,7 @@ following sample configuration and adapt to your needs by setting:
   When moving to EGI Check-in production environment, make sure to remove the
   `hub.extraEnv.EGICHECKIN_HOST` variable.
 
-```{.yaml}
+```yaml
 ---
 proxy:
   secretToken: "<some secret>"
@@ -276,5 +291,6 @@ auth:
       client_secret: "<your egi checkin_client_secret>"
       oauth_callback_url: "https://<your notebooks host>/hub/oauth_callback"
       enable_auth_state: true
-      scope: ["openid", "profile", "email", "offline_access", "eduperson_scoped_affiliation", "eduperson_entitlement"]
+      scope: ["openid", "profile", "email", "offline_access",
+              "eduperson_scoped_affiliation", "eduperson_entitlement"]
 ```
