@@ -17,13 +17,13 @@ described at
 First get the docker image:
 
 ```sh
-$ docker pull grycap/ec3
+docker pull grycap/ec3
 ```
 
 And check that you can run a simple command:
 
 ```sh
-$ docker run grycap/ec3 list
+docker run grycap/ec3 list
  name  state  IP  nodes
 ------------------------
 ```
@@ -32,14 +32,16 @@ For convenience we will create a directory to keep the deployment configuration
 and status together.
 
 ```sh
-$ mkdir ec3-test
-$ cd ec3-test
+mkdir ec3-test
+cd ec3-test
 ```
 
 You can list the available templates for clusters with the `templates` command:
 
+<!-- markdownlint-disable line-length -->
+
 ```sh
-$ docker run grycap/ec3 templates
+docker run grycap/ec3 templates
           name              kind                                         summary
 ----------------------------------------------------------------------------------------------------------------------
           blcr            component Tool for checkpointing applications.
@@ -49,6 +51,8 @@ $ docker run grycap/ec3 templates
        slurm-repo           main    Install and configure a cluster SLURM from distribution repositories.
 [...]
 ```
+
+<!-- markdownlint-enable line-length -->
 
 We will use the `slurm` template for configuring our cluster.
 
@@ -121,6 +125,8 @@ $ eval "$(egicli endpoint env --site CESGA --project-id 3a8e9d966e644405bf19b536
 
 Now, get the available networks, we will need both a public and private network:
 
+<!-- markdownlint-disable line-length -->
+
 ```sh
 $ openstack network list
 +--------------------------------------+----------------------+--------------------------------------+
@@ -149,12 +155,16 @@ $  openstack image list
 +--------------------------------------+----------------------------------------------------------+--------+
 ```
 
+<!-- markdownlint-enable line-length -->
+
 For our example we will use the EGI CentOS 7 with id
 `8c4e2568-67a2-441a-b696-ac1b7c60de9c`.
 
 Finally, with all this information we can create the `images` template for EC3
 that specifies the site configuration for our deployment. Save this file as
 `templates/centos.radl`:
+
+<!-- markdownlint-disable line-length -->
 
 ```radl
 description centos-cesga (
@@ -189,6 +199,8 @@ system wn (
     disk.0.os.credentials.username = 'centos'
 )
 ```
+
+<!-- markdownlint-enable line-length -->
 
 Note we have used `public00` as public network and opened port `22` to allow ssh
 access. The private network uses `net-vo.access.egi.eu`. We have two kind of VMs
@@ -240,6 +252,8 @@ EC3 will deploy [CLUES](https://www.grycap.upv.es/clues/eng/index.php), a
 cluster management system that will power on/off nodes as needed depending on
 the load. Initially all the nodes will be off:
 
+<!-- markdownlint-disable line-length -->
+
 ```sh
 node                          state    enabled   time stable   (cpu,mem) used   (cpu,mem) total
 -----------------------------------------------------------------------------------------------
@@ -281,6 +295,8 @@ debug*       up   infinite      4  down* wn[2-5]
 debug*       up   infinite      1   idle wn1
 ```
 
+<!-- markdownlint-enable line-length -->
+
 ## Destroying the cluster
 
 Once you are done with the cluster and want to destroy it, you can use the
@@ -289,12 +305,13 @@ credentials to access the site will be expired and need to refreshed first with
 `egicli endpoint ec3-refresh`:
 
 ```sh
-$ egicli endpoint ec3-refresh # refresh your auth.dat
-$ docker run -it -v $PWD:/root/ -w /root grycap/ec3 list # list your clusters
+egicli endpoint ec3-refresh # refresh your auth.dat
+docker run -it -v $PWD:/root/ -w /root grycap/ec3 list # list your clusters
    name       state           IP        nodes
 ----------------------------------------------
  mycluster  configured  193.144.46.234    0
-$ docker run -it -v $PWD:/root/ -w /root grycap/ec3 destroy mycluster -a auth.dat -y
+docker run -it -v $PWD:/root/ -w /root grycap/ec3 \
+    destroy mycluster -a auth.dat -y
 WARNING: you are going to delete the infrastructure (including frontend and nodes).
 Success deleting the cluster!
 ```
