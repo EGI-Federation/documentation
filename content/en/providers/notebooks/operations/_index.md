@@ -5,6 +5,8 @@ description: "Getting the service up and running"
 weight: 20
 ---
 
+<!-- markdownlint-disable-file line-length -->
+
 In this section you can find the common operational activities related to keep
 the service available to our users.
 
@@ -35,7 +37,7 @@ keybase. You\'ll need to be part of the `opslife` team in keybase to access.
 Start by cloning the repo:
 
 ```sh
-$ git clone keybase://team/opslife/egi-notebooks
+git clone keybase://team/opslife/egi-notebooks
 ```
 
 ## Kubernetes
@@ -46,17 +48,17 @@ directory on your local git repository from the template, add it to the repo,
 and get `terraform` ready:
 
 ```sh
-$ cp -a template <new provider>
-$ git add <new provider>
-$ cd <new provider>/terraform
-$ terraform init
+cp -a template <new provider>
+git add <new provider>
+cd <new provider>/terraform
+terraform init
 ```
 
 Using the `egicli` you can get the list of projects and their ids for a given
 site:
 
 ```sh
-$ egicli endpoint projects --site CESGA
+egicli endpoint projects --site CESGA
 id                                Name                 enabled    site
 --------------------------------  -------------------  ---------  ------
 3a8e9d966e644405bf19b536adf7743d  vo.access.egi.eu     True       CESGA
@@ -70,20 +72,20 @@ And with the project ID, you can obtain all the environment variables needed to
 interact with the OpenStack APIs of the site:
 
 ```sh
-$ eval "$(egicli endpoint env --site CESGA --project-id fcaf23d103c1485694e7494a59ee5f09)"
+eval "$(egicli endpoint env --site CESGA --project-id fcaf23d103c1485694e7494a59ee5f09)"
 ```
 
 Now you are ready to use the openstack or terraform at the site. The token
 obtained is valid for 1 hour, you can refresh it at any time with:
 
 ```sh
-$ eval "$(egicli endpoint token --site CESGA --project-id fcaf23d103c1485694e7494a59ee5f09)"
+eval "$(egicli endpoint token --site CESGA --project-id fcaf23d103c1485694e7494a59ee5f09)"
 ```
 
 First get the network IDs and pool to use for the site:
 
 ```sh
-$ openstack network list
+openstack network list
 +--------------------------------------+-------------------------+--------------------------------------+
 | ID                                   | Name                    | Subnets                              |
 +--------------------------------------+-------------------------+--------------------------------------+
@@ -106,7 +108,7 @@ You may want to check the right flavors for your VMs and adapt other variables
 in `terraform.tfvars`. To get a list of flavors you can use:
 
 ```sh
-$ openstack flavor list
+openstack flavor list
 +--------------------------------------+----------------+-------+------+-----------+-------+-----------+
 | ID                                   | Name           |   RAM | Disk | Ephemeral | VCPUs | Is Public |
 +--------------------------------------+----------------+-------+------+-----------+-------+-----------+
@@ -127,7 +129,7 @@ Finally ensure your public ssh key is also listed in the `cloud-init.yaml` file
 and then you are ready to deploy the cluster with:
 
 ```sh
-$ terraform apply
+terraform apply
 ```
 
 Your VMs are up and running, it\'s time to get kubernetes configured and running
@@ -136,14 +138,14 @@ with ansible.
 The following ansible role needs to be installed first:
 
 ```sh
-$ ansible-galaxy install grycap.kubernetes
+ansible-galaxy install grycap.kubernetes
 ```
 
 and then:
 
 ```sh
-$ cd ..   # you should be now in <new provider>
-$ ANSIBLE_TRANSFORM_INVALID_GROUP_CHARS=silently TF_STATE=./terraform \
+cd ..   # you should be now in <new provider>
+ANSIBLE_TRANSFORM_INVALID_GROUP_CHARS=silently TF_STATE=./terraform \
   ansible-playbook --inventory-file=$(which terraform-inventory) \
   playbooks/k8s.yaml
 ```
@@ -156,8 +158,8 @@ host (you can get the different hosts with
 `TF_STATE=./terraform terraform-inventory --inventory`)
 
 ```sh
-$ ssh -o ProxyCommand="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p -q egi@<ingress ip>" \
-      -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null egi@<master ip>
+ssh -o ProxyCommand="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p -q egi@<ingress ip>" \
+    -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null egi@<master ip>
 egi@k8s-master:~$ kubectl get nodes
 NAME            STATUS   ROLES    AGE   VERSION
 k8s-master      Ready    master   33m   v1.15.7
@@ -218,8 +220,8 @@ Go and edit the deployment description file to add this information (search for
 For deploying the notebooks instance we will also use `ansible`:
 
 ```sh
-$ ANSIBLE_TRANSFORM_INVALID_GROUP_CHARS=silently TF_STATE=./terraform ansible-playbook \
-       --inventory-file=$(which terraform-inventory) playbooks/notebooks.yaml
+ANSIBLE_TRANSFORM_INVALID_GROUP_CHARS=silently TF_STATE=./terraform ansible-playbook \
+     --inventory-file=$(which terraform-inventory) playbooks/notebooks.yaml
 ```
 
 The first deployment trial may fail due to a timeout caused by the downloading
