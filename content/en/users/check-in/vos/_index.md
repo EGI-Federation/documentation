@@ -41,8 +41,7 @@ following link:
    login credentials already linked to your EGI account.
 
 2. To view the existing members, expand the **People** drop down menu and click
-   on **My <VO-NAME> Population** (for example, **My vo.example.org
-   Population**)
+   on **My VO-NAME Population** (for example, **My vo.example.org Population**)
 
    ![My VO population menu](./check-in-my-vo-population.png)
 
