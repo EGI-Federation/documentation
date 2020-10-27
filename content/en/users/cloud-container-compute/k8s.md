@@ -7,27 +7,30 @@ description: >
 ---
 
 There are several container management tools available, on the EGI Cloud we use
-[Kubernetes](https://kubernetes.io) as the default platform for our service. This
-guide explains how to get a running scalable Kubernetes deployment for your
+[Kubernetes](https://kubernetes.io) as the default platform for our service.
+This guide explains how to get a running scalable Kubernetes deployment for your
 applications with EC3.
 
 ## Getting started
 
 Before getting your kubernetes cluster deployed, you need to get access to the
-Cloud Compute service, check the [Authentication and Authorisation guide](../../cloud-compute/auth)
-for more information. You should also get [`egicli`](https://github.com/EGI-Foundation/egcli/)
-installed to get EC3 templates needed to start deployment.
+Cloud Compute service, check the
+[Authentication and Authorisation guide](../../cloud-compute/auth) for more
+information. You should also get
+[`egicli`](https://github.com/EGI-Foundation/egcli/) installed to get EC3
+templates needed to start deployment.
 
 Your kubernetes deployment needs to be performed at an specific provider (site)
-and project. Discover them using `egicli` as described in the [EC3 tutorial](../cloud-compute/ec3/basics).
+and project. Discover them using `egicli` as described in the
+[EC3 tutorial](../cloud-compute/ec3/basics).
 
 ### EC3 Templates
 
-EC3 relies on a set of *templates* that will determine what will be deployed on
+EC3 relies on a set of _templates_ that will determine what will be deployed on
 the infrastructure. `egicli` helps you to get an initial set of templates for
 your kubernetes deployment:
 
-``` shell
+```shell
 $ mkdir k8s
 $ cd k8s
 $ egicli endpoint ec3 --site <your site> --project-id <project_id>
@@ -75,14 +78,13 @@ Now you are ready to deploy the cluster using `launch` command of ec3 with:
 
 1. the name of the deployment, `k8s` in this case
 
-1. a list of templates: `kubernetes` for configuring kubernetes, `ubuntu`
-   for specifying the image and site details, `refresh` to enable credential
-   refresh and elasticity
+1. a list of templates: `kubernetes` for configuring kubernetes, `ubuntu` for
+   specifying the image and site details, `refresh` to enable credential refresh
+   and elasticity
 
 1. the credentials to access the site with `-a auth.dat`
 
-
-``` shell
+```shell
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 launch k8s kubernetes ubuntu refresh -a auth.dat
 Creating infrastructure
 Infrastructure successfully created with ID: b9577c34-f818-11ea-a644-2e0fc3c063db
@@ -93,7 +95,7 @@ Front-end ready!
 
 Your kubernetes deployment is now ready, log in with the `ssh` command of ec3:
 
-``` shell
+```shell
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 ssh k8s
 Warning: Permanently added '193.144.46.249' (ECDSA) to the list of known hosts.
 Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-109-generic x86_64)
@@ -118,16 +120,16 @@ cloudadm@kubeserver:~$
 
 You can interact with the kubernetes cluster with the `kubectl` command:
 
-``` shell
+```shell
 cloudadm@kubeserver:~$ sudo kubectl get nodes
 NAME                     STATUS   ROLES    AGE   VERSION
 kubeserver.localdomain   Ready    master   23h   v1.18.3
 ```
 
-The cluster will only have one node (the master) and will start new nodes as
-you create pods. Alternatively you can poweron nodes manually:
+The cluster will only have one node (the master) and will start new nodes as you
+create pods. Alternatively you can poweron nodes manually:
 
-``` shell
+```shell
 cloudadm@kubeserver:~$ clues status
 node                          state    enabled   time stable   (cpu,mem) used   (cpu,mem) total
 -----------------------------------------------------------------------------------------------
@@ -146,50 +148,55 @@ wn1.localdomain          Ready    <none>   6m49s   v1.18.3
 
 ## Exposing services outside the cluster
 
-Kubernetes uses [services](https://kubernetes.io/docs/concepts/services-networking/service/)
-for exposing an applications via the network. The services can rely on Load Balancers
-supported at the underlying cloud provider, which is not always feasible on the
-EGI Cloud providers. As an alternative solution we use an [ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+Kubernetes uses
+[services](https://kubernetes.io/docs/concepts/services-networking/service/) for
+exposing an applications via the network. The services can rely on Load
+Balancers supported at the underlying cloud provider, which is not always
+feasible on the EGI Cloud providers. As an alternative solution we use an
+[ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 which allows us to expose services using rules based on host names.
 
-Helm allows you to quickly install the [nginx based ingress](https://github.com/kubernetes/ingress-nginx/).
-Add the helm repos:
+Helm allows you to quickly install the
+[nginx based ingress](https://github.com/kubernetes/ingress-nginx/). Add the
+helm repos:
 
-``` shell
+```shell
 cloudadm@kubeserver:~$ sudo helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 cloudadm@kubeserver:~$ sudo helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 cloudadm@kubeserver:~$ sudo helm repo update
 ```
 
-Create a configuration file (`ingress.yaml`), get the externalIP using `ip addr`:
+Create a configuration file (`ingress.yaml`), get the externalIP using
+`ip addr`:
 
-``` yaml
+```yaml
 controller:
   tolerations:
-  - effect: NoSchedule
-    key: node-role.kubernetes.io/master
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
   service:
     type: NodePort
     externalIPs:
-    - 192.168.10.3
+      - 192.168.10.3
 defaultBackend:
   tolerations:
-  - effect: NoSchedule
-    key: node-role.kubernetes.io/master
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
 ```
 
 and install:
 
-``` shell
+```shell
 cloudadm@kubeserver:~$ sudo helm install ingress -n kube-system -f ingress.yaml ingress-nginx/ingress-nginx
 ```
 
 Now you are ready to expose your services using a valid hostname. Use the
-[EGI Cloud Dynamic DNS service](https://nsupdate.fedcloud.eu/) for getting hostnames
-if you need. Assign as IP the public IP of the master node. Once you have a hostname
-assigned to the master IP, the ingress will be able to reply to requests already:
+[EGI Cloud Dynamic DNS service](https://nsupdate.fedcloud.eu/) for getting
+hostnames if you need. Assign as IP the public IP of the master node. Once you
+have a hostname assigned to the master IP, the ingress will be able to reply to
+requests already:
 
-``` shell
+```shell
 $ curl ingress.test.fedcloud.eu
 <html>
 <head><title>404 Not Found</title></head>
@@ -200,10 +207,10 @@ $ curl ingress.test.fedcloud.eu
 </html>
 ```
 
-The following example yaml creates a service and exposes at that ingress.test.fedcloud.eu
-host:
+The following example yaml creates a service and exposes at that
+ingress.test.fedcloud.eu host:
 
-``` yaml
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -219,10 +226,10 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
+        - name: nginx
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -232,8 +239,8 @@ metadata:
     app: nginx
 spec:
   ports:
-  - port: 80
-    protocol: TCP
+    - port: 80
+      protocol: TCP
   selector:
     app: nginx
 ---
@@ -243,19 +250,20 @@ metadata:
   name: ingress-test
 spec:
   rules:
-  - host: ingress.test.fedcloud.eu
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          serviceName: my-nginx
-          servicePort: 80
+    - host: ingress.test.fedcloud.eu
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              serviceName: my-nginx
+              servicePort: 80
 ```
 
-Now the ingress will redirect request to the NGINX pod that we have just created:
+Now the ingress will redirect request to the NGINX pod that we have just
+created:
 
-``` shell
+```shell
 $ curl ingress.test.fedcloud.eu
 <!DOCTYPE html>
 <html>
@@ -287,8 +295,8 @@ Commercial support is available at
 ## Volumes
 
 Volumes on these deployments can be supported with NFS volume driver. You can
-either manually configure the server on one of the nodes or use EC3 to deploy
-it and configure it for you. Create a `templates/nfs.radl` to do so:
+either manually configure the server on one of the nodes or use EC3 to deploy it
+and configure it for you. Create a `templates/nfs.radl` to do so:
 
 ```
 description nfs (
@@ -335,7 +343,7 @@ configure wn (
 if you have a running cluster, you can add the NFS support by reconfiguring the
 cluster:
 
-``` shell
+```shell
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 reconfigure k8s -a auth.dat -t nfs
 Reconfiguring infrastructure
 Front-end configured with IP 193.144.46.249
@@ -344,7 +352,8 @@ Front-end ready!
 ```
 
 And then install the NFS driver in kubernetes with helm:
-``` shell
+
+```shell
 cloudadm@kubeserver:~$ sudo helm install nfs-provisioner stable/nfs-client-provisioner \
                      		 --namespace kube-system \
                      		 --set nfs.server=192.168.10.9 \
@@ -354,10 +363,11 @@ cloudadm@kubeserver:~$ sudo helm install nfs-provisioner stable/nfs-client-provi
 
 ```
 
-Now you are ready to create a [PVC](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
-and attach it to a pod, see this example:
+Now you are ready to create a
+[PVC](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) and
+attach it to a pod, see this example:
 
-``` yaml
+```yaml
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -379,22 +389,22 @@ metadata:
 spec:
   restartPolicy: Never
   volumes:
-  - name: vol
-    persistentVolumeClaim:
-      claimName: test-pvc
-  containers:
-  - name: test
-    image: "busybox"
-    command: ["sleep", "1d"]
-    volumeMounts:
     - name: vol
-      mountPath: /volume
+      persistentVolumeClaim:
+        claimName: test-pvc
+  containers:
+    - name: test
+      image: "busybox"
+      command: ["sleep", "1d"]
+      volumeMounts:
+        - name: vol
+          mountPath: /volume
 ```
 
 Once you apply the yaml, you will see the new PVC gets bounded to a PV created
 in NFS:
 
-``` shell
+```shell
 cloudadm@kubeserver:~$ sudo kubectl get pvc
 NAME       STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 test-pvc   Bound    pvc-39f970de-eaad-44d7-b49f-90dc9de54a14   3Gi        RWO            nfs-client     9m46s
@@ -402,11 +412,10 @@ test-pvc   Bound    pvc-39f970de-eaad-44d7-b49f-90dc9de54a14   3Gi        RWO   
 
 ## Destroying the cluster
 
-Once you don't need the cluster anymore, you can undeploy with the `destroy` command
-of EC3:
+Once you don't need the cluster anymore, you can undeploy with the `destroy`
+command of EC3:
 
-
-``` shell
+```shell
 $ egicli endpoint ec3-refresh # refresh your credentials to interact with the cluster
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 destroy k8s -y -a auth.dat
 WARNING: you are going to delete the infrastructure (including frontend and nodes).
