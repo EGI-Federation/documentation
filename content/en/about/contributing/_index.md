@@ -44,6 +44,12 @@ made in two ways:
 
 ### Contributing via a Pull Request
 
+{{% alert title="Note" color="info" %}} If you need to discuss your change
+beforehand, like for adding a new section of if you have any doubts, you can ask
+the maintainers it by creating a
+[GitHub issue](https://github.com/EGI-Foundation/documentation/issues/new).
+{{% /alert %}}
+
 Before proposing a contribution via the so-called Pull Request (PR), ideally
 there is an open issue describing the need for your contribution (refer to this
 issue number when you submit the Pull Request). We have a 3 steps process for
