@@ -21,7 +21,7 @@ for the given VO.
 
 Follow these steps if you are using OpenID Connect to integrate with EGI:
 
-1. Create a group where users belongig to the VO will be mapped to: :
+1. Create a group where users belongig to the VO will be mapped to:
 
    ```sh
    group_id=$(openstack group create -f value -c id <new_group>)
