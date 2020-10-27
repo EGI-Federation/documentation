@@ -12,7 +12,8 @@ services.
 
 Organisations who want to register their IdP in Check-in needs to fill
 this [form](https://documents.egi.eu/document/3086) in case the IdP is
-not publishing REFEDS [R&S](https://refeds.org/category/research-and-scholarship) and [Sirtfi](https://refeds.org/sirtfi compliance in eduGAIN. A PDF scan of a
+not publishing REFEDS [R&S](https://refeds.org/category/research-and-scholarship)
+and [Sirtfi](https://refeds.org/sirtfi) compliance in eduGAIN. A PDF scan of a
 printed and signed copy should be sent to `operations_at_egi.eu`
 
 ## Identity Provider integration workflow
