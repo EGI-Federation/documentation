@@ -1,0 +1,4 @@
+style 'style.rb'
+# MD002: first level header is managed by hugo theme
+# MD024: several sections repeat the header name, may be reviewed later
+rules '~MD002', '~MD024'
