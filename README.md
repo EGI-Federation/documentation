@@ -25,8 +25,8 @@ Sources to build
 
 ### Installing dependencies, building and testing
 
-To install npm+nodejs please check the instructions at:
-https://www.npmjs.com/get-npm
+To install npm+nodejs please check the
+[official instructions](https://www.npmjs.com/get-npm).
 
 The rest of the tools can be installed as follows:
 
@@ -52,7 +52,8 @@ To test your changes:
 ./binaries/<platform>/hugo server -D
 ```
 
-The website is available locally at: http://localhost:1313/
+The website is available locally at:
+[http://localhost:1313/](http://localhost:1313/).
 
 ## Usage
 
@@ -75,6 +76,7 @@ git commit themes/docsy -m 'Update theme'
 
 To speed up the travis run a binary version of Hugo (extended version) for Linux
 64 bit is included in the repository under `binaries`. Updates can be downloaded
-at https://github.com/gohugoio/hugo/releases.
+at
+[https://github.com/gohugoio/hugo/releases](https://github.com/gohugoio/hugo/releases).
 
 Travis will automatically deploy a new version when a PR is merged to master.
