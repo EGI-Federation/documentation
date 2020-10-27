@@ -19,9 +19,8 @@ from image inclusion to advanced display structures.
 
 For references The following shortcodes are available:
 
-- Hugo's default shortcodes: https://gohugo.io/content-management/shortcodes/
-- The Docsy theme shortcodes:
-  https://www.docsy.dev/docs/adding-content/shortcodes/
+- [Hugo's default shortcodes](https://gohugo.io/content-management/shortcodes/)
+- [The Docsy theme shortcodes](https://www.docsy.dev/docs/adding-content/shortcodes/)
 
 ### Linking to another page
 
