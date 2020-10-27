@@ -12,16 +12,17 @@ you can then adapt to create other kind of clusters easily.
 ## Getting started
 
 We will use docker for running EC3, direct installation is also possible and
-described at [EC3 documentation](https://ec3.readthedocs.io/en/devel/intro.html#installation).
+described at
+[EC3 documentation](https://ec3.readthedocs.io/en/devel/intro.html#installation).
 First get the docker image:
 
-``` {.sh}
+```{.sh}
 $ docker pull grycap/ec3
 ```
 
 And check that you can run a simple command:
 
-``` {.sh}
+```{.sh}
 $ docker run grycap/ec3 list
  name  state  IP  nodes
 ------------------------
@@ -30,14 +31,14 @@ $ docker run grycap/ec3 list
 For convenience we will create a directory to keep the deployment configuration
 and status together.
 
-``` {.sh}
+```{.sh}
 $ mkdir ec3-test
 $ cd ec3-test
 ```
 
 You can list the available templates for clusters with the `templates` command:
 
-``` {.sh}
+```{.sh}
 $ docker run grycap/ec3 templates
           name              kind                                         summary
 ----------------------------------------------------------------------------------------------------------------------
@@ -65,7 +66,7 @@ We will use `egicli` to discover all needed details, set your credentials
 [the authentication guide](../../auth/#oidc-auth-using-check-in) and start by
 listing the available sites:
 
-``` {.sh}
+```{.sh}
 $ egicli endpoint list
 Site                type                URL
 ------------------  ------------------  ------------------------------------------------
@@ -90,10 +91,11 @@ fedcloud.srce.hr    org.openstack.nova  https://cloud.cro-ngi.hr:5000/v3/
 Kharkov-KIPT-LCG2   org.openstack.nova  https://cloud.kipt.kharkov.ua:5000/v3
 ```
 
-We will use `CESGA`, which has `https://fedcloud-osservices.egi.cesga.es:5000/v3`
-as URL. Get the available projects at the site:
+We will use `CESGA`, which has
+`https://fedcloud-osservices.egi.cesga.es:5000/v3` as URL. Get the available
+projects at the site:
 
-``` {.sh}
+```{.sh}
 $  egicli endpoint projects --site CESGA
 id                                Name              enabled    site
 --------------------------------  ----------------  ---------  ------
@@ -103,7 +105,7 @@ id                                Name              enabled    site
 Using the project id and the site name, you can create the authorisation files
 needed for ec3:
 
-``` {.sh}
+```{.sh}
 $ egicli endpoint ec3 --site CESGA --project-id 3a8e9d966e644405bf19b536adf7743d
 ```
 
@@ -113,13 +115,13 @@ running clusters to be managed on the infrastructure.
 
 Let's get also a working OpenStack setup:
 
-``` {.sh}
+```{.sh}
 $ eval "$(egicli endpoint env --site CESGA --project-id 3a8e9d966e644405bf19b536adf7743d)"
 ```
 
 Now, get the available networks, we will need both a public and private network:
 
-``` {.sh}
+```{.sh}
 $ openstack network list
 +--------------------------------------+----------------------+--------------------------------------+
 | ID                                   | Name                 | Subnets                              |
@@ -131,7 +133,7 @@ $ openstack network list
 
 Then, get the list of images available:
 
-``` {.sh}
+```{.sh}
 $  openstack image list
 +--------------------------------------+----------------------------------------------------------+--------+
 | ID                                   | Name                                                     | Status |
@@ -188,22 +190,22 @@ system wn (
 )
 ```
 
-Note we have used `public00` as public network and opened port `22` to allow
-ssh access. The private network uses `net-vo.access.egi.eu`. We have two kind
-of VMs in almost every deployment: the `front`, that runs the batch system, and
-the `wn`, that will execute the jobs. In our example, both will use the same
-CentOS image, which is specified with the `disk.0.image.url = 'ost://fedcloud-osservices.egi.cesga.es/8c4e2568-67a2-441a-b696-ac1b7c60de9c'`
+Note we have used `public00` as public network and opened port `22` to allow ssh
+access. The private network uses `net-vo.access.egi.eu`. We have two kind of VMs
+in almost every deployment: the `front`, that runs the batch system, and the
+`wn`, that will execute the jobs. In our example, both will use the same CentOS
+image, which is specified with the
+`disk.0.image.url = 'ost://fedcloud-osservices.egi.cesga.es/8c4e2568-67a2-441a-b696-ac1b7c60de9c'`
 line: `ost` refers to OpenStack, `fedcloud-osservices.egi.cesga.es` is the
 hostname of the URL obtained above with `egicli endpoint list` and
 `8c4e2568-67a2-441a-b696-ac1b7c60de9c` is the id of the image in OpenStack. The
 size of the VM is also specified.
 
-
 ## Launch cluster
 
 We are ready now to deploy the cluster with ec3 (this can take several minutes):
 
-``` {.sh}
+```{.sh}
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 launch mycluster slurm ubuntu refresh -a auth.dat
 Creating infrastructure
 Infrastructure successfully created with ID: 74fde7be-edee-11ea-a6e9-da8b0bbd7c73
@@ -214,7 +216,7 @@ Front-end ready!
 
 We can check the status of the deployment:
 
-``` {.sh}
+```{.sh}
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 list
    name       state           IP        nodes
 ----------------------------------------------
@@ -224,7 +226,7 @@ $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 list
 And once configured, ssh to the front node. The `is_cluster_ready` command will
 report whether the cluster is fully configured or not:
 
-``` {.sh}
+```{.sh}
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 ssh mycluster
 Warning: Permanently added '193.144.46.234' (ECDSA) to the list of known hosts.
 Last login: Thu Sep  3 14:07:46 2020 from torito.i3m.upv.es
@@ -234,11 +236,11 @@ Cluster configured!
 cloudadm@slurmserver:~$
 ```
 
-EC3 will deploy [CLUES](https://www.grycap.upv.es/clues/eng/index.php), a cluster
-management system that will power on/off nodes as needed depending on the load.
-Initially all the nodes will be off:
+EC3 will deploy [CLUES](https://www.grycap.upv.es/clues/eng/index.php), a
+cluster management system that will power on/off nodes as needed depending on
+the load. Initially all the nodes will be off:
 
-``` {.sh}
+```{.sh}
 node                          state    enabled   time stable   (cpu,mem) used   (cpu,mem) total
 -----------------------------------------------------------------------------------------------
 wn1                             off    enabled     00h03'55"      0,0.0            1,1073741824.0
@@ -251,7 +253,7 @@ wn5                             off    enabled     00h03'55"      0,0.0         
 
 SLURM will also report nodes as down:
 
-``` {.sh}
+```{.sh}
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
 debug*       up   infinite      5  down* wn[1-5]
 ```
@@ -259,7 +261,7 @@ debug*       up   infinite      5  down* wn[1-5]
 As we submit a first job, some nodes will be powered on to meet the request. You
 can also start them manually with `clues poweron`.
 
-``` {.sh}
+```{.sh}
 cloudadm@slurmserver:~$ srun hostname
 srun: Required node not available (down, drained or reserved)
 srun: job 2 queued and waiting for resources
@@ -286,7 +288,7 @@ Once you are done with the cluster and want to destroy it, you can use the
 credentials to access the site will be expired and need to refreshed first with
 `egicli endpoint ec3-refresh`:
 
-``` {.sh}
+```{.sh}
 $ egicli endpoint ec3-refresh # refresh your auth.dat
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 list # list your clusters
    name       state           IP        nodes
