@@ -18,9 +18,10 @@ description: "Documentation related to EGI activities"
     Learn More about EGI <i class="fas fa-arrow-alt-circle-right ml-2"></i>
   </a>
 
-  <a class="btn btn-lg btn-secondary mr-3 mb-4" href="{{< relref "/about/contributing" >}}">
-    Contribute <i class="fab fa-github ml-2 "></i>
-  </a>
+<a class="btn btn-lg btn-secondary mr-3 mb-4"
+href="{{< relref "/about/contributing" >}}"> Contribute
+<i class="fab fa-github ml-2 "></i> </a>
+
   <p class="lead mt-5">EGI Documentation for users and service providers.</p>
 
 {{< blocks/link-down color="info" >}}
@@ -31,6 +32,7 @@ description: "Documentation related to EGI activities"
 {{% blocks/lead color="primary" %}}
 
 This is EGI documentation.
+
 {{% /blocks/lead %}}
 
 {{< blocks/section color="dark" type="features">}}
@@ -39,7 +41,8 @@ The EGI Federation is supporting lots of different user communities.
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/EGI-Foundation/documentation" %}}
-We do a [Pull Request](https://github.com/EGI-Foundation/documentation/pulls) contributions workflow on **GitHub**. New users are always welcome!
+We do a [Pull Request](https://github.com/EGI-Foundation/documentation/pulls)
+contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/EGI_eInfra" %}}
