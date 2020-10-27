@@ -4,7 +4,7 @@ linkTitle: "Grid Storage"
 type: docs
 weight: 55
 description: >
-    Access to Grid Storage provided by the EGI HTC providers
+  Access to Grid Storage provided by the EGI HTC providers
 ---
 
 ## Grid Storage
@@ -15,19 +15,23 @@ different protocols and can be replicated across different providers to increase
 fault-tolerance. Grid Storage gives you complete control over the data you share
 and with whom. Main features:
 
--   Access highly-scalable storage from anywhere
--   Control the data you share
--   Organise your data using a flexible hierarchical structure
+- Access highly-scalable storage from anywhere
+- Control the data you share
+- Organise your data using a flexible hierarchical structure
 
-Grid Storage file access is based on [gridFTP](https://en.wikipedia.org/wiki/GridFTP) and [WebDav/HTTP](https://en.wikipedia.org/wiki/WebDAV) protocols together
-with [XRootD](https://xrootd.slac.stanford.edu/) and legacy [SRM](https://www.gridpp.ac.uk/wiki/SRM) (under deprecation at some of the endpoints).
+Grid Storage file access is based on
+[gridFTP](https://en.wikipedia.org/wiki/GridFTP) and
+[WebDav/HTTP](https://en.wikipedia.org/wiki/WebDAV) protocols together with
+[XRootD](https://xrootd.slac.stanford.edu/) and legacy
+[SRM](https://www.gridpp.ac.uk/wiki/SRM) (under deprecation at some of the
+endpoints).
 
 Several Grid storage implementation are available on the infrastructure, the
 most common are the following:
 
--   [dCache](https://www.dcache.org/)
--   [DPM](https://twiki.cern.ch/twiki/bin/view/DPM/)
--   [StoRM](https://italiangrid.github.io/storm/)
+- [dCache](https://www.dcache.org/)
+- [DPM](https://twiki.cern.ch/twiki/bin/view/DPM/)
+- [StoRM](https://italiangrid.github.io/storm/)
 
 ## Endpoint Discovery
 
@@ -55,7 +59,6 @@ lcg-infosites --vo biomed  se
 ------------------------------------------
     280375465082             n.a  SRM  	ccsrm.ihep.ac.cn
      10995116266              11  SRM  	cirigridse01.univ-bpclermont.fr
-
 ```
 
 ## Client access
@@ -71,8 +74,8 @@ The client widely used to access grid-storage is
 available for installation both on RHEL and Debian compatible systems.
 
 In particular, gfal2 provides and abstraction layer on top of several storage
-protocols (XRootD, WebDAV, SRM, gsiftp, etc) and therefore is quite
-convenient as the same API can be used to access different protocols.
+protocols (XRootD, WebDAV, SRM, gsiftp, etc) and therefore is quite convenient
+as the same API can be used to access different protocols.
 
 The gfal2 CLI can be installed as follows (for RHEL compatible systems):
 
@@ -151,9 +154,9 @@ performed within the Data Management framework used by Collaborations and
 Experiments.
 
 In EGI for instance, the EGI Workload Management System
-[EGI Workload Manager](../../workload-manager/), provides a way to efficiently access grid
-storage endpoints in order to read and store files on the infrastructures and to
-catalogue the existing file and related location.
+[EGI Workload Manager](../../workload-manager/), provides a way to efficiently
+access grid storage endpoints in order to read and store files on the
+infrastructures and to catalogue the existing file and related location.
 
 The users when running computation via DIRAC does not actually access the
 storage directly, but they can of course retrieve the output of the computation
