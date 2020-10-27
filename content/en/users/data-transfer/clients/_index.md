@@ -37,9 +37,8 @@ X.509 User certificate, please refer to this
 [section](../api/#authentication--authorisation)  
 for more information.
 
-Full documentation about the FTS CLI is available at:
-
-https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/cli/index.html
+Full documentation about the FTS CLI is available
+[online](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/cli/index.html).
 
 ### fts-rest-whoami
 
