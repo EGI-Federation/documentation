@@ -196,11 +196,7 @@ obtains the following entitlements:
 
 COU Admin Groups are used to determine COU Administrators. Admin Groups are
 automatically created when a COU is created. The default name for COU admin
-groups is
-
-```
-CO:COU:<COU_Name>:admins
-```
+groups is `CO:COU:<COU_Name>:admins`
 
 For example `CO:COU:vo.example.org:admins`
 
@@ -237,11 +233,11 @@ A COU admins group owner can manage the admins group member as follows:
 
 From the steps defined [above](#managing-cou-admin-members):
 
-5. Follow Manage Group Memberships link
+1. Follow Manage Group Memberships link
 
    ![Manage Group Memberships link](./check-in-manage-group-link.png)
 
-6. **Filter** out the CO Person you need to apply for the admin role. Use
+1. **Filter** out the CO Person you need to apply for the admin role. Use
    **Given, Family Name, Email, Identifier** or a combination of the former.
 
    ![Check-in CO people filter](./check-in-co-people-filter.png)
@@ -250,7 +246,7 @@ From the steps defined [above](#managing-cou-admin-members):
 
 From the steps defined [above](#managing-cou-admin-members):
 
-5. Under Group Members tab, click on Delete action for the CO Person that needs
+1. Under Group Members tab, click on Delete action for the CO Person that needs
    to be removed from Admins group
 
    ![Group members tab](./check-in-group-members-tab.png)
