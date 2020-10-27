@@ -8,10 +8,6 @@ menu:
     weight: 10
 ---
 
-{{% pageinfo %}}
-Content moved from HTC, to be improved.
-{{% /pageinfo %}}
-
 ## Request for information
 
 You can ask for more information about the services at: [here](https://www.egi.eu/more-information/)
