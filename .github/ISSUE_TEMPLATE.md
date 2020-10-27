@@ -1,3 +1,5 @@
+# Short Description of the issue
+
 <!--
 Thank you for opening an issue in our documentation.
 Please use the template below to construct the issue.
@@ -10,9 +12,7 @@ Dealing with issues:
   and issues.
 -->
 
-# Short Description of the issue
-
-<!-- 
+<!--
 Please provide a plain-language description of what you would like to report.
 By using simple, concise language, you can help the maintainers understand the
 issue and context, and thereby help them prioritise it.
@@ -21,4 +21,4 @@ issue and context, and thereby help them prioritise it.
 <!-- the section below is optional - remove it if you don't know what to propose,
 but merely want to report an issue.  -->
 
-# Summary of proposed changes
+## Summary of proposed changes
