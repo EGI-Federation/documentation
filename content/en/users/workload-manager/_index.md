@@ -239,21 +239,21 @@ The easiest way to install the client is via
 installed in your machine, install the DIRAC CLI as follows:
 
 ```sh
-$ docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
+docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
 ```
 
 Once the client software is installed, it should be configured in order to
 access the EGI Workload Manager service:
 
 ```sh
-$ source /opt/dirac/bashrc
+source /opt/dirac/bashrc
 ```
 
 To proceed further a temporary proxy of the user certificate should be created.
 This is necessary to get information from the central Configuration Service:
 
 ```sh
-$ dirac-proxy-init -x
+dirac-proxy-init -x
 Generating proxy...
 Enter Certificate password:
 ...
@@ -370,25 +370,25 @@ StdOutput = "StdOut"; StdError = "StdErr"; OutputSandbox = {"StdOut","StdErr"};
 Submit the job:
 
 ```sh
-$ dirac-wms-job-submit test.jdl JobID = 53755998
+dirac-wms-job-submit test.jdl JobID = 53755998
 ```
 
 Check the job status:
 
 ```sh
-$ dirac-wms-job-status 53755998 JobID=23844073 Status=Waiting;
+dirac-wms-job-status 53755998 JobID=23844073 Status=Waiting;
 MinorStatus=Pilot Agent Submission; Site=ANY;
 ```
 
 ```sh
-$ dirac-wms-job-status 53755998 JobID=53755998 Status=Done;
+dirac-wms-job-status 53755998 JobID=53755998 Status=Done;
 MinorStatus=Execution Completed; Site=EGI.NIKHEF.nl; Site=EGI.HG-08-Okeanos.gr;
 ```
 
 Retrieve the outputs of the job (when the status is Done):
 
 ```sh
-$ dirac-wms-job-get-output --Dir joboutput/ 53755998 Job output sandbox
+dirac-wms-job-get-output --Dir joboutput/ 53755998 Job output sandbox
 retrieved in joboutput/53755998/
 ```
 
@@ -400,7 +400,7 @@ should be transferred to the grid to run the job. In this case the
 
 Create the `InputAndOuputSandbox.jdl`
 
-```sh
+```jdl
 JobName    = "InputAndOuputSandbox";
 Executable = "testJob.sh";
 StdOutput = "StdOut";
@@ -422,7 +422,7 @@ After creation of JDL file the next step is to submit the job, using the
 command:
 
 ```sh
-$ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
+dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 ```
 
 #### More details
