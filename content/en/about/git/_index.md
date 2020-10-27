@@ -21,7 +21,7 @@ GitHub official documentation is available at https://docs.github.com/en/github.
 Some documentation about the main steps for working with GitHub is also
 available her after.
 
-## Summary of the GitHub flow
+## The GitHub flow
 
 In order to be able to send code update to the repository you need to:
 
@@ -77,13 +77,13 @@ gh auth login
 gh config set git_protocol ssh
 ```
 
-## Forking the repository
+## Working with repositories
 
 The easiest way is to do it via the GitHub CLI that will also clone it locally.
 But it can also be done via the web interface, using the _fork_ button and then
 cloning it locally manually.
 
-### Forking and cloning the repository
+### Forking and cloning
 
 This command will fork the repository to your GitHub account and clone a local
 copy for you to work with.
@@ -92,7 +92,7 @@ copy for you to work with.
 gh repo fork EGI-Foundation/documentation
 ```
 
-### Cloning the repository fork created using the web interface
+### Cloning the fork
 
 If you want to clone an existing fork you should use:
 
@@ -100,7 +100,7 @@ If you want to clone an existing fork you should use:
 gh repo clone <your_username>/documentation
 ```
 
-### Verifying your local clone is ready to be used
+### Validating the local clone
 
 If your local clone of you fork is correctly setup you should see references to
 the origin and upstream repositories.
@@ -113,7 +113,7 @@ upstream        git@github.com:EGI-Foundation/documentation.git (fetch)
 upstream        git@github.com:EGI-Foundation/documentation.git (push)
 ```
 
-## Running the documentation site locally
+## Running the site locally
 
 The documentation webiste is built from the source files using
 [Hugo](https://gohugo.io/). The repository
@@ -128,7 +128,7 @@ can be used as a reference for building instructions.
   - postcss-cli
   - autoprofixer
 
-### Installing dependencies, building and testing
+### Building and testing
 
 To install npm+nodejs please check the instructions at:
 [https://www.npmjs.com/get-npm](https://www.npmjs.com/get-npm)
@@ -174,7 +174,7 @@ meaningful name for the branch (my_nice_update in the example).
 git checkout -b my_nice_update
 ```
 
-### Writing changes
+## Writing changes
 
 The documentation being made of plain text files you are free to use whatever
 text editor or Integrated Development Environment (IDE) suits you, from
@@ -187,7 +187,7 @@ preview, they are worth checking.
 Be sure to commit files with having been formated using
 [Prettier](https://prettier.io/) as documented in our [style guide](../style/).
 
-### Committing changes
+## Committing changes
 
 It is the best practice to have your commit message have a _summary line_ that
 includes the issue number, followed by an empty line and then a brief
@@ -212,7 +212,7 @@ git add files1 path2/
 git commit -m <commit_message>
 ```
 
-### Pushing your feature branch to your fork for preparing a PR
+## Pushing the feature branch to the fork for preparing a PR
 
 From inside a feature branch you can push it to your remote fork.
 
@@ -233,7 +233,7 @@ If needed GitHub CLI can also be used to prepare the PR:
 gh pr create <your_username>:<feature_branch> --web
 ```
 
-### Updating local feature branch with changes made on the PR
+### Updating the local feature branch with changes made on the PR
 
 Once you PR have been opened it will be reviewed, and reviewers can propose and
 commit changes to your PR. If you need to make further changes be sure to update
@@ -259,7 +259,7 @@ git rebase upstream/master master
 git push
 ```
 
-## Updating local feature branch with changes made on the master branch
+## Updating a local feature branch with changes made on the master branch
 
 In case the _master_ branch evolved since the feature branch was created, it may
 be required to merge the new changes in the feature branch.
@@ -333,7 +333,7 @@ git branch -d <branch_name>
 git branch -D <branch_name>
 ```
 
-### Using git stash to save changes to a temporary place for later usage
+## Using git stash to save changes for later usage
 
 Sometimes we realise just before committing a change that we are not in the
 correct branch (ie. that we forgot to create a dedicated feature branch), when
