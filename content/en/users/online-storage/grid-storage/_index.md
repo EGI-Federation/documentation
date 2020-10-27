@@ -71,7 +71,7 @@ The client widely used to access grid-storage is
 available for installation both on RHEL and Debian compatible systems.
 
 In particular, gfal2 provides and abstraction layer on top of several storage
-protocols (RFIO, XRootD,WebDAV, SRM, gsiftp, etc) and therefore is quite
+protocols (RFIO, XRootD, WebDAV, SRM, gsiftp, etc) and therefore is quite
 convenient as the same API can be used to access different protocols.
 
 The gfal2 CLI can be installed as follows (for RHEL compatible systems):
@@ -91,7 +91,7 @@ example can be replaced by any other supported protocols
 List files on a given endpoint:
 
 ```sh
- gfal-ls gsiftp://dcache-door-doma01.desy.de/dteam
+gfal-ls gsiftp://dcache-door-doma01.desy.de/dteam
 1G.header-1
 domatest
 gb
