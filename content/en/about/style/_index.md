@@ -7,10 +7,17 @@ weight: 40
 
 ## General recommendations
 
+- All files and folders should be lower case;
 - EGI Services should be named exactly as in the
   [EGI Services Portfolio](https://www.egi.eu/services/);
 - Acronyms should be used only when it makes sense;
-- Service names should never be replaced by acronyms.
+- Service names should never be replaced by acronyms;
+- In the introduction of services it is appropriate to have a link to the
+  service public page, if any:
+
+  ```markdown
+  [EGI High Throughput Compute](https://www.egi.eu/services/high-throughput-compute/)
+  ```
 
 ## Writing markdown
 

@@ -15,8 +15,9 @@ contribute are also welcome.
 
 ## Style guide
 
-A summary of the style guide is available at [style guide](../style/). Be sure
-to follow it when proposing changes.
+{{% alert %}} A summary of the style guide is available at
+[style guide](../style/). Be sure to follow it when proposing changes.
+{{% /alert %}}
 
 ## Feedback and Questions
 
