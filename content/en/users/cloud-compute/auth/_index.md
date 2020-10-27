@@ -3,7 +3,7 @@ title: "Authentication and Authorisation"
 type: docs
 weight: 20
 description: >
-  Authentication and Authorisation on EGI Cloud 
+  Authentication and Authorisation on EGI Cloud
 ---
 
 ## Authentication {#oidc-auth-using-check-in}
@@ -62,7 +62,7 @@ by any new user.
 -   After the 6-month long membership in the vo.access.egi.eu VO, you
     will need to move to a production VO, or establish a new VO.
 -   The resources are not guaranteed and may be removed without notice
-    by providers. **Back-up frequently to avoid loosing your work!**
+    by providers. **Back-up frequently to avoid losing your work!**
 
 {{% /alert %}}
 

@@ -65,7 +65,7 @@ Updating the submodule
 
 ```console
 git submodule foreach git pull
-git ci themes/docsy -m 'Update theme'
+git commit themes/docsy -m 'Update theme'
 ```
 
 ### Deploying to the EGI organisation pages

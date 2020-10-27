@@ -8,7 +8,5 @@ menu:
     weight: 20
 ---
 
-{{% pageinfo %}}
-This is a placeholder page for Service providers documentation.
-{{% /pageinfo %}}
-
+This section contains documentation aiming at Service Providers.
+See [the users section](../users) for User-centric documentation.

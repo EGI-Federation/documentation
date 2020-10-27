@@ -79,18 +79,18 @@ Advantages:
 
 Disadvantages:
 
--   Build a virtual disk directly from a legacy machine poses a set of
+-   Building a virtual disk directly from a legacy machine poses a set of
     compatibility issues with hardware drivers, which usually differs
     from a virtual and physical environment and even between different
     virtual environments.
--   You need to keep updated your machine. Outdated VM disk images may
-    take long time to startup due to the need to download and install
+-   You need to keep your machine updated. Outdated VM disk images may
+    take a long time to startup due to the need to download and install
     the latest OS updates.
 -   If you are using special drivers or you are not packaging correctly
     the disk, your custom VM image may not run (or run slowly) on
     different cloud providers based on different virtualisation
     technologies.
--   VM images images on public clouds are sometimes public, thus be
+-   VM images on public clouds are sometimes public, thus be
     aware of installing proprietary software on custom images, since
     other users may be able to run the image or download it.
 -   In general, the effort to implement this solution is higher than the
@@ -113,7 +113,7 @@ as possible following these guidelines:
     allocated for your VM.
 
 -   **DO NOT** install un-needed software. Tools like GUI are of no-use
-    on most cases since you will have no access to the graphical console
+    in most cases since you will have no access to the graphical console
     of the VM.
 
 -   **DO** adjust the size of the images as much as possible. As stated
@@ -151,12 +151,12 @@ will simplify the contextualization process for you. This is widely
 available as packages in major OS distributions and is supported by all
 the providers of the EGI Cloud and most of the commercial providers.
 
-[cloud-init](https://cloudinit.readthedocs.io/en/latest/) documentation
+[cloud-init](https://cloudinit.readthedocs.io/en/latest/)
 documentation contains detailed examples on how to create users, run
 scripts, install packages and several other actions supported by the
 tool.
 
-For complex setups, specially when applications involve multiple VMs it
+For complex setups, especially when applications involve multiple VMs it
 may be useful to use cloud-init to bootstrap some [Configuration
 Management
 Software](https://en.wikipedia.org/wiki/Comparison_of_open-source_configuration_management_software)
@@ -190,7 +190,7 @@ will allow you to:
 
 EGI uses [packer](https://packer.io) as a tool for automating the
 creation of our base images. This tool can use
-[VirtualBox](https://www.virtualbox.org/) as hypervisor for the creation
+[VirtualBox](https://www.virtualbox.org/) as a hypervisor for the creation
 of the images and guarantees identical results under different platforms
 and providers.
 
