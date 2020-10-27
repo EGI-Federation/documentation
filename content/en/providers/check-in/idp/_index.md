@@ -37,10 +37,14 @@ The integration follows a two-step process:
 The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.
 
+<!-- markdownlint-disable no-bare-urls line-length -->
+
 | Protocol       | Development environment                                          | Demo environment                                                  | Production environment                                       |
 | -------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------ |
 | SAML           | https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso | https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso | https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso |
 | OpenID Connect | See [client registration](#client-registration)                  | See [client registration](#client-registration)                   | See [client registration](#client-registration)              |
+
+<!-- markdownlint-enable no-bare-urls line-length -->
 
 ## General requirements for integrating identity providers
 
@@ -63,6 +67,8 @@ describes the data requested from the user's Home Organisation, which are
 communicated to the Check-in SP as either SAML attributes or OIDC claims,
 depending on the protocol supported by the authenticating IdP.
 
+<!-- markdownlint-disable no-inline-html line-length -->
+
 | Description                                                                                                                                                                                      | Notes                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
 | At least one of the following unique user identifiers:<ol><li>pseudonymous, non-targeted identifier;</li><li>name-based, non-targeted identifier;</li><li>pseudonymous, targeted identifier</li> |                                                                |
@@ -71,6 +77,8 @@ depending on the protocol supported by the authenticating IdP.
 | Surname                                                                                                                                                                                          |                                                                |
 | Email address                                                                                                                                                                                    |                                                                |
 | Affiliation within Home Organisation or Community                                                                                                                                                | To be released **only** if relevant for accessing EGI services |
+
+<!-- markdownlint-enable no-inline-html line-length -->
 
 Note that the above set of requested attributes, particularly the identifier,
 name, email and affiliation information, complies with the
@@ -183,9 +191,13 @@ pick the appropriate entityID from that.
 You can get the metadata of the EGI Check-in SP Proxy on a dedicated URL that
 depends on the integration environment being used:
 
+<!-- markdownlint-disable no-bare-urls line-length -->
+
 | Development environment                                          | Demo environment                                                  | Production environment                                       |
 | ---------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------ |
 | https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso | https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso | https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso |
+
+<!-- markdownlint-enable no-bare-urls line-length -->
 
 For the production environment, it is recommended that you get the metadata for
 the EGI Check-in SP (entityID:
@@ -204,6 +216,8 @@ user within the scope of that organisation or community, along with a set of
 additional information as described in the following table (see also
 [general attribute release requirements](#attribute-release-requirements)):
 
+<!-- markdownlint-disable no-inline-html line-length -->
+
 | Description                                                                                                                                                                                      | SAML attribute                                                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | At least one of the following unique user identifiers:<ol><li>pseudonymous, non-targeted identifier;</li><li>name-based, non-targeted identifier;</li><li>pseudonymous, targeted identifier</li> | <ol><li>`SubjectID` (public) or `eduPersonUniqueId`</li><li>`eduPersonPrincipalName`</li><li>`SubjectID` (pairwise) or `eduPersonTargetedID` or SAML persistent identifier</li></ol> |
@@ -213,6 +227,8 @@ additional information as described in the following table (see also
 | Email address                                                                                                                                                                                    | `mail`                                                                                                                                                                               |
 | Affiliation within Home Organisation or Community                                                                                                                                                | `eduPersonScopedAffiliation`                                                                                                                                                         |
 | Group(s)/role(s) within Home Organisation or Community                                                                                                                                           | `eduPersonEntitlement`                                                                                                                                                               |
+
+<!-- markdownlint-enable no-inline-html line-length -->
 
 ## OpenID Connect Identity Provider
 
@@ -250,6 +266,8 @@ community, along with a set of additional information as described in the
 following table (see also
 [general attribute release requirements](#attribute-release-requirements)):
 
+<!-- markdownlint-disable no-inline-html line-length -->
+
 | Description                                                                                                                                                                                      | OIDC claim                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
 | At least one of the following unique user identifiers:<ol><li>pseudonymous, non-targeted identifier;</li><li>name-based, non-targeted identifier;</li><li>pseudonymous, targeted identifier</li> | <ol><li>`sub` (public)</li><li>N/A</li><li>`sub` (pairwise)</li></ol> |
@@ -259,6 +277,8 @@ following table (see also
 | Email address                                                                                                                                                                                    | `email`                                                               |
 | Affiliation within Home Organisation or Community                                                                                                                                                | `eduperson_scoped_affiliation`                                        |
 | Group(s)/role(s) within Home Organisation or Community                                                                                                                                           | `eduPerson_entitlement`                                               |
+
+<!-- markdownlint-enable no-inline-html line-length -->
 
 ## Integration success stories
 
