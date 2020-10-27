@@ -54,7 +54,7 @@ This is achieved using
 The following code:
 
 ```markdown
-{{% pageinfo %}} This is a placeholder. {{% /pageinfo %}}
+{{%/* pageinfo */%}} This is a placeholder. {{%/* /pageinfo */%}}
 ```
 
 Will render as:
@@ -66,7 +66,7 @@ Will render as:
 The following code:
 
 ```markdown
-{{% pageinfo %}} This is a placeholder. {{% /pageinfo %}}
+{{%/* pageinfo */%}} This is a placeholder. {{%/* /pageinfo */%}}
 ```
 
 Will render as:
@@ -78,7 +78,7 @@ Will render as:
 The following code:
 
 ```markdown
-{{% alert title="Note" color="info" %}} This is a Note. {{% /alert %}}
+{{%/* alert title="Note" color="info" */%}} This is a Note. {{%/* /alert */%}}
 ```
 
 Will render as:
@@ -90,7 +90,7 @@ Will render as:
 The following code:
 
 ```markdown
-{{% alert title="Note" color="info" %}} This is a Note. {{% /alert %}}
+{{%/* alert title="Note" color="info" */%}} This is a Note. {{%/* /alert */%}}
 ```
 
 Will render as:
@@ -102,7 +102,8 @@ Will render as:
 The following code:
 
 ```markdown
-{{% alert title="Warning" color="warning" %}} This is a warning. {{% /alert %}}
+{{%/* alert title="Warning" color="warning" */%}} This is a warning.
+{{%/* /alert */%}}
 ```
 
 Will render as:
@@ -117,7 +118,7 @@ a parameter.
 The supported languages are dependant on the syntax highlighter, which depends
 itself on the mardkown parser.
 
-{{% alert title="Note" color="8info" %}} For [Hugo](https://gohugo.io/) the
+{{% alert title="Note" color="info" %}} For [Hugo](https://gohugo.io/) the
 [goldmark parser](https://github.com/yuin/goldmark) is used and it relies on the
 [Chroma highlighter](https://github.com/alecthomas/chroma). {{% /alert %}}
 
@@ -129,6 +130,7 @@ The following code should be used for a shell excerpt:
 ````markdown
 ```sh
 ssh-keygen -f fedcloud
+echo $HOME
 ```
 ````
 
@@ -136,6 +138,7 @@ Will render as:
 
 ```sh
 ssh-keygen -f fedcloud
+echo $HOME
 ```
 
 ### Including images
