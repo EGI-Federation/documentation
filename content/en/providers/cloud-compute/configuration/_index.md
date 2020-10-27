@@ -27,7 +27,7 @@ Follow these steps if you are using OpenID Connect to integrate with EGI:
    group_id=$(openstack group create -f value -c id <new_group>)
    ```
 
-1. Add that group to the desired local project: :
+1. Add that group to the desired local project:
 
    ```sh
    openstack role add member --group $group_id --project <your project>
