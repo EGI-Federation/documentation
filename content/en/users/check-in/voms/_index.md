@@ -100,7 +100,7 @@ using `pkcs12`:
    terminal, enter the following command:
 
    ```shell
-   $ openssl pkcs12 -nocerts -in my_cert.p12 -out userkey.pem
+   openssl pkcs12 -nocerts -in my_cert.p12 -out userkey.pem
    ```
 
    where:
@@ -119,8 +119,8 @@ using `pkcs12`:
 2. Now you can create the certificate, use `-clcerts`, (use `-nokeys` hereu will
    not output private key), and the command is:
 
-   ```shell
-   $ openssl pkcs12 -clcerts -nokeys -in my_cert.p12 -out usercert.pem
+   ```sh
+   openssl pkcs12 -clcerts -nokeys -in my_cert.p12 -out usercert.pem
    ```
 
    When prompted to `“Enter Import Password”`, simply press enter since no
