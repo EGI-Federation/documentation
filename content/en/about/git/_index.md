@@ -332,3 +332,31 @@ git branch -d <branch_name>
 # If you need to force the deletion use -D
 git branch -D <branch_name>
 ```
+
+### Using git stash to save changes to a temporary place for later usage
+
+Sometimes we realise just before committing a change that we are not in the
+correct branch (ie. that we forgot to create a dedicated feature branch), when
+this happens `git stash` can be helpful.
+
+```sh
+# Saving a change
+git stash save <optional message>
+# Creating the forgotten branch
+git checkout -b <my_feature_branch>
+# Reviewing the saved changes, use TAB completion
+git stash show <TAB>
+# Applying the saved changes, use TAB completion
+git stash pop <TAB>
+# Review the changes to be committed
+git diff
+```
+
+If you already committed your change(s) you may have to look at `git reset`.
+
+```sh
+# Viewing the diff of the two last commits
+git log -n 2 -p
+# Reverting the last change, keeping the change in the local directory
+git reset HEAD^
+```
