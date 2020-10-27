@@ -36,7 +36,7 @@ Follow these steps if you are using OpenID Connect to integrate with EGI:
 1. Expand your mapping.json with the VO membership to the created group
    (substitute `group_id` and `vo_name` as appropriate): :
 
-   ```
+   ```json
    [
        <existing mappings>,
        {
@@ -139,21 +139,21 @@ TBC
 
 Add the project supporting the VO to cASO:
 
-1.  `projects` in `/etc/caso/caso.conf` :
+1. `projects` in `/etc/caso/caso.conf` :
 
-    ```ini
-    projects = vo_project1, vo_project2, <your_new_vo_project>
-    ```
+   ```ini
+   projects = vo_project1, vo_project2, <your_new_vo_project>
+   ```
 
-1.  as a new mapping in `/etc/caso/voms.json` :
+1. as a new mapping in `/etc/caso/voms.json` :
 
-    ```json
-    {
-      "<your new vo>": {
-        "projects": ["<your new vo project>"]
-      }
-    }
-    ```
+   ```json
+   {
+     "<your new vo>": {
+       "projects": ["<your new vo project>"]
+     }
+   }
+   ```
 
 Be sure to include the user running cASO as member of the project if it does not
 have admin privileges:
@@ -195,7 +195,8 @@ using the appliance), new entry should look similar to:
 Add the user configured in cloudkeeper-os as member of the new project:
 
 ```sh
-openstack role add member --user <your cloudkeeper-os user> --project <your new vo project>
+openstack role add member --user <your cloudkeeper-os user> \
+   --project <your new vo project>
 ```
 
 Add the mapping of the project to the VO in `/etc/cloudkeeper-os/voms.json`:
