@@ -53,5 +53,5 @@ Training events supported by the EGI Training Infrastructure are listed below:
 - HPC graduate class (August - November 2019) at UNICAM (Brazil)
 - [NGSChool 2019 (October, 24-31)](https://ngschool.eu/ngschool2019/)
 - [Open Science with Jupyter, Zenodo and Binder (tutorial), 04 Dec. 2019](http://go.egi.eu/bigdata2019)
-- [Hercules European School (April 2020)] (http://hercules-school.eu/)
+- [Hercules European School (April 2020)](http://hercules-school.eu/)
 
