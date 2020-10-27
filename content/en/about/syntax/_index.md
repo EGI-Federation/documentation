@@ -61,31 +61,7 @@ Will render as:
 
 {{% pageinfo %}} This is a placeholder. {{% /pageinfo %}}
 
-#### General message
-
-The following code:
-
-```markdown
-{{%/* pageinfo */%}} This is a placeholder. {{%/* /pageinfo */%}}
-```
-
-Will render as:
-
-{{% pageinfo %}} This is a placeholder. {{% /pageinfo %}}
-
-#### Note
-
-The following code:
-
-```markdown
-{{%/* alert title="Note" color="info" */%}} This is a Note. {{%/* /alert */%}}
-```
-
-Will render as:
-
-{{% alert title="Note" color="info" %}} This is a Note. {{% /alert %}}
-
-#### Information message
+#### Note or information message
 
 The following code:
 
