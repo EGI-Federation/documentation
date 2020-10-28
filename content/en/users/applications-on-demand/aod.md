@@ -50,8 +50,7 @@ The scientific applications that are already available in this service are:
     a user-friendly analysis software for high-throughput data. It contains over 300 
     analysis tools for next generation sequencing (NGS), microarray, proteomics and 
     sequence data. The application is available through the Science Software on Demand 
-    Service (SSoD). Instructions to run the application are available [here]
-    (https://egi-federated-cloud.readthedocs.io/en/latest/aod/chipster.html).
+    Service (SSoD). Instructions to run the application are available [here](https://egi-federated-cloud.readthedocs.io/en/latest/aod/chipster.html).
     
 -   [**NAMD**](https://marketplace.egi.eu/applications-on-demand/58-namd.html) 
     a parallel molecular dynamics code designed for high-performance simulation of 
@@ -80,13 +79,11 @@ The service includes:
     a portal that allows the creation of elastic virtual clusters in the cloud. Those clusters can then 
     host your scientific application either directly, or via Apache Mesos, Chronos, Kubernetes, Marathon, 
     [OSCAR](https://github.com/grycap/oscar) or SLURM. 
-    Instructions for application developers are available [here]
-    (https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_EC3).
+    Instructions for application developers are available [here](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_EC3).
 
 -   **[Science Software on Demand (SSoD)]:**(https://fgsg.ct.infn.it/egissod/web/ssod) 
     a programmable interface of a RESTful API Server to provide an easy access PaaS layer by leveraging 
-    recent Web technologies. Instructions for application developers are available [here]
-    (https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_the_FutureGateway_Science_Gateway)
+    recent Web technologies. Instructions for application developers are available [here](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_the_FutureGateway_Science_Gateway)
 
 
 ## Requirements and user registration
