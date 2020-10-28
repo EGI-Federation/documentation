@@ -17,17 +17,10 @@ Marketplace](https://marketplace.egi.eu).
 
 ## Service Description
 
-The service allows user-friendly access to a portfolio of applications
-and application hosting frameworks (e.g.: Science Gateways, VREs) that
-are configured to use the dedicated pool of cloud computing clusters
-from our providers. The service also allows users to run their own
-simulation/analysis models with custom input data.
-
-The service operates as an open and extensible 'hub' for providers and
-e-infrastructure user support teams who wish to federated and share
-applications and services with individual researchers, or small,
-fragmented communities, typically referred to as 'the long tail of
-science'.
+The service combines compute and storage cloud with Application-development 
+and hosting frameworks to run custom scientific applications, and/or 
+to turn those into applications into online data analysis services that 
+can be accessed by scientists worldwide.
 
 The portfolio of applications is currently composed by a readily
 available set of applications relevant to different scientific and
@@ -37,49 +30,70 @@ please get in touch with us: support (at) egi.eu
 
 ### Intended user groups
 
--   Researchers and scientists.
--   Application developers who want to share their applications
-    available to the community through AoD.
--   National e-Infrastructures who want to offer the EGI applications
-    library to their national users by \"plugging\" compute and storage
-    resources.
+The main target groups of this service are:
+-   Application developers who want to make their applications and tools 
+    accessible in a scalable way for researchers internationally.
+-   Algorithm developers (researchers) who want to run their own codes 
+    at scale in a compute cloud. 
+    
+The main target groups of the applications that are already hosted in this 
+service are:
 
-### Benefits
+-   Researchers and innovators who want to run a specific scientific 
+    application that is already available in the platform.
 
-Through this service:
+### Scientific applications
 
--   **Researchers** can access applications underpinned by high-capacity
-    compute and storage servers, to carry out compute and data-intensive
-    simulations. Use of the service does not require advanced experience
-    with distributed and/or cloud computing.
--   **Developers** can integrate custom applications into the service
-    and offer them as \'scalable, online services\' for researchers and
-    scientists worldwide.
--   **Providers** of compute and storage services can share their
-    clusters and clouds to serve \'the long tail of science\'. For more
-    information see [AoD for information
-    providers](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_providers).
+The scientific applications that are already available in this service are: 
 
-### Service components
+-   [**Chipster**](https://marketplace.egi.eu/applications-on-demand/68-chipster.html) 
+    a user-friendly analysis software for high-throughput data. It contains over 300 
+    analysis tools for next generation sequencing (NGS), microarray, proteomics and 
+    sequence data. The application is available through the Science Software on Demand 
+    Service (SSoD). Instructions to run the application are available [here]
+    (https://egi-federated-cloud.readthedocs.io/en/latest/aod/chipster.html).
+    
+-   [**NAMD**](https://marketplace.egi.eu/applications-on-demand/58-namd.html) 
+    a parallel molecular dynamics code designed for high-performance simulation of 
+    large bio-molecular systems. The application is available through the EC3 portal. 
+    
+-   [**ECAS**](https://marketplace.egi.eu/applications-on-demand/84-ecas.html)
+    a complete environment enabling data analysis experiments from the ENES Climate 
+    Analytics Service.
 
--   **Scientific applications** that are offered 'as services' through
-    graphical environments.
--   **Science gateways** and **Virtual Research Environments (VREs)**
+The service includes:
+
+-   **Cloud compute** and **storage [resources]**(https://documents.egi.eu/public/ShowDocument?docid=2773) 
+    to host and scale up scientific applications.
+
+-   **Cloud access and application-hosting frameworks** 
+    (to run and to operate your own scientific application in the cloud environment):
     that offer integrated development environments to port custom
     applications with cloud resources.
--   **Cloud** compute resources suited for both compute/data intensive
-    applications and for the hosting of scientific services.
--   A network of **Consultants** and supporters who can provide guidance
-    on the use of the service.
+    
+-   **[VMOps dashboard]:**(https://dashboard.appdb.egi.eu/vmops) 
+    a graphical environment for the management of Virtual Machines (VM) in the 
+    federated network of clouds that enable the Applications on Demand service.
+    User documentation is available [here](https://wiki.appdb.egi.eu/main:faq:what_is_the_vmops_dashboard). 
+    
+-   **[Elastic Cloud Compute Cluster (EC3)]:**(https://servproject.i3m.upv.es/ec3-ltos/index.php) 
+    a portal that allows the creation of elastic virtual clusters in the cloud. Those clusters can then 
+    host your scientific application either directly, or via Apache Mesos, Chronos, Kubernetes, Marathon, 
+    [OSCAR](https://github.com/grycap/oscar) or SLURM. 
+    Instructions for application developers are available [here]
+    (https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_EC3).
+
+-   **[Science Software on Demand (SSoD)]:**(https://fgsg.ct.infn.it/egissod/web/ssod) 
+    a programmable interface of a RESTful API Server to provide an easy access PaaS layer by leveraging 
+    recent Web technologies. Instructions for application developers are available [here]
+    (https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_the_FutureGateway_Science_Gateway)
+
 
 ## Requirements and user registration
 
-The service is open for any researchers, scientists and engineers who
-need a simple and user-friendly access to compute, storage and
-applications services in order to carry out data/compute intensive
-science and innovation. The user needs to be affiliated with, or at
-least have a partnership (for example a referee) with, a research
-institution in Europe to qualify for access.
+The service is open for any scientific software developer who needs a 
+scalable and user-friendly application execution and hosting environment 
+to offer data/compute intensive scientific applications online.
 
 Access **requires** acceptance of [Acceptable Use Policy (AUP) and
 Conditions of the \'EGI Applications on Demand
@@ -133,153 +147,6 @@ Please check the [EGI Marketplace
 guide](https://wiki.egi.eu/wiki/HowToAccessTheEGIMarketPlace) for
 further details.
 
-## Application library
-
-The service operates as an open modular environment where any
-application developer can integrate and share applications, and
-providers can plug their own data centre share.
-
-### Computer Science & Mathematics
-
--   [RStudio](https://www.rstudio.com/) (v3.2.2) is a free and
-    open-source integrated development environment (IDE) for R, a
-    programming language for statistical computing and graphics.
-
-    Access via the [FutureGateway Science
-    Gateway](https://fgsg.ct.infn.it/egissod/web/ssod/r-studio1).
-
--   [Octave](https://www.gnu.org/software/octave/) is a high-level
-    interpreted language, primarily intended for numerical computations.
-    It provides capabilities for the numerical solution of linear and
-    nonlinear problems, and for performing other numerical experiments.
-
-    Access via the EC3 portal [EC3
-    portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
-
-### Life Sciences
-
--   [Chipster](http://chipster.csc.fi/) is a user-friendly analysis
-    software for high-throughput data. It contains over 300 analysis
-    tools for next generation sequencing (NGS), microarray, proteomics
-    and sequence data. Users can save and share automatic analysis
-    workflows, and visualize data interactively using a built-in genome
-    browser and many other visualizations.
-
-    Access via the [FutureCatania Science Gateway](https://fgsg.ct.infn.it/egissod/web/ssod/chipster-user-account-instructions).
-
--   [Galaxy](https://galaxyproject.org/) is an open, web-based platform
-    for data intensive biomedical research.
-
-    Access via the EC3 portal [EC3
-    portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
-
-<!-- -->
-
--   [NAMD](http://www.ks.uiuc.edu/Research/namd/) is a parallel
-    molecular dynamics code designed for high-performance simulation of
-    large bio-molecular systems.
-
-    Access via the EC3 portal [EC3
-    portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
-
-### Tools
-
--   [Docker](https://www.docker.com/) is an open-source project that
-    automates the deployment of Linux applications inside software
-    containers.
-
-    Access via the EC3 portal [EC3
-    portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
-
--   [Hadoop](http://hadoop.apache.org/) is a framework that allows for
-    the distributed processing of large data sets across clusters of
-    computers using simple programming models.
-
-    Access via the EC3 portal [EC3
-    portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
-
--   [Marathon](https://mesosphere.github.io/marathon)/[Chronos](https://github.com/mesos/chronos%20Chronos)
-    orchestration and fault-tolerant scheduler that runs on top of
-    Apache Mesos.
-
-    Access via the EC3 portal [EC3
-    portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
-
--   [OSCAR](https://o-scar.readthedocs.io/) is a framework designed to
-    efficiently support on-premises FaaS (Functions as a Service) for
-    general-purpose file processing computing applications.
-
-    Access via the EC3 portal [EC3
-    portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
-
--   [Kubernetes](https://kubernetes.io/) is an open-source
-    container-orchestration system for automating application
-    deployment, scaling, and management. Through this framework users
-    can create a containerized version of workflows and services that
-    can be deployed in the EGI Infrastructure.
-
-    Access via the EC3 portal [EC3
-    portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
-
--   The [AppDB VMOps dashboard](https://dashboard.appdb.egi.eu/), a
-    framework for performing Virtual Machine (VM) management operations
-    on the EGI Federated Cloud. The graphical interfaces of the
-    dashboard allows the user to choose VMs from the AppDB Catalogue, to
-    define an execution topology for them, and then to instantiate them
-    on infrastructure as service clouds.
-
-    Access the [EGI VMOps
-    dashboard](https://dashboard.appdb.egi.eu/vmops/).
-
-## AoD portals/gateways
-
-Applications of the service are accessed via the following
-portals/gateways:
-
-### FutureGateway Science Gateway
-
-The [FutureGateway Science Gateway (FGSG)](https://fgsg.ct.infn.it/)
-is a programmable interface of a RESTful API Server, compliant with
-CSGF APIs specifications, able to provide an easy access to the PaaS
-layer by leveraging on recent Web technologies.
-
--   The FGSG incorporates several applications and offers these \"as
-    services\" for the user.
--   The FGSG provides users with an intuitive web interface to execute
-    docker applications on the cloud resources of the platform.
-    -   The FGSG take cares of starting the job in one of the available
-        resources of the platform, of transferring the needed files
-        (e.g. executable, input files, etc.) and downloading the
-        output(s) in behalf of the users
--   FGSG is open source and released under the Apache 2.0 license.
-
-Access [the FGSG integrated in the
-AoD](https://fgsg.ct.infn.it/egissod/web/ssod).
-
-### EC3
-
-[EC3](https://servproject.i3m.upv.es/ec3/) (Elastic Cloud Computing
-Cluster) is a platform which allows to create elastic virtual clusters
-on top of Infrastructure as a Service (IaaS) providers.
-
--   The cluster, which is defined with a \'job wizard\' interface for
-    the user, is composed by a front node, where a batch job scheduler
-    is running, and a number of compute nodes.
-    -   These compute nodes will be dynamically deployed and provisioned
-        to fit increasing load, and undeployed when they are in idle
-        status.
--   The list of application libraries/tools installed in the front-node
-    can be exported via NFS in all the compute nodes.
--   The installation and configuration of the cluster is performed by
-    means of the execution of Ansible receipts.
--   An Enterprise Linux OS is used for both the front-node and the
-    compute nodes of the cluster.
--   The cluster provided with AoD is personal - users have root-access
-    to the environment, and can setup and configure the system to their
-    needs. It is meant to be shut down when no longer needed.
-
-Access the [EC3
-portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
 
 ## References
 
@@ -288,10 +155,12 @@ Main scientific paper describing the service and status:
 -   [EGI Applications On Demand Service - Catering for the computational
     needs of the long tail of
     science](https://documents.egi.eu/document/3132) (May 2017).
-    -   [IWSG2017 Proceeding](http://ceur-ws.org/Vol-2363/paper9.pdf).
+-   [IWSG2017 Proceeding](http://ceur-ws.org/Vol-2363/paper9.pdf).
 
 Presentations about the service:
 
+-   [Slideset about the Applications on Demand (AoD) service introduced at IWSG 2017]
+    (http://iwsg2017.psnc.pl/programme/) (June 2017).
 -   [Webinar to introduce the Applicatios on Demand
     (AoD)](https://www.egi.eu/blog/webinar-egi-applications-on-demand-service/)
     service to NGIs/USTs representatives, RI architects, resource
