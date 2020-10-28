@@ -6,13 +6,28 @@ description: "Documentation related to EGI DataHub"
 weight: 90
 ---
 
-## Motivation
+## Overview
+The DataHub allows to:
+- Bring data close to the computing to exploit it efficiently.
+- Publish a dataset and make it available to a specific community or worldwide across federated sites.
+
+The main features offered by the DataHub are:
+- Discovery of data via a central portal.
+- Access to data conforming to required policies which may be: 1) unauthenticated open access; 2) access after user registration or 3) access restricted to members of a Virtual Organization (VO). This access may be via a GUI (e.g. a webpage) or an API (e.g. programmatic access to the data)
+- Replication of data from data providers for resiliency and availability purposes. Replication may take place either on­demand or automatically. Replication will require the introduction of a file catalogue to enable tracking of logical and physical copies of data.
+- Access to data from the AppDB to enable VOs to associate appropriate data with matching Virtual Appliances
+- Authentication and Authorization Infrastructure (AAI) integration between the EGI DataHub and with other EGI components and with user communities existing infrastructure
+- File catalog to track replication of data: logical and physical file
+
+It is based on the [OneData technology](https://onedata.org/).
+
+## Motivations
 
 - Putting up a (scalable) distributed data infrastructure needs
   specific expertise, resources and knowledge
 - No easy way to discover and transfer data
 - No easy way of making data (publicly) accessible without
-  transferring it a sharing service
+  transferring it with a sharing service
 - No easy way of combining multiple datasets from different data
   providers
 - Users need to access data locally and from compute resources
@@ -25,17 +40,17 @@ Space
 supported by one or multiple Oneproviders providing actual storage
 resources
 
-EGI DataHub
-
-: a Onedata Onezone, the federation and authentication service. Single
-Sign On (SSO) with all the connected storage providers (Oneprovider)
-through EGI Check-in
-
 Onezone
 
-: a central component federating providers, it will take care of
+: a central component federating providers. It takes care of
 Authentication and Authorization and other management tasks (like
 space creation). EGI DataHub is a Onezone instance.
+
+EGI DataHub
+
+: the central Onedata Onezone instance of the EGI Federation. Single
+Sign On (SSO) with all the connected storage providers (Oneprovider) is guaranteed
+through EGI Check-in
 
 Oneprovider
 
