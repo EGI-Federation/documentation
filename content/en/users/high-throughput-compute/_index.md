@@ -118,4 +118,4 @@ Access to EGI High Throughput Compute resources is based on
 [Virtual Organisations](../getting-started/#virtual-organisations-vos), you will
 need to enrol into one VO before using the service. VOs for the EGI High
 Throughput Compute service relies on
-[X.509 proxy certificates with VOMS extensions](../check-in/voms).
+[X.509 proxy certificates with VOMS extensions](../check-in/vos/voms).
