@@ -41,8 +41,9 @@ This is EGI documentation.
 The EGI Federation is supporting lots of different user communities.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/EGI-Foundation/documentation" %}}
-We do a [Pull Request](https://github.com/EGI-Foundation/documentation/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://docs.egi.eu/about/contributing/" %}}
+We do a [Pull Request](https://github.com/EGI-Foundation/documentation/pulls)
+contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/EGI_eInfra" %}}
