@@ -27,8 +27,8 @@ Oneprovider and other Onedata APIs.
 
 It's possible to retrieve the `CLIENT_ID`, `CLIENT_SECRET` and `REFRESH_TOKEN`
 using a [special OIDC client connected to
-Check-in](https://aai.egi.eu/fedcloud/). See [Check-in documentation on EGI
-Wiki](https://wiki.egi.eu/wiki/AAI) for more information.
+Check-in](https://aai.egi.eu/fedcloud/). See
+[Check-in documentation](../../check-in/) for more information.
 
 ```shell
 CLIENT_ID=<CLIENT_ID>
