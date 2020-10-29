@@ -7,6 +7,3 @@ description: >
   Check-in 
 ---
 
-{{% pageinfo %}}
-This is a placeholder page.
-{{% /pageinfo %}}
