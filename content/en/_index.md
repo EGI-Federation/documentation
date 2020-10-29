@@ -31,10 +31,24 @@ description: "Documentation related to EGI activities"
 </div>
 {{< /blocks/cover >}}
 
-{{% blocks/lead color="primary" %}}
+<div class="mx-auto">
+{{< blocks/section color="primary" type="features">}}
 
-This is EGI documentation.
-{{% /blocks/lead %}}
+{{% blocks/feature icon="fa-lightbulb" title="Users" url="/users" %}} Contains
+step-to-step documentation on how to use the EGI services.
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-lightbulb" title="Providers" url="/providers" %}}
+Depicts how to join the EGI infrastructure as a service providers offering
+innovative services to the European Research Area. {{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-lightbulb" title="Internal services" url="/internal" %}}
+Hosts the documentation of the EGI services enabling the federation.
+{{% /blocks/feature %}}
+
+{{< /blocks/section >}}
+
+</div>
 
 {{< blocks/section color="dark" type="features">}}
 {{% blocks/feature icon="fa-lightbulb" title="Learn more about EGI!" url="https://egi.eu" %}}
