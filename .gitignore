@@ -2,7 +2,11 @@
 /public/*
 !/public/.gitkeep
 # From NodeJS for docsy
+node_modules/
 package-lock.json
+
+**/.DS_Store
+.DS_Store
 
 *.rbc
 capybara-*.html
@@ -43,9 +47,6 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
-
-# Ignore node_modules
-node_modules/
 
 # Ignore precompiled javascript packs
 /public/packs
