@@ -2,7 +2,7 @@
 title: "DataHub"
 linkTitle: "DataHub"
 type: docs
-description: "Documentation related to EGI DataHub"
+description: "Documentation related to [EGI DataHub](https://datahub.egi.eu/)"
 weight: 90
 ---
 
@@ -30,8 +30,8 @@ The main features offered by the DataHub are:
 - Access to data from the AppDB to enable VOs to associate appropriate data with
   matching Virtual Appliances
 - Authentication and Authorization Infrastructure (AAI) integration between the
-  EGI DataHub and with other EGI components and with user communities existing
-  infrastructure
+  [EGI DataHub](https://datahub.egi.eu/) and with other EGI components and with
+  user communities existing infrastructure
 - File catalog to track replication of data: logical and physical file
 
 It is based on the [OneData technology](https://onedata.org/).

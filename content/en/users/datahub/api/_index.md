@@ -2,7 +2,7 @@
 title: "API"
 linkTitle: "API"
 type: docs
-description: "Documentation of EGI DataHub APIs"
+description: "Documentation of [EGI DataHub](https://datahub.egi.eu/) APIs"
 weight: 30
 ---
 
