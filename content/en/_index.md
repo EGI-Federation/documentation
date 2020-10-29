@@ -6,7 +6,10 @@ description: "Documentation related to EGI activities"
 {{< blocks/cover title="Welcome to EGI Documentation!" image_anchor="top" height="full" color="blue" >}}
 
   <p class="lead mt-5">
-    Please note that this documentation is at an early stage and is a work in progress.
+    This website hosts the first version of the new EGI documentation.<br />
+    It will be further improved with more sections in the coming months.<br />
+    <a href="https://github.com/EGI-Foundation/documentation/issues/new">Your
+    feedback and suggestions are welcome!</a>
   </p>
 
 <div class="mx-auto">
