@@ -80,14 +80,13 @@ The service includes:
     a portal that allows the creation of elastic virtual clusters in the cloud. Those clusters can then 
     host your scientific application either directly, or via Apache Mesos, Chronos, Kubernetes, Marathon, 
     [OSCAR](https://github.com/grycap/oscar) or SLURM. 
-    Instructions for application developers are available [here]
-    (https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_EC3).
+    Instructions for application developers are available
+    [here](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_EC3).
 
 -   [Science Software on Demand (SSoD)]:(https://fgsg.ct.infn.it/egissod/web/ssod) 
     a programmable interface of a RESTful API Server to provide an easy access PaaS layer by leveraging 
-    recent Web technologies. Instructions for application developers are available [here]
-    (https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_the_FutureGateway_Science_Gateway)
-
+    recent Web technologies. Instructions for application developers are available
+    [here](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_the_FutureGateway_Science_Gateway)
 
 ## Requirements and user registration
 
@@ -146,7 +145,6 @@ extended/renewed upon request.
 Please check the [EGI Marketplace
 guide](https://wiki.egi.eu/wiki/HowToAccessTheEGIMarketPlace) for
 further details.
-
 
 ## References
 
