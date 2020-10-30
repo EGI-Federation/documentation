@@ -6,7 +6,10 @@ description: "Documentation related to EGI activities"
 {{< blocks/cover title="Welcome to EGI Documentation!" image_anchor="top" height="full" color="blue" >}}
 
   <p class="lead mt-5">
-    Please note that this documentation is at an early stage and is a work in progress.
+    This website hosts the first version of the new EGI documentation.<br />
+    It will be further improved with more sections in the coming months.<br />
+    <a href="https://github.com/EGI-Foundation/documentation/issues/new">Your
+    feedback and suggestions are welcome!</a>
   </p>
 
 <div class="mx-auto">
@@ -28,18 +31,33 @@ description: "Documentation related to EGI activities"
 </div>
 {{< /blocks/cover >}}
 
-{{% blocks/lead color="primary" %}}
+<div class="mx-auto">
+{{< blocks/section color="primary" type="features">}}
 
-This is EGI documentation.
-{{% /blocks/lead %}}
+{{% blocks/feature icon="fa-lightbulb" title="Users" url="/users" %}} Contains
+step-to-step documentation on how to use the EGI services.
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-lightbulb" title="Providers" url="/providers" %}}
+Depicts how to join the EGI infrastructure as a service providers offering
+innovative services to the European Research Area. {{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-lightbulb" title="Internal services" url="/internal" %}}
+Hosts the documentation of the EGI services enabling the federation.
+{{% /blocks/feature %}}
+
+{{< /blocks/section >}}
+
+</div>
 
 {{< blocks/section color="dark" type="features">}}
 {{% blocks/feature icon="fa-lightbulb" title="Learn more about EGI!" url="https://egi.eu" %}}
 The EGI Federation is supporting lots of different user communities.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/EGI-Foundation/documentation" %}}
-We do a [Pull Request](https://github.com/EGI-Foundation/documentation/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://docs.egi.eu/about/contributing/" %}}
+We do a [Pull Request](https://github.com/EGI-Foundation/documentation/pulls)
+contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/EGI_eInfra" %}}
