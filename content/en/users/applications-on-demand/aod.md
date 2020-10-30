@@ -50,8 +50,7 @@ The scientific applications that are already available in this service are:
     a user-friendly analysis software for high-throughput data. It contains over 300 
     analysis tools for next generation sequencing (NGS), microarray, proteomics and 
     sequence data. The application is available through the Science Software on Demand 
-    Service (SSoD). Instructions to run the application are available [here]
-    (https://docs.egi.eu/users/applications-on-demand/chipster/).
+    Service (SSoD). Instructions to run the application are available [here](https://docs.egi.eu/users/applications-on-demand/chipster/).
     
 -   [NAMD](https://marketplace.egi.eu/applications-on-demand/58-namd.html) 
     a parallel molecular dynamics code designed for high-performance simulation of 
@@ -157,8 +156,7 @@ Main scientific paper describing the service and status:
 
 Presentations about the service:
 
--   [Slideset about the Applications on Demand (AoD) service introduced at IWSG 2017]
-    (http://iwsg2017.psnc.pl/programme/) (June 2017).
+-   [Slideset about the Applications on Demand (AoD) service introduced at IWSG 2017](http://iwsg2017.psnc.pl/programme/) (June 2017).
 -   [Webinar to introduce the Applicatios on Demand
     (AoD)](https://www.egi.eu/blog/webinar-egi-applications-on-demand-service/)
     service to NGIs/USTs representatives, RI architects, resource
