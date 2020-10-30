@@ -71,19 +71,19 @@ The service includes:
     that offer integrated development environments to port custom
     applications with cloud resources.
     
--   [VMOps dashboard]:(https://dashboard.appdb.egi.eu/vmops) 
+-   [VMOps dashboard](https://dashboard.appdb.egi.eu/vmops):
     a graphical environment for the management of Virtual Machines (VM) in the 
     federated network of clouds that enable the Applications on Demand service.
     User documentation is available [here](https://wiki.appdb.egi.eu/main:faq:what_is_the_vmops_dashboard). 
     
--   [Elastic Cloud Compute Cluster (EC3)]:(https://servproject.i3m.upv.es/ec3-ltos/index.php) 
+-   [Elastic Cloud Compute Cluster (EC3)](https://servproject.i3m.upv.es/ec3-ltos/index.php): 
     a portal that allows the creation of elastic virtual clusters in the cloud. Those clusters can then 
     host your scientific application either directly, or via Apache Mesos, Chronos, Kubernetes, Marathon, 
     [OSCAR](https://github.com/grycap/oscar) or SLURM. 
     Instructions for application developers are available
     [here](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_EC3).
 
--   [Science Software on Demand (SSoD)]:(https://fgsg.ct.infn.it/egissod/web/ssod) 
+-   [Science Software on Demand (SSoD)](https://fgsg.ct.infn.it/egissod/web/ssod):
     a programmable interface of a RESTful API Server to provide an easy access PaaS layer by leveraging 
     recent Web technologies. Instructions for application developers are available
     [here](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_the_FutureGateway_Science_Gateway)
