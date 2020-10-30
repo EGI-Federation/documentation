@@ -5,6 +5,4 @@ type: docs
 weight: 20
 ---
 
-{{% pageinfo %}}
-This is a placeholder page.
-{{% /pageinfo %}}
+If you need any further support, please, contact [support@egi.eu](support@egi.eu)
