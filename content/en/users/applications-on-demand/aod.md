@@ -50,8 +50,7 @@ The scientific applications that are already available in this service are:
     a user-friendly analysis software for high-throughput data. It contains over 300 
     analysis tools for next generation sequencing (NGS), microarray, proteomics and 
     sequence data. The application is available through the Science Software on Demand 
-    Service (SSoD). Instructions to run the application are available [here]
-    (https://docs.egi.eu/users/applications-on-demand/chipster/).
+    Service (SSoD). Instructions to run the application are available [here](https://docs.egi.eu/users/applications-on-demand/chipster/).
     
 -   [NAMD](https://marketplace.egi.eu/applications-on-demand/58-namd.html) 
     a parallel molecular dynamics code designed for high-performance simulation of 
@@ -71,19 +70,19 @@ The service includes:
     that offer integrated development environments to port custom
     applications with cloud resources.
     
--   [VMOps dashboard]:(https://dashboard.appdb.egi.eu/vmops) 
+-   [VMOps dashboard](https://dashboard.appdb.egi.eu/vmops):
     a graphical environment for the management of Virtual Machines (VM) in the 
     federated network of clouds that enable the Applications on Demand service.
     User documentation is available [here](https://wiki.appdb.egi.eu/main:faq:what_is_the_vmops_dashboard). 
     
--   [Elastic Cloud Compute Cluster (EC3)]:(https://servproject.i3m.upv.es/ec3-ltos/index.php) 
+-   [Elastic Cloud Compute Cluster (EC3)](https://servproject.i3m.upv.es/ec3-ltos/index.php): 
     a portal that allows the creation of elastic virtual clusters in the cloud. Those clusters can then 
     host your scientific application either directly, or via Apache Mesos, Chronos, Kubernetes, Marathon, 
     [OSCAR](https://github.com/grycap/oscar) or SLURM. 
     Instructions for application developers are available
     [here](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_EC3).
 
--   [Science Software on Demand (SSoD)]:(https://fgsg.ct.infn.it/egissod/web/ssod) 
+-   [Science Software on Demand (SSoD)](https://fgsg.ct.infn.it/egissod/web/ssod):
     a programmable interface of a RESTful API Server to provide an easy access PaaS layer by leveraging 
     recent Web technologies. Instructions for application developers are available
     [here](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_the_FutureGateway_Science_Gateway)
@@ -157,8 +156,7 @@ Main scientific paper describing the service and status:
 
 Presentations about the service:
 
--   [Slideset about the Applications on Demand (AoD) service introduced at IWSG 2017]
-    (http://iwsg2017.psnc.pl/programme/) (June 2017).
+-   [Slideset about the Applications on Demand (AoD) service introduced at IWSG 2017](http://iwsg2017.psnc.pl/programme/) (June 2017).
 -   [Webinar to introduce the Applicatios on Demand
     (AoD)](https://www.egi.eu/blog/webinar-egi-applications-on-demand-service/)
     service to NGIs/USTs representatives, RI architects, resource
