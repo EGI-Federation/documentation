@@ -2,7 +2,7 @@
 title: "Clients"
 linkTitle: "Clients"
 type: docs
-description: "Documentation related to EGI DataHub"
+description: "Documentation related to [EGI DataHub](https://datahub.egi.eu/)"
 weight: 10
 ---
 

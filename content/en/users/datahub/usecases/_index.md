@@ -2,11 +2,12 @@
 title: "Use Cases"
 linkTitle: "Use Cases"
 type: docs
-description: "EGI DataHub Use Cases"
+description: "[EGI DataHub](https://datahub.egi.eu/) Use Cases"
 weight: 20
 ---
 
-An overview of the use cases and possible deployment scenarios of the EGI DataHub.
+An overview of the use cases and possible deployment scenarios of the
+[EGI DataHub](https://datahub.egi.eu/).
 
 ## Transparent data access
 
