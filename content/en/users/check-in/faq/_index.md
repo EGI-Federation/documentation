@@ -8,9 +8,9 @@ description: >
 
 ## Connect to CheckIn an IdP federated in an hub and spoke federations
 
-### I get an error similar to: \"Error - No connection between institution and service\" (SURFconext example)
+### I get an error similar to: "Error - No connection between institution and service" (SURFconext example)
 
-In case of a \"hub and spoke\" federation the federation coordinator may
+In case of a "hub and spoke" federation the federation coordinator may
 require that the IdP administrators explicitly request to connect to a
 SP and let their users to authenticate on these SP.
 
@@ -24,23 +24,23 @@ SURFnet. If you are using credentials from a Dutch IdP in eduGAIN, you
 or your IdP administrators need to request the connection. The following
 steps will lead you to perform the connection:
 
--   Connect to [SURFconext
-    dashboard](https://dashboard.surfconext.nl/apps)
--   Search for \"EGI AAI Service provider proxy\"
-    -   If the service does not show in the search, you need to ask
-        SURFnet to add it in the dashboard, please write to `support at
-        surfconext dot nl`
--   In the dashboard, near the \"EGI AAI Service provider proxy\" there
-    should be a \"Connect\" button, this will create a service ticket
-    and the SURFconext team will make the connection active.
--   After you received confirmation that the \"EGI AAI Service provider
-    proxy\" is accessible, you will be able to login in CheckIn
+- Connect to [SURFconext
+  dashboard](https://dashboard.surfconext.nl/apps)
+- Search for "EGI AAI Service provider proxy"
+  - If the service does not show in the search, you need to ask
+    SURFnet to add it in the dashboard, please write to `support at
+    surfconext dot nl`
+- In the dashboard, near the "EGI AAI Service provider proxy" there
+  should be a "Connect" button, this will create a service ticket
+  and the SURFconext team will make the connection active.
+- After you received confirmation that the "EGI AAI Service provider
+  proxy" is accessible, you will be able to login in CheckIn
 
 ## Authentication error with ADFS-based Identity Providers
 
 ### Why do I get the error below after successfully authenticating at my Home IdP?
 
-```
+```plaintext
 opensaml::FatalProfileException at (https://aai.egi.eu/registry.sso/SAML2/POST)
 SAML response reported an IdP error.
 Error from identity provider:

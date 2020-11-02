@@ -132,7 +132,7 @@ Team on shift.
 
 DIRAC uses [X.509 certificates](../check-in/vos/voms/) to identify and authenticate
 users. These certificates are delivered to each individual by trusted
-certification authorities.\
+certification authorities.
 If you have a personal certificate issued by a [EUGridPMA-certified](http://www.eugridpma.org/)
 authority you can use it for this tutorial. Otherwise refer to the information available
 in this [section](../check-in/vos/voms/#get-a-certificate), to obtain a certificate.
