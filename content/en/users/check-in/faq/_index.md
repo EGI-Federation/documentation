@@ -49,8 +49,7 @@ Status: urn:oasis:names:tc:SAML:2.0:status:Responder
 
 The Responder error status is typically returned from ADFS-based IdP
 implementations (notably Microsoft ADFS 2.0 and ADFS 3.0) that cannot
-properly handle Scoping elements (see
-<https://docs.microsoft.com/en-za/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#scoping>).
+properly handle [Scoping elements](https://docs.microsoft.com/en-za/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#scoping>).
 Check-in can be configured to omit the scoping element from the
 authentication requests sent to such IdPs in order to allow successful
 logins. Please contact the CheckIn support team and include a screenshot
