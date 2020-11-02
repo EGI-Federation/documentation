@@ -25,7 +25,6 @@ VO (modelled as a COU) is:
 
 `urn:mace:egi.eu:group:vo.example.eu:role=associate#aai.egi.eu`
 
-
 ## Entitlement Construction
 
 For the case of the CO Person with a profile/canvas, like the one
