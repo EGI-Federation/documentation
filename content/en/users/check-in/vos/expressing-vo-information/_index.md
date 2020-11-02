@@ -47,7 +47,6 @@ two entitlements as:
 
 `urn:mace:egi.eu:group:vo.example.eu:role=member#aai.egi.eu`
 
-
 ### VO Groups (sub COUs)
 
 There are occasions where we need a VO to be organized in subgroups.
