@@ -22,4 +22,4 @@ a service providers offering innovative services to the European Research Area.
   [DataHub](https://docs.egi.eu/providers/datahub/) section!
   
 > And if you want learn about EGI Notebooks, head to the
-  Notebooks](https://docs.egi.eu/providers/notebooks/) section!
+  [Notebooks](https://docs.egi.eu/providers/notebooks/) section!
