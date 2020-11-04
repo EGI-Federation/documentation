@@ -26,3 +26,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           DISABLE_ERRORS: true
+          # No need to validate ruby code we are not responsible for
+          VALIDATE_RUBY: false
