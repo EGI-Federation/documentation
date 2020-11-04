@@ -278,14 +278,14 @@ value pairs for the Claims.
 The following scope values can be used to request Claims from the EGI
 Check-in UserInfo Endpoint:
 
-| Scope                          | Claims                                                                                                    |
-| ------------------------------ | --------------------------------------------------------------------------------------------------------- |
-| `openid`                       | `sub`                                                                                                     |
-| `profile`                      | - `name` <br> - `given_name` <br> - `family_name` <br> - `preferred_username`                             |
-| `email`                        | - `email` <br> - `email_verified` <br> - `voperson_verified_email`                                        |
-| `refeds_edu`                   | - `acr` <br> - `eduperson_assurance` <br> - `eduperson_scoped_affiliation` <br> - `eduperson_entitlement` |
-| `eduperson_scoped_affiliation` | `eduperson_scoped_affiliation`                                                                            |
-| `eduperson_entitlement`        | `eduperson_entitlement`                                                                                   |
+| Scope                          | Claims                                                                                                                       |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| `openid`                       | `sub`                                                                                                                        |
+| `profile`                      | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul>                             |
+| `email`                        | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>                                         |
+| `refeds_edu`                   | <ul><li>`acr`</li><li>`eduperson_assurance`</li><li>`eduperson_scoped_affiliation`</li><li>`eduperson_entitlement`</li></ul> |
+| `eduperson_scoped_affiliation` | `eduperson_scoped_affiliation`                                                                                               |
+| `eduperson_entitlement`        | `eduperson_entitlement`                                                                                                      |
 
 A more extensive list of all the attributes that may be made available to
 Service Providers is included in the [User Attribute](#user-attributes) section.
@@ -681,20 +681,20 @@ connected to Check-in.
 
 ### 1. EGI ID
 
-|          attribute name | EGI ID                                                                           |
-| ----------------------: | :------------------------------------------------------------------------------- |
-|         **description** | An identifier for the user, unique among all EGI accounts and never reused       |
-|   **SAML Attribute(s)** | `1.3.6.1.4.1.5923.1.1.1.13` (eduPersonUniqueId)                                  |
-|          **OIDC scope** | `openid`                                                                         |
-|       **OIDC claim(s)** | `sub `                                                                           |
-| **OIDC claim location** | - ID token <br> - Userinfo endpoint <br> - Introspection endpoint                |
-|              **origin** | Check-in assigns this attribute on user registration                             |
-|             **changes** | No                                                                               |
-|        **multiplicity** | No                                                                               |
-|        **availability** | Always                                                                           |
-|             **example** | _ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu_        |
-|               **notes** | Use **EGI ID** within your application as the unique-identifier key for the user |
-|              **status** | Stable                                                                           |
+|          attribute name | EGI ID                                                                              |
+| ----------------------: | :---------------------------------------------------------------------------------- |
+|         **description** | An identifier for the user, unique among all EGI accounts and never reused          |
+|   **SAML Attribute(s)** | `1.3.6.1.4.1.5923.1.1.1.13` (eduPersonUniqueId)                                     |
+|          **OIDC scope** | `openid`                                                                            |
+|       **OIDC claim(s)** | `sub `                                                                              |
+| **OIDC claim location** | <ul><li>ID token</li><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
+|              **origin** | Check-in assigns this attribute on user registration                                |
+|             **changes** | No                                                                                  |
+|        **multiplicity** | No                                                                                  |
+|        **availability** | Always                                                                              |
+|             **example** | _ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu_           |
+|               **notes** | Use **EGI ID** within your application as the unique-identifier key for the user    |
+|              **status** | Stable                                                                              |
 
 ### 2. Display Name
 
@@ -704,7 +704,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:2.16.840.1.113730.3.1.241` (displayName) |
 |          **OIDC scope** | `profile`                                         |
 |       **OIDC claim(s)** | `name`                                            |
-| **OIDC claim location** | - Userinfo endpoint                               |
+| **OIDC claim location** | Userinfo endpoint                                 |
 |              **origin** | Provided by user's Identity Provider              |
 |             **changes** | Yes                                               |
 |        **multiplicity** | Single-valued                                     |
@@ -721,7 +721,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:2.5.4.42` (givenName)       |
 |          **OIDC scope** | `profile`                            |
 |       **OIDC claim(s)** | `given_name`                         |
-| **OIDC claim location** | - Userinfo endpoint                  |
+| **OIDC claim location** | Userinfo endpoint                    |
 |              **origin** | Provided by user's Identity Provider |
 |             **changes** | Yes                                  |
 |        **multiplicity** | Single-valued                        |
@@ -738,7 +738,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:2.5.4.4` (sn)               |
 |          **OIDC scope** | `profile`                            |
 |       **OIDC claim(s)** | `family_name`                        |
-| **OIDC claim location** | - Userinfo endpoint                  |
+| **OIDC claim location** | Userinfo endpoint                    |
 |              **origin** | Provided by user's Identity Provider |
 |             **changes** | Yes                                  |
 |        **multiplicity** | Single-valued                        |
@@ -749,20 +749,20 @@ connected to Check-in.
 
 ### 5. Username
 
-|          attribute name | Username                                                            |
-| ----------------------: | :------------------------------------------------------------------ |
-|         **description** | The username by which the user wishes to be referred to             |
-|   **SAML Attribute(s)** | `urn:oid:0.9.2342.19200300.100.1.1` (uid)                           |
-|          **OIDC scope** | `profile`                                                           |
-|       **OIDC claim(s)** | `preferred_username`                                                |
-| **OIDC claim location** | - ID token <br> - Userinfo endpoint <br> - Introspection endpoint   |
-|              **origin** | Check-in assigns this attribute on user registration                |
-|             **changes** | No                                                                  |
-|        **multiplicity** | Single-valued                                                       |
-|        **availability** | Always                                                              |
-|             **example** | _jdoe_                                                              |
-|               **notes** | The Service Provider **MUST NOT** rely upon this value being unique |
-|              **status** | Stable                                                              |
+|          attribute name | Username                                                                            |
+| ----------------------: | :---------------------------------------------------------------------------------- |
+|         **description** | The username by which the user wishes to be referred to                             |
+|   **SAML Attribute(s)** | `urn:oid:0.9.2342.19200300.100.1.1` (uid)                                           |
+|          **OIDC scope** | `profile`                                                                           |
+|       **OIDC claim(s)** | `preferred_username`                                                                |
+| **OIDC claim location** | <ul><li>ID token</li><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
+|              **origin** | Check-in assigns this attribute on user registration                                |
+|             **changes** | No                                                                                  |
+|        **multiplicity** | Single-valued                                                                       |
+|        **availability** | Always                                                                              |
+|             **example** | _jdoe_                                                                              |
+|               **notes** | The Service Provider **MUST NOT** rely upon this value being unique                 |
+|              **status** | Stable                                                                              |
 
 ### 6. Email Address
 
@@ -772,7 +772,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:0.9.2342.19200300.100.1.3` (mail)                                  |
 |          **OIDC scope** | `email`                                                                     |
 |       **OIDC claim(s)** | `email`                                                                     |
-| **OIDC claim location** | - Userinfo endpoint <br> - Introspection endpoint                           |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>          |
 |              **origin** | Provided by user's Identity Provider                                        |
 |             **changes** | Yes                                                                         |
 |        **multiplicity** | Single-valued                                                               |
@@ -789,7 +789,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | See [Verified email list](#8-verified-email-list)                   |
 |          **OIDC scope** | `email`                                                             |
 |       **OIDC claim(s)** | `email_verified`                                                    |
-| **OIDC claim location** | - Userinfo endpoint <br> - Introspection endpoint                   |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>  |
 |              **origin** | Check-in assigns this attribute on user registration                |
 |             **changes** | Yes                                                                 |
 |        **multiplicity** | Single-valued                                                       |
@@ -800,20 +800,20 @@ connected to Check-in.
 
 ### 8. Verified email list
 
-|          attribute name | Verified email list                                        |
-| ----------------------: | :--------------------------------------------------------- |
-|         **description** | A list of user's email addresses that have been verified   |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.14` (voPersonVerifiedEmail) |
-|          **OIDC scope** | `email`                                                    |
-|       **OIDC claim(s)** | `voperson_verified_email`                                  |
-| **OIDC claim location** | - Userinfo endpoint <br> - Introspection endpoint          |
-|              **origin** | Check-in or the user's Identity Provider                   |
-|             **changes** | Yes                                                        |
-|        **multiplicity** | Multi-valued                                               |
-|        **availability** | Not always                                                 |
-|             **example** | _john.doe@example.org_ <br> _jdoe@example.com_             |
-|               **notes** | -                                                          |
-|              **status** | Experimental                                               |
+|          attribute name | Verified email list                                                |
+| ----------------------: | :----------------------------------------------------------------- |
+|         **description** | A list of user's email addresses that have been verified           |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.14` (voPersonVerifiedEmail)         |
+|          **OIDC scope** | `email`                                                            |
+|       **OIDC claim(s)** | `voperson_verified_email`                                          |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
+|              **origin** | Check-in or the user's Identity Provider                           |
+|             **changes** | Yes                                                                |
+|        **multiplicity** | Multi-valued                                                       |
+|        **availability** | Not always                                                         |
+|             **example** | _john.doe@example.org_ <br> _jdoe@example.com_                     |
+|               **notes** | -                                                                  |
+|              **status** | Experimental                                                       |
 
 ### 9. Affiliation
 
@@ -823,7 +823,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.9` (eduPersonScopedAffiliation)          |
 |          **OIDC scope** | `eduperson_scoped_affiliation`                                           |
 |       **OIDC claim(s)** | `eduperson_scoped_affiliation`                                           |
-| **OIDC claim location** | - Userinfo endpoint <br> - Introspection endpoint                        |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>       |
 |              **origin** | Check-in assigns this attribute on user registration                     |
 |             **changes** | Yes                                                                      |
 |        **multiplicity** | Multi-valued                                                             |
@@ -840,7 +840,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                 |
 |          **OIDC scope** | `eduperson_entitlement`                                                   |
 |       **OIDC claim(s)** | `eduperson_entitlement`                                                   |
-| **OIDC claim location** | - Userinfo endpoint <br> - Introspection endpoint                         |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>        |
 |              **origin** | Group memberships are managed by group administrators                     |
 |             **changes** | Yes                                                                       |
 |        **multiplicity** | Multi-valued                                                              |
@@ -851,20 +851,20 @@ connected to Check-in.
 
 ### 11. Assurance
 
-|          attribute name | Assurance                                                |
-| ----------------------: | :------------------------------------------------------- |
-|         **description** | Assurance of the identity of the user                    |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.11` (eduPersonAssurance) |
-|          **OIDC scope** | `eduperson_assurance`                                    |
-|       **OIDC claim(s)** | `eduperson_assurance`                                    |
-| **OIDC claim location** | - Userinfo endpoint <br> - Introspection endpoint        |
-|              **origin** | Check-in assigns this attribute on user registration     |
-|             **changes** | Yes                                                      |
-|        **multiplicity** | Multi-valued                                             |
-|        **availability** | Not always                                               |
-|             **example** | _https://aai.egi.eu/LoA#Low_                             |
-|               **notes** | -                                                        |
-|              **status** | Stable                                                   |
+|          attribute name | Assurance                                                          |
+| ----------------------: | :----------------------------------------------------------------- |
+|         **description** | Assurance of the identity of the user                              |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.11` (eduPersonAssurance)           |
+|          **OIDC scope** | `eduperson_assurance`                                              |
+|       **OIDC claim(s)** | `eduperson_assurance`                                              |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
+|              **origin** | Check-in assigns this attribute on user registration               |
+|             **changes** | Yes                                                                |
+|        **multiplicity** | Multi-valued                                                       |
+|        **availability** | Not always                                                         |
+|             **example** | _https://aai.egi.eu/LoA#Low_                                       |
+|               **notes** | -                                                                  |
+|              **status** | Stable                                                             |
 
 ## User authorisation
 
