@@ -27,14 +27,10 @@ jobs:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdownlint.json
-          # Check a subset of files
-          FILTER_REGEX_INCLUDE: "*.md,*.toml,content/"
-          # Check all files
-          VALIDATE_ALL_CODEBASE: true
-          # Ignore errors
-          DISABLE_ERRORS: true
-          # No need to validate ruby code we are not responsible for
-          VALIDATE_RUBY: false
+          # Only check new or edited files
+          VALIDATE_ALL_CODEBASE: false
+          # Fail on errors
+          DISABLE_ERRORS: false
 
       # Runs the Super-Linter action
       - name: Run Super-Linter on all codebase
@@ -43,11 +39,9 @@ jobs:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdownlint.json
-          # Check a subset of files
-          FILTER_REGEX_INCLUDE: "*.md,*.toml,content/"
-          # Only check new or edited files
-          VALIDATE_ALL_CODEBASE: false
-          # Fail on errors
-          DISABLE_ERRORS: false
+          # Check all files
+          VALIDATE_ALL_CODEBASE: true
+          # Ignore errors
+          DISABLE_ERRORS: true
           # No need to validate ruby code we are not responsible for
           VALIDATE_RUBY: false
