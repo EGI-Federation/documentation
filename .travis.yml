@@ -11,11 +11,7 @@ git:
 before_install:
   - npm install postcss-cli@7.1.2
   - npm install autoprefixer@9.0
-  - npm install --save-dev --save-exact prettier
 script:
-  # Check files using prettier
-  # XXX disabled until we review all the content
-  # - prettier --check content/en README.md
   # building static content with hugo
   - ./binaries/linux64/hugo
 deploy:
