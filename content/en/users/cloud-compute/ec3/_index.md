@@ -21,8 +21,8 @@ automatically resized to fit the load (e.g. number of jobs at the batch system).
 
 The following section of the documentation will guide you on how to:
 
--   Request access to EC3,
--   Deploy simple EC3 elastic cluster on top of the IaaS providers of the EGI Cloud,
-    either using the web interface or the command-line interface,
--   Run pre-configured scientific applications in the EC3 elastic cluster.
+- Request access to EC3,
+- Deploy simple EC3 elastic cluster on top of the IaaS providers of the EGI Cloud,
+  either using the web interface or the command-line interface,
+- Run pre-configured scientific applications in the EC3 elastic cluster.
     
