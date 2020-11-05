@@ -15,14 +15,14 @@ Sources to build
 > If you are interested in contributing please check the
 > [Contributing Guide](https://docs.egi.eu/about/contributing/).
 
-### Requirements
+## Requirements
 
 - hugo
 - NodeJS
   - postcss-cli
   - autoprofixer
 
-### Installing dependencies, building and testing
+## Installing dependencies, building and testing
 
 To install npm+nodejs please check the instructions at:
 https://www.npmjs.com/get-npm
