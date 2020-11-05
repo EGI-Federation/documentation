@@ -18,7 +18,7 @@ script:
   # https://github.com/markdownlint/markdownlint
   # MD002: first level header is managed by hugo theme
   # MD024: several sections repeat the header name, may be reviewed later
-  - mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
+  - mdl -s relaxed -s .mdl.rb -r ~MD002,~MD024 content/
   # Check files using prettier
   # XXX disabled until we review all the content
   # - prettier --check content/en README.md
