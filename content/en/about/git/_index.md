@@ -13,10 +13,11 @@ easier to send pull requests.
 If you are new to `git` and **GitHub** you are advised to start by the two
 following articles providing simple tutorials:
 
-- https://opensource.com/article/18/1/step-step-guide-git
-- https://opensource.com/article/19/7/create-pull-request-github
+- [Step by step guide to git](https://opensource.com/article/18/1/step-step-guide-git)
+- [Creating pull request with GitHub](https://opensource.com/article/19/7/create-pull-request-github)
 
-GitHub official documentation is available at https://docs.github.com/en/github.
+GitHub official documentation is available at
+[docs.github.com](https://docs.github.com/en/github).
 
 Some documentation about the main steps for working with GitHub is also
 available her after.
@@ -44,14 +45,14 @@ The most convenient way to authenticate with GitHub is to use SSH keys over the
 SSH protocol.
 
 You can add an SSH _public_ key to your GitHub account in the `Settings` on
-GitHub, at https://github.com/settings/keys.
+GitHub, at [https://github.com/settings/keys](https://github.com/settings/keys).
 
 Refer to
 [Connecting to GitHub with SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
 for an extensive documentation on using SSH keys with GitHub.
 
 It's worth to mention that your ssh _public_ keys can easily be retrieved using
-an URL like https://github.com/<your_username>.keys.
+an URL like `https://github.com/<your_username>.keys`.
 
 In order to manage repositories over ssh, you will will have to clone them via
 SSH, not HTTPS.
@@ -65,8 +66,9 @@ switch it to SSH by following
 The GitHub Command Line Interface greatly helps with working with GitHub
 repositories from a terminal.
 
-It can be installed using the packages available on https://cli.github.com/. The
-manual is available at https://cli.github.com/manual/.
+It can be installed using the packages available on
+[their homepage](https://cli.github.com/). There is also a
+[manual](https://cli.github.com/manual/).
 
 Once installed you will have to start by setting up authentication.
 
@@ -279,7 +281,7 @@ git rebase upstream/master
 In case some files have been changed on both sides you will will have to merge
 the conflicts manually.
 
-## Cloning a Pull Request to test and review it locally
+## Cloning a Pull Request to edit, test and review it locally
 
 It's possible to clone a Pull Request to a local branch to test it locally. It's
 done using the PR number.
@@ -301,6 +303,18 @@ Once done it's possible to build and run the site locally:
 
 The documentation will then be accessible on
 [http://localhost:1313](http://localhost:1313).
+
+> People having write access to the repository hosting the branch related to the
+> PR (ie. usually the PR author) will be able to add and edit files.
+
+```sh
+# From the local clone of the repository
+gh pr checkout XXX
+vim yyy.zz
+git add yyy.zz
+git commit yyy.zz -m <commit_message>
+git push
+```
 
 ### Updating a local clone of a PR
 
