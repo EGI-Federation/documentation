@@ -1,5 +1,5 @@
 ---
-name: github pages
+name: Deploy to GitHub pages
 # Setup and build files with hugo
 # https://github.com/peaceiris/actions-hugo
 # Deploy to GitHub pages
