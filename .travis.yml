@@ -9,7 +9,7 @@ node_js:
 git:
   submodules: true
 before_install:
-  - npm install
+  - npm ci
 script:
   # building static content with hugo
   - ./binaries/linux64/hugo
