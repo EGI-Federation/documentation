@@ -1,6 +1,6 @@
 name: Check Markdown links
 
-on: push
+on: [push, pull-request]
 
 jobs:
   markdown-link-check:
