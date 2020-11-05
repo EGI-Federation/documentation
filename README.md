@@ -17,7 +17,6 @@ Sources to build
 
 ### Requirements
 
-- mdl
 - hugo
 - NodeJS
   - postcss-cli
@@ -30,8 +29,7 @@ https://www.npmjs.com/get-npm
 
 The rest of the tools can be installed as follows:
 
-```console
-gem install mdl
+```sh
 npm install postcss-cli@7.1.2
 npm install autoprefixer@9.0
 ```
@@ -40,9 +38,8 @@ The supported Hugo version packages are available under the `binaries` folder.
 
 To build the site, from the repository root
 
-```console
+```sh
 git submodule update --init --recursive --depth 1
-mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
 ./binaries/<platform>/hugo
 ```
 
