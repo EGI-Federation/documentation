@@ -56,6 +56,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           external_repository: EGI-Foundation/EGI-Foundation.github.io
-          publish_dir: ./public
+          cname: docs.egi.eu
           # XXX Publish to a test branch
           publish_branch: test
