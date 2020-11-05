@@ -19,6 +19,7 @@ jobs:
       - name: Check links on all files
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
-          folder-path: "content/, README.md"
+          folder-path: "content/"
+          file-path: "README.md"
           use-quiet-mode: "yes"
           use-verbose-mode: "yes"
