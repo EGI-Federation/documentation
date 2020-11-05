@@ -24,8 +24,8 @@ Sources to build
 
 ## Installing dependencies, building and testing
 
-To install npm+nodejs please check the instructions at:
-https://www.npmjs.com/get-npm
+To install npm+nodejs please check the
+[official instructions](https://www.npmjs.com/get-npm).
 
 The rest of the tools can be installed as follows:
 
@@ -49,7 +49,8 @@ To test your changes:
 ./binaries/<platform>/hugo server -D
 ```
 
-The website is available locally at: http://localhost:1313/
+The website is available locally at:
+[http://localhost:1313/](http://localhost:1313/).
 
 ## Usage
 
