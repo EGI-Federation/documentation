@@ -18,8 +18,8 @@ Sources files used to build [EGI documentation](https://docs.egi.eu).
 
 ## Requirements
 
-- hugo
-- NodeJS
+- [hugo](https://gohugo.io)
+- [NodeJS](https://nodejs.org/)
   - postcss-cli
   - autoprofixer
 
@@ -48,7 +48,7 @@ git submodule update --init --recursive --depth 1
 
 To test your changes:
 
-```console
+```sh
 ./binaries/<platform>/hugo server -D
 ```
 
@@ -67,7 +67,7 @@ theme has been cloned as a git submodule.
 
 Updating the submodule
 
-```console
+```sh
 git submodule foreach git pull
 git commit themes/docsy -m 'Update theme'
 ```
