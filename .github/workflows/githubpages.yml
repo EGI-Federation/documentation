@@ -46,8 +46,12 @@ jobs:
 
       - run: npm ci
       - run: hugo --minify
-# XXX Do not try to deploy yet, only try to build
-#      - name: Deploy
-#        uses: peaceiris/actions-gh-pages@v3
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          external_repository: EGI-Foundation/EGI-Foundation.github.io
+          publish_dir: ./public
+          # XXX Publish to a test branch
+          publish_branch: test
