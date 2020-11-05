@@ -5,13 +5,10 @@ name: github pages
 # Deploy to GitHub pages
 # https://github.com/peaceiris/actions-gh-pages
 
-# XXX temporary for testing build in the PR
-on: [push, pull_request]
-# XXX to be used once confiremd it builds correctly
-# on:
-#   push:
-#     branches:
-#       - master
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   deploy:
