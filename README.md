@@ -33,7 +33,7 @@ The dependencies of the docsy theme can be installed as follows:
 
 ```sh
 # from the root of the repository clone
-npm install
+npm ci
 ```
 
 The supported Hugo version packages are available under the `binaries` folder.
