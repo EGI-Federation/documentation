@@ -55,5 +55,4 @@ jobs:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: EGI-Foundation/EGI-Foundation.github.io
           cname: docs.egi.eu
-          # XXX Publish to a test branch
-          publish_branch: test
+          publish_branch: master
