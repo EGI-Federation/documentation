@@ -1,8 +1,9 @@
 {
   "ignorePatterns": [
     {
-      "pattern": "^http://localhost.*",
-      "pattern": "^http://127.0.0.1.*",
+      "pattern": "^http://localhost",
+      "pattern": "^http://localhost:1313",
+      "pattern": "^http://127.0.0.1",
       "pattern": "^https://example.com",
       "pattern": "^https://aai.*.egi.eu/oidc/",
       "pattern": "^https://masterportal-pilot.aai.egi.eu/mp-oa2-server/"
