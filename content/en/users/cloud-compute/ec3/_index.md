@@ -12,7 +12,8 @@ tool to create elastic virtual clusters on Infrastructure as a Service
 [Google Cloud](http://cloud.google.com/) or [Microsoft Azure](http://azure.microsoft.com/)) 
 or on-premises (such as [OpenNebula](http://www.opennebula.org/) and 
 [OpenStack](http://www.openstack.org/)).
-It supports the provisioning of clusters running [TORQUE](http://www.adaptivecomputing.com/products/open-source/torque),
+It supports the provisioning of clusters running
+[TORQUE](http://www.adaptivecomputing.com/products/open-source/torque),
 [SLURM](http://slurm.schedmd.com/), [HTCondor](https://research.cs.wisc.edu/htcondor/), 
 [Mesos](http://mesos.apache.org/), [Nomad](https://www.nomadproject.io/), 
 [Kubernetes](https://kubernetes.io/) and others that will be
