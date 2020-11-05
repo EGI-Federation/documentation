@@ -15,34 +15,33 @@ Sources to build
 > If you are interested in contributing please check the
 > [Contributing Guide](https://docs.egi.eu/about/contributing/).
 
-### Requirements
+## Requirements
 
-- mdl
 - hugo
 - NodeJS
   - postcss-cli
   - autoprofixer
 
-### Installing dependencies, building and testing
+## Installing dependencies, building and testing
 
-To install npm+nodejs please check the instructions at:
-https://www.npmjs.com/get-npm
+To install npm+nodejs please check the
+[official instructions](https://www.npmjs.com/get-npm).
 
-The rest of the tools can be installed as follows:
+Everything has been tested with Node.js 12.
 
-```console
-gem install mdl
-npm install postcss-cli@7.1.2
-npm install autoprefixer@9.0
+The dependencies of the docsy theme can be installed as follows:
+
+```sh
+# from the root of the repository clone
+npm ci
 ```
 
 The supported Hugo version packages are available under the `binaries` folder.
 
 To build the site, from the repository root
 
-```console
+```sh
 git submodule update --init --recursive --depth 1
-mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
 ./binaries/<platform>/hugo
 ```
 
@@ -52,7 +51,8 @@ To test your changes:
 ./binaries/<platform>/hugo server -D
 ```
 
-The website is available locally at: http://localhost:1313/
+The website is available locally at:
+[http://localhost:1313/](http://localhost:1313/).
 
 ## Usage
 
@@ -75,6 +75,6 @@ git commit themes/docsy -m 'Update theme'
 
 To speed up the travis run a binary version of Hugo (extended version) for Linux
 64 bit is included in the repository under `binaries`. Updates can be downloaded
-at https://github.com/gohugoio/hugo/releases.
+at [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
 
 Travis will automatically deploy a new version when a PR is merged to master.
