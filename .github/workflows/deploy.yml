@@ -1,0 +1,58 @@
+---
+name: Deploy to GitHub pages
+# Setup and build files with hugo
+# https://github.com/peaceiris/actions-hugo
+# Deploy to GitHub pages
+# https://github.com/peaceiris/actions-gh-pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Build using Hugo and deploy
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          # Fetch the Docsy theme
+          submodules: recursive
+          # Fetch all history for .GitInfo and .Lastmod
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.66.0"
+          extended: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          # NodeJS 12 is maintained until 2022-04-30
+          node-version: "12.x"
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install npm project with a clean slate
+        run: npm ci
+
+      - name: Build and minify using Hugo
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # Use a personal token configured as a repository-specific secret
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: EGI-Foundation/EGI-Foundation.github.io
+          cname: docs.egi.eu
+          publish_branch: master

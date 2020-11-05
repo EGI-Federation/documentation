@@ -3,6 +3,5 @@
 !/public/.gitkeep
 # From NodeJS for docsy
 node_modules/
-package-lock.json
 
 .DS_Store

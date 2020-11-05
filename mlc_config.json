@@ -1,0 +1,19 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^http://localhost"
+    },
+    {
+      "pattern": "^https://example.com"
+    },
+    {
+      "pattern": "^https://aai.*.egi.eu/oidc"
+    },
+    {
+      "pattern": "^https://aai.egi.eu/LoA"
+    },
+    {
+      "pattern": "^https://.*aai.egi.eu/mp-oa2-server/"
+    }
+  ]
+}

@@ -1,9 +1,10 @@
-name: Check Markdown links
+name: Check links
 
-on: push
+on: pull_request
 
 jobs:
   markdown-link-check:
+    name: Check links using markdwon-link-check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -12,6 +13,7 @@ jobs:
       - name: Check links on new changes
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
+          config-file: "mlc_config.json"
           check-modified-files-only: "yes"
           use-quiet-mode: "yes"
           use-verbose-mode: "yes"
