@@ -5,7 +5,7 @@ name: Build documentation
 # Deploy to GitHub pages
 # https://github.com/peaceiris/actions-gh-pages
 
-on: [push, pull_request]
+on: pull_request
 
 jobs:
   deploy:
