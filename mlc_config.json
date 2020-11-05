@@ -4,7 +4,10 @@
       "pattern": "^http://localhost"
     },
     {
-      "pattern": "^http://aai.egi.eu/oidc"
+      "pattern": "^http://example.com"
+    },
+    {
+      "pattern": "^http://aai.*.egi.eu/oidc"
     },
     {
       "pattern": "^https://masterportal-pilot.aai.egi.eu/mp-oa2-server/"
