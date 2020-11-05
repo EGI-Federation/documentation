@@ -73,6 +73,6 @@ git commit themes/docsy -m 'Update theme'
 
 To speed up the travis run a binary version of Hugo (extended version) for Linux
 64 bit is included in the repository under `binaries`. Updates can be downloaded
-at https://github.com/gohugoio/hugo/releases.
+at [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
 
 Travis will automatically deploy a new version when a PR is merged to master.
