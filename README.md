@@ -27,11 +27,11 @@ Sources to build
 To install npm+nodejs please check the
 [official instructions](https://www.npmjs.com/get-npm).
 
-The rest of the tools can be installed as follows:
+The dependencies of the docsy theme can be installed as follows:
 
 ```sh
-npm install postcss-cli@7.1.2
-npm install autoprefixer@9.0
+# from the root of the repository clone
+npm install
 ```
 
 The supported Hugo version packages are available under the `binaries` folder.
