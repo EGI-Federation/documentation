@@ -54,7 +54,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: EGI-Foundation/EGI-Foundation.github.io
           cname: docs.egi.eu
           # XXX Publish to a test branch
