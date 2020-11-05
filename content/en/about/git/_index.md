@@ -16,7 +16,8 @@ following articles providing simple tutorials:
 - [Step by step guide to git](https://opensource.com/article/18/1/step-step-guide-git)
 - [Creating pull request with GitHub](https://opensource.com/article/19/7/create-pull-request-github)
 
-GitHub official documentation is available at https://docs.github.com/en/github.
+GitHub official documentation is available at
+[docs.github.com](https://docs.github.com/en/github).
 
 Some documentation about the main steps for working with GitHub is also
 available her after.
