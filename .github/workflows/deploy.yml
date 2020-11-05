@@ -1,21 +1,18 @@
 ---
-name: github pages
+name: Deploy to GitHub pages
 # Setup and build files with hugo
 # https://github.com/peaceiris/actions-hugo
 # Deploy to GitHub pages
 # https://github.com/peaceiris/actions-gh-pages
 
-# XXX temporary for testing build in the PR
-on: [push, pull_request]
-# XXX to be used once confiremd it builds correctly
-# on:
-#   push:
-#     branches:
-#       - master
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   deploy:
-    name: Build and Deploy Hugo
+    name: Build using Hugo and deploy
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -58,5 +55,4 @@ jobs:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: EGI-Foundation/EGI-Foundation.github.io
           cname: docs.egi.eu
-          # XXX Publish to a test branch
-          publish_branch: test
+          publish_branch: master

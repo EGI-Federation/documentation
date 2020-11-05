@@ -1,11 +1,11 @@
 ---
-name: Super-Linter
+name: Lint
 
-on: [push, pull_request]
+on: pull_request
 
 jobs:
   super-lint:
-    name: Linting
+    name: Lint with Supper-Linter
     runs-on: ubuntu-latest
 
     steps:
