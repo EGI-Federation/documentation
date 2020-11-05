@@ -1,9 +1,10 @@
 # EGI documentation
 
-[![Build Status](https://travis-ci.org/EGI-Foundation/documentation.svg?branch=master)](https://travis-ci.org/EGI-Foundation/documentation)
+[![Build Status](https://github.com/EGI-Foundation/documentation/workflows/Build%20documentation/badge.svg)](https://github.com/EGI-Foundation/documentation/actions)
 
-Sources to build
-[EGI documentation static pages](https://egi-foundation.github.io/).
+[![Deploy Status](https://github.com/EGI-Foundation/documentation/workflows/Deploy%20to%20GitHub%20pages/badge.svg)](https://github.com/EGI-Foundation/documentation/actions)
+
+Sources files used to build [EGI documentation](https://docs.egi.eu).
 
 - [Hugo](https://gohugo.io/) is used to build a static website.
 - The theme [docsy](https://www.docsy.dev) is used.
@@ -17,8 +18,8 @@ Sources to build
 
 ## Requirements
 
-- hugo
-- NodeJS
+- [hugo](https://gohugo.io)
+- [NodeJS](https://nodejs.org/)
   - postcss-cli
   - autoprofixer
 
@@ -47,7 +48,7 @@ git submodule update --init --recursive --depth 1
 
 To test your changes:
 
-```console
+```sh
 ./binaries/<platform>/hugo server -D
 ```
 
@@ -66,7 +67,7 @@ theme has been cloned as a git submodule.
 
 Updating the submodule
 
-```console
+```sh
 git submodule foreach git pull
 git commit themes/docsy -m 'Update theme'
 ```
