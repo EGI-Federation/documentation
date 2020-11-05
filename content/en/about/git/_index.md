@@ -279,7 +279,7 @@ git rebase upstream/master
 In case some files have been changed on both sides you will will have to merge
 the conflicts manually.
 
-## Cloning a Pull Request to test and review it locally
+## Cloning a Pull Request to edit, test and review it locally
 
 It's possible to clone a Pull Request to a local branch to test it locally. It's
 done using the PR number.
@@ -301,6 +301,18 @@ Once done it's possible to build and run the site locally:
 
 The documentation will then be accessible on
 [http://localhost:1313](http://localhost:1313).
+
+> People having write access to the repository hosting the branch related to
+> the PR (ie. usually the PR author) will be able to add and edit files.
+
+```sh
+# From the local clone of the repository
+gh pr checkout XXX
+vim yyy.zz
+git add yyy.zz
+git commit yyy.zz -m <commit_message>
+git push
+```
 
 ### Updating a local clone of a PR
 
