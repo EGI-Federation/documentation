@@ -27,6 +27,8 @@ Sources to build
 To install npm+nodejs please check the
 [official instructions](https://www.npmjs.com/get-npm).
 
+Everything has been tested with Node.js 12.
+
 The dependencies of the docsy theme can be installed as follows:
 
 ```sh
