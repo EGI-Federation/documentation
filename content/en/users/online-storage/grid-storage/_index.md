@@ -65,7 +65,7 @@ lcg-infosites --vo biomed  se
 ## Client access
 
 The access via client requires the user to obtain a valid X.509 user VOMS proxy.
-Please refer to the [Check-in doc](../check-in/vos/voms/) for more information.
+Please refer to the [Check-in doc](../../check-in/vos/voms/) for more information.
 Integration with OpenID Connect and the EGI Check-in service is under piloting
 at some of the endpoints on the infrastructure , but it has not yet reached the
 production stage.
