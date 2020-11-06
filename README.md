@@ -19,7 +19,7 @@ Sources files used to build [EGI documentation](https://docs.egi.eu).
 ## Requirements
 
 - [hugo](https://gohugo.io)
-- [NodeJS](https://nodejs.org/) and other 
+- [NodeJS](https://nodejs.org/) and other
   [docsy](https://www.docsy.dev) theme dependencies:
   - postcss-cli
   - autoprofixer
