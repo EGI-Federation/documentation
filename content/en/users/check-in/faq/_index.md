@@ -8,7 +8,9 @@ description: >
 
 ## Connect to CheckIn an IdP federated in an hub and spoke federations
 
+<!-- markdownlint-disable line-length -->
 ### I get an error similar to: "Error - No connection between institution and service" (SURFconext example)
+<!-- markdownlint-enable line-length -->
 
 In case of a "hub and spoke" federation the federation coordinator may require
 that the IdP administrators explicitly request to connect to a SP and let their
