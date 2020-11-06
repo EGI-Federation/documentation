@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - master
+  pull_request:
 
 jobs:
   deploy:
@@ -56,3 +57,4 @@ jobs:
           external_repository: EGI-Foundation/EGI-Foundation.github.io
           cname: docs.egi.eu
           publish_branch: master
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
