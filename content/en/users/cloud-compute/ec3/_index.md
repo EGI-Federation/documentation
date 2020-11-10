@@ -15,7 +15,7 @@ tool to create elastic virtual clusters on Infrastructure as a Service
 [OpenNebula](http://www.opennebula.org/) and
 [OpenStack](http://www.openstack.org/)).
 It supports the provisioning of clusters running
-[TORQUE](http://www.adaptivecomputing.com/products/open-source/torque),
+[TORQUE](https://github.com/adaptivecomputing/torque),
 [SLURM](http://slurm.schedmd.com/),
 [HTCondor](https://research.cs.wisc.edu/htcondor/),
 [Mesos](http://mesos.apache.org/), [Nomad](https://www.nomadproject.io/),
