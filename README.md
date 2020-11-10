@@ -19,11 +19,12 @@ Sources files used to build [EGI documentation](https://docs.egi.eu).
 ## Requirements
 
 - [hugo](https://gohugo.io)
-- [NodeJS](https://nodejs.org/)
+- [NodeJS](https://nodejs.org/) and other
+  [docsy](https://www.docsy.dev) theme dependencies:
   - postcss-cli
   - autoprofixer
 
-## Installing dependencies, building and testing
+## Installing dependencies, building and testing locally
 
 To install npm+nodejs please check the
 [official instructions](https://www.npmjs.com/get-npm).
@@ -37,45 +38,43 @@ The dependencies of the docsy theme can be installed as follows:
 npm ci
 ```
 
-The supported Hugo version packages are available under the `binaries` folder.
+The supported Hugo version is documented under the `binaries` folder.
+To help testing a binary version of Hugo (extended version. Updates
+can be downloaded at
+[the Hugo releases page](https://github.com/gohugoio/hugo/releases).
 
-To build the site, from the repository root
+### Building the site
 
 ```sh
+# From the repository clone root
 git submodule update --init --recursive --depth 1
-./binaries/<platform>/hugo
+./binaries/<platform>/hugo --minify
 ```
 
-To test your changes:
+### Testing the site locally
 
 ```sh
+# From the repository clone root
 ./binaries/<platform>/hugo server -D
 ```
 
 The website is available locally at:
 [http://localhost:1313/](http://localhost:1313/).
 
-## Usage
-
-Please refer to [Hugo documentation](https://gohugo.io/documentation/) and
-[docdock theme documentation](https://docdock.netlify.com/).
-
-### Updating the theme
+## Updating the theme
 
 To ease management the [docsy](https://www.docsy.dev/docs/getting-started/)
 theme has been cloned as a git submodule.
 
-Updating the submodule
+### Updating the theme submodule
 
 ```sh
 git submodule foreach git pull
 git commit themes/docsy -m 'Update theme'
 ```
 
-### Deploying to the EGI organisation pages
+## Deployment to the EGI organisation pages
 
-To speed up the travis run a binary version of Hugo (extended version) for Linux
-64 bit is included in the repository under `binaries`. Updates can be downloaded
-at [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
-
-Travis will automatically deploy a new version when a PR is merged to master.
+[GitHub Actions](https://github.com/EGI-Foundation/documentation/tree/master/.github/workflows)
+will automatically deploy a new version when a PR is merged to master,
+it will then be availalbe at [https://docs.egi.eu](https://docs.egi.eu).
