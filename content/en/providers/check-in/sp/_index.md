@@ -337,6 +337,7 @@ Depending on the grant type, the following parameters are required:
 | `code`         | Required | The value of the code in the response from authorization endpoint.                                 |
 | `redirect_uri` | Required | URI to which the response will be sent (must be the same as the request to authorization endpoint) |
 <!-- markdownlint-enable line-length -->
+
 ##### Refresh request
 
 The following request allows obtaining an access token from a refresh token
@@ -787,7 +788,7 @@ connected to Check-in.
 |        **availability** | Always                                                              |
 |             **example** | _true_                                                              |
 |               **notes** | This claim is available only in OpenID Connect                      |
-|              **status** | Experimental                                                        |
+|              **status** | Stable                                                              |
 <!-- markdownlint-enable line-length no-inline-html -->
 
 ### 8. Verified email list
