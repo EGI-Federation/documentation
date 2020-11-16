@@ -338,6 +338,101 @@ Depending on the grant type, the following parameters are required:
 | `redirect_uri` | Required | URI to which the response will be sent (must be the same as the request to authorization endpoint) |
 <!-- markdownlint-enable line-length -->
 
+##### Proof Key for Code Exchange (PKCE)
+
+The Proof Key for Code Exchange (PKCE, pronounced pixie) extension
+([RFC 7636](https://tools.ietf.org/html/rfc7636)) describes a technique for
+public clients (clients without `client_secret`) to mitigate the threat of
+having the authorization code intercepted. The technique involves the client
+first creating a secret, and then using that secret again when exchanging the
+authorization code for an access token. This way if the code is intercepted, it
+will not be useful since the token request relies on the initial secret.
+
+###### Client configuration
+
+To enable PKCE you need to <https://aai-dev.egi.eu/oidc> and create/edit a
+client. In "Credentials" tab under "Token Endpoint Authentication Method" select
+"No authentication" and in "Crypto" tab under "Proof Key for Code Exchange
+(PKCE) Code Challenge Method" select "SHA-256 hash algorithm".
+
+###### Protocol Flow
+
+Because the PKCE-enhanced Authorization Code Flow builds upon the standard
+Authorization Code Flow, the steps are very similar.
+
+First, the client creates and records a secret named the `code_verifier`. The
+`code_verifier` is a high-entropy cryptographic random STRING using the
+unreserved characters [A-Z] / [a-z] / [0-9] / "-" / "." / "\_" / "~", with a
+minimum length of 43 characters and a maximum length of 128 characters. Then the
+client creates a `code_challenge` derived from the `code_verifier` by using one
+of the following transformations on the code verifier:
+
+- `plain` code_challenge = code_verifier
+- `S256` code_challenge = BASE64URL-ENCODE(SHA256(ASCII(code_verifier)))
+
+If the client is capable of using `S256`, it MUST use `S256`. Clients are
+permitted to use `plain` only if they cannot support `S256` for some technical
+reason.
+
+{{% alert title="Note" color="info" %}} There are various tools that generate
+these values such as <https://tonyxu-io.github.io/pkce-generator/>
+{{% /alert %}}
+
+Then the `code_challenge` is sent in the Authorization Request along with the
+transformation method (`code_challenge_method`).
+
+####### Example request
+
+```sh
+GET https://aai.egi.eu/oidc/authorize?
+      client_id=${client_id}
+      &scope=openid%20profile%20email
+      &redirect_uri=${redirect_uri}
+      &response_type=code
+      &code_challenge=${code_challenge}
+      &code_challenge_method=S256"
+```
+
+The Authorization Endpoint responds as usual but records `code_challenge` and
+the `code_challenge_method`.
+
+####### Example response
+
+```sh
+HTTP/1.1 302 Found
+  Location: ${redirect_uri}?
+    code=fgtLHT
+```
+
+The client then sends the authorization code in the Access Token Request as
+usual but includes the `code_verifier` secret generated in the first request.
+
+####### Example request
+
+```sh
+curl -X POST "https://aai.egi.eu/oidc/token" \
+-d "grant_type=authorization_code" \
+-d "code=${code}" \
+-d "client_id=${client_id}" \
+-d "redirect_uri=${redirect_uri}" \
+-d "code_verifier=${code_verifier}" | python -m json.tool
+```
+
+The authorization server transforms `code_verifier` and compares it to
+`code_challenge` from the first request. Access is denied if they are not equal.
+
+####### Example response
+
+```json
+{
+  "access_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUlMyNTYifQ...",
+  "expires_in": 3599,
+  "id_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUlMyNTYifQ...",
+  "scope": "openid email profile",
+  "token_type": "Bearer"
+}
+```
+
 ##### Refresh request
 
 The following request allows obtaining an access token from a refresh token
