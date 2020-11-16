@@ -32,13 +32,12 @@ Migration from rOCCI CLI to OpenStack CLI is quite straightforward, we summarize
 the main commands in rOCCI and OpenStack equivalent in the table below:
 
 <!-- markdownlint-disable line-length -->
-
 | Action           | rOCCI                                                                                                                | OpenStack                                                                                |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | List images      | `occi -a list -r os_tpl`                                                                                             | `openstack image list`                                                                   |
-| Describe images  | `occi -a describe -r <image_id>`                                                                                     | `openstack image show <image_id>                                                         |
+| Describe images  | `occi -a describe -r <image_id>`                                                                                     | `openstack image show <image_id>`                                                        |
 | List flavors     | `occi -a list -r resorce_tpl`                                                                                        | `openstack flavor list`                                                                  |
-| Describe flavors | `occi -a describe -r <template_id>`                                                                                  | `openstack flavor show <image_id>                                                        |
+| Describe flavors | `occi -a describe -r <template_id>`                                                                                  | `openstack flavor show <image_id>`                                                       |
 | Create VM        | `occi -a create -r compute -t occi.core.title="MyFirstVM" -M <flavor id> -M <image id> -T user_data="file://<file>"` | `openstack server create --flavor <flavor> --image <image> --user-data <file> MyFirstVM` |
 | Describe VM      | `occi -a describe -r <vm id>`                                                                                        | `openstack server show <vm id>`                                                          |
 | Delete VM        | `occi -a delete -r <vm id>`                                                                                          | `openstack server delete <vm id>`                                                        |
@@ -148,8 +147,8 @@ Contextualisation is particularly useful for:
 - Private Information (e.g. host certs)
 - Software that changes frequently or under development.
 
-Contextualisation requires passing some data to the VMs on instantiation
-(the context) and handling that context in the VM.
+Contextualisation requires passing some data to the VMs on instantiation (the
+context) and handling that context in the VM.
 
 ### How can I inject my public SSH key into the machine?
 
@@ -206,8 +205,8 @@ contextualisation. EGI images in AppDB do support `cloud-init`. Check the
 
 ### How can I pass secrets to my VMs?
 
-EGI Cloud endpoints use **HTTPS** so information passed to contextualise the VMs can
-be assumed to be safe and only readable within your VM. However, take into
+EGI Cloud endpoints use **HTTPS** so information passed to contextualise the VMs
+can be assumed to be safe and only readable within your VM. However, take into
 account that anyone with access to the VM may be able to access also the
 contextualisation information.
 
