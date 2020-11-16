@@ -8,7 +8,7 @@ description: >
 
 ## Basics
 
-### How can I get access to the EGI.eu Federated Cloud?
+### How can I get access to the cloud compute service?
 
 There is a VO available for 6 months piloting activities that any researcher in
 Europe can join. Just place an order into the
@@ -16,9 +16,10 @@ Europe can join. Just place an order into the
 
 ### How can I get an OAuth2.0 token?
 
-Authentication via CLI or API requires a valid Check-in token. The FedCloud
-Check-in client allows you to get one as needed. Check the
-`auth`{.interpreted-text role="doc"} guide for more information.
+Authentication via CLI or API requires a valid Check-in token. The
+[FedCloud Check-in client](https://aai.egi.eu/fedcloud) allows you to get one as
+needed. Check the [Authentication and Authorisation](../auth) guide for more
+information.
 
 ### Is OCCI still supported?
 
@@ -29,6 +30,8 @@ but it should note be used for any new developments.
 
 Migration from rOCCI CLI to OpenStack CLI is quite straightforward, we summarize
 the main commands in rOCCI and OpenStack equivalent in the table below:
+
+<!-- markdownlint-disable line-length -->
 
 | Action           | rOCCI                                                                                                                | OpenStack                                                                                |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
@@ -45,6 +48,8 @@ the main commands in rOCCI and OpenStack equivalent in the table below:
 | Dettach volume   | `occi -a unlink -r <storage_link_id>`                                                                                | `openstack server remove volume <vm id> <volume id>`                                     |
 | Delete volume    | `occi -a delete -r <volume id>`                                                                                      | `openstack volume delete <volume id>`                                                    |
 | Attach public IP | `occi -a link -r <vm id> --link /network/public`                                                                     | `openstack server add floating ip <vm id> <ip>`                                          |
+
+<!-- markdownlint-enable line-length -->
 
 If you still rely on OCCI for your access, please contact us at
 `support _at_ egi.eu` for support on the migration. OpenNebula sites still use
@@ -88,9 +93,8 @@ the Argo Messaging System which is easily browsable from AppDB.
 
 Sites offer their resources to users through Virtual Organisations (VO). First,
 you need to join a Virtual Organisation that matches your research interests,
-see `authorisation`{.interpreted-text role="ref"} section on how VOs work. AppDB
-shows the supported VOs and for each VO you can browse the resource providers
-that support it.
+see [authorisation section](../auth) on how VOs work. AppDB shows the supported
+VOs and for each VO you can browse the resource providers that support it.
 
 ### How can I get information about the available VM images?
 
@@ -106,8 +110,8 @@ identifiers to use it in practice.
 
 There are several ways to increase the disk space available at the VM. The
 fastest and easiest one is to use block storage, creating a new storage disk
-device and attaching it to the VM. Check the `storage`{.interpreted-text
-role="doc"} guide for more information.
+device and attaching it to the VM. Check the [storage guide](../storage) for
+more information.
 
 ### How can I keep my data after the VM is stopped?
 
