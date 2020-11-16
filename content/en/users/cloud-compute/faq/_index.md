@@ -144,7 +144,7 @@ Contextualisation is particularly useful for:
 - Private Information (e.g. host certs)
 - Software that changes frequently or under development.
 
-The contextualisation requires passing some data to the VMs on instantiation
+Contextualisation requires passing some data to the VMs on instantiation
 (the context) and handling that context in the VM.
 
 ### How can I inject my public SSH key into the machine?
