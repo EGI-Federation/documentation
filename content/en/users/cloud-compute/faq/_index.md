@@ -202,7 +202,7 @@ contextualisation. EGI images in AppDB do support `cloud-init`. Check the
 
 ### How can I pass secrets to my VMs?
 
-EGI Cloud endpoints use https so information passed to contextualise the VMs can
+EGI Cloud endpoints use **HTTPS** so information passed to contextualise the VMs can
 be assumed to be safe and only readable within your VM. However, take into
 account that anyone with access to the VM may be able to access also the
 contextualisation information.
