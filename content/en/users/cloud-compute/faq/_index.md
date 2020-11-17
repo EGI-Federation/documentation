@@ -213,7 +213,7 @@ contextualisation information.
 {{% alert title="Warning" color="warning" %}}
 Take into account that anyone with access to the VM may be able to access also
 the contextualisation information, so ensure that no sensitive data like clear
-test passwords is used during contextualisation.
+text passwords is used during contextualisation.
 {{% /alert %}}
 
 ### How can I use ansible?
