@@ -11,7 +11,7 @@ EGI ID, using any of the login credentials you have linked to your account. You
 can use any of your organisational or social login credentials for this purpose.
 To link a new organisational or social identity to your EGI account:
 
-1. Enter the following URL in a browser: https://aai.egi.eu/registry
+1. Enter the following URL in a browser: <https://aai.egi.eu/registry>
 
 1. Click **Login** and authenticate using any of the login credentials _already_
    linked to your EGI account
@@ -57,7 +57,7 @@ browser.
 
 To link a subject DN to your EGI account:
 
-1. Enter the following URL in a browser: https://aai.egi.eu/registry
+1. Enter the following URL in a browser: <https://aai.egi.eu/registry>
 
 1. Click **Login** and authenticate using any of the login credentials _already_
    linked to your EGI account

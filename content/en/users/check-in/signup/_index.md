@@ -14,7 +14,7 @@ this process you will be assigned a personal unique **EGI ID** which will be
 then used across all EGI tools and services. Follow the instructions below to
 get started:
 
-1. Go to https://aai.egi.eu/signup. This will show you the identity provider
+1. Go to <https://aai.egi.eu/signup>. This will show you the identity provider
    discovery page: browse through the list of Identity Providers to find your
    Home Organisation, _or, alternatively,_ type the name of your Home
    Organisation in the search box. Note that the names are localised based on

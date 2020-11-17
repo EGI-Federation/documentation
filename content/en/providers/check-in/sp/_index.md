@@ -86,10 +86,10 @@ integration follows a two-step process:
 The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.
 
-| Protocol       | Development environment                                      | Demo environment                                              | Production environment                                   |
-| -------------- | ------------------------------------------------------------ | ------------------------------------------------------------- | -------------------------------------------------------- |
-| SAML           | https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php          | https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php          | https://aai.egi.eu/proxy/saml2/idp/metadata.php          |
-| OpenID Connect | https://aai-dev.egi.eu/oidc/.well-known/openid-configuration | https://aai-demo.egi.eu/oidc/.well-known/openid-configuration | https://aai.egi.eu/oidc/.well-known/openid-configuration |
+| Protocol       | Development environment                                        | Demo environment                                                | Production environment                                     |
+| -------------- | -------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------- |
+| SAML           | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          |
+| OpenID Connect | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai.egi.eu/oidc/.well-known/openid-configuration> |
 
 ## SAML Service Provider
 
@@ -119,9 +119,9 @@ issued by a trusted certificate authority.
 You can get the metadata of the EGI Check-in IdP Proxy on a dedicated URL that
 depends on the integration environment being used:
 
-| Development environment                             | Demo environment                                     | Production environment                          |
-| --------------------------------------------------- | ---------------------------------------------------- | ----------------------------------------------- |
-| https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php | https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php | https://aai.egi.eu/proxy/saml2/idp/metadata.php |
+| Development environment                               | Demo environment                                       | Production environment                            |
+| ----------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------- |
+| <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai.egi.eu/proxy/saml2/idp/metadata.php> |
 
 ### Metadata
 
@@ -278,15 +278,15 @@ Check-in supports the following OpenID Connect/OAuth2 grant types:
 
 The most important OIDC/OAuth2 endpoints are listed below:
 
-| Endpoint               | Development environment                                      | Demo environment                                                                                    | Production environment                                                                              |
-| ---------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Provider configuration | https://aai-dev.egi.eu/oidc/.well-known/openid-configuration | https://aai-demo.egi.eu/oidc/.well-known/openid-configuration                                       | https://aai.egi.eu/oidc/.well-known/openid-configuration                                            |
-| Client registration    | https://aai-dev.egi.eu/oidc                                  | _Contact [EGI Check-in support](mailto:egi-aai-checkin@lists.grnet.gr) for registering your client_ | _Contact [EGI Check-in support](mailto:egi-aai-checkin@lists.grnet.gr) for registering your client_ |
-| Authorisation          | https://aai-dev.egi.eu/oidc/authorize                        | https://aai-demo.egi.eu/oidc/authorize                                                              | https://aai.egi.eu/oidc/authorize                                                                   |
-| Token                  | https://aai-dev.egi.eu/oidc/token                            | https://aai-demo.egi.eu/oidc/token                                                                  | https://aai.egi.eu/oidc/token                                                                       |
-| JSON Web Key(jwt)      | https://aai-dev.egi.eu/oidc/jwk                              | https://aai-demo.egi.eu/oidc/jwk                                                                    | https://aai.egi.eu/oidc/jwk                                                                         |
-| User Info              | https://aai-dev.egi.eu/oidc/userinfo                         | https://aai-demo.egi.eu/oidc/userinfo                                                               | https://aai.egi.eu/oidc/userinfo                                                                    |
-| Introspection          | https://aai-dev.egi.eu/oidc/introspect                       | https://aai-demo.egi.eu/oidc/introspect                                                             | https://aai.egi.eu/oidc/introspect                                                                  |
+| Endpoint               | Development environment                                        | Demo environment                                                                                    | Production environment                                                                              |
+| ---------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Provider configuration | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration>                                     | <https://aai.egi.eu/oidc/.well-known/openid-configuration>                                          |
+| Client registration    | <https://aai-dev.egi.eu/oidc>                                  | _Contact [EGI Check-in support](mailto:egi-aai-checkin@lists.grnet.gr) for registering your client_ | _Contact [EGI Check-in support](mailto:egi-aai-checkin@lists.grnet.gr) for registering your client_ |
+| Authorisation          | <https://aai-dev.egi.eu/oidc/authorize>                        | <https://aai-demo.egi.eu/oidc/authorize>                                                            | <https://aai.egi.eu/oidc/authorize>                                                                 |
+| Token                  | <https://aai-dev.egi.eu/oidc/token>                            | <https://aai-demo.egi.eu/oidc/token>                                                                | <https://aai.egi.eu/oidc/token>                                                                     |
+| JSON Web Key(jwt)      | <https://aai-dev.egi.eu/oidc/jwk>                              | <https://aai-demo.egi.eu/oidc/jwk>                                                                  | <https://aai.egi.eu/oidc/jwk>                                                                       |
+| User Info              | <https://aai-dev.egi.eu/oidc/userinfo>                         | <https://aai-demo.egi.eu/oidc/userinfo>                                                             | <https://aai.egi.eu/oidc/userinfo>                                                                  |
+| Introspection          | <https://aai-dev.egi.eu/oidc/introspect>                       | <https://aai-demo.egi.eu/oidc/introspect>                                                           | <https://aai.egi.eu/oidc/introspect>                                                                |
 
 #### Authorization Endpoint
 
@@ -339,7 +339,7 @@ using the `grant_type` value `refresh_token`:
 | `refresh_token` | Required | `The value of the refresh token`              |
 | `scope`         | Required | This parameter should contain openid at least |
 
-**Example request**
+###### Example request
 
 ```sh
 curl -X POST -u "${client_id}":"${client_secret}" \
@@ -351,7 +351,7 @@ curl -X POST -u "${client_id}":"${client_secret}" \
      "https://aai-dev.egi.eu/oidc/token" | python -m json.tool;
 ```
 
-**Example response**
+###### Example response
 
 ```json
 {
@@ -377,19 +377,19 @@ of the request are:
 | `subject_token_type` | Required | `urn:ietf:params:oauth:token-type:access_token` (because this feature accepts access tokens only)         |
 | `scope`              | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
 
-**Example request**
+###### Example request
 
 ```sh
 curl -X POST -u "${client_B_id}":"${client_B_secret}" \
     -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
-    -d "audience=tokenExchange" \ 
+    -d "audience=tokenExchange" \
     -d "subject_token=${access_token_A}" \
     -d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
     -d "scope=openid%20profile%20offline_access" \
     "http://aai.egi.eu/oidc/token" | python -m json.tool;
 ```
 
-**Example response**
+###### Example response
 
 ```json
 {
@@ -561,19 +561,20 @@ You must change the followings options based on your client configuration:
 
 An example configuration follows:
 
-```
+```javascript
 var settings = {
-    title: 'Simple OIDC Client',
-    authority: 'https://aai-dev.egi.eu/oidc',
-    client_id: 'client',
-    popup_redirect_uri: 'https://example.com/simple-oidc-client/popup.html',
-    post_logout_redirect_uri: 'https://example.com/simple-oidc-client/index.html',
+  title: "Simple OIDC Client",
+  authority: "https://aai-dev.egi.eu/oidc",
+  client_id: "client",
+  popup_redirect_uri: "https://example.com/simple-oidc-client/popup.html",
+  post_logout_redirect_uri: "https://example.com/simple-oidc-client/index.html",
 
-    response_type: 'token id_token',
-    scope: 'openid profile email', /* add offline_access to obtain a refresh token*/
+  response_type: "token id_token",
+  scope:
+    "openid profile email" /* add offline_access to obtain a refresh token*/,
 
-    debug: false,
-    filterProtocolClaims: false
+  debug: false,
+  filterProtocolClaims: false,
 };
 ```
 
@@ -585,25 +586,25 @@ make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
 integration goes via an intermediary service, called a Master Portal. EGI is
 running two Master Portal instances, one development, one production instance.
 
-| Endpoint               | Development environment                                                              | Production environment                                            |
-| ---------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
-| Provider configuration | https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration | https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration |
-| Client registration    | https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register                         | https://aai.egi.eu/mp-oa2-server/register                         |
-| Authorisation          | https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize                        | https://aai.egi.eu/mp-oa2-server/authorize                        |
-| Token                  | https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token                            | https://aai.egi.eu/mp-oa2-server/token                            |
-| JSON Web Key(jwt)      | https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs                            | https://aai.egi.eu/mp-oa2-server/certs                            |
-| User Info              | https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo                         | https://aai-demo.egi.eu/oidc/userinfo                             |
+| Endpoint               | Development environment                                                                | Production environment                                              |
+| ---------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Provider configuration | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> | <https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
+| Client registration    | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register>                         | <https://aai.egi.eu/mp-oa2-server/register>                         |
+| Authorisation          | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize>                        | <https://aai.egi.eu/mp-oa2-server/authorize>                        |
+| Token                  | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token>                            | <https://aai.egi.eu/mp-oa2-server/token>                            |
+| JSON Web Key(jwt)      | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs>                            | <https://aai.egi.eu/mp-oa2-server/certs>                            |
+| User Info              | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         | <https://aai-demo.egi.eu/oidc/userinfo>                             |
 
 ### Registering a client at the Master Portal
 
 In order to register a new client for your VO portal go to:
 
 - EGI Development instance:
-  https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register
-- EGI Production instance: https://aai.egi.eu/mp-oa2-server/register
+  <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register>
+- EGI Production instance: <https://aai.egi.eu/mp-oa2-server/register>
 
-**NOTE: Make sure to store the `client_id` and `client_secret` in a secure
-place.**
+{{% alert title="Note" color="info" %}} Make sure to store the `client_id` and
+`client_secret` in a secure place {{% /alert %}}
 
 In order to get the client approved, send an email to the adminstrator of the
 EGI Master Portal using
@@ -648,7 +649,7 @@ connected to Check-in.
 |         **description** | An identifier for the user, unique among all EGI accounts and never reused          |
 |   **SAML Attribute(s)** | `1.3.6.1.4.1.5923.1.1.1.13` (eduPersonUniqueId)                                     |
 |          **OIDC scope** | `openid`                                                                            |
-|       **OIDC claim(s)** | `sub `                                                                              |
+|       **OIDC claim(s)** | `sub`                                                                               |
 | **OIDC claim location** | <ul><li>ID token</li><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
 |              **origin** | Check-in assigns this attribute on user registration                                |
 |             **changes** | No                                                                                  |
@@ -824,7 +825,7 @@ connected to Check-in.
 |             **changes** | Yes                                                                |
 |        **multiplicity** | Multi-valued                                                       |
 |        **availability** | Not always                                                         |
-|             **example** | _https://aai.egi.eu/LoA#Low_                                       |
+|             **example** | _[https://aai.egi.eu/LoA#Low]_                                     |
 |               **notes** | -                                                                  |
 |              **status** | Stable                                                             |
 
@@ -851,7 +852,7 @@ as a URN.
 An entitlement value expressing group membership and role information has the
 following syntax (components enclosed in square brackets are OPTIONAL):
 
-```
+```less
 urn:mace:egi.eu:group:<GROUP>[:<SUBGROUP>*]][:role=<ROLE>]#<GROUP-AUTHORITY>
 ```
 
@@ -871,7 +872,7 @@ where:
 
 **Example:**
 
-```
+```less
 urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 ```
 
@@ -880,13 +881,13 @@ urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 An entitlement value expressing group membership and role information has the
 following syntax (components enclosed in square brackets are OPTIONAL):
 
-```
+```less
 urn:mace:egi.eu:<GROUP-AUTHORITY>:[<GROUP>[:<SUBGROUP>:…]]:<ROLE>@<VO>
 ```
 
 **Example:**
 
-```
+```less
 urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu
 ```
 
