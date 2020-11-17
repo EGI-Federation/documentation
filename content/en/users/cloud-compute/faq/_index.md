@@ -210,6 +210,12 @@ can be assumed to be safe and only readable within your VM. However, take into
 account that anyone with access to the VM may be able to access also the
 contextualisation information.
 
+{{% alert title="Warning" color="warning" %}}
+Take into account that anyone with access to the VM may be able to access also
+the contextualisation information, so ensure that no sensitive data like clear
+test passwords is used during contextualisation.
+{{% /alert %}}
+
 ### How can I use ansible?
 
 Ansible relies on ssh for accessing the servers it will configure. VMs at EGI
