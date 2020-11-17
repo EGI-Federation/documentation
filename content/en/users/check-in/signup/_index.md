@@ -101,6 +101,6 @@ member of and the roles assigned to the user within those Virtual Organisation.
 ### Linked identities
 
 Information about identites linked to your account. Check the
-[guide for linking accounts](../check-in/linking) for more information.
+[guide for linking accounts](../linking) for more information.
 
 ![Linked identities](./check-in-profile-linked.png)
