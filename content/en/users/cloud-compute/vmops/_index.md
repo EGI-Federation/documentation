@@ -27,37 +27,37 @@ If your VO is not listed and you are interested in getting support, please
 
 ## Quick start
 
-1.  Log into the [VMOps dashboard](https://dashboard.appdb.egi.eu/vmops) using
-    EGI Check-in.
+1. Log into the [VMOps dashboard](https://dashboard.appdb.egi.eu/vmops) using
+   EGI Check-in.
 
-1.  Click on \"Create a new VM Topology\" to start the topology builder, this
-    will guide you through a set of steps:
+1. Click on \"Create a new VM Topology\" to start the topology builder, this
+   will guide you through a set of steps:
 
-    1.  Select the Virtual Appliance you want to start, these are the same shown
-        in the [AppDB Cloud Marketplace](https://appdb.egi.eu/browse/cloud), you
-        can use the search field to find your VA;
+   1. Select the Virtual Appliance you want to start, these are the same shown
+      in the [AppDB Cloud Marketplace](https://appdb.egi.eu/browse/cloud), you
+      can use the search field to find your VA;
 
-        ![Select the VA](vmops_va_select.png)
+      ![Select the VA](vmops_va_select.png)
 
-    1.  select the VO to use when instantiating the VA;
+   1. select the VO to use when instantiating the VA;
 
-    1.  select the provider where to instantiate the VA; and finally
+   1. select the provider where to instantiate the VA; and finally
 
-    1.  select the template (VM instance type) of the instance that will
-    determine the number of cores, memory and disk space used in your VM.
+   1. select the template (VM instance type) of the instance that will
+   determine the number of cores, memory and disk space used in your VM.
 
-1.  Now you will be presented with a summary page where you can further
-    customise your VM by:
+1. Now you will be presented with a summary page where you can further
+   customise your VM by:
 
-    - Adding more VMs to the topology
-    - Adding block storage devices to the VMs
-    - Define contextualisation parameters (e.g. add new users, execute some
-      script)
+   - Adding more VMs to the topology
+   - Adding block storage devices to the VMs
+   - Define contextualisation parameters (e.g. add new users, execute some
+     script)
 
-      ![Topology settings](vmops_settings.png)
+     ![Topology settings](vmops_settings.png)
 
-1.  Click on \"Launch\" and your deployment will be submitted to the
-    infrastructure.
+1. Click on \"Launch\" and your deployment will be submitted to the
+   infrastructure.
 
 The topology you just created will appear on your \"Topologies\" with all the
 details about it, clicking on a VM of a topology will give you details about its
