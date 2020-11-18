@@ -39,7 +39,6 @@ cd ec3-test
 You can list the available templates for clusters with the `templates` command:
 
 <!-- markdownlint-disable line-length -->
-
 ```shell
 $ docker run grycap/ec3 templates
           name              kind                                         summary
@@ -51,7 +50,6 @@ $ docker run grycap/ec3 templates
        slurm-repo           main    Install and configure a cluster SLURM from distribution repositories.
 [...]
 ```
-
 <!-- markdownlint-enable line-length -->
 
 We will use the `slurm` template for configuring our cluster.
@@ -67,7 +65,7 @@ your cluster:
 
 We will use `egicli` to discover all needed details, set your credentials
 (Check-in client id, client secret and refresh tokens) as shown in
-[the authentication guide](../../auth/#check-in-and-access-tokens) and start by
+[the authentication guide](../auth/#check-in-and-access-tokens) and start by
 listing the available sites:
 
 ```shell
@@ -221,6 +219,7 @@ size of the VM is also specified.
 
 We are ready now to deploy the cluster with ec3 (this can take several minutes):
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 launch mycluster slurm ubuntu refresh -a auth.dat
 Creating infrastructure
@@ -229,6 +228,7 @@ Front-end configured with IP 193.144.46.234
 Transferring infrastructure
 Front-end ready!
 ```
+<!-- markdownlint-enable line-length -->
 
 We can check the status of the deployment:
 
