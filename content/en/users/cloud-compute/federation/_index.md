@@ -201,6 +201,8 @@ Version 0.4 of the Cloud Accounting Usage Record was agreed at the FedCloud Face
 to Face in Amsterdam in January 2015. A summary table of the format is shown
 below:
 
+<!-- markdownlint-disable line-length -->
+
 | Cloud Usage Record Property | Type            | Null | Definition                                                                                                                                                                                                                                                         |
 | --------------------------- | --------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | VMUUID                      | `varchar(255)`  | No   | Virtual Machine\'s Universally Unique Identifier concatenation of CurrentTime, SiteName and MachineName                                                                                                                                                            |
@@ -227,8 +229,9 @@ below:
 | BenchmarkType (NEW)         | `varchar(255)`  |      | Name of benchmark used for normalization of times (eg HEPSPEC06)                                                                                                                                                                                                   |
 | Benchmark (NEW)             | `Decimal`       |      | Value of benchmark of VM using ServiceLevelType benchmark’                                                                                                                                                                                                         |
 | StorageRecordId             | `varchar(255)`  |      | Link to other associated storage record _Need to check feasibility_                                                                                                                                                                                                |
-| ImageId                     | `varchar(255)`  |      | Every image has a unique ID associated with it.<br>For images from the EGI FedCloud AppDB this should be `VMCATCHER_EVENT_AD_MPURI`<br>For images from other repositories it should be a vmcatcher equivalent<br>For local images - local identifier of the image. |
+| ImageId                     | `varchar(255)`  |      | Every image has a unique ID associated with it. For images from the EGI FedCloud AppDB this should be `VMCATCHER_EVENT_AD_MPURI`; for images from other repositories it should be a vmcatcher equivalent; for local images - local identifier of the image. |
 | CloudType                   | `varchar(255)`  |      | Type of cloud infrastructure: OpenNebula; OpenStack; Synnefo; etc.                                                                                                                                                                                                 |
+<!-- markdownlint-enable line-length -->
 
 #### Public IP Usage Record
 
@@ -237,6 +240,7 @@ of the same fields as the Cloud Usage Record. The Usage Record should be a
 \"snapshot\" of the number of IPs currently assigned to a user. A table defining
 v0.2 of the format is shown below:
 
+<!-- markdownlint-disable line-length -->
 | Cloud Usage Record Property | Type           | Null | Definition                                                                   | Notes                                                                                                                                                                    |
 | --------------------------- | -------------- | ---- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | MeasurementTime             | `datetime`     | No   | The time the usage was recorded.                                             | In the message format, must be a UNIX timestamp, i.e. the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970) |
@@ -249,6 +253,7 @@ v0.2 of the format is shown below:
 | FQAN                        | `varchar(255)` | No   | See Cloud Usage Record                                                       |
 | IPVersion                   | `byte`         | No   | 4 or 6                                                                       |
 | IPCount                     | `int(11)`      | No   | The number of IP addresses of IPVersion this user currently assigned to them |
+<!-- markdownlint-enable line-length -->
 
 A JSON schema defining a valid Public IP Usage message can be found at:
 <https://github.com/apel/apel/blob/9476bd86424f6162c3b87b6daf6b4270ceb8fea6/apel/db/__init__.py>
