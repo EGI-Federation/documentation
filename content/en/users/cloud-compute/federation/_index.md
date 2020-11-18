@@ -274,7 +274,7 @@ Implementation of the extactor probes for accounting are listed below:
 ### Monitoring
 
 Services in the EGI infrastructure are monitored via
-[ARGO](<https://argo.egi.eu/). Specific probes to check functionality and
+[ARGO](https://argo.egi.eu/). Specific probes to check functionality and
 availability of services must be provided by service developers, The current set
 of probes used for monitoring IaaS resources consists of:
 
