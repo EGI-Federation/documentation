@@ -43,6 +43,7 @@ client or dashboard can be used. Main commands for managing volumes are listed
 below:
 
 <!-- markdownlint-disable line-length -->
+
 | Command                                  | function                                               |
 | ---------------------------------------- | ------------------------------------------------------ |
 | `volume create --size <size> <name>`     | create a volume of size `<size>` GBs and name `<name>` |
@@ -51,6 +52,7 @@ below:
 | `volume delete <volume>`                 | deletes a volume                                       |
 | `server add volume <server> <volume>`    | Attach a volume to a server                            |
 | `server remove volume <server> <volume>` | Dettach a volume from a server                         |
+
 <!-- markdownlint-enable line-length -->
 
 For using the legacy OCCI interface refer to
