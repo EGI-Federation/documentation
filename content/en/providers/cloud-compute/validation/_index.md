@@ -23,18 +23,22 @@ Extra checks for your installation:
 
 - Check that you are publishing cloud information in your site BDII: :
 
+  <!-- markdownlint-disable line-length -->
   ```shell
   ldapsearch -x -h <site bdii host> -p 2170 -b Glue2GroupID=cloud,Glue2DomainID=<your site name>,o=glue
   ```
+  <!-- markdownlint-enable line-length -->
 
 - Check that all the images listed in the AppDB for the VOs you support (e.g.
   [AppDB page for fedlcoud.egi.eu VO](https://appdb.egi.eu/store/vo/fedcloud.egi.eu))
   are listed in your BDII. This sample query will return all the template IDs
   registered in your BDII: :
 
+  <!-- markdownlint-disable line-length -->
   ```shell
   ldapsearch -x -h <site bdii host> -p 2170 -b Glue2GroupID=cloud,Glue2DomainID=<your site name>,o=glue objectClass=GLUE2ApplicationEnvironment GLUE2ApplicationEnvironmentRepository
   ```
+  <!-- markdownlint-enable line-length -->
 
 - Try to start one of those images in your cloud. You can do it with
   [onetemplate instantiate]{.title-ref} or OCCI commands, the result should be

@@ -80,6 +80,7 @@ The EGI FedCloud Appliance is available at
 as an OVA file. You can easily extract the VMDK disk by untaring and optionally
 converting it to your preferred format with qemu-img:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 # get image and extract VMDK
 $ curl $(curl "https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict" | jq -r .url) | \
@@ -87,6 +88,7 @@ $ curl $(curl "https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f
 # convert to qcow2
 $ qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.qcow2
 ```
+<!-- markdownlint-enable line-length -->
 
 The appliance running at your OpenStack must:
 
@@ -113,6 +115,7 @@ The following **services** must be accessible to allow access to an
 OpenStack-based FedCloud site (default ports listed below, can be adjusted to
 your installation)
 
+<!-- markdownlint-disable line-length -->
 | Port         | Application            | Note                                      |
 | ------------ | ---------------------- | ----------------------------------------- |
 | **5000**/TCP | **OpenStack**/Keystone | Authentication to your OpenStack.         |
@@ -121,18 +124,21 @@ your installation)
 | **9696**/TCP | **OpenStack**/neutron  | Network management.                       |
 | **9292**/TCP | **OpenStack**/glance   | VM Image management.                      |
 | **2170**/TCP | **BDII**/LDAP          | EGI Service Discovery/Information System. |
+<!-- markdownlint-enable line-length -->
 
 ## Permissions
 
 This is an overview of the expected account permissions used in an OpenStack
 site, these accounts can be merged as needed for your deployment:
 
+<!-- markdownlint-disable line-length -->
 | Component    | Permission                                                                                   |
 | ------------ | -------------------------------------------------------------------------------------------- |
 | cloud-info   | Member of all projects supporting EGI VOs                                                    |
 | accounting   | Member of all projects and able to list users (allowed to `identity:list_users` in keystone) |
 | cloud-keeper | Permission to manage the images for all the projects supporting EGI VOs                      |
 | Other users  | Automatically created by Keystone and permission set as configured in the mappings           |
+<!-- markdownlint-enable line-length -->
 
 ## EGI AAI
 
@@ -141,12 +147,12 @@ site, these accounts can be merged as needed for your deployment:
 The integration of OpenStack service providers into the EGI Check-in is a
 two-step process:
 
-1.  Test integration with the development instance of EGI Check-in. This will
-    allow you to check complete the complete functionality of the system without
-    affecting the production Check-in service.
-1.  Once the integration is working correctly, register your provider with the
-    production instance of EGI Check-in to allow members of the EGI User
-    Community to access your service.
+1. Test integration with the development instance of EGI Check-in. This will
+   allow you to check complete the complete functionality of the system without
+   affecting the production Check-in service.
+1. Once the integration is working correctly, register your provider with the
+   production instance of EGI Check-in to allow members of the EGI User
+   Community to access your service.
 
 #### Registration into Check-in development instance
 
@@ -179,14 +185,14 @@ following steps
 
 ##### Pre-requisites
 
-1.  Keystone must run as a WSGI application behind an HTTP server (Apache is
-    used in this documentation, but any server should be possible if it has
-    OpenID connect/OAuth2.0 support). Keystone project has deprecated eventlet,
-    so you should be already running Keystone in such way.
-1.  Keystone must be run with SSL
-1.  You need to install
-    [mod_auth_openidc](https://github.com/pingidentity/mod_auth_openidc) for
-    adding support for OpenID Connect to Apache.
+1. Keystone must run as a WSGI application behind an HTTP server (Apache is
+   used in this documentation, but any server should be possible if it has
+   OpenID connect/OAuth2.0 support). Keystone project has deprecated eventlet,
+   so you should be already running Keystone in such way.
+1. Keystone must be run with SSL
+1. You need to install
+   [mod_auth_openidc](https://github.com/pingidentity/mod_auth_openidc) for
+   adding support for OpenID Connect to Apache.
 
 {{% alert title="IGTF CAs" color="info" %}} EGI monitoring checks that your
 Keystone accepts clients with certificates from the IGTF CAs. Please ensure that
@@ -194,9 +200,9 @@ your server is configured with the correct Certificate and Revocation path:
 
 For Apache HTTPd
 
-: HTTPd is able to use CAs and CRLs contained in a directory :
+: HTTPd is able to use CAs and CRLs contained in a directory:
 
-```
+```ApacheConf
 SSLCACertificatePath    /etc/grid-security/certificates
 SSLCARevocationPath     /etc/grid-security/certificates
 ```
@@ -205,48 +211,50 @@ For haproxy
 
 : CA and CRLS have to be bundled into one file.
 
-    Client verification should be set as optional otherwise accepted CAs
-    won\'t be presented to the EGI monitoring. :
+  Client verification should be set as optional otherwise accepted CAs
+  won\'t be presented to the EGI monitoring:
 
-```
-# crt: concatenated cert, key and CA
-# ca-file: all IGTF CAs, concatenated as one file
-# crl-file: all IGTF CRLs, concatenated as one file
-# verify: enable optional X.509 client authentication
-bind XXX.XXX.XXX.XXX:443 ssl crt /etc/haproxy/certs/host-cert-with-key-and-ca.pem ca-file /etc/haproxy/certs/igtf-cas-bundle.pem crl-file /etc/haproxy/certs/igtf-crls-bundle.pem verify optional
-```
+  <!-- markdownlint-disable line-length -->
+  ```plaintext
+  # crt: concatenated cert, key and CA
+  # ca-file: all IGTF CAs, concatenated as one file
+  # crl-file: all IGTF CRLs, concatenated as one file
+  # verify: enable optional X.509 client authentication
+  bind XXX.XXX.XXX.XXX:443 ssl crt /etc/haproxy/certs/host-cert-with-key-and-ca.pem ca-file /etc/haproxy/certs/igtf-cas-bundle.pem crl-file /etc/haproxy/certs/igtf-crls-bundle.pem verify optional
+  ```
+  <!-- markdownlint-enable line-length -->
 
 For nginx
 
 : CA and CRLS have to be bundled into one file.
 
-    Client verification should be set as optional otherwise accepted CAs
-    won\'t be presented to the EGI monitoring. :
+  Client verification should be set as optional otherwise accepted CAs
+  won\'t be presented to the EGI monitoring:
 
-```
-ssl_client_certificate /etc/ssl/certs/igtf-cas-bundle.pem;
-ssl_crl /etc/ssl/certs/igtf-crls-bundle.pem;
-ssl_verify_client optional;
-```
+  ```Nginx configuration file
+  ssl_client_certificate /etc/ssl/certs/igtf-cas-bundle.pem;
+  ssl_crl /etc/ssl/certs/igtf-crls-bundle.pem;
+  ssl_verify_client optional;
+  ```
 
 Managing IGTF CAs and CRLs
 
 : IGTF CAs can be obtained from UMD, you can find repo files for your
 distribution at <http://repository.egi.eu/sw/production/cas/1/current/>
 
-    IGTF CAs and CRLs can be bundled using the examples command
-    hereafter.
+  IGTF CAs and CRLs can be bundled using the examples command
+  hereafter.
 
-    Please update CAs bundle after IGTF updates, and CRLs bundle after
-    each CRLs update made by fetch-crl. :
+  Please update CAs bundle after IGTF updates, and CRLs bundle after
+  each CRLs update made by fetch-crl:
 
-```shell
-cat /etc/grid-security/certificates/*.pem > /etc/haproxy/certs/igtf-cas-bundle.pem
-cat /etc/grid-security/certificates/*.r0 > /etc/haproxy/certs/igtf-crls-bundle.pem
-# Some CRLs files are not ending with a new line
-# Ensuring that CRLs markers are separated by a line feed
-perl -pe 's/----------/-----\n-----/' -i /etc/haproxy/certs/igtf-crls-bundle.pem
-```
+  ```shell
+  cat /etc/grid-security/certificates/*.pem > /etc/haproxy/certs/igtf-cas-bundle.pem
+  cat /etc/grid-security/certificates/*.r0 > /etc/haproxy/certs/igtf-crls-bundle.pem
+  # Some CRLs files are not ending with a new line
+  # Ensuring that CRLs markers are separated by a line feed
+  perl -pe 's/----------/-----\n-----/' -i /etc/haproxy/certs/igtf-crls-bundle.pem
+  ```
 
 {{% /alert %}}
 
@@ -255,7 +263,7 @@ perl -pe 's/----------/-----\n-----/' -i /etc/haproxy/certs/igtf-crls-bundle.pem
 Include this configuration on the Apache config for the virtual host of your
 Keystone service, using the client id and secret obtained above:
 
-```
+```ApacheConf
 OIDCResponseType "code"
 OIDCClaimPrefix "OIDC-"
 OIDCClaimDelimiter ;
@@ -290,7 +298,7 @@ as per <https://github.com/zmartzone/mod_auth_openidc/wiki/Caching>
 
 For example, using memcache
 
-```
+```ApacheConf
 OIDCCacheType memcache
 OIDCMemCacheServers "memcache1 memcache2 memcache3"
 ```
@@ -305,7 +313,7 @@ sudo a2enmod auth_openidc
 sure to correctly set the X-Forwarded-Proto and X-Forwarded-Port request
 headers, e.g. for haproxy:
 
-```
+```plaintext
 http-request set-header X-Forwarded-Proto https if { ssl_fc }
 http-request set-header X-Forwarded-Proto http if !{ ssl_fc }
 http-request set-header X-Forwarded-Port %[dst_port]
@@ -318,24 +326,26 @@ http-request set-header X-Forwarded-Port %[dst_port]
 Configure your `keystone.conf` to include in the `[auth]` section `openid` in
 the list of authentication methods:
 
-```
+```ini
 [auth]
 
-# This may change in your installation, add openid to the list of the methods you support
+# This may change in your installation
+# add openid to the list of the methods you support
 methods = password, token, openid
 ```
 
 Add a `[openid]` section as follows:
 
-```
+```ini
 [openid]
-# this is the attribute in the Keystone environment that will define the identity provider
+# this is the attribute in the Keystone environment that will define the
+# identity provider
 remote_id_attribute = HTTP_OIDC_ISS
 ```
 
 Add your horizon host as trusted dashboard to the `[federation]` section:
 
-```
+```ini
 [federation]
 trusted_dashboard = https://<your horizon>/dashboard/auth/websso/
 ```
@@ -345,10 +355,12 @@ Finally copy the default template for managing the tokens in horizon to
 keystone git repo at
 `https://github.com/openstack/keystone/blob/master/etc/sso_callback_template.html`
 
+<!-- markdownlint-disable line-length -->
 ```shell
 curl -L https://raw.githubusercontent.com/openstack/keystone/master/etc/sso_callback_template.html \
     > /etc/keystone/sso_callback_template.html
 ```
+<!-- markdownlint-enable line-length -->
 
 Now restart your Apache (and Keystone if running in uwsgi) so you can configure
 the Keystone Federation support.
@@ -438,6 +450,7 @@ configuration should work for Mitaka and onwards
 
 Create the mapping in Keystone:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ openstack mapping create --rules mapping.egi.json egi-mapping
 +-------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -449,6 +462,7 @@ $ openstack mapping create --rules mapping.egi.json egi-mapping
 |       | u'local': [{u'group': {u'id': u'89cf5b6708354094942d9d16f0f29f8f'}, u'user': {u'name': u'{0}'}}]}]                               |
 +-------+----------------------------------------------------------------------------------------------------------------------------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 Finally, create the federated protocol with the identity provider and mapping
 created before:
@@ -470,7 +484,7 @@ Keystone is now ready to accept EGI Check-in credentials.
 
 Edit your local_settings.py to include the following values:
 
-```
+```python
 # Enables keystone web single-sign-on if set to True.
 WEBSSO_ENABLED = True
 
@@ -492,6 +506,7 @@ has built-in support for using OpenID Connect Access Tokens to authenticate. You
 first need to get a valid token from EGI Check-in (e.g. from
 <https://aai-dev.egi.eu/fedcloud/>) and then use it in a command like:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ openstack --os-auth-url https://<your keystone endpoint>/v3 \
             --os-auth-type v3oidcaccesstoken --os-protocol openid \
@@ -506,6 +521,7 @@ $ openstack --os-auth-url https://<your keystone endpoint>/v3 \
 | user_id | 020864ea9415413f9d706f6b473dbeba                                                      |
 +---------+---------------------------------------------------------------------------------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 #### Additional VOs
 
@@ -597,7 +613,7 @@ the request. Besides you will need to update your configuration as follows:
 - Update Apache configuration to use [aai.egi.eu]{.title-ref} instead of
   \`aai-dev.egi.eu\`:
 
-  ```
+  ```ApacheConf
   OIDCProviderMetadataURL https://aai.egi.eu/oidc/.well-known/openid-configuration
   OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/oidc/introspect
   ```
@@ -641,7 +657,7 @@ a2enmod zgridsite
 Include these lines on your Apache config for the virtual host of your Keystone
 service:
 
-```
+```ApacheConf
 # Use the IGTF trust anchors for CAs and CRLs
 SSLCACertificatePath /etc/grid-security/certificates/
 SSLCARevocationPath /etc/grid-security/certificates/
@@ -670,10 +686,11 @@ SSLOptions              +StdEnvVars +ExportCertData
 Make sure that `mapped` authentication method exists in your `keystone.conf` in
 the `[auth]` section:
 
-```
+```ini
 [auth]
 
-# This may change in your installation, add mapped to the list of the methods you support
+# This may change in your installation,
+# add mapped to the list of the methods you support
 methods = password, token, openid, mapped
 ```
 
@@ -684,6 +701,7 @@ the VOs you intend to support. You can use the `GRST_VOMS_FQANS` to match to the
 VOMS FQAN that you want to create the mapping for. The following is an example
 for the `fedcloud.egi.eu` VO:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ openstack group create fedcloud.egi.eu
 +-------------+----------------------------------+
@@ -731,12 +749,14 @@ $ openstack mapping create --rules mapping.voms.json voms
 | rules | [{u'remote': [{u'type': u'GRST_CONN_AURI_0'}, {u'regex': True, u'type': u'GRST_VOMS_FQANS', u'any_one_of': [u'^/fedcloud.egi.eu/.*']}], u'local': [{u'group': {u'id': u'7d9a21050cef48889f23eb9d5f7fef51'}, u'user': {u'type': u'ephemeral', u'name': u'{0}'}}]}] |
 +-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 Finally add the `mapped` protocol to your `egi.eu` identity provider with the
 mapping you have created:
 
 ```shell
-$ openstack federation protocol create --identity-provider egi.eu --mapping voms mapped
+$ openstack federation protocol create \
+  --identity-provider egi.eu --mapping voms mapped
 +-------------------+--------+
 | Field             | Value  |
 +-------------------+--------+
@@ -763,8 +783,11 @@ $ cat /etc/grid-security/vomsdir/fedcloud.egi.eu/voms2.grid.cesnet.cz.lsc
 You can test easily test the authentication is working using curl with your
 proxy:
 
+<!-- markdownlint-disable line-length -->
 ```shell
-$ curl -s --cert /tmp/x509up_u1000 https://<your keystone host>/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/mapped/auth | python -mjson.tool
+$ curl -s --cert /tmp/x509up_u1000 \
+  https://<your keystone host>/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/mapped/auth | \
+  python -mjson.tool
 {
     "token": {
         "audit_ids": [
@@ -799,6 +822,7 @@ $ curl -s --cert /tmp/x509up_u1000 https://<your keystone host>/v3/OS-FEDERATION
     }
 }
 ```
+<!-- markdownlint-enable line-length -->
 
 #### Keystone-VOMS (Keystone API v2)
 
@@ -834,11 +858,13 @@ Notes:
     other service that needs to check keystone tokens.
   - Update the URLs of the services directly in the database:
 
-  ```
+  <!-- markdownlint-disable line-length -->
+  ```mysql
   mysql> use keystone;
   mysql> update endpoint set url="https://<keystone-host>:5000/v2.0" where url="http://<keystone-host>:5000/v2.0";
   mysql> update endpoint set url="https://<keystone-host>:35357/v2.0" where url="http://<keystone-host>:35357/v2.0";
   ```
+  <!-- markdownlint-enable line-length -->
 
 - Most sites should enable the `autocreate_users` option in the `[voms]` section
   of
@@ -1016,11 +1042,13 @@ cloudkeeper core is run every 4 hours with a cron script.
 After the installation of all the needed components, it is recommended to set
 the following policies on Nova to avoid users accessing other users resources:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 sed -i 's|"admin_or_owner":  "is_admin:True or project_id:%(project_id)s",|"admin_or_owner":  "is_admin:True or project_id:%(project_id)s",\n    "admin_or_user":  "is_admin:True or user_id:%(user_id)s",|g' /etc/nova/policy.json
 sed -i 's|"default": "rule:admin_or_owner",|"default": "rule:admin_or_user",|g' /etc/nova/policy.json
 sed -i 's|"compute:get_all": "",|"compute:get": "rule:admin_or_owner",\n    "compute:get_all": "",|g' /etc/nova/policy.json
 ```
+<!-- markdownlint-enable line-length -->
 
 ## Upgrading the OpenStack Appliance
 

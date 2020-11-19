@@ -27,12 +27,10 @@ If offering OCCI interface, sites should register:
 - **eu.egi.cloud.vm-management.occi** for the OCCI endpoint offered by the site.
   The endpoint URL must follow this syntax:
 
-  ```
-  https://hostname:port/?image=<image_name>&resource=<resource_name>
-  ```
+  `https://hostname:port/?image=<image_name>&resource=<resource_name>`
 
   where `<image_name>` and `<resource_name>` cannot contain spaces. These
-  attributes map to os_tpl and resource_tpl respectively and will be the ones
+  attributes map to `os_tpl` and `resource_tpl` respectively and will be the ones
   used for monitoring purposes.
 
 If offering native OpenStack access (nova), register:
@@ -40,15 +38,11 @@ If offering native OpenStack access (nova), register:
 - **org.openstack.nova** for the Nova endpoint of the site. The endpoint URL
   must contain the Keystone v3 URL:
 
-  ```
-  https://hostname:port/url/v3
-  ```
+  `https://hostname:port/url/v3`
 
 If offering native OpenStack access (swift), register:
 
 - **org.openstack.swift** for the swift endpoint of the site. The endpoint URL
   field must contain Keystone v3 URL:
 
-  ```
-  https://hostname:port/url/v3
-  ```
+  `https://hostname:port/url/v3`

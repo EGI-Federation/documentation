@@ -32,12 +32,12 @@ need to take on your site. These aim to be unintrusive and are mostly to
 facilitate access to your site by the communities you wish to support, without
 interfering with normal operations. This can be summarised essentially as :
 
-1.  Network configuration
-1.  Permissions configuration
-1.  AAI configuration
-1.  Accounting configuration
-1.  Information system integration
-1.  VM and appliance repository configuration
+1. Network configuration
+1. Permissions configuration
+1. AAI configuration
+1. Accounting configuration
+1. Information system integration
+1. VM and appliance repository configuration
 
 If at any time you experience technical difficulties or need support, please
 [open a ticket](https://ggus.eu) or discuss the matter with us

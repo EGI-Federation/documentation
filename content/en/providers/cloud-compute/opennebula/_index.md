@@ -46,6 +46,7 @@ The following **components** must be installed:
 The following **ports** must be open to allow access to an OpenNebula-based
 FedCloud site:
 
+<!-- markdownlint-disable line-length -->
 | Port          | Application              | Host                             | Note                                                                            |
 | ------------- | ------------------------ | -------------------------------- | ------------------------------------------------------------------------------- |
 | **2633**/TCP  | **OpenNebula**/XML-RPC   | **OpenNebula**                   | Communication between integration components and OpenNebula.                    |
@@ -54,6 +55,7 @@ FedCloud site:
 | **5000**/TCP  | **keystorm**/HTTPS       | **keystorm**                     | EGI User Management.                                                            |
 | **50505**/TCP | **cloudkeeper**/HTTP     | **cloudkeeper**                  | EGI Image Management, needs to be accessible from **cloudkeeper-one** node only |
 | **50051**/TCP | **cloudkeeper-one**/gRPC | **cloudkeeper-one**              | EGI Image Management, needs to be accessible from **cloudkeeper** node only     |
+<!-- markdownlint-enable line-length -->
 
 There are no additional requirements for **OpenNebula** hosts used to run
 virtual machines.
@@ -63,6 +65,7 @@ virtual machines.
 This is an overview of **service accounts** used in an OpenNebula-based site.
 The names are default and can be changed if required.
 
+<!-- markdownlint-disable line-length -->
 | Account name      | Host                     | Use                                                                                           |
 | ----------------- | ------------------------ | --------------------------------------------------------------------------------------------- |
 | `rocci`           | rOCCI-server             | Service account for **rOCCI-server**. It is only a service account, no access required.       |
@@ -71,6 +74,7 @@ The names are default and can be changed if required.
 | `openldap`        | cloud-info-provider/BDII | Service account for **cloud-info-provider/BDII**. Just a service account, no access required. |
 | `cloudkeeper`     | cloudkeeper              | Service account for **cloudkeeper**. Just a service account, no access required.              |
 | `cloudkeeper-one` | cloudkeeper-one          | Service account for **cloudkeeper-one**. Just a service account, no access required.          |
+<!-- markdownlint-enable line-length -->
 
 ## EGI Virtual Machine Management
 
@@ -90,9 +94,11 @@ installation on any other supported distribution is very similar.
 
 - Register `rOCCI-server` repositories
 
+  <!-- markdownlint-disable line-length -->
   ```shell
   wget http://repository.egi.eu/community/software/rocci.server/2.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/rocci-server.repo
   ```
+  <!-- markdownlint-enable line-length -->
 
 - Install package
 
@@ -119,16 +125,20 @@ installation on any other supported distribution is very similar.
 - Uncomment and configure optional parameters in _/etc/occi-server/variables_
 
   ```shell
-  export HOST_CERT=/path/to/cert                                     # host certificate readable by the rocci user
-  export HOST_KEY=/path/to/key                                       # host key readable by the rocci user
+  # host certificate readable by the rocci user
+  export HOST_CERT=/path/to/cert
+  # host key readable by the rocci user
+  export HOST_KEY=/path/to/key
+  # URL pointing to keystorm installation
+  export ROCCI_SERVER_KEYSTONE_URI=https://localhost:5000/
+  # URL pointing to OpenNebula installation
+  export ROCCI_SERVER_OPENNEBULA_ENDPOINT=http://localhost:2633/RPC2
 
-  export ROCCI_SERVER_KEYSTONE_URI=https://localhost:5000/           # URL pointing to keystorm installation
-
-  export ROCCI_SERVER_OPENNEBULA_ENDPOINT=http://localhost:2633/RPC2 # URL pointing to OpenNebula installation
-
-  export ROCCI_SERVER_ENCRYPTION_TOKEN_CIPHER=                       # crypto options MUST MATCH keystorm's crypto options, see /etc/keystorm/variables
-  export ROCCI_SERVER_ENCRYPTION_TOKEN_KEY=                          # crypto options MUST MATCH keystorm's crypto options, see /etc/keystorm/variables
-  export ROCCI_SERVER_ENCRYPTION_TOKEN_IV=                           # crypto options MUST MATCH keystorm's crypto options, see /etc/keystorm/variables
+  # crypto options MUST MATCH keystorm's crypto options
+  # see /etc/keystorm/variables
+  export ROCCI_SERVER_ENCRYPTION_TOKEN_CIPHER=
+  export ROCCI_SERVER_ENCRYPTION_TOKEN_KEY=
+  export ROCCI_SERVER_ENCRYPTION_TOKEN_IV=
   ```
 
 - Enable and start the service
@@ -142,35 +152,39 @@ installation on any other supported distribution is very similar.
 
 - Import resource templates to OpenNebula
 
+  <!-- markdownlint-disable line-length -->
   ```shell
   /opt/occi-server/bin/oneresource create --endpoint http://one.example.org:2633/RPC2 # --username PRIVILEGED_USER --password PASSWD
   # re-run with `--resources /opt/occi-server/embedded/app/rOCCI-server/lib/resources/gpu/` to enable GPU resource templates
   ```
+  <!-- markdownlint-enable line-length -->
 
 - In OpenNebula, set flags for groups by adding attributes:
 
-  ```
-  DEFAULT_CLUSTER_ID="0"              # Default cluster for this group
-  DEFAULT_CONNECTIVITY="public"       # Default connectivity for this group: public|nat|private
+  ```shell
+  # Default cluster for this group
+  DEFAULT_CLUSTER_ID="0"
+  # Default connectivity for this group: public|nat|private
+  DEFAULT_CONNECTIVITY="public"
   ```
 
 - In OpenNebula, set network type on networks used via OCCI by adding an
   attribute:
 
-  ```
+  ```shell
   NETWORK_TYPE="public"               # Supported types: public|nat|private
   ```
 
 - In OpenNebula, set flag for networks that should be treated as public IP pools
   (for IP reservations) by adding an attribute:
 
-  ```
+  ```shell
   FLOATING_IP_POOL="yes"
   ```
 
 - In OpenNebula, set additional network attributes:
 
-  ```
+  ```shell
   NETWORK_ADDRESS=""                  # e.g., "172.16.100.0"
   NETWORK_MASK=""                     # e.g., "255.255.255.0"
   GATEWAY=""                          # e.g., "172.16.100.1"
@@ -242,9 +256,11 @@ installation on any other supported distribution is very similar.
 
 - Register `keystorm` repositories
 
+  <!-- markdownlint-disable line-length -->
   ```shell
   wget http://repository.egi.eu/community/software/keystorm/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/keystorm.repo
   ```
+  <!-- markdownlint-enable line-length -->
 
 - Install package
 
@@ -256,9 +272,11 @@ installation on any other supported distribution is very similar.
 
 - Uncomment and configure optional parameters in _/etc/keystorm/variables_
 
-  ```
-  export KEYSTORM_OPENNEBULA_ENDPOINT=http://localhost:2633/RPC2     # URL pointing to OpenNebula installation
-  export KEYSTORM_OPENNEBULA_SECRET=oneadmin:opennebula              # Privileged OpenNebula credentials (with user and group management permissions)
+  ```shell
+  # URL pointing to OpenNebula installation
+  export KEYSTORM_OPENNEBULA_ENDPOINT=http://localhost:2633/RPC2
+  # Privileged OpenNebula credentials (with user & group management permissions)
+  export KEYSTORM_OPENNEBULA_SECRET=oneadmin:opennebula
   ```
 
 - Enable and start the service
@@ -309,8 +327,9 @@ installation on any other supported distribution is very similar.
 - In OpenNebula, create empty groups for _fedcloud.egi.eu_, _ops_, and _dteam_
   with group attribute:
 
-  ```
-  KEYSTORM="YES"                  # Allow keystorm to manage membership for this group
+  ```shell
+  # Allow keystorm to manage membership for this group
+  KEYSTORM="YES"
   ```
 
 ## EGI Accounting
@@ -338,9 +357,11 @@ installation on any other supported distribution is very similar.
 
 - Register `oneacct-export` repositories
 
+  <!-- markdownlint-disable line-length -->
   ```shell
   wget http://repository.egi.eu/community/software/oneacct.export/0.4.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/oneacct-export.repo
   ```
+  <!-- markdownlint-enable line-length -->
 
 - Install package
 
@@ -352,20 +373,25 @@ installation on any other supported distribution is very similar.
 
 - Edit `/etc/oneacct-export/conf.yml`
 
-  ```
+  ```yaml
   apel:
-    site_name: Undefined                     # Usually a short provider name, e.g. CESNET
-    cloud_type: OpenNebula                   # CMF type, only OpenNebula is supported
-    endpoint: https://localhost.edu:11443/ # Public URL of your OCCI endpoint
+    # Usually a short provider name, e.g. CESNET
+    site_name: Undefined
+    # CMF type, only OpenNebula is supported
+    cloud_type: OpenNebula
+    # Public URL of your OCCI endpoint
+    endpoint: https://localhost.edu:11443/
 
   xml_rpc:
-    secret: oneadmin:opennebula            # OpenNebula credentials, privileged
-    endpoint: http://localhost:2633/RPC2 # OpenNebula XML RPC endpoint
+    # OpenNebula credentials, privileged
+    secret: oneadmin:opennebula
+    # OpenNebula XML RPC endpoint
+    endpoint: http://localhost:2633/RPC2
   ```
 
 - Add the following lines to `/etc/one/oned.conf` and restart OpenNebula
 
-  ```
+  ```ini
   INHERIT_IMAGE_ATTR = "VMCATCHER_EVENT_AD_MPURI"
   INHERIT_IMAGE_ATTR = "VMCATCHER_EVENT_DC_IDENTIFIER"
   INHERIT_IMAGE_ATTR = "VMCATCHER_EVENT_IL_DC_IDENTIFIER"
@@ -376,9 +402,11 @@ installation on any other supported distribution is very similar.
 - Set benchmark values on CLUSTERs (applies to all hosts in the cluster) or
   HOSTs (only for that host) in OpenNebula
 
-  ```
-  BENCHMARK_TYPE  = "HEP-SPEC06" # benchmark type
-  BENCHMARK_VALUE = "84.46"      # represents a per-core measured value of said benchmark
+  ```ini
+  # benchmark type
+  BENCHMARK_TYPE  = "HEP-SPEC06"
+  # represents a per-core measured value of said benchmark
+  BENCHMARK_VALUE = "84.46"
   ```
 
 - Use `/etc/oneacct-export/groups.include` or
@@ -464,10 +492,12 @@ distribution is very similar.
 
 - Register `cloudkeeper` and `cloudkeeper-one` repositories
 
+  <!-- markdownlint-disable line-length -->
   ```shell
   wget http://repository.egi.eu/community/software/cloudkeeper/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/cloudkeeper.repo
   wget http://repository.egi.eu/community/software/cloudkeeper.one/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/cloudkeeper-one.repo
   ```
+  <!-- markdownlint-enable line-length -->
 
 - Install `cloudkeeper` and `cloudkeeper-one`
 
@@ -485,7 +515,7 @@ image-lists
 : URLs of image lists containing appliances which you want to synchronize to
 your cloud. Must contain authentication token.
 
-```
+```yaml
 image-lists: # List of image lists to sync against
  - https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/somevo/image.list
  - https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/othervo/image.list
@@ -597,7 +627,7 @@ image
 **For compatibility with other integration components, add the following lines
 to \`\`image.rb\`\`:**
 
-```
+```ruby
 VMCATCHER_EVENT_AD_MPURI="<%= appliance.mpuri %>"
 VMCATCHER_EVENT_HV_VERSION="<%= appliance.version %>"
 VMCATCHER_EVENT_DC_DESCRIPTION="<%= appliance.description %>"
@@ -618,7 +648,8 @@ VMCATCHER_EVENT_DC_TITLE="<%= appliance.title %>"
 - Perform the first synchronization manually
 
   ```shell
-  # This MAY take a long time, keep checking for successful exit with `systemctl status cloudkeeper`
+  # This MAY take a long time, keep checking for successful exit with
+  # `systemctl status cloudkeeper`
   systemctl start cloudkeeper
   ```
 
