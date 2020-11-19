@@ -39,7 +39,7 @@ CommonMark.
 {{% alert title="Tips" color="info" %}} Syntax examples that can be used in the
 files is documented in the [syntax section](../syntax). {{% /alert %}}
 
-### Automatic formatting and checks
+### Automating formatting and checking
 
 Style should be enforced via the usage of [Prettier](https://prettier.io/).
 Prettier can be integrated with
