@@ -60,7 +60,7 @@ Configuration is provided in `.prettierrc`, options can be set as follow:
 When a Pull Request is received, the proposed changes are checked using
 [various linters](https://github.com/EGI-Foundation/documentation/tree/master/.github/workflows).
 
-### Adding exceptions for style violations
+## Adding exceptions for style violations
 
 Successfully passing the checks is a firm requirement, but for some specific
 cases it's possible to add some tags in the file to by pass the checks.
@@ -75,7 +75,7 @@ The situation when it's possible to violate the style guide can be:
 when there are no other choices, and should be confined to the smallest possible
 block of markdown code. {{% /alert %}}
 
-#### Dealing with long lines like in tables
+### Dealing with long lines like in tables
 
 {{% alert title="Tips" color="info" %}} Ideally when there is no real interest
 for having a long table it's better to move to another way of formatting the
@@ -100,7 +100,7 @@ be encapsulated with some specific
 introduction of scroll bar, please reconsider using another formatting.
 {{% /alert %}}
 
-#### Dealing with in-line HTML tags
+### Dealing with in-line HTML tags
 
 In some specific it's not possible to use anything but in-line HTML tags:
 
