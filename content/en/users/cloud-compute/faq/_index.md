@@ -32,6 +32,7 @@ Migration from rOCCI CLI to OpenStack CLI is quite straightforward, we summarize
 the main commands in rOCCI and OpenStack equivalent in the table below:
 
 <!-- markdownlint-disable line-length -->
+
 | Action           | rOCCI                                                                                                                | OpenStack                                                                                |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | List images      | `occi -a list -r os_tpl`                                                                                             | `openstack image list`                                                                   |
@@ -210,11 +211,10 @@ can be assumed to be safe and only readable within your VM. However, take into
 account that anyone with access to the VM may be able to access also the
 contextualisation information.
 
-{{% alert title="Warning" color="warning" %}}
-Take into account that anyone with access to the VM may be able to access also
-the contextualisation information, so ensure that no sensitive data like clear
-text passwords is used during contextualisation.
-{{% /alert %}}
+{{% alert title="Warning" color="warning" %}} Take into account that anyone with
+access to the VM may be able to access also the contextualisation information,
+so ensure that no sensitive data like clear text passwords is used during
+contextualisation. {{% /alert %}}
 
 ### How can I use ansible?
 
