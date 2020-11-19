@@ -36,7 +36,7 @@ CommonMark.
 - Files should end with a Line Feed character ("\n"), but not including an empty
   line.
 
-{{% alert title="Note" color="info" %}} Syntax examples that can be used in the
+{{% alert title="Tips" color="info" %}} Syntax examples that can be used in the
 files is documented in the [syntax section](../syntax). {{% /alert %}}
 
 ### Automatic formatting and checks
@@ -77,12 +77,9 @@ block of markdown code. {{% /alert %}}
 
 ### Dealing with long lines like in tables
 
-{{% alert title="Note" color="info" %}} Ideally when there is no real interest
+{{% alert title="Tips" color="info" %}} Ideally when there is no real interest
 for having a long table it's better to move to another way of formatting the
 documentation. {{% /alert %}}
-
-In case the table leads to the introduction of scroll bar, please reconsider
-using another formatting.
 
 Nevertheless when a table is indeed the proper way to present the data, it can
 be encapsulated with some specific
@@ -98,6 +95,10 @@ be encapsulated with some specific
 
 <!-- markdownlint-enable line-length -->
 ```
+
+{{% alert title="Warning" color="warning" %}} In case the table leads to the
+introduction of scroll bar, please reconsider using another formatting.
+{{% /alert %}}
 
 ### Dealing with in-line HTML tags
 
@@ -123,5 +124,6 @@ In this examples two checks are disabled at the same time: `line-length` and
 <!-- markdownlint-enable line-length no-inline-html -->
 ```
 
-{{% alert title="Note" color="info" %}} Always use the tag that is providing the
-proper semantic: for a list use `<ul>` and `<li>`, not `<br />`. {{% /alert %}}
+{{% alert title="Warning" color="warning" %}} Always use the tag that is
+providing the proper semantic: for a list use `<ul>` and `<li>`, not `<br />`.
+{{% /alert %}}
