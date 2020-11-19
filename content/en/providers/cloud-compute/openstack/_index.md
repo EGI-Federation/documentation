@@ -768,7 +768,7 @@ $ openstack federation protocol create \
 
 For every VO you support you should configure the corresponding `.lsc` files at
 `/etc/grid-security/vomsdir/<vo name>/`. Those files depend on each VO, check
-the [Operations Portal](https://operations-portal.egi.eu/vo/search) for details.
+the [Operations Portal](https://operations-portal.egi.eu/vo) for details.
 You can find below the `fedcloud.egi.eu` configuration:
 
 ```shell
