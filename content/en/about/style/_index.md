@@ -75,7 +75,7 @@ The situation when it's possible to violate the style guide can be:
 when there are no other choices, and should be confined to the smallest possible
 block of markdown code. {{% /alert %}}
 
-### Dealing with long lines like in tables
+### Dealing with long lines due to tables
 
 {{% alert title="Tips" color="info" %}} Ideally when there is no real interest
 for having a long table it's better to move to another way of formatting the
