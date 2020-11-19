@@ -16,7 +16,7 @@ contribute are also welcome.
 ## Style guide
 
 {{% alert %}} A summary of the style guide is available at
-[style guide](../style/). Be sure to follow it when proposing changes.
+[style guide](./style/). Be sure to follow it when proposing changes.
 {{% /alert %}}
 
 ## Feedback and Questions
@@ -42,7 +42,7 @@ made in two ways:
   meantime.
 - for more complex contributions and when you want to preview and test changes
   locally you should fork the repository as documented below in the
-  [Using git and GitHub](../git) page.
+  [Using git and GitHub](./git) page.
 
 ### Contributing via a Pull Request
 
