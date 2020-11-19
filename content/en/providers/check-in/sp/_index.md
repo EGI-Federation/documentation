@@ -888,7 +888,7 @@ as a URN.
 An entitlement value expressing group membership and role information has the
 following syntax (components enclosed in square brackets are OPTIONAL):
 
-```less
+```vim
 urn:mace:egi.eu:group:<GROUP>[:<SUBGROUP>*]][:role=<ROLE>]#<GROUP-AUTHORITY>
 ```
 
@@ -908,7 +908,7 @@ where:
 
 **Example:**
 
-```less
+```vim
 urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 ```
 
@@ -917,13 +917,13 @@ urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 An entitlement value expressing group membership and role information has the
 following syntax (components enclosed in square brackets are OPTIONAL):
 
-```less
+```vim
 urn:mace:egi.eu:<GROUP-AUTHORITY>:[<GROUP>[:<SUBGROUP>:…]]:<ROLE>@<VO>
 ```
 
 **Example:**
 
-```less
+```vim
 urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu
 ```
 
