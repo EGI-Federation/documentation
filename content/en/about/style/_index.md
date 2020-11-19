@@ -16,7 +16,7 @@ weight: 40
   service public page, if any:
 
   ```markdown
-  [EGI High Throughput Compute](https://www.egi.eu/services/high-throughput-compute/)
+  [EGI Cloud Compute](https://www.egi.eu/services/cloud-compute/)
   ```
 
 ## Writing markdown
