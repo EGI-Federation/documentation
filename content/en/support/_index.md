@@ -7,6 +7,8 @@ menu:
     weight: 40
 ---
 
-Support can be requested by using the [EGI Helpdesk](../internal/helpdesk).
+Service-specific support can usually be requested using the
+[EGI Helpdesk](../internal/helpdesk).
 
-It's also possible to reach us by email using `support at egi.eu`.
+It's also always possible to reach us by email using
+[support@egi.eu](support@egi.eu).
