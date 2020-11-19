@@ -86,10 +86,12 @@ integration follows a two-step process:
 The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.
 
+<!-- markdownlint-disable line-length -->
 | Protocol       | Development environment                                        | Demo environment                                                | Production environment                                     |
 | -------------- | -------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------- |
 | SAML           | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          |
 | OpenID Connect | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai.egi.eu/oidc/.well-known/openid-configuration> |
+<!-- markdownlint-enable line-length -->
 
 ## SAML Service Provider
 
@@ -119,9 +121,11 @@ issued by a trusted certificate authority.
 You can get the metadata of the EGI Check-in IdP Proxy on a dedicated URL that
 depends on the integration environment being used:
 
+<!-- markdownlint-disable line-length -->
 | Development environment                               | Demo environment                                       | Production environment                            |
 | ----------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------- |
 | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai.egi.eu/proxy/saml2/idp/metadata.php> |
+<!-- markdownlint-enable line-length -->
 
 ### Metadata
 
@@ -169,10 +173,12 @@ information is provided by the EGI Check-in IdP in the
 [SAML attribute assertion](#attributes). The table below lists the SAML
 attributes that are relevant for user authorisation:
 
+<!-- markdownlint-disable line-length -->
 | Description                                                                                     | SAML Attribute         |
 | ----------------------------------------------------------------------------------------------- | ---------------------- |
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduPersonEntitlement` |
 | [Level of Assurance (LoA)](#level-of-assurance)                                                 | `eduPersonAssurance`   |
+<!-- markdownlint-enable line-length -->
 
 ### References
 
@@ -250,6 +256,7 @@ and value pairs for the Claims.
 The following scope values can be used to request Claims from the EGI Check-in
 UserInfo Endpoint:
 
+<!-- markdownlint-disable line-length no-inline-html -->
 | Scope                          | Claims                                                                                                                       |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
 | `openid`                       | `sub`                                                                                                                        |
@@ -258,6 +265,7 @@ UserInfo Endpoint:
 | `refeds_edu`                   | <ul><li>`acr`</li><li>`eduperson_assurance`</li><li>`eduperson_scoped_affiliation`</li><li>`eduperson_entitlement`</li></ul> |
 | `eduperson_scoped_affiliation` | `eduperson_scoped_affiliation`                                                                                               |
 | `eduperson_entitlement`        | `eduperson_entitlement`                                                                                                      |
+<!-- markdownlint-enable line-length no-inline-html -->
 
 A more extensive list of all the attributes that may be made available to
 Service Providers is included in the [User Attribute](#user-attributes) section.
@@ -278,6 +286,7 @@ Check-in supports the following OpenID Connect/OAuth2 grant types:
 
 The most important OIDC/OAuth2 endpoints are listed below:
 
+<!-- markdownlint-disable line-length -->
 | Endpoint               | Development environment                                        | Demo environment                                                                                    | Production environment                                                                              |
 | ---------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | Provider configuration | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration>                                     | <https://aai.egi.eu/oidc/.well-known/openid-configuration>                                          |
@@ -287,6 +296,7 @@ The most important OIDC/OAuth2 endpoints are listed below:
 | JSON Web Key(jwt)      | <https://aai-dev.egi.eu/oidc/jwk>                              | <https://aai-demo.egi.eu/oidc/jwk>                                                                  | <https://aai.egi.eu/oidc/jwk>                                                                       |
 | User Info              | <https://aai-dev.egi.eu/oidc/userinfo>                         | <https://aai-demo.egi.eu/oidc/userinfo>                                                             | <https://aai.egi.eu/oidc/userinfo>                                                                  |
 | Introspection          | <https://aai-dev.egi.eu/oidc/introspect>                       | <https://aai-demo.egi.eu/oidc/introspect>                                                           | <https://aai.egi.eu/oidc/introspect>                                                                |
+<!-- markdownlint-enable line-length -->
 
 #### Authorization Endpoint
 
@@ -320,12 +330,13 @@ Depending on the grant type, the following parameters are required:
 
 ##### Authorization Code
 
+<!-- markdownlint-disable line-length -->
 | Parameter      | Presence | Values                                                                                             |
 | -------------- | -------- | -------------------------------------------------------------------------------------------------- |
 | `grant_type`   | Required | `authorization_code`                                                                               |
 | `code`         | Required | The value of the code in the response from authorization endpoint.                                 |
 | `redirect_uri` | Required | URI to which the response will be sent (must be the same as the request to authorization endpoint) |
-
+<!-- markdownlint-enable line-length -->
 ##### Refresh request
 
 The following request allows obtaining an access token from a refresh token
@@ -369,6 +380,7 @@ curl -X POST -u "${client_id}":"${client_secret}" \
 To get a token from client B using a token issued for client A, the parameters
 of the request are:
 
+<!-- markdownlint-disable line-length -->
 | Parameter            | Presence | Values                                                                                                    |
 | -------------------- | -------- | --------------------------------------------------------------------------------------------------------- |
 | `grant_type`         | Required | `urn:ietf:params:oauth:grant-type:token-exchange`                                                         |
@@ -376,6 +388,7 @@ of the request are:
 | `subject_token`      | Required | The value of the access token                                                                             |
 | `subject_token_type` | Required | `urn:ietf:params:oauth:token-type:access_token` (because this feature accepts access tokens only)         |
 | `scope`              | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
+<!-- markdownlint-enable line-length -->
 
 ###### Example request
 
@@ -415,12 +428,14 @@ on-device user-agent, provided that they have an Internet connection.
     request to the device authorization endpoint. The client constructs the
     request with the following parameters:
 
+<!-- markdownlint-disable line-length -->
    | Parameter   | Presence | Values                                                                                                    |
    | ----------- | -------- | --------------------------------------------------------------------------------------------------------- |
    | `client_id` | Required | The identifier of the client                                                                              |
    | `scope`     | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
+<!-- markdownlint-enable line-length -->
 
-   **Example request**
+###### Example request
 
    ```sh
    curl -X POST "https://aai-dev.egi.eu/oidc/devicecode" \
@@ -429,7 +444,7 @@ on-device user-agent, provided that they have an Internet connection.
        -d "&scope=openid%20email%20profile" | python -m json.tool
    ```
 
-   **Example response**
+###### Example response
 
    ```json
    {
@@ -448,11 +463,12 @@ on-device user-agent, provided that they have an Internet connection.
    device (for example, in a browser on their mobile phone), and enter the
    user code.
 
-1. **Device Access Token Request**
+2. **Device Access Token Request**
 
    After displaying instructions to the user, the client makes an Access Token
    Request to the token endpoint. The request contains the following parameters:
 
+<!-- markdownlint-disable line-length -->
    | Parameter       | Presence | Values                                                                                                    |
    | --------------- | -------- | --------------------------------------------------------------------------------------------------------- |
    | `grant_type`    | Required | `urn:ietf:params:oauth:grant-type:device_code`                                                            |
@@ -460,8 +476,9 @@ on-device user-agent, provided that they have an Internet connection.
    | `client_id`     | Required | The identifier of the client                                                                              |
    | `client_secret` | Required | The secret value of the client                                                                            |
    | `scope`         | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
+<!-- markdownlint-enable line-length -->
 
-   **Example request**
+###### Example request
 
    ```sh
    curl -X POST "https://aai-dev.egi.eu/oidc/token" \
@@ -473,7 +490,7 @@ on-device user-agent, provided that they have an Internet connection.
        -d "&scope=openid%20profile" | python -m json.tool
    ```
 
-   **Example response**
+###### Example response
 
    ```json
    {
@@ -493,10 +510,12 @@ information is provided by the EGI Check-in OIDC Provider in the form of
 [OIDC claims](#claims). The table below lists the claims that are relevant for
 user authorisation:
 
+<!-- markdownlint-disable line-length -->
 | Description                                                                                     | OIDC Claim                |
 | ----------------------------------------------------------------------------------------------- | ------------------------- |
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `edu_person_entitlements` |
 | [Level of Assurance (LoA)](#level-of-assurance)                                                 | `acr`                     |
+<!-- markdownlint-enable line-length -->
 
 ### Example OIDC Client
 
@@ -586,6 +605,7 @@ make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
 integration goes via an intermediary service, called a Master Portal. EGI is
 running two Master Portal instances, one development, one production instance.
 
+<!-- markdownlint-disable line-length -->
 | Endpoint               | Development environment                                                                | Production environment                                              |
 | ---------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | Provider configuration | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> | <https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
@@ -594,6 +614,7 @@ running two Master Portal instances, one development, one production instance.
 | Token                  | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token>                            | <https://aai.egi.eu/mp-oa2-server/token>                            |
 | JSON Web Key(jwt)      | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs>                            | <https://aai.egi.eu/mp-oa2-server/certs>                            |
 | User Info              | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         | <https://aai-demo.egi.eu/oidc/userinfo>                             |
+<!-- markdownlint-enable line-length -->
 
 ### Registering a client at the Master Portal
 
@@ -644,6 +665,7 @@ connected to Check-in.
 
 ### 1. EGI ID
 
+<!-- markdownlint-disable line-length no-inline-html -->
 |          attribute name | EGI ID                                                                              |
 | ----------------------: | :---------------------------------------------------------------------------------- |
 |         **description** | An identifier for the user, unique among all EGI accounts and never reused          |
@@ -658,6 +680,7 @@ connected to Check-in.
 |             **example** | _ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu_           |
 |               **notes** | Use **EGI ID** within your application as the unique-identifier key for the user    |
 |              **status** | Stable                                                                              |
+<!-- markdownlint-enable line-length no-inline-html -->
 
 ### 2. Display Name
 
@@ -712,6 +735,7 @@ connected to Check-in.
 
 ### 5. Username
 
+<!-- markdownlint-disable line-length no-inline-html -->
 |          attribute name | Username                                                                            |
 | ----------------------: | :---------------------------------------------------------------------------------- |
 |         **description** | The username by which the user wishes to be referred to                             |
@@ -726,9 +750,11 @@ connected to Check-in.
 |             **example** | _jdoe_                                                                              |
 |               **notes** | The Service Provider **MUST NOT** rely upon this value being unique                 |
 |              **status** | Stable                                                                              |
+<!-- markdownlint-enable line-length no-inline-html -->
 
 ### 6. Email Address
 
+<!-- markdownlint-disable line-length no-inline-html -->
 |          attribute name | Email Address                                                               |
 | ----------------------: | :-------------------------------------------------------------------------- |
 |         **description** | The user's email address                                                    |
@@ -743,9 +769,11 @@ connected to Check-in.
 |             **example** | _john.doe@example.org_                                                      |
 |               **notes** | This **MAY NOT** be unique and is **NOT** suitable for use as a primary key |
 |              **status** | Stable                                                                      |
+<!-- markdownlint-enable line-length no-inline-html -->
 
 ### 7. Verified email flag
 
+<!-- markdownlint-disable line-length no-inline-html -->
 |          attribute name | Verified email flag                                                 |
 | ----------------------: | :------------------------------------------------------------------ |
 |         **description** | True if the user's email address has been verified; otherwise false |
@@ -760,9 +788,11 @@ connected to Check-in.
 |             **example** | _true_                                                              |
 |               **notes** | This claim is available only in OpenID Connect                      |
 |              **status** | Experimental                                                        |
+<!-- markdownlint-enable line-length no-inline-html -->
 
 ### 8. Verified email list
 
+<!-- markdownlint-disable line-length no-inline-html -->
 |          attribute name | Verified email list                                                 |
 | ----------------------: | :------------------------------------------------------------------ |
 |         **description** | A list of user's email addresses that have been verified            |
@@ -777,9 +807,11 @@ connected to Check-in.
 |             **example** | <ul><li>_john.doe@example.org_</li><li>_jdoe@example.com_</li></ul> |
 |               **notes** | -                                                                   |
 |              **status** | Experimental                                                        |
+<!-- markdownlint-enable line-length no-inline-html -->
 
 ### 9. Affiliation
 
+<!-- markdownlint-disable line-length no-inline-html -->
 |          attribute name | Affiliation                                                              |
 | ----------------------: | :----------------------------------------------------------------------- |
 |         **description** | The user's affiliation within a particular security domain (scope)       |
@@ -794,9 +826,11 @@ connected to Check-in.
 |             **example** | _member@example.org_                                                     |
 |               **notes** | Service Providers are encouraged to validate the scope of this attribute |
 |              **status** | Stable                                                                   |
+<!-- markdownlint-enable line-length no-inline-html -->
 
 ### 10. Entitlements
 
+<!-- markdownlint-disable line-length no-inline-html -->
 |          attribute name | Entitlements                                                              |
 | ----------------------: | :------------------------------------------------------------------------ |
 |         **description** | The user's entitlements expressed as group/VO membership/role information |
@@ -811,9 +845,11 @@ connected to Check-in.
 |             **example** | _urn:mace:egi.eu:group:vo.test.egi.eu:role=member#aai.egi.eu_             |
 |               **notes** | -                                                                         |
 |              **status** | Stable                                                                    |
+<!-- markdownlint-enable line-length no-inline-html -->
 
 ### 11. Assurance
 
+<!-- markdownlint-disable line-length no-inline-html -->
 |          attribute name | Assurance                                                          |
 | ----------------------: | :----------------------------------------------------------------- |
 |         **description** | Assurance of the identity of the user                              |
@@ -828,7 +864,7 @@ connected to Check-in.
 |             **example** | _[https://aai.egi.eu/LoA#Low]_                                     |
 |               **notes** | -                                                                  |
 |              **status** | Stable                                                             |
-
+<!-- markdownlint-enable line-length no-inline-html -->
 ## User authorisation
 
 The following information about the authenticated user can be provided by EGI
