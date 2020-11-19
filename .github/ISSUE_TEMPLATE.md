@@ -1,9 +1,9 @@
 <!--
-Thank you for opening an issue in our documentation.
+Thank you for opening an issue in our repository.
 Please use the template below to construct the issue.
 
 Dealing with issues:
-- Issues opened here will be evaluated by the maintainers, and given priority based
+- Issues opened here will be evaluated by the maintainers, and given priority
   based on that evaluation.
 - Support is provided on a best-effort basis
 - See the CODE_OF_CONDUCT.md for a deeper description of how we deal with support
@@ -12,7 +12,7 @@ Dealing with issues:
 
 # Short Description of the issue
 
-<!-- 
+<!--
 Please provide a plain-language description of what you would like to report.
 By using simple, concise language, you can help the maintainers understand the
 issue and context, and thereby help them prioritise it.
