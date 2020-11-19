@@ -178,7 +178,9 @@ Add the user configured in your cloud-info-provider as member of the new
 project:
 
 ```shell
-openstack role add member --user <your cloud-info-provider user> --project <your new vo project>
+openstack role add member \
+          --user <your cloud-info-provider user> \
+          --project <your new vo project>
 ```
 
 ## EGI VM Image Management
@@ -198,7 +200,7 @@ Add the user configured in cloudkeeper-os as member of the new project:
 ```shell
 openstack role add member \
           --user <your cloudkeeper-os user> \
-	  --project <your new vo project>
+          --project <your new vo project>
 ```
 
 Add the mapping of the project to the VO in `/etc/cloudkeeper-os/voms.json`:

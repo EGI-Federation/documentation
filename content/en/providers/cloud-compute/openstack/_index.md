@@ -468,7 +468,9 @@ Finally, create the federated protocol with the identity provider and mapping
 created before:
 
 ```shell
-$ openstack federation protocol create --identity-provider egi.eu --mapping egi-mapping openid
+$ openstack federation protocol create \
+            --identity-provider egi.eu \
+            --mapping egi-mapping openid
 +-------------------+-------------+
 | Field             | Value       |
 +-------------------+-------------+
