@@ -11,4 +11,4 @@ Service-specific support can usually be requested using the
 [EGI Helpdesk](../internal/helpdesk).
 
 It's also always possible to reach us by email using
-[support@egi.eu](support@egi.eu).
+[support@egi.eu](mailto:support@egi.eu).
