@@ -130,12 +130,12 @@ Team on shift.
 
 #### Apply for your user credentials
 
-DIRAC uses [X.509 certificates](../check-in/voms/) to identify and authenticate
+DIRAC uses [X.509 certificates](../check-in/vos/voms/) to identify and authenticate
 users. These certificates are delivered to each individual by trusted
-certification authorities.\
+certification authorities.
 If you have a personal certificate issued by a [EUGridPMA-certified](http://www.eugridpma.org/)
 authority you can use it for this tutorial. Otherwise refer to the information available
-in this [section](../check-in/voms/#get-a-certificate), to obtain a certificate.
+in this [section](../check-in/vos/voms/#get-a-certificate), to obtain a certificate.
 Your certificate may take a few days to be delivered, so please ask for your certificate
 well in advance and in any case, before the tutorial starts.
 
@@ -145,7 +145,7 @@ Your personal certificate is usually delivered to you via a web site and is
 automatically loaded in your browser. You need to export it from the browser and
 put it in the appropriate format for DIRAC to use. This is a one-time operation.
 Please follow the instructions in detailed in
-[VOMS documentation page](../check-in/voms/) to export and in install your
+[VOMS documentation page](../check-in/vos/voms/) to export and in install your
 certificate.
 
 #### Send your certificate's subject to the DIRAC team
