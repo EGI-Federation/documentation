@@ -42,8 +42,8 @@ files is documented in the [syntax section](../syntax). {{% /alert %}}
 ### Automatic formatting and checks
 
 Style should be enforced via the usage of [Prettier](https://prettier.io/).
-Prettier can be integrated with various editors:
-https://prettier.io/docs/en/editors.html.
+Prettier can be integrated with
+[various editors](https://prettier.io/docs/en/editors.html).
 
 - With VIM/neovim it can be used via a plugin like
   [ALE](https://github.com/dense-analysis/ale) as documented on the
