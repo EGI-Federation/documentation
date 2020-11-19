@@ -78,7 +78,7 @@ block of markdown code. {{% /alert %}}
 ### Dealing with long lines like in tables
 
 {{% alert title="Note" color="info" %}} Ideally when there is no real interest
-for having a long table it's better to move to another of formatting the
+for having a long table it's better to move to another way of formatting the
 documentation. {{% /alert %}}
 
 In case the table leads to the introduction of scroll bar, please reconsider
