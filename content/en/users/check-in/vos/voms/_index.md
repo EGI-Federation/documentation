@@ -99,7 +99,7 @@ using `pkcs12`:
 1. First you will need to create the private key, use `-nocerts`. Open your
    terminal, enter the following command:
 
-   ```shell
+   ```sh
    openssl pkcs12 -nocerts -in my_cert.p12 -out userkey.pem
    ```
 
@@ -119,7 +119,7 @@ using `pkcs12`:
 2. Now you can create the certificate, use `-clcerts`, (use `-nokeys` hereu will
    not output private key), and the command is:
 
-   ```shell
+   ```sh
    openssl pkcs12 -clcerts -nokeys -in my_cert.p12 -out usercert.pem
    ```
 
