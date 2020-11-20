@@ -1005,7 +1005,7 @@ An entitlement value expressing group membership and role information has the
 following syntax (components enclosed in square brackets are OPTIONAL):
 
 ```vim
-urn:mace:egi.eu:group:<GROUP>[:<SUBGROUP>*]][:role=<ROLE>]#<GROUP-AUTHORITY>
+urn:mace:egi.eu:group:<GROUP>[:<SUBGROUP>*][:role=<ROLE>]#<GROUP-AUTHORITY>
 ```
 
 where:
