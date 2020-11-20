@@ -61,4 +61,4 @@ high-throughput processing of files:
 
 To deploy SLURM clusters, please select SLURM from the list of available LRMS
 (Local Resource Management System). See also the dedicated guide on
-[HTC clusters](./htc)
+[HTC clusters](./htc/)
