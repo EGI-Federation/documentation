@@ -31,8 +31,9 @@ Check the
 ### Mesos + Marathon + Chronos
 
 To deploy a virtual cluster with [Marathon](https://mesosphere.github.io/marathon/), 
-[Mesos](http://mesos.apache.org/) and [Chronos](https://mesos.github.io/chronos/) as an orchestration, 
-please select Mesos + Marathon + Chronos from the list of available LRMS.
+[Mesos](http://mesos.apache.org/) and [Chronos](https://mesos.github.io/chronos/)
+as an orchestration, please select Mesos + Marathon + Chronos from the list of 
+available LRMS.
 
 ### OSCAR cluster
 
@@ -51,6 +52,6 @@ high-throughput processing of files:
 
 ### SLURM cluster
 
-To deploy [SLURM](https://slurm.schedmd.com/documentation.html) clusters, please select SLURM from 
-the list of available LRMS (Local Resource Management System). See also the dedicated guide on
-[HTC clusters](./htc/)
+To deploy [SLURM](https://slurm.schedmd.com/documentation.html) clusters, 
+please select SLURM from the list of available LRMS. 
+See also the dedicated guide on [HTC clusters](./htc/)
