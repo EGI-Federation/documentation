@@ -11,7 +11,7 @@ you are interested in joining please first contact EGI operations team
 
 - the projects you may be involved in as cloud provider
 
-- the user communities you want to support (a.k.a. Virtual Organisations, VO).
+- the user communities you want to support (AKA Virtual Organisations, VO).
   You can also support the 'long-tail of science' through the access.egi.eu VO.
 
 - the technologies (Cloud Management Framework) you want to provide.
