@@ -93,6 +93,43 @@ more information can be found in the protocol-specific sections that follow.
 | OpenID Connect | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai.egi.eu/oidc/.well-known/openid-configuration> |
 <!-- markdownlint-enable line-length -->
 
+## General Information
+
+EGI Check-in supports two authentication and authorisation protocols that you
+can choose from:
+
+1. [Security Assertion Markup Language (SAML) 2.0](http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html)
+2. [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) - an
+   extension to [OAuth 2.0](https://tools.ietf.org/html/rfc6749)
+
+Regardless of which of the two protocols you are going to use, you need to
+provide the following information to connect your service to EGI Check-in:
+
+1. Name of the service (in English and optionally in other languages supported
+   by the service)
+2. Short description of the service
+3. Website (URL) for localised information about the service; the content found
+   at the URL SHOULD provide more complete information than what provided by the
+   description
+4. Contact information of the following types:
+   - Helpdesk/Support contact information (for redirecting user)
+   - Administrative
+   - Technical
+   - Security/incident response
+5. Privacy statement URL: The privacy policy is used to document the data
+   collected and processed by the service. You can use the
+   [Privacy Policy template](https://docs.google.com/document/d/1ZU7VjH3g7qcfWcz0Z8TTv-vQiVoRA_wOsuMyJaz28Og/edit)
+6. Logo URL (optional for showing in catalogues); if provided, logos SHOULD:
+   - use a transparent background where appropriate to facilitate the usage of
+     logos within a user interface
+   - use PNG, or GIF (less preferred), images
+   - use HTTPS URLs in order to avoid mixed-content warnings within browsers
+   - have a size larger than 40000 and smaller than 50000 characters when
+     encoded in base64
+
+{{% alert title="Note" color="info" %}} If you choose to register an OIDC client
+, then you can fill this information in the client configuration. {{% /alert %}}
+
 ## SAML Service Provider
 
 To enable federated access to a web-based application, you can connect to the
@@ -126,6 +163,10 @@ depends on the integration environment being used:
 | ----------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------- |
 | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai.egi.eu/proxy/saml2/idp/metadata.php> |
 <!-- markdownlint-enable line-length -->
+
+To register your SAML SP, please contact `checkin-support` `<AT>`
+`mailman.egi.eu`. Your request should include the general information about your
+service (see [General Information](#general-information)) and the SP's metadata.
 
 ### Metadata
 
@@ -205,6 +246,8 @@ the authenticated user.
 Before your service can use the EGI Check-in OIDC Provider for user login, you
 must set up a client at <https://aai-dev.egi.eu/oidc/manage/#admin/clients> in
 order to obtain OAuth 2.0 credentials and register one or more redirect URIs.
+The client configuration should include the general information about your
+service, as described in [General Information](#general-information) section.
 
 #### Obtaining OAuth 2.0 credentials
 
