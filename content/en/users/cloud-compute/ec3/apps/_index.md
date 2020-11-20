@@ -23,11 +23,6 @@ Management System) and choose NAMD from the list of applications.
 To deploy a virtual cluster with [Apache Mesos](http://mesos.apache.org/) as a compute cluster, please
 select Mesos from the list of available Local Resource Management System (LRMS).
 
-### Chronos
-
-To deploy a virtual cluster with [Chronos](https://mesos.github.io/chronos/) as fault-tolerant scheduler, please
-select Chronos from the list of available LRMS.
-
 ### ECAS cluster
 
 Check the dedicated [ECAS documentation](./ecas/).
@@ -39,7 +34,7 @@ Check the
 
 ### Mesos + Marathon + Chronos
 
-To deploy a virtual cluster with [Marathon](https://mesosphere.github.io/marathon/) as an orchestration, please select
+To deploy a virtual cluster with [Marathon](https://mesosphere.github.io/marathon/), [Mesos](http://mesos.apache.org/) and [Chronos](https://mesos.github.io/chronos/) as an orchestration, please select
 Mesos + Marathon + Chronos from the list of available LRMS.
 
 ### OSCAR cluster
