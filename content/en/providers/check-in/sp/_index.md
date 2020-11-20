@@ -961,6 +961,26 @@ connected to Check-in.
 |               **notes** | -                                                                  |
 |              **status** | Stable                                                             |
 <!-- markdownlint-enable line-length no-inline-html -->
+
+### 12. CertEntitlement
+
+<!-- markdownlint-disable line-length no-inline-html -->
+|          attribute name | CertEntitlement                                                                                                                                                                                            |
+| ----------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | Provides information about the user's certificate subject(s) and the associated VO(s)                                                                                                                      |
+|   **SAML Attribute(s)** | **Not available**                                                                                                                                                                                          |
+|          **OIDC scope** | `cert_entitlement`                                                                                                                                                                                         |
+|       **OIDC claim(s)** | `cert_entitlement`                                                                                                                                                                                         |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                                         |
+|              **origin** | VO/group management tools integrated with Check-in                                                                                                                                                         |
+|             **changes** | Yes                                                                                                                                                                                                        |
+|        **multiplicity** | Multi-valued                                                                                                                                                                                               |
+|        **availability** | Not always                                                                                                                                                                                                 |
+|             **example** | `{"cert_entitlement": [{"cert_subject_dn": "/C=GR/O=HellasGrid/...","cert_iss": "/C=GR/O=HellasGrid/...","eduperson_entitlement": "urn:mace:egi.eu:group:checkin-integration:role=VO-Admin#aai.egi.eu"}]}` |
+|               **notes** | This is available only for DIRAC                                                                                                                                                                           |
+|              **status** | Stable                                                                                                                                                                                                     |
+<!-- markdownlint-enable line-length no-inline-html -->
+
 ## User authorisation
 
 The following information about the authenticated user can be provided by EGI
