@@ -16,7 +16,7 @@ contribute are also welcome.
 ## Style guide
 
 {{% alert %}} A summary of the style guide is available at
-[style guide](../style/). Be sure to follow it when proposing changes.
+[style guide](./style/). Be sure to follow it when proposing changes.
 {{% /alert %}}
 
 ## Feedback and Questions
@@ -42,7 +42,7 @@ made in two ways:
   meantime.
 - for more complex contributions and when you want to preview and test changes
   locally you should fork the repository as documented below in the
-  [Using git and GitHub](../git) page.
+  [Using git and GitHub](./git) page.
 
 ### Contributing via a Pull Request
 
@@ -80,16 +80,24 @@ Code review takes place in GitHub pull requests. See
 [this article](https://help.github.com/articles/about-pull-requests/) if you're
 not familiar with GitHub Pull Requests.
 
-Once you open a pull request, maintainers will review your code using the
-built-in code review process in Github PRs. The process at this point is as
-follows:
+Once you open a pull request, automated checks will verify the style and syntax
+of your changes and maintainers will review your code using the built-in code
+review process in GitHub Pull Requests.
 
+The process at this point is as follows:
+
+1. Automated syntax and formatting checks are run using
+   [GitHub Actions](https://github.com/features/actions), successful checks are
+   a hard requirement, but maintainers will help you addressing reported issues.
 1. A maintainer will review your code and merge it if no changes are necessary.
    Your change will be merged into the repository's `master` branch.
 1. If a maintainer has feedback or questions on your changes then they will set
    `request changes` in the review and provide an explanation.
 
 ## Release cycle
+
+The documentation is using a rolling release model, all changes merged to the
+`master` branch are directly deployed in the live production environment.
 
 Master branch is always available. Tagged versions may be created as needed
 following [Semantic Versioning](https://semver.org/) as far as applicable.
