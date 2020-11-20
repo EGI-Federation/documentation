@@ -13,15 +13,10 @@ with EC3.
 
 ### NAMD cluster
 
-To deploy [NAMD](https://www.ks.uiuc.edu/Research/namd/) clusters, please select one of the available LRMS (Local Resource
-Management System) and choose NAMD from the list of applications.
+To deploy [NAMD](https://www.ks.uiuc.edu/Research/namd/) clusters, please select one of the available 
+LRMS (Local Resource Management System) and choose NAMD from the list of applications.
 
 ## How to use generic tools/practices in EC3
-
-### Apache Mesos
-
-To deploy a virtual cluster with [Apache Mesos](http://mesos.apache.org/) as a compute cluster, please
-select Mesos from the list of available Local Resource Management System (LRMS).
 
 ### ECAS cluster
 
@@ -34,8 +29,9 @@ Check the
 
 ### Mesos + Marathon + Chronos
 
-To deploy a virtual cluster with [Marathon](https://mesosphere.github.io/marathon/), [Mesos](http://mesos.apache.org/) and [Chronos](https://mesos.github.io/chronos/) as an orchestration, please select
-Mesos + Marathon + Chronos from the list of available LRMS.
+To deploy a virtual cluster with [Marathon](https://mesosphere.github.io/marathon/), 
+[Mesos](http://mesos.apache.org/) and [Chronos](https://mesos.github.io/chronos/) as an orchestration, 
+please select Mesos + Marathon + Chronos from the list of available LRMS.
 
 ### OSCAR cluster
 
@@ -54,6 +50,6 @@ high-throughput processing of files:
 
 ### SLURM cluster
 
-To deploy [SLURM](https://slurm.schedmd.com/documentation.html) clusters, please select SLURM from the list of available LRMS
-(Local Resource Management System). See also the dedicated guide on
+To deploy [SLURM](https://slurm.schedmd.com/documentation.html) clusters, please select SLURM from 
+the list of available LRMS (Local Resource Management System). See also the dedicated guide on
 [HTC clusters](./htc/)
