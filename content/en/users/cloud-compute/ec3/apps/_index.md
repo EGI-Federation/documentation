@@ -13,8 +13,9 @@ with EC3.
 
 ### NAMD cluster
 
-To deploy [NAMD](https://www.ks.uiuc.edu/Research/namd/) clusters, please select one of the available 
-LRMS (Local Resource Management System) and choose NAMD from the list of applications.
+To deploy [NAMD](https://www.ks.uiuc.edu/Research/namd/) clusters, please select 
+one of the available LRMS (Local Resource Management System) and choose NAMD 
+from the list of applications.
 
 ## How to use generic tools/practices in EC3
 
