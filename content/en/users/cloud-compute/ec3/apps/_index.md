@@ -37,10 +37,10 @@ Check the dedicated [ECAS documentation](./ecas/).
 Check the
 [Cloud Container Compute documentation](../../../cloud-container-compute).
 
-### Marathon
+### Mesos + Marathon + Chronos
 
 To deploy a virtual cluster with [Marathon](https://mesosphere.github.io/marathon/) as an orchestration, please select
-Chronos from the list of available LRMS.
+Mesos + Marathon + Chronos from the list of available LRMS.
 
 ### OSCAR cluster
 
