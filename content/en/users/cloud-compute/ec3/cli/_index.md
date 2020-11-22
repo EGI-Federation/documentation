@@ -1,9 +1,10 @@
 ---
-title: "Introduction"
+title: "EC3 CLI"
 type: docs
-weight: 10
+weight: 20
 description: >
-  Getting started with Elastic Cloud Compute Cluster on EGI Cloud
+  Getting started with Elastic Cloud Compute Cluster on EGI Cloud with the
+  Command Line Interface
 ---
 
 You can find here documentation on how to deploy a sample SLURM cluster, which

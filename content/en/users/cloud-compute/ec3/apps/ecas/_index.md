@@ -1,7 +1,7 @@
 ---
 title: "ECAS"
 type: docs
-weight: 30
+weight: 10
 description: >
   Using Elastic Cloud Computing Cluster (EC3) platform to create an ECAS
   environment.
