@@ -30,18 +30,19 @@ Check the
 
 ### Mesos + Marathon + Chronos
 
-To deploy a virtual cluster with [Marathon](https://mesosphere.github.io/marathon/), 
-[Mesos](http://mesos.apache.org/) and [Chronos](https://mesos.github.io/chronos/)
-as an orchestration, please select Mesos + Marathon + Chronos from the list of 
-available LRMS.
+To deploy a virtual cluster with 
+[Marathon](https://mesosphere.github.io/marathon/), 
+[Mesos](http://mesos.apache.org/), and 
+[Chronos](https://mesos.github.io/chronos/) as an orchestration, 
+please select Mesos + Marathon + Chronos from the list of available LRMS.
 
 ### OSCAR cluster
 
 To deploy
 [Serverless computing for data-processing applications](https://www.egi.eu/about/newsletters/serverless-computing-for-data-processing-applications-in-egi/)
 in EGI, please select OSCAR from the list of LRMS (Local Resource Management
-System). Use cases of applications that use the OSCAR framework for event-driven
-high-throughput processing of files:
+System). Use cases of applications that use the OSCAR framework for 
+event-driven high-throughput processing of files:
 
 - [Plants Classification](https://github.com/indigo-dc/plant-classification-theano),
   an application that performs plant classification using Lasagne/Theano.
