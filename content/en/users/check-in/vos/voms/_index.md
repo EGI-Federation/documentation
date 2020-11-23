@@ -286,6 +286,7 @@ voms-proxy-init --voms <name of the vo> --rfc
 See for example, using `fedcloud.egi.eu` VO:
 
 <!-- markdownlint-disable line-length -->
+
 ```sh
 voms-proxy-init --voms fedcloud.egi.eu --rfc
 Enter GRID pass phrase:
@@ -296,4 +297,5 @@ Creating proxy .................................................................
 
 Your proxy is valid until Mon Feb  4 23:37:21 2019
 ```
+
 <!-- markdownlint-enable line-length -->
