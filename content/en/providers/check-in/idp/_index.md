@@ -88,7 +88,7 @@ Information about group membership and role information released by your IdP
 should follow the URN scheme below (see also
 [AARC-G002](https://aarc-community.org/guidelines/aarc-g002)):
 
-    <NAMESPACE>:group:<GROUP>[:<SUBGROUP>*]][:role=<ROLE>]#<GROUP-AUTHORITY>
+    <NAMESPACE>:group:<GROUP>[:<SUBGROUP>*][:role=<ROLE>]#<GROUP-AUTHORITY>
 
 where:
 
