@@ -436,7 +436,7 @@ these values such as <https://tonyxu-io.github.io/pkce-generator/>
 Then the `code_challenge` is sent in the Authorization Request along with the
 transformation method (`code_challenge_method`).
 
-####### Example request
+Example request:
 
 ```sh
 GET https://aai.egi.eu/oidc/authorize?
@@ -451,7 +451,7 @@ GET https://aai.egi.eu/oidc/authorize?
 The Authorization Endpoint responds as usual but records `code_challenge` and
 the `code_challenge_method`.
 
-####### Example response
+Example response:
 
 ```sh
 HTTP/1.1 302 Found
@@ -462,7 +462,7 @@ HTTP/1.1 302 Found
 The client then sends the authorization code in the Access Token Request as
 usual but includes the `code_verifier` secret generated in the first request.
 
-####### Example request
+Example request:
 
 ```sh
 curl -X POST "https://aai.egi.eu/oidc/token" \
@@ -476,7 +476,7 @@ curl -X POST "https://aai.egi.eu/oidc/token" \
 The authorization server transforms `code_verifier` and compares it to
 `code_challenge` from the first request. Access is denied if they are not equal.
 
-####### Example response
+Example response:
 
 ```json
 {
@@ -501,19 +501,19 @@ using the `grant_type` value `refresh_token`:
 | `refresh_token` | Required | `The value of the refresh token`              |
 | `scope`         | Required | This parameter should contain openid at least |
 
-###### Example request
+Example request:
 
 ```sh
 curl -X POST -u "${client_id}":"${client_secret}" \
-     -d "client_id={myClientID}" \
-     -d "client_secret={myClientSecret}" \
-     -d "grant_type=refresh_token" \
-     -d "refresh_token=${myRefreshToken}" \
-     -d "scope=openid%20email%20profile" \
-     "https://aai-dev.egi.eu/oidc/token" | python -m json.tool;
+-d "client_id={myClientID}" \
+-d "client_secret={myClientSecret}" \
+-d "grant_type=refresh_token" \
+-d "refresh_token=${myRefreshToken}" \
+-d "scope=openid%20email%20profile" \
+"https://aai-dev.egi.eu/oidc/token" | python -m json.tool;
 ```
 
-###### Example response
+Example response:
 
 ```json
 {
@@ -543,19 +543,19 @@ of the request are:
 
 <!-- markdownlint-enable line-length -->
 
-###### Example request
+Example request:
 
 ```sh
 curl -X POST -u "${client_B_id}":"${client_B_secret}" \
-    -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
-    -d "audience=tokenExchange" \
-    -d "subject_token=${access_token_A}" \
-    -d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
-    -d "scope=openid%20profile%20offline_access" \
-    "http://aai.egi.eu/oidc/token" | python -m json.tool;
+-d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
+-d "audience=tokenExchange" \
+-d "subject_token=${access_token_A}" \
+-d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
+-d "scope=openid%20profile%20offline_access" \
+"http://aai.egi.eu/oidc/token" | python -m json.tool;
 ```
 
-###### Example response
+Example response:
 
 ```json
 {
@@ -574,90 +574,90 @@ The device code flow enables OAuth clients on (input-constrained) devices to
 obtain user authorization for accessing protected resources without using an
 on-device user-agent, provided that they have an Internet connection.
 
-1. **Device Authorization Request**
+###### 1. Device Authorization Request
 
-   The client initiates the authorization flow by requesting a set of
-   verification codes from the authorization server by making an HTTP "POST"
-    request to the device authorization endpoint. The client constructs the
-    request with the following parameters:
-
-<!-- markdownlint-disable line-length -->
-
-   | Parameter   | Presence | Values                                                                                                    |
-   | ----------- | -------- | --------------------------------------------------------------------------------------------------------- |
-   | `client_id` | Required | The identifier of the client                                                                              |
-   | `scope`     | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
-
-<!-- markdownlint-enable line-length -->
-
-###### Example request
-
-   ```sh
-   curl -X POST "https://aai-dev.egi.eu/oidc/devicecode" \
-       -H "Content-Type: application/x-www-form-urlencoded" \
-       -d "client_id={myClientID}" \
-       -d "&scope=openid%20email%20profile" | python -m json.tool
-   ```
-
-###### Example response
-
-   ```json
-   {
-     "device_code": "c4341bd6-5e82-4f9c-9f6f-5842409d48db",
-     "expires_in": 600,
-     "user_code": "IEJSJB",
-     "verification_uri": "https://aai-dev.egi.eu/oidc/device)"
-   }
-   ```
-
-1. **User Interaction**
-
-   After receiving a successful Authorization Response, the client displays or
-   otherwise communicates the `user_code` and the `verification_uri` to the end
-   user and instructs them to visit the URI in a user agent on a secondary
-   device (for example, in a browser on their mobile phone), and enter the
-   user code.
-
-2. **Device Access Token Request**
-
-   After displaying instructions to the user, the client makes an Access Token
-   Request to the token endpoint. The request contains the following parameters:
+The client initiates the authorization flow by requesting a set of
+verification codes from the authorization server by making an HTTP "POST"
+request to the device authorization endpoint. The client constructs the request
+with the following parameters:
 
 <!-- markdownlint-disable line-length -->
 
-   | Parameter       | Presence | Values                                                                                                    |
-   | --------------- | -------- | --------------------------------------------------------------------------------------------------------- |
-   | `grant_type`    | Required | `urn:ietf:params:oauth:grant-type:device_code`                                                            |
-   | `device_code`   | Required | The device verification code, `device_code` from the Device Authorization Response                        |
-   | `client_id`     | Required | The identifier of the client                                                                              |
-   | `client_secret` | Required | The secret value of the client                                                                            |
-   | `scope`         | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
+| Parameter   | Presence | Values                                                                                                    |
+| ----------- | -------- | --------------------------------------------------------------------------------------------------------- |
+| `client_id` | Required | The identifier of the client                                                                              |
+| `scope`     | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
 
 <!-- markdownlint-enable line-length -->
 
-###### Example request
+Example request:
 
-   ```sh
-   curl -X POST "https://aai-dev.egi.eu/oidc/token" \
-       -H "Content-Type: application/x-www-form-urlencoded" \
-       -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
-       -d "&device_code={myDeviceCode}" \
-       -d "&client_id={myClientID}" \
-       -d "&client_secret={myClientSecret}" \
-       -d "&scope=openid%20profile" | python -m json.tool
-   ```
+```sh
+curl -X POST "https://aai-dev.egi.eu/oidc/devicecode" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-d "client_id={myClientID}" \
+-d "&scope=openid%20email%20profile" | python -m json.tool
+```
 
-###### Example response
+Example response:
 
-   ```json
-   {
-     "access_token": "eyJraWQiOiJyc2ExIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJhZG1pbiIs...",
-     "expires_in": 3599,
-     "id_token": "eyJraWQiOiJyc2ExIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI5MDM0Mi...",
-     "scope": "openid profile",
-     "token_type": "Bearer"
-   }
-   ```
+```json
+{
+  "device_code": "c4341bd6-5e82-4f9c-9f6f-5842409d48db",
+  "expires_in": 600,
+  "user_code": "IEJSJB",
+  "verification_uri": "https://aai-dev.egi.eu/oidc/device)"
+}
+```
+
+###### 2. User Interaction
+
+After receiving a successful Authorization Response, the client displays or
+otherwise communicates the `user_code` and the `verification_uri` to the end
+user and instructs them to visit the URI in a user agent on a secondary
+device (for example, in a browser on their mobile phone), and enter the
+user code.
+
+###### 3. Device Access Token Request
+
+After displaying instructions to the user, the client makes an Access Token
+Request to the token endpoint. The request contains the following parameters:
+
+<!-- markdownlint-disable line-length -->
+
+| Parameter       | Presence | Values                                                                                                    |
+| --------------- | -------- | --------------------------------------------------------------------------------------------------------- |
+| `grant_type`    | Required | `urn:ietf:params:oauth:grant-type:device_code`                                                            |
+| `device_code`   | Required | The device verification code, `device_code` from the Device Authorization Response                        |
+| `client_id`     | Required | The identifier of the client                                                                              |
+| `client_secret` | Required | The secret value of the client                                                                            |
+| `scope`         | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
+
+<!-- markdownlint-enable line-length -->
+
+Example request:
+
+```sh
+curl -X POST "https://aai-dev.egi.eu/oidc/token" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
+-d "&device_code={myDeviceCode}" \
+-d "&client_id={myClientID}" \
+-d "&client_secret={myClientSecret}" \
+-d "&scope=openid%20profile" | python -m json.tool
+```
+
+Example response:
+
+```json
+{
+  "access_token": "eyJraWQiOiJyc2ExIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJhZG1pbiIs...",
+  "expires_in": 3599,
+  "id_token": "eyJraWQiOiJyc2ExIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI5MDM0Mi...",
+  "scope": "openid profile",
+  "token_type": "Bearer"
+}
+```
 
 ### Claims-based authorisation
 
