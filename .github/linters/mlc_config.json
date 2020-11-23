@@ -14,6 +14,9 @@
     },
     {
       "pattern": "^https://.*aai.egi.eu/mp-oa2-server/"
+    },
+    {
+      "pattern": "^https://argo-mon.*.egi.eu/nagios"
     }
   ]
 }

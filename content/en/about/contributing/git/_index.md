@@ -19,8 +19,13 @@ following articles providing simple tutorials:
 GitHub official documentation is available at
 [docs.github.com](https://docs.github.com/en/github).
 
-Some documentation about the main steps for working with GitHub is also
-available her after.
+{{% alert title="Tips" color="info" %}} The
+[first-contributions](https://github.com/firstcontributions/first-contributions)
+is a repository allowing anyone to freely learn and test creating a real Pull
+Request to an existing GitHub repository. {{% /alert %}}
+
+Additional documentation about the main steps for working with GitHub is also
+available in this section.
 
 ## The GitHub flow
 
