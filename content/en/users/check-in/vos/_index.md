@@ -91,9 +91,8 @@ The VO enrollment URL can be found through the EGI Check-in Registry:
 ### Managing VO groups
 
 VO groups can only be created by Check-in platform administrators. Please
-contact [Checkin Support](mailto:checkin-support@mailman.egi.eu) indicating the
-following information for every (sub)group that you need to add/remove to/from
-your VO:
+contact `checkin-support` `<AT>` `mailman.egi.eu` indicating the following
+information for every (sub)group that you need to add/remove to/from your VO:
 
 - **VO name**
 - **Group name**
