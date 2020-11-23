@@ -101,7 +101,7 @@ EGI Check-in supports two authentication and authorisation protocols that you
 can choose from:
 
 1. [Security Assertion Markup Language (SAML) 2.0](http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html)
-2. [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) - an
+1. [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) - an
    extension to [OAuth 2.0](https://tools.ietf.org/html/rfc6749)
 
 Regardless of which of the two protocols you are going to use, you need to
@@ -109,19 +109,19 @@ provide the following information to connect your service to EGI Check-in:
 
 1. Name of the service (in English and optionally in other languages supported
    by the service)
-2. Short description of the service
-3. Website (URL) for localised information about the service; the content found
+1. Short description of the service
+1. Website (URL) for localised information about the service; the content found
    at the URL SHOULD provide more complete information than what provided by the
    description
-4. Contact information of the following types:
+1. Contact information of the following types:
    - Helpdesk/Support contact information (for redirecting user)
    - Administrative
    - Technical
    - Security/incident response
-5. Privacy statement URL: The privacy policy is used to document the data
+1. Privacy statement URL: The privacy policy is used to document the data
    collected and processed by the service. You can use the
    [Privacy Policy template](https://docs.google.com/document/d/1ZU7VjH3g7qcfWcz0Z8TTv-vQiVoRA_wOsuMyJaz28Og/edit)
-6. Logo URL (optional for showing in catalogues); if provided, logos SHOULD:
+1. Logo URL (optional for showing in catalogues); if provided, logos SHOULD:
    - use a transparent background where appropriate to facilitate the usage of
      logos within a user interface
    - use PNG, or GIF (less preferred), images
@@ -282,7 +282,7 @@ requests. Note that the Redirection URI MUST use the `https` scheme; the use of
 To find the Redirection URI(s) for your client, do the following:
 
 1. Open the [Clients page](https://aai-dev.egi.eu/oidc/manage/user/clients)
-2. Find the redirect URIs for your client listed under the **Information**
+1. Find the redirect URIs for your client listed under the **Information**
    column of the overview table or **Edit** the particular client and look for
    the **Redirect URI(s)** in the **Main** tab.
 
