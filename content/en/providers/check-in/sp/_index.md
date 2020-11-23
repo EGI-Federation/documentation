@@ -510,7 +510,7 @@ curl -X POST -u "${client_id}":"${client_secret}" \
 -d "grant_type=refresh_token" \
 -d "refresh_token=${myRefreshToken}" \
 -d "scope=openid%20email%20profile" \
-"https://aai-dev.egi.eu/oidc/token" | python -m json.tool;
+"https://aai.egi.eu/oidc/token" | python -m json.tool;
 ```
 
 Example response:
@@ -593,7 +593,7 @@ with the following parameters:
 Example request:
 
 ```sh
-curl -X POST "https://aai-dev.egi.eu/oidc/devicecode" \
+curl -X POST "https://aai.egi.eu/oidc/devicecode" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -d "client_id={myClientID}" \
 -d "&scope=openid%20email%20profile" | python -m json.tool
@@ -606,7 +606,7 @@ Example response:
   "device_code": "c4341bd6-5e82-4f9c-9f6f-5842409d48db",
   "expires_in": 600,
   "user_code": "IEJSJB",
-  "verification_uri": "https://aai-dev.egi.eu/oidc/device)"
+  "verification_uri": "https://aai.egi.eu/oidc/device"
 }
 ```
 
@@ -638,7 +638,7 @@ Request to the token endpoint. The request contains the following para
 Example request:
 
 ```sh
-curl -X POST "https://aai-dev.egi.eu/oidc/token" \
+curl -X POST "https://aai.egi.eu/oidc/token" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
 -d "&device_code={myDeviceCode}" \
