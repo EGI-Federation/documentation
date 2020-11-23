@@ -93,6 +93,43 @@ more information can be found in the protocol-specific sections that follow.
 | OpenID Connect | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai.egi.eu/oidc/.well-known/openid-configuration> |
 <!-- markdownlint-enable line-length -->
 
+## General Information
+
+EGI Check-in supports two authentication and authorisation protocols that you
+can choose from:
+
+1. [Security Assertion Markup Language (SAML) 2.0](http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html)
+2. [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) - an
+   extension to [OAuth 2.0](https://tools.ietf.org/html/rfc6749)
+
+Regardless of which of the two protocols you are going to use, you need to
+provide the following information to connect your service to EGI Check-in:
+
+1. Name of the service (in English and optionally in other languages supported
+   by the service)
+2. Short description of the service
+3. Website (URL) for localised information about the service; the content found
+   at the URL SHOULD provide more complete information than what provided by the
+   description
+4. Contact information of the following types:
+   - Helpdesk/Support contact information (for redirecting user)
+   - Administrative
+   - Technical
+   - Security/incident response
+5. Privacy statement URL: The privacy policy is used to document the data
+   collected and processed by the service. You can use the
+   [Privacy Policy template](https://docs.google.com/document/d/1ZU7VjH3g7qcfWcz0Z8TTv-vQiVoRA_wOsuMyJaz28Og/edit)
+6. Logo URL (optional for showing in catalogues); if provided, logos SHOULD:
+   - use a transparent background where appropriate to facilitate the usage of
+     logos within a user interface
+   - use PNG, or GIF (less preferred), images
+   - use HTTPS URLs in order to avoid mixed-content warnings within browsers
+   - have a size larger than 40000 and smaller than 50000 characters when
+     encoded in base64
+
+{{% alert title="Note" color="info" %}} If you choose to register an OIDC client
+, then you can fill this information in the client configuration. {{% /alert %}}
+
 ## SAML Service Provider
 
 To enable federated access to a web-based application, you can connect to the
@@ -126,6 +163,10 @@ depends on the integration environment being used:
 | ----------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------- |
 | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai.egi.eu/proxy/saml2/idp/metadata.php> |
 <!-- markdownlint-enable line-length -->
+
+To register your SAML SP, please contact `checkin-support` `<AT>`
+`mailman.egi.eu`. Your request should include the general information about your
+service (see [General Information](#general-information)) and the SP's metadata.
 
 ### Metadata
 
@@ -205,6 +246,8 @@ the authenticated user.
 Before your service can use the EGI Check-in OIDC Provider for user login, you
 must set up a client at <https://aai-dev.egi.eu/oidc/manage/#admin/clients> in
 order to obtain OAuth 2.0 credentials and register one or more redirect URIs.
+The client configuration should include the general information about your
+service, as described in [General Information](#general-information) section.
 
 #### Obtaining OAuth 2.0 credentials
 
@@ -337,6 +380,102 @@ Depending on the grant type, the following parameters are required:
 | `code`         | Required | The value of the code in the response from authorization endpoint.                                 |
 | `redirect_uri` | Required | URI to which the response will be sent (must be the same as the request to authorization endpoint) |
 <!-- markdownlint-enable line-length -->
+
+##### Proof Key for Code Exchange (PKCE)
+
+The Proof Key for Code Exchange (PKCE, pronounced pixie) extension
+([RFC 7636](https://tools.ietf.org/html/rfc7636)) describes a technique for
+public clients (clients without `client_secret`) to mitigate the threat of
+having the authorization code intercepted. The technique involves the client
+first creating a secret, and then using that secret again when exchanging the
+authorization code for an access token. This way if the code is intercepted, it
+will not be useful since the token request relies on the initial secret.
+
+###### Client configuration
+
+To enable PKCE you need to <https://aai-dev.egi.eu/oidc> and create/edit a
+client. In "Credentials" tab under "Token Endpoint Authentication Method" select
+"No authentication" and in "Crypto" tab under "Proof Key for Code Exchange
+(PKCE) Code Challenge Method" select "SHA-256 hash algorithm".
+
+###### Protocol Flow
+
+Because the PKCE-enhanced Authorization Code Flow builds upon the standard
+Authorization Code Flow, the steps are very similar.
+
+First, the client creates and records a secret named the `code_verifier`. The
+`code_verifier` is a high-entropy cryptographic random STRING using the
+unreserved characters [A-Z] / [a-z] / [0-9] / "-" / "." / "\_" / "~", with a
+minimum length of 43 characters and a maximum length of 128 characters. Then the
+client creates a `code_challenge` derived from the `code_verifier` by using one
+of the following transformations on the code verifier:
+
+- `plain` code_challenge = code_verifier
+- `S256` code_challenge = BASE64URL-ENCODE(SHA256(ASCII(code_verifier)))
+
+If the client is capable of using `S256`, it MUST use `S256`. Clients are
+permitted to use `plain` only if they cannot support `S256` for some technical
+reason.
+
+{{% alert title="Note" color="info" %}} There are various tools that generate
+these values such as <https://tonyxu-io.github.io/pkce-generator/>
+{{% /alert %}}
+
+Then the `code_challenge` is sent in the Authorization Request along with the
+transformation method (`code_challenge_method`).
+
+####### Example request
+
+```sh
+GET https://aai.egi.eu/oidc/authorize?
+      client_id=${client_id}
+      &scope=openid%20profile%20email
+      &redirect_uri=${redirect_uri}
+      &response_type=code
+      &code_challenge=${code_challenge}
+      &code_challenge_method=S256"
+```
+
+The Authorization Endpoint responds as usual but records `code_challenge` and
+the `code_challenge_method`.
+
+####### Example response
+
+```sh
+HTTP/1.1 302 Found
+  Location: ${redirect_uri}?
+    code=fgtLHT
+```
+
+The client then sends the authorization code in the Access Token Request as
+usual but includes the `code_verifier` secret generated in the first request.
+
+####### Example request
+
+```sh
+curl -X POST "https://aai.egi.eu/oidc/token" \
+-d "grant_type=authorization_code" \
+-d "code=${code}" \
+-d "client_id=${client_id}" \
+-d "redirect_uri=${redirect_uri}" \
+-d "code_verifier=${code_verifier}" | python -m json.tool
+```
+
+The authorization server transforms `code_verifier` and compares it to
+`code_challenge` from the first request. Access is denied if they are not equal.
+
+####### Example response
+
+```json
+{
+  "access_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUlMyNTYifQ...",
+  "expires_in": 3599,
+  "id_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUlMyNTYifQ...",
+  "scope": "openid email profile",
+  "token_type": "Bearer"
+}
+```
+
 ##### Refresh request
 
 The following request allows obtaining an access token from a refresh token
@@ -787,7 +926,7 @@ connected to Check-in.
 |        **availability** | Always                                                              |
 |             **example** | _true_                                                              |
 |               **notes** | This claim is available only in OpenID Connect                      |
-|              **status** | Experimental                                                        |
+|              **status** | Stable                                                              |
 <!-- markdownlint-enable line-length no-inline-html -->
 
 ### 8. Verified email list
@@ -865,6 +1004,26 @@ connected to Check-in.
 |               **notes** | -                                                                  |
 |              **status** | Stable                                                             |
 <!-- markdownlint-enable line-length no-inline-html -->
+
+### 12. CertEntitlement
+
+<!-- markdownlint-disable line-length no-inline-html -->
+|          attribute name | CertEntitlement                                                                                                                                                                                            |
+| ----------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | Provides information about the user's certificate subject(s) and the associated VO(s)                                                                                                                      |
+|   **SAML Attribute(s)** | **Not available**                                                                                                                                                                                          |
+|          **OIDC scope** | `cert_entitlement`                                                                                                                                                                                         |
+|       **OIDC claim(s)** | `cert_entitlement`                                                                                                                                                                                         |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                                         |
+|              **origin** | VO/group management tools integrated with Check-in                                                                                                                                                         |
+|             **changes** | Yes                                                                                                                                                                                                        |
+|        **multiplicity** | Multi-valued                                                                                                                                                                                               |
+|        **availability** | Not always                                                                                                                                                                                                 |
+|             **example** | `{"cert_entitlement": [{"cert_subject_dn": "/C=GR/O=HellasGrid/...","cert_iss": "/C=GR/O=HellasGrid/...","eduperson_entitlement": "urn:mace:egi.eu:group:checkin-integration:role=VO-Admin#aai.egi.eu"}]}` |
+|               **notes** | This is available only for DIRAC                                                                                                                                                                           |
+|              **status** | Stable                                                                                                                                                                                                     |
+<!-- markdownlint-enable line-length no-inline-html -->
+
 ## User authorisation
 
 The following information about the authenticated user can be provided by EGI
@@ -889,7 +1048,7 @@ An entitlement value expressing group membership and role information has the
 following syntax (components enclosed in square brackets are OPTIONAL):
 
 ```vim
-urn:mace:egi.eu:group:<GROUP>[:<SUBGROUP>*]][:role=<ROLE>]#<GROUP-AUTHORITY>
+urn:mace:egi.eu:group:<GROUP>[:<SUBGROUP>*][:role=<ROLE>]#<GROUP-AUTHORITY>
 ```
 
 where:
