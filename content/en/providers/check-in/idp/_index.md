@@ -38,10 +38,12 @@ The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.
 
 <!-- markdownlint-disable line-length -->
+
 | Protocol       | Development environment                                            | Demo environment                                                    | Production environment                                         |
 | -------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------- |
 | SAML           | <https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
 | OpenID Connect | See [client registration](#client-registration)                    | See [client registration](#client-registration)                     | See [client registration](#client-registration)                |
+
 <!-- markdownlint-enable line-length -->
 
 ## General requirements for integrating identity providers
@@ -66,6 +68,7 @@ communicated to the Check-in SP as either SAML attributes or OIDC claims,
 depending on the protocol supported by the authenticating IdP.
 
 <!-- markdownlint-disable line-length no-inline-html -->
+
 | Description                                                                                                                                                                                      | Notes                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
 | At least one of the following unique user identifiers:<ol><li>pseudonymous, non-targeted identifier;</li><li>name-based, non-targeted identifier;</li><li>pseudonymous, targeted identifier</li> |                                                                |
@@ -74,6 +77,7 @@ depending on the protocol supported by the authenticating IdP.
 | Surname                                                                                                                                                                                          |                                                                |
 | Email address                                                                                                                                                                                    |                                                                |
 | Affiliation within Home Organisation or Community                                                                                                                                                | To be released **only** if relevant for accessing EGI services |
+
 <!-- markdownlint-enable line-length no-inline-html -->
 
 Note that the above set of requested attributes, particularly the identifier,
@@ -84,7 +88,7 @@ Information about group membership and role information released by your IdP
 should follow the URN scheme below (see also
 [AARC-G002](https://aarc-community.org/guidelines/aarc-g002)):
 
-    <NAMESPACE>:group:<GROUP>[:<SUBGROUP>*]][:role=<ROLE>]#<GROUP-AUTHORITY>
+    <NAMESPACE>:group:<GROUP>[:<SUBGROUP>*][:role=<ROLE>]#<GROUP-AUTHORITY>
 
 where:
 
@@ -188,9 +192,11 @@ You can get the metadata of the EGI Check-in SP Proxy on a dedicated URL that
 depends on the integration environment being used:
 
 <!-- markdownlint-disable line-length -->
+
 | Development environment                                            | Demo environment                                                    | Production environment                                         |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------- |
 | <https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+
 <!-- markdownlint-enable line-length -->
 
 For the production environment, it is recommended that you get the metadata for
@@ -211,6 +217,7 @@ additional information as described in the following table (see also
 [general attribute release requirements](#attribute-release-requirements)):
 
 <!-- markdownlint-disable line-length no-inline-html -->
+
 | Description                                                                                                                                                                                      | SAML attribute                                                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | At least one of the following unique user identifiers:<ol><li>pseudonymous, non-targeted identifier;</li><li>name-based, non-targeted identifier;</li><li>pseudonymous, targeted identifier</li> | <ol><li>`SubjectID` (public) or `eduPersonUniqueId`</li><li>`eduPersonPrincipalName`</li><li>`SubjectID` (pairwise) or `eduPersonTargetedID` or SAML persistent identifier</li></ol> |
@@ -220,6 +227,7 @@ additional information as described in the following table (see also
 | Email address                                                                                                                                                                                    | `mail`                                                                                                                                                                               |
 | Affiliation within Home Organisation or Community                                                                                                                                                | `eduPersonScopedAffiliation`                                                                                                                                                         |
 | Group(s)/role(s) within Home Organisation or Community                                                                                                                                           | `eduPersonEntitlement`                                                                                                                                                               |
+
 <!-- markdownlint-enable line-length no-inline-html -->
 
 ## OpenID Connect Identity Provider
@@ -259,6 +267,7 @@ following table (see also
 [general attribute release requirements](#attribute-release-requirements)):
 
 <!-- markdownlint-disable line-length no-inline-html -->
+
 | Description                                                                                                                                                                                      | OIDC claim                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
 | At least one of the following unique user identifiers:<ol><li>pseudonymous, non-targeted identifier;</li><li>name-based, non-targeted identifier;</li><li>pseudonymous, targeted identifier</li> | <ol><li>`sub` (public)</li><li>N/A</li><li>`sub` (pairwise)</li></ol> |
@@ -268,6 +277,7 @@ following table (see also
 | Email address                                                                                                                                                                                    | `email`                                                               |
 | Affiliation within Home Organisation or Community                                                                                                                                                | `eduperson_scoped_affiliation`                                        |
 | Group(s)/role(s) within Home Organisation or Community                                                                                                                                           | `eduPerson_entitlement`                                               |
+
 <!-- markdownlint-enable line-length no-inline-html -->
 
 ## Integration success stories
