@@ -86,3 +86,61 @@ Once you have a filesystem you can mount it at the desired path:
 With that you can access `/<path>` where all your data will be available.
 Applications will not see any difference between a block storage device and a
 regular disk, thus no major changes should be required in the application logic.
+
+## Exposing storage to EGI File Transfer service
+
+The [File Transfer service](../../data-transfer) allows you to move any type of
+data files asynchronously from one storage to another. If you want to copy data
+from/to one VM running on the EGI cloud, you will need to run a compatible
+server (Webdav/https, GridFTP, xrootd, SRM, S3, GCloud) that can interact with
+the FTS3 software.
+
+An easy way to provide a GridFTP server on your VM is to use the
+[gridftp-le ready2go docker stack](https://github.com/cern-fts/ready2go/tree/master/gridftp-le)
+for deploying a GridFTP Docker Container with certificates from Let's Encrypt.
+Take into account:
+
+- Security groups for the VM must allow ports 80, 2811 and the 50000-50200 range.
+- The VM must have a valid DNS entry (you can use
+  [FedCloud's Dynamic DNS](https://nsupdate.fedcloud.eu) for getting one)
+- The default setup uses `/srv` as path to expose and maps users to the `nobody`
+  user. Make sure that `nobody` is able to read (and write if needed) on that
+  location or set the mapping to the appropriate users.
+- The Let's Encrypt certificates may not be accepted by some the EGI
+  infrastructure endpoints, you may want to consider using IGTF certificates
+  instead. Check your CA for instructions on how to get those.
+- You can add direct mappings for specific DNs by adding a
+  `/etc/localgridmap.conf` file in your running container. See the example below
+  to map the
+  `/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Enol Fernandez del Castillo`
+  DN to `nobody`. You can add as many lines as needed:
+
+  <!-- markdownlint-disable line-length -->
+  ```plaintext
+  "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Enol Fernandez del Castillo" nobody
+  ```
+  <!-- markdownlint-enable line-length -->
+
+- You need to specify the environment variables in the `docker-compose.yml` file
+  for obtaining the Let's Encrypt certificate. An extra variable
+  `GLOBUS_HOSTNAME` must be also set:
+
+  ```yaml
+  environment:
+    - TESTCERT
+    - EMAIL=youremail@domain.com
+    - DOMAIN=mygridftp.example.com
+    - GLOBUS_HOSTNAME=mygridftp.example.com
+  ```
+
+- If you are running on a site with MTU smaller than 1500 (e.g. CESNET-MCC),
+  make sure that you set the MTU to a value smaller than the interface MTU(you
+  can check this with `ip addr`). In your `docker-compose.yml`, add:
+
+  ```yaml
+  networks:
+    default:
+      driver: bridge
+      driver_opts:
+        com.docker.network.driver.mtu: 1434
+  ```
