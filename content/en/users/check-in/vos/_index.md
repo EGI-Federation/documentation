@@ -40,13 +40,13 @@ following link:
 1. Login to [Check-in registry](https://aai.egi.eu/registry) using any of the
    login credentials already linked to your EGI account.
 
-2. To view the existing members, expand the **People** drop down menu and click
+1. To view the existing members, expand the **People** drop down menu and click
    on **My _VO-NAME_ Population** (for example, **My vo.example.org
    Population**)
 
    ![My VO population menu](./check-in-my-vo-population.png)
 
-3. Then you are able to see all the VO members.
+1. Then you are able to see all the VO members.
 
    ![My VO population](./check-in-my-vo-population-result.png)
 
@@ -91,9 +91,8 @@ The VO enrollment URL can be found through the EGI Check-in Registry:
 ### Managing VO groups
 
 VO groups can only be created by Check-in platform administrators. Please
-contact [Checkin Support](mailto:checkin-support@mailman.egi.eu) indicating the
-following information for every (sub)group that you need to add/remove to/from
-your VO:
+contact `checkin-support` `<AT>` `mailman.egi.eu` indicating the following
+information for every (sub)group that you need to add/remove to/from your VO:
 
 - **VO name**
 - **Group name**
@@ -221,10 +220,10 @@ A COU admins group owner can manage the admins group member as follows:
 
    ![Groups drop down](./check-in-groups-drop-down.png)
 
-   1. Expand the **Filter** section and find the COU admin group you are
-      interested in. For the case of the service-integration COU with type the
-      string service-integration in the text box with the placeholder Name. Then
-      we click on Filter button
+   Expand the **Filter** section and find the COU admin group you are interested
+   in. For the case of the service-integration COU with type the string
+   service-integration in the text box with the placeholder Name.Then we click
+   on Filter button
 
    ![Expand groups](./check-in-groups-expand-filter.png)
 
