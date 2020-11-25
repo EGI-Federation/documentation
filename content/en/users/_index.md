@@ -32,7 +32,8 @@ EGI services use the following types of access conditions:
    providers. Access needs to be requested, and will be checked for such services. Example: 
    [Compute resources and tools allocated to researchers in medical imaging (Biomed VO)]
    (http://lsgc.org/biomed.html).
-* Pay-for-use: Services are provided for a fee. Example: [FitSM In-house course](https://www.egi.eu/services/fitsm-training/in-house-training/) 
+- Pay-for-use: Services are provided for a fee. Example: 
+   [FitSM In-house course](https://www.egi.eu/services/fitsm-training/in-house-training/) 
 
 The EGI user community support team handles access requests (orders) for the 'Policy 
 based' and 'Pay-for-use' access modes. They will respond to the request within maximum
