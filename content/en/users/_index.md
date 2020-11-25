@@ -31,7 +31,11 @@ EGI services use the following types of access conditions:
 *  Policy based: Users are granted access based on specific policies defined by the service providers. Access needs to be requested, and will be checked for such services. Example: [Compute resources and tools allocated to researchers in medical imaging (Biomed VO)](http://lsgc.org/biomed.html).
 * Pay-for-use: Services are provided for a fee. Example: [FitSM In-house course](https://www.egi.eu/services/fitsm-training/in-house-training/) 
 
-The EGI user community support team handles access requests (orders) for the 'Policy based' and 'Pay-for-use' access modes. They will respond to the request within maximum 5 work days. We normally contact you to have a short teleconference meeting to better understand your requirements so we will be able to identify resources and services that best match your needs. The meeting typically covers two topics:
+The EGI user community support team handles access requests (orders) for the 'Policy 
+based' and 'Pay-for-use' access modes. They will respond to the request within maximum
+5 work days. We normally contact you to have a short teleconference meeting to better
+understand your requirements so we will be able to identify resources and services
+that best match your needs. The meeting typically covers two topics:
 * What is the background of your request? (scientific domain, partners countries, user bases, pay-for-use or not, etc.). 
 * What are the technical details of your use case? (how much CPU cores, RAM per CPU, software services, how long do you need, etc.)
 
