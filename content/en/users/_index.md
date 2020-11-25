@@ -25,7 +25,9 @@ the connected EGI Marketplace streamlines the process.
 ### Access conditions
 
 EGI services use the following types of access conditions:
-* Wide access: Users can freely access the service. Login may be required but it's possible with various institutional accounts (through EduGAIN) or with a social IDs (e.g. Google). Example: the [open instance of the EGI Notebooks](https://notebooks.egi.eu/)
+- Wide access: Users can freely access the service. Login may be required but it's possible
+   with various institutional accounts (through EduGAIN) or with a social IDs (e.g. Google). 
+   Example: the [open instance of the EGI Notebooks](https://notebooks.egi.eu/)
 *  Policy based: Users are granted access based on specific policies defined by the service providers. Access needs to be requested, and will be checked for such services. Example: [Compute resources and tools allocated to researchers in medical imaging (Biomed VO)](http://lsgc.org/biomed.html).
 * Pay-for-use: Services are provided for a fee. Example: [FitSM In-house course](https://www.egi.eu/services/fitsm-training/in-house-training/) 
 
