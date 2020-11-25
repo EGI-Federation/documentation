@@ -18,7 +18,9 @@ You can access EGI services from:
 
 * https://www.egi.eu/services/ 
 
-Depending on the access conditions, a service (or an instance of the service) may be open for any user, OR it may require requesting access (Ordering). The EGI Website together with the connected EGI Marketplace streamlines the process.  
+Depending on the access conditions, a service (or an instance of the service) may be open
+for any user, OR it may require requesting access (Ordering). The EGI Website together with
+the connected EGI Marketplace streamlines the process.  
 
 ### Access conditions
 
