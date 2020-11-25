@@ -12,41 +12,31 @@ menu:
 
 You can ask for more information about the services at: [here](https://www.egi.eu/more-information/)
 
-## Ordering EGI services
+## Accessing EGI services
 
-You can order EGI services from:
+You can access EGI services from:
 
-* [EGI marketplace](https://marketplace.egi.eu/), or
-* [EOSC marketplace](https://marketplace.eosc-portal.eu/services?providers=1)
+* https://www.egi.eu/services/ 
 
-### Payments Model
+Depending on the access conditions, a service (or an instance of the service) may be open for any user, OR it may require requesting access (Ordering). The EGI Website together with the connected EGI Marketplace streamlines the process.  
 
-The payment models of EGI services can be:
-* Sponsored use for policy-based access
-* [Pay-as-you-go](https://wiki.egi.eu/wiki/VT_EGI_Pay-for-Use_Service/Price_Overview)
-  for market-based access
+### Access conditions
 
-### What happens after you place an order
+EGI services use the following types of access conditions:
+* Wide access: Users can freely access the service. Login may be required but it's possible with various institutional accounts (through EduGAIN) or with a social IDs (e.g. Google). Example: the [open instance of the EGI Notebooks](https://notebooks.egi.eu/)
+*  Policy based: Users are granted access based on specific policies defined by the service providers. Access needs to be requested, and will be checked for such services. Example: [Compute resources and tools allocated to researchers in medical imaging (Biomed VO)](http://lsgc.org/biomed.html).
+* Pay-for-use: Services are provided for a fee. Example: [FitSM In-house course](https://www.egi.eu/services/fitsm-training/in-house-training/) 
 
-EGI user support team will handle your order within 5 working days.
+The EGI user community support team handles access requests (orders) for the 'Policy based' and 'Pay-for-use' access modes. They will respond to the request within maximum 5 work days. We normally contact you to have a short teleconference meeting to better understand your requirements so we will be able to identify resources and services that best match your needs. The meeting typically covers two topics:
+* What is the background of your request? (scientific domain, partners countries, user bases, pay-for-use or not, etc.). 
+* What are the technical details of your use case? (how much CPU cores, RAM per CPU, software services, how long do you need, etc.)
 
-We normally contact you to have a short virtual meeting in order to better
-understand your requirements:
-* What is your research project background (science domain, partners countries,
-  user bases, pay-for-use or not, etc.). These will help us identify better
-  resources matching your needs.
-* What is your requirements details (how much CPU cores, RAM per CPU,
-  software services, how long do you need, etc.)
+### Capacity allocation
 
-If we are able to support your case, there will be two options:
+If we are able to support your case, then there are two options to support you: 
+1. We grant you access to an existing service, for example to compute resource pools (called Virtual Organisations - VOs) that already exist in EGI for specific scientific disciplines or for researchers in specific regions. (You can browse these in the [EGI Operations Portal](https://operations-portal.egi.eu/vo/). If there is a suitable VO then we help you join it and use its services. 
 
-1. We will try to map you to an existing EGI community VO. Domain specific and
-   regional VOs can be browsed at [Operation Portal](https://operations-portal.egi.eu/vo/).
-   If there is a suitable one, we will contact the VO managers to join you to
-   the VO and grant you the access to the resources attached to that VO.
-
-1. If there are no suitable VOs existing, we need to create a new VO for your
-   community. The procedure is as follows:
+2. If none of the existing resource pools are suitable for your use case, then we create a new VO for your community. The procedure is as follows:
    * We will contact our provider and negotiate resources for you.
-   * If there are providers happy to support you, we will sign SLA with you
+   * If there are providers happy to support you, we will sign a Service Level Agreement (SLA) with you
    * A new VO will be created for your community
