@@ -37,7 +37,8 @@ based' and 'Pay-for-use' access modes. They will respond to the request within m
 understand your requirements so we will be able to identify resources and services
 that best match your needs. The meeting typically covers two topics:
 * What is the background of your request? (scientific domain, partners countries, user bases, pay-for-use or not, etc.). 
-* What are the technical details of your use case? (how much CPU cores, RAM per CPU, software services, how long do you need, etc.)
+- What are the technical details of your use case? (how much CPU cores, RAM per CPU, 
+   software services, how long do you need, etc.)
 
 ### Capacity allocation
 
