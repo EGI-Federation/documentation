@@ -45,7 +45,8 @@ that best match your needs. The meeting typically covers two topics:
 If we are able to support your case, then there are two options to support you: 
 1. We grant you access to an existing service, for example to compute resource pools (called Virtual Organisations - VOs) that already exist in EGI for specific scientific disciplines or for researchers in specific regions. (You can browse these in the [EGI Operations Portal](https://operations-portal.egi.eu/vo/). If there is a suitable VO then we help you join it and use its services. 
 
-2. If none of the existing resource pools are suitable for your use case, then we create a new VO for your community. The procedure is as follows:
+1. If none of the existing resource pools are suitable for your use case, then we create a
+   new VO for your community. The procedure is as follows:
    * We will contact our provider and negotiate resources for you.
    - If there are providers happy to support you, we will sign a Service Level Agreement (SLA) with you
    * A new VO will be created for your community
