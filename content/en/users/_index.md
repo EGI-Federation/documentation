@@ -33,8 +33,8 @@ EGI services use the following types of access conditions:
   [open instance of the EGI Notebooks](https://notebooks.egi.eu/)
 - Policy based: Users are granted access based on specific policies defined by
   the service providers. Access needs to be requested, and will be checked for
-  such services. Example:
-  [Compute resources and tools allocated to researchers in medical imaging (Biomed VO)](http://lsgc.org/biomed.html).
+  such services. Example: Compute resources and tools allocated to researchers
+  in medical imaging ([Biomed VO](http://lsgc.org/biomed.html)).
 - Pay-for-use: Services are provided for a fee. Example:
   [FitSM In-house course](https://www.egi.eu/services/fitsm-training/in-house-training/)
 
