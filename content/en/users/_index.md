@@ -47,5 +47,5 @@ If we are able to support your case, then there are two options to support you:
 
 2. If none of the existing resource pools are suitable for your use case, then we create a new VO for your community. The procedure is as follows:
    * We will contact our provider and negotiate resources for you.
-   * If there are providers happy to support you, we will sign a Service Level Agreement (SLA) with you
+   - If there are providers happy to support you, we will sign a Service Level Agreement (SLA) with you
    * A new VO will be created for your community
