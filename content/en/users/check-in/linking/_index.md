@@ -26,8 +26,8 @@ To link a new organisational or social identity to your EGI account:
 
    ![Check-in my account](./check-in-my-account.png)
 
-1. Under the **Organisational Identities** section of your profile page, click
-   **Link New Identity**.
+1. Under the **Organisational Identities** section of your profile page,
+   expand **Actions** menu and click **Link New Identity**.
 
    ![Link new identity](./check-in-link-new.png)
 
@@ -72,8 +72,8 @@ To link a subject DN to your EGI account:
 
    ![Check-in my account](./check-in-my-account.png)
 
-1. Under the **Organisational Identities** section of your profile page, click
-   **Link New Identity**.
+1. Under the **Organisational Identities** section of your profile page,
+   expand **Actions** menu and click **Link New Identity**.
 
    ![Link new identity](./check-in-link-new.png)
 
