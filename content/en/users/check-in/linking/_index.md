@@ -6,7 +6,7 @@ description: >
   Linking additional organisational/social identities to your EGI Account
 ---
 
-## Linking New Identities to your EGI Account
+## Linking new Identities to your EGI Account
 
 Identity linking allows you to access EGI resources with your existing personal
 EGI ID, using any of the login credentials you have linked to your account. You
