@@ -229,9 +229,9 @@ attributes that are relevant for user authorisation:
 
 ### References
 
-- [Shibboleth SP Configuration](https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPConfiguration)
+- [Shibboleth SP Configuration](https://wiki.shibboleth.net/confluence/display/SP3/Configuration)
 - [SimpleSAMLphp Service Provider QuickStart](https://simplesamlphp.org/docs/stable/simplesamlphp-sp)
-- [Simple SAML 2.0 service provider with mod_auth_mellon Apache module](https://github.com/UNINETT/mod_auth_mellon)
+- [Simple SAML 2.0 service provider with mod_auth_mellon Apache module](https://github.com/latchset/mod_auth_mellon)
 
 ## OpenID Connect Service Provider
 
