@@ -7,7 +7,6 @@ description: >
 ---
 
 This section documents how to integrate a new application in EC3.
-
 ## About
 
 The process to integrate a new application in EC3 is described by the
