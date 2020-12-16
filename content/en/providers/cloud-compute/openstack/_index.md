@@ -116,15 +116,30 @@ OpenStack-based FedCloud site (default ports listed below, can be adjusted to
 your installation)
 
 <!-- markdownlint-disable line-length -->
-| Port         | Application            | Note                                      |
-| ------------ | ---------------------- | ----------------------------------------- |
-| **5000**/TCP | **OpenStack**/Keystone | Authentication to your OpenStack.         |
-| **8776**/TCP | **OpenStack**/cinder   | Block Storage management.                 |
-| **8774**/TCP | **OpenStack**/nova     | VM management.                            |
-| **9696**/TCP | **OpenStack**/neutron  | Network management.                       |
-| **9292**/TCP | **OpenStack**/glance   | VM Image management.                      |
-| **2170**/TCP | **BDII**/LDAP          | EGI Service Discovery/Information System. |
+| Port         | Application            | Note                                                             |
+| ------------ | ---------------------- | ---------------------------------------------------------------- |
+| **5000**/TCP | **OpenStack**/Keystone | Authentication to your OpenStack.                                |
+| **8776**/TCP | **OpenStack**/cinder   | Block Storage management.                                        |
+| **8774**/TCP | **OpenStack**/nova     | VM management.                                                   |
+| **9696**/TCP | **OpenStack**/neutron  | Network management.                                              |
+| **9292**/TCP | **OpenStack**/glance   | VM Image management.                                             |
+| **2170**/TCP | **BDII**/LDAP          | EGI Service Discovery/Information System (to be decommissioned). |
 <!-- markdownlint-enable line-length -->
+
+### Outgoing ports
+
+The EGI Cloud components require the following outgoing connections open:
+
+<!-- markdownlint-disable line-length -->
+| Port         | Host                    | Note                                                            |
+| ------------ | ----------------------- | --------------------------------------------------------------- |
+| **443**/TCP  | `msg.argo.grnet.gr`     | ARGO Messaging System (used to send accounting records by SSM). |
+| **443**/TCP  | `vmcaster.appdb.egi.eu` | AppDB image lists (used by cloudkeeper).                        |
+| **8080**/TCP | `cephrgw01.ifca.es`     | Swift server hosting EGI images (used by cloudkeeper).          |
+<!-- markdownlint-enable line-length -->
+
+Images listed in AppDB may be hosted in other servers besides
+`cephrgw01.ifca.es`. Check the specific VO-wide image lists for details.
 
 ## Permissions
 
@@ -770,7 +785,7 @@ $ openstack federation protocol create \
 
 For every VO you support you should configure the corresponding `.lsc` files at
 `/etc/grid-security/vomsdir/<vo name>/`. Those files depend on each VO, check
-the [Operations Portal](https://operations-portal.egi.eu/vo) for details.
+the [Operations Portal](https://operations-portal.egi.eu/) for details.
 You can find below the `fedcloud.egi.eu` configuration:
 
 ```shell
