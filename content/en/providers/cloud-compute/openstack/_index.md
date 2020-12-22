@@ -994,13 +994,13 @@ OpenStack and the AMS are passed as command line options:
 ```shell
 cloud-info-provider-service --yaml-file <your site description.yaml> \
                             --middleware openstack \
-			    --os-auth-url <your keystone URL> \
-			    [ any other options for authentication ]
-			    --format glue21 \
-			    --publisher ams \
-			    --ams-cert <your host certificate> \
-			    --ams-cert <your host secret key> \
-		            --ams-topic <your endpoint topic>
+                            --os-auth-url <your keystone URL> \
+                            [ any other options for authentication ]
+                            --format glue21 \
+                            --publisher ams \
+                            --ams-cert <your host certificate> \
+                            --ams-cert <your host secret key> \
+                            --ams-topic <your endpoint topic>
 ```
 
 For authentication, you should be able to use any authentication method
