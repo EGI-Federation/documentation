@@ -15,14 +15,14 @@ applications with EC3.
 
 Before getting your kubernetes cluster deployed, you need to get access to the
 Cloud Compute service, check the
-[Authentication and Authorisation guide](../../cloud-compute/auth) for more
+[Authentication and Authorisation guide](../cloud-compute/auth) for more
 information. You should also get
-[`egicli`](https://github.com/EGI-Foundation/egcli/) installed to get EC3
+[`egicli`](https://github.com/EGI-Foundation/egicli/) installed to get EC3
 templates needed to start deployment.
 
 Your kubernetes deployment needs to be performed at an specific provider (site)
 and project. Discover them using `egicli` as described in the
-[EC3 tutorial](../cloud-compute/ec3/basics).
+[EC3 tutorial](../cloud-compute/ec3).
 
 ### EC3 Templates
 
@@ -37,7 +37,7 @@ egicli endpoint ec3 --site <your site> --project-id <project_id>
 ```
 
 You will also need a base image template for the deployment. Please refer to the
-[EC3 tutorial](../cloud-compute/ec3/basics) to create such file. Below you can
+[EC3 tutorial](../cloud-compute/ec3) to create such file. Below you can
 see an example for IFCA-LCG2 site with project related to `vo.access.egi.eu`:
 
 
