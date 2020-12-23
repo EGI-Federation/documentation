@@ -49,7 +49,7 @@ and:
   the [Chipster server](http://chipster.aod.fedcloud.eu:8081/chipster.jnlp) with
   the new credentials.
 
-![Chipster in Science Software on Demand](./../chipster.png)
+![Chipster in Science Software on Demand](./chipster.png)
 
 {{% alert title="Acknowledgment" color="info" %}}
 

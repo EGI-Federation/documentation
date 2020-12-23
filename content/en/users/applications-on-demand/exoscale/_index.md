@@ -32,7 +32,7 @@ Exoscale vouchers can be used when selecting he Elastic Cloud Compute Cluster
 (EC3) platform from the list of available services by submitting a service-order
 request.
 
-![The Elastic Cloud Compute Cluster (EC3) in the EOSC Portal Marketplace.](../ec3-eosc-marketplace.png)
+![The Elastic Cloud Compute Cluster (EC3) in the EOSC Portal Marketplace.](./ec3-eosc-marketplace.png)
 
 Placing orders in the EOSC Marketplace requires the user to authenticate. There
 are two login options: use your personal academic credentials or use EGI
@@ -41,7 +41,7 @@ extra information to be provided to configure the marketplace account.
 
 Two different service options are available for EC3:
 
-![The Elastic Cloud Compute Cluster (EC3) service options.](../ec3-service-options.png)
+![The Elastic Cloud Compute Cluster (EC3) service options.](./ec3-service-options.png)
 
 To deploy the virtual cluster on the HNSciCloud pilot services, select the
 voucher option and click on _Next_ and provide additional information for
@@ -55,7 +55,7 @@ Once the service order is submitted, the marketplace will send a notification
 via email. Users can at any time the status of their orders through the user
 dashboard. This dashboard shows the history of service order(s) submitted.
 
-![Details of a service order request.](../ec3-order-request.png)
+![Details of a service order request.](./ec3-order-request.png)
 
 **The service order request will be processed within 3 working days**. The user
 will be notified of the outcome of the evaluation via email.
@@ -74,12 +74,12 @@ In case the service order is accepted:
 - Enter the email address and password you wish to use. Accept the terms and hit
   sign up.
 
-![Accept the privacy license agreement and sign up.](../exoscale-account-setup.png)
+![Accept the privacy license agreement and sign up.](./exoscale-account-setup.png)
 
 - A validation email is sent. Check out your mailbox and click on the
   verification link.
 
-![Activate the voucher clicking on the verification link.](../exoscale-activation.png)
+![Activate the voucher clicking on the verification link.](./exoscale-activation.png)
 
 - Choose "for team projects" and fill your details. Choose your "Company or team
   name" and submit the form.
@@ -89,7 +89,7 @@ In case the service order is accepted:
 Access the [Exoscale dashboard](https://portal.exoscale.com/) and check the
 tenant settings (click in the User profile on the left)
 
-![Generate API and Secret Keys to access the Exoscale resources.](../exoscale-credentials.png)
+![Generate API and Secret Keys to access the Exoscale resources.](./exoscale-credentials.png)
 
 ## Check the voucher credit
 
@@ -108,9 +108,9 @@ dynamically deployed and provisioned to fit increasing load, and un-deployed
 when they are in idle status. The installation and configuration of the cluster
 is performed by means of the execution of Ansible receipts.
 
-![Deployment of virtual clusters on Exoscale.](../ec3-deployment.png)
+![Deployment of virtual clusters on Exoscale.](./ec3-deployment.png)
 
-![The EC3 job wizard to configuration the virtual cluster.](../ec3-wizard.png)
+![The EC3 job wizard to configuration the virtual cluster.](./ec3-wizard.png)
 
 ## Acknowledgement and report feedback
 
