@@ -282,5 +282,11 @@ auth:
       client_secret: "<your egi checkin_client_secret>"
       oauth_callback_url: "https://<your notebooks host>/hub/oauth_callback"
       enable_auth_state: true
-      scope: ["openid", "profile", "email", "offline_access", "eduperson_scoped_affiliation", "eduperson_entitlement"]
+      scope:
+      - openid
+      - profile
+      - email
+      - offline_access
+      - eduperson_scoped_affiliation
+      - eduperson_entitlement
 ```

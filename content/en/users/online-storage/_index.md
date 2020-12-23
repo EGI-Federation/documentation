@@ -27,7 +27,7 @@ reported in the following table.
 | **Block Storage**  | only from within a VM only at the same site the VM is located | Not possible for the entire block | POSIX access, use as local disk         |
 | **Object Storage** | from any device connected to the internet                     | Possible only for the data stored | via HTTP requests to server             |
 <!-- markdownlint-enable line-length -->
- 
+
 Grid Storage is mainly serving data access and storage for EGI High Throughput
 Compute scenarios. For EGI Federated Cloud use cases it depends on the
 application needs either Block or Object storage could be use. In general, block

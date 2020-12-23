@@ -143,6 +143,7 @@ mount manually the Onedata spaces.
 {{% alert title="Important" color="warning" %}} In order to be able to use FUSE,
 the container should run in **privileged** mode. {{% /alert %}}
 
+<!-- markdownlint-disable line-length -->
 ```shell
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
@@ -156,6 +157,7 @@ root@aca612a84fb4:/tmp# ls /mnt/oneclient
 root@aca612a84fb4:/tmp# ls /mnt/src
 (...)
 ```
+<!-- markdownlint-enable line-length -->
 
 Now it\'s possible to use the following mount points:
 
