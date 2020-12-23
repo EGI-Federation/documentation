@@ -82,6 +82,7 @@ eval "$(egicli endpoint token --site CESGA --project-id fcaf23d103c1485694e7494a
 
 First get the network IDs and pool to use for the site:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ openstack network list
 +--------------------------------------+-------------------------+--------------------------------------+
@@ -91,6 +92,7 @@ $ openstack network list
 | 6174db12-932f-4ee3-bb3e-7a0ca070d8f2 | public00                | 6af8c4f3-8e2e-405d-adea-c0b374c5bd99 |
 +--------------------------------------+-------------------------+--------------------------------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 In this case we will use `public00` as the pool for public IPs and
 `1aaf20b6-47a1-47ef-972e-7b36872f678f` as the network ID. Check with the
@@ -105,6 +107,7 @@ net_id  = "1aaf20b6-47a1-47ef-972e-7b36872f678f"
 You may want to check the right flavors for your VMs and adapt other variables
 in `terraform.tfvars`. To get a list of flavors you can use:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ openstack flavor list
 +--------------------------------------+----------------+-------+------+-----------+-------+-----------+
@@ -122,12 +125,13 @@ $ openstack flavor list
 | edac68c3-50ea-42c2-ae1d-76b8beb306b5 | test-bigHD     |  4096 |  237 |         0 |     2 | True      |
 +--------------------------------------+----------------+-------+------+-----------+-------+-----------+
 ```
+<!-- markdownlint-enable line-length -->
 
 Finally ensure your public ssh key is also listed in the `cloud-init.yaml` file
 and then you are ready to deploy the cluster with:
 
 ```shell
-$ terraform apply
+terraform apply
 ```
 
 Your VMs are up and running, it\'s time to get kubernetes configured and running
@@ -155,6 +159,7 @@ with it, but you can still ssh into the VM using the ingress node as a gateway
 host (you can get the different hosts with
 `TF_STATE=./terraform terraform-inventory --inventory`)
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ ssh -o ProxyCommand="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p -q egi@<ingress ip>" \
       -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null egi@<master ip>
@@ -169,6 +174,7 @@ certs-man        2           Wed Jan  8 15:56:58 2020    DEPLOYED    cert-manage
 cluster-ingress  3           Wed Jan  8 15:56:53 2020    DEPLOYED    nginx-ingress-1.7.0             0.24.1      kube-system
 nfs-provisioner  3           Wed Jan  8 15:56:43 2020    DEPLOYED    nfs-client-provisioner-1.2.8    3.1.0       kube-system
 ```
+<!-- markdownlint-enable line-length -->
 
 ### Modifying/Destroying the cluster
 
@@ -218,7 +224,8 @@ Go and edit the deployment description file to add this information (search for
 For deploying the notebooks instance we will also use `ansible`:
 
 ```shell
-ANSIBLE_TRANSFORM_INVALID_GROUP_CHARS=silently TF_STATE=./terraform ansible-playbook \
+ANSIBLE_TRANSFORM_INVALID_GROUP_CHARS=silently \
+     TF_STATE=./terraform ansible-playbook \
      --inventory-file=$(which terraform-inventory) playbooks/notebooks.yaml
 ```
 
@@ -228,6 +235,7 @@ of the container images needed. You can retry after a while to re-deploy.
 In the master you can check the status of your deployment (the name of the
 deployment will be the same as the name of your local deployment file):
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ helm status hub
 LAST DEPLOYED: Thu Jan  9 08:14:49 2020
@@ -333,6 +341,7 @@ Note that this is still an alpha release! If you have questions, feel free to
 2. Chat with us at https://gitter.im/jupyterhub/jupyterhub
 3. File issues at https://github.com/jupyterhub/zero-to-jupyterhub-k8s/issues
 ```
+<!-- markdownlint-enable line-length -->
 
 ### Updating a deployment
 
