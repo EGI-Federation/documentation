@@ -5,59 +5,57 @@ description: "Getting the service up and running"
 weight: 20
 ---
 
-In this section you can find the common operational activities related
-to keep the service available to our users.
+In this section you can find the common operational activities related to keep
+the service available to our users.
 
 ## Initial set-up
 
 ### Notebooks VO
 
 The resources used for the Notebooks deployments are managed with the
-`vo.notebooks.egi.eu` VO. Operators of the service should join the VO,
-check the entry at the [operations
-portal](https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu)
+`vo.notebooks.egi.eu` VO. Operators of the service should join the VO, check the
+entry at the
+[operations portal](https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu)
 and at [AppDB](https://appdb.egi.eu/store/vo/vo.notebooks.egi.eu).
 
 ### Clients installation
 
-In order to manage the resources you will need these tools installed on
-your client machine:
+In order to manage the resources you will need these tools installed on your
+client machine:
 
--   `egicli` for discovering sites and managing tokens,
--   `terraform` to create the VMs at the providers,
--   `ansible` to configure the VMs and install kubernetes at the
-    providers,
--   `terraform-inventory` to get the list of hosts to use from
-    terraform.
+- `egicli` for discovering sites and managing tokens,
+- `terraform` to create the VMs at the providers,
+- `ansible` to configure the VMs and install kubernetes at the providers,
+- `terraform-inventory` to get the list of hosts to use from terraform.
 
 ### Get the configuration repo
 
-All the configuration of the notebooks is stored at a git repo available
-in keybase. You\'ll need to be part of the `opslife` team in keybase to
-access. Start by cloning the repo:
+All the configuration of the notebooks is stored at a git repo available in
+keybase. You\'ll need to be part of the `opslife` team in keybase to access.
+Start by cloning the repo:
 
-``` {.shell}
-$ git clone keybase://team/opslife/egi-notebooks
+```shell
+git clone keybase://team/opslife/egi-notebooks
 ```
 
 ## Kubernetes
 
-We use `terraform` and `ansible` to build the cluster at one of the EGI
-Cloud providers. If you are building the cluster for the first time,
-create a new directory on your local git repository from the template,
-add it to the repo, and get `terraform` ready:
+We use `terraform` and `ansible` to build the cluster at one of the EGI Cloud
+providers. If you are building the cluster for the first time, create a new
+directory on your local git repository from the template, add it to the repo,
+and get `terraform` ready:
 
-``` {.shell}
-$ cp -a template <new provider>
-$ git add <new provider>
-$ cd <new provider>/terraform
-$ terraform init
+```shell
+cp -a template <new provider>
+git add <new provider>
+cd <new provider>/terraform
+terraform init
 ```
 
-Using the `egicli` you can get the list of projects and their ids for a
-given site:
+Using the `egicli` you can get the list of projects and their ids for a given
+site:
 
-``` {.shell}
+```shell
 $ egicli endpoint projects --site CESGA
 id                                Name                 enabled    site
 --------------------------------  -------------------  ---------  ------
@@ -68,23 +66,23 @@ eb7ff20e603d471cb731bdb83a95a2b5  fedcloud.egi.eu      True       CESGA
 fcaf23d103c1485694e7494a59ee5f09  vo.notebooks.egi.eu  True       CESGA
 ```
 
-And with the project ID, you can obtain all the environment variables
-needed to interact with the OpenStack APIs of the site:
+And with the project ID, you can obtain all the environment variables needed to
+interact with the OpenStack APIs of the site:
 
-``` {.shell}
-$ eval "$(egicli endpoint env --site CESGA --project-id fcaf23d103c1485694e7494a59ee5f09)"
+```shell
+eval "$(egicli endpoint env --site CESGA --project-id fcaf23d103c1485694e7494a59ee5f09)"
 ```
 
-Now you are ready to use the openstack or terraform at the site. The
-token obtained is valid for 1 hour, you can refresh it at any time with:
+Now you are ready to use the openstack or terraform at the site. The token
+obtained is valid for 1 hour, you can refresh it at any time with:
 
-``` {.shell}
-$ eval "$(egicli endpoint token --site CESGA --project-id fcaf23d103c1485694e7494a59ee5f09)"
+```shell
+eval "$(egicli endpoint token --site CESGA --project-id fcaf23d103c1485694e7494a59ee5f09)"
 ```
 
 First get the network IDs and pool to use for the site:
 
-``` {.shell}
+```shell
 $ openstack network list
 +--------------------------------------+-------------------------+--------------------------------------+
 | ID                                   | Name                    | Subnets                              |
@@ -99,15 +97,15 @@ In this case we will use `public00` as the pool for public IPs and
 provider which is the right network to use. Use these values in the
 `terraform.tfvars` file:
 
-``` {.terraform}
+```terraform
 ip_pool = "public00"
 net_id  = "1aaf20b6-47a1-47ef-972e-7b36872f678f"
 ```
 
-You may want to check the right flavors for your VMs and adapt other
-variables in `terraform.tfvars`. To get a list of flavors you can use:
+You may want to check the right flavors for your VMs and adapt other variables
+in `terraform.tfvars`. To get a list of flavors you can use:
 
-``` {.shell}
+```shell
 $ openstack flavor list
 +--------------------------------------+----------------+-------+------+-----------+-------+-----------+
 | ID                                   | Name           |   RAM | Disk | Ephemeral | VCPUs | Is Public |
@@ -125,40 +123,39 @@ $ openstack flavor list
 +--------------------------------------+----------------+-------+------+-----------+-------+-----------+
 ```
 
-Finally ensure your public ssh key is also listed in the
-`cloud-init.yaml` file and then you are ready to deploy the cluster
-with:
+Finally ensure your public ssh key is also listed in the `cloud-init.yaml` file
+and then you are ready to deploy the cluster with:
 
-``` {.shell}
+```shell
 $ terraform apply
 ```
 
-Your VMs are up and running, it\'s time to get kubernetes configured and
-running with ansible.
+Your VMs are up and running, it\'s time to get kubernetes configured and running
+with ansible.
 
 The following ansible role needs to be installed first:
 
-``` {.shell}
-$ ansible-galaxy install grycap.kubernetes
+```shell
+ansible-galaxy install grycap.kubernetes
 ```
 
 and then:
 
-``` {.shell}
-$ cd ..   # you should be now in <new provider>
-$ ANSIBLE_TRANSFORM_INVALID_GROUP_CHARS=silently TF_STATE=./terraform \
+```shell
+cd ..   # you should be now in <new provider>
+ANSIBLE_TRANSFORM_INVALID_GROUP_CHARS=silently TF_STATE=./terraform \
   ansible-playbook --inventory-file=$(which terraform-inventory) \
   playbooks/k8s.yaml
 ```
 
 ### Interacting with the cluster
 
-As the master will be on a private IP, you won\'t be able to directly
-interact with it, but you can still ssh into the VM using the ingress
-node as a gateway host (you can get the different hosts with
+As the master will be on a private IP, you won\'t be able to directly interact
+with it, but you can still ssh into the VM using the ingress node as a gateway
+host (you can get the different hosts with
 `TF_STATE=./terraform terraform-inventory --inventory`)
 
-``` {.shell}
+```shell
 $ ssh -o ProxyCommand="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p -q egi@<ingress ip>" \
       -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null egi@<master ip>
 egi@k8s-master:~$ kubectl get nodes
@@ -175,68 +172,63 @@ nfs-provisioner  3           Wed Jan  8 15:56:43 2020    DEPLOYED    nfs-client-
 
 ### Modifying/Destroying the cluster
 
-You should be able to change the number of workers in the cluster and
-re-apply terraform to start them and then execute the playbook to get
-them added to the cluster.
+You should be able to change the number of workers in the cluster and re-apply
+terraform to start them and then execute the playbook to get them added to the
+cluster.
 
-Any changes in the master, NFS or ingress VMs should be done carfully as
-those will probably break the configuration of the kubernetes cluster
-and of any application running on top.
+Any changes in the master, NFS or ingress VMs should be done carfully as those
+will probably break the configuration of the kubernetes cluster and of any
+application running on top.
 
 Destroying the cluster can be done with a single command:
 
-``` {.shell}
-$ terraform destroy
+```shell
+terraform destroy
 ```
 
 ## Notebooks deployments
 
-Once the k8s cluster is up and running, you can deploy a notebooks
-instance. For each deployment you should create a file in the
-`deployments` directory following the template provided:
+Once the k8s cluster is up and running, you can deploy a notebooks instance. For
+each deployment you should create a file in the `deployments` directory
+following the template provided:
 
-``` {.shell}
-$ cp deployments/hub.yaml.template deployments/hub.yaml
+```shell
+cp deployments/hub.yaml.template deployments/hub.yaml
 ```
 
-Each deployment will need a domain name pointing to your ingress host,
-you can create one at the [FedCloud dynamic DNS
-service](https://nsupdate.fedcloud.eu/).
+Each deployment will need a domain name pointing to your ingress host, you can
+create one at the [FedCloud dynamic DNS service](https://nsupdate.fedcloud.eu/).
 
-Then you will need to create an OpenID Connect client for EGI Check-in
-to authorise users into the new deployment. You can create a client by
-going to the [Check-in demo OIDC clients
-management](https://aai-demo.egi.eu/oidc/manage/admin/clients). Use the
-following as redirect URL:
+Then you will need to create an OpenID Connect client for EGI Check-in to
+authorise users into the new deployment. You can create a client by going to the
+[Check-in demo OIDC clients management](https://aai-demo.egi.eu/oidc/manage/admin/clients).
+Use the following as redirect URL:
 `https://<your host domain name>/hub/oauth_callback`.
 
-In the *Access* tab, add `offline_access` to the list of
-scopes. Save the client and take note of the client ID and client secret
-for later.
+In the _Access_ tab, add `offline_access` to the list of scopes. Save the client
+and take note of the client ID and client secret for later.
 
 Finally you will also need 3 different random strings generated with
-`openssl rand -hex 32` that will be used as secrets in the file
-describing the deployment.
+`openssl rand -hex 32` that will be used as secrets in the file describing the
+deployment.
 
-Go and edit the deployment description file to add this information
-(search for `# FIXME NEEDS INPUT` in the file to quickly get there)
+Go and edit the deployment description file to add this information (search for
+`# FIXME NEEDS INPUT` in the file to quickly get there)
 
 For deploying the notebooks instance we will also use `ansible`:
 
-``` {.shell}
-$ ANSIBLE_TRANSFORM_INVALID_GROUP_CHARS=silently TF_STATE=./terraform ansible-playbook \
-       --inventory-file=$(which terraform-inventory) playbooks/notebooks.yaml
+```shell
+ANSIBLE_TRANSFORM_INVALID_GROUP_CHARS=silently TF_STATE=./terraform ansible-playbook \
+     --inventory-file=$(which terraform-inventory) playbooks/notebooks.yaml
 ```
 
-The first deployment trial may fail due to a timeout caused by the
-downloading of the container images needed. You can retry after a while
-to re-deploy.
+The first deployment trial may fail due to a timeout caused by the downloading
+of the container images needed. You can retry after a while to re-deploy.
 
-In the master you can check the status of your deployment (the name of
-the deployment will be the same as the name of your local deployment
-file):
+In the master you can check the status of your deployment (the name of the
+deployment will be the same as the name of your local deployment file):
 
-``` {.shell}
+```shell
 $ helm status hub
 LAST DEPLOYED: Thu Jan  9 08:14:49 2020
 NAMESPACE: hub
@@ -344,4 +336,5 @@ Note that this is still an alpha release! If you have questions, feel free to
 
 ### Updating a deployment
 
-Just edit the deployment description file and run ansible again. The helm will be upgraded at the cluster.
+Just edit the deployment description file and run ansible again. The helm will
+be upgraded at the cluster.

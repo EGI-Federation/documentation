@@ -5,84 +5,74 @@ description: "Internal Service Architecture"
 weight: 10
 ---
 
-The EGI Notebooks service relies on the following technologies to
-provide its functionality:
+The EGI Notebooks service relies on the following technologies to provide its
+functionality:
 
--   [JupyterHub](https://github.com/jupyterhub/jupyterhub) with custom
-    [EGI Check-in
-    oauthentication](https://github.com/enolfc/oauthenticator)
-    configured to spawn pods on Kubernetes.
--   [Kubernetes](https://kubernetes.io/) as container orchestration
-    platform running on top of EGI Cloud resources. Within the service
-    it is in charge of managing the allocated resources and providing
-    the right abstraction to deploy the containers that build the
-    service. Resources are provided by EGI Federated Cloud providers,
-    including persistent storage for users notebooks.
--   CA authority to allocate recognised certificates for the HTTPS
-    server
--   [Prometheus](https://prometheus.io/) for monitoring resource
-    consumption.
--   Specific EGI hooks for
-    [monitoring](https://github.com/EGI-Foundation/egi-notebooks-monitoring),
-    [accounting](https://github.com/EGI-Foundation/egi-notebooks-accounting)
-    and
-    [backup](https://github.com/EGI-Foundation/egi-notebooks-backup).
--   VO-Specific storage/Big data facilities or any pluggable tools into
-    the notebooks environment can be added to community specific
-    instances.
+- [JupyterHub](https://github.com/jupyterhub/jupyterhub) with custom
+  [EGI Check-in oauthentication](https://github.com/enolfc/oauthenticator)
+  configured to spawn pods on Kubernetes.
+- [Kubernetes](https://kubernetes.io/) as container orchestration platform
+  running on top of EGI Cloud resources. Within the service it is in charge of
+  managing the allocated resources and providing the right abstraction to deploy
+  the containers that build the service. Resources are provided by EGI Federated
+  Cloud providers, including persistent storage for users notebooks.
+- CA authority to allocate recognised certificates for the HTTPS server
+- [Prometheus](https://prometheus.io/) for monitoring resource consumption.
+- Specific EGI hooks for
+  [monitoring](https://github.com/EGI-Foundation/egi-notebooks-monitoring),
+  [accounting](https://github.com/EGI-Foundation/egi-notebooks-accounting) and
+  [backup](https://github.com/EGI-Foundation/egi-notebooks-backup).
+- VO-Specific storage/Big data facilities or any pluggable tools into the
+  notebooks environment can be added to community specific instances.
 
 ## Kubernetes
 
-A Kubernetes (k8s) cluster deployed into a resource provider is in
-charge of managing the containers that will provide the service. On this
-cluster there are:
+A Kubernetes (k8s) cluster deployed into a resource provider is in charge of
+managing the containers that will provide the service. On this cluster there
+are:
 
--   1 master node that manages the whole cluster
--   Support for load balancer or alternatively 1 or more edge nodes with
-    a public IP and corresponding public DNS name (e.g.
-    notebooks.egi.eu) where a k8s ingress HTTP reverse proxy redirects
-    requests from user to other components of the service. The HTTP
-    server has a valid certificate from one CA recognised at most
-    browsers (e.g. Let\'s Encrypt).
--   1 or more nodes that host the JupyterHub server, the notebooks
-    servers where the users will run their notebooks. Hub is deployed
-    using the [JupyterHub helm
-    charts](https://jupyterhub.github.io/helm-chart/). These nodes
-    should have enough capacity to run as many concurrent user notebooks
-    as needed. Main constraint is usually memory.
--   Support for [Kubernetes
-    PersistentVolumeClaims](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
-    for storing the persistent folders. Default EGI-Notebooks
-    installation uses NFS, but any other volume type with ReadWriteOnce
-    capabilities can be used.
--   Prometheus installation to monitor the usage of resources so
-    accounting records are generated.
+- 1 master node that manages the whole cluster
+- Support for load balancer or alternatively 1 or more edge nodes with a public
+  IP and corresponding public DNS name (e.g. notebooks.egi.eu) where a k8s
+  ingress HTTP reverse proxy redirects requests from user to other components of
+  the service. The HTTP server has a valid certificate from one CA recognised at
+  most browsers (e.g. Let\'s Encrypt).
+- 1 or more nodes that host the JupyterHub server, the notebooks servers where
+  the users will run their notebooks. Hub is deployed using the
+  [JupyterHub helm charts](https://jupyterhub.github.io/helm-chart/). These
+  nodes should have enough capacity to run as many concurrent user notebooks as
+  needed. Main constraint is usually memory.
+- Support for
+  [Kubernetes PersistentVolumeClaims](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+  for storing the persistent folders. Default EGI-Notebooks installation uses
+  NFS, but any other volume type with ReadWriteOnce capabilities can be used.
+- Prometheus installation to monitor the usage of resources so accounting
+  records are generated.
 
-All communication with the user goes via HTTPS and the service only
-needs a publicly accessible entry point (public IP with resolvable name)
+All communication with the user goes via HTTPS and the service only needs a
+publicly accessible entry point (public IP with resolvable name)
 
-Monitoring and accounting are provided by hooking into the respective
-monitoring and accounting EGI services.
+Monitoring and accounting are provided by hooking into the respective monitoring
+and accounting EGI services.
 
-There are no specific hardware requirements and the whole environment
-can run on commodity virtual machines.
+There are no specific hardware requirements and the whole environment can run on
+commodity virtual machines.
 
 ## EGI Customisations
 
-EGI Notebooks is deployed as a set of customisations of the [JupyterHub
-helm charts](https://jupyterhub.github.io/helm-chart/).
+EGI Notebooks is deployed as a set of customisations of the
+[JupyterHub helm charts](https://jupyterhub.github.io/helm-chart/).
 
 ![image](egi_notebooks_architecture.png)
 
 ### Authentication
 
 EGI Check-in can be easily configured as a OAuth2.0 provider for
-[JupyterHub\'s
-oauthenticator](https://github.com/jupyterhub/oauthenticator). See below
-a sample configuration for the helm chart using Check-in production
+[JupyterHub\'s oauthenticator](https://github.com/jupyterhub/oauthenticator).
+See below a sample configuration for the helm chart using Check-in production
 environment:
 
-``` {.yaml}
+```yaml
 hub:
   extraEnv:
     OAUTH2_AUTHORIZE_URL: https://aai.egi.eu/oidc/authorize
@@ -105,11 +95,11 @@ auth:
 ```
 
 To simplify the configuration and to add refresh capabilities to the
-credentials, we have created a new [EGI Check-in
-authenticator](https://github.com/enolfc/oauthenticator) that can be
-configued as follows:
+credentials, we have created a new
+[EGI Check-in authenticator](https://github.com/enolfc/oauthenticator) that can
+be configued as follows:
 
-``` {.yaml}
+```yaml
 auth:
   state:
     enabled: true
@@ -124,25 +114,24 @@ auth:
       scope: ["openid", "profile", "email", "offline_access", "eduperson_scoped_affiliation", "eduperson_entitlement"]
 ```
 
-The `auth.state` configuration allows to store refresh tokens for the
-users that will allow to get up-to-date valid credentials as needed.
+The `auth.state` configuration allows to store refresh tokens for the users that
+will allow to get up-to-date valid credentials as needed.
 
 ### Accounting
 
 {{% alert title="Warning" color="warning" %}}
 
-This is Work in progress, expect changes!
-{{% /alert %}}
+This is Work in progress, expect changes! {{% /alert %}}
 
-[Accounting
-module](https://github.com/EGI-Foundation/egi-notebooks-accounting)
-generates VM-like accounting records for each of the notebooks started
-at the service. It\'s available as a [helm chart](https://egi-foundation.github.io/egi-notebooks-chart/)
-that can be deployed in the same namespace as the JupyterHub chart. The
-only needed configuration for the chart is an IGTF-recognised
-certificate for the host registered in GOCDB as accounting.
+[Accounting module](https://github.com/EGI-Foundation/egi-notebooks-accounting)
+generates VM-like accounting records for each of the notebooks started at the
+service. It\'s available as a
+[helm chart](https://egi-foundation.github.io/egi-notebooks-chart/) that can be
+deployed in the same namespace as the JupyterHub chart. The only needed
+configuration for the chart is an IGTF-recognised certificate for the host
+registered in GOCDB as accounting.
 
-``` {.yaml}
+```yaml
 ssm:
   hostcert: |-
     <hostcert>
@@ -152,14 +141,15 @@ ssm:
 
 ### Monitoring
 
-[Monitoring](https://github.com/EGI-Foundation/egi-notebooks-monitoring)
-is performed by trying to execute a user notebook every hour. This is
-accomplished by registering a new service in the hub that has admin
-permissions. Monitoring is then deployed as a [helm chart](https://egi-foundation.github.io/egi-notebooks-chart/)
-that must be deployed in the same namespace as the JupyterHub chart.
-Configuration of JupyterHub must include this section:
+[Monitoring](https://github.com/EGI-Foundation/egi-notebooks-monitoring) is
+performed by trying to execute a user notebook every hour. This is accomplished
+by registering a new service in the hub that has admin permissions. Monitoring
+is then deployed as a
+[helm chart](https://egi-foundation.github.io/egi-notebooks-chart/) that must be
+deployed in the same namespace as the JupyterHub chart. Configuration of
+JupyterHub must include this section:
 
-``` {.yaml}
+```yaml
 hub:
   services:
     status:
@@ -170,53 +160,52 @@ hub:
 
 Likewise the monitoring chart is configured as follows:
 
-``` {.yaml}
+```yaml
 service:
   api_token: "<same API token as above>"
 ```
 
 ### Docker images
 
-Our service relies on custom images for the hub and the single-user
-notebooks. Dockerfiles are available at [EGI Notebooks
-images](https://github.com/EGI-foundation/egi-notebooks-images) git
-repository and automatically build for every commit pushed to the repo
-to [eginotebooks @ dockerhub](https://hub.docker.com/u/eginotebooks).
+Our service relies on custom images for the hub and the single-user notebooks.
+Dockerfiles are available at
+[EGI Notebooks images](https://github.com/EGI-foundation/egi-notebooks-images)
+git repository and automatically build for every commit pushed to the repo to
+[eginotebooks @ dockerhub](https://hub.docker.com/u/eginotebooks).
 
 #### Hub image
 
-Builds from the [JupyterHub k8s-hub
-image](https://hub.docker.com/r/jupyterhub/k8s-hub) and adds:
+Builds from the
+[JupyterHub k8s-hub image](https://hub.docker.com/r/jupyterhub/k8s-hub) and
+adds:
 
--   EGI and D4Science authenticators
--   EGISpawner
--   EGI look and feel for the login page
+- EGI and D4Science authenticators
+- EGISpawner
+- EGI look and feel for the login page
 
 #### Single-user image
 
-Builds from [Jupyter
-datasicence-notebook](https://hub.docker.com/r/jupyter/datascience-notebook)
-and adds a wide range of libraries as requested by users of the
-services. We are currently looking into alternatives for better managing
-this image with CVMFS as a possible solution.
+Builds from
+[Jupyter datasicence-notebook](https://hub.docker.com/r/jupyter/datascience-notebook)
+and adds a wide range of libraries as requested by users of the services. We are
+currently looking into alternatives for better managing this image with CVMFS as
+a possible solution.
 
 ### Sample helm configuration
 
-If you want to build your own EGI Notebooks instance, you can start from
-the following sample configuration and adapt to your needs by setting:
+If you want to build your own EGI Notebooks instance, you can start from the
+following sample configuration and adapt to your needs by setting:
 
--   secret tokens (for `proxy.secretToken`,
-    `hub.services.status.api_token`, `auth.state.cryptoKey`). They can
-    be generated with `openssl rand -hex 32`.
--   A valid host name (`<your notebooks host>` below) that resolves to
-    your Kubernetes Ingress
--   Valid EGI Check-in client credentials, these can be obtained by
-    creating a new client at [EGI AAI OpenID Connect
-    Provider](https://aai-dev.egi.eu/oidc/). When moving to EGI Check-in
-    production environment, make sure to remove the
-    `hub.extraEnv.EGICHECKIN_HOST` variable.
+- secret tokens (for `proxy.secretToken`, `hub.services.status.api_token`,
+  `auth.state.cryptoKey`). They can be generated with `openssl rand -hex 32`.
+- A valid host name (`<your notebooks host>` below) that resolves to your
+  Kubernetes Ingress
+- Valid EGI Check-in client credentials, these can be obtained by creating a new
+  client at [EGI AAI OpenID Connect Provider](https://aai-dev.egi.eu/oidc/).
+  When moving to EGI Check-in production environment, make sure to remove the
+  `hub.extraEnv.EGICHECKIN_HOST` variable.
 
-``` {.yaml}
+```yaml
 ---
 proxy:
   secretToken: "<some secret>"
