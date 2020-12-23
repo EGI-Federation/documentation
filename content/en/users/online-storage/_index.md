@@ -22,7 +22,7 @@ reported in the following table.
 
 | Access             | Sharing                                                       | Accounting                        | Usage                                   |
 | ------------------ | ------------------------------------------------------------- | --------------------------------- | --------------------------------------- |
-| **Grid Storage**   | from any device connected to the internet                     | Available for the data stored      | Grid protocols and HTTP/Webdav requests |
+| **Grid Storage**   | from any device connected to the internet                     | Available for the data stored     | Grid protocols and HTTP/Webdav requests |
 | **Block Storage**  | only from within a VM only at the same site the VM is located | Not possible for the entire block | POSIX access, use as local disk         |
 | **Object Storage** | from any device connected to the internet                     | Possible only for the data stored | via HTTP requests to server             |
 
