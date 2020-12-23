@@ -32,50 +32,50 @@ service. If you are interested in this, please get in touch with us: support
 
 The main target groups of this service are:
 
-- Application developers who want to make their applications and tools
+* Application developers who want to make their applications and tools
   accessible in a scalable way for researchers internationally.
-- Algorithm developers (researchers) who want to run their own codes at scale in
+* Algorithm developers (researchers) who want to run their own codes at scale in
   a compute cloud.
 
 The main target groups of the applications that are already hosted in this
 service are:
 
-- Researchers and innovators who want to run a specific scientific application
+* Researchers and innovators who want to run a specific scientific application
   that is already available in the platform.
 
 ### Scientific applications
 
 The scientific applications that are already available in this service are:
 
-- [Chipster](https://marketplace.egi.eu/applications-on-demand/68-chipster.html)
+* [Chipster](https://marketplace.egi.eu/applications-on-demand/68-chipster.html)
   a user-friendly analysis software for high-throughput data. It contains over
   300 analysis tools for next generation sequencing (NGS), microarray,
   proteomics and sequence data. The application is available through the Science
   Software on Demand Service (SSoD). Instructions to run the application are
   available [here](https://docs.egi.eu/users/applications-on-demand/chipster/).
-- [NAMD](https://marketplace.egi.eu/applications-on-demand/58-namd.html) a
+* [NAMD](https://marketplace.egi.eu/applications-on-demand/58-namd.html) a
   parallel molecular dynamics code designed for high-performance simulation of
   large bio-molecular systems. The application is available through the EC3
   portal.
-- [ECAS](https://marketplace.egi.eu/applications-on-demand/84-ecas.html) a
+* [ECAS](https://marketplace.egi.eu/applications-on-demand/84-ecas.html) a
   complete environment enabling data analysis experiments from the ENES Climate
   Analytics Service.
 
 The service includes:
 
-- Cloud compute and storage
+* Cloud compute and storage
   [resources](https://documents.egi.eu/public/ShowDocument?docid=2773) to host
   and scale up scientific applications.
 
-- Cloud access and application-hosting frameworks (to run and to operate your
+* Cloud access and application-hosting frameworks (to run and to operate your
   own scientific application in the cloud environment): that offer integrated
   development environments to port custom applications with cloud resources.
-- [VMOps dashboard](https://dashboard.appdb.egi.eu/vmops): a graphical
+* [VMOps dashboard](https://dashboard.appdb.egi.eu/vmops): a graphical
   environment for the management of Virtual Machines (VM) in the federated
   network of clouds that enable the Applications on Demand service. User
   documentation is available
   [here](https://wiki.appdb.egi.eu/main:faq:what_is_the_vmops_dashboard).
-- [Elastic Cloud Compute Cluster (EC3)](https://servproject.i3m.upv.es/ec3-ltos/index.php):
+* [Elastic Cloud Compute Cluster (EC3)](https://servproject.i3m.upv.es/ec3-ltos/index.php):
   a portal that allows the creation of elastic virtual clusters in the cloud.
   Those clusters can then host your scientific application either directly, or
   via Apache Mesos, Chronos, Kubernetes, Marathon,
@@ -83,11 +83,11 @@ The service includes:
   application developers are available
   [here](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_EC3).
 
-- [Science Software on Demand (SSoD)](https://fgsg.ct.infn.it/egissod/web/ssod):
+* [Science Software on Demand (SSoD)](https://fgsg.ct.infn.it/egissod/web/ssod):
   a programmable interface of a RESTful API Server to provide an easy access
   PaaS layer by leveraging recent Web technologies. Instructions for application
   developers are available
-  [here](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_the_FutureGateway_Science_Gateway)
+  [here](https://futuregateway-framework.readthedocs.io/en/latest/).
 
 ## Requirements and user registration
 
@@ -121,9 +121,9 @@ Once granted access, each user will have a grant with a pre-defined quota of
 resources, which can be used to run the application of choice. This grant
 includes:
 
-- up to 4 CPU cores,
-- 8 GB of RAM,
-- 100GB of block storage.
+* up to 4 CPU cores,
+* 8 GB of RAM,
+* 100GB of block storage.
 
 The grant to run applications is initially valid for 6 months and can be
 extended/renewed upon request.
@@ -149,25 +149,25 @@ for further details.
 
 Main scientific paper describing the service and status:
 
-- [EGI Applications On Demand Service - Catering for the computational
-   needs of the long tail of science](https://documents.egi.eu/document/3132)
+* [EGI Applications On Demand Service - Catering for the computational
+  needs of the long tail of science](https://documents.egi.eu/document/3132)
   (May 2017).
-- [IWSG2017 Proceeding](http://ceur-ws.org/Vol-2363/paper9.pdf).
+* [IWSG2017 Proceeding](http://ceur-ws.org/Vol-2363/paper9.pdf).
 
 Presentations about the service:
 
-- [Slideset about the Applications on Demand (AoD) service introduced at IWSG 2017](http://iwsg2017.psnc.pl/programme/)
+* [Slideset about the Applications on Demand (AoD) service introduced at IWSG 2017](http://iwsg2017.psnc.pl/programme/)
   (June 2017).
-- [Webinar to introduce the Applicatios on Demand (AoD)](https://www.egi.eu/blog/webinar-egi-applications-on-demand-service/)
+* [Webinar to introduce the Applicatios on Demand (AoD)](https://www.egi.eu/blog/webinar-egi-applications-on-demand-service/)
   service to NGIs/USTs representatives, RI architects, resource providers and
   researchers (June 2017).
-- [Slideset about the status report of the platform at the EGI Conference 2016](https://indico.egi.eu/indico/event/2875/session/35/contribution/89).
-- [Slideset about the status report of the EGI platform at the DI4R Conference 2016](http://digitalinfrastructures.eu/content/serving-long-tail).
-- [Overview of the EGI Infrastructure for serving the long tail](https://indico.egi.eu/indico/contributionDisplay.py?contribId=83&confId=2544)
+* [Slideset about the status report of the platform at the EGI Conference 2016](https://indico.egi.eu/indico/event/2875/session/35/contribution/89).
+* [Slideset about the status report of the EGI platform at the DI4R Conference 2016](http://digitalinfrastructures.eu/content/serving-long-tail).
+* [Overview of the EGI Infrastructure for serving the long tail](https://indico.egi.eu/indico/contributionDisplay.py?contribId=83&confId=2544)
   (EGI Community Forum, November 2015).
-- [Poster and animated slides](https://indico.egi.eu/indico/contributionDisplay.py?contribId=124&confId=2544)
+* [Poster and animated slides](https://indico.egi.eu/indico/contributionDisplay.py?contribId=124&confId=2544)
   from Demo at EGI Community Forum, November 2015 (Winner of best demo prize).
-- [Slideset about the authentication and authorization model adopted](https://documents.egi.eu/document/2363)
+* [Slideset about the authentication and authorization model adopted](https://documents.egi.eu/document/2363)
   (from Nov. 2015).
-- [Slideset about the concept of the EGI long-tail of science platform](https://documents.egi.eu/document/2358)
+* [Slideset about the concept of the EGI long-tail of science platform](https://documents.egi.eu/document/2358)
   (from Nov. 2014).
