@@ -19,7 +19,7 @@
       "pattern": "^https://argo-mon.*.egi.eu/nagios"
     },
     {
-      "pattern": "^http://training.notebooks.egi.eu*"
+      "pattern": "^https://training.notebooks.egi.eu*"
     }
   ]
 }
