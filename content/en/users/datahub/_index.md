@@ -21,8 +21,8 @@ The main features offered by the DataHub are:
   1. unauthenticated open access;
   1. access after user registration or
   1. access restricted to members of a Virtual Organization (VO).\
-  This access may be via a GUI (e.g. a webpage) or an API (e.g. programmatic
-  access to the data)
+     This access may be via a GUI (e.g. a webpage) or an API (e.g. programmatic access
+     to the data)
 - Replication of data from data providers for resiliency and availability
   purposes. Replication may take place either on­demand or automatically.
   Replication will require the introduction of a file catalogue to enable
