@@ -86,7 +86,7 @@ The service includes:
 - [Science Software on Demand (SSoD)](https://fgsg.ct.infn.it/egissod/web/ssod):
   a programmable interface of a RESTful API Server to provide an easy access
   PaaS layer by leveraging recent Web technologies. Instructions for application
-  developers are available 
+  developers are available
   [here](https://futuregateway-framework.readthedocs.io/en/latest/)
 
 ## Requirements and user registration
