@@ -145,8 +145,9 @@ credentials from the Openstack deployment.
 
 The following command is needed:
 
+<!-- markdownlint-disable line-length -->
 ```sh
-openstack ec2 credentials create
+$ openstack ec2 credentials create
 
 +------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | Field      | Value                                                                                                                                    |
@@ -158,8 +159,8 @@ openstack ec2 credentials create
 | trust_id   | None                                                                                                                                     |
 | user_id    | xxxxxxxxxxxxxxxxxxxxxxxxxxxx                                                                                                             |
 +------------+------------------------------------------------------------------------------------------------------------------------------------------+
-
 ```
+<!-- markdownlint-enable line-length -->
 
 The `access` and `secret` values are needed in order to access the SWIFT via the
 S3 protocol

@@ -101,6 +101,7 @@ The following variables have to be exported to be used in the container:
 {{% alert title="Important" color="warning" %}} In order to be able to use FUSE,
 the container should run in **privileged** mode. {{% /alert %}}
 
+<!-- markdownlint-disable line-length -->
 ```shell
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
@@ -109,6 +110,7 @@ Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '4
 Getting configuration...
 Oneclient has been successfully mounted in '/mnt/oneclient'
 ```
+<!-- markdownlint-enable line-length -->
 
 Now the client will run in the background and the data will be available through
 **samba/CIFS** or **nfs** protocols:

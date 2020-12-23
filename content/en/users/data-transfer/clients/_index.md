@@ -37,9 +37,7 @@ X.509 User certificate, please refer to this
 [section](../api/#authentication--authorisation)  
 for more information.
 
-Full documentation about the FTS CLI is available at:
-
-https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/cli/index.html
+Check the [full documentation about the FTS CLI](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/cli/index.html)
 
 ### fts-rest-whoami
 
@@ -69,7 +67,7 @@ Options
 --insecure : Do not validate the server certificate
 
 --access-token : Oauth2 access token (supported only by some endpoints,
-	takes precedence)
+                 takes precedence)
 ```
 
 #### Example
@@ -110,7 +108,7 @@ Options
 --insecure : Do not validate the server certificate
 
 --access-token : Oauth2 access token (supported only by some endpoints,
-	takes precedence)
+                 takes precedence)
 
 -f/--force : Force the delegation
 
@@ -182,7 +180,7 @@ Options
 --insecure : Do not validate the server certificate
 
 --access-token : Oauth2 access token (supported only by some endpoints,
-	takes precedence)
+                 takes precedence)
 
 -b/--blocking : Blocking mode. Wait until the operation completes.
 

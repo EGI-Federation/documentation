@@ -107,8 +107,8 @@ We pre-populate your home directory with some sample notebooks to get started,
 below you can find links to other notebooks that we have used in past trainings
 that may be useful to explore the system:
 
-1.  [A very basic notebook to get started](https://github.com/EGI-Foundation/training-notebooks-di4r-2018/blob/master/00-first-notebook.ipynb)
-2.  [Getting data and doing a simple plot](https://github.com/EGI-Foundation/training-notebooks-climate-change/blob/master/cckp_historical_temperature.ipynb).
-3.  [Connect to NOAA\'s GrADS Data Server to plot wind speed](https://github.com/EGI-Foundation/training-notebooks-di4r-2018/blob/master/02-wind-nowcast.ipynb).
-4.  [Installing new libraries](https://github.com/EGI-Foundation/training-notebooks-di4r-2018/blob/master/03-customizing.ipynb).
-5.  [Interact with Check-in](https://github.com/EGI-Foundation/training-notebooks-di4r-2018/blob/master/04-check-in.ipynb)
+1. [A very basic notebook to get started](https://github.com/EGI-Foundation/training-notebooks-di4r-2018/blob/master/00-first-notebook.ipynb)
+2. [Getting data and doing a simple plot](https://github.com/EGI-Foundation/training-notebooks-climate-change/blob/master/cckp_historical_temperature.ipynb).
+3. [Connect to NOAA\'s GrADS Data Server to plot wind speed](https://github.com/EGI-Foundation/training-notebooks-di4r-2018/blob/master/02-wind-nowcast.ipynb).
+4. [Installing new libraries](https://github.com/EGI-Foundation/training-notebooks-di4r-2018/blob/master/03-customizing.ipynb).
+5. [Interact with Check-in](https://github.com/EGI-Foundation/training-notebooks-di4r-2018/blob/master/04-check-in.ipynb)

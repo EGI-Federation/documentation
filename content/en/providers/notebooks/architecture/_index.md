@@ -111,7 +111,13 @@ auth:
       client_id: "<your client id>"
       client_secret: "<your client secret>"
       oauth_callback_url: "https://<your host>/hub/oauth_callback"
-      scope: ["openid", "profile", "email", "offline_access", "eduperson_scoped_affiliation", "eduperson_entitlement"]
+      scope:
+      - openid
+      - profile
+      - email
+      - offline_access
+      - eduperson_scoped_affiliation
+      - eduperson_entitlement
 ```
 
 The `auth.state` configuration allows to store refresh tokens for the users that

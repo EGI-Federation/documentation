@@ -8,9 +8,9 @@ weight: 30
 
 Most if not all operations can be performed using the Onedata API.
 
-The official documentation is at https://onedata.org/#/home/api.
+The official documentation is [here](https://onedata.org/#/home/api).
 
-{{% alert title="Important" color="warning" %}} In order to be able to access
+	{{% alert title="Important" color="warning" %}} In order to be able to access
 the Onedata APIs, an access token is required. See below for instructions on how
 to generate one. {{% /alert %}}
 
