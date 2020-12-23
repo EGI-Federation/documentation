@@ -130,16 +130,16 @@ extended/renewed upon request.
 
 ### How can you access the service?
 
-1.  Login to the [EGI Marketplace](https://marketplace.egi.eu) with the EGI AAI
-    Check-In service.
-1.  Setup a profile, including details about your affiliation and role within a
-    research institute/project/team.
-1.  Navigate the marketplace top-menu and click on the category:
-    **Applications**.
-1.  Click on the **Applications on Demand** service and submit an order for one
-    of the available applications.
-1.  When the request is approved, run the requested application(s) as described
-    below.
+1. Login to the [EGI Marketplace](https://marketplace.egi.eu) with the EGI AAI
+   Check-In service.
+1. Setup a profile, including details about your affiliation and role within a
+   research institute/project/team.
+1. Navigate the marketplace top-menu and click on the category:
+   **Applications**.
+1. Click on the **Applications on Demand** service and submit an order for one
+   of the available applications.
+1. When the request is approved, run the requested application(s) as described
+   below.
 
 Please check the
 [EGI Marketplace guide](https://wiki.egi.eu/wiki/HowToAccessTheEGIMarketPlace)
@@ -149,7 +149,8 @@ for further details.
 
 Main scientific paper describing the service and status:
 
-- [EGI Applications On Demand Service - Catering for the computational needs of the long tail of science](https://documents.egi.eu/document/3132)
+- [EGI Applications On Demand Service - Catering for the computational
+   needs of the long tail of science](https://documents.egi.eu/document/3132)
   (May 2017).
 - [IWSG2017 Proceeding](http://ceur-ws.org/Vol-2363/paper9.pdf).
 
