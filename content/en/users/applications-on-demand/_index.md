@@ -87,7 +87,7 @@ The service includes:
   a programmable interface of a RESTful API Server to provide an easy access
   PaaS layer by leveraging recent Web technologies. Instructions for application
   developers are available
-  [here](https://wiki.egi.eu/wiki/Applications_on_Demand_Service_-_information_for_developers#How_to_integrate_a_new_application_in_the_FutureGateway_Science_Gateway)
+  [here](https://futuregateway-framework.readthedocs.io/en/latest/)
 
 ## Requirements and user registration
 
