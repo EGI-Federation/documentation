@@ -10,7 +10,7 @@ Most if not all operations can be performed using the Onedata API.
 
 The official documentation is [here](https://onedata.org/#/home/api).
 
-	{{% alert title="Important" color="warning" %}} In order to be able to access
+{{% alert title="Important" color="warning" %}} In order to be able to access
 the Onedata APIs, an access token is required. See below for instructions on how
 to generate one. {{% /alert %}}
 
@@ -29,6 +29,7 @@ using a
 [special OIDC client connected to Check-in](https://aai.egi.eu/fedcloud/). See
 [Check-in documentation](../../check-in/) for more information.
 
+<!-- markdownlint-disable line-length -->
 ```shell
 CLIENT_ID=<CLIENT_ID>
 CLIENT_SECRET=<CLIENT_SECRET>
@@ -37,8 +38,9 @@ REFRESH_TOKEN=<REFRESH_TOKEN>
 curl -X POST -u "$CLIENT_ID":"$CLIENT_SECRET"  \
        -d "client_id=$CLIENT_ID&$CLIENT_SECRET&grant_type=refresh_token&refresh_token=$REDRESH_TOKEN&scope=openid%20email%20profile" \
        'https://aai.egi.eu/oidc/token' | python -m json.tool;
-# Token is in the `access_token` field of the response
+# Token is in the access_token field of the response
 ```
+<!-- markdownlint-enable line-length -->
 
 The following variables should be set:
 
@@ -121,6 +123,7 @@ The following variables should be set:
 - `ONEPROVIDER_HOST`: name or IP of the Oneprovider host (to use Oneprovider
   API)
 
+<!-- markdownlint-disable line-length -->
 ```shell
 # Getting the IDs of the available Handle Services
 curl -sS --tlsv1.2 -H "X-Auth-Token: $API_ACCESS_TOKEN" \
@@ -176,3 +179,4 @@ HANDLE_ID=<HANDLE_ID>
 curl --tlsv1.2 -H "X-Auth-Token: $API_ACCESS_TOKEN" \
   "$ONEZONE_HOST/api/v3/onezone/user/handles/$HANDLE_ID"
 ```
+<!-- markdownlint-enable line-length -->
