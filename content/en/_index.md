@@ -57,12 +57,12 @@ Hosts the documentation of the EGI services enabling the federation.
 
 {{< blocks/section color="dark" type="features">}}
 {{% blocks/feature icon="fa-lightbulb" title="Learn more about EGI!"
-    url="https://www.egi.eu/" %}}
+    url="https://www.egi.eu" %}}
 The EGI Federation is supporting lots of different user communities.
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
-    url="https://docs.egi.eu/about/contributing/" %}}
+    url="https://docs.egi.eu/about/contributing" %}}
 We do a [Pull Request](https://github.com/EGI-Foundation/documentation/pulls)
 contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
