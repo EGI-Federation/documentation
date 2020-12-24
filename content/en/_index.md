@@ -5,7 +5,8 @@ description: "Documentation related to EGI activities"
 
 <!-- markdownlint-disable no-inline-html -->
 
-{{< blocks/cover title="Welcome to EGI Documentation!" image_anchor="top" height="full" color="blue" >}}
+{{< blocks/cover title="Welcome to EGI Documentation!" image_anchor="top"
+    height="full" color="blue" >}}
 
   <p class="lead mt-5">
     This website hosts the first version of the new EGI documentation.<br />
@@ -45,7 +46,8 @@ Contains step-to-step documentation on how to use the EGI services.
 Depicts how to join the EGI infrastructure as a service providers offering
 innovative services to the European Research Area. {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="Internal services" url="/internal" %}}
+{{% blocks/feature icon="fa-lightbulb" title="Internal services"
+    url="/internal" %}}
 Hosts the documentation of the EGI services enabling the federation.
 {{% /blocks/feature %}}
 
@@ -54,16 +56,19 @@ Hosts the documentation of the EGI services enabling the federation.
 </div>
 
 {{< blocks/section color="dark" type="features">}}
-{{% blocks/feature icon="fa-lightbulb" title="Learn more about EGI!" url="https://egi.eu" %}}
+{{% blocks/feature icon="fa-lightbulb" title="Learn more about EGI!"
+    url="https://www.egi.eu/" %}}
 The EGI Federation is supporting lots of different user communities.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://docs.egi.eu/about/contributing/" %}}
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
+    url="https://docs.egi.eu/about/contributing/" %}}
 We do a [Pull Request](https://github.com/EGI-Foundation/documentation/pulls)
 contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/EGI_eInfra" %}}
+{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!"
+    url="https://twitter.com/EGI_eInfra" %}}
 Find out about new features and how our users are using EGI.
 {{% /blocks/feature %}}
 
