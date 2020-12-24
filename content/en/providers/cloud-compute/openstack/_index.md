@@ -608,6 +608,165 @@ members of `fedcloud.egi.eu`:
 ]
 ```
 
+##### Multiple OIDC providers
+
+If your OpenStack deployment needs to support multiple identity providers
+(besides EGI Check-in) you will need to configure `mod_auth_openidc` to
+support [multiple
+providers](https://github.com/zmartzone/mod_auth_openidc/wiki/Multiple-Providers#discovery)
+and use an OAuth2.0 token introspection proxy like
+[ESACO](https://github.com/indigo-iam/esaco).
+
+##### `mod_auth_openidc` configuration
+
+First, create a directory to host each of the providers configuration, in our
+case we will use `/var/lib/apache2/oidc/metadata`, but adapt this to your
+specific needs. Ensure this directory is writable by the user running apache:
+
+```shell
+mkdir -p /var/lib/apache2/oidc/metadata
+chown -R www-data:www-data /var/lib/apache2/oidc/metadata
+```
+
+Set in your Apache configuration the `OIDCMetadataDir` pointing to that
+directory
+
+```ApacheConf
+OIDCMetadataDir /var/lib/apache2/oidc/metadata
+```
+
+You may remove the `OIDCProviderMetadataURL`, `OIDCClientID` and
+`OIDCClientSecret` options from the Apache configuration as these will be now
+set in new files created in the metadata directory. For every provider you will
+support, you need to create 3 files:
+
+1. `<urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped>.provider`
+   with the OpenID Connect Discovery OP JSON metadata. The easiest way to create
+   this file is getting its content from the OIDC server itself. For EGI
+   Check-in:
+
+   ```shell
+   curl https://aai-dev.egi.eu/oidc/.well-known/openid-configuration > \
+        /var/lib/apache2/oidc/metadata/aai-dev.egi.eu%2Foidc.provider
+   ```
+
+1. `<urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped>.client`
+   with the client credentials. For EGI Check-in (`aai-dev.egi.eu%2Foidc.client`):
+
+   ```json
+   {
+     "client_id" : "<your client id>",
+     "client_secret" : "<your secret id>"
+   }
+   ```
+
+1. `<urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped>.conf`
+   with any extra configuration for the provider. This may not be needed if
+   all your providers are similar. For example to specify the scopes to use for
+   Check-in, use a `aai-dev.egi.eu%2Foidc.conf` as follows:
+
+   ```json
+   {
+     "scope": "openid email profile eduperson_entitlement"
+   }
+   ```
+
+Now add for the providers you support new configuration in Apache to facilitate
+the use of the dashboard. This is for a configuration of an `egi.eu` identity
+provider with `openid` as protocol:
+
+```ApacheConf
+<Location ~ "/identity/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
+        AuthType openid-connect
+        # This is your Redirect URI with a new iss=<your idp iss> option added
+        OIDCDiscoverURL http://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-dev.egi.eu%2Foidc%2F
+        # Ensure that the user is authenticated with the expected iss
+        Require claim iss:https://aai-dev.egi.eu/oidc/
+        Require valid-user
+</Location>
+```
+
+In your Horizon configuration, set the list of providers and their mappings:
+
+```python
+# this is the list that will show up in the dropdown menu
+WEBSSO_CHOICES = (
+    ("credentials", _("Keystone Credentials")),
+    ("egi.eu", _("EGI Check-in")),
+    ("other-idp", _("Other IdP")),
+)
+
+# this maps the options above to keystone's idps and protocols
+WEBSSO_IDP_MAPPING = {
+    "egi.eu": ("egi.eu", "openid"),
+    "other-idp": ("other-idp.com", "openid")
+}
+```
+
+##### ESACO configuration
+
+ESACO will handle OAuth tokens when users hit your Keystone from API/CLI. It
+needs to run as a daemon that listens (by default) on port 8156. We will use
+docker for facilitating the deployment:
+
+1. Create a yaml file with the configuration of the different providers
+   (`application.yaml`):
+
+   ```yaml
+   oidc:
+     clients:
+     - issuer-url: https://aai-dev.egi.eu/oidc/
+       client-id: "<your check-in client id>"
+       client-secret: "<your check-in client secret>"
+     - issuer-url: <another idp>
+       client-id: "<your client id for second idp>"
+       client-secret: "<your client secret for second idp>"
+   ```
+
+1. Create a environment file with the ESACO credentials you want to use
+   (`esaco.env`):
+
+   ```shell
+   # User name credential requested from clients introspecting tokens
+   ESACO_USER_NAME=<esaco user name>
+
+   # Password  credential requested from clients introspecting tokens
+   ESACO_USER_PASSWORD=<esaco password>
+   ```
+
+1. Run the ESACO server (adapt this as it better fits to run on your servers
+   and make it run permanently):
+
+   ```shell
+   docker run -p 8156:8156 -d -env-file=esaco.env \
+              -v application.yml:/esaco/config/application.yml:ro \
+              indigoiam/esaco:latest
+   ```
+
+1. Configure Keystone's Apache to use ESACO as OAuth introspection endpoint:
+
+   ```ApacheConf
+   # point this to the host where ESACO is running
+   OIDCOAuthIntrospectionEndpoint http://localhost:8156/introspect
+   OIDCOAuthClientID              <esaco user name>
+   OIDCOAuthClientSecret          <esaco password>
+   OIDCIDTokenIatSlack            3600
+   ```
+
+1. Configure also the locations in Apache that should use OAuth:
+
+   ```ApacheConf
+   <Location ~ "/identity/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/auth">
+        Authtype oauth20
+        Require valid-user
+   </Location>
+
+   <Location ~ "/identity/v3/OS-FEDERATION/identity_providers/other_idp/protocols/openid/auth">
+        Authtype oauth20
+        Require valid-user
+   </Location>
+   ```
+
 #### Moving to EGI Check-in production instance
 
 Once tests in the development instance of Check-in are successful, you can move
@@ -627,8 +786,8 @@ the request. Besides you will need to update your configuration as follows:
   openstack mapping set --rules mapping.egi.json egi-mapping
   ```
 
-- Update Apache configuration to use [aai.egi.eu]{.title-ref} instead of
-  \`aai-dev.egi.eu\`:
+- Update Apache configuration to use `aai.egi.eu` instead of
+  `aai-dev.egi.eu`:
 
   ```ApacheConf
   OIDCProviderMetadataURL https://aai.egi.eu/oidc/.well-known/openid-configuration
@@ -1014,7 +1173,7 @@ ldapsearch -x -p 2170 -h <yourVM.hostname.domain.com> -b o=glue
 
 ## EGI VM Image Management
 
-VM Images are replicated using [cloudkeeper]{.title-ref}, which has two
+VM Images are replicated using `cloudkeeper`, which has two
 components:
 
 - fronted (cloudkeeper-core) dealing the with image lists and downloading the
