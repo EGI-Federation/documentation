@@ -7,7 +7,7 @@ type: "docs"
 
 {{% pageinfo %}} This documentation about the Configuration Database is a work
 in progress, more documentation is currently available at
-https://wiki.egi.eu/wiki/GOCDB. {{% /pageinfo %}}
+[EGI's wiki](https://wiki.egi.eu/wiki/GOCDB). {{% /pageinfo %}}
 
 The Grid Configuration Database (also know as the GOCDB) contains general
 information about the sites participating to the production infrastructure.
