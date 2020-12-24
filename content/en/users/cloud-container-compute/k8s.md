@@ -40,7 +40,6 @@ You will also need a base image template for the deployment. Please refer to the
 [EC3 tutorial](../cloud-compute/ec3) to create such file. Below you can
 see an example for IFCA-LCG2 site with project related to `vo.access.egi.eu`:
 
-
 <!-- markdownlint-disable line-length -->
 ```plaintext
 description ubuntu-ifca (
