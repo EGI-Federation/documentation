@@ -56,19 +56,25 @@ Hosts the documentation of the EGI services enabling the federation.
 </div>
 
 {{< blocks/section color="dark" type="features">}}
+<!-- markdown-link-check-disable -->
 {{% blocks/feature icon="fa-lightbulb" title="Learn more about EGI!"
     url="https://www.egi.eu" %}}
+<!-- markdown-link-check-enable-->
 The EGI Federation is supporting lots of different user communities.
 {{% /blocks/feature %}}
 
+<!-- markdown-link-check-disable -->
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
     url="https://docs.egi.eu/about/contributing" %}}
+<!-- markdown-link-check-enable-->
 We do a [Pull Request](https://github.com/EGI-Foundation/documentation/pulls)
 contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
 
+<!-- markdown-link-check-disable -->
 {{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!"
     url="https://twitter.com/EGI_eInfra" %}}
+<!-- markdown-link-check-enable-->
 Find out about new features and how our users are using EGI.
 {{% /blocks/feature %}}
 
