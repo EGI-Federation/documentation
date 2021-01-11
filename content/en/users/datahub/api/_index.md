@@ -8,28 +8,28 @@ weight: 30
 
 Most if not all operations can be performed using the Onedata API.
 
-The official documentation is at https://onedata.org/#/home/api.
+The official documentation is [here](https://onedata.org/#/home/api).
 
-{{% alert title="Important" color="warning" %}}
-In order to be able to access the Onedata APIs, an access
-token is required. See below for instructions on how to generate one.
-{{% /alert %}}
+{{% alert title="Important" color="warning" %}} In order to be able to access
+the Onedata APIs, an access token is required. See below for instructions on how
+to generate one. {{% /alert %}}
 
 ## Getting an API access token
 
 Tokens have to be generated from the **EGI DataHub** (Onezone) interface as
-documented in [Generating tokens for using Oneclient or
-APIs](../clients/#generating-tokens-for-using-oneclient-or-apis) or using a
-command line call as documented hereafter.
+documented in
+[Generating tokens for using Oneclient or APIs](../clients/#generating-tokens-for-using-oneclient-or-apis)
+or using a command line call as documented hereafter.
 
-Bear in mind that a single API token can be used with both Onezone,
-Oneprovider and other Onedata APIs.
+Bear in mind that a single API token can be used with both Onezone, Oneprovider
+and other Onedata APIs.
 
 It's possible to retrieve the `CLIENT_ID`, `CLIENT_SECRET` and `REFRESH_TOKEN`
-using a [special OIDC client connected to
-Check-in](https://aai.egi.eu/fedcloud/). See
+using a
+[special OIDC client connected to Check-in](https://aai.egi.eu/fedcloud/). See
 [Check-in documentation](../../check-in/) for more information.
 
+<!-- markdownlint-disable line-length -->
 ```shell
 CLIENT_ID=<CLIENT_ID>
 CLIENT_SECRET=<CLIENT_SECRET>
@@ -38,15 +38,16 @@ REFRESH_TOKEN=<REFRESH_TOKEN>
 curl -X POST -u "$CLIENT_ID":"$CLIENT_SECRET"  \
        -d "client_id=$CLIENT_ID&$CLIENT_SECRET&grant_type=refresh_token&refresh_token=$REDRESH_TOKEN&scope=openid%20email%20profile" \
        'https://aai.egi.eu/oidc/token' | python -m json.tool;
-# Token is in the `access_token` field of the response
+# Token is in the access_token field of the response
 ```
+<!-- markdownlint-enable line-length -->
 
 The following variables should be set:
 
 - `OIDC_TOKEN`: OpenID Connect Access token.
 - `ONEZONE_HOST`: name or IP of the Onezone host (to use Onezone API).
-- `ONEPROVIDER_HOST`: name or IP of the Oneprovider host (to use
-  Oneprovider API).
+- `ONEPROVIDER_HOST`: name or IP of the Oneprovider host (to use Oneprovider
+  API).
 
 ```shell
 ONEZONE_HOST=https://datahub.egi.eu
@@ -58,9 +59,9 @@ curl -H "X-Auth-Token: egi:$OIDC_TOKEN" -X POST \
 
 ## Testing the API with the REST client
 
-A docker container with clients acting as wrappers around the API calls
-is available: `onedata/rest-cli`. It\'s very convenient for discovering
-and testing the **Onezone** and **Oneprovider** API.
+A docker container with clients acting as wrappers around the API calls is
+available: `onedata/rest-cli`. It\'s very convenient for discovering and testing
+the **Onezone** and **Oneprovider** API.
 
 ```shell
 docker run -it onedata/rest-cli
@@ -87,8 +88,7 @@ oneprovider-rest-cli listFiles path='EGI Foundation/CS3_dataset'
 
 ## Printing the raw REST calls of a wrapped command
 
-Raw REST calls (used with `curl`) can be printed using the `--dry-run`
-switch.
+Raw REST calls (used with `curl`) can be printed using the `--dry-run` switch.
 
 ```shell
 docker run -it onedata/rest-cli
@@ -102,28 +102,28 @@ onezone-rest-cli listEffectiveUserSpaces --dry-run
 
 ## Working with PID / Handle
 
-It's possible to mint a Permanent Identifier (PID) for a space or a
-subdirectory of a space using a handle service (like Handle.net) that is
-registered in the Onezone (EGI DataHub).
+It's possible to mint a Permanent Identifier (PID) for a space or a subdirectory
+of a space using a handle service (like Handle.net) that is registered in the
+Onezone (EGI DataHub).
 
-Once done, accessing the PID using its URL will redirect to the Onedata
-share allowing to retrieve the files.
+Once done, accessing the PID using its URL will redirect to the Onedata share
+allowing to retrieve the files.
 
 Prerequisites: access to a Handle service registered in the Onezone. See the
-[Handle Service API
-documentation](https://onedata.org/#/home/documentation/doc/using_onedata/handle_services.html)
+[Handle Service API documentation](https://onedata.org/#/home/documentation/doc/using_onedata/handle_services.html)
 for documentation on registering a new Handle service or ask a Onezone
 administrator to authorize you to use an existing Handle service already
 registered in the Onezone.
 
 The following variables should be set:
 
-- `API_ACCESS_TOKEN`: [Onedata API access
-  token](https://onedata.org/docs/doc/using_onedata/using_onedata_from_cli.html#authentication)
+- `API_ACCESS_TOKEN`:
+  [Onedata API access token](https://onedata.org/docs/doc/using_onedata/using_onedata_from_cli.html#authentication)
 - `ONEZONE_HOST`: name or IP of the Onezone host (to use Onezone API).
-- `ONEPROVIDER_HOST`: name or IP of the Oneprovider host (to use
-  Oneprovider API)
+- `ONEPROVIDER_HOST`: name or IP of the Oneprovider host (to use Oneprovider
+  API)
 
+<!-- markdownlint-disable line-length -->
 ```shell
 # Getting the IDs of the available Handle Services
 curl -sS --tlsv1.2 -H "X-Auth-Token: $API_ACCESS_TOKEN" \
@@ -179,3 +179,4 @@ HANDLE_ID=<HANDLE_ID>
 curl --tlsv1.2 -H "X-Auth-Token: $API_ACCESS_TOKEN" \
   "$ONEZONE_HOST/api/v3/onezone/user/handles/$HANDLE_ID"
 ```
+<!-- markdownlint-enable line-length -->

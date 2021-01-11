@@ -7,6 +7,7 @@ description: >
 ---
 
 This section documents how to integrate a new application in EC3.
+
 ## About
 
 The process to integrate a new application in EC3 is described by the
@@ -19,13 +20,11 @@ following process:
 
 ### Documentations
 
-
 * [Ansible documentation](http://docs.ansible.com/)
 * [EC3 documentation](http://ec3.readthedocs.io/en/devel/templates.html)
 * [RADL](https://github.com/grycap/ec3/tree/master/templates)
 
 ### Contacts
 
-
-* Miguel Caballer at: micafer1 <at> upv <dot> es
-* Amanda Calatrava at: amcaar <at> i3m <dot> upv <dot> es
+* Miguel Caballer at: micafer1 `<at>` upv `<dot>` es
+* Amanda Calatrava at: amcaar `<at>` i3m `<dot>` upv `<dot>` es

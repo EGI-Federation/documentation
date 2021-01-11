@@ -6,17 +6,20 @@ description: "Documentation related to EGI Data Transfer Clients"
 weight: 20
 ---
 
-## Overview 
+## Overview
 
-The FTS3 service offers a command line client to ease the interaction with the service.
+The FTS3 service offers a command line client to ease the interaction with the
+service.
 
 ## Prerequisites
 
-The client software is available for RHEL 6 and 7 derivatives. 
+The client software is available for RHEL 6 and 7 derivatives.
 
-Please note that the RHEL 6 support is ending the 30/11/2020 and the implementation for RHEL 8 is on-going.
+Please note that the RHEL 6 support is ending the 30/11/2020 and the
+implementation for RHEL 8 is on-going.
 
-Users from other distributions should refer to the [RESTFul API section](../api/#restful-api).
+Users from other distributions should refer to the
+[RESTFul API section](../api/#restful-api).
 
 ## Installation
 
@@ -26,20 +29,20 @@ The CLI can be installed from the EPEL repositories with the following package:
 yum install fts-rest-cli -y
 ```
 
-## Commands 
+## Commands
 
-This section describes some of the commands that can be issues via the FTS CLI. 
-As per the API, in order to authenticate to the FTS REST server you need an X.509 
-User certificate, please refer to this [section](../api/#authentication--authorisation)  
+This section describes some of the commands that can be issues via the FTS CLI.
+As per the API, in order to authenticate to the FTS REST server you need an
+X.509 User certificate, please refer to this
+[section](../api/#authentication--authorisation)  
 for more information.
 
-Full documentation about the FTS CLI is available at:
-
-https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/cli/index.html
+Check the [full documentation about the FTS CLI](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/cli/index.html)
 
 ### fts-rest-whoami
 
-This command can be used to check, as the name suggests, who are we for the server.
+This command can be used to check, as the name suggests, who are we for the
+server.
 
 #### Usage
 
@@ -63,8 +66,8 @@ Options
 
 --insecure : Do not validate the server certificate
 
---access-token : Oauth2 access token (supported only by some endpoints, 
-	takes precedence)
+--access-token : Oauth2 access token (supported only by some endpoints,
+                 takes precedence)
 ```
 
 #### Example
@@ -104,8 +107,8 @@ Options
 
 --insecure : Do not validate the server certificate
 
---access-token : Oauth2 access token (supported only by some endpoints, 
-	takes precedence)
+--access-token : Oauth2 access token (supported only by some endpoints,
+                 takes precedence)
 
 -f/--force : Force the delegation
 
@@ -121,10 +124,8 @@ Delegation id: 9ab8068853808c6b
 
 ### fts-rest-transfer-submit
 
-This command can be used to submit new jobs to FTS3. It supports simple and 
-bulk submissions.
-The bulk format is as follows:
-
+This command can be used to submit new jobs to FTS3. It supports simple and bulk
+submissions. The bulk format is as follows:
 
 ```sh
 {
@@ -178,8 +179,8 @@ Options
 
 --insecure : Do not validate the server certificate
 
---access-token : Oauth2 access token (supported only by some endpoints, 
-	takes precedence)
+--access-token : Oauth2 access token (supported only by some endpoints,
+                 takes precedence)
 
 -b/--blocking : Blocking mode. Wait until the operation completes.
 
@@ -206,7 +207,7 @@ Options
 
 -S/--source-token : The source space token or its description.
 
--K/--compare-checksum : Deprecated: compare checksums between source and 
+-K/--compare-checksum : Deprecated: compare checksums between source and
 destination.
 
 -C/--checksum-mode : Compare checksums in source, target, both or none.
@@ -223,7 +224,7 @@ destination.
 
 -f/--file : Name of configuration file
 
---retry : Number of retries. If 0, the server default will be used. 
+--retry : Number of retries. If 0, the server default will be used.
 If negative, there will be no retries.
 
 -m/--multi-hop : Submit a multihop transfer.
@@ -245,7 +246,7 @@ fts-rest-transfer-submit -s https://fts3-public.cern.ch:8446 \
 Job successfully submitted.
 Job id: 7e02b4fa-d568-11ea-9c80-02163e018681
 
-$ fts-rest-transfer-submit -s https://fts3-public.cern.ch:8446 -f test.json                                            
+$ fts-rest-transfer-submit -s https://fts3-public.cern.ch:8446 -f test.json
 Job successfully submitted.
 Job id: 9a28d204-d568-11ea-9c80-02163e018681
 ```
@@ -288,7 +289,7 @@ fts-rest-transfer-status -s https://fts3-public.cern.ch:8446 \
 Request ID: 7e02b4fa-d568-11ea-9c80-02163e018681
 Status: FAILED
 Client DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi
-Reason: One or more files failed. Please have a look at the details for more 
+Reason: One or more files failed. Please have a look at the details for more
 information
 Submission time: 2020-08-03T09:05:36
 Priority: 3
@@ -297,10 +298,10 @@ VO Name: dteam
 
 ### fts-rest-transfer-cancel
 
-This command can be used to cancel a running job. It returns the final state of 
-the cancelled job. Please, mind that if the job is already in a final state 
-`(FINISHEDDIRTY`, `FINISHED`, `FAILED`), this command will return this state. 
-You can additionally cancel only a subset appending a comma-separated list of 
+This command can be used to cancel a running job. It returns the final state of
+the cancelled job. Please, mind that if the job is already in a final state
+`(FINISHEDDIRTY`, `FINISHED`, `FAILED`), this command will return this state.
+You can additionally cancel only a subset appending a comma-separated list of
 file ids.
 
 #### Usage
@@ -327,11 +328,12 @@ Options
 
 --access-token : Oauth2 access token (supported only by some endpoints,
  takes precedence)
-````
+```
 
 #### Example
+
 ```sh
-fts-rest-transfer-cancel -s https://fts3-public.cern.ch:8446 
+fts-rest-transfer-cancel -s https://fts3-public.cern.ch:8446
 9a28d204-d568-11ea-9c80-02163e018681
 CANCELED
 ```

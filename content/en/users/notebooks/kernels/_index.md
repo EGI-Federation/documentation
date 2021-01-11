@@ -11,20 +11,21 @@ languages. Each language is available as a different
 [kernel](https://jupyter.readthedocs.io/en/latest/projects/kernels.html).
 
 For the EGI service we have enabled a set of kernels that are automatically
-built from the [EGI-Foundation/egi-notebooks-images](https://github.com/EGI-Foundation/egi-notebooks-images)
+built from the
+[EGI-Foundation/egi-notebooks-images](https://github.com/EGI-Foundation/egi-notebooks-images)
 GitHub repository.
 
 ## Python
 
-Default Python 3 kernel, it includes commonly used data analysis and
-machine learning libraries. Created from the
+Default Python 3 kernel, it includes commonly used data analysis and machine
+learning libraries. Created from the
 [jupyter/scipy-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-scipy-notebook)
 stack.
 
 ## DIRAC / Python 2
 
-A python 2 kernel that includes a DIRAC installation for interacting
-with the [EGI Workload Manager](../../workload-manager) service.
+A python 2 kernel that includes a DIRAC installation for interacting with the
+[EGI Workload Manager](../../workload-manager) service.
 
 ## Julia
 
@@ -33,8 +34,9 @@ The Julia programming language with the libraries described in
 
 ## R
 
-The R programming language with several packages from the R ecosystem
-as provided by [jupyter/r-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-r-notebook)
+The R programming language with several packages from the R ecosystem as
+provided by
+[jupyter/r-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-r-notebook)
 and some extra libraries.
 
 ## Octave

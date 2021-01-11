@@ -6,22 +6,20 @@ description: >
   Run containers on the EGI Cloud on a single VM with Docker
 ---
 
-The [EGI Docker
-VA](https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04) is a
-ready-to-use Virtual Machine Image with
-[docker](https://www.docker.com/) and
-[docker-compose](https://docs.docker.com/compose/) pre-installed.
+The
+[EGI Docker VA](https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04)
+is a ready-to-use Virtual Machine Image with [docker](https://www.docker.com/)
+and [docker-compose](https://docs.docker.com/compose/) pre-installed.
 
 You can start that image as any other VA available from AppDB:
 
-1. Go to the [EGI Docker image entry in
-   AppDB](https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04).
+1. Go to the
+   [EGI Docker image entry in AppDB](https://appdb.egi.eu/store/vappliance/egi.docker.ubuntu.16.04).
 
-1. Check the identifiers of the endpoint, image and flavor you want to
-   use at the provider.
+1. Check the identifiers of the endpoint, image and flavor you want to use at
+   the provider.
 
-1. Use a ssh key when, so you can log into the VM once it\'s
-   instantiated.
+1. Use a ssh key when, so you can log into the VM once it\'s instantiated.
 
 1. Once up, just ssh in the VM and start using docker as usual.
 
@@ -29,13 +27,13 @@ You can start that image as any other VA available from AppDB:
 
 You can log in with user `ubuntu` and your ssh key:
 
-``` {.console}
+```shell
 ssh -i <yourprivatekey> ubuntu@<your VM ip>
 ```
 
 Once in, you can run any docker command, e.g.:
 
-``` {.console}
+```shell
 ubuntu@fedcloud_vm:~$ sudo docker run hello-world
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
@@ -60,6 +58,6 @@ For more examples and ideas, visit:
  https://docs.docker.com/userguide/
 ```
 
-Docker-compose can be also used to execute applications with more than one container
-running together, [follow this documentation](https://docs.docker.com/compose/)
-to learn more.
+Docker-compose can be also used to execute applications with more than one
+container running together,
+[follow this documentation](https://docs.docker.com/compose/) to learn more.
