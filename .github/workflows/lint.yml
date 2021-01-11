@@ -26,6 +26,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           # Fail on errors
           DISABLE_ERRORS: false
+          FILTER_REGEX_EXCLUDE: ".*binaries/version.md"
 
       # Runs the Super-Linter action
       - name: Run Super-Linter on all codebase
