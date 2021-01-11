@@ -12,17 +12,17 @@ services from EGI or other e-Infrastructures. For data services, check
 
 ## EGI services: access tokens
 
-Most services integrated with EGI Check-in can handle valid access tokens
-for authorising users. These are short-lived (normally less than 1-hour)
-and need to be renewed for longer usage. EGI Notebooks provides a ready
-to use access token that can be accessed from your notebooks and is
-automatically refreshed so you can always have a valid one.
+Most services integrated with EGI Check-in can handle valid access tokens for
+authorising users. These are short-lived (normally less than 1-hour) and need to
+be renewed for longer usage. EGI Notebooks provides a ready to use access token
+that can be accessed from your notebooks and is automatically refreshed so you
+can always have a valid one.
 
-The token is available at `/var/run/secrets/egi.eu/access_token` and you can
-use it for example to access cloud providers of the EGI cloud. See the
-following sample code where a list of VMs is obtained for CESGA:
+The token is available at `/var/run/secrets/egi.eu/access_token` and you can use
+it for example to access cloud providers of the EGI cloud. See the following
+sample code where a list of VMs is obtained for CESGA:
 
-``` python
+```python
 from keystoneauth1.identity import v3
 from keystoneauth1 import session
 from novaclient import client
@@ -45,14 +45,13 @@ A valid ID token is also available at `/var/run/secrets/egi.eu/id_token`.
 
 ## D4Science
 
-If you are using a Notebooks instance integrated with D4Science, you can
-easily invoke DataMiner or any other D4Science functionality as the
-service will provide the `GCUBE_TOKEN` environment variable with a valid
-token.
+If you are using a Notebooks instance integrated with D4Science, you can easily
+invoke DataMiner or any other D4Science functionality as the service will
+provide the `GCUBE_TOKEN` environment variable with a valid token.
 
 This code will print the list of DataMiner methods available within your VRE:
 
-``` python
+```python
 import os
 from owslib.wps import WebProcessingService
 
@@ -69,7 +68,7 @@ for process in wps.processes:
 DataMiner algorithms can be invoked also from Notebooks, this code shows a
 sample:
 
-``` python
+```python
 from owslib.wps import ComplexDataInput, monitorExecution
 
 # define processid and inputs

@@ -5,7 +5,7 @@ weight: 20
 type: "docs"
 ---
 
-The GOCDB can be accessed at https://goc.egi.eu.
+The GOCDB can be accessed at [https://goc.egi.eu](https://goc.egi.eu).
 
 To access the web interface, users can:
 
@@ -55,9 +55,7 @@ Distinguished Name (DN).
 
 This DN is rejected by GOCDB because of the single quote:
 
-```
-/C=UK/O=STFC/OU=SomeOrgUnit/CN=David Mc'Donald
-```
+`/C=UK/O=STFC/OU=SomeOrgUnit/CN=David Mc'Donald`
 
 This is in accordance with [RFC1778](https://tools.ietf.org/html/rfc1778) which
 also disallows single quotes in all Relative Distinguished Name (RDN)

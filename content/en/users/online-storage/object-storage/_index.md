@@ -4,7 +4,7 @@ linkTitle: "Object Storage"
 type: docs
 weight: 55
 description: >
-    Access to Object Storage provided by the EGI Cloud providers
+  Access to Object Storage provided by the EGI Cloud providers
 ---
 
 ## Object Storage
@@ -145,8 +145,9 @@ credentials from the Openstack deployment.
 
 The following command is needed:
 
+<!-- markdownlint-disable line-length -->
 ```sh
-openstack ec2 credentials create
+$ openstack ec2 credentials create
 
 +------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | Field      | Value                                                                                                                                    |
@@ -158,15 +159,16 @@ openstack ec2 credentials create
 | trust_id   | None                                                                                                                                     |
 | user_id    | xxxxxxxxxxxxxxxxxxxxxxxxxxxx                                                                                                             |
 +------------+------------------------------------------------------------------------------------------------------------------------------------------+
-
 ```
+<!-- markdownlint-enable line-length -->
 
 The `access` and `secret` values are needed in order to access the SWIFT via the
 S3 protocol
 
 A lot of clients are available to access S3 compatible storages (awscli, s3cmd,
 etc). In EGI we are using the [Davix client](https://davix.web.cern.ch), which
-has been developed at CERN and is available both in RHEL and Debian environments.
+has been developed at CERN and is available both in RHEL and Debian
+environments.
 
 In order to list via S3 protocol the SWIFT server just type:
 
@@ -175,8 +177,8 @@ davix-ls --s3accesskey 'access' --s3secretkey 'secret'  --s3alternate s3s://api.
 
 ```
 
-`davix-get`, `davix-put` and `davix-del` are also available to download,
-store and delete objects from the storage.
+`davix-get`, `davix-put` and `davix-del` are also available to download, store
+and delete objects from the storage.
 
 ### Access via the EGI Data Transfer
 
