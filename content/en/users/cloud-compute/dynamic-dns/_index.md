@@ -41,7 +41,7 @@ To register a new DNS host name:
 1. From the VM you'd like to assign the name to, run a command like follows:
 
    ```shell
-   curl https://<hostname>:<secret>@nsupdate.fedcloud.eu/nic/update"
+   curl "https://<hostname>:<secret>@nsupdate.fedcloud.eu/nic/update"
    ```
 
    where `<hostname>` is the full hostname generated before, e.g.
