@@ -95,7 +95,6 @@ where:
 - NS-update server uses HTTPS protocol, hostname/secret are encrypted as data
   and not visible during transfer so it is secure to use the update URL
 
-
 - NS-update portal does not store host secret in recoverable form. If you forget
   the secret of your hostname, simply generate new one via "Show configuration"
   button in the host edit page. The old secret will be invalid.
