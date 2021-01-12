@@ -99,5 +99,3 @@ where:
 - NS-update portal does not store host secret in recoverable form. If you forget
   the secret of your hostname, simply generate new one via "Show configuration"
   button in the host edit page. The old secret will be invalid.
-
-
