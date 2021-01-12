@@ -51,7 +51,6 @@ To register a new DNS host name:
 1. You can also manually edit your registered hostnames in the _Overview_ menu
    by clicking on the hostname you'd like to manage
 
-
 {{% alert title="Note" color="info" %}}
 - Hostnames/IP addresses are not expired so no need to refresh IP addresses if
   no changes, it is enough to run once. You can add the following command
