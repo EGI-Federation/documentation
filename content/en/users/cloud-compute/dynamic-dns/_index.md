@@ -78,6 +78,7 @@ User-Agent:
 ```
 
 where:
+
 - `base64-encoded-auth-string`: base64 encoding of username:password
 - `username`: your host name
 - `password`: your host secret
