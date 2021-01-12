@@ -62,7 +62,6 @@ To register a new DNS host name:
   in Windows with `ipconfig /flushdns` command with Administrator account
 {{% /alert %}}
 
-
 ## API
 
 Dynamic DNS update server uses dydns2 protocol, compatible with commercial
