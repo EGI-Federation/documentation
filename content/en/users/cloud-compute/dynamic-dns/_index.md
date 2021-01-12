@@ -36,7 +36,7 @@ To register a new DNS host name:
    ![Add host](add-host.png)
 
 1. The portal will then show you a secret than can be used for updating
-   the host ip whenever needed. Note it down so you can use it later
+   the host ip whenever needed. Note it down so you can use it later.
 
 1. From the VM you'd like to assign the name to, run a command like follows:
 
@@ -46,7 +46,15 @@ To register a new DNS host name:
 
    where `<hostname>` is the full hostname generated before, e.g.
    `myserver.fedcloud-tf.fedcloud.eu` and `<secret>` is the secret generated
-   in the previous step.
+   in the previous step. You can add that as a boot command in your `cloud-init`
+   configuration:
+
+   ```yaml
+   #cloud-config
+
+   runcmd:
+     - [ curl, "https://<hostname>:<secret>@nsupdate.fedcloud.eu/nic/update" ]
+   ```
 
 1. You can also manually edit your registered hostnames in the _Overview_ menu
    by clicking on the hostname you'd like to manage
@@ -55,7 +63,7 @@ To register a new DNS host name:
 - Hostnames/IP addresses are not expired so no need to refresh IP addresses if
   no changes, it is enough to run once. You can add the following command
   `curl https://HOSTNAME:SECRET@nsupdate.fedcloud.eu/nic/update` to cloud-init
-  to assign hostname automatically at VM start
+  as described above to assign hostname automatically at VM start
 
 - DNS server set Time-to-Live (max time for caching DNS records) to 1 min for
   dynamic DNS, but MS Windows seems to not respect that. You can clear DNS cache
