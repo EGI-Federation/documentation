@@ -1,7 +1,7 @@
 ---
 title: "EC3"
 type: docs
-weight: 80
+weight: 90
 description: >
   Using the Elastic Cloud Compute Cluster on EGI Cloud
 ---
