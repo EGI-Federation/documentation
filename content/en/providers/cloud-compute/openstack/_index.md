@@ -42,7 +42,7 @@ OpenStack services APIs:
   records to the central accounting database on the EGI Accounting service
   ([APEL](https://apel.github.io/))
 - **cloud-info-provider** registers the RC configuration and description through
-  the Argo Messaging System to facilitate service discovery
+  the ARGO Messaging Service to facilitate service discovery
 - **cloudkeeper** (and **cloudkeeper-os**) synchronises with
   [EGI AppDB](https://appdb.egi.eu/browse/cloud) so new or updated images can be
   provided by the RC to user communities (VO).
