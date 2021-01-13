@@ -17,12 +17,13 @@ procedure. Services can also coexist within an existing (grid) site.
 These are the expected services for a working site:
 
 - If offering native OpenStack access (nova), register: `org.openstack.nova`
-  for the Nova endpoint of the site. The endpoint URL must contain the
-  Keystone v3 URL: `https://hostname:port/url/v3`. Set the `Host DN` to an IGTF
+  for the Nova endpoint of the site. The **endpoint URL** must contain the
+  Keystone v3 URL: `https://hostname:port/url/v3`. Set the **Host DN** so the
+  cloud-info-provider can be enabled in the AMS.
 
 - If offering native OpenStack access (swift), register: `org.openstack.swift`
-  for the swift endpoint of the site. The endpoint URL field must contain the 
-  Keystone v3 URL: `https://hostname:port/url/v3`
+  for the swift endpoint of the site. The **endpoint URL** field must contain the
+  Keystone v3 URL: `https://hostname:port/url/v3`.
 
 - `eu.egi.cloud.accounting` for the host sending the records to the
   accounting repository (executing SSM send).
@@ -46,5 +47,3 @@ Deprecated services for cloud providers:
   where `<image_name>` and `<resource_name>` cannot contain spaces. These
   attributes map to `os_tpl` and `resource_tpl` respectively and will be the
   ones used for monitoring purposes.
-
-
