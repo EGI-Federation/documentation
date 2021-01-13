@@ -1176,7 +1176,6 @@ have a topic like: `SITE_IFCA-LCG2_ENDPOINT_7513G0`.
 You should periodically run the cloud-info-provider (e.g. with a cron
 every 5 minutes) to push the information for consumption by clients.
 
-
 ## EGI VM Image Management
 
 VM Images are replicated using `cloudkeeper`, which has two
