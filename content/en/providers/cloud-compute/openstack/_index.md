@@ -8,19 +8,8 @@ description: >
 
 This manual provides information on how to set up a Resource Centre providing
 cloud resources in the EGI infrastructure. Integration with FedCloud requires a
-_working OpenStack installation_ as a pre-requirement (see
-<http://docs.openstack.org/> for details). Support for OpenStack is provided for
-the following versions:
-
-- OpenStack Mitaka \-- LTS under Ubuntu 16.04 (otherwise EOL)
-- OpenStack Ocata
-- OpenStack Pike
-- OpenStack Queens (note that support for Keystone-VOMS is not available, only
-  necessary for legacy VOs)
-
-Support for other versions is not guaranteed and they are not recommended in
-production as they are EOL\'d. See <http://releases.openstack.org/> for more
-details on the OpenStack releases.
+_working OpenStack installation_ as a pre-requirement. EGI supports any recent
+[OpenStack version](http://releases.openstack.org) (tested from OpenStack Mitaka).
 
 EGI expects the following OpenStack services to be available and accessible from
 outside your site:
@@ -53,16 +42,14 @@ OpenStack services APIs:
   records to the central accounting database on the EGI Accounting service
   ([APEL](https://apel.github.io/))
 - **cloud-info-provider** registers the RC configuration and description through
-  the EGI Information System to facilitate service discovery
+  the [ARGO Messaging Service](https://argoeu.github.io/guides/messaging/) to
+  facilitate service discovery
 - **cloudkeeper** (and **cloudkeeper-os**) synchronises with
   [EGI AppDB](https://appdb.egi.eu/browse/cloud) so new or updated images can be
   provided by the RC to user communities (VO).
 
 Not all EGI components need to share the same credentials. They are individually
 configured, you can use different credentials and permissions if desired.
-
-Optionally, **ooi (OpenStack OCCI Interface)** translates between OpenStack API
-and OCCI.
 
 ## Installation options
 
@@ -123,7 +110,6 @@ your installation)
 | **8774**/TCP | **OpenStack**/nova     | VM management.                                                   |
 | **9696**/TCP | **OpenStack**/neutron  | Network management.                                              |
 | **9292**/TCP | **OpenStack**/glance   | VM Image management.                                             |
-| **2170**/TCP | **BDII**/LDAP          | EGI Service Discovery/Information System (to be decommissioned). |
 <!-- markdownlint-enable line-length -->
 
 ### Outgoing ports
@@ -1113,63 +1099,83 @@ volumes.
 ## EGI Information System
 
 Information discovery provides a real-time view about the actual images and
-flavors available at the OpenStack for the federation users. It has two
-components:
+flavors available at the OpenStack for the federation users. It runs as a
+single python application
+[cloud-info-provider](https://github.com/EGI-Foundation/cloud-info-provider)
+that pushes information through the [Argo Messaging Service
+(AMS)](https://argoeu.github.io/guides/messaging/)
 
-- Resource-Level BDII: which queries the OpenStack deployment to get the
-  information to publish
-- Site-Level BDII: gathers information from several resource-level BDIIs and
-  makes it publicly available for the EGI information system.
+{{% alert title="BDII is deprecated" color="info" %}}
+Cloud providers no longer need to provide BDII as the Argo Messaging Service
+is used instead for transferring information
+{{% /alert %}}
 
-### Using the VM Appliance
+You can either run the service by yourself or rely on central operations of the
+cloud-info-provider. In both cases you must register your host DN in the GOCDB
+entry for the `org.openstack.nova`.
 
-#### Resource-level BDII
+### Catch-all operations
 
-This is provided by container `egifedcloud/cloudbdii`. You need to configure:
+EGI can manage the operation of the `cloud-info-provider` for the site so you
+don't need to do it. In order for your site to be included in the centrally
+operated `cloud-info-provider`, you need to create a Pull Request at the
+[EGI-Foundation/fedcloud-catchall-operations
+repository](https://github.com/EGI-Foundation/fedcloud-catchall-operations/)
+adding your site configuration in the `sites` directory with a file like this:
 
-- `/etc/cloud-info-provider/openstack.rc`, with the credentials to query your
-  OpenStack. The user configured just needs to be able to access the lists of
-  images and flavors.
-- `/etc/cloud-info-provider/openstack.yaml`, this file includes the static
-  information of your deployment. Make sure to set the `SITE-NAME` as defined in
-  GOCDB.
-
-#### Site-level BDII
-
-The `egifedcloud/sitebdii` container runs this process. Configuration files:
-
-- `/etc/sitebdii/glite-info-site-defaults.conf`. Set here the name of your site
-  (as defined in GOCDB) and the public hostname where the appliance will be
-  available.
-- `/etc/sitebdii/site.cfg`. Include here basic information on your site.
-
-#### Running the services
-
-There is a `bdii.service` unit for systemd available in the appliance. This
-leverages docker-compose for running the containers. You can start the service
-with:
-
-```shell
-systemctl start bdii
+```yaml
+endpoint: <your endpoint as declared in GOCDB>
+gocdb: <your site name as declared in GOCDB>
+vos:
+# a list of VOs you support in your deployment as follows
+- auth:
+    project_id: <local OpenStack project identifier>
+  name: <name of the vo>
+- auth:
+    project_id: <local OpenStack project identifier for second VO>
+  name: <name of another vo>
 ```
 
-Check the status with:
+Once PR is merged, the service will be reconfigured and your site should start
+publishing information.
+
+## Local operations
+
+You can operate by yourself the `cloud-info-provider`. The software can be
+obtained as RPMs, debs and python packages from the [GitHub releases
+page](https://github.com/EGI-Foundation/cloud-info-provider/releases).
+
+The `cloud-info-provider` needs a configuration file where your site is
+described, see the [sample OpenStack
+configuration](https://github.com/EGI-Foundation/cloud-info-provider/blob/master/etc/sample.openstack.yaml)
+for the required information. The authentication parameters for your local
+OpenStack and the AMS are passed as command line options:
 
 ```shell
-systemctl status bdii
+cloud-info-provider-service --yaml-file <your site description.yaml> \
+                            --middleware openstack \
+                            --os-auth-url <your keystone URL> \
+                            [ any other options for authentication ]
+                            --format glue21 \
+                            --publisher ams \
+                            --ams-cert <your host certificate> \
+                            --ams-key <your host secret key> \
+                            --ams-topic <your endpoint topic>
 ```
 
-And stop with:
+For authentication, you should be able to use any authentication method
+supported by [keystoneauth](https://opendev.org/openstack/keystoneauth), for
+user name and password use: `--os-password` and `--os-username`. Check the
+complete list of options with `cloud-info-provider-service  --help`.
 
-```shell
-systemctl stop bdii
-```
+The AMS topic has the format: `SITE_<SITE_NAME>_ENDPOINT_<GOCDB_ID>`, where
+`<SITE_NAME>` is the name of the site as declared in GOCDB and `<GOCDB_ID>` is
+the id of the endpoint in GOCDB. For example, [this
+endpoint](https://goc.egi.eu/portal/index.php?Page_Type=Service&id=7513) would
+have a topic like: `SITE_IFCA-LCG2_ENDPOINT_7513G0`.
 
-You should be able to get the BDII information with an LDAP client, e.g.:
-
-```shell
-ldapsearch -x -p 2170 -h <yourVM.hostname.domain.com> -b o=glue
-```
+You should periodically run the cloud-info-provider (e.g. with a cron
+every 5 minutes) to push the information for consumption by clients.
 
 ## EGI VM Image Management
 
