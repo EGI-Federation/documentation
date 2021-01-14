@@ -1064,6 +1064,27 @@ connected to Check-in.
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
+### 13. SSH Public Key
+
+<!-- markdownlint-disable line-length no-inline-html -->
+
+|          attribute name | SSH Public Key                                                    |
+| ----------------------: | :---------------------------------------------------------------- |
+|         **description** | Provides information about the user's SSH public key(s)           |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.24552.500.1.1.1.13` (sshPublicKey)           |
+|          **OIDC scope** | `ssh_public_key`                                                  |
+|       **OIDC claim(s)** | `ssh_public_key`                                                  |
+| **OIDC claim location** | Userinfo endpoint                                                 |
+|              **origin** | Added SSH public key(s) in user's Check-in Profile                |
+|             **changes** | Yes                                                               |
+|        **multiplicity** | Multi-valued                                                      |
+|        **availability** | Not always                                                        |
+|             **example** | `ssh-rsa AAAAB3NzaC...qxxEEipdnZ nikosev@grnet-hq.admin.grnet.gr` |
+|               **notes** | -                                                                 |
+|              **status** | Experimental                                                      |
+
+<!-- markdownlint-enable line-length no-inline-html -->
+
 ## User authorisation
 
 The following information about the authenticated user can be provided by EGI
