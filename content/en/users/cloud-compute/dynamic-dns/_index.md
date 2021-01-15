@@ -7,7 +7,7 @@ description: >
 ---
 
 The Dynamic DNS service provides a unified, federation-wide Dynamic DNS support
-for VMs in EGI infrastrcuture. Users can register their chosen meaningful and
+for VMs in EGI infrastructure. Users can register their chosen meaningful and
 memorable DNS host names in given domains (e.g. `my-server.vo.fedcloud.eu`) and
 assign to public IPs of their servers.
 
