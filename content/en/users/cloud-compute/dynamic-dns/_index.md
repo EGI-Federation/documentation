@@ -60,6 +60,7 @@ To register a new DNS host name:
    by clicking on the hostname you'd like to manage
 
 {{% alert title="Note" color="info" %}}
+
 - Hostnames/IP addresses are not expired so no need to refresh IP addresses if
   no changes, it is enough to run once. You can add the following command
   `curl https://HOSTNAME:SECRET@nsupdate.fedcloud.eu/nic/update` to cloud-init
@@ -68,6 +69,7 @@ To register a new DNS host name:
 - DNS server set Time-to-Live (max time for caching DNS records) to 1 min for
   dynamic DNS, but MS Windows seems to not respect that. You can clear DNS cache
   in Windows with `ipconfig /flushdns` command with Administrator account
+  
 {{% /alert %}}
 
 ## API
