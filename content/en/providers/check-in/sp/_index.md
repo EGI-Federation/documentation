@@ -669,10 +669,10 @@ user authorisation:
 
 <!-- markdownlint-disable line-length -->
 
-| Description                                                                                     | OIDC Claim                |
-| ----------------------------------------------------------------------------------------------- | ------------------------- |
-| [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `edu_person_entitlements` |
-| [Level of Assurance (LoA)](#level-of-assurance)                                                 | `acr`                     |
+| Description                                                                                     | OIDC Claim              |
+| ----------------------------------------------------------------------------------------------- | ----------------------- |
+| [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduperson_entitlement` |
+| [Level of Assurance (LoA)](#level-of-assurance)                                                 | `acr`                   |
 
 <!-- markdownlint-enable line-length -->
 
@@ -1098,7 +1098,7 @@ Check-in in order to control user access to resources:
 #### Background
 
 VO/group membership and role information is encoded in entitlements
-(`eduPersonEntitlement` attribute values in SAML or `edu_person_entitlements`
+(`eduPersonEntitlement` attribute values in SAML or `eduperson_entitlement`
 claim in OIDC). These entitlements are typically used to indicate access rights
 to protected resources. Entitlements are multi-valued, with each value formatted
 as a URN.
