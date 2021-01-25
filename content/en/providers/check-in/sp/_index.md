@@ -307,14 +307,13 @@ UserInfo Endpoint:
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
-| Scope                          | Claims                                                                                                                       |
-| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| `openid`                       | `sub`                                                                                                                        |
-| `profile`                      | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul>                             |
-| `email`                        | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>                                         |
-| `refeds_edu`                   | <ul><li>`acr`</li><li>`eduperson_assurance`</li><li>`eduperson_scoped_affiliation`</li><li>`eduperson_entitlement`</li></ul> |
-| `eduperson_scoped_affiliation` | `eduperson_scoped_affiliation`                                                                                               |
-| `eduperson_entitlement`        | `eduperson_entitlement`                                                                                                      |
+| Scope                          | Claims                                                                                           |
+| ------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `openid`                       | `sub`                                                                                            |
+| `profile`                      | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul> |
+| `email`                        | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>             |
+| `eduperson_scoped_affiliation` | `eduperson_scoped_affiliation`                                                                   |
+| `eduperson_entitlement`        | `eduperson_entitlement`                                                                          |
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
