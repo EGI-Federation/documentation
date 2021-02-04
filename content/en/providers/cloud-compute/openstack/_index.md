@@ -173,7 +173,7 @@ Make sure that you fill in the following options:
 
 - _Access_ tab:
 
-  > - Enable _openid_, _profile_, _email_, _eduperson_entitlement_ and in the
+  > - Enable _openid_, _profile_, _email_, _eduperson_entitlement_ in the
   >   **Scope** field
   > - Enable _authorization code_ in the **Grant Types** field
   > - Enable _Allow calls to the Introspection Endpoint?_ in **Introspection**
