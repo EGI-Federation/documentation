@@ -13,7 +13,7 @@ applications and services for research and science.
 
 This documentation focuses on using the service. Those resource providers
 willing to integrate into the service, please check the
-[EGI Federated Cloud Integration documentation](https://egi-federated-cloud-integration.readthedocs.io).
+[EGI Federated Cloud Integration documentation](../../providers/cloud-compute).
 
 Cloud Compute gives you the ability to deploy and scale virtual machines
 on-demand. It offers computational resources in a secure and isolated
