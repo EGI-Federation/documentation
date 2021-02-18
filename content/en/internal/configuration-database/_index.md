@@ -23,7 +23,7 @@ information about the infrastructure topology.
 
 ## Identity card
 
-<!-- markdownlint-disable line-length -->
+<!-- markdownlint-disable line-length bare-url -->
 
 | Property                     | Value                                                                 |
 | ---------------------------- | --------------------------------------------------------------------- |
@@ -41,4 +41,4 @@ information about the infrastructure topology.
 | License                      | gLite/Apache 2                                                        |
 | Privacy Policy               | https://wiki.egi.eu/wiki/GOCDB/data_privacy                           |
 
-<!-- markdownlint-enable line-length -->
+<!-- markdownlint-enable line-length bare-url -->
