@@ -158,7 +158,7 @@ two-step process:
 #### Registration into Check-in development instance
 
 Before your service can use the EGI Check-in OIDC Provider for user login, you
-must set up a client at [EGI Check-in ODIC client management
+must set up a client at the [EGI Check-in ODIC client management
 page](https://aai-dev.egi.eu/oidc/manage/user/clients) in order to obtain OAuth2.0
 credentials and register one or more redirect URIs.
 
