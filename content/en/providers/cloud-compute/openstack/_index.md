@@ -117,11 +117,12 @@ your installation)
 The EGI Cloud components require the following outgoing connections open:
 
 <!-- markdownlint-disable line-length -->
-| Port         | Host                    | Note                                                            |
-| ------------ | ----------------------- | --------------------------------------------------------------- |
-| **443**/TCP  | `msg.argo.grnet.gr`     | ARGO Messaging System (used to send accounting records by SSM). |
-| **443**/TCP  | `vmcaster.appdb.egi.eu` | AppDB image lists (used by cloudkeeper).                        |
-| **8080**/TCP | `cephrgw01.ifca.es`     | Swift server hosting EGI images (used by cloudkeeper).          |
+| Port          | Host                    | Note                                                            |
+| ------------- | ----------------------- | --------------------------------------------------------------- |
+| **443**/TCP   | `msg.argo.grnet.gr`     | ARGO Messaging System (used to send accounting records by SSM). |
+| **8443**/TCP  | `msg.argo.grnet.gr`     | AMS authentication (used to send accounting records by SSM).    |
+| **443**/TCP   | `vmcaster.appdb.egi.eu` | AppDB image lists (used by cloudkeeper).                        |
+| **8080**/TCP  | `cephrgw01.ifca.es`     | Swift server hosting EGI images (used by cloudkeeper).          |
 <!-- markdownlint-enable line-length -->
 
 Images listed in AppDB may be hosted in other servers besides
