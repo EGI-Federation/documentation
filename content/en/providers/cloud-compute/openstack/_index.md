@@ -1221,19 +1221,6 @@ systemctl <start|stop|status> cloudkeeper-os
 
 cloudkeeper core is run every 4 hours with a cron script.
 
-## Post-installation
-
-After the installation of all the needed components, it is recommended to set
-the following policies on Nova to avoid users accessing other users resources:
-
-<!-- markdownlint-disable line-length -->
-```shell
-sed -i 's|"admin_or_owner":  "is_admin:True or project_id:%(project_id)s",|"admin_or_owner":  "is_admin:True or project_id:%(project_id)s",\n    "admin_or_user":  "is_admin:True or user_id:%(user_id)s",|g' /etc/nova/policy.json
-sed -i 's|"default": "rule:admin_or_owner",|"default": "rule:admin_or_user",|g' /etc/nova/policy.json
-sed -i 's|"compute:get_all": "",|"compute:get": "rule:admin_or_owner",\n    "compute:get_all": "",|g' /etc/nova/policy.json
-```
-<!-- markdownlint-enable line-length -->
-
 ## Upgrading the OpenStack Appliance
 
 ### From 2017.08.09 to 2018.05.07
