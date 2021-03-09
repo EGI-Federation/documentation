@@ -79,7 +79,6 @@ $ qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.
 
 The appliance running at your OpenStack must:
 
-- Be accessible via public IP with port 2170 open for external connections.
 - Have a host certificate to send the accounting information to the accounting
   repository. DN of the host certificate must be registered in GOCDB with
   service type `eu.egi.cloud.accounting`. The host certificate and key in PEM
