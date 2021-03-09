@@ -225,3 +225,28 @@ keys in the VMs to be able to access.
 If you don\'t have public IPs for all the VMs to be managed, you can also use
 one as a gateway as described in the
 [Ansible FAQ](https://docs.ansible.com/ansible/latest/reference_appendices/faq.html#how-do-i-configure-a-jump-host-to-access-servers-that-i-have-no-direct-access-to).
+
+### How can I release resources without destroying my data?
+
+Whenever you delete a VM, the ephemeral disks associated with it will be also
+deleted so if you don't plan to use your VM for some time but still be able
+to recover the data or boot your VM in the same state, you will need to use
+some of the following strategies:
+
+- Use a volume to store the data to be kept: Check the [Storage section of the
+  documentation](../storage) to learn how to use volumes. If you start your VM
+  from a volume, the VM can be destroyed and recreated easily. OpenStack
+  docs cover how to [start a VM from a volume with CLI](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)
+  or [using the Horizon dashboard](https://docs.openstack.org/horizon/latest/user/launch-instances.html)
+
+- Suspend or shelve instances: Suspending a VM will release CPU and memory
+  usage of a VM but keep a copy of the RAM contents so it can be restored
+  later in time at the exact same state. Shelving shuts down the VM, thus RAM
+  contents will be lost but disk will be kept. This releases more resources
+  from the provider while still allows to easily recover the VM back to its
+  previous state.
+
+- Create snapshot of instances: a snapshot will create a new image on your
+  provider that can be used to boot a new instance of the VM with the same
+  disk contents. You can use this technique for creating a base template
+  image that can be later re-used to start similar VMs easily.
