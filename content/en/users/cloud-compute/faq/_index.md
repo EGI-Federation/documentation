@@ -246,7 +246,7 @@ some of the following strategies:
   from the provider while still allows to easily recover the VM back to its
   previous state.
 
-- Create snapshot of instances: a snapshot will create a new image on your
+- Create snapshot of instances: a snapshot will create a new VM image at your
   provider that can be used to boot a new instance of the VM with the same
-  disk contents. You can use this technique for creating a base template
+  disk content. You can use this technique for creating a base template
   image that can be later re-used to start similar VMs easily.
