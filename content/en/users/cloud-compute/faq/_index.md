@@ -240,7 +240,7 @@ below the main strategies you can use:
   documentation cover how to [start a VM from a volume with CLI](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)
   or [using the Horizon dashboard](https://docs.openstack.org/horizon/latest/user/launch-instances.html)
 
-- Suspend or shelve instances: Suspending a VM will pause a VM, releasing CPU
+- Suspend or shelve instance: Suspending a VM will pause a VM, releasing CPU
   and memory, and allowing to resume later in time at the exact same state.
   Shelving shuts down the VM, thus RAM contents will be lost but disk will be
   kept. This releases more resources from the provider while still allows to
