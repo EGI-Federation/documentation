@@ -229,9 +229,10 @@ one as a gateway as described in the
 ### How can I release resources without destroying my data?
 
 Whenever you delete a VM, the ephemeral disks associated with it will be also
-deleted so if you don't plan to use your VM for some time but still be able
-to recover the data or boot your VM in the same state, you will need to use
-some of the following strategies:
+deleted. If you don't plan to use your VM for some time, there are several
+ways to release resources consumed by the VM (e.g. CPU, RAM) and  recover the
+the data or boot your VM in a previous state when you need it back. We list
+below the main strategies you can use:
 
 - Use a volume to store the data to be kept: Check the [Storage section of the
   documentation](../storage) to learn how to use volumes. If you start your VM
@@ -239,12 +240,11 @@ some of the following strategies:
   documentation cover how to [start a VM from a volume with CLI](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)
   or [using the Horizon dashboard](https://docs.openstack.org/horizon/latest/user/launch-instances.html)
 
-- Suspend or shelve instances: Suspending a VM will release CPU and memory
-  usage of a VM but keep a copy of the RAM contents so it can be restored
-  later in time at the exact same state. Shelving shuts down the VM, thus RAM
-  contents will be lost but disk will be kept. This releases more resources
-  from the provider while still allows to easily recover the VM back to its
-  previous state.
+- Suspend or shelve instances: Suspending a VM will pause a VM, releasing CPU
+  and memory, and allowing to resume later in time at the exact same state.
+  Shelving shuts down the VM, thus RAM contents will be lost but disk will be
+  kept. This releases more resources from the provider while still allows to
+  easily boot the VM back without losing disk contents.
 
 - Create snapshot of instances: a snapshot will create a new VM image at your
   provider that can be used to boot a new instance of the VM with the same
