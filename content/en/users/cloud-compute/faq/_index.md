@@ -246,7 +246,7 @@ below the main strategies you can use:
   kept. This releases more resources from the provider while still allows to
   easily boot the VM back without losing disk contents.
 
-- Create snapshot of instances: a snapshot will create a new VM image at your
+- Create snapshot of instance: a snapshot will create a new VM image at your
   provider that can be used to boot a new instance of the VM with the same
   disk content. You can use this technique for creating a base template
   image that can be later re-used to start similar VMs easily.
