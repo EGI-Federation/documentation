@@ -236,7 +236,7 @@ some of the following strategies:
 - Use a volume to store the data to be kept: Check the [Storage section of the
   documentation](../storage) to learn how to use volumes. If you start your VM
   from a volume, the VM can be destroyed and recreated easily. OpenStack
-  docs cover how to [start a VM from a volume with CLI](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)
+  documentation cover how to [start a VM from a volume with CLI](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)
   or [using the Horizon dashboard](https://docs.openstack.org/horizon/latest/user/launch-instances.html)
 
 - Suspend or shelve instances: Suspending a VM will release CPU and memory
