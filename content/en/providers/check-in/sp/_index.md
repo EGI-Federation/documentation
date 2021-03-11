@@ -1025,9 +1025,9 @@ connected to Check-in.
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
-|          attribute name | Assurance                                                          |
-| ----------------------: | :----------------------------------------------------------------- |
-|         **description** | Assurance of the identity of the user                              |
+|  attribute name | Assurance                                        |
+| --------------: | :----------------------------------------------- |
+| **description** | Assurance of the identity of the user, following [REFEDS Assurance Framework(RAF)](https://refeds.org/assurance) and the [EGI AAI Assurance Profiles](https://docs.egi.eu/providers/check-in/sp/#level-of-assurance). The following RAF values are qualified and automatically set for all Community identities:<ul><li>$PREFIX$</li><li>$PREFIX$/ID/unique</li><li>$PREFIX$/ID/eppn-unique-no-reassign</li><li>$PREFIX$/IAP/low</li><li>$PREFIX$/ATP/ePA-1m</li><li>$PREFIX$/ATP/ePA-1d</li></ul>Following RAF values are set if the currently used authentication provider asserts (or otherwise qualifies to) them:</br><ul><li>$PREFIX$/IAP/medium</li><li>$PREFIX$/IAP/high</li></ul>The following compound profiles are asserted if the user qualifies to them</br><ul><li>$PREFIX$/profile/cappuccino</li><li>$PREFIX$/profile/espresso</li></ul> |
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.11` (eduPersonAssurance)           |
 |          **OIDC scope** | `eduperson_assurance`                                              |
 |       **OIDC claim(s)** | `eduperson_assurance`                                              |
@@ -1036,7 +1036,7 @@ connected to Check-in.
 |             **changes** | Yes                                                                |
 |        **multiplicity** | Multi-valued                                                       |
 |        **availability** | Not always                                                         |
-|             **example** | _[https://aai.egi.eu/LoA#Low]_                                     |
+|             **example** | _[```https://aai.egi.eu/LoA#Low```, ```https://refeds.org/assurance/IAP/low```]_                                     |
 |               **notes** | -                                                                  |
 |              **status** | Stable                                                             |
 
@@ -1151,9 +1151,9 @@ urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu
 Based on the authentication method selected by the user, the EGI proxy assigns a
 Level of Assurance (LoA), which is conveyed to the SP through both the
 `eduPersonAssurance` attribute and the Authentication Context Class
-(`AuthnContextClassRef`) of the SAML authentication response. EGI AAI currently
-distinguishes between three LoA levels, similarly to the
-[eID Assurance Framework (eIDAF)](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_235_R_0002).
+(`AuthnContextClassRef`) of the SAML authentication response. EGI Check-in uses
+Assurance Profiles which distinguish between three Level of Assurance (LoA) levels,
+similarly to the [eID Assurance Framework (eIDAF)](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_235_R_0002).
 Each level is represented by a URI as follows:
 
 - **Low**: Authentication through a social identity provider or other low
@@ -1162,6 +1162,12 @@ Each level is represented by a URI as follows:
   `https://aai.egi.eu/LoA#Substantial`
 - **High**: Substantial + multi-factor authn (not yet supported, TBD):
   `https://aai.egi.eu/LoA#High`
+
+Moreover, EGI Check-in follows the [REFEDS Assurance framework (RAF)](https://wiki.refeds.org/display/ASS/REFEDS+Assurance+Framework+ver+1.0).
+The EGI Check-in conveys any RAF values provided by the IdP directly to the SP,
+through the aforementioned methods. Furthermore, Check-in will append into the User's
+profile any additional LoA, if the user is eligible for it. For example,
+a user having a Verified Email is eligible for the RAF value ```https://refeds.org/assurance/IAP/low```
 
 Some EGI SPs have been configured to provide limited access (or not to accept at
 all) credentials with the Low LoA.
