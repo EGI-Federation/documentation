@@ -1178,6 +1178,23 @@ have a topic like: `SITE_IFCA-LCG2_ENDPOINT_7513G0`.
 You should periodically run the cloud-info-provider (e.g. with a cron
 every 5 minutes) to push the information for consumption by clients.
 
+### Using the EGI FedCloud Appliance
+
+The appliance provides a ready-to-use cloud-info-provider configuration
+if you want to operate it by yourself. Once you have downloaded the appliance
+check the following files:
+
+- `/etc/cloud-info-provider/openstack.rc` with the configuration of the
+  account used to log into your OpenStack and the location of the host
+  certificate that will be used to authenticate to the AMS.
+
+- `/etc/cloud-info-provider/openstack.yaml` with the cloud-info-provider
+  configuration. You need to enter the details about the VOs/projects that
+  the site is supporting.
+
+The appliance has a cron job that will connect to the configured OpenStack
+and send messages every 5 minutes.
+
 ## EGI VM Image Management
 
 VM Images are replicated using `cloudkeeper`, which has two
@@ -1221,6 +1238,15 @@ systemctl <start|stop|status> cloudkeeper-os
 cloudkeeper core is run every 4 hours with a cron script.
 
 ## Upgrading the OpenStack Appliance
+
+## From 2018.05.07 or newer to 2021.03.12
+
+Configuration changes:
+
+- Removes BDII, service is no longer in use
+- A cloud-info-provider cron is added
+- Uses AMS for pushing accounting records. New configuration
+  file for ssmsend is available
 
 ### From 2017.08.09 to 2018.05.07
 
