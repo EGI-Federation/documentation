@@ -91,9 +91,8 @@ The appliance running at your OpenStack must:
 ### CMD Packages
 
 The CMD-OS repository provides packages that have gone through a quality
-assurance process for the supported distributions. Follow the
-[the instructions for seting up the repos](http://repository.egi.eu/category/os-distribution/cmd-os-1/)
-to install the packages.
+assurance process for the supported distributions. Packages are available
+via the [EGI repository](https://repository.egi.eu).
 
 ## Open Ports
 
