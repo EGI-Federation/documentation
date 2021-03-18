@@ -233,7 +233,7 @@ directory.
 To access the Grafana monitoring interface, open the browser at `https://<YOUR_CLUSTER_IP>:3000` and log in to the system using the
 *admin* username and the password specified in the `.grafana_pwd` file located under the `/root` folder.
 
-<img src="grafana-login.png" style="width:50%;margin-left:auto;margin-right:auto;display:block" />
+<img src="grafana-login.png" style="width:50%;margin-left:auto;margin-right:auto;display:block;" />
 
 The Grafana-based monitoring system provides two dashboards in order to monitor the ECAS cluster both at system and application level.
 
