@@ -241,7 +241,7 @@ For nginx
 Managing IGTF CAs and CRLs
 
 : IGTF CAs can be obtained from UMD, you can find repo files for your
-  distribution at [EGI CA repo](https://repository.egi.eu/sw/production/cas/1/current/)
+  distribution at [EGI CA repository](https://repository.egi.eu/sw/production/cas/1/current/)
 
   IGTF CAs and CRLs can be bundled using the examples command
   hereafter.
