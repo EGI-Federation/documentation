@@ -1186,7 +1186,7 @@ check the following files:
   account used to log into your OpenStack and the location of the host
   certificate that will be used to authenticate to the AMS.
 
-- `/etc/cloud-info-provider/openstack.yaml` with the cloud-info-provider
+- `/etc/cloud-info-provider/openstack.yaml`: the cloud-info-provider
   configuration. You need to enter the details about the VOs/projects that
   the site is supporting.
 
