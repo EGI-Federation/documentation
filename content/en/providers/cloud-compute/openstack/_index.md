@@ -1190,7 +1190,7 @@ check the following files:
   configuration. You need to enter the details about the VOs/projects that
   the site is supporting.
 
-The appliance has a cron job that will connect to the configured OpenStack
+The appliance has a cron job that will connect to the configured OpenStack API
 and send messages every 5 minutes.
 
 ## EGI VM Image Management
