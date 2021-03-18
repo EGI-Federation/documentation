@@ -241,7 +241,7 @@ For nginx
 Managing IGTF CAs and CRLs
 
 : IGTF CAs can be obtained from UMD, you can find repo files for your
-distribution at <http://repository.egi.eu/sw/production/cas/1/current/>
+  distribution at [EGI CA repo](https://repository.egi.eu/sw/production/cas/1/current/)
 
   IGTF CAs and CRLs can be bundled using the examples command
   hereafter.
@@ -665,7 +665,7 @@ provider with `openid` as protocol:
 <Location ~ "/identity/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
         AuthType openid-connect
         # This is your Redirect URI with a new iss=<your idp iss> option added
-        OIDCDiscoverURL http://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-dev.egi.eu%2Foidc%2F
+        OIDCDiscoverURL https://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-dev.egi.eu%2Foidc%2F
         # Ensure that the user is authenticated with the expected iss
         Require claim iss:https://aai-dev.egi.eu/oidc/
         Require valid-user
@@ -799,8 +799,7 @@ Apache server with [gridsite](https://github.com/CESNET/gridsite) and SSL
 support. GridSite is a set of extensions to the Apache 2.x webserver, which
 support Grid security based on X.509 certificates.
 
-Packages for gridsite can be obtained from CMD-OS-1. Follow the
-[CMD-OS-1 guidelines for getting the packages for your distribution](http://repository.egi.eu/category/os-distribution/cmd-os-1/).
+Packages for gridsite can be obtained from [CMD](https://repository.egi.eu/sw/production/cmd-os/1/).
 
 First install the `gridsite`, `fetch-crl` and `ca-policy-egi-core` for your
 distribution, ensuring that `gridsite` is at least version `2.3.2`. For Ubuntu
