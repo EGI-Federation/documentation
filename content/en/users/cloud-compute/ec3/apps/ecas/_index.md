@@ -239,7 +239,7 @@ The Grafana-based monitoring system provides two dashboards in order to monitor 
 
 1. The **infrastructure dashboard** provides information about the percentage of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).
 
-![Grafana infra.](grafana-infra.png)
+<img src="grafana-infra.png.png" width="200" />
 
 2. The **application dashboard** shows information about which operator/workflow is being executed and its current execution status and provides aggregated information over time (e.g. number of total, completed and failed workflows/tasks, hourly weighted average of running cores).
 
