@@ -206,7 +206,7 @@ To access the Jupyter interface, open the browser at
 `https://<YOUR_CLUSTER_IP>:443/jupyter` and log in to the system using the
 username and password specified in the `jupyterhub_config.pyp` configuration
 file (see the `c.Authenticator.whitelist` and `c.DummyAuthenticator.password`
-lines) located at the `/root` folder.
+lines) located under the `/root` folder.
 
 ![JupyterHub login.](ecas-jupyterhub.png)
 
@@ -220,11 +220,32 @@ From JupyterHub in ECAS you can do several things such as:
 
 The ECAS space shared in the ECAS environment through the Onedata services is available at the `onedata/repository/ECAS_space` folder located under the `/data` directory.
 
+![ECASspace.](ecas-space.png)
+
 To get started with the ECAS environment capabilities, open the
 `ECAS_Basics.ipynb` notebook available under the `notebooks/` folder in the home
 directory.
 
 ![Jupyter.](ecas-jupyter.png)
+
+#### Accessing the Grafana UI
+
+To access the Grafana monitoting interface, open the browser at `https://<YOUR_CLUSTER_IP>:3000` and log in to the system using the
+*admin* username and the password specified in the `.grafana_pwd` file located under the `/root` folder.
+
+![Grafana login.](grafana-login.png)
+
+The Grafana-based monitoring system provides two dashboards in order to monitor the ECAS cluster both at system and application level.
+
+1. The **infrastructure dashboard** provides information about the percentage of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes). …
+
+![Grafana infra.](grafana-infra.png)
+
+2. The **application dashboard** shows information about which operator/workflow is being executed and its current execution status and provides aggregated information over time (e.g. number of total, completed and failed workflows/tasks, hourly weighted average of running cores).
+
+![Grafana application.](grafana-application.png)
+
+
 
 ## References
 
