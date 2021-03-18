@@ -218,7 +218,7 @@ From JupyterHub in ECAS you can do several things such as:
 - execute operators and workflows directly from the Ophidia Terminal;
 - access to a read-only data repository hosted in a Onedata space and perform any analysis on this shared data.
 
-The ECAS space shared in the ECAS environment through the Onedata services is available at the `onedata/repository/ECAS_space` folder located under the `/data` directory.
+The ECAS space shared in the ECAS environment through the Onedata services is available at the `onedata/ecas_provider/ECAS_space` folder located under the `/data` directory.
 
 ![ECASspace.](ecas-space.png)
 
@@ -230,14 +230,14 @@ directory.
 
 #### Accessing the Grafana UI
 
-To access the Grafana monitoting interface, open the browser at `https://<YOUR_CLUSTER_IP>:3000` and log in to the system using the
+To access the Grafana monitoring interface, open the browser at `https://<YOUR_CLUSTER_IP>:3000` and log in to the system using the
 *admin* username and the password specified in the `.grafana_pwd` file located under the `/root` folder.
 
 ![Grafana login.](grafana-login.png)
 
 The Grafana-based monitoring system provides two dashboards in order to monitor the ECAS cluster both at system and application level.
 
-1. The **infrastructure dashboard** provides information about the percentage of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes). …
+1. The **infrastructure dashboard** provides information about the percentage of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).
 
 ![Grafana infra.](grafana-infra.png)
 
