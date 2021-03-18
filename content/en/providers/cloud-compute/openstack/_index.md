@@ -799,7 +799,7 @@ Apache server with [gridsite](https://github.com/CESNET/gridsite) and SSL
 support. GridSite is a set of extensions to the Apache 2.x webserver, which
 support Grid security based on X.509 certificates.
 
-Packages for gridsite can be obtained from [CMD](https://repository.egi.eu/sw/production/cmd-os/1/).
+Packages for gridsite can be obtained from [CMD repository](https://repository.egi.eu/sw/production/cmd-os/1/).
 
 First install the `gridsite`, `fetch-crl` and `ca-policy-egi-core` for your
 distribution, ensuring that `gridsite` is at least version `2.3.2`. For Ubuntu
