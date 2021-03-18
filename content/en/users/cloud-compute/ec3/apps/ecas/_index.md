@@ -212,10 +212,13 @@ lines) located at the `/root` folder.
 
 From JupyterHub in ECAS you can do several things such as:
 
-- create and run a Jupyter Notebook exploiting PyOphidia and Python libraries
-  for visualization and plotting (e.g. matplotlib, basemap, NumPy);
-- browse the directories, download and update the files in the home folder;
-- execute operators and workflows directly from the Ophidia Terminal.
+- create and run a Jupyter Notebook exploiting PyOphidia and other Python libraries
+  for data manipulation, analysis and visualization (e.g. NumPy, matplotlib, Cartopy);
+- browse the directories, download and update files in the home folder;
+- execute operators and workflows directly from the Ophidia Terminal;
+- access to a read-only data repository hosted in a Onedata space and perform any analysis on this shared data.
+
+The ECAS space shared in the ECAS environment through the Onedata services is available at the `onedata/repository/ECAS_space` folder located under the `/data` directory.
 
 To get started with the ECAS environment capabilities, open the
 `ECAS_Basics.ipynb` notebook available under the `notebooks/` folder in the home
