@@ -57,7 +57,7 @@ To configure and deploy a Virtual Elastic Cluster using EC3, access the
 [EC3 platform front page](https://servproject.i3m.upv.es/ec3-ltos/index.php) and
 click on the **\"Deploy your cluster\"** link as shown in the figure below:
 
-![EC3 front page.](ecas-front.png)
+<p align="center"><img src="ecas-front.png" width="50%"></p>
 
 A wizard will guide you through the cluster configuration process. Specifically,
 the general wizard steps include:
@@ -65,23 +65,23 @@ the general wizard steps include:
 - **LRMS selection**: choose **ECAS** from the list of LRMSs (Local Resource
   Management System) that can be automatically installed and configured by EC3.
 
-![LRMS selection.](ecas-lrms.png)
+<p align="center"><img src="ecas-lrms.png" width="50%"></p>
 
 - **Endpoint**: the endpoints of the providers where to deploy the ECAS elastic
   cluster. The endpoints serving the `vo.access.egi.eu` VO are dynamically
   retrieved from the [EGI Application DataBase](https://appdb.egi.eu/) using
   REST APIs.
 
-![Endpoint selection.](ecas-endpoint.png)
+<p align="center"><img src="ecas-endpoint.png" width="50%"></p>
 
 - **Operating System**: choose EGI CentOS7 as cluster OS.
 
-![Operating System selection.](ecas-os.png)
+<p align="center"><img src="ecas-os.png" width="50%"></p>
 
 - **Instance details**, in terms of CPU and RAM to allocate for the front-end
   and the working nodes.
 
-![Instance details.](ecas-instance.png)
+<p align="center"><img src="ecas-instance.png" width="50%"></p>
 
 - **Cluster's size and name**: the name of the cluster and the maximum number of
   nodes of the cluster, without including the front-end. This value indicates
@@ -89,22 +89,22 @@ the general wizard steps include:
   the cluster is created with the front-end and only one working node: the other
   working nodes will be powered on on-demand.
 
-![Cluster size and name.](ecas-size.png)
+<p align="center"><img src="ecas-size.png" width="50%"></p>
 
 - **Resume and Launch**: a summary of the chosen cluster configuration. To start
   the deployment process, click the Submit button.
 
-![Resume and Launch.](ecas-summary.png)
+<p align="center"><img src="ecas-summary.png" width="50%"></p>
 
 When the front-end node of the cluster has been successfully deployed, you will
 be notified with the credentials to access via SSH.
 
-![ECAS cluster connection details.](ecas-end.png)
+<p align="center"><img src="ecas-end.png" width="50%"></p>
 
 The cluster details are available by clicking on the \"Manage your deployed
 clusters\" link on the front page:
 
-![Manage your clusters.](ecas-manage.png)
+<p align="center"><img src="ecas-manage.png" width="50%"></p>
 
 {{% alert title="Note" color="primary" %}} The configuration of the cluster may
 take some time. Please wait for its completion before starting to start using
@@ -163,7 +163,7 @@ Ophidia client (`oph_term`) and JupyterHub.
 
 Run the Ophidia terminal as `ophuser` user.
 
-![Ophidia terminal.](ecas-oph_term.png)
+<p align="center"><img src="ecas-oph_term" width="50%"></p>
 
 The default parameters are already defined as environmental variables inside the
 `.bashrc` file:
@@ -208,7 +208,7 @@ username and password specified in the `jupyterhub_config.pyp` configuration
 file (see the `c.Authenticator.whitelist` and `c.DummyAuthenticator.password`
 lines) located under the `/root` folder.
 
-![JupyterHub login.](ecas-jupyterhub.png)
+<p align="center"><img src="ecas-jupyterhub.png" width="50%"></p>
 
 From JupyterHub in ECAS you can do several things such as:
 
