@@ -1182,7 +1182,7 @@ The appliance provides a ready-to-use cloud-info-provider configuration
 if you want to operate it by yourself. Once you have downloaded the appliance
 check the following files:
 
-- `/etc/cloud-info-provider/openstack.rc` with the configuration of the
+- `/etc/cloud-info-provider/openstack.rc`: the configuration of the
   account used to log into your OpenStack and the location of the host
   certificate that will be used to authenticate to the AMS.
 
