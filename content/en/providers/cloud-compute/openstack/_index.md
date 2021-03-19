@@ -79,7 +79,6 @@ $ qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.
 
 The appliance running at your OpenStack must:
 
-- Be accessible via public IP with port 2170 open for external connections.
 - Have a host certificate to send the accounting information to the accounting
   repository. DN of the host certificate must be registered in GOCDB with
   service type `eu.egi.cloud.accounting`. The host certificate and key in PEM
@@ -92,9 +91,8 @@ The appliance running at your OpenStack must:
 ### CMD Packages
 
 The CMD-OS repository provides packages that have gone through a quality
-assurance process for the supported distributions. Follow the
-[the instructions for seting up the repos](http://repository.egi.eu/category/os-distribution/cmd-os-1/)
-to install the packages.
+assurance process for the supported distributions. Packages are available
+via the [EGI repository](https://repository.egi.eu).
 
 ## Open Ports
 
@@ -117,11 +115,12 @@ your installation)
 The EGI Cloud components require the following outgoing connections open:
 
 <!-- markdownlint-disable line-length -->
-| Port         | Host                    | Note                                                            |
-| ------------ | ----------------------- | --------------------------------------------------------------- |
-| **443**/TCP  | `msg.argo.grnet.gr`     | ARGO Messaging System (used to send accounting records by SSM). |
-| **443**/TCP  | `vmcaster.appdb.egi.eu` | AppDB image lists (used by cloudkeeper).                        |
-| **8080**/TCP | `cephrgw01.ifca.es`     | Swift server hosting EGI images (used by cloudkeeper).          |
+| Port          | Host                    | Note                                                            |
+| ------------- | ----------------------- | --------------------------------------------------------------- |
+| **443**/TCP   | `msg.argo.grnet.gr`     | ARGO Messaging System (used to send accounting records by SSM). |
+| **8443**/TCP  | `msg.argo.grnet.gr`     | AMS authentication (used to send accounting records by SSM).    |
+| **443**/TCP   | `vmcaster.appdb.egi.eu` | AppDB image lists (used by cloudkeeper).                        |
+| **8080**/TCP  | `cephrgw01.ifca.es`     | Swift server hosting EGI images (used by cloudkeeper).          |
 <!-- markdownlint-enable line-length -->
 
 Images listed in AppDB may be hosted in other servers besides
@@ -242,7 +241,7 @@ For nginx
 Managing IGTF CAs and CRLs
 
 : IGTF CAs can be obtained from UMD, you can find repo files for your
-distribution at <http://repository.egi.eu/sw/production/cas/1/current/>
+  distribution at [EGI CA repository](https://repository.egi.eu/sw/production/cas/1/current/)
 
   IGTF CAs and CRLs can be bundled using the examples command
   hereafter.
@@ -666,7 +665,7 @@ provider with `openid` as protocol:
 <Location ~ "/identity/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
         AuthType openid-connect
         # This is your Redirect URI with a new iss=<your idp iss> option added
-        OIDCDiscoverURL http://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-dev.egi.eu%2Foidc%2F
+        OIDCDiscoverURL https://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-dev.egi.eu%2Foidc%2F
         # Ensure that the user is authenticated with the expected iss
         Require claim iss:https://aai-dev.egi.eu/oidc/
         Require valid-user
@@ -800,8 +799,7 @@ Apache server with [gridsite](https://github.com/CESNET/gridsite) and SSL
 support. GridSite is a set of extensions to the Apache 2.x webserver, which
 support Grid security based on X.509 certificates.
 
-Packages for gridsite can be obtained from CMD-OS-1. Follow the
-[CMD-OS-1 guidelines for getting the packages for your distribution](http://repository.egi.eu/category/os-distribution/cmd-os-1/).
+Packages for gridsite can be obtained from [CMD repository](https://repository.egi.eu/sw/production/cmd-os/1/).
 
 First install the `gridsite`, `fetch-crl` and `ca-policy-egi-core` for your
 distribution, ensuring that `gridsite` is at least version `2.3.2`. For Ubuntu
@@ -1178,6 +1176,23 @@ have a topic like: `SITE_IFCA-LCG2_ENDPOINT_7513G0`.
 You should periodically run the cloud-info-provider (e.g. with a cron
 every 5 minutes) to push the information for consumption by clients.
 
+### Using the EGI FedCloud Appliance
+
+The appliance provides a ready-to-use cloud-info-provider configuration
+if you want to operate it by yourself. Once you have downloaded the appliance
+check the following files:
+
+- `/etc/cloud-info-provider/openstack.rc`: the configuration of the
+  account used to log into your OpenStack and the location of the host
+  certificate that will be used to authenticate to the AMS.
+
+- `/etc/cloud-info-provider/openstack.yaml`: the cloud-info-provider
+  configuration. You need to enter the details about the VOs/projects that
+  the site is supporting.
+
+The appliance has a cron job that will connect to the configured OpenStack API
+and send messages every 5 minutes.
+
 ## EGI VM Image Management
 
 VM Images are replicated using `cloudkeeper`, which has two
@@ -1220,20 +1235,16 @@ systemctl <start|stop|status> cloudkeeper-os
 
 cloudkeeper core is run every 4 hours with a cron script.
 
-## Post-installation
-
-After the installation of all the needed components, it is recommended to set
-the following policies on Nova to avoid users accessing other users resources:
-
-<!-- markdownlint-disable line-length -->
-```shell
-sed -i 's|"admin_or_owner":  "is_admin:True or project_id:%(project_id)s",|"admin_or_owner":  "is_admin:True or project_id:%(project_id)s",\n    "admin_or_user":  "is_admin:True or user_id:%(user_id)s",|g' /etc/nova/policy.json
-sed -i 's|"default": "rule:admin_or_owner",|"default": "rule:admin_or_user",|g' /etc/nova/policy.json
-sed -i 's|"compute:get_all": "",|"compute:get": "rule:admin_or_owner",\n    "compute:get_all": "",|g' /etc/nova/policy.json
-```
-<!-- markdownlint-enable line-length -->
-
 ## Upgrading the OpenStack Appliance
+
+## From 2018.05.07 or newer to 2021.03.12
+
+Configuration changes:
+
+- Removes BDII, service is no longer in use
+- A cloud-info-provider cron is added
+- Uses AMS for pushing accounting records. New configuration
+  file for ssmsend is available
 
 ### From 2017.08.09 to 2018.05.07
 
