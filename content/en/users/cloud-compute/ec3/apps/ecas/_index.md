@@ -239,8 +239,8 @@ The Grafana-based monitoring system provides two dashboards in order to monitor 
 
 1. The **infrastructure dashboard** provides information about the percentage of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).
 
-<table border="0">
-<tr>
+<table>
+<tr border="0">
 <td><img src="ecas-infra-dashboard-server.png"></td>
 <td><img src="ecas-infra-dashboard-io.png"></td>
 </tr>
