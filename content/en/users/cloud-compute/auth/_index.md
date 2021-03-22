@@ -102,7 +102,7 @@ access to several different projects within that provider (a project can be
 considered equivalent to a VO allocation). In order to discover which projects
 are available you can do that using the Keystone API.
 
-You can use the [`egicli`](https://github.com/EGI-Foundation/egicli) to simplify
+You can use the [`egicli`](https://github.com/EGI-Federation/egicli) to simplify
 the discovery of projects. First, define these variables in your environment:
 
 - `CHECKIN_CLIENT_ID`: Your Check-in client id (get it from

@@ -19,9 +19,9 @@ functionality:
 - CA authority to allocate recognised certificates for the HTTPS server
 - [Prometheus](https://prometheus.io/) for monitoring resource consumption.
 - Specific EGI hooks for
-  [monitoring](https://github.com/EGI-Foundation/egi-notebooks-monitoring),
-  [accounting](https://github.com/EGI-Foundation/egi-notebooks-accounting) and
-  [backup](https://github.com/EGI-Foundation/egi-notebooks-backup).
+  [monitoring](https://github.com/EGI-Federation/egi-notebooks-monitoring),
+  [accounting](https://github.com/EGI-Federation/egi-notebooks-accounting) and
+  [backup](https://github.com/EGI-Federation/egi-notebooks-backup).
 - VO-Specific storage/Big data facilities or any pluggable tools into the
   notebooks environment can be added to community specific instances.
 
@@ -129,7 +129,7 @@ will allow to get up-to-date valid credentials as needed.
 
 This is Work in progress, expect changes! {{% /alert %}}
 
-[Accounting module](https://github.com/EGI-Foundation/egi-notebooks-accounting)
+[Accounting module](https://github.com/EGI-Federation/egi-notebooks-accounting)
 generates VM-like accounting records for each of the notebooks started at the
 service. It\'s available as a
 [helm chart](https://egi-foundation.github.io/egi-notebooks-chart/) that can be
@@ -147,7 +147,7 @@ ssm:
 
 ### Monitoring
 
-[Monitoring](https://github.com/EGI-Foundation/egi-notebooks-monitoring) is
+[Monitoring](https://github.com/EGI-Federation/egi-notebooks-monitoring) is
 performed by trying to execute a user notebook every hour. This is accomplished
 by registering a new service in the hub that has admin permissions. Monitoring
 is then deployed as a

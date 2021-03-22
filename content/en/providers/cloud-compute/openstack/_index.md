@@ -1100,7 +1100,7 @@ volumes.
 Information discovery provides a real-time view about the actual images and
 flavors available at the OpenStack for the federation users. It runs as a
 single python application
-[cloud-info-provider](https://github.com/EGI-Foundation/cloud-info-provider)
+[cloud-info-provider](https://github.com/EGI-Federation/cloud-info-provider)
 that pushes information through the [Argo Messaging Service
 (AMS)](https://argoeu.github.io/guides/messaging/)
 
@@ -1118,8 +1118,8 @@ entry for the `org.openstack.nova`.
 EGI can manage the operation of the `cloud-info-provider` for the site so you
 don't need to do it. In order for your site to be included in the centrally
 operated `cloud-info-provider`, you need to create a Pull Request at the
-[EGI-Foundation/fedcloud-catchall-operations
-repository](https://github.com/EGI-Foundation/fedcloud-catchall-operations/)
+[EGI-Federation/fedcloud-catchall-operations
+repository](https://github.com/EGI-Federation/fedcloud-catchall-operations/)
 adding your site configuration in the `sites` directory with a file like this:
 
 ```yaml
@@ -1142,11 +1142,11 @@ publishing information.
 
 You can operate by yourself the `cloud-info-provider`. The software can be
 obtained as RPMs, debs and python packages from the [GitHub releases
-page](https://github.com/EGI-Foundation/cloud-info-provider/releases).
+page](https://github.com/EGI-Federation/cloud-info-provider/releases).
 
 The `cloud-info-provider` needs a configuration file where your site is
 described, see the [sample OpenStack
-configuration](https://github.com/EGI-Foundation/cloud-info-provider/blob/master/etc/sample.openstack.yaml)
+configuration](https://github.com/EGI-Federation/cloud-info-provider/blob/master/etc/sample.openstack.yaml)
 for the required information. The authentication parameters for your local
 OpenStack and the AMS are passed as command line options:
 

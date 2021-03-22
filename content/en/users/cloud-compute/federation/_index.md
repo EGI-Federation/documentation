@@ -153,7 +153,7 @@ service types are avialable:
 All providers **must** enter cloud service endpoints to GOCDB to enable
 integration with EGI..
 
-The [Cloud-info-provider](https://github.com/EGI-Foundation/cloud-info-provider)
+The [Cloud-info-provider](https://github.com/EGI-Federation/cloud-info-provider)
 extracts information from the resource centres using their native APIs and
 formats it following Glue, and OGC recommended standard. This information is
 pushed to the Argo Messaging System and consumed by AppDB to provide a central
