@@ -107,7 +107,7 @@ clusters\" link on the front page:
 <p align="center"><img src="ecas-manage.png" width="50%"></p>
 
 {{% alert title="Note" color="primary" %}} The configuration of the cluster may
-take some time. Please wait for its completion before starting to start using
+take some time. Please wait for its completion before starting to use
 the cluster. {{% /alert %}}
 
 ### Accessing the cluster
@@ -163,7 +163,7 @@ Ophidia client (`oph_term`) and JupyterHub.
 
 Run the Ophidia terminal as `ophuser` user.
 
-<p align="center"><img src="ecas-oph_term" width="50%"></p>
+<p align="center"><img src="ecaecas-oph_term.png" width="50%"></p>
 
 The default parameters are already defined as environmental variables inside the
 `.bashrc` file:
@@ -208,7 +208,7 @@ username and password specified in the `jupyterhub_config.pyp` configuration
 file (see the `c.Authenticator.whitelist` and `c.DummyAuthenticator.password`
 lines) located under the `/root` folder.
 
-<p align="center"><img src="ecas-jupyterhub.png" width="50%"></p>
+<p align="center"><img src="ecas-jupyterhub.png" width="70%"></p>
 
 From JupyterHub in ECAS you can do several things such as:
 
@@ -228,7 +228,7 @@ directory.
 
 ![Jupyter.](ecas-jupyter.png)
 
-#### Accessing the Grafana UI
+### Accessing the Grafana UI
 
 To access the Grafana monitoring interface, open the browser at `https://<YOUR_CLUSTER_IP>:3000` and log in to the system using the
 *admin* username and the password specified in the `.grafana_pwd` file located under the `/root` folder.
@@ -239,11 +239,22 @@ The Grafana-based monitoring system provides two dashboards in order to monitor 
 
 1. The **infrastructure dashboard** provides information about the percentage of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).
 
-<img src="grafana-infra.png.png" width="200" />
+<table>
+<tr>
+<td><img src="ecas-infra-dashboard-server.png" width="40%"></td>
+<td><img src="ecas-infra-dashboard-io.png" width="40%"></td>
+</tr>
+</table>
 
 2. The **application dashboard** shows information about which operator/workflow is being executed and its current execution status and provides aggregated information over time (e.g. number of total, completed and failed workflows/tasks, hourly weighted average of running cores).
 
-![Grafana application.](grafana-application.png)
+<p align="center"><img src="ecas-application-dashboard.png" width="50%"></p>
+
+### Destroy the cluster
+
+To destroy the running cluster use the `delete` action from the cluster management page.
+
+<p align="center"><img src="ecas-manage.png" width="50%"></p>
 
 
 
