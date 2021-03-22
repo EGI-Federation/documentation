@@ -58,7 +58,7 @@ Configuration is provided in `.prettierrc`, options can be set as follow:
 ```
 
 When a Pull Request is received, the proposed changes are checked using
-[various linters](https://github.com/EGI-Foundation/documentation/tree/master/.github/workflows).
+[various linters](https://github.com/EGI-Federation/documentation/tree/master/.github/workflows).
 
 ## Adding exceptions for style violations
 

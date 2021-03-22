@@ -102,7 +102,7 @@ access to several different projects within that provider (a project can be
 considered equivalent to a VO allocation). In order to discover which projects
 are available you can do that using the Keystone API.
 
-You can use the [`egicli`](https://github.com/EGI-Foundation/egicli) to simplify
+You can use the [`egicli`](https://github.com/EGI-Federation/egicli) to simplify
 the discovery of projects. First, define these variables in your environment:
 
 - `CHECKIN_CLIENT_ID`: Your Check-in client id (get it from
@@ -167,7 +167,7 @@ of X.509 certificates should be limited to legacy applications. {{% /alert %}}
 [VOMS](https://italiangrid.github.io/voms/index.html) uses X.509 proxies
 extended with VO information for authentication and authorisation on the
 providers. You can learn about X.509 certificates and VOMS in the
-[Check-in documentation](../../check-in/voms).
+[Check-in documentation](../../check-in/vos/voms).
 
 ### VOMS configuration
 

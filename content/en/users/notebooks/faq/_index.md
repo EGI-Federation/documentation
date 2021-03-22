@@ -28,6 +28,6 @@ stopped (automatically after 1 hour of inactivity)! {{% /alert %}}
 Yes! Just let us know what are your needs. You can contact us via:
 
 - Opening a ticket in the [EGI Helpdesk](https://ggus.eu), or
-- Creating a [Github Issue](https://github.com/EGI-foundation/notebooks/issues)
+- Creating a [Github Issue](https://github.com/EGI-Federation/notebooks/issues)
 
 We will analyse your request and get back to you.
