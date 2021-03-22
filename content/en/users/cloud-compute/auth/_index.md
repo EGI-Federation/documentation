@@ -167,7 +167,7 @@ of X.509 certificates should be limited to legacy applications. {{% /alert %}}
 [VOMS](https://italiangrid.github.io/voms/index.html) uses X.509 proxies
 extended with VO information for authentication and authorisation on the
 providers. You can learn about X.509 certificates and VOMS in the
-[Check-in documentation](../../check-in/voms).
+[Check-in documentation](../../check-in/vos/voms).
 
 ### VOMS configuration
 
