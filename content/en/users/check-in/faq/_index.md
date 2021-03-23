@@ -56,3 +56,27 @@ handle
 Check-in can be configured to omit the scoping element from the authentication
 requests sent to such IdPs in order to allow successful logins. Please contact
 the CheckIn support team and include a screenshot of your error.
+
+<!-- markdownlint-disable line-length -->
+## I have linked an IGTF X.509 certificate to my Check-in identity but the information is inaccurate or incomplete
+<!-- markdownlint-enable line-length -->
+
+### What can I do?
+
+To update your certificate information, follow these steps to log into your
+Check-in profile page using your IGTF certificate:
+
+1. Click [here](https://aai.egi.eu/proxy/saml2/idp/SingleLogoutService.php?ReturnTo=https%3A%2F%2Faai.egi.eu%2Fregistry%2Fauth%2Flogin)
+to access your profile page
+
+    {{% alert title="Warning" color="warning" %}} This may log you out of any
+    service you have accessed with Check-in on this browser! {{% /alert %}}
+
+2. On the Check-in identity provider discovery page, select **IGTF**
+
+    {{% alert title="Warning" color="warning" %}} If prompted to log in with a
+    different identity provider, click **CHOOSE ANOTHER ACCOUNT** and then select
+    **IGTF**. Alternatively, you can click [here](https://aai.egi.eu/registry/auth/login?idphint=https%3A%2F%2Fedugain-proxy.igtf.net%2Fsimplesaml%2Fsaml2%2Fidp%2Fmetadata.php)
+    for your convenience {{% /alert %}}
+
+    ![Check-in IdP discovery IGTF](./check-in-discovery-igft.png)
