@@ -20,6 +20,9 @@
     },
     {
       "pattern": "^https://training.notebooks.egi.eu*"
+    },
+    {
+      "pattern": "^https://aai.egi.eu/proxy*"
     }
   ]
 }
