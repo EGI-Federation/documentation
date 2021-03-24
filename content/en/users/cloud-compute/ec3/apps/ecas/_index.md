@@ -120,7 +120,7 @@ To access the front-end of the cluster:
   authentication.
 
 ```shell
-[fabrizio@MBP EC3]$ ssh -i key.pem cloudadm@134.158.151.218
+[user@localhost EC3]$ ssh -i key.pem cloudadm@134.158.151.218
 Last login: Mon Nov 18 11:37:29 2019 from torito.i3m.upv.es
 [cloudadm@oph-server ~]$ sudo su -
 [root@oph-server ~]#
@@ -163,7 +163,7 @@ Ophidia client (`oph_term`) and JupyterHub.
 
 Run the Ophidia terminal as `ophuser` user.
 
-<p align="center"><img src="ecaecas-oph_term.png" width="50%"></p>
+<p align="center"><img src="ecas-oph_term.png" width="50%"></p>
 
 The default parameters are already defined as environmental variables inside the
 `.bashrc` file:
@@ -229,6 +229,8 @@ directory.
 ![Jupyter.](ecas-jupyter.png)
 
 ### Accessing the Grafana UI
+
+This section will show how to monitor the ECAS environment and the resource usage and get aggregated information over time.
 
 To access the Grafana monitoring interface, open the browser at `https://<YOUR_CLUSTER_IP>:3000` and log in to the system using the
 *admin* username and the password specified in the `.grafana_pwd` file located under the `/root` folder.
