@@ -60,6 +60,6 @@ jobs:
         with:
           # Use a personal token configured as a repository-specific secret
           personal_token: ${{ steps.generate-token.outputs.token }}
-          external_repository: EGI-Foundation/EGI-Foundation.github.io
+          external_repository: EGI-Federation/EGI-Federation.github.io
           cname: docs.egi.eu
           publish_branch: master

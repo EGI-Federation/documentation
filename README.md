@@ -1,8 +1,8 @@
 # EGI documentation
 
-[![Build Status](https://github.com/EGI-Foundation/documentation/workflows/Build%20documentation/badge.svg)](https://github.com/EGI-Foundation/documentation/actions)
+[![Build Status](https://github.com/EGI-Federation/documentation/workflows/Build%20documentation/badge.svg)](https://github.com/EGI-Federation/documentation/actions)
 
-[![Deploy Status](https://github.com/EGI-Foundation/documentation/workflows/Deploy%20to%20GitHub%20pages/badge.svg)](https://github.com/EGI-Foundation/documentation/actions)
+[![Deploy Status](https://github.com/EGI-Federation/documentation/workflows/Deploy%20to%20GitHub%20pages/badge.svg)](https://github.com/EGI-Federation/documentation/actions)
 
 Sources files used to build [EGI documentation](https://docs.egi.eu).
 
@@ -11,7 +11,7 @@ Sources files used to build [EGI documentation](https://docs.egi.eu).
 - The static site is
   [deployed on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
   using a dedicated
-  [GitHub repository](https://github.com/EGI-Foundation/EGI-Foundation.github.io).
+  [GitHub repository](https://github.com/EGI-Federation/EGI-Federation.github.io).
 
 > If you are interested in contributing please check the
 > [Contributing Guide](https://docs.egi.eu/about/contributing/).
@@ -75,6 +75,6 @@ git commit themes/docsy -m 'Update theme'
 
 ## Deployment to the EGI organisation pages
 
-[GitHub Actions](https://github.com/EGI-Foundation/documentation/tree/master/.github/workflows)
+[GitHub Actions](https://github.com/EGI-Federation/documentation/tree/master/.github/workflows)
 will automatically deploy a new version when a PR is merged to master,
 it will then be availalbe at [https://docs.egi.eu](https://docs.egi.eu).

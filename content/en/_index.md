@@ -11,7 +11,7 @@ description: "Documentation related to EGI activities"
   <p class="lead mt-5">
     This website hosts the first version of the new EGI documentation.<br />
     It will be further improved with more sections in the coming months.<br />
-    <a href="https://github.com/EGI-Foundation/documentation/issues/new">Your
+    <a href="https://github.com/EGI-Federation/documentation/issues/new">Your
     feedback and suggestions are welcome!</a>
   </p>
 
@@ -67,7 +67,7 @@ The EGI Federation is supporting lots of different user communities.
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
     url="https://docs.egi.eu/about/contributing" %}}
 <!-- markdown-link-check-enable-->
-We do a [Pull Request](https://github.com/EGI-Foundation/documentation/pulls)
+We do a [Pull Request](https://github.com/EGI-Federation/documentation/pulls)
 contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
 

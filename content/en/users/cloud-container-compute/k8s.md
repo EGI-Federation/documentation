@@ -17,7 +17,7 @@ Before getting your kubernetes cluster deployed, you need to get access to the
 Cloud Compute service, check the
 [Authentication and Authorisation guide](../cloud-compute/auth) for more
 information. You should also get
-[`egicli`](https://github.com/EGI-Foundation/egicli/) installed to get EC3
+[`egicli`](https://github.com/EGI-Federation/egicli/) installed to get EC3
 templates needed to start deployment.
 
 Your kubernetes deployment needs to be performed at an specific provider (site)

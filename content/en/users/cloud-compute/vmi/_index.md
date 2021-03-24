@@ -181,6 +181,6 @@ a hypervisor for the creation of the images and guarantees identical results
 under different platforms and providers.
 
 Check the
-[fedcloud-vmi-templates github repo](https://github.com/EGI-Foundation/fedcloud-vmi-templates)
+[fedcloud-vmi-templates github repo](https://github.com/EGI-Federation/fedcloud-vmi-templates)
 with all the packer recipes used to build our images and re-use them as needed
 for your images.
