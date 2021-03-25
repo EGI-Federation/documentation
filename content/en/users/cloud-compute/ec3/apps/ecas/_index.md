@@ -254,7 +254,7 @@ front-end node             |  working node
 :-------------------------:|:-------------------------:
 ![server](ecas-infra-dashboard-server.png)  |  ![wn](ecas-infra-dashboard-io.png)
 
-2. The **application dashboard** shows information about which operator/workflow
+1. The **application dashboard** shows information about which operator/workflow
 is being executed and its current execution status and provides aggregated
 information over time (e.g. number of total, completed and failed workflows/tasks,
 hourly weighted average of running cores).
