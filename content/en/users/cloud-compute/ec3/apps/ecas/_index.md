@@ -252,8 +252,7 @@ of CPU, RAM, SWAP and disk used on each node (the front-end and the working node
 
 front-end node             |  working node
 :-------------------------:|:-------------------------:
-![](ecas-infra-dashboard-server.png)  |  ![](ecas-infra-dashboard-io.png)
-
+![server](ecas-infra-dashboard-server.png)  |  ![wn](ecas-infra-dashboard-io.png)
 
 2. The **application dashboard** shows information about which operator/workflow
 is being executed and its current execution status and provides aggregated
@@ -268,8 +267,6 @@ To destroy the running cluster use the `delete` action from the cluster
 management page.
 
 ![ecas-manage](ecas-manage.png)
-
-
 
 ## References
 
