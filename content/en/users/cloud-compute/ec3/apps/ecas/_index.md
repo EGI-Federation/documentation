@@ -213,12 +213,12 @@ lines) located under the `/root` folder.
 From JupyterHub in ECAS you can do several things such as:
 
 - create and run a Jupyter Notebook exploiting PyOphidia and other Python
-libraries for data manipulation, analysis and visualization (e.g. NumPy,
-matplotlib, Cartopy);
+  libraries for data manipulation, analysis and visualization (e.g. NumPy,
+  matplotlib, Cartopy);
 - browse the directories, download and update files in the home folder;
 - execute operators and workflows directly from the Ophidia Terminal;
 - access to a read-only data repository hosted in a Onedata space and perform
-any analysis on this shared data.
+  any analysis on this shared data.
 
 The ECAS space shared in the ECAS environment through the Onedata services is
 available at the `onedata/ecas_provider/ECAS_space` folder located under the
@@ -248,16 +248,16 @@ The Grafana-based monitoring system provides two dashboards in order to monitor
 the ECAS cluster both at system and application level.
 
 - The **infrastructure dashboard** provides information about the percentage
-of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).
+  of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).
 
 front-end node             |  working node
 :-------------------------:|:-------------------------:
 ![Front-end infra metrics](ecas-infra-server.png)  |  ![wn infra metrics](ecas-infra-io.png)
 
 - The **application dashboard** shows information about which operator/workflow
-is being executed and its current execution status and provides aggregated
-information over time (e.g. number of total, completed and failed workflows/tasks,
-hourly weighted average of running cores).
+  is being executed and its current execution status and provides aggregated
+  information over time (e.g. number of total, completed and failed workflows/tasks,
+  hourly weighted average of running cores).
 
 ![Application metrics dashboard](ecas-application-dashboard.png)
 
