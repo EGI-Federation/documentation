@@ -218,7 +218,7 @@ matplotlib, Cartopy);
 - browse the directories, download and update files in the home folder;
 - execute operators and workflows directly from the Ophidia Terminal;
 - access to a read-only data repository hosted in a Onedata space and perform
-any analysis on this shared data.
+  any analysis on this shared data.
 
 The ECAS space shared in the ECAS environment through the Onedata services is
 available at the `onedata/ecas_provider/ECAS_space` folder located under the
