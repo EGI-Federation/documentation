@@ -75,7 +75,7 @@ copyright = "EGI Foundation"
 privacy_policy = "https://www.egi.eu/privacy-policy/"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/EGI-Foundation/documentation"
+github_repo = "https://github.com/EGI-Federation/documentation"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 # github_project_repo = "https://github.com/google/docsy"
 
@@ -111,8 +111,8 @@ navbar_logo = true
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-yes = 'Glad to hear it! Please <a href="https://github.com/EGI-Foundation/documentation/issues/new">tell us how we can improve</a>.'
-no = 'Sorry to hear that. Please <a href="https://github.com/EGI-Foundation/documentation/issues/new">tell us how we can improve</a>.'
+yes = 'Glad to hear it! Please <a href="https://github.com/EGI-Federation/documentation/issues/new">tell us how we can improve</a>.'
+no = 'Sorry to hear that. Please <a href="https://github.com/EGI-Federation/documentation/issues/new">tell us how we can improve</a>.'
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
@@ -134,7 +134,7 @@ no = 'Sorry to hear that. Please <a href="https://github.com/EGI-Foundation/docu
 #  Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
   name = "GitHub"
-  url = "https://github.com/EGI-Foundation"
+  url = "https://github.com/EGI-Federation"
   icon = "fab fa-github"
   desc = "Development takes place here!"
 # [[params.links.developer]]
@@ -150,7 +150,7 @@ no = 'Sorry to hear that. Please <a href="https://github.com/EGI-Foundation/docu
 # XXX Maybe useful to add back this somewhere
 # [[menu.shortcuts]]
 # name = "<i class='fa fa-cloud-download'></i> <label>Download</label>"
-# url = "https://github.com/EGI-Foundation/EGI-Foundation.github.io/archive/master.zip"
+# url = "https://github.com/EGI-Federation/EGI-Federation.github.io/archive/master.zip"
 # weight = 11
 
 [markup]

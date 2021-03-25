@@ -39,7 +39,7 @@ In order to be able to send code update to the repository you need to:
 
 In this process three git repositories are used:
 
-- The _upstream_ repository: EGI-Foundation/documentation
+- The _upstream_ repository: EGI-Federation/documentation
 - Your fork, also named _origin_: <your_username>/documentation
 - A local clone of your fork, containing references to your fork, its _origin_
   and to the _upstream_ repository
@@ -96,7 +96,7 @@ This command will fork the repository to your GitHub account and clone a local
 copy for you to work with.
 
 ```sh
-gh repo fork EGI-Foundation/documentation
+gh repo fork EGI-Federation/documentation
 ```
 
 ### Cloning the fork
@@ -116,15 +116,15 @@ the origin and upstream repositories.
 $ git remote -v
 origin  git@github.com:<your_username>/documentation (fetch)
 origin  git@github.com:<your_username>/documentation (push)
-upstream        git@github.com:EGI-Foundation/documentation.git (fetch)
-upstream        git@github.com:EGI-Foundation/documentation.git (push)
+upstream        git@github.com:EGI-Federation/documentation.git (fetch)
+upstream        git@github.com:EGI-Federation/documentation.git (push)
 ```
 
 ## Running the site locally
 
 The documentation webiste is built from the source files using
 [Hugo](https://gohugo.io/). The repository
-[README](https://github.com/EGI-Foundation/documentation/blob/master/README.md)
+[README](https://github.com/EGI-Federation/documentation/blob/master/README.md)
 can be used as a reference for building instructions.
 
 ### Requirements
