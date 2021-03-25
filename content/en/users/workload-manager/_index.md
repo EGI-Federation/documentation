@@ -343,6 +343,7 @@ properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 #### Managing simple jobs
 
 <!-- markdownlint-disable line-length -->
+
 | DIRAC commands             | Note                                               |
 | -------------------------- | -------------------------------------------------- |
 | dirac-wms-job-status       | To check the status of a job                       |
@@ -350,6 +351,7 @@ properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 | dirac-wms-job-logging-info | To retrieve history of transitions for a DIRAC job |
 | dirac-wms-job-get-output   | To retrieve the job output                         |
 | dirac-wms-job-submit       | To submit a job                                    |
+
 <!-- markdownlint-enable line-length -->
 
 DIRAC commands
@@ -426,6 +428,15 @@ command:
 ```sh
 dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 ```
+
+#### List of supported VOs
+
+- acc-comp.egi.eu, beapps, compchem, eiscat.se, eli-laser.eu,
+- eli-beams.eu, eng.vo.ibergrid.eu, enmr.eu, fedcloud.egi.eu,
+- hungrid, km3net.org, lofar, opencoast.eosc-hub.eu, see,
+- training.egi.eu, virgo, vlemed, vo.formation.idgrilles.fr,
+- vo.plgrid.pl, vo.access.egi.eu, auger, biomed, bitp,
+- eng_cloud and breakseq_cloud
 
 #### More details
 

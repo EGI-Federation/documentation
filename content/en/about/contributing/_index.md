@@ -22,7 +22,7 @@ contribute are also welcome.
 ## Feedback and Questions
 
 If you wish to discuss anything related to the project, please open a
-[GitHub issue](https://github.com/EGI-Foundation/documentation/issues/new) or
+[GitHub issue](https://github.com/EGI-Federation/documentation/issues/new) or
 start a topic on the [EGI Community Forum](https://community.egi.eu). The
 maintainers will sometimes move issues off from GitHub to the community forum if
 it is thought that longer, more open-ended discussion would be beneficial,
@@ -49,7 +49,7 @@ made in two ways:
 {{% alert title="Note" color="info" %}} If you need to discuss your change
 beforehand, like for adding a new section of if you have any doubts, you can ask
 the maintainers it by creating a
-[GitHub issue](https://github.com/EGI-Foundation/documentation/issues/new).
+[GitHub issue](https://github.com/EGI-Federation/documentation/issues/new).
 {{% /alert %}}
 
 Before proposing a contribution via the so-called Pull Request (PR), ideally
@@ -59,7 +59,7 @@ contributions.
 
 1. Fork the project if you have not, and commit changes to a git branch.
    Documentation on building the documentation locally is available in the
-   [README.md](https://github.com/EGI-Foundation/documentation/blob/master/README.md)
+   [README.md](https://github.com/EGI-Federation/documentation/blob/master/README.md)
 1. Create a GitHub Pull Request for your change, following the instructions in
    the Pull Request template.
 1. Perform a [Code Review](#code-review-process) with the maintainers on the
