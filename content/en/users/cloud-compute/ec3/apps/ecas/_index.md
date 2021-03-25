@@ -247,14 +247,14 @@ under the `/root` folder.
 The Grafana-based monitoring system provides two dashboards in order to monitor
 the ECAS cluster both at system and application level.
 
-* The **infrastructure dashboard** provides information about the percentage
+- The **infrastructure dashboard** provides information about the percentage
 of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).
 
 front-end node             |  working node
 :-------------------------:|:-------------------------:
 ![server](ecas-infra-dashboard-server.png)  |  ![wn](ecas-infra-dashboard-io.png)
 
-* The **application dashboard** shows information about which operator/workflow
+- The **application dashboard** shows information about which operator/workflow
 is being executed and its current execution status and provides aggregated
 information over time (e.g. number of total, completed and failed workflows/tasks,
 hourly weighted average of running cores).
