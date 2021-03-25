@@ -12,6 +12,9 @@ jobs:
       # Checks out a copy of your repository on the ubuntu-latest machine
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          # Full git history needed to get proper list of changed files
+          fetch-depth: 0
 
       # Runs the Super-Linter action
       # Checking all code base but without throwing errors
