@@ -431,12 +431,12 @@ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 
 #### List of supported VOs
 
-- acc-comp.egi.eu, beapps, compchem, eiscat.se, eli-laser.eu,
-- eli-beams.eu, eng.vo.ibergrid.eu, enmr.eu, fedcloud.egi.eu,
-- hungrid, km3net.org, lofar, opencoast.eosc-hub.eu, see,
-- training.egi.eu, virgo, vlemed, vo.formation.idgrilles.fr,
-- vo.plgrid.pl, vo.access.egi.eu, auger, biomed, bitp,
-- eng_cloud and breakseq_cloud
+* acc-comp.egi.eu, beapps, compchem, eiscat.se, eli-laser.eu,
+* eli-beams.eu, eng.vo.ibergrid.eu, enmr.eu, fedcloud.egi.eu,
+* hungrid, km3net.org, lofar, opencoast.eosc-hub.eu, see,
+* training.egi.eu, virgo, vlemed, vo.formation.idgrilles.fr,
+* vo.plgrid.pl, vo.access.egi.eu, auger, biomed, bitp,
+* eng_cloud and breakseq_cloud
 
 #### More details
 
