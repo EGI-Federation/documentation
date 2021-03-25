@@ -250,7 +250,7 @@ the ECAS cluster both at system and application level.
 1. The **infrastructure dashboard** provides information about the percentage 
 of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).
 
-front-end node             |  workind node
+front-end node             |  working node
 :-------------------------:|:-------------------------:
 ![](ecas-infra-dashboard-server.png)  |  ![](ecas-infra-dashboard-io.png)
 
