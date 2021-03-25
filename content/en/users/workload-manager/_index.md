@@ -29,32 +29,32 @@ by [CYFRONET](http://www.cyfronet.krakow.pl/).
 
 The EGI Workload Manager:
 
-* Maximizes usage efficiency by choosing appropriately computing and storage
+- Maximizes usage efficiency by choosing appropriately computing and storage
   resources on real-time.
 
-* Provides a large-scale distributed environment to manage and handle data
+- Provides a large-scale distributed environment to manage and handle data
   storage, data movement, accessing and processing.
 
-* Handles job submission and workload distribution in a transparent way.
+- Handles job submission and workload distribution in a transparent way.
 
-* Improves the general job throughput compared with native management of EGI
+- Improves the general job throughput compared with native management of EGI
   grid or cloud computing resources.
 
-* Offers pilot-based task scheduling method, that submits pilot jobs to
+- Offers pilot-based task scheduling method, that submits pilot jobs to
   resources to check the execution environment before to start the user's jobs.
   From a technical standpoint, the user's job description is delivered to the
   pilot, which prepares its execution environment and executes the user
   application. The pilot-based scheduling feature solves many problems of using
   heterogeneity and unstable distributed computing resources.
 
-* Includes easy extensions to customize the environment checks to address the
+- Includes easy extensions to customize the environment checks to address the
   needs of a particular community. Users can choose appropriately computing and
   storage resources maximising their usage efficiency for particular user
   requirements.
 
-* Handles different storage supporting both cloud and grid capacity.
+- Handles different storage supporting both cloud and grid capacity.
 
-* Provides a user-friendly interface that allows users to choose among different
+- Provides a user-friendly interface that allows users to choose among different
   DIRAC services.
 
 ## Target User Groups
@@ -62,8 +62,8 @@ The EGI Workload Manager:
 The service suits for the established Virtual Organization communities, long
 tail of users, SMEs and Industry
 
-* EGI and EGI Federation participants
-* Research communities
+- EGI and EGI Federation participants
+- Research communities
 
 ## Architecture
 
@@ -71,7 +71,7 @@ The EGI Workload Manager service is a cluster of DIRAC services running on EGI
 resources (HTC, CLOUD, HPC) supporting multi-VO. All the DIRAC services are at
 or above TRL8. The main service components include:
 
-* Workload Management System (WMS) architecture is composed of multiple loosely
+- Workload Management System (WMS) architecture is composed of multiple loosely
   coupled components working together in a collaborative manner with the help of
   a common Configuration Services ensuring reliable service discovery
   functionality. The modular architecture allows to easily incorporate new types
@@ -80,9 +80,9 @@ or above TRL8. The main service components include:
   geographically distributed servers which increases the overall reliability and
   excellent scalability properties.
 
-* REST server providing language neutral interface to DIRAC service.
+- REST server providing language neutral interface to DIRAC service.
 
-* Web portal provides simple and intuitive access to most of the DIRAC
+- Web portal provides simple and intuitive access to most of the DIRAC
   functionalities including management of computing tasks and distributed data.
   It also has a modular architecture designed specifically to allow easy
   extension for the needs of particular applications.
@@ -169,17 +169,17 @@ To access the EGI Workload Manager open a web browser to:
 
 The EGI Workload Manager service Web portal
 
-* If you are a new user, you can see the welcome page where you can find links
+- If you are a new user, you can see the welcome page where you can find links
   to user documentations.
 
-* _VO options_: you can switch to different VOs that you have membership.
+- _VO options_: you can switch to different VOs that you have membership.
 
-* _Log In options_: the service supports both X.509, Certificate and Check-in
+- _Log In options_: the service supports both X.509, Certificate and Check-in
   log-in.
 
-* _View options_: allow to choose either desktop or tabs layout.
+- _View options_: allow to choose either desktop or tabs layout.
 
-* _Menu_: a list of tools that enable the selected VO.
+- _Menu_: a list of tools that enable the selected VO.
 
 #### Upload Proxy
 
@@ -431,27 +431,27 @@ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 
 #### List of supported VOs
 
-* acc-comp.egi.eu, beapps, compchem, eiscat.se, eli-laser.eu,
-* eli-beams.eu, eng.vo.ibergrid.eu, enmr.eu, fedcloud.egi.eu,
-* hungrid, km3net.org, lofar, opencoast.eosc-hub.eu, see,
-* training.egi.eu, virgo, vlemed, vo.formation.idgrilles.fr,
-* vo.plgrid.pl, vo.access.egi.eu, auger, biomed, bitp,
-* eng_cloud and breakseq_cloud
+- acc-comp.egi.eu, beapps, compchem, eiscat.se, eli-laser.eu,
+- eli-beams.eu, eng.vo.ibergrid.eu, enmr.eu, fedcloud.egi.eu,
+- hungrid, km3net.org, lofar, opencoast.eosc-hub.eu, see,
+- training.egi.eu, virgo, vlemed, vo.formation.idgrilles.fr,
+- vo.plgrid.pl, vo.access.egi.eu, auger, biomed, bitp,
+- eng_cloud and breakseq_cloud
 
 #### More details
 
-* JDL language and simple jobs submission:
+- JDL language and simple jobs submission:
   [JDLs and Job Management](http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JDLsAndJobManagementBasic/index.html)
-* Basic Submitting Parametric and MPI jobs, using DIRAC API:
+- Basic Submitting Parametric and MPI jobs, using DIRAC API:
   [Advanced Job Management](http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html)
-* [Past tutorials](https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11)
+- [Past tutorials](https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11)
 
 #### Technical Support
 
-* DIRAC User Guide:
+- DIRAC User Guide:
   [https://dirac.readthedocs.io/en/latest/UserGuide/](https://dirac.readthedocs.io/en/latest/UserGuide/)
 
-* For technical issues and bug reports, please submit a ticket in
+- For technical issues and bug reports, please submit a ticket in
   [GGUS](https://ggus.eu/?mode=ticket_submit), in `Assign to support unit`,
   indicate:\
   `EGI Services and Service Components` > `Workload Manager (DIRAC)`.
