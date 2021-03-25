@@ -42,8 +42,8 @@ This guide will show how to:
 ## Deploy an ECAS cluster with EC3
 
 In the latest release of the EC3 platform, tailored to support the EGI 
-[Applications on Demand (AoD) service](../../../../applications-on-demand), a new
-Ansible receipt is now available for researchers interested to deploy ECAS
+[Applications on Demand (AoD) service](../../../../applications-on-demand), a
+new Ansible receipt is now available for researchers interested to deploy ECAS
 cluster on the EGI Infrastuctrure. Additional details on how to configure and
 deploy an ECAS cluster on EGI resources are provided in the next sections.
 
@@ -212,50 +212,60 @@ lines) located under the `/root` folder.
 
 From JupyterHub in ECAS you can do several things such as:
 
-- create and run a Jupyter Notebook exploiting PyOphidia and other Python libraries
-  for data manipulation, analysis and visualization (e.g. NumPy, matplotlib, Cartopy);
+- create and run a Jupyter Notebook exploiting PyOphidia and other Python 
+libraries for data manipulation, analysis and visualization (e.g. NumPy, 
+matplotlib, Cartopy);
 - browse the directories, download and update files in the home folder;
 - execute operators and workflows directly from the Ophidia Terminal;
-- access to a read-only data repository hosted in a Onedata space and perform any analysis on this shared data.
+- access to a read-only data repository hosted in a Onedata space and perform 
+any analysis on this shared data.
 
-The ECAS space shared in the ECAS environment through the Onedata services is available at the `onedata/ecas_provider/ECAS_space` folder located under the `/data` directory.
+The ECAS space shared in the ECAS environment through the Onedata services is 
+available at the `onedata/ecas_provider/ECAS_space` folder located under the 
+`/data` directory.
 
 ![ECASspace.](ecas-space.png)
 
 To get started with the ECAS environment capabilities, open the
-`ECAS_Basics.ipynb` notebook available under the `notebooks/` folder in the home
-directory.
+`ECAS_Basics.ipynb` notebook available under the `notebooks/` folder in the 
+home directory.
 
 ![Jupyter.](ecas-jupyter.png)
 
 ### Accessing the Grafana UI
 
-This section will show how to monitor the ECAS environment and the resource usage and get aggregated information over time.
+This section will show how to monitor the ECAS environment and the resource 
+usage and get aggregated information over time.
 
-To access the Grafana monitoring interface, open the browser at `https://<YOUR_CLUSTER_IP>:3000` and log in to the system using the
-*admin* username and the password specified in the `.grafana_pwd` file located under the `/root` folder.
+To access the Grafana monitoring interface, open the browser at 
+`https://<YOUR_CLUSTER_IP>:3000` and log in to the system using the
+*admin* username and the password specified in the `.grafana_pwd` file located 
+under the `/root` folder.
 
 <p align="center"><img src="grafana-login.png" width="50%"></p>
 
-The Grafana-based monitoring system provides two dashboards in order to monitor the ECAS cluster both at system and application level.
+The Grafana-based monitoring system provides two dashboards in order to monitor 
+the ECAS cluster both at system and application level.
 
-1. The **infrastructure dashboard** provides information about the percentage of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).
+1. The **infrastructure dashboard** provides information about the percentage 
+of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).
 
-<table border="0px">
-<tr>
-<td><img src="ecas-infra-dashboard-server.png"></td>
-<td><img src="ecas-infra-dashboard-io.png"></td>
-</tr>
-</table>
+front-end node             |  workind node
+:-------------------------:|:-------------------------:
+![](ecas-infra-dashboard-server.png)  |  ![](ecas-infra-dashboard-io.png)
 
 
-2. The **application dashboard** shows information about which operator/workflow is being executed and its current execution status and provides aggregated information over time (e.g. number of total, completed and failed workflows/tasks, hourly weighted average of running cores).
+2. The **application dashboard** shows information about which operator/workflow 
+is being executed and its current execution status and provides aggregated 
+information over time (e.g. number of total, completed and failed workflows/tasks, 
+hourly weighted average of running cores).
 
 <p align="center"><img src="ecas-application-dashboard.png" width="50%"></p>
 
 ### Destroy the cluster
 
-To destroy the running cluster use the `delete` action from the cluster management page.
+To destroy the running cluster use the `delete` action from the cluster 
+management page.
 
 <p align="center"><img src="ecas-manage.png" width="50%"></p>
 
