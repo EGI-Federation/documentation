@@ -31,6 +31,7 @@ CommonMark.
 - Lines should be wrapped at 80 characters.
 - Sentences should be separated by one space only.
 - Indent is made with tabs not with spaces.
+- Lists should be using `-` not `*`
 - Indent secondary (and following) level lists with 2 spaces.
 - Lines should end with a Line Feed character ("\n")
 - Files should end with a Line Feed character ("\n"), but not including an empty
