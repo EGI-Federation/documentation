@@ -41,7 +41,7 @@ This guide will show how to:
 
 ## Deploy an ECAS cluster with EC3
 
-In the latest release of the EC3 platform, tailored to support the EGI 
+In the latest release of the EC3 platform, tailored to support the EGI
 [Applications on Demand (AoD) service](../../../../applications-on-demand), a
 new Ansible receipt is now available for researchers interested to deploy ECAS
 cluster on the EGI Infrastuctrure. Additional details on how to configure and
@@ -57,7 +57,7 @@ To configure and deploy a Virtual Elastic Cluster using EC3, access the
 [EC3 platform front page](https://servproject.i3m.upv.es/ec3-ltos/index.php) and
 click on the **\"Deploy your cluster\"** link as shown in the figure below:
 
-<p align="center"><img src="ecas-front.png" width="50%"></p>
+(ecas-front.png){width=50% }
 
 A wizard will guide you through the cluster configuration process. Specifically,
 the general wizard steps include:
