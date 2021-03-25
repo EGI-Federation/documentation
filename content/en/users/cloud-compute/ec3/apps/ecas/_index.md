@@ -213,8 +213,8 @@ lines) located under the `/root` folder.
 From JupyterHub in ECAS you can do several things such as:
 
 - create and run a Jupyter Notebook exploiting PyOphidia and other Python
-libraries for data manipulation, analysis and visualization (e.g. NumPy,
-matplotlib, Cartopy);
+  libraries for data manipulation, analysis and visualization (e.g. NumPy,
+  matplotlib, Cartopy);
 - browse the directories, download and update files in the home folder;
 - execute operators and workflows directly from the Ophidia Terminal;
 - access to a read-only data repository hosted in a Onedata space and perform
