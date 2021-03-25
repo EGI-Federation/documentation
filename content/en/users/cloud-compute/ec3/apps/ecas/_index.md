@@ -57,7 +57,7 @@ To configure and deploy a Virtual Elastic Cluster using EC3, access the
 [EC3 platform front page](https://servproject.i3m.upv.es/ec3-ltos/index.php) and
 click on the **\"Deploy your cluster\"** link as shown in the figure below:
 
-(ecas-front.png){width=50% }
+(ecas-front.png){ width=50% }
 
 A wizard will guide you through the cluster configuration process. Specifically,
 the general wizard steps include:
