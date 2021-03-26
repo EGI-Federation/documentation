@@ -97,7 +97,7 @@ There are several options to access the service:
 
 1. Members of a scientific community whose resources pool is already configured
    in the EGI Workload Manager instance > can use the
-   [EGI Workload Manager web portal](https://dirac.egi.eu:9443/DIRAC/) to access
+   [EGI Workload Manager web portal](https://dirac.egi.eu/DIRAC/) to access
    the service, or use
    [DIRAC Client](https://wiki.egi.eu/wiki/HOWTO22#Using_DIRAC_through_the_client).
 1. Individual researchers who want to do some number crunching for a limited
