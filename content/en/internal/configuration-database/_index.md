@@ -38,7 +38,7 @@ information about the infrastructure topology.
 | Release notes                | [Release notes](https://github.com/GOCDB/gocdb/releases)              |
 | Issue tracker for developers | https://github.com/GOCDB/gocdb/issues                                 |
 | Source code                  | https://github.com/GOCDB                                              |
-| License                      | gLite/Apache 2                                                        |
-| Privacy Policy               | https://wiki.egi.eu/wiki/GOCDB/data_privacy                           |
+| License                      | Apache 2                                                              |
+| Privacy Policy               | https://goc.egi.eu/privacy.html                                       |
 
 <!-- markdownlint-enable line-length no-bare-urls -->
