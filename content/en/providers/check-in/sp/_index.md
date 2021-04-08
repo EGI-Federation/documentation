@@ -675,7 +675,7 @@ user authorisation:
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduperson_entitlement` |
 | [Capabilities](#capabilities)                                                                   | `eduperson_entitlement` |
 | [GOCDB roles](#gocdb-roles)                                                                     | `eduperson_entitlement` |
-| [Level of Assurance (LoA)](#level-of-assurance)                                                 | `acr`                   |
+| [Level of Assurance (LoA)](#level-of-assurance)                                                 | `eduperson_assurance`   |
 
 <!-- markdownlint-enable line-length -->
 
