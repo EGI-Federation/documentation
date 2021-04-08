@@ -224,6 +224,7 @@ attributes that are relevant for user authorisation:
 | ----------------------------------------------------------------------------------------------- | ---------------------- |
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduPersonEntitlement` |
 | [Capabilities](#capabilities)                                                                   | `eduPersonEntitlement` |
+| [GOCDB roles](#gocdb-roles)                                                                     | `eduPersonEntitlement` |
 | [Level of Assurance (LoA)](#level-of-assurance)                                                 | `eduPersonAssurance`   |
 
 <!-- markdownlint-enable line-length -->
@@ -673,6 +674,7 @@ user authorisation:
 | ----------------------------------------------------------------------------------------------- | ----------------------- |
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduperson_entitlement` |
 | [Capabilities](#capabilities)                                                                   | `eduperson_entitlement` |
+| [GOCDB roles](#gocdb-roles)                                                                     | `eduperson_entitlement` |
 | [Level of Assurance (LoA)](#level-of-assurance)                                                 | `acr`                   |
 
 <!-- markdownlint-enable line-length -->
@@ -1044,6 +1046,27 @@ connected to Check-in.
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
+#### 10.2 GOCDB Roles
+
+<!-- markdownlint-disable line-length no-inline-html -->
+
+|          attribute name | GOCDB Roles                                                        |
+| ----------------------: | :----------------------------------------------------------------- |
+|         **description** | The user's GOCDB role information expressed as entitlements        |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)          |
+|          **OIDC scope** | `eduperson_entitlement`                                            |
+|       **OIDC claim(s)** | `eduperson_entitlement`                                            |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
+|              **origin** | The roles are managed in GOCDB                                     |
+|             **changes** | Yes                                                                |
+|        **multiplicity** | Multi-valued                                                       |
+|        **availability** | Not always                                                         |
+|             **example** | _urn:mace:egi.eu:goc.egi.eu:xxx:GRIDOPS-yyy:zzz@egi.eu_            |
+|               **notes** | -                                                                  |
+|              **status** | Stable                                                             |
+
+<!-- markdownlint-enable line-length no-inline-html -->
+
 ### 11. Assurance
 
 <!-- markdownlint-disable line-length no-inline-html -->
@@ -1115,6 +1138,7 @@ Check-in in order to control user access to resources:
 1. VO/group membership and role information about the authenticated user
 1. Capabilities
 1. Level of Assurance (LoA)
+1. GOCDB roles
 
 ### VO/group membership and role information
 
@@ -1240,3 +1264,35 @@ the selected authentication mechanism as follows:
 
 - Username/password credentials → Low
 - X.509 certification → Substantial
+
+### GOCDB Roles
+
+#### Background
+
+GOCDB roles, as per [GOCDB documentations](https://wiki.egi.eu/wiki/GOCDB/PI/get_user_method)
+, are encoded (`eduPersonEntitlement` attribute values in SAML or
+`eduperson_entitlement` claim in OIDC). These entitlements are typically used
+to indicate access rights to protected resources. Entitlements are multi-valued
+, with each value formatted as a URN.
+
+#### Syntax
+
+An entitlement value expressing GOCDB roles has the following syntax
+(components enclosed in square brackets are OPTIONAL):
+
+```vim
+urn:mace:egi.eu:goc.egi.eu:<PRIMARY_KEY>:<ON_ENTITY>:<USER_ROLE>@egi.eu
+```
+
+where:
+
+- `<PRIMARY_KEY>` is the primary key for the user role, e.g. "123G0"
+- `<ON_ENTITY>` is the name of the entity on which the user role applies to,
+  e.g. "GRIDOPS-GOCDB"
+- `<USER_ROLE>` is the user's role, e.g. "Site Operations Manager"
+
+**Example:**
+
+```vim
+urn:mace:egi.eu:goc.egi.eu:100453G0:GRIDOPS-CheckIn:Site+Administrator@egi.eu
+```
