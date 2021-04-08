@@ -223,6 +223,7 @@ attributes that are relevant for user authorisation:
 | Description                                                                                     | SAML Attribute         |
 | ----------------------------------------------------------------------------------------------- | ---------------------- |
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduPersonEntitlement` |
+| [Capabilities](#capabilities)                                                                   | `eduPersonEntitlement` |
 | [Level of Assurance (LoA)](#level-of-assurance)                                                 | `eduPersonAssurance`   |
 
 <!-- markdownlint-enable line-length -->
@@ -671,6 +672,7 @@ user authorisation:
 | Description                                                                                     | OIDC Claim              |
 | ----------------------------------------------------------------------------------------------- | ----------------------- |
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduperson_entitlement` |
+| [Capabilities](#capabilities)                                                                   | `eduperson_entitlement` |
 | [Level of Assurance (LoA)](#level-of-assurance)                                                 | `acr`                   |
 
 <!-- markdownlint-enable line-length -->
@@ -1021,6 +1023,27 @@ connected to Check-in.
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
+#### 10.1 Capabilities
+
+<!-- markdownlint-disable line-length no-inline-html -->
+
+|          attribute name | Capabilities                                                                                                                                                                                                                             |
+| ----------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | This attribute describes the resource or child-resource a user is allowed to access, optionally specifying certain actions the user is entitled to perform, as described in [AARC-G027](https://aarc-community.org/guidelines/aarc-g027/)|
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                                                                                                                                                                                |
+|          **OIDC scope** | `eduperson_entitlement`                                                                                                                                                                                                                  |
+|       **OIDC claim(s)** | `eduperson_entitlement`                                                                                                                                                                                                                  |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                                                                       |
+|              **origin** | Capabilities are managed by Check-in                                                                                                                                                                                                     |
+|             **changes** | Yes                                                                                                                                                                                                                                      |
+|        **multiplicity** | Multi-valued                                                                                                                                                                                                                             |
+|        **availability** | Not always                                                                                                                                                                                                                               |
+|             **example** | _urn:mace:egi.eu:res:rcauth#aai.egi.eu_                                                                                                                                                                                                  |
+|               **notes** | -                                                                                                                                                                                                                                        |
+|              **status** | Stable                                                                                                                                                                                                                                   |
+
+<!-- markdownlint-enable line-length no-inline-html -->
+
 ### 11. Assurance
 
 <!-- markdownlint-disable line-length no-inline-html -->
@@ -1090,6 +1113,7 @@ The following information about the authenticated user can be provided by EGI
 Check-in in order to control user access to resources:
 
 1. VO/group membership and role information about the authenticated user
+1. Capabilities
 1. Level of Assurance (LoA)
 
 ### VO/group membership and role information
@@ -1144,6 +1168,45 @@ urn:mace:egi.eu:<GROUP-AUTHORITY>:[<GROUP>[:<SUBGROUP>:…]]:<ROLE>@<VO>
 
 ```vim
 urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu
+```
+
+### Capabilities
+
+#### Background
+
+The user's capability information is encoded in entitlements
+(`eduPersonEntitlement` attribute values in SAML or `eduperson_entitlement`
+claim in OIDC). These entitlements are typically used to indicate access rights
+to protected resources. Entitlements are multi-valued, with each value formatted
+as a URN following the syntax defined in [AARC-G027](https://aarc-community.org/guidelines/aarc-g027/).
+
+#### Syntax
+
+An entitlement value expressing group membership and role information has the
+following syntax (components enclosed in square brackets are OPTIONAL):
+
+```vim
+urn:mace:egi.eu:group:<GROUP>[:<SUBGROUP>*][:role=<ROLE>]#<GROUP-AUTHORITY>
+```
+
+where:
+
+- `<GROUP>` is the name of a VO, research collaboration or a top level arbitrary
+  group. `<GROUP>` names are unique within the `urn:mace:egi.eu:group`
+  namespace;
+- zero or more `<SUBGROUP>` components represent the hierarchy of subgroups in
+  the `<GROUP>`; specifying sub-groups is optional
+- the optional `<ROLE>` component is scoped to the rightmost (sub)group; if no
+  group information is specified, the role applies to the VO
+- `<GROUP-AUTHORITY>` is a non-empty string that indicates the authoritative
+  source for the entitlement value. For example, it can be the FQDN of the group
+  management system that is responsible for the identified group membership
+  information
+
+**Example:**
+
+```vim
+urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 ```
 
 ### Level of Assurance
