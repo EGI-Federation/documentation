@@ -1000,13 +1000,13 @@ connected to Check-in.
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
-### 10. Entitlements
+### 10. Groups
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
-|          attribute name | Entitlements                                                              |
+|          attribute name | Groups                                                                    |
 | ----------------------: | :------------------------------------------------------------------------ |
-|         **description** | The user's entitlements expressed as group/VO membership/role information |
+|         **description** | The user's group/VO membership/role information expressed as entitlements |
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                 |
 |          **OIDC scope** | `eduperson_entitlement`                                                   |
 |       **OIDC claim(s)** | `eduperson_entitlement`                                                   |
