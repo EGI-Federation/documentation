@@ -225,7 +225,7 @@ attributes that are relevant for user authorisation:
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduPersonEntitlement` |
 | [Capabilities](#capabilities)                                                                   | `eduPersonEntitlement` |
 | [GOCDB roles](#gocdb-roles)                                                                     | `eduPersonEntitlement` |
-| [Level of Assurance (LoA)](#level-of-assurance)                                                 | `eduPersonAssurance`   |
+| [Identity Assurance](#identity-assurance)                                                       | `eduPersonAssurance`   |
 
 <!-- markdownlint-enable line-length -->
 
@@ -675,7 +675,7 @@ user authorisation:
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduperson_entitlement` |
 | [Capabilities](#capabilities)                                                                   | `eduperson_entitlement` |
 | [GOCDB roles](#gocdb-roles)                                                                     | `eduperson_entitlement` |
-| [Level of Assurance (LoA)](#level-of-assurance)                                                 | `eduperson_assurance`   |
+| [Identity Assurance](#identity-assurance)                                                       | `eduperson_assurance`   |
 
 <!-- markdownlint-enable line-length -->
 
@@ -1137,7 +1137,7 @@ Check-in in order to control user access to resources:
 
 1. VO/group membership and role information about the authenticated user
 1. Capabilities
-1. Level of Assurance (LoA)
+1. Identity Assurance
 1. GOCDB roles
 
 ### VO/group membership and role information
@@ -1233,13 +1233,13 @@ where:
 urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 ```
 
-### Level of Assurance
+### Identity Assurance
 
 Based on the authentication method selected by the user, the EGI proxy assigns a
-Level of Assurance (LoA), which is conveyed to the SP through both the
+Identity Assurance, which is conveyed to the SP through both the
 `eduPersonAssurance` attribute and the Authentication Context Class
 (`AuthnContextClassRef`) of the SAML authentication response. EGI Check-in uses
-Assurance Profiles which distinguish between three Level of Assurance (LoA) levels,
+Assurance Profiles which distinguish between three Identity Assurance levels,
 similarly to the [eID Assurance Framework (eIDAF)](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_235_R_0002).
 Each level is represented by a URI as follows:
 
