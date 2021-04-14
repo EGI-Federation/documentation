@@ -1029,20 +1029,20 @@ connected to Check-in.
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
-|          attribute name | Capabilities                                                                                                                                                                                                                             |
-| ----------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|         **description** | This attribute describes the resource or child-resource a user is allowed to access, optionally specifying certain actions the user is entitled to perform, as described in [AARC-G027](https://aarc-community.org/guidelines/aarc-g027/)|
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                                                                                                                                                                                |
-|          **OIDC scope** | `eduperson_entitlement`                                                                                                                                                                                                                  |
-|       **OIDC claim(s)** | `eduperson_entitlement`                                                                                                                                                                                                                  |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                                                                       |
-|              **origin** | Capabilities are managed by Check-in                                                                                                                                                                                                     |
-|             **changes** | Yes                                                                                                                                                                                                                                      |
-|        **multiplicity** | Multi-valued                                                                                                                                                                                                                             |
-|        **availability** | Not always                                                                                                                                                                                                                               |
-|             **example** | _urn:mace:egi.eu:res:rcauth#aai.egi.eu_                                                                                                                                                                                                  |
-|               **notes** | -                                                                                                                                                                                                                                        |
-|              **status** | Stable                                                                                                                                                                                                                                   |
+|          attribute name | Capabilities                                                                                                                                                                                                                              |
+| ----------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | This attribute describes the resource or child-resource a user is allowed to access, optionally specifying certain actions the user is entitled to perform, as described in [AARC-G027](https://aarc-community.org/guidelines/aarc-g027/) |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                                                                                                                                                                                 |
+|          **OIDC scope** | `eduperson_entitlement`                                                                                                                                                                                                                   |
+|       **OIDC claim(s)** | `eduperson_entitlement`                                                                                                                                                                                                                   |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                                                                        |
+|              **origin** | Capabilities are managed by Check-in                                                                                                                                                                                                      |
+|             **changes** | Yes                                                                                                                                                                                                                                       |
+|        **multiplicity** | Multi-valued                                                                                                                                                                                                                              |
+|        **availability** | Not always                                                                                                                                                                                                                                |
+|             **example** | _urn:mace:egi.eu:res:rcauth#aai.egi.eu_                                                                                                                                                                                                   |
+|               **notes** | -                                                                                                                                                                                                                                         |
+|              **status** | Stable                                                                                                                                                                                                                                    |
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
@@ -1071,20 +1071,20 @@ connected to Check-in.
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
-|  attribute name | Assurance                                        |
-| --------------: | :----------------------------------------------- |
-| **description** | Assurance of the identity of the user, following [REFEDS Assurance Framework (RAF)](https://refeds.org/assurance) and the [EGI AAI Assurance Profiles](https://docs.egi.eu/providers/check-in/sp/#level-of-assurance). The following RAF values are qualified and automatically set for all Community identities:<ul><li>$PREFIX$</li><li>$PREFIX$/ID/unique</li><li>$PREFIX$/ID/eppn-unique-no-reassign</li><li>$PREFIX$/IAP/low</li><li>$PREFIX$/ATP/ePA-1m</li><li>$PREFIX$/ATP/ePA-1d</li></ul>Following RAF values are set if the currently used authentication provider asserts (or otherwise qualifies to) them:</br><ul><li>$PREFIX$/IAP/medium</li><li>$PREFIX$/IAP/high</li></ul>The following compound profiles are asserted if the user qualifies to them</br><ul><li>$PREFIX$/profile/cappuccino</li><li>$PREFIX$/profile/espresso</li></ul> |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.11` (eduPersonAssurance)           |
-|          **OIDC scope** | `eduperson_assurance`                                              |
-|       **OIDC claim(s)** | `eduperson_assurance`                                              |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
-|              **origin** | Check-in assigns this attribute on user registration               |
-|             **changes** | Yes                                                                |
-|        **multiplicity** | Multi-valued                                                       |
-|        **availability** | Not always                                                         |
-|             **example** | _[```https://aai.egi.eu/LoA#Low```, ```https://refeds.org/assurance/IAP/low```]_                                     |
-|               **notes** | -                                                                  |
-|              **status** | Stable                                                             |
+|          attribute name | Assurance                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ----------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | Assurance of the identity of the user, following [REFEDS Assurance Framework (RAF)](https://refeds.org/assurance) and the [EGI AAI Assurance Profiles](https://docs.egi.eu/providers/check-in/sp/#level-of-assurance). The following RAF values are qualified and automatically set for all Community identities:<ul><li>$PREFIX$</li><li>$PREFIX$/ID/unique</li><li>$PREFIX$/ID/eppn-unique-no-reassign</li><li>$PREFIX$/IAP/low</li><li>$PREFIX$/ATP/ePA-1m</li><li>$PREFIX$/ATP/ePA-1d</li></ul>Following RAF values are set if the currently used authentication provider asserts (or otherwise qualifies to) them:</br><ul><li>$PREFIX$/IAP/medium</li><li>$PREFIX$/IAP/high</li></ul>The following compound profiles are asserted if the user qualifies to them</br><ul><li>$PREFIX$/profile/cappuccino</li><li>$PREFIX$/profile/espresso</li></ul> |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.11` (eduPersonAssurance)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|          **OIDC scope** | `eduperson_assurance`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|       **OIDC claim(s)** | `eduperson_assurance`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|              **origin** | Check-in assigns this attribute on user registration                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|             **changes** | Yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|        **multiplicity** | Multi-valued                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|        **availability** | Not always                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|             **example** | _[```https://aai.egi.eu/LoA#Low```, ```https://refeds.org/assurance/IAP/low```]_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|               **notes** | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|              **status** | Stable                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
@@ -1202,7 +1202,8 @@ The user's capability information is encoded in entitlements
 (`eduPersonEntitlement` attribute values in SAML or `eduperson_entitlement`
 claim in OIDC). These entitlements are typically used to indicate access rights
 to protected resources. Entitlements are multi-valued, with each value formatted
-as a URN following the syntax defined in [AARC-G027](https://aarc-community.org/guidelines/aarc-g027/).
+as a URN following the syntax defined in
+[AARC-G027](https://aarc-community.org/guidelines/aarc-g027/).
 
 #### Syntax
 
@@ -1240,7 +1241,8 @@ Identity Assurance, which is conveyed to the SP through both the
 `eduPersonAssurance` attribute and the Authentication Context Class
 (`AuthnContextClassRef`) of the SAML authentication response. EGI Check-in uses
 Assurance Profiles which distinguish between three Identity Assurance levels,
-similarly to the [eID Assurance Framework (eIDAF)](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_235_R_0002).
+similarly to the
+[eID Assurance Framework (eIDAF)](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_235_R_0002).
 Each level is represented by a URI as follows:
 
 - **Low**: Authentication through a social identity provider or other low
@@ -1250,11 +1252,13 @@ Each level is represented by a URI as follows:
 - **High**: Substantial + multi-factor authn (not yet supported, TBD):
   `https://aai.egi.eu/LoA#High`
 
-Moreover, EGI Check-in follows the [REFEDS Assurance framework (RAF)](https://wiki.refeds.org/display/ASS/REFEDS+Assurance+Framework+ver+1.0).
+Moreover, EGI Check-in follows the
+[REFEDS Assurance framework (RAF)](https://wiki.refeds.org/display/ASS/REFEDS+Assurance+Framework+ver+1.0).
 The EGI Check-in conveys any RAF values provided by the IdP directly to the SP,
-through the aforementioned methods. Furthermore, Check-in will append into the User's
-profile any additional LoA, if the user is eligible for it. For example,
-a user having a Verified Email is eligible for the RAF value ```https://refeds.org/assurance/IAP/low```
+through the aforementioned methods. Furthermore, Check-in will append into the
+User's profile any additional LoA, if the user is eligible for it. For example,
+a user having a Verified Email is eligible for the RAF value
+`https://refeds.org/assurance/IAP/low`
 
 Some EGI SPs have been configured to provide limited access (or not to accept at
 all) credentials with the Low LoA.
@@ -1269,16 +1273,17 @@ the selected authentication mechanism as follows:
 
 #### Background
 
-GOCDB roles, as per [GOCDB documentations](https://wiki.egi.eu/wiki/GOCDB/PI/get_user_method)
-, are encoded (`eduPersonEntitlement` attribute values in SAML or
-`eduperson_entitlement` claim in OIDC). These entitlements are typically used
-to indicate access rights to protected resources. Entitlements are multi-valued
-, with each value formatted as a URN.
+GOCDB roles, as per
+[GOCDB documentations](https://wiki.egi.eu/wiki/GOCDB/PI/get_user_method), are
+encoded (`eduPersonEntitlement` attribute values in SAML or
+`eduperson_entitlement` claim in OIDC). These entitlements are typically used to
+indicate access rights to protected resources. Entitlements are multi-valued,
+with each value formatted as a URN.
 
 #### Syntax
 
-An entitlement value expressing GOCDB roles has the following syntax
-(components enclosed in square brackets are OPTIONAL):
+An entitlement value expressing GOCDB roles has the following syntax (components
+enclosed in square brackets are OPTIONAL):
 
 ```vim
 urn:mace:egi.eu:goc.egi.eu:<PRIMARY_KEY>:<ON_ENTITY>:<USER_ROLE>@egi.eu
