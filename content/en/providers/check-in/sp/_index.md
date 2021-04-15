@@ -1155,7 +1155,7 @@ as a URN.
 An entitlement value expressing group membership and role information has the
 following syntax (components enclosed in square brackets are OPTIONAL):
 
-```vim
+```text
 urn:mace:egi.eu:group:<GROUP>[:<SUBGROUP>*][:role=<ROLE>]#<GROUP-AUTHORITY>
 ```
 
@@ -1175,7 +1175,7 @@ where:
 
 **Example:**
 
-```vim
+```text
 urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 ```
 
@@ -1184,13 +1184,13 @@ urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 An entitlement value expressing group membership and role information has the
 following syntax (components enclosed in square brackets are OPTIONAL):
 
-```vim
+```text
 urn:mace:egi.eu:<GROUP-AUTHORITY>:[<GROUP>[:<SUBGROUP>:…]]:<ROLE>@<VO>
 ```
 
 **Example:**
 
-```vim
+```text
 urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu
 ```
 
@@ -1210,7 +1210,7 @@ as a URN following the syntax defined in
 An entitlement value expressing group membership and role information has the
 following syntax (components enclosed in square brackets are OPTIONAL):
 
-```vim
+```text
 urn:mace:egi.eu:group:<GROUP>[:<SUBGROUP>*][:role=<ROLE>]#<GROUP-AUTHORITY>
 ```
 
@@ -1230,7 +1230,7 @@ where:
 
 **Example:**
 
-```vim
+```text
 urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 ```
 
@@ -1285,7 +1285,7 @@ with each value formatted as a URN.
 An entitlement value expressing GOCDB roles has the following syntax (components
 enclosed in square brackets are OPTIONAL):
 
-```vim
+```text
 urn:mace:egi.eu:goc.egi.eu:<PRIMARY_KEY>:<ON_ENTITY>:<USER_ROLE>@egi.eu
 ```
 
@@ -1298,6 +1298,6 @@ where:
 
 **Example:**
 
-```vim
+```text
 urn:mace:egi.eu:goc.egi.eu:100453G0:GRIDOPS-CheckIn:Site+Administrator@egi.eu
 ```
