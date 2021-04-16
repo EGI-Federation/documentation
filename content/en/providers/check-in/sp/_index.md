@@ -1025,7 +1025,7 @@ connected to Check-in.
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
-#### 10.1. Capabilities
+#### 11. Capabilities
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
@@ -1046,7 +1046,7 @@ connected to Check-in.
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
-#### 10.2. GOCDB Roles
+#### 12. GOCDB Roles
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
@@ -1067,7 +1067,7 @@ connected to Check-in.
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
-### 11. Assurance
+### 13. Assurance
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
@@ -1088,7 +1088,7 @@ connected to Check-in.
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
-### 12. CertEntitlement
+### 14. CertEntitlement
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
@@ -1109,7 +1109,7 @@ connected to Check-in.
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
-### 13. SSH Public Key
+### 15. SSH Public Key
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
