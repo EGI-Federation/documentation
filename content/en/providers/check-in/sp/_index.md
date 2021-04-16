@@ -1019,7 +1019,7 @@ connected to Check-in.
 |             **changes** | Yes                                                                       |
 |        **multiplicity** | Multi-valued                                                              |
 |        **availability** | Not always                                                                |
-|             **example** | _urn:mace:egi.eu:group:vo.test.egi.eu:role=member#aai.egi.eu_             |
+|             **example** | _urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu_                  |
 |               **notes** | -                                                                         |
 |              **status** | Stable                                                                    |
 
@@ -1050,20 +1050,20 @@ connected to Check-in.
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
-|          attribute name | GOCDB Roles                                                        |
-| ----------------------: | :----------------------------------------------------------------- |
-|         **description** | The user's GOCDB role information expressed as entitlements        |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)          |
-|          **OIDC scope** | `eduperson_entitlement`                                            |
-|       **OIDC claim(s)** | `eduperson_entitlement`                                            |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
-|              **origin** | The roles are managed in GOCDB                                     |
-|             **changes** | Yes                                                                |
-|        **multiplicity** | Multi-valued                                                       |
-|        **availability** | Not always                                                         |
-|             **example** | _urn:mace:egi.eu:goc.egi.eu:xxx:GRIDOPS-yyy:zzz@egi.eu_            |
-|               **notes** | -                                                                  |
-|              **status** | Stable                                                             |
+|          attribute name | GOCDB Roles                                                                     |
+| ----------------------: | :------------------------------------------------------------------------------ |
+|         **description** | The user's GOCDB role information expressed as entitlements                     |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                       |
+|          **OIDC scope** | `eduperson_entitlement`                                                         |
+|       **OIDC claim(s)** | `eduperson_entitlement`                                                         |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>              |
+|              **origin** | The roles are managed in GOCDB                                                  |
+|             **changes** | Yes                                                                             |
+|        **multiplicity** | Multi-valued                                                                    |
+|        **availability** | Not always                                                                      |
+|             **example** | _urn:mace:egi.eu:goc.egi.eu:100453G0:GRIDOPS-CheckIn:Site+Administrator@egi.eu_ |
+|               **notes** | -                                                                               |
+|              **status** | Stable                                                                          |
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
@@ -1231,7 +1231,7 @@ where:
 **Example:**
 
 ```text
-urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
+urn:mace:egi.eu:res:rcauth#aai.egi.eu
 ```
 
 ### Identity Assurance
