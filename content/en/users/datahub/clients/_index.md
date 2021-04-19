@@ -105,7 +105,7 @@ the container should run in **privileged** mode. {{% /alert %}}
 ```shell
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
-docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST onedata/oneclient:19.02.0-rc2
+docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST onedata/oneclient:20.02.7
 Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '4138963898952098752'...
 Getting configuration...
 Oneclient has been successfully mounted in '/mnt/oneclient'
@@ -147,7 +147,7 @@ the container should run in **privileged** mode. {{% /alert %}}
 ```shell
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
-docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:19.02.0-rc2
+docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:20.02.7
 root@aca612a84fb4:/tmp# oneclient /mnt/oneclient
 Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '1641165171427694510'...
 Getting configuration...
@@ -174,7 +174,7 @@ The following variables have to be exported:
   connect to.
 
 ```shell
-curl -sS http://get.onedata.org/oneclient-1902.sh | bash
+curl -sS http://get.onedata.org/oneclient.sh | bash
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
 mkdir /tmp/space
@@ -196,7 +196,7 @@ The following variables have to be exported:
 vagrant init ubuntu/xenial64
 vagrant up
 vagrant ssh
-curl -sS http://get.onedata.org/oneclient-1902.sh | bash
+curl -sS http://get.onedata.org/oneclient.sh | bash
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
 mkdir /tmp/space
