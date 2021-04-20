@@ -46,20 +46,23 @@ Tokens have to be generated from the **EGI DataHub** (Onezone) interface.
 The access tokens can be created and managed using the EGI DataHub web
 interface.
 
+### Environment variables
+
+The sections below assume you have defined the following variables in
+your environment:
+
+- `ONECLIENT_ACCESS_TOKEN`: access token allowing to access **all** the spaces
+- `ONECLIENT_PROVIDER_HOST`: name or IP of the Oneprovider the client should
+  connect to.
+
 ## Installing and testing Oneclient in a docker container
+
+{{% alert title="Important" color="warning" %}} In order to be able to use FUSE,
+the container should run in **privileged** mode. {{% /alert %}}
 
 A quick and simple solution for testing is to install the client on demand in a
 container for a supported Operating System flavor (mainly various CentOS and
 Ubuntu releases).
-
-The following variables have to be exported in the container:
-
-- `ONECLIENT_ACCESS_TOKEN`: access token allowing to access **all** the spaces.
-- `ONECLIENT_PROVIDER_HOST`: name or IP of the Oneprovider the client should
-  connect to.
-
-{{% alert title="Important" color="warning" %}} In order to be able to use FUSE,
-the container should run in **privileged** mode. {{% /alert %}}
 
 ```shell
 docker run -it --privileged centos:7 /bin/bash
@@ -91,15 +94,6 @@ seen on the
 It's possible to use the most recent version by specifying the `latest` tag. We
 also recommend using the same version as shown on the Onezone and Oneprovider
 pages.
-
-The following variables have to be exported to be used in the container:
-
-- `ONECLIENT_ACCESS_TOKEN`: access token allowing to access **all** the spaces.
-- `ONECLIENT_PROVIDER_HOST`: name or IP of the Oneprovider the client should
-  connect to.
-
-{{% alert title="Important" color="warning" %}} In order to be able to use FUSE,
-the container should run in **privileged** mode. {{% /alert %}}
 
 <!-- markdownlint-disable line-length -->
 ```shell
@@ -135,13 +129,6 @@ space.
 
 In order to do this we will open a `bash` shell in the container then we will
 mount manually the Onedata spaces.
-
-- `ONECLIENT_ACCESS_TOKEN`: access token allowing to access **all** the spaces.
-- `ONECLIENT_PROVIDER_HOST`: name or IP of the Oneprovider the client should
-  connect to.
-
-{{% alert title="Important" color="warning" %}} In order to be able to use FUSE,
-the container should run in **privileged** mode. {{% /alert %}}
 
 <!-- markdownlint-disable line-length -->
 ```shell
@@ -185,12 +172,6 @@ oneclient /tmp/space
 
 It\'s possible to quickly test Oneclient using
 [Vagrant](https://www.vagrantup.com/).
-
-The following variables have to be exported:
-
-- `ONECLIENT_ACCESS_TOKEN`: access token allowing to access **all** the spaces.
-- `ONECLIENT_PROVIDER_HOST`: name or IP of the Oneprovider the client should
-  connect to.
 
 ```shell
 vagrant init ubuntu/xenial64
