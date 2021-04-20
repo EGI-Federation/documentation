@@ -1025,7 +1025,7 @@ connected to Check-in.
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
-#### 11. Capabilities
+### 11. Capabilities
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
@@ -1046,7 +1046,7 @@ connected to Check-in.
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
-#### 12. GOCDB Roles
+### 12. GOCDB Roles
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
