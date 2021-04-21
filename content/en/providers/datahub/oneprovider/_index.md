@@ -30,7 +30,6 @@ the OneProvider.
   - The following ports need to be open on the local and site firewall:
     - 80, 443, 9443, 6665 (for data transfer)
 
-
 ## Installation and attach empty storage to the EGI DataHub
 
 The installation of a new OneProvider is performed using the an installation
