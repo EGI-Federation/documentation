@@ -27,8 +27,8 @@ the OneProvider.
 
 ### Network Requirements
 
-  - The following ports need to be open on the local and site firewall:
-    - 80, 443, 9443, 6665 (for data transfer)
+- The following ports need to be open on the local and site firewall:
+  - 80, 443, 9443, 6665 (for data transfer)
 
 ## Installation and attach empty storage to the EGI DataHub
 
