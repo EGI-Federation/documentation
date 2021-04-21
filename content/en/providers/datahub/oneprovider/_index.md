@@ -26,6 +26,7 @@ the OneProvider.
   - Low latency network
 
 ### Network Requirements
+
   - The following ports need to be open on the local and site firewall:
     - 80, 443, 9443, 6665(for data transfer)
 
