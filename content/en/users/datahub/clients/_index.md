@@ -46,20 +46,23 @@ Tokens have to be generated from the **EGI DataHub** (Onezone) interface.
 The access tokens can be created and managed using the EGI DataHub web
 interface.
 
+### Environment variables
+
+The sections below assume you have defined the following variables in
+your environment:
+
+- `ONECLIENT_ACCESS_TOKEN`: access token allowing to access **all** the spaces
+- `ONECLIENT_PROVIDER_HOST`: name or IP of the Oneprovider the client should
+  connect to.
+
 ## Installing and testing Oneclient in a docker container
+
+{{% alert title="Important" color="warning" %}} In order to be able to use FUSE,
+the container should run in **privileged** mode. {{% /alert %}}
 
 A quick and simple solution for testing is to install the client on demand in a
 container for a supported Operating System flavor (mainly various CentOS and
 Ubuntu releases).
-
-The following variables have to be exported in the container:
-
-- `ONECLIENT_ACCESS_TOKEN`: access token allowing to access **all** the spaces.
-- `ONECLIENT_PROVIDER_HOST`: name or IP of the Oneprovider the client should
-  connect to.
-
-{{% alert title="Important" color="warning" %}} In order to be able to use FUSE,
-the container should run in **privileged** mode. {{% /alert %}}
 
 ```shell
 docker run -it --privileged centos:7 /bin/bash
@@ -92,20 +95,11 @@ It's possible to use the most recent version by specifying the `latest` tag. We
 also recommend using the same version as shown on the Onezone and Oneprovider
 pages.
 
-The following variables have to be exported to be used in the container:
-
-- `ONECLIENT_ACCESS_TOKEN`: access token allowing to access **all** the spaces.
-- `ONECLIENT_PROVIDER_HOST`: name or IP of the Oneprovider the client should
-  connect to.
-
-{{% alert title="Important" color="warning" %}} In order to be able to use FUSE,
-the container should run in **privileged** mode. {{% /alert %}}
-
 <!-- markdownlint-disable line-length -->
 ```shell
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
-docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST onedata/oneclient:19.02.0-rc2
+docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST onedata/oneclient:20.02.7
 Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '4138963898952098752'...
 Getting configuration...
 Oneclient has been successfully mounted in '/mnt/oneclient'
@@ -136,18 +130,11 @@ space.
 In order to do this we will open a `bash` shell in the container then we will
 mount manually the Onedata spaces.
 
-- `ONECLIENT_ACCESS_TOKEN`: access token allowing to access **all** the spaces.
-- `ONECLIENT_PROVIDER_HOST`: name or IP of the Oneprovider the client should
-  connect to.
-
-{{% alert title="Important" color="warning" %}} In order to be able to use FUSE,
-the container should run in **privileged** mode. {{% /alert %}}
-
 <!-- markdownlint-disable line-length -->
 ```shell
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
-docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:19.02.0-rc2
+docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:20.02.7
 root@aca612a84fb4:/tmp# oneclient /mnt/oneclient
 Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '1641165171427694510'...
 Getting configuration...
@@ -174,7 +161,7 @@ The following variables have to be exported:
   connect to.
 
 ```shell
-curl -sS http://get.onedata.org/oneclient-1902.sh | bash
+curl -sS http://get.onedata.org/oneclient.sh | bash
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
 mkdir /tmp/space
@@ -186,17 +173,11 @@ oneclient /tmp/space
 It\'s possible to quickly test Oneclient using
 [Vagrant](https://www.vagrantup.com/).
 
-The following variables have to be exported:
-
-- `ONECLIENT_ACCESS_TOKEN`: access token allowing to access **all** the spaces.
-- `ONECLIENT_PROVIDER_HOST`: name or IP of the Oneprovider the client should
-  connect to.
-
 ```shell
 vagrant init ubuntu/xenial64
 vagrant up
 vagrant ssh
-curl -sS http://get.onedata.org/oneclient-1902.sh | bash
+curl -sS http://get.onedata.org/oneclient.sh | bash
 export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
 mkdir /tmp/space
