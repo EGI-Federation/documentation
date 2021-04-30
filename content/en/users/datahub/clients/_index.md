@@ -66,7 +66,7 @@ Ubuntu releases).
 
 ```shell
 docker run -it --privileged centos:7 /bin/bash
-root@81dbd7e84438 /]# curl -sS  http://get.onedata.org/oneclient-1902.sh | bash
+root@81dbd7e84438 /]# curl -sS  http://get.onedata.org/oneclient.sh | bash
 # (...)
 Complete!
 Installation has been completed successfully.
