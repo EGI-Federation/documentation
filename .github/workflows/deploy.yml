@@ -8,7 +8,7 @@ name: Deploy to GitHub pages
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -62,4 +62,4 @@ jobs:
           personal_token: ${{ steps.generate-token.outputs.token }}
           external_repository: EGI-Federation/EGI-Federation.github.io
           cname: docs.egi.eu
-          publish_branch: master
+          publish_branch: main

@@ -59,7 +59,7 @@ contributions.
 
 1. Fork the project if you have not, and commit changes to a git branch.
    Documentation on building the documentation locally is available in the
-   [README.md](https://github.com/EGI-Federation/documentation/blob/master/README.md)
+   [README.md](https://github.com/EGI-Federation/documentation/blob/main/README.md)
 1. Create a GitHub Pull Request for your change, following the instructions in
    the Pull Request template.
 1. Perform a [Code Review](#code-review-process) with the maintainers on the
@@ -90,16 +90,16 @@ The process at this point is as follows:
    [GitHub Actions](https://github.com/features/actions), successful checks are
    a hard requirement, but maintainers will help you addressing reported issues.
 1. A maintainer will review your code and merge it if no changes are necessary.
-   Your change will be merged into the repository's `master` branch.
+   Your change will be merged into the repository's `main` branch.
 1. If a maintainer has feedback or questions on your changes then they will set
    `request changes` in the review and provide an explanation.
 
 ## Release cycle
 
 The documentation is using a rolling release model, all changes merged to the
-`master` branch are directly deployed in the live production environment.
+`main` branch are directly deployed in the live production environment.
 
-Master branch is always available. Tagged versions may be created as needed
+Main branch is always available. Tagged versions may be created as needed
 following [Semantic Versioning](https://semver.org/) as far as applicable.
 
 ## Community
