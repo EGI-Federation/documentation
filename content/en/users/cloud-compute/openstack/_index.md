@@ -23,7 +23,7 @@ includes details on every OpenStack project, most providers offer access to:
 Web-dashboard of the integrated providers can be accessed using your EGI
 Check-in credentials directly: select _OpenID Connect_ or _EGI Check-in_ in the
 **Authenticate using** drop-down menu of the login screen. You can explore
-[Horizon dashboard documentation](https://docs.openstack.org/horizon/rocky/user/)
+[Horizon dashboard documentation](https://docs.openstack.org/horizon/latest/user/)
 for more information on how to manage your resources from the browser. The rest
 of this guide will focus on CLI/API access.
 
@@ -83,7 +83,7 @@ echo $OS_TOKEN
 ## Useful commands with OpenStack CLI
 
 Please refer to the
-[nova documentation](https://docs.openstack.org/nova/rocky/user/) for a complete
+[nova documentation](https://docs.openstack.org/nova/latest/user/) for a complete
 guide on the VM management features of OpenStack. We list in the sections below
 some useful commands for the EGI Cloud.
 
@@ -135,7 +135,7 @@ openstack server create --flavor m3.medium \
   --user-data userdata.txt --key-name My_Key server01.example.com
 ```
 
-- [OpenStack: providing user data (cloud-init)](https://docs.openstack.org/nova/queens/user/user-data.html)
+- [OpenStack: providing user data (cloud-init)](https://docs.openstack.org/nova/latest/user/user-data.html)
 - [cloudinit documentation](https://cloudinit.readthedocs.io/en/latest/index.html)
 
 #### Shell script data as user data
