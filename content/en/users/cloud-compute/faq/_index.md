@@ -62,28 +62,33 @@ sites.
 ### How can I get the list of the EGI Cloud providers?
 
 The list of certified providers is available in [GOCDB](https://goc.egi.eu). The
-`egicli endpoint list` command can help you to get that list:
+`fedcloud endpoint list` command can help you to get that list:
 
 ```shell
-$ egicli endpoint list
-Site                type                URL
-------------------  ------------------  ------------------------------------------------
-IFCA-LCG2           org.openstack.nova  https://api.cloud.ifca.es:5000/v3/
-IN2P3-IRES          org.openstack.nova  https://sbgcloud.in2p3.fr:5000/v3
-UA-BITP             org.openstack.nova  https://openstack.bitp.kiev.ua:5000/v3
-RECAS-BARI          org.openstack.nova  https://cloud.recas.ba.infn.it:5000/v3
-NCG-INGRID-PT       org.openstack.nova  https://nimbus.ncg.ingrid.pt:5000/v3
-CLOUDIFIN           org.openstack.nova  https://cloud-ctrl.nipne.ro:443/v3
-IISAS-GPUCloud      org.openstack.nova  https://keystone3.ui.savba.sk:5000/v3/
-IISAS-FedCloud      org.openstack.nova  https://nova.ui.savba.sk:5000/v3/
-UNIV-LILLE          org.openstack.nova  https://thor.univ-lille.fr:5000/v3
-INFN-PADOVA-STACK   org.openstack.nova  https://egi-cloud.pd.infn.it:443/v3
-CYFRONET-CLOUD      org.openstack.nova  https://api.cloud.cyfronet.pl:5000/v3/
-SCAI                org.openstack.nova  https://fc.scai.fraunhofer.de:5000/v3
-CESNET-MCC          org.openstack.nova  https://identity.cloud.muni.cz/v3
-INFN-CATANIA-STACK  org.openstack.nova  https://stack-server.ct.infn.it:35357/v3
-CESGA               org.openstack.nova  https://fedcloud-osservices.egi.cesga.es:5000/v3
-100IT               org.openstack.nova  https://cloud-egi.100percentit.com:5000/v3/
+$ fedcloud endpoint list
+100IT
+BIFI
+CESGA
+CESNET-MCC
+CETA-GRID
+CLOUDIFIN
+CYFRONET-CLOUD
+DESY-HH
+GSI-LCG2
+IFCA-LCG2
+IISAS-FedCloud
+IISAS-GPUCloud
+IN2P3-IRES
+INFN-CATANIA-STACK
+INFN-CLOUD-BARI
+INFN-PADOVA-STACK
+Kharkov-KIPT-LCG2
+NCG-INGRID-PT
+SCAI
+TR-FC1-ULAKBIM
+UA-BITP
+UNIV-LILLE
+fedcloud.srce.hr
 ```
 
 The providers also generate dynamic information about their characteristics via
