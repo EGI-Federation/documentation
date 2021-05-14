@@ -135,7 +135,7 @@ openstack server create --flavor m3.medium \
   --user-data userdata.txt --key-name My_Key server01.example.com
 ```
 
-- [OpenStack: providing user data (cloud-init)](https://docs.openstack.org/nova/queens/user/user-data.html)
+- [OpenStack: providing user data (cloud-init)](https://docs.openstack.org/nova/latest/user/user-data.html)
 - [cloudinit documentation](https://cloudinit.readthedocs.io/en/latest/index.html)
 
 #### Shell script data as user data
