@@ -118,7 +118,8 @@ fedcloud site list
 # Get list of projects that you are allowed to access
 # You can either specify the name of the account in your oidc-agent configuration
 # or directly a valid access token
-fedcloud endpoint projects --site=<name of the site> [--oidc-agent-account <account name>|--oidc-access-token <access token>]
+fedcloud endpoint projects --site=<name of the site> \
+         [--oidc-agent-account <account name>|--oidc-access-token <access token>]
 # You can also use environment variables for the configuration
 export EGI_SITE=<name of the site>
 export OIDC_ACCESS_TOKEN=<your access token>
@@ -134,14 +135,15 @@ Once you know which project to use, you can use your regular openstack cli
 commands for performing actual operations in the provider:
 
 ```shell
-fedcloud openstack image list --site <NAME_OF_THE_SITE> --vo <NAME_OF_VO>
+fedcloud openstack image list --site <NAME_OF_SITE> --vo <NAME_OF_VO>
 ```
 
 For 3rd party tools that can use token based authentication in OpenStack, use
 the following command:
 
 ```shell
-export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_THE_SITE> --vo <NAME_OF_VO> token issue -c id -f value)
+export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
+                  token issue -c id -f value)
 ```
 
 ## Legacy X.509 AAI

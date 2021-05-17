@@ -62,7 +62,8 @@ eval "$(fedcloud show-project-id --site CESGA --vo vo.notebooks.egi.eu)
 Whenever you need to get a valid token for the site and VO, you can obtain it with:
 
 ```shell
-OS_TOKEN=$(fedcloud openstack --site CESGA --vo vo.notebooks.egi.eu token issue -c id -f value)
+OS_TOKEN=$(fedcloud openstack --site CESGA --vo vo.notebooks.egi.eu \
+           token issue -c id -f value)
 ```
 
 First get the network IDs and pool to use for the site:

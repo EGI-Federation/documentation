@@ -46,7 +46,7 @@ available on the infrastructure.
 
 First the Openstack environment needs to be properly setup, and for this purpose
 the `fedcloud` components is quite handy. For instance to setup the access to the
-SWIFT endpoint at IFCA-LCG2 via the Pilot VO (vo.access.egi.eu) you can use the 
+SWIFT endpoint at IFCA-LCG2 via the Pilot VO (vo.access.egi.eu) you can use the
 `fedcloud openstack` command.  Start listing the available containers(buckets):
 
 ```sh
@@ -72,7 +72,8 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container create tes
 Creating a new Object by uploading a file:
 
 ```sh
-$ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu object create test-egi file1.txt
+$ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
+           object create test-egi file1.txt
 +-----------+-----------+----------------------------------+
 | object    | container | etag                             |
 +-----------+-----------+----------------------------------+
@@ -94,13 +95,15 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu object list test-egi
 Download an object:
 
 ```sh
-fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu object save test-egi file1.txt
+fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
+         object save test-egi file1.txt
 ```
 
 Removing an object from the container:
 
 ```sh
-fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu object delete test-egi file1.txt
+fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
+         object delete test-egi file1.txt
 ```
 
 Removing the entire container (`-r` option for recursive):

@@ -228,9 +228,10 @@ resource "openstack_compute_instance_v2" "vm" {
 
 ```shell
 # this will export OS_AUTH_URL and OS_PROJECT_ID
-$ eval "$(fedcloud site show-project-id --site <NAME_OF_THE_SITE> --vo <NAME_OF_VO>)"
+$ eval "$(fedcloud site show-project-id --site <NAME_OF_SITE> --vo <NAME_OF_VO>)"
 # now get a valid token
-$ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_THE_SITE> --vo <NAME_OF_VO> token issue -c id -f value)
+$ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
+                    token issue -c id -f value)
 $ terraform plan
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
