@@ -10,12 +10,12 @@ description: >
 ## Templates
 
 We will build a torque cluster on one of the EGI Cloud providers using EC3.
-Create a directory to store EC3 configuration and init it with `egicli`:
+Create a directory to store EC3 configuration and init it with `fedcloud`:
 
 ```shell
 mkdir -p torque
 cd torque
-egicli endpoint ec3 --site <your site> --project-id <project_id>
+fedcloud ec3 init --site <your site> --project-id <project_id>
 ```
 
 We will use the following templates:
