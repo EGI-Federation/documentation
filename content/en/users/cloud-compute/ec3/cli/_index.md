@@ -67,7 +67,7 @@ your cluster:
 1. VM image identifiers
 
 We will use `fedcloud` cli to discover all needed details, set your credentials
-as shown in [the authentication guide](../auth/#check-in-and-access-tokens) and
+as shown in [the authentication guide](../../auth/#check-in-and-access-tokens) and
 create the autorisation files needed for ec3 (in this case for CESGA with
 VO vo.access.egi.eu):
 
