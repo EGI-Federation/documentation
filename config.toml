@@ -93,6 +93,8 @@ algolia_docsearch = false
 #Enable offline search with Lunr.js
 offlineSearch = true
 
+github_branch= "main"
+
 # User interface configuration
 [params.ui]
 # Enable to show the side bar menu in its compact state.
