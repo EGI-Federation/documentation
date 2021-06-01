@@ -39,8 +39,12 @@ following added features:
 We offer different service modes depending on your needs:
 
 - Individual users can use the centrally operated service from EGI. Users can
-  login, write and play and re-play notebooks just by
-  [creating an EGI account](../check-in/signup). This instance has limits on the
+  login, write and play and re-play notebooks by:
+
+  1. [creating an EGI account](../check-in/signup)
+  2. [enrolling to the vo.notebooks.egi.eu](https://aai.egi.eu/registry/co_petitions/start/coef:111)
+
+  This instance has limits on the
   amount of resources available for each user (1 CPU core, 1 GB RAM and 10 GB of
   storage). It will also kill inactive sessions after 1 hour.
 
