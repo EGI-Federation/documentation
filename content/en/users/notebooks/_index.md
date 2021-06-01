@@ -42,7 +42,7 @@ We offer different service modes depending on your needs:
   login, write and play and re-play notebooks by:
 
   1. [creating an EGI account](../check-in/signup)
-  2. [enrolling to the vo.notebooks.egi.eu](https://aai.egi.eu/registry/co_petitions/start/coef:111)
+  2. [enrolling to the vo.notebooks.egi.eu VO](https://aai.egi.eu/registry/co_petitions/start/coef:111)
 
   This instance has limits on the
   amount of resources available for each user (1 CPU core, 1 GB RAM and 10 GB of
