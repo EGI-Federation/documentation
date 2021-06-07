@@ -47,8 +47,8 @@ cat /etc/grid-security/certificates/*.pem >> $(python -m requests.certs)
 ## Authentication
 
 Check the documentation at the
-[authentication and authorisation section](../auth/)on how to get the right
-credentials for accessing the providers.
+[authentication and authorisation section](../auth/)
+on how to get the right credentials for accessing the providers.
 
 ### OpenStack token for other clients
 
