@@ -20,7 +20,7 @@ jobs:
       # Checking all code base but without throwing errors
       # Meant to follow progress of what still needs to be cleaned
       - name: Run Super-Linter on new changes
-        uses: github/super-linter@v3
+        uses: docker://ghcr.io/github/super-linter:slim-v4
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
