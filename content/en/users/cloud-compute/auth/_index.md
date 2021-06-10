@@ -70,7 +70,7 @@ you will be able to interact with the infrastructure.
 
 Pre-existing VOs of EGI can be also used on IaaS cloud providers. Consult with
 your VO manager or browse the existing VOs at the
-[EGI Operations Portal](https://operations-portal.egi.eu/vo/).
+[EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list).
 
 ## Check-in and access tokens
 
