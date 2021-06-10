@@ -56,7 +56,7 @@ Using the `fedcloud` you can get set the right environment for interacting with
 the OpenStack APIs of a given site:
 
 ```shell
-eval "$(fedcloud show-project-id --site CESGA --vo vo.notebooks.egi.eu)
+eval "$(fedcloud openstack show-project-id --site CESGA --vo vo.notebooks.egi.eu)"
 ```
 
 Whenever you need to get a valid token for the site and VO, you can obtain it with:
