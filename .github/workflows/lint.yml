@@ -33,7 +33,7 @@ jobs:
 
       # Runs the Super-Linter action
       - name: Run Super-Linter on all codebase
-        uses: ghcr.io://github/super-linter@slim-v4
+        uses: docker://ghcr.io/github/super-linter:slim-v4
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
