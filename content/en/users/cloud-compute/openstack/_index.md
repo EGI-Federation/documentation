@@ -29,11 +29,11 @@ of this guide will focus on CLI/API access.
 
 ## Installation
 
-The OpenStack client is a command-line client for OpenStack that brings the 
-command set for Compute, Identity, Image, Object Storage and Block Storage 
+The OpenStack client is a command-line client for OpenStack that brings the
+command set for Compute, Identity, Image, Object Storage and Block Storage
 APIs together in a single shell with a uniform command structure.
 
-> If installing on Windows, as there are non-pure Python packages needed for 
+> If installing on Windows, as there are non-pure Python packages needed for
 > installation, please make sure [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 > are installed, with the following options selected:
 >
@@ -42,7 +42,7 @@ APIs together in a single shell with a uniform command structure.
 > - Testing tools core features - Build Tools
 > - Windows 10 SDK (`<latest`>)
 >
-> In case you prefer to use non-Microsoft alternatives for building non-pure 
+> In case you prefer to use non-Microsoft alternatives for building non-pure
 > packages, please see [here](https://wiki.python.org/moin/WindowsCompilers).
 
 Installation of the OpenStack client can be done using:
@@ -53,13 +53,14 @@ pip install requests
 pip install openstackclient
 ```
 
-To be able to use sed-like commands to map, filter, slice, and transform 
+To be able to use sed-like commands to map, filter, slice, and transform
 structured data (JSON), install `jq`:
 
 ```shell
 pip install jq
 ```
-> On Windows, you can download an installable version of `jq`</code>` 
+
+> On Windows, you can download an installable version of `jq`</code>`
 > from [here](https://stedolan.github.io/jq/download/).
 
 Add IGTF CA to python\'s CA store:
