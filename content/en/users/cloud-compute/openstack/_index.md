@@ -13,12 +13,12 @@ accounts.
 The extensive [OpenStack user documentation](https://docs.openstack.org/user/)
 includes details on every OpenStack project, most providers offer access to:
 
-- keystone, for identity
-- nova, for VM management
-- glance, for VM image management
-- cinder, for block storage
-- neutron, for network management
-- horizon, as a web dashboard
+- Keystone, for identity
+- Nova, for VM management
+- Glance, for VM image management
+- Cinder, for block storage
+- Neutron, for network management
+- Horizon, as a web dashboard
 
 Web-dashboard of the integrated providers can be accessed using your EGI
 Check-in credentials directly: select _OpenID Connect_ or _EGI Check-in_ in the
@@ -29,14 +29,31 @@ of this guide will focus on CLI/API access.
 
 ## Installation
 
-TBC
+The OpenStack client is a command-line client for OpenStack that brings the command set for Compute, Identity, Image, Object Storage and Block Storage APIs together in a single shell with a uniform command structure.
+
+> If installing on Windows, as there are non-pure Python packages needed for installation, please make sure [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) are installed, with the following options selected:
+>
+> - C++ CMake tools for Windows
+> - C++ ATL for latest v142 build tools (x86 & x64)
+> - Testing tools core features - Build Tools
+> - Windows 10 SDK (`<latest`>)
+>
+> In case you prefer to use non-Microsoft alternatives for building non-pure packages, please see [here](https://wiki.python.org/moin/WindowsCompilers).
+
+Installation of the OpenStack client can be done using:
 
 ```shell
+pip install --upgrade setuptools
 pip install requests
 pip install openstackclient
 ```
 
-- `jq` to easily manage JSON output
+To be able to use sed-like commands to map, filter, slice, and transform structured data (JSON), install `jq`:
+
+```shell
+pip install jq
+```
+> On Windows, you can download an installable version of `jq`</code>` from [here](https://stedolan.github.io/jq/download/).
 
 Add IGTF CA to python\'s CA store:
 
@@ -81,6 +98,8 @@ echo $OS_TOKEN
 ```
 
 ## Useful commands with OpenStack CLI
+
+Usage of the OpenStack client is described in detail [here](https://docs.openstack.org/python-openstackclient/latest).
 
 Please refer to the
 [nova documentation](https://docs.openstack.org/nova/latest/user/) for a complete
@@ -292,7 +311,7 @@ AppDB if needed.
 
 ## libcloud
 
-[Apache libcloud](https://libcloud.apache.org/index.html) support OpenStack and
+[Apache libcloud](https://libcloud.apache.org/index.html) supports OpenStack and
 EGI authentication mechanisms by setting the `ex_force_auth_version` to
 `3.x_oidc_access_token` or `2.0_voms` respectively. Check the
 [libcloud docs on connecting to OpenStack](https://libcloud.readthedocs.io/en/latest/compute/drivers/openstack.html#connecting-to-the-openstack-installation)
