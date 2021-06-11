@@ -93,6 +93,8 @@ algolia_docsearch = false
 #Enable offline search with Lunr.js
 offlineSearch = true
 
+github_branch= "main"
+
 # User interface configuration
 [params.ui]
 # Enable to show the side bar menu in its compact state.
@@ -150,7 +152,7 @@ no = 'Sorry to hear that. Please <a href="https://github.com/EGI-Federation/docu
 # XXX Maybe useful to add back this somewhere
 # [[menu.shortcuts]]
 # name = "<i class='fa fa-cloud-download'></i> <label>Download</label>"
-# url = "https://github.com/EGI-Federation/EGI-Federation.github.io/archive/master.zip"
+# url = "https://github.com/EGI-Federation/EGI-Federation.github.io/archive/main.zip"
 # weight = 11
 
 [markup]

@@ -124,7 +124,7 @@ upstream        git@github.com:EGI-Federation/documentation.git (push)
 
 The documentation webiste is built from the source files using
 [Hugo](https://gohugo.io/). The repository
-[README](https://github.com/EGI-Federation/documentation/blob/master/README.md)
+[README](https://github.com/EGI-Federation/documentation/blob/main/README.md)
 can be used as a reference for building instructions.
 
 ### Requirements
@@ -167,16 +167,16 @@ You should submit your patch as a git branch ideally named with a meaningful
 name related to the changes you want to propose. This is called a _feature
 branch_ (sometimes also named _topic branch_). You will commit your
 modifications to this _feature branch_ and submit a Pull Request (PR) based on
-the differences between the upstream master branch and your _feature branch_.
+the differences between the upstream main branch and your _feature branch_.
 
 ### Creating a feature branch
 
-Try to avoid committing changes to the _master_ branch of your clone to simplify
+Try to avoid committing changes to the _main_ branch of your clone to simplify
 management, creating a dedicated _feature branch_ helps a lot. Try to pick a
 meaningful name for the branch (my_nice_update in the example).
 
 ```sh
-# This should be done from the up-to-date master branch
+# This should be done from the up-to-date main branch
 # Read furthermore to see documentation on updating a local clone
 git checkout -b my_nice_update
 ```
@@ -256,19 +256,19 @@ Then you can commit new changes and push them to your remote fork.
 ## Updating a repository clone with the upstream changes
 
 ```sh
-# If you are still in a branch created for a previous PR, move to master
-git checkout master
+# If you are still in a branch created for a previous PR, move to main
+git checkout main
 # Get the latest data from the upstream repository
 git fetch upstream
 # Update your local copy with this data
-git rebase upstream/master master
+git rebase upstream/main main
 # Update your remote GitHub fork with those changes
 git push
 ```
 
-## Updating a local feature branch with changes made on the master branch
+## Updating a local feature branch with changes made on the main branch
 
-In case the _master_ branch evolved since the feature branch was created, it may
+In case the _main_ branch evolved since the feature branch was created, it may
 be required to merge the new changes in the feature branch.
 
 It can easily be done via the PR page on the GitHub web interface, but it can
@@ -280,7 +280,7 @@ git fetch upstream
 # Check out the feature branch
 git checkout feature_branch
 # Apply the new changes on main to your feature branch
-git rebase upstream/master
+git rebase upstream/main
 ```
 
 In case some files have been changed on both sides you will will have to merge
@@ -343,7 +343,7 @@ recreate it.
 
 ```sh
 # Switch to main branch
-git checkout master
+git checkout main
 # Check local branches
 git branch -vv
 # Delete a specific branch

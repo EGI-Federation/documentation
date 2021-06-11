@@ -12,14 +12,17 @@ jobs:
       # Checks out a copy of your repository on the ubuntu-latest machine
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          # Full git history needed to get proper list of changed files
+          fetch-depth: 0
 
       # Runs the Super-Linter action
       # Checking all code base but without throwing errors
       # Meant to follow progress of what still needs to be cleaned
       - name: Run Super-Linter on new changes
-        uses: github/super-linter@v3
+        uses: docker://ghcr.io/github/super-linter:slim-v4
         env:
-          DEFAULT_BRANCH: master
+          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           # Only check new or edited files
@@ -30,9 +33,9 @@ jobs:
 
       # Runs the Super-Linter action
       - name: Run Super-Linter on all codebase
-        uses: github/super-linter@v3
+        uses: docker://ghcr.io/github/super-linter:slim-v4
         env:
-          DEFAULT_BRANCH: master
+          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           # Check all files
