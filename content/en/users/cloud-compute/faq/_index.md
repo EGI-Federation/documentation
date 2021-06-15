@@ -65,7 +65,7 @@ The list of certified providers is available in [GOCDB](https://goc.egi.eu). The
 `fedcloud site list` command can help you to get that list:
 
 ```shell
-$ fedcloud endpoint list
+$ fedcloud site list
 100IT
 BIFI
 CESGA
