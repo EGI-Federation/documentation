@@ -72,7 +72,7 @@ create the autorisation files needed for ec3 (in this case for CESGA with
 VO vo.access.egi.eu):
 
 ```shell
-fedcloud ec3 --site CESGA --project-id vo.access.egi.eu
+fedcloud ec3  init --site CESGA --vo vo.access.egi.eu
 ```
 
 This will generate an `auth.dat` file with your credentials to access the site
