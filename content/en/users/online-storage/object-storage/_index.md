@@ -45,34 +45,12 @@ The Openstack CLI can be used to perform operations over the SWIFT endpoints
 available on the infrastructure.
 
 First the Openstack environment needs to be properly setup, and for this purpose
-the `egicli` components is quite handy. For instance to setup the access to the
-SWIFT endpoint at IFCA-LCG2 via the Pilot VO (vo.access.egi.eu) the following is
-needed:
+the `fedcloud` components is quite handy. For instance to setup the access to the
+SWIFT endpoint at IFCA-LCG2 via the Pilot VO (vo.access.egi.eu) you can use the
+`fedcloud openstack` command.  Start listing the available containers(buckets):
 
 ```sh
-egicli endpoint projects --site IFCA-LCG2
-id                                Name                       enabled    site
---------------------------------  -------------------------  ---------  ---------
-13c11c4073f4456fac7df84c4eb8f85b  VO:vo.nextgeoss.eu         True       IFCA-LCG2
-5eb8959a799240a98f4f303f5fbd80be  VO:dteam                   True       IFCA-LCG2
-9170e65775964a3ba6b18d83a2ad1968  eosc-hub.eu:d4science.org  True       IFCA-LCG2
-999f045cb1ff4684a15ebb338af69460  VO:vo.access.egi.eu        True       IFCA-LCG2
-f1d0308880134d04964097524eace710  VO:training.egi.eu         True       IFCA-LCG2
-```
-
-and then simply
-
-```sh
-eval "$(egicli endpoint env --site IFCA-LCG2 --project-id 999f045cb1ff4684a15ebb338af69460)"
-```
-
-Now the Openstack CLI can be used to perform operations on the SWIFT endpoint.
-
-Starting from listing the available containers(buckets):
-
-```sh
-openstack container list
-
+$ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container list
 +------------------+
 | Name             |
 +------------------+
@@ -83,8 +61,7 @@ openstack container list
 Creating a new container:
 
 ```sh
-openstack container create test-egi
-
+$ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container create test-egi
 +---------+-----------+------------------------------------------------------+
 | account | container | x-trans-id                                           |
 +---------+-----------+------------------------------------------------------+
@@ -95,8 +72,8 @@ openstack container create test-egi
 Creating a new Object by uploading a file:
 
 ```sh
-openstack object create test-egi file1.txt
-
+$ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
+           object create test-egi file1.txt
 +-----------+-----------+----------------------------------+
 | object    | container | etag                             |
 +-----------+-----------+----------------------------------+
@@ -107,8 +84,7 @@ openstack object create test-egi file1.txt
 Listing objects inside a container:
 
 ```sh
-openstack object list test-egi
-
+$ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu object list test-egi
 +-----------+
 | Name      |
 +-----------+
@@ -119,19 +95,21 @@ openstack object list test-egi
 Download an object:
 
 ```sh
-openstack object save test-egi file1.txt
+fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
+         object save test-egi file1.txt
 ```
 
 Removing an object from the container:
 
 ```sh
-openstack object delete test-egi file1.txt
+fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
+         object delete test-egi file1.txt
 ```
 
 Removing the entire container (`-r` option for recursive):
 
 ```sh
-openstack container delete test-egi
+fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container delete test-egi
 ```
 
 ### Access via S3 protocol
@@ -147,7 +125,7 @@ The following command is needed:
 
 <!-- markdownlint-disable line-length -->
 ```sh
-$ openstack ec2 credentials create
+$ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu ec2 credentials create
 
 +------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | Field      | Value                                                                                                                                    |

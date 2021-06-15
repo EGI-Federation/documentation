@@ -17,23 +17,23 @@ Before getting your kubernetes cluster deployed, you need to get access to the
 Cloud Compute service, check the
 [Authentication and Authorisation guide](../cloud-compute/auth) for more
 information. You should also get
-[`egicli`](https://github.com/EGI-Federation/egicli/) installed to get EC3
-templates needed to start deployment.
+[`fedcloud` client](https://github.com/EGI-Federation/fedcloudclient/)
+installed to get EC3 templates needed to start deployment.
 
 Your kubernetes deployment needs to be performed at an specific provider (site)
-and project. Discover them using `egicli` as described in the
+and project. Discover them using `fedcloud` as described in the
 [EC3 tutorial](../cloud-compute/ec3).
 
 ### EC3 Templates
 
 EC3 relies on a set of _templates_ that will determine what will be deployed on
-the infrastructure. `egicli` helps you to get an initial set of templates for
+the infrastructure. `fedcloud` helps you to get an initial set of templates for
 your kubernetes deployment:
 
 ```shell
 mkdir k8s
 cd k8s
-egicli endpoint ec3 --site <your site> --project-id <project_id>
+fedcloud ec3 init --site <your site> --vo <your vo>
 ```
 
 You will also need a base image template for the deployment. Please refer to the
@@ -429,7 +429,7 @@ Once you don't need the cluster anymore, you can undeploy with the `destroy`
 command of EC3:
 
 ```shell
-$ egicli endpoint ec3-refresh # refresh your credentials to interact with the cluster
+$ fedcloud ec3 refresh # refresh your credentials to interact with the cluster
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 destroy k8s -y -a auth.dat
 WARNING: you are going to delete the infrastructure (including frontend and nodes).
 Success deleting the cluster!
