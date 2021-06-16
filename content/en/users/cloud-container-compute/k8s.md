@@ -15,14 +15,14 @@ applications with EC3.
 
 Before getting your kubernetes cluster deployed, you need to get access to the
 Cloud Compute service, check the
-[Authentication and Authorisation guide](../cloud-compute/auth) for more
+[Authentication and Authorisation guide](../../cloud-compute/auth) for more
 information. You should also get
 [`fedcloud` client](https://github.com/EGI-Federation/fedcloudclient/)
 installed to get EC3 templates needed to start deployment.
 
 Your kubernetes deployment needs to be performed at an specific provider (site)
 and project. Discover them using `fedcloud` as described in the
-[EC3 tutorial](../cloud-compute/ec3).
+[EC3 tutorial](../../cloud-compute/ec3).
 
 ### EC3 Templates
 
@@ -37,7 +37,7 @@ fedcloud ec3 init --site <your site> --vo <your vo>
 ```
 
 You will also need a base image template for the deployment. Please refer to the
-[EC3 tutorial](../cloud-compute/ec3) to create such file. Below you can
+[EC3 tutorial](../../cloud-compute/ec3) to create such file. Below you can
 see an example for IFCA-LCG2 site with project related to `vo.access.egi.eu`:
 
 <!-- markdownlint-disable line-length -->
@@ -196,7 +196,7 @@ cloudadm@kubeserver:~$ sudo helm install ingress -n kube-system -f ingress.yaml 
 ```
 
 Now you are ready to expose your services using a valid hostname. Use the
-[EGI Cloud Dynamic DNS service](https://nsupdate.fedcloud.eu/) for getting
+[EGI Cloud Dynamic DNS service](../../cloud-compute/dynamic-dns) for getting
 hostnames if you need. Assign as IP the public IP of the master node. Once you
 have a hostname assigned to the master IP, the ingress will be able to reply to
 requests already:
