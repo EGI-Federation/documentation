@@ -17,8 +17,8 @@ Before getting your kubernetes cluster deployed, you need to get access to the
 Cloud Compute service, check the
 [Authentication and Authorisation guide](../cloud-compute/auth) for more
 information. You should also get
-[`fedcloud` client](https://github.com/EGI-Federation/fedcloudclient/)
-installed to get EC3 templates needed to start deployment.
+[`fedcloud` client](https://github.com/EGI-Federation/fedcloudclient/) installed
+to get EC3 templates needed to start deployment.
 
 Your kubernetes deployment needs to be performed at an specific provider (site)
 and project. Discover them using `fedcloud` as described in the
@@ -37,10 +37,11 @@ fedcloud ec3 init --site <your site> --vo <your vo>
 ```
 
 You will also need a base image template for the deployment. Please refer to the
-[EC3 tutorial](../cloud-compute/ec3) to create such file. Below you can
-see an example for IFCA-LCG2 site with project related to `vo.access.egi.eu`:
+[EC3 tutorial](../cloud-compute/ec3) to create such file. Below you can see an
+example for IFCA-LCG2 site with project related to `vo.access.egi.eu`:
 
 <!-- markdownlint-disable line-length -->
+
 ```plaintext
 description ubuntu-ifca (
     kind = 'images' and
@@ -74,6 +75,7 @@ system wn (
     disk.0.os.credentials.username = 'cloudadm'
 )
 ```
+
 <!-- markdownlint-enable line-length -->
 
 Now you are ready to deploy the cluster using `launch` command of ec3 with:
@@ -133,6 +135,7 @@ The cluster will only have one node (the master) and will start new nodes as you
 create pods. Alternatively you can poweron nodes manually:
 
 <!-- markdownlint-disable line-length -->
+
 ```shell
 cloudadm@kubeserver:~$ clues status
 node                          state    enabled   time stable   (cpu,mem) used   (cpu,mem) total
@@ -149,6 +152,7 @@ NAME                     STATUS   ROLES    AGE     VERSION
 kubeserver.localdomain   Ready    master   24h     v1.18.3
 wn1.localdomain          Ready    <none>   6m49s   v1.18.3
 ```
+
 <!-- markdownlint-enable line-length -->
 
 ## Exposing services outside the cluster
@@ -196,7 +200,7 @@ cloudadm@kubeserver:~$ sudo helm install ingress -n kube-system -f ingress.yaml 
 ```
 
 Now you are ready to expose your services using a valid hostname. Use the
-[EGI Cloud Dynamic DNS service](https://nsupdate.fedcloud.eu/) for getting
+[EGI Cloud Dynamic DNS service](../cloud-compute/dynamic-dns) for getting
 hostnames if you need. Assign as IP the public IP of the master node. Once you
 have a hostname assigned to the master IP, the ingress will be able to reply to
 requests already:
@@ -304,6 +308,7 @@ either manually configure the server on one of the nodes or use EC3 to deploy it
 and configure it for you. Create a `templates/nfs.radl` to do so:
 
 <!-- markdownlint-disable line-length -->
+
 ```plaintext
 description nfs (
     kind = 'component' and
@@ -345,6 +350,7 @@ configure wn (
 @end
 )
 ```
+
 <!-- markdownlint-enable line-length -->
 
 if you have a running cluster, you can add the NFS support by reconfiguring the
@@ -362,6 +368,7 @@ Front-end ready!
 And then install the NFS driver in kubernetes with helm:
 
 <!-- markdownlint-disable line-length -->
+
 ```shell
 cloudadm@kubeserver:~$ sudo helm install nfs-provisioner \
               stable/nfs-client-provisioner \
@@ -372,6 +379,7 @@ cloudadm@kubeserver:~$ sudo helm install nfs-provisioner \
               --set tolerations[0].effect=NoSchedule,tolerations[0].key=node-role.kubernetes.io/master
 
 ```
+
 <!-- markdownlint-enable line-length -->
 
 Now you are ready to create a
@@ -416,11 +424,13 @@ Once you apply the yaml, you will see the new PVC gets bounded to a PV created
 in NFS:
 
 <!-- markdownlint-disable line-length -->
+
 ```shell
 cloudadm@kubeserver:~$ sudo kubectl get pvc
 NAME       STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 test-pvc   Bound    pvc-39f970de-eaad-44d7-b49f-90dc9de54a14   3Gi        RWO            nfs-client     9m46s
 ```
+
 <!-- markdownlint-enable line-length -->
 
 ## Destroying the cluster
