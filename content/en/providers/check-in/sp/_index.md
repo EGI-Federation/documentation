@@ -1179,21 +1179,6 @@ where:
 urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu
 ```
 
-#### Old Syntax (will be deprecated in a next release)
-
-An entitlement value expressing group membership and role information has the
-following syntax (components enclosed in square brackets are OPTIONAL):
-
-```text
-urn:mace:egi.eu:<GROUP-AUTHORITY>:[<GROUP>[:<SUBGROUP>:…]]:<ROLE>@<VO>
-```
-
-**Example:**
-
-```text
-urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu
-```
-
 ### Capabilities
 
 #### Background
@@ -1207,26 +1192,58 @@ as a URN following the syntax defined in
 
 #### Syntax
 
-An entitlement value expressing group membership and role information has the
+An entitlement value expressing a capability has the
 following syntax (components enclosed in square brackets are OPTIONAL):
 
 ```text
-urn:mace:egi.eu:group:<GROUP>[:<SUBGROUP>*][:role=<ROLE>]#<GROUP-AUTHORITY>
+<NAMESPACE>:res:<RESOURCE>[:<CHILD-RESOURCE>]...[:act:<ACTION>[,<ACTION>]...]#<AUTHORITY>
 ```
 
 where:
 
-- `<GROUP>` is the name of a VO, research collaboration or a top level arbitrary
-  group. `<GROUP>` names are unique within the `urn:mace:egi.eu:group`
-  namespace;
-- zero or more `<SUBGROUP>` components represent the hierarchy of subgroups in
-  the `<GROUP>`; specifying sub-groups is optional
-- the optional `<ROLE>` component is scoped to the rightmost (sub)group; if no
-  group information is specified, the role applies to the VO
-- `<GROUP-AUTHORITY>` is a non-empty string that indicates the authoritative
-  source for the entitlement value. For example, it can be the FQDN of the group
-  management system that is responsible for the identified group membership
-  information
+- `<NAMESPACE>` is controlled by the e-infrastructure, research infrastructure
+or research collaboration that manages the capability. The `<NAMESPACE>` of capabilities
+managed by Check-in is set to `urn:mace:egi.eu`, while, generally, it is in the
+form of `urn:<NID>:<DELEGATED-NAMESPACE>[:<SUBNAMESPACE>]...` where:
+  
+  - `<NID>` is the namespace identifier associated with a URN namespace registered
+  with IANA2, ensuring global uniqueness. Implementers SHOULD use one of the
+  existing registered URN namespaces, such as `urn:mace`[[MACE](https://incommon.org/community/mace-registries/mace-urn-registry/)].
+  
+  - `<DELEGATED-NAMESPACE>` is a URN sub-namespace delegated from one of the IANA
+  registered NIDs to an organisation representing the e-infrastructure, research
+  infrastructure or research collaboration. It is RECOMMENDED that a publicly
+  accessible URN value registry for each delegated namespace be provided.
+
+- The literal string `"res"` indicates that this is a resource-specific entitlement
+as opposed to, for example, an entitlement used for expressing group membership
+[AARC-G002](https://aarc-community.org/guidelines/aarc-g002/).
+
+- `<RESOURCE>` is the name of the resource. Whether the name should be unique
+is an implementation decision.
+
+- An optional list of colon-separated `<CHILD-RESOURCE>` components represents
+a specific branch of the hierarchy of resources under the identified `<RESOURCE>`.
+
+- An optional list of comma-separated `<ACTION>`s MAY be included, which, if
+present, MUST be prefixed with the literal string “act”. This component MAY be
+used for further specifying the actions a user is entitled to do at a given
+resource. Note that the list of `<ACTION>`s is scoped to the rightmost
+child-resource; if no child-resource information is specified, actions apply
+to the top level resource. The interpretation of a capability without actions
+specified is an implementation detail.
+
+- `<AUTHORITY>` is a mandatoryand non-empty string that indicates the
+authoritative source of the capability. This SHOULD be used to further
+specify the exact issuing instance. For example, it MAY be the FQDN of the
+service that issued that specific capability. The `<AUTHORITY>` is specified
+in the f-component [RFC8141](https://tools.ietf.org/html/rfc8141) of the URN;
+thus, it is introduced by the number sign ("#") character and terminated by the
+end of the URN. All characters must be encoded according to
+[RFC8141](https://tools.ietf.org/html/rfc8141). Hence, the `<AUTHORITY>` MUST NOT
+be considered when determining equivalence (Section 3 in [RFC8141](https://tools.ietf.org/html/rfc8141))
+of URN-formatted capabilities. The `<AUTHORITY>` of capabilities managed by Check-in
+is typically set to `aai.egi.eu`.
 
 **Example:**
 
