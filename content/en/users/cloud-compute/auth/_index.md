@@ -83,17 +83,23 @@ collect credentials every single time one expires. You can request this token
 alongside the access and/or ID tokens as part of a user's initial authentication
 flow.
 
-In the case of EGI Check-in, we have created a special client meant to obtain
-your personal refresh token and client credentials that will allow the obtention
-of access tokens as needed. You can access the
+If you need to obtain these kind of tokens for using it in CLI tools or APIs,
+you can easily do so with the special _fedcloud_ client. You can access the
 [FedCloud Check-in client](https://aai.egi.eu/fedcloud) and click on
 \'Authorise\' to log in with your Check-in credentials to obtain:
 
-- a client id
-- a client secret
+- a client id (`fedcloud`)
 - a refresh token
 
-Note them down so you can use them for the next steps.
+{{% alert title="Refresh tokens" color="danger" %}}
+
+Refresh tokens should be treated with care! This is a secret that can be used to
+impersonate you in the infrastructure. It is recommended not to store them in
+plain text.{{% /alert %}}
+
+Alternatively, you can use the
+[oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/user/oidc-gen/provider/egi)
+tool, that is able to manage your tokens locally.
 
 ### Discovering projects in Keystone
 
@@ -102,28 +108,25 @@ access to several different projects within that provider (a project can be
 considered equivalent to a VO allocation). In order to discover which projects
 are available you can do that using the Keystone API.
 
-You can use the [`egicli`](https://github.com/EGI-Federation/egicli) to simplify
-the discovery of projects. First, define these variables in your environment:
-
-- `CHECKIN_CLIENT_ID`: Your Check-in client id (get it from
-  [FedCloud Check-in client](https://aai.egi.eu/fedcloud))
-- `CHECKIN_CLIENT_SECRET`: Your Check-in client secret (get it from
-  [FedCloud Check-in client](https://aai.egi.eu/fedcloud))
-- `CHECKIN_REFRESH_TOKEN`: Your Check-in refresh token (get it from
-  [FedCloud Check-in client](https://aai.egi.eu/fedcloud))
-- `EGI_SITE`: Name of the site (get it from [AppDB](https://appdb.egi.eu), or
-  list it with the `egicli endpoint list` command)
-
-And use them to get the list of projects:
+You can use the
+[`fedcloud` client](https://github.com/EGI-Federation/fedcloudclient) to
+simplify the discovery of projects.
 
 ```shell
-# Export OIDC env
-export CHECKIN_CLIENT_ID=<CLIENT_ID>
-export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
-export CHECKIN_REFRESH_TOKEN=<REFRESH_TOKEN>
-# Retrieve list of projects from site
-export EGI_SITE=<NAME_OF_THE_SITE>
-egicli endpoint projects
+# Get a list of sites (also available in [AppDB](https://appdb.egi.eu))
+fedcloud site list
+# Get list of projects that you are allowed to access
+# You can either specify the name of the account in your oidc-agent configuration
+# or directly a valid access token
+fedcloud endpoint projects --site=<name of the site> \
+         [--oidc-agent-account <account name>|--oidc-access-token <access token>]
+# You can also use environment variables for the configuration
+export EGI_SITE=<name of the site>
+export OIDC_ACCESS_TOKEN=<your access token>
+fedcloud endpoint projects
+# or with  oidc-agent
+export OIDC_AGENT_ACCOUNT=<account name>
+fedcloud enpoint projects
 ```
 
 ### Using the OpenStack API
@@ -132,29 +135,15 @@ Once you know which project to use, you can use your regular openstack cli
 commands for performing actual operations in the provider:
 
 ```shell
-# Export OIDC env
-export CHECKIN_CLIENT_ID=<CLIENT_ID>
-export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
-export CHECKIN_REFRESH_TOKEN=<REFRESH_TOKEN>
-# EGI site
-export EGI_SITE=<NAME_OF_THE_SITE>
-export OS_PROJECT_ID=<PROJECT_ID>
-# get environment variables for openstack
-eval "$(egicli endpoint env)"
-openstack image list
+fedcloud openstack image list --site <NAME_OF_SITE> --vo <NAME_OF_VO>
 ```
 
 For 3rd party tools that can use token based authentication in OpenStack, use
-the following command (after setting the environment as shown above):
+the following command:
 
 ```shell
-# Export OIDC env
-export CHECKIN_CLIENT_ID=<CLIENT_ID>
-export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
-export CHECKIN_REFRESH_TOKEN=<REFRESH_TOKEN>
-# EGI site
-export EGI_SITE=<NAME_OF_THE_SITE>
-eval "$(egicli endpoint token)"
+export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
+                  token issue -c id -f value)
 ```
 
 ## Legacy X.509 AAI
