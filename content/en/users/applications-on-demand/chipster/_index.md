@@ -35,16 +35,22 @@ Go to
 [Chipster entry in Science Software on Demand Portal](https://fgsg.egi.eu/egissod/web/ssod/chipster-accounts)
 and log in with your [EGI Check-In account](../../check-in)
 
-The first time you log in, you need to generate a temporary password by clicking on the _\"Execute\"_ button, as shown below.
+The first time you log in, you need to generate a temporary password by clicking
+on the _\"Execute\"_ button, as shown below.
 
 ![First log in with Chipster](./chipster-execute.png)
 
-Please refresh the web page after your password has been successfully generated. Once the page is reloaded (see screenshot below) you are presented with a link to access the [Chipster server](http://chipster.aod.fedcloud.eu:8081/chipster.jnlp) that you can access with the new credentials.
+Please refresh the web page after your password has been successfully generated.
+Once the page is reloaded (see screenshot below) you are presented with a link
+to access the
+[Chipster server](http://chipster.aod.fedcloud.eu:8081/chipster.jnlp) that you
+can access with the new credentials.
 
 ![Chipster in Science Software on Demand](./chipster.png)
 
-If your account has expired the Science Gateway will automatically generate a new password for you.
-Just click on the _\"Show form\"_ button to manage your credentials.
+If your account has expired the Science Gateway will automatically generate a
+new password for you. Just click on the _\"Show form\"_ button to manage your
+credentials.
 
 {{% alert title="Acknowledgment" color="info" %}}
 
