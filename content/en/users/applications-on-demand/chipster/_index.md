@@ -7,8 +7,8 @@ description: >
 ---
 
 [Chipster](http://chipster.csc.fi/) is a user-friendly software for analysing
-high-throughput data such as NGS and microarrays and provided as part of EGI\'s
-AoD service.
+high-throughput sequencing and microarray data, provided as part of EGI\'s
+Applications on Demand service.
 
 The software contains over 400 analysis tools and a large collection of
 reference genomes.
@@ -27,34 +27,29 @@ The Chipster testbed configured at [CESGA](https://www.cesga.es/) offers:
 - Chipster (v3.16.3).
 
 For accessing this testbed you need to be a member of the
-[Applications on Demand](https://www.egi.eu/services/applications-on-demand/).
+[Applications on Demand](../).
 
 ## Create/Review a temporary account
 
-You need to create a temporary account to access the Chipster server, by default
-this account is valid for **one month**.
-
 Go to
 [Chipster entry in Science Software on Demand Portal](https://fgsg.egi.eu/egissod/web/ssod/chipster-accounts)
-and:
+and log in with your [EGI Check-In account](../../check-in)
 
-- Click on the _\"Show form\"_.
-- If the account has expired, the Science Gateway will automatically generate a
-  new password for you.
-  - To activate the new account, click on the _\"Execute\"_ button to trigger
-    the creation/update of the temporary account in the Chipster testbed. This
-    operation may takes a few minutes.
-  - You can monitor the account creation by clicking in the _\"Show\"_ button.
-- Once your account is available, the web interface will show a link to access
-  the [Chipster server](http://chipster.aod.fedcloud.eu:8081/chipster.jnlp) with
-  the new credentials.
+The first time you log in, you need to generate a temporary password by clicking on the _\"Execute\"_ button, as shown below.
+
+![First log in with Chipster](./chipster-execute.png)
+
+Please refresh the web page after your password has been successfully generated. Once the page is reloaded (see screenshot below) you are presented with a link to access the [Chipster server](http://chipster.aod.fedcloud.eu:8081/chipster.jnlp) that you can access with the new credentials.
 
 ![Chipster in Science Software on Demand](./chipster.png)
 
+If your account has expired the Science Gateway will automatically generate a new password for you.
+Just click on the _\"Show form\"_ button to manage your credentials.
+
 {{% alert title="Acknowledgment" color="info" %}}
 
-Please provide appropriate acknowledgement of the use in scientific
-publications. You can use this The following acknowledgement text this purpose:
+Please provide appropriate acknowledgement of the use of this service in your
+scientific publications. Here is an example:
 
 **This work used the EGI Applications on Demand service, which is co-funded by
 the EOSC-hub project (grant number 777536)** {{% /alert %}}
