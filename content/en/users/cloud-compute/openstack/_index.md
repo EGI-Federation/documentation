@@ -30,11 +30,12 @@ of this guide will focus on CLI/API access.
 ## Installation
 
 The OpenStack client is a command-line client for OpenStack that brings the
-command set for Compute, Identity, Image, Object Storage and Block Storage
-APIs together in a single shell with a uniform command structure.
+command set for Compute, Identity, Image, Object Storage and Block Storage APIs
+together in a single shell with a uniform command structure.
 
 > If installing on Windows, as there are non-pure Python packages needed for
-> installation, the [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+> installation, the
+> [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 > is a prerequisite, please make sure it's installed with the following options
 > selected:
 >
@@ -59,8 +60,9 @@ structured data (JSON), install `jq`. You can install it using pip:
 pip install jq
 ```
 
-You can also install it using your platform's native package manager, or
-even download an installable version from [here](https://stedolan.github.io/jq/download/).
+You can also install it using your platform's native package manager, or even
+download an installable version from
+[here](https://stedolan.github.io/jq/download/).
 
 Add IGTF CA to python\'s CA store:
 
@@ -71,8 +73,8 @@ cat /etc/grid-security/certificates/*.pem >> $(python -m requests.certs)
 ## Authentication
 
 Check the documentation at the
-[authentication and authorisation section](../auth/)
-on how to get the right credentials for accessing the providers.
+[authentication and authorisation section](../auth/) on how to get the right
+credentials for accessing the providers.
 
 ### OpenStack token for other clients
 
@@ -97,12 +99,13 @@ fedcloud openstack --site <NAME_OF_THE_SITE> --vo <NAME_OF_VO> token issue
 
 ## Useful commands with OpenStack CLI
 
-Usage of the OpenStack client is described in detail [here](https://docs.openstack.org/python-openstackclient/latest).
+Usage of the OpenStack client is described in detail
+[here](https://docs.openstack.org/python-openstackclient/latest).
 
 Please refer to the
-[nova documentation](https://docs.openstack.org/nova/latest/user/) for a complete
-guide on the VM management features of OpenStack. We list in the sections below
-some useful commands for the EGI Cloud.
+[nova documentation](https://docs.openstack.org/nova/latest/user/) for a
+complete guide on the VM management features of OpenStack. We list in the
+sections below some useful commands for the EGI Cloud.
 
 ### Registering an existing ssh key
 
