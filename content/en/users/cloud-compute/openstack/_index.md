@@ -34,8 +34,9 @@ command set for Compute, Identity, Image, Object Storage and Block Storage
 APIs together in a single shell with a uniform command structure.
 
 > If installing on Windows, as there are non-pure Python packages needed for
-> installation, please make sure [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
-> are installed, with the following options selected:
+> installation, the [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+> is a prerequisite, please make sure it's installed with the following options
+> selected:
 >
 > - C++ CMake tools for Windows
 > - C++ ATL for latest v142 build tools (x86 & x64)
@@ -48,20 +49,17 @@ APIs together in a single shell with a uniform command structure.
 Installation of the OpenStack client can be done using:
 
 ```shell
-pip install --upgrade setuptools
-pip install requests
 pip install openstackclient
 ```
 
 To be able to use sed-like commands to map, filter, slice, and transform
-structured data (JSON), install `jq`:
+structured data (JSON), install `jq`. You can install it using pip:
 
 ```shell
 pip install jq
 ```
 
-> On Windows, you can download an installable version of `jq`</code>`
-> from [here](https://stedolan.github.io/jq/download/).
+You can also install it using your platform's native package manager, or even download an installable version from [here](https://stedolan.github.io/jq/download/).
 
 Add IGTF CA to python\'s CA store:
 
