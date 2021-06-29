@@ -90,19 +90,10 @@ $ OS_TOKEN=$(openstack --os-auth-type v3oidcaccesstoken \
             --os-project-id <your project id> token issue -c id -f value)
 ```
 
-You can refresh the access token and obtain an OpenStack token with the `egicli`
-command:
+You can easily obtain an OpenStack token with the `fedcloud` command:
 
 ```shell
-# Export OIDC env
-export CHECKIN_CLIENT_ID=<CLIENT_ID>
-export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
-export CHECKIN_REFRESH_TOKEN=<REFRESH_TOKEN>
-# Retrieve project ID
-export OS_PROJECT_ID=<PROJECT_ID>
-# Retrieve OpenStack token
-eval "$(egicli endpoint token --site <name of the site>)"
-echo $OS_TOKEN
+fedcloud openstack --site <NAME_OF_THE_SITE> --vo <NAME_OF_VO> token issue
 ```
 
 ## Useful commands with OpenStack CLI
@@ -263,12 +254,11 @@ resource "openstack_compute_instance_v2" "vm" {
 ```
 
 ```shell
-$ export CHECKIN_CLIENT_ID=<CLIENT_ID>
-$ export CHECKIN_CLIENT_SECRET=<CLIENT_SECRET>
-$ export CHECKIN_REFRESH_TOKEN=<REFRESH_TOKEN>
-$ export OS_AUTH_URL=<OPENSTACK_URL>
-$ export OS_PROJECT_ID=<PROJECT_ID>
-$ export OS_TOKEN=$(python get-token.py)
+# this will export OS_AUTH_URL and OS_PROJECT_ID
+$ eval "$(fedcloud site show-project-id --site <NAME_OF_SITE> --vo <NAME_OF_VO>)"
+# now get a valid token
+$ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
+                    token issue -c id -f value)
 $ terraform plan
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be

@@ -23,7 +23,7 @@ and at [AppDB](https://appdb.egi.eu/store/vo/vo.notebooks.egi.eu).
 In order to manage the resources you will need these tools installed on your
 client machine:
 
-- `egicli` for discovering sites and managing tokens,
+- `fedcloudclient` for discovering sites and managing tokens,
 - `terraform` to create the VMs at the providers,
 - `ansible` to configure the VMs and install kubernetes at the providers,
 - `terraform-inventory` to get the list of hosts to use from terraform.
@@ -52,39 +52,25 @@ cd <new provider>/terraform
 terraform init
 ```
 
-Using the `egicli` you can get the list of projects and their ids for a given
-site:
+Using the `fedcloud` you can get set the right environment for interacting with
+the OpenStack APIs of a given site:
 
 ```shell
-$ egicli endpoint projects --site CESGA
-id                                Name                 enabled    site
---------------------------------  -------------------  ---------  ------
-3a8e9d966e644405bf19b536adf7743d  vo.access.egi.eu     True       CESGA
-916506ac136741c28e4326975eef0bff  vo.emso-eric.eu      True       CESGA
-b1d2ef2cc2284c57bcde21cf4ab141e3  vo.nextgeoss.eu      True       CESGA
-eb7ff20e603d471cb731bdb83a95a2b5  fedcloud.egi.eu      True       CESGA
-fcaf23d103c1485694e7494a59ee5f09  vo.notebooks.egi.eu  True       CESGA
+eval "$(fedcloud site show-project-id --site CESGA --vo vo.notebooks.egi.eu)"
 ```
 
-And with the project ID, you can obtain all the environment variables needed to
-interact with the OpenStack APIs of the site:
+Whenever you need to get a valid token for the site and VO, you can obtain it with:
 
 ```shell
-eval "$(egicli endpoint env --site CESGA --project-id fcaf23d103c1485694e7494a59ee5f09)"
-```
-
-Now you are ready to use the openstack or terraform at the site. The token
-obtained is valid for 1 hour, you can refresh it at any time with:
-
-```shell
-eval "$(egicli endpoint token --site CESGA --project-id fcaf23d103c1485694e7494a59ee5f09)"
+OS_TOKEN=$(fedcloud openstack --site CESGA --vo vo.notebooks.egi.eu \
+           token issue -c id -f value)
 ```
 
 First get the network IDs and pool to use for the site:
 
 <!-- markdownlint-disable line-length -->
 ```shell
-$ openstack network list
+$ fedcloud openstack --site CESGA --vo vo.notebooks.egi.eu network list
 +--------------------------------------+-------------------------+--------------------------------------+
 | ID                                   | Name                    | Subnets                              |
 +--------------------------------------+-------------------------+--------------------------------------+
@@ -109,7 +95,7 @@ in `terraform.tfvars`. To get a list of flavors you can use:
 
 <!-- markdownlint-disable line-length -->
 ```shell
-$ openstack flavor list
+$ fedcloud openstack --site CESGA --vo vo.notebooks.egi.eu flavor list
 +--------------------------------------+----------------+-------+------+-----------+-------+-----------+
 | ID                                   | Name           |   RAM | Disk | Ephemeral | VCPUs | Is Public |
 +--------------------------------------+----------------+-------+------+-----------+-------+-----------+

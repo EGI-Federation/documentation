@@ -66,70 +66,26 @@ your cluster:
 1. network identifiers
 1. VM image identifiers
 
-We will use `egicli` to discover all needed details, set your credentials
-(Check-in client id, client secret and refresh tokens) as shown in
-[the authentication guide](../auth/#check-in-and-access-tokens) and start by
-listing the available sites:
+We will use `fedcloud` cli to discover all needed details, set your credentials
+as shown in [the authentication guide](../../auth/#check-in-and-access-tokens) and
+create the autorisation files needed for ec3 (in this case for CESGA with
+VO vo.access.egi.eu):
 
 ```shell
-$ egicli endpoint list
-Site                type                URL
-------------------  ------------------  ------------------------------------------------
-IFCA-LCG2           org.openstack.nova  https://api.cloud.ifca.es:5000/v3/
-IN2P3-IRES          org.openstack.nova  https://sbgcloud.in2p3.fr:5000/v3
-CETA-GRID           org.openstack.nova  https://controller.ceta-ciemat.es:5000/v3/
-UA-BITP             org.openstack.nova  https://openstack.bitp.kiev.ua:5000/v3
-RECAS-BARI          org.openstack.nova  https://cloud.recas.ba.infn.it:5000/v3
-CLOUDIFIN           org.openstack.nova  https://cloud-ctrl.nipne.ro:443/v3
-IISAS-GPUCloud      org.openstack.nova  https://keystone3.ui.savba.sk:5000/v3/
-IISAS-FedCloud      org.openstack.nova  https://nova.ui.savba.sk:5000/v3/
-UNIV-LILLE          org.openstack.nova  https://thor.univ-lille.fr:5000/v3
-INFN-PADOVA-STACK   org.openstack.nova  https://egi-cloud.pd.infn.it:443/v3
-CYFRONET-CLOUD      org.openstack.nova  https://panel.cloud.cyfronet.pl:5000/v3/
-SCAI                org.openstack.nova  https://fc.scai.fraunhofer.de:5000/v3
-CESNET-MCC          org.openstack.nova  https://identity.cloud.muni.cz/v3
-INFN-CATANIA-STACK  org.openstack.nova  https://stack-server.ct.infn.it:35357/v3
-CESGA               org.openstack.nova  https://fedcloud-osservices.egi.cesga.es:5000/v3
-100IT               org.openstack.nova  https://cloud-egi.100percentit.com:5000/v3/
-NCG-INGRID-PT       org.openstack.nova  https://stratus.ncg.ingrid.pt:5000/v3
-fedcloud.srce.hr    org.openstack.nova  https://cloud.cro-ngi.hr:5000/v3/
-Kharkov-KIPT-LCG2   org.openstack.nova  https://cloud.kipt.kharkov.ua:5000/v3
-```
-
-We will use `CESGA`, which has
-`https://fedcloud-osservices.egi.cesga.es:5000/v3` as URL. Get the available
-projects at the site:
-
-```shell
-$  egicli endpoint projects --site CESGA
-id                                Name              enabled    site
---------------------------------  ----------------  ---------  ------
-3a8e9d966e644405bf19b536adf7743d  vo.access.egi.eu  True       CESGA
-```
-
-Using the project id and the site name, you can create the authorisation files
-needed for ec3:
-
-```shell
-egicli endpoint ec3 --site CESGA --project-id 3a8e9d966e644405bf19b536adf7743d
+fedcloud ec3  init --site CESGA --vo vo.access.egi.eu
 ```
 
 This will generate an `auth.dat` file with your credentials to access the site
 and a `templates/refresh.radl` with a token refreshal mechanism to allow long
 running clusters to be managed on the infrastructure.
 
-Let's get also a working OpenStack setup:
-
-```shell
-eval "$(egicli endpoint env --site CESGA --project-id 3a8e9d966e644405bf19b536adf7743d)"
-```
-
-Now, get the available networks, we will need both a public and private network:
+Let's get also some needed site information. Start getting the available networks,
+we will need both a public and private network:
 
 <!-- markdownlint-disable line-length -->
 
 ```shell
-$ openstack network list
+$ fedcloud openstack --site CESGA --vo vo.access.egi.eu network list
 +--------------------------------------+----------------------+--------------------------------------+
 | ID                                   | Name                 | Subnets                              |
 +--------------------------------------+----------------------+--------------------------------------+
@@ -145,7 +101,7 @@ Then, get the list of images available:
 <!-- markdownlint-disable line-length -->
 
 ```shell
-$  openstack image list
+$  fedcloud openstack --site CESGA --vo vo.access.egi.eu image list
 +--------------------------------------+----------------------------------------------------------+--------+
 | ID                                   | Name                                                     | Status |
 +--------------------------------------+----------------------------------------------------------+--------+
@@ -214,7 +170,7 @@ in almost every deployment: the `front`, that runs the batch system, and the
 image, which is specified with the
 `disk.0.image.url = 'ost://fedcloud-osservices.egi.cesga.es/8c4e2568-67a2-441a-b696-ac1b7c60de9c'`
 line: `ost` refers to OpenStack, `fedcloud-osservices.egi.cesga.es` is the
-hostname of the URL obtained above with `egicli endpoint list` and
+hostname of the URL obtained above with `fedcloud endpoint list` and
 `8c4e2568-67a2-441a-b696-ac1b7c60de9c` is the id of the image in OpenStack. The
 size of the VM is also specified.
 
@@ -315,12 +271,12 @@ debug*       up   infinite      1   idle wn1
 Once you are done with the cluster and want to destroy it, you can use the
 `destroy` command. If your cluster was created more than one hour ago, your
 credentials to access the site will be expired and need to refreshed first with
-`egicli endpoint ec3-refresh`:
+`fedcloud ec3 refresh`:
 
 <!-- markdownlint-disable line-length -->
 
 ```shell
-$ egicli endpoint ec3-refresh # refresh your auth.dat
+$ fedcloud ec3 refresh # refresh your auth.dat
 $ docker run -it -v $PWD:/root/ -w /root grycap/ec3 list # list your clusters
    name       state           IP        nodes
 ----------------------------------------------
