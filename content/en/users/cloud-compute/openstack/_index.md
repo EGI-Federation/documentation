@@ -59,7 +59,8 @@ structured data (JSON), install `jq`. You can install it using pip:
 pip install jq
 ```
 
-You can also install it using your platform's native package manager, or even download an installable version from [here](https://stedolan.github.io/jq/download/).
+You can also install it using your platform's native package manager, or
+even download an installable version from [here](https://stedolan.github.io/jq/download/).
 
 Add IGTF CA to python\'s CA store:
 
