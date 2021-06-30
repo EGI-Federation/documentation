@@ -53,11 +53,6 @@ Installation of the OpenStack client can be done using:
 pip install openstackclient
 ```
 
-To be able to use sed-like commands to map, filter, slice, and transform
-structured data (JSON), install `jq`. You can install it using your platform's
-native package manager or download an installable version from
-[here](https://stedolan.github.io/jq/download/).
-
 Add IGTF CA to python\'s CA store:
 
 ```shell
