@@ -125,9 +125,10 @@ other topics using MATLAB.
    combining rich text, equations, images, code and inline output all in one
    document. Live Scripts can be accessed from the
    [Live Editor](https://www.mathworks.com/products/matlab/live-editor.html)
-   tab. Here is an example of a tutorial Live Script from the EGI webinar
-   showing steps required to analyze some public COVID-19 data with MATLAB [add
-   link to Live Script here]. Some other examples of Live Scripts can be found
+   tab. Here is
+   [an example of a tutorial Live Script](https://datahub.egi.eu/share/885c788bfb3a5740489f745c32e756dfch3790)
+   from the EGI webinar showing steps required to analyze some public COVID-19
+   data with MATLAB. Some other examples of Live Scripts can be found
    [here](https://www.mathworks.com/products/matlab/live-script-gallery.html).
 
 ### Limitations
