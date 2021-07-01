@@ -7,7 +7,7 @@ weight: 5
 ---
 
 Jupyter is an extensible environment that supports different programming
-languages. For the EGI service we have enabled two differnet environments:
+languages. For the EGI service we have enabled two different environments:
 
 - the default environment including commonly used languages like Python, R, and
   Julia.
