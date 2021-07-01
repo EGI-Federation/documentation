@@ -22,7 +22,7 @@ environment, pick the desired one and click start
 
 The default environment includes a set of
 [kernels](https://jupyter.readthedocs.io/en/latest/projects/kernels.html) that
-are automaticall build from the
+are automatically built from the
 [EGI-Federation/egi-notebooks-images](https://github.com/EGI-Federation/egi-notebooks-images)
 GitHub repository. These are the ones available:
 
