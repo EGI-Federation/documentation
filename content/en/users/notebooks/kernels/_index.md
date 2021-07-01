@@ -52,7 +52,7 @@ way to support your request.
 
 EGI offers MATLAB on the cloud using the
 [MATLAB Integration for Jupyter](https://www.mathworks.com/products/reference-architectures/jupyter.html)
-and share data and code with other EGI users. MATLAB is also available directly
+and shares data and code with other EGI users. MATLAB is also available directly
 on compute services offered by the members of the EGI Federation.
 
 MATLAB on the EGI infrastructure can be used by scientists and engineers for
