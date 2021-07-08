@@ -71,7 +71,7 @@ available for visualisation at
 [EGI Accounting portal](https://accounting.egi.eu).
 
 Those endpoints published in the EGI Configuration Database are monitored via
-[ARGO](https://argoeu.github.io/). The set of probes check the availability of
+[ARGO](https://argo.egi.eu/). The set of probes check the availability of
 the providers and their correct functionality.
 
 Users and Community platforms built on top of the EGI IaaS can interact with the
@@ -83,13 +83,12 @@ cloud providers at three different layers:
   dealing with different providers in a uniform way. These tools include:
   - IaaS provisioning systems that allow to define infrastructure as code and
     manage and combine resources from different providers, thus enabling the
-    portability of application deployments between them (e.g. IM or Terraform);
+    portability of application deployments between them (e.g.
+    [Infrastructure Manager](../im) or [Terraform](https://www.terraform.io/));
     and
   - cloud brokers, that provide matchmaking for workloads to available providers
-    (e.g. the INDIGO-DataCloud Orchestrator).
-- Using the AppDB VMOps dashboard, a web-based GUI that simplifies the
-  management of VMs on any provider of the EGI infrastructure. AppDB VMOps in
-  turn relies on the Infrastructure Manager.
+    (e.g. the [INDIGO-DataCloud Orchestrator](https://indigo-dc.gitbook.io/indigo-paas-orchestrator/)).
+- Using [VMOps dashboard](../vmops).
 
 EGI provides ready-to-use software components to enable the federation for
 OpenStack and OpenNebula. These components rely on public APIs of the IaaS
