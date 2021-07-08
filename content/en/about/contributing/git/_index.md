@@ -19,7 +19,7 @@ following articles providing simple tutorials:
 GitHub official documentation is available at
 [docs.github.com](https://docs.github.com/en/github).
 
-{{% alert title="Tips" color="info" %}} The
+{{% alert title="Tip" color="info" %}} The
 [first-contributions](https://github.com/firstcontributions/first-contributions)
 is a repository allowing anyone to freely learn and test creating a real Pull
 Request to an existing GitHub repository. {{% /alert %}}
