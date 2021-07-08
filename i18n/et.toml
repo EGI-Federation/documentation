@@ -1,0 +1,11 @@
+
+# Translation into Estonian
+# UI strings. Buttons and similar.
+
+# Post (blog, articles etc.)
+[post_last_mod]
+other = "Viimati muutis"
+[post_last_mod_by]
+other = " "
+[post_last_mod_by_suffix]
+other = ":"

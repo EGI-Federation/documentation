@@ -1,0 +1,8 @@
+
+# UI strings. Botones y similares.
+
+# Post (blog, articles etc.)
+[post_last_mod_by]
+other = "por"
+[post_last_mod_by_suffix]
+other = ":"
