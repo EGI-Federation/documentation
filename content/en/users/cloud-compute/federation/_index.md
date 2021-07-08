@@ -108,7 +108,7 @@ Providers of the EGI Cloud support authentication with OAuth2.0 tokens provided
 by Check-in OpenID Connect Identity provider. Support builds on the
 [AAI guide for SPs](https://wiki.egi.eu/wiki/AAI_guide_for_SPs) with detailed
 configuration provided at the
-[EGI Cloud integration manual](https://egi-federated-cloud-integration.readthedocs.io/en/latest/openstack.html#openid-connect-support).
+[EGI IaaS Service providers documentation](../../../providers/cloud-compute/openstack/#openid-connect-support).
 
 The integration relies on the OpenStack Keystone
 [OS-FEDERATION API](https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api).
