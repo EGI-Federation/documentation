@@ -7,20 +7,19 @@ description: >
 ---
 
 [Infrastructure Manager](https://www.grycap.upv.es/im) is a tool that
-streamlines the access and the usability of IaaS clouds by automating
-the configuration, deployment, and monitoring of [Virtual Appliances](../vmi).
+streamlines the access and the usability of IaaS clouds by automating the
+configuration, deployment, and monitoring of [Virtual Appliances](../vmi).
 
 It supports APIs from a large number of _Cloud Management Frameworks (CMFs)_
 making user applications cloud-agnostic. In addition it integrates a
-contextualization system to enable the installation and configuration of
-user specific applications.
+contextualization system to enable the installation and configuration of user
+specific applications.
 
-It is a service that features a web-based GUI, a XML-RPC API, a REST API
-and a command-line interface. For detailed information about Infrastructure
-Manager please visit its [documentation pages](https://imdocs.readthedocs.io).
+It is a service that features a web-based GUI, a XML-RPC API, a REST API and a
+command-line interface. For detailed information about Infrastructure Manager
+please visit its [documentation pages](https://imdocs.readthedocs.io).
 
 IM is integrated with the [EGI Check-In Service](../../check-in). A very easy
-way to deploy your first Virtual Machine in the EGI Federation is using
-the [web-based GUI](https://appsgrycap.i3m.upv.es:31443/im-dashboard/).
-Please see tutorial
-[here](https://imdocs.readthedocs.io/en/latest/dashboard.html#usage).
+way to deploy your first Virtual Machine in the EGI Federation is using the
+[web-based GUI](https://appsgrycap.i3m.upv.es:31443/im-dashboard/). Please see
+tutorial [here](https://imdocs.readthedocs.io/en/latest/dashboard.html#usage).
