@@ -71,8 +71,8 @@ available for visualisation at
 [EGI Accounting portal](https://accounting.egi.eu).
 
 Those endpoints published in the EGI Configuration Database are monitored via
-[ARGO](https://argoeu.github.io/). The set of probes check the availability of
-the providers and their correct functionality.
+[ARGO](https://argo.egi.eu/). The set of probes check the availability of the
+providers and their correct functionality.
 
 Users and Community platforms built on top of the EGI IaaS can interact with the
 cloud providers at three different layers:
@@ -83,13 +83,13 @@ cloud providers at three different layers:
   dealing with different providers in a uniform way. These tools include:
   - IaaS provisioning systems that allow to define infrastructure as code and
     manage and combine resources from different providers, thus enabling the
-    portability of application deployments between them (e.g. IM or Terraform);
+    portability of application deployments between them (e.g.
+    [Infrastructure Manager](../im) or [Terraform](https://www.terraform.io/));
     and
   - cloud brokers, that provide matchmaking for workloads to available providers
-    (e.g. the INDIGO-DataCloud Orchestrator).
-- Using the AppDB VMOps dashboard, a web-based GUI that simplifies the
-  management of VMs on any provider of the EGI infrastructure. AppDB VMOps in
-  turn relies on the Infrastructure Manager.
+    (e.g. the
+    [INDIGO-DataCloud Orchestrator](https://indigo-dc.gitbook.io/indigo-paas-orchestrator/)).
+- Using [VMOps dashboard](../vmops).
 
 EGI provides ready-to-use software components to enable the federation for
 OpenStack and OpenNebula. These components rely on public APIs of the IaaS
@@ -108,7 +108,7 @@ Providers of the EGI Cloud support authentication with OAuth2.0 tokens provided
 by Check-in OpenID Connect Identity provider. Support builds on the
 [AAI guide for SPs](https://wiki.egi.eu/wiki/AAI_guide_for_SPs) with detailed
 configuration provided at the
-[EGI Cloud integration manual](https://egi-federated-cloud-integration.readthedocs.io/en/latest/openstack.html#openid-connect-support).
+[EGI IaaS Service providers documentation](../../../providers/cloud-compute/openstack/#openid-connect-support).
 
 The integration relies on the OpenStack Keystone
 [OS-FEDERATION API](https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api).
@@ -203,34 +203,35 @@ below:
 
 <!-- markdownlint-disable line-length -->
 
-| Cloud Usage Record Property | Type            | Null | Definition                                                                                                                                                                                                                                                         |
-| --------------------------- | --------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| VMUUID                      | `varchar(255)`  | No   | Virtual Machine\'s Universally Unique Identifier concatenation of CurrentTime, SiteName and MachineName                                                                                                                                                            |
-| SiteName                    | `varchar(255)`  | No   | GOCDB SiteName - GOCDB now has cloud service types and a cloud-only site is allowed.                                                                                                                                                                               |
-| CloudComputeService (NEW)   | `varchar(255)`  |      | Name identifying cloud resource within the site. Allows multiple cloud resources within a sitei.e. a level of granularity.                                                                                                                                         |
-| MachineName                 | `varchar(255)`  | No   | VM Id - the site name for the VM                                                                                                                                                                                                                                   |
-| LocalUserId                 | `varchar(255)`  |      | Local user name                                                                                                                                                                                                                                                    |
-| LocalGroupId                | `varchar(255)`  |      | Local group name                                                                                                                                                                                                                                                   |
-| GlobalUserName              | `varchar(255)`  |      | Global identity of user (certificate DN)                                                                                                                                                                                                                           |
-| FQAN                        | `varchar(255)`  |      | Use if VOs part of authorization mechanism                                                                                                                                                                                                                         |
-| Status                      | `varchar(255)`  |      | Completion status - completed, started or suspended                                                                                                                                                                                                                |
-| StartTime                   | `datetime`      |      | Must be set when Status = started                                                                                                                                                                                                                                  |
-| EndTime                     | `datetime`      |      | Set to NULL until Status = completed                                                                                                                                                                                                                               |
-| SuspendDuration             | `datetime`      |      | Set when Status = suspended (Timestamp)                                                                                                                                                                                                                            |
-| WallDuration                | `int`           |      | WallClock time - actual time used                                                                                                                                                                                                                                  |
-| CpuDuration                 | `int`           |      | CPU time consumed (Duration)                                                                                                                                                                                                                                       |
-| CpuCount                    | `int`           |      | Number of CPUs allocated                                                                                                                                                                                                                                           |
-| NetworkType                 | `varchar(255)`  |      | Needs clarifying                                                                                                                                                                                                                                                   |
-| NetworkInbound              | `int`           |      | GB received                                                                                                                                                                                                                                                        |
-| NetworkOutbound             | `int`           |      | GB sent                                                                                                                                                                                                                                                            |
-| PublicIPCount (NEW)         | `int`           |      | Number of public IP addresses assigned to VM **Not used**.                                                                                                                                                                                                         |
-| Memory                      | `int`           |      | Memory allocated to the VM                                                                                                                                                                                                                                         |
-| Disk                        | `int`           |      | Size in GB allocated to the VM                                                                                                                                                                                                                                     |
-| BenchmarkType (NEW)         | `varchar(255)`  |      | Name of benchmark used for normalization of times (eg HEPSPEC06)                                                                                                                                                                                                   |
-| Benchmark (NEW)             | `Decimal`       |      | Value of benchmark of VM using ServiceLevelType benchmark’                                                                                                                                                                                                         |
-| StorageRecordId             | `varchar(255)`  |      | Link to other associated storage record _Need to check feasibility_                                                                                                                                                                                                |
+| Cloud Usage Record Property | Type            | Null | Definition                                                                                                                                                                                                                                                  |
+| --------------------------- | --------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| VMUUID                      | `varchar(255)`  | No   | Virtual Machine\'s Universally Unique Identifier concatenation of CurrentTime, SiteName and MachineName                                                                                                                                                     |
+| SiteName                    | `varchar(255)`  | No   | GOCDB SiteName - GOCDB now has cloud service types and a cloud-only site is allowed.                                                                                                                                                                        |
+| CloudComputeService (NEW)   | `varchar(255)`  |      | Name identifying cloud resource within the site. Allows multiple cloud resources within a sitei.e. a level of granularity.                                                                                                                                  |
+| MachineName                 | `varchar(255)`  | No   | VM Id - the site name for the VM                                                                                                                                                                                                                            |
+| LocalUserId                 | `varchar(255)`  |      | Local user name                                                                                                                                                                                                                                             |
+| LocalGroupId                | `varchar(255)`  |      | Local group name                                                                                                                                                                                                                                            |
+| GlobalUserName              | `varchar(255)`  |      | Global identity of user (certificate DN)                                                                                                                                                                                                                    |
+| FQAN                        | `varchar(255)`  |      | Use if VOs part of authorization mechanism                                                                                                                                                                                                                  |
+| Status                      | `varchar(255)`  |      | Completion status - completed, started or suspended                                                                                                                                                                                                         |
+| StartTime                   | `datetime`      |      | Must be set when Status = started                                                                                                                                                                                                                           |
+| EndTime                     | `datetime`      |      | Set to NULL until Status = completed                                                                                                                                                                                                                        |
+| SuspendDuration             | `datetime`      |      | Set when Status = suspended (Timestamp)                                                                                                                                                                                                                     |
+| WallDuration                | `int`           |      | WallClock time - actual time used                                                                                                                                                                                                                           |
+| CpuDuration                 | `int`           |      | CPU time consumed (Duration)                                                                                                                                                                                                                                |
+| CpuCount                    | `int`           |      | Number of CPUs allocated                                                                                                                                                                                                                                    |
+| NetworkType                 | `varchar(255)`  |      | Needs clarifying                                                                                                                                                                                                                                            |
+| NetworkInbound              | `int`           |      | GB received                                                                                                                                                                                                                                                 |
+| NetworkOutbound             | `int`           |      | GB sent                                                                                                                                                                                                                                                     |
+| PublicIPCount (NEW)         | `int`           |      | Number of public IP addresses assigned to VM **Not used**.                                                                                                                                                                                                  |
+| Memory                      | `int`           |      | Memory allocated to the VM                                                                                                                                                                                                                                  |
+| Disk                        | `int`           |      | Size in GB allocated to the VM                                                                                                                                                                                                                              |
+| BenchmarkType (NEW)         | `varchar(255)`  |      | Name of benchmark used for normalization of times (eg HEPSPEC06)                                                                                                                                                                                            |
+| Benchmark (NEW)             | `Decimal`       |      | Value of benchmark of VM using ServiceLevelType benchmark’                                                                                                                                                                                                  |
+| StorageRecordId             | `varchar(255)`  |      | Link to other associated storage record _Need to check feasibility_                                                                                                                                                                                         |
 | ImageId                     | `varchar(255)`  |      | Every image has a unique ID associated with it. For images from the EGI FedCloud AppDB this should be `VMCATCHER_EVENT_AD_MPURI`; for images from other repositories it should be a vmcatcher equivalent; for local images - local identifier of the image. |
-| CloudType                   | `varchar(255)`  |      | Type of cloud infrastructure: OpenNebula; OpenStack; Synnefo; etc.                                                                                                                                                                                                 |
+| CloudType                   | `varchar(255)`  |      | Type of cloud infrastructure: OpenNebula; OpenStack; Synnefo; etc.                                                                                                                                                                                          |
+
 <!-- markdownlint-enable line-length -->
 
 #### Public IP Usage Record
@@ -241,6 +242,7 @@ of the same fields as the Cloud Usage Record. The Usage Record should be a
 v0.2 of the format is shown below:
 
 <!-- markdownlint-disable line-length -->
+
 | Cloud Usage Record Property | Type           | Null | Definition                                                                   | Notes                                                                                                                                                                    |
 | --------------------------- | -------------- | ---- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | MeasurementTime             | `datetime`     | No   | The time the usage was recorded.                                             | In the message format, must be a UNIX timestamp, i.e. the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970) |
@@ -253,6 +255,7 @@ v0.2 of the format is shown below:
 | FQAN                        | `varchar(255)` | No   | See Cloud Usage Record                                                       |
 | IPVersion                   | `byte`         | No   | 4 or 6                                                                       |
 | IPCount                     | `int(11)`      | No   | The number of IP addresses of IPVersion this user currently assigned to them |
+
 <!-- markdownlint-enable line-length -->
 
 A JSON schema defining a valid Public IP Usage message can be found at:
