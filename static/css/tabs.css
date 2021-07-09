@@ -9,9 +9,11 @@ body .tab-nav-button {
   margin-left: 4px;
   bottom: -1px;
 }
+
 body .tab-nav-button:first-child {
-  margin-left: 0px;
+  margin-left: 0;
 }
+
 body .tab-nav-button.active {
   background-color: #fff !important;
   border-bottom-color: #fff !important;
@@ -21,6 +23,7 @@ body .tab-panel {
   margin-top: 32px;
   margin-bottom: 32px;
 }
+
 body .tab-content {
   display: block;
   clear: both;
@@ -29,6 +32,7 @@ body .tab-content {
   border-style: solid;
   border-color: #ccc;
 }
+
 body .tab-content .tab-item {
   display: none;
 }
