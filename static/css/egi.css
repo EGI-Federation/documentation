@@ -1,83 +1,84 @@
 .features {
-    justify-content: center;
+  justify-content: center;
 }
 
 .feature {
-    border-radius: .5rem;
-    max-width: 250px;
-    min-height: 350px;
-    border-width: 0;
-    border-style: solid;
-    border-color: #e2e8f0;
-    margin: .5rem;
-    color: white;
-    background-color: #89b1e6;
+  border-radius: 0.5rem;
+  max-width: 250px;
+  min-height: 350px;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e2e8f0;
+  margin: 0.5rem;
+  color: white;
+  background-color: #89b1e6;
 }
 
 .feature .h1 {
-    font-size: 4rem;
-    margin-top: 4rem;
-    margin-bottom: 1.5rem;
-    justify-content: center !important;
+  font-size: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  justify-content: center !important;
 }
 
 .feature-higlight .h1 {
-    color: #4484d8 !important;
+  color: #4484d8 !important;
 }
 
-.feature-higlight  { 
-    box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05)
+.feature-higlight {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .feature .h2 {
-    font-size: 1rem;
-    font-weight: bolder;
-    color: #1d1d1d;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: #1d1d1d;
 }
 
 .feature p {
-    font-size: 12px;
-    color: #3d3d3d;
+  font-size: 12px;
+  color: #3d3d3d;
 }
 
 .td-navbar {
-    min-height: 0px;
+  min-height: 0px;
 }
 
 .td-sidebar-nav {
-    max-height: calc(100vh - 5rem);
+  max-height: calc(100vh - 5rem);
 }
 
 .td-sidebar-toc {
-    top: 2.75rem;
+  top: 2.75rem;
 }
 
 .td-toc-title {
-    font-weight: 700;
-    color: #30638E;
-    margin-top: 1rem;
-    margin-bottom: 0;
+  font-weight: 700;
+  color: #30638e;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .td-toc .panel-line {
-    margin-top: .25rem;
-    margin-bottom: .25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .td-toc,
 .td-page-meta {
-    font-size: .6rem;
+  font-size: 0.6rem;
 }
 
 footer {
-    min-height: 120px;
+  min-height: 120px;
 }
 
 .list-inline .footer-dev-link,
 .list-inline .footer-usr-link {
-    vertical-align: top;
+  vertical-align: top;
 }
 
-.list-inline .github  {
-    margin-top: 2px;
+.list-inline .github {
+  margin-top: 2px;
 }
