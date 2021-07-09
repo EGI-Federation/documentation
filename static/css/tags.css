@@ -4,8 +4,8 @@
     margin-left:1em;  
     margin-top:1em;
 }
-  
-#body .tags a.tag-link {
+
+body .tags a.tag-link {
     display: inline-block;
     line-height: 2em;
     font-size: 0.8em;
@@ -24,7 +24,7 @@
     color: #fff;
 }
   
-#body .tags a.tag-link:before {
+body .tags a.tag-link:before {
     content: "";
     position: absolute;
     top:0;
@@ -36,7 +36,7 @@
     border-width: 1em 1em 1em 0;        
 }
   
-#body .tags a.tag-link:after {
+body .tags a.tag-link:after {
     content: "";
     position: absolute;
     top: 10px;
