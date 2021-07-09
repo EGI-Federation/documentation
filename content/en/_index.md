@@ -60,7 +60,7 @@ Hosts the documentation of the EGI services that power the cloud services of EGI
 {{% blocks/feature icon="fa-lightbulb" title="Learn about EGI"
     url="https://www.egi.eu" %}}
 <!-- markdown-link-check-enable-->
-The EGI Federation is supporting many different user communities and open sience projects.
+The EGI Federation is supporting many different user communities and open science projects.
 {{% /blocks/feature %}}
 
 <!-- markdown-link-check-disable -->

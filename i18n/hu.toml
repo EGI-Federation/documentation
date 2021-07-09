@@ -2,6 +2,8 @@
 # UI strings. Buttons and similar.
 [ui_search]
 other = "Keresés…"
+[on_this_page]
+other = "Ezen az oldalon"
 
 # Post (blog, articles etc.)
 [post_last_mod_by]

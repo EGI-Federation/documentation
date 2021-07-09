@@ -2,6 +2,8 @@
 # UI strings. Buttons and similar.
 [ui_search]
 other = "Søk…"
+[on_this_page]
+other = "På denne siden"
 
 # Post (blog, articles etc.)
 [post_last_mod_by]

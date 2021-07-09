@@ -2,6 +2,8 @@
 # UI strings. Buttons and similar.
 [ui_search]
 other = "검색…"
+[on_this_page]
+other = "이 페이지에서"
 
 # Post (blog, articles etc.)
 [post_last_mod_by]

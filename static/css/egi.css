@@ -40,14 +40,33 @@
     color: #3d3d3d;
 }
 
-
-
 .td-navbar {
     min-height: 0px;
 }
 
 .td-sidebar-nav {
     max-height: calc(100vh - 5rem);
+}
+
+.td-sidebar-toc {
+    top: 2.75rem;
+}
+
+.td-toc-title {
+    font-weight: 700;
+    color: #30638E;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.td-toc .panel-line {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+}
+
+.td-toc,
+.td-page-meta {
+    font-size: .6rem;
 }
 
 footer {

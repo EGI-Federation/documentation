@@ -3,6 +3,8 @@
 # UI strings. Buttons and similar.
 [ui_search]
 other = "Osting…"
+[on_this_page]
+other = "Sellel lehel"
 
 # Post (blog, articles etc.)
 [post_last_mod]

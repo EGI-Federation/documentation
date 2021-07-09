@@ -2,6 +2,8 @@
 # UI strings. Buttons and similar.
 [ui_search]
 other = "探す…"
+[on_this_page]
+other = "このページで"
 
 # Post (blog, articles etc.)
 [post_last_mod_by]

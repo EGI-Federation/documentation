@@ -2,6 +2,8 @@
 # UI strings. Buttons and similar.
 [ui_search]
 other = "Arama…"
+[on_this_page]
+other = "Bu sayfada"
 
 # Post (blog, articles etc.)
 [post_last_mod_by]
