@@ -39,15 +39,15 @@ href="{{< relref "/about/contributing" >}}"> Contribute
 {{< blocks/section color="primary" type="features">}}
 
 {{% blocks/feature icon="fa-user-friends" title="User Guide" url="/users" %}}
-Contains documentation of the EGI services and step-by-step guides on how to use
-them. {{% /blocks/feature %}}
+Contains documentation of the EGI services and step-by-step guides on how to
+use them. {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-users-cog" title="Service Providers" url="/providers" %}}
-Explains how to join the EGI infrastructure as a service provider to offer your
-innovative services. {{% /blocks/feature %}}
+{{% blocks/feature icon="fa-users-cog" title="Service Providers"
+url="/providers" %}} Explains how to join the EGI infrastructure as a service
+provider to offer your innovative services. {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-cogs" title="Internal Services"
-    url="/internal" %}} Hosts the documentation of the EGI services that power the
+{{% blocks/feature icon="fa-cogs" title="Internal Services" url="/internal" %}}
+Hosts the documentation of the EGI services that power the
 cloud services of EGI Federation. {{% /blocks/feature %}}
 
 {{< /blocks/section >}}
