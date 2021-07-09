@@ -6,6 +6,7 @@ type: "docs"
 menu:
   main:
     weight: 10
+    pre: <i class='fa fa-user-friends'></i>
 ---
 
 ## Request for information

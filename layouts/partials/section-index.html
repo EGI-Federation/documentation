@@ -3,7 +3,7 @@
     {{ $pages = (where $pages "Type" "!=" "search") }}
     {{ $parent := .Page }}
     {{ if or $parent.Params.no_list (gt (len $pages) 0) }}
-    {{/* If no_list is true we don't show a list of subpages */}}
+    {{/* If no_list is true or we don't have subpages we don't show a list of subpages */}}
     {{ else if $parent.Params.simple_list }}
     {{/* If simple_list is true we show a bulleted list of subpages */}}
         <ul>

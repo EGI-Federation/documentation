@@ -38,15 +38,15 @@ description: "Documentation related to EGI activities"
 <div class="mx-auto">
 {{< blocks/section color="primary" type="features">}}
 
-{{% blocks/feature icon="fa-lightbulb" title="Users" url="/users" %}}
+{{% blocks/feature icon="fa-user-friends" title="Users" url="/users" %}}
 Contains step-to-step documentation on how to use the EGI services.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="Providers" url="/providers" %}}
-Depicts how to join the EGI infrastructure as a service providers offering
+{{% blocks/feature icon="fa-users-cog" title="Providers" url="/providers" %}}
+Depicts how to join the EGI infrastructure as a service provider offering
 innovative services to the European Research Area. {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="Internal services"
+{{% blocks/feature icon="fa-cogs" title="Internal services"
     url="/internal" %}}
 Hosts the documentation of the EGI services enabling the federation.
 {{% /blocks/feature %}}

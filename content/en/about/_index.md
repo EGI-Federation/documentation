@@ -5,6 +5,7 @@ type: docs
 menu:
   main:
     weight: 40
+    pre: <i class='fa fa-info'></i>
 ---
 
 {{% alert title="Note" color="info" %}} The documentation covering the

@@ -6,6 +6,7 @@ type: "docs"
 menu:
   main:
     weight: 30
+    pre: <i class='fa fa-cogs'></i>
 ---
 
 This section contains documentation about the EGI Internal Services, that are
