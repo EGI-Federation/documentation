@@ -81,11 +81,11 @@ anchor = "smart"
 # Everything below this are Site Params
 
 [params]
-copyright = "EGI Foundation"
+copyright = "EGI Foundation."
 privacy_policy = "https://www.egi.eu/privacy-policy/"
 
-custom_css = ["css/tabs.css", "css/tags.css"]
-custom_js = ["js/clipboard.min.js", "js/featherlight.min.js", "js/highlight.pack.js", "js/egi.js"]
+custom_css = ["css/tabs.css", "css/tags.css", "css/egi.css"]
+custom_js = ["js/clipboard.min.js", "js/featherlight.min.js", "js/highlight.pack.js", "js/egi.js", "https://buttons.github.io/buttons.js"]
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 github_repo = "https://github.com/EGI-Federation/documentation"
@@ -142,22 +142,23 @@ no = 'Sorry to hear that. Please <a href="https://github.com/EGI-Federation/docu
 enable = false
 
 [params.links]
-# End user relevant links. These will show up on left side of footer and in the community page if you have one.
-[[params.links.user]]
-    name = "Community discussions"
-    url = "https://community.egi.eu"
-    icon = "fa fa-comments"
-    desc = "Discussion and help from your fellow users"
-[[params.links.user]]
-    name ="Twitter"
-    url = "https://twitter.com/EGI_eInfra"
-    icon = "fab fa-twitter"
-    desc = "Follow us on Twitter to get the latest news!"
-[[params.links.developer]]
-    name = "GitHub"
-    url = "https://github.com/EGI-Federation"
-    icon = "fab fa-github"
-    desc = "Development takes place here!"
+# End user relevant links. These will show up on left/right side of footer and in the community page if you have one.
+  [[params.links.user]]
+      name = "Community discussions"
+      url = "https://community.egi.eu"
+      icon = "fa fa-comments"
+      desc = "Discussion and help from your fellow users"
+  [[params.links.user]]
+      name ="Twitter"
+      url = "https://twitter.com/EGI_eInfra"
+      icon = "fab fa-twitter"
+      desc = "Follow us on Twitter to get the latest news!"
+# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+  [[params.links.developer]]
+      name = "GitHub"
+      url = "https://github.com/EGI-Federation"
+      icon = "fab fa-github"
+      desc = "Development takes place here!"
 
 [params.mermaid]
 enable = true

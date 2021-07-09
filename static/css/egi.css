@@ -1,0 +1,13 @@
+/* Github Buttons */
+
+.td-sidebar-nav {
+    max-height: calc(100vh - 8rem);
+}
+
+footer {
+    min-height: 120px;
+}
+
+.github-stats  {
+    padding-top: 5px;
+}
