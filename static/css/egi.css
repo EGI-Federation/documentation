@@ -8,6 +8,11 @@ footer {
     min-height: 120px;
 }
 
-.github-stats  {
-    padding-top: 5px;
+.list-inline .footer-dev-link,
+.list-inline .footer-usr-link {
+    vertical-align: top;
+}
+
+.list-inline .github  {
+    margin-top: 2px;
 }

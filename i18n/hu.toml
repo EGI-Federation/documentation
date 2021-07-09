@@ -8,3 +8,7 @@ other = "Keresés…"
 other = " "
 [post_last_mod_by_suffix]
 other = " által:"
+
+# Footer text
+[footer_all_rights_reserved]
+other = "Minden jog fenntartva."

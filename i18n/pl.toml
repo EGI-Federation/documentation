@@ -8,3 +8,7 @@ other = "Szukaj…"
 other = "przez"
 [post_last_mod_by_suffix]
 other = ":"
+
+# Footer text
+[footer_all_rights_reserved]
+other = "Wszelkie prawa zastrzeżone."

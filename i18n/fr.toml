@@ -8,3 +8,7 @@ other = "Rechercher…"
 other = "par"
 [post_last_mod_by_suffix]
 other = ":"
+
+# Footer text
+[footer_all_rights_reserved]
+other = "Tous droits résérvés."
