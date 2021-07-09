@@ -1,7 +1,11 @@
 /* Github Buttons */
 
+.td-navbar {
+    min-height: 0px;
+}
+
 .td-sidebar-nav {
-    max-height: calc(100vh - 8rem);
+    max-height: calc(100vh - 5rem);
 }
 
 footer {
