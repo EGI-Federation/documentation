@@ -41,6 +41,7 @@ Installation of the OpenStack client can be done using:
 ```shell
 pip install openstackclient
 ```
+
 {{% /tab %}}
 {{% tab name="Windows" %}}
 
@@ -62,6 +63,7 @@ Installation of the OpenStack client can be done using:
 ```shell
 pip install openstackclient
 ```
+
 {{% /tab %}}
 {{< /tabs >}}
 
