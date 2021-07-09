@@ -1,5 +1,7 @@
 
 # UI strings. Botones y similares.
+[ui_search]
+other = "Búsqueda…"
 
 # Post (blog, articles etc.)
 [post_last_mod_by]

@@ -1,6 +1,8 @@
 
 # Translation into Estonian
 # UI strings. Buttons and similar.
+[ui_search]
+other = "Osting…"
 
 # Post (blog, articles etc.)
 [post_last_mod]

@@ -4,7 +4,7 @@ description: "About EGI Documentation"
 type: docs
 menu:
   main:
-    weight: 40
+    weight: 50
     pre: <i class='fa fa-info'></i>
 ---
 

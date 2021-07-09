@@ -153,32 +153,11 @@ enable = false
     url = "https://twitter.com/EGI_eInfra"
     icon = "fab fa-twitter"
     desc = "Follow us on Twitter to get the latest news!"
-# [[params.links.user]]
-#  name = "Stack Overflow"
-#  url = "https://example.org/stack"
-#  icon = "fab fa-stack-overflow"
-#  desc = "Practical questions and curated answers"
-#  Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
     name = "GitHub"
     url = "https://github.com/EGI-Federation"
     icon = "fab fa-github"
     desc = "Development takes place here!"
-[[params.links.developer]]
-    name = "Slack"
-    url = "https://egiteam.slack.com/messages/documentation"
-    icon = "fab fa-slack"
-    desc = "Chat with other project developers"
-# [[params.links.developer]]
-#     name = "Developer mailing list"
-#     url = "https://example.org/mail"
-#     icon = "fa fa-envelope"
-#     desc = "Discuss development issues around the project"
-# Maybe useful to add back this somewhere
-# [[menu.shortcuts]]
-# name = "<i class='fa fa-cloud-download'></i> <label>Download</label>"
-# url = "https://github.com/EGI-Federation/EGI-Federation.github.io/archive/main.zip"
-# weight = 11
 
 [params.mermaid]
 enable = true

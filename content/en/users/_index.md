@@ -11,8 +11,8 @@ menu:
 
 ## Request for information
 
-You can ask for more information about the services at:
-[here](https://www.egi.eu/more-information/)
+You can ask for more information about the services
+[here](https://www.egi.eu/more-information/).
 
 ## Accessing EGI services
 

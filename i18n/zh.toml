@@ -1,5 +1,7 @@
 
 # UI strings. Buttons and similar.
+[ui_search]
+other = "搜索…"
 
 # Post (blog, articles etc.)
 [post_last_mod_by]
