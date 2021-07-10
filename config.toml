@@ -178,4 +178,4 @@ html_dom_element = "document.body"
 enable = true
 
 [params.print]
-disable_toc = false
+disable_toc = true
