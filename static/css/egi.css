@@ -109,6 +109,7 @@
 
 .section-index .entry {
   padding: 0.25rem;
+  padding-left: 2rem;
 }
 
 .section-index .entry p {

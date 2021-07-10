@@ -16,7 +16,10 @@
         </ul>
     {{ else }}
     {{/* Otherwise we show a nice formatted list of subpages with page descriptions */}}
-    <hr class="panel-line">
+        <hr class="panel-line">
+        <div class="lead">
+        Next topics:    
+        </div>
         {{ range $pages }}
             {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref") (relref . .Params.manualLinkRelref) .RelPermalink) }}
             <div class="entry">
