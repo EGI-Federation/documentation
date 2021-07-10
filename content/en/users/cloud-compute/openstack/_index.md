@@ -35,20 +35,6 @@ together in a single shell with a uniform command structure.
 
 {{< tabs >}}
 {{% tab name="Linux / Mac" %}}
-> If installing on Windows, as there are non-pure Python packages needed for
-> installation, the
-> [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
-> is a prerequisite, please make sure it's installed with the following options
-> selected:
->
-> - C++ CMake tools for Windows
-> - C++ ATL for latest v142 build tools (x86 & x64)
-> - Testing tools core features - Build Tools
-> - Windows 10 SDK (`<latest`>)
->
-> In case you prefer to use non-Microsoft alternatives for building non-pure
-> packages, please see [here](https://wiki.python.org/moin/WindowsCompilers).
-
 Installation of the OpenStack client can be done using:
 
 ```shell
