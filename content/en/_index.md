@@ -73,7 +73,7 @@ science projects. {{% /blocks/feature %}}
 
 <!-- markdown-link-check-enable-->
 
-We do a contributions workflow on **GitHub**. New users are always welcome!
+We do a contributions workflow on GitHub. New users are always welcome!
 {{% /blocks/feature %}}
 
 <!-- markdown-link-check-disable -->

@@ -5,14 +5,14 @@
       <div class="col-6 col-sm-4 text-xs-center order-sm-2">
         {{ with $links }}
         {{ with index . "user"}}
-        {{ template "footer-links-block"  . }}
+        {{ template "footer-user-links-block"  . }}
         {{ end }}
         {{ end }}
       </div>
       <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
         {{ with $links }}
         {{ with index . "developer"}}
-        {{ template "footer-links-block-ex"  . }}
+        {{ template "footer-dev-links-block"  . }}
         {{ end }}
         {{ end }}
       </div>
@@ -26,7 +26,7 @@
     </div>
   </div>
 </footer>
-{{ define "footer-links-block" }}
+{{ define "footer-user-links-block" }}
 <ul class="list-inline mb-0">
   {{ range . }}
   <li class="list-inline-item footer-usr-link mx-2 h3" data-toggle="tooltip" data-placement="top" title="{{ .name }}" aria-label="{{ .name }}">
@@ -37,7 +37,7 @@
   {{ end }}
 </ul>
 {{ end }}
-{{ define "footer-links-block-ex" }}
+{{ define "footer-dev-links-block" }}
 <ul class="list-inline mb-0">
   <li class="list-inline-item github mx-0">
     <a class="github-button" href="https://github.com/EGI-Federation/documentation/archive/refs/heads/main.zip" data-icon="octicon-download" aria-label="Download EGI documentation from GitHub">Download</a>
