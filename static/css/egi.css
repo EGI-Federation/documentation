@@ -107,6 +107,14 @@
   margin-bottom: 1rem;
 }
 
+.section-index .entry {
+  padding: 0.25rem;
+}
+
+.section-index .entry p {
+  margin-bottom: 0;
+}
+
 footer {
   min-height: 120px;
 }
