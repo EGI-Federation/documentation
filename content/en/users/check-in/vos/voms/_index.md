@@ -1,6 +1,6 @@
 ---
 title: "VOMS"
-linkTitle: "VOMS"
+linkTitle: "VO Management System"
 type: docs
 weight: 100
 description: >
