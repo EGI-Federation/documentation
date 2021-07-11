@@ -26,3 +26,13 @@ $spacer: 0.5rem;
 
 $nav-link-padding-y: 0.25rem !default;
 $nav-link-padding-x: 0.6rem !default;
+
+//
+// Style Markdown content
+//
+
+.td-content {
+        > .tabx-content {
+        @extend .td-max-width-on-larger-screens;
+    }
+}

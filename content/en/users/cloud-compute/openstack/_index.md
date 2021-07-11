@@ -33,16 +33,17 @@ The OpenStack client is a command-line client for OpenStack that brings the
 command set for Compute, Identity, Image, Object Storage and Block Storage APIs
 together in a single shell with a uniform command structure.
 
-{{< tabs >}}
-{{% tab name="Linux / Mac" %}}
+{{< tabpanex >}}
+{{< tabx header="Linux / Mac" >}} 
+
 Installation of the OpenStack client can be done using:
 
 ```shell
 pip install openstackclient
 ```
 
-{{% /tab %}}
-{{% tab name="Windows" %}}
+{{< /tabx >}}
+{{< tabx header="Windows" >}}
 
 As there are non-pure Python packages needed for installation, the
 [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
@@ -63,8 +64,8 @@ Installation of the OpenStack client can be done using:
 pip install openstackclient
 ```
 
-{{% /tab %}}
-{{< /tabs >}}
+{{< /tabx >}}
+{{< /tabpanex >}}
 
 Add IGTF CA to python\'s CA store:
 

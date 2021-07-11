@@ -2,9 +2,10 @@
 title: "VOMS"
 linkTitle: "VO Management System"
 type: docs
-weight: 100
+weight: 40
 description: >
   X.509 / VOMS based authentication and authorisation
+no_list: true
 ---
 
 ## Authentication

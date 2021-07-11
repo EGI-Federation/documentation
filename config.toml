@@ -84,7 +84,7 @@ anchor = "smart"
 copyright = "EGI Foundation."
 privacy_policy = "https://www.egi.eu/privacy-policy/"
 
-custom_css = ["css/tabs.css", "css/tags.css", "css/egi.css"]
+custom_css = ["css/shortcodes/tabbed-panex.css", "css/tags.css", "css/egi.css"]
 custom_js = ["js/clipboard.min.js", "js/featherlight.min.js", "js/highlight.pack.js", "js/egi.js", "https://buttons.github.io/buttons.js"]
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
