@@ -25,7 +25,7 @@ Users from other distributions should refer to the
 
 The CLI can be installed from the EPEL repositories with the following package:
 
-```sh
+```shell
 yum install fts-rest-cli -y
 ```
 
@@ -46,7 +46,7 @@ server.
 
 #### Usage
 
-```sh
+```shell
 fts-rest-whoami [options]
 Options
 
@@ -72,7 +72,7 @@ Options
 
 #### Example
 
-```sh
+```shell
 $ fts-rest-whoami -s https://fts3-public.cern.ch:8446
 User DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi
 VO: dteam
@@ -87,7 +87,7 @@ This command can be used to (re)delegate your credentials to the FTS3 server.
 
 #### Usage
 
-```sh
+```shell
 fts-rest-delegate [options]
 Options
 
@@ -117,7 +117,7 @@ Options
 
 #### Example
 
-```sh
+```shell
 $ fts-rest-delegate -s https://fts3-public.cern.ch:8446
 Delegation id: 9ab8068853808c6b
 ```
@@ -127,7 +127,7 @@ Delegation id: 9ab8068853808c6b
 This command can be used to submit new jobs to FTS3. It supports simple and bulk
 submissions. The bulk format is as follows:
 
-```sh
+```shell
 {
   "files": [
     {
@@ -159,7 +159,7 @@ submissions. The bulk format is as follows:
 
 #### Usage
 
-```sh
+```shell
 fts-rest-transfer-submit [options] SOURCE DESTINATION [CHECKSUM]
 Options
 
@@ -240,7 +240,7 @@ If negative, there will be no retries.
 
 #### Example
 
-```sh
+```shell
 fts-rest-transfer-submit -s https://fts3-public.cern.ch:8446 \
   gsiftp://source.host/file gsiftp://destination.host/file
 Job successfully submitted.
@@ -257,7 +257,7 @@ This command can be used to check the current status of a given job.
 
 #### Usage
 
-```sh
+```shell
 fts-rest-transfer-status [options] JOB_ID
 Options
 
@@ -283,7 +283,7 @@ Options
 
 #### Example
 
-```sh
+```shell
 fts-rest-transfer-status -s https://fts3-public.cern.ch:8446 \
   7e02b4fa-d568-11ea-9c80-02163e018681
 Request ID: 7e02b4fa-d568-11ea-9c80-02163e018681
@@ -306,7 +306,7 @@ file ids.
 
 #### Usage
 
-```sh
+```shell
 fts-rest-transfer-cancel [options]
 Options
 
@@ -332,7 +332,7 @@ Options
 
 #### Example
 
-```sh
+```shell
 fts-rest-transfer-cancel -s https://fts3-public.cern.ch:8446
 9a28d204-d568-11ea-9c80-02163e018681
 CANCELED

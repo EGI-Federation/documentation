@@ -54,7 +54,7 @@ Prettier can be integrated with
 
 Configuration is provided in `.prettierrc`, options can be set as follow:
 
-```sh
+```shell
 --print-width 80 --tab-width 2 --prose-wrap always
 ```
 

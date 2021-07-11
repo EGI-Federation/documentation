@@ -49,7 +49,7 @@ the `fedcloud` components is quite handy. For instance to setup the access to th
 SWIFT endpoint at IFCA-LCG2 via the Pilot VO (vo.access.egi.eu) you can use the
 `fedcloud openstack` command.  Start listing the available containers(buckets):
 
-```sh
+```shell
 $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container list
 +------------------+
 | Name             |
@@ -60,7 +60,7 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container list
 
 Creating a new container:
 
-```sh
+```shell
 $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container create test-egi
 +---------+-----------+------------------------------------------------------+
 | account | container | x-trans-id                                           |
@@ -71,7 +71,7 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container create tes
 
 Creating a new Object by uploading a file:
 
-```sh
+```shell
 $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
            object create test-egi file1.txt
 +-----------+-----------+----------------------------------+
@@ -83,7 +83,7 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
 
 Listing objects inside a container:
 
-```sh
+```shell
 $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu object list test-egi
 +-----------+
 | Name      |
@@ -94,21 +94,21 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu object list test-egi
 
 Download an object:
 
-```sh
+```shell
 fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
          object save test-egi file1.txt
 ```
 
 Removing an object from the container:
 
-```sh
+```shell
 fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
          object delete test-egi file1.txt
 ```
 
 Removing the entire container (`-r` option for recursive):
 
-```sh
+```shell
 fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container delete test-egi
 ```
 
@@ -124,7 +124,7 @@ credentials from the Openstack deployment.
 The following command is needed:
 
 <!-- markdownlint-disable line-length -->
-```sh
+```shell
 $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu ec2 credentials create
 
 +------------+------------------------------------------------------------------------------------------------------------------------------------------+
@@ -150,7 +150,7 @@ environments.
 
 In order to list via S3 protocol the SWIFT server just type:
 
-```sh
+```shell
 davix-ls --s3accesskey 'access' --s3secretkey 'secret'  --s3alternate s3s://api.cloud.ifca.es:8080/swift/v1/test-egi
 
 ```

@@ -22,6 +22,42 @@ For references The following shortcodes are available:
 - [Hugo's shortcodes](https://gohugo.io/content-management/shortcodes/)
 - [Docsy theme shortcodes](https://www.docsy.dev/docs/adding-content/shortcodes/)
 
+### Adding chapters
+
+To create new chapters in the documentation (visible in left-side navigation
+tree), you have to create new folders under `/content/<language>` and add a file
+`_index.md` to that folder. The beginning of the markdown file contains a
+[front matter](https://gohugo.io/content-management/front-matter/) in YAML, JSON
+or TOML, holding the metadata of the page:
+
+```yaml
+---
+title: "Syntax"
+description: "Syntax guide for EGI documentation"
+type: docs
+weight: 30
+---
+```
+
+The parameter `weight` controls the order of the chapters on the same level in
+the left-side navigation tree. Chapters will appear in descending order of their
+weight.
+
+The navigation tree officially supports a depth of three (3) levels using the
+method described above. If you need to add a fourth level of chapters, in the
+folder of the chapter on the third level, add markdown files for the pages that
+should be on the fourth level, with a front matter like this:
+
+```yaml
+---
+title: "Page Guide"
+description: "Deepest page in the documentation"
+type: docs
+weight: 50
+no_list: true
+---
+```
+
 ### Linking to another page
 
 You can use the path to the other page:
@@ -58,7 +94,8 @@ The following code:
 
 Will render as:
 
-{{% pageinfo %}} This is a placeholder. {{% /pageinfo %}}
+{{% pageinfo %}} This is a
+placeholder. {{% /pageinfo %}}
 
 #### Note or information message
 
@@ -85,17 +122,17 @@ Will render as:
 
 {{% alert title="Warning" color="warning" %}} This is a warning. {{% /alert %}}
 
-### Including file snippets
+### Code or shell snippets
 
-The code should be surrounded with three backticks and include the file type as
-a parameter.
+The code or instructions should be surrounded with three backticks and include
+the file type as a parameter.
 
 The supported languages are dependant on the syntax highlighter, which depends
 itself on the mardkown parser.
 
 {{% alert title="Note" color="info" %}} For [Hugo](https://gohugo.io/) the
 [goldmark parser](https://github.com/yuin/goldmark) is used and it relies on the
-[Chroma highlighter](https://github.com/alecthomas/chroma). {{% /alert %}}
+[Prism syntax highlighting](https://prismjs.com/download.html#themes=prism). {{% /alert %}}
 
 The list of languages supported by chroma can be found in their
 [GitHub repository](https://github.com/alecthomas/chroma#supported-languages).
@@ -103,7 +140,7 @@ The list of languages supported by chroma can be found in their
 The following code should be used for a shell excerpt:
 
 ````markdown
-```sh
+```shell
 ssh-keygen -f fedcloud
 echo $HOME
 ```
@@ -111,7 +148,7 @@ echo $HOME
 
 Will render as:
 
-```sh
+```shell
 ssh-keygen -f fedcloud
 echo $HOME
 ```
