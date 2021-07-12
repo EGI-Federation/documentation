@@ -68,9 +68,9 @@ your cluster:
 
 We will use the [fedcloud](https://fedcloudclient.fedcloud.eu/) client to
 discover the required information. Set your credentials as shown in
-[the authentication guide](../../auth/#check-in-and-access-tokens) and
-create the autorisation files needed for ec3 (in this case for CESGA with
-VO vo.access.egi.eu):
+[the authentication guide](../../auth/#check-in-and-access-tokens) and create
+the autorisation files needed for ec3 (in this case for CESGA with VO
+vo.access.egi.eu):
 
 ```shell
 fedcloud ec3  init --site CESGA --vo vo.access.egi.eu
@@ -80,8 +80,8 @@ This will generate an `auth.dat` file with your credentials to access the site
 and a `templates/refresh.radl` with a refresh token to allow long running
 clusters to be managed on the infrastructure.
 
-Let's get also some needed site information. Start getting the available networks,
-we will need both a public and private network:
+Let's get also some needed site information. Start getting the available
+networks, we will need both a public and private network:
 
 <!-- markdownlint-disable line-length -->
 

@@ -62,8 +62,8 @@ sites.
 ### How can I get the list of the EGI Cloud providers?
 
 The list of certified providers is available in [GOCDB](https://goc.egi.eu). The
-following command with the [fedcloud](https://fedcloudclient.fedcloud.eu/) client
-can help you to get that list:
+following command with the [fedcloud](https://fedcloudclient.fedcloud.eu/)
+client can help you to get that list:
 
 ```shell
 $ fedcloud site list
@@ -235,24 +235,26 @@ one as a gateway as described in the
 ### How can I release resources without destroying my data?
 
 Whenever you delete a VM, the ephemeral disks associated with it will be also
-deleted. If you don't plan to use your VM for some time, there are several
-ways to release resources consumed by the VM (e.g. CPU, RAM) and  recover the
-the data or boot your VM in a previous state when you need it back. We list
-below the main strategies you can use:
+deleted. If you don't plan to use your VM for some time, there are several ways
+to release resources consumed by the VM (e.g. CPU, RAM) and recover the the data
+or boot your VM in a previous state when you need it back. We list below the
+main strategies you can use:
 
-- Use a volume to store the data to be kept: Check the [Storage section of the
-  documentation](../storage) to learn how to use volumes. If you start your VM
-  from a volume, the VM can be destroyed and recreated easily. OpenStack
-  documentation cover how to [start a VM from a volume with CLI](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)
-  or [using the Horizon dashboard](https://docs.openstack.org/horizon/latest/user/launch-instances.html)
+- Use a volume to store the data to be kept: Check the
+  [Storage section of the documentation](../storage) to learn how to use
+  volumes. If you start your VM from a volume, the VM can be destroyed and
+  recreated easily. OpenStack documentation cover how to
+  [start a VM from a volume with CLI](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)
+  or
+  [using the Horizon dashboard](https://docs.openstack.org/horizon/latest/user/launch-instances.html)
 
-- Suspend or shelve instance: Suspending a VM will pause a VM, releasing CPU
-  and memory, and allowing to resume later in time at the exact same state.
-  Shelving shuts down the VM, thus RAM contents will be lost but disk will be
-  kept. This releases more resources from the provider while still allows to
-  easily boot the VM back without losing disk contents.
+- Suspend or shelve instance: Suspending a VM will pause a VM, releasing CPU and
+  memory, and allowing to resume later in time at the exact same state. Shelving
+  shuts down the VM, thus RAM contents will be lost but disk will be kept. This
+  releases more resources from the provider while still allows to easily boot
+  the VM back without losing disk contents.
 
 - Create snapshot of instance: a snapshot will create a new VM image at your
-  provider that can be used to boot a new instance of the VM with the same
-  disk content. You can use this technique for creating a base template
-  image that can be later re-used to start similar VMs easily.
+  provider that can be used to boot a new instance of the VM with the same disk
+  content. You can use this technique for creating a base template image that
+  can be later re-used to start similar VMs easily.
