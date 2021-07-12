@@ -45,8 +45,16 @@
   min-height: 0;
 }
 
+.td-sidebar {
+  padding-top: 3rem;
+}
+
+.td-sidebar__search {
+  padding-top: 0;
+}
+
 .td-sidebar-nav {
-  max-height: calc(100vh - 5rem);
+  max-height: calc(100vh - 8rem);
 }
 
 .td-sidebar-toc {
