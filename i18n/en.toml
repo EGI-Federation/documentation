@@ -10,6 +10,8 @@ other = "On this page"
 other = "by"
 [post_last_mod_by_suffix]
 other = ":"
+[no_version_info]
+other = "No version information available."
 
 # Footer text
 [footer_all_rights_reserved]

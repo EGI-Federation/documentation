@@ -10,5 +10,7 @@
             {{ .AuthorName }}
         {{end}}{{ T "post_last_mod_by_suffix" }} <a  href="{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}">{{ .Subject }}</a>
     {{ end }}
+{{ else }}
+    {{ T "no_version_info"}}
 {{ end }}
 </div>
