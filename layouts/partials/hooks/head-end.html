@@ -1,10 +1,9 @@
 <!-- EGI specific styles -->
-{{ range .Site.Params.custom_css -}}
+{{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ . | relURL }}">
-{{- end }}
+{{ end }}
 
 <!-- EGI specific script -->
-{{ range .Site.Params.custom_js -}}
+{{ range .Site.Params.custom_js }}
     <script type="text/javascript" src="{{ . | relURL }}"></script>
-{{- end }}
-
+{{ end }}

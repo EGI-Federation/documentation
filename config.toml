@@ -23,13 +23,10 @@ pygmentsCodeFences = true
 pygmentsUseClasses = false
 # Use the new Chroma Go highlighter in Hugo.
 pygmentsUseClassic = false
-#pygmentsOptions = "linenos=table"
+# pygmentsOptions = "linenos=table"
 # See https://help.farbox.com/pygments.html
 pygmentsStyle = "tango"
-#pygmentsStyle = "monokailight"
-
- # First one is picked as the Twitter card image if not set on page.
- #images = ["images/project-illustration.png"]
+# pygmentsStyle = "monokailight"
 
 # Configure how URLs look like per section.
 [permalinks]
@@ -38,7 +35,7 @@ blog = "/:section/:year/:month/:day/:slug/"
 [outputs]
 home = [ "HTML" ]
 page = [ "HTML" ]
-#section = [ "HTML", "RSS", "print"]
+# section = [ "HTML", "RSS", "print"]
 
 ## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
 [blackfriday]
@@ -64,7 +61,7 @@ anchor = "smart"
   [languages.en]
   title = "EGI Docs"
   description = "EGI documentation"
-  languageName ="English"
+  languageName = "English"
   # Weight used for sorting.
   weight = 1
 
@@ -85,7 +82,7 @@ copyright = "EGI Foundation."
 privacy_policy = "https://www.egi.eu/privacy-policy/"
 
 custom_css = ["css/shortcodes/tabbed-panex.css", "css/tags.css", "css/egi.css"]
-custom_js = ["js/clipboard.min.js", "js/featherlight.min.js", "js/highlight.pack.js", "js/egi.js", "https://buttons.github.io/buttons.js"]
+custom_js = ["js/clipboard.min.js", "js/featherlight.min.js", "js/highlight.pack.js", "js/egi.js", "js/github-buttons.js"]
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 github_repo = "https://github.com/EGI-Federation/documentation"
@@ -151,7 +148,7 @@ enable = false
       icon = "fa fa-comments"
       desc = "Discussion and help from your fellow users"
   [[params.links.user]]
-      name ="Twitter"
+      name = "Twitter"
       url = "https://twitter.com/EGI_eInfra"
       icon = "fab fa-twitter"
       desc = "Follow us on Twitter to get the latest news!"

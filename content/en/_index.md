@@ -38,7 +38,7 @@ href="{{< relref "/about/contributing" >}}"> Contribute
 <div class="mx-auto">
 {{< blocks/section color="primary" type="features">}}
 
-{{% blocks/feature icon="fa-user-friends" title="User Guide" url="/users" %}}
+{{% blocks/feature icon="fa-user-friends" title="User Guides" url="/users" %}}
 Contains documentation of the EGI services and step-by-step guides on how to
 use them. {{% /blocks/feature %}}
 
@@ -73,7 +73,7 @@ science projects. {{% /blocks/feature %}}
 
 <!-- markdown-link-check-enable-->
 
-We do a contributions workflow on GitHub. New users are always welcome!
+We use a GitHub contributions workflow, new authors are always welcome!
 {{% /blocks/feature %}}
 
 <!-- markdown-link-check-disable -->
