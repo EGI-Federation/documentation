@@ -1,1 +1,1 @@
-hugo_extended_0.66.0
+hugo_extended_0.85.0
