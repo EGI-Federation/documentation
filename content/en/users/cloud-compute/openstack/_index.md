@@ -34,7 +34,7 @@ command set for Compute, Identity, Image, Object Storage and Block Storage APIs
 together in a single shell with a uniform command structure.
 
 {{< tabpanex >}}
-{{< tabx header="Linux / Mac" >}} 
+{{< tabx header="Linux / Mac" >}}
 
 Installation of the OpenStack client can be done using:
 

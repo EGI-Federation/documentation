@@ -132,7 +132,8 @@ itself on the mardkown parser.
 
 {{% alert title="Note" color="info" %}} For [Hugo](https://gohugo.io/) the
 [goldmark parser](https://github.com/yuin/goldmark) is used and it relies on the
-[Prism syntax highlighting](https://prismjs.com/download.html#themes=prism). {{% /alert %}}
+[Prism syntax highlighting](https://prismjs.com/download.html#themes=prism).
+{{% /alert %}}
 
 The list of languages supported by chroma can be found in their
 [GitHub repository](https://github.com/alecthomas/chroma#supported-languages).
