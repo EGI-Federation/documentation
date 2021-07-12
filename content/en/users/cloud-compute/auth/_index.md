@@ -99,7 +99,9 @@ plain text.{{% /alert %}}
 
 Alternatively, you can use the
 [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/user/oidc-gen/provider/egi)
-tool, that is able to manage your tokens locally.
+tool that is able to manage your tokens locally, or the
+[fedcloud](https://fedcloudclient.fedcloud.eu/) client executed inside
+[EGI Notebooks](../../notebooks/integration/#fedcloud-client).
 
 ### Discovering projects in Keystone
 
@@ -108,8 +110,7 @@ access to several different projects within that provider (a project can be
 considered equivalent to a VO allocation). In order to discover which projects
 are available you can do that using the Keystone API.
 
-You can use the
-[`fedcloud` client](https://github.com/EGI-Federation/fedcloudclient) to
+You can use the [fedcloud](https://fedcloudclient.fedcloud.eu/) client to
 simplify the discovery of projects.
 
 ```shell

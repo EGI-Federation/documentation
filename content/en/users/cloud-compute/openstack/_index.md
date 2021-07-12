@@ -80,7 +80,8 @@ $ OS_TOKEN=$(openstack --os-auth-type v3oidcaccesstoken \
             --os-project-id <your project id> token issue -c id -f value)
 ```
 
-You can easily obtain an OpenStack token with the `fedcloud` command:
+You can easily obtain an OpenStack token with the
+[fedcloud](https://fedcloudclient.fedcloud.eu/) client:
 
 ```shell
 fedcloud openstack --site <NAME_OF_THE_SITE> --vo <NAME_OF_VO> token issue

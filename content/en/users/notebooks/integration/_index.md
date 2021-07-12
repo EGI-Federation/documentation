@@ -43,6 +43,20 @@ nova.servers.list()
 
 A valid ID token is also available at `/var/run/secrets/egi.eu/id_token`.
 
+### fedcloud client
+
+A direct benefit of the integration with access tokens in EGI Notebooks is that
+you can easily work with the [fedcloud](https://fedcloudclient.fedcloud.eu/)
+client. Once logged into the EGI Notebooks open a terminal and run:
+
+```bash
+export OIDC_ACCESS_TOKEN=`cat /var/run/secrets/egi.eu/access_token`
+fedcloud token check
+```
+
+If the `fedcloud` command is not available, please follow instructions
+[here](https://fedcloudclient.fedcloud.eu/quickstart.html).
+
 ## D4Science
 
 If you are using a Notebooks instance integrated with D4Science, you can easily

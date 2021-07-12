@@ -62,7 +62,8 @@ sites.
 ### How can I get the list of the EGI Cloud providers?
 
 The list of certified providers is available in [GOCDB](https://goc.egi.eu). The
-`fedcloud site list` command can help you to get that list:
+following command with the [fedcloud](https://fedcloudclient.fedcloud.eu/) client
+can help you to get that list:
 
 ```shell
 $ fedcloud site list
