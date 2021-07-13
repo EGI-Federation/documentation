@@ -22,7 +22,7 @@ For references The following shortcodes are available:
 - [Hugo's shortcodes](https://gohugo.io/content-management/shortcodes/)
 - [Docsy theme shortcodes](https://www.docsy.dev/docs/adding-content/shortcodes/)
 
-### Adding chapters
+### Adding sections
 
 To create new chapters in the documentation (visible in left-side navigation
 tree), you have to create new folders under `/content/<language>` and add a file
