@@ -1,3 +1,13 @@
+/*
+
+Improvements to the Hugo theme:
+
+- Clipboard support for code snippets
+- Link navigation using the keyboard
+- Highlighting improvements
+
+*/
+
 jQuery(document).ready(function () {
   restoreTabSelections();
 
