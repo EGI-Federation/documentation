@@ -25,7 +25,7 @@ For references The following shortcodes are available:
 ### Adding sections
 
 To create a new section in the documentation (visible in left-side navigation
-tree), you have to create new folders under `/content/<language>` and add a file
+tree), you have to create a new folder under `/content/en` and add a file
 `_index.md` to that folder. The beginning of the markdown file contains a
 [front matter](https://gohugo.io/content-management/front-matter/) in YAML, JSON
 or TOML, holding the metadata of the page:
