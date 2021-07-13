@@ -33,7 +33,7 @@ $nav-link-padding-x: 0.6rem !default;
 
 .td-content {
   > .tabx-content {
+    /* stylelint-disable at-rule-no-unknown */
     @extend .td-max-width-on-larger-screens;
   }
 }
-

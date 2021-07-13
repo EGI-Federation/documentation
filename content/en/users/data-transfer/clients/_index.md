@@ -6,6 +6,9 @@ description: "Documentation related to EGI Data Transfer Clients"
 weight: 20
 ---
 
+<!--
+// jscpd:ignore-start
+-->
 ## Overview
 
 The FTS3 service offers a command line client to ease the interaction with the
@@ -337,3 +340,7 @@ fts-rest-transfer-cancel -s https://fts3-public.cern.ch:8446
 9a28d204-d568-11ea-9c80-02163e018681
 CANCELED
 ```
+
+<!--
+// jscpd:ignore-end
+-->
