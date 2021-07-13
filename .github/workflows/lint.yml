@@ -29,7 +29,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           # Fail on errors
           DISABLE_ERRORS: false
-          FILTER_REGEX_EXCLUDE: "(.*binaries/.*)|(.*layouts/.*)"
+          FILTER_REGEX_EXCLUDE: "(.*binaries/.*)|(.*layouts/.*)|(.*/egi.js)"
 
       # Runs the Super-Linter action
       - name: Run Super-Linter on all codebase
@@ -44,4 +44,4 @@ jobs:
           DISABLE_ERRORS: true
           # No need to validate ruby code we are not responsible for
           VALIDATE_RUBY: false
-          FILTER_REGEX_EXCLUDE: "(.*binaries/.*)|(.*layouts/.*)"
+          FILTER_REGEX_EXCLUDE: "(.*binaries/.*)|(.*layouts/.*)|(.*/egi.js)"
