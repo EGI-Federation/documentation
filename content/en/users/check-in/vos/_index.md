@@ -281,7 +281,7 @@ be supported in the future.
    (`Active`) and the valid from/through dates. All these parameters are
    mandatory. Here is an example using curl (see example `add.json` file below):
 
-   ```shell
+   ```sh
    curl -vX POST https://aai.egi.eu/api/v1/VoMembers \
         --user "example-client":"veryverysecret" \
         --data @add.json \
@@ -312,7 +312,7 @@ be supported in the future.
 
 1. Retrieving the VO membership information for a given EGI Check-in ePUID:
 
-   ```shell
+   ```sh
    curl -vX GET https://aai.egi.eu/api/v1/VoMembers/01234567890123456789@egi.eu \
         --user "example-client":"veryverysecret"
    ```
@@ -339,7 +339,7 @@ be supported in the future.
 
 1. Updating existing VO membership record:
 
-   ```shell
+   ```sh
    curl -vX PUT https://aai.egi.eu/api/v1/VoMembers \
         --user "example-client":"veryverysecret"  \
         --data @update.json \

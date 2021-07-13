@@ -1,31 +1,3 @@
-function getScrollBarWidth() {
-  var inner = document.createElement("p");
-  inner.style.width = "100%";
-  inner.style.height = "200px";
-
-  var outer = document.createElement("div");
-  outer.style.position = "absolute";
-  outer.style.top = "0px";
-  outer.style.left = "0px";
-  outer.style.visibility = "hidden";
-  outer.style.width = "200px";
-  outer.style.height = "150px";
-  outer.style.overflow = "hidden";
-  outer.appendChild(inner);
-
-  document.body.appendChild(outer);
-  var w1 = inner.offsetWidth;
-  outer.style.overflow = "scroll";
-  var w2 = inner.offsetWidth;
-  if (w1 == w2) w2 = outer.clientWidth;
-
-  document.body.removeChild(outer);
-
-  return w1 - w2;
-}
-
-  
-
 jQuery(document).ready(function () {
   restoreTabSelections();
 
@@ -43,8 +15,7 @@ jQuery(document).ready(function () {
 
     if (text.length > 5) {
       if (!clipInit) {
-        var text,
-          clip = new ClipboardJS(".copy-to-clipboard", {
+        var text, clip = new ClipboardJS(".copy-to-clipboard", {
             text: function (trigger) {
               text = $(trigger).prev("code").text();
               return text.replace(/^\$\s/gm, "");
@@ -75,13 +46,9 @@ jQuery(document).ready(function () {
         clipInit = true;
       }
 
-      code.after(
-        '<span class="copy-to-clipboard" title="Copy to clipboard" />'
-      );
-      code.next(".copy-to-clipboard").on("mouseleave", function () {
-        $(this)
-          .attr("aria-label", null)
-          .removeClass("tooltipped tooltipped-s tooltipped-w");
+      code.after('<span class="copy-to-clipboard" title="Copy to clipboard" />');
+      code.next('.copy-to-clipboard').on('mouseleave', function() {
+        $(this).attr('aria-label', null).removeClass('tooltipped tooltipped-s tooltipped-w');
       });
     }
   });
@@ -116,32 +83,25 @@ jQuery(document).ready(function () {
   });
 
   $("#top-bar a:not(:has(img)):not(.btn)").addClass("highlight");
-  $('#body-inner a:not(:has(img)):not(.btn):not(a[rel="footnote"])').addClass(
-    "highlight"
-  );
+  $('#body-inner a:not(:has(img)):not(.btn):not(a[rel="footnote"])').addClass("highlight");
 
-  var touchsupport =
-    "ontouchstart" in window ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0;
-  if (!touchsupport) {
-    // browser doesn't support touch
-    $("#toc-menu").hover(function () {
-      $(".progress").stop(true, false, true).fadeToggle(100);
-    });
+  var touchsupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+  if (!touchsupport){ // browser doesn't support touch
+      $('#toc-menu').hover(function() {
+          $('.progress').stop(true, false, true).fadeToggle(100);
+      });
 
-    $(".progress").hover(function () {
-      $(".progress").stop(true, false, true).fadeToggle(100);
-    });
+      $('.progress').hover(function() {
+          $('.progress').stop(true, false, true).fadeToggle(100);
+      });
   }
-  if (touchsupport) {
-    // browser does support touch
-    $("#toc-menu").click(function () {
-      $(".progress").stop(true, false, true).fadeToggle(100);
-    });
-    $(".progress").click(function () {
-      $(".progress").stop(true, false, true).fadeToggle(100);
-    });
+  if (touchsupport){ // browser does support touch
+      $('#toc-menu').click(function() {
+          $('.progress').stop(true, false, true).fadeToggle(100);
+      });
+      $('.progress').click(function() {
+          $('.progress').stop(true, false, true).fadeToggle(100);
+      });
   }
 
   /**
@@ -261,15 +221,11 @@ jQuery.extend({
         var wordClone = wordNode.cloneNode(true);
         highlight.appendChild(wordClone);
         wordNode.parentNode.replaceChild(highlight, wordNode);
-        return 1; //skip added node in parent
+        return 1; // skip added node in parent
       }
-    } else if (
-      node.nodeType === 1 &&
-      node.childNodes && // only element nodes that have children
-      !/(script|style)/i.test(node.tagName) && // ignore script and style nodes
-      !(node.tagName === nodeName.toUpperCase() && node.className === className)
-    ) {
-      // skip if already highlighted
+    } else if (node.nodeType === 1 && node.childNodes && // only element nodes that have children
+              !/(script|style)/i.test(node.tagName) && // ignore script and style nodes
+              !(node.tagName === nodeName.toUpperCase() && node.className === className)) { // skip if already highlighted
       for (var i = 0; i < node.childNodes.length; i++) {
         i += jQuery.highlight(node.childNodes[i], re, nodeName, className);
       }
@@ -281,7 +237,7 @@ jQuery.extend({
 jQuery.fn.unhighlight = function (options) {
   var settings = {
     className: "highlight",
-    element: "span",
+    element: "span"
   };
   jQuery.extend(settings, options);
 
@@ -299,7 +255,7 @@ jQuery.fn.highlight = function (words, options) {
     className: "highlight",
     element: "span",
     caseSensitive: false,
-    wordsOnly: false,
+    wordsOnly: false
   };
   jQuery.extend(settings, options);
 

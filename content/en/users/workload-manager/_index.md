@@ -87,7 +87,7 @@ or above TRL8. The main service components include:
   It also has a modular architecture designed specifically to allow easy
   extension for the needs of particular applications.
 
-![The DIRAC Web portal](./dirac_web_portal.png)
+![The DIRAC Web portal](dirac_web_portal.png)
 
 The DIRAC Web portal
 
@@ -130,7 +130,7 @@ Team on shift.
 
 #### Apply for your user credentials
 
-DIRAC uses [X.509 certificates](../check-in/vos/voms/) to identify and authenticate
+DIRAC uses [X.509 certificates](../check-in/vos/voms) to identify and authenticate
 users. These certificates are delivered to each individual by trusted
 certification authorities.
 If you have a personal certificate issued by a [EUGridPMA-certified](http://www.eugridpma.org/)
@@ -145,7 +145,7 @@ Your personal certificate is usually delivered to you via a web site and is
 automatically loaded in your browser. You need to export it from the browser and
 put it in the appropriate format for DIRAC to use. This is a one-time operation.
 Please follow the instructions in detailed in
-[VOMS documentation page](../check-in/vos/voms/) to export and in install your
+[VOMS documentation page](../check-in/vos/voms) to export and in install your
 certificate.
 
 #### Send your certificate's subject to the DIRAC team
@@ -205,7 +205,7 @@ indicating the output Sandbox location.
 Now, select `Helloworld` from the job list, and click `Submit`, you just launch
 your very first job to the EGI HTC cluster.
 
-![Submit a job with the Job Launchpad](./job_submit.png)
+![Submit a job with the Job Launchpad](job_submit.png)
 
 Submit a job with the Job Launchpad
 
@@ -217,7 +217,7 @@ The left panel gives all kinds of search options for your jobs. Set your search
 criteria, and click `Submit`, the jobs will list on the right panel.\
 Try the various options to view different information about the jobs.
 
-![Monitor the job execution with the Job Monitor panel](./job_monitor.png)
+![Monitor the job execution with the Job Monitor panel](job_monitor.png)
 
 Monitor the job execution with the Job Monitor panel
 

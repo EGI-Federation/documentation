@@ -65,7 +65,7 @@ lcg-infosites --vo biomed  se
 ## Client access
 
 The access via client requires the user to obtain a valid X.509 user VOMS proxy.
-Please refer to the [Check-in doc](../../check-in/vos/voms/) for more
+Please refer to the [Check-in doc](../../check-in/vos/voms) for more
 information. Integration with OpenID Connect and the EGI Check-in service is
 under piloting at some of the endpoints on the infrastructure , but it has not
 yet reached the production stage.
@@ -143,7 +143,7 @@ More commands are available, please refer to the
 
 ## Access via the EGI Data Transfer service
 
-The [EGI Data Transfer](../../data-transfer) service provides mechanism to
+The [EGI Data Transfer](../../data-transfer/) service provides mechanism to
 optimize the transfer of files between EGI Online storage endpoints. Both a
 graphical interface and CLI are available to perform bulk movement of data.
 Please check the related documentation for more information.

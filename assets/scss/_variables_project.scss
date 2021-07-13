@@ -32,7 +32,8 @@ $nav-link-padding-x: 0.6rem !default;
 //
 
 .td-content {
-        > .tabx-content {
-        @extend .td-max-width-on-larger-screens;
-    }
+  > .tabx-content {
+    @extend .td-max-width-on-larger-screens;
+  }
 }
+

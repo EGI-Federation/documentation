@@ -1,11 +1,10 @@
 ---
 title: "VOMS"
-linkTitle: "VO Management System"
+linkTitle: "VOMS"
 type: docs
-weight: 40
+weight: 100
 description: >
   X.509 / VOMS based authentication and authorisation
-no_list: true
 ---
 
 ## Authentication
@@ -100,7 +99,7 @@ using `pkcs12`:
 1. First you will need to create the private key, use `-nocerts`. Open your
    terminal, enter the following command:
 
-   ```shell
+   ```sh
    openssl pkcs12 -nocerts -in my_cert.p12 -out userkey.pem
    ```
 
@@ -120,7 +119,7 @@ using `pkcs12`:
 1. Now you can create the certificate, use `-clcerts`, (use `-nokeys` hereu will
    not output private key), and the command is:
 
-   ```shell
+   ```sh
    openssl pkcs12 -clcerts -nokeys -in my_cert.p12 -out usercert.pem
    ```
 
@@ -280,7 +279,7 @@ Once you have the VO information configured (`vomses` and `.lsc`) and your
 certificate available in your `$HOME/.globus` directory you can create a VOMS
 proxy to be used with clients with:
 
-```shell
+```sh
 voms-proxy-init --voms <name of the vo> --rfc
 ```
 
@@ -288,7 +287,7 @@ See for example, using `fedcloud.egi.eu` VO:
 
 <!-- markdownlint-disable line-length -->
 
-```shell
+```sh
 voms-proxy-init --voms fedcloud.egi.eu --rfc
 Enter GRID pass phrase:
 Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=EGI/OU=UCST/CN=Enol Fernandez

@@ -1,10 +1,9 @@
 ---
 title: "VO group/role information"
 type: docs
-weight: 30
+weight: 10
 description: >
   Expressing VO group membership and role information
-no_list: true  
 ---
 
 According to [AARC-G002](https://aarc-community.org/guidelines/aarc-g002/) the
