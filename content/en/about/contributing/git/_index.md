@@ -294,8 +294,8 @@ done using the PR number.
 ```sh
 # List available PR and their identifiers.
 gh pr list
-# Clone  specific PR
-gh pr checkout XX
+# Clone  specific PR, updating sudmodules
+gh pr checkout XX --recurse-submodules
 ```
 
 Once done it's possible to build and run the site locally:
@@ -314,7 +314,7 @@ The documentation will then be accessible on
 
 ```sh
 # From the local clone of the repository
-gh pr checkout XXX
+gh pr checkout XXX --recurse-submodules
 vim yyy.zz
 git add yyy.zz
 git commit yyy.zz -m <commit_message>
