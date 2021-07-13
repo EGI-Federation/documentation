@@ -5,10 +5,10 @@ type: docs
 description: "Documentation related to EGI Data Transfer Clients"
 weight: 20
 ---
-
 <!--
 // jscpd:ignore-start
 -->
+
 ## Overview
 
 The FTS3 service offers a command line client to ease the interaction with the
