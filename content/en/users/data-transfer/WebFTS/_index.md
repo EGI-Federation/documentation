@@ -31,7 +31,7 @@ FTS services.
 
 To obtain the private key, you can run in the console:
 
-```sh
+```shell
 openssl pkcs12 -in yourCert.p12 -nocerts -nodes | openssl rsa
 ```
 

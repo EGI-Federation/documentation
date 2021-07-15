@@ -23,22 +23,19 @@ pygmentsCodeFences = true
 pygmentsUseClasses = false
 # Use the new Chroma Go highlighter in Hugo.
 pygmentsUseClassic = false
-#pygmentsOptions = "linenos=table"
+# pygmentsOptions = "linenos=table"
 # See https://help.farbox.com/pygments.html
 pygmentsStyle = "tango"
-#pygmentsStyle = "monokailight"
-
-# First one is picked as the Twitter card image if not set on page.
-#images = ["images/project-illustration.png"]
+# pygmentsStyle = "monokailight"
 
 # Configure how URLs look like per section.
 [permalinks]
 blog = "/:section/:year/:month/:day/:slug/"
 
 [outputs]
-# home = [ "HTML", "RSS", "JSON"]
 home = [ "HTML" ]
 page = [ "HTML" ]
+# section = [ "HTML", "RSS", "print"]
 
 ## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
 [blackfriday]
@@ -61,21 +58,35 @@ anchor = "smart"
 # Language configuration
 
 [languages]
-[languages.en]
-title = "EGI Docs"
-description = "EGI documentation"
-languageName ="English"
-# Weight used for sorting.
-weight = 1
+  [languages.en]
+  title = "EGI Docs"
+  description = "EGI documentation"
+  languageName = "English"
+  # Weight used for sorting.
+  weight = 1
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+      # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
+      style = "tango"
+      # Uncomment if you want your chosen highlight style used for code blocks without a specified language
+      # guessSyntax = "true"
 
 # Everything below this are Site Params
 
 [params]
-copyright = "EGI Foundation"
+copyright = "EGI Foundation."
 privacy_policy = "https://www.egi.eu/privacy-policy/"
+
+custom_css = ["css/shortcodes/tabbed-panex.css", "css/tags.css", "css/egi.css"]
+custom_js = ["js/clipboard.min.js", "js/featherlight.min.js", "js/highlight.min.js", "js/egi.js", "js/github.min.js"]
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 github_repo = "https://github.com/EGI-Federation/documentation"
+github_branch= "main"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 # github_project_repo = "https://github.com/google/docsy"
 
@@ -92,16 +103,23 @@ algolia_docsearch = false
 
 #Enable offline search with Lunr.js
 offlineSearch = true
+offlineSearchSummaryLength = 70
+offlineSearchMaxResults = 10
 
-github_branch= "main"
+# Enable syntax highlighting and copy buttons on code blocks with Prism
+prism_syntax_highlighting = true
 
 # User interface configuration
 [params.ui]
 # Enable to show the side bar menu in its compact state.
-sidebar_menu_compact = true
+sidebar_menu_compact = false
+sidebar_menu_foldable = true
+sidebar_cache_limit = 20
 #  Set to true to disable breadcrumb navigation.
 breadcrumb_disable = false
-#  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
+#  Set to true to hide the search box in the top navbar
+navbar_search_disable = true
+#  Set to true to hide the sidebar search box
 sidebar_search_disable = false
 #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
 navbar_logo = true
@@ -116,46 +134,47 @@ enable = true
 yes = 'Glad to hear it! Please <a href="https://github.com/EGI-Federation/documentation/issues/new">tell us how we can improve</a>.'
 no = 'Sorry to hear that. Please <a href="https://github.com/EGI-Federation/documentation/issues/new">tell us how we can improve</a>.'
 
-[params.links]
-# End user relevant links. These will show up on left side of footer and in the community page if you have one.
-[[params.links.user]]
-  name = "Community discussions"
-  url = "https://community.egi.eu"
-  icon = "fa fa-envelope"
-  desc = "Discussion and help from your fellow users"
-[[params.links.user]]
-  name ="Twitter"
-  url = "https://twitter.com/EGI_eInfra"
-  icon = "fab fa-twitter"
-  desc = "Follow us on Twitter to get the latest news!"
-# [[params.links.user]]
-#  name = "Stack Overflow"
-#  url = "https://example.org/stack"
-#  icon = "fab fa-stack-overflow"
-#  desc = "Practical questions and curated answers"
-#  Developer relevant links. These will show up on right side of footer and in the community page if you have one.
-[[params.links.developer]]
-  name = "GitHub"
-  url = "https://github.com/EGI-Federation"
-  icon = "fab fa-github"
-  desc = "Development takes place here!"
-# [[params.links.developer]]
-#  name = "Slack"
-#  url = "https://example.org/slack"
-#  icon = "fab fa-slack"
-#  desc = "Chat with other project developers"
-# [[params.links.developer]]
-#  name = "Developer mailing list"
-#  url = "https://example.org/mail"
-#  icon = "fa fa-envelope"
-#  desc = "Discuss development issues around the project"
-# XXX Maybe useful to add back this somewhere
-# [[menu.shortcuts]]
-# name = "<i class='fa fa-cloud-download'></i> <label>Download</label>"
-# url = "https://github.com/EGI-Federation/EGI-Federation.github.io/archive/main.zip"
-# weight = 11
+# Adds a reading time to the top of each doc.
+# If you want this feature, but occasionally need to remove the Reading time from a single page, 
+# add "hide_readingtime: true" to the page's front matter
+[params.ui.readingtime]
+enable = false
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[params.links]
+  # End user relevant links. These will show up on left/right side of footer and in the community page if you have one.
+  [[params.links.user]]
+      name = "Community discussions"
+      url = "https://community.egi.eu"
+      icon = "fa fa-comments"
+      desc = "Discussion and help from your fellow users"
+  [[params.links.user]]
+      name = "Twitter"
+      url = "https://twitter.com/EGI_eInfra"
+      icon = "fab fa-twitter"
+      desc = "Follow us on Twitter to get the latest news!"
+# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+  [[params.links.developer]]
+      name = "GitHub"
+      url = "https://github.com/EGI-Federation"
+      icon = "fab fa-github"
+      desc = "Development takes place here!"
+
+[params.mermaid]
+enable = true
+theme = "default"
+
+[params.plantuml]
+enable = true
+theme = "default"
+svg_image_url = "https://www.plantuml.com/plantuml/svg/"
+
+[params.katex]
+enable = true
+html_dom_element = "document.body"
+
+# enable display of chemical equations and physical units via mhchem extension
+[params.katex.mhchem]
+enable = true
+
+[params.print]
+disable_toc = true

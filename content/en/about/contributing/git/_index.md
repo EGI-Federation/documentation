@@ -19,7 +19,7 @@ following articles providing simple tutorials:
 GitHub official documentation is available at
 [docs.github.com](https://docs.github.com/en/github).
 
-{{% alert title="Tips" color="info" %}} The
+{{% alert title="Tip" color="info" %}} The
 [first-contributions](https://github.com/firstcontributions/first-contributions)
 is a repository allowing anyone to freely learn and test creating a real Pull
 Request to an existing GitHub repository. {{% /alert %}}
@@ -77,7 +77,7 @@ It can be installed using the packages available on
 
 Once installed you will have to start by setting up authentication.
 
-```sh
+```shell
 # Authenticate with GitHub
 gh auth login
 # Favor ssh protocol
@@ -95,7 +95,7 @@ cloning it locally manually.
 This command will fork the repository to your GitHub account and clone a local
 copy for you to work with.
 
-```sh
+```shell
 gh repo fork EGI-Federation/documentation
 ```
 
@@ -103,7 +103,7 @@ gh repo fork EGI-Federation/documentation
 
 If you want to clone an existing fork you should use:
 
-```sh
+```shell
 gh repo clone <your_username>/documentation
 ```
 
@@ -112,7 +112,7 @@ gh repo clone <your_username>/documentation
 If your local clone of you fork is correctly setup you should see references to
 the origin and upstream repositories.
 
-```sh
+```shell
 $ git remote -v
 origin  git@github.com:<your_username>/documentation (fetch)
 origin  git@github.com:<your_username>/documentation (push)
@@ -142,7 +142,7 @@ To install npm+nodejs please check the instructions at:
 
 The rest of the tools can be installed as follows:
 
-```sh
+```shell
 gem install mdl
 npm install postcss-cli@7.1.2
 npm install autoprefixer@9.0
@@ -152,7 +152,7 @@ The supported Hugo version packages are available under the `binaries` folder.
 
 To build and run the site, from the repository root
 
-```sh
+```shell
 git submodule update --init --recursive --depth 1
 mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
 # Pick the repository specific to your platform
@@ -175,7 +175,7 @@ Try to avoid committing changes to the _main_ branch of your clone to simplify
 management, creating a dedicated _feature branch_ helps a lot. Try to pick a
 meaningful name for the branch (my_nice_update in the example).
 
-```sh
+```shell
 # This should be done from the up-to-date main branch
 # Read furthermore to see documentation on updating a local clone
 git checkout -b my_nice_update
@@ -212,7 +212,7 @@ purpose of changes to the code.
       values, and it is older than "old stable" debian release
 ```
 
-```sh
+```shell
 # Select the modified files to be committed
 git add files1 path2/
 # Commit the changes
@@ -223,7 +223,7 @@ git commit -m <commit_message>
 
 From inside a feature branch you can push it to your remote fork.
 
-```sh
+```shell
 # Ask git to keep trace of the link between local and remote branches
 git push --set-upstream
 ```
@@ -236,7 +236,7 @@ PR.
 
 If needed GitHub CLI can also be used to prepare the PR:
 
-```sh
+```shell
 gh pr create <your_username>:<feature_branch> --web
 ```
 
@@ -246,7 +246,7 @@ Once you PR have been opened it will be reviewed, and reviewers can propose and
 commit changes to your PR. If you need to make further changes be sure to update
 the local clone with the remote changes.
 
-```sh
+```shell
 # Retrieve changes made on your PR in the upstream repository
 git pull
 ```
@@ -255,7 +255,7 @@ Then you can commit new changes and push them to your remote fork.
 
 ## Updating a repository clone with the upstream changes
 
-```sh
+```shell
 # If you are still in a branch created for a previous PR, move to main
 git checkout main
 # Get the latest data from the upstream repository
@@ -274,7 +274,7 @@ be required to merge the new changes in the feature branch.
 It can easily be done via the PR page on the GitHub web interface, but it can
 also be done in your repository clone using `git rebase`.
 
-```sh
+```shell
 # Retrieve changes made in the upstream repository
 git fetch upstream
 # Check out the feature branch
@@ -291,7 +291,7 @@ the conflicts manually.
 It's possible to clone a Pull Request to a local branch to test it locally. It's
 done using the PR number.
 
-```sh
+```shell
 # List available PR and their identifiers.
 gh pr list
 # Clone  specific PR, updating sudmodules
@@ -300,7 +300,7 @@ gh pr checkout XX --recurse-submodules
 
 Once done it's possible to build and run the site locally:
 
-```sh
+```shell
 # From the root of the repository clone
 # Here on MacOS X, adapt depending on your platform
 ./binaries/macos64/hugo server -D
@@ -312,7 +312,7 @@ The documentation will then be accessible on
 > People having write access to the repository hosting the branch related to the
 > PR (ie. usually the PR author) will be able to add and edit files.
 
-```sh
+```shell
 # From the local clone of the repository
 gh pr checkout XXX --recurse-submodules
 vim yyy.zz
@@ -323,7 +323,7 @@ git push
 
 ### Updating a local clone of a PR
 
-```sh
+```shell
 # It will ask you to merge changes
 git pull
 ```
@@ -341,7 +341,7 @@ In case you have troubles updating the local clone, as it can happens if changes
 were forced pushed to it, it maybe easier to delete the local copy of the PR and
 recreate it.
 
-```sh
+```shell
 # Switch to main branch
 git checkout main
 # Check local branches
@@ -358,7 +358,7 @@ Sometimes we realise just before committing a change that we are not in the
 correct branch (ie. that we forgot to create a dedicated feature branch), when
 this happens `git stash` can be helpful.
 
-```sh
+```shell
 # Saving a change
 git stash save <optional message>
 # Creating the forgotten branch
@@ -373,7 +373,7 @@ git diff
 
 If you already committed your change(s) you may have to look at `git reset`.
 
-```sh
+```shell
 # Viewing the diff of the two last commits
 git log -n 2 -p
 # Reverting the last change, keeping the change in the local directory

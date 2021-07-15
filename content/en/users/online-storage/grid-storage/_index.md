@@ -43,7 +43,7 @@ existing grid storages
 
 The syntax is the following:
 
-```sh
+```shell
 lcg-infosites --vo voname -[v] -f [site name] [option(s)] [-h| --help]
   [--is BDII]
 ```
@@ -51,7 +51,7 @@ lcg-infosites --vo voname -[v] -f [site name] [option(s)] [-h| --help]
 For example, to list the Storage Elements (SEs) available to the biomed VO one
 could issue the following command:
 
-```sh
+```shell
 lcg-infosites --vo biomed  se
 
 lcg-infosites --vo biomed  se
@@ -65,7 +65,7 @@ lcg-infosites --vo biomed  se
 ## Client access
 
 The access via client requires the user to obtain a valid X.509 user VOMS proxy.
-Please refer to the [Check-in doc](../../check-in/vos/voms/) for more
+Please refer to the [Check-in doc](../../check-in/vos/voms) for more
 information. Integration with OpenID Connect and the EGI Check-in service is
 under piloting at some of the endpoints on the infrastructure , but it has not
 yet reached the production stage.
@@ -80,7 +80,7 @@ as the same API can be used to access different protocols.
 
 The gfal2 CLI can be installed as follows (for RHEL compatible systems):
 
-```sh
+```shell
 yum install gfal2-util gfal2-all
 
 ```
@@ -94,7 +94,7 @@ example can be replaced by any other supported protocols
 
 List files on a given endpoint:
 
-```sh
+```shell
 gfal-ls gsiftp://dcache-door-doma01.desy.de/dteam
 1G.header-1
 domatest
@@ -106,34 +106,34 @@ tpctest
 
 Create a folder:
 
-```sh
+```shell
 gfal-mkdir gsiftp://dcache-door-doma01.desy.de/dteam/test
 ```
 
 Copy a local file:
 
-```sh
+```shell
 gfal-copy test.json gsiftp://dcache-door-doma01.desy.de/dteam/test
 Copying file:///root/Documents/test.json   [DONE]  after 0s
 ```
 
 Copy files between storages:
 
-```sh
+```shell
 gfal-copy gsiftp://prometheus.desy.de/VOs/dteam/public-file gsiftp://dcache-door-doma01.desy.de/dteam/test
 Copying gsiftp://prometheus.desy.de/VOs/dteam/public-file   [DONE]  after 3s
 ```
 
 Download a file to a local folder:
 
-```sh
+```shell
 gfal-copy gsiftp://prometheus.desy.de/VOs/dteam/public-file /tmp
 Copying gsiftp://prometheus.desy.de/VOs/dteam/public-file   [DONE]  after 0s
 ```
 
 Delete a file:
 
-```sh
+```shell
 gfal-rm gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file
 gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file      DELETED
 ```
@@ -143,7 +143,7 @@ More commands are available, please refer to the
 
 ## Access via the EGI Data Transfer service
 
-The [EGI Data Transfer](../../data-transfer) service provides mechanism to
+The [EGI Data Transfer](../../data-transfer/) service provides mechanism to
 optimize the transfer of files between EGI Online storage endpoints. Both a
 graphical interface and CLI are available to perform bulk movement of data.
 Please check the related documentation for more information.

@@ -5,6 +5,7 @@ type: docs
 menu:
   main:
     weight: 40
+    pre: <i class='fa fa-lightbulb'></i>
 ---
 
 Service-specific support can usually be requested using the
