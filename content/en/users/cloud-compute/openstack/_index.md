@@ -33,25 +33,39 @@ The OpenStack client is a command-line client for OpenStack that brings the
 command set for Compute, Identity, Image, Object Storage and Block Storage APIs
 together in a single shell with a uniform command structure.
 
-> If installing on Windows, as there are non-pure Python packages needed for
-> installation, the
-> [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
-> is a prerequisite, please make sure it's installed with the following options
-> selected:
->
-> - C++ CMake tools for Windows
-> - C++ ATL for latest v142 build tools (x86 & x64)
-> - Testing tools core features - Build Tools
-> - Windows 10 SDK (`<latest`>)
->
-> In case you prefer to use non-Microsoft alternatives for building non-pure
-> packages, please see [here](https://wiki.python.org/moin/WindowsCompilers).
+{{< tabpanex >}}
+{{< tabx header="Linux / Mac" >}}
 
 Installation of the OpenStack client can be done using:
 
 ```shell
 pip install openstackclient
 ```
+
+{{< /tabx >}}
+{{< tabx header="Windows" >}}
+
+As there are non-pure Python packages needed for installation, the
+[Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+is a prerequisite, please make sure it's installed with the following options
+selected:
+
+- C++ CMake tools for Windows
+- C++ ATL for latest v142 build tools (x86 & x64)
+- Testing tools core features - Build Tools
+- Windows 10 SDK (`<latest`>)
+
+In case you prefer to use non-Microsoft alternatives for building non-pure
+packages, please see [here](https://wiki.python.org/moin/WindowsCompilers).
+
+Installation of the OpenStack client can be done using:
+
+```shell
+pip install openstackclient
+```
+
+{{< /tabx >}}
+{{< /tabpanex >}}
 
 Add IGTF CA to python\'s CA store:
 

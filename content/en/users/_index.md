@@ -6,12 +6,13 @@ type: "docs"
 menu:
   main:
     weight: 10
+    pre: <i class='fa fa-user-friends'></i>
 ---
 
 ## Request for information
 
-You can ask for more information about the services at:
-[here](https://www.egi.eu/more-information/)
+You can ask for more information about the services
+[here](https://www.egi.eu/more-information/).
 
 ## Accessing EGI services
 

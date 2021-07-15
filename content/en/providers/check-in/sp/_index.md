@@ -439,7 +439,7 @@ transformation method (`code_challenge_method`).
 
 Example request:
 
-```sh
+```shell
 GET https://aai.egi.eu/oidc/authorize?
       client_id=${client_id}
       &scope=openid%20profile%20email
@@ -454,7 +454,7 @@ the `code_challenge_method`.
 
 Example response:
 
-```sh
+```shell
 HTTP/1.1 302 Found
   Location: ${redirect_uri}?
     code=fgtLHT
@@ -465,7 +465,7 @@ usual but includes the `code_verifier` secret generated in the first request.
 
 Example request:
 
-```sh
+```shell
 curl -X POST "https://aai.egi.eu/oidc/token" \
 -d "grant_type=authorization_code" \
 -d "code=${code}" \
@@ -504,7 +504,7 @@ using the `grant_type` value `refresh_token`:
 
 Example request:
 
-```sh
+```shell
 curl -X POST -u "${client_id}":"${client_secret}" \
 -d "client_id={myClientID}" \
 -d "client_secret={myClientSecret}" \
@@ -546,7 +546,7 @@ of the request are:
 
 Example request:
 
-```sh
+```shell
 curl -X POST -u "${client_B_id}":"${client_B_secret}" \
 -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
 -d "audience=tokenExchange" \
@@ -593,7 +593,7 @@ with the following parameters:
 
 Example request:
 
-```sh
+```shell
 curl -X POST "https://aai.egi.eu/oidc/devicecode" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -d "client_id={myClientID}" \
@@ -638,7 +638,7 @@ Request to the token endpoint. The request contains the following para
 
 Example request:
 
-```sh
+```shell
 curl -X POST "https://aai.egi.eu/oidc/token" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
@@ -710,7 +710,7 @@ Then, click save and copy your `Client ID`.
 Now that we have everything we need, we can configure our login settings. Go to
 your terminal and open `configuration.js` with your favorite text editor. ex.
 
-```sh
+```shell
 vi simple-oidc-client/configuration.js
 ```
 
@@ -810,7 +810,7 @@ certificate is present in MasterPortal, e.g. by going to
 <https://aai.egi.eu/vo-portal/>. They can then obtain a proxy certificate by
 doing
 
-```sh
+```shell
 ssh proxy@ssh.aai.egi.eu
 ```
 

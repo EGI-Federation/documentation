@@ -37,7 +37,7 @@ CommonMark.
 - Files should end with a Line Feed character ("\n"), but not including an empty
   line.
 
-{{% alert title="Tips" color="info" %}} Syntax examples that can be used in the
+{{% alert title="Tip" color="info" %}} Syntax examples that can be used in the
 files is documented in the [syntax section](../syntax). {{% /alert %}}
 
 ### Automating formatting and checking
@@ -54,7 +54,7 @@ Prettier can be integrated with
 
 Configuration is provided in `.prettierrc`, options can be set as follow:
 
-```sh
+```shell
 --print-width 80 --tab-width 2 --prose-wrap always
 ```
 
@@ -72,13 +72,13 @@ The situation when it's possible to violate the style guide can be:
 - in-line HTML tags that have to be used in tables or when no other proper
   solution is available
 
-{{% alert title="Warning" color="warning" %}} Exceptions should only be used
+{{% alert title="Important" color="warning" %}} Exceptions should only be used
 when there are no other choices, and should be confined to the smallest possible
 block of markdown code. {{% /alert %}}
 
 ### Dealing with long lines due to tables
 
-{{% alert title="Tips" color="info" %}} Ideally when there is no real interest
+{{% alert title="Tip" color="info" %}} Ideally when there is no real interest
 for having a long table it's better to move to another way of formatting the
 documentation. {{% /alert %}}
 
@@ -97,7 +97,7 @@ be encapsulated with some specific
 <!-- markdownlint-enable line-length -->
 ```
 
-{{% alert title="Warning" color="warning" %}} In case the table leads to the
+{{% alert title="Important" color="warning" %}} In case the table leads to the
 introduction of scroll bar, please reconsider using another formatting.
 {{% /alert %}}
 
@@ -125,6 +125,6 @@ In this examples two checks are disabled at the same time: `line-length` and
 <!-- markdownlint-enable line-length no-inline-html -->
 ```
 
-{{% alert title="Warning" color="warning" %}} Always use the tag that is
-providing the proper semantic: for a list use `<ul>` and `<li>`, not `<br />`.
+{{% alert title="Important" color="warning" %}} Always use the tag that is
+providing the proper semantic: e.g. for a list use `<ul>` and `<li>`, not `<br />`.
 {{% /alert %}}

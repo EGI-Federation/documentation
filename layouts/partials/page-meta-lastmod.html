@@ -1,0 +1,16 @@
+<div class="text-muted mt-5 pt-3 border-top">
+{{ if and (.GitInfo) (.Site.Params.github_repo) }}
+    {{ T "post_last_mod"}}
+    {{ .Lastmod.Format .Site.Params.time_format_default }}
+    {{ T "post_last_mod_by"}}
+    {{ with .GitInfo }}
+        {{ if .AuthorEmail }}
+            <a href="mailto:{{ .AuthorEmail }}">{{ .AuthorName }}</a>
+        {{ else }}
+            {{ .AuthorName }}
+        {{end}}{{ T "post_last_mod_by_suffix" }} <a  href="{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}">{{ .Subject }}</a>
+    {{ end }}
+{{ else }}
+    {{ T "no_version_info"}}
+{{ end }}
+</div>
