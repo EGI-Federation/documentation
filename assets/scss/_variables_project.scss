@@ -1,0 +1,39 @@
+/*
+
+Nothing defined here. The Hugo project that uses this theme can override theme variables by adding a file to:
+
+*/
+
+// Fonts
+
+$font-size-base: 0.75rem !default;
+
+$mark-padding: 0.12em !default;
+$list-inline-padding: 0.35rem !default;
+
+// Display styles
+
+$display1-size: 2.5rem !default;
+$display2-size: 2rem !default;
+$display3-size: 1.5rem !default;
+$display4-size: 1.12rem !default;
+
+// Space
+
+$spacer: 0.5rem;
+
+// Navs
+
+$nav-link-padding-y: 0.25rem !default;
+$nav-link-padding-x: 0.6rem !default;
+
+//
+// Style Markdown content
+//
+
+.td-content {
+  > .tabx-content {
+    /* stylelint-disable at-rule-no-unknown */
+    @extend .td-max-width-on-larger-screens;
+  }
+}

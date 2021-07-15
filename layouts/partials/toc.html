@@ -1,0 +1,11 @@
+{{ if not .Params.notoc }}
+{{ with .TableOfContents }}
+{{ if ge (len .) 50 }}
+<div class="td-toc">
+    <p class="td-toc-title">{{ T "on_this_page" }}</p>
+    <hr class="panel-line">
+    {{ . }}
+</div>
+{{ end }}
+{{ end }}
+{{ end }}

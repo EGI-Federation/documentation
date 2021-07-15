@@ -87,7 +87,7 @@ or above TRL8. The main service components include:
   It also has a modular architecture designed specifically to allow easy
   extension for the needs of particular applications.
 
-![The DIRAC Web portal](./dirac_web_portal.png)
+![The DIRAC Web portal](dirac_web_portal.png)
 
 The DIRAC Web portal
 
@@ -130,7 +130,7 @@ Team on shift.
 
 #### Apply for your user credentials
 
-DIRAC uses [X.509 certificates](../check-in/vos/voms/) to identify and authenticate
+DIRAC uses [X.509 certificates](../check-in/vos/voms) to identify and authenticate
 users. These certificates are delivered to each individual by trusted
 certification authorities.
 If you have a personal certificate issued by a [EUGridPMA-certified](http://www.eugridpma.org/)
@@ -145,7 +145,7 @@ Your personal certificate is usually delivered to you via a web site and is
 automatically loaded in your browser. You need to export it from the browser and
 put it in the appropriate format for DIRAC to use. This is a one-time operation.
 Please follow the instructions in detailed in
-[VOMS documentation page](../check-in/vos/voms/) to export and in install your
+[VOMS documentation page](../check-in/vos/voms) to export and in install your
 certificate.
 
 #### Send your certificate's subject to the DIRAC team
@@ -156,7 +156,7 @@ the team needs to know your certificate's subject.
 Please use the command below on any Unix machine and send its output to\
 `dirac-support` `<AT>` `mailman.egi.eu`
 
-```sh
+```shell
 openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
 ```
 
@@ -205,7 +205,7 @@ indicating the output Sandbox location.
 Now, select `Helloworld` from the job list, and click `Submit`, you just launch
 your very first job to the EGI HTC cluster.
 
-![Submit a job with the Job Launchpad](./job_submit.png)
+![Submit a job with the Job Launchpad](job_submit.png)
 
 Submit a job with the Job Launchpad
 
@@ -217,7 +217,7 @@ The left panel gives all kinds of search options for your jobs. Set your search
 criteria, and click `Submit`, the jobs will list on the right panel.\
 Try the various options to view different information about the jobs.
 
-![Monitor the job execution with the Job Monitor panel](./job_monitor.png)
+![Monitor the job execution with the Job Monitor panel](job_monitor.png)
 
 Monitor the job execution with the Job Monitor panel
 
@@ -238,21 +238,21 @@ The easiest way to install the client is via
 [Docker Container](https://www.docker.com/). If you have a Docker client
 installed in your machine, install the DIRAC CLI as follows:
 
-```sh
+```shell
 docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
 ```
 
 Once the client software is installed, it should be configured in order to
 access the EGI Workload Manager service:
 
-```sh
+```shell
 source /opt/dirac/bashrc
 ```
 
 To proceed further a temporary proxy of the user certificate should be created.
 This is necessary to get information from the central Configuration Service:
 
-```sh
+```shell
 $ dirac-proxy-init -x
 Generating proxy...
 Enter Certificate password:
@@ -262,7 +262,7 @@ Enter Certificate password:
 Now the client can be configured to work in conjunction with the EGI Workload
 Manager service:
 
-```sh
+```shell
 $ dirac-configure defaults-egi.cfg Executing:
 /home/jdoe/DIRAC/DIRAC/Core/scripts/dirac-configure.py defaults-egi.cfg
 
@@ -281,7 +281,7 @@ Generate the proxy containing the credentials of your VO. Specify the VO in the
 **In this example, we are going to use the resources allocated for the WeNMR
 project.**
 
-```sh
+```shell
 $ dirac-proxy-init --debug --group wenmr_user -U --rfc
 $ dirac-proxy-init --debug --group wenmr_user -U --rfc
 Generating proxy...
@@ -327,7 +327,7 @@ certificate is uploaded to the DIRAC ProxyManager service.
 
 For checking the details of you proxy, run the following command:
 
-```sh
+```shell
 $ dirac-proxy-info
 subject      : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu/CN=0123456789
 issuer       : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jdoe@egi.eu
@@ -365,7 +365,7 @@ For example:
 
 Create a simple JDL file (test.jdl) to submit the job:
 
-```sh
+```shell
 [ JobName = "Simple_Job"; Executable = "/bin/ls"; Arguments = "-ltr";
 StdOutput = "StdOut"; StdError = "StdErr"; OutputSandbox = {"StdOut","StdErr"};
 ]
@@ -373,25 +373,25 @@ StdOutput = "StdOut"; StdError = "StdErr"; OutputSandbox = {"StdOut","StdErr"};
 
 Submit the job:
 
-```sh
+```shell
 dirac-wms-job-submit test.jdl JobID = 53755998
 ```
 
 Check the job status:
 
-```sh
+```shell
 $ dirac-wms-job-status 53755998 JobID=23844073 Status=Waiting;
 MinorStatus=Pilot Agent Submission; Site=ANY;
 ```
 
-```sh
+```shell
 $ dirac-wms-job-status 53755998 JobID=53755998 Status=Done;
 MinorStatus=Execution Completed; Site=EGI.NIKHEF.nl; Site=EGI.HG-08-Okeanos.gr;
 ```
 
 Retrieve the outputs of the job (when the status is Done):
 
-```sh
+```shell
 $ dirac-wms-job-get-output --Dir joboutput/ 53755998 Job output sandbox
 retrieved in joboutput/53755998/
 ```
@@ -404,7 +404,7 @@ should be transferred to the grid to run the job. In this case the
 
 Create the `InputAndOuputSandbox.jdl`
 
-```sh
+```shell
 JobName    = "InputAndOuputSandbox";
 Executable = "testJob.sh";
 StdOutput = "StdOut";
@@ -415,7 +415,7 @@ OutputSandbox = {"StdOut","StdErr"};
 
 Create a simple shell script (`testJob.sh`)
 
-```sh
+```shell
 #!/bin/bash
 /bin/hostname
 /bin/date
@@ -425,7 +425,7 @@ Create a simple shell script (`testJob.sh`)
 After creation of JDL file the next step is to submit the job, using the
 command:
 
-```sh
+```shell
 dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 ```
 

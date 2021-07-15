@@ -6,6 +6,7 @@ type: "docs"
 menu:
   main:
     weight: 20
+    pre: <i class='fa fa-users-cog'></i>
 ---
 
 This section contains documentation aiming at Service Providers across the

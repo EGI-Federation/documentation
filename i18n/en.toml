@@ -1,0 +1,18 @@
+
+# UI strings. Buttons and similar.
+[ui_search]
+other = "Search…"
+[on_this_page]
+other = "On this page"
+
+# Post (blog, articles etc.)
+[post_last_mod_by]
+other = "by"
+[post_last_mod_by_suffix]
+other = ":"
+[no_version_info]
+other = "No version information available."
+
+# Footer text
+[footer_all_rights_reserved]
+other = "All rights reserved."

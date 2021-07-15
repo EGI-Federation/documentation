@@ -33,7 +33,7 @@ Everything has been tested with Node.js 12.
 
 The dependencies of the docsy theme can be installed as follows:
 
-```sh
+```shell
 # from the root of the repository clone
 npm ci
 ```
@@ -45,7 +45,7 @@ can be downloaded at
 
 ### Building the site
 
-```sh
+```shell
 # From the repository clone root
 git submodule update --init --recursive --depth 1
 ./binaries/<platform>/hugo --minify
@@ -53,7 +53,7 @@ git submodule update --init --recursive --depth 1
 
 ### Testing the site locally
 
-```sh
+```shell
 # From the repository clone root
 ./binaries/<platform>/hugo server -D
 ```
@@ -68,7 +68,7 @@ theme has been cloned as a git submodule.
 
 ### Updating the theme submodule
 
-```sh
+```shell
 git submodule foreach git pull
 git commit themes/docsy -m 'Update theme'
 ```

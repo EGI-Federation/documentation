@@ -1,0 +1,11 @@
+Page: {{ $.Page.Title }}<br/> 
+Site: {{ $.Page.Site.Title }}<br/>
+Kind: {{ $.Page.Kind }}<br/>
+IsSection: {{ $.Page.IsSection }}<br/>
+IsNode: {{ $.Page.IsNode }}<br/>
+
+{{ with $.Page.Resources.ByType "image" }}
+{{ range . }}
+{{ .RelPermalink }}
+{{ end }}
+{{ end }}
