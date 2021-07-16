@@ -38,9 +38,8 @@ The dependencies of the docsy theme can be installed as follows:
 npm ci
 ```
 
-The supported Hugo version is documented under the `binaries` folder.
-To help testing a binary version of Hugo (extended version. Updates
-can be downloaded at
+The supported Hugo version is shipped under the `binaries` folder.
+Updates can be downloaded at
 [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
 
 ### Building the site

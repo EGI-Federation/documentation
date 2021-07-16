@@ -129,37 +129,49 @@ can be used as a reference for building instructions.
 
 ### Requirements
 
-- mdl
-- hugo
-- NodeJS
+- [hugo](https://gohugo.io)
+- [NodeJS](https://nodejs.org/) and other
+  [docsy](https://www.docsy.dev) theme dependencies:
   - postcss-cli
   - autoprofixer
 
-### Building and testing
+### Installing dependencies
 
-To install npm+nodejs please check the instructions at:
-[https://www.npmjs.com/get-npm](https://www.npmjs.com/get-npm)
+To install npm+nodejs please check the
+[official instructions](https://www.npmjs.com/get-npm).
 
-The rest of the tools can be installed as follows:
+Everything has been tested with Node.js 12.
 
+The dependencies of the docsy theme can be installed as follows:
 ```shell
-gem install mdl
-npm install postcss-cli@7.1.2
-npm install autoprefixer@9.0
+# from the root of the repository clone
+npm ci
 ```
 
-The supported Hugo version packages are available under the `binaries` folder.
+The supported Hugo version is shipped under the `binaries` folder.
+Updates can be downloaded at
+[the Hugo releases page](https://github.com/gohugoio/hugo/releases).
 
-To build and run the site, from the repository root
+
+### Building the site
+
+To build and run the site, from the repository root:
 
 ```shell
 git submodule update --init --recursive --depth 1
-mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
-# Pick the repository specific to your platform
+./binaries/<platform>/hugo --minify
+```
+
+### Testing the site locally
+
+To launch the site locally, from the repository root:
+
+```shell
 ./binaries/<platform>/hugo server -D
 ```
 
-The website is available at: [http://localhost:1313/](http://localhost:1313/).
+The website is available locally at:
+[http://localhost:1313/](http://localhost:1313/).
 
 ## Branches and Commits
 
