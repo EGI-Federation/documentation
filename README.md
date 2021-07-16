@@ -19,8 +19,8 @@ Sources files used to build [EGI documentation](https://docs.egi.eu).
 ## Requirements
 
 - [hugo](https://gohugo.io)
-- [NodeJS](https://nodejs.org/) and other
-  [docsy](https://www.docsy.dev) theme dependencies:
+- [NodeJS](https://nodejs.org/) and other [docsy](https://www.docsy.dev) theme
+  dependencies:
   - postcss-cli
   - autoprofixer
 
@@ -38,8 +38,8 @@ The dependencies of the docsy theme can be installed as follows:
 npm ci
 ```
 
-The supported Hugo version is shipped under the `binaries` folder.
-Updates can be downloaded at
+The supported Hugo version is shipped under the `binaries` folder. Updates can
+be downloaded at
 [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
 
 ### Building the site
@@ -75,5 +75,5 @@ git commit themes/docsy -m 'Update theme'
 ## Deployment to the EGI organisation pages
 
 [GitHub Actions](https://github.com/EGI-Federation/documentation/tree/main/.github/workflows)
-will automatically deploy a new version when a PR is merged to main,
-it will then be availalbe at [https://docs.egi.eu](https://docs.egi.eu).
+will automatically deploy a new version when a PR is merged to main, it will
+then be availalbe at [https://docs.egi.eu](https://docs.egi.eu).

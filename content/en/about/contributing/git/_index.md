@@ -130,8 +130,8 @@ can be used as a reference for building instructions.
 ### Requirements
 
 - [hugo](https://gohugo.io)
-- [NodeJS](https://nodejs.org/) and other
-  [docsy](https://www.docsy.dev) theme dependencies:
+- [NodeJS](https://nodejs.org/) and other [docsy](https://www.docsy.dev) theme
+  dependencies:
   - postcss-cli
   - autoprofixer
 
@@ -149,8 +149,8 @@ The dependencies of the docsy theme can be installed as follows:
 npm ci
 ```
 
-The supported Hugo version is shipped under the `binaries` folder.
-Updates can be downloaded at
+The supported Hugo version is shipped under the `binaries` folder. Updates can
+be downloaded at
 [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
 
 ### Building the site
