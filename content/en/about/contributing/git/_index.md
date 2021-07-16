@@ -143,6 +143,7 @@ To install npm+nodejs please check the
 Everything has been tested with Node.js 12.
 
 The dependencies of the docsy theme can be installed as follows:
+
 ```shell
 # from the root of the repository clone
 npm ci
@@ -151,7 +152,6 @@ npm ci
 The supported Hugo version is shipped under the `binaries` folder.
 Updates can be downloaded at
 [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
-
 
 ### Building the site
 
