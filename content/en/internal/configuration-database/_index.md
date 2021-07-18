@@ -5,14 +5,12 @@ weight: 30
 type: "docs"
 ---
 
-{{% pageinfo %}} This documentation about the Configuration Database is a work
-in progress, more documentation is currently available at
-[EGI's wiki](https://wiki.egi.eu/wiki/GOCDB). {{% /pageinfo %}}
+## What is it?
 
 The EGI Configuration Database (previously known as the GOCDB) contains general
-information about the sites participating to the production infrastructure.
+information about the sites participating in the production infrastructure.
 
-It's a central registry to record information about the topology of the EGI
+It is a central registry to record information about the topology of the EGI
 e-Infrastructure. This includes entities such as Operations Centres, Resource
 Centres, service endpoints and their downtimes, contact information and roles of
 users responsible for operations at different levels.
@@ -21,8 +19,13 @@ It's used by all the actors (end-users, site managers, NGI mangers, support
 teams, VO managers), by other tools and by third party middleware to discover
 information about the infrastructure topology.
 
+{{% pageinfo %}} This documentation about the Configuration Database is a work
+in progress, more documentation is currently available at
+[EGI's wiki](https://wiki.egi.eu/wiki/GOCDB). {{% /pageinfo %}}
+
 ## Identity card
 
+<!-- TODO prepare such info cards for all internal services or delete this -->
 <!-- markdownlint-disable line-length no-bare-urls -->
 
 | Property                     | Value                                                                                               |

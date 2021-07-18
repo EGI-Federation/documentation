@@ -4,10 +4,10 @@ linkTitle: "Accounting"
 type: docs
 weight: 40
 description: >
-  Usage Accounting
+  Resource usage accounting
 ---
 
-EGI Accounting is made of two main components:
+EGI Accounting consists of two main components:
 
 - The _Accounting Repository_ where all accounting data is collected.
 - The _Accounting Portal_ allowing to filter and display the data.

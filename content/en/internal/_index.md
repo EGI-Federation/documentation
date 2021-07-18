@@ -1,6 +1,6 @@
 ---
 title: "Internal Services"
-description: "Internal Services documentation"
+description: "Documentation for EGI internal services"
 weight: 30
 type: "docs"
 menu:
@@ -10,5 +10,5 @@ menu:
 ---
 
 This section contains documentation about the EGI Internal Services, that are
-being operated centrally on behalf of EGI and supporting the coordination of
-the Federation.
+being operated centrally on behalf of EGI and are supporting the coordination
+of the EGI Federation.
