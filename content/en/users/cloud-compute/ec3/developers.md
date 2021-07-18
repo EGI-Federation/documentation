@@ -26,5 +26,5 @@ following process:
 
 ### Contacts
 
-* Miguel Caballer at: micafer1 `<at>` upv `<dot>` es
-* Amanda Calatrava at: amcaar `<at>` i3m `<dot>` upv `<dot>` es
+* Miguel Caballer: `micafer1` `<at>` `upv.es`
+* Amanda Calatrava: `amcaar` `<at>` `i3m.upv.es`

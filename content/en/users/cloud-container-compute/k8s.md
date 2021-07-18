@@ -1,9 +1,9 @@
 ---
 title: "Kubernetes"
 type: docs
-weight: 20
+weight: 80
 description: >
-  Run containers on the EGI Cloud with Kubernetes
+  Run containers with orchestration on the EGI Cloud using Kubernetes
 ---
 
 There are several container management tools available, on the EGI Cloud we use

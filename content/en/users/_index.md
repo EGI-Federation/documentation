@@ -1,6 +1,7 @@
 ---
-title: "Users"
-linkTitle: "Users"
+title: "User Guides"
+linkTitle: "User Guides"
+description: "Documentation for service users"
 weight: 10
 type: "docs"
 menu:
@@ -9,6 +10,10 @@ menu:
     pre: <i class='fa fa-user-friends'></i>
 ---
 
+{{% alert title="Note" color="info" %}} See the
+[Service Providers](../providers) section for documentation aimed at
+service providers.
+{{% /alert %}}
 ## Request for information
 
 You can ask for more information about the services

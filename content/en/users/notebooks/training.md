@@ -19,7 +19,7 @@ To get started:
 1. Start the authentication process by clicking on **Start your notebooks!**
    button
 
-   ![image](training-front.png)
+   ![image](front.png)
 
 1. Select the Identity Provider you belong to from the discovery page. If this
    is the first time you access an EGI service, Check-in will guide you through

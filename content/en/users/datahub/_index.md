@@ -82,27 +82,27 @@ file system. Oneclient can be used from VM, containers, desktop,\...
 
 ## Highlighted features
 
-![Viewing a data space using the EGI DataHub web interface](datahub-space-web.png)
+![Viewing a data space using the EGI DataHub web interface](space-web.png)
 
 Using the EGI DataHub web interface it\'s possible to manage the space.
 
-![Viewing a data space in a console locally mounted using Oneclient](datahub-space-oneclient.png)
+![Viewing a data space in a console locally mounted using Oneclient](space-oneclient.png)
 
 Using Oneclient it\'s possible to mount a space locally, and access it over a
 POSIX interface, using files as they were stored locally. The file\'s blocks are
 downloaded on demand.
 
-![Viewing file distribution over the Oneproviders](datahub-replica-management.png)
+![Viewing file distribution over the Oneproviders](replica-management.png)
 
 In Onedata the file distribution is done on a block basis, blocks will be
 replicated on the fly, and it\'s possible to instrument the replication.
 
-![Management of metadata using the web interface](datahub-metadata-management.png)
+![Management of metadata using the web interface](metadata-management.png)
 
 Three different formats of metadata can be attached to files: basic (key/value),
 JSON and RDF. The metadata can be managed using the Web interface and the APIs.
 It\'s also possible to create indexes and query them.
 
-![Viewing file popularity for smart caching](datahub-file-popularity-smarch-caching.png)
+![Viewing file popularity for smart caching](file-popularity-smarch-caching.png)
 
 It\'s possible to view the popularity of a file and manage smart caching.

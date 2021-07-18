@@ -1,6 +1,6 @@
 ---
 title: "Sign up for an EGI Account"
-linkTitle: "Sign up"
+linkTitle: "Sign Up"
 type: docs
 weight: 10
 description: >
@@ -33,13 +33,13 @@ get started:
    registration form. On the introductory page, click **Begin** to start the
    registration process.
 
-   ![Check-in sign up intro](./check-in-sign-up-intro.png)
+   ![Check-in sign up intro](check-in-sign-up-intro.png)
 
 1. EGI requires some basic information from you, depending on the attributes
    released by your Identity Provider, you may need to provide the values of the
    missing attributes.
 
-   ![Check-in sign up attributes](./check-in-sign-up-attributes.png)
+   ![Check-in sign up attributes](check-in-sign-up-attributes.png)
 
 1. On the registration form, click **Review Terms and Conditions**
    ([Acceptable Use Policy and Conditions of Use - EGI AUP](https://documents.egi.eu/document/2623))
@@ -49,7 +49,7 @@ get started:
    {{% alert title="Important" color="warning" %}} You will not be able to agree
    to the terms until you review them. {{% /alert %}}
 
-   ![Check-in ToU agreement](./check-in-tou-agreement.png)
+   ![Check-in ToU agreement](check-in-tou-agreement.png)
 
 1. Finally, click **Submit** to submit your request.
 
@@ -89,18 +89,18 @@ Includes the basic information about your profile:
 - Identifiers
 - Email addresses
 
-![User profile](./check-in-profile-basic.png)
+![User profile](check-in-profile-basic.png)
 
 ### VO/Group membership and roles
 
 Includes information about the Virtual Organisations and groups the user if
 member of and the roles assigned to the user within those Virtual Organisation.
 
-![VO/Group membership](./check-in-profile-vos.png)
+![VO/Group membership](check-in-profile-vos.png)
 
 ### Linked identities
 
-Information about identites linked to your account. Check the
+Information about identites linked to your account. Check out the
 [guide for linking accounts](../linking) for more information.
 
-![Linked identities](./check-in-profile-linked.png)
+![Linked identities](check-in-profile-linked.png)

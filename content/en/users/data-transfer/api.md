@@ -36,7 +36,7 @@ The FTS service supports both plain X.509 proxies than
 with VO information for authentication and authorisation.
 
 Learn about
-[VOMS configuration and proxy creation](../../check-in/vos/voms/#creating-a-proxy).
+[VOMS configuration and proxy creation](../../check-in/vos/voms#creating-a-proxy).
 
 ## RESTFul API
 

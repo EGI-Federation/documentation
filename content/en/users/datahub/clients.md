@@ -14,21 +14,21 @@ The official documentation is hosted on the
 
 ## Using the web interface
 
-![Selecting EGI to connect using EGI Check-in](datahub-connect-check-in.png)
+![Selecting EGI to connect using EGI Check-in](connect-check-in.png)
 
 Using EGI Check-in it\'s possible to connect with your institute credentials.
 
-![EGI DataHub landing page](datahub-welcome-screen.png)
+![EGI DataHub landing page](welcome-screen.png)
 
 On this page it's possible to have an overview of all the spaces and their
 supporting providers.
 
-![Information about spaces supported by a Oneprovider](datahub-space-info.png)
+![Information about spaces supported by a Oneprovider](space-info.png)
 
 On this capture, the information about the spaces supported by a specific
 provider is displayed.
 
-![Information about spaces supported by a Oneprovider](datahub-browse-space.png)
+![Information about spaces supported by a Oneprovider](browse-space.png)
 
 The data space can be managed (i.e. uploading/downloading/managing files and
 metadata, managing space access) using the web browser.
@@ -41,7 +41,7 @@ generate an access token. {{% /alert %}}
 
 Tokens have to be generated from the **EGI DataHub** (Onezone) interface.
 
-![Managing access tokens from EGI DataHub](datahub-space-token.png)
+![Managing access tokens from EGI DataHub](space-token.png)
 
 The access tokens can be created and managed using the EGI DataHub web
 interface.

@@ -77,7 +77,7 @@ provider.
 {{% alert title="Join the training infrastructure!" color="info" %}}
 
 Do you want to join as a resource provider? Please email at
-`support _at_ egi.eu`.
+`support` `<at>` `egi.eu`.
 {{% /alert %}}
 
 The list of providers and VAs is also discoverable in the

@@ -4,6 +4,9 @@ linkTitle: "Check-in"
 type: docs
 weight: 30
 description: >
-  Check-in 
+  EGI Check-in service
 ---
 
+## What is it?
+
+TBD

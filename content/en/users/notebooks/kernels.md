@@ -1,8 +1,8 @@
 ---
-title: "Notebooks Environments"
+title: "Notebook Environments"
 type: docs
 description: >
-  Available Environments in EGI Notebooks
+  Available environments in EGI Notebooks
 weight: 5
 ---
 

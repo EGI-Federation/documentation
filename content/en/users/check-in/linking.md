@@ -1,5 +1,6 @@
 ---
-title: "Linking identities"
+title: "Linking Identities"
+linkTitle: "Linking Identities"
 type: docs
 weight: 20
 description: >

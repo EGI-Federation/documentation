@@ -21,11 +21,11 @@ choose NAMD from the list of applications.
 
 ### ECAS cluster
 
-Check the dedicated [ECAS documentation](./ecas/).
+Check out the dedicated [ECAS documentation](ecas).
 
 ### Kubernetes
 
-Check the
+Check out the
 [Cloud Container Compute documentation](../../../cloud-container-compute).
 
 ### Mesos + Marathon + Chronos
@@ -41,7 +41,9 @@ please select Mesos + Marathon + Chronos from the list of available LRMS.
 To deploy
 [Serverless computing for data-processing applications](https://www.egi.eu/about/newsletters/serverless-computing-for-data-processing-applications-in-egi/)
 in EGI, please select OSCAR from the list of LRMS (Local Resource Management
-System). Use cases of applications that use the OSCAR framework for
+System). 
+
+Below you can find some use-cases of applications that use the OSCAR framework for
 event-driven high-throughput processing of files:
 
 * [Plants Classification](https://github.com/indigo-dc/plant-classification-theano),
@@ -55,4 +57,4 @@ event-driven high-throughput processing of files:
 
 To deploy [SLURM](https://slurm.schedmd.com/documentation.html) clusters,
 please select SLURM from the list of available LRMS.
-See also the dedicated guide on [HTC clusters](./htc/)
+See also the dedicated guide on [HTC clusters](htc)

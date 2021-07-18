@@ -1,9 +1,9 @@
 ---
-title: "EC3"
+title: "Cloud Compute Clusters"
 type: docs
-weight: 90
+weight: 45
 description: >
-  Using the Elastic Cloud Compute Cluster on EGI Cloud
+  Elastic Cloud Compute Clusters (EC3) on the EGI Cloud
 ---
 
 [EC3](http://servproject.i3m.upv.es/ec3/) (Elastic Cloud Compute Cluster) is a

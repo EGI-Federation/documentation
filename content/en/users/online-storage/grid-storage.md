@@ -4,7 +4,7 @@ linkTitle: "Grid Storage"
 type: docs
 weight: 55
 description: >
-  Access to Grid Storage provided by the EGI HTC providers
+  Grid Storage offered by EGI HTC providers
 ---
 
 ## Grid Storage

@@ -84,7 +84,8 @@ cloud providers at three different layers:
   - IaaS provisioning systems that allow to define infrastructure as code and
     manage and combine resources from different providers, thus enabling the
     portability of application deployments between them (e.g.
-    [Infrastructure Manager](../im) or [Terraform](https://www.terraform.io/));
+    [Infrastructure Manager](../infrastructure-manager) or
+    [Terraform](https://www.terraform.io/));
     and
   - cloud brokers, that provide matchmaking for workloads to available providers
     (e.g. the

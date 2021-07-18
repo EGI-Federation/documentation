@@ -1,9 +1,9 @@
 ---
-title: "Docker VM"
+title: "Docker"
 type: docs
-weight: 20
+weight: 70
 description: >
-  Run containers on the EGI Cloud on a single VM with Docker
+  Run isolated containers on the EGI Cloud with Docker
 ---
 
 The

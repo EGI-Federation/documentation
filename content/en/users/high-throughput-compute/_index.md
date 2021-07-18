@@ -4,7 +4,7 @@ dlinkTitle: "High Throughput Compute"
 type: docs
 weight: 60
 description: >
-  EGI High Throughput Compute (HTC)
+  EGI High Throughput Compute (HTC) service
 ---
 
 ## What is High Throughput Compute?
@@ -115,7 +115,7 @@ Key Components:
 #### Access Models
 
 Access to EGI High Throughput Compute resources is based on
-[Virtual Organisations](../getting-started/#virtual-organisations-vos), you will
+[Virtual Organisations](../check-in/vos), you will
 need to enrol into one VO before using the service. VOs for the EGI High
 Throughput Compute service relies on
 [X.509 proxy certificates with VOMS extensions](../check-in/vos/voms).

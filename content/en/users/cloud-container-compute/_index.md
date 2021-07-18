@@ -3,7 +3,7 @@ title: "Cloud Container Compute"
 type: docs
 weight: 50
 description: >
-  Run containers on the EGI Cloud
+  EGI Cloud Container Compute service
 ---
 
 The EGI Cloud Container Compute service allows you to run container-based

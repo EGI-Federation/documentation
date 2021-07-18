@@ -1,9 +1,9 @@
 ---
-title: "Storage"
+title: "Block Storage"
 type: docs
 weight: 60
 description: >
-  Storage features of the EGI Cloud
+  Block storage offered by EGI Cloud providers
 ---
 
 If you are in need of more storage than the one provided within image disk of
@@ -100,7 +100,8 @@ An easy way to provide a GridFTP server on your VM is to use the
 for deploying a GridFTP Docker Container with certificates from Let's Encrypt.
 Take into account:
 
-- Security groups for the VM must allow ports 80, 2811 and the 50000-50200 range.
+- Security groups for the VM must allow ports 80, 2811 and the 50000-50200
+  range.
 - The VM must have a valid DNS entry (you can use
   [FedCloud's Dynamic DNS](https://nsupdate.fedcloud.eu) for getting one)
 - The default setup uses `/srv` as path to expose and maps users to the `nobody`
@@ -116,9 +117,11 @@ Take into account:
   DN to `nobody`. You can add as many lines as needed:
 
   <!-- markdownlint-disable line-length -->
+
   ```plaintext
   "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Enol Fernandez del Castillo" nobody
   ```
+
   <!-- markdownlint-enable line-length -->
 
 - You need to specify the environment variables in the `docker-compose.yml` file

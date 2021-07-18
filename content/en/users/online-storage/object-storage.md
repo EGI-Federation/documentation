@@ -4,7 +4,7 @@ linkTitle: "Object Storage"
 type: docs
 weight: 55
 description: >
-  Access to Object Storage provided by the EGI Cloud providers
+  Object Storage offered by EGI Cloud providers
 ---
 
 ## Object Storage

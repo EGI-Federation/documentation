@@ -1,5 +1,5 @@
 ---
-title: "Applications on Demand (AoD)"
+title: "Applications on Demand"
 type: docs
 weight: 100
 description: >
