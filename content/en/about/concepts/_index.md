@@ -17,6 +17,11 @@ The EGI documentation is organized into [sections](#sections) and
 [pages](#pages). Read below to uderstand when to use each of these,
 and how to create new sections and add new pages to a section.
 
+{{% alert title="Important" color="warning" %}} Avoid using pages in the
+documentation for now, create a distinct section for every page, because 
+currently there is no way to automatically validate links in pages.
+{{% /alert %}}
+
 ## Sections
 
 Sections are those pages that can have subpages. They always appear in
@@ -120,9 +125,9 @@ menu:
 
 ### Embedding images (or other content)
 
-Markdown organizes content for each page into a subfolder with same name as
-the page's filename. This allows authors to easily keep track of the resources
-used by each page.
+Hugo [organizes](https://gohugo.io/content-management/organization/) content
+for each page into a subfolder with same name as the page's filename.
+This allows authors to easily keep track of the resources used by each page.
 
 Let's assume we have a section named **About** with a subpage **Concepts**, using
 the following hierarchy of files:

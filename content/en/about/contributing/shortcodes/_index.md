@@ -96,6 +96,8 @@ This is also achieved using
 When you need to include code snippets, and you want to provide the same code
 in multiple programming languages, you can use a tabbed pane for code snippets:
 
+<!-- markdownlint-disable no-inline-html no-missing-space-atx blanks-around-fences -->
+
 ```go-html-template
 {{</* tabpane */>}}
   {{</* tab header="C++" lang="C++" */>}}
@@ -224,3 +226,5 @@ Get-ChildItem -Path .\
 {{% alert title="Tip" color="info" %}} You can include any valid markdown
 content in each tab, including code or shell snippets.
 {{% /alert %}}
+
+<!-- markdownlint-enable no-inline-html no-missing-space-atx blanks-around-fences -->
