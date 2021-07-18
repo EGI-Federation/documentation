@@ -114,14 +114,15 @@ introduction of scroll bar, please reconsider using another formatting.
 In some specific cases it is impossible to use anything but in-line HTML tags:
 
 - Presentation page leveraging bootstrap CSS classes or other advanced features
-- Using special formatting for the information presented (e.g. a list in a table cell)
+- Using special formatting for the information presented (e.g. a list in a
+  table cell)
 
 Blocks with in-line HTML tags should be preceded by a HTML comment starting
 with [markdownlint-disable](https://github.com/DavidAnson/markdownlint#configuration)
 to disable the `no-inline-html` check.
 
-In the following example two checks are disabled at the same time: `line-length` and
-`no-inline-html`:
+In the following example two checks are disabled at the same time: `line-length`
+and `no-inline-html`:
 
 ```markdown
 <!-- markdownlint-disable line-length no-inline-html -->

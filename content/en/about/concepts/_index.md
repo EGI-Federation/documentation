@@ -236,7 +236,6 @@ This s link to a [section chapter](../../about#section-chapter)
 the links in these pages exemplify how to link to headings in a
 different page or section.
 
-
 ## Glossary
 
 {{% pageinfo %}} The EGI Glossary is available on the

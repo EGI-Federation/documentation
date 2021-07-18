@@ -14,6 +14,7 @@ menu:
 [Service Providers](../providers) section for documentation aimed at
 service providers.
 {{% /alert %}}
+
 ## Request for information
 
 You can ask for more information about the services

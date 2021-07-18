@@ -64,5 +64,3 @@ components, and the OGF Certificate Authority Working Group (CAOPS) who
 strongly discourage any type of quote in a certificate DN as specified by their
 Grid Certificate Profile document.
 {{% /alert %}}
-
-

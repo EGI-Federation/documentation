@@ -41,7 +41,7 @@ please select Mesos + Marathon + Chronos from the list of available LRMS.
 To deploy
 [Serverless computing for data-processing applications](https://www.egi.eu/about/newsletters/serverless-computing-for-data-processing-applications-in-egi/)
 in EGI, please select OSCAR from the list of LRMS (Local Resource Management
-System). 
+System).
 
 Below you can find some use-cases of applications that use the OSCAR framework for
 event-driven high-throughput processing of files:

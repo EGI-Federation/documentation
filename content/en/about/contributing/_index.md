@@ -10,7 +10,7 @@ greatly appreciate the interest of contributors and rely on continued engagement
 with the community to ensure this project remains useful. We would like to
 take steps to put contributors in the best possible position to have their
 contributions accepted. Please take a few moments to read this short guide on
-how to contribute. 
+how to contribute.
 
 {{% alert title="Note" color="info" %}} Before you start contributing to the
 EGI documentation, please familiarize yourself with the [concepts](../concepts)
