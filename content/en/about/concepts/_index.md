@@ -18,7 +18,7 @@ The EGI documentation is organized into [sections](#sections) and
 and how to create new sections and add new pages to a section.
 
 {{% alert title="Important" color="warning" %}} Avoid using pages in the
-documentation for now, create a distinct section for every page, because 
+documentation for now, create a distinct section for every page, because
 currently there is no way to automatically validate links in pages.
 {{% /alert %}}
 
