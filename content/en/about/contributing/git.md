@@ -1,8 +1,8 @@
 ---
-title: "Using Git and GitHub"
+title: "Git and GitHub"
 description: "First steps with Git and GitHub"
 type: docs
-weight: 50
+weight: 10
 ---
 
 For collaboration purposes, it is best if you create a GitHub account and fork
@@ -27,7 +27,7 @@ Request to an existing GitHub repository. {{% /alert %}}
 Additional documentation about the main steps for working with GitHub is also
 available in this section.
 
-## The GitHub flow
+## The GitHub contribution flow
 
 In order to be able to send code update to the repository you need to:
 
@@ -44,7 +44,7 @@ In this process three git repositories are used:
 - A local clone of your fork, containing references to your fork, its _origin_
   and to the _upstream_ repository
 
-## Adding an SSH key to your GitHub account
+## Add an SSH key to your GitHub account
 
 The most convenient way to authenticate with GitHub is to use SSH keys over the
 SSH protocol.
@@ -90,7 +90,7 @@ The easiest way is to do it via the GitHub CLI that will also clone it locally.
 But it can also be done via the web interface, using the _fork_ button and then
 cloning it locally manually.
 
-### Forking and cloning
+### Fork and clone
 
 This command will fork the repository to your GitHub account and clone a local
 copy for you to work with.
@@ -99,7 +99,7 @@ copy for you to work with.
 gh repo fork EGI-Federation/documentation
 ```
 
-### Cloning the fork
+### Clone existing fork
 
 If you want to clone an existing fork you should use:
 
@@ -107,7 +107,7 @@ If you want to clone an existing fork you should use:
 gh repo clone <your_username>/documentation
 ```
 
-### Validating the local clone
+### Validate the local clone
 
 If your local clone of you fork is correctly setup you should see references to
 the origin and upstream repositories.
@@ -120,60 +120,48 @@ upstream        git@github.com:EGI-Federation/documentation.git (fetch)
 upstream        git@github.com:EGI-Federation/documentation.git (push)
 ```
 
-## Running the site locally
+## Run the site locally
 
-The documentation webiste is built from the source files using
+The documentation website is built from the source files using
 [Hugo](https://gohugo.io/). The repository
 [README](https://github.com/EGI-Federation/documentation/blob/main/README.md)
 can be used as a reference for building instructions.
 
 ### Requirements
 
-- [hugo](https://gohugo.io)
-- [NodeJS](https://nodejs.org/) and other [docsy](https://www.docsy.dev) theme
-  dependencies:
+- mdl
+- hugo
+- NodeJS
   - postcss-cli
   - autoprofixer
 
-### Installing dependencies
+### Build and test
 
-To install npm+nodejs please check the
-[official instructions](https://www.npmjs.com/get-npm).
+To install npm+nodejs please check the instructions at:
+[https://www.npmjs.com/get-npm](https://www.npmjs.com/get-npm)
 
-Everything has been tested with Node.js 12.
-
-The dependencies of the docsy theme can be installed as follows:
+The rest of the tools can be installed as follows:
 
 ```shell
-# from the root of the repository clone
-npm ci
+gem install mdl
+npm install postcss-cli@7.1.2
+npm install autoprefixer@9.0
 ```
 
-The supported Hugo version is shipped under the `binaries` folder. Updates can
-be downloaded at
-[the Hugo releases page](https://github.com/gohugoio/hugo/releases).
+The supported Hugo version packages are available under the `binaries` folder.
 
-### Building the site
-
-To build and run the site, from the repository root:
+To build and run the site, from the repository root
 
 ```shell
 git submodule update --init --recursive --depth 1
-./binaries/<platform>/hugo --minify
-```
-
-### Testing the site locally
-
-To launch the site locally, from the repository root:
-
-```shell
+mdl -s relaxed -s style.rb -r ~MD002,~MD024 content/
+# Pick the repository specific to your platform
 ./binaries/<platform>/hugo server -D
 ```
 
-The website is available locally at:
-[http://localhost:1313/](http://localhost:1313/).
+The website is available at: [http://localhost:1313/](http://localhost:1313/).
 
-## Branches and Commits
+## Branches and commits
 
 You should submit your patch as a git branch ideally named with a meaningful
 name related to the changes you want to propose. This is called a _feature
@@ -181,7 +169,7 @@ branch_ (sometimes also named _topic branch_). You will commit your
 modifications to this _feature branch_ and submit a Pull Request (PR) based on
 the differences between the upstream main branch and your _feature branch_.
 
-### Creating a feature branch
+### Create a feature branch
 
 Try to avoid committing changes to the _main_ branch of your clone to simplify
 management, creating a dedicated _feature branch_ helps a lot. Try to pick a
@@ -193,7 +181,7 @@ meaningful name for the branch (my_nice_update in the example).
 git checkout -b my_nice_update
 ```
 
-## Writing changes
+## Write changes
 
 The documentation being made of plain text files you are free to use whatever
 text editor or Integrated Development Environment (IDE) suits you, from
@@ -206,7 +194,7 @@ preview, they are worth checking.
 Be sure to commit files with having been formated using
 [Prettier](https://prettier.io/) as documented in our [style guide](../style/).
 
-## Committing changes
+## Commit changes
 
 It is the best practice to have your commit message have a _summary line_ that
 includes the issue number, followed by an empty line and then a brief
@@ -231,7 +219,7 @@ git add files1 path2/
 git commit -m <commit_message>
 ```
 
-## Pushing the feature branch to the fork for preparing a PR
+## Push feature branch to the fork in preparation of a PR
 
 From inside a feature branch you can push it to your remote fork.
 
@@ -241,10 +229,8 @@ git push --set-upstream
 ```
 
 Once done `git` output will show a URL that you can click to generate a Pull
-Request (PR).
-
-Accessing GitHub upstream or fork repositories may also propose you to submit a
-PR.
+Request (PR). Accessing GitHub upstream of forked repositories may also
+propose you to submit a PR.
 
 If needed GitHub CLI can also be used to prepare the PR:
 
@@ -252,7 +238,7 @@ If needed GitHub CLI can also be used to prepare the PR:
 gh pr create <your_username>:<feature_branch> --web
 ```
 
-### Updating the local feature branch with changes made on the PR
+### Update local feature branch with changes made on the PR
 
 Once you PR have been opened it will be reviewed, and reviewers can propose and
 commit changes to your PR. If you need to make further changes be sure to update
@@ -265,7 +251,7 @@ git pull
 
 Then you can commit new changes and push them to your remote fork.
 
-## Updating a repository clone with the upstream changes
+## Update repository clone with the upstream changes
 
 ```shell
 # If you are still in a branch created for a previous PR, move to main
@@ -278,7 +264,7 @@ git rebase upstream/main main
 git push
 ```
 
-## Updating a local feature branch with changes made on the main branch
+## Update local feature branch with changes made on the main branch
 
 In case the _main_ branch evolved since the feature branch was created, it may
 be required to merge the new changes in the feature branch.
@@ -298,7 +284,7 @@ git rebase upstream/main
 In case some files have been changed on both sides you will will have to merge
 the conflicts manually.
 
-## Cloning a Pull Request to edit, test and review it locally
+## Clone PR to edit/test/review locally
 
 It's possible to clone a Pull Request to a local branch to test it locally. It's
 done using the PR number.
@@ -333,7 +319,7 @@ git commit yyy.zz -m <commit_message>
 git push
 ```
 
-### Updating a local clone of a PR
+### Update a local clone of a PR
 
 ```shell
 # It will ask you to merge changes
@@ -347,7 +333,7 @@ that case it may be easier to
 [delete the local branch](#cleaning-a-local-clone-of-a-pr) and do another
 [checkout of the PR](#cloning-a-pull-request-to-test-and-review-it-locally).
 
-### Cleaning a local clone of a PR
+### Clean a local clone of a PR
 
 In case you have troubles updating the local clone, as it can happens if changes
 were forced pushed to it, it maybe easier to delete the local copy of the PR and
@@ -364,7 +350,7 @@ git branch -d <branch_name>
 git branch -D <branch_name>
 ```
 
-## Using git stash to save changes for later usage
+## Using stashes
 
 Sometimes we realise just before committing a change that we are not in the
 correct branch (ie. that we forgot to create a dedicated feature branch), when
