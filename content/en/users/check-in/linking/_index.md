@@ -7,6 +7,10 @@ description: >
   Linking additional organisational/social identities to your EGI Account
 ---
 
+<!--
+// jscpd:ignore-start
+-->
+
 ## Linking new identities to your EGI Account
 
 Identity linking allows you to access EGI resources with your existing personal
@@ -27,16 +31,16 @@ To link a new organisational or social identity to your EGI account:
    - select **EGI User Community** from the list of available Collaborations and
      then click **My EGI User Community Account** from the **People** menu
 
-   ![Check-in my account](./check-in-my-account.png)
+   ![Check-in my account](my-account.png)
 
 1. Under the **Organisational Identities** section of your profile page, expand
    **Actions** menu and click **Link New Identity**.
 
-   ![Link new identity](./check-in-link-new.png)
+   ![Link new identity](link-new.png)
 
 1. On the introductory page for Identity Linking, click **Begin**
 
-   ![Link new identity intro](./check-in-link-intro.png)
+   ![Link new identity intro](link-intro.png)
 
 1. You will need to sign in using the login credentials from the
    institutional/social identity provider you want to link to your account.
@@ -50,7 +54,7 @@ To link a new organisational or social identity to your EGI account:
    resources with your existing personal EGI ID using the login credentials of
    the identity provider you selected in **Step 6**.
 
-   ![Link new identity end](./check-in-link-end.png)
+   ![Link new identity end](link-end.png)
 
 ## Linking your certificate to your EGI Account
 
@@ -73,16 +77,16 @@ To link a subject DN to your EGI account:
    - select **EGI User Community** from the list of available Collaborations and
      then click **My EGI User Community Account** from the **People** menu
 
-   ![Check-in my account](./check-in-my-account.png)
+   ![Check-in my account](my-account.png)
 
 1. Under the **Organisational Identities** section of your profile page, expand
    **Actions** menu and click **Link New Identity**.
 
-   ![Link new identity](./check-in-link-new.png)
+   ![Link new identity](.link-new.png)
 
 1. On the introductory page for Identity Linking, click **Begin**
 
-   ![Link new identity intro](./check-in-link-intro.png)
+   ![Link new identity intro](link-intro.png)
 
 1. Continuously, you will need to sign in using the IGTF Certificate Proxy.
 
@@ -90,12 +94,12 @@ To link a subject DN to your EGI account:
    the identity provider selection, cached in the discovery page, before picking
    the new one. {{% /alert %}}
 
-   ![Check-in IdP discovery IGTF](./check-in-discovery-igft.png)
+   ![Check-in IdP discovery IGTF](discovery-igft.png)
 
 1. Then select the certificate you want to link to your account from the popup
    window.
 
-   ![Select certificate](./check-in-select-certificate.png)
+   ![Select certificate](select-certificate.png)
 
 1. After successful authentication you will be redirected back to your EGI
    Account. Also, you'll be able to access EGI resources with your existing
@@ -106,9 +110,9 @@ To link a subject DN to your EGI account:
    the source is
    `https://edugain-proxy.igtf.net/simplesaml/saml2/idp/metadata.php`.
 
-   ![List organisational identities](./check-in-list-organisational-ids.png)
+   ![List organisational identities](list-organisational-ids.png)
 
 1. Then scroll down to _Certificates_ and you should see the subject DN of your
    certificate.
 
-   ![Certificates preview](./check-in-certificates-preview.png)
+   ![Certificates preview](certificates-preview.png)
