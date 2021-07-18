@@ -7,7 +7,7 @@ description: >
 ---
 
 This page details using the Check-in UI for managing your Virtual
-Organisation (VO). To manage your VO using a REST API see [here](api).
+Organisation (VO). To manage your VO using a REST API see [here](#vo-membership-api).
 
 VOs in Check-in are represented as Collaborative Organisation Units (COUs). A
 COU is more than just a group. It is the concept of groups combined with
@@ -16,7 +16,7 @@ organised in a hierarchical structure for creating groups or subgroups within a
 VO.
 
 It is assumed that VO managers and members have already registered their EGI
-Check-in account (A step-by-step guide is provided in [this link](signup)).
+Check-in account (A step-by-step guide is provided in [this link](../signup)).
 
 ## Registering your VO
 

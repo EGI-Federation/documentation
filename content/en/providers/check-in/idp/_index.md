@@ -5,10 +5,6 @@ weight: 10
 type: "docs"
 ---
 
-<!--
-// jscpd:ignore-start
--->
-
 This page contains information about integrating your identity provider (IdP)
 with [Check-in](https://www.egi.eu/services/check-in/) in order to allow users
 in your community to access EGI tools and services.
@@ -71,6 +67,9 @@ describes the data requested from the user's Home Organisation, which are
 communicated to the Check-in SP as either SAML attributes or OIDC claims,
 depending on the protocol supported by the authenticating IdP.
 
+<!--
+// jscpd:ignore-start
+-->
 <!-- markdownlint-disable line-length no-inline-html -->
 
 | Description                                                                                                                                                                                      | Notes                                                          |
@@ -83,6 +82,9 @@ depending on the protocol supported by the authenticating IdP.
 | Affiliation within Home Organisation or Community                                                                                                                                                | To be released **only** if relevant for accessing EGI services |
 
 <!-- markdownlint-enable line-length no-inline-html -->
+<!--
+// jscpd:ignore-end
+-->
 
 Note that the above set of requested attributes, particularly the identifier,
 name, email and affiliation information, complies with the
@@ -220,6 +222,9 @@ user within the scope of that organisation or community, along with a set of
 additional information as described in the following table (see also
 [general attribute release requirements](#attribute-release-requirements)):
 
+<!--
+// jscpd:ignore-start
+-->
 <!-- markdownlint-disable line-length no-inline-html -->
 
 | Description                                                                                                                                                                                      | SAML attribute                                                                                                                                                                       |
@@ -233,6 +238,9 @@ additional information as described in the following table (see also
 | Group(s)/role(s) within Home Organisation or Community                                                                                                                                           | `eduPersonEntitlement`                                                                                                                                                               |
 
 <!-- markdownlint-enable line-length no-inline-html -->
+<!--
+// jscpd:ignore-end
+-->
 
 ## OpenID Connect Identity Provider
 
@@ -287,3 +295,7 @@ following table (see also
 ## Integration success stories
 
 - [EGI AAI integration with ELIXIR](https://wiki.egi.eu/wiki/EGI_AAI_integration_with_ELIXIR_AAI)
+
+<!--
+// jscpd:ignore-end
+-->

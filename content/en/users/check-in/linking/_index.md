@@ -82,7 +82,7 @@ To link a subject DN to your EGI account:
 1. Under the **Organisational Identities** section of your profile page, expand
    **Actions** menu and click **Link New Identity**.
 
-   ![Link new identity](.link-new.png)
+   ![Link new identity](link-new.png)
 
 1. On the introductory page for Identity Linking, click **Begin**
 
@@ -116,3 +116,7 @@ To link a subject DN to your EGI account:
    certificate.
 
    ![Certificates preview](certificates-preview.png)
+
+<!--
+// jscpd:ignore-end
+-->
