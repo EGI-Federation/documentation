@@ -41,12 +41,6 @@ under `/content/<language>/` can show up in the top-level navigation bar.
 See [below](#add-page-to-top-navigation-bar) for details on how to control this.
 {{% /alert %}}
 
-{{% alert title="Important" color="warning" %}} Use sections instead of pages
-for everything on the first and second levels, so all entries directly under
-`/content/<language>/` as well as all entries directly under e.g.
-`/content/<language>/users/` should be sections instead of pages.
-{{% /alert %}}
-
 ## Pages
 
 Pages are [markdown](https://spec.commonmark.org/0.29/) files that contain the
