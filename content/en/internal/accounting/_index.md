@@ -7,6 +7,8 @@ description: >
   Resource usage accounting for EGI services
 ---
 
+## What is it?
+
 EGI Accounting tracks usage of resources in the EGI Cloud and provides
 estimated charges associated with the recorded resource usage. It can show
 reports with line items for each EGI Cloud service, usage type, and operation.
