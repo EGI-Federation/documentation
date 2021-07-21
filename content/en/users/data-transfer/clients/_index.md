@@ -28,7 +28,6 @@ Users from other distributions should refer to the
 
 The CLI can be installed from the EPEL repositories for
 [RHEL 7](https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm)
-and
 [RHEL 8](https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm)
 with the following package:
 
