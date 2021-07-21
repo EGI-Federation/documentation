@@ -4,25 +4,19 @@ linkTitle: "Accounting"
 type: docs
 weight: 40
 description: >
-  Usage Accounting
+  Resource usage accounting for EGI services
 ---
 
-EGI Accounting is made of two main components:
+EGI Accounting tracks usage of resources in the EGI Cloud and provides
+estimated charges associated with the recorded resource usage. It can show
+reports with line items for each EGI Cloud service, usage type, and operation.
+It consists of two main components:
 
-- The _Accounting Repository_ where all accounting data is collected.
-- The _Accounting Portal_ allowing to filter and display the data.
+- The **Accounting Repository** is where all accounting data is collected
+- The **[Accounting Portal](https://accounting.egi.eu)** allows filtering
+  and displaying resource usage information
 
-## About the Accounting Repository
-
-{{% pageinfo %}} Documentation about the Accounting Repository is currently
-available on the [EGI Wiki](https://wiki.egi.eu/wiki/Accounting_Repository).
-{{% /pageinfo %}}
-
-## About the Accounting Portal
-
-The Accounting Portal is available at
-[https://accounting.egi.eu](https://accounting.egi.eu).
-
-{{% pageinfo %}} Documentation about the Accounting Repository is currently
-available on the [EGI Wiki](https://wiki.egi.eu/wiki/Accounting_Portal).
-{{% /pageinfo %}}
+{{% alert title="Note" color="info" %}} Documentation for the Accounting
+Repository is available in the
+[EGI Wiki](https://wiki.egi.eu/wiki/Accounting_Repository).
+{{% /alert %}}
