@@ -25,7 +25,6 @@ Manager service. The delivery of the service is coordinated by the EGI
 Foundation and [IN2P3](https://in2p3.cnrs.fr/) provides the resources and operates
 the service.
 
-
 ## Main Features
 
 The EGI Workload Manager:
