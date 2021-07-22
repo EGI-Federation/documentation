@@ -32,7 +32,7 @@ need to:
 
 1. Have their Identity Provider (IdP) federated in EGI Check-in (via
    [eduGAIN](https://edugain.org/) or directly)
-1. Have created an [EGI Check-in
+2. Have created an [EGI Check-in
    account](https://wiki.egi.eu/wiki/AAI_usage_guide)
 
 {{% alert title="Important" color="warning" %}}
@@ -45,7 +45,7 @@ preferable solution.
 
 3. User should ask to join the [GOCDB user
    group](https://aai.egi.eu/registry/co_petitions/start/coef:41)
-3. The access request will be managed by the EGI Operations team.
+4. The access request will be managed by the EGI Operations team.
 
 <!-- markdownlint-enable MD029 -->
 
