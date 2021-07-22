@@ -9,12 +9,14 @@ description: >
 
 ## What is it?
 
-EGI Accounting tracks usage of resources in the EGI Cloud and provides
-estimated charges associated with the recorded resource usage. It can show
-reports with line items for each EGI Cloud service, usage type, and operation.
-It consists of two main components:
+EGI Accounting **tracks and reports usage of EGI Cloud services**, offering
+insights and control over resource consumption. EGI Federation members can use
+it to account for the resource usage of their own services.
 
-- The **Accounting Repository** is where all accounting data is collected
+EGI Accounting consists of two main components:
+
+- The **Accounting Repository** is where all accounting data is collected by a
+  network of message brokers that transfer usage data from hosts and services
 - The **[Accounting Portal](https://accounting.egi.eu)** allows filtering
   and displaying resource usage information
 

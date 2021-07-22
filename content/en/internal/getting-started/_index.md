@@ -13,8 +13,9 @@ Use this section to get started quickly with internal EGI services:
 2. The **configuration database** is [here](https://goc.egi.eu), and
    the prerequisites needed to access it are
    [here](../configuration-database/access).
-3. The **accounting portal** is [here](https://accounting.egi.eu).
-4. The **helpdesk** is [here](http://helpdesk.egi.eu).
+3. The **service monitoring portal** is [here](http://argo.egi.eu).
+4. The **accounting portal** is [here](https://accounting.egi.eu).
+5. The **helpdesk** is [here](http://helpdesk.egi.eu).
 
 ## Request for information
 

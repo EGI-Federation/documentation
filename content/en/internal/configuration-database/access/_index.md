@@ -1,7 +1,7 @@
 ---
 title: "Access"
-description: "Accessing the GOCDB"
-weight: 20
+description: "Accessing the configuration database"
+weight: 25
 type: "docs"
 ---
 
