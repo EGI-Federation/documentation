@@ -28,6 +28,8 @@ information, according to the roles granted to the user.
 In order to be able to access the GOCDB with their institutional account, users
 need to:
 
+<!-- markdownlint-disable MD029 -->
+
 1. Have their Identity Provider (IdP) federated in EGI Check-in (via
    [eduGAIN](https://edugain.org/) or directly)
 1. Have created an [EGI Check-in
@@ -44,6 +46,8 @@ preferable solution.
 3. User should ask to join the [GOCDB user
    group](https://aai.egi.eu/registry/co_petitions/start/coef:41)
 3. The access request will be managed by the EGI Operations team.
+
+<!-- markdownlint-enable MD029 -->
 
 ## Using an X.509 digital certificate
 
