@@ -21,3 +21,5 @@ support.
 {{% alert title="Note" color="info" %}} Documentation for the EGI Helpdesk is
 available in the [EGI Wiki](https://wiki.egi.eu/wiki/GGUS).
 {{% /alert %}}
+
+<!-- TODO Add service identity card -->

@@ -20,3 +20,5 @@ with minimal development or operational effort for setting up monitoring.
 {{% alert title="Note" color="info" %}} Documentation for Service Monitoring is
 available [here](https://argo.egi.eu/egi/documentation).
 {{% /alert %}}
+
+<!-- TODO Add service identity card -->
