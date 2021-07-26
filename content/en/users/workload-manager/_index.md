@@ -17,13 +17,13 @@ HTC and cloud resource pools from the EGI Federation. This pool of computing
 resources can be easily extended and customized to support the needs of new
 scientific communities. In the
 [LHCb](https://home.cern/science/experiments/lhcb) experiment the service has
-proven production scalability up to peaks of more than 100.000 concurrently
+proven production scalability up to peaks of more than 100,000 concurrently
 running jobs. WeNMR, the structural biology community, uses the service for a
 number of community services. The community reported an improvement of jobs
 submission in the infrastructure from previous 70% to 99% with the EGI Workload
 Manager service. The delivery of the service is coordinated by the EGI
-Foundation and operated by [IN2P3](https://in2p3.cnrs.fr/) on resources provided
-by [CYFRONET](http://www.cyfronet.krakow.pl/).
+Foundation and [IN2P3](https://in2p3.cnrs.fr/) provides the resources and operates
+the service.
 
 ## Main Features
 
@@ -38,7 +38,7 @@ The EGI Workload Manager:
 - Handles job submission and workload distribution in a transparent way.
 
 - Improves the general job throughput compared with native management of EGI
-  grid or cloud computing resources.
+  Grid or Cloud computing resources.
 
 - Offers pilot-based task scheduling method, that submits pilot jobs to
   resources to check the execution environment before to start the user's jobs.
@@ -68,7 +68,7 @@ tail of users, SMEs and Industry
 ## Architecture
 
 The EGI Workload Manager service is a cluster of DIRAC services running on EGI
-resources (HTC, CLOUD, HPC) supporting multi-VO. All the DIRAC services are at
+resources (HTC, Cloud, HPC) supporting multi-VO. All the DIRAC services are at
 or above TRL8. The main service components include:
 
 - Workload Management System (WMS) architecture is composed of multiple loosely
@@ -96,7 +96,7 @@ The DIRAC Web portal
 There are several options to access the service:
 
 1. Members of a scientific community whose resources pool is already configured
-   in the EGI Workload Manager instance > can use the
+   in the EGI Workload Manager instance can use the
    [EGI Workload Manager web portal](https://dirac.egi.eu/DIRAC/) to access
    the service, or use
    [DIRAC Client](https://wiki.egi.eu/wiki/HOWTO22#Using_DIRAC_through_the_client).
@@ -104,11 +104,11 @@ There are several options to access the service:
    period of time, with a reasonable (not too high) number of CPUs > can use the
    catch-all VO resource pool (`vo.access.egi.eu`). Submit a request through the
    EGI Marketplace selecting:\
-   `Compute` > `Workload Manager` from the top menu
+   `Compute` > `Workload Manager` from the top menu.
 1. Representatives of a community who want to try DIRAC and EGI > Same as #2.
 1. Representative of a community who wants to request DIRAC for the community's
    own resource pool > Submit a request through the EGI Marketplace selecting\
-   `Compute` > `Workload Manager` from the top menu
+   `Compute` > `Workload Manager` from the top menu.
 
 ## Getting Started
 
@@ -278,8 +278,8 @@ Created vomses file `/home/jdoe/DIRAC/etc/grid-security/vomses/fedcloud.egi.eu`
 Generate the proxy containing the credentials of your VO. Specify the VO in the
 `--group` option:
 
-**In this example, we are going to use the resources allocated for the WeNMR
-project.**
+In this example, we are going to use the resources allocated for the WeNMR
+project.
 
 ```shell
 $ dirac-proxy-init --debug --group wenmr_user -U --rfc
