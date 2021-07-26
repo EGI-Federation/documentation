@@ -26,7 +26,9 @@ Users from other distributions should refer to the
 
 ## Installation
 
-The CLI can be installed from the EPEL repositories with the following package:
+The CLI can be installed from the EPEL repositories for
+[RHEL 7](https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm)
+with the following package:
 
 ```shell
 yum install fts-rest-cli -y
