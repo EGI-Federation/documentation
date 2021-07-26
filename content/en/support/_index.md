@@ -1,6 +1,6 @@
 ---
 title: "Support"
-description: "Support for EGI Cloud services"
+description: "Support for EGI services"
 type: docs
 menu:
   main:
