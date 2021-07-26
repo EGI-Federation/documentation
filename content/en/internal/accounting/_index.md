@@ -24,5 +24,3 @@ EGI Accounting consists of two main components:
 Repository is available in the
 [EGI Wiki](https://wiki.egi.eu/wiki/Accounting_Repository).
 {{% /alert %}}
-
-<!-- TODO Add service identity card -->

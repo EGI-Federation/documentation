@@ -1,0 +1,31 @@
+---
+title: "Service information"
+linkTitle: "Service info"
+weight: 100
+type: "docs"
+draft: true
+description: >
+    Technical details of EGI service monitoring
+---
+
+## Identity card
+
+<!-- markdownlint-disable line-length no-bare-urls -->
+
+| Property                     | Value                                                                                               |
+| ---------------------------- | -------------------------------------------------------------------------------|
+| Name                         |                                                                                |
+| Description                  |                                                                                |
+| URL                          |                                                                                |
+| Support Email                |                                                                                |
+| [Helpdesk](../helpdesk) Support Unit | EGI Services and Service components -> ?                               |
+| Configuration Database entry |                                                                                |
+| Supplier                     |                                                                                |
+| Roadmap                      |                                                                                |
+| Release notes                |                                                                                |
+| Source code                  |                                                                                |
+| Issue tracker for developers |                                                                                |
+| License                      |                                                                                |
+| Privacy Policy               |                                                                                |
+
+<!-- markdownlint-enable line-length no-bare-urls -->
