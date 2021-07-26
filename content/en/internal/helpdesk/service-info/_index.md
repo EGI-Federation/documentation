@@ -18,7 +18,7 @@ description: >
 | Description                  |                                                                                |
 | URL                          |                                                                                |
 | Support Email                |                                                                                |
-| [Helpdesk](.././/helpdesk) Support Unit | EGI Services and Service components -> ?                            |
+| [Helpdesk](..) Support Unit | EGI Services and Service components -> ?                                        |
 | Configuration Database entry |                                                                                |
 | Supplier                     |                                                                                |
 | Roadmap                      |                                                                                |
