@@ -8,7 +8,7 @@ menu:
     pre: <i class='fa fa-lightbulb'></i>
 ---
 
-Support for EGI Cloud services is available through the
+Support for EGI services is available through the
 [EGI Helpdesk](http://helpdesk.egi.eu/), an internal EGI
 [service](../internal/helpdesk).
 
