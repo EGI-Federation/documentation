@@ -231,6 +231,19 @@ A COU admins group owner can manage the admins group member as follows:
 
    ![Groups actions](./check-in-groups-actions.png)
 
+### Expiration Policy
+
+VO membership expires within a given time, typically a year after the VO member
+joins the VO. VO members receive a notification from [EGI Check-in Notifications](mailto:noreply@faai.grnet.gr)
+with the subject "vo.example.org membership will expire soon" warning them that
+their membership will expire four weeks before expiration. The notification
+email is sent on a weekly basis and includes all the instructions needed by
+VO members in order to reapply for a membership. If the VO member does not
+take any action to renew their membership, a final notification email is
+sent when the VO membership expires. Please note that a user with expired
+membership is not eligible for VO membership entitlements and as a result
+the user will not have access to VO resources relying on these entitlements.
+
 #### Assign COU member admin role
 
 From the steps defined [above](#managing-cou-admin-members):
