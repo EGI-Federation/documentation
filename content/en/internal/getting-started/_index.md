@@ -8,14 +8,14 @@ weight: 10
 
 Use this section to get started quickly with internal EGI services:
 
-- The complete list of internal EGI services is
-  [here](https://www.egi.eu/internal-services).
-- The **configuration database** is [here](https://goc.egi.eu), and
-  the prerequisites needed to access it are
-  [here](../configuration-database/access).
-- The **service monitoring portal** is [here](http://argo.egi.eu).
-- The **accounting portal** is [here](https://accounting.egi.eu).
-- The **helpdesk** is [here](http://helpdesk.egi.eu).
+- The [complete list](https://www.egi.eu/internal-services) of internal
+  EGI services
+- The [**configuration database**](https://goc.egi.eu), and
+  the [prerequisites](../configuration-database/access) needed to
+  access it
+- The [**service monitoring portal**](http://argo.egi.eu)
+- The [**accounting portal**](https://accounting.egi.eu)
+- The [**helpdesk**](http://helpdesk.egi.eu)
 
 ## Request for information
 
