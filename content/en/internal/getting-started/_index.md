@@ -14,7 +14,7 @@ Use this section to get started quickly with internal EGI services:
   the [prerequisites](../configuration-database/access) needed to
   access it
 - [**Service Monitoring**](http://argo.egi.eu)
-- The [**accounting portal**](https://accounting.egi.eu)
+- [**Accounting**](https://accounting.egi.eu)
 - The [**helpdesk**](http://helpdesk.egi.eu)
 
 ## Request for information
