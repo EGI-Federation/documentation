@@ -28,7 +28,7 @@ that need to share, store, process, and produce large sets of data. Typically,
 their research collaborations involve organizations across Europe and the
 World.Some may already have local resources (e.g. universities, research
 institutions) that can only be accessed by local users in accordance to the
-respective organisation's access policies. 
+respective organisation's access policies.
 
 In case of local compute resources researchers can request access to the
 local compute cluster from their IT department. However, when researchers join
@@ -51,7 +51,7 @@ and data services of EGI service providers. Most software deployed in the
 distributed resource centers is based on
 [open standards](https://en.wikipedia.org/wiki/Open_standard) and
 [open source](https://en.wikipedia.org/wiki/Open_source)
-middleware services. 
+middleware services.
 
 The main features of the EGI High Throughput Compute are:
 
@@ -109,5 +109,5 @@ the resources available in the EGI infrastructure.
 
 Users may gain opportunistic usage to unused resources. These are resources
 that are not dedicated to the users’ organization, but are accessible when the
-research center(s) have some spare resources. This enables the most efficient 
+research center(s) have some spare resources. This enables the most efficient
 use of resources.
