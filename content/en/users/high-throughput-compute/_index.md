@@ -98,7 +98,7 @@ The key components of the EGI High Throughput Compute architecture are:
 ### Access model
 
 Access to EGI High Throughput Compute resources is based on
-[Virtual Organisations](../getting-started/#virtual-organisations-vos), which
+[Virtual Organisations](../check-in/vos), which
 rely on [X.509 proxy certificates with VOMS extensions](../check-in/vos/voms).
 Users have to enroll into one VO before using the service.
 
