@@ -9,13 +9,15 @@ weight: 10
 Use this section to get started quickly with internal EGI services:
 
 - The [complete list](https://www.egi.eu/internal-services) of internal
-  EGI services
-- The [**Configuration Database**](https://goc.egi.eu), and
-  the [prerequisites](../configuration-database/access) needed to
-  access it
-- [**Service Monitoring**](http://argo.egi.eu)
-- [**Accounting**](https://accounting.egi.eu)
-- The [**helpdesk**](http://helpdesk.egi.eu)
+  EGI services shows what supports the coordination of the EGI federation
+- The [**Configuration Database**](https://goc.egi.eu) records the topology
+  of the sites in the EGI federation
+- [**Service Monitoring**](http://argo.egi.eu) tracks and controls the
+  performance of the services
+- [**Accounting**](https://accounting.egi.eu) tracks service and resource
+  usage, providing insights and reports on consumption
+- The [**Helpdesk**](http://helpdesk.egi.eu) lets users and providers report
+  incidents and bugs, or request changes
 
 ## Request for information
 
