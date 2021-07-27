@@ -28,24 +28,22 @@ information, according to the roles granted to the user.
 In order to be able to access the GOCDB with their institutional account, users
 need to:
 
-<!-- markdownlint-disable MD029 -->
-
 1. Have their Identity Provider (IdP) federated in EGI Check-in (via
    [eduGAIN](https://edugain.org/) or directly)
-2. Have created an [EGI Check-in
+1. Have created an [EGI Check-in
    account](https://wiki.egi.eu/wiki/AAI_usage_guide)
 
 {{% alert title="Important" color="warning" %}}
 In the case the user cannot use an IdP compliant with [REFEDS
 R&S](https://refeds.org/research-and-scholarship) and [REFEDS
 Sirtfi](https://refeds.org/sirtfi), the user will have to request joining a
-specific group (also perform the steps below). Using a compliant IdP is the
+specific group, by performing the steps below. Using a compliant IdP is the
 preferable solution.
-{{% /alert %}}
 
-3. User should ask to join the [GOCDB user
+1. User should ask to join the [GOCDB user
    group](https://aai.egi.eu/registry/co_petitions/start/coef:41)
-4. The access request will be managed by the EGI Operations team.
+1. The access request will be managed by the EGI Operations team.
+{{% /alert %}}
 
 <!-- markdownlint-enable MD029 -->
 
