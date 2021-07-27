@@ -66,7 +66,7 @@ The main features of the EGI High Throughput Compute are:
 ## The EGI HTC infrastructure
 
 The EGI High Throughput Compute infrastructure is the federation of GRID
-resources provided by EGI providers. Its aims is to share in a secure way the
+resources provided by EGI providers. Its aim is to share in a secure way the
 distributed IT resources that are part of the EGI Cloud. It comprises of:
 
 - **Compute Resources** -- execution environment for computing tasks,
