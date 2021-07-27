@@ -13,7 +13,7 @@ Use this section to get started quickly with internal EGI services:
 - The [**Configuration Database**](https://goc.egi.eu), and
   the [prerequisites](../configuration-database/access) needed to
   access it
-- The [**service monitoring portal**](http://argo.egi.eu)
+- [**Service Monitoring**](http://argo.egi.eu)
 - The [**accounting portal**](https://accounting.egi.eu)
 - The [**helpdesk**](http://helpdesk.egi.eu)
 
