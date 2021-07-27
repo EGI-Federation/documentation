@@ -5,7 +5,7 @@ type: docs
 weight: 5
 draft: true
 description: >
-  Introduction to using EGI Cloud services
+  Introduction to using EGI services
 ---
 
 TBD

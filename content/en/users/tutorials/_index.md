@@ -8,5 +8,5 @@ description: >
 ---
 
 The following tutorials show you how to perform common tasks in the EGI Cloud.
-These describe how to set up the EGI Cloud services needed for each use-case,
+These describe how to set up the EGI services needed for each use-case,
 and how to connect or operate them togheter.
