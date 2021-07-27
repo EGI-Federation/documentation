@@ -15,5 +15,5 @@ These services are being operated centrally on behalf of EGI, and are
 supporting the coordination of the EGI Federation.
 
 {{% alert title="Note" color="info" %}} See the [User Guides](../users)
-section for documentation about public EGI Cloud services.
+section for documentation about public EGI services.
 {{% /alert %}}
