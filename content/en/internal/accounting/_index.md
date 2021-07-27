@@ -20,9 +20,13 @@ EGI Accounting consists of two main components:
 - The **[Accounting Portal](https://accounting.egi.eu)** allows filtering
   and displaying resource usage information
 
+<!-- markdownlint-disable no-inline-html -->
+
 {{% alert title="Note" color="info" %}} Documentation for the Accounting
 Repository is available in the
 [EGI Wiki](https://wiki.egi.eu/wiki/Accounting_Repository).<br/>
 Documentation for the Accounting Portal is also available in the
 [EGI Wiki](https://wiki.egi.eu/wiki/Accounting_Portal).
 {{% /alert %}}
+
+<!-- markdownlint-enable no-inline-html -->

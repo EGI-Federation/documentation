@@ -45,8 +45,6 @@ preferable solution.
 1. The access request will be managed by the EGI Operations team.
 {{% /alert %}}
 
-<!-- markdownlint-enable MD029 -->
-
 ## Using an X.509 digital certificate
 
 To access the configuration database using a digital certificate, first obtain
