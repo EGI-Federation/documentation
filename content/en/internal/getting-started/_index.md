@@ -10,7 +10,7 @@ Use this section to get started quickly with internal EGI services:
 
 - The [complete list](https://www.egi.eu/internal-services) of internal
   EGI services
-- The [**configuration database**](https://goc.egi.eu), and
+- The [**Configuration Database**](https://goc.egi.eu), and
   the [prerequisites](../configuration-database/access) needed to
   access it
 - The [**service monitoring portal**](http://argo.egi.eu)
