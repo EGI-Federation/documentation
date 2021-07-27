@@ -9,7 +9,7 @@ description: >
 
 ## What is it?
 
-EGI Accounting **tracks and reports usage of EGI Cloud services**, offering
+EGI Accounting **tracks and reports usage of EGI services**, offering
 insights and control over resource consumption. EGI Federation members can use
 it to account for the resource usage of their own services.
 
