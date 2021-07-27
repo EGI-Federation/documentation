@@ -4,51 +4,121 @@ linkTitle: "Object Storage"
 type: docs
 weight: 55
 description: >
-  Access to Object Storage provided by the EGI Cloud providers
+  Object Storage offered by EGI Cloud providers
 ---
 
-## Object Storage
+## What is it?
 
-Object storage is a standalone service that stores data as sets of individual
-objects organized within containers. Each object has its own URL, which can be
-used to access the resource, to share the file with other people, and to setup
-custom metadata and access control lists. These objects are accessed and managed
-via a REST API. There is virtually no limit to the amount of data you can store,
-only the space used is accounted, you can access the data from any location
-(from any VM running at any EGI provider or even from other cloud providers or
-from your own laptop/browser), you can expose the data via external portals
-(using HTTP as transport protocol), you can set access control lists per
-container and even make the data publicly available. On the other hand, data is
-accessed via a API requests, thus integration with existing applications may
-require a change to the application logic.
+Object storage is a standalone service that **stores data as individual
+objects, organized into containers**. It is a highly scalable, reliable,
+fast, and inexpensive data storage. It has a simple web services interface
+that can be used to store and retrieve any amount of data, at any time,
+from anywhere on the web.
 
-### Usage from your application
+The main features of object storage:
 
-The Object storage in EGI is offered via OpenStack SWIFT deployments on some of
-the EGI Cloud providers.
+- Storage containers and objects have unique URLs, which can be used to access, manage, and share them.
+- Data can be accessed from anywhere, using standard HTTP requests to a REST API (e.g. VMs running in the EGI Cloud or in other cloud provider's cloud, from any browser/laptop, etc.)
+- Access can be public or can be restricted using access control lists.
+- There is virtually no limit to the amount of data you can store, only the space used is accounted for.
 
-Available SWIFT providers resources can be discovered in
+## Concepts
+
+To use object storage effectively, you need to understand the following key
+concepts and terminology:
+
+### Storage containers
+
+Storage containers (aka buckets) are the fundamental holders of data. Every
+object is stored in a storage container. You can store any number of objects in
+a storage container.
+
+Storage containers have an unique name and act as the root folders of the
+storage space.
+
+Each storage container has a unique URL (that includes the name) by which anyone
+can refer to it.
+
+### Objects
+
+Objects are the fundamental entities stored in object storage. Objects consist
+of object data and metadata. The data portion is opaque to object storage. The
+metadata is a set of name-value pairs that describe the object. These include
+some default metadata, such as the date last modified, and standard HTTP
+metadata, such as `Content-Type`. You can also specify custom metadata at the
+time the object is stored.
+
+An object is uniquely identified within a storage container by a key (name)
+and a version.
+
+Each object has a unique URL, based on the storage container's URL (that
+includes the key, and optionally the version) by which anyone can refer to it.
+
+### Permissions
+
+Storage containers and objects can be shared by sharing their URLs.
+However, access to a storage container or to an object is controlled by
+access control lists (ACLs). When a request is received against a resource,
+object storage checks the corresponding ACL to verify that the requester has
+the necessary access permissions.
+
+{{% alert title="Note" color="info" %}} It is possible to set permissions so
+that the storage container or object can be accessed publicly.
+{{% /alert %}}
+
+## Usage from your application
+
+The Object Storage in the EGI Cloud is offered via
+[OpenStack](https://openstack.org/) SWIFT deployments on (some of
+the) EGI Cloud providers.
+
+You can manage the storage via the
+[FedCloud CLI](#access-via-fedcloud-cli) or the web dashboard of the
+selected provider. More advanced usage include access via the 
+[S3 protocol](#access-via-the-s3-protocol), or via the
+[EGI Data Transfer service](#access-via-egi-data-transfer).
+
+{{% alert title="Note" color="info" %}} Available SWIFT resources
+can be discovered in
 [GOCDB](https://goc.egi.eu/portal/index.php?Page_Type=Services&serviceType=org.openstack.swift&selectItemserviceType=org.openstack.swift&ngi=&searchTerm=&production=TRUE&monitored=TRUE&certStatus=Certified&scopeMatch=all&servKeyNames=&servKeyValue=).
+{{% /alert %}}
 
-For accessing the endpoint check the `URL` of the specific provider.
-
-OpenStack SWIFT offers a RESTful API to manage your storage and you can manage
-it via the OpenStack CLI or web dashboard. Check the complete
+{{% alert title="Note" color="info" %}} OpenStack SWIFT offers a REST API
+to manage storage. See the
 [OpenStack object store API](https://docs.openstack.org/api-ref/object-store/)
-for more information. More advanced usage include access via the S3 protocol and
-the EGI Data Transfer Service which are also described in the following
-sections.
+for more details.
+{{% /alert %}}
 
-### Access via Openstack CLI
+## Access from the command line
 
-The Openstack CLI can be used to perform operations over the SWIFT endpoints
-available on the infrastructure.
+Multiple command clients interfaces (CLIs) are available to access object
+storage:
 
-First the Openstack environment needs to be properly setup, and for this purpose
-the [fedcloud](https://fedcloudclient.fedcloud.eu) client is quite handy. For
-instance to setup the access to the SWIFT endpoint at IFCA-LCG2 via the Pilot VO
-(vo.access.egi.eu) you can use the `fedcloud openstack` command. Start listing
-the available containers(buckets):
+- For SWIFT endpoints the recommended CLI is the
+  [FedCloud client](../../cloud-compute/openstack).
+- For S3-compatible object storage the recommended CLI is the
+  [Davix client](https://davix.web.cern.ch), which has been developed at CERN
+  and is available both in RHEL and Debian environments.
+
+### Access with the FedCloud CLI
+
+The [FedCloud command line interface](../../cloud-compute/openstack)
+(CLI) can be used to perform operations on the SWIFT endpoints available in
+the EGI Cloud. This means using the command `fedcloud openstack` to query
+and manipulate storage containers and objects.
+
+{{% alert title="Note" color="info" %}} See 
+[here](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html)
+for documentation on all storage container-related commands, and 
+[here](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/object.html)
+for all object-related commands.
+{{% /alert %}}
+
+#### List storage containers
+
+For example, to access to the SWIFT endpoint at IFCA-LCG2 via the
+Pilot VO (vo.access.egi.eu), use the `fedcloud openstack` command to
+list the available storage containers:
 
 ```shell
 $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container list
@@ -59,7 +129,7 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container list
 +------------------+
 ```
 
-Creating a new container:
+#### Create new storage container
 
 ```shell
 $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container create test-egi
@@ -70,7 +140,7 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container create tes
 +---------+-----------+------------------------------------------------------+
 ```
 
-Creating a new Object by uploading a file:
+#### Create new object by uploading a file
 
 ```shell
 $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
@@ -82,7 +152,7 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
 +-----------+-----------+----------------------------------+
 ```
 
-Listing objects inside a container:
+#### List objects in a storage container
 
 ```shell
 $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu object list test-egi
@@ -93,36 +163,61 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu object list test-egi
 +-----------+
 ```
 
-Download an object:
+#### Download (the content of) an object
 
 ```shell
 fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
          object save test-egi file1.txt
 ```
 
-Removing an object from the container:
+#### Add metadata to an object
+
+```shell
+fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
+         object set --property key=value test-egi file1.txt
+```
+
+#### Remove metadata from an object
+
+```shell
+fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
+         object unset --property key test-egi file1.txt
+```
+
+#### Remove an object from a storage container
 
 ```shell
 fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
          object delete test-egi file1.txt
 ```
 
-Removing the entire container (`-r` option for recursive):
+#### Removing an entire container
 
 ```shell
 fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container delete test-egi
 ```
 
-### Access via S3 protocol
+{{% alert title="Tip" color="info" %}} You can add the `-r` option
+to recursively remove sub-containers.
+{{% /alert %}}
+
+### Access via the S3 protocol
 
 Openstack SWIFT is compatible with S3 protocol, therefore if the SWIFT
-deployment are properly configured they can be accessed as any other S3
-compatible storage.
+deployment is properly configured, it can be accessed as any other
+S3-compatible storage.
 
-In order to access the storage via S3 you need to create first the EC2
-credentials from the Openstack deployment.
+{{% alert title="Note" color="info" %}} The S3 protocol was created by [Amazon
+Web Services](https://www.aws.com) (AWS) for their object storage,
+called [Simple Storage Service](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+(S3), but it was 
+[adopted as the de-facto standard](https://www.architecting.it/blog/object-storage-standardising-on-the-s3-api/)
+to access object storage offered by other providers.
+{{% /alert %}}
 
-The following command is needed:
+In order to access the storage via S3, you need
+[EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)-compatible
+credentials from the Openstack deployment. Use the following command:
 
 <!-- markdownlint-disable line-length -->
 ```shell
@@ -139,35 +234,30 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu ec2 credentials crea
 | user_id    | xxxxxxxxxxxxxxxxxxxxxxxxxxxx                                                                                                             |
 +------------+------------------------------------------------------------------------------------------------------------------------------------------+
 ```
-
 <!-- markdownlint-enable line-length -->
 
-The `access` and `secret` values are needed in order to access the SWIFT via the
-S3 protocol
+{{% alert title="Important" color="warning" %}} Save the `access` and `secret`
+values, as those are needed in subsequent commands that use the S3 protocol.
+{{% /alert %}}
 
-A lot of clients are available to access S3 compatible storages (awscli, s3cmd,
-etc). In EGI we are using the [Davix client](https://davix.web.cern.ch), which
-has been developed at CERN and is available both in RHEL and Debian
-environments.
-
-In order to list via S3 protocol the SWIFT server just type:
+To list containers/objects via the S3 protocol, use the command:
 
 ```shell
-davix-ls --s3accesskey 'access' --s3secretkey 'secret'  --s3alternate s3s://api.cloud.ifca.es:8080/swift/v1/test-egi
+davix-ls --s3accesskey 'access' --s3secretkey 'secret' --s3alternate s3s://api.cloud.ifca.es:8080/swift/v1/test-egi
 
 ```
 
 `davix-get`, `davix-put` and `davix-del` are also available to download, store
 and delete objects from the storage.
 
-### Access via the EGI Data Transfer
+## Access via EGI Data Transfer
 
-The [EGI Data Transfer](../../data-transfer) can be also configured to move file
-to/from Object storages using the S3 protocol.
+The [EGI Data Transfer](../../data-transfer) service can move files
+to and from object storages that are compatible with the S3 protocol.
+You will have to upload the EC2 access keys to the EGI Data Transfer
+service, which will be able  to generate properly signed URLs for the
+object in the storage.
 
-This will require to upload the EC2 access keys to the EGI Data Transfer
-service, which will be then entitled to generate the proper signed URL to access
-the storage.
-
-Please contact the support (_support_at_egi_dot_eu_) in order to have more
-details.
+{{% alert title="Note" color="info" %}} Please contact support
+at `support` `<at>` `egi.eu` for more details.
+{{% /alert %}}
