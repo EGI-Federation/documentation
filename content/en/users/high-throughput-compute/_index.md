@@ -4,118 +4,110 @@ dlinkTitle: "High Throughput Compute"
 type: docs
 weight: 60
 description: >
-  EGI High Throughput Compute (HTC)
+  EGI High Throughput Compute (HTC) service
 ---
 
-## What is High Throughput Compute?
+## What is it?
 
-High Throughput Compute (HTC) can be described as computing paradigm that
-focuses on the efficient execution of a large number of loosely-coupled tasks
-(that could be data analysis tasks, also computing jobs for analysing data or
-other similar tasks). HTC systems are independent jobs that can be individually
-scheduled on many different computing resources across multiple administrative
-boundaries. Users usually submit these tasks to the infrastructure as jobs and
-once the jobs have been scheduled and executed in the distributed resources of
-the infrastructure, the user can collect the output from the services that have
-executed their jobs.
+High Throughput Compute is a computing paradigm that focuses on the **efficient
+execution of a large number of loosely-coupled tasks** (e.g. data analysis jobs).
+HTC systems execute independent tasks that can be individually scheduled on many
+different computing resources, across multiple administrative boundaries.
+Users submit these tasks to the infrastructure as jobs. After a job have been
+scheduled and executed, the output can be collected from the service(s) that
+executed the job.
 
 The EGI High Throughput Compute service is provided by a distributed network of
-computing centres, accessible via a standard interface and membership of a
-Virtual Organisation.
+computing centres. Access is through a standard interface, and conditioned by
+membership in a [Virtual Organisation](../check-in/vos) (VO).
 
-## The EGI High Throughput Compute Infrastructure
+## Target users
 
-The EGI High Throughput Compute infrastructure is the federation of GRID
-resources provided by EGI providers, that aims to share and federate in a secure
-way distributed IT resources as part of the EGI infrastructure. It comprises:
+The target customers for EGI High Throughput Compute are research communities
+that need to share, store, process, and produce large sets of data. Typically,
+their research collaborations involve organizations across Europe and the
+World.Some may already have local resources (e.g. universities, research
+institutions) that can only be accessed by local users in accordance to the
+respective organisation's access policies. 
 
-- Computer resources -- execution environment of computing tasks in clusters
-  distributed in many different resource centers over Europe and outside Europe
-  ;
-- Data infrastructure -- storage servers where users can upload and download
-  their data/files in a distributed manner in the different resource centers
-- Federated operations -- a set of federated operations that are constituted of
-  global tasks (central activities/ services, e.g., AAI, accounting, helpdesk)
-  that are needed to federate the heterogeneous resources from different
-  resource centers and their operation activities that are carried out by the
-  different NGIs.
-- User support -- NGIs also carry out user support. EGI.eu provides the central
-  user support and coordinates NGIs’ support activities.
+In case of local compute resources researchers can request access to the
+local compute cluster from their IT department. However, when researchers join
+collaborations that need to share their research activities, data collections,
+and repositories, they need a homogenous and coordinated operation of the
+compute resources, which are not uniformly accessible. In addition, nowadays
+many research collaborations generate large amounts of data, and managing
+such data volumes is time consuming and error prone.
 
-## Target Users
+The EGI High Throughput Compute service provides access to compute resources,
+and offers a set of high-level tools that allow managing large amounts of data
+in a collaborative way (e.g authorization and access control tools can be
+regulated by the research collaboration in a central manner, data can be
+uniformly distributed in the EGI Cloud, etc.).
 
-The target customers for EGI High Throughput Compute service are research
-communities who need to share, store, process, and produce large sets of data.
-Typically, their research collaborations involve different organizations across
-Europe and the world. They may already have local resources, for example,
-universities, and research institutions, and these local resources normally can
-only be accessed by local users, according to the organisational authentication
-rules and access policies. For example, university researchers can go to their
-IT department and ask for grant access to the university cluster. However, when
-researchers join collaborations that need to share their research activities,
-data collections, repositories among different organisations, they will need
-more homogenous and coordinated operation of the resources that are not
-currently uniformly accessible. In addition, nowadays, many researcher
-collaborations generate a big amount of data, and managing such big data is time
-consuming and error prone.
+## Features
 
-The EGI High Throughput Compute not only provides the basic access to resources
-but also offers a set of high-level tools allowing users to manage a large
-amount of data in a collaborative, for example, there are authorization and
-access control tools that can be regulated by the research collaboration in a
-central manner and uniformly distributed in the distributed infrastructure. And
-there are also tools to handle and manage a big amount of data (to move data, to
-create data catalogs for the distributed datasets, to balance the execution
-workloads, etc.).
+EGI High Throughput Compute provides easy, uniform access to shared computating
+and data services of EGI service providers. Most software deployed in the
+distributed resource centers is based on
+[open standards](https://en.wikipedia.org/wiki/Open_standard) and
+[open source](https://en.wikipedia.org/wiki/Open_source)
+middleware services. 
 
-## Main features
-
-EGI High Throughput Compute provides easy access to shared computing and data
-services from independent resource providers in a uniform way optimizing usage.
-Most software deployed in the distributed resources centers are based on open
-standards, and are open source middleware services. Resource access is based on
-Virtual Organisation (VO). VOs are fully managed by communities allowing them to
-manage their users and grant control access to their services and resources. In
-order to optimize the usage of the resources, users can have opportunistic usage
-of unused resources. This means users can either own their resources and use EGI
-services to federate them and have easy access to them or use the resources
-already available in the EGI infrastructure. The opportunity resources are not
-dedicated to the users’ organization, but since you are enabled in these
-resources as the part of the EGI infrastructure, you can access when the
-research centers have some spare resources. And in this way, the resource
-providers are also happy since their resources are used in a more efficient way.
-
-In summary, the main feature of the EGI High Throughput Compute service are as
-follows:
+The main features of the EGI High Throughput Compute are:
 
 - Access to high-quality computing resources
-- Integrated monitoring and accounting tools to provide information about the
+- Integrated monitoring and accounting tools provide information about the
   availability and resource consumption
 - Workload and data management tools to manage all computational tasks
 - Large amounts of processing capacity over long periods of time
 - Faster results for your research
-- Shared resources among users, enabling collaborative research
+- Shared resources enable collaborative research
 
-### EGI High Throughput Compute Architecture and the Access Models
+## The EGI HTC infrastructure
 
-#### Architecture and Service Components
+The EGI High Throughput Compute infrastructure is the federation of GRID
+resources provided by EGI providers. Its aims is to share in a secure way the
+distributed IT resources that are part of the EGI Cloud. It comprises of:
+
+- **Compute Resources** -- execution environment for computing tasks,
+  organized into clusters distributed across multiple resource centers in Europe
+  and the World.
+- **Data Infrastructure** -- storage servers from different resource centers
+  where users can store their data/files in a distributed manner.
+- **Federated Operations** -- global operational tasks (e.g., AAI, accounting,
+  helpdesk) needed to federate the heterogeneous resources of resource centers
+  and their operational activities.
+- **User Support** -- EGI provides the central user support and coordinates
+  support activities of EGI providers, who offer user support for the
+  services/resources they contribute to the EGI ecosystem.
+
+### Architecture and service components
 
 ![EGI High Throughput Compute architecture](htc_archtecture.png)
 
-Key Components:
+The key components of the EGI High Throughput Compute architecture are:
 
-- [Data Transfer Service (FTS)](../data-transfer/)
-- [Storage Services](../online-storage/)
-- _Computing Elements (CE)_: Computing resources are made available through GRID
-  interfaces called Computing Elements. The most common implementations of CEs
-  in the EGI infrastructure are
+- [Data Transfer service](../data-transfer/) (FTS)
+- [Online Storage services](../online-storage/)
+- **Computing Elements** (CEs) are compute resources made available through
+  GRID interfaces. The most common implementations of CEs in the EGI
+  infrastructure are
   [HTCondor-CE](https://htcondor-ce.readthedocs.io/en/latest/) and
   [ARC-CE](http://www.nordugrid.org/arc/ce/).
 
-#### Access Models
+### Access model
 
 Access to EGI High Throughput Compute resources is based on
-[Virtual Organisations](../getting-started/#virtual-organisations-vos), you will
-need to enrol into one VO before using the service. VOs for the EGI High
-Throughput Compute service relies on
-[X.509 proxy certificates with VOMS extensions](../check-in/vos/voms).
+[Virtual Organisations](../getting-started/#virtual-organisations-vos), which
+rely on [X.509 proxy certificates with VOMS extensions](../check-in/vos/voms).
+Users have to enroll into one VO before using the service.
+
+VOs are fully managed by research communities, allowing them to manage their
+users and grant access to their services and resources. This means users can
+either own their resources and use EGI services to federate them, or can use
+the resources available in the EGI infrastructure.
+
+Users may gain opportunistic usage to unused resources. These are resources
+that are not dedicated to the users’ organization, but are accessible when the
+research center(s) have some spare resources. This enables the most efficient 
+use of resources.
