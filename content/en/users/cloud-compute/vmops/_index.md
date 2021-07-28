@@ -43,11 +43,11 @@ If your VO is not listed and you are interested in getting support, please
 
    1. select the provider where to instantiate the VA; and finally
 
-   1. select the template (VM instance type) of the instance that will
-   determine the number of cores, memory and disk space used in your VM.
+   1. select the template (VM instance type) of the instance that will determine
+      the number of cores, memory and disk space used in your VM.
 
-1. Now you will be presented with a summary page where you can further
-   customise your VM by:
+1. Now you will be presented with a summary page where you can further customise
+   your VM by:
 
    - Adding more VMs to the topology
    - Adding block storage devices to the VMs
@@ -70,4 +70,4 @@ contextualisation options of the wizard described above).
 VMOps was presented in one of the [EGI Webinars](https://www.egi.eu/webinars/)
 in 2020. The [indico page](https://indico.egi.eu/event/5272/) contains more
 details and there is also a video recording available on
- [Youtube](https://youtu.be/0YuuKA_4pSM).
+[Youtube](https://youtu.be/0YuuKA_4pSM).
