@@ -66,3 +66,8 @@ ssh-key pair for login (you can create as many users as needed with the
 contextualisation options of the wizard described above).
 
 ![VM details](vmops_vm.png)
+
+VMOps was presented in one of the [EGI Webinars](https://www.egi.eu/webinars/)
+in 2020. The [indico page](https://indico.egi.eu/event/5272/) contains more
+details and there is also a video recording available on
+ [Youtube](https://youtu.be/0YuuKA_4pSM).
