@@ -49,5 +49,5 @@ A VM image with pre-installed NVIDIA driver and Docker is available at
 
 For a more detailed presentation on how to access GPUs in the EGI Federation
 please have a look at the [EGI Webinars](https://www.egi.eu/webinars/) on
-[27th November 2020](https://indico.egi.eu/event/5271/). There is also a
-video recording available on [Youtube](https://youtu.be/vAuYg2oISFc).
+[27th November 2020](https://indico.egi.eu/event/5271/). There is also a video
+recording available on [Youtube](https://youtu.be/vAuYg2oISFc).
