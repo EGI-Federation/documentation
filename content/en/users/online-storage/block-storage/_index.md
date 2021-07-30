@@ -1,7 +1,7 @@
 ---
 title: "Block Storage"
 type: docs
-weight: 60
+weight: 10
 description: >
   Block Storage offered by EGI Cloud providers
 ---
