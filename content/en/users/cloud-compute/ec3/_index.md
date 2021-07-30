@@ -26,3 +26,7 @@ The following section of the documentation will guide you on how to:
 - Deploy simple EC3 elastic cluster on top of the IaaS providers of the EGI
   Cloud, either using the web interface or the command-line interface,
 - Run pre-configured scientific applications in the EC3 elastic cluster.
+
+EC3 was presented in one of the [EGI Webinars](https://www.egi.eu/webinars/).
+Please see more details on the [indico page](https://indico.egi.eu/event/5092/)
+and the video recording on [Youtube](https://youtu.be/cN0tTBjV3I8).
