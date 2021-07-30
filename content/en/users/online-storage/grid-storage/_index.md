@@ -2,7 +2,7 @@
 title: "Grid Storage"
 linkTitle: "Grid Storage"
 type: docs
-weight: 55
+weight: 20
 description: >
   Grid Storage offered by EGI HTC providers
 ---
@@ -12,7 +12,7 @@ description: >
 Grid storage enables **storage of files in a fault-tolerant and scalable
 environment**, and sharing it with distributed teams. Your data can be accessed
 through multiple protocols, and can be replicated across different providers
-to increase fault-tolerance. Grid Storage gives you complete control over what
+to increase fault-tolerance. Grid storage gives you complete control over what
 data you share, and with whom you share the data. 
 
 The main features of grid storage:
@@ -28,8 +28,8 @@ Grid storage file access is based on the
 [SRM](https://www.gridpp.ac.uk/wiki/SRM) (under deprecation at some of the
 endpoints).
 
-Several grid storage implementations are available on the EGI Cloud
-infrastructure, the most common being:
+Several grid storage implementations are available in the EGI Cloud, the most
+common being:
 
 - [dCache](https://www.dcache.org/)
 - [DPM](https://twiki.cern.ch/twiki/bin/view/DPM/)
@@ -75,7 +75,7 @@ endpoints of the EGI Cloud infrastructure , but it has not yet reached the
 production stage.
 {{% /alert %}}
 
-The client widely used to access grid-storage is
+The CLI widely used to access grid-storage is
 [gfal2](https://dmc-docs.web.cern.ch/dmc-docs/gfal2/gfal2.html), which is
 available for installation both on RHEL and Debian compatible systems.
 
@@ -90,7 +90,7 @@ yum install gfal2-util gfal2-all
 
 ```
 
-where `_gfal2-all_` will install all the plug-ins (to deal with all the
+where `gfal2-all` will install all the plug-ins (to deal with all the
 available protocols).
 
 Below you can find examples of the usual commands needed to access storage via
@@ -159,7 +159,7 @@ Please check out the related documentation for more information.
 
 ## Integration with Data Management frameworks
 
-Grid Storage access, most of the time, is hidden from users by the integration
+Grid storage access, most of the time, is hidden from users by the integration
 with the Data Management Frameworks (DMFs) used by Collaborations and
 Experiments.
 

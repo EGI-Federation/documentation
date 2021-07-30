@@ -2,7 +2,7 @@
 title: "Object Storage"
 linkTitle: "Object Storage"
 type: docs
-weight: 55
+weight: 30
 description: >
   Object Storage offered by EGI Cloud providers
 ---
@@ -72,15 +72,16 @@ The Object Storage in the EGI Cloud is offered via
 [OpenStack](https://openstack.org/) SWIFT deployments on (some of
 the) EGI Cloud providers.
 
-You can manage the storage via the
-[FedCloud CLI](#access-via-fedcloud-cli) or the web dashboard of the
+You can access and manage the storage via the
+[command line](#access-from-the-command-line) or the web dashboard of the
 selected provider. More advanced usage include access via the 
 [S3 protocol](#access-via-the-s3-protocol), or via the
 [EGI Data Transfer service](#access-via-egi-data-transfer).
 
 {{% alert title="Note" color="info" %}} Available SWIFT resources
-can be discovered in
-[GOCDB](https://goc.egi.eu/portal/index.php?Page_Type=Services&serviceType=org.openstack.swift&selectItemserviceType=org.openstack.swift&ngi=&searchTerm=&production=TRUE&monitored=TRUE&certStatus=Certified&scopeMatch=all&servKeyNames=&servKeyValue=).
+can be discovered in the
+[Configuration Database](https://goc.egi.eu/portal/index.php?Page_Type=Services&serviceType=org.openstack.swift&selectItemserviceType=org.openstack.swift&ngi=&searchTerm=&production=TRUE&monitored=TRUE&certStatus=Certified&scopeMatch=all&servKeyNames=&servKeyValue=)
+(GOCDB).
 {{% /alert %}}
 
 {{% alert title="Note" color="info" %}} OpenStack SWIFT offers a REST API
@@ -256,7 +257,7 @@ The [EGI Data Transfer](../../data-transfer) service can move files
 to and from object storages that are compatible with the S3 protocol.
 You will have to upload the EC2 access keys to the EGI Data Transfer
 service, which will be able  to generate properly signed URLs for the
-object in the storage.
+objects in the storage.
 
 {{% alert title="Note" color="info" %}} Please contact support
 at `support` `<at>` `egi.eu` for more details.
