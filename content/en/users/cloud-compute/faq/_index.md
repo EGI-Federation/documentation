@@ -12,7 +12,7 @@ description: >
 
 There is a VO available for 6 months piloting activities that any researcher in
 Europe can join. Just place an order into the
-[EGI Marketplace](https://marketplace.egi.eu/31-cloud-compute).
+[EGI Marketplace](https://marketplace.eosc-portal.eu/services/egi-cloud-compute).
 
 ### How can I get an OAuth2.0 token?
 
