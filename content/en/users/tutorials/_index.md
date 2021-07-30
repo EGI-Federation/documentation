@@ -3,6 +3,7 @@ title: "Tutorials"
 linkTitle: "Tutorials"
 type: docs
 weight: 5
+draft: true
 description: >
   Turorials for common use-cases in EGI Cloud
 ---
