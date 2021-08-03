@@ -35,9 +35,13 @@ It is also possible to use the
 for CLI access. Below is an example on how to use the `fedcloud` command to
 show the GPU properties of the available flavors:
 
+<!-- markdownlint-disable line-length -->
+
 ```shell
 fedcloud openstack flavor list --long --site IISAS-FedCloud --vo acc-comp.egi.eu -f yaml
 ```
+
+<!-- markdownlint-enable line-length -->
 
 Site-specific dashboards and endpoints are described in the following table:
 
