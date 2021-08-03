@@ -31,9 +31,9 @@ endpoints or via common federated-cloud services like the OpenStack Horizon
 dashboards, [VMOps dashboard](../vmops), or [Infrastructure manager](../im).
 
 It is also possible to use the
-[fedcloudclient](https://fedcloudclient.fedcloud.eu/)
-for CLI access. Below is an example on how to use the `fedcloud` command to
-show the GPU properties of the available flavors:
+[fedcloudclient](https://fedcloudclient.fedcloud.eu/) for CLI access. Below is
+an example on how to use the `fedcloud` command to show the GPU properties of
+the available flavors:
 
 <!-- markdownlint-disable line-length -->
 
@@ -47,11 +47,11 @@ Site-specific dashboards and endpoints are described in the following table:
 
 <!-- markdownlint-disable line-length -->
 
-| Site           | Openstack Horizon dashboard         | Keystone endpoint                     |
-| -------------- | ----------------------------------- | ------------------------------------- |
-| IISAS-FedCloud | `https://cloud.ui.savba.sk`         | `https://cloud.ui.savba.sk:5000/v3/`  |
-| IFCA-LCG2      | `https://portal.cloud.ifca.es`      | `https://api.cloud.ifca.es:5000/`     |
-| CESNET-MCC     | `https://dashboard.cloud.muni.cz`   | `https://identity.cloud.muni.cz/`     |
+| Site           | Openstack Horizon dashboard       | Keystone endpoint                    |
+| -------------- | --------------------------------- | ------------------------------------ |
+| IISAS-FedCloud | `https://cloud.ui.savba.sk`       | `https://cloud.ui.savba.sk:5000/v3/` |
+| IFCA-LCG2      | `https://portal.cloud.ifca.es`    | `https://api.cloud.ifca.es:5000/`    |
+| CESNET-MCC     | `https://dashboard.cloud.muni.cz` | `https://identity.cloud.muni.cz/`    |
 
 <!-- markdownlint-enable line-length -->
 
