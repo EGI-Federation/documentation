@@ -38,7 +38,8 @@ the available flavors:
 <!-- markdownlint-disable line-length -->
 
 ```shell
-fedcloud openstack flavor list --long --site IISAS-FedCloud --vo acc-comp.egi.eu -f yaml
+fedcloud openstack flavor list --long --site IISAS-FedCloud --vo acc-comp.egi.eu --json-output | \
+jq -r '.[].Result | map(select(.Properties."Accelerator:Type" == "GPU")) | .'
 ```
 
 <!-- markdownlint-enable line-length -->
