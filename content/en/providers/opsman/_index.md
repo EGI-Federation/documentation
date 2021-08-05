@@ -19,5 +19,7 @@ These documents are periodically reviewed, and need to be followed by all partne
 
 Miscellaneous collection of short HowTos which are relevant to various other documentation, procedures, etc.
 
-- [HOWTO01 Site Certification Required Information](https://wiki.egi.eu/wiki/HOWTO01_Site_Certification_Required_Information)
+- [HOWTO01 Site Certification Required Information](https://wiki.egi.eu/wiki/HOWTO01_Site_Certification_Required_Information): Information required in the GOCDB when registering a site/resource centre
 - [HOWTO02 Site Certification Required Documentation](https://wiki.egi.eu/wiki/HOWTO02_Site_Certification_Required_Documentation)
+- [HOWTO03 Site Certification GIIS Check](https://wiki.egi.eu/wiki/HOWTO03_Site_Certification_GIIS_Check)
+- [HOWTO04 Site Certification Manual tests](https://wiki.egi.eu/wiki/HOWTO04_Site_Certification_Manual_tests)
