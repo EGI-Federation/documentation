@@ -13,6 +13,8 @@ The EGI Operations Manuals are **approved** technical documents that provide **p
 - [MAN01 How to publish Site Information](https://wiki.egi.eu/wiki/MAN01_How_to_publish_Site_Information)
 - [MAN02 Service intervention management](https://wiki.egi.eu/wiki/MAN02_Service_intervention_management)
 
-## HowTo
+## HowTos
 
 Miscellaneous collection of short HowTos which are relevant to various other documentation, procedures, etc.
+- [HOWTO01 Site Certification Required Information](https://wiki.egi.eu/wiki/HOWTO01_Site_Certification_Required_Information)
+- [HOWTO02 Site Certification Required Documentation](https://wiki.egi.eu/wiki/HOWTO02_Site_Certification_Required_Documentation)
