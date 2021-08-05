@@ -7,11 +7,10 @@ description: >-
      Page description for heading and indexes.
 ---
 
-## Heading
+## Manuals
 
-Edit this template to create your new page.
+The EGI Operations Manuals are approved technical documents that provide prescriptive guidelines on how to complete a given task. These documents are periodically reviewed, and need to be followed by all partners (as opposed to a best-practice documents that provide optional guidelines).
 
-* Give it a good name, ending in `.md` - e.g. `getting-started.md`
-* Edit the "front matter" section at the top of the page (weight controls how its ordered amongst other pages in the same directory; lowest number first).
-* Add a good commit message at the bottom of the page (<80 characters; use the extended description field for more detail).
-* Create a new branch so you can preview your new file and request a review via Pull Request.
+## HowTo
+
+Miscellaneous collection of short HowTos which are relevant to various other documentation, procedures, etc.
