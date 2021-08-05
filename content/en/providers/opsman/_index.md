@@ -9,7 +9,7 @@ description: >-
 
 ## Manuals
 
-The EGI Operations Manuals are approved technical documents that provide prescriptive guidelines on how to complete a given task. These documents are periodically reviewed, and need to be followed by all partners (as opposed to a best-practice documents that provide optional guidelines).
+The EGI Operations Manuals are **approved** technical documents that provide **prescriptive** guidelines on how to complete a given task. These documents are periodically reviewed, and need to be followed by all partners (as opposed to a best-practice documents that provide optional guidelines).
 
 ## HowTo
 
