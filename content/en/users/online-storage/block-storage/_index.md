@@ -8,6 +8,7 @@ description: >
 <!--
 // jscpd:ignore-start
 -->
+
 ## What is it?
 
 Block storage provides **block-level storage volumes** for use within virtual
@@ -595,7 +596,7 @@ Take into account:
   `/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Enol Fernandez del Castillo`
   DN to `nobody`. You can add as many lines as needed:
 
-  <!-- markdownlint-disable line-length no-inline-html -->
+  <!-- markdownlint-disable line-length -->
 
   ```plaintext
   "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Enol Fernandez del Castillo" nobody

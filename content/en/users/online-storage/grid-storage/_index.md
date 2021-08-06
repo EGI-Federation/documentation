@@ -40,20 +40,23 @@ common being:
 The grid storage endpoints that are available to a user's Virtual Organizations
 are discoverable via the EGI Information System (BDII).
 
+<!-- markdownlint-disable commands-show-output no-inline-html -->
+<!-- TODO Add details about how to setup lcg-infosites CLI -->
+<!-- markdownlint-enable no-inline-html -->
+
 The `lcg-infosites` command can be used to obtain VO-specific information on
 existing grid storages, using the following syntax:
 
 ```shell
-lcg-infosites --vo voname -[v] -f [site name] [option(s)] [-h| --help] [--is BDII]
+$ lcg-infosites --vo voname -[v] -f [site name] [option(s)] [-h| --help] [--is BDII]
 ```
 
 For example, to list the Storage Elements (SEs) available to the `biomed` VO, we
 could issue the following command:
 
 ```shell
-lcg-infosites --vo biomed  se
+$ lcg-infosites --vo biomed  se
 
-lcg-infosites --vo biomed  se
  Avail Space(kB)  Used Space(kB)  Type  SE
 ------------------------------------------
     280375465082             n.a  SRM   ccsrm.ihep.ac.cn
@@ -86,8 +89,7 @@ can be used over different protocols.
 The `gfal2` CLI can be installed as follows (for RHEL compatible systems):
 
 ```shell
-yum install gfal2-util gfal2-all
-
+$ yum install gfal2-util gfal2-all
 ```
 
 where `gfal2-all` will install all the plug-ins (to deal with all the
@@ -105,7 +107,7 @@ them, please refer to the
 ### List files on a given endpoint
 
 ```shell
-gfal-ls gsiftp://dcache-door-doma01.desy.de/dteam
+$ gfal-ls gsiftp://dcache-door-doma01.desy.de/dteam
 1G.header-1
 domatest
 gb
@@ -117,34 +119,35 @@ tpctest
 ### Create a folder
 
 ```shell
-gfal-mkdir gsiftp://dcache-door-doma01.desy.de/dteam/test
+$ gfal-mkdir gsiftp://dcache-door-doma01.desy.de/dteam/test
 ```
+<!-- markdownlint-enable commands-show-output -->
 
 ### Copy a local file
 
 ```shell
-gfal-copy test.json gsiftp://dcache-door-doma01.desy.de/dteam/test
+$ gfal-copy test.json gsiftp://dcache-door-doma01.desy.de/dteam/test
 Copying file:///root/Documents/test.json   [DONE]  after 0s
 ```
 
 ### Copy files between storages
 
 ```shell
-gfal-copy gsiftp://prometheus.desy.de/VOs/dteam/public-file gsiftp://dcache-door-doma01.desy.de/dteam/test
+$ gfal-copy gsiftp://prometheus.desy.de/VOs/dteam/public-file gsiftp://dcache-door-doma01.desy.de/dteam/test
 Copying gsiftp://prometheus.desy.de/VOs/dteam/public-file   [DONE]  after 3s
 ```
 
 ### Download a file to a local folder
 
 ```shell
-gfal-copy gsiftp://prometheus.desy.de/VOs/dteam/public-file /tmp
+$ gfal-copy gsiftp://prometheus.desy.de/VOs/dteam/public-file /tmp
 Copying gsiftp://prometheus.desy.de/VOs/dteam/public-file   [DONE]  after 0s
 ```
 
 ### Delete a file
 
 ```shell
-gfal-rm gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file
+$ gfal-rm gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file
 gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file      DELETED
 ```
 
