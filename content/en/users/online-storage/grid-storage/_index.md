@@ -13,7 +13,7 @@ Grid storage enables **storage of files in a fault-tolerant and scalable
 environment**, and sharing it with distributed teams. Your data can be accessed
 through multiple protocols, and can be replicated across different providers
 to increase fault-tolerance. Grid storage gives you complete control over what
-data you share, and with whom you share the data. 
+data you share, and with whom you share the data.
 
 The main features of grid storage:
 
@@ -66,7 +66,7 @@ lcg-infosites --vo biomed  se
 Access to grid storage via a command line interface (CLI) requires users
 to obtain a valid X.509 user VOMS proxy.
 Please refer to the [Check-in](../../check-in/vos/voms) documentation for more
-information. 
+information.
 
 {{% alert title="Note" color="info" %}} Integration via
 [OpenID Connect](https://openid.net/connect) to the

@@ -5,13 +5,15 @@ weight: 10
 description: >
   Block Storage offered by EGI Cloud providers
 ---
-
+<!--
+// jscpd:ignore-start
+-->
 ## What is it?
 
 Block storage provides **block-level storage volumes** for use within virtual
 machines (VMs). Block storage volumes are raw, unformatted [block
 devices](https://en.wikipedia.org/wiki/Device_file#BLOCKDEV), which can be
-mounted as devices in VMs. 
+mounted as devices in VMs.
 
 Block storage volumes that are attached to a VM are exposed as storage volumes
 that **persist independently from the life of the VM**, and need to be
@@ -51,7 +53,7 @@ provider and your SLA.
 
 The Block Storage in the EGI Cloud is offered via
 [OpenStack](https://openstack.org/) deployments that implement the
-[Cinder](https://docs.openstack.org/cinder/wallaby/) service. 
+[Cinder](https://docs.openstack.org/cinder/wallaby/) service.
 
 Users can manage block storage using the
 [OpenStack Horizon dashboard](https://docs.openstack.org/horizon/wallaby/user/)
@@ -95,7 +97,7 @@ FedCloud command:
 
 {{% alert title="Tip" color="info" %}} Instead of passing the site, VO, etc.
 on the command line each time, you can use
-[FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables). 
+[FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables).
 {{% /alert %}}
 
 <!-- markdownlint-disable line-length -->
@@ -384,7 +386,7 @@ point-in-time when the snapshot was taken.
 Users can also create backups of a volume, but backups can only be used later
 to create or replace other volumes. A **volume backup is a copy of a volume**
 saved to cold storage, which is cheaper than the performant storage used for
-volumes and snapshots. 
+volumes and snapshots.
 
 To
 [make a backup](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html#volume-backup-create)
@@ -531,6 +533,7 @@ time you use the device, as it deletes all data! Make sure you use the correct
 device name, otherwise you will destroy data on other devices!
 {{% /alert %}}
 
+<!-- markdownlint-disable commands-show-output -->
 ```shell
 $ sudo mkfs.ext4 -L my-volume /dev/vdb
 ```
@@ -541,6 +544,7 @@ desired path by running the following command inside the VM:
 ```shell
 $ sudo mount /dev/vdb1 /<path>
 ```
+<!-- markdownlint-enable commands-show-output -->
 
 Continuing with the example above, if we check again the block devices by
 running the following command inside the VM:
@@ -622,3 +626,7 @@ Take into account:
       driver_opts:
         com.docker.network.driver.mtu: 1434
   ```
+
+<!--
+// jscpd:ignore-end
+-->

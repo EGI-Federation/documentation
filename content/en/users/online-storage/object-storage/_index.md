@@ -17,10 +17,14 @@ from anywhere on the web.
 
 The main features of object storage:
 
-- Storage containers and objects have unique URLs, which can be used to access, manage, and share them.
-- Data can be accessed from anywhere, using standard HTTP requests to a REST API (e.g. VMs running in the EGI Cloud or in other cloud provider's cloud, from any browser/laptop, etc.)
+- Storage containers and objects have unique URLs, which can be used to access,
+  manage, and share them.
+- Data can be accessed from anywhere, using standard HTTP requests to a REST
+  API (e.g. VMs running in the EGI Cloud or in other cloud provider's cloud,
+  from any browser/laptop, etc.)
 - Access can be public or can be restricted using access control lists.
-- There is virtually no limit to the amount of data you can store, only the space used is accounted for.
+- There is virtually no limit to the amount of data you can store, only the
+  space used is accounted for.
 
 ## Concepts
 
@@ -36,8 +40,8 @@ a storage container.
 Storage containers have an unique name and act as the root folders of the
 storage space.
 
-Each storage container has a unique URL (that includes the name) by which anyone
-can refer to it.
+Each storage container has a unique URL (that includes the name) by which
+anyone can refer to it.
 
 ### Objects
 
@@ -74,7 +78,7 @@ the) EGI Cloud providers.
 
 You can access and manage the storage via the
 [command line](#access-from-the-command-line) or the web dashboard of the
-selected provider. More advanced usage include access via the 
+selected provider. More advanced usage include access via the
 [S3 protocol](#access-via-the-s3-protocol), or via the
 [EGI Data Transfer service](#access-via-egi-data-transfer).
 
@@ -109,9 +113,9 @@ The [FedCloud command line interface](../../cloud-compute/openstack)
 the EGI Federated Cloud. This means using the command `fedcloud openstack`
 to query and manipulate storage containers and objects.
 
-{{% alert title="Note" color="info" %}} See 
+{{% alert title="Note" color="info" %}} See
 [here](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html)
-for documentation on all storage container-related commands, and 
+for documentation on all storage container-related commands, and
 [here](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/object.html)
 for all object-related commands.
 {{% /alert %}}
@@ -124,7 +128,7 @@ to list the available storage containers:
 
 {{% alert title="Tip" color="info" %}} Instead of passing the site, VO, etc.
 on the command line each time, you can use
-[FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables). 
+[FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables).
 {{% /alert %}}
 
 ```shell
@@ -173,6 +177,7 @@ $ fedcloud openstack object list test-egi
 
 #### Download (the content of) an object
 
+<!-- markdownlint-disable commands-show-output -->
 ```shell
 $ fedcloud openstack object save test-egi file1.txt
 ```
@@ -214,7 +219,7 @@ S3-compatible storage.
 {{% alert title="Note" color="info" %}} The S3 protocol was created by [Amazon
 Web Services](https://www.aws.com) (AWS) for their object storage,
 called [Simple Storage Service](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
-(S3), but it was 
+(S3), but it was
 [adopted as the de-facto standard](https://www.architecting.it/blog/object-storage-standardising-on-the-s3-api/)
 to access object storage offered by other providers.
 {{% /alert %}}
@@ -252,7 +257,7 @@ $ davix-ls --s3accesskey 'access' --s3secretkey 'secret' --s3alternate s3s://api
 `davix-get`, `davix-put` and `davix-del` are also available to download, store
 and delete objects from the storage.
 
-<!-- markdownlint-enable line-length -->
+<!-- markdownlint-enable line-length commands-show-output -->
 
 ## Access via EGI Data Transfer
 
