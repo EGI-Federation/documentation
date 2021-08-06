@@ -18,8 +18,7 @@ and the foreseen usage.
 Thee major service offerings are available:
 
 - [Block Storage](block-storage) is block level storage that can be attached to
-virtual machines as volumes, a simple solution for temporary data, or
-data that does not need to be shared beside a single VM.
+virtual machines (VMs) as volumes, a simple solution for durable data that does not need to be shared beside a single VM.
 - [Grid Storage](grid-storage) is serving file access and storage for
 [EGI High Throughput Compute](../high-throughput-compute) (HTC) scenarios.
 - [Object Storage](object-storage) is persistent storage for cases when data

@@ -85,28 +85,29 @@ can be discovered in the
 {{% /alert %}}
 
 {{% alert title="Note" color="info" %}} OpenStack SWIFT offers a REST API
-to manage storage. See the
+to manage object storage. See the
 [OpenStack object store API](https://docs.openstack.org/api-ref/object-store/)
 for more details.
 {{% /alert %}}
 
 ## Access from the command line
 
-Multiple command clients interfaces (CLIs) are available to access object
+Multiple command line interfaces (CLIs) are available to access object
 storage:
 
 - For SWIFT endpoints the recommended CLI is the
-  [FedCloud client](../../cloud-compute/openstack).
+  [FedCloud Client](../../cloud-compute/openstack), a high-level CLI for
+  interaction with the EGI Federated Cloud.
 - For S3-compatible object storage the recommended CLI is the
-  [Davix client](https://davix.web.cern.ch), which has been developed at CERN
+  [Davix Client](https://davix.web.cern.ch), which has been developed at CERN
   and is available both in RHEL and Debian environments.
 
 ### Access with the FedCloud CLI
 
 The [FedCloud command line interface](../../cloud-compute/openstack)
 (CLI) can be used to perform operations on the SWIFT endpoints available in
-the EGI Cloud. This means using the command `fedcloud openstack` to query
-and manipulate storage containers and objects.
+the EGI Federated Cloud. This means using the command `fedcloud openstack`
+to query and manipulate storage containers and objects.
 
 {{% alert title="Note" color="info" %}} See 
 [here](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html)
@@ -118,11 +119,18 @@ for all object-related commands.
 #### List storage containers
 
 For example, to access to the SWIFT endpoint at IFCA-LCG2 via the
-Pilot VO (vo.access.egi.eu), use the `fedcloud openstack` command to
-list the available storage containers:
+Pilot VO (vo.access.egi.eu), use the following  FedCloud command
+to list the available storage containers:
+
+{{% alert title="Tip" color="info" %}} Instead of passing the site, VO, etc.
+on the command line each time, you can use
+[FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables). 
+{{% /alert %}}
 
 ```shell
-$ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container list
+$ export EGI_SITE=IFCA-LCG2
+$ export EGI_VO=vo.access.egi.eu
+$ fedcloud openstack container list
 +------------------+
 | Name             |
 +------------------+
@@ -133,7 +141,7 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container list
 #### Create new storage container
 
 ```shell
-$ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container create test-egi
+$ fedcloud openstack container create test-egi
 +---------+-----------+------------------------------------------------------+
 | account | container | x-trans-id                                           |
 +---------+-----------+------------------------------------------------------+
@@ -144,8 +152,7 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container create tes
 #### Create new object by uploading a file
 
 ```shell
-$ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
-           object create test-egi file1.txt
+$ fedcloud openstack object create test-egi file1.txt
 +-----------+-----------+----------------------------------+
 | object    | container | etag                             |
 +-----------+-----------+----------------------------------+
@@ -156,7 +163,7 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
 #### List objects in a storage container
 
 ```shell
-$ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu object list test-egi
+$ fedcloud openstack object list test-egi
 +-----------+
 | Name      |
 +-----------+
@@ -167,35 +174,31 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu object list test-egi
 #### Download (the content of) an object
 
 ```shell
-fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
-         object save test-egi file1.txt
+$ fedcloud openstack object save test-egi file1.txt
 ```
 
 #### Add metadata to an object
 
 ```shell
-fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
-         object set --property key=value test-egi file1.txt
+$ fedcloud openstack object set --property key=value test-egi file1.txt
 ```
 
 #### Remove metadata from an object
 
 ```shell
-fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
-         object unset --property key test-egi file1.txt
+$ fedcloud openstack object unset --property key test-egi file1.txt
 ```
 
 #### Remove an object from a storage container
 
 ```shell
-fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu \
-         object delete test-egi file1.txt
+$ fedcloud openstack object delete test-egi file1.txt
 ```
 
 #### Removing an entire container
 
 ```shell
-fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu container delete test-egi
+$ fedcloud openstack container delete test-egi
 ```
 
 {{% alert title="Tip" color="info" %}} You can add the `-r` option
@@ -204,7 +207,7 @@ to recursively remove sub-containers.
 
 ### Access via the S3 protocol
 
-Openstack SWIFT is compatible with S3 protocol, therefore if the SWIFT
+OpenStack SWIFT is compatible with S3 protocol, therefore if the SWIFT
 deployment is properly configured, it can be accessed as any other
 S3-compatible storage.
 
@@ -218,7 +221,7 @@ to access object storage offered by other providers.
 
 In order to access the storage via S3, you need
 [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)-compatible
-credentials from the Openstack deployment. Use the following command:
+credentials from the OpenStack deployment. Use the following command:
 
 <!-- markdownlint-disable line-length -->
 ```shell
@@ -235,7 +238,6 @@ $ fedcloud openstack --site IFCA-LCG2 --vo vo.access.egi.eu ec2 credentials crea
 | user_id    | xxxxxxxxxxxxxxxxxxxxxxxxxxxx                                                                                                             |
 +------------+------------------------------------------------------------------------------------------------------------------------------------------+
 ```
-<!-- markdownlint-enable line-length -->
 
 {{% alert title="Important" color="warning" %}} Save the `access` and `secret`
 values, as those are needed in subsequent commands that use the S3 protocol.
@@ -244,12 +246,13 @@ values, as those are needed in subsequent commands that use the S3 protocol.
 To list containers/objects via the S3 protocol, use the command:
 
 ```shell
-davix-ls --s3accesskey 'access' --s3secretkey 'secret' --s3alternate s3s://api.cloud.ifca.es:8080/swift/v1/test-egi
-
+$ davix-ls --s3accesskey 'access' --s3secretkey 'secret' --s3alternate s3s://api.cloud.ifca.es:8080/swift/v1/test-egi
 ```
 
 `davix-get`, `davix-put` and `davix-del` are also available to download, store
 and delete objects from the storage.
+
+<!-- markdownlint-enable line-length -->
 
 ## Access via EGI Data Transfer
 
