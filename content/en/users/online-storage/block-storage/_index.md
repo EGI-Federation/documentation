@@ -12,9 +12,9 @@ description: >
 ## What is it?
 
 Block storage provides **block-level storage volumes** for use within virtual
-machines (VMs). Block storage volumes are raw, unformatted [block
-devices](https://en.wikipedia.org/wiki/Device_file#BLOCKDEV), which can be
-mounted as devices in VMs.
+machines (VMs). Block storage volumes are raw, unformatted
+[block devices](https://en.wikipedia.org/wiki/Device_file#BLOCKDEV), which can
+be mounted as devices in VMs.
 
 Block storage volumes that are attached to a VM are exposed as storage volumes
 that **persist independently from the life of the VM**, and need to be
