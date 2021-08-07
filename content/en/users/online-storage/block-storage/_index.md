@@ -504,7 +504,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 <!-- markdownlint-enable line-length -->
 
 In this example the device name is `/dev/vdb`. To validate this, run the
-following command inside the VM:
+following command in the VM:
 
 ```shell
 $ lsblk
@@ -516,7 +516,7 @@ vdb    252:16   0  10G  0 disk
 
 Usually these devices are empty upon creation. The first time you attach them
 to a VM, you will need to partition the device and create filesystem(s) on it,
-by running the following command inside the VM:
+by running the following command in the VM:
 
 {{% alert title="Tip" color="info" %}} Using a file system volume label is
 useful to avoid the need to find the out the device name, especially when
@@ -540,7 +540,7 @@ $ sudo mkfs.ext4 -L my-volume /dev/vdb
 ```
 
 Once you created a filesystem on the device, you can mount it at any
-desired path by running the following command inside the VM:
+desired path by running the following command in the VM:
 
 ```shell
 $ sudo mount /dev/vdb1 /<path>
@@ -548,7 +548,7 @@ $ sudo mount /dev/vdb1 /<path>
 <!-- markdownlint-enable commands-show-output -->
 
 Continuing with the example above, if we check again the block devices by
-running the following command inside the VM:
+running the following command in the VM:
 
 ```shell
 $ lsblk
@@ -558,6 +558,33 @@ vda    252:0    0  20G  0 disk
 vdb    252:16   0  10G  0 disk
 └─vdb1 252:1    0  10G  0 part /<path>
 ```
+
+If non-root users should be able to access the mounted volume similar to the
+way e.g. `/tmp` is accessible, set the sticky bit on the mount point, with this
+command in the VM:
+
+```shell
+$ sudo chmod +t /<path>
+```
+
+If the desired behaviour is to mount the file system automatically on VM
+restart, add it to `/etc/fstab`. Using the `LABEL` parameter will ensure
+the correct volume is chosen if multiple volumes are attached:
+
+`LABEL=my-volume /<path> ext4 noatime,nodiratime,user_xattr,nofail 0 0`
+
+{{% alert title="Note" color="info" %}} The use of option `nofail` is
+recommended in order to skip (and not block on) mounting the file system volume
+if it is unavailable, e.g. in case of network issues. Remove this option from
+the _fstab_ line if you want the VM to block the boot process if the volume is
+unavailable.
+{{% /alert %}}
+
+{{% alert title="Note" color="info" %}} The use of option `nobarrier` is
+not recommended as volumes are accessed via a cache, and ignoring the correct
+ordering of journal commits may result in a corrupted file system in case of
+a hardware problem.
+{{% /alert %}}
 
 With that you can access `/<path>` inside the VM, where all data stored on the
 volume will be available. Applications will not see any difference between a
