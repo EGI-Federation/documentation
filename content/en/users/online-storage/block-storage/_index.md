@@ -484,6 +484,9 @@ the list of volumes.
 
 ## Access from your VMs
 
+<!-- markdownlint-disable no-inline-html -->
+<!-- TODO Move this under Tutorials -->
+
 Block storage volumes attached to a VM will appear as a
 [block device](https://en.wikipedia.org/wiki/Device_file#BLOCKDEV) in the VM.
 
@@ -545,7 +548,6 @@ desired path by running the following command in the VM:
 ```shell
 $ sudo mount /dev/vdb1 /<path>
 ```
-<!-- markdownlint-enable commands-show-output -->
 
 Continuing with the example above, if we check again the block devices by
 running the following command in the VM:
@@ -566,6 +568,7 @@ command in the VM:
 ```shell
 $ sudo chmod +t /<path>
 ```
+<!-- markdownlint-enable commands-show-output -->
 
 If the desired behaviour is to mount the file system automatically on VM
 restart, add it to `/etc/fstab`. Using the `LABEL` parameter will ensure
@@ -593,7 +596,6 @@ required in the application logic.
 
 ## Access via EGI Data Transfer
 
-<!-- markdownlint-disable no-inline-html -->
 <!-- TODO Move this under Tutorials -->
 
 The [File Transfer service](../../data-transfer) allows you to move any type of
