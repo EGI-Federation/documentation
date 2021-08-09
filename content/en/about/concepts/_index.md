@@ -63,8 +63,8 @@ and adhere to the [Style Guide](../contributing/style).
 
 ### Page metadata
 
-Each page needs some metadata that controls where the page appears and its
-content will be rendered. The beginning of the markdown file contains a
+Each page needs some metadata that controls where the page appears and how
+its content will be rendered. The beginning of the markdown file contains a
 [front matter](https://gohugo.io/content-management/front-matter/) in YAML,
 holding the metadata of the page:
 
@@ -101,7 +101,7 @@ menu:
 ```
 
 Pages will be added to the top navigation bar in **ascending** order of
-their weight, from left to right.
+their menu weight, from left to right.
 
 If you also want to add an icon to the entry in the top navigation bar:
 
@@ -120,7 +120,7 @@ menu:
 ### Embedding images (or other content)
 
 Hugo [organizes](https://gohugo.io/content-management/organization/) content
-for each page into a subfolder with same name as the page's filename.
+for each page into a subfolder with the same name as the page's filename.
 This allows authors to easily keep track of the resources used by each page.
 
 Let's assume we have a section named **About** with a subpage **Concepts**, using
