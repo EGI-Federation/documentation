@@ -10,7 +10,7 @@ description: >
 ## Overview
 
 EGI Online Storage includes a wide category of services that allow
-users to **store, share and access data in the cloud**, using the EGI Cloud
+users to **store, share and access data in the cloud**, using the EGI
 infrastructure. Different categories of storage are available, depending on
 how data is stored, the technology used to access and consume data,
 and the foreseen usage.

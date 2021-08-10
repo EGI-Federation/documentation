@@ -237,7 +237,7 @@ $ fedcloud openstack server add volume my-server my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: server add volume my-server my-volume
 ```
 
-You can check that the volume got attached o the VM (and with what device name)
+You can check that the volume got attached to the VM (and with what device name)
 by either looking at the [details of the volume](#see-volume-details), the
 details of the VM, or by listing only the volume in question (filter by
 volume name or ID):
