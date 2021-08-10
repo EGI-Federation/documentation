@@ -238,8 +238,8 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: server add volume my-server my-
 
 You can check that the volume got attached to the VM (and with what device name)
 by either looking at the [details of the volume](#see-volume-details), the
-details of the VM, or by listing only the volume in question (filter by
-volume name or ID):
+[details of the VM](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/server.html#server-show),
+or by listing only the volume in question (filter by volume name or ID):
 
 ```shell
 $ fedcloud openstack volume list --name my-volume
@@ -266,8 +266,9 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: server remove volume my-server 
 ```
 
 You can check that the volume got detached by either looking at the
-[details of the volume](#see-volume-details), the details of the VM, or by
-listing only the volume in question (filter by volume name or ID):
+[details of the volume](#see-volume-details), the
+[details of the VM](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/server.html#server-show),
+or by listing only the volume in question (filter by volume name or ID):
 
 ```shell
 $ fedcloud openstack volume list --name my-volume
