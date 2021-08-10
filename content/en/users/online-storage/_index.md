@@ -9,13 +9,13 @@ description: >
 
 ## Overview
 
-EGI Online Storage includes a wide category of services that allow
-users to **store, share and access data**, using the EGI
+Online Storage includes a wide category of services that allow
+users to **store, share and access data** using the EGI
 infrastructure. Different categories of storage are available, depending on
 how data is stored, the technology used to access and consume data,
 and the foreseen usage.
 
-Thee major service offerings are available:
+Three major service offerings are available:
 
 - [Block Storage](block-storage) is block level storage that can be attached to
   virtual machines (VMs) as volumes, a simple solution for durable data that
@@ -28,8 +28,7 @@ Thee major service offerings are available:
 
 ## Comparison of storage types
 
-The main differences between Block, Grid, and Object Storage is summarized in
-the following table:
+The differences between Block, Grid, and Object Storage is summarized below:
 
 <!-- markdownlint-disable line-length -->
 | Type       | Sharing                                                       | Accounting              | Usage                                   |
@@ -38,3 +37,5 @@ the following table:
 | **Grid**   | From any device connected to the Internet                     | For the data stored     | Grid protocols and HTTP/WebDAV          |
 | **Object** | From any device connected to the Internet                     | For the data stored     | HTTP requests to REST API               |
 <!-- markdownlint-enable line-length -->
+
+The following guides offer a more detailed description of each storage service.
