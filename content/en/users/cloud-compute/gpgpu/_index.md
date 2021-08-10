@@ -37,10 +37,10 @@ the available flavors:
 
 ```shell
 fedcloud openstack flavor list --long \
-    --site IISAS-FedCloud \
-    --vo acc-comp.egi.eu \
-    --json-output | \
-jq -r '.[].Result | map(select(.Properties."Accelerator:Type" == "GPU")) | .'
+  --site IISAS-FedCloud \
+  --vo acc-comp.egi.eu \
+  --json-output | \
+  jq -r '.[].Result | map(select(.Properties."Accelerator:Type" == "GPU")) | .'
 ```
 
 Site-specific dashboards and endpoints are described in the following table:
