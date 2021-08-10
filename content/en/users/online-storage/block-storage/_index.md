@@ -223,8 +223,7 @@ To
 use the FedCloud command below:
 
 {{% alert title="Note" color="info" %}} To be able to attach a volume to a VM,
-the VM must be stopped and the volume must not be attached to any VM
-(volume status must be `available`).
+the volume must not be attached to any VM (volume status must be `available`).
 {{% /alert %}}
 
 {{% alert title="Caution" color="warning" %}} The optional `--device`
@@ -260,10 +259,6 @@ be [used from the VM](#access-from-your-vms).
 To
 [detach a volume from a VM](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/server.html#server-remove-volume)
 use the FedCloud command below:
-
-{{% alert title="Note" color="info" %}} To be able to detach a volume from a
-VM, the VM must be stopped.
-{{% /alert %}}
 
 ```shell
 $ fedcloud openstack server remove volume my-server my-volume
