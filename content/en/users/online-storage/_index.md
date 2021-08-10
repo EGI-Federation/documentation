@@ -28,7 +28,7 @@ Three major service offerings are available:
 
 ## Comparison of storage types
 
-The differences between Block, Grid, and Object Storage is summarized below:
+The differences between Block, Grid, and Object Storage are summarized below:
 
 <!-- markdownlint-disable line-length -->
 | Type       | Sharing                                                       | Accounting              | Usage                                   |
