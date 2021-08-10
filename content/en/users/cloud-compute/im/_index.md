@@ -23,3 +23,8 @@ IM is integrated with the [EGI Check-In Service](../../check-in). A very easy
 way to deploy your first Virtual Machine in the EGI Federation is using the
 [web-based GUI](https://appsgrycap.i3m.upv.es:31443/im-dashboard/). Please see
 tutorial [here](https://imdocs.readthedocs.io/en/latest/dashboard.html#usage).
+
+Infrastructure Manager was presented in one of the
+[EGI Webinars](https://www.egi.eu/webinars/). See more details on the
+[indico page](https://indico.egi.eu/event/5495/) and the video recording
+available on [Youtube](https://youtu.be/Q9VsYjI1mD4).
