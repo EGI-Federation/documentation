@@ -54,10 +54,10 @@ provider and your SLA.
 
 The Block Storage in the EGI Cloud is offered via
 [OpenStack](https://openstack.org/) deployments that implement the
-[Cinder](https://docs.openstack.org/cinder/wallaby/) service.
+[Cinder](https://docs.openstack.org/cinder/latest/) service.
 
 Users can manage block storage using the
-[OpenStack Horizon dashboard](https://docs.openstack.org/horizon/wallaby/user/)
+[OpenStack Horizon dashboard](https://docs.openstack.org/horizon/latest/user/)
 of a provider, from a [command line interface](#manage-from-the-command-line)
 (CLI), or via the
 [OpenStack Block Storage API](https://docs.openstack.org/api-ref/block-storage/).
@@ -83,7 +83,7 @@ The main FedCloud commands for managing volumes are detailed below.
 
 {{% alert title="Note" color="info" %}} For more information check out the
 documentation about
-[volume management](https://docs.openstack.org/cinder/wallaby/cli/cli-manage-volumes.html),
+[volume management](https://docs.openstack.org/cinder/latest/cli/cli-manage-volumes.html),
 and the
 [volume snapshot](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html)
 commands.
@@ -216,7 +216,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume show Matlab
 ### Attach volume to VM
 
 Mapping block devices to VMs is described in detail in the
-[OpenStack documentation](https://docs.openstack.org/nova/wallaby/user/block-device-mapping.html).
+[OpenStack documentation](https://docs.openstack.org/nova/latest/user/block-device-mapping.html).
 
 To
 [attach a volume to a VM](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/server.html#server-add-volume)
@@ -297,7 +297,7 @@ in the same way.
 {{% alert title="Note" color="info" %}} To be able to resize a volume, the
 volume must not be attached to any VM (volume status must be `available`),
 unless the volume driver supports
-[in-use extend](https://docs.openstack.org/cinder/wallaby/cli/cli-manage-volumes.html#extend-attached-volume).
+[in-use extend](https://docs.openstack.org/cinder/latest/cli/cli-manage-volumes.html#extend-attached-volume).
 {{% /alert %}}
 
 ```shell
