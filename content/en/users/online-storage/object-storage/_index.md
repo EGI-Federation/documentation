@@ -286,7 +286,7 @@ $ fedcloud openstack container delete test-egi
 
 The OpenStack [Swift](https://docs.openstack.org/swift/latest/) service is
 compatible with the S3 protocol, therefore when properly configured, it can be
-accessed as any other S3-compatible storage.
+accessed as any other S3-compatible object store.
 
 {{% alert title="Note" color="info" %}} The S3 protocol was created by [Amazon
 Web Services](https://www.aws.com) (AWS) for their object storage,
