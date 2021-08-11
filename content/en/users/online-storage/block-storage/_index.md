@@ -489,7 +489,6 @@ $ fedcloud openstack volume delete my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume delete my-volume
 ```
 
-
 This starts deletion of the specified volume (the volume status changes
 to `deleting`):
 
