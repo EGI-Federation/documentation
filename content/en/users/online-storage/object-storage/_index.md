@@ -74,46 +74,42 @@ that the storage container or object can be accessed publicly.
 
 ## Usage from your application
 
-The Object Storage in the EGI Cloud is offered via
-[OpenStack](https://openstack.org/) SWIFT deployments on (some of
-the) EGI Cloud providers.
+The object storage in the EGI Cloud is offered via
+[OpenStack](https://openstack.org/) deployments that implement the
+[Swift](https://docs.openstack.org/swift/latest/) service.
 
-You can access and manage the storage via the
-[command line](#access-from-the-command-line) or the web dashboard of the
-selected provider. More advanced usage include access via the
-[S3 protocol](#access-via-the-s3-protocol), or via the
-[EGI Data Transfer service](#access-via-egi-data-transfer).
+Users can manage object storage using the
+[OpenStack Horizon dashboard](https://docs.openstack.org/horizon/latest/user/)
+of a provider or from the [command line](#access-from-the-command-line)
+(CLI). More advanced usage include access via the
+[S3 protocol](#access-via-the-s3-protocol), via the
+[OpenStack Object Store API](https://docs.openstack.org/api-ref/object-store/),
+or using the [EGI Data Transfer service](#access-via-egi-data-transfer).
 
-{{% alert title="Note" color="info" %}} Available SWIFT resources
+{{% alert title="Note" color="info" %}} Available object storage resources
 can be discovered in the
 [Configuration Database](https://goc.egi.eu/portal/index.php?Page_Type=Services&serviceType=org.openstack.swift&selectItemserviceType=org.openstack.swift&ngi=&searchTerm=&production=TRUE&monitored=TRUE&certStatus=Certified&scopeMatch=all&servKeyNames=&servKeyValue=)
 (GOCDB).
 {{% /alert %}}
 
-{{% alert title="Note" color="info" %}} OpenStack SWIFT offers a REST API
-to manage object storage. See the
-[OpenStack object store API](https://docs.openstack.org/api-ref/object-store/)
-for more details.
-{{% /alert %}}
-
 ## Access from the command line
 
-Multiple command line interfaces (CLIs) are available to access object
+Multiple command line interfaces (CLIs) are available to manage object
 storage:
 
-- For SWIFT endpoints the recommended CLI is the
-  [FedCloud Client](../../cloud-compute/openstack), a high-level CLI for
-  interaction with the EGI Federated Cloud.
-- For S3-compatible object storage the recommended CLI is the
-  [Davix Client](https://davix.web.cern.ch), which has been developed at CERN
-  and is available both in RHEL and Debian environments.
+- The [OpenStack CLI](https://docs.openstack.org/python-openstackclient/latest)
+- The [FedCloud Client](../../cloud-compute/openstack) is a high-level CLI for
+  interaction with the EGI Federated Cloud (**recommended**)
+- The [Swift CLI](https://docs.openstack.org/mitaka/cli-reference/swift.html)
+  has some advanced features that are not available through the OpenStack CLI
+- The [Davix Client](https://davix.web.cern.ch), developed at CERN for RHEL and
+  Debian environments, is another alternative for working with S3-compatible
+  object storage
 
 ### Access with the FedCloud CLI
 
-The [FedCloud command line interface](../../cloud-compute/openstack)
-(CLI) can be used to perform operations on the SWIFT endpoints available in
-the EGI Federated Cloud. This means using the command `fedcloud openstack`
-to query and manipulate storage containers and objects.
+The main FedCloud commands for managing storage containers and storage objects are
+described below.
 
 {{% alert title="Note" color="info" %}} See
 [here](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html)
@@ -258,8 +254,8 @@ FedCloud command:
 
 {{% alert title="Caution" color="warning" %}} Deleting object from storage
 containers is final, there is no way to recover deleted objects. Unlike in
-AWS S3, objects in OpenStack storage containers cannot be protected against
-deletion.
+[AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html),
+objects in OpenStack storage containers cannot be protected against deletion.
 {{% /alert %}}
 
 ```shell
@@ -278,8 +274,8 @@ to recursively remove sub-containers.
 
 {{% alert title="Caution" color="warning" %}} Deleting all objects from a
 storage container is final, there is no way to recover deleted objects. Unlike in
-AWS S3, objects in OpenStack storage containers cannot be protected against
-deletion.
+[AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html),
+objects in OpenStack storage containers cannot be protected against deletion.
 {{% /alert %}}
 
 ```shell
@@ -288,9 +284,9 @@ $ fedcloud openstack container delete test-egi
 
 ### Access via the S3 protocol
 
-OpenStack SWIFT is compatible with S3 protocol, therefore if the SWIFT
-deployment is properly configured, it can be accessed as any other
-S3-compatible storage.
+The OpenStack [Swift](https://docs.openstack.org/swift/latest/) service is
+compatible with the S3 protocol, therefore when properly configured, it can be
+accessed as any other S3-compatible storage.
 
 {{% alert title="Note" color="info" %}} The S3 protocol was created by [Amazon
 Web Services](https://www.aws.com) (AWS) for their object storage,

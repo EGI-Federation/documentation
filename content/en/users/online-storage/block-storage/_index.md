@@ -53,7 +53,7 @@ provider and your SLA.
 
 ## Manage volumes
 
-The Block Storage in the EGI Cloud is offered via
+The block storage in the EGI Cloud is offered via
 [OpenStack](https://openstack.org/) deployments that implement the
 [Cinder](https://docs.openstack.org/cinder/latest/) service.
 
