@@ -8,6 +8,7 @@ description: >
 <!--
 // jscpd:ignore-start
 -->
+<!-- markdownlint-disable commands-show-output -->
 
 ## What is it?
 
@@ -102,7 +103,6 @@ on the command line each time, you can use
 {{% /alert %}}
 
 <!-- markdownlint-disable line-length -->
-
 ```shell
 $ export EGI_SITE=IN2P3-IRES
 $ export EGI_VO=vo.access.egi.eu
@@ -115,6 +115,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
 | b0abcda6-1002-4493-996b-9f03bc677625 |        | available |   30 |                                |
 +--------------------------------------+--------+-----------+------+--------------------------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 ### Create volume
 
@@ -122,6 +123,7 @@ To
 [create a new volume](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume.html#volume-create)
 use the FedCloud command below:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume create --size 10 my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume create --size 10 my-volume
@@ -149,12 +151,14 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume create --size 10 my-volu
 | user_id             | 1a3ef4b64714f86ac71f1c9512345678c157a94ae1b37f167b6a663baa3b915b |
 +---------------------+------------------------------------------------------------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 The status of the new volume will probably be returned as `creating`. To check
 if the volume finished creating, look at the
 [details of the volume](#see-volume-details), or list only the newly created
 volume (filter by volume name or ID):
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
@@ -164,6 +168,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 | aa711296-5cff-46ac-bbe3-58e00712ee3e | my-volume | available |   10 |             |
 +--------------------------------------+-----------+-----------+------+-------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 When the status of the volume is `available` the volume is ready to be
 [attached to a VM](#attach-volume-to-vm).
@@ -178,6 +183,7 @@ use the FedCloud command below:
 its ID or by its name (if it has one).
 {{% /alert %}}
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume show Matlab
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume show Matlab
@@ -212,6 +218,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume show Matlab
 | user_id                      | babzz8c3b4cxxxx6286dacyyyy01e5a3                           |
 +------------------------------+------------------------------------------------------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 ### Attach volume to VM
 
@@ -231,16 +238,19 @@ argument to specify the device name in the VM should not be used. It does
 not work properly, and will be removed in the near future.
 {{% /alert %}}
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack server add volume my-server my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: server add volume my-server my-volume
 ```
+<!-- markdownlint-enable line-length -->
 
 You can check that the volume got attached to the VM (and with what device name)
 by either looking at the [details of the volume](#see-volume-details), the
 [details of the VM](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/server.html#server-show),
 or by listing only the volume in question (filter by volume name or ID):
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
@@ -250,6 +260,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 | aa711296-5cff-46ac-bbe3-58e00712ee3e | my-volume | in-use    |   10 | my-server on /dev/vdc |
 +--------------------------------------+-----------+-----------+------+-----------------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 When the volume status is `in-use` the volume is attached to a VM, and it can
 be [used from the VM](#access-from-your-vms).
@@ -260,16 +271,19 @@ To
 [detach a volume from a VM](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/server.html#server-remove-volume)
 use the FedCloud command below:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack server remove volume my-server my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: server remove volume my-server my-volume
 ```
+<!-- markdownlint-enable line-length -->
 
 You can check that the volume got detached by either looking at the
 [details of the volume](#see-volume-details), the
 [details of the VM](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/server.html#server-show),
 or by listing only the volume in question (filter by volume name or ID):
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
@@ -279,6 +293,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 | aa711296-5cff-46ac-bbe3-58e00712ee3e | my-volume | available |   10 |             |
 +--------------------------------------+-----------+-----------+------+-------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 When the volume status is `available` the volume is not attached to any VM.
 
@@ -300,15 +315,18 @@ unless the volume driver supports
 [in-use extend](https://docs.openstack.org/cinder/latest/cli/cli-manage-volumes.html#extend-attached-volume).
 {{% /alert %}}
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume set --size 20 volume my-server my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume set --size 20 my-volume
 ```
+<!-- markdownlint-enable line-length -->
 
 You can check that the volume got resized by either looking at the
 [details of the volume](#see-volume-details), or by listing only the volume in
 question (filter by volume name or ID):
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
@@ -318,6 +336,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 | aa711296-5cff-46ac-bbe3-58e00712ee3e | my-volume | available |   20 |             |
 +--------------------------------------+-----------+-----------+------+-------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 ### Snapshot a volume
 
@@ -341,6 +360,7 @@ to a VM, use the `--force` command flag, but be aware that there may be
 inconsistencies if the VM’s OS is not aware of the snapshot being taken.
 {{% /alert %}}
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume snapshot create --volume my-volume my-snapshot --force
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot create --volume my-volume my-snapshot
@@ -358,12 +378,14 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot create --volume
 | volume_id   | aa711296-5cff-46ac-bbe3-58e0712ee3e9 |
 +-------------+--------------------------------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 The status of the snapshot will probably be returned as `creating`. To check
 if the snapshot is ready, look at the
 [details of the snapshot](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html#volume-snapshot-show),
 or list only the newly created snapshot (filter by snapshot name or ID):
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume snapshot list --name my-snapshot
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot list --name my-snapshot
@@ -373,6 +395,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot list --name my-
 | 15149b42-032f-4cec-b6f3-41aa5c958081 | my-snapshot | None        | available |   10 |
 +--------------------------------------+-------------+-------------+-----------+------+
 ```
+<!-- markdownlint-enable line-length -->
 
 When the status of the snapshot is `available` the snapshot is ready, and can
 be used to create new volumes or to restore the source volume to the
@@ -412,6 +435,7 @@ use the `--force` command flag, but be aware that there may be inconsistencies
 if the VM’s OS is not aware of the backup being taken.
 {{% /alert %}}
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume backup create --name my-backup my-volume --force
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume backup create --name my-backup my-volume
@@ -429,12 +453,14 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume backup create --name my-
 | volume_id   | aa711296-5cff-46ac-bbe3-58e0712ee3e9 |
 +-------------+--------------------------------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 The status of the backup will probably be returned as `creating`. To check
 if the backup has finished, look at the
 [details of the backup](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html#volume-backup-show),
 or list only the newly created backup (filter by backup name or ID):
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume backup list --name my-backup
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume backup list --name my-backup
@@ -444,6 +470,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume backup list --name my-ba
 | 158bcb42-032f-4cec-b6f3-890a5c958081 | my-backup | None        | available |   10 |
 +--------------------------------------+-----------+-------------+-----------+------+
 ```
+<!-- markdownlint-enable line-length -->
 
 When the status of the backup is `available` the backup operation is complete.
 
@@ -462,9 +489,11 @@ $ fedcloud openstack volume delete my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume delete my-volume
 ```
 
+
 This starts deletion of the specified volume (the volume status changes
 to `deleting`):
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
@@ -474,6 +503,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 | aa711296-5cff-46ac-bbe3-58e00712ee3e | my-volume | deleting |   10 |             |
 +--------------------------------------+-----------+----------+------+-------------+
 ```
+<!-- markdownlint-enable line-length -->
 
 Once deletion of the specified volume is complete, it will no longer show up in
 the list of volumes.
@@ -490,6 +520,7 @@ To find out the device name that got assigned to a volume when it was
 attached to a VM, look at the [details of the volume](#see-volume-details), or
 list only the volume in question (filter by volume name or ID):
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
@@ -499,7 +530,6 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 | aa711296-5cff-46ac-bbe3-58e00712ee3e | my-volume | in-use |   10 | my-server on /dev/vdb |
 +--------------------------------------+-----------+--------+------+-----------------------+
 ```
-
 <!-- markdownlint-enable line-length -->
 
 In this example the device name is `/dev/vdb`. To validate this, run the
@@ -533,7 +563,6 @@ time you use the device, as it deletes all data! Make sure you use the correct
 device name, otherwise you will destroy data on other devices!
 {{% /alert %}}
 
-<!-- markdownlint-disable commands-show-output -->
 ```shell
 $ sudo mkfs.ext4 -L my-volume /dev/vdb
 ```
@@ -564,7 +593,6 @@ command in the VM:
 ```shell
 $ sudo chmod +t /<path>
 ```
-<!-- markdownlint-enable commands-show-output -->
 
 If the desired behaviour is to mount the file system automatically on VM
 restart, add it to `/etc/fstab`. Using the `LABEL` parameter will ensure
@@ -591,8 +619,6 @@ block storage device and a regular disk, thus no major changes should be
 required in the application logic.
 
 ## Access via EGI Data Transfer
-
-<!-- TODO Move this under Tutorials -->
 
 The [File Transfer service](../../data-transfer) allows you to move any type of
 data files asynchronously from one storage to another. If you want to copy data
@@ -622,12 +648,10 @@ Take into account:
   DN to `nobody`. You can add as many lines as needed:
 
   <!-- markdownlint-disable line-length -->
-
   ```plaintext
   "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Enol Fernandez del Castillo" nobody
   ```
-
-  <!-- markdownlint-enable line-length no-inline-html -->
+  <!-- markdownlint-enable line-length -->
 
 - You need to specify the environment variables in the `docker-compose.yml` file
   for obtaining the Let's Encrypt certificate. An extra variable
@@ -653,6 +677,7 @@ Take into account:
         com.docker.network.driver.mtu: 1434
   ```
 
+<!-- markdownlint-enable commands-show-output -->
 <!--
 // jscpd:ignore-end
 -->
