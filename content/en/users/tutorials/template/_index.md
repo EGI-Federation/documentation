@@ -18,7 +18,7 @@ This tutorial describes how to ...
 ## Prerequisites
 
 To access services and resources in the [EGI Federated Cloud](../../getting-started),
-you will need: 
+you will need:
 
 - An EGI ID (account), you can [sign up here](../../check-in/signup)
 - Enrollment into a [Virtual Organisation](../../check-in/vos) (VO)
