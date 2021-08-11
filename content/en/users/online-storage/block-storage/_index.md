@@ -82,12 +82,9 @@ storage:
 
 The main FedCloud commands for managing volumes are detailed below.
 
-{{% alert title="Note" color="info" %}} For more information check out the
+{{% alert title="Note" color="info" %}} For more information see the
 documentation about
-[volume management](https://docs.openstack.org/cinder/latest/cli/cli-manage-volumes.html),
-and the
-[volume snapshot](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html)
-commands.
+[volume management](https://docs.openstack.org/cinder/latest/cli/cli-manage-volumes.html).
 {{% /alert %}}
 
 ### List volumes
