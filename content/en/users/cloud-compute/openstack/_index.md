@@ -18,7 +18,7 @@ includes details on every OpenStack project, most providers offer access to:
 - [Glance](https://docs.openstack.org/glance/latest/), for VM image
   management
 - [Cinder](https://docs.openstack.org/cinder/latest/), for block storage
-- [Swift](https://docs.openstack.org/cinder/latest/), for object storage
+- [Swift](https://docs.openstack.org/swift/latest/), for object storage
 - [Neutron](https://docs.openstack.org/neutron/latest/), for network
   management
 - [Horizon](https://docs.openstack.org/horizon/latest/), as a web
