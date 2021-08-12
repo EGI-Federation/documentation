@@ -13,12 +13,15 @@ accounts.
 The extensive [OpenStack user documentation](https://docs.openstack.org/user/)
 includes details on every OpenStack project, most providers offer access to:
 
-- Keystone, for identity
-- Nova, for VM management
-- Glance, for VM image management
-- Cinder, for block storage
-- Neutron, for network management
-- Horizon, as a web dashboard
+- [Keystone](https://docs.openstack.org/keystone/latest/), for identity
+- [Nova](https://docs.openstack.org/nova/latest/), for VM management
+- [Glance](https://docs.openstack.org/glance/latest/), for VM image
+  management
+- [Cinder](https://docs.openstack.org/cinder/latest/), for block storage
+- [Neutron](https://docs.openstack.org/neutron/latest/), for network
+  management
+- [Horizon](https://docs.openstack.org/horizon/latest/), as a web
+  dashboard
 
 Web-dashboard of the integrated providers can be accessed using your EGI
 Check-in credentials directly: select _OpenID Connect_ or _EGI Check-in_ in the

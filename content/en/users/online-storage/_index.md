@@ -4,34 +4,38 @@ linkTitle: "Online Storage"
 type: docs
 weight: 55
 description: >
-  Store, share and access your files and their metadata on a global scale
+  EGI Online Storage services
 ---
 
-The EGI Online Storage includes a wide category of services which allows
-storing, sharing and accessing files on the EGI infrastructure. The service
-comprises different categories of storage services depending on the technology
-and usage that is foreseen. The 3 following service offerings are available:
+## Overview
 
-- [Grid Storage](grid-storage/)
-- [Object Storage](object-storage/)
-- [Block Storage](../cloud-compute/storage/#block-storage), which is described
-  under the Cloud Compute section
+Online Storage includes a wide category of services that allow
+users to **store, share and access data** using the EGI
+infrastructure. Different categories of storage are available, depending on
+how data is stored, the technology used to access and consume data,
+and the foreseen usage.
 
-A summary of the main differences between Grid, Block and Object Storage is
-reported in the following table.
+Three major service offerings are available:
+
+- [Block Storage](block-storage) is block level storage that can be attached to
+  virtual machines (VMs) as volumes, a simple solution for durable data that
+  does not need to be shared beside a single VM.
+- [Grid Storage](grid-storage) is serving file access and storage for
+  [EGI High Throughput Compute](../high-throughput-compute) (HTC) scenarios.
+- [Object Storage](object-storage) is persistent storage for cases when data
+  needs to be exposed within portals or shared between different steps of
+  processing workflows.
+
+## Comparison of storage types
+
+The differences between Block, Grid, and Object Storage are summarized below:
 
 <!-- markdownlint-disable line-length -->
-| Access             | Sharing                                                       | Accounting                        | Usage                                   |
-| ------------------ | ------------------------------------------------------------- | --------------------------------- | --------------------------------------- |
-| **Grid Storage**   | from any device connected to the internet                     | Available for the data stored     | Grid protocols and HTTP/Webdav requests |
-| **Block Storage**  | only from within a VM only at the same site the VM is located | Not possible for the entire block | POSIX access, use as local disk         |
-| **Object Storage** | from any device connected to the internet                     | Possible only for the data stored | via HTTP requests to server             |
+| Type       | Sharing                                                       | Accounting              | Usage                                   |
+| ---------- | ------------------------------------------------------------- | ------------------------| --------------------------------------- |
+| **Block**  | Only from within VMs, only at the same site the VM is located | For the entire block    | POSIX access, use as local disk         |
+| **Grid**   | From any device connected to the Internet                     | For the data stored     | Grid protocols and HTTP/WebDAV          |
+| **Object** | From any device connected to the Internet                     | For the data stored     | HTTP requests to REST API               |
 <!-- markdownlint-enable line-length -->
 
-Grid Storage is mainly serving data access and storage for EGI High Throughput
-Compute scenarios. For EGI Federated Cloud use cases it depends on the
-application needs either Block or Object storage could be use. In general, block
-storage is a good and simple solution for temporary data and data which you do
-not need to share beside the single application running on a single VM. If you
-need to have your data exposed within portals or shared between different steps
-of your processing workflow, it is usually best to use the object storage.
+The following guides offer a more detailed description of each storage service.
