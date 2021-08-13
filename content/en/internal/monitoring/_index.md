@@ -18,5 +18,5 @@ the user interface in a user-friendly way. It provides automated reporting tools
 with minimal development or operational effort for setting up monitoring.
 
 {{% alert title="Note" color="info" %}} Documentation for Service Monitoring is
-available [here](https://argo.egi.eu/egi/documentation).
+available [on the ARGO site](https://argo.egi.eu/egi/documentation).
 {{% /alert %}}
