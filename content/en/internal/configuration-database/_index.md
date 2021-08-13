@@ -1,8 +1,9 @@
 ---
 title: "Configuration Database"
-description: "Service configuration database"
 weight: 20
 type: "docs"
+description: >
+    Topology and configuration registry for sites in EGI FedCloud
 ---
 
 ## What is it?
@@ -13,7 +14,7 @@ participating in the EGI Cloud infrastructure.
 
 The configuration database also provides different rules and grouping
 mechanisms for filtering and managing the information associated to resources.
-This can include entities such as operations and resource centres, service
+This can include entities such as operations and resource centers, service
 endpoints and their downtimes, contact information and roles of staff
 responsible for operations at different levels.
 
