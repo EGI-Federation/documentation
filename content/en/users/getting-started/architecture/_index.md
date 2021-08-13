@@ -1,9 +1,10 @@
 ---
-title: "Federation Architecture and Implementation"
+title: "EGI Federation Architecture"
+linkTitle: "Federation Architecture"
 type: docs
-weight: 110
+weight: 10
 description: >
-  The EGI Cloud architecture and technical implementation details
+  The architecture of the EGI Federated Cloud
 ---
 
 The EGI Federated Cloud is a multi-national cloud system that integrates
@@ -33,7 +34,7 @@ research.
 
 ## Federated IaaS
 
-The EGI Federated Cloud Infrastructure as a Service (IaaS) resource centres
+The EGI Federated Cloud Infrastructure-as-a-Service (IaaS) resource centres
 deploy a Cloud Management Framework (CMF) that provide users with an API-based
 service for management of Virtual Machines and associated Block Storage to
 enable persistence and Networks to enable connectivity of the Virtual Machines

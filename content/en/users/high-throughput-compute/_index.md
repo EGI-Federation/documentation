@@ -106,8 +106,3 @@ VOs are fully managed by research communities, allowing them to manage their
 users and grant access to their services and resources. This means users can
 either own their resources and use EGI services to federate them, or can use
 the resources available in the EGI infrastructure.
-
-Users may gain opportunistic usage to unused resources. These are resources
-that are not dedicated to the users’ organization, but are accessible when the
-research center(s) have some spare resources. This enables the most efficient
-use of resources.
