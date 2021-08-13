@@ -12,7 +12,7 @@ description: >
 Support for EGI services is available through the
 [EGI Helpdesk](http://helpdesk.egi.eu/).
 
-The EGI helpdesk is a distributed tool with central coordination, which
+The EGI Helpdesk is a distributed tool with central coordination, which
 provides the information and support needed to troubleshoot product and
 service problems. Users can report **incidents**, **bugs** or **request
 changes**. The support activities are grouped into first and second level
