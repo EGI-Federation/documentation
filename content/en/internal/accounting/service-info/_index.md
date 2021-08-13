@@ -12,20 +12,20 @@ description: >
 
 <!-- markdownlint-disable line-length no-bare-urls -->
 
-| Property                     | Value                                                                                               |
-| ---------------------------- | -------------------------------------------------------------------------------|
-| Name                         |                                                                                |
-| Description                  |                                                                                |
-| URL                          |                                                                                |
-| Support Email                |                                                                                |
-| [Helpdesk](../../helpdesk) Support Unit | EGI Services and Service components -> ?                            |
-| Configuration Database entry |                                                                                |
-| Supplier                     |                                                                                |
-| Roadmap                      |                                                                                |
-| Release notes                |                                                                                |
-| Source code                  |                                                                                |
-| Issue tracker for developers |                                                                                |
-| License                      |                                                                                |
-| Privacy Policy               |                                                                                |
+| Property                                | Value                                                                                               |
+|-----------------------------------------|--------------------------------------------------------------------------------|
+| Name                                    |                                                                                |
+| Description                             |                                                                                |
+| URL                                     |                                                                                |
+| Support Email                           |                                                                                |
+| [Helpdesk](../../helpdesk) Support Unit | EGI Services and Service components -> ?                                       |
+| Configuration Database entry            |                                                                                |
+| Supplier                                |                                                                                |
+| Roadmap                                 |                                                                                |
+| Release notes                           |                                                                                |
+| Source code                             |                                                                                |
+| Issue tracker for developers            |                                                                                |
+| License                                 |                                                                                |
+| Privacy Policy                          |                                                                                |
 
 <!-- markdownlint-enable line-length no-bare-urls -->
