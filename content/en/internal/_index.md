@@ -15,5 +15,8 @@ These services are being operated centrally on behalf of EGI, and are
 supporting the coordination of the EGI Federation.
 
 {{% alert title="Note" color="info" %}} See the [User Guides](../users)
-section for documentation about public EGI services.
+section for documentation about public EGI services, and the
+[Service Providers](../providers) section for details on how to integrate
+identity providers and service providers into the EGI Federated Cloud
+(FedCloud).
 {{% /alert %}}
