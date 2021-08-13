@@ -6,9 +6,10 @@ weight: 10
 ---
 
 For collaboration purposes, it is best if you create a GitHub account and fork
-the repository to your own account. Once you do this you will be able to push
-your changes to your GitHub repository for others to see and use, and it will be
-easier to send pull requests.
+the repository to your own account. Once you do this, you will be able to push
+your changes to your GitHub repository for others to see and use, and you will
+be able to create pull requests (PRs) in the official EGI documentation
+repository based on branches in your fork.
 
 If you are new to `git` and **GitHub** you are advised to start by the two
 following articles providing simple tutorials:

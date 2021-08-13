@@ -13,7 +13,7 @@ weight: 20
   [EGI Services Portfolio](https://www.egi.eu/services/)
 - Acronyms should be used only when it makes sense
 - Service names should never be replaced by acronyms
-- In the introduction of services link to the public page of the service,
+- When introducing services, link to the public page of the service,
 if any:
 
 ```markdown
@@ -22,7 +22,7 @@ if any:
 
 ## Writing markdown
 
-Documentation pages have to be written in markdown compliant with
+Documentation pages have to be written in markdown, compliant with
 [CommonMark](https://spec.commonmark.org/0.29/) and
 [GitHub Flavored Markdown](https://github.github.com/gfm/).
 
@@ -34,9 +34,15 @@ Documentation pages have to be written in markdown compliant with
 - Indent is made with tabs not with spaces
 - Lists should be using `-` not `*`
 - Indent secondary (and following) level lists with 2 spaces
-- Lines should end with a Line Feed character ("\n")
-- Files should end with a Line Feed character ("\n"), but not including an empty
-  line
+- Lines should end with a Line Feed character (`\n`)
+- Files should end with an empty line, containing only a Line Feed
+  character (`\n`)
+- Shell examples should include a prompt (`$` or `>`) in front of commands,
+  to make it easy to understand which is the command, and which is the output
+- Long commands in shell examples should be broken into multiple lines, using
+  a trailing backslash character (`\`) on each line that continues on the next
+- Never break command output in shell examples to multiple lines, instead use
+  [style exceptions](#adding-exceptions-for-style-violations) when necessary
 
 {{% alert title="Tip" color="info" %}} Syntax examples that can be used in the
 files are documented in the [shortcodes](../shortcodes) section. {{% /alert %}}
