@@ -15,7 +15,9 @@ Support for EGI services is available through the
 The EGI Helpdesk is a distributed tool with central coordination, which
 provides the information and support needed to troubleshoot product and
 service problems. Users can **report incidents**, **bugs** or **request
-changes**. The support activities are grouped into first and second level
+changes**.
+
+The support activities are grouped into first and second level
 support.
 
 {{% alert title="Note" color="info" %}} Documentation for the EGI Helpdesk is
