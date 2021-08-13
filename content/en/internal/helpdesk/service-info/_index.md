@@ -5,7 +5,7 @@ weight: 100
 type: "docs"
 draft: true
 description: >
-    Technical details of EGI helpdesk
+    Technical details of EGI Helpdesk
 ---
 
 ## Identity card
@@ -13,12 +13,12 @@ description: >
 <!-- markdownlint-disable line-length no-bare-urls -->
 
 | Property                     | Value                                                                                               |
-| ---------------------------- | -------------------------------------------------------------------------------|
+|------------------------------|--------------------------------------------------------------------------------|
 | Name                         |                                                                                |
 | Description                  |                                                                                |
 | URL                          |                                                                                |
 | Support Email                |                                                                                |
-| [Helpdesk](..) Support Unit | EGI Services and Service components -> ?                                        |
+| [Helpdesk](..) Support Unit  | EGI Services and Service components -> ?                                       |
 | Configuration Database entry |                                                                                |
 | Supplier                     |                                                                                |
 | Roadmap                      |                                                                                |

@@ -1,23 +1,23 @@
 ---
 title: "Access"
-description: "Accessing the configuration database"
+description: "Accessing the Configuration Database"
 weight: 25
 type: "docs"
 ---
 
-To access [web interface](https://goc.egi.eu) of the EGI configuration database
+To access [web interface](https://goc.egi.eu) of the EGI Configuration Database
 (GOCDB), users can either:
 
-- [Use EGI Check-in](#using-institutional-account-via-egi-check-in) to access
-  the GOCDB with an institutional account, or
+- [Use EGI Check-in](#using-institutional-account-via-egi-check-in)
+  with an institutional account, or
 - [Use an X.509 digital certificate](#using-an-x509-digital-certificate)
-  installed in their browser.
+  installed in the browser.
 
 Users can access the system as soon as they are authenticated. However,
 they will only be able to update information based on their roles.
 More information about roles and associated permission is available in the
 [_Users and roles_](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles)
-section of the GOCDB documentation.
+section of the documentation.
 
 Applications requesting a specific role have to be validated by parent roles
 or administrators. Once granted, users can access and/or modify relevant
@@ -51,9 +51,9 @@ To access the configuration database using a digital certificate, first obtain
 a certificate from one of the recognised EU-Grid-PMA Certification Authorities
 (CAs), and install it on your local machine.
 
-{{% alert title="Note" color="info" %}} GOCDB does not support single
+{{% alert title="Note" color="info" %}} EGI Check-in does not support single
 or double quotes in the certificate's Distinguished Name (DN). The DN
-below is rejected by GOCDB because of the single quote:
+below is rejected because of the single quote:
 
 `/C=UK/O=STFC/OU=SomeOrgUnit/CN=David Mc'Donald`
 

@@ -21,5 +21,5 @@ Use this section to get started quickly with internal EGI services:
 
 ## Request for information
 
-You can look [here](https://www.egi.eu/more-information) for
+You can ask [here](https://www.egi.eu/more-information) for
 more information about the EGI services.
