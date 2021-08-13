@@ -5,12 +5,13 @@ type: docs
 weight: 20
 draft: true
 description: >
-  How to interact with OpenStack providers in the EGI Cloud
+  How to interact with OpenStack providers in the EGI FedCloud
 ---
 
-[OpenStack](https://openstack.org) providers of the EGI Cloud offer services
-and features via OpenStack APIs and the OpenStack [command line interface](../cli)
-(CLI), integrated with [EGI Check-in](../../check-in) accounts.
+[OpenStack](https://openstack.org) providers in the EGI Federated Cloud
+(FedCloud) offer services and features via OpenStack APIs, and the
+[command line interface](../cli) (CLI), both integrated with
+[EGI Check-in](../../check-in) accounts.
 
 The extensive [OpenStack user documentation](https://docs.openstack.org/user/)
 includes details on every OpenStack project, but most providers offer:
@@ -26,6 +27,7 @@ includes details on every OpenStack project, but most providers offer:
 - [Horizon](https://docs.openstack.org/horizon/latest/), as a web
   dashboard
 
-The web-dashboard of the individual providers can be accessed using your EGI
-Check-in credentials directly: select _OpenID Connect_ or _EGI Check-in_ in the
-**Authenticate using** drop-down menu of the login screen.
+The web-dashboard of the individual providers can be used to manage and use
+services. It can be accessed using EGI Check-in credentials directly:
+select _OpenID Connect_ or _EGI Check-in_ in the **Authenticate using**
+drop-down menu of the login screen.
