@@ -74,6 +74,7 @@ itself on the mardkown parser.
 
 The following markdown for a shell excerpt:
 
+<!-- markdownlint-disable commands-show-output -->
 ````markdown
 ```shell
 $ ssh-keygen -f fedcloud
@@ -87,6 +88,7 @@ Will render as:
 $ ssh-keygen -f fedcloud
 $ echo $HOME
 ```
+<!-- markdownlint-enable commands-show-output -->
 
 {{% alert title="Tip" color="info" %}} If you click the _Copy_ button in the
 top-right corner of a shell example, all commands in that block are copied to
