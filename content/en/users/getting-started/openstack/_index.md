@@ -3,7 +3,6 @@ title: "Using OpenStack Providers"
 linkTitle: "OpenStack Providers"
 type: docs
 weight: 20
-draft: true
 description: >
   How to interact with OpenStack providers in the EGI FedCloud
 ---
