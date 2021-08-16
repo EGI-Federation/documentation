@@ -220,7 +220,19 @@ Most of the FedCloud client options can be set via environment variables:
 used options like site, VO, access tokens, etc. using environment variables.
 {{% /alert %}}
 
-
+| Environment variable    | Command line option         | Default value           |
+|-------------------------|-----------------------------|-------------------------|
+| OIDC_AGENT_ACCOUNT      | `--oidc-agent-account`      |                         |
+| OIDC_ACCESS_TOKEN       | `--oidc-access-token`       |                         |
+| OIDC_REFRESH_TOKEN      | `--oidc-refresh-token`      |                         |
+| OIDC_CLIENT_ID          | `--oidc-client-id`          |                         |
+| OIDC_CLIENT_SECRET      | `--oidc-client-secret`      |                         |
+| OIDC_URL                | `--oidc-url`                | https://aai.egi.eu/oidc |
+| OPENSTACK_AUTH_PROTOCOL | `--openstack-auth-protocol` | openid                  |
+| OPENSTACK_AUTH_PROVIDER | `--openstack-auth-provider` | egi.eu                  |
+| OPENSTACK_AUTH_TYPE     | `--openstack-auth-type`     | v3oidcaccesstoken       |
+| EGI_SITE                | `--site`                    |                         |
+| EGI_VO                  | `--vo`                      |                         |
 
 #### Getting help
 
@@ -280,5 +292,98 @@ above.
 
 ### Using from Python
 
+The FedCloud client can be used as a library for developing other services and
+tools for EGI FedCloud. Most of the functionalities can be called directly from
+Python code without side effects.
+
+An example of the code using fedcloud client is available on
+[GitHub](https://github.com/tdviet/fedcloudclient/blob/master/examples/demo.py).
+Just copy/download the code, add your access token and execute `python demo.py`
+to see how it works.
+
 ### Using in scripts
 
+The FedCloud client can also be used in scripts for simple automation, either
+for setting environment variables for other tools, or to process outputs from
+OpenStack commands.
+
+#### Setting environment variables for external tools
+
+Some FedCloud commands generate output that contains shell commands to set
+environment variables with the returned result:
+
+```shell
+$ export EGI_SITE=IISAS-FedCloud
+$ export EGI_VO=eosc-synergy.eu
+$ fedcloud site show-project-id
+export OS_AUTH_URL="https://cloud.ui.savba.sk:5000/v3/"
+export OS_PROJECT_ID="51f736d36ce34b9ebdf196cfcabd24ee"
+
+# This command will set environment variables
+$ eval $(fedcloud site show-project-id --site IISAS-FedCloud --vo eosc-synergy.eu)
+
+# Check the value of the variable
+$ echo $OS_AUTH_URL
+https://cloud.ui.savba.sk:5000/v3/
+```
+
+#### Processing output from OpenStack commands
+
+The `fedcloud openstack` subcommand's output can be converted to JSON format
+by using the `--json-output` option. This is useful for further machine
+processing of the command output.
+
+{{% alert title="Tip" color="info" %}} JSON output can be processed with a tool
+like [jq](https://stedolan.github.io/jq/), which can slice, filter, map, and
+transform structured data. It is a filter: it takes and input, and produces an
+output. Check out the [tutorial](https://stedolan.github.io/jq/tutorial/) for
+using it to extract data from JSON sources.
+{{% /alert %}}
+
+
+```shell
+$ export EGI_SITE=IISAS-FedCloud
+$ export EGI_VO=eosc-synergy.eu
+$ fedcloud openstack flavor list --json-output
+[
+{
+  "Site": "IISAS-FedCloud",
+  "VO": "eosc-synergy.eu",
+  "command": "flavor list",
+  "Exception": null,
+  "Error code": 0,
+  "Result": [
+    {
+      "ID": "0",
+      "Name": "m1.nano",
+      "RAM": 64,
+      "Disk": 1,
+      "Ephemeral": 0,
+      "VCPUs": 1,
+      "Is Public": true
+    },
+    {
+      "ID": "2e562a51-8861-40d5-8fc9-2638bab4662c",
+      "Name": "m1.xlarge",
+      "RAM": 16384,
+      "Disk": 40,
+      "Ephemeral": 0,
+      "VCPUs": 8,
+      "Is Public": true
+    },
+    ...
+  ]
+}
+]
+
+# The following jq command selects flavors with VCPUs=2 and prints their names
+$ fedcloud openstack flavor list--json-output | \
+    jq -r '.[].Result[] | select(.VCPUs == 2) | .Name'
+m1.medium
+```
+
+{{% alert title="Note" color="info" %}} Note that `--json-output` option can
+be used only with those OpenStack commands that have outputs. Using this
+parameter with commands wit no output (e.g. setting properties) will generate
+an unsupported parameter error.
+{{% /alert %}}
