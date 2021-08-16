@@ -154,3 +154,8 @@ footer {
 div.code-toolbar > .toolbar {
   right: 0.45em;
 }
+
+div.code-toolbar > .toolbar button {
+  background: rgba(224, 224, 224, 0.9);
+  box-shadow: 0 2px 0 0 rgb(100 100 100 / 30%);
+}
