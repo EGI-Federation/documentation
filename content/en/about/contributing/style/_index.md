@@ -211,9 +211,6 @@ these activities take place in their present, so the present tense is
 appropriate in most cases. Additionally, the present tense is easier to read
 than the past or future tense.
 
-Use the future tense only when you need to emphasize that something will occur
-later (from the users’ perspective).
-
 <!-- markdownlint-disable line-length -->
 {{< tabpanex >}}
   {{< tabx header="Example" >}}
@@ -223,6 +220,10 @@ later (from the users’ perspective).
   {{< /tabx >}}
 {{< /tabpanex >}}
 <!-- markdownlint-enable line-length -->
+
+{{% alert title="Tip" color="info" %}} Use the future tense only when you need
+to emphasize that something will occur later (from the users’ perspective).
+{{% /alert %}}
 
 ### Do not humanize inanimate objects
 
@@ -275,7 +276,7 @@ the following words as much as possible:
 | fatal           | serious                      |
 | destroy         | remove or delete             |
 | wrong           | incorrect or inconsistent    |
-  {{< /tabx >}}      
+  {{< /tabx >}}
 {{< /tabpanex >}}
 
 ### Do not use contractions
