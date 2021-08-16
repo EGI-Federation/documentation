@@ -19,8 +19,3 @@ Use this section to get started quickly with internal EGI services:
   usage, providing insights and reports on consumption
 - The [**Helpdesk**](http://helpdesk.egi.eu) lets users and providers report
   incidents and bugs, or request changes
-
-## Request for information
-
-You can ask [on our website](https://www.egi.eu/more-information) for
-more information about the EGI services.

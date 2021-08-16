@@ -20,3 +20,8 @@ section for documentation about public EGI services, and the
 identity providers and service providers into the EGI Federated Cloud
 (FedCloud).
 {{% /alert %}}
+
+## Request for information
+
+You can ask for more information about the internal EGI services
+[on our website](https://www.egi.eu/more-information).
