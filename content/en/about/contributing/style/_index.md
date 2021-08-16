@@ -29,6 +29,7 @@ Documentation pages have to be written in markdown compliant with
 ### Notable points
 
 - Headings start at level 2 (`##`), as level 1 (`#`) is the title of the page
+- Do not capitalize each word in heading titles, unless it is a service name
 - Lines should be wrapped at 80 characters
 - Sentences should be separated by one space only
 - Indent is made with tabs not with spaces
@@ -59,8 +60,91 @@ Configuration is provided in `.prettierrc`, options can be set as follows:
 --print-width 80 --tab-width 2 --prose-wrap always
 ```
 
-When a Pull Request is received, the proposed changes are checked using
-[various linters](https://github.com/EGI-Federation/documentation/tree/main/.github/workflows).
+When a contribution is received (via a pull request), the proposed changes are
+checked using [various linters](https://github.com/EGI-Federation/documentation/tree/main/.github/workflows).
+
+## General writing guidelines
+
+Follow these guidelines to ensure readability and consistency of the EGI
+documentation.
+
+### Use standard English
+
+Use standard United States (U.S.) English throughout all technical
+publications. When in doubt about the spelling of a word, consult the
+Merriam-Webster’s Collegiate Dictionary and the
+[IBM developerWorks editorial style guide](https://www.ibm.com/developerworks/library/styleguidelines/).
+
+### Write in active voice
+
+In general, write in active voice rather than passive voice. Active voice
+identifies the agent of action as the subject of the verb — usually the user.
+Passive voice identifies the recipient (not the source) of the action as the
+subject of the verb.
+
+Active-voice sentences clarify the performer of an action and are easier to
+understand than passive-voice sentences. Passive voice is usually less engaging
+and more complicated than active voice. When you use passive voice, the actions
+and responses of the software can be difficult to distinguish from those of the
+user. In addition, passive voice usually requires more words than active voice.
+
+**Examples**
+
+| Do not use                                                          | Use                                                 |
+| --------------------------------------------------------------------|-----------------------------------------------------|
+| After the software has been installed, the computer can be started. | After you install the software, start the computer. |
+| The Configuration is saved when you click OK.                       | Click OK to save the configuration.                 |
+| A server is created by you.                                         | Create a server.                                    |
+
+However, passive voice is acceptable in the following situations:
+
+- Using active voice sounds like you are blaming the user. For example, you can
+  use passive voice in an error message or troubleshooting content when the
+  active subject is the user.
+- The agent of action is unknown, or you want to de-emphasize the agent of
+  action and emphasize the object on which the action is performed.
+- Recasting the sentence in active voice is wordy or awkward.
+
+
+
+### Lists
+
+When reading a document for the first time, users scan through pages stopping
+only on the content that stands out, such as titles, lists, links, diagrams,
+and so on. Lists help to organize options, as well as help readers to find
+information easily.
+
+When listing items, follow these guidelines:
+
+- Use a **bulleted list** for options. Create a bulleted list when you need to
+  describe more than three options.
+- Use a **numbered list** for steps.
+- Use a **definition list** to explain terms or describe command-line
+  parameters, options, or arguments.
+- Use a colon at the end of the sentence that introduces a list.
+- Use the same grammatical structure (aka parallel structure) for all items
+  in a list.
+- Start each option with a capital letter.
+
+When listing options in a paragraph, add _and_ or _or_ before the last item
+in a list. Use a serial (Oxford) comma before these conjunctions if they
+connect three or more items.
+
+### Punctuation in lists
+
+In bulleted lists:
+
+- If you list individual words or phrases, do not add a period at the end of
+  each list item.
+- If you use full sentences, add a period at the end of each sentence.
+- If your list includes both individual words or phrases and full sentences,
+  be consistent and either add or do not add periods to all items.
+
+In numbered lists:
+
+- Add periods at the end of steps.
+- If an item of a numbered list is followed by a code block that illustrates
+  how to perform the step, use a colon at the end.
 
 ## Adding exceptions for style violations
 
