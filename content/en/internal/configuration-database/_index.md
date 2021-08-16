@@ -3,7 +3,7 @@ title: "Configuration Database"
 weight: 20
 type: "docs"
 description: >
-    Topology and configuration registry for sites in EGI FedCloud
+    Topology and configuration registry for sites in EGI infrastructure
 ---
 
 ## What is it?

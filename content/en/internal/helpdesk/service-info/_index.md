@@ -10,7 +10,7 @@ description: >
 
 ## Identity card
 
-<!-- markdownlint-disable line-length no-bare-urls -->
+<!-- markdownlint-disable line-length no-inline-html no-bare-urls -->
 
 | Property                     | Value                                                                                               |
 |------------------------------|--------------------------------------------------------------------------------|
@@ -18,7 +18,7 @@ description: >
 | Description                  |                                                                                |
 | URL                          |                                                                                |
 | Support Email                |                                                                                |
-| [Helpdesk](..) Support Unit  | EGI Services and Service components -> ?                                       |
+| [Helpdesk](..) Support Unit  | **EGI Services and Service components** <br/> I__ Service-Name                 |
 | Configuration Database entry |                                                                                |
 | Supplier                     |                                                                                |
 | Roadmap                      |                                                                                |
@@ -28,4 +28,4 @@ description: >
 | License                      |                                                                                |
 | Privacy Policy               |                                                                                |
 
-<!-- markdownlint-enable line-length no-bare-urls -->
+<!-- markdownlint-enable line-length no-inline-html no-bare-urls -->

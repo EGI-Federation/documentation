@@ -49,11 +49,11 @@ preferable solution.
 To access the Configuration Database using a digital certificate, first obtain
 a certificate from one of the recognised EU-Grid-PMA Certification Authorities
 (CAs), then install it in your browser of choice (or import it into the
-certificate store of your local machine, if on Winows).
+certificate store of your local machine, on Windows).
 
-{{% alert title="Note" color="info" %}} EGI Check-in does not support single
-or double quotes in the certificate's Distinguished Name (DN). The DN
-below is rejected because of the single quote:
+{{% alert title="Note" color="info" %}} X.509 certificates do not support
+single or double quotes in the certificate's Distinguished Name (DN).
+The DN below is rejected because of the single quote:
 
 `/C=UK/O=STFC/OU=SomeOrgUnit/CN=David Mc'Donald`
 
