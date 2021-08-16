@@ -29,8 +29,8 @@ In order to be able to access the Configuration Database with their
 institutional account, users need to:
 
 1. Have their Identity Provider (IdP) federated in EGI Check-in (via
-   [eduGAIN](https://edugain.org/) or directly)
-1. Have created an [EGI Check-in account](../../../users/check-in/signup)
+   [eduGAIN](https://edugain.org/) or directly).
+1. Have created an [EGI Check-in account](../../../users/check-in/signup).
 
 {{% alert title="Important" color="warning" %}}
 In the case the user cannot use an IdP compliant with [REFEDS
@@ -40,7 +40,7 @@ specific group, by performing the steps below. Using a compliant IdP is the
 preferable solution.
 
 1. User should ask to join the [GOCDB user
-   group](https://aai.egi.eu/registry/co_petitions/start/coef:41)
+   group](https://aai.egi.eu/registry/co_petitions/start/coef:41).
 1. The access request will be managed by the EGI Operations team.
 {{% /alert %}}
 
