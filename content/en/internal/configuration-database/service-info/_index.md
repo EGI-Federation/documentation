@@ -18,7 +18,7 @@ description: >
 | Description                             | Central registry of the infrastructure topology                                  |
 | URL                                     | https://goc.egi.eu                                                               |
 | Support Email                           | `gocdb-admin` `<at>` `mailman.egi.eu`                                            |
-| [Helpdesk](../../helpdesk) Support Unit | **EGI Services and Service components** <br/> I__ Configuration Database (GOCDB) |
+| [Helpdesk](../../helpdesk) Support Unit | **EGI Services and Service Components** <br/> I__ Configuration Database (GOCDB) |
 | Configuration Database entry            | https://goc.egi.eu/portal/index.php?Page_Type=Site&id=335                        |
 | Supplier                                | [UKRI](https://www.ukri.org/)                                                    |
 | Roadmap                                 | [Roadmap](https://wiki.egi.eu/wiki/GOCDB/Roadmap)                                |
