@@ -4,16 +4,16 @@ linkTitle: "Federation Architecture"
 type: docs
 weight: 10
 description: >
-  The architecture of the EGI Federated Cloud
+  The architecture of the EGI FedCloud
 ---
 
-The EGI Federated Cloud is a multi-national cloud system that integrates
-community, private and/or public clouds into a scalable computing platform for
-research. The Federation pools services from a heterogeneous set of cloud
-providers using a single authentication and authorisation framework that allows
-the portability of workloads across multiple providers and enable bringing
-computing to data. The current implementation is focused on IaaS services but
-can be easily applied to PaaS and SaaS layers.
+The EGI Federated Cloud (FedCloud) is a multi-national cloud system that
+integrates community, private and/or public clouds into a scalable computing
+platform for research. The Federation pools services from a heterogeneous set
+of cloud providers using a single authentication and authorisation framework
+that allows the portability of workloads across multiple providers and enable
+bringing computing to data. The current implementation is focused on IaaS
+services but can be easily applied to PaaS and SaaS layers.
 
 Each resource centre of the federated infrastructure operates a _Cloud
 Management Framework (CMF)_ according to its own preferences and constraints and
@@ -40,27 +40,28 @@ service for management of Virtual Machines and associated Block Storage to
 enable persistence and Networks to enable connectivity of the Virtual Machines
 among themselves and third party resources.
 
-The IaaS federation is a thin layer that brings the providers together with:
+The IaaS federation is a [thin layer](../../../internal) that brings the providers
+together with:
 
-- federated authentication;
-- resource discovery;
-- central VM image catalogue;
-- usage accounting; and
-- monitoring.
+- Federated authentication
+- Resource discovery
+- Central VM image catalogue
+- Usage accounting
+- Monitoring
 
 The IaaS capabilities (VM, block storage, network management) must be provided
 via community agreed APIs (OpenStack and/or OCCI are supported at the moment)
 that allow integration with EGI Check-in for authentication and authorisation of
 users. Those providers that limit the interaction to web dashboards and do not
 expose APIs to direct consumption for users cannot be considered part of the EGI
-IaaS Cloud Compute service.
+IaaS Cloud services.
 
 The information system provides a real-time view about the actual capabilities
-of federation participants. The EGI Configuration Database (GOCDB) contains the
-list of resource centres and their entry endpoints. Information about these
-endpoints is expressed in a standard format (GlueSchema 2.1) and pushed to
-consumers via the Argo Messaging System. The AppDB Information System collects
-this information in a central service for discovery.
+of federation participants. The EGI [Configuration Database](https://goc.egi.eu/)
+contains the list of resource centres and their entry endpoints. Information
+about these endpoints is expressed in a standard format (GlueSchema 2.1) and
+pushed to consumers via the Argo Messaging System. The AppDB Information System
+collects this information in a central service for discovery.
 
 Users can instantiate VMs on the providers from a set of Virtual Machine Images
 available on a central catalogue implemented in AppDB\'s Cloud Marketplace.
@@ -71,15 +72,16 @@ Usage of resources is gathered centrally using EGI Accounting repository and
 available for visualisation at
 [EGI Accounting portal](https://accounting.egi.eu).
 
-Those endpoints published in the EGI Configuration Database are monitored via
-[ARGO](https://argo.egi.eu/). The set of probes check the availability of the
-providers and their correct functionality.
+Those endpoints published in the [EGI Configuration Database](https://goc.egi.eu/)
+are monitored via [ARGO](https://argo.egi.eu/). The set of probes check the
+availability of the providers and their correct functionality.
 
 Users and Community platforms built on top of the EGI IaaS can interact with the
 cloud providers at three different layers:
 
-- Directly using the IaaS APIs to manage individual resources. This option is
-  recommended for pre-existing use cases with requirements on specific APIs.
+- Directly using the IaaS APIs or [CLIs](../cli) to manage individual
+  resources. This option is recommended for pre-existing use cases with
+  requirements on specific APIs.
 - Using IaaS Federated Access Tools that allow managing the complexity of
   dealing with different providers in a uniform way. These tools include:
   - IaaS provisioning systems that allow to define infrastructure as code and

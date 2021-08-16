@@ -54,7 +54,7 @@ These are resources that are not dedicated to the user's organization, but are
 accessible when the research center(s) have some spare resources.
 This enables the most efficient use of resources.
 
-{{% alert title="Note" color="info" %}} Users should not reply on (unused)
-resources not dedicated to their organisations, as access can be lost without
+{{% alert title="Note" color="info" %}} Users should not rely on (unused)
+resources not dedicated to their organisation, as access can be revoked without
 warning, and data may be lost if not properly backed up.
 {{% /alert %}}
