@@ -5,7 +5,7 @@ weight: 25
 type: "docs"
 ---
 
-To access [web interface](https://goc.egi.eu) of the EGI Configuration Database
+To access the [web interface](https://goc.egi.eu) of the EGI Configuration Database
 (GOCDB), users can either:
 
 - [Use EGI Check-in](#using-institutional-account-via-egi-check-in)
