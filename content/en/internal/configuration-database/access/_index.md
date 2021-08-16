@@ -11,7 +11,7 @@ To access [web interface](https://goc.egi.eu) of the EGI Configuration Database
 - [Use EGI Check-in](#using-institutional-account-via-egi-check-in)
   with an institutional account, or
 - [Use an X.509 digital certificate](#using-an-x509-digital-certificate)
-  installed in the browser.
+  installed in the Internet browser, or the local machine's certificate store.
 
 Users can access the system as soon as they are authenticated. However,
 they will only be able to update information based on their roles.
@@ -25,13 +25,12 @@ information, according to the roles granted to the user.
 
 ## Using institutional account via EGI Check-in
 
-In order to be able to access the GOCDB with their institutional account, users
-need to:
+In order to be able to access the Configuration Database with their
+institutional account, users need to:
 
 1. Have their Identity Provider (IdP) federated in EGI Check-in (via
    [eduGAIN](https://edugain.org/) or directly)
-1. Have created an [EGI Check-in
-   account](https://wiki.egi.eu/wiki/AAI_usage_guide)
+1. Have created an [EGI Check-in account](/users/check-in/signup)
 
 {{% alert title="Important" color="warning" %}}
 In the case the user cannot use an IdP compliant with [REFEDS
@@ -47,9 +46,10 @@ preferable solution.
 
 ## Using an X.509 digital certificate
 
-To access the configuration database using a digital certificate, first obtain
+To access the Configuration Database using a digital certificate, first obtain
 a certificate from one of the recognised EU-Grid-PMA Certification Authorities
-(CAs), and install it on your local machine.
+(CAs), then install it in your browser of choice (or import it into the
+certificate store of your local machine, if on Winows).
 
 {{% alert title="Note" color="info" %}} EGI Check-in does not support single
 or double quotes in the certificate's Distinguished Name (DN). The DN
