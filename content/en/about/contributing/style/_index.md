@@ -74,7 +74,7 @@ to read and understand.
 
 ### Use standard English
 
-Use standard United States (U.S.) English throughout all technical
+Use standard British English (UK) throughout all technical
 publications. When in doubt about the spelling of a word, consult the
 Merriam-Webster’s Collegiate Dictionary and the
 [IBM developerWorks editorial style guide](https://www.ibm.com/developerworks/library/styleguidelines/).
