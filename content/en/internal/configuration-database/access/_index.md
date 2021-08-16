@@ -21,7 +21,7 @@ section of the documentation.
 
 Applications requesting a specific role have to be validated by parent roles
 or administrators. Once granted, users can access and/or modify relevant
-information, according to the roles granted to the user.
+information, according to the roles granted to them.
 
 ## Using institutional account via EGI Check-in
 
