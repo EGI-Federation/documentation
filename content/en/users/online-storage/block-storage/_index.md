@@ -317,7 +317,7 @@ unless the volume driver supports
 
 <!-- markdownlint-disable line-length -->
 ```shell
-$ fedcloud openstack volume set --size 20 volume my-volume
+$ fedcloud openstack volume set --size 20 my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume set --size 20 my-volume
 ```
 <!-- markdownlint-enable line-length -->
