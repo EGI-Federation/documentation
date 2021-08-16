@@ -4,7 +4,7 @@ linkTitle: "Getting Started"
 type: docs
 weight: 5
 description: >
-  Introduction to EGI FedCloud services
+  Introduction to EGI FedCloud
 ---
 
 ## Overview
@@ -49,10 +49,10 @@ Before users can access a service in the EGI FedCloud, they have to:
 1. Obtain an X.509 certficate, by signing up either with [EGI Check-in](../check-in/signup)
    directly, or with one of the community identity providers from the
    EGI infrastructure.
-1. Enroll into one VO before they can use most of the services, users are not
-   individually granted access to resources.
+1. Enroll into one VO before they can use most of the services, as users are
+   not individually granted access to resources.
 1. Add the certificate to their Internet browser of choice, or import it into
-   the appropriate certificate store on Windows.
+   the appropriate certificate store (on Windows).
 1. If they want to use [command line tools](cli), they will also have to
    obtain OIDC access and refresh tokens.
 

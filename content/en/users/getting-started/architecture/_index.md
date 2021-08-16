@@ -4,7 +4,7 @@ linkTitle: "Federation Architecture"
 type: docs
 weight: 10
 description: >
-  The architecture of the EGI FedCloud
+  The architecture of EGI FedCloud
 ---
 
 The EGI Federated Cloud (FedCloud) is a multi-national cloud system that
