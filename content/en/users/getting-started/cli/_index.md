@@ -154,7 +154,7 @@ then run the following commands:
 
 ```shell
 $ sudo docker pull tdviet/fedcloudclient
-$ sudo docker run -it  tdviet/fedcloudclient bash
+$ sudo docker run -it tdviet/fedcloudclient bash
 ```
 
 {{< /tabx >}}
