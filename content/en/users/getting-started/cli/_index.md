@@ -131,14 +131,44 @@ The FedCloud client can also be used without installation, by running it in a
 Docker container. In this case, the EGI Core Trust Anchor certificates are
 preinstalled.
 
+{{< tabpanex >}}
+{{< tabx header="Linux " >}}
+
 To run the FedCloud client in a container, make sure
-[Docker is installed](https://docs.docker.com/engine/install/), then run the
-following commands:
+[Docker is installed](https://docs.docker.com/engine/install/#server),
+then run the following commands:
 
 ```shell
 $ sudo docker pull tdviet/fedcloudclient
 $ sudo docker run -it  tdviet/fedcloudclient bash
 ```
+
+{{< /tabx >}}
+{{< tabx header="Mac" >}}
+
+To run the FedCloud client in a container, make sure
+[Docker is installed](https://docs.docker.com/desktop/mac/install/),
+then run the following commands:
+
+```shell
+$ sudo docker pull tdviet/fedcloudclient
+$ sudo docker run -it  tdviet/fedcloudclient bash
+```
+
+{{< /tabx >}}
+{{< tabx header="Windows" >}}
+
+To run the FedCloud client in a container, make sure
+[Docker is installed](https://docs.docker.com/desktop/windows/install/),
+then run the following commands:
+
+```shell
+> docker pull tdviet/fedcloudclient
+> docker run -it  tdviet/fedcloudclient bash
+```
+
+{{< /tabx >}}
+{{< /tabpanex >}}
 
 Once you have a shell running in the container with the FedCloud client, usage
 is the same as from [the command line](#using-from-the-command-line).
