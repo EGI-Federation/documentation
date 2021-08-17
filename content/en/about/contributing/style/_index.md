@@ -65,8 +65,10 @@ checked using [various linters](https://github.com/EGI-Federation/documentation/
 
 ## General writing guidelines
 
-Follow these guidelines to ensure readability and consistency of the EGI
-documentation.
+Follow the guidelines below to ensure readability and consistency of the EGI
+documentation. These are based on the [OpenStack documentation
+writing style](https://docs.openstack.org/doc-contrib-guide/writing-style.html)
+guidelines.
 
 {{% alert title="Tip" color="info" %}} Short and simple sentences are easier
 to read and understand.
