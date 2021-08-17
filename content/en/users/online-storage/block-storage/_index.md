@@ -53,7 +53,7 @@ provider and your SLA.
 
 ## Manage volumes
 
-The Block Storage in the EGI Cloud is offered via
+The block storage in the EGI Cloud is offered via
 [OpenStack](https://openstack.org/) deployments that implement the
 [Cinder](https://docs.openstack.org/cinder/latest/) service.
 
@@ -82,12 +82,9 @@ storage:
 
 The main FedCloud commands for managing volumes are detailed below.
 
-{{% alert title="Note" color="info" %}} For more information check out the
+{{% alert title="Note" color="info" %}} For more information see the
 documentation about
-[volume management](https://docs.openstack.org/cinder/latest/cli/cli-manage-volumes.html),
-and the
-[volume snapshot](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html)
-commands.
+[volume management](https://docs.openstack.org/cinder/latest/cli/cli-manage-volumes.html).
 {{% /alert %}}
 
 ### List volumes
