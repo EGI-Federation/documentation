@@ -6,6 +6,10 @@ weight: 30
 description: >
   EGI FedCloud command line interface
 ---
+<!--
+// jscpd:ignore-start
+-->
+<!-- markdownlint-disable commands-show-output -->
 
 ## Command line tools
 
@@ -106,10 +110,12 @@ distribution. If you receive error message "_SSL exception connecting
 to..._", install the EGI Core Trust Anchor Certificates by running
 the following commands:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ wget https://raw.githubusercontent.com/tdviet/python-requests-bundle-certs/main/scripts/install_certs.sh
 $ bash install_certs.sh
 ```
+<!-- markdownlint-enable line-length -->
 
 {{% alert title="Note" color="info" %}} The above script does not work on all
 Linux distributions. Change _python_ to _python3_ in the script if needed,
@@ -164,9 +170,11 @@ site, the VO and the command. For example, to list virtual machine (VM) images
 available to members of VO _fedcloud.egi.eu_ on the site _CYFRONET-CLOUD_, run
 the following command:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack image list --vo fedcloud.egi.eu --site CYFRONET-CLOUD
 ```
+<!-- markdownlint-enable line-length -->
 
 #### Authentication
 
@@ -220,6 +228,7 @@ Most of the FedCloud client options can be set via environment variables:
 used options like site, VO, access tokens, etc. using environment variables.
 {{% /alert %}}
 
+<!-- markdownlint-disable line-length no-bare-urls -->
 | Environment variable    | Command line option         | Default value           |
 |-------------------------|-----------------------------|-------------------------|
 | OIDC_AGENT_ACCOUNT      | `--oidc-agent-account`      |                         |
@@ -233,6 +242,7 @@ used options like site, VO, access tokens, etc. using environment variables.
 | OPENSTACK_AUTH_TYPE     | `--openstack-auth-type`     | v3oidcaccesstoken       |
 | EGI_SITE                | `--site`                    |                         |
 | EGI_VO                  | `--vo`                      |                         |
+<!-- markdownlint-enable line-length no-bare-urls -->
 
 #### Getting help
 
@@ -240,6 +250,7 @@ The FedCloud client can display help for the commands and subcommands it
 supports. Try running the following command to see the commands supported
 by the FedCloud client:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud --help
 Usage: fedcloud [OPTIONS] COMMAND [ARGS]...
@@ -256,10 +267,12 @@ Commands:
   site           Site command group for manipulation with site...
   token          Token command group for manipulation with tokens
 ```
+<!-- markdownlint-enable line-length -->
 
 Similarly, you can see help for e.g. the `openstack` subcommand by running the
 command below:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack --help
 Usage: fedcloud openstack [OPTIONS] OPENSTACK_COMMAND...
@@ -284,6 +297,7 @@ Options:
   -j, --json-output               Print output as a big JSON object
   --help                          Show this message and exit.
 ```
+<!-- markdownlint-enable line-length -->
 
 {{% alert title="Note" color="info" %}} Most commands support multiple levels
 of subcommands, you can get help for all of them using the same principle as
@@ -312,6 +326,7 @@ OpenStack commands.
 Some FedCloud commands generate output that contains shell commands to set
 environment variables with the returned result:
 
+<!-- markdownlint-disable line-length -->
 ```shell
 $ export EGI_SITE=IISAS-FedCloud
 $ export EGI_VO=eosc-synergy.eu
@@ -326,6 +341,7 @@ $ eval $(fedcloud site show-project-id --site IISAS-FedCloud --vo eosc-synergy.e
 $ echo $OS_AUTH_URL
 https://cloud.ui.savba.sk:5000/v3/
 ```
+<!-- markdownlint-enable line-length -->
 
 #### Processing output from OpenStack commands
 
@@ -340,7 +356,7 @@ output. Check out the [tutorial](https://stedolan.github.io/jq/tutorial/) for
 using it to extract data from JSON sources.
 {{% /alert %}}
 
-
+<!-- markdownlint-disable line-length -->
 ```shell
 $ export EGI_SITE=IISAS-FedCloud
 $ export EGI_VO=eosc-synergy.eu
@@ -381,9 +397,15 @@ $ fedcloud openstack flavor list--json-output | \
     jq -r '.[].Result[] | select(.VCPUs == 2) | .Name'
 m1.medium
 ```
+<!-- markdownlint-enable line-length -->
 
 {{% alert title="Note" color="info" %}} Note that `--json-output` option can
 be used only with those OpenStack commands that have outputs. Using this
 parameter with commands wit no output (e.g. setting properties) will generate
 an unsupported parameter error.
 {{% /alert %}}
+
+<!-- markdownlint-enable commands-show-output -->
+<!--
+// jscpd:ignore-end
+-->
