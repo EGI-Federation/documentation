@@ -153,8 +153,8 @@ To run the FedCloud client in a container, make sure
 then run the following commands:
 
 ```shell
-$ docker pull tdviet/fedcloudclient
-$ docker run -it  tdviet/fedcloudclient bash
+$ sudo docker pull tdviet/fedcloudclient
+$ sudo docker run -it tdviet/fedcloudclient bash
 ```
 
 {{< /tabx >}}
