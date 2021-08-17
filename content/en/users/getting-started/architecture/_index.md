@@ -1,6 +1,6 @@
 ---
 title: "EGI Federation Architecture"
-linkTitle: "Federation Architecture"
+linkTitle: "Architecture"
 type: docs
 weight: 10
 description: >

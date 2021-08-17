@@ -356,8 +356,8 @@ OpenStack commands.
 
 #### Setting environment variables for external tools
 
-Some FedCloud commands generate output that contains shell commands to set
-environment variables with the returned result:
+Some FedCloud commands generate output that contains bash
+shell commands to set environment variables with the returned result:
 
 <!-- markdownlint-disable line-length -->
 ```shell
@@ -378,7 +378,8 @@ https://cloud.ui.savba.sk:5000/v3/
 
 #### Processing output from OpenStack commands
 
-The `fedcloud openstack` subcommand's output can be converted to JSON format
+The `fedcloud openstack` subcommand's output can be converted to
+[JavaScript Object Notation](https://en.wikipedia.org/wiki/JSON) (JSON) format
 by using the `--json-output` option. This is useful for further machine
 processing of the command output.
 
