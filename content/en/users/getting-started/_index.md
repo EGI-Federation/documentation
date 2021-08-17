@@ -33,7 +33,7 @@ EGI Federated Cloud architecture.
 
 Access to resources (services) in EGI FedCloud is based on X.509 certificates.
 The certificates are issued by Certification Authorities (CAs) part of the
-[European Policy Management Authority for Grid Authentication](https://www.eugridpma.org) 
+[European Policy Management Authority for Grid Authentication](https://www.eugridpma.org)
 (EUGridPMA), which is also part of the
 [International Global Trust Federation](https://www.igtf.net) (IGTF).
 

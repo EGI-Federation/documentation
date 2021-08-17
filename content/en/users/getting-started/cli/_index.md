@@ -36,8 +36,8 @@ FedCloud client has the following modules (features):
   allows checking validity of access tokens and listing
   [Virtual Organisations](../../check-in/vos) (VOs) of a token
 - [**Endpoint**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.endpoint)
-  can search endpoints in the [Configuration Database](../../../internal/configuration-database) and extract site-specific information from
-  unscoped/scoped tokens
+  can search endpoints in the [Configuration Database](../../../internal/configuration-database)
+  and extract site-specific information from unscoped/scoped tokens
 - [**Sites**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.sites)
   allows management of site configurations
 - [**OpenStack**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.openstack)
@@ -58,6 +58,7 @@ To install the FedCloud client:
 $ pip3 install fedcloudclient
 ```
 
+<!-- markdownlint-disable no-space-in-emphasis -->
 This installs the latest version of the FedCloud client, together with
 its required packages (like _openstackclient_). It will also create
 executables **fedcloud** and **openstack**, adding them to the _bin_
@@ -65,6 +66,7 @@ folder  corresponding to your current Python execution environment
 (_$VIRTUAL_ENV/bin_ for executing pip3 in a Python virtual environment,
 _~/.local/bin_ for executing pip3 as user (with --user option), and
 _/usr/local/bin_ when executing pip3 as root).
+<!-- markdownlint-enable no-space-in-emphasis -->
 
 {{< /tabx >}}
 {{< tabx header="Windows" >}}
@@ -244,7 +246,7 @@ the protocol fixed in the site configuration (e.g. `oidc` for the site
 INFN-CLOUD-BARI).
 
 The default OIDC identity provider is EGI Check-in (https://aai.egi.eu/oidc).
-Users can set another OIDC identity provider via option `--oidc-url`. 
+Users can set another OIDC identity provider via option `--oidc-url`.
 
 {{% alert title="Note" color="info" %}} Remember to also set the identity
 provider's name accordingly for OpenStack commands, by using the option `--openstack-auth-provider`.
