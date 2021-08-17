@@ -42,7 +42,8 @@ is driven by requirements of the scientific community.
 {{% alert title="Tip" color="info" %}} See also an
 [overview](https://www.egi.eu/federation/egi-federated-cloud/the-egi-federated-cloud-architecture/)
 and a [technical summary](architecture) of the
-EGI Federated Cloud architecture.
+EGI FedCloud architecture, or read about the [task force](task-force)
+behind EGI FedCloud.
 {{% /alert %}}
 
 ## Accessing resources
