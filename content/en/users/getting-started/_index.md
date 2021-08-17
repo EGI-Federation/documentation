@@ -48,11 +48,10 @@ behind EGI FedCloud.
 
 ## Accessing resources
 
-Access to resources (services) in EGI FedCloud is based on X.509 certificates.
-The certificates are issued by Certification Authorities (CAs) part of the
-[European Policy Management Authority for Grid Authentication](https://www.eugridpma.org)
-(EUGridPMA), which is also part of the
-[International Global Trust Federation](https://www.igtf.net) (IGTF).
+Access to resources (services) in EGI FedCloud is based on
+[OpenID Connect](http://openid.net/connect/), which replaces the legacy
+authentication and authorization based on
+[X.509 proxy certificates with VOMS extensions](../check-in/vos/voms).
 
 **EGI FedCloud uses [Virtual Organisations](../check-in/vos) (VOs) to control
 access to resources**. VOs are fully managed by research communities, allowing
@@ -63,7 +62,7 @@ EGI infrastructure for their scientific needs.
 
 Before users can access a service in the EGI FedCloud, they have to:
 
-1. Obtain an X.509 certficate, by signing up either with [EGI Check-in](../check-in/signup)
+1. Obtain either an X.509 certficate or an EGI ID, by signing up either with [EGI Check-in](../check-in/signup)
    directly, or with one of the community identity providers from the
    EGI infrastructure.
 1. Enroll into one VO before they can use most of the services, as users are
