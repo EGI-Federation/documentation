@@ -215,7 +215,7 @@ Users can choose whether to provide access tokens directly (via option
 `--oidc-access-token`), or generate them on the fly with **oidc-agent**
 (via option `--oidc-agent-account`) or from refresh tokens (via option
 `--oidc-refresh-token`, which must be provided together
-with a option `--oidc-client-id` and option `--oidc-client-secret`).
+with option `--oidc-client-id` and option `--oidc-client-secret`).
 
 {{% alert title="Tip" color="info" %}} Users of EGI Check-in can get a Check-in
 client ID, client secret, and refresh token, as well as all the information
@@ -237,13 +237,13 @@ considered insecure and will be disabled in the near future in favor of using
 {{% /alert %}}
 
 If multiple methods of getting access tokens are given at the same time, the
-FedCloud client will try to get an access tokens from the **oidc-agent** first,
+FedCloud client will try to get an access token from the **oidc-agent** first,
 then obtain one using the refresh token.
 
 The default authentication protocol is `openid`. Users can change the default
 protocol via the option `--openstack-auth-protocol`. However, sites may have
 the protocol fixed in the site configuration (e.g. `oidc` for the site
-INFN-CLOUD-BARI).
+_INFN-CLOUD-BARI_).
 
 <!-- markdownlint-disable no-bare-urls -->
 The default OIDC identity provider is EGI Check-in (https://aai.egi.eu/oidc).
@@ -258,7 +258,7 @@ provider's name accordingly for OpenStack commands, by using the option `--opens
 Most of the FedCloud client options can be set via environment variables:
 
 {{% alert title="Tip" color="info" %}} To save a lot of time, set the frequently
-used options like site, VO, access tokens, etc. using environment variables.
+used options like site, VO, etc. using environment variables.
 {{% /alert %}}
 
 <!-- markdownlint-disable line-length -->
@@ -343,7 +343,7 @@ The FedCloud client can be used as a library for developing other services and
 tools for EGI FedCloud. Most of the functionalities can be called directly from
 Python code without side effects.
 
-An example of the code using fedcloud client is available on
+An usage example is available on
 [GitHub](https://github.com/tdviet/fedcloudclient/blob/master/examples/demo.py).
 Just copy/download the code, add your access token and execute `python demo.py`
 to see how it works.
