@@ -19,8 +19,9 @@ scheduled and executed, the output can be collected from the service(s) that
 executed the job.
 
 {{% alert title="Note" color="info" %}} For more details check out the
-[introduction](../getting-started) to the EGI Federated Cloud (FedCloud) that
-provides the HTC resources, and the [access model](../getting-started#accessing-resources) to those resources.
+[introduction](../getting-started) to the EGI Federated Cloud (FedCloud)
+that provides the HTC resources, and the
+[access model](../getting-started#accessing-resources) to those resources.
 {{% /alert %}}
 
 ## Target users
