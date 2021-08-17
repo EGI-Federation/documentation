@@ -90,9 +90,9 @@ may be open for any user, or it may require requesting access (ordering). The
 EGI services use the following types of access conditions:
 
 - **Wide access** - Users can freely access the service. Login may be required
-  but it's possible with various institutional accounts (through EduGAIN) or
-  with a social IDs (e.g. Google). Example: the
-  [open instance of the EGI Notebooks](https://notebooks.egi.eu/)
+  but it is possible with various institutional accounts (through
+  [EduGAIN](https://edugain.org)), or with social accounts (e.g. Google).
+  Example: the [open instance of the EGI Notebooks](https://notebooks.egi.eu/)
 - **Policy based** - Users are granted access based on specific policies
   defined by the service providers. Access needs to be requested, and will be
   checked for such services. Example: Compute resources and tools allocated to
