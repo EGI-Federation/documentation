@@ -245,6 +245,7 @@ protocol via the option `--openstack-auth-protocol`. However, sites may have
 the protocol fixed in the site configuration (e.g. `oidc` for the site
 INFN-CLOUD-BARI).
 
+<!-- markdownlint-disable no-bare-urls -->
 The default OIDC identity provider is EGI Check-in (https://aai.egi.eu/oidc).
 Users can set another OIDC identity provider via option `--oidc-url`.
 
@@ -260,7 +261,7 @@ Most of the FedCloud client options can be set via environment variables:
 used options like site, VO, access tokens, etc. using environment variables.
 {{% /alert %}}
 
-<!-- markdownlint-disable line-length no-bare-urls -->
+<!-- markdownlint-disable line-length -->
 | Environment variable    | Command line option         | Default value           |
 |-------------------------|-----------------------------|-------------------------|
 | OIDC_AGENT_ACCOUNT      | `--oidc-agent-account`      |                         |
