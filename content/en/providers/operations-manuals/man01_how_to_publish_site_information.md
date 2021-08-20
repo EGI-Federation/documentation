@@ -5,7 +5,7 @@ type: "docs"
 description: "How to publish site information"
 ---
 
-<!-- markdownlint-disable line-length no-bare-urls -->
+<!-- markdownlint-disable line-length -->
 
 | Property             | Value                                                                              |
 | -------------------- | ---------------------------------------------------------------------------------- |
@@ -17,7 +17,7 @@ description: "How to publish site information"
 | Procedure Statement  | Information on how to publish site information in the Information Discovery System |
 | Owner                | SDIS team                                                                          |
 
-<!-- markdownlint-enable line-length no-bare-urls -->
+<!-- markdownlint-enable line-length -->
 
 [EGI profile for the use of the GLUE 2.0 Information Schema](https://documents.egi.eu/public/ShowDocument?docid=1324)
 specifies how the GLUE 2.0 information schema should be used in EGI. It gives
