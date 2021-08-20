@@ -18,12 +18,6 @@ Users submit these tasks to the infrastructure as jobs. After a job have been
 scheduled and executed, the output can be collected from the service(s) that
 executed the job.
 
-{{% alert title="Note" color="info" %}} For more details check out the
-[introduction](../getting-started) to the EGI Federated Cloud (FedCloud)
-that provides the HTC resources, and the
-[access model](../getting-started#accessing-resources) to those resources.
-{{% /alert %}}
-
 ## Target users
 
 The target customers for EGI High Throughput Compute are research communities
@@ -97,3 +91,28 @@ The key components of the EGI High Throughput Compute architecture are:
   infrastructure are
   [HTCondor-CE](https://htcondor-ce.readthedocs.io/en/latest/) and
   [ARC-CE](http://www.nordugrid.org/arc/ce/).
+
+### Access model
+
+Access to HTC resources in the EGI infrastructure is based on X.509
+certificates and [Virtual Organisations](../check-in/vos) (VOs).
+
+VOs are fully managed by research communities, allowing communitites to manage
+their users and grant access to their services and resources. This means
+communities can either own their resources and use EGI services to share
+(federate) them, or can use the resources available in the EGI infrastructure
+for their scientific needs.
+
+Before users can access EGI HTC services, they have to:
+
+1. Obtain an X.509 certficate. The certificates are issued by Certification
+   Authorities (CAs) part of the
+   [European Policy Management Authority for Grid Authentication](https://www.eugridpma.org)
+   (EUGridPMA), which is also part of the
+   [International Global Trust Federation](https://www.igtf.net) (IGTF).
+1. Enroll into a VO before they can use the services, as users are
+   not individually granted access to resources.
+1. Add the certificate to their Internet browser of choice, or import it into
+   the appropriate certificate store of their local machine (on Windows).
+1. Proceed to the [Workload Manager](../workload-manager) to submit HTC jobs or
+   retrieve job results, login using [EGI Check-in](../check-in) when prompted.

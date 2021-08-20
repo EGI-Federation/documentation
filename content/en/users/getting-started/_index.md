@@ -41,17 +41,20 @@ is driven by requirements of the scientific community.
 
 {{% alert title="Tip" color="info" %}} See also an
 [overview](https://www.egi.eu/federation/egi-federated-cloud/the-egi-federated-cloud-architecture/)
-and a [technical summary](architecture) of the
-EGI FedCloud architecture, or read about the [task force](task-force)
-behind EGI FedCloud.
+of the EGI FedCloud architecture, or read about the
+[task force](task-force) supporting it.
 {{% /alert %}}
 
 ## Accessing resources
 
 Access to resources (services) in EGI FedCloud is based on
-[OpenID Connect](http://openid.net/connect/), which replaces the legacy
+[OpenID Connect](http://openid.net/connect/) (OIDC), which replaces the legacy
 authentication and authorization based on
-[X.509 proxy certificates with VOMS extensions](../check-in/vos/voms).
+[X.509 certificates](../check-in/vos/voms).
+
+{{% alert title="Note" color="info" %}} Some services still rely on
+X.509 certificates, e.g. [High Throughput Compute](../high-throughput-compute).
+{{% /alert %}}
 
 **EGI FedCloud uses [Virtual Organisations](../check-in/vos) (VOs) to control
 access to resources**. VOs are fully managed by research communities, allowing
@@ -62,15 +65,16 @@ EGI infrastructure for their scientific needs.
 
 Before users can access a service in the EGI FedCloud, they have to:
 
-1. Obtain either an X.509 certficate or an EGI ID, by signing up either with [EGI Check-in](../check-in/signup)
+1. Obtain a supported ID, by signing up with either [EGI Check-in](../check-in/signup)
    directly, or with one of the community identity providers from the
    EGI infrastructure.
 1. Enroll into one VO before they can use most of the services, as users are
    not individually granted access to resources.
-1. Add the certificate to their Internet browser of choice, or import it into
-   the appropriate certificate store (on Windows).
-1. If they want to use [command line tools](cli), they will also have to
-   obtain OIDC access and refresh tokens.
+1. Authenticate to [EGI Check-in](../check-in) to obtain an OAuth2 access
+   token (and optionally a refresh token).
+1. Manage or use the service by leveraging the access token, either implicitly
+   (web interfaces and dashboards usually hide this from users) or explicitly
+   (e.g. when using [command line tools](cli)).
 
 {{% alert title="Note" color="info" %}} See the [EGI Check-in](../check-in)
 documentation for a detailed description of the Authentication and

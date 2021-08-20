@@ -11,8 +11,8 @@ description: >
 
 The EGI Federated Cloud (FedCloud) Task Force gathers together scientific
 communities, R&D projects, and technology and resource providers so they can
-**design the tools and services that support the federation of providers,
-share best practices, and offer user support and training** in a
+design the tools and services that support the federation of providers,
+share best practices, and offer user support and training in a
 collaborative fashion. This enables community cloud solutions to develop
 faster, with a lower cost, and with a more sustainable future.
 
