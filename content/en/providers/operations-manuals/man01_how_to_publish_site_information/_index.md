@@ -7,15 +7,14 @@ description: "How to publish site information"
 
 <!-- markdownlint-disable line-length -->
 
-| Property             | Value                                                                              |
-| -------------------- | ---------------------------------------------------------------------------------- |
-| Title                | How to publish Site Information                                                    |
-| Policy Group Acronym | OMB                                                                                |
-| Policy Group Name    | Operations Management Board                                                        |
-| Contact Group        | operations-support@mailman.egi.eu                                                  |
-| Document status      | Approved                                                                           |
-| Procedure Statement  | Information on how to publish site information in the Information Discovery System |
-| Owner                | SDIS team                                                                          |
+| Property            | Value                                                                              |
+| ------------------- | ---------------------------------------------------------------------------------- |
+| Title               | How to publish Site Information                                                    |
+| Policy Group        | Operations Management Board (OMB)                                                  |
+| Contact Group       | operations-support@mailman.egi.eu                                                  |
+| Document status     | Approved                                                                           |
+| Procedure Statement | Information on how to publish site information in the Information Discovery System |
+| Owner               | SDIS team                                                                          |
 
 <!-- markdownlint-enable line-length -->
 
