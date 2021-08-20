@@ -30,10 +30,10 @@ The task force members:
   that meets custom community demands.
 - **Provide training and support** for existing and potential users of cloud
   federations about topics such as:
-    - How to port existing applications to the cloud, or develop cloud-native
-      applications
-    - How to operate services in the cloud
-    - How to join a cloud federation as a provider
+  - How to port existing applications to the cloud, or develop cloud-native
+    applications
+  - How to operate services in the cloud
+  - How to join a cloud federation as a provider
 - **Facilitate the reuse of tools and services** across participating cloud
   federations to lower total cost of development and to improve cloud
   sustainability.

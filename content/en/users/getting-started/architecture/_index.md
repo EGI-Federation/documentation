@@ -12,7 +12,7 @@ integrates community, private and/or public clouds into a scalable computing
 platform for research. The Federation pools services from a heterogeneous set
 of cloud providers using a single authentication and authorisation framework
 that allows the portability of workloads across multiple providers, and enables
-bringing computing to data. The current implementation is focused on 
+bringing computing to data. The current implementation is focused on
 Infrastructure-as-a-Service (IaaS) services, but can be easily applied to
 Platform-as-a-Service (PaaS) and Software-as-a-Servcice (SaaS) layers.
 
@@ -58,7 +58,7 @@ The IaaS capabilities (VM, block storage, network management, etc.) must be
 provided via community agreed APIs ([OpenStack](https://docs.openstack.org/wallaby/api/)
 and/or [OCCI](http://www.occi-wg.org/) are supported at the moment)
 that allow integration with [EGI Check-in](../../checkin) for
-authentication and authorisation of users. 
+authentication and authorisation of users.
 
 {{% alert title="Note" color="info" %}} Those providers that limit the
 interaction to web dashboards and do not expose APIs to direct consumption for
@@ -173,7 +173,7 @@ distribution across providers. These images are automatically replicated at
 the providers supporting the community and converted as needed to ensure the
 correct instantiation when used.
 
-AppDB includes a [Virtual Appliance Marketplace](https://appdb.egi.eu/browse/cloud) 
+AppDB includes a [Virtual Appliance Marketplace](https://appdb.egi.eu/browse/cloud)
 supporting Virtual Appliances (VAs), which are clean and lean virtual machine
 images designed to run on a virtualisation platform, that provide a software
 solution out-of-the-box, ready to be used with minimal or no set-up.
