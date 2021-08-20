@@ -10,8 +10,6 @@ description: "How to publish site information"
 | Property             | Value                                                                              |
 | -------------------- | ---------------------------------------------------------------------------------- |
 | Title                | How to publish Site Information                                                    |
-| Document link        | https://docs.egi.eu/providers/operations-manuals/man01                             |
-| Last modified        | 10 August 2014                                                                     |
 | Policy Group Acronym | OMB                                                                                |
 | Policy Group Name    | Operations Management Board                                                        |
 | Contact Group        | operations-support@mailman.egi.eu                                                  |
