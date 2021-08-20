@@ -142,15 +142,15 @@ of these MUST remain.
 | --------------------------- | ----------------------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | GlueSiteName                | RAL-LCG2                      | Free Text, No White Space       | Same as GOCDB name if in GOCDB, your choice.                                                                                                                                  |
 | GlueSiteUniqueID            | RAL-LCG2                      | Identical to your !GlueSiteName | Same as GlueSiteName                                                                                                                                                          |
-| GlueSiteWeb                 | `http://cern.ch/it`           | Free Text                       | Valid URL about the site.                                                                                                                                                     |
+| GlueSiteWeb                 | `https://cern.ch/it`          | Free Text                       | Valid URL about the site.                                                                                                                                                     |
 | GlueSiteLatitude            | 52.42                         | NN.NN                           | Site Latitute.                                                                                                                                                                |
 | GlueSiteLongitude           | 16.91                         | NN.NN                           | Longitude of Site.                                                                                                                                                            |
 | GlueSiteDescription         | Rutherford Lab                | Free Text                       | A long name for the site.                                                                                                                                                     |
 | GlueSiteLocation            | Dublin, Ireland               | Town, City, Country             | An decreasing resolution ending with Country, agree a country name within a country. i.e UK&nbsp;!= United Kingdom. Scotland and the Balkans should write a dynamic provider. |
-| !GlueSiteUserSupportContact | `mailto:helpdesk@example.org` | Valid URL                       | URL for getting support. A ticket                                                                                                                                             |
+| !GlueSiteUserSupportContact | `mailto:helpdesk@example.com` | Valid URL                       | URL for getting support. A ticket                                                                                                                                             |
 | system if available.        |
 | !GlueSiteSysAdminContact    | `xmpp://admins@jabber.org`    | Valid URL                       | How to contact the admins.                                                                                                                                                    |
-| !GlueSiteSecurityContact    | `mailto:security@example.org` | Valid URL                       | How to contact for security related matters.                                                                                                                                  |
+| !GlueSiteSecurityContact    | `mailto:security@example.com` | Valid URL                       | How to contact for security related matters.                                                                                                                                  |
 
 <!-- markdownlint-enable line-length no-bare-urls -->
 
@@ -171,20 +171,20 @@ A format for publishing useful information about sites within the
 
 <!-- markdownlint-disable line-length no-bare-urls -->
 
-| Key           | Example                                            | Type                                                  | Notes                                                                                  |
-| ------------- | -------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GRID          | EGI                                                | [#validgrid List of valid grid names]                 | Multiple ones can be defined.                                                          |
-| WLCG_TIER     | 1                                                  | Tier level of site in WLCG context.                   | Either 0, 1 , 2 , 3 , 4                                                                |
-| WLCG_PARENT   | UK-T1-RAL                                          | Name of the higher (administrative) tier site in WLCG | The WLCG_NAME of the site at a higher tier with WLCG                                   |
-| WLCG_NAME     | IT-ATLAS-federation                                | [#lcgnames Valid WLCG Names]                          | An official WLCG name.                                                                 |
-| WLCG_NAMEICON | `http://example.org/tier2.png`                     | Valid URL                                             | URL to WLCGNAME icon, ideally 80x80 pixels.                                            |
-| EGEE_ROC      | Russia                                             | Valid federated Operations Centre name                | Only applicable if your site is still part of a federated [[Glossary#Operations_Centre | Operations Centre]] ("ROC" according to the old EGEE terminology). Name MUST match the Operations Centre name declared in [https://goc.egi.eu/ GOCDB]. Note. If the site is now part of a NGI, then EGI_NGI MUST be used (see below). |
-| EGI_NGI       | NGI_CZ                                             | Valid NGI                                             | Must agree with the GOC DB                                                             |
-| EGEE_SERVICE  | prod                                               | prod, pps or cert                                     | Which EGEE grid your site is part of, multiple attributes is okay. Obsolete in EGI.    |
-| OLDNAME       | Bristol                                            | text                                                  | If your&nbsp;!GlueSiteName changes at some point please record your old name here.     |
-| ICON          | `http://example.org/icon.png`                      | Valid URL                                             | Icon Image for your site, ideally 80x80 pixels                                         |
-| BLOG          | `http://scotgrid.blogspot.com/feeds/posts/default` | Valid RSS or Atom Feed                                | Your site blog if you have one                                                         |
-| CONFIG        | yaim                                               | yaim, puppet, quattor, ...                            | The configuration tool(s) used at the site                                             |
+| Key           | Example                                             | Type                                                  | Notes                                                                                  |
+| ------------- | --------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GRID          | EGI                                                 | [#validgrid List of valid grid names]                 | Multiple ones can be defined.                                                          |
+| WLCG_TIER     | 1                                                   | Tier level of site in WLCG context.                   | Either 0, 1 , 2 , 3 , 4                                                                |
+| WLCG_PARENT   | UK-T1-RAL                                           | Name of the higher (administrative) tier site in WLCG | The WLCG_NAME of the site at a higher tier with WLCG                                   |
+| WLCG_NAME     | IT-ATLAS-federation                                 | [#lcgnames Valid WLCG Names]                          | An official WLCG name.                                                                 |
+| WLCG_NAMEICON | `https://example.com/tier2.png`                     | Valid URL                                             | URL to WLCGNAME icon, ideally 80x80 pixels.                                            |
+| EGEE_ROC      | Russia                                              | Valid federated Operations Centre name                | Only applicable if your site is still part of a federated [[Glossary#Operations_Centre | Operations Centre]] ("ROC" according to the old EGEE terminology). Name MUST match the Operations Centre name declared in [https://goc.egi.eu/ GOCDB]. Note. If the site is now part of a NGI, then EGI_NGI MUST be used (see below). |
+| EGI_NGI       | NGI_CZ                                              | Valid NGI                                             | Must agree with the GOC DB                                                             |
+| EGEE_SERVICE  | prod                                                | prod, pps or cert                                     | Which EGEE grid your site is part of, multiple attributes is okay. Obsolete in EGI.    |
+| OLDNAME       | Bristol                                             | text                                                  | If your&nbsp;!GlueSiteName changes at some point please record your old name here.     |
+| ICON          | `https://example.com/icon.png`                      | Valid URL                                             | Icon Image for your site, ideally 80x80 pixels                                         |
+| BLOG          | `https://scotgrid.blogspot.com/feeds/posts/default` | Valid RSS or Atom Feed                                | Your site blog if you have one                                                         |
+| CONFIG        | yaim                                                | yaim, puppet, quattor, ...                            | The configuration tool(s) used at the site                                             |
 
 <!-- markdownlint-enable line-length no-bare-urls -->
 
@@ -195,12 +195,12 @@ for that grid.
 
 ```shell
 GlueSiteName: RAL-LCG2
-GlueSiteOtherInfo: BLOG=http://www.gridpp.rl.ac.uk/blog/feed
+GlueSiteOtherInfo: BLOG=https://example.com/blog/feed
 GlueSiteOtherInfo: EGI_NGI=NGI_UK
 GlueSiteOtherInfo: GRID=EGI
 GlueSiteOtherInfo: GRID=GRIDPP
 GlueSiteOtherInfo: GRID=WLCG
-GlueSiteOtherInfo: ICON=http://planet.gridpp.ac.uk/images/tierOneSmall.png
+GlueSiteOtherInfo: ICON=https://example.com/images/tierOneSmall.png
 GlueSiteOtherInfo: WLCG_PARENT=CERN-PROD
 GlueSiteOtherInfo: WLCG_TIER=1
 ```
@@ -223,39 +223,39 @@ GlueSiteOtherInfo: WLCG_TIER=2
 ```
 
 Note that `WLCG_PARENT` is an accounting unit defined in the MOU document, as
-shown in [WLCG topology](http://wlcg-rebus.cern.ch/apps/topology/).
+shown in [WLCG CRIC](https://wlcg-cric-2.cern.ch).
 
 ### Established Grid Name
 
 <!-- markdownlint-disable line-length no-bare-urls -->
 <!-- markdown-link-check-disable -->
 
-| Short Name             | Long Name                                                                                     | URL                                              |
-| ---------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| EGI                    | European Grid Initiative                                                                      | http://www.egi.eu                                |
-| EELA                   | Europe and Latin America                                                                      | http://www.eu-eela.eu/                           |
-| WLCG                   | World LHC Computing Grid                                                                      | http://cern.ch/lcg                               |
-| GRIDPP                 | UK Particle Physics Grid                                                                      | http://www.gridpp.ac.uk                          |
-| UKNGS                  | National UK Grid Service                                                                      | http://www.ngs.ac.uk                             |
-| OSG                    | Open Science Grid (US)                                                                        | http://www.opensciencegrid.org/                  |
-| NDGF                   | Nordic DataGrid Facility                                                                      | http://www.ndgf.org/                             |
-| LondonGrid             | London Grid                                                                                   | http://www.gridpp.ac.uk/tier2/london/            |
-| NORTHGRID              | Northern (UK) Grid                                                                            | http://www.gridpp.ac.uk/northgrid/               |
-| SCOTGRID               | Scottish Grid                                                                                 | http://www.scotgrid.ac.uk/                       |
-| SOUTHGRID              | Southern (UK) Grid                                                                            | http://www.gridpp.ac.uk/southgrid/               |
+| Short Name             | Long Name                                                                                     | URL                                               |
+| ---------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| EGI                    | European Grid Initiative                                                                      | https://www.egi.eu                                |
+| EELA                   | Europe and Latin America                                                                      | https://www.eu-eela.eu/                           |
+| WLCG                   | World LHC Computing Grid                                                                      | https://cern.ch/lcg                               |
+| GRIDPP                 | UK Particle Physics Grid                                                                      | https://www.gridpp.ac.uk                          |
+| UKNGS                  | National UK Grid Service                                                                      | https://www.ngs.ac.uk                             |
+| OSG                    | Open Science Grid (US)                                                                        | https://www.opensciencegrid.org/                  |
+| NDGF                   | Nordic DataGrid Facility                                                                      | https://www.ndgf.org/                             |
+| LondonGrid             | London Grid                                                                                   | https://www.gridpp.ac.uk/tier2/london/            |
+| NORTHGRID              | Northern (UK) Grid                                                                            | https://www.gridpp.ac.uk/northgrid/               |
+| SCOTGRID               | Scottish Grid                                                                                 | https://www.scotgrid.ac.uk/                       |
+| SOUTHGRID              | Southern (UK) Grid                                                                            | https://www.gridpp.ac.uk/southgrid/               |
 | Academic Grid Malaysia | Malaysian Grid                                                                                |
-| UPM Campus Grid        | Universiti Putra Malaysia                                                                     | http://www.upm.edu.my/                           |
-| AEGIS                  | Academic and Educational Grid Initiative of Serbia                                            | http://www.aegis.rs/                             |
-| BIGGRID                | Dutch e-science Grid                                                                          | http://www.biggrid.nl/                           |
-| Consorzio Cometa       | Consorzio Multi-Ente per la promozione e l'adozione di Tecnologie di calcolo Avanzato (Italy) | http://www.consorzio-cometa.it/en                |
-| D-Grid                 | German Grid                                                                                   | http://www.d-grid-gmbh.de/index.php?id=1&amp;L=1 |
-| EUMED                  | EU/Mediterranean Grid                                                                         | http://www.eumedgrid.eu/                         |
-| GILDA                  | Grid INFN Laboratory for Dissemination Activities (Italy)                                     | http://gilda.ct.infn.it/                         |
-| GISELA                 | Grid Initiative for e-Science virtual communities in Europe and Latin America                 | http://www.gisela-grid.eu/                       |
-| GRISU                  | Griglia del Sud (Southern Italy Grid)                                                         | http://www.grisu-org.it/                         |
-| NEUGRID                | Neuroscience Grid                                                                             | https://neugrid4you.eu/background                |
-| RDIG                   | Russian Data Intensive Grid                                                                   | http://grid-eng.jinr.ru/?page_id=43              |
-| SEE-GRID               | South Eastern European GRid-enabled eInfrastructure Development                               | http://www.see-grid.org/                         |
+| UPM Campus Grid        | Universiti Putra Malaysia                                                                     | https://www.upm.edu.my/                           |
+| AEGIS                  | Academic and Educational Grid Initiative of Serbia                                            | https://www.aegis.rs/                             |
+| BIGGRID                | Dutch e-science Grid                                                                          | https://www.biggrid.nl/                           |
+| Consorzio Cometa       | Consorzio Multi-Ente per la promozione e l'adozione di Tecnologie di calcolo Avanzato (Italy) | https://www.consorzio-cometa.it/en                |
+| D-Grid                 | German Grid                                                                                   | https://www.d-grid-gmbh.de/index.php?id=1&amp;L=1 |
+| EUMED                  | EU/Mediterranean Grid                                                                         | https://www.eumedgrid.eu/                         |
+| GILDA                  | Grid INFN Laboratory for Dissemination Activities (Italy)                                     | https://gilda.ct.infn.it/                         |
+| GISELA                 | Grid Initiative for e-Science virtual communities in Europe and Latin America                 | https://www.gisela-grid.eu/                       |
+| GRISU                  | Griglia del Sud (Southern Italy Grid)                                                         | https://www.grisu-org.it/                         |
+| NEUGRID                | Neuroscience Grid                                                                             | https://neugrid4you.eu/background                 |
+| RDIG                   | Russian Data Intensive Grid                                                                   | https://grid-eng.jinr.ru/?page_id=43              |
+| SEE-GRID               | South Eastern European GRid-enabled eInfrastructure Development                               | https://www.see-grid.org/                         |
 
 <!-- markdown-link-check-enable -->
 <!-- markdownlint-enable line-length no-bare-urls -->
@@ -289,10 +289,9 @@ commitments to LHC computing.
 | US-FNAL-CMS  | USCMS-FNAL-W1        |
 | US-T1-BNL    | BNL-LCG2             |
 
-For the tier two names please consult
-[WLCG topology](http://wlcg-rebus.cern.ch/apps/topology/). The column marked
-`Accounting Name` are the WLCG Names which in the case of Tier2s are the GOCDB
-names. Use your site GOCDB name as your WLCG_NAME.
+For the tier two names please consult [WLCG CRIC](https://wlcg-cric-2.cern.ch/).
+The column marked `Accounting Name` are the WLCG Names which in the case of
+Tier2s are the GOCDB names. Use your site GOCDB name as your WLCG_NAME.
 
 Also some tier2s live under more than 1 tier1 perhaps for different for
 different VOs. If your tier2 has more that one WLCG_PARENT then just add two
@@ -325,13 +324,13 @@ submitted to sites in the normal way.
 | --------------------------------------- | -------------------------------------------------------------- |
 | SITE_NAME=RAL_LCG2                      | GlueSiteName: RAL-LCG2                                         |
 | SITE_DESC="Rutherford Lab"              | GlueSiteDescription: Rutherford Lab                            |
-| SITE_EMAIL= steve@example.org           | GlueSiteSysAdminContact: mailto:steve@example.org              |
-| SITE_SUPPORT_EMAIL= steve@example.org   | GlueSiteUserSupportContact: mailto:steve@example.org           |
-| SITE_SECURITY_EMAIL= steve@example.org  | GlueSiteSecurityContact: mailto:steve@example.org              |
+| SITE_EMAIL= steve@example.com           | GlueSiteSysAdminContact: mailto:steve@example.com              |
+| SITE_SUPPORT_EMAIL= steve@example.com   | GlueSiteUserSupportContact: mailto:steve@example.com           |
+| SITE_SECURITY_EMAIL= steve@example.com  | GlueSiteSecurityContact: mailto:steve@example.com              |
 | SITE_LOC="Soho, London, United Kingdom" | GlueSiteLocation: Soho, London, United Kingdom                 |
 | SITE_LONG=52.45                         | GlueSiteLongitude: 52.45                                       |
 | SITE_LAT=-12.34                         | GlueSiteLatitude: -12.34                                       |
-| SITE_WEB="http://example.org/"          | GlueSiteWeb: http://example.org/                               |
+| SITE_WEB="https://example.com/"         | GlueSiteWeb: https://example.com/                              |
 | SITE_OTHER_GRID="EGI\|WLCG"             | GlueSiteOtherInfo: GRID=EGI<br />GlueSiteOtherInfo: GRID=WLCG  |
 | SITE_OTHER_EGEE_ROC="UK/I"              | GlueSiteOtherInfo: EGEE_ROC=UK/I                               |
 | SITE_OTHER_EGI_NGI="NGI_CZ"             | GlueSiteOtherInfo: EGI_NGI=NGI_CZ                              |
@@ -354,7 +353,7 @@ $ ldapsearch -x -H ldap://$SITE_BDII_HOST:2170 \
   '(ObjectClass=GlueSite)'
 ```
 
-In addition, [VAPOR](http://operations-portal.egi.eu/vapor/) is a tool which
+In addition, [VAPOR](https://operations-portal.egi.eu/vapor/) is a tool which
 provides a GUI for different views of published information, including a LDAP
 view.
 
