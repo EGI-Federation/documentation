@@ -29,9 +29,9 @@ validated to ensure accuracy.
 
 The site BDII needs to be configured to read from every node in the site which
 publishes information (meaning that it runs a so-called resource BDII). In YAIM
-this is defined with the BDII*REGIONS variable, which contains a list of node
-names which in turn refer to variables called BDII*&lt;NODE&gt;\_URL which
-specify the LDAP URL of each resource BDII.
+this is defined with the `BDII_REGIONS` variable, which contains a list of node
+names which in turn refer to variables called `BDII_NODE_URL` which specify the
+LDAP URL of each resource BDII.
 
 Some services may have DNS aliases for multiple hosts, but the BDII_REGIONS must
 contain the real hostnames for each underlying node - the information in the
@@ -124,7 +124,7 @@ different structure).
 
 ### Service-related documentation
 
-#### Federated Cloud BDII configuration ===
+#### Federated Cloud BDII configuration
 
 For information about configuration of a Federated Cloud BDII, please look at
 the HOWTO15: [[HOWTO15 How to configure the Federated Cloud BDII]]
@@ -189,7 +189,7 @@ A format for publishing useful information about sites within the
 Note. Keywords starting with one of the grid names are to some extent reserved
 for that grid.
 
-#### Example
+### Example
 
 ```shell
 GlueSiteName: RAL-LCG2
@@ -203,7 +203,7 @@ GlueSiteOtherInfo: WLCG_PARENT=CERN-PROD
 GlueSiteOtherInfo: WLCG_TIER=1
 ```
 
-#### Distributed Tier1s and Tier2s
+### Distributed Tier1s and Tier2s
 
 Within an WLCG context for instance there are instances of distributed Tier2s
 and Tier1s. If separate component sites want to exist as a single WLCG tier then
@@ -265,7 +265,7 @@ associated with a particular Resource Infrastructure Provider either technically
 or as part of a collaboration. The list of Grids can be extended. Please contact
 operations@egi.eu to request changes.
 
-#### Valid WLCG Names
+### Valid WLCG Names
 
 The WLCG names are the site names that appear within the LCG MOU concerning
 commitments to LHC computing.
@@ -305,12 +305,12 @@ GlueSiteOtherInfo: WLCG_PARENT=UK-T1-RAL
 GlueSiteOtherInfo: WLCG_PARENT=NL-T1
 ```
 
-#### Valid EGI NGI Names
+### Valid EGI NGI Names
 
 The valid names are those published on
 [GOCDB](https://goc.egi.eu/portal/index.php?Page_Type=NGIs).
 
-### YAIM Instructions
+## YAIM Instructions
 
 YAIM will have to be updated for those sites using yaim. This will be done and
 submitted to sites in the normal way.
@@ -340,7 +340,7 @@ submitted to sites in the normal way.
 If multiple values for `GlueSiteOtherInfo` are needed, then just delimit your
 values with a `|`The character `|` must be avoided in values.
 
-### Check your own GlueSite Object
+## Check your own GlueSite Object
 
 The information published can be checked through an ldap search:
 
@@ -354,13 +354,13 @@ In addition, [VAPOR](http://operations-portal.egi.eu/vapor/) is a tool which
 provides a GUI for different views of published information, including a LDAP
 view.
 
-### Site information in GLUE 2
+## Site information in GLUE 2
 
 The GLUE 2 equivalent of the GlueSite object is the GLUE2AdminDomain. The same
 information should be present although in a slightly different format, and there
 are separate GLUE2Contact and GLUE2Location objects.
 
-== Revision History ==
+## Revision History
 
 <!-- markdownlint-disable line-length -->
 
