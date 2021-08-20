@@ -21,11 +21,11 @@ description: "How to publish site information"
 
 <!-- markdownlint-enable line-length no-bare-urls -->
 
-- [EGI profile for the use of the GLUE 2.0 Information Schema](https://documents.egi.eu/public/ShowDocument?docid=1324) -
-  This document specifies how the GLUE 2.0 information schema should be used in
-  EGI. It gives detailed guidance on what should be published, how the
-  information should be interpreted, what kinds of uses are likely, and how the
-  information may be validated to ensure accuracy.
+[EGI profile for the use of the GLUE 2.0 Information Schema](https://documents.egi.eu/public/ShowDocument?docid=1324)
+specifies how the GLUE 2.0 information schema should be used in EGI. It gives
+detailed guidance on what should be published, how the information should be
+interpreted, what kinds of uses are likely, and how the information may be
+validated to ensure accuracy.
 
 ## Configuring a site BDII
 
@@ -222,8 +222,8 @@ GlueSiteOtherInfo: WLCG_PARENT=FZK-LCG2
 GlueSiteOtherInfo: WLCG_TIER=2
 ```
 
-Note that WLCG_PARENT is an accounting unit defined in the MOU document, as
-shown in http://wlcg-rebus.cern.ch/apps/topology/
+Note that `WLCG_PARENT` is an accounting unit defined in the MOU document, as
+shown in [WLCG topology](http://wlcg-rebus.cern.ch/apps/topology/).
 
 ### Established Grid Name
 
@@ -287,9 +287,10 @@ commitments to LHC computing.
 | US-FNAL-CMS  | USCMS-FNAL-W1        |
 | US-T1-BNL    | BNL-LCG2             |
 
-For the tier two names please consult http://wlcg-rebus.cern.ch/apps/topology/
-The column marked `Accounting Name` are the WLCG Names which in the case of
-Tier2s are the GOCDB names. Use your site GOCDB name as your WLCG_NAME.
+For the tier two names please consult
+[WLCG topology](http://wlcg-rebus.cern.ch/apps/topology/). The column marked
+`Accounting Name` are the WLCG Names which in the case of Tier2s are the GOCDB
+names. Use your site GOCDB name as your WLCG_NAME.
 
 Also some tier2s live under more than 1 tier1 perhaps for different for
 different VOs. If your tier2 has more that one WLCG_PARENT then just add two
@@ -316,7 +317,7 @@ The valid names are those published on
 YAIM will have to be updated for those sites using yaim. This will be done and
 submitted to sites in the normal way.
 
-<!-- markdownlint-disable line-length no-bare-urls -->
+<!-- markdownlint-disable line-length no-bare-urls no-inline-html -->
 
 | YAIM Variable and Value                 | Resulting Glue Attribute and Value                             |
 | --------------------------------------- | -------------------------------------------------------------- |
@@ -336,7 +337,7 @@ submitted to sites in the normal way.
 | SITE_OTHER_WLCG_TIER=2                  | GlueSiteOtherInfo: WLCG_TIER=2                                 |
 | SITE_OTHER\*<KEY>="<VALUE1>\|<VALUE2>"  | GlueSiteOtherInfo: KEY=<VALUE1>GlueSiteOtherInfo: KEY=<VALUE2> |
 
-<!-- markdownlint-enable line-length no-bare-urls -->
+<!-- markdownlint-enable line-length no-bare-urls no-inline-html -->
 
 If multiple values for `GlueSiteOtherInfo` are needed, then just delimit your
 values with a `|`The character `|` must be avoided in values.
