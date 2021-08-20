@@ -11,8 +11,7 @@ menu:
 ---
 
 This section offers an [introduction](getting-started) to the
-EGI Federated Cloud (FedCloud) and contains detailed documentation for
-[public EGI services](https://www.egi.eu/services/), togheter with
+[EGI services](https://www.egi.eu/services/), together with
 [tutorials](tutorials) about how to set up, use, and combine these services.
 
 {{% alert title="Note" color="info" %}} See the [Service Providers](../providers)
