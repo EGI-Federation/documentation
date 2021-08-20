@@ -4,8 +4,6 @@ name: Preview pull requests
 # https://github.com/peaceiris/actions-hugo
 # Deploy to GitHub pages
 # https://github.com/peaceiris/actions-gh-pages
-#
-# FIXME: deploy to a path corresponding to the current PR
 
 on:
   pull_request:
@@ -48,7 +46,8 @@ jobs:
         run: npm ci
 
       - name: Build and minify using Hugo
-        run: hugo --minify
+        # Build in a directory specific to the PR number
+        run: hugo --minify --destination public/${{ github.event.number }}
 
       - name: Generate token for pushing content
         uses: tibdex/github-app-token@v1
