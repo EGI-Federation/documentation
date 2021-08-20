@@ -2,13 +2,15 @@
 title: "DataHub"
 linkTitle: "DataHub"
 type: docs
-description: "Documentation related to [EGI DataHub](https://datahub.egi.eu/)"
+description:
+  "Documentation related to [EGI DataHub
+  Service](https://www.egi.eu/services/datahub/)"
 weight: 90
 ---
 
 ## Overview
 
-The DataHub allows to:
+The [EGI DataHub](https://datahub.egi.eu/) allows to:
 
 - Bring data close to the computing to exploit it efficiently.
 - Publish a dataset and make it available to a specific community or worldwide

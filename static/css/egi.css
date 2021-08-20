@@ -154,3 +154,26 @@ footer {
 div.code-toolbar > .toolbar {
   right: 0.45em;
 }
+
+div.code-toolbar > .toolbar button {
+  background: rgba(224, 224, 224, 0.9);
+  box-shadow: 0 2px 0 0 rgb(100 100 100 / 30%);
+}
+
+/* Tables in code excerpts */
+
+.tabx-content table {
+  width: 100%;
+}
+
+.tabx-content thead {
+  background-color: #f8f8f8;
+}
+
+.tabx-content tr {
+  vertical-align: top;
+}
+
+.tabx-content td {
+  padding-right: 5px;
+}
