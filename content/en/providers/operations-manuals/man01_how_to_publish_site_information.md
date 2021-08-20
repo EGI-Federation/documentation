@@ -228,6 +228,7 @@ shown in [WLCG topology](http://wlcg-rebus.cern.ch/apps/topology/).
 ### Established Grid Name
 
 <!-- markdownlint-disable line-length no-bare-urls -->
+<!-- markdown-link-check-disable -->
 
 | Short Name             | Long Name                                                                                     | URL                                              |
 | ---------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------ |
@@ -256,6 +257,7 @@ shown in [WLCG topology](http://wlcg-rebus.cern.ch/apps/topology/).
 | RDIG                   | Russian Data Intensive Grid                                                                   | http://grid-eng.jinr.ru/?page_id=43              |
 | SEE-GRID               | South Eastern European GRid-enabled eInfrastructure Development                               | http://www.see-grid.org/                         |
 
+<!-- markdown-link-check-enable -->
 <!-- markdownlint-enable line-length no-bare-urls -->
 
 > Important: The EGEE Grid name was decomissioned on
