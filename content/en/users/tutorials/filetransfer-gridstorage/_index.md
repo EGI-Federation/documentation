@@ -30,10 +30,24 @@ To access services and resources in the
 - Enrollment into a [Virtual Organisation](../../check-in/vos) (VO) that has
   access to the services and resources you need
 
-Although provisioning, configuration, and access to EGI Cloud services is
-usually done with a web dashboard/user interface, the examples in this tutorial
-will make extensive use the [command line interface](../../getting-started/cli)
-(CLI).
+
+
+
+<!-- markdownlint-disable line-length -->
+```shell
+$ export EGI_SITE=IN2P3-IRES
+$ export EGI_VO=vo.access.egi.eu
+$ fedcloud openstack volume list
+Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
++--------------------------------------+--------+-----------+------+--------------------------------+
+| ID                                   | Name   | Status    | Size | Attached to                    |
++--------------------------------------+--------+-----------+------+--------------------------------+
+| 9a4000fb-0bcc-47e8-96fb-85a222295402 | Matlab | in-use    |   50 | Attached to Moodle on /dev/vdb |
+| b0abcda6-1002-4493-996b-9f03bc677625 |        | available |   30 |                                |
++--------------------------------------+--------+-----------+------+--------------------------------+
+```
+<!-- markdownlint-enable line-length -->
+
 
 <!-- If needed, mention other tools/CLIs/requirements, then remove this -->
 <!-- markdownlint-enable inline-html -->
