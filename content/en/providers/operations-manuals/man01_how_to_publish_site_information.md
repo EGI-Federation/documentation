@@ -30,16 +30,16 @@ validated to ensure accuracy.
 The site BDII needs to be configured to read from every node in the site which
 publishes information (meaning that it runs a so-called resource BDII). In YAIM
 this is defined with the `BDII_REGIONS` variable, which contains a list of node
-names which in turn refer to variables called `BDII_NODE_URL` which specify the
-LDAP URL of each resource BDII.
+names which in turn refer to variables called `BDII_<NODE>_URL` which specify
+the LDAP URL of each resource BDII.
 
-Some services may have DNS aliases for multiple hosts, but the BDII_REGIONS must
-contain the real hostnames for each underlying node - the information in the
-resource BDII is different for each node, so reading it via an alias would
+Some services may have DNS aliases for multiple hosts, but the `BDII_REGIONS`
+must contain the real hostnames for each underlying node - the information in
+the resource BDII is different for each node, so reading it via an alias would
 produce inconsistent results. However, it will usually be desirable for the
 published endpoint URLs to contain the alias rather than the real hostname; that
 can often be defined with a YAIM variable for the service. For the site BDII
-itself this variable is SITE_BDII_HOST. (If multiple site or top BDIIs are
+itself this variable is `SITE_BDII_HOST`. (If multiple site or top BDIIs are
 configured identically their content will also be identical, so reading via an
 alias does not produce any inconsistencies.)
 
@@ -78,9 +78,10 @@ which should list all the service URLs.
 
 In addition, most services should now be published in GLUE 2 format. There is no
 explicit configuration needed for GLUE 2, but one thing to be aware of is that
-the site name (and the other parts like o=grid) in the GIIS URL field in the GOC
-DB must have the correct case as GLUE 2 is case-sensitive. To verify the GLUE 2
-publication use the command
+the site name (and the other parts like o=grid) in the GIIS URL field in the
+GOCDB must have the correct case as GLUE 2 is case-sensitive.
+
+To verify the GLUE 2 publication use the command:
 
 ```shell
 $ ldapsearch -x -h $SITE_BDII_HOST -p 2170 -b GLUE2DomainID=$SITE_NAME,o=glue \
@@ -127,12 +128,13 @@ different structure).
 #### Federated Cloud BDII configuration
 
 For information about configuration of a Federated Cloud BDII, please look at
-the HOWTO15: [[HOWTO15 How to configure the Federated Cloud BDII]]
+the HOWTO15:
+[HOWTO15 How to configure the Federated Cloud BDII](https://wiki.egi.eu/wiki/HOWTO15).
 
 ## GlueSite Object
 
-These are the existing well established attributes in the ''GlueSite'' object.
-All of these MUST remain.
+These are the existing well established attributes in the `GlueSite` object. All
+of these MUST remain.
 
 <!-- markdownlint-disable line-length no-bare-urls -->
 
@@ -338,7 +340,7 @@ submitted to sites in the normal way.
 <!-- markdownlint-enable line-length no-bare-urls no-inline-html -->
 
 If multiple values for `GlueSiteOtherInfo` are needed, then just delimit your
-values with a `|`The character `|` must be avoided in values.
+values with a `|`. The character `|` must be avoided in values.
 
 ## Check your own GlueSite Object
 
@@ -356,9 +358,9 @@ view.
 
 ## Site information in GLUE 2
 
-The GLUE 2 equivalent of the GlueSite object is the GLUE2AdminDomain. The same
+The GLUE 2 equivalent of the GlueSite object is the `GLUE2AdminDomain`. The same
 information should be present although in a slightly different format, and there
-are separate GLUE2Contact and GLUE2Location objects.
+are separate `GLUE2Contact` and `GLUE2Location` objects.
 
 ## Revision History
 
