@@ -182,14 +182,14 @@ The FedCloud client has these subcommands:
 - **fedcloud token** for checking access tokens
   (see [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-token-commands))
 - **fedcloud endpoint** for querying the Configuration Database
-  (see [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-endpoint-commands))
+  (see token endpoint [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-endpoint-commands))
 - **fedcloud site** for manipulating site configurations
-  (see [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-site-commands))
+  (see site [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-site-commands))
 - **fedcloud openstack** or **fedcloud openstack-int** for performing
   OpenStack commands on sites
-  (see [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-openstack-commands))
+  (see openstack [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-openstack-commands))
 - **fedcloud ec3** for provisioning elastic cloud compute clusters
-  (see [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-ec3-commands))
+  (see cluster [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-ec3-commands))
 
 {{% alert title="Note" color="info" %}} See also the
 [complete documentation](https://fedcloudclient.fedcloud.eu/index.html)

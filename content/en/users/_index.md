@@ -16,8 +16,7 @@ EGI Federated Cloud (FedCloud) and contains detailed documentation for
 [tutorials](tutorials) about how to set up, use, and combine these services.
 
 {{% alert title="Note" color="info" %}} See the [Service Providers](../providers)
-section for details on how to integrate identity providers and service providers
-into EGI FedCloud.
+section for details on how to integrate providers into the EGI Federation.
 {{% /alert %}}
 
 ## Request for information
