@@ -129,7 +129,7 @@ When EGI is able to support a request for resources, it can do so in two ways:
 1. **We create a new VO for your community** when none of the existing resource
    pools are suitable for your use case. The procedure is as follows:
    - We will contact our provider and negotiate resources for you
-   - If there are providers happy to support you, we will sign a Service Level
+   - If there are providers willing to support you, we will sign a Service Level
      Agreement (SLA) with you
    - A new VO will be created for your community
 
