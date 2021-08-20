@@ -70,8 +70,7 @@ To check that all expected services are published the following command can be
 used:
 
 ```shell
-ldapsearch -x -h $SITE_BDII_HOST -p 2170 \
-  -b mds-vo-name=$SITE_NAME,o=grid \
+$ ldapsearch -x -h $SITE_BDII_HOST -p 2170 -b mds-vo-name=$SITE_NAME,o=grid \
   objectclass=GlueService \
   | perl -p00e 's/\r?\n //g' | grep Endpoint:
 ```
@@ -86,8 +85,7 @@ DB must have the correct case as GLUE 2 is case-sensitive. To verify the GLUE 2
 publication use the command
 
 ```shell
-ldapsearch -x -h $SITE_BDII_HOST -p 2170 \
-  -b GLUE2DomainID=$SITE_NAME,o=glue \
+$ ldapsearch -x -h $SITE_BDII_HOST -p 2170 -b GLUE2DomainID=$SITE_NAME,o=glue \
   objectclass=GLUE2Endpoint \
   | perl -p00e 's/\r?\n //g' | grep URL:
 ```
