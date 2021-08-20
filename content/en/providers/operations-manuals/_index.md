@@ -16,7 +16,7 @@ The EGI Operations Manuals are **approved** technical documents that provide
 periodically reviewed, and need to be followed by all partners (as opposed to a
 best-practice documents that provide optional guidelines).
 
-- [MAN01 How to publish Site Information](man01_how_to_publish_site_information)
+- [MAN01 How to publish Site Information](./man01_how_to_publish_site_information)
 - [MAN02 Service intervention management](https://wiki.egi.eu/wiki/MAN02_Service_intervention_management)
 
 ## How-Tos
