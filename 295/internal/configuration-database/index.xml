@@ -1,0 +1,120 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Docs – Configuration Database</title><link>/internal/configuration-database/</link><description>Recent content in Configuration Database on EGI Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/configuration-database/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Access</title><link>/internal/configuration-database/access/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/access/</guid><description>
+&lt;p>To access the &lt;a href="https://goc.egi.eu">web interface&lt;/a> of the EGI Configuration Database
+(GOCDB), users can either:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="#using-institutional-account-via-egi-check-in">Use EGI Check-in&lt;/a>
+with an institutional account, or&lt;/li>
+&lt;li>&lt;a href="#using-an-x509-digital-certificate">Use an X.509 digital certificate&lt;/a>
+installed in the Internet browser, or the local machine&amp;rsquo;s certificate store.&lt;/li>
+&lt;/ul>
+&lt;p>Users can access the system as soon as they are authenticated. However,
+they will only be able to update information based on their roles.
+More information about roles and associated permission is available in the
+&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles">&lt;em>Users and roles&lt;/em>&lt;/a>
+section of the documentation.&lt;/p>
+&lt;p>Applications requesting a specific role have to be validated by parent roles
+or administrators. Once granted, users can access and/or modify relevant
+information, according to the roles granted to them.&lt;/p>
+&lt;h2 id="using-institutional-account-via-egi-check-in">Using institutional account via EGI Check-in&lt;/h2>
+&lt;p>In order to be able to access the Configuration Database with their
+institutional account, users need to:&lt;/p>
+&lt;ol>
+&lt;li>Have their Identity Provider (IdP) federated in EGI Check-in (via
+&lt;a href="https://edugain.org/">eduGAIN&lt;/a> or directly).&lt;/li>
+&lt;li>Have created an &lt;a href="../../../users/check-in/signup">EGI Check-in account&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+In the case the user cannot use an IdP compliant with &lt;a href="https://refeds.org/research-and-scholarship">REFEDS
+R&amp;amp;S&lt;/a> and &lt;a href="https://refeds.org/sirtfi">REFEDS
+Sirtfi&lt;/a>, the user will have to request joining a
+specific group, by performing the steps below. Using a compliant IdP is the
+preferable solution.&lt;/p>
+&lt;ol>
+&lt;li>User should ask to join the &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:41">GOCDB user
+group&lt;/a>.&lt;/li>
+&lt;li>The access request will be managed by the EGI Operations team.&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;h2 id="using-an-x509-digital-certificate">Using an X.509 digital certificate&lt;/h2>
+&lt;p>To access the Configuration Database using a digital certificate, first obtain
+a certificate from one of the recognised EU-Grid-PMA Certification Authorities
+(CAs), then install it in your browser of choice (or import it into the
+certificate store of your local machine, on Windows).&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+&lt;p>X.509 certificates do not support
+single or double quotes in the certificate&amp;rsquo;s Distinguished Name (DN).
+The DN below is rejected because of the single quote:&lt;/p>
+&lt;p>&lt;code>/C=UK/O=STFC/OU=SomeOrgUnit/CN=David Mc'Donald&lt;/code>&lt;/p>
+&lt;p>This is in accordance with &lt;a href="https://tools.ietf.org/html/rfc1778">RFC1778&lt;/a>,
+which also disallows single quotes in all Relative Distinguished Name (RDN)
+components, and the OGF Certificate Authority Working Group (CAOPS) who
+strongly discourage any type of quote in a certificate DN as specified by their
+&lt;a href="https://www.ogf.org/documents/GFD.125.pdf">Grid Certificate Profile&lt;/a> document.&lt;/p>
+&lt;/div></description></item><item><title>Internal: Service information</title><link>/internal/configuration-database/service-info/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-info/</guid><description>
+&lt;h2 id="identity-card">Identity card&lt;/h2>
+&lt;!-- markdownlint-disable line-length no-inline-html no-bare-urls -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Name&lt;/td>
+&lt;td>Configuration Database&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Description&lt;/td>
+&lt;td>Central registry of the infrastructure topology&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>URL&lt;/td>
+&lt;td>&lt;a href="https://goc.egi.eu">https://goc.egi.eu&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Support Email&lt;/td>
+&lt;td>&lt;code>gocdb-admin&lt;/code> &lt;code>&amp;lt;at&amp;gt;&lt;/code> &lt;code>mailman.egi.eu&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="../../helpdesk">Helpdesk&lt;/a> Support Unit&lt;/td>
+&lt;td>&lt;strong>EGI Services and Service Components&lt;/strong> &lt;br/> I__ Configuration Database (GOCDB)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Configuration Database entry&lt;/td>
+&lt;td>&lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=335">https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=335&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Supplier&lt;/td>
+&lt;td>&lt;a href="https://www.ukri.org/">UKRI&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Roadmap&lt;/td>
+&lt;td>&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Roadmap">Roadmap&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Release notes&lt;/td>
+&lt;td>&lt;a href="https://github.com/GOCDB/gocdb/releases">Release notes&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Source code&lt;/td>
+&lt;td>&lt;a href="https://github.com/GOCDB">https://github.com/GOCDB&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Issue tracker for developers&lt;/td>
+&lt;td>&lt;a href="https://github.com/GOCDB/gocdb/issues">https://github.com/GOCDB/gocdb/issues&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>License&lt;/td>
+&lt;td>Apache 2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Privacy Policy&lt;/td>
+&lt;td>&lt;a href="https://goc.egi.eu/privacy.html">https://goc.egi.eu/privacy.html&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length no-inline-html no-bare-urls --></description></item></channel></rss>
