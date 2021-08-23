@@ -56,13 +56,20 @@ jobs:
         with:
           # Use GITHUB_TOKEN allowing to write to local repository
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Do not purge other files
-          # XXX add a way to clean deployed PR that havbe been closed or merged
-          keep_files: true
+          # XXX add a way to clean deployed PR having been closed or merged
+          # Purge older files from a given PR
+          keep_files: false
           # Accessible at http://docs.egi.eu/documentation/
           # XXX use a different domain
           # cname: docs.egi.eu
+          # Branch to push to
           publish_branch: pr_previews
+          # Source directory
+          publish_dir: public/${{ github.event.number }}
+          # Destitnation directory
+          destination_dir: ${{ github.event.number }}
+          # Reuse PR commit message
+          commit_message: ${{ github.event.head_commit.message }}
 
       - name: Update Pull Request
         uses: actions/github-script@v4.1
