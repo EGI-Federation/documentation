@@ -7,7 +7,8 @@ name: Build pull request preview
 
 on:
   pull_request:
-    types: [labeled]
+    # Run when label is added or present and when pushing to the PR
+    types: [labeled, opened, synchronized]
 
 jobs:
   build:
