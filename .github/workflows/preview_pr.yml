@@ -49,26 +49,20 @@ jobs:
         # Build in a directory specific to the PR number
         run: hugo --minify --destination public/${{ github.event.number }}
 
-      - name: Generate token for pushing content
-        uses: tibdex/github-app-token@v1
-        id: generate-token
-        with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
-
-      - name: Deploy
+      - name: Deploy Pull Request preview
         # Deploy should not run on forks
         if: ${{ github.repository == 'EGI-Federation/documentation' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
-          # Use a personal token configured as a repository-specific secret
-          personal_token: ${{ steps.generate-token.outputs.token }}
-          # Push to the preview repository
-          # Accessible at http://docs.egi.eu/documentation-preview/
-          external_repository: EGI-Federation/documentation-preview
+          # Use GITHUB_TOKEN allowing to write to local repository
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Do not purge other files
+          # XXX add a way to clean deployed PR that havbe been closed or merged
+          keep_files: true
+          # Accessible at http://docs.egi.eu/documentation/
           # XXX use a different domain
           # cname: docs.egi.eu
-          publish_branch: main
+          publish_branch: pr_previews
 
       - name: Update Pull Request
         uses: actions/github-script@v4.1
