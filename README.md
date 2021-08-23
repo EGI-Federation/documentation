@@ -18,13 +18,19 @@ Sources files used to build [EGI documentation](https://docs.egi.eu).
 
 ## Requirements
 
-- [hugo](https://gohugo.io)
+- [hugo (extended)](https://gohugo.io)
 - [NodeJS](https://nodejs.org/) and other [docsy](https://www.docsy.dev) theme
   dependencies:
   - postcss-cli
   - autoprofixer
 
 ## Installing dependencies, building and testing locally
+
+Hugo can be installed following
+[the official documentation](https://gohugo.io/getting-started/installing).
+
+Hugo (extended) releases can be downloaded at
+[the Hugo releases page](https://github.com/gohugoio/hugo/releases).
 
 To install npm+nodejs please check the
 [official instructions](https://www.npmjs.com/get-npm).
@@ -38,23 +44,19 @@ The dependencies of the docsy theme can be installed as follows:
 npm ci
 ```
 
-The supported Hugo version is shipped under the `binaries` folder. Updates can
-be downloaded at
-[the Hugo releases page](https://github.com/gohugoio/hugo/releases).
-
 ### Building the site
 
 ```shell
 # From the repository clone root
 git submodule update --init --recursive --depth 1
-./binaries/<platform>/hugo --minify
+hugo --minify
 ```
 
 ### Testing the site locally
 
 ```shell
 # From the repository clone root
-./binaries/<platform>/hugo server -D
+hugo server -D
 ```
 
 The website is available locally at:
