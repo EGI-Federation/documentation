@@ -63,3 +63,17 @@ jobs:
           # XXX use a different domain
           # cname: docs.egi.eu
           publish_branch: pr_previews
+
+      - name: Update Pull Request
+        uses: actions/github-script@v4.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const output = `#### Documentation preview deployed!\`
+            Available at https://docs.egi.eu/documentation/${{ github.event.number }}`;
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
