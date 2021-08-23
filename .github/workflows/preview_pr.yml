@@ -70,7 +70,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const output = `#### Documentation preview deployed!\`
-            Available at https://docs.egi.eu/documentation-preview/${{ github.event.number }}`;
+            Available at https://docs.egi.eu/documentation/${{ github.event.number }}`;
             github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
