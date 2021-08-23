@@ -6,7 +6,7 @@ name: Preview pull requests
 # https://github.com/peaceiris/actions-gh-pages
 
 on:
-  worflow_run:
+  workflow_run:
     workflows: ["Build pull request preview"]
     types: [completed]
 
