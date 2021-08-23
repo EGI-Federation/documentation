@@ -26,10 +26,16 @@ jobs:
           # Fetch all history for .GitInfo and .Lastmod
           fetch-depth: 0
 
+      - name: Get Hugo version
+        id: hugo_version
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: .github/workflows/hugo_version.txt
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.85.0"
+          hugo-version: "${{ steps.package.outputs.content }}"
           extended: true
 
       - name: Setup Node
