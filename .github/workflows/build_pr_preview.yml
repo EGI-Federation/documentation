@@ -2,8 +2,6 @@
 name: Build pull request preview
 # Setup and build files with hugo
 # https://github.com/peaceiris/actions-hugo
-# Deploy to GitHub pages
-# https://github.com/peaceiris/actions-gh-pages
 
 on:
   pull_request:
@@ -13,9 +11,10 @@ on:
 jobs:
   build:
     # Do not run on forks, and only if "safe for preview" label is set
-    if: >
-      ${{ github.repository == 'EGI-Federation/documentation' &&
-      github.event.label.name == 'safe for preview' }}
+    if: |
+      github.repository == 'EGI-Federation/documentation' &&
+      ((github.event.action == 'labeled' && github.event.label.name == 'safe for preview') ||
+      (github.event.action != 'labeled' && contains(github.event.pull_request.labels.*.name, 'safe for preview')))
     name: Build with Hugo
     runs-on: ubuntu-18.04
     steps:
