@@ -135,7 +135,7 @@ When EGI is able to support a request for resources, it can do so in two ways:
 
 ## Unused resources
 
-Users in the EGI FedCloud may gain opportunistic usage to unused resources.
+Users of the EGI services may gain opportunistic usage to unused resources.
 These are resources that are not dedicated to the user's organization, but are
 accessible when the research center(s) have some spare resources.
 This enables the most efficient use of resources.
