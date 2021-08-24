@@ -59,7 +59,7 @@ jobs:
           # Branch to push to
           publish_branch: pr_previews
           # Source directory
-          publish_dir: ${{ github.event.number }}/
+          publish_dir: ./${{ github.event.number }}
           # Destitnation directory
           destination_dir: ${{ github.event.number }}
           # Reuse PR commit message
