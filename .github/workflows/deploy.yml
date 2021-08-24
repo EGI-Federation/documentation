@@ -13,6 +13,8 @@ on:
 jobs:
   deploy:
     name: Build using Hugo and deploy
+    # Deploy should not run on forks
+    if: ${{ github.repository == 'EGI-Federation/documentation' }}
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -62,8 +64,6 @@ jobs:
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Deploy
-        # Deploy should not run on forks
-        if: ${{ github.repository == 'EGI-Federation/documentation' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           # Use a personal token configured as a repository-specific secret
