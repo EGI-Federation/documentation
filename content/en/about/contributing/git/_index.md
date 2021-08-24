@@ -149,8 +149,10 @@ The dependencies of the docsy theme can be installed as follows:
 npm ci
 ```
 
-The supported Hugo version is shipped under the `binaries` folder.
-Updates can be downloaded from
+Hugo can be installed following
+[the official documentation](https://gohugo.io/getting-started/installing).
+
+Hugo (extended) releases can be downloaded at
 [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
 
 ### Building the site
@@ -159,7 +161,7 @@ To build and run the site, from the repository root:
 
 ```shell
 git submodule update --init --recursive --depth 1
-./binaries/<platform>/hugo --minify
+hugo --minify
 ```
 
 ### Testing the site locally
@@ -167,7 +169,7 @@ git submodule update --init --recursive --depth 1
 To launch the site locally, from the repository root:
 
 ```shell
-./binaries/<platform>/hugo serve -D
+hugo serve -D
 ```
 
 The website is available locally at:
@@ -241,14 +243,29 @@ git push --set-upstream
 ```
 
 Once done, the output will show a URL that you can click to generate a Pull
-Request (PR). Accessing GitHub upstream of forked repositories may also
-propose you to submit a PR.
+Request (PR). Accessing GitHub upstream of forked repositories may also propose
+you to submit a PR.
 
 If needed GitHub CLI can also be used to prepare the PR:
 
 ```shell
 gh pr create <your_username>:<feature_branch> --web
 ```
+
+### Previewing a pull request
+
+If a repository maintainer adds the label `safe for preview` to a pull request
+it will be possible to preview it using a pull request-specific URL:
+`https://docs.egi.eu/documentation/[PR_NUMBER]`
+
+The preview can be used as an alternative to testing a pull request locally, and
+the preview can easily be shared with other contributors.
+
+Only collaborators having write permission to the repository are able to mark a
+pull request as safe for review.
+
+> This should be carefully considered, especially for external and first time
+> contributors.
 
 ### Update local feature branch with changes made on the PR
 
@@ -313,7 +330,7 @@ Once done it's possible to build and run the site locally:
 ```shell
 # From the root of the repository clone
 # Here on MacOS X, adapt depending on your platform
-./binaries/macos64/hugo server -D
+hugo server -D
 ```
 
 The documentation will then be accessible on
