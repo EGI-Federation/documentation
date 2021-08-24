@@ -12,7 +12,7 @@ This documentation covers how to install and configure a OneData OneProvider in
 order to join a new or existing EGI DataHub space. In particular two types of
 installations are available, depending if the provider wants to support the
 space with an empty storage or if existing data should be exposed via the
-OneProvider.
+Oneprovider.
 
 ## Requirements for production installation
 
