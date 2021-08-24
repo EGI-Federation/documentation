@@ -1283,7 +1283,7 @@ https://cecream-cyb.ca.infn.it:8443/CREAM126335182
 &lt;span style="color:#000">Status&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>CANCELLED&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;span style="color:#000">ExitCode&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>
 &lt;span style="color:#000">Description&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>Cancelled by user&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="arc-ce-checks">ARC CE checks&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="arc-ce-checks">ARC CE checks&lt;/h3>
 &lt;p>A first test can be done using ARC&amp;rsquo;s &lt;code>ngstat&lt;/code> command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ /usr/bin/ngstat -q -l -c &amp;lt;CE hostname&amp;gt; -t &lt;span style="color:#0000cf;font-weight:bold">20&lt;/span>
 ...
@@ -1526,8 +1526,8 @@ monitor Unicore / Xa and TSI log files.&lt;/p>
 &lt;h5 id="after-testing">After testing&lt;/h5>
 &lt;p>If testing was successful, you can unlock the registration system in the global
 registry.&lt;/p>
-&lt;h3 id="qcg-checks">QCG checks&lt;/h3>
-&lt;h4 id="qcg-computhng-checks">QCG Computhng checks&lt;/h4>
+&lt;h2 id="qcg-checks">QCG checks&lt;/h2>
+&lt;h3 id="qcg-computhng-checks">QCG Computhng checks&lt;/h3>
 &lt;p>The presented tests of QCG-Computing service use the qcg-comp, the client
 program for QCG-Computing, that may be installed from provided RPMS. In order to
 connect to QCG-Computing the grid proxy must be created.&lt;/p>
@@ -1552,7 +1552,7 @@ Activity Id: ccb6b04a-887b-4027-633f-412375559d73
 $ qcg-comp -s -a ccb6b04a-887b-4027-633f-412375559d73
 &lt;span style="color:#000">status&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> Finished
 &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#000">status&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="qcg-notification-checks">QCG Notification checks&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="qcg-notification-checks">QCG Notification checks&lt;/h3>
 &lt;p>The tests of QCG-Notification require &lt;code>qcg-ntf-client&lt;/code> program to be installed
 in a system. The program is provided in RPM package.&lt;/p>
 &lt;p>&lt;strong>Create a sample subscription:&lt;/strong>&lt;/p>
@@ -1577,7 +1577,7 @@ NOT Oct &lt;span style="color:#0000cf;font-weight:bold">04&lt;/span> 10:55:33 &l
 NOT Oct &lt;span style="color:#0000cf;font-weight:bold">04&lt;/span> 10:55:33 &lt;span style="color:#0000cf;font-weight:bold">18929&lt;/span> 0x2adadc2abe30 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>.....ntf_client&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> FaultString: &lt;span style="color:#4e9a06">&amp;#39;smcm:ActivityState&amp;#39;&lt;/span>
 NOT Oct &lt;span style="color:#0000cf;font-weight:bold">04&lt;/span> 10:55:33 &lt;span style="color:#0000cf;font-weight:bold">18929&lt;/span> 0x2adadc2abe30 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>.....ntf_client&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> FaultDetail: &lt;span style="color:#4e9a06">&amp;#39;&amp;lt;SOAP-ENV:Detail xmlns:SOAP-ENV=&amp;#34;http://schemas.xmlsoap.org/soap/envelope/&amp;#34;&amp;gt;connect failed in tcp_connect()&amp;lt;/SOAP-ENV:Detail&amp;gt;&amp;#39;&lt;/span>
 ERR Oct &lt;span style="color:#0000cf;font-weight:bold">04&lt;/span> 10:55:33 &lt;span style="color:#0000cf;font-weight:bold">18929&lt;/span> 0x2adadc2abe30 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>notification_ws&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Failed to send notification to http://grass1.man.poznan.pl:19011/
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="qcg-broker-checks">QCG Broker checks&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="qcg-broker-checks">QCG Broker checks&lt;/h3>
 &lt;p>The basic tests of QCG-Broker service may be proceeded with help of
 &lt;code>qcg-simple-client&lt;/code>, the software that provides a set of commands for
 interaction with QCG-Broker. &lt;code>qcg-simple-client&lt;/code> may be installed from RPMs.&lt;/p>
