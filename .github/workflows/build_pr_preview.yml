@@ -11,10 +11,11 @@ on:
 jobs:
   build:
     # Do not run on forks, and only if "safe for preview" label is set
-    if: |
+    if: >
       github.repository == 'EGI-Federation/documentation' &&
-      ((github.event.action == 'labeled' && github.event.label.name == 'safe for preview') ||
-      (github.event.action != 'labeled' && contains(github.event.pull_request.labels.*.name, 'safe for preview')))
+      ((github.event.action == 'labeled' && github.event.label.name == 'safe for
+      preview') || (github.event.action != 'labeled' &&
+      contains(github.event.pull_request.labels.*.name, 'safe for preview')))
     name: Build with Hugo
     runs-on: ubuntu-18.04
     steps:

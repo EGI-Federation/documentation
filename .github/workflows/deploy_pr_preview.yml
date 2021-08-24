@@ -4,8 +4,11 @@ name: Preview pull requests
 # https://github.com/peaceiris/actions-hugo
 # Deploy to GitHub pages
 # https://github.com/peaceiris/actions-gh-pages
+# Triggered by the build pull request preview
+# https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
 
 on:
+  # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#workflow_run
   workflow_run:
     workflows: ["Build pull request preview"]
     types: [completed]
@@ -13,7 +16,9 @@ on:
 jobs:
   deploy:
     # Only run if PR preview build was successful
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: >
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success'
     name: Deploy pull request preview
     runs-on: ubuntu-18.04
     steps:
