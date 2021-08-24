@@ -24,7 +24,7 @@ best-practice documents that provide optional guidelines).
 Miscellaneous collection of short How-Tos which are relevant to various other
 documentation and procedures.
 
-- [HOWTO01 Site Certification Required Information](https://wiki.egi.eu/wiki/HOWTO01_Site_Certification_Required_Information):
+- [HOWTO01 Site Certification Required Information](./howto01_site_certification_required_information):
   Information required in the GOCDB when registering a site/resource centre
 - [HOWTO02 Site Certification Required Documentation](https://wiki.egi.eu/wiki/HOWTO02_Site_Certification_Required_Documentation)
 - [HOWTO03 Site Certification GIIS Check](https://wiki.egi.eu/wiki/HOWTO03_Site_Certification_GIIS_Check)
