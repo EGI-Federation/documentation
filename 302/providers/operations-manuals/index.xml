@@ -945,4 +945,288 @@ services.&lt;/li>
 &lt;li>&lt;a href="https://documents.egi.eu/document/218">EGI Operations Architecture&lt;/a>: Document
 describing the roles and responsibilities of the various layers in EGI and
 also the architectural nomenclature.&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Providers: HOWTO03 Site Certification GIIS Check</title><link>/providers/operations-manuals/howto03_site_certificatoin_giis_check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto03_site_certificatoin_giis_check/</guid><description>
+&lt;p>Be sure that Resource Centre GIIS URL is contained in the BDII you use for
+certification.&lt;/p>
+&lt;h2 id="check-the-consistency-of-the-published-information">Check the consistency of the published information&lt;/h2>
+&lt;p>These are the main branches of the LDAP tree:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GlueSiteUniqueID&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueSubClusterUniqueID&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueCEUniqueID&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueCESEBind&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueSEUniqueID&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueServiceUniqueID&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>It is recommended to use the
+&lt;a href="http://directory.apache.org/studio/">Apache Studio LDAP browser&lt;/a>, although in
+this page &lt;code>ldapsearch&lt;/code> queries are shown.&lt;/p>
+&lt;h3 id="contact-information">Contact information&lt;/h3>
+&lt;p>Under the branch &lt;code>GlueSiteUniqueID&lt;/code> check the values of the following fields:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GlueSiteName&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueSiteUserSupportContact&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueSiteSysAdminContact&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueSiteSecurityContact&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueSiteOtherInfo&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H ldap://sibilla.cnaf.infn.it:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b mds-vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid &lt;span style="color:#4e9a06">&amp;#39;objectClass=GlueSite&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueSiteName GlueSiteUserSupportContact GlueSiteSysAdminContact &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueSiteSecurityContact GlueSiteOtherInfo
+dn: &lt;span style="color:#000">GlueSiteUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueSiteSecurityContact: mailto:grid-sec@cnaf.infn.it
+GlueSiteSysAdminContact: mailto:grid-operations@lists.cnaf.infn.it
+GlueSiteName: INFN-CNAF
+GlueSiteOtherInfo: &lt;span style="color:#000">CONFIG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>yaim
+GlueSiteOtherInfo: &lt;span style="color:#000">EGEE_SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+GlueSiteOtherInfo: &lt;span style="color:#000">EGI_NGI&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NGI_IT
+GlueSiteOtherInfo: &lt;span style="color:#000">GRID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>WLCG
+GlueSiteOtherInfo: &lt;span style="color:#000">GRID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>EGI
+GlueSiteOtherInfo: &lt;span style="color:#000">WLCG_TIER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>
+GlueSiteUserSupportContact: mailto:grid-operations@lists.cnaf.infn.it
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="information-related-to-software-environment">Information related to software environment&lt;/h3>
+&lt;p>Under the branch &lt;code>GlueSubClusterUniqueID&lt;/code> check the values of the following
+fields:&lt;/p>
+&lt;ul>
+&lt;li>Check that the &lt;code>GlueHostApplicationSoftwareRunTimeEnvironment&lt;/code> contains a list
+of software tags supported by the site.
+&lt;ul>
+&lt;li>The list can include VO-specific software tags.&lt;/li>
+&lt;li>In order to ensure backwards compatibility it should include the entry
+&amp;lsquo;LCG-2&amp;rsquo;, the current middleware version and the list of previous middleware
+tags (i.e. LCG-2 LCG-2_1_0 LCG-2_1_1 LCG-2_2_0 LCG-2_3_0 LCG-2_3_1 LCG-2_4_0
+LCG-2_5_0 LCG-2_6_0 LCG-2_7_0 GLITE-3_0_0 GLITE-3_1_0 GLITE-3_2_0 R-GMA).&lt;/li>
+&lt;li>If the site supports MPI, check
+&lt;a href="https://wiki.egi.eu/wiki/MAN03_MPI-Start_Installation_and_Configuration#Information_System">MAN03&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>GlueHostProcessorOtherDescription&lt;/code> (see
+&lt;a href="https://wiki.egi.eu/wiki/FAQ_HEP_SPEC06">FAQ HEP SPEC06&lt;/a>)&lt;/li>
+&lt;li>&lt;code>GlueHostOperatingSystemName&lt;/code>, &lt;code>GlueHostOperatingSystemVersion&lt;/code> and
+&lt;code>GlueHostOperatingSystemRelease&lt;/code> (see
+&lt;a href="https://wiki.egi.eu/wiki/HOWTO05_How_to_publish_the_OS_name">HOWTO05&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H &lt;span style="color:#4e9a06">`&lt;/span>&amp;lt;ldap://virgo-ce.roma1.infn.it:2170&amp;gt;&lt;span style="color:#4e9a06">`&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b mds-vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid &lt;span style="color:#4e9a06">&amp;#39;objectClass=GlueSubCluster&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueHostProcessorOtherDescription
+dn: &lt;span style="color:#000">GlueSubClusterUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>virgo-ce.roma1.infn.it,GlueClusterUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>virgo-ce.roma1.infn.it,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueHostProcessorOtherDescription: &lt;span style="color:#000">Cores&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>4, &lt;span style="color:#000">Benchmark&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>7.83-HEP-SPEC06
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="information-about-the-batch-system">Information about the batch system&lt;/h3>
+&lt;p>Under the branch &lt;code>GlueCEUniqueID&lt;/code> check the values of the following fields:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GlueCEInfoTotalCPUs&lt;/code>: Check that the value is higher than 0.&lt;/li>
+&lt;li>&lt;code>GlueCEStateWaitingJobs&lt;/code>: If there is a “44444”, the information providers are
+not working properly.&lt;/li>
+&lt;li>&lt;code>GlueCEInfoLRMSType&lt;/code>: any supported batch system (sge, pbs, lsf&amp;hellip;)&lt;/li>
+&lt;li>&lt;code>GlueCEStateStatus&lt;/code>: Production, Draining, Queuing or Closed are accepted
+values.&lt;/li>
+&lt;li>&lt;code>GlueCEAccessControlBaseRule&lt;/code>: VOs enabled on the queue&lt;/li>
+&lt;li>&lt;code>GlueCECapability&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">$ ldapsearch -x -LLL -H ldap://virgo-ce.roma1.infn.it:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b mds-vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-VIRGO,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid &lt;span style="color:#4e9a06">&amp;#39;objectClass=GlueCE&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoTotalCPUs GlueCEInfoJobManager GlueCEImplementationName
+dn: &lt;span style="color:#000">GlueCEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>virgo-ce.roma1.infn.it:2119/jobmanager-lcgpbs-theophys,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-VIRGO,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCEImplementationName: LCG-CE
+GlueCEInfoJobManager: lcgpbs
+GlueCEInfoTotalCPUs: &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span>
+dn: &lt;span style="color:#000">GlueCEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>virgo-ce.roma1.infn.it:2119/jobmanager-lcgpbs-cert,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-VIRGO,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCEImplementationName: LCG-CE
+GlueCEInfoJobManager: lcgpbs
+GlueCEInfoTotalCPUs: &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span>
+dn: &lt;span style="color:#000">GlueCEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>virgo-ce.roma1.infn.it:2119/jobmanager-lcgpbs-virgoglong,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-VIRGO,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCEImplementationName: LCG-CE
+GlueCEInfoJobManager: lcgpbs
+GlueCEInfoTotalCPUs: &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span>
+dn: &lt;span style="color:#000">GlueCEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>virgo-ce.roma1.infn.it:2119/jobmanager-lcgpbs-argo,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-VIRGO,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCEImplementationName: LCG-CE
+GlueCEInfoJobManager: lcgpbs
+GlueCEInfoTotalCPUs: &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span>
+dn: &lt;span style="color:#000">GlueCEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>virgo-ce.roma1.infn.it:2119/jobmanager-lcgpbs-virgogshort,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-VIRGO,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCEImplementationName: LCG-CE
+GlueCEInfoJobManager: lcgpbs
+GlueCEInfoTotalCPUs: &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H ldap://cmsrm-bdii.roma1.infn.it:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b mds-vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-CMS,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid &lt;span style="color:#4e9a06">&amp;#39;objectclass=GlueCE&amp;#39;&lt;/span> GlueCECapability
+dn: &lt;span style="color:#000">GlueCEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cmsrm-ce01.roma1.infn.it:2119/jobmanager-lcglsf-cmsgcert,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-CMS,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCECapability: &lt;span style="color:#000">CPUScalingReferenceSI00&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1515&lt;/span>
+GlueCECapability: &lt;span style="color:#000">Share&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cms:100
+dn: &lt;span style="color:#000">GlueCEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cmsrm-ce01.roma1.infn.it:2119/jobmanager-lcglsf-cmsglong,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-CMS,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCECapability: &lt;span style="color:#000">CPUScalingReferenceSI00&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1515&lt;/span>
+GlueCECapability: &lt;span style="color:#000">Share&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cms:100
+dn: &lt;span style="color:#000">GlueCEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cmsrm-ce01.roma1.infn.it:2119/jobmanager-lcglsf-cmsgshort,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-CMS,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCECapability: &lt;span style="color:#000">CPUScalingReferenceSI00&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1515&lt;/span>
+GlueCECapability: &lt;span style="color:#000">Share&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cms:100
+dn: &lt;span style="color:#000">GlueCEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cmsrm-ce02.roma1.infn.it:2119/jobmanager-lcglsf-cmsglong,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-CMS,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCECapability: &lt;span style="color:#000">CPUScalingReferenceSI00&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1515&lt;/span>
+GlueCECapability: &lt;span style="color:#000">Share&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cms:100
+dn: &lt;span style="color:#000">GlueCEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cmsrm-ce02.roma1.infn.it:2119/jobmanager-lcglsf-cmsgcert,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-CMS,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCECapability: &lt;span style="color:#000">CPUScalingReferenceSI00&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1515&lt;/span>
+GlueCECapability: &lt;span style="color:#000">Share&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cms:100
+dn: &lt;span style="color:#000">GlueCEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cmsrm-ce02.roma1.infn.it:2119/jobmanager-lcglsf-cmsgshort,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-ROMA1-CMS,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCECapability: &lt;span style="color:#000">CPUScalingReferenceSI00&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1515&lt;/span>
+GlueCECapability: &lt;span style="color:#000">Share&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cms:100
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="information-on-computing-element-about-storage-elements">Information on Computing Element about Storage Elements&lt;/h3>
+&lt;p>For each SE, on the CEs the following values must be present:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GueCESEBindSEUniqueID&lt;/code>.
+&lt;ul>
+&lt;li>&lt;code>GlueCESEBindCEAccesspoint&lt;/code> and &lt;code>GlueCESEBindMountInfo&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H ldap://cremino.cnaf.infn.it:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b mds-vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid &lt;span style="color:#4e9a06">&amp;#39;objectClass=GlueCESEBind&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueCESEBindSEUniqueID GlueCESEBindCEUniqueID GlueCESEBindMountInfo
+dn: &lt;span style="color:#000">GlueCESEBindSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>sunstorm.cnaf.infn.it,GlueCESEBindGroupCEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cremino.cnaf.infn.it:8443/cream-pbs-cert,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCESEBindSEUniqueID: sunstorm.cnaf.infn.it
+GlueCESEBindMountInfo: n.a
+GlueCESEBindCEUniqueID: cremino.cnaf.infn.it:8443/cream-pbs-cert
+dn: &lt;span style="color:#000">GlueCESEBindSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>sunstorm.cnaf.infn.it,GlueCESEBindGroupCEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cremino.cnaf.infn.it:8443/cream-pbs-prod,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueCESEBindSEUniqueID: sunstorm.cnaf.infn.it
+GlueCESEBindMountInfo: n.a
+GlueCESEBindCEUniqueID: cremino.cnaf.infn.it:8443/cream-pbs-prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="information-on-storage-elements">Information on Storage Elements&lt;/h3>
+&lt;p>Under the branch &lt;code>GlueSEUniqueID&lt;/code> check the values of the following fields:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GlueSALocalID&lt;/code>: VO information&lt;/li>
+&lt;li>&lt;code>GlueSEAccessProtocolLocalID&lt;/code> : rfio, srm_v2, gsiftp, gsidcap&lt;/li>
+&lt;li>&lt;code>GlueSEImplementationName&lt;/code> (deprecated)&lt;/li>
+&lt;li>&lt;code>GlueSEArchitecture&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueSAStateUsedSpace&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueSAStateAvailableSpace&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueSACapability&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H ldap://grid-se.pv.infn.it:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b mds-vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid &lt;span style="color:#4e9a06">&amp;#39;objectclass=GlueSE&amp;#39;&lt;/span>
+dn: &lt;span style="color:#000">GlueSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid-se.pv.infn.it,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueSEImplementationVersion: 1.7.4
+GlueSETotalOnlineSize: &lt;span style="color:#0000cf;font-weight:bold">8795&lt;/span>
+GlueSEStatus: Production
+objectClass: GlueTop
+objectClass: GlueSE
+objectClass: GlueKey
+objectClass: GlueSchemaVersion
+GlueSETotalNearlineSize: &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+GlueSEArchitecture: multidisk
+GlueSESizeTotal: &lt;span style="color:#0000cf;font-weight:bold">8795&lt;/span>
+GlueSESizeFree: &lt;span style="color:#0000cf;font-weight:bold">5458&lt;/span>
+GlueSEName: INFN-PAVIA DPM server
+GlueSchemaVersionMinor: &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>
+GlueSEUsedNearlineSize: &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+GlueForeignKey: &lt;span style="color:#000">GlueSiteUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-PAVIA
+GlueSEUsedOnlineSize: &lt;span style="color:#0000cf;font-weight:bold">3336&lt;/span>
+GlueSchemaVersionMajor: &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+GlueSEImplementationName: DPM
+GlueSEUniqueID: grid-se.pv.infn.it
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H ldap://grid-se.pv.infn.it:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b mds-vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid &lt;span style="color:#4e9a06">&amp;#39;objectclass=GlueSA&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueSAAccessControlBaseRule GlueSACapability
+dn: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>storage:replica:online,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid-se.pv.infn.it,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueSAAccessControlBaseRule: VO:atlas
+GlueSAAccessControlBaseRule: VO:dteam
+GlueSAAccessControlBaseRule: VO:infngrid
+GlueSAAccessControlBaseRule: VO:ops
+GlueSACapability: &lt;span style="color:#000">InstalledOnlineCapacity&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">8258&lt;/span>
+GlueSACapability: &lt;span style="color:#000">InstalledNearlineCapacity&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+dn: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ATLASHOTDISK:SR:replica:online,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid-se.pv.infn.it,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueSAAccessControlBaseRule: VOMS:/atlas/Role&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>production
+GlueSACapability: &lt;span style="color:#000">InstalledOnlineCapacity&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">536&lt;/span>
+GlueSACapability: &lt;span style="color:#000">InstalledNearlineCapacity&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H ldap://grid-se.pv.infn.it:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b mds-vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+&lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectclass=GlueSA)(GlueSALocalID=storage:replica:online))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueSAReservedNearlineSize GlueSAFreeNearlineSize &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueSATotalNearlineSize GlueSAUsedNearlineSize GlueSACapability &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueSATotalOnlineSize GlueSAFreeOnlineSize &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueSAReservedOnlineSize GlueSAStateAvailableSpace &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueSAUsedOnlineSize GlueSAStateUsedSpace
+dn: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>storage:replica:online,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid-se.pv.infn.it,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueSATotalNearlineSize: &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> GlueSAFreeOnlineSize: &lt;span style="color:#0000cf;font-weight:bold">4921&lt;/span>
+GlueSAUsedNearlineSize: &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> GlueSAFreeNearlineSize: &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+GlueSAReservedNearlineSize: &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> GlueSAStateAvailableSpace: &lt;span style="color:#0000cf;font-weight:bold">4921376492&lt;/span>
+GlueSAReservedOnlineSize: &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> GlueSAUsedOnlineSize: &lt;span style="color:#0000cf;font-weight:bold">3336&lt;/span>
+GlueSAStateUsedSpace: &lt;span style="color:#0000cf;font-weight:bold">3336991982&lt;/span> GlueSATotalOnlineSize: &lt;span style="color:#0000cf;font-weight:bold">8258&lt;/span>
+GlueSACapability: &lt;span style="color:#000">InstalledOnlineCapacity&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">8258&lt;/span>
+GlueSACapability: &lt;span style="color:#000">InstalledNearlineCapacity&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="information-about-other-services">Information about other services&lt;/h3>
+&lt;p>There is a branch &lt;code>GlueServiceUniqueID&lt;/code> for each service published by the site
+(WMS, LFC, DPM, GRIDICE, LB, MYPROXY, BDII, etc): what discriminates the
+services are the values of &lt;code>GlueServiceType&lt;/code>, example:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>lcg-file-catalog&lt;/code>&lt;/li>
+&lt;li>&lt;code>org.glite.wms.WMProxy&lt;/code>&lt;/li>
+&lt;li>&lt;code>org.glite.lb.Server&lt;/code>&lt;/li>
+&lt;li>&lt;code>srm_v1, SRM&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H ldap://sibilla.cnaf.infn.it:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b mds-vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid &lt;span style="color:#4e9a06">&amp;#39;objectClass=GlueService&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueServiceType GlueServiceEndpoint GlueServiceName
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>lfcserver.cnaf.infn.it,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: lfcserver.cnaf.infn.it
+GlueServiceName: INFN-CNAF-lfc
+GlueServiceType: lcg-file-catalog
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>local-lfcserver.cnaf.infn.it,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: lfcserver.cnaf.infn.it
+GlueServiceName: INFN-CNAF-lfc
+GlueServiceType: lcg-local-file-catalog
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;http://lfcserver.cnaf.infn.it:8085/,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid&amp;gt;
+GlueServiceEndpoint: &amp;lt;http://lfcserver.cnaf.infn.it:8085/&amp;gt;
+GlueServiceName: INFN-CNAF-lfc-dli
+GlueServiceType: data-location-interface
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>myproxy.cnaf.infn.it_MyProxy_4027652676,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: myproxy://myproxy.cnaf.infn.it:7512/
+GlueServiceName: INFN-CNAF-MyProxy
+GlueServiceType: MyProxy
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>sibilla.cnaf.infn.it_bdii_site_3877936872,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: &amp;lt;ldap://sibilla.cnaf.infn.it:2170/mds-vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid&amp;gt;
+GlueServiceName: INFN-CNAF-bdii_site
+GlueServiceType: bdii_site
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>local-http://lfcserver.cnaf.infn.it:8085/,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: &amp;lt;http://lfcserver.cnaf.infn.it:8085/&amp;gt;
+GlueServiceName: INFN-CNAF-lfc-dli
+GlueServiceType: local-data-location-interface
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>mon-it.cnaf.infn.it_Regional-NAGIOS_2937827985,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: &amp;lt;https://mon-it.cnaf.infn.it:443/nagios&amp;gt;
+GlueServiceName: INFN-CNAF-Regional-NAGIOS
+GlueServiceType: Regional-NAGIOS
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>httpg://sunstorm.cnaf.infn.it:8444/srm/managerv2,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: httpg://sunstorm.cnaf.infn.it:8444/srm/managerv2
+GlueServiceName: INFN-CNAF-SRM
+GlueServiceType: SRM
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>albalonga.cnaf.infn.it_org.glite.lb.server_889826742,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: &amp;lt;https://albalonga.cnaf.infn.it:9003/&amp;gt;
+GlueServiceName: INFN-CNAF-server
+GlueServiceType: org.glite.lb.server
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>gridit-ce-001.cnaf.infn.it_org.edg.gatekeeper_715226072,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: gram://gridit-ce-001.cnaf.infn.it:2119/
+GlueServiceName: INFN-CNAF-gatekeeper
+GlueServiceType: org.edg.gatekeeper
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>egee-wms-01.cnaf.infn.it_org.glite.wms.WMProxy_2200630265,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: &amp;lt;https://egee-wms-01.cnaf.infn.it:7443/glite_wms_wmproxy_server&amp;gt;
+GlueServiceName: INFN-CNAF-WMProxy
+GlueServiceType: org.glite.wms.WMProxy
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cremino.cnaf.infn.it_org.glite.ce.CREAM_860197007,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: &amp;lt;https://cremino.cnaf.infn.it:8443/ce-cream/services&amp;gt;
+GlueServiceName: INFN-CNAF-CREAM
+GlueServiceType: org.glite.ce.CREAM
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cremino.cnaf.infn.it_org.glite.ce.Monitor_2670664997,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: &amp;lt;https://cremino.cnaf.infn.it:8443/ce-monitor/services/CEMonitor&amp;gt;
+GlueServiceName: INFN-CNAF-Monitor
+GlueServiceType: org.glite.ce.Monitor
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>top-bdii01.cnaf.infn.it_bdii_top_1813027130,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>INFN-CNAF,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: &amp;lt;ldap://egee-bdii.cnaf.infn.it:2170/mds-vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>local,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid&amp;gt;
+GlueServiceName: INFN-CNAF-bdii_top
+GlueServiceType: bdii_top
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>See the Site Certification Manual tests
+&lt;a href="https://wiki.egi.eu/wiki/HOWTO04">HOWTO04&lt;/a>&lt;/p>
+&lt;p>See to Resource Centre registration and certification procedure
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item></channel></rss>
