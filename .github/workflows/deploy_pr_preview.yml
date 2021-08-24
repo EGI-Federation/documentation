@@ -8,6 +8,7 @@ name: Preview pull requests
 # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
 
 on:
+  # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#workflow_run
   workflow_run:
     workflows: ["Build pull request preview"]
     types: [completed]
