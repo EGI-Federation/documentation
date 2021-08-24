@@ -32,7 +32,7 @@ OneProvider.
 
 ## Installation and attach empty storage to the EGI DataHub
 
-The installation of a new OneProvider is performed using the `onedatify`
+The installation of a new Oneprovider is performed using the `onedatify`
 installation script which will setup the components using Docker and
 Docker-compose.
 
