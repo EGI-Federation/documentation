@@ -46,7 +46,6 @@ jobs:
         with:
           # Use GITHUB_TOKEN allowing to write to local repository
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # XXX add a way to clean deployed PR having been closed or merged
           # Purge older files from a given PR
           keep_files: false
           # Accessible at http://docs.egi.eu/documentation/
