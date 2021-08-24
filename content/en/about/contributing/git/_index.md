@@ -252,6 +252,21 @@ If needed GitHub CLI can also be used to prepare the PR:
 gh pr create <your_username>:<feature_branch> --web
 ```
 
+### Previewing a pull request
+
+If a repository maintainer adds the label `safe for preview` to a pull request
+it will be possible to preview it using a pull request-specific URL:
+`https://docs.egi.eu/documentation/[PR_NUMBER]`
+
+The preview can be used as an alternative to testing a pull request locally, and
+the preview can easily be shared with other contributors.
+
+Only collaborators having write permission to the repository are able to mark a
+pull request as safe for review.
+
+> This should be carefully considered, especially for external and first time
+> contributors.
+
 ### Update local feature branch with changes made on the PR
 
 Once you PR have been opened it will be reviewed, and reviewers can propose and
