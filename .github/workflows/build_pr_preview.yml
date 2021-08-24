@@ -1,18 +1,21 @@
 ---
-name: Deploy to GitHub pages
+name: Build pull request preview
 # Setup and build files with hugo
 # https://github.com/peaceiris/actions-hugo
-# Deploy to GitHub pages
-# https://github.com/peaceiris/actions-gh-pages
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    # Run when label is added or present and when pushing to the PR
+    types: [labeled, opened, synchronize]
 
 jobs:
-  deploy:
-    name: Build using Hugo and deploy
+  build:
+    # Do not run on forks, and only if "safe for preview" label is set
+    if: |
+      github.repository == 'EGI-Federation/documentation' &&
+      ((github.event.action == 'labeled' && github.event.label.name == 'safe for preview') ||
+      (github.event.action != 'labeled' && contains(github.event.pull_request.labels.*.name, 'safe for preview')))
+    name: Build with Hugo
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -52,22 +55,14 @@ jobs:
         run: npm ci
 
       - name: Build and minify using Hugo
-        run: hugo --minify
+        # Build in a directory specific to the PR number
+        run: hugo --minify --destination public/${{ github.event.number }}
 
-      - name: Generate token for pushing content
-        uses: tibdex/github-app-token@v1
-        id: generate-token
-        with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+      - name: Save PR number
+        run: echo ${{ github.event.number }} > ./public/PR
 
-      - name: Deploy
-        # Deploy should not run on forks
-        if: ${{ github.repository == 'EGI-Federation/documentation' }}
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
         with:
-          # Use a personal token configured as a repository-specific secret
-          personal_token: ${{ steps.generate-token.outputs.token }}
-          external_repository: EGI-Federation/EGI-Federation.github.io
-          cname: docs.egi.eu
-          publish_branch: main
+          name: pr
+          path: public/
