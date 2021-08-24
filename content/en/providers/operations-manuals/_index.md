@@ -28,4 +28,4 @@ documentation and procedures.
   Information required in the GOCDB when registering a site/resource centre
 - [HOWTO02 Site Certification Required Documentation](./howto02_site_certification_required_documentation)
 - [HOWTO03 Site Certification GIIS Check](./howto03_site_certificatoin_giis_check)
-- [HOWTO04 Site Certification Manual tests](https://wiki.egi.eu/wiki/HOWTO04_Site_Certification_Manual_tests)
+- [HOWTO04 Site Certification Manual tests](./howto04_site_certification_manual_tests)

@@ -356,7 +356,7 @@ GlueServiceType: bdii_top
 ```
 
 See the Site Certification Manual tests
-[HOWTO04](https://wiki.egi.eu/wiki/HOWTO04)
+[HOWTO04](../howto04_site_certification_manual_tests)
 
 See to Resource Centre registration and certification procedure
 [PROC09](https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification).
