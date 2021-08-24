@@ -78,7 +78,7 @@ details for the administration panel of the OneProvider:
 ![image](onedatify_step_5.png)
 
 This administration panel at port `9443` can be used to administer the
-OneProvider.
+Oneprovider.
 
 ## Installation and expose existing data to the EGI DataHub
 
