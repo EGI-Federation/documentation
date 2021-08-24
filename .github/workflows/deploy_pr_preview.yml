@@ -44,9 +44,11 @@ jobs:
             fs.writeFileSync('${{github.workspace}}/pr.zip', Buffer.from(download.data));
 
       - name: Extract pull request preview
+        id: extract
         run: |
-          mkdir public
-          unzip -d public pr.zip
+          unzip pr.zip
+          PR_NUMBER="$(cat ./PR")
+          echo "::set-output name=pr_number::$PR_NUMBER"
 
       - name: Deploy Pull Request preview
         uses: peaceiris/actions-gh-pages@v3
@@ -61,9 +63,9 @@ jobs:
           # Branch to push to
           publish_branch: pr_previews
           # Source directory
-          publish_dir: ./public/${{ github.event.number }}
+          publish_dir: ./${{ steps.extract.outputs.pr_number }}/
           # Destitnation directory
-          destination_dir: ${{ github.event.number }}
+          destination_dir: ${{ steps.extract.outputs.pr_number }}
           # Reuse PR commit message
           commit_message: ${{ github.event.head_commit.message }}
 
@@ -73,7 +75,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             var fs = require('fs');
-            var issue_number = Number(fs.readFileSync('./PR'));
+            var issue_number = Number('${{steps.extract.outputs.pr_number}}');
             const output = `#### Documentation preview deployed!
             Available at https://docs.egi.eu/documentation/${issue_number}`;
             github.issues.createComment({
