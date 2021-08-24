@@ -30,31 +30,51 @@ To access services and resources in the
 - Enrollment into a [Virtual Organisation](../../check-in/vos) (VO) that has
   access to the services and resources you need
 
+## FTS
 
+### Step 1 Configuration check
 
+To verify that everything is configured properly you can check with the following command pointing to the cerficates directly:
 
 <!-- markdownlint-disable line-length -->
 ```shell
-$ export EGI_SITE=IN2P3-IRES
-$ export EGI_VO=vo.access.egi.eu
-$ fedcloud openstack volume list
-Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
-+--------------------------------------+--------+-----------+------+--------------------------------+
-| ID                                   | Name   | Status    | Size | Attached to                    |
-+--------------------------------------+--------+-----------+------+--------------------------------+
-| 9a4000fb-0bcc-47e8-96fb-85a222295402 | Matlab | in-use    |   50 | Attached to Moodle on /dev/vdb |
-| b0abcda6-1002-4493-996b-9f03bc677625 |        | available |   30 |                                |
-+--------------------------------------+--------+-----------+------+--------------------------------+
+$ fts-rest-whoami --key .globus/userkey.pem --cert .globus/usercert.pem -s https://fts3-public.cern.ch:8446/
+User DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
+VO: AndreaCristoforiac@egi.eu@tcs.terena.org
+VO id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Delegation id: XXXXXXXXXXXXXXXX
+Base id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 <!-- markdownlint-enable line-length -->
 
+In general the commands can be used by specifying the user public and private key like shown in the example or by creating a proxy certificate as 
 
-<!-- If needed, mention other tools/CLIs/requirements, then remove this -->
-<!-- markdownlint-enable inline-html -->
 
-## FTS
+### Proxy creation
+To avoid the need to specify at each command the private and public key if everything is already configured and working properly it will be enough to execute the following coomand:
 
-### Step 1
+<!-- markdownlint-disable line-length -->
+```shell
+$ voms-proxy-init
+Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
+Creating proxy ........................................... Done
+
+Your proxy is valid until Wed Aug 25 04:18:14 2021
+```
+<!-- markdownlint-enable line-length -->
+
+As the output of the command shows a proxy certificate has been generated that will be valid, by default, for 12 hours. This can be usually increased for example to 48 hours with the following option:
+
+<!-- markdownlint-disable line-length -->
+```shell
+$ voms-proxy-init -valid 48:00
+Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
+Creating proxy ................................... Done
+
+Your proxy is valid until Thu Aug 26 16:23:01 2021
+```
+<!-- markdownlint-enable line-length -->
+
 
 ## WebFTS
 
