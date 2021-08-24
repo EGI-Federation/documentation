@@ -54,7 +54,7 @@ for the OneZone to use (`datahub.egi.eu`) and the space to join.
 
 ### Run the command on the host
 
-Paste the copied command in the terminal on the OneProvider machine as
+Paste the copied command in the terminal on the Oneprovider machine as
 superuser.
 
 If necessary, the Onedatify script will ask for permission to install all
