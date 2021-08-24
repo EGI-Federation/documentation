@@ -44,7 +44,9 @@ jobs:
             fs.writeFileSync('${{github.workspace}}/pr.zip', Buffer.from(download.data));
 
       - name: Extract pull request preview
-        run: unzip pr.zip
+        run: |
+          mkdir public
+          unzip -d public pr.zip
 
       - name: Deploy Pull Request preview
         uses: peaceiris/actions-gh-pages@v3
@@ -59,7 +61,7 @@ jobs:
           # Branch to push to
           publish_branch: pr_previews
           # Source directory
-          publish_dir: ./${{ github.event.number }}
+          publish_dir: ./public/${{ github.event.number }}
           # Destitnation directory
           destination_dir: ${{ github.event.number }}
           # Reuse PR commit message
