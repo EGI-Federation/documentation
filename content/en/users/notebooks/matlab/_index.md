@@ -70,7 +70,7 @@ other topics using MATLAB.
      toolboxes.
 
    More information on MATLAB licensing with this integration can be found
-   [here](https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB_Licensing_Info.md).
+   [here](https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB-Licensing-Info.md).
 
 1. Following this, the MATLAB IDE will appear in your browser.
 
