@@ -88,7 +88,7 @@ DataHub space is similar to the installation with an empty storage.
 When adding support to an existing or new space you should select from the EGI
 DataHub user interface the tab : `Expose Existing dataset` and there you will
 have to copy the command already configured with the correct parameters for the
-OneZone (`datahub.egi.eu`) and the space to join.
+Onezone (`datahub.egi.eu`) and the space to join.
 
 ![image](onedatify-oneprovider-expose.png)
 
