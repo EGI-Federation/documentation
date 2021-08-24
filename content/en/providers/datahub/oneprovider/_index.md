@@ -73,7 +73,7 @@ onedatify logs
 ```
 
 After the deployment is complete, a message will be shown, including connection
-details for the administration panel of the OneProvider:
+details for the administration panel of the Oneprovider:
 
 ![image](onedatify_step_5.png)
 
