@@ -100,7 +100,7 @@ Under the branch `GlueCEUniqueID` check the values of the following fields:
 
 **Example:**
 
-```sh
+```shell
 $ ldapsearch -x -LLL -H ldap://virgo-ce.roma1.infn.it:2170 \
     -b mds-vo-name=INFN-ROMA1-VIRGO,o=grid 'objectClass=GlueCE' \
     GlueCEInfoTotalCPUs GlueCEInfoJobManager GlueCEImplementationName
