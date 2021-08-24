@@ -47,7 +47,7 @@ jobs:
         id: extract
         run: |
           unzip pr.zip
-          PR_NUMBER="$(cat ./PR")
+          PR_NUMBER="$(cat ./PR)"
           echo "::set-output name=pr_number::$PR_NUMBER"
 
       - name: Deploy Pull Request preview
