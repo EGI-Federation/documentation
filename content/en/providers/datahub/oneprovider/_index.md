@@ -16,7 +16,7 @@ OneProvider.
 
 ## Requirements for production installation
 
-- OneProvider
+- Oneprovider
   - RAM: 32GB
   - CPU: 8 vCPU
   - Disk: 50GB SSD
