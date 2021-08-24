@@ -94,7 +94,7 @@ OneZone (`datahub.egi.eu`) and the space to join.
 
 ### Run the command on the host
 
-Paste the copied command in the terminal on the OneProvider machine as
+Paste the copied command in the terminal on the Oneprovider machine as
 superuser, and follow the instructions as for the case of an empty storage.
 
 The only difference is that at the end of the installation and configuration
