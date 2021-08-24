@@ -109,7 +109,7 @@ ExitCode      = []
 Description   = [Cancelled by user]
 ```
 
-## ARC CE checks
+### ARC CE checks
 
 A first test can be done using ARC's `ngstat` command:
 
@@ -488,9 +488,9 @@ monitor Unicore / Xa and TSI log files.
 If testing was successful, you can unlock the registration system in the global
 registry.
 
-### QCG checks
+## QCG checks
 
-#### QCG Computhng checks
+### QCG Computhng checks
 
 The presented tests of QCG-Computing service use the qcg-comp, the client
 program for QCG-Computing, that may be installed from provided RPMS. In order to
@@ -539,7 +539,7 @@ status = Finished
 exit status = 0
 ```
 
-#### QCG Notification checks
+### QCG Notification checks
 
 The tests of QCG-Notification require `qcg-ntf-client` program to be installed
 in a system. The program is provided in RPM package.
@@ -581,7 +581,7 @@ NOT Oct 04 10:55:33 18929   0x2adadc2abe30 [.....ntf_client] FaultDetail: '<SOAP
 ERR Oct 04 10:55:33 18929   0x2adadc2abe30 [notification_ws] Failed to send notification to http://grass1.man.poznan.pl:19011/
 ```
 
-#### QCG Broker checks
+### QCG Broker checks
 
 The basic tests of QCG-Broker service may be proceeded with help of
 `qcg-simple-client`, the software that provides a set of commands for
