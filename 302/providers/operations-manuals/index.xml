@@ -905,4 +905,44 @@ GGUS. If not set, the ROC/NGI helpdesk contact will be used instead (valid
 email format)&lt;/li>
 &lt;/ul>
 &lt;p>See to Resource Centre registration and certification procedure
-&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item><item><title>Providers: HOWTO02 Site Certification Required Documentation</title><link>/providers/operations-manuals/howto02_site_certification_required_documentation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto02_site_certification_required_documentation/</guid><description>
+&lt;p>Documents required for Resource Centre registration and certification.&lt;/p>
+&lt;p>The Resource Centre administrators should read and understand the first five
+documents. It is a further requirement that the OLA between the NGI and RC, and
+the Service Operations Policy are accepted by the Site Operations Manager.
+Further, documents referred within the Service Operations Policy should also be
+understood.&lt;/p>
+&lt;h2 id="documentation">Documentation&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09 Resource Centre Registration and Certification&lt;/a>:
+Procedure document describing the steps required to register new Resource
+Centres and certify new and suspended ones.&lt;/li>
+&lt;li>&lt;a href="https://documents.egi.eu/document/3601">Service Operations Policy&lt;/a>: This
+security policy presents the conditions that apply to anyone running a Service
+on the Infrastructure, or to anyone providing a Service that is part of the
+Infrastructure.&lt;/li>
+&lt;li>&lt;a href="https://documents.egi.eu/document/31">Resource Centre Operational Level Agreement (OLA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC11+Resource+Centre+Decommissioning">PROC11 Resource Centre Decommissioning Procedure&lt;/a>:
+Procedure document describing the steps required to decommission a Resource
+Centre.&lt;/li>
+&lt;li>&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC12+Production+Service+Decommissioning">PROC12 Production Service Decommissioning Procedure&lt;/a>:
+Procedure document describing the steps required to decommission a production
+service.&lt;/li>
+&lt;li>&lt;a href="../../../internal/helpdesk">Helpdesk&lt;/a> and
+&lt;a href="https://wiki.egi.eu/wiki/GGUS:FAQ">FAQs&lt;/a>: A collection of documentation
+relevant to the EGI Helpdesk (GGUS). The User Guide and FAQ for direct site
+notification are probably the most helpful.&lt;/li>
+&lt;/ul>
+&lt;h2 id="tools">Tools&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="../../../internal/configuration-database">Configuration Database (GOCDB)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="ttp://operations-portal.egi.eu">Operations Portal&lt;/a>&lt;/li>
+&lt;li>ARGO Monitoring:
+&lt;a href="https://argo.egi.eu/egi/report-status/Critical/SITES">RCs status&lt;/a>,
+&lt;a href="https://argo.egi.eu/egi/report-ar/Critical/SITES">A/R reports&lt;/a>: The ARGO
+Monitoring service periodically checks the functionality of the production
+services.&lt;/li>
+&lt;li>&lt;a href="https://documents.egi.eu/document/218">EGI Operations Architecture&lt;/a>: Document
+describing the roles and responsibilities of the various layers in EGI and
+also the architectural nomenclature.&lt;/li>
+&lt;/ul></description></item></channel></rss>
