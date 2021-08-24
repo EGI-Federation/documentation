@@ -20,7 +20,7 @@ notebooks.
 ### MATLAB Licenses
 
 To use the MATLAB Integration on the EGI Notebooks service, a
-[supported MATLAB license](https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB_Licensing_Info.md)
+[supported MATLAB license](https://github.com/mathworks/jupyter-matlab-proxy/blob/main/MATLAB-Licensing-Info.md)
 is required. You can also use the toolboxes linked to your MATLAB license.
 
 If you are unsure of your MATLAB license type, contact your System Administrator
