@@ -69,7 +69,7 @@ The progress can be monitored on a separate terminal using the following
 command:
 
 ```shell
-$ onedatify logs
+onedatify logs
 ```
 
 After the deployment is complete, a message will be shown, including connection
