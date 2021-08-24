@@ -66,4 +66,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: pr
-          path: public/
+          path: |
+            public/
+            !.github/
