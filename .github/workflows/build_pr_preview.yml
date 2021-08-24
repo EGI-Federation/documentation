@@ -9,7 +9,7 @@ on:
     types: [labeled, opened, synchronize]
 
 jobs:
-  build:
+  build_preview:
     # Do not run on forks, and only if "safe for preview" label is set
     if: >
       github.repository == 'EGI-Federation/documentation' &&
