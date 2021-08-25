@@ -2094,7 +2094,7 @@ registered in GOCDB. The certificate must not have the X509 extension:
 refer to the NorduGrid ARC 6 documentation:&lt;/p>
 &lt;ul>
 &lt;li>Information relevant only for 6.4 ARC releases and beyond:
-[Accounting-NG](&amp;lt;http://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech)&lt;/li>
+&lt;a href="http://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech">Accounting-NG&lt;/a>&lt;/li>
 &lt;li>The old ActiveMQ network was dismissed.
 &lt;a href="https://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.html">ARC 6.12&lt;/a>
 introduces new settings for publishing the accounting records via AMS.&lt;/li>
