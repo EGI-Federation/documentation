@@ -1,6 +1,6 @@
 ---
 title: MAN09 Accounting data publishing
-weight: 30
+weight: 70
 type: "docs"
 description: "Publishing accounting information for different middleware."
 ---
