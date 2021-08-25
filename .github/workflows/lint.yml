@@ -1,24 +1,32 @@
 ---
-name: Lint
+name: Format and lint
 
 on: [pull_request]
 
 jobs:
-  super-lint:
+  format-lint:
     name: Lint with Supper-Linter
     runs-on: ubuntu-latest
 
     steps:
-      # Checks out a copy of your repository on the ubuntu-latest machine
+      # Checks out the repository
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           # Full git history needed to get proper list of changed files
           fetch-depth: 0
 
-      # Runs the Super-Linter action
-      # Checking all code base but without throwing errors
-      # Meant to follow progress of what still needs to be cleaned
+      # Use prettier to auto-format markdown files
+      - name: Prettify markdown files
+        uses: creyD/prettier_action@v3
+        with:
+          prettier_options: >
+            --print-width 80 --tab-width 2 --prose-wrap always --write **/*.md
+          only_changed: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Lint all files using Super-Linter
       - name: Run Super-Linter on new changes
         uses: docker://ghcr.io/github/super-linter:slim-v4
         env:
