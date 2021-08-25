@@ -18,6 +18,10 @@ best practice documents that provide optional guidelines).
 
 - [MAN01 How to publish Site Information](./man01_how_to_publish_site_information)
 - [MAN02 Service intervention management](./man02_service_intervention_management)
+- [MAN04 Tool intervention management](./man04_tool_intervention_management)
+- [MAN05 top and site BDII High Availability](./man05_top_and_site_bdii_high_availability)
+- [MAN0 ](./man)
+- [MAN0 ](./man)
 
 ## How-Tos
 
