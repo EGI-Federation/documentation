@@ -1,6 +1,8 @@
 ---
 title: MAN09 Accounting data publishing
-permalink: /MAN09_Accounting_data_publishing/
+weight: 30
+type: "docs"
+description: This manual provides information on how to publish accounting information from different middlewares.
 ---
 
 ## Introduction
