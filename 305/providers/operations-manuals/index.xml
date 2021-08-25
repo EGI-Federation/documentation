@@ -2079,7 +2079,7 @@ Nagios probes.&lt;/p>
 &lt;h3 id="publishing-summarized-records-or-single-ones">Publishing summarized records or single ones&lt;/h3>
 &lt;p>Sites can send either but the preferred option is summaries. Larger sites are
 recommended to send summaries.&lt;/p>
-&lt;h3 id="the-frequency-for-sending-aggregatedsummary-records-to-apel-database">The frequency for sending aggregated/summary records to Apel database?&lt;/h3>
+&lt;h3 id="the-frequency-for-sending-aggregatedsummary-records-to-apel-database">The frequency for sending aggregated/summary records to APEL database?&lt;/h3>
 &lt;p>We recommend sending data daily for all sites, whether sending summaries or
 individual records. I think this is in the interests of people who are using the
 portal so that what they see is accurate. The summaries are for a complete month
@@ -2095,8 +2095,8 @@ refer to the NorduGrid ARC 6 documentation:&lt;/p>
 &lt;ul>
 &lt;li>Information relevant only for 6.4 ARC releases and beyond: [Accounting
 NG](&amp;lt;http://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech)&lt;/li>
-&lt;li>The old ActiveMQ network was dissmissed.
-&lt;a href="http://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.htm">ARC 6.12&lt;/a>
+&lt;li>The old ActiveMQ network was dismissed.
+&lt;a href="https://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.html">ARC 6.12&lt;/a>
 introduces new settings for publishing the accounting records via AMS.&lt;/li>
 &lt;/ul>
 &lt;h2 id="htcondor-ce">HTCondor-CE&lt;/h2>
