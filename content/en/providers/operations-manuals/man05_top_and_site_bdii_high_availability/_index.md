@@ -1,5 +1,5 @@
 ---
-title: MAN05 top BDII and site BDII High Availability
+title: MAN05 top and site BDII High Availability
 weight: 50
 type: "docs"
 description: "Deploying the BDII service in High Availability"
@@ -9,7 +9,7 @@ description: "Deploying the BDII service in High Availability"
 
 | Property            | Value                                                   |
 | ------------------- | ------------------------------------------------------- |
-| Title               | MAN05 top BDII and site BDII High Availability          |
+| Title               | MAN05 top and site BDII High Availability               |
 | Policy Group        | Operations Management Board (OMB)                       |
 | Document status     | Approved                                                |
 | Procedure Statement | Deploying top or site BDII service in High Availability |
