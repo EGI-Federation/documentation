@@ -1,7 +1,9 @@
 ---
 name: Format and lint
 
-on: [pull_request]
+on:
+  pull_request:
+    branches: [main]
 
 jobs:
   format-lint:
@@ -13,10 +15,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          # Full git history needed to get proper list of changed files
-          fetch-depth: 0
           # Make sure the actual branch is checked out when running on PR
           ref: ${{ github.head_ref }}
+          # Full git history needed to get proper list of changed files
+          fetch-depth: 0
 
       # Use prettier to auto-format markdown files
       - name: Prettify markdown files
