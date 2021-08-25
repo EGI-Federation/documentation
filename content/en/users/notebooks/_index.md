@@ -46,7 +46,7 @@ We offer different service modes depending on your needs:
   3. [accessing https://notebooks.egi.eu/](https://notebooks.egi.eu/)
 
   This instance has limits on the amount of resources available for each user (2
-  CPU core, 4 GB RAM and 10 GB of storage). It will also kill inactive sessions
+  CPU core, 4 GB RAM and 20 GB of storage). It will also kill inactive sessions
   after 1 hour.
 
 - User communities can have their customised EGI Notebooks service instance. EGI
