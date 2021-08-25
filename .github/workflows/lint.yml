@@ -18,7 +18,7 @@ jobs:
 
       # Use prettier to auto-format markdown files
       - name: Prettify markdown files
-        uses: creyD/prettier_action@v3
+        uses: creyD/prettier_action@v3.3
         with:
           prettier_options: >
             --print-width 80 --tab-width 2 --prose-wrap always --write **/*.md
