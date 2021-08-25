@@ -980,6 +980,7 @@ Dear all,
 Best Regards
 [SERVICE_TEAM]
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: MAN09 Accounting data publishing</title><link>/providers/operations-manuals/man09_accounting_data_publishing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man09_accounting_data_publishing/</guid><description>
+&lt;h2 id="document-control">Document control&lt;/h2>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1002,7 +1003,7 @@ Best Regards
 &lt;/tr>
 &lt;tr>
 &lt;td>Procedure Statement&lt;/td>
-&lt;td>This manual provides information on how to publish accounting information from different middlewares&lt;/td>
+&lt;td>How to publish accounting information for different middleware&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Owner&lt;/td>
@@ -1011,122 +1012,76 @@ Best Regards
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>In this manual we will show you how to publish accounting information
-from different middlewares.&lt;/p>
+&lt;p>In this manual we will show you how to publish accounting information from
+different middleware.&lt;/p>
 &lt;h2 id="general-information">General information&lt;/h2>
 &lt;h3 id="publishing-with-the-apel-clientssm">Publishing with the APEL Client/SSM&lt;/h3>
 &lt;p>To start sending accounting records:&lt;/p>
 &lt;ol>
 &lt;li>register each endpoint sending the accounting records to the central
-repository as &amp;lsquo;gLite-APEL&amp;rsquo; endpoint in GOCDB with host DN
-information
+repository as &amp;lsquo;gLite-APEL&amp;rsquo; endpoint in GOCDB with host DN information
 &lt;ul>
-&lt;li>either HTCondorCE or ARC-CE endpoints&lt;/li>
-&lt;li>it is needed to authorise the endpoint to use the ARGO Message
-Service (AMS)&lt;/li>
+&lt;li>either &lt;code>HTCondorCE&lt;/code> or &lt;code>ARC-CE&lt;/code> endpoints&lt;/li>
+&lt;li>it is needed to authorise the endpoint to use the ARGO Message Service
+(AMS)&lt;/li>
 &lt;li>Changes in GOCDB can take up to 4 hours to make it to AMS.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>install the APEL client and APEL SSM on your publisher host and edit
-client.cfg and sender.cfg&lt;/li>
-&lt;li>install the APEL parser relevant to your batch system on each CE and
-edit parser.cfg
+&lt;code>client.cfg&lt;/code> and &lt;code>sender.cfg&lt;/code>&lt;/li>
+&lt;li>install the APEL parser relevant to your batch system on each CE and edit
+&lt;code>parser.cfg&lt;/code>
 &lt;ul>
 &lt;li>documentation for APEL
-here: &lt;a href="https://twiki.cern.ch/twiki/bin/view/EMI/EMI3APELClient">https://twiki.cern.ch/twiki/bin/view/EMI/EMI3APELClient&lt;/a>
+&lt;a href="https://twiki.cern.ch/twiki/bin/view/EMI/EMI3APELClient">here&lt;/a>
 &lt;ul>
-&lt;li>&lt;a href="https://github.com/apel/apel">https://github.com/apel/apel&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/apel/ssm">https://github.com/apel/ssm&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apel/apel">GitHub apel/apel&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apel/ssm">GitHub apel/ssm&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>The old ActiveMQ network was dismissed: have a look at the new
-settings to properly publish the accounting records via AMS:
-&lt;a href="https://github.com/apel/ssm/blob/dev/migrating_to_ams.md">https://github.com/apel/ssm/blob/dev/migrating_to_ams.md&lt;/a>&lt;/li>
-&lt;li>configure the client to publish data from the start of the current
-month. &lt;/li>
-&lt;li>Run the parser(s) and client. &lt;/li>
-&lt;li>If there are no errors messages and the client says it has sent
-messages then wait a day and you should see summaries here:
-&lt;a href="http://goc-accounting.grid-support.ac.uk/apel/summaries2.html">http://goc-accounting.grid-support.ac.uk/apel/summaries2.html&lt;/a>&lt;/li>
+&lt;li>The old ActiveMQ network was dismissed: have a look at the new settings to
+properly
+&lt;a href="https://github.com/apel/ssm/blob/dev/migrating_to_ams.md">publish the accounting records via AMS&lt;/a>&lt;/li>
+&lt;li>configure the client to publish data from the start of the current month.&lt;/li>
+&lt;li>Run the parser(s) and client.&lt;/li>
+&lt;li>If there are no errors messages and the client says it has sent messages then
+wait a day and you should see summaries
+&lt;a href="http://goc-accounting.grid-support.ac.uk/apel/summaries2.html">here&lt;/a>&lt;/li>
 &lt;li>If it doesn&amp;rsquo;t open a GGUS ticket for the APEL Team.&lt;/li>
 &lt;/ol>
 &lt;h3 id="monitoring-the-accounting-data-publication">Monitoring the accounting data publication&lt;/h3>
-&lt;p>In order to monitor the regular publication of accounting data, it is
-enough registering only one CE with the &amp;ldquo;&lt;strong>APEL&lt;/strong>&amp;rdquo; service type&lt;/p>
-&lt;p>See here the details about the related nagios probes:
-&lt;a href="https://wiki.egi.eu/wiki/APEL/Tests">https://wiki.egi.eu/wiki/APEL/Tests&lt;/a>&lt;/p>
+&lt;p>In order to monitor the regular publication of accounting data, it is enough
+registering only one CE with the &lt;code>APEL&lt;/code> service type.&lt;/p>
+&lt;p>See &lt;a href="https://wiki.egi.eu/wiki/APEL/Tests">here&lt;/a> the details about the related
+Nagios probes.&lt;/p>
 &lt;h3 id="publishing-summarized-records-or-single-ones">Publishing summarized records or single ones&lt;/h3>
-&lt;p>Sites can send either but the preferred option is summaries. Larger
-sites are recommended to send summaries.&lt;/p>
+&lt;p>Sites can send either but the preferred option is summaries. Larger sites are
+recommended to send summaries.&lt;/p>
 &lt;h3 id="the-frequency-for-sending-aggregatedsummary-records-to-apel-database">The frequency for sending aggregated/summary records to Apel database?&lt;/h3>
-&lt;p>We recommend sending data daily for all sites, whether sending summaries
-or individual records. I think this is in the interests of people who
-are using the portal so that what they see is accurate. The summaries
-are for a complete month or the current month so far.&lt;/p>
+&lt;p>We recommend sending data daily for all sites, whether sending summaries or
+individual records. I think this is in the interests of people who are using the
+portal so that what they see is accurate. The summaries are for a complete month
+or the current month so far.&lt;/p>
 &lt;h3 id="authorization-and-authentication">Authorization and authentication&lt;/h3>
-&lt;p>Authorization and authentication is made by the host certificate (which
-is signed by a trusted CA from the ca_policy_core package).
-Certificate should be registered in GOC DB. The certificate must not
-have the x509 extension: &amp;ldquo;Netscape Cert Type: SSL Server&amp;rdquo; because the
-message brokers will reject it.&lt;/p>
+&lt;p>Authorization and authentication is made by the host certificate (which is
+signed by a trusted CA from the ca_policy_core package). Certificate should be
+registered in GOCDB. The certificate must not have the X509 extension:
+&lt;code>Netscape Cert Type: SSL Server&lt;/code> because the message brokers will reject it.&lt;/p>
 &lt;h2 id="arc">ARC&lt;/h2>
-&lt;p>ARC uses its own system to publish the accounting data through AMS, so
-please refer to the NorduGrid ARC 6 documentation:&lt;/p>
+&lt;p>ARC uses its own system to publish the accounting data through AMS, so please
+refer to the NorduGrid ARC 6 documentation:&lt;/p>
 &lt;ul>
-&lt;li>Information relevant only for 6.4 ARC releases and beyond:
-&lt;a href="http://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech">http://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech&lt;/a>&lt;/li>
-&lt;li>The old ActiveMQ network was dissmissed. ARC 6.12 introduces new
-settings for publishing the accounting records via AMS:
-&lt;a href="http://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.html">http://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.html&lt;/a>&lt;/li>
+&lt;li>Information relevant only for 6.4 ARC releases and beyond: [Accounting
+NG](&amp;lt;http://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech)&lt;/li>
+&lt;li>The old ActiveMQ network was dissmissed.
+&lt;a href="http://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.htm">ARC 6.12&lt;/a>
+introduces new settings for publishing the accounting records via AMS.&lt;/li>
 &lt;/ul>
 &lt;h2 id="htcondor-ce">HTCondor-CE&lt;/h2>
-&lt;p>To collect and publish the accounting data you need to install the APEL
-software as explained in the general information section.&lt;/p>
-&lt;h2 id="revision-history">Revision History&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Version&lt;/th>
-&lt;th>Authors&lt;/th>
-&lt;th>Date&lt;/th>
-&lt;th>Comments&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>Alessandro Paolini&lt;/td>
-&lt;td>2021-08-06&lt;/td>
-&lt;td>updated the General Information and ARC sections; removed Globus, QCG, and Unicore sections&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>Alessandro Paolini&lt;/td>
-&lt;td>2019-10-08&lt;/td>
-&lt;td>added link to specific ARC 6 documentation&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>Alessandro Paolini&lt;/td>
-&lt;td>2019-09-13&lt;/td>
-&lt;td>updating the general information&amp;hellip;&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>JC Gordon&lt;/td>
-&lt;td>17 Sept. 2014&lt;/td>
-&lt;td>Remove requirement to test APEL client&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>M. Krakowian&lt;/td>
-&lt;td>19 August 2014&lt;/td>
-&lt;td>Change contact group -&amp;gt; Operations support&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>Providers: MAN05 top and site BDII High Availability</title><link>/providers/operations-manuals/man05_top_and_site_bdii_high_availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man05_top_and_site_bdii_high_availability/</guid><description>
+&lt;p>To collect and publish the accounting data you need to install the APEL software
+as explained in the general information section.&lt;/p></description></item><item><title>Providers: MAN05 top and site BDII High Availability</title><link>/providers/operations-manuals/man05_top_and_site_bdii_high_availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man05_top_and_site_bdii_high_availability/</guid><description>
 &lt;h2 id="document-control">Document control&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -1958,7 +1913,195 @@ Creating temporary proxy .......................................................
 Contacting ibergrid-voms.ifca.es:40008 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>es/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>irisgrid/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ifca/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>host/ibergrid-voms.ifca.es&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ict.vo.ibergrid.eu&amp;#34;&lt;/span> Done
 Creating proxy ............................................................................ Done
 Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Thu Jun &lt;span style="color:#0000cf;font-weight:bold">16&lt;/span> 07:27:37 &lt;span style="color:#0000cf;font-weight:bold">2011&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: HOWTO01 Site Certification Required Information</title><link>/providers/operations-manuals/howto01_site_certification_required_information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_site_certification_required_information/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: MAN07 VOMS Replication</title><link>/providers/operations-manuals/man07_voms_replication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man07_voms_replication/</guid><description>
+&lt;h2 id="document-control">Document control&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Title&lt;/td>
+&lt;td>MAN07 VOMS Replication&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Policy Group&lt;/td>
+&lt;td>Operations Management Board (OMB)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Document status&lt;/td>
+&lt;td>Approved&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Procedure Statement&lt;/td>
+&lt;td>How to implement a MySQL VOMS server replication&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Owner&lt;/td>
+&lt;td>SDIS team&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>In this manual we will show you how to implement a MySQL VOMS server
+replication: you need one master server, on which you can perform writing
+operations, and you can have from 1 to &amp;ldquo;n&amp;rdquo; replica servers that will work in
+read-only mode. In such a scenario you can do a whatever intervention on one of
+the servers without breaking the service, i.e. proxies creation and
+&lt;code>grid-mapfile&lt;/code> downloads: just the users registration and the usual VOs
+management operations might be forbidden during an intervention on the master
+server (because it is the only server in writing mode).&lt;/p>
+&lt;p>This failover procedure is simply based on MySQL replication therefore every
+MySQL setting is referred to the current MySQL version (5.0.77 in this moment)&lt;/p>
+&lt;h2 id="settings-on-the-master-server">Settings on the MASTER SERVER&lt;/h2>
+&lt;p>In order to allow the replica server to read the master database, you have to
+create an user with which the slave will connect to the master. Suppose the
+replica host name is &lt;code>vomsrep.cnaf.infn.it&lt;/code>, the user is &lt;code>bonjovi&lt;/code> and the
+password is &lt;code>always&lt;/code>. What you have to launch on the master server is:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ mysql -p -e &lt;span style="color:#4e9a06">&amp;#34;grant super, reload, replication slave, replication client \
+&lt;/span>&lt;span style="color:#4e9a06"> on *.* to bonjovi@&amp;#39;vomsrep.cnaf.infn.it&amp;#39; identified by &amp;#39;always&amp;#39;&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then for each DB (VO) you want to replicate, you have to assign the right
+permissions, by launching:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mysql -p -e &lt;span style="color:#4e9a06">&amp;#34;grant select, lock tables on voms_myvo.* to \
+&lt;/span>&lt;span style="color:#4e9a06"> bonjovi@&amp;#39;vomsrep.cnaf.infn.it&amp;#39;&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eventually you have to modify the file &lt;code>/etc/my.cnf&lt;/code> by adding the following
+lines into the section &lt;code>[mysqld]&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#c4a000">log-bin&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">mysql-bin&lt;/span>
+&lt;span style="color:#c4a000">server-id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">1&lt;/span>
+&lt;span style="color:#c4a000">innodb_flush_log_at_trx_commit&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">1&lt;/span>
+&lt;span style="color:#c4a000">sync_binlog&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is important that on the master server it is set &lt;code>server-id=1&lt;/code>: it is the
+identification number that distinguish a master from its several slaves (each
+slave will have a unique number starting from 2)&lt;/p>
+&lt;p>For example, the content of &lt;code>my.cnf&lt;/code> file may appear like this:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># less /etc/my.cnf&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>mysqld&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000">datadir&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/var/lib/mysql
+&lt;span style="color:#000">socket&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/var/lib/mysql/mysql.sock
+&lt;span style="color:#000">user&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>mysql
+&lt;span style="color:#8f5902;font-style:italic"># Default to using old password format for compatibility with mysql 3.x&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># clients (those using the mysqlclient10 compatibility package).&lt;/span>
+&lt;span style="color:#000">old_passwords&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;span style="color:#000">max_connections&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">800&lt;/span>
+log-bin&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>mysql-bin server-id&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;span style="color:#000">innodb_flush_log_at_trx_commit&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;span style="color:#000">sync_binlog&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Disabling symbolic-links is recommended to prevent assorted security risks;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># to do so, uncomment this line: # symbolic-links=0&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>mysqld_safe&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+log-error&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/var/log/mysqld.log
+pid-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/var/run/mysqld/mysqld.pid
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>At this point, you have to restart MySQL, by launching:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ service mysqld restart
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In order to check that on the master side the mechanism is working, you can
+launch for example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">mysql&amp;gt; show master status&lt;span style="color:#000;font-weight:bold">;&lt;/span>
++------------------+----------+--------------+------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> File &lt;span style="color:#000;font-weight:bold">|&lt;/span> Position &lt;span style="color:#000;font-weight:bold">|&lt;/span> Binlog_Do_DB &lt;span style="color:#000;font-weight:bold">|&lt;/span> Binlog_Ignore_DB &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++------------------+----------+--------------+------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> mysql-bin.000001 &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">24844&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++------------------+----------+--------------+------------------+
+&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> row in &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>0.00 sec&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eventually, through the web interface, in the ACL section of each VO you want to
+replicate, add an entry granting all the permissions to the slave server:&lt;/p>
+&lt;ul>
+&lt;li>select &amp;ldquo;a non VO member&amp;rdquo; from the menu&lt;/li>
+&lt;li>fill in the replica server DN and a reference email address&lt;/li>
+&lt;li>select &amp;ldquo;all&amp;rdquo; for the permissions and tick the &amp;ldquo;Propagate entry to children
+contexts&amp;rdquo; option&lt;/li>
+&lt;/ul>
+&lt;p>In this way, when the slave server copies the DB, it will have the proper
+permissions on acting on the DB. Moreover, in order to avoid the sending of
+notification to the email address you filled in before, connect to the MySQL
+database and do the following:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mysql&amp;gt; use voms_myvo&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+mysql&amp;gt; update admins &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">email_address&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NULL where &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000">email_address&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;what you filled before&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="settings-on-the-slave-server">Settings on the SLAVE SERVER&lt;/h2>
+&lt;p>Install a VOMS server as usual, configuring the VOs you want to replicate: keep
+in mind that every modification done on the slave DB breaks the replica
+mechanism, so that on this server disable the users registration, by setting the
+yaim variable:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">VOMS_ADMIN_WEB_REGISTRATION_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then ask the VO managers to not perform any action on the slave server web
+interface.&lt;/p>
+&lt;p>Then launch the following scripts:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="first_replica.sh">first_replica.sh&lt;/a> for the first database you want to
+replicate or in the case it is the only one&lt;/li>
+&lt;li>&lt;a href="next_replicas.sh">next_replicas.sh&lt;/a> for the next databases (one database for
+each launch)&lt;/li>
+&lt;/ul>
+&lt;p>For both the scripts, set the following variables:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>master_host&lt;/code>, &lt;code>master_mysql_user&lt;/code>, &lt;code>master_mysql_pwd&lt;/code> that refers to the
+master server and to the user created on it&lt;/li>
+&lt;li>&lt;code>mysql_username_admin&lt;/code> and &lt;code>mysql_password_admin&lt;/code> that refers to the slave&lt;/li>
+&lt;/ul>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">voms_database&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># VOMS database (leave unset)&lt;/span>
+&lt;span style="color:#000">master_host&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;voms.cnaf.infn.it&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Master hostname&lt;/span>
+&lt;span style="color:#000">master_mysql_user&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;bonjovi&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Master MySQL admin user for replication&lt;/span>
+&lt;span style="color:#000">master_mysql_pwd&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;always&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Master MySQL admin pass for replication user&lt;/span>
+&lt;span style="color:#000">master_log_file&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Master LOG file (leave unset)&lt;/span>
+&lt;span style="color:#000">master_log_pos&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Master LOG file (leave unset)&lt;/span>
+&lt;span style="color:#000">mysql_username_admin&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;root&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Slave MySQL admin username&lt;/span>
+&lt;span style="color:#000">mysql_password_admin&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;secret&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Slave MySQL admin pass&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>With the launch of &lt;code>first-replica.sh&lt;/code>, the file &lt;code>/etc/my.cnf&lt;/code> will be properly
+written; if you need to replicate further databases, modify &lt;code>/etc/my.cnf&lt;/code> adding
+the following lines related to the db you are replicating (similar to the first
+db you&amp;rsquo;ve replicated):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">replicate-do-db&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;master_vo_db_name&amp;gt;
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;master_vo_db_name&amp;gt;.seqnumber
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;master_vo_db_name&amp;gt;.realtime
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;master_vo_db_name&amp;gt;.transactions
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;slave_vo_db_name&amp;gt;.seqnumber
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;slave_vo_db_name&amp;gt;.realtime
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;slave_vo_db_name&amp;gt;.transactions
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Having set the variables in the way shown above, for replicating the first
+database the scripts launch syntax is the following:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ./first_replica.sh --master-db&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_myvo --db&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_myvo
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In your &lt;code>/etc/my.cnf&lt;/code> file you will find lines like the following:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Connection with master&lt;/span>
+server-id&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
+master-host&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms.cnaf.infn.it
+master-user&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>bonjovi
+master-password&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>always
+&lt;span style="color:#8f5902;font-style:italic"># Replicas settings&lt;/span>
+replicate-do-db&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_myvo
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_myvo.seqnumber
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_myvo.realtime
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_myvo.transactions
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_myvo.seqnumber
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_myvo.realtime
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_myvo.transactions
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you may want to replicate a second database, let&amp;rsquo;s say &lt;code>voms_hervo&lt;/code>:
+therefore in &lt;code>my.cnf&lt;/code> file add the following lines:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">replicate-do-db&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_hervo
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_hervo.seqnumber
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_hervo.realtime
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_hervo.transactions
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_hervo.seqnumber
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_hervo.realtime
+replicate-ignore-table&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_hervo.transactions
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Modify the script &lt;code>next_replicas.sh&lt;/code> in according to the VO parameters and
+launch it:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ./next_replicas.sh --master-db&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_hervo --db&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms_hervo
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When you finished to replicate all the desired VOs, in order to make active the
+database modifications, restart voms and voms-admin:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ /etc/init.d/voms-admin stop
+$ /etc/init.d/voms stop
+$ /etc/init.d/voms start
+$ /etc/init.d/voms-admin start
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Keep in mind that every modification done on the slave DB breaks the replica
+mechanism, so that on this server disable the users registration, by setting the
+yaim variable:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">VOMS_ADMIN_WEB_REGISTRATION_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And ask the VO managers to not perform any action on the slave server web
+interface.&lt;/p></description></item><item><title>Providers: HOWTO01 Site Certification Required Information</title><link>/providers/operations-manuals/howto01_site_certification_required_information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_site_certification_required_information/</guid><description>
 &lt;p>With the help of its NGI Operation Center, the site has to register their own
 resources in a central database named the
 &lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>. The
@@ -3260,192 +3403,4 @@ $ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; delete -r test/
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; list /
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>See Site Certification GIIS Check &lt;a href="../howto03_site_certificatoin_giis_check">HOWTO03&lt;/a>.&lt;/p>
 &lt;p>See to Resource Centre registration and certification procedure
-&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item><item><title>Providers: MAN07 VOMS Replication</title><link>/providers/operations-manuals/man07_voms_replication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man07_voms_replication/</guid><description>
-&lt;p>&lt;a href="../../Category:Operations_Manuals" title="wikilink">Category:Operations Manuals&lt;/a>&lt;/p>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>In this manual we will show you how to implement a MySQL VOMS server
-replication: you need one master server, on which you can perform
-writing operations, and you can have from 1 to &amp;ldquo;n&amp;rdquo; replica servers that
-will work in read-only mode. In such a scenario you can do a whatever
-intervention on one of the servers without breaking the service, i.e.
-proxies creation and grid-mapfile downloads: just the users registration
-and the usual VOs management operations might be forbidden during an
-intervention on the master server (because it is the only server in
-writing mode).&lt;/p>
-&lt;p>This failover procedure is simply based on mysql replication therefore
-every mysql setting is referred to the current mysql version (5.0.77 in
-this moment)&lt;/p>
-&lt;h2 id="settings-on-the-master-server">Settings on the MASTER SERVER&lt;/h2>
-&lt;p>In order to allow the replica server to read the master database, you
-have to create an user with which the slave will connect to the master.
-Suppose the replica hostname is vomsrep.cnaf.infn.it, the user is
-bonjovi and the password is always: what you have to launch on the
-master server is&lt;/p>
-&lt;p>&lt;code>mysql -p -e &amp;quot;grant super, reload , replication slave, replication client on *.* to bonjovi@'vomsrep.cnaf.infn.it' identified by 'always'&amp;quot; ;&lt;/code>&lt;/p>
-&lt;p>Then for each DB (VO) you want to replicate, you have to assign the
-right permissions, by launching:&lt;/p>
-&lt;p>&lt;code>mysql -p -e &amp;quot;grant select, lock tables on voms_myvo.* to bonjovi@'vomsrep.cnaf.infn.it'&amp;quot;&lt;/code>&lt;/p>
-&lt;p>Eventually you have to modify the file &lt;em>/etc/my.cnf&lt;/em> by adding the
-following lines into the section &amp;ldquo;[mysqld]&amp;quot;:&lt;/p>
-&lt;p>&lt;code>log-bin=mysql-bin&lt;/code>
-&lt;code>server-id=1&lt;/code>
-&lt;code>innodb_flush_log_at_trx_commit=1&lt;/code>
-&lt;code>sync_binlog=1&lt;/code>&lt;/p>
-&lt;p>It is important that on the master server it is set &amp;ldquo;server-id=1&amp;rdquo;: it is
-the identification number that distinguish a master from its several
-slaves (each slave will have a unique number starting from 2)&lt;/p>
-&lt;p>For example, the content of my.cnf file may appear like this:&lt;/p>
-&lt;p>&lt;code># less /etc/my.cnf &lt;/code>
-&lt;code>[mysqld]&lt;/code>
-&lt;code>datadir=/var/lib/mysql&lt;/code>
-&lt;code>socket=/var/lib/mysql/mysql.sock&lt;/code>
-&lt;code>user=mysql&lt;/code>
-&lt;code># Default to using old password format for compatibility with mysql 3.x&lt;/code>
-&lt;code># clients (those using the mysqlclient10 compatibility package).&lt;/code>
-&lt;code>old_passwords=1&lt;/code>&lt;/p>
-&lt;p>&lt;code>max_connections = 800&lt;/code>
-&lt;code>log-bin=mysql-bin&lt;/code>
-&lt;code>server-id=1&lt;/code>
-&lt;code>innodb_flush_log_at_trx_commit=1&lt;/code>
-&lt;code>sync_binlog=1&lt;/code>
-&lt;code># Disabling symbolic-links is recommended to prevent assorted security risks;&lt;/code>
-&lt;code># to do so, uncomment this line:&lt;/code>
-&lt;code># symbolic-links=0&lt;/code>&lt;/p>
-&lt;p>&lt;code>[mysqld_safe]&lt;/code>
-&lt;code>log-error=/var/log/mysqld.log&lt;/code>
-&lt;code>pid-file=/var/run/mysqld/mysqld.pid&lt;/code>&lt;/p>
-&lt;p>At this point, you have to restart mysql, by launching:&lt;/p>
-&lt;p>&lt;code>service mysqld restart&lt;/code>&lt;/p>
-&lt;p>In order to check that on the master side the mechanism is working, you
-can launch for example:&lt;/p>
-&lt;p>&lt;code>mysql&amp;gt; show master status;&lt;/code>
-&lt;code>+------------------+----------+--------------+------------------+&lt;/code>
-&lt;code>| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |&lt;/code>
-&lt;code>+------------------+----------+--------------+------------------+&lt;/code>
-&lt;code>| mysql-bin.000001 |    24844 |              |                  | &lt;/code>
-&lt;code>+------------------+----------+--------------+------------------+&lt;/code>
-&lt;code>1 row in set (0.00 sec)&lt;/code>&lt;/p>
-&lt;p>Eventually, through the web interface, in the ACL section of each VO you
-want to replicate, add an entry granting all the permissions to the
-slave server:&lt;/p>
-&lt;ul>
-&lt;li>select &amp;ldquo;a non VO member&amp;rdquo; from the menu&lt;/li>
-&lt;li>fill in the replica server DN and a reference email address&lt;/li>
-&lt;li>select &amp;ldquo;all&amp;rdquo; for the permissions and tick the &amp;ldquo;Propagate entry to
-children contexts&amp;rdquo; option&lt;/li>
-&lt;/ul>
-&lt;p>In this way, when the slave server copies the DB, it will have the
-proper permissions on acting on the DB. Morover, in order to avoid the
-sending of notification to the email address you filled in before,
-connect to the mysql DB and do the following:&lt;/p>
-&lt;p>&lt;code>mysql&amp;gt; use voms_myvo;&lt;/code>
-&lt;code>mysql&amp;gt; update admins set email_address=NULL where email_address=&amp;quot;what you filled before&amp;quot;;&lt;/code>&lt;/p>
-&lt;h2 id="settings-on-the-slave-server">Settings on the SLAVE SERVER&lt;/h2>
-&lt;p>Install a VOMS server as usual, configuring the VOs you want to
-replicate: keep in mind that every modification done on the slave DB
-breaks the replica mechanism, so that on this server disable the users
-registration, by setting the yaim variable&lt;/p>
-&lt;p>&lt;code>VOMS_ADMIN_WEB_REGISTRATION_DISABLE=true&lt;/code>&lt;/p>
-&lt;p>and therefore ask the VO managers to not perform any action on the slave
-server web interface.&lt;/p>
-&lt;p>Then launch the following scripts:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="../../VOMS_Replication_first_replica" title="wikilink">first_replica.sh&lt;/a> for
-the first database you want to replicate or in the case it is the
-only one&lt;/li>
-&lt;li>&lt;a href="../../VOMS_Replication_next_replicas" title="wikilink">next_replicas.sh&lt;/a> for
-the next databases (one database for each launch)&lt;/li>
-&lt;/ul>
-&lt;p>For both the scripts, set the following variables:&lt;/p>
-&lt;ul>
-&lt;li>master_host, master_mysql_user, master_mysql_pwd that refers to
-the master server and to the user created on it&lt;/li>
-&lt;li>mysql_username_admin e mysql_password_admin that refers to the
-slave&lt;/li>
-&lt;/ul>
-&lt;p>EXAMPLE:&lt;/p>
-&lt;p>&lt;code>voms_database=&amp;quot;&amp;quot;                                    # VOMS database (leave unset)&lt;/code>
-&lt;code>master_host=&amp;quot;voms.cnaf.infn.it&amp;quot;                     # Master hostname&lt;/code>
-&lt;code>master_mysql_user=&amp;quot;bonjovi&amp;quot;                         # Master MySQL admin user for replication&lt;/code>
-&lt;code>master_mysql_pwd=&amp;quot;always&amp;quot;                           # Master MySQL admin pass for replication user&lt;/code>
-&lt;code>master_log_file=&amp;quot;&amp;quot;                                  # Master LOG file (leave unset)&lt;/code>
-&lt;code>master_log_pos=&amp;quot;&amp;quot;                                   # Master LOG file (leave unset)&lt;/code>
-&lt;code>mysql_username_admin=&amp;quot;root&amp;quot;                         # Slave MySQL admin username&lt;/code>
-&lt;code>mysql_password_admin=&amp;quot;secret&amp;quot;                       # Slave MySQL admin pass&lt;/code>&lt;/p>
-&lt;p>with the launch of first-replica.sh, the file /etc/my.cnf will be
-properly written; if you need to replicate further databases, modify
-/etc/my.cnf adding the following lines related to the db you are
-replicating (similar to the first db you&amp;rsquo;ve replicated):&lt;/p>
-&lt;p>&lt;code>replicate-do-db=&lt;/code>&amp;lt;master_vo_db_name&amp;gt;
-&lt;code>replicate-ignore-table=&lt;/code>&amp;lt;master_vo_db_name&amp;gt;&lt;code>.seqnumber&lt;/code>
-&lt;code>replicate-ignore-table=&lt;/code>&amp;lt;master_vo_db_name&amp;gt;&lt;code>.realtime&lt;/code>
-&lt;code>replicate-ignore-table=&lt;/code>&amp;lt;master_vo_db_name&amp;gt;&lt;code>.transactions&lt;/code>
-&lt;code>replicate-ignore-table=&lt;/code>&amp;lt;slave_vo_db_name&amp;gt;&lt;code>.seqnumber&lt;/code>
-&lt;code>replicate-ignore-table=&lt;/code>&amp;lt;slave_vo_db_name&amp;gt;&lt;code>.realtime&lt;/code>
-&lt;code>replicate-ignore-table=&lt;/code>&amp;lt;slave_vo_db_name&amp;gt;&lt;code>.transactions&lt;/code>&lt;/p>
-&lt;p>Having set the variables in the way shown above, for replicating the
-first database the scripts launch syntax is the following:&lt;/p>
-&lt;p>&lt;code>./first_replica.sh --master-db=voms_myvo --db=voms_myvo&lt;/code>&lt;/p>
-&lt;p>In your /etc/my.cnf file you will find lines like the following:&lt;/p>
-&lt;p>&lt;code># Connection with master&lt;/code>
-&lt;code>server-id=2&lt;/code>
-&lt;code>master-host=voms.cnaf.infn.it&lt;/code>
-&lt;code>master-user=bonjovi&lt;/code>
-&lt;code>master-password=always&lt;/code>&lt;/p>
-&lt;p>&lt;code># Replicas settings&lt;/code>
-&lt;code>replicate-do-db=voms_myvo&lt;/code>
-&lt;code>replicate-ignore-table=voms_myvo.seqnumber&lt;/code>
-&lt;code>replicate-ignore-table=voms_myvo.realtime&lt;/code>
-&lt;code>replicate-ignore-table=voms_myvo.transactions&lt;/code>
-&lt;code>replicate-ignore-table=voms_myvo.seqnumber&lt;/code>
-&lt;code>replicate-ignore-table=voms_myvo.realtime&lt;/code>
-&lt;code>replicate-ignore-table=voms_myvo.transactions&lt;/code>&lt;/p>
-&lt;p>now you may want to replicate a second database, let&amp;rsquo;s say voms_hervo:
-therefore in my.cnf file add the following lines:&lt;/p>
-&lt;p>&lt;code>replicate-do-db=voms_hervo&lt;/code>
-&lt;code>replicate-ignore-table=voms_hervo.seqnumber&lt;/code>
-&lt;code>replicate-ignore-table=voms_hervo.realtime&lt;/code>
-&lt;code>replicate-ignore-table=voms_hervo.transactions&lt;/code>
-&lt;code>replicate-ignore-table=voms_hervo.seqnumber&lt;/code>
-&lt;code>replicate-ignore-table=voms_hervo.realtime&lt;/code>
-&lt;code>replicate-ignore-table=voms_hervo.transactions&lt;/code>&lt;/p>
-&lt;p>modify the script next_replicas.sh in according to the VO parameters
-and launch it:&lt;/p>
-&lt;p>&lt;code>./next_replicas.sh --master-db=voms_hervo --db=voms_hervo&lt;/code>&lt;/p>
-&lt;p>when you finished to replicate all the desired VOs, in order to make
-active the database modifications, restart voms and voms-admin:&lt;/p>
-&lt;p>&lt;code>/etc/init.d/voms-admin stop&lt;/code>
-&lt;code>/etc/init.d/voms stop&lt;/code>
-&lt;code>/etc/init.d/voms start&lt;/code>
-&lt;code>/etc/init.d/voms-admin start&lt;/code>&lt;/p>
-&lt;p>Keep in mind that every modification done on the slave DB breaks the
-replica mechanism, so that on this server disable the users
-registration, by setting the yaim variable:&lt;/p>
-&lt;p>&lt;code>VOMS_ADMIN_WEB_REGISTRATION_DISABLE=true&lt;/code>&lt;/p>
-&lt;p>and ask the VO managers to not perform any action on the slave server
-web interface&lt;/p>
-&lt;h2 id="revision-history">Revision History&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Version&lt;/th>
-&lt;th>Authors&lt;/th>
-&lt;th>Date&lt;/th>
-&lt;th>Comments&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>1.0&lt;/td>
-&lt;td>Alessandro Paolini&lt;/td>
-&lt;td>2011-10-14&lt;/td>
-&lt;td>First Draft&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>M. Krakowian&lt;/td>
-&lt;td>19 August 2014&lt;/td>
-&lt;td>Change contact group -&amp;gt; Operations support&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item></channel></rss>
