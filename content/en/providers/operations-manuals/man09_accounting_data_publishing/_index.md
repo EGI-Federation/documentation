@@ -63,7 +63,7 @@ Nagios probes.
 Sites can send either but the preferred option is summaries. Larger sites are
 recommended to send summaries.
 
-### The frequency for sending aggregated/summary records to Apel database?
+### The frequency for sending aggregated/summary records to APEL database?
 
 We recommend sending data daily for all sites, whether sending summaries or
 individual records. I think this is in the interests of people who are using the
@@ -84,8 +84,8 @@ refer to the NorduGrid ARC 6 documentation:
 
 - Information relevant only for 6.4 ARC releases and beyond: [Accounting
   NG](<http://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech)
-- The old ActiveMQ network was dissmissed.
-  [ARC 6.12](http://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.htm)
+- The old ActiveMQ network was dismissed.
+  [ARC 6.12](https://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.html)
   introduces new settings for publishing the accounting records via AMS.
 
 ## HTCondor-CE
