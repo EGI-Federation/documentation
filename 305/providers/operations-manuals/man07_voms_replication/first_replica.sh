@@ -19,7 +19,7 @@ mysql_password_admin=""                             # MySQL admin pass
 verbose=""
 
 TEMP=$(getopt -o hv --long \
-    mysql-home:,db:,mysql-admin:,mysql-pwd:,master-host:,master-mysql-user:,master-mysql-pwd:,master-log-file:,master-db:,master-log-pos: \
+    home:,db:,mysql-admin:,mysql-pwd:,master-host:,master-mysql-user:,master-mysql-pwd:,master-log-file:,master-db:,master-log-pos: \
     -n 'voms_install_replica' -- "$@")
 
 if [ $? != 0 ] ; then
