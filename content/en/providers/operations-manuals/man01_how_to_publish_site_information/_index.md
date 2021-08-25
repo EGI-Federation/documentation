@@ -1,9 +1,11 @@
 ---
 title: "MAN01 How to publish site information"
-weight: 100
+weight: 10
 type: "docs"
 description: "How to publish site information"
 ---
+
+## Document control
 
 <!-- markdownlint-disable line-length -->
 
@@ -360,15 +362,3 @@ view.
 The GLUE 2 equivalent of the GlueSite object is the `GLUE2AdminDomain`. The same
 information should be present although in a slightly different format, and there
 are separate `GLUE2Contact` and `GLUE2Location` objects.
-
-## Revision History
-
-<!-- markdownlint-disable line-length -->
-
-| Version | Authors      | Date             | Comments                                        |
-| ------- | ------------ | ---------------- | ----------------------------------------------- |
-|         | M. Krakowian | 19 August 2014   | Change contact group -> Operations support      |
-|         | B. Grenier   | 22 November 2017 | Link FedCloud-specific doc                      |
-|         | A. Paolini   | 03 July 2018     | removed reference to GSTAT, added link to VAPOR |
-
-<!-- markdownlint-enable line-length -->
