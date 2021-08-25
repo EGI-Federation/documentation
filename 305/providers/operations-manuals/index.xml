@@ -980,6 +980,36 @@ Dear all,
 Best Regards
 [SERVICE_TEAM]
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: MAN09 Accounting data publishing</title><link>/providers/operations-manuals/man09_accounting_data_publishing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man09_accounting_data_publishing/</guid><description>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Title&lt;/td>
+&lt;td>Accounting data publishing&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Policy Group&lt;/td>
+&lt;td>Operations Management Board (OMB)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Document status&lt;/td>
+&lt;td>Approved&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Procedure Statement&lt;/td>
+&lt;td>This manual provides information on how to publish accounting information from different middlewares&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Owner&lt;/td>
+&lt;td>SDIS team&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>In this manual we will show you how to publish accounting information
 from different middlewares.&lt;/p>
@@ -1096,8 +1126,7 @@ software as explained in the general information section.&lt;/p>
 &lt;td>Change contact group -&amp;gt; Operations support&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table>
-&lt;p>&lt;a href="../../Category:Operations_Manuals" title="wikilink">Category:Operations_Manuals&lt;/a>&lt;/p></description></item><item><title>Providers: MAN05 top BDII and site BDII High Availability</title><link>/providers/operations-manuals/man05_top_bdii_and_site_bdii_high_availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man05_top_bdii_and_site_bdii_high_availability/</guid><description>
+&lt;/table></description></item><item><title>Providers: MAN05 top BDII and site BDII High Availability</title><link>/providers/operations-manuals/man05_top_bdii_and_site_bdii_high_availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man05_top_bdii_and_site_bdii_high_availability/</guid><description>
 &lt;h2 id="document-control">Document control&lt;/h2>
 &lt;table>
 &lt;thead>
