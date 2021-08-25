@@ -979,109 +979,7 @@ Dear all,
 [DETAILED_FAILURE_DESCRIPTION]
 Best Regards
 [SERVICE_TEAM]
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: MAN09 Accounting data publishing</title><link>/providers/operations-manuals/man09_accounting_data_publishing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man09_accounting_data_publishing/</guid><description>
-&lt;h2 id="document-control">Document control&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Property&lt;/th>
-&lt;th>Value&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Title&lt;/td>
-&lt;td>Accounting data publishing&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Policy Group&lt;/td>
-&lt;td>Operations Management Board (OMB)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Document status&lt;/td>
-&lt;td>Approved&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Procedure Statement&lt;/td>
-&lt;td>How to publish accounting information for different middleware&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Owner&lt;/td>
-&lt;td>SDIS team&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>In this manual we will show you how to publish accounting information from
-different middleware.&lt;/p>
-&lt;h2 id="general-information">General information&lt;/h2>
-&lt;h3 id="publishing-with-the-apel-clientssm">Publishing with the APEL Client/SSM&lt;/h3>
-&lt;p>To start sending accounting records:&lt;/p>
-&lt;ol>
-&lt;li>register each endpoint sending the accounting records to the central
-repository as &amp;lsquo;gLite-APEL&amp;rsquo; endpoint in GOCDB with host DN information
-&lt;ul>
-&lt;li>either &lt;code>HTCondorCE&lt;/code> or &lt;code>ARC-CE&lt;/code> endpoints&lt;/li>
-&lt;li>it is needed to authorise the endpoint to use the ARGO Message Service
-(AMS)&lt;/li>
-&lt;li>Changes in GOCDB can take up to 4 hours to make it to AMS.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>install the APEL client and APEL SSM on your publisher host and edit
-&lt;code>client.cfg&lt;/code> and &lt;code>sender.cfg&lt;/code>&lt;/li>
-&lt;li>install the APEL parser relevant to your batch system on each CE and edit
-&lt;code>parser.cfg&lt;/code>
-&lt;ul>
-&lt;li>documentation for APEL
-&lt;a href="https://twiki.cern.ch/twiki/bin/view/EMI/EMI3APELClient">here&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/apel/apel">GitHub apel/apel&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/apel/ssm">GitHub apel/ssm&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>The old ActiveMQ network was dismissed: have a look at the new settings to
-properly
-&lt;a href="https://github.com/apel/ssm/blob/dev/migrating_to_ams.md">publish the accounting records via AMS&lt;/a>&lt;/li>
-&lt;li>configure the client to publish data from the start of the current month.&lt;/li>
-&lt;li>Run the parser(s) and client.&lt;/li>
-&lt;li>If there are no errors messages and the client says it has sent messages then
-wait a day and you should see summaries
-&lt;a href="http://goc-accounting.grid-support.ac.uk/apel/summaries2.html">here&lt;/a>&lt;/li>
-&lt;li>If it doesn&amp;rsquo;t open a GGUS ticket for the APEL Team.&lt;/li>
-&lt;/ol>
-&lt;h3 id="monitoring-the-accounting-data-publication">Monitoring the accounting data publication&lt;/h3>
-&lt;p>In order to monitor the regular publication of accounting data, it is enough
-registering only one CE with the &lt;code>APEL&lt;/code> service type.&lt;/p>
-&lt;p>See &lt;a href="https://wiki.egi.eu/wiki/APEL/Tests">here&lt;/a> the details about the related
-Nagios probes.&lt;/p>
-&lt;h3 id="publishing-summarized-records-or-single-ones">Publishing summarized records or single ones&lt;/h3>
-&lt;p>Sites can send either but the preferred option is summaries. Larger sites are
-recommended to send summaries.&lt;/p>
-&lt;h3 id="the-frequency-for-sending-aggregatedsummary-records-to-apel-database">The frequency for sending aggregated/summary records to Apel database?&lt;/h3>
-&lt;p>We recommend sending data daily for all sites, whether sending summaries or
-individual records. I think this is in the interests of people who are using the
-portal so that what they see is accurate. The summaries are for a complete month
-or the current month so far.&lt;/p>
-&lt;h3 id="authorization-and-authentication">Authorization and authentication&lt;/h3>
-&lt;p>Authorization and authentication is made by the host certificate (which is
-signed by a trusted CA from the ca_policy_core package). Certificate should be
-registered in GOCDB. The certificate must not have the X509 extension:
-&lt;code>Netscape Cert Type: SSL Server&lt;/code> because the message brokers will reject it.&lt;/p>
-&lt;h2 id="arc">ARC&lt;/h2>
-&lt;p>ARC uses its own system to publish the accounting data through AMS, so please
-refer to the NorduGrid ARC 6 documentation:&lt;/p>
-&lt;ul>
-&lt;li>Information relevant only for 6.4 ARC releases and beyond: [Accounting
-NG](&amp;lt;http://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech)&lt;/li>
-&lt;li>The old ActiveMQ network was dissmissed.
-&lt;a href="http://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.htm">ARC 6.12&lt;/a>
-introduces new settings for publishing the accounting records via AMS.&lt;/li>
-&lt;/ul>
-&lt;h2 id="htcondor-ce">HTCondor-CE&lt;/h2>
-&lt;p>To collect and publish the accounting data you need to install the APEL software
-as explained in the general information section.&lt;/p></description></item><item><title>Providers: MAN05 top and site BDII High Availability</title><link>/providers/operations-manuals/man05_top_and_site_bdii_high_availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man05_top_and_site_bdii_high_availability/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: MAN05 top and site BDII High Availability</title><link>/providers/operations-manuals/man05_top_and_site_bdii_high_availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man05_top_and_site_bdii_high_availability/</guid><description>
 &lt;h2 id="document-control">Document control&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -2101,7 +1999,109 @@ mechanism, so that on this server disable the users registration, by setting the
 yaim variable:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">VOMS_ADMIN_WEB_REGISTRATION_DISABLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>And ask the VO managers to not perform any action on the slave server web
-interface.&lt;/p></description></item><item><title>Providers: HOWTO01 Site Certification Required Information</title><link>/providers/operations-manuals/howto01_site_certification_required_information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_site_certification_required_information/</guid><description>
+interface.&lt;/p></description></item><item><title>Providers: MAN09 Accounting data publishing</title><link>/providers/operations-manuals/man09_accounting_data_publishing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man09_accounting_data_publishing/</guid><description>
+&lt;h2 id="document-control">Document control&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Title&lt;/td>
+&lt;td>Accounting data publishing&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Policy Group&lt;/td>
+&lt;td>Operations Management Board (OMB)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Document status&lt;/td>
+&lt;td>Approved&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Procedure Statement&lt;/td>
+&lt;td>How to publish accounting information for different middleware&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Owner&lt;/td>
+&lt;td>SDIS team&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>In this manual we will show you how to publish accounting information from
+different middleware.&lt;/p>
+&lt;h2 id="general-information">General information&lt;/h2>
+&lt;h3 id="publishing-with-the-apel-clientssm">Publishing with the APEL Client/SSM&lt;/h3>
+&lt;p>To start sending accounting records:&lt;/p>
+&lt;ol>
+&lt;li>register each endpoint sending the accounting records to the central
+repository as &amp;lsquo;gLite-APEL&amp;rsquo; endpoint in GOCDB with host DN information
+&lt;ul>
+&lt;li>either &lt;code>HTCondorCE&lt;/code> or &lt;code>ARC-CE&lt;/code> endpoints&lt;/li>
+&lt;li>it is needed to authorise the endpoint to use the ARGO Message Service
+(AMS)&lt;/li>
+&lt;li>Changes in GOCDB can take up to 4 hours to make it to AMS.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>install the APEL client and APEL SSM on your publisher host and edit
+&lt;code>client.cfg&lt;/code> and &lt;code>sender.cfg&lt;/code>&lt;/li>
+&lt;li>install the APEL parser relevant to your batch system on each CE and edit
+&lt;code>parser.cfg&lt;/code>
+&lt;ul>
+&lt;li>documentation for APEL
+&lt;a href="https://twiki.cern.ch/twiki/bin/view/EMI/EMI3APELClient">here&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/apel/apel">GitHub apel/apel&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apel/ssm">GitHub apel/ssm&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>The old ActiveMQ network was dismissed: have a look at the new settings to
+properly
+&lt;a href="https://github.com/apel/ssm/blob/dev/migrating_to_ams.md">publish the accounting records via AMS&lt;/a>&lt;/li>
+&lt;li>configure the client to publish data from the start of the current month.&lt;/li>
+&lt;li>Run the parser(s) and client.&lt;/li>
+&lt;li>If there are no errors messages and the client says it has sent messages then
+wait a day and you should see summaries
+&lt;a href="http://goc-accounting.grid-support.ac.uk/apel/summaries2.html">here&lt;/a>&lt;/li>
+&lt;li>If it doesn&amp;rsquo;t open a GGUS ticket for the APEL Team.&lt;/li>
+&lt;/ol>
+&lt;h3 id="monitoring-the-accounting-data-publication">Monitoring the accounting data publication&lt;/h3>
+&lt;p>In order to monitor the regular publication of accounting data, it is enough
+registering only one CE with the &lt;code>APEL&lt;/code> service type.&lt;/p>
+&lt;p>See &lt;a href="https://wiki.egi.eu/wiki/APEL/Tests">here&lt;/a> the details about the related
+Nagios probes.&lt;/p>
+&lt;h3 id="publishing-summarized-records-or-single-ones">Publishing summarized records or single ones&lt;/h3>
+&lt;p>Sites can send either but the preferred option is summaries. Larger sites are
+recommended to send summaries.&lt;/p>
+&lt;h3 id="the-frequency-for-sending-aggregatedsummary-records-to-apel-database">The frequency for sending aggregated/summary records to Apel database?&lt;/h3>
+&lt;p>We recommend sending data daily for all sites, whether sending summaries or
+individual records. I think this is in the interests of people who are using the
+portal so that what they see is accurate. The summaries are for a complete month
+or the current month so far.&lt;/p>
+&lt;h3 id="authorization-and-authentication">Authorization and authentication&lt;/h3>
+&lt;p>Authorization and authentication is made by the host certificate (which is
+signed by a trusted CA from the ca_policy_core package). Certificate should be
+registered in GOCDB. The certificate must not have the X509 extension:
+&lt;code>Netscape Cert Type: SSL Server&lt;/code> because the message brokers will reject it.&lt;/p>
+&lt;h2 id="arc">ARC&lt;/h2>
+&lt;p>ARC uses its own system to publish the accounting data through AMS, so please
+refer to the NorduGrid ARC 6 documentation:&lt;/p>
+&lt;ul>
+&lt;li>Information relevant only for 6.4 ARC releases and beyond: [Accounting
+NG](&amp;lt;http://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech)&lt;/li>
+&lt;li>The old ActiveMQ network was dissmissed.
+&lt;a href="http://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.htm">ARC 6.12&lt;/a>
+introduces new settings for publishing the accounting records via AMS.&lt;/li>
+&lt;/ul>
+&lt;h2 id="htcondor-ce">HTCondor-CE&lt;/h2>
+&lt;p>To collect and publish the accounting data you need to install the APEL software
+as explained in the general information section.&lt;/p></description></item><item><title>Providers: HOWTO01 Site Certification Required Information</title><link>/providers/operations-manuals/howto01_site_certification_required_information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_site_certification_required_information/</guid><description>
 &lt;p>With the help of its NGI Operation Center, the site has to register their own
 resources in a central database named the
 &lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>. The
