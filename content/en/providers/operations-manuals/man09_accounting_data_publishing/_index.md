@@ -5,6 +5,14 @@ type: "docs"
 description: This manual provides information on how to publish accounting information from different middlewares.
 ---
 
+| Property            | Value                                                        |
+| ------------------- | ------------------------------------------------------------ |
+| Title               | Accounting data publishing                                   |
+| Policy Group        | Operations Management Board (OMB)                            |
+| Document status     | Approved                                                     |
+| Procedure Statement | This manual provides information on how to publish accounting information from different middlewares |
+| Owner               | SDIS team                                                    |
+
 ## Introduction
 
 In this manual we will show you how to publish accounting information
@@ -96,4 +104,3 @@ software as explained in the general information section.
 |         | JC Gordon          | 17 Sept. 2014  | Remove requirement to test APEL client                                                      |
 |         | M. Krakowian       | 19 August 2014 | Change contact group -\> Operations support                                                 |
 
-[Category:Operations_Manuals](/Category:Operations_Manuals "wikilink")
