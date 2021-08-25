@@ -5,7 +5,7 @@ on: [pull_request]
 
 jobs:
   super-lint:
-    name: Lint with Supper-Linter
+    name: Lint with Super-Linter
     runs-on: ubuntu-latest
 
     steps:
