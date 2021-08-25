@@ -22,6 +22,7 @@ TEMP=$(getopt -o hv --long \
     home:,db:,mysql-admin:,mysql-pwd:,master-host:,master-mysql-user:,master-mysql-pwd:,master-log-file:,master-db:,master-log-pos: \
     -n 'voms_install_replica' -- "$@")
 
+ # shellcheck disable=SC2181
 if [ $? != 0 ] ; then
     echo "Terminating..." >&2
     exit 1
