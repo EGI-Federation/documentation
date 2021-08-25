@@ -1126,7 +1126,7 @@ software as explained in the general information section.&lt;/p>
 &lt;td>Change contact group -&amp;gt; Operations support&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Providers: MAN05 top BDII and site BDII High Availability</title><link>/providers/operations-manuals/man05_top_bdii_and_site_bdii_high_availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man05_top_bdii_and_site_bdii_high_availability/</guid><description>
+&lt;/table></description></item><item><title>Providers: MAN05 top and site BDII High Availability</title><link>/providers/operations-manuals/man05_top_and_site_bdii_high_availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man05_top_and_site_bdii_high_availability/</guid><description>
 &lt;h2 id="document-control">Document control&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -1138,7 +1138,7 @@ software as explained in the general information section.&lt;/p>
 &lt;tbody>
 &lt;tr>
 &lt;td>Title&lt;/td>
-&lt;td>MAN05 top BDII and site BDII High Availability&lt;/td>
+&lt;td>MAN05 top and site BDII High Availability&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Policy Group&lt;/td>
@@ -1505,7 +1505,460 @@ each site&lt;/li>
 the monitoring application to manage the three DNS servers content and their
 coherence&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="nsupdater-ibergrid-2.png" alt="nsupdater 2 at IBERGRID">&lt;/p></description></item><item><title>Providers: HOWTO01 Site Certification Required Information</title><link>/providers/operations-manuals/howto01_site_certification_required_information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_site_certification_required_information/</guid><description>
+&lt;p>&lt;img src="nsupdater-ibergrid-2.png" alt="nsupdater 2 at IBERGRID">&lt;/p></description></item><item><title>Providers: MAN06 Failover for MySQL grid-based services</title><link>/providers/operations-manuals/man06_failover_for_mysql_grid_based_services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man06_failover_for_mysql_grid_based_services/</guid><description>
+&lt;h2 id="document-control">Document control&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Title&lt;/td>
+&lt;td>MAN06 Failover for MySQL grid-based services&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Policy Group&lt;/td>
+&lt;td>Operations Management Board (OMB)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Document status&lt;/td>
+&lt;td>Approved&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Procedure Statement&lt;/td>
+&lt;td>Implementing failover of MySQL grid-based services.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Owner&lt;/td>
+&lt;td>SDIS team&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Several critical grid services such as the Logical File Catalogue (LFC) or the
+VO Management Service (VOMS) server represent single points of failure in a
+grid infrastructure. When unavailable, a user can no longer access to the
+infrastructure since it is prevented from issuing new proxies, or is no longer
+able to access to the physical location of his data.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>However, those services rely on MySQL backends which opens a window to
+replicate the relevant databases to different / backup services which could be
+used when the primary instances are unavailable. The MySQL DB replication
+process is one of the ways to get scalability and higher availability.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="architecture">Architecture&lt;/h2>
+&lt;p>In this document we propose to follow a Master-Slave architecture for the MySQL
+replication, consisting in keeping DB copies of a main host (MASTER) in a
+secondary host (SLAVE). The slave host will only have read access to the
+Database entries.&lt;/p>
+&lt;h2 id="security">Security&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>For better availability, it is preferable to deploy the Master and the Slave
+services in different geographical locations, which normally means exposing
+the generated traffic to the internet. In that case, you will have to find a
+mechanism to encrypt the communication between the two hosts.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In this document, we propose to use &lt;code>Stunnel&lt;/code>:&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>Stunnel is a free multi-platform computer program, used to provide universal
+TLS/SSL tunneling service.&lt;/li>
+&lt;li>Stunnel can be used to provide secure encrypted connections for clients or
+servers that do not speak TLS or SSL natively. It runs on a variety of
+operating systems, including most Unix-like operating systems and Windows.&lt;/li>
+&lt;li>Stunnel relies on a separate library such as OpenSSL or SSLeay to implement
+the underlying TLS or SSL protocol.&lt;/li>
+&lt;li>Stunnel uses Public-key cryptography with X.509 digital certificates to
+secure the SSL connection. Clients can optionally be authenticated via a
+certificate too&lt;/li>
+&lt;li>For more references, please check &lt;a href="http://www.stunnel.org/">www.stunnel.org&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>There are other possibilities for encryption, like enabling SSL Support
+directly in MySQL, but these approach was not tested. Details can be obtained
+&lt;a href="http://www.howtoforge.com/how-to-set-up-mysql-database-replication-with-ssl-encryption-on-centos-5.4">here&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="mysql-replication">MySQL replication&lt;/h2>
+&lt;h3 id="assumptions">Assumptions&lt;/h3>
+&lt;p>We are assuming that both grid services instances were previously installed and
+configured (manually or via YAIM) so that they support the same VOs.&lt;/p>
+&lt;h3 id="generic-information">Generic information&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Description&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>MASTER hostname&lt;/td>
+&lt;td>server1.domain.one&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MASTER username&lt;/td>
+&lt;td>root&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MASTER mysql superuser&lt;/td>
+&lt;td>root&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MASTER mysql replication user&lt;/td>
+&lt;td>db_rep&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SLAVE hostname&lt;/td>
+&lt;td>server2.domain.two&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SLAVE username&lt;/td>
+&lt;td>root&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SLAVE mysql superuser&lt;/td>
+&lt;td>root&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>DB to replicate&lt;/td>
+&lt;td>DB_1 DB_2 &amp;hellip;&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="setup-the-mysql-master-for-replication">Setup the MySQL MASTER for replication&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Step 1&lt;/strong>: Install stunnel. It is available in the SL5 repositories.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ yum install stunnel
+&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+$ date&lt;span style="color:#000;font-weight:bold">;&lt;/span> rpm -qa &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep stunnel
+Wed Jun &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> 16:00:23 WEST &lt;span style="color:#0000cf;font-weight:bold">2011&lt;/span>
+stunnel-4.15-2.el5.1
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 2&lt;/strong>: Configure stunnel (via &lt;code>/etc/stunnel/stunnel.conf&lt;/code>) to:&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>Accept incoming connections on port 3307, and allow to connect to port 3306&lt;/li>
+&lt;li>Use the server X509 certificates to encrypt data&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cat /etc/stunnel/stunnel.conf
+&lt;span style="color:#8f5902;font-style:italic"># Authentication stuff verify = 2&lt;/span>
+&lt;span style="color:#000">CApath&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /etc/grid-security/certificates
+&lt;span style="color:#000">cert&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /etc/grid-security/hostcert.pem
+&lt;span style="color:#000">key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /etc/grid-security/hostkey.pem
+&lt;span style="color:#8f5902;font-style:italic"># Auth fails in chroot because CApath is not accessible&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#chroot = /var/run/stunnel&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#debug = 7&lt;/span>
+&lt;span style="color:#000">output&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /var/log/stunnel.log
+&lt;span style="color:#000">pid&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /var/run/stunnel/master.pid
+&lt;span style="color:#000">setuid&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> nobody
+&lt;span style="color:#000">setgid&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> nobody
+&lt;span style="color:#8f5902;font-style:italic"># Service-level configuration&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>mysql&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000">accept&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3307&lt;/span>
+&lt;span style="color:#000">connect&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> 127.0.0.1:3306
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 3&lt;/strong>: Start the stunnel service and add it to rc.local&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ mkdir /var/run/stunnel
+$ chown nobody:nobody /var/run/stunnel
+$ stunnel /etc/stunnel.conf
+$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;stunnel /etc/stunnel.conf&amp;#39;&lt;/span> &amp;gt;&amp;gt; /etc/rc.local
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 4&lt;/strong>: Setup the firewall to allow connections from the SLAVE instance
+(server2.domain.two with IP XXX.XXX.XXX.XXX) on port 3307 TCP&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># MySQL replication&lt;/span>
+-A INPUT -s XXX.XXX.XXX.XXX -m state --state NEW -m tcp -p tcp &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --dport &lt;span style="color:#0000cf;font-weight:bold">3307&lt;/span> -j ACCEPT
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 5&lt;/strong>: Configure MySQL (via &lt;code>/etc/my.cnf&lt;/code>) setting up the Master
+server-id (usually 1), and declaring the path for the MySQL binary log and the
+DBs to be replicated. Please make sure that the path declared under log-bin
+has the &lt;code>mysql:mysql&lt;/code> ownerships, and that the binary log exists.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cat /etc/my.cnf
+&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>mysqld&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+server-id&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+log-bin &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /path_to_log_file/log_file.index
+binlog-do-db&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>DB_2
+binlog-do-db&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>DB_1
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 6&lt;/strong>: Restart MySQL&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ /etc/init.d/mysqld restart
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 7&lt;/strong>: Add a specific user for the MySQL replication&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mysql &amp;gt; GRANT REPLICATION SLAVE ON *.* TO &lt;span style="color:#4e9a06">&amp;#39;db_rep&amp;#39;&lt;/span>@&lt;span style="color:#4e9a06">&amp;#39;127.0.0.1&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> IDENTIFIED BY &lt;span style="color:#4e9a06">&amp;#39;16_char_password&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 8&lt;/strong>: Backup the databases using the following command. Please note tha
+the option &lt;code>--master-data=2&lt;/code> writes a comment on &lt;code>dump.sql&lt;/code> that shows the log
+file and the ID to be used on the Slave setup. This option also locks all the
+tables while they are being copied, avoiding problems.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ mysqldump -u root -p --default-character-set&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>latin1 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --master-data&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> --databases DB_1 DB_2 &amp;gt; dump.sql
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="setup-the-mysql-slave-for-replication">Setup the MySQL SLAVE for replication&lt;/h3>
+&lt;p>&lt;strong>Step 1&lt;/strong>: Configure stunnel (via /etc/stunnel/stunnel.conf) to:&lt;/p>
+&lt;ol>
+&lt;li>Accept incoming SSL connections on port 3307, and allow to connect to
+&lt;code>server1.domain.one&lt;/code> on port 3307&lt;/li>
+&lt;li>Use the server X509 certificates to encrypt data&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cat /etc/stunnel/stunnel.conf
+&lt;span style="color:#8f5902;font-style:italic"># Authentication stuff verify = 2&lt;/span>
+&lt;span style="color:#000">CApath&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /etc/grid-security/certificates
+&lt;span style="color:#000">cert&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /etc/grid-security/hostcert.pem
+&lt;span style="color:#000">key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /etc/grid-security/hostkey.pem
+&lt;span style="color:#8f5902;font-style:italic"># Auth fails in chroot because CApath is not accessible&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#chroot = /var/run/stunnel&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">#debug = 7&lt;/span>
+&lt;span style="color:#000">output&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /var/log/stunnel.log
+&lt;span style="color:#000">pid&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /var/run/stunnel/master.pid
+&lt;span style="color:#000">setuid&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> nobody &lt;span style="color:#000">setgid&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> nobody
+&lt;span style="color:#8f5902;font-style:italic"># Use it for client mode client = yes&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Service-level configuration [mysql] accept = 127.0.0.1:3307&lt;/span>
+&lt;span style="color:#000">connect&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> server1.domain.one:3307
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 2&lt;/strong>: Start stunnel and add it to rc.local&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ mkdir /var/run/stunnel $ chown nobody:nobody /var/run/stunnel
+$ stunnel /etc/stunnel.conf
+$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;stunnel /etc/stunnel.conf&amp;#39;&lt;/span> &amp;gt;&amp;gt; /etc/rc.local
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 3&lt;/strong>: Configure MySQL to include the SLAVE server-id (typically 2) and
+the replicated databases&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cat /etc/my.cnf
+&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>mysqld&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+server-id&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
+replicate-do-db&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>DB_1
+replicate-do-db&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>DB_2
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 4&lt;/strong>: Restart MySQL and insert the dump.sql created on the Master&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ /etc/init.d/mysql restart
+$ mysql -u root -p &amp;lt; dump.sql
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 5&lt;/strong>: Start the Slave logging in the mysql of slave, and running the
+following queries, changing the values xxxxx and yyyyy by the values on top of
+&lt;code>dump.sql&lt;/code> file:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mysql &amp;gt; CHANGE MASTER TO &lt;span style="color:#000">MASTER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;127.0.0.1&amp;#39;&lt;/span>, &lt;span style="color:#000">MASTER_PORT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>3307, &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000">MASTER_USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;db_rep&amp;#39;&lt;/span>, &lt;span style="color:#000">MASTER_PASSWORD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;16_char_password&amp;#39;&lt;/span>, &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000">MASTER_LOG_FILE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;xxxxx&amp;#39;&lt;/span>, &lt;span style="color:#000">MASTER_LOG_POS&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>yyyyy&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+mysql &amp;gt; SLAVE START&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>Step 6&lt;/strong>: Your replication should be up and running. In case of troubles,
+check the Troubleshooting section.&lt;/li>
+&lt;/ul>
+&lt;h3 id="troubleshooting">Troubleshooting&lt;/h3>
+&lt;h4 id="on-the-slave">On the Slave&lt;/h4>
+&lt;ul>
+&lt;li>Check if you can connect to the Master on port 3307 from the Slave&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic">#root@server2.domain.two]$ telnet server1.domain.one 3307&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Check the /var/log/stunnel.log on the Slave to see if stunnel is working. For
+established connections, you should find a message like:&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code class="language-log" data-lang="log">2011.05.30 11:57:45 LOG5[9000:1076156736]: mysql connected from XXX.XXX.XXX.XXX:PORTY
+2011.05.30 11:57:45 LOG5[9000:1076156736]: VERIFY OK: depth=1, /DC=COUNTRY/DC=CA/CN=NAME
+2011.05.30 11:57:45 LOG5[9000:1076156736]: VERIFY OK: depth=0, /DC=COUNTRY/DC=CA/O=INSTITUTE/CN=host/HOSTNAME
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>Check the MySQL process list. You should get an answer like the one bellow:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mysql&amp;gt; SHOW PROCESSLIST&lt;span style="color:#000;font-weight:bold">;&lt;/span>
++----+-------------+------+------+---------+---------+-----------------------------------------------------------------------------+------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Id &lt;span style="color:#000;font-weight:bold">|&lt;/span> User &lt;span style="color:#000;font-weight:bold">|&lt;/span> Host &lt;span style="color:#000;font-weight:bold">|&lt;/span> db &lt;span style="color:#000;font-weight:bold">|&lt;/span> Command &lt;span style="color:#000;font-weight:bold">|&lt;/span> Time &lt;span style="color:#000;font-weight:bold">|&lt;/span> State &lt;span style="color:#000;font-weight:bold">|&lt;/span> Info &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++----+-------------+------+------+---------+---------+-----------------------------------------------------------------------------+------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> system user &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> NULL &lt;span style="color:#000;font-weight:bold">|&lt;/span> Connect &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1236539&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> Waiting &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> master to send event &lt;span style="color:#000;font-weight:bold">|&lt;/span> NULL &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> system user &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> NULL &lt;span style="color:#000;font-weight:bold">|&lt;/span> Connect &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">90804&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> Slave has &lt;span style="color:#204a87">read&lt;/span> all relay log&lt;span style="color:#000;font-weight:bold">;&lt;/span> waiting &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> the slave I/O thread to update it &lt;span style="color:#000;font-weight:bold">|&lt;/span> NULL &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++----+-------------+------+------+---------+---------+-----------------------------------------------------------------------------+------+
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Check the status of the slave&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mysql&amp;gt; SHOW SLAVE STATUS&lt;span style="color:#000;font-weight:bold">;&lt;/span>
++----------------------------------+-------------+------------------+---------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Slave_IO_State &lt;span style="color:#000;font-weight:bold">|&lt;/span> Master_Port &lt;span style="color:#000;font-weight:bold">|&lt;/span> Master_Log_File &lt;span style="color:#000;font-weight:bold">|&lt;/span> Read_Master_Log_Pos &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++----------------------------------+-------------+------------------+---------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Waiting &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> master to send event &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3307&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> mysql-bin.000001 &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">126167682&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++----------------------------------+-------------+------------------+---------------------+
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="on-the-master">On the Master&lt;/h4>
+&lt;ul>
+&lt;li>Check the /var/log/stunnel.log on the Slave to see if stunnel is working. For
+established connections, you should find a message like:&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code class="language-log" data-lang="log">2011.05.30 11:57:45 LOG5[9000:1076156736]: mysql connected from XXX.XXX.XXX.XXX:PORTY
+2011.05.30 11:57:45 LOG5[9000:1076156736]: VERIFY OK: depth=1, /DC=COUNTRY/DC=CA/CN=NAME
+2011.05.30 11:57:45 LOG5[9000:1076156736]: VERIFY OK: depth=0, /DC=COUNTRY/DC=CA/O=INSTITUTE/CN=host/HOSTNAME
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>Check if you have established connections from the Slave on port 3307&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ netstat -tapn &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep &lt;span style="color:#0000cf;font-weight:bold">3307&lt;/span>
+tcp &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> 0.0.0.0:3307 0.0.0.0:* LISTEN 9000/stunnel
+tcp &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> XXX.XXX.XXX.XXX:3307 YYY.YYY.YYY.YYY:34378 ESTABLISHED 9000/stunnel
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Check the Master status on MySQL. You should get an answer like:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mysql&amp;gt; SHOW MASTER STATUS&lt;span style="color:#000;font-weight:bold">;&lt;/span>
++------------------+-----------+--------------+------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> File &lt;span style="color:#000;font-weight:bold">|&lt;/span> Position &lt;span style="color:#000;font-weight:bold">|&lt;/span> Binlog_Do_DB &lt;span style="color:#000;font-weight:bold">|&lt;/span> Binlog_Ignore_DB &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++------------------+-----------+--------------+------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> mysql-bin.000001 &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">126167682&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> DB_1 &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++------------------+-----------+--------------+------------------+
+&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> row in &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>0.00 sec&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Check the MySQL process list. You should get an answer like the one bellow:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mysql&amp;gt; SHOW PROCESSLIST&lt;span style="color:#000;font-weight:bold">;&lt;/span>
++------+-----------+-----------------+------+-------------+---------+----------------------------------------------------------------+------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Id &lt;span style="color:#000;font-weight:bold">|&lt;/span> User &lt;span style="color:#000;font-weight:bold">|&lt;/span> Host &lt;span style="color:#000;font-weight:bold">|&lt;/span> db &lt;span style="color:#000;font-weight:bold">|&lt;/span> Command &lt;span style="color:#000;font-weight:bold">|&lt;/span> Time &lt;span style="color:#000;font-weight:bold">|&lt;/span> State &lt;span style="color:#000;font-weight:bold">|&lt;/span> Info &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++------+-----------+-----------------+------+-------------+---------+----------------------------------------------------------------+------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2778&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> ibrepifca &lt;span style="color:#000;font-weight:bold">|&lt;/span> localhost:42281 &lt;span style="color:#000;font-weight:bold">|&lt;/span> NULL &lt;span style="color:#000;font-weight:bold">|&lt;/span> Binlog Dump &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1400477&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> Has sent all binlog to slave&lt;span style="color:#000;font-weight:bold">;&lt;/span> waiting &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> binlog to be updated &lt;span style="color:#000;font-weight:bold">|&lt;/span> NULL &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++------+-----------+-----------------+------+-------------+---------+----------------------------------------------------------------+------+
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="the-lfc-case">The LFC case&lt;/h3>
+&lt;h4 id="an-working-example">An working example&lt;/h4>
+&lt;p>Using the MySQL replication mechanism, you can setup a read-only LFC which can
+start to operate if the primary LFC is unavailable. The following workflow tries
+to demonstrate how the mechanism is working:&lt;/p>
+&lt;ul>
+&lt;li>Only the primary LFC is available in the information system&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ lcg-infosites --vo ict.vo.ibergrid.eu lfc lfc01.ncg.ingrid.pt
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>If &lt;code>LFC_HOST&lt;/code> env variable is not defined, &lt;code>lcg_utils&lt;/code> will query the
+information system to get the VO LFC&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code class="language-log" data-lang="log">06/15/11-18:19:53 --&amp;gt; unset LFC_HOST env variable
+06/15/11-18:19:53 --&amp;gt; copy data to SE and register it on the catalogue
+06/15/11-18:19:53 --&amp;gt; running command: lcg-cr -v --vo ict.vo.ibergrid.eu -d se01-tic.ciemat.es -l lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt &amp;lt;file:/home/ingrid/csys/goncalo/scriptInputData.jdl&amp;gt;
+Using grid catalog type: lfc Using grid catalog : lfc01.ncg.ingrid.pt
+Checksum type: None SE type: SRMv2
+Destination SURL : srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6
+Source SRM Request Token: da0f6de5-3dad-4d14-bd17-a5ae601043ec
+Source URL: &amp;lt;file:/home/ingrid/csys/goncalo/scriptInputData.jdl&amp;gt;
+File size: 565 VO name: ict.vo.ibergrid.eu
+Destination specified: se01-tic.ciemat.es
+Destination URL for copy: gsiftp://se01-tic.ciemat.es/se01-tic.ciemat.es:/storage10/ict.vo.ibergrid.eu/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6.1488163.0
+# streams: 1 565 bytes 1.19 KB/sec avg 1.19 KB/sec inst
+Transfer took 1020 ms
+Using LFN: lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt
+Using GUID: guid:f602407d-bc36-4c0b-8346-219fb14f830b
+Registering LFN: /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt (f602407d-bc36-4c0b-8346-219fb14f830b)
+Registering SURL: srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6 (f602407d-bc36-4c0b-8346-219fb14f830b)
+guid:f602407d-bc36-4c0b-8346-219fb14f830b
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>We now explicitly switch to the backup LFC (not being published in the
+information system), and we do see that the file already appears there
+registered.&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code class="language-log" data-lang="log">`06/15/11-18:20:01 --&amp;gt; export LFC_HOST to backup LFC`
+`06/15/11-18:20:01 --&amp;gt; running command: export LFC_HOST=ibergrid-lfc.ifca.es`
+`06/15/11-18:20:01 --&amp;gt; list the backup LFC`
+`06/15/11-18:20:01 --&amp;gt; running command: lfc-ls /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt`
+`/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt`
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>We can copy data around reading entries from the backup LFC&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code class="language-log" data-lang="log">06/15/11-18:20:01 --&amp;gt; Copy data using the backup LFC
+06/15/11-18:20:01 --&amp;gt; running command: lcg-cp -v --vo ict.vo.ibergrid.eu lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt &amp;lt;file:/home/ingrid/csys/goncalo/scriptInputData.jdl2&amp;gt;
+Using grid catalog type: LFC Using grid catalog : ibergrid-lfc.ifca.es
+VO name: ict.vo.ibergrid.eu Checksum type: None
+Trying SURL srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6 ...
+Source SE type: SRMv2
+Source SRM Request Token: 3e0be4f1-f9e9-40f4-8f9f-321a115840ba
+Source URL: /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt
+File size: 565
+Source URL for copy: gsiftp://se01-tic.ciemat.es/se01-tic.ciemat.es:/storage10/ict.vo.ibergrid.eu/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6.1488163.0
+Destination URL: &amp;lt;file:/home/ingrid/csys/goncalo/scriptInputData.jdl2&amp;gt;
+# streams: 1 0 bytes 0.00 KB/sec avg 0.00 KB/sec inst
+Transfer took 1030 ms
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>However, we can not register new files in the backup LFC&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code class="language-log" data-lang="log">06/15/11-18:30:10 --&amp;gt; copy data to SE and register it on the catalogue
+06/15/11-18:30:10 --&amp;gt; running command: lcg-cr -v --vo ict.vo.ibergrid.eu -d se01-tic.ciemat.es -l lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest2.txt &amp;lt;file:/home/ingrid/csys/goncalo/scriptInputData.jdl&amp;gt;
+Using grid catalog type: lfc Using grid catalog : ibergrid-lfc.ifca.es
+Checksum type: None SE type: SRMv2
+Destination SURL : srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/file8a30add9-b247-4037-9d42-981728ae3e76
+Source SRM Request Token: 4029fcc2-281f-4e9a-a843-e8a3a67623ff
+Source URL: &amp;lt;file:/home/ingrid/csys/goncalo/scriptInputData.jdl&amp;gt;
+File size: 565 VO name: ict.vo.ibergrid.eu
+Destination specified: se01-tic.ciemat.es
+Destination URL for copy: gsiftp://se01-tic.ciemat.es/se01-tic.ciemat.es:/storage17/ict.vo.ibergrid.eu/2011-06-15/file8a30add9-b247-4037-9d42-981728ae3e76.1488174.0
+# streams: 1 565 bytes 1.28 KB/sec avg 1.28 KB/sec inst
+Transfer took 1020 ms
+Using LFN: lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest2.txt
+Using GUID: guid:e1b977c7-290a-410f-ad31-be4feeb67b11
+Registering LFN: /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest2.txt (e1b977c7-290a-410f-ad31-be4feeb67b11)
+[LFC][lfc_creatg][] ibergrid-lfc.ifca.es: guid:e1b977c7-290a-410f-ad31-be4feeb67b11: Read-only file system
+srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/file8a30add9-b247-4037-9d42-981728ae3e76: Registration failed, please register it by hand, when the problem will be solved
+guid:e1b977c7-290a-410f-ad31-be4feeb67b11
+lcg_cr: Communication error on send
+&lt;/code>&lt;/pre>&lt;h4 id="swapping-between-lfcs">Swapping between LFCs&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>Unfortunately the middleware does not offer an automatic way to swap to the
+backup LFC in case the primary fails. Therefore, it is up to the user (or to
+the application) to determine if a given LFC is available or not.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the previous example, we have followed the approach where only the primary
+LFC is available through the information system. One can assume that, if the
+primary LFC is not available in the information system, it means that either
+it is down or unreachable. In that case, the user or application could switch
+to the backup LFC.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">LFC_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>lcg-infosites --vo ict.vo.ibergrid.eu lfc
+$ &lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;X&lt;/span>&lt;span style="color:#000">$LFC_HOST&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">==&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;X&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">then&lt;/span> &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">LFC_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;backup LFC FQDN&amp;gt;&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">fi&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="the-voms-case">The VOMS case&lt;/h3>
+&lt;h4 id="a-working-example">A working example&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>It is also possible to deploy a backup VOMS server with a MySQL replica of the
+main VOMS server. This will enable users to still start proxies even if the
+main VOMS server is down.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The VOMS Admin interface of the backup VOMS server should be switched off so
+that new users can only request registration via the main VOMS Admin Web
+interface.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>User interfaces should be configured to use both VOMS servers&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ voms-proxy-init --voms ict.vo.ibergrid.eu
+Enter GRID pass phrase:
+Your identity: /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PT/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>LIPCA/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>LIP/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Lisboa/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Goncalo Borges
+Creating temporary proxy .............................................................. Done
+Contacting voms01.ncg.ingrid.pt:40008 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PT/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>LIPCA/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>LIP/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Lisboa/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms01.ncg.ingrid.pt&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ict.vo.ibergrid.eu&amp;#34;&lt;/span> Done
+Creating proxy .......................................................................................................................................................... Done
+Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Thu Jun &lt;span style="color:#0000cf;font-weight:bold">16&lt;/span> 07:27:31 &lt;span style="color:#0000cf;font-weight:bold">2011&lt;/span>
+$ voms-proxy-init --voms ict.vo.ibergrid.eu
+Enter GRID pass phrase:
+Your identity: /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PT/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>LIPCA/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>LIP/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Lisboa/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Goncalo Borges
+Creating temporary proxy ............................................................. Done
+Contacting ibergrid-voms.ifca.es:40008 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>es/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>irisgrid/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ifca/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>host/ibergrid-voms.ifca.es&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ict.vo.ibergrid.eu&amp;#34;&lt;/span> Done
+Creating proxy ............................................................................ Done
+Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Thu Jun &lt;span style="color:#0000cf;font-weight:bold">16&lt;/span> 07:27:37 &lt;span style="color:#0000cf;font-weight:bold">2011&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: HOWTO01 Site Certification Required Information</title><link>/providers/operations-manuals/howto01_site_certification_required_information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_site_certification_required_information/</guid><description>
 &lt;p>With the help of its NGI Operation Center, the site has to register their own
 resources in a central database named the
 &lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>. The
@@ -2807,491 +3260,7 @@ $ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; delete -r test/
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; list /
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>See Site Certification GIIS Check &lt;a href="../howto03_site_certificatoin_giis_check">HOWTO03&lt;/a>.&lt;/p>
 &lt;p>See to Resource Centre registration and certification procedure
-&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item><item><title>Providers: MAN06 Failover for MySQL grid based services</title><link>/providers/operations-manuals/man06_failover_for_mysql_grid_based_services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man06_failover_for_mysql_grid_based_services/</guid><description>
-&lt;p>&lt;a href="../../Category:Operations_Manuals" title="wikilink">Category:Operations Manuals&lt;/a>&lt;/p>
-&lt;p>&lt;code> &lt;/code>&lt;/p>
-&lt;h1 id="introduction">Introduction&lt;/h1>
-&lt;ul>
-&lt;li>Several critical grid services such as the Logical File Catalogue
-(LFC) or the VO Management Service (VOMS) server represent single
-points of failure in a grid infrastructure. When unavailable, a user
-can no longer access to the infrastructure since it is prevented
-from issuing new proxies, or is no longer able to access to the
-physical location of his data.&lt;/li>
-&lt;/ul>
-&lt;!-- end list -->
-&lt;ul>
-&lt;li>However, those services rely on MySQL backends which opens a window
-to replicate the relevant databases to different / backup services
-which could be used when the primary instances are unavailable. The
-MySQL DB replication process is one of the ways to get scability and
-higher availability.&lt;/li>
-&lt;/ul>
-&lt;h1 id="architecture">Architecture&lt;/h1>
-&lt;p>In this document we propose to follow a Master-Slave architecture for
-the MySQL replication, consisting in keeping DB copies of a main host
-(MASTER) in a secondary host (SLAVE). The slave host will only have read
-access to the Database entries.&lt;/p>
-&lt;h1 id="security">Security&lt;/h1>
-&lt;ul>
-&lt;li>For better availability, it is preferable to deploy the Master and
-the Slave services in different geographical locations, which
-normally means exposing the generated traffic to the internet. In
-that case, you will have to find a mechanims to encrypt the
-communication between the two hosts.&lt;/li>
-&lt;/ul>
-&lt;!-- end list -->
-&lt;ul>
-&lt;li>In this document, we propose to use &lt;strong>Stunnel&lt;/strong>:&lt;/li>
-&lt;/ul>
-&lt;!-- end list -->
-&lt;ol>
-&lt;li>Stunnel is a free multi-platform computer program, used to provide
-universal TLS/SSL tunneling service.&lt;/li>
-&lt;li>Stunnel can be used to provide secure encrypted connections for
-clients or servers that do not speak TLS or SSL natively. It runs on
-a variety of operating systems, including most Unix-like operating
-systems and Windows.&lt;/li>
-&lt;li>Stunnel relies on a separate library such as OpenSSL or SSLeay to
-implement the underlying TLS or SSL protocol.&lt;/li>
-&lt;li>Stunnel uses Public-key cryptography with X.509 digital certificates
-to secure the SSL connection. Clients can optionally be
-authenticated via a certificate too&lt;/li>
-&lt;li>For more references, please check
-&lt;a href="http://www.stunnel.org/">www.stunnel.org&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;!-- end list -->
-&lt;ul>
-&lt;li>There are other possibilities for encryption, like enabling SSL
-Support directly in MySQL, but these approach was not tested.
-Details can be obtained
-&lt;a href="http://www.howtoforge.com/how-to-set-up-mysql-database-replication-with-ssl-encryption-on-centos-5.4">here&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;h1 id="mysql-replication">MySQL replication&lt;/h1>
-&lt;h2 id="assumptions">Assumptions&lt;/h2>
-&lt;p>We are assuming that both grid services instances were previously
-installed and configured (manually or via YAIM) so that they support the
-same VOs.&lt;/p>
-&lt;h2 id="generic-information">Generic information&lt;/h2>
-&lt;center>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Description&lt;/th>
-&lt;th>Value&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>MASTER hostname&lt;/td>
-&lt;td>server1.domain.one&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>MASTER username&lt;/td>
-&lt;td>root&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>MASTER mysql superuser&lt;/td>
-&lt;td>root&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>MASTER mysql replication user&lt;/td>
-&lt;td>db_rep&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>SLAVE hostname&lt;/td>
-&lt;td>server2.domain.two&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>SLAVE username&lt;/td>
-&lt;td>root&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>SLAVE mysql superuser&lt;/td>
-&lt;td>root&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>DB to replicate&lt;/td>
-&lt;td>DB_1 DB_2 &amp;hellip;&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;/center>
-&lt;h2 id="setup-the-mysql-master-for-replication">Setup the MySQL MASTER for replication&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Step 1&lt;/strong>: Install stunnel. It is available in the SL5
-repositories.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ yum install stunnel&lt;/code>
-&lt;code>(...)&lt;/code>&lt;/p>
-&lt;p>&lt;code>$ date; rpm -qa | grep stunnel&lt;/code>
-&lt;code>Wed Jun 15 16:00:23 WEST 2011&lt;/code>
-&lt;code>stunnel-4.15-2.el5.1&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 2&lt;/strong>: Configure stunnel (via /etc/stunnel/stunnel.conf) to:&lt;/li>
-&lt;/ul>
-&lt;!-- end list -->
-&lt;ol>
-&lt;li>Accept incoming connections on port 3307, and allow to connect to
-port 3306&lt;/li>
-&lt;li>Use the server X509 certificates to encrypt data&lt;/li>
-&lt;/ol>
-&lt;p>&lt;code>$ cat  /etc/stunnel/stunnel.conf&lt;/code>
-&lt;code># Authentication stuff&lt;/code>
-&lt;code>verify = 2&lt;/code>
-&lt;code>CApath = /etc/grid-security/certificates&lt;/code>
-&lt;code>cert = /etc/grid-security/hostcert.pem&lt;/code>
-&lt;code>key = /etc/grid-security/hostkey.pem&lt;/code>&lt;/p>
-&lt;p>&lt;code># Auth fails in chroot because CApath is not accessible&lt;/code>
-&lt;code>#chroot = /var/run/stunnel&lt;/code>
-&lt;code>#debug = 7&lt;/code>
-&lt;code>output = /var/log/stunnel.log&lt;/code>
-&lt;code>pid = /var/run/stunnel/master.pid&lt;/code>&lt;/p>
-&lt;p>&lt;code>setuid = nobody&lt;/code>
-&lt;code>setgid = nobody&lt;/code>&lt;/p>
-&lt;p>&lt;code># Service-level configuration&lt;/code>
-&lt;code>[mysql]&lt;/code>
-&lt;code>accept  = 3307&lt;/code>
-&lt;code>connect = 127.0.0.1:3306&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 3&lt;/strong>: Start the stunnel service and add it to rc.local&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ mkdir /var/run/stunnel&lt;/code>
-&lt;code>$ chown nobody:nobody /var/run/stunnel&lt;/code>
-&lt;code>$ stunnel /etc/stunnel.conf&lt;/code>
-&lt;code>$ echo 'stunnel /etc/stunnel.conf' &amp;gt;&amp;gt; /etc/rc.local&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 4&lt;/strong>: Setup the firewall to allow connections from the SLAVE
-instance (server2.domain.two with IP XXX.XXX.XXX.XXX) on port 3307
-TCP&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code># MySQL replication&lt;/code>
-&lt;code>-A INPUT -s XXX.XXX.XXX.XXX -m state --state NEW -m tcp -p tcp --dport 3307 -j ACCEPT&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 5&lt;/strong>: Configure MySQL (via /etc/my.cnf) setting up the Master
-server-id (usually 1), and declaring the path for the MySQL binary
-log and the DBs to be replicated. Please make sure that the path
-declared under log-bin has the mysql:mysql ownerships, and that the
-binary log exists.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ cat /etc/my.cnf&lt;/code>
-&lt;code>(...)&lt;/code>
-&lt;code>[mysqld]&lt;/code>
-&lt;code>server-id=1&lt;/code>
-&lt;code>log-bin = /path_to_log_file/log_file.index&lt;/code>
-&lt;code>binlog-do-db=DB_2&lt;/code>
-&lt;code>binlog-do-db=DB_1&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 6&lt;/strong>: Restart MySQL&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ /etc/init.d/mysqld restart&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 7&lt;/strong>: Add a specific user for the MySQL replication&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>mysql &amp;gt; GRANT REPLICATION SLAVE ON *.* TO 'db_rep'@'127.0.0.1' IDENTIFIED BY '16_char_password';&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 8&lt;/strong>: Backup the databases using the following command. Please
-note tha the option &amp;ldquo;&amp;ndash;master-data=2&amp;rdquo; writes a comment on dump.sql
-that shows the log file and the ID to be used on the Slave setup.
-This option also locks all the tables while they are beeing copied,
-avoiding problems.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ mysqldump -u root -p --default-character-set=latin1 --master-data=2 --databases DB_1 DB_2 &amp;gt; dump.sql&lt;/code>&lt;/p>
-&lt;h2 id="setup-the-mysql-slave-for-replication">Setup the MySQL SLAVE for replication&lt;/h2>
-&lt;p>&lt;strong>Step 1&lt;/strong>: Configure stunnel (via /etc/stunnel/stunnel.conf) to:&lt;/p>
-&lt;ol>
-&lt;li>Accept incoming SSL connections on port 3307, and allow to connect
-to server1.domain.one on port 3307&lt;/li>
-&lt;li>Use the server X509 certificates to encrypt data&lt;/li>
-&lt;/ol>
-&lt;p>&lt;code>$ cat /etc/stunnel/stunnel.conf&lt;/code>
-&lt;code># Authentication stuff&lt;/code>
-&lt;code>verify = 2&lt;/code>
-&lt;code>CApath = /etc/grid-security/certificates&lt;/code>
-&lt;code>cert = /etc/grid-security/hostcert.pem&lt;/code>
-&lt;code>key = /etc/grid-security/hostkey.pem&lt;/code>&lt;/p>
-&lt;p>&lt;code># Auth fails in chroot because CApath is not accessible&lt;/code>
-&lt;code>#chroot = /var/run/stunnel&lt;/code>
-&lt;code>#debug = 7&lt;/code>
-&lt;code>output = /var/log/stunnel.log&lt;/code>
-&lt;code>pid = /var/run/stunnel/master.pid&lt;/code>&lt;/p>
-&lt;p>&lt;code>setuid = nobody&lt;/code>
-&lt;code>setgid = nobody&lt;/code>&lt;/p>
-&lt;p>&lt;code># Use it for client mode&lt;/code>
-&lt;code>client = yes&lt;/code>&lt;/p>
-&lt;p>&lt;code># Service-level configuration&lt;/code>
-&lt;code>[mysql]&lt;/code>
-&lt;code>accept  = 127.0.0.1:3307&lt;/code>
-&lt;code>connect = server1.domain.one:3307&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 2&lt;/strong>: Start stunnel and add it to rc.local&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ mkdir /var/run/stunnel&lt;/code>
-&lt;code>$ chown nobody:nobody /var/run/stunnel&lt;/code>
-&lt;code>$ stunnel /etc/stunnel.conf&lt;/code>
-&lt;code>$ echo 'stunnel /etc/stunnel.conf' &amp;gt;&amp;gt; /etc/rc.local&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 3&lt;/strong>: Configure MySQL to include the SLAVE server-id
-(typically 2) and the replicated databases&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ cat /etc/my.cnf&lt;/code>
-&lt;code>(...)&lt;/code>
-&lt;code>[mysqld]&lt;/code>
-&lt;code>server-id=2&lt;/code>
-&lt;code>replicate-do-db=DB_1&lt;/code>
-&lt;code>replicate-do-db=DB_2&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 4&lt;/strong>: Restart MySQL and insert the dump.sql created on the
-Master&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ /etc/init.d/mysql restart&lt;/code>
-&lt;code>$ mysql -u root -p &amp;lt; dump.sql&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 5&lt;/strong>: Start the Slave loging in the mysql of slave, and
-running the following queries, changing the values xxxxx and yyyyy
-by the values on top of dump.sql file:&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>mysql &amp;gt; CHANGE MASTER TO MASTER_HOST='127.0.0.1', MASTER_PORT=3307, MASTER_USER='db_rep', MASTER_PASSWORD='16_char_password',&lt;/code>
-&lt;code>        MASTER_LOG_FILE='xxxxx', MASTER_LOG_POS=yyyyy;&lt;/code>
-&lt;code>mysql &amp;gt; SLAVE START;&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Step 6&lt;/strong>: Your replication should be up and running. In case of
-troubles, check the Troubleshooting section.&lt;/li>
-&lt;/ul>
-&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
-&lt;h3 id="on-the-slave">On the Slave&lt;/h3>
-&lt;ul>
-&lt;li>Check if you can connect to the Master on port 3307 from the Slave&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>[root@server2.domain.two]$ telnet server1.domain.one 3307&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Check the /var/log/stunnel.log on the Slave to see if stunnel is
-working. For established connections, you should find a message
-like:&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>2011.05.30 11:57:45 LOG5[9000:1076156736]: mysql connected from XXX.XXX.XXX.XXX:PORTY&lt;/code>
-&lt;code>2011.05.30 11:57:45 LOG5[9000:1076156736]: VERIFY OK: depth=1, /DC=COUNTRY/DC=CA/CN=NAME&lt;/code>
-&lt;code>2011.05.30 11:57:45 LOG5[9000:1076156736]: VERIFY OK: depth=0, /DC=COUNTRY/DC=CA/O=INSTITUTE/CN=host/HOSTNAME&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Check the MySQL process list. You should get an answer like the one
-bellow:&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>mysql&amp;gt; SHOW PROCESSLIST;&lt;/code>
-&lt;code>+--------+-------------+-----------+------+---------+---------+-----------------------------------------------------------------------------+------------------+&lt;/code>
-&lt;code>| Id     | User        | Host      | db   | Command | Time    | State                                                                       | Info             |&lt;/code>
-&lt;code>+--------+-------------+-----------+------+---------+---------+-----------------------------------------------------------------------------+------------------+&lt;/code>
-&lt;code>|      1 | system user |           | NULL | Connect | 1236539 | Waiting for master to send event                                            | NULL             |&lt;/code>
-&lt;code>|      2 | system user |           | NULL | Connect |   90804 | Slave has read all relay log; waiting for the slave I/O thread to update it | NULL             | &lt;/code>
-&lt;code>+--------+-------------+-----------+------+---------+---------+-----------------------------------------------------------------------------+------------------+&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Check the status of the slave&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>mysql&amp;gt; SHOW SLAVE STATUS;&lt;/code>
-&lt;code>+----------------------------------+-------------+------------------+---------------------+&lt;/code>
-&lt;code>| Slave_IO_State                   | Master_Port | Master_Log_File  | Read_Master_Log_Pos |&lt;/code>
-&lt;code>+----------------------------------+-------------+------------------+---------------------+&lt;/code>
-&lt;code>| Waiting for master to send event |        3307 | mysql-bin.000001 |          126167682  |  &lt;/code>
-&lt;code>+----------------------------------+-------------+------------------+---------------------+&lt;/code>&lt;/p>
-&lt;h3 id="on-the-master">On the Master&lt;/h3>
-&lt;ul>
-&lt;li>Check the /var/log/stunnel.log on the Slave to see if stunnel is
-working. For established connections, you should find a message
-like:&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>2011.05.30 11:57:45 LOG5[9000:1076156736]: mysql connected from XXX.XXX.XXX.XXX:PORTY&lt;/code>
-&lt;code>2011.05.30 11:57:45 LOG5[9000:1076156736]: VERIFY OK: depth=1, /DC=COUNTRY/DC=CA/CN=NAME&lt;/code>
-&lt;code>2011.05.30 11:57:45 LOG5[9000:1076156736]: VERIFY OK: depth=0, /DC=COUNTRY/DC=CA/O=INSTITUTE/CN=host/HOSTNAME&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Check if you have established connections from the Slave on port
-3307&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ netstat -tapn | grep 3307&lt;/code>
-&lt;code>tcp        0      0 0.0.0.0:3307                0.0.0.0:*                   LISTEN      9000/stunnel        &lt;/code>
-&lt;code>tcp        0      0 XXX.XXX.XXX.XXX:3307        YYY.YYY.YYY.YYY:34378       ESTABLISHED 9000/stunnel        &lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Check the Master status on MySQL. You should get an answer like:&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>mysql&amp;gt; SHOW MASTER STATUS;&lt;/code>
-&lt;code>+------------------+-----------+--------------+------------------+&lt;/code>
-&lt;code>| File             | Position  | Binlog_Do_DB | Binlog_Ignore_DB |&lt;/code>
-&lt;code>+------------------+-----------+--------------+------------------+&lt;/code>
-&lt;code>| mysql-bin.000001 | 126167682 | DB_1         |                  | &lt;/code>
-&lt;code>+------------------+-----------+--------------+------------------+&lt;/code>
-&lt;code>1 row in set (0.00 sec)&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>Check the MySQL process list. You should get an answer like the one
-bellow:&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>mysql&amp;gt; SHOW PROCESSLIST;&lt;/code>
-&lt;code>+------+-----------+--------------------+--------+-------------+---------+----------------------------------------------------------------+------------------+&lt;/code>
-&lt;code>| Id   | User      | Host               | db     | Command     | Time    | State                                                          | Info             |&lt;/code>
-&lt;code>+------+-----------+--------------------+--------+-------------+---------+----------------------------------------------------------------+------------------+                                                | NULL             | &lt;/code>
-&lt;code>| 2778 | ibrepifca | localhost:42281    | NULL   | Binlog Dump | 1400477 | Has sent all binlog to slave; waiting for binlog to be updated | NULL             | &lt;/code>
-&lt;code>+------+-----------+--------------------+--------+-------------+---------+----------------------------------------------------------------+------------------+&lt;/code>&lt;/p>
-&lt;h2 id="the-lfc-case">The LFC case&lt;/h2>
-&lt;h3 id="an-working-example">An working example&lt;/h3>
-&lt;p>Using the MySQL replication mechanism, you can setup a read-only LFC
-which can start to operate if the primary LFC is unavailable. The
-following workflow tries to demonstrate how the mechanism is working:&lt;/p>
-&lt;ul>
-&lt;li>Only the primary LFC is available in the information system&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ lcg-infosites --vo ict.vo.ibergrid.eu lfc&lt;/code>
-&lt;code>lfc01.ncg.ingrid.pt&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>If LFC_HOST env variable is not defined, lcg_utils will query the
-information system to get the VO LFC&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>06/15/11-18:19:53 --&amp;gt; unset LFC_HOST env variable&lt;/code>
-&lt;code>06/15/11-18:19:53 --&amp;gt; copy data to SE and register it on the catalogue&lt;/code>
-&lt;code>06/15/11-18:19:53 --&amp;gt; running command: lcg-cr -v --vo ict.vo.ibergrid.eu -d se01-tic.ciemat.es -l lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt &lt;/code>&lt;a href="file:/home/ingrid/csys/goncalo/scriptInputData.jdl">file:/home/ingrid/csys/goncalo/scriptInputData.jdl&lt;/a>
-&lt;code>Using grid catalog type: lfc&lt;/code>
-&lt;code>Using grid catalog : lfc01.ncg.ingrid.pt&lt;/code>
-&lt;code>Checksum type: None&lt;/code>
-&lt;code>SE type: SRMv2&lt;/code>
-&lt;code>Destination SURL : srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6&lt;/code>
-&lt;code>Source SRM Request Token: da0f6de5-3dad-4d14-bd17-a5ae601043ec&lt;/code>
-&lt;code>Source URL: &lt;/code>&lt;a href="file:/home/ingrid/csys/goncalo/scriptInputData.jdl">file:/home/ingrid/csys/goncalo/scriptInputData.jdl&lt;/a>
-&lt;code>File size: 565&lt;/code>
-&lt;code>VO name: ict.vo.ibergrid.eu&lt;/code>
-&lt;code>Destination specified: se01-tic.ciemat.es&lt;/code>
-&lt;code>Destination URL for copy: gsiftp://se01-tic.ciemat.es/se01-tic.ciemat.es:/storage10/ict.vo.ibergrid.eu/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6.1488163.0&lt;/code>
-&lt;code># streams: 1&lt;/code>
-&lt;code>         565 bytes      1.19 KB/sec avg      1.19 KB/sec inst&lt;/code>
-&lt;code>Transfer took 1020 ms&lt;/code>
-&lt;code>Using LFN: lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt&lt;/code>
-&lt;code>Using GUID: guid:f602407d-bc36-4c0b-8346-219fb14f830b&lt;/code>
-&lt;code>Registering LFN: /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt (f602407d-bc36-4c0b-8346-219fb14f830b)&lt;/code>
-&lt;code>Registering SURL: srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6 (f602407d-bc36-4c0b-8346-219fb14f830b)&lt;/code>
-&lt;code>guid:f602407d-bc36-4c0b-8346-219fb14f830b&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>We now explicitly switch to the backup LFC (not being published in
-the information system), and we do see that the file already appears
-there registered.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>06/15/11-18:20:01 --&amp;gt; export LFC_HOST to backup LFC&lt;/code>
-&lt;code>06/15/11-18:20:01 --&amp;gt; running command: export LFC_HOST=ibergrid-lfc.ifca.es&lt;/code>
-&lt;code>06/15/11-18:20:01 --&amp;gt; list the backup LFC&lt;/code>
-&lt;code>06/15/11-18:20:01 --&amp;gt; running command: lfc-ls /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt&lt;/code>
-&lt;code>/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>We can copy data around reading entries from the backup LFC&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>06/15/11-18:20:01 --&amp;gt; Copy data using the backup LFC&lt;/code>
-&lt;code>06/15/11-18:20:01 --&amp;gt; running command: lcg-cp -v --vo ict.vo.ibergrid.eu lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt &lt;/code>&lt;a href="file:/home/ingrid/csys/goncalo/scriptInputData.jdl2">file:/home/ingrid/csys/goncalo/scriptInputData.jdl2&lt;/a>
-&lt;code>Using grid catalog type: LFC&lt;/code>
-&lt;code>Using grid catalog : ibergrid-lfc.ifca.es&lt;/code>
-&lt;code>VO name: ict.vo.ibergrid.eu&lt;/code>
-&lt;code>Checksum type: None&lt;/code>
-&lt;code>Trying SURL srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6 ...&lt;/code>
-&lt;code>Source SE type: SRMv2&lt;/code>
-&lt;code>Source SRM Request Token: 3e0be4f1-f9e9-40f4-8f9f-321a115840ba&lt;/code>
-&lt;code>Source URL: /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt&lt;/code>
-&lt;code>File size: 565&lt;/code>
-&lt;code>Source URL for copy: gsiftp://se01-tic.ciemat.es/se01-tic.ciemat.es:/storage10/ict.vo.ibergrid.eu/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6.1488163.0&lt;/code>
-&lt;code>Destination URL: &lt;/code>&lt;a href="file:/home/ingrid/csys/goncalo/scriptInputData.jdl2">file:/home/ingrid/csys/goncalo/scriptInputData.jdl2&lt;/a>
-&lt;code># streams: 1&lt;/code>
-&lt;code>           0 bytes      0.00 KB/sec avg      0.00 KB/sec inst&lt;/code>
-&lt;code>Transfer took 1030 ms&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>However, we can not register new files in the backup LFC&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>06/15/11-18:30:10 --&amp;gt; copy data to SE and register it on the catalogue&lt;/code>
-&lt;code>06/15/11-18:30:10 --&amp;gt; running command: lcg-cr -v --vo ict.vo.ibergrid.eu -d se01-tic.ciemat.es -l lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest2.txt &lt;/code>&lt;a href="file:/home/ingrid/csys/goncalo/scriptInputData.jdl">file:/home/ingrid/csys/goncalo/scriptInputData.jdl&lt;/a>
-&lt;code>Using grid catalog type: lfc&lt;/code>
-&lt;code>Using grid catalog : ibergrid-lfc.ifca.es&lt;/code>
-&lt;code>Checksum type: None&lt;/code>
-&lt;code>SE type: SRMv2&lt;/code>
-&lt;code>Destination SURL : srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/file8a30add9-b247-4037-9d42-981728ae3e76&lt;/code>
-&lt;code>Source SRM Request Token: 4029fcc2-281f-4e9a-a843-e8a3a67623ff&lt;/code>
-&lt;code>Source URL: &lt;/code>&lt;a href="file:/home/ingrid/csys/goncalo/scriptInputData.jdl">file:/home/ingrid/csys/goncalo/scriptInputData.jdl&lt;/a>
-&lt;code>File size: 565&lt;/code>
-&lt;code>VO name: ict.vo.ibergrid.eu&lt;/code>
-&lt;code>Destination specified: se01-tic.ciemat.es&lt;/code>
-&lt;code>Destination URL for copy: gsiftp://se01-tic.ciemat.es/se01-tic.ciemat.es:/storage17/ict.vo.ibergrid.eu/2011-06-15/file8a30add9-b247-4037-9d42-981728ae3e76.1488174.0&lt;/code>
-&lt;code># streams: 1&lt;/code>
-&lt;code>         565 bytes      1.28 KB/sec avg      1.28 KB/sec inst&lt;/code>
-&lt;code>Transfer took 1020 ms&lt;/code>
-&lt;code>Using LFN: lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest2.txt&lt;/code>
-&lt;code>Using GUID: guid:e1b977c7-290a-410f-ad31-be4feeb67b11&lt;/code>
-&lt;code>Registering LFN: /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest2.txt (e1b977c7-290a-410f-ad31-be4feeb67b11)&lt;/code>
-&lt;code>[LFC][lfc_creatg][] ibergrid-lfc.ifca.es: guid:e1b977c7-290a-410f-ad31-be4feeb67b11: Read-only file system&lt;/code>
-&lt;code>srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/file8a30add9-b247-4037-9d42-981728ae3e76: Registration failed, please register it by hand, when the problem will be solved&lt;/code>
-&lt;code>guid:e1b977c7-290a-410f-ad31-be4feeb67b11&lt;/code>
-&lt;code>lcg_cr: Communication error on send&lt;/code>&lt;/p>
-&lt;h3 id="swapping-between-lfcs">Swapping between LFCs&lt;/h3>
-&lt;ul>
-&lt;li>Unfortunately the middleware does not offer an automatic way to swap
-to the backup LFC in case the primary fails. Therefore, it is up to
-the user (or to the application) to determine if a given LFC is
-available or not.&lt;/li>
-&lt;/ul>
-&lt;!-- end list -->
-&lt;ul>
-&lt;li>In the previous example, we have followed the approach where only
-the primary LFC is available through the information system. One can
-assume that, if the primary LFC is not available in the information
-system, it means that either it is down or unreachable. In that
-case, the user or application could switch to the backup LFC.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ export LFC_HOST=`lcg-infosites --vo ict.vo.ibergrid.eu lfc`&lt;/code>
-&lt;code>$ if [ &amp;quot;X$LFC_HOST&amp;quot; == &amp;quot;X&amp;quot; ]; then export LFC_HOST=&lt;/code>&lt;backup LFC FQDN>&lt;code>; fi&lt;/code>&lt;/p>
-&lt;h2 id="the-voms-case">The VOMS case&lt;/h2>
-&lt;h3 id="a-working-example">A working example&lt;/h3>
-&lt;ul>
-&lt;li>It is also possible to deploy a backup VOMS server with a MySQL
-replica of the main VOMS server. This will enable users to still
-start proxies even if the main VOMS server is down.&lt;/li>
-&lt;/ul>
-&lt;!-- end list -->
-&lt;ul>
-&lt;li>The VOMS Admin interface of the backup VOMS server should be
-switched off so that new users can only request registration via the
-main VOMS Admin Web interface.&lt;/li>
-&lt;/ul>
-&lt;!-- end list -->
-&lt;ul>
-&lt;li>User interfaces should be configured to use both VOMS servers&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ voms-proxy-init --voms ict.vo.ibergrid.eu&lt;/code>
-&lt;code>Enter GRID pass phrase:&lt;/code>
-&lt;code>Your identity: /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=Goncalo Borges&lt;/code>
-&lt;code>Creating temporary proxy .............................................................. Done&lt;/code>
-&lt;code>Contacting  voms01.ncg.ingrid.pt:40008 [/C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt] &amp;quot;ict.vo.ibergrid.eu&amp;quot; Done&lt;/code>
-&lt;code>Creating proxy .......................................................................................................................................................... Done&lt;/code>
-&lt;code>Your proxy is valid until Thu Jun 16 07:27:31 2011&lt;/code>&lt;/p>
-&lt;p>&lt;code>$ voms-proxy-init --voms ict.vo.ibergrid.eu&lt;/code>
-&lt;code>Enter GRID pass phrase:&lt;/code>
-&lt;code>Your identity: /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=Goncalo Borges&lt;/code>
-&lt;code>Creating temporary proxy ............................................................. Done&lt;/code>
-&lt;code>Contacting  ibergrid-voms.ifca.es:40008 [/DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es] &amp;quot;ict.vo.ibergrid.eu&amp;quot; Done&lt;/code>
-&lt;code>Creating proxy ............................................................................ Done&lt;/code>
-&lt;code>Your proxy is valid until Thu Jun 16 07:27:37 2011&lt;/code>&lt;/p>
-&lt;h1 id="revision-history">Revision history&lt;/h1>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Version&lt;/th>
-&lt;th>Authors&lt;/th>
-&lt;th>Date&lt;/th>
-&lt;th>Comments&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>1.0&lt;/td>
-&lt;td>Goncalo Borges&lt;/td>
-&lt;td>2011-06-16&lt;/td>
-&lt;td>first draft&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;/td>
-&lt;td>M. Krakowian&lt;/td>
-&lt;td>19 August 2014&lt;/td>
-&lt;td>Change contact group -&amp;gt; Operations support&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>Providers: MAN07 VOMS Replication</title><link>/providers/operations-manuals/man07_voms_replication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man07_voms_replication/</guid><description>
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item><item><title>Providers: MAN07 VOMS Replication</title><link>/providers/operations-manuals/man07_voms_replication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man07_voms_replication/</guid><description>
 &lt;p>&lt;a href="../../Category:Operations_Manuals" title="wikilink">Category:Operations Manuals&lt;/a>&lt;/p>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>In this manual we will show you how to implement a MySQL VOMS server
