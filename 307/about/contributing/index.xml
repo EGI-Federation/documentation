@@ -1039,7 +1039,7 @@ itself on the mardkown parser.&lt;/p>
 &lt;a href="https://github.com/yuin/goldmark">goldmark parser&lt;/a>, which relies on
 &lt;a href="https://prismjs.com/download.html#themes=prism">Prism syntax highlighting&lt;/a>.
 &lt;/div>
-&lt;p>The following markdown creates for a shell excerpt:&lt;/p>
+&lt;p>The following markdown creates a shell excerpt:&lt;/p>
 &lt;!-- markdownlint-disable commands-show-output -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="color:#4e9a06">```shell
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span>$ ssh-keygen -f fedcloud
