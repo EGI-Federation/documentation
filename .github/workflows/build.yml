@@ -2,13 +2,11 @@
 name: Build documentation
 # Setup and build files with hugo
 # https://github.com/peaceiris/actions-hugo
-# Deploy to GitHub pages
-# https://github.com/peaceiris/actions-gh-pages
 
 on: [pull_request]
 
 jobs:
-  deploy:
+  build:
     name: Build with Hugo
     runs-on: ubuntu-18.04
     steps:
