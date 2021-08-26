@@ -179,9 +179,9 @@ is the same as from [the command line](#using-from-the-command-line).
 The FedCloud client has these subcommands:
 
 - **fedcloud token** for checking access tokens
-  (see [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-token-commands))
+  (see token [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-token-commands))
 - **fedcloud endpoint** for querying the Configuration Database
-  (see token endpoint [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-endpoint-commands))
+  (see endpoint [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-endpoint-commands))
 - **fedcloud site** for manipulating site configurations
   (see site [subcommands](https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-site-commands))
 - **fedcloud openstack** or **fedcloud openstack-int** for performing
