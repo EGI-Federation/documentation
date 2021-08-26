@@ -177,7 +177,7 @@ depends on the integration environment being used:
 <!-- markdownlint-enable line-length -->
 
 To register your SAML SP, you must submit a service registration request at
-[Federation Registry](https:/aai.egi.eu/federation). Your request should include
+[Federation Registry](https://aai.egi.eu/federation). Your request should include
 the general information about your service (see
 [General Information](#general-information)) and the SP's metadata and entity
 id.
