@@ -1,10 +1,10 @@
 ---
-title: "EGI FedCloud Task Force"
+title: "EGI Task Force"
 linkTitle: "Task Force"
 type: docs
 weight: 15
 description: >
-  The task force behind EGI FedCloud
+  The task force behind the EGI Federation
 ---
 
 ## What is it?
