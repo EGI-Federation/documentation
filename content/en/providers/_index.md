@@ -9,7 +9,7 @@ menu:
     pre: <i class='fa fa-users-cog'></i>
 ---
 
-Welcome to the home page of Service Providers. This section provides 
+Welcome to the home page of Service Providers. This section provides
 documentation aimed at Service Providers across the EGI Federation.
 
 Any service provider can join the EGI Federation and in doing so benefit from
