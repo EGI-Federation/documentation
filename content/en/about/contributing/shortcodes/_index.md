@@ -71,7 +71,7 @@ itself on the mardkown parser.
 [Prism syntax highlighting](https://prismjs.com/download.html#themes=prism).
 {{% /alert %}}
 
-The following markdown creates for a shell excerpt:
+The following markdown creates a shell excerpt:
 
 <!-- markdownlint-disable commands-show-output -->
 ````markdown
