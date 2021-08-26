@@ -55,7 +55,7 @@ made in two ways:
 
 {{% alert title="Note" color="info" %}} If you need to discuss your changes
 beforehand (e.g. adding a new section or if you have any doubts), please
-consult the maintainers, by creating a
+consult the maintainers by creating a
 [GitHub issue](https://github.com/EGI-Federation/documentation/issues/new).
 
 <!-- markdownlint-disable no-inline-html -->
