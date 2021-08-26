@@ -6,9 +6,10 @@ weight: 10
 ---
 
 For collaboration purposes, it is best if you create a GitHub account and fork
-the repository to your own account. Once you do this you will be able to push
-your changes to your GitHub repository for others to see and use, and it will be
-easier to send pull requests.
+the repository to your own account. Once you do this, you will be able to push
+your changes to your GitHub repository for others to see and use, and you will
+be able to create pull requests (PRs) in the official EGI documentation
+repository based on branches in your fork.
 
 If you are new to `git` and **GitHub** you are advised to start by the two
 following articles providing simple tutorials:
@@ -78,10 +79,9 @@ It can be installed using the packages available on
 Once installed you will have to start by setting up authentication.
 
 ```shell
-# Authenticate with GitHub
-gh auth login
-# Favor ssh protocol
-gh config set git_protocol ssh
+# Authenticate with GitHub, favor SSH protocol
+$ gh auth login
+$ gh config set git_protocol ssh
 ```
 
 ## Working with repositories
@@ -96,7 +96,7 @@ This command will fork the repository to your GitHub account and clone a local
 copy for you to work with.
 
 ```shell
-gh repo fork EGI-Federation/documentation
+$ gh repo fork EGI-Federation/documentation
 ```
 
 ### Clone existing fork
@@ -104,7 +104,7 @@ gh repo fork EGI-Federation/documentation
 If you want to clone an existing fork you should use:
 
 ```shell
-gh repo clone <your_username>/documentation
+$ gh repo clone <your_username>/documentation
 ```
 
 ### Validate the local clone
@@ -145,8 +145,8 @@ Everything has been tested with Node.js 12.
 The dependencies of the docsy theme can be installed as follows:
 
 ```shell
-# from the root of the repository clone
-npm ci
+# From the root of the repository clone
+$ npm ci
 ```
 
 Hugo can be installed following
@@ -160,8 +160,8 @@ Hugo (extended) releases can be downloaded at
 To build and run the site, from the repository root:
 
 ```shell
-git submodule update --init --recursive --depth 1
-hugo --minify
+$ git submodule update --init --recursive --depth 1
+$ hugo --minify
 ```
 
 ### Testing the site locally
@@ -169,7 +169,7 @@ hugo --minify
 To launch the site locally, from the repository root:
 
 ```shell
-hugo serve -D
+$ hugo serve -D
 ```
 
 The website is available locally at:
@@ -192,7 +192,7 @@ meaningful name for the branch (my_nice_update in the example).
 ```shell
 # This should be done from the up-to-date main branch
 # Read furthermore to see documentation on updating a local clone
-git checkout -b my_nice_update
+$ git checkout -b my_nice_update
 ```
 
 ## Write changes
@@ -228,9 +228,9 @@ purpose of changes to the code.
 
 ```shell
 # Select the modified files to be committed
-git add files1 path2/
+$ git add files1 path2/
 # Commit the changes
-git commit -m <commit_message>
+$ git commit -m <commit_message>
 ```
 
 ## Push feature branch to the fork in preparation of a PR
@@ -239,17 +239,17 @@ From inside a feature branch you can push it to your remote fork.
 
 ```shell
 # Ask git to keep trace of the link between local and remote branches
-git push --set-upstream
+$ git push --set-upstream
 ```
 
 Once done, the output will show a URL that you can click to generate a Pull
-Request (PR). Accessing GitHub upstream of forked repositories may also propose
-you to submit a PR.
+Request (PR). Accessing GitHub upstream of forked repositories may also
+propose you to submit a PR.
 
 If needed GitHub CLI can also be used to prepare the PR:
 
 ```shell
-gh pr create <your_username>:<feature_branch> --web
+$ gh pr create <your_username>:<feature_branch> --web
 ```
 
 ### Previewing a pull request
@@ -275,7 +275,7 @@ the local clone with the remote changes.
 
 ```shell
 # Retrieve changes made on your PR in the upstream repository
-git pull
+$ git pull
 ```
 
 Then you can commit new changes and push them to your remote fork.
@@ -284,13 +284,13 @@ Then you can commit new changes and push them to your remote fork.
 
 ```shell
 # If you are still in a branch created for a previous PR, move to main
-git checkout main
+$ git checkout main
 # Get the latest data from the upstream repository
-git fetch upstream
+$ git fetch upstream
 # Update your local copy with this data
-git rebase upstream/main main
+$ git rebase upstream/main main
 # Update your remote GitHub fork with those changes
-git push
+$ git push
 ```
 
 ## Update local feature branch with changes made on the main branch
@@ -303,11 +303,11 @@ also be done in your repository clone using `git rebase`.
 
 ```shell
 # Retrieve changes made in the upstream repository
-git fetch upstream
+$ git fetch upstream
 # Check out the feature branch
-git checkout feature_branch
+$ git checkout feature_branch
 # Apply the new changes on main to your feature branch
-git rebase upstream/main
+$ git rebase upstream/main
 ```
 
 In case some files have been changed on both sides you will will have to merge
@@ -320,9 +320,9 @@ done using the PR number.
 
 ```shell
 # List available PR and their identifiers.
-gh pr list
+$ gh pr list
 # Clone  specific PR, updating sudmodules
-gh pr checkout XX --recurse-submodules
+$ gh pr checkout XX --recurse-submodules
 ```
 
 Once done it's possible to build and run the site locally:
@@ -330,7 +330,7 @@ Once done it's possible to build and run the site locally:
 ```shell
 # From the root of the repository clone
 # Here on MacOS X, adapt depending on your platform
-hugo server -D
+$ hugo serve -D
 ```
 
 The documentation will then be accessible on
@@ -341,18 +341,18 @@ The documentation will then be accessible on
 
 ```shell
 # From the local clone of the repository
-gh pr checkout XXX --recurse-submodules
-vim yyy.zz
-git add yyy.zz
-git commit yyy.zz -m <commit_message>
-git push
+$ gh pr checkout XXX --recurse-submodules
+$ vim yyy.zz
+$ git add yyy.zz
+$ git commit yyy.zz -m <commit_message>
+$ git push
 ```
 
 ### Update a local clone of a PR
 
 ```shell
 # It will ask you to merge changes
-git pull
+$ git pull
 ```
 
 Then you can refer to the `README.md` to see how to test it locally.
@@ -370,13 +370,13 @@ recreate it.
 
 ```shell
 # Switch to main branch
-git checkout main
+$ git checkout main
 # Check local branches
-git branch -vv
+$ git branch -vv
 # Delete a specific branch
-git branch -d <branch_name>
+$ git branch -d <branch_name>
 # If you need to force the deletion use -D
-git branch -D <branch_name>
+$ git branch -D <branch_name>
 ```
 
 ## Using stashes
@@ -387,22 +387,22 @@ this happens `git stash` can be helpful.
 
 ```shell
 # Saving a change
-git stash save <optional message>
+$ git stash save <optional message>
 # Creating the forgotten branch
-git checkout -b <my_feature_branch>
+$ git checkout -b <my_feature_branch>
 # Reviewing the saved changes, use TAB completion
-git stash show <TAB>
+$ git stash show <TAB>
 # Applying the saved changes, use TAB completion
-git stash pop <TAB>
+$ git stash pop <TAB>
 # Review the changes to be committed
-git diff
+$ git diff
 ```
 
 If you already committed your change(s) you may have to look at `git reset`.
 
 ```shell
 # Viewing the diff of the two last commits
-git log -n 2 -p
+$ git log -n 2 -p
 # Reverting the last change, keeping the change in the local directory
-git reset HEAD^
+$ git reset HEAD^
 ```
