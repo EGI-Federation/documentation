@@ -57,7 +57,6 @@ To install the FedCloud client:
 $ pip3 install fedcloudclient
 ```
 
-<!-- markdownlint-disable no-space-in-emphasis -->
 This installs the latest version of the FedCloud client, together with
 its required packages (like _openstackclient_). It will also create
 executables **fedcloud** and **openstack**, adding them to the _bin_
@@ -65,7 +64,6 @@ folder corresponding to your current Python execution environment
 (_$VIRTUAL_ENV/bin_ for executing pip3 in a Python virtual environment,
 _~/.local/bin_ for executing pip3 as user (with --user option), and
 _/usr/local/bin_ when executing pip3 as root).
-<!-- markdownlint-enable no-space-in-emphasis -->
 
 {{< /tabx >}}
 {{< tabx header="Windows" >}}
