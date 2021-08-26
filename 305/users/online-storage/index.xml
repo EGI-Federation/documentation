@@ -265,7 +265,7 @@ unless the volume driver supports
 &lt;a href="https://docs.openstack.org/cinder/latest/cli/cli-manage-volumes.html#extend-attached-volume">in-use extend&lt;/a>.
 &lt;/div>
 &lt;!-- markdownlint-disable line-length -->
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume &lt;span style="color:#204a87">set&lt;/span> --size &lt;span style="color:#0000cf;font-weight:bold">20&lt;/span> volume my-server my-volume
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume &lt;span style="color:#204a87">set&lt;/span> --size &lt;span style="color:#0000cf;font-weight:bold">20&lt;/span> my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume &lt;span style="color:#204a87">set&lt;/span> --size &lt;span style="color:#0000cf;font-weight:bold">20&lt;/span> my-volume
 &lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
 &lt;p>You can check that the volume got resized by either looking at the
