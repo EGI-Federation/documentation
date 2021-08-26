@@ -7,7 +7,7 @@ on:
     types: [unlabeled, closed]
 
 jobs:
-  build:
+  delete_preview:
     # Do not run on forks, and only if "safe for preview" label is set
     if: >
       github.repository == 'EGI-Federation/documentation' &&
