@@ -738,9 +738,9 @@ is the same as from &lt;a href="#using-from-the-command-line">the command line&l
 &lt;p>The FedCloud client has these subcommands:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>fedcloud token&lt;/strong> for checking access tokens
-(see &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-token-commands">subcommands&lt;/a>)&lt;/li>
+(see token &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-token-commands">subcommands&lt;/a>)&lt;/li>
 &lt;li>&lt;strong>fedcloud endpoint&lt;/strong> for querying the Configuration Database
-(see token endpoint &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-endpoint-commands">subcommands&lt;/a>)&lt;/li>
+(see endpoint &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-endpoint-commands">subcommands&lt;/a>)&lt;/li>
 &lt;li>&lt;strong>fedcloud site&lt;/strong> for manipulating site configurations
 (see site &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-site-commands">subcommands&lt;/a>)&lt;/li>
 &lt;li>&lt;strong>fedcloud openstack&lt;/strong> or &lt;strong>fedcloud openstack-int&lt;/strong> for performing
