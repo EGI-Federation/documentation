@@ -39,7 +39,7 @@ Documentation pages have to be written in markdown, compliant with
 - Files must end with an empty line, containing only a Line Feed
   character (`\n`)
 - Shell examples should include a prompt (`$` or `>`) in front of commands,
-  to make it easy to understand which is the command, and which is the output
+  to make it easy to understand which is the command and which is the output
 - Long commands in shell examples should be broken into multiple lines, using
   a trailing backslash character (`\`) on each line that continues on the next
 - Never break command output in shell examples to multiple lines, instead use
@@ -407,43 +407,14 @@ cases it is possible to
 [add exceptions](https://github.com/DavidAnson/markdownlint#configuration) and
 bypass **some checks** in markdown files:
 
-- Long lines due to formatting constructs like tables
 - When in-line HTML must be used (e.g. in tables, or when no other proper
   solution is available)
+- When the same procedure needs to be described for multiple platforms,
+  and the automatic checker flags it as duplicate content
 
 {{% alert title="Important" color="warning" %}} Exceptions should only be used
 when there are no other choices, and should be confined to the smallest possible
 block of markdown code. {{% /alert %}}
-
-### Dealing with long lines due to tables
-
-{{% alert title="Tip" color="info" %}} When having a long table is not absolutely
-necessary, it is better to use a different construct to present the information
-instead of adding an exception to ignore long lines.
-{{% /alert %}}
-
-When a table is the only proper way to present the data, and the table is wider
-than 80 characters, it can be preceded by a HTML comment starting with
-[markdownlint-disable](https://github.com/DavidAnson/markdownlint#configuration)
-to disable the `line-length` check:
-
-<!-- markdownlint-disable line-length -->
-```markdown
-| Action      | rOCCI                    | OpenStack              | This is a very long column with important data |
-| ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
-| List images | `occi -a list -r os_tpl` | `openstack image list` | Lorem ipsum                                    |
-```
-<!-- markdownlint-enable line-length -->
-
-{{% alert title="Note" color="info" %}} Do not forget to follow up with a HTML
-comment starting with
-[markdownlint-enable](https://github.com/DavidAnson/markdownlint#configuration)
-to re-enable the `line-length` check.
-{{% /alert %}}
-
-{{% alert title="Important" color="warning" %}} In case the table leads to the
-introduction of scroll bar, please reconsider using another formatting.
-{{% /alert %}}
 
 ### Dealing with in-line HTML tags
 
@@ -460,13 +431,13 @@ to disable the `no-inline-html` check.
 In the following example two checks are disabled at the same time: `line-length`
 and `no-inline-html`:
 
-<!-- markdownlint-disable line-length no-inline-html -->
+<!-- markdownlint-disable no-inline-html -->
 ```markdown
 | Action      | rOCCI                    | OpenStack              | This is a very long column with important data |
 | ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
 | List images | `occi -a list -r os_tpl` | `openstack image list` | <ul><li>Lorem</li><li>ipsum</li></ul>          |
 ```
-<!-- markdownlint-enable line-length no-inline-html -->
+<!-- markdownlint-enable no-inline-html -->
 
 {{% alert title="Note" color="info" %}} Do not forget to follow up with a HTML
 comment starting with
@@ -477,3 +448,59 @@ to re-enable the `no-inline-html` check.
 {{% alert title="Important" color="warning" %}} Always use the tag that is
 providing the proper semantic: e.g. for a list use `<ul>` and `<li>`, not `<br />`.
 {{% /alert %}}
+
+### Dealing with duplicate content
+
+When the same procedure needs to be described for multiple platforms, or when
+the same code has to be exemplified for multiple languages, it is possible
+that the automatic checkers will flag these as duplicates. 
+
+For example, describing the following procedure will result in duplicates
+being reported:
+
+```go-html-template
+{{</* tabpanex */>}}
+{{</* tabx header="Linux" */>}}
+To run the FedCloud client in a container, make sure
+[Docker is installed](https://docs.docker.com/engine/install/#server),
+then run the following commands:
+  ```shell
+  $ docker pull tdviet/fedcloudclient
+  $ docker run -it tdviet/fedcloudclient bash
+  '''
+{{</* /tabx */>}}
+{{</* tabx header="Mac" */>}}
+To run the FedCloud client in a container, make sure
+[Docker is installed](https://docs.docker.com/desktop/mac/install/),
+then run the following commands:
+  ```shell
+  $ docker pull tdviet/fedcloudclient
+  $ docker run -it tdviet/fedcloudclient bash
+  '''
+{{</* /tabx */>}}
+{{</* tabx header="Windows" */>}}
+To run the FedCloud client in a container, make sure
+[Docker is installed](https://docs.docker.com/desktop/windows/install/),
+then run the following commands:
+  ```shell
+  > docker pull tdviet/fedcloudclient
+  > docker run -it tdviet/fedcloudclient bash
+  '''
+{{</* /tabx */>}}
+{{</* /tabpanex */>}}
+```
+
+This type of content should be preceded by a HTML comment that disables the
+check for duplicates, and followed by another HTML comment that enables it again.
+
+```markdown
+<!--
+// jscpd:ignore-start
+-->
+
+...content with duplicates here...
+
+<!--
+// jscpd:ignore-end
+-->
+```
