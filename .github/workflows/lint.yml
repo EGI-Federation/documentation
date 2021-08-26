@@ -6,8 +6,8 @@ on:
     branches: [main]
 
 jobs:
-  format-lint:
-    name: Lint with Supper-Linter
+  super-lint:
+    name: Lint with Super-Linter
     runs-on: ubuntu-latest
 
     steps:

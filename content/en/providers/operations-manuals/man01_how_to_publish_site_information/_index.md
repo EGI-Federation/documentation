@@ -1,11 +1,11 @@
 ---
 title: "MAN01 How to publish site information"
-weight: 100
+weight: 10
 type: "docs"
 description: "How to publish site information"
 ---
 
-<!-- markdownlint-disable line-length -->
+## Document control
 
 | Property            | Value                                                           |
 | ------------------- | --------------------------------------------------------------- |
@@ -14,8 +14,6 @@ description: "How to publish site information"
 | Document status     | Approved                                                        |
 | Procedure Statement | Publishing site information in the Information Discovery System |
 | Owner               | SDIS team                                                       |
-
-<!-- markdownlint-enable line-length -->
 
 [EGI profile for the use of the GLUE 2.0 Information Schema](https://documents.egi.eu/public/ShowDocument?docid=1324)
 specifies how the GLUE 2.0 information schema should be used in EGI. It gives
@@ -92,8 +90,6 @@ if they are older than the EMI 2 release. The following table shows the
 publishing status for gLite and WLCG node types (ARC and Unicore have a
 different structure).
 
-<!-- markdownlint-disable line-length -->
-
 | Node type | GLUE 1 | GLUE 2 | Notes                                                   |
 | --------- | ------ | ------ | ------------------------------------------------------- |
 | LCG-CE    | Yes    | No     | Obsolete                                                |
@@ -119,8 +115,6 @@ different structure).
 | Squid     | No     | No     | Configuration exists but not enabled                    |
 | Nagios    | Yes    | Yes    |                                                         |
 
-<!-- markdownlint-enable line-length -->
-
 ### Service-related documentation
 
 #### Federated Cloud BDII configuration
@@ -134,7 +128,7 @@ the HOWTO15:
 These are the existing well established attributes in the `GlueSite` object. All
 of these MUST remain.
 
-<!-- markdownlint-disable line-length no-bare-urls -->
+<!-- markdownlint-disable no-bare-urls -->
 
 | Attribute                   | Example                       | Schema                          | Notes                                                                                                                                                                         |
 | --------------------------- | ----------------------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -150,7 +144,7 @@ of these MUST remain.
 | !GlueSiteSysAdminContact    | `xmpp://admins@jabber.org`    | Valid URL                       | How to contact the admins.                                                                                                                                                    |
 | !GlueSiteSecurityContact    | `mailto:security@example.com` | Valid URL                       | How to contact for security related matters.                                                                                                                                  |
 
-<!-- markdownlint-enable line-length no-bare-urls -->
+<!-- markdownlint-enable no-bare-urls -->
 
 The `GlueSite` object in the 1.3 Glue Schema contains an attribute
 `GlueSiteOtherInfo`. To quote.
@@ -167,7 +161,7 @@ site within the Grid Information Provider system.
 A format for publishing useful information about sites within the
 `!GlueSiteOtherInfo` is needed, as shown in the following table.
 
-<!-- markdownlint-disable line-length no-bare-urls -->
+<!-- markdownlint-disable no-bare-urls -->
 
 | Key           | Example                                             | Type                                                  | Notes                                                                                  |
 | ------------- | --------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -184,7 +178,7 @@ A format for publishing useful information about sites within the
 | BLOG          | `https://scotgrid.blogspot.com/feeds/posts/default` | Valid RSS or Atom Feed                                | Your site blog if you have one                                                         |
 | CONFIG        | yaim                                                | yaim, puppet, quattor, ...                            | The configuration tool(s) used at the site                                             |
 
-<!-- markdownlint-enable line-length no-bare-urls -->
+<!-- markdownlint-enable no-bare-urls -->
 
 Note. Keywords starting with one of the grid names are to some extent reserved
 for that grid.
@@ -225,7 +219,7 @@ shown in [WLCG CRIC](https://wlcg-cric-2.cern.ch).
 
 ### Established Grid Name
 
-<!-- markdownlint-disable line-length no-bare-urls -->
+<!-- markdownlint-disable no-bare-urls -->
 <!-- markdown-link-check-disable -->
 
 | Short Name             | Long Name                                                                                     | URL                                               |
@@ -256,7 +250,7 @@ shown in [WLCG CRIC](https://wlcg-cric-2.cern.ch).
 | SEE-GRID               | South Eastern European GRid-enabled eInfrastructure Development                               | https://www.see-grid.org/                         |
 
 <!-- markdown-link-check-enable -->
-<!-- markdownlint-enable line-length no-bare-urls -->
+<!-- markdownlint-enable no-bare-urls -->
 
 > Important: The EGEE Grid name was decomissioned on
 > [[Agenda-14-02-2011|14-02-2011]]. All sites need to replace this grid name
@@ -316,7 +310,7 @@ The valid names are those published on
 YAIM will have to be updated for those sites using yaim. This will be done and
 submitted to sites in the normal way.
 
-<!-- markdownlint-disable line-length no-bare-urls no-inline-html -->
+<!-- markdownlint-disable no-bare-urls no-inline-html -->
 
 | YAIM Variable and Value                 | Resulting Glue Attribute and Value                             |
 | --------------------------------------- | -------------------------------------------------------------- |
@@ -336,7 +330,7 @@ submitted to sites in the normal way.
 | SITE_OTHER_WLCG_TIER=2                  | GlueSiteOtherInfo: WLCG_TIER=2                                 |
 | SITE_OTHER\*<KEY>="<VALUE1>\|<VALUE2>"  | GlueSiteOtherInfo: KEY=<VALUE1>GlueSiteOtherInfo: KEY=<VALUE2> |
 
-<!-- markdownlint-enable line-length no-bare-urls no-inline-html -->
+<!-- markdownlint-enable no-bare-urls no-inline-html -->
 
 If multiple values for `GlueSiteOtherInfo` are needed, then just delimit your
 values with a `|`. The character `|` must be avoided in values.
@@ -360,15 +354,3 @@ view.
 The GLUE 2 equivalent of the GlueSite object is the `GLUE2AdminDomain`. The same
 information should be present although in a slightly different format, and there
 are separate `GLUE2Contact` and `GLUE2Location` objects.
-
-## Revision History
-
-<!-- markdownlint-disable line-length -->
-
-| Version | Authors      | Date             | Comments                                        |
-| ------- | ------------ | ---------------- | ----------------------------------------------- |
-|         | M. Krakowian | 19 August 2014   | Change contact group -> Operations support      |
-|         | B. Grenier   | 22 November 2017 | Link FedCloud-specific doc                      |
-|         | A. Paolini   | 03 July 2018     | removed reference to GSTAT, added link to VAPOR |
-
-<!-- markdownlint-enable line-length -->
