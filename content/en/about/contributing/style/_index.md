@@ -454,7 +454,7 @@ not `<br />`.
 
 When the same procedure needs to be described for multiple platforms, or when
 the same code has to be exemplified for multiple languages, it is possible
-that the automatic checkers will flag these as duplicates. 
+that the automatic checkers will flag these as duplicates.
 
 For example, describing the following procedure will result in duplicates
 being reported:
