@@ -4,7 +4,7 @@ linkTitle: "Command Line"
 type: docs
 weight: 30
 description: >
-  EGI FedCloud command line interface
+  EGI command line interface
 ---
 <!--
 // jscpd:ignore-start
@@ -23,8 +23,7 @@ what context.
 
 The [FedCloud client](https://fedcloudclient.fedcloud.eu/index.html) is a
 high-level Python package for a command-line client designed for interaction
-with the [OpenStack services](../openstack) in the EGI Federated Cloud
-(FedCloud).
+with the [OpenStack services](../openstack) in the EGI infrastructure.
 
 {{% alert title="Tip" color="info" %}} The FedCloud client is the recommended
 command line interface to use with most EGI services.
@@ -340,7 +339,7 @@ above.
 ### Using from Python
 
 The FedCloud client can be used as a library for developing other services and
-tools for EGI FedCloud. Most of the functionalities can be called directly from
+tools for EGI services. Most of the functionalities can be called directly from
 Python code without side effects.
 
 An usage example is available on

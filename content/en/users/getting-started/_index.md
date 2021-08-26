@@ -4,7 +4,7 @@ linkTitle: "Getting Started"
 type: docs
 weight: 5
 description: >
-  Introduction to EGI FedCloud
+  Introduction to EGI services
 ---
 
 ## Overview
@@ -12,8 +12,8 @@ description: >
 EGI is a federation of computing and storage resource providers
 united by a mission to support research and innovation.
 
-The resources in the EGI Federated Cloud (FedCloud) are offered by
-Infrastructure-as-a-Service (IaaS) [service providers](https://www.egi.eu/federation/egi-federated-cloud/)
+The resources in the EGI infrastructure are offered by
+[service providers](https://www.egi.eu/federation/egi-federated-cloud/)
 that either run their own [data centers](https://www.egi.eu/federation/data-centres/)
 or rely on community, private and/or public cloud services. These service
 providers offer:
@@ -30,14 +30,10 @@ providers offer:
 - **Monitoring of availability and reliability** to
   [ensure SLAs are met](https://argo.egi.eu/egi/report-status/Critical/SITES?filter=FedCloud)
 
-{{% alert title="Note" color="info" %}} Most services in the EGI FedCloud
-are based on [OpenStack](openstack) deployments.
-{{% /alert %}}
-
-On top of the resources in the EGI FedCloud, a multitude of academic
-communities (clouds) were created, each with their own virtualised resources
-built around open standards. The development of these academic/researsh clouds
-is driven by requirements of the scientific community.
+The EGI infrastructure supports a multitude of science and research
+communities, each with their own virtualised resources
+built around open standards. The development of these communities
+is driven by by their own scientific requirements.
 
 {{% alert title="Tip" color="info" %}} See also an
 [overview](https://www.egi.eu/federation/egi-federated-cloud/the-egi-federated-cloud-architecture/)
@@ -47,7 +43,7 @@ of the EGI FedCloud architecture, or read about the
 
 ## Accessing resources
 
-Access to resources (services) in EGI FedCloud is based on
+Access to resources (services) in the EGI infrastructure is based on
 [OpenID Connect](http://openid.net/connect/) (OIDC), which replaces the legacy
 authentication and authorization based on
 [X.509 certificates](../check-in/vos/voms).
@@ -56,14 +52,14 @@ authentication and authorization based on
 X.509 certificates, e.g. [High Throughput Compute](../high-throughput-compute).
 {{% /alert %}}
 
-**EGI FedCloud uses [Virtual Organisations](../check-in/vos) (VOs) to control
+**EGI uses [Virtual Organisations](../check-in/vos) (VOs) to control
 access to resources**. VOs are fully managed by research communities, allowing
 communitites to manage their users and grant access to their services and
 resources. This means communities can either own their resources and use EGI
 services to share (federate) them, or can use the resources available in the
 EGI infrastructure for their scientific needs.
 
-Before users can access a service in the EGI FedCloud, they have to:
+Before users can access an EGI service, they have to:
 
 1. Obtain a supported ID, by signing up with either [EGI Check-in](../check-in/signup)
    directly, or with one of the community identity providers from the

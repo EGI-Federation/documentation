@@ -4,11 +4,11 @@ linkTitle: "OpenStack Providers"
 type: docs
 weight: 20
 description: >
-  How to interact with OpenStack providers in the EGI FedCloud
+  How to interact with OpenStack providers
 ---
 
-[OpenStack](https://openstack.org) providers in the EGI Federated Cloud
-(FedCloud) offer services and features via OpenStack APIs, and the
+[OpenStack](https://openstack.org) providers in the EGI infrastructure
+offer services and features via OpenStack APIs, and the
 [command line interface](../cli) (CLI), both integrated with
 [EGI Check-in](../../check-in) accounts.
 
