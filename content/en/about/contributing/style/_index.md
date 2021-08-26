@@ -13,7 +13,7 @@ weight: 20
   [EGI Services Portfolio](https://www.egi.eu/services/)
 - Acronyms should be used only when it makes sense
 - Service names should never be replaced by acronyms
-- In the introduction of services link to the public page of the service,
+- When introducing services, link to the public page of the service,
 if any:
 
 ```markdown
@@ -22,22 +22,28 @@ if any:
 
 ## Markdown writing guidelines
 
-Documentation pages have to be written in markdown compliant with
+Documentation pages have to be written in markdown, compliant with
 [CommonMark](https://spec.commonmark.org/0.29/) and
 [GitHub Flavored Markdown](https://github.github.com/gfm/).
 
 ### Basic rules
 
-- Headings start at level 2 (`##`), as level 1 (`#`) is the title of the page
-- Do not capitalize each word in heading titles, unless it is a service name
+- Headings must start at level 2 (`##`), as level 1 (`#`) is the title of the page
 - Lines should be wrapped at 80 characters
-- Sentences should be separated by one space only
-- Indent is made with tabs not with spaces
-- Lists should be using `-` not `*`
+- Sentences must be separated by one space only
+- Indent is made with tabs, not with spaces
+- Bullet lists should be using `-` not `*`
+- Numbered lists should be using `1.` for each line (automatic numbering)
 - Indent secondary (and following) level lists with 2 spaces
-- Lines should end with a Line Feed character ("\n")
-- Files should end with a Line Feed character ("\n"), but not including an empty
-  line
+- Lines must end with a Line Feed character (`\n`)
+- Files must end with an empty line, containing only a Line Feed
+  character (`\n`)
+- Shell examples should include a prompt (`$` or `>`) in front of commands,
+  to make it easy to understand which is the command, and which is the output
+- Long commands in shell examples should be broken into multiple lines, using
+  a trailing backslash character (`\`) on each line that continues on the next
+- Never break command output in shell examples to multiple lines, instead use
+  [style exceptions](#adding-exceptions-for-style-violations) when necessary
 
 {{% alert title="Tip" color="info" %}} Syntax examples that can be used in the
 files are documented in the [shortcodes](../shortcodes) section. {{% /alert %}}
@@ -456,7 +462,7 @@ and `no-inline-html`:
 
 <!-- markdownlint-disable line-length no-inline-html -->
 ```markdown
-| Action      | OCCI                     | OpenStack              | This is a very long column with important data |
+| Action      | rOCCI                    | OpenStack              | This is a very long column with important data |
 | ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
 | List images | `occi -a list -r os_tpl` | `openstack image list` | <ul><li>Lorem</li><li>ipsum</li></ul>          |
 ```
