@@ -544,8 +544,8 @@ at 11.00 CE(S)T. Check our
 &lt;a href="https://indico.egi.eu/indico/categoryDisplay.py?categId=159">Indico category&lt;/a>
 for minutes and upcoming events.
 &lt;/div></description></item><item><title>Users: Using OpenStack Providers</title><link>/users/getting-started/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/openstack/</guid><description>
-&lt;p>&lt;a href="https://openstack.org">OpenStack&lt;/a> providers in the EGI Federated Cloud
-(FedCloud) offer services and features via OpenStack APIs, and the
+&lt;p>&lt;a href="https://openstack.org">OpenStack&lt;/a> providers in the EGI infrastructure
+offer services and features via OpenStack APIs, and the
 &lt;a href="../cli">command line interface&lt;/a> (CLI), both integrated with
 &lt;a href="../../check-in">EGI Check-in&lt;/a> accounts.&lt;/p>
 &lt;p>The extensive &lt;a href="https://docs.openstack.org/user/">OpenStack user documentation&lt;/a>
@@ -579,8 +579,7 @@ what context.&lt;/p>
 &lt;h2 id="the-fedcloud-client">The FedCloud client&lt;/h2>
 &lt;p>The &lt;a href="https://fedcloudclient.fedcloud.eu/index.html">FedCloud client&lt;/a> is a
 high-level Python package for a command-line client designed for interaction
-with the &lt;a href="../openstack">OpenStack services&lt;/a> in the EGI Federated Cloud
-(FedCloud).&lt;/p>
+with the &lt;a href="../openstack">OpenStack services&lt;/a> in the EGI infrastructure.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 The FedCloud client is the recommended
@@ -710,8 +709,8 @@ id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
 &lt;p>To run the FedCloud client in a container, make sure
 &lt;a href="https://docs.docker.com/engine/install/#server">Docker is installed&lt;/a>,
 then run the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo docker pull tdviet/fedcloudclient
-$ sudo docker run -it tdviet/fedcloudclient bash
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker pull tdviet/fedcloudclient
+$ docker run -it tdviet/fedcloudclient bash
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
@@ -719,8 +718,8 @@ id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
 &lt;p>To run the FedCloud client in a container, make sure
 &lt;a href="https://docs.docker.com/desktop/mac/install/">Docker is installed&lt;/a>,
 then run the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo docker pull tdviet/fedcloudclient
-$ sudo docker run -it tdviet/fedcloudclient bash
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker pull tdviet/fedcloudclient
+$ docker run -it tdviet/fedcloudclient bash
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
@@ -933,7 +932,7 @@ above.
 &lt;/div>
 &lt;h3 id="using-from-python">Using from Python&lt;/h3>
 &lt;p>The FedCloud client can be used as a library for developing other services and
-tools for EGI FedCloud. Most of the functionalities can be called directly from
+tools for EGI services. Most of the functionalities can be called directly from
 Python code without side effects.&lt;/p>
 &lt;p>An usage example is available on
 &lt;a href="https://github.com/tdviet/fedcloudclient/blob/master/examples/demo.py">GitHub&lt;/a>.
