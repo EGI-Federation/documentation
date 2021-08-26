@@ -623,15 +623,13 @@ Windows
 id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
 &lt;p>To install the FedCloud client:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ pip3 install fedcloudclient
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-disable no-space-in-emphasis -->
-&lt;p>This installs the latest version of the FedCloud client, together with
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with
 its required packages (like &lt;em>openstackclient&lt;/em>). It will also create
 executables &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;em>bin&lt;/em>
 folder corresponding to your current Python execution environment
 (&lt;em>$VIRTUAL_ENV/bin&lt;/em> for executing pip3 in a Python virtual environment,
 &lt;em>~/.local/bin&lt;/em> for executing pip3 as user (with &amp;ndash;user option), and
 &lt;em>/usr/local/bin&lt;/em> when executing pip3 as root).&lt;/p>
-&lt;!-- markdownlint-enable no-space-in-emphasis -->
 &lt;/div>
 &lt;div class="tab-pane fade"
 id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
