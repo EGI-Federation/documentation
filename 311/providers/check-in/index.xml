@@ -500,7 +500,7 @@ encoded in base64&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Country of the service&lt;/li>
-&lt;li>Compliancy with the
+&lt;li>Compliance with the
 &lt;a href="https://wiki.egi.eu/wiki/Policies_and_Procedures">EGI Policies&lt;/a> and the
 &lt;a href="https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home">GÉANT Data Protection Code of Conduct&lt;/a>&lt;/li>
 &lt;/ol>
@@ -618,7 +618,7 @@ attributes that are relevant for user authorisation:&lt;/p>
 &lt;!-- markdownlint-enable line-length -->
 &lt;h3 id="references">References&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://wiki.shibboleth.net/confluence/display/SP3/Configuration">Shibboleth SP Configuration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://shibboleth.atlassian.net/wiki/spaces/SP3/overview">Shibboleth Service Provider Documentation&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://simplesamlphp.org/docs/stable/simplesamlphp-sp">SimpleSAMLphp Service Provider QuickStart&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/latchset/mod_auth_mellon">Simple SAML 2.0 service provider with mod_auth_mellon Apache module&lt;/a>&lt;/li>
 &lt;/ul>
