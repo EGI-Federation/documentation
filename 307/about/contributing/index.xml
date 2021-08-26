@@ -947,11 +947,11 @@ with &lt;a href="https://github.com/DavidAnson/markdownlint#configuration">markd
 to disable the &lt;code>no-inline-html&lt;/code> check.&lt;/p>
 &lt;p>In the following example two checks are disabled at the same time: &lt;code>line-length&lt;/code>
 and &lt;code>no-inline-html&lt;/code>:&lt;/p>
-&lt;!-- markdownlint-disable no-inline-html -->
+&lt;!-- markdownlint-disable line-length no-inline-html -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">| Action | rOCCI | OpenStack | This is a very long column with important data |
 | ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
 | List images | &lt;span style="color:#4e9a06">`occi -a list -r os_tpl`&lt;/span> | &lt;span style="color:#4e9a06">`openstack image list`&lt;/span> | &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Lorem&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>ipsum&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> |
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable no-inline-html -->
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length no-inline-html -->
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Do not forget to follow up with a HTML
@@ -962,7 +962,8 @@ to re-enable the &lt;code>no-inline-html&lt;/code> check.
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
 Always use the tag that is
-providing the proper semantic: e.g. for a list use &lt;code>&amp;lt;ul&amp;gt;&lt;/code> and &lt;code>&amp;lt;li&amp;gt;&lt;/code>, not &lt;code>&amp;lt;br /&amp;gt;&lt;/code>.
+providing the proper semantic: e.g. for a list use &lt;code>&amp;lt;ul&amp;gt;&lt;/code> and &lt;code>&amp;lt;li&amp;gt;&lt;/code>,
+not &lt;code>&amp;lt;br /&amp;gt;&lt;/code>.
 &lt;/div>
 &lt;h3 id="dealing-with-duplicate-content">Dealing with duplicate content&lt;/h3>
 &lt;p>When the same procedure needs to be described for multiple platforms, or when
@@ -970,6 +971,10 @@ the same code has to be exemplified for multiple languages, it is possible
 that the automatic checkers will flag these as duplicates.&lt;/p>
 &lt;p>For example, describing the following procedure will result in duplicates
 being reported:&lt;/p>
+&lt;!--
+// jscpd:ignore-start
+-->
+&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 To run the FedCloud client in a container, make sure
@@ -999,8 +1004,13 @@ then run the following commands:
 &amp;#39;&amp;#39;&amp;#39;
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This type of content should be preceded by a HTML comment that disables the
-check for duplicates, and followed by another HTML comment that enables it again.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;!--
+// jscpd:ignore-end
+-->
+&lt;p>This type of content should be preceded by a HTML comment that disables the
+check for duplicates, and followed by another HTML comment that enables it
+again.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!--
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">// jscpd:ignore-start
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">--&amp;gt;&lt;/span>
