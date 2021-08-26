@@ -9,10 +9,10 @@ weight: 20
 ---
 
 This documentation covers how to install and configure a OneData OneProvider in
-order to join a new or existing DataHub space. In particular 2 types of
+order to join a new or existing EGI DataHub space. In particular two types of
 installations are available, depending if the provider wants to support the
-space with an an empty storage or if existing data are willing to be exposed via
-the OneProvider.
+space with an empty storage or if existing data should be exposed via the
+Oneprovider.
 
 ## Requirements for production installation
 
@@ -21,7 +21,7 @@ the OneProvider.
   - CPU: 8 vCPU
   - Disk: 50GB SSD
   - To be adjusted for the dataset and usage scenario
-- For high IOPS
+- For high Input/Output operations per second (IOPS)
   - High performance backend storage (CEPH)
   - Low latency network
 
@@ -32,74 +32,75 @@ the OneProvider.
 
 ## Installation and attach empty storage to the EGI DataHub
 
-The installation of a new OneProvider is performed using the an installation
-script used `onedatify` which will setup the components using Docker and
-Docker-compose
+The installation of a new Oneprovider is performed using the `onedatify`
+installation script which will setup the components using Docker and
+Docker-compose.
 
-The simple installation script can be generated from the EGI DataHub web
-interface.
+This simple installation script can be generated from the EGI DataHub interface.
 
-First you need to login to the EGI DataHub and from the Data menu you either
-select an existing space or create a new one.
+Firstly, you need to login to the EGI DataHub and using the `Data` menu you
+either select an existing space or create a new one.
 
-You can then select on the space menu the Providers section and click on the Add
-Support button on the top right corner
+Secondly, you can select on the space menu the `Providers` section and click on
+the `Add Support` button on the top right corner.
 
 ![image](add-support-oneprovider.png)
 
 You should then select on the page the tab: `Deploy your own provider` and there
-you will have just to copy the command having already the correct parameters for
-the OneZone to use (datahub.egi.eu) and the space to join.
+you will have to copy the command already configured with the correct parameters
+for the OneZone to use (`datahub.egi.eu`) and the space to join.
 
 ![image](onedatify-oneprovider.png)
 
 ### Run the command on the host
 
-Paste the copied command in the terminal on the OneProvider machine (as
-superuser).
+Paste the copied command in the terminal on the Oneprovider machine as
+superuser.
 
 If necessary, the Onedatify script will ask for permission to install all
 necessary dependencies including Docker and Docker Compose.
 
 After the dependency installation is complete, the script will ask several
-questions and suggest default setting for each one:
+questions and suggest default settings:
 
 ![image](onedatify_step_1.png)
 
 The progress can be monitored on a separate terminal using the following
 command:
 
-`onedatify logs`
+```shell
+onedatify logs
+```
 
-After the deployment is complete, the following message will be shown, with
-connection details for administration panel for the Oneprovider instance:
+After the deployment is complete, a message will be shown, including connection
+details for the administration panel of the Oneprovider:
 
 ![image](onedatify_step_5.png)
 
-The WebUI Admin portal at port 9443 can be used to administer the OneProvider
-installation.
+This administration panel at port `9443` can be used to administer the
+Oneprovider.
 
 ## Installation and expose existing data to the EGI DataHub
 
-The installation of a new OneProvider to expose existing data sets to an EGI
+The installation of a new OneProvider to expose existing datasets to an EGI
 DataHub space is similar to the installation with an empty storage.
 
 When adding support to an existing or new space you should select from the EGI
-DataHub GUI the tab : `Expose Existing dat set` and there you will have just to
-copy the command having already the correct parameters for the OneZone to use
-(datahub.egi.eu) and the space to join.
+DataHub user interface the tab : `Expose Existing dataset` and there you will
+have to copy the command already configured with the correct parameters for the
+Onezone (`datahub.egi.eu`) and the space to join.
 
 ![image](onedatify-oneprovider-expose.png)
 
 ### Run the command on the host
 
-Paste the copied command in the terminal on the OneProvider machine (as
-superuser) and follow the instructions as for the case of an empty storage.
+Paste the copied command in the terminal on the Oneprovider machine as
+superuser, and follow the instructions as for the case of an empty storage.
 
 The only difference is that at the end of the installation and configuration
 process the existing files will be automatically imported to the OneProvider.
 
-You can monitor the import activity from the WebUI Admin panel at port 9443
+You can monitor the import activity from the administration panel at port 9443.
 
 ![image](onedatify_step_6.png)
 

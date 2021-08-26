@@ -1,0 +1,86 @@
+---
+name: Preview pull requests
+# Setup and build files with hugo
+# https://github.com/peaceiris/actions-hugo
+# Deploy to GitHub pages
+# https://github.com/peaceiris/actions-gh-pages
+# Triggered by the build pull request preview
+# https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
+
+on:
+  # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#workflow_run
+  workflow_run:
+    workflows: ["Build pull request preview"]
+    types: [completed]
+
+jobs:
+  deploy:
+    # Only run if PR preview build was successful
+    if: >
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success'
+    name: Deploy pull request preview
+    runs-on: ubuntu-18.04
+    steps:
+      - name: "Download artifact"
+        uses: actions/github-script@v3.1.0
+        with:
+          script: |
+            var artifacts = await github.actions.listWorkflowRunArtifacts({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               run_id: ${{github.event.workflow_run.id }},
+            });
+            var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "pr"
+            })[0];
+            var download = await github.actions.downloadArtifact({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               artifact_id: matchArtifact.id,
+               archive_format: 'zip',
+            });
+            var fs = require('fs');
+            fs.writeFileSync('${{github.workspace}}/pr.zip', Buffer.from(download.data));
+
+      - name: Extract pull request preview
+        id: extract
+        run: |
+          unzip pr.zip
+          PR_NUMBER="$(cat ./PR)"
+          echo "::set-output name=pr_number::$PR_NUMBER"
+
+      - name: Deploy Pull Request preview
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # Use GITHUB_TOKEN allowing to write to local repository
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Purge older files from a given PR
+          keep_files: false
+          # Accessible at http://docs.egi.eu/documentation/
+          # XXX use a different domain
+          # cname: docs.egi.eu
+          # Branch to push to
+          publish_branch: pr_previews
+          # Source directory
+          publish_dir: ./${{ steps.extract.outputs.pr_number }}/
+          # Destitnation directory
+          destination_dir: ${{ steps.extract.outputs.pr_number }}
+          # Reuse PR commit message
+          commit_message: ${{ github.event.head_commit.message }}
+
+      - name: Update Pull Request
+        uses: actions/github-script@v4.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            var fs = require('fs');
+            var issue_number = Number('${{steps.extract.outputs.pr_number}}');
+            const output = `#### Documentation preview deployed!
+            Available at https://docs.egi.eu/documentation/${issue_number}`;
+            github.issues.createComment({
+              issue_number: issue_number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })

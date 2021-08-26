@@ -1,6 +1,6 @@
 ---
 title: "Internal Services"
-description: "Internal Services documentation"
+description: "Documentation for internal EGI services"
 weight: 30
 type: "docs"
 menu:
@@ -9,6 +9,18 @@ menu:
     pre: <i class='fa fa-cogs'></i>
 ---
 
-This section contains documentation about the EGI Internal Services, that are
-being operated centrally on behalf of EGI and supporting the coordination of
-the Federation.
+This section contains documentation about the
+[internal EGI services](https://www.egi.eu/internal-services/).
+These services are being operated centrally on behalf of EGI, and are
+supporting the coordination of the EGI Federation.
+
+{{% alert title="Note" color="info" %}} See the [User Guides](../users)
+section for documentation about public EGI services, and the
+[Service Providers](../providers) section for details on how to integrate
+providers into the EGI Federation.
+{{% /alert %}}
+
+## Request for information
+
+You can ask for more information about the internal EGI services
+[on our website](https://www.egi.eu/more-information).

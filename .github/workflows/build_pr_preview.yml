@@ -1,0 +1,69 @@
+---
+name: Build pull request preview
+# Setup and build files with hugo
+# https://github.com/peaceiris/actions-hugo
+
+on:
+  pull_request:
+    # Run when label is added or present and when pushing to the PR
+    types: [labeled, opened, synchronize]
+
+jobs:
+  build:
+    # Do not run on forks, and only if "safe for preview" label is set
+    if: >
+      github.repository == 'EGI-Federation/documentation' &&
+      ((github.event.action == 'labeled' && github.event.label.name == 'safe for
+      preview') || (github.event.action != 'labeled' &&
+      contains(github.event.pull_request.labels.*.name, 'safe for preview')))
+    name: Build with Hugo
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          # Fetch the Docsy theme
+          submodules: recursive
+          # Fetch all history for .GitInfo and .Lastmod
+          fetch-depth: 0
+
+      - name: Get Hugo version
+        id: hugo_version
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: .github/workflows/hugo_version.txt
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "${{ steps.hugo_version.outputs.content }}"
+          extended: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          # NodeJS 12 is maintained until 2022-04-30
+          node-version: "12.x"
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install npm project with a clean slate
+        run: npm ci
+
+      - name: Build and minify using Hugo
+        # Build in a directory specific to the PR number
+        run: hugo --minify --destination public/${{ github.event.number }}
+
+      - name: Save PR number
+        run: echo ${{ github.event.number }} > ./public/PR
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: pr
+          path: public/

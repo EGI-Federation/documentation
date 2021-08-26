@@ -43,10 +43,11 @@ We offer different service modes depending on your needs:
 
   1. [creating an EGI account](../check-in/signup)
   2. [enrolling to the vo.notebooks.egi.eu VO](https://aai.egi.eu/registry/co_petitions/start/coef:111)
+  3. [accessing https://notebooks.egi.eu/](https://notebooks.egi.eu/)
 
-  This instance has limits on the
-  amount of resources available for each user (1 CPU core, 1 GB RAM and 10 GB of
-  storage). It will also kill inactive sessions after 1 hour.
+  This instance has limits on the amount of resources available for each user (2
+  CPU core, 4 GB RAM and 20 GB of storage). It will also kill inactive sessions
+  after 1 hour.
 
 - User communities can have their customised EGI Notebooks service instance. EGI
   offers consultancy, support, and can operate the setup as well. A community
