@@ -394,26 +394,32 @@ and specifically are:&lt;/p>
 &lt;/ol>
 &lt;h2 id="service-provider-integration-workflow">Service Provider integration workflow&lt;/h2>
 &lt;p>To integrate your Service Provider with the EGI Check-in service, you need to
-&lt;a href="https://ggus.eu/?mode=ticket_submit">open a GGUS ticket&lt;/a> indicating your
-request. The responsible support unit is
-&lt;a href="https://wiki.egi.eu/wiki/GGUS:AAI_SUPPORT_FAQ">Check-in (AAI) Support&lt;/a>. The
-integration follows a two-step process:&lt;/p>
+create a registration request using the
+&lt;a href="https://aai.egi.eu/federation">EGI Federation Registry Portal&lt;/a>. You can also
+use the Federation Registry portal to request the reconfiguration or
+deregistration of an existing deployed service. Service registration requests
+typically require approval by an administrator. Please refer to the
+&lt;a href="https://federation.rciam.grnet.gr/docs">Federation Registry Documentation&lt;/a> for
+more information.&lt;/p>
+&lt;p>The integration follows a two-step process:&lt;/p>
 &lt;ol>
-&lt;li>Register your Service Provider and test integration with the &lt;strong>demo&lt;/strong>
-instance of EGI Check-in. The demo instance allows for testing authentication
-and authorisation without affecting the production Check-in service. Note
-that while the demo instance has identical functionality to the production
-instance, no information is shared between the two systems.
+&lt;li>Register your Service Provider and test integration with the&lt;br>
+and &lt;strong>demo&lt;/strong> instance of EGI Check-in by selecting the &amp;ldquo;Demo&amp;rdquo; integration
+environment during registration. The demo instance allows for testing
+authentication and authorisation without affecting the production Check-in
+service. Note that while the demo instance has identical functionality to the
+production instance, no information is shared between the two systems.
 &lt;ul>
 &lt;li>You can also test new features of Check-in that are not available in
 production yet, by registering your Service Provider and testing
-integration with the &lt;strong>development&lt;/strong> instance of Check-in. As with the demo
-instance, the development instance allows for testing authentication and
-authorisation without affecting the production Check-in service. &lt;strong>NB: the
-list of supported Identity Providers in the development instance is
-limited. Therefore, we recommend using the EGI SSO or any of the social
-identity providers to test the login workflow when using the development
-instance.&lt;/strong>&lt;/li>
+integration with the &lt;strong>development&lt;/strong> instance of Check-in. In the
+development instance service requests can be self-reviewed without the need
+to wait for aproval from an administrator. As with the demo instance, the
+development instance allows for testing authentication and authorisation
+without affecting the production Check-in service. &lt;strong>NB: the list of
+supported Identity Providers in the development instance is limited.
+Therefore, we recommend using the EGI SSO or any of the social identity
+providers to test the login workflow when using the development instance.&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Register your Service Provider with the &lt;strong>production&lt;/strong> instance of EGI
@@ -488,12 +494,11 @@ logos within a user interface&lt;/li>
 encoded in base64&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>Country of the service&lt;/li>
+&lt;li>Compliancy with the
+&lt;a href="https://wiki.egi.eu/wiki/Policies_and_Procedures">EGI Policies&lt;/a> and the
+&lt;a href="https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home">GÉANT Data Protection Code of Conduct&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-If you choose to register an OIDC client
-, then you can fill this information in the client configuration.
-&lt;/div>
 &lt;h2 id="saml-service-provider">SAML Service Provider&lt;/h2>
 &lt;p>To enable federated access to a web-based application, you can connect to the
 EGI Check-in IdP as a SAML Service Provider (SP). Users of the application will
@@ -535,9 +540,11 @@ depends on the integration environment being used:&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length -->
-&lt;p>To register your SAML SP, please contact &lt;code>checkin-support&lt;/code> &lt;code>&amp;lt;AT&amp;gt;&lt;/code>
-&lt;code>mailman.egi.eu&lt;/code>. Your request should include the general information about your
-service (see &lt;a href="#general-information">General Information&lt;/a>) and the SP&amp;rsquo;s metadata.&lt;/p>
+&lt;p>To register your SAML SP, you must submit a service registration request at
+&lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>. Your request should include
+the general information about your service (see
+&lt;a href="#general-information">General Information&lt;/a>) and the SP&amp;rsquo;s metadata and entity
+id.&lt;/p>
 &lt;h3 id="metadata">Metadata&lt;/h3>
 &lt;p>Metadata provided by your SP should contain a descriptive name of the service
 that your SP represents in at least English. It is recommended to also provide
@@ -624,24 +631,28 @@ has signed in, EGI Check-in can return OIDC Claims containing information about
 the authenticated user.&lt;/p>
 &lt;h3 id="client-registration">Client registration&lt;/h3>
 &lt;p>Before your service can use the EGI Check-in OIDC Provider for user login, you
-must set up a client at &lt;a href="https://aai-dev.egi.eu/oidc/manage/#admin/clients">https://aai-dev.egi.eu/oidc/manage/#admin/clients&lt;/a> in
-order to obtain OAuth 2.0 credentials and register one or more redirect URIs.
-The client configuration should include the general information about your
-service, as described in &lt;a href="#general-information">General Information&lt;/a> section.&lt;/p>
+must submit a service registration request using
+&lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a> in order to obtain OAuth 2.0
+credentials. The client configuration should include the general information
+about your service, as described in &lt;a href="#general-information">General Information&lt;/a>
+section.&lt;/p>
 &lt;h4 id="obtaining-oauth-20-credentials">Obtaining OAuth 2.0 credentials&lt;/h4>
-&lt;p>You need OAuth 2.0 credentials, including a client ID and client secret, to
-authenticate users through the EGI Check-in OIDC Provider.&lt;/p>
+&lt;p>You need OAuth 2.0 credentials, which typically include a client ID and client
+secret, to authenticate users through the EGI Check-in OIDC Provider.&lt;/p>
 &lt;p>You can specify the client ID and secret when creating/editing your client or
-let the &lt;a href="https://aai-dev.egi.eu/oidc/manage/user/client/new">New Client page&lt;/a>
-generate the values for you (&lt;em>recommended&lt;/em>).&lt;/p>
+let them being automatically generated during registration (&lt;em>recommended&lt;/em>).&lt;/p>
 &lt;p>To find the ID and secret of your client, do the following:&lt;/p>
 &lt;ol>
 &lt;li>Select your client from the
-&lt;a href="https://aai-dev.egi.eu/oidc/manage/user/clients">Clients page&lt;/a>.&lt;/li>
-&lt;li>Look for the &lt;strong>Client ID&lt;/strong> in the &lt;strong>Main&lt;/strong> tab.&lt;/li>
-&lt;li>Select the &lt;strong>Display/edit client secret:&lt;/strong> option from the &lt;strong>Credentials&lt;/strong>
-tab.&lt;/li>
+&lt;a href="https://aai.egi.eu/federation">Manage Services Page&lt;/a>.&lt;/li>
+&lt;li>Look for the &lt;strong>Client ID&lt;/strong> in the &lt;strong>Protocol&lt;/strong> tab.&lt;/li>
+&lt;li>Select the &lt;strong>Display/edit client secret:&lt;/strong> option from the &lt;strong>Protocol&lt;/strong> tab.&lt;/li>
 &lt;/ol>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can copy these values using the
+green copy button next to the disered field.
+&lt;/div>
 &lt;h4 id="setting-one-or-more-redirection-uris">Setting one or more Redirection URIs&lt;/h4>
 &lt;p>The Redirection URI(s) that you set when creating/editing your client determine
 where the EGI Check-in OIDC Provider sends responses to your authentication
@@ -649,10 +660,10 @@ requests. Note that the Redirection URI MUST use the &lt;code>https&lt;/code> sc
 &lt;code>http&lt;/code> Redirection URIs is only allowed in the development environment.&lt;/p>
 &lt;p>To find the Redirection URI(s) for your client, do the following:&lt;/p>
 &lt;ol>
-&lt;li>Open the &lt;a href="https://aai-dev.egi.eu/oidc/manage/user/clients">Clients page&lt;/a>&lt;/li>
-&lt;li>Find the redirect URIs for your client listed under the &lt;strong>Information&lt;/strong>
-column of the overview table or &lt;strong>Edit&lt;/strong> the particular client and look for
-the &lt;strong>Redirect URI(s)&lt;/strong> in the &lt;strong>Main&lt;/strong> tab.&lt;/li>
+&lt;li>Open the &lt;a href="https://aai.egi.eu/federation">Manage Services&lt;/a>&lt;/li>
+&lt;li>Find the redirect URIs for your client listed under the &lt;strong>Protocol&lt;/strong> column
+of the overview table or &lt;strong>Edit&lt;/strong> the particular client and look for the
+&lt;strong>Redirect URI(s)&lt;/strong> in the &lt;strong>Protocol&lt;/strong> tab.&lt;/li>
 &lt;/ol>
 &lt;h4 id="setting-additional-information-about-the-client">Setting additional information about the client&lt;/h4>
 &lt;p>It is strongly suggested that you add a short &lt;strong>description&lt;/strong> and a &lt;strong>logo&lt;/strong> for
@@ -835,10 +846,11 @@ first creating a secret, and then using that secret again when exchanging the
 authorization code for an access token. This way if the code is intercepted, it
 will not be useful since the token request relies on the initial secret.&lt;/p>
 &lt;h6 id="client-configuration">Client configuration&lt;/h6>
-&lt;p>To enable PKCE you need to &lt;a href="https://aai-dev.egi.eu/oidc">https://aai-dev.egi.eu/oidc&lt;/a> and create/edit a
-client. In &amp;ldquo;Credentials&amp;rdquo; tab under &amp;ldquo;Token Endpoint Authentication Method&amp;rdquo; select
-&amp;ldquo;No authentication&amp;rdquo; and in &amp;ldquo;Crypto&amp;rdquo; tab under &amp;ldquo;Proof Key for Code Exchange
-(PKCE) Code Challenge Method&amp;rdquo; select &amp;ldquo;SHA-256 hash algorithm&amp;rdquo;.&lt;/p>
+&lt;p>To enable PKCE you need to go to the
+&lt;a href="https://aai.egi.eu/federation">Manage Services Page&lt;/a> and create/edit a client.
+In &amp;ldquo;Protocol&amp;rdquo; tab under &amp;ldquo;Token Endpoint Authentication Method&amp;rdquo; select &amp;ldquo;No
+authentication&amp;rdquo; and in &amp;ldquo;Crypto&amp;rdquo; tab under &amp;ldquo;Proof Key for Code Exchange (PKCE)
+Code Challenge Method&amp;rdquo; select &amp;ldquo;SHA-256 hash algorithm&amp;rdquo;.&lt;/p>
 &lt;h6 id="protocol-flow">Protocol Flow&lt;/h6>
 &lt;p>Because the PKCE-enhanced Authorization Code Flow builds upon the standard
 Authorization Code Flow, the steps are very similar.&lt;/p>
@@ -2250,42 +2262,47 @@ to protected resources. Entitlements are multi-valued, with each value formatted
 as a URN following the syntax defined in
 &lt;a href="https://aarc-community.org/guidelines/aarc-g027/">AARC-G027&lt;/a>.&lt;/p>
 &lt;h4 id="syntax-1">Syntax&lt;/h4>
-&lt;p>An entitlement value expressing a capability has the
-following syntax (components enclosed in square brackets are OPTIONAL):&lt;/p>
+&lt;p>An entitlement value expressing a capability has the following syntax
+(components enclosed in square brackets are OPTIONAL):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">&amp;lt;NAMESPACE&amp;gt;:res:&amp;lt;RESOURCE&amp;gt;[:&amp;lt;CHILD-RESOURCE&amp;gt;]...[:act:&amp;lt;ACTION&amp;gt;[,&amp;lt;ACTION&amp;gt;]...]#&amp;lt;AUTHORITY&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>where:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;code>&amp;lt;NAMESPACE&amp;gt;&lt;/code> is controlled by the e-infrastructure, research infrastructure
-or research collaboration that manages the capability. The &lt;code>&amp;lt;NAMESPACE&amp;gt;&lt;/code> of capabilities
-managed by Check-in is set to &lt;code>urn:mace:egi.eu&lt;/code>, while, generally, it is in the
-form of &lt;code>urn:&amp;lt;NID&amp;gt;:&amp;lt;DELEGATED-NAMESPACE&amp;gt;[:&amp;lt;SUBNAMESPACE&amp;gt;]...&lt;/code> where:&lt;/p>
+or research collaboration that manages the capability. The &lt;code>&amp;lt;NAMESPACE&amp;gt;&lt;/code> of
+capabilities managed by Check-in is set to &lt;code>urn:mace:egi.eu&lt;/code>, while,
+generally, it is in the form of
+&lt;code>urn:&amp;lt;NID&amp;gt;:&amp;lt;DELEGATED-NAMESPACE&amp;gt;[:&amp;lt;SUBNAMESPACE&amp;gt;]...&lt;/code> where:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;code>&amp;lt;NID&amp;gt;&lt;/code> is the namespace identifier associated with a URN namespace registered
-with IANA2, ensuring global uniqueness. Implementers SHOULD use one of the
-existing registered URN namespaces, such as &lt;code>urn:mace&lt;/code>[&lt;a href="https://incommon.org/community/mace-registries/mace-urn-registry/">MACE&lt;/a>].&lt;/p>
+&lt;p>&lt;code>&amp;lt;NID&amp;gt;&lt;/code> is the namespace identifier associated with a URN namespace
+registered with IANA2, ensuring global uniqueness. Implementers SHOULD use
+one of the existing registered URN namespaces, such as
+&lt;code>urn:mace&lt;/code>[&lt;a href="https://incommon.org/community/mace-registries/mace-urn-registry/">MACE&lt;/a>].&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;code>&amp;lt;DELEGATED-NAMESPACE&amp;gt;&lt;/code> is a URN sub-namespace delegated from one of the IANA
-registered NIDs to an organisation representing the e-infrastructure, research
-infrastructure or research collaboration. It is RECOMMENDED that a publicly
-accessible URN value registry for each delegated namespace be provided.&lt;/p>
+&lt;p>&lt;code>&amp;lt;DELEGATED-NAMESPACE&amp;gt;&lt;/code> is a URN sub-namespace delegated from one of the
+IANA registered NIDs to an organisation representing the e-infrastructure,
+research infrastructure or research collaboration. It is RECOMMENDED that a
+publicly accessible URN value registry for each delegated namespace be
+provided.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>The literal string &lt;code>&amp;quot;res&amp;quot;&lt;/code> indicates that this is a resource-specific entitlement
-as opposed to, for example, an entitlement used for expressing group membership
+&lt;p>The literal string &lt;code>&amp;quot;res&amp;quot;&lt;/code> indicates that this is a resource-specific
+entitlement as opposed to, for example, an entitlement used for expressing
+group membership
 &lt;a href="https://aarc-community.org/guidelines/aarc-g002/">AARC-G002&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;code>&amp;lt;RESOURCE&amp;gt;&lt;/code> is the name of the resource. Whether the name should be unique
-is an implementation decision.&lt;/p>
+&lt;p>&lt;code>&amp;lt;RESOURCE&amp;gt;&lt;/code> is the name of the resource. Whether the name should be unique is
+an implementation decision.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>An optional list of colon-separated &lt;code>&amp;lt;CHILD-RESOURCE&amp;gt;&lt;/code> components represents
-a specific branch of the hierarchy of resources under the identified &lt;code>&amp;lt;RESOURCE&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>An optional list of colon-separated &lt;code>&amp;lt;CHILD-RESOURCE&amp;gt;&lt;/code> components represents a
+specific branch of the hierarchy of resources under the identified
+&lt;code>&amp;lt;RESOURCE&amp;gt;&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>An optional list of comma-separated &lt;code>&amp;lt;ACTION&amp;gt;&lt;/code>s MAY be included, which, if
@@ -2298,16 +2315,17 @@ specified is an implementation detail.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;code>&amp;lt;AUTHORITY&amp;gt;&lt;/code> is a mandatoryand non-empty string that indicates the
-authoritative source of the capability. This SHOULD be used to further
-specify the exact issuing instance. For example, it MAY be the FQDN of the
-service that issued that specific capability. The &lt;code>&amp;lt;AUTHORITY&amp;gt;&lt;/code> is specified
-in the f-component &lt;a href="https://tools.ietf.org/html/rfc8141">RFC8141&lt;/a> of the URN;
-thus, it is introduced by the number sign (&amp;quot;#&amp;quot;) character and terminated by the
-end of the URN. All characters must be encoded according to
-&lt;a href="https://tools.ietf.org/html/rfc8141">RFC8141&lt;/a>. Hence, the &lt;code>&amp;lt;AUTHORITY&amp;gt;&lt;/code> MUST NOT
-be considered when determining equivalence (Section 3 in &lt;a href="https://tools.ietf.org/html/rfc8141">RFC8141&lt;/a>)
-of URN-formatted capabilities. The &lt;code>&amp;lt;AUTHORITY&amp;gt;&lt;/code> of capabilities managed by Check-in
-is typically set to &lt;code>aai.egi.eu&lt;/code>.&lt;/p>
+authoritative source of the capability. This SHOULD be used to further specify
+the exact issuing instance. For example, it MAY be the FQDN of the service
+that issued that specific capability. The &lt;code>&amp;lt;AUTHORITY&amp;gt;&lt;/code> is specified in the
+f-component &lt;a href="https://tools.ietf.org/html/rfc8141">RFC8141&lt;/a> of the URN; thus,
+it is introduced by the number sign (&amp;quot;#&amp;quot;) character and terminated by the end
+of the URN. All characters must be encoded according to
+&lt;a href="https://tools.ietf.org/html/rfc8141">RFC8141&lt;/a>. Hence, the &lt;code>&amp;lt;AUTHORITY&amp;gt;&lt;/code> MUST
+NOT be considered when determining equivalence (Section 3 in
+&lt;a href="https://tools.ietf.org/html/rfc8141">RFC8141&lt;/a>) of URN-formatted capabilities.
+The &lt;code>&amp;lt;AUTHORITY&amp;gt;&lt;/code> of capabilities managed by Check-in is typically set to
+&lt;code>aai.egi.eu&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
