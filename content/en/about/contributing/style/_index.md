@@ -431,13 +431,13 @@ to disable the `no-inline-html` check.
 In the following example two checks are disabled at the same time: `line-length`
 and `no-inline-html`:
 
-<!-- markdownlint-disable no-inline-html -->
+<!-- markdownlint-disable line-length no-inline-html -->
 ```markdown
 | Action      | rOCCI                    | OpenStack              | This is a very long column with important data |
 | ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
 | List images | `occi -a list -r os_tpl` | `openstack image list` | <ul><li>Lorem</li><li>ipsum</li></ul>          |
 ```
-<!-- markdownlint-enable no-inline-html -->
+<!-- markdownlint-enable line-length no-inline-html -->
 
 {{% alert title="Note" color="info" %}} Do not forget to follow up with a HTML
 comment starting with
@@ -446,7 +446,8 @@ to re-enable the `no-inline-html` check.
 {{% /alert %}}
 
 {{% alert title="Important" color="warning" %}} Always use the tag that is
-providing the proper semantic: e.g. for a list use `<ul>` and `<li>`, not `<br />`.
+providing the proper semantic: e.g. for a list use `<ul>` and `<li>`,
+not `<br />`.
 {{% /alert %}}
 
 ### Dealing with duplicate content
@@ -457,6 +458,11 @@ that the automatic checkers will flag these as duplicates.
 
 For example, describing the following procedure will result in duplicates
 being reported:
+
+<!--
+// jscpd:ignore-start
+-->
+<!-- markdownlint-disable line-length -->
 
 ```go-html-template
 {{</* tabpanex */>}}
@@ -490,8 +496,14 @@ then run the following commands:
 {{</* /tabpanex */>}}
 ```
 
+<!-- markdownlint-enable line-length -->
+<!--
+// jscpd:ignore-end
+-->
+
 This type of content should be preceded by a HTML comment that disables the
-check for duplicates, and followed by another HTML comment that enables it again.
+check for duplicates, and followed by another HTML comment that enables it
+again.
 
 ```markdown
 <!--
