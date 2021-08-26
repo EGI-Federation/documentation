@@ -22,6 +22,6 @@ benefit from EGI federation services.
 In order to make a difference in helping to define the strategic direction of
 the EGI Federation and its federation services, countries or international
 organisaionts can join the EGI Council. More details may be found
-[here](https://www.egi.eu/about/egi-council/joining-the-egi-council/).
+[on the EGI website](https://www.egi.eu/about/egi-council/joining-the-egi-council/).
 
 See [the users section](../users) for User-centric documentation.
