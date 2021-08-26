@@ -7,12 +7,13 @@ on:
     types: [unlabeled, closed]
 
 jobs:
-  build:
+  delete_preview:
     # Do not run on forks, and only if "safe for preview" label is set
-    if: |
+    if: >
       github.repository == 'EGI-Federation/documentation' &&
-      ((github.event.action == 'unlabeled' && github.event.label.name == 'safe for preview') ||
-      (github.event.action == 'closed' && contains(github.event.pull_request.labels.*.name, 'safe for preview')))
+      ((github.event.action == 'unlabeled' && github.event.label.name == 'safe
+      for preview') || (github.event.action == 'closed' &&
+      contains(github.event.pull_request.labels.*.name, 'safe for preview')))
     name: Build with Hugo
     runs-on: ubuntu-18.04
     steps:
@@ -23,5 +24,5 @@ jobs:
       - name: Delete pull request preview and commit changes
         uses: EndBug/add-and-commit@v7
         with:
-          remove: "-r public/${{ github.event.number }}"
+          remove: "-r ${{ github.event.number }}/"
           message: "Purge preview for PR ${{ github.event.number }}"
