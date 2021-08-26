@@ -45,8 +45,7 @@ Machines and associated Block Storage to enable persistence and Networks to
 enable connectivity of the Virtual Machines (VMs) among themselves and third
 party resources.
 
-The [IaaS federation](../../../internal) is a thin layer that brings the
-providers together with:
+The IaaS federation is a thin layer that brings the providers together with:
 
 - [Federated authentication](#authentication-and-authorization)
 - [Resource discovery](#information-discovery)
@@ -140,9 +139,9 @@ machine services).
 
 #### Configuration Database
 
-The EGI [Configuration Database](https://goc.egi.eu) is used to
-catalogue the static information of the production infrastructure topology
-(e.g. the list of resource centres and their endpoints).
+The EGI [Configuration Database](../../../internal/configuration-database) is
+used to catalogue the static information of the production infrastructure
+topology (e.g. the list of resource centres and their endpoints).
 
 To allow resource providers to expose IaaS federation endpoints, the following
 service types are avialable:
@@ -187,11 +186,11 @@ this automated synchronisation between AppDB and OpenStack/OpenNebula.
 
 ### Accounting
 
-Federated Accounting provides an integrated view about resource/service usage:
-it pulls together usage information from the federated sites and services,
-integrates the data and presents them in such a way that both individual users
-as well as whole communities can monitor their own resource/service usage across
-the whole federation.
+[Federated Accounting](../../../internal/accounting) provides an integrated
+view about resource/service usage: it pulls together usage information from
+the federated sites and services, integrates the data and presents them in
+such a way that both individual users as well as whole communities can monitor
+their own resource/service usage across the whole federation.
 
 Usage of resources is gathered centrally using EGI Accounting repository and
 available for visualisation at
@@ -288,7 +287,8 @@ Implementation of the extactor probes for accounting are listed below:
 
 ### Monitoring
 
-The endpoints published in the [EGI Configuration Database](https://goc.egi.eu/)
+The endpoints published in the
+[Configuration Database](../../../internal/configuration-database)
 are monitored via [ARGO](https://argo.egi.eu/). Specific probes to check
 functionality and availability of services must be provided by service
 developers.
