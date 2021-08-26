@@ -9,7 +9,7 @@ description: >
 
 The EGI Federated Cloud (FedCloud) is a multi-national cloud system that
 integrates community, private and/or public clouds into a scalable computing
-platform for research. The Federation pools services from a heterogeneous set
+platform for research. The Federation pools resources from a heterogeneous set
 of cloud providers using a single authentication and authorisation framework
 that allows the portability of workloads across multiple providers, and enables
 bringing computing to data. The current implementation is focused on
