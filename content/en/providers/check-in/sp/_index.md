@@ -263,7 +263,7 @@ the authenticated user.
 
 Before your service can use the EGI Check-in OIDC Provider for user login, you
 must submit a service registration request using
-[Federation Registry](https:/aai.egi.eu/federation) in order to obtain OAuth 2.0
+[Federation Registry](https://aai.egi.eu/federation) in order to obtain OAuth 2.0
 credentials. The client configuration should include the general information
 about your service, as described in [General Information](#general-information)
 section.
