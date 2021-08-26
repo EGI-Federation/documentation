@@ -18,6 +18,11 @@ best practice documents that provide optional guidelines).
 
 - [MAN01 How to publish Site Information](./man01_how_to_publish_site_information)
 - [MAN02 Service intervention management](./man02_service_intervention_management)
+- [MAN04 Tool intervention management](./man04_tool_intervention_management)
+- [MAN05 Top and site BDII High Availability](./man05_top_and_site_bdii_high_availability)
+- [MAN06 failover for MySQL grid-based service](./man06_failover_for_mysql_grid_based_services)
+- [MAN07 VOMS replication](./man07_voms_replication)
+- [MAN09 Accounting data publishing](./man09_accounting_data_publishing)
 
 ## How-Tos
 
