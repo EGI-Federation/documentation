@@ -31,10 +31,9 @@ services. It can be accessed using EGI Check-in credentials directly:
 select _OpenID Connect_ or _EGI Check-in_ in the **Authenticate using**
 drop-down menu of the login screen.
 
-{{% alert title="Tip" color="info" %}} You can either look up the dashboards
-of all providers from the EGI infrastructure in the
-[Configuration Database](../../../internal/configuration-database),
-or you can use the [FedCloud Client](../cli) to find them (use the correct VO):
+{{% alert title="Tip" color="info" %}} You can quickly find the dashboards of
+all providers in the EGI infrastructure with the [FedCloud Client](../cli)
+(use the correct VO):
 
 ```shell
 $ export EGI_VO=vo.access.egi.eu
