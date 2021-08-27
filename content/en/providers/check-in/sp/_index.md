@@ -46,10 +46,10 @@ The policies that the service provider will have to accept are available in the
 [EGI Policies and procedures page](https://wiki.egi.eu/wiki/Policies_and_Procedures)
 and specifically are:
 
-1. [e-Infrastructure Security Policy](https://documents.egi.eu/document/3015)
+1. [EGI Security Policy](https://documents.egi.eu/document/3015)
 1. [Service Operations Security Policy](https://documents.egi.eu/document/3601)
-1. [Traceability and Logging Policy](https://documents.egi.eu/document/81)
-1. [Security Incident Response Policy](https://documents.egi.eu/document/82)
+1. [Traceability and Logging Policy](https://documents.egi.eu/document/2934)
+1. [Security Incident Response Policy](https://documents.egi.eu/document/2935)
 1. [Policy on the Processing of Personal Data](https://documents.egi.eu/document/2732)
 
 ## Service Provider integration workflow
