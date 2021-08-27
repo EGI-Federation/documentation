@@ -95,6 +95,14 @@ the clipboard. The prompt in front of each command, and any command
 output is not copied.
 {{% /alert %}}
 
+{{% alert title="Note" color="info" %}} In case the command(s) in your
+shell example cause the introduction of a horizontal scroll bar, [consider
+breaking the command(s) into multiple lines](../style/#basic-rules) with
+trailing backslashes (\\). However, you should never break command output
+to multiple lines, as that makes understanding the output, and recognizing
+it in real life, very difficult.
+{{% /alert %}}
+
 ### Code in multiple languages
 
 This is also achieved using
