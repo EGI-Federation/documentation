@@ -948,9 +948,11 @@ to disable the &lt;code>no-inline-html&lt;/code> check.&lt;/p>
 &lt;p>In the following example two checks are disabled at the same time: &lt;code>line-length&lt;/code>
 and &lt;code>no-inline-html&lt;/code>:&lt;/p>
 &lt;!-- markdownlint-disable line-length no-inline-html -->
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">| Action | rOCCI | OpenStack | This is a very long column with important data |
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- markdownlint-disable no-inline-html --&amp;gt;&lt;/span>
+| Action | rOCCI | OpenStack | This is a very long column with important data |
 | ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
 | List images | &lt;span style="color:#4e9a06">`occi -a list -r os_tpl`&lt;/span> | &lt;span style="color:#4e9a06">`openstack image list`&lt;/span> | &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Lorem&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>ipsum&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> |
+&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- markdownlint-enable no-inline-html --&amp;gt;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length no-inline-html -->
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
