@@ -32,8 +32,9 @@ select _OpenID Connect_ or _EGI Check-in_ in the **Authenticate using**
 drop-down menu of the login screen.
 
 {{% alert title="Tip" color="info" %}} You can quickly find the dashboards of
-all providers in the EGI infrastructure with the [FedCloud Client](../cli)
-(use the correct VO):
+all providers in the EGI infrastructure that are accessible to you (use the
+correct VO) with the [FedCloud Client](../cli)
+:
 
 ```shell
 $ export EGI_VO=vo.access.egi.eu
