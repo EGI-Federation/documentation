@@ -426,10 +426,7 @@ In some specific cases it is impossible to use anything but in-line HTML tags:
 
 Blocks with in-line HTML tags should be preceded by a HTML comment starting
 with [markdownlint-disable](https://github.com/DavidAnson/markdownlint#configuration)
-to disable the `no-inline-html` check.
-
-In the following example two checks are disabled at the same time: `line-length`
-and `no-inline-html`:
+to disable the `no-inline-html` check, as in the following example:
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
