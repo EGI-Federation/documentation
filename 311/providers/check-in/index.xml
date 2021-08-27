@@ -384,10 +384,10 @@ service.&lt;/p>
 &lt;a href="https://wiki.egi.eu/wiki/Policies_and_Procedures">EGI Policies and procedures page&lt;/a>
 and specifically are:&lt;/p>
 &lt;ol>
-&lt;li>&lt;a href="https://documents.egi.eu/document/3015">e-Infrastructure Security Policy&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://documents.egi.eu/document/3015">EGI Security Policy&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://documents.egi.eu/document/3601">Service Operations Security Policy&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://documents.egi.eu/document/81">Traceability and Logging Policy&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://documents.egi.eu/document/82">Security Incident Response Policy&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://documents.egi.eu/document/2934">Traceability and Logging Policy&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://documents.egi.eu/document/2935">Security Incident Response Policy&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://documents.egi.eu/document/2732">Policy on the Processing of Personal Data&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;h2 id="service-provider-integration-workflow">Service Provider integration workflow&lt;/h2>
