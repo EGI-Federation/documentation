@@ -432,11 +432,17 @@ In the following example two checks are disabled at the same time: `line-length`
 and `no-inline-html`:
 
 <!-- markdownlint-disable line-length no-inline-html -->
+
 ```markdown
+<!-- markdownlint-disable no-inline-html -->
+
 | Action      | rOCCI                    | OpenStack              | This is a very long column with important data |
 | ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
 | List images | `occi -a list -r os_tpl` | `openstack image list` | <ul><li>Lorem</li><li>ipsum</li></ul>          |
+
+<!-- markdownlint-enable no-inline-html -->
 ```
+
 <!-- markdownlint-enable line-length no-inline-html -->
 
 {{% alert title="Note" color="info" %}} Do not forget to follow up with a HTML
@@ -467,31 +473,31 @@ being reported:
 ```go-html-template
 {{</* tabpanex */>}}
 {{</* tabx header="Linux" */>}}
-To run the FedCloud client in a container, make sure
-[Docker is installed](https://docs.docker.com/engine/install/#server),
-then run the following commands:
-  ```shell
-  $ docker pull tdviet/fedcloudclient
-  $ docker run -it tdviet/fedcloudclient bash
-  '''
+  To run the FedCloud client in a container, make sure
+  [Docker is installed](https://docs.docker.com/engine/install/#server),
+  then run the following commands:
+    ```shell
+    $ docker pull tdviet/fedcloudclient
+    $ docker run -it tdviet/fedcloudclient bash
+    '''
 {{</* /tabx */>}}
 {{</* tabx header="Mac" */>}}
-To run the FedCloud client in a container, make sure
-[Docker is installed](https://docs.docker.com/desktop/mac/install/),
-then run the following commands:
-  ```shell
-  $ docker pull tdviet/fedcloudclient
-  $ docker run -it tdviet/fedcloudclient bash
-  '''
+  To run the FedCloud client in a container, make sure
+  [Docker is installed](https://docs.docker.com/desktop/mac/install/),
+  then run the following commands:
+    ```shell
+    $ docker pull tdviet/fedcloudclient
+    $ docker run -it tdviet/fedcloudclient bash
+    '''
 {{</* /tabx */>}}
 {{</* tabx header="Windows" */>}}
-To run the FedCloud client in a container, make sure
-[Docker is installed](https://docs.docker.com/desktop/windows/install/),
-then run the following commands:
-  ```shell
-  > docker pull tdviet/fedcloudclient
-  > docker run -it tdviet/fedcloudclient bash
-  '''
+  To run the FedCloud client in a container, make sure
+  [Docker is installed](https://docs.docker.com/desktop/windows/install/),
+  then run the following commands:
+    ```shell
+    > docker pull tdviet/fedcloudclient
+    > docker run -it tdviet/fedcloudclient bash
+    '''
 {{</* /tabx */>}}
 {{</* /tabpanex */>}}
 ```
