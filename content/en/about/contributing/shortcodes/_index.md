@@ -97,7 +97,7 @@ When you need to include code snippets, and you want to provide the same code
 in multiple programming languages, you can use a tabbed pane for code snippets:
 
 <!-- markdownlint-disable no-inline-html no-missing-space-atx -->
-<!-- markdownlint-disable blanks-around-fences -->
+<!-- markdownlint-disable blanks-around-fences no-space-in-code -->
 
 ```go-html-template
 {{</* tabpane */>}}
@@ -228,5 +228,5 @@ Will render as:
 content in each tab, including code or shell snippets.
 {{% /alert %}}
 
-<!-- markdownlint-enable blanks-around-fences -->
+<!-- markdownlint-enable blanks-around-fences no-space-in-code -->
 <!-- markdownlint-enable no-inline-html no-missing-space-atx -->

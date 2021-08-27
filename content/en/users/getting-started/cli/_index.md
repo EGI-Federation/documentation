@@ -48,6 +48,8 @@ FedCloud client has the following modules (features):
 The FedCloud client can be installed with the `pip3` Python package manager
 (without root or aministrator privileges).
 
+<!-- markdownlint-disable no-space-in-code no-space-in-emphasis -->
+
 {{< tabpanex >}}
 {{< tabx header="Linux / Mac" >}}
 
@@ -94,6 +96,8 @@ folder corresponding to your current Python execution environment.
 
 {{< /tabx >}}
 {{< /tabpanex >}}
+
+<!-- markdownlint-enable no-space-in-code no-space-in-emphasis -->
 
 Check if the installation is correct by executing the client:
 
