@@ -30,3 +30,26 @@ The web-dashboard of the individual providers can be used to manage and use
 services. It can be accessed using EGI Check-in credentials directly:
 select _OpenID Connect_ or _EGI Check-in_ in the **Authenticate using**
 drop-down menu of the login screen.
+
+{{% alert title="Tip" color="info" %}} You can either look up the dashboards
+of all providers from the EGI infrastructure in the
+[Configuration Database](../../../internal/configuration-database),
+or you can use the [FedCloud Client](../cli) to find them (use the correct VO):
+
+```shell
+$ export EGI_VO=vo.access.egi.eu
+$ fedcloud endpoint list --service-type org.openstack.horizon --site ALL_SITES
+```
+
+The same way you can also discover other types of resources, just use the
+correct resource type:
+
+- `org.openstack.horizon` for dashboards
+- `org.openstack.nova` for virtual machines
+- `org.openstack.swift` for object storage
+{{% /alert %}}
+
+{{% alert title="Note" color="info" %}} For more advanced information discovery,
+including resources not based on OpenStack deployments, check out the
+[EGI architecture summary](../architecture/#information-discovery).
+{{% /alert %}}

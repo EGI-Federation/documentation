@@ -146,6 +146,7 @@ topology (e.g. the list of resource centres and their endpoints).
 To allow resource providers to expose IaaS federation endpoints, the following
 service types are avialable:
 
+- `org.openstack.horizon`
 - `org.openstack.nova`
 - `org.openstack.swift`
 - `eu.egi.cloud.accounting`
