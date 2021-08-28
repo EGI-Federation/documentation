@@ -3,5 +3,10 @@
   "dependencies": {
     "postcss-cli": "^7.1.2",
     "autoprefixer": "^9.0"
+  },
+  "standard": {
+    "ignore": [
+      "/static/js/prism.js"
+    ]
   }
 }
