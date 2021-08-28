@@ -62,7 +62,7 @@ anchor = "smart"
 
 [languages]
   [languages.en]
-  title = "EGI Docs"
+  title = "EGI Documentation"
   description = "EGI documentation"
   languageName = "English"
   # Weight used for sorting.
