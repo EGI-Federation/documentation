@@ -47,6 +47,7 @@ FedCloud client has the following modules (features):
 The FedCloud client can be installed with the `pip3` Python package manager
 (without root or aministrator privileges).
 
+<!-- markdownlint-disable no-space-in-emphasis -->
 {{< tabpanex >}}
 {{< tabx header="Linux / Mac" >}}
 
@@ -93,6 +94,7 @@ folder corresponding to your current Python execution environment.
 
 {{< /tabx >}}
 {{< /tabpanex >}}
+<!-- markdownlint-disable no-space-in-emphasis -->
 
 Check if the installation is correct by executing the client:
 
@@ -108,12 +110,10 @@ distribution. If you receive error message "_SSL exception connecting
 to..._", install the EGI Core Trust Anchor Certificates by running
 the following commands:
 
-<!-- markdownlint-disable line-length -->
 ```shell
 $ wget https://raw.githubusercontent.com/tdviet/python-requests-bundle-certs/main/scripts/install_certs.sh
 $ bash install_certs.sh
 ```
-<!-- markdownlint-enable line-length -->
 
 {{% alert title="Note" color="info" %}} The above script does not work on all
 Linux distributions. Change _python_ to _python3_ in the script if needed,
@@ -198,11 +198,9 @@ site, the VO and the command. For example, to list virtual machine (VM) images
 available to members of VO _fedcloud.egi.eu_ on the site _CYFRONET-CLOUD_, run
 the following command:
 
-<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack image list --vo fedcloud.egi.eu --site CYFRONET-CLOUD
 ```
-<!-- markdownlint-enable line-length -->
 
 #### Authentication
 
@@ -257,7 +255,6 @@ Most of the FedCloud client options can be set via environment variables:
 used options like site, VO, etc. using environment variables.
 {{% /alert %}}
 
-<!-- markdownlint-disable line-length -->
 | Environment variable    | Command line option         | Default value           |
 |-------------------------|-----------------------------|-------------------------|
 | OIDC_AGENT_ACCOUNT      | `--oidc-agent-account`      |                         |
@@ -271,7 +268,7 @@ used options like site, VO, etc. using environment variables.
 | OPENSTACK_AUTH_TYPE     | `--openstack-auth-type`     | v3oidcaccesstoken       |
 | EGI_SITE                | `--site`                    |                         |
 | EGI_VO                  | `--vo`                      |                         |
-<!-- markdownlint-enable line-length no-bare-urls -->
+<!-- markdownlint-enable no-bare-urls -->
 
 #### Getting help
 
@@ -279,7 +276,6 @@ The FedCloud client can display help for the commands and subcommands it
 supports. Try running the following command to see the commands supported
 by the FedCloud client:
 
-<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud --help
 Usage: fedcloud [OPTIONS] COMMAND [ARGS]...
@@ -296,12 +292,10 @@ Commands:
   site           Site command group for manipulation with site...
   token          Token command group for manipulation with tokens
 ```
-<!-- markdownlint-enable line-length -->
 
 Similarly, you can see help for e.g. the `openstack` subcommand by running the
 command below:
 
-<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack --help
 Usage: fedcloud openstack [OPTIONS] OPENSTACK_COMMAND...
@@ -326,7 +320,6 @@ Options:
   -j, --json-output               Print output as a big JSON object
   --help                          Show this message and exit.
 ```
-<!-- markdownlint-enable line-length -->
 
 {{% alert title="Note" color="info" %}} Most commands support multiple levels
 of subcommands, you can get help for all of them using the same principle as
@@ -357,6 +350,7 @@ environment variables with the returned result, as exemplified below.
 
 {{< tabpanex >}}
 {{< tabx header="Linux / Mac" >}}
+
   Run a command to get details of a project:
 
   ```shell
@@ -382,8 +376,10 @@ environment variables with the returned result, as exemplified below.
   $ echo $OS_PROJECT_ID
   51f736d36ce34b9ebdf196cfcabd24ee
   ```
+
 {{< /tabx >}}
 {{< tabx  header="Windows" >}}
+
   Run a command to get details of a project:
 
   ```shell
@@ -410,8 +406,10 @@ environment variables with the returned result, as exemplified below.
   > set OS_PROJECT_ID
   OS_PROJECT_ID=51f736d36ce34b9ebdf196cfcabd24ee
   ```
+
 {{< /tabx >}}
 {{< tabx  header="PowerShell" >}}
+
   Run a command to get details of a project:
 
   ```powershell
@@ -437,6 +435,7 @@ environment variables with the returned result, as exemplified below.
   > $Env:OS_PROJECT_ID
   51f736d36ce34b9ebdf196cfcabd24ee
   ```
+
 {{< /tabx >}}
 {{< /tabpanex >}}
 

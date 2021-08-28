@@ -128,6 +128,7 @@ use the FedCloud command below:
 
 {{< tabpanex >}}
 {{< tabx header="Linux / Mac" >}}
+
   To avoid passing the site, VO, etc. each time, you can use
   [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
   to set them once and reuse them with each command invocation.
@@ -142,8 +143,10 @@ use the FedCloud command below:
   | test-egi         |
   +------------------+
   ```
+
 {{< /tabx >}}
 {{< tabx  header="Windows" >}}
+
   To avoid passing the site, VO, etc. each time, you can use
   [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
   to set them once and reuse them with each command invocation.
@@ -158,8 +161,10 @@ use the FedCloud command below:
   | test-egi         |
   +------------------+
   ```
+
 {{< /tabx >}}
 {{< tabx  header="PowerShell" >}}
+
   To avoid passing the site, VO, etc. each time, you can use
   [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
   to set them once and reuse them with each command invocation.
@@ -174,6 +179,7 @@ use the FedCloud command below:
   | test-egi         |
   +------------------+
   ```
+
 {{< /tabx >}}
 {{< /tabpanex >}}
 

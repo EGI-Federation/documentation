@@ -95,6 +95,7 @@ FedCloud command:
 
 {{< tabpanex >}}
 {{< tabx header="Linux / Mac" >}}
+
   To avoid passing the site, VO, etc. each time, you can use
   [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
   to set them once and reuse them with each command invocation.
@@ -111,8 +112,10 @@ FedCloud command:
   | b0abc762-a503-129d-3c1... |        | available |   30 |                                |
   +---------------------------+--------+-----------+------+--------------------------------+
   ```
+
 {{< /tabx >}}
 {{< tabx  header="Windows" >}}
+
   To avoid passing the site, VO, etc. each time, you can use
   [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
   to set them once and reuse them with each command invocation.
@@ -129,8 +132,10 @@ FedCloud command:
   | b0abc762-a503-129d-3c1... |        | available |   30 |                                |
   +---------------------------+--------+-----------+------+--------------------------------+
   ```
+
 {{< /tabx >}}
 {{< tabx  header="PowerShell" >}}
+
   To avoid passing the site, VO, etc. each time, you can use
   [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
   to set them once and reuse them with each command invocation.
@@ -147,10 +152,11 @@ FedCloud command:
   | b0abc762-a503-129d-3c1... |        | available |   30 |                                |
   +---------------------------+--------+-----------+------+--------------------------------+
   ```
+
 {{< /tabx >}}
 {{< /tabpanex >}}
 
-###  Create volume
+### Create volume
 
 To
 [create a new volume](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume.html#volume-create)
