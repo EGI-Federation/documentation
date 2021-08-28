@@ -85,7 +85,7 @@ copyright = "EGI Foundation."
 privacy_policy = "https://www.egi.eu/privacy-policy/"
 
 custom_css = ["css/shortcodes/tabbed-panex.css", "css/tags.css", "css/egi.css"]
-custom_js = ["js/prism.min.js", "js/featherlight.min.js", "js/highlight.min.js", "js/egi.js", "js/github.min.js"]
+custom_js = ["js/prism.js", "js/featherlight.min.js", "js/highlight.min.js", "js/egi.js", "js/github.min.js"]
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 github_repo = "https://github.com/EGI-Federation/documentation"
