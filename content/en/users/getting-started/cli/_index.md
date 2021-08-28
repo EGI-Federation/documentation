@@ -314,7 +314,7 @@ Options:
                                   v3oidcaccesstoken]
   --openstack-auth-provider TEXT  Check-in identity provider  [default:
                                   egi.eu]
-  --site TEXT                     Name of the site  [required]
+  --site TEXT                     Name of the site or ALL_SITES  [required]
   --vo TEXT                       Name of the VO  [required]
   -i, --ignore-missing-vo         Ignore sites that do not support the VO
   -j, --json-output               Print output as a big JSON object
