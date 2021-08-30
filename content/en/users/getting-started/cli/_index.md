@@ -136,7 +136,7 @@ then run the following commands:
 
 ```shell
 $ docker pull tdviet/fedcloudclient
-$ docker run -it  tdviet/fedcloudclient bash
+$ docker run -it tdviet/fedcloudclient bash
 ```
 
 {{< /tabx >}}
@@ -160,7 +160,7 @@ then run the following commands:
 
 ```shell
 > docker pull tdviet/fedcloudclient
-> docker run -it  tdviet/fedcloudclient bash
+> docker run -it tdviet/fedcloudclient bash
 ```
 
 {{< /tabx >}}
