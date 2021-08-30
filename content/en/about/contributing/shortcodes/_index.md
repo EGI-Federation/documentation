@@ -8,8 +8,7 @@ weight: 40
 In addition to the formatting support provided by
 [markdown](https://spec.commonmark.org/0.29/),
 Hugo adds support for _shortcodes_, which are Go templates for easily including
-or displaying content (image inclusion, notes, tips, advanced display blocks,
-etc.).
+or displaying content (images, notes, tips, advanced display blocks, etc.).
 
 For reference, the following shortcodes are available:
 
@@ -67,26 +66,40 @@ an optional highlighting type parameter.
 The supported languages are dependant on the syntax highlighter, which depends
 itself on the mardkown parser.
 
-{{% alert title="Note" color="info" %}} For [Hugo](https://gohugo.io/) the
-[goldmark parser](https://github.com/yuin/goldmark) is used and it relies on the
+{{% alert title="Note" color="info" %}} [Hugo](https://gohugo.io/) uses the
+[goldmark parser](https://github.com/yuin/goldmark), which relies on
 [Prism syntax highlighting](https://prismjs.com/download.html#themes=prism).
 {{% /alert %}}
 
-The following code should be used for a shell excerpt:
+The following markdown creates a shell excerpt:
 
 ````markdown
 ```shell
-ssh-keygen -f fedcloud
-echo $HOME
+$ ssh-keygen -f fedcloud
+$ echo $HOME
 ```
 ````
 
 Will render as:
 
 ```shell
-ssh-keygen -f fedcloud
-echo $HOME
+$ ssh-keygen -f fedcloud
+$ echo $HOME
 ```
+
+{{% alert title="Tip" color="info" %}} If you click the _Copy_ button in the
+top-right corner of a shell example, all commands in that block are copied to
+the clipboard. The prompt in front of each command, and any command
+output is not copied.
+{{% /alert %}}
+
+{{% alert title="Note" color="info" %}} In case the command(s) in your
+shell example cause the introduction of a horizontal scroll bar, [consider
+breaking the command(s) into multiple lines](../style/#basic-rules) with
+trailing backslashes (\\). However, you should never break command output
+to multiple lines, as that makes understanding the output, and recognizing
+it in real life, very difficult.
+{{% /alert %}}
 
 ### Code in multiple languages
 
