@@ -33,8 +33,7 @@ drop-down menu of the login screen.
 
 {{% alert title="Tip" color="info" %}} You can quickly find the dashboards of
 all providers in the EGI infrastructure that are accessible to you (use the
-correct VO) with the [FedCloud Client](../cli)
-:
+correct VO) with the [FedCloud Client](../cli):
 
 ```shell
 $ export EGI_VO=vo.access.egi.eu
