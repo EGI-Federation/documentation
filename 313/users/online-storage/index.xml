@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Docs – Online Storage</title><link>/users/online-storage/</link><description>Recent content in Online Storage on EGI Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/online-storage/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Block Storage</title><link>/users/online-storage/block-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/online-storage/block-storage/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Online Storage</title><link>/users/online-storage/</link><description>Recent content in Online Storage on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/online-storage/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Block Storage</title><link>/users/online-storage/block-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/online-storage/block-storage/</guid><description>
 &lt;!--
 // jscpd:ignore-start
 -->
@@ -104,7 +104,7 @@ PowerShell
 &lt;/li>
 &lt;/ul>
 &lt;div class="tabx-content" id="tabs-5-content">
-&lt;div class="tab-pane fade show active"
+&lt;div class="tab-pane show active"
 id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
 &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
@@ -121,7 +121,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
 +---------------------------+--------+-----------+------+--------------------------------+
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;div class="tab-pane fade"
+&lt;div class="tab-pane "
 id="tabs-5-1" role="tabpanel" aria-labelled-by="tabs-5-1-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
 &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
@@ -138,7 +138,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
 +---------------------------+--------+-----------+------+--------------------------------+
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;div class="tab-pane fade"
+&lt;div class="tab-pane "
 id="tabs-5-2" role="tabpanel" aria-labelled-by="tabs-5-2-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
 &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
@@ -836,7 +836,7 @@ PowerShell
 &lt;/li>
 &lt;/ul>
 &lt;div class="tabx-content" id="tabs-3-content">
-&lt;div class="tab-pane fade show active"
+&lt;div class="tab-pane show active"
 id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
 &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
@@ -851,7 +851,7 @@ $ fedcloud openstack container list
 +------------------+
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;div class="tab-pane fade"
+&lt;div class="tab-pane "
 id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
 &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
@@ -866,7 +866,7 @@ to set them once and reuse them with each command invocation.&lt;/p>
 +------------------+
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;div class="tab-pane fade"
+&lt;div class="tab-pane "
 id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
 &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
