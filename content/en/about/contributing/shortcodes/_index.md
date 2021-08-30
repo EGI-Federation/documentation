@@ -110,7 +110,7 @@ When you need to include code snippets, and you want to provide the same code
 in multiple programming languages, you can use a tabbed pane for code snippets:
 
 <!-- markdownlint-disable no-inline-html no-missing-space-atx -->
-<!-- markdownlint-disable blanks-around-fences -->
+<!-- markdownlint-disable blanks-around-fences no-space-in-code -->
 
 ```go-html-template
 {{</* tabpane */>}}
@@ -211,35 +211,35 @@ shortcode:
 Will render as:
 
 {{< tabpanex >}}
-{{< tabx header="Linux" >}}
-You can list all files in a folder using the command:
-```shell
-ls -a -l
-```
-{{< /tabx >}}
-{{< tabx  header="Mac" >}}
-To get a list of all files in a folder, press **Cmd** + **Space** to open a
-spotlight search, type terminal, then press Enter. In the terminal window
-then run the command:
-```shell
-ls -a -l
-```
-{{< /tabx >}}
-{{< tabx  header="Windows" >}}
-You can list all files in the current folder using the command:
-```shell
-dir
-```
-or you can use PowerShell:
-```powershell
-Get-ChildItem -Path .\
-```
-{{< /tabx >}}
+  {{< tabx header="Linux" >}}
+    You can list all files in a folder using the command:
+    ```shell
+    ls -a -l
+    ```
+  {{< /tabx >}}
+  {{< tabx  header="Mac" >}}
+    To get a list of all files in a folder, press **Cmd** + **Space** to open a
+    spotlight search, type terminal, then press Enter. In the terminal window
+    then run the command:
+    ```shell
+    ls -a -l
+    ```
+  {{< /tabx >}}
+  {{< tabx  header="Windows" >}}
+    You can list all files in the current folder using the command:
+    ```shell
+    dir
+    ```
+    or you can use PowerShell:
+    ```powershell
+    Get-ChildItem -Path .\
+    ```
+  {{< /tabx >}}
 {{< /tabpanex >}}
 
 {{% alert title="Tip" color="info" %}} You can include any valid markdown
 content in each tab, including code or shell snippets.
 {{% /alert %}}
 
-<!-- markdownlint-enable blanks-around-fences -->
+<!-- markdownlint-enable blanks-around-fences no-space-in-code -->
 <!-- markdownlint-enable no-inline-html no-missing-space-atx -->
