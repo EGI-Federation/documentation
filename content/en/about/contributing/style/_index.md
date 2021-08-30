@@ -31,17 +31,17 @@ Documentation pages have to be written in markdown, compliant with
 - Headings must start at level 2 (`##`), as level 1 (`#`) is the title of the page
 - Lines should be wrapped at 80 characters
 - Sentences must be separated by one space only
-- Indent is made with tabs, not with spaces
+- Indent is made with spaces, not with tabs
 - Bullet lists should be using `-` not `*`
 - Numbered lists should be using `1.` for each line (automatic numbering)
 - Indent secondary (and following) level lists with 2 spaces
 - Lines must end with a Line Feed character (`\n`)
-- Files must end with an empty line, containing only a Line Feed
-  character (`\n`)
+- Files must end with an empty line
 - Shell examples should include a prompt (`$` or `>`) in front of commands,
   to make it easy to understand which is the command and which is the output
-- Long commands in shell examples should be broken into multiple lines, using
-  a trailing backslash character (`\`) on each line that continues on the next
+- Commands in shell examples should be broken into multiple lines of 80 characters
+  or less, using a trailing backslash character (`\`) on each line that continues
+  on the next
 - Never break command output in shell examples to multiple lines, instead use
   [style exceptions](#adding-exceptions-for-style-violations) when necessary
 
@@ -117,7 +117,6 @@ and more complicated than active voice. When you use passive voice, the actions
 and responses of the software can be difficult to distinguish from those of the
 user. In addition, passive voice usually requires more words than active voice.
 
-<!-- markdownlint-disable line-length -->
 {{< tabpanex >}}
   {{< tabx header="Examples" >}}
 | Do not use                                                          | Use                                                 |
@@ -127,11 +126,9 @@ user. In addition, passive voice usually requires more words than active voice.
 | A server is created by you.                                         | Create a server.                                    |
   {{< /tabx >}}
 {{< /tabpanex >}}
-<!-- markdownlint-enable line-length -->
 
 However, passive voice is acceptable in the following situations:
 
-<!-- markdownlint-disable line-length -->
 - Using active voice sounds like you are blaming the user. For example, you can
   use passive voice in an error message or troubleshooting content when the
   active subject is the user.
@@ -161,7 +158,6 @@ However, passive voice is acceptable in the following situations:
 | In 2009, engineers developed a software that simplifies the installation. | A software that simplifies the installation was developed in 2009. |
   {{< /tabx >}}
 {{< /tabpanex >}}
-<!-- markdownlint-enable line-length -->
 
 ### Write in second person
 
@@ -201,7 +197,6 @@ actions or opinions.
 view) in the same guide or on the same page.
 {{% /alert %}}
 
-<!-- markdownlint-disable line-length -->
 {{< tabpanex >}}
   {{< tabx header="Examples" >}}
 | Do not use                                                        | Use                                                        |
@@ -210,7 +205,6 @@ view) in the same guide or on the same page.
 | To create a server, the user specifies a name, flavor, and image. | To create a server, you specify a name, flavor, and image. |
   {{< /tabx >}}
 {{< /tabpanex >}}
-<!-- markdownlint-enable line-length -->
 
 ### Use the present simple tense
 
@@ -219,7 +213,6 @@ these activities take place in their present, so the present tense is
 appropriate in most cases. Additionally, the present tense is easier to read
 than the past or future tense.
 
-<!-- markdownlint-disable line-length -->
 {{< tabpanex >}}
   {{< tabx header="Example" >}}
 | Do not use | Use |
@@ -227,7 +220,6 @@ than the past or future tense.
 | The product will prompt you to verify the deletion. After you log in, your account will then begin the verification process. | The product prompts you to verify the deletion. After you log in, your account begins the verification process. |
   {{< /tabx >}}
 {{< /tabpanex >}}
-<!-- markdownlint-enable line-length -->
 
 {{% alert title="Tip" color="info" %}} Use the future tense only when you need
 to emphasize that something will occur later (from the users’ perspective).
@@ -305,7 +297,6 @@ Generally, do not contract the words.
 Use these pronouns sparingly. Overuse contributes to readers’ confusion. To fix
 the ambiguity, rephrase the sentence.
 
-<!-- markdownlint-disable line-length -->
 {{< tabpanex >}}
   {{< tabx header="Example" >}}
 | Do not use | Use |
@@ -313,7 +304,6 @@ the ambiguity, rephrase the sentence.
 | The monitoring system should perform regular checks to verify that the Ceph cluster is healthy. This can be achieved using the Ceph health command. | The monitoring system performs regular checks to ensure the Ceph cluster is functioning correctly. Use the Ceph health command to run a health check. |
   {{< /tabx >}}
 {{< /tabpanex >}}
-<!-- markdownlint-enable line-length -->
 
 {{% alert title="Tip" color="info" %}} You can also fix the ambiguity by
 placing a noun modifier immediately after the pronoun.
@@ -329,7 +319,6 @@ or an adjective between “to” and a verb adds ambiguity to a sentence.
 As much as possible, avoid trailing prepositions in sentences by avoiding
 phrasal verbs.
 
-<!-- markdownlint-disable line-length -->
 {{< tabpanex >}}
   {{< tabx header="Example" >}}
 | Do not use                                  | Use                                  |
@@ -337,7 +326,6 @@ phrasal verbs.
 | The image registration window will open up. | The image registration window opens. |
   {{< /tabx >}}
 {{< /tabpanex >}}
-<!-- markdownlint-enable line-length -->
 
 To fix the verb-preposition constructions, replace them with active verbs.
 
@@ -428,21 +416,22 @@ Blocks with in-line HTML tags should be preceded by a HTML comment starting
 with [markdownlint-disable](https://github.com/DavidAnson/markdownlint#configuration)
 to disable the `no-inline-html` check, as in the following example:
 
-<!-- markdownlint-disable line-length no-inline-html -->
+{{% alert title="Tip" color="info" %}} When having a table is not absolutely
+necessary, use a different construct to present the information.
+{{% /alert %}}
 
 ```markdown
+
 <!-- markdownlint-disable no-inline-html -->
 
-| Action      | rOCCI                    | OpenStack              | This is a very long column with important data |
+| Action      | OCCI                     | OpenStack              | This is a very long column with important data |
 | ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
 | List images | `occi -a list -r os_tpl` | `openstack image list` | <ul><li>Lorem</li><li>ipsum</li></ul>          |
 
 <!-- markdownlint-enable no-inline-html -->
 ```
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
-{{% alert title="Note" color="info" %}} Do not forget to follow up with a HTML
+{{% alert title="Tip" color="info" %}} Do not forget to follow up with a HTML
 comment starting with
 [markdownlint-enable](https://github.com/DavidAnson/markdownlint#configuration)
 to re-enable the `no-inline-html` check.
@@ -465,7 +454,6 @@ being reported:
 <!--
 // jscpd:ignore-start
 -->
-<!-- markdownlint-disable line-length -->
 
 ```go-html-template
 {{</* tabpanex */>}}
@@ -499,7 +487,6 @@ being reported:
 {{</* /tabpanex */>}}
 ```
 
-<!-- markdownlint-enable line-length -->
 <!--
 // jscpd:ignore-end
 -->
