@@ -56,7 +56,7 @@ The IaaS federation is a thin layer that brings the providers together with:
 The IaaS capabilities (VM, block storage, network management, etc.) must be
 provided via community agreed APIs ([OpenStack](https://docs.openstack.org/wallaby/api/)
 and/or [OCCI](http://www.occi-wg.org/) are supported at the moment)
-that allow integration with [EGI Check-in](../../checkin) for
+that allow integration with [EGI Check-in](../../check-in) for
 authentication and authorisation of users.
 
 {{% alert title="Note" color="info" %}} Those providers that limit the
@@ -80,7 +80,7 @@ cloud providers at three different layers:
   - **Cloud brokers** provide matchmaking for workloads to available providers
     (e.g. the
     [INDIGO-DataCloud Orchestrator](https://indigo-dc.gitbook.io/indigo-paas-orchestrator/)).
-- Using the [VMOps dashboard](../vmops).
+- Using the [VMOps dashboard](../../cloud-compute/vmops).
 
 EGI provides ready-to-use software components to enable the federation for
 OpenStack and OpenNebula. These components rely on public APIs of the IaaS
@@ -146,6 +146,7 @@ topology (e.g. the list of resource centres and their endpoints).
 To allow resource providers to expose IaaS federation endpoints, the following
 service types are avialable:
 
+- `org.openstack.horizon`
 - `org.openstack.nova`
 - `org.openstack.swift`
 - `eu.egi.cloud.accounting`

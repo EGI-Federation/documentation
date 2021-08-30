@@ -253,6 +253,11 @@ Most of the FedCloud client options can be set via environment variables:
 used options like site, VO, etc. using environment variables.
 {{% /alert %}}
 
+{{% alert title="Tip" color="info" %}} When you want commands to work on all
+sites in the EGI infrastructure, use `ALL_SITES` for the `--site` parameter
+(pass it directly or via an anvironment variable).
+{{% /alert %}}
+
 | Environment variable    | Command line option         | Default value           |
 |-------------------------|-----------------------------|-------------------------|
 | OIDC_AGENT_ACCOUNT      | `--oidc-agent-account`      |                         |
