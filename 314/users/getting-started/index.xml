@@ -569,7 +569,6 @@ drop-down menu of the login screen.&lt;/p></description></item><item><title>User
 &lt;!--
 // jscpd:ignore-start
 -->
-&lt;!-- markdownlint-disable commands-show-output -->
 &lt;h2 id="command-line-tools">Command line tools&lt;/h2>
 &lt;p>The various &lt;a href="https://www.egi.eu/services/">public EGI services&lt;/a> can be managed
 and used/accessed with a wide variety of command line interface (CLI) tools.
@@ -602,7 +601,6 @@ can perform commands on &lt;a href="../openstack">OpenStack services&lt;/a> depl
 &lt;h3 id="installation">Installation&lt;/h3>
 &lt;p>The FedCloud client can be installed with the &lt;code>pip3&lt;/code> Python package manager
 (without root or aministrator privileges).&lt;/p>
-&lt;!-- markdownlint-disable no-space-in-emphasis -->
 &lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -626,11 +624,11 @@ id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ pip3 install fedcloudclient
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with
 its required packages (like &lt;em>openstackclient&lt;/em>). It will also create
-executables &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;em>bin&lt;/em>
+executables &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;code>bin&lt;/code>
 folder corresponding to your current Python execution environment
-(&lt;em>$VIRTUAL_ENV/bin&lt;/em> for executing pip3 in a Python virtual environment,
-&lt;em>~/.local/bin&lt;/em> for executing pip3 as user (with &amp;ndash;user option), and
-&lt;em>/usr/local/bin&lt;/em> when executing pip3 as root).&lt;/p>
+(&lt;code>$VIRTUAL_ENV/bin&lt;/code> for executing pip3 in a Python virtual environment,
+&lt;code>~/.local/bin&lt;/code> for executing pip3 as user (with &amp;ndash;user option), and
+&lt;code>/usr/local/bin&lt;/code> when executing pip3 as root).&lt;/p>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
@@ -650,11 +648,10 @@ packages, please see &lt;a href="https://wiki.python.org/moin/WindowsCompilers">
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; pip3 install fedcloudclient
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with
 its required packages (like &lt;em>openstackclient&lt;/em>). It will also create
-executables &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;em>bin&lt;/em>
+executables &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;code>bin&lt;/code>
 folder corresponding to your current Python execution environment.&lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;!-- markdownlint-enable no-space-in-emphasis -->
 &lt;p>Check if the installation is correct by executing the client:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud --version
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="installing-egi-core-trust-anchor-certificates">Installing EGI Core Trust Anchor certificates&lt;/h4>
@@ -663,10 +660,9 @@ Certificate Authorities (CAs) that are not included in the default OS
 distribution. If you receive error message &amp;ldquo;&lt;em>SSL exception connecting
 to&amp;hellip;&lt;/em>&amp;rdquo;, install the EGI Core Trust Anchor Certificates by running
 the following commands:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ wget https://raw.githubusercontent.com/tdviet/python-requests-bundle-certs/main/scripts/install_certs.sh
 $ bash install_certs.sh
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 The above script does not work on all
@@ -760,10 +756,8 @@ or read and contribute to the
 site, the VO and the command. For example, to list virtual machine (VM) images
 available to members of VO &lt;em>fedcloud.egi.eu&lt;/em> on the site &lt;em>CYFRONET-CLOUD&lt;/em>, run
 the following command:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack image list --vo fedcloud.egi.eu --site CYFRONET-CLOUD
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;h4 id="authentication">Authentication&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="authentication">Authentication&lt;/h4>
 &lt;p>Many of the FedCloud client commands need access tokens for authentication.
 Users can choose whether to provide access tokens directly (via option
 &lt;code>--oidc-access-token&lt;/code>), or generate them on the fly with &lt;strong>oidc-agent&lt;/strong>
@@ -814,7 +808,6 @@ provider&amp;rsquo;s name accordingly for OpenStack commands, by using the optio
 To save a lot of time, set the frequently
 used options like site, VO, etc. using environment variables.
 &lt;/div>
-&lt;!-- markdownlint-disable line-length -->
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -881,12 +874,11 @@ used options like site, VO, etc. using environment variables.
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;!-- markdownlint-enable line-length no-bare-urls -->
+&lt;!-- markdownlint-enable no-bare-urls -->
 &lt;h4 id="getting-help">Getting help&lt;/h4>
 &lt;p>The FedCloud client can display help for the commands and subcommands it
 supports. Try running the following command to see the commands supported
 by the FedCloud client:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud --help
 Usage: fedcloud &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>OPTIONS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> COMMAND &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>ARGS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>...
 Options:
@@ -899,10 +891,8 @@ openstack Executing OpenStack commands on site and VO
 openstack-int Interactive OpenStack client on site and VO
 site Site &lt;span style="color:#204a87">command&lt;/span> group &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> manipulation with site...
 token Token &lt;span style="color:#204a87">command&lt;/span> group &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> manipulation with tokens
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>Similarly, you can see help for e.g. the &lt;code>openstack&lt;/code> subcommand by running the
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Similarly, you can see help for e.g. the &lt;code>openstack&lt;/code> subcommand by running the
 command below:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack --help
 Usage: fedcloud openstack &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>OPTIONS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> OPENSTACK_COMMAND...
 Executing OpenStack commands on site and VO
@@ -923,7 +913,7 @@ egi.eu&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 -i, --ignore-missing-vo Ignore sites that &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> not support the VO
 -j, --json-output Print output as a big JSON object
 --help Show this message and exit.
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Most commands support multiple levels
@@ -945,7 +935,6 @@ OpenStack commands.&lt;/p>
 &lt;h4 id="setting-environment-variables-for-external-tools">Setting environment variables for external tools&lt;/h4>
 &lt;p>Some FedCloud commands generate output that contains bash
 shell commands to set environment variables with the returned result:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
 $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
 $ fedcloud site show-project-id
@@ -956,8 +945,7 @@ $ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;fo
 &lt;span style="color:#8f5902;font-style:italic"># Check the value of the variable&lt;/span>
 $ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_AUTH_URL&lt;/span>
 https://cloud.ui.savba.sk:5000/v3/
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;h4 id="processing-output-from-openstack-commands">Processing output from OpenStack commands&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="processing-output-from-openstack-commands">Processing output from OpenStack commands&lt;/h4>
 &lt;p>The &lt;code>fedcloud openstack&lt;/code> subcommand&amp;rsquo;s output can be converted to
 &lt;a href="https://en.wikipedia.org/wiki/JSON">JavaScript Object Notation&lt;/a> (JSON) format
 by using the &lt;code>--json-output&lt;/code> option. This is useful for further machine
@@ -970,7 +958,6 @@ transform structured data. It is a filter: it takes and input, and produces an
 output. Check out the &lt;a href="https://stedolan.github.io/jq/tutorial/">tutorial&lt;/a> for
 using it to extract data from JSON sources.
 &lt;/div>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
 $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
 $ fedcloud openstack flavor list --json-output
@@ -1008,7 +995,7 @@ $ fedcloud openstack flavor list --json-output
 $ fedcloud openstack flavor list--json-output &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[].Result[] | select(.VCPUs == 2) | .Name&amp;#39;&lt;/span>
 m1.medium
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Note that &lt;code>--json-output&lt;/code> option can
@@ -1016,7 +1003,6 @@ be used only with those OpenStack commands that have outputs. Using this
 parameter with commands wit no output (e.g. setting properties) will generate
 an unsupported parameter error.
 &lt;/div>
-&lt;!-- markdownlint-enable commands-show-output -->
 &lt;!--
 // jscpd:ignore-end
 --></description></item></channel></rss>
