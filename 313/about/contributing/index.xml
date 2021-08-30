@@ -1089,7 +1089,7 @@ it in real life, very difficult.
 &lt;p>When you need to include code snippets, and you want to provide the same code
 in multiple programming languages, you can use a tabbed pane for code snippets:&lt;/p>
 &lt;!-- markdownlint-disable no-inline-html no-missing-space-atx -->
-&lt;!-- markdownlint-disable blanks-around-fences -->
+&lt;!-- markdownlint-disable blanks-around-fences no-space-in-code -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpane&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;C++&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lang&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;C++&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 #include &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">iostream&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
@@ -1223,25 +1223,33 @@ Windows
 &lt;div class="tabx-content" id="tabs-7-content">
 &lt;div class="tab-pane show active"
 id="tabs-7-0" role="tabpanel" aria-labelled-by="tabs-7-0-tab">
-&lt;p>You can list all files in a folder using the command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ls -a -l
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;pre>&lt;code>You can list all files in a folder using the command:
+```shell
+ls -a -l
+```
+&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-7-1" role="tabpanel" aria-labelled-by="tabs-7-1-tab">
-&lt;p>To get a list of all files in a folder, press &lt;strong>Cmd&lt;/strong> + &lt;strong>Space&lt;/strong> to open a
+&lt;pre>&lt;code>To get a list of all files in a folder, press **Cmd** + **Space** to open a
 spotlight search, type terminal, then press Enter. In the terminal window
-then run the command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ls -a -l
-&lt;/code>&lt;/pre>&lt;/div>
+then run the command:
+```shell
+ls -a -l
+```
+&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-7-2" role="tabpanel" aria-labelled-by="tabs-7-2-tab">
-&lt;p>You can list all files in the current folder using the command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">dir
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>or you can use PowerShell:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#204a87">Get-ChildItem&lt;/span> &lt;span style="color:#000">-Path&lt;/span> &lt;span style="color:#000;font-weight:bold">.\&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;pre>&lt;code>You can list all files in the current folder using the command:
+```shell
+dir
+```
+or you can use PowerShell:
+```powershell
+Get-ChildItem -Path .\
+```
+&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
@@ -1249,5 +1257,5 @@ id="tabs-7-2" role="tabpanel" aria-labelled-by="tabs-7-2-tab">
 You can include any valid markdown
 content in each tab, including code or shell snippets.
 &lt;/div>
-&lt;!-- markdownlint-enable blanks-around-fences -->
+&lt;!-- markdownlint-enable blanks-around-fences no-space-in-code -->
 &lt;!-- markdownlint-enable no-inline-html no-missing-space-atx --></description></item></channel></rss>

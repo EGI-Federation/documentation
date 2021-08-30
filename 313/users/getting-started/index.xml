@@ -44,7 +44,7 @@ party resources.&lt;/p>
 &lt;p>The IaaS capabilities (VM, block storage, network management, etc.) must be
 provided via community agreed APIs (&lt;a href="https://docs.openstack.org/wallaby/api/">OpenStack&lt;/a>
 and/or &lt;a href="http://www.occi-wg.org/">OCCI&lt;/a> are supported at the moment)
-that allow integration with &lt;a href="../../checkin">EGI Check-in&lt;/a> for
+that allow integration with &lt;a href="../../check-in">EGI Check-in&lt;/a> for
 authentication and authorisation of users.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -71,7 +71,7 @@ portability of application deployments between them (e.g.
 &lt;a href="https://indigo-dc.gitbook.io/indigo-paas-orchestrator/">INDIGO-DataCloud Orchestrator&lt;/a>).&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Using the &lt;a href="../vmops">VMOps dashboard&lt;/a>.&lt;/li>
+&lt;li>Using the &lt;a href="../../cloud-compute/vmops">VMOps dashboard&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;p>EGI provides ready-to-use software components to enable the federation for
 OpenStack and OpenNebula. These components rely on public APIs of the IaaS
@@ -125,6 +125,7 @@ topology (e.g. the list of resource centres and their endpoints).&lt;/p>
 &lt;p>To allow resource providers to expose IaaS federation endpoints, the following
 service types are avialable:&lt;/p>
 &lt;ul>
+&lt;li>&lt;code>org.openstack.horizon&lt;/code>&lt;/li>
 &lt;li>&lt;code>org.openstack.nova&lt;/code>&lt;/li>
 &lt;li>&lt;code>org.openstack.swift&lt;/code>&lt;/li>
 &lt;li>&lt;code>eu.egi.cloud.accounting&lt;/code>&lt;/li>
@@ -565,7 +566,28 @@ dashboard&lt;/li>
 &lt;p>The web-dashboard of the individual providers can be used to manage and use
 services. It can be accessed using EGI Check-in credentials directly:
 select &lt;em>OpenID Connect&lt;/em> or &lt;em>EGI Check-in&lt;/em> in the &lt;strong>Authenticate using&lt;/strong>
-drop-down menu of the login screen.&lt;/p></description></item><item><title>Users: Command Line Interface</title><link>/users/getting-started/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/cli/</guid><description>
+drop-down menu of the login screen.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+&lt;p>You can quickly find the dashboards of
+all providers in the EGI infrastructure that are accessible to you (use the
+correct VO) with the &lt;a href="../cli">FedCloud Client&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>vo.access.egi.eu
+$ fedcloud endpoint list --service-type org.openstack.horizon --site ALL_SITES
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The same way you can also discover other types of resources, just use the
+correct resource type:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>org.openstack.horizon&lt;/code> for dashboards&lt;/li>
+&lt;li>&lt;code>org.openstack.nova&lt;/code> for virtual machines&lt;/li>
+&lt;li>&lt;code>org.openstack.swift&lt;/code> for object storage&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+For more advanced information discovery,
+including resources not based on OpenStack deployments, check out the
+&lt;a href="../architecture/#information-discovery">EGI architecture summary&lt;/a>.
+&lt;/div></description></item><item><title>Users: Command Line Interface</title><link>/users/getting-started/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/cli/</guid><description>
 &lt;!--
 // jscpd:ignore-start
 -->
@@ -808,6 +830,12 @@ provider&amp;rsquo;s name accordingly for OpenStack commands, by using the optio
 To save a lot of time, set the frequently
 used options like site, VO, etc. using environment variables.
 &lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+When you want commands to work on all
+sites in the EGI infrastructure, use &lt;code>ALL_SITES&lt;/code> for the &lt;code>--site&lt;/code> parameter
+(pass it directly or via an anvironment variable).
+&lt;/div>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -935,32 +963,32 @@ OpenStack commands.&lt;/p>
 &lt;h4 id="setting-environment-variables-for-external-tools">Setting environment variables for external tools&lt;/h4>
 &lt;p>Some FedCloud commands generate output that contains shell commands to set
 environment variables with the returned result, as exemplified below.&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-11" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-12" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-11-0-tab" data-toggle="tab" href="#tabs-11-0" role="tab"
-aria-controls="tabs-11-0" aria-selected="true">
+id="tabs-12-0-tab" data-toggle="tab" href="#tabs-12-0" role="tab"
+aria-controls="tabs-12-0" aria-selected="true">
 Linux / Mac
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-11-1-tab" data-toggle="tab" href="#tabs-11-1" role="tab"
-aria-controls="tabs-11-1" aria-selected="false">
+id="tabs-12-1-tab" data-toggle="tab" href="#tabs-12-1" role="tab"
+aria-controls="tabs-12-1" aria-selected="false">
 Windows
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-11-2-tab" data-toggle="tab" href="#tabs-11-2" role="tab"
-aria-controls="tabs-11-2" aria-selected="false">
+id="tabs-12-2-tab" data-toggle="tab" href="#tabs-12-2" role="tab"
+aria-controls="tabs-12-2" aria-selected="false">
 PowerShell
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-11-content">
+&lt;div class="tabx-content" id="tabs-12-content">
 &lt;div class="tab-pane show active"
-id="tabs-11-0" role="tabpanel" aria-labelled-by="tabs-11-0-tab">
+id="tabs-12-0" role="tabpanel" aria-labelled-by="tabs-12-0-tab">
 &lt;p>Run a command to get details of a project:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
 $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
@@ -977,7 +1005,7 @@ $ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-11-1" role="tabpanel" aria-labelled-by="tabs-11-1-tab">
+id="tabs-12-1" role="tabpanel" aria-labelled-by="tabs-12-1-tab">
 &lt;p>Run a command to get details of a project:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
 &amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
@@ -995,7 +1023,7 @@ id="tabs-11-1" role="tabpanel" aria-labelled-by="tabs-11-1-tab">
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-11-2" role="tabpanel" aria-labelled-by="tabs-11-2-tab">
+id="tabs-12-2" role="tabpanel" aria-labelled-by="tabs-12-2-tab">
 &lt;p>Run a command to get details of a project:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;IISAS-FedCloud&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_VO&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;eosc-synergy.eu&amp;#34;&lt;/span>
