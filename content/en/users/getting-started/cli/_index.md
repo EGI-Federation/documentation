@@ -58,7 +58,7 @@ $ pip3 install fedcloudclient
 
 This installs the latest version of the FedCloud client, together with
 its required packages (like _openstackclient_). It will also create
-executables **fedcloud** and **openstack**, adding them to the _bin_
+executables **fedcloud** and **openstack**, adding them to the `bin`
 folder corresponding to your current Python execution environment
 (`$VIRTUAL_ENV/bin` for executing pip3 in a Python virtual environment,
 `~/.local/bin` for executing pip3 as user (with --user option), and
