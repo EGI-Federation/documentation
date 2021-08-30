@@ -317,7 +317,7 @@ Options:
                                   v3oidcaccesstoken]
   --openstack-auth-provider TEXT  Check-in identity provider  [default:
                                   egi.eu]
-  --site TEXT                     Name of the site  [required]
+  --site TEXT                     Name of the site or ALL_SITES  [required]
   --vo TEXT                       Name of the VO  [required]
   -i, --ignore-missing-vo         Ignore sites that do not support the VO
   -j, --json-output               Print output as a big JSON object
@@ -348,23 +348,99 @@ OpenStack commands.
 
 #### Setting environment variables for external tools
 
-Some FedCloud commands generate output that contains bash
-shell commands to set environment variables with the returned result:
+Some FedCloud commands generate output that contains shell commands to set
+environment variables with the returned result, as exemplified below.
 
-```shell
-$ export EGI_SITE=IISAS-FedCloud
-$ export EGI_VO=eosc-synergy.eu
-$ fedcloud site show-project-id
-export OS_AUTH_URL="https://cloud.ui.savba.sk:5000/v3/"
-export OS_PROJECT_ID="51f736d36ce34b9ebdf196cfcabd24ee"
+{{< tabpanex >}}
+{{< tabx header="Linux / Mac" >}}
 
-# This command will set environment variables
-$ eval $(fedcloud site show-project-id --site IISAS-FedCloud --vo eosc-synergy.eu)
+  Run a command to get details of a project:
 
-# Check the value of the variable
-$ echo $OS_AUTH_URL
-https://cloud.ui.savba.sk:5000/v3/
-```
+  ```shell
+  $ export EGI_SITE=IISAS-FedCloud
+  $ export EGI_VO=eosc-synergy.eu
+  $ fedcloud site show-project-id
+  export OS_AUTH_URL="https://cloud.ui.savba.sk:5000/v3/";
+  export OS_PROJECT_ID="51f736d36ce34b9ebdf196cfcabd24ee";
+  ```
+
+  Run the same command but set environment variables with the returned values:
+
+  ```shell
+  $ eval $(fedcloud site show-project-id)
+  ```
+
+  The environment variables will have their values set to what the command returned:
+  
+  ```shell
+  $ echo $OS_AUTH_URL
+  https://cloud.ui.savba.sk:5000/v3/
+  
+  $ echo $OS_PROJECT_ID
+  51f736d36ce34b9ebdf196cfcabd24ee
+  ```
+
+{{< /tabx >}}
+{{< tabx  header="Windows" >}}
+
+  Run a command to get details of a project:
+
+  ```shell
+  > set EGI_SITE=IISAS-FedCloud
+  > set EGI_VO=eosc-synergy.eu
+  > fedcloud site show-project-id
+  set OS_AUTH_URL=https://cloud.ui.savba.sk:5000/v3/
+  set OS_PROJECT_ID=51f736d36ce34b9ebdf196cfcabd24ee
+  ```
+
+  If you copy the returned output and execute it as commands in a command prompt:
+
+  ```shell
+  > set OS_AUTH_URL=https://cloud.ui.savba.sk:5000/v3/
+  > set OS_PROJECT_ID=51f736d36ce34b9ebdf196cfcabd24ee
+  ```
+
+  The environment variables will have their values set to what the command returned:
+  
+  ```shell
+  > set OS_AUTH_URL
+  OS_AUTH_URL=https://cloud.ui.savba.sk:5000/v3/
+  
+  > set OS_PROJECT_ID
+  OS_PROJECT_ID=51f736d36ce34b9ebdf196cfcabd24ee
+  ```
+
+{{< /tabx >}}
+{{< tabx  header="PowerShell" >}}
+
+  Run a command to get details of a project:
+
+  ```powershell
+  > $Env:EGI_SITE = "IISAS-FedCloud"
+  > $Env:EGI_VO = "eosc-synergy.eu"
+  > fedcloud site show-project-id
+  $Env:OS_AUTH_URL="https://cloud.ui.savba.sk:5000/v3/";
+  $Env:OS_PROJECT_ID="51f736d36ce34b9ebdf196cfcabd24ee";
+  ```
+
+  Run the same command but set environment variables with the returned values:
+
+  ```powershell
+  > fedcloud site show-project-id | Out-String | Invoke-Expression
+  ```
+
+  The environment variables will have their values set to what the command returned:
+  
+  ```powershell
+  > $Env:OS_AUTH_URL
+  https://cloud.ui.savba.sk:5000/v3/
+  
+  > $Env:OS_PROJECT_ID
+  51f736d36ce34b9ebdf196cfcabd24ee
+  ```
+
+{{< /tabx >}}
+{{< /tabpanex >}}
 
 #### Processing output from OpenStack commands
 
@@ -375,7 +451,7 @@ processing of the command output.
 
 {{% alert title="Tip" color="info" %}} JSON output can be processed with a tool
 like [jq](https://stedolan.github.io/jq/), which can slice, filter, map, and
-transform structured data. It is a filter: it takes and input, and produces an
+transform structured data. It acts as a filter: it takes an input and produces an
 output. Check out the [tutorial](https://stedolan.github.io/jq/tutorial/) for
 using it to extract data from JSON sources.
 {{% /alert %}}
