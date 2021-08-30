@@ -1,4 +1,4 @@
-<!-- Scratchpad gets populated through call to .Inner -->  
+<!-- Scratchpad gets populated through call to .Inner -->
 {{ .Inner }}
 
 <ul class="nav nav-tabs" id="tabs-{{- $.Ordinal -}}" role="tablist">
@@ -22,7 +22,7 @@
 
     {{ $tabid := printf "tabs-%v-%v-tab" $.Ordinal $index | anchorize }}
     {{ $entryid := printf "tabs-%v-%v" $.Ordinal $index | anchorize }}
-    <div class="tab-pane fade{{ if eq $index "0" }} show active{{ end }}"
+    <div class="tab-pane {{ if eq $index "0" }} show active{{ end }}"
         id="{{ $entryid }}" role="tabpanel" aria-labelled-by="{{ $tabid }}">
         {{ .content | markdownify  }}
     </div>
