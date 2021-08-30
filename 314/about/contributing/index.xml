@@ -1,8 +1,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Contributing</title><link>/about/contributing/</link><description>Recent content in Contributing on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/about/contributing/index.xml" rel="self" type="application/rss+xml"/><item><title>About: Git and GitHub</title><link>/about/contributing/git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/contributing/git/</guid><description>
 &lt;p>For collaboration purposes, it is best if you create a GitHub account and fork
-the repository to your own account. Once you do this you will be able to push
-your changes to your GitHub repository for others to see and use, and it will be
-easier to send pull requests.&lt;/p>
+the repository to your own account. Once you do this, you will be able to push
+your changes to your GitHub repository for others to see and use, and you will
+be able to create pull requests (PRs) in the official EGI documentation
+repository based on branches in your fork.&lt;/p>
 &lt;p>If you are new to &lt;code>git&lt;/code> and &lt;strong>GitHub&lt;/strong> you are advised to start by the two
 following articles providing simple tutorials:&lt;/p>
 &lt;ul>
@@ -58,10 +59,9 @@ repositories from a terminal.&lt;/p>
 &lt;a href="https://cli.github.com/">their homepage&lt;/a>. There is also a
 &lt;a href="https://cli.github.com/manual/">manual&lt;/a>.&lt;/p>
 &lt;p>Once installed you will have to start by setting up authentication.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Authenticate with GitHub&lt;/span>
-gh auth login
-&lt;span style="color:#8f5902;font-style:italic"># Favor ssh protocol&lt;/span>
-gh config &lt;span style="color:#204a87">set&lt;/span> git_protocol ssh
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Authenticate with GitHub, favor SSH protocol&lt;/span>
+$ gh auth login
+$ gh config &lt;span style="color:#204a87">set&lt;/span> git_protocol ssh
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="working-with-repositories">Working with repositories&lt;/h2>
 &lt;p>The easiest way is to do it via the GitHub CLI that will also clone it locally.
 But it can also be done via the web interface, using the &lt;em>fork&lt;/em> button and then
@@ -69,10 +69,10 @@ cloning it locally manually.&lt;/p>
 &lt;h3 id="fork-and-clone">Fork and clone&lt;/h3>
 &lt;p>This command will fork the repository to your GitHub account and clone a local
 copy for you to work with.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">gh repo fork EGI-Federation/documentation
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ gh repo fork EGI-Federation/documentation
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="clone-existing-fork">Clone existing fork&lt;/h3>
 &lt;p>If you want to clone an existing fork you should use:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">gh repo clone &amp;lt;your_username&amp;gt;/documentation
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ gh repo clone &amp;lt;your_username&amp;gt;/documentation
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="validate-the-local-clone">Validate the local clone&lt;/h3>
 &lt;p>If your local clone of you fork is correctly setup you should see references to
 the origin and upstream repositories.&lt;/p>
@@ -102,19 +102,19 @@ dependencies:
 &lt;a href="https://www.npmjs.com/get-npm">official instructions&lt;/a>.&lt;/p>
 &lt;p>Everything has been tested with Node.js 12.&lt;/p>
 &lt;p>The dependencies of the docsy theme can be installed as follows:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># from the root of the repository clone&lt;/span>
-npm ci
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># From the root of the repository clone&lt;/span>
+$ npm ci
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Hugo can be installed following
 &lt;a href="https://gohugo.io/getting-started/installing">the official documentation&lt;/a>.&lt;/p>
 &lt;p>Hugo (extended) releases can be downloaded at
 &lt;a href="https://github.com/gohugoio/hugo/releases">the Hugo releases page&lt;/a>.&lt;/p>
 &lt;h3 id="building-the-site">Building the site&lt;/h3>
 &lt;p>To build and run the site, from the repository root:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git submodule update --init --recursive --depth &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
-hugo --minify
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ git submodule update --init --recursive --depth &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+$ hugo --minify
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="testing-the-site-locally">Testing the site locally&lt;/h3>
 &lt;p>To launch the site locally, from the repository root:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">hugo serve -D
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ hugo serve -D
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The website is available locally at:
 &lt;a href="http://localhost:1313/">http://localhost:1313/&lt;/a>.&lt;/p>
 &lt;h2 id="branches-and-commits">Branches and commits&lt;/h2>
@@ -129,7 +129,7 @@ management, creating a dedicated &lt;em>feature branch&lt;/em> helps a lot. Try 
 meaningful name for the branch (my_nice_update in the example).&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># This should be done from the up-to-date main branch&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Read furthermore to see documentation on updating a local clone&lt;/span>
-git checkout -b my_nice_update
+$ git checkout -b my_nice_update
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="write-changes">Write changes&lt;/h2>
 &lt;p>The documentation being made of plain text files you are free to use whatever
 text editor or Integrated Development Environment (IDE) suits you, from
@@ -152,18 +152,18 @@ resources() lookup
 * dropped debian 4 support because all other platforms have the same
 values, and it is older than &amp;#34;old stable&amp;#34; debian release
 &lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Select the modified files to be committed&lt;/span>
-git add files1 path2/
+$ git add files1 path2/
 &lt;span style="color:#8f5902;font-style:italic"># Commit the changes&lt;/span>
-git commit -m &amp;lt;commit_message&amp;gt;
+$ git commit -m &amp;lt;commit_message&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="push-feature-branch-to-the-fork-in-preparation-of-a-pr">Push feature branch to the fork in preparation of a PR&lt;/h2>
 &lt;p>From inside a feature branch you can push it to your remote fork.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Ask git to keep trace of the link between local and remote branches&lt;/span>
-git push --set-upstream
+$ git push --set-upstream
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Once done, the output will show a URL that you can click to generate a Pull
-Request (PR). Accessing GitHub upstream of forked repositories may also propose
-you to submit a PR.&lt;/p>
+Request (PR). Accessing GitHub upstream of forked repositories may also
+propose you to submit a PR.&lt;/p>
 &lt;p>If needed GitHub CLI can also be used to prepare the PR:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">gh pr create &amp;lt;your_username&amp;gt;:&amp;lt;feature_branch&amp;gt; --web
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ gh pr create &amp;lt;your_username&amp;gt;:&amp;lt;feature_branch&amp;gt; --web
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="previewing-a-pull-request">Previewing a pull request&lt;/h3>
 &lt;p>If a repository maintainer adds the label &lt;code>safe for preview&lt;/code> to a pull request
 it will be possible to preview it using a pull request-specific URL:
@@ -181,41 +181,41 @@ contributors.&lt;/p>
 commit changes to your PR. If you need to make further changes be sure to update
 the local clone with the remote changes.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Retrieve changes made on your PR in the upstream repository&lt;/span>
-git pull
+$ git pull
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can commit new changes and push them to your remote fork.&lt;/p>
 &lt;h2 id="update-repository-clone-with-the-upstream-changes">Update repository clone with the upstream changes&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># If you are still in a branch created for a previous PR, move to main&lt;/span>
-git checkout main
+$ git checkout main
 &lt;span style="color:#8f5902;font-style:italic"># Get the latest data from the upstream repository&lt;/span>
-git fetch upstream
+$ git fetch upstream
 &lt;span style="color:#8f5902;font-style:italic"># Update your local copy with this data&lt;/span>
-git rebase upstream/main main
+$ git rebase upstream/main main
 &lt;span style="color:#8f5902;font-style:italic"># Update your remote GitHub fork with those changes&lt;/span>
-git push
+$ git push
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="update-local-feature-branch-with-changes-made-on-the-main-branch">Update local feature branch with changes made on the main branch&lt;/h2>
 &lt;p>In case the &lt;em>main&lt;/em> branch evolved since the feature branch was created, it may
 be required to merge the new changes in the feature branch.&lt;/p>
 &lt;p>It can easily be done via the PR page on the GitHub web interface, but it can
 also be done in your repository clone using &lt;code>git rebase&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Retrieve changes made in the upstream repository&lt;/span>
-git fetch upstream
+$ git fetch upstream
 &lt;span style="color:#8f5902;font-style:italic"># Check out the feature branch&lt;/span>
-git checkout feature_branch
+$ git checkout feature_branch
 &lt;span style="color:#8f5902;font-style:italic"># Apply the new changes on main to your feature branch&lt;/span>
-git rebase upstream/main
+$ git rebase upstream/main
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In case some files have been changed on both sides you will will have to merge
 the conflicts manually.&lt;/p>
 &lt;h2 id="clone-pr-to-edittestreview-locally">Clone PR to edit/test/review locally&lt;/h2>
 &lt;p>It&amp;rsquo;s possible to clone a Pull Request to a local branch to test it locally. It&amp;rsquo;s
 done using the PR number.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># List available PR and their identifiers.&lt;/span>
-gh pr list
+$ gh pr list
 &lt;span style="color:#8f5902;font-style:italic"># Clone specific PR, updating sudmodules&lt;/span>
-gh pr checkout XX --recurse-submodules
+$ gh pr checkout XX --recurse-submodules
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Once done it&amp;rsquo;s possible to build and run the site locally:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># From the root of the repository clone&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Here on MacOS X, adapt depending on your platform&lt;/span>
-hugo server -D
+$ hugo serve -D
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The documentation will then be accessible on
 &lt;a href="http://localhost:1313">http://localhost:1313&lt;/a>.&lt;/p>
 &lt;blockquote>
@@ -223,14 +223,14 @@ hugo server -D
 PR (ie. usually the PR author) will be able to add and edit files.&lt;/p>
 &lt;/blockquote>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># From the local clone of the repository&lt;/span>
-gh pr checkout XXX --recurse-submodules
-vim yyy.zz
-git add yyy.zz
-git commit yyy.zz -m &amp;lt;commit_message&amp;gt;
-git push
+$ gh pr checkout XXX --recurse-submodules
+$ vim yyy.zz
+$ git add yyy.zz
+$ git commit yyy.zz -m &amp;lt;commit_message&amp;gt;
+$ git push
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="update-a-local-clone-of-a-pr">Update a local clone of a PR&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># It will ask you to merge changes&lt;/span>
-git pull
+$ git pull
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can refer to the &lt;code>README.md&lt;/code> to see how to test it locally.&lt;/p>
 &lt;p>In case the PR got commits that were forced pushed you may have troubles, in
 that case it may be easier to
@@ -241,32 +241,32 @@ that case it may be easier to
 were forced pushed to it, it maybe easier to delete the local copy of the PR and
 recreate it.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Switch to main branch&lt;/span>
-git checkout main
+$ git checkout main
 &lt;span style="color:#8f5902;font-style:italic"># Check local branches&lt;/span>
-git branch -vv
+$ git branch -vv
 &lt;span style="color:#8f5902;font-style:italic"># Delete a specific branch&lt;/span>
-git branch -d &amp;lt;branch_name&amp;gt;
+$ git branch -d &amp;lt;branch_name&amp;gt;
 &lt;span style="color:#8f5902;font-style:italic"># If you need to force the deletion use -D&lt;/span>
-git branch -D &amp;lt;branch_name&amp;gt;
+$ git branch -D &amp;lt;branch_name&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-stashes">Using stashes&lt;/h2>
 &lt;p>Sometimes we realise just before committing a change that we are not in the
 correct branch (ie. that we forgot to create a dedicated feature branch), when
 this happens &lt;code>git stash&lt;/code> can be helpful.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Saving a change&lt;/span>
-git stash save &amp;lt;optional message&amp;gt;
+$ git stash save &amp;lt;optional message&amp;gt;
 &lt;span style="color:#8f5902;font-style:italic"># Creating the forgotten branch&lt;/span>
-git checkout -b &amp;lt;my_feature_branch&amp;gt;
+$ git checkout -b &amp;lt;my_feature_branch&amp;gt;
 &lt;span style="color:#8f5902;font-style:italic"># Reviewing the saved changes, use TAB completion&lt;/span>
-git stash show &amp;lt;TAB&amp;gt;
+$ git stash show &amp;lt;TAB&amp;gt;
 &lt;span style="color:#8f5902;font-style:italic"># Applying the saved changes, use TAB completion&lt;/span>
-git stash pop &amp;lt;TAB&amp;gt;
+$ git stash pop &amp;lt;TAB&amp;gt;
 &lt;span style="color:#8f5902;font-style:italic"># Review the changes to be committed&lt;/span>
-git diff
+$ git diff
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>If you already committed your change(s) you may have to look at &lt;code>git reset&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Viewing the diff of the two last commits&lt;/span>
-git log -n &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> -p
+$ git log -n &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> -p
 &lt;span style="color:#8f5902;font-style:italic"># Reverting the last change, keeping the change in the local directory&lt;/span>
-git reset HEAD^
+$ git reset HEAD^
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>About: Style Guide</title><link>/about/contributing/style/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/contributing/style/</guid><description>
 &lt;h2 id="general-recommendations">General recommendations&lt;/h2>
 &lt;ul>
@@ -275,26 +275,32 @@ git reset HEAD^
 &lt;a href="https://www.egi.eu/services/">EGI Services Portfolio&lt;/a>&lt;/li>
 &lt;li>Acronyms should be used only when it makes sense&lt;/li>
 &lt;li>Service names should never be replaced by acronyms&lt;/li>
-&lt;li>In the introduction of services link to the public page of the service,
+&lt;li>When introducing services, link to the public page of the service,
 if any:&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">[&lt;span style="color:#204a87;font-weight:bold">EGI Cloud Compute&lt;/span>](&lt;span style="color:#c4a000">https://www.egi.eu/services/cloud-compute/&lt;/span>)
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="markdown-writing-guidelines">Markdown writing guidelines&lt;/h2>
-&lt;p>Documentation pages have to be written in markdown compliant with
+&lt;p>Documentation pages have to be written in markdown, compliant with
 &lt;a href="https://spec.commonmark.org/0.29/">CommonMark&lt;/a> and
 &lt;a href="https://github.github.com/gfm/">GitHub Flavored Markdown&lt;/a>.&lt;/p>
 &lt;h3 id="basic-rules">Basic rules&lt;/h3>
 &lt;ul>
-&lt;li>Headings start at level 2 (&lt;code>##&lt;/code>), as level 1 (&lt;code>#&lt;/code>) is the title of the page&lt;/li>
-&lt;li>Do not capitalize each word in heading titles, unless it is a service name&lt;/li>
+&lt;li>Headings must start at level 2 (&lt;code>##&lt;/code>), as level 1 (&lt;code>#&lt;/code>) is the title of the page&lt;/li>
 &lt;li>Lines should be wrapped at 80 characters&lt;/li>
-&lt;li>Sentences should be separated by one space only&lt;/li>
-&lt;li>Indent is made with tabs not with spaces&lt;/li>
-&lt;li>Lists should be using &lt;code>-&lt;/code> not &lt;code>*&lt;/code>&lt;/li>
+&lt;li>Sentences must be separated by one space only&lt;/li>
+&lt;li>Indent is made with spaces, not with tabs&lt;/li>
+&lt;li>Bullet lists should be using &lt;code>-&lt;/code> not &lt;code>*&lt;/code>&lt;/li>
+&lt;li>Numbered lists should be using &lt;code>1.&lt;/code> for each line (automatic numbering)&lt;/li>
 &lt;li>Indent secondary (and following) level lists with 2 spaces&lt;/li>
-&lt;li>Lines should end with a Line Feed character (&amp;quot;\n&amp;quot;)&lt;/li>
-&lt;li>Files should end with a Line Feed character (&amp;quot;\n&amp;quot;), but not including an empty
-line&lt;/li>
+&lt;li>Lines must end with a Line Feed character (&lt;code>\n&lt;/code>)&lt;/li>
+&lt;li>Files must end with an empty line&lt;/li>
+&lt;li>Shell examples should include a prompt (&lt;code>$&lt;/code> or &lt;code>&amp;gt;&lt;/code>) in front of commands,
+to make it easy to understand which is the command and which is the output&lt;/li>
+&lt;li>Commands in shell examples should be broken into multiple lines of 80 characters
+or less, using a trailing backslash character (&lt;code>\&lt;/code>) on each line that continues
+on the next&lt;/li>
+&lt;li>Never break command output in shell examples to multiple lines, instead use
+&lt;a href="#adding-exceptions-for-style-violations">style exceptions&lt;/a> when necessary&lt;/li>
 &lt;/ul>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
@@ -352,7 +358,6 @@ understand than passive-voice sentences. Passive voice is usually less engaging
 and more complicated than active voice. When you use passive voice, the actions
 and responses of the software can be difficult to distinguish from those of the
 user. In addition, passive voice usually requires more words than active voice.&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;ul class="nav nav-tabs" id="tabs-2" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -389,9 +394,7 @@ id="tabs-2-0" role="tabpanel" aria-labelled-by="tabs-2-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;/div>
-&lt;!-- markdownlint-enable line-length -->
 &lt;p>However, passive voice is acceptable in the following situations:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;ul>
 &lt;li>
 &lt;p>Using active voice sounds like you are blaming the user. For example, you can
@@ -493,7 +496,6 @@ id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab">
 &lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;!-- markdownlint-enable line-length -->
 &lt;h3 id="write-in-second-person">Write in second person&lt;/h3>
 &lt;p>Users are more engaged with documentation when you use second person (that is,
 you address the user as “you”).&lt;/p>
@@ -530,7 +532,6 @@ actions or opinions.&lt;/p>
 Do not switch person (point of
 view) in the same guide or on the same page.
 &lt;/div>
-&lt;!-- markdownlint-disable line-length -->
 &lt;ul class="nav nav-tabs" id="tabs-8" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -563,13 +564,11 @@ id="tabs-8-0" role="tabpanel" aria-labelled-by="tabs-8-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;/div>
-&lt;!-- markdownlint-enable line-length -->
 &lt;h3 id="use-the-present-simple-tense">Use the present simple tense&lt;/h3>
 &lt;p>Users read documentation to perform tasks or gather information. For users,
 these activities take place in their present, so the present tense is
 appropriate in most cases. Additionally, the present tense is easier to read
 than the past or future tense.&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;ul class="nav nav-tabs" id="tabs-9" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -598,7 +597,6 @@ id="tabs-9-0" role="tabpanel" aria-labelled-by="tabs-9-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;/div>
-&lt;!-- markdownlint-enable line-length -->
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 Use the future tense only when you need
@@ -766,7 +764,6 @@ id="tabs-14-0" role="tabpanel" aria-labelled-by="tabs-14-0-tab">
 &lt;h3 id="do-not-overuse-this-that-these-and-it">Do not overuse this, that, these, and it&lt;/h3>
 &lt;p>Use these pronouns sparingly. Overuse contributes to readers’ confusion. To fix
 the ambiguity, rephrase the sentence.&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;ul class="nav nav-tabs" id="tabs-15" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -795,7 +792,6 @@ id="tabs-15-0" role="tabpanel" aria-labelled-by="tabs-15-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;/div>
-&lt;!-- markdownlint-enable line-length -->
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 You can also fix the ambiguity by
@@ -807,7 +803,6 @@ or an adjective between “to” and a verb adds ambiguity to a sentence.&lt;/p>
 &lt;h3 id="avoid-prepositions-at-the-end-of-sentences">Avoid prepositions at the end of sentences&lt;/h3>
 &lt;p>As much as possible, avoid trailing prepositions in sentences by avoiding
 phrasal verbs.&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;ul class="nav nav-tabs" id="tabs-17" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -836,7 +831,6 @@ id="tabs-17-0" role="tabpanel" aria-labelled-by="tabs-17-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;/div>
-&lt;!-- markdownlint-enable line-length -->
 &lt;p>To fix the verb-preposition constructions, replace them with active verbs.&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-18" role="tablist">
 &lt;li class="nav-item">
@@ -918,43 +912,16 @@ cases it is possible to
 &lt;a href="https://github.com/DavidAnson/markdownlint#configuration">add exceptions&lt;/a> and
 bypass &lt;strong>some checks&lt;/strong> in markdown files:&lt;/p>
 &lt;ul>
-&lt;li>Long lines due to formatting constructs like tables&lt;/li>
 &lt;li>When in-line HTML must be used (e.g. in tables, or when no other proper
 solution is available)&lt;/li>
+&lt;li>When the same procedure needs to be described for multiple platforms,
+and the automatic checker flags it as duplicate content&lt;/li>
 &lt;/ul>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
 Exceptions should only be used
 when there are no other choices, and should be confined to the smallest possible
 block of markdown code.
-&lt;/div>
-&lt;h3 id="dealing-with-long-lines-due-to-tables">Dealing with long lines due to tables&lt;/h3>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Tip&lt;/h4>
-When having a long table is not absolutely
-necessary, it is better to use a different construct to present the information
-instead of adding an exception to ignore long lines.
-&lt;/div>
-&lt;p>When a table is the only proper way to present the data, and the table is wider
-than 80 characters, it can be preceded by a HTML comment starting with
-&lt;a href="https://github.com/DavidAnson/markdownlint#configuration">markdownlint-disable&lt;/a>
-to disable the &lt;code>line-length&lt;/code> check:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">| Action | rOCCI | OpenStack | This is a very long column with important data |
-| ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
-| List images | &lt;span style="color:#4e9a06">`occi -a list -r os_tpl`&lt;/span> | &lt;span style="color:#4e9a06">`openstack image list`&lt;/span> | Lorem ipsum |
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-Do not forget to follow up with a HTML
-comment starting with
-&lt;a href="https://github.com/DavidAnson/markdownlint#configuration">markdownlint-enable&lt;/a>
-to re-enable the &lt;code>line-length&lt;/code> check.
-&lt;/div>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Important&lt;/h4>
-In case the table leads to the
-introduction of scroll bar, please reconsider using another formatting.
 &lt;/div>
 &lt;h3 id="dealing-with-in-line-html-tags">Dealing with in-line HTML tags&lt;/h3>
 &lt;p>In some specific cases it is impossible to use anything but in-line HTML tags:&lt;/p>
@@ -965,16 +932,21 @@ table cell)&lt;/li>
 &lt;/ul>
 &lt;p>Blocks with in-line HTML tags should be preceded by a HTML comment starting
 with &lt;a href="https://github.com/DavidAnson/markdownlint#configuration">markdownlint-disable&lt;/a>
-to disable the &lt;code>no-inline-html&lt;/code> check.&lt;/p>
-&lt;p>In the following example two checks are disabled at the same time: &lt;code>line-length&lt;/code>
-and &lt;code>no-inline-html&lt;/code>:&lt;/p>
-&lt;!-- markdownlint-disable line-length no-inline-html -->
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">| Action | OCCI | OpenStack | This is a very long column with important data |
+to disable the &lt;code>no-inline-html&lt;/code> check, as in the following example:&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+When having a table is not absolutely
+necessary, use a different construct to present the information.
+&lt;/div>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">
+&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- markdownlint-disable no-inline-html --&amp;gt;&lt;/span>
+| Action | OCCI | OpenStack | This is a very long column with important data |
 | ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
 | List images | &lt;span style="color:#4e9a06">`occi -a list -r os_tpl`&lt;/span> | &lt;span style="color:#4e9a06">`openstack image list`&lt;/span> | &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Lorem&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>ipsum&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> |
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length no-inline-html -->
+&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- markdownlint-enable no-inline-html --&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
+&lt;h4 class="alert-heading">Tip&lt;/h4>
 Do not forget to follow up with a HTML
 comment starting with
 &lt;a href="https://github.com/DavidAnson/markdownlint#configuration">markdownlint-enable&lt;/a>
@@ -983,13 +955,65 @@ to re-enable the &lt;code>no-inline-html&lt;/code> check.
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
 Always use the tag that is
-providing the proper semantic: e.g. for a list use &lt;code>&amp;lt;ul&amp;gt;&lt;/code> and &lt;code>&amp;lt;li&amp;gt;&lt;/code>, not &lt;code>&amp;lt;br /&amp;gt;&lt;/code>.
-&lt;/div></description></item><item><title>About: Shortcodes</title><link>/about/contributing/shortcodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/contributing/shortcodes/</guid><description>
+providing the proper semantic: e.g. for a list use &lt;code>&amp;lt;ul&amp;gt;&lt;/code> and &lt;code>&amp;lt;li&amp;gt;&lt;/code>,
+not &lt;code>&amp;lt;br /&amp;gt;&lt;/code>.
+&lt;/div>
+&lt;h3 id="dealing-with-duplicate-content">Dealing with duplicate content&lt;/h3>
+&lt;p>When the same procedure needs to be described for multiple platforms, or when
+the same code has to be exemplified for multiple languages, it is possible
+that the automatic checkers will flag these as duplicates.&lt;/p>
+&lt;p>For example, describing the following procedure will result in duplicates
+being reported:&lt;/p>
+&lt;!--
+// jscpd:ignore-start
+-->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+To run the FedCloud client in a container, make sure
+[Docker is installed](https://docs.docker.com/engine/install/#server),
+then run the following commands:
+```shell
+$ docker pull tdviet/fedcloudclient
+$ docker run -it tdviet/fedcloudclient bash
+&amp;#39;&amp;#39;&amp;#39;
+&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Mac&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+To run the FedCloud client in a container, make sure
+[Docker is installed](https://docs.docker.com/desktop/mac/install/),
+then run the following commands:
+```shell
+$ docker pull tdviet/fedcloudclient
+$ docker run -it tdviet/fedcloudclient bash
+&amp;#39;&amp;#39;&amp;#39;
+&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Windows&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+To run the FedCloud client in a container, make sure
+[Docker is installed](https://docs.docker.com/desktop/windows/install/),
+then run the following commands:
+```shell
+&amp;gt; docker pull tdviet/fedcloudclient
+&amp;gt; docker run -it tdviet/fedcloudclient bash
+&amp;#39;&amp;#39;&amp;#39;
+&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+// jscpd:ignore-end
+-->
+&lt;p>This type of content should be preceded by a HTML comment that disables the
+check for duplicates, and followed by another HTML comment that enables it
+again.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!--
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">// jscpd:ignore-start
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">--&amp;gt;&lt;/span>
+...content with duplicates here...
+&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!--
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">// jscpd:ignore-end
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">--&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>About: Shortcodes</title><link>/about/contributing/shortcodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/contributing/shortcodes/</guid><description>
 &lt;p>In addition to the formatting support provided by
 &lt;a href="https://spec.commonmark.org/0.29/">markdown&lt;/a>,
 Hugo adds support for &lt;em>shortcodes&lt;/em>, which are Go templates for easily including
-or displaying content (image inclusion, notes, tips, advanced display blocks,
-etc.).&lt;/p>
+or displaying content (images, notes, tips, advanced display blocks, etc.).&lt;/p>
 &lt;p>For reference, the following shortcodes are available:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://gohugo.io/content-management/shortcodes/">Hugo&amp;rsquo;s shortcodes&lt;/a>&lt;/li>
@@ -1030,19 +1054,36 @@ an optional highlighting type parameter.&lt;/p>
 itself on the mardkown parser.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-For &lt;a href="https://gohugo.io/">Hugo&lt;/a> the
-&lt;a href="https://github.com/yuin/goldmark">goldmark parser&lt;/a> is used and it relies on the
+&lt;a href="https://gohugo.io/">Hugo&lt;/a> uses the
+&lt;a href="https://github.com/yuin/goldmark">goldmark parser&lt;/a>, which relies on
 &lt;a href="https://prismjs.com/download.html#themes=prism">Prism syntax highlighting&lt;/a>.
 &lt;/div>
-&lt;p>The following code should be used for a shell excerpt:&lt;/p>
+&lt;p>The following markdown creates a shell excerpt:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="color:#4e9a06">```shell
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>ssh-keygen -f fedcloud
-&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>$ ssh-keygen -f fedcloud
+$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>
 &lt;span style="color:#4e9a06">```&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ssh-keygen -f fedcloud
-&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="code-in-multiple-languages">Code in multiple languages&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ssh-keygen -f fedcloud
+$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+If you click the &lt;em>Copy&lt;/em> button in the
+top-right corner of a shell example, all commands in that block are copied to
+the clipboard. The prompt in front of each command, and any command
+output is not copied.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+In case the command(s) in your
+shell example cause the introduction of a horizontal scroll bar, &lt;a href="../style/#basic-rules">consider
+breaking the command(s) into multiple lines&lt;/a> with
+trailing backslashes (\). However, you should never break command output
+to multiple lines, as that makes understanding the output, and recognizing
+it in real life, very difficult.
+&lt;/div>
+&lt;h3 id="code-in-multiple-languages">Code in multiple languages&lt;/h3>
 &lt;p>This is also achieved using
 &lt;a href="https://www.docsy.dev/docs/adding-content/shortcodes/#tabbed-panes">Docsy shortcodes&lt;/a>.&lt;/p>
 &lt;p>When you need to include code snippets, and you want to provide the same code
@@ -1077,49 +1118,49 @@ fmt.Printf(&amp;#34;Hello World!\n&amp;#34;)
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpane&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-4" role="tablist">&lt;li class="nav-item">
+&lt;ul class="nav nav-tabs" id="tabs-6" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-4-0-tab" data-toggle="tab" href="#tabs-4-0" role="tab"
-aria-controls="tabs-4-0" aria-selected="true">
+id="tabs-6-0-tab" data-toggle="tab" href="#tabs-6-0" role="tab"
+aria-controls="tabs-6-0" aria-selected="true">
 C&amp;#43;&amp;#43;
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-4-1-tab" data-toggle="tab" href="#tabs-4-1" role="tab"
-aria-controls="tabs-4-1" aria-selected="false">
+id="tabs-6-1-tab" data-toggle="tab" href="#tabs-6-1" role="tab"
+aria-controls="tabs-6-1" aria-selected="false">
 Java
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-4-2-tab" data-toggle="tab" href="#tabs-4-2" role="tab"
-aria-controls="tabs-4-2" aria-selected="false">
+id="tabs-6-2-tab" data-toggle="tab" href="#tabs-6-2" role="tab"
+aria-controls="tabs-6-2" aria-selected="false">
 Kotlin
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-4-3-tab" data-toggle="tab" href="#tabs-4-3" role="tab"
-aria-controls="tabs-4-3" aria-selected="false">
+id="tabs-6-3-tab" data-toggle="tab" href="#tabs-6-3" role="tab"
+aria-controls="tabs-6-3" aria-selected="false">
 Go
 &lt;/a>
 &lt;/li>&lt;/ul>
-&lt;div class="tab-content" id="tabs-4-content">&lt;div class="tab-pane fade show active"
-id="tabs-4-0" role="tabpanel" aria-labelled-by="tabs-4-0-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-C++" data-lang="C++">&lt;span style="color:#8f5902;font-style:italic">#include&lt;/span> &lt;span style="color:#8f5902;font-style:italic">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;div class="tab-content" id="tabs-6-content">&lt;div class="tab-pane fade show active"
+id="tabs-6-0" role="tabpanel" aria-labelled-by="tabs-6-0-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-C++" data-lang="C++">&lt;span style="color:#8f5902;font-style:italic">#include&lt;/span> &lt;span style="color:#8f5902;font-style:italic">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">int&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#000">std&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">::&lt;/span>&lt;span style="color:#000">cout&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Hello World!&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#000">std&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">::&lt;/span>&lt;span style="color:#000">endl&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-4-1" role="tabpanel" aria-labelled-by="tabs-4-1-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Java" data-lang="Java">&lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">HelloWorld&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+id="tabs-6-1" role="tabpanel" aria-labelled-by="tabs-6-1-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Java" data-lang="Java">&lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">HelloWorld&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">static&lt;/span> &lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span> &lt;span style="color:#000">String&lt;/span> &lt;span style="color:#000">args&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;span style="color:#000">System&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#c4a000">out&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#c4a000">println&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Hello World!&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">);&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-4-2" role="tabpanel" aria-labelled-by="tabs-4-2-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Kotlin" data-lang="Kotlin">&lt;span style="color:#204a87;font-weight:bold">fun&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">args&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">Array&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">String&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+id="tabs-6-2" role="tabpanel" aria-labelled-by="tabs-6-2-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Kotlin" data-lang="Kotlin">&lt;span style="color:#204a87;font-weight:bold">fun&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">args&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">Array&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">String&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#000">println&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello, world!&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-4-3" role="tabpanel" aria-labelled-by="tabs-4-3-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Go" data-lang="Go">&lt;span style="color:#204a87;font-weight:bold">package&lt;/span> &lt;span style="color:#000">main&lt;/span>
+id="tabs-6-3" role="tabpanel" aria-labelled-by="tabs-6-3-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Go" data-lang="Go">&lt;span style="color:#204a87;font-weight:bold">package&lt;/span> &lt;span style="color:#000">main&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;fmt&amp;#34;&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">func&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#000">fmt&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Printf&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello World!\n&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
@@ -1156,38 +1197,38 @@ Get-ChildItem -Path .\
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-5" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-7" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-5-0-tab" data-toggle="tab" href="#tabs-5-0" role="tab"
-aria-controls="tabs-5-0" aria-selected="true">
+id="tabs-7-0-tab" data-toggle="tab" href="#tabs-7-0" role="tab"
+aria-controls="tabs-7-0" aria-selected="true">
 Linux
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-5-1-tab" data-toggle="tab" href="#tabs-5-1" role="tab"
-aria-controls="tabs-5-1" aria-selected="false">
+id="tabs-7-1-tab" data-toggle="tab" href="#tabs-7-1" role="tab"
+aria-controls="tabs-7-1" aria-selected="false">
 Mac
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-5-2-tab" data-toggle="tab" href="#tabs-5-2" role="tab"
-aria-controls="tabs-5-2" aria-selected="false">
+id="tabs-7-2-tab" data-toggle="tab" href="#tabs-7-2" role="tab"
+aria-controls="tabs-7-2" aria-selected="false">
 Windows
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-5-content">
+&lt;div class="tabx-content" id="tabs-7-content">
 &lt;div class="tab-pane show active"
-id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab">
+id="tabs-7-0" role="tabpanel" aria-labelled-by="tabs-7-0-tab">
 &lt;p>You can list all files in a folder using the command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ls -a -l
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-5-1" role="tabpanel" aria-labelled-by="tabs-5-1-tab">
+id="tabs-7-1" role="tabpanel" aria-labelled-by="tabs-7-1-tab">
 &lt;p>To get a list of all files in a folder, press &lt;strong>Cmd&lt;/strong> + &lt;strong>Space&lt;/strong> to open a
 spotlight search, type terminal, then press Enter. In the terminal window
 then run the command:&lt;/p>
@@ -1195,7 +1236,7 @@ then run the command:&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-5-2" role="tabpanel" aria-labelled-by="tabs-5-2-tab">
+id="tabs-7-2" role="tabpanel" aria-labelled-by="tabs-7-2-tab">
 &lt;p>You can list all files in the current folder using the command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">dir
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>or you can use PowerShell:&lt;/p>
