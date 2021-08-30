@@ -499,7 +499,7 @@ m1.medium
 
 {{% alert title="Note" color="info" %}} Note that `--json-output` option can
 be used only with those OpenStack commands that have outputs. Using this
-parameter with commands wit no output (e.g. setting properties) will generate
+parameter with commands with no output (e.g. setting properties) will generate
 an unsupported parameter error.
 {{% /alert %}}
 
