@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Docs – Getting Started</title><link>/users/getting-started/</link><description>Recent content in Getting Started on EGI Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI Architecture</title><link>/users/getting-started/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/architecture/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Getting Started</title><link>/users/getting-started/</link><description>Recent content in Getting Started on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI Architecture</title><link>/users/getting-started/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/architecture/</guid><description>
 &lt;p>The EGI Federated Cloud (FedCloud) is a multi-national cloud system that
 integrates community, private and/or public clouds into a scalable computing
 platform for research. The Federation pools resources from a heterogeneous set
@@ -640,7 +640,7 @@ Windows
 &lt;/li>
 &lt;/ul>
 &lt;div class="tabx-content" id="tabs-1-content">
-&lt;div class="tab-pane fade show active"
+&lt;div class="tab-pane show active"
 id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
 &lt;p>To install the FedCloud client:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ pip3 install fedcloudclient
@@ -652,7 +652,7 @@ folder corresponding to your current Python execution environment
 &lt;code>~/.local/bin&lt;/code> for executing pip3 as user (with &amp;ndash;user option), and
 &lt;code>/usr/local/bin&lt;/code> when executing pip3 as root).&lt;/p>
 &lt;/div>
-&lt;div class="tab-pane fade"
+&lt;div class="tab-pane "
 id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
 &lt;p>As there are non-pure Python packages needed for installation, the
 &lt;a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Microsoft C++ Build Tools&lt;/a>
@@ -722,7 +722,7 @@ Windows
 &lt;/li>
 &lt;/ul>
 &lt;div class="tabx-content" id="tabs-3-content">
-&lt;div class="tab-pane fade show active"
+&lt;div class="tab-pane show active"
 id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
 &lt;p>To run the FedCloud client in a container, make sure
 &lt;a href="https://docs.docker.com/engine/install/#server">Docker is installed&lt;/a>,
@@ -731,7 +731,7 @@ then run the following commands:&lt;/p>
 $ docker run -it tdviet/fedcloudclient bash
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;div class="tab-pane fade"
+&lt;div class="tab-pane "
 id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
 &lt;p>To run the FedCloud client in a container, make sure
 &lt;a href="https://docs.docker.com/desktop/mac/install/">Docker is installed&lt;/a>,
@@ -740,7 +740,7 @@ then run the following commands:&lt;/p>
 $ docker run -it tdviet/fedcloudclient bash
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;div class="tab-pane fade"
+&lt;div class="tab-pane "
 id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;p>To run the FedCloud client in a container, make sure
 &lt;a href="https://docs.docker.com/desktop/windows/install/">Docker is installed&lt;/a>,

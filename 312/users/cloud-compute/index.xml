@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Docs – Cloud Compute</title><link>/users/cloud-compute/</link><description>Recent content in Cloud Compute on EGI Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/cloud-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Authentication and Authorisation</title><link>/users/cloud-compute/auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/cloud-compute/auth/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Cloud Compute</title><link>/users/cloud-compute/</link><description>Recent content in Cloud Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/cloud-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Authentication and Authorisation</title><link>/users/cloud-compute/auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/cloud-compute/auth/</guid><description>
 &lt;h2 id="oidc-auth-using-check-in">Authentication&lt;/h2>
 &lt;p>&lt;a href="http://openid.net/connect/">OpenID Connect&lt;/a> is the main authentication protocol
 used on the EGI Cloud. It replaces the legacy VOMS-based authentication for all
@@ -470,13 +470,13 @@ Windows
 &lt;/li>
 &lt;/ul>
 &lt;div class="tabx-content" id="tabs-0-content">
-&lt;div class="tab-pane fade show active"
+&lt;div class="tab-pane show active"
 id="tabs-0-0" role="tabpanel" aria-labelled-by="tabs-0-0-tab">
 &lt;p>Installation of the OpenStack client can be done using:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">pip install openstackclient
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;div class="tab-pane fade"
+&lt;div class="tab-pane "
 id="tabs-0-1" role="tabpanel" aria-labelled-by="tabs-0-1-tab">
 &lt;p>As there are non-pure Python packages needed for installation, the
 &lt;a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Microsoft C++ Build Tools&lt;/a>
