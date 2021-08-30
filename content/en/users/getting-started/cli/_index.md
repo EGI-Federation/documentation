@@ -47,7 +47,6 @@ FedCloud client has the following modules (features):
 The FedCloud client can be installed with the `pip3` Python package manager
 (without root or aministrator privileges).
 
-<!-- markdownlint-disable no-space-in-emphasis -->
 {{< tabpanex >}}
 {{< tabx header="Linux / Mac" >}}
 
@@ -61,9 +60,9 @@ This installs the latest version of the FedCloud client, together with
 its required packages (like _openstackclient_). It will also create
 executables **fedcloud** and **openstack**, adding them to the _bin_
 folder corresponding to your current Python execution environment
-(_$VIRTUAL_ENV/bin_ for executing pip3 in a Python virtual environment,
-_~/.local/bin_ for executing pip3 as user (with --user option), and
-_/usr/local/bin_ when executing pip3 as root).
+(`$VIRTUAL_ENV/bin` for executing pip3 in a Python virtual environment,
+`~/.local/bin` for executing pip3 as user (with --user option), and
+`/usr/local/bin` when executing pip3 as root).
 
 {{< /tabx >}}
 {{< tabx header="Windows" >}}
@@ -89,12 +88,11 @@ To install the FedCloud client:
 
 This installs the latest version of the FedCloud client, together with
 its required packages (like _openstackclient_). It will also create
-executables **fedcloud** and **openstack**, adding them to the _bin_
+executables **fedcloud** and **openstack**, adding them to the `bin`
 folder corresponding to your current Python execution environment.
 
 {{< /tabx >}}
 {{< /tabpanex >}}
-<!-- markdownlint-disable no-space-in-emphasis -->
 
 Check if the installation is correct by executing the client:
 
