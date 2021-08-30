@@ -61,7 +61,7 @@ its required packages (like _openstackclient_). It will also create
 executables **fedcloud** and **openstack**, adding them to the `bin`
 folder corresponding to your current Python execution environment
 (`$VIRTUAL_ENV/bin` for executing pip3 in a Python virtual environment,
-`~/.local/bin` for executing pip3 as user (with --user option), and
+`~/.local/bin` for executing pip3 as user (with `--user` option), and
 `/usr/local/bin` when executing pip3 as root).
 
 {{< /tabx >}}
