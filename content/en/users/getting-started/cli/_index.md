@@ -61,7 +61,7 @@ its required packages (like _openstackclient_). It will also create
 executables **fedcloud** and **openstack**, adding them to the `bin`
 folder corresponding to your current Python execution environment
 (`$VIRTUAL_ENV/bin` for executing pip3 in a Python virtual environment,
-`~/.local/bin` for executing pip3 as user (with --user option), and
+`~/.local/bin` for executing pip3 as user (with `--user` option), and
 `/usr/local/bin` when executing pip3 as root).
 
 {{< /tabx >}}
@@ -499,7 +499,7 @@ m1.medium
 
 {{% alert title="Note" color="info" %}} Note that `--json-output` option can
 be used only with those OpenStack commands that have outputs. Using this
-parameter with commands wit no output (e.g. setting properties) will generate
+parameter with commands with no output (e.g. setting properties) will generate
 an unsupported parameter error.
 {{% /alert %}}
 

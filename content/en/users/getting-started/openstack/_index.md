@@ -36,7 +36,6 @@ all providers in the EGI infrastructure that are accessible to you (use the
 correct VO) with the [FedCloud Client](../cli):
 
 ```shell
-$ export EGI_VO=vo.access.egi.eu
 $ fedcloud endpoint list --service-type org.openstack.horizon --site ALL_SITES
 ```
 
