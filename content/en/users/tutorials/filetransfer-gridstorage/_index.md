@@ -34,7 +34,8 @@ To access services and resources in the
 
 ### Step 1 Configuration check
 
-To verify that everything is configured properly you can check with the following command pointing to the cerficates directly:
+To verify that everything is configured properly you can check with the
+following command pointing to the cerficates directly:
 
 <!-- markdownlint-disable line-length -->
 ```shell
@@ -47,11 +48,14 @@ Base id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 <!-- markdownlint-enable line-length -->
 
-In general the commands can be used by specifying the user public and private key like shown in the example or by creating a proxy certificate as 
-
+In general the commands can be used by specifying the user public and private
+key like shown in the example or by creating a proxy certificate as
 
 ### Proxy creation
-To avoid the need to specify at each command the private and public key if everything is already configured and working properly it will be enough to execute the following coomand:
+
+To avoid the need to specify at each command the private and public key if
+everything is already configured and working properly it will be enough to
+execute the following coomand:
 
 <!-- markdownlint-disable line-length -->
 ```shell
@@ -63,7 +67,9 @@ Your proxy is valid until Wed Aug 25 04:18:14 2021
 ```
 <!-- markdownlint-enable line-length -->
 
-As the output of the command shows a proxy certificate has been generated that will be valid, by default, for 12 hours. This can be usually increased for example to 48 hours with the following option:
+As the output of the command shows a proxy certificate has been generated that
+will be valid, by default, for 12 hours. This can be usually increased for
+example to 48 hours with the following option:
 
 <!-- markdownlint-disable line-length -->
 ```shell
@@ -74,6 +80,31 @@ Creating proxy ................................... Done
 Your proxy is valid until Thu Aug 26 16:23:01 2021
 ```
 <!-- markdownlint-enable line-length -->
+
+To verify the timeleft for the validity of the proxy created use the following command:
+
+<!-- markdownlint-disable line-length -->
+```shell
+$ voms-proxy-info
+subject   : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu/CN=1451339003
+issuer    : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
+identity  : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
+type      : RFC compliant proxy
+strength  : 1024 bits
+path      : /tmp/x509up_u1000
+timeleft  : 19:59:57
+```
+<!-- markdownlint-enable line-length -->
+
+When the timeleft reaches zero if the previous command used to check the identity will return the following message:
+
+<!-- markdownlint-disable line-length -->
+```shell
+$ fts-rest-whoami -s https://fts3-public.cern.ch:8446/
+Error: Proxy expired!
+```
+<!-- markdownlint-enable line-length -->
+
 
 
 ## WebFTS
