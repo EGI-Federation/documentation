@@ -5,7 +5,7 @@ on: [pull_request]
 
 jobs:
   super-lint:
-    name: Lint with Supper-Linter
+    name: Lint with Super-Linter
     runs-on: ubuntu-latest
 
     steps:
@@ -17,8 +17,6 @@ jobs:
           fetch-depth: 0
 
       # Runs the Super-Linter action
-      # Checking all code base but without throwing errors
-      # Meant to follow progress of what still needs to be cleaned
       - name: Run Super-Linter on new changes
         uses: docker://ghcr.io/github/super-linter:slim-v4
         env:
@@ -32,6 +30,8 @@ jobs:
           FILTER_REGEX_EXCLUDE: "(.*binaries/.*)|(.*layouts/.*)|(.*/egi.js)"
 
       # Runs the Super-Linter action
+      # Checking all code base but without throwing errors
+      # Meant to follow progress of what still needs to be cleaned
       - name: Run Super-Linter on all codebase
         uses: docker://ghcr.io/github/super-linter:slim-v4
         env:

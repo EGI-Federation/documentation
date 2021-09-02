@@ -1,110 +1,101 @@
 ---
-title: "Federation Architecture and Implementation"
+title: "EGI Architecture"
+linkTitle: "Architecture"
 type: docs
-weight: 110
+weight: 10
 description: >
-  The EGI Cloud architecture and technical implementation details
+  The architecture of the EGI Federation
 ---
 
-The EGI Federated Cloud is a multi-national cloud system that integrates
-community, private and/or public clouds into a scalable computing platform for
-research. The Federation pools services from a heterogeneous set of cloud
-providers using a single authentication and authorisation framework that allows
-the portability of workloads across multiple providers and enable bringing
-computing to data. The current implementation is focused on IaaS services but
-can be easily applied to PaaS and SaaS layers.
+The EGI Federated Cloud (FedCloud) is a multi-national cloud system that
+integrates community, private and/or public clouds into a scalable computing
+platform for research. The Federation pools resources from a heterogeneous set
+of cloud providers using a single authentication and authorisation framework
+that allows the portability of workloads across multiple providers, and enables
+bringing computing to data. The current implementation is focused on
+Infrastructure-as-a-Service (IaaS) services, but can be easily applied to
+Platform-as-a-Service (PaaS) and Software-as-a-Servcice (SaaS) layers.
 
 Each resource centre of the federated infrastructure operates a _Cloud
 Management Framework (CMF)_ according to its own preferences and constraints and
 joins the federation by integrating this CMF with components of the EGI service
-portfolio. CMFs must at least be integrated with EGI AAI so users can access
-services with a single identity, integration with other components and APIs to
-be provided are agreed by the community the resource centre provides services
-to.
+portfolio. CMFs must at least be integrated with EGI Authentication and
+Authorization Infrastructure (AAI) so users can access services with a single
+identity, integration with other components and APIs to be provided are agreed
+by the community the resource centre provides services to.
 
 EGI follows a Service Integration and Management (SIAM) approach to manage the
 federation with processes that cover the different aspects of the IT Service
 Management. Providers in the federation keep complete control of their services
-and resources. EGI VO OLAs establish a reliable, trust-based communication
-channel between the Customer and the providers to agree on the services, their
-levels and the types of support. The EGI VO OLAs are not legal contracts but, as
-agreements, they outline the clear intentions to collaborate and support
-research.
+and resources. EGI creates Virtual Organizations (VOs) for each research
+community, and EGI VO Operation Level Agreements (OLAs) establish a reliable,
+trust-based communication channel between the community and the providers, by
+agreeing on the services, their levels and the types of support.
+
+{{% alert title="Note" color="info" %}} EGI VO OLAs are not legal contracts
+but, as agreements, they outline the clear intentions to collaborate and
+support research.
+{{% /alert %}}
 
 ## Federated IaaS
 
-The EGI Federated Cloud Infrastructure as a Service (IaaS) resource centres
-deploy a Cloud Management Framework (CMF) that provide users with an API-based
-service for management of Virtual Machines and associated Block Storage to
-enable persistence and Networks to enable connectivity of the Virtual Machines
-among themselves and third party resources.
+The EGI FedCloud IaaS resource centres deploy a Cloud Management Framework
+(CMF) that provide users with an API-based service for management of Virtual
+Machines and associated Block Storage to enable persistence and Networks to
+enable connectivity of the Virtual Machines (VMs) among themselves and third
+party resources.
 
 The IaaS federation is a thin layer that brings the providers together with:
 
-- federated authentication;
-- resource discovery;
-- central VM image catalogue;
-- usage accounting; and
-- monitoring.
+- [Federated authentication](#authentication-and-authorization)
+- [Resource discovery](#information-discovery)
+- [Central VM image catalogue](#virtual-machine-image-management)
+- [Usage accounting](#accounting)
+- [Monitoring](#monitoring)
 
-The IaaS capabilities (VM, block storage, network management) must be provided
-via community agreed APIs (OpenStack and/or OCCI are supported at the moment)
-that allow integration with EGI Check-in for authentication and authorisation of
-users. Those providers that limit the interaction to web dashboards and do not
-expose APIs to direct consumption for users cannot be considered part of the EGI
-IaaS Cloud Compute service.
+The IaaS capabilities (VM, block storage, network management, etc.) must be
+provided via community agreed APIs ([OpenStack](https://docs.openstack.org/wallaby/api/)
+and/or [OCCI](http://www.occi-wg.org/) are supported at the moment)
+that allow integration with [EGI Check-in](../../check-in) for
+authentication and authorisation of users.
 
-The information system provides a real-time view about the actual capabilities
-of federation participants. The EGI Configuration Database (GOCDB) contains the
-list of resource centres and their entry endpoints. Information about these
-endpoints is expressed in a standard format (GlueSchema 2.1) and pushed to
-consumers via the Argo Messaging System. The AppDB Information System collects
-this information in a central service for discovery.
-
-Users can instantiate VMs on the providers from a set of Virtual Machine Images
-available on a central catalogue implemented in AppDB\'s Cloud Marketplace.
-Virtual Machine Images are synchronised to the providers periodically using the
-HEPiX image lists format.
-
-Usage of resources is gathered centrally using EGI Accounting repository and
-available for visualisation at
-[EGI Accounting portal](https://accounting.egi.eu).
-
-Those endpoints published in the EGI Configuration Database are monitored via
-[ARGO](https://argo.egi.eu/). The set of probes check the availability of the
-providers and their correct functionality.
+{{% alert title="Note" color="info" %}} Those providers that limit the
+interaction to web dashboards and do not expose APIs to direct consumption for
+users cannot be considered part of the EGI IaaS Cloud services.
+{{% /alert %}}
 
 Users and Community platforms built on top of the EGI IaaS can interact with the
 cloud providers at three different layers:
 
-- Directly using the IaaS APIs to manage individual resources. This option is
-  recommended for pre-existing use cases with requirements on specific APIs.
-- Using IaaS Federated Access Tools that allow managing the complexity of
+- Directly using the IaaS APIs or [CLIs](../cli) to manage individual
+  resources. This option is recommended for pre-existing use cases with
+  requirements on specific APIs.
+- Using federated access tools that allow managing the complexity of
   dealing with different providers in a uniform way. These tools include:
-  - IaaS provisioning systems that allow to define infrastructure as code and
+  - **Provisioning systems** allow users to define infrastructure as code, then
     manage and combine resources from different providers, thus enabling the
     portability of application deployments between them (e.g.
-    [Infrastructure Manager](../im) or [Terraform](https://www.terraform.io/));
-    and
-  - cloud brokers, that provide matchmaking for workloads to available providers
+    [Infrastructure Manager](../../cloud-compute/im) or
+    [Terraform](https://www.terraform.io/)), and
+  - **Cloud brokers** provide matchmaking for workloads to available providers
     (e.g. the
     [INDIGO-DataCloud Orchestrator](https://indigo-dc.gitbook.io/indigo-paas-orchestrator/)).
-- Using [VMOps dashboard](../vmops).
+- Using the [VMOps dashboard](../../cloud-compute/vmops).
 
 EGI provides ready-to-use software components to enable the federation for
 OpenStack and OpenNebula. These components rely on public APIs of the IaaS
-system and use Check-in accounts for authenticating into the provider.
+system and use [Check-in](../../check-in) accounts for authenticating into the provider.
 
 ## Implementation
 
-### AAI
+### Authentication and authorization
 
 Federated identity ensures that users of the federation can use a single account
 for accessing the resources.
 
 #### OpenID Connect
 
-Providers of the EGI Cloud support authentication with OAuth2.0 tokens provided
+Providers of the EGI Cloud support authentication with OAuth2 tokens provided
 by Check-in OpenID Connect Identity provider. Support builds on the
 [AAI guide for SPs](https://wiki.egi.eu/wiki/AAI_guide_for_SPs) with detailed
 configuration provided at the
@@ -113,82 +104,98 @@ configuration provided at the
 The integration relies on the OpenStack Keystone
 [OS-FEDERATION API](https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api).
 
-#### Legacy VOMS / X.509 certificates
+#### Legacy X.509 certificates
 
-EGI can support users still using X.509 certificates extended with VO attributes
-(e.g. acknowledging that the user is member of the VO) in a so called VOMS
-proxy. This VOMS proxy certificate is used in subsequent calls to the endpoints
-which map the certificate and VO information via specific integration modules
-for VOMS authentication.
+EGI can support users still using X.509 certificates extended with VO
+attributes (e.g. acknowledging that the user is member of the VO), also
+known as Virtual Organization Membership Service (VOMS) proxy certificates.
+VOMS proxy certificates are used in subsequent calls to the endpoints, which
+map the certificate and VO information via specific integration modules,
+allowing authentication and authorization using X.509 certificates.
+
+{{% alert title="Note" color="info" %}} VOMS proxy certificates can be obtained
+from user certficates or from other proxy certificates, and are useful in
+multi-step delegation of user roles.
+{{% /alert %}}
 
 There are two implementations for the support of VOMS proxies:
 
 - [KeyStorm](https://github.com/the-rocci-project/keystorm) provides federated
   authentication for OpenNebula/rOCCI.
 - [Keystone-VOMS](https://github.com/IFCA/Keystone-VOMS) is an OpenStack
-  Keystone plugin to enable VOMS authentication. It allows users to get tokens
-  which can be used to access any of the OpenStack services. Users are generated
-  on the fly in Keystone, it does not need regular synchronization with the VO
-  Management server Perun.
+  [Keystone](https://docs.openstack.org/keystone/latest/) plugin to enable VOMS
+  authentication. It allows users to get tokens which can be used to access any
+  of the OpenStack services. Users are generated on the fly in Keystone, it
+  does not need regular synchronization with the VO Management server Perun.
 
 ### Information discovery
 
-The information system provides a real-time view about the actual capabilities
-of federation participants. The information system can be used by both human
-users and online services.
+The [Configuration Database](#configuration-database)
+contains the list of resource centres and their endpoints, while the
+[AppDB](https://appdb.egi.eu/) Information System collects this information
+in a central service for discovery, providing a real-time view of the actual
+capabilities of federation participants (can be used by both human users and
+machine services).
 
-#### Configuration DataBase
+#### Configuration Database
 
-EGI's central configuration database ([GOCDB](https://goc.egi.eu)) is used to
-catalogue the static information of the production infrastructure topology. To
-allow Resource Providers to expose IaaS federation endpoints, the following
+The EGI [Configuration Database](../../../internal/configuration-database) is
+used to catalogue the static information of the production infrastructure
+topology (e.g. the list of resource centres and their endpoints).
+
+To allow resource providers to expose IaaS federation endpoints, the following
 service types are avialable:
 
-- `org.openstack.nova`,
-- `org.openstack.swift`,
-- `eu.egi.cloud.accounting`,
-- `eu.egi.cloud.vm-management.occi`, and
-- `eu.egi.cloud.vm-metadata.marketplace`.
+- `org.openstack.horizon`
+- `org.openstack.nova`
+- `org.openstack.swift`
+- `eu.egi.cloud.accounting`
+- `eu.egi.cloud.vm-management.occi`
+- `eu.egi.cloud.vm-metadata.marketplace`
 
-All providers **must** enter cloud service endpoints to GOCDB to enable
-integration with EGI..
+All providers **must** enter cloud service endpoints into the Configuration
+Database to enable integration with EGI.
 
-The [Cloud-info-provider](https://github.com/EGI-Federation/cloud-info-provider)
+The [Cloud Info Provider](https://github.com/EGI-Federation/cloud-info-provider)
 extracts information from the resource centres using their native APIs and
-formats it following Glue, and OGC recommended standard. This information is
-pushed to the Argo Messaging System and consumed by AppDB to provide a central
-information discovery service that aggregates several other sources of
-information of the infrastructure on a single endpoint.
+formats it following Glue, an OGC recommended standard. This information is
+pushed to the Argo Messaging System and consumed by [AppDB](https://appdb.egi.eu/)
+to provide a central information discovery service that aggregates several
+other sources of information about the infrastructure.
 
 ### Virtual Machine Image management
 
 In a distributed, federated IaaS service, users need solutions for efficiently
-managing and distributing their VM Images across multiple resource providers.
-EGI provides a catalogue of Virtual Machine images (VMIs) that allows any user
-to share their VMI and communities to select those relevant for distribution
-across providers. These images are automatically replicated at the providers
-supporting the community and converted as needed to ensure the correct
-instantiation when used.
+managing and distributing their VM images across multiple resource providers.
+EGI provides a catalogue of VM images (VMIs) that allows any user
+to share their VMI, and communities to select those VMIs relevant for
+distribution across providers. These images are automatically replicated at
+the providers supporting the community and converted as needed to ensure the
+correct instantiation when used.
 
-AppDB includes a Virtual Appliance Marketplace supporting Virtual Appliances
-(VAs), which are clean-and mean virtual machine images designed to run on a
-virtualisation platform, that provide a software solution out-of-the-box, ready
-to be used with minimal or no set-up within the IaaS providers.
+AppDB includes a [Virtual Appliance Marketplace](https://appdb.egi.eu/browse/cloud)
+supporting Virtual Appliances (VAs), which are clean and lean virtual machine
+images designed to run on a virtualisation platform, that provide a software
+solution out-of-the-box, ready to be used with minimal or no set-up.
 
 AppDB allows representatives of research communities (VOs) to generate a VM
-image list via GUI that resource centres subscribe to. The subscription enables
-the periodic download, conversion and storage of those images in the local IaaS
-image repository.
+image list that resource centres subscribe to. The subscription enables
+the periodic download, conversion and storage of those images to the image
+repository of the indicated resource centres, using HEPiX image list format.
 [cloudkeeper](https://github.com/the-cloudkeeper-project/cloudkeeper) provides
 this automated synchronisation between AppDB and OpenStack/OpenNebula.
 
 ### Accounting
 
-Federated Accounting provides an integrated view about resource/service usage:
-it pulls together usage information from the federated sites and services,
-integrates the data and presents them in such a way that both individual users
-as well as whole communities can monitor their own resource/service usage across
-the whole federation.
+[Federated Accounting](../../../internal/accounting) provides an integrated
+view about resource/service usage: it pulls together usage information from
+the federated sites and services, integrates the data and presents them in
+such a way that both individual users as well as whole communities can monitor
+their own resource/service usage across the whole federation.
+
+Usage of resources is gathered centrally using EGI Accounting repository and
+available for visualisation at
+[EGI Accounting portal](https://accounting.egi.eu).
 
 #### Cloud Usage Record
 
@@ -281,10 +288,13 @@ Implementation of the extactor probes for accounting are listed below:
 
 ### Monitoring
 
-Services in the EGI infrastructure are monitored via
-[ARGO](https://argo.egi.eu/). Specific probes to check functionality and
-availability of services must be provided by service developers, The current set
-of probes used for monitoring IaaS resources consists of:
+The endpoints published in the
+[Configuration Database](../../../internal/configuration-database)
+are monitored via [ARGO](https://argo.egi.eu/). Specific probes to check
+functionality and availability of services must be provided by service
+developers.
+
+The current set of probes used for monitoring IaaS resources consists of:
 
 - OCCI probes (`eu.egi.cloud.OCCI-VM` and `eu.egi.cloud.OCCI-Context`): OCCI-VM
   creates an instance of a given image by using OCCI, checks its status and
