@@ -58,7 +58,7 @@ Follow these steps if you are using OpenID Connect to integrate with EGI:
                {
                    "type": "HTTP_OIDC_ISS",
                    "any_one_of": [
-                       "https://aai-dev.egi.eu/oidc/"
+                       "https://aai.egi.eu/oidc/"
                    ]
                },
                {
