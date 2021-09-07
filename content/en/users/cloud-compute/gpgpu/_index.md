@@ -36,11 +36,10 @@ an example on how to use the `fedcloud` command to show the GPU properties of
 the available flavors:
 
 ```shell
-fedcloud openstack flavor list --long \
-  --site IISAS-FedCloud \
-  --vo acc-comp.egi.eu \
-  --json-output | \
-  jq -r '.[].Result | map(select(.Properties."Accelerator:Type" == "GPU")) | .'
+fedcloud openstack flavor list --long --site ALL_SITES --vo vo.access.egi.eu --json-output | \
+    jq -r 'map(select(."Error code" ==  0)) |
+           map(.Result = (.Result| map(select(.Properties."Accelerator:Type" == "GPU")))) |
+           map(select(.Result | length >  0))'
 ```
 
 Site-specific dashboards and endpoints are described in the following table:
