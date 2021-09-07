@@ -203,7 +203,7 @@ openstack role add member \
           --project <your new vo project>
 ```
 
-Add the mapping of the project to the VO in `/etc/cloudkeeper-os/voms.json`:
+Add the mapping of the project to the VO in `/etc/cloudkeeper-os/mapping.json`:
 
 ```json
 {
