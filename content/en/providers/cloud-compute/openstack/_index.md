@@ -1224,9 +1224,9 @@ authentication, check the following guides for getting such token and URLs:
   and
 - [how to subscribe to a private image list](https://wiki.appdb.egi.eu/main:faq:how_to_subscribe_to_a_private_image_list_using_the_vmcatcher).
 
-Finally, you need to provide a `/etc/cloudkeeper-os/mapping.json` that configures 
-the mapping of VOs supported in your OpenStack. The file should contain a json
-document that follows this format:
+Finally, you need to provide a `/etc/cloudkeeper-os/mapping.json` that
+configures the mapping of VOs supported in your OpenStack. The file should
+contain a json document that follows this format:
 
 ```json
 {
