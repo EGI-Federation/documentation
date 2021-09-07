@@ -1224,6 +1224,25 @@ authentication, check the following guides for getting such token and URLs:
   and
 - [how to subscribe to a private image list](https://wiki.appdb.egi.eu/main:faq:how_to_subscribe_to_a_private_image_list_using_the_vmcatcher).
 
+Finally, you need to provide a `/etc/cloudkeeper-os/mapping.json` that provides
+information on VOs are supported in your OpenStack. The file should contain a
+json document that follows this format:
+
+```json
+{
+        "<VO_NAME>": {
+            "project": "<id of project in OpenStack for VO_NAME>"
+        },
+	"<VO_NAME_2>": {
+            "project": "<local name of project in OpenStack for VO_NAME_2>",
+	    "domain": "<domain name for project in OpenStack>"
+	}
+}
+```
+
+Note that you can either specify a project id or the project name with the
+domain name in the mapping. Add as many VOs as you are supporting.
+
 #### Running the services
 
 cloudkeeper-os should run permanently, there is a `cloudkeeper-os.service` for
