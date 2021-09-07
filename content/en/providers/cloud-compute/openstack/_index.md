@@ -1233,10 +1233,10 @@ document that follows this format:
         "<VO_NAME>": {
             "project": "<id of project in OpenStack for VO_NAME>"
         },
-	"<VO_NAME_2>": {
+        "<VO_NAME_2>": {
             "project": "<local name of project in OpenStack for VO_NAME_2>",
-	    "domain": "<domain name for project in OpenStack>"
-	}
+            "domain": "<domain name for project in OpenStack>"
+        }
 }
 ```
 
