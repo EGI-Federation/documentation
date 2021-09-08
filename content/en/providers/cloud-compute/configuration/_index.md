@@ -58,7 +58,7 @@ Follow these steps if you are using OpenID Connect to integrate with EGI:
                {
                    "type": "HTTP_OIDC_ISS",
                    "any_one_of": [
-                       "https://aai-dev.egi.eu/oidc/"
+                       "https://aai.egi.eu/oidc/"
                    ]
                },
                {
@@ -203,7 +203,7 @@ openstack role add member \
           --project <your new vo project>
 ```
 
-Add the mapping of the project to the VO in `/etc/cloudkeeper-os/voms.json`:
+Add the mapping of the project to the VO in `/etc/cloudkeeper-os/mapping.json`:
 
 ```json
 {
