@@ -13,6 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
+          # Make sure the actual branch is checked out when running on PR
+          ref: ${{ github.event.pull_request.head.sha }}
           # Full git history needed to get proper list of changed files
           fetch-depth: 0
 
