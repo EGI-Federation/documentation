@@ -25,8 +25,9 @@ jobs:
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           # Only check new or edited files
           VALIDATE_ALL_CODEBASE: false
-          # Enable trace log
+          # Debug super-linter
           LOG_LEVEL: trace
+          ACTIONS_RUNNER_DEBUG: true
           # Fail on errors
           DISABLE_ERRORS: false
           FILTER_REGEX_EXCLUDE: "(.*binaries/.*)|(.*layouts/.*)|(.*/egi.js)"
