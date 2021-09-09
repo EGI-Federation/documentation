@@ -220,10 +220,10 @@ right:
 
 Similarly to what can be done with the command line interface, there is the
 option to overwrite the destination if it already exists. To enable this option
-tick the `Overwrite Files` below the arrow for the transfer.
-On the top of the page is also shown a confirmation that the transfer has been
-submitted successfully. This same webpage shows the status of the current
-transfers in the `My jobs` tab shown in the following screeshot:
+tick the `Overwrite Files` below the arrow for the transfer. On the top of the
+page is also shown a confirmation that the transfer has been submitted
+successfully. This same webpage shows the status of the current transfers in the
+`My jobs` tab shown in the following screeshot:
 
 ![WebFTS my jobs](WebFTS-my_jobs.png)
 
