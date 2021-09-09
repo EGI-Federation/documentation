@@ -99,8 +99,6 @@ Error: Proxy expired!
 The last option that we need to use is specify the VO that we want to use for
 the proxy being created. In the following example the "dteam" VO has been used:
 
-<!-- markdownlint-disable line-length -->
-
 ```shell
 [ac@localhost ~]$ voms-proxy-init --voms dteam
 Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
