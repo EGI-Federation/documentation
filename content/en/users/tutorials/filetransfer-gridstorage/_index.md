@@ -25,7 +25,7 @@ your certificate installed in your browser to use
 To access services and resources in the
 [EGI Federated Cloud](../../getting-started), you will need:
 
-- An EGI ID (account), you can [sign up here](../../check-in/signup)
+- An [EGI Check-in](../../check-in) account, you can [sign up here](../../check-in/signup)
 - Enrollment into a [Virtual Organisation](../../check-in/vos) (VO) that has
   access to the services and resources you need
 
