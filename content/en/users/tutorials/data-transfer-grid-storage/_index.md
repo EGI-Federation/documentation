@@ -1,11 +1,11 @@
 ---
-title: "File Transfer with grid storage"
-linkTitle: "File Transfer with grid storage"
+title: "Data transfer with grid storage"
+linkTitle: "Data transfer with grid storage"
 type: docs
 weight: 80
 draft: true
 description: >
-  Use EGI File Transfer to handle data in grid storage
+  Use EGI Data transfer to handle data in grid storage
 ---
 
 ## Overview
