@@ -100,7 +100,7 @@ The last option that we need to use is specify the VO that we want to use for
 the proxy being created. In the following example the "dteam" VO has been used:
 
 ```shell
-[ac@localhost ~]$ voms-proxy-init --voms dteam
+$ voms-proxy-init --voms dteam
 Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
 Creating temporary proxy ................................................................... Done
 Contacting  voms2.hellasgrid.gr:15004 [/C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr] "dteam" Done
