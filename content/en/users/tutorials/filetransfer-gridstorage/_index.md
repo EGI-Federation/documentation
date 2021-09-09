@@ -112,9 +112,9 @@ Your proxy is valid until Wed Sep  8 04:37:07 2021
 
 ### Find the storage
 
-In general it should be already known the source and destination storage for a
-specific project however to find the available options we can use for a
-transfer, source and destination, we can use the
+In general, the source and destination storage for a specific project
+should be already known. However, to discover the available source
+or destination endpoints to be used for a transfer, you can use the
 [VAPOR service](https://operations-portal.egi.eu/vapor/resources/GL2ResVO).
 
 ![VAPOR main page](VAPOR-home.png)
