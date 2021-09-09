@@ -96,8 +96,6 @@ $ fts-rest-whoami -s https://fts3-public.cern.ch:8446/
 Error: Proxy expired!
 ```
 
-<!-- markdownlint-enable line-length -->
-
 The last option that we need to use is specify the VO that we want to use for
 the proxy being created. In the following example the "dteam" VO has been used:
 
