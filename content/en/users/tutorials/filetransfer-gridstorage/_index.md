@@ -56,8 +56,6 @@ To avoid the need to specify at each command the private and public key if
 everything is already configured and working properly it will be enough to
 execute the following coomand:
 
-<!-- markdownlint-disable line-length -->
-
 ```shell
 $ voms-proxy-init
 Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
