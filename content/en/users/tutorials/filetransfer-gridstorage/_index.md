@@ -131,7 +131,7 @@ of the list of storage available to "dteam"
 
 ![VAPOR storage page](VAPOR-storage.png)
 
-###Start a transfer
+### Starting a transfer
 
 Once we have identified the surce and destination storage needed for the
 transfer we can proceed with the transfer between the two endpoints. To do that
