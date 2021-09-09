@@ -164,8 +164,6 @@ Similarly to what has been done from the command line interface we need to
 provide our private key for delegation of the credential. To do that we use the
 following command:
 
-<!-- markdownlint-disable line-length -->
-
 ```shell
 #openssl pkcs12 -in yourCert.p12 -nocerts -nodes | openssl rsa
 Enter Import Password:
