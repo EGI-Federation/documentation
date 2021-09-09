@@ -232,4 +232,4 @@ right:
 
 On the top of the page is also shown a confirmation that the transfer has been
 submitted successfully. This same webpage shows the status of the current
-transfers in the "My jobs" tab.
+transfers in the `My jobs` tab.
