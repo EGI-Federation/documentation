@@ -33,9 +33,9 @@ the following section.&lt;/p>
 &lt;h3 id="proxy-creation">Proxy creation&lt;/h3>
 &lt;p>As you have seen in the previous section it is possible to use the FTS commands
 by specifying the location of the user public and private key. With the use of
-&amp;lsquo;voms-proxy-init&amp;rsquo; it is possible to create a &amp;lsquo;proxy&amp;rsquo; certificate for the user.
+&lt;code>voms-proxy-init&lt;/code> it is possible to create a &lt;code>proxy&lt;/code> certificate for the user.
 With this you don&amp;rsquo;t need to specify the location of the public and private key
-for each FTS command. When running &amp;lsquo;voms-proxy-init&amp;rsquo; it&amp;rsquo;s possible to specify
+for each FTS command. When running &lt;code>voms-proxy-init&lt;/code> it&amp;rsquo;s possible to specify
 the location of the public and private key. If this are not included as options,
 the tool expect to find them in:&lt;/p>
 &lt;ul>
@@ -65,12 +65,12 @@ identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&
 strength : &lt;span style="color:#0000cf;font-weight:bold">1024&lt;/span> bits
 path : /tmp/x509up_u1000
 timeleft : 19:59:57
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the timeleft reaches zero the same command will produce the following
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the &lt;code>timeleft&lt;/code> reaches zero the same command will produce the following
 message:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-rest-whoami -s https://fts3-public.cern.ch:8446/
 Error: Proxy expired!
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option that you need to use is specify the VO that you want to use for
-the proxy being created. In the following example the &amp;ldquo;dteam&amp;rdquo; VO has been used:&lt;/p>
+the proxy being created. In the following example the &lt;em>dteam&lt;/em> VO has been used:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ voms-proxy-init --voms dteam
 Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
 Creating temporary proxy ................................................................... Done
@@ -92,29 +92,29 @@ scroll the list and click the desired VO as show in the following picture:&lt;/p
 &lt;p>Once selected, you can see all the resources associated with the specific VO. In
 particular in this case you are interested in the information on the status,
 capacity, type of storage, etc. Following is a screenshot of the visualisation
-of the list of storage available to &amp;ldquo;dteam&amp;rdquo;.&lt;/p>
+of the list of storage available to &lt;em>dteam&lt;/em>.&lt;/p>
 &lt;p>&lt;img src="VAPOR-storage.png" alt="VAPOR storage page">&lt;/p>
 &lt;h3 id="starting-a-transfer">Starting a transfer&lt;/h3>
-&lt;p>Once you have identified the surce and destination storage needed for the
+&lt;p>Once you have identified the source and destination storage needed for the
 transfer you can proceed with the transfer between the two endpoints. To do that
-you can use a command of this type:&lt;/p>
+you can use a command of this type, returning the job ID corresponding to the
+transfer that you started:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M -o
 cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Which return the jobid correspondedent to the transfer that you started. To
-check the status of the transfer youcan use the returned jobid and use the
-following command:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To check the status of the transfer you can use the returned job ID and use the
+following command specifying the server controlling the transfer, the source and
+the transfer itself:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 FINISHED
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>which specify the server that control the transfer, the source and the transfer
-itself. The last option &amp;lsquo;-o&amp;rsquo; specify that the file should be overwritten if
-present on the destination. If this option is not present and a file with the
-same name exists on the destination, the transfer itself will fail. If you use
-this option you should make sure that it is safe to do so.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option &lt;code>-o&lt;/code> specify that the file should be overwritten if present on
+the destination. If this option is not present and a file with the same name
+exists on the destination, the transfer itself will fail. If you use this option
+you should make sure that it is safe to do so.&lt;/p>
 &lt;h2 id="using-the-webfts-data-transfer-interface">Using the WebFTS Data Transfer interface&lt;/h2>
-&lt;h3 id="access-the-webfts-interface">Access the WebFTS interface&lt;/h3>
-&lt;p>The WebFTS is accessible at this URL, &lt;a href="https://webfts.cern.ch/">WebFTS&lt;/a>
+&lt;h3 id="accessing-the-webfts-interface">Accessing the WebFTS interface&lt;/h3>
+&lt;p>The WebFTS is accessible at this &lt;a href="https://webfts.cern.ch/">CERN FTS URL&lt;/a>.
 Similarly to what has been done from the command line interface you need to
 provide our private key for delegation of the credential. To do that you use the
 following command:&lt;/p>
@@ -148,8 +148,8 @@ right:&lt;/p>
 option to overwrite the destination if it already exists. To enable this option
 tick the &lt;code>Overwrite Files&lt;/code> below the arrow for the transfer. On the top of the
 page is also shown a confirmation that the transfer has been submitted
-successfully. This same webpage shows the status of the current transfers in the
-&lt;code>My jobs&lt;/code> tab shown in the following screeshot:&lt;/p>
+successfully. This same web page shows the status of the current transfers in the
+&lt;code>My jobs&lt;/code> tab shown in the following screenshot:&lt;/p>
 &lt;p>&lt;img src="WebFTS-my_jobs.png" alt="WebFTS my jobs">&lt;/p>
 &lt;p>Each line on the list shows a different job. When clicked it will expand to show
 additional details. The reason for the failure of a job which can be seen by
