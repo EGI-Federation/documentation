@@ -1,0 +1,156 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Tutorials</title><link>/users/tutorials/</link><description>Recent content in Tutorials on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Data transfer with grid storage</title><link>/users/tutorials/data-transfer-grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-grid-storage/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
+WebFTS.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>As first step please make sure that you have installed the FTS client as
+described in &lt;a href="../../data-transfer/">Data Transfer&lt;/a>, and in particular
+&lt;a href="../../data-transfer/clients/">Clients&lt;/a> for the command line FTS and to have
+your certificate installed in your browser to use
+&lt;a href="../../data-transfer/webfts/">WebFTS&lt;/a> browser based client.&lt;/p>
+&lt;p>To access services and resources in the
+&lt;a href="../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
+&lt;ul>
+&lt;li>An &lt;a href="../../check-in">EGI Check-in&lt;/a> account, you can
+&lt;a href="../../check-in/signup">sign up here&lt;/a>&lt;/li>
+&lt;li>Enrollment into a &lt;a href="../../check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+access to the services and resources you need&lt;/li>
+&lt;/ul>
+&lt;h2 id="using-the-fts-client">Using the FTS client&lt;/h2>
+&lt;h3 id="step-1-configuration-check">Step 1 Configuration check&lt;/h3>
+&lt;p>To verify that everything is configured properly you can check with the
+following command pointing to the cerficates directly:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-rest-whoami --key ~/.globus/userkey.pem --cert ~/.globus/usercert.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446/
+User DN: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+VO: AndreaCristoforiac@egi.eu@tcs.terena.org
+VO id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Delegation id: XXXXXXXXXXXXXXXX
+Base id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In general the commands can be used by specifying the user public and private
+key like shown in the example or by creating a proxy certificate as described in
+the following section.&lt;/p>
+&lt;h3 id="proxy-creation">Proxy creation&lt;/h3>
+&lt;p>As you have seen in the previous section it is possible to use the FTS commands
+by specifying the location of the user public and private key. With the use of
+&amp;lsquo;voms-proxy-init&amp;rsquo; it is possible to create a &amp;lsquo;proxy&amp;rsquo; certificate for the user.
+With this you don&amp;rsquo;t need to specify the location of the public and private key
+for each FTS command. When running &amp;lsquo;voms-proxy-init&amp;rsquo; it&amp;rsquo;s possible to specify
+the location of the public and private key. If this are not included as options,
+the tool expect to find them in:&lt;/p>
+&lt;ul>
+&lt;li>~/.globus/usercert.pem for the public key&lt;/li>
+&lt;li>~/.globus/userkey.pem for the private key with read access only for the owner&lt;/li>
+&lt;/ul>
+&lt;p>Following is an example of running this command with the public and private key
+already setup as described:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ voms-proxy-init
+Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+Creating proxy ........................................... Done
+Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Wed Aug &lt;span style="color:#0000cf;font-weight:bold">25&lt;/span> 04:18:14 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The output of the command shows, a proxy certificate valid for 12 hours has been
+generated This is the default behaviour and can be usually increased, for
+example to 48 hours, with the following option:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ voms-proxy-init -valid 48:00
+Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+Creating proxy ................................... Done
+Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Thu Aug &lt;span style="color:#0000cf;font-weight:bold">26&lt;/span> 16:23:01 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To verify for how long the proxy is still valid you can use the following
+command: command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ voms-proxy-info
+subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1451339003&lt;/span>
+issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+&lt;span style="color:#204a87">type&lt;/span> : RFC compliant proxy
+strength : &lt;span style="color:#0000cf;font-weight:bold">1024&lt;/span> bits
+path : /tmp/x509up_u1000
+timeleft : 19:59:57
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the timeleft reaches zero the same command will produce the following
+message:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-rest-whoami -s https://fts3-public.cern.ch:8446/
+Error: Proxy expired!
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option that you need to use is specify the VO that you want to use for
+the proxy being created. In the following example the &amp;ldquo;dteam&amp;rdquo; VO has been used:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ voms-proxy-init --voms dteam
+Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+Creating temporary proxy ................................................................... Done
+Contacting voms2.hellasgrid.gr:15004 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GR/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>HellasGrid/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>hellasgrid.gr/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms2.hellasgrid.gr&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;dteam&amp;#34;&lt;/span> Done
+Creating proxy .............................................................................. Done
+Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Wed Sep &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span> 04:37:07 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>With a proxy now available for the user it is now possible to execute the FTS
+commands without specifying the public and private keys as it will be shown in
+the following sections.&lt;/p>
+&lt;h3 id="find-the-storage">Find the storage&lt;/h3>
+&lt;p>In general, the source and destination storage for a specific project should be
+already known. However, to discover the available source or destination
+endpoints to be used for a transfer, you can use the
+&lt;a href="https://operations-portal.egi.eu/vapor/resources/GL2ResVO">VAPOR service&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="VAPOR-home.png" alt="VAPOR main page">&lt;/p>
+&lt;p>Once the page is loaded on the left column it is possible to filter by VO or
+scroll the list and click the desired VO as show in the following picture:&lt;/p>
+&lt;p>&lt;img src="VAPOR-VO_detail.png" alt="VAPOR VO detail">&lt;/p>
+&lt;p>Once selected, you can see all the resources associated with the specific VO. In
+particular in this case you are interested in the information on the status,
+capacity, type of storage, etc. Following is a screenshot of the visualisation
+of the list of storage available to &amp;ldquo;dteam&amp;rdquo;.&lt;/p>
+&lt;p>&lt;img src="VAPOR-storage.png" alt="VAPOR storage page">&lt;/p>
+&lt;h3 id="starting-a-transfer">Starting a transfer&lt;/h3>
+&lt;p>Once you have identified the surce and destination storage needed for the
+transfer you can proceed with the transfer between the two endpoints. To do that
+you can use a command of this type:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M -o
+cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Which return the jobid correspondedent to the transfer that you started. To
+check the status of the transfer youcan use the returned jobid and use the
+following command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+FINISHED
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>which specify the server that control the transfer, the source and the transfer
+itself. The last option &amp;lsquo;-o&amp;rsquo; specify that the file should be overwritten if
+present on the destination. If this option is not present and a file with the
+same name exists on the destination, the transfer itself will fail. If you use
+this option you should make sure that it is safe to do so.&lt;/p>
+&lt;h2 id="using-the-webfts-data-transfer-interface">Using the WebFTS Data Transfer interface&lt;/h2>
+&lt;h3 id="access-the-webfts-interface">Access the WebFTS interface&lt;/h3>
+&lt;p>The WebFTS is accessible at this URL, &lt;a href="https://webfts.cern.ch/">WebFTS&lt;/a>
+Similarly to what has been done from the command line interface you need to
+provide our private key for delegation of the credential. To do that you use the
+following command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openssl pkcs12 -in yourCert.p12 -nocerts -nodes &lt;span style="color:#000;font-weight:bold">|&lt;/span> openssl rsa
+Enter Import Password:
+writing RSA key
+-----BEGIN RSA PRIVATE KEY-----
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+...
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-----END RSA PRIVATE KEY-----
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Which extract the private key in RSA format and you can paste it in the windows
+that opens:&lt;/p>
+&lt;p>&lt;img src="WebFTS-credential_delegation.png" alt="WebFTS credential delegation">&lt;/p>
+&lt;p>And select the desired VO. Once the delegation is set it&amp;rsquo;s possible to move to
+the following steps.&lt;/p>
+&lt;p>&lt;strong>Warning&lt;/strong>: please be careful and avoid sharing this information with any third
+party or saving this information in plain text. WebFTS uses the key to acquire a
+proxy certificate on your behalf as described previously and doesn&amp;rsquo;t store it.&lt;/p>
+&lt;h3 id="submitting-a-transfer">Submitting a transfer&lt;/h3>
+&lt;p>The tab &lt;code>Submit a transfer&lt;/code> is divided in two parts in which is possible to add
+two endpoints that can be used both as source or destination. After adding the
+URL for the two endpoints, it is possible to browse and select the files and
+directories to be transferred. In the destination select the destination
+directory. In the following example the file 1MB has been selected and by simply
+clicking the arrow in the middle directing to the right you are instructing the
+system to copy the file from the storage and path on the left to the one on the
+right:&lt;/p>
+&lt;p>&lt;img src="WebFTS-submit_transfer.png" alt="WebFTS submit transfer">&lt;/p>
+&lt;p>Similarly to what can be done with the command line interface, there is the
+option to overwrite the destination if it already exists. To enable this option
+tick the &lt;code>Overwrite Files&lt;/code> below the arrow for the transfer. On the top of the
+page is also shown a confirmation that the transfer has been submitted
+successfully. This same webpage shows the status of the current transfers in the
+&lt;code>My jobs&lt;/code> tab shown in the following screeshot:&lt;/p>
+&lt;p>&lt;img src="WebFTS-my_jobs.png" alt="WebFTS my jobs">&lt;/p>
+&lt;p>Each line on the list shows a different job. When clicked it will expand to show
+additional details. The reason for the failure of a job which can be seen by
+moving the mouse pointer over the &lt;code>File ID&lt;/code> on the detailed view.&lt;/p></description></item></channel></rss>
