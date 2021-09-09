@@ -66,8 +66,6 @@ As the output of the command shows a proxy certificate has been generated that
 will be valid, by default, for 12 hours. This can be usually increased for
 example to 48 hours with the following option:
 
-<!-- markdownlint-disable line-length -->
-
 ```shell
 $ voms-proxy-init -valid 48:00
 Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
