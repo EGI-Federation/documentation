@@ -152,8 +152,6 @@ $ fts-transfer-status -s https://fts3-public.cern.ch:8446/ d7920806-10b1-11ec-82
 ACTIVE
 ```
 
-<!-- markdownlint-enable line-length -->
-
 which specify the server that control the transfer, the source and the transfer
 itself.
 
