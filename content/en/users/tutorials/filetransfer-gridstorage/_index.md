@@ -143,8 +143,6 @@ $ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ \
 d7920806-10b1-11ec-8218-fa163ecee758
 ```
 
-<!-- markdownlint-enable line-length -->
-
 Which return the jobid correspondedent to the transfer that we started. To check
 the status of the transfer we can use the returned jobid and use the following
 command:
