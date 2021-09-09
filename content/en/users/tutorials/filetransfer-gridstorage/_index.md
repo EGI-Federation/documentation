@@ -221,7 +221,7 @@ the following steps.
 
 The tab <Submit a transfer> is divided in two parts in which is possible to add
 two endpoints that can be used both as source or destination. After adding the
-URL for the two endpoint is possible to browse and select the files and
+URL for the two endpoints, it is possible to browse and select the files and
 directories to be transferred. In the destination select the destination
 directory. In the following example the file 1MB has been selected and by simply
 clicking the arrow in the middle directing to the right we are instructing the
