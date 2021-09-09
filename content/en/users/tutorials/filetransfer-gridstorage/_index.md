@@ -217,7 +217,7 @@ opens:
 And select the desired VO. Once the delegation is set it's possible to move to
 the following steps.
 
-### Submit a transer
+### Submitting a transfer
 
 The tab <Submit a transfer> is divided in two parts in which is possible to add
 two endpoints that can be used both as source or destination. After adding the
