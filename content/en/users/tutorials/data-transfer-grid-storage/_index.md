@@ -53,9 +53,9 @@ the following section.
 
 As you have seen in the previous section it is possible to use the FTS commands
 by specifying the location of the user public and private key. With the use of
-'voms-proxy-init' it is possible to create a 'proxy' certificate for the user.
+`voms-proxy-init` it is possible to create a `proxy` certificate for the user.
 With this you don't need to specify the location of the public and private key
-for each FTS command. When running 'voms-proxy-init' it's possible to specify
+for each FTS command. When running `voms-proxy-init` it's possible to specify
 the location of the public and private key. If this are not included as options,
 the tool expect to find them in:
 
@@ -99,7 +99,7 @@ path      : /tmp/x509up_u1000
 timeleft  : 19:59:57
 ```
 
-When the timeleft reaches zero the same command will produce the following
+When the `timeleft` reaches zero the same command will produce the following
 message:
 
 ```shell
@@ -108,7 +108,7 @@ Error: Proxy expired!
 ```
 
 The last option that you need to use is specify the VO that you want to use for
-the proxy being created. In the following example the "dteam" VO has been used:
+the proxy being created. In the following example the _dteam_ VO has been used:
 
 ```shell
 $ voms-proxy-init --voms dteam
@@ -141,15 +141,16 @@ scroll the list and click the desired VO as show in the following picture:
 Once selected, you can see all the resources associated with the specific VO. In
 particular in this case you are interested in the information on the status,
 capacity, type of storage, etc. Following is a screenshot of the visualisation
-of the list of storage available to "dteam".
+of the list of storage available to _dteam_.
 
 ![VAPOR storage page](VAPOR-storage.png)
 
 ### Starting a transfer
 
-Once you have identified the surce and destination storage needed for the
+Once you have identified the source and destination storage needed for the
 transfer you can proceed with the transfer between the two endpoints. To do that
-you can use a command of this type:
+you can use a command of this type, returning the job ID corresponding to the
+transfer that you started:
 
 ```shell
 $ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ \
@@ -158,26 +159,25 @@ $ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ \
 cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 ```
 
-Which return the jobid correspondedent to the transfer that you started. To
-check the status of the transfer youcan use the returned jobid and use the
-following command:
+To check the status of the transfer you can use the returned job ID and use the
+following command specifying the server controlling the transfer, the source and
+the transfer itself:
 
 ```shell
 $ fts-transfer-status -s https://fts3-public.cern.ch:8446/ cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 FINISHED
 ```
 
-which specify the server that control the transfer, the source and the transfer
-itself. The last option '-o' specify that the file should be overwritten if
-present on the destination. If this option is not present and a file with the
-same name exists on the destination, the transfer itself will fail. If you use
-this option you should make sure that it is safe to do so.
+The last option `-o` specify that the file should be overwritten if present on
+the destination. If this option is not present and a file with the same name
+exists on the destination, the transfer itself will fail. If you use this option
+you should make sure that it is safe to do so.
 
 ## Using the WebFTS Data Transfer interface
 
-### Access the WebFTS interface
+### Accessing the WebFTS interface
 
-The WebFTS is accessible at this URL, [WebFTS](https://webfts.cern.ch/)
+The WebFTS is accessible at this [CERN FTS URL](https://webfts.cern.ch/).
 Similarly to what has been done from the command line interface you need to
 provide our private key for delegation of the credential. To do that you use the
 following command:
@@ -222,8 +222,8 @@ Similarly to what can be done with the command line interface, there is the
 option to overwrite the destination if it already exists. To enable this option
 tick the `Overwrite Files` below the arrow for the transfer. On the top of the
 page is also shown a confirmation that the transfer has been submitted
-successfully. This same webpage shows the status of the current transfers in the
-`My jobs` tab shown in the following screeshot:
+successfully. This same web page shows the status of the current transfers in the
+`My jobs` tab shown in the following screenshot:
 
 ![WebFTS my jobs](WebFTS-my_jobs.png)
 
