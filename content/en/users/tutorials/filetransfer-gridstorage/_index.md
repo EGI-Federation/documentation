@@ -37,7 +37,8 @@ To verify that everything is configured properly you can check with the
 following command pointing to the cerficates directly:
 
 ```shell
-$ fts-rest-whoami --key .globus/userkey.pem --cert .globus/usercert.pem -s https://fts3-public.cern.ch:8446/
+$ fts-rest-whoami --key ~/.globus/userkey.pem --cert ~/.globus/usercert.pem \
+   -s https://fts3-public.cern.ch:8446/
 User DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
 VO: AndreaCristoforiac@egi.eu@tcs.terena.org
 VO id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
