@@ -165,7 +165,7 @@ provide our private key for delegation of the credential. To do that we use the
 following command:
 
 ```shell
-#openssl pkcs12 -in yourCert.p12 -nocerts -nodes | openssl rsa
+$ openssl pkcs12 -in yourCert.p12 -nocerts -nodes | openssl rsa
 Enter Import Password:
 writing RSA key
 -----BEGIN RSA PRIVATE KEY-----
