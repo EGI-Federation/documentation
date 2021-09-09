@@ -227,4 +227,6 @@ transfers in the `My jobs` tab shown in the following screeshot:
 
 ![WebFTS my jobs](WebFTS-my_jobs.png)
 
-Each line on the list shows a different job. if clicked it will expand showing some additional details. Of particular interest can be the reason for the failure of a job which can shown by moving the mouse pointer over the 'File ID' on the detailed view.
+Each line on the list shows a different job. When clicked it will expand to show
+additional details. The reason for the failure of a job which can be seen by
+moving the mouse pointer over the `File ID` on the detailed view.
