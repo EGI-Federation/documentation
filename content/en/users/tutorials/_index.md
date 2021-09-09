@@ -1,7 +1,7 @@
 ---
 title: "Tutorials"
 type: docs
-weight: 5
+weight: 130
 description: >
   Tutorials for common uses cases in the EGI infrastructure
 ---
