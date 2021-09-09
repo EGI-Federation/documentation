@@ -74,8 +74,6 @@ Creating proxy ................................... Done
 Your proxy is valid until Thu Aug 26 16:23:01 2021
 ```
 
-<!-- markdownlint-enable line-length -->
-
 To verify the timeleft for the validity of the proxy created use the following
 command:
 
