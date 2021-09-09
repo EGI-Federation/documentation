@@ -7,16 +7,16 @@
 # These owners will be the default owners for everything in the repo.
 # Unless a later match takes precedence, they will be requested for
 # review when someone opens a pull request.
-* @enolfc @glarocca @gwarf @andrea-manzi
+* @enolfc @glarocca @gwarf @andrea-manzi @thebe14
 
-# Operations
+# Internal services
 content/*/internal/ @gwarf @paolini78
 
 # Providers
 content/*/providers/ @gwarf @paolini78
 
 # Users
-content/*/users/ @enolfc @glarocca @andrea-manzi @gwarf
+content/*/users/ @enolfc @glarocca @andrea-manzi @gwarf @thebe14
 
 # DataHub
 content/*/*/datahub/ @andrea-manzi
@@ -33,11 +33,11 @@ content/*/*/cloud-*/ @enolfc
 # Notebooks
 content/*/*/notebooks/ @enolfc @andrea-manzi
 
-# Aod
+# AoD
 content/*/*/applications-on-demand/ @glarocca
 
 # Training
-content/*/users/training/ @glarocca
+content/*/users/training/ @glarocca @thebe14
 
 # HTC
 content/*/*/high-throughput-compute/ @CatalinCondurache
