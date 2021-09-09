@@ -133,7 +133,7 @@ that opens:&lt;/p>
 the following steps.&lt;/p>
 &lt;p>&lt;strong>Warning&lt;/strong>: please be careful and avoid sharing this information with any third
 party or saving this information in plain text. WebFTS uses the key to acquire a
-proxy certificate on your behalf as described previously and doesn&amp;rsquo;t store it.&lt;/p>
+proxy certificate on your behalf as described previously and does not store it.&lt;/p>
 &lt;h3 id="submitting-a-transfer">Submitting a transfer&lt;/h3>
 &lt;p>The tab &lt;code>Submit a transfer&lt;/code> is divided in two parts in which is possible to add
 two endpoints that can be used both as source or destination. After adding the
@@ -148,8 +148,8 @@ right:&lt;/p>
 option to overwrite the destination if it already exists. To enable this option
 tick the &lt;code>Overwrite Files&lt;/code> below the arrow for the transfer. On the top of the
 page is also shown a confirmation that the transfer has been submitted
-successfully. This same web page shows the status of the current transfers in the
-&lt;code>My jobs&lt;/code> tab shown in the following screenshot:&lt;/p>
+successfully. This same web page shows the status of the current transfers in
+the &lt;code>My jobs&lt;/code> tab shown in the following screenshot:&lt;/p>
 &lt;p>&lt;img src="WebFTS-my_jobs.png" alt="WebFTS my jobs">&lt;/p>
 &lt;p>Each line on the list shows a different job. When clicked it will expand to show
 additional details. The reason for the failure of a job which can be seen by
