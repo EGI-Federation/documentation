@@ -88,8 +88,6 @@ path      : /tmp/x509up_u1000
 timeleft  : 19:59:57
 ```
 
-<!-- markdownlint-enable line-length -->
-
 When the timeleft reaches zero if the previous command used to check the
 identity will return the following message:
 
