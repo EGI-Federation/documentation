@@ -45,8 +45,6 @@ Delegation id: XXXXXXXXXXXXXXXX
 Base id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-<!-- markdownlint-enable line-length -->
-
 In general the commands can be used by specifying the user public and private
 key like shown in the example or by creating a proxy certificate as
 
