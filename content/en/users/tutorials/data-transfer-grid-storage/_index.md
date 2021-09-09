@@ -203,7 +203,7 @@ the following steps.
 
 **Warning**: please be careful and avoid sharing this information with any third
 party or saving this information in plain text. WebFTS uses the key to acquire a
-proxy certificate on your behalf as described previously and doesn't store it.
+proxy certificate on your behalf as described previously and does not store it.
 
 ### Submitting a transfer
 
@@ -222,8 +222,8 @@ Similarly to what can be done with the command line interface, there is the
 option to overwrite the destination if it already exists. To enable this option
 tick the `Overwrite Files` below the arrow for the transfer. On the top of the
 page is also shown a confirmation that the transfer has been submitted
-successfully. This same web page shows the status of the current transfers in the
-`My jobs` tab shown in the following screenshot:
+successfully. This same web page shows the status of the current transfers in
+the `My jobs` tab shown in the following screenshot:
 
 ![WebFTS my jobs](WebFTS-my_jobs.png)
 
