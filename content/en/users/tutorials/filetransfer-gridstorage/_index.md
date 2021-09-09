@@ -68,8 +68,6 @@ Creating proxy ........................................... Done
 Your proxy is valid until Wed Aug 25 04:18:14 2021
 ```
 
-<!-- markdownlint-enable line-length -->
-
 As the output of the command shows a proxy certificate has been generated that
 will be valid, by default, for 12 hours. This can be usually increased for
 example to 48 hours with the following option:
