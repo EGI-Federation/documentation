@@ -19,7 +19,7 @@ and WebFTS.
 As first step please make sure that you have installed the FTS client as
 described in [Data Transfer](../../data-transfer/), and in particular
 [Clients](../../data-transfer/clients/) for the command line FTS and to have
-yourcertificates installed in your browser to use WebFTS
+your certificate installed in your browser to use
 [WebFTS](../../data-transfer/webfts/) browser based client.
 
 To access services and resources in the
