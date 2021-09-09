@@ -8,11 +8,10 @@ description: >
   Use EGI File Transfer to handle data in grid storage
 ---
 
-
 ## Overview
 
-This tutorial describes how to perform a transfer usin FTS transfers services
-and WebFTS.
+This tutorial describes the EGI Data Transfer using FTS transfers services and
+WebFTS.
 
 ## Prerequisites
 
@@ -25,7 +24,8 @@ your certificate installed in your browser to use
 To access services and resources in the
 [EGI Federated Cloud](../../getting-started), you will need:
 
-- An [EGI Check-in](../../check-in) account, you can [sign up here](../../check-in/signup)
+- An [EGI Check-in](../../check-in) account, you can
+  [sign up here](../../check-in/signup)
 - Enrollment into a [Virtual Organisation](../../check-in/vos) (VO) that has
   access to the services and resources you need
 
@@ -47,13 +47,24 @@ Base id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
 In general the commands can be used by specifying the user public and private
-key like shown in the example or by creating a proxy certificate as
+key like shown in the example or by creating a proxy certificate as described in
+the following section.
 
 ### Proxy creation
 
-To avoid the need to specify at each command the private and public key if
-everything is already configured and working properly it will be enough to
-execute the following coomand:
+As you have seen in the previous section it is possible to use the FTS commands
+by specifying the location of the user public and private key. With the use of
+'voms-proxy-init' it is possible to create a 'proxy' certificate for the user.
+With this you don't need to specify the location of the public and private key
+for each FTS command. When running 'voms-proxy-init' it's possible to specify
+the location of the public and private key. If this are not included as options,
+the tool expect to find them in:
+
+- ~/.globus/usercert.pem for the public key
+- ~/.globus/userkey.pem for the private key with read access only for the owner
+
+Following is an example of running this command with the public and private key
+already setup as described:
 
 ```shell
 $ voms-proxy-init
@@ -63,9 +74,9 @@ Creating proxy ........................................... Done
 Your proxy is valid until Wed Aug 25 04:18:14 2021
 ```
 
-As the output of the command shows, a proxy certificate has been generated that
-will be valid, by default, for 12 hours. This can be usually increased for
-example to 48 hours with the following option:
+The output of the command shows, a proxy certificate valid for 12 hours has been
+generated This is the default behaviour and can be usually increased, for
+example to 48 hours, with the following option:
 
 ```shell
 $ voms-proxy-init -valid 48:00
@@ -75,8 +86,8 @@ Creating proxy ................................... Done
 Your proxy is valid until Thu Aug 26 16:23:01 2021
 ```
 
-To verify the timeleft for the validity of the proxy created use the following
-command:
+To verify for how long the proxy is still valid you can use the following
+command: command:
 
 ```shell
 $ voms-proxy-info
@@ -89,15 +100,15 @@ path      : /tmp/x509up_u1000
 timeleft  : 19:59:57
 ```
 
-When the timeleft reaches zero if the previous command used to check the
-identity will return the following message:
+When the timeleft reaches zero the same command will produce the following
+message:
 
 ```shell
 $ fts-rest-whoami -s https://fts3-public.cern.ch:8446/
 Error: Proxy expired!
 ```
 
-The last option that we need to use is specify the VO that we want to use for
+The last option that you need to use is specify the VO that you want to use for
 the proxy being created. In the following example the "dteam" VO has been used:
 
 ```shell
@@ -110,11 +121,15 @@ Creating proxy .................................................................
 Your proxy is valid until Wed Sep  8 04:37:07 2021
 ```
 
+With a proxy now available for the user it is now possible to execute the FTS
+commands without specifying the public and private keys as it will be shown in
+the following sections.
+
 ### Find the storage
 
-In general, the source and destination storage for a specific project
-should be already known. However, to discover the available source
-or destination endpoints to be used for a transfer, you can use the
+In general, the source and destination storage for a specific project should be
+already known. However, to discover the available source or destination
+endpoints to be used for a transfer, you can use the
 [VAPOR service](https://operations-portal.egi.eu/vapor/resources/GL2ResVO).
 
 ![VAPOR main page](VAPOR-home.png)
@@ -133,36 +148,39 @@ of the list of storage available to "dteam".
 
 ### Starting a transfer
 
-Once we have identified the surce and destination storage needed for the
-transfer we can proceed with the transfer between the two endpoints. To do that
-we can use a command of this type:
+Once you have identified the surce and destination storage needed for the
+transfer you can proceed with the transfer between the two endpoints. To do that
+you can use a command of this type:
 
 ```shell
 $ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ \
-  --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/00 \
-  --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/00
-d7920806-10b1-11ec-8218-fa163ecee758
+  --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M \
+  --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M -o
+cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 ```
 
-Which return the jobid correspondedent to the transfer that we started. To check
-the status of the transfer we can use the returned jobid and use the following
-command:
+Which return the jobid correspondedent to the transfer that you started. To
+check the status of the transfer youcan use the returned jobid and use the
+following command:
 
 ```shell
-$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ d7920806-10b1-11ec-8218-fa163ecee758
-ACTIVE
+$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+FINISHED
 ```
 
 which specify the server that control the transfer, the source and the transfer
-itself.
+itself. The last option '-o' specify that the file should be overwritten if
+present on the destination. If this option is not present and a file with the
+same name exists on the destination, the transfer itself will fail. If you use
+this option you should make sure that it is safe to do so.
 
-## WebFTS
+## Using the WebFTS Data Transfer interface
 
 ### Access the WebFTS interface
 
 The WebFTS is accessible at this URL, [WebFTS](https://webfts.cern.ch/)
-Similarly to what has been done from the command line interface we need to
-provide our private key for delegation of the credential. To do that we use the
+Similarly to what has been done from the command line interface you need to
+provide our private key for delegation of the credential. To do that you use the
 following command:
 
 ```shell
@@ -176,13 +194,17 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 -----END RSA PRIVATE KEY-----
 ```
 
-Which extract the private key in RSA format and we paste it in the windows that
-opens:
+Which extract the private key in RSA format and you can paste it in the windows
+that opens:
 
 ![WebFTS credential delegation](WebFTS-credential_delegation.png)
 
 And select the desired VO. Once the delegation is set it's possible to move to
 the following steps.
+
+**Warning**: please be careful and avoid sharing this information with any third
+party or saving this information in plain text. WebFTS uses the key to acquire a
+proxy certificate on your behalf as described previously and doesn't store it.
 
 ### Submitting a transfer
 
@@ -191,12 +213,17 @@ two endpoints that can be used both as source or destination. After adding the
 URL for the two endpoints, it is possible to browse and select the files and
 directories to be transferred. In the destination select the destination
 directory. In the following example the file 1MB has been selected and by simply
-clicking the arrow in the middle directing to the right we are instructing the
+clicking the arrow in the middle directing to the right you are instructing the
 system to copy the file from the storage and path on the left to the one on the
 right:
 
 ![WebFTS submit transfer](WebFTS-submit_transfer.png)
 
+Similarly to what seen on the comman line interface, we have the option to overwrite the destination if it already exists. To enable this option tick the 'Overwrite Files' below the arrow for the transfer.
 On the top of the page is also shown a confirmation that the transfer has been
 submitted successfully. This same webpage shows the status of the current
-transfers in the `My jobs` tab.
+transfers in the `My jobs` tab shown in the following screeshot:
+
+![WebFTS my jobs](WebFTS-my_jobs.png)
+
+Each line on the list shows a different job. if clicked it will expand showing some additional details. Of particular interest can be the reason for the failure of a job which can shown by moving the mouse pointer over the 'File ID' on the detailed view.
