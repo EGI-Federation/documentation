@@ -57,7 +57,7 @@ jobs:
 
       - name: Build and minify using Hugo
         # Build in a directory specific to the PR number
-        run: hugo --minify --destination public/${{ github.event.number }}
+        run: hugo -D --minify --destination public/${{ github.event.number }}
 
       - name: Save PR number
         run: echo ${{ github.event.number }} > ./public/PR
