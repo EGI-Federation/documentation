@@ -137,7 +137,9 @@ transfer we can proceed with the transfer between the two endpoints. To do that
 we can use a command of this type:
 
 ```shell
-$ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/00 --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/00
+$ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ \
+  --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/00 \
+  --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/00
 d7920806-10b1-11ec-8218-fa163ecee758
 ```
 
