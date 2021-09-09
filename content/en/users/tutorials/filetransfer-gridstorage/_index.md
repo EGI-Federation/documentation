@@ -77,8 +77,6 @@ Your proxy is valid until Thu Aug 26 16:23:01 2021
 To verify the timeleft for the validity of the proxy created use the following
 command:
 
-<!-- markdownlint-disable line-length -->
-
 ```shell
 $ voms-proxy-info
 subject   : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu/CN=1451339003
