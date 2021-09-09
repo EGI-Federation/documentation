@@ -8,7 +8,6 @@ description: >
   Use EGI File Transfer to handle data in grid storage
 ---
 
-<!-- Adjust page weight to insert this tutorial in the right place, then remove this -->
 
 ## Overview
 
