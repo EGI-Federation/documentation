@@ -91,8 +91,6 @@ timeleft  : 19:59:57
 When the timeleft reaches zero if the previous command used to check the
 identity will return the following message:
 
-<!-- markdownlint-disable line-length -->
-
 ```shell
 $ fts-rest-whoami -s https://fts3-public.cern.ch:8446/
 Error: Proxy expired!
