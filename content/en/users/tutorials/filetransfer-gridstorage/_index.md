@@ -124,10 +124,10 @@ scroll the list and click the desired VO as show in the following picture:
 
 ![VAPOR VO detail](VAPOR-VO_detail.png)
 
-Once selected we can see all the resources associated with the spcific VO. In
-particular in this case we're interested in the information on the status,
-capacity, type of storage, etc. Following is a screenshot of the visualization
-of the list of storage available to "dteam"
+Once selected, you can see all the resources associated with the specific VO. In
+particular in this case you are interested in the information on the status,
+capacity, type of storage, etc. Following is a screenshot of the visualisation
+of the list of storage available to "dteam".
 
 ![VAPOR storage page](VAPOR-storage.png)
 
