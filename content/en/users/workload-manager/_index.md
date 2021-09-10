@@ -1,10 +1,9 @@
 ---
 title: "Workload Manager"
-linkTitle: "Workload Manager"
 type: docs
-weight: 70
+weight: 110
 description: >
-  The EGI Workload Manager
+  The [EGI Workload Manager](https://www.egi.eu/services/workload-manager/)
 ---
 
 ## What is the EGI Workload Manager?

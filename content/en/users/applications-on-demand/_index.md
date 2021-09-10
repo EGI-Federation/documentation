@@ -1,9 +1,10 @@
 ---
 title: "Applications on Demand (AoD)"
 type: docs
-weight: 100
+weight: 20
 description: >
-  The Applications on Demand (AoD) service
+  The [EGI Applications on
+  Demand](https://www.egi.eu/services/applications-on-demand/) (AoD) service
 ---
 
 The

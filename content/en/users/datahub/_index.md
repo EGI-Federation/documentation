@@ -1,11 +1,10 @@
 ---
 title: "DataHub"
-linkTitle: "DataHub"
 type: docs
 description:
   "Documentation related to [EGI DataHub
   Service](https://www.egi.eu/services/datahub/)"
-weight: 90
+weight: 60
 ---
 
 ## Overview

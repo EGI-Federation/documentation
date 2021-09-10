@@ -1,8 +1,7 @@
 ---
 title: "High Throughput Compute"
-dlinkTitle: "High Throughput Compute"
 type: docs
-weight: 60
+weight: 80
 description: >
   EGI High Throughput Compute service
 ---
