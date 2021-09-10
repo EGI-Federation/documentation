@@ -21,8 +21,8 @@ running jobs. WeNMR, the structural biology community, uses the service for a
 number of community services. The community reported an improvement of jobs
 submission in the infrastructure from previous 70% to 99% with the EGI Workload
 Manager service. The delivery of the service is coordinated by the EGI
-Foundation and [IN2P3](https://in2p3.cnrs.fr/) provides the resources and operates
-the service.
+Foundation and [IN2P3](https://in2p3.cnrs.fr/) provides the resources and
+operates the service.
 
 ## Main Features
 
@@ -96,8 +96,8 @@ There are several options to access the service:
 
 1. Members of a scientific community whose resources pool is already configured
    in the EGI Workload Manager instance can use the
-   [EGI Workload Manager web portal](https://dirac.egi.eu/DIRAC/) to access
-   the service, or use
+   [EGI Workload Manager web portal](https://dirac.egi.eu/DIRAC/) to access the
+   service, or use
    [DIRAC Client](https://wiki.egi.eu/wiki/HOWTO22#Using_DIRAC_through_the_client).
 1. Individual researchers who want to do some number crunching for a limited
    period of time, with a reasonable (not too high) number of CPUs > can use the
@@ -129,14 +129,14 @@ Team on shift.
 
 #### Apply for your user credentials
 
-DIRAC uses [X.509 certificates](../check-in/vos/voms) to identify and authenticate
-users. These certificates are delivered to each individual by trusted
-certification authorities.
-If you have a personal certificate issued by a [EUGridPMA-certified](http://www.eugridpma.org/)
-authority you can use it for this tutorial. Otherwise refer to the information available
-in this [section](../check-in/vos/voms/#get-a-certificate), to obtain a certificate.
-Your certificate may take a few days to be delivered, so please ask for your certificate
-well in advance and in any case, before the tutorial starts.
+DIRAC uses [X.509 certificates](../check-in/vos/voms) to identify and
+authenticate users. These certificates are delivered to each individual by
+trusted certification authorities. If you have a personal certificate issued by
+a [EUGridPMA-certified](http://www.eugridpma.org/) authority you can use it for
+this tutorial. Otherwise refer to the information available in this
+[section](../check-in/vos/voms/#get-a-certificate), to obtain a certificate.
+Your certificate may take a few days to be delivered, so please ask for your
+certificate well in advance and in any case, before the tutorial starts.
 
 #### Install your credentials
 
