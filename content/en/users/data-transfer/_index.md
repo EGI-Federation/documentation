@@ -1,9 +1,10 @@
 ---
 title: "Data Transfer"
-linkTitle: "Data Transfer"
 type: docs
-description: "Documentation related to EGI Data Transfer"
-weight: 80
+description:
+  "Documentation related to [EGI Data
+  Transfer](https://www.egi.eu/services/data-transfer/)"
+weight: 70
 ---
 
 ## Overview
