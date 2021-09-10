@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Docs – Getting Started</title><link>/users/getting-started/</link><description>Recent content in Getting Started on EGI Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI Architecture</title><link>/users/getting-started/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/architecture/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Getting Started</title><link>/users/getting-started/</link><description>Recent content in Getting Started on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI Architecture</title><link>/users/getting-started/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/architecture/</guid><description>
 &lt;p>The EGI Federated Cloud (FedCloud) is a multi-national cloud system that
 integrates community, private and/or public clouds into a scalable computing
 platform for research. The Federation pools resources from a heterogeneous set
@@ -44,7 +44,7 @@ party resources.&lt;/p>
 &lt;p>The IaaS capabilities (VM, block storage, network management, etc.) must be
 provided via community agreed APIs (&lt;a href="https://docs.openstack.org/wallaby/api/">OpenStack&lt;/a>
 and/or &lt;a href="http://www.occi-wg.org/">OCCI&lt;/a> are supported at the moment)
-that allow integration with &lt;a href="../../checkin">EGI Check-in&lt;/a> for
+that allow integration with &lt;a href="../../check-in">EGI Check-in&lt;/a> for
 authentication and authorisation of users.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -71,7 +71,7 @@ portability of application deployments between them (e.g.
 &lt;a href="https://indigo-dc.gitbook.io/indigo-paas-orchestrator/">INDIGO-DataCloud Orchestrator&lt;/a>).&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Using the &lt;a href="../vmops">VMOps dashboard&lt;/a>.&lt;/li>
+&lt;li>Using the &lt;a href="../../cloud-compute/vmops">VMOps dashboard&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;p>EGI provides ready-to-use software components to enable the federation for
 OpenStack and OpenNebula. These components rely on public APIs of the IaaS
@@ -125,6 +125,7 @@ topology (e.g. the list of resource centres and their endpoints).&lt;/p>
 &lt;p>To allow resource providers to expose IaaS federation endpoints, the following
 service types are avialable:&lt;/p>
 &lt;ul>
+&lt;li>&lt;code>org.openstack.horizon&lt;/code>&lt;/li>
 &lt;li>&lt;code>org.openstack.nova&lt;/code>&lt;/li>
 &lt;li>&lt;code>org.openstack.swift&lt;/code>&lt;/li>
 &lt;li>&lt;code>eu.egi.cloud.accounting&lt;/code>&lt;/li>
@@ -565,11 +566,30 @@ dashboard&lt;/li>
 &lt;p>The web-dashboard of the individual providers can be used to manage and use
 services. It can be accessed using EGI Check-in credentials directly:
 select &lt;em>OpenID Connect&lt;/em> or &lt;em>EGI Check-in&lt;/em> in the &lt;strong>Authenticate using&lt;/strong>
-drop-down menu of the login screen.&lt;/p></description></item><item><title>Users: Command Line Interface</title><link>/users/getting-started/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/cli/</guid><description>
+drop-down menu of the login screen.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+&lt;p>You can quickly find the dashboards of
+all providers in the EGI infrastructure that are accessible to you (use the
+correct VO) with the &lt;a href="../cli">FedCloud Client&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud endpoint list --service-type org.openstack.horizon --site ALL_SITES
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The same way you can also discover other types of resources, just use the
+correct resource type:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>org.openstack.horizon&lt;/code> for dashboards&lt;/li>
+&lt;li>&lt;code>org.openstack.nova&lt;/code> for virtual machines&lt;/li>
+&lt;li>&lt;code>org.openstack.swift&lt;/code> for object storage&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+For more advanced information discovery,
+including resources not based on OpenStack deployments, check out the
+&lt;a href="../architecture/#information-discovery">EGI architecture summary&lt;/a>.
+&lt;/div></description></item><item><title>Users: Command Line Interface</title><link>/users/getting-started/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/cli/</guid><description>
 &lt;!--
 // jscpd:ignore-start
 -->
-&lt;!-- markdownlint-disable commands-show-output -->
 &lt;h2 id="command-line-tools">Command line tools&lt;/h2>
 &lt;p>The various &lt;a href="https://www.egi.eu/services/">public EGI services&lt;/a> can be managed
 and used/accessed with a wide variety of command line interface (CLI) tools.
@@ -619,19 +639,19 @@ Windows
 &lt;/li>
 &lt;/ul>
 &lt;div class="tabx-content" id="tabs-1-content">
-&lt;div class="tab-pane fade show active"
+&lt;div class="tab-pane show active"
 id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
 &lt;p>To install the FedCloud client:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ pip3 install fedcloudclient
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with
 its required packages (like &lt;em>openstackclient&lt;/em>). It will also create
-executables &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;em>bin&lt;/em>
+executables &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;code>bin&lt;/code>
 folder corresponding to your current Python execution environment
-(&lt;em>$VIRTUAL_ENV/bin&lt;/em> for executing pip3 in a Python virtual environment,
-&lt;em>~/.local/bin&lt;/em> for executing pip3 as user (with &amp;ndash;user option), and
-&lt;em>/usr/local/bin&lt;/em> when executing pip3 as root).&lt;/p>
+(&lt;code>$VIRTUAL_ENV/bin&lt;/code> for executing pip3 in a Python virtual environment,
+&lt;code>~/.local/bin&lt;/code> for executing pip3 as user (with &lt;code>--user&lt;/code> option), and
+&lt;code>/usr/local/bin&lt;/code> when executing pip3 as root).&lt;/p>
 &lt;/div>
-&lt;div class="tab-pane fade"
+&lt;div class="tab-pane "
 id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
 &lt;p>As there are non-pure Python packages needed for installation, the
 &lt;a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Microsoft C++ Build Tools&lt;/a>
@@ -649,7 +669,7 @@ packages, please see &lt;a href="https://wiki.python.org/moin/WindowsCompilers">
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; pip3 install fedcloudclient
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with
 its required packages (like &lt;em>openstackclient&lt;/em>). It will also create
-executables &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;em>bin&lt;/em>
+executables &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;code>bin&lt;/code>
 folder corresponding to your current Python execution environment.&lt;/p>
 &lt;/div>
 &lt;/div>
@@ -661,10 +681,9 @@ Certificate Authorities (CAs) that are not included in the default OS
 distribution. If you receive error message &amp;ldquo;&lt;em>SSL exception connecting
 to&amp;hellip;&lt;/em>&amp;rdquo;, install the EGI Core Trust Anchor Certificates by running
 the following commands:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ wget https://raw.githubusercontent.com/tdviet/python-requests-bundle-certs/main/scripts/install_certs.sh
 $ bash install_certs.sh
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 The above script does not work on all
@@ -702,7 +721,7 @@ Windows
 &lt;/li>
 &lt;/ul>
 &lt;div class="tabx-content" id="tabs-3-content">
-&lt;div class="tab-pane fade show active"
+&lt;div class="tab-pane show active"
 id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
 &lt;p>To run the FedCloud client in a container, make sure
 &lt;a href="https://docs.docker.com/engine/install/#server">Docker is installed&lt;/a>,
@@ -711,7 +730,7 @@ then run the following commands:&lt;/p>
 $ docker run -it tdviet/fedcloudclient bash
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;div class="tab-pane fade"
+&lt;div class="tab-pane "
 id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
 &lt;p>To run the FedCloud client in a container, make sure
 &lt;a href="https://docs.docker.com/desktop/mac/install/">Docker is installed&lt;/a>,
@@ -720,7 +739,7 @@ then run the following commands:&lt;/p>
 $ docker run -it tdviet/fedcloudclient bash
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;div class="tab-pane fade"
+&lt;div class="tab-pane "
 id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;p>To run the FedCloud client in a container, make sure
 &lt;a href="https://docs.docker.com/desktop/windows/install/">Docker is installed&lt;/a>,
@@ -758,10 +777,8 @@ or read and contribute to the
 site, the VO and the command. For example, to list virtual machine (VM) images
 available to members of VO &lt;em>fedcloud.egi.eu&lt;/em> on the site &lt;em>CYFRONET-CLOUD&lt;/em>, run
 the following command:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack image list --vo fedcloud.egi.eu --site CYFRONET-CLOUD
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;h4 id="authentication">Authentication&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="authentication">Authentication&lt;/h4>
 &lt;p>Many of the FedCloud client commands need access tokens for authentication.
 Users can choose whether to provide access tokens directly (via option
 &lt;code>--oidc-access-token&lt;/code>), or generate them on the fly with &lt;strong>oidc-agent&lt;/strong>
@@ -812,7 +829,12 @@ provider&amp;rsquo;s name accordingly for OpenStack commands, by using the optio
 To save a lot of time, set the frequently
 used options like site, VO, etc. using environment variables.
 &lt;/div>
-&lt;!-- markdownlint-disable line-length -->
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+When you want commands to work on all
+sites in the EGI infrastructure, use &lt;code>ALL_SITES&lt;/code> for the &lt;code>--site&lt;/code> parameter
+(pass it directly or via an anvironment variable).
+&lt;/div>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -879,12 +901,11 @@ used options like site, VO, etc. using environment variables.
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;!-- markdownlint-enable line-length no-bare-urls -->
+&lt;!-- markdownlint-enable no-bare-urls -->
 &lt;h4 id="getting-help">Getting help&lt;/h4>
 &lt;p>The FedCloud client can display help for the commands and subcommands it
 supports. Try running the following command to see the commands supported
 by the FedCloud client:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud --help
 Usage: fedcloud &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>OPTIONS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> COMMAND &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>ARGS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>...
 Options:
@@ -897,10 +918,8 @@ openstack Executing OpenStack commands on site and VO
 openstack-int Interactive OpenStack client on site and VO
 site Site &lt;span style="color:#204a87">command&lt;/span> group &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> manipulation with site...
 token Token &lt;span style="color:#204a87">command&lt;/span> group &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> manipulation with tokens
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>Similarly, you can see help for e.g. the &lt;code>openstack&lt;/code> subcommand by running the
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Similarly, you can see help for e.g. the &lt;code>openstack&lt;/code> subcommand by running the
 command below:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack --help
 Usage: fedcloud openstack &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>OPTIONS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> OPENSTACK_COMMAND...
 Executing OpenStack commands on site and VO
@@ -916,12 +935,12 @@ Options:
 v3oidcaccesstoken&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 --openstack-auth-provider TEXT Check-in identity provider &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default:
 egi.eu&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
---site TEXT Name of the site &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>required&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+--site TEXT Name of the site or ALL_SITES &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>required&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 --vo TEXT Name of the VO &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>required&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 -i, --ignore-missing-vo Ignore sites that &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> not support the VO
 -j, --json-output Print output as a big JSON object
 --help Show this message and exit.
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Most commands support multiple levels
@@ -941,20 +960,85 @@ to see how it works.&lt;/p>
 for setting environment variables for other tools, or to process outputs from
 OpenStack commands.&lt;/p>
 &lt;h4 id="setting-environment-variables-for-external-tools">Setting environment variables for external tools&lt;/h4>
-&lt;p>Some FedCloud commands generate output that contains bash
-shell commands to set environment variables with the returned result:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
+&lt;p>Some FedCloud commands generate output that contains shell commands to set
+environment variables with the returned result, as exemplified below.&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-12" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-12-0-tab" data-toggle="tab" href="#tabs-12-0" role="tab"
+aria-controls="tabs-12-0" aria-selected="true">
+Linux / Mac
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-12-1-tab" data-toggle="tab" href="#tabs-12-1" role="tab"
+aria-controls="tabs-12-1" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-12-2-tab" data-toggle="tab" href="#tabs-12-2" role="tab"
+aria-controls="tabs-12-2" aria-selected="false">
+PowerShell
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-12-content">
+&lt;div class="tab-pane show active"
+id="tabs-12-0" role="tabpanel" aria-labelled-by="tabs-12-0-tab">
+&lt;p>Run a command to get details of a project:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
 $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
 $ fedcloud site show-project-id
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://cloud.ui.savba.sk:5000/v3/&amp;#34;&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;51f736d36ce34b9ebdf196cfcabd24ee&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># This command will set environment variables&lt;/span>
-$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id --site IISAS-FedCloud --vo eosc-synergy.eu&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Check the value of the variable&lt;/span>
-$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_AUTH_URL&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://cloud.ui.savba.sk:5000/v3/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;51f736d36ce34b9ebdf196cfcabd24ee&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the same command but set environment variables with the returned values:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command returned:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_AUTH_URL&lt;/span>
 https://cloud.ui.savba.sk:5000/v3/
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_PROJECT_ID&lt;/span>
+51f736d36ce34b9ebdf196cfcabd24ee
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-12-1" role="tabpanel" aria-labelled-by="tabs-12-1-tab">
+&lt;p>Run a command to get details of a project:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
+&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
+&amp;gt; fedcloud site show-project-id
+&lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
+&lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>51f736d36ce34b9ebdf196cfcabd24ee
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you copy the returned output and execute it as commands in a command prompt:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
+&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>51f736d36ce34b9ebdf196cfcabd24ee
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command returned:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; &lt;span style="color:#204a87">set&lt;/span> OS_AUTH_URL
+&lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
+&amp;gt; &lt;span style="color:#204a87">set&lt;/span> OS_PROJECT_ID
+&lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>51f736d36ce34b9ebdf196cfcabd24ee
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-12-2" role="tabpanel" aria-labelled-by="tabs-12-2-tab">
+&lt;p>Run a command to get details of a project:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;IISAS-FedCloud&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_VO&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;eosc-synergy.eu&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">site&lt;/span> &lt;span style="color:#204a87">show-project&lt;/span>&lt;span style="color:#000">-id&lt;/span>
+&lt;span style="color:#000">$Env:OS_AUTH_URL&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://cloud.ui.savba.sk:5000/v3/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">$Env:OS_PROJECT_ID&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;51f736d36ce34b9ebdf196cfcabd24ee&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the same command but set environment variables with the returned values:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">site&lt;/span> &lt;span style="color:#204a87">show-project&lt;/span>&lt;span style="color:#000">-id&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Out-String&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Invoke-Expression&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command returned:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:OS_AUTH_URL&lt;/span>
+&lt;span style="color:#000">https&lt;/span>&lt;span style="color:#a40000">:&lt;/span>&lt;span style="color:#000;font-weight:bold">//&lt;/span>&lt;span style="color:#000">cloud&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ui&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">savba&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">sk&lt;/span>&lt;span style="color:#a40000">:&lt;/span>&lt;span style="color:#000">5000&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">v3&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>
+&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:OS_PROJECT_ID&lt;/span>
+&lt;span style="color:#000">51f736d36ce34b9ebdf196cfcabd24ee&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
 &lt;h4 id="processing-output-from-openstack-commands">Processing output from OpenStack commands&lt;/h4>
 &lt;p>The &lt;code>fedcloud openstack&lt;/code> subcommand&amp;rsquo;s output can be converted to
 &lt;a href="https://en.wikipedia.org/wiki/JSON">JavaScript Object Notation&lt;/a> (JSON) format
@@ -964,11 +1048,10 @@ processing of the command output.&lt;/p>
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 JSON output can be processed with a tool
 like &lt;a href="https://stedolan.github.io/jq/">jq&lt;/a>, which can slice, filter, map, and
-transform structured data. It is a filter: it takes and input, and produces an
+transform structured data. It acts as a filter: it takes an input and produces an
 output. Check out the &lt;a href="https://stedolan.github.io/jq/tutorial/">tutorial&lt;/a> for
 using it to extract data from JSON sources.
 &lt;/div>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
 $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
 $ fedcloud openstack flavor list --json-output
@@ -1006,15 +1089,14 @@ $ fedcloud openstack flavor list --json-output
 $ fedcloud openstack flavor list--json-output &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[].Result[] | select(.VCPUs == 2) | .Name&amp;#39;&lt;/span>
 m1.medium
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Note that &lt;code>--json-output&lt;/code> option can
 be used only with those OpenStack commands that have outputs. Using this
-parameter with commands wit no output (e.g. setting properties) will generate
+parameter with commands with no output (e.g. setting properties) will generate
 an unsupported parameter error.
 &lt;/div>
-&lt;!-- markdownlint-enable commands-show-output -->
 &lt;!--
 // jscpd:ignore-end
 --></description></item></channel></rss>

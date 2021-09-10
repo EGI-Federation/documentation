@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Docs – Cloud Compute</title><link>/providers/cloud-compute/</link><description>Recent content in Cloud Compute on EGI Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/cloud-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Requirements</title><link>/providers/cloud-compute/requirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/requirements/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Cloud Compute</title><link>/providers/cloud-compute/</link><description>Recent content in Cloud Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/cloud-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Requirements</title><link>/providers/cloud-compute/requirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/requirements/</guid><description>
 &lt;p>IaaS providers are very welcome to join the EGI Federated Cloud as a Resource
 Centres (RC) and joining the Federated Cloud Task Force to contribute to the
 design, creation and implementation of the federation.&lt;/p>
@@ -1121,6 +1121,20 @@ authentication, check the following guides for getting such token and URLs:&lt;/
 and&lt;/li>
 &lt;li>&lt;a href="https://wiki.appdb.egi.eu/main:faq:how_to_subscribe_to_a_private_image_list_using_the_vmcatcher">how to subscribe to a private image list&lt;/a>.&lt;/li>
 &lt;/ul>
+&lt;p>Finally, you need to provide a &lt;code>/etc/cloudkeeper-os/mapping.json&lt;/code> that
+configures the mapping of VOs supported in your OpenStack. The file should
+contain a json document that follows this format:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;VO_NAME&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;project&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;id of project in OpenStack for VO_NAME&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;VO_NAME_2&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;project&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;local name of project in OpenStack for VO_NAME_2&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;domain&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;domain name for project in OpenStack&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that you can either specify a project id or the project name with the
+domain name in the mapping. Add as many VOs as you are supporting.&lt;/p>
 &lt;h4 id="running-the-services-1">Running the services&lt;/h4>
 &lt;p>cloudkeeper-os should run permanently, there is a &lt;code>cloudkeeper-os.service&lt;/code> for
 systemd in the appliance. Manage as usual:&lt;/p>
@@ -1873,7 +1887,7 @@ for the given VO.&lt;/p>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;https://aai-dev.egi.eu/oidc/&amp;#34;&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>
@@ -1979,7 +1993,7 @@ using the appliance), new entry should look similar to:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack role add member &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --user &amp;lt;your cloudkeeper-os user&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --project &amp;lt;your new vo project&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add the mapping of the project to the VO in &lt;code>/etc/cloudkeeper-os/voms.json&lt;/code>:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add the mapping of the project to the VO in &lt;code>/etc/cloudkeeper-os/mapping.json&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;your new vo&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;tenant&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your new vo project&amp;gt;&amp;#34;&lt;/span>

@@ -1,8 +1,7 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Docs – Online Storage</title><link>/users/online-storage/</link><description>Recent content in Online Storage on EGI Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/online-storage/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Block Storage</title><link>/users/online-storage/block-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/online-storage/block-storage/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Online Storage</title><link>/users/online-storage/</link><description>Recent content in Online Storage on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/online-storage/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Block Storage</title><link>/users/online-storage/block-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/online-storage/block-storage/</guid><description>
 &lt;!--
 // jscpd:ignore-start
 -->
-&lt;!-- markdownlint-disable commands-show-output -->
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
 &lt;p>Block storage provides &lt;strong>block-level storage volumes&lt;/strong> for use within virtual
 machines (VMs). Block storage volumes are raw, unformatted
@@ -81,29 +80,86 @@ documentation about
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume.html#volume-list">list the volumes&lt;/a>
 in the site IN2P3-IRES via the Pilot VO (vo.access.egi.eu), use the following
 FedCloud command:&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Tip&lt;/h4>
-Instead of passing the site, VO, etc.
-on the command line each time, you can use
-&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>.
-&lt;/div>
-&lt;!-- markdownlint-disable line-length -->
+&lt;ul class="nav nav-tabs" id="tabs-5" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-5-0-tab" data-toggle="tab" href="#tabs-5-0" role="tab"
+aria-controls="tabs-5-0" aria-selected="true">
+Linux / Mac
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-5-1-tab" data-toggle="tab" href="#tabs-5-1" role="tab"
+aria-controls="tabs-5-1" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-5-2-tab" data-toggle="tab" href="#tabs-5-2" role="tab"
+aria-controls="tabs-5-2" aria-selected="false">
+PowerShell
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-5-content">
+&lt;div class="tab-pane show active"
+id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab">
+&lt;p>To avoid passing the site, VO, etc. each time, you can use
+&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
+to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IN2P3-IRES
 $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>vo.access.egi.eu
 $ fedcloud openstack volume list
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
-+--------------------------------------+--------+-----------+------+--------------------------------+
++---------------------------+--------+-----------+------+--------------------------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> ID &lt;span style="color:#000;font-weight:bold">|&lt;/span> Name &lt;span style="color:#000;font-weight:bold">|&lt;/span> Status &lt;span style="color:#000;font-weight:bold">|&lt;/span> Size &lt;span style="color:#000;font-weight:bold">|&lt;/span> Attached to &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+--------------------------------------+--------+-----------+------+--------------------------------+
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> 9a4000fb-0bcc-47e8-96fb-85a222295402 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Matlab &lt;span style="color:#000;font-weight:bold">|&lt;/span> in-use &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">50&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> Attached to Moodle on /dev/vdb &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> b0abcda6-1002-4493-996b-9f03bc677625 &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">30&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+--------------------------------------+--------+-----------+------+--------------------------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
++---------------------------+--------+-----------+------+--------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe... &lt;span style="color:#000;font-weight:bold">|&lt;/span> Matlab &lt;span style="color:#000;font-weight:bold">|&lt;/span> in-use &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">50&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> Attached to Moodle on /dev/vdb &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> b0abc762-a503-129d-3c1... &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">30&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++---------------------------+--------+-----------+------+--------------------------------+
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-5-1" role="tabpanel" aria-labelled-by="tabs-5-1-tab">
+&lt;p>To avoid passing the site, VO, etc. each time, you can use
+&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
+to set them once and reuse them with each command invocation.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IN2P3-IRES
+&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>vo.access.egi.eu
+&amp;gt; fedcloud openstack volume list
+Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
++---------------------------+--------+-----------+------+--------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> ID &lt;span style="color:#000;font-weight:bold">|&lt;/span> Name &lt;span style="color:#000;font-weight:bold">|&lt;/span> Status &lt;span style="color:#000;font-weight:bold">|&lt;/span> Size &lt;span style="color:#000;font-weight:bold">|&lt;/span> Attached to &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++---------------------------+--------+-----------+------+--------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe... &lt;span style="color:#000;font-weight:bold">|&lt;/span> Matlab &lt;span style="color:#000;font-weight:bold">|&lt;/span> in-use &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">50&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> Attached to Moodle on /dev/vdb &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> b0abc762-a503-129d-3c1... &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">30&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++---------------------------+--------+-----------+------+--------------------------------+
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-5-2" role="tabpanel" aria-labelled-by="tabs-5-2-tab">
+&lt;p>To avoid passing the site, VO, etc. each time, you can use
+&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
+to set them once and reuse them with each command invocation.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;IN2P3-IRES&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_VO&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;vo.access.egi.eu&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">openstack&lt;/span> &lt;span style="color:#000">volume&lt;/span> &lt;span style="color:#000">list&lt;/span>
+&lt;span style="color:#000">Site&lt;/span>&lt;span style="color:#a40000">:&lt;/span> &lt;span style="color:#204a87">IN2P3-IRES&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">VO&lt;/span>&lt;span style="color:#a40000">:&lt;/span> &lt;span style="color:#000">vo&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">access&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">egi&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">eu&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">command&lt;/span>&lt;span style="color:#a40000">:&lt;/span> &lt;span style="color:#000">volume&lt;/span> &lt;span style="color:#000">list&lt;/span>
+&lt;span style="color:#000;font-weight:bold">+---------------------------+--------+-----------+------+--------------------------------+&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">ID&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">Name&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">Status&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">Size&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">Attached&lt;/span> &lt;span style="color:#000">to&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">+---------------------------+--------+-----------+------+--------------------------------+&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">aa711296&lt;/span>&lt;span style="color:#000;font-weight:bold">-&lt;/span>&lt;span style="color:#000">5cff&lt;/span>&lt;span style="color:#000;font-weight:bold">-&lt;/span>&lt;span style="color:#000">46ac-bbe&lt;/span>&lt;span style="color:#000;font-weight:bold">...&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">Matlab&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">in-use&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">50&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">Attached&lt;/span> &lt;span style="color:#000">to&lt;/span> &lt;span style="color:#000">Moodle&lt;/span> &lt;span style="color:#000">on&lt;/span> &lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">dev&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">vdb&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">b0abc762-a503&lt;/span>&lt;span style="color:#000;font-weight:bold">-&lt;/span>&lt;span style="color:#000">129d&lt;/span>&lt;span style="color:#000;font-weight:bold">-&lt;/span>&lt;span style="color:#000">3c1&lt;/span>&lt;span style="color:#000;font-weight:bold">...&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">available&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">30&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">+---------------------------+--------+-----------+------+--------------------------------+&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
 &lt;h3 id="create-volume">Create volume&lt;/h3>
 &lt;p>To
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume.html#volume-create">create a new volume&lt;/a>
 use the FedCloud command below:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume create --size &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume create --size &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> my-volume
 +---------------------+------------------------------------------------------------------+
@@ -129,12 +185,10 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume create --size &lt;span s
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> updated_at &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> user_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1a3ef4b64714f86ac71f1c9512345678c157a94ae1b37f167b6a663baa3b915b &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +---------------------+------------------------------------------------------------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>The status of the new volume will probably be returned as &lt;code>creating&lt;/code>. To check
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The status of the new volume will probably be returned as &lt;code>creating&lt;/code>. To check
 if the volume finished creating, look at the
 &lt;a href="#see-volume-details">details of the volume&lt;/a>, or list only the newly created
 volume (filter by volume name or ID):&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+-----------+------+-------------+
@@ -142,8 +196,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+-----------+------+-------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe3-58e00712ee3e &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-volume &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +--------------------------------------+-----------+-----------+------+-------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>When the status of the volume is &lt;code>available&lt;/code> the volume is ready to be
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the status of the volume is &lt;code>available&lt;/code> the volume is ready to be
 &lt;a href="#attach-volume-to-vm">attached to a VM&lt;/a>.&lt;/p>
 &lt;h3 id="see-volume-details">See volume details&lt;/h3>
 &lt;p>To
@@ -154,7 +207,6 @@ use the FedCloud command below:&lt;/p>
 The volume can be specified either by
 its ID or by its name (if it has one).
 &lt;/div>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume show Matlab
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume show Matlab
 +------------------------------+------------------------------------------------------------+
@@ -187,8 +239,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume show Matlab
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> updated_at &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021-08-05T08:50:20.000000 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> user_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> babzz8c3b4cxxxx6286dacyyyy01e5a3 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +------------------------------+------------------------------------------------------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;h3 id="attach-volume-to-vm">Attach volume to VM&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="attach-volume-to-vm">Attach volume to VM&lt;/h3>
 &lt;p>Mapping block devices to VMs is described in detail in the
 &lt;a href="https://docs.openstack.org/nova/latest/user/block-device-mapping.html">OpenStack documentation&lt;/a>.&lt;/p>
 &lt;p>To
@@ -205,15 +256,12 @@ The optional &lt;code>--device&lt;/code>
 argument to specify the device name in the VM should not be used. It does
 not work properly, and will be removed in the near future.
 &lt;/div>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack server add volume my-server my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: server add volume my-server my-volume
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>You can check that the volume got attached to the VM (and with what device name)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can check that the volume got attached to the VM (and with what device name)
 by either looking at the &lt;a href="#see-volume-details">details of the volume&lt;/a>, the
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/server.html#server-show">details of the VM&lt;/a>,
 or by listing only the volume in question (filter by volume name or ID):&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+-----------+------+-----------------------+
@@ -221,22 +269,18 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+-----------+------+-----------------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe3-58e00712ee3e &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-volume &lt;span style="color:#000;font-weight:bold">|&lt;/span> in-use &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-server on /dev/vdc &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +--------------------------------------+-----------+-----------+------+-----------------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>When the volume status is &lt;code>in-use&lt;/code> the volume is attached to a VM, and it can
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the volume status is &lt;code>in-use&lt;/code> the volume is attached to a VM, and it can
 be &lt;a href="#access-from-your-vms">used from the VM&lt;/a>.&lt;/p>
 &lt;h3 id="detach-volume-from-vm">Detach volume from VM&lt;/h3>
 &lt;p>To
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/server.html#server-remove-volume">detach a volume from a VM&lt;/a>
 use the FedCloud command below:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack server remove volume my-server my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: server remove volume my-server my-volume
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>You can check that the volume got detached by either looking at the
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can check that the volume got detached by either looking at the
 &lt;a href="#see-volume-details">details of the volume&lt;/a>, the
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/server.html#server-show">details of the VM&lt;/a>,
 or by listing only the volume in question (filter by volume name or ID):&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+-----------+------+-------------+
@@ -244,8 +288,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+-----------+------+-------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe3-58e00712ee3e &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-volume &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +--------------------------------------+-----------+-----------+------+-------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>When the volume status is &lt;code>available&lt;/code> the volume is not attached to any VM.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the volume status is &lt;code>available&lt;/code> the volume is not attached to any VM.&lt;/p>
 &lt;h3 id="resize-volume">Resize volume&lt;/h3>
 &lt;p>To
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume.html#volume-set">resize a volume&lt;/a>
@@ -264,14 +307,11 @@ volume must not be attached to any VM (volume status must be &lt;code>available&
 unless the volume driver supports
 &lt;a href="https://docs.openstack.org/cinder/latest/cli/cli-manage-volumes.html#extend-attached-volume">in-use extend&lt;/a>.
 &lt;/div>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume &lt;span style="color:#204a87">set&lt;/span> --size &lt;span style="color:#0000cf;font-weight:bold">20&lt;/span> my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume &lt;span style="color:#204a87">set&lt;/span> --size &lt;span style="color:#0000cf;font-weight:bold">20&lt;/span> my-volume
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>You can check that the volume got resized by either looking at the
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can check that the volume got resized by either looking at the
 &lt;a href="#see-volume-details">details of the volume&lt;/a>, or by listing only the volume in
 question (filter by volume name or ID):&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+-----------+------+-------------+
@@ -279,8 +319,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+-----------+------+-------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe3-58e00712ee3e &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-volume &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">20&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +--------------------------------------+-----------+-----------+------+-------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;h3 id="snapshot-a-volume">Snapshot a volume&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="snapshot-a-volume">Snapshot a volume&lt;/h3>
 &lt;p>Users can create snapshots of a volume that can later be used to create other
 volumes or to rollback to a precedent point in time. &lt;strong>Volume snapshots are
 pointers in the read-write history of a volume&lt;/strong>.&lt;/p>
@@ -301,7 +340,6 @@ volume, the volume must not be attached to any VM (volume status must be
 to a VM, use the &lt;code>--force&lt;/code> command flag, but be aware that there may be
 inconsistencies if the VM’s OS is not aware of the snapshot being taken.
 &lt;/div>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume snapshot create --volume my-volume my-snapshot --force
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot create --volume my-volume my-snapshot
 +-------------+--------------------------------------+
@@ -317,12 +355,10 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot create --volume
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> updated_at &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> volume_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe3-58e0712ee3e9 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +-------------+--------------------------------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>The status of the snapshot will probably be returned as &lt;code>creating&lt;/code>. To check
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The status of the snapshot will probably be returned as &lt;code>creating&lt;/code>. To check
 if the snapshot is ready, look at the
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html#volume-snapshot-show">details of the snapshot&lt;/a>,
 or list only the newly created snapshot (filter by snapshot name or ID):&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume snapshot list --name my-snapshot
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot list --name my-snapshot
 +--------------------------------------+-------------+-------------+-----------+------+
@@ -330,8 +366,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot list --name my-
 +--------------------------------------+-------------+-------------+-----------+------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 15149b42-032f-4cec-b6f3-41aa5c958081 &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-snapshot &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +--------------------------------------+-------------+-------------+-----------+------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>When the status of the snapshot is &lt;code>available&lt;/code> the snapshot is ready, and can
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the status of the snapshot is &lt;code>available&lt;/code> the snapshot is ready, and can
 be used to create new volumes or to restore the source volume to the
 point-in-time when the snapshot was taken.&lt;/p>
 &lt;h3 id="backup-a-volume">Backup a volume&lt;/h3>
@@ -369,7 +404,6 @@ volume, the volume must not be attached to any VM (volume status must be
 use the &lt;code>--force&lt;/code> command flag, but be aware that there may be inconsistencies
 if the VM’s OS is not aware of the backup being taken.
 &lt;/div>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume backup create --name my-backup my-volume --force
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume backup create --name my-backup my-volume
 +-------------+--------------------------------------+
@@ -385,12 +419,10 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume backup create --name my-
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> updated_at &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> volume_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe3-58e0712ee3e9 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +-------------+--------------------------------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>The status of the backup will probably be returned as &lt;code>creating&lt;/code>. To check
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The status of the backup will probably be returned as &lt;code>creating&lt;/code>. To check
 if the backup has finished, look at the
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html#volume-backup-show">details of the backup&lt;/a>,
 or list only the newly created backup (filter by backup name or ID):&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume backup list --name my-backup
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume backup list --name my-backup
 +--------------------------------------+-----------+-------------+-----------+------+
@@ -398,8 +430,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume backup list --name my-ba
 +--------------------------------------+-----------+-------------+-----------+------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 158bcb42-032f-4cec-b6f3-890a5c958081 &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-backup &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +--------------------------------------+-----------+-------------+-----------+------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>When the status of the backup is &lt;code>available&lt;/code> the backup operation is complete.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the status of the backup is &lt;code>available&lt;/code> the backup operation is complete.&lt;/p>
 &lt;h3 id="delete-volume">Delete volume&lt;/h3>
 &lt;p>To
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume.html#volume-delete">delete a volume&lt;/a>
@@ -413,7 +444,6 @@ volume must not be attached to any VM (volume status must be &lt;code>available&
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume delete my-volume
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>This starts deletion of the specified volume (the volume status changes
 to &lt;code>deleting&lt;/code>):&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+----------+------+-------------+
@@ -421,8 +451,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+----------+------+-------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe3-58e00712ee3e &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-volume &lt;span style="color:#000;font-weight:bold">|&lt;/span> deleting &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +--------------------------------------+-----------+----------+------+-------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>Once deletion of the specified volume is complete, it will no longer show up in
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once deletion of the specified volume is complete, it will no longer show up in
 the list of volumes.&lt;/p>
 &lt;h2 id="access-from-your-vms">Access from your VMs&lt;/h2>
 &lt;!-- markdownlint-disable no-inline-html -->
@@ -432,7 +461,6 @@ the list of volumes.&lt;/p>
 &lt;p>To find out the device name that got assigned to a volume when it was
 attached to a VM, look at the &lt;a href="#see-volume-details">details of the volume&lt;/a>, or
 list only the volume in question (filter by volume name or ID):&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+--------+------+-----------------------+
@@ -440,8 +468,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+--------+------+-----------------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe3-58e00712ee3e &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-volume &lt;span style="color:#000;font-weight:bold">|&lt;/span> in-use &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-server on /dev/vdb &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +--------------------------------------+-----------+--------+------+-----------------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>In this example the device name is &lt;code>/dev/vdb&lt;/code>. To validate this, run the
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this example the device name is &lt;code>/dev/vdb&lt;/code>. To validate this, run the
 following command in the VM:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ lsblk
 NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
@@ -544,10 +571,8 @@ instead. Check your CA for instructions on how to get those.&lt;/p>
 to map the
 &lt;code>/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Enol Fernandez del Castillo&lt;/code>
 DN to &lt;code>nobody&lt;/code>. You can add as many lines as needed:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-plaintext" data-lang="plaintext">&amp;#34;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Enol Fernandez del Castillo&amp;#34; nobody
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;/li>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>You need to specify the environment variables in the &lt;code>docker-compose.yml&lt;/code> file
 for obtaining the Let&amp;rsquo;s Encrypt certificate. An extra variable
@@ -569,7 +594,6 @@ can check this with &lt;code>ip addr&lt;/code>). In your &lt;code>docker-compose
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">com.docker.network.driver.mtu&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1434&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ul>
-&lt;!-- markdownlint-enable commands-show-output -->
 &lt;!--
 // jscpd:ignore-end
 --></description></item><item><title>Users: Grid Storage</title><link>/users/online-storage/grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/online-storage/grid-storage/</guid><description>
@@ -688,7 +712,9 @@ and to catalogue the existing file and related metadata.&lt;/p>
 &lt;p>When running computation via the EGI Workload Manager, users do not actually
 access the storage directly. However, users can retrieve the output of the
 computation once it has been stored on the grid.&lt;/p></description></item><item><title>Users: Object Storage</title><link>/users/online-storage/object-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/online-storage/object-storage/</guid><description>
-&lt;!-- markdownlint-disable commands-show-output -->
+&lt;!--
+// jscpd:ignore-start
+-->
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
 &lt;p>Object storage is a standalone service that &lt;strong>stores data as individual
 objects, organized into containers&lt;/strong>. It is a highly scalable, reliable,
@@ -786,12 +812,35 @@ for all object-related commands.
 Pilot VO (vo.access.egi.eu), and
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html#container-list">list the available storage containers&lt;/a>,
 use the FedCloud command below:&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Tip&lt;/h4>
-Instead of passing the site, VO, etc.
-on the command line each time, you can use
-&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>.
-&lt;/div>
+&lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-3-0-tab" data-toggle="tab" href="#tabs-3-0" role="tab"
+aria-controls="tabs-3-0" aria-selected="true">
+Linux / Mac
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-3-1-tab" data-toggle="tab" href="#tabs-3-1" role="tab"
+aria-controls="tabs-3-1" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-3-2-tab" data-toggle="tab" href="#tabs-3-2" role="tab"
+aria-controls="tabs-3-2" aria-selected="false">
+PowerShell
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-3-content">
+&lt;div class="tab-pane show active"
+id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
+&lt;p>To avoid passing the site, VO, etc. each time, you can use
+&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
+to set them once and reuse them with each command invocation.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IFCA-LCG2
 $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>vo.access.egi.eu
 $ fedcloud openstack container list
@@ -800,7 +849,40 @@ $ fedcloud openstack container list
 +------------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> test-egi &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +------------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="create-new-storage-container">Create new storage container&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
+&lt;p>To avoid passing the site, VO, etc. each time, you can use
+&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
+to set them once and reuse them with each command invocation.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IN2P3-IRES
+&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>vo.access.egi.eu
+&amp;gt; fedcloud openstack container list
++------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Name &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> test-egi &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++------------------+
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
+&lt;p>To avoid passing the site, VO, etc. each time, you can use
+&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#environment-variables">FedCloud CLI environment variables&lt;/a>
+to set them once and reuse them with each command invocation.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;IN2P3-IRES&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_VO&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;vo.access.egi.eu&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">openstack&lt;/span> &lt;span style="color:#000">container&lt;/span> &lt;span style="color:#000">list&lt;/span>
+&lt;span style="color:#000;font-weight:bold">+------------------+&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">Name&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">+------------------+&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">test-egi&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">+------------------+&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h4 id="create-new-storage-container">Create new storage container&lt;/h4>
 &lt;p>To
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html#container-create">create a new storage container&lt;/a>
 named &lt;code>test-egi&lt;/code>, use the follwoing FedCloud command:&lt;/p>
@@ -925,7 +1007,6 @@ to access object storage offered by other providers.
 &lt;p>In order to access the storage via S3, you need
 &lt;a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html">EC2&lt;/a>-compatible
 credentials from the OpenStack deployment. Use the following command:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack ec2 credentials create
 +------------+------------------------------------------------------------------------------------------------------------------------------------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
@@ -948,7 +1029,6 @@ values, as those are needed in subsequent commands that use the S3 protocol.
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --s3alternate s3s://api.cloud.ifca.es:8080/swift/v1/test-egi
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>davix-get&lt;/code>, &lt;code>davix-put&lt;/code> and &lt;code>davix-del&lt;/code> are also available to download, store
 and delete objects from the storage.&lt;/p>
-&lt;!-- markdownlint-enable line-length -->
 &lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
 &lt;p>The &lt;a href="../../data-transfer">EGI Data Transfer&lt;/a> service can move files
 to and from object storages that are compatible with the S3 protocol.
@@ -960,4 +1040,6 @@ objects in the storage.&lt;/p>
 Please contact support
 at &lt;code>support&lt;/code> &lt;code>&amp;lt;at&amp;gt;&lt;/code> &lt;code>egi.eu&lt;/code> for more details.
 &lt;/div>
-&lt;!-- markdownlint-enable commands-show-output --></description></item></channel></rss>
+&lt;!--
+// jscpd:ignore-end
+--></description></item></channel></rss>
