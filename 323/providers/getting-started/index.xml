@@ -1,0 +1,155 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Getting Started</title><link>/providers/getting-started/</link><description>Recent content in Getting Started on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Operations Start Guide</title><link>/providers/getting-started/operations_start_guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/operations_start_guide/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The Operations Start Guide will help you start with EGI Operations duties. It
+covers the responsibilities of the various parties involved in the running of
+the EGI infrastructure and guide how to join operations. As a newcomer, you need
+to understand the structure of the EGI project and roles of operators at
+different levels. Reading the whole document will give you a complete overall
+picture of daily operations within EGI.&lt;/p>
+&lt;h2 id="roles">Roles&lt;/h2>
+&lt;p>The following describes the roles that are commonly found in the EGI
+Infrastructure and Operations. Other terms and definitions can be found in the
+&lt;a href="https://go.egi.eu/glossary">EGI Glossary&lt;/a>.&lt;/p>
+&lt;h3 id="site-level">Site level&lt;/h3>
+&lt;h4 id="site-administrator">Site Administrator&lt;/h4>
+&lt;p>The person responsible for keeping the site operational. In the scope of
+Operations, site administrators primarily receive and react on notification of
+one or more incidents at their site. They will also need to react to security
+issues that are at a global level, but affect their site. Site administrators
+should respond to &lt;a href="http://ggus.eu">GGUS tickets&lt;/a> in a suitable time frame and be
+aware of the alarms at their site, eg. through the
+&lt;a href="https://operations-portal.egi.eu">operations dashboard&lt;/a>. Sites must only
+operate supported middleware versions. This implies upgrading it from time to
+time. Emergency releases are treated in a special way. See
+&lt;a href="https://wiki.egi.eu/wiki/SEC03_EGI-CSIRT_Critical_Vulnerability_Handling">SEC03 EGI-CSIRT Critical Vulnerability Handling&lt;/a>.&lt;/p>
+&lt;p>All Site management responsibilities are listed in
+&lt;a href="https://documents.egi.eu/document/31">RC OLA document&lt;/a>.&lt;/p>
+&lt;h4 id="site-operations-manager">Site Operations Manager&lt;/h4>
+&lt;p>The person responsible for the site at the political and legal level. S/he is
+responsible for signing the Operations Level Agreement
+(&lt;a href="https://documents.egi.eu/public/ShowDocument?docid=31">OLA&lt;/a>) between the Site
+and the NGI that hosts the site operationally. The Site Operations Manager is
+also responsible for assigning and approving the other site roles in the
+&lt;a href="https://goc.egi.eu/">GOCDB&lt;/a>. Further, s/he should ensure that administrators
+are subscribed to relevant mailing lists.&lt;/p>
+&lt;h4 id="site-security-officer">Site Security Officer&lt;/h4>
+&lt;p>The person responsible for keeping the site compliant with the
+&lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Policies">Security policies&lt;/a>. She/he is also
+the primary contact for the NGI Security officer and EGI CSIRT. The Site
+Security Officer deals with security incidents and shall respond to enquiries in
+a timely fashion as defined in the collection of
+&lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Policies">security procedures and policies&lt;/a>.&lt;/p>
+&lt;h3 id="regional-level">Regional level&lt;/h3>
+&lt;h4 id="regional-operator-on-duty-rod">Regional Operator on Duty (ROD)&lt;/h4>
+&lt;p>A team responsible for solving problems/incidents in the infrastructure
+according to agreed procedures. ROD (teams) monitor the sites in their region,
+react to problems identified by the monitoring tools, and oversee problems
+through to their resolution. They ensure that problems are properly recorded and
+that the solutions progress according to specified time lines. They also provide
+support to sites and VOs as needed and provide informational flow to oversight
+bodies in cases of non-responsive sites. They ensure that all necessary
+information is available to all parties. The team is provided by each NGI and
+requires procedural knowledge on the process (rather than technical skills) for
+their work. New ROD team members are required to read the
+&lt;a href="https://wiki.egi.eu/wiki/Regional_Operator_on_Duty_welcome">ROD Welcome page&lt;/a>
+and be familiar with
+&lt;a href="https://wiki.egi.eu/wiki/Regional_Operator_on_Duty">ROD wiki page&lt;/a>.&lt;/p>
+&lt;h4 id="ngi-security-officer">NGI Security officer&lt;/h4>
+&lt;p>The member of EGI-CSIRT IRTF (Incident Response Task Force) currently on shift.
+Further information can be found at the
+&lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:IRTF">CSIRT:IRTF&lt;/a> page. The role of the IRTF
+team is to handle day to day operational security issues and coordinate
+&lt;em>Computer Security Incident Response&lt;/em> across the EGI infrastructure. NGIs and
+Sites &lt;strong>MUST&lt;/strong> respond in a timely manner to its requests and alerts.&lt;/p>
+&lt;h4 id="ngi-operations-manager">NGI operations manager&lt;/h4>
+&lt;p>NGI operations manager is the contact point for all operational matters and
+represents the NGI within the
+&lt;a href="https://confluence.egi.eu/display/EGIBG/Operations+Management+Board">Operations Management Board&lt;/a>.&lt;/p>
+&lt;p>S/he is mainly responsible for:&lt;/p>
+&lt;ul>
+&lt;li>keeping the NGI entry in the GOCDB up to date and for managing the status of
+all sites under that NGI, and ensuring that that information is also kept
+current&lt;/li>
+&lt;li>addressing problems with Site availability or reliability. The reports are
+issued on a monthly basis and the NGI operations manager has 10 days to
+respond to identified problems&lt;/li>
+&lt;li>attending regular
+&lt;a href="https://indico.egi.eu/category/19/">Operations-Management-Board (OMB) meetings&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>All NGI operations management responsibilities are listed in the
+&lt;a href="https://documents.egi.eu/document/463">RP OLA document&lt;/a>.&lt;/p>
+&lt;h3 id="project-level">Project level&lt;/h3>
+&lt;h4 id="chief-operations-officer">Chief Operations Officer&lt;/h4>
+&lt;p>Chief Operations Officer leads EGI Operations, and is responsible for
+coordinating the operations of the infrastructure across the project.&lt;/p>
+&lt;h4 id="egi-csirt">EGI CSIRT&lt;/h4>
+&lt;p>&lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Main_Page">EGI CSIRT&lt;/a> is an official
+security team coordinator and contact point at project level.&lt;/p>
+&lt;h4 id="operations-support">Operations Support&lt;/h4>
+&lt;p>Operations Support team is provided on a global layer and is responsible for the
+supporting EGI Operations. Examples of its activities are service level
+management, service level reporting, service management in general and central
+technical.&lt;/p>
+&lt;h4 id="vo">VO&lt;/h4>
+&lt;p>A Virtual Organisation (VO) is a group of users and, optionally, resources,
+often not bound to a single institution or national borders, who, by reason of
+their common membership and in sharing a common goal, are given authority to use
+a set of resources. Each VO member signs the VO AUP (during registration) which
+is the policy document describing the goals of the VO thereby defining the
+expected and acceptable use of the Grid by the users of the VO. User
+documentation can be found &lt;a href="https://wiki.egi.eu/wiki/User_Documentation">here&lt;/a>.&lt;/p>
+&lt;h4 id="vo-manager">VO manager&lt;/h4>
+&lt;p>An individual responsible for the membership registry of the VO including its
+accuracy and integrity.&lt;/p>
+&lt;h2 id="joining-operations">Joining operations&lt;/h2>
+&lt;p>In order to join any of the organisational groups in your NGI, you will need to
+go through the following steps in order:&lt;/p>
+&lt;h3 id="obtain-a-grid-certificate">Obtain a Grid certificate.&lt;/h3>
+&lt;p>If you do not already have a GRID certificate
+&lt;a href="http://www.eugridpma.org/members/worldmap/">this page&lt;/a> provides a map of all
+certification authorities according to country (or NGI). Select your country on
+the map to find out who is your local CA. Follow the procedure for your local CA
+to request a certificate. When you have received your certificate, install it
+into your web browser.&lt;/p>
+&lt;p>If case of setting up new Resource Center please request for Host certificate.&lt;/p>
+&lt;p>CERN provides a webpage for testing your certificate
+&lt;a href="https://grid-deployment.web.cern.ch/grid-deployment/cgi-bin/CertTest/CertTest.cgi">here&lt;/a>.
+Please use this resource and contact your CA if your certificate does not work.&lt;/p>
+&lt;h3 id="join-dteam-vo">Join Dteam VO&lt;/h3>
+&lt;p>It is recommended to join the &lt;a href="../../Dteam_vo" title="wikilink">dteam VO&lt;/a> at the
+&lt;a href="https://voms.hellasgrid.gr:8443/vo/dteam/vomrs">dteam Registration&lt;/a> page. You
+should request group membership for &lt;code>/dteam&lt;/code> and &lt;code>/dteam/YOUR_NGI&lt;/code>. The dteam
+group manager will then be notified by the vomrs software.&lt;/p>
+&lt;h3 id="request-gocdb-access">Request GOCDB access&lt;/h3>
+&lt;ul>
+&lt;li>Read
+&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation">Input System User Documentation&lt;/a>
+first.&lt;/li>
+&lt;li>Go to the &lt;a href="http://goc.egi.eu/">GOCDB instance&lt;/a> and follow
+&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles">the instruction&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>All new members &lt;strong>need to notify their NGI operations manager&lt;/strong> about their role
+request, as GOCDB currently &amp;lsquo;&amp;lsquo;&amp;lsquo;does not &amp;lsquo;&amp;lsquo;&amp;lsquo;send any notification about pending
+requests.&lt;/p>
+&lt;h3 id="register-into-ggus">Register into GGUS&lt;/h3>
+&lt;p>To register into GGUS please follow the
+&lt;a href="https://ggus.eu/?mode=register">Central GGUS registration&lt;/a> link. GGUS can be
+accessed with only your certificate. Do not forget to apply for
+&lt;a href="https://ggus.eu/?mode=register">the support role&lt;/a> as well. (The GGUS support
+staff will approve you quickly as they get the notification automatically.)&lt;/p>
+&lt;p>Some NGIs also have a local helpdesk or a regional GGUS. Ask your NGI operations
+manager if how to register to them.&lt;/p>
+&lt;h3 id="subscribe-to-mailing-lists">Subscribe to mailing lists.&lt;/h3>
+&lt;p>NGIs and Sites have local mailing lists for ROD team members and Site
+Administrators respectively. Please ensure that you subscribe to them. Depending
+on your role ask your NGI operations manager or Site operations manager to have
+you included on the necessary mailing lists if there is no automatic
+subscription process.&lt;/p>
+&lt;p>NGI operations manager should contact &lt;a href="mailto:operations@egi.eu">operations@egi.eu&lt;/a> and state that wish to
+be subscribed to noc-managers mailing list &lt;code>noc-managers@mailman.egi.eu&lt;/code>.&lt;/p>
+&lt;h2 id="documentation">Documentation&lt;/h2>
+&lt;p>Documentation relevant to EGI operations can also found at
+&lt;a href="https://wiki.egi.eu/wiki/Documentation">EGI Documentation wiki page&lt;/a>.&lt;/p>
+&lt;h2 id="tools">Tools&lt;/h2>
+&lt;p>A list of services relevant to EGI operations can be found at
+&lt;a href="../../../internal">the section about internal services&lt;/a>.&lt;/p></description></item></channel></rss>
