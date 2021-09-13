@@ -6,6 +6,10 @@ description: >
   Linking additional organisational/social identities to your EGI Account
 ---
 
+<!--
+// jscpd:ignore-start
+-->
+
 ## Linking new identities to your EGI Account
 
 Identity linking allows you to access EGI resources with your existing personal
@@ -111,3 +115,7 @@ To link a subject DN to your EGI account:
    certificate.
 
    ![Certificates preview](./check-in-certificates-preview.png)
+
+<!--
+// jscpd:ignore-end
+-->
