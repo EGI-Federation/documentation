@@ -116,8 +116,8 @@ into your web browser.&lt;/p>
 &lt;a href="https://www.eugridpma.org/your-identity/">a web page allowing to test your certificate&lt;/a>.
 Please use this resource and contact your CA if your certificate does not work.&lt;/p>
 &lt;h3 id="joining-dteam-vo">Joining dteam VO&lt;/h3>
-&lt;p>It is recommended to join the &lt;a href="../../Dteam_vo" title="wikilink">dteam VO&lt;/a> at the
-&lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/">dteam Registration&lt;/a> page. You
+&lt;p>It is recommended to join the &lt;a href="https://wiki.egi.eu/wiki/Dteam_vo">dteam VO&lt;/a> at
+the &lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/">dteam Registration&lt;/a> page. You
 should request group membership for &lt;code>/dteam&lt;/code> and &lt;code>/dteam/YOUR_NGI&lt;/code>. The dteam
 group manager will then be notified and review your application.&lt;/p>
 &lt;h3 id="requesting-gocdb-access">Requesting GOCDB access&lt;/h3>
