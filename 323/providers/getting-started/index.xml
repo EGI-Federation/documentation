@@ -112,8 +112,8 @@ the map to find out who is your local CA. Follow the procedure for your local CA
 to request a certificate. When you have received your certificate, install it
 into your web browser.&lt;/p>
 &lt;p>If case of setting up new Resource Center please request for Host certificate.&lt;/p>
-&lt;p>CERN provides a webpage for testing your certificate
-&lt;a href="https://grid-deployment.web.cern.ch/grid-deployment/cgi-bin/CertTest/CertTest.cgi">here&lt;/a>.
+&lt;p>EUGridPMA provides
+&lt;a href="https://www.eugridpma.org/your-identity/">a web page allowing to test your certificate&lt;/a>.
 Please use this resource and contact your CA if your certificate does not work.&lt;/p>
 &lt;h3 id="joining-dteam-vo">Joining dteam VO&lt;/h3>
 &lt;p>It is recommended to join the &lt;a href="../../Dteam_vo" title="wikilink">dteam VO&lt;/a> at the
