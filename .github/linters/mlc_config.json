@@ -23,6 +23,9 @@
     },
     {
       "pattern": "^https://aai.egi.eu/proxy*"
+    },
+    {
+      "pattern": "^https://voms2.hellasgrid.gr:8443/voms*"
     }
   ]
 }
