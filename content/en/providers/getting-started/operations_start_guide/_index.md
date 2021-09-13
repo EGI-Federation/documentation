@@ -82,7 +82,7 @@ team is to handle day to day operational security issues and coordinate
 _Computer Security Incident Response_ across the EGI infrastructure. NGIs and
 Sites **MUST** respond in a timely manner to its requests and alerts.
 
-#### NGI operations manager
+#### NGI Operations manager
 
 NGI operations manager is the contact point for all operational matters and
 represents the NGI within the
@@ -141,7 +141,7 @@ accuracy and integrity.
 In order to join any of the organisational groups in your NGI, you will need to
 go through the following steps in order:
 
-### Obtain a Grid certificate.
+### Obtaining a grid certificate
 
 If you do not already have a GRID certificate
 [this page](http://www.eugridpma.org/members/worldmap/) provides a map of all
@@ -156,14 +156,14 @@ CERN provides a webpage for testing your certificate
 [here](https://grid-deployment.web.cern.ch/grid-deployment/cgi-bin/CertTest/CertTest.cgi).
 Please use this resource and contact your CA if your certificate does not work.
 
-### Join Dteam VO
+### Joining dteam VO
 
 It is recommended to join the [dteam VO](/Dteam_vo "wikilink") at the
 [dteam Registration](https://voms.hellasgrid.gr:8443/vo/dteam/vomrs) page. You
 should request group membership for `/dteam` and `/dteam/YOUR_NGI`. The dteam
 group manager will then be notified by the vomrs software.
 
-### Request GOCDB access
+### Requesting GOCDB access
 
 - Read
   [Input System User Documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation)
@@ -175,7 +175,7 @@ All new members **need to notify their NGI operations manager** about their role
 request, as GOCDB currently '''does not '''send any notification about pending
 requests.
 
-### Register into GGUS
+### Registering into GGUS
 
 To register into GGUS please follow the
 [Central GGUS registration](https://ggus.eu/?mode=register) link. GGUS can be
@@ -186,7 +186,7 @@ staff will approve you quickly as they get the notification automatically.)
 Some NGIs also have a local helpdesk or a regional GGUS. Ask your NGI operations
 manager if how to register to them.
 
-### Subscribe to mailing lists.
+### Subscribing to mailing lists
 
 NGIs and Sites have local mailing lists for ROD team members and Site
 Administrators respectively. Please ensure that you subscribe to them. Depending
