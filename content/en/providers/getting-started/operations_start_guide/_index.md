@@ -152,8 +152,8 @@ into your web browser.
 
 If case of setting up new Resource Center please request for Host certificate.
 
-CERN provides a webpage for testing your certificate
-[here](https://grid-deployment.web.cern.ch/grid-deployment/cgi-bin/CertTest/CertTest.cgi).
+EUGridPMA provides
+[a web page allowing to test your certificate](https://www.eugridpma.org/your-identity/).
 Please use this resource and contact your CA if your certificate does not work.
 
 ### Joining dteam VO
