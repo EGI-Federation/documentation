@@ -158,8 +158,8 @@ Please use this resource and contact your CA if your certificate does not work.
 
 ### Joining dteam VO
 
-It is recommended to join the [dteam VO](/Dteam_vo "wikilink") at the
-[dteam Registration](https://voms2.hellasgrid.gr:8443/voms/dteam/) page. You
+It is recommended to join the [dteam VO](https://wiki.egi.eu/wiki/Dteam_vo) at
+the [dteam Registration](https://voms2.hellasgrid.gr:8443/voms/dteam/) page. You
 should request group membership for `/dteam` and `/dteam/YOUR_NGI`. The dteam
 group manager will then be notified and review your application.
 
