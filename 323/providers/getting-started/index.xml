@@ -61,7 +61,7 @@ Further information can be found at the
 team is to handle day to day operational security issues and coordinate
 &lt;em>Computer Security Incident Response&lt;/em> across the EGI infrastructure. NGIs and
 Sites &lt;strong>MUST&lt;/strong> respond in a timely manner to its requests and alerts.&lt;/p>
-&lt;h4 id="ngi-operations-manager">NGI operations manager&lt;/h4>
+&lt;h4 id="ngi-operations-manager">NGI Operations manager&lt;/h4>
 &lt;p>NGI operations manager is the contact point for all operational matters and
 represents the NGI within the
 &lt;a href="https://confluence.egi.eu/display/EGIBG/Operations+Management+Board">Operations Management Board&lt;/a>.&lt;/p>
@@ -104,7 +104,7 @@ accuracy and integrity.&lt;/p>
 &lt;h2 id="joining-operations">Joining operations&lt;/h2>
 &lt;p>In order to join any of the organisational groups in your NGI, you will need to
 go through the following steps in order:&lt;/p>
-&lt;h3 id="obtain-a-grid-certificate">Obtain a Grid certificate.&lt;/h3>
+&lt;h3 id="obtaining-a-grid-certificate">Obtaining a grid certificate&lt;/h3>
 &lt;p>If you do not already have a GRID certificate
 &lt;a href="http://www.eugridpma.org/members/worldmap/">this page&lt;/a> provides a map of all
 certification authorities according to country (or NGI). Select your country on
@@ -115,12 +115,12 @@ into your web browser.&lt;/p>
 &lt;p>CERN provides a webpage for testing your certificate
 &lt;a href="https://grid-deployment.web.cern.ch/grid-deployment/cgi-bin/CertTest/CertTest.cgi">here&lt;/a>.
 Please use this resource and contact your CA if your certificate does not work.&lt;/p>
-&lt;h3 id="join-dteam-vo">Join Dteam VO&lt;/h3>
+&lt;h3 id="joining-dteam-vo">Joining dteam VO&lt;/h3>
 &lt;p>It is recommended to join the &lt;a href="../../Dteam_vo" title="wikilink">dteam VO&lt;/a> at the
-&lt;a href="https://voms.hellasgrid.gr:8443/vo/dteam/vomrs">dteam Registration&lt;/a> page. You
+&lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/">dteam Registration&lt;/a> page. You
 should request group membership for &lt;code>/dteam&lt;/code> and &lt;code>/dteam/YOUR_NGI&lt;/code>. The dteam
-group manager will then be notified by the vomrs software.&lt;/p>
-&lt;h3 id="request-gocdb-access">Request GOCDB access&lt;/h3>
+group manager will then be notified and review your application.&lt;/p>
+&lt;h3 id="requesting-gocdb-access">Requesting GOCDB access&lt;/h3>
 &lt;ul>
 &lt;li>Read
 &lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation">Input System User Documentation&lt;/a>
@@ -131,7 +131,7 @@ first.&lt;/li>
 &lt;p>All new members &lt;strong>need to notify their NGI operations manager&lt;/strong> about their role
 request, as GOCDB currently &amp;lsquo;&amp;lsquo;&amp;lsquo;does not &amp;lsquo;&amp;lsquo;&amp;lsquo;send any notification about pending
 requests.&lt;/p>
-&lt;h3 id="register-into-ggus">Register into GGUS&lt;/h3>
+&lt;h3 id="registering-into-ggus">Registering into GGUS&lt;/h3>
 &lt;p>To register into GGUS please follow the
 &lt;a href="https://ggus.eu/?mode=register">Central GGUS registration&lt;/a> link. GGUS can be
 accessed with only your certificate. Do not forget to apply for
@@ -139,7 +139,7 @@ accessed with only your certificate. Do not forget to apply for
 staff will approve you quickly as they get the notification automatically.)&lt;/p>
 &lt;p>Some NGIs also have a local helpdesk or a regional GGUS. Ask your NGI operations
 manager if how to register to them.&lt;/p>
-&lt;h3 id="subscribe-to-mailing-lists">Subscribe to mailing lists.&lt;/h3>
+&lt;h3 id="subscribing-to-mailing-lists">Subscribing to mailing lists&lt;/h3>
 &lt;p>NGIs and Sites have local mailing lists for ROD team members and Site
 Administrators respectively. Please ensure that you subscribe to them. Depending
 on your role ask your NGI operations manager or Site operations manager to have
