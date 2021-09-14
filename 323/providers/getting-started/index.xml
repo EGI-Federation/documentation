@@ -143,9 +143,11 @@ requests.&lt;/p>
 &lt;h3 id="registering-into-ggus">Registering into GGUS&lt;/h3>
 &lt;p>To register into GGUS please follow the
 &lt;a href="https://ggus.eu/?mode=register">Central GGUS registration&lt;/a> link. GGUS can be
-accessed with only your certificate. Do not forget to apply for
-&lt;a href="https://ggus.eu/?mode=register">the support role&lt;/a> as well. (The GGUS support
-staff will approve you quickly as they get the notification automatically.)&lt;/p>
+accessed either with your X509 personal certificate or with your fedewrated identity.
+Do not forget to apply for &lt;a href="https://ggus.eu/?mode=register">the support role&lt;/a> as well. (The GGUS support
+staff will approve you quickly as they get the notification automatically).
+To get the supporter role with your federated identity, please enroll to the &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">GGUS
+Supporters group&lt;/a> in Check-in.&lt;/p>
 &lt;p>Some NGIs also have a local helpdesk or a regional GGUS. Ask your NGI operations
 manager if how to register to them.&lt;/p>
 &lt;h3 id="subscribing-to-mailing-lists">Subscribing to mailing lists&lt;/h3>
