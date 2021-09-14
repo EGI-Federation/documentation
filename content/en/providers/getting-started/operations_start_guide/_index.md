@@ -15,7 +15,7 @@ operations within EGI.
 
 ## Resource Centres and Resource Infrastructures
 
-Resources are geographically distributed, and are contributed by [Resource Centres](
+Resources are geographically distributed and are contributed by [Resource Centres](
 https://ims.egi.eu/display/EGIG/Resource+Centre).
 A Resource Centre is the smallest resource administration domain within EGI. It can
 be either localized or geographically distributed. A Resource Centre is also known
@@ -45,8 +45,9 @@ national level.
 ## Roles
 
 The following describes the roles that are commonly found in the EGI
-Infrastructure and Operations. Other terms and definitions can be found in the
-[EGI Glossary](https://go.egi.eu/glossary).
+Infrastructure and Operations. In most of the cases the role name is the one defined in
+GOCDB giving specific rights in the GOCDB itself and in other EGI services. Other terms 
+and definitions can be found in the [EGI Glossary](https://go.egi.eu/glossary).
 
 ### Site level
 
