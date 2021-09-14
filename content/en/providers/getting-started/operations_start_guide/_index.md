@@ -150,8 +150,8 @@ security team coordinator and contact point at project level.
 
 #### EGI Foundation Operations team
 
-It is the team responsible of [coordinating and supporting the operations activities]
-(https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight)
+It is the team responsible of [coordinating and supporting the operations activities](
+https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight)
 of all the EGI Infrastructure and it is provided by the [EGI Foundation]
 (https://ims.egi.eu/display/EGIG/EGI+Foundation)
 
