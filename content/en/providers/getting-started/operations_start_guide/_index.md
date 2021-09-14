@@ -80,7 +80,7 @@ also responsible for enforcing the EGI policies and procedures by the Resource C
 and for assigning and approving the other site roles in the GOCDB. 
 Further, s/he should ensure that administrators are subscribed to relevant mailing lists.
 
-#### Site Security Officer
+#### Resource Centre Security Officer
 
 The person responsible for keeping the site compliant with the
 [Security policies](https://wiki.egi.eu/wiki/EGI_CSIRT:Policies). She/he is also
@@ -94,12 +94,12 @@ a timely fashion as defined in the collection of
 #### Regional Operator on Duty (ROD)
 
 A team responsible for solving problems/incidents in the infrastructure
-according to agreed procedures. ROD (teams) monitor the sites in their region,
-react to problems identified by the monitoring tools, and oversee problems
-through to their resolution. They ensure that problems are properly recorded and
-that the solutions progress according to specified time lines. They also provide
-support to sites and VOs as needed and provide informational flow to oversight
-bodies in cases of non-responsive sites. They ensure that all necessary
+according to agreed procedures. ROD (teams) monitor the RCs in their region,
+react to incidents identified by the monitoring tools, and oversee incidents and 
+related problems through to their resolution. They ensure that incidents are properly 
+recorded and that the solutions progress according to specified time lines. They also 
+provide support to RCs and VOs as needed and provide informational flow to oversight
+bodies in cases of non-responsive RCs. They ensure that all necessary
 information is available to all parties. The team is provided by each NGI and
 requires procedural knowledge on the process (rather than technical skills) for
 their work. New ROD team members are required to read the
@@ -148,12 +148,12 @@ coordinating the operations of the infrastructure across the project.
 [EGI CSIRT](https://wiki.egi.eu/wiki/EGI_CSIRT:Main_Page) is an official
 security team coordinator and contact point at project level.
 
-#### Operations Support
+#### EGI Foundation Operations team
 
-Operations Support team is provided on a global layer and is responsible for the
-supporting EGI Operations. Examples of its activities are service level
-management, service level reporting, service management in general and central
-technical.
+It is the team responsible of [coordinating and supporting the operations activities]
+(https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight)
+of all the EGI Infrastructure and it is provided by the [EGI Foundation]
+(https://ims.egi.eu/display/EGIG/EGI+Foundation)
 
 #### VO
 
