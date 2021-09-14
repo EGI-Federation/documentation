@@ -60,7 +60,7 @@ and its hosting NGI. The RC Operations Manager is
 also responsible for enforcing the EGI policies and procedures by the Resource Centre
 and for assigning and approving the other site roles in the GOCDB.
 Further, s/he should ensure that administrators are subscribed to relevant mailing lists.&lt;/p>
-&lt;h4 id="site-security-officer">Site Security Officer&lt;/h4>
+&lt;h4 id="resource-centre-security-officer">Resource Centre Security Officer&lt;/h4>
 &lt;p>The person responsible for keeping the site compliant with the
 &lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Policies">Security policies&lt;/a>. She/he is also
 the primary contact for the NGI Security officer and EGI CSIRT. The Site
@@ -70,12 +70,12 @@ a timely fashion as defined in the collection of
 &lt;h3 id="regional-level">Regional level&lt;/h3>
 &lt;h4 id="regional-operator-on-duty-rod">Regional Operator on Duty (ROD)&lt;/h4>
 &lt;p>A team responsible for solving problems/incidents in the infrastructure
-according to agreed procedures. ROD (teams) monitor the sites in their region,
-react to problems identified by the monitoring tools, and oversee problems
-through to their resolution. They ensure that problems are properly recorded and
-that the solutions progress according to specified time lines. They also provide
-support to sites and VOs as needed and provide informational flow to oversight
-bodies in cases of non-responsive sites. They ensure that all necessary
+according to agreed procedures. ROD (teams) monitor the RCs in their region,
+react to incidents identified by the monitoring tools, and oversee incidents and
+related problems through to their resolution. They ensure that incidents are properly
+recorded and that the solutions progress according to specified time lines. They also
+provide support to RCs and VOs as needed and provide informational flow to oversight
+bodies in cases of non-responsive RCs. They ensure that all necessary
 information is available to all parties. The team is provided by each NGI and
 requires procedural knowledge on the process (rather than technical skills) for
 their work. New ROD team members are required to read the
@@ -113,11 +113,11 @@ coordinating the operations of the infrastructure across the project.&lt;/p>
 &lt;h4 id="egi-csirt">EGI CSIRT&lt;/h4>
 &lt;p>&lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Main_Page">EGI CSIRT&lt;/a> is an official
 security team coordinator and contact point at project level.&lt;/p>
-&lt;h4 id="operations-support">Operations Support&lt;/h4>
-&lt;p>Operations Support team is provided on a global layer and is responsible for the
-supporting EGI Operations. Examples of its activities are service level
-management, service level reporting, service management in general and central
-technical.&lt;/p>
+&lt;h4 id="egi-foundation-operations-team">EGI Foundation Operations team&lt;/h4>
+&lt;p>It is the team responsible of [coordinating and supporting the operations activities]
+(&lt;a href="https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight">https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight&lt;/a>)
+of all the EGI Infrastructure and it is provided by the [EGI Foundation]
+(&lt;a href="https://ims.egi.eu/display/EGIG/EGI+Foundation">https://ims.egi.eu/display/EGIG/EGI+Foundation&lt;/a>)&lt;/p>
 &lt;h4 id="vo">VO&lt;/h4>
 &lt;p>A Virtual Organisation (VO) is a group of users and, optionally, resources,
 often not bound to a single institution or national borders, who, by reason of
