@@ -104,8 +104,11 @@ accuracy and integrity.&lt;/p>
 &lt;h2 id="joining-operations">Joining operations&lt;/h2>
 &lt;p>In order to join any of the organisational groups in your NGI, you will need to
 go through the following steps in order:&lt;/p>
-&lt;h3 id="obtaining-a-grid-certificate">Obtaining a grid certificate&lt;/h3>
-&lt;p>If you do not already have a GRID certificate
+&lt;h3 id="authentication">Authentication&lt;/h3>
+&lt;p>The authentication in EGI infrastructure works either with X509 personal
+certificates or through federated identities&lt;/p>
+&lt;h4 id="obtaining-a-x509-personal-certificate">Obtaining a X509 personal certificate&lt;/h4>
+&lt;p>If you do not already have a X509 personal certificate
 &lt;a href="http://www.eugridpma.org/members/worldmap/">this page&lt;/a> provides a map of all
 certification authorities according to country (or NGI). Select your country on
 the map to find out who is your local CA. Follow the procedure for your local CA
@@ -115,6 +118,12 @@ into your web browser.&lt;/p>
 &lt;p>EUGridPMA provides
 &lt;a href="https://www.eugridpma.org/your-identity/">a web page allowing to test your certificate&lt;/a>.
 Please use this resource and contact your CA if your certificate does not work.&lt;/p>
+&lt;h4 id="create-a-federated-identity-registration-in-egi-check-in">Create a federated identity: registration in EGI Check-in&lt;/h4>
+&lt;p>As soon as you try to access an EGI service with your federated identity, you will be
+requested to register an account in EGI Check-in if not existing yet.
+&lt;a href="https://docs.egi.eu/users/check-in/signup/">On this page you will find a guide&lt;/a>
+explaining how to sign up for an EGI account.
+If you already own an account, you will be simply asked to login through EGI Check-in.&lt;/p>
 &lt;h3 id="joining-dteam-vo">Joining dteam VO&lt;/h3>
 &lt;p>It is recommended to join the &lt;a href="https://wiki.egi.eu/wiki/Dteam_vo">dteam VO&lt;/a> at
 the &lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/">dteam Registration&lt;/a> page. You
