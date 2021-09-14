@@ -163,7 +163,8 @@ their common membership and in sharing a common goal, are given authority to use
 a set of resources. Each VO member signs the VO AUP (during registration) which
 is the policy document describing the goals of the VO thereby defining the
 expected and acceptable use of the Grid by the users of the VO. User
-documentation can be found [here](https://wiki.egi.eu/wiki/User_Documentation).
+documentation can be found [here](https://wiki.egi.eu/wiki/User_Documentation) and
+[here](https://docs.egi.eu/users/)
 
 #### VO manager
 
