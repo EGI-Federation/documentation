@@ -44,28 +44,27 @@ national level.
 
 ## Roles
 
-The following describes the roles that are commonly found in the EGI
-Infrastructure and Operations. In most of the cases the role name is the one defined in
-GOCDB giving specific rights in the GOCDB itself and in other EGI services. Other terms 
-and definitions can be found in the [EGI Glossary](https://go.egi.eu/glossary).
+The following describes the roles that are commonly found in the EGI Infrastructure and 
+Operations. The correspondent roles defined in GOCDB give specific rights in the GOCDB 
+itself and in other EGI services. Other terms  and definitions can be found in the 
+[EGI Glossary](https://go.egi.eu/glossary).
 
-### Site level
+### Resource Centre level
 
-#### Site Administrator
+#### Resource Centre Administrator
 
-The person responsible for keeping the site operational. In the scope of
-Operations, site administrators primarily receive and react on notification of
-one or more incidents at their site. They will also need to react to security
-issues that are at a global level, but affect their site. Site administrators
-should respond to [GGUS tickets](http://ggus.eu) in a suitable time frame and be
-aware of the alarms at their site, eg. through the
-[operations dashboard](https://operations-portal.egi.eu). Sites must only
-operate supported middleware versions. This implies upgrading it from time to
-time. Emergency releases are treated in a special way. See
+An individual who is responsible for installing, operating, maintaining and supporting 
+one or more Resources or IT Services in a Resource Centre. In the scope of
+Operations, RC administrators primarily receive and react on incidents at their RC and on 
+service requests notified through tickets created on the [EGI Helpdesk service]
+(http://ggus.eu). They should respond to the tickets in a suitable time frame as defined in the
+[RC OLA document](https://documents.egi.eu/document/31) and be aware of the alarms at their 
+site, eg. through the [operations dashboard](https://operations-portal.egi.eu). Sites 
+must only operate supported middleware versions. This implies upgrading it from time to
+time. Emergency releases are treated in a special way. RC Administrators will  also 
+need to react to security issues that are at a global level, but affect their site.
+See
 [SEC03 EGI-CSIRT Critical Vulnerability Handling](https://wiki.egi.eu/wiki/SEC03_EGI-CSIRT_Critical_Vulnerability_Handling).
-
-All Site management responsibilities are listed in
-[RC OLA document](https://documents.egi.eu/document/31).
 
 #### Site Operations Manager
 
