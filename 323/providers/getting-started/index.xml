@@ -8,7 +8,7 @@ structure of the infrastructure and roles of operators at different levels.
 Reading the whole document will give you a complete overall picture of daily
 operations within EGI.&lt;/p>
 &lt;h2 id="resource-centres-and-resource-infrastructures">Resource Centres and Resource Infrastructures&lt;/h2>
-&lt;p>Resources are geographically distributed, and are contributed by &lt;a href="https://ims.egi.eu/display/EGIG/Resource+Centre">Resource Centres&lt;/a>.
+&lt;p>Resources are geographically distributed and are contributed by &lt;a href="https://ims.egi.eu/display/EGIG/Resource+Centre">Resource Centres&lt;/a>.
 A Resource Centre is the smallest resource administration domain within EGI. It can
 be either localized or geographically distributed. A Resource Centre is also known
 as a “site”. It provides a minimum set of local or remote IT Services compliant to
@@ -30,23 +30,24 @@ within the scope of the EGI Infrastructure, and (b) are the only organization ha
 mandate described in (a) for its country and thus provide a single contact point at the
 national level.&lt;/p>
 &lt;h2 id="roles">Roles&lt;/h2>
-&lt;p>The following describes the roles that are commonly found in the EGI
-Infrastructure and Operations. Other terms and definitions can be found in the
+&lt;p>The following describes the roles that are commonly found in the EGI Infrastructure and
+Operations. The correspondent roles defined in GOCDB give specific rights in the GOCDB
+itself and in other EGI services. Other terms and definitions can be found in the
 &lt;a href="https://go.egi.eu/glossary">EGI Glossary&lt;/a>.&lt;/p>
-&lt;h3 id="site-level">Site level&lt;/h3>
-&lt;h4 id="site-administrator">Site Administrator&lt;/h4>
-&lt;p>The person responsible for keeping the site operational. In the scope of
-Operations, site administrators primarily receive and react on notification of
-one or more incidents at their site. They will also need to react to security
-issues that are at a global level, but affect their site. Site administrators
-should respond to &lt;a href="http://ggus.eu">GGUS tickets&lt;/a> in a suitable time frame and be
-aware of the alarms at their site, eg. through the
-&lt;a href="https://operations-portal.egi.eu">operations dashboard&lt;/a>. Sites must only
-operate supported middleware versions. This implies upgrading it from time to
-time. Emergency releases are treated in a special way. See
+&lt;h3 id="resource-centre-level">Resource Centre level&lt;/h3>
+&lt;h4 id="resource-centre-administrator">Resource Centre Administrator&lt;/h4>
+&lt;p>An individual who is responsible for installing, operating, maintaining and supporting
+one or more Resources or IT Services in a Resource Centre. In the scope of
+Operations, RC administrators primarily receive and react on incidents at their RC and on
+service requests notified through tickets created on the [EGI Helpdesk service]
+(&lt;a href="http://ggus.eu">http://ggus.eu&lt;/a>). They should respond to the tickets in a suitable time frame as defined in the
+&lt;a href="https://documents.egi.eu/document/31">RC OLA document&lt;/a> and be aware of the alarms at their
+site, eg. through the &lt;a href="https://operations-portal.egi.eu">operations dashboard&lt;/a>. Sites
+must only operate supported middleware versions. This implies upgrading it from time to
+time. Emergency releases are treated in a special way. RC Administrators will also
+need to react to security issues that are at a global level, but affect their site.
+See
 &lt;a href="https://wiki.egi.eu/wiki/SEC03_EGI-CSIRT_Critical_Vulnerability_Handling">SEC03 EGI-CSIRT Critical Vulnerability Handling&lt;/a>.&lt;/p>
-&lt;p>All Site management responsibilities are listed in
-&lt;a href="https://documents.egi.eu/document/31">RC OLA document&lt;/a>.&lt;/p>
 &lt;h4 id="site-operations-manager">Site Operations Manager&lt;/h4>
 &lt;p>The person responsible for the site at the political and legal level. S/he is
 responsible for signing the Operations Level Agreement
