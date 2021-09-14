@@ -45,9 +45,10 @@ national level.
 ## Roles
 
 The following describes the roles that are commonly found in the EGI Infrastructure and 
-Operations. The correspondent roles defined in GOCDB give specific rights in the GOCDB 
-itself and in other EGI services. Other terms  and definitions can be found in the 
-[EGI Glossary](https://go.egi.eu/glossary).
+Operations. The correspondent [roles defined in GOCDB]
+(https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles)
+give specific rights in the GOCDB  itself and in other EGI services. Other terms and 
+definitions can be found in the [EGI Glossary](https://go.egi.eu/glossary).
 
 ### Resource Centre level
 
@@ -66,15 +67,18 @@ need to react to security issues that are at a global level, but affect their si
 See
 [SEC03 EGI-CSIRT Critical Vulnerability Handling](https://wiki.egi.eu/wiki/SEC03_EGI-CSIRT_Critical_Vulnerability_Handling).
 
-#### Site Operations Manager
+#### Resource Centre Operations Manager
 
-The person responsible for the site at the political and legal level. S/he is
-responsible for signing the Operations Level Agreement
-([OLA](https://documents.egi.eu/public/ShowDocument?docid=31)) between the Site
-and the NGI that hosts the site operationally. The Site Operations Manager is
-also responsible for assigning and approving the other site roles in the
-[GOCDB](https://goc.egi.eu/). Further, s/he should ensure that administrators
-are subscribed to relevant mailing lists.
+An individual who leads the Resource Centre operations, who is the official technical 
+contact person in the connected organisation, and who is locally supported by a team 
+of Resource Centre Administrators.
+The Resource Centre Operations Manager is responsible for the site at the political 
+and legal level and for signing the Operational Level Agreement
+([OLA](https://documents.egi.eu/public/ShowDocument?docid=31)) between the RC
+and its hosting NGI. The RC Operations Manager is
+also responsible for enforcing the EGI policies and procedures by the Resource Centre
+and for assigning and approving the other site roles in the GOCDB. 
+Further, s/he should ensure that administrators are subscribed to relevant mailing lists.
 
 #### Site Security Officer
 
