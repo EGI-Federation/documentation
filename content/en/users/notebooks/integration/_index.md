@@ -54,8 +54,8 @@ export OIDC_ACCESS_TOKEN=`cat /var/run/secrets/egi.eu/access_token`
 fedcloud token check
 ```
 
-If the `fedcloud` command is not available, please follow instructions
-[here](../../getting-started/cli/).
+If the `fedcloud` command is not available, please follow the
+[getting started](../../getting-started/cli/).
 
 ## D4Science
 
