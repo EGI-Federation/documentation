@@ -8,7 +8,7 @@ type: docs
 The Operations Start Guide will help you start with EGI Operations duties. It
 covers the responsibilities of the various parties involved in the running of
 the EGI infrastructure and guide how to join operations. As a newcomer, you need
-to understand the structure of the EGI project and roles of operators at
+to understand the structure of the infrastructure and roles of operators at
 different levels. Reading the whole document will give you a complete overall
 picture of daily operations within EGI.
 
