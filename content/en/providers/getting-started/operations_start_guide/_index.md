@@ -141,9 +141,14 @@ accuracy and integrity.
 In order to join any of the organisational groups in your NGI, you will need to
 go through the following steps in order:
 
-### Obtaining a grid certificate
+### Authentication
 
-If you do not already have a GRID certificate
+The authentication in EGI infrastructure works either with X509 personal
+certificates or through federated identities
+
+#### Obtaining a X509 personal certificate
+
+If you do not already have a X509 personal certificate
 [this page](http://www.eugridpma.org/members/worldmap/) provides a map of all
 certification authorities according to country (or NGI). Select your country on
 the map to find out who is your local CA. Follow the procedure for your local CA
@@ -155,6 +160,14 @@ If case of setting up new Resource Center please request for Host certificate.
 EUGridPMA provides
 [a web page allowing to test your certificate](https://www.eugridpma.org/your-identity/).
 Please use this resource and contact your CA if your certificate does not work.
+
+#### Create a federated identity: registration in EGI Check-in
+
+As soon as you try to access an EGI service with your federated identity, you will be
+requested to register an account in EGI Check-in if not existing yet.
+[On this page you will find a guide](https://docs.egi.eu/users/check-in/signup/) 
+explaining how to sign up for an EGI account.
+If you already own an account, you will be simply asked to login through EGI Check-in.
 
 ### Joining dteam VO
 
