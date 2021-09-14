@@ -7,10 +7,40 @@ type: docs
 
 The Operations Start Guide will help you start with EGI Operations duties. It
 covers the responsibilities of the various parties involved in the running of
-the EGI infrastructure and guide how to join operations. As a newcomer, you need
-to understand the structure of the infrastructure and roles of operators at
-different levels. Reading the whole document will give you a complete overall
-picture of daily operations within EGI.
+the [EGI infrastructure](https://ims.egi.eu/display/EGIG/EGI+Infrastructure) 
+and guide how to join operations. As a newcomer, you need to understand the 
+structure of the infrastructure and roles of operators at different levels. 
+Reading the whole document will give you a complete overall picture of daily 
+operations within EGI.
+
+## Resource Centres and Resource Infrastructures
+
+Resources are geographically distributed, and are contributed by [Resource Centres](
+https://ims.egi.eu/display/EGIG/Resource+Centre).
+A Resource Centre is the smallest resource administration domain within EGI. It can
+be either localized or geographically distributed. A Resource Centre is also known
+as a “site”. It provides a minimum set of local or remote IT Services compliant to 
+well-defined IT Capabilities necessary to make resources accessible to authorised 
+Users such as HTC, Cloud Compute, Storage, Data Access, etc. Access is granted by 
+exposing common interfaces to users.
+
+A Resource Infrastructure federates one or more Resource Centres to constitute a 
+homogeneous operation domain, and the [Resource Infrastructure Provider](
+https://ims.egi.eu/display/EGIG/Resource+Infrastructure+Provider) is the legal 
+organisation that is responsible of establishing, managing and of operating directly 
+or indirectly the operational services to an agreed level of quality needed by the 
+Resource Centres and the user community. It holds the responsibility of integrating 
+them in EGI to enable uniform resource access and sharing for the benefit of their 
+consuming end-users. Examples of a Resource infrastructure Provider are the [European 
+Intergovernmental Research Organisations(EIRO)](
+https://ims.egi.eu/display/EGIG/European+Intergovernmental+Research+Organisation) and the 
+[NGIs](https://ims.egi.eu/display/EGIG/NGI).
+
+In Europe, Resource Centres are required to be affiliated to the respective NGIs, which 
+(a) have a mandate to represent their national users community in all matters falling 
+within the scope of the EGI Infrastructure, and (b) are the only organization having the 
+mandate described in (a) for its country and thus provide a single contact point at the 
+national level.
 
 ## Roles
 
