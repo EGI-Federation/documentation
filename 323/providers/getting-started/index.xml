@@ -31,9 +31,10 @@ mandate described in (a) for its country and thus provide a single contact point
 national level.&lt;/p>
 &lt;h2 id="roles">Roles&lt;/h2>
 &lt;p>The following describes the roles that are commonly found in the EGI Infrastructure and
-Operations. The correspondent roles defined in GOCDB give specific rights in the GOCDB
-itself and in other EGI services. Other terms and definitions can be found in the
-&lt;a href="https://go.egi.eu/glossary">EGI Glossary&lt;/a>.&lt;/p>
+Operations. The correspondent [roles defined in GOCDB]
+(&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles">https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles&lt;/a>)
+give specific rights in the GOCDB itself and in other EGI services. Other terms and
+definitions can be found in the &lt;a href="https://go.egi.eu/glossary">EGI Glossary&lt;/a>.&lt;/p>
 &lt;h3 id="resource-centre-level">Resource Centre level&lt;/h3>
 &lt;h4 id="resource-centre-administrator">Resource Centre Administrator&lt;/h4>
 &lt;p>An individual who is responsible for installing, operating, maintaining and supporting
@@ -48,14 +49,17 @@ time. Emergency releases are treated in a special way. RC Administrators will al
 need to react to security issues that are at a global level, but affect their site.
 See
 &lt;a href="https://wiki.egi.eu/wiki/SEC03_EGI-CSIRT_Critical_Vulnerability_Handling">SEC03 EGI-CSIRT Critical Vulnerability Handling&lt;/a>.&lt;/p>
-&lt;h4 id="site-operations-manager">Site Operations Manager&lt;/h4>
-&lt;p>The person responsible for the site at the political and legal level. S/he is
-responsible for signing the Operations Level Agreement
-(&lt;a href="https://documents.egi.eu/public/ShowDocument?docid=31">OLA&lt;/a>) between the Site
-and the NGI that hosts the site operationally. The Site Operations Manager is
-also responsible for assigning and approving the other site roles in the
-&lt;a href="https://goc.egi.eu/">GOCDB&lt;/a>. Further, s/he should ensure that administrators
-are subscribed to relevant mailing lists.&lt;/p>
+&lt;h4 id="resource-centre-operations-manager">Resource Centre Operations Manager&lt;/h4>
+&lt;p>An individual who leads the Resource Centre operations, who is the official technical
+contact person in the connected organisation, and who is locally supported by a team
+of Resource Centre Administrators.
+The Resource Centre Operations Manager is responsible for the site at the political
+and legal level and for signing the Operational Level Agreement
+(&lt;a href="https://documents.egi.eu/public/ShowDocument?docid=31">OLA&lt;/a>) between the RC
+and its hosting NGI. The RC Operations Manager is
+also responsible for enforcing the EGI policies and procedures by the Resource Centre
+and for assigning and approving the other site roles in the GOCDB.
+Further, s/he should ensure that administrators are subscribed to relevant mailing lists.&lt;/p>
 &lt;h4 id="site-security-officer">Site Security Officer&lt;/h4>
 &lt;p>The person responsible for keeping the site compliant with the
 &lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Policies">Security policies&lt;/a>. She/he is also
