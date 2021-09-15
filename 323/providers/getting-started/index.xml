@@ -34,17 +34,17 @@ only organization having the mandate described in (a) for its country and thus
 provide a single contact point at the national level.&lt;/p>
 &lt;h2 id="roles">Roles&lt;/h2>
 &lt;p>The following describes the roles that are commonly found in the EGI
-Infrastructure and Operations. The correspondent [roles defined in GOCDB]
-(&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles">https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles&lt;/a>) give
-specific rights in the GOCDB itself and in other EGI services. Other terms and
-definitions can be found in the &lt;a href="https://go.egi.eu/glossary">EGI Glossary&lt;/a>.&lt;/p>
+Infrastructure and Operations. The correspondent
+&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles">roles defined in GOCDB&lt;/a>
+give specific rights in the GOCDB itself and in other EGI services. Other terms
+and definitions can be found in the &lt;a href="https://go.egi.eu/glossary">EGI Glossary&lt;/a>.&lt;/p>
 &lt;h3 id="resource-centre-level">Resource Centre level&lt;/h3>
 &lt;h4 id="resource-centre-administrator">Resource Centre Administrator&lt;/h4>
 &lt;p>An individual who is responsible for installing, operating, maintaining and
 supporting one or more Resources or IT Services in a Resource Centre. In the
 scope of Operations, RC administrators primarily receive and react on incidents
-at their RC and on service requests notified through tickets created on the [EGI
-Helpdesk service] (&lt;a href="http://ggus.eu">http://ggus.eu&lt;/a>). They should respond to the tickets in a
+at their RC and on service requests notified through tickets created on the
+&lt;a href="https://ggus.eu">EGI Helpdesk service&lt;/a>. They should respond to the tickets in a
 suitable time frame as defined in the
 &lt;a href="https://documents.egi.eu/document/31">RC OLA document&lt;/a> and be aware of the
 alarms at their site, eg. through the
@@ -144,7 +144,7 @@ go through the following steps in order:&lt;/p>
 certificates or through federated identities&lt;/p>
 &lt;h4 id="obtaining-a-x509-personal-certificate">Obtaining a X509 personal certificate&lt;/h4>
 &lt;p>If you do not already have a X509 personal certificate
-&lt;a href="http://www.eugridpma.org/members/worldmap/">this page&lt;/a> provides a map of all
+&lt;a href="https://www.eugridpma.org/members/worldmap/">this page&lt;/a> provides a map of all
 certification authorities according to country (or NGI). Select your country on
 the map to find out who is your local CA. Follow the procedure for your local CA
 to request a certificate. When you have received your certificate, install it
@@ -169,7 +169,7 @@ group manager will then be notified and review your application.&lt;/p>
 &lt;li>Read
 &lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation">Input System User Documentation&lt;/a>
 first.&lt;/li>
-&lt;li>Go to the &lt;a href="http://goc.egi.eu/">GOCDB instance&lt;/a> and follow
+&lt;li>Go to the &lt;a href="https://goc.egi.eu/">GOCDB instance&lt;/a> and follow
 &lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles">the instruction&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>All new members &lt;strong>need to notify their NGI operations manager&lt;/strong> about their role
