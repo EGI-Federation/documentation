@@ -169,6 +169,21 @@ then run the following commands:
 Once you have a shell running in the container with the FedCloud client, usage
 is the same as from [the command line](#using-from-the-command-line).
 
+### Using from EGI Notebooks
+
+[EGI Notebooks](../../notebooks/) are integrated with access tokens so it
+simplifies using the FedCloud client. First make sure that you follow the
+[installation](#installation) steps above. Then, below are the commands that
+you need to run inside a terminal in JupyterLab:
+
+```shell
+export OIDC_ACCESS_TOKEN=`cat /var/run/secrets/egi.eu/access_token`
+fedcloud token check
+```
+
+Please follow instructions [below](#using-from-the-command-line) to learn
+how to use the `fedcloud` command.
+
 ### Using from the command line
 
 The FedCloud client has these subcommands:
