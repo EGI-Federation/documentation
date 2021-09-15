@@ -156,8 +156,12 @@ VO ensuring its accuracy and integrity.&lt;/p>
 &lt;p>In order to join any of the organisational groups in your NGI, you will need to
 go through the following steps in order:&lt;/p>
 &lt;h3 id="authentication">Authentication&lt;/h3>
-&lt;p>The authentication in EGI infrastructure works either with X509 personal
-certificates or through federated identities using &lt;a href="../../check-in">Check-in&lt;/a>.&lt;/p>
+&lt;p>In general the authentication in EGI infrastructure works either with X509 personal
+certificates or through federated identities using &lt;a href="../../check-in">Check-in&lt;/a>.
+For some services (HTC and Storage) the access is granted only by using a X509
+personal certificate due to legacy reasons: the process of moving the authentication
+and authorisation mechanism to federated identities has started but it will takes time
+before having everything compliant with federated identities.&lt;/p>
 &lt;h4 id="obtaining-a-x509-personal-certificate">Obtaining a X509 personal certificate&lt;/h4>
 &lt;p>If you do not already have a X509 personal certificate
 &lt;a href="https://www.eugridpma.org/members/worldmap/">the EUGridPMA worlmap&lt;/a> provides a
@@ -179,7 +183,9 @@ asked to login through EGI Check-in.&lt;/p>
 &lt;p>It is recommended to join the &lt;a href="https://wiki.egi.eu/wiki/Dteam_vo">dteam VO&lt;/a> at
 the &lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/">dteam Registration&lt;/a> page. You
 should request group membership for &lt;code>/dteam&lt;/code> and &lt;code>/dteam/YOUR_NGI&lt;/code>. The dteam
-group manager will then be notified and review your application.&lt;/p>
+group manager will then be notified and review your application. The membership
+to dteam VO is possible only by using a X09 personal certificate and it is useful
+to test the RCs and to debug related issues.&lt;/p>
 &lt;h3 id="requesting-gocdb-access">Requesting GOCDB access&lt;/h3>
 &lt;ul>
 &lt;li>Read
