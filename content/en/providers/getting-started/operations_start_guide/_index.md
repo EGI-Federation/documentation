@@ -184,7 +184,7 @@ in sharing a common goal, are given authority to use a set of resources. Each VO
 member signs the VO Acceptable Usage Policy (AUP) (during registration) which is
 the policy describing the goals of the VO thereby defining the expected and
 acceptable use of the resources by the users of the VO. User documentation can
-be found [in the users section](../../users/) and
+be found [in the users section](../../../users/) and
 [in the EGI Wiki](https://wiki.egi.eu/wiki/User_Documentation).
 
 #### VO manager
