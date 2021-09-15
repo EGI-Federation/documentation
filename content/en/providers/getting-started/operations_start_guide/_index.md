@@ -50,7 +50,10 @@ The following sections covers the roles that are commonly involved in the
 operations of the EGI Infrastructure. The correspondent
 [roles defined in Configuration Database (GOCDB)](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles)
 give specific rights in the Configuration Database itself and in other EGI
-services. Other terms and definitions can be found in the
+services. There are roles whose scope is limited to the operation of a RC.
+A number of other roles act on a higher level, involving the operations 
+activities related either to the NGI (Regional level) or to the EGI infrastructure
+as a whole (Project level). Other terms and definitions can be found in the
 [EGI Glossary](https://go.egi.eu/glossary).
 
 ### Resource Centre level
