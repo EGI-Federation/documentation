@@ -19,13 +19,15 @@ Resources are geographically distributed and are contributed by
 [Resource Centres](https://ims.egi.eu/display/EGIG/Resource+Centre). A Resource
 Centre is the smallest resource administration domain within EGI. It can be
 either localized or geographically distributed. A Resource Centre is also known
-as a “site”. It provides a minimum set of local or remote IT Services compliant
-to well-defined IT Capabilities necessary to make resources accessible to
-authorised Users such as HTC, Cloud Compute, Storage, Data Access, etc. Access
-is granted by exposing common interfaces to users.
+as a _site_. It provides a minimum set of local or remote IT Services, such as
+High Throughput Compute (HTC), Cloud Compute, Storage and Data Transfer,
+compliant to well-defined IT Capabilities necessary to make resources accessible
+to authorised users. Users can access the services using common interfaces.
 
-A Resource Infrastructure federates one or more Resource Centres to constitute a
-homogeneous operation domain, and the
+A
+[Resource Infrastructure](https://ims.egi.eu/display/EGIG/Resource+Infrastructure)
+federates one or more Resource Centres to constitute a homogeneous operational
+domain, and the
 [Resource Infrastructure Provider](https://ims.egi.eu/display/EGIG/Resource+Infrastructure+Provider)
 is the legal organisation that is responsible of establishing, managing and of
 operating directly or indirectly the operational services to an agreed level of
@@ -33,7 +35,7 @@ quality needed by the Resource Centres and the user community. It holds the
 responsibility of integrating them in EGI to enable uniform resource access and
 sharing for the benefit of their consuming end-users. Examples of a Resource
 infrastructure Provider are the
-[European Intergovernmental Research Organisations(EIRO)](https://ims.egi.eu/display/EGIG/European+Intergovernmental+Research+Organisation)
+[European Intergovernmental Research Organisations (EIRO)](https://ims.egi.eu/display/EGIG/European+Intergovernmental+Research+Organisation)
 and the [NGIs](https://ims.egi.eu/display/EGIG/NGI).
 
 In Europe, Resource Centres are required to be affiliated to the respective
@@ -44,29 +46,30 @@ provide a single contact point at the national level.
 
 ## Roles
 
-The following describes the roles that are commonly found in the EGI
-Infrastructure and Operations. The correspondent
-[roles defined in GOCDB](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles)
-give specific rights in the GOCDB itself and in other EGI services. Other terms
-and definitions can be found in the [EGI Glossary](https://go.egi.eu/glossary).
+The following sections covers the roles that are commonly involved in the
+operations of the EGI Infrastructure. The correspondent
+[roles defined in Configuration Database (GOCDB)](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles)
+give specific rights in the Configuration Database itself and in other EGI
+services. Other terms and definitions can be found in the
+[EGI Glossary](https://go.egi.eu/glossary).
 
 ### Resource Centre level
 
 #### Resource Centre Administrator
 
-An individual who is responsible for installing, operating, maintaining and
-supporting one or more Resources or IT Services in a Resource Centre. In the
-scope of Operations, RC administrators primarily receive and react on incidents
-at their RC and on service requests notified through tickets created on the
-[EGI Helpdesk service](https://ggus.eu). They should respond to the tickets in a
-suitable time frame as defined in the
-[RC OLA document](https://documents.egi.eu/document/31) and be aware of the
-alarms at their site, eg. through the
-[operations dashboard](https://operations-portal.egi.eu). Sites must only
-operate supported middleware versions. This implies upgrading it from time to
-time. Emergency releases are treated in a special way. RC Administrators will
-also need to react to security issues that are at a global level, but affect
-their site. See
+An individual responsible for installing, operating, maintaining and supporting
+one or more Resources or IT Services in a Resource Centre. In the scope of
+Operations, Resource Centres (RC) administrators primarily receive and react on
+incidents at their Resource Centre and on service requests notified through
+tickets created on the [EGI Helpdesk service](../../../internal/helpdesk). They
+should respond to the tickets in a suitable time frame as defined in the
+[Resource Centre Operational Level Agreement (OLA)](https://documents.egi.eu/document/31)
+and be aware of the alarms at their site, eg. through the
+[Operations Dashboard](https://operations-portal.egi.eu). Sites must only
+operate supported middleware versions. This implies upgrading it regularly.
+Emergency releases are treated in a special way. Resource Centre Administrators
+must react to security issues that are at a global level, but affect their site.
+See
 [SEC03 EGI-CSIRT Critical Vulnerability Handling](https://wiki.egi.eu/wiki/SEC03_EGI-CSIRT_Critical_Vulnerability_Handling).
 
 #### Resource Centre Operations Manager
@@ -74,89 +77,102 @@ their site. See
 An individual who leads the Resource Centre operations, who is the official
 technical contact person in the connected organisation, and who is locally
 supported by a team of Resource Centre Administrators. The Resource Centre
-Operations Manager is responsible for the site at the political and legal level
-and for signing the Operational Level Agreement
-([OLA](https://documents.egi.eu/public/ShowDocument?docid=31)) between the RC
-and its hosting NGI. The RC Operations Manager is also responsible for enforcing
-the EGI policies and procedures by the Resource Centre and for assigning and
-approving the other site roles in the GOCDB. Further, s/he should ensure that
-administrators are subscribed to relevant mailing lists.
+Operations Manager is responsible for the site at the political and legal levels
+and for signing the
+[Operational Level Agreement](https://documents.egi.eu/public/ShowDocument?docid=31))
+between the Resource Centre and its hosting NGI. The Resource Centre Operations
+Manager is also responsible for enforcing the EGI policies and procedures by the
+Resource Centre and for assigning and approving the other site roles in the
+Configuration Database. Further, they should ensure that administrators are
+subscribed to the relevant mailing lists.
 
 #### Resource Centre Security Officer
 
 The person responsible for keeping the site compliant with the
-[Security policies](https://wiki.egi.eu/wiki/EGI_CSIRT:Policies). She/he is also
-the primary contact for the NGI Security officer and EGI CSIRT. The Site
-Security Officer deals with security incidents and shall respond to enquiries in
-a timely fashion as defined in the collection of
+[EGI security policies](https://wiki.egi.eu/wiki/EGI_CSIRT:Policies). They are
+the primary contact for the NGI Security officer and
+[EGI Computer Security Incident Response Team (CSIRT)](https://csirt.egi.eu).
+The Site Security Officer deals with security incidents and shall respond to
+enquiries in a timely fashion as defined in the collection of
 [security procedures and policies](https://wiki.egi.eu/wiki/EGI_CSIRT:Policies).
 
 ### Regional level
 
 #### Regional Operator on Duty (ROD)
 
-A team responsible for solving problems/incidents in the infrastructure
-according to agreed procedures. ROD (teams) monitor the RCs in their region,
-react to incidents identified by the monitoring tools, and oversee incidents and
-related problems through to their resolution. They ensure that incidents are
-properly recorded and that the solutions progress according to specified time
-lines. They also provide support to RCs and VOs as needed and provide
-informational flow to oversight bodies in cases of non-responsive RCs. They
-ensure that all necessary information is available to all parties. The team is
-provided by each NGI and requires procedural knowledge on the process (rather
-than technical skills) for their work. New ROD team members are required to read
-the
+A team responsible for solving problems and incidents in the infrastructure
+according to agreed procedures. ROD teams monitor the Resource Centres in their
+region, react to incidents identified by the monitoring tools, and oversee
+incidents and related problems through to their resolution. They ensure that
+incidents are properly recorded and that the solutions progress according to
+specified time lines. They also provide support to Resource Centres and Virtual
+Organisations (VOs) and provide support to oversight bodies in cases of
+unresponsive Resource Centres. They ensure that all the necessary information is
+available to all parties. The team is provided by each NGI and requires
+procedural knowledge on the process (rather than technical skills) for their
+work. New ROD team members are required to read the
 [ROD Welcome page](https://wiki.egi.eu/wiki/Regional_Operator_on_Duty_welcome)
 and be familiar with
 [ROD wiki page](https://wiki.egi.eu/wiki/Regional_Operator_on_Duty).
 
 #### NGI Security officer
 
-The member of EGI-CSIRT IRTF (Incident Response Task Force) currently on shift.
-Further information can be found at the
-[CSIRT:IRTF](https://wiki.egi.eu/wiki/EGI_CSIRT:IRTF) page. The role of the IRTF
-team is to handle day to day operational security issues and coordinate
-_Computer Security Incident Response_ across the EGI infrastructure. NGIs and
-Sites **MUST** respond in a timely manner to its requests and alerts.
+An NGI Security Officer is responsible for overseeing the security related
+aspects of the operations of the NGI.
+
+NGIs and Sites **MUST** respond in a timely manner to the security requests and
+alerts coming from the [EGI CSIRT](#egi-csirt) and [EGI IRTF](#egi-irtf).
 
 #### NGI Operations manager
 
-NGI operations manager is the contact point for all operational matters and
+The NGI Operations manager is the contact point for all operational matters and
 represents the NGI within the
-[Operations Management Board](https://confluence.egi.eu/display/EGIBG/Operations+Management+Board).
+[Operations Management Board (OMB)](https://confluence.egi.eu/display/EGIBG/Operations+Management+Board).
 
-S/he is mainly responsible for:
+They are mainly responsible for:
 
-- keeping the NGI entry in the GOCDB up to date and for managing the status of
-  all sites under that NGI, and ensuring that that information is also kept
-  current
+- keeping up to date the NGI entry in the Configuration Database and managing
+  the status of all sites under their NGI, and ensuring their information is
+  also kept current
 - addressing problems with Site availability or reliability. The reports are
-  issued on a monthly basis and the NGI operations manager has 10 days to
+  issued on a monthly basis and the NGI operations managers have 10 days to
   respond to identified problems
 - attending regular
-  [Operations-Management-Board (OMB) meetings](https://indico.egi.eu/category/19/)
+  [Operations Management Board meetings](https://indico.egi.eu/category/19/)
 
 All NGI operations management responsibilities are listed in the
-[RP OLA document](https://documents.egi.eu/document/463).
+[Resource Infrastructure Provider OLA document](https://documents.egi.eu/document/463).
 
 ### Project level
 
 #### Chief Operations Officer
 
-Chief Operations Officer leads EGI Operations, and is responsible for
+The Chief Operations Officer leads EGI Operations, and is responsible for
 coordinating the operations of the infrastructure across the project.
 
 #### EGI CSIRT
 
-[EGI CSIRT](https://wiki.egi.eu/wiki/EGI_CSIRT:Main_Page) is an official
-security team coordinator and contact point at project level.
+[EGI CSIRT](https://csirt.egi.eu) is the official security coordination team and
+contact point at project level.
 
-#### EGI Foundation Operations team
+##### EGI IRTF
 
-It is the team responsible of
-[coordinating and supporting the operations activities](https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight)
-of all the EGI Infrastructure and it is provided by the
-[EGI Foundation](https://ims.egi.eu/display/EGIG/EGI+Foundation)
+The role of EGI CSIRT's Incident Response Team for the Federation (IRTF) team is
+to handle day to day operational security issues and coordinate _Computer
+Security Incident Response_ across the EGI infrastructure.
+
+#### EGI CSIRT Officer
+
+The member of EGI Incident Response Team for the Federation (IRTF) currently on
+shift.
+
+#### EGI Foundation SDIS team
+
+The [EGI Foundation](https://ims.egi.eu/display/EGIG/EGI+Foundation) Service
+Delivery and Information Security (SDIS) team, formerly known as the EGI
+Operations team, is responsible of
+[coordinating and supporting the operational activities](https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight)
+of all the EGI Infrastructure.
 
 #### VO
 
