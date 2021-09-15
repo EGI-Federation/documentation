@@ -249,9 +249,8 @@ to test the RCs and to debug related issues.
 - Go to the [Configuration Database](https://goc.egi.eu/) and follow
   [the instruction](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles)
 
-All new members **need to notify their NGI operations manager** about their role
-request, as the Configuration Database currently does not send any notification
-about pending requests.
+All members **should notify their NGI operations manager** about their role
+requests, to be sure they are considered on time.
 
 ### Registering into GGUS
 
