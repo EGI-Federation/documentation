@@ -24,9 +24,9 @@ High Throughput Compute (HTC), Cloud Compute, Storage and Data Transfer,
 compliant to well-defined IT Capabilities necessary to make resources accessible
 to authorised users. Users can access the services using common interfaces.
 
-A
+The EGI Federation is a
 [Resource Infrastructure](https://ims.egi.eu/display/EGIG/Resource+Infrastructure)
-federates one or more Resource Centres to constitute a homogeneous operational
+federating Resource Centres to constitute a homogeneous operational
 domain, and the
 [Resource Infrastructure Provider](https://ims.egi.eu/display/EGIG/Resource+Infrastructure+Provider)
 is the legal organisation that is responsible of establishing, managing and of
