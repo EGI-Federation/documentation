@@ -206,10 +206,12 @@ Administrators respectively. Please ensure that you subscribe to them. Depending
 on your role ask your NGI operations manager or Site operations manager to have
 you included on the necessary mailing lists if there is no automatic
 subscription process.&lt;/p>
-&lt;p>NGI operations manager should contact &lt;a href="mailto:operations@egi.eu">operations@egi.eu&lt;/a> and state that wish to
+&lt;p>NGI operations manager should contact &lt;code>operations@egi.eu&lt;/code> and state that wish to
 be subscribed to noc-managers mailing list &lt;code>noc-managers@mailman.egi.eu&lt;/code>.&lt;/p>
 &lt;h2 id="documentation">Documentation&lt;/h2>
-&lt;p>Documentation relevant to EGI operations can also found at
+&lt;p>Procedures and policies are accessible on the
+&lt;a href="https://confluence.egi.eu/display/EGIPP/EGI+Federation+Procedures">EGI Policies and Procedures space&lt;/a>.
+Additional documentation relevant to EGI operations is available at
 &lt;a href="https://wiki.egi.eu/wiki/Documentation">EGI Documentation wiki page&lt;/a>.&lt;/p>
 &lt;h2 id="tools">Tools&lt;/h2>
 &lt;p>A list of services relevant to EGI operations can be found at
