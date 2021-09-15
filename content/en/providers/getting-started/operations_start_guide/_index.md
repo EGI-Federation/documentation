@@ -176,19 +176,21 @@ of all the EGI Infrastructure.
 
 #### VO
 
-A Virtual Organisation (VO) is a group of users and, optionally, resources,
-often not bound to a single institution or national borders, who, by reason of
-their common membership and in sharing a common goal, are given authority to use
-a set of resources. Each VO member signs the VO AUP (during registration) which
-is the policy document describing the goals of the VO thereby defining the
-expected and acceptable use of the Grid by the users of the VO. User
-documentation can be found [here](https://wiki.egi.eu/wiki/User_Documentation)
-and [here](https://docs.egi.eu/users/)
+A
+[Virtual Organisation (VO)](https://ims.egi.eu/display/EGIG/Virtual+organisation)
+is a group of users and, optionally, resources, often not bound to a single
+institution or national borders, who, by reason of their common membership and
+in sharing a common goal, are given authority to use a set of resources. Each VO
+member signs the VO Acceptable Usage Policy (AUP) (during registration) which is
+the policy describing the goals of the VO thereby defining the expected and
+acceptable use of the resources by the users of the VO. User documentation can
+be found [in the users section](../../users/) and
+[in the EGI Wiki](https://wiki.egi.eu/wiki/User_Documentation).
 
 #### VO manager
 
-An individual responsible for the membership registry of the VO including its
-accuracy and integrity.
+An individual responsible for the management of the membership registry of the
+VO ensuring its accuracy and integrity.
 
 ## Joining operations
 
@@ -198,18 +200,18 @@ go through the following steps in order:
 ### Authentication
 
 The authentication in EGI infrastructure works either with X509 personal
-certificates or through federated identities
+certificates or through federated identities using [Check-in](../../check-in).
 
 #### Obtaining a X509 personal certificate
 
 If you do not already have a X509 personal certificate
-[this page](https://www.eugridpma.org/members/worldmap/) provides a map of all
-certification authorities according to country (or NGI). Select your country on
-the map to find out who is your local CA. Follow the procedure for your local CA
-to request a certificate. When you have received your certificate, install it
-into your web browser.
+[the EUGridPMA worlmap](https://www.eugridpma.org/members/worldmap/) provides a
+map of all certification authorities according to the country (or NGI). Select
+your country on the map to find out who is your local CA. Follow the procedure
+of your local CA to request a certificate. When you have received your
+certificate, install it into your web browser.
 
-If case of setting up new Resource Center please request for Host certificate.
+If case of setting up a new Resource Centre please request Host certificates.
 
 EUGridPMA provides
 [a web page allowing to test your certificate](https://www.eugridpma.org/your-identity/).
@@ -219,9 +221,9 @@ Please use this resource and contact your CA if your certificate does not work.
 
 As soon as you try to access an EGI service with your federated identity, you
 will be requested to register an account in EGI Check-in if not existing yet.
-[On this page you will find a guide](https://docs.egi.eu/users/check-in/signup/)
-explaining how to sign up for an EGI account. If you already own an account, you
-will be simply asked to login through EGI Check-in.
+The [Check-in sign up guide](../../../users/check-in/signup/) explains how to
+sign up for an EGI account. If you already own an account, you will be simply
+asked to login through EGI Check-in.
 
 ### Joining dteam VO
 
@@ -235,18 +237,18 @@ group manager will then be notified and review your application.
 - Read
   [Input System User Documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation)
   first.
-- Go to the [GOCDB instance](https://goc.egi.eu/) and follow
+- Go to the [Configuration Database](https://goc.egi.eu/) and follow
   [the instruction](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles)
 
 All new members **need to notify their NGI operations manager** about their role
-request, as GOCDB currently '''does not '''send any notification about pending
-requests.
+request, as the Configuration Database currently does not send any notification
+about pending requests.
 
 ### Registering into GGUS
 
 To register into GGUS please follow the
 [Central GGUS registration](https://ggus.eu/?mode=register) link. GGUS can be
-accessed either with your X509 personal certificate or with your fedewrated
+accessed either with your X509 personal certificate or with your federated
 identity. Do not forget to apply for
 [the support role](https://ggus.eu/?mode=register) as well. (The GGUS support
 staff will approve you quickly as they get the notification automatically). To
