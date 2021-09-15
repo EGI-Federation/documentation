@@ -39,7 +39,10 @@ provide a single contact point at the national level.&lt;/p>
 operations of the EGI Infrastructure. The correspondent
 &lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles">roles defined in Configuration Database (GOCDB)&lt;/a>
 give specific rights in the Configuration Database itself and in other EGI
-services. Other terms and definitions can be found in the
+services. There are roles whose scope is limited to the operation of a RC.
+A number of other roles act on a higher level, involving the operations
+activities related either to the NGI (Regional level) or to the EGI infrastructure
+as a whole (Project level). Other terms and definitions can be found in the
 &lt;a href="https://go.egi.eu/glossary">EGI Glossary&lt;/a>.&lt;/p>
 &lt;h3 id="resource-centre-level">Resource Centre level&lt;/h3>
 &lt;h4 id="resource-centre-administrator">Resource Centre Administrator&lt;/h4>
