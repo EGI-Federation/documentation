@@ -2,64 +2,69 @@
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The Operations Start Guide will help you start with EGI Operations duties. It
 covers the responsibilities of the various parties involved in the running of
-the &lt;a href="https://ims.egi.eu/display/EGIG/EGI+Infrastructure">EGI infrastructure&lt;/a>
-and guide how to join operations. As a newcomer, you need to understand the
+the &lt;a href="https://ims.egi.eu/display/EGIG/EGI+Infrastructure">EGI infrastructure&lt;/a> and
+guide how to join operations. As a newcomer, you need to understand the
 structure of the infrastructure and roles of operators at different levels.
 Reading the whole document will give you a complete overall picture of daily
 operations within EGI.&lt;/p>
 &lt;h2 id="resource-centres-and-resource-infrastructures">Resource Centres and Resource Infrastructures&lt;/h2>
-&lt;p>Resources are geographically distributed and are contributed by &lt;a href="https://ims.egi.eu/display/EGIG/Resource+Centre">Resource Centres&lt;/a>.
-A Resource Centre is the smallest resource administration domain within EGI. It can
-be either localized or geographically distributed. A Resource Centre is also known
-as a “site”. It provides a minimum set of local or remote IT Services compliant to
-well-defined IT Capabilities necessary to make resources accessible to authorised
-Users such as HTC, Cloud Compute, Storage, Data Access, etc. Access is granted by
-exposing common interfaces to users.&lt;/p>
+&lt;p>Resources are geographically distributed and are contributed by
+&lt;a href="https://ims.egi.eu/display/EGIG/Resource+Centre">Resource Centres&lt;/a>. A Resource
+Centre is the smallest resource administration domain within EGI. It can be
+either localized or geographically distributed. A Resource Centre is also known
+as a “site”. It provides a minimum set of local or remote IT Services compliant
+to well-defined IT Capabilities necessary to make resources accessible to
+authorised Users such as HTC, Cloud Compute, Storage, Data Access, etc. Access
+is granted by exposing common interfaces to users.&lt;/p>
 &lt;p>A Resource Infrastructure federates one or more Resource Centres to constitute a
-homogeneous operation domain, and the &lt;a href="https://ims.egi.eu/display/EGIG/Resource+Infrastructure+Provider">Resource Infrastructure Provider&lt;/a> is the legal
-organisation that is responsible of establishing, managing and of operating directly
-or indirectly the operational services to an agreed level of quality needed by the
-Resource Centres and the user community. It holds the responsibility of integrating
-them in EGI to enable uniform resource access and sharing for the benefit of their
-consuming end-users. Examples of a Resource infrastructure Provider are the &lt;a href="https://ims.egi.eu/display/EGIG/European+Intergovernmental+Research+Organisation">European
-Intergovernmental Research Organisations(EIRO)&lt;/a> and the
-&lt;a href="https://ims.egi.eu/display/EGIG/NGI">NGIs&lt;/a>.&lt;/p>
-&lt;p>In Europe, Resource Centres are required to be affiliated to the respective NGIs, which
-(a) have a mandate to represent their national users community in all matters falling
-within the scope of the EGI Infrastructure, and (b) are the only organization having the
-mandate described in (a) for its country and thus provide a single contact point at the
-national level.&lt;/p>
+homogeneous operation domain, and the
+&lt;a href="https://ims.egi.eu/display/EGIG/Resource+Infrastructure+Provider">Resource Infrastructure Provider&lt;/a>
+is the legal organisation that is responsible of establishing, managing and of
+operating directly or indirectly the operational services to an agreed level of
+quality needed by the Resource Centres and the user community. It holds the
+responsibility of integrating them in EGI to enable uniform resource access and
+sharing for the benefit of their consuming end-users. Examples of a Resource
+infrastructure Provider are the
+&lt;a href="https://ims.egi.eu/display/EGIG/European+Intergovernmental+Research+Organisation">European Intergovernmental Research Organisations(EIRO)&lt;/a>
+and the &lt;a href="https://ims.egi.eu/display/EGIG/NGI">NGIs&lt;/a>.&lt;/p>
+&lt;p>In Europe, Resource Centres are required to be affiliated to the respective
+NGIs, which (a) have a mandate to represent their national users community in
+all matters falling within the scope of the EGI Infrastructure, and (b) are the
+only organization having the mandate described in (a) for its country and thus
+provide a single contact point at the national level.&lt;/p>
 &lt;h2 id="roles">Roles&lt;/h2>
-&lt;p>The following describes the roles that are commonly found in the EGI Infrastructure and
-Operations. The correspondent [roles defined in GOCDB]
-(&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles">https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles&lt;/a>)
-give specific rights in the GOCDB itself and in other EGI services. Other terms and
+&lt;p>The following describes the roles that are commonly found in the EGI
+Infrastructure and Operations. The correspondent [roles defined in GOCDB]
+(&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles">https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles&lt;/a>) give
+specific rights in the GOCDB itself and in other EGI services. Other terms and
 definitions can be found in the &lt;a href="https://go.egi.eu/glossary">EGI Glossary&lt;/a>.&lt;/p>
 &lt;h3 id="resource-centre-level">Resource Centre level&lt;/h3>
 &lt;h4 id="resource-centre-administrator">Resource Centre Administrator&lt;/h4>
-&lt;p>An individual who is responsible for installing, operating, maintaining and supporting
-one or more Resources or IT Services in a Resource Centre. In the scope of
-Operations, RC administrators primarily receive and react on incidents at their RC and on
-service requests notified through tickets created on the [EGI Helpdesk service]
-(&lt;a href="http://ggus.eu">http://ggus.eu&lt;/a>). They should respond to the tickets in a suitable time frame as defined in the
-&lt;a href="https://documents.egi.eu/document/31">RC OLA document&lt;/a> and be aware of the alarms at their
-site, eg. through the &lt;a href="https://operations-portal.egi.eu">operations dashboard&lt;/a>. Sites
-must only operate supported middleware versions. This implies upgrading it from time to
-time. Emergency releases are treated in a special way. RC Administrators will also
-need to react to security issues that are at a global level, but affect their site.
-See
+&lt;p>An individual who is responsible for installing, operating, maintaining and
+supporting one or more Resources or IT Services in a Resource Centre. In the
+scope of Operations, RC administrators primarily receive and react on incidents
+at their RC and on service requests notified through tickets created on the [EGI
+Helpdesk service] (&lt;a href="http://ggus.eu">http://ggus.eu&lt;/a>). They should respond to the tickets in a
+suitable time frame as defined in the
+&lt;a href="https://documents.egi.eu/document/31">RC OLA document&lt;/a> and be aware of the
+alarms at their site, eg. through the
+&lt;a href="https://operations-portal.egi.eu">operations dashboard&lt;/a>. Sites must only
+operate supported middleware versions. This implies upgrading it from time to
+time. Emergency releases are treated in a special way. RC Administrators will
+also need to react to security issues that are at a global level, but affect
+their site. See
 &lt;a href="https://wiki.egi.eu/wiki/SEC03_EGI-CSIRT_Critical_Vulnerability_Handling">SEC03 EGI-CSIRT Critical Vulnerability Handling&lt;/a>.&lt;/p>
 &lt;h4 id="resource-centre-operations-manager">Resource Centre Operations Manager&lt;/h4>
-&lt;p>An individual who leads the Resource Centre operations, who is the official technical
-contact person in the connected organisation, and who is locally supported by a team
-of Resource Centre Administrators.
-The Resource Centre Operations Manager is responsible for the site at the political
-and legal level and for signing the Operational Level Agreement
+&lt;p>An individual who leads the Resource Centre operations, who is the official
+technical contact person in the connected organisation, and who is locally
+supported by a team of Resource Centre Administrators. The Resource Centre
+Operations Manager is responsible for the site at the political and legal level
+and for signing the Operational Level Agreement
 (&lt;a href="https://documents.egi.eu/public/ShowDocument?docid=31">OLA&lt;/a>) between the RC
-and its hosting NGI. The RC Operations Manager is
-also responsible for enforcing the EGI policies and procedures by the Resource Centre
-and for assigning and approving the other site roles in the GOCDB.
-Further, s/he should ensure that administrators are subscribed to relevant mailing lists.&lt;/p>
+and its hosting NGI. The RC Operations Manager is also responsible for enforcing
+the EGI policies and procedures by the Resource Centre and for assigning and
+approving the other site roles in the GOCDB. Further, s/he should ensure that
+administrators are subscribed to relevant mailing lists.&lt;/p>
 &lt;h4 id="resource-centre-security-officer">Resource Centre Security Officer&lt;/h4>
 &lt;p>The person responsible for keeping the site compliant with the
 &lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Policies">Security policies&lt;/a>. She/he is also
@@ -72,13 +77,14 @@ a timely fashion as defined in the collection of
 &lt;p>A team responsible for solving problems/incidents in the infrastructure
 according to agreed procedures. ROD (teams) monitor the RCs in their region,
 react to incidents identified by the monitoring tools, and oversee incidents and
-related problems through to their resolution. They ensure that incidents are properly
-recorded and that the solutions progress according to specified time lines. They also
-provide support to RCs and VOs as needed and provide informational flow to oversight
-bodies in cases of non-responsive RCs. They ensure that all necessary
-information is available to all parties. The team is provided by each NGI and
-requires procedural knowledge on the process (rather than technical skills) for
-their work. New ROD team members are required to read the
+related problems through to their resolution. They ensure that incidents are
+properly recorded and that the solutions progress according to specified time
+lines. They also provide support to RCs and VOs as needed and provide
+informational flow to oversight bodies in cases of non-responsive RCs. They
+ensure that all necessary information is available to all parties. The team is
+provided by each NGI and requires procedural knowledge on the process (rather
+than technical skills) for their work. New ROD team members are required to read
+the
 &lt;a href="https://wiki.egi.eu/wiki/Regional_Operator_on_Duty_welcome">ROD Welcome page&lt;/a>
 and be familiar with
 &lt;a href="https://wiki.egi.eu/wiki/Regional_Operator_on_Duty">ROD wiki page&lt;/a>.&lt;/p>
@@ -114,8 +120,10 @@ coordinating the operations of the infrastructure across the project.&lt;/p>
 &lt;p>&lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Main_Page">EGI CSIRT&lt;/a> is an official
 security team coordinator and contact point at project level.&lt;/p>
 &lt;h4 id="egi-foundation-operations-team">EGI Foundation Operations team&lt;/h4>
-&lt;p>It is the team responsible of &lt;a href="https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight">coordinating and supporting the operations activities&lt;/a>
-of all the EGI Infrastructure and it is provided by the &lt;a href="https://ims.egi.eu/display/EGIG/EGI+Foundation">EGI Foundation&lt;/a>&lt;/p>
+&lt;p>It is the team responsible of
+&lt;a href="https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight">coordinating and supporting the operations activities&lt;/a>
+of all the EGI Infrastructure and it is provided by the
+&lt;a href="https://ims.egi.eu/display/EGIG/EGI+Foundation">EGI Foundation&lt;/a>&lt;/p>
 &lt;h4 id="vo">VO&lt;/h4>
 &lt;p>A Virtual Organisation (VO) is a group of users and, optionally, resources,
 often not bound to a single institution or national borders, who, by reason of
@@ -123,8 +131,8 @@ their common membership and in sharing a common goal, are given authority to use
 a set of resources. Each VO member signs the VO AUP (during registration) which
 is the policy document describing the goals of the VO thereby defining the
 expected and acceptable use of the Grid by the users of the VO. User
-documentation can be found &lt;a href="https://wiki.egi.eu/wiki/User_Documentation">here&lt;/a> and
-&lt;a href="https://docs.egi.eu/users/">here&lt;/a>&lt;/p>
+documentation can be found &lt;a href="https://wiki.egi.eu/wiki/User_Documentation">here&lt;/a>
+and &lt;a href="https://docs.egi.eu/users/">here&lt;/a>&lt;/p>
 &lt;h4 id="vo-manager">VO manager&lt;/h4>
 &lt;p>An individual responsible for the membership registry of the VO including its
 accuracy and integrity.&lt;/p>
@@ -146,11 +154,11 @@ into your web browser.&lt;/p>
 &lt;a href="https://www.eugridpma.org/your-identity/">a web page allowing to test your certificate&lt;/a>.
 Please use this resource and contact your CA if your certificate does not work.&lt;/p>
 &lt;h4 id="create-a-federated-identity-registration-in-egi-check-in">Create a federated identity: registration in EGI Check-in&lt;/h4>
-&lt;p>As soon as you try to access an EGI service with your federated identity, you will be
-requested to register an account in EGI Check-in if not existing yet.
+&lt;p>As soon as you try to access an EGI service with your federated identity, you
+will be requested to register an account in EGI Check-in if not existing yet.
 &lt;a href="https://docs.egi.eu/users/check-in/signup/">On this page you will find a guide&lt;/a>
-explaining how to sign up for an EGI account.
-If you already own an account, you will be simply asked to login through EGI Check-in.&lt;/p>
+explaining how to sign up for an EGI account. If you already own an account, you
+will be simply asked to login through EGI Check-in.&lt;/p>
 &lt;h3 id="joining-dteam-vo">Joining dteam VO&lt;/h3>
 &lt;p>It is recommended to join the &lt;a href="https://wiki.egi.eu/wiki/Dteam_vo">dteam VO&lt;/a> at
 the &lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/">dteam Registration&lt;/a> page. You
@@ -170,11 +178,13 @@ requests.&lt;/p>
 &lt;h3 id="registering-into-ggus">Registering into GGUS&lt;/h3>
 &lt;p>To register into GGUS please follow the
 &lt;a href="https://ggus.eu/?mode=register">Central GGUS registration&lt;/a> link. GGUS can be
-accessed either with your X509 personal certificate or with your fedewrated identity.
-Do not forget to apply for &lt;a href="https://ggus.eu/?mode=register">the support role&lt;/a> as well. (The GGUS support
-staff will approve you quickly as they get the notification automatically).
-To get the supporter role with your federated identity, please enroll to the &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">GGUS
-Supporters group&lt;/a> in Check-in.&lt;/p>
+accessed either with your X509 personal certificate or with your fedewrated
+identity. Do not forget to apply for
+&lt;a href="https://ggus.eu/?mode=register">the support role&lt;/a> as well. (The GGUS support
+staff will approve you quickly as they get the notification automatically). To
+get the supporter role with your federated identity, please enroll to the
+&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">GGUS Supporters group&lt;/a>
+in Check-in.&lt;/p>
 &lt;p>Some NGIs also have a local helpdesk or a regional GGUS. Ask your NGI operations
 manager if how to register to them.&lt;/p>
 &lt;h3 id="subscribing-to-mailing-lists">Subscribing to mailing lists&lt;/h3>
