@@ -202,8 +202,12 @@ go through the following steps in order:
 
 ### Authentication
 
-The authentication in EGI infrastructure works either with X509 personal
+In general the authentication in EGI infrastructure works either with X509 personal
 certificates or through federated identities using [Check-in](../../check-in).
+For some services (HTC and Storage) the access is granted only by using a X509
+personal certificate due to legacy reasons: the process of moving the authentication
+and authorisation mechanism to federated identities has started but it will takes time
+before having everything compliant with federated identities.
 
 #### Obtaining a X509 personal certificate
 
@@ -233,7 +237,9 @@ asked to login through EGI Check-in.
 It is recommended to join the [dteam VO](https://wiki.egi.eu/wiki/Dteam_vo) at
 the [dteam Registration](https://voms2.hellasgrid.gr:8443/voms/dteam/) page. You
 should request group membership for `/dteam` and `/dteam/YOUR_NGI`. The dteam
-group manager will then be notified and review your application.
+group manager will then be notified and review your application. The membership
+to dteam VO is possible only by using a X09 personal certificate and it is useful
+to test the RCs and to debug related issues.
 
 ### Requesting GOCDB access
 
