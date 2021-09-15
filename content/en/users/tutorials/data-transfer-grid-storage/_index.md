@@ -11,6 +11,7 @@ description: >
 
 This tutorial describes the EGI Data Transfer using FTS transfers services and
 WebFTS. In the following paragraps you will learn how to:
+
 - use the [FTS](#fts-client-usage) command line client
 - use the [WebFTS](#using-the-webfts-data-transfer-interface) web interface
 
@@ -205,9 +206,10 @@ that opens:
 And select the desired VO. Once the delegation is set it's possible to move to
 the following steps.
 
-**Warning**: please be careful and avoid sharing this information with any third
-party or saving this information in plain text. WebFTS uses the key to acquire a
-proxy certificate on your behalf as described previously and does not store it.
+{{% alert title="Warning" color="warning" %}} please be careful and avoid
+sharing this information with any third party or saving this information in
+plain text. WebFTS uses the key to acquire a proxy certificate on your behalf as
+described previously and does not store it. {{% /alert %}}
 
 ### Step 2 Submitting a transfer
 
