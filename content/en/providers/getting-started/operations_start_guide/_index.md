@@ -267,12 +267,14 @@ on your role ask your NGI operations manager or Site operations manager to have
 you included on the necessary mailing lists if there is no automatic
 subscription process.
 
-NGI operations manager should contact operations@egi.eu and state that wish to
+NGI operations manager should contact `operations@egi.eu` and state that wish to
 be subscribed to noc-managers mailing list `noc-managers@mailman.egi.eu`.
 
 ## Documentation
 
-Documentation relevant to EGI operations can also found at
+Procedures and policies are accessible on the
+[EGI Policies and Procedures space](https://confluence.egi.eu/display/EGIPP/EGI+Federation+Procedures).
+Additional documentation relevant to EGI operations is available at
 [EGI Documentation wiki page](https://wiki.egi.eu/wiki/Documentation).
 
 ## Tools
