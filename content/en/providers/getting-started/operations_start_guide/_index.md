@@ -26,8 +26,8 @@ to authorised users. Users can access the services using common interfaces.
 
 The EGI Federation is a
 [Resource Infrastructure](https://ims.egi.eu/display/EGIG/Resource+Infrastructure)
-federating Resource Centres to constitute a homogeneous operational
-domain, and the
+federating Resource Centres to constitute a homogeneous operational domain, and
+the
 [Resource Infrastructure Provider](https://ims.egi.eu/display/EGIG/Resource+Infrastructure+Provider)
 is the legal organisation that is responsible of establishing, managing and of
 operating directly or indirectly the operational services to an agreed level of
@@ -50,10 +50,10 @@ The following sections covers the roles that are commonly involved in the
 operations of the EGI Infrastructure. The correspondent
 [roles defined in Configuration Database (GOCDB)](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles)
 give specific rights in the Configuration Database itself and in other EGI
-services. There are roles whose scope is limited to the operation of a RC.
-A number of other roles act on a higher level, involving the operations 
-activities related either to the NGI (Regional level) or to the EGI infrastructure
-as a whole (global level). Other terms and definitions can be found in the
+services. There are roles whose scope is limited to the operation of a RC. A
+number of other roles act on a higher level, involving the operations activities
+related either to the NGI (Regional level) or to the EGI infrastructure as a
+whole (global level). Other terms and definitions can be found in the
 [EGI Glossary](https://go.egi.eu/glossary).
 
 ### Resource Centre level
@@ -202,12 +202,13 @@ go through the following steps in order:
 
 ### Authentication
 
-In general the authentication in EGI infrastructure works either with X509 personal
-certificates or through federated identities using [Check-in](../../check-in).
-For some services (HTC and Storage) the access is granted only by using a X509
-personal certificate due to legacy reasons: the process of moving the authentication
-and authorisation mechanism to federated identities has started but it will takes time
-before having everything compliant with federated identities.
+In general the authentication in EGI infrastructure works either with X509
+personal certificates or through federated identities using
+[Check-in](../../check-in). For some services (HTC and Storage) the access is
+granted only by using a X509 personal certificate due to legacy reasons: the
+process of moving the authentication and authorisation mechanism to federated
+identities has started but it will takes time before having everything compliant
+with federated identities.
 
 #### Obtaining a X509 personal certificate
 
@@ -238,8 +239,8 @@ It is recommended to join the [dteam VO](https://wiki.egi.eu/wiki/Dteam_vo) at
 the [dteam Registration](https://voms2.hellasgrid.gr:8443/voms/dteam/) page. You
 should request group membership for `/dteam` and `/dteam/YOUR_NGI`. The dteam
 group manager will then be notified and review your application. The membership
-to dteam VO is possible only by using a X09 personal certificate and it is useful
-to test the RCs and to debug related issues.
+to dteam VO is possible only by using a X09 personal certificate and it is
+useful to test the RCs and to debug related issues.
 
 ### Requesting GOCDB access
 
