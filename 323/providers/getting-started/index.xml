@@ -136,40 +136,42 @@ Operations team, is responsible of
 &lt;a href="https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight">coordinating and supporting the operational activities&lt;/a>
 of all the EGI Infrastructure.&lt;/p>
 &lt;h4 id="vo">VO&lt;/h4>
-&lt;p>A Virtual Organisation (VO) is a group of users and, optionally, resources,
-often not bound to a single institution or national borders, who, by reason of
-their common membership and in sharing a common goal, are given authority to use
-a set of resources. Each VO member signs the VO AUP (during registration) which
-is the policy document describing the goals of the VO thereby defining the
-expected and acceptable use of the Grid by the users of the VO. User
-documentation can be found &lt;a href="https://wiki.egi.eu/wiki/User_Documentation">here&lt;/a>
-and &lt;a href="https://docs.egi.eu/users/">here&lt;/a>&lt;/p>
+&lt;p>A
+&lt;a href="https://ims.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation (VO)&lt;/a>
+is a group of users and, optionally, resources, often not bound to a single
+institution or national borders, who, by reason of their common membership and
+in sharing a common goal, are given authority to use a set of resources. Each VO
+member signs the VO Acceptable Usage Policy (AUP) (during registration) which is
+the policy describing the goals of the VO thereby defining the expected and
+acceptable use of the resources by the users of the VO. User documentation can
+be found &lt;a href="../../users/">in the users section&lt;/a> and
+&lt;a href="https://wiki.egi.eu/wiki/User_Documentation">in the EGI Wiki&lt;/a>.&lt;/p>
 &lt;h4 id="vo-manager">VO manager&lt;/h4>
-&lt;p>An individual responsible for the membership registry of the VO including its
-accuracy and integrity.&lt;/p>
+&lt;p>An individual responsible for the management of the membership registry of the
+VO ensuring its accuracy and integrity.&lt;/p>
 &lt;h2 id="joining-operations">Joining operations&lt;/h2>
 &lt;p>In order to join any of the organisational groups in your NGI, you will need to
 go through the following steps in order:&lt;/p>
 &lt;h3 id="authentication">Authentication&lt;/h3>
 &lt;p>The authentication in EGI infrastructure works either with X509 personal
-certificates or through federated identities&lt;/p>
+certificates or through federated identities using &lt;a href="../../check-in">Check-in&lt;/a>.&lt;/p>
 &lt;h4 id="obtaining-a-x509-personal-certificate">Obtaining a X509 personal certificate&lt;/h4>
 &lt;p>If you do not already have a X509 personal certificate
-&lt;a href="https://www.eugridpma.org/members/worldmap/">this page&lt;/a> provides a map of all
-certification authorities according to country (or NGI). Select your country on
-the map to find out who is your local CA. Follow the procedure for your local CA
-to request a certificate. When you have received your certificate, install it
-into your web browser.&lt;/p>
-&lt;p>If case of setting up new Resource Center please request for Host certificate.&lt;/p>
+&lt;a href="https://www.eugridpma.org/members/worldmap/">the EUGridPMA worlmap&lt;/a> provides a
+map of all certification authorities according to the country (or NGI). Select
+your country on the map to find out who is your local CA. Follow the procedure
+of your local CA to request a certificate. When you have received your
+certificate, install it into your web browser.&lt;/p>
+&lt;p>If case of setting up a new Resource Centre please request Host certificates.&lt;/p>
 &lt;p>EUGridPMA provides
 &lt;a href="https://www.eugridpma.org/your-identity/">a web page allowing to test your certificate&lt;/a>.
 Please use this resource and contact your CA if your certificate does not work.&lt;/p>
 &lt;h4 id="create-a-federated-identity-registration-in-egi-check-in">Create a federated identity: registration in EGI Check-in&lt;/h4>
 &lt;p>As soon as you try to access an EGI service with your federated identity, you
 will be requested to register an account in EGI Check-in if not existing yet.
-&lt;a href="https://docs.egi.eu/users/check-in/signup/">On this page you will find a guide&lt;/a>
-explaining how to sign up for an EGI account. If you already own an account, you
-will be simply asked to login through EGI Check-in.&lt;/p>
+The &lt;a href="../../../users/check-in/signup/">Check-in sign up guide&lt;/a> explains how to
+sign up for an EGI account. If you already own an account, you will be simply
+asked to login through EGI Check-in.&lt;/p>
 &lt;h3 id="joining-dteam-vo">Joining dteam VO&lt;/h3>
 &lt;p>It is recommended to join the &lt;a href="https://wiki.egi.eu/wiki/Dteam_vo">dteam VO&lt;/a> at
 the &lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/">dteam Registration&lt;/a> page. You
@@ -180,16 +182,16 @@ group manager will then be notified and review your application.&lt;/p>
 &lt;li>Read
 &lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation">Input System User Documentation&lt;/a>
 first.&lt;/li>
-&lt;li>Go to the &lt;a href="https://goc.egi.eu/">GOCDB instance&lt;/a> and follow
+&lt;li>Go to the &lt;a href="https://goc.egi.eu/">Configuration Database&lt;/a> and follow
 &lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles">the instruction&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>All new members &lt;strong>need to notify their NGI operations manager&lt;/strong> about their role
-request, as GOCDB currently &amp;lsquo;&amp;lsquo;&amp;lsquo;does not &amp;lsquo;&amp;lsquo;&amp;lsquo;send any notification about pending
-requests.&lt;/p>
+request, as the Configuration Database currently does not send any notification
+about pending requests.&lt;/p>
 &lt;h3 id="registering-into-ggus">Registering into GGUS&lt;/h3>
 &lt;p>To register into GGUS please follow the
 &lt;a href="https://ggus.eu/?mode=register">Central GGUS registration&lt;/a> link. GGUS can be
-accessed either with your X509 personal certificate or with your fedewrated
+accessed either with your X509 personal certificate or with your federated
 identity. Do not forget to apply for
 &lt;a href="https://ggus.eu/?mode=register">the support role&lt;/a> as well. (The GGUS support
 staff will approve you quickly as they get the notification automatically). To
