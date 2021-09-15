@@ -18,8 +18,8 @@ compliant to well-defined IT Capabilities necessary to make resources accessible
 to authorised users. Users can access the services using common interfaces.&lt;/p>
 &lt;p>The EGI Federation is a
 &lt;a href="https://ims.egi.eu/display/EGIG/Resource+Infrastructure">Resource Infrastructure&lt;/a>
-federating Resource Centres to constitute a homogeneous operational
-domain, and the
+federating Resource Centres to constitute a homogeneous operational domain, and
+the
 &lt;a href="https://ims.egi.eu/display/EGIG/Resource+Infrastructure+Provider">Resource Infrastructure Provider&lt;/a>
 is the legal organisation that is responsible of establishing, managing and of
 operating directly or indirectly the operational services to an agreed level of
@@ -39,10 +39,10 @@ provide a single contact point at the national level.&lt;/p>
 operations of the EGI Infrastructure. The correspondent
 &lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles">roles defined in Configuration Database (GOCDB)&lt;/a>
 give specific rights in the Configuration Database itself and in other EGI
-services. There are roles whose scope is limited to the operation of a RC.
-A number of other roles act on a higher level, involving the operations
-activities related either to the NGI (Regional level) or to the EGI infrastructure
-as a whole (global level). Other terms and definitions can be found in the
+services. There are roles whose scope is limited to the operation of a RC. A
+number of other roles act on a higher level, involving the operations activities
+related either to the NGI (Regional level) or to the EGI infrastructure as a
+whole (global level). Other terms and definitions can be found in the
 &lt;a href="https://go.egi.eu/glossary">EGI Glossary&lt;/a>.&lt;/p>
 &lt;h3 id="resource-centre-level">Resource Centre level&lt;/h3>
 &lt;h4 id="resource-centre-administrator">Resource Centre Administrator&lt;/h4>
@@ -156,12 +156,13 @@ VO ensuring its accuracy and integrity.&lt;/p>
 &lt;p>In order to join any of the organisational groups in your NGI, you will need to
 go through the following steps in order:&lt;/p>
 &lt;h3 id="authentication">Authentication&lt;/h3>
-&lt;p>In general the authentication in EGI infrastructure works either with X509 personal
-certificates or through federated identities using &lt;a href="../../check-in">Check-in&lt;/a>.
-For some services (HTC and Storage) the access is granted only by using a X509
-personal certificate due to legacy reasons: the process of moving the authentication
-and authorisation mechanism to federated identities has started but it will takes time
-before having everything compliant with federated identities.&lt;/p>
+&lt;p>In general the authentication in EGI infrastructure works either with X509
+personal certificates or through federated identities using
+&lt;a href="../../check-in">Check-in&lt;/a>. For some services (HTC and Storage) the access is
+granted only by using a X509 personal certificate due to legacy reasons: the
+process of moving the authentication and authorisation mechanism to federated
+identities has started but it will takes time before having everything compliant
+with federated identities.&lt;/p>
 &lt;h4 id="obtaining-a-x509-personal-certificate">Obtaining a X509 personal certificate&lt;/h4>
 &lt;p>If you do not already have a X509 personal certificate
 &lt;a href="https://www.eugridpma.org/members/worldmap/">the EUGridPMA worlmap&lt;/a> provides a
@@ -184,8 +185,8 @@ asked to login through EGI Check-in.&lt;/p>
 the &lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/">dteam Registration&lt;/a> page. You
 should request group membership for &lt;code>/dteam&lt;/code> and &lt;code>/dteam/YOUR_NGI&lt;/code>. The dteam
 group manager will then be notified and review your application. The membership
-to dteam VO is possible only by using a X09 personal certificate and it is useful
-to test the RCs and to debug related issues.&lt;/p>
+to dteam VO is possible only by using a X09 personal certificate and it is
+useful to test the RCs and to debug related issues.&lt;/p>
 &lt;h3 id="requesting-gocdb-access">Requesting GOCDB access&lt;/h3>
 &lt;ul>
 &lt;li>Read
@@ -194,9 +195,8 @@ first.&lt;/li>
 &lt;li>Go to the &lt;a href="https://goc.egi.eu/">Configuration Database&lt;/a> and follow
 &lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles">the instruction&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>All new members &lt;strong>need to notify their NGI operations manager&lt;/strong> about their role
-request, as the Configuration Database currently does not send any notification
-about pending requests.&lt;/p>
+&lt;p>All members &lt;strong>should notify their NGI operations manager&lt;/strong> about their role
+requests, to be sure they are considered on time.&lt;/p>
 &lt;h3 id="registering-into-ggus">Registering into GGUS&lt;/h3>
 &lt;p>To register into GGUS please follow the
 &lt;a href="https://ggus.eu/?mode=register">Central GGUS registration&lt;/a> link. GGUS can be
