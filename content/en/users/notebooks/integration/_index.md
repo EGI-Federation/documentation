@@ -49,13 +49,13 @@ A direct benefit of the integration with access tokens in EGI Notebooks is that
 you can easily work with the [fedcloud](https://fedcloudclient.fedcloud.eu/)
 client. Once logged into the EGI Notebooks open a terminal and run:
 
-```bash
+```shell
 export OIDC_ACCESS_TOKEN=`cat /var/run/secrets/egi.eu/access_token`
 fedcloud token check
 ```
 
-If the `fedcloud` command is not available, please follow instructions
-[here](https://fedcloudclient.fedcloud.eu/quickstart.html).
+If the `fedcloud` command is not available, please follow the
+[getting started](../../getting-started/cli/).
 
 ## D4Science
 
