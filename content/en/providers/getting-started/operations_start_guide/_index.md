@@ -265,8 +265,8 @@ get the supporter role with your federated identity, please enroll to the
 [GGUS Supporters group](https://aai.egi.eu/registry/co_petitions/start/coef:69)
 in Check-in.
 
-Some NGIs also have a local helpdesk or a regional GGUS. Ask your NGI operations
-manager if how to register to them.
+If your NGI also have a local helpdesk interfaced with GGUS, please ensure that
+you are properly registered also there: your NGI managers will take care of that.
 
 ### Subscribing to mailing lists
 
