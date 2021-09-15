@@ -45,10 +45,10 @@ provide a single contact point at the national level.
 ## Roles
 
 The following describes the roles that are commonly found in the EGI
-Infrastructure and Operations. The correspondent [roles defined in GOCDB]
-(https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles) give
-specific rights in the GOCDB itself and in other EGI services. Other terms and
-definitions can be found in the [EGI Glossary](https://go.egi.eu/glossary).
+Infrastructure and Operations. The correspondent
+[roles defined in GOCDB](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles)
+give specific rights in the GOCDB itself and in other EGI services. Other terms
+and definitions can be found in the [EGI Glossary](https://go.egi.eu/glossary).
 
 ### Resource Centre level
 
@@ -57,8 +57,8 @@ definitions can be found in the [EGI Glossary](https://go.egi.eu/glossary).
 An individual who is responsible for installing, operating, maintaining and
 supporting one or more Resources or IT Services in a Resource Centre. In the
 scope of Operations, RC administrators primarily receive and react on incidents
-at their RC and on service requests notified through tickets created on the [EGI
-Helpdesk service] (http://ggus.eu). They should respond to the tickets in a
+at their RC and on service requests notified through tickets created on the
+[EGI Helpdesk service](https://ggus.eu). They should respond to the tickets in a
 suitable time frame as defined in the
 [RC OLA document](https://documents.egi.eu/document/31) and be aware of the
 alarms at their site, eg. through the
@@ -187,7 +187,7 @@ certificates or through federated identities
 #### Obtaining a X509 personal certificate
 
 If you do not already have a X509 personal certificate
-[this page](http://www.eugridpma.org/members/worldmap/) provides a map of all
+[this page](https://www.eugridpma.org/members/worldmap/) provides a map of all
 certification authorities according to country (or NGI). Select your country on
 the map to find out who is your local CA. Follow the procedure for your local CA
 to request a certificate. When you have received your certificate, install it
@@ -219,7 +219,7 @@ group manager will then be notified and review your application.
 - Read
   [Input System User Documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation)
   first.
-- Go to the [GOCDB instance](http://goc.egi.eu/) and follow
+- Go to the [GOCDB instance](https://goc.egi.eu/) and follow
   [the instruction](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles)
 
 All new members **need to notify their NGI operations manager** about their role
