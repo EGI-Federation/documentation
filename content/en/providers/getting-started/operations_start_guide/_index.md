@@ -53,7 +53,7 @@ give specific rights in the Configuration Database itself and in other EGI
 services. There are roles whose scope is limited to the operation of a RC.
 A number of other roles act on a higher level, involving the operations 
 activities related either to the NGI (Regional level) or to the EGI infrastructure
-as a whole (Project level). Other terms and definitions can be found in the
+as a whole (global level). Other terms and definitions can be found in the
 [EGI Glossary](https://go.egi.eu/glossary).
 
 ### Resource Centre level
@@ -146,7 +146,7 @@ They are mainly responsible for:
 All NGI operations management responsibilities are listed in the
 [Resource Infrastructure Provider OLA document](https://documents.egi.eu/document/463).
 
-### Project level
+### Global level
 
 #### Chief Operations Officer
 
