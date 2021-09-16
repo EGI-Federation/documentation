@@ -75,10 +75,10 @@ subscribed to the relevant mailing lists.&lt;/p>
 &lt;h4 id="resource-centre-security-officer">Resource Centre Security Officer&lt;/h4>
 &lt;p>The person responsible for keeping the site compliant with the
 &lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Policies">EGI security policies&lt;/a>. They are
-the primary contact for the NGI Security officer and
-&lt;a href="https://csirt.egi.eu">EGI Computer Security Incident Response Team (CSIRT)&lt;/a>.
-The Site Security Officer deals with security incidents and shall respond to
-enquiries in a timely fashion as defined in the collection of
+the primary contact for the &lt;a href="ngi-security-officer">NGI Security officer&lt;/a> and
+&lt;a href="#egi-csirt">EGI Computer Security Incident Response Team (CSIRT)&lt;/a>. The Site
+Security Officer deals with security incidents and shall respond to enquiries in
+a timely fashion as defined in the collection of
 &lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Policies">security procedures and policies&lt;/a>.&lt;/p>
 &lt;h3 id="regional-level">Regional level&lt;/h3>
 &lt;h4 id="regional-operator-on-duty-rod">Regional Operator on Duty (ROD)&lt;/h4>
@@ -97,10 +97,19 @@ work. New ROD team members are required to read the
 and be familiar with
 &lt;a href="https://wiki.egi.eu/wiki/Regional_Operator_on_Duty">ROD wiki page&lt;/a>.&lt;/p>
 &lt;h4 id="ngi-security-officer">NGI Security officer&lt;/h4>
-&lt;p>An NGI Security Officer is responsible for overseeing the security related
-aspects of the operations of the NGI.&lt;/p>
-&lt;p>NGIs and Sites &lt;strong>MUST&lt;/strong> respond in a timely manner to the security requests and
-alerts coming from the &lt;a href="#egi-csirt">EGI CSIRT&lt;/a> and &lt;a href="#egi-irtf">EGI IRTF&lt;/a>.&lt;/p>
+&lt;p>The NGI Security Officer is member of the &lt;a href="#egi-csirt">EGI-CSIRT&lt;/a>.&lt;/p>
+&lt;p>The NGI Security Officer coordinates the security activities within its NGI and
+serves as the primary contact for all security related requests, in particular
+from &lt;a href="#egi-csirt-s-irtf">EGI-CSIRT&amp;rsquo;s IRTF&lt;/a> concerning issues with the sites
+within the NGI.&lt;/p>
+&lt;p>Further, the NGI Security Officer is responsible for overseeing the security
+related aspects of the operations of the NGI and coordinates the security
+activities within its NGI.&lt;/p>
+&lt;p>NGIs and Sites &lt;em>MUST&lt;/em> respond in a timely manner to the security requests and
+alerts coming from the EGI-CSIRT&amp;rsquo;s IRTF.&lt;/p>
+&lt;p>The NGI Security Officer name and contact address needs to be registered in the
+&lt;a href="https://goc.egi.eu">Configuration Database (GOCDB)&lt;/a> and the information
+maintained by the NGI.&lt;/p>
 &lt;h4 id="ngi-operations-manager">NGI Operations manager&lt;/h4>
 &lt;p>The NGI Operations manager is the contact point for all operational matters and
 represents the NGI within the
@@ -122,16 +131,27 @@ respond to identified problems&lt;/li>
 &lt;h4 id="chief-operations-officer">Chief Operations Officer&lt;/h4>
 &lt;p>The Chief Operations Officer leads EGI Operations, and is responsible for
 coordinating the operations of the infrastructure across the project.&lt;/p>
-&lt;h4 id="egi-csirt">EGI CSIRT&lt;/h4>
-&lt;p>&lt;a href="https://csirt.egi.eu">EGI CSIRT&lt;/a> is the official security coordination team and
+&lt;h4 id="egi-csirt">EGI-CSIRT&lt;/h4>
+&lt;p>&lt;a href="https://csirt.egi.eu">EGI-CSIRT&lt;/a> is the official security coordination team and
 contact point at project level.&lt;/p>
-&lt;h5 id="egi-irtf">EGI IRTF&lt;/h5>
-&lt;p>The role of EGI CSIRT&amp;rsquo;s Incident Response Team for the Federation (IRTF) team is
-to handle day to day operational security issues and coordinate &lt;em>Computer
-Security Incident Response&lt;/em> across the EGI infrastructure.&lt;/p>
-&lt;h4 id="egi-csirt-officer">EGI CSIRT Officer&lt;/h4>
-&lt;p>The member of EGI Incident Response Team for the Federation (IRTF) currently on
-shift.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://csirt.egi.eu">EGI-CSIRT website&lt;/a>&lt;/li>
+&lt;li>[EGI-CSIRT profile according to
+RFC-2350](&lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:RFC_2350">https://wiki.egi.eu/wiki/EGI_CSIRT:RFC_2350&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf">EGI-CSIRT Terms of References&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h5 id="egi-csirts-irtf">EGI-CSIRT&amp;rsquo;s IRTF&lt;/h5>
+&lt;p>The Incident Response Team for the Federation (IRTF) is a subgroup of EGI-CSIRT
+which acts as the primary contact for all security related requests concerning
+the Federation and the projects the EGI Foundation is involved in.&lt;/p>
+&lt;p>EGI-CSIRTs IRTF provides the Security Officer on Duty role on a weekly rota
+basis. Details are in the
+&lt;a href="https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf">EGI-CSIRT Terms of References&lt;/a>.&lt;/p>
+&lt;h4 id="egi-security-officer">EGI Security Officer&lt;/h4>
+&lt;p>The EGI Security Officer, having the EGI CSIRT Officer role in the Configuration
+Database, is leading and coordinating EGI-CSIRT.&lt;/p>
+&lt;p>The role of the EGI Security Officer is provided by a member of EGI-CSIRT&amp;rsquo;s IRTF
+on a weekly rota basis.&lt;/p>
 &lt;h4 id="egi-foundation-sdis-team">EGI Foundation SDIS team&lt;/h4>
 &lt;p>The &lt;a href="https://ims.egi.eu/display/EGIG/EGI+Foundation">EGI Foundation&lt;/a> Service
 Delivery and Information Security (SDIS) team, formerly known as the EGI
@@ -208,7 +228,8 @@ get the supporter role with your federated identity, please enroll to the
 &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">GGUS Supporters group&lt;/a>
 in Check-in.&lt;/p>
 &lt;p>If your NGI also have a local helpdesk interfaced with GGUS, please ensure that
-you are properly registered also there: your NGI managers will take care of that.&lt;/p>
+you are properly registered also there: your NGI managers will take care of
+that.&lt;/p>
 &lt;h3 id="subscribing-to-mailing-lists">Subscribing to mailing lists&lt;/h3>
 &lt;p>NGIs and Sites have local mailing lists for ROD team members and Site
 Administrators respectively. Please ensure that you subscribe to them. Depending
