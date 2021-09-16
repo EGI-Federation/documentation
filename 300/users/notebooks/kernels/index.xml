@@ -13,7 +13,7 @@ stack.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>DIRAC / Python 2: A python 2 kernel that includes a DIRAC installation for
-interacting with the &lt;a href="../../workload-manager">EGI Workload Manager&lt;/a> service.&lt;/p>
+interacting with the &lt;a href="../../../workload-manager">EGI Workload Manager&lt;/a> service.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Julia: The Julia programming language with the libraries described in
@@ -127,8 +127,8 @@ of interoperable and open formats.&lt;/p>
 &lt;p>This &lt;a href="https://www.youtube.com/watch?v=Hbf1yg32sso">short video&lt;/a> and this
 &lt;a href="https://youtu.be/zT9aW1xHCJU?t=167s">webinar&lt;/a> explains how to access EGI Data
 Services from MATLAB in detail. Data from different data providers can be
-accessed from the &lt;a href="../../datahub/">DataHub&lt;/a>. More information on Data Management
-from Notebooks and persistent storage can be found &lt;a href="../data">here&lt;/a>.&lt;/p>
+accessed from the &lt;a href="../../../datahub/">DataHub&lt;/a>. More information on Data Management
+from Notebooks and persistent storage can be found &lt;a href="../../data">here&lt;/a>.&lt;/p>
 &lt;h2 id="matlab-support-for-data-formats">MATLAB support for data formats&lt;/h2>
 &lt;p>MATLAB supports several
 &lt;a href="https://www.mathworks.com/help/matlab/scientific-data.html">scientific&lt;/a> and
