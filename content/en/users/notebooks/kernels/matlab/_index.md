@@ -3,7 +3,7 @@ title: "MATLAB"
 type: docs
 description: >
   MATLAB in EGI Notebooks
-weight: 5
+weight: 20
 ---
 
 EGI offers MATLAB on the cloud using the
