@@ -93,7 +93,7 @@ subscribed to the relevant mailing lists.
 
 The person responsible for keeping the site compliant with the
 [EGI security policies](https://wiki.egi.eu/wiki/EGI_CSIRT:Policies). They are
-the primary contact for the [NGI Security officer](ngi-security-officer) and
+the primary contact for the [NGI Security officer](#ngi-security-officer) and
 [EGI Computer Security Incident Response Team (CSIRT)](#egi-csirt). The Site
 Security Officer deals with security incidents and shall respond to enquiries in
 a timely fashion as defined in the collection of
