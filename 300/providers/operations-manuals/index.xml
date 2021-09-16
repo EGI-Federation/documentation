@@ -336,7 +336,6 @@ site within the Grid Information Provider system.&lt;/p>
 &lt;th>Example&lt;/th>
 &lt;th>Type&lt;/th>
 &lt;th>Notes&lt;/th>
-&lt;th>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
@@ -345,84 +344,72 @@ site within the Grid Information Provider system.&lt;/p>
 &lt;td>EGI&lt;/td>
 &lt;td>[#validgrid List of valid grid names]&lt;/td>
 &lt;td>Multiple ones can be defined.&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>WLCG_TIER&lt;/td>
 &lt;td>1&lt;/td>
 &lt;td>Tier level of site in WLCG context.&lt;/td>
 &lt;td>Either 0, 1 , 2 , 3 , 4&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>WLCG_PARENT&lt;/td>
 &lt;td>UK-T1-RAL&lt;/td>
 &lt;td>Name of the higher (administrative) tier site in WLCG&lt;/td>
 &lt;td>The WLCG_NAME of the site at a higher tier with WLCG&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>WLCG_NAME&lt;/td>
 &lt;td>IT-ATLAS-federation&lt;/td>
 &lt;td>[#lcgnames Valid WLCG Names]&lt;/td>
 &lt;td>An official WLCG name.&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>WLCG_NAMEICON&lt;/td>
 &lt;td>&lt;code>https://example.com/tier2.png&lt;/code>&lt;/td>
 &lt;td>Valid URL&lt;/td>
 &lt;td>URL to WLCGNAME icon, ideally 80x80 pixels.&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>EGEE_ROC&lt;/td>
 &lt;td>Russia&lt;/td>
 &lt;td>Valid federated Operations Centre name&lt;/td>
-&lt;td>Only applicable if your site is still part of a federated [[Glossary#Operations_Centre&lt;/td>
-&lt;td>Operations Centre]] (&amp;ldquo;ROC&amp;rdquo; according to the old EGEE terminology). Name MUST match the Operations Centre name declared in [https://goc.egi.eu/ GOCDB]. Note. If the site is now part of a NGI, then EGI_NGI MUST be used (see below).&lt;/td>
+&lt;td>Only applicable if your site is still part of a federated Operations Centre (&amp;ldquo;ROC&amp;rdquo; according to the old EGEE terminology). Name MUST match the Operations Centre name declared in &lt;a href="https://goc.egi.eu/">GOCDB&lt;/a>. Note. If the site is now part of a NGI, then EGI_NGI MUST be used (see below).&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>EGI_NGI&lt;/td>
 &lt;td>NGI_CZ&lt;/td>
 &lt;td>Valid NGI&lt;/td>
 &lt;td>Must agree with the GOC DB&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>EGEE_SERVICE&lt;/td>
 &lt;td>prod&lt;/td>
 &lt;td>prod, pps or cert&lt;/td>
 &lt;td>Which EGEE grid your site is part of, multiple attributes is okay. Obsolete in EGI.&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>OLDNAME&lt;/td>
 &lt;td>Bristol&lt;/td>
 &lt;td>text&lt;/td>
-&lt;td>If your !GlueSiteName changes at some point please record your old name here.&lt;/td>
-&lt;td>&lt;/td>
+&lt;td>If your !GlueSiteName changes at some point please record your old name here.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>ICON&lt;/td>
 &lt;td>&lt;code>https://example.com/icon.png&lt;/code>&lt;/td>
 &lt;td>Valid URL&lt;/td>
 &lt;td>Icon Image for your site, ideally 80x80 pixels&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>BLOG&lt;/td>
 &lt;td>&lt;code>https://scotgrid.blogspot.com/feeds/posts/default&lt;/code>&lt;/td>
 &lt;td>Valid RSS or Atom Feed&lt;/td>
 &lt;td>Your site blog if you have one&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>CONFIG&lt;/td>
 &lt;td>yaim&lt;/td>
 &lt;td>yaim, puppet, quattor, &amp;hellip;&lt;/td>
 &lt;td>The configuration tool(s) used at the site&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

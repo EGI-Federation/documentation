@@ -235,6 +235,9 @@ are provided by GRNET:&lt;/p>
 &lt;li>&lt;a href="https://md.aai.grnet.gr/feeds/edugain-sp-samlmd.xml">eduGAIN SP metadata&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="attribute-release">Attribute release&lt;/h3>
+&lt;!--
+// jscpd:ignore-start
+-->
 &lt;p>The SAML based Identity Provider of your Home Organisation or Community is
 expected to release a non-reassignable identifier that uniquely identifies the
 user within the scope of that organisation or community, along with a set of
@@ -280,6 +283,9 @@ additional information as described in the following table (see also
 &lt;/tbody>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length no-inline-html -->
+&lt;!--
+// jscpd:ignore-end
+-->
 &lt;h2 id="openid-connect-identity-provider">OpenID Connect Identity Provider&lt;/h2>
 &lt;p>Users in your community can sign into federated EGI applications through the
 Check-in service using your OpenID Connect or OAuth 2.0 based Identity Provider.&lt;/p>
@@ -302,6 +308,9 @@ by concatenating the string &lt;code>/.well-known/openid-configuration&lt;/code>
 following the
 &lt;a href="https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig">OpenID Connect Discovery 1.0 specification&lt;/a>.&lt;/p>
 &lt;h3 id="attribute-release-1">Attribute release&lt;/h3>
+&lt;!--
+// jscpd:ignore-start
+-->
 &lt;p>The OpenID Connect or OAuth 2.0 based Identity Provider of your Home
 Organisation or Community is expected to release a non-reassignable identifier
 that uniquely identifies the user within the scope of that organisation or
@@ -348,6 +357,9 @@ following table (see also
 &lt;/tbody>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length no-inline-html -->
+&lt;!--
+// jscpd:ignore-end
+-->
 &lt;h2 id="integration-success-stories">Integration success stories&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://wiki.egi.eu/wiki/EGI_AAI_integration_with_ELIXIR_AAI">EGI AAI integration with ELIXIR&lt;/a>&lt;/li>

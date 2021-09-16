@@ -278,10 +278,10 @@ sample code where a list of VMs is obtained for CESGA:&lt;/p>
 &lt;p>A direct benefit of the integration with access tokens in EGI Notebooks is that
 you can easily work with the &lt;a href="https://fedcloudclient.fedcloud.eu/">fedcloud&lt;/a>
 client. Once logged into the EGI Notebooks open a terminal and run:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>cat /var/run/secrets/egi.eu/access_token&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>cat /var/run/secrets/egi.eu/access_token&lt;span style="color:#4e9a06">`&lt;/span>
 fedcloud token check
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the &lt;code>fedcloud&lt;/code> command is not available, please follow instructions
-&lt;a href="https://fedcloudclient.fedcloud.eu/quickstart.html">here&lt;/a>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the &lt;code>fedcloud&lt;/code> command is not available, please follow the
+&lt;a href="../../getting-started/cli/">getting started&lt;/a>.&lt;/p>
 &lt;h2 id="d4science">D4Science&lt;/h2>
 &lt;p>If you are using a Notebooks instance integrated with D4Science, you can easily
 invoke DataMiner or any other D4Science functionality as the service will

@@ -275,8 +275,7 @@ $ git reset HEAD^
 &lt;a href="https://www.egi.eu/services/">EGI Services Portfolio&lt;/a>&lt;/li>
 &lt;li>Acronyms should be used only when it makes sense&lt;/li>
 &lt;li>Service names should never be replaced by acronyms&lt;/li>
-&lt;li>When introducing services, link to the public page of the service,
-if any:&lt;/li>
+&lt;li>When introducing services, link to the public page of the service, if any:&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">[&lt;span style="color:#204a87;font-weight:bold">EGI Cloud Compute&lt;/span>](&lt;span style="color:#c4a000">https://www.egi.eu/services/cloud-compute/&lt;/span>)
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="markdown-writing-guidelines">Markdown writing guidelines&lt;/h2>
@@ -285,7 +284,8 @@ if any:&lt;/li>
 &lt;a href="https://github.github.com/gfm/">GitHub Flavored Markdown&lt;/a>.&lt;/p>
 &lt;h3 id="basic-rules">Basic rules&lt;/h3>
 &lt;ul>
-&lt;li>Headings must start at level 2 (&lt;code>##&lt;/code>), as level 1 (&lt;code>#&lt;/code>) is the title of the page&lt;/li>
+&lt;li>Headings must start at level 2 (&lt;code>##&lt;/code>), as level 1 (&lt;code>#&lt;/code>) is the title of the
+page&lt;/li>
 &lt;li>Lines should be wrapped at 80 characters&lt;/li>
 &lt;li>Sentences must be separated by one space only&lt;/li>
 &lt;li>Indent is made with spaces, not with tabs&lt;/li>
@@ -294,11 +294,11 @@ if any:&lt;/li>
 &lt;li>Indent secondary (and following) level lists with 2 spaces&lt;/li>
 &lt;li>Lines must end with a Line Feed character (&lt;code>\n&lt;/code>)&lt;/li>
 &lt;li>Files must end with an empty line&lt;/li>
-&lt;li>Shell examples should include a prompt (&lt;code>$&lt;/code> or &lt;code>&amp;gt;&lt;/code>) in front of commands,
-to make it easy to understand which is the command and which is the output&lt;/li>
-&lt;li>Commands in shell examples should be broken into multiple lines of 80 characters
-or less, using a trailing backslash character (&lt;code>\&lt;/code>) on each line that continues
-on the next&lt;/li>
+&lt;li>Shell examples should include a prompt (&lt;code>$&lt;/code> or &lt;code>&amp;gt;&lt;/code>) in front of commands, to
+make it easy to understand which is the command and which is the output&lt;/li>
+&lt;li>Commands in shell examples should be broken into multiple lines of 80
+characters or less, using a trailing backslash character (&lt;code>\&lt;/code>) on each line
+that continues on the next&lt;/li>
 &lt;li>Never break command output in shell examples to multiple lines, instead use
 &lt;a href="#adding-exceptions-for-style-violations">style exceptions&lt;/a> when necessary&lt;/li>
 &lt;/ul>
@@ -321,26 +321,28 @@ Prettier can be integrated with
 &lt;p>Configuration is provided in &lt;code>.prettierrc&lt;/code>, options can be set as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">--print-width &lt;span style="color:#0000cf;font-weight:bold">80&lt;/span> --tab-width &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> --prose-wrap always
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>When a contribution is received (via a pull request), the proposed changes are
-checked using &lt;a href="https://github.com/EGI-Federation/documentation/tree/main/.github/workflows">various linters&lt;/a>.&lt;/p>
+checked using
+&lt;a href="https://github.com/EGI-Federation/documentation/tree/main/.github/workflows">various linters&lt;/a>.&lt;/p>
 &lt;h2 id="general-writing-guidelines">General writing guidelines&lt;/h2>
 &lt;p>Follow the guidelines below to ensure readability and consistency of the EGI
-documentation. These are based on the &lt;a href="https://docs.openstack.org/doc-contrib-guide/writing-style.html">OpenStack documentation
-writing style&lt;/a>
-guidelines, released under a &lt;a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons license&lt;/a>.&lt;/p>
+documentation. These are based on the
+&lt;a href="https://docs.openstack.org/doc-contrib-guide/writing-style.html">OpenStack documentation writing style&lt;/a>
+guidelines, released under a
+&lt;a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons license&lt;/a>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-Short and simple sentences are easier
-to read and understand.
+Short and simple sentences are easier to
+read and understand.
 &lt;/div>
 &lt;h3 id="use-standard-english">Use standard English&lt;/h3>
-&lt;p>Use standard British English (UK) throughout all technical
-publications. When in doubt about the spelling of a word, consult the
-Merriam-Webster’s Collegiate Dictionary and the
+&lt;p>Use standard British English (UK) throughout all technical publications. When in
+doubt about the spelling of a word, consult the Merriam-Webster’s Collegiate
+Dictionary and the
 &lt;a href="https://www.ibm.com/developerworks/library/styleguidelines/">IBM developerWorks editorial style guide&lt;/a>.&lt;/p>
 &lt;h3 id="be-clear-and-concise">Be clear and concise&lt;/h3>
-&lt;p>Follow the principles of minimalism. If you can describe an idea in one word,
-do not use two words. Eliminate all redundant modifiers, such as adjectives
-and adverbs.&lt;/p>
+&lt;p>Follow the principles of minimalism. If you can describe an idea in one word, do
+not use two words. Eliminate all redundant modifiers, such as adjectives and
+adverbs.&lt;/p>
 &lt;h3 id="write-objectively">Write objectively&lt;/h3>
 &lt;p>Do not use humor, jargon, exclamation marks, idioms, metaphors, and other
 colloquialisms.&lt;/p>
@@ -396,10 +398,10 @@ id="tabs-2-0" role="tabpanel" aria-labelled-by="tabs-2-0-tab">
 &lt;/div>
 &lt;p>However, passive voice is acceptable in the following situations:&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>Using active voice sounds like you are blaming the user. For example, you can
+&lt;li>Using active voice sounds like you are blaming the user. For example, you can
 use passive voice in an error message or troubleshooting content when the
-active subject is the user.
+active subject is the user.&lt;/li>
+&lt;/ul>
 &lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -428,11 +430,10 @@ id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;/div>
-&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The agent of action is unknown, or you want to de-emphasize the agent of
-action and emphasize the object on which the action is performed.
+&lt;ul>
+&lt;li>The agent of action is unknown, or you want to de-emphasize the agent of
+action and emphasize the object on which the action is performed.&lt;/li>
+&lt;/ul>
 &lt;ul class="nav nav-tabs" id="tabs-4" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -461,10 +462,9 @@ id="tabs-4-0" role="tabpanel" aria-labelled-by="tabs-4-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;/div>
-&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Recasting the sentence in active voice is wordy or awkward.
+&lt;ul>
+&lt;li>Recasting the sentence in active voice is wordy or awkward.&lt;/li>
+&lt;/ul>
 &lt;ul class="nav nav-tabs" id="tabs-5" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -493,9 +493,6 @@ id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;/div>
-&lt;/p>
-&lt;/li>
-&lt;/ul>
 &lt;h3 id="write-in-second-person">Write in second person&lt;/h3>
 &lt;p>Users are more engaged with documentation when you use second person (that is,
 you address the user as “you”).&lt;/p>
@@ -506,27 +503,27 @@ you address the user as “you”).&lt;/p>
 understood) and active voice helps to eliminate wordiness and confusion about
 who or what initiates an action, especially in procedural steps.&lt;/li>
 &lt;li>Using second person also avoids the use of gender-specific, third-person
-pronouns such as he, she, his, and hers. If you must use third person, use
-the pronouns they and their, but ensure that the pronoun matches the
-referenced noun in number.&lt;/li>
+pronouns such as he, she, his, and hers. If you must use third person, use the
+pronouns they and their, but ensure that the pronoun matches the referenced
+noun in number.&lt;/li>
 &lt;li>Use first person plural pronouns (we, our) judiciously. These pronouns
-emphasize the writer or EGI rather than the user, so before you use
-them, consider whether second person or imperative mood is more
-“user-friendly.” However, use “we recommend” rather than “it is recommended”
-or “EGI recommends”.&lt;/li>
+emphasize the writer or EGI rather than the user, so before you use them,
+consider whether second person or imperative mood is more “user-friendly.”
+However, use “we recommend” rather than “it is recommended” or “EGI
+recommends”.&lt;/li>
 &lt;/ul>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-You can use “we” in the place of
-EGI if necessary.
+You can use “we” in the place of EGI if
+necessary.
 &lt;/div>
 &lt;p>Do not use first person to avoid naming the product or to avoid using passive
-voice. If the product is performing the action, use third person (the product
-as an actor). If you want to de-emphasize the agent of action and emphasize the
+voice. If the product is performing the action, use third person (the product as
+an actor). If you want to de-emphasize the agent of action and emphasize the
 object on which the action is performed, use passive voice.&lt;/p>
-&lt;p>The first-person singular pronoun “I” is acceptable in the question part of
-FAQs and when authors of blogs or signed articles are describing their own
-actions or opinions.&lt;/p>
+&lt;p>The first-person singular pronoun “I” is acceptable in the question part of FAQs
+and when authors of blogs or signed articles are describing their own actions or
+opinions.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
 Do not switch person (point of
@@ -794,8 +791,8 @@ id="tabs-15-0" role="tabpanel" aria-labelled-by="tabs-15-0-tab">
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-You can also fix the ambiguity by
-placing a noun modifier immediately after the pronoun.
+You can also fix the ambiguity by placing
+a noun modifier immediately after the pronoun.
 &lt;/div>
 &lt;h3 id="do-not-split-infinitives">Do not split infinitives&lt;/h3>
 &lt;p>Do not place modifiers between “to” and the verb. Typically, placing an adverb
@@ -865,16 +862,16 @@ id="tabs-18-0" role="tabpanel" aria-labelled-by="tabs-18-0-tab">
 &lt;/div>
 &lt;/div>
 &lt;h3 id="use-consistent-terminology">Use consistent terminology&lt;/h3>
-&lt;p>Use consistent terms across all content. Avoid multiple variations or
-spellings to refer to the same service, function, UI element, and so on.&lt;/p>
+&lt;p>Use consistent terms across all content. Avoid multiple variations or spellings
+to refer to the same service, function, UI element, and so on.&lt;/p>
 &lt;h3 id="use-spelling-and-grammar-checking-tools">Use spelling and grammar checking tools&lt;/h3>
 &lt;p>Run text through spelling and grammar checking tools, if available. Correcting
 mistakes, especially to larger sections of new content, helps eliminate rework
 later.&lt;/p>
 &lt;h3 id="lists">Lists&lt;/h3>
 &lt;p>When reading a document for the first time, users scan through pages stopping
-only on the content that stands out, such as titles, lists, links, diagrams,
-and so on. Lists help to organize options, as well as help readers to find
+only on the content that stands out, such as titles, lists, links, diagrams, and
+so on. Lists help to organize options, as well as help readers to find
 information easily.&lt;/p>
 &lt;p>When listing items, follow these guidelines:&lt;/p>
 &lt;ul>
@@ -884,27 +881,27 @@ describe more than three options.&lt;/li>
 &lt;li>Use a &lt;strong>definition list&lt;/strong> to explain terms or describe command-line
 parameters, options, or arguments.&lt;/li>
 &lt;li>Use a colon at the end of the sentence that introduces a list.&lt;/li>
-&lt;li>Use the same grammatical structure (aka parallel structure) for all items
-in a list.&lt;/li>
+&lt;li>Use the same grammatical structure (aka parallel structure) for all items in a
+list.&lt;/li>
 &lt;li>Start each option with a capital letter.&lt;/li>
 &lt;/ul>
-&lt;p>When listing options in a paragraph, add &lt;em>and&lt;/em> or &lt;em>or&lt;/em> before the last item
-in a list. Use a serial (Oxford) comma before these conjunctions if they
-connect three or more items.&lt;/p>
+&lt;p>When listing options in a paragraph, add &lt;em>and&lt;/em> or &lt;em>or&lt;/em> before the last item in a
+list. Use a serial (Oxford) comma before these conjunctions if they connect
+three or more items.&lt;/p>
 &lt;h3 id="punctuation-in-lists">Punctuation in lists&lt;/h3>
 &lt;p>In bulleted lists:&lt;/p>
 &lt;ul>
 &lt;li>If you list individual words or phrases, do not add a period at the end of
 each list item.&lt;/li>
 &lt;li>If you use full sentences, add a period at the end of each sentence.&lt;/li>
-&lt;li>If your list includes both individual words or phrases and full sentences,
-be consistent and either add or do not add periods to all items.&lt;/li>
+&lt;li>If your list includes both individual words or phrases and full sentences, be
+consistent and either add or do not add periods to all items.&lt;/li>
 &lt;/ul>
 &lt;p>In numbered lists:&lt;/p>
 &lt;ul>
 &lt;li>Add periods at the end of steps.&lt;/li>
-&lt;li>If an item of a numbered list is followed by a code block that illustrates
-how to perform the step, use a colon at the end.&lt;/li>
+&lt;li>If an item of a numbered list is followed by a code block that illustrates how
+to perform the step, use a colon at the end.&lt;/li>
 &lt;/ul>
 &lt;h2 id="adding-exceptions-for-style-violations">Adding exceptions for style violations&lt;/h2>
 &lt;p>Successfully passing the checks is a firm requirement, but for the following
@@ -914,8 +911,8 @@ bypass &lt;strong>some checks&lt;/strong> in markdown files:&lt;/p>
 &lt;ul>
 &lt;li>When in-line HTML must be used (e.g. in tables, or when no other proper
 solution is available)&lt;/li>
-&lt;li>When the same procedure needs to be described for multiple platforms,
-and the automatic checker flags it as duplicate content&lt;/li>
+&lt;li>When the same procedure needs to be described for multiple platforms, and the
+automatic checker flags it as duplicate content&lt;/li>
 &lt;/ul>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
@@ -927,19 +924,18 @@ block of markdown code.
 &lt;p>In some specific cases it is impossible to use anything but in-line HTML tags:&lt;/p>
 &lt;ul>
 &lt;li>Presentation page leveraging bootstrap CSS classes or other advanced features&lt;/li>
-&lt;li>Using special formatting for the information presented (e.g. a list in a
-table cell)&lt;/li>
+&lt;li>Using special formatting for the information presented (e.g. a list in a table
+cell)&lt;/li>
 &lt;/ul>
-&lt;p>Blocks with in-line HTML tags should be preceded by a HTML comment starting
-with &lt;a href="https://github.com/DavidAnson/markdownlint#configuration">markdownlint-disable&lt;/a>
+&lt;p>Blocks with in-line HTML tags should be preceded by a HTML comment starting with
+&lt;a href="https://github.com/DavidAnson/markdownlint#configuration">markdownlint-disable&lt;/a>
 to disable the &lt;code>no-inline-html&lt;/code> check, as in the following example:&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 When having a table is not absolutely
 necessary, use a different construct to present the information.
 &lt;/div>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">
-&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- markdownlint-disable no-inline-html --&amp;gt;&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- markdownlint-disable no-inline-html --&amp;gt;&lt;/span>
 | Action | OCCI | OpenStack | This is a very long column with important data |
 | ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
 | List images | &lt;span style="color:#4e9a06">`occi -a list -r os_tpl`&lt;/span> | &lt;span style="color:#4e9a06">`openstack image list`&lt;/span> | &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Lorem&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>ipsum&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> |
@@ -955,15 +951,15 @@ to re-enable the &lt;code>no-inline-html&lt;/code> check.
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
 Always use the tag that is
-providing the proper semantic: e.g. for a list use &lt;code>&amp;lt;ul&amp;gt;&lt;/code> and &lt;code>&amp;lt;li&amp;gt;&lt;/code>,
-not &lt;code>&amp;lt;br /&amp;gt;&lt;/code>.
+providing the proper semantic: e.g. for a list use &lt;code>&amp;lt;ul&amp;gt;&lt;/code> and &lt;code>&amp;lt;li&amp;gt;&lt;/code>, not
+&lt;code>&amp;lt;br /&amp;gt;&lt;/code>.
 &lt;/div>
 &lt;h3 id="dealing-with-duplicate-content">Dealing with duplicate content&lt;/h3>
 &lt;p>When the same procedure needs to be described for multiple platforms, or when
-the same code has to be exemplified for multiple languages, it is possible
-that the automatic checkers will flag these as duplicates.&lt;/p>
-&lt;p>For example, describing the following procedure will result in duplicates
-being reported:&lt;/p>
+the same code has to be exemplified for multiple languages, it is possible that
+the automatic checkers will flag these as duplicates.&lt;/p>
+&lt;p>For example, describing the following procedure will result in duplicates being
+reported:&lt;/p>
 &lt;!--
 // jscpd:ignore-start
 -->
@@ -975,7 +971,7 @@ then run the following commands:
 ```shell
 $ docker pull tdviet/fedcloudclient
 $ docker run -it tdviet/fedcloudclient bash
-&amp;#39;&amp;#39;&amp;#39;
+```
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Mac&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 To run the FedCloud client in a container, make sure
@@ -984,7 +980,7 @@ then run the following commands:
 ```shell
 $ docker pull tdviet/fedcloudclient
 $ docker run -it tdviet/fedcloudclient bash
-&amp;#39;&amp;#39;&amp;#39;
+```
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Windows&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 To run the FedCloud client in a container, make sure
@@ -993,7 +989,7 @@ then run the following commands:
 ```shell
 &amp;gt; docker pull tdviet/fedcloudclient
 &amp;gt; docker run -it tdviet/fedcloudclient bash
-&amp;#39;&amp;#39;&amp;#39;
+```
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;!--
