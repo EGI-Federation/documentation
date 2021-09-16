@@ -93,10 +93,10 @@ subscribed to the relevant mailing lists.
 
 The person responsible for keeping the site compliant with the
 [EGI security policies](https://wiki.egi.eu/wiki/EGI_CSIRT:Policies). They are
-the primary contact for the NGI Security officer and
-[EGI Computer Security Incident Response Team (CSIRT)](https://csirt.egi.eu).
-The Site Security Officer deals with security incidents and shall respond to
-enquiries in a timely fashion as defined in the collection of
+the primary contact for the [NGI Security officer](ngi-security-officer) and
+[EGI Computer Security Incident Response Team (CSIRT)](#egi-csirt). The Site
+Security Officer deals with security incidents and shall respond to enquiries in
+a timely fashion as defined in the collection of
 [security procedures and policies](https://wiki.egi.eu/wiki/EGI_CSIRT:Policies).
 
 ### Regional level
@@ -120,11 +120,23 @@ and be familiar with
 
 #### NGI Security officer
 
-An NGI Security Officer is responsible for overseeing the security related
-aspects of the operations of the NGI.
+The NGI Security Officer is member of the [EGI-CSIRT](#egi-csirt).
 
-NGIs and Sites **MUST** respond in a timely manner to the security requests and
-alerts coming from the [EGI CSIRT](#egi-csirt) and [EGI IRTF](#egi-irtf).
+The NGI Security Officer coordinates the security activities within its NGI and
+serves as the primary contact for all security related requests, in particular
+from [EGI-CSIRT's IRTF](#egi-csirt-s-irtf) concerning issues with the sites
+within the NGI.
+
+Further, the NGI Security Officer is responsible for overseeing the security
+related aspects of the operations of the NGI and coordinates the security
+activities within its NGI.
+
+NGIs and Sites _MUST_ respond in a timely manner to the security requests and
+alerts coming from the EGI-CSIRT's IRTF.
+
+The NGI Security Officer name and contact address needs to be registered in the
+[Configuration Database (GOCDB)](https://goc.egi.eu) and the information
+maintained by the NGI.
 
 #### NGI Operations manager
 
@@ -153,21 +165,33 @@ All NGI operations management responsibilities are listed in the
 The Chief Operations Officer leads EGI Operations, and is responsible for
 coordinating the operations of the infrastructure across the project.
 
-#### EGI CSIRT
+#### EGI-CSIRT
 
-[EGI CSIRT](https://csirt.egi.eu) is the official security coordination team and
+[EGI-CSIRT](https://csirt.egi.eu) is the official security coordination team and
 contact point at project level.
 
-##### EGI IRTF
+- [EGI-CSIRT website](https://csirt.egi.eu)
+- [EGI-CSIRT profile according to
+  RFC-2350](https://wiki.egi.eu/wiki/EGI_CSIRT:RFC_2350
+- [EGI-CSIRT Terms of References](https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf)
 
-The role of EGI CSIRT's Incident Response Team for the Federation (IRTF) team is
-to handle day to day operational security issues and coordinate _Computer
-Security Incident Response_ across the EGI infrastructure.
+##### EGI-CSIRT's IRTF
 
-#### EGI CSIRT Officer
+The Incident Response Team for the Federation (IRTF) is a subgroup of EGI-CSIRT
+which acts as the primary contact for all security related requests concerning
+the Federation and the projects the EGI Foundation is involved in.
 
-The member of EGI Incident Response Team for the Federation (IRTF) currently on
-shift.
+EGI-CSIRTs IRTF provides the Security Officer on Duty role on a weekly rota
+basis. Details are in the
+[EGI-CSIRT Terms of References](https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf).
+
+#### EGI Security Officer
+
+The EGI Security Officer, having the EGI CSIRT Officer role in the Configuration
+Database, is leading and coordinating EGI-CSIRT.
+
+The role of the EGI Security Officer is provided by a member of EGI-CSIRT's IRTF
+on a weekly rota basis.
 
 #### EGI Foundation SDIS team
 
@@ -266,7 +290,8 @@ get the supporter role with your federated identity, please enroll to the
 in Check-in.
 
 If your NGI also have a local helpdesk interfaced with GGUS, please ensure that
-you are properly registered also there: your NGI managers will take care of that.
+you are properly registered also there: your NGI managers will take care of
+that.
 
 ### Subscribing to mailing lists
 
