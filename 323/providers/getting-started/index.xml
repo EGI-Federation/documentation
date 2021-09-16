@@ -75,7 +75,7 @@ subscribed to the relevant mailing lists.&lt;/p>
 &lt;h4 id="resource-centre-security-officer">Resource Centre Security Officer&lt;/h4>
 &lt;p>The person responsible for keeping the site compliant with the
 &lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Policies">EGI security policies&lt;/a>. They are
-the primary contact for the &lt;a href="ngi-security-officer">NGI Security officer&lt;/a> and
+the primary contact for the &lt;a href="#ngi-security-officer">NGI Security officer&lt;/a> and
 &lt;a href="#egi-csirt">EGI Computer Security Incident Response Team (CSIRT)&lt;/a>. The Site
 Security Officer deals with security incidents and shall respond to enquiries in
 a timely fashion as defined in the collection of
@@ -136,8 +136,7 @@ coordinating the operations of the infrastructure across the project.&lt;/p>
 contact point at project level.&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://csirt.egi.eu">EGI-CSIRT website&lt;/a>&lt;/li>
-&lt;li>[EGI-CSIRT profile according to
-RFC-2350](&lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:RFC_2350">https://wiki.egi.eu/wiki/EGI_CSIRT:RFC_2350&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:RFC_2350">EGI-CSIRT profile according to RFC-2350&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf">EGI-CSIRT Terms of References&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h5 id="egi-csirts-irtf">EGI-CSIRT&amp;rsquo;s IRTF&lt;/h5>
