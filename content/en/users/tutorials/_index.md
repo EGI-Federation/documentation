@@ -1,14 +1,11 @@
 ---
 title: "Tutorials"
-linkTitle: "Tutorials"
 type: docs
-weight: 5
-draft: true
+weight: 130
 description: >
-  Turorials for common use-cases in EGI FedCloud
+  Tutorials for common uses cases in the EGI infrastructure
 ---
 
-The following tutorials show you how to perform common tasks in the
-EGI Federated Cloud (FedCloud).
-These describe how to set up the EGI services needed for each use-case,
-and how to connect or operate them togheter.
+The following tutorials show you how to perform common tasks in the EGI
+infrastructure. These describe how to set up the EGI services needed for each
+use case, and how to connect or operate them together.

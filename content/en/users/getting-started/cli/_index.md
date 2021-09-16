@@ -9,7 +9,6 @@ description: >
 <!--
 // jscpd:ignore-start
 -->
-<!-- markdownlint-disable commands-show-output -->
 
 ## Command line tools
 
@@ -59,11 +58,11 @@ $ pip3 install fedcloudclient
 
 This installs the latest version of the FedCloud client, together with
 its required packages (like _openstackclient_). It will also create
-executables **fedcloud** and **openstack**, adding them to the _bin_
+executables **fedcloud** and **openstack**, adding them to the `bin`
 folder corresponding to your current Python execution environment
-(_$VIRTUAL_ENV/bin_ for executing pip3 in a Python virtual environment,
-_~/.local/bin_ for executing pip3 as user (with --user option), and
-_/usr/local/bin_ when executing pip3 as root).
+(`$VIRTUAL_ENV/bin` for executing pip3 in a Python virtual environment,
+`~/.local/bin` for executing pip3 as user (with `--user` option), and
+`/usr/local/bin` when executing pip3 as root).
 
 {{< /tabx >}}
 {{< tabx header="Windows" >}}
@@ -89,7 +88,7 @@ To install the FedCloud client:
 
 This installs the latest version of the FedCloud client, together with
 its required packages (like _openstackclient_). It will also create
-executables **fedcloud** and **openstack**, adding them to the _bin_
+executables **fedcloud** and **openstack**, adding them to the `bin`
 folder corresponding to your current Python execution environment.
 
 {{< /tabx >}}
@@ -109,12 +108,10 @@ distribution. If you receive error message "_SSL exception connecting
 to..._", install the EGI Core Trust Anchor Certificates by running
 the following commands:
 
-<!-- markdownlint-disable line-length -->
 ```shell
 $ wget https://raw.githubusercontent.com/tdviet/python-requests-bundle-certs/main/scripts/install_certs.sh
 $ bash install_certs.sh
 ```
-<!-- markdownlint-enable line-length -->
 
 {{% alert title="Note" color="info" %}} The above script does not work on all
 Linux distributions. Change _python_ to _python3_ in the script if needed,
@@ -139,7 +136,7 @@ then run the following commands:
 
 ```shell
 $ docker pull tdviet/fedcloudclient
-$ docker run -it  tdviet/fedcloudclient bash
+$ docker run -it tdviet/fedcloudclient bash
 ```
 
 {{< /tabx >}}
@@ -163,7 +160,7 @@ then run the following commands:
 
 ```shell
 > docker pull tdviet/fedcloudclient
-> docker run -it  tdviet/fedcloudclient bash
+> docker run -it tdviet/fedcloudclient bash
 ```
 
 {{< /tabx >}}
@@ -171,6 +168,21 @@ then run the following commands:
 
 Once you have a shell running in the container with the FedCloud client, usage
 is the same as from [the command line](#using-from-the-command-line).
+
+### Using from EGI Notebooks
+
+[EGI Notebooks](../../notebooks/) are integrated with access tokens so it
+simplifies using the FedCloud client. First make sure that you follow the
+[installation](#installation) steps above. Then, below are the commands that
+you need to run inside a terminal in JupyterLab:
+
+```shell
+export OIDC_ACCESS_TOKEN=`cat /var/run/secrets/egi.eu/access_token`
+fedcloud token check
+```
+
+Please follow instructions [below](#using-from-the-command-line) to learn
+how to use the `fedcloud` command.
 
 ### Using from the command line
 
@@ -199,11 +211,9 @@ site, the VO and the command. For example, to list virtual machine (VM) images
 available to members of VO _fedcloud.egi.eu_ on the site _CYFRONET-CLOUD_, run
 the following command:
 
-<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack image list --vo fedcloud.egi.eu --site CYFRONET-CLOUD
 ```
-<!-- markdownlint-enable line-length -->
 
 #### Authentication
 
@@ -258,7 +268,11 @@ Most of the FedCloud client options can be set via environment variables:
 used options like site, VO, etc. using environment variables.
 {{% /alert %}}
 
-<!-- markdownlint-disable line-length -->
+{{% alert title="Tip" color="info" %}} When you want commands to work on all
+sites in the EGI infrastructure, use `ALL_SITES` for the `--site` parameter
+(pass it directly or via an anvironment variable).
+{{% /alert %}}
+
 | Environment variable    | Command line option         | Default value           |
 |-------------------------|-----------------------------|-------------------------|
 | OIDC_AGENT_ACCOUNT      | `--oidc-agent-account`      |                         |
@@ -272,7 +286,7 @@ used options like site, VO, etc. using environment variables.
 | OPENSTACK_AUTH_TYPE     | `--openstack-auth-type`     | v3oidcaccesstoken       |
 | EGI_SITE                | `--site`                    |                         |
 | EGI_VO                  | `--vo`                      |                         |
-<!-- markdownlint-enable line-length no-bare-urls -->
+<!-- markdownlint-enable no-bare-urls -->
 
 #### Getting help
 
@@ -280,7 +294,6 @@ The FedCloud client can display help for the commands and subcommands it
 supports. Try running the following command to see the commands supported
 by the FedCloud client:
 
-<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud --help
 Usage: fedcloud [OPTIONS] COMMAND [ARGS]...
@@ -297,12 +310,10 @@ Commands:
   site           Site command group for manipulation with site...
   token          Token command group for manipulation with tokens
 ```
-<!-- markdownlint-enable line-length -->
 
 Similarly, you can see help for e.g. the `openstack` subcommand by running the
 command below:
 
-<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack --help
 Usage: fedcloud openstack [OPTIONS] OPENSTACK_COMMAND...
@@ -321,13 +332,12 @@ Options:
                                   v3oidcaccesstoken]
   --openstack-auth-provider TEXT  Check-in identity provider  [default:
                                   egi.eu]
-  --site TEXT                     Name of the site  [required]
+  --site TEXT                     Name of the site or ALL_SITES  [required]
   --vo TEXT                       Name of the VO  [required]
   -i, --ignore-missing-vo         Ignore sites that do not support the VO
   -j, --json-output               Print output as a big JSON object
   --help                          Show this message and exit.
 ```
-<!-- markdownlint-enable line-length -->
 
 {{% alert title="Note" color="info" %}} Most commands support multiple levels
 of subcommands, you can get help for all of them using the same principle as
@@ -353,25 +363,99 @@ OpenStack commands.
 
 #### Setting environment variables for external tools
 
-Some FedCloud commands generate output that contains bash
-shell commands to set environment variables with the returned result:
+Some FedCloud commands generate output that contains shell commands to set
+environment variables with the returned result, as exemplified below.
 
-<!-- markdownlint-disable line-length -->
-```shell
-$ export EGI_SITE=IISAS-FedCloud
-$ export EGI_VO=eosc-synergy.eu
-$ fedcloud site show-project-id
-export OS_AUTH_URL="https://cloud.ui.savba.sk:5000/v3/"
-export OS_PROJECT_ID="51f736d36ce34b9ebdf196cfcabd24ee"
+{{< tabpanex >}}
+{{< tabx header="Linux / Mac" >}}
 
-# This command will set environment variables
-$ eval $(fedcloud site show-project-id --site IISAS-FedCloud --vo eosc-synergy.eu)
+  Run a command to get details of a project:
 
-# Check the value of the variable
-$ echo $OS_AUTH_URL
-https://cloud.ui.savba.sk:5000/v3/
-```
-<!-- markdownlint-enable line-length -->
+  ```shell
+  $ export EGI_SITE=IISAS-FedCloud
+  $ export EGI_VO=eosc-synergy.eu
+  $ fedcloud site show-project-id
+  export OS_AUTH_URL="https://cloud.ui.savba.sk:5000/v3/";
+  export OS_PROJECT_ID="51f736d36ce34b9ebdf196cfcabd24ee";
+  ```
+
+  Run the same command but set environment variables with the returned values:
+
+  ```shell
+  $ eval $(fedcloud site show-project-id)
+  ```
+
+  The environment variables will have their values set to what the command returned:
+  
+  ```shell
+  $ echo $OS_AUTH_URL
+  https://cloud.ui.savba.sk:5000/v3/
+  
+  $ echo $OS_PROJECT_ID
+  51f736d36ce34b9ebdf196cfcabd24ee
+  ```
+
+{{< /tabx >}}
+{{< tabx  header="Windows" >}}
+
+  Run a command to get details of a project:
+
+  ```shell
+  > set EGI_SITE=IISAS-FedCloud
+  > set EGI_VO=eosc-synergy.eu
+  > fedcloud site show-project-id
+  set OS_AUTH_URL=https://cloud.ui.savba.sk:5000/v3/
+  set OS_PROJECT_ID=51f736d36ce34b9ebdf196cfcabd24ee
+  ```
+
+  If you copy the returned output and execute it as commands in a command prompt:
+
+  ```shell
+  > set OS_AUTH_URL=https://cloud.ui.savba.sk:5000/v3/
+  > set OS_PROJECT_ID=51f736d36ce34b9ebdf196cfcabd24ee
+  ```
+
+  The environment variables will have their values set to what the command returned:
+  
+  ```shell
+  > set OS_AUTH_URL
+  OS_AUTH_URL=https://cloud.ui.savba.sk:5000/v3/
+  
+  > set OS_PROJECT_ID
+  OS_PROJECT_ID=51f736d36ce34b9ebdf196cfcabd24ee
+  ```
+
+{{< /tabx >}}
+{{< tabx  header="PowerShell" >}}
+
+  Run a command to get details of a project:
+
+  ```powershell
+  > $Env:EGI_SITE = "IISAS-FedCloud"
+  > $Env:EGI_VO = "eosc-synergy.eu"
+  > fedcloud site show-project-id
+  $Env:OS_AUTH_URL="https://cloud.ui.savba.sk:5000/v3/";
+  $Env:OS_PROJECT_ID="51f736d36ce34b9ebdf196cfcabd24ee";
+  ```
+
+  Run the same command but set environment variables with the returned values:
+
+  ```powershell
+  > fedcloud site show-project-id | Out-String | Invoke-Expression
+  ```
+
+  The environment variables will have their values set to what the command returned:
+  
+  ```powershell
+  > $Env:OS_AUTH_URL
+  https://cloud.ui.savba.sk:5000/v3/
+  
+  > $Env:OS_PROJECT_ID
+  51f736d36ce34b9ebdf196cfcabd24ee
+  ```
+
+{{< /tabx >}}
+{{< /tabpanex >}}
 
 #### Processing output from OpenStack commands
 
@@ -382,12 +466,11 @@ processing of the command output.
 
 {{% alert title="Tip" color="info" %}} JSON output can be processed with a tool
 like [jq](https://stedolan.github.io/jq/), which can slice, filter, map, and
-transform structured data. It is a filter: it takes and input, and produces an
+transform structured data. It acts as a filter: it takes an input and produces an
 output. Check out the [tutorial](https://stedolan.github.io/jq/tutorial/) for
 using it to extract data from JSON sources.
 {{% /alert %}}
 
-<!-- markdownlint-disable line-length -->
 ```shell
 $ export EGI_SITE=IISAS-FedCloud
 $ export EGI_VO=eosc-synergy.eu
@@ -428,15 +511,13 @@ $ fedcloud openstack flavor list--json-output | \
     jq -r '.[].Result[] | select(.VCPUs == 2) | .Name'
 m1.medium
 ```
-<!-- markdownlint-enable line-length -->
 
 {{% alert title="Note" color="info" %}} Note that `--json-output` option can
 be used only with those OpenStack commands that have outputs. Using this
-parameter with commands wit no output (e.g. setting properties) will generate
+parameter with commands with no output (e.g. setting properties) will generate
 an unsupported parameter error.
 {{% /alert %}}
 
-<!-- markdownlint-enable commands-show-output -->
 <!--
 // jscpd:ignore-end
 -->

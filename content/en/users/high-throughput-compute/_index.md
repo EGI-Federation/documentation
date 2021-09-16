@@ -1,8 +1,7 @@
 ---
 title: "High Throughput Compute"
-dlinkTitle: "High Throughput Compute"
 type: docs
-weight: 60
+weight: 80
 description: >
   EGI High Throughput Compute service
 ---
@@ -11,12 +10,11 @@ description: >
 
 High Throughput Compute (HTC) is a computing paradigm that focuses on the
 **efficient execution of a large number of loosely-coupled tasks** (e.g. data
-analysis jobs).
-HTC systems execute independent tasks that can be individually scheduled on many
-different computing resources, across multiple administrative boundaries.
-Users submit these tasks to the infrastructure as jobs. After a job have been
-scheduled and executed, the output can be collected from the service(s) that
-executed the job.
+analysis jobs). HTC systems execute independent tasks that can be individually
+scheduled on many different computing resources, across multiple administrative
+boundaries. Users submit these tasks to the infrastructure as jobs. After a job
+have been scheduled and executed, the output can be collected from the
+service(s) that executed the job.
 
 ## Target users
 
@@ -27,13 +25,13 @@ World.Some may already have local resources (e.g. universities, research
 institutions) that can only be accessed by local users in accordance to the
 respective organisation's access policies.
 
-In case of local compute resources researchers can request access to the
-local compute cluster from their IT department. However, when researchers join
+In case of local compute resources researchers can request access to the local
+compute cluster from their IT department. However, when researchers join
 collaborations that need to share their research activities, data collections,
 and repositories, they need a homogenous and coordinated operation of the
 compute resources, which are not uniformly accessible. In addition, nowadays
-many research collaborations generate large amounts of data, and managing
-such data volumes is time consuming and error prone.
+many research collaborations generate large amounts of data, and managing such
+data volumes is time consuming and error prone.
 
 The EGI High Throughput Compute service provides access to compute resources,
 and offers a set of high-level tools that allow managing large amounts of data
@@ -47,8 +45,7 @@ EGI High Throughput Compute provides easy, uniform access to shared computating
 and data services of EGI service providers. Most software deployed in the
 distributed resource centers is based on
 [open standards](https://en.wikipedia.org/wiki/Open_standard) and
-[open source](https://en.wikipedia.org/wiki/Open_source)
-middleware services.
+[open source](https://en.wikipedia.org/wiki/Open_source) middleware services.
 
 The main features of the EGI High Throughput Compute are:
 
@@ -66,9 +63,9 @@ The EGI High Throughput Compute infrastructure is the federation of GRID
 resources provided by EGI providers. Its aim is to share in a secure way the
 distributed IT resources that are part of the EGI Cloud. It comprises of:
 
-- **Compute Resources** -- execution environment for computing tasks,
-  organized into clusters distributed across multiple resource centers in Europe
-  and the World.
+- **Compute Resources** -- execution environment for computing tasks, organized
+  into clusters distributed across multiple resource centers in Europe and the
+  World.
 - **Data Infrastructure** -- storage servers from different resource centers
   where users can store their data/files in a distributed manner.
 - **Federated Operations** -- global operational tasks (e.g., AAI, accounting,
@@ -86,16 +83,15 @@ The key components of the EGI High Throughput Compute architecture are:
 
 - [Data Transfer service](../data-transfer/) (FTS)
 - [Online Storage services](../online-storage/)
-- **Computing Elements** (CEs) are compute resources made available through
-  GRID interfaces. The most common implementations of CEs in the EGI
-  infrastructure are
-  [HTCondor-CE](https://htcondor-ce.readthedocs.io/en/latest/) and
+- **Computing Elements** (CEs) are compute resources made available through GRID
+  interfaces. The most common implementations of CEs in the EGI infrastructure
+  are [HTCondor-CE](https://htcondor-ce.readthedocs.io/en/latest/) and
   [ARC-CE](http://www.nordugrid.org/arc/ce/).
 
 ### Access model
 
-Access to HTC resources in the EGI infrastructure is based on X.509
-certificates and [Virtual Organisations](../check-in/vos) (VOs).
+Access to HTC resources in the EGI infrastructure is based on X.509 certificates
+and [Virtual Organisations](../check-in/vos) (VOs).
 
 VOs are fully managed by research communities, allowing communitites to manage
 their users and grant access to their services and resources. This means
@@ -110,8 +106,8 @@ Before users can access EGI HTC services, they have to:
    [European Policy Management Authority for Grid Authentication](https://www.eugridpma.org)
    (EUGridPMA), which is also part of the
    [International Global Trust Federation](https://www.igtf.net) (IGTF).
-1. Enroll into a VO before they can use the services, as users are
-   not individually granted access to resources.
+1. Enroll into a VO before they can use the services, as users are not
+   individually granted access to resources.
 1. Add the certificate to their Internet browser of choice, or import it into
    the appropriate certificate store of their local machine (on Windows).
 1. Proceed to the [Workload Manager](../workload-manager) to submit HTC jobs or

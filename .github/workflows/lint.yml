@@ -30,32 +30,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Lint all files using Super-Linter
-      - name: Run Super-Linter on new changes
+      # Runs the Super-Linter action
+      - name: Run Super-Linter
         uses: docker://ghcr.io/github/super-linter:slim-v4
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdownlint.json
-          # Only check new or edited files
-          VALIDATE_ALL_CODEBASE: false
+          # Always check all the content
+          VALIDATE_ALL_CODEBASE: true
+          # Debug super-linter
+          ACTIONS_RUNNER_DEBUG: false
           # Fail on errors
           DISABLE_ERRORS: false
-          FILTER_REGEX_EXCLUDE: "(.*layouts/.*)|(.*/egi.js)"
-
-      # Lint all files using Super-Linter
-      # Checking all code base but without throwing errors
-      # Meant to follow progress of what still needs to be cleaned
-      - name: Run Super-Linter on all codebase
-        uses: docker://ghcr.io/github/super-linter:slim-v4
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MARKDOWN_CONFIG_FILE: .markdownlint.json
-          # Check all files
-          VALIDATE_ALL_CODEBASE: true
-          # Ignore errors
-          DISABLE_ERRORS: true
-          # No need to validate ruby code we are not responsible for
-          VALIDATE_RUBY: false
           FILTER_REGEX_EXCLUDE: "(.*layouts/.*)|(.*/egi.js)"

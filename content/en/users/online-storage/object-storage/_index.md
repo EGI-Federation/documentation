@@ -6,8 +6,9 @@ weight: 30
 description: >
   Object Storage offered by EGI Cloud providers
 ---
-
-<!-- markdownlint-disable commands-show-output -->
+<!--
+// jscpd:ignore-start
+-->
 
 ## What is it?
 
@@ -125,21 +126,62 @@ Pilot VO (vo.access.egi.eu), and
 [list the available storage containers](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html#container-list),
 use the FedCloud command below:
 
-{{% alert title="Tip" color="info" %}} Instead of passing the site, VO, etc.
-on the command line each time, you can use
-[FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables).
-{{% /alert %}}
+{{< tabpanex >}}
+{{< tabx header="Linux / Mac" >}}
 
-```shell
-$ export EGI_SITE=IFCA-LCG2
-$ export EGI_VO=vo.access.egi.eu
-$ fedcloud openstack container list
-+------------------+
-| Name             |
-+------------------+
-| test-egi         |
-+------------------+
-```
+  To avoid passing the site, VO, etc. each time, you can use
+  [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
+  to set them once and reuse them with each command invocation.
+
+  ```shell
+  $ export EGI_SITE=IFCA-LCG2
+  $ export EGI_VO=vo.access.egi.eu
+  $ fedcloud openstack container list
+  +------------------+
+  | Name             |
+  +------------------+
+  | test-egi         |
+  +------------------+
+  ```
+
+{{< /tabx >}}
+{{< tabx  header="Windows" >}}
+
+  To avoid passing the site, VO, etc. each time, you can use
+  [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
+  to set them once and reuse them with each command invocation.
+
+  ```shell
+  > set EGI_SITE=IN2P3-IRES
+  > set EGI_VO=vo.access.egi.eu
+  > fedcloud openstack container list
+  +------------------+
+  | Name             |
+  +------------------+
+  | test-egi         |
+  +------------------+
+  ```
+
+{{< /tabx >}}
+{{< tabx  header="PowerShell" >}}
+
+  To avoid passing the site, VO, etc. each time, you can use
+  [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
+  to set them once and reuse them with each command invocation.
+
+  ```powershell
+  > $Env:EGI_SITE="IN2P3-IRES"
+  > $Env:EGI_VO="vo.access.egi.eu"
+  > fedcloud openstack container list
+  +------------------+
+  | Name             |
+  +------------------+
+  | test-egi         |
+  +------------------+
+  ```
+
+{{< /tabx >}}
+{{< /tabpanex >}}
 
 #### Create new storage container
 
@@ -300,7 +342,6 @@ In order to access the storage via S3, you need
 [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)-compatible
 credentials from the OpenStack deployment. Use the following command:
 
-<!-- markdownlint-disable line-length -->
 ```shell
 $ fedcloud openstack ec2 credentials create
 +------------+------------------------------------------------------------------------------------------------------------------------------------------+
@@ -328,7 +369,6 @@ $ davix-ls --s3accesskey 'access' --s3secretkey 'secret' \
 
 `davix-get`, `davix-put` and `davix-del` are also available to download, store
 and delete objects from the storage.
-<!-- markdownlint-enable line-length -->
 
 ## Access via EGI Data Transfer
 
@@ -342,4 +382,6 @@ objects in the storage.
 at `support` `<at>` `egi.eu` for more details.
 {{% /alert %}}
 
-<!-- markdownlint-enable commands-show-output -->
+<!--
+// jscpd:ignore-end
+-->

@@ -33,14 +33,13 @@ dashboards, [VMOps dashboard](../vmops), or [Infrastructure manager](../im).
 It is also possible to use the
 [fedcloudclient](https://fedcloudclient.fedcloud.eu/) for CLI access. Below is
 an example on how to use the `fedcloud` command to show the GPU properties of
-the available flavors:
+the available GPU flavors on all sites for the specific VO in the command:
 
 ```shell
-fedcloud openstack flavor list --long \
-  --site IISAS-FedCloud \
-  --vo acc-comp.egi.eu \
-  --json-output | \
-  jq -r '.[].Result | map(select(.Properties."Accelerator:Type" == "GPU")) | .'
+fedcloud openstack flavor list --long --site ALL_SITES --vo vo.access.egi.eu --json-output | \
+    jq -r 'map(select(."Error code" ==  0)) |
+           map(.Result = (.Result| map(select(.Properties."Accelerator:Type" == "GPU")))) |
+           map(select(.Result | length >  0))'
 ```
 
 Site-specific dashboards and endpoints are described in the following table:
