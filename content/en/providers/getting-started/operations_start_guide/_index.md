@@ -171,8 +171,7 @@ coordinating the operations of the infrastructure across the project.
 contact point at project level.
 
 - [EGI-CSIRT website](https://csirt.egi.eu)
-- [EGI-CSIRT profile according to
-  RFC-2350](https://wiki.egi.eu/wiki/EGI_CSIRT:RFC_2350
+- [EGI-CSIRT profile according to RFC-2350](https://wiki.egi.eu/wiki/EGI_CSIRT:RFC_2350)
 - [EGI-CSIRT Terms of References](https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf)
 
 ##### EGI-CSIRT's IRTF
