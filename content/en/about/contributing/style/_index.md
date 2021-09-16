@@ -13,8 +13,7 @@ weight: 20
   [EGI Services Portfolio](https://www.egi.eu/services/)
 - Acronyms should be used only when it makes sense
 - Service names should never be replaced by acronyms
-- When introducing services, link to the public page of the service,
-if any:
+- When introducing services, link to the public page of the service, if any:
 
 ```markdown
 [EGI Cloud Compute](https://www.egi.eu/services/cloud-compute/)
@@ -28,7 +27,8 @@ Documentation pages have to be written in markdown, compliant with
 
 ### Basic rules
 
-- Headings must start at level 2 (`##`), as level 1 (`#`) is the title of the page
+- Headings must start at level 2 (`##`), as level 1 (`#`) is the title of the
+  page
 - Lines should be wrapped at 80 characters
 - Sentences must be separated by one space only
 - Indent is made with spaces, not with tabs
@@ -37,11 +37,11 @@ Documentation pages have to be written in markdown, compliant with
 - Indent secondary (and following) level lists with 2 spaces
 - Lines must end with a Line Feed character (`\n`)
 - Files must end with an empty line
-- Shell examples should include a prompt (`$` or `>`) in front of commands,
-  to make it easy to understand which is the command and which is the output
-- Commands in shell examples should be broken into multiple lines of 80 characters
-  or less, using a trailing backslash character (`\`) on each line that continues
-  on the next
+- Shell examples should include a prompt (`$` or `>`) in front of commands, to
+  make it easy to understand which is the command and which is the output
+- Commands in shell examples should be broken into multiple lines of 80
+  characters or less, using a trailing backslash character (`\`) on each line
+  that continues on the next
 - Never break command output in shell examples to multiple lines, instead use
   [style exceptions](#adding-exceptions-for-style-violations) when necessary
 
@@ -67,31 +67,32 @@ Configuration is provided in `.prettierrc`, options can be set as follows:
 ```
 
 When a contribution is received (via a pull request), the proposed changes are
-checked using [various linters](https://github.com/EGI-Federation/documentation/tree/main/.github/workflows).
+checked using
+[various linters](https://github.com/EGI-Federation/documentation/tree/main/.github/workflows).
 
 ## General writing guidelines
 
 Follow the guidelines below to ensure readability and consistency of the EGI
-documentation. These are based on the [OpenStack documentation
-writing style](https://docs.openstack.org/doc-contrib-guide/writing-style.html)
-guidelines, released under a [Creative Commons license](https://creativecommons.org/licenses/by/3.0/).
+documentation. These are based on the
+[OpenStack documentation writing style](https://docs.openstack.org/doc-contrib-guide/writing-style.html)
+guidelines, released under a
+[Creative Commons license](https://creativecommons.org/licenses/by/3.0/).
 
-{{% alert title="Tip" color="info" %}} Short and simple sentences are easier
-to read and understand.
-{{% /alert %}}
+{{% alert title="Tip" color="info" %}} Short and simple sentences are easier to
+read and understand. {{% /alert %}}
 
 ### Use standard English
 
-Use standard British English (UK) throughout all technical
-publications. When in doubt about the spelling of a word, consult the
-Merriam-Webster’s Collegiate Dictionary and the
+Use standard British English (UK) throughout all technical publications. When in
+doubt about the spelling of a word, consult the Merriam-Webster’s Collegiate
+Dictionary and the
 [IBM developerWorks editorial style guide](https://www.ibm.com/developerworks/library/styleguidelines/).
 
 ### Be clear and concise
 
-Follow the principles of minimalism. If you can describe an idea in one word,
-do not use two words. Eliminate all redundant modifiers, such as adjectives
-and adverbs.
+Follow the principles of minimalism. If you can describe an idea in one word, do
+not use two words. Eliminate all redundant modifiers, such as adjectives and
+adverbs.
 
 ### Write objectively
 
@@ -118,13 +119,17 @@ and responses of the software can be difficult to distinguish from those of the
 user. In addition, passive voice usually requires more words than active voice.
 
 {{< tabpanex >}}
-  {{< tabx header="Examples" >}}
+
+{{< tabx header="Examples" >}}
+
 | Do not use                                                          | Use                                                 |
-| --------------------------------------------------------------------|-----------------------------------------------------|
+| ------------------------------------------------------------------- | --------------------------------------------------- |
 | After the software has been installed, the computer can be started. | After you install the software, start the computer. |
 | The Configuration is saved when you click OK.                       | Click OK to save the configuration.                 |
 | A server is created by you.                                         | Create a server.                                    |
-  {{< /tabx >}}
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 However, passive voice is acceptable in the following situations:
@@ -132,31 +137,46 @@ However, passive voice is acceptable in the following situations:
 - Using active voice sounds like you are blaming the user. For example, you can
   use passive voice in an error message or troubleshooting content when the
   active subject is the user.
+
 {{< tabpanex >}}
-  {{< tabx header="Example" >}}
+
+{{< tabx header="Example" >}}
+
 | Do not use                                           | Use                                                     |
-| -----------------------------------------------------|---------------------------------------------------------|
+| ---------------------------------------------------- | ------------------------------------------------------- |
 | If the build fails, you probably omitted the flavor. | If the build fails, the flavor might have been omitted. |
-  {{< /tabx >}}
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 - The agent of action is unknown, or you want to de-emphasize the agent of
   action and emphasize the object on which the action is performed.
+
 {{< tabpanex >}}
-  {{< tabx header="Example" >}}
-| Do not use                                           | Use                                          |
-| -----------------------------------------------------|----------------------------------------------|
-| The product, OS, or database returns the messages.   | The messages are returned [by the database]. |
-  {{< /tabx >}}
+
+{{< tabx header="Example" >}}
+
+| Do not use                                         | Use                                          |
+| -------------------------------------------------- | -------------------------------------------- |
+| The product, OS, or database returns the messages. | The messages are returned [by the database]. |
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 - Recasting the sentence in active voice is wordy or awkward.
+
 {{< tabpanex >}}
-  {{< tabx header="Example" >}}
+
+{{< tabx header="Example" >}}
+
 | Do not use                                                                | Use                                                                |
-| --------------------------------------------------------------------------|--------------------------------------------------------------------|
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------ |
 | In 2009, engineers developed a software that simplifies the installation. | A software that simplifies the installation was developed in 2009. |
-  {{< /tabx >}}
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 ### Write in second person
@@ -171,39 +191,41 @@ Writing in second person has the following advantages:
   understood) and active voice helps to eliminate wordiness and confusion about
   who or what initiates an action, especially in procedural steps.
 - Using second person also avoids the use of gender-specific, third-person
-  pronouns such as he, she, his, and hers. If you must use third person, use
-  the pronouns they and their, but ensure that the pronoun matches the
-  referenced noun in number.
+  pronouns such as he, she, his, and hers. If you must use third person, use the
+  pronouns they and their, but ensure that the pronoun matches the referenced
+  noun in number.
 - Use first person plural pronouns (we, our) judiciously. These pronouns
-  emphasize the writer or EGI rather than the user, so before you use
-  them, consider whether second person or imperative mood is more
-  “user-friendly.” However, use “we recommend” rather than “it is recommended”
-  or “EGI recommends”.
+  emphasize the writer or EGI rather than the user, so before you use them,
+  consider whether second person or imperative mood is more “user-friendly.”
+  However, use “we recommend” rather than “it is recommended” or “EGI
+  recommends”.
 
-{{% alert title="Tip" color="info" %}} You can use “we” in the place of
-EGI if necessary.
-{{% /alert %}}
+{{% alert title="Tip" color="info" %}} You can use “we” in the place of EGI if
+necessary. {{% /alert %}}
 
 Do not use first person to avoid naming the product or to avoid using passive
-voice. If the product is performing the action, use third person (the product
-as an actor). If you want to de-emphasize the agent of action and emphasize the
+voice. If the product is performing the action, use third person (the product as
+an actor). If you want to de-emphasize the agent of action and emphasize the
 object on which the action is performed, use passive voice.
 
-The first-person singular pronoun “I” is acceptable in the question part of
-FAQs and when authors of blogs or signed articles are describing their own
-actions or opinions.
+The first-person singular pronoun “I” is acceptable in the question part of FAQs
+and when authors of blogs or signed articles are describing their own actions or
+opinions.
 
 {{% alert title="Important" color="warning" %}} Do not switch person (point of
-view) in the same guide or on the same page.
-{{% /alert %}}
+view) in the same guide or on the same page. {{% /alert %}}
 
 {{< tabpanex >}}
-  {{< tabx header="Examples" >}}
+
+{{< tabx header="Examples" >}}
+
 | Do not use                                                        | Use                                                        |
-| ------------------------------------------------------------------|------------------------------------------------------------|
+| ----------------------------------------------------------------- | ---------------------------------------------------------- |
 | Creating a server involves specifying a name, flavor, and image.  | To create a server, specify a name, a flavor, and image.   |
 | To create a server, the user specifies a name, flavor, and image. | To create a server, you specify a name, flavor, and image. |
-  {{< /tabx >}}
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 ### Use the present simple tense
@@ -214,11 +236,15 @@ appropriate in most cases. Additionally, the present tense is easier to read
 than the past or future tense.
 
 {{< tabpanex >}}
-  {{< tabx header="Example" >}}
-| Do not use | Use |
-| -----------|-----|
+
+{{< tabx header="Example" >}}
+
+| Do not use                                                                                                                   | Use                                                                                                             |
+| ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | The product will prompt you to verify the deletion. After you log in, your account will then begin the verification process. | The product prompts you to verify the deletion. After you log in, your account begins the verification process. |
-  {{< /tabx >}}
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 {{% alert title="Tip" color="info" %}} Use the future tense only when you need
@@ -230,11 +256,15 @@ to emphasize that something will occur later (from the users’ perspective).
 Do not give human characteristics to non-human subjects or objects.
 
 {{< tabpanex >}}
-  {{< tabx header="Example" >}}
+
+{{< tabx header="Example" >}}
+
 | Do not use            | Use                     |
-| ----------------------|-------------------------|
+| --------------------- | ----------------------- |
 | This guide assumes... | This guide describes... |
-  {{< /tabx >}}
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 ### Avoid personification
@@ -248,11 +278,15 @@ Each title should include a clear description of the page’s or chapter's
 subject.
 
 {{< tabpanex >}}
-  {{< tabx header="Example" >}}
+
+{{< tabx header="Example" >}}
+
 | Do not use      | Use                    |
-| ----------------|------------------------|
+| --------------- | ---------------------- |
 | Update metadata | Update object metadata |
-  {{< /tabx >}}
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 ### Eliminate needless politeness
@@ -265,18 +299,22 @@ Write in a positive tone. Positive sentences improve readability. Try to avoid
 the following words as much as possible:
 
 {{< tabpanex >}}
-  {{< tabx header="Examples" >}}
-| Do not use      | Use                          |
-| ----------------|------------------------------|
-| damage          | affect                       |
-| catastrophic    | serious                      |
-| bad             | serious (or add explanation) |
-| fail            | unable to                    |
-| kill            | cancel or stop               |
-| fatal           | serious                      |
-| destroy         | remove or delete             |
-| wrong           | incorrect or inconsistent    |
-  {{< /tabx >}}
+
+{{< tabx header="Examples" >}}
+
+| Do not use   | Use                          |
+| ------------ | ---------------------------- |
+| damage       | affect                       |
+| catastrophic | serious                      |
+| bad          | serious (or add explanation) |
+| fail         | unable to                    |
+| kill         | cancel or stop               |
+| fatal        | serious                      |
+| destroy      | remove or delete             |
+| wrong        | incorrect or inconsistent    |
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 ### Do not use contractions
@@ -284,12 +322,16 @@ the following words as much as possible:
 Generally, do not contract the words.
 
 {{< tabpanex >}}
-  {{< tabx header="Examples" >}}
-| Do not use | Use      |
-| -----------|----------|
-| can't      | cannot   |
-| don't      | do not   |
-  {{< /tabx >}}
+
+{{< tabx header="Examples" >}}
+
+| Do not use | Use    |
+| ---------- | ------ |
+| can't      | cannot |
+| don't      | do not |
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 ### Do not overuse this, that, these, and it
@@ -298,16 +340,19 @@ Use these pronouns sparingly. Overuse contributes to readers’ confusion. To fi
 the ambiguity, rephrase the sentence.
 
 {{< tabpanex >}}
-  {{< tabx header="Example" >}}
-| Do not use | Use |
-| -----------|-----|
+
+{{< tabx header="Example" >}}
+
+| Do not use                                                                                                                                          | Use                                                                                                                                                   |
+| --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The monitoring system should perform regular checks to verify that the Ceph cluster is healthy. This can be achieved using the Ceph health command. | The monitoring system performs regular checks to ensure the Ceph cluster is functioning correctly. Use the Ceph health command to run a health check. |
-  {{< /tabx >}}
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
-{{% alert title="Tip" color="info" %}} You can also fix the ambiguity by
-placing a noun modifier immediately after the pronoun.
-{{% /alert %}}
+{{% alert title="Tip" color="info" %}} You can also fix the ambiguity by placing
+a noun modifier immediately after the pronoun. {{% /alert %}}
 
 ### Do not split infinitives
 
@@ -320,28 +365,36 @@ As much as possible, avoid trailing prepositions in sentences by avoiding
 phrasal verbs.
 
 {{< tabpanex >}}
-  {{< tabx header="Example" >}}
+
+{{< tabx header="Example" >}}
+
 | Do not use                                  | Use                                  |
-| --------------------------------------------|--------------------------------------|
+| ------------------------------------------- | ------------------------------------ |
 | The image registration window will open up. | The image registration window opens. |
-  {{< /tabx >}}
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 To fix the verb-preposition constructions, replace them with active verbs.
 
 {{< tabpanex >}}
-  {{< tabx header="Examples" >}}
+
+{{< tabx header="Examples" >}}
+
 | Do not use | Use      |
-| -----------|----------|
+| ---------- | -------- |
 | written up | composed |
 | pop up     | appear   |
-  {{< /tabx >}}
+
+{{< /tabx >}}
+
 {{< /tabpanex >}}
 
 ### Use consistent terminology
 
-Use consistent terms across all content. Avoid multiple variations or
-spellings to refer to the same service, function, UI element, and so on.
+Use consistent terms across all content. Avoid multiple variations or spellings
+to refer to the same service, function, UI element, and so on.
 
 ### Use spelling and grammar checking tools
 
@@ -352,8 +405,8 @@ later.
 ### Lists
 
 When reading a document for the first time, users scan through pages stopping
-only on the content that stands out, such as titles, lists, links, diagrams,
-and so on. Lists help to organize options, as well as help readers to find
+only on the content that stands out, such as titles, lists, links, diagrams, and
+so on. Lists help to organize options, as well as help readers to find
 information easily.
 
 When listing items, follow these guidelines:
@@ -364,13 +417,13 @@ When listing items, follow these guidelines:
 - Use a **definition list** to explain terms or describe command-line
   parameters, options, or arguments.
 - Use a colon at the end of the sentence that introduces a list.
-- Use the same grammatical structure (aka parallel structure) for all items
-  in a list.
+- Use the same grammatical structure (aka parallel structure) for all items in a
+  list.
 - Start each option with a capital letter.
 
-When listing options in a paragraph, add _and_ or _or_ before the last item
-in a list. Use a serial (Oxford) comma before these conjunctions if they
-connect three or more items.
+When listing options in a paragraph, add _and_ or _or_ before the last item in a
+list. Use a serial (Oxford) comma before these conjunctions if they connect
+three or more items.
 
 ### Punctuation in lists
 
@@ -379,14 +432,14 @@ In bulleted lists:
 - If you list individual words or phrases, do not add a period at the end of
   each list item.
 - If you use full sentences, add a period at the end of each sentence.
-- If your list includes both individual words or phrases and full sentences,
-  be consistent and either add or do not add periods to all items.
+- If your list includes both individual words or phrases and full sentences, be
+  consistent and either add or do not add periods to all items.
 
 In numbered lists:
 
 - Add periods at the end of steps.
-- If an item of a numbered list is followed by a code block that illustrates
-  how to perform the step, use a colon at the end.
+- If an item of a numbered list is followed by a code block that illustrates how
+  to perform the step, use a colon at the end.
 
 ## Adding exceptions for style violations
 
@@ -397,8 +450,8 @@ bypass **some checks** in markdown files:
 
 - When in-line HTML must be used (e.g. in tables, or when no other proper
   solution is available)
-- When the same procedure needs to be described for multiple platforms,
-  and the automatic checker flags it as duplicate content
+- When the same procedure needs to be described for multiple platforms, and the
+  automatic checker flags it as duplicate content
 
 {{% alert title="Important" color="warning" %}} Exceptions should only be used
 when there are no other choices, and should be confined to the smallest possible
@@ -409,19 +462,17 @@ block of markdown code. {{% /alert %}}
 In some specific cases it is impossible to use anything but in-line HTML tags:
 
 - Presentation page leveraging bootstrap CSS classes or other advanced features
-- Using special formatting for the information presented (e.g. a list in a
-  table cell)
+- Using special formatting for the information presented (e.g. a list in a table
+  cell)
 
-Blocks with in-line HTML tags should be preceded by a HTML comment starting
-with [markdownlint-disable](https://github.com/DavidAnson/markdownlint#configuration)
+Blocks with in-line HTML tags should be preceded by a HTML comment starting with
+[markdownlint-disable](https://github.com/DavidAnson/markdownlint#configuration)
 to disable the `no-inline-html` check, as in the following example:
 
 {{% alert title="Tip" color="info" %}} When having a table is not absolutely
-necessary, use a different construct to present the information.
-{{% /alert %}}
+necessary, use a different construct to present the information. {{% /alert %}}
 
 ```markdown
-
 <!-- markdownlint-disable no-inline-html -->
 
 | Action      | OCCI                     | OpenStack              | This is a very long column with important data |
@@ -434,58 +485,63 @@ necessary, use a different construct to present the information.
 {{% alert title="Tip" color="info" %}} Do not forget to follow up with a HTML
 comment starting with
 [markdownlint-enable](https://github.com/DavidAnson/markdownlint#configuration)
-to re-enable the `no-inline-html` check.
-{{% /alert %}}
+to re-enable the `no-inline-html` check. {{% /alert %}}
 
 {{% alert title="Important" color="warning" %}} Always use the tag that is
-providing the proper semantic: e.g. for a list use `<ul>` and `<li>`,
-not `<br />`.
-{{% /alert %}}
+providing the proper semantic: e.g. for a list use `<ul>` and `<li>`, not
+`<br />`. {{% /alert %}}
 
 ### Dealing with duplicate content
 
 When the same procedure needs to be described for multiple platforms, or when
-the same code has to be exemplified for multiple languages, it is possible
-that the automatic checkers will flag these as duplicates.
+the same code has to be exemplified for multiple languages, it is possible that
+the automatic checkers will flag these as duplicates.
 
-For example, describing the following procedure will result in duplicates
-being reported:
+For example, describing the following procedure will result in duplicates being
+reported:
 
 <!--
 // jscpd:ignore-start
 -->
 
-```go-html-template
+````go-html-template
 {{</* tabpanex */>}}
+
 {{</* tabx header="Linux" */>}}
   To run the FedCloud client in a container, make sure
   [Docker is installed](https://docs.docker.com/engine/install/#server),
   then run the following commands:
+
     ```shell
     $ docker pull tdviet/fedcloudclient
     $ docker run -it tdviet/fedcloudclient bash
-    '''
+    ```
 {{</* /tabx */>}}
+
 {{</* tabx header="Mac" */>}}
   To run the FedCloud client in a container, make sure
   [Docker is installed](https://docs.docker.com/desktop/mac/install/),
   then run the following commands:
+
     ```shell
     $ docker pull tdviet/fedcloudclient
     $ docker run -it tdviet/fedcloudclient bash
-    '''
+    ```
 {{</* /tabx */>}}
+
 {{</* tabx header="Windows" */>}}
   To run the FedCloud client in a container, make sure
   [Docker is installed](https://docs.docker.com/desktop/windows/install/),
   then run the following commands:
+
     ```shell
     > docker pull tdviet/fedcloudclient
     > docker run -it tdviet/fedcloudclient bash
-    '''
+    ```
 {{</* /tabx */>}}
+
 {{</* /tabpanex */>}}
-```
+````
 
 <!--
 // jscpd:ignore-end
