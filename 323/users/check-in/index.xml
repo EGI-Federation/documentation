@@ -99,6 +99,9 @@ member of and the roles assigned to the user within those Virtual Organisation.&
 &lt;p>Information about identites linked to your account. Check the
 &lt;a href="../linking">guide for linking accounts&lt;/a> for more information.&lt;/p>
 &lt;p>&lt;img src="./check-in-profile-linked.png" alt="Linked identities">&lt;/p></description></item><item><title>Users: Linking identities</title><link>/users/check-in/linking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/linking/</guid><description>
+&lt;!--
+// jscpd:ignore-start
+-->
 &lt;h2 id="linking-new-identities-to-your-egi-account">Linking new identities to your EGI Account&lt;/h2>
 &lt;p>Identity linking allows you to access EGI resources with your existing personal
 EGI ID, using any of the login credentials you have linked to your account. You
@@ -215,7 +218,10 @@ the source is
 certificate.&lt;/p>
 &lt;p>&lt;img src="./check-in-certificates-preview.png" alt="Certificates preview">&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Users: Virtual Organisations</title><link>/users/check-in/vos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/vos/</guid><description>
+&lt;/ol>
+&lt;!--
+// jscpd:ignore-end
+--></description></item><item><title>Users: Virtual Organisations</title><link>/users/check-in/vos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/vos/</guid><description>
 &lt;p>This page contains information about using Check-in for managing your Virtual
 Organisation (VO).&lt;/p>
 &lt;h2 id="vo-management">VO management&lt;/h2>
