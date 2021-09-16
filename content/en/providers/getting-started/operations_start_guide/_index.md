@@ -124,7 +124,7 @@ The NGI Security Officer is member of the [EGI-CSIRT](#egi-csirt).
 
 The NGI Security Officer coordinates the security activities within its NGI and
 serves as the primary contact for all security related requests, in particular
-from [EGI-CSIRT's IRTF](#egi-csirt-s-irtf) concerning issues with the sites
+from [EGI-CSIRT's IRTF](#egi-csirts-irtf) concerning issues with the sites
 within the NGI.
 
 Further, the NGI Security Officer is responsible for overseeing the security
