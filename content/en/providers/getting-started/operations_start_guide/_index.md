@@ -68,10 +68,10 @@ tickets created on the [EGI Helpdesk service](../../../internal/helpdesk). They
 should respond to the tickets in a suitable time frame as defined in the
 [Resource Centre Operational Level Agreement (OLA)](https://documents.egi.eu/document/31)
 and be aware of the alarms at their site, eg. through the
-[Operations Dashboard](https://operations-portal.egi.eu). Sites must only
+[Operations Dashboard](https://operations-portal.egi.eu). Sites **MUST** only
 operate supported middleware versions. This implies upgrading it regularly.
 Emergency releases are treated in a special way. Resource Centre Administrators
-must react to security issues that are at a global level, but affect their site.
+**MUST** react to security issues that are at a global level, but affect their site.
 See
 [SEC03 EGI-CSIRT Critical Vulnerability Handling](https://wiki.egi.eu/wiki/SEC03_EGI-CSIRT_Critical_Vulnerability_Handling).
 
@@ -131,7 +131,7 @@ Further, the NGI Security Officer is responsible for overseeing the security
 related aspects of the operations of the NGI and coordinates the security
 activities within its NGI.
 
-NGIs and Sites _MUST_ respond in a timely manner to the security requests and
+NGIs and Sites **MUST** respond in a timely manner to the security requests and
 alerts coming from the EGI-CSIRT's IRTF.
 
 The NGI Security Officer name and contact address needs to be registered in the
