@@ -14,14 +14,13 @@ Organisation (VO).
 In simple terms a Virtual Organisation (VO) is just a group of users. In
 EGI VOs are created to group researchers who aim to share resources across the
 EGI Federation to achieve a common goal as part of a scientific collaboration.
+For a more formal definition of VO please look at the
+[EGI Glossary](https://ims.egi.eu/display/EGIG/Virtual+organisation).
 
 You can browse existing VOs in the
 [EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list). For each
 VO you can click on the _Details_ link to get more information. You can join
-an existing VO either using the _enrollment URL_ or emailing VO managers. See
-for example VOs for
-[WeNMR](https://operations-portal.egi.eu/vo/view/voname/enmr.eu) or
-[EMPHASIS](https://operations-portal.egi.eu/vo/view/voname/vo.emphasisproject.eu).
+an existing VO either using the _enrollment URL_ or emailing VO managers.
 
 If you are interested in creating your own VO, please see instructions in the
 section below.
