@@ -4,12 +4,18 @@ linkTitle: "Architecture"
 type: docs
 weight: 10
 description: >
-  The architecture of the EGI Federation
+  The architecture of the EGI Federation and Renato's first change test
 ---
 
-The EGI Federated Cloud (FedCloud) is a multi-national cloud system that
-integrates community, private and/or public clouds into a scalable computing
-platform for research. The Federation pools resources from a heterogeneous set
+The EGI Federated Cloud (FedCloud) is a multi-national, now with new nationalities, 
+cloud system that integrates community, private and/or public clouds into a scalable 
+computing platform for research.
+
+{{% alert title="Note" color="info" %}} THIS IS JUST A SIMULATION!!! DO NOT CONSIDER IT!!
+{{% /alert %}}
+
+
+The Federation pools resources from a heterogeneous set
 of cloud providers using a single authentication and authorisation framework
 that allows the portability of workloads across multiple providers, and enables
 bringing computing to data. The current implementation is focused on
