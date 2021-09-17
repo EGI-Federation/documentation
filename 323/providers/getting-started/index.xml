@@ -34,6 +34,15 @@ NGIs, which (a) have a mandate to represent their national users community in
 all matters falling within the scope of the EGI Infrastructure, and (b) are the
 only organization having the mandate described in (a) for its country and thus
 provide a single contact point at the national level.&lt;/p>
+&lt;h2 id="operations-centres">Operations Centres&lt;/h2>
+&lt;p>A Resource Infrastructure Provider is responsible of delivering a number services,
+either technical or humans, to different groups of customers: services supporting
+the activities of the given RIP and that facilitate and make it secure the access
+to the provided resources and services.
+In order to contribute resources to EGI, a Resource Infrastructure Provider must
+be associated to an Operations Centre.
+Resource Infrastructure Provider services are delivered by an Operations Centre.
+to continue&amp;hellip;&lt;/p>
 &lt;h2 id="roles">Roles&lt;/h2>
 &lt;p>The following sections covers the roles that are commonly involved in the
 operations of the EGI Infrastructure. The correspondent
