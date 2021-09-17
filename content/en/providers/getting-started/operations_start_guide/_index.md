@@ -44,6 +44,17 @@ all matters falling within the scope of the EGI Infrastructure, and (b) are the
 only organization having the mandate described in (a) for its country and thus
 provide a single contact point at the national level.
 
+## Operations Centres
+
+A Resource Infrastructure Provider is responsible of delivering a number services,
+either technical or humans, to different groups of customers: services supporting
+the activities of the given RIP and that facilitate and make it secure the access
+to the provided resources and services.
+In order to contribute resources to EGI, a Resource Infrastructure Provider must
+be associated to an Operations Centre.
+Resource Infrastructure Provider services are delivered by an Operations Centre.
+to continue...
+
 ## Roles
 
 The following sections covers the roles that are commonly involved in the
