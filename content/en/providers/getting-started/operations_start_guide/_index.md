@@ -51,9 +51,20 @@ either technical or humans, to different groups of customers: services supportin
 the activities of the given RIP and that facilitate and make it secure the access
 to the provided resources and services.
 In order to contribute resources to EGI, a Resource Infrastructure Provider must
-be associated to an Operations Centre.
-Resource Infrastructure Provider services are delivered by an Operations Centre.
-to continue...
+be associated to an [Operations Centre](https://ims.egi.eu/display/EGIG/Operations+Centre)
+which will deliver those services on behalf of the RIP.
+In some cases, a single Operations Centre can operate services form more than one RI.
+Indeed, for reasons of economy of scale, an Operations Center can be federated,
+i.e. it can be responsible for operating multiple Resource Infrastructures at a time.
+Federation of operations can be a cost-effective approach for Resource Infrastructure
+Providers wishing to share their effort and services, or in order to operate the
+infrastructures in an early stage of maturity. 
+The Operations Centre provides services in collaboration with the respective
+Resource Centres via the Resource Centre Operations Manager, and globally with
+EGI Foundation and other Operations Centres. Locally, Operations Centres are
+responsible for supporting the Resource Centres, for monitoring their QoS, for
+collecting requirements and of representing them in the various EGI operations boards.
+Globally they are in charge of contributing to the evolution of the EGI Infrastructure. 
 
 ## Roles
 
