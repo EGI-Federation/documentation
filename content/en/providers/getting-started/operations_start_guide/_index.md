@@ -46,25 +46,32 @@ provide a single contact point at the national level.
 
 ## Operations Centres
 
-A Resource Infrastructure Provider is responsible of delivering a number services,
-either technical or humans, to different groups of customers: services supporting
-the activities of the given RIP and that facilitate and make it secure the access
-to the provided resources and services.
+A Resource Infrastructure Provider is responsible for delivering, to different
+groups of customers, a number of services, either technical or humans : services
+supporting the activities of the given Resource Infrastructure Provider and
+facilitating and making secure the access to the provided resources and
+services.
+
 In order to contribute resources to EGI, a Resource Infrastructure Provider must
-be associated to an [Operations Centre](https://ims.egi.eu/display/EGIG/Operations+Centre)
-which will deliver those services on behalf of the RIP.
-In some cases, a single Operations Centre can operate services form more than one RI.
-Indeed, for reasons of economy of scale, an Operations Center can be federated,
-i.e. it can be responsible for operating multiple Resource Infrastructures at a time.
-Federation of operations can be a cost-effective approach for Resource Infrastructure
-Providers wishing to share their effort and services, or in order to operate the
-infrastructures in an early stage of maturity. 
+be associated to an
+[Operations Centre](https://confluence.egi.eu/display/EGIG/Operations+Centre)
+which will deliver the services on behalf of them.
+
+A single Operations Centre can be federated and operate services for multiple
+Resource Infrastructure Providers. Federation of operations can be a
+cost-effective approach for Resource Infrastructure Providers wishing to share
+their effort and services, or in order to operate the infrastructures in an
+early stage of maturity.
+
 The Operations Centre provides services in collaboration with the respective
 Resource Centres via the Resource Centre Operations Manager, and globally with
-EGI Foundation and other Operations Centres. Locally, Operations Centres are
-responsible for supporting the Resource Centres, for monitoring their QoS, for
-collecting requirements and of representing them in the various EGI operations boards.
-Globally they are in charge of contributing to the evolution of the EGI Infrastructure. 
+EGI Foundation and other Operations Centres.
+
+- Locally, Operations Centres are responsible for supporting the Resource
+  Centres, for monitoring their Quality of Service (QoS), for collecting
+  requirements and representing them in the EGI operations boards.
+- Globally they are in charge of contributing to the evolution of the EGI
+  Infrastructure.
 
 ## Roles
 
@@ -72,11 +79,11 @@ The following sections covers the roles that are commonly involved in the
 operations of the EGI Infrastructure. The correspondent
 [roles defined in Configuration Database (GOCDB)](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles)
 give specific rights in the Configuration Database itself and in other EGI
-services. There are roles whose scope is limited to the operation of a RC. A
-number of other roles act on a higher level, involving the operations activities
-related either to the NGI (Regional level) or to the EGI infrastructure as a
-whole (global level). Other terms and definitions can be found in the
-[EGI Glossary](https://go.egi.eu/glossary).
+services. There are roles whose scope is limited to the operation of a Resource
+Centre. A number of other roles act on a higher level, involving the operations
+activities related either to the NGI (Regional level) or to the EGI
+infrastructure as a whole (global level). Other terms and definitions can be
+found in the [EGI Glossary](https://go.egi.eu/glossary).
 
 ### Resource Centre level
 
@@ -93,8 +100,8 @@ and be aware of the alarms at their site, eg. through the
 [Operations Dashboard](https://operations-portal.egi.eu). Sites **MUST** only
 operate supported middleware versions. This implies upgrading it regularly.
 Emergency releases are treated in a special way. Resource Centre Administrators
-**MUST** react to security issues that are at a global level, but affect their site.
-See
+**MUST** react to security issues that are at a global level, but affect their
+site. See
 [SEC03 EGI-CSIRT Critical Vulnerability Handling](https://wiki.egi.eu/wiki/SEC03_EGI-CSIRT_Critical_Vulnerability_Handling).
 
 #### Resource Centre Operations Manager
