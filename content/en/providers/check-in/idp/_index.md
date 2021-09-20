@@ -210,6 +210,10 @@ are provided by GRNET:
 
 ### Attribute release
 
+<!--
+// jscpd:ignore-start
+-->
+
 The SAML based Identity Provider of your Home Organisation or Community is
 expected to release a non-reassignable identifier that uniquely identifies the
 user within the scope of that organisation or community, along with a set of
@@ -229,6 +233,10 @@ additional information as described in the following table (see also
 | Group(s)/role(s) within Home Organisation or Community                                                                                                                                           | `eduPersonEntitlement`                                                                                                                                                               |
 
 <!-- markdownlint-enable line-length no-inline-html -->
+
+<!--
+// jscpd:ignore-end
+-->
 
 ## OpenID Connect Identity Provider
 
@@ -259,6 +267,10 @@ following the
 
 ### Attribute release
 
+<!--
+// jscpd:ignore-start
+-->
+
 The OpenID Connect or OAuth 2.0 based Identity Provider of your Home
 Organisation or Community is expected to release a non-reassignable identifier
 that uniquely identifies the user within the scope of that organisation or
@@ -279,6 +291,10 @@ following table (see also
 | Group(s)/role(s) within Home Organisation or Community                                                                                                                                           | `eduPerson_entitlement`                                               |
 
 <!-- markdownlint-enable line-length no-inline-html -->
+
+<!--
+// jscpd:ignore-end
+-->
 
 ## Integration success stories
 
