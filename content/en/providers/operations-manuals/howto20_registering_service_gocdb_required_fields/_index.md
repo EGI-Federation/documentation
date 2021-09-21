@@ -48,4 +48,4 @@ with an asterisk are mandatory):
 `none`
 
 `✗ Protected Reserved Tags (Can only be assigned on request)`
-`alice  atlas  cms  elixir  lhcb  tier1  tier2  wlcg`
+`alice`  `atlas`  `cms`  `elixir`  `lhcb`  `tier1`  `tier2`  `wlcg`
