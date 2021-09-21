@@ -120,12 +120,35 @@ In case you need to register an additional endpoint for a service, go on the
 service summary page and add the proper information. In the example below it is
 shown the case of a computing element.
 
-|                                                                                                                                                                                                                       |                  |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| this is the service summary page. You need to click on the _Add endpoint_ button for registering additional endpoint URLs.                                                                                            | TBD: add picture |
-| Fill in the proper information and don't forget to select the "Monitored" flag for making nagios to detect the new endpoint.                                                                                          | TBD: add picture |
-| The summary page of the endpoint just added should look like this one.                                                                                                                                                | TBD: add picture |
-| And this is the summary page of the service reporting the information about all its endpoints registered: the first one in the _Grid Information_ section and the additional ones in the _Service Endpoints_ section. | TBD: add picture |
+#### Service summary page
+
+This is the service summary page.
+
+> You need to click on the _Add endpoint_ button for registering additional
+> endpoint URLs.
+
+![Service summary page](service-summary-page.png)
+
+#### Adding an endpoint
+
+> Fill in the proper information and don't forget to select the "Monitored" flag
+> for making nagios to detect the new endpoint.
+
+![Adding and endpoint](add-endpoint.png)
+
+#### Reviewing the endpoint description
+
+The summary page of the endpoint just added should look like this one.
+
+![Service endpoint page](service-endpoint-page.png)
+
+#### Reviewing the service description
+
+And this is the summary page of the service reporting the information about all
+its endpoints registered: the first one in the _Grid Information_ section and
+the additional ones in the _Service Endpoints_ section.
+
+![Service summary page](service-description-review.png)
 
 ## Examples
 
