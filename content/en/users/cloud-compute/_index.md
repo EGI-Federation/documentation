@@ -68,3 +68,6 @@ emerged:
   new developments.
   - Example:
     [Training infrastructure](https://www.egi.eu/services/training-infrastructure/)
+
+Eager to test this service? Have a look at
+[how to create your first Virtual Machine in EGI](../tutorials/create-your-first-virtual-machine/).
