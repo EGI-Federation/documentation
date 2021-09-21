@@ -3430,18 +3430,18 @@ certification. For sites in production, EGI Monitoring is retrieving from the
 Top BDII these information&lt;/strong>&lt;/p>
 &lt;p>The information needed for service type are:&lt;/p>
 &lt;ul>
-&lt;li>&lt;em>CREAM-CE&lt;/em>: the queue URL where the ops VO is enabled. This is the value of
+&lt;li>&lt;strong>CREAM-CE&lt;/strong>: the queue URL where the ops VO is enabled. This is the value of
 the attribute &lt;code>GlueCEUniqueID&lt;/code> published in the BDII (e.g.
 &lt;code>cream.egi.eu:8443/cream-pbs-ops&lt;/code>).&lt;/li>
-&lt;li>&lt;em>SRM&lt;/em>: the value of the attribute &lt;code>GlueServiceEndpoint&lt;/code> published in the BDII
-(e.g. &lt;code>httpg://se.egi.eu:8444/srm/managerv2&lt;/code>)&lt;/li>
+&lt;li>&lt;strong>SRM&lt;/strong>: the value of the attribute &lt;code>GlueServiceEndpoint&lt;/code> published in the
+BDII (e.g. &lt;code>httpg://se.egi.eu:8444/srm/managerv2&lt;/code>)&lt;/li>
 &lt;li>Cloud:
 &lt;ul>
-&lt;li>&lt;em>org.openstack.nova&lt;/em>: The &lt;em>endpoint URL&lt;/em> must contain the Keystone v3 URL:
+&lt;li>&lt;strong>org.openstack.nova&lt;/strong>: The &lt;code>endpoint URL&lt;/code> must contain the Keystone v3 URL:
 &lt;code>https://hostname:port/url/v3&lt;/code>&lt;/li>
-&lt;li>&lt;em>org.openstack.swift&lt;/em>:The &lt;em>endpoint URL&lt;/em> must contain the Keystone v3 URL:
+&lt;li>&lt;strong>org.openstack.swift&lt;/strong>:The &lt;code>endpoint URL&lt;/code> must contain the Keystone v3 URL:
 &lt;code>https://hostname:port/url/v3&lt;/code>&lt;/li>
-&lt;li>&lt;em>eu.egi.cloud.accounting&lt;/em>: for the host sending the records to the
+&lt;li>&lt;strong>eu.egi.cloud.accounting&lt;/strong>: for the host sending the records to the
 accounting repositority&lt;/li>
 &lt;/ul>
 &lt;/li>
