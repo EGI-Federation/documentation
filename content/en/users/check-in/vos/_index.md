@@ -23,7 +23,7 @@ VO you can click on the _Details_ link to get more information. You can join
 an existing VO either using the _enrollment URL_ or emailing VO managers.
 
 If you are interested in creating your own VO, please see instructions in the
-section below.
+section [below](#vo-management).
 
 ## VO management
 
@@ -49,7 +49,7 @@ about VO activities for EGI and for VO members (to both people and sites).
 
 A step-by-step guide for the VO registration process is provided in the
 following link:
-<https://wiki.egi.eu/wiki/PROC14_VO_Registration#VO_registration>
+<https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration>
 
 ### Viewing VO members
 
