@@ -92,19 +92,19 @@ information.
 
 > Click on a service for displaying its page (e.g. the CREAM-CE).
 
-![Site overview](Picture01.png)
+![Site overview](site-overview.png)
 
 ##### Editing a service
 
 > Click on the EDIT button on the top right corner
 
-![Site overview](Picture02.png)
+![Service overview](service-overview.png)
 
 ##### Adding a Service URL
 
 > fill in the _Service URL_ field with the queue URL
 
-![Site overview](Picture03.png)
+![Service Edition](service-edition.png)
 
 ##### Reviewing the site
 
@@ -112,7 +112,7 @@ Now the CREAM-CE service endpoint contains the required queue information.
 
 > Proceed in a similar way for the other services.
 
-![Site overview](Picture04.png)
+![Completed service overview](completed-service-overview.png)
 
 ### Additional endpoints information
 
