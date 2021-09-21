@@ -86,7 +86,7 @@ details_ button for finding the URL associated to the SRM interface.
 - URLs information are completely missing: you need to edit the services
   information
 
-|                                                                                                                                                    |
+|                                                                                                                                                    |                  |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
 | this is the home page regarding your site. You need to fill in the URL information. Click on a service for displaying its page (e.g. the CREAM-CE) | TBD: add picture |
 | click on the EDIT button on the top-right corner                                                                                                   | TBD: add picture |
