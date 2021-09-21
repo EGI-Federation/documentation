@@ -83,15 +83,36 @@ details_ button for finding the URL associated to the SRM interface.
 
 ### URLs information are completely missing
 
-- URLs information are completely missing: you need to edit the services
-  information
+#### Editing the services information
 
-|                                                                                                                                                    |                  |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| this is the home page regarding your site. You need to fill in the URL information. Click on a service for displaying its page (e.g. the CREAM-CE) | TBD: add picture |
-| click on the EDIT button on the top-right corner                                                                                                   | TBD: add picture |
-| fill in the _Service URL_ field with the queue URL;                                                                                                | TBD: add picture |
-| Now the CREAM-CE service endpoint contains the required queue information. Proceed in a similar way for the other CREAM-CE and SRM services.       | TBD: add picture |
+##### Site overview
+
+This is the home page regarding your site. You need to fill in the URL
+information.
+
+> Click on a service for displaying its page (e.g. the CREAM-CE).
+
+![Site overview](Picture01.png)
+
+##### Editing a service
+
+> Click on the EDIT button on the top right corner
+
+![Site overview](Picture02.png)
+
+##### Adding a Service URL
+
+> fill in the _Service URL_ field with the queue URL
+
+![Site overview](Picture03.png)
+
+##### Reviewing the site
+
+Now the CREAM-CE service endpoint contains the required queue information.
+
+> Proceed in a similar way for the other services.
+
+![Site overview](Picture04.png)
 
 ### Additional endpoints information
 
