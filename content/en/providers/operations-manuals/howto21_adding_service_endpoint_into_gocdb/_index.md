@@ -15,11 +15,18 @@ Top BDII these information**
 
 The information needed for service type are:
 
-- CREAM-CE: the queue URL where the ops VO is enabled. This is the value of the
-  attribute `GlueCEUniqueID` published in the BDII (e.g.
+- _CREAM-CE_: the queue URL where the ops VO is enabled. This is the value of
+  the attribute `GlueCEUniqueID` published in the BDII (e.g.
   `cream.egi.eu:8443/cream-pbs-ops`).
-- SRM: the value of the attribute `GlueServiceEndpoint` published in the BDII
+- _SRM_: the value of the attribute `GlueServiceEndpoint` published in the BDII
   (e.g. `httpg://se.egi.eu:8444/srm/managerv2`)
+- Cloud:
+  - _org.openstack.nova_: The _endpoint URL_ must contain the Keystone v3 URL:
+    `https://hostname:port/url/v3`
+  - _org.openstack.swift_:The _endpoint URL_ must contain the Keystone v3 URL:
+    `https://hostname:port/url/v3`
+  - _eu.egi.cloud.accounting_: for the host sending the records to the
+    accounting repositority
 - Other service types: the value of the attribute `GlueServiceEndpoint`
   published in the BDII
 
@@ -110,8 +117,8 @@ In order to properly monitor your webdav endpoint:
 - fill in the webdav URL containing also the VO ops folder, for example:
   `https://darkstorm.cnaf.infn.it:8443/webdav/ops` or
   `https://hepgrid11.ph.liv.ac.uk/dpm/ph.liv.ac.uk/home/ops/`
-  - it corresponds to the value of GLUE2 attribute `GLUE2EndpointURL` (containing
-    the used port and without the VO folder);
+  - it corresponds to the value of GLUE2 attribute `GLUE2EndpointURL`
+    (containing the used port and without the VO folder);
 - verify that the webdav url (for example:
   `https://darkstorm.cnaf.infn.it:8443/webdav`) is properly accessible.
 
