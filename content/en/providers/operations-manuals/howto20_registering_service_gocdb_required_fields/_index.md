@@ -39,7 +39,7 @@ with an asterisk are mandatory):
 ## Scope Tags
 
 `✓ Optional Tags (At least 1 optional tags must be selected)`
-`EGI  Local  `
+`EGI`  `Local `
 
 `✓ Reserved Tags Inheritable from Parent Site`
 `none`
