@@ -33,7 +33,7 @@ GOC-DB, please consult the relative
 ## Get the information
 
 For retrieving the queue URL from the BDII, you can simply use the
-command *lcg-infosites* executed from an UI. Be sure to query a
+command `lcg-infosites` executed from an UI. Be sure to query a
 production Top-BDII: you can either set the one provided by your
 Operations Centre or choose one from
 <https://goc.egi.eu/portal/index.php?Page_Type=Service_Group&id=1205>
