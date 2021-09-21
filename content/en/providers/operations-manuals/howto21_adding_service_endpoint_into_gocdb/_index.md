@@ -85,7 +85,7 @@ details_ button for finding the URL associated to the SRM interface.
 
 #### Editing the services information
 
-##### Site overview
+- Site overview
 
 This is the home page regarding your site. You need to fill in the URL
 information.
@@ -94,19 +94,19 @@ information.
 
 ![Site overview](site-overview.png)
 
-##### Editing a service
+- Editing a service
 
 > Click on the EDIT button on the top right corner
 
 ![Service overview](service-overview.png)
 
-##### Adding a Service URL
+- Adding a Service URL
 
 > fill in the _Service URL_ field with the queue URL
 
 ![Service Edition](service-edition.png)
 
-##### Reviewing the site
+- Reviewing the site
 
 Now the CREAM-CE service endpoint contains the required queue information.
 
@@ -120,7 +120,7 @@ In case you need to register an additional endpoint for a service, go on the
 service summary page and add the proper information. In the example below it is
 shown the case of a computing element.
 
-#### Service summary page
+- Service summary page
 
 This is the service summary page.
 
@@ -129,20 +129,20 @@ This is the service summary page.
 
 ![Service summary page](service-summary-page.png)
 
-#### Adding an endpoint
+- Adding an endpoint
 
 > Fill in the proper information and don't forget to select the "Monitored" flag
 > for making nagios to detect the new endpoint.
 
 ![Adding and endpoint](add-endpoint.png)
 
-#### Reviewing the endpoint description
+- Reviewing the endpoint description
 
 The summary page of the endpoint just added should look like this one.
 
 ![Service endpoint page](service-endpoint-page.png)
 
-#### Reviewing the service description
+- Reviewing the service description
 
 And this is the summary page of the service reporting the information about all
 its endpoints registered: the first one in the _Grid Information_ section and
