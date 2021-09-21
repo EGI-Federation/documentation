@@ -15,17 +15,17 @@ Top BDII these information**
 
 The information needed for service type are:
 
-- _CREAM-CE_: the queue URL where the ops VO is enabled. This is the value of
+- **CREAM-CE**: the queue URL where the ops VO is enabled. This is the value of
   the attribute `GlueCEUniqueID` published in the BDII (e.g.
   `cream.egi.eu:8443/cream-pbs-ops`).
-- _SRM_: the value of the attribute `GlueServiceEndpoint` published in the BDII
-  (e.g. `httpg://se.egi.eu:8444/srm/managerv2`)
+- **SRM**: the value of the attribute `GlueServiceEndpoint` published in the
+  BDII (e.g. `httpg://se.egi.eu:8444/srm/managerv2`)
 - Cloud:
-  - _org.openstack.nova_: The _endpoint URL_ must contain the Keystone v3 URL:
+  - **org.openstack.nova**: The `endpoint URL` must contain the Keystone v3 URL:
     `https://hostname:port/url/v3`
-  - _org.openstack.swift_:The _endpoint URL_ must contain the Keystone v3 URL:
+  - **org.openstack.swift**:The `endpoint URL` must contain the Keystone v3 URL:
     `https://hostname:port/url/v3`
-  - _eu.egi.cloud.accounting_: for the host sending the records to the
+  - **eu.egi.cloud.accounting**: for the host sending the records to the
     accounting repositority
 - Other service types: the value of the attribute `GlueServiceEndpoint`
   published in the BDII
