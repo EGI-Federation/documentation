@@ -47,9 +47,8 @@ VO is set up and operational, the VO manager is the person who is primarily
 responsible for the operation of the VO and for providing sufficient information
 about VO activities for EGI and for VO members (to both people and sites).
 
-A step-by-step guide for the VO registration process is provided in the
-following link:
-<https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration>
+A step-by-step guide for the VO registration process is provided in the procedure
+[PROC14 VO Registration](https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration).
 
 ### Viewing VO members
 
