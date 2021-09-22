@@ -1,8 +1,8 @@
 ---
-title: HOWTO21 How to add URL service endpoint information into GOC-DB
+title: Adding service endpoints
 weight: 135
 type: "docs"
-description: "How to add URL service endpoint information into GOC-DB"
+description: "Adding service endpoints information into Configuration Database"
 ---
 
 For monitoring purposes, each service endpoints registered into GOC-DB with the

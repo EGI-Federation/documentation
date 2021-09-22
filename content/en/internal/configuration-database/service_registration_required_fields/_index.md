@@ -1,11 +1,9 @@
 ---
-title:
-  "HOWTO20 Registering a new service in GOC-DB: mandatory and optional
-  information"
+title: Required fields for service registration
 weight: 135
 type: "docs"
 description:
-  "Registering a new service in GOC-DB: mandatory and optional information"
+  "Required fields for registering a service in Configuration Database"
 ---
 
 Information to provide when registering a new service (the fields marked with an
