@@ -34,11 +34,11 @@ The information needed for service type are:
 It is also possible to register additional endpoints for every services, they
 will also be monitored if the "Monitored" flag is set.
 
-For having more information about managingthe Service endpoints in the
+For having more information about managing the Service endpoints in the
 Configuration Database, please consult the
 [service endpoints documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Service_Endpoints).
 
-## Get the information
+## Retrieving the information
 
 For retrieving the queue URL from the BDII, you can use the command
 `lcg-infosites`, to be executed from an UI. Be sure to query a production Top
@@ -81,7 +81,7 @@ GLUE2 information browser provided by
 your NGI, then your site and hence the Storage service; click on the _endpoint
 details_ button for finding the URL associated to the SRM interface.
 
-## Fill in the information
+## Filling the information in
 
 ### URLs information are completely missing
 
