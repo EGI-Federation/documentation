@@ -147,10 +147,10 @@ published in the BDII&lt;/li>
 &lt;/ul>
 &lt;p>It is also possible to register additional endpoints for every services, they
 will also be monitored if the &amp;ldquo;Monitored&amp;rdquo; flag is set.&lt;/p>
-&lt;p>For having more information about managingthe Service endpoints in the
+&lt;p>For having more information about managing the Service endpoints in the
 Configuration Database, please consult the
 &lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Service_Endpoints">service endpoints documentation&lt;/a>.&lt;/p>
-&lt;h2 id="get-the-information">Get the information&lt;/h2>
+&lt;h2 id="retrieving-the-information">Retrieving the information&lt;/h2>
 &lt;p>For retrieving the queue URL from the BDII, you can use the command
 &lt;code>lcg-infosites&lt;/code>, to be executed from an UI. Be sure to query a production Top
 BDII: you can either use the one provided by your Operations Centre or choose
@@ -179,7 +179,7 @@ GLUE2 information browser provided by
 &lt;a href="https://operations-portal.egi.eu/vapor/resources/GL2ResNGISites">VAPOR&lt;/a>: select
 your NGI, then your site and hence the Storage service; click on the &lt;em>endpoint
 details&lt;/em> button for finding the URL associated to the SRM interface.&lt;/p>
-&lt;h2 id="fill-in-the-information">Fill in the information&lt;/h2>
+&lt;h2 id="filling-the-information-in">Filling the information in&lt;/h2>
 &lt;h3 id="urls-information-are-completely-missing">URLs information are completely missing&lt;/h3>
 &lt;h4 id="editing-the-services-information">Editing the services information&lt;/h4>
 &lt;ul>
