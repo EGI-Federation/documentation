@@ -1,15 +1,15 @@
 ---
-title: HOWTO01 Site Certification Required Information
+title: Required fields for site registration
 weight: 100
 type: "docs"
 description:
   "Information for registering a site into the Configuration Database"
 ---
 
-With the help of its NGI Operation Center, the site has to register their own
+With the help of its NGI Operation Centre, the site has to register their
 resources in a central database named the
 [Configuration Database](../../../internal/configuration-database). The
-following is an example of how to fill in the database which should be to sent
+following is an example of how to fill in the database and should be to sent
 (by email) to the NGI manager(s).
 
 ## Required information
