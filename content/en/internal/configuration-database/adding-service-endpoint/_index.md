@@ -5,13 +5,14 @@ weight: 30
 type: "docs"
 ---
 
-For monitoring purposes, each service endpoints registered into GOC-DB with the
-flags _production_ and _monitored_ should include the endpoint URL information
-in order to be contacted by the relative nagios probe.
+For monitoring purposes, each service endpoints registered into the
+Configuration Database, and having the flags _production_ and _monitored_ should
+include the endpoint URL information in order to be contacted by the
+corresponding service-specific nagios probe.
 
 **Important: currently these steps are required only for the sites under
-certification. For sites in production, EGI Monitoring is retrieving from the
-Top BDII these information**
+certification. For sites in production, EGI Service Monitoring is retrieving
+this information from a Top BDII**
 
 The information needed for service type are:
 
@@ -30,18 +31,19 @@ The information needed for service type are:
 - Other service types: the value of the attribute `GlueServiceEndpoint`
   published in the BDII
 
-It is also possible registering additional endpoints for each service: by
-setting also the "Monitored" flag, ARGO will monitor them.
+It is also possible to register additional endpoints for every services, they
+will also be monitored if the "Monitored" flag is set.
 
-For having more information about managing the Service endpoints in the
-Configuration Database, please consult the relative
-[documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Service_Endpoints).
+For having more information about managingthe Service endpoints in the
+Configuration Database, please consult the
+[service endpoints documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Service_Endpoints).
 
 ## Get the information
 
-For retrieving the queue URL from the BDII, you can simply use the command
-`lcg-infosites` executed from an UI. Be sure to query a production Top BDII: you
-can either set the one provided by your Operations Centre or choose one from
+For retrieving the queue URL from the BDII, you can use the command
+`lcg-infosites`, to be executed from an UI. Be sure to query a production Top
+BDII: you can either use the one provided by your Operations Centre or choose
+one from
 [the Configuration Database](https://goc.egi.eu/portal/index.php?Page_Type=Service_Group&id=1205)
 
 For example:
@@ -57,8 +59,8 @@ $ lcg-infosites --vo ops ce | grep nikhef
   5680      16          0            0       0 stremsel.nikhef.nl:8443/cream-pbs-infra
 ```
 
-For getting the `GlueServiceEndpoint` URL of your SRM service, you can launch a
-ldap query to your Site BDII (or also directly to the SRM service):
+In order to find the `GlueServiceEndpoint` URL of your SRM service, you can
+launch a LDAP query to your Site BDII (or directly to the SRM service):
 
 ```shell
 $ ldapsearch -x -LLL -H ldap://sbdii01.ncg.ingrid.pt:2170 \
@@ -70,8 +72,8 @@ dn: GlueServiceUniqueID=httpg://srm01.ncg.ingrid.pt:8444/srm/managerv2,Mds-Vo-na
 GlueServiceEndpoint: httpg://srm01.ncg.ingrid.pt:8444/srm/managerv2
 ```
 
-In a similar way, by just changing the value of `GlueServiceType`, you can get
-the endpoint URLs of other services.
+In a similar way, by just changing the value of `GlueServiceType`, you can
+retrieve the endpoint URLs of other services.
 
 An alternative way for retrieving the `GlueServiceEndpoint` URL is using the
 GLUE2 information browser provided by
