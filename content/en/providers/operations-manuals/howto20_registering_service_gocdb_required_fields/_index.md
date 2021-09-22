@@ -1,5 +1,5 @@
 ---
-title: HOWTO20
+title: HOWTO20 Registering a new service in GOC-DB: mandatory and optional information
 weight: 135
 type: "docs"
 description:

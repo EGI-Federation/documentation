@@ -1,5 +1,5 @@
 ---
-title: HOWTO21
+title: HOWTO21 How to add URL service endpoint information into GOC-DB
 weight: 135
 type: "docs"
 description: "How to add URL service endpoint information into GOC-DB"
