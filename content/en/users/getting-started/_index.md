@@ -87,7 +87,9 @@ EGI services use the following types of access conditions:
 
 - **Wide access** - Users can freely access the service. Login may be required
   but it is possible with various institutional accounts (through
-  [EduGAIN](https://edugain.org)), or with social accounts (e.g. Google).
+  [EduGAIN](https://edugain.org)), or with social accounts (e.g. Google). For
+  example you can [create a test Virtual Machine](../tutorials/create-your-first-virtual-machine/)
+  or launch a [Jupyter Notebook](../notebooks/).
 - **Policy based** - Users are granted access based on specific policies defined
   by the service providers. Access needs to be requested, and will be checked
   for such services. Example: Compute resources and tools allocated to

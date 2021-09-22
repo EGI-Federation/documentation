@@ -9,6 +9,22 @@ description: >
 This page contains information about using Check-in for managing your Virtual
 Organisation (VO).
 
+## Background
+
+In simple terms a Virtual Organisation (VO) is just a group of users. In
+EGI VOs are created to group researchers who aim to share resources across the
+EGI Federation to achieve a common goal as part of a scientific collaboration.
+For a more formal definition of VO please look at the
+[EGI Glossary](https://ims.egi.eu/display/EGIG/Virtual+organisation).
+
+You can browse existing VOs in the
+[EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list). For each
+VO you can click on the _Details_ link to get more information. You can join
+an existing VO either using the _enrollment URL_ or emailing VO managers.
+
+If you are interested in creating your own VO, please see instructions in the
+section [below](#vo-management).
+
 ## VO management
 
 VOs in Check-in are represented as Collaborative Organisation Units (COUs). A
@@ -31,9 +47,8 @@ VO is set up and operational, the VO manager is the person who is primarily
 responsible for the operation of the VO and for providing sufficient information
 about VO activities for EGI and for VO members (to both people and sites).
 
-A step-by-step guide for the VO registration process is provided in the
-following link:
-<https://wiki.egi.eu/wiki/PROC14_VO_Registration#VO_registration>
+A step-by-step guide for the VO registration process is provided in the procedure
+[PROC14 VO Registration](https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration).
 
 ### Viewing VO members
 
