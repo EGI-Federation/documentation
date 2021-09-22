@@ -3390,7 +3390,7 @@ $ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; delete -r test/
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; list /
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>See Site Certification GIIS Check &lt;a href="../howto03_site_certificatoin_giis_check">HOWTO03&lt;/a>.&lt;/p>
 &lt;p>See to Resource Centre registration and certification procedure
-&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item><item><title>Providers: HOWTO20</title><link>/providers/operations-manuals/howto20_registering_service_gocdb_required_fields/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto20_registering_service_gocdb_required_fields/</guid><description>
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item><item><title>Providers: HOWTO20 Registering a new service in GOC-DB: mandatory and optional information</title><link>/providers/operations-manuals/howto20_registering_service_gocdb_required_fields/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto20_registering_service_gocdb_required_fields/</guid><description>
 &lt;p>Information to provide when registering a new service (the fields marked with an
 asterisk are mandatory):&lt;/p>
 &lt;ul>
@@ -3421,7 +3421,7 @@ able to reselect the tag - it will be moved to the &amp;lsquo;Protected Reserved
 list): none&lt;/li>
 &lt;li>✗ Protected Reserved Tags (Can only be assigned on request): alice atlas cms
 elixir lhcb tier1 tier2 wlcg&lt;/li>
-&lt;/ul></description></item><item><title>Providers: HOWTO21</title><link>/providers/operations-manuals/howto21_adding_service_endpoint_into_gocdb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto21_adding_service_endpoint_into_gocdb/</guid><description>
+&lt;/ul></description></item><item><title>Providers: HOWTO21 How to add URL service endpoint information into GOC-DB</title><link>/providers/operations-manuals/howto21_adding_service_endpoint_into_gocdb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto21_adding_service_endpoint_into_gocdb/</guid><description>
 &lt;p>For monitoring purposes, each service endpoints registered into GOC-DB with the
 flags &lt;em>production&lt;/em> and &lt;em>monitored&lt;/em> should include the endpoint URL information
 in order to be contacted by the relative nagios probe.&lt;/p>
