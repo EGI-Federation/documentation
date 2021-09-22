@@ -61,7 +61,7 @@ For getting the `GlueServiceEndpoint` URL of your SRM service, you can launch a
 ldap query to your Site BDII (or also directly to the SRM service):
 
 ```shell
-$ ldapsearch -x -LLL -H <ldap://sbdii01.ncg.ingrid.pt:2170> \
+$ ldapsearch -x -LLL -H ldap://sbdii01.ncg.ingrid.pt:2170 \
   -b "mds-vo-name=NCG-INGRID-PT,o=grid" \
   '(&(objectClass=GlueService)(GlueServiceType=SRM))' \
   GlueServiceEndpoint
