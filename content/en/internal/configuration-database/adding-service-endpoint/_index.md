@@ -1,8 +1,8 @@
 ---
 title: Adding service endpoints
-weight: 135
-type: "docs"
 description: "Adding service endpoints information into Configuration Database"
+weight: 30
+type: "docs"
 ---
 
 For monitoring purposes, each service endpoints registered into GOC-DB with the

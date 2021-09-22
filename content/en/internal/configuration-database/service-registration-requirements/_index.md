@@ -1,9 +1,9 @@
 ---
 title: Service registration requirements
-weight: 135
-type: "docs"
 description:
   "Information required for registering a service into the Configuration Database"
+weight: 50
+type: "docs"
 ---
 
 Information to provide when registering a new service (the fields marked with an

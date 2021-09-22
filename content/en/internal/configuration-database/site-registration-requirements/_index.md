@@ -1,9 +1,9 @@
 ---
 title: Site registration requirements
-weight: 100
-type: "docs"
 description:
   "Information required for registering a site into the Configuration Database"
+weight: 40
+type: "docs"
 ---
 
 With the help of its NGI Operation Centre, the site has to register their

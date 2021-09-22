@@ -1,9 +1,8 @@
 ---
 title: "Service information"
-weight: 100
+description: "Technical details of the Configuration Database"
+weight: 10
 type: "docs"
-description: >
-  Technical details of the Configuration Database
 ---
 
 ## Identity card
