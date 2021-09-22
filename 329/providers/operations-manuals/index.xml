@@ -2088,60 +2088,7 @@ introduces new settings for publishing the accounting records via AMS.&lt;/li>
 &lt;/ul>
 &lt;h2 id="htcondor-ce">HTCondor-CE&lt;/h2>
 &lt;p>To collect and publish the accounting data you need to install the APEL software
-as explained in the general information section.&lt;/p></description></item><item><title>Providers: HOWTO01 Site Certification Required Information</title><link>/providers/operations-manuals/howto01_site_certification_required_information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_site_certification_required_information/</guid><description>
-&lt;p>With the help of its NGI Operation Center, the site has to register their own
-resources in a central database named the
-&lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>. The
-following is an example of how to fill in the database which should be to sent
-(by email) to the NGI manager(s).&lt;/p>
-&lt;h2 id="required-information">Required information&lt;/h2>
-&lt;p>The following fields are mandatory and must be sent with the application.&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>ROC&lt;/strong>: the ROC/NGI (e.g. &lt;code>NGI_France&lt;/code> or &lt;code>ROC_LA&lt;/code>)&lt;/li>
-&lt;li>&lt;strong>Country&lt;/strong>: the country (e.g. &lt;code>Italy&lt;/code>)&lt;/li>
-&lt;li>&lt;strong>Domain&lt;/strong>: DNS domain used by the machines at this site (eg: &lt;code>cnaf.infn.it&lt;/code>)&lt;/li>
-&lt;li>&lt;strong>Short Name&lt;/strong>: Generic name for the site (Alphanumeric, dot dash and
-underscore, eg: &lt;code>INFN-CNAF&lt;/code>)&lt;/li>
-&lt;li>&lt;strong>Official Name&lt;/strong>: Official name (Alphanumeric and basic punctuation), e.g.
-&lt;code>Mysite, University of Mytown, Mycountry&lt;/code>&lt;/li>
-&lt;li>&lt;strong>E-Mail&lt;/strong>: Generic contact used for broadcasts, notifications and general
-purpose contact. The mailing list must include all the site managers
-responsible for that site. A suggested e-mail alias would take the form of
-&lt;code>grid-prod@site-domain.tld&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Contact Telephone Number&lt;/strong>: Generic phone contact (numbers, optional +, dots
-spaces or dashes)&lt;/li>
-&lt;li>&lt;strong>Security Contact E-mail&lt;/strong>: A mailing list for security information
-communication. The mailing list must be closed and its archives not published.
-A suggested e-mail alias would take the form of &lt;code>grid-sec@site-domain.tld&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Security Contact Telephone Number&lt;/strong>: Site&amp;rsquo;s Computer Security Incident
-Response Team (CSIRT) telephone number (numbers, optional +, dots spaces or
-dashes)&lt;/li>
-&lt;/ul>
-&lt;h2 id="additional-information">Additional information&lt;/h2>
-&lt;p>This information should be filled in at a later time. Although it is not
-required, it is recommended to complete this as much as possible.&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Timezone&lt;/strong>: e.g. Europe/Amsterdam&lt;/li>
-&lt;li>&lt;strong>Home URL&lt;/strong>: Site web homepage if any (eg: &lt;code>http://www.cnaf.infn.it&lt;/code>)&lt;/li>
-&lt;li>&lt;strong>GIIS URL&lt;/strong>: SITE-BDII ldap url, e.g.
-&lt;code>ldap://sibilla.cnaf.infn.it:2170/mds-vo-name=infn-cnaf,o=grid&lt;/code>&lt;/li>
-&lt;li>&lt;strong>IP Range&lt;/strong>: (a.b.c.d/e.f.g.h) for the case of no firewall:
-&lt;code>0.0.0.0/255.255.255.255&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Location&lt;/strong>: An increasing resolution ending with Country (Town, City,
-Country), e.g. &lt;code>Soho, London, United Kingdom&lt;/code> (Alphanumeric and basic
-punctuation)&lt;/li>
-&lt;li>&lt;strong>Latitude&lt;/strong>: Latitude of the site e.g. &lt;code>52.370216&lt;/code> (+/-a.b)&lt;/li>
-&lt;li>&lt;strong>Longitude&lt;/strong>: Longitude of the site e.g. &lt;code>4.895168&lt;/code> (+/-a.b)&lt;/li>
-&lt;li>&lt;strong>Description&lt;/strong>: (Alphanumeric and basic punctuation)&lt;/li>
-&lt;li>&lt;strong>Emergency Telephone Number&lt;/strong>: phone contact for emergency procedure
-(numbers, optional +, dots spaces or dashes)&lt;/li>
-&lt;li>&lt;strong>Alarm E-Mail&lt;/strong>: (for LCG Tier 1 sites) (valid email format)&lt;/li>
-&lt;li>&lt;strong>Helpdesk E-Mail&lt;/strong>: endpoint to the local helpdesk for direct ticketing from
-GGUS. If not set, the ROC/NGI helpdesk contact will be used instead (valid
-email format)&lt;/li>
-&lt;/ul>
-&lt;p>See to Resource Centre registration and certification procedure
-&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item><item><title>Providers: HOWTO02 Site Certification Required Documentation</title><link>/providers/operations-manuals/howto02_site_certification_required_documentation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto02_site_certification_required_documentation/</guid><description>
+as explained in the general information section.&lt;/p></description></item><item><title>Providers: HOWTO02 Site Certification Required Documentation</title><link>/providers/operations-manuals/howto02_site_certification_required_documentation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto02_site_certification_required_documentation/</guid><description>
 &lt;p>Documents required for Resource Centre registration and certification.&lt;/p>
 &lt;p>The Resource Centre administrators should read and understand the first five
 documents. It is a further requirement that the OLA between the NGI and RC, and
