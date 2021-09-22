@@ -1,9 +1,9 @@
 ---
-title: Required fields for service registration
+title: Service registration requirements
 weight: 135
 type: "docs"
 description:
-  "Required fields for registering a service in Configuration Database"
+  "Information required for registering a service into the Configuration Database"
 ---
 
 Information to provide when registering a new service (the fields marked with an
