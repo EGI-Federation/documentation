@@ -36,18 +36,18 @@ description: "Changing the Site BDII"
 
 ## Turning off a Site BDII co-hosted with an lcg-CE
 
-1. Stop and remove the service
+- Stop and remove the service
 
 ```shell
 service bdii stop
 yum remove glite-BDII glite-yaim-bdii
 ```
 
-2. delete some info-providers and ldif file (
+- Delete some info-providers and ldif file (
    `/opt/glite/etc/gip/ldif/stub-site.ldif`,
    `/opt/glite/etc/gip/site-urls.conf`,
    `/opt/glite/etc/gip/provider/glite-info-provider-site`,
    `/opt/glite/etc/gip/provider/glite-info-provider-service-bdii-site-wrapper`,
    `/opt/glite/etc/gip/ldif/glite-info-site.ldif`)
 
-3.reconfigure with yaim without specifying the BDII_site profile
+- Reconfigure with yaim without specifying the BDII_site profile
