@@ -52,9 +52,9 @@ which also disallows single quotes in all Relative Distinguished Name (RDN)
 components, and the OGF Certificate Authority Working Group (CAOPS) who
 strongly discourage any type of quote in a certificate DN as specified by their
 &lt;a href="https://www.ogf.org/documents/GFD.125.pdf">Grid Certificate Profile&lt;/a> document.&lt;/p>
-&lt;/div></description></item><item><title>Internal: Service information</title><link>/internal/configuration-database/service-info/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-info/</guid><description>
+&lt;/div></description></item><item><title>Internal: Service information</title><link>/internal/configuration-database/service-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-information/</guid><description>
 &lt;h2 id="identity-card">Identity card&lt;/h2>
-&lt;!-- markdownlint-disable line-length no-inline-html no-bare-urls -->
+&lt;!-- markdownlint-disable no-inline-html no-bare-urls -->
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -117,7 +117,7 @@ strongly discourage any type of quote in a certificate DN as specified by their
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;!-- markdownlint-enable line-length no-inline-html no-bare-urls --></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding_service_endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding_service_endpoint/</guid><description>
+&lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding_service_endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding_service_endpoint/</guid><description>
 &lt;p>For monitoring purposes, each service endpoints registered into GOC-DB with the
 flags &lt;em>production&lt;/em> and &lt;em>monitored&lt;/em> should include the endpoint URL information
 in order to be contacted by the relative nagios probe.&lt;/p>
@@ -164,7 +164,7 @@ $ lcg-infosites --vo ops ce &lt;span style="color:#000;font-weight:bold">|&lt;/s
 &lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">16&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> stremsel.nikhef.nl:8443/cream-pbs-infra
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>For getting the &lt;code>GlueServiceEndpoint&lt;/code> URL of your SRM service, you can launch a
 ldap query to your Site BDII (or also directly to the SRM service):&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H &amp;lt;ldap://sbdii01.ncg.ingrid.pt:2170&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H ldap://sbdii01.ncg.ingrid.pt:2170 &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;mds-vo-name=NCG-INGRID-PT,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueService)(GlueServiceType=SRM))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueServiceEndpoint
