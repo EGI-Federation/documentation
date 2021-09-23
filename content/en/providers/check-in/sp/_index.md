@@ -687,6 +687,32 @@ Example response:
 }
 ```
 
+###### Device Code with PKCE
+
+To combine Device Code flow with PKCE you need to make the following requests:
+
+1 - Device Authorization Request:
+
+```shell
+curl -X POST "https://aai.egi.eu/oidc/devicecode" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-d "client_id=${CLIENT_ID}" \
+-d "scope=openid%20email%20profile" \
+-d "code_challenge=${CODE_CHALLENGE}" \
+-d "code_challenge_method=S256" | python -m json.tool
+```
+
+2 - Device Access Token Request
+
+```shell
+curl -X POST "https://aai.egi.eu/oidc/token" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
+-d "device_code=${DEVICE_CODE}" \
+-d "client_id=${CLIENT_ID}" \
+-d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
+```
+
 ### Claims-based authorisation
 
 EGI Check-in provides information about the authenticated user that may be used
