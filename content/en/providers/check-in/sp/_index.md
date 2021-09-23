@@ -735,81 +735,105 @@ user authorisation:
 ### Example OIDC Client
 
 In this guide we will demonstrate how to install and configure a
-[simple OIDC client](https://github.com/rciam/simple-oidc-client).
+[Simple OIDC Client](https://github.com/rciam/simple-oidc-client-php).
 
-#### Install simple-oidc-client
+#### Install simple-oidc-client-php
 
 This guide assumes the Apache HTTP server has been installed and the document
 root is `/var/www/html`
 
 Move to the apache document root and download and extract
-[simple-oidc-client.zip](https://github.com/rciam/simple-oidc-client/releases/download/v1.0.0/simple-oidc-client.zip).
+[simple-oidc-client-php-v2.0.0.zip](https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php-v2.0.0.zip).
 
 #### Configure Client
 
-Go to this link and login <https://aai-dev.egi.eu/oidc/>
+Go to this link and login <https://aai.egi.eu/federation>
 
-Then create a new client or edit your existing client. In `main` tab enter a
-`Client name` and in the `Redirect URI(s)` insert your simple-oidc-client URL
-(e.g. <https://example.com/simple-oidc-client/popup.html>). This URL must link
-to popup.html which is located in simple-oidc-client directory.  
-Next, move to `access` tab and pick the `scopes` your service needs. Then, in
-`Grant types` check `authorization code` and `implicit`. In `Response Types`
-check `code` and `token id_token`.  
-Then, click save and copy your `Client ID`.
+Then create a new service or edit your existing service. In `General` tab fill
+all the required fields. For `Integration Environment` select `Demo`. In
+`Protocol Specific` tab select as Protocol the `OIDC Service` and then in the
+`Redirect URI(s)` insert your simple-oidc-client-php URL (e.g.
+<http://localhost/simple-oidc-client-php/ refreshtoken.php>). This URL must link
+to `refreshtoken.php` which is located in simple-oidc-client-php directory.
+Next, in `Scope` select the scopes that your service needs. Then, submit the
+form and and self approve it. Finally you should get a pair of `Client ID` and
+`Client Secret`.
 
-#### Configure simple-oidc-client
+#### Configure simple-oidc-client-php
 
-Now that we have everything we need, we can configure our login settings. Go to
-your terminal and open `configuration.js` with your favorite text editor. ex.
+Now that you have everything you need, you can configure your login settings. Go
+to your terminal and open `config.php` with your favorite text editor.
+
+Example:
 
 ```shell
-vi simple-oidc-client/configuration.js
+vi simple-oidc-client-php/config.php
 ```
 
 Let's go quickly through the settings:
 
-- `title` is the title on the navigation bar.
-- `authority` is the base URL of our IdentityServer instance. This will allow
-  oidc-client to query the metadata endpoint so it can validate the tokens.
-- `client_id` is the id of the client we want to use when hitting the
-  authorization endpoint.
-- `popup_redirect_uri` is the redirect URL used when using the signinPopup
-  method. If you prefer not having a popup and redirecting the user in the main
-  window, you can use the `redirect_uri` property and the signinRedirect method.
-- `post_logout_redirect_uri` is the redirect URL used when using the
-  signoutRedirect method.
-- `response_type` defines in our case that we only expect an identity token
-  back.
-- `scope` defines the scopes the application asks for.
-- `debug` displays user data.
-- `filterProtocolClaims` indicates to oidc-client if it has to filter some OIDC
-  protocol claims from the response: `nonce`, `at_hash`, `iat`, `nbf`, `exp`,
-  `aud`, `iss` and `idp`.
+- `title` required, is the title on the navigation bar
+- `img` required, is the source of the logo
+- `scope_info` optional, is a message that informs the user for the application
+  requirements
+- `issuer` required, is the base URL of our IdentityServer instance. This will
+  allow oidc-client to query the metadata endpoint so it can validate the tokens
+- `client_id` required, is the id of the client we want to use when hitting the
+  authorization endpoint
+- `client_secret` optional, a value the offers better security to the message
+  flow
+- `pkceCodeChallengeMethod` optional, a string that defines the code challenge
+  methond for PKCE. Choose between `plain` or `S256`.
+- `redirect_url` required, is the redirect URL where the client and the browser
+  agree to send and receive correspondingly the code
+- `scopesDefine` required, defines the scopes the client supports
+- `refresh_token_note` optional, info for the refresh token
+- `access_token_note` optional, info for the access token
+- `manage_token_note` optional, message the informs the user where can manage
+  his tokens
+- `manageTokens` optional, URL of the manage tokens service
+- `sessionName` required, define the name of the cookie session
+- `sessionLifetime` required, define the duration of the session. This must be
+  equal to the validity time of the access token.
 
-You must change the followings options based on your client configuration:
+You must change the followings options based on your Service configuration you
+setup earlier:
 
-- `authority` (issuer)
+- `issuer`
 - `client_id`
-- `scope`
+- `client_secret`
+- `redirect_url`
+- `scopesDefine`
+- `sessionName` (based on the installation path of the portal)
 
 An example configuration follows:
 
-```javascript
-var settings = {
-  title: "Simple OIDC Client",
-  authority: "https://aai-dev.egi.eu/oidc",
-  client_id: "client",
-  popup_redirect_uri: "https://example.com/simple-oidc-client/popup.html",
-  post_logout_redirect_uri: "https://example.com/simple-oidc-client/index.html",
+```php
+<?php
+// index.php interface configuration
+$title = "Generate Tokens";
+$img = "https://clickhelp.co/images/feeds/blog/2016.05/keys.jpg";
+$scope_info = "This service requires the following permissions for your account:";
 
-  response_type: "token id_token",
-  scope:
-    "openid profile email" /* add offline_access to obtain a refresh token*/,
-
-  debug: false,
-  filterProtocolClaims: false,
-};
+// Client configuration
+$issuer = "https://aai-demo.egi.eu/oidc/";
+$client_id = "CHANGE_ME";
+$client_secret = "CHANGE_ME";  // comment if you are using PKCE
+// $pkceCodeChallengeMethod = "S256";   // uncomment to use PKCE
+$redirect_url = "http://localhost/simple-oidc-client-php/refreshtoken.php";
+// add scopes as keys and a friendly message of the scope as value
+$scopesDefine = array(
+    'openid' => 'log in using your identity',
+    'email' => 'read your email address',
+    'profile' => 'read your basic profile info',
+);
+// refreshtoken.php interface configuration
+$refresh_token_note = "NOTE: New refresh tokens expire in 12 months.";
+$access_token_note = "NOTE: New access tokens expire in 1 hour.";
+$manage_token_note = "You can manage your refresh tokens in the following link: ";
+$manageTokens = $issuer . "manage/user/services";
+$sessionName = "simple-oidc-client-php";
+$sessionLifetime = 60*60;  // must be equal to access token validation time in seconds
 ```
 
 ## Integrating Science Gateways with RCauth for obtaining (proxy) certificates
