@@ -10,10 +10,6 @@ Configuration Database, and having the flags _production_ and _monitored_ should
 include the endpoint URL information in order to be contacted by the
 corresponding service-specific nagios probe.
 
-**Important: currently these steps are required only for the sites under
-certification. For sites in production, EGI Service Monitoring is retrieving
-this information from a Top BDII**
-
 The information needed for service type are:
 
 - **CREAM-CE**: the queue URL where the ops VO is enabled. This is the value of
