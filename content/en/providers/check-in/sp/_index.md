@@ -456,12 +456,12 @@ transformation method (`code_challenge_method`).
 Example request:
 
 ```shell
-GET https://aai.egi.eu/oidc/authorize?
-      client_id=${client_id}
+GET "https://aai.egi.eu/oidc/authorize?
+      client_id=${CLIENT_ID}
       &scope=openid%20profile%20email
-      &redirect_uri=${redirect_uri}
+      &redirect_uri=${REDIRECT_URI}
       &response_type=code
-      &code_challenge=${code_challenge}
+      &code_challenge=${CODE_CHALLENGE}
       &code_challenge_method=S256"
 ```
 
@@ -472,7 +472,7 @@ Example response:
 
 ```shell
 HTTP/1.1 302 Found
-  Location: ${redirect_uri}?
+  Location: ${REDIRECT_URI}?
     code=fgtLHT
 ```
 
@@ -484,10 +484,10 @@ Example request:
 ```shell
 curl -X POST "https://aai.egi.eu/oidc/token" \
 -d "grant_type=authorization_code" \
--d "code=${code}" \
--d "client_id=${client_id}" \
--d "redirect_uri=${redirect_uri}" \
--d "code_verifier=${code_verifier}" | python -m json.tool
+-d "code=${CODE}" \
+-d "client_id=${CLIENT_ID}" \
+-d "redirect_uri=${REDIRECT_URI}" \
+-d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
 ```
 
 The authorization server transforms `code_verifier` and compares it to
@@ -521,11 +521,11 @@ using the `grant_type` value `refresh_token`:
 Example request:
 
 ```shell
-curl -X POST -u "${client_id}":"${client_secret}" \
+curl -X POST "https://aai.egi.eu/oidc/token" \
+-u "${CLIENT_ID}":"${CLIENT_SECRET}" \
 -d "grant_type=refresh_token" \
--d "refresh_token=${myRefreshToken}" \
--d "scope=openid%20email%20profile" \
-"https://aai.egi.eu/oidc/token" | python -m json.tool;
+-d "refresh_token=${REFRESH_TOKEN}" \
+-d "scope=openid%20email%20profile" | python -m json.tool;
 ```
 
 Example response:
@@ -548,9 +548,9 @@ following request:
 
 ```shell
 curl -X POST "https://aai.egi.eu/oidc/token" \
--d "client_id={myClientID}" \
+-d "client_id=${CLIENT_ID}" \
 -d "grant_type=refresh_token" \
--d "refresh_token=${myRefreshToken}" \
+-d "refresh_token=${REFRESH_TOKEN}" \
 -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
 
@@ -574,13 +574,13 @@ of the request are:
 Example request:
 
 ```shell
-curl -X POST -u "${client_B_id}":"${client_B_secret}" \
+curl -X POST "http://aai.egi.eu/oidc/token" \
+-u "${CLIENT_B_ID}":"${CLIENT_B_SECRET}" \
 -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
 -d "audience=tokenExchange" \
--d "subject_token=${access_token_A}" \
+-d "subject_token=${ACCESS_TOKEN_A}" \
 -d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
--d "scope=openid%20profile%20offline_access" \
-"http://aai.egi.eu/oidc/token" | python -m json.tool;
+-d "scope=openid%20profile%20offline_access" | python -m json.tool;
 ```
 
 Example response:
@@ -623,8 +623,8 @@ Example request:
 ```shell
 curl -X POST "https://aai.egi.eu/oidc/devicecode" \
 -H "Content-Type: application/x-www-form-urlencoded" \
--d "client_id={myClientID}" \
--d "&scope=openid%20email%20profile" | python -m json.tool
+-d "client_id=${CLIENT_ID}" \
+-d "scope=openid%20email%20profile" | python -m json.tool
 ```
 
 Example response:
@@ -669,10 +669,10 @@ Example request:
 curl -X POST "https://aai.egi.eu/oidc/token" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
--d "&device_code={myDeviceCode}" \
--d "&client_id={myClientID}" \
--d "&client_secret={myClientSecret}" \
--d "&scope=openid%20profile" | python -m json.tool
+-d "device_code=${DEVICE_CODE}" \
+-d "client_id=${CLIENT_ID}" \
+-d "client_secret=${CLIENT_SECRET}" \
+-d "scope=openid%20profile" | python -m json.tool
 ```
 
 Example response:
