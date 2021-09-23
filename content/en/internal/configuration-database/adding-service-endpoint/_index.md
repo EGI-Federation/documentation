@@ -12,9 +12,6 @@ corresponding service-specific nagios probe.
 
 The information needed for service type are:
 
-- **CREAM-CE**: the queue URL where the ops VO is enabled. This is the value of
-  the attribute `GlueCEUniqueID` published in the BDII (e.g.
-  `cream.egi.eu:8443/cream-pbs-ops`).
 - **SRM**: the value of the attribute `GlueServiceEndpoint` published in the
   Configuration Database or BDII (e.g. `httpg://se.egi.eu:8444/srm/managerv2`)
 - Cloud:
