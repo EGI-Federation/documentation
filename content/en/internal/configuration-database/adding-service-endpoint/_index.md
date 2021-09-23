@@ -16,7 +16,7 @@ The information needed for service type are:
   the attribute `GlueCEUniqueID` published in the BDII (e.g.
   `cream.egi.eu:8443/cream-pbs-ops`).
 - **SRM**: the value of the attribute `GlueServiceEndpoint` published in the
-  BDII (e.g. `httpg://se.egi.eu:8444/srm/managerv2`)
+  Configuration Database or BDII (e.g. `httpg://se.egi.eu:8444/srm/managerv2`)
 - Cloud:
   - **org.openstack.nova**: The `endpoint URL` must contain the Keystone v3 URL:
     `https://hostname:port/url/v3`
