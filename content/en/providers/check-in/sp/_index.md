@@ -522,8 +522,6 @@ Example request:
 
 ```shell
 curl -X POST -u "${client_id}":"${client_secret}" \
--d "client_id={myClientID}" \
--d "client_secret={myClientSecret}" \
 -d "grant_type=refresh_token" \
 -d "refresh_token=${myRefreshToken}" \
 -d "scope=openid%20email%20profile" \
