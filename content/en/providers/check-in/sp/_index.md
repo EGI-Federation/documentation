@@ -541,6 +541,19 @@ Example response:
 }
 ```
 
+###### Refresh Request with PKCE
+
+To combine the refresh token grant type with PKCE you need to make the
+following request:
+
+```shell
+curl -X POST "https://aai.egi.eu/oidc/token" \
+-d "client_id={myClientID}" \
+-d "grant_type=refresh_token" \
+-d "refresh_token=${myRefreshToken}" \
+-d "scope=openid%20email%20profile" | python -m json.tool;
+```
+
 ##### Token Exchange
 
 To get a token from client B using a token issued for client A, the parameters
