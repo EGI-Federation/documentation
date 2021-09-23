@@ -1,7 +1,9 @@
 ---
-name: Lint
+name: Format and lint
 
-on: [pull_request]
+on:
+  pull_request:
+    branches: [main]
 
 jobs:
   super-lint:
@@ -9,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks out a copy of your repository on the ubuntu-latest machine
+      # Checks out the repository
       - name: Checkout code
         uses: actions/checkout@v2
         with:
@@ -17,6 +19,16 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           # Full git history needed to get proper list of changed files
           fetch-depth: 0
+
+      # Use prettier to auto-format markdown files
+      - name: Prettify markdown files
+        uses: creyD/prettier_action@v3.3
+        with:
+          prettier_options: >
+            --print-width 80 --tab-width 2 --prose-wrap always --write **/*.md
+          only_changed: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Runs the Super-Linter action
       - name: Run Super-Linter
