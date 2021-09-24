@@ -8,14 +8,14 @@ type: "docs"
 This page contains information about connecting services to
 [EGI Check-in](https://www.egi.eu/services/check-in/) in order to allow user
 login through Check-in and to receive users' attributes. Check-in is connected
-to a wide range of academic and social Identity Providers that users can
-choose from in order to access your service.
+to a wide range of academic and social Identity Providers that users can choose
+from in order to access your service.
 
 ## Services eligible for integration
 
 EGI Operations, as owner of the Check-in service, must approve every request for
-integration of new services with Check-in. The approval (or non-approval)
-will be based on some pre-requisites, the relevance of the service for the EGI
+integration of new services with Check-in. The approval (or non-approval) will
+be based on some pre-requisites, the relevance of the service for the EGI
 community and the available resources to support the integration. The
 pre-requisites are described in the following sections.
 
@@ -26,15 +26,15 @@ service**
 
 All the services that are operated by Resource Providers federated in EGI
 federation and that abide to the RC OLA, and consequently to the relevant
-security policies of EGI, can be connected with Check-in. Fulfilling all
-the relevant EGI policies makes the service eligible in receiving attributes
+security policies of EGI, can be connected with Check-in. Fulfilling all the
+relevant EGI policies makes the service eligible in receiving attributes
 released by Check-in.
 
 ### Services not federated in EGI
 
-A service not part of the EGI federation can be integrated with
-Check-in if the organisation providing the service complies with the
-EGI security requirements relevant to the service providers.
+A service not part of the EGI federation can be integrated with Check-in if the
+organisation providing the service complies with the EGI security requirements
+relevant to the service providers.
 
 By accepting the policies a service provider assures that they will operate the
 service in good faith, without deliberately exposing the user to security risks,
@@ -66,13 +66,13 @@ more information.
 The integration follows a two-step process:
 
 1. Register your Service Provider and test integration with the **demo**
-   instance of EGI Check-in by selecting the "Demo" integration
-   environment during registration through the EGI Federation Registry Portal.
-   The demo instance allows for testing authentication and authorisation
-   through the academic and social Identity Providers connected to Check-in
-   without affecting the production Check-in service. Note that while the demo
-   instance has identical functionality to the production instance, no
-   information is shared between the two systems.
+   instance of EGI Check-in by selecting the "Demo" integration environment
+   during registration through the EGI Federation Registry Portal. The demo
+   instance allows for testing authentication and authorisation through the
+   academic and social Identity Providers connected to Check-in without
+   affecting the production Check-in service. Note that while the demo instance
+   has identical functionality to the production instance, no information is
+   shared between the two systems.
    - You can also test new features of Check-in that are not available in
      production yet, by registering your Service Provider and testing
      integration with the **development** instance of Check-in. In the
@@ -81,15 +81,15 @@ The integration follows a two-step process:
      development instance allows for testing authentication and authorisation
      without affecting the production Check-in service. **NB: the list of
      supported Identity Providers in the development instance is limited.
-     Therefore, we recommend using the [EGI SSO](https://sso.egi.eu/admin/)
-     or any of the social identity providers to test the login workflow when
-     using the development instance.**
+     Therefore, we recommend using the [EGI SSO](https://sso.egi.eu/admin/) or
+     any of the social identity providers to test the login workflow when using
+     the development instance.**
 1. Register your Service Provider with the **production** instance of EGI
    Check-in by selecting the "Production" integration environment during
    registration through the EGI Federation Registry Portal. The production
    instance allows access to your service through the academic and social
-   Identity Providers connected to Check-in.
-   This requires that your service meets all the
+   Identity Providers connected to Check-in. This requires that your service
+   meets all the
    [eligibility criteria](#Services_eligible_for_integration "wikilink") and
    that integration has been thoroughly tested during Step 1.
 
@@ -180,8 +180,8 @@ depends on the integration environment being used:
 <!-- markdownlint-enable line-length -->
 
 To register your SAML SP, you must submit a service registration request at
-[Federation Registry](https://aai.egi.eu/federation). Your request should include
-the general information about your service (see
+[Federation Registry](https://aai.egi.eu/federation). Your request should
+include the general information about your service (see
 [General Information](#general-information)) and the SP's metadata and entity
 id.
 
@@ -266,8 +266,8 @@ the authenticated user.
 
 Before your service can use the EGI Check-in OIDC Provider for user login, you
 must submit a service registration request using
-[Federation Registry](https://aai.egi.eu/federation) in order to obtain OAuth 2.0
-credentials. The client configuration should include the general information
+[Federation Registry](https://aai.egi.eu/federation) in order to obtain OAuth
+2.0 credentials. The client configuration should include the general information
 about your service, as described in [General Information](#general-information)
 section.
 
@@ -543,8 +543,8 @@ Example response:
 
 ###### Refresh Request with PKCE
 
-To combine the refresh token grant type with PKCE you need to make the
-following request:
+To combine the refresh token grant type with PKCE you need to make the following
+request:
 
 ```shell
 curl -X POST "https://aai.egi.eu/oidc/token" \
