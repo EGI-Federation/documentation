@@ -77,7 +77,7 @@ The integration follows a two-step process:
      production yet, by registering your Service Provider and testing
      integration with the **development** instance of Check-in. In the
      development instance service requests can be self-reviewed without the need
-     to wait for aproval from an administrator. As with the demo instance, the
+     to wait for approval from an administrator. As with the demo instance, the
      development instance allows for testing authentication and authorisation
      without affecting the production Check-in service. **NB: the list of
      supported Identity Providers in the development instance is limited.
@@ -287,7 +287,7 @@ To find the ID and secret of your client, do the following:
 1. Select the **Display/edit client secret:** option from the **Protocol** tab.
 
 {{% alert title="Note" color="info" %}} You can copy these values using the
-green copy button next to the disered field.{{% /alert %}}
+green copy button next to the desired field.{{% /alert %}}
 
 #### Setting one or more Redirection URIs
 
@@ -753,7 +753,7 @@ Then create a new service or edit your existing service. In `General` tab fill
 all the required fields. For `Integration Environment` select `Demo`. In
 `Protocol Specific` tab select as Protocol the `OIDC Service` and then in the
 `Redirect URI(s)` insert your simple-oidc-client-php URL (e.g.
-<http://localhost/simple-oidc-client-php/ refreshtoken.php>). This URL must link
+<http://localhost/simple-oidc-client-php/refreshtoken.php>). This URL must link
 to `refreshtoken.php` which is located in simple-oidc-client-php directory.
 Next, in `Scope` select the scopes that your service needs. Then, submit the
 form and and self approve it. Finally you should get a pair of `Client ID` and
@@ -783,7 +783,7 @@ Let's go quickly through the settings:
 - `client_secret` optional, a value the offers better security to the message
   flow
 - `pkceCodeChallengeMethod` optional, a string that defines the code challenge
-  methond for PKCE. Choose between `plain` or `S256`.
+  method for PKCE. Choose between `plain` or `S256`.
 - `redirect_url` required, is the redirect URL where the client and the browser
   agree to send and receive correspondingly the code
 - `scopesDefine` required, defines the scopes the client supports
@@ -868,7 +868,7 @@ In order to register a new client for your VO portal go to:
 {{% alert title="Note" color="info" %}} Make sure to store the `client_id` and
 `client_secret` in a secure place {{% /alert %}}
 
-In order to get the client approved, send an email to the adminstrator of the
+In order to get the client approved, send an email to the administrator of the
 EGI Master Portal using
 [EGI Check-in support](mailto:egi-aai-checkin@lists.grnet.gr).
 
@@ -1315,7 +1315,7 @@ where:
   to the top level resource. The interpretation of a capability without actions
   specified is an implementation detail.
 
-- `<AUTHORITY>` is a mandatoryand non-empty string that indicates the
+- `<AUTHORITY>` is a mandatory and non-empty string that indicates the
   authoritative source of the capability. This SHOULD be used to further specify
   the exact issuing instance. For example, it MAY be the FQDN of the service
   that issued that specific capability. The `<AUTHORITY>` is specified in the
