@@ -342,8 +342,6 @@ Service Providers is included in the [User Attribute](#user-attributes) section.
 Check-in supports the following OpenID Connect/OAuth2 grant types:
 
 - Authorization Code: used by Web Apps executing on a server.
-- Implicit: used by JavaScript-centric apps (Single Page Applications) executing
-  on the user\'s browser.
 - Token Exchange: used by clients to request and obtain security tokens in
   support of delegated access to resources.
 - Device Code: used by devices that lack a browser to perform a user-agent based
@@ -383,12 +381,8 @@ The request parameters of the Authorization endpoint are:
 - `state`: Opaque value used to maintain state between the request and the
   callback.
 - `response_type`: value that determines the authorization processing flow to be
-  used.
-
-1. For **Authorization Code** grant set `response_type=code`. This way the
-   response will include an authorization code.
-1. For **Implicit** grant set `response_type=token`. This way the response will
-   include both an Access Token and an ID Token.
+  used. For **Authorization Code** grant set `response_type=code`. This way the
+  response will include an authorization code.
 
 #### Token Endpoint
 
