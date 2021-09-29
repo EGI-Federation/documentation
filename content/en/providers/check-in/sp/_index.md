@@ -451,7 +451,7 @@ transformation method (`code_challenge_method`).
 Example request:
 
 ```shell
-GET "https://aai.egi.eu/oidc/authorize?
+GET "${AUTHORISATION_ENDPOINT}?
       client_id=${CLIENT_ID}
       &scope=openid%20profile%20email
       &redirect_uri=${REDIRECT_URI}
@@ -459,6 +459,9 @@ GET "https://aai.egi.eu/oidc/authorize?
       &code_challenge=${CODE_CHALLENGE}
       &code_challenge_method=S256"
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Authorisation
+Endpoint_ in the [Endpoints](#endpoints) table.{{% /alert %}}
 
 The Authorization Endpoint responds as usual but records `code_challenge` and
 the `code_challenge_method`.
@@ -477,13 +480,16 @@ usual but includes the `code_verifier` secret generated in the first request.
 Example request:
 
 ```shell
-curl -X POST "https://aai.egi.eu/oidc/token" \
+curl -X POST "${TOKEN_ENDPOINT}" \
 -d "grant_type=authorization_code" \
 -d "code=${CODE}" \
 -d "client_id=${CLIENT_ID}" \
 -d "redirect_uri=${REDIRECT_URI}" \
 -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 The authorization server transforms `code_verifier` and compares it to
 `code_challenge` from the first request. Access is denied if they are not equal.
@@ -516,12 +522,15 @@ using the `grant_type` value `refresh_token`:
 Example request:
 
 ```shell
-curl -X POST "https://aai.egi.eu/oidc/token" \
+curl -X POST "${TOKEN_ENDPOINT}" \
 -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
 -d "grant_type=refresh_token" \
 -d "refresh_token=${REFRESH_TOKEN}" \
 -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
 
@@ -542,12 +551,15 @@ To combine the refresh token grant type with PKCE you need to make the following
 request:
 
 ```shell
-curl -X POST "https://aai.egi.eu/oidc/token" \
+curl -X POST "${TOKEN_ENDPOINT}" \
 -d "client_id=${CLIENT_ID}" \
 -d "grant_type=refresh_token" \
 -d "refresh_token=${REFRESH_TOKEN}" \
 -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 ##### Token Exchange
 
@@ -569,7 +581,7 @@ of the request are:
 Example request:
 
 ```shell
-curl -X POST "http://aai.egi.eu/oidc/token" \
+curl -X POST "${TOKEN_ENDPOINT}" \
 -u "${CLIENT_B_ID}":"${CLIENT_B_SECRET}" \
 -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
 -d "audience=tokenExchange" \
@@ -577,6 +589,9 @@ curl -X POST "http://aai.egi.eu/oidc/token" \
 -d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
 -d "scope=openid%20profile%20offline_access" | python -m json.tool;
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
 
@@ -616,11 +631,14 @@ with the following parameters:
 Example request:
 
 ```shell
-curl -X POST "https://aai.egi.eu/oidc/devicecode" \
+curl -X POST "${DEVICE_CODE_ENDPOINT}" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -d "client_id=${CLIENT_ID}" \
 -d "scope=openid%20email%20profile" | python -m json.tool
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Device Code Endpoint_
+in the [Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
 
@@ -661,7 +679,7 @@ Request to the token endpoint. The request contains the following para
 Example request:
 
 ```shell
-curl -X POST "https://aai.egi.eu/oidc/token" \
+curl -X POST "${TOKEN_ENDPOINT}" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
 -d "device_code=${DEVICE_CODE}" \
@@ -669,6 +687,9 @@ curl -X POST "https://aai.egi.eu/oidc/token" \
 -d "client_secret=${CLIENT_SECRET}" \
 -d "scope=openid%20profile" | python -m json.tool
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
 
@@ -689,7 +710,7 @@ To combine Device Code flow with PKCE you need to make the following requests:
 1 - Device Authorization Request:
 
 ```shell
-curl -X POST "https://aai.egi.eu/oidc/devicecode" \
+curl -X POST "${DEVICE_CODE_ENDPOINT}" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -d "client_id=${CLIENT_ID}" \
 -d "scope=openid%20email%20profile" \
@@ -697,16 +718,22 @@ curl -X POST "https://aai.egi.eu/oidc/devicecode" \
 -d "code_challenge_method=S256" | python -m json.tool
 ```
 
+{{% alert title="Note" color="info" %}} You can find the _Device Code Endpoint_
+in the [Endpoints](#endpoints) table.{{% /alert %}}
+
 2 - Device Access Token Request
 
 ```shell
-curl -X POST "https://aai.egi.eu/oidc/token" \
+curl -X POST "${TOKEN_ENDPOINT}" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
 -d "device_code=${DEVICE_CODE}" \
 -d "client_id=${CLIENT_ID}" \
 -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 ### Claims-based authorisation
 
