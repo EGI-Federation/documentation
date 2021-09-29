@@ -1,13 +1,14 @@
 ---
-title: "Virtual Organisations"
+title: "Managing a Virtual Organisation"
+linkTitle: "Managing a VO"
 type: docs
 weight: 30
 description: >
-  Managing Virtual Organisations (VOs) in Check-in
+  Managing a Virtual Organisation (VO) in Check-in
 ---
 
 This page contains information about using Check-in for managing your Virtual
-Organisation (VO).
+Organisation (VO). For joining a VO please look at [Joining Virtual Organisation](../joining-virtual-organisation).
 
 ## Background
 
