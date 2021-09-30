@@ -481,11 +481,11 @@ Example request:
 
 ```shell
 curl -X POST "${TOKEN_ENDPOINT}" \
--d "grant_type=authorization_code" \
--d "code=${CODE}" \
--d "client_id=${CLIENT_ID}" \
--d "redirect_uri=${REDIRECT_URI}" \
--d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
+  -d "grant_type=authorization_code" \
+  -d "code=${CODE}" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "redirect_uri=${REDIRECT_URI}" \
+  -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
@@ -523,10 +523,10 @@ Example request:
 
 ```shell
 curl -X POST "${TOKEN_ENDPOINT}" \
--u "${CLIENT_ID}":"${CLIENT_SECRET}" \
--d "grant_type=refresh_token" \
--d "refresh_token=${REFRESH_TOKEN}" \
--d "scope=openid%20email%20profile" | python -m json.tool;
+  -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
+  -d "grant_type=refresh_token" \
+  -d "refresh_token=${REFRESH_TOKEN}" \
+  -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
@@ -552,10 +552,10 @@ request:
 
 ```shell
 curl -X POST "${TOKEN_ENDPOINT}" \
--d "client_id=${CLIENT_ID}" \
--d "grant_type=refresh_token" \
--d "refresh_token=${REFRESH_TOKEN}" \
--d "scope=openid%20email%20profile" | python -m json.tool;
+  -d "client_id=${CLIENT_ID}" \
+  -d "grant_type=refresh_token" \
+  -d "refresh_token=${REFRESH_TOKEN}" \
+  -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
@@ -582,12 +582,12 @@ Example request:
 
 ```shell
 curl -X POST "${TOKEN_ENDPOINT}" \
--u "${CLIENT_B_ID}":"${CLIENT_B_SECRET}" \
--d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
--d "audience=tokenExchange" \
--d "subject_token=${ACCESS_TOKEN_A}" \
--d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
--d "scope=openid%20profile%20offline_access" | python -m json.tool;
+  -u "${CLIENT_B_ID}":"${CLIENT_B_SECRET}" \
+  -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
+  -d "audience=tokenExchange" \
+  -d "subject_token=${ACCESS_TOKEN_A}" \
+  -d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
+  -d "scope=openid%20profile%20offline_access" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
@@ -632,9 +632,9 @@ Example request:
 
 ```shell
 curl -X POST "${DEVICE_CODE_ENDPOINT}" \
--H "Content-Type: application/x-www-form-urlencoded" \
--d "client_id=${CLIENT_ID}" \
--d "scope=openid%20email%20profile" | python -m json.tool
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "scope=openid%20email%20profile" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Device Code Endpoint_
@@ -680,12 +680,12 @@ Example request:
 
 ```shell
 curl -X POST "${TOKEN_ENDPOINT}" \
--H "Content-Type: application/x-www-form-urlencoded" \
--d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
--d "device_code=${DEVICE_CODE}" \
--d "client_id=${CLIENT_ID}" \
--d "client_secret=${CLIENT_SECRET}" \
--d "scope=openid%20profile" | python -m json.tool
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
+  -d "device_code=${DEVICE_CODE}" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "client_secret=${CLIENT_SECRET}" \
+  -d "scope=openid%20profile" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
@@ -711,11 +711,11 @@ To combine Device Code flow with PKCE you need to make the following requests:
 
 ```shell
 curl -X POST "${DEVICE_CODE_ENDPOINT}" \
--H "Content-Type: application/x-www-form-urlencoded" \
--d "client_id=${CLIENT_ID}" \
--d "scope=openid%20email%20profile" \
--d "code_challenge=${CODE_CHALLENGE}" \
--d "code_challenge_method=S256" | python -m json.tool
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "scope=openid%20email%20profile" \
+  -d "code_challenge=${CODE_CHALLENGE}" \
+  -d "code_challenge_method=S256" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Device Code Endpoint_
@@ -725,11 +725,11 @@ in the [Endpoints](#endpoints) table.{{% /alert %}}
 
 ```shell
 curl -X POST "${TOKEN_ENDPOINT}" \
--H "Content-Type: application/x-www-form-urlencoded" \
--d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
--d "device_code=${DEVICE_CODE}" \
--d "client_id=${CLIENT_ID}" \
--d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
+  -d "device_code=${DEVICE_CODE}" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
