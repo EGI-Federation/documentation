@@ -371,10 +371,10 @@ to a wide range of academic and social Identity Providers that users can choose
 from in order to access your service.&lt;/p>
 &lt;h2 id="services-eligible-for-integration">Services eligible for integration&lt;/h2>
 &lt;p>EGI Operations, as owner of the Check-in service, must approve every request for
-integration of new services with Check-in. The approval (or non-approval) will
-be based on some pre-requisites, the relevance of the service for the EGI
-community and the available resources to support the integration. The
-pre-requisites are described in the following sections.&lt;/p>
+integration of new services with Check-in. The approval (or non-approval) is
+based on some prerequisites, the relevance of the service for the EGI community
+and the available resources to support the integration. The prerequisites are
+described in the following sections.&lt;/p>
 &lt;p>&lt;strong>EGI at any time can prevent a service provider to access the Check-in
 service&lt;/strong>&lt;/p>
 &lt;h3 id="services-federated-in-egi">Services federated in EGI&lt;/h3>
@@ -430,8 +430,8 @@ to wait for approval from an administrator. As with the demo instance, the
 development instance allows for testing authentication and authorisation
 without affecting the production Check-in service. &lt;strong>NB: the list of
 supported Identity Providers in the development instance is limited.
-Therefore, we recommend using the &lt;a href="https://sso.egi.eu/admin/">EGI SSO&lt;/a> or
-any of the social identity providers to test the login workflow when using
+Therefore, we recommend using any of the social identity providers or the
+&lt;a href="https://sso.egi.eu/admin/">EGI SSO&lt;/a> to test the login workflow when using
 the development instance.&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -913,11 +913,11 @@ Location: &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000"
 usual but includes the &lt;code>code_verifier&lt;/code> secret generated in the first request.&lt;/p>
 &lt;p>Example request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;grant_type=authorization_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;code=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;redirect_uri=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">REDIRECT_URI&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;code_verifier=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_VERIFIER&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=authorization_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;redirect_uri=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">REDIRECT_URI&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code_verifier=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_VERIFIER&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -975,10 +975,10 @@ using the &lt;code>grant_type&lt;/code> value &lt;code>refresh_token&lt;/code>:&
 &lt;/table>
 &lt;p>Example request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-u &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;grant_type=refresh_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;refresh_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">REFRESH_TOKEN&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -u &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=refresh_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;refresh_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">REFRESH_TOKEN&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -998,10 +998,10 @@ You can find the &lt;em>Token Endpoint&lt;/em> in the
 &lt;p>To combine the refresh token grant type with PKCE you need to make the following
 request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;grant_type=refresh_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;refresh_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">REFRESH_TOKEN&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=refresh_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;refresh_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">REFRESH_TOKEN&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -1051,12 +1051,12 @@ of the request are:&lt;/p>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>Example request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-u &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_B_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_B_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn:ietf:params:oauth:grant-type:token-exchange&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;audience=tokenExchange&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;subject_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ACCESS_TOKEN_A&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;subject_token_type=urn:ietf:params:oauth:token-type:access_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20profile%20offline_access&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -u &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_B_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_B_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn:ietf:params:oauth:grant-type:token-exchange&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;audience=tokenExchange&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;subject_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ACCESS_TOKEN_A&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;subject_token_type=urn:ietf:params:oauth:token-type:access_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20profile%20offline_access&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -1106,9 +1106,9 @@ with the following parameters:&lt;/p>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>Example request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -1171,12 +1171,12 @@ Request to the token endpoint. The request contains the following para
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>Example request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;device_code=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;client_secret=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;device_code=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_secret=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -1195,11 +1195,11 @@ You can find the &lt;em>Token Endpoint&lt;/em> in the
 &lt;p>To combine Device Code flow with PKCE you need to make the following requests:&lt;/p>
 &lt;p>1 - Device Authorization Request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;code_challenge=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_CHALLENGE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;code_challenge_method=S256&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code_challenge=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_CHALLENGE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code_challenge_method=S256&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -1208,11 +1208,11 @@ in the &lt;a href="#endpoints">Endpoints&lt;/a> table.
 &lt;/div>
 &lt;p>2 - Device Access Token Request&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;device_code=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;code_verifier=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_VERIFIER&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;device_code=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code_verifier=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_VERIFIER&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -1262,12 +1262,12 @@ root is &lt;code>/var/www/html&lt;/code>&lt;/p>
 &lt;p>Move to the apache document root and download and extract
 &lt;a href="https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php-v2.0.0.zip">simple-oidc-client-php-v2.0.0.zip&lt;/a>.&lt;/p>
 &lt;h4 id="configure-client">Configure Client&lt;/h4>
-&lt;p>Go to this link and login &lt;a href="https://aai.egi.eu/federation">https://aai.egi.eu/federation&lt;/a>&lt;/p>
+&lt;p>Login to the &lt;a href="https://aai.egi.eu/federation">EGI Federation Registry&lt;/a>&lt;/p>
 &lt;p>Then create a new service or edit your existing service. In &lt;code>General&lt;/code> tab fill
 all the required fields. For &lt;code>Integration Environment&lt;/code> select &lt;code>Demo&lt;/code>. In
 &lt;code>Protocol Specific&lt;/code> tab select as Protocol the &lt;code>OIDC Service&lt;/code> and then in the
 &lt;code>Redirect URI(s)&lt;/code> insert your simple-oidc-client-php URL (e.g.
-&lt;a href="http://localhost/simple-oidc-client-php/refreshtoken.php">http://localhost/simple-oidc-client-php/refreshtoken.php&lt;/a>). This URL must link
+&lt;code>http://localhost/simple-oidc-client-php/refreshtoken.php&lt;/code>). This URL must link
 to &lt;code>refreshtoken.php&lt;/code> which is located in simple-oidc-client-php directory.
 Next, in &lt;code>Scope&lt;/code> select the scopes that your service needs. Then, submit the
 form and and self approve it. Finally you should get a pair of &lt;code>Client ID&lt;/code> and
@@ -1279,19 +1279,19 @@ to your terminal and open &lt;code>config.php&lt;/code> with your favorite text 
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">vi simple-oidc-client-php/config.php
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Let&amp;rsquo;s go quickly through the settings:&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>title&lt;/code> required, is the title on the navigation bar&lt;/li>
-&lt;li>&lt;code>img&lt;/code> required, is the source of the logo&lt;/li>
-&lt;li>&lt;code>scope_info&lt;/code> optional, is a message that informs the user for the application
+&lt;li>&lt;code>title&lt;/code> required, the title on the navigation bar&lt;/li>
+&lt;li>&lt;code>img&lt;/code> required, the source of the logo&lt;/li>
+&lt;li>&lt;code>scope_info&lt;/code> optional, a message that informs the user for the application
 requirements&lt;/li>
-&lt;li>&lt;code>issuer&lt;/code> required, is the base URL of our IdentityServer instance. This will
+&lt;li>&lt;code>issuer&lt;/code> required, the base URL of our IdentityServer instance. This will
 allow oidc-client to query the metadata endpoint so it can validate the tokens&lt;/li>
-&lt;li>&lt;code>client_id&lt;/code> required, is the id of the client we want to use when hitting the
+&lt;li>&lt;code>client_id&lt;/code> required, the id of the client we want to use when hitting the
 authorization endpoint&lt;/li>
 &lt;li>&lt;code>client_secret&lt;/code> optional, a value the offers better security to the message
 flow&lt;/li>
 &lt;li>&lt;code>pkceCodeChallengeMethod&lt;/code> optional, a string that defines the code challenge
 method for PKCE. Choose between &lt;code>plain&lt;/code> or &lt;code>S256&lt;/code>.&lt;/li>
-&lt;li>&lt;code>redirect_url&lt;/code> required, is the redirect URL where the client and the browser
+&lt;li>&lt;code>redirect_url&lt;/code> required, the redirect URL where the client and the browser
 agree to send and receive correspondingly the code&lt;/li>
 &lt;li>&lt;code>scopesDefine&lt;/code> required, defines the scopes the client supports&lt;/li>
 &lt;li>&lt;code>refresh_token_note&lt;/code> optional, info for the refresh token&lt;/li>
