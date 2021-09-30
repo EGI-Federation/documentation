@@ -287,7 +287,7 @@ In this case, the pending petition will be deleted and a new enrollment flow wil
 &lt;/li>
 &lt;/ol></description></item><item><title>Users: Managing Virtual Organisation</title><link>/users/check-in/vos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/vos/</guid><description>
 &lt;p>This page contains information about using Check-in for managing your Virtual
-Organisation (VO). For joining a VO please look at &lt;a href="https://docs.egi.eu/https://docs.egi.eu/users/check-in/joining-virtual-organisation">Joining Virtual Organisation&lt;/a>.&lt;/p>
+Organisation (VO). For joining a VO please look at &lt;a href="https://docs.egi.eu/users/check-in/joining-virtual-organisation">Joining Virtual Organisation&lt;/a>.&lt;/p>
 &lt;h2 id="background">Background&lt;/h2>
 &lt;p>In simple terms a Virtual Organisation (VO) is just a group of users. In
 EGI VOs are created to group researchers who aim to share resources across the
