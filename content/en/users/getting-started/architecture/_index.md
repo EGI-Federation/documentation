@@ -97,7 +97,7 @@ for accessing the resources.
 
 Providers of the EGI Cloud support authentication with OAuth2 tokens provided
 by Check-in OpenID Connect Identity provider. Support builds on the
-[AAI guide for SPs](https://wiki.egi.eu/wiki/AAI_guide_for_SPs) with detailed
+[AAI guide for SPs](../../../providers/check-in/sp) with detailed
 configuration provided at the
 [EGI IaaS Service providers documentation](../../../providers/cloud-compute/openstack/#openid-connect-support).
 
