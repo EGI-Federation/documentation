@@ -273,7 +273,7 @@ In this case, the pending petition will be deleted and a new enrollment flow wil
 In this case, the pending petition will be deleted and a new enrollment flow will start.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>c. If there is more than one pending petition you will see all pending petitions you have, related to the enrollment flow:&lt;/p>
+&lt;p>c. If there is more than one pending petition related to the enrollment flow:&lt;/p>
 &lt;p>&lt;img src="./check-in-pending-petitions.png" alt="Pending Petitions">&lt;/p>
 &lt;p>Where you can:&lt;/p>
 &lt;ul>
