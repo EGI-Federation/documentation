@@ -241,7 +241,7 @@ existing VOs
    (Note, for EGI services, you should request for `VOMS configuration`, once VO
    is configured, you will be notified about your VO VOMS link). More
    information can be found at
-   [Guideline for VO registration](https://wiki.egi.eu/wiki/PROC14_VO_Registration).
+   [Guideline for VO registration](https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration).
    **Again, this is usually guided by the EGI support team. You should already
    have a meeting with them to discuss your requirements. They will help you to
    get resources from EGI providers, and sign
