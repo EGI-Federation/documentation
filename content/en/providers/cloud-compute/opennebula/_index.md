@@ -319,7 +319,7 @@ installation on any other supported distribution is very similar.
   ```
 
 - Enable support for EGI VOs via VOMS:
-  [VOMS configuraton](https://wiki.egi.eu/wiki/HOWTO16)
+  [VOMS configuraton](../configuration)
 - Enable support for EGI VOs via OIDC: _TBD_
 
 ### Runtime
