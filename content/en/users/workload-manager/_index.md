@@ -98,7 +98,7 @@ There are several options to access the service:
    in the EGI Workload Manager instance can use the
    [EGI Workload Manager web portal](https://dirac.egi.eu/DIRAC/) to access the
    service, or use
-   [DIRAC Client](https://wiki.egi.eu/wiki/HOWTO22#Using_DIRAC_through_the_client).
+   [DIRAC Client](#the-dirac-client-tool).
 1. Individual researchers who want to do some number crunching for a limited
    period of time, with a reasonable (not too high) number of CPUs > can use the
    catch-all VO resource pool (`vo.access.egi.eu`). Submit a request through the
