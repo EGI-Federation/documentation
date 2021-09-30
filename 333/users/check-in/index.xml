@@ -249,19 +249,19 @@ join&lt;/p>
 &lt;ul>
 &lt;li>Click the &lt;strong>Notify Approver(s) Again&lt;/strong> button and a reminder email will be sent to approver(s)&lt;/li>
 &lt;li>Click &lt;strong>Proceed with new enrollment&lt;/strong>, so a new enrollment flow will start&lt;/li>
-&lt;li>Click &lt;strong>Delete and proceed with new enrollment&lt;/strong>. In this case, the pending petition will be deleted and a new enrollment flow will be created.&lt;/li>
+&lt;li>Click &lt;strong>Delete and proceed with new enrollment&lt;/strong>.
+In this case, the pending petition will be deleted and a new enrollment flow will be created.&lt;/li>
 &lt;/ul>
-&lt;p> &lt;/p>
 &lt;p>b2. If its status is not in Pending Approval/ Pending Confirmation/ Finalized you will see a page similar to this:&lt;/p>
 &lt;p>&lt;img src="./check-in-pending-petition-created.png" alt="Pending Petition">&lt;/p>
 &lt;p>Where you can:&lt;/p>
 &lt;ul>
 &lt;li>Click the &lt;strong>Resume&lt;/strong> button and continue the enrollment flow&lt;/li>
 &lt;li>Click &lt;strong>Proceed with new enrollment&lt;/strong>, so a new enrollment flow will start&lt;/li>
-&lt;li>Click &lt;strong>Delete and proceed with new enrollment&lt;/strong>. In this case, the pending petition will be deleted and a new enrollment flow will start.&lt;/li>
+&lt;li>Click &lt;strong>Delete and proceed with new enrollment&lt;/strong>.
+In this case, the pending petition will be deleted and a new enrollment flow will start.&lt;/li>
 &lt;/ul>
-&lt;p> &lt;/p>
-&lt;p>c. If there is more than one pending petition you will see a page similar to the following with all pending petitions you have, related to the enrollment flow:&lt;/p>
+&lt;p>c. If there is more than one pending petition you will see a page with all pending petitions you have, related to the enrollment flow:&lt;/p>
 &lt;p>&lt;img src="./check-in-pending-petitions.png" alt="Pending Petitions">&lt;/p>
 &lt;p>Where you can:&lt;/p>
 &lt;ul>
