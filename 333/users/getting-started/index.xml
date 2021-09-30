@@ -83,7 +83,7 @@ for accessing the resources.&lt;/p>
 &lt;h4 id="openid-connect">OpenID Connect&lt;/h4>
 &lt;p>Providers of the EGI Cloud support authentication with OAuth2 tokens provided
 by Check-in OpenID Connect Identity provider. Support builds on the
-&lt;a href="https://wiki.egi.eu/wiki/AAI_guide_for_SPs">AAI guide for SPs&lt;/a> with detailed
+&lt;a href="../../../providers/check-in/sp">AAI guide for SPs&lt;/a> with detailed
 configuration provided at the
 &lt;a href="../../../providers/cloud-compute/openstack/#openid-connect-support">EGI IaaS Service providers documentation&lt;/a>.&lt;/p>
 &lt;p>The integration relies on the OpenStack Keystone

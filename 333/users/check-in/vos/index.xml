@@ -244,7 +244,7 @@ get approval for your access.&lt;/strong> &lt;img src="vo_registration.png" alt=
 (Note, for EGI services, you should request for &lt;code>VOMS configuration&lt;/code>, once VO
 is configured, you will be notified about your VO VOMS link). More
 information can be found at
-&lt;a href="https://wiki.egi.eu/wiki/PROC14_VO_Registration">Guideline for VO registration&lt;/a>.
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration">Guideline for VO registration&lt;/a>.
 &lt;strong>Again, this is usually guided by the EGI support team. You should already
 have a meeting with them to discuss your requirements. They will help you to
 get resources from EGI providers, and sign
