@@ -120,8 +120,7 @@ different structure).
 #### Federated Cloud BDII configuration
 
 For information about configuration of a Federated Cloud BDII, please look at
-the HOWTO15:
-[HOWTO15 How to configure the Federated Cloud BDII](https://wiki.egi.eu/wiki/HOWTO15).
+the [EGI Information System](../../cloud-compute/openstack/#egi-information-system).
 
 ## GlueSite Object
 
