@@ -14,10 +14,10 @@ from in order to access your service.
 ## Services eligible for integration
 
 EGI Operations, as owner of the Check-in service, must approve every request for
-integration of new services with Check-in. The approval (or non-approval) will
-be based on some pre-requisites, the relevance of the service for the EGI
-community and the available resources to support the integration. The
-pre-requisites are described in the following sections.
+integration of new services with Check-in. The approval (or non-approval) is
+based on some prerequisites, the relevance of the service for the EGI community
+and the available resources to support the integration. The prerequisites are
+described in the following sections.
 
 **EGI at any time can prevent a service provider to access the Check-in
 service**
@@ -81,8 +81,8 @@ The integration follows a two-step process:
      development instance allows for testing authentication and authorisation
      without affecting the production Check-in service. **NB: the list of
      supported Identity Providers in the development instance is limited.
-     Therefore, we recommend using the [EGI SSO](https://sso.egi.eu/admin/) or
-     any of the social identity providers to test the login workflow when using
+     Therefore, we recommend using any of the social identity providers or the
+     [EGI SSO](https://sso.egi.eu/admin/) to test the login workflow when using
      the development instance.**
 1. Register your Service Provider with the **production** instance of EGI
    Check-in by selecting the "Production" integration environment during
@@ -769,13 +769,13 @@ Move to the apache document root and download and extract
 
 #### Configure Client
 
-Go to this link and login <https://aai.egi.eu/federation>
+Login to the [EGI Federation Registry](https://aai.egi.eu/federation)
 
 Then create a new service or edit your existing service. In `General` tab fill
 all the required fields. For `Integration Environment` select `Demo`. In
 `Protocol Specific` tab select as Protocol the `OIDC Service` and then in the
 `Redirect URI(s)` insert your simple-oidc-client-php URL (e.g.
-<http://localhost/simple-oidc-client-php/refreshtoken.php>). This URL must link
+`http://localhost/simple-oidc-client-php/refreshtoken.php`). This URL must link
 to `refreshtoken.php` which is located in simple-oidc-client-php directory.
 Next, in `Scope` select the scopes that your service needs. Then, submit the
 form and and self approve it. Finally you should get a pair of `Client ID` and
@@ -794,19 +794,19 @@ vi simple-oidc-client-php/config.php
 
 Let's go quickly through the settings:
 
-- `title` required, is the title on the navigation bar
-- `img` required, is the source of the logo
-- `scope_info` optional, is a message that informs the user for the application
+- `title` required, the title on the navigation bar
+- `img` required, the source of the logo
+- `scope_info` optional, a message that informs the user for the application
   requirements
-- `issuer` required, is the base URL of our IdentityServer instance. This will
+- `issuer` required, the base URL of our IdentityServer instance. This will
   allow oidc-client to query the metadata endpoint so it can validate the tokens
-- `client_id` required, is the id of the client we want to use when hitting the
+- `client_id` required, the id of the client we want to use when hitting the
   authorization endpoint
 - `client_secret` optional, a value the offers better security to the message
   flow
 - `pkceCodeChallengeMethod` optional, a string that defines the code challenge
   method for PKCE. Choose between `plain` or `S256`.
-- `redirect_url` required, is the redirect URL where the client and the browser
+- `redirect_url` required, the redirect URL where the client and the browser
   agree to send and receive correspondingly the code
 - `scopesDefine` required, defines the scopes the client supports
 - `refresh_token_note` optional, info for the refresh token
