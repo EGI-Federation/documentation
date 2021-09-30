@@ -231,8 +231,7 @@ different structure).&lt;/p>
 &lt;h3 id="service-related-documentation">Service-related documentation&lt;/h3>
 &lt;h4 id="federated-cloud-bdii-configuration">Federated Cloud BDII configuration&lt;/h4>
 &lt;p>For information about configuration of a Federated Cloud BDII, please look at
-the HOWTO15:
-&lt;a href="https://wiki.egi.eu/wiki/HOWTO15">HOWTO15 How to configure the Federated Cloud BDII&lt;/a>.&lt;/p>
+the &lt;a href="../../cloud-compute/openstack/#egi-information-system">EGI Information System&lt;/a>.&lt;/p>
 &lt;h2 id="gluesite-object">GlueSite Object&lt;/h2>
 &lt;p>These are the existing well established attributes in the &lt;code>GlueSite&lt;/code> object. All
 of these MUST remain.&lt;/p>
