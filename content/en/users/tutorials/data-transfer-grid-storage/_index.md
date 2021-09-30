@@ -186,11 +186,7 @@ following command:
 $ openssl pkcs12 -in yourCert.p12 -nocerts -nodes | openssl rsa
 Enter Import Password:
 writing RSA key
------BEGIN RSA PRIVATE KEY-----
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-...
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
------END RSA PRIVATE KEY-----
+(...)
 ```
 
 Which extract the private key in RSA format and you can paste it in the windows
