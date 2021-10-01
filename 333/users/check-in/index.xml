@@ -258,7 +258,7 @@ join&lt;/p>
 In this case, the pending petition will be deleted and a new enrollment flow will be created.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>b2. If its status is not in Pending Approval/ Pending Confirmation/ Finalized you will see a page similar to this:&lt;/p>
+&lt;p>b2. If its status is not in &lt;code>Pending Approval&lt;/code>, &lt;code>Pending Confirmation&lt;/code> or &lt;code>Finalized&lt;/code> you will see a page similar to this:&lt;/p>
 &lt;p>&lt;img src="./check-in-pending-petition-created.png" alt="Pending Petition">&lt;/p>
 &lt;p>Where you can:&lt;/p>
 &lt;ul>
