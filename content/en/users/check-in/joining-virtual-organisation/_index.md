@@ -26,7 +26,7 @@ don't have, then first [sign up for an EGI account](../signup/).
    ![Start enrollement flow](./check-in-start-enroll.png)
 
 1.
-    a. If there are no pending petitions the enrollement flow will continue as usual.
+    a. If there are no pending petitions the enrollment flow will continue as usual.
 
     b. If there is one pending petition:
 
