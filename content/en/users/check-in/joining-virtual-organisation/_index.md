@@ -1,6 +1,6 @@
 ---
 title: "Joining a Virtual Organisation"
-linkUrl: "Joining a VO"
+linkTitle: "Joining a VO"
 type: docs
 weight: 25
 description: >
