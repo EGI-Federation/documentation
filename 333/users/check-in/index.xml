@@ -222,7 +222,7 @@ certificate.&lt;/p>
 &lt;!--
 // jscpd:ignore-end
 --></description></item><item><title>Users: Joining Virtual Organisation</title><link>/users/check-in/joining-virtual-organisation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/joining-virtual-organisation/</guid><description>
-&lt;p>In order to join a Virtual Organisation you must have an EGI account. If you don&amp;rsquo;t have, then first &lt;a href="https://docs.egi.eu/users/check-in/signup/">sign up for an EGI account&lt;/a>.&lt;/p>
+&lt;p>In order to join a Virtual Organisation you must have an EGI account. If you don&amp;rsquo;t have, then first &lt;a href="../signup/">sign up for an EGI account&lt;/a>.&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>Login to &lt;a href="https://aai.egi.eu/registry">Check-in registry&lt;/a> with your EGI account.&lt;/p>
@@ -287,7 +287,7 @@ In this case, the pending petition will be deleted and a new enrollment flow wil
 &lt;/li>
 &lt;/ol></description></item><item><title>Users: Managing Virtual Organisation</title><link>/users/check-in/vos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/vos/</guid><description>
 &lt;p>This page contains information about using Check-in for managing your Virtual
-Organisation (VO). For joining a VO please look at &lt;a href="https://docs.egi.eu/users/check-in/joining-virtual-organisation">Joining Virtual Organisation&lt;/a>.&lt;/p>
+Organisation (VO). For joining a VO please look at &lt;a href="../joining-virtual-organisation">Joining Virtual Organisation&lt;/a>.&lt;/p>
 &lt;h2 id="background">Background&lt;/h2>
 &lt;p>In simple terms a Virtual Organisation (VO) is just a group of users. In
 EGI VOs are created to group researchers who aim to share resources across the
