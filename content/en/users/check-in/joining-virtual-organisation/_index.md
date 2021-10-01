@@ -7,7 +7,8 @@ description: >
   Joining a Virtual Organisation (VO) in Check-in
 ---
 
-In order to join a Virtual Organisation you must have an EGI account. If you don't have, then first [sign up for an EGI account](../signup/).
+In order to join a Virtual Organisation you must have an EGI account. If you
+don't have, then first [sign up for an EGI account](../signup/).
 
 1. Login to [Check-in registry](https://aai.egi.eu/registry) with your EGI account.
 
@@ -42,7 +43,8 @@ In order to join a Virtual Organisation you must have an EGI account. If you don
       * Click **Delete and proceed with new enrollment**.
       In this case, the pending petition will be deleted and a new enrollment flow will be created.
 
-    b2. If its status is not in `Pending Approval`, `Pending Confirmation` or `Finalized` you will see a page similar to this:
+    b2. If its status is not in `Pending Approval`, `Pending Confirmation` or
+    `Finalized` you will see a page similar to this:
 
     ![Pending Petition](./check-in-pending-petition-created.png)
 
