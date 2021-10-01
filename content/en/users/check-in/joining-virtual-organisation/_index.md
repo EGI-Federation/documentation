@@ -42,7 +42,7 @@ In order to join a Virtual Organisation you must have an EGI account. If you don
       * Click **Delete and proceed with new enrollment**.
       In this case, the pending petition will be deleted and a new enrollment flow will be created.
 
-    b2. If its status is not in Pending Approval/ Pending Confirmation/ Finalized you will see a page similar to this:
+    b2. If its status is not in `Pending Approval`, `Pending Confirmation` or `Finalized` you will see a page similar to this:
 
     ![Pending Petition](./check-in-pending-petition-created.png)
 
