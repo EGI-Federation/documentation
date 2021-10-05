@@ -367,26 +367,26 @@ following table (see also
 &lt;p>This page contains information about connecting services to
 &lt;a href="https://www.egi.eu/services/check-in/">EGI Check-in&lt;/a> in order to allow user
 login through Check-in and to receive users' attributes. Check-in is connected
-to a wide range of academic and social Identity Providers that users can
-choose from in order to access your service.&lt;/p>
+to a wide range of academic and social Identity Providers that users can choose
+from in order to access your service.&lt;/p>
 &lt;h2 id="services-eligible-for-integration">Services eligible for integration&lt;/h2>
 &lt;p>EGI Operations, as owner of the Check-in service, must approve every request for
-integration of new services with Check-in. The approval (or non-approval)
-will be based on some pre-requisites, the relevance of the service for the EGI
-community and the available resources to support the integration. The
-pre-requisites are described in the following sections.&lt;/p>
+integration of new services with Check-in. The approval (or non-approval) is
+based on some prerequisites, the relevance of the service for the EGI community
+and the available resources to support the integration. The prerequisites are
+described in the following sections.&lt;/p>
 &lt;p>&lt;strong>EGI at any time can prevent a service provider to access the Check-in
 service&lt;/strong>&lt;/p>
 &lt;h3 id="services-federated-in-egi">Services federated in EGI&lt;/h3>
 &lt;p>All the services that are operated by Resource Providers federated in EGI
 federation and that abide to the RC OLA, and consequently to the relevant
-security policies of EGI, can be connected with Check-in. Fulfilling all
-the relevant EGI policies makes the service eligible in receiving attributes
+security policies of EGI, can be connected with Check-in. Fulfilling all the
+relevant EGI policies makes the service eligible in receiving attributes
 released by Check-in.&lt;/p>
 &lt;h3 id="services-not-federated-in-egi">Services not federated in EGI&lt;/h3>
-&lt;p>A service not part of the EGI federation can be integrated with
-Check-in if the organisation providing the service complies with the
-EGI security requirements relevant to the service providers.&lt;/p>
+&lt;p>A service not part of the EGI federation can be integrated with Check-in if the
+organisation providing the service complies with the EGI security requirements
+relevant to the service providers.&lt;/p>
 &lt;p>By accepting the policies a service provider assures that they will operate the
 service in good faith, without deliberately exposing the user to security risks,
 without claiming intellectual property on the data owned by the user, and
@@ -414,33 +414,33 @@ more information.&lt;/p>
 &lt;p>The integration follows a two-step process:&lt;/p>
 &lt;ol>
 &lt;li>Register your Service Provider and test integration with the &lt;strong>demo&lt;/strong>
-instance of EGI Check-in by selecting the &amp;ldquo;Demo&amp;rdquo; integration
-environment during registration through the EGI Federation Registry Portal.
-The demo instance allows for testing authentication and authorisation
-through the academic and social Identity Providers connected to Check-in
-without affecting the production Check-in service. Note that while the demo
-instance has identical functionality to the production instance, no
-information is shared between the two systems.
+instance of EGI Check-in by selecting the &amp;ldquo;Demo&amp;rdquo; integration environment
+during registration through the EGI Federation Registry Portal. The demo
+instance allows for testing authentication and authorisation through the
+academic and social Identity Providers connected to Check-in without
+affecting the production Check-in service. Note that while the demo instance
+has identical functionality to the production instance, no information is
+shared between the two systems.
 &lt;ul>
 &lt;li>You can also test new features of Check-in that are not available in
 production yet, by registering your Service Provider and testing
 integration with the &lt;strong>development&lt;/strong> instance of Check-in. In the
 development instance service requests can be self-reviewed without the need
-to wait for aproval from an administrator. As with the demo instance, the
+to wait for approval from an administrator. As with the demo instance, the
 development instance allows for testing authentication and authorisation
 without affecting the production Check-in service. &lt;strong>NB: the list of
 supported Identity Providers in the development instance is limited.
-Therefore, we recommend using the &lt;a href="https://sso.egi.eu/admin/">EGI SSO&lt;/a>
-or any of the social identity providers to test the login workflow when
-using the development instance.&lt;/strong>&lt;/li>
+Therefore, we recommend using any of the social identity providers or the
+&lt;a href="https://sso.egi.eu/admin/">EGI SSO&lt;/a> to test the login workflow when using
+the development instance.&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Register your Service Provider with the &lt;strong>production&lt;/strong> instance of EGI
 Check-in by selecting the &amp;ldquo;Production&amp;rdquo; integration environment during
 registration through the EGI Federation Registry Portal. The production
 instance allows access to your service through the academic and social
-Identity Providers connected to Check-in.
-This requires that your service meets all the
+Identity Providers connected to Check-in. This requires that your service
+meets all the
 &lt;a href="#Services_eligible_for_integration" title="wikilink">eligibility criteria&lt;/a> and
 that integration has been thoroughly tested during Step 1.&lt;/li>
 &lt;/ol>
@@ -557,8 +557,8 @@ depends on the integration environment being used:&lt;/p>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>To register your SAML SP, you must submit a service registration request at
-&lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>. Your request should include
-the general information about your service (see
+&lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>. Your request should
+include the general information about your service (see
 &lt;a href="#general-information">General Information&lt;/a>) and the SP&amp;rsquo;s metadata and entity
 id.&lt;/p>
 &lt;h3 id="metadata">Metadata&lt;/h3>
@@ -648,8 +648,8 @@ the authenticated user.&lt;/p>
 &lt;h3 id="client-registration">Client registration&lt;/h3>
 &lt;p>Before your service can use the EGI Check-in OIDC Provider for user login, you
 must submit a service registration request using
-&lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a> in order to obtain OAuth 2.0
-credentials. The client configuration should include the general information
+&lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a> in order to obtain OAuth
+2.0 credentials. The client configuration should include the general information
 about your service, as described in &lt;a href="#general-information">General Information&lt;/a>
 section.&lt;/p>
 &lt;h4 id="obtaining-oauth-20-credentials">Obtaining OAuth 2.0 credentials&lt;/h4>
@@ -667,7 +667,7 @@ let them being automatically generated during registration (&lt;em>recommended&l
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 You can copy these values using the
-green copy button next to the disered field.
+green copy button next to the desired field.
 &lt;/div>
 &lt;h4 id="setting-one-or-more-redirection-uris">Setting one or more Redirection URIs&lt;/h4>
 &lt;p>The Redirection URI(s) that you set when creating/editing your client determine
@@ -733,8 +733,6 @@ Service Providers is included in the &lt;a href="#user-attributes">User Attribut
 &lt;p>Check-in supports the following OpenID Connect/OAuth2 grant types:&lt;/p>
 &lt;ul>
 &lt;li>Authorization Code: used by Web Apps executing on a server.&lt;/li>
-&lt;li>Implicit: used by JavaScript-centric apps (Single Page Applications) executing
-on the user's browser.&lt;/li>
 &lt;li>Token Exchange: used by clients to request and obtain security tokens in
 support of delegated access to resources.&lt;/li>
 &lt;li>Device Code: used by devices that lack a browser to perform a user-agent based
@@ -778,6 +776,12 @@ OAuth flow.&lt;/li>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/token">https://aai.egi.eu/oidc/token&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>Device Code&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/devicecode">https://aai-dev.egi.eu/oidc/devicecode&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/devicecode">https://aai-demo.egi.eu/oidc/devicecode&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/oidc/devicecode">https://aai.egi.eu/oidc/devicecode&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td>JSON Web Key(jwt)&lt;/td>
 &lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/jwk">https://aai-dev.egi.eu/oidc/jwk&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/jwk">https://aai-demo.egi.eu/oidc/jwk&lt;/a>&lt;/td>
@@ -812,14 +816,9 @@ Server.&lt;/li>
 &lt;li>&lt;code>state&lt;/code>: Opaque value used to maintain state between the request and the
 callback.&lt;/li>
 &lt;li>&lt;code>response_type&lt;/code>: value that determines the authorization processing flow to be
-used.&lt;/li>
-&lt;/ul>
-&lt;ol>
-&lt;li>For &lt;strong>Authorization Code&lt;/strong> grant set &lt;code>response_type=code&lt;/code>. This way the
+used. For &lt;strong>Authorization Code&lt;/strong> grant set &lt;code>response_type=code&lt;/code>. This way the
 response will include an authorization code.&lt;/li>
-&lt;li>For &lt;strong>Implicit&lt;/strong> grant set &lt;code>response_type=token&lt;/code>. This way the response will
-include both an Access Token and an ID Token.&lt;/li>
-&lt;/ol>
+&lt;/ul>
 &lt;h4 id="token-endpoint">Token Endpoint&lt;/h4>
 &lt;p>To obtain an Access Token, an ID Token, and optionally a Refresh Token, the
 Client sends a Token Request to the Token Endpoint.&lt;/p>
@@ -891,29 +890,41 @@ these values such as &lt;a href="https://tonyxu-io.github.io/pkce-generator/">ht
 &lt;p>Then the &lt;code>code_challenge&lt;/code> is sent in the Authorization Request along with the
 transformation method (&lt;code>code_challenge_method&lt;/code>).&lt;/p>
 &lt;p>Example request:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">GET https://aai.egi.eu/oidc/authorize?
-&lt;span style="color:#000">client_id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">client_id&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">scope&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>openid%20profile%20email
-&lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">redirect_uri&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">redirect_uri&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">response_type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>code
-&lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">code_challenge&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">code_challenge&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">code_challenge_method&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>S256&lt;span style="color:#4e9a06">&amp;#34;
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Authorization Endpoint responds as usual but records &lt;code>code_challenge&lt;/code> and
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">GET &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">AUTHORISATION_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">?
+&lt;/span>&lt;span style="color:#4e9a06"> client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;amp;scope=openid%20profile%20email
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;amp;redirect_uri=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">REDIRECT_URI&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;amp;response_type=code
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;amp;code_challenge=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_CHALLENGE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;amp;code_challenge_method=S256&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the &lt;em>Authorisation
+Endpoint&lt;/em> in the &lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;p>The Authorization Endpoint responds as usual but records &lt;code>code_challenge&lt;/code> and
 the &lt;code>code_challenge_method&lt;/code>.&lt;/p>
 &lt;p>Example response:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">HTTP/1.1 &lt;span style="color:#0000cf;font-weight:bold">302&lt;/span> Found
-Location: &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">redirect_uri&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>?
+Location: &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">REDIRECT_URI&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>?
 &lt;span style="color:#000">code&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>fgtLHT
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The client then sends the authorization code in the Access Token Request as
 usual but includes the &lt;code>code_verifier&lt;/code> secret generated in the first request.&lt;/p>
 &lt;p>Example request:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;grant_type=authorization_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;code=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">code&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">client_id&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;redirect_uri=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">redirect_uri&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;code_verifier=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">code_verifier&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The authorization server transforms &lt;code>code_verifier&lt;/code> and compares it to
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=authorization_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;redirect_uri=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">REDIRECT_URI&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code_verifier=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_VERIFIER&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the &lt;em>Token Endpoint&lt;/em> in the
+&lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;p>The authorization server transforms &lt;code>code_verifier&lt;/code> and compares it to
 &lt;code>code_challenge&lt;/code> from the first request. Access is denied if they are not equal.&lt;/p>
 &lt;p>Example response:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
@@ -963,14 +974,18 @@ using the &lt;code>grant_type&lt;/code> value &lt;code>refresh_token&lt;/code>:&
 &lt;/tbody>
 &lt;/table>
 &lt;p>Example request:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST -u &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">client_id&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">client_secret&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;client_id={myClientID}&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;client_secret={myClientSecret}&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;grant_type=refresh_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;refresh_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">myRefreshToken&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/token&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -u &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=refresh_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;refresh_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">REFRESH_TOKEN&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the &lt;em>Token Endpoint&lt;/em> in the
+&lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;p>Example response:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;access_token&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;eyJraWQiOiJvaWRjIiwiYWx...&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;expires_in&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3599&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -979,7 +994,21 @@ using the &lt;code>grant_type&lt;/code> value &lt;code>refresh_token&lt;/code>:&
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;scope&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid profile email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;token_type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Bearer&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="token-exchange">Token Exchange&lt;/h5>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h6 id="refresh-request-with-pkce">Refresh Request with PKCE&lt;/h6>
+&lt;p>To combine the refresh token grant type with PKCE you need to make the following
+request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=refresh_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;refresh_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">REFRESH_TOKEN&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the &lt;em>Token Endpoint&lt;/em> in the
+&lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;h5 id="token-exchange">Token Exchange&lt;/h5>
 &lt;p>To get a token from client B using a token issued for client A, the parameters
 of the request are:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
@@ -1021,14 +1050,20 @@ of the request are:&lt;/p>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>Example request:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST -u &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">client_B_id&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">client_B_secret&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn:ietf:params:oauth:grant-type:token-exchange&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;audience=tokenExchange&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;subject_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">access_token_A&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;subject_token_type=urn:ietf:params:oauth:token-type:access_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20profile%20offline_access&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://aai.egi.eu/oidc/token&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -u &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_B_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_B_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn:ietf:params:oauth:grant-type:token-exchange&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;audience=tokenExchange&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;subject_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ACCESS_TOKEN_A&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;subject_token_type=urn:ietf:params:oauth:token-type:access_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20profile%20offline_access&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the &lt;em>Token Endpoint&lt;/em> in the
+&lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;p>Example response:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;access_token&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;eyJraWQiOiJvaWRjIiwiYWxnIjoiUl...&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;expires_in&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3599&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -1070,11 +1105,17 @@ with the following parameters:&lt;/p>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>Example request:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/devicecode&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;client_id={myClientID}&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;&amp;amp;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the &lt;em>Device Code Endpoint&lt;/em>
+in the &lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;p>Example response:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;device_code&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;c4341bd6-5e82-4f9c-9f6f-5842409d48db&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;expires_in&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">600&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -1129,14 +1170,20 @@ Request to the token endpoint. The request contains the following para
 &lt;/table>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>Example request:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;&amp;amp;device_code={myDeviceCode}&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;&amp;amp;client_id={myClientID}&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;&amp;amp;client_secret={myClientSecret}&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d &lt;span style="color:#4e9a06">&amp;#34;&amp;amp;scope=openid%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example response:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;device_code=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_secret=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the &lt;em>Token Endpoint&lt;/em> in the
+&lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;p>Example response:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;access_token&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;eyJraWQiOiJyc2ExIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJhZG1pbiIs...&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;expires_in&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3599&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -1144,7 +1191,35 @@ Request to the token endpoint. The request contains the following para
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;scope&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid profile&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;token_type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Bearer&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="claims-based-authorisation">Claims-based authorisation&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h6 id="device-code-with-pkce">Device Code with PKCE&lt;/h6>
+&lt;p>To combine Device Code flow with PKCE you need to make the following requests:&lt;/p>
+&lt;p>1 - Device Authorization Request:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code_challenge=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_CHALLENGE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code_challenge_method=S256&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the &lt;em>Device Code Endpoint&lt;/em>
+in the &lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;p>2 - Device Access Token Request&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;device_code=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code_verifier=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_VERIFIER&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the &lt;em>Token Endpoint&lt;/em> in the
+&lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;h3 id="claims-based-authorisation">Claims-based authorisation&lt;/h3>
 &lt;p>EGI Check-in provides information about the authenticated user that may be used
 by Service Providers in order to control user access to resources. This
 information is provided by the EGI Check-in OIDC Provider in the form of
@@ -1180,66 +1255,90 @@ user authorisation:&lt;/p>
 &lt;!-- markdownlint-enable line-length -->
 &lt;h3 id="example-oidc-client">Example OIDC Client&lt;/h3>
 &lt;p>In this guide we will demonstrate how to install and configure a
-&lt;a href="https://github.com/rciam/simple-oidc-client">simple OIDC client&lt;/a>.&lt;/p>
-&lt;h4 id="install-simple-oidc-client">Install simple-oidc-client&lt;/h4>
+&lt;a href="https://github.com/rciam/simple-oidc-client-php">Simple OIDC Client&lt;/a>.&lt;/p>
+&lt;h4 id="install-simple-oidc-client-php">Install simple-oidc-client-php&lt;/h4>
 &lt;p>This guide assumes the Apache HTTP server has been installed and the document
 root is &lt;code>/var/www/html&lt;/code>&lt;/p>
 &lt;p>Move to the apache document root and download and extract
-&lt;a href="https://github.com/rciam/simple-oidc-client/releases/download/v1.0.0/simple-oidc-client.zip">simple-oidc-client.zip&lt;/a>.&lt;/p>
+&lt;a href="https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php-v2.0.0.zip">simple-oidc-client-php-v2.0.0.zip&lt;/a>.&lt;/p>
 &lt;h4 id="configure-client">Configure Client&lt;/h4>
-&lt;p>Go to this link and login &lt;a href="https://aai-dev.egi.eu/oidc/">https://aai-dev.egi.eu/oidc/&lt;/a>&lt;/p>
-&lt;p>Then create a new client or edit your existing client. In &lt;code>main&lt;/code> tab enter a
-&lt;code>Client name&lt;/code> and in the &lt;code>Redirect URI(s)&lt;/code> insert your simple-oidc-client URL
-(e.g. &lt;a href="https://example.com/simple-oidc-client/popup.html">https://example.com/simple-oidc-client/popup.html&lt;/a>). This URL must link
-to popup.html which is located in simple-oidc-client directory.&lt;br>
-Next, move to &lt;code>access&lt;/code> tab and pick the &lt;code>scopes&lt;/code> your service needs. Then, in
-&lt;code>Grant types&lt;/code> check &lt;code>authorization code&lt;/code> and &lt;code>implicit&lt;/code>. In &lt;code>Response Types&lt;/code>
-check &lt;code>code&lt;/code> and &lt;code>token id_token&lt;/code>.&lt;br>
-Then, click save and copy your &lt;code>Client ID&lt;/code>.&lt;/p>
-&lt;h4 id="configure-simple-oidc-client">Configure simple-oidc-client&lt;/h4>
-&lt;p>Now that we have everything we need, we can configure our login settings. Go to
-your terminal and open &lt;code>configuration.js&lt;/code> with your favorite text editor. ex.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">vi simple-oidc-client/configuration.js
+&lt;p>Login to the &lt;a href="https://aai.egi.eu/federation">EGI Federation Registry&lt;/a>&lt;/p>
+&lt;p>Then create a new service or edit your existing service. In &lt;code>General&lt;/code> tab fill
+all the required fields. For &lt;code>Integration Environment&lt;/code> select &lt;code>Demo&lt;/code>. In
+&lt;code>Protocol Specific&lt;/code> tab select as Protocol the &lt;code>OIDC Service&lt;/code> and then in the
+&lt;code>Redirect URI(s)&lt;/code> insert your simple-oidc-client-php URL (e.g.
+&lt;code>http://localhost/simple-oidc-client-php/refreshtoken.php&lt;/code>). This URL must link
+to &lt;code>refreshtoken.php&lt;/code> which is located in simple-oidc-client-php directory.
+Next, in &lt;code>Scope&lt;/code> select the scopes that your service needs. Then, submit the
+form and and self approve it. Finally you should get a pair of &lt;code>Client ID&lt;/code> and
+&lt;code>Client Secret&lt;/code>.&lt;/p>
+&lt;h4 id="configure-simple-oidc-client-php">Configure simple-oidc-client-php&lt;/h4>
+&lt;p>Now that you have everything you need, you can configure your login settings. Go
+to your terminal and open &lt;code>config.php&lt;/code> with your favorite text editor.&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">vi simple-oidc-client-php/config.php
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Let&amp;rsquo;s go quickly through the settings:&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>title&lt;/code> is the title on the navigation bar.&lt;/li>
-&lt;li>&lt;code>authority&lt;/code> is the base URL of our IdentityServer instance. This will allow
-oidc-client to query the metadata endpoint so it can validate the tokens.&lt;/li>
-&lt;li>&lt;code>client_id&lt;/code> is the id of the client we want to use when hitting the
-authorization endpoint.&lt;/li>
-&lt;li>&lt;code>popup_redirect_uri&lt;/code> is the redirect URL used when using the signinPopup
-method. If you prefer not having a popup and redirecting the user in the main
-window, you can use the &lt;code>redirect_uri&lt;/code> property and the signinRedirect method.&lt;/li>
-&lt;li>&lt;code>post_logout_redirect_uri&lt;/code> is the redirect URL used when using the
-signoutRedirect method.&lt;/li>
-&lt;li>&lt;code>response_type&lt;/code> defines in our case that we only expect an identity token
-back.&lt;/li>
-&lt;li>&lt;code>scope&lt;/code> defines the scopes the application asks for.&lt;/li>
-&lt;li>&lt;code>debug&lt;/code> displays user data.&lt;/li>
-&lt;li>&lt;code>filterProtocolClaims&lt;/code> indicates to oidc-client if it has to filter some OIDC
-protocol claims from the response: &lt;code>nonce&lt;/code>, &lt;code>at_hash&lt;/code>, &lt;code>iat&lt;/code>, &lt;code>nbf&lt;/code>, &lt;code>exp&lt;/code>,
-&lt;code>aud&lt;/code>, &lt;code>iss&lt;/code> and &lt;code>idp&lt;/code>.&lt;/li>
+&lt;li>&lt;code>title&lt;/code> required, the title on the navigation bar&lt;/li>
+&lt;li>&lt;code>img&lt;/code> required, the source of the logo&lt;/li>
+&lt;li>&lt;code>scope_info&lt;/code> optional, a message that informs the user for the application
+requirements&lt;/li>
+&lt;li>&lt;code>issuer&lt;/code> required, the base URL of our IdentityServer instance. This will
+allow oidc-client to query the metadata endpoint so it can validate the tokens&lt;/li>
+&lt;li>&lt;code>client_id&lt;/code> required, the id of the client we want to use when hitting the
+authorization endpoint&lt;/li>
+&lt;li>&lt;code>client_secret&lt;/code> optional, a value the offers better security to the message
+flow&lt;/li>
+&lt;li>&lt;code>pkceCodeChallengeMethod&lt;/code> optional, a string that defines the code challenge
+method for PKCE. Choose between &lt;code>plain&lt;/code> or &lt;code>S256&lt;/code>.&lt;/li>
+&lt;li>&lt;code>redirect_url&lt;/code> required, the redirect URL where the client and the browser
+agree to send and receive correspondingly the code&lt;/li>
+&lt;li>&lt;code>scopesDefine&lt;/code> required, defines the scopes the client supports&lt;/li>
+&lt;li>&lt;code>refresh_token_note&lt;/code> optional, info for the refresh token&lt;/li>
+&lt;li>&lt;code>access_token_note&lt;/code> optional, info for the access token&lt;/li>
+&lt;li>&lt;code>manage_token_note&lt;/code> optional, message the informs the user where can manage
+his tokens&lt;/li>
+&lt;li>&lt;code>manageTokens&lt;/code> optional, URL of the manage tokens service&lt;/li>
+&lt;li>&lt;code>sessionName&lt;/code> required, define the name of the cookie session&lt;/li>
+&lt;li>&lt;code>sessionLifetime&lt;/code> required, define the duration of the session. This must be
+equal to the validity time of the access token.&lt;/li>
 &lt;/ul>
-&lt;p>You must change the followings options based on your client configuration:&lt;/p>
+&lt;p>You must change the followings options based on your Service configuration you
+setup earlier:&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>authority&lt;/code> (issuer)&lt;/li>
+&lt;li>&lt;code>issuer&lt;/code>&lt;/li>
 &lt;li>&lt;code>client_id&lt;/code>&lt;/li>
-&lt;li>&lt;code>scope&lt;/code>&lt;/li>
+&lt;li>&lt;code>client_secret&lt;/code>&lt;/li>
+&lt;li>&lt;code>redirect_url&lt;/code>&lt;/li>
+&lt;li>&lt;code>scopesDefine&lt;/code>&lt;/li>
+&lt;li>&lt;code>sessionName&lt;/code> (based on the installation path of the portal)&lt;/li>
 &lt;/ul>
 &lt;p>An example configuration follows:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#204a87;font-weight:bold">var&lt;/span> &lt;span style="color:#000">settings&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">title&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Simple OIDC Client&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000">authority&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://aai-dev.egi.eu/oidc&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000">client_id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;client&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000">popup_redirect_uri&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://example.com/simple-oidc-client/popup.html&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000">post_logout_redirect_uri&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://example.com/simple-oidc-client/index.html&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000">response_type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;token id_token&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000">scope&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">:&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;openid profile email&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">/* add offline_access to obtain a refresh token*/&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000">debug&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000">filterProtocolClaims&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000;font-weight:bold">};&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="integrating-science-gateways-with-rcauth-for-obtaining-proxy-certificates">Integrating Science Gateways with RCauth for obtaining (proxy) certificates&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;?&lt;/span>&lt;span style="color:#000">php&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// index.php interface configuration
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">$title&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Generate Tokens&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">$img&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://clickhelp.co/images/feeds/blog/2016.05/keys.jpg&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">$scope_info&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;This service requires the following permissions for your account:&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// Client configuration
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">$issuer&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://aai-demo.egi.eu/oidc/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">$client_id&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;CHANGE_ME&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">$client_secret&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;CHANGE_ME&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// comment if you are using PKCE
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">// $pkceCodeChallengeMethod = &amp;#34;S256&amp;#34;; // uncomment to use PKCE
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">$redirect_url&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;http://localhost/simple-oidc-client-php/refreshtoken.php&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// add scopes as keys and a friendly message of the scope as value
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">$scopesDefine&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">array&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;openid&amp;#39;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;log in using your identity&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;email&amp;#39;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;read your email address&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;profile&amp;#39;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;read your basic profile info&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic">// refreshtoken.php interface configuration
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">$refresh_token_note&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;NOTE: New refresh tokens expire in 12 months.&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">$access_token_note&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;NOTE: New access tokens expire in 1 hour.&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">$manage_token_note&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;You can manage your refresh tokens in the following link: &amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">$manageTokens&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">$issuer&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;manage/user/services&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">$sessionName&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;simple-oidc-client-php&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">$sessionLifetime&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">60&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">*&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">60&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// must be equal to access token validation time in seconds
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="integrating-science-gateways-with-rcauth-for-obtaining-proxy-certificates">Integrating Science Gateways with RCauth for obtaining (proxy) certificates&lt;/h2>
 &lt;p>In order for Science Gateways (VO portals) to obtain RFC proxy certificates
 derived from &lt;strong>personal&lt;/strong> end-entity certificates, an EGI Science Gateway can
 make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
@@ -1300,7 +1399,7 @@ running two Master Portal instances, one development, one production instance.&l
 Make sure to store the &lt;code>client_id&lt;/code> and
 &lt;code>client_secret&lt;/code> in a secure place
 &lt;/div>
-&lt;p>In order to get the client approved, send an email to the adminstrator of the
+&lt;p>In order to get the client approved, send an email to the administrator of the
 EGI Master Portal using
 &lt;a href="mailto:egi-aai-checkin@lists.grnet.gr">EGI Check-in support&lt;/a>.&lt;/p>
 &lt;h4 id="detailed-information">Detailed information&lt;/h4>
@@ -2330,7 +2429,7 @@ to the top level resource. The interpretation of a capability without actions
 specified is an implementation detail.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;code>&amp;lt;AUTHORITY&amp;gt;&lt;/code> is a mandatoryand non-empty string that indicates the
+&lt;p>&lt;code>&amp;lt;AUTHORITY&amp;gt;&lt;/code> is a mandatory and non-empty string that indicates the
 authoritative source of the capability. This SHOULD be used to further specify
 the exact issuing instance. For example, it MAY be the FQDN of the service
 that issued that specific capability. The &lt;code>&amp;lt;AUTHORITY&amp;gt;&lt;/code> is specified in the
