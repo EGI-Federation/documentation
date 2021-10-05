@@ -51,7 +51,7 @@ This is done in 2 steps:
 1. Specify the full list of impacted services in case there is more than one or
    select an site to select all the sites associated services.
 
-**Please note**
+#### Please note
 
 - All dates have to be entered in UTC or using the Site Timezone.
 - A downtime can be retrospectively added if its _start date_ is less than 48h
@@ -67,8 +67,8 @@ This is done in 2 steps:
   in the past (giving a 2 day window to modify).
 - Note there are limitations to downtime editing, especially if it has already
   started, or is due to start in the next 24hrs or is finished. See
-  [downtime shortening and extension](#downtime-shortening-and-extension) section
-  for more details.
+  [downtime shortening and extension](#downtime-shortening-and-extension)
+  section for more details.
 
 ### Removing downtimes
 
@@ -96,7 +96,7 @@ and are enforced as follows:
   classified as `UNSCHEDULED`
 - All other downtimes will be classified as `SCHEDULED`
 
-**Notes**:
+#### Notes
 
 - A downtime can be retrospectively declared and/or updated if its _start date_
   is less than 48h in the past (giving a 2 day window to add/modify).
