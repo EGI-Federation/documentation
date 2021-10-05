@@ -222,6 +222,7 @@ certificate.&lt;/p>
 &lt;!--
 // jscpd:ignore-end
 --></description></item><item><title>Users: Joining a Virtual Organisation</title><link>/users/check-in/joining-virtual-organisation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/joining-virtual-organisation/</guid><description>
+&lt;p>Virtual Organisations (VOs) in Check-in are represented as Collaborative Organisation Units (COUs).&lt;/p>
 &lt;p>In order to join a Virtual Organisation you must have an EGI account. If you
 don&amp;rsquo;t have, then first &lt;a href="../signup/">sign up for an EGI account&lt;/a>.&lt;/p>
 &lt;ol>
