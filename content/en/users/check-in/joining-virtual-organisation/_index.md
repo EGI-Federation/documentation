@@ -7,6 +7,8 @@ description: >
   Joining a Virtual Organisation (VO) in Check-in
 ---
 
+Virtual Organisations (VOs) in Check-in are represented as Collaborative Organisation Units (COUs).
+
 In order to join a Virtual Organisation you must have an EGI account. If you
 don't have, then first [sign up for an EGI account](../signup/).
 
