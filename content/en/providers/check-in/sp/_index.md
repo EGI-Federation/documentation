@@ -8,16 +8,16 @@ type: "docs"
 This page contains information about connecting services to
 [EGI Check-in](https://www.egi.eu/services/check-in/) in order to allow user
 login through Check-in and to receive users' attributes. Check-in is connected
-to a wide range of academic and social Identity Providers that users can
-choose from in order to access your service.
+to a wide range of academic and social Identity Providers that users can choose
+from in order to access your service.
 
 ## Services eligible for integration
 
 EGI Operations, as owner of the Check-in service, must approve every request for
-integration of new services with Check-in. The approval (or non-approval)
-will be based on some pre-requisites, the relevance of the service for the EGI
-community and the available resources to support the integration. The
-pre-requisites are described in the following sections.
+integration of new services with Check-in. The approval (or non-approval) is
+based on some prerequisites, the relevance of the service for the EGI community
+and the available resources to support the integration. The prerequisites are
+described in the following sections.
 
 **EGI at any time can prevent a service provider to access the Check-in
 service**
@@ -26,15 +26,15 @@ service**
 
 All the services that are operated by Resource Providers federated in EGI
 federation and that abide to the RC OLA, and consequently to the relevant
-security policies of EGI, can be connected with Check-in. Fulfilling all
-the relevant EGI policies makes the service eligible in receiving attributes
+security policies of EGI, can be connected with Check-in. Fulfilling all the
+relevant EGI policies makes the service eligible in receiving attributes
 released by Check-in.
 
 ### Services not federated in EGI
 
-A service not part of the EGI federation can be integrated with
-Check-in if the organisation providing the service complies with the
-EGI security requirements relevant to the service providers.
+A service not part of the EGI federation can be integrated with Check-in if the
+organisation providing the service complies with the EGI security requirements
+relevant to the service providers.
 
 By accepting the policies a service provider assures that they will operate the
 service in good faith, without deliberately exposing the user to security risks,
@@ -66,30 +66,30 @@ more information.
 The integration follows a two-step process:
 
 1. Register your Service Provider and test integration with the **demo**
-   instance of EGI Check-in by selecting the "Demo" integration
-   environment during registration through the EGI Federation Registry Portal.
-   The demo instance allows for testing authentication and authorisation
-   through the academic and social Identity Providers connected to Check-in
-   without affecting the production Check-in service. Note that while the demo
-   instance has identical functionality to the production instance, no
-   information is shared between the two systems.
+   instance of EGI Check-in by selecting the "Demo" integration environment
+   during registration through the EGI Federation Registry Portal. The demo
+   instance allows for testing authentication and authorisation through the
+   academic and social Identity Providers connected to Check-in without
+   affecting the production Check-in service. Note that while the demo instance
+   has identical functionality to the production instance, no information is
+   shared between the two systems.
    - You can also test new features of Check-in that are not available in
      production yet, by registering your Service Provider and testing
      integration with the **development** instance of Check-in. In the
      development instance service requests can be self-reviewed without the need
-     to wait for aproval from an administrator. As with the demo instance, the
+     to wait for approval from an administrator. As with the demo instance, the
      development instance allows for testing authentication and authorisation
      without affecting the production Check-in service. **NB: the list of
      supported Identity Providers in the development instance is limited.
-     Therefore, we recommend using the [EGI SSO](https://sso.egi.eu/admin/)
-     or any of the social identity providers to test the login workflow when
-     using the development instance.**
+     Therefore, we recommend using any of the social identity providers or the
+     [EGI SSO](https://sso.egi.eu/admin/) to test the login workflow when using
+     the development instance.**
 1. Register your Service Provider with the **production** instance of EGI
    Check-in by selecting the "Production" integration environment during
    registration through the EGI Federation Registry Portal. The production
    instance allows access to your service through the academic and social
-   Identity Providers connected to Check-in.
-   This requires that your service meets all the
+   Identity Providers connected to Check-in. This requires that your service
+   meets all the
    [eligibility criteria](#Services_eligible_for_integration "wikilink") and
    that integration has been thoroughly tested during Step 1.
 
@@ -180,8 +180,8 @@ depends on the integration environment being used:
 <!-- markdownlint-enable line-length -->
 
 To register your SAML SP, you must submit a service registration request at
-[Federation Registry](https://aai.egi.eu/federation). Your request should include
-the general information about your service (see
+[Federation Registry](https://aai.egi.eu/federation). Your request should
+include the general information about your service (see
 [General Information](#general-information)) and the SP's metadata and entity
 id.
 
@@ -266,8 +266,8 @@ the authenticated user.
 
 Before your service can use the EGI Check-in OIDC Provider for user login, you
 must submit a service registration request using
-[Federation Registry](https://aai.egi.eu/federation) in order to obtain OAuth 2.0
-credentials. The client configuration should include the general information
+[Federation Registry](https://aai.egi.eu/federation) in order to obtain OAuth
+2.0 credentials. The client configuration should include the general information
 about your service, as described in [General Information](#general-information)
 section.
 
@@ -287,7 +287,7 @@ To find the ID and secret of your client, do the following:
 1. Select the **Display/edit client secret:** option from the **Protocol** tab.
 
 {{% alert title="Note" color="info" %}} You can copy these values using the
-green copy button next to the disered field.{{% /alert %}}
+green copy button next to the desired field.{{% /alert %}}
 
 #### Setting one or more Redirection URIs
 
@@ -342,8 +342,6 @@ Service Providers is included in the [User Attribute](#user-attributes) section.
 Check-in supports the following OpenID Connect/OAuth2 grant types:
 
 - Authorization Code: used by Web Apps executing on a server.
-- Implicit: used by JavaScript-centric apps (Single Page Applications) executing
-  on the user\'s browser.
 - Token Exchange: used by clients to request and obtain security tokens in
   support of delegated access to resources.
 - Device Code: used by devices that lack a browser to perform a user-agent based
@@ -361,6 +359,7 @@ The most important OIDC/OAuth2 endpoints are listed below:
 | Client registration    | <https://aai-dev.egi.eu/oidc>                                  | _Contact [EGI Check-in support](mailto:egi-aai-checkin@lists.grnet.gr) for registering your client_ | _Contact [EGI Check-in support](mailto:egi-aai-checkin@lists.grnet.gr) for registering your client_ |
 | Authorisation          | <https://aai-dev.egi.eu/oidc/authorize>                        | <https://aai-demo.egi.eu/oidc/authorize>                                                            | <https://aai.egi.eu/oidc/authorize>                                                                 |
 | Token                  | <https://aai-dev.egi.eu/oidc/token>                            | <https://aai-demo.egi.eu/oidc/token>                                                                | <https://aai.egi.eu/oidc/token>                                                                     |
+| Device Code            | <https://aai-dev.egi.eu/oidc/devicecode>                       | <https://aai-demo.egi.eu/oidc/devicecode>                                                           | <https://aai.egi.eu/oidc/devicecode>                                                                |
 | JSON Web Key(jwt)      | <https://aai-dev.egi.eu/oidc/jwk>                              | <https://aai-demo.egi.eu/oidc/jwk>                                                                  | <https://aai.egi.eu/oidc/jwk>                                                                       |
 | User Info              | <https://aai-dev.egi.eu/oidc/userinfo>                         | <https://aai-demo.egi.eu/oidc/userinfo>                                                             | <https://aai.egi.eu/oidc/userinfo>                                                                  |
 | Introspection          | <https://aai-dev.egi.eu/oidc/introspect>                       | <https://aai-demo.egi.eu/oidc/introspect>                                                           | <https://aai.egi.eu/oidc/introspect>                                                                |
@@ -383,12 +382,8 @@ The request parameters of the Authorization endpoint are:
 - `state`: Opaque value used to maintain state between the request and the
   callback.
 - `response_type`: value that determines the authorization processing flow to be
-  used.
-
-1. For **Authorization Code** grant set `response_type=code`. This way the
-   response will include an authorization code.
-1. For **Implicit** grant set `response_type=token`. This way the response will
-   include both an Access Token and an ID Token.
+  used. For **Authorization Code** grant set `response_type=code`. This way the
+  response will include an authorization code.
 
 #### Token Endpoint
 
@@ -456,14 +451,17 @@ transformation method (`code_challenge_method`).
 Example request:
 
 ```shell
-GET https://aai.egi.eu/oidc/authorize?
-      client_id=${client_id}
+GET "${AUTHORISATION_ENDPOINT}?
+      client_id=${CLIENT_ID}
       &scope=openid%20profile%20email
-      &redirect_uri=${redirect_uri}
+      &redirect_uri=${REDIRECT_URI}
       &response_type=code
-      &code_challenge=${code_challenge}
+      &code_challenge=${CODE_CHALLENGE}
       &code_challenge_method=S256"
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Authorisation
+Endpoint_ in the [Endpoints](#endpoints) table.{{% /alert %}}
 
 The Authorization Endpoint responds as usual but records `code_challenge` and
 the `code_challenge_method`.
@@ -472,7 +470,7 @@ Example response:
 
 ```shell
 HTTP/1.1 302 Found
-  Location: ${redirect_uri}?
+  Location: ${REDIRECT_URI}?
     code=fgtLHT
 ```
 
@@ -482,13 +480,16 @@ usual but includes the `code_verifier` secret generated in the first request.
 Example request:
 
 ```shell
-curl -X POST "https://aai.egi.eu/oidc/token" \
--d "grant_type=authorization_code" \
--d "code=${code}" \
--d "client_id=${client_id}" \
--d "redirect_uri=${redirect_uri}" \
--d "code_verifier=${code_verifier}" | python -m json.tool
+curl -X POST "${TOKEN_ENDPOINT}" \
+  -d "grant_type=authorization_code" \
+  -d "code=${CODE}" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "redirect_uri=${REDIRECT_URI}" \
+  -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 The authorization server transforms `code_verifier` and compares it to
 `code_challenge` from the first request. Access is denied if they are not equal.
@@ -521,14 +522,15 @@ using the `grant_type` value `refresh_token`:
 Example request:
 
 ```shell
-curl -X POST -u "${client_id}":"${client_secret}" \
--d "client_id={myClientID}" \
--d "client_secret={myClientSecret}" \
--d "grant_type=refresh_token" \
--d "refresh_token=${myRefreshToken}" \
--d "scope=openid%20email%20profile" \
-"https://aai.egi.eu/oidc/token" | python -m json.tool;
+curl -X POST "${TOKEN_ENDPOINT}" \
+  -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
+  -d "grant_type=refresh_token" \
+  -d "refresh_token=${REFRESH_TOKEN}" \
+  -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
 
@@ -542,6 +544,22 @@ Example response:
   "token_type": "Bearer"
 }
 ```
+
+###### Refresh Request with PKCE
+
+To combine the refresh token grant type with PKCE you need to make the following
+request:
+
+```shell
+curl -X POST "${TOKEN_ENDPOINT}" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "grant_type=refresh_token" \
+  -d "refresh_token=${REFRESH_TOKEN}" \
+  -d "scope=openid%20email%20profile" | python -m json.tool;
+```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 ##### Token Exchange
 
@@ -563,14 +581,17 @@ of the request are:
 Example request:
 
 ```shell
-curl -X POST -u "${client_B_id}":"${client_B_secret}" \
--d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
--d "audience=tokenExchange" \
--d "subject_token=${access_token_A}" \
--d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
--d "scope=openid%20profile%20offline_access" \
-"http://aai.egi.eu/oidc/token" | python -m json.tool;
+curl -X POST "${TOKEN_ENDPOINT}" \
+  -u "${CLIENT_B_ID}":"${CLIENT_B_SECRET}" \
+  -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
+  -d "audience=tokenExchange" \
+  -d "subject_token=${ACCESS_TOKEN_A}" \
+  -d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
+  -d "scope=openid%20profile%20offline_access" | python -m json.tool;
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
 
@@ -610,11 +631,14 @@ with the following parameters:
 Example request:
 
 ```shell
-curl -X POST "https://aai.egi.eu/oidc/devicecode" \
--H "Content-Type: application/x-www-form-urlencoded" \
--d "client_id={myClientID}" \
--d "&scope=openid%20email%20profile" | python -m json.tool
+curl -X POST "${DEVICE_CODE_ENDPOINT}" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "scope=openid%20email%20profile" | python -m json.tool
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Device Code Endpoint_
+in the [Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
 
@@ -655,14 +679,17 @@ Request to the token endpoint. The request contains the following para
 Example request:
 
 ```shell
-curl -X POST "https://aai.egi.eu/oidc/token" \
--H "Content-Type: application/x-www-form-urlencoded" \
--d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
--d "&device_code={myDeviceCode}" \
--d "&client_id={myClientID}" \
--d "&client_secret={myClientSecret}" \
--d "&scope=openid%20profile" | python -m json.tool
+curl -X POST "${TOKEN_ENDPOINT}" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
+  -d "device_code=${DEVICE_CODE}" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "client_secret=${CLIENT_SECRET}" \
+  -d "scope=openid%20profile" | python -m json.tool
 ```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
 
@@ -675,6 +702,38 @@ Example response:
   "token_type": "Bearer"
 }
 ```
+
+###### Device Code with PKCE
+
+To combine Device Code flow with PKCE you need to make the following requests:
+
+1 - Device Authorization Request:
+
+```shell
+curl -X POST "${DEVICE_CODE_ENDPOINT}" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "scope=openid%20email%20profile" \
+  -d "code_challenge=${CODE_CHALLENGE}" \
+  -d "code_challenge_method=S256" | python -m json.tool
+```
+
+{{% alert title="Note" color="info" %}} You can find the _Device Code Endpoint_
+in the [Endpoints](#endpoints) table.{{% /alert %}}
+
+2 - Device Access Token Request
+
+```shell
+curl -X POST "${TOKEN_ENDPOINT}" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
+  -d "device_code=${DEVICE_CODE}" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
+```
+
+{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+[Endpoints](#endpoints) table.{{% /alert %}}
 
 ### Claims-based authorisation
 
@@ -698,81 +757,105 @@ user authorisation:
 ### Example OIDC Client
 
 In this guide we will demonstrate how to install and configure a
-[simple OIDC client](https://github.com/rciam/simple-oidc-client).
+[Simple OIDC Client](https://github.com/rciam/simple-oidc-client-php).
 
-#### Install simple-oidc-client
+#### Install simple-oidc-client-php
 
 This guide assumes the Apache HTTP server has been installed and the document
 root is `/var/www/html`
 
 Move to the apache document root and download and extract
-[simple-oidc-client.zip](https://github.com/rciam/simple-oidc-client/releases/download/v1.0.0/simple-oidc-client.zip).
+[simple-oidc-client-php-v2.0.0.zip](https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php-v2.0.0.zip).
 
 #### Configure Client
 
-Go to this link and login <https://aai-dev.egi.eu/oidc/>
+Login to the [EGI Federation Registry](https://aai.egi.eu/federation)
 
-Then create a new client or edit your existing client. In `main` tab enter a
-`Client name` and in the `Redirect URI(s)` insert your simple-oidc-client URL
-(e.g. <https://example.com/simple-oidc-client/popup.html>). This URL must link
-to popup.html which is located in simple-oidc-client directory.  
-Next, move to `access` tab and pick the `scopes` your service needs. Then, in
-`Grant types` check `authorization code` and `implicit`. In `Response Types`
-check `code` and `token id_token`.  
-Then, click save and copy your `Client ID`.
+Then create a new service or edit your existing service. In `General` tab fill
+all the required fields. For `Integration Environment` select `Demo`. In
+`Protocol Specific` tab select as Protocol the `OIDC Service` and then in the
+`Redirect URI(s)` insert your simple-oidc-client-php URL (e.g.
+`http://localhost/simple-oidc-client-php/refreshtoken.php`). This URL must link
+to `refreshtoken.php` which is located in simple-oidc-client-php directory.
+Next, in `Scope` select the scopes that your service needs. Then, submit the
+form and and self approve it. Finally you should get a pair of `Client ID` and
+`Client Secret`.
 
-#### Configure simple-oidc-client
+#### Configure simple-oidc-client-php
 
-Now that we have everything we need, we can configure our login settings. Go to
-your terminal and open `configuration.js` with your favorite text editor. ex.
+Now that you have everything you need, you can configure your login settings. Go
+to your terminal and open `config.php` with your favorite text editor.
+
+Example:
 
 ```shell
-vi simple-oidc-client/configuration.js
+vi simple-oidc-client-php/config.php
 ```
 
 Let's go quickly through the settings:
 
-- `title` is the title on the navigation bar.
-- `authority` is the base URL of our IdentityServer instance. This will allow
-  oidc-client to query the metadata endpoint so it can validate the tokens.
-- `client_id` is the id of the client we want to use when hitting the
-  authorization endpoint.
-- `popup_redirect_uri` is the redirect URL used when using the signinPopup
-  method. If you prefer not having a popup and redirecting the user in the main
-  window, you can use the `redirect_uri` property and the signinRedirect method.
-- `post_logout_redirect_uri` is the redirect URL used when using the
-  signoutRedirect method.
-- `response_type` defines in our case that we only expect an identity token
-  back.
-- `scope` defines the scopes the application asks for.
-- `debug` displays user data.
-- `filterProtocolClaims` indicates to oidc-client if it has to filter some OIDC
-  protocol claims from the response: `nonce`, `at_hash`, `iat`, `nbf`, `exp`,
-  `aud`, `iss` and `idp`.
+- `title` required, the title on the navigation bar
+- `img` required, the source of the logo
+- `scope_info` optional, a message that informs the user for the application
+  requirements
+- `issuer` required, the base URL of our IdentityServer instance. This will
+  allow oidc-client to query the metadata endpoint so it can validate the tokens
+- `client_id` required, the id of the client we want to use when hitting the
+  authorization endpoint
+- `client_secret` optional, a value the offers better security to the message
+  flow
+- `pkceCodeChallengeMethod` optional, a string that defines the code challenge
+  method for PKCE. Choose between `plain` or `S256`.
+- `redirect_url` required, the redirect URL where the client and the browser
+  agree to send and receive correspondingly the code
+- `scopesDefine` required, defines the scopes the client supports
+- `refresh_token_note` optional, info for the refresh token
+- `access_token_note` optional, info for the access token
+- `manage_token_note` optional, message the informs the user where can manage
+  his tokens
+- `manageTokens` optional, URL of the manage tokens service
+- `sessionName` required, define the name of the cookie session
+- `sessionLifetime` required, define the duration of the session. This must be
+  equal to the validity time of the access token.
 
-You must change the followings options based on your client configuration:
+You must change the followings options based on your Service configuration you
+setup earlier:
 
-- `authority` (issuer)
+- `issuer`
 - `client_id`
-- `scope`
+- `client_secret`
+- `redirect_url`
+- `scopesDefine`
+- `sessionName` (based on the installation path of the portal)
 
 An example configuration follows:
 
-```javascript
-var settings = {
-  title: "Simple OIDC Client",
-  authority: "https://aai-dev.egi.eu/oidc",
-  client_id: "client",
-  popup_redirect_uri: "https://example.com/simple-oidc-client/popup.html",
-  post_logout_redirect_uri: "https://example.com/simple-oidc-client/index.html",
+```php
+<?php
+// index.php interface configuration
+$title = "Generate Tokens";
+$img = "https://clickhelp.co/images/feeds/blog/2016.05/keys.jpg";
+$scope_info = "This service requires the following permissions for your account:";
 
-  response_type: "token id_token",
-  scope:
-    "openid profile email" /* add offline_access to obtain a refresh token*/,
-
-  debug: false,
-  filterProtocolClaims: false,
-};
+// Client configuration
+$issuer = "https://aai-demo.egi.eu/oidc/";
+$client_id = "CHANGE_ME";
+$client_secret = "CHANGE_ME";  // comment if you are using PKCE
+// $pkceCodeChallengeMethod = "S256";   // uncomment to use PKCE
+$redirect_url = "http://localhost/simple-oidc-client-php/refreshtoken.php";
+// add scopes as keys and a friendly message of the scope as value
+$scopesDefine = array(
+    'openid' => 'log in using your identity',
+    'email' => 'read your email address',
+    'profile' => 'read your basic profile info',
+);
+// refreshtoken.php interface configuration
+$refresh_token_note = "NOTE: New refresh tokens expire in 12 months.";
+$access_token_note = "NOTE: New access tokens expire in 1 hour.";
+$manage_token_note = "You can manage your refresh tokens in the following link: ";
+$manageTokens = $issuer . "manage/user/services";
+$sessionName = "simple-oidc-client-php";
+$sessionLifetime = 60*60;  // must be equal to access token validation time in seconds
 ```
 
 ## Integrating Science Gateways with RCauth for obtaining (proxy) certificates
@@ -807,7 +890,7 @@ In order to register a new client for your VO portal go to:
 {{% alert title="Note" color="info" %}} Make sure to store the `client_id` and
 `client_secret` in a secure place {{% /alert %}}
 
-In order to get the client approved, send an email to the adminstrator of the
+In order to get the client approved, send an email to the administrator of the
 EGI Master Portal using
 [EGI Check-in support](mailto:egi-aai-checkin@lists.grnet.gr).
 
@@ -1254,7 +1337,7 @@ where:
   to the top level resource. The interpretation of a capability without actions
   specified is an implementation detail.
 
-- `<AUTHORITY>` is a mandatoryand non-empty string that indicates the
+- `<AUTHORITY>` is a mandatory and non-empty string that indicates the
   authoritative source of the capability. This SHOULD be used to further specify
   the exact issuing instance. For example, it MAY be the FQDN of the service
   that issued that specific capability. The `<AUTHORITY>` is specified in the
