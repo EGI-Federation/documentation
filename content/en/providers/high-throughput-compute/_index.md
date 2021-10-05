@@ -1,6 +1,6 @@
 ---
 title: "High-Throughput Compute"
-weight: 100
+weight: 35
 type: "docs"
 description: Execute thousands of computational tasks to analyse large datasets
 ---
@@ -31,4 +31,4 @@ Main characteristics of the service:
 
 Miscellaneous collection of documentation related to High-Throughput Compute.
 
-- [Changing Site BDII](./changing_site_bdii)
+- [Changing the Site BDII](./changing_site_bdii)
