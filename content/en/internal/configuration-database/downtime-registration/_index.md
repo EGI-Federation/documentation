@@ -65,7 +65,7 @@ This is done in 2 steps:
   in the past (giving a 2 day window to modify).
 - Note there are limitations to downtime editing, especially if it has already
   started, or is due to start in the next 24hrs or is finished. See
-  [downtime shortening and extension](downtime-shortening-and-extension) section
+  [downtime shortening and extension](#downtime-shortening-and-extension) section
   for more details.
 
 ### Removing downtimes
