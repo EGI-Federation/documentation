@@ -27,11 +27,13 @@ There are different pages on which downtimes are listed:
 
 - **Active & Imminent**, linked from the main menu, that allows users to see
   currently active downtimes and downtimes planned in the coming weeks.
+- **Downtime Calendar**, linked from the main menu, that allows users to view
+  and filter all downtimes.
 - **Site details**, where all the downtimes associated to the site are listed
 - **Service endpoint details**, where all the downtimes associated to the
-  service endpoint are listed
+  service endpoint are listed.
 - **Service group details**, where all the downtimes associated to the service
-  group are listed
+  group are listed.
 
 Each downtime has its own page providing details, accessible by clicking on the
 `Downtime Id` link or similar in downtime listing pages.
