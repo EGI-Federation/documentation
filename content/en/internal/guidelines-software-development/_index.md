@@ -1,7 +1,8 @@
 ---
 title: "Guidelines for software development"
+linkTitle: "Development guidelines"
 description: "Guidelines for software development"
-weight: 30
+weight: 1000
 type: "docs"
 ---
 

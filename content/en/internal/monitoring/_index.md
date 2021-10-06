@@ -1,8 +1,7 @@
 ---
 title: "Service Monitoring"
-linkTitle: "Service Monitoring"
 type: docs
-weight: 30
+weight: 50
 description: >
   Monitor performance of EGI services
 ---
