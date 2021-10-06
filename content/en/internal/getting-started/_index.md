@@ -1,6 +1,5 @@
 ---
 title: "Getting Started"
-linkTitle: "Getting Started"
 description: "Introduction to internal EGI services"
 type: docs
 weight: 10
