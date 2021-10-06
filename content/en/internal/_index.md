@@ -21,9 +21,9 @@ providers into the EGI Federation. {{% /alert %}}
 
 ## Guidelines for software development
 
-A [dedicated section](./guidelines-software-development) contains guidelines for
-software development to be considered when developing a product for the EGI
-Federation.
+We provide
+[Guidelines for software development](./guidelines-software-development) to be
+considered when developing a product for the EGI Federation.
 
 ## Request for information
 
