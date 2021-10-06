@@ -1,8 +1,7 @@
 ---
 title: "Accounting"
-linkTitle: "Accounting"
 type: docs
-weight: 40
+weight: 20
 description: >
   Resource usage accounting for EGI services
 ---
