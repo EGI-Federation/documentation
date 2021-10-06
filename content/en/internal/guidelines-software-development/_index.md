@@ -44,8 +44,9 @@ meant to be exhaustive, further research is welcome. {{% /alert %}}
 - As far as possible adopt [12 factor application pattern](https://12factor.net)
 - Configuration Management modules to deploy and configure the products should
   be provided and distributed through the corresponding distribution channels
-  - [Ansible](https://www.ansible.com/) is recommended, roles can be hosted under the EGI Federation
-    organization in [Ansible Galaxy](https://galaxy.ansible.com/EGI-Foundation/)
+  - [Ansible](https://www.ansible.com/) is recommended, roles can be hosted
+    under the EGI Federation organization in
+    [Ansible Galaxy](https://galaxy.ansible.com/EGI-Foundation/)
 
 ### Security best practices
 
