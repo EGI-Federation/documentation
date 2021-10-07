@@ -1,6 +1,6 @@
 ---
-title: Downtime Registration
-description: "Registering a downtime"
+title: Downtimes
+description: "Managing and consulting downtimes"
 weight: 30
 type: "docs"
 ---
