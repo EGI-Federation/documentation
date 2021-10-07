@@ -1,0 +1,2114 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Cloud Compute</title><link>/providers/cloud-compute/</link><description>Recent content in Cloud Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/cloud-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Requirements</title><link>/providers/cloud-compute/requirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/requirements/</guid><description>
+&lt;p>IaaS providers are very welcome to join the EGI Federated Cloud as a Resource
+Centres (RC) and joining the Federated Cloud Task Force to contribute to the
+design, creation and implementation of the federation.&lt;/p>
+&lt;p>Resource Centers are free to use any Cloud Management Framework (OpenNebula,
+OpenStack, etc...) as long as they are able to integrate with the EGI
+Federation components as described in the
+&lt;a href="https://wiki.egi.eu/wiki/Federated_Cloud_Architecture">Federated Cloud Architecture&lt;/a>.
+At the moment this compliance is guaranteed for the following CMFs:&lt;/p>
+&lt;ul>
+&lt;li>OpenStack (with/without OCCI)&lt;/li>
+&lt;li>OpenNebula with OCCI&lt;/li>
+&lt;li>Synnefo with OCCI&lt;/li>
+&lt;/ul>
+&lt;p>The general minimal requirements are:&lt;/p>
+&lt;ul>
+&lt;li>Hardware requirements greatly depend on your cloud infrastructure, EGI
+components in general do lightweigth operations by interacting with your
+services APIs.
+&lt;ul>
+&lt;li>&lt;code>cloudkeeper&lt;/code> requires enough disk space to download and convert images
+before uploading into your local catalogue. The number and size of images
+which will be downloaded depends on the communities you plan to support. For
+the piloting VO &lt;code>fedcloud.egi.eu&lt;/code>, 100GB of disk should be enough.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Servers need to authenticate each other in the EGI Federated Cloud context
+using X.509 certificates. So a Resource Centre should be able to obtain server
+certificates for some services.&lt;/li>
+&lt;li>User and research communities are called Virtual Organisations (VO). Resource
+Centres are expected to join:
+&lt;ul>
+&lt;li>&lt;code>ops&lt;/code> and &lt;code>dteam&lt;/code> VOs, used for operational purposes as per RC OLA&lt;/li>
+&lt;li>a community-VO that supports EGI users (e.g. &lt;code>vo.access.egi.eu&lt;/code> for
+piloting)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>EGI provides packages for the following operating systems (others may work but
+we are not providing packages):
+&lt;ul>
+&lt;li>CentOS 7 (and in general RHEL-compatible)&lt;/li>
+&lt;li>Ubuntu 16.04 (and in general Debian-based)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Providers: OpenStack</title><link>/providers/cloud-compute/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/</guid><description>
+&lt;p>This manual provides information on how to set up a Resource Centre providing
+cloud resources in the EGI infrastructure. Integration with FedCloud requires a
+&lt;em>working OpenStack installation&lt;/em> as a pre-requirement. EGI supports any recent
+&lt;a href="http://releases.openstack.org">OpenStack version&lt;/a> (tested from OpenStack Mitaka).&lt;/p>
+&lt;p>EGI expects the following OpenStack services to be available and accessible from
+outside your site:&lt;/p>
+&lt;ul>
+&lt;li>Keystone&lt;/li>
+&lt;li>Nova&lt;/li>
+&lt;li>Cinder&lt;/li>
+&lt;li>Glance&lt;/li>
+&lt;li>Neutron&lt;/li>
+&lt;li>Swift (if providing Object Storage)&lt;/li>
+&lt;/ul>
+&lt;p>FedCloud components are distributed through
+&lt;a href="https://wiki.egi.eu/wiki/EGI_Cloud_Middleware_Distribution">CMD (Cloud Middleware Distribution)&lt;/a>
+or docker container images available in &lt;a href="https://hub.docker.com/">dockerhub&lt;/a>.
+These docker containers come pre-packaged and ready to use in the EGI FedCloud
+Appliance so you do not need to install any extra components on your site but
+just run a VM and configure it approprietely to interact with your services.&lt;/p>
+&lt;p>The integration is performed by a set of EGI components that interact with the
+OpenStack services APIs:&lt;/p>
+&lt;p>&lt;img src="openstacksite.png" alt="image">&lt;/p>
+&lt;ul>
+&lt;li>Authentication of EGI users into your system is performed by configuring the
+native OpenID Connect support of Keystone. Support for legacy VOs using VOMS
+requires the installation of the &lt;strong>Keystone-VOMS Authorization plugin&lt;/strong> to
+allow users with a valid VOMS proxy to obtain tokens to access your OpenStack
+deployment.&lt;/li>
+&lt;li>&lt;strong>cASO&lt;/strong> collects accounting data from OpenStack and uses &lt;strong>SSM&lt;/strong> to send the
+records to the central accounting database on the EGI Accounting service
+(&lt;a href="https://apel.github.io/">APEL&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>cloud-info-provider&lt;/strong> registers the RC configuration and description through
+the &lt;a href="https://argoeu.github.io/guides/messaging/">ARGO Messaging Service&lt;/a> to
+facilitate service discovery&lt;/li>
+&lt;li>&lt;strong>cloudkeeper&lt;/strong> (and &lt;strong>cloudkeeper-os&lt;/strong>) synchronises with
+&lt;a href="https://appdb.egi.eu/browse/cloud">EGI AppDB&lt;/a> so new or updated images can be
+provided by the RC to user communities (VO).&lt;/li>
+&lt;/ul>
+&lt;p>Not all EGI components need to share the same credentials. They are individually
+configured, you can use different credentials and permissions if desired.&lt;/p>
+&lt;h2 id="installation-options">Installation options&lt;/h2>
+&lt;p>EGI distributes the integration components as:&lt;/p>
+&lt;ul>
+&lt;li>A Virtual Appliance (VA) that uses Docker containers to bundle all of the
+components in a single VM and just needs minor configuration to get started&lt;/li>
+&lt;li>RPM and DEB Packages in the
+&lt;a href="https://wiki.egi.eu/wiki/EGI_Cloud_Middleware_Distribution">CMD distribution&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="fedcloud-virtual-appliance">FedCloud Virtual Appliance&lt;/h3>
+&lt;p>The EGI FedCloud Appliance is available at
+&lt;a href="https://appdb.egi.eu/store/vappliance/fedcloud.integration.appliance.openstack">AppDB&lt;/a>
+as an OVA file. You can easily extract the VMDK disk by untaring and optionally
+converting it to your preferred format with qemu-img:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># get image and extract VMDK&lt;/span>
+$ curl &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl &lt;span style="color:#4e9a06">&amp;#34;https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .url&lt;span style="color:#204a87;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> tar x &lt;span style="color:#4e9a06">&amp;#34;*.vmdk&amp;#34;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># convert to qcow2&lt;/span>
+$ qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.qcow2
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;p>The appliance running at your OpenStack must:&lt;/p>
+&lt;ul>
+&lt;li>Have a host certificate to send the accounting information to the accounting
+repository. DN of the host certificate must be registered in GOCDB with
+service type &lt;code>eu.egi.cloud.accounting&lt;/code>. The host certificate and key in PEM
+format are expected in &lt;code>/etc/grid-security/hostcert.pem&lt;/code> and
+&lt;code>/etc/grid-security/hostkey.pem&lt;/code> respectively.&lt;/li>
+&lt;li>Have enough disk space for handling the VM image replication (~ 100GB for
+&lt;code>fedcloud.egi.eu&lt;/code> VO). By default these are stored at /image_data. You can
+mount a volume at that location.&lt;/li>
+&lt;/ul>
+&lt;h3 id="cmd-packages">CMD Packages&lt;/h3>
+&lt;p>The CMD-OS repository provides packages that have gone through a quality
+assurance process for the supported distributions. Packages are available
+via the &lt;a href="https://repository.egi.eu">EGI repository&lt;/a>.&lt;/p>
+&lt;h2 id="open-ports">Open Ports&lt;/h2>
+&lt;p>The following &lt;strong>services&lt;/strong> must be accessible to allow access to an
+OpenStack-based FedCloud site (default ports listed below, can be adjusted to
+your installation)&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Port&lt;/th>
+&lt;th>Application&lt;/th>
+&lt;th>Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>5000&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OpenStack&lt;/strong>/Keystone&lt;/td>
+&lt;td>Authentication to your OpenStack.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>8776&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OpenStack&lt;/strong>/cinder&lt;/td>
+&lt;td>Block Storage management.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>8774&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OpenStack&lt;/strong>/nova&lt;/td>
+&lt;td>VM management.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>9696&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OpenStack&lt;/strong>/neutron&lt;/td>
+&lt;td>Network management.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>9292&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OpenStack&lt;/strong>/glance&lt;/td>
+&lt;td>VM Image management.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;h3 id="outgoing-ports">Outgoing ports&lt;/h3>
+&lt;p>The EGI Cloud components require the following outgoing connections open:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Port&lt;/th>
+&lt;th>Host&lt;/th>
+&lt;th>Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>443&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;code>msg.argo.grnet.gr&lt;/code>&lt;/td>
+&lt;td>ARGO Messaging System (used to send accounting records by SSM).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>8443&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;code>msg.argo.grnet.gr&lt;/code>&lt;/td>
+&lt;td>AMS authentication (used to send accounting records by SSM).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>443&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;code>vmcaster.appdb.egi.eu&lt;/code>&lt;/td>
+&lt;td>AppDB image lists (used by cloudkeeper).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>8080&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;code>cephrgw01.ifca.es&lt;/code>&lt;/td>
+&lt;td>Swift server hosting EGI images (used by cloudkeeper).&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;p>Images listed in AppDB may be hosted in other servers besides
+&lt;code>cephrgw01.ifca.es&lt;/code>. Check the specific VO-wide image lists for details.&lt;/p>
+&lt;h2 id="permissions">Permissions&lt;/h2>
+&lt;p>This is an overview of the expected account permissions used in an OpenStack
+site, these accounts can be merged as needed for your deployment:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Component&lt;/th>
+&lt;th>Permission&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>cloud-info&lt;/td>
+&lt;td>Member of all projects supporting EGI VOs&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>accounting&lt;/td>
+&lt;td>Member of all projects and able to list users (allowed to &lt;code>identity:list_users&lt;/code> in keystone)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>cloud-keeper&lt;/td>
+&lt;td>Permission to manage the images for all the projects supporting EGI VOs&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Other users&lt;/td>
+&lt;td>Automatically created by Keystone and permission set as configured in the mappings&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;h2 id="egi-aai">EGI AAI&lt;/h2>
+&lt;h3 id="openid-connect-support">OpenID Connect Support&lt;/h3>
+&lt;p>The integration of OpenStack service providers into the EGI Check-in is a
+two-step process:&lt;/p>
+&lt;ol>
+&lt;li>Test integration with the development instance of EGI Check-in. This will
+allow you to check complete the complete functionality of the system without
+affecting the production Check-in service.&lt;/li>
+&lt;li>Once the integration is working correctly, register your provider with the
+production instance of EGI Check-in to allow members of the EGI User
+Community to access your service.&lt;/li>
+&lt;/ol>
+&lt;h4 id="registration-into-check-in-development-instance">Registration into Check-in development instance&lt;/h4>
+&lt;p>Before your service can use the EGI Check-in OIDC Provider for user login, you
+must set up a client at the &lt;a href="https://aai-dev.egi.eu/oidc/manage/user/clients">EGI Check-in ODIC client management
+page&lt;/a> in order to obtain OAuth2.0
+credentials and register one or more redirect URIs.&lt;/p>
+&lt;p>Make sure that you fill in the following options:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;em>Main&lt;/em> tab:&lt;/p>
+&lt;blockquote>
+&lt;ul>
+&lt;li>Set redirect URL to
+&lt;code>https://&amp;lt;your keystone endpoint&amp;gt;/v3/auth/OS-FEDERATION/websso/openid/redirect&lt;/code>.
+Recent versions of OpenStack may deploy Keystone at &lt;code>/identity/&lt;/code>, be sure
+to include that in the &lt;code>&amp;lt;your keystone endpoint&amp;gt;&lt;/code> part of the URL if
+needed.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;em>Access&lt;/em> tab:&lt;/p>
+&lt;blockquote>
+&lt;ul>
+&lt;li>Enable &lt;em>openid&lt;/em>, &lt;em>profile&lt;/em>, &lt;em>email&lt;/em>, &lt;em>eduperson_entitlement&lt;/em> in the
+&lt;strong>Scope&lt;/strong> field&lt;/li>
+&lt;li>Enable &lt;em>authorization code&lt;/em> in the &lt;strong>Grant Types&lt;/strong> field&lt;/li>
+&lt;li>Enable &lt;em>Allow calls to the Introspection Endpoint?&lt;/em> in &lt;strong>Introspection&lt;/strong>
+field&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;/li>
+&lt;/ul>
+&lt;p>Once done, you will get a client id and client secret. Save them for the
+following steps&lt;/p>
+&lt;h4 id="keystone-setup">Keystone setup&lt;/h4>
+&lt;h5 id="pre-requisites">Pre-requisites&lt;/h5>
+&lt;ol>
+&lt;li>Keystone must run as a WSGI application behind an HTTP server (Apache is
+used in this documentation, but any server should be possible if it has
+OpenID connect/OAuth2.0 support). Keystone project has deprecated eventlet,
+so you should be already running Keystone in such way.&lt;/li>
+&lt;li>Keystone must be run with SSL&lt;/li>
+&lt;li>You need to install
+&lt;a href="https://github.com/pingidentity/mod_auth_openidc">mod_auth_openidc&lt;/a> for
+adding support for OpenID Connect to Apache.&lt;/li>
+&lt;/ol>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">IGTF CAs&lt;/h4>
+&lt;p>EGI monitoring checks that your
+Keystone accepts clients with certificates from the IGTF CAs. Please ensure that
+your server is configured with the correct Certificate and Revocation path:&lt;/p>
+&lt;dl>
+&lt;dt>For Apache HTTPd&lt;/dt>
+&lt;dd>
+&lt;p>HTTPd is able to use CAs and CRLs contained in a directory:&lt;/p>
+&lt;/dd>
+&lt;/dl>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87">SSLCACertificatePath&lt;/span> &lt;span style="color:#4e9a06">/etc/grid-security/certificates&lt;/span>
+&lt;span style="color:#204a87">SSLCARevocationPath&lt;/span> &lt;span style="color:#4e9a06">/etc/grid-security/certificates&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;dl>
+&lt;dt>For haproxy&lt;/dt>
+&lt;dd>
+&lt;p>CA and CRLS have to be bundled into one file.&lt;/p>
+&lt;p>Client verification should be set as optional otherwise accepted CAs
+won't be presented to the EGI monitoring:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-plaintext" data-lang="plaintext"># crt: concatenated cert, key and CA
+# ca-file: all IGTF CAs, concatenated as one file
+# crl-file: all IGTF CRLs, concatenated as one file
+# verify: enable optional X.509 client authentication
+bind XXX.XXX.XXX.XXX:443 ssl crt /etc/haproxy/certs/host-cert-with-key-and-ca.pem ca-file /etc/haproxy/certs/igtf-cas-bundle.pem crl-file /etc/haproxy/certs/igtf-crls-bundle.pem verify optional
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/dd>
+&lt;dt>For nginx&lt;/dt>
+&lt;dd>
+&lt;p>CA and CRLS have to be bundled into one file.&lt;/p>
+&lt;p>Client verification should be set as optional otherwise accepted CAs
+won't be presented to the EGI monitoring:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Nginx" data-lang="Nginx">&lt;span style="color:#204a87;font-weight:bold">ssl_client_certificate&lt;/span> &lt;span style="color:#4e9a06">/etc/ssl/certs/igtf-cas-bundle.pem&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">ssl_crl&lt;/span> &lt;span style="color:#4e9a06">/etc/ssl/certs/igtf-crls-bundle.pem&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">ssl_verify_client&lt;/span> &lt;span style="color:#4e9a06">optional&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/dd>
+&lt;dt>Managing IGTF CAs and CRLs&lt;/dt>
+&lt;dd>
+&lt;p>IGTF CAs can be obtained from UMD, you can find repo files for your
+distribution at &lt;a href="https://repository.egi.eu/sw/production/cas/1/current/">EGI CA repository&lt;/a>&lt;/p>
+&lt;p>IGTF CAs and CRLs can be bundled using the examples command
+hereafter.&lt;/p>
+&lt;p>Please update CAs bundle after IGTF updates, and CRLs bundle after
+each CRLs update made by fetch-crl:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">cat /etc/grid-security/certificates/*.pem &amp;gt; /etc/haproxy/certs/igtf-cas-bundle.pem
+cat /etc/grid-security/certificates/*.r0 &amp;gt; /etc/haproxy/certs/igtf-crls-bundle.pem
+&lt;span style="color:#8f5902;font-style:italic"># Some CRLs files are not ending with a new line&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Ensuring that CRLs markers are separated by a line feed&lt;/span>
+perl -pe &lt;span style="color:#4e9a06">&amp;#39;s/----------/-----\n-----/&amp;#39;&lt;/span> -i /etc/haproxy/certs/igtf-crls-bundle.pem
+&lt;/code>&lt;/pre>&lt;/div>&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;h4 id="apache-configuration">Apache Configuration&lt;/h4>
+&lt;p>Include this configuration on the Apache config for the virtual host of your
+Keystone service, using the client id and secret obtained above:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87">OIDCResponseType&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;code&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">OIDCClaimPrefix&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;OIDC-&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">OIDCClaimDelimiter&lt;/span> ;
+&lt;span style="color:#204a87">OIDCScope&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid profile email eduperson_entitlement&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">OIDCProviderMetadataURL&lt;/span> https://aai-dev.egi.eu/oidc/.well-known/openid-configuration
+&lt;span style="color:#204a87">OIDCClientID&lt;/span> &amp;lt;client id&amp;gt;
+&lt;span style="color:#204a87">OIDCClientSecret&lt;/span> &amp;lt;client secret&amp;gt;
+&lt;span style="color:#204a87">OIDCCryptoPassphrase&lt;/span> &amp;lt;some crypto pass phrase&amp;gt;
+&lt;span style="color:#204a87">OIDCRedirectURI&lt;/span> https://&amp;lt;your keystone endpoint&amp;gt;/v3/auth/OS-FEDERATION/websso/openid/redirect
+&lt;span style="color:#8f5902;font-style:italic"># OAuth for CLI access&lt;/span>
+&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> https://aai-dev.egi.eu/oidc/introspect
+&lt;span style="color:#204a87">OIDCOAuthClientID&lt;/span> &amp;lt;client id&amp;gt;
+&lt;span style="color:#204a87">OIDCOAuthClientSecret&lt;/span> &amp;lt;client secret&amp;gt;
+&lt;span style="color:#8f5902;font-style:italic"># Increase Shm cache size for supporting long entitlements&lt;/span>
+&lt;span style="color:#204a87">OIDCCacheShmEntrySizeMax&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">65536&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/v3/auth/OS-FEDERATION/websso/openid&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;span style="color:#204a87">AuthType&lt;/span> openid-connect
+&lt;span style="color:#204a87">Require&lt;/span> valid-user
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/auth&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;span style="color:#204a87">Authtype&lt;/span> oauth20
+&lt;span style="color:#204a87">Require&lt;/span> valid-user
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you have multiple keystone hosts, configure an alternative caching mechanism
+as per &lt;a href="https://github.com/zmartzone/mod_auth_openidc/wiki/Caching">https://github.com/zmartzone/mod_auth_openidc/wiki/Caching&lt;/a>&lt;/p>
+&lt;p>For example, using memcache&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87">OIDCCacheType&lt;/span> memcache
+&lt;span style="color:#204a87">OIDCMemCacheServers&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;memcache1 memcache2 memcache3&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Be sure to enable the mod_auth_oidc module in Apache, in Ubuntu:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo a2enmod auth_openidc
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+&lt;p>If running Keystone behind a proxy, make
+sure to correctly set the X-Forwarded-Proto and X-Forwarded-Port request
+headers, e.g. for haproxy:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-plaintext" data-lang="plaintext">http-request set-header X-Forwarded-Proto https if { ssl_fc }
+http-request set-header X-Forwarded-Proto http if !{ ssl_fc }
+http-request set-header X-Forwarded-Port %[dst_port]
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h4 id="keystone-configuration">Keystone Configuration&lt;/h4>
+&lt;p>Configure your &lt;code>keystone.conf&lt;/code> to include in the &lt;code>[auth]&lt;/code> section &lt;code>openid&lt;/code> in
+the list of authentication methods:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[auth]&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># This may change in your installation&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># add openid to the list of the methods you support&lt;/span>
+&lt;span style="color:#c4a000">methods&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">password, token, openid&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add a &lt;code>[openid]&lt;/code> section as follows:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[openid]&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># this is the attribute in the Keystone environment that will define the&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># identity provider&lt;/span>
+&lt;span style="color:#c4a000">remote_id_attribute&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">HTTP_OIDC_ISS&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add your horizon host as trusted dashboard to the &lt;code>[federation]&lt;/code> section:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[federation]&lt;/span>
+&lt;span style="color:#c4a000">trusted_dashboard&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">https://&amp;lt;your horizon&amp;gt;/dashboard/auth/websso/&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally copy the default template for managing the tokens in horizon to
+&lt;code>/etc/keystone/sso_callback_template.html&lt;/code>. This template can be found in
+keystone git repo at
+&lt;code>https://github.com/openstack/keystone/blob/master/etc/sso_callback_template.html&lt;/code>&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -L https://raw.githubusercontent.com/openstack/keystone/master/etc/sso_callback_template.html &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &amp;gt; /etc/keystone/sso_callback_template.html
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;p>Now restart your Apache (and Keystone if running in uwsgi) so you can configure
+the Keystone Federation support.&lt;/p>
+&lt;h4 id="keystone-federation-support">Keystone Federation Support&lt;/h4>
+&lt;p>First, create a new &lt;code>egi.eu&lt;/code> identity provider with remote id
+&lt;code>https://aai-dev.egi.eu/oidc/&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack identity provider create --remote-id https://aai-dev.egi.eu/oidc/ egi.eu
++-------------+----------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------------+----------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> description &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> domain_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1cac7817dafb4740a249cc9ca6b14ea5 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> enabled &lt;span style="color:#000;font-weight:bold">|&lt;/span> True &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> remote_ids &lt;span style="color:#000;font-weight:bold">|&lt;/span> https://aai-dev.egi.eu/oidc/ &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------------+----------------------------------+
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a group for users coming from EGI Check-in, usual configuration is to
+have one group per VO you want to support.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack group create ops
++-------------+----------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------------+----------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> description &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> domain_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> default &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 89cf5b6708354094942d9d16f0f29f8f &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> name &lt;span style="color:#000;font-weight:bold">|&lt;/span> ops &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------------+----------------------------------+
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add that group to the desired local project:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack role add member --group ops --project ops
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Define a mapping of users from EGI Check-in to the group just created and
+restrict with the &lt;code>OIDC-eduperson_entitlement&lt;/code> the VOs you want to support for
+that group. Substitute the group id and the allowed entitlements for the
+adequate values for your deployment:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cat mapping.egi.json
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;local&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;user&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;group&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;89cf5b6708354094942d9d16f0f29f8f&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;remote&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_SUB&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;any_one_of&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;https://aai-dev.egi.eu/oidc/&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;OIDC-eduperson_entitlement&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;regex&amp;#34;&lt;/span>: true,
+&lt;span style="color:#4e9a06">&amp;#34;any_one_of&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;^urn:mace:egi.eu:group:ops:role=vm_operator#aai.egi.eu&lt;/span>$&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>More recent versions of Keystone allow for more elaborated mapping, but this
+configuration should work for Mitaka and onwards&lt;/p>
+&lt;p>Create the mapping in Keystone:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack mapping create --rules mapping.egi.json egi-mapping
++-------+----------------------------------------------------------------------------------------------------------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------+----------------------------------------------------------------------------------------------------------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> egi-mapping &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> rules &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;remote&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;HTTP_OIDC_SUB&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>, &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;HTTP_OIDC_ISS&amp;#39;&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;any_one_of&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;https://aai-dev.egi.eu/oidc/&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]}&lt;/span>, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;regex&amp;#39;&lt;/span>: True, u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;OIDC-eduperson_entitlement&amp;#39;&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;any_one_of&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;^urn:mace:egi.eu:.*:ops:vm_operator@egi.eu$&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]}]&lt;/span>, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> u&lt;span style="color:#4e9a06">&amp;#39;local&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;group&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;id&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;89cf5b6708354094942d9d16f0f29f8f&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;user&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;name&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;{0}&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}}]}]&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------+----------------------------------------------------------------------------------------------------------------------------------+
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;p>Finally, create the federated protocol with the identity provider and mapping
+created before:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack federation protocol create &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --identity-provider egi.eu &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --mapping egi-mapping openid
++-------------------+-------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------------------+-------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> openid &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> identity_provider &lt;span style="color:#000;font-weight:bold">|&lt;/span> egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> mapping &lt;span style="color:#000;font-weight:bold">|&lt;/span> egi-mapping &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------------------+-------------+
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Keystone is now ready to accept EGI Check-in credentials.&lt;/p>
+&lt;h4 id="horizon-configuration">Horizon Configuration&lt;/h4>
+&lt;p>Edit your local_settings.py to include the following values:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#8f5902;font-style:italic"># Enables keystone web single-sign-on if set to True.&lt;/span>
+&lt;span style="color:#000">WEBSSO_ENABLED&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Allow users to choose between local Keystone credentials or login&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># with EGI Check-in&lt;/span>
+&lt;span style="color:#000">WEBSSO_CHOICES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;credentials&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Keystone Credentials&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;openid&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;EGI Check-in&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once horizon is restarted you will be able to choose &amp;quot;EGI Check-in&amp;quot; for login.&lt;/p>
+&lt;h4 id="cli-access">CLI Access&lt;/h4>
+&lt;p>The
+&lt;a href="https://docs.openstack.org/developer/python-openstackclient/">OpenStack Client&lt;/a>
+has built-in support for using OpenID Connect Access Tokens to authenticate. You
+first need to get a valid token from EGI Check-in (e.g. from
+&lt;a href="https://aai-dev.egi.eu/fedcloud/">https://aai-dev.egi.eu/fedcloud/&lt;/a>) and then use it in a command like:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack --os-auth-url https://&amp;lt;your keystone endpoint&amp;gt;/v3 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --os-auth-type v3oidcaccesstoken --os-protocol openid &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --os-identity-provider egi.eu &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --os-access-token &amp;lt;your access token&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> token issue
++---------+---------------------------------------------------------------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++---------+---------------------------------------------------------------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> expires &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2017-05-23T11:24:31+0000 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> gAAAAABZJA3fbKX....nEMAPi-IsFOCkU9QWGTISYElzYJsI3z0SJGs7QsTJv4aJQq0JDJUBz6uE85SqXDj3 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> user_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 020864ea9415413f9d706f6b473dbeba &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++---------+---------------------------------------------------------------------------------------+
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;h4 id="additional-vos">Additional VOs&lt;/h4>
+&lt;p>Configuration can include as many mappings as needed in the json file. Users
+will be members of all the groups matching the remote part of the mapping. For
+example this file has 2 mappings, one for members of &lt;code>ops&lt;/code> and another for
+members of &lt;code>fedcloud.egi.eu&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;local&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;user&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;group&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;66df3a7a0c6248cba8b729de7b042639&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;remote&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_SUB&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://aai-dev.egi.eu/oidc/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;OIDC-eduperson_entitlement&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;regex&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;^urn:mace:egi.eu:group:ops:role=vm_operator#aai.egi.eu$&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;local&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;user&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;group&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;e1c04284718f4e19bb0516e5534a24e8&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;remote&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_SUB&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://aai-dev.egi.eu/oidc/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;OIDC-eduperson_entitlement&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;regex&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;^urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu$&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="multiple-oidc-providers">Multiple OIDC providers&lt;/h5>
+&lt;p>If your OpenStack deployment needs to support multiple identity providers
+(besides EGI Check-in) you will need to configure &lt;code>mod_auth_openidc&lt;/code> to
+support &lt;a href="https://github.com/zmartzone/mod_auth_openidc/wiki/Multiple-Providers#discovery">multiple
+providers&lt;/a>
+and use an OAuth2.0 token introspection proxy like
+&lt;a href="https://github.com/indigo-iam/esaco">ESACO&lt;/a>.&lt;/p>
+&lt;h5 id="mod_auth_openidc-configuration">&lt;code>mod_auth_openidc&lt;/code> configuration&lt;/h5>
+&lt;p>First, create a directory to host each of the providers configuration, in our
+case we will use &lt;code>/var/lib/apache2/oidc/metadata&lt;/code>, but adapt this to your
+specific needs. Ensure this directory is writable by the user running apache:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mkdir -p /var/lib/apache2/oidc/metadata
+chown -R www-data:www-data /var/lib/apache2/oidc/metadata
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set in your Apache configuration the &lt;code>OIDCMetadataDir&lt;/code> pointing to that
+directory&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87">OIDCMetadataDir&lt;/span> &lt;span style="color:#4e9a06">/var/lib/apache2/oidc/metadata&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may remove the &lt;code>OIDCProviderMetadataURL&lt;/code>, &lt;code>OIDCClientID&lt;/code> and
+&lt;code>OIDCClientSecret&lt;/code> options from the Apache configuration as these will be now
+set in new files created in the metadata directory. For every provider you will
+support, you need to create 3 files:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code>&amp;lt;urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped&amp;gt;.provider&lt;/code>
+with the OpenID Connect Discovery OP JSON metadata. The easiest way to create
+this file is getting its content from the OIDC server itself. For EGI
+Check-in:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl https://aai-dev.egi.eu/oidc/.well-known/openid-configuration &amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> /var/lib/apache2/oidc/metadata/aai-dev.egi.eu%2Foidc.provider
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;code>&amp;lt;urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped&amp;gt;.client&lt;/code>
+with the client credentials. For EGI Check-in (&lt;code>aai-dev.egi.eu%2Foidc.client&lt;/code>):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_id&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your client id&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_secret&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your secret id&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;code>&amp;lt;urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped&amp;gt;.conf&lt;/code>
+with any extra configuration for the provider. This may not be needed if
+all your providers are similar. For example to specify the scopes to use for
+Check-in, use a &lt;code>aai-dev.egi.eu%2Foidc.conf&lt;/code> as follows:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;scope&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid email profile eduperson_entitlement&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>Now add for the providers you support new configuration in Apache to facilitate
+the use of the dashboard. This is for a configuration of an &lt;code>egi.eu&lt;/code> identity
+provider with &lt;code>openid&lt;/code> as protocol:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/identity/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;span style="color:#204a87">AuthType&lt;/span> openid-connect
+&lt;span style="color:#8f5902;font-style:italic"># This is your Redirect URI with a new iss=&amp;lt;your idp iss&amp;gt; option added&lt;/span>
+&lt;span style="color:#204a87">OIDCDiscoverURL&lt;/span> https://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-dev.egi.eu%2Foidc%2F
+&lt;span style="color:#8f5902;font-style:italic"># Ensure that the user is authenticated with the expected iss&lt;/span>
+&lt;span style="color:#204a87">Require&lt;/span> claim iss:https://aai-dev.egi.eu/oidc/
+&lt;span style="color:#204a87">Require&lt;/span> valid-user
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In your Horizon configuration, set the list of providers and their mappings:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#8f5902;font-style:italic"># this is the list that will show up in the dropdown menu&lt;/span>
+&lt;span style="color:#000">WEBSSO_CHOICES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;credentials&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Keystone Credentials&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;EGI Check-in&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;other-idp&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Other IdP&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># this maps the options above to keystone&amp;#39;s idps and protocols&lt;/span>
+&lt;span style="color:#000">WEBSSO_IDP_MAPPING&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;other-idp&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;other-idp.com&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="esaco-configuration">ESACO configuration&lt;/h5>
+&lt;p>ESACO will handle OAuth tokens when users hit your Keystone from API/CLI. It
+needs to run as a daemon that listens (by default) on port 8156. We will use
+docker for facilitating the deployment:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create a yaml file with the configuration of the different providers
+(&lt;code>application.yaml&lt;/code>):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">oidc&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">clients&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">issuer-url&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://aai-dev.egi.eu/oidc/&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client id&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-secret&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client secret&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">issuer-url&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;another idp&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your client id for second idp&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-secret&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your client secret for second idp&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Create a environment file with the ESACO credentials you want to use
+(&lt;code>esaco.env&lt;/code>):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># User name credential requested from clients introspecting tokens&lt;/span>
+&lt;span style="color:#000">ESACO_USER_NAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;esaco user name&amp;gt;
+&lt;span style="color:#8f5902;font-style:italic"># Password credential requested from clients introspecting tokens&lt;/span>
+&lt;span style="color:#000">ESACO_USER_PASSWORD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;esaco password&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Run the ESACO server (adapt this as it better fits to run on your servers
+and make it run permanently):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run -p 8156:8156 -d -env-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>esaco.env &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -v application.yml:/esaco/config/application.yml:ro &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> indigoiam/esaco:latest
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure Keystone&amp;rsquo;s Apache to use ESACO as OAuth introspection endpoint:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#8f5902;font-style:italic"># point this to the host where ESACO is running&lt;/span>
+&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> http://localhost:8156/introspect
+&lt;span style="color:#204a87">OIDCOAuthClientID&lt;/span> &amp;lt;esaco &lt;span style="color:#204a87;font-weight:bold">user&lt;/span> name&amp;gt;
+&lt;span style="color:#204a87">OIDCOAuthClientSecret&lt;/span> &amp;lt;esaco password&amp;gt;
+&lt;span style="color:#204a87">OIDCIDTokenIatSlack&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3600&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure also the locations in Apache that should use OAuth:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/identity/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/auth&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;span style="color:#204a87">Authtype&lt;/span> oauth20
+&lt;span style="color:#204a87">Require&lt;/span> valid-user
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/identity/v3/OS-FEDERATION/identity_providers/other_idp/protocols/openid/auth&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;span style="color:#204a87">Authtype&lt;/span> oauth20
+&lt;span style="color:#204a87">Require&lt;/span> valid-user
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h4 id="moving-to-egi-check-in-production-instance">Moving to EGI Check-in production instance&lt;/h4>
+&lt;p>Once tests in the development instance of Check-in are successful, you can move
+to the production instance. You should open a &lt;a href="https://ggus.eu">GGUS ticket&lt;/a> for
+the request. Besides you will need to update your configuration as follows:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Update the &lt;code>remote-id&lt;/code> of the identity provider:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack identity provider &lt;span style="color:#204a87">set&lt;/span> --remote-id https://aai.egi.eu/oidc/ egi.eu
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Update the &lt;code>HTTP_OIDC_ISS&lt;/code> filter in your mappings, e.g.:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sed -i &lt;span style="color:#4e9a06">&amp;#39;s/aai-dev.egi.eu/aai.egi.eu/&amp;#39;&lt;/span> mapping.egi.json
+openstack mapping &lt;span style="color:#204a87">set&lt;/span> --rules mapping.egi.json egi-mapping
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Update Apache configuration to use &lt;code>aai.egi.eu&lt;/code> instead of
+&lt;code>aai-dev.egi.eu&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87">OIDCProviderMetadataURL&lt;/span> https://aai.egi.eu/oidc/.well-known/openid-configuration
+&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> https://aai.egi.eu/oidc/introspect
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Changes in the production settings&lt;/h4>
+If you
+want to make any changes to the client configuration of the production instance,
+first make the changes in the Check-in development environment and then open a
+&lt;a href="https://ggus.eu">GGUS ticket&lt;/a> to sync the changes to production.
+&lt;/div>
+&lt;h3 id="voms-support">VOMS Support&lt;/h3>
+&lt;h4 id="voms-with-federation-os-keystone-api-v3">VOMS with FEDERATION-OS (Keystone API v3)&lt;/h4>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Deprecated!&lt;/h4>
+Configure VOMS with
+FEDERATION-OS if your site needs to support a legacy VO relying on VOMS for
+authorisation, check Keystone-VOMS below for older OpenStack versions.
+&lt;/div>
+&lt;p>VOMS authentication requires Keystone to be run as a WSGI application behind an
+Apache server with &lt;a href="https://github.com/CESNET/gridsite">gridsite&lt;/a> and SSL
+support. GridSite is a set of extensions to the Apache 2.x webserver, which
+support Grid security based on X.509 certificates.&lt;/p>
+&lt;p>Packages for gridsite can be obtained from &lt;a href="https://repository.egi.eu/sw/production/cmd-os/1/">CMD repository&lt;/a>.&lt;/p>
+&lt;p>First install the &lt;code>gridsite&lt;/code>, &lt;code>fetch-crl&lt;/code> and &lt;code>ca-policy-egi-core&lt;/code> for your
+distribution, ensuring that &lt;code>gridsite&lt;/code> is at least version &lt;code>2.3.2&lt;/code>. For Ubuntu
+16.04:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">apt-get install gridsite fetch-crl ca-policy-egi-core
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Configure Apache to use gridsite module (this may differ in your distribution):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">a2enmod zgridsite
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Include these lines on your Apache config for the virtual host of your Keystone
+service:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#8f5902;font-style:italic"># Use the IGTF trust anchors for CAs and CRLs&lt;/span>
+&lt;span style="color:#204a87">SSLCACertificatePath&lt;/span> &lt;span style="color:#4e9a06">/etc/grid-security/certificates/&lt;/span>
+&lt;span style="color:#204a87">SSLCARevocationPath&lt;/span> &lt;span style="color:#4e9a06">/etc/grid-security/certificates/&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Verify clients if they send their certificate&lt;/span>
+&lt;span style="color:#204a87">SSLVerifyClient&lt;/span> optional
+&lt;span style="color:#204a87">SSLVerifyDepth&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span>
+&lt;span style="color:#204a87">SSLOptions&lt;/span> +StdEnvVars +ExportCertData
+&lt;span style="color:#8f5902;font-style:italic"># Adapt this URL if needed for your deployment&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/mapped/auth&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># populate ENV variables&lt;/span>
+&lt;span style="color:#204a87">GridSiteEnvs&lt;/span> &lt;span style="color:#204a87;font-weight:bold">on&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># turn off directory listings&lt;/span>
+&lt;span style="color:#204a87">GridSiteIndexes&lt;/span> &lt;span style="color:#204a87;font-weight:bold">off&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># accept GSI proxies from clients&lt;/span>
+&lt;span style="color:#204a87">GridSiteGSIProxyLimit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># disable GridSite method extensions&lt;/span>
+&lt;span style="color:#204a87">GridSiteMethods&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">Require&lt;/span> &lt;span style="color:#204a87;font-weight:bold">all&lt;/span> granted
+&lt;span style="color:#204a87">Options&lt;/span> -MultiViews
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Make sure that &lt;code>mapped&lt;/code> authentication method exists in your &lt;code>keystone.conf&lt;/code> in
+the &lt;code>[auth]&lt;/code> section:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[auth]&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># This may change in your installation,&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># add mapped to the list of the methods you support&lt;/span>
+&lt;span style="color:#c4a000">methods&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">password, token, openid, mapped&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create an &lt;code>egi.eu&lt;/code> identity provider and any needed groups as described in
+&lt;a href="#keystone-federation-support">Keystone Federation Support&lt;/a> (do not forget to
+add roles to the new group). Use those groups to create appropriate mappings to
+the VOs you intend to support. You can use the &lt;code>GRST_VOMS_FQANS&lt;/code> to match to the
+VOMS FQAN that you want to create the mapping for. The following is an example
+for the &lt;code>fedcloud.egi.eu&lt;/code> VO:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack group create fedcloud.egi.eu
++-------------+----------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------------+----------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> description &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> domain_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> default &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> fbccb5f81f9741fd8b84736cc10c1d34 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> name &lt;span style="color:#000;font-weight:bold">|&lt;/span> fedcloud.egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------------+----------------------------------+
+$ cat mapping.voms.json
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;local&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;user&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;ephemeral&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;group&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;fbccb5f81f9741fd8b84736cc10c1d34&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;remote&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;GRST_CONN_AURI_0&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;GRST_VOMS_FQANS&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;any_one_of&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;^/fedcloud.egi.eu/.*&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;regex&amp;#34;&lt;/span>: &lt;span style="color:#204a87">true&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+$ openstack mapping create --rules mapping.voms.json voms
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> voms &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> rules &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;remote&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;GRST_CONN_AURI_0&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>, &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;regex&amp;#39;&lt;/span>: True, u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;GRST_VOMS_FQANS&amp;#39;&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;any_one_of&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;^/fedcloud.egi.eu/.*&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]}]&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;local&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;group&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;id&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;7d9a21050cef48889f23eb9d5f7fef51&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;user&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;ephemeral&amp;#39;&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;name&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;{0}&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}}]}]&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;p>Finally add the &lt;code>mapped&lt;/code> protocol to your &lt;code>egi.eu&lt;/code> identity provider with the
+mapping you have created:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack federation protocol create &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --identity-provider egi.eu --mapping voms mapped
++-------------------+--------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------------------+--------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> mapped &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> identity_provider &lt;span style="color:#000;font-weight:bold">|&lt;/span> egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> mapping &lt;span style="color:#000;font-weight:bold">|&lt;/span> voms &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------------------+--------+
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For every VO you support you should configure the corresponding &lt;code>.lsc&lt;/code> files at
+&lt;code>/etc/grid-security/vomsdir/&amp;lt;vo name&amp;gt;/&lt;/code>. Those files depend on each VO, check
+the &lt;a href="https://operations-portal.egi.eu/">Operations Portal&lt;/a> for details.
+You can find below the &lt;code>fedcloud.egi.eu&lt;/code> configuration:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cat /etc/grid-security/vomsdir/fedcloud.egi.eu/voms1.grid.cesnet.cz.lsc
+/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cz/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cesnet-ca/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>CESNET/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms1.grid.cesnet.cz
+/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cz/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cesnet-ca/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>CESNET CA/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>CESNET CA &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>
+$ cat /etc/grid-security/vomsdir/fedcloud.egi.eu/voms2.grid.cesnet.cz.lsc
+/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cz/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cesnet-ca/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>CESNET/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms2.grid.cesnet.cz
+/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cz/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cesnet-ca/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>CESNET CA/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>CESNET CA &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can test easily test the authentication is working using curl with your
+proxy:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -s --cert /tmp/x509up_u1000 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> https://&amp;lt;your keystone host&amp;gt;/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/mapped/auth &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> python -mjson.tool
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;token&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;audit_ids&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;wxB8VZeHSji0D57Z86PSTA&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;expires_at&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;2018-08-24T12:40:41.000000Z&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;issued_at&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;2018-08-24T11:40:41.000000Z&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;methods&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;mapped&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;user&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;OS-FEDERATION&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;groups&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;fbccb5f81f9741fd8b84736cc10c1d34&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;identity_provider&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;egi.eu&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;protocol&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;mapped&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;domain&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;Federated&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;Federated&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;ea6520b3ad34400ba07115f7a3987a6b&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;dn:/DC=org/DC=terena/DC=tcs/C=NL/O=EGI/OU=UCST/CN=Enol+Fernandez&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;h4 id="keystone-voms-keystone-api-v2">Keystone-VOMS (Keystone API v2)&lt;/h4>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Deprecated!&lt;/h4>
+&lt;strong>VOMS Support using
+Keystone-VOMS is no longer supported from OpenStack Queens onwards&lt;/strong>. You should
+use
+&lt;a href="#voms-with-federation-os-keystone-api-v3">VOMS with FEDERATION-OS (Keystone API v3)&lt;/a>
+or &lt;a href="#openid-connect-support">OpenID Connect Support&lt;/a> instead.
+&lt;/div>
+&lt;p>Support for authenticating users with X.509 certificates with VOMS extensions is
+achieved with Keystone-VOMS extension. Documentation is available at
+&lt;a href="https://keystone-voms.readthedocs.io/">https://keystone-voms.readthedocs.io/&lt;/a>&lt;/p>
+&lt;p>Notes:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>You need a host certificate from a recognised CA for your keystone server&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Take into account that using keystone-voms plugin will &lt;strong>enforce the use of
+https for your Keystone service&lt;/strong>, you will need to update your URLs in the
+configuration of your services if your current installation is not using
+https:&lt;/p>
+&lt;ul>
+&lt;li>you will probably need to include your CA to your system's CA bundle to
+avoid certificate validation issues: Check the
+&lt;a href="https://wiki.egi.eu/wiki/Federated_Cloud_APIs_and_SDKs#CA_CertificatesCheck">Federated Cloud OpenStack Client guide&lt;/a>
+on how to do it.&lt;/li>
+&lt;li>replace http with https in &lt;code>auth_[protocol|uri|url]&lt;/code> and
+&lt;code>auth_[host|uri|url]&lt;/code> in the nova, cinder, glance and neutron config files
+(&lt;code>/etc/nova/nova.conf&lt;/code>, &lt;code>/etc/nova/api-paste.ini&lt;/code>,
+&lt;code>/etc/neutron/neutron.conf&lt;/code>, &lt;code>/etc/neutron/api-paste.ini&lt;/code>,
+&lt;code>/etc/neutron/metadata_agent.ini&lt;/code>, &lt;code>/etc/cinder/cinder.conf&lt;/code>,
+&lt;code>/etc/cinder/api-paste.ini&lt;/code>, &lt;code>/etc/glance/glance-api.conf&lt;/code>,
+&lt;code>/etc/glance/glance-registry.conf&lt;/code>, &lt;code>/etc/glance/glance-cache.conf&lt;/code>) and any
+other service that needs to check keystone tokens.&lt;/li>
+&lt;li>Update the URLs of the services directly in the database:&lt;/li>
+&lt;/ul>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-mysql" data-lang="mysql">&lt;span style="color:#000">mysql&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">use&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">keystone&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">mysql&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">update&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">endpoint&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">set&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">url&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://&amp;lt;keystone-host&amp;gt;:5000/v2.0&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">where&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">url&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://&amp;lt;keystone-host&amp;gt;:5000/v2.0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">mysql&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">update&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">endpoint&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">set&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">url&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://&amp;lt;keystone-host&amp;gt;:35357/v2.0&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">where&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">url&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;http://&amp;lt;keystone-host&amp;gt;:35357/v2.0&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/li>
+&lt;li>
+&lt;p>Most sites should enable the &lt;code>autocreate_users&lt;/code> option in the &lt;code>[voms]&lt;/code> section
+of
+&lt;a href="https://keystone-voms.readthedocs.org/en/latest/configuration.html">Keystone-VOMS configuration&lt;/a>.
+This will enable new users to be automatically created in your local keystone
+the first time they login into your site.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>if (and only if) you need to configure the Per-User Subproxy (PUSP) feature,
+please follow the
+&lt;a href="https://wiki.egi.eu/wiki/Long-tail_of_science_-_information_for_providers#Instructions_for_OpenStack_providers">specific guide&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="egi-accounting">EGI Accounting&lt;/h2>
+&lt;p>There are two different processes handling the accounting integration:&lt;/p>
+&lt;ul>
+&lt;li>cASO, which connects to the OpenStack deployment to get the usage information,
+and,&lt;/li>
+&lt;li>ssmsend, which sends that usage information to the central EGI accounting
+repository.&lt;/li>
+&lt;/ul>
+&lt;p>They should be run by cron periodically, settings below run cASO every hour and
+ssmsend every six hours.&lt;/p>
+&lt;h3 id="using-the-vm-appliance">Using the VM Appliance&lt;/h3>
+&lt;p>&lt;a href="http://caso.readthedocs.org/en/latest/configuration.html">cASO configuration&lt;/a>
+is stored at &lt;code>/etc/caso/caso.conf&lt;/code>. Most default values should be ok, but you
+must set:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>site_name&lt;/code> (line 12), with the name of your site as defined in GOCDB.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>projects&lt;/code> (line 20), with the list of projects you want to extract accounting
+from.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>credentials to access the accounting data (lines 28-47, more options also
+available). Check the
+&lt;a href="http://caso.readthedocs.org/en/latest/configuration.html#openstack-configuration">cASO documentation&lt;/a>
+for the expected permissions of the user configured here.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The mapping from EGI VOs to your local projects &lt;code>/etc/caso/voms.json&lt;/code>,
+following this format: :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;vo name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;projects&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;project A that accounts for the vo&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;project B that accounts for the VO&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;another vo&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;projects&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;project C that accounts for the VO&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>cASO will write records to &lt;code>/var/spool/apel&lt;/code> from where ssmsend will take them.&lt;/p>
+&lt;p>SSM configuration is available at &lt;code>/etc/apel&lt;/code>. Defaults should be ok for most
+cases. The cron file uses &lt;code>/etc/grid-security&lt;/code> for the CAs and the host
+certificate and private keys (&lt;code>/etc/grid-security/hostcert.pem&lt;/code> and
+&lt;code>/etc/grid-security/hostkey.pem&lt;/code>).&lt;/p>
+&lt;h4 id="running-the-services">Running the services&lt;/h4>
+&lt;p>Both caso and ssmsend are run via the root user crontab. For convenience there
+are two scripts &lt;code>/usr/local/bin/caso-extract.sh&lt;/code> and
+&lt;code>/usr/local/bin/ssm-send.sh&lt;/code> that run the docker container with the proper
+volumes.&lt;/p>
+&lt;h2 id="egi-information-system">EGI Information System&lt;/h2>
+&lt;p>Information discovery provides a real-time view about the actual images and
+flavors available at the OpenStack for the federation users. It runs as a
+single python application
+&lt;a href="https://github.com/EGI-Federation/cloud-info-provider">cloud-info-provider&lt;/a>
+that pushes information through the &lt;a href="https://argoeu.github.io/guides/messaging/">Argo Messaging Service
+(AMS)&lt;/a>&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">BDII is deprecated&lt;/h4>
+Cloud providers no longer need to provide BDII as the Argo Messaging Service
+is used instead for transferring information
+&lt;/div>
+&lt;p>You can either run the service by yourself or rely on central operations of the
+cloud-info-provider. In both cases you must register your host DN in the GOCDB
+entry for the &lt;code>org.openstack.nova&lt;/code>.&lt;/p>
+&lt;h3 id="catch-all-operations">Catch-all operations&lt;/h3>
+&lt;p>EGI can manage the operation of the &lt;code>cloud-info-provider&lt;/code> for the site so you
+don&amp;rsquo;t need to do it. In order for your site to be included in the centrally
+operated &lt;code>cloud-info-provider&lt;/code>, you need to create a Pull Request at the
+&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/">EGI-Federation/fedcloud-catchall-operations
+repository&lt;/a>
+adding your site configuration in the &lt;code>sites&lt;/code> directory with a file like this:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;your endpoint as declared in GOCDB&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">gocdb&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;your site name as declared in GOCDB&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">vos&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># a list of VOs you support in your deployment as follows&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>- &lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">project_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;local OpenStack project identifier&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;name of the vo&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>- &lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">project_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;local OpenStack project identifier for second VO&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;name of another vo&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once PR is merged, the service will be reconfigured and your site should start
+publishing information.&lt;/p>
+&lt;h2 id="local-operations">Local operations&lt;/h2>
+&lt;p>You can operate by yourself the &lt;code>cloud-info-provider&lt;/code>. The software can be
+obtained as RPMs, debs and python packages from the &lt;a href="https://github.com/EGI-Federation/cloud-info-provider/releases">GitHub releases
+page&lt;/a>.&lt;/p>
+&lt;p>The &lt;code>cloud-info-provider&lt;/code> needs a configuration file where your site is
+described, see the &lt;a href="https://github.com/EGI-Federation/cloud-info-provider/blob/master/etc/sample.openstack.yaml">sample OpenStack
+configuration&lt;/a>
+for the required information. The authentication parameters for your local
+OpenStack and the AMS are passed as command line options:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">cloud-info-provider-service --yaml-file &amp;lt;your site description.yaml&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --middleware openstack &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --os-auth-url &amp;lt;your keystone URL&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> any other options &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> authentication &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+--format glue21 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --publisher ams &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --ams-cert &amp;lt;your host certificate&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --ams-key &amp;lt;your host secret key&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --ams-topic &amp;lt;your endpoint topic&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For authentication, you should be able to use any authentication method
+supported by &lt;a href="https://opendev.org/openstack/keystoneauth">keystoneauth&lt;/a>, for
+user name and password use: &lt;code>--os-password&lt;/code> and &lt;code>--os-username&lt;/code>. Check the
+complete list of options with &lt;code>cloud-info-provider-service --help&lt;/code>.&lt;/p>
+&lt;p>The AMS topic has the format: &lt;code>SITE_&amp;lt;SITE_NAME&amp;gt;_ENDPOINT_&amp;lt;GOCDB_ID&amp;gt;&lt;/code>, where
+&lt;code>&amp;lt;SITE_NAME&amp;gt;&lt;/code> is the name of the site as declared in GOCDB and &lt;code>&amp;lt;GOCDB_ID&amp;gt;&lt;/code> is
+the id of the endpoint in GOCDB. For example, &lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Service&amp;amp;id=7513">this
+endpoint&lt;/a> would
+have a topic like: &lt;code>SITE_IFCA-LCG2_ENDPOINT_7513G0&lt;/code>.&lt;/p>
+&lt;p>You should periodically run the cloud-info-provider (e.g. with a cron
+every 5 minutes) to push the information for consumption by clients.&lt;/p>
+&lt;h3 id="using-the-egi-fedcloud-appliance">Using the EGI FedCloud Appliance&lt;/h3>
+&lt;p>The appliance provides a ready-to-use cloud-info-provider configuration
+if you want to operate it by yourself. Once you have downloaded the appliance
+check the following files:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>/etc/cloud-info-provider/openstack.rc&lt;/code>: the configuration of the
+account used to log into your OpenStack and the location of the host
+certificate that will be used to authenticate to the AMS.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>/etc/cloud-info-provider/openstack.yaml&lt;/code>: the cloud-info-provider
+configuration. You need to enter the details about the VOs/projects that
+the site is supporting.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>The appliance has a cron job that will connect to the configured OpenStack API
+and send messages every 5 minutes.&lt;/p>
+&lt;h2 id="egi-vm-image-management">EGI VM Image Management&lt;/h2>
+&lt;p>VM Images are replicated using &lt;code>cloudkeeper&lt;/code>, which has two
+components:&lt;/p>
+&lt;ul>
+&lt;li>fronted (cloudkeeper-core) dealing the with image lists and downloading the
+needed images, run periodically with cron&lt;/li>
+&lt;li>backend (cloudkeeper-os) dealing with your glance catalogue, running
+permanently.&lt;/li>
+&lt;/ul>
+&lt;h3 id="using-the-vm-appliance-1">Using the VM Appliance&lt;/h3>
+&lt;p>Every 4 hours, the appliance will perform the following actions:&lt;/p>
+&lt;ul>
+&lt;li>download the configured lists in &lt;code>/etc/cloudkeeper/image-lists.conf&lt;/code> and
+verify its signature&lt;/li>
+&lt;li>check any changes in the lists and download new images&lt;/li>
+&lt;li>synchronise this information to the configured glance endpoint&lt;/li>
+&lt;/ul>
+&lt;p>First you need to configure and start the backend. Edit
+&lt;code>/etc/cloudkeeper-os/cloudkeeper-os.conf&lt;/code> and add the authentication parameters
+from line 117 to 136.&lt;/p>
+&lt;p>Then add as many image lists (one per line) as you would like to subscribe to
+&lt;code>/etc/cloudkeeper/image-lists.conf&lt;/code>. Use URLs with your AppDB token for
+authentication, check the following guides for getting such token and URLs:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://wiki.appdb.egi.eu/main:faq:how_to_get_access_to_vo-wide_image_lists">how to access to VO-wide image lists&lt;/a>,
+and&lt;/li>
+&lt;li>&lt;a href="https://wiki.appdb.egi.eu/main:faq:how_to_subscribe_to_a_private_image_list_using_the_vmcatcher">how to subscribe to a private image list&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>Finally, you need to provide a &lt;code>/etc/cloudkeeper-os/mapping.json&lt;/code> that
+configures the mapping of VOs supported in your OpenStack. The file should
+contain a json document that follows this format:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;VO_NAME&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;project&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;id of project in OpenStack for VO_NAME&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;VO_NAME_2&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;project&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;local name of project in OpenStack for VO_NAME_2&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;domain&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;domain name for project in OpenStack&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that you can either specify a project id or the project name with the
+domain name in the mapping. Add as many VOs as you are supporting.&lt;/p>
+&lt;h4 id="running-the-services-1">Running the services&lt;/h4>
+&lt;p>cloudkeeper-os should run permanently, there is a &lt;code>cloudkeeper-os.service&lt;/code> for
+systemd in the appliance. Manage as usual:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">systemctl &amp;lt;start&lt;span style="color:#000;font-weight:bold">|&lt;/span>stop&lt;span style="color:#000;font-weight:bold">|&lt;/span>status&amp;gt; cloudkeeper-os
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>cloudkeeper core is run every 4 hours with a cron script.&lt;/p>
+&lt;h2 id="upgrading-the-openstack-appliance">Upgrading the OpenStack Appliance&lt;/h2>
+&lt;h2 id="from-20180507-or-newer-to-20210312">From 2018.05.07 or newer to 2021.03.12&lt;/h2>
+&lt;p>Configuration changes:&lt;/p>
+&lt;ul>
+&lt;li>Removes BDII, service is no longer in use&lt;/li>
+&lt;li>A cloud-info-provider cron is added&lt;/li>
+&lt;li>Uses AMS for pushing accounting records. New configuration
+file for ssmsend is available&lt;/li>
+&lt;/ul>
+&lt;h3 id="from-20170809-to-20180507">From 2017.08.09 to 2018.05.07&lt;/h3>
+&lt;p>Configuration changes:&lt;/p>
+&lt;ul>
+&lt;li>This upgrade moves the &lt;code>voms.json&lt;/code> file to the respective &lt;code>caso&lt;/code> and
+&lt;code>cloudkeeper-os&lt;/code> directories under &lt;code>/etc/&lt;/code>&lt;/li>
+&lt;li>No other changes in configuration are needed&lt;/li>
+&lt;/ul>
+&lt;h3 id="from-20160403-to-20170809">From 20160403 to 2017.08.09&lt;/h3>
+&lt;p>There are several major changes between these versions, namely:&lt;/p>
+&lt;ul>
+&lt;li>atrope has been deprecated and cloudkeeper is used instead. The configuration
+cannot be reused directly and the new services need to be configured as
+described above&lt;/li>
+&lt;li>caso is upgraded to version 1.1.1, the configuration file has some
+incompatible changes.&lt;/li>
+&lt;li>A new bdii.service is available for managing the process is available.&lt;/li>
+&lt;/ul></description></item><item><title>Providers: OpenNebula</title><link>/providers/cloud-compute/opennebula/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/opennebula/</guid><description>
+&lt;p>EGI Federated Cloud Site based on OpenNebula is an ordinary OpenNebula
+installation with some EGI-specific integration components. There are no
+additional requirements placed on internal site architecture. Follow
+&lt;a href="http://opennebula.org/documentation/">OpenNebula documentation&lt;/a> if you need
+advice on how to install and configure OpenNebula itself.&lt;/p>
+&lt;p>&lt;strong>Supprted OpenNebula versions:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>OpenNebula v5.2.x&lt;/li>
+&lt;li>OpenNebula v5.4.x&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Integration Prerequisites:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Working OpenNebula installation.&lt;/li>
+&lt;li>Valid IGTF-trusted host certificates for selected hosts.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Please consider that:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>CDMI&lt;/strong> storage endpoints are currently &lt;strong>not supported&lt;/strong> for
+OpenNebula-based sites.&lt;/li>
+&lt;li>OpenNebula GUI integration is &lt;strong>not&lt;/strong> supported.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="opennebulasite.png" alt="image">&lt;/p>
+&lt;p>The following &lt;strong>components&lt;/strong> must be installed:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>rOCCI-server&lt;/strong> -- provides a standard virtual machine management interface.&lt;/li>
+&lt;li>&lt;strong>keystorm&lt;/strong> -- serves federated authentication and authorization.&lt;/li>
+&lt;li>&lt;strong>cloudkeeper&lt;/strong> and &lt;strong>cloudkeeper-one&lt;/strong>, synchronize site with appliances from
+&lt;a href="https://appdb.egi.eu/browse/cloud">AppDB&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>oneacct-export&lt;/strong> and &lt;strong>apel-ssm&lt;/strong> -- collect accounting and publishe it
+into EGI's accounting database.&lt;/li>
+&lt;li>&lt;strong>cloud-info-provider&lt;/strong> and &lt;strong>BDII&lt;/strong>, register site in the EGI Information
+System.&lt;/li>
+&lt;/ul>
+&lt;h2 id="open-ports">Open Ports&lt;/h2>
+&lt;p>The following &lt;strong>ports&lt;/strong> must be open to allow access to an OpenNebula-based
+FedCloud site:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Port&lt;/th>
+&lt;th>Application&lt;/th>
+&lt;th>Host&lt;/th>
+&lt;th>Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>2633&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OpenNebula&lt;/strong>/XML-RPC&lt;/td>
+&lt;td>&lt;strong>OpenNebula&lt;/strong>&lt;/td>
+&lt;td>Communication between integration components and OpenNebula.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>2170&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>BDII&lt;/strong>/LDAP&lt;/td>
+&lt;td>&lt;strong>cloud-info-provider&lt;/strong>/&lt;strong>BDII&lt;/strong>&lt;/td>
+&lt;td>EGI Service Discovery/Information System.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>11443&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OCCI&lt;/strong>/HTTPS&lt;/td>
+&lt;td>&lt;strong>rOCCI-server&lt;/strong>&lt;/td>
+&lt;td>EGI Virtual Machine Management.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>5000&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>keystorm&lt;/strong>/HTTPS&lt;/td>
+&lt;td>&lt;strong>keystorm&lt;/strong>&lt;/td>
+&lt;td>EGI User Management.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>50505&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>cloudkeeper&lt;/strong>/HTTP&lt;/td>
+&lt;td>&lt;strong>cloudkeeper&lt;/strong>&lt;/td>
+&lt;td>EGI Image Management, needs to be accessible from &lt;strong>cloudkeeper-one&lt;/strong> node only&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>50051&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>cloudkeeper-one&lt;/strong>/gRPC&lt;/td>
+&lt;td>&lt;strong>cloudkeeper-one&lt;/strong>&lt;/td>
+&lt;td>EGI Image Management, needs to be accessible from &lt;strong>cloudkeeper&lt;/strong> node only&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;p>There are no additional requirements for &lt;strong>OpenNebula&lt;/strong> hosts used to run
+virtual machines.&lt;/p>
+&lt;h2 id="service-accounts">Service accounts&lt;/h2>
+&lt;p>This is an overview of &lt;strong>service accounts&lt;/strong> used in an OpenNebula-based site.
+The names are default and can be changed if required.&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Account name&lt;/th>
+&lt;th>Host&lt;/th>
+&lt;th>Use&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>rocci&lt;/code>&lt;/td>
+&lt;td>rOCCI-server&lt;/td>
+&lt;td>Service account for &lt;strong>rOCCI-server&lt;/strong>. It is only a service account, no access required.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>keystorm&lt;/code>&lt;/td>
+&lt;td>keystorm&lt;/td>
+&lt;td>Service account for &lt;strong>keystorm&lt;/strong>. It is only a service account, no access required.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>apel&lt;/code>&lt;/td>
+&lt;td>oneacct-export/APEL&lt;/td>
+&lt;td>Service account for &lt;strong>oneacct-export/APEL&lt;/strong>. Just a service account, no access required.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>openldap&lt;/code>&lt;/td>
+&lt;td>cloud-info-provider/BDII&lt;/td>
+&lt;td>Service account for &lt;strong>cloud-info-provider/BDII&lt;/strong>. Just a service account, no access required.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>cloudkeeper&lt;/code>&lt;/td>
+&lt;td>cloudkeeper&lt;/td>
+&lt;td>Service account for &lt;strong>cloudkeeper&lt;/strong>. Just a service account, no access required.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>cloudkeeper-one&lt;/code>&lt;/td>
+&lt;td>cloudkeeper-one&lt;/td>
+&lt;td>Service account for &lt;strong>cloudkeeper-one&lt;/strong>. Just a service account, no access required.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;h2 id="egi-virtual-machine-management">EGI Virtual Machine Management&lt;/h2>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;p>Enable EPEL and install the following packages prior to installation:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum install -y epel-release wget
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="installation">Installation&lt;/h3>
+&lt;p>rOCCI-server is distributed as package for multiple Linux distributions which is
+available in AppDB. This guide will expect CentOS 7 distribution but
+installation on any other supported distribution is very similar.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Register &lt;code>rOCCI-server&lt;/code> repositories&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">wget http://repository.egi.eu/community/software/rocci.server/2.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/rocci-server.repo
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/li>
+&lt;li>
+&lt;p>Install package&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum install -y occi-server
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="configuration">Configuration&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Make rOCCI-server listen on a public interface&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mkdir -p /etc/systemd/system/occi-server.socket.d
+cat &amp;gt; /etc/systemd/system/occi-server.socket.d/override.conf &lt;span style="color:#4e9a06">&amp;lt;&amp;lt;EOS
+&lt;/span>&lt;span style="color:#4e9a06">[Socket]
+&lt;/span>&lt;span style="color:#4e9a06"># lines below are NOT duplicated by mistake
+&lt;/span>&lt;span style="color:#4e9a06">ListenStream=
+&lt;/span>&lt;span style="color:#4e9a06">ListenStream=0.0.0.0:11443
+&lt;/span>&lt;span style="color:#4e9a06">EOS&lt;/span>
+sed -i &lt;span style="color:#4e9a06">&amp;#39;s/HOST=127.0.0.1/HOST=0.0.0.0/g&amp;#39;&lt;/span> /etc/occi-server/variables
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Uncomment and configure optional parameters in &lt;em>/etc/occi-server/variables&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># host certificate readable by the rocci user&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">HOST_CERT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/path/to/cert
+&lt;span style="color:#8f5902;font-style:italic"># host key readable by the rocci user&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">HOST_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/path/to/key
+&lt;span style="color:#8f5902;font-style:italic"># URL pointing to keystorm installation&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ROCCI_SERVER_KEYSTONE_URI&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://localhost:5000/
+&lt;span style="color:#8f5902;font-style:italic"># URL pointing to OpenNebula installation&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ROCCI_SERVER_OPENNEBULA_ENDPOINT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>http://localhost:2633/RPC2
+&lt;span style="color:#8f5902;font-style:italic"># crypto options MUST MATCH keystorm&amp;#39;s crypto options&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># see /etc/keystorm/variables&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ROCCI_SERVER_ENCRYPTION_TOKEN_CIPHER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ROCCI_SERVER_ENCRYPTION_TOKEN_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ROCCI_SERVER_ENCRYPTION_TOKEN_IV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Enable and start the service&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">systemctl &lt;span style="color:#204a87">enable&lt;/span> occi-server
+systemctl start occi-server
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="runtime">Runtime&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Import resource templates to OpenNebula&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">/opt/occi-server/bin/oneresource create --endpoint http://one.example.org:2633/RPC2 &lt;span style="color:#8f5902;font-style:italic"># --username PRIVILEGED_USER --password PASSWD&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># re-run with `--resources /opt/occi-server/embedded/app/rOCCI-server/lib/resources/gpu/` to enable GPU resource templates&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/li>
+&lt;li>
+&lt;p>In OpenNebula, set flags for groups by adding attributes:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Default cluster for this group&lt;/span>
+&lt;span style="color:#000">DEFAULT_CLUSTER_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0&amp;#34;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Default connectivity for this group: public|nat|private&lt;/span>
+&lt;span style="color:#000">DEFAULT_CONNECTIVITY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;public&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>In OpenNebula, set network type on networks used via OCCI by adding an
+attribute:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">NETWORK_TYPE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;public&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Supported types: public|nat|private&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>In OpenNebula, set flag for networks that should be treated as public IP pools
+(for IP reservations) by adding an attribute:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">FLOATING_IP_POOL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;yes&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>In OpenNebula, set additional network attributes:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">NETWORK_ADDRESS&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># e.g., &amp;#34;172.16.100.0&amp;#34;&lt;/span>
+&lt;span style="color:#000">NETWORK_MASK&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># e.g., &amp;#34;255.255.255.0&amp;#34;&lt;/span>
+&lt;span style="color:#000">GATEWAY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># e.g., &amp;#34;172.16.100.1&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="migration-from-v1-to-v2">Migration from v1 to v2&lt;/h3>
+&lt;p>In order to migrate from rOCCI-server v1 with Perun-managed user accounts,
+perform the following steps.&lt;/p>
+&lt;h4 id="preparation">Preparation&lt;/h4>
+&lt;ul>
+&lt;li>Disconnect direct propagation (slave scripts)&lt;/li>
+&lt;li>Remove all user accounts that do not have any resource allocations&lt;/li>
+&lt;/ul>
+&lt;h4 id="migration">Migration&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>Merge multiple single-group accounts into one account with multiple groups&lt;/p>
+&lt;p>Single-group accounts owned by the same person can be identified as having:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>NAME&lt;/code> following the naming convention $VONAME_$ID where the same user
+always has the same $ID&lt;/li>
+&lt;li>&lt;code>TEMPLATE/X509_DN&lt;/code> where the same user always has the same DN&lt;/li>
+&lt;/ul>
+&lt;p>Name of the merged user MUST be a SHA256 digest of the &lt;code>TEMPLATE/X509_DN&lt;/code>
+attribute value.&lt;/p>
+&lt;p>In ruby, SHA256 digest can be generated as:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#204a87">require&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;digest&amp;#39;&lt;/span>
+&lt;span style="color:#000">Digest&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">::&lt;/span>&lt;span style="color:#000">SHA256&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">hexdigest&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;DN_STRING_HERE&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Manually add user attributes&lt;/p>
+&lt;p>For each user, add the following attributes:&lt;/p>
+&lt;ul>
+&lt;li>TEMPLATE/ID&lt;/li>
+&lt;li>TEMPLATE/NAME&lt;/li>
+&lt;li>TEMPLATE/IDENTITY&lt;/li>
+&lt;li>TEMPLATE/AUTHENTICATION&lt;/li>
+&lt;/ul>
+&lt;p>Where&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>TEMPLATE/ID&lt;/code> is a SHA256 digest of the &lt;code>TEMPLATE/X509_DN&lt;/code> attribute value&lt;/li>
+&lt;li>&lt;code>TEMPLATE/IDENTITY&lt;/code> and &lt;code>TEMPLATE/NAME&lt;/code> contain the old &lt;code>TEMPLATE/X509_DN&lt;/code>
+value&lt;/li>
+&lt;li>&lt;code>TEMPLATE/AUTHENTICATION&lt;/code> is a static value &amp;lsquo;voms&amp;rsquo;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;em>chown&lt;/em> all user-owned resources to the new user&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="egi-user-management">EGI User Management&lt;/h2>
+&lt;h3 id="prerequisites-1">Prerequisites&lt;/h3>
+&lt;p>Enable EPEL and install the following packages prior to installation:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum install -y epel-release wget
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="installation-1">Installation&lt;/h3>
+&lt;p>keystorm is distributed as package for multiple Linux distributions which is
+available in AppDB. This guide will expect CentOS 7 distribution but
+installation on any other supported distribution is very similar.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Register &lt;code>keystorm&lt;/code> repositories&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">wget http://repository.egi.eu/community/software/keystorm/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/keystorm.repo
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/li>
+&lt;li>
+&lt;p>Install package&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum install -y keystorm
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="configuration-1">Configuration&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Uncomment and configure optional parameters in &lt;em>/etc/keystorm/variables&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># URL pointing to OpenNebula installation&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">KEYSTORM_OPENNEBULA_ENDPOINT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>http://localhost:2633/RPC2
+&lt;span style="color:#8f5902;font-style:italic"># Privileged OpenNebula credentials (with user &amp;amp; group management permissions)&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">KEYSTORM_OPENNEBULA_SECRET&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>oneadmin:opennebula
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Enable and start the service&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">systemctl &lt;span style="color:#204a87">enable&lt;/span> keystorm
+systemctl start keystorm
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure Apache2/httpd&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># on Ubuntu/Debian only&lt;/span>
+a2enmod ssl &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> a2enmod headers &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> a2enmod proxy &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> a2enmod proxy_http &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> a2enmod remoteip &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> a2enmod auth_openidc &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> a2enmod zgridsite
+&lt;span style="color:#8f5902;font-style:italic"># make sure the following files exist&lt;/span>
+SSLCertificateFile /etc/grid-security/hostcert.pem
+SSLCertificateKeyFile /etc/grid-security/hostkey.pem
+&lt;span style="color:#8f5902;font-style:italic"># make sure the following directory exists&lt;/span>
+SSLCACertificatePath /etc/grid-security/certificates
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Enable and start Apache2/httpd&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># on Ubuntu/Debian only&lt;/span>
+systemctl &lt;span style="color:#204a87">enable&lt;/span> apache2
+systemctl restart apache2
+&lt;span style="color:#8f5902;font-style:italic"># on CentOS/SL only&lt;/span>
+systemctl &lt;span style="color:#204a87">enable&lt;/span> httpd
+systemctl start httpd
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Enable support for EGI VOs via VOMS:
+&lt;a href="../configuration">VOMS configuraton&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enable support for EGI VOs via OIDC: &lt;em>TBD&lt;/em>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="runtime-1">Runtime&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>In OpenNebula, create empty groups for &lt;em>fedcloud.egi.eu&lt;/em>, &lt;em>ops&lt;/em>, and &lt;em>dteam&lt;/em>
+with group attribute:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Allow keystorm to manage membership for this group&lt;/span>
+&lt;span style="color:#000">KEYSTORM&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;YES&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h2 id="egi-accounting">EGI Accounting&lt;/h2>
+&lt;h3 id="prerequisites-2">Prerequisites&lt;/h3>
+&lt;p>&lt;code>oneacct-export&lt;/code> uses &lt;strong>Secure Stomp Messenger&lt;/strong> to send accounting records to
+the central repository. Please, refer to &lt;code>ssm&lt;/code> documentation for
+&lt;a href="https://github.com/apel/ssm">installation instructions&lt;/a>. By default, accounting
+records are placed in &lt;code>/var/spool/apel/outgoing/00000000&lt;/code>. You &lt;strong>have to&lt;/strong>
+configure and run &lt;code>ssmsend&lt;/code> periodically, this is not handled by oneacct-export.&lt;/p>
+&lt;p>Enable EPEL and install the following packages prior to oneacct-export
+installation: :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum install -y epel-release wget
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="installation-2">Installation&lt;/h3>
+&lt;p>oneacct-export is distributed as package for multiple Linux distributions which
+is available in AppDB. This guide will expect CentOS 7 distribution but
+installation on any other supported distribution is very similar.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Register &lt;code>oneacct-export&lt;/code> repositories&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">wget http://repository.egi.eu/community/software/oneacct.export/0.4.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/oneacct-export.repo
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/li>
+&lt;li>
+&lt;p>Install package&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum install -y oneacct-export
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="configuration-2">Configuration&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Edit &lt;code>/etc/oneacct-export/conf.yml&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">apel&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Usually a short provider name, e.g. CESNET&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">site_name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Undefined&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># CMF type, only OpenNebula is supported&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">cloud_type&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">OpenNebula&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Public URL of your OCCI endpoint&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://localhost.edu:11443/&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">xml_rpc&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># OpenNebula credentials, privileged&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">secret&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">oneadmin:opennebula&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># OpenNebula XML RPC endpoint&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">http://localhost:2633/RPC2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines to &lt;code>/etc/one/oned.conf&lt;/code> and restart OpenNebula&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#c4a000">INHERIT_IMAGE_ATTR&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;VMCATCHER_EVENT_AD_MPURI&amp;#34;&lt;/span>
+&lt;span style="color:#c4a000">INHERIT_IMAGE_ATTR&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;VMCATCHER_EVENT_DC_IDENTIFIER&amp;#34;&lt;/span>
+&lt;span style="color:#c4a000">INHERIT_IMAGE_ATTR&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;VMCATCHER_EVENT_IL_DC_IDENTIFIER&amp;#34;&lt;/span>
+&lt;span style="color:#c4a000">INHERIT_IMAGE_ATTR&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;VMCATCHER_EVENT_SL_CHECKSUM_SHA512&amp;#34;&lt;/span>
+&lt;span style="color:#c4a000">INHERIT_IMAGE_ATTR&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;VMCATCHER_EVENT_HV_VERSION&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Set benchmark values on CLUSTERs (applies to all hosts in the cluster) or
+HOSTs (only for that host) in OpenNebula&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#8f5902;font-style:italic"># benchmark type&lt;/span>
+&lt;span style="color:#c4a000">BENCHMARK_TYPE&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HEP-SPEC06&amp;#34;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># represents a per-core measured value of said benchmark&lt;/span>
+&lt;span style="color:#c4a000">BENCHMARK_VALUE&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;84.46&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Use &lt;code>/etc/oneacct-export/groups.include&lt;/code> or
+&lt;code>/etc/oneacct-export/groups.exclude&lt;/code> to control which information gets
+exported. Specify one group name per line.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="usage">Usage&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Enable and register service 'redis'&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">service redis start
+chkconfig redis on
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Enable and register service 'oneacct-export-sidekiq'&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">service oneacct-export-sidekiq start
+chkconfig oneacct-export-sidekiq on
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Perform the first export manually&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># This process may take a long time, consider using **tmux** or **screen**&lt;/span>
+sudo -u apel /usr/bin/oneacct-export-cron --all
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Enable and register service 'oneacct-export-cron'&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">service oneacct-export-cron start
+chkconfig oneacct-export-cron on
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>This service registers a cron job which will run oneacct-export every 2 hours.&lt;/p>
+&lt;h2 id="egi-information-system">EGI Information System&lt;/h2>
+&lt;p>Sites must publish information to EGI information system which is based on BDII.
+There is a common
+&lt;a href="https://github.com/EGI-FCTF/cloud-bdii-provider">bdii provider&lt;/a> for all cloud
+management frameworks. Information on installation and configuration is
+available in the cloud-bdii-provider
+&lt;a href="https://github.com/EGI-FCTF/cloud-bdii-provider/blob/master/README.md">README.md&lt;/a>
+and in the
+&lt;a href="https://wiki.egi.eu/wiki/Fedclouds_BDII_instructions">FedClouds BDII instructions&lt;/a>,
+there is a
+&lt;a href="https://wiki.egi.eu/wiki/Fedclouds_BDII_instructions#OpenNebula_.2B_rOCCI">specific section with OpenNebula details&lt;/a>.&lt;/p>
+&lt;h2 id="egi-vm-image-management">EGI VM Image Management&lt;/h2>
+&lt;p>&lt;a href="https://github.com/the-cloudkeeper-project/cloudkeeper">cloudkeeper&lt;/a> and
+&lt;a href="https://github.com/the-cloudkeeper-project/cloudkeeper-one">cloudkeeper-one&lt;/a>
+are tools used to ensure synchronization of virtual appliances with an
+&lt;a href="https://opennebula.org/">OpenNebula&lt;/a>-based cloud.&lt;/p>
+&lt;p>&lt;img src="cloudkeeper-setup.png" alt="image">&lt;/p>
+&lt;h3 id="prerequisites-3">Prerequisites&lt;/h3>
+&lt;p>&lt;code>cloudkeeper&lt;/code> uses VO-wide image lists provided by AppDB to synchronize virtual
+appliances to clouds. In order to use VO-wide image lists you need to have a
+valid access token to AppDB. Check
+&lt;a href="https://wiki.appdb.egi.eu/main:faq:how_to_get_access_to_vo-wide_image_lists">how to access to VO-wide image lists&lt;/a>
+and
+&lt;a href="https://wiki.appdb.egi.eu/main:faq:how_to_subscribe_to_a_private_image_list_using_the_vmcatcher">how to subscribe to a private image list&lt;/a>
+documentation for more information.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Install recent &lt;code>qemu-img&lt;/code> and &lt;code>wget&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum install -y centos-release-qemu-ev wget sudo
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="installation-3">Installation&lt;/h3>
+&lt;p>Both &lt;code>cloudkeeper&lt;/code> and &lt;code>cloudkeeper-one&lt;/code> are distributed as packages for
+multiple Linux distributions which are available in AppDB. This guide will
+expect CentOS 7 distribution but installation on any other supported
+distribution is very similar.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Register &lt;code>cloudkeeper&lt;/code> and &lt;code>cloudkeeper-one&lt;/code> repositories&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">wget http://repository.egi.eu/community/software/cloudkeeper/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/cloudkeeper.repo
+wget http://repository.egi.eu/community/software/cloudkeeper.one/1.x/releases/repofiles/sl-7-x86_64.repo -O /etc/yum.repos.d/cloudkeeper-one.repo
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/li>
+&lt;li>
+&lt;p>Install &lt;code>cloudkeeper&lt;/code> and &lt;code>cloudkeeper-one&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum install -y cloudkeeper cloudkeeper-one
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="cloudkeeper-configuration">&lt;code>cloudkeeper&lt;/code> configuration&lt;/h3>
+&lt;p>&lt;code>cloudkeeper&lt;/code> configuration file can be found in
+&lt;code>/etc/cloudkeeper/cloudkeeper.yml&lt;/code>.&lt;/p>
+&lt;dl>
+&lt;dt>image-lists&lt;/dt>
+&lt;dd>
+&lt;p>URLs of image lists containing appliances which you want to synchronize to
+your cloud. Must contain authentication token.&lt;/p>
+&lt;/dd>
+&lt;/dl>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">image-lists&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># List of image lists to sync against&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/somevo/image.list&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">https://APPDB_TOKEN:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/othervo/image.list&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;dl>
+&lt;dt>authentication&lt;/dt>
+&lt;dd>
+&lt;p>Says whether &lt;code>cloudkeeper&lt;/code> and &lt;code>cloudkeeper-one&lt;/code> will communicate securely via
+TLS. This requires options &lt;code>certificate&lt;/code>, &lt;code>key&lt;/code> and &lt;code>backend-&amp;gt;certificate&lt;/code> to be
+properly set.&lt;/p>
+&lt;/dd>
+&lt;dt>image-dir&lt;/dt>
+&lt;dd>
+&lt;p>Directory where images will be downloaded and converted before uploading to
+OpenNebula. Directory is cleaned after each appliance registration/update
+nonetheless, it should provide sufficient free space (some runs may require up
+to 200GB of free space).&lt;/p>
+&lt;/dd>
+&lt;dt>remote-mode&lt;/dt>
+&lt;dd>
+&lt;p>Says whether to serve downloaded images via web server or to copy them
+locally. Should be &lt;code>true&lt;/code> especially if OpenNebula is running on different
+machine than &lt;code>cloudkeeper&lt;/code> and &lt;code>cloudkeeper-one&lt;/code>.&lt;/p>
+&lt;/dd>
+&lt;dt>nginx-&amp;gt;ip-address&lt;/dt>
+&lt;dd>
+&lt;p>IP address on which NGINX will serve images in remote mode. This address MUST
+be accessible from the machine hosting &lt;code>cloudkeeper-one&lt;/code> and your OpenNebula
+installation.&lt;/p>
+&lt;/dd>
+&lt;dt>formats&lt;/dt>
+&lt;dd>
+&lt;p>List of image formats images can be converted to and are supported by the
+cloud.&lt;/p>
+&lt;/dd>
+&lt;/dl>
+&lt;h3 id="cloudkeeper-one-configuration">&lt;code>cloudkeeper-one&lt;/code> configuration&lt;/h3>
+&lt;p>&lt;code>cloudkeeper-one&lt;/code> configuration file can be found in
+&lt;code>/etc/cloudkeeper-one/cloudkeeper-one.yml&lt;/code>.&lt;/p>
+&lt;dl>
+&lt;dt>authentication&lt;/dt>
+&lt;dd>
+&lt;p>Says whether &lt;code>cloudkeeper&lt;/code> and &lt;code>cloudkeeper-one&lt;/code> will communicate securely via
+TLS. This requires options &lt;code>certificate&lt;/code>, &lt;code>key&lt;/code> and &lt;code>core-&amp;gt;certificate&lt;/code> to be
+properly set.&lt;/p>
+&lt;/dd>
+&lt;dt>appliances-&amp;gt;tmp-dir&lt;/dt>
+&lt;dd>
+&lt;p>Directory images will be copied to before registration in OpenNebula when in
+non-remote mode.&lt;/p>
+&lt;/dd>
+&lt;dt>appliances-&amp;gt;template-dir&lt;/dt>
+&lt;dd>
+&lt;p>Directory for ERB-enabled templates of OpenNebula images and templates used
+for registration. More information in the next section.&lt;/p>
+&lt;/dd>
+&lt;dt>opennebula-&amp;gt;datastores&lt;/dt>
+&lt;dd>
+&lt;p>List of OpenNebula datastores images are uploaded to.&lt;/p>
+&lt;/dd>
+&lt;dt>opennebula-&amp;gt;allow-remote-source&lt;/dt>
+&lt;dd>
+&lt;p>Allows OpenNebula to directly download images in remote mode.&lt;/p>
+&lt;/dd>
+&lt;/dl>
+&lt;h3 id="templates-configuration">Templates configuration&lt;/h3>
+&lt;p>The directory specified by option &lt;code>appliances-&amp;gt;template-dir&lt;/code> contains templates
+for OpenNebula images and templates in files &lt;code>image.erb&lt;/code> and &lt;code>template.erb&lt;/code>.
+These files can be customized to register images and templates according to your
+needs. Files are using standard ERB templating mechanism. By default, these
+files can be found in &lt;code>/etc/cloudkeeper-one/templates/&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>image.erb&lt;/code> available variables:&lt;/li>
+&lt;/ul>
+&lt;dl>
+&lt;dt>name&lt;/dt>
+&lt;dd>
+&lt;p>Name, under which will the image be registered&lt;/p>
+&lt;/dd>
+&lt;dt>appliance&lt;/dt>
+&lt;dd>
+&lt;p>Appliance object. Contains following attributes: &lt;code>identifier&lt;/code>, &lt;code>title&lt;/code>,
+&lt;code>description&lt;/code>, &lt;code>mpuri&lt;/code>, &lt;code>group&lt;/code>, &lt;code>ram&lt;/code>, &lt;code>core&lt;/code>, &lt;code>version&lt;/code>, &lt;code>architecture&lt;/code>,
+&lt;code>operating_system&lt;/code>, &lt;code>vo&lt;/code>, &lt;code>expiration_date&lt;/code>, &lt;code>image_list_identifier&lt;/code>,
+&lt;code>attributes&lt;/code>.&lt;/p>
+&lt;/dd>
+&lt;dt>image&lt;/dt>
+&lt;dd>
+&lt;p>Image object. Contains following attributes: &lt;code>format&lt;/code>, &lt;code>uri&lt;/code>, &lt;code>checksum&lt;/code>,
+&lt;code>size&lt;/code>&lt;/p>
+&lt;/dd>
+&lt;/dl>
+&lt;ul>
+&lt;li>&lt;code>template.erb&lt;/code> available variables:&lt;/li>
+&lt;/ul>
+&lt;dl>
+&lt;dt>name&lt;/dt>
+&lt;dd>
+&lt;p>Name, under which will the template be registered&lt;/p>
+&lt;/dd>
+&lt;dt>image_id&lt;/dt>
+&lt;dd>
+&lt;p>ID of the previously registered image (same appliance)&lt;/p>
+&lt;/dd>
+&lt;dt>appliance&lt;/dt>
+&lt;dd>
+&lt;p>Appliance object. Same as for &lt;code>image.erb&lt;/code>&lt;/p>
+&lt;/dd>
+&lt;dt>image&lt;/dt>
+&lt;dd>
+&lt;p>Image object. Same as for &lt;code>image.erb&lt;/code>&lt;/p>
+&lt;/dd>
+&lt;/dl>
+&lt;p>&lt;strong>For compatibility with other integration components, add the following lines
+to ``image.rb``:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#000">VMCATCHER_EVENT_AD_MPURI&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;%= appliance.mpuri %&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000">VMCATCHER_EVENT_HV_VERSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;%= appliance.version %&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000">VMCATCHER_EVENT_DC_DESCRIPTION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;%= appliance.description %&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000">VMCATCHER_EVENT_DC_TITLE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;%= appliance.title %&amp;gt;&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="usage-1">Usage&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Start and enable &lt;code>cloudkeeper-one&lt;/code> service&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">systemctl &lt;span style="color:#204a87">enable&lt;/span> cloudkeeper-one
+systemctl start cloudkeeper-one
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>cloudkeeper-one&lt;/code> will be now listening for communication from &lt;code>cloudkeeper&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Perform the first synchronization manually&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># This MAY take a long time, keep checking for successful exit with&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># `systemctl status cloudkeeper`&lt;/span>
+systemctl start cloudkeeper
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Start and enable systemd timer for &lt;code>cloudkeeper&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">systemctl &lt;span style="color:#204a87">enable&lt;/span> cloudkeeper.timer
+systemctl start cloudkeeper.timer
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>This service registers a systemd timer which will run &lt;code>cloudkeeper&lt;/code> approx.
+every 2 hours.&lt;/p></description></item><item><title>Providers: GOCDB Registration</title><link>/providers/cloud-compute/registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/registration/</guid><description>
+&lt;p>Site endpoints must be registered in
+&lt;a href="https://goc.egi.eu">EGI Configuration Management Database (GOCDB)&lt;/a>. If you are
+creating a new site for your cloud services, check the
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09 Resource Centre Registration and Certification&lt;/a>
+procedure. Services can also coexist within an existing (grid) site.&lt;/p>
+&lt;h2 id="expected-services">Expected Services&lt;/h2>
+&lt;p>These are the expected services for a working site:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>If offering native OpenStack access (nova), register: &lt;code>org.openstack.nova&lt;/code>
+for the Nova endpoint of the site. The &lt;strong>endpoint URL&lt;/strong> must contain the
+Keystone v3 URL: &lt;code>https://hostname:port/url/v3&lt;/code>. Set the &lt;strong>Host DN&lt;/strong> so the
+cloud-info-provider can be enabled in the AMS.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If offering native OpenStack access (swift), register: &lt;code>org.openstack.swift&lt;/code>
+for the swift endpoint of the site. The &lt;strong>endpoint URL&lt;/strong> field must contain the
+Keystone v3 URL: &lt;code>https://hostname:port/url/v3&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>eu.egi.cloud.accounting&lt;/code> for the host sending the records to the
+accounting repository (executing SSM send).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="deprecated-services">Deprecated services&lt;/h2>
+&lt;p>Deprecated services for cloud providers:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>Site-BDII&lt;/code>. This service collects and publishes site's data for the
+Information System. Existing sites should already have this registered.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>eu.egi.cloud.vm-metadata.vmcatcher&lt;/code> for the VMI replication mechanism.
+Register here the host providing the replication (i.e. the host with
+cloudkeeper installation)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If offering OCCI interface, &lt;code>eu.egi.cloud.vm-management.occi&lt;/code> for the OCCI
+endpoint offered by the site. The endpoint URL must follow this syntax:&lt;/p>
+&lt;p>&lt;code>https://hostname:port/?image=&amp;lt;image_name&amp;gt;&amp;amp;resource=&amp;lt;resource_name&amp;gt;&lt;/code>&lt;/p>
+&lt;p>where &lt;code>&amp;lt;image_name&amp;gt;&lt;/code> and &lt;code>&amp;lt;resource_name&amp;gt;&lt;/code> cannot contain spaces. These
+attributes map to &lt;code>os_tpl&lt;/code> and &lt;code>resource_tpl&lt;/code> respectively and will be the
+ones used for monitoring purposes.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Providers: VO Configuration</title><link>/providers/cloud-compute/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/configuration/</guid><description>
+&lt;p>This section provides the needed steps for supporting a new VO in your
+infrastructure&lt;/p>
+&lt;h2 id="egi-aai">EGI AAI&lt;/h2>
+&lt;h3 id="openstack">OpenStack&lt;/h3>
+&lt;p>The usual method of supporting a VO is by creating a local project for it. You
+should assign quotas to this project as agreed in the OLA defining the support
+for the given VO.&lt;/p>
+&lt;h4 id="check-in-vos-openid-connect">Check-in VOs (OpenID Connect)&lt;/h4>
+&lt;p>Follow these steps if you are using OpenID Connect to integrate with EGI:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create a group where users belongig to the VO will be mapped to: :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">group_id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>openstack group create -f value -c id &amp;lt;new_group&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add that group to the desired local project: :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack role add member --group &lt;span style="color:#000">$group_id&lt;/span> --project &amp;lt;your project&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Expand your mapping.json with the VO membership to the created group
+(substitute &lt;code>group_id&lt;/code> and &lt;code>vo_name&lt;/code> as appropriate): :&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#a40000">&amp;lt;existing&lt;/span> &lt;span style="color:#a40000">mappings&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;local&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;user&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;group&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;group_id&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;remote&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_SUB&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;OIDC-eduperson_entitlement&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;regex&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;^urn:mace:egi.eu:group:&amp;lt;vo_name&amp;gt;:role=vm_operator#aai.egi.eu$&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/li>
+&lt;li>
+&lt;p>Update the mapping in your Keystone IdP: :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack mapping &lt;span style="color:#204a87">set&lt;/span> --rules mapping.json egi-mapping
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h4 id="legacy-vos-voms">Legacy VOs (VOMS)&lt;/h4>
+&lt;p>When using the Keystone-VOMS module, you should follow these steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Configure your LSC files according to the
+&lt;a href="http://italiangrid.github.io/voms/documentation/voms-clients-guide/3.0.3/#voms-trust">VOMS documentation&lt;/a>,
+e.g.: :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mkdir -p /etc/grid-security/vomsdir/ops
+cat &amp;gt; /etc/grid-security/vomsdir/ops/lcg-voms2.cern.ch.lsc &lt;span style="color:#4e9a06">&amp;lt;&amp;lt; EOF
+&lt;/span>&lt;span style="color:#4e9a06">/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch
+&lt;/span>&lt;span style="color:#4e9a06">/DC=ch/DC=cern/CN=CERN Grid Certification Authority
+&lt;/span>&lt;span style="color:#4e9a06">EOF&lt;/span>
+cat &amp;gt; /etc/grid-security/vomsdir/ops/voms2.cern.ch.lsc &lt;span style="color:#4e9a06">&amp;lt;&amp;lt; EOF
+&lt;/span>&lt;span style="color:#4e9a06">/DC=ch/DC=cern/OU=computers/CN=voms2.cern.ch
+&lt;/span>&lt;span style="color:#4e9a06">/DC=ch/DC=cern/CN=CERN Grid Certification Authority
+&lt;/span>&lt;span style="color:#4e9a06">EOF&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the mapping to your &lt;code>voms.json&lt;/code> mapping. It must be proper JSON (you can
+check its correctness &lt;a href="http://jsonlint.com/">online&lt;/a> or with
+&lt;code>python -mjson.tool /etc/keystone/voms.json&lt;/code>). Edit the file, and add an
+entry like this:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;voname|FQAN&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;tenant&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;project_name&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that you can use the FQAN from the incoming proxy, so you can map a
+group within a VO into a tenant, like this:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;dteam&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;tenant&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;dteam&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;/dteam/NGI_IBERGRID&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;tenant&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;dteam_ibergrid&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Restart Apache server, and it's done.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="opennebula">OpenNebula&lt;/h3>
+&lt;p>TBC&lt;/p>
+&lt;h2 id="egi-accounting">EGI Accounting&lt;/h2>
+&lt;h3 id="openstack-1">OpenStack&lt;/h3>
+&lt;p>Add the project supporting the VO to cASO:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code>projects&lt;/code> in &lt;code>/etc/caso/caso.conf&lt;/code> :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#c4a000">projects&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">vo_project1, vo_project2, &amp;lt;your_new_vo_project&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>as a new mapping in &lt;code>/etc/caso/voms.json&lt;/code> :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;your new vo&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;projects&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your new vo project&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>Be sure to include the user running cASO as member of the project if it does not
+have admin privileges:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack role add member --user &amp;lt;your caso user&amp;gt; --project &amp;lt;your new vo project&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="opennebula-1">OpenNebula&lt;/h3>
+&lt;p>Update &lt;code>/etc/oneacct-export/groups.include&lt;/code> or
+&lt;code>/etc/oneacct-export/groups.exclude&lt;/code> to allow extracting information from the
+new group. Specify one group name per line.&lt;/p>
+&lt;h2 id="egi-information-system">EGI Information System&lt;/h2>
+&lt;h3 id="openstack-2">OpenStack&lt;/h3>
+&lt;p>Add the user configured in your cloud-info-provider as member of the new
+project:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack role add member &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --user &amp;lt;your cloud-info-provider user&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --project &amp;lt;your new vo project&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="egi-vm-image-management">EGI VM Image Management&lt;/h2>
+&lt;h3 id="cloudkeeper-core">cloudkeeper-core&lt;/h3>
+&lt;p>Add the new image list to the &lt;code>cloudkeeper&lt;/code> configuration in
+&lt;code>/etc/cloudkeeper/cloudkeeper.yml&lt;/code> (or &lt;code>/etc/cloudkeeper/image-lists.conf&lt;/code> if
+using the appliance), new entry should look similar to:&lt;/p>
+&lt;p>&lt;code>https://&amp;lt;APPDB_TOKEN&amp;gt;:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/&amp;lt;your new vo&amp;gt;/image.list&lt;/code>&lt;/p>
+&lt;h3 id="openstack-3">OpenStack&lt;/h3>
+&lt;p>Add the user configured in cloudkeeper-os as member of the new project:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack role add member &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --user &amp;lt;your cloudkeeper-os user&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --project &amp;lt;your new vo project&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add the mapping of the project to the VO in &lt;code>/etc/cloudkeeper-os/mapping.json&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;your new vo&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;tenant&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your new vo project&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: Installation Validation</title><link>/providers/cloud-compute/validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/validation/</guid><description>
+&lt;p>Once the site services are registered in GOCDB (and flagged as &amp;quot;monitored&amp;quot;)
+they will appear in the EGI service monitoring tools. EGI will check the status
+of the services (see
+&lt;a href="https://wiki.egi.eu/wiki/Federated_Cloud_infrastructure_status">Infrastructure Status&lt;/a>
+for details). Check if your services are present in the EGI service monitoring
+tools and passing the tests; if you experience any issues (services not shown,
+services are not OK...) please contact back EGI Operations or your reference
+Resource Infrastructure.&lt;/p>
+&lt;p>Extra checks for your installation:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Check in &lt;a href="https://argo-mon2.egi.eu/nagios">ARGO-Mon2&lt;/a> that your services are
+listed and are passing the tests. If all the tests are OK, your installation
+is already in good shape.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Check that you are publishing cloud information in your site BDII: :&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ldapsearch -x -h &amp;lt;site bdii host&amp;gt; -p &lt;span style="color:#0000cf;font-weight:bold">2170&lt;/span> -b &lt;span style="color:#000">Glue2GroupID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cloud,Glue2DomainID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;your site name&amp;gt;,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>glue
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/li>
+&lt;li>
+&lt;p>Check that all the images listed in the AppDB for the VOs you support (e.g.
+&lt;a href="https://appdb.egi.eu/store/vo/fedcloud.egi.eu">AppDB page for fedlcoud.egi.eu VO&lt;/a>)
+are listed in your BDII. This sample query will return all the template IDs
+registered in your BDII: :&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ldapsearch -x -h &amp;lt;site bdii host&amp;gt; -p &lt;span style="color:#0000cf;font-weight:bold">2170&lt;/span> -b &lt;span style="color:#000">Glue2GroupID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cloud,Glue2DomainID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;your site name&amp;gt;,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>glue &lt;span style="color:#000">objectClass&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GLUE2ApplicationEnvironment GLUE2ApplicationEnvironmentRepository
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
+&lt;/li>
+&lt;li>
+&lt;p>Try to start one of those images in your cloud. You can do it with
+[onetemplate instantiate]{.title-ref} or OCCI commands, the result should be
+the same.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Execute the
+&lt;a href="https://docs.egi.eu/providers/operations-manuals/howto04_site_certification_manual_tests/#check-the-functionality-of-the-cloud-elements">site certification manual tests&lt;/a>
+against your endpoints.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Check in the &lt;a href="http://accounting.egi.eu/">accounting portal&lt;/a> that your site is
+listed and the values reported look consistent with the usage of your site.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Providers: FAQ</title><link>/providers/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/faq/</guid><description>
+&lt;h2 id="why-joining-the-egi-cloud">Why joining the EGI Cloud?&lt;/h2>
+&lt;ul>
+&lt;li>To support international communities supported by EGI (e.g.
+&lt;a href="https://www.egi.eu/use-cases/">these research communities and applications&lt;/a>
+or
+&lt;a href="https://eosc-hub.eu/research-communities">these research infrastructures in EOSC-hub&lt;/a>
+or
+&lt;a href="https://eosc-hub.eu/digital-innovation-hub">these business pilots in the EOSC Digital Innovation Hub&lt;/a>.&lt;/li>
+&lt;li>To participate in e-Infrastructure projects (H2020, EOSC) as an EGI compliant
+IaaS cloud provider.&lt;/li>
+&lt;li>To participate in resource allocation and in pay-for-use campaigns run by EGI.&lt;/li>
+&lt;li>To align access policies and operational model of your cloud with
+international good practices.&lt;/li>
+&lt;li>To adopt best practices of multi-cloud federation for the benefit of your
+local users.&lt;/li>
+&lt;/ul>
+&lt;h2 id="do-i-lose-control-on-who-can-access-my-resources-if-i-join-federated-cloud">Do I lose control on who can access my resources if I join federated cloud?&lt;/h2>
+&lt;p>&lt;strong>No&lt;/strong>. EGI uses the concept of Virtual Organisation (VO) to group users. The
+resource provider has complete control on which VOs he wants to allow on its
+resources and which quotas or restrictions to assign to each VO. In the case of
+OpenStack, each VO is mapped to a regular OpenStack project that can be managed
+as any other and are isolated to other projects you may have configured in your
+deployment. Although not recommended, you can even restrict the automatic access
+of users within a VO and manually enable individual members.&lt;/p>
+&lt;h2 id="how-many-components-do-i-have-to-install">How many components do I have to install?&lt;/h2>
+&lt;p>Depending on your cloud management framework and the kind of integration this
+will vary.&lt;/p>
+&lt;p>In general, the federation requires your cloud management framework to be
+configured to support Federated AAI with EGI Check-in. This may require changes
+in your current setup.&lt;/p>
+&lt;p>Other components are designed to access your cloud management framework public
+APIs and do not require modification of your deployment. For OpenStack, these
+components can be run on a single VM that encapsulates them for convenience.&lt;/p>
+&lt;h2 id="which-components-of-my-cloud-will-interact-with-the-federated-cloud-components">Which components of my cloud will interact with the federated cloud components?&lt;/h2>
+&lt;p>For OpenStack they are:&lt;/p>
+&lt;ul>
+&lt;li>Keystone&lt;/li>
+&lt;li>Nova&lt;/li>
+&lt;li>Glance&lt;/li>
+&lt;li>Swift (optional)&lt;/li>
+&lt;/ul>
+&lt;p>Users will also interact with:&lt;/p>
+&lt;ul>
+&lt;li>Neutron&lt;/li>
+&lt;li>Cinder&lt;/li>
+&lt;/ul>
+&lt;p>to perform their regular activities.&lt;/p>
+&lt;h2 id="how-will-my-daily-operational-activities-change">How will my daily operational activities change?&lt;/h2>
+&lt;p>For the most part daily operations will not change.&lt;/p>
+&lt;p>A resource centre part of the EGI Federation, and supporting international
+communities, needs to provide support through the EGI channels. This means
+following up &lt;a href="https://ggus.eu">GGUS tickets&lt;/a>. This includes requests from user
+communities and tickets triggered by failures detected by the monitoring
+infrastructure.&lt;/p>
+&lt;p>A resource centre needs to maintain the services federated in EGI properly
+configured with the EGI AAI.&lt;/p>
+&lt;p>The resource centre will have to comply with the operational and security
+requirements. All the EGI policies aim at implementing service provisioning best
+practices and common requirements. EGI operations may conduct campaigns targeted
+to mitigate security vulnerabilities and to update unsupported operating system
+and software. These activities are part of the regular activities of a resource
+centre anyways (also for the non-federated ones). EGI and the Operations Centres
+coordinate these actions in order to have them implemented in a timely manner.&lt;/p>
+&lt;p>In summary, most of the site activities that are coordinated by EGI and the NGIs
+are already part of the work plan of a well-maintained resource centre, the
+additional task for a site manager is to acknowledge to EGI that the task has
+been performed.&lt;/p></description></item></channel></rss>
