@@ -23,7 +23,8 @@ information about downtimes (non exhaustive list):
 
 ### Viewing downtimes
 
-There are different pages on which downtimes are listed:
+There are different pages in the Configuration Database where downtimes are
+listed:
 
 - **Active & Imminent**, linked from the main menu, that allows users to see
   currently active downtimes and downtimes planned in the coming weeks.
@@ -37,6 +38,17 @@ There are different pages on which downtimes are listed:
 
 Each downtime has its own page providing details, accessible by clicking on the
 `Downtime Id` link or similar in downtime listing pages.
+
+### Subscribing to downtimes
+
+The [EGI Operations Portal](https://operations-portal.egi.eu/) provides a
+publicly-accessible page allowing to view and filter downtimes:
+[Operations Portal](https://operations-portal.egi.eu/downtimes/a/timeline).
+
+Authenticated users can
+[subscribe to downtimes](https://operations-portal.egi.eu/downtimes/subscription)
+affecting sites selected using a filter. The downtimes notifications can be sent
+by email, RSS and iCal, allowing to easily integrate with your calendar.
 
 ### Adding downtimes
 
