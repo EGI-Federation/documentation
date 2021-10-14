@@ -134,7 +134,7 @@ $ openstack mapping set --rules mapping$.json egi-mapping
 | `vo.max-centre.eu`             | `urn:mace:egi.eu:group:vo.max-centre.eu:vm_operator:role=member#aai.egi.eu`             |
 | `vo.nbis.se`                   | `urn:mace:egi.eu:group:vo.nbis.se:vm_operator:role=member#aai.egi.eu`                   |
 | `vo.nextgeoss.eu`              | `urn:mace:egi.eu:group:vo.nextgeoss.eu:vm_operator:role=member#aai.egi.eu`              |
-| `vo.notebooks.egi.eu`          | `rn:mace:egi.eu:group:vo.notebooks.egi.eu:role=admin#aai.egi.eu`                        |
+| `vo.notebooks.egi.eu`          | `urn:mace:egi.eu:group:vo.notebooks.egi.eu:role=admin#aai.egi.eu`                        |
 | `vo.obsea.es`                  | `urn:mace:egi.eu:group:vo.obsea.es:vm_operator:role=member#aai.egi.eu`                  |
 | `vo.openbiomap.lifewatch.eu`   | `urn:mace:egi.eu:group:vo.openbiomap.lifewatch.eu:vm_operator:role=member#aai.egi.eu`   |
 | `vo.operas-eu.org`             | `urn:mace:egi.eu:group:vo.operas-eu.org:vm_operator:role=member#aai.egi.eu`             |
