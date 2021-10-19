@@ -1,60 +1,6 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Configuration Database</title><link>/internal/configuration-database/</link><description>Recent content in Configuration Database on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/configuration-database/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Access</title><link>/internal/configuration-database/access/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/access/</guid><description>
-&lt;p>To access the &lt;a href="https://goc.egi.eu">web interface&lt;/a> of the EGI Configuration Database
-(GOCDB), users can either:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="#using-institutional-account-via-egi-check-in">Use EGI Check-in&lt;/a>
-with an institutional account, or&lt;/li>
-&lt;li>&lt;a href="#using-an-x509-digital-certificate">Use an X.509 digital certificate&lt;/a>
-installed in the Internet browser, or the local machine&amp;rsquo;s certificate store.&lt;/li>
-&lt;/ul>
-&lt;p>Users can access the system as soon as they are authenticated. However,
-they will only be able to update information based on their roles.
-More information about roles and associated permission is available in the
-&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles">&lt;em>Users and roles&lt;/em>&lt;/a>
-section of the documentation.&lt;/p>
-&lt;p>Applications requesting a specific role have to be validated by parent roles
-or administrators. Once granted, users can access and/or modify relevant
-information, according to the roles granted to them.&lt;/p>
-&lt;h2 id="using-institutional-account-via-egi-check-in">Using institutional account via EGI Check-in&lt;/h2>
-&lt;p>In order to be able to access the Configuration Database with their
-institutional account, users need to:&lt;/p>
-&lt;ol>
-&lt;li>Have their Identity Provider (IdP) federated in EGI Check-in (via
-&lt;a href="https://edugain.org/">eduGAIN&lt;/a> or directly).&lt;/li>
-&lt;li>Have created an &lt;a href="../../../users/check-in/signup">EGI Check-in account&lt;/a>.&lt;/li>
-&lt;/ol>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Important&lt;/h4>
-&lt;p>In the case the user cannot use an IdP compliant with &lt;a href="https://refeds.org/research-and-scholarship">REFEDS
-R&amp;amp;S&lt;/a> and &lt;a href="https://refeds.org/sirtfi">REFEDS
-Sirtfi&lt;/a>, the user will have to request joining a
-specific group, by performing the steps below. Using a compliant IdP is the
-preferable solution.&lt;/p>
-&lt;ol>
-&lt;li>User should ask to join the &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:41">GOCDB user
-group&lt;/a>.&lt;/li>
-&lt;li>The access request will be managed by the EGI Operations team.&lt;/li>
-&lt;/ol>
-&lt;/div>
-&lt;h2 id="using-an-x509-digital-certificate">Using an X.509 digital certificate&lt;/h2>
-&lt;p>To access the Configuration Database using a digital certificate, first obtain
-a certificate from one of the recognised EU-Grid-PMA Certification Authorities
-(CAs), then install it in your browser of choice (or import it into the
-certificate store of your local machine, on Windows).&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-&lt;p>X.509 certificates do not support
-single or double quotes in the certificate&amp;rsquo;s Distinguished Name (DN).
-The DN below is rejected because of the single quote:&lt;/p>
-&lt;p>&lt;code>/C=UK/O=STFC/OU=SomeOrgUnit/CN=David Mc'Donald&lt;/code>&lt;/p>
-&lt;p>This is in accordance with &lt;a href="https://tools.ietf.org/html/rfc1778">RFC1778&lt;/a>,
-which also disallows single quotes in all Relative Distinguished Name (RDN)
-components, and the OGF Certificate Authority Working Group (CAOPS) who
-strongly discourage any type of quote in a certificate DN as specified by their
-&lt;a href="https://www.ogf.org/documents/GFD.125.pdf">Grid Certificate Profile&lt;/a> document.&lt;/p>
-&lt;/div></description></item><item><title>Internal: Service information</title><link>/internal/configuration-database/service-info/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-info/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Configuration Database</title><link>/internal/configuration-database/</link><description>Recent content in Configuration Database on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/configuration-database/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Service information</title><link>/internal/configuration-database/service-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-information/</guid><description>
 &lt;h2 id="identity-card">Identity card&lt;/h2>
-&lt;!-- markdownlint-disable line-length no-inline-html no-bare-urls -->
+&lt;!-- markdownlint-disable no-inline-html no-bare-urls -->
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -117,4 +63,426 @@ strongly discourage any type of quote in a certificate DN as specified by their
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;!-- markdownlint-enable line-length no-inline-html no-bare-urls --></description></item></channel></rss>
+&lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item><item><title>Internal: Access</title><link>/internal/configuration-database/access/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/access/</guid><description>
+&lt;p>To access the &lt;a href="https://goc.egi.eu">web interface&lt;/a> of the EGI Configuration
+Database (GOCDB), users can either:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="#using-institutional-account-via-egi-check-in">Use EGI Check-in&lt;/a> with an
+institutional account, or&lt;/li>
+&lt;li>&lt;a href="#using-an-x509-digital-certificate">Use an X.509 digital certificate&lt;/a>
+installed in the Internet browser, or the local machine&amp;rsquo;s certificate store.&lt;/li>
+&lt;/ul>
+&lt;p>Users can access the system as soon as they are authenticated. However, they
+will only be able to update information based on their roles. More information
+about roles and associated permission is available in the
+&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles">&lt;em>Users and roles&lt;/em>&lt;/a>
+section of the documentation.&lt;/p>
+&lt;p>Applications requesting a specific role have to be validated by parent roles or
+administrators. Once granted, users can access and/or modify relevant
+information, according to the roles granted to them.&lt;/p>
+&lt;h2 id="using-institutional-account-via-egi-check-in">Using institutional account via EGI Check-in&lt;/h2>
+&lt;p>In order to be able to access the Configuration Database with their
+institutional account, users need to:&lt;/p>
+&lt;ol>
+&lt;li>Have their Identity Provider (IdP) federated in EGI Check-in (via
+&lt;a href="https://edugain.org/">eduGAIN&lt;/a> or directly).&lt;/li>
+&lt;li>Have created an &lt;a href="../../../users/check-in/signup">EGI Check-in account&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+&lt;p>In the case the user cannot use
+an IdP compliant with &lt;a href="https://refeds.org/research-and-scholarship">REFEDS R&amp;amp;S&lt;/a>
+and &lt;a href="https://refeds.org/sirtfi">REFEDS Sirtfi&lt;/a>, the user will have to request
+joining a specific group, by performing the steps below. Using a compliant IdP
+is the preferable solution.&lt;/p>
+&lt;ol>
+&lt;li>User should ask to join the
+&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:41">GOCDB user group&lt;/a>.&lt;/li>
+&lt;li>The access request will be managed by the EGI Operations team.&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;h2 id="using-an-x509-digital-certificate">Using an X.509 digital certificate&lt;/h2>
+&lt;p>To access the Configuration Database using a digital certificate, first obtain a
+certificate from one of the recognised EU-Grid-PMA Certification Authorities
+(CAs), then install it in your browser of choice (or import it into the
+certificate store of your local machine, on Windows).&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+&lt;p>X.509 certificates do not support single
+or double quotes in the certificate&amp;rsquo;s Distinguished Name (DN). The DN below is
+rejected because of the single quote:&lt;/p>
+&lt;p>&lt;code>/C=UK/O=STFC/OU=SomeOrgUnit/CN=David Mc'Donald&lt;/code>&lt;/p>
+&lt;p>This is in accordance with &lt;a href="https://tools.ietf.org/html/rfc1778">RFC1778&lt;/a>, which
+also disallows single quotes in all Relative Distinguished Name (RDN)
+components, and the OGF Certificate Authority Working Group (CAOPS) who strongly
+discourage any type of quote in a certificate DN as specified by their
+&lt;a href="https://www.ogf.org/documents/GFD.125.pdf">Grid Certificate Profile&lt;/a> document.&lt;/p>
+&lt;/div></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
+&lt;p>For monitoring purposes, each service endpoints registered into the
+Configuration Database, and having the flags &lt;em>production&lt;/em> and &lt;em>monitored&lt;/em> should
+include the endpoint URL information in order to be contacted by the
+corresponding service-specific nagios probe.&lt;/p>
+&lt;p>The information needed for service type are:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>SRM&lt;/strong>: the value of the attribute &lt;code>GlueServiceEndpoint&lt;/code> published in the
+Configuration Database or BDII (e.g. &lt;code>httpg://se.egi.eu:8444/srm/managerv2&lt;/code>)&lt;/li>
+&lt;li>Cloud:
+&lt;ul>
+&lt;li>&lt;strong>org.openstack.nova&lt;/strong>: The &lt;code>endpoint URL&lt;/code> must contain the Keystone v3 URL:
+&lt;code>https://hostname:port/url/v3&lt;/code>&lt;/li>
+&lt;li>&lt;strong>org.openstack.swift&lt;/strong>:The &lt;code>endpoint URL&lt;/code> must contain the Keystone v3 URL:
+&lt;code>https://hostname:port/url/v3&lt;/code>&lt;/li>
+&lt;li>&lt;strong>eu.egi.cloud.accounting&lt;/strong>: for the host sending the records to the
+accounting repositority&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Other service types: the value of the attribute &lt;code>GlueServiceEndpoint&lt;/code>
+published in the BDII&lt;/li>
+&lt;/ul>
+&lt;p>It is also possible to register additional endpoints for every services, they
+will also be monitored if the &amp;ldquo;Monitored&amp;rdquo; flag is set.&lt;/p>
+&lt;p>For having more information about managing the Service endpoints in the
+Configuration Database, please consult the
+&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Service_Endpoints">service endpoints documentation&lt;/a>.&lt;/p>
+&lt;h2 id="retrieving-the-information">Retrieving the information&lt;/h2>
+&lt;p>For retrieving the queue URL from the BDII, you can use the command
+&lt;code>lcg-infosites&lt;/code>, to be executed from an UI. Be sure to query a production Top
+BDII: you can either use the one provided by your Operations Centre or choose
+one from
+&lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Service_Group&amp;amp;id=1205">the Configuration Database&lt;/a>&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">LCG_GFAL_INFOSYS&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>egee-bdii.cnaf.infn.it:2170
+$ lcg-infosites --vo ops ce &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep nikhef
+&lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> dissel.nikhef.nl:2119/jobmanager-pbs-infra
+&lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">17&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> gazon.nikhef.nl:8443/cream-pbs-infra
+&lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> juk.nikhef.nl:8443/cream-pbs-infra
+&lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> klomp.nikhef.nl:8443/cream-pbs-infra
+&lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">16&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> stremsel.nikhef.nl:8443/cream-pbs-infra
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In order to find the &lt;code>GlueServiceEndpoint&lt;/code> URL of your SRM service, you can
+launch a LDAP query to your Site BDII (or directly to the SRM service):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H ldap://sbdii01.ncg.ingrid.pt:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;mds-vo-name=NCG-INGRID-PT,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueService)(GlueServiceType=SRM))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueServiceEndpoint
+dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>httpg://srm01.ncg.ingrid.pt:8444/srm/managerv2,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NCG-INGRID-PT,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueServiceEndpoint: httpg://srm01.ncg.ingrid.pt:8444/srm/managerv2
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In a similar way, by just changing the value of &lt;code>GlueServiceType&lt;/code>, you can
+retrieve the endpoint URLs of other services.&lt;/p>
+&lt;p>An alternative way for retrieving the &lt;code>GlueServiceEndpoint&lt;/code> URL is using the
+GLUE2 information browser provided by
+&lt;a href="https://operations-portal.egi.eu/vapor/resources/GL2ResNGISites">VAPOR&lt;/a>: select
+your NGI, then your site and hence the Storage service; click on the &lt;em>endpoint
+details&lt;/em> button for finding the URL associated to the SRM interface.&lt;/p>
+&lt;h2 id="filling-the-information-in">Filling the information in&lt;/h2>
+&lt;h3 id="urls-information-are-completely-missing">URLs information are completely missing&lt;/h3>
+&lt;h4 id="editing-the-services-information">Editing the services information&lt;/h4>
+&lt;ul>
+&lt;li>Site overview&lt;/li>
+&lt;/ul>
+&lt;p>This is the home page regarding your site. You need to fill in the URL
+information.&lt;/p>
+&lt;blockquote>
+&lt;p>Click on a service for displaying its page (e.g. the CREAM-CE).&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="site-overview.png" alt="Site overview">&lt;/p>
+&lt;ul>
+&lt;li>Editing a service&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>Click on the EDIT button on the top right corner&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="service-overview.png" alt="Service overview">&lt;/p>
+&lt;ul>
+&lt;li>Adding a Service URL&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>fill in the &lt;em>Service URL&lt;/em> field with the queue URL&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="service-edition.png" alt="Service Edition">&lt;/p>
+&lt;ul>
+&lt;li>Reviewing the site&lt;/li>
+&lt;/ul>
+&lt;p>Now the CREAM-CE service endpoint contains the required queue information.&lt;/p>
+&lt;blockquote>
+&lt;p>Proceed in a similar way for the other services.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="completed-service-overview.png" alt="Completed service overview">&lt;/p>
+&lt;h3 id="additional-endpoints-information">Additional endpoints information&lt;/h3>
+&lt;p>In case you need to register an additional endpoint for a service, go on the
+service summary page and add the proper information. In the example below it is
+shown the case of a computing element.&lt;/p>
+&lt;ul>
+&lt;li>Service summary page&lt;/li>
+&lt;/ul>
+&lt;p>This is the service summary page.&lt;/p>
+&lt;blockquote>
+&lt;p>You need to click on the &lt;em>Add endpoint&lt;/em> button for registering additional
+endpoint URLs.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="service-summary-page.png" alt="Service summary page">&lt;/p>
+&lt;ul>
+&lt;li>Adding an endpoint&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>Fill in the proper information and don&amp;rsquo;t forget to select the &amp;ldquo;Monitored&amp;rdquo; flag
+for making nagios to detect the new endpoint.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="add-endpoint.png" alt="Adding and endpoint">&lt;/p>
+&lt;ul>
+&lt;li>Reviewing the endpoint description&lt;/li>
+&lt;/ul>
+&lt;p>The summary page of the endpoint just added should look like this one.&lt;/p>
+&lt;p>&lt;img src="service-endpoint-page.png" alt="Service endpoint page">&lt;/p>
+&lt;ul>
+&lt;li>Reviewing the service description&lt;/li>
+&lt;/ul>
+&lt;p>And this is the summary page of the service reporting the information about all
+its endpoints registered: the first one in the &lt;em>Grid Information&lt;/em> section and
+the additional ones in the &lt;em>Service Endpoints&lt;/em> section.&lt;/p>
+&lt;p>&lt;img src="service-description-review.png" alt="Service summary page">&lt;/p>
+&lt;h2 id="examples">Examples&lt;/h2>
+&lt;h3 id="webdav">webdav&lt;/h3>
+&lt;p>In order to properly monitor your webdav endpoint:&lt;/p>
+&lt;ul>
+&lt;li>you should register a new service endpoint with the webdav service type,
+separated from the SRM one;&lt;/li>
+&lt;li>fill in the webdav URL containing also the VO ops folder, for example:
+&lt;code>https://darkstorm.cnaf.infn.it:8443/webdav/ops&lt;/code> or
+&lt;code>https://hepgrid11.ph.liv.ac.uk/dpm/ph.liv.ac.uk/home/ops/&lt;/code>
+&lt;ul>
+&lt;li>it corresponds to the value of GLUE2 attribute &lt;code>GLUE2EndpointURL&lt;/code>
+(containing the used port and without the VO folder);&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>verify that the webdav url (for example:
+&lt;code>https://darkstorm.cnaf.infn.it:8443/webdav&lt;/code>) is properly accessible.&lt;/li>
+&lt;/ul>
+&lt;h3 id="gridftp">GridFTP&lt;/h3>
+&lt;p>In order to properly monitor your gridftp endpoint for ops VO&lt;/p>
+&lt;ul>
+&lt;li>register a new service endpoint, associating the storage element host name to
+the service type &lt;code>globus-GRIDFTP&lt;/code>, with the &amp;ldquo;production&amp;rdquo; flag disabled;&lt;/li>
+&lt;li>in the “Extension Properties” section of the service endpoint page, fill in
+the following fields:
+&lt;ul>
+&lt;li>Name: SE_PATH&lt;/li>
+&lt;li>Value: &lt;code>/dpm/ui.savba.sk/home/ops&lt;/code> (this is an example, set the proper path)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>check if the tests are OK (it might take some hours for detecting the new
+service endpoint) and then switch the production flag to &amp;ldquo;yes&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;h3 id="surl-value-for-srm">SURL value for SRM&lt;/h3>
+&lt;p>The SURL value needed by the SRM monitoring probes is the following structure:&lt;/p>
+&lt;p>&lt;code>srm://&amp;lt;hostname&amp;gt;:&amp;lt;port&amp;gt;/srm/managerv2?SFN=&amp;lt;GlueSAPath or GlueVOInfoPath&amp;gt;&lt;/code>&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;p>&lt;code>srm://ccsrm.in2p3.fr:8443/srm/managerv2?SFN=/pnfs/in2p3.fr/data/dteam/&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>As explained in previous sections, you can retrieve the port number from the
+&lt;code>GlueServiceEndpoint&lt;/code> URL information.&lt;/li>
+&lt;li>If your SE provides &lt;code>GlueSAPath&lt;/code> information, use that. To retrieve it:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H &amp;lt;ldap://sbdii01.ncg.ingrid.pt:2170&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;mds-vo-name=NCG-INGRID-PT,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueSA)(GlueSAAccessControlBaseRule=VO:ops))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueSAPath GlueChunkKey
+dn: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>opsdisk:replica:online,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>srm01.ncg.ingrid.pt,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NCG-INGRID-PT,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueChunkKey: &lt;span style="color:#000">GlueSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>srm01.ncg.ingrid.pt
+GlueSAPath: /gstore/t2others/ops
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>if your SE doesn&amp;rsquo;t provide &lt;code>GlueSAPath&lt;/code> information, use instead the
+&lt;code>GlueVOInfoPath&lt;/code> one:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H &amp;lt;ldap://ntugrid5.phys.ntu.edu.tw:2170&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-name=TW-NTU-HEP,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000">objectClass&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GlueVOInfo&lt;span style="color:#ce5c00;font-weight:bold">)(&lt;/span>&lt;span style="color:#000">GlueVOInfoAccessControlBaseRule&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>VO:ops&lt;span style="color:#ce5c00;font-weight:bold">))&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueVOInfoLocalID GlueChunkKey
+dn: &lt;span style="color:#000">GlueVOInfoLocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ops:SRR,GlueSALocalID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>SRR:SR:replica:*****,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>TW-NTU-HEP,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueVOInfoPath: /dpm/phys.ntu.edu.tw/home/ops
+GlueChunkKey: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>SRR:SR:replica:*****
+GlueChunkKey: &lt;span style="color:#000">GlueSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw
+GlueVOInfoLocalID: ops:SRR
+dn: &lt;span style="color:#000">GlueVOInfoLocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ops:data01,GlueSALocalID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>data01:replica:online,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>TW-NTU-HEP,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+GlueVOInfoPath: /dpm/phys.ntu.edu.tw/home/ops
+GlueChunkKey: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>data01:replica:online
+GlueChunkKey: &lt;span style="color:#000">GlueSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw
+GlueVOInfoLocalID: ops:data01
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Pay attention to use the storage path for the ops VO&lt;/li>
+&lt;li>On GOCDB, in the “Extension Properties” section of the SRM service endpoint
+page, fill in the following fields:
+&lt;ul>
+&lt;li>Name: SURL&lt;/li>
+&lt;li>Value: the actual SURL value, for example:
+&lt;code>srm://srm01.ncg.ingrid.pt:8444/srm/managerv2?SFN=/gstore/t2others/ops&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Internal: Downtimes</title><link>/internal/configuration-database/downtimes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/downtimes/</guid><description>
+&lt;h2 id="definition">Definition&lt;/h2>
+&lt;p>A downtime is a period of time for which a service is declared to be inoperable.
+Downtimes may be scheduled (e.g. for software/hardware upgrades), or unscheduled
+(e.g. power outages). The Configuration Database stores the following
+information about downtimes (non exhaustive list):&lt;/p>
+&lt;ul>
+&lt;li>The downtime classification (Scheduled or unscheduled)&lt;/li>
+&lt;li>The severity of the downtime&lt;/li>
+&lt;li>The date at which the downtime was added&lt;/li>
+&lt;li>The start and end of the downtime period&lt;/li>
+&lt;li>A description of the downtime&lt;/li>
+&lt;li>The entities affected by the downtime&lt;/li>
+&lt;/ul>
+&lt;h2 id="manipulating-downtimes">Manipulating downtimes&lt;/h2>
+&lt;h3 id="viewing-downtimes">Viewing downtimes&lt;/h3>
+&lt;p>There are different pages in the Configuration Database where downtimes are
+listed:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Active &amp;amp; Imminent&lt;/strong>, linked from the main menu, that allows users to see
+currently active downtimes and downtimes planned in the coming weeks.&lt;/li>
+&lt;li>&lt;strong>Downtime Calendar&lt;/strong>, linked from the main menu, that allows users to view
+and filter all downtimes.&lt;/li>
+&lt;li>&lt;strong>Site details&lt;/strong>, where all the downtimes associated to the site are listed&lt;/li>
+&lt;li>&lt;strong>Service endpoint details&lt;/strong>, where all the downtimes associated to the
+service endpoint are listed.&lt;/li>
+&lt;li>&lt;strong>Service group details&lt;/strong>, where all the downtimes associated to the service
+group are listed.&lt;/li>
+&lt;/ul>
+&lt;p>Each downtime has its own page providing details, accessible by clicking on the
+&lt;code>Downtime Id&lt;/code> link or similar in downtime listing pages.&lt;/p>
+&lt;h3 id="subscribing-to-downtimes">Subscribing to downtimes&lt;/h3>
+&lt;p>The &lt;a href="https://operations-portal.egi.eu/">EGI Operations Portal&lt;/a> provides a
+publicly-accessible page allowing to view and filter downtimes:
+&lt;a href="https://operations-portal.egi.eu/downtimes/a/timeline">Operations Portal&lt;/a>.&lt;/p>
+&lt;p>Authenticated users can
+&lt;a href="https://operations-portal.egi.eu/downtimes/subscription">subscribe to downtimes&lt;/a>
+affecting sites selected using a filter. The downtimes notifications can be sent
+by email, RSS and iCal, allowing to easily integrate with your calendar.&lt;/p>
+&lt;h3 id="adding-downtimes">Adding downtimes&lt;/h3>
+&lt;p>Provided you have proper permissions (check the
+&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Permissions_associated_to_roles">permissions matrix&lt;/a>
+section), you can add a downtime by clicking on the &lt;code>Add Downtime&lt;/code> link in the
+sidebar.&lt;/p>
+&lt;p>This is done in 2 steps:&lt;/p>
+&lt;ol>
+&lt;li>Enter downtime information&lt;/li>
+&lt;li>Specify the full list of impacted services in case there is more than one or
+select an site to select all the sites associated services.&lt;/li>
+&lt;/ol>
+&lt;h4 id="please-note">Please note&lt;/h4>
+&lt;ul>
+&lt;li>All dates have to be entered in UTC or using the Site Timezone.&lt;/li>
+&lt;li>A downtime can be retrospectively added if its &lt;em>start date&lt;/em> is less than 48h
+in the past (giving a 2 day window to add).&lt;/li>
+&lt;li>downtime classification (scheduled/unscheduled) is determined automatically
+(see &lt;a href="#scheduled-or-unscheduled">Scheduled or unscheduled&lt;/a> section)&lt;/li>
+&lt;/ul>
+&lt;h3 id="editing-downtime-information">Editing downtime information&lt;/h3>
+&lt;ul>
+&lt;li>To edit a downtime, simply click the &lt;code>edit&lt;/code> link on top of the downtime&amp;rsquo;s
+details page.&lt;/li>
+&lt;li>A downtime can be retrospectively updated if its &lt;em>start date&lt;/em> is less than 48h
+in the past (giving a 2 day window to modify).&lt;/li>
+&lt;li>Note there are limitations to downtime editing, especially if it has already
+started, or is due to start in the next 24hrs or is finished. See
+&lt;a href="#downtime-shortening-and-extension">downtime shortening and extension&lt;/a>
+section for more details.&lt;/li>
+&lt;/ul>
+&lt;h3 id="removing-downtimes">Removing downtimes&lt;/h3>
+&lt;p>To delete a downtime, simply click the &lt;code>delete&lt;/code> link on top of the downtime&amp;rsquo;s
+details page. For integrity reasons, it is only possible to remove downtimes
+that have not started.&lt;/p>
+&lt;h2 id="good-practices-and-further-understanding">Good practices and further understanding&lt;/h2>
+&lt;h3 id="scheduled-or-unscheduled">Scheduled or unscheduled&lt;/h3>
+&lt;p>Depending on the planning of the intervention, downtimes can be:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Scheduled&lt;/code>: planned and agreed in advance&lt;/li>
+&lt;li>&lt;code>Unscheduled&lt;/code>: planned or unplanned, usually triggered by an unexpected
+failure or at a short term notice&lt;/li>
+&lt;/ul>
+&lt;p>EGI defines precise rules about what should be declared as scheduled or
+unscheduled, based on &lt;em>how long in advance&lt;/em> the downtime is declared. These
+rules are described in
+&lt;a href="../../../providers/operations-manuals/man02_service_intervention_management">MAN02 Service intervention management&lt;/a>
+and are enforced as follows:&lt;/p>
+&lt;ul>
+&lt;li>All downtimes declared less than 24h in advance will be automatically
+classified as &lt;code>UNSCHEDULED&lt;/code>&lt;/li>
+&lt;li>All other downtimes will be classified as &lt;code>SCHEDULED&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h4 id="notes">Notes&lt;/h4>
+&lt;ul>
+&lt;li>A downtime can be retrospectively declared and/or updated if its &lt;em>start date&lt;/em>
+is less than 48h in the past (giving a 2 day window to add/modify).&lt;/li>
+&lt;li>Although 24h in advance is enough for the downtime to be classified as
+&lt;code>SCHEDULED&lt;/code>, it is good practice to declare it at least 5 working days before
+it starts.&lt;/li>
+&lt;/ul>
+&lt;h3 id="warning-or-outage">WARNING or OUTAGE?&lt;/h3>
+&lt;p>When declaring a downtime, you will be presented the choice of a &amp;ldquo;severity&amp;rdquo;,
+which can be either &lt;code>WARNING&lt;/code> or &lt;code>OUTAGE&lt;/code>. Please consider the following
+definitions:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>WARNING&lt;/code> means the resource is considered available, but the quality of
+service might be degraded. Such downtimes generate notifications, but are not
+taken into account by monitoring and availability calculation tools. In case
+of a service failure during the &lt;code>WARNING&lt;/code> period an &lt;code>OUTAGE&lt;/code> downtime has to
+be declared, cancelling the rest of the &lt;code>WARNING&lt;/code> downtime.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>OUTAGE&lt;/code> means the resource is considered as unavailable. Such downtimes will
+be considered as &lt;code>in maintenance&lt;/code> by monitoring and availability calculation
+tools.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="downtime-shortening-and-extension">Downtime shortening and extension&lt;/h3>
+&lt;p>Limitation rules to downtime extensions are enforced as follows:&lt;/p>
+&lt;ul>
+&lt;li>Scheduled downtimes due to start in 24 hours cannot be edited in any way, but
+can be deleted.&lt;/li>
+&lt;li>Other downtimes that have not yet started can be edit and deleted.
+&lt;ul>
+&lt;li>They can be shortened or moved, i.e. They can be edited such that:
+&lt;ul>
+&lt;li>Both start and end time are still in the future&lt;/li>
+&lt;li>The duration remains the same or is decreased&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Ongoing downtimes can not be deleted.&lt;/li>
+&lt;li>A downtime cannot be edited once it has finished, nor can a new downtime be
+added more than 48 hours into the past.&lt;/li>
+&lt;/ul>
+&lt;p>If for any reason a downtime already declared needs to be extended, the
+procedure is to add another adjacent downtime, before or after.&lt;/p></description></item><item><title>Internal: Service registration requirements</title><link>/internal/configuration-database/service-registration-requirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-registration-requirements/</guid><description>
+&lt;p>Information to provide when registering a new service (the fields marked with an
+asterisk are mandatory):&lt;/p>
+&lt;ul>
+&lt;li>Hosting Site * (select the appropriate RC under which you are registering the
+service)&lt;/li>
+&lt;li>Service Type * (select the appropriate service type)&lt;/li>
+&lt;li>Service URL (Alphanumeric and $-_.+!*'(),:)&lt;/li>
+&lt;li>Host name * (valid FQDN format)&lt;/li>
+&lt;li>Host IP a.b.c.d&lt;/li>
+&lt;li>Host IPv6 (0000:0000:0000:0000:0000:0000:0000:0000[/int]) (optional [/int]
+range)&lt;/li>
+&lt;li>Host DN (/C=&amp;hellip;/OU=&amp;hellip;/&amp;hellip;)&lt;/li>
+&lt;li>Description * (Alphanumeric and basic punctuation)&lt;/li>
+&lt;li>Host Operating System (Alphanumeric and basic punctuation)&lt;/li>
+&lt;li>Host Architecture (Alphanumeric and basic punctuation)&lt;/li>
+&lt;li>Is it a beta service (formerly PPS service)? Y/N&lt;/li>
+&lt;li>Is this service in production? Y/N&lt;/li>
+&lt;li>Is this service monitored? Y/N&lt;/li>
+&lt;li>Contact E-Mail * (valid email format)&lt;/li>
+&lt;/ul>
+&lt;h2 id="scope-tags">Scope Tags&lt;/h2>
+&lt;ul>
+&lt;li>✓ Optional Tags (At least 1 optional tags must be selected): EGI Local
+FedCloud&lt;/li>
+&lt;li>✓ Reserved Tags Inheritable from Parent Site: none&lt;/li>
+&lt;li>✓ Reserved Tags Directly Assigned (WARNING - If deselected you will not be
+able to reselect the tag - it will be moved to the &amp;lsquo;Protected Reserved Tags&amp;rsquo;
+list): none&lt;/li>
+&lt;li>✗ Protected Reserved Tags (Can only be assigned on request): alice atlas cms
+elixir lhcb tier1 tier2 wlcg&lt;/li>
+&lt;/ul></description></item></channel></rss>

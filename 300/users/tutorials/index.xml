@@ -1,4 +1,25 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Tutorials</title><link>/users/tutorials/</link><description>Recent content in Tutorials on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Data transfer with grid storage</title><link>/users/tutorials/data-transfer-grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-grid-storage/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Tutorials</title><link>/users/tutorials/</link><description>Recent content in Tutorials on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Create your first Virtual Machine</title><link>/users/tutorials/create-your-first-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/create-your-first-virtual-machine/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This tutorial describes how to create your first Virtual Machine in the EGI Federation.&lt;/p>
+&lt;h2 id="step-1-signing-up">Step 1: Signing up&lt;/h2>
+&lt;p>Create an EGI account with &lt;a href="../../check-in/signup">Check-In&lt;/a>.&lt;/p>
+&lt;h2 id="step-2-enrolling-to-a-virtual-organisation">Step 2: Enrolling to a Virtual Organisation&lt;/h2>
+&lt;p>Once your EGI account is ready you need to join a
+&lt;a href="../../check-in/vos/">Virtual Organisation (VO)&lt;/a>. We have a dedicated VO called
+&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
+for piloting purposes. If you are not sure about which VO to enrol to, please request
+access to the &lt;em>vo.access.egi.eu&lt;/em> VO with your EGI account by visiting the
+&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:240">enrollment URL&lt;/a>.&lt;/p>
+&lt;h2 id="step-3-creating-a-vm">Step 3: Creating a VM&lt;/h2>
+&lt;p>Once your membership to a VO has been approved you are ready to create your first
+Virtual Machine. There are several ways to achieve this. The simplest way is to
+use a web dashboard like &lt;a href="../../cloud-compute/vmops/">VMOps Dashboard&lt;/a> or
+&lt;a href="../../cloud-compute/im/">Infrastructure Manager&lt;/a>. On the other hand, advanced users
+may prefer to use the &lt;a href="../../getting-started/cli">command line interface&lt;/a>.&lt;/p>
+&lt;p>To know more about the &lt;a href="https://www.egi.eu/services/cloud-compute/">Cloud Compute&lt;/a>
+Service in EGI please visit its &lt;a href="../../cloud-compute">dedicated section&lt;/a>.&lt;/p>
+&lt;h2 id="asking-for-help">Asking for help&lt;/h2>
+&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with grid storage</title><link>/users/tutorials/data-transfer-grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-grid-storage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
 WebFTS.&lt;/p>
@@ -121,11 +142,7 @@ following command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openssl pkcs12 -in yourCert.p12 -nocerts -nodes &lt;span style="color:#000;font-weight:bold">|&lt;/span> openssl rsa
 Enter Import Password:
 writing RSA key
------BEGIN RSA PRIVATE KEY-----
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-...
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
------END RSA PRIVATE KEY-----
+&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Which extract the private key in RSA format and you can paste it in the windows
 that opens:&lt;/p>
 &lt;p>&lt;img src="WebFTS-credential_delegation.png" alt="WebFTS credential delegation">&lt;/p>

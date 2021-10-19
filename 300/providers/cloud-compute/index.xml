@@ -1494,7 +1494,7 @@ systemctl start httpd
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>Enable support for EGI VOs via VOMS:
-&lt;a href="https://wiki.egi.eu/wiki/HOWTO16">VOMS configuraton&lt;/a>&lt;/p>
+&lt;a href="../configuration">VOMS configuraton&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Enable support for EGI VOs via OIDC: &lt;em>TBD&lt;/em>&lt;/p>
@@ -1803,7 +1803,7 @@ every 2 hours.&lt;/p></description></item><item><title>Providers: GOCDB Registra
 &lt;p>Site endpoints must be registered in
 &lt;a href="https://goc.egi.eu">EGI Configuration Management Database (GOCDB)&lt;/a>. If you are
 creating a new site for your cloud services, check the
-&lt;a href="https://wiki.egi.eu/wiki/PROC09">PROC09 Resource Centre Registration and Certification&lt;/a>
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09 Resource Centre Registration and Certification&lt;/a>
 procedure. Services can also coexist within an existing (grid) site.&lt;/p>
 &lt;h2 id="expected-services">Expected Services&lt;/h2>
 &lt;p>These are the expected services for a working site:&lt;/p>
@@ -2037,7 +2037,7 @@ the same.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Execute the
-&lt;a href="https://wiki.egi.eu/wiki/HOWTO04_Site_Certification_Manual_tests#Check_the_functionality_of_the_cloud_elements">site certification manual tests&lt;/a>
+&lt;a href="https://docs.egi.eu/providers/operations-manuals/howto04_site_certification_manual_tests/#check-the-functionality-of-the-cloud-elements">site certification manual tests&lt;/a>
 against your endpoints.&lt;/p>
 &lt;/li>
 &lt;li>

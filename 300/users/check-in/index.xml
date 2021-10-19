@@ -224,6 +224,18 @@ certificate.&lt;/p>
 --></description></item><item><title>Users: Virtual Organisations</title><link>/users/check-in/vos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/vos/</guid><description>
 &lt;p>This page contains information about using Check-in for managing your Virtual
 Organisation (VO).&lt;/p>
+&lt;h2 id="background">Background&lt;/h2>
+&lt;p>In simple terms a Virtual Organisation (VO) is just a group of users. In
+EGI VOs are created to group researchers who aim to share resources across the
+EGI Federation to achieve a common goal as part of a scientific collaboration.
+For a more formal definition of VO please look at the
+&lt;a href="https://ims.egi.eu/display/EGIG/Virtual+organisation">EGI Glossary&lt;/a>.&lt;/p>
+&lt;p>You can browse existing VOs in the
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a>. For each
+VO you can click on the &lt;em>Details&lt;/em> link to get more information. You can join
+an existing VO either using the &lt;em>enrollment URL&lt;/em> or emailing VO managers.&lt;/p>
+&lt;p>If you are interested in creating your own VO, please see instructions in the
+section &lt;a href="#vo-management">below&lt;/a>.&lt;/p>
 &lt;h2 id="vo-management">VO management&lt;/h2>
 &lt;p>VOs in Check-in are represented as Collaborative Organisation Units (COUs). A
 COU is more than just a group. It is the concept of groups combined with
@@ -240,9 +252,8 @@ account can register a new VO.&lt;/p>
 VO is set up and operational, the VO manager is the person who is primarily
 responsible for the operation of the VO and for providing sufficient information
 about VO activities for EGI and for VO members (to both people and sites).&lt;/p>
-&lt;p>A step-by-step guide for the VO registration process is provided in the
-following link:
-&lt;a href="https://wiki.egi.eu/wiki/PROC14_VO_Registration#VO_registration">https://wiki.egi.eu/wiki/PROC14_VO_Registration#VO_registration&lt;/a>&lt;/p>
+&lt;p>A step-by-step guide for the VO registration process is provided in the procedure
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration">PROC14 VO Registration&lt;/a>.&lt;/p>
 &lt;h3 id="viewing-vo-members">Viewing VO members&lt;/h3>
 &lt;ol>
 &lt;li>
