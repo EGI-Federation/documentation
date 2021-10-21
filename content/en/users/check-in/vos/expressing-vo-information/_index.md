@@ -1,5 +1,6 @@
 ---
-title: "VO group/role information"
+title: "VO membership information"
+linkTitle: "VO membership"
 type: docs
 weight: 10
 description: >
