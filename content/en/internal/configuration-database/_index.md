@@ -1,6 +1,6 @@
 ---
 title: "Configuration Database"
-weight: 20
+weight: 30
 type: "docs"
 description: >
   Topology and configuration registry for sites in EGI infrastructure
