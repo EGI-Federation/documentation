@@ -18,6 +18,9 @@ The EGI Data Transfer is ideal to move large amounts of files or very large
 files as the service has mechanisms to verify checksums and ensure automatic
 retry in case of failures.
 
+Eager to test this service? Have a look at our tutorial on
+[how to transfer data in the grid](https://docs.egi.eu/users/tutorials/data-transfer-grid-storage/).
+
 ## Features
 
 Simplicity
