@@ -23,25 +23,23 @@ Resource Center integrated into the EGI Federation.
      ([e.g. for cloud providers](../../cloud-compute/registration)), and the
      flags _monitored_ and _production_ are set to _yes_
 
-1. Monitoring: the several endpoints are properly detected by ARGO
-   automatically, according to the information registered on the Configuration
-   Database.
-
 1. Support through the [EGI Helpdesk service](../../../internal/helpdesk):
 
    - The RC name is listed in the GGUS fields “Affected site” and “Notify Site”
    - The site administrators can modify and reply to the tickets assigned to
      their RC
      - The Supporter role can be requested either directly on GGUS by using the
-       own X509 personal certificate or by enrolling to the ggus-supporters
-       group in Check-in by using the federated identity.
+       own X509 personal certificate or by
+       [enrolling to the ggus-supporters](https://aai.egi.eu/registry/co_petitions/start/coef:69)
+       group in Check-in.
 
 1. Security:
 
-   - HTC: pakiti is installed and the outcome of the EGI CSIRT assessment is
-     positive;
-   - Cloud: the EGI security Survey was sent to the EGI CSIRT and the outcome
-     was positive.
+   - HTC: [pakiti](https://wiki.egi.eu/wiki/EGI_CSIRT:Pakiti_client) is
+     installed and the outcome of the EGI CSIRT assessment is positive;
+   - Cloud: the
+     [EGI security Survey](https://www.surveymonkey.com/r/Cloud_Security_Questionnaire_for_Resource_Centres)
+     was sent to the EGI CSIRT and the outcome was positive.
 
 1. AAI:
 
@@ -49,22 +47,31 @@ Resource Center integrated into the EGI Federation.
    - [OpenStack clouds integration with Check-in](../../cloud-compute/openstack/#egi-aai)
    - [General integration with Check-in for SPs](../../check-in/sp/)
 
-1. Accounting: The accounting records (HTC, Storage, Cloud) are properly sent to
-   the accounting repository and displayed by the Accounting Portal
+1. Monitoring: the registered endpoints are automaticall detected by
+   [ARGO](../../internal/monitoring) and monitored according to their type
+   registered in the Configuration Database.
 
-   - APEL Client, APEL SSM, cASO, any other software compliant with the EGI
-     Accounting service is properly installed and configured.
+1. [Accounting](../../../internal/accouting): The accounting records are
+   properly sent to the accounting repository and displayed by the
+   [Accounting Portal](https://accounting.egi.eu/).
+
+   - Accounting probes and [APEL SSM](https://github.com/apel/ssm) are properlly
+   installed and configured:
+     - HTC: [APEL client](https://github.com/apel/apel)
+     - Cloud: [cASO](https://github.com/IFCA/caso).
 
 1. Information discovery:
 
    - HTC/Storage: the information about compute and storage endpoints are
-     published by the site-bdii into the Top-BDIIs.
-   - Cloud: site is added to the fedcloud-catchall-operations repository
+     [published by the site-bdii into the Top-BDIIs](../../operations-manuals/man01_how_to_publish_site_information/).
+   - Cloud: site is
+     [added to the fedcloud-catchall-operations repository](../../cloud-compute/openstack/#catch-all-operations)
 
 1. Middleware: latest version of technology products are installed using the
    UMD/CMD release.
 
 1. Software distribution:
-   - HTC: CVMFS
+   - HTC (Optional): [CVMFS](https://github.com/cvmfs-contrib/egi-cvmfs)
    - Cloud: VM image synchronisation is configured with a HEPIX VM image list
-     compliant software (e.g. cloudkeeper)
+     compliant software (e.g.
+     [cloudkeeper](https://github.com/the-cloudkeeper-project/cloudkeeper))
