@@ -51,7 +51,7 @@ Resource Center integrated into the EGI Federation.
    [ARGO](../../internal/monitoring) and monitored according to their type
    registered in the Configuration Database.
 
-1. [Accounting](../../../internal/accouting): The accounting records are
+1. [Accounting](../../../internal/accounting): The accounting records are
    properly sent to the accounting repository and displayed by the
    [Accounting Portal](https://accounting.egi.eu/).
 
