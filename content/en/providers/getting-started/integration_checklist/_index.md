@@ -48,7 +48,7 @@ Resource Center integrated into the EGI Federation.
    - [General integration with Check-in for SPs](../../check-in/sp/)
 
 1. Monitoring: the registered endpoints are automaticall detected by
-   [ARGO](../../internal/monitoring) and monitored according to their type
+   [ARGO](../../../internal/monitoring) and monitored according to their type
    registered in the Configuration Database.
 
 1. [Accounting](../../../internal/accounting): The accounting records are
