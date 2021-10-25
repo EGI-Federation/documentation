@@ -221,9 +221,76 @@ certificate.&lt;/p>
 &lt;/ol>
 &lt;!--
 // jscpd:ignore-end
---></description></item><item><title>Users: Virtual Organisations</title><link>/users/check-in/vos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/vos/</guid><description>
+--></description></item><item><title>Users: Joining a Virtual Organisation</title><link>/users/check-in/joining-virtual-organisation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/joining-virtual-organisation/</guid><description>
+&lt;p>Virtual Organisations (VOs) in Check-in are represented as Collaborative Organisation Units (COUs).&lt;/p>
+&lt;p>In order to join a Virtual Organisation you must have an EGI account. If you
+don&amp;rsquo;t have, then first &lt;a href="../signup/">sign up for an EGI account&lt;/a>.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Login to &lt;a href="https://aai.egi.eu/registry">Check-in registry&lt;/a> with your EGI account.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Expand the &lt;strong>People&lt;/strong> drop down menu and click &lt;strong>Enroll&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="./check-in-people-enroll.png" alt="COmanage-people-enroll">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the &lt;strong>Begin&lt;/strong> link of the Enrollment flow of the VO you want to
+join&lt;/p>
+&lt;p>&lt;img src="./check-in-join-example.png" alt="Join example">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the &lt;strong>Begin&lt;/strong> button to start the Enrollment flow&lt;/p>
+&lt;p>&lt;img src="./check-in-start-enroll.png" alt="Start enrollement flow">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>a. If there are no pending petitions the enrollment flow will continue as usual.&lt;/p>
+&lt;p>b. If there is one pending petition:&lt;/p>
+&lt;p>b1. If its status is in Pending Approval you will see a page similar to this:&lt;/p>
+&lt;p>&lt;img src="./check-in-pending-petition-approval.png" alt="Pending Petition Under Approval">&lt;/p>
+&lt;p>Where you can:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Click the &lt;strong>Notify Approver(s) Again&lt;/strong> button and a reminder email will be sent to approver(s)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Proceed with new enrollment&lt;/strong>, so a new enrollment flow will start&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Delete and proceed with new enrollment&lt;/strong>.
+In this case, the pending petition will be deleted and a new enrollment flow will be created.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>b2. If its status is not in &lt;code>Pending Approval&lt;/code>, &lt;code>Pending Confirmation&lt;/code> or
+&lt;code>Finalized&lt;/code> you will see a page similar to this:&lt;/p>
+&lt;p>&lt;img src="./check-in-pending-petition-created.png" alt="Pending Petition">&lt;/p>
+&lt;p>Where you can:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Click the &lt;strong>Resume&lt;/strong> button and continue the enrollment flow&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Proceed with new enrollment&lt;/strong>, so a new enrollment flow will start&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Delete and proceed with new enrollment&lt;/strong>.
+In this case, the pending petition will be deleted and a new enrollment flow will start.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>c. If there is more than one pending petition related to the enrollment flow:&lt;/p>
+&lt;p>&lt;img src="./check-in-pending-petitions.png" alt="Pending Petitions">&lt;/p>
+&lt;p>Where you can:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Click the &lt;strong>View&lt;/strong> Button of each petition and review it. (see (b) use case above)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Proceed with new enrollment&lt;/strong> and a new enrollment flow will start&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol></description></item><item><title>Users: Managing a Virtual Organisation</title><link>/users/check-in/vos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/vos/</guid><description>
 &lt;p>This page contains information about using Check-in for managing your Virtual
-Organisation (VO).&lt;/p>
+Organisation (VO). For joining a VO please look at &lt;a href="../joining-virtual-organisation">Joining Virtual Organisation&lt;/a>.&lt;/p>
 &lt;h2 id="background">Background&lt;/h2>
 &lt;p>In simple terms a Virtual Organisation (VO) is just a group of users. In
 EGI VOs are created to group researchers who aim to share resources across the
