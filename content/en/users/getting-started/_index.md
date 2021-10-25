@@ -50,8 +50,8 @@ authentication and authorization based on
 certificates, e.g. [High Throughput Compute](../high-throughput-compute).
 {{% /alert %}}
 
-**EGI uses [Virtual Organisations](../check-in/vos) (VOs) to control access to
-resources**. VOs are fully managed by research communities, allowing
+**EGI uses [Virtual Organisations](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
+(VOs) to control access to resources**. VOs are fully managed by research communities, allowing
 communitites to manage their users and grant access to their services and
 resources. This means communities can either own their resources and use EGI
 services to share (federate) them, or can use the resources available in the EGI
@@ -62,8 +62,9 @@ Before users can access an EGI service, they have to:
 1. Obtain a supported ID, by signing up with either
    [EGI Check-in](../check-in/signup) directly, or with one of the community
    identity providers from the EGI infrastructure.
-1. Enroll into one VO before they can use most of the services, as users are not
-   individually granted access to resources.
+1. [Enroll into one VO](../check-in/joining-virtual-organisation/). Users need
+   to be part of a VO before using EGI services. Explore the list of available
+   VOs in the [Operations Portal](https://operations-portal.egi.eu/vo/a/list).
 1. Authenticate to [EGI Check-in](../check-in) to obtain an OAuth2 access token
    (and optionally a refresh token).
 1. Manage or use the service by leveraging the access token, either implicitly
@@ -110,13 +111,15 @@ typically covers two topics:
   much RAM per CPU, which software services, and for how long do you need them,
   etc.
 
+[Contact us](https://www.egi.eu/contact/) if you want to discuss further.
+
 ## Capacity allocation
 
 When EGI is able to support a request for resources, it can do so in two ways:
 
 1. **We grant you access to an existing service**, for example to compute
    resource pools (Virtual Organisations) that already exist in EGI for specific
-   scientific disciplines or for researchers in specific regions. (You can
+   scientific disciplines or for researchers in specific regions. You can
    browse these in the
    [EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list). If there
    is a suitable VO, we help you join it and use its services.
