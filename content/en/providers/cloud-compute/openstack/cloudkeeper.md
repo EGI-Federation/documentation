@@ -1,0 +1,164 @@
+---
+title: "Information System"
+weight: 30
+type: "docs"
+description: >
+  cloud info provider configuration
+---
+
+Information discovery provides a real-time view about the actual images and
+flavors available at the OpenStack for the federation users. It runs as a
+single python application
+[cloud-info-provider](https://github.com/EGI-Federation/cloud-info-provider)
+that pushes information through the [Argo Messaging Service
+(AMS)](https://argoeu.github.io/guides/messaging/)
+
+{{% alert title="BDII is deprecated" color="info" %}}
+Cloud providers no longer need to provide BDII as the Argo Messaging Service
+is used instead for transferring information
+{{% /alert %}}
+
+You can either run the service by yourself or rely on central operations of the
+cloud-info-provider. In both cases you must register your host DN in the GOCDB
+entry for the `org.openstack.nova`.
+
+### Catch-all operations
+
+EGI can manage the operation of the `cloud-info-provider` for the site so you
+don't need to do it. In order for your site to be included in the centrally
+operated `cloud-info-provider`, you need to create a Pull Request at the
+[EGI-Federation/fedcloud-catchall-operations
+repository](https://github.com/EGI-Federation/fedcloud-catchall-operations/)
+adding your site configuration in the `sites` directory with a file like this:
+
+```yaml
+endpoint: <your endpoint as declared in GOCDB>
+gocdb: <your site name as declared in GOCDB>
+vos:
+# a list of VOs you support in your deployment as follows
+- auth:
+    project_id: <local OpenStack project identifier>
+  name: <name of the vo>
+- auth:
+    project_id: <local OpenStack project identifier for second VO>
+  name: <name of another vo>
+```
+
+Once PR is merged, the service will be reconfigured and your site should start
+publishing information.
+
+## Local operations
+
+You can operate by yourself the `cloud-info-provider`. The software can be
+obtained as RPMs, debs and python packages from the [GitHub releases
+page](https://github.com/EGI-Federation/cloud-info-provider/releases).
+
+The `cloud-info-provider` needs a configuration file where your site is
+described, see the [sample OpenStack
+configuration](https://github.com/EGI-Federation/cloud-info-provider/blob/master/etc/sample.openstack.yaml)
+for the required information. The authentication parameters for your local
+OpenStack and the AMS are passed as command line options:
+
+```shell
+cloud-info-provider-service --yaml-file <your site description.yaml> \
+                            --middleware openstack \
+                            --os-auth-url <your keystone URL> \
+                            [ any other options for authentication ]
+                            --format glue21 \
+                            --publisher ams \
+                            --ams-cert <your host certificate> \
+                            --ams-key <your host secret key> \
+                            --ams-topic <your endpoint topic>
+```
+
+For authentication, you should be able to use any authentication method
+supported by [keystoneauth](https://opendev.org/openstack/keystoneauth), for
+user name and password use: `--os-password` and `--os-username`. Check the
+complete list of options with `cloud-info-provider-service  --help`.
+
+The AMS topic has the format: `SITE_<SITE_NAME>_ENDPOINT_<GOCDB_ID>`, where
+`<SITE_NAME>` is the name of the site as declared in GOCDB and `<GOCDB_ID>` is
+the id of the endpoint in GOCDB. For example, [this
+endpoint](https://goc.egi.eu/portal/index.php?Page_Type=Service&id=7513) would
+have a topic like: `SITE_IFCA-LCG2_ENDPOINT_7513G0`.
+
+You should periodically run the cloud-info-provider (e.g. with a cron
+every 5 minutes) to push the information for consumption by clients.
+
+### Using the EGI FedCloud Appliance
+
+The appliance provides a ready-to-use cloud-info-provider configuration
+if you want to operate it by yourself. Once you have downloaded the appliance
+check the following files:
+
+- `/etc/cloud-info-provider/openstack.rc`: the configuration of the
+  account used to log into your OpenStack and the location of the host
+  certificate that will be used to authenticate to the AMS.
+
+- `/etc/cloud-info-provider/openstack.yaml`: the cloud-info-provider
+  configuration. You need to enter the details about the VOs/projects that
+  the site is supporting.
+
+The appliance has a cron job that will connect to the configured OpenStack API
+and send messages every 5 minutes.
+
+## EGI VM Image Management
+
+VM Images are replicated using `cloudkeeper`, which has two
+components:
+
+- fronted (cloudkeeper-core) dealing the with image lists and downloading the
+  needed images, run periodically with cron
+- backend (cloudkeeper-os) dealing with your glance catalogue, running
+  permanently.
+
+### Using the VM Appliance
+
+Every 4 hours, the appliance will perform the following actions:
+
+- download the configured lists in `/etc/cloudkeeper/image-lists.conf` and
+  verify its signature
+- check any changes in the lists and download new images
+- synchronise this information to the configured glance endpoint
+
+First you need to configure and start the backend. Edit
+`/etc/cloudkeeper-os/cloudkeeper-os.conf` and add the authentication parameters
+from line 117 to 136.
+
+Then add as many image lists (one per line) as you would like to subscribe to
+`/etc/cloudkeeper/image-lists.conf`. Use URLs with your AppDB token for
+authentication, check the following guides for getting such token and URLs:
+
+- [how to access to VO-wide image lists](https://wiki.appdb.egi.eu/main:faq:how_to_get_access_to_vo-wide_image_lists),
+  and
+- [how to subscribe to a private image list](https://wiki.appdb.egi.eu/main:faq:how_to_subscribe_to_a_private_image_list_using_the_vmcatcher).
+
+Finally, you need to provide a `/etc/cloudkeeper-os/mapping.json` that
+configures the mapping of VOs supported in your OpenStack. The file should
+contain a json document that follows this format:
+
+```json
+{
+        "<VO_NAME>": {
+            "project": "<id of project in OpenStack for VO_NAME>"
+        },
+        "<VO_NAME_2>": {
+            "project": "<local name of project in OpenStack for VO_NAME_2>",
+            "domain": "<domain name for project in OpenStack>"
+        }
+}
+```
+
+Note that you can either specify a project id or the project name with the
+domain name in the mapping. Add as many VOs as you are supporting.
+
+#### Running the services
+
+cloudkeeper-os should run permanently, there is a `cloudkeeper-os.service` for
+systemd in the appliance. Manage as usual:
+
+```shell
+systemctl <start|stop|status> cloudkeeper-os
+```
+
+cloudkeeper core is run every 4 hours with a cron script.
