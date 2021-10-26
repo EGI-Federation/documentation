@@ -52,10 +52,7 @@ the main commands in rOCCI and OpenStack equivalent in the table below:
 <!-- markdownlint-enable line-length -->
 
 If you still rely on OCCI for your access, please contact us at
-`support _at_ egi.eu` for support on the migration. OpenNebula sites still use
-OCCI as main API, but its direct use is not recommended as the support will be
-deprecated. Instead use an Orchestrator like IM for interacting with those
-sites.
+`support _at_ egi.eu` for support on the migration.
 
 ## Discovery
 
