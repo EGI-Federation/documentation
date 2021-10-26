@@ -169,6 +169,3 @@ site, these accounts can be merged as needed for your deployment:
 | cloud-keeper | Permission to manage the images for all the projects supporting EGI VOs                      |
 | Other users  | Automatically created by Keystone and permission set as configured in the mappings           |
 <!-- markdownlint-enable line-length -->
-
-
-
