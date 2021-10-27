@@ -1,0 +1,252 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Notebooks</title><link>/users/notebooks/</link><description>Recent content in Notebooks on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/notebooks/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Notebooks Environments</title><link>/users/notebooks/kernels/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/notebooks/kernels/</guid><description>
+&lt;p>Jupyter is an extensible environment that supports different programming
+languages. For the EGI service we have enabled two different environments:&lt;/p>
+&lt;ul>
+&lt;li>the &lt;a href="./default">default environment&lt;/a> including commonly used languages like Python, R, and
+Julia.&lt;/li>
+&lt;li>the &lt;a href="./matlab">MATLAB environment&lt;/a>, for running MATLAB.&lt;/li>
+&lt;/ul>
+&lt;p>After logging into the service, you will be shown a form for selecting the
+environment, pick the desired one and click start&lt;/p>
+&lt;p>&lt;img src="notebooks-environments.png" alt="environmet selection">&lt;/p></description></item><item><title>Users: Data Management</title><link>/users/notebooks/data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/notebooks/data/</guid><description>
+&lt;p>Every user of the EGI Notebooks catch-all instance has a 20GB persistent home to
+store any notebooks and associated data. The content of this home directory will
+be kept even if your notebook server is stopped (which can happen if there is no
+activity for more than 1 hour). &lt;strong>Modifications to the notebooks environment
+outside the home directory are not kept&lt;/strong> (e.g. installation of libraries). If
+you need those changes to persist, let us know via a
+&lt;a href="https://ggus.eu">GGUS ticket to the Notebooks Support Unit&lt;/a>. You can also ask
+for increasing the 20GB home via ticket.&lt;/p>
+&lt;h2 id="getting-data-inout">Getting data in/out&lt;/h2>
+&lt;p>Your notebooks have outgoing internet connectivity so you can connect to any
+external service to bring data in for analysis. As with input data, you can
+connect to any external service to deposit the notebooks output.&lt;/p>
+&lt;p>This is convenient for smaller datasets but not practical for larger ones, for
+those cases we can offer integration with several data services. These are not
+enabled in the catch-all instance but can be made available on demand.&lt;/p>
+&lt;h2 id="egi-datahub">EGI DataHub&lt;/h2>
+&lt;p>&lt;a href="../../datahub">DataHub&lt;/a> provides a scalable distributed data infrastructure. It
+offers a tight integration with Jupyter and notebooks with specific drivers that
+make the DataHub Spaces accessible from any notebook.&lt;/p>
+&lt;p>Whenever you log into the service, supported DataHub spaces will be available
+under the &lt;code>datahub&lt;/code> folder. If you need support for any additional space, please
+&lt;a href="https://ggus.eu">open a ticket in GGUS&lt;/a> to add it.&lt;/p>
+&lt;p>&lt;img src="datahub-folder.png" alt="Datahub folder">&lt;/p>
+&lt;p>Alternatively, you can also use the &lt;a href="https://github.com/onedata/fs-onedatafs">&lt;code>fs-onedatafs&lt;/code>&lt;/a>
+library from your code. For convenience, the &lt;code>ONEPROVIDER_HOST&lt;/code> environment variable
+will point to the default oneprovider for the Notebooks and the &lt;code>ONECLIENT_ACCESS_TOKEN&lt;/code>
+variable will contain a valid access token for the service.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">fs.onedatafs&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">OnedataFS&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># create the OnedataFS driver using defaults from env&lt;/span>
+&lt;span style="color:#000">odfs&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">OnedataFS&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">os&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">environ&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;ONEPROVIDER_HOST&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;span style="color:#000">os&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">environ&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;ONECLIENT_ACCESS_TOKEN&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;span style="color:#000">force_direct_io&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">True&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># use it to open a file&lt;/span>
+&lt;span style="color:#000">f&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">odfs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">open&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;datahub file path&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>ONEPROVIDER_HOST&lt;/code> and &lt;code>ONECLIENT_ACCESS_TOKEN&lt;/code> variables are obtained as
+part of the login process and made available in the notebooks environment
+automatically. You can also specify a different oneprovider host if needed.&lt;/p>
+&lt;h2 id="eudat-b2drop">EUDAT B2DROP&lt;/h2>
+&lt;p>&lt;a href="https://b2drop.eudat.eu/">EUDAT B2DROP&lt;/a> offers a WebDAV interface that can be
+used to mount your files from the notebooks. Files are accessed as any regular
+file from the notebooks interface or from your code. This feature requires users
+to create a client in B2DROP and provide the client&amp;rsquo;s credentials to the EGI
+notebooks service.&lt;/p>
+&lt;h2 id="d4science-workspace">D4Science Workspace&lt;/h2>
+&lt;p>&lt;a href="https://www.d4science.org/">D4Science&lt;/a> VREs provide a shared workspace via a
+dedicated &lt;a href="https://gcube.wiki.gcube-system.org/gcube/StorageHub_REST_API">API&lt;/a>.
+EGI Notebooks embedded in D4Science VREs will automatically show the user&amp;rsquo;s
+workspace at the &lt;code>workspace&lt;/code> directory. You can browse and use as any regular
+file.&lt;/p>
+&lt;h2 id="shared-folders">Shared folders&lt;/h2>
+&lt;p>The Notebooks service can enable shared folders for users, either in read-only
+or read-write mode. These are specially meant for community instances for easing
+the sharing of data between all the users of the service. In the catch-all
+instance the &lt;code>datasets&lt;/code> directory serves as an example of such feature.&lt;/p>
+&lt;h2 id="other-services">Other services&lt;/h2>
+&lt;p>We are open for integration with other services for facilitating the access to
+input and output data. Please contact &lt;code>support _at_ egi.eu&lt;/code> with your request so
+we can investigate the best way to support your needs.&lt;/p></description></item><item><title>Users: Integration with other services</title><link>/users/notebooks/integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/notebooks/integration/</guid><description>
+&lt;p>Notebooks running on EGI can access other existing computing and storage
+services from EGI or other e-Infrastructures. For data services, check
+&lt;a href="../data">data section of the documentation&lt;/a>&lt;/p>
+&lt;h2 id="egi-services-access-tokens">EGI services: access tokens&lt;/h2>
+&lt;p>Most services integrated with EGI Check-in can handle valid access tokens for
+authorising users. These are short-lived (normally less than 1-hour) and need to
+be renewed for longer usage. EGI Notebooks provides a ready to use access token
+that can be accessed from your notebooks and is automatically refreshed so you
+can always have a valid one.&lt;/p>
+&lt;p>The token is available at &lt;code>/var/run/secrets/egi.eu/access_token&lt;/code> and you can use
+it for example to access cloud providers of the EGI cloud. See the following
+sample code where a list of VMs is obtained for CESGA:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">keystoneauth1.identity&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">v3&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">keystoneauth1&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">session&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">novaclient&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">client&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">with&lt;/span> &lt;span style="color:#204a87">open&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/var/run/secrets/egi.eu/access_token&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#204a87;font-weight:bold">as&lt;/span> &lt;span style="color:#000">f&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>
+&lt;span style="color:#000">access_token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">f&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">read&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
+&lt;span style="color:#000">auth&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">v3&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">OidcAccessToken&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">auth_url&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://fedcloud-osservices.egi.cesga.es:5000/v3&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">identity_provider&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">protocol&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;openid&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">project_id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;3a8e9d966e644405bf19b536adf7743d&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">access_token&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">access_token&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">sess&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">session&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Session&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">auth&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">nova&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">client&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Client&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">session&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">sess&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">version&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">nova&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">servers&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">list&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>A valid ID token is also available at &lt;code>/var/run/secrets/egi.eu/id_token&lt;/code>.&lt;/p>
+&lt;h3 id="fedcloud-client">fedcloud client&lt;/h3>
+&lt;p>A direct benefit of the integration with access tokens in EGI Notebooks is that
+you can easily work with the &lt;a href="https://fedcloudclient.fedcloud.eu/">fedcloud&lt;/a>
+client. Once logged into the EGI Notebooks open a terminal and run:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>cat /var/run/secrets/egi.eu/access_token&lt;span style="color:#4e9a06">`&lt;/span>
+fedcloud token check
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the &lt;code>fedcloud&lt;/code> command is not available, please follow the
+&lt;a href="../../getting-started/cli/">getting started&lt;/a>.&lt;/p>
+&lt;h2 id="d4science">D4Science&lt;/h2>
+&lt;p>If you are using a Notebooks instance integrated with D4Science, you can easily
+invoke DataMiner or any other D4Science functionality as the service will
+provide the &lt;code>GCUBE_TOKEN&lt;/code> environment variable with a valid token.&lt;/p>
+&lt;p>This code will print the list of DataMiner methods available within your VRE:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">os&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">owslib.wps&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">WebProcessingService&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># init http header parameter and base folders for gCube REST API&lt;/span>
+&lt;span style="color:#000">gcube_vre_token_header&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;gcube-token&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">os&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">environ&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;GCUBE_TOKEN&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]}&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># init WPS access for DataMiner algorithms&lt;/span>
+&lt;span style="color:#000">dataminer_url&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;http://dataminer-prototypes.d4science.org/wps/WebProcessingService&amp;#39;&lt;/span>
+&lt;span style="color:#000">wps&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">WebProcessingService&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dataminer_url&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">headers&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">gcube_vre_token_header&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">for&lt;/span> &lt;span style="color:#000">process&lt;/span> &lt;span style="color:#204a87;font-weight:bold">in&lt;/span> &lt;span style="color:#000">wps&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">processes&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>
+&lt;span style="color:#204a87">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;- Name: &amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">process&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">title&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>DataMiner algorithms can be invoked also from Notebooks, this code shows a
+sample:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">owslib.wps&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">ComplexDataInput&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">monitorExecution&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># define processid and inputs&lt;/span>
+&lt;span style="color:#000">processid&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;org.gcube.dataanalysis.wps.statisticalmanager.synchserver.mappedclasses.transducerers.WOFOST_CLOUD_V0_2_1&amp;#39;&lt;/span>
+&lt;span style="color:#000">inputs&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;ClassToRun&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;nl.wur.wofostsystem.App&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;FileInput&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">ComplexDataInput&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;https://data.d4science.org/shub/E_eVhZTzBWWktOaVJxQjJkdTUxR3FHaTFFdE9BTDYrZkZxQnFWcGMyaVVJbXptejdDOEFpSVNmam82RllkRUJ6cA==&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">mimeType&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;text/xml&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># execute the process&lt;/span>
+&lt;span style="color:#000">execution&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">wps&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">execute&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">processid&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">inputs&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">monitorExecution&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">execution&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">sleepSecs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">5&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">download&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">True&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#204a87">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">execution&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">status&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that inputs that point to a URL should be specified using the
+&lt;code>ComplextDataInput&lt;/code> class as shown above.&lt;/p>
+&lt;h2 id="other-3rd-party-services">Other 3rd party services&lt;/h2>
+&lt;p>We are open for integration with other services that may be relevant for your
+research. Please contact &lt;code>support _at_ egi.eu&lt;/code> with your request so we can
+investigate the best way to support your needs.&lt;/p></description></item><item><title>Users: Training instance</title><link>/users/notebooks/training/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/notebooks/training/</guid><description>
+&lt;p>EGI provides a training instance of the Notebooks service for training events.&lt;/p>
+&lt;p>To get started:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Go to &lt;a href="https://training.notebooks.egi.eu">https://training.notebooks.egi.eu&lt;/a>.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+This instance may not use the same
+software version as in production and may not be always available, as it is
+typically configured only for specific training events.
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>Start the authentication process by clicking on &lt;strong>Start your notebooks!&lt;/strong>
+button&lt;/p>
+&lt;p>&lt;img src="training-front.png" alt="image">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the Identity Provider you belong to from the discovery page. If this
+is the first time you access an EGI service, Check-in will guide you through
+a registration process.&lt;/p>
+&lt;p>&lt;img src="checkin.png" alt="Check-in auth">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You will see the Jupyter interface once your personal server is started&lt;/p>
+&lt;p>&lt;img src="classic.png" alt="Classic Jupyter Notebook">&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="launching-a-notebook">Launching a notebook&lt;/h2>
+&lt;p>Click on the New &amp;gt; Python 3 option to launch your notebook with Python 3
+kernel. When you create this notebook, a new tab will be presented with a
+notebook named &lt;code>Untitled.ipynb&lt;/code>. You can easily rename it by right-clicking on
+the current name.&lt;/p>
+&lt;p>&lt;img src="new-classic.png" alt="New notebook">&lt;/p>
+&lt;h3 id="structure-of-a-notebook">Structure of a notebook&lt;/h3>
+&lt;p>The notebook consists of a sequence of cells. A cell is a multiline text input
+field, and its contents can be executed by using &lt;code>Shift-Enter&lt;/code>, or by clicking
+either the &amp;ldquo;Play&amp;rdquo; button in the toolbar, or Cell -&amp;gt; Run in the menu bar.&lt;/p>
+&lt;p>The execution behaviour of a cell is determined by the cell&amp;rsquo;s type.&lt;/p>
+&lt;p>There are three types of cells: cells, markdown, and raw cells. Every cell
+starts off being a code cell, but its type can be changed by using a drop-down
+on the toolbar (which will be &amp;ldquo;Code&amp;rdquo;, initially).&lt;/p>
+&lt;h4 id="code-cells">Code cells&lt;/h4>
+&lt;p>A code cell allows you to edit and write new code, with full syntax highlighting
+and tab completion. The programming language you use depends on the kernel.&lt;/p>
+&lt;p>When a code cell is executed, its content is sent to the kernel associated with
+the notebook. The results that are returned from this computation are then
+displayed in the notebook as the cell&amp;rsquo;s output. The output is not limited to
+text, with many other possible forms of output are also possible, including
+figures and HTML tables.&lt;/p>
+&lt;h4 id="markdown-cells">Markdown cells&lt;/h4>
+&lt;p>You can document the computational process in a literate way, alternating
+descriptive text with code, using rich text. This is accomplished by marking up
+text with the Markdown language. The corresponding cells are called Markdown
+cells. The Markdown language provides a simple way to perform this text markup,
+that is, to specify which parts of the text should be emphasized (italics),
+bold, form lists, etc.&lt;/p>
+&lt;p>If you want to provide structure for your document, you can also use markdown
+headings. Markdown headings consist of 1 to 6 hash &lt;code>#&lt;/code> signs followed by a space
+and the title of your section. The markdown heading will be converted to a
+clickable link for a section of the notebook. It is also used as a hint when
+exporting to other document formats, like PDF.&lt;/p>
+&lt;p>When a Markdown cell is executed, the Markdown code is converted into the
+corresponding formatted rich text. Markdown allows arbitrary HTML code for
+formatting.&lt;/p>
+&lt;h4 id="raw-cells">Raw cells&lt;/h4>
+&lt;p>Raw cells provide a place in which you can write output directly. Raw cells are
+not evaluated by the notebook.&lt;/p>
+&lt;h3 id="keyboard-shortcuts">Keyboard shortcuts&lt;/h3>
+&lt;p>All actions in the notebook can be performed with the mouse, but keyboard
+shortcuts are also available for the most common ones. These are some of the
+most common:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Shift-Enter&lt;/code>: run cell. Execute the current cell, show any output, and jump
+to the next cell below. If &lt;code>Shift-Enter&lt;/code> is invoked on the last cell, it
+creates a new cell below. This is equivalent to clicking the Cell -&amp;gt; Run menu
+item, or the Play button in the toolbar.&lt;/li>
+&lt;li>&lt;code>Esc&lt;/code>: Command mode. In command mode, you can navigate around the notebook
+using keyboard shortcuts.&lt;/li>
+&lt;li>&lt;code>Enter&lt;/code> : Edit mode. In edit mode, you can edit text in cells.&lt;/li>
+&lt;/ul>
+&lt;h2 id="hands-on">Hands-on&lt;/h2>
+&lt;p>We pre-populate your home directory with some sample notebooks to get started,
+below you can find links to other notebooks that we have used in past trainings
+that may be useful to explore the system:&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/00-first-notebook.ipynb">A very basic notebook to get started&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/EGI-Federation/training-notebooks-climate-change/blob/master/cckp_historical_temperature.ipynb">Getting data and doing a simple plot&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/02-wind-nowcast.ipynb">Connect to NOAA's GrADS Data Server to plot wind speed&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/03-customizing.ipynb">Installing new libraries&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/04-check-in.ipynb">Interact with Check-in&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Users: FAQ</title><link>/users/notebooks/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/notebooks/faq/</guid><description>
+&lt;h2 id="how-do-i-install-library-_x_">How do I install library &lt;em>X&lt;/em>?&lt;/h2>
+&lt;p>You can install new software easily on the notebooks using &lt;code>conda&lt;/code> or &lt;code>pip&lt;/code>. The
+&lt;code>%conda&lt;/code> and &lt;code>%pip&lt;/code>
+&lt;a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-conda">magics&lt;/a>
+can be used in a cell of your notebooks to do so, e.g. installing &lt;code>rdkit&lt;/code>:&lt;/p>
+&lt;pre>&lt;code class="language-{.pycon}" data-lang="{.pycon}">%conda install rdkit
+&lt;/code>&lt;/pre>&lt;p>Once installed you can import the library as usual.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+Any modifications to the
+libraries/software of your notebooks will be lost when your notebook server is
+stopped (automatically after 1 hour of inactivity)!
+&lt;/div>
+&lt;h2 id="can-i-request-library-_x_-to-be-installed-permanently">Can I request library &lt;em>X&lt;/em> to be installed permanently?&lt;/h2>
+&lt;p>Yes! Just let us know what are your needs. You can contact us via:&lt;/p>
+&lt;ul>
+&lt;li>Opening a ticket in the &lt;a href="https://ggus.eu">EGI Helpdesk&lt;/a>, or&lt;/li>
+&lt;li>Creating a &lt;a href="https://github.com/EGI-Federation/notebooks/issues">Github Issue&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>We will analyse your request and get back to you.&lt;/p></description></item></channel></rss>
