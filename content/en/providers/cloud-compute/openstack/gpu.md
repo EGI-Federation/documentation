@@ -29,7 +29,7 @@ hardware/configuration!):
    `nova.conf` (see
    [nova-api](https://docs.openstack.org/nova/xena/admin/pci-passthrough.html#configure-nova-scheduler))
 1. On controller node, enable `PciPassthroughFilter` in the scheduler (see
-   [nova-scheduler](https://docs.openstack.org/nova/xena/admin/pci-passthrough.html#configure-nova-scheduler)
+   [nova-scheduler](https://docs.openstack.org/nova/xena/admin/pci-passthrough.html#configure-nova-scheduler))
 1. Create new flavors with `pci_passthrough:alias` (or add key to existing
    flavor), e.g.
    `openstack flavor set m1.large --property "pci_passthrough:alias"="GPU:2"`
