@@ -131,10 +131,6 @@ When using the Keystone-VOMS module, you should follow these steps:
 
 1. Restart Apache server, and it\'s done.
 
-### OpenNebula
-
-TBC
-
 ## EGI Accounting
 
 ### OpenStack
@@ -163,12 +159,6 @@ have admin privileges:
 ```shell
 openstack role add member --user <your caso user> --project <your new vo project>
 ```
-
-### OpenNebula
-
-Update `/etc/oneacct-export/groups.include` or
-`/etc/oneacct-export/groups.exclude` to allow extracting information from the
-new group. Specify one group name per line.
 
 ## EGI Information System
 
