@@ -8,7 +8,31 @@ description: >
 
 ## Setting up GPU flavors
 
-- TBC -
+Support for GPU can be added to flavors using the
+[PCI passthrough feature in OpenStack](https://docs.openstack.org/nova/xena/admin/pci-passthrough.html).
+This allows to plug any kind of PCI device to the Virtual Machines.
+
+As a summary of the OpenStack documentation, these are the steps needed to add a
+GPU enabled flavor (be aware this may need tuning to your specific
+hardware/configuration!):
+
+1. On computing node, get vendor/product ID of your hardware:
+   `lspci | grep NVDIA` to get pci slot of GPU, then
+   `virsh nodedev-dumpxml pci_xxxx_xx_xx_x`
+1. On computing node, unbind device from host kernel driver
+1. On computing node, add
+   `pci_passthrough_whitelist = {"vendor_id":"xxxx","product_id":"xxxx"}` to
+   `nova.conf` (see
+   [nova-compute](https://docs.openstack.org/nova/xena/admin/pci-passthrough.html#configure-nova-compute))
+1. On controller node, add
+   `pci_alias = {"vendor_id":"xxxx","product_id":"xxxx", "name":"GPU"}` to
+   `nova.conf` (see
+   [nova-api](https://docs.openstack.org/nova/xena/admin/pci-passthrough.html#configure-nova-scheduler))
+1. On controller node, enable `PciPassthroughFilter` in the scheduler (see
+   [nova-scheduler](https://docs.openstack.org/nova/xena/admin/pci-passthrough.html#configure-nova-scheduler)
+1. Create new flavors with `pci_passthrough:alias` (or add key to existing
+   flavor), e.g.
+   `openstack flavor set m1.large --property "pci_passthrough:alias"="GPU:2"`
 
 ## GPU description in flavor metadata
 
@@ -32,7 +56,7 @@ below for completeness:
 
 | Metadata                      | Definition                         | Comments                                                                                                                             |
 | ----------------------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Accelerator:ComputeCapability | Compute capabilities               | Defined by GLUE2.1, e.g. floating point type, NVLink, ... may be used informally so far                                 |
+| Accelerator:ComputeCapability | Compute capabilities               | Defined by GLUE2.1, e.g. floating point type, NVLink, ... may be used informally so far                                              |
 | Accelerator:ClockSpeed        | Clockspeed of accelerator          | Defined by GLUE2.1, not so relevant, as ClockSpeed no longer related to performance. May be reserved for other types of accelerators |
 | Accelerator:Cores             | Number of cores of the accelerator | Not so useful as there are several types of cores now (CUDA, tensor). May be reserved for other types of accelerators                |
 
