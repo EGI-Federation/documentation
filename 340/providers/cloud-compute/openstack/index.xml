@@ -688,4 +688,105 @@ domain name in the mapping. Add as many VOs as you are supporting.&lt;/p>
 &lt;p>cloudkeeper-os should run permanently, there is a &lt;code>cloudkeeper-os.service&lt;/code> for
 systemd in the appliance. Manage as usual:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">systemctl &amp;lt;start&lt;span style="color:#000;font-weight:bold">|&lt;/span>stop&lt;span style="color:#000;font-weight:bold">|&lt;/span>status&amp;gt; cloudkeeper-os
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>cloudkeeper core is run every 4 hours with a cron script.&lt;/p></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>cloudkeeper core is run every 4 hours with a cron script.&lt;/p></description></item><item><title>Providers: VO Configuration guide</title><link>/providers/cloud-compute/openstack/vo_config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/vo_config/</guid><description>
+&lt;p>In this page you can find a summary of the needed steps for supporting a new VO
+in your OpenStack infrastructure.&lt;/p>
+&lt;h2 id="local-project-creation">Local project creation&lt;/h2>
+&lt;p>The usual method of supporting a VO is by creating a local project for it. You
+should assign quotas to this project as agreed in the OLA defining the support
+for the given VO.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create a group where users belongig to the VO will be mapped to: :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">group_id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>openstack group create -f value -c id &amp;lt;new_group&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add that group to the desired local project: :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack role add member --group &lt;span style="color:#000">$group_id&lt;/span> --project &amp;lt;your project&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="keystone-mapping">Keystone Mapping&lt;/h2>
+&lt;p>Expand your &lt;code>mapping.json&lt;/code> with the VO membership to the created group
+(substitute &lt;code>group_id&lt;/code> and &lt;code>entitlement&lt;/code> as appropriate). The expected mappings
+for the VOs are listed in
+&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/blob/main/vo-mappings.yaml">&lt;code>vo-mappings.yaml&lt;/code> of fedcloud-catchall-operations repo&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#a40000">&amp;lt;existing&lt;/span> &lt;span style="color:#a40000">mappings&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;local&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;user&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;group&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;group_id&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">],&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;remote&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_SUB&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;OIDC-eduperson_entitlement&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;regex&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;^&amp;lt;entitlement&amp;gt;$&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And update the mapping in your Keystone IdP:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack mapping &lt;span style="color:#204a87">set&lt;/span> --rules mapping$.json egi-mapping
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="accounting">Accounting&lt;/h2>
+&lt;p>Add the project supporting the VO to cASO:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>In the &lt;code>projects&lt;/code> field of &lt;code>/etc/caso/caso.conf&lt;/code> :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#c4a000">projects&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">vo_project1, vo_project2, &amp;lt;your_new_vo_project&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>and as a new mapping in &lt;code>/etc/caso/voms.json&lt;/code> :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;your new vo&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;projects&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your new vo project&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>Be sure to include the user running cASO as member of the project if it does not
+have admin privileges:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack role add member --user &amp;lt;your caso user&amp;gt; --project &amp;lt;your new vo project&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="information-system">Information system&lt;/h2>
+&lt;p>Add the mapping to your site configuration with a new Pull Request to the
+&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations">fedcloud-catchall-operations repo&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#000">---&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">vos&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;vo name&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">project_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;your new vo project&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="vm-image-management">VM Image Management&lt;/h2>
+&lt;h3 id="cloudkeeper-core">cloudkeeper-core&lt;/h3>
+&lt;p>Add the new image list to the &lt;code>cloudkeeper&lt;/code> configuration in
+&lt;code>/etc/cloudkeeper/cloudkeeper.yml&lt;/code> (or &lt;code>/etc/cloudkeeper/image-lists.conf&lt;/code> if
+using the appliance), new entry should look similar to:&lt;/p>
+&lt;p>&lt;code>https://&amp;lt;APPDB_TOKEN&amp;gt;:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/&amp;lt;your new vo&amp;gt;/image.list&lt;/code>&lt;/p>
+&lt;h3 id="cloudkeeper-os">cloudkeeper-os&lt;/h3>
+&lt;p>Add the user configured in cloudkeeper-os as member of the new project:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack role add member &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --user &amp;lt;your cloudkeeper-os user&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --project &amp;lt;your new vo project&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add the mapping of the project to the VO in &lt;code>/etc/cloudkeeper-os/mapping.json&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;your new vo&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;tenant&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your new vo project&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
