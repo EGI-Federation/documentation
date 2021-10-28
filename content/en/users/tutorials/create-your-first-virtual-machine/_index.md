@@ -17,7 +17,11 @@ Create an EGI account with [Check-In](../../check-in/signup).
 ## Step 2: Enrolling to a Virtual Organisation
 
 Once your EGI account is ready you need to join a
-[Virtual Organisation (VO)](../../check-in/vos/). We have a dedicated VO called
+[Virtual Organisation (VO)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
+Here are the steps to [join a VO](../../check-in/joining-virtual-organisation/).
+Explore the list of available VOs in the
+[Operations Portal](https://operations-portal.egi.eu/vo/a/list).
+We have a dedicated VO called
 [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
 for piloting purposes. If you are not sure about which VO to enrol to, please request
 access to the _vo.access.egi.eu_ VO with your EGI account by visiting the
