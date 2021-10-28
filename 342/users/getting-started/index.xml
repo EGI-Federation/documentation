@@ -416,6 +416,130 @@ v0.2 of the format is shown below:&lt;/p>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>A JSON schema defining a valid Public IP Usage message can be found at:
 &lt;a href="https://github.com/apel/apel/blob/9476bd86424f6162c3b87b6daf6b4270ceb8fea6/apel/db/__init__.py">https://github.com/apel/apel/blob/9476bd86424f6162c3b87b6daf6b4270ceb8fea6/apel/db/__init__.py&lt;/a>&lt;/p>
+&lt;h4 id="gpu-usage-record">GPU Usage Record&lt;/h4>
+&lt;p>The fedcloud task force has agreed on an GPU Usage Record. The format uses many
+of the same fields as the Cloud Usage Record. A table defining &lt;em>Draft 4 –
+24/02/2021&lt;/em> is shown below:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>GPU Usage Record Property&lt;/th>
+&lt;th>Type&lt;/th>
+&lt;th>Null&lt;/th>
+&lt;th>Definition&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>MeasurementMonth&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>The month/year the reported usage should be assigned to. If the month/year is the current month/year, the usage should be up to the point of reporting.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MeasurementYear&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AssociatedRecordType&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>The context in which the reported usage was used. I.e. “cloud” for an accelerator attached to a VM.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AssociatedRecord&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>VMUUID if AssociatedRecordType is “cloud”&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GlobalUserName&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>See the definition of your AssociatedRecordType&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FQAN&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>See the definition of your AssociatedRecordType&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SiteName&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>See the definition of your AssociatedRecordType&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Count&lt;/td>
+&lt;td>&lt;code>decimal&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>A count of the Accelerators attached to the VM. At the moment Accelerators are not shared among VMs but it will change when Accelerator virtualization is applied, so we should have the field at decimal type instead of integer (e.g. Count = 0.5 when it is shared between two VMs).&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Cores&lt;/td>
+&lt;td>&lt;code>int(11)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Total number of cores. i.e. So if an Accelerator has 64 cores and a VM has 2 like that attached then we would report: Count=2 and Processors=128&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ActiveDuration&lt;/td>
+&lt;td>&lt;code>int(11)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Actual usage duration of the Accelerator in seconds for the given month/year (in case some systems could report actual usage). At the moment, ActiveDuration will be the same as the AvailableDuration due to the limitation of currently used technologies (impossible to get ACCELERATOR utilization from outside of the VM, no ACCELERATOR hot-plug into running VM) but it may change in near future so it is good to have the fields separately. Set to AvailableDuration if AcitveDuration is omitted from the record&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AvailableDuration&lt;/td>
+&lt;td>&lt;code>int(11)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Time accelerator was available in seconds for the given month/year (Wall)Time that a GPU was attached to a VM.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BenchmarkType&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Name of benchmark used for normalization of times&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Benchmark&lt;/td>
+&lt;td>&lt;code>decimal&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Value of benchmark of Accelerator&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Type&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>High level description of accelerator, i.e. GPU, FPGA, Other&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Model&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>model number, spec, some other concept that 2 ACCELERATORs with the same number of cores might be different etc&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
 &lt;h4 id="apel-and-accounting-portal">APEL and accounting portal&lt;/h4>
 &lt;p>Once generated, records are delivered to the central accounting repository using
 APEL SSM (Secure STOMP Messenger). SSM client packages can be obtained at
