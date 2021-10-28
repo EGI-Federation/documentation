@@ -23,16 +23,16 @@ trust-based communication channel between the community and the providers, by
 agreeing on the services, their levels and the types of support.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-EGI VO OLAs are not legal contracts
-but, as agreements, they outline the clear intentions to collaborate and
-support research.
+EGI VO OLAs are not legal contracts but,
+as agreements, they outline the clear intentions to collaborate and support
+research.
 &lt;/div>
 &lt;h2 id="federated-iaas">Federated IaaS&lt;/h2>
-&lt;p>The EGI FedCloud IaaS resource centres deploy a Cloud Management Framework
-(CMF) that provide users with an API-based service for management of Virtual
-Machines and associated Block Storage to enable persistence and Networks to
-enable connectivity of the Virtual Machines (VMs) among themselves and third
-party resources.&lt;/p>
+&lt;p>The EGI FedCloud IaaS resource centres deploy a Cloud Management Framework (CMF)
+that provide users with an API-based service for management of Virtual Machines
+and associated Block Storage to enable persistence and Networks to enable
+connectivity of the Virtual Machines (VMs) among themselves and third party
+resources.&lt;/p>
 &lt;p>The IaaS federation is a thin layer that brings the providers together with:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="#authentication-and-authorization">Federated authentication&lt;/a>&lt;/li>
@@ -42,10 +42,11 @@ party resources.&lt;/p>
 &lt;li>&lt;a href="#monitoring">Monitoring&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>The IaaS capabilities (VM, block storage, network management, etc.) must be
-provided via community agreed APIs (&lt;a href="https://docs.openstack.org/wallaby/api/">OpenStack&lt;/a>
-and/or &lt;a href="http://www.occi-wg.org/">OCCI&lt;/a> are supported at the moment)
-that allow integration with &lt;a href="../../check-in">EGI Check-in&lt;/a> for
-authentication and authorisation of users.&lt;/p>
+provided via community agreed APIs
+(&lt;a href="https://docs.openstack.org/wallaby/api/">OpenStack&lt;/a> and/or
+&lt;a href="http://www.occi-wg.org/">OCCI&lt;/a> are supported at the moment) that allow
+integration with &lt;a href="../../check-in">EGI Check-in&lt;/a> for authentication and
+authorisation of users.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Those providers that limit the
@@ -55,11 +56,11 @@ users cannot be considered part of the EGI IaaS Cloud services.
 &lt;p>Users and Community platforms built on top of the EGI IaaS can interact with the
 cloud providers at three different layers:&lt;/p>
 &lt;ul>
-&lt;li>Directly using the IaaS APIs or &lt;a href="../cli">CLIs&lt;/a> to manage individual
-resources. This option is recommended for pre-existing use cases with
-requirements on specific APIs.&lt;/li>
-&lt;li>Using federated access tools that allow managing the complexity of
-dealing with different providers in a uniform way. These tools include:
+&lt;li>Directly using the IaaS APIs or &lt;a href="../cli">CLIs&lt;/a> to manage individual resources.
+This option is recommended for pre-existing use cases with requirements on
+specific APIs.&lt;/li>
+&lt;li>Using federated access tools that allow managing the complexity of dealing
+with different providers in a uniform way. These tools include:
 &lt;ul>
 &lt;li>&lt;strong>Provisioning systems&lt;/strong> allow users to define infrastructure as code, then
 manage and combine resources from different providers, thus enabling the
@@ -74,50 +75,26 @@ portability of application deployments between them (e.g.
 &lt;li>Using the &lt;a href="../../cloud-compute/vmops">VMOps dashboard&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;p>EGI provides ready-to-use software components to enable the federation for
-OpenStack and OpenNebula. These components rely on public APIs of the IaaS
-system and use &lt;a href="../../check-in">Check-in&lt;/a> accounts for authenticating into the provider.&lt;/p>
+OpenStack. These components rely on public APIs of the IaaS system and use
+&lt;a href="../../check-in">Check-in&lt;/a> accounts for authenticating into the provider.&lt;/p>
 &lt;h2 id="implementation">Implementation&lt;/h2>
 &lt;h3 id="authentication-and-authorization">Authentication and authorization&lt;/h3>
 &lt;p>Federated identity ensures that users of the federation can use a single account
 for accessing the resources.&lt;/p>
 &lt;h4 id="openid-connect">OpenID Connect&lt;/h4>
-&lt;p>Providers of the EGI Cloud support authentication with OAuth2 tokens provided
-by Check-in OpenID Connect Identity provider. Support builds on the
-&lt;a href="../../../providers/check-in/sp">AAI guide for SPs&lt;/a> with detailed
-configuration provided at the
+&lt;p>Providers of the EGI Cloud support authentication with OAuth2 tokens provided by
+Check-in OpenID Connect Identity provider. Support builds on the
+&lt;a href="../../../providers/check-in/sp">AAI guide for SPs&lt;/a> with detailed configuration
+provided at the
 &lt;a href="../../../providers/cloud-compute/openstack/#openid-connect-support">EGI IaaS Service providers documentation&lt;/a>.&lt;/p>
 &lt;p>The integration relies on the OpenStack Keystone
 &lt;a href="https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api">OS-FEDERATION API&lt;/a>.&lt;/p>
-&lt;h4 id="legacy-x509-certificates">Legacy X.509 certificates&lt;/h4>
-&lt;p>EGI can support users still using X.509 certificates extended with VO
-attributes (e.g. acknowledging that the user is member of the VO), also
-known as Virtual Organization Membership Service (VOMS) proxy certificates.
-VOMS proxy certificates are used in subsequent calls to the endpoints, which
-map the certificate and VO information via specific integration modules,
-allowing authentication and authorization using X.509 certificates.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-VOMS proxy certificates can be obtained
-from user certficates or from other proxy certificates, and are useful in
-multi-step delegation of user roles.
-&lt;/div>
-&lt;p>There are two implementations for the support of VOMS proxies:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/the-rocci-project/keystorm">KeyStorm&lt;/a> provides federated
-authentication for OpenNebula/rOCCI.&lt;/li>
-&lt;li>&lt;a href="https://github.com/IFCA/Keystone-VOMS">Keystone-VOMS&lt;/a> is an OpenStack
-&lt;a href="https://docs.openstack.org/keystone/latest/">Keystone&lt;/a> plugin to enable VOMS
-authentication. It allows users to get tokens which can be used to access any
-of the OpenStack services. Users are generated on the fly in Keystone, it
-does not need regular synchronization with the VO Management server Perun.&lt;/li>
-&lt;/ul>
 &lt;h3 id="information-discovery">Information discovery&lt;/h3>
-&lt;p>The &lt;a href="#configuration-database">Configuration Database&lt;/a>
-contains the list of resource centres and their endpoints, while the
-&lt;a href="https://appdb.egi.eu/">AppDB&lt;/a> Information System collects this information
-in a central service for discovery, providing a real-time view of the actual
-capabilities of federation participants (can be used by both human users and
-machine services).&lt;/p>
+&lt;p>The &lt;a href="#configuration-database">Configuration Database&lt;/a> contains the list of
+resource centres and their endpoints, while the &lt;a href="https://appdb.egi.eu/">AppDB&lt;/a>
+Information System collects this information in a central service for discovery,
+providing a real-time view of the actual capabilities of federation participants
+(can be used by both human users and machine services).&lt;/p>
 &lt;h4 id="configuration-database">Configuration Database&lt;/h4>
 &lt;p>The EGI &lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a> is
 used to catalogue the static information of the production infrastructure
@@ -137,33 +114,35 @@ Database to enable integration with EGI.&lt;/p>
 &lt;p>The &lt;a href="https://github.com/EGI-Federation/cloud-info-provider">Cloud Info Provider&lt;/a>
 extracts information from the resource centres using their native APIs and
 formats it following Glue, an OGC recommended standard. This information is
-pushed to the Argo Messaging System and consumed by &lt;a href="https://appdb.egi.eu/">AppDB&lt;/a>
-to provide a central information discovery service that aggregates several
-other sources of information about the infrastructure.&lt;/p>
+pushed to the Argo Messaging System and consumed by
+&lt;a href="https://appdb.egi.eu/">AppDB&lt;/a> to provide a central information discovery
+service that aggregates several other sources of information about the
+infrastructure.&lt;/p>
 &lt;h3 id="virtual-machine-image-management">Virtual Machine Image management&lt;/h3>
 &lt;p>In a distributed, federated IaaS service, users need solutions for efficiently
 managing and distributing their VM images across multiple resource providers.
-EGI provides a catalogue of VM images (VMIs) that allows any user
-to share their VMI, and communities to select those VMIs relevant for
-distribution across providers. These images are automatically replicated at
-the providers supporting the community and converted as needed to ensure the
-correct instantiation when used.&lt;/p>
-&lt;p>AppDB includes a &lt;a href="https://appdb.egi.eu/browse/cloud">Virtual Appliance Marketplace&lt;/a>
-supporting Virtual Appliances (VAs), which are clean and lean virtual machine
-images designed to run on a virtualisation platform, that provide a software
-solution out-of-the-box, ready to be used with minimal or no set-up.&lt;/p>
+EGI provides a catalogue of VM images (VMIs) that allows any user to share their
+VMI, and communities to select those VMIs relevant for distribution across
+providers. These images are automatically replicated at the providers supporting
+the community and converted as needed to ensure the correct instantiation when
+used.&lt;/p>
+&lt;p>AppDB includes a
+&lt;a href="https://appdb.egi.eu/browse/cloud">Virtual Appliance Marketplace&lt;/a> supporting
+Virtual Appliances (VAs), which are clean and lean virtual machine images
+designed to run on a virtualisation platform, that provide a software solution
+out-of-the-box, ready to be used with minimal or no set-up.&lt;/p>
 &lt;p>AppDB allows representatives of research communities (VOs) to generate a VM
-image list that resource centres subscribe to. The subscription enables
-the periodic download, conversion and storage of those images to the image
+image list that resource centres subscribe to. The subscription enables the
+periodic download, conversion and storage of those images to the image
 repository of the indicated resource centres, using HEPiX image list format.
 &lt;a href="https://github.com/the-cloudkeeper-project/cloudkeeper">cloudkeeper&lt;/a> provides
-this automated synchronisation between AppDB and OpenStack/OpenNebula.&lt;/p>
+this automated synchronisation between AppDB and the cloud provider.&lt;/p>
 &lt;h3 id="accounting">Accounting&lt;/h3>
-&lt;p>&lt;a href="../../../internal/accounting">Federated Accounting&lt;/a> provides an integrated
-view about resource/service usage: it pulls together usage information from
-the federated sites and services, integrates the data and presents them in
-such a way that both individual users as well as whole communities can monitor
-their own resource/service usage across the whole federation.&lt;/p>
+&lt;p>&lt;a href="../../../internal/accounting">Federated Accounting&lt;/a> provides an integrated view
+about resource/service usage: it pulls together usage information from the
+federated sites and services, integrates the data and presents them in such a
+way that both individual users as well as whole communities can monitor their
+own resource/service usage across the whole federation.&lt;/p>
 &lt;p>Usage of resources is gathered centrally using EGI Accounting repository and
 available for visualisation at
 &lt;a href="https://accounting.egi.eu">EGI Accounting portal&lt;/a>.&lt;/p>
@@ -437,6 +416,130 @@ v0.2 of the format is shown below:&lt;/p>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>A JSON schema defining a valid Public IP Usage message can be found at:
 &lt;a href="https://github.com/apel/apel/blob/9476bd86424f6162c3b87b6daf6b4270ceb8fea6/apel/db/__init__.py">https://github.com/apel/apel/blob/9476bd86424f6162c3b87b6daf6b4270ceb8fea6/apel/db/__init__.py&lt;/a>&lt;/p>
+&lt;h4 id="gpu-usage-record">GPU Usage Record&lt;/h4>
+&lt;p>The fedcloud task force has agreed on an GPU Usage Record. The format uses many
+of the same fields as the Cloud Usage Record. A table defining &lt;em>Draft 4 –
+24/02/2021&lt;/em> is shown below:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>GPU Usage Record Property&lt;/th>
+&lt;th>Type&lt;/th>
+&lt;th>Null&lt;/th>
+&lt;th>Definition&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>MeasurementMonth&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>The month/year the reported usage should be assigned to. If the month/year is the current month/year, the usage should be up to the point of reporting.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MeasurementYear&lt;/td>
+&lt;td>&lt;code>int&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AssociatedRecordType&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>The context in which the reported usage was used. I.e. “cloud” for an accelerator attached to a VM.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AssociatedRecord&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>VMUUID if AssociatedRecordType is “cloud”&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GlobalUserName&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>See the definition of your AssociatedRecordType&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FQAN&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>See the definition of your AssociatedRecordType&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SiteName&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>See the definition of your AssociatedRecordType&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Count&lt;/td>
+&lt;td>&lt;code>decimal&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>A count of the Accelerators attached to the VM. At the moment Accelerators are not shared among VMs but it will change when Accelerator virtualization is applied, so we should have the field at decimal type instead of integer (e.g. Count = 0.5 when it is shared between two VMs).&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Cores&lt;/td>
+&lt;td>&lt;code>int(11)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Total number of cores. i.e. So if an Accelerator has 64 cores and a VM has 2 like that attached then we would report: Count=2 and Processors=128&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ActiveDuration&lt;/td>
+&lt;td>&lt;code>int(11)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Actual usage duration of the Accelerator in seconds for the given month/year (in case some systems could report actual usage). At the moment, ActiveDuration will be the same as the AvailableDuration due to the limitation of currently used technologies (impossible to get ACCELERATOR utilization from outside of the VM, no ACCELERATOR hot-plug into running VM) but it may change in near future so it is good to have the fields separately. Set to AvailableDuration if AcitveDuration is omitted from the record&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AvailableDuration&lt;/td>
+&lt;td>&lt;code>int(11)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Time accelerator was available in seconds for the given month/year (Wall)Time that a GPU was attached to a VM.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BenchmarkType&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Name of benchmark used for normalization of times&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Benchmark&lt;/td>
+&lt;td>&lt;code>decimal&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Value of benchmark of Accelerator&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Type&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>High level description of accelerator, i.e. GPU, FPGA, Other&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Model&lt;/td>
+&lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>model number, spec, some other concept that 2 ACCELERATORs with the same number of cores might be different etc&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
 &lt;h4 id="apel-and-accounting-portal">APEL and accounting portal&lt;/h4>
 &lt;p>Once generated, records are delivered to the central accounting repository using
 APEL SSM (Secure STOMP Messenger). SSM client packages can be obtained at
@@ -446,18 +549,13 @@ received from the Resource Providers are sent to the EGI Accounting Portal. The
 &lt;a href="http://accounting.egi.eu/">Accounting portal&lt;/a> also runs SSM to receive these
 summaries and provides a web view of the accounting data received from the
 Resource Providers.&lt;/p>
-&lt;h4 id="accounting-probes">Accounting Probes&lt;/h4>
-&lt;p>Implementation of the extactor probes for accounting are listed below:&lt;/p>
-&lt;ul>
-&lt;li>OpenNebula: &lt;a href="https://github.com/the-oneacct-export-project/oneacct-export">https://github.com/the-oneacct-export-project/oneacct-export&lt;/a>&lt;/li>
-&lt;li>OpenStack: &lt;a href="https://github.com/IFCA/caso">https://github.com/IFCA/caso&lt;/a>&lt;/li>
-&lt;/ul>
+&lt;p>&lt;a href="https://github.com/IFCA/caso">cASO&lt;/a> delivers an implmentation of the extrator
+probes for OpenStack.&lt;/p>
 &lt;h3 id="monitoring">Monitoring&lt;/h3>
 &lt;p>The endpoints published in the
-&lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>
-are monitored via &lt;a href="https://argo.egi.eu/">ARGO&lt;/a>. Specific probes to check
-functionality and availability of services must be provided by service
-developers.&lt;/p>
+&lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a> are monitored
+via &lt;a href="https://argo.egi.eu/">ARGO&lt;/a>. Specific probes to check functionality and
+availability of services must be provided by service developers.&lt;/p>
 &lt;p>The current set of probes used for monitoring IaaS resources consists of:&lt;/p>
 &lt;ul>
 &lt;li>OCCI probes (&lt;code>eu.egi.cloud.OCCI-VM&lt;/code> and &lt;code>eu.egi.cloud.OCCI-Context&lt;/code>): OCCI-VM

@@ -1013,10 +1013,7 @@ the main commands in rOCCI and OpenStack equivalent in the table below:&lt;/p>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>If you still rely on OCCI for your access, please contact us at
-&lt;code>support _at_ egi.eu&lt;/code> for support on the migration. OpenNebula sites still use
-OCCI as main API, but its direct use is not recommended as the support will be
-deprecated. Instead use an Orchestrator like IM for interacting with those
-sites.&lt;/p>
+&lt;code>support _at_ egi.eu&lt;/code> for support on the migration.&lt;/p>
 &lt;h2 id="discovery">Discovery&lt;/h2>
 &lt;h3 id="how-can-i-get-the-list-of-the-egi-cloud-providers">How can I get the list of the EGI Cloud providers?&lt;/h3>
 &lt;p>The list of certified providers is available in &lt;a href="https://goc.egi.eu">GOCDB&lt;/a>. The
@@ -1063,8 +1060,8 @@ identifiers to use it in practice.&lt;/p>
 &lt;h3 id="the-disk-on-my-vm-is-full-how-can-i-get-more-space">The disk on my VM is full, how can I get more space?&lt;/h3>
 &lt;p>There are several ways to increase the disk space available at the VM. The
 fastest and easiest one is to use block storage, creating a new storage disk
-device and attaching it to the VM. Check the &lt;a href="../storage">storage guide&lt;/a> for
-more information.&lt;/p>
+device and attaching it to the VM. Check the
+&lt;a href="../../online-storage">storage guide&lt;/a> for more information.&lt;/p>
 &lt;h3 id="how-can-i-keep-my-data-after-the-vm-is-stopped">How can I keep my data after the VM is stopped?&lt;/h3>
 &lt;p>After a VM has been stopped and unless backed up in a block storage volume, all
 data in the VM is destroyed and cannot be recovered. To ensure your data will be
@@ -1164,9 +1161,9 @@ main strategies you can use:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Use a volume to store the data to be kept: Check the
-&lt;a href="../storage">Storage section of the documentation&lt;/a> to learn how to use
-volumes. If you start your VM from a volume, the VM can be destroyed and
-recreated easily. OpenStack documentation cover how to
+&lt;a href="../../online-storage/block-storage/">Storage section of the documentation&lt;/a> to
+learn how to use volumes. If you start your VM from a volume, the VM can be
+destroyed and recreated easily. OpenStack documentation cover how to
 &lt;a href="https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html">start a VM from a volume with CLI&lt;/a>
 or
 &lt;a href="https://docs.openstack.org/horizon/latest/user/launch-instances.html">using the Horizon dashboard&lt;/a>&lt;/p>

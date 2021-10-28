@@ -5,7 +5,11 @@
 &lt;p>Create an EGI account with &lt;a href="../../check-in/signup">Check-In&lt;/a>.&lt;/p>
 &lt;h2 id="step-2-enrolling-to-a-virtual-organisation">Step 2: Enrolling to a Virtual Organisation&lt;/h2>
 &lt;p>Once your EGI account is ready you need to join a
-&lt;a href="../../check-in/vos/">Virtual Organisation (VO)&lt;/a>. We have a dedicated VO called
+&lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation (VO)&lt;/a>.
+Here are the steps to &lt;a href="../../check-in/joining-virtual-organisation/">join a VO&lt;/a>.
+Explore the list of available VOs in the
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations Portal&lt;/a>.
+We have a dedicated VO called
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
 for piloting purposes. If you are not sure about which VO to enrol to, please request
 access to the &lt;em>vo.access.egi.eu&lt;/em> VO with your EGI account by visiting the
