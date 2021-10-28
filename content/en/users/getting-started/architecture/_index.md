@@ -82,9 +82,8 @@ cloud providers at three different layers:
 - Using the [VMOps dashboard](../../cloud-compute/vmops).
 
 EGI provides ready-to-use software components to enable the federation for
-OpenStack and OpenNebula. These components rely on public APIs of the IaaS
-system and use [Check-in](../../check-in) accounts for authenticating into the
-provider.
+OpenStack. These components rely on public APIs of the IaaS system and use
+[Check-in](../../check-in) accounts for authenticating into the provider.
 
 ## Implementation
 
@@ -103,29 +102,6 @@ provided at the
 
 The integration relies on the OpenStack Keystone
 [OS-FEDERATION API](https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api).
-
-#### Legacy X.509 certificates
-
-EGI can support users still using X.509 certificates extended with VO attributes
-(e.g. acknowledging that the user is member of the VO), also known as Virtual
-Organization Membership Service (VOMS) proxy certificates. VOMS proxy
-certificates are used in subsequent calls to the endpoints, which map the
-certificate and VO information via specific integration modules, allowing
-authentication and authorization using X.509 certificates.
-
-{{% alert title="Note" color="info" %}} VOMS proxy certificates can be obtained
-from user certficates or from other proxy certificates, and are useful in
-multi-step delegation of user roles. {{% /alert %}}
-
-There are two implementations for the support of VOMS proxies:
-
-- [KeyStorm](https://github.com/the-rocci-project/keystorm) provides federated
-  authentication for OpenNebula/rOCCI.
-- [Keystone-VOMS](https://github.com/IFCA/Keystone-VOMS) is an OpenStack
-  [Keystone](https://docs.openstack.org/keystone/latest/) plugin to enable VOMS
-  authentication. It allows users to get tokens which can be used to access any
-  of the OpenStack services. Users are generated on the fly in Keystone, it does
-  not need regular synchronization with the VO Management server Perun.
 
 ### Information discovery
 
@@ -183,7 +159,7 @@ image list that resource centres subscribe to. The subscription enables the
 periodic download, conversion and storage of those images to the image
 repository of the indicated resource centres, using HEPiX image list format.
 [cloudkeeper](https://github.com/the-cloudkeeper-project/cloudkeeper) provides
-this automated synchronisation between AppDB and OpenStack/OpenNebula.
+this automated synchronisation between AppDB and the cloud provider.
 
 ### Accounting
 
@@ -307,12 +283,8 @@ received from the Resource Providers are sent to the EGI Accounting Portal. The
 summaries and provides a web view of the accounting data received from the
 Resource Providers.
 
-#### Accounting Probes
-
-Implementation of the extactor probes for accounting are listed below:
-
-- OpenNebula: <https://github.com/the-oneacct-export-project/oneacct-export>
-- OpenStack: <https://github.com/IFCA/caso>
+[cASO](https://github.com/IFCA/caso) delivers an implmentation of the extrator
+probes for OpenStack.
 
 ### Monitoring
 
