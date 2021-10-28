@@ -68,7 +68,7 @@ Resource Center integrated into the EGI Federation.
      [added to the fedcloud-catchall-operations repository](../../cloud-compute/openstack/#catch-all-operations)
 
 1. Middleware: latest version of technology products are installed using the
-   UMD/CMD release.
+   [UMD/CMD release](https://wiki.egi.eu/wiki/Middleware).
 
 1. Software distribution:
    - HTC (Optional): [CVMFS](https://github.com/cvmfs-contrib/egi-cvmfs)
