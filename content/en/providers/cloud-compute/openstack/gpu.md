@@ -19,7 +19,16 @@ hardware/configuration!):
 1. On computing node, get vendor/product ID of your hardware:
    `lspci | grep NVDIA` to get pci slot of GPU, then
    `virsh nodedev-dumpxml pci_xxxx_xx_xx_x`
-1. On computing node, unbind device from host kernel driver
+1. On computing node, unbind device from host kernel driver. Unbinding is system
+   dependent, and can be done in many ways, e.g.:
+   - if the kernel does not uses the devices (no GPU drivers included in kernel,
+     or drivers disable in GRUB), nothing to unbind
+   - via pci-stub
+     `grubby --args="pci-stub.ids=10de:11fa" --update-kernel DEFAULT` (see
+     [RedHat manual, section 12.1, step 1-2](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/configuring_and_managing_virtualization/index#proc_assigning-a-gpu-to-a-virtual-machine_assembly_managing-gpu-devices-in-virtual-machines);
+     where the `pci-stub.ids` value is `vendor_ID: product_id` from `lspci`.
+   - via echo command: `echo $dev > /sys/bus/pci/devices/$dev/driver/unbind`
+     where `$dev` is the PCI device ID `xx:xx.x` or `xxxx:xx:xx.x` from `lspci`
 1. On computing node, add
    `pci_passthrough_whitelist = {"vendor_id":"xxxx","product_id":"xxxx"}` to
    `nova.conf` (see
