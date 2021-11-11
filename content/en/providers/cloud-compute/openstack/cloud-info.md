@@ -22,7 +22,7 @@ You can either run the service by yourself or rely on central operations of the
 cloud-info-provider. In both cases you must register your host DN in the GOCDB
 entry for the `org.openstack.nova`.
 
-### Catch-all operations
+## Catch-all operations
 
 EGI can manage the operation of the `cloud-info-provider` for the site so you
 don't need to do it. In order for your site to be included in the centrally
