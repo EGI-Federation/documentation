@@ -1,0 +1,183 @@
+/* Fixes to the content blocks on the landing page */
+
+.td-default main > section:first-of-type {
+  padding-top: 6rem;
+}
+
+.features {
+  justify-content: center;
+}
+
+.feature {
+  border-radius: 0.5rem;
+  max-width: 300px;
+  min-height: 280px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #89b1e6;
+  margin: 0.5rem;
+  color: white;
+  background-color: #89b1e6;
+}
+
+.feature .h1 {
+  font-size: 6rem;
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  justify-content: center !important;
+}
+
+.feature:hover .h1 {
+  color: #4484d8 !important;
+}
+
+.feature:hover {
+  box-shadow: 0 10px 15px -3px rgba(140, 162, 223, 0.3), 0 4px 6px -2px rgba(140, 162, 223, 0.1);
+  border-color: #77a7e7;
+}
+
+.feature .h2 {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: #1d1d1d;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #3d3d3d;
+}
+
+/* Sizing calibration for the top nav bar */
+
+.td-navbar {
+  min-height: 0;
+}
+
+/* Sizing calibration for the left-side nav tree */
+
+.td-sidebar {
+  padding-top: 3rem;
+}
+
+.td-sidebar__search {
+  padding-top: 0;
+}
+
+.td-sidebar-nav {
+  max-height: calc(100vh - 8rem);
+}
+
+.td-sidebar-toc {
+  top: 2.75rem;
+}
+
+/* Added title to right-side page TOC */
+
+.td-toc-title {
+  font-weight: 700;
+  color: #30638e;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.td-toc .panel-line {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.td-toc,
+.td-page-meta {
+  font-size: 0.65rem;
+}
+
+/* Content styling for the new feature blocks on the landing page */
+
+.td-content > h2 {
+  margin-bottom: 1rem;
+}
+
+.td-content > h2:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.td-content > h3 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.td-content > h2 + h3 {
+  margin-top: 1.2rem;
+}
+
+.td-content > h4,
+.td-content > h5,
+.td-content > h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.td-content .highlight {
+  margin: 1rem 0;
+}
+
+.td-content .highlight pre {
+  padding: 0.5rem;
+}
+
+.td-content .alert:not(:first-child) {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-index .entry {
+  padding: 0.25rem;
+  padding-left: 2rem;
+}
+
+.section-index .entry p {
+  margin-bottom: 0;
+}
+
+/* Vertical alignment correction for user/dev links in footer */
+
+footer {
+  min-height: 120px;
+}
+
+.list-inline .footer-dev-link,
+.list-inline .footer-usr-link {
+  vertical-align: top;
+}
+
+.list-inline .github {
+  margin-top: 2px;
+}
+
+/* Placement adjustment for the Copy button on code snippets */
+
+div.code-toolbar > .toolbar {
+  right: 0.45em;
+}
+
+div.code-toolbar > .toolbar button {
+  background: rgba(224, 224, 224, 0.9);
+  box-shadow: 0 2px 0 0 rgb(100 100 100 / 30%);
+}
+
+/* Tables in code excerpts */
+
+.tabx-content table {
+  width: 100%;
+}
+
+.tabx-content thead {
+  background-color: #f8f8f8;
+}
+
+.tabx-content tr {
+  vertical-align: top;
+}
+
+.tabx-content td {
+  padding-right: 5px;
+}
