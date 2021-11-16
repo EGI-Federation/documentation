@@ -8,7 +8,7 @@ description: >
 
 The Dynamic DNS service provides a unified, federation-wide Dynamic DNS support
 for VMs in EGI infrastructure. Users can register their chosen meaningful and
-memorable DNS host names in given domains (e.g. `my-server.vo.fedcloud.eu`) and
+memorable DNS hostnames in given domains (e.g. `my-server.vo.fedcloud.eu`) and
 assign to public IPs of their servers.
 
 By using Dynamic DNS, users can host services in EGI Cloud with their
@@ -31,7 +31,7 @@ To register a new DNS host name:
 
 1. click on _Overview_ and then on _Add Host_.
 
-1. Type in the host name you'd like to register and select the domain to use.
+1. Type in the hostname you'd like to register and select the domain to use.
 
    ![Add host](add-host.png)
 
@@ -89,7 +89,7 @@ User-Agent:
 where:
 
 - `base64-encoded-auth-string`: base64 encoding of username:password
-- `username`: your host name
+- `username`: your hostname
 - `password`: your host secret
 - `hostname` in the parameter string can be omitted or must be the same as
   `username`

@@ -172,7 +172,7 @@ image, which is specified with the
 `disk.0.image.url = 'ost://fedcloud-osservices.egi.cesga.es/8c4e2568-67a2-441a-b696-ac1b7c60de9c'`
 line: `ost` refers to OpenStack, `fedcloud-osservices.egi.cesga.es` is the
 hostname of the URL obtained above with `fedcloud endpoint list` and
-`8c4e2568-67a2-441a-b696-ac1b7c60de9c` is the id of the image in OpenStack. The
+`8c4e2568-67a2-441a-b696-ac1b7c60de9c` is the ID of the image in OpenStack. The
 size of the VM is also specified.
 
 ## Launch cluster

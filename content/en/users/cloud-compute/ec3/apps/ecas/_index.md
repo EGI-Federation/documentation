@@ -84,9 +84,9 @@ the general wizard steps include:
 ![Instance details](ecas-instance.png)
 
 - **Cluster's size and name**: the name of the cluster and the maximum number of
-  nodes of the cluster, without including the front-end. This value indicates
-  the maximum number of working nodes that the cluster can scale to. Initially,
-  the cluster is created with the front-end and only one working node: the other
+  nodes of the cluster, without including the frontend. This value indicates the
+  maximum number of working nodes that the cluster can scale to. Initially, the
+  cluster is created with the frontend and only one working node: the other
   working nodes will be powered on on-demand.
 
 ![Cluster size and name](ecas-size.png)
@@ -96,8 +96,8 @@ the general wizard steps include:
 
 ![Cluster summary](ecas-summary.png)
 
-When the front-end node of the cluster has been successfully deployed, you will
-be notified with the credentials to access via SSH.
+When the frontend node of the cluster has been successfully deployed, you
+will be notified with the credentials to access via SSH.
 
 ![Cluster ssh credentials](ecas-end.png)
 
@@ -107,12 +107,12 @@ clusters\" link on the front page:
 ![Cluster management](ecas-manage.png)
 
 {{% alert title="Note" color="primary" %}} The configuration of the cluster may
-take some time. Please wait for its completion before starting to use
-the cluster. {{% /alert %}}
+take some time. Please wait for its completion before starting to use the
+cluster. {{% /alert %}}
 
 ### Accessing the cluster
 
-To access the front-end of the cluster:
+To access the frontend of the cluster:
 
 - download the SSH private key provided by the EC3 portal;
 - change its permissions to `600`;
@@ -126,9 +126,9 @@ Last login: Mon Nov 18 11:37:29 2019 from torito.i3m.upv.es
 [root@oph-server ~]#
 ```
 
-Both the front-end and the working node are configured by Ansible. This process
-usually takes some time. You can monitor the status of the cluster configuration
-using the `is_cluster_ready` command-line tool:
+Both the frontend and the working nodes are configured by Ansible. This
+process usually takes some time. You can monitor the status of the cluster
+configuration using the `is_cluster_ready` command-line tool:
 
 ```shell
 [root@oph-server ~]# is_cluster_ready
@@ -227,8 +227,8 @@ available at the `onedata/ecas_provider/ECAS_space` folder located under the
 ![Onedata ECAS space](ecas-space.png)
 
 To get started with the ECAS environment capabilities, open the
-`ECAS_Basics.ipynb` notebook available under the `notebooks/` folder in the
-home directory.
+`ECAS_Basics.ipynb` notebook available under the `notebooks/` folder in the home
+directory.
 
 ![ECAS notebooks](ecas-jupyter.png)
 
@@ -238,26 +238,27 @@ This section will show how to monitor the ECAS environment and the resource
 usage and get aggregated information over time.
 
 To access the Grafana monitoring interface, open the browser at
-`https://<YOUR_CLUSTER_IP>:3000` and log in to the system using the
-*admin* username and the password specified in the `.grafana_pwd` file located
-under the `/root` folder.
+`https://<YOUR_CLUSTER_IP>:3000` and log in to the system using the _admin_
+username and the password specified in the `.grafana_pwd` file located under the
+`/root` folder.
 
 ![Grafana UI](grafana-login.png)
 
 The Grafana-based monitoring system provides two dashboards in order to monitor
 the ECAS cluster both at system and application level.
 
-- The **infrastructure dashboard** provides information about the percentage
-  of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).
+- The **infrastructure dashboard** provides information about the percentage of
+  CPU, RAM, SWAP and disk used on each Node.js (the frontend and the working
+  nodes).
 
-front-end node             |  working node
-:-------------------------:|:-------------------------:
-![Front-end infra metrics](ecas-infra-server.png)  |  ![wn infra metrics](ecas-infra-io.png)
+|                 frontend node                     |            working node                |
+| :-----------------------------------------------: | :------------------------------------: |
+| ![Front-end infra metrics](ecas-infra-server.png) | ![wn infra metrics](ecas-infra-io.png) |
 
 - The **application dashboard** shows information about which operator/workflow
   is being executed and its current execution status and provides aggregated
-  information over time (e.g. number of total, completed and failed workflows/tasks,
-  hourly weighted average of running cores).
+  information over time (e.g. number of total, completed and failed
+  workflows/tasks, hourly weighted average of running cores).
 
 ![Application metrics dashboard](ecas-application-dashboard.png)
 
@@ -270,10 +271,10 @@ management page.
 
 ## References
 
-- <https://ecaslab.cmcc.it/web/home.html>
-- <https://ecaslab.dkrz.de/home.html>
-- <http://ophidia.cmcc.it/>
-- <https://github.com/ECAS-Lab>
-- <https://github.com/OphidiaBigData/ansible-role-ophidia-cluster>
-- <http://www.grycap.upv.es/ec3>
-- <http://www.github.com/grycap/ec3>
+- [ECASLab CMCC](https://ecaslab.cmcc.it/web/home.html)
+- [ECASLab DKRZ](https://ecaslab.dkrz.de/home.html)
+- [Ophidia](http://ophidia.cmcc.it/)
+- [GitHub: ECAS-Lab](https://github.com/ECAS-Lab)
+- [GitHub: ansible role Ophidia cluster](https://github.com/OphidiaBigData/ansible-role-ophidia-cluster>)
+- [EC3](http://www.grycap.upv.es/ec3)
+- [GitHub EC3](http://www.github.com/grycap/ec3)

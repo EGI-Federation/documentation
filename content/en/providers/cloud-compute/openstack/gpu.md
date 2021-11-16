@@ -69,7 +69,7 @@ below for completeness:
 | Accelerator:ClockSpeed        | Clockspeed of accelerator          | Defined by GLUE2.1, not so relevant, as ClockSpeed no longer related to performance. May be reserved for other types of accelerators |
 | Accelerator:Cores             | Number of cores of the accelerator | Not so useful as there are several types of cores now (CUDA, tensor). May be reserved for other types of accelerators                |
 
-Adding metadata to flavors has no effects on site operations. End-users can see
+Adding metadata to flavors has no effects on site operations. End users can see
 the metadata easily via `openstack flavor list --long` or
 `openstack flavor show <flavor id>` commands without any additional tools, e.g.:
 
