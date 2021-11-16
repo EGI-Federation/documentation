@@ -14,13 +14,13 @@ description: "Documentation related to EGI activities"
       storage, data and support.
     </p>
     <p class="lead mt-3">
-      This is the landing page for the user and provider documentation of the
+      This is the start page for the user and provider documentation of the
       <a href="https://www.egi.eu/services/">EGI Services</a>.
     </p>
   </div>
 {{< /blocks/landing >}}
 
-{{< blocks/section color="primary" type="features" oncover="true">}}
+{{< blocks/section type="features" color="primary" morecolor="info" oncover="true" ismore="true">}}
 
   {{% blocks/feature icon="fa-user-friends" title="For Users" url="/users" %}}
   How to access and use the EGI services to benefit from advanced computing.

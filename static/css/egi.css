@@ -1,7 +1,11 @@
 /* Fixes to the content blocks on the landing page */
 
 .td-default main > section:first-of-type {
-  padding-top: 6rem;
+  padding-top: 5rem;
+}
+
+.td-cover-block--height-min {
+  min-height: 380px;
 }
 
 .features {
@@ -11,7 +15,7 @@
 .feature {
   border-radius: 0.5rem;
   max-width: 300px;
-  min-height: 280px;
+  min-height: 250px;
   border-width: 3px;
   border-style: solid;
   border-color: #89b1e6;
@@ -22,7 +26,7 @@
 
 .feature .h1 {
   font-size: 6rem;
-  margin-top: 2.2rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   justify-content: center !important;
 }
