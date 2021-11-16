@@ -23,6 +23,6 @@ type: "docs"
 | Source code                             | https://github.com/GOCDB                                                           |
 | Issue tracker for developers            | https://github.com/GOCDB/gocdb/issues                                              |
 | License                                 | Apache 2                                                                           |
-| Privacy Policy                          | https://goc.egi.eu/privacy.html                                                    |
+| Privacy Policy                          | [Privacy policy](https://goc.egi.eu/privacy.html)                                  |
 
 <!-- markdownlint-enable no-inline-html no-bare-urls -->
