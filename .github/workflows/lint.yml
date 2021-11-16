@@ -31,4 +31,4 @@ jobs:
           ACTIONS_RUNNER_DEBUG: false
           # Fail on errors
           DISABLE_ERRORS: false
-          FILTER_REGEX_EXCLUDE: "(.*layouts/.*)|(.*/egi.js)"
+          FILTER_REGEX_EXCLUDE: "(.*layouts/.*)|(.*/egi.js)|(assets/scss)"
