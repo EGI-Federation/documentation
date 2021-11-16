@@ -70,4 +70,4 @@ contextualisation options of the wizard described above).
 VMOps was presented in one of the [EGI Webinars](https://www.egi.eu/webinars/)
 in 2020. The [indico page](https://indico.egi.eu/event/5272/) contains more
 details and there is also a video recording available on
-[Youtube](https://youtu.be/0YuuKA_4pSM).
+[YouTube](https://youtu.be/0YuuKA_4pSM).

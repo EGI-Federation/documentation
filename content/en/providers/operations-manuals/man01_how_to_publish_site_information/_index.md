@@ -56,7 +56,7 @@ BDII_REGIONS="CE SE BDII"
 BDII_BDII_URL="ldap://$SITE_BDII_HOST:2170/mds-vo-name=resource,o=grid"
 ```
 
-In the past it was common for the site BDII to be co-located with the CE so it
+In the past it was common for the site BDII to be colocated with the CE so it
 did not need to be listed explicitly, but if installed on a dedicated node
 (which is now the recommended deployment) it must be included.
 
@@ -131,7 +131,7 @@ of these MUST remain.
 
 | Attribute                   | Example                       | Schema                          | Notes                                                                                                                                                                         |
 | --------------------------- | ----------------------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GlueSiteName                | RAL-LCG2                      | Free Text, No White Space       | Same as GOCDB name if in GOCDB, your choice.                                                                                                                                  |
+| GlueSiteName                | RAL-LCG2                      | Free Text, No whitespace       | Same as GOCDB name if in GOCDB, your choice.                                                                                                                                  |
 | GlueSiteUniqueID            | RAL-LCG2                      | Identical to your !GlueSiteName | Same as GlueSiteName                                                                                                                                                          |
 | GlueSiteWeb                 | `https://cern.ch/it`          | Free Text                       | Valid URL about the site.                                                                                                                                                     |
 | GlueSiteLatitude            | 52.42                         | NN.NN                           | Site Latitute.                                                                                                                                                                |

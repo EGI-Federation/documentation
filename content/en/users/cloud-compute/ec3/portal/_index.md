@@ -49,9 +49,9 @@ software packages. Specifically, the general wizard steps include:
    ![Configure of the cluster nodes](ec3-nodes.png)
 
 1. **Cluster’s size and name**: the name of the cluster and the maximum number
-   of nodes of the cluster, without including the front-end. This value
+   of nodes of the cluster, without including the frontend. This value
    indicates the maximum number of working nodes that the cluster can scale.
-   Initially, the cluster is created with the front-end and only one working
+   Initially, the cluster is created with the frontend and only one working
    node: the other working nodes are powered on on-demand.
 
    ![Select the maximum number of nodes](ec3-size.png)
@@ -63,7 +63,7 @@ software packages. Specifically, the general wizard steps include:
 take some time. Please wait for its completion before starting to use the
 cluster! {{% /alert %}}
 
-When the front-end node of the cluster has been successfully deployed, the user
+When the frontend node of the cluster has been successfully deployed, the user
 will be notified with the credentials to access via SSH.
 
 The cluster details are available by clicking on the **"Manage your deployed
@@ -71,7 +71,7 @@ clusters"** link on the front page.
 
 ## Accessing the EC3 cluster
 
-To access the front-end of the elastic cluster:
+To access the frontend of the elastic cluster:
 
 1. Download the SSH private key provided by the EC3 portal;
 1. Change its permissions to 600;
@@ -84,7 +84,7 @@ Last login: Mon Nov 18 11:37:29 2019 from torito.i3m.upv.es
 [cloudadm@server ~]$
 ```
 
-Both the front-end and the working node are configured by Ansible. This process
+Both the frontend and the working node are configured by Ansible. This process
 usually takes some time. User can monitor the status of the cluster
 configuration using the `is_cluster_ready` command-line tool:
 

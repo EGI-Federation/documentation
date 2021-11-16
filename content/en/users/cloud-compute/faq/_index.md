@@ -141,8 +141,8 @@ hostname in an available domain.
 ### What is contextualisation?
 
 Contextualisation is the process of installing, configuring and preparing
-software upon boot time on a pre-defined virtual machine image. This way, the
-pre-defined images can be stored as generic and small as possible, since
+software upon boot time on a predefined virtual machine image. This way, the
+predefined images can be stored as generic and small as possible, since
 customisations will take place on boot time.
 
 Contextualisation is particularly useful for:

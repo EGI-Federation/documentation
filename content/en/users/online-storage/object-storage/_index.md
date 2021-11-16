@@ -81,7 +81,7 @@ The object storage in the EGI Cloud is offered via
 
 Users can manage object storage using the
 [OpenStack Horizon dashboard](https://docs.openstack.org/horizon/latest/user/)
-of a provider or from the [command line](#access-from-the-command-line)
+of a provider or from the [command-line](#access-from-the-command-line)
 (CLI). More advanced usage include access via the
 [S3 protocol](#access-via-the-s3-protocol), via the
 [OpenStack Object Store API](https://docs.openstack.org/api-ref/object-store/),
@@ -93,9 +93,9 @@ can be discovered in the
 (GOCDB).
 {{% /alert %}}
 
-## Access from the command line
+## Access from the command-line
 
-Multiple command line interfaces (CLIs) are available to manage object
+Multiple command-line interfaces (CLIs) are available to manage object
 storage:
 
 - The [OpenStack CLI](https://docs.openstack.org/python-openstackclient/latest)

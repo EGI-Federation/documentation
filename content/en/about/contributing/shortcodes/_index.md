@@ -6,7 +6,7 @@ weight: 40
 ---
 
 In addition to the formatting support provided by
-[markdown](https://spec.commonmark.org/0.29/),
+[Markdown](https://spec.commonmark.org/0.29/),
 Hugo adds support for _shortcodes_, which are Go templates for easily including
 or displaying content (images, notes, tips, advanced display blocks, etc.).
 
@@ -71,7 +71,7 @@ itself on the mardkown parser.
 [Prism syntax highlighting](https://prismjs.com/download.html#themes=prism).
 {{% /alert %}}
 
-The following markdown creates a shell excerpt:
+The following Markdown creates a shell excerpt:
 
 ````markdown
 ```shell

@@ -13,7 +13,7 @@ asterisk are mandatory):
   service)
 - Service Type \* (select the appropriate service type)
 - Service URL (Alphanumeric and $-\_.+!\*'(),:)
-- Host name \* (valid FQDN format)
+- Hostname \* (valid FQDN format)
 - Host IP a.b.c.d
 - Host IPv6 (0000:0000:0000:0000:0000:0000:0000:0000[/int]) (optional [/int]
   range)
@@ -24,7 +24,7 @@ asterisk are mandatory):
 - Is it a beta service (formerly PPS service)? Y/N
 - Is this service in production? Y/N
 - Is this service monitored? Y/N
-- Contact E-Mail \* (valid email format)
+- Contact email \* (valid email format)
 
 ## Scope Tags
 

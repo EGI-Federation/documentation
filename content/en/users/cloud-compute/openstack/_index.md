@@ -234,7 +234,7 @@ resource "openstack_compute_instance_v2" "test-server" {
 
 when launching Terraform, set the `OS_TOKEN` environment variable to a valid
 token as shown in :ref:OpenStack token for other clients. You may also set the
-Keystone URL and project id in the `OS_AUTH_URL` and `OS_PROJECT_ID` environment
+Keystone URL and project ID in the `OS_AUTH_URL` and `OS_PROJECT_ID` environment
 variables:
 
 ```terraform

@@ -120,7 +120,7 @@ provide the following information to connect your service to EGI Check-in:
 1. Name of the service (in English and optionally in other languages supported
    by the service)
 1. Short description of the service
-1. Website (URL) for localised information about the service; the content found
+1. Site (URL) for localised information about the service; the content found
    at the URL SHOULD provide more complete information than what provided by the
    description
 1. Contact information of the following types:
@@ -183,7 +183,7 @@ To register your SAML SP, you must submit a service registration request at
 [Federation Registry](https://aai.egi.eu/federation). Your request should
 include the general information about your service (see
 [General Information](#general-information)) and the SP's metadata and entity
-id.
+ID.
 
 ### Metadata
 
@@ -311,7 +311,7 @@ the client. Lastly, you need to set the email addresses of one or more contacts.
 ### Claims
 
 The EGI Check-in UserInfo Endpoint is an OAuth 2.0 Protected Resource that
-returns specific information about the authenticated End-User as Claim Values.
+returns specific information about the authenticated end user as Claim Values.
 To obtain the requested Claims about the End-User, the Client makes a request to
 the UserInfo Endpoint using an Access Token obtained through OpenID Connect
 Authentication. The scopes associated with the Access Token used to access the
@@ -368,14 +368,14 @@ The most important OIDC/OAuth2 endpoints are listed below:
 
 #### Authorization Endpoint
 
-The Authorization Endpoint performs Authentication of the End-User. This is done
+The Authorization Endpoint performs Authentication of the end user. This is done
 by sending the User Agent to the Authorization Server\'s Authorization Endpoint
 for Authentication and Authorization, using request parameters defined by OAuth
 2.0 and additional parameters and parameter values defined by OpenID Connect.
 
 The request parameters of the Authorization endpoint are:
 
-- `client_id`: id of the client that ask for authentication to the Authorization
+- `client_id`: ID of the client that ask for authentication to the Authorization
   Server.
 - `redirect_uri`: URI to which the response will be sent.
 - `scope`: A list of attributes that the application requires.
@@ -610,7 +610,7 @@ Example response:
 
 The device code flow enables OAuth clients on (input-constrained) devices to
 obtain user authorization for accessing protected resources without using an
-on-device user-agent, provided that they have an Internet connection.
+on-device user-agent, provided that they have an internet connection.
 
 ###### 1. Device Authorization Request
 
@@ -800,7 +800,7 @@ Let's go quickly through the settings:
   requirements
 - `issuer` required, the base URL of our IdentityServer instance. This will
   allow oidc-client to query the metadata endpoint so it can validate the tokens
-- `client_id` required, the id of the client we want to use when hitting the
+- `client_id` required, the ID of the client we want to use when hitting the
   authorization endpoint
 - `client_secret` optional, a value the offers better security to the message
   flow
@@ -916,7 +916,7 @@ ssh proxy@ssh.aai.egi.eu
 and storing the output in `/tmp/x509up_u$(id -u)`
 
 Generic information for users on how to do this can be found at
-[Instructions for end-users on how to use the SSH key authN for proxy retrieval](https://wiki.nikhef.nl/grid/RCauth.eu_and_MasterPortal_SSH_Key_Portal).
+[Instructions for end users on how to use the SSH key authN for proxy retrieval](https://wiki.nikhef.nl/grid/RCauth.eu_and_MasterPortal_SSH_Key_Portal).
 Alternatively VO portals could implement such functionality themselves by using
 the API described at the
 [Master Portal sshkey endpoint description](https://wiki.nikhef.nl/grid/Master_Portal_sshkey_endpoint).

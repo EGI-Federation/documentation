@@ -118,7 +118,7 @@ the resources.
 
 ### Service grant
 
-Once granted access, each user will have a grant with a pre-defined quota of
+Once granted access, each user will have a grant with a predefined quota of
 resources, which can be used to run the application of choice. This grant
 includes:
 

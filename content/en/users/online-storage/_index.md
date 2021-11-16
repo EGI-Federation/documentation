@@ -31,7 +31,7 @@ The differences between Block, Grid, and Object Storage are summarized below:
 | Type       | Sharing                                                       | Accounting           | Usage                           |
 | ---------- | ------------------------------------------------------------- | -------------------- | ------------------------------- |
 | **Block**  | Only from within VMs, only at the same site the VM is located | For the entire block | POSIX access, use as local disk |
-| **Grid**   | From any device connected to the Internet                     | For the data stored  | Grid protocols and HTTP/WebDAV  |
-| **Object** | From any device connected to the Internet                     | For the data stored  | HTTP requests to REST API       |
+| **Grid**   | From any device connected to the internet                     | For the data stored  | Grid protocols and HTTP/WebDAV  |
+| **Object** | From any device connected to the internet                     | For the data stored  | HTTP requests to REST API       |
 
 The following guides offer a more detailed description of each storage service.
