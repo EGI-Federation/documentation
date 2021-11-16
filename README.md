@@ -6,7 +6,7 @@
 
 Sources files used to build [EGI documentation](https://docs.egi.eu).
 
-- [Hugo](https://gohugo.io/) is used to build a static website.
+- [Hugo](https://gohugo.io/) is used to build a static site.
 - The theme [docsy](https://www.docsy.dev) is used.
 - The static site is
   [deployed on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
@@ -59,7 +59,7 @@ hugo --minify
 hugo server -D
 ```
 
-The website is available locally at:
+The site is available locally at:
 [http://localhost:1313/](http://localhost:1313/).
 
 ## Updating the theme
