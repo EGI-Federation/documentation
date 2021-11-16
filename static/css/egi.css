@@ -1,11 +1,12 @@
 /* Fixes to the content blocks on the landing page */
 
-.td-default main > section:first-of-type {
-  padding-top: 5rem;
+.section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .td-cover-block--height-min {
-  min-height: 380px;
+  min-height: 400px;
 }
 
 .features {
