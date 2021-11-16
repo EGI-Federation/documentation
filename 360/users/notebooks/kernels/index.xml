@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Notebooks Environments</title><link>/users/notebooks/kernels/</link><description>Recent content in Notebooks Environments on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/notebooks/kernels/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Default environment</title><link>/users/notebooks/kernels/default/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/notebooks/kernels/default/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Notebooks Environments</title><link>/users/notebooks/kernels/</link><description>Recent content in Notebooks Environments on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/notebooks/kernels/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Default Environment</title><link>/users/notebooks/kernels/default/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/notebooks/kernels/default/</guid><description>
 &lt;p>The default environment includes a set of
 &lt;a href="https://jupyter.readthedocs.io/en/latest/projects/kernels.html">kernels&lt;/a> that
 are automatically built from the
@@ -31,7 +31,7 @@ language installed on its own conda environment (named &lt;code>octave&lt;/code>
 &lt;/li>
 &lt;/ul>
 &lt;p>If you want to add a new kernel, just let us know and we will discuss the best
-way to support your request.&lt;/p></description></item><item><title>Users: MATLAB</title><link>/users/notebooks/kernels/matlab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/notebooks/kernels/matlab/</guid><description>
+way to support your request.&lt;/p></description></item><item><title>Users: MATLAB Environment</title><link>/users/notebooks/kernels/matlab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/notebooks/kernels/matlab/</guid><description>
 &lt;p>EGI offers MATLAB on the cloud using the
 &lt;a href="https://www.mathworks.com/products/reference-architectures/jupyter.html">MATLAB Integration for Jupyter&lt;/a>
 and shares data and code with other EGI users. MATLAB is also available directly
