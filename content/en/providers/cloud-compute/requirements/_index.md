@@ -9,15 +9,11 @@ IaaS providers are very welcome to join the EGI Federated Cloud as a Resource
 Centres (RC) and joining the Federated Cloud Task Force to contribute to the
 design, creation and implementation of the federation.
 
-Resource Centers are free to use any Cloud Management Framework (OpenNebula,
-OpenStack, etc\...) as long as they are able to integrate with the EGI
+Resource Centers are free to use any Cloud Management Framework (OpenStack,
+etc\...) as long as they are able to integrate with the EGI
 Federation components as described in the
 [Federated Cloud Architecture](https://wiki.egi.eu/wiki/Federated_Cloud_Architecture).
-At the moment this compliance is guaranteed for the following CMFs:
-
-- OpenStack (with/without OCCI)
-- OpenNebula with OCCI
-- Synnefo with OCCI
+At the moment this compliance is guaranteed for OpenStack.
 
 The general minimal requirements are:
 

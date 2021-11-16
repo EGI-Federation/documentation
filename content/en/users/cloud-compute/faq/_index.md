@@ -52,10 +52,7 @@ the main commands in rOCCI and OpenStack equivalent in the table below:
 <!-- markdownlint-enable line-length -->
 
 If you still rely on OCCI for your access, please contact us at
-`support _at_ egi.eu` for support on the migration. OpenNebula sites still use
-OCCI as main API, but its direct use is not recommended as the support will be
-deprecated. Instead use an Orchestrator like IM for interacting with those
-sites.
+`support _at_ egi.eu` for support on the migration.
 
 ## Discovery
 
@@ -116,7 +113,8 @@ identifiers to use it in practice.
 
 There are several ways to increase the disk space available at the VM. The
 fastest and easiest one is to use block storage, creating a new storage disk
-device and attaching it to the VM. Check the [storage guide](../../online-storage/block-storage)
+device and attaching it to the VM. Check the
+[storage guide](../../online-storage/block-storage)
 for more information.
 
 ### How can I keep my data after the VM is stopped?
@@ -241,9 +239,9 @@ or boot your VM in a previous state when you need it back. We list below the
 main strategies you can use:
 
 - Use a volume to store the data to be kept: Check the
-  [Storage section of the documentation](../storage) to learn how to use
-  volumes. If you start your VM from a volume, the VM can be destroyed and
-  recreated easily. OpenStack documentation cover how to
+  [Storage section of the documentation](../../online-storage/block-storage/) to
+  learn how to use volumes. If you start your VM from a volume, the VM can be
+  destroyed and recreated easily. OpenStack documentation cover how to
   [start a VM from a volume with CLI](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)
   or
   [using the Horizon dashboard](https://docs.openstack.org/horizon/latest/user/launch-instances.html)

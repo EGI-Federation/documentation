@@ -1,8 +1,7 @@
 ---
 title: "Helpdesk"
-linkTitle: "Helpdesk"
 type: docs
-weight: 50
+weight: 40
 description: >
   EGI Helpdesk 
 ---
