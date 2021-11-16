@@ -1,8 +1,9 @@
 ---
-title: "MATLAB"
+title: MATLAB Environment
+linkTitle: MATLAB
 type: docs
 description: >
-  MATLAB in EGI Notebooks
+  Using MATLAB in EGI Notebooks
 weight: 20
 ---
 

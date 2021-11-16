@@ -1,8 +1,9 @@
 ---
-title: "Default environment"
+title: Default Environment
+linkTitle: Default
 type: docs
 description: >
-  EGI Notebooks default environment
+  The default environment in EGI Notebooks
 weight: 10
 ---
 
