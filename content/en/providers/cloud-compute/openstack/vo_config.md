@@ -73,7 +73,7 @@ for the VOs are listed in
 And update the mapping in your Keystone IdP:
 
 ```shell
-$ openstack mapping set --rules mapping$.json egi-mapping
+$ openstack mapping set --rules mapping.json egi-mapping
 ```
 
 ## Accounting
