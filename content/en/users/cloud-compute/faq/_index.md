@@ -52,7 +52,10 @@ the main commands in rOCCI and OpenStack equivalent in the table below:
 <!-- markdownlint-enable line-length -->
 
 If you still rely on OCCI for your access, please contact us at
-`support _at_ egi.eu` for support on the migration.
+`support _at_ egi.eu` for support on the migration. OpenNebula sites still use
+OCCI as main API, but its direct use is not recommended as the support will be
+deprecated. Instead use an Orchestrator like IM for interacting with those
+sites.
 
 ## Discovery
 
@@ -113,8 +116,8 @@ identifiers to use it in practice.
 
 There are several ways to increase the disk space available at the VM. The
 fastest and easiest one is to use block storage, creating a new storage disk
-device and attaching it to the VM. Check the
-[storage guide](../../online-storage) for more information.
+device and attaching it to the VM. Check the [storage guide](../../online-storage/block-storage)
+for more information.
 
 ### How can I keep my data after the VM is stopped?
 
