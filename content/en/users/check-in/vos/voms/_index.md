@@ -26,7 +26,7 @@ EGI sites, endpoints and tools accept certificates part of the
 enabled on that site, your certificate will be accepted by that site since all
 certificates are recognized at site level.
 
-Usually, a certificate can be installed by command line tools, but they can also
+Usually, a certificate can be installed by command-line tools, but they can also
 be stored in the web browser to access EGI web tools and services.
 
 ### Get a Certificate
@@ -41,7 +41,7 @@ If eScience Personal certificate is not available in your country, then request
 a certificate from a regular [IGTF CA](https://www.igtf.net/pmamap). The request
 is normally generated using either a web-based interface or console commands.
 Details of which type of request a particular CA accepts can be found on each
-CA's website.
+CA's site.
 
 For a web-based certificate request, a form must usually be filled in with
 information such as the name of the user, home institute, etc. After submission,
@@ -56,7 +56,7 @@ the user's browser must be able to validate the signature.
 
 For some CAs, the certificate requests are generated using a command line
 interface. The details of the exact command and the requirements of each CA will
-vary and can be found on the CA's website.
+vary and can be found on the CA's site.
 
 Once received the request, the CA will have to confirm your authenticity through
 your certificate. This usually involves a physical meeting or a phone call with
@@ -105,7 +105,7 @@ using `pkcs12`:
 
    where:
 
-   | File Name      | Description                         |
+   | Filename      | Description                         |
    | -------------- | ----------------------------------- |
    | `my_cert.p12`  | is the input PKCS12 format file;    |
    | `userkey.pem`  | is the output private key file;     |
@@ -174,7 +174,7 @@ protected. The details vary depending on the browser, but password protection
 should be used if available; this may not be the default (it is not with
 Internet Explorer). The most secure mode is one in which every use of the
 private key needs the password to be entered, but this can cause problems as
-some web sites ask for the certificate many times. Reaching a compromise between
+some sites ask for the certificate many times. Reaching a compromise between
 security and convenience is vital here, so that neither come too short.
 
 It is important not to lose the private key, as this implies loss of all access
@@ -231,7 +231,7 @@ existing VOs
 
 1. If there are any community VOs matching your requirements (with _Registry
    System_ is _VOMS_), then click _Action_-> _Details_ to look at the VO
-   information. In the _VO Id Card_ page, click the link for _Enrollment Url_,
+   information. In the _VO ID Card_ page, click the link for _Enrollment URL_,
    it will take you to the VO VOMS page. **You should have already discussed
    with the EGI support team, they would help you to contact the VO managers and
    get approval for your access.** ![Register to a VO](vo_registration.png)
@@ -241,7 +241,7 @@ existing VOs
    (Note, for EGI services, you should request for `VOMS configuration`, once VO
    is configured, you will be notified about your VO VOMS link). More
    information can be found at
-   [Guideline for VO registration](https://wiki.egi.eu/wiki/PROC14_VO_Registration).
+   [Guideline for VO registration](https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration).
    **Again, this is usually guided by the EGI support team. You should already
    have a meeting with them to discuss your requirements. They will help you to
    get resources from EGI providers, and sign

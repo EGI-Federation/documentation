@@ -50,8 +50,8 @@ authentication and authorization based on
 certificates, e.g. [High Throughput Compute](../high-throughput-compute).
 {{% /alert %}}
 
-**EGI uses [Virtual Organisations](../check-in/vos) (VOs) to control access to
-resources**. VOs are fully managed by research communities, allowing
+**EGI uses [Virtual Organisations](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
+(VOs) to control access to resources**. VOs are fully managed by research communities, allowing
 communitites to manage their users and grant access to their services and
 resources. This means communities can either own their resources and use EGI
 services to share (federate) them, or can use the resources available in the EGI
@@ -62,13 +62,14 @@ Before users can access an EGI service, they have to:
 1. Obtain a supported ID, by signing up with either
    [EGI Check-in](../check-in/signup) directly, or with one of the community
    identity providers from the EGI infrastructure.
-1. Enroll into one VO before they can use most of the services, as users are not
-   individually granted access to resources.
+1. [Enroll into one VO](../check-in/joining-virtual-organisation/). Users need
+   to be part of a VO before using EGI services. Explore the list of available
+   VOs in the [Operations Portal](https://operations-portal.egi.eu/vo/a/list).
 1. Authenticate to [EGI Check-in](../check-in) to obtain an OAuth2 access token
    (and optionally a refresh token).
 1. Manage or use the service by leveraging the access token, either implicitly
    (web interfaces and dashboards usually hide this from users) or explicitly
-   (e.g. when using [command line tools](cli)).
+   (e.g. when using [command-line tools](cli)).
 
 {{% alert title="Note" color="info" %}} See the [EGI Check-in](../check-in)
 documentation for a detailed description of the Authentication and Authorization
@@ -80,14 +81,16 @@ of the concepts that act as building blocks for the AAI implementation.
 
 Depending on the access conditions, a service (or an instance of the service)
 may be open for any user, or it may require requesting access (ordering). The
-[EGI Website](https://www.egi.eu/services/) together with the connected
+[EGI site](https://www.egi.eu/services/) together with the connected
 [EGI Marketplace](https://marketplace.egi.eu) streamlines the ordering process.
 
 EGI services use the following types of access conditions:
 
 - **Wide access** - Users can freely access the service. Login may be required
   but it is possible with various institutional accounts (through
-  [EduGAIN](https://edugain.org)), or with social accounts (e.g. Google).
+  [EduGAIN](https://edugain.org)), or with social accounts (e.g. Google). For
+  example you can [create a test Virtual Machine](../tutorials/create-your-first-virtual-machine/)
+  or launch a [Jupyter Notebook](../notebooks/).
 - **Policy based** - Users are granted access based on specific policies defined
   by the service providers. Access needs to be requested, and will be checked
   for such services. Example: Compute resources and tools allocated to
@@ -108,13 +111,15 @@ typically covers two topics:
   much RAM per CPU, which software services, and for how long do you need them,
   etc.
 
+[Contact us](https://www.egi.eu/contact/) if you want to discuss further.
+
 ## Capacity allocation
 
 When EGI is able to support a request for resources, it can do so in two ways:
 
 1. **We grant you access to an existing service**, for example to compute
    resource pools (Virtual Organisations) that already exist in EGI for specific
-   scientific disciplines or for researchers in specific regions. (You can
+   scientific disciplines or for researchers in specific regions. You can
    browse these in the
    [EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list). If there
    is a suitable VO, we help you join it and use its services.

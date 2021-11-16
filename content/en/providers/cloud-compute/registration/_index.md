@@ -9,7 +9,7 @@ description: >
 Site endpoints must be registered in
 [EGI Configuration Management Database (GOCDB)](https://goc.egi.eu). If you are
 creating a new site for your cloud services, check the
-[PROC09 Resource Centre Registration and Certification](https://wiki.egi.eu/wiki/PROC09)
+[PROC09 Resource Centre Registration and Certification](https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification)
 procedure. Services can also coexist within an existing (grid) site.
 
 ## Expected Services

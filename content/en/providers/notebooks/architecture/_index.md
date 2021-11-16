@@ -176,7 +176,7 @@ service:
 Our service relies on custom images for the hub and the single-user notebooks.
 Dockerfiles are available at
 [EGI Notebooks images](https://github.com/EGI-Federation/egi-notebooks-images)
-git repository and automatically build for every commit pushed to the repo to
+git repository and automatically build for every commit pushed to the repository to
 [eginotebooks @ dockerhub](https://hub.docker.com/u/eginotebooks).
 
 #### Hub image
@@ -204,7 +204,7 @@ following sample configuration and adapt to your needs by setting:
 
 - secret tokens (for `proxy.secretToken`, `hub.services.status.api_token`,
   `auth.state.cryptoKey`). They can be generated with `openssl rand -hex 32`.
-- A valid host name (`<your notebooks host>` below) that resolves to your
+- A valid hostname (`<your notebooks host>` below) that resolves to your
   Kubernetes Ingress
 - Valid EGI Check-in client credentials, these can be obtained by creating a new
   client at [EGI AAI OpenID Connect Provider](https://aai-dev.egi.eu/oidc/).

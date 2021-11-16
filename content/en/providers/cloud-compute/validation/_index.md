@@ -45,7 +45,7 @@ Extra checks for your installation:
   the same.
 
 - Execute the
-  [site certification manual tests](https://wiki.egi.eu/wiki/HOWTO04_Site_Certification_Manual_tests#Check_the_functionality_of_the_cloud_elements)
+  [site certification manual tests](https://docs.egi.eu/providers/operations-manuals/howto04_site_certification_manual_tests/#check-the-functionality-of-the-cloud-elements)
   against your endpoints.
 
 - Check in the [accounting portal](http://accounting.egi.eu/) that your site is

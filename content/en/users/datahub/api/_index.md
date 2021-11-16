@@ -19,7 +19,7 @@ to generate one. {{% /alert %}}
 Tokens have to be generated from the **EGI DataHub** (Onezone) interface as
 documented in
 [Generating tokens for using Oneclient or APIs](../clients/#generating-tokens-for-using-oneclient-or-apis)
-or using a command line call as documented hereafter.
+or using a command-line call as documented hereafter.
 
 Bear in mind that a single API token can be used with both Onezone, Oneprovider
 and other Onedata APIs.

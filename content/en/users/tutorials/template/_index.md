@@ -26,7 +26,7 @@ you will need:
 
 Although provisioning, configuration, and access to EGI Cloud services is
 usually done with a web dashboard/user interface, the examples in this tutorial
-will make extensive use the [command line interface](../../getting-started/cli)
+will make extensive use the [command-line interface](../../getting-started/cli)
 (CLI).
 
 <!-- If needed, mention other tools/CLIs/requirements, then remove this -->

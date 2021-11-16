@@ -143,7 +143,7 @@ users responsibility.
 Check-in provides a central Discovery Service (or "Where Are You From" - WAYF)
 page where users in your Home Organisation or Community will be automatically
 redirected when necessary to select to authenticate at your IdP. You can provide
-us with a logo of your Organisation or Community (in high-res png or preferably
+us with a logo of your Organisation or Community (in high-res PNG or preferably
 in svg format) to include a dedicated login button that will allow users to
 easily identify your IdP.
 

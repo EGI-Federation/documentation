@@ -10,10 +10,10 @@ description: >
 // jscpd:ignore-start
 -->
 
-## Command line tools
+## Command-line tools
 
 The various [public EGI services](https://www.egi.eu/services/) can be managed
-and used/accessed with a wide variety of command line interface (CLI) tools.
+and used/accessed with a wide variety of command-line interface (CLI) tools.
 The documentation of each service contains a summary of the CLIs that can be
 used wih that service, together with recommendations on which one to use in
 what context.
@@ -25,7 +25,7 @@ high-level Python package for a command-line client designed for interaction
 with the [OpenStack services](../openstack) in the EGI infrastructure.
 
 {{% alert title="Tip" color="info" %}} The FedCloud client is the recommended
-command line interface to use with most EGI services.
+command-line interface to use with most EGI services.
 {{% /alert %}}
 
 FedCloud client has the following modules (features):
@@ -167,7 +167,7 @@ then run the following commands:
 {{< /tabpanex >}}
 
 Once you have a shell running in the container with the FedCloud client, usage
-is the same as from [the command line](#using-from-the-command-line).
+is the same as from [the command-line](#using-from-the-command-line).
 
 ### Using from EGI Notebooks
 
@@ -184,7 +184,7 @@ fedcloud token check
 Please follow instructions [below](#using-from-the-command-line) to learn
 how to use the `fedcloud` command.
 
-### Using from the command line
+### Using from the command-line
 
 The FedCloud client has these subcommands:
 
@@ -273,7 +273,7 @@ sites in the EGI infrastructure, use `ALL_SITES` for the `--site` parameter
 (pass it directly or via an anvironment variable).
 {{% /alert %}}
 
-| Environment variable    | Command line option         | Default value           |
+| Environment variable    | Command-line option         | Default value           |
 |-------------------------|-----------------------------|-------------------------|
 | OIDC_AGENT_ACCOUNT      | `--oidc-agent-account`      |                         |
 | OIDC_ACCESS_TOKEN       | `--oidc-access-token`       |                         |
