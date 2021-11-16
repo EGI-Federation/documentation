@@ -251,7 +251,7 @@ the ECAS cluster both at system and application level.
   CPU, RAM, SWAP and disk used on each Node.js (the frontend and the working
   nodes).
 
-|                 frontend Node.js                  |            working Node.js             |
+|                 frontend node                     |            working node                |
 | :-----------------------------------------------: | :------------------------------------: |
 | ![Front-end infra metrics](ecas-infra-server.png) | ![wn infra metrics](ecas-infra-io.png) |
 
