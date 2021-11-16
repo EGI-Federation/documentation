@@ -1,6 +1,7 @@
 ---
-title: "Service Providers"
-description: "Service providers documentation"
+title: "Service Provider Guides"
+linkTitle: "For Providers"
+description: "Documentation for service providers"
 weight: 20
 type: "docs"
 menu:

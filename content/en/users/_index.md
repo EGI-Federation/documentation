@@ -1,6 +1,6 @@
 ---
 title: "User Guides"
-linkTitle: "User Guides"
+linkTitle: "For Users"
 description: "Documentation for public EGI services"
 weight: 10
 type: "docs"
