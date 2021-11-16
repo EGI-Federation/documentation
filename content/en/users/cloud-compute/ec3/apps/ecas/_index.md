@@ -126,7 +126,7 @@ Last login: Mon Nov 18 11:37:29 2019 from torito.i3m.upv.es
 [root@oph-server ~]#
 ```
 
-Both the frontend and the working Node.js are configured by Ansible. This
+Both the frontend and the working nodes are configured by Ansible. This
 process usually takes some time. You can monitor the status of the cluster
 configuration using the `is_cluster_ready` command-line tool:
 
