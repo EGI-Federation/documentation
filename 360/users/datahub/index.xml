@@ -179,7 +179,7 @@ to generate one.
 &lt;p>Tokens have to be generated from the &lt;strong>EGI DataHub&lt;/strong> (Onezone) interface as
 documented in
 &lt;a href="../clients/#generating-tokens-for-using-oneclient-or-apis">Generating tokens for using Oneclient or APIs&lt;/a>
-or using a command line call as documented hereafter.&lt;/p>
+or using a command-line call as documented hereafter.&lt;/p>
 &lt;p>Bear in mind that a single API token can be used with both Onezone, Oneprovider
 and other Onedata APIs.&lt;/p>
 &lt;p>It&amp;rsquo;s possible to retrieve the &lt;code>CLIENT_ID&lt;/code>, &lt;code>CLIENT_SECRET&lt;/code> and &lt;code>REFRESH_TOKEN&lt;/code>
@@ -309,7 +309,7 @@ curl --tlsv1.2 -H &lt;span style="color:#4e9a06">&amp;#34;X-Auth-Token: &lt;/spa
 &lt;li>&lt;a href="http://go.egi.eu/datahub-intro">Overview slides&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://community.egi.eu/c/egi-services/datahub">Community Forum&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://indico.egi.eu/event/5089/">EGI Webinar&lt;/a> and
-&lt;a href="https://youtu.be/ayAplV2kEN4">Youtube video&lt;/a>&lt;/li>
+&lt;a href="https://youtu.be/ayAplV2kEN4">YouTube video&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;a href="https://onedata.org/docs/doc/system_requirements.html">System requirements&lt;/a>&lt;/li>

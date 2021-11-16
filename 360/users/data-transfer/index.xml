@@ -3,7 +3,7 @@
 // jscpd:ignore-start
 -->
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>The FTS3 service offers a command line client to ease the interaction with the
+&lt;p>The FTS3 service offers a command-line client to ease the interaction with the
 service.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>The client software is available for RHEL 6 and 7 derivatives.&lt;/p>
@@ -177,7 +177,7 @@ VO Name: dteam
 the cancelled job. Please, mind that if the job is already in a final state
 &lt;code>(FINISHEDDIRTY&lt;/code>, &lt;code>FINISHED&lt;/code>, &lt;code>FAILED&lt;/code>), this command will return this state.
 You can additionally cancel only a subset appending a comma-separated list of
-file ids.&lt;/p>
+file IDs.&lt;/p>
 &lt;h4 id="usage-4">Usage&lt;/h4>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">fts-rest-transfer-cancel &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>options&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 Options
@@ -447,7 +447,7 @@ u&lt;span style="color:#4e9a06">&amp;#39;vo_name&amp;#39;&lt;/span>: u&lt;span s
 is also available.&lt;/p></description></item><item><title>Users: Monitoring</title><link>/users/data-transfer/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data-transfer/monitoring/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Each instance of the FTS3 service, offers a Web monitoring interface, that can
-be accessed by end-users in order to monitor their submitted transfers and
+be accessed by end users in order to monitor their submitted transfers and
 obtain statistics.&lt;/p>
 &lt;h2 id="features">Features&lt;/h2>
 &lt;p>The Web monitoring can be accessed without user authentication, only access to
