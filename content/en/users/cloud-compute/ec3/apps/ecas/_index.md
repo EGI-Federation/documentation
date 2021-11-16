@@ -96,7 +96,7 @@ the general wizard steps include:
 
 ![Cluster summary](ecas-summary.png)
 
-When the frontend Node.js of the cluster has been successfully deployed, you
+When the frontend node of the cluster has been successfully deployed, you
 will be notified with the credentials to access via SSH.
 
 ![Cluster ssh credentials](ecas-end.png)
