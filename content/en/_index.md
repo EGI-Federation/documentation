@@ -8,14 +8,14 @@ description: "Documentation related to EGI activities"
 {{< blocks/landing color="primary" height="min" title="Welcome to the EGI Documentation!">}}
   <div>
     <p class="lead mt-3">
-      <a href="https://www.egi434343.eu">EGI</a> is an international e-Infrastructure
+      <a href="https://www.egi.eu">EGI</a> is an international e-Infrastructure
      providing advanced computing and data analytics services for research
       and innovation. The EGI Federation offers a wide range of services for compute,
       storage, data and support.
     </p>
     <p class="lead mt-3">
       This is the start page for the user and provider documentation of the
-      <a href="https://www.egi434343.eu/services/">EGI Services</a>.
+      <a href="https://www.egi.eu/services/">EGI Services</a>.
     </p>
   </div>
 {{< /blocks/landing >}}
