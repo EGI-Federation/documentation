@@ -1061,7 +1061,8 @@ identifiers to use it in practice.&lt;/p>
 &lt;p>There are several ways to increase the disk space available at the VM. The
 fastest and easiest one is to use block storage, creating a new storage disk
 device and attaching it to the VM. Check the
-&lt;a href="../../online-storage">storage guide&lt;/a> for more information.&lt;/p>
+&lt;a href="../../online-storage/block-storage">storage guide&lt;/a>
+for more information.&lt;/p>
 &lt;h3 id="how-can-i-keep-my-data-after-the-vm-is-stopped">How can I keep my data after the VM is stopped?&lt;/h3>
 &lt;p>After a VM has been stopped and unless backed up in a block storage volume, all
 data in the VM is destroyed and cannot be recovered. To ensure your data will be
