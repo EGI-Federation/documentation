@@ -51,6 +51,12 @@
   color: #3d3d3d;
 }
 
+.td-cover-block p a {
+  color: rgb(118, 182, 235);
+  font-weight: 400;
+}
+
+
 /* Sizing calibration for the top nav bar */
 
 .td-navbar {
