@@ -116,7 +116,8 @@ identifiers to use it in practice.
 
 There are several ways to increase the disk space available at the VM. The
 fastest and easiest one is to use block storage, creating a new storage disk
-device and attaching it to the VM. Check the [storage guide](../../online-storage/block-storage)
+device and attaching it to the VM. Check the
+[storage guide](../../online-storage/block-storage)
 for more information.
 
 ### How can I keep my data after the VM is stopped?
