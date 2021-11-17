@@ -54,7 +54,7 @@ ONEZONE_HOST=https://datahub.egi.eu
 OIDC_TOKEN=<OIDC_ACCESS_TOKEN>
 curl -H "X-Auth-Token: egi:$OIDC_TOKEN" -X POST \
   -H 'Content-type: application/json'  \
-  "$ONEZONE_HOST/api/v3/onezone/user/tokens/named -d '{ \
+  "$ONEZONE_HOST/api/v3/onezone/user/tokens/named" -d '{ \
   "name": "REST and CDMI access token", \
   "type": { \
     "accessToken": {} \
