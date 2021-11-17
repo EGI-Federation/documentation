@@ -93,8 +93,9 @@ Includes the basic information about your profile:
 
 ### VO/Group membership and roles
 
-Includes information about the Virtual Organisations and groups the user if
-member of and the roles assigned to the user within those Virtual Organisation.
+Includes information about the Virtual Organisations (VOs) and groups the user is
+member of and the roles assigned to the user within those VOs.
+Check the [guide about VOs](../joining-virtual-organisation) for more details.
 
 ![VO/Group membership](./check-in-profile-vos.png)
 
@@ -104,3 +105,9 @@ Information about identites linked to your account. Check the
 [guide for linking accounts](../linking) for more information.
 
 ![Linked identities](./check-in-profile-linked.png)
+
+## Next steps
+
+Once your Check-in account is ready you can check
+[how to link it with different identities](../linking) or
+[how to join an existing Virtual Organisation (VOs)](../joining-virtual-organisation).
