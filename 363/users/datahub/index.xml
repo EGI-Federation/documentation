@@ -207,19 +207,19 @@ API).&lt;/li>
 &lt;span style="color:#000">OIDC_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;OIDC_ACCESS_TOKEN&amp;gt;
 curl -H &lt;span style="color:#4e9a06">&amp;#34;X-Auth-Token: egi:&lt;/span>&lt;span style="color:#000">$OIDC_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -X POST &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#39;Content-type: application/json&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$ONEZONE_HOST&lt;/span>&lt;span style="color:#4e9a06">/api/v3/onezone/user/tokens/named -d &amp;#39;{ \
-&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;&lt;/span>name&lt;span style="color:#4e9a06">&amp;#34;: &amp;#34;&lt;/span>REST and CDMI access token&lt;span style="color:#4e9a06">&amp;#34;, \
-&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;&lt;/span>type&lt;span style="color:#4e9a06">&amp;#34;: { \
-&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;&lt;/span>accessToken&lt;span style="color:#4e9a06">&amp;#34;: {} \
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$ONEZONE_HOST&lt;/span>&lt;span style="color:#4e9a06">/api/v3/onezone/user/tokens/named&amp;#34;&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#39;{ \
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;name&amp;#34;: &amp;#34;REST and CDMI access token&amp;#34;, \
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;type&amp;#34;: { \
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;accessToken&amp;#34;: {} \
 &lt;/span>&lt;span style="color:#4e9a06"> }, \
-&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;&lt;/span>caveats&lt;span style="color:#4e9a06">&amp;#34;: [ \
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;caveats&amp;#34;: [ \
 &lt;/span>&lt;span style="color:#4e9a06"> { \
-&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;&lt;/span>type&lt;span style="color:#4e9a06">&amp;#34;: &amp;#34;&lt;/span>interface&lt;span style="color:#4e9a06">&amp;#34;, \
-&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;&lt;/span>interface&lt;span style="color:#4e9a06">&amp;#34;: &amp;#34;&lt;/span>rest&lt;span style="color:#4e9a06">&amp;#34; \
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;type&amp;#34;: &amp;#34;interface&amp;#34;, \
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;interface&amp;#34;: &amp;#34;rest&amp;#34; \
 &lt;/span>&lt;span style="color:#4e9a06"> } \
 &lt;/span>&lt;span style="color:#4e9a06"> ] \
-&lt;/span>&lt;span style="color:#4e9a06">}&amp;#39;
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="data-access-via-cdmi-and-rest-api">Data access via CDMI and REST API&lt;/h2>
+&lt;/span>&lt;span style="color:#4e9a06">}&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="data-access-via-cdmi-and-rest-api">Data access via CDMI and REST API&lt;/h2>
 &lt;p>Below are example commands to learn how to access DataHub files and folders via
 &lt;a href="https://en.wikipedia.org/wiki/Cloud_Data_Management_Interface">CDMI&lt;/a>
 and &lt;a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST&lt;/a>
