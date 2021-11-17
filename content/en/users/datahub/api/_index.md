@@ -93,7 +93,6 @@ curl -H "X-Auth-Token: $TOKEN" "https://$HOST/cdmi/PLAYGROUND/helloworld.txt" -o
 
 # Upload a file "helloworld.txt" from your computer to "uploadtest.txt" on DataHub
 curl -H "X-Auth-Token: $TOKEN" -H "$CDMI_VSN_HEADER"  -X PUT "https://$HOST/cdmi/PLAYGROUND/uploadtest.txt" -T helloworld.txt
-
 ```
 
 ### REST API
