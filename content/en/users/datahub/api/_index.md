@@ -67,6 +67,7 @@ API using the command-line interface.
 ### Common configuration
 
 Follow instructions [above](#getting-an-api-access-token) to get an API access token, and configure environment variables:
+
 ```shell
 export TOKEN=<ACCESS_TOKEN>
 export HOST=plg-cyfronet-01.datahub.egi.eu
