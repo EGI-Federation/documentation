@@ -57,6 +57,74 @@ curl -H "X-Auth-Token: egi:$OIDC_TOKEN" -X POST \
   "$ONEZONE_HOST/api/v3/onezone/user/client_tokens"
 ```
 
+## Data access via CDMI and REST API
+
+Below are example commands to learn how to access DataHub files and folders via
+[CDMI](https://en.wikipedia.org/wiki/Cloud_Data_Management_Interface)
+and [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
+API using the command-line interface.
+
+### Common configuration
+
+Follow instructions [above](#getting-an-api-access-token) to get an API access token, and configure environment variables:
+```shell
+export TOKEN=<ACCESS_TOKEN>
+export HOST=plg-cyfronet-01.datahub.egi.eu
+```
+
+Having [jq](https://stedolan.github.io/jq/) installed is useful for better formatting of the json output.
+
+### CDMI
+
+Configure a header to be passed in some operations.
+
+```shell
+export CDMI_VSN_HEADER='X-CDMI-Specification-Version: 1.1.1'
+```
+
+See examples on how to list a folder, and file download/upload using CDMI:
+
+```shell
+# List files in a folder
+curl -H "X-Auth-Token: $TOKEN" -H "$CDMI_VSN_HEADER" "https://$HOST/cdmi/PLAYGROUND/?children" | jq .
+
+# Download a file "helloworld.txt" from DataHub to "downloadtest.txt" on your computer
+curl -H "X-Auth-Token: $TOKEN" "https://$HOST/cdmi/PLAYGROUND/helloworld.txt" -o downloadtest.txt
+
+# Upload a file "helloworld.txt" from your computer to "uploadtest.txt" on DataHub
+curl -H "X-Auth-Token: $TOKEN" -H "$CDMI_VSN_HEADER"  -X PUT "https://$HOST/cdmi/PLAYGROUND/uploadtest.txt" -T helloworld.txt
+
+```
+
+### REST API
+
+See examples on how to list a folder, and file download/upload using REST API:
+
+```shell
+# Get base folder ID
+curl -H "X-Auth-Token: $TOKEN" -X POST "https://$HOST/api/v3/oneprovider/lookup-file-id/PLAYGROUND"
+
+# Add the folder ID to an environment variable
+export DIR_ID=<ID_FROM_PREVIOUS_COMMAND>
+
+# List files inside the folder with DIR_ID
+curl -H "X-Auth-Token: $TOKEN" -X GET "https://$HOST/api/v3/oneprovider/data/$DIR_ID/children" | jq .
+
+# Add the ID of the file that you want to download
+export FILE_ID=<ID_FROM_PREVIOUS_COMMAND>
+
+# Download file with FILE_ID from DataHub to "helloworld.txt" on your computer
+curl -H "X-Auth-Token: $TOKEN" -X GET "https://$HOST/api/v3/oneprovider/data/$FILE_ID/content" -o helloworld.txt
+
+# Upload a file "helloworld.txt" on your local computer to "uploadtest.txt" on DataHub
+curl -H "X-Auth-Token: $TOKEN" -X POST "https://$HOST/api/v3/oneprovider/data/$DIR_ID/children?name=uploadtest.txt" -H "Content-Type: application/octet-stream" -d "@helloworld.txt"
+```
+
+## Data access from Python
+
+If your application is written in Python please check the documentation for the
+[OnedataFS Python library](https://onedata.org/#/home/documentation/stable/doc/using_onedata/onedatafs.html)
+
 ## Testing the API with the REST client
 
 A docker container with clients acting as wrappers around the API calls is
