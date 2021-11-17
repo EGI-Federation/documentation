@@ -98,7 +98,7 @@ See examples on how to list a folder, and file download/upload using CDMI:
 
 ```shell
 # List files in a folder
-curl -H "X-Auth-Token: $TOKEN" -H "$CDMI_VSN_HEADER" "https://$HOST/cdmi/PLAYGROUND/?children" | jq .
+curl -H "X-Auth-Token: $TOKEN" -H "$CDMI_VSN_HEADER" "https://$HOST/cdmi/PLAYGROUND/notebooks/?children" | jq .
 
 # Download a file "helloworld.txt" from DataHub to "downloadtest.txt" on your computer
 curl -H "X-Auth-Token: $TOKEN" "https://$HOST/cdmi/PLAYGROUND/helloworld.txt" -o downloadtest.txt
