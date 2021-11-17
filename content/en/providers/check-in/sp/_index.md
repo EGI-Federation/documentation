@@ -875,7 +875,7 @@ running two Master Portal instances, one development, one production instance.
 | Authorisation          | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize>                        | <https://aai.egi.eu/mp-oa2-server/authorize>                        |
 | Token                  | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token>                            | <https://aai.egi.eu/mp-oa2-server/token>                            |
 | JSON Web Key(jwt)      | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs>                            | <https://aai.egi.eu/mp-oa2-server/certs>                            |
-| User Info              | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         | <https://aai-demo.egi.eu/oidc/userinfo>                             |
+| User Info              | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         | <https://aai.egi.eu/mp-oa2-server/userinfo>                             |
 
 <!-- markdownlint-enable line-length -->
 
