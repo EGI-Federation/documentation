@@ -54,17 +54,17 @@ ONEZONE_HOST=https://datahub.egi.eu
 OIDC_TOKEN=<OIDC_ACCESS_TOKEN>
 curl -H "X-Auth-Token: egi:$OIDC_TOKEN" -X POST \
   -H 'Content-type: application/json'  \
-  "$ONEZONE_HOST/api/v3/onezone/user/tokens/named" -d '{ \
-  "name": "REST and CDMI access token", \
-  "type": { \
-    "accessToken": {} \
-  }, \
-  "caveats": [ \
-    { \
-      "type": "interface", \
-      "interface": "rest" \
-    } \
-  ] \
+  "$ONEZONE_HOST/api/v3/onezone/user/tokens/named" -d '{ 
+  "name": "REST and CDMI access token", 
+  "type": { 
+    "accessToken": {} 
+  }, 
+  "caveats": [ 
+    { 
+      "type": "interface", 
+      "interface": "rest" 
+    } 
+  ] 
 }'
 ```
 
@@ -74,6 +74,9 @@ Below are example commands to learn how to access DataHub files and folders via
 [CDMI](https://en.wikipedia.org/wiki/Cloud_Data_Management_Interface)
 and [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
 API using the command-line interface.
+
+For more information please check the Onedata [CDMI documentation](https://onedata.org/#/home/documentation/stable/doc/advanced/cdmi.html)
+and the Onedata [Oneprovider REST API](https://onedata.org/#/home/api/stable/oneprovider?anchor=tag/Basic-File-Operations)
 
 ### Common configuration
 
