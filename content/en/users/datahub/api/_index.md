@@ -36,7 +36,7 @@ CLIENT_SECRET=<CLIENT_SECRET>
 REFRESH_TOKEN=<REFRESH_TOKEN>
 # Retrieving an OIDC token from Check-in
 curl -X POST -u "$CLIENT_ID":"$CLIENT_SECRET"  \
-       -d "client_id=$CLIENT_ID&$CLIENT_SECRET&grant_type=refresh_token&refresh_token=$REDRESH_TOKEN&scope=openid%20email%20profile" \
+       -d "client_id=$CLIENT_ID&$CLIENT_SECRET&grant_type=refresh_token&refresh_token=$REFRESH_TOKEN&scope=openid%20email%20profile" \
        'https://aai.egi.eu/oidc/token' | python -m json.tool;
 # Token is in the access_token field of the response
 ```
