@@ -1,5 +1,5 @@
 ---
-title: "ARGO Messaging Service"
+title: "Messaging service"
 weight: 30
 type: "docs"
 description: "Messaging service supporting other central services"
@@ -7,10 +7,10 @@ description: "Messaging service supporting other central services"
 
 ## What is it?
 
-The ARGO Messaging Service (AMS) is a Publish/Subscribe Service, which
-implements the Google PubSub protocol. It provides an HTTP API that enables
-Users/Systems to implement message oriented service using the Publish/Subscribe
-Model over plain HTTP.
+The EGI Messaging Service is powered by ARGO Messaging Service (AMS), a
+Publish/Subscribe Service, which implements the Google PubSub protocol. It
+provides an HTTP API that enables Users/Systems to implement message oriented
+service using the Publish/Subscribe Model over plain HTTP.
 
 In the Publish/Subscribe paradigm, Publishers are users/systems that can send
 messages to named-channels called Topics. Subscribers are users/systems that

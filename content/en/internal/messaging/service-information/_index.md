@@ -1,6 +1,6 @@
 ---
 title: "Service information"
-description: "Technical details of ARGO Messaging Service (AMS)"
+description: "Technical details of Messaging Service"
 weight: 10
 type: "docs"
 ---
@@ -11,7 +11,7 @@ type: "docs"
 
 | Property                                | Value                                                         |
 | --------------------------------------- | ------------------------------------------------------------- |
-| Name                                    | ARGO Messaging Service (AMS)                                  |
+| Name                                    | Messaging service                                             |
 | Description                             | Facilitate messages exchange between EGI services             |
 | URL                                     |                                                               |
 | Support Email                           | `argo-ggus-support` <at> `grnet.gr`                           |
