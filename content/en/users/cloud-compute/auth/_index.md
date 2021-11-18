@@ -16,7 +16,7 @@ Authentication to web based services (like the AppDB) will redirect you to the
 EGI Check-in authentication page. Just select your institution or social login
 and follow the regular authentication process.
 
-Access to APIs or via Command Line Interfaces (CLI) requires the use of OAuth2.0
+Access to APIs or via command-line interfaces (CLI) requires the use of OAuth2.0
 tokens and interaction with the OpenStack Keystone
 [OS-FEDERATION API](https://developer.openstack.org/api-ref/identity/v3-ext/index.html#os-federation-api).
 The process for authentication is as follows:
@@ -75,7 +75,7 @@ your VO manager or browse the existing VOs at the
 ## Check-in and access tokens
 
 Access tokens can be obtained via several mechanisms, usually involving the use
-of a web server and a browser. Command line clients/APIs without access to a
+of a web server and a browser. Command-line clients/APIs without access to a
 browser or interactive prompt for user authentication can use refresh tokens. A
 refresh token is a special token that is used to generate additional access
 tokens. This allows you to have short-lived access tokens without having to
@@ -83,12 +83,12 @@ collect credentials every single time one expires. You can request this token
 alongside the access and/or ID tokens as part of a user's initial authentication
 flow.
 
-If you need to obtain these kind of tokens for using it in CLI tools or APIs,
+If you need to obtain these kind of tokens for using it in command-line tools or APIs,
 you can easily do so with the special _fedcloud_ client. You can access the
 [FedCloud Check-in client](https://aai.egi.eu/fedcloud) and click on
 \'Authorise\' to log in with your Check-in credentials to obtain:
 
-- a client id (`fedcloud`)
+- a client ID (`fedcloud`)
 - a refresh token
 
 {{% alert title="Refresh tokens" color="danger" %}}
@@ -139,7 +139,7 @@ commands for performing actual operations in the provider:
 fedcloud openstack image list --site <NAME_OF_SITE> --vo <NAME_OF_VO>
 ```
 
-For 3rd party tools that can use token based authentication in OpenStack, use
+For third-party tools that can use token based authentication in OpenStack, use
 the following command:
 
 ```shell

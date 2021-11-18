@@ -9,7 +9,7 @@ description: >
 
 [OpenStack](https://openstack.org) providers in the EGI infrastructure
 offer services and features via OpenStack APIs, and the
-[command line interface](../cli) (CLI), both integrated with
+[command-line interface](../cli) (CLI), both integrated with
 [EGI Check-in](../../check-in) accounts.
 
 The extensive [OpenStack user documentation](https://docs.openstack.org/user/)

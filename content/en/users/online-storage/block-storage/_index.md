@@ -58,7 +58,7 @@ The block storage in the EGI Cloud is offered via
 
 Users can manage block storage using the
 [OpenStack Horizon dashboard](https://docs.openstack.org/horizon/latest/user/)
-of a provider, from a [command line interface](#manage-from-the-command-line)
+of a provider, from a [command-line interface](#manage-from-the-command-line)
 (CLI), or via the
 [OpenStack Block Storage API](https://docs.openstack.org/api-ref/block-storage/).
 
@@ -67,9 +67,9 @@ of a provider, from a [command line interface](#manage-from-the-command-line)
 for details about using the legacy OCCI interface to manage block storage.
 {{% /alert %}}
 
-## Manage from the command line
+## Manage from the command-line
 
-Multiple command line interfaces (CLIs) are available to manage block
+Multiple command-line interfaces (CLIs) are available to manage block
 storage:
 
 - The [OpenStack CLI](https://docs.openstack.org/python-openstackclient/latest)

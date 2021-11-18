@@ -446,7 +446,7 @@ In numbered lists:
 Successfully passing the checks is a firm requirement, but for the following
 cases it is possible to
 [add exceptions](https://github.com/DavidAnson/markdownlint#configuration) and
-bypass **some checks** in markdown files:
+bypass **some checks** in Markdown files:
 
 - When in-line HTML must be used (e.g. in tables, or when no other proper
   solution is available)
@@ -455,7 +455,7 @@ bypass **some checks** in markdown files:
 
 {{% alert title="Important" color="warning" %}} Exceptions should only be used
 when there are no other choices, and should be confined to the smallest possible
-block of markdown code. {{% /alert %}}
+block of Markdown code. {{% /alert %}}
 
 ### Dealing with in-line HTML tags
 

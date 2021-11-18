@@ -28,9 +28,9 @@ client machine:
 - `ansible` to configure the VMs and install kubernetes at the providers,
 - `terraform-inventory` to get the list of hosts to use from terraform.
 
-### Get the configuration repo
+### Get the configuration repository
 
-All the configuration of the notebooks is stored at a git repo available in
+All the configuration of the notebooks is stored at a git repository available in
 keybase. You\'ll need to be part of the `opslife` team in keybase to access.
 Start by cloning the repo:
 

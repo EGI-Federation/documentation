@@ -27,4 +27,4 @@ tutorial [here](https://imdocs.readthedocs.io/en/latest/dashboard.html#usage).
 Infrastructure Manager was presented in one of the
 [EGI Webinars](https://www.egi.eu/webinars/). See more details on the
 [indico page](https://indico.egi.eu/event/5495/) and the video recording
-available on [Youtube](https://youtu.be/Q9VsYjI1mD4).
+available on [YouTube](https://youtu.be/Q9VsYjI1mD4).
