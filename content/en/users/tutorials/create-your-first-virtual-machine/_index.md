@@ -33,7 +33,7 @@ Once your membership to a VO has been approved you are ready to create your firs
 Virtual Machine. There are several ways to achieve this. The simplest way is to
 use a web dashboard like [VMOps Dashboard](../../cloud-compute/vmops/) or
 [Infrastructure Manager](../../cloud-compute/im/). On the other hand, advanced users
-may prefer to use the [command line interface](../../getting-started/cli).
+may prefer to use the [command-line interface](../../getting-started/cli).
 
 To know more about the [Cloud Compute](https://www.egi.eu/services/cloud-compute/)
 Service in EGI please visit its [dedicated section](../../cloud-compute).

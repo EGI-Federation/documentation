@@ -58,7 +58,7 @@ Refer to
 for an extensive documentation on using SSH keys with GitHub.
 
 It's worth to mention that your ssh _public_ keys can easily be retrieved using
-an URL like `https://github.com/<your_username>.keys`.
+a URL like `https://github.com/<your_username>.keys`.
 
 In order to manage repositories over ssh, you will will have to clone them via
 SSH, not HTTPS.
@@ -69,7 +69,7 @@ switch it to SSH by following
 
 ## Starting with the GitHub CLI
 
-The GitHub Command Line Interface greatly helps with working with GitHub
+The GitHub command-line interface greatly helps with working with GitHub
 repositories from a terminal.
 
 It can be installed using the packages available on
@@ -122,7 +122,7 @@ upstream        git@github.com:EGI-Federation/documentation.git (push)
 
 ## Run the site locally
 
-The documentation website is built from the source files using
+The documentation site is built from the source files using
 [Hugo](https://gohugo.io/). The repository
 [README](https://github.com/EGI-Federation/documentation/blob/main/README.md)
 can be used as a reference for building instructions.
@@ -130,14 +130,14 @@ can be used as a reference for building instructions.
 ### Requirements
 
 - [Hugo](https://gohugo.io)
-- [NodeJS](https://nodejs.org/) and other [docsy](https://www.docsy.dev) theme
+- [Node.js](https://nodejs.org/) and other [docsy](https://www.docsy.dev) theme
   dependencies:
   - postcss-cli
   - autoprofixer
 
 ### Installing dependencies
 
-To install npm+nodejs please check the
+To install npm+Node.js please check the
 [official instructions](https://www.npmjs.com/get-npm).
 
 Everything has been tested with Node.js 12.
@@ -172,7 +172,7 @@ To launch the site locally, from the repository root:
 $ hugo serve -D
 ```
 
-The website is available locally at:
+The site is available locally at:
 [http://localhost:1313/](http://localhost:1313/).
 
 ## Branches and commits

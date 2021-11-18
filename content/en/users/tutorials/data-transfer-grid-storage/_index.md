@@ -16,7 +16,7 @@ WebFTS.
 
 As first step please make sure that you have installed the FTS client as
 described in [Data Transfer](../../data-transfer/), and in particular
-[Clients](../../data-transfer/clients/) for the command line FTS and to have
+[Clients](../../data-transfer/clients/) for the command-line FTS and to have
 your certificate installed in your browser to use
 [WebFTS](../../data-transfer/webfts/) browser based client.
 
@@ -178,7 +178,7 @@ you should make sure that it is safe to do so.
 ### Accessing the WebFTS interface
 
 The WebFTS is accessible at this [CERN FTS URL](https://webfts.cern.ch/).
-Similarly to what has been done from the command line interface you need to
+Similarly to what has been done from the command-line interface you need to
 provide our private key for delegation of the credential. To do that you use the
 following command:
 
@@ -214,7 +214,7 @@ right:
 
 ![WebFTS submit transfer](WebFTS-submit_transfer.png)
 
-Similarly to what can be done with the command line interface, there is the
+Similarly to what can be done with the command-line interface, there is the
 option to overwrite the destination if it already exists. To enable this option
 tick the `Overwrite Files` below the arrow for the transfer. On the top of the
 page is also shown a confirmation that the transfer has been submitted

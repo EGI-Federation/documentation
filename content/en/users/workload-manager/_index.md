@@ -97,8 +97,7 @@ There are several options to access the service:
 1. Members of a scientific community whose resources pool is already configured
    in the EGI Workload Manager instance can use the
    [EGI Workload Manager web portal](https://dirac.egi.eu/DIRAC/) to access the
-   service, or use
-   [DIRAC Client](#the-dirac-client-tool).
+   service, or use [DIRAC Client](#the-dirac-client-tool).
 1. Individual researchers who want to do some number crunching for a limited
    period of time, with a reasonable (not too high) number of CPUs > can use the
    catch-all VO resource pool (`vo.access.egi.eu`). Submit a request through the
@@ -116,11 +115,8 @@ There are several options to access the service:
 User can request access to the service submitting a service-order to use the EGI
 HTC service directly from the EOSC or the EGI Marketplace:
 
-EOSC Marketplace:
-[https://marketplace.eosc-portal.eu/services/egi-workload-manager](https://marketplace.eosc-portal.eu/services/egi-workload-manager)
-
-EGI Marketplace:
-[https://marketplace.egi.eu/compute/73-workload-manager.html](https://marketplace.egi.eu/compute/73-workload-manager.html)
+- [EOSC Marketplace: Workload Manager](https://marketplace.eosc-portal.eu/services/egi-workload-manager)
+- [EGI Marketplace: Workload Manager](https://marketplace.egi.eu/compute/73-workload-manager.html)
 
 Service orders are usually handled within 5 working days by the EGI User Support
 Team on shift.
@@ -140,7 +136,7 @@ certificate well in advance and in any case, before the tutorial starts.
 
 #### Install your credentials
 
-Your personal certificate is usually delivered to you via a web site and is
+Your personal certificate is usually delivered to you via a site and is
 automatically loaded in your browser. You need to export it from the browser and
 put it in the appropriate format for DIRAC to use. This is a one-time operation.
 Please follow the instructions in detailed in

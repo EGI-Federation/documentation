@@ -11,7 +11,7 @@ weight: 20
 
 ## Overview
 
-The FTS3 service offers a command line client to ease the interaction with the
+The FTS3 service offers a command-line client to ease the interaction with the
 service.
 
 ## Prerequisites
@@ -307,7 +307,7 @@ This command can be used to cancel a running job. It returns the final state of
 the cancelled job. Please, mind that if the job is already in a final state
 `(FINISHEDDIRTY`, `FINISHED`, `FAILED`), this command will return this state.
 You can additionally cancel only a subset appending a comma-separated list of
-file ids.
+file IDs.
 
 #### Usage
 

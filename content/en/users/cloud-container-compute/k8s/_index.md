@@ -162,7 +162,7 @@ exposing an applications via the network. The services can rely on Load
 Balancers supported at the underlying cloud provider, which is not always
 feasible on the EGI Cloud providers. As an alternative solution we use an
 [ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/)
-which allows us to expose services using rules based on host names.
+which allows us to expose services using rules based on hostnames.
 
 Helm allows you to quickly install the
 [nginx based ingress](https://github.com/kubernetes/ingress-nginx/). Add the

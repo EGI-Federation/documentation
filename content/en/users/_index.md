@@ -1,6 +1,6 @@
 ---
 title: "User Guides"
-linkTitle: "User Guides"
+linkTitle: "For Users"
 description: "Documentation for public EGI services"
 weight: 10
 type: "docs"
@@ -21,4 +21,4 @@ section for details on how to integrate providers into the EGI Federation.
 ## Request for information
 
 You can ask for more information about the public EGI services
-[on our website](https://www.egi.eu/more-information).
+[on our site](https://www.egi.eu/more-information).

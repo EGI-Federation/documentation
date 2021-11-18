@@ -1,13 +1,22 @@
 /* Fixes to the content blocks on the landing page */
 
+.section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.td-cover-block--height-min {
+  min-height: 400px;
+}
+
 .features {
   justify-content: center;
 }
 
 .feature {
   border-radius: 0.5rem;
-  max-width: 250px;
-  min-height: 350px;
+  max-width: 300px;
+  min-height: 250px;
   border-width: 3px;
   border-style: solid;
   border-color: #89b1e6;
@@ -18,7 +27,7 @@
 
 .feature .h1 {
   font-size: 6rem;
-  margin-top: 5rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   justify-content: center !important;
 }
@@ -33,14 +42,19 @@
 }
 
 .feature .h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bolder;
   color: #1d1d1d;
 }
 
 .feature p {
-  font-size: 12px;
+  font-size: 14px;
   color: #3d3d3d;
+}
+
+.td-cover-block p a {
+  color: rgb(118, 182, 235);
+  font-weight: 400;
 }
 
 /* Sizing calibration for the top nav bar */

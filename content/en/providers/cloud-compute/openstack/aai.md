@@ -41,7 +41,7 @@ Make sure that you fill in the following options:
   > - Enable _Allow calls to the Introspection Endpoint?_ in **Introspection**
   >   field
 
-Once done, you will get a client id and client secret. Save them for the
+Once done, you will get a client ID and client secret. Save them for the
 following steps
 
 ## Keystone setup
@@ -102,7 +102,7 @@ For nginx
 
 Managing IGTF CAs and CRLs
 
-: IGTF CAs can be obtained from UMD, you can find repo files for your
+: IGTF CAs can be obtained from UMD, you can find repository files for your
   distribution at [EGI CA repository](https://repository.egi.eu/sw/production/cas/1/current/)
 
   IGTF CAs and CRLs can be bundled using the examples command
@@ -124,7 +124,7 @@ Managing IGTF CAs and CRLs
 ## Apache Configuration
 
 Include this configuration on the Apache config for the virtual host of your
-Keystone service, using the client id and secret obtained above:
+Keystone service, using the client ID and secret obtained above:
 
 ```ApacheConf
 OIDCResponseType "code"
@@ -215,7 +215,7 @@ trusted_dashboard = https://<your horizon>/dashboard/auth/websso/
 
 Finally copy the default template for managing the tokens in horizon to
 `/etc/keystone/sso_callback_template.html`. This template can be found in
-keystone git repo at
+keystone git repository at
 `https://github.com/openstack/keystone/blob/master/etc/sso_callback_template.html`
 
 <!-- markdownlint-disable line-length -->
@@ -269,7 +269,7 @@ openstack role add member --group ops --project ops
 
 Define a mapping of users from EGI Check-in to the group just created and
 restrict with the `OIDC-eduperson_entitlement` the VOs you want to support for
-that group. Substitute the group id and the allowed entitlements for the
+that group. Substitute the group ID and the allowed entitlements for the
 adequate values for your deployment:
 
 ```shell
