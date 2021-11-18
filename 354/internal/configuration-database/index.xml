@@ -59,7 +59,7 @@
 &lt;/tr>
 &lt;tr>
 &lt;td>Privacy Policy&lt;/td>
-&lt;td>&lt;a href="https://goc.egi.eu/privacy.html">https://goc.egi.eu/privacy.html&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://goc.egi.eu/privacy.html">Privacy policy&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -70,7 +70,7 @@ Database (GOCDB), users can either:&lt;/p>
 &lt;li>&lt;a href="#using-institutional-account-via-egi-check-in">Use EGI Check-in&lt;/a> with an
 institutional account, or&lt;/li>
 &lt;li>&lt;a href="#using-an-x509-digital-certificate">Use an X.509 digital certificate&lt;/a>
-installed in the Internet browser, or the local machine&amp;rsquo;s certificate store.&lt;/li>
+installed in the internet browser, or the local machine&amp;rsquo;s certificate store.&lt;/li>
 &lt;/ul>
 &lt;p>Users can access the system as soon as they are authenticated. However, they
 will only be able to update information based on their roles. More information
@@ -254,13 +254,13 @@ separated from the SRM one;&lt;/li>
 (containing the used port and without the VO folder);&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>verify that the webdav url (for example:
+&lt;li>verify that the webdav URL (for example:
 &lt;code>https://darkstorm.cnaf.infn.it:8443/webdav&lt;/code>) is properly accessible.&lt;/li>
 &lt;/ul>
 &lt;h3 id="gridftp">GridFTP&lt;/h3>
 &lt;p>In order to properly monitor your gridftp endpoint for ops VO&lt;/p>
 &lt;ul>
-&lt;li>register a new service endpoint, associating the storage element host name to
+&lt;li>register a new service endpoint, associating the storage element hostname to
 the service type &lt;code>globus-GRIDFTP&lt;/code>, with the &amp;ldquo;production&amp;rdquo; flag disabled;&lt;/li>
 &lt;li>in the “Extension Properties” section of the service endpoint page, fill in
 the following fields:
@@ -462,7 +462,7 @@ asterisk are mandatory):&lt;/p>
 service)&lt;/li>
 &lt;li>Service Type * (select the appropriate service type)&lt;/li>
 &lt;li>Service URL (Alphanumeric and $-_.+!*'(),:)&lt;/li>
-&lt;li>Host name * (valid FQDN format)&lt;/li>
+&lt;li>Hostname * (valid FQDN format)&lt;/li>
 &lt;li>Host IP a.b.c.d&lt;/li>
 &lt;li>Host IPv6 (0000:0000:0000:0000:0000:0000:0000:0000[/int]) (optional [/int]
 range)&lt;/li>
@@ -473,7 +473,7 @@ range)&lt;/li>
 &lt;li>Is it a beta service (formerly PPS service)? Y/N&lt;/li>
 &lt;li>Is this service in production? Y/N&lt;/li>
 &lt;li>Is this service monitored? Y/N&lt;/li>
-&lt;li>Contact E-Mail * (valid email format)&lt;/li>
+&lt;li>Contact email * (valid email format)&lt;/li>
 &lt;/ul>
 &lt;h2 id="scope-tags">Scope Tags&lt;/h2>
 &lt;ul>

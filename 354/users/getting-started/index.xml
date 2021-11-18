@@ -187,13 +187,13 @@ below:&lt;/p>
 &lt;td>MachineName&lt;/td>
 &lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
 &lt;td>No&lt;/td>
-&lt;td>VM Id - the site name for the VM&lt;/td>
+&lt;td>VM ID - the site name for the VM&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>LocalUserId&lt;/td>
 &lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
 &lt;td>&lt;/td>
-&lt;td>Local user name&lt;/td>
+&lt;td>Local username&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>LocalGroupId&lt;/td>
@@ -645,7 +645,7 @@ for minutes and upcoming events.
 &lt;/div></description></item><item><title>Users: Using OpenStack Providers</title><link>/users/getting-started/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/openstack/</guid><description>
 &lt;p>&lt;a href="https://openstack.org">OpenStack&lt;/a> providers in the EGI infrastructure
 offer services and features via OpenStack APIs, and the
-&lt;a href="../cli">command line interface&lt;/a> (CLI), both integrated with
+&lt;a href="../cli">command-line interface&lt;/a> (CLI), both integrated with
 &lt;a href="../../check-in">EGI Check-in&lt;/a> accounts.&lt;/p>
 &lt;p>The extensive &lt;a href="https://docs.openstack.org/user/">OpenStack user documentation&lt;/a>
 includes details on every OpenStack project, but most providers offer:&lt;/p>
@@ -688,9 +688,9 @@ including resources not based on OpenStack deployments, check out the
 &lt;!--
 // jscpd:ignore-start
 -->
-&lt;h2 id="command-line-tools">Command line tools&lt;/h2>
+&lt;h2 id="command-line-tools">Command-line tools&lt;/h2>
 &lt;p>The various &lt;a href="https://www.egi.eu/services/">public EGI services&lt;/a> can be managed
-and used/accessed with a wide variety of command line interface (CLI) tools.
+and used/accessed with a wide variety of command-line interface (CLI) tools.
 The documentation of each service contains a summary of the CLIs that can be
 used wih that service, together with recommendations on which one to use in
 what context.&lt;/p>
@@ -701,7 +701,7 @@ with the &lt;a href="../openstack">OpenStack services&lt;/a> in the EGI infrastr
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 The FedCloud client is the recommended
-command line interface to use with most EGI services.
+command-line interface to use with most EGI services.
 &lt;/div>
 &lt;p>FedCloud client has the following modules (features):&lt;/p>
 &lt;ul>
@@ -848,7 +848,7 @@ then run the following commands:&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;p>Once you have a shell running in the container with the FedCloud client, usage
-is the same as from &lt;a href="#using-from-the-command-line">the command line&lt;/a>.&lt;/p>
+is the same as from &lt;a href="#using-from-the-command-line">the command-line&lt;/a>.&lt;/p>
 &lt;h3 id="using-from-egi-notebooks">Using from EGI Notebooks&lt;/h3>
 &lt;p>&lt;a href="../../notebooks/">EGI Notebooks&lt;/a> are integrated with access tokens so it
 simplifies using the FedCloud client. First make sure that you follow the
@@ -858,7 +858,7 @@ you need to run inside a terminal in JupyterLab:&lt;/p>
 fedcloud token check
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Please follow instructions &lt;a href="#using-from-the-command-line">below&lt;/a> to learn
 how to use the &lt;code>fedcloud&lt;/code> command.&lt;/p>
-&lt;h3 id="using-from-the-command-line">Using from the command line&lt;/h3>
+&lt;h3 id="using-from-the-command-line">Using from the command-line&lt;/h3>
 &lt;p>The FedCloud client has these subcommands:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>fedcloud token&lt;/strong> for checking access tokens
@@ -946,7 +946,7 @@ sites in the EGI infrastructure, use &lt;code>ALL_SITES&lt;/code> for the &lt;co
 &lt;thead>
 &lt;tr>
 &lt;th>Environment variable&lt;/th>
-&lt;th>Command line option&lt;/th>
+&lt;th>Command-line option&lt;/th>
 &lt;th>Default value&lt;/th>
 &lt;/tr>
 &lt;/thead>

@@ -49,7 +49,7 @@ release certificates.&lt;/p>
 &lt;a href="https://www.eugridpma.org/">EUGridPMA&lt;/a> distribution. If your community VO is
 enabled on that site, your certificate will be accepted by that site since all
 certificates are recognized at site level.&lt;/p>
-&lt;p>Usually, a certificate can be installed by command line tools, but they can also
+&lt;p>Usually, a certificate can be installed by command-line tools, but they can also
 be stored in the web browser to access EGI web tools and services.&lt;/p>
 &lt;h3 id="get-a-certificate">Get a Certificate&lt;/h3>
 &lt;p>The &lt;a href="http://www.eugridpma.org/members/worldmap/">list of EGI recognised CAs&lt;/a>
@@ -61,7 +61,7 @@ Certificate Service CA.
 a certificate from a regular &lt;a href="https://www.igtf.net/pmamap">IGTF CA&lt;/a>. The request
 is normally generated using either a web-based interface or console commands.
 Details of which type of request a particular CA accepts can be found on each
-CA&amp;rsquo;s website.&lt;/p>
+CA&amp;rsquo;s site.&lt;/p>
 &lt;p>For a web-based certificate request, a form must usually be filled in with
 information such as the name of the user, home institute, etc. After submission,
 a pair of private and public keys are generated, together with a request for the
@@ -73,7 +73,7 @@ is because the CA has to sign the user certificate using its private key, and
 the user&amp;rsquo;s browser must be able to validate the signature.&lt;/p>
 &lt;p>For some CAs, the certificate requests are generated using a command line
 interface. The details of the exact command and the requirements of each CA will
-vary and can be found on the CA&amp;rsquo;s website.&lt;/p>
+vary and can be found on the CA&amp;rsquo;s site.&lt;/p>
 &lt;p>Once received the request, the CA will have to confirm your authenticity through
 your certificate. This usually involves a physical meeting or a phone call with
 a Registration Authority (RA). A RA is delegated by the CA to verify the
@@ -112,7 +112,7 @@ terminal, enter the following command:&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>File Name&lt;/th>
+&lt;th>Filename&lt;/th>
 &lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
@@ -184,7 +184,7 @@ protected. The details vary depending on the browser, but password protection
 should be used if available; this may not be the default (it is not with
 Internet Explorer). The most secure mode is one in which every use of the
 private key needs the password to be entered, but this can cause problems as
-some web sites ask for the certificate many times. Reaching a compromise between
+some sites ask for the certificate many times. Reaching a compromise between
 security and convenience is vital here, so that neither come too short.&lt;/p>
 &lt;p>It is important not to lose the private key, as this implies loss of all access
 to the services, and registration will have to be started again from scratch.
@@ -233,7 +233,7 @@ existing VOs&lt;/p>
 &lt;li>
 &lt;p>If there are any community VOs matching your requirements (with &lt;em>Registry
 System&lt;/em> is &lt;em>VOMS&lt;/em>), then click &lt;em>Action&lt;/em>-&amp;gt; &lt;em>Details&lt;/em> to look at the VO
-information. In the &lt;em>VO Id Card&lt;/em> page, click the link for &lt;em>Enrollment Url&lt;/em>,
+information. In the &lt;em>VO ID Card&lt;/em> page, click the link for &lt;em>Enrollment URL&lt;/em>,
 it will take you to the VO VOMS page. &lt;strong>You should have already discussed
 with the EGI support team, they would help you to contact the VO managers and
 get approval for your access.&lt;/strong> &lt;img src="vo_registration.png" alt="Register to a VO">&lt;/p>

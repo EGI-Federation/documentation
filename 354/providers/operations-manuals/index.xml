@@ -62,7 +62,7 @@ this must be explicitly included in the configuration, e.g. with something like&
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">BDII_REGIONS&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;CE SE BDII&amp;#34;&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 &lt;span style="color:#000">BDII_BDII_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;ldap://&lt;/span>&lt;span style="color:#000">$SITE_BDII_HOST&lt;/span>&lt;span style="color:#4e9a06">:2170/mds-vo-name=resource,o=grid&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the past it was common for the site BDII to be co-located with the CE so it
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the past it was common for the site BDII to be colocated with the CE so it
 did not need to be listed explicitly, but if installed on a dedicated node
 (which is now the recommended deployment) it must be included.&lt;/p>
 &lt;p>To check that all expected services are published the following command can be
@@ -249,7 +249,7 @@ of these MUST remain.&lt;/p>
 &lt;tr>
 &lt;td>GlueSiteName&lt;/td>
 &lt;td>RAL-LCG2&lt;/td>
-&lt;td>Free Text, No White Space&lt;/td>
+&lt;td>Free text, no whitespace&lt;/td>
 &lt;td>Same as GOCDB name if in GOCDB, your choice.&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -1843,7 +1843,7 @@ MySQL setting is referred to the current MySQL version (5.0.77 in this moment)&l
 &lt;h2 id="settings-on-the-master-server">Settings on the MASTER SERVER&lt;/h2>
 &lt;p>In order to allow the replica server to read the master database, you have to
 create an user with which the slave will connect to the master. Suppose the
-replica host name is &lt;code>vomsrep.cnaf.infn.it&lt;/code>, the user is &lt;code>bonjovi&lt;/code> and the
+replica hostname is &lt;code>vomsrep.cnaf.infn.it&lt;/code>, the user is &lt;code>bonjovi&lt;/code> and the
 password is &lt;code>always&lt;/code>. What you have to launch on the master server is:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ mysql -p -e &lt;span style="color:#4e9a06">&amp;#34;grant super, reload, replication slave, replication client \
 &lt;/span>&lt;span style="color:#4e9a06"> on *.* to bonjovi@&amp;#39;vomsrep.cnaf.infn.it&amp;#39; identified by &amp;#39;always&amp;#39;&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">;&lt;/span>
@@ -2536,7 +2536,7 @@ This command output will return a SURL that you can use latter for other tests.&
 &lt;code>srm://srm01.ncg.ingrid.pt/ibergrid/iber/generated/2011-02-01/file4034a935-8d7a-48f4-914f-16f2634d4802&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ lcg-cr -v --vo &amp;lt;VO&amp;gt;-d&amp;lt;Your SE&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -l lfn:/grid/&amp;lt;VO&amp;gt;/test.txt file:&amp;lt;/path/to/your/local/file&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>3) Create a new replica in other SE (to check the 3rd party transfer between 2
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>3) Create a new replica in other SE (to check the third-party transfer between 2
 SEs)&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ lcg-rep -v --vo &amp;lt;VO&amp;gt;-d&amp;lt;Other SE&amp;gt; &amp;lt;SURL&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>4) List Replicas&lt;/p>
@@ -2668,7 +2668,7 @@ user associated with the certificate.&lt;/p>
 worth to enable the display of all sites by clicking on the Grid Browser the
 &amp;ldquo;Show&amp;rdquo; button and selecting from the list &amp;ldquo;All services&amp;rdquo;. If you see a red
 cross on the service, click on it and see the details of the error message in
-the URC and the error on the server side.&lt;/li>
+the URC and the error on the server-side.&lt;/li>
 &lt;li>If all services are available, you can send the job. At the same time it is
 recommended to monitor the logs Unicore/X and TSI for errors.&lt;/li>
 &lt;/ol>

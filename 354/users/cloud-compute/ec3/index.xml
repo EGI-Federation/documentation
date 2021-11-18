@@ -40,9 +40,9 @@ and the working nodes.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>Cluster’s size and name&lt;/strong>: the name of the cluster and the maximum number
-of nodes of the cluster, without including the front-end. This value
+of nodes of the cluster, without including the frontend. This value
 indicates the maximum number of working nodes that the cluster can scale.
-Initially, the cluster is created with the front-end and only one working
+Initially, the cluster is created with the frontend and only one working
 node: the other working nodes are powered on on-demand.&lt;/p>
 &lt;p>&lt;img src="ec3-size.png" alt="Select the maximum number of nodes">&lt;/p>
 &lt;/li>
@@ -57,12 +57,12 @@ The configuration of the cluster may
 take some time. Please wait for its completion before starting to use the
 cluster!
 &lt;/div>
-&lt;p>When the front-end node of the cluster has been successfully deployed, the user
+&lt;p>When the frontend node of the cluster has been successfully deployed, the user
 will be notified with the credentials to access via SSH.&lt;/p>
 &lt;p>The cluster details are available by clicking on the &lt;strong>&amp;ldquo;Manage your deployed
 clusters&amp;rdquo;&lt;/strong> link on the front page.&lt;/p>
 &lt;h2 id="accessing-the-ec3-cluster">Accessing the EC3 cluster&lt;/h2>
-&lt;p>To access the front-end of the elastic cluster:&lt;/p>
+&lt;p>To access the frontend of the elastic cluster:&lt;/p>
 &lt;ol>
 &lt;li>Download the SSH private key provided by the EC3 portal;&lt;/li>
 &lt;li>Change its permissions to 600;&lt;/li>
@@ -72,7 +72,7 @@ authentication.&lt;/li>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>$ ssh -i key.pem cloudadm@&amp;lt;CLUSTER_PUBLIC_IP&amp;gt;
 Last login: Mon Nov &lt;span style="color:#0000cf;font-weight:bold">18&lt;/span> 11:37:29 &lt;span style="color:#0000cf;font-weight:bold">2019&lt;/span> from torito.i3m.upv.es
 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>cloudadm@server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>$
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Both the front-end and the working node are configured by Ansible. This process
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Both the frontend and the working node are configured by Ansible. This process
 usually takes some time. User can monitor the status of the cluster
 configuration using the &lt;code>is_cluster_ready&lt;/code> command-line tool:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># is_cluster_ready&lt;/span>
@@ -219,7 +219,7 @@ image, which is specified with the
 &lt;code>disk.0.image.url = 'ost://fedcloud-osservices.egi.cesga.es/8c4e2568-67a2-441a-b696-ac1b7c60de9c'&lt;/code>
 line: &lt;code>ost&lt;/code> refers to OpenStack, &lt;code>fedcloud-osservices.egi.cesga.es&lt;/code> is the
 hostname of the URL obtained above with &lt;code>fedcloud endpoint list&lt;/code> and
-&lt;code>8c4e2568-67a2-441a-b696-ac1b7c60de9c&lt;/code> is the id of the image in OpenStack. The
+&lt;code>8c4e2568-67a2-441a-b696-ac1b7c60de9c&lt;/code> is the ID of the image in OpenStack. The
 size of the VM is also specified.&lt;/p>
 &lt;h2 id="launch-cluster">Launch cluster&lt;/h2>
 &lt;p>We are ready now to deploy the cluster with ec3 (this can take several minutes):&lt;/p>

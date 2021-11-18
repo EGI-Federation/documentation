@@ -19,7 +19,7 @@ access to the &lt;em>vo.access.egi.eu&lt;/em> VO with your EGI account by visiti
 Virtual Machine. There are several ways to achieve this. The simplest way is to
 use a web dashboard like &lt;a href="../../cloud-compute/vmops/">VMOps Dashboard&lt;/a> or
 &lt;a href="../../cloud-compute/im/">Infrastructure Manager&lt;/a>. On the other hand, advanced users
-may prefer to use the &lt;a href="../../getting-started/cli">command line interface&lt;/a>.&lt;/p>
+may prefer to use the &lt;a href="../../getting-started/cli">command-line interface&lt;/a>.&lt;/p>
 &lt;p>To know more about the &lt;a href="https://www.egi.eu/services/cloud-compute/">Cloud Compute&lt;/a>
 Service in EGI please visit its &lt;a href="../../cloud-compute">dedicated section&lt;/a>.&lt;/p>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
@@ -30,7 +30,7 @@ WebFTS.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>As first step please make sure that you have installed the FTS client as
 described in &lt;a href="../../data-transfer/">Data Transfer&lt;/a>, and in particular
-&lt;a href="../../data-transfer/clients/">Clients&lt;/a> for the command line FTS and to have
+&lt;a href="../../data-transfer/clients/">Clients&lt;/a> for the command-line FTS and to have
 your certificate installed in your browser to use
 &lt;a href="../../data-transfer/webfts/">WebFTS&lt;/a> browser based client.&lt;/p>
 &lt;p>To access services and resources in the
@@ -140,7 +140,7 @@ you should make sure that it is safe to do so.&lt;/p>
 &lt;h2 id="using-the-webfts-data-transfer-interface">Using the WebFTS Data Transfer interface&lt;/h2>
 &lt;h3 id="accessing-the-webfts-interface">Accessing the WebFTS interface&lt;/h3>
 &lt;p>The WebFTS is accessible at this &lt;a href="https://webfts.cern.ch/">CERN FTS URL&lt;/a>.
-Similarly to what has been done from the command line interface you need to
+Similarly to what has been done from the command-line interface you need to
 provide our private key for delegation of the credential. To do that you use the
 following command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openssl pkcs12 -in yourCert.p12 -nocerts -nodes &lt;span style="color:#000;font-weight:bold">|&lt;/span> openssl rsa
@@ -165,7 +165,7 @@ clicking the arrow in the middle directing to the right you are instructing the
 system to copy the file from the storage and path on the left to the one on the
 right:&lt;/p>
 &lt;p>&lt;img src="WebFTS-submit_transfer.png" alt="WebFTS submit transfer">&lt;/p>
-&lt;p>Similarly to what can be done with the command line interface, there is the
+&lt;p>Similarly to what can be done with the command-line interface, there is the
 option to overwrite the destination if it already exists. To enable this option
 tick the &lt;code>Overwrite Files&lt;/code> below the arrow for the transfer. On the top of the
 page is also shown a confirmation that the transfer has been submitted
