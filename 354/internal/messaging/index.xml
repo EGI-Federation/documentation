@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – ARGO Messaging Service</title><link>/internal/messaging/</link><description>Recent content in ARGO Messaging Service on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/messaging/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Service information</title><link>/internal/messaging/service-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/messaging/service-information/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Messaging service</title><link>/internal/messaging/</link><description>Recent content in Messaging service on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/messaging/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Service information</title><link>/internal/messaging/service-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/messaging/service-information/</guid><description>
 &lt;h2 id="identity-card">Identity card&lt;/h2>
 &lt;!-- markdownlint-disable no-inline-html no-bare-urls -->
 &lt;table>
@@ -11,7 +11,7 @@
 &lt;tbody>
 &lt;tr>
 &lt;td>Name&lt;/td>
-&lt;td>ARGO Messaging Service (AMS)&lt;/td>
+&lt;td>Messaging service&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Description&lt;/td>
