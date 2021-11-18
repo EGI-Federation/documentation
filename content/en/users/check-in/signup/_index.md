@@ -110,4 +110,4 @@ Information about identites linked to your account. Check the
 
 Once your Check-in account is ready you can check
 [how to link it with different identities](../linking) or
-[how to join an existing Virtual Organisation (VOs)](../joining-virtual-organisation).
+[how to join an existing Virtual Organisation (VO)](../joining-virtual-organisation).
