@@ -74,7 +74,7 @@ bold, form lists, etc.
 
 If you want to provide structure for your document, you can also use markdown
 headings. Markdown headings consist of 1 to 6 hash `#` signs followed by a space
-and the title of your section. The markdown heading will be converted to a
+and the title of your section. The Markdown heading will be converted to a
 clickable link for a section of the notebook. It is also used as a hint when
 exporting to other document formats, like PDF.
 

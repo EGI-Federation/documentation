@@ -51,7 +51,7 @@ must set:
 
 cASO will write records to `/var/spool/apel` from where ssmsend will take them.
 
-SSM configuration is available at `/etc/apel`. Defaults should be ok for most
+SSM configuration is available at `/etc/apel`. Defaults should be OK for most
 cases. The cron file uses `/etc/grid-security` for the CAs and the host
 certificate and private keys (`/etc/grid-security/hostcert.pem` and
 `/etc/grid-security/hostkey.pem`).

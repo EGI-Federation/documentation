@@ -103,13 +103,13 @@ Access **requires** acceptance of
 
 Users of the service are asked to provide appropriate acknowledgement of the use
 in scientific publications. The following acknowledgement text can be used for
-this purpose:
+this purpose (you can adapt to match the exact providers in your case):
 
-**This work used the EGI Applications on Demand service, which is co-funded by
-the EOSC-hub project (grant number 777536). The HNSciCloud project (grant
-number 687614) is also sponsoring the service, allowing users to access the
-HNSciCloud services pilot for limited scale usage using the voucher schemes
-provided by the Exoscale contractor.** {{% /alert %}}
+**This work used advanced computing resources from the 100%IT, CESGA, CLOUDIFIN,
+CYFRONET-CLOUD, GSI-LCG2, IFCA-LCG2, IN2P3-IRES, INFN-CATANIA-STACK,
+INFN-PADOVA-STACK, SCAI, TR-FC1-ULAKBIM, UA-BITP and UNIV-LILLE resource
+centres of the EGI federation. The services are co-funded by the EGI-ACE project
+(grant number 101017567).** {{% /alert %}}
 
 When requesting access to AoD users are guided through a lightweight
 registration process. Members of the EGI support team will perform a lightweight
@@ -118,7 +118,7 @@ the resources.
 
 ### Service grant
 
-Once granted access, each user will have a grant with a pre-defined quota of
+Once granted access, each user will have a grant with a predefined quota of
 resources, which can be used to run the application of choice. This grant
 includes:
 

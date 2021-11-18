@@ -32,7 +32,7 @@ for the given VO.
 Expand your `mapping.json` with the VO membership to the created group
 (substitute `group_id` and `entitlement` as appropriate). The expected mappings
 for the VOs are listed in
-[`vo-mappings.yaml` of fedcloud-catchall-operations repo](https://github.com/EGI-Federation/fedcloud-catchall-operations/blob/main/vo-mappings.yaml):
+[`vo-mappings.yaml` of fedcloud-catchall-operations repository](https://github.com/EGI-Federation/fedcloud-catchall-operations/blob/main/vo-mappings.yaml):
 
 ```json
 [
@@ -73,7 +73,7 @@ for the VOs are listed in
 And update the mapping in your Keystone IdP:
 
 ```shell
-$ openstack mapping set --rules mapping$.json egi-mapping
+$ openstack mapping set --rules mapping.json egi-mapping
 ```
 
 ## Accounting
@@ -106,7 +106,7 @@ openstack role add member --user <your caso user> --project <your new vo project
 ## Information system
 
 Add the mapping to your site configuration with a new Pull Request to the
-[fedcloud-catchall-operations repo](https://github.com/EGI-Federation/fedcloud-catchall-operations)
+[fedcloud-catchall-operations repository](https://github.com/EGI-Federation/fedcloud-catchall-operations)
 
 ```yaml
 ---

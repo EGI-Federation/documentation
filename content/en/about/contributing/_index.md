@@ -129,4 +129,4 @@ and vice-versa. If you have any questions or if you would like to get involved
 in the wider EGI community you can check out:
 
 - [EGI Community Forum](https://community.egi.eu/)
-- [EGI website](https://www.egi.eu)
+- [EGI site](https://www.egi.eu)

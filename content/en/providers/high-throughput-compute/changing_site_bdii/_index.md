@@ -22,7 +22,7 @@ description: "Changing the Site BDII"
    Service Endpoint:
 
    - select `Site BDII` in `Service Type` field
-   - fill in at least the host name
+   - fill in at least the hostname
    - select `Y` for production and monitoring, `N` for beta service field
 
 1. Properly modify the `GIIS URL` field with the new `SITE-BDII ldap URL`
