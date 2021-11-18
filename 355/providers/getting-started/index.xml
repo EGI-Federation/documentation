@@ -25,7 +25,7 @@ is the legal organisation that is responsible of establishing, managing and of
 operating directly or indirectly the operational services to an agreed level of
 quality needed by the Resource Centres and the user community. It holds the
 responsibility of integrating them in EGI to enable uniform resource access and
-sharing for the benefit of their consuming end-users. Examples of a Resource
+sharing for the benefit of their consuming end users. Examples of a Resource
 infrastructure Provider are the
 &lt;a href="https://ims.egi.eu/display/EGIG/European+Intergovernmental+Research+Organisation">European Intergovernmental Research Organisations (EIRO)&lt;/a>
 and the &lt;a href="https://ims.egi.eu/display/EGIG/NGI">NGIs&lt;/a>.&lt;/p>
@@ -160,7 +160,7 @@ coordinating the operations of the infrastructure across the project.&lt;/p>
 &lt;p>&lt;a href="https://csirt.egi.eu">EGI-CSIRT&lt;/a> is the official security coordination team and
 contact point at project level.&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://csirt.egi.eu">EGI-CSIRT website&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://csirt.egi.eu">EGI-CSIRT site&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:RFC_2350">EGI-CSIRT profile according to RFC-2350&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf">EGI-CSIRT Terms of References&lt;/a>&lt;/li>
 &lt;/ul>

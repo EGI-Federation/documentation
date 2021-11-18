@@ -41,7 +41,7 @@ field&lt;/li>
 &lt;/blockquote>
 &lt;/li>
 &lt;/ul>
-&lt;p>Once done, you will get a client id and client secret. Save them for the
+&lt;p>Once done, you will get a client ID and client secret. Save them for the
 following steps&lt;/p>
 &lt;h2 id="keystone-setup">Keystone setup&lt;/h2>
 &lt;h3 id="pre-requisites">Pre-requisites&lt;/h3>
@@ -93,7 +93,7 @@ won't be presented to the EGI monitoring:&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/dd>
 &lt;dt>Managing IGTF CAs and CRLs&lt;/dt>
 &lt;dd>
-&lt;p>IGTF CAs can be obtained from UMD, you can find repo files for your
+&lt;p>IGTF CAs can be obtained from UMD, you can find repository files for your
 distribution at &lt;a href="https://repository.egi.eu/sw/production/cas/1/current/">EGI CA repository&lt;/a>&lt;/p>
 &lt;p>IGTF CAs and CRLs can be bundled using the examples command
 hereafter.&lt;/p>
@@ -109,7 +109,7 @@ perl -pe &lt;span style="color:#4e9a06">&amp;#39;s/----------/-----\n-----/&amp;
 &lt;/div>
 &lt;h2 id="apache-configuration">Apache Configuration&lt;/h2>
 &lt;p>Include this configuration on the Apache config for the virtual host of your
-Keystone service, using the client id and secret obtained above:&lt;/p>
+Keystone service, using the client ID and secret obtained above:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87">OIDCResponseType&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;code&amp;#34;&lt;/span>
 &lt;span style="color:#204a87">OIDCClaimPrefix&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;OIDC-&amp;#34;&lt;/span>
 &lt;span style="color:#204a87">OIDCClaimDelimiter&lt;/span> ;
@@ -168,7 +168,7 @@ the list of authentication methods:&lt;/p>
 &lt;span style="color:#c4a000">trusted_dashboard&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">https://&amp;lt;your horizon&amp;gt;/dashboard/auth/websso/&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally copy the default template for managing the tokens in horizon to
 &lt;code>/etc/keystone/sso_callback_template.html&lt;/code>. This template can be found in
-keystone git repo at
+keystone git repository at
 &lt;code>https://github.com/openstack/keystone/blob/master/etc/sso_callback_template.html&lt;/code>&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -L https://raw.githubusercontent.com/openstack/keystone/master/etc/sso_callback_template.html &lt;span style="color:#4e9a06">\
@@ -204,7 +204,7 @@ have one group per VO you want to support.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack role add member --group ops --project ops
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Define a mapping of users from EGI Check-in to the group just created and
 restrict with the &lt;code>OIDC-eduperson_entitlement&lt;/code> the VOs you want to support for
-that group. Substitute the group id and the allowed entitlements for the
+that group. Substitute the group ID and the allowed entitlements for the
 adequate values for your deployment:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cat mapping.egi.json
 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
@@ -554,7 +554,7 @@ following this format: :&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ul>
 &lt;p>cASO will write records to &lt;code>/var/spool/apel&lt;/code> from where ssmsend will take them.&lt;/p>
-&lt;p>SSM configuration is available at &lt;code>/etc/apel&lt;/code>. Defaults should be ok for most
+&lt;p>SSM configuration is available at &lt;code>/etc/apel&lt;/code>. Defaults should be OK for most
 cases. The cron file uses &lt;code>/etc/grid-security&lt;/code> for the CAs and the host
 certificate and private keys (&lt;code>/etc/grid-security/hostcert.pem&lt;/code> and
 &lt;code>/etc/grid-security/hostkey.pem&lt;/code>).&lt;/p>
@@ -577,7 +577,7 @@ is used instead for transferring information
 &lt;p>You can either run the service by yourself or rely on central operations of the
 cloud-info-provider. In both cases you must register your host DN in the GOCDB
 entry for the &lt;code>org.openstack.nova&lt;/code>.&lt;/p>
-&lt;h3 id="catch-all-operations">Catch-all operations&lt;/h3>
+&lt;h2 id="catch-all-operations">Catch-all operations&lt;/h2>
 &lt;p>EGI can manage the operation of the &lt;code>cloud-info-provider&lt;/code> for the site so you
 don&amp;rsquo;t need to do it. In order for your site to be included in the centrally
 operated &lt;code>cloud-info-provider&lt;/code>, you need to create a Pull Request at the
@@ -604,7 +604,7 @@ page&lt;/a>.&lt;/p>
 described, see the &lt;a href="https://github.com/EGI-Federation/cloud-info-provider/blob/master/etc/sample.openstack.yaml">sample OpenStack
 configuration&lt;/a>
 for the required information. The authentication parameters for your local
-OpenStack and the AMS are passed as command line options:&lt;/p>
+OpenStack and the AMS are passed as command-line options:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">cloud-info-provider-service --yaml-file &amp;lt;your site description.yaml&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --middleware openstack &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --os-auth-url &amp;lt;your keystone URL&amp;gt; &lt;span style="color:#4e9a06">\
@@ -616,11 +616,11 @@ OpenStack and the AMS are passed as command line options:&lt;/p>
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --ams-topic &amp;lt;your endpoint topic&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>For authentication, you should be able to use any authentication method
 supported by &lt;a href="https://opendev.org/openstack/keystoneauth">keystoneauth&lt;/a>, for
-user name and password use: &lt;code>--os-password&lt;/code> and &lt;code>--os-username&lt;/code>. Check the
+username and password use: &lt;code>--os-password&lt;/code> and &lt;code>--os-username&lt;/code>. Check the
 complete list of options with &lt;code>cloud-info-provider-service --help&lt;/code>.&lt;/p>
 &lt;p>The AMS topic has the format: &lt;code>SITE_&amp;lt;SITE_NAME&amp;gt;_ENDPOINT_&amp;lt;GOCDB_ID&amp;gt;&lt;/code>, where
 &lt;code>&amp;lt;SITE_NAME&amp;gt;&lt;/code> is the name of the site as declared in GOCDB and &lt;code>&amp;lt;GOCDB_ID&amp;gt;&lt;/code> is
-the id of the endpoint in GOCDB. For example, &lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Service&amp;amp;id=7513">this
+the ID of the endpoint in GOCDB. For example, &lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Service&amp;amp;id=7513">this
 endpoint&lt;/a> would
 have a topic like: &lt;code>SITE_IFCA-LCG2_ENDPOINT_7513G0&lt;/code>.&lt;/p>
 &lt;p>You should periodically run the cloud-info-provider (e.g. with a cron
@@ -682,7 +682,7 @@ contain a json document that follows this format:&lt;/p>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;domain&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;domain name for project in OpenStack&amp;gt;&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that you can either specify a project id or the project name with the
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that you can either specify a project ID or the project name with the
 domain name in the mapping. Add as many VOs as you are supporting.&lt;/p>
 &lt;h4 id="running-the-services">Running the services&lt;/h4>
 &lt;p>cloudkeeper-os should run permanently, there is a &lt;code>cloudkeeper-os.service&lt;/code> for
@@ -806,7 +806,7 @@ below for completeness:&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>Adding metadata to flavors has no effects on site operations. End-users can see
+&lt;p>Adding metadata to flavors has no effects on site operations. End users can see
 the metadata easily via &lt;code>openstack flavor list --long&lt;/code> or
 &lt;code>openstack flavor show &amp;lt;flavor id&amp;gt;&lt;/code> commands without any additional tools, e.g.:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack flavor show gpu1cpu2 --site IISAS-GPUCloud --vo eosc-synergy.eu -f json
@@ -846,7 +846,7 @@ for the given VO.&lt;/p>
 &lt;p>Expand your &lt;code>mapping.json&lt;/code> with the VO membership to the created group
 (substitute &lt;code>group_id&lt;/code> and &lt;code>entitlement&lt;/code> as appropriate). The expected mappings
 for the VOs are listed in
-&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/blob/main/vo-mappings.yaml">&lt;code>vo-mappings.yaml&lt;/code> of fedcloud-catchall-operations repo&lt;/a>:&lt;/p>
+&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/blob/main/vo-mappings.yaml">&lt;code>vo-mappings.yaml&lt;/code> of fedcloud-catchall-operations repository&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">[&lt;/span>
 &lt;span style="color:#a40000">&amp;lt;existing&lt;/span> &lt;span style="color:#a40000">mappings&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>
@@ -881,7 +881,7 @@ for the VOs are listed in
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>And update the mapping in your Keystone IdP:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack mapping &lt;span style="color:#204a87">set&lt;/span> --rules mapping$.json egi-mapping
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack mapping &lt;span style="color:#204a87">set&lt;/span> --rules mapping.json egi-mapping
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="accounting">Accounting&lt;/h2>
 &lt;p>Add the project supporting the VO to cASO:&lt;/p>
 &lt;ol>
@@ -903,7 +903,7 @@ have admin privileges:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack role add member --user &amp;lt;your caso user&amp;gt; --project &amp;lt;your new vo project&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="information-system">Information system&lt;/h2>
 &lt;p>Add the mapping to your site configuration with a new Pull Request to the
-&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations">fedcloud-catchall-operations repo&lt;/a>&lt;/p>
+&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations">fedcloud-catchall-operations repository&lt;/a>&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#000">---&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">vos&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;vo name&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">

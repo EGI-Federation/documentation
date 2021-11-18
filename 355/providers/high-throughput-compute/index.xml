@@ -21,7 +21,7 @@ couple of hours&lt;/p>
 Service Endpoint:&lt;/p>
 &lt;ul>
 &lt;li>select &lt;code>Site BDII&lt;/code> in &lt;code>Service Type&lt;/code> field&lt;/li>
-&lt;li>fill in at least the host name&lt;/li>
+&lt;li>fill in at least the hostname&lt;/li>
 &lt;li>select &lt;code>Y&lt;/code> for production and monitoring, &lt;code>N&lt;/code> for beta service field&lt;/li>
 &lt;/ul>
 &lt;/li>

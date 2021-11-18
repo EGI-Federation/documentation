@@ -134,7 +134,7 @@ sample:&lt;/p>
 &lt;span style="color:#204a87">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">execution&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">status&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that inputs that point to a URL should be specified using the
 &lt;code>ComplextDataInput&lt;/code> class as shown above.&lt;/p>
-&lt;h2 id="other-3rd-party-services">Other 3rd party services&lt;/h2>
+&lt;h2 id="other-third-party-services">Other third-party services&lt;/h2>
 &lt;p>We are open for integration with other services that may be relevant for your
 research. Please contact &lt;code>support _at_ egi.eu&lt;/code> with your request so we can
 investigate the best way to support your needs.&lt;/p></description></item><item><title>Users: Training instance</title><link>/users/notebooks/training/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/notebooks/training/</guid><description>
@@ -197,7 +197,7 @@ that is, to specify which parts of the text should be emphasized (italics),
 bold, form lists, etc.&lt;/p>
 &lt;p>If you want to provide structure for your document, you can also use markdown
 headings. Markdown headings consist of 1 to 6 hash &lt;code>#&lt;/code> signs followed by a space
-and the title of your section. The markdown heading will be converted to a
+and the title of your section. The Markdown heading will be converted to a
 clickable link for a section of the notebook. It is also used as a hint when
 exporting to other document formats, like PDF.&lt;/p>
 &lt;p>When a Markdown cell is executed, the Markdown code is converted into the
@@ -247,6 +247,6 @@ stopped (automatically after 1 hour of inactivity)!
 &lt;p>Yes! Just let us know what are your needs. You can contact us via:&lt;/p>
 &lt;ul>
 &lt;li>Opening a ticket in the &lt;a href="https://ggus.eu">EGI Helpdesk&lt;/a>, or&lt;/li>
-&lt;li>Creating a &lt;a href="https://github.com/EGI-Federation/notebooks/issues">Github Issue&lt;/a>&lt;/li>
+&lt;li>Creating a &lt;a href="https://github.com/EGI-Federation/notebooks/issues">GitHub Issue&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>We will analyse your request and get back to you.&lt;/p></description></item></channel></rss>

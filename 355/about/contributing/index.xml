@@ -46,14 +46,14 @@ GitHub, at &lt;a href="https://github.com/settings/keys">https://github.com/sett
 &lt;a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">Connecting to GitHub with SSH&lt;/a>
 for an extensive documentation on using SSH keys with GitHub.&lt;/p>
 &lt;p>It&amp;rsquo;s worth to mention that your ssh &lt;em>public&lt;/em> keys can easily be retrieved using
-an URL like &lt;code>https://github.com/&amp;lt;your_username&amp;gt;.keys&lt;/code>.&lt;/p>
+a URL like &lt;code>https://github.com/&amp;lt;your_username&amp;gt;.keys&lt;/code>.&lt;/p>
 &lt;p>In order to manage repositories over ssh, you will will have to clone them via
 SSH, not HTTPS.&lt;/p>
 &lt;p>If you already have a local clone of a repository created via HTTPS, you can
 switch it to SSH by following
 &lt;a href="https://docs.github.com/en/free-pro-team@latest/github/using-git/changing-a-remotes-url#switching-remote-urls-from-https-to-ssh">Switching remote URLs from HTTPS to SSH&lt;/a>.&lt;/p>
 &lt;h2 id="starting-with-the-github-cli">Starting with the GitHub CLI&lt;/h2>
-&lt;p>The GitHub Command Line Interface greatly helps with working with GitHub
+&lt;p>The GitHub command-line interface greatly helps with working with GitHub
 repositories from a terminal.&lt;/p>
 &lt;p>It can be installed using the packages available on
 &lt;a href="https://cli.github.com/">their homepage&lt;/a>. There is also a
@@ -82,14 +82,14 @@ origin git@github.com:&amp;lt;your_username&amp;gt;/documentation &lt;span style
 upstream git@github.com:EGI-Federation/documentation.git &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>fetch&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 upstream git@github.com:EGI-Federation/documentation.git &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>push&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="run-the-site-locally">Run the site locally&lt;/h2>
-&lt;p>The documentation website is built from the source files using
+&lt;p>The documentation site is built from the source files using
 &lt;a href="https://gohugo.io/">Hugo&lt;/a>. The repository
 &lt;a href="https://github.com/EGI-Federation/documentation/blob/main/README.md">README&lt;/a>
 can be used as a reference for building instructions.&lt;/p>
 &lt;h3 id="requirements">Requirements&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://gohugo.io">Hugo&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://nodejs.org/">NodeJS&lt;/a> and other &lt;a href="https://www.docsy.dev">docsy&lt;/a> theme
+&lt;li>&lt;a href="https://nodejs.org/">Node.js&lt;/a> and other &lt;a href="https://www.docsy.dev">docsy&lt;/a> theme
 dependencies:
 &lt;ul>
 &lt;li>postcss-cli&lt;/li>
@@ -98,7 +98,7 @@ dependencies:
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="installing-dependencies">Installing dependencies&lt;/h3>
-&lt;p>To install npm+nodejs please check the
+&lt;p>To install npm+Node.js please check the
 &lt;a href="https://www.npmjs.com/get-npm">official instructions&lt;/a>.&lt;/p>
 &lt;p>Everything has been tested with Node.js 12.&lt;/p>
 &lt;p>The dependencies of the docsy theme can be installed as follows:&lt;/p>
@@ -115,7 +115,7 @@ $ hugo --minify
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="testing-the-site-locally">Testing the site locally&lt;/h3>
 &lt;p>To launch the site locally, from the repository root:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ hugo serve -D
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The website is available locally at:
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The site is available locally at:
 &lt;a href="http://localhost:1313/">http://localhost:1313/&lt;/a>.&lt;/p>
 &lt;h2 id="branches-and-commits">Branches and commits&lt;/h2>
 &lt;p>You should submit your patch as a git branch ideally named with a meaningful
@@ -907,7 +907,7 @@ to perform the step, use a colon at the end.&lt;/li>
 &lt;p>Successfully passing the checks is a firm requirement, but for the following
 cases it is possible to
 &lt;a href="https://github.com/DavidAnson/markdownlint#configuration">add exceptions&lt;/a> and
-bypass &lt;strong>some checks&lt;/strong> in markdown files:&lt;/p>
+bypass &lt;strong>some checks&lt;/strong> in Markdown files:&lt;/p>
 &lt;ul>
 &lt;li>When in-line HTML must be used (e.g. in tables, or when no other proper
 solution is available)&lt;/li>
@@ -918,7 +918,7 @@ automatic checker flags it as duplicate content&lt;/li>
 &lt;h4 class="alert-heading">Important&lt;/h4>
 Exceptions should only be used
 when there are no other choices, and should be confined to the smallest possible
-block of markdown code.
+block of Markdown code.
 &lt;/div>
 &lt;h3 id="dealing-with-in-line-html-tags">Dealing with in-line HTML tags&lt;/h3>
 &lt;p>In some specific cases it is impossible to use anything but in-line HTML tags:&lt;/p>
@@ -1007,7 +1007,7 @@ again.&lt;/p>
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">--&amp;gt;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>About: Shortcodes</title><link>/about/contributing/shortcodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/contributing/shortcodes/</guid><description>
 &lt;p>In addition to the formatting support provided by
-&lt;a href="https://spec.commonmark.org/0.29/">markdown&lt;/a>,
+&lt;a href="https://spec.commonmark.org/0.29/">Markdown&lt;/a>,
 Hugo adds support for &lt;em>shortcodes&lt;/em>, which are Go templates for easily including
 or displaying content (images, notes, tips, advanced display blocks, etc.).&lt;/p>
 &lt;p>For reference, the following shortcodes are available:&lt;/p>
@@ -1054,7 +1054,7 @@ itself on the mardkown parser.&lt;/p>
 &lt;a href="https://github.com/yuin/goldmark">goldmark parser&lt;/a>, which relies on
 &lt;a href="https://prismjs.com/download.html#themes=prism">Prism syntax highlighting&lt;/a>.
 &lt;/div>
-&lt;p>The following markdown creates a shell excerpt:&lt;/p>
+&lt;p>The following Markdown creates a shell excerpt:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="color:#4e9a06">```shell
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span>$ ssh-keygen -f fedcloud
 $ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>
