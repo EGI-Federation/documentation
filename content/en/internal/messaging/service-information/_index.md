@@ -20,9 +20,9 @@ type: "docs"
 | Supplier                                | GRNET, SRCE                                                   |
 | Roadmap                                 |                                                               |
 | Release notes                           |                                                               |
-| Source code                             |                                                               |
-| Issue tracker for developers            |                                                               |
-| License                                 |                                                               |
+| Source code                             | https://github.com/ARGOeu/argo-messaging                      |
+| Issue tracker for developers            | https://github.com/ARGOeu/argo-messaging/issues               |
+| License                                 | Apache 2.0                                                    |
 | Privacy Policy                          |                                                               |
 
 <!-- markdownlint-enable no-inline-html no-bare-urls -->
