@@ -1,7 +1,7 @@
 ---
 title: "Service information"
 weight: 10
-description: "Techincal details of AMS"
+description: "Technical details of AMS"
 ---
 
 ## Identity card
