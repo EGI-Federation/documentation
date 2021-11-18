@@ -33,7 +33,7 @@ MySQL setting is referred to the current MySQL version (5.0.77 in this moment)
 
 In order to allow the replica server to read the master database, you have to
 create an user with which the slave will connect to the master. Suppose the
-replica host name is `vomsrep.cnaf.infn.it`, the user is `bonjovi` and the
+replica hostname is `vomsrep.cnaf.infn.it`, the user is `bonjovi` and the
 password is `always`. What you have to launch on the master server is:
 
 ```shell

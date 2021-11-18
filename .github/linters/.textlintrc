@@ -1,0 +1,12 @@
+{
+  "filters": {
+    "comments": true
+  },
+  "rules": {
+    "terminology": {
+      "exclude": [
+        "Node(?:js)?"
+      ]
+    }
+  }
+}

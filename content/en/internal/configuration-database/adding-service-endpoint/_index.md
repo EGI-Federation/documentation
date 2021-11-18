@@ -158,14 +158,14 @@ In order to properly monitor your webdav endpoint:
   `https://hepgrid11.ph.liv.ac.uk/dpm/ph.liv.ac.uk/home/ops/`
   - it corresponds to the value of GLUE2 attribute `GLUE2EndpointURL`
     (containing the used port and without the VO folder);
-- verify that the webdav url (for example:
+- verify that the webdav URL (for example:
   `https://darkstorm.cnaf.infn.it:8443/webdav`) is properly accessible.
 
 ### GridFTP
 
 In order to properly monitor your gridftp endpoint for ops VO
 
-- register a new service endpoint, associating the storage element host name to
+- register a new service endpoint, associating the storage element hostname to
   the service type `globus-GRIDFTP`, with the "production" flag disabled;
 - in the “Extension Properties” section of the service endpoint page, fill in
   the following fields:

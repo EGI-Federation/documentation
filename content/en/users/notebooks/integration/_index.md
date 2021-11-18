@@ -105,7 +105,7 @@ print(execution.status)
 Note that inputs that point to a URL should be specified using the
 `ComplextDataInput` class as shown above.
 
-## Other 3rd party services
+## Other third-party services
 
 We are open for integration with other services that may be relevant for your
 research. Please contact `support _at_ egi.eu` with your request so we can

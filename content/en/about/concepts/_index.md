@@ -5,9 +5,9 @@ type: docs
 weight: 20
 ---
 
-The EGI documentation is a static website built using
+The EGI documentation is a static site built using
 [Hugo](https://gohugo.io/getting-started/configuration-markup/)
-from markdown source files. Hugo uses
+from Markdown source files. Hugo uses
 [goldmark](https://github.com/yuin/goldmark/) to parse and render markdown,
 which is compliant with [CommonMark](https://spec.commonmark.org/0.29/) and
 [GitHub Flavored Markdown](https://github.github.com/gfm/) (also based
@@ -43,7 +43,7 @@ See [below](#add-page-to-top-navigation-bar) for details on how to control this.
 
 ## Pages
 
-Pages are [markdown](https://spec.commonmark.org/0.29/) files that contain the
+Pages are [Markdown](https://spec.commonmark.org/0.29/) files that contain the
 documentation about a specific topic. They hold the content for a section
 (in which case are named `_index.md` and the containing folder is the section),
 or a stand-alone page that is immediately under a section (the containing
@@ -54,7 +54,7 @@ This is how stand-alone pages appear in the left-side navigation tree:
 
 ### Creating pages
 
-Creating a documentation page is done by creating a markdown file (with
+Creating a documentation page is done by creating a Markdown file (with
 `.md` extension) under the relevant section (in the section's folder).
 
 {{% alert title="Note" color="info" %}} When authoring pages please observe
@@ -64,7 +64,7 @@ and adhere to the [Style Guide](../contributing/style).
 ### Page metadata
 
 Each page needs some metadata that controls where the page appears and how
-its content will be rendered. The beginning of the markdown file contains a
+its content will be rendered. The beginning of the Markdown file contains a
 [front matter](https://gohugo.io/content-management/front-matter/) in YAML,
 holding the metadata of the page:
 
@@ -146,7 +146,7 @@ the section (the file `_index.md`) can be done with:
 ```
 
 [Embedding](https://spec.commonmark.org/0.29/#images) an image in a subpage can
-be done by editing the markdown file of the page (`concepts.md` in our case):
+be done by editing the Markdown file of the page (`concepts.md` in our case):
 
 ```markdown
 ![Image title](metadata.png)
@@ -193,7 +193,7 @@ You can also include hyperlinks in the documentation that will
 from any documentation page.
 
 To link to a heading in a documentation page, you need to point the hyperlink
-to the anchor created automatically by markdown for the targeted heading.
+to the anchor created automatically by Markdown for the targeted heading.
 
 {{% alert title="Note" color="info" %}} You can derive the anchor from the
 name of the target heading, by converting it to lowercase, removing
