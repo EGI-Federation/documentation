@@ -25,5 +25,4 @@ type: "docs"
 | License                                 |                                                                         |
 | Privacy Policy                          | https://argo.egi.eu/egi/policies                                        |
 
-
 <!-- markdownlint-enable no-inline-html no-bare-urls -->
