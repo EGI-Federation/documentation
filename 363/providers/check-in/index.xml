@@ -1382,7 +1382,7 @@ running two Master Portal instances, one development, one production instance.&l
 &lt;tr>
 &lt;td>User Info&lt;/td>
 &lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/userinfo">https://aai-demo.egi.eu/oidc/userinfo&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/userinfo">https://aai.egi.eu/mp-oa2-server/userinfo&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
