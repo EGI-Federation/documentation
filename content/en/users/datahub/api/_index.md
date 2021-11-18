@@ -46,8 +46,6 @@ The following variables should be set:
 
 - `OIDC_TOKEN`: OpenID Connect Access token.
 - `ONEZONE_HOST`: name or IP of the Onezone host (to use Onezone API).
-- `ONEPROVIDER_HOST`: name or IP of the Oneprovider host (to use Oneprovider
-  API).
 
 ```shell
 ONEZONE_HOST=https://datahub.egi.eu
@@ -83,8 +81,8 @@ and the Onedata [Oneprovider REST API](https://onedata.org/#/home/api/stable/one
 Follow instructions [above](#getting-an-api-access-token) to get an API access token, and configure environment variables:
 
 ```shell
-export TOKEN=<ACCESS_TOKEN>
-export HOST=plg-cyfronet-01.datahub.egi.eu
+export DATAHUB_TOKEN=<DATAHUB_ACCESS_TOKEN>
+export ONEPROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
 ```
 
 Having [jq](https://stedolan.github.io/jq/) installed is useful for better formatting of the json output.
@@ -101,18 +99,20 @@ See examples on how to list a folder, and file download/upload using CDMI:
 
 ```shell
 # List files in a folder
-curl -H "X-Auth-Token: $TOKEN" \
+curl -H "X-Auth-Token: $DATAHUB_TOKEN" \
   -H "$CDMI_VSN_HEADER" \
-  "https://$HOST/cdmi/PLAYGROUND/notebooks/?children" | jq .
+  "https://$ONEPROVIDER_HOST/cdmi/PLAYGROUND/?children" | jq .
 
 # Download "helloworld.txt" from DataHub to "downloadtest.txt" on your computer
-curl -H "X-Auth-Token: $TOKEN" \
-  "https://$HOST/cdmi/PLAYGROUND/helloworld.txt" -o downloadtest.txt
+curl -H "X-Auth-Token: $DATAHUB_TOKEN" \
+  "https://$ONEPROVIDER_HOST/cdmi/PLAYGROUND/helloworld.txt" \
+  -o downloadtest.txt
 
 # Upload "helloworld.txt" from your computer to "uploadtest.txt" on DataHub
-curl -H "X-Auth-Token: $TOKEN" \
+curl -H "X-Auth-Token: $DATAHUB_TOKEN" \
   -H "$CDMI_VSN_HEADER" \
-  -X PUT "https://$HOST/cdmi/PLAYGROUND/uploadtest.txt" -T helloworld.txt
+  -X PUT "https://$ONEPROVIDER_HOST/cdmi/PLAYGROUND/uploadtest.txt" \
+  -T helloworld.txt
 ```
 
 ### REST API
@@ -121,27 +121,29 @@ See examples on how to list a folder, and file download/upload using REST API:
 
 ```shell
 # Get base folder ID
-curl -H "X-Auth-Token: $TOKEN" \
-  -X POST "https://$HOST/api/v3/oneprovider/lookup-file-id/PLAYGROUND"
+curl -H "X-Auth-Token: $DATAHUB_TOKEN" \
+  -X POST "https://$ONEPROVIDER_HOST/api/v3/oneprovider/lookup-file-id/PLAYGROUND"
 
 # Add the folder ID to an environment variable
 export DIR_ID=<ID_FROM_PREVIOUS_COMMAND>
 
 # List files inside the folder with DIR_ID
-curl -H "X-Auth-Token: $TOKEN" \
-  -X GET "https://$HOST/api/v3/oneprovider/data/$DIR_ID/children" | jq .
+curl -H "X-Auth-Token: $DATAHUB_TOKEN" \
+  -X GET "https://$ONEPROVIDER_HOST/api/v3/oneprovider/data/$DIR_ID/children" \
+  | jq .
 
 # Add the ID of the file that you want to download
 export FILE_ID=<ID_FROM_PREVIOUS_COMMAND>
 
 # Download file with FILE_ID from DataHub to "helloworld.txt" on your computer
-curl -H "X-Auth-Token: $TOKEN" \
-  -X GET "https://$HOST/api/v3/oneprovider/data/$FILE_ID/content" \
+curl -H "X-Auth-Token: $DATAHUB_TOKEN" \
+  -X GET "https://$ONEPROVIDER_HOST/api/v3/oneprovider/data/$FILE_ID/content" \
   -o helloworld.txt
 
 # Upload "helloworld.txt" on your local computer to "uploadtest.txt" on DataHub
-curl -H "X-Auth-Token: $TOKEN" \
-  -X POST "https://$HOST/api/v3/oneprovider/data/$DIR_ID/children?name=uploadtest.txt" \
+curl -H "X-Auth-Token: $DATAHUB_TOKEN" \
+  -X POST \
+  "https://$ONEPROVIDER_HOST/api/v3/oneprovider/data/$DIR_ID/children?name=uploadtest.txt" \
   -H "Content-Type: application/octet-stream" -d "@helloworld.txt"
 ```
 
