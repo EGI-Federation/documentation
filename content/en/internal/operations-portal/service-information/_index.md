@@ -14,7 +14,7 @@ type: "docs"
 | Name                                    | Operation Portal                                                                                   |
 | Description                             | Provision of VO management functions and other capabilities supporting the daily operations of EGI |
 | URL                                     | https://operations-portal.egi.eu/                                                                  |
-| Support Email                           | `cic-information` <at> `in2p3.fr`                                                                  |
+| Support Email                           | `cic-information` at `in2p3.fr`                                                                    |
 | [Helpdesk](../../helpdesk) Support Unit | **EGI Services and Service Components** <br/> I\_\_ Operations Portal                              |
 | Configuration Database entry            | https://goc.egi.eu/portal/index.php?Page_Type=Site&id=568                                          |
 | Supplier                                | CNRS                                                                                               |
