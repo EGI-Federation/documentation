@@ -17,3 +17,7 @@ After logging into the service, you will be shown a form for selecting the
 environment, pick the desired one and click start
 
 ![environmet selection](notebooks-environments.png)
+
+Additionally, you can bring your own environment via [Binder](./binder).
+This will allow you to build reproducible and shareable environments for
+your notebooks.
