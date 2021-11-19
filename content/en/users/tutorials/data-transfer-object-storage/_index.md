@@ -33,3 +33,6 @@ To access services and resources in the
 - Enrollment into a [Virtual Organisation](../../check-in/vos) (VO) that has
   access to the services and resources you need
 
+
+
+[Object Storage](../../object-storage/)
