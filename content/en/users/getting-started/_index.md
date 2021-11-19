@@ -69,7 +69,7 @@ Before users can access an EGI service, they have to:
    (and optionally a refresh token).
 1. Manage or use the service by leveraging the access token, either implicitly
    (web interfaces and dashboards usually hide this from users) or explicitly
-   (e.g. when using [command line tools](cli)).
+   (e.g. when using [command-line tools](cli)).
 
 {{% alert title="Note" color="info" %}} See the [EGI Check-in](../check-in)
 documentation for a detailed description of the Authentication and Authorization
@@ -81,7 +81,7 @@ of the concepts that act as building blocks for the AAI implementation.
 
 Depending on the access conditions, a service (or an instance of the service)
 may be open for any user, or it may require requesting access (ordering). The
-[EGI Website](https://www.egi.eu/services/) together with the connected
+[EGI site](https://www.egi.eu/services/) together with the connected
 [EGI Marketplace](https://marketplace.egi.eu) streamlines the ordering process.
 
 EGI services use the following types of access conditions:

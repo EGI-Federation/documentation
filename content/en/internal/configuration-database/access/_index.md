@@ -11,7 +11,7 @@ Database (GOCDB), users can either:
 - [Use EGI Check-in](#using-institutional-account-via-egi-check-in) with an
   institutional account, or
 - [Use an X.509 digital certificate](#using-an-x509-digital-certificate)
-  installed in the Internet browser, or the local machine's certificate store.
+  installed in the internet browser, or the local machine's certificate store.
 
 Users can access the system as soon as they are authenticated. However, they
 will only be able to update information based on their roles. More information

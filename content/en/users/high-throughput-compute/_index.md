@@ -31,7 +31,7 @@ collaborations that need to share their research activities, data collections,
 and repositories, they need a homogenous and coordinated operation of the
 compute resources, which are not uniformly accessible. In addition, nowadays
 many research collaborations generate large amounts of data, and managing such
-data volumes is time consuming and error prone.
+data volumes is time consuming and error-prone.
 
 The EGI High Throughput Compute service provides access to compute resources,
 and offers a set of high-level tools that allow managing large amounts of data
@@ -108,7 +108,7 @@ Before users can access EGI HTC services, they have to:
    [International Global Trust Federation](https://www.igtf.net) (IGTF).
 1. Enroll into a VO before they can use the services, as users are not
    individually granted access to resources.
-1. Add the certificate to their Internet browser of choice, or import it into
+1. Add the certificate to their internet browser of choice, or import it into
    the appropriate certificate store of their local machine (on Windows).
 1. Proceed to the [Workload Manager](../workload-manager) to submit HTC jobs or
    retrieve job results, login using [EGI Check-in](../check-in) when prompted.

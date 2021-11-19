@@ -9,7 +9,7 @@ weight: 40
 ## Overview
 
 Each instance of the FTS3 service, offers a Web monitoring interface, that can
-be accessed by end-users in order to monitor their submitted transfers and
+be accessed by end users in order to monitor their submitted transfers and
 obtain statistics.
 
 ## Features

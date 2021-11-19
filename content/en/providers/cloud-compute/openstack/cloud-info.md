@@ -22,7 +22,7 @@ You can either run the service by yourself or rely on central operations of the
 cloud-info-provider. In both cases you must register your host DN in the GOCDB
 entry for the `org.openstack.nova`.
 
-### Catch-all operations
+## Catch-all operations
 
 EGI can manage the operation of the `cloud-info-provider` for the site so you
 don't need to do it. In order for your site to be included in the centrally
@@ -57,7 +57,7 @@ The `cloud-info-provider` needs a configuration file where your site is
 described, see the [sample OpenStack
 configuration](https://github.com/EGI-Federation/cloud-info-provider/blob/master/etc/sample.openstack.yaml)
 for the required information. The authentication parameters for your local
-OpenStack and the AMS are passed as command line options:
+OpenStack and the AMS are passed as command-line options:
 
 ```shell
 cloud-info-provider-service --yaml-file <your site description.yaml> \
@@ -73,12 +73,12 @@ cloud-info-provider-service --yaml-file <your site description.yaml> \
 
 For authentication, you should be able to use any authentication method
 supported by [keystoneauth](https://opendev.org/openstack/keystoneauth), for
-user name and password use: `--os-password` and `--os-username`. Check the
+username and password use: `--os-password` and `--os-username`. Check the
 complete list of options with `cloud-info-provider-service  --help`.
 
 The AMS topic has the format: `SITE_<SITE_NAME>_ENDPOINT_<GOCDB_ID>`, where
 `<SITE_NAME>` is the name of the site as declared in GOCDB and `<GOCDB_ID>` is
-the id of the endpoint in GOCDB. For example, [this
+the ID of the endpoint in GOCDB. For example, [this
 endpoint](https://goc.egi.eu/portal/index.php?Page_Type=Service&id=7513) would
 have a topic like: `SITE_IFCA-LCG2_ENDPOINT_7513G0`.
 

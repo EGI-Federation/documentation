@@ -51,7 +51,7 @@ contain a json document that follows this format:
 }
 ```
 
-Note that you can either specify a project id or the project name with the
+Note that you can either specify a project ID or the project name with the
 domain name in the mapping. Add as many VOs as you are supporting.
 
 #### Running the services

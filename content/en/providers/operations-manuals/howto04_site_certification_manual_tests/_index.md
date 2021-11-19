@@ -247,7 +247,7 @@ $ lcg-cr -v --vo <VO>-d<Your SE> \
     -l lfn:/grid/<VO>/test.txt file:</path/to/your/local/file>
 ```
 
-3\) Create a new replica in other SE (to check the 3rd party transfer between 2
+3\) Create a new replica in other SE (to check the third-party transfer between 2
 SEs)
 
 ```shell
@@ -434,7 +434,7 @@ user associated with the certificate.
    worth to enable the display of all sites by clicking on the Grid Browser the
    "Show" button and selecting from the list "All services". If you see a red
    cross on the service, click on it and see the details of the error message in
-   the URC and the error on the server side.
+   the URC and the error on the server-side.
 4. If all services are available, you can send the job. At the same time it is
    recommended to monitor the logs Unicore/X and TSI for errors.
 
