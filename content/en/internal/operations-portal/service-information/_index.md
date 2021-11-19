@@ -1,7 +1,8 @@
 ---
 title: "Service information"
-weight: 10
 description: "Technical details of the Operation Portal"
+weight: 10
+type: "docs"
 ---
 
 ## Identity card
