@@ -166,7 +166,7 @@ users responsibility.&lt;/p>
 &lt;p>Check-in provides a central Discovery Service (or &amp;ldquo;Where Are You From&amp;rdquo; - WAYF)
 page where users in your Home Organisation or Community will be automatically
 redirected when necessary to select to authenticate at your IdP. You can provide
-us with a logo of your Organisation or Community (in high-res png or preferably
+us with a logo of your Organisation or Community (in high-res PNG or preferably
 in svg format) to include a dedicated login button that will allow users to
 easily identify your IdP.&lt;/p>
 &lt;h2 id="saml-identity-provider">SAML Identity Provider&lt;/h2>
@@ -486,7 +486,7 @@ provide the following information to connect your service to EGI Check-in:&lt;/p
 &lt;li>Name of the service (in English and optionally in other languages supported
 by the service)&lt;/li>
 &lt;li>Short description of the service&lt;/li>
-&lt;li>Website (URL) for localised information about the service; the content found
+&lt;li>Site (URL) for localised information about the service; the content found
 at the URL SHOULD provide more complete information than what provided by the
 description&lt;/li>
 &lt;li>Contact information of the following types:
@@ -560,7 +560,7 @@ depends on the integration environment being used:&lt;/p>
 &lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>. Your request should
 include the general information about your service (see
 &lt;a href="#general-information">General Information&lt;/a>) and the SP&amp;rsquo;s metadata and entity
-id.&lt;/p>
+ID.&lt;/p>
 &lt;h3 id="metadata">Metadata&lt;/h3>
 &lt;p>Metadata provided by your SP should contain a descriptive name of the service
 that your SP represents in at least English. It is recommended to also provide
@@ -686,7 +686,7 @@ of the overview table or &lt;strong>Edit&lt;/strong> the particular client and l
 the client. Lastly, you need to set the email addresses of one or more contacts.&lt;/p>
 &lt;h3 id="claims">Claims&lt;/h3>
 &lt;p>The EGI Check-in UserInfo Endpoint is an OAuth 2.0 Protected Resource that
-returns specific information about the authenticated End-User as Claim Values.
+returns specific information about the authenticated end user as Claim Values.
 To obtain the requested Claims about the End-User, the Client makes a request to
 the UserInfo Endpoint using an Access Token obtained through OpenID Connect
 Authentication. The scopes associated with the Access Token used to access the
@@ -803,13 +803,13 @@ OAuth flow.&lt;/li>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length -->
 &lt;h4 id="authorization-endpoint">Authorization Endpoint&lt;/h4>
-&lt;p>The Authorization Endpoint performs Authentication of the End-User. This is done
+&lt;p>The Authorization Endpoint performs Authentication of the end user. This is done
 by sending the User Agent to the Authorization Server's Authorization Endpoint
 for Authentication and Authorization, using request parameters defined by OAuth
 2.0 and additional parameters and parameter values defined by OpenID Connect.&lt;/p>
 &lt;p>The request parameters of the Authorization endpoint are:&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>client_id&lt;/code>: id of the client that ask for authentication to the Authorization
+&lt;li>&lt;code>client_id&lt;/code>: ID of the client that ask for authentication to the Authorization
 Server.&lt;/li>
 &lt;li>&lt;code>redirect_uri&lt;/code>: URI to which the response will be sent.&lt;/li>
 &lt;li>&lt;code>scope&lt;/code>: A list of attributes that the application requires.&lt;/li>
@@ -1075,7 +1075,7 @@ You can find the &lt;em>Token Endpoint&lt;/em> in the
 &lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="device-code">Device Code&lt;/h5>
 &lt;p>The device code flow enables OAuth clients on (input-constrained) devices to
 obtain user authorization for accessing protected resources without using an
-on-device user-agent, provided that they have an Internet connection.&lt;/p>
+on-device user-agent, provided that they have an internet connection.&lt;/p>
 &lt;h6 id="1-device-authorization-request">1. Device Authorization Request&lt;/h6>
 &lt;p>The client initiates the authorization flow by requesting a set of
 verification codes from the authorization server by making an HTTP &amp;ldquo;POST&amp;rdquo;
@@ -1285,7 +1285,7 @@ to your terminal and open &lt;code>config.php&lt;/code> with your favorite text 
 requirements&lt;/li>
 &lt;li>&lt;code>issuer&lt;/code> required, the base URL of our IdentityServer instance. This will
 allow oidc-client to query the metadata endpoint so it can validate the tokens&lt;/li>
-&lt;li>&lt;code>client_id&lt;/code> required, the id of the client we want to use when hitting the
+&lt;li>&lt;code>client_id&lt;/code> required, the ID of the client we want to use when hitting the
 authorization endpoint&lt;/li>
 &lt;li>&lt;code>client_secret&lt;/code> optional, a value the offers better security to the message
 flow&lt;/li>
@@ -1382,7 +1382,7 @@ running two Master Portal instances, one development, one production instance.&l
 &lt;tr>
 &lt;td>User Info&lt;/td>
 &lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/userinfo">https://aai-demo.egi.eu/oidc/userinfo&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/userinfo">https://aai.egi.eu/mp-oa2-server/userinfo&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1416,7 +1416,7 @@ doing&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ssh proxy@ssh.aai.egi.eu
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>and storing the output in &lt;code>/tmp/x509up_u$(id -u)&lt;/code>&lt;/p>
 &lt;p>Generic information for users on how to do this can be found at
-&lt;a href="https://wiki.nikhef.nl/grid/RCauth.eu_and_MasterPortal_SSH_Key_Portal">Instructions for end-users on how to use the SSH key authN for proxy retrieval&lt;/a>.
+&lt;a href="https://wiki.nikhef.nl/grid/RCauth.eu_and_MasterPortal_SSH_Key_Portal">Instructions for end users on how to use the SSH key authN for proxy retrieval&lt;/a>.
 Alternatively VO portals could implement such functionality themselves by using
 the API described at the
 &lt;a href="https://wiki.nikhef.nl/grid/Master_Portal_sshkey_endpoint">Master Portal sshkey endpoint description&lt;/a>.&lt;/p>

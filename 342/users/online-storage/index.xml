@@ -48,7 +48,7 @@ provider and your SLA.
 &lt;a href="https://docs.openstack.org/cinder/latest/">Cinder&lt;/a> service.&lt;/p>
 &lt;p>Users can manage block storage using the
 &lt;a href="https://docs.openstack.org/horizon/latest/user/">OpenStack Horizon dashboard&lt;/a>
-of a provider, from a &lt;a href="#manage-from-the-command-line">command line interface&lt;/a>
+of a provider, from a &lt;a href="#manage-from-the-command-line">command-line interface&lt;/a>
 (CLI), or via the
 &lt;a href="https://docs.openstack.org/api-ref/block-storage/">OpenStack Block Storage API&lt;/a>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
@@ -57,8 +57,8 @@ Please refer to
 &lt;a href="https://wiki.egi.eu/wiki/HOWTO11_How_to_use_the_rOCCI_Client#How_to_create_block_storage.3F">OCCI How-To&lt;/a>
 for details about using the legacy OCCI interface to manage block storage.
 &lt;/div>
-&lt;h2 id="manage-from-the-command-line">Manage from the command line&lt;/h2>
-&lt;p>Multiple command line interfaces (CLIs) are available to manage block
+&lt;h2 id="manage-from-the-command-line">Manage from the command-line&lt;/h2>
+&lt;p>Multiple command-line interfaces (CLIs) are available to manage block
 storage:&lt;/p>
 &lt;ul>
 &lt;li>The &lt;a href="https://docs.openstack.org/python-openstackclient/latest">OpenStack CLI&lt;/a>&lt;/li>
@@ -638,8 +638,8 @@ Avail Space&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>kB&lt;span
 ------------------------------------------
 &lt;span style="color:#0000cf;font-weight:bold">280375465082&lt;/span> n.a SRM ccsrm.ihep.ac.cn
 &lt;span style="color:#0000cf;font-weight:bold">10995116266&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">11&lt;/span> SRM cirigridse01.univ-bpclermont.fr
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-from-the-command-line">Access from the command line&lt;/h2>
-&lt;p>Access to grid storage via a command line interface (CLI) requires users
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-from-the-command-line">Access from the command-line&lt;/h2>
+&lt;p>Access to grid storage via a command-line interface (CLI) requires users
 to obtain a valid X.509 user VOMS proxy.
 Please refer to the &lt;a href="../../check-in/vos/voms">Check-in&lt;/a> documentation for more
 information.&lt;/p>
@@ -698,7 +698,7 @@ gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file DELETED
 &lt;p>The &lt;a href="../../data-transfer">EGI Data Transfer&lt;/a> service provides mechanisms
 to optimize the transfer of files between EGI Online Storage endpoints.
 Both a &lt;a href="../../data-transfer/webfts">graphical user interface&lt;/a> (GUI) and
-&lt;a href="../../data-transfer/clients">command line interfaces&lt;/a> (CLI) are available
+&lt;a href="../../data-transfer/clients">command-line interfaces&lt;/a> (CLI) are available
 to perform bulk movement of data.
 Please check out the related documentation for more information.&lt;/p>
 &lt;!-- markdown-link-check-enable -->
@@ -771,7 +771,7 @@ that the storage container or object can be accessed publicly.
 &lt;a href="https://docs.openstack.org/swift/latest/">Swift&lt;/a> service.&lt;/p>
 &lt;p>Users can manage object storage using the
 &lt;a href="https://docs.openstack.org/horizon/latest/user/">OpenStack Horizon dashboard&lt;/a>
-of a provider or from the &lt;a href="#access-from-the-command-line">command line&lt;/a>
+of a provider or from the &lt;a href="#access-from-the-command-line">command-line&lt;/a>
 (CLI). More advanced usage include access via the
 &lt;a href="#access-via-the-s3-protocol">S3 protocol&lt;/a>, via the
 &lt;a href="https://docs.openstack.org/api-ref/object-store/">OpenStack Object Store API&lt;/a>,
@@ -783,8 +783,8 @@ can be discovered in the
 &lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Services&amp;amp;serviceType=org.openstack.swift&amp;amp;selectItemserviceType=org.openstack.swift&amp;amp;ngi=&amp;amp;searchTerm=&amp;amp;production=TRUE&amp;amp;monitored=TRUE&amp;amp;certStatus=Certified&amp;amp;scopeMatch=all&amp;amp;servKeyNames=&amp;amp;servKeyValue=">Configuration Database&lt;/a>
 (GOCDB).
 &lt;/div>
-&lt;h2 id="access-from-the-command-line">Access from the command line&lt;/h2>
-&lt;p>Multiple command line interfaces (CLIs) are available to manage object
+&lt;h2 id="access-from-the-command-line">Access from the command-line&lt;/h2>
+&lt;p>Multiple command-line interfaces (CLIs) are available to manage object
 storage:&lt;/p>
 &lt;ul>
 &lt;li>The &lt;a href="https://docs.openstack.org/python-openstackclient/latest">OpenStack CLI&lt;/a>&lt;/li>

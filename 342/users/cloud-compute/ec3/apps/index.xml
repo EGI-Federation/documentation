@@ -67,9 +67,9 @@ and the working nodes.&lt;/li>
 &lt;p>&lt;img src="ecas-instance.png" alt="Instance details">&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Cluster&amp;rsquo;s size and name&lt;/strong>: the name of the cluster and the maximum number of
-nodes of the cluster, without including the front-end. This value indicates
-the maximum number of working nodes that the cluster can scale to. Initially,
-the cluster is created with the front-end and only one working node: the other
+nodes of the cluster, without including the frontend. This value indicates the
+maximum number of working nodes that the cluster can scale to. Initially, the
+cluster is created with the frontend and only one working node: the other
 working nodes will be powered on on-demand.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="ecas-size.png" alt="Cluster size and name">&lt;/p>
@@ -78,8 +78,8 @@ working nodes will be powered on on-demand.&lt;/li>
 the deployment process, click the Submit button.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="ecas-summary.png" alt="Cluster summary">&lt;/p>
-&lt;p>When the front-end node of the cluster has been successfully deployed, you will
-be notified with the credentials to access via SSH.&lt;/p>
+&lt;p>When the frontend node of the cluster has been successfully deployed, you
+will be notified with the credentials to access via SSH.&lt;/p>
 &lt;p>&lt;img src="ecas-end.png" alt="Cluster ssh credentials">&lt;/p>
 &lt;p>The cluster details are available by clicking on the &amp;quot;Manage your deployed
 clusters&amp;quot; link on the front page:&lt;/p>
@@ -87,11 +87,11 @@ clusters&amp;quot; link on the front page:&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 The configuration of the cluster may
-take some time. Please wait for its completion before starting to use
-the cluster.
+take some time. Please wait for its completion before starting to use the
+cluster.
 &lt;/div>
 &lt;h3 id="accessing-the-cluster">Accessing the cluster&lt;/h3>
-&lt;p>To access the front-end of the cluster:&lt;/p>
+&lt;p>To access the frontend of the cluster:&lt;/p>
 &lt;ul>
 &lt;li>download the SSH private key provided by the EC3 portal;&lt;/li>
 &lt;li>change its permissions to &lt;code>600&lt;/code>;&lt;/li>
@@ -102,9 +102,9 @@ authentication.&lt;/li>
 Last login: Mon Nov &lt;span style="color:#0000cf;font-weight:bold">18&lt;/span> 11:37:29 &lt;span style="color:#0000cf;font-weight:bold">2019&lt;/span> from torito.i3m.upv.es
 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>cloudadm@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>$ sudo su -
 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Both the front-end and the working node are configured by Ansible. This process
-usually takes some time. You can monitor the status of the cluster configuration
-using the &lt;code>is_cluster_ready&lt;/code> command-line tool:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Both the frontend and the working nodes are configured by Ansible. This
+process usually takes some time. You can monitor the status of the cluster
+configuration using the &lt;code>is_cluster_ready&lt;/code> command-line tool:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># is_cluster_ready&lt;/span>
 Cluster is still configuring.
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The cluster is successfully configured when the command returns the following
@@ -167,27 +167,28 @@ available at the &lt;code>onedata/ecas_provider/ECAS_space&lt;/code> folder loca
 &lt;code>/data&lt;/code> directory.&lt;/p>
 &lt;p>&lt;img src="ecas-space.png" alt="Onedata ECAS space">&lt;/p>
 &lt;p>To get started with the ECAS environment capabilities, open the
-&lt;code>ECAS_Basics.ipynb&lt;/code> notebook available under the &lt;code>notebooks/&lt;/code> folder in the
-home directory.&lt;/p>
+&lt;code>ECAS_Basics.ipynb&lt;/code> notebook available under the &lt;code>notebooks/&lt;/code> folder in the home
+directory.&lt;/p>
 &lt;p>&lt;img src="ecas-jupyter.png" alt="ECAS notebooks">&lt;/p>
 &lt;h3 id="accessing-the-grafana-ui">Accessing the Grafana UI&lt;/h3>
 &lt;p>This section will show how to monitor the ECAS environment and the resource
 usage and get aggregated information over time.&lt;/p>
 &lt;p>To access the Grafana monitoring interface, open the browser at
-&lt;code>https://&amp;lt;YOUR_CLUSTER_IP&amp;gt;:3000&lt;/code> and log in to the system using the
-&lt;em>admin&lt;/em> username and the password specified in the &lt;code>.grafana_pwd&lt;/code> file located
-under the &lt;code>/root&lt;/code> folder.&lt;/p>
+&lt;code>https://&amp;lt;YOUR_CLUSTER_IP&amp;gt;:3000&lt;/code> and log in to the system using the &lt;em>admin&lt;/em>
+username and the password specified in the &lt;code>.grafana_pwd&lt;/code> file located under the
+&lt;code>/root&lt;/code> folder.&lt;/p>
 &lt;p>&lt;img src="grafana-login.png" alt="Grafana UI">&lt;/p>
 &lt;p>The Grafana-based monitoring system provides two dashboards in order to monitor
 the ECAS cluster both at system and application level.&lt;/p>
 &lt;ul>
-&lt;li>The &lt;strong>infrastructure dashboard&lt;/strong> provides information about the percentage
-of CPU, RAM, SWAP and disk used on each node (the front-end and the working nodes).&lt;/li>
+&lt;li>The &lt;strong>infrastructure dashboard&lt;/strong> provides information about the percentage of
+CPU, RAM, SWAP and disk used on each Node.js (the frontend and the working
+nodes).&lt;/li>
 &lt;/ul>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">front-end node&lt;/th>
+&lt;th style="text-align:center">frontend node&lt;/th>
 &lt;th style="text-align:center">working node&lt;/th>
 &lt;/tr>
 &lt;/thead>
@@ -201,8 +202,8 @@ of CPU, RAM, SWAP and disk used on each node (the front-end and the working node
 &lt;ul>
 &lt;li>The &lt;strong>application dashboard&lt;/strong> shows information about which operator/workflow
 is being executed and its current execution status and provides aggregated
-information over time (e.g. number of total, completed and failed workflows/tasks,
-hourly weighted average of running cores).&lt;/li>
+information over time (e.g. number of total, completed and failed
+workflows/tasks, hourly weighted average of running cores).&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="ecas-application-dashboard.png" alt="Application metrics dashboard">&lt;/p>
 &lt;h3 id="destroy-the-cluster">Destroy the cluster&lt;/h3>
@@ -211,13 +212,13 @@ management page.&lt;/p>
 &lt;p>&lt;img src="ecas-manage.png" alt="Destroy cluster">&lt;/p>
 &lt;h2 id="references">References&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://ecaslab.cmcc.it/web/home.html">https://ecaslab.cmcc.it/web/home.html&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://ecaslab.dkrz.de/home.html">https://ecaslab.dkrz.de/home.html&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://ophidia.cmcc.it/">http://ophidia.cmcc.it/&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/ECAS-Lab">https://github.com/ECAS-Lab&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/OphidiaBigData/ansible-role-ophidia-cluster">https://github.com/OphidiaBigData/ansible-role-ophidia-cluster&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://www.grycap.upv.es/ec3">http://www.grycap.upv.es/ec3&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://www.github.com/grycap/ec3">http://www.github.com/grycap/ec3&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ecaslab.cmcc.it/web/home.html">ECASLab CMCC&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ecaslab.dkrz.de/home.html">ECASLab DKRZ&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://ophidia.cmcc.it/">Ophidia&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/ECAS-Lab">GitHub: ECAS-Lab&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/OphidiaBigData/ansible-role-ophidia-cluster%3E">GitHub: ansible role Ophidia cluster&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://www.grycap.upv.es/ec3">EC3&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://www.github.com/grycap/ec3">GitHub EC3&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Users: HTC</title><link>/users/cloud-compute/ec3/apps/htc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/cloud-compute/ec3/apps/htc/</guid><description>
 &lt;h2 id="templates">Templates&lt;/h2>
 &lt;p>We will build a torque cluster on one of the EGI Cloud providers using EC3.

@@ -138,7 +138,7 @@ JupyterHub must include this section:&lt;/p>
 &lt;p>Our service relies on custom images for the hub and the single-user notebooks.
 Dockerfiles are available at
 &lt;a href="https://github.com/EGI-Federation/egi-notebooks-images">EGI Notebooks images&lt;/a>
-git repository and automatically build for every commit pushed to the repo to
+git repository and automatically build for every commit pushed to the repository to
 &lt;a href="https://hub.docker.com/u/eginotebooks">eginotebooks @ dockerhub&lt;/a>.&lt;/p>
 &lt;h4 id="hub-image">Hub image&lt;/h4>
 &lt;p>Builds from the
@@ -161,7 +161,7 @@ following sample configuration and adapt to your needs by setting:&lt;/p>
 &lt;ul>
 &lt;li>secret tokens (for &lt;code>proxy.secretToken&lt;/code>, &lt;code>hub.services.status.api_token&lt;/code>,
 &lt;code>auth.state.cryptoKey&lt;/code>). They can be generated with &lt;code>openssl rand -hex 32&lt;/code>.&lt;/li>
-&lt;li>A valid host name (&lt;code>&amp;lt;your notebooks host&amp;gt;&lt;/code> below) that resolves to your
+&lt;li>A valid hostname (&lt;code>&amp;lt;your notebooks host&amp;gt;&lt;/code> below) that resolves to your
 Kubernetes Ingress&lt;/li>
 &lt;li>Valid EGI Check-in client credentials, these can be obtained by creating a new
 client at &lt;a href="https://aai-dev.egi.eu/oidc/">EGI AAI OpenID Connect Provider&lt;/a>.
@@ -264,8 +264,8 @@ client machine:&lt;/p>
 &lt;li>&lt;code>ansible&lt;/code> to configure the VMs and install kubernetes at the providers,&lt;/li>
 &lt;li>&lt;code>terraform-inventory&lt;/code> to get the list of hosts to use from terraform.&lt;/li>
 &lt;/ul>
-&lt;h3 id="get-the-configuration-repo">Get the configuration repo&lt;/h3>
-&lt;p>All the configuration of the notebooks is stored at a git repo available in
+&lt;h3 id="get-the-configuration-repository">Get the configuration repository&lt;/h3>
+&lt;p>All the configuration of the notebooks is stored at a git repository available in
 keybase. You'll need to be part of the &lt;code>opslife&lt;/code> team in keybase to access.
 Start by cloning the repo:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">git clone keybase://team/opslife/egi-notebooks
