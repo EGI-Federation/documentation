@@ -269,4 +269,103 @@ Additional documentation relevant to EGI operations is available at
 &lt;a href="https://wiki.egi.eu/wiki/Documentation">EGI Documentation wiki page&lt;/a>.&lt;/p>
 &lt;h2 id="tools">Tools&lt;/h2>
 &lt;p>A list of services relevant to EGI operations can be found at
-&lt;a href="../../../internal">the section about internal services&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;a href="../../../internal">the section about internal services&lt;/a>.&lt;/p></description></item><item><title>Providers: Resource Centre Integration Check List</title><link>/providers/getting-started/integration_checklist/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/integration_checklist/</guid><description>
+&lt;p>This page provides an overview of what are the required steps to get a new
+Resource Centre integrated into the EGI Federation.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Be aware of the
+&lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Policies">security policies&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Acceptance of the
+&lt;a href="https://documents.egi.eu/public/ShowDocument?docid=31">RC OLA&lt;/a> (agreed with
+the NGI the RC belongs to).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Registration on the
+&lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>an entry for the resource centre was created&lt;/li>
+&lt;li>Required mailing lists are registered&lt;/li>
+&lt;li>people operating the services are registered&lt;/li>
+&lt;li>service endpoints are registered associated to the proper service types
+(&lt;a href="../../cloud-compute/registration">e.g. for cloud providers&lt;/a>), and the
+flags &lt;em>monitored&lt;/em> and &lt;em>production&lt;/em> are set to &lt;em>yes&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Support through the &lt;a href="../../../internal/helpdesk">EGI Helpdesk service&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>The RC name is listed in the GGUS fields “Affected site” and “Notify Site”&lt;/li>
+&lt;li>The site administrators can modify and reply to the tickets assigned to
+their RC
+&lt;ul>
+&lt;li>The Supporter role can be requested either directly on GGUS by using the
+own X509 personal certificate or by
+&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">enrolling to the ggus-supporters&lt;/a>
+group in Check-in.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Security:&lt;/p>
+&lt;ul>
+&lt;li>HTC: &lt;a href="https://wiki.egi.eu/wiki/EGI_CSIRT:Pakiti_client">pakiti&lt;/a> is
+installed and the outcome of the EGI CSIRT assessment is positive;&lt;/li>
+&lt;li>Cloud: the
+&lt;a href="https://www.surveymonkey.com/r/Cloud_Security_Questionnaire_for_Resource_Centres">EGI security Survey&lt;/a>
+was sent to the EGI CSIRT and the outcome was positive.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>AAI:&lt;/p>
+&lt;ul>
+&lt;li>HTC/Storage Compliant with X509 certificates and VOMS attributes&lt;/li>
+&lt;li>&lt;a href="../../cloud-compute/openstack/#egi-aai">OpenStack clouds integration with Check-in&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../check-in/sp/">General integration with Check-in for SPs&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Monitoring: the registered endpoints are automaticall detected by
+&lt;a href="../../../internal/monitoring">ARGO&lt;/a> and monitored according to their type
+registered in the Configuration Database.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="../../../internal/accounting">Accounting&lt;/a>: The accounting records are
+properly sent to the accounting repository and displayed by the
+&lt;a href="https://accounting.egi.eu/">Accounting Portal&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>Accounting probes and &lt;a href="https://github.com/apel/ssm">APEL SSM&lt;/a> are properlly
+installed and configured:
+&lt;ul>
+&lt;li>HTC: &lt;a href="https://github.com/apel/apel">APEL client&lt;/a>&lt;/li>
+&lt;li>Cloud: &lt;a href="https://github.com/IFCA/caso">cASO&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Information discovery:&lt;/p>
+&lt;ul>
+&lt;li>HTC/Storage: the information about compute and storage endpoints are
+&lt;a href="../../operations-manuals/man01_how_to_publish_site_information/">published by the site-bdii into the Top-BDIIs&lt;/a>.&lt;/li>
+&lt;li>Cloud: site is
+&lt;a href="../../cloud-compute/openstack/#catch-all-operations">added to the fedcloud-catchall-operations repository&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Middleware: latest version of technology products are installed using the
+&lt;a href="https://wiki.egi.eu/wiki/Middleware">UMD/CMD release&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Software distribution:&lt;/p>
+&lt;ul>
+&lt;li>HTC (Optional): &lt;a href="https://github.com/cvmfs-contrib/egi-cvmfs">CVMFS&lt;/a>&lt;/li>
+&lt;li>Cloud: VM image synchronisation is configured with a HEPIX VM image list
+compliant software (e.g.
+&lt;a href="https://github.com/the-cloudkeeper-project/cloudkeeper">cloudkeeper&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>
