@@ -1,10 +1,10 @@
 ---
-title: Resource Center Integration Check List
+title: Resource Centre Integration Check List
 type: docs
 ---
 
 This page provides an overview of what are the required steps to get a new
-Resource Center integrated into the EGI Federation.
+Resource Centre integrated into the EGI Federation.
 
 1. Be aware of the
    [security policies](https://wiki.egi.eu/wiki/EGI_CSIRT:Policies).
