@@ -57,14 +57,14 @@ A step-by-step guide for the VO registration process is provided in the procedur
    login credentials already linked to your EGI account.
 
 1. To view the existing members, expand the **People** drop down menu and click
-   on **My _VO-NAME_ Population** (for example, **My vo.example.org
+   on **_VO-NAME_ Population** (for example, **vo.example.org
    Population**)
 
-   ![My VO population menu](./check-in-my-vo-population.png)
+   ![VO population menu](./check-in-my-vo-population.png)
 
 1. Then you are able to see all the VO members.
 
-   ![My VO population](./check-in-my-vo-population-result.png)
+   ![VO population](./check-in-my-vo-population-result.png)
 
 ### Accepting new VO members
 
@@ -131,10 +131,10 @@ uniqueness.
 1. Login to [Check-in registry](https://aai.egi.eu/registry) using any of the
    login credentials already linked to your EGI account.
 
-1. Then expand the **People** drop down menu and click **My `<VO-NAME>`
-   Population** (for example, **My vo.example.org Population**)
+1. Then expand the **People** drop down menu and click **`<VO-NAME>`
+   Population** (for example, **vo.example.org Population**)
 
-   ![My VO population menu](./check-in-my-vo-population.png)
+   ![VO population menu](./check-in-my-vo-population.png)
 
 1. Find the user you want to add to the VO Group and click **Edit**.
 
