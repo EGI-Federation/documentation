@@ -29,6 +29,38 @@ Different service instances are available for different purposes:
 - [Certified sites](https://argo-mon.egi.eu/nagios/)
 - [Uncertified sites](https://argo-mon-uncert.cro-ngi.hr/nagios/)
 
+The uncertified endpoint is using a certificate from a Certificate Authority
+(CA) that is part of the
+[IGTF distribution](https://dl.igtf.net/distribution/igtf/current/).
+
+If your browser is presenting you a security warning about an unknown CA, you
+can manually had the certificate for the ROOT CA to your trust store. The
+process is dependant on the Operating System and browser that you use.
+
+#### Adding IGTF CA bundler to system store on macOS
+
+[FetchCRL3](https://wiki.nikhef.nl/grid/FetchCRL3) can be used to maintain the
+Certificates Revocation Lists (CRLs), providing up to date information on
+revoked certificates.
+
+```shell
+# Install fetch-crl to refresh CA's CRLs
+brew install fetch-crl
+# Preparing a target directory
+sudo mkdir -p /etc/grid-security/certificates
+
+# Retrieving and extracting the bundle
+CA_BUNDLE=https://dist.eugridpma.info/distribution/igtf/current/accredited/igtf-preinstalled-bundle-classic.tar.gz
+curl -s $CA_BUNDLE | sudo tar -xvz -C /etc/grid-security/certificates
+
+# Adding the certificates to the system trust store
+for cert in $(ls /etc/grid-security/certificates/*.pem); do
+  sudo security add-trusted-cert \
+    -k /Library/Keychains/System.keychain \
+    -d $cert
+done
+```
+
 ### Access rules
 
 For an individual site, people having specific roles for the site can access
