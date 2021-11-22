@@ -22,6 +22,14 @@ available [on the ARGO site](https://argo.egi.eu/egi/documentation).
 
 ## Accessing the monitoring information
 
+In order to access the information it's required to have an X509 client
+certificate provided by an [IGTF](https://www.igtf.net/)-accredited Certificate
+Authority.
+
+For people not having access to an IGTF client certificate it's possible to
+access Availability and Reliability information on the
+[EGI ARGO page](https://argo.egi.eu/).
+
 ### Service Monitoring endpoints
 
 Different service instances are available for different purposes:
@@ -29,9 +37,10 @@ Different service instances are available for different purposes:
 - [Certified sites](https://argo-mon.egi.eu/nagios/)
 - [Uncertified sites](https://argo-mon-uncert.cro-ngi.hr/nagios/)
 
-The uncertified endpoint is using a certificate from a Certificate Authority
-(CA) that is part of the
-[IGTF distribution](https://dl.igtf.net/distribution/igtf/current/).
+The endpoint for uncertified sites is using a certificate from a Certificate
+Authority (CA) that is part of the
+[IGTF distribution](https://dl.igtf.net/distribution/igtf/current/) but that is
+not in the default Operating System and browser stores.
 
 If your browser is presenting you a security warning about an unknown CA, you
 can manually had the certificate for the ROOT CA to your trust store. The
