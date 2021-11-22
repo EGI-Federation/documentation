@@ -19,3 +19,24 @@ with minimal development or operational effort for setting up monitoring.
 {{% alert title="Note" color="info" %}} Documentation for Service Monitoring is
 available [on the ARGO site](https://argo.egi.eu/egi/documentation).
 {{% /alert %}}
+
+## Accessing the monitoring information
+
+### Service Monitoring endpoints
+
+Different service instances are available for different purposes:
+
+- [Certified sites](https://argo-mon.egi.eu/nagios/)
+- [Uncertified sites](https://argo-mon-uncert.cro-ngi.hr/nagios/)
+
+### Access rules
+
+For an individual site, people having specific roles for the site can access
+using the X509 certificate linked to their account in
+[Configuration Database](../configuration-database):
+
+- Site Administrator
+- Site Operations Manager
+
+For all sites, the members of the
+[dteam](https://operations-portal.egi.eu/vo/view/voname/dteam) VO can access.
