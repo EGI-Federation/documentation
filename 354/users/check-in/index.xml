@@ -335,13 +335,13 @@ login credentials already linked to your EGI account.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>To view the existing members, expand the &lt;strong>People&lt;/strong> drop down menu and click
-on &lt;strong>My &lt;em>VO-NAME&lt;/em> Population&lt;/strong> (for example, &lt;strong>My vo.example.org
+on &lt;strong>&lt;em>VO-NAME&lt;/em> Population&lt;/strong> (for example, &lt;strong>vo.example.org
 Population&lt;/strong>)&lt;/p>
-&lt;p>&lt;img src="./check-in-my-vo-population.png" alt="My VO population menu">&lt;/p>
+&lt;p>&lt;img src="./check-in-my-vo-population.png" alt="VO population menu">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Then you are able to see all the VO members.&lt;/p>
-&lt;p>&lt;img src="./check-in-my-vo-population-result.png" alt="My VO population">&lt;/p>
+&lt;p>&lt;img src="./check-in-my-vo-population-result.png" alt="VO population">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;h3 id="accepting-new-vo-members">Accepting new VO members&lt;/h3>
@@ -407,9 +407,9 @@ uniqueness.&lt;/p>
 login credentials already linked to your EGI account.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Then expand the &lt;strong>People&lt;/strong> drop down menu and click &lt;strong>My &lt;code>&amp;lt;VO-NAME&amp;gt;&lt;/code>
-Population&lt;/strong> (for example, &lt;strong>My vo.example.org Population&lt;/strong>)&lt;/p>
-&lt;p>&lt;img src="./check-in-my-vo-population.png" alt="My VO population menu">&lt;/p>
+&lt;p>Then expand the &lt;strong>People&lt;/strong> drop down menu and click &lt;strong>&lt;code>&amp;lt;VO-NAME&amp;gt;&lt;/code>
+Population&lt;/strong> (for example, &lt;strong>vo.example.org Population&lt;/strong>)&lt;/p>
+&lt;p>&lt;img src="./check-in-my-vo-population.png" alt="VO population menu">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Find the user you want to add to the VO Group and click &lt;strong>Edit&lt;/strong>.&lt;/p>
