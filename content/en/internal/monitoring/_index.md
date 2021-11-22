@@ -42,33 +42,13 @@ Authority (CA) that is part of the
 [IGTF distribution](https://dl.igtf.net/distribution/igtf/current/) but that is
 not in the default Operating System and browser stores.
 
-If your browser is presenting you a security warning about an unknown CA, you
-can manually had the certificate for the ROOT CA to your trust store. The
+> Your browser may be presenting you a security warning about an unknown CA,
+> it's a known issue with certificate having IGTF trust but not public trust
+> (ie. not by default in the Operating Systems and browsers' trust stores).
+
+If you want to address this you can try to manually download the certificate for
+the ROOT CA and add it to your trust store and mark it as trusted. The exact
 process is dependant on the Operating System and browser that you use.
-
-#### Adding IGTF CA bundler to system store on macOS
-
-[FetchCRL3](https://wiki.nikhef.nl/grid/FetchCRL3) can be used to maintain the
-Certificates Revocation Lists (CRLs), providing up to date information on
-revoked certificates.
-
-```shell
-# Install fetch-crl to refresh CA's CRLs
-brew install fetch-crl
-# Preparing a target directory
-sudo mkdir -p /etc/grid-security/certificates
-
-# Retrieving and extracting the bundle
-CA_BUNDLE=https://dist.eugridpma.info/distribution/igtf/current/accredited/igtf-preinstalled-bundle-classic.tar.gz
-curl -s $CA_BUNDLE | sudo tar -xvz -C /etc/grid-security/certificates
-
-# Adding the certificates to the system trust store
-for cert in $(ls /etc/grid-security/certificates/*.pem); do
-  sudo security add-trusted-cert \
-    -k /Library/Keychains/System.keychain \
-    -d $cert
-done
-```
 
 ### Access rules
 
