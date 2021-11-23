@@ -12,7 +12,7 @@ description: >
 This tutorial describes the EGI Data Transfer using FTS transfers services and
 WebFTS. In the following paragraps you will learn how to:
 
-- use the [FTS](#fts-client-usage) command line client
+- use the [FTS](#fts-client-usage) command-line client
 - use the [WebFTS](#using-the-webfts-data-transfer-interface) web interface
 
 to perform data transfers between two Grid storage.

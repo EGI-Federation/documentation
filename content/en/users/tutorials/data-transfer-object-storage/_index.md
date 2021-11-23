@@ -13,7 +13,7 @@ description: >
 This tutorial describes the EGI Data Transfer using FTS transfers services and
 WebFTS. In the following paragraps you will learn how to:
 
-- use the [FTS](##Using-the-WebFTS-Data-Transfer-interface) command line client
+- use the [FTS](##Using-the-WebFTS-Data-Transfer-interface) command-line client
 - use the [WebFTS](##FTS-client-usage) web interface
 
 to perform data transfers between a Grid storage and object storage or between
@@ -29,7 +29,7 @@ repository to your configuration and update the client{{% /alert %}}
 
 As first step please make sure that you have installed the FTS client as
 described in [Data Transfer](../../data-transfer/), and in particular
-[Clients](../../data-transfer/clients/) for the command line FTS and to have
+[Clients](../../data-transfer/clients/) for the command-line FTS and to have
 your certificate installed in your browser to use
 [WebFTS](../../data-transfer/webfts/) browser based client.
 
@@ -127,7 +127,7 @@ c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
 ```
 
 In this case too we can verify the status of the transfer with the same command
-as before using the new job iD.
+as before using the new job ID.
 
 ```shell
 [ac@localhost ~]$ fts-transfer-status -d -s https://fts3-public.cern.ch:8446 c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
