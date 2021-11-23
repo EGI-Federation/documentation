@@ -92,13 +92,18 @@ can be categorised as follows:&lt;/p>
 &lt;/ul>
 &lt;p>&lt;img src="./check-in-profile-basic.png" alt="User profile">&lt;/p>
 &lt;h3 id="vogroup-membership-and-roles">VO/Group membership and roles&lt;/h3>
-&lt;p>Includes information about the Virtual Organisations and groups the user if
-member of and the roles assigned to the user within those Virtual Organisation.&lt;/p>
+&lt;p>Includes information about the Virtual Organisations (VOs) and groups the user is
+member of and the roles assigned to the user within those VOs.
+Check the &lt;a href="../joining-virtual-organisation">guide about VOs&lt;/a> for more details.&lt;/p>
 &lt;p>&lt;img src="./check-in-profile-vos.png" alt="VO/Group membership">&lt;/p>
 &lt;h3 id="linked-identities">Linked identities&lt;/h3>
 &lt;p>Information about identites linked to your account. Check the
 &lt;a href="../linking">guide for linking accounts&lt;/a> for more information.&lt;/p>
-&lt;p>&lt;img src="./check-in-profile-linked.png" alt="Linked identities">&lt;/p></description></item><item><title>Users: Linking identities</title><link>/users/check-in/linking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/linking/</guid><description>
+&lt;p>&lt;img src="./check-in-profile-linked.png" alt="Linked identities">&lt;/p>
+&lt;h2 id="next-steps">Next steps&lt;/h2>
+&lt;p>Once your Check-in account is ready you can check
+&lt;a href="../linking">how to link it with different identities&lt;/a> or
+&lt;a href="../joining-virtual-organisation">how to join an existing Virtual Organisation (VO)&lt;/a>.&lt;/p></description></item><item><title>Users: Linking identities</title><link>/users/check-in/linking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/linking/</guid><description>
 &lt;!--
 // jscpd:ignore-start
 -->
@@ -222,7 +227,8 @@ certificate.&lt;/p>
 &lt;!--
 // jscpd:ignore-end
 --></description></item><item><title>Users: Joining a Virtual Organisation</title><link>/users/check-in/joining-virtual-organisation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/joining-virtual-organisation/</guid><description>
-&lt;p>Virtual Organisations (VOs) in Check-in are represented as Collaborative Organisation Units (COUs).&lt;/p>
+&lt;p>&lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisations (VOs)&lt;/a>
+in Check-in are represented as Collaborative Organisation Units (COUs).&lt;/p>
 &lt;p>In order to join a Virtual Organisation you must have an EGI account. If you
 don&amp;rsquo;t have, then first &lt;a href="../signup/">sign up for an EGI account&lt;/a>.&lt;/p>
 &lt;ol>
@@ -329,13 +335,13 @@ login credentials already linked to your EGI account.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>To view the existing members, expand the &lt;strong>People&lt;/strong> drop down menu and click
-on &lt;strong>My &lt;em>VO-NAME&lt;/em> Population&lt;/strong> (for example, &lt;strong>My vo.example.org
+on &lt;strong>&lt;em>VO-NAME&lt;/em> Population&lt;/strong> (for example, &lt;strong>vo.example.org
 Population&lt;/strong>)&lt;/p>
-&lt;p>&lt;img src="./check-in-my-vo-population.png" alt="My VO population menu">&lt;/p>
+&lt;p>&lt;img src="./check-in-my-vo-population.png" alt="VO population menu">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Then you are able to see all the VO members.&lt;/p>
-&lt;p>&lt;img src="./check-in-my-vo-population-result.png" alt="My VO population">&lt;/p>
+&lt;p>&lt;img src="./check-in-my-vo-population-result.png" alt="VO population">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;h3 id="accepting-new-vo-members">Accepting new VO members&lt;/h3>
@@ -401,9 +407,9 @@ uniqueness.&lt;/p>
 login credentials already linked to your EGI account.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Then expand the &lt;strong>People&lt;/strong> drop down menu and click &lt;strong>My &lt;code>&amp;lt;VO-NAME&amp;gt;&lt;/code>
-Population&lt;/strong> (for example, &lt;strong>My vo.example.org Population&lt;/strong>)&lt;/p>
-&lt;p>&lt;img src="./check-in-my-vo-population.png" alt="My VO population menu">&lt;/p>
+&lt;p>Then expand the &lt;strong>People&lt;/strong> drop down menu and click &lt;strong>&lt;code>&amp;lt;VO-NAME&amp;gt;&lt;/code>
+Population&lt;/strong> (for example, &lt;strong>vo.example.org Population&lt;/strong>)&lt;/p>
+&lt;p>&lt;img src="./check-in-my-vo-population.png" alt="VO population menu">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Find the user you want to add to the VO Group and click &lt;strong>Edit&lt;/strong>.&lt;/p>
