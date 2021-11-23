@@ -147,4 +147,4 @@ https://fts-public-003.cern.ch:8449/fts3/ftsmon/#/job/247b7ca2-4c4d-11ec-84d0-fa
 
 will show the status of the specified job
 
-![WebFTS credential delegation](CERN-PROD FTS3.png)
+![WebFTS credential delegation](CERN-PROD-FTS3.png)
