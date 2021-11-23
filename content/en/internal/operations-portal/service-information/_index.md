@@ -20,8 +20,8 @@ type: "docs"
 | Supplier                                | CNRS                                                                                               |
 | Roadmap                                 |                                                                                                    |
 | Release notes                           | [Release notes](https://operations-portal.egi.eu/home/tasksList)                                   |
-| Source code                             |                                                                                                    |
-| Issue tracker for developers            |                                                                                                    |
+| Source code                             | https://gitlab.in2p3.fr/opsportal/sf3                                                              |
+| Issue tracker for developers            | https://gitlab.in2p3.fr/opsportal/sf3/-/issues                                                     |
 | License                                 | Apache 2                                                                                           |
 | Privacy Policy                          | https://operations-portal.egi.eu/home/a/termsofuse                                                 |
 
