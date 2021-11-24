@@ -132,7 +132,6 @@ as before using the new job ID.
 ```shell
 [ac@localhost ~]$ fts-transfer-status -d -s https://fts3-public.cern.ch:8446 c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
 FINISHED
-
 ```
 
 ### Step 6 Web interface
