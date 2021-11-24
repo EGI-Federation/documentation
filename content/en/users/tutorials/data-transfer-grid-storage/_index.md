@@ -10,9 +10,9 @@ description: >
 ## Overview
 
 This tutorial describes the EGI Data Transfer using FTS transfers services and
-WebFTS. In the following paragraps you will learn how to:
+WebFTS. In the following paragraphs you will learn how to:
 
-- use the [FTS](#fts-client-usage) command-line ### client
+- use the [FTS](#fts-client-usage) command-line client
 - use the [WebFTS](#using-the-webfts-data-transfer-interface) web interface
 
 to perform data transfers between two Grid storage.
@@ -38,7 +38,7 @@ To access services and resources in the
 ### Step 1 Configuration check
 
 To verify that everything is configured properly you can check with the
-following command and pointing to the cerficates directly:
+following command and pointing to the certificates directly:
 
 ```shell
 $ fts-rest-whoami --key ~/.globus/userkey.pem --cert ~/.globus/usercert.pem \
@@ -160,8 +160,8 @@ transfer that you started:
 ```shell
 $ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ \
   --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M \
-  --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M -o
-cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+  --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M \
+  -o cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 ```
 
 To check the status of the transfer you can use the returned job ID and use the
@@ -169,7 +169,8 @@ following command specifying the server controlling the transfer, the source and
 the transfer itself:
 
 ```shell
-$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ \
+  cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 FINISHED
 ```
 
