@@ -66,7 +66,7 @@ provider such as Amazon, Azure, etc
 Following is an example of the command that can be used to add the Object Store
 credential to the FTS server. The fist step is to register the Object Storage.
 The name of the storage, is S3: + the domain part of the URL (for example
-https://s3.cl2.du.cesnet.cz -> S3:s3.cl2.du.cesnet.cz)
+`https://s3.cl2.du.cesnet.cz` -> `S3:s3.cl2.du.cesnet.cz`)
 
 ```shell
 curl -E "${X509_USER_PROXY}" --cacert "${X509_USER_PROXY}" --capath "/etc/grid-security/certificates" https://fts3devel01.cern.ch:8446/config/cloud_storage -H "Content-Type: application/json" -X POST -d '{"storage_name":"S3:s3.cl2.du.cesnet.cz"}'
