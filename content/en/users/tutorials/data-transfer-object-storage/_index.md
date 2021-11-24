@@ -140,9 +140,8 @@ An alternative way to check the status of the job is to use the FTS web
 interface to see using one the FTS servers and appending the job ID returned
 from one of the previous examples. For instance:
 
-```
+```text
 https://fts-public-003.cern.ch:8449/fts3/ftsmon/#/job/247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
-```
 
 will show the status of the specified job
 
