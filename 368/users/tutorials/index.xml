@@ -26,9 +26,9 @@ Service in EGI please visit its &lt;a href="../../cloud-compute">dedicated secti
 &lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with grid storage</title><link>/users/tutorials/data-transfer-grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-grid-storage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
-WebFTS. In the following paragraps you will learn how to:&lt;/p>
+WebFTS. In the following paragraphs you will learn how to:&lt;/p>
 &lt;ul>
-&lt;li>use the &lt;a href="#fts-client-usage">FTS&lt;/a> command line client&lt;/li>
+&lt;li>use the &lt;a href="#fts-client-usage">FTS&lt;/a> command-line client&lt;/li>
 &lt;li>use the &lt;a href="#using-the-webfts-data-transfer-interface">WebFTS&lt;/a> web interface&lt;/li>
 &lt;/ul>
 &lt;p>to perform data transfers between two Grid storage.&lt;/p>
@@ -49,7 +49,7 @@ access to the services and resources you need&lt;/li>
 &lt;h2 id="fts-client-usage">FTS client usage&lt;/h2>
 &lt;h3 id="step-1-configuration-check">Step 1 Configuration check&lt;/h3>
 &lt;p>To verify that everything is configured properly you can check with the
-following command and pointing to the cerficates directly:&lt;/p>
+following command and pointing to the certificates directly:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-rest-whoami --key ~/.globus/userkey.pem --cert ~/.globus/usercert.pem &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446/
 User DN: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
@@ -131,12 +131,13 @@ you can use a command of this type, returning the job ID corresponding to the
 transfer that you started:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M -o
-cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -o cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>To check the status of the transfer you can use the returned job ID and use the
 following command specifying the server controlling the transfer, the source and
 the transfer itself:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 FINISHED
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option &lt;code>-o&lt;/code> specify that the file should be overwritten if present on
 the destination. If this option is not present and a file with the same name
