@@ -42,11 +42,21 @@ To deploy
 [Serverless computing for data-processing applications](https://www.egi.eu/about/newsletters/serverless-computing-for-data-processing-applications-in-egi/)
 in EGI, please select OSCAR from the list of LRMS (Local Resource Management
 System). OSCAR supports data-driven serverless computing for file-processing
-applications. A file upload, to an object storage backend, will trigger the
-execution of a chosen shell script running inside a user-defined container.
-These will be orchestrated as Kubernetes batch jobs. The output data will be
-uploaded to any object storage backends support. Synchronous invocations
-available.
+applications. A file upload, to the object storage backend [MinIO](http://minio.io),
+will trigger the execution of a chosen shell script running inside a user-defined
+container. These will be orchestrated as Kubernetes batch jobs. The output data
+will be uploaded to any object storage backends support. Synchronous invocations
+are also available.
+
+As external object storage providers, the following services can be used:
+
+- External [MinIO](https://min.io) servers, which may be in clusters other than the 
+  platform.
+- [Amazon S3](https://aws.amazon.com/s3/), the Amazon's  object storage service that
+  offers industry-leading scalability, data availability, security, and performance
+  in the public Cloud.
+- [Onedata](https://onedata.org/), the global data access solution for science used
+  in the [EGI Federated Cloud](https://datahub.egi.eu/).
 
 See the documentation to deploy an elastic Kubernetes cluster with the OSCAR
 platform with EC3:
