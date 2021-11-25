@@ -50,7 +50,7 @@ are also available.
 
 As external object storage providers, the following services can be used:
 
-- External [MinIO](https://min.io) servers, which may be in clusters other than the 
+- External [MinIO](https://min.io) servers, which may be in clusters other than the
   platform.
 - [Amazon S3](https://aws.amazon.com/s3/), the Amazon's  object storage service that
   offers industry-leading scalability, data availability, security, and performance
