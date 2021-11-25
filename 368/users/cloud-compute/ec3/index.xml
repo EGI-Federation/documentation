@@ -301,9 +301,9 @@ Success deleting the cluster!
 with EC3.&lt;/p>
 &lt;h2 id="how-to-run-scientific-applications-in-ec3">How to run scientific applications in EC3&lt;/h2>
 &lt;h3 id="namd-cluster">NAMD cluster&lt;/h3>
-&lt;p>To deploy &lt;a href="https://www.ks.uiuc.edu/Research/namd/">NAMD&lt;/a> clusters, please
-select one of the available LRMS (Local Resource Management System) and
-choose NAMD from the list of applications.&lt;/p>
+&lt;p>To deploy &lt;a href="https://www.ks.uiuc.edu/Research/namd/">NAMD&lt;/a> clusters, please select
+one of the available LRMS (Local Resource Management System) and choose NAMD
+from the list of applications.&lt;/p>
 &lt;h2 id="how-to-use-generic-toolspractices-in-ec3">How to use generic tools/practices in EC3&lt;/h2>
 &lt;h3 id="ecas-cluster">ECAS cluster&lt;/h3>
 &lt;p>Check the dedicated &lt;a href="./ecas/">ECAS documentation&lt;/a>.&lt;/p>
@@ -314,15 +314,39 @@ choose NAMD from the list of applications.&lt;/p>
 &lt;p>To deploy a virtual cluster with
 &lt;a href="https://mesosphere.github.io/marathon/">Marathon&lt;/a>,
 &lt;a href="http://mesos.apache.org/">Mesos&lt;/a>, and
-&lt;a href="https://mesos.github.io/chronos/">Chronos&lt;/a> as an orchestration,
-please select Mesos + Marathon + Chronos from the list of available LRMS.&lt;/p>
+&lt;a href="https://mesos.github.io/chronos/">Chronos&lt;/a> as an orchestration, please select
+Mesos + Marathon + Chronos from the list of available LRMS.&lt;/p>
 &lt;h3 id="oscar-cluster">OSCAR cluster&lt;/h3>
 &lt;p>To deploy
 &lt;a href="https://www.egi.eu/about/newsletters/serverless-computing-for-data-processing-applications-in-egi/">Serverless computing for data-processing applications&lt;/a>
 in EGI, please select OSCAR from the list of LRMS (Local Resource Management
-System). Use cases of applications that use the OSCAR framework for
-event-driven high-throughput processing of files:&lt;/p>
+System). OSCAR supports data-driven serverless computing for file-processing
+applications. A file upload, to the object storage backend &lt;a href="http://minio.io">MinIO&lt;/a>,
+will trigger the execution of a chosen shell script running inside a user-defined
+container. These will be orchestrated as Kubernetes batch jobs. The output data
+will be uploaded to any object storage backends support. Synchronous invocations
+are also available.&lt;/p>
+&lt;p>As external object storage providers, the following services can be used:&lt;/p>
 &lt;ul>
+&lt;li>External &lt;a href="https://min.io">MinIO&lt;/a> servers, which may be in clusters other than the
+platform.&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/s3/">Amazon S3&lt;/a>, the Amazon&amp;rsquo;s object storage service that
+offers industry-leading scalability, data availability, security, and performance
+in the public Cloud.&lt;/li>
+&lt;li>&lt;a href="https://onedata.org/">Onedata&lt;/a>, the global data access solution for science used
+in the &lt;a href="https://datahub.egi.eu/">EGI DataHub&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>See the documentation to deploy an elastic Kubernetes cluster with the OSCAR
+platform with EC3:
+&lt;a href="https://docs.oscar.grycap.net/deploy-ec3/">Deploy OSCAR with EC3&lt;/a>&lt;/p>
+&lt;p>See some use cases of applications that use the OSCAR framework for event-driven
+high-throughput processing of files (you can found it in the GitHub repository
+&lt;a href="https://github.com/grycap/oscar/tree/master/examples">examples folder&lt;/a>):&lt;/p>
+&lt;ul>
+&lt;li>Inference of a machine learning model: See full description at
+&lt;a href="https://oscar.grycap.net/blog/post-oscar-faas-scalable-ml-inference/">OSCAR Blog entry&lt;/a>.&lt;/li>
+&lt;li>Mask detection: See full description at
+&lt;a href="https://oscar.grycap.net/blog/post-oscar-serverless-ai-models/">OSCAR Blog entry&lt;/a>.&lt;/li>
 &lt;li>&lt;a href="https://github.com/indigo-dc/plant-classification-theano">Plants Classification&lt;/a>,
 an application that performs plant classification using Lasagne/Theano.&lt;/li>
 &lt;li>&lt;a href="https://www.imagemagick.org/">ImageMagick&lt;/a>, a tool to manipulate images.&lt;/li>
@@ -330,10 +354,11 @@ an application that performs plant classification using Lasagne/Theano.&lt;/li>
 the handling of Rheumatic Heart Disease (RHD) through image computing and
 Artificial Intelligence (AI).&lt;/li>
 &lt;/ul>
+&lt;p>More information in the &lt;a href="https://oscar.grycap.net/">OSCAR web page&lt;/a>&lt;/p>
 &lt;h3 id="slurm-cluster">SLURM cluster&lt;/h3>
-&lt;p>To deploy &lt;a href="https://slurm.schedmd.com/documentation.html">SLURM&lt;/a> clusters,
-please select SLURM from the list of available LRMS.
-See also the dedicated guide on &lt;a href="./htc/">HTC clusters&lt;/a>&lt;/p></description></item><item><title>Users: Instructions for developers</title><link>/users/cloud-compute/ec3/developers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/cloud-compute/ec3/developers/</guid><description>
+&lt;p>To deploy &lt;a href="https://slurm.schedmd.com/documentation.html">SLURM&lt;/a> clusters, please
+select SLURM from the list of available LRMS. See also the dedicated guide on
+&lt;a href="./htc/">HTC clusters&lt;/a>&lt;/p></description></item><item><title>Users: Instructions for developers</title><link>/users/cloud-compute/ec3/developers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/cloud-compute/ec3/developers/</guid><description>
 &lt;p>This section documents how to integrate a new application in EC3.&lt;/p>
 &lt;h2 id="about">About&lt;/h2>
 &lt;p>The process to integrate a new application in EC3 is described by the
