@@ -49,7 +49,7 @@ To access services and resources in the
 
 ### Step 1 Configuration check and Proxy creation
 
-For this two steps please refer to the "Data transfer with grid storage"
+For this two steps please refer to the ["Data transfer with grid storage"](../data-transfer-grid-storage/)
 tutorial.
 
 ### Step 2 Find the storage
@@ -69,13 +69,17 @@ The name of the storage, is S3: + the domain part of the URL (for example
 `https://s3.cl2.du.cesnet.cz` -> `S3:s3.cl2.du.cesnet.cz`)
 
 ```shell
-curl -E "${X509_USER_PROXY}" --cacert "${X509_USER_PROXY}" --capath "/etc/grid-security/certificates" https://fts3devel01.cern.ch:8446/config/cloud_storage -H "Content-Type: application/json" -X POST -d '{"storage_name":"S3:s3.cl2.du.cesnet.cz"}'
+curl -E "${X509_USER_PROXY}" --cacert "${X509_USER_PROXY}" \
+  --capath "/etc/grid-security/certificates" https://fts3devel01.cern.ch:8446/config/cloud_storage \
+  -H "Content-Type: application/json" -X POST -d '{"storage_name":"S3:s3.cl2.du.cesnet.cz"}'
 ```
 
 And then, add the keys, so the requests can be signed.
 
 ```shell
-curl -E "${X509_USER_PROXY}" --cacert "${X509_USER_PROXY}" --capath "/etc/grid-security/certificates"  "https://fts3devel01.cern.ch:8446/config/cloud_storage/S3:s3.cl2.du.cesnet.cz" -H "Content-Type: application/json" -X POST -d "${config}"
+curl -E "${X509_USER_PROXY}" --cacert "${X509_USER_PROXY}" \
+  --capath "/etc/grid-security/certificates"  "https://fts3devel01.cern.ch:8446/config/cloud_storage/S3:s3.cl2.du.cesnet.cz" \
+  -H "Content-Type: application/json" -X POST -d "${config}"
 ```
 
 Where config is a json message with the following parameters:
@@ -103,7 +107,9 @@ possible to use any compatible tool. Following will be only shown an example of
 transfer.
 
 ```shell
-[ac@localhost ~]$ fts-transfer-submit --s3alternate -s https://fts3-public.cern.ch:8446 https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3
+[ac@localhost ~]$ fts-transfer-submit --s3alternate \
+  -s https://fts3-public.cern.ch:8446 https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M \
+  s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3
 247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
 ```
 
@@ -122,7 +128,8 @@ object storage. In this case the transfer will be controlled by the FTS service
 you can use a command like:
 
 ```shell
-[ac@localhost ~]$ fts-transfer-submit --s3alternate -s https://fts3-public.cern.ch:8446 s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3 s3://s3.cl2.du.cesnet.cz/bucket-name/A
+[ac@localhost ~]$ fts-transfer-submit --s3alternate -s https://fts3-public.cern.ch:8446 \
+  s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3 s3://s3.cl2.du.cesnet.cz/bucket-name/A
 c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
 ```
 
