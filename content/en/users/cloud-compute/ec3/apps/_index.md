@@ -56,7 +56,7 @@ As external object storage providers, the following services can be used:
   offers industry-leading scalability, data availability, security, and performance
   in the public Cloud.
 - [Onedata](https://onedata.org/), the global data access solution for science used
-  in the [EGI Federated Cloud](https://datahub.egi.eu/).
+  in the [EGI DataHub](https://datahub.egi.eu/).
 
 See the documentation to deploy an elastic Kubernetes cluster with the OSCAR
 platform with EC3:
