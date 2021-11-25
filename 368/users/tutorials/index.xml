@@ -109,7 +109,8 @@ with an already available bucket is used. To manage the object storage is
 possible to use any compatible tool. Following will be only shown an example of
 transfer.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-submit --s3alternate &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3
 247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The command returns a job ID that we can use to check the status of the transfer
