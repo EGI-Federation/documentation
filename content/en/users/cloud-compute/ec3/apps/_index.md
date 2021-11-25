@@ -42,10 +42,10 @@ To deploy
 [Serverless computing for data-processing applications](https://www.egi.eu/about/newsletters/serverless-computing-for-data-processing-applications-in-egi/)
 in EGI, please select OSCAR from the list of LRMS (Local Resource Management
 System). OSCAR supports data-driven serverless computing for file-processing applications. 
-Services will be triggered in response to a file upload to an object storage back-end in order 
+Services will be triggered in response to a file upload to an object storage backend in order 
 to execute a user-defined shell script inside a container provisioned out of an user-defined 
 Docker image. These will be orchestrated as a Kubernetes batch jobs. The output data will be uploaded 
-to any object storage back-ends support. Synchronous invocations available.
+to any object storage backends support. Synchronous invocations available.
 
 See the documentation to deploy an elastic Kubernetes cluster with the OSCAR platform with EC3:
 [Deploy OSCAR with EC3](https://docs.oscar.grycap.net/deploy-ec3/)
@@ -63,7 +63,7 @@ GitHub repository [examples folder](https://github.com/grycap/oscar/tree/master/
   the handling of Rheumatic Heart Disease (RHD) through image computing and
   Artificial Intelligence (AI).
 
-More information in the [OSCAR webpage](https://oscar.grycap.net/)
+More information in the [OSCAR web page](https://oscar.grycap.net/)
 
 ### SLURM cluster
 
