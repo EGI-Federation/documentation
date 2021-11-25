@@ -115,7 +115,8 @@ transfer.
 
 ```shell
 $ fts-transfer-submit --s3alternate \
-  -s https://fts3-public.cern.ch:8446 https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M \
+  -s https://fts3-public.cern.ch:8446 \
+  https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M \
   s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3
 247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
 ```
