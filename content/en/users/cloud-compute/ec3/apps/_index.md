@@ -44,7 +44,7 @@ in EGI, please select OSCAR from the list of LRMS (Local Resource Management
 System). OSCAR supports data-driven serverless computing for file-processing
 applications. A file upload, to an object storage backend, will trigger the
 execution of a chosen shell script running inside a user-defined container.
-These will be orchestrated as a Kubernetes batch jobs. The output data will be
+These will be orchestrated as Kubernetes batch jobs. The output data will be
 uploaded to any object storage backends support. Synchronous invocations
 available.
 
