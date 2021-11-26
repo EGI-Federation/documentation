@@ -79,10 +79,10 @@ And then, add the keys, so the requests can be signed.
 ```shell
 curl -E "${X509_USER_PROXY}" --cacert "${X509_USER_PROXY}" \
   --capath "/etc/grid-security/certificates"  "https://fts3devel01.cern.ch:8446/config/cloud_storage/S3:s3.cl2.du.cesnet.cz" \
-  -H "Content-Type: application/json" -X POST -d "${config}"
+  -H "Content-Type: application/json" -X POST --data @config.json
 ```
 
-Where config is a json message with the following parameters:
+Where config.json is a JSON message containing following parameters:
 
 ```shell
 {
