@@ -89,7 +89,7 @@ $ curl -E "${X509_USER_PROXY}" \
   --data @config.json
 ```
 
-Where config.json is a JSON message with the following content:
+Where `config.json` is a JSON message with the following content:
 
 ```json
 {
