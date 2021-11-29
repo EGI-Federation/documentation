@@ -20,7 +20,7 @@ messages, like for sending information about accounting or resources available
 at a cloud site. More specifically, the services that use the Messaging service
 are:
 
-- **AAI Federation Registry (beta)**: It uses the AMS Service to exchange
+- **AAI Federation Registry**: It uses the AMS Service to exchange
   information with the different deployers (ex, SimpleSamlPhp, Mitre Id,
   Keycloak).
 - **Operations Portal**: Reads the alarms from predefined topics, stores them in
