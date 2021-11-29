@@ -19,7 +19,7 @@
 &lt;/tr>
 &lt;tr>
 &lt;td>URL&lt;/td>
-&lt;td>&lt;/td>
+&lt;td>N/A&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Support Email&lt;/td>
@@ -43,7 +43,7 @@
 &lt;/tr>
 &lt;tr>
 &lt;td>Release notes&lt;/td>
-&lt;td>&lt;/td>
+&lt;td>&lt;a href="https://github.com/ARGOeu/argo-messaging/releases">https://github.com/ARGOeu/argo-messaging/releases&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Source code&lt;/td>
