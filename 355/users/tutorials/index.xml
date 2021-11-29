@@ -23,10 +23,132 @@ may prefer to use the &lt;a href="../../getting-started/cli">command-line interf
 &lt;p>To know more about the &lt;a href="https://www.egi.eu/services/cloud-compute/">Cloud Compute&lt;/a>
 Service in EGI please visit its &lt;a href="../../cloud-compute">dedicated section&lt;/a>.&lt;/p>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
-&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with grid storage</title><link>/users/tutorials/data-transfer-grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-grid-storage/</guid><description>
+&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with object storage</title><link>/users/tutorials/data-transfer-object-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-object-storage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
-WebFTS.&lt;/p>
+WebFTS. In the following paragraps you will learn how to:&lt;/p>
+&lt;ul>
+&lt;li>use the &lt;a href="##Using-the-WebFTS-Data-Transfer-interface">FTS&lt;/a> command-line client&lt;/li>
+&lt;li>use the &lt;a href="##FTS-client-usage">WebFTS&lt;/a> web interface&lt;/li>
+&lt;/ul>
+&lt;p>to perform data transfers between a Grid storage and object storage or between
+two object storage.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+This procedure has been tested
+with the FTS client 3.11. Older version do not support all the options
+necessary. To install the latest version please add the
+&lt;a href="https://fts-repo.web.cern.ch/fts-repo/fts3-prod-el7.repo">FTS3 Production&lt;/a>
+repository to your configuration and update the client
+&lt;/div>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>As first step please make sure that you have installed the FTS client as
+described in &lt;a href="../../data-transfer/">Data Transfer&lt;/a>, and in particular
+&lt;a href="../../data-transfer/clients/">Clients&lt;/a> for the command-line FTS and to have
+your certificate installed in your browser to use
+&lt;a href="../../data-transfer/webfts/">WebFTS&lt;/a> browser based client.&lt;/p>
+&lt;p>To access services and resources in the
+&lt;a href="../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
+&lt;ul>
+&lt;li>An &lt;a href="../../check-in">EGI Check-in&lt;/a> account, you can
+&lt;a href="../../check-in/signup">sign up here&lt;/a>&lt;/li>
+&lt;li>Enrollment into a &lt;a href="../../check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+access to the services and resources you need&lt;/li>
+&lt;li>An &lt;a href="../../online-storage/object-storage/">Object Storage&lt;/a> for which you need
+to have all the credentials available (any S3 compatible storage should work)&lt;/li>
+&lt;li>Permission to add the Object Storage credential to the FTS server or
+alternatively for this operation you may contact support support &lt;strong>at&lt;/strong>
+egi.eu.&lt;/li>
+&lt;/ul>
+&lt;h2 id="fts-client-usage">FTS client usage&lt;/h2>
+&lt;h3 id="step-1-configuration-check-and-proxy-creation">Step 1 Configuration check and Proxy creation&lt;/h3>
+&lt;p>For this two steps please refer to the
+&lt;a href="../data-transfer-grid-storage/">&amp;ldquo;Data transfer with grid storage&amp;rdquo;&lt;/a> tutorial.&lt;/p>
+&lt;h3 id="step-2-find-the-storage">Step 2 Find the storage&lt;/h3>
+&lt;p>As for the &amp;ldquo;Data transfer with grid storage&amp;rdquo; tutorial you can look for the
+available storage on
+&lt;a href="https://operations-portal.egi.eu/vapor/resources/GL2ResVO">VAPOR service&lt;/a> while
+the Object Store can be one created as described in the
+&lt;a href="../../online-storage/object-storage/">Object Storage&lt;/a> section or trough a
+provider such as Amazon, Azure, etc&lt;/p>
+&lt;h3 id="step-3-add-the-object-storage-credential-to-the-fts-server">Step 3 Add the Object Storage credential to the FTS server&lt;/h3>
+&lt;p>Following is an example of the command that can be used to add the Object Store
+credential to the FTS server. The fist step is to register the Object Storage.
+The name of the storage, is S3: + the domain part of the URL (for example
+&lt;code>https://s3.cl2.du.cesnet.cz&lt;/code> -&amp;gt; &lt;code>S3:s3.cl2.du.cesnet.cz&lt;/code>)&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -E &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --cacert &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --capath &lt;span style="color:#4e9a06">&amp;#34;/etc/grid-security/certificates&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> https://fts3devel01.cern.ch:8446/config/cloud_storage &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -X POST &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#39;{&amp;#34;storage_name&amp;#34;:&amp;#34;S3:s3.cl2.du.cesnet.cz&amp;#34;}&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then, add the keys, so the requests can be signed.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -E &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --cacert &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --capath &lt;span style="color:#4e9a06">&amp;#34;/etc/grid-security/certificates&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://fts3devel01.cern.ch:8446/config/cloud_storage/S3:s3.cl2.du.cesnet.cz&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -X POST &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --data @config.json
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where &lt;code>config.json&lt;/code> is a JSON file with the following content:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;vo_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;/dteam/Role=NULL/Capability=NULL&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;access_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ACCESS_KEY&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;secret_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;SECRET_KEY&amp;#34;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where ACCESS_KEY and SECRET KEY are the corresponding key necessary to access
+the object storage. See also the
+&lt;a href="https://fts3-docs.web.cern.ch/fts3-docs/docs/s3_support.html#doing-a-transfer">S3 Support&lt;/a>
+pages on the FTS docs pages.&lt;/p>
+&lt;h3 id="step-4-transfer-between-a-grid-storage-and-an-object-storage">Step 4 Transfer between a grid storage and an object storage&lt;/h3>
+&lt;p>For the grid storage to use please follow the details described in the section
+&amp;ldquo;Find the storage&amp;rdquo; of the &amp;ldquo;Data transfer with grid storage&amp;rdquo; tutorial. In the
+following examples, an object storage available in &lt;code>s3://s3.cl2.du.cesnet.cz/&lt;/code>
+with an already available bucket is used. To manage the object storage is
+possible to use any compatible tool. Following will be only shown an example of
+transfer.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-submit --s3alternate &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3
+247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The command returns a job ID that we can use to check the status of the transfer
+itself:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-status -d &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> 247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
+FINISHED
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-transfer-between-two-object-storage">Step 5 Transfer between two object storage&lt;/h3>
+&lt;p>We can also use the data transfer service to perform transfers between two
+object storage. In this case the transfer will be controlled by the FTS service
+you can use a command like:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-submit --s3alternate &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/A
+c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case too we can verify the status of the transfer with the same command
+as before using the new job ID.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-status -d &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
+FINISHED
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-6-web-interface">Step 6 Web interface&lt;/h3>
+&lt;p>An alternative way to check the status of the job is to use the FTS web
+interface to see using one the FTS servers and appending the job ID returned
+from one of the previous examples. For instance the link below will show the
+status of the specified job:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">https://fts-public-003.cern.ch:8449/fts3/ftsmon/#/job/247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="CERN-PROD-FTS3.png" alt="WebFTS credential delegation">&lt;/p></description></item><item><title>Users: Data transfer with grid storage</title><link>/users/tutorials/data-transfer-grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-grid-storage/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
+WebFTS. In the following paragraphs you will learn how to:&lt;/p>
+&lt;ul>
+&lt;li>use the &lt;a href="#fts-client-usage">FTS&lt;/a> command-line client&lt;/li>
+&lt;li>use the &lt;a href="#using-the-webfts-data-transfer-interface">WebFTS&lt;/a> web interface&lt;/li>
+&lt;/ul>
+&lt;p>to perform data transfers between two Grid storage.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>As first step please make sure that you have installed the FTS client as
 described in &lt;a href="../../data-transfer/">Data Transfer&lt;/a>, and in particular
@@ -41,10 +163,10 @@ your certificate installed in your browser to use
 &lt;li>Enrollment into a &lt;a href="../../check-in/vos">Virtual Organisation&lt;/a> (VO) that has
 access to the services and resources you need&lt;/li>
 &lt;/ul>
-&lt;h2 id="using-the-fts-client">Using the FTS client&lt;/h2>
+&lt;h2 id="fts-client-usage">FTS client usage&lt;/h2>
 &lt;h3 id="step-1-configuration-check">Step 1 Configuration check&lt;/h3>
 &lt;p>To verify that everything is configured properly you can check with the
-following command pointing to the cerficates directly:&lt;/p>
+following command and pointing to the certificates directly:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-rest-whoami --key ~/.globus/userkey.pem --cert ~/.globus/usercert.pem &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446/
 User DN: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
@@ -55,7 +177,7 @@ Base id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In general the commands can be used by specifying the user public and private
 key like shown in the example or by creating a proxy certificate as described in
 the following section.&lt;/p>
-&lt;h3 id="proxy-creation">Proxy creation&lt;/h3>
+&lt;h3 id="step-2-proxy-creation">Step 2 Proxy creation&lt;/h3>
 &lt;p>As you have seen in the previous section it is possible to use the FTS commands
 by specifying the location of the user public and private key. With the use of
 &lt;code>voms-proxy-init&lt;/code> it is possible to create a &lt;code>proxy&lt;/code> certificate for the user.
@@ -105,7 +227,7 @@ Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/sp
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>With a proxy now available for the user it is now possible to execute the FTS
 commands without specifying the public and private keys as it will be shown in
 the following sections.&lt;/p>
-&lt;h3 id="find-the-storage">Find the storage&lt;/h3>
+&lt;h3 id="step-3-find-the-storage">Step 3 Find the storage&lt;/h3>
 &lt;p>In general, the source and destination storage for a specific project should be
 already known. However, to discover the available source or destination
 endpoints to be used for a transfer, you can use the
@@ -119,26 +241,27 @@ particular in this case you are interested in the information on the status,
 capacity, type of storage, etc. Following is a screenshot of the visualisation
 of the list of storage available to &lt;em>dteam&lt;/em>.&lt;/p>
 &lt;p>&lt;img src="VAPOR-storage.png" alt="VAPOR storage page">&lt;/p>
-&lt;h3 id="starting-a-transfer">Starting a transfer&lt;/h3>
+&lt;h3 id="step-4-starting-a-transfer">Step 4 Starting a transfer&lt;/h3>
 &lt;p>Once you have identified the source and destination storage needed for the
 transfer you can proceed with the transfer between the two endpoints. To do that
 you can use a command of this type, returning the job ID corresponding to the
 transfer that you started:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M -o
-cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -o cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>To check the status of the transfer you can use the returned job ID and use the
 following command specifying the server controlling the transfer, the source and
 the transfer itself:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 FINISHED
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option &lt;code>-o&lt;/code> specify that the file should be overwritten if present on
 the destination. If this option is not present and a file with the same name
 exists on the destination, the transfer itself will fail. If you use this option
 you should make sure that it is safe to do so.&lt;/p>
 &lt;h2 id="using-the-webfts-data-transfer-interface">Using the WebFTS Data Transfer interface&lt;/h2>
-&lt;h3 id="accessing-the-webfts-interface">Accessing the WebFTS interface&lt;/h3>
+&lt;h3 id="step-1-access-the-webfts-interface">Step 1 Access the WebFTS interface&lt;/h3>
 &lt;p>The WebFTS is accessible at this &lt;a href="https://webfts.cern.ch/">CERN FTS URL&lt;/a>.
 Similarly to what has been done from the command-line interface you need to
 provide our private key for delegation of the credential. To do that you use the
@@ -152,10 +275,14 @@ that opens:&lt;/p>
 &lt;p>&lt;img src="WebFTS-credential_delegation.png" alt="WebFTS credential delegation">&lt;/p>
 &lt;p>And select the desired VO. Once the delegation is set it&amp;rsquo;s possible to move to
 the following steps.&lt;/p>
-&lt;p>&lt;strong>Warning&lt;/strong>: please be careful and avoid sharing this information with any third
-party or saving this information in plain text. WebFTS uses the key to acquire a
-proxy certificate on your behalf as described previously and does not store it.&lt;/p>
-&lt;h3 id="submitting-a-transfer">Submitting a transfer&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+please be careful and avoid
+sharing this information with any third party or saving this information in
+plain text. WebFTS uses the key to acquire a proxy certificate on your behalf as
+described previously and does not store it.
+&lt;/div>
+&lt;h3 id="step-2-submitting-a-transfer">Step 2 Submitting a transfer&lt;/h3>
 &lt;p>The tab &lt;code>Submit a transfer&lt;/code> is divided in two parts in which is possible to add
 two endpoints that can be used both as source or destination. After adding the
 URL for the two endpoints, it is possible to browse and select the files and
