@@ -10,7 +10,12 @@ description: >
 ## Overview
 
 This tutorial describes the EGI Data Transfer using FTS transfers services and
-WebFTS.
+WebFTS. In the following paragraphs you will learn how to:
+
+- use the [FTS](#fts-client-usage) command-line client
+- use the [WebFTS](#using-the-webfts-data-transfer-interface) web interface
+
+to perform data transfers between two Grid storage.
 
 ## Prerequisites
 
@@ -28,12 +33,12 @@ To access services and resources in the
 - Enrollment into a [Virtual Organisation](../../check-in/vos) (VO) that has
   access to the services and resources you need
 
-## Using the FTS client
+## FTS client usage
 
 ### Step 1 Configuration check
 
 To verify that everything is configured properly you can check with the
-following command pointing to the cerficates directly:
+following command and pointing to the certificates directly:
 
 ```shell
 $ fts-rest-whoami --key ~/.globus/userkey.pem --cert ~/.globus/usercert.pem \
@@ -49,7 +54,7 @@ In general the commands can be used by specifying the user public and private
 key like shown in the example or by creating a proxy certificate as described in
 the following section.
 
-### Proxy creation
+### Step 2 Proxy creation
 
 As you have seen in the previous section it is possible to use the FTS commands
 by specifying the location of the user public and private key. With the use of
@@ -124,7 +129,7 @@ With a proxy now available for the user it is now possible to execute the FTS
 commands without specifying the public and private keys as it will be shown in
 the following sections.
 
-### Find the storage
+### Step 3 Find the storage
 
 In general, the source and destination storage for a specific project should be
 already known. However, to discover the available source or destination
@@ -145,7 +150,7 @@ of the list of storage available to _dteam_.
 
 ![VAPOR storage page](VAPOR-storage.png)
 
-### Starting a transfer
+### Step 4 Starting a transfer
 
 Once you have identified the source and destination storage needed for the
 transfer you can proceed with the transfer between the two endpoints. To do that
@@ -155,8 +160,8 @@ transfer that you started:
 ```shell
 $ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ \
   --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M \
-  --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M -o
-cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+  --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M \
+  -o cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 ```
 
 To check the status of the transfer you can use the returned job ID and use the
@@ -164,7 +169,8 @@ following command specifying the server controlling the transfer, the source and
 the transfer itself:
 
 ```shell
-$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ \
+  cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
 FINISHED
 ```
 
@@ -175,7 +181,7 @@ you should make sure that it is safe to do so.
 
 ## Using the WebFTS Data Transfer interface
 
-### Accessing the WebFTS interface
+### Step 1 Access the WebFTS interface
 
 The WebFTS is accessible at this [CERN FTS URL](https://webfts.cern.ch/).
 Similarly to what has been done from the command-line interface you need to
@@ -197,11 +203,12 @@ that opens:
 And select the desired VO. Once the delegation is set it's possible to move to
 the following steps.
 
-**Warning**: please be careful and avoid sharing this information with any third
-party or saving this information in plain text. WebFTS uses the key to acquire a
-proxy certificate on your behalf as described previously and does not store it.
+{{% alert title="Warning" color="warning" %}} please be careful and avoid
+sharing this information with any third party or saving this information in
+plain text. WebFTS uses the key to acquire a proxy certificate on your behalf as
+described previously and does not store it. {{% /alert %}}
 
-### Submitting a transfer
+### Step 2 Submitting a transfer
 
 The tab `Submit a transfer` is divided in two parts in which is possible to add
 two endpoints that can be used both as source or destination. After adding the
