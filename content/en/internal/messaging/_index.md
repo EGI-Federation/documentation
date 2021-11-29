@@ -9,15 +9,11 @@ description: "Messaging service supporting other central services"
 
 The EGI Messaging Service is powered by ARGO Messaging Service (AMS), a
 real-time messaging service that allows the user to send and receive messages
-between independent applications. It's a Publish/Subscribe Service implementing
-the Google PubSub protocol.
+between independent applications.
 
-It provides an HTTP API that enables Users/Systems to implement message oriented
+It's a Publish/Subscribe Service implementing the Google PubSub protocol and
+providing an HTTP API that enables Users/Systems to implement message oriented
 service using the Publish/Subscribe Model over plain HTTP.
-
-In the Publish/Subscribe paradigm, Publishers are users/systems that can send
-messages to named-channels called Topics. Subscribers are users/systems that
-create Subscriptions to specific topics and receive messages.
 
 This central service is used by other EGI central services in order to exchange
 messages, like for sending information about accounting or resources available
@@ -39,24 +35,6 @@ are:
   subscriptions is GOCDB.
 - _ARGO Availability and Reliability Monitoring Service_: It uses the AMS
   service to send the messages from the monitoring engine to other components.
-
-{{% alert title="Note" color="info" %}} Documentation for the ARGO Messaging
-Service is available on
-[the ARGO documentation site](https://argoeu.github.io/guides/messaging/).
-{{% /alert %}}
-
-## Architecture
-
-Instead of focusing on a single Messaging service specification for handling the
-logic of publishing/subscribing to the broker network the service focuses on
-creating nodes of Publishers and Subscribers as a Service. In the
-Publish/Subscribe paradigm, Publishers are users/systems that can send messages
-to named-channels called Topics. Subscribers are users/systems that create
-Subscriptions to specific topics and receive messages. As shown in Figure below,
-the current deployment of messaging service comprises a haproxy server, which
-acts as a load balancer for the 3 AMS servers running in the backend.
-
-![Overview of the messaging service architecture](messaging-diagram.png)
 
 ## Features
 
@@ -90,3 +68,27 @@ These components are extensively used by the connected services.
   functionalities.The AUTH service holds various information about a service’s
   users, hosts, API urls, etc, and leverages them to provide its functionality.
 - _AMS Metrics_: Metrics about the service
+
+## Architecture
+
+In the Publish/Subscribe paradigm, Publishers are users/systems that can send
+messages to named-channels called Topics. Subscribers are users/systems that
+create Subscriptions to specific topics and receive messages.
+
+Instead of focusing on a single Messaging service specification for handling the
+logic of publishing/subscribing to the broker network the service focuses on
+creating nodes of Publishers and Subscribers as a Service. In the
+Publish/Subscribe paradigm, Publishers are users/systems that can send messages
+to named-channels called Topics. Subscribers are users/systems that create
+Subscriptions to specific topics and receive messages. As shown in Figure below,
+the current deployment of messaging service comprises a haproxy server, which
+acts as a load balancer for the 3 AMS servers running in the backend.
+
+![Overview of the messaging service architecture](messaging-diagram.png)
+
+## Using the Messaging Service
+
+{{% alert title="Note" color="info" %}} Documentation for the ARGO Messaging
+Service is available on
+[the ARGO documentation site](https://argoeu.github.io/guides/messaging/).
+{{% /alert %}}
