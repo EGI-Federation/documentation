@@ -13,13 +13,13 @@ type: "docs"
 | --------------------------------------- | ------------------------------------------------------------- |
 | Name                                    | Messaging service                                             |
 | Description                             | Facilitate messages exchange between EGI services             |
-| URL                                     |                                                               |
+| URL                                     |  N/A                                                          |
 | Support Email                           | `argo-ggus-support` at `grnet.gr`                             |
 | [Helpdesk](../../helpdesk) Support Unit | **EGI Services and Service Components** <br/> I\_\_ Messaging |
 | Configuration Database entry            | https://goc.egi.eu/portal/index.php?Page_Type=Site&id=429     |
 | Supplier                                | GRNET, SRCE                                                   |
 | Roadmap                                 |                                                               |
-| Release notes                           |                                                               |
+| Release notes                           | https://github.com/ARGOeu/argo-messaging/releases             |
 | Source code                             | https://github.com/ARGOeu/argo-messaging                      |
 | Issue tracker for developers            | https://github.com/ARGOeu/argo-messaging/issues               |
 | License                                 | Apache 2.0                                                    |
