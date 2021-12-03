@@ -6,7 +6,7 @@ description: >
   Frequently Asked Questions
 ---
 
-## Connect to CheckIn an IdP federated in an hub and spoke federations
+## Connect to Check-in an IdP federated in an hub and spoke federations
 
 <!-- markdownlint-disable line-length -->
 
@@ -18,7 +18,7 @@ In case of a "hub and spoke" federation the federation coordinator may require
 that the IdP administrators explicitly request to connect to a SP and let their
 users to authenticate on these SP.
 
-In most of the cases this is not a configuration problem neither for the CheckIn
+In most of the cases this is not a configuration problem neither for the Check-in
 service nor for the Identity provider. The connection needs to be implemented in
 the hub and spoke IdP Proxy.
 
@@ -36,7 +36,7 @@ connection:
   "Connect" button, this will create a service ticket and the SURFconext team
   will make the connection active.
 - After you received confirmation that the "EGI AAI Service provider proxy" is
-  accessible, you will be able to login in CheckIn
+  accessible, you will be able to login in Check-in
 
 ## Authentication error with ADFS-based Identity Providers
 
@@ -55,7 +55,7 @@ handle
 [Scoping elements](https://docs.microsoft.com/en-za/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#scoping>).
 Check-in can be configured to omit the scoping element from the authentication
 requests sent to such IdPs in order to allow successful logins. Please contact
-the CheckIn support team and include a screenshot of your error.
+the Check-in support team and include a screenshot of your error.
 
 <!-- markdownlint-disable line-length -->
 ## I have linked an IGTF X.509 certificate to my Check-in identity but the information is inaccurate or incomplete

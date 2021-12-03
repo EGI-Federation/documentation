@@ -19,8 +19,9 @@ two-step process:
 ## Registration into Check-in demo instance
 
 Before your service can use the EGI Check-in OIDC Provider for user login, you
-must set up a client at the [EGI Federation Registry](https://aai.egi.eu/federation)
-in order to obtain OAuth2.0 credentials and register one or more redirect URIs.
+need to register a client through the
+[EGI Federation Registry](https://aai.egi.eu/federation) in order to obtain
+OAuth2.0 credentials and register one or more redirect URIs.
 
 Make sure that you fill in the following options:
 
@@ -43,8 +44,8 @@ Make sure that you fill in the following options:
   > - Enable _Allow calls to the Introspection Endpoint?_ in **Introspection**
   >   field
 
-Submit the request and wait for an Check-in admin to review your Service request.
-Once done, you will get a client ID and client secret. Save them for the
+Submit the request for review by the Check-in operations team. Once the request
+has been approved, you will get a client ID and client secret. Save them for the
 following steps
 
 ## Keystone setup
@@ -645,3 +646,7 @@ the request. Besides you will need to update your configuration as follows:
   OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/oidc/introspect
   ```
 
+{{% alert title="Changes in the client settings" color="info" %}} If you want to
+make any changes to the client configuration, you need to submit a
+reconfiguration request through the
+[Federation Registry](https://aai.egi.eu/federation). {{% /alert %}}

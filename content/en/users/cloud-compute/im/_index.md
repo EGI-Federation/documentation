@@ -19,7 +19,7 @@ It is a service that features a web-based GUI, a XML-RPC API, a REST API and a
 command-line interface. For detailed information about Infrastructure Manager
 please visit its [documentation pages](https://imdocs.readthedocs.io).
 
-IM is integrated with the [EGI Check-In Service](../../check-in). A very easy
+IM is integrated with the [EGI Check-in Service](../../check-in). A very easy
 way to deploy your first Virtual Machine in the EGI Federation is using the
 [web-based GUI](https://appsgrycap.i3m.upv.es:31443/im-dashboard/). Please see
 tutorial [here](https://imdocs.readthedocs.io/en/latest/dashboard.html#usage).

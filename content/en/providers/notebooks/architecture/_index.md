@@ -206,10 +206,10 @@ following sample configuration and adapt to your needs by setting:
   `auth.state.cryptoKey`). They can be generated with `openssl rand -hex 32`.
 - A valid hostname (`<your notebooks host>` below) that resolves to your
   Kubernetes Ingress
-- Valid EGI Check-in client credentials, these can be obtained
-  by creating a new Service for the demo instance of Check-in at
-  [EGI Federation Registry](https://aai.egi.eu/federetion).
-  When moving to EGI Check-in production environment, make sure to remove the
+- Valid EGI Check-in client credentials, these can be obtained by creating a new
+  Service for the demo instance of Check-in through the
+  [EGI Federation Registry](https://aai.egi.eu/federetion). When moving to EGI
+  Check-in production environment, make sure to remove the
   `hub.extraEnv.EGICHECKIN_HOST` variable.
 
 ```yaml

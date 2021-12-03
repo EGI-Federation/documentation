@@ -132,7 +132,7 @@ extended/renewed upon request.
 ### How can you access the service?
 
 1. Login to the [EGI Marketplace](https://marketplace.egi.eu) with the
-   [EGI AAI Check-In service](../check-in).
+   [EGI Check-in service](../check-in).
 1. Setup a profile, including details about your affiliation and role within a
    research institute/project/team.
 1. Navigate the marketplace top-menu and click on the category:

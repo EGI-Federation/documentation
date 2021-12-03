@@ -33,7 +33,7 @@ For accessing this testbed you need to be a member of the
 
 Go to
 [Chipster entry in Science Software on Demand Portal](https://fgsg.egi.eu/egissod/web/ssod/chipster-accounts)
-and log in with your [EGI Check-In account](../../check-in)
+and log in with your [EGI Check-in account](../../check-in)
 
 The first time you log in, you need to generate a temporary password by clicking
 on the _\"Execute\"_ button, as shown below.
