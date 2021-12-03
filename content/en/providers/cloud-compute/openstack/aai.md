@@ -9,38 +9,41 @@ description: >
 The integration of OpenStack service providers into the EGI Check-in is a
 two-step process:
 
-1. Test integration with the development instance of EGI Check-in. This will
-   allow you to check complete the complete functionality of the system without
-   affecting the production Check-in service.
+1. Test integration with the demo instance of EGI Check-in. This will allow you
+   to check complete the complete functionality of the system without affecting
+   the production Check-in service.
 1. Once the integration is working correctly, register your provider with the
    production instance of EGI Check-in to allow members of the EGI User
    Community to access your service.
 
-## Registration into Check-in development instance
+## Registration into Check-in demo instance
 
 Before your service can use the EGI Check-in OIDC Provider for user login, you
-must set up a client at the [EGI Check-in ODIC client management
-page](https://aai-dev.egi.eu/oidc/manage/user/clients) in order to obtain OAuth2.0
-credentials and register one or more redirect URIs.
+must set up a client at the [EGI Federation Registry](https://aai.egi.eu/federation)
+in order to obtain OAuth2.0 credentials and register one or more redirect URIs.
 
 Make sure that you fill in the following options:
 
-- _Main_ tab:
+- _General_ tab:
+  
+  > - Set _Integration Environment_ to _Demo_ and fill the form with the
+  information about your Service.
 
+- _Protocol Specific_ tab:
+
+  > - Set _Select Protocol_ to _OIDC Service_
   > - Set redirect URL to
   >   `https://<your keystone endpoint>/v3/auth/OS-FEDERATION/websso/openid/redirect`.
   >   Recent versions of OpenStack may deploy Keystone at `/identity/`, be sure
   >   to include that in the `<your keystone endpoint>` part of the URL if
   >   needed.
-
-- _Access_ tab:
-
   > - Enable _openid_, _profile_, _email_, _eduperson_entitlement_ in the
   >   **Scope** field
   > - Enable _authorization code_ in the **Grant Types** field
   > - Enable _Allow calls to the Introspection Endpoint?_ in **Introspection**
   >   field
 
+Submit the request and wait for an Check-in admin to review your Service request.
 Once done, you will get a client ID and client secret. Save them for the
 following steps
 
@@ -131,14 +134,14 @@ OIDCResponseType "code"
 OIDCClaimPrefix "OIDC-"
 OIDCClaimDelimiter ;
 OIDCScope "openid profile email eduperson_entitlement"
-OIDCProviderMetadataURL https://aai-dev.egi.eu/oidc/.well-known/openid-configuration
+OIDCProviderMetadataURL https://aai-demo.egi.eu/oidc/.well-known/openid-configuration
 OIDCClientID <client id>
 OIDCClientSecret <client secret>
 OIDCCryptoPassphrase <some crypto pass phrase>
 OIDCRedirectURI https://<your keystone endpoint>/v3/auth/OS-FEDERATION/websso/openid/redirect
 
 # OAuth for CLI access
-OIDCOAuthIntrospectionEndpoint https://aai-dev.egi.eu/oidc/introspect
+OIDCOAuthIntrospectionEndpoint https://aai-demo.egi.eu/oidc/introspect
 OIDCOAuthClientID <client id>
 OIDCOAuthClientSecret <client secret>
 
@@ -231,10 +234,10 @@ the Keystone Federation support.
 ## Keystone Federation Support
 
 First, create a new `egi.eu` identity provider with remote id
-`https://aai-dev.egi.eu/oidc/`:
+`https://aai-demo.egi.eu/oidc/`:
 
 ```shell
-$ openstack identity provider create --remote-id https://aai-dev.egi.eu/oidc/ egi.eu
+$ openstack identity provider create --remote-id https://aai-demo.egi.eu/oidc/ egi.eu
 +-------------+----------------------------------+
 | Field       | Value                            |
 +-------------+----------------------------------+
@@ -242,7 +245,7 @@ $ openstack identity provider create --remote-id https://aai-dev.egi.eu/oidc/ eg
 | domain_id   | 1cac7817dafb4740a249cc9ca6b14ea5 |
 | enabled     | True                             |
 | id          | egi.eu                           |
-| remote_ids  | https://aai-dev.egi.eu/oidc/     |
+| remote_ids  | https://aai-demo.egi.eu/oidc/     |
 +-------------+----------------------------------+
 ```
 
@@ -293,7 +296,7 @@ $ cat mapping.egi.json
             {
                 "type": "HTTP_OIDC_ISS",
                 "any_one_of": [
-                    "https://aai-dev.egi.eu/oidc/"
+                    "https://aai-demo.egi.eu/oidc/"
                 ]
             },
             {
@@ -320,7 +323,7 @@ $ openstack mapping create --rules mapping.egi.json egi-mapping
 | Field | Value                                                                                                                            |
 +-------+----------------------------------------------------------------------------------------------------------------------------------+
 | id    | egi-mapping                                                                                                                      |
-| rules | [{u'remote': [{u'type': u'HTTP_OIDC_SUB'}, {u'type': u'HTTP_OIDC_ISS', u'any_one_of': [u'https://aai-dev.egi.eu/oidc/']},        |
+| rules | [{u'remote': [{u'type': u'HTTP_OIDC_SUB'}, {u'type': u'HTTP_OIDC_ISS', u'any_one_of': [u'https://aai-demo.egi.eu/oidc/']},        |
 |       | {u'regex': True, u'type': u'OIDC-eduperson_entitlement', u'any_one_of': [u'^urn:mace:egi.eu:.*:ops:vm_operator@egi.eu$']}],      |
 |       | u'local': [{u'group': {u'id': u'89cf5b6708354094942d9d16f0f29f8f'}, u'user': {u'name': u'{0}'}}]}]                               |
 +-------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -369,7 +372,7 @@ The
 [OpenStack Client](https://docs.openstack.org/developer/python-openstackclient/)
 has built-in support for using OpenID Connect Access Tokens to authenticate. You
 first need to get a valid token from EGI Check-in (e.g. from
-<https://aai-dev.egi.eu/fedcloud/>) and then use it in a command like:
+<https://aai-demo.egi.eu/fedcloud/>) and then use it in a command like:
 
 <!-- markdownlint-disable line-length -->
 ```shell
@@ -414,7 +417,7 @@ members of `fedcloud.egi.eu`:
       },
       {
         "type": "HTTP_OIDC_ISS",
-        "any_one_of": ["https://aai-dev.egi.eu/oidc/"]
+        "any_one_of": ["https://aai-demo.egi.eu/oidc/"]
       },
       {
         "type": "OIDC-eduperson_entitlement",
@@ -442,7 +445,7 @@ members of `fedcloud.egi.eu`:
       },
       {
         "type": "HTTP_OIDC_ISS",
-        "any_one_of": ["https://aai-dev.egi.eu/oidc/"]
+        "any_one_of": ["https://aai-demo.egi.eu/oidc/"]
       },
       {
         "type": "OIDC-eduperson_entitlement",
@@ -494,12 +497,12 @@ support, you need to create 3 files:
    Check-in:
 
    ```shell
-   curl https://aai-dev.egi.eu/oidc/.well-known/openid-configuration > \
-        /var/lib/apache2/oidc/metadata/aai-dev.egi.eu%2Foidc.provider
+   curl https://aai-demo.egi.eu/oidc/.well-known/openid-configuration > \
+        /var/lib/apache2/oidc/metadata/aai-demo.egi.eu%2Foidc.provider
    ```
 
 1. `<urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped>.client`
-   with the client credentials. For EGI Check-in (`aai-dev.egi.eu%2Foidc.client`):
+   with the client credentials. For EGI Check-in (`aai-demo.egi.eu%2Foidc.client`):
 
    ```json
    {
@@ -511,7 +514,7 @@ support, you need to create 3 files:
 1. `<urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped>.conf`
    with any extra configuration for the provider. This may not be needed if
    all your providers are similar. For example to specify the scopes to use for
-   Check-in, use a `aai-dev.egi.eu%2Foidc.conf` as follows:
+   Check-in, use a `aai-demo.egi.eu%2Foidc.conf` as follows:
 
    ```json
    {
@@ -527,9 +530,9 @@ provider with `openid` as protocol:
 <Location ~ "/identity/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
         AuthType openid-connect
         # This is your Redirect URI with a new iss=<your idp iss> option added
-        OIDCDiscoverURL https://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-dev.egi.eu%2Foidc%2F
+        OIDCDiscoverURL https://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-demo.egi.eu%2Foidc%2F
         # Ensure that the user is authenticated with the expected iss
-        Require claim iss:https://aai-dev.egi.eu/oidc/
+        Require claim iss:https://aai-demo.egi.eu/oidc/
         Require valid-user
 </Location>
 ```
@@ -563,7 +566,7 @@ docker for facilitating the deployment:
    ```yaml
    oidc:
      clients:
-     - issuer-url: https://aai-dev.egi.eu/oidc/
+     - issuer-url: https://aai-demo.egi.eu/oidc/
        client-id: "<your check-in client id>"
        client-secret: "<your check-in client secret>"
      - issuer-url: <another idp>
@@ -630,19 +633,15 @@ the request. Besides you will need to update your configuration as follows:
 - Update the `HTTP_OIDC_ISS` filter in your mappings, e.g.:
 
   ```shell
-  sed -i 's/aai-dev.egi.eu/aai.egi.eu/' mapping.egi.json
+  sed -i 's/aai-demo.egi.eu/aai.egi.eu/' mapping.egi.json
   openstack mapping set --rules mapping.egi.json egi-mapping
   ```
 
 - Update Apache configuration to use `aai.egi.eu` instead of
-  `aai-dev.egi.eu`:
+  `aai-demo.egi.eu`:
 
   ```ApacheConf
   OIDCProviderMetadataURL https://aai.egi.eu/oidc/.well-known/openid-configuration
   OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/oidc/introspect
   ```
 
-{{% alert title="Changes in the production settings" color="info" %}} If you
-want to make any changes to the client configuration of the production instance,
-first make the changes in the Check-in development environment and then open a
-[GGUS ticket](https://ggus.eu) to sync the changes to production. {{% /alert %}}

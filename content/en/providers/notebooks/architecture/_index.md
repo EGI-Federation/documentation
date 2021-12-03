@@ -206,8 +206,9 @@ following sample configuration and adapt to your needs by setting:
   `auth.state.cryptoKey`). They can be generated with `openssl rand -hex 32`.
 - A valid hostname (`<your notebooks host>` below) that resolves to your
   Kubernetes Ingress
-- Valid EGI Check-in client credentials, these can be obtained by creating a new
-  client at [EGI AAI OpenID Connect Provider](https://aai-dev.egi.eu/oidc/).
+- Valid EGI Check-in client credentials, these can be obtained
+  by creating a new Service for the demo instance of Check-in at
+  [EGI Federation Registry](https://aai.egi.eu/federetion).
   When moving to EGI Check-in production environment, make sure to remove the
   `hub.extraEnv.EGICHECKIN_HOST` variable.
 
@@ -260,7 +261,7 @@ hub:
       c.JupyterHub.spawner_class = EGISpawner
   extraEnv:
     JUPYTER_ENABLE_LAB: 1
-    EGICHECKIN_HOST: aai-dev.egi.eu
+    EGICHECKIN_HOST: aai-demo.egi.eu
   services:
     status:
        url: "http://status-web/"
