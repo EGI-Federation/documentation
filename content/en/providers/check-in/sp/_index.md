@@ -216,7 +216,7 @@ subject to user consent. The following attributes constitute a minimal subset of
 the R&S attribute bundle:
 
 - Persistent, non-reassignable, non-targeted, opaque, globally unique EGI user
-  ID (`eduPersonUniqueId`); this is always scoped `@egi.eu`
+  ID (`voPersonID`); this is always scoped `@egi.eu`
 - Email address (`mail`)
 - Display name (`displayName`) OR (`givenName` AND `sn`)
 
@@ -324,13 +324,15 @@ UserInfo Endpoint:
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
-| Scope                          | Claims                                                                                           |
-| ------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `openid`                       | `sub`                                                                                            |
-| `profile`                      | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul> |
-| `email`                        | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>             |
-| `eduperson_scoped_affiliation` | `eduperson_scoped_affiliation`                                                                   |
-| `eduperson_entitlement`        | `eduperson_entitlement`                                                                          |
+| Scope                          | Claims                                                                                                                                                                                           |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `openid`                       | `sub`                                                                                                                                                                                            |
+| `profile`                      | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul>                                                                                                 |
+| `email`                        | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>                                                                                                             |
+| `aarc`                         | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li><li>`voperon_id`</li></ul> |
+| `eduperson_entitlement`        | `eduperson_entitlement`                                                                                                                                                                          |
+| `eduperson_scoped_affiliation` | `eduperson_scoped_affiliation`                                                                                                                                                                   |
+| `voperson_id`                  | `voperson_id`                                                                                                                                                                                    |
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
@@ -933,7 +935,7 @@ connected to Check-in.
 |          attribute name | EGI ID                                                                              |
 | ----------------------: | :---------------------------------------------------------------------------------- |
 |         **description** | An identifier for the user, unique among all EGI accounts and never reused          |
-|   **SAML Attribute(s)** | `1.3.6.1.4.1.5923.1.1.1.13` (eduPersonUniqueId)                                     |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.6` (voPersonID)                                      |
 |          **OIDC scope** | `openid`                                                                            |
 |       **OIDC claim(s)** | `sub`                                                                               |
 | **OIDC claim location** | <ul><li>ID token</li><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
@@ -953,7 +955,7 @@ connected to Check-in.
 | ----------------------: | :------------------------------------------------ |
 |         **description** | The user's full name, in a displayable form       |
 |   **SAML Attribute(s)** | `urn:oid:2.16.840.1.113730.3.1.241` (displayName) |
-|          **OIDC scope** | `profile`                                         |
+|          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul>        |
 |       **OIDC claim(s)** | `name`                                            |
 | **OIDC claim location** | Userinfo endpoint                                 |
 |              **origin** | Provided by user's Identity Provider              |
@@ -966,37 +968,37 @@ connected to Check-in.
 
 ### 3. Given Name
 
-|          attribute name | Given Name                           |
-| ----------------------: | :----------------------------------- |
-|         **description** | The user's first name                |
-|   **SAML Attribute(s)** | `urn:oid:2.5.4.42` (givenName)       |
-|          **OIDC scope** | `profile`                            |
-|       **OIDC claim(s)** | `given_name`                         |
-| **OIDC claim location** | Userinfo endpoint                    |
-|              **origin** | Provided by user's Identity Provider |
-|             **changes** | Yes                                  |
-|        **multiplicity** | Single-valued                        |
-|        **availability** | Always                               |
-|             **example** | _John_                               |
-|               **notes** | -                                    |
-|              **status** | Stable                               |
+|          attribute name | Given Name                                 |
+| ----------------------: | :----------------------------------------- |
+|         **description** | The user's first name                      |
+|   **SAML Attribute(s)** | `urn:oid:2.5.4.42` (givenName)             |
+|          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul> |
+|       **OIDC claim(s)** | `given_name`                               |
+| **OIDC claim location** | Userinfo endpoint                          |
+|              **origin** | Provided by user's Identity Provider       |
+|             **changes** | Yes                                        |
+|        **multiplicity** | Single-valued                              |
+|        **availability** | Always                                     |
+|             **example** | _John_                                     |
+|               **notes** | -                                          |
+|              **status** | Stable                                     |
 
 ### 4. Family Name
 
-|          attribute name | Family Name                          |
-| ----------------------: | :----------------------------------- |
-|         **description** | The user's last name                 |
-|   **SAML Attribute(s)** | `urn:oid:2.5.4.4` (sn)               |
-|          **OIDC scope** | `profile`                            |
-|       **OIDC claim(s)** | `family_name`                        |
-| **OIDC claim location** | Userinfo endpoint                    |
-|              **origin** | Provided by user's Identity Provider |
-|             **changes** | Yes                                  |
-|        **multiplicity** | Single-valued                        |
-|        **availability** | Always                               |
-|             **example** | _Doe_                                |
-|               **notes** | -                                    |
-|              **status** | Stable                               |
+|          attribute name | Family Name                                |
+| ----------------------: | :----------------------------------------- |
+|         **description** | The user's last name                       |
+|   **SAML Attribute(s)** | `urn:oid:2.5.4.4` (sn)                     |
+|          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul> |
+|       **OIDC claim(s)** | `family_name`                              |
+| **OIDC claim location** | Userinfo endpoint                          |
+|              **origin** | Provided by user's Identity Provider       |
+|             **changes** | Yes                                        |
+|        **multiplicity** | Single-valued                              |
+|        **availability** | Always                                     |
+|             **example** | _Doe_                                      |
+|               **notes** | -                                          |
+|              **status** | Stable                                     |
 
 ### 5. Username
 
@@ -1006,7 +1008,7 @@ connected to Check-in.
 | ----------------------: | :---------------------------------------------------------------------------------- |
 |         **description** | The username by which the user wishes to be referred to                             |
 |   **SAML Attribute(s)** | `urn:oid:0.9.2342.19200300.100.1.1` (uid)                                           |
-|          **OIDC scope** | `profile`                                                                           |
+|          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul>                                          |
 |       **OIDC claim(s)** | `preferred_username`                                                                |
 | **OIDC claim location** | <ul><li>ID token</li><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
 |              **origin** | Check-in assigns this attribute on user registration                                |
@@ -1027,7 +1029,7 @@ connected to Check-in.
 | ----------------------: | :-------------------------------------------------------------------------- |
 |         **description** | The user's email address                                                    |
 |   **SAML Attribute(s)** | `urn:oid:0.9.2342.19200300.100.1.3` (mail)                                  |
-|          **OIDC scope** | `email`                                                                     |
+|          **OIDC scope** | <ul><li>`email`</li><li>`aarc`</li></ul>                                    |
 |       **OIDC claim(s)** | `email`                                                                     |
 | **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>          |
 |              **origin** | Provided by user's Identity Provider                                        |
@@ -1048,7 +1050,7 @@ connected to Check-in.
 | ----------------------: | :------------------------------------------------------------------ |
 |         **description** | True if the user's email address has been verified; otherwise false |
 |   **SAML Attribute(s)** | See [Verified email list](#8-verified-email-list)                   |
-|          **OIDC scope** | `email`                                                             |
+|          **OIDC scope** | <ul><li>`email`</li><li>`aarc`</li></ul>                            |
 |       **OIDC claim(s)** | `email_verified`                                                    |
 | **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>  |
 |              **origin** | Check-in assigns this attribute on user registration                |
@@ -1069,7 +1071,7 @@ connected to Check-in.
 | ----------------------: | :------------------------------------------------------------------ |
 |         **description** | A list of user's email addresses that have been verified            |
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.14` (voPersonVerifiedEmail)          |
-|          **OIDC scope** | `email`                                                             |
+|          **OIDC scope** | <ul><li>`email`</li><li>`aarc`</li></ul>                            |
 |       **OIDC claim(s)** | `voperson_verified_email`                                           |
 | **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>  |
 |              **origin** | Check-in or the user's Identity Provider                            |
@@ -1226,6 +1228,48 @@ connected to Check-in.
 |             **example** | `ssh-rsa AAAAB3NzaC...qxxEEipdnZ nikosev@grnet-hq.admin.grnet.gr` |
 |               **notes** | -                                                                 |
 |              **status** | Experimental                                                      |
+
+<!-- markdownlint-enable line-length no-inline-html -->
+
+### 16. eduPersonUniqueId
+
+<!-- markdownlint-disable line-length no-inline-html -->
+
+|          attribute name | eduPersonUniqueId                                                                |
+| ----------------------: | :------------------------------------------------------------------------------- |
+|         **description** | An identifier for the user, unique among all EGI accounts and never reused       |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.13` (eduPersonUniqueId)                          |
+|          **OIDC scope** | `eduperson_unique_id`                                                            |
+|       **OIDC claim(s)** | `eduperson_unique_id`                                                            |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>               |
+|              **origin** | Check-in assigns this attribute on user registration                             |
+|             **changes** | No                                                                               |
+|        **multiplicity** | No                                                                               |
+|        **availability** | Always                                                                           |
+|             **example** | _ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu_        |
+|               **notes** | Use **EGI ID** within your application as the unique-identifier key for the user |
+|              **status** | Stable                                                                           |
+
+<!-- markdownlint-enable line-length no-inline-html -->
+
+### 17. voPersonID
+
+<!-- markdownlint-disable line-length no-inline-html -->
+
+|          attribute name | voPersonID                                                                          |
+| ----------------------: | :---------------------------------------------------------------------------------- |
+|         **description** | An identifier for the user, unique among all EGI accounts and never reused          |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.6` (voPersonID)                                      |
+|          **OIDC scope** | <ul><li>`voperson_id`</li><li>`aarc`</li></ul>                                      |
+|       **OIDC claim(s)** | `voperson_id`                                                                       |
+| **OIDC claim location** | <ul><li>ID token</li><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
+|              **origin** | Check-in assigns this attribute on user registration                                |
+|             **changes** | No                                                                                  |
+|        **multiplicity** | No                                                                                  |
+|        **availability** | Always                                                                              |
+|             **example** | _ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu_           |
+|               **notes** | Use **EGI ID** within your application as the unique-identifier key for the user    |
+|              **status** | Stable                                                                              |
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
