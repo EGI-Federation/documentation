@@ -120,8 +120,8 @@ provide the following information to connect your service to EGI Check-in:
 1. Name of the service (in English and optionally in other languages supported
    by the service)
 1. Short description of the service
-1. Site (URL) for localised information about the service; the content found
-   at the URL SHOULD provide more complete information than what provided by the
+1. Site (URL) for localised information about the service; the content found at
+   the URL SHOULD provide more complete information than what provided by the
    description
 1. Contact information of the following types:
    - Helpdesk/Support contact information (for redirecting user)
@@ -877,7 +877,7 @@ running two Master Portal instances, one development, one production instance.
 | Authorisation          | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize>                        | <https://aai.egi.eu/mp-oa2-server/authorize>                        |
 | Token                  | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token>                            | <https://aai.egi.eu/mp-oa2-server/token>                            |
 | JSON Web Key(jwt)      | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs>                            | <https://aai.egi.eu/mp-oa2-server/certs>                            |
-| User Info              | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         | <https://aai.egi.eu/mp-oa2-server/userinfo>                             |
+| User Info              | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         | <https://aai.egi.eu/mp-oa2-server/userinfo>                         |
 
 <!-- markdownlint-enable line-length -->
 
@@ -928,9 +928,9 @@ the API described at the
 This section defines the attributes that can be made available to services
 connected to Check-in.
 
-### 1. EGI ID
-
 <!-- markdownlint-disable line-length no-inline-html -->
+
+### 1. EGI ID
 
 |          attribute name | EGI ID                                                                              |
 | ----------------------: | :---------------------------------------------------------------------------------- |
@@ -946,8 +946,6 @@ connected to Check-in.
 |             **example** | _ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu_           |
 |               **notes** | Use **EGI ID** within your application as the unique-identifier key for the user    |
 |              **status** | Stable                                                                              |
-
-<!-- markdownlint-enable line-length no-inline-html -->
 
 ### 2. Display Name
 
@@ -1002,8 +1000,6 @@ connected to Check-in.
 
 ### 5. Username
 
-<!-- markdownlint-disable line-length no-inline-html -->
-
 |          attribute name | Username                                                                            |
 | ----------------------: | :---------------------------------------------------------------------------------- |
 |         **description** | The username by which the user wishes to be referred to                             |
@@ -1019,11 +1015,7 @@ connected to Check-in.
 |               **notes** | The Service Provider **MUST NOT** rely upon this value being unique                 |
 |              **status** | Stable                                                                              |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 6. Email Address
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | Email Address                                                               |
 | ----------------------: | :-------------------------------------------------------------------------- |
@@ -1040,11 +1032,7 @@ connected to Check-in.
 |               **notes** | This **MAY NOT** be unique and is **NOT** suitable for use as a primary key |
 |              **status** | Stable                                                                      |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 7. Verified email flag
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | Verified email flag                                                 |
 | ----------------------: | :------------------------------------------------------------------ |
@@ -1061,11 +1049,7 @@ connected to Check-in.
 |               **notes** | This claim is available only in OpenID Connect                      |
 |              **status** | Stable                                                              |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 8. Verified email list
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | Verified email list                                                 |
 | ----------------------: | :------------------------------------------------------------------ |
@@ -1082,11 +1066,7 @@ connected to Check-in.
 |               **notes** | -                                                                   |
 |              **status** | Experimental                                                        |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 9. Affiliation
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | Affiliation                                                              |
 | ----------------------: | :----------------------------------------------------------------------- |
@@ -1103,11 +1083,7 @@ connected to Check-in.
 |               **notes** | Service Providers are encouraged to validate the scope of this attribute |
 |              **status** | Stable                                                                   |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 10. Groups
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | Groups                                                                    |
 | ----------------------: | :------------------------------------------------------------------------ |
@@ -1124,11 +1100,7 @@ connected to Check-in.
 |               **notes** | -                                                                         |
 |              **status** | Stable                                                                    |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 11. Capabilities
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | Capabilities                                                                                                                                                                                                                              |
 | ----------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1145,11 +1117,7 @@ connected to Check-in.
 |               **notes** | -                                                                                                                                                                                                                                         |
 |              **status** | Stable                                                                                                                                                                                                                                    |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 12. GOCDB Roles
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | GOCDB Roles                                                                     |
 | ----------------------: | :------------------------------------------------------------------------------ |
@@ -1166,11 +1134,7 @@ connected to Check-in.
 |               **notes** | -                                                                               |
 |              **status** | Stable                                                                          |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 13. Assurance
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | Assurance                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ----------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1187,11 +1151,7 @@ connected to Check-in.
 |               **notes** | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |              **status** | Stable                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 14. CertEntitlement
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | CertEntitlement                                                                                                                                                                                            |
 | ----------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1208,11 +1168,7 @@ connected to Check-in.
 |               **notes** | This is available only for DIRAC                                                                                                                                                                           |
 |              **status** | Stable                                                                                                                                                                                                     |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 15. SSH Public Key
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | SSH Public Key                                                    |
 | ----------------------: | :---------------------------------------------------------------- |
@@ -1229,11 +1185,7 @@ connected to Check-in.
 |               **notes** | -                                                                 |
 |              **status** | Experimental                                                      |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 16. eduPersonUniqueId
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | eduPersonUniqueId                                                                |
 | ----------------------: | :------------------------------------------------------------------------------- |
@@ -1250,11 +1202,7 @@ connected to Check-in.
 |               **notes** | Use **EGI ID** within your application as the unique-identifier key for the user |
 |              **status** | Stable                                                                           |
 
-<!-- markdownlint-enable line-length no-inline-html -->
-
 ### 17. voPersonID
-
-<!-- markdownlint-disable line-length no-inline-html -->
 
 |          attribute name | voPersonID                                                                          |
 | ----------------------: | :---------------------------------------------------------------------------------- |
