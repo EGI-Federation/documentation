@@ -26,6 +26,14 @@ The table below summarises the available options:
 
 ## Access to GPU resources on EGI Cloud
 
+First, you need to make your you belong to one of the supported
+[Virtual Organisations (VOs)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
+If you are not sure what VO to join, request access to the pilot VO
+[vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
+by visiting the [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240)
+with your Check-In account. More information is available in the
+[Check-in](http://localhost:1313/users/check-in/joining-virtual-organisation/) section.
+
 GPUs sites can be accessed in different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like the OpenStack Horizon
 dashboards, [VMOps dashboard](../vmops), or [Infrastructure manager](../im).
