@@ -18,7 +18,7 @@ The table below summarises the available options:
 
 | Site           | VM configuration options               | Flavors                                                                                                                                                                                    | Supported VOs with GPUs                                    | Access conditions                                                                     |
 | -------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| IISAS-FedCloud | up to 2 NVIDIA Tesla K20m              | g1.c08r31-K20m, g1.c16r62-2xK20m                                                                                                                                                           | acc-comp.egi.eu, eosc-synergy.eu, enmr.eu, training.egi.eu | Sponsored access for limited testing, conditions to be negotiated for long-term usage |
+| IISAS-FedCloud | up to 2 NVIDIA Tesla K20m              | g1.c08r31-K20m, g1.c16r62-2xK20m                                                                                                                                                           | vo.access.egi.eu, eosc-synergy.eu, enmr.eu, training.egi.eu | Sponsored access for limited testing, conditions to be negotiated for long-term usage |
 | IFCA-LCG2      | up to 2 NVIDIA T4, up to 2 NVIDIA V100 |                                                                                                                                                                                            |                                                            | Pay-per-use                                                                           |
 | CESNET-MCC     | up to 2 NVIDIA T4                      | hpc.8core-64ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-1080-glados, hpc.38core-372ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-2080-glados, hpc.38core-372ram-nvidia-2080-glados | vo.clarin.eu, biomed, eosc-synergy.eu, peachnote.com       | Sponsored, conditions to be negotiated                                                |
 
@@ -56,7 +56,7 @@ Site-specific dashboards and endpoints are described in the following table:
 
 A VM image with pre-installed NVIDIA driver and Docker is available at
 [AppDB](https://appdb.egi.eu/store/vappliance/nvidia.docker.centos.7). Some VOs
-(acc-comp.egi.eu, eosc-synergy.eu) have the image included in the VO image list.
+(vo.access.egi.eu, eosc-synergy.eu) have the image included in the VO image list.
 
 For a more detailed presentation on how to access GPUs in the EGI Federation
 please have a look at the [EGI Webinar](https://www.egi.eu/webinars/) on
