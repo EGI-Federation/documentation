@@ -215,8 +215,11 @@ bundle to connected Service Providers without administrative involvement,
 subject to user consent. The following attributes constitute a minimal subset of
 the R&S attribute bundle:
 
-- Persistent, non-reassignable, non-targeted, opaque, globally unique EGI user
-  ID (`voPersonID`); this is always scoped `@egi.eu`
+- Community User Identifier (CUID) which is a globally unique, opaque,
+  persistent and non-reassignable identifier that identifies the user
+  (`voPersonID`). For users whose community identity is managed by Check-in,
+  this identifier is of the form `<uniqueID>@egi.eu`. The `<uniqueID>` portion
+  is an opaque identifier issued by Check-in.
 - Email address (`mail`)
 - Display name (`displayName`) OR (`givenName` AND `sn`)
 
@@ -930,22 +933,22 @@ connected to Check-in.
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
-### 1. EGI ID
+### 1. Community User Identifier
 
-|          attribute name | EGI ID                                                                              |
-| ----------------------: | :---------------------------------------------------------------------------------- |
-|         **description** | An identifier for the user, unique among all EGI accounts and never reused          |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.6` (voPersonID)                                      |
-|          **OIDC scope** | `openid`                                                                            |
-|       **OIDC claim(s)** | `sub`                                                                               |
-| **OIDC claim location** | <ul><li>ID token</li><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
-|              **origin** | Check-in assigns this attribute on user registration                                |
-|             **changes** | No                                                                                  |
-|        **multiplicity** | No                                                                                  |
-|        **availability** | Always                                                                              |
-|             **example** | _ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu_           |
-|               **notes** | Use **EGI ID** within your application as the unique-identifier key for the user    |
-|              **status** | Stable                                                                              |
+|          attribute name | Community User Identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ----------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | The User’s Community Identifier is a globally unique, opaque, persistent and non-reassignable identifier that identifies the user. For users whose community identity is managed by Check-in, this identifier is of the form `<uniqueID>@egi.eu`. The `<uniqueID>` portion is an opaque identifier issued by Check-in                                                                                                                                                                              |
+|   **SAML Attribute(s)** | <ul><li>`urn:oid:1.3.6.1.4.1.25178.4.1.6` (voPersonID)</li><li>`urn:oid:1.3.6.1.4.1.5923.1.1.1.13` (eduPersonUniqueId)</li></ul>                                                                                                                                                                                                                                                                                                                                                                   |
+|          **OIDC scope** | <ul><li>`voperson_id`</li><li>`aarc`</li><li>`openid`</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|       **OIDC claim(s)** | <ul><li>`voperson_id`</li><li>`sub`</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **OIDC claim location** | <ul><li>ID token</li><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                |
+|              **origin** | The Community User Identifier is assigned by Check-in or an external AAI service managing the community identity of the user                                                                                                                                                                                                                                                                                                                                                                       |
+|             **changes** | No                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|        **multiplicity** | No                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|        **availability** | Always                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|             **example** | _ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu_                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|               **notes** | Use **Community User Identifier** within your application as the unique-identifier key for the user. Obtaining the Community User Identifier from the `sub` claim using the `openid` scope for OIDC Relying Parties or from `eduPersonUniqueId` for SAML Relying Parties will be deprecated. OIDC RPs should request either the `voperson_id` or `aarc` scope to obtain the Community User Identifier. SAML PRs should request the `voPersonID` attribute to obtain the Community User Identifier. |
+|              **status** | Stable                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ### 2. Display Name
 
@@ -1184,40 +1187,6 @@ connected to Check-in.
 |             **example** | `ssh-rsa AAAAB3NzaC...qxxEEipdnZ nikosev@grnet-hq.admin.grnet.gr` |
 |               **notes** | -                                                                 |
 |              **status** | Experimental                                                      |
-
-### 16. eduPersonUniqueId
-
-|          attribute name | eduPersonUniqueId                                                                |
-| ----------------------: | :------------------------------------------------------------------------------- |
-|         **description** | An identifier for the user, unique among all EGI accounts and never reused       |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.13` (eduPersonUniqueId)                          |
-|          **OIDC scope** | `eduperson_unique_id`                                                            |
-|       **OIDC claim(s)** | `eduperson_unique_id`                                                            |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>               |
-|              **origin** | Check-in assigns this attribute on user registration                             |
-|             **changes** | No                                                                               |
-|        **multiplicity** | No                                                                               |
-|        **availability** | Always                                                                           |
-|             **example** | _ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu_        |
-|               **notes** | Use **EGI ID** within your application as the unique-identifier key for the user |
-|              **status** | Stable                                                                           |
-
-### 17. voPersonID
-
-|          attribute name | voPersonID                                                                          |
-| ----------------------: | :---------------------------------------------------------------------------------- |
-|         **description** | An identifier for the user, unique among all EGI accounts and never reused          |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.6` (voPersonID)                                      |
-|          **OIDC scope** | <ul><li>`voperson_id`</li><li>`aarc`</li></ul>                                      |
-|       **OIDC claim(s)** | `voperson_id`                                                                       |
-| **OIDC claim location** | <ul><li>ID token</li><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
-|              **origin** | Check-in assigns this attribute on user registration                                |
-|             **changes** | No                                                                                  |
-|        **multiplicity** | No                                                                                  |
-|        **availability** | Always                                                                              |
-|             **example** | _ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu_           |
-|               **notes** | Use **EGI ID** within your application as the unique-identifier key for the user    |
-|              **status** | Stable                                                                              |
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
