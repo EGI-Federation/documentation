@@ -487,7 +487,7 @@ provide the following information to connect your service to EGI Check-in:&lt;/p
 by the service)&lt;/li>
 &lt;li>Short description of the service&lt;/li>
 &lt;li>Site (URL) for localised information about the service; the content found at
-the URL SHOULD provide more complete information than what provided by the
+the URL SHOULD provide more complete information than what is provided by the
 description&lt;/li>
 &lt;li>Contact information of the following types:
 &lt;ul>
@@ -587,7 +587,7 @@ subject to user consent. The following attributes constitute a minimal subset of
 the R&amp;amp;S attribute bundle:&lt;/p>
 &lt;ul>
 &lt;li>Community User Identifier (CUID) which is a globally unique, opaque,
-persistent and non-reassignable identifier that identifies the user
+persistent and non-reassignable identifier identifying the user
 (&lt;code>voPersonID&lt;/code>). For users whose community identity is managed by Check-in,
 this identifier is of the form &lt;code>&amp;lt;uniqueID&amp;gt;@egi.eu&lt;/code>. The &lt;code>&amp;lt;uniqueID&amp;gt;&lt;/code> portion
 is an opaque identifier issued by Check-in.&lt;/li>
@@ -1446,7 +1446,7 @@ connected to Check-in.&lt;/p>
 &lt;tbody>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>description&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">The User’s Community Identifier is a globally unique, opaque, persistent and non-reassignable identifier that identifies the user. For users whose community identity is managed by Check-in, this identifier is of the form &lt;code>&amp;lt;uniqueID&amp;gt;@egi.eu&lt;/code>. The &lt;code>&amp;lt;uniqueID&amp;gt;&lt;/code> portion is an opaque identifier issued by Check-in&lt;/td>
+&lt;td style="text-align:left">The User’s Community Identifier is a globally unique, opaque, persistent and non-reassignable identifier identifying the user. For users whose community identity is managed by Check-in, this identifier is of the form &lt;code>&amp;lt;uniqueID&amp;gt;@egi.eu&lt;/code>. The &lt;code>&amp;lt;uniqueID&amp;gt;&lt;/code> portion is an opaque identifier issued by Check-in&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>SAML Attribute(s)&lt;/strong>&lt;/td>
