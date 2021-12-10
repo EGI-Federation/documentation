@@ -26,7 +26,7 @@ The table below summarises the available options:
 
 ## Access to GPU resources on EGI Cloud
 
-First, you need to make your you belong to one of the supported
+Check whether you belong to one of the supported
 [Virtual Organisations (VOs)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
 If you are not sure what VO to join, request access to the pilot VO
 [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
