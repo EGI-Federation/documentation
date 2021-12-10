@@ -10,8 +10,8 @@ The integration of OpenStack service providers into the EGI Check-in is a
 two-step process:
 
 1. Test integration with the demo instance of EGI Check-in. This will allow you
-   to check complete the complete functionality of the system without affecting
-   the production Check-in service.
+   to check the complete functionality of the system without affecting the
+   production Check-in service.
 1. Once the integration is working correctly, register your provider with the
    production instance of EGI Check-in to allow members of the EGI User
    Community to access your service.

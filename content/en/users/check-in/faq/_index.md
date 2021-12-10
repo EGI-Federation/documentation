@@ -55,7 +55,8 @@ handle
 [Scoping elements](https://docs.microsoft.com/en-za/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#scoping>).
 Check-in can be configured to omit the scoping element from the authentication
 requests sent to such IdPs in order to allow successful logins. Please contact
-the Check-in support team and include a screenshot of your error.
+the [Check-in support](mailto:egi-aai-checkin@lists.grnet.gr) team and include a
+screenshot of your error.
 
 <!-- markdownlint-disable line-length -->
 ## I have linked an IGTF X.509 certificate to my Check-in identity but the information is inaccurate or incomplete
