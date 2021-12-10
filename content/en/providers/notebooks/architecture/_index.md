@@ -208,7 +208,7 @@ following sample configuration and adapt to your needs by setting:
   Kubernetes Ingress
 - Valid EGI Check-in client credentials, these can be obtained by creating a new
   Service for the demo instance of Check-in through the
-  [EGI Federation Registry](https://aai.egi.eu/federetion). When moving to EGI
+  [EGI Federation Registry](https://aai.egi.eu/federation). When moving to EGI
   Check-in production environment, make sure to remove the
   `hub.extraEnv.EGICHECKIN_HOST` variable.
 
