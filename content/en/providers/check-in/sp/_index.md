@@ -121,7 +121,7 @@ provide the following information to connect your service to EGI Check-in:
    by the service)
 1. Short description of the service
 1. Site (URL) for localised information about the service; the content found at
-   the URL SHOULD provide more complete information than what provided by the
+   the URL SHOULD provide more complete information than what is provided by the
    description
 1. Contact information of the following types:
    - Helpdesk/Support contact information (for redirecting user)
@@ -216,7 +216,7 @@ subject to user consent. The following attributes constitute a minimal subset of
 the R&S attribute bundle:
 
 - Community User Identifier (CUID) which is a globally unique, opaque,
-  persistent and non-reassignable identifier that identifies the user
+  persistent and non-reassignable identifier identifying the user
   (`voPersonID`). For users whose community identity is managed by Check-in,
   this identifier is of the form `<uniqueID>@egi.eu`. The `<uniqueID>` portion
   is an opaque identifier issued by Check-in.
@@ -937,7 +937,7 @@ connected to Check-in.
 
 |          attribute name | Community User Identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ----------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|         **description** | The User’s Community Identifier is a globally unique, opaque, persistent and non-reassignable identifier that identifies the user. For users whose community identity is managed by Check-in, this identifier is of the form `<uniqueID>@egi.eu`. The `<uniqueID>` portion is an opaque identifier issued by Check-in                                                                                                                                                                              |
+|         **description** | The User’s Community Identifier is a globally unique, opaque, persistent and non-reassignable identifier identifying the user. For users whose community identity is managed by Check-in, this identifier is of the form `<uniqueID>@egi.eu`. The `<uniqueID>` portion is an opaque identifier issued by Check-in                                                                                                                                                                                  |
 |   **SAML Attribute(s)** | <ul><li>`urn:oid:1.3.6.1.4.1.25178.4.1.6` (voPersonID)</li><li>`urn:oid:1.3.6.1.4.1.5923.1.1.1.13` (eduPersonUniqueId)</li></ul>                                                                                                                                                                                                                                                                                                                                                                   |
 |          **OIDC scope** | <ul><li>`voperson_id`</li><li>`aarc`</li><li>`openid`</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |       **OIDC claim(s)** | <ul><li>`voperson_id`</li><li>`sub`</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
