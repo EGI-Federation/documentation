@@ -730,7 +730,7 @@ Machine will make the hardware available to the user.&lt;/p>
 &lt;td>IISAS-FedCloud&lt;/td>
 &lt;td>up to 2 NVIDIA Tesla K20m&lt;/td>
 &lt;td>g1.c08r31-K20m, g1.c16r62-2xK20m&lt;/td>
-&lt;td>acc-comp.egi.eu, eosc-synergy.eu, enmr.eu, training.egi.eu&lt;/td>
+&lt;td>vo.access.egi.eu, eosc-synergy.eu, enmr.eu, training.egi.eu&lt;/td>
 &lt;td>Sponsored access for limited testing, conditions to be negotiated for long-term usage&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -751,6 +751,13 @@ Machine will make the hardware available to the user.&lt;/p>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length -->
 &lt;h2 id="access-to-gpu-resources-on-egi-cloud">Access to GPU resources on EGI Cloud&lt;/h2>
+&lt;p>Check whether you belong to one of the supported
+&lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisations (VOs)&lt;/a>.
+If you are not sure what VO to join, request access to the pilot VO
+&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
+by visiting the &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:240">enrollment URL&lt;/a>
+with your Check-In account. More information is available in the
+&lt;a href="../../../users/check-in/joining-virtual-organisation/">Check-in&lt;/a> section.&lt;/p>
 &lt;p>GPUs sites can be accessed in different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like the OpenStack Horizon
 dashboards, &lt;a href="../vmops">VMOps dashboard&lt;/a>, or &lt;a href="../im">Infrastructure manager&lt;/a>.&lt;/p>
@@ -793,7 +800,7 @@ the available GPU flavors on all sites for the specific VO in the command:&lt;/p
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>A VM image with pre-installed NVIDIA driver and Docker is available at
 &lt;a href="https://appdb.egi.eu/store/vappliance/nvidia.docker.centos.7">AppDB&lt;/a>. Some VOs
-(acc-comp.egi.eu, eosc-synergy.eu) have the image included in the VO image list.&lt;/p>
+(vo.access.egi.eu, eosc-synergy.eu) have the image included in the VO image list.&lt;/p>
 &lt;p>For a more detailed presentation on how to access GPUs in the EGI Federation
 please have a look at the &lt;a href="https://www.egi.eu/webinars/">EGI Webinar&lt;/a> on
 &lt;a href="https://indico.egi.eu/event/5271/">27th November 2020&lt;/a>. There is also a video
