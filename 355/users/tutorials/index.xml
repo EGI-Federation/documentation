@@ -13,7 +13,11 @@ We have a dedicated VO called
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
 for piloting purposes. If you are not sure about which VO to enrol to, please request
 access to the &lt;em>vo.access.egi.eu&lt;/em> VO with your EGI account by visiting the
-&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:240">enrollment URL&lt;/a>.&lt;/p>
+&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:240">enrollment URL&lt;/a>. Check
+&lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">AppDB&lt;/a> to see the list of
+Virtual Appliances and Resource Providers participating in the &lt;em>vo.access.egi.eu&lt;/em> VO.
+AppDB is one of the service in the
+&lt;a href="../../getting-started/architecture/">EGI Architecture&lt;/a>.&lt;/p>
 &lt;h2 id="step-3-creating-a-vm">Step 3: Creating a VM&lt;/h2>
 &lt;p>Once your membership to a VO has been approved you are ready to create your first
 Virtual Machine. There are several ways to achieve this. The simplest way is to
