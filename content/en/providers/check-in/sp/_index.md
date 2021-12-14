@@ -895,8 +895,7 @@ In order to register a new client for your VO portal go to:
 `client_secret` in a secure place {{% /alert %}}
 
 In order to get the client approved, send an email to the administrator of the
-EGI Master Portal using
-[EGI Check-in support](mailto:egi-aai-checkin@lists.grnet.gr).
+EGI Master Portal using `checkin-support` `<AT>` `mailman.egi.eu`.
 
 #### Detailed information
 

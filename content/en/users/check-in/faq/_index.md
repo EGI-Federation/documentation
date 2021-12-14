@@ -54,9 +54,9 @@ implementations (notably Microsoft ADFS 2.0 and ADFS 3.0) that cannot properly
 handle
 [Scoping elements](https://docs.microsoft.com/en-za/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#scoping>).
 Check-in can be configured to omit the scoping element from the authentication
-requests sent to such IdPs in order to allow successful logins. Please contact
-the [Check-in support](mailto:egi-aai-checkin@lists.grnet.gr) team and include a
-screenshot of your error.
+requests sent to such IdPs in order to allow successful logins. Please send an
+email to the Check-in Support team using `checkin-support` `<AT>`
+`mailman.egi.eu` and include a screenshot of your error.
 
 <!-- markdownlint-disable line-length -->
 ## I have linked an IGTF X.509 certificate to my Check-in identity but the information is inaccurate or incomplete
