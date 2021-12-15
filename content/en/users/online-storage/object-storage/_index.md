@@ -338,33 +338,15 @@ called [Simple Storage Service](https://docs.aws.amazon.com/AmazonS3/latest/user
 to access object storage offered by other providers.
 {{% /alert %}}
 
-In order to access the storage via S3, you need
-[EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)-compatible
-credentials from the OpenStack deployment. Use the following command:
+In order to access the storage via S3, an EGI Federated Cloud site admin needs to create 
+and associate to your EGI credentials both `access` and  `secret` keys which could then 
+be used by clients like `davix` to have access to the storage.
 
-```shell
-$ fedcloud openstack ec2 credentials create
-+------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| Field      | Value                                                                                                                                    |
-+------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| access     | zxxxxxxxxxxxxxxxxxxxxxxxxxx                                                                                                              |
-| links      | {'self': 'https://api.cloud.ifca.es:5000/v3/users/5495cd688ad7401b8e87b46bdea92f33/credentials/OS-EC2/xxxxxxxxxxxxxxxxx'}                |
-| project_id | 999f045cb1ff4684a15ebb338af69460                                                                                                         |
-| secret     | xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                                                                                                        |
-| trust_id   | None                                                                                                                                     |
-| user_id    | xxxxxxxxxxxxxxxxxxxxxxxxxxxx                                                                                                             |
-+------------+------------------------------------------------------------------------------------------------------------------------------------------+
-```
-
-{{% alert title="Important" color="warning" %}} Save the `access` and `secret`
-values, as those are needed in subsequent commands that use the S3 protocol.
-{{% /alert %}}
-
-To list containers/objects via the S3 protocol, use the command:
+For example, to list containers/objects via the S3 protocol, use the command:
 
 ```shell
 $ davix-ls --s3accesskey 'access' --s3secretkey 'secret' \
-  --s3alternate s3s://api.cloud.ifca.es:8080/swift/v1/test-egi
+  --s3alternate s3s://s3.cl2.du.cesnet.cz/bucket-name
 ```
 
 `davix-get`, `davix-put` and `davix-del` are also available to download, store
@@ -374,13 +356,16 @@ and delete objects from the storage.
 
 The [EGI Data Transfer](../../data-transfer) service can move files
 to and from object storages that are compatible with the S3 protocol.
-You will have to upload the EC2 access keys to the EGI Data Transfer
+You will have to upload the access keys to the EGI Data Transfer
 service, which will be able  to generate properly signed URLs for the
 objects in the storage.
 
 {{% alert title="Note" color="info" %}} Please contact support
 at `support` `<at>` `egi.eu` for more details.
 {{% /alert %}}
+
+You can then refer to this [tutorial](../../tutorials/data-transfer-object-storage) 
+to see how to transfer to/from an Object storage endpoint.  
 
 <!--
 // jscpd:ignore-end
