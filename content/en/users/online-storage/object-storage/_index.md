@@ -346,7 +346,7 @@ For example, to list containers/objects via the S3 protocol, use the command:
 
 ```shell
 $ davix-ls --s3accesskey 'access' --s3secretkey 'secret' \
-  --s3alternate s3s://s3.cl2.du.cesnet.cz/bucket-name
+  --s3alternate s3s://s3.cl2.du.cesnet.cz/<bucket-name>
 ```
 
 `davix-get`, `davix-put` and `davix-del` are also available to download, store
