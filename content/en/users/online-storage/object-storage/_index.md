@@ -338,8 +338,8 @@ called [Simple Storage Service](https://docs.aws.amazon.com/AmazonS3/latest/user
 to access object storage offered by other providers.
 {{% /alert %}}
 
-In order to access the storage via S3, an EGI Federated Cloud site admin needs to create 
-and associate to your EGI credentials both `access` and  `secret` keys which could then 
+In order to access the storage via S3, an EGI Federated Cloud site admin needs to create
+and associate to your EGI credentials both `access` and  `secret` keys which could then
 be used by clients like `davix` to have access to the storage.
 
 For example, to list containers/objects via the S3 protocol, use the command:
