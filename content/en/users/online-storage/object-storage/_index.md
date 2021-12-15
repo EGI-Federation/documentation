@@ -364,8 +364,8 @@ objects in the storage.
 at `support` `<at>` `egi.eu` for more details.
 {{% /alert %}}
 
-You can then refer to this [tutorial](../../tutorials/data-transfer-object-storage) 
-to see how to transfer to/from an Object storage endpoint.  
+You can then refer to this [tutorial](../../tutorials/data-transfer-object-storage)
+to see how to transfer to/from an Object storage endpoint.
 
 <!--
 // jscpd:ignore-end
