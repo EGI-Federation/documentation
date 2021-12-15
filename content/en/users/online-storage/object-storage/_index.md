@@ -356,7 +356,7 @@ and delete objects from the storage.
 
 The [EGI Data Transfer](../../data-transfer) service can move files
 to and from object storages that are compatible with the S3 protocol.
-You will have to upload the access keys to the EGI Data Transfer
+You will have to upload the `access` keys to the EGI Data Transfer
 service, which will be able  to generate properly signed URLs for the
 objects in the storage.
 
