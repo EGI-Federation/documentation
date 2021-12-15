@@ -67,7 +67,11 @@ The integration follows a two-step process:
 
 1. Register your Service Provider and test integration with the **demo**
    instance of EGI Check-in by selecting the "Demo" integration environment
-   during registration through the EGI Federation Registry Portal. The demo
+   during registration through the EGI Federation Registry Portal. Service
+   registration requests require approval by an administrator. The review
+   process for the demo environment involves primarily the technical aspects of
+   the service configuration. However, moving the service to production requires
+   compliance with all the [eligibility criteria] (see Step 2). The demo
    instance allows for testing authentication and authorisation through the
    academic and social Identity Providers connected to Check-in without
    affecting the production Check-in service. Note that while the demo instance
@@ -98,10 +102,10 @@ more information can be found in the protocol-specific sections that follow.
 
 <!-- markdownlint-disable line-length -->
 
-| Protocol       | Development environment                                        | Demo environment                                                | Production environment                                     |
-| -------------- | -------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------- |
-| SAML           | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          |
-| OpenID Connect | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai.egi.eu/oidc/.well-known/openid-configuration> |
+| Protocol       | Production environment                                     | Demo environment                                                | Development environment                                        |
+| -------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------- |
+| SAML           | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          |
+| OpenID Connect | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> |
 
 <!-- markdownlint-enable line-length -->
 
@@ -121,7 +125,7 @@ provide the following information to connect your service to EGI Check-in:
    by the service)
 1. Short description of the service
 1. Site (URL) for localised information about the service; the content found at
-   the URL SHOULD provide more complete information than what is provided by the
+   the URL SHOULD provide more complete information than what provided by the
    description
 1. Contact information of the following types:
    - Helpdesk/Support contact information (for redirecting user)
@@ -173,9 +177,9 @@ depends on the integration environment being used:
 
 <!-- markdownlint-disable line-length -->
 
-| Development environment                               | Demo environment                                       | Production environment                            |
-| ----------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------- |
-| <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai.egi.eu/proxy/saml2/idp/metadata.php> |
+| Production environment                            | Demo environment                                       | Development environment                               |
+| ------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------- |
+| <https://aai.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> |
 
 <!-- markdownlint-enable line-length -->
 
@@ -358,15 +362,15 @@ The most important OIDC/OAuth2 endpoints are listed below:
 
 <!-- markdownlint-disable line-length -->
 
-| Endpoint               | Development environment                                        | Demo environment                                                                                    | Production environment                                                                              |
-| ---------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Provider configuration | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration>                                     | <https://aai.egi.eu/oidc/.well-known/openid-configuration>                                          |
-| Authorisation          | <https://aai-dev.egi.eu/oidc/authorize>                        | <https://aai-demo.egi.eu/oidc/authorize>                                                            | <https://aai.egi.eu/oidc/authorize>                                                                 |
-| Token                  | <https://aai-dev.egi.eu/oidc/token>                            | <https://aai-demo.egi.eu/oidc/token>                                                                | <https://aai.egi.eu/oidc/token>                                                                     |
-| Device Code            | <https://aai-dev.egi.eu/oidc/devicecode>                       | <https://aai-demo.egi.eu/oidc/devicecode>                                                           | <https://aai.egi.eu/oidc/devicecode>                                                                |
-| JSON Web Key(jwt)      | <https://aai-dev.egi.eu/oidc/jwk>                              | <https://aai-demo.egi.eu/oidc/jwk>                                                                  | <https://aai.egi.eu/oidc/jwk>                                                                       |
-| User Info              | <https://aai-dev.egi.eu/oidc/userinfo>                         | <https://aai-demo.egi.eu/oidc/userinfo>                                                             | <https://aai.egi.eu/oidc/userinfo>                                                                  |
-| Introspection          | <https://aai-dev.egi.eu/oidc/introspect>                       | <https://aai-demo.egi.eu/oidc/introspect>                                                           | <https://aai.egi.eu/oidc/introspect>                                                                |
+| Endpoint               | Production environment                                     | Demo environment                                                | Development environment                                        |
+| ---------------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------- |
+| Provider configuration | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> |
+| Authorisation          | <https://aai.egi.eu/oidc/authorize>                        | <https://aai-demo.egi.eu/oidc/authorize>                        | <https://aai-dev.egi.eu/oidc/authorize>                        |
+| Token                  | <https://aai.egi.eu/oidc/token>                            | <https://aai-demo.egi.eu/oidc/token>                            | <https://aai-dev.egi.eu/oidc/token>                            |
+| Device Code            | <https://aai.egi.eu/oidc/devicecode>                       | <https://aai-demo.egi.eu/oidc/devicecode>                       | <https://aai-dev.egi.eu/oidc/devicecode>                       |
+| JSON Web Key(jwt)      | <https://aai.egi.eu/oidc/jwk>                              | <https://aai-demo.egi.eu/oidc/jwk>                              | <https://aai-dev.egi.eu/oidc/jwk>                              |
+| User Info              | <https://aai.egi.eu/oidc/userinfo>                         | <https://aai-demo.egi.eu/oidc/userinfo>                         | <https://aai-dev.egi.eu/oidc/userinfo>                         |
+| Introspection          | <https://aai.egi.eu/oidc/introspect>                       | <https://aai-demo.egi.eu/oidc/introspect>                       | <https://aai-dev.egi.eu/oidc/introspect>                       |
 
 <!-- markdownlint-enable line-length -->
 
