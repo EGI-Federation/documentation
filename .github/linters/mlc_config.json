@@ -19,6 +19,9 @@
       "pattern": "^https://argo-mon.*.egi.eu/nagios"
     },
     {
+      "pattern": "^https://argo-mon.*.cro-ngi.hr/nagios"
+    },
+    {
       "pattern": "^https://training.notebooks.egi.eu*"
     },
     {
