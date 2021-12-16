@@ -1004,35 +1004,18 @@ called &lt;a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome
 &lt;a href="https://www.architecting.it/blog/object-storage-standardising-on-the-s3-api/">adopted as the de-facto standard&lt;/a>
 to access object storage offered by other providers.
 &lt;/div>
-&lt;p>In order to access the storage via S3, you need
-&lt;a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html">EC2&lt;/a>-compatible
-credentials from the OpenStack deployment. Use the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack ec2 credentials create
-+------------+------------------------------------------------------------------------------------------------------------------------------------------+
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+------------+------------------------------------------------------------------------------------------------------------------------------------------+
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> access &lt;span style="color:#000;font-weight:bold">|&lt;/span> zxxxxxxxxxxxxxxxxxxxxxxxxxx &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> links &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;self&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;https://api.cloud.ifca.es:5000/v3/users/5495cd688ad7401b8e87b46bdea92f33/credentials/OS-EC2/xxxxxxxxxxxxxxxxx&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> project_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 999f045cb1ff4684a15ebb338af69460 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> secret &lt;span style="color:#000;font-weight:bold">|&lt;/span> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> trust_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> user_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> xxxxxxxxxxxxxxxxxxxxxxxxxxxx &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+------------+------------------------------------------------------------------------------------------------------------------------------------------+
-&lt;/code>&lt;/pre>&lt;/div>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Important&lt;/h4>
-Save the &lt;code>access&lt;/code> and &lt;code>secret&lt;/code>
-values, as those are needed in subsequent commands that use the S3 protocol.
-&lt;/div>
-&lt;p>To list containers/objects via the S3 protocol, use the command:&lt;/p>
+&lt;p>In order to access the storage via S3, an EGI Federated Cloud site admin needs to create
+and associate to your EGI credentials both &lt;code>access&lt;/code> and &lt;code>secret&lt;/code> keys which could then
+be used by clients like &lt;code>davix&lt;/code> to have access to the storage.&lt;/p>
+&lt;p>For example, to list containers/objects via the S3 protocol, use the command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ davix-ls --s3accesskey &lt;span style="color:#4e9a06">&amp;#39;access&amp;#39;&lt;/span> --s3secretkey &lt;span style="color:#4e9a06">&amp;#39;secret&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --s3alternate s3s://api.cloud.ifca.es:8080/swift/v1/test-egi
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --s3alternate s3s://s3.cl2.du.cesnet.cz/&amp;lt;bucket-name&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>davix-get&lt;/code>, &lt;code>davix-put&lt;/code> and &lt;code>davix-del&lt;/code> are also available to download, store
 and delete objects from the storage.&lt;/p>
 &lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
 &lt;p>The &lt;a href="../../data-transfer">EGI Data Transfer&lt;/a> service can move files
 to and from object storages that are compatible with the S3 protocol.
-You will have to upload the EC2 access keys to the EGI Data Transfer
+You will have to upload the &lt;code>access&lt;/code> keys to the EGI Data Transfer
 service, which will be able to generate properly signed URLs for the
 objects in the storage.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
@@ -1040,6 +1023,8 @@ objects in the storage.&lt;/p>
 Please contact support
 at &lt;code>support&lt;/code> &lt;code>&amp;lt;at&amp;gt;&lt;/code> &lt;code>egi.eu&lt;/code> for more details.
 &lt;/div>
+&lt;p>You can then refer to this &lt;a href="../../tutorials/data-transfer-object-storage">tutorial&lt;/a>
+to see how to transfer to/from an Object storage endpoint.&lt;/p>
 &lt;!--
 // jscpd:ignore-end
 --></description></item></channel></rss>
