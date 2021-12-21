@@ -61,6 +61,7 @@ The central instance supports the following VOs:
 - [auger](https://operations-portal.egi.eu/vo/view/voname/auger)
 - [biomed](https://operations-portal.egi.eu/vo/view/voname/biomed)
 - [vo.reliance-project.eu](https://operations-portal.egi.eu/vo/view/voname/vo.reliance-project.eu)
+- [eiscat.se](https://operations-portal.egi.eu/vo/view/voname/eiscat.se)
 
 ### Notebooks for communities
 
