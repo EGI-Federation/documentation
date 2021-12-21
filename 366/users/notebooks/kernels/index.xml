@@ -192,10 +192,10 @@ user.&lt;/p>
 &lt;h2 id="access">Access&lt;/h2>
 &lt;p>&lt;a href="https://binder.notebooks.egi.eu/">EGI&amp;rsquo;s Binder&lt;/a> has the same access conditions
 as the
-&lt;a href="http://localhost:1313/users/notebooks/#service-modes">centrally operated Notebooks service from EGI&lt;/a>.
+&lt;a href="../../#service-modes">centrally operated Notebooks service from EGI&lt;/a>.
 Before using the service, you need to have a valid EGI account and be a member
 of
-&lt;a href="http://localhost:1313/users/notebooks/#notebooks-for-researchers">one of the supported VOs&lt;/a>.&lt;/p>
+&lt;a href="../../#notebooks-for-researchers">one of the supported VOs&lt;/a>.&lt;/p>
 &lt;h2 id="linking-to-egis-binder">Linking to EGI&amp;rsquo;s binder&lt;/h2>
 &lt;p>You can create a link to share your notebooks easily from the Binder interface,
 just copy the URL shown when the building is in progress&lt;/p>
