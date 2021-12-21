@@ -64,9 +64,9 @@ The grant to run applications is initially valid for 6 months and can be
 extended/renewed upon request. These resources are delivered
 [through the vo.access.egi.eu VO](https://documents.egi.eu/public/ShowDocument?docid=2773).
 
-You can manage those resources via [command line](../cli), or any of the
-dashboards of the EGI Cloud: the [VMOps dashboard](../../cloud-compute/vmops) or
-the [IM dashboard](../../cloud-compute/im).
+You can manage those resources via [command-line](../cli) or any of the
+dashboards of the EGI Cloud: the [VMOps dashboard](../../cloud-compute/vmops)
+and the [IM dashboard](../../cloud-compute/im).
 
 ### Scientific applications
 
