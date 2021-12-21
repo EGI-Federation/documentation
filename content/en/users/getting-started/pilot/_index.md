@@ -34,7 +34,7 @@ the users\' requests before granting the access to the resources.
 ### How can you access the service?
 
 1. Login to the [EGI Marketplace](https://marketplace.egi.eu) with the
-   [EGI AAI Check-In service](../check-in).
+   [EGI AAI Check-In service](../../check-in).
 1. Setup a profile, including details about your affiliation and role within a
    research institute/project/team.
 1. Navigate the marketplace top-menu and click on the category:
@@ -78,5 +78,6 @@ You can also access scientific applications via the piloting allocation:
   proteomics and sequence data. The application is available through the Science
   Software on Demand Service (SSoD). You can access the
   [EGI Chipster instace](https://chipster.fedcloud-tf.fedcloud.eu/)
-- [EC3](../ec3) has a list of [applications](../ec3/apps/) that you can easily
-  start from the [EC3 porta](https://servproject.i3m.upv.es/ec3-ltos/index.php)
+- [EC3](../../ec3) has a list of [applications](../../ec3/apps/) that you can
+  easily start from the
+  [EC3 porta](https://servproject.i3m.upv.es/ec3-ltos/index.php)
