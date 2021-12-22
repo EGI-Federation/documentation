@@ -215,11 +215,11 @@ openstack server create --flavor <flavor> \
 
 ## Terraform
 
-[Terraform](https://terraform.io) supports EGI Cloud OpenStack providers by
-using valid access tokens for Keystone. For using this, just configure your
-provider as usual in Terraform, but do not include user/password information.
-Instead, use the [fedcloud]() client to configure environment variables as
-follows:
+[Terraform](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/)
+supports EGI Cloud OpenStack providers by using valid access tokens for Keystone.
+For using this, just configure your provider as usual in Terraform, but do not
+include user/password information. Instead, use the [fedcloud](../../getting-started/cli/)
+client to configure environment variables as follows:
 
 ```shell
 # export OS_AUTH_URL and OS_PROJECT_ID with
