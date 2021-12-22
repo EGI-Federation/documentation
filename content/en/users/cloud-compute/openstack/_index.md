@@ -99,10 +99,10 @@ $ OS_TOKEN=$(openstack --os-auth-type v3oidcaccesstoken \
 ```
 
 You can easily obtain an OpenStack token with the
-[fedcloud](https://fedcloudclient.fedcloud.eu/) client:
+[fedcloud](../../getting-started/cli/) client:
 
 ```shell
-fedcloud openstack --site <NAME_OF_THE_SITE> --vo <NAME_OF_VO> token issue
+fedcloud openstack --site <NAME_OF_THE_SITE> --vo <NAME_OF_VO> token issue -c id -f value
 ```
 
 ## Useful commands with OpenStack CLI
@@ -217,105 +217,62 @@ openstack server create --flavor <flavor> \
 
 [Terraform](https://terraform.io) supports EGI Cloud OpenStack providers by
 using valid access tokens for Keystone. For using this, just configure your
-provider as usual in Terraform, but do not include user/password information:
+provider as usual in Terraform, but do not include user/password information.
+Instead, use the [fedcloud]() client to configure environment variables as
+follows:
 
-```terraform
-# Configure the OpenStack Provider
-provider "openstack" {
-  project_id = "<your project id>"
-  auth_url    = "http://<your keystone url>/v3"
-}
+```shell
+# export OS_AUTH_URL and OS_PROJECT_ID with
+$ eval "$(fedcloud site show-project-id --site <NAME_OF_SITE> --vo <NAME_OF_VO>)"
 
-# Create a server
-resource "openstack_compute_instance_v2" "test-server" {
-  # ...
-}
+# now get a valid token
+$ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
+                    token issue -c id -f value)
 ```
 
-when launching Terraform, set the `OS_TOKEN` environment variable to a valid
-token as shown in :ref:OpenStack token for other clients. You may also set the
-Keystone URL and project ID in the `OS_AUTH_URL` and `OS_PROJECT_ID` environment
-variables:
+Here is a sample `main.tf` configuration file for Terraform:
 
 ```terraform
-provider "openstack" {
-}
-
-data "openstack_images_image_v2" "ubuntu16" {
-  most_recent = true
-
-  properties {
-    APPLIANCE_MPURI = "https://appdb.egi.eu/store/vo/image/8df7ba00-8467-57aa-bf1e-05754a2a73bf:6428/"
+terraform {
+  required_version = "1.1.2"
+  required_providers {
+    openstack = {
+      source = "terraform-provider-openstack/openstack"
+      version = "1.46.0"
+    }
   }
 }
 
-data "openstack_compute_flavor_v2" "small" {
-  vcpus = 1
-  ram   = 2048
-  disk  = 20
+# Configure the OpenStack Provider
+provider "openstack" {
+  tenant_id = "<your project id>"
+  auth_url = "http://<your keystone url>/v3"
 }
 
+# Create a server
 resource "openstack_compute_instance_v2" "vm" {
   name = "testvm"
-  image_id = "${data.openstack_images_image_v2.ubuntu16.id}"
-  flavor_id = "${data.openstack_compute_flavor_v2.small.id}"
+  image_id = "..."
+  flavor_id = "..."
   security_groups = ["default"]
 }
 ```
 
+Initialize Terraform with:
 ```shell
-# this will export OS_AUTH_URL and OS_PROJECT_ID
-$ eval "$(fedcloud site show-project-id --site <NAME_OF_SITE> --vo <NAME_OF_VO>)"
-# now get a valid token
-$ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
-                    token issue -c id -f value)
-$ terraform plan
-Refreshing Terraform state in-memory prior to plan...
-The refreshed state will be used to calculate this plan, but will not be
-persisted to local or remote state storage.
-
-data.openstack_compute_flavor_v2.small: Refreshing state...
-data.openstack_images_image_v2.ubuntu16: Refreshing state...
-
-------------------------------------------------------------------------
-
-An execution plan has been generated and is shown below.
-Resource actions are indicated with the following symbols:
-  + create
-
-Terraform will perform the following actions:
-
-  + openstack_compute_instance_v2.vm
-      id:                         <computed>
-      access_ip_v4:               <computed>
-      access_ip_v6:               <computed>
-      all_metadata.%:             <computed>
-      availability_zone:          <computed>
-      flavor_id:                  "2"
-      flavor_name:                <computed>
-      force_delete:               "false"
-      image_id:                   "ceb0434d-37af-4d1f-9efe-13f6f9937df2"
-      image_name:                 <computed>
-      name:                       "testvm"
-      network.#:                  <computed>
-      power_state:                "active"
-      region:                     <computed>
-      security_groups.#:          "1"
-      security_groups.3814588639: "default"
-      stop_before_destroy:        "false"
-
-
-Plan: 1 to add, 0 to change, 0 to destroy.
-
-------------------------------------------------------------------------
-
-Note: You didn't specify an "-out" parameter to save this plan, so Terraform
-can't guarantee that exactly these actions will be performed if
-"terraform apply" is subsequently run.
+$ terraform init
 ```
 
-Note that as in the example above you can get images using information from
-AppDB if needed.
+Now check the deployment plan:
+
+```shell
+$ terraform plan
+```
+
+If you are happy with the plan, perform the deployment with:
+```shell
+$ terraform apply
+```
 
 ## libcloud
 
