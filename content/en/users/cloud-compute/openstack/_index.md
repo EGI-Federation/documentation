@@ -259,6 +259,7 @@ resource "openstack_compute_instance_v2" "vm" {
 ```
 
 Initialize Terraform with:
+
 ```shell
 $ terraform init
 ```
@@ -270,6 +271,7 @@ $ terraform plan
 ```
 
 If you are happy with the plan, perform the deployment with:
+
 ```shell
 $ terraform apply
 ```
