@@ -589,11 +589,11 @@ give your the details you can use it as any other image at the provider:&lt;/p>
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --file /home/ubuntu/.ssh/authorized_keys&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>my_new_keys &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &amp;lt;name of the new VM&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform">Terraform&lt;/h2>
-&lt;p>&lt;a href="https://terraform.io">Terraform&lt;/a> supports EGI Cloud OpenStack providers by
-using valid access tokens for Keystone. For using this, just configure your
-provider as usual in Terraform, but do not include user/password information.
-Instead, use the &lt;a href="">fedcloud&lt;/a> client to configure environment variables as
-follows:&lt;/p>
+&lt;p>&lt;a href="https://registry.terraform.io/providers/terraform-provider-openstack/openstack/">Terraform&lt;/a>
+supports EGI Cloud OpenStack providers by using valid access tokens for Keystone.
+For using this, just configure your provider as usual in Terraform, but do not
+include user/password information. Instead, use the &lt;a href="../../getting-started/cli/">fedcloud&lt;/a>
+client to configure environment variables as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># export OS_AUTH_URL and OS_PROJECT_ID with&lt;/span>
 $ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id --site &amp;lt;NAME_OF_SITE&amp;gt; --vo &amp;lt;NAME_OF_VO&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># now get a valid token&lt;/span>
