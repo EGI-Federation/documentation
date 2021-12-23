@@ -105,7 +105,7 @@ using `pkcs12`:
 
    where:
 
-   | Filename      | Description                         |
+   | Filename       | Description                         |
    | -------------- | ----------------------------------- |
    | `my_cert.p12`  | is the input PKCS12 format file;    |
    | `userkey.pem`  | is the output private key file;     |
