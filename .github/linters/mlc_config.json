@@ -19,10 +19,16 @@
       "pattern": "^https://argo-mon.*.egi.eu/nagios"
     },
     {
+      "pattern": "^https://argo-mon.*.cro-ngi.hr/nagios"
+    },
+    {
       "pattern": "^https://training.notebooks.egi.eu*"
     },
     {
       "pattern": "^https://aai.egi.eu/proxy*"
+    },
+    {
+      "pattern": "^https://goc.egi.eu/portal*"
     },
     {
       "pattern": "^https://voms2.hellasgrid.gr:8443/voms*"
