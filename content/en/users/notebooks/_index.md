@@ -37,38 +37,23 @@ following added features:
 
 ## Service Modes
 
-We offer different service modes depending on your needs
+We offer different service modes depending on your needs:
 
-### Notebooks for researchers
+- Individual users can use the centrally operated service from EGI. Users can
+  login, write and play and re-play notebooks by:
 
-Individual users can use the centrally operated service from EGI. Users can
-login, write and play and re-play notebooks by:
+  1. [creating an EGI account](../check-in/signup)
+  2. [enrolling to the vo.notebooks.egi.eu VO](https://aai.egi.eu/registry/co_petitions/start/coef:111)
+  3. [accessing https://notebooks.egi.eu/](https://notebooks.egi.eu/)
 
-1. [creating an EGI account](../check-in/signup)
-2. Enrolling to the one of the supported VOs such as
-   [vo.notebooks.egi.eu VO](https://aai.egi.eu/registry/co_petitions/start/coef:111)
-3. [accessing https://notebooks.egi.eu/](https://notebooks.egi.eu/)
+  This instance has limits on the amount of resources available for each user (2
+  CPU core, 4 GB RAM and 20 GB of storage). It will also kill inactive sessions
+  after 1 hour.
 
-This instance has limits on the amount of resources available for each user (2
-CPU core, 4 GB RAM and 20 GB of storage). It will also kill inactive sessions
-after 1 hour.
-
-The central instance supports the following VOs:
-
-- [vo.notebooks.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu),
-  enroll [here](https://aai.egi.eu/registry/co_petitions/start/coef:111)
-- [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
-- [auger](https://operations-portal.egi.eu/vo/view/voname/auger)
-- [biomed](https://operations-portal.egi.eu/vo/view/voname/biomed)
-- [vo.reliance-project.eu](https://operations-portal.egi.eu/vo/view/voname/vo.reliance-project.eu)
-- [eiscat.se](https://operations-portal.egi.eu/vo/view/voname/eiscat.se)
-
-### Notebooks for communities
-
-User communities can have their customised EGI Notebooks service instance. EGI
-offers consultancy, support, and can operate the setup as well. A community
-specific setup allows the community to use the community\'s own Virtual
-Organisation (i.e. federated compute and storage sites) for Jupyter, add custom
-libraries into Jupyter (e.g. discipline-specific analysis libraries) or have
-fine grained control on who can access the instance (based on the information
-available to the EGI Check-in AAI service).
+- User communities can have their customised EGI Notebooks service instance. EGI
+  offers consultancy, support, and can operate the setup as well. A community
+  specific setup allows the community to use the community\'s own Virtual
+  Organisation (i.e. federated compute and storage sites) for Jupyter, add
+  custom libraries into Jupyter (e.g. discipline-specific analysis libraries) or
+  have fine grained control on who can access the instance (based on the
+  information available to the EGI Check-in service).

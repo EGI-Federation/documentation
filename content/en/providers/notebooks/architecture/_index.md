@@ -207,8 +207,9 @@ following sample configuration and adapt to your needs by setting:
 - A valid hostname (`<your notebooks host>` below) that resolves to your
   Kubernetes Ingress
 - Valid EGI Check-in client credentials, these can be obtained by creating a new
-  client at [EGI AAI OpenID Connect Provider](https://aai-dev.egi.eu/oidc/).
-  When moving to EGI Check-in production environment, make sure to remove the
+  Service for the demo instance of Check-in through the
+  [EGI Federation Registry](https://aai.egi.eu/federation). When moving to EGI
+  Check-in production environment, make sure to remove the
   `hub.extraEnv.EGICHECKIN_HOST` variable.
 
 ```yaml
@@ -260,7 +261,7 @@ hub:
       c.JupyterHub.spawner_class = EGISpawner
   extraEnv:
     JUPYTER_ENABLE_LAB: 1
-    EGICHECKIN_HOST: aai-dev.egi.eu
+    EGICHECKIN_HOST: aai-demo.egi.eu
   services:
     status:
        url: "http://status-web/"

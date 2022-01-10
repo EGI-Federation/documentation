@@ -12,7 +12,7 @@ This tutorial describes how to create your first Virtual Machine in the EGI Fede
 
 ## Step 1: Signing up
 
-Create an EGI account with [Check-In](../../check-in/signup).
+Create an EGI account with [Check-in](../../check-in/signup).
 
 ## Step 2: Enrolling to a Virtual Organisation
 
