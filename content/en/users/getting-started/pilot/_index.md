@@ -80,4 +80,4 @@ You can also access scientific applications via the piloting allocation:
   [EGI Chipster instace](https://chipster.fedcloud-tf.fedcloud.eu/)
 - [EC3](../../ec3) has a list of [applications](../../ec3/apps/) that you can
   easily start from the
-  [EC3 porta](https://servproject.i3m.upv.es/ec3-ltos/index.php)
+  [EC3 portal](https://servproject.i3m.upv.es/ec3-ltos/index.php)
