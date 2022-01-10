@@ -193,12 +193,15 @@ create one at the [FedCloud dynamic DNS service](https://nsupdate.fedcloud.eu/).
 
 Then you will need to create an OpenID Connect client for EGI Check-in to
 authorise users into the new deployment. You can create a client by going to the
-[Check-in demo OIDC clients management](https://aai-demo.egi.eu/oidc/manage/admin/clients).
+[EGI Federation Registry](https://aai.egi.eu/federation).
+You can find more information about registering an OIDC Client in
+[EGI Check-in guide for SPs](../../check-in/sp/#service-provider-integration-workflow)
 Use the following as redirect URL:
 `https://<your host domain name>/hub/oauth_callback`.
 
-In the _Access_ tab, add `offline_access` to the list of scopes. Save the client
-and take note of the client ID and client secret for later.
+Then add `offline_access` to the list of scopes and sumbit the request. After
+the approval of the Service request, save the client and take note of the
+client ID and client secret for later.
 
 Finally you will also need 3 different random strings generated with
 `openssl rand -hex 32` that will be used as secrets in the file describing the
