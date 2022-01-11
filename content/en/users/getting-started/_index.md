@@ -130,13 +130,13 @@ When EGI is able to support a request for resources, it can do so in two ways:
      Agreement (SLA) with you
    - A new VO will be created for your community
 
-### Piloting allocation
+## Pilot your application
 
 EGI offers a plaground allocation for users get access to the services and
 understand how to port applications and develop new data analytics tools that
 can be turn into online services that can be accessed by scientist worldwide.
 
-#### Requirements and user registration
+### Requirements and user registration
 
 Access **requires** acceptance of
 [Acceptable Use Policy (AUP) and Conditions of the \'EGI Applications on Demand Service\'](https://documents.egi.eu/public/ShowDocument?docid=2635).
@@ -157,7 +157,7 @@ When requesting access users are guided through a registration process. Members
 of the EGI support team will perform a lightweight vetting process to validate
 the users\' requests before granting the access to the resources.
 
-#### How to request access?
+### How to request access?
 
 1. Login to the [EGI Marketplace](https://marketplace.egi.eu) with the
    [EGI AAI Check-In service](../../check-in).
@@ -174,7 +174,7 @@ Please check the
 [EGI Marketplace guide](https://wiki.egi.eu/wiki/HowToAccessTheEGIMarketPlace)
 for further details.
 
-#### Services available
+### Services available
 
 Once granted access, each user will have a grant with a predefined quota of
 resources, which can be used to run the application of choice. This grant
@@ -192,7 +192,7 @@ You can manage those resources via [command-line](../cli) or any of the
 dashboards of the EGI Cloud: the [VMOps dashboard](../../cloud-compute/vmops)
 and the [IM dashboard](../../cloud-compute/im).
 
-You can also access scientific applications via:
+You can also easily access scientific applications:
 
 - [Chipster](https://marketplace.egi.eu/applications-on-demand/68-chipster.html)
   a user-friendly analysis software for high-throughput data. It contains over
