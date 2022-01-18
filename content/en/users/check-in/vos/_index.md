@@ -415,19 +415,19 @@ access to. Only VO managers can request LDAP credentials for a given VO.
 
 Users are present in the `ou=people` subtree.
 
-| Attribute   	| Description                 | Example                                                         	|
+| Attribute    | Description                 | Example                                                            |
 |------------- |---------------------------- |----------------------------------------------------------------- |
 | `objectClass`    |                           | `inetOrgPerson`<br/> `eduPerson`<br/> `voPerson`<br/> `eduMember`<br/> `ldapPublicKey`   |
 | `voPersonId`    | Community User Identifier (`voPersonID`)  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu`  |
 | `uid` | user id | `john.doe` |
-| `cn`          	| Full name                 | `John Doe` |
+| `cn`            | Full name                 | `John Doe` |
 | `displayName`   | Full name                 | `John Doe` |
 | `givenName`     | First name                  | `John`          |
 | `sn`            | Last name                   | `Doe`      |
 | `mail`          | Email address               | `john.doe@mail.com`         |
-| edupersonUniqueID | Community User Identifier (see also `voPersonId`)  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
-| eduPersonPrincipalName | A scoped identifier for a person. The value is the same as the  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
-| eduPersonEntitlement | URN that indicates a set of rights to specific resources | urn:mace:egi.eu:group:vo.example.org:role=member#aai.egi.eu |
+| `edupersonUniqueID` | Community User Identifier (see also `voPersonId`)  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
+| `eduPersonPrincipalName` | A scoped identifier for a person. The value is the same as the  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
+| `eduPersonEntitlement` | URN that indicates a set of rights to specific resources | urn:mace:egi.eu:group:vo.example.org:role=member#aai.egi.eu |
 | `sshPublicKey` | SSH public key | |
 | `isMemberOf` | Group memberships | `CO:COU:vo.example.org:members` |
 | `voPersonCertificateDN` | The Subject Distinguished Name of an X.509 certificate held by the person | `voPersonCertificateDN;scope-cert1: CN=John Doe A251,O=Example,C=US,DC=cilogon,DC=org` |
@@ -437,7 +437,7 @@ Users are present in the `ou=people` subtree.
 
 Groups are present in the `ou=groups` subtree.
 
-| Attribute   	| Description                 | Example                                                         	|
+| Attribute     | Description                 | Example                                                            |
 |-------------  |---------------------------- |-----------------------------------------------------------------   |
 | `objectClass` |                            | `groupofNames`<br/> `eduMember`  |
 | `cn`               | Common name                 | `CO:COU:vo.example.org:members` |
