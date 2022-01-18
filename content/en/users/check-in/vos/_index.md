@@ -380,8 +380,8 @@ be supported in the future.
 
 1. Removing VO member:
 
-   Same as the update but requires setting the membership status to `Deleted`
- 
+  Same as the update but requires setting the membership status to `Deleted`
+
 ## LDAP
 
 EGI Check-in provides read access to the members of the VO(s) through the
@@ -389,17 +389,16 @@ Lightweight Directory Access Protocol (LDAP).
 
 There are two entity types in the LDAP:
 
-* People: Users of EGI Check-in, expressed as `inetOrgPerson` (with additional attributes/schemas).
+- People: Users of EGI Check-in, expressed as `inetOrgPerson` (with additional attributes/schemas).
 
-* Groups of collaboration members, expressed as `groupOfMembers` (with additional attributes/schema).
+- Groups of collaboration members, expressed as `groupOfMembers` (with additional attributes/schema).
 
 ### Connection Parameters
 
-| | Production environment   	| Demo environment                 | Development environment |
-|- | -----------------------	| -------------------------------	|-------------------- |
+| | Production environment | Demo environment                   | Development environment |
+|-| ----------------------- | ------------------------------- | -------------------- |
 | **LDAP address** | ldaps://ldap.aai.egi.eu:636/ | ldaps://ldap.aai-demo.egi.eu:636/ | ldaps://ldap.aai-dev.egi.eu:636/ |
 | **Base DN** | dc=\<vo_name\>,dc=ldap,dc=aai,dc=egi,dc=eu | dc=\<vo_name\>,dc=ldap,dc=aai-demo,dc=egi,dc=eu | dc=\<vo_name\>,dc=ldap,dc=aai-dev,dc=egi,dc=eu |
-
 
 **Bind DN**: \<provided by EGI Check-in support\>
 
@@ -412,17 +411,17 @@ access to. Only VO managers can request LDAP credentials for a given VO.
 
 ### Entities
 
-**User**
+#### User
 
 Users are present in the `ou=people` subtree.
 
 | Attribute   	| Description                 | Example                                                         	|
-|-------------	|----------------------------	|-----------------------------------------------------------------	|
-| `objectClass` 	|                           | `inetOrgPerson`<br/> `eduPerson`<br/> `voPerson`<br/> `eduMember`<br/> `ldapPublicKey` 	|
-| `voPersonId`  	| Community User Identifier (`voPersonID`) 	| `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu`                                                             	|
+|------------- |---------------------------- |----------------------------------------------------------------- |
+| `objectClass`    |                           | `inetOrgPerson`<br/> `eduPerson`<br/> `voPerson`<br/> `eduMember`<br/> `ldapPublicKey`   |
+| `voPersonId`    | Community User Identifier (`voPersonID`)  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu`  |
 | `uid` | user id | `john.doe` |
 | `cn`          	| Full name                 | `John Doe` |
-| `displayName`   | Full name                   | `John Doe` |
+| `displayName`   | Full name                 | `John Doe` |
 | `givenName`     | First name                  | `John`          |
 | `sn`            | Last name                   | `Doe`      |
 | `mail`          | Email address               | `john.doe@mail.com`         |
@@ -434,13 +433,13 @@ Users are present in the `ou=people` subtree.
 | `voPersonCertificateDN` | The Subject Distinguished Name of an X.509 certificate held by the person | `voPersonCertificateDN;scope-cert1: CN=John Doe A251,O=Example,C=US,DC=cilogon,DC=org` |
 | `voPersonCertificateIssuerDN` | The Subject Distinguished Name of the X.509 certificate issuer | `voPersonCertificateIssuerDN;scope-cert1: CN=CILogon Basic CA 1, O=CILogon, C=US, DC=cilogon, DC=org` |
 
-**Group**
+#### Group
 
 Groups are present in the `ou=groups` subtree.
 
 | Attribute   	| Description                 | Example                                                         	|
-|-------------	|----------------------------	|-----------------------------------------------------------------	|
-| `objectClass` 	|                            	| `groupofNames`<br/> `eduMember` 	|
-| `cn` 	          | Common name                	| `CO:COU:vo.example.org:members` |
+|-------------  |---------------------------- |-----------------------------------------------------------------   |
+| `objectClass` |                            | `groupofNames`<br/> `eduMember`  |
+| `cn`               | Common name                 | `CO:COU:vo.example.org:members` |
 | `description`   | The description of group    | `CO:COU:vo.example.org Members` |
 | `member`        | The members of this group (multivalued)   | `voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
