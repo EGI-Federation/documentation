@@ -417,9 +417,9 @@ Users are present in the `ou=people` subtree.
 
 | Attribute    | Description                 | Example                                                            |
 |------------- |---------------------------- |----------------------------------------------------------------- |
-| `objectClass`    |                           | `inetOrgPerson`<br/> `eduPerson`<br/> `voPerson`<br/> `eduMember`<br/> `ldapPublicKey`   |
+| `objectClass`    |                           | `inetOrgPerson`, `eduPerson`, `voPerson`, `eduMember`, `ldapPublicKey`   |
 | `voPersonId`    | Community User Identifier (`voPersonID`)  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu`  |
-| `uid` | user id | `john.doe` |
+| `uid` | user ID | `john.doe` |
 | `cn`            | Full name                 | `John Doe` |
 | `displayName`   | Full name                 | `John Doe` |
 | `givenName`     | First name                  | `John`          |
@@ -439,7 +439,7 @@ Groups are present in the `ou=groups` subtree.
 
 | Attribute     | Description                 | Example                                                            |
 |-------------  |---------------------------- |-----------------------------------------------------------------   |
-| `objectClass` |                            | `groupofNames`<br/> `eduMember`  |
+| `objectClass` |                            | `groupofNames`, `eduMember`  |
 | `cn`               | Common name                 | `CO:COU:vo.example.org:members` |
 | `description`   | The description of group    | `CO:COU:vo.example.org Members` |
 | `member`        | The members of this group (multivalued)   | `voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
