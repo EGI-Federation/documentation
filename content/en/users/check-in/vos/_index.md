@@ -380,4 +380,66 @@ be supported in the future.
 
 1. Removing VO member:
 
-   Same as the update but requires setting the membership status to `Deleted`
+  Same as the update but requires setting the membership status to `Deleted`
+
+## LDAP
+
+EGI Check-in provides read access to the members of the VO(s) through the
+Lightweight Directory Access Protocol (LDAP).
+
+There are two entity types in the LDAP:
+
+- People: Users of EGI Check-in, expressed as `inetOrgPerson` (with additional attributes/schemas).
+
+- Groups of collaboration members, expressed as `groupOfMembers` (with additional attributes/schema).
+
+### Connection Parameters
+
+| | Production environment | Demo environment                   | Development environment |
+|-| ----------------------- | ------------------------------- | -------------------- |
+| **LDAP address** | ldaps://ldap.aai.egi.eu:636/ | ldaps://ldap.aai-demo.egi.eu:636/ | ldaps://ldap.aai-dev.egi.eu:636/ |
+| **Base DN** | dc=\<vo_name\>,dc=ldap,dc=aai,dc=egi,dc=eu | dc=\<vo_name\>,dc=ldap,dc=aai-demo,dc=egi,dc=eu | dc=\<vo_name\>,dc=ldap,dc=aai-dev,dc=egi,dc=eu |
+
+**Bind DN**: \<provided by EGI Check-in support\>
+
+The `Bind DN` and `Bind Password` will be assigned by the EGI Check-in team
+when you request LDAP access. In order to obtain LDAP credentials you need to
+email your request to [EGI Check-in Support](mailto:checkin-support@mailman.egi.eu)
+with Subject `Request LDAP access for <vo_name> VO`. Make sure you indicate the
+instance of EGI Check-in (production, demo or development) hosting the VO you request
+access to. Only VO managers can request LDAP credentials for a given VO.
+
+### Entities
+
+#### User
+
+Users are present in the `ou=people` subtree.
+
+| Attribute    | Description                 | Example                                                            |
+|------------- |---------------------------- |----------------------------------------------------------------- |
+| `objectClass`    |                           | `inetOrgPerson`, `eduPerson`, `voPerson`, `eduMember`, `ldapPublicKey`   |
+| `voPersonId`    | Community User Identifier (`voPersonID`)  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu`  |
+| `uid` | user ID | `john.doe` |
+| `cn`            | Full name                 | `John Doe` |
+| `displayName`   | Full name                 | `John Doe` |
+| `givenName`     | First name                  | `John`          |
+| `sn`            | Last name                   | `Doe`      |
+| `mail`          | Email address               | `john.doe@mail.com`         |
+| `edupersonUniqueID` | Community User Identifier (see also `voPersonId`)  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
+| `eduPersonPrincipalName` | A scoped identifier for a person. The value is the same as the  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
+| `eduPersonEntitlement` | URN that indicates a set of rights to specific resources | urn:mace:egi.eu:group:vo.example.org:role=member#aai.egi.eu |
+| `sshPublicKey` | SSH public key | |
+| `isMemberOf` | Group memberships | `CO:COU:vo.example.org:members` |
+| `voPersonCertificateDN` | The Subject Distinguished Name of an X.509 certificate held by the person | `voPersonCertificateDN;scope-cert1: CN=John Doe A251,O=Example,C=US,DC=cilogon,DC=org` |
+| `voPersonCertificateIssuerDN` | The Subject Distinguished Name of the X.509 certificate issuer | `voPersonCertificateIssuerDN;scope-cert1: CN=CILogon Basic CA 1, O=CILogon, C=US, DC=cilogon, DC=org` |
+
+#### Group
+
+Groups are present in the `ou=groups` subtree.
+
+| Attribute     | Description                 | Example                                                            |
+|-------------  |---------------------------- |-----------------------------------------------------------------   |
+| `objectClass` |                            | `groupofNames`, `eduMember`  |
+| `cn`               | Common name                 | `CO:COU:vo.example.org:members` |
+| `description`   | The description of group    | `CO:COU:vo.example.org Members` |
+| `member`        | The members of this group (multivalued)   | `voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
