@@ -644,9 +644,175 @@ update requires using &lt;code>PUT&lt;/code> instead of &lt;code>POST&lt;/code>.
 &lt;/li>
 &lt;li>
 &lt;p>Removing VO member:&lt;/p>
-&lt;p>Same as the update but requires setting the membership status to &lt;code>Deleted&lt;/code>&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Users: FAQ</title><link>/users/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/faq/</guid><description>
+&lt;/ol>
+&lt;p>Same as the update but requires setting the membership status to &lt;code>Deleted&lt;/code>&lt;/p>
+&lt;h2 id="ldap">LDAP&lt;/h2>
+&lt;p>EGI Check-in provides read access to the members of the VO(s) through the
+Lightweight Directory Access Protocol (LDAP).&lt;/p>
+&lt;p>There are two entity types in the LDAP:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>People: Users of EGI Check-in, expressed as &lt;code>inetOrgPerson&lt;/code> (with additional attributes/schemas).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Groups of collaboration members, expressed as &lt;code>groupOfMembers&lt;/code> (with additional attributes/schema).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="connection-parameters">Connection Parameters&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>Production environment&lt;/th>
+&lt;th>Demo environment&lt;/th>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>LDAP address&lt;/strong>&lt;/td>
+&lt;td>ldaps://ldap.aai.egi.eu:636/&lt;/td>
+&lt;td>ldaps://ldap.aai-demo.egi.eu:636/&lt;/td>
+&lt;td>ldaps://ldap.aai-dev.egi.eu:636/&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Base DN&lt;/strong>&lt;/td>
+&lt;td>dc=&amp;lt;vo_name&amp;gt;,dc=ldap,dc=aai,dc=egi,dc=eu&lt;/td>
+&lt;td>dc=&amp;lt;vo_name&amp;gt;,dc=ldap,dc=aai-demo,dc=egi,dc=eu&lt;/td>
+&lt;td>dc=&amp;lt;vo_name&amp;gt;,dc=ldap,dc=aai-dev,dc=egi,dc=eu&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>Bind DN&lt;/strong>: &amp;lt;provided by EGI Check-in support&amp;gt;&lt;/p>
+&lt;p>The &lt;code>Bind DN&lt;/code> and &lt;code>Bind Password&lt;/code> will be assigned by the EGI Check-in team
+when you request LDAP access. In order to obtain LDAP credentials you need to
+email your request to &lt;a href="mailto:checkin-support@mailman.egi.eu">EGI Check-in Support&lt;/a>
+with Subject &lt;code>Request LDAP access for &amp;lt;vo_name&amp;gt; VO&lt;/code>. Make sure you indicate the
+instance of EGI Check-in (production, demo or development) hosting the VO you request
+access to. Only VO managers can request LDAP credentials for a given VO.&lt;/p>
+&lt;h3 id="entities">Entities&lt;/h3>
+&lt;h4 id="user">User&lt;/h4>
+&lt;p>Users are present in the &lt;code>ou=people&lt;/code> subtree.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>objectClass&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;code>inetOrgPerson&lt;/code>, &lt;code>eduPerson&lt;/code>, &lt;code>voPerson&lt;/code>, &lt;code>eduMember&lt;/code>, &lt;code>ldapPublicKey&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>voPersonId&lt;/code>&lt;/td>
+&lt;td>Community User Identifier (&lt;code>voPersonID&lt;/code>)&lt;/td>
+&lt;td>&lt;code>befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>uid&lt;/code>&lt;/td>
+&lt;td>user ID&lt;/td>
+&lt;td>&lt;code>john.doe&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>cn&lt;/code>&lt;/td>
+&lt;td>Full name&lt;/td>
+&lt;td>&lt;code>John Doe&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>displayName&lt;/code>&lt;/td>
+&lt;td>Full name&lt;/td>
+&lt;td>&lt;code>John Doe&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>givenName&lt;/code>&lt;/td>
+&lt;td>First name&lt;/td>
+&lt;td>&lt;code>John&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>sn&lt;/code>&lt;/td>
+&lt;td>Last name&lt;/td>
+&lt;td>&lt;code>Doe&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>mail&lt;/code>&lt;/td>
+&lt;td>Email address&lt;/td>
+&lt;td>&lt;code>john.doe@mail.com&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>edupersonUniqueID&lt;/code>&lt;/td>
+&lt;td>Community User Identifier (see also &lt;code>voPersonId&lt;/code>)&lt;/td>
+&lt;td>&lt;code>befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>eduPersonPrincipalName&lt;/code>&lt;/td>
+&lt;td>A scoped identifier for a person. The value is the same as the&lt;/td>
+&lt;td>&lt;code>befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>eduPersonEntitlement&lt;/code>&lt;/td>
+&lt;td>URN that indicates a set of rights to specific resources&lt;/td>
+&lt;td>urn:mace:egi.eu:group:vo.example.org:role=member#aai.egi.eu&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>sshPublicKey&lt;/code>&lt;/td>
+&lt;td>SSH public key&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>isMemberOf&lt;/code>&lt;/td>
+&lt;td>Group memberships&lt;/td>
+&lt;td>&lt;code>CO:COU:vo.example.org:members&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>voPersonCertificateDN&lt;/code>&lt;/td>
+&lt;td>The Subject Distinguished Name of an X.509 certificate held by the person&lt;/td>
+&lt;td>&lt;code>voPersonCertificateDN;scope-cert1: CN=John Doe A251,O=Example,C=US,DC=cilogon,DC=org&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>voPersonCertificateIssuerDN&lt;/code>&lt;/td>
+&lt;td>The Subject Distinguished Name of the X.509 certificate issuer&lt;/td>
+&lt;td>&lt;code>voPersonCertificateIssuerDN;scope-cert1: CN=CILogon Basic CA 1, O=CILogon, C=US, DC=cilogon, DC=org&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="group">Group&lt;/h4>
+&lt;p>Groups are present in the &lt;code>ou=groups&lt;/code> subtree.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Attribute&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>objectClass&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;code>groupofNames&lt;/code>, &lt;code>eduMember&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>cn&lt;/code>&lt;/td>
+&lt;td>Common name&lt;/td>
+&lt;td>&lt;code>CO:COU:vo.example.org:members&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>description&lt;/code>&lt;/td>
+&lt;td>The description of group&lt;/td>
+&lt;td>&lt;code>CO:COU:vo.example.org Members&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>member&lt;/code>&lt;/td>
+&lt;td>The members of this group (multivalued)&lt;/td>
+&lt;td>&lt;code>voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Users: FAQ</title><link>/users/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/check-in/faq/</guid><description>
 &lt;h2 id="connect-to-check-in-an-idp-federated-in-an-hub-and-spoke-federations">Connect to Check-in an IdP federated in an hub and spoke federations&lt;/h2>
 &lt;!-- markdownlint-disable line-length -->
 &lt;h3 id="i-get-an-error-similar-to-error---no-connection-between-institution-and-service-surfconext-example">I get an error similar to: &amp;ldquo;Error - No connection between institution and service&amp;rdquo; (SURFconext example)&lt;/h3>
