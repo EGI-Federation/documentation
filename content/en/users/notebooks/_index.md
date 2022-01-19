@@ -42,7 +42,7 @@ We offer different service modes depending on your needs
 ### Notebooks for researchers
 
 Individual users can use the centrally operated service from EGI. Users can
-login, write and play and re-play notebooks by:
+log in, write and play and re-play notebooks by:
 
 1. [creating an EGI account](../check-in/signup)
 2. Enrolling to the one of the supported VOs such as
