@@ -159,7 +159,7 @@ the users' requests before granting the access to the resources.
 
 ### Get access to pilot allocation
 
-1. Login to the [EGI Marketplace](https://marketplace.egi.eu) with the
+1. Log into the [EGI Marketplace](https://marketplace.egi.eu) with the
    [EGI AAI Check-In service](../check-in).
 1. Setup a profile, including details about your affiliation and role within a
    research institute/project/team.
