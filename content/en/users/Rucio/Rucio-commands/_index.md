@@ -53,7 +53,7 @@ Several of the options you will not need to be used as they will be set by the R
 * `Args` is the path to the file, or files you wish to upload, this can be a single file, directory (with recursive set), or a list of files seperated with a space e.g.
 
 ``` 
-rucio upload --rse main-rse file1 file2 file3
+rucio upload --rse main-rse file1 file2 file3 file4
 ```
 
 ### get
