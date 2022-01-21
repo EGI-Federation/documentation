@@ -1,50 +1,58 @@
-# Getting Started
+---
+title: "Getting Started"
+linkTitle: "Rucio Getting started"
+weight: 100
+description: >-
+     How to get started with Rucio as a new user or VO.
+---
 
-## Getting Started as a new user
+## Getting Started
+
+### Getting Started as a new user
 
 1. To get set up with a Rucio account please contact our [support email](mailto:Rucio-Support@stfc365.onmicrosoft.com):
 
      * Desired Username (usually initials and surname e.g. John Doe would have jdoe)
-     * Your email
-     * Name of the experiment / VO you are part of
-     * Either:
-          1. The subject of your eScience certificate
+	- Your email
+    - Name of the experiment / VO you are part of
+    - Either:
+        1. The subject of your eScience certificate
 
-               or 
+            or 
 
-          2. desired password 
+        1. desired password 
      
-          **we can organise a video call to explain or take sensitive indormation if you prefer**
+        **we can organise a video call to explain or take sensitive indormation if you prefer**
 
 
-     In Terms of testing you can join the test VO (dteam) to try Rucio as a service and its capabilities.
+    In Terms of testing you can join the test VO (dteam) to try Rucio as a service and its capabilities.
 
-**Please note that we are working on allowing Rucio accounts to be created and accessed with IAM services, and EGI check-in, but currently only support x509 and password access.**
-
-
-2. Once our team has this information we will create you a Rucio account.
-
-3. You will then need to install a containerised client on your computer
-
-     * Install Docker to run the container  
-
-     * <https://www.docker.com/get-started> (for windows users I would recommend using WSL2 rather than Hyper-V as I have had success there) 
-
-     * Follow the docker instructions to ensure it is running correctly. 
-
-     * Using openSSL you will need to split your grid certificate bundle into the certificate and key:  
-
-     `openssl pkcs12 -in <*.pfx> -out /sensible/path/usercert.pem -clcerts -nokeys`
-
-     `openssl pkcs12 -in <*.pfx> -out /sensible/path/userkey.pem -nocerts -nodes`
+**Please note that we are working on allowing Rucio accounts to be created and accessed with IAM services, and [EGI Check-in](https://docs.egi.eu/users/check-in/), but currently only support x509 and password access.**
 
 
-4. Run the Docker container using the following command:  
+1. Once our team has this information we will create you a Rucio account.
+
+1. You will then need to install a containerised client on your computer.
+
+    - Install Docker to run the container  
+
+    - <https://www.docker.com/get-started> (for windows users I would recommend using WSL2 rather than Hyper-V as I have had success there) 
+
+    - Follow the docker instructions to ensure it is running correctly. 
+
+    - Using openSSL you will need to split your grid certificate bundle into the certificate and key:  
+
+    `$ openssl pkcs12 -in <*.pfx> -out /sensible/path/usercert.pem -clcerts -nokeys`
+
+    `$ openssl pkcs12 -in <*.pfx> -out /sensible/path/userkey.pem -nocerts -nodes`
+
+
+1. Run the Docker container using the following command:  
 
 When running the block of code below please replaces all items within `<>` with the relevent information.
 
 ```
-run \
+$ run \
 -e RUCIO_CFG_RUCIO_HOST=https://rucio-server.gridpp.rl.ac.uk:443 \
 -e RUCIO_CFG_AUTH_HOST=https://rucio-server.gridpp.rl.ac.uk:443 \
 -e RUCIO_CFG_AUTH_TYPE=x509 \
@@ -65,13 +73,13 @@ This block of code may look large but it is configuring Rucio to connect to the 
 The UK escience CA 2B can be [obtained here](https://ca.grid-support.ac.uk/)
 The 3 character VO name will be provided to you when you sign up for a Rucio account.  
 
-5.  Run the following commands inside the docker container to finalise set up:  
+1.  Run the following commands inside the docker container to finalise set up:  
 
 ```
-cd /opt/rucio/etc/
-cp userkey userkey.pem
-chmod 400 userkey.pem
-cp usercert usercert.pem
+$ cd /opt/rucio/etc/
+$ cp userkey userkey.pem
+$ chmod 400 userkey.pem
+$ cp usercert usercert.pem
 ```
 
 
@@ -79,9 +87,9 @@ cp usercert usercert.pem
 
 - If not please contact Rucio support
 
-## Getting started as a new VO
+### Getting started as a new VO
 
-* Contact our [support email](mailto:Rucio-Support@stfc365.onmicrosoft.com)
+- Contact our [support email](mailto:Rucio-Support@stfc365.onmicrosoft.com)
 
-* We will set up a meeting to discuss Rucio, your needs, sites, and current set up to ensure that Rucio can work for you.
+- We will set up a meeting to discuss Rucio, your needs, sites, and current set up to ensure that Rucio can work for you.
 
