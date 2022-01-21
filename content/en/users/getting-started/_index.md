@@ -132,7 +132,7 @@ When EGI is able to support a request for resources, it can do so in two ways:
 
 ## Pilot your application
 
-EGI offers a plaground allocation for users get access to the services and
+EGI offers a playground allocation for users to get access to the services and
 understand how to port applications and develop new data analytics tools that
 can be turn into online services that can be accessed by scientist worldwide.
 
