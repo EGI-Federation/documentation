@@ -145,7 +145,7 @@ Access **requires** acceptance of
 
 Users of the service are asked to provide appropriate acknowledgement of the use
 in scientific publications. The following acknowledgement text can be used for
-this purpose (you can adapt to match the exact providers in your case):
+this purpose (you should adapt to match the exact providers in your case):
 
 **This work used advanced computing resources from the 100%IT, CESGA, CLOUDIFIN,
 CYFRONET-CLOUD, GSI-LCG2, IFCA-LCG2, IN2P3-IRES, INFN-CATANIA-STACK,
