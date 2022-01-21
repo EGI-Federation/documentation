@@ -155,7 +155,7 @@ number 101017567).** {{% /alert %}}
 
 When requesting access users are guided through a registration process. Members
 of the EGI support team will perform a lightweight vetting process to validate
-the users\' requests before granting the access to the resources.
+the users' requests before granting the access to the resources.
 
 ### Get access to pilot allocation
 
