@@ -79,5 +79,5 @@ EGI currently operates community instances for:
   [Blue-Cloud](https://blue-cloud.d4science.org/) and
   [EOSC-Pillar](https://eosc-pillar.d4science.org/). Check with your VRE manager
   for more information.
-- [PaNoSC](https://www.panosc.eu/). Instance is available
+- [PaNoSC](https://panosc.eu/). Instance is available
   [here](https://notebooks-panosc.fedcloud-tf.fedcloud.eu)
