@@ -107,7 +107,6 @@ However, if the latter method is preferred,
 it is possible manually rename the deleted RSE in the database
 (as there are no foreign key constraints on its name, just the ID and VO) so that the old name can be re-used.
 
-
 ## Basic Usage
 
 This section covers some of the basic Rucio functions that can be run once the VO has accounts and RSEs set up.

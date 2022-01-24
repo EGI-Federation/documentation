@@ -13,16 +13,17 @@ description: >-
 1. To get set up with a Rucio account please contact our [support email](mailto:Rucio-Support@stfc365.onmicrosoft.com):
 
     - Desired Username (usually initials and surname e.g. John Doe would have jdoe)  
-	- Your email  
+    - Your email  
     - Name of the experiment / VO you are part of  
     - Either:  
         The subject of your eScience certificate  
         or  
         desired password  
-     
+
 **we can organise a video call to explain or take sensitive indormation if you prefer**  
 In Terms of testing you can join the test VO (dteam) to try Rucio as a service and its capabilities.  
-**Please note that we are working on allowing Rucio accounts to be created and accessed with IAM services, and [EGI Check-in](https://docs.egi.eu/users/check-in/), but currently only support x509 and password access.**
+**Please note that we are working on allowing Rucio accounts to be created and accessed with IAM services,**
+**and [EGI Check-in](https://docs.egi.eu/users/check-in/), but currently only support x509 and password access.**
 
 1. Once our team has this information we will create you a Rucio account.  
 
@@ -30,7 +31,7 @@ In Terms of testing you can join the test VO (dteam) to try Rucio as a service a
 
     - Install Docker to run the container  
 
-    - <https://www.docker.com/get-started> (for windows users I would recommend using WSL2 rather than Hyper-V as I have had success there)  
+    - <https://www.docker.com/get-started> (for windows users I would recommend using WSL2)  
 
     - Follow the docker instructions to ensure it is running correctly.  
 
@@ -62,12 +63,14 @@ $ run \
 -d rucio/rucio-clients
 ```
 
-This block of code may look large but it is configuring Rucio to connect to the Multi-VO Rucio at RAL, your account and VO details, where you are loading them into the container, and mounting the authentication details into the container.  
+This block of code may look large but it is configuring Rucio to connect to the Multi-VO Rucio at RAL,
+your account and VO details, where you are loading them into the container,
+and mounting the authentication details into the container.  
 
 The UK escience CA 2B can be [obtained here](https://ca.grid-support.ac.uk/)
 The 3 character VO name will be provided to you when you sign up for a Rucio account.  
 
-1.  Run the following commands inside the docker container to finalise set up:  
+1. Run the following commands inside the docker container to finalise set up:  
 
 ```shell
 $ cd /opt/rucio/etc/
@@ -76,8 +79,8 @@ $ chmod 400 userkey.pem
 $ cp usercert usercert.pem
 ```
 
-
-**You should now have a fully set up Containerised Client for your Rucio Account and VO which you can start in docker and use whenever you need it.**  
+**You should now have a fully set up Containerised Client for your Rucio Account**
+**and VO which you can start in docker and use whenever you need it.**  
 
 - If not please contact Rucio support
 

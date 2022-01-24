@@ -28,9 +28,10 @@ This checks that there is a connection between the containerised client and the 
 
 `$ rucio whoami`
 
-Another simple command that asks for the information Rucio has currently on the user talking to the server. This will return output like the following:  
+Another simple command, which asks the server for the information Rucio has  on the current user.
+This will return output like the following:  
 
-```
+```shell
 status     : ACTIVE
 account    : user1
 account_type : USER
@@ -41,7 +42,9 @@ deleted_at : None
 email      : myemail@domail.country
 ```
 
-This ensures that you know which user you are interacting with Rucio as, this is very important if you get multiple accounts. But also verifies that the client is set up correctly.
+This ensures that you know which user you are interacting with Rucio as,
+this is very important if you get multiple accounts. But also verifies that the client is set up
+correctly.
 
 ### upload
 
@@ -56,7 +59,8 @@ $ rucio upload [-h] --rse RSE [--lifetime LIFETIME] [--scope SCOPE]
 
 Several of the options you will not need to be used as they will be set by the Rucio Admins
 of your VO when they set up the RSEs.
-Below are a list of options that you may find useful
+Below are a list of options that you may find useful:  
+
 * `RSE` is the Rucio Storage Element or site that you wish to store the data at,
 the list of available RSEs can be seen for your VO with the command
 `rucio list-rses`.
@@ -69,8 +73,10 @@ and then registered with Rucio, rather than the other way around.
 This can be useful if your connection is intermittent.
 * `Name` is the name of the file that it will be registered to Rucio with,
 if this is not set it will be the name of the file/s provided.
-* `Recursive` Allows you to set the arg to a directory, and all files within that directory and any sub directories will be uploaded.
-* `Args` is the path to the file, or files you wish to upload, this can be a single file, directory (with recursive set), or a list of files seperated with a space e.g.
+* `Recursive` Allows you to set the arg to a directory,
+and all files within that directory and any sub directories will be uploaded.
+* `Args` is the path to the file, or files you wish to upload, this can be a single file,
+directory (with recursive set), or a list of files seperated with a space e.g.
 
 ```shell
 rucio upload --rse main-rse file1 file2 file3 file4
@@ -89,6 +95,7 @@ $ rucio get [-h] [--dir DIR] [--allow-tape] [--rse RSE] [--rses RSES]
                  [--deactivate-file-download-exceptions]
                  [dids [dids ...]]
 ```
+
 * `Dir` is the location within the container you wish for the files to be downloaded
 (if you wish to move these files outside of the container,
 you may want to mount a volume in the container to allow the files to persist).
@@ -116,7 +123,10 @@ $ rucio add-rule [-h] [--weight WEIGHT] [--lifetime LIFETIME]
 * `locked` sets the dataset or container to a locked state, that prevents other files from being added or removed.
 * `dids` the files within Rucio you wish to be replicates.
 * `copies` How many copies of the data you want to make.
-* `rse_expression` can either be a specific RSE, or can be a filter .expression, such as `tape=True` or `country=UK` and Rucio will place as many copies as was requested in different sites (when possible), to fulfil the rule.
+* `rse_expression` can either be a specific RSE, or can be a filter.
+expression, such as `tape=True` or `country=UK`
+and Rucio will place as many copies as was requested in different sites (when possible),
+to fulfil the rule.
 
 ### delete-rule
 
@@ -132,7 +142,7 @@ $ rucio delete-rule [-h] [--purge-replicas] [--all]
 either rse_expression, or RSE needs to be specified.
 * `RSES` exactly which RSE is the target of the rule deletion.
 * `account` which account requres the rule to be deleted,
-this is generally only needed by Rucio Admins 
+this is generally only needed by Rucio Admins
 and does not need to be specified if you are deleting your own rules.
 * `rule_id` is a Rucio specific ID for the file that you wish to be deleted,
 a list of the rules,
@@ -152,4 +162,3 @@ Provide a full list of the files IDs, account, scope, state, RSE/expression copi
 * `account` specify which account you wish to see the replication rules.
 * `file` If you know the name of a specif file, this allows you to see all the rules are associated with the file.
 * `did` If a dataset or container are listed, all rules associated with the specific DID will be displayed.
-
