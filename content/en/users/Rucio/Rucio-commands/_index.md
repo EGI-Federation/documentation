@@ -1,5 +1,6 @@
 ---
 title: "Rucio Commands"
+type: docs
 linkTitle: "Rucio Commands"
 weight: 100
 description: >-

@@ -1,5 +1,6 @@
 ---
 title: "Rucio Admin"
+type: docs
 linkTitle: "Rucio Admins"
 weight: 100
 description: >-

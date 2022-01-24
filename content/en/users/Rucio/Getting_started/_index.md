@@ -1,5 +1,6 @@
 ---
 title: "Getting Started"
+type: docs
 linkTitle: "Rucio Getting started"
 weight: 100
 description: >-

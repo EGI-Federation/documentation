@@ -1,5 +1,6 @@
 ---
 title: "Multi-VO Rucio for data management"
+type: docs
 linkTitle: "Rucio"
 weight: 100
 description: >-
