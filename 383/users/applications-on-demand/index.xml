@@ -1,0 +1,136 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Applications on Demand (AoD)</title><link>/users/applications-on-demand/</link><description>Recent content in Applications on Demand (AoD) on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/applications-on-demand/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Chipster</title><link>/users/applications-on-demand/chipster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/applications-on-demand/chipster/</guid><description>
+&lt;p>&lt;a href="http://chipster.csc.fi/">Chipster&lt;/a> is a user-friendly software for analysing
+high-throughput sequencing and microarray data, provided as part of EGI's
+Applications on Demand service.&lt;/p>
+&lt;p>The software contains over 400 analysis tools and a large collection of
+reference genomes.&lt;/p>
+&lt;p>Users can save and share automatic analysis workflows, and visualize data
+interactively using for example the built-in genome browser.&lt;/p>
+&lt;h2 id="egi-chipster">EGI Chipster&lt;/h2>
+&lt;p>The Chipster testbed configured at &lt;a href="https://www.cesga.es/">CESGA&lt;/a> offers:&lt;/p>
+&lt;ul>
+&lt;li>8 vCPU cores,&lt;/li>
+&lt;li>32GB of RAM,&lt;/li>
+&lt;li>1TB of block storage in /data,&lt;/li>
+&lt;li>Software and tools are in available under the &lt;code>/cvmfs/tools_*&lt;/code> partition,&lt;/li>
+&lt;li>Chipster (v3.16.3).&lt;/li>
+&lt;/ul>
+&lt;p>For accessing this testbed you need to be a member of the
+&lt;a href="../">Applications on Demand&lt;/a>.&lt;/p>
+&lt;h2 id="createreview-a-temporary-account">Create/Review a temporary account&lt;/h2>
+&lt;p>Go to
+&lt;a href="https://fgsg.egi.eu/egissod/web/ssod/chipster-accounts">Chipster entry in Science Software on Demand Portal&lt;/a>
+and log in with your &lt;a href="../../check-in">EGI Check-in account&lt;/a>&lt;/p>
+&lt;p>The first time you log in, you need to generate a temporary password by clicking
+on the &lt;em>&amp;quot;Execute&amp;quot;&lt;/em> button, as shown below.&lt;/p>
+&lt;p>&lt;img src="./chipster-execute.png" alt="First log in with Chipster">&lt;/p>
+&lt;p>Please refresh the web page after your password has been successfully generated.
+Once the page is reloaded (see screenshot below) you are presented with a link
+to access the
+&lt;a href="http://chipster.aod.fedcloud.eu:8081/chipster.jnlp">Chipster server&lt;/a> that you
+can access with the new credentials.&lt;/p>
+&lt;p>&lt;img src="./chipster.png" alt="Chipster in Science Software on Demand">&lt;/p>
+&lt;p>If your account has expired the Science Gateway will automatically generate a
+new password for you. Just click on the &lt;em>&amp;quot;Show form&amp;quot;&lt;/em> button to manage your
+credentials.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Acknowledgment&lt;/h4>
+&lt;p>Please provide appropriate acknowledgement of the use of this service in your
+scientific publications. Here is an example:&lt;/p>
+&lt;p>&lt;strong>This work used the EGI Applications on Demand service, which is co-funded by
+the EOSC-hub project (grant number 777536)&lt;/strong>&lt;/p>
+&lt;/div></description></item><item><title>Users: Exoscale vouchers</title><link>/users/applications-on-demand/exoscale/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/applications-on-demand/exoscale/</guid><description>
+&lt;p>In this section we describe how users can easily discover the
+&lt;a href="https://www.egi.eu/services/applications-on-demand/">EGI Applications on Demand (AoD)&lt;/a>
+service published in the
+&lt;a href="https://marketplace.eosc-portal.eu/">EOSC portal Marketplace&lt;/a> and submit a
+service-order request to deploy an elastic virtual cluster on the HNSciCloud
+pilot services. The virtual cluster will be deployed and configured with the
+requested software packages using the
+&lt;a href="https://servproject.i3m.upv.es/ec3-ltos/">Elastic Cloud Compute Cluster (EC3)&lt;/a>
+portal.&lt;/p>
+&lt;h2 id="submit-a-service-order-request-through-the-eosc-portal-marketplace">Submit a service-order request through the EOSC Portal Marketplace&lt;/h2>
+&lt;p>The &lt;a href="https://marketplace.eosc-portal.eu/">EOSC Portal Marketplace&lt;/a> is a single
+entry point where users can navigate the EOSC service catalogue, discover a
+service of interest, get information about it, and place an order in a few
+clicks by specifying the service requested along with the quantity, quality and
+duration.&lt;/p>
+&lt;p>All the available services of the EOSC Marketplace are grouped in 8 main
+categories and no authentication is required to browse and discover the list of
+services published in the marketplace.&lt;/p>
+&lt;p>Exoscale vouchers can be used when selecting he Elastic Cloud Compute Cluster
+(EC3) platform from the list of available services by submitting a service-order
+request.&lt;/p>
+&lt;p>&lt;img src="./ec3-eosc-marketplace.png" alt="The Elastic Cloud Compute Cluster (EC3) in the EOSC Portal Marketplace.">&lt;/p>
+&lt;p>Placing orders in the EOSC Marketplace requires the user to authenticate. There
+are two login options: use your personal academic credentials or use EGI
+Check-in service. The first time you login into the marketplace requires some
+extra information to be provided to configure the marketplace account.&lt;/p>
+&lt;p>Two different service options are available for EC3:&lt;/p>
+&lt;p>&lt;img src="./ec3-service-options.png" alt="The Elastic Cloud Compute Cluster (EC3) service options.">&lt;/p>
+&lt;p>To deploy the virtual cluster on the HNSciCloud pilot services, select the
+voucher option and click on &lt;em>Next&lt;/em> and provide additional information for
+profiling the order (e.g. the motivation for requesting the service).&lt;/p>
+&lt;p>Users with an existing Exoscale voucher to redeem can provide the voucherID
+during the submission request. Otherwise, a valid voucherID will be provided
+once the order if processed and accepted.&lt;/p>
+&lt;p>Once the service order is submitted, the marketplace will send a notification
+via email. Users can at any time the status of their orders through the user
+dashboard. This dashboard shows the history of service order(s) submitted.&lt;/p>
+&lt;p>&lt;img src="./ec3-order-request.png" alt="Details of a service order request.">&lt;/p>
+&lt;p>&lt;strong>The service order request will be processed within 3 working days&lt;/strong>. The user
+will be notified of the outcome of the evaluation via email.&lt;/p>
+&lt;h2 id="voucher-redemption">Voucher redemption&lt;/h2>
+&lt;p>In case the service order is accepted:&lt;/p>
+&lt;ul>
+&lt;li>The user will be notified by the Marketplace with the instructions to redeem
+the voucher (in case it was not provided), generate a client and secret keys
+and access the Elastic Cloud Compute Cluster (EC3) portal.&lt;/li>
+&lt;li>To redeem an Exoscale voucher, open the provided voucher link included in the
+email sent by the Marketplace within a web browser.&lt;/li>
+&lt;li>A typical link looks
+like:&lt;a href="https://portal.exoscale.com/register?coupon=XXXXXXX">https://portal.exoscale.com/register?coupon=XXXXXXX&lt;/a>&lt;/li>
+&lt;li>Enter the email address and password you wish to use. Accept the terms and hit
+sign up.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="./exoscale-account-setup.png" alt="Accept the privacy license agreement and sign up.">&lt;/p>
+&lt;ul>
+&lt;li>A validation email is sent. Check out your mailbox and click on the
+verification link.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="./exoscale-activation.png" alt="Activate the voucher clicking on the verification link.">&lt;/p>
+&lt;ul>
+&lt;li>Choose &amp;ldquo;for team projects&amp;rdquo; and fill your details. Choose your &amp;ldquo;Company or team
+name&amp;rdquo; and submit the form.&lt;/li>
+&lt;/ul>
+&lt;h2 id="access-to-the-exoscale-dashboard">Access to the Exoscale dashboard&lt;/h2>
+&lt;p>Access the &lt;a href="https://portal.exoscale.com/">Exoscale dashboard&lt;/a> and check the
+tenant settings (click in the User profile on the left)&lt;/p>
+&lt;p>&lt;img src="./exoscale-credentials.png" alt="Generate API and Secret Keys to access the Exoscale resources.">&lt;/p>
+&lt;h2 id="check-the-voucher-credit">Check the voucher credit&lt;/h2>
+&lt;p>Access the &lt;a href="https://portal.exoscale.com/">Exoscale dashboard&lt;/a>. The voucher
+credit is shown in the top-right of the dashboard. In case voucher credit is
+going to expire, a notification email will be sent by the dashboard.&lt;/p>
+&lt;h2 id="deploy-a-virtual-cluster-on-the-exoscale-commercial-resources">Deploy a virtual cluster on the Exoscale commercial resources&lt;/h2>
+&lt;p>Through a &amp;ldquo;job wizard&amp;rdquo; interface (see Figures below) the user can login to the
+Elastic Cloud Compute Cluster (EC3) portal and configure the virtual cluster
+with the related tools and applications to be deployed on top of Infrastructure
+as a Service (IaaS). The cluster is composed by a front node, where a batch job
+scheduler is running, and a number of compute nodes. These compute nodes will be
+dynamically deployed and provisioned to fit increasing load, and un-deployed
+when they are in idle status. The installation and configuration of the cluster
+is performed by means of the execution of Ansible receipts.&lt;/p>
+&lt;p>&lt;img src="./ec3-deployment.png" alt="Deployment of virtual clusters on Exoscale.">&lt;/p>
+&lt;p>&lt;img src="./ec3-wizard.png" alt="The EC3 job wizard to configuration the virtual cluster.">&lt;/p>
+&lt;h2 id="acknowledgement-and-report-feedback">Acknowledgement and report feedback&lt;/h2>
+&lt;p>The user &lt;strong>MUST&lt;/strong> acknowledge the EOSC-hub and the HNSciCloud projects in the
+scientific publications/presentations benefiting from the service. The following
+acknowledgement statement can be used for this purpose:&lt;/p>
+&lt;p>&amp;quot;This work used the EGI Applications on Demand service, which is co-funded by
+the EOSC-hub project (grant number 777536). The HNSciCloud project (grant
+number 687614) is also sponsoring the service, allowing users to access the
+HNSciCloud services pilot for limited scale usage using the voucher scheme
+provided by Exoscale.&amp;quot;&lt;/p>
+&lt;h2 id="report-feedback">Report feedback&lt;/h2>
+&lt;p>To report feedback on the Exoscale vouchers, please fill in the following web
+form: &lt;a href="https://forms.gle/cVT7JRd4TFxZiYmQ8">https://forms.gle/cVT7JRd4TFxZiYmQ8&lt;/a>&lt;/p></description></item></channel></rss>
