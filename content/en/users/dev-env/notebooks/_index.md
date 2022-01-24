@@ -71,3 +71,9 @@ Organisation (i.e. federated compute and storage sites) for Jupyter, add custom
 libraries into Jupyter (e.g. discipline-specific analysis libraries) or have
 fine grained control on who can access the instance (based on the information
 available to the EGI Check-in AAI service).
+
+EGI currently operates community instances for:
+- [D4Science](https://www.d4science.org/). These instances are accessed through
+  specific VREs. Check with your VRE manager for more information.
+- [PaNoSC](https://www.panosc.eu/). Instance is available
+  [here](https://notebooks-panosc.fedcloud-tf.fedcloud.eu)
