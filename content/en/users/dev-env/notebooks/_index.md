@@ -40,8 +40,8 @@ We offer different service modes depending on your needs
 
 ### Notebooks for researchers
 
-Individual users can use the centrally operated service from EGI. Users can
-log in, write and play and re-play notebooks by:
+Individual users can use the centrally operated service from EGI. Users can log
+in, write and play and re-play notebooks by:
 
 1. [creating an EGI account](../../aai/check-in/signup)
 2. Enrolling to the one of the supported VOs such as
@@ -73,7 +73,11 @@ fine grained control on who can access the instance (based on the information
 available to the EGI Check-in AAI service).
 
 EGI currently operates community instances for:
+
 - [D4Science](https://www.d4science.org/). These instances are accessed through
-  specific VREs. Check with your VRE manager for more information.
+  specific VREs: [SoBigData](https://sobigdata.d4science.org/),
+  [Blue-Cloud](https://blue-cloud.d4science.org/) and
+  [EOSC-Pillar](https://eosc-pillar.d4science.org/). Check with your VRE manager
+  for more information.
 - [PaNoSC](https://www.panosc.eu/). Instance is available
   [here](https://notebooks-panosc.fedcloud-tf.fedcloud.eu)
