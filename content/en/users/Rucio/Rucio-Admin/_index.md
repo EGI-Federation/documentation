@@ -7,12 +7,16 @@ description: >-
 ---
 
 
-## Creating Accounts
+## Creating Accounts and identities
 
-For new users within your VO, the account will need to be created before adding identities using the same methods as above (though without the need to remove any old identities). The account to use when running a command is determined in the same places as for identities (optional CLI arguments, etc ) and accounts will have different permissions and access (such as how much data they can store on a particular RSE).
+New users within your VO, the account will need to be created before adding identities using the same methods as above
+(though without the need to remove any old identities).
+The account you want to create identities for is input as an argument.
+Accounts will have different permissions and access (such as how much data they can store on a particular RSE).
 
 ### CLI Example
-```
+
+```shell
 $ rucio-admin account add --type USER --email jdoe@email.com jdoe
 
 Added new account: jdoe
@@ -21,8 +25,10 @@ $ rucio-admin identity add --account jdoe --type USER --id userjdoe --email jdoe
 
 Added new identity to account: userjdoe-jdoe
 ```
+
 ### Python Client Example
-```
+
+```python
 $ python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
@@ -31,7 +37,8 @@ True
 >>> CLIENT.add_identity('jdoe', 'USER', 'jdoe@email.com')
 True
 ```
-## Creating RSEs 
+
+## Creating RSEs
 
 [Rucio Storage Elements](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)
 (RSEs) are how Rucio represents the physical storage available to your VO. As
@@ -39,50 +46,73 @@ with many aspects of Rucio there are a lot of optional attributes that can be
 set for an RSE, but as a minimum a protocol for transfers need to be added
 before it can be used.
 
-### CLI Example 
-```
+### CLI Example
+
+```shell
 $ rucio-admin rse add NEW_RSE
 
 Added new deterministic RSE: NEW_RSE
 
 $ rucio-admin rse add-protocol --hostname test.org --scheme gsiftp --prefix '/filepath/rucio/' --port 8443 NEW_RSE --domain-json '{"wan": {"read": 1, "write": 1, "third_party_copy": 0, "delete": 1}, "lan": {"read": 1, "write": 1,"third_party_copy": 0, "delete": 1}}'
 ```
-### Python Client Example 
-```
+
+### Python Client Example
+
+```python
 $ python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
 >>> CLIENT.add_rse('NEW_RSE')
 True
->>> CLIENT.add_protocol('NEW_RSE', {'hostname': 'test.org', 'scheme': 'gsiftp', 'prefix': '/filepath/rucio/', 'port': 8443, 'impl': 'rucio.rse.protocols.gfalv2.Default', 'domain': {"wan": {"read": 1, "write": 1, 
+>>> CLIENT.add_protocol('NEW_RSE', {'hostname': 'test.org', 'scheme': 'gsiftp', 'prefix': '/filepath/rucio/', 'port': 8443, 'impl': 'rucio.rse.protocols.gfalv2.Default', 'domain': {"wan": {"read": 1, "write": 1,
 "third_party_copy": 0, "delete": 1}, "lan": {"read": 1, "write": 1, "third_party_copy": 0, "delete": 1}}})
 True
 ```
 
 ## Updating RSE Protocols
 
-On occasion, it may be necessary to change or update an RSE protocol. Unlike  settings (`rucio-admin rse update`) or attributes (`rucio-admin rse set-attribute`), there isn't a direct CLI function for changing a protocol. It would therefore be necessary to remove (`rucio-admin rse delete-protocol`) and then add (`rucio-admin rse add-protocol`) it again using different information. Alternatively, the Python client has additional functions which can directly update or swap the priority of RSE protocols. For example to update the `impl` without changing anything else (the `data` argument is used to update the protocol, with the other settings used to specify the protocol to change):
-```
+On occasion, it may be necessary to change or update an RSE protocol.
+Unlike settings (`rucio-admin rse update`) or attributes (`rucio-admin rse set-attribute`),
+there isn't a direct CLI function for changing a protocol.
+It would therefore be necessary to remove (`rucio-admin rse delete-protocol`)
+and then add (`rucio-admin rse add-protocol`) it again using different information.
+Alternatively, the Python client has additional functionality to directly update or swap the priority of RSE protocols.
+For example to update the `impl` without changing anything else (the `data` argument is used to update the protocol,
+with the other settings used to specify the protocol to change):
+
+```python
 $ python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
 >>> CLIENT.update_protocols(rse='NEW_RSE', scheme='gsiftp', data={'impl': rucio.rse.protocols.gfal.Default'}, hostname='test.org', port=8433)
 True
 ```
+
 To swap the priority of two protocols for the third party copy operation:
-```
+
+```python
 $ python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
 >>> CLIENT.swap_protocols(rse='NEW_RSE', domain='wan', operation='third_party_copy', scheme_a='gsiftp', scheme_b='root')
 True
 ```
-It's also worth noting that when an RSE is deleted using `rucio-admin rse delete`, the entry remains in the database. This "soft" deletion means that attempting to add a new RSE with the same name as a deleted RSE will fail due to it not having a unique name/VO combination. In practice it is therefore better to update a badly configured RSE rather than attempting to delete and re-add it. However, if the latter method is preferred, it is possible manually rename the deleted RSE in the database (as there are no foreign key constraints on its name, just the ID and VO) so that the old name can be re-used.
+
+It's also worth noting that when an RSE is deleted using `rucio-admin rse delete`,
+the entry remains in the database.
+This "soft" deletion means that attempting to add a new RSE with the same name as a deleted RSE will fail.
+This is due to the RSE not having a unique name/VO combination.
+In practice it is therefore better to update a badly configured RSE rather than attempting to delete and re-add it.
+However, if the latter method is preferred,
+it is possible manually rename the deleted RSE in the database
+(as there are no foreign key constraints on its name, just the ID and VO) so that the old name can be re-used.
 
 
 ## Basic Usage
 
-This section covers some of the basic Rucio functions that can be run once the VO has accounts and RSEs set up. As with the setup, there are many options that won't be covered here. For more information refer to either the main documentation or the help for the function in question.
+This section covers some of the basic Rucio functions that can be run once the VO has accounts and RSEs set up.
+As with the setup, there are many options that won't be covered here.
+For more information refer to either the main documentation or the help for the function in question.
 
 ### Daemons
 
@@ -91,10 +121,10 @@ require one or more of the
 [daemons](https://rucio.readthedocs.io/en/latest/man/daemons.html) to be
 running in order to take effect. For a multi-VO instance, these should be
 running for all VOs already. However if it seems like nothing is happening
-following a command, it may be worth checking with Ian that the daemons are 
+following a command, it may be worth checking with Ian that the daemons are
 running as intended.
 
-## Uploading Data 
+## Uploading Data
 
 In Rucio files and their replicas are represented by Data IDentifiers
 ([DIDs](https://rucio.readthedocs.io/en/latest/overview_File_Dataset_Container.html)),
@@ -115,7 +145,8 @@ will not list files, only datasets.
 ### CLI Example
 
 Assuming the file `test.txt` exists locally:
-```
+
+```shell
 $ rucio-admin scope add --account root --scope user.root
 
 Added new scope to account: user.root-root
@@ -157,10 +188,12 @@ $ rucio list-content user.root:test_dataset
 | user.root:test.txt | FILE         |
 +--------------------+--------------+
 ```
+
 ### Python Client Example
 
 Assuming the file `test.txt` exists locally:
-```
+
+```python
 python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
@@ -189,17 +222,21 @@ True
 
 [{u'adler32': u'00000001', u'name': u'test.txt', u'bytes': 0, u'scope': u'user.root', u'type': u'FILE', u'md5': u'd41d8cd98f00b204e9800998ecf8427e'}]
 ```
+
 ## Replication Rules
 
 Once a DID exists within the Rucio catalogue, replicas of that file, dataset or
 collection are created and maintained by
 [Replication rules](https://rucio.readthedocs.io/en/latest/overview_Replica_management.html).
-By uploading a file to a particular RSE, a replication rule is created for thatfile, however rules can also be added for existing DIDs. As a minimum an RSE and number of copies must be specified, but further options such as lifetime of
+By uploading a file to a particular RSE,
+a replication rule is created for that file,
+however rules can also be added for existing DIDs.
+As a minimum an RSE and number of copies must be specified, but further options such as lifetime of
 the rule and selecting RSEs based on user set attributes are also possible.
 
 ### CLI Example
 
-```
+```shell
  $ rucio list-rules --account root
 
 ID                                ACCOUNT    SCOPE:NAME          STATE[OK/REPL/STUCK]    RSE_EXPRESSION      COPIES  EXPIRES (UTC)    CREATED (UTC)
@@ -216,8 +253,9 @@ ID                                ACCOUNT    SCOPE:NAME              STATE[OK/RE
 bd51b767ef524878bb3cc68db16d2374  root       user.root:test_dataset  OK[1/0/0]               NEW_RSE                  1                   2020-08-14 15:47:15
  ```
 
-### Python Client Example 
-```
+### Python Client Example
+
+```python
 $ python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
@@ -246,7 +284,9 @@ u'name': u'test_dataset', u'created_at': datetime.datetime(2020, 8, 14, 15, 47, 
 
 ## Multi-VO Features
 
-From a users perspective, whether the instance is multi or single VO should not affect the majority of functions and VO does not need to be provided. There are however some occasions when an optional argument for the VO can be given in a multi-VO instance.
+From a users perspective, whether the instance is multi or single VO should not functionality.
+Furthermore, VO does not need to be provided.
+There are however some occasions when an optional argument for the VO can be given in a multi-VO instance.
 
 ### Swapping VOs
 
@@ -257,12 +297,13 @@ present, and the VO set there will be used (unless the environment variable
 `RUCIO_VO` is also set, in which case the latter takes precedent). Both will be
 ignored however if the VO is passed as an optional argument in the CLI or
 Python client. Using this optional argument allows a user to quickly run
-commands on a different VO they have access to. On the Bastion node, this is 
-also an alternative method to setting the environment variable for VO (note 
+commands on a different VO they have access to. On the Bastion node, this is
+also an alternative method to setting the environment variable for VO (note
 that it will need to be passed for every command however).
 
 #### CLI Example
-```
+
+```shell
 $ rucio whoami
 
 status     : ACTIVE
@@ -285,8 +326,10 @@ suspended_at : None
 deleted_at : None
 email      : N/A
 ```
+
 #### Python Client Example
-```
+
+```python
 $ python
 
 >>> from rucio.client import Client
