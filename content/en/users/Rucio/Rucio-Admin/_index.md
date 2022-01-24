@@ -255,6 +255,10 @@ bd51b767ef524878bb3cc68db16d2374  root       user.root:test_dataset  OK[1/0/0]  
 
 ### Python Client Example
 
+<!--
+// jscpd:ignore-start
+-->
+
 ```python
 $ python
 >>> from rucio.client import Client
@@ -281,6 +285,10 @@ u'bd51b767ef524878bb3cc68db16d2374', u'ignore_account_limit': False, u'error': N
 3, u'state': u'OK', u'scope': u'user.root', u'subscription_id': None, u'stuck_at': None, u'ignore_availability': False, u'eol_at': None, u'expires_at': None, u'did_type': u'DATASET', u'account': u'root', u'locked': False, 
 u'name': u'test_dataset', u'created_at': datetime.datetime(2020, 8, 14, 15, 47, 15), u'activity': u'User Subscriptions', u'grouping': u'DATASET'}]
 ```
+
+<!--
+// jscpd:ignore-end
+-->
 
 ## Multi-VO Features
 
