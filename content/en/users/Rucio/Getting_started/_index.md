@@ -34,8 +34,6 @@ e.g. experiment1:file1.
 
 ### Getting Started as a new user
 
-<!-- markdown-link-check-disable -->
-
 1. To get set up with a Rucio account please create a ticket on [GGUS](https://ggus.eu/?mode=ticket_submit).
 Please fill in the form with a subject, description, ticket catagory - service request,
 priortiy - less urgent, and under routing information please selct Assign to support unit - Rucio).
@@ -46,12 +44,8 @@ Within the ticket description please include:
     - Name of the experiment / VO you are part of  
     - Either:  
         The subject of your eScience certificate  
-        or  
-        desired password  
 
-<!-- markdown-link-check-enable -->
-
-**we can organise a video call to explain or take sensitive information if you prefer**  
+**If you want password access we can organise a video call to explain or take sensitive information if you prefer**  
 In Terms of testing you can join the test VO (dteam) to try Rucio as a service and its capabilities.  
 **Please note that we are working on allowing Rucio accounts to be created and accessed with IAM services,**
 **and [EGI Check-in](https://docs.egi.eu/users/check-in/), but currently only support x509 and password access.**
@@ -60,17 +54,15 @@ In Terms of testing you can join the test VO (dteam) to try Rucio as a service a
 
 1. You will then need to install a containerised client on your computer.  
 
-    - Install Docker to run the container  
+    - Install Docker to run the container
+    - <https://www.docker.com/get-started> (for windows users I would recommend using WSL2)
+    - Follow the docker instructions to ensure it is running correctly.
+    - Using openSSL you will need to split your grid certificate bundle into the certificate and key:
 
-    - <https://www.docker.com/get-started> (for windows users I would recommend using WSL2)  
-
-    - Follow the docker instructions to ensure it is running correctly.  
-
-    - Using openSSL you will need to split your grid certificate bundle into the certificate and key:  
-
-    `$ openssl pkcs12 -in <*.pfx> -out /sensible/path/usercert.pem -clcerts -nokeys`  
-
-    `$ openssl pkcs12 -in <*.pfx> -out /sensible/path/userkey.pem -nocerts -nodes`  
+    ```shell
+    $ openssl pkcs12 -in <*.pfx> -out /sensible/path/usercert.pem -clcerts -nokeys  
+    $ openssl pkcs12 -in <*.pfx> -out /sensible/path/userkey.pem -nocerts -nodes
+    ```
 
 1. Run the Docker container using the following command:  
 
@@ -78,20 +70,20 @@ When running the block of code below please replaces all items within `<>` with 
 
 ```shell
 $ run \
--e RUCIO_CFG_RUCIO_HOST=https://rucio-server.gridpp.rl.ac.uk:443 \
--e RUCIO_CFG_AUTH_HOST=https://rucio-server.gridpp.rl.ac.uk:443 \
--e RUCIO_CFG_AUTH_TYPE=x509 \
--e RUCIO_CFG_CLIENT_VO=<3 CHAR VO NAME LOWERCASE> \
--e RUCIO_CFG_CLIENT_CERT=/opt/rucio/etc/usercert.pem \
--e RUCIO_CFG_CLIENT_KEY=/opt/rucio/etc/userkey.pem \
--e RUCIO_CFG_ACCOUNT=<Rucio Username> \
--e RUCIO_CFG_CA_CERT=/opt/rucio/etc/web/ca-first.pem \
--v <PATH/TO/e-Science CA 2B>:/opt/rucio/etc/web/ca-first.pem \
--v <PATH/TO/YOUR/USERCERT>:/opt/rucio/etc/usercert \
--v <PATH/TO/YOUR/USERKEY>:/opt/rucio/etc/userkey \
---name=rucio-client \
--it \
--d rucio/rucio-clients
+    -e RUCIO_CFG_RUCIO_HOST=https://rucio-server.gridpp.rl.ac.uk:443 \
+    -e RUCIO_CFG_AUTH_HOST=https://rucio-server.gridpp.rl.ac.uk:443 \
+    -e RUCIO_CFG_AUTH_TYPE=x509 \
+    -e RUCIO_CFG_CLIENT_VO=<3 CHAR VO NAME LOWERCASE> \
+    -e RUCIO_CFG_CLIENT_CERT=/opt/rucio/etc/usercert.pem \
+    -e RUCIO_CFG_CLIENT_KEY=/opt/rucio/etc/userkey.pem \
+    -e RUCIO_CFG_ACCOUNT=<Rucio Username> \
+    -e RUCIO_CFG_CA_CERT=/opt/rucio/etc/web/ca-first.pem \
+    -v <PATH/TO/e-Science CA 2B>:/opt/rucio/etc/web/ca-first.pem \
+    -v <PATH/TO/YOUR/USERCERT>:/opt/rucio/etc/usercert \
+    -v <PATH/TO/YOUR/USERKEY>:/opt/rucio/etc/userkey \
+    --name=rucio-client \
+    -it \
+    -d rucio/rucio-clients
 ```
 
 This block of code may look large but it is configuring Rucio to connect to the Multi-VO Rucio at RAL,
@@ -117,8 +109,6 @@ $ cp usercert usercert.pem
 
 ### Getting started as a new VO
 
-<!-- markdown-link-check-disable -->
-
 - To get set up with a new VO on Multi-VO Rucio account please create a ticket on
 [ggus](https://ggus.eu/?mode=ticket_submit).
 Please fill in the form with a subject, description, ticket catagory - service request,
@@ -126,5 +116,3 @@ priortiy - less urgent, and under routing information please select 'assign to s
 
 - We will set up a meeting to discuss Rucio, your needs, sites,
 and current set up to ensure that Rucio can work for you, and will track progress with the ticket.
-
-<!-- markdown-link-check-enable -->

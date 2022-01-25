@@ -24,11 +24,18 @@ Accounts will have different permissions and access (such as how much data they 
 ### CLI Example
 
 ```shell
-$ rucio-admin account add --type USER --email jdoe@email.com jdoe
+$ rucio-admin account add \
+     --type USER \
+     --email jdoe@email.com jdoe
 
 Added new account: jdoe
 
-$ rucio-admin identity add --account jdoe --type USER --id userjdoe --email jdoe@email.com --password jdoepass
+$ rucio-admin identity add \
+     --account jdoe \
+     --type USER \
+     --id userjdoe \
+     --email jdoe@email.com \
+     --password jdoepass
 
 Added new identity to account: userjdoe-jdoe
 
@@ -40,7 +47,6 @@ Set account limit for account jdoe on RSE storagesite1: 100.000 GB
 ### Python Client Example
 
 ```python
-$ python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
 >>> CLIENT.add_account('jdoe', 'USER', 'jdoe@email.com')
@@ -51,7 +57,7 @@ True
 True
 ```
 
-## Creating RSEs
+## Creating RSE(s)
 
 [Rucio Storage Elements](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)
 (RSEs) are how Rucio represents the physical storage available to your VO. As
@@ -59,26 +65,64 @@ with many aspects of Rucio there are a lot of optional attributes that can be
 set for an RSE, but as a minimum a protocol for transfers need to be added
 before it can be used.
 
-### CLI Example
+### Creating RSE(s) CLI Example
 
 ```shell
 $ rucio-admin rse add NEW_RSE
 
 Added new deterministic RSE: NEW_RSE
 
-$ rucio-admin rse add-protocol --hostname test.org --scheme gsiftp --prefix '/filepath/rucio/' --port 8443 NEW_RSE --domain-json '{"wan": {"read": 1, "write": 1, "third_party_copy": 0, "delete": 1}, "lan": {"read": 1, "write": 1,"third_party_copy": 0, "delete": 1}}'
+$ rucio-admin rse add-protocol \
+     --hostname test.org \
+     --scheme gsiftp \
+     --prefix '/filepath/rucio/' \
+     --port 8443 NEW_RSE \
+     --domain-json '{
+                    "wan": {
+                         "read": 1,
+                         "write": 1,
+                         "third_party_copy": 0,
+                         "delete": 1
+                         },
+                    "lan": {
+                         "read": 1,
+                         "write": 1,
+                         "third_party_copy": 0,
+                         "delete": 1
+                         }
+                    }'
 ```
 
-### Python Client Example
+### Creating RSE(s) Python Client Example
 
 ```python
-$ python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
 >>> CLIENT.add_rse('NEW_RSE')
 True
->>> CLIENT.add_protocol('NEW_RSE', {'hostname': 'test.org', 'scheme': 'gsiftp', 'prefix': '/filepath/rucio/', 'port': 8443, 'impl': 'rucio.rse.protocols.gfalv2.Default', 'domain': {"wan": {"read": 1, "write": 1,
-"third_party_copy": 0, "delete": 1}, "lan": {"read": 1, "write": 1, "third_party_copy": 0, "delete": 1}}})
+>>> CLIENT.add_protocol(
+     'NEW_RSE', {
+          'hostname': 'test.org',
+          'scheme': 'gsiftp',
+          'prefix': '/filepath/rucio/',
+          'port': 8443,
+          'impl': 'rucio.rse.protocols.gfalv2.Default',
+          'domain': {
+               "wan": {
+                    "read": 1,
+                    "write": 1,
+                    "third_party_copy": 0,
+                    "delete": 1
+                    },
+               "lan": {
+                    "read": 1,
+                    "write": 1,
+                    "third_party_copy": 0,
+                    "delete": 1
+                    }
+               }
+          }
+     )
 True
 ```
 
@@ -94,20 +138,32 @@ For example to update the `impl` without changing anything else (the `data` argu
 with the other settings used to specify the protocol to change):
 
 ```python
-$ python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
->>> CLIENT.update_protocols(rse='NEW_RSE', scheme='gsiftp', data={'impl': rucio.rse.protocols.gfal.Default'}, hostname='test.org', port=8433)
+>>> CLIENT.update_protocols(
+     rse='NEW_RSE',
+     scheme='gsiftp',
+     data={
+          'impl': rucio.rse.protocols.gfal.Default'
+          },
+     hostname='test.org',
+     port=8433
+     )
 True
 ```
 
 To swap the priority of two protocols for the third party copy operation:
 
 ```python
-$ python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
->>> CLIENT.swap_protocols(rse='NEW_RSE', domain='wan', operation='third_party_copy', scheme_a='gsiftp', scheme_b='root')
+>>> CLIENT.swap_protocols(
+     rse='NEW_RSE',
+     domain='wan',
+     operation='third_party_copy',
+     scheme_a='gsiftp',
+     scheme_b='root'
+     )
 True
 ```
 
@@ -135,11 +191,7 @@ running in order to take effect. For a multi-VO instance, these should be
 running for all VOs already. However, on new VO's joining Rucio
 some updating of the daemons will be neccessary.
 
-<!-- markdown-link-check-disable -->
-
 If it seems like it is not quite right please contact the Rucio team through [GGUS](https://ggus.eu/?mode=ticket_submit).
-
-<!-- markdown-link-check-enable -->
 
 ## Uploading Data
 
@@ -159,7 +211,7 @@ Once a file has been uploaded via the CLI or Python client, it can then be
 attached to a dataset. It's worth noting that by default, some Rucio commands
 will not list files, only datasets.
 
-### CLI Example
+### Uploading Data CLI Example
 
 Assuming the file `test.txt` exists locally:
 
@@ -206,12 +258,11 @@ $ rucio list-content user.root:test_dataset
 +--------------------+--------------+
 ```
 
-### Python Client Example
+### Uploading Data Python Client Example
 
 Assuming the file `test.txt` exists locally:
 
 ```python
-python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
 >>> CLIENT.add_scope('root', 'user.root')
@@ -240,7 +291,7 @@ True
 [{u'adler32': u'00000001', u'name': u'test.txt', u'bytes': 0, u'scope': u'user.root', u'type': u'FILE', u'md5': u'd41d8cd98f00b204e9800998ecf8427e'}]
 ```
 
-## Replication Rules
+## Adding Replication Rules
 
 Once a DID exists within the Rucio catalogue, replicas of that file, dataset or
 collection are created and maintained by
@@ -251,7 +302,7 @@ however rules can also be added for existing DIDs.
 As a minimum an RSE and number of copies must be specified, but further options such as lifetime of
 the rule and selecting RSEs based on user set attributes are also possible.
 
-### CLI Example
+### Adding Replication Rules CLI Example
 
 ```shell
  $ rucio list-rules --account root
@@ -270,14 +321,13 @@ ID                                ACCOUNT    SCOPE:NAME              STATE[OK/RE
 bd51b767ef524878bb3cc68db16d2374  root       user.root:test_dataset  OK[1/0/0]               NEW_RSE                  1                   2020-08-14 15:47:15
  ```
 
-### Python Client Example
+### Adding Replication Rules Python Client Example
 
 <!--
 // jscpd:ignore-start
 -->
 
 ```python
-$ python
 >>> from rucio.client import Client
 >>> CLIENT = Client()
 >>> list(CLIENT.list_account_rules('root'))
@@ -324,7 +374,7 @@ ignored however if the VO is passed as an optional argument in the CLI or
 Python client. Using this optional argument allows a user to quickly run
 commands on a different VO they have access to.
 
-#### CLI Example
+#### Swapping VOs CLI Example
 
 ```shell
 $ rucio whoami
@@ -350,11 +400,9 @@ deleted_at : None
 email      : N/A
 ```
 
-#### Python Client Example
+#### Swapping VOs Python Client Example
 
 ```python
-$ python
-
 >>> from rucio.client import Client
 >>> CLIENT = Client()
 >>> CLIENT.whoami()
