@@ -31,7 +31,7 @@ e.g. experiment1:file1.
 
 ### Getting Started as a new user
 
-1. To get set up with a Rucio account please create a ticket on [ggus](https://ggus.eu/?mode=ticket_submit).
+1. To get set up with a Rucio account please create a ticket on [GGUS](https://ggus.eu/?mode=ticket_submit).
 Please fill in the form with a subject, description, ticket catagory - service request,
 priortiy - less urgent, and under routing information please selct Assign to support unit - Rucio).
 Within the ticket description please include:
