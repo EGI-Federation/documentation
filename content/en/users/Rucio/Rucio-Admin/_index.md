@@ -1,19 +1,25 @@
 ---
-title: "Rucio Admin"
+title: "Rucio Admins"
 type: docs
 linkTitle: "Rucio Admins"
-weight: 100
+weight: 30
 description: >-
      Information for Rucio admins to better understand and perform actions for their VO.
 ---
 
+Within Rucio there are several levels of Admins.
+There are the super admins which are the staff which run Multi-VO Rucio.
+Then there are VO specific admins which will look after the day to day of thier VO.
+Below are some of the tasks which VO admins will need to do to set up and maintain their VO.
 
-## Creating Accounts and identities
+## Creating Accounts, Identities, and Quotas
 
-New users within your VO, the account will need to be created before adding identities using the same methods as above
-(though without the need to remove any old identities).
+To add new users within your VO, you will need to communicate with Rucio as the VO admin.
+Then using the rucio-admin commands, create a new account and add identities to the account.
+The account is a username with no permissions, or authentication methods.
+The identities bind authentication methods and permissions to the account. 
 The account you want to create identities for is input as an argument.
-Accounts will have different permissions and access (such as how much data they can store on a particular RSE).
+Accounts will have different permissions and access (such as how much data they can store on a particular [RSE](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)).
 
 ### CLI Example
 
@@ -25,6 +31,10 @@ Added new account: jdoe
 $ rucio-admin identity add --account jdoe --type USER --id userjdoe --email jdoe@email.com --password jdoepass
 
 Added new identity to account: userjdoe-jdoe
+
+$ rucio-admin account set-limits jdoe storagesite1 100GB
+
+Set account limit for account jdoe on RSE storagesite1: 100.000 GB
 ```
 
 ### Python Client Example
@@ -36,6 +46,8 @@ $ python
 >>> CLIENT.add_account('jdoe', 'USER', 'jdoe@email.com')
 True
 >>> CLIENT.add_identity('jdoe', 'USER', 'jdoe@email.com')
+True
+>>> CLIENT.set_account_limit('jdoe', 'storagesite1', 107374182400, 'global')
 True
 ```
 
@@ -121,7 +133,7 @@ require one or more of the
 [daemons](https://rucio.readthedocs.io/en/latest/man/daemons.html) to be
 running in order to take effect. For a multi-VO instance, these should be
 running for all VOs already. However if it seems like nothing is happening
-following a command, it may be worth checking with Ian that the daemons are
+following a command, it may be worth checking with the Rucio team that the daemons are
 running as intended.
 
 ## Uploading Data
@@ -292,9 +304,9 @@ u'name': u'test_dataset', u'created_at': datetime.datetime(2020, 8, 14, 15, 47, 
 
 ## Multi-VO Features
 
-From a users perspective, whether the instance is multi or single VO should not functionality.
-Furthermore, VO does not need to be provided.
-There are however some occasions when an optional argument for the VO can be given in a multi-VO instance.
+From a users perspective, whether the instance is multi or single VO should not change any functionality.
+Furthermore, depending on the client setup, VO does not need to be provided.
+There are however, some occasions when an optional argument for the VO can be given in a multi-VO instance.
 
 ### Swapping VOs
 
@@ -305,9 +317,7 @@ present, and the VO set there will be used (unless the environment variable
 `RUCIO_VO` is also set, in which case the latter takes precedent). Both will be
 ignored however if the VO is passed as an optional argument in the CLI or
 Python client. Using this optional argument allows a user to quickly run
-commands on a different VO they have access to. On the Bastion node, this is
-also an alternative method to setting the environment variable for VO (note
-that it will need to be passed for every command however).
+commands on a different VO they have access to.
 
 #### CLI Example
 

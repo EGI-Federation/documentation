@@ -2,7 +2,7 @@
 title: "Rucio Commands"
 type: docs
 linkTitle: "Rucio Commands"
-weight: 100
+weight: 20
 description: >-
      Commands to get started with Rucio.
 ---
@@ -20,16 +20,18 @@ as well as some explaination for each.
 
 ### ping
 
+Is the simplest command that a user can use to ask the Rucio server which version it is using.
+
 `$ rucio ping`
 
-Is the simplest command that a user can use to ask the Rucio server which version it is using.
 This checks that there is a connection between the containerised client and the server.
 
 ## whoami
 
+Another simple command, which asks the server for the information Rucio has on the current user.
+
 `$ rucio whoami`
 
-Another simple command, which asks the server for the information Rucio has  on the current user.
 This will return output like the following:  
 
 ```shell
@@ -48,6 +50,8 @@ this is very important if you get multiple accounts. But also verifies that the 
 correctly.
 
 ### upload
+
+A Rucio command that allows you to upload files from your current environment to any RSE within your VO.
 
 ```shell
 $ rucio upload [-h] --rse RSE [--lifetime LIFETIME] [--scope SCOPE]
@@ -85,6 +89,8 @@ rucio upload --rse main-rse file1 file2 file3 file4
 
 ### get
 
+A Rucio command to download files from any RSE in your VO to your local environment.
+
 ```shell
 $ rucio get [-h] [--dir DIR] [--allow-tape] [--rse RSE] [--rses RSES]
                  [--impl IMPL] [--protocol PROTOCOL] [--nrandom NRANDOM]
@@ -109,6 +115,10 @@ This allows you to check are correct before commiting to download the entire dat
 
 ### add-rule
 
+Create a rule which Rucio will work to make true. These are often how files are moved from site to site.
+Creating a rule that says file x (which is currently at storagesite1), needs to be at storagesite2. 
+Upon creation of the rule, Rucio will ensure that the file is moved from where is closest to the new site.
+
 ```shell
 $ rucio add-rule [-h] [--weight WEIGHT] [--lifetime LIFETIME]
                       [--grouping {DATASET,ALL,NONE}] [--locked]
@@ -131,6 +141,11 @@ to fulfil the rule.
 
 ### delete-rule
 
+A command to delete a rule which you have created.
+Just because you have deleted a rule does not mean the file will be deleted.
+But it will adjust your quota accordingly. 
+Other people within your VO may also having a rule that states the file needs to be at the same site.
+
 ```shell
 $ rucio delete-rule [-h] [--purge-replicas] [--all]
                          [--rse_expression RSE_EXPRESSION] [--rses RSES]
@@ -150,6 +165,8 @@ a list of the rules,
 and their rule_ids that are within your account can be gotten by running `rucio list-rules --account youraccountname`.
 
 ### list-rules
+
+A command to list all the rules related to an account, a DID, or a file.
 
 ```shell
 $ rucio list-rules [-h] [--id RULE_ID] [--traverse] [--csv] [--file FILE]
