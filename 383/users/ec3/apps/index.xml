@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – EC3 applications and tools</title><link>/users/cloud-compute/ec3/apps/</link><description>Recent content in EC3 applications and tools on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/cloud-compute/ec3/apps/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: ECAS</title><link>/users/cloud-compute/ec3/apps/ecas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/cloud-compute/ec3/apps/ecas/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – EC3 applications and tools</title><link>/users/ec3/apps/</link><description>Recent content in EC3 applications and tools on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/ec3/apps/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: ECAS</title><link>/users/ec3/apps/ecas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/ec3/apps/ecas/</guid><description>
 &lt;p>The following guide is intended for researchers who want to use ECAS, a complete
 environment enabling data analysis experiments, in the EGI cloud.&lt;/p>
 &lt;p>ECAS (ENES Climate Analytics Service) is part of the EOSC-hub service catalog
@@ -219,7 +219,7 @@ management page.&lt;/p>
 &lt;li>&lt;a href="https://github.com/OphidiaBigData/ansible-role-ophidia-cluster%3E">GitHub: ansible role Ophidia cluster&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://www.grycap.upv.es/ec3">EC3&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://www.github.com/grycap/ec3">GitHub EC3&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Users: HTC</title><link>/users/cloud-compute/ec3/apps/htc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/cloud-compute/ec3/apps/htc/</guid><description>
+&lt;/ul></description></item><item><title>Users: HTC</title><link>/users/ec3/apps/htc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/ec3/apps/htc/</guid><description>
 &lt;h2 id="templates">Templates&lt;/h2>
 &lt;p>We will build a torque cluster on one of the EGI Cloud providers using EC3.
 Create a directory to store EC3 configuration and init it with the
