@@ -1,14 +1,272 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Multi-VO Rucio for data management</title><link>/users/rucio/</link><description>Recent content in Multi-VO Rucio for data management on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/rucio/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Rucio Admin</title><link>/users/rucio/rucio-admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/rucio-admin/</guid><description>
-&lt;h2 id="creating-accounts-and-identities">Creating Accounts and identities&lt;/h2>
-&lt;p>New users within your VO, the account will need to be created before adding identities using the same methods as above
-(though without the need to remove any old identities).
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Multi-VO Rucio for data management</title><link>/users/rucio/</link><description>Recent content in Multi-VO Rucio for data management on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/rucio/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Getting Started</title><link>/users/rucio/getting_started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/getting_started/</guid><description>
+&lt;h2 id="getting-started">Getting Started&lt;/h2>
+&lt;h3 id="rucio-terms">Rucio terms&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html">&lt;strong>RSE&lt;/strong>&lt;/a> - An acronym which stands for &amp;lsquo;Rucio Storage Element&amp;rsquo;. Another name for an endpoint, or storage solution.&lt;/li>
+&lt;li>&lt;a href="https://rucio.readthedocs.io/en/latest/replication_rules_examples.html">&lt;strong>Rule&lt;/strong>&lt;/a> - A Rucio rule is an instruction to Rucio to do a certain thing.
+This can be ensure file x has at least 1 copy at storagesite1, or ensure file y is on tape, or even on tape at more than 1 location,
+or even file z has 2 copies at any site within a selection of sites.
+How you set up the RSE and the attributes you give them allows for many different ways to create and use rules.
+Once a rule is created Rucio will get to work to ensure that the rule is True at all times.&lt;/li>
+&lt;li>&lt;strong>File&lt;/strong> - Within Rucio is a single file.&lt;/li>
+&lt;li>&lt;strong>Dataset&lt;/strong> - Is a collection of files, which may be a collection or related results, or data.&lt;/li>
+&lt;li>&lt;strong>Container&lt;/strong> - A collection of Datasets which may build a larger subset of a whole experiment.&lt;/li>
+&lt;li>&lt;strong>Scope&lt;/strong> - This is a collection in which files, datasets, and containers are placed.
+Users will have their own scope, often user.username.
+But also experiments, sub-experiments,
+or however you wish to orgaise the data can also have scopes.
+Accounts can be given access to scopes by VO admins.&lt;/li>
+&lt;li>&lt;strong>DID&lt;/strong> - A DID is an acronym that stands for &amp;lsquo;Data IDentifier&amp;rsquo;.
+This is made up from the scope, and the file name within Rucio seperated by a colon.
+e.g. experiment1:file1.&lt;/li>
+&lt;/ul>
+&lt;h3 id="getting-started-as-a-new-user">Getting Started as a new user&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>To get set up with a Rucio account please create a ticket on &lt;a href="https://ggus.eu/?mode=ticket_submit">ggus&lt;/a>.
+Please fill in the form with a subject, description, ticket catagory - service request,
+priortiy - less urgent, and under routing information please selct Assign to support unit - Rucio).
+Within the ticket description please include:&lt;/p>
+&lt;ul>
+&lt;li>Desired Username (usually initials and surname e.g. John Doe would have jdoe)&lt;/li>
+&lt;li>Your email&lt;/li>
+&lt;li>Name of the experiment / VO you are part of&lt;/li>
+&lt;li>Either:&lt;br>
+The subject of your eScience certificate&lt;br>
+or&lt;br>
+desired password&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>we can organise a video call to explain or take sensitive information if you prefer&lt;/strong>&lt;br>
+In Terms of testing you can join the test VO (dteam) to try Rucio as a service and its capabilities.&lt;br>
+&lt;strong>Please note that we are working on allowing Rucio accounts to be created and accessed with IAM services,&lt;/strong>
+&lt;strong>and &lt;a href="https://docs.egi.eu/users/check-in/">EGI Check-in&lt;/a>, but currently only support x509 and password access.&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Once our team has this information we will create you a Rucio account.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You will then need to install a containerised client on your computer.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Install Docker to run the container&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.docker.com/get-started">https://www.docker.com/get-started&lt;/a> (for windows users I would recommend using WSL2)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Follow the docker instructions to ensure it is running correctly.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Using openSSL you will need to split your grid certificate bundle into the certificate and key:&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>$ openssl pkcs12 -in &amp;lt;*.pfx&amp;gt; -out /sensible/path/usercert.pem -clcerts -nokeys&lt;/code>&lt;/p>
+&lt;p>&lt;code>$ openssl pkcs12 -in &amp;lt;*.pfx&amp;gt; -out /sensible/path/userkey.pem -nocerts -nodes&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Run the Docker container using the following command:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>When running the block of code below please replaces all items within &lt;code>&amp;lt;&amp;gt;&lt;/code> with the relevent information.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ run &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_RUCIO_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://rucio-server.gridpp.rl.ac.uk:443 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_AUTH_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://rucio-server.gridpp.rl.ac.uk:443 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_AUTH_TYPE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x509 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CLIENT_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> CHAR VO NAME LOWERCASE&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CLIENT_CERT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/usercert.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CLIENT_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/userkey.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_ACCOUNT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;Rucio Username&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CA_CERT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/web/ca-first.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-v &amp;lt;PATH/TO/e-Science CA 2B&amp;gt;:/opt/rucio/etc/web/ca-first.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-v &amp;lt;PATH/TO/YOUR/USERCERT&amp;gt;:/opt/rucio/etc/usercert &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-v &amp;lt;PATH/TO/YOUR/USERKEY&amp;gt;:/opt/rucio/etc/userkey &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>--name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>rucio-client &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-it &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d rucio/rucio-clients
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This block of code may look large but it is configuring Rucio to connect to the Multi-VO Rucio at RAL,
+your account and VO details, where you are loading them into the container,
+and mounting the authentication details into the container.&lt;/p>
+&lt;p>The UK escience CA 2B can be &lt;a href="https://ca.grid-support.ac.uk/">obtained here&lt;/a>
+The 3 character VO name will be provided to you when you sign up for a Rucio account.&lt;/p>
+&lt;ol>
+&lt;li>Run the following commands inside the docker container to finalise set up:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">cd&lt;/span> /opt/rucio/etc/
+$ cp userkey userkey.pem
+$ chmod &lt;span style="color:#0000cf;font-weight:bold">400&lt;/span> userkey.pem
+$ cp usercert usercert.pem
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>You should now have a fully set up Containerised Client for your Rucio Account&lt;/strong>
+&lt;strong>and VO which you can start in docker and use whenever you need it.&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>If not please contact Rucio support&lt;/li>
+&lt;/ul>
+&lt;h3 id="getting-started-as-a-new-vo">Getting started as a new VO&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>To get set up with a new VO on Multi-VO Rucio account please create a ticket on
+&lt;a href="https://ggus.eu/?mode=ticket_submit">ggus&lt;/a>.
+Please fill in the form with a subject, description, ticket catagory - service request,
+priortiy - less urgent, and under routing information please select &amp;lsquo;assign to support unit&amp;rsquo; - Rucio).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>We will set up a meeting to discuss Rucio, your needs, sites,
+and current set up to ensure that Rucio can work for you, and will track progress with the ticket.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Users: Rucio Commands</title><link>/users/rucio/rucio-commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/rucio-commands/</guid><description>
+&lt;h2 id="commands-to-get-started-with-rucio">Commands to get started with Rucio&lt;/h2>
+&lt;p>There are many commands found within Rucio CLI that you may want to become familar with.
+In this guide I will provide a few of the common commands wanted by new users.&lt;/p>
+&lt;p>To find more of the commands that you may want to use type &lt;code>rucio&lt;/code>
+into the containerised client will provide all of the arguments for rucio.
+Typing in the command followed by &lt;code>-h&lt;/code>,
+or &lt;code>--help&lt;/code> will provide you with all the options that are available
+as well as some explaination for each.&lt;/p>
+&lt;h3 id="ping">ping&lt;/h3>
+&lt;p>Is the simplest command that a user can use to ask the Rucio server which version it is using.&lt;/p>
+&lt;p>&lt;code>$ rucio ping&lt;/code>&lt;/p>
+&lt;p>This checks that there is a connection between the containerised client and the server.&lt;/p>
+&lt;h2 id="whoami">whoami&lt;/h2>
+&lt;p>Another simple command, which asks the server for the information Rucio has on the current user.&lt;/p>
+&lt;p>&lt;code>$ rucio whoami&lt;/code>&lt;/p>
+&lt;p>This will return output like the following:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">status : ACTIVE
+account : user1
+account_type : USER
+created_at : YYYY-MM-DDTHH:MM:SS
+updated_at : YYYY-MM-DDTHH:MM:SS
+suspended_at : None
+deleted_at : None
+email : myemail@domail.country
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This ensures that you know which user you are interacting with Rucio as,
+this is very important if you get multiple accounts. But also verifies that the client is set up
+correctly.&lt;/p>
+&lt;h3 id="upload">upload&lt;/h3>
+&lt;p>A Rucio command that allows you to upload files from your current environment to any RSE within your VO.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio upload &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> --rse RSE &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--lifetime LIFETIME&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--scope SCOPE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--impl IMPL&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--register-after-upload&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--summary&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--guid GUID&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--protocol PROTOCOL&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--pfn PFN&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--name NAME&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--transfer-timeout TRANSFER_TIMEOUT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--recursive&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+args &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>args ...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Several of the options you will not need to be used as they will be set by the Rucio Admins
+of your VO when they set up the RSEs.
+Below are a list of options that you may find useful:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>RSE&lt;/code> is the Rucio Storage Element or site that you wish to store the data at,
+the list of available RSEs can be seen for your VO with the command
+&lt;code>rucio list-rses&lt;/code>.&lt;/li>
+&lt;li>&lt;code>Lifetime&lt;/code> is how long you wish the file to exist,
+not specifyting will make the file permenant until rucio is told to delete it.&lt;/li>
+&lt;li>&lt;code>Scope&lt;/code> can be used in many ways,
+but often can be an experiment name, or a user space, all users have their own scope assigned to them &lt;code>user.&amp;lt;username&amp;gt;&lt;/code>.&lt;/li>
+&lt;li>&lt;code>Register-after-upload&lt;/code> allows for files to be uploaded to the destination,
+and then registered with Rucio, rather than the other way around.
+This can be useful if your connection is intermittent.&lt;/li>
+&lt;li>&lt;code>Name&lt;/code> is the name of the file that it will be registered to Rucio with,
+if this is not set it will be the name of the file/s provided.&lt;/li>
+&lt;li>&lt;code>Recursive&lt;/code> Allows you to set the arg to a directory,
+and all files within that directory and any sub directories will be uploaded.&lt;/li>
+&lt;li>&lt;code>Args&lt;/code> is the path to the file, or files you wish to upload, this can be a single file,
+directory (with recursive set), or a list of files seperated with a space e.g.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">rucio upload --rse main-rse file1 file2 file3 file4
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="get">get&lt;/h3>
+&lt;p>A Rucio command to download files from any RSE in your VO to your local environment.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio get &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--dir DIR&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--allow-tape&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--rse RSE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--rses RSES&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--impl IMPL&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--protocol PROTOCOL&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--nrandom NRANDOM&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--ndownloader NDOWNLOADER&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--no-subdir&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--pfn PFN&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--archive-did ARCHIVE_DID&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--no-resolve-archives&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--ignore-checksum&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--transfer-timeout TRANSFER_TIMEOUT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--transfer-speed-timeout TRANSFER_SPEED_TIMEOUT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--aria&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--filter FILTER&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--scope SCOPE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--metalink METALINK_FILE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--deactivate-file-download-exceptions&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>dids &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>dids ...&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>Dir&lt;/code> is the location within the container you wish for the files to be downloaded
+(if you wish to move these files outside of the container,
+you may want to mount a volume in the container to allow the files to persist).&lt;/li>
+&lt;li>&lt;code>RSE/s&lt;/code> specifying which RSE/s you wish to download the files from,
+leaving this blank will allow Ruico to decide which RSE/s is best.&lt;/li>
+&lt;li>&lt;code>nrandom&lt;/code> allows you to specify a number and if the target is a dataset or
+container will download n files from that DID.
+This allows you to check are correct before commiting to download the entire dataset or container.&lt;/li>
+&lt;li>&lt;code>dids&lt;/code> is the data identifier for the file, dataset or container you wish to download.&lt;/li>
+&lt;/ul>
+&lt;h3 id="add-rule">add-rule&lt;/h3>
+&lt;p>Create a rule which Rucio will work to make true. These are often how files are moved from site to site.
+Creating a rule that says file x (which is currently at storagesite1), needs to be at storagesite2.
+Upon creation of the rule, Rucio will ensure that the file is moved from where is closest to the new site.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio add-rule &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--weight WEIGHT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--lifetime LIFETIME&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--grouping &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>DATASET,ALL,NONE&lt;span style="color:#ce5c00;font-weight:bold">}]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--locked&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--source-replica-expression SOURCE_REPLICA_EXPRESSION&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--notify NOTIFY&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--activity ACTIVITY&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--comment COMMENT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--ask-approval&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--asynchronous&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--delay-injection DELAY_INJECTION&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--account RULE_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--skip-duplicates&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+dids &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>dids ...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> copies rse_expression
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>lifetime&lt;/code> How long you want the file to persist before it can be deleted by Rucio.&lt;/li>
+&lt;li>&lt;code>locked&lt;/code> sets the dataset or container to a locked state, that prevents other files from being added or removed.&lt;/li>
+&lt;li>&lt;code>dids&lt;/code> the files within Rucio you wish to be replicates.&lt;/li>
+&lt;li>&lt;code>copies&lt;/code> How many copies of the data you want to make.&lt;/li>
+&lt;li>&lt;code>rse_expression&lt;/code> can either be a specific RSE, or can be a filter.
+expression, such as &lt;code>tape=True&lt;/code> or &lt;code>country=UK&lt;/code>
+and Rucio will place as many copies as was requested in different sites (when possible),
+to fulfil the rule.&lt;/li>
+&lt;/ul>
+&lt;h3 id="delete-rule">delete-rule&lt;/h3>
+&lt;p>A command to delete a rule which you have created.
+Just because you have deleted a rule does not mean the file will be deleted.
+But it will adjust your quota accordingly.
+Other people within your VO may also having a rule that states the file needs to be at the same site.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio delete-rule &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--purge-replicas&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--all&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--rse_expression RSE_EXPRESSION&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--rses RSES&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--account RULE_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+rule_id
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>all&lt;/code> should not be used by users it it will attempt to delete all rules.&lt;/li>
+&lt;li>&lt;code>rse_expression&lt;/code> which RSE expression encapsulates the rules you wish to delete,
+either rse_expression, or RSE needs to be specified.&lt;/li>
+&lt;li>&lt;code>RSES&lt;/code> exactly which RSE is the target of the rule deletion.&lt;/li>
+&lt;li>&lt;code>account&lt;/code> which account requres the rule to be deleted,
+this is generally only needed by Rucio Admins
+and does not need to be specified if you are deleting your own rules.&lt;/li>
+&lt;li>&lt;code>rule_id&lt;/code> is a Rucio specific ID for the file that you wish to be deleted,
+a list of the rules,
+and their rule_ids that are within your account can be gotten by running &lt;code>rucio list-rules --account youraccountname&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="list-rules">list-rules&lt;/h3>
+&lt;p>A command to list all the rules related to an account, a DID, or a file.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio list-rules &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--id RULE_ID&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--traverse&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--csv&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--file FILE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--account RULE_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--subscription ACCOUNT SUBSCRIPTION&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>did&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Provide a full list of the files IDs, account, scope, state, RSE/expression copies and expiry.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>account&lt;/code> specify which account you wish to see the replication rules.&lt;/li>
+&lt;li>&lt;code>file&lt;/code> If you know the name of a specif file, this allows you to see all the rules are associated with the file.&lt;/li>
+&lt;li>&lt;code>did&lt;/code> If a dataset or container are listed, all rules associated with the specific DID will be displayed.&lt;/li>
+&lt;/ul></description></item><item><title>Users: Rucio Admins</title><link>/users/rucio/rucio-admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/rucio-admin/</guid><description>
+&lt;p>Within Rucio there are several levels of Admins.
+There are the super admins which are the staff which run Multi-VO Rucio.
+Then there are VO specific admins which will look after the day to day of thier VO.
+Below are some of the tasks which VO admins will need to do to set up and maintain their VO.&lt;/p>
+&lt;h2 id="creating-accounts-identities-and-quotas">Creating Accounts, Identities, and Quotas&lt;/h2>
+&lt;p>To add new users within your VO, you will need to communicate with Rucio as the VO admin.
+Then using the rucio-admin commands, create a new account and add identities to the account.
+The account is a username with no permissions, or authentication methods.
+The identities bind authentication methods and permissions to the account.
 The account you want to create identities for is input as an argument.
-Accounts will have different permissions and access (such as how much data they can store on a particular RSE).&lt;/p>
+Accounts will have different permissions and access (such as how much data they can store on a particular &lt;a href="https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html">RSE&lt;/a>).&lt;/p>
 &lt;h3 id="cli-example">CLI Example&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio-admin account add --type USER --email jdoe@email.com jdoe
 Added new account: jdoe
 $ rucio-admin identity add --account jdoe --type USER --id userjdoe --email jdoe@email.com --password jdoepass
 Added new identity to account: userjdoe-jdoe
+$ rucio-admin account set-limits jdoe storagesite1 100GB
+Set account limit &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> account jdoe on RSE storagesite1: 100.000 GB
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="python-client-example">Python Client Example&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#a40000">$&lt;/span> &lt;span style="color:#000">python&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
@@ -16,6 +274,8 @@ Added new identity to account: userjdoe-jdoe
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">add_account&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;jdoe&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;USER&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;jdoe@email.com&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">add_identity&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;jdoe&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;USER&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;jdoe@email.com&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">set_account_limit&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;jdoe&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;storagesite1&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">107374182400&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;global&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="creating-rses">Creating RSEs&lt;/h2>
 &lt;p>&lt;a href="https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html">Rucio Storage Elements&lt;/a>
@@ -73,9 +333,9 @@ For more information refer to either the main documentation or the help for the 
 require one or more of the
 &lt;a href="https://rucio.readthedocs.io/en/latest/man/daemons.html">daemons&lt;/a> to be
 running in order to take effect. For a multi-VO instance, these should be
-running for all VOs already. However if it seems like nothing is happening
-following a command, it may be worth checking with Ian that the daemons are
-running as intended.&lt;/p>
+running for all VOs already. However, on new VO&amp;rsquo;s joining Rucio
+some updating of the daemons will be neccessary.
+If it seems like it is not quite right please contact the Rucio team through &lt;a href="https://ggus.eu/?mode=ticket_submit">GGUS&lt;/a>.&lt;/p>
 &lt;h2 id="uploading-data">Uploading Data&lt;/h2>
 &lt;p>In Rucio files and their replicas are represented by Data IDentifiers
 (&lt;a href="https://rucio.readthedocs.io/en/latest/overview_File_Dataset_Container.html">DIDs&lt;/a>),
@@ -192,9 +452,9 @@ bd51b767ef524878bb3cc68db16d2374 root user.root:test_dataset OK&lt;span style="c
 // jscpd:ignore-end
 -->
 &lt;h2 id="multi-vo-features">Multi-VO Features&lt;/h2>
-&lt;p>From a users perspective, whether the instance is multi or single VO should not functionality.
-Furthermore, VO does not need to be provided.
-There are however some occasions when an optional argument for the VO can be given in a multi-VO instance.&lt;/p>
+&lt;p>From a users perspective, whether the instance is multi or single VO should not change any functionality.
+Furthermore, depending on the client setup, VO does not need to be provided.
+There are however, some occasions when an optional argument for the VO can be given in a multi-VO instance.&lt;/p>
 &lt;h3 id="swapping-vos">Swapping VOs&lt;/h3>
 &lt;p>Just like how an identity can be associated with (and used to authenticate
 against) multiple accounts, the same identity can be used for accounts at more
@@ -203,9 +463,7 @@ present, and the VO set there will be used (unless the environment variable
 &lt;code>RUCIO_VO&lt;/code> is also set, in which case the latter takes precedent). Both will be
 ignored however if the VO is passed as an optional argument in the CLI or
 Python client. Using this optional argument allows a user to quickly run
-commands on a different VO they have access to. On the Bastion node, this is
-also an alternative method to setting the environment variable for VO (note
-that it will need to be passed for every command however).&lt;/p>
+commands on a different VO they have access to.&lt;/p>
 &lt;h4 id="cli-example-4">CLI Example&lt;/h4>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio whoami
 status : ACTIVE
@@ -234,217 +492,4 @@ email : N/A
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT_XYX&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Client&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">vo&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;xyz&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT_XYZ&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">whoami&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;status&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;ACTIVE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;account&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;jdoes_xyz_account&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;account_type&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;USER&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;created_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;2020-08-11T12:13:58&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;updated_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;2020-08-11T12:13:58&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;suspended_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">None&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;deleted_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">None&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;email&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;N/A&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: Rucio Commands</title><link>/users/rucio/rucio-commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/rucio-commands/</guid><description>
-&lt;h2 id="commands-to-get-started-with-rucio">Commands to get started with Rucio&lt;/h2>
-&lt;p>There are many commands found within Rucio CLI that you may want to become familar with.
-In this guide I will provide a few of the common commands wanted by new users.&lt;/p>
-&lt;p>To find more of the commands that you may want to use type &lt;code>rucio&lt;/code>
-into the containerised client will provide all of the arguments for rucio.
-Typing in the command followed by &lt;code>-h&lt;/code>,
-or &lt;code>--help&lt;/code> will provide you with all the options that are available
-as well as some explaination for each.&lt;/p>
-&lt;h3 id="ping">ping&lt;/h3>
-&lt;p>&lt;code>$ rucio ping&lt;/code>&lt;/p>
-&lt;p>Is the simplest command that a user can use to ask the Rucio server which version it is using.
-This checks that there is a connection between the containerised client and the server.&lt;/p>
-&lt;h2 id="whoami">whoami&lt;/h2>
-&lt;p>&lt;code>$ rucio whoami&lt;/code>&lt;/p>
-&lt;p>Another simple command, which asks the server for the information Rucio has on the current user.
-This will return output like the following:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">status : ACTIVE
-account : user1
-account_type : USER
-created_at : YYYY-MM-DDTHH:MM:SS
-updated_at : YYYY-MM-DDTHH:MM:SS
-suspended_at : None
-deleted_at : None
-email : myemail@domail.country
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This ensures that you know which user you are interacting with Rucio as,
-this is very important if you get multiple accounts. But also verifies that the client is set up
-correctly.&lt;/p>
-&lt;h3 id="upload">upload&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio upload &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> --rse RSE &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--lifetime LIFETIME&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--scope SCOPE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--impl IMPL&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--register-after-upload&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--summary&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--guid GUID&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--protocol PROTOCOL&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--pfn PFN&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--name NAME&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--transfer-timeout TRANSFER_TIMEOUT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--recursive&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-args &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>args ...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Several of the options you will not need to be used as they will be set by the Rucio Admins
-of your VO when they set up the RSEs.
-Below are a list of options that you may find useful:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>RSE&lt;/code> is the Rucio Storage Element or site that you wish to store the data at,
-the list of available RSEs can be seen for your VO with the command
-&lt;code>rucio list-rses&lt;/code>.&lt;/li>
-&lt;li>&lt;code>Lifetime&lt;/code> is how long you wish the file to exist,
-not specifyting will make the file permenant until rucio is told to delete it.&lt;/li>
-&lt;li>&lt;code>Scope&lt;/code> can be used in many ways,
-but often can be an experiment name, or a user space, all users have their own scope assigned to them &lt;code>user.&amp;lt;username&amp;gt;&lt;/code>.&lt;/li>
-&lt;li>&lt;code>Register-after-upload&lt;/code> allows for files to be uploaded to the destination,
-and then registered with Rucio, rather than the other way around.
-This can be useful if your connection is intermittent.&lt;/li>
-&lt;li>&lt;code>Name&lt;/code> is the name of the file that it will be registered to Rucio with,
-if this is not set it will be the name of the file/s provided.&lt;/li>
-&lt;li>&lt;code>Recursive&lt;/code> Allows you to set the arg to a directory,
-and all files within that directory and any sub directories will be uploaded.&lt;/li>
-&lt;li>&lt;code>Args&lt;/code> is the path to the file, or files you wish to upload, this can be a single file,
-directory (with recursive set), or a list of files seperated with a space e.g.&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">rucio upload --rse main-rse file1 file2 file3 file4
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="get">get&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio get &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--dir DIR&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--allow-tape&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--rse RSE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--rses RSES&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--impl IMPL&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--protocol PROTOCOL&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--nrandom NRANDOM&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--ndownloader NDOWNLOADER&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--no-subdir&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--pfn PFN&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--archive-did ARCHIVE_DID&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--no-resolve-archives&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--ignore-checksum&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--transfer-timeout TRANSFER_TIMEOUT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--transfer-speed-timeout TRANSFER_SPEED_TIMEOUT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--aria&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--filter FILTER&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--scope SCOPE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--metalink METALINK_FILE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--deactivate-file-download-exceptions&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>dids &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>dids ...&lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>&lt;code>Dir&lt;/code> is the location within the container you wish for the files to be downloaded
-(if you wish to move these files outside of the container,
-you may want to mount a volume in the container to allow the files to persist).&lt;/li>
-&lt;li>&lt;code>RSE/s&lt;/code> specifying which RSE/s you wish to download the files from,
-leaving this blank will allow Ruico to decide which RSE/s is best.&lt;/li>
-&lt;li>&lt;code>nrandom&lt;/code> allows you to specify a number and if the target is a dataset or
-container will download n files from that DID.
-This allows you to check are correct before commiting to download the entire dataset or container.&lt;/li>
-&lt;li>&lt;code>dids&lt;/code> is the data identifier for the file, dataset or container you wish to download.&lt;/li>
-&lt;/ul>
-&lt;h3 id="add-rule">add-rule&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio add-rule &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--weight WEIGHT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--lifetime LIFETIME&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--grouping &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>DATASET,ALL,NONE&lt;span style="color:#ce5c00;font-weight:bold">}]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--locked&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--source-replica-expression SOURCE_REPLICA_EXPRESSION&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--notify NOTIFY&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--activity ACTIVITY&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--comment COMMENT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--ask-approval&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--asynchronous&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--delay-injection DELAY_INJECTION&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--account RULE_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--skip-duplicates&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-dids &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>dids ...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> copies rse_expression
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>&lt;code>lifetime&lt;/code> How long you want the file to persist before it can be deleted by Rucio.&lt;/li>
-&lt;li>&lt;code>locked&lt;/code> sets the dataset or container to a locked state, that prevents other files from being added or removed.&lt;/li>
-&lt;li>&lt;code>dids&lt;/code> the files within Rucio you wish to be replicates.&lt;/li>
-&lt;li>&lt;code>copies&lt;/code> How many copies of the data you want to make.&lt;/li>
-&lt;li>&lt;code>rse_expression&lt;/code> can either be a specific RSE, or can be a filter.
-expression, such as &lt;code>tape=True&lt;/code> or &lt;code>country=UK&lt;/code>
-and Rucio will place as many copies as was requested in different sites (when possible),
-to fulfil the rule.&lt;/li>
-&lt;/ul>
-&lt;h3 id="delete-rule">delete-rule&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio delete-rule &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--purge-replicas&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--all&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--rse_expression RSE_EXPRESSION&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--rses RSES&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--account RULE_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-rule_id
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>&lt;code>all&lt;/code> should not be used by users it it will attempt to delete all rules.&lt;/li>
-&lt;li>&lt;code>rse_expression&lt;/code> which RSE expression encapsulates the rules you wish to delete,
-either rse_expression, or RSE needs to be specified.&lt;/li>
-&lt;li>&lt;code>RSES&lt;/code> exactly which RSE is the target of the rule deletion.&lt;/li>
-&lt;li>&lt;code>account&lt;/code> which account requres the rule to be deleted,
-this is generally only needed by Rucio Admins
-and does not need to be specified if you are deleting your own rules.&lt;/li>
-&lt;li>&lt;code>rule_id&lt;/code> is a Rucio specific ID for the file that you wish to be deleted,
-a list of the rules,
-and their rule_ids that are within your account can be gotten by running &lt;code>rucio list-rules --account youraccountname&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;h3 id="list-rules">list-rules&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio list-rules &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--id RULE_ID&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--traverse&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--csv&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--file FILE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--account RULE_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--subscription ACCOUNT SUBSCRIPTION&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>did&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Provide a full list of the files IDs, account, scope, state, RSE/expression copies and expiry.&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>account&lt;/code> specify which account you wish to see the replication rules.&lt;/li>
-&lt;li>&lt;code>file&lt;/code> If you know the name of a specif file, this allows you to see all the rules are associated with the file.&lt;/li>
-&lt;li>&lt;code>did&lt;/code> If a dataset or container are listed, all rules associated with the specific DID will be displayed.&lt;/li>
-&lt;/ul></description></item><item><title>Users: Getting Started</title><link>/users/rucio/getting_started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/getting_started/</guid><description>
-&lt;h2 id="getting-started">Getting Started&lt;/h2>
-&lt;h3 id="getting-started-as-a-new-user">Getting Started as a new user&lt;/h3>
-&lt;ol>
-&lt;li>
-&lt;p>To get set up with a Rucio account please contact our &lt;a href="mailto:Rucio-Support@stfc365.onmicrosoft.com">support email&lt;/a>:&lt;/p>
-&lt;ul>
-&lt;li>Desired Username (usually initials and surname e.g. John Doe would have jdoe)&lt;/li>
-&lt;li>Your email&lt;/li>
-&lt;li>Name of the experiment / VO you are part of&lt;/li>
-&lt;li>Either:&lt;br>
-The subject of your eScience certificate&lt;br>
-or&lt;br>
-desired password&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>we can organise a video call to explain or take sensitive indormation if you prefer&lt;/strong>&lt;br>
-In Terms of testing you can join the test VO (dteam) to try Rucio as a service and its capabilities.&lt;br>
-&lt;strong>Please note that we are working on allowing Rucio accounts to be created and accessed with IAM services,&lt;/strong>
-&lt;strong>and &lt;a href="https://docs.egi.eu/users/check-in/">EGI Check-in&lt;/a>, but currently only support x509 and password access.&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Once our team has this information we will create you a Rucio account.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>You will then need to install a containerised client on your computer.&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Install Docker to run the container&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="https://www.docker.com/get-started">https://www.docker.com/get-started&lt;/a> (for windows users I would recommend using WSL2)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Follow the docker instructions to ensure it is running correctly.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Using openSSL you will need to split your grid certificate bundle into the certificate and key:&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>$ openssl pkcs12 -in &amp;lt;*.pfx&amp;gt; -out /sensible/path/usercert.pem -clcerts -nokeys&lt;/code>&lt;/p>
-&lt;p>&lt;code>$ openssl pkcs12 -in &amp;lt;*.pfx&amp;gt; -out /sensible/path/userkey.pem -nocerts -nodes&lt;/code>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Run the Docker container using the following command:&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>When running the block of code below please replaces all items within &lt;code>&amp;lt;&amp;gt;&lt;/code> with the relevent information.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ run &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_RUCIO_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://rucio-server.gridpp.rl.ac.uk:443 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_AUTH_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://rucio-server.gridpp.rl.ac.uk:443 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_AUTH_TYPE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x509 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CLIENT_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> CHAR VO NAME LOWERCASE&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CLIENT_CERT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/usercert.pem &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CLIENT_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/userkey.pem &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_ACCOUNT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;Rucio Username&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CA_CERT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/web/ca-first.pem &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-v &amp;lt;PATH/TO/e-Science CA 2B&amp;gt;:/opt/rucio/etc/web/ca-first.pem &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-v &amp;lt;PATH/TO/YOUR/USERCERT&amp;gt;:/opt/rucio/etc/usercert &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-v &amp;lt;PATH/TO/YOUR/USERKEY&amp;gt;:/opt/rucio/etc/userkey &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>--name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>rucio-client &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-it &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d rucio/rucio-clients
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This block of code may look large but it is configuring Rucio to connect to the Multi-VO Rucio at RAL,
-your account and VO details, where you are loading them into the container,
-and mounting the authentication details into the container.&lt;/p>
-&lt;p>The UK escience CA 2B can be &lt;a href="https://ca.grid-support.ac.uk/">obtained here&lt;/a>
-The 3 character VO name will be provided to you when you sign up for a Rucio account.&lt;/p>
-&lt;ol>
-&lt;li>Run the following commands inside the docker container to finalise set up:&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">cd&lt;/span> /opt/rucio/etc/
-$ cp userkey userkey.pem
-$ chmod &lt;span style="color:#0000cf;font-weight:bold">400&lt;/span> userkey.pem
-$ cp usercert usercert.pem
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>You should now have a fully set up Containerised Client for your Rucio Account&lt;/strong>
-&lt;strong>and VO which you can start in docker and use whenever you need it.&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>If not please contact Rucio support&lt;/li>
-&lt;/ul>
-&lt;h3 id="getting-started-as-a-new-vo">Getting started as a new VO&lt;/h3>
-&lt;ul>
-&lt;li>
-&lt;p>Contact our &lt;a href="mailto:Rucio-Support@stfc365.onmicrosoft.com">support email&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>We will set up a meeting to discuss Rucio, your needs, sites, and current set up to ensure that Rucio can work for you.&lt;/p>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
