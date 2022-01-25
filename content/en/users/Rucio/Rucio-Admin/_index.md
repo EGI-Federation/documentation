@@ -134,7 +134,12 @@ require one or more of the
 running in order to take effect. For a multi-VO instance, these should be
 running for all VOs already. However, on new VO's joining Rucio
 some updating of the daemons will be neccessary.
+
+<!-- markdown-link-check-disable -->
+
 If it seems like it is not quite right please contact the Rucio team through [GGUS](https://ggus.eu/?mode=ticket_submit).
+
+<!-- markdown-link-check-enable -->
 
 ## Uploading Data
 

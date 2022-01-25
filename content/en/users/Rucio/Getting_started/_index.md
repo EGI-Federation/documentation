@@ -31,6 +31,8 @@ e.g. experiment1:file1.
 
 ### Getting Started as a new user
 
+<!-- markdown-link-check-disable -->
+
 1. To get set up with a Rucio account please create a ticket on [GGUS](https://ggus.eu/?mode=ticket_submit).
 Please fill in the form with a subject, description, ticket catagory - service request,
 priortiy - less urgent, and under routing information please selct Assign to support unit - Rucio).
@@ -43,6 +45,8 @@ Within the ticket description please include:
         The subject of your eScience certificate  
         or  
         desired password  
+
+<!-- markdown-link-check-enable -->
 
 **we can organise a video call to explain or take sensitive information if you prefer**  
 In Terms of testing you can join the test VO (dteam) to try Rucio as a service and its capabilities.  
@@ -110,6 +114,8 @@ $ cp usercert usercert.pem
 
 ### Getting started as a new VO
 
+<!-- markdown-link-check-disable -->
+
 - To get set up with a new VO on Multi-VO Rucio account please create a ticket on
 [ggus](https://ggus.eu/?mode=ticket_submit).
 Please fill in the form with a subject, description, ticket catagory - service request,
@@ -117,3 +123,5 @@ priortiy - less urgent, and under routing information please select 'assign to s
 
 - We will set up a meeting to discuss Rucio, your needs, sites,
 and current set up to ensure that Rucio can work for you, and will track progress with the ticket.
+
+<!-- markdown-link-check-enable -->
