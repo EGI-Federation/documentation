@@ -36,7 +36,7 @@ e.g. experiment1:file1.
 
 1. To get set up with a Rucio account please create a ticket on [GGUS](https://ggus.eu/?mode=ticket_submit).
 Please fill in the form with a subject, description, ticket catagory - service request,
-priortiy - less urgent, and under routing information please selct Assign to support unit - Rucio).
+priority - less urgent, and under routing information please select Assign to support unit - Rucio).
 Within the ticket description please include:
 
     - Desired Username (usually initials and surname e.g. John Doe would have jdoe)  
