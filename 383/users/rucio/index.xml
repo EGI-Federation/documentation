@@ -24,7 +24,6 @@ This is made up from the scope, and the filename within Rucio seperated by a col
 e.g. experiment1:file1.&lt;/li>
 &lt;/ul>
 &lt;h3 id="getting-started-as-a-new-user">Getting Started as a new user&lt;/h3>
-&lt;!-- markdown-link-check-disable -->
 &lt;ol>
 &lt;li>
 &lt;p>To get set up with a Rucio account please create a ticket on &lt;a href="https://ggus.eu/?mode=ticket_submit">GGUS&lt;/a>.
@@ -36,14 +35,11 @@ Within the ticket description please include:&lt;/p>
 &lt;li>Your email&lt;/li>
 &lt;li>Name of the experiment / VO you are part of&lt;/li>
 &lt;li>Either:&lt;br>
-The subject of your eScience certificate&lt;br>
-or&lt;br>
-desired password&lt;/li>
+The subject of your eScience certificate&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ol>
-&lt;!-- markdown-link-check-enable -->
-&lt;p>&lt;strong>we can organise a video call to explain or take sensitive information if you prefer&lt;/strong>&lt;br>
+&lt;p>&lt;strong>If you want password access we can organise a video call to explain or take sensitive information if you prefer&lt;/strong>&lt;br>
 In Terms of testing you can join the test VO (dteam) to try Rucio as a service and its capabilities.&lt;br>
 &lt;strong>Please note that we are working on allowing Rucio accounts to be created and accessed with IAM services,&lt;/strong>
 &lt;strong>and &lt;a href="https://docs.egi.eu/users/check-in/">EGI Check-in&lt;/a>, but currently only support x509 and password access.&lt;/strong>&lt;/p>
@@ -54,42 +50,34 @@ In Terms of testing you can join the test VO (dteam) to try Rucio as a service a
 &lt;li>
 &lt;p>You will then need to install a containerised client on your computer.&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>Install Docker to run the container&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="https://www.docker.com/get-started">https://www.docker.com/get-started&lt;/a> (for windows users I would recommend using WSL2)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Follow the docker instructions to ensure it is running correctly.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Using openSSL you will need to split your grid certificate bundle into the certificate and key:&lt;/p>
-&lt;/li>
+&lt;li>Install Docker to run the container&lt;/li>
+&lt;li>&lt;a href="https://www.docker.com/get-started">https://www.docker.com/get-started&lt;/a> (for windows users I would recommend using WSL2)&lt;/li>
+&lt;li>Follow the docker instructions to ensure it is running correctly.&lt;/li>
+&lt;li>Using openSSL you will need to split your grid certificate bundle into the certificate and key:&lt;/li>
 &lt;/ul>
-&lt;p>&lt;code>$ openssl pkcs12 -in &amp;lt;*.pfx&amp;gt; -out /sensible/path/usercert.pem -clcerts -nokeys&lt;/code>&lt;/p>
-&lt;p>&lt;code>$ openssl pkcs12 -in &amp;lt;*.pfx&amp;gt; -out /sensible/path/userkey.pem -nocerts -nodes&lt;/code>&lt;/p>
-&lt;/li>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openssl pkcs12 -in &amp;lt;*.pfx&amp;gt; -out /sensible/path/usercert.pem -clcerts -nokeys
+$ openssl pkcs12 -in &amp;lt;*.pfx&amp;gt; -out /sensible/path/userkey.pem -nocerts -nodes
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>Run the Docker container using the following command:&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;p>When running the block of code below please replaces all items within &lt;code>&amp;lt;&amp;gt;&lt;/code> with the relevent information.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ run &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_RUCIO_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://rucio-server.gridpp.rl.ac.uk:443 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_AUTH_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://rucio-server.gridpp.rl.ac.uk:443 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_AUTH_TYPE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x509 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CLIENT_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> CHAR VO NAME LOWERCASE&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CLIENT_CERT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/usercert.pem &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CLIENT_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/userkey.pem &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_ACCOUNT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;Rucio Username&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-e &lt;span style="color:#000">RUCIO_CFG_CA_CERT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/web/ca-first.pem &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-v &amp;lt;PATH/TO/e-Science CA 2B&amp;gt;:/opt/rucio/etc/web/ca-first.pem &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-v &amp;lt;PATH/TO/YOUR/USERCERT&amp;gt;:/opt/rucio/etc/usercert &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-v &amp;lt;PATH/TO/YOUR/USERKEY&amp;gt;:/opt/rucio/etc/userkey &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>--name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>rucio-client &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-it &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>-d rucio/rucio-clients
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">RUCIO_CFG_RUCIO_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://rucio-server.gridpp.rl.ac.uk:443 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">RUCIO_CFG_AUTH_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://rucio-server.gridpp.rl.ac.uk:443 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">RUCIO_CFG_AUTH_TYPE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x509 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">RUCIO_CFG_CLIENT_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> CHAR VO NAME LOWERCASE&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">RUCIO_CFG_CLIENT_CERT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/usercert.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">RUCIO_CFG_CLIENT_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/userkey.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">RUCIO_CFG_ACCOUNT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;Rucio Username&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">RUCIO_CFG_CA_CERT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/rucio/etc/web/ca-first.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -v &amp;lt;PATH/TO/e-Science CA 2B&amp;gt;:/opt/rucio/etc/web/ca-first.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -v &amp;lt;PATH/TO/YOUR/USERCERT&amp;gt;:/opt/rucio/etc/usercert &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -v &amp;lt;PATH/TO/YOUR/USERKEY&amp;gt;:/opt/rucio/etc/userkey &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>rucio-client &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -it &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d rucio/rucio-clients
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>This block of code may look large but it is configuring Rucio to connect to the Multi-VO Rucio at RAL,
 your account and VO details, where you are loading them into the container,
 and mounting the authentication details into the container.&lt;/p>
@@ -108,7 +96,6 @@ $ cp usercert usercert.pem
 &lt;li>If not please contact Rucio support&lt;/li>
 &lt;/ul>
 &lt;h3 id="getting-started-as-a-new-vo">Getting started as a new VO&lt;/h3>
-&lt;!-- markdown-link-check-disable -->
 &lt;ul>
 &lt;li>
 &lt;p>To get set up with a new VO on Multi-VO Rucio account please create a ticket on
@@ -120,8 +107,7 @@ priortiy - less urgent, and under routing information please select &amp;lsquo;a
 &lt;p>We will set up a meeting to discuss Rucio, your needs, sites,
 and current set up to ensure that Rucio can work for you, and will track progress with the ticket.&lt;/p>
 &lt;/li>
-&lt;/ul>
-&lt;!-- markdown-link-check-enable --></description></item><item><title>Users: Rucio Commands</title><link>/users/rucio/rucio-commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/rucio-commands/</guid><description>
+&lt;/ul></description></item><item><title>Users: Rucio Commands</title><link>/users/rucio/rucio-commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/rucio-commands/</guid><description>
 &lt;h2 id="commands-to-get-started-with-rucio">Commands to get started with Rucio&lt;/h2>
 &lt;p>There are many commands found within Rucio CLI that you may want to become familar with.
 In this guide I will provide a few of the common commands wanted by new users.&lt;/p>
@@ -132,12 +118,12 @@ or &lt;code>--help&lt;/code> will provide you with all the options that are avai
 as well as some explaination for each.&lt;/p>
 &lt;h3 id="ping">ping&lt;/h3>
 &lt;p>Is the simplest command that a user can use to ask the Rucio server which version it is using.&lt;/p>
-&lt;p>&lt;code>$ rucio ping&lt;/code>&lt;/p>
-&lt;p>This checks that there is a connection between the containerised client and the server.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio ping
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This checks that there is a connection between the containerised client and the server.&lt;/p>
 &lt;h2 id="whoami">whoami&lt;/h2>
 &lt;p>Another simple command, which asks the server for the information Rucio has on the current user.&lt;/p>
-&lt;p>&lt;code>$ rucio whoami&lt;/code>&lt;/p>
-&lt;p>This will return output like the following:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio whoami
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will return output like the following:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">status : ACTIVE
 account : user1
 account_type : USER
@@ -157,8 +143,7 @@ correctly.&lt;/p>
 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--name NAME&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--transfer-timeout TRANSFER_TIMEOUT&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--recursive&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 args &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>args ...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Several of the options you will not need to be used as they will be set by the Rucio Admins
-of your VO when they set up the RSEs.
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Several of the options you will not need to use as they will be set by the Rucio VO Admins when they set up the RSEs.
 Below are a list of options that you may find useful:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>RSE&lt;/code> is the Rucio Storage Element or site that you wish to store the data at,
@@ -172,7 +157,7 @@ but often can be an experiment name, or a user space, all users have their own s
 and then registered with Rucio, rather than the other way around.
 This can be useful if your connection is intermittent.&lt;/li>
 &lt;li>&lt;code>Name&lt;/code> is the name of the file that it will be registered to Rucio with,
-if this is not set it will be the name of the file/s provided.&lt;/li>
+if this is not set it will be the name of the file or files provided.&lt;/li>
 &lt;li>&lt;code>Recursive&lt;/code> Allows you to set the arg to a directory,
 and all files within that directory and any sub directories will be uploaded.&lt;/li>
 &lt;li>&lt;code>Args&lt;/code> is the path to the file, or files you wish to upload, this can be a single file,
@@ -194,8 +179,8 @@ directory (with recursive set), or a list of files seperated with a space e.g.&l
 &lt;li>&lt;code>Dir&lt;/code> is the location within the container you wish for the files to be downloaded
 (if you wish to move these files outside of the container,
 you may want to mount a volume in the container to allow the files to persist).&lt;/li>
-&lt;li>&lt;code>RSE/s&lt;/code> specifying which RSE/s you wish to download the files from,
-leaving this blank will allow Ruico to decide which RSE/s is best.&lt;/li>
+&lt;li>&lt;code>RSE(s)&lt;/code> specifying which RSE(s) you wish to download the files from,
+leaving this blank will allow Rucio to decide which RSE(s) are best.&lt;/li>
 &lt;li>&lt;code>nrandom&lt;/code> allows you to specify a number and if the target is a dataset or
 container will download n files from that DID.
 This allows you to check are correct before commiting to download the entire dataset or container.&lt;/li>
@@ -268,15 +253,21 @@ The identities bind authentication methods and permissions to the account.
 The account you want to create identities for is input as an argument.
 Accounts will have different permissions and access (such as how much data they can store on a particular &lt;a href="https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html">RSE&lt;/a>).&lt;/p>
 &lt;h3 id="cli-example">CLI Example&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio-admin account add --type USER --email jdoe@email.com jdoe
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio-admin account add &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --type USER &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --email jdoe@email.com jdoe
 Added new account: jdoe
-$ rucio-admin identity add --account jdoe --type USER --id userjdoe --email jdoe@email.com --password jdoepass
+$ rucio-admin identity add &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --account jdoe &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --type USER &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --id userjdoe &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --email jdoe@email.com &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --password jdoepass
 Added new identity to account: userjdoe-jdoe
 $ rucio-admin account set-limits jdoe storagesite1 100GB
 Set account limit &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> account jdoe on RSE storagesite1: 100.000 GB
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="python-client-example">Python Client Example&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#a40000">$&lt;/span> &lt;span style="color:#000">python&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Client&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">add_account&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;jdoe&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;USER&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;jdoe@email.com&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
@@ -284,24 +275,62 @@ Set account limit &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> 
 &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">set_account_limit&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;jdoe&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;storagesite1&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">107374182400&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;global&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="creating-rses">Creating RSEs&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="creating-rses">Creating RSE(s)&lt;/h2>
 &lt;p>&lt;a href="https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html">Rucio Storage Elements&lt;/a>
 (RSEs) are how Rucio represents the physical storage available to your VO. As
 with many aspects of Rucio there are a lot of optional attributes that can be
 set for an RSE, but as a minimum a protocol for transfers need to be added
 before it can be used.&lt;/p>
-&lt;h3 id="cli-example-1">CLI Example&lt;/h3>
+&lt;h3 id="creating-rses-cli-example">Creating RSE(s) CLI Example&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio-admin rse add NEW_RSE
 Added new deterministic RSE: NEW_RSE
-$ rucio-admin rse add-protocol --hostname test.org --scheme gsiftp --prefix &lt;span style="color:#4e9a06">&amp;#39;/filepath/rucio/&amp;#39;&lt;/span> --port &lt;span style="color:#0000cf;font-weight:bold">8443&lt;/span> NEW_RSE --domain-json &lt;span style="color:#4e9a06">&amp;#39;{&amp;#34;wan&amp;#34;: {&amp;#34;read&amp;#34;: 1, &amp;#34;write&amp;#34;: 1, &amp;#34;third_party_copy&amp;#34;: 0, &amp;#34;delete&amp;#34;: 1}, &amp;#34;lan&amp;#34;: {&amp;#34;read&amp;#34;: 1, &amp;#34;write&amp;#34;: 1,&amp;#34;third_party_copy&amp;#34;: 0, &amp;#34;delete&amp;#34;: 1}}&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="python-client-example-1">Python Client Example&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#a40000">$&lt;/span> &lt;span style="color:#000">python&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
+$ rucio-admin rse add-protocol &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --hostname test.org &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --scheme gsiftp &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --prefix &lt;span style="color:#4e9a06">&amp;#39;/filepath/rucio/&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --port &lt;span style="color:#0000cf;font-weight:bold">8443&lt;/span> NEW_RSE &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --domain-json &lt;span style="color:#4e9a06">&amp;#39;{
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;wan&amp;#34;: {
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;read&amp;#34;: 1,
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;write&amp;#34;: 1,
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;third_party_copy&amp;#34;: 0,
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;delete&amp;#34;: 1
+&lt;/span>&lt;span style="color:#4e9a06"> },
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;lan&amp;#34;: {
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;read&amp;#34;: 1,
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;write&amp;#34;: 1,
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;third_party_copy&amp;#34;: 0,
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;delete&amp;#34;: 1
+&lt;/span>&lt;span style="color:#4e9a06"> }
+&lt;/span>&lt;span style="color:#4e9a06"> }&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="creating-rses-python-client-example">Creating RSE(s) Python Client Example&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Client&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">add_rse&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;NEW_RSE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">add_protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;NEW_RSE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;hostname&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;test.org&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;scheme&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;gsiftp&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;prefix&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;/filepath/rucio/&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;port&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">8443&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;impl&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;rucio.rse.protocols.gfalv2.Default&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;domain&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;wan&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;read&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;write&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;third_party_copy&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;delete&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">},&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;lan&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;read&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;write&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;third_party_copy&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;delete&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">}}})&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">add_protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;NEW_RSE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;hostname&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;test.org&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;scheme&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;gsiftp&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;prefix&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;/filepath/rucio/&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;port&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">8443&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;impl&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;rucio.rse.protocols.gfalv2.Default&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;domain&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;wan&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;read&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;write&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;third_party_copy&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;delete&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;lan&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;read&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;write&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;third_party_copy&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;delete&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="updating-rse-protocols">Updating RSE Protocols&lt;/h2>
 &lt;p>On occasion, it may be necessary to change or update an RSE protocol.
@@ -312,16 +341,28 @@ and then add (&lt;code>rucio-admin rse add-protocol&lt;/code>) it again using di
 Alternatively, the Python client has additional functionality to directly update or swap the priority of RSE protocols.
 For example to update the &lt;code>impl&lt;/code> without changing anything else (the &lt;code>data&lt;/code> argument is used to update the protocol,
 with the other settings used to specify the protocol to change):&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#a40000">$&lt;/span> &lt;span style="color:#000">python&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Client&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">update_protocols&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">rse&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;NEW_RSE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">scheme&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;gsiftp&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">data&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;impl&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">rucio&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">rse&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">protocols&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">gfal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Default&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;}, hostname=&amp;#39;&lt;/span>&lt;span style="color:#000">test&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">org&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;, port=8433)&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">update_protocols&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#000">rse&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;NEW_RSE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">scheme&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;gsiftp&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">data&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;impl&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">rucio&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">rse&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">protocols&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">gfal&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Default&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;span style="color:#000">hostname&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;test.org&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">port&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">8433&lt;/span>
+&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>To swap the priority of two protocols for the third party copy operation:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#a40000">$&lt;/span> &lt;span style="color:#000">python&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Client&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">swap_protocols&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">rse&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;NEW_RSE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">domain&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;wan&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">operation&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;third_party_copy&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">scheme_a&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;gsiftp&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">scheme_b&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">swap_protocols&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;span style="color:#000">rse&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;NEW_RSE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">domain&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;wan&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">operation&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;third_party_copy&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">scheme_a&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;gsiftp&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">scheme_b&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;root&amp;#39;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s also worth noting that when an RSE is deleted using &lt;code>rucio-admin rse delete&lt;/code>,
 the entry remains in the database.
@@ -342,9 +383,7 @@ require one or more of the
 running in order to take effect. For a multi-VO instance, these should be
 running for all VOs already. However, on new VO&amp;rsquo;s joining Rucio
 some updating of the daemons will be neccessary.&lt;/p>
-&lt;!-- markdown-link-check-disable -->
 &lt;p>If it seems like it is not quite right please contact the Rucio team through &lt;a href="https://ggus.eu/?mode=ticket_submit">GGUS&lt;/a>.&lt;/p>
-&lt;!-- markdown-link-check-enable -->
 &lt;h2 id="uploading-data">Uploading Data&lt;/h2>
 &lt;p>In Rucio files and their replicas are represented by Data IDentifiers
 (&lt;a href="https://rucio.readthedocs.io/en/latest/overview_File_Dataset_Container.html">DIDs&lt;/a>),
@@ -359,7 +398,7 @@ admin.&lt;/p>
 &lt;p>Once a file has been uploaded via the CLI or Python client, it can then be
 attached to a dataset. It&amp;rsquo;s worth noting that by default, some Rucio commands
 will not list files, only datasets.&lt;/p>
-&lt;h3 id="cli-example-2">CLI Example&lt;/h3>
+&lt;h3 id="uploading-data-cli-example">Uploading Data CLI Example&lt;/h3>
 &lt;p>Assuming the file &lt;code>test.txt&lt;/code> exists locally:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio-admin scope add --account root --scope user.root
 Added new scope to account: user.root-root
@@ -392,10 +431,9 @@ $ rucio list-content user.root:test_dataset
 &lt;span style="color:#000;font-weight:bold">|&lt;/span>--------------------+--------------&lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> user.root:test.txt &lt;span style="color:#000;font-weight:bold">|&lt;/span> FILE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +--------------------+--------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="python-client-example-2">Python Client Example&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="uploading-data-python-client-example">Uploading Data Python Client Example&lt;/h3>
 &lt;p>Assuming the file &lt;code>test.txt&lt;/code> exists locally:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#000">python&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Client&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">add_scope&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;user.root&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
@@ -413,7 +451,7 @@ $ rucio list-content user.root:test_dataset
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">attach_dids&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;user.root&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;test_dataset&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000;font-weight:bold">[{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;scope&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;user.root&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;name&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;test.txt&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">}])&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87">list&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">list_content&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;user.root&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;test_dataset&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">))&lt;/span>
 &lt;span style="color:#000;font-weight:bold">[{&lt;/span>&lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;adler32&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;00000001&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;name&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;test.txt&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;bytes&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;scope&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;user.root&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;FILE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;md5&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;d41d8cd98f00b204e9800998ecf8427e&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">}]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="replication-rules">Replication Rules&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="adding-replication-rules">Adding Replication Rules&lt;/h2>
 &lt;p>Once a DID exists within the Rucio catalogue, replicas of that file, dataset or
 collection are created and maintained by
 &lt;a href="https://rucio.readthedocs.io/en/latest/overview_Replica_management.html">Replication rules&lt;/a>.
@@ -422,7 +460,7 @@ a replication rule is created for that file,
 however rules can also be added for existing DIDs.
 As a minimum an RSE and number of copies must be specified, but further options such as lifetime of
 the rule and selecting RSEs based on user set attributes are also possible.&lt;/p>
-&lt;h3 id="cli-example-3">CLI Example&lt;/h3>
+&lt;h3 id="adding-replication-rules-cli-example">Adding Replication Rules CLI Example&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell"> $ rucio list-rules --account root
 ID ACCOUNT SCOPE:NAME STATE&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>OK/REPL/STUCK&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> RSE_EXPRESSION COPIES EXPIRES &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>UTC&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> CREATED &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>UTC&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 -------------------------------- --------- ------------------ ---------------------- ---------------- -------- --------------- -------------------
@@ -434,12 +472,11 @@ ID ACCOUNT SCOPE:NAME STATE&lt;span style="color:#ce5c00;font-weight:bold">[&lt;
 -------------------------------- --------- ---------------------- ---------------------- ---------------- -------- --------------- -------------------
 991f9ace7ed74cad989efde90b6a23c5 root user.root:test.txt OK&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>1/0/0&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> NEW_RSE &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2020-08-14 15:28:15
 bd51b767ef524878bb3cc68db16d2374 root user.root:test_dataset OK&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>1/0/0&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> NEW_RSE &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2020-08-14 15:47:15
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="python-client-example-3">Python Client Example&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="adding-replication-rules-python-client-example">Adding Replication Rules Python Client Example&lt;/h3>
 &lt;!--
 // jscpd:ignore-start
 -->
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#a40000">$&lt;/span> &lt;span style="color:#000">python&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Client&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87">list&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">list_account_rules&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">))&lt;/span>
 &lt;span style="color:#000;font-weight:bold">[{&lt;/span>&lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;locks_ok_cnt&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;source_replica_expression&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">None&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;locks_stuck_cnt&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;purge_replicas&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">False&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;rse_expression&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;NEW_RSE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;updated_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">datetime&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">datetime&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2020&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">14&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">28&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;meta&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">None&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -473,7 +510,7 @@ present, and the VO set there will be used (unless the environment variable
 ignored however if the VO is passed as an optional argument in the CLI or
 Python client. Using this optional argument allows a user to quickly run
 commands on a different VO they have access to.&lt;/p>
-&lt;h4 id="cli-example-4">CLI Example&lt;/h4>
+&lt;h4 id="swapping-vos-cli-example">Swapping VOs CLI Example&lt;/h4>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rucio whoami
 status : ACTIVE
 account : jdoes_abc_account
@@ -492,9 +529,8 @@ updated_at : 2020-08-11T12:13:58
 suspended_at : None
 deleted_at : None
 email : N/A
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="python-client-example-4">Python Client Example&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#a40000">$&lt;/span> &lt;span style="color:#000">python&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="swapping-vos-python-client-example">Swapping VOs Python Client Example&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">rucio.client&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">Client&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">Client&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">whoami&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;status&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;ACTIVE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;account&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;jdoes_abc_account&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;account_type&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;USER&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;created_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;2020-08-07T08:27:29&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;updated_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;2020-08-07T08:27:29&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;suspended_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">None&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;deleted_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">None&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;email&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;N/A&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
