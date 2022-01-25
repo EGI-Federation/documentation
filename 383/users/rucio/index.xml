@@ -2,9 +2,12 @@
 &lt;h2 id="getting-started">Getting Started&lt;/h2>
 &lt;h3 id="rucio-terms">Rucio terms&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html">&lt;strong>RSE&lt;/strong>&lt;/a> - An acronym which stands for &amp;lsquo;Rucio Storage Element&amp;rsquo;. Another name for an endpoint, or storage solution.&lt;/li>
-&lt;li>&lt;a href="https://rucio.readthedocs.io/en/latest/replication_rules_examples.html">&lt;strong>Rule&lt;/strong>&lt;/a> - A Rucio rule is an instruction to Rucio to do a certain thing.
-This can be ensure file x has at least 1 copy at storagesite1, or ensure file y is on tape, or even on tape at more than 1 location,
+&lt;li>&lt;a href="https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html">&lt;strong>RSE&lt;/strong>&lt;/a> -
+An acronym which stands for &amp;lsquo;Rucio Storage Element&amp;rsquo;. Another name for an endpoint, or storage solution.&lt;/li>
+&lt;li>&lt;a href="https://rucio.readthedocs.io/en/latest/replication_rules_examples.html">&lt;strong>Rule&lt;/strong>&lt;/a> -
+A Rucio rule is an instruction to Rucio to do a certain thing.
+This can be ensure file x has at least 1 copy at storagesite1,
+or ensure file y is on tape, or even on tape at more than 1 location,
 or even file z has 2 copies at any site within a selection of sites.
 How you set up the RSE and the attributes you give them allows for many different ways to create and use rules.
 Once a rule is created Rucio will get to work to ensure that the rule is True at all times.&lt;/li>
@@ -17,10 +20,11 @@ But also experiments, sub-experiments,
 or however you wish to orgaise the data can also have scopes.
 Accounts can be given access to scopes by VO admins.&lt;/li>
 &lt;li>&lt;strong>DID&lt;/strong> - A DID is an acronym that stands for &amp;lsquo;Data IDentifier&amp;rsquo;.
-This is made up from the scope, and the file name within Rucio seperated by a colon.
+This is made up from the scope, and the filename within Rucio seperated by a colon.
 e.g. experiment1:file1.&lt;/li>
 &lt;/ul>
 &lt;h3 id="getting-started-as-a-new-user">Getting Started as a new user&lt;/h3>
+&lt;!-- markdown-link-check-disable -->
 &lt;ol>
 &lt;li>
 &lt;p>To get set up with a Rucio account please create a ticket on &lt;a href="https://ggus.eu/?mode=ticket_submit">GGUS&lt;/a>.
@@ -38,6 +42,7 @@ desired password&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ol>
+&lt;!-- markdown-link-check-enable -->
 &lt;p>&lt;strong>we can organise a video call to explain or take sensitive information if you prefer&lt;/strong>&lt;br>
 In Terms of testing you can join the test VO (dteam) to try Rucio as a service and its capabilities.&lt;br>
 &lt;strong>Please note that we are working on allowing Rucio accounts to be created and accessed with IAM services,&lt;/strong>
@@ -103,6 +108,7 @@ $ cp usercert usercert.pem
 &lt;li>If not please contact Rucio support&lt;/li>
 &lt;/ul>
 &lt;h3 id="getting-started-as-a-new-vo">Getting started as a new VO&lt;/h3>
+&lt;!-- markdown-link-check-disable -->
 &lt;ul>
 &lt;li>
 &lt;p>To get set up with a new VO on Multi-VO Rucio account please create a ticket on
@@ -114,7 +120,8 @@ priortiy - less urgent, and under routing information please select &amp;lsquo;a
 &lt;p>We will set up a meeting to discuss Rucio, your needs, sites,
 and current set up to ensure that Rucio can work for you, and will track progress with the ticket.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Users: Rucio Commands</title><link>/users/rucio/rucio-commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/rucio-commands/</guid><description>
+&lt;/ul>
+&lt;!-- markdown-link-check-enable --></description></item><item><title>Users: Rucio Commands</title><link>/users/rucio/rucio-commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/rucio-commands/</guid><description>
 &lt;h2 id="commands-to-get-started-with-rucio">Commands to get started with Rucio&lt;/h2>
 &lt;p>There are many commands found within Rucio CLI that you may want to become familar with.
 In this guide I will provide a few of the common commands wanted by new users.&lt;/p>
@@ -334,8 +341,10 @@ require one or more of the
 &lt;a href="https://rucio.readthedocs.io/en/latest/man/daemons.html">daemons&lt;/a> to be
 running in order to take effect. For a multi-VO instance, these should be
 running for all VOs already. However, on new VO&amp;rsquo;s joining Rucio
-some updating of the daemons will be neccessary.
-If it seems like it is not quite right please contact the Rucio team through &lt;a href="https://ggus.eu/?mode=ticket_submit">GGUS&lt;/a>.&lt;/p>
+some updating of the daemons will be neccessary.&lt;/p>
+&lt;!-- markdown-link-check-disable -->
+&lt;p>If it seems like it is not quite right please contact the Rucio team through &lt;a href="https://ggus.eu/?mode=ticket_submit">GGUS&lt;/a>.&lt;/p>
+&lt;!-- markdown-link-check-enable -->
 &lt;h2 id="uploading-data">Uploading Data&lt;/h2>
 &lt;p>In Rucio files and their replicas are represented by Data IDentifiers
 (&lt;a href="https://rucio.readthedocs.io/en/latest/overview_File_Dataset_Container.html">DIDs&lt;/a>),
