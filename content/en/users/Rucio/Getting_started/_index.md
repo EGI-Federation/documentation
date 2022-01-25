@@ -12,8 +12,10 @@ description: >-
 ### Rucio terms
 
 - [**RSE**](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html) - An acronym which stands for 'Rucio Storage Element'. Another name for an endpoint, or storage solution.
-- [**Rule**](https://rucio.readthedocs.io/en/latest/replication_rules_examples.html) - A Rucio rule is an instruction to Rucio to do a certain thing.
-This can be ensure file x has at least 1 copy at storagesite1, or ensure file y is on tape, or even on tape at more than 1 location,
+- [**Rule**](https://rucio.readthedocs.io/en/latest/replication_rules_examples.html) -
+A Rucio rule is an instruction to Rucio to do a certain thing.
+This can be ensure file x has at least 1 copy at storagesite1,
+or ensure file y is on tape, or even on tape at more than 1 location,
 or even file z has 2 copies at any site within a selection of sites.
 How you set up the RSE and the attributes you give them allows for many different ways to create and use rules.
 Once a rule is created Rucio will get to work to ensure that the rule is True at all times.
@@ -23,10 +25,10 @@ Once a rule is created Rucio will get to work to ensure that the rule is True at
 - **Scope** - This is a collection in which files, datasets, and containers are placed.
 Users will have their own scope, often user.username.
 But also experiments, sub-experiments,
-or however you wish to orgaise the data can also have scopes. 
+or however you wish to orgaise the data can also have scopes.
 Accounts can be given access to scopes by VO admins.
-- **DID** - A DID is an acronym that stands for 'Data IDentifier'. 
-This is made up from the scope, and the file name within Rucio seperated by a colon.
+- **DID** - A DID is an acronym that stands for 'Data IDentifier'.
+This is made up from the scope, and the filename within Rucio seperated by a colon.
 e.g. experiment1:file1.
 
 ### Getting Started as a new user

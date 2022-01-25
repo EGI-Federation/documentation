@@ -116,7 +116,7 @@ This allows you to check are correct before commiting to download the entire dat
 ### add-rule
 
 Create a rule which Rucio will work to make true. These are often how files are moved from site to site.
-Creating a rule that says file x (which is currently at storagesite1), needs to be at storagesite2. 
+Creating a rule that says file x (which is currently at storagesite1), needs to be at storagesite2.
 Upon creation of the rule, Rucio will ensure that the file is moved from where is closest to the new site.
 
 ```shell
@@ -143,7 +143,7 @@ to fulfil the rule.
 
 A command to delete a rule which you have created.
 Just because you have deleted a rule does not mean the file will be deleted.
-But it will adjust your quota accordingly. 
+But it will adjust your quota accordingly.
 Other people within your VO may also having a rule that states the file needs to be at the same site.
 
 ```shell

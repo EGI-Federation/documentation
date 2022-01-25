@@ -17,7 +17,7 @@ Below are some of the tasks which VO admins will need to do to set up and mainta
 To add new users within your VO, you will need to communicate with Rucio as the VO admin.
 Then using the rucio-admin commands, create a new account and add identities to the account.
 The account is a username with no permissions, or authentication methods.
-The identities bind authentication methods and permissions to the account. 
+The identities bind authentication methods and permissions to the account.
 The account you want to create identities for is input as an argument.
 Accounts will have different permissions and access (such as how much data they can store on a particular [RSE](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)).
 
