@@ -23,7 +23,7 @@ e.g. experiment1:file1.&lt;/li>
 &lt;h3 id="getting-started-as-a-new-user">Getting Started as a new user&lt;/h3>
 &lt;ol>
 &lt;li>
-&lt;p>To get set up with a Rucio account please create a ticket on &lt;a href="https://ggus.eu/?mode=ticket_submit">ggus&lt;/a>.
+&lt;p>To get set up with a Rucio account please create a ticket on &lt;a href="https://ggus.eu/?mode=ticket_submit">GGUS&lt;/a>.
 Please fill in the form with a subject, description, ticket catagory - service request,
 priortiy - less urgent, and under routing information please selct Assign to support unit - Rucio).
 Within the ticket description please include:&lt;/p>
