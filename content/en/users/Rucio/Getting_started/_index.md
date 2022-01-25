@@ -11,7 +11,7 @@ description: >-
 
 ### Rucio terms
 
-- [**RSE**](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html) - 
+- [**RSE**](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html) -
 An acronym which stands for 'Rucio Storage Element'. Another name for an endpoint, or storage solution.
 - [**Rule**](https://rucio.readthedocs.io/en/latest/replication_rules_examples.html) -
 A Rucio rule is an instruction to Rucio to do a certain thing.
