@@ -132,9 +132,9 @@ Most operations in Rucio (such as transfers, deletions, rule evaluation)
 require one or more of the
 [daemons](https://rucio.readthedocs.io/en/latest/man/daemons.html) to be
 running in order to take effect. For a multi-VO instance, these should be
-running for all VOs already. However if it seems like nothing is happening
-following a command, it may be worth checking with the Rucio team that the daemons are
-running as intended.
+running for all VOs already. However, on new VO's joining Rucio
+some updating of the daemons will be neccessary.
+If it seems like it is not quite right please contact the Rucio team through [GGUS](https://ggus.eu/?mode=ticket_submit).
 
 ## Uploading Data
 
