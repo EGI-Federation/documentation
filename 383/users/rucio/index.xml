@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Multi-VO Rucio for data management</title><link>/users/rucio/</link><description>Recent content in Multi-VO Rucio for data management on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/rucio/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Getting Started</title><link>/users/rucio/getting_started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/getting_started/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Multi-VO Rucio for data management</title><link>/users/rucio/</link><description>Recent content in Multi-VO Rucio for data management on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/rucio/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Getting Started</title><link>/users/rucio/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/getting-started/</guid><description>
 &lt;h2 id="getting-started">Getting Started&lt;/h2>
 &lt;h3 id="rucio-terms">Rucio terms&lt;/h3>
 &lt;ul>
@@ -34,12 +34,13 @@ experiment1:file1.&lt;/li>
 subject, description, ticket catagory - service request, priority - less
 urgent, and under routing information please select Assign to support unit -
 Rucio). Within the ticket description please include:&lt;/p>
-&lt;pre>&lt;code>- Desired Username (usually initials and surname e.g. John Doe would have jdoe)
-- Your email
-- Name of the experiment / VO you are part of
-- Either:
-The subject of your eScience certificate
-&lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>Desired Username (usually initials and surname e.g. John Doe would have
+jdoe)&lt;/li>
+&lt;li>Your email&lt;/li>
+&lt;li>Name of the experiment / VO you are part of&lt;/li>
+&lt;li>The subject of your eScience certificate&lt;/li>
+&lt;/ul>
 &lt;/li>
 &lt;/ol>
 &lt;p>&lt;strong>If you want password access we can organise a video call to explain or take
@@ -120,7 +121,7 @@ Rucio).&lt;/p>
 up to ensure that Rucio can work for you, and will track progress with the
 ticket.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Users: Rucio Commands</title><link>/users/rucio/rucio-commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/rucio-commands/</guid><description>
+&lt;/ul></description></item><item><title>Users: Rucio Commands</title><link>/users/rucio/commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/commands/</guid><description>
 &lt;h2 id="commands-to-get-started-with-rucio">Commands to get started with Rucio&lt;/h2>
 &lt;p>There are many commands found within Rucio CLI that you may want to become
 familar with. In this guide I will provide a few of the common commands wanted
@@ -266,7 +267,7 @@ copies and expiry.&lt;/p>
 rules are associated with the file.&lt;/li>
 &lt;li>&lt;code>did&lt;/code> If a dataset or container are listed, all rules associated with the
 specific DID will be displayed.&lt;/li>
-&lt;/ul></description></item><item><title>Users: Rucio Admins</title><link>/users/rucio/rucio-admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/rucio-admin/</guid><description>
+&lt;/ul></description></item><item><title>Users: Rucio Admins</title><link>/users/rucio/admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/rucio/admin/</guid><description>
 &lt;p>Within Rucio there are several levels of Admins. There are the super admins
 which are the staff which run Multi-VO Rucio. Then there are VO specific admins
 which will look after the day to day of thier VO. Below are some of the tasks
