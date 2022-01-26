@@ -6,7 +6,7 @@ description: >
   EGI Helpdesk 
 ---
 
-placing some content to move
+placed content from
 https://wiki.egi.eu/wiki/FAQ_GGUS-Account
 https://wiki.egi.eu/wiki/FAQ_GGUS-Get-Support-Privileges
 
@@ -48,27 +48,6 @@ For adding your EGI SSO persistent ID to your account data please do the followi
 
 - click the button "Add my shibboleth id to my account" at the bottom of the yellow box.
 
-## I'm member of ggus-supporters.egi.eu group. Why don't I have support privileges in GGUS?
-
-**Pre-requisites: the email address of your EGI SSO account must be equal to the email address registered in GGUS!**
-
-- Case 1: user isn't registered in GGUS yet.
-
-Unregistered users have to register first. On [registration page](https://ggus.eu/?mode=register_info)
-you will see this text: “You are member of EGI AAI CheckIn ggus supporter. You will get
-automatically support right for the GGUS portal once you will submit this form.“
-Support permissions will be granted automatically.
-
-![Updating PersistentID](Account_Update_PersistentID.png)
-
-Click on the "Add my ...." button.
-
-- Case 2: user already registered in GGUS with an x509 DN.
-
-You can decide to add the shibboleth id to the existing account and check the updated account.
-In case the email addresses are different you may either harmonize your email address in EGI SSO
-and GGUS account or create a new account using EGI SSO data.
-
 ## Getting supporter privileges
 
 In order to process tickets assigned to the support unit you belong to, or in general tickets submitted
@@ -97,10 +76,41 @@ an automated e-mail from GGUS system confirming their support privileges.
 
 ![GGUS registration form](GGUS_Registration_Form.png)
 
-How can I contact the GGUS team?
-The GGUS team could be contacted by either using the Contact link in the navigation bar of GGUS
-home page or by sending an email to supportatnospamggus.org.
+Both authentication methods, x509 certificate and EGI AAI account, will be guaranteed in the future.
+Since the use of login and password will no longer be guaranteed in the future, it is recommended
+to access GGUS with a valid digital certificate or EGI AAI.
 
-What if I have questions which are not dealt with by this FAQ?
-Please submit a GGUS ticket or send your question by mail to supportatnospamggus.org.
+## Troubleshooting
+
+### I'm member of ggus-supporters.egi.eu group. Why don't I have support privileges in GGUS?
+
+**Pre-requisites: the email address of your EGI SSO account must be equal to the email address registered in GGUS!**
+
+- Case 1: user isn't registered in GGUS yet.
+
+Unregistered users have to register first. On [registration page](https://ggus.eu/?mode=register_info)
+you will see this text: “You are member of EGI AAI CheckIn ggus supporter. You will get
+automatically support right for the GGUS portal once you will submit this form.“
+Support permissions will be granted automatically.
+
+![Updating PersistentID](Account_Update_PersistentID.png)
+
+Click on the "Add my ...." button.
+
+- Case 2: user already registered in GGUS with an x509 DN.
+
+You can decide to add the shibboleth id to the existing account and check the updated account.
+In case the email addresses are different you may either harmonize your email address in EGI SSO
+and GGUS account or create a new account using EGI SSO data.
+
+## Getting in touch wit the GGUS team?
+
+The preferred way to get in contact with the GGUS team is by submitting a GGUS ticket against
+Helpdesk(GGUS) support unit.
+
+## Additional information
+
+[GGUS user guide](https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide)
+[GGUS short guide](https://wiki.egi.eu/wiki/FAQ_GGUS-Short-Guide)
+[GGUS support staff guide](https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Staff-Guide)
 
