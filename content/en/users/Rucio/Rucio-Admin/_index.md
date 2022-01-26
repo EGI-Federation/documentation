@@ -4,22 +4,25 @@ type: docs
 linkTitle: "Rucio Admins"
 weight: 30
 description: >-
-     Information for Rucio admins to better understand and perform actions for their VO.
+  Information for Rucio admins to better understand and perform actions for
+  their VO.
 ---
 
-Within Rucio there are several levels of Admins.
-There are the super admins which are the staff which run Multi-VO Rucio.
-Then there are VO specific admins which will look after the day to day of thier VO.
-Below are some of the tasks which VO admins will need to do to set up and maintain their VO.
+Within Rucio there are several levels of Admins. There are the super admins
+which are the staff which run Multi-VO Rucio. Then there are VO specific admins
+which will look after the day to day of thier VO. Below are some of the tasks
+which VO admins will need to do to set up and maintain their VO.
 
 ## Creating Accounts, Identities, and Quotas
 
-To add new users within your VO, you will need to communicate with Rucio as the VO admin.
-Then using the rucio-admin commands, create a new account and add identities to the account.
-The account is a username with no permissions, or authentication methods.
-The identities bind authentication methods and permissions to the account.
-The account you want to create identities for is input as an argument.
-Accounts will have different permissions and access (such as how much data they can store on a particular [RSE](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)).
+To add new users within your VO, you will need to communicate with Rucio as the
+VO admin. Then using the rucio-admin commands, create a new account and add
+identities to the account. The account is a username with no permissions, or
+authentication methods. The identities bind authentication methods and
+permissions to the account. The account you want to create identities for is
+input as an argument. Accounts will have different permissions and access (such
+as how much data they can store on a particular
+[RSE](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)).
 
 ### CLI Example
 
@@ -128,14 +131,16 @@ True
 
 ## Updating RSE Protocols
 
-On occasion, it may be necessary to change or update an RSE protocol.
-Unlike settings (`rucio-admin rse update`) or attributes (`rucio-admin rse set-attribute`),
-there isn't a direct CLI function for changing a protocol.
-It would therefore be necessary to remove (`rucio-admin rse delete-protocol`)
-and then add (`rucio-admin rse add-protocol`) it again using different information.
-Alternatively, the Python client has additional functionality to directly update or swap the priority of RSE protocols.
-For example to update the `impl` without changing anything else (the `data` argument is used to update the protocol,
-with the other settings used to specify the protocol to change):
+On occasion, it may be necessary to change or update an RSE protocol. Unlike
+settings (`rucio-admin rse update`) or attributes
+(`rucio-admin rse set-attribute`), there isn't a direct CLI function for
+changing a protocol. It would therefore be necessary to remove
+(`rucio-admin rse delete-protocol`) and then add
+(`rucio-admin rse add-protocol`) it again using different information.
+Alternatively, the Python client has additional functionality to directly update
+or swap the priority of RSE protocols. For example to update the `impl` without
+changing anything else (the `data` argument is used to update the protocol, with
+the other settings used to specify the protocol to change):
 
 ```python
 >>> from rucio.client import Client
@@ -167,31 +172,34 @@ To swap the priority of two protocols for the third party copy operation:
 True
 ```
 
-It's also worth noting that when an RSE is deleted using `rucio-admin rse delete`,
-the entry remains in the database.
-This "soft" deletion means that attempting to add a new RSE with the same name as a deleted RSE will fail.
-This is due to the RSE not having a unique name/VO combination.
-In practice it is therefore better to update a badly configured RSE rather than attempting to delete and re-add it.
-However, if the latter method is preferred,
-it is possible manually rename the deleted RSE in the database
-(as there are no foreign key constraints on its name, just the ID and VO) so that the old name can be re-used.
+It's also worth noting that when an RSE is deleted using
+`rucio-admin rse delete`, the entry remains in the database. This "soft"
+deletion means that attempting to add a new RSE with the same name as a deleted
+RSE will fail. This is due to the RSE not having a unique name/VO combination.
+In practice it is therefore better to update a badly configured RSE rather than
+attempting to delete and re-add it. However, if the latter method is preferred,
+it is possible manually rename the deleted RSE in the database (as there are no
+foreign key constraints on its name, just the ID and VO) so that the old name
+can be re-used.
 
 ## Basic Usage
 
-This section covers some of the basic Rucio functions that can be run once the VO has accounts and RSEs set up.
-As with the setup, there are many options that won't be covered here.
-For more information refer to either the main documentation or the help for the function in question.
+This section covers some of the basic Rucio functions that can be run once the
+VO has accounts and RSEs set up. As with the setup, there are many options that
+won't be covered here. For more information refer to either the main
+documentation or the help for the function in question.
 
 ### Daemons
 
-Most operations in Rucio (such as transfers, deletions, rule evaluation)
-require one or more of the
-[daemons](https://rucio.readthedocs.io/en/latest/man/daemons.html) to be
-running in order to take effect. For a multi-VO instance, these should be
-running for all VOs already. However, on new VO's joining Rucio
-some updating of the daemons will be neccessary.
+Most operations in Rucio (such as transfers, deletions, rule evaluation) require
+one or more of the
+[daemons](https://rucio.readthedocs.io/en/latest/man/daemons.html) to be running
+in order to take effect. For a multi-VO instance, these should be running for
+all VOs already. However, on new VO's joining Rucio some updating of the daemons
+will be neccessary.
 
-If it seems like it is not quite right please contact the Rucio team through [GGUS](https://ggus.eu/?mode=ticket_submit).
+If it seems like it is not quite right please contact the Rucio team through
+[GGUS](https://ggus.eu/?mode=ticket_submit).
 
 ## Uploading Data
 
@@ -241,9 +249,9 @@ $ rucio list-dids user.root:test.txt --filter type=ALL
 |--------------------+--------------|
 | user.root:test.txt | FILE         |
 +--------------------+--------------+
- 
+
 $ rucio add-dataset user.root:test_dataset
- 
+
 Added user.root:test_dataset
 
 $ rucio attach user.root:test_dataset user.root:test.txt
@@ -296,11 +304,10 @@ True
 Once a DID exists within the Rucio catalogue, replicas of that file, dataset or
 collection are created and maintained by
 [Replication rules](https://rucio.readthedocs.io/en/latest/overview_Replica_management.html).
-By uploading a file to a particular RSE,
-a replication rule is created for that file,
-however rules can also be added for existing DIDs.
-As a minimum an RSE and number of copies must be specified, but further options such as lifetime of
-the rule and selecting RSEs based on user set attributes are also possible.
+By uploading a file to a particular RSE, a replication rule is created for that
+file, however rules can also be added for existing DIDs. As a minimum an RSE and
+number of copies must be specified, but further options such as lifetime of the
+rule and selecting RSEs based on user set attributes are also possible.
 
 ### Adding Replication Rules CLI Example
 
@@ -319,7 +326,7 @@ ID                                ACCOUNT    SCOPE:NAME              STATE[OK/RE
 --------------------------------  ---------  ----------------------  ----------------------  ----------------  --------  ---------------  -------------------
 991f9ace7ed74cad989efde90b6a23c5  root       user.root:test.txt      OK[1/0/0]               NEW_RSE                  1                   2020-08-14 15:28:15
 bd51b767ef524878bb3cc68db16d2374  root       user.root:test_dataset  OK[1/0/0]               NEW_RSE                  1                   2020-08-14 15:47:15
- ```
+```
 
 ### Adding Replication Rules Python Client Example
 
@@ -332,9 +339,9 @@ bd51b767ef524878bb3cc68db16d2374  root       user.root:test_dataset  OK[1/0/0]  
 >>> CLIENT = Client()
 >>> list(CLIENT.list_account_rules('root'))
 
-[{u'locks_ok_cnt': 1, u'source_replica_expression': None, u'locks_stuck_cnt': 0, u'purge_replicas': False, u'rse_expression': u'NEW_RSE', u'updated_at': datetime.datetime(2020, 8, 14, 15, 28, 15), u'meta': None, 
-u'child_rule_id': None, u'id': u'991f9ace7ed74cad989efde90b6a23c5', u'ignore_account_limit': False, u'error': None, u'weight': None, u'locks_replicating_cnt': 0, u'notification': u'NO', u'copies': 1, u'comments': None, 
-u'split_container': False, u'priority': 3, u'state': u'OK', u'scope': u'user.root', u'subscription_id': None, u'stuck_at': None, u'ignore_availability': False, u'eol_at': None, u'expires_at': None, u'did_type': u'FILE', 
+[{u'locks_ok_cnt': 1, u'source_replica_expression': None, u'locks_stuck_cnt': 0, u'purge_replicas': False, u'rse_expression': u'NEW_RSE', u'updated_at': datetime.datetime(2020, 8, 14, 15, 28, 15), u'meta': None,
+u'child_rule_id': None, u'id': u'991f9ace7ed74cad989efde90b6a23c5', u'ignore_account_limit': False, u'error': None, u'weight': None, u'locks_replicating_cnt': 0, u'notification': u'NO', u'copies': 1, u'comments': None,
+u'split_container': False, u'priority': 3, u'state': u'OK', u'scope': u'user.root', u'subscription_id': None, u'stuck_at': None, u'ignore_availability': False, u'eol_at': None, u'expires_at': None, u'did_type': u'FILE',
 u'account': u'root', u'locked': False, u'name': u'test.txt', u'created_at': datetime.datetime(2020, 8, 14, 15, 28, 15), u'activity': u'User Subscriptions', u'grouping': u'DATASET'}]
 
 >>> CLIENT.add_replication_rule([{'scope': 'user.root', 'name': 'test_dataset'}], 1, 'NEW_RSE')
@@ -343,13 +350,13 @@ u'account': u'root', u'locked': False, u'name': u'test.txt', u'created_at': date
 
 >>> list(CLIENT.list_account_rules('root'))
 
-[{u'locks_ok_cnt': 1, u'source_replica_expression': None, u'locks_stuck_cnt': 0, u'purge_replicas': False, u'rse_expression': u'NEW_RSE', u'updated_at': datetime.datetime(2020, 8, 14, 15, 28, 15), u'meta': None, 
-u'child_rule_id': None, u'id': u'991f9ace7ed74cad989efde90b6a23c5', u'ignore_account_limit': False, u'error': None, u'weight': None, u'locks_replicating_cnt': 0, u'notification': u'NO', u'copies': 1, u'comments': None, 
-u'split_container': False, u'priority': 3, u'state': u'OK', u'scope': u'user.root', u'subscription_id': None, u'stuck_at': None, u'ignore_availability': False, u'eol_at': None, u'expires_at': None, u'did_type': u'FILE', 
-u'account': u'root', u'locked': False, u'name': u'test.txt', u'created_at': datetime.datetime(2020, 8, 14, 15, 28, 15), u'activity': u'User Subscriptions', u'grouping': u'DATASET'}, {u'locks_ok_cnt': 1, 
-u'source_replica_expression': None, u'locks_stuck_cnt': 0, u'purge_replicas': False, u'rse_expression': u'NEW_RSE', u'updated_at': datetime.datetime(2020, 8, 14, 15, 47, 15), u'meta': None, u'child_rule_id': None, u'id': 
-u'bd51b767ef524878bb3cc68db16d2374', u'ignore_account_limit': False, u'error': None, u'weight': None, u'locks_replicating_cnt': 0, u'notification': u'NO', u'copies': 1, u'comments': None, u'split_container': False, u'priority': 
-3, u'state': u'OK', u'scope': u'user.root', u'subscription_id': None, u'stuck_at': None, u'ignore_availability': False, u'eol_at': None, u'expires_at': None, u'did_type': u'DATASET', u'account': u'root', u'locked': False, 
+[{u'locks_ok_cnt': 1, u'source_replica_expression': None, u'locks_stuck_cnt': 0, u'purge_replicas': False, u'rse_expression': u'NEW_RSE', u'updated_at': datetime.datetime(2020, 8, 14, 15, 28, 15), u'meta': None,
+u'child_rule_id': None, u'id': u'991f9ace7ed74cad989efde90b6a23c5', u'ignore_account_limit': False, u'error': None, u'weight': None, u'locks_replicating_cnt': 0, u'notification': u'NO', u'copies': 1, u'comments': None,
+u'split_container': False, u'priority': 3, u'state': u'OK', u'scope': u'user.root', u'subscription_id': None, u'stuck_at': None, u'ignore_availability': False, u'eol_at': None, u'expires_at': None, u'did_type': u'FILE',
+u'account': u'root', u'locked': False, u'name': u'test.txt', u'created_at': datetime.datetime(2020, 8, 14, 15, 28, 15), u'activity': u'User Subscriptions', u'grouping': u'DATASET'}, {u'locks_ok_cnt': 1,
+u'source_replica_expression': None, u'locks_stuck_cnt': 0, u'purge_replicas': False, u'rse_expression': u'NEW_RSE', u'updated_at': datetime.datetime(2020, 8, 14, 15, 47, 15), u'meta': None, u'child_rule_id': None, u'id':
+u'bd51b767ef524878bb3cc68db16d2374', u'ignore_account_limit': False, u'error': None, u'weight': None, u'locks_replicating_cnt': 0, u'notification': u'NO', u'copies': 1, u'comments': None, u'split_container': False, u'priority':
+3, u'state': u'OK', u'scope': u'user.root', u'subscription_id': None, u'stuck_at': None, u'ignore_availability': False, u'eol_at': None, u'expires_at': None, u'did_type': u'DATASET', u'account': u'root', u'locked': False,
 u'name': u'test_dataset', u'created_at': datetime.datetime(2020, 8, 14, 15, 47, 15), u'activity': u'User Subscriptions', u'grouping': u'DATASET'}]
 ```
 
@@ -359,9 +366,10 @@ u'name': u'test_dataset', u'created_at': datetime.datetime(2020, 8, 14, 15, 47, 
 
 ## Multi-VO Features
 
-From a users perspective, whether the instance is multi or single VO should not change any functionality.
-Furthermore, depending on the client setup, VO does not need to be provided.
-There are however, some occasions when an optional argument for the VO can be given in a multi-VO instance.
+From a users perspective, whether the instance is multi or single VO should not
+change any functionality. Furthermore, depending on the client setup, VO does
+not need to be provided. There are however, some occasions when an optional
+argument for the VO can be given in a multi-VO instance.
 
 ### Swapping VOs
 
@@ -370,9 +378,9 @@ against) multiple accounts, the same identity can be used for accounts at more
 than one VO. Account and identity can be retrieved from the config file if
 present, and the VO set there will be used (unless the environment variable
 `RUCIO_VO` is also set, in which case the latter takes precedent). Both will be
-ignored however if the VO is passed as an optional argument in the CLI or
-Python client. Using this optional argument allows a user to quickly run
-commands on a different VO they have access to.
+ignored however if the VO is passed as an optional argument in the CLI or Python
+client. Using this optional argument allows a user to quickly run commands on a
+different VO they have access to.
 
 #### Swapping VOs CLI Example
 
@@ -413,4 +421,4 @@ email      : N/A
 >>> CLIENT_XYZ.whoami()
 
 {u'status': u'ACTIVE', u'account': u'jdoes_xyz_account', u'account_type': u'USER', u'created_at': u'2020-08-11T12:13:58', u'updated_at': u'2020-08-11T12:13:58', u'suspended_at': None, u'deleted_at': None, u'email': u'N/A'}
- ```
+```
