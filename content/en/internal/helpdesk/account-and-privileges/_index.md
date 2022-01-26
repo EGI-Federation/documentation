@@ -24,7 +24,7 @@ and could be reached by clicking the "Registration" link on top of
 For managing the GGUS account data the user has to click the link “Check your GGUS account”
 at the bottom of this page.
 
-## Updating the persomal certifcate information
+## Updating the personal certificate information
 
 Users should update their certificate information before their old certificate expires.
 They can navigate to the [registration page](https://ggus.eu/?mode=register_info),
@@ -68,6 +68,34 @@ Click on the "Add my ...." button.
 You can decide to add the shibboleth id to the existing account and check the updated account.
 In case the email addresses are different you may either harmonize your email address in EGI SSO
 and GGUS account or create a new account using EGI SSO data.
+
+## Getting supporter privileges
+
+In order to process tickets assigned to the support unit you belong to, or in general tickets submitted
+by other users and assigned to other support units, you need to own supporter privileges.
+Therefore users need to register an account at GGUS. Registration can be done either using an x509
+personal certificate or using the EGI AAI account.
+
+### Registration with an x509 certificate
+
+For registering with an x509 certificate the user should go to [GGUS home](https://ggus.eu/index.php?mode=index)
+and click the [registration link](https://ggus.eu/?mode=register_info) in the menu bar at the left.
+This link opens the registration information page which gives some additional information about
+registration process. Clicking on the [registration link](https://ggus.eu/?mode=register_info) guides
+to the form that the user has to fill in. After filling in the registration form, GGUS team will check
+whether support privileges can be granted. The user will receive an e-mail from the GGUS team (usually)
+confirming their supporter privileges.
+
+### Registration with the EGI AAI account
+
+Users who do not have a valid x509 certificate can access GGUS via the EGI AAI. For getting support
+privileges the user needs to be member of the
+[ggus-supporters](https://aai.egi.eu/registry/co_petitions/start/coef:69) group in EGI AAI.
+However the user has to fill in the [registration form](https://ggus.eu/?mode=register_info) for
+creating an account at GGUS. Support privileges will be granted automatically. The user will receive
+an automated e-mail from GGUS system confirming their support privileges.
+
+![GGUS registration form](GGUS_Registration_Form.png)
 
 How can I contact the GGUS team?
 The GGUS team could be contacted by either using the Contact link in the navigation bar of GGUS
