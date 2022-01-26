@@ -26,7 +26,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           # Always check all the content
-          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_ALL_CODEBASE: false
           # Debug super-linter
           ACTIONS_RUNNER_DEBUG: false
           # Fail on errors
