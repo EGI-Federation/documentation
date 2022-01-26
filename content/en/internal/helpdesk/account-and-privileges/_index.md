@@ -46,7 +46,7 @@ For adding your EGI SSO persistent ID to your account data please do the followi
 
 ![your account information](GGUS_EGI_AAI_1.png)
 
-- click the button "Add my shibboleth id to my account" at the bottom of the yellow box.
+- click the button "Add my Shibboleth ID to my account" at the bottom of the yellow box.
 
 ## Getting supporter privileges
 
@@ -62,7 +62,7 @@ and click the [registration link](https://ggus.eu/?mode=register_info) in the me
 This link opens the registration information page which gives some additional information about
 registration process. Clicking on the [registration link](https://ggus.eu/?mode=register_info) guides
 to the form that the user has to fill in. After filling in the registration form, GGUS team will check
-whether support privileges can be granted. The user will receive an e-mail from the GGUS team (usually)
+whether support privileges can be granted. The user will receive an email from the GGUS team (usually)
 confirming their supporter privileges.
 
 ### Registration with the EGI AAI account
@@ -72,7 +72,7 @@ privileges the user needs to be member of the
 [ggus-supporters](https://aai.egi.eu/registry/co_petitions/start/coef:69) group in EGI AAI.
 However the user has to fill in the [registration form](https://ggus.eu/?mode=register_info) for
 creating an account at GGUS. Support privileges will be granted automatically. The user will receive
-an automated e-mail from GGUS system confirming their support privileges.
+an automated email from GGUS system confirming their support privileges.
 
 ![GGUS registration form](GGUS_Registration_Form.png)
 
@@ -99,7 +99,7 @@ Click on the "Add my ...." button.
 
 - Case 2: user already registered in GGUS with an x509 DN.
 
-You can decide to add the shibboleth id to the existing account and check the updated account.
+You can decide to add the Shibboleth ID to the existing account and check the updated account.
 In case the email addresses are different you may either harmonize your email address in EGI SSO
 and GGUS account or create a new account using EGI SSO data.
 
