@@ -43,11 +43,11 @@ description: >-
     urgent, and under routing information please select Assign to support unit -
     Rucio). Within the ticket description please include:
 
-        - Desired Username (usually initials and surname e.g. John Doe would have jdoe)
-        - Your email
-        - Name of the experiment / VO you are part of
-        - Either:
-            The subject of your eScience certificate
+    - Desired Username (usually initials and surname e.g. John Doe would have
+      jdoe)
+    - Your email
+    - Name of the experiment / VO you are part of
+    - The subject of your eScience certificate
 
 **If you want password access we can organise a video call to explain or take
 sensitive information if you prefer**  
