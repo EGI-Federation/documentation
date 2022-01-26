@@ -43,3 +43,10 @@ For adding your EGI SSO persistent ID to your account data please do the followi
 
 - login to GGUS using your EGI SSO account
 - on GGUS home click the [Registration](https://ggus.eu/?mode=register_info) link
+
+![your account information](GGUS_EGI_AAI_1.png)
+
+- click the button "Add my shibboleth id to my account" at the bottom of the yellow box.
+
+## I'm member of ggus-supporters.egi.eu group. Why don't I have support privileges in GGUS?
+jhgfhjg
