@@ -37,17 +37,17 @@ description: >-
 
 ### Getting Started as a new user
 
-1.  To get set up with a Rucio account please create a ticket on
-    [GGUS](https://ggus.eu/?mode=ticket_submit). Please fill in the form with a
-    subject, description, ticket catagory - service request, priority - less
-    urgent, and under routing information please select Assign to support unit -
-    Rucio). Within the ticket description please include:
+1. To get set up with a Rucio account please create a ticket on
+   [GGUS](https://ggus.eu/?mode=ticket_submit). Please fill in the form with a
+   subject, description, ticket catagory - service request, priority - less
+   urgent, and under routing information please select Assign to support unit -
+   Rucio). Within the ticket description please include:
 
-    - Desired Username (usually initials and surname e.g. John Doe would have
-      jdoe)
-    - Your email
-    - Name of the experiment / VO you are part of
-    - The subject of your eScience certificate
+   - Desired Username (usually initials and surname e.g. John Doe would have
+     jdoe)
+   - Your email
+   - Name of the experiment / VO you are part of
+   - The subject of your eScience certificate
 
 **If you want password access we can organise a video call to explain or take
 sensitive information if you prefer**  
