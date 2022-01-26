@@ -25,3 +25,23 @@ the ticket to a group, and an e-mail message is sent to people on the appropriat
 Sometimes, a ticket is simple and it is assigned to the correct group immediately and dealt
 with immediately.
 
+## Submitting a ticket using the web interface
+
+Before using this route, it is essential to have either a digital certificate installed in the
+appropriate manner in the web browser or an EGI Check-in account.
+
+### Accessing the web interface to GGUS
+
+If the user carries out all of the steps above, but is not registered to use GGUS, then the
+home page is like the one shown in the following figure:
+
+![GGUS home page for unregistered users](UG_Unregistered_User.png)
+
+If the user faces problems with their certificate, they may get help here:
+
+http://wlcg.web.cern.ch/getting-started/certificates/WLCG-CA/personal
+https://wiki.egi.eu/wiki/USG_Getting_Certificate
+
+For accessing GGUS users have to register first. Registration process is described in chapter
+Registering at GGUS.
+
