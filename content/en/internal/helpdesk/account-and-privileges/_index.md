@@ -6,8 +6,6 @@ description: >
   EGI Helpdesk
 ---
 
-# GGUS account
-
 ## Managing GGUS account data
 
 GGUS users should be able to manage their GGUS account data by themselves.
