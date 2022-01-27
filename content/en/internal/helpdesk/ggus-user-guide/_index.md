@@ -113,20 +113,62 @@ possible should be filled with information.
 
 - “Date/Time of issue” defaults to the submitting time. This field should
 be set if the ticket is submitted much later than the issue occurred.
-- “Subject” is a mandatory field. It should give a short description of the issue. This field is limited to 250 characters.
-“Describe your issue…” is limited to 4000 characters. It should be used for a detailed description of the issue. If the user does not know which information to add here he could click on the question mark for getting additional information.
-“Concerned VO” provides a drop-down list of all VOs supported by GGUS.
-“VO specific” is a flag indicating whether an issue is VO specific or not. It defaults to “no”. This flag could only be set to “yes” in combination with a VO selected in field “Concerned VO”.
-“Affected Site” The site impacted by the issue. A drop-down list with all EGI sites registered in GOC DB and OSG sites registered in OIM DB is available. This is no routing information!
-“Affected ROC/NGI” The NGI/ROC impacted by the issue. A drop-down list of all NGIs/ROCs integrated in GGUS is provided.
-“Ticket category” provides a drop-down list with possible values. This field is for categorizing the issue. It defaults to “Incident”.
-“Type of issue” provides a drop-down list with possible values. This field is for categorizing the issue. It defaults to “Other”.
-“Priority” provides a drop-down list with possible priority values. They are “less urgent” which is the default, “urgent”, “very urgent” and “top priority”.
-“Attach file(s)” offers the possibility to upload 4 attachments (e.g. log files etc.) at a time. Attachments are limited to 2 MB. Please avoid uploading file formats “.exe”, “.php”, “.htm(l)”.
+- “Subject” is a mandatory field. It should give a short description of
+the issue. This field is limited to 250 characters.
+- “Describe your issue…” is limited to 4000 characters. It should be used
+for a detailed description of the issue. If the user does not know which
+information to add here he could click on the question mark for getting
+additional information.
+- “Concerned VO” provides a drop-down list of all VOs supported by GGUS.
+- “VO specific” is a flag indicating whether an issue is VO specific or not.
+It defaults to “no”. This flag could only be set to “yes” in combination
+with a VO selected in field “Concerned VO”.
+- “Affected Site” The site impacted by the issue. A drop-down list with all
+EGI sites registered in GOC DB and OSG sites registered in OIM DB is
+available. This is no routing information!
+- “Affected ROC/NGI” The NGI/ROC impacted by the issue. A drop-down list of
+all NGIs/ROCs integrated in GGUS is provided.
+- “Ticket category” provides a drop-down list with possible values. This
+field is for categorizing the issue. It defaults to “Incident”.
+- “Type of issue” provides a drop-down list with possible values.
+This field is for categorizing the issue. It defaults to “Other”.
+- “Priority” provides a drop-down list with possible priority values. They
+are “less urgent” which is the default, “urgent”, “very urgent” and
+“top priority”.
+- “Attach file(s)” offers the possibility to upload 4 attachments
+(e.g. log files etc.) at a time. Attachments are limited to 2 MB. Please
+avoid uploading file formats “.exe”, “.php”, “.htm(l)”.
 
 3. Routing Information
 
-“Notify SITE” provides a drop-down list with all EGI sites registered in GOC DB and OSG sites registered in OIM DB. If selecting a site from the list this site will be notified about this ticket by mail. Additionally the ticket is assigned to the appropriate NGI/ROC directly, bypassing the TPM (Some words about TPM). If setting a site value the appropriate NGI/ROC is set automatically. Choosing an NGI/ROC simultaneously is not possible.
-“Assign to ROC/NGI” provides a drop-down list of all NGIs/ROCs integrated in GGUS. Choosing a value in this field assigns the ticket to the appropriate ROC directly, bypassing the TPM. If assigning a ticket to an NGI/ROC choosing a site value simultaneously is not possible.
+- “Notify SITE” provides a drop-down list with all EGI sites registered in
+GOC DB and OSG sites registered in OIM DB. If selecting a site from the list
+this site will be notified about this ticket by mail. Additionally the
+ticket is assigned to the appropriate NGI/ROC directly, bypassing the TPM
+(Some words about TPM). If setting a site value the appropriate NGI/ROC is
+set automatically. Choosing an NGI/ROC simultaneously is not possible.
+- “Assign to ROC/NGI” provides a drop-down list of all NGIs/ROCs integrated
+in GGUS. Choosing a value in this field assigns the ticket to the appropriate
+ROC directly, bypassing the TPM. If assigning a ticket to an NGI/ROC choosing
+a site value simultaneously is not possible.
 
-After clicking the “Submit” button the user gets a confirmation page showing the information submitted and the ticket ID.
+After clicking the “Submit” button the user gets a confirmation page showing
+the information submitted and the ticket ID.
+
+![Confirmation after ticket submit](GGUS_Confirm_Submit.png)
+
+### Bypassing the TPM
+The TPM (Ticket Processing Manager) is the 1st Line Support in GGUS. Users
+can bypass the TPM if they have good knowledge about where the problem is.
+For this purpose at the bottom of ticket submit form there is a section
+"Routing information". Selecting either a site from the "Notify SITE"
+drop-down menu or a support unit from the "Assign to support unit" drop-down
+menu routes the ticket directly to the selected support unit. If selecting a
+site name the NGI/ROC the site belongs to is set automatically. Hence the
+ticket is assigned to the relevant NGI/ROC. Additionally the site will
+receive a notification about the ticket. Selecting both, the "Notify SITE"
+and the "Assign to support unit" is not possible.
+
+Tickets of type TEAM and ALARM are always routed to the relevant NGI/ROC
+by default.
+
