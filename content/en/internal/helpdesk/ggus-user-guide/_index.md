@@ -90,18 +90,30 @@ is required. The submit form consists of three main sections: the **user informa
 ![Ticket submit form on web interface](Ticket_Submit_Form.png)
 
 1. User information
-2. 
+ 
 Most fields in the user information section are pre-filled by GGUS system.
 
 - “Name/Login” is taken from the GGUS user database.
 - “E-Mail” is also taken from the GGUS user database.
+- “Notification mode” defaults to “on solution”. The “Notification mode”
+manages the update notifications the user receives. “On solution” means
+that the user only gets notified when the ticket status is set to “solved”
+or a comment is added to the public diary. Additional information is
+available by clicking on the question mark on the right hand side of the
+field label.
+- “CC to” could be filled with any mail address of people who should be
+informed about this ticket. Notifications are sent on every ticket update.
+The field content could only be changed by people who have support access.
+Additional information is available by clicking on the question mark.
 
-“Notification mode” defaults to “on solution”. The “Notification mode” manages the update notifications the user receives. “On solution” means that the user only gets notified when the ticket status is set to “solved” or a comment is added to the public diary. Additional information is available by clicking on the question mark on the right hand side of the field label.
-“CC to” could be filled with any mail address of people who should be informed about this ticket. Notifications are sent on every ticket update. The field content could only be changed by people who have support access. Additional information is available by clicking on the question mark.
-Issue information
-Although only one field is mandatory in this section as much fields as possible should be filled with information.
-“Date/Time of issue” defaults to the submitting time. This field should be set if the ticket is submitted much later than the issue occurred.
-“Subject” is a mandatory field. It should give a short description of the issue. This field is limited to 250 characters.
+2. Issue information
+
+Although only one field is mandatory in this section, as much fields as
+possible should be filled with information.
+
+- “Date/Time of issue” defaults to the submitting time. This field should
+be set if the ticket is submitted much later than the issue occurred.
+- “Subject” is a mandatory field. It should give a short description of the issue. This field is limited to 250 characters.
 “Describe your issue…” is limited to 4000 characters. It should be used for a detailed description of the issue. If the user does not know which information to add here he could click on the question mark for getting additional information.
 “Concerned VO” provides a drop-down list of all VOs supported by GGUS.
 “VO specific” is a flag indicating whether an issue is VO specific or not. It defaults to “no”. This flag could only be set to “yes” in combination with a VO selected in field “Concerned VO”.
@@ -111,7 +123,9 @@ Although only one field is mandatory in this section as much fields as possible 
 “Type of issue” provides a drop-down list with possible values. This field is for categorizing the issue. It defaults to “Other”.
 “Priority” provides a drop-down list with possible priority values. They are “less urgent” which is the default, “urgent”, “very urgent” and “top priority”.
 “Attach file(s)” offers the possibility to upload 4 attachments (e.g. log files etc.) at a time. Attachments are limited to 2 MB. Please avoid uploading file formats “.exe”, “.php”, “.htm(l)”.
-Routing Information
+
+3. Routing Information
+
 “Notify SITE” provides a drop-down list with all EGI sites registered in GOC DB and OSG sites registered in OIM DB. If selecting a site from the list this site will be notified about this ticket by mail. Additionally the ticket is assigned to the appropriate NGI/ROC directly, bypassing the TPM (Some words about TPM). If setting a site value the appropriate NGI/ROC is set automatically. Choosing an NGI/ROC simultaneously is not possible.
 “Assign to ROC/NGI” provides a drop-down list of all NGIs/ROCs integrated in GGUS. Choosing a value in this field assigns the ticket to the appropriate ROC directly, bypassing the TPM. If assigning a ticket to an NGI/ROC choosing a site value simultaneously is not possible.
 
