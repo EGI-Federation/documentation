@@ -35,6 +35,9 @@
     },
     {
       "pattern": "^https://www.eugridpma.org/your-identity/"
+    },
+    {
+      "pattern": "^https://ggus.eu/*"
     }
   ]
 }

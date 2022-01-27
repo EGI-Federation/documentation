@@ -452,7 +452,7 @@ members of `fedcloud.egi.eu`:
         "type": "OIDC-eduperson_entitlement",
         "regex": true,
         "any_one_of": [
-          "^urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu$"
+          "^urn:mace:egi.eu:group:fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu$"
         ]
       }
     ]
