@@ -23,7 +23,7 @@ is described in section "Accessing the web interface to GGUS" of this note.
 
 Once the ticket has entered GGUS, it is processed by assigning it to the
 appropriate group to deal with the issue. The groups are generally addressed via
-mailing lists, and so GGUS assigns the ticket to a group, and an e-mail message
+mailing lists, and so GGUS assigns the ticket to a group, and an email message
 is sent to people on the appropriate list. Sometimes, a ticket is simple and it
 is assigned to the correct group immediately and dealt with immediately.
 
@@ -193,7 +193,7 @@ authentication information the user is currently logged in. This means if a user
 submits tickets with different certificates he does not see all of their
 tickets. The reason for this is that the DN string of the certificate is stored
 in each ticket. Showing all tickets of a user can be done by using the GGUS
-search engine. In the GGUS search engine users can search by user name amongst
+search engine. In the GGUS search engine users can search by username amongst
 others. This search will show all tickets of a user independent from the
 authentication information.
 
