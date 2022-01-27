@@ -264,11 +264,74 @@ Verifying a solution can help to increase the quality of solutions in GGUS.
 
 ### Modify your tickets using email
 
+### ihi
+
 Updating a ticket using email is also possible if one fundamental requirement is
 achieved. The mail subject must contain the typical GGUS string “GGUS-Ticket-ID:
-#<<Ticket-ID>>” where <<Ticket-ID>> is the ID of the ticket which should be
+#Ticket-ID” where "Ticket-ID" is the ID of the ticket which should be
 updated. The easiest way to do this is to reply to an update notification
 received from GGUS. When updating a ticket using email the whole mail body will
 be added to the ticket. Changing any other field (e.g. status, priority,…)
-is impossible!
+is impossible
 
+## Ticket Participation
+
+GGUS system offers various possibilities for participating in tickets. They are
+
+- the CC field,
+- the Involve others field and
+- the Subscribe field.
+
+An overview on these fields is given in the table below. Ticket participation can
+be done by adding a valid mail address to one of these fields. Please avoid adding
+closed mailing lists as such produce a lot of mail errors! Several mail addresses
+have to be separated by semi-colon.
+
+<!-- markdownlint-disable no-inline-html no-bare-urls -->
+
+|                | User submit	| User modify	| Supporter modify |
+| -------------- | ------------ | ----------- | ---------------- |
+| CC             | Yes          | No          | Yes              |
+| Involve others | No           | No          | Yes              |
+| Subscribe      | No           | Yes         | Yes              |
+
+<!-- markdownlint-enable no-inline-html no-bare-urls -->
+
+The “CC” field
+The CC field can be set by the user in the ticket submit form. Updates are only possible for supporters for correcting or removing invalid mail addresses. Every ticket update triggers a notification email to the mail address specified in the “CC” field.
+
+The “Involve others” field
+The “Involve others” field is only for supporters use. Every ticket update triggers a notification email to the mail address specified in the “Involve others” field.
+
+Subscribing to a ticket of another user
+
+Figure 11: Ticket subscribe
+Every user could subscribe to tickets of other users if he is interested in the solution of any. For subscribing a valid email address has to be provided. The user gets a notification once the ticket is solved. After subscribing to a ticket the user could change the notification mode or unsubscribe if he wants to (Figure 11). Accessing the system with the same credentials as used for subscription is necessary for this. Additional information on subscribing to tickets is available by clicking on the question mark at the right hand side of the label “Subscribe to this ticket”.
+
+Who gets what email notification from GGUS?
+The ticket "submitter" gets emails according to the "Notification mode" value (s)he selected when submitting the ticket. If the selected "Notification mode" value is "on every change" then all updates are sent to the "submitter". "Public Diary" entries are sent to the submitter regardless the value of the "Notification mode". "Internal Diary" entries never go to the "submitter". They are reserved for exchanges amongst supporters.
+
+The email addresses in the "Cc:" field can be entered by the "submitter" and receive the same notifications as the submitter. "Public Diary" entries are sent to the addresses in the "Cc:" field. "Internal Diary" entries never go to the people in the "Cc:" field. They are reserved for exchanges amongst supporters.
+
+The email addresses in the "Involve others:" field can be entered by supporters only and receive the same notifications as the Support Unit (SU) to which the ticket is assigned. "Internal Diary" entries are sent to the relevant SU members AND the people in the "Involve others:" field, as they are supposed to be experts and contribute to the ticket solution.
+
+The email address in the "Assign to one person:" field can be entered by supporters only and receive the same notifications as the Support Unit (SU) to which the ticket is assigned. "Internal Diary" entries are sent to the relevant SU members AND the people in the "Involve others:" field AND the email address in the "Assign to one person:" field as they are, all, supposed to be experts and contribute to the ticket solution.
+
+Every ticket update triggers an email to the addresses in the "Cc:", "Involve others:" and to ticket subscribers, i.e. GGUS users, unrelated to the specific ticket, who entered their own email in the "Subscribe to this ticket" field.
+
+GGUS email notifications highlight the fields changed with the specific update.
+
+Please avoid including closed mailing lists, e-groups in these fields as mail delivery will fail.
+
+Browsing all tickets
+At the bottom of the home page there are additional links for browsing:
+
+Search ticket database,
+Show all open tickets,
+GGUS search engine
+
+Figure 12: GGUS search engine
+For browsing all tickets the GGUS search engine is a useful tool (Figure 12: GGUS search engine). The GGUS search engine can be entered by clicking on link “Search ticket database”. When accessing the search engine a default search is performed like shown in Figure 12: GGUS search engine. Searching via Ticket ID is the easiest and fastest way to look at a ticket. When searching via Ticket ID all other search parameters were ignored. Besides searching for all open tickets this is the recommended kind of search, because it avoids needless workload on the system. When searching via ticket ID the ticket details are shown in the same window. For getting back to the main page use the "Back" button of your browser. The various search parameters can be combined in any way wanted except “Untouched since”. Description fields “Keyword”, “Involved supporter” and “Assigned to person” trigger a LIKE search to the database. Concatenating keywords with “AND” or “OR” is currently not possible. The search can either be started by clicking on "go" or just hitting the return key. The result of a search by parameters is shown in the result list. For viewing ticket details just click on the ID. A new window opens showing ticket details. For getting back to the search result just close the window with the ticket details.
+
+Showing all open tickets
+Clicking on this link shows all open tickets that are currently in the system. Unlike “Showing all open tickets” the default search in GGUS search engine uses a timeframe of one week for showing open tickets.
