@@ -6,7 +6,7 @@ description: >
   EGI Helpdesk
 ---
 
-> Moving the content of
+> To be removed: Moving the content of
 > [Wiki: FAQ_GGUS-User_Guide](https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide)
 
 ## Introduction
