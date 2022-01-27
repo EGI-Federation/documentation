@@ -297,33 +297,66 @@ have to be separated by semi-colon.
 
 <!-- markdownlint-enable no-inline-html no-bare-urls -->
 
-The “CC” field
-The CC field can be set by the user in the ticket submit form. Updates are only possible for supporters for correcting or removing invalid mail addresses. Every ticket update triggers a notification email to the mail address specified in the “CC” field.
+### The “CC” field
 
-The “Involve others” field
-The “Involve others” field is only for supporters use. Every ticket update triggers a notification email to the mail address specified in the “Involve others” field.
+The CC field can be set by the user in the ticket submit form. Updates are only
+possible for supporters for correcting or removing invalid mail addresses. Every
+ticket update triggers a notification email to the mail address specified in the
+“CC” field.
 
-Subscribing to a ticket of another user
+### The “Involve others” field
+
+The “Involve others” field is only for supporters use. Every ticket update triggers
+a notification email to the mail address specified in the “Involve others” field.
+
+### Subscribing to a ticket of another user
 
 Figure 11: Ticket subscribe
-Every user could subscribe to tickets of other users if he is interested in the solution of any. For subscribing a valid email address has to be provided. The user gets a notification once the ticket is solved. After subscribing to a ticket the user could change the notification mode or unsubscribe if he wants to (Figure 11). Accessing the system with the same credentials as used for subscription is necessary for this. Additional information on subscribing to tickets is available by clicking on the question mark at the right hand side of the label “Subscribe to this ticket”.
+Every user could subscribe to tickets of other users if he is interested in the
+solution of any. For subscribing a valid email address has to be provided. The user
+gets a notification once the ticket is solved. After subscribing to a ticket the
+user could change the notification mode or unsubscribe if he wants to (Figure 11).
+Accessing the system with the same credentials as used for subscription is necessary
+for this. Additional information on subscribing to tickets is available by clicking on
+the question mark at the right hand side of the label “Subscribe to this ticket”.
 
-Who gets what email notification from GGUS?
-The ticket "submitter" gets emails according to the "Notification mode" value (s)he selected when submitting the ticket. If the selected "Notification mode" value is "on every change" then all updates are sent to the "submitter". "Public Diary" entries are sent to the submitter regardless the value of the "Notification mode". "Internal Diary" entries never go to the "submitter". They are reserved for exchanges amongst supporters.
+![Ticket subscribe](GGUS_Subscribe.png)
 
-The email addresses in the "Cc:" field can be entered by the "submitter" and receive the same notifications as the submitter. "Public Diary" entries are sent to the addresses in the "Cc:" field. "Internal Diary" entries never go to the people in the "Cc:" field. They are reserved for exchanges amongst supporters.
+### Who gets what email notification from GGUS?
 
-The email addresses in the "Involve others:" field can be entered by supporters only and receive the same notifications as the Support Unit (SU) to which the ticket is assigned. "Internal Diary" entries are sent to the relevant SU members AND the people in the "Involve others:" field, as they are supposed to be experts and contribute to the ticket solution.
+The ticket "submitter" gets emails according to the "Notification mode" value (s)he
+selected when submitting the ticket. If the selected "Notification mode" value is
+"on every change" then all updates are sent to the "submitter". "Public Diary" entries
+are sent to the submitter regardless the value of the "Notification mode". "Internal
+Diary" entries never go to the "submitter". They are reserved for exchanges amongst
+supporters.
 
-The email address in the "Assign to one person:" field can be entered by supporters only and receive the same notifications as the Support Unit (SU) to which the ticket is assigned. "Internal Diary" entries are sent to the relevant SU members AND the people in the "Involve others:" field AND the email address in the "Assign to one person:" field as they are, all, supposed to be experts and contribute to the ticket solution.
+The email addresses in the "Cc:" field can be entered by the "submitter" and receive
+the same notifications as the submitter. "Public Diary" entries are sent to the addresses
+in the "Cc:" field. "Internal Diary" entries never go to the people in the "Cc:" field.
+They are reserved for exchanges amongst supporters.
 
-Every ticket update triggers an email to the addresses in the "Cc:", "Involve others:" and to ticket subscribers, i.e. GGUS users, unrelated to the specific ticket, who entered their own email in the "Subscribe to this ticket" field.
+The email addresses in the "Involve others:" field can be entered by supporters only and
+receive the same notifications as the Support Unit (SU) to which the ticket is assigned.
+"Internal Diary" entries are sent to the relevant SU members AND the people in the "Involve
+others:" field, as they are supposed to be experts and contribute to the ticket solution.
+
+The email address in the "Assign to one person:" field can be entered by supporters only and
+receive the same notifications as the Support Unit (SU) to which the ticket is assigned.
+"Internal Diary" entries are sent to the relevant SU members AND the people in the "Involve
+others:" field AND the email address in the "Assign to one person:" field as they are, all,
+supposed to be experts and contribute to the ticket solution.
+
+Every ticket update triggers an email to the addresses in the "Cc:", "Involve others:" and to
+ticket subscribers, i.e. GGUS users, unrelated to the specific ticket, who entered their own
+email in the "Subscribe to this ticket" field.
 
 GGUS email notifications highlight the fields changed with the specific update.
 
-Please avoid including closed mailing lists, e-groups in these fields as mail delivery will fail.
+Please avoid including closed mailing lists, e-groups in these fields as mail delivery will
+fail.
 
-Browsing all tickets
+## Browsing all tickets
 At the bottom of the home page there are additional links for browsing:
 
 Search ticket database,
