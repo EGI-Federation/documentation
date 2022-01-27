@@ -1,0 +1,478 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Helpdesk</title><link>/internal/helpdesk/</link><description>Recent content in Helpdesk on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/helpdesk/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Account and privileges</title><link>/internal/helpdesk/account-and-privileges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/account-and-privileges/</guid><description>
+&lt;h2 id="managing-ggus-account-data">Managing GGUS account data&lt;/h2>
+&lt;p>GGUS users should be able to manage their GGUS account data by themselves.&lt;/p>
+&lt;p>Information about registration and account management is collected on
+&lt;a href="https://ggus.eu/?mode=register_info">GGUS registration page&lt;/a> and could be
+reached by clicking the &amp;ldquo;Registration&amp;rdquo; link on top of
+&lt;a href="http://ggus.org/">GGUS home page&lt;/a>.&lt;/p>
+&lt;p>For managing the GGUS account data the user has to click the link “Check your
+GGUS account” at the bottom of this page.&lt;/p>
+&lt;h2 id="updating-the-personal-certificate-information">Updating the personal certificate information&lt;/h2>
+&lt;p>Users should update their certificate information before their old certificate
+expires. They can navigate to the
+&lt;a href="https://ggus.eu/?mode=register_info">registration page&lt;/a>, click the link &amp;ldquo;Check
+your GGUS account&amp;rdquo; and update their data. Modifying the DN field will result in
+an additional DN field: the old DN will be kept and the new DN will be added.
+Subsequently, the user is identified with the two DNs. If the old DN is no more
+valid please just clear the DN field and save the change. Once the old
+certificate has expired before updating the account data, users can request an
+update via GGUS ticket against Helpdesk(GGUS) support unit.&lt;/p>
+&lt;h2 id="linking-the-egi-sso-persistent-id-to-the-ggus-account">Linking the EGI SSO persistent ID to the GGUS account&lt;/h2>
+&lt;p>&lt;strong>Pre-requisites: the email address of your EGI SSO account must be equal to the
+email address registered in GGUS!&lt;/strong>&lt;/p>
+&lt;p>For adding your EGI SSO persistent ID to your account data please do the
+following:&lt;/p>
+&lt;ul>
+&lt;li>login to GGUS using your EGI SSO account&lt;/li>
+&lt;li>on GGUS home click the &lt;a href="https://ggus.eu/?mode=register_info">Registration&lt;/a>
+link&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="GGUS_EGI_AAI_1.png" alt="your account information">&lt;/p>
+&lt;ul>
+&lt;li>click the button &amp;ldquo;Add my Shibboleth ID to my account&amp;rdquo; at the bottom of the
+yellow box.&lt;/li>
+&lt;/ul>
+&lt;h2 id="getting-supporter-privileges">Getting supporter privileges&lt;/h2>
+&lt;p>In order to process tickets assigned to the support unit you belong to, or in
+general tickets submitted by other users and assigned to other support units,
+you need to own supporter privileges. Therefore users need to register an
+account at GGUS. Registration can be done either using an X509 personal
+certificate or using the EGI AAI account.&lt;/p>
+&lt;h3 id="registration-with-an-x509-certificate">Registration with an x509 certificate&lt;/h3>
+&lt;p>For registering with an X509 certificate the user should go to
+&lt;a href="https://ggus.eu/index.php?mode=index">GGUS home&lt;/a> and click the
+&lt;a href="https://ggus.eu/?mode=register_info">registration link&lt;/a> in the menu bar at the
+left. This link opens the registration information page which gives some
+additional information about registration process. Clicking on the
+&lt;a href="https://ggus.eu/?mode=register_info">registration link&lt;/a> guides to the form that
+the user has to fill in. After filling in the registration form, GGUS team will
+check whether support privileges can be granted. The user will receive an email
+from the GGUS team (usually) confirming their supporter privileges.&lt;/p>
+&lt;h3 id="registration-with-the-egi-aai-account">Registration with the EGI AAI account&lt;/h3>
+&lt;p>Users who do not have a valid X509 certificate can access GGUS via
+&lt;a href="../../../users/check-in">EGI Check-in&lt;/a>. For getting support privileges the user
+needs to be member of the
+&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">ggus-supporters&lt;/a> group
+in EGI Check-in. However the user should fill in the
+&lt;a href="https://ggus.eu/?mode=register_info">registration form&lt;/a> for creating an account
+at GGUS. Support privileges will be granted automatically. The user will receive
+an automated email from GGUS system confirming their support privileges.&lt;/p>
+&lt;p>&lt;img src="GGUS_Registration_Form.png" alt="GGUS registration form">&lt;/p>
+&lt;p>Both authentication methods, X509 certificate and EGI Check-in account, will be
+guaranteed in the future. Since the use of login and password will no longer be
+guaranteed in the future, it is recommended to access GGUS with a valid digital
+certificate or EGI Check-in.&lt;/p>
+&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
+&lt;h3 id="im-member-of-ggus-supportersegieu-group-why-dont-i-have-support-privileges-in-ggus">I&amp;rsquo;m member of ggus-supporters.egi.eu group. Why don&amp;rsquo;t I have support privileges in GGUS?&lt;/h3>
+&lt;p>&lt;strong>Pre-requisites: the email address of your EGI SSO account must be equal to the
+email address registered in GGUS!&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Case 1: user isn&amp;rsquo;t registered in GGUS yet.&lt;/li>
+&lt;/ul>
+&lt;p>Unregistered users have to register first. On
+&lt;a href="https://ggus.eu/?mode=register_info">registration page&lt;/a> you will see this text:
+“You are member of EGI AAI CheckIn ggus supporter. You will get automatically
+support right for the GGUS portal once you will submit this form.“ Support
+permissions will be granted automatically.&lt;/p>
+&lt;p>&lt;img src="Account_Update_PersistentID.png" alt="Updating PersistentID">&lt;/p>
+&lt;p>Click on the &amp;ldquo;Add my &amp;hellip;.&amp;rdquo; button.&lt;/p>
+&lt;ul>
+&lt;li>Case 2: user already registered in GGUS with an X509 DN.&lt;/li>
+&lt;/ul>
+&lt;p>You can decide to add the Shibboleth ID to the existing account and check the
+updated account. In case the email addresses are different you may either
+harmonize your email address in EGI SSO and GGUS account or create a new account
+using EGI SSO data.&lt;/p>
+&lt;h2 id="getting-in-touch-wit-the-ggus-team">Getting in touch wit the GGUS team?&lt;/h2>
+&lt;p>The preferred way to get in contact with the GGUS team is by submitting a GGUS
+ticket against Helpdesk (GGUS) support unit.&lt;/p>
+&lt;h2 id="additional-information">Additional information&lt;/h2>
+&lt;p>&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide">GGUS user guide&lt;/a>
+&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Short-Guide">GGUS short guide&lt;/a>
+&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Staff-Guide">GGUS support staff guide&lt;/a>&lt;/p></description></item><item><title>Internal: GGUS user guide</title><link>/internal/helpdesk/ggus-user-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-user-guide/</guid><description>
+&lt;blockquote>
+&lt;p>To be removed: Moving the content of
+&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide">Wiki: FAQ_GGUS-User_Guide&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>GGUS is the Helpdesk service of the EGI Infrastructure. Incident and Service
+request tickets can be recorded, and their progress is tracked until the
+solution. The users of the service should not need to know any of the details of
+what happens to the ticket in order to get it from creation to solution.
+However, an understanding of the operation of the system may be helpful to
+explaining what happens when you request help.&lt;/p>
+&lt;p>Tickets can be created through the GGUS &lt;a href="https://ggus.eu/">web interface&lt;/a>, which
+is described in section &amp;ldquo;Accessing the web interface to GGUS&amp;rdquo; of this note.&lt;/p>
+&lt;p>Once the ticket has entered GGUS, it is processed by assigning it to the
+appropriate group to deal with the issue. The groups are generally addressed via
+mailing lists, and so GGUS assigns the ticket to a group, and an email message
+is sent to people on the appropriate list. Sometimes, a ticket is simple and it
+is assigned to the correct group immediately and dealt with immediately.&lt;/p>
+&lt;h2 id="submitting-a-ticket-using-the-web-interface">Submitting a ticket using the web interface&lt;/h2>
+&lt;p>Before using this route, it is essential to have either a digital certificate
+installed in the appropriate manner in the web browser or an EGI Check-in
+account.&lt;/p>
+&lt;h3 id="accessing-the-web-interface-to-ggus">Accessing the web interface to GGUS&lt;/h3>
+&lt;p>If the user carries out all of the steps above, but is not registered to use
+GGUS, then the home page is like the one shown in the following figure:&lt;/p>
+&lt;p>&lt;img src="UG_Unregistered_User.png" alt="GGUS home page for unregistered users">&lt;/p>
+&lt;p>If the user faces problems with their certificate, they may get help at
+&lt;a href="https://wiki.egi.eu/wiki/USG_Getting_Certificate">wiki.egi.eu: Getting certificate&lt;/a>&lt;/p>
+&lt;p>For accessing GGUS users have to register first. Registration process is
+described in chapter Registering at GGUS.&lt;/p>
+&lt;h3 id="registering-at-ggus">Registering at GGUS&lt;/h3>
+&lt;p>For getting supporter privileges users need to be registered. For registering at
+GGUS the user should go to &lt;a href="https://ggus.eu/index.php?mode=index">GGUS home&lt;/a> and
+click the &lt;a href="https://ggus.eu/index.php?mode=register_info">registration link&lt;/a>.
+This link opens the registration form that the user has to fill in. In addition,
+there are some links where the user can find information about X09 personal
+certificates. Users who do not have a valid digital certificate can access GGUS
+via EGI SSO. After filling in the registration form, the user receives an e-mail
+from the GGUS team with his access data to GGUS.&lt;/p>
+&lt;h3 id="accessing-ggus-with-certificate">Accessing GGUS with certificate&lt;/h3>
+&lt;p>The primary address of the GGUS portal is: &lt;a href="http://ggus.eu">http://ggus.eu&lt;/a>. If
+the user enters this in the browser, a warning will be displayed by the browser
+prompting the user to specify which certificate to use (if the user has not
+selected to automatically select the certificate in the browser settings). The
+reason for this warning is that GGUS has to validate the user in order to allow
+access. After that, the user will no longer be asked to identify himself.&lt;/p>
+&lt;p>The user identifies themselves with their digital certificate. At this point in
+time, GGUS has identified the user and displays the start page as shown in the
+following figure:&lt;/p>
+&lt;p>&lt;img src="GGUS_Home.png" alt="GGUS home page for recognized users">&lt;/p>
+&lt;p>Note that in this case, the user&amp;rsquo;s identity is displayed on the page and GGUS
+has recognized that this user is registered to submit tickets. If authentication
+by certificate fails, you will be taken to the login page.&lt;/p>
+&lt;h3 id="accessing-ggus-via-egi-check-in">Accessing GGUS via EGI Check-in&lt;/h3>
+&lt;p>When choosing &amp;ldquo;Login via EGI AAI CheckIn&amp;rdquo; on the login page the user is guided
+to the EGI Check-in page were the users Identity Provider can be selected. After
+authenticating there, the user will be redirected to GGUS.&lt;/p>
+&lt;h3 id="the-ticket-submit-form-on-web-interface">The ticket submit form on web interface&lt;/h3>
+&lt;p>The tickets submit form offers a set of fields which should help the user to
+describe his issue as detailed as possible. Most of the fields on the submit
+form are optional. Only field “Subject” is required. The submit form consists of
+three main sections: the &lt;strong>user information&lt;/strong>, the &lt;strong>issue information&lt;/strong> and the
+&lt;strong>routing information&lt;/strong>.&lt;/p>
+&lt;p>&lt;img src="Ticket_Submit_Form.png" alt="Ticket submit form on web interface">&lt;/p>
+&lt;ol>
+&lt;li>User information&lt;/li>
+&lt;/ol>
+&lt;p>Most fields in the user information section are pre-filled by GGUS system.&lt;/p>
+&lt;ul>
+&lt;li>“Name/Login” is taken from the GGUS user database.&lt;/li>
+&lt;li>“E-Mail” is also taken from the GGUS user database.&lt;/li>
+&lt;li>“Notification mode” defaults to “on solution”. The “Notification mode” manages
+the update notifications the user receives. “On solution” means that the user
+only gets notified when the ticket status is set to “solved” or a comment is
+added to the public diary. Additional information is available by clicking on
+the question mark on the right hand side of the field label.&lt;/li>
+&lt;li>“CC to” could be filled with any mail address of people who should be informed
+about this ticket. Notifications are sent on every ticket update. The field
+content could only be changed by people who have support access. Additional
+information is available by clicking on the question mark.&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>Issue information&lt;/li>
+&lt;/ol>
+&lt;p>Although only one field is mandatory in this section, as much fields as possible
+should be filled with information.&lt;/p>
+&lt;ul>
+&lt;li>“Date/Time of issue” defaults to the submitting time. This field should be set
+if the ticket is submitted much later than the issue occurred.&lt;/li>
+&lt;li>“Subject” is a mandatory field. It should give a short description of the
+issue. This field is limited to 250 characters.&lt;/li>
+&lt;li>“Describe your issue…” is limited to 4000 characters. It should be used for a
+detailed description of the issue. If the user does not know which information
+to add here he could click on the question mark for getting additional
+information.&lt;/li>
+&lt;li>“Concerned VO” provides a drop-down list of all VOs supported by GGUS.&lt;/li>
+&lt;li>“VO specific” is a flag indicating whether an issue is VO specific or not. It
+defaults to “no”. This flag could only be set to “yes” in combination with a
+VO selected in field “Concerned VO”.&lt;/li>
+&lt;li>“Affected Site” The site impacted by the issue. A drop-down list with all EGI
+sites registered in GOC DB and OSG sites registered in OIM DB is available.
+This is no routing information!&lt;/li>
+&lt;li>“Affected ROC/NGI” The NGI/ROC impacted by the issue. A drop-down list of all
+NGIs/ROCs integrated in GGUS is provided.&lt;/li>
+&lt;li>“Ticket category” provides a drop-down list with possible values. This field
+is for categorizing the issue. It defaults to “Incident”.&lt;/li>
+&lt;li>“Type of issue” provides a drop-down list with possible values. This field is
+for categorizing the issue. It defaults to “Other”.&lt;/li>
+&lt;li>“Priority” provides a drop-down list with possible priority values. They are
+“less urgent” which is the default, “urgent”, “very urgent” and “top
+priority”.&lt;/li>
+&lt;li>“Attach file(s)” offers the possibility to upload 4 attachments (e.g. log
+files etc.) at a time. Attachments are limited to 2 MB. Please avoid uploading
+file formats “.exe”, “.php”, “.htm(l)”.&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>Routing Information&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>“Notify SITE” provides a drop-down list with all EGI sites registered in GOC
+DB and OSG sites registered in OIM DB. If selecting a site from the list this
+site will be notified about this ticket by mail. Additionally the ticket is
+assigned to the appropriate NGI/ROC directly, bypassing the TPM (Some words
+about TPM). If setting a site value the appropriate NGI/ROC is set
+automatically. Choosing an NGI/ROC simultaneously is not possible.&lt;/li>
+&lt;li>“Assign to ROC/NGI” provides a drop-down list of all NGIs/ROCs integrated in
+GGUS. Choosing a value in this field assigns the ticket to the appropriate ROC
+directly, bypassing the TPM. If assigning a ticket to an NGI/ROC choosing a
+site value simultaneously is not possible.&lt;/li>
+&lt;/ul>
+&lt;p>After clicking the “Submit” button the user gets a confirmation page showing the
+information submitted and the ticket ID.&lt;/p>
+&lt;p>&lt;img src="GGUS_Confirm_Submit.png" alt="Confirmation after ticket submit">&lt;/p>
+&lt;h3 id="bypassing-the-tpm">Bypassing the TPM&lt;/h3>
+&lt;p>The TPM (Ticket Processing Manager) is the 1st Line Support in GGUS. Users can
+bypass the TPM if they have good knowledge about where the problem is. For this
+purpose at the bottom of ticket submit form there is a section &amp;ldquo;Routing
+information&amp;rdquo;. Selecting either a site from the
+&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Notify-Sites">&amp;ldquo;Notify SITE&amp;rdquo;&lt;/a> drop-down menu
+or a support unit from the &amp;ldquo;Assign to support unit&amp;rdquo; drop-down menu routes the
+ticket directly to the selected support unit. If selecting a site name the
+NGI/ROC the site belongs to is set automatically. Hence the ticket is assigned
+to the relevant NGI/ROC. Additionally the site will receive a notification about
+the ticket. Selecting both, the &amp;ldquo;Notify SITE&amp;rdquo; and the &amp;ldquo;Assign to support unit&amp;rdquo;
+is not possible.&lt;/p>
+&lt;p>Tickets of type &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Team-Tickets">TEAM&lt;/a> and
+&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Alarm-Tickets">ALARM&lt;/a> are always routed to
+the relevant NGI/ROC by default.&lt;/p>
+&lt;h2 id="browsing-your-own-tickets">Browsing your own tickets&lt;/h2>
+&lt;p>After authenticating themselves the user has access to the GGUS homepage. On
+this page they see a list of their own open tickets and a list of the latest
+open tickets of all users (Figure 2). Below the list of the user’s own open
+tickets there are two links for further browsing possibilities of the user’s own
+tickets:&lt;/p>
+&lt;ul>
+&lt;li>Show my complete ticket list,&lt;/li>
+&lt;li>My Team Tickets.&lt;/li>
+&lt;/ul>
+&lt;p>The system only shows the user tickets which have been created with the same
+authentication information the user is currently logged in. This means if a user
+submits tickets with different certificates he does not see all of their
+tickets. The reason for this is that the DN string of the certificate is stored
+in each ticket. Showing all tickets of a user can be done by using the GGUS
+search engine. In the GGUS search engine users can search by username amongst
+others. This search will show all tickets of a user independent from the
+authentication information.&lt;/p>
+&lt;h3 id="show-my-complete-ticket-list">Show my complete ticket list&lt;/h3>
+&lt;p>This link opens a new window showing tables of all open and closed tickets of
+the user and all tickets of other users the user has subscribed to. Information
+on how to subscribe to a ticket is available in section &amp;ldquo;Subscribing to a ticket
+of another user.&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="Complete_Ticket_List.png" alt="Complete ticket list on GGUS home">&lt;/p>
+&lt;h2 id="modifying-tickets">Modifying tickets&lt;/h2>
+&lt;h3 id="modifying-your-tickets-using-the-web">Modifying your tickets using the web&lt;/h3>
+&lt;p>For modifying a ticket the user can just click on the ticket ID. He is guided to
+another page. On this page are three main sections:&lt;/p>
+&lt;ul>
+&lt;li>the ticket information,&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="Ticket_Information.png" alt="Ticket information section">&lt;/p>
+&lt;ul>
+&lt;li>the ticket history,&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="Ticket_History.png" alt="Ticket history">&lt;/p>
+&lt;ul>
+&lt;li>the modify section.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="GGUS_Modifysection_User.png" alt="Ticket modify section">&lt;/p>
+&lt;p>The ticket information gives an overview of the personal data the user provided,
+the issue description and the ticket status. The ticket history shows all
+actions that have been taken to solve the ticket, the date and time these
+actions have been taken and the name of the supporter who did them. In the
+modify section the user can add some additional information or comment on a
+question of a supporter to them. The user can add attachments, change the email
+notification behavior of the system and change some other attributes of his
+ticket.&lt;/p>
+&lt;h4 id="escalating-a-ticket">Escalating a ticket&lt;/h4>
+&lt;p>Between the information section and the ticket history there is a button which
+allows the user to escalate a ticket (Figure 9).&lt;/p>
+&lt;p>&lt;img src="GGUS_Escal_Button.png" alt="Escalation button">&lt;/p>
+&lt;p>Three escalation levels are available in GGUS:&lt;/p>
+&lt;ul>
+&lt;li>Escalating ticket to the support unit it is assigned to.&lt;/li>
+&lt;li>Escalating the ticket to the support unit and the TPM on shift.&lt;/li>
+&lt;li>Escalating the ticket to the support unit, the TPM and the GGUS ticket
+monitoring.&lt;/li>
+&lt;/ul>
+&lt;p>The escalation levels are reached one by one. It is not possible to choose one
+of them. Additional information is available by clicking on the little question
+mark on the left hand side of the button.&lt;/p>
+&lt;h4 id="reopen-a-solved-ticket">Reopen a solved ticket&lt;/h4>
+&lt;p>If a ticket is already closed it could be reopened by adding a comment and
+changing the status to “reopened” in the “Modify section” (Figure 8). In this
+case the support unit which solved the ticket and the TPM receive an email about
+the ticket reopening.&lt;/p>
+&lt;h4 id="verifying-the-solution">Verifying the solution&lt;/h4>
+&lt;p>When a ticket is solved, the user could confirm that the solution has solved
+their issue by verifying it. A solution could be verified by either:&lt;/p>
+&lt;ul>
+&lt;li>Clicking the “Verify” button in the web portal or&lt;/li>
+&lt;li>Replying to the solution mail without changing anything.&lt;/li>
+&lt;/ul>
+&lt;p>Verifying a solution can help to increase the quality of solutions in GGUS.&lt;/p>
+&lt;p>&lt;img src="GGUS_Verify_Button.png" alt="Verify button">&lt;/p>
+&lt;h3 id="modify-your-tickets-using-email">Modify your tickets using email&lt;/h3>
+&lt;p>Updating a ticket using email is also possible if one fundamental requirement is
+achieved. The mail subject must contain the typical GGUS string “GGUS-Ticket-ID:
+#Ticket-ID” where &amp;ldquo;Ticket-ID&amp;rdquo; is the ID of the ticket which should be updated.
+The easiest way to do this is to reply to an update notification received from
+GGUS. When updating a ticket using email the whole mail body will be added to
+the ticket. Changing any other field (e.g. status, priority,…) is impossible&lt;/p>
+&lt;h2 id="ticket-participation">Ticket Participation&lt;/h2>
+&lt;p>GGUS system offers various possibilities for participating in tickets. They are&lt;/p>
+&lt;ul>
+&lt;li>the CC field,&lt;/li>
+&lt;li>the Involve others field and&lt;/li>
+&lt;li>the Subscribe field.&lt;/li>
+&lt;/ul>
+&lt;p>An overview on these fields is given in the table below. Ticket participation
+can be done by adding a valid mail address to one of these fields. Please avoid
+adding closed mailing lists as such produce a lot of mail errors! Several mail
+addresses have to be separated by semicolon.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>User submit&lt;/th>
+&lt;th>User modify&lt;/th>
+&lt;th>Supporter modify&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>CC&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Involve others&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Subscribe&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="the-cc-field">The “CC” field&lt;/h3>
+&lt;p>The CC field can be set by the user in the ticket submit form. Updates are only
+possible for supporters for correcting or removing invalid mail addresses. Every
+ticket update triggers a notification email to the mail address specified in the
+“CC” field.&lt;/p>
+&lt;h3 id="the-involve-others-field">The “Involve others” field&lt;/h3>
+&lt;p>The “Involve others” field is only for supporters use. Every ticket update
+triggers a notification email to the mail address specified in the “Involve
+others” field.&lt;/p>
+&lt;h3 id="subscribing-to-a-ticket-of-another-user">Subscribing to a ticket of another user&lt;/h3>
+&lt;p>Figure 11: Ticket subscribe Every user could subscribe to tickets of other users
+if he is interested in the solution of any. For subscribing a valid email
+address has to be provided. The user gets a notification once the ticket is
+solved. After subscribing to a ticket the user could change the notification
+mode or unsubscribe if he wants to (Figure 11). Accessing the system with the
+same credentials as used for subscription is necessary for this. Additional
+information on subscribing to tickets is available by clicking on the question
+mark at the right hand side of the label “Subscribe to this ticket”.&lt;/p>
+&lt;p>&lt;img src="GGUS_Subscribe.png" alt="Ticket subscribe">&lt;/p>
+&lt;h3 id="who-gets-what-email-notification-from-ggus">Who gets what email notification from GGUS?&lt;/h3>
+&lt;p>The ticket &amp;ldquo;submitter&amp;rdquo; gets emails according to the &amp;ldquo;Notification mode&amp;rdquo; value
+(s)he selected when submitting the ticket. If the selected &amp;ldquo;Notification mode&amp;rdquo;
+value is &amp;ldquo;on every change&amp;rdquo; then all updates are sent to the &amp;ldquo;submitter&amp;rdquo;. &amp;ldquo;Public
+Diary&amp;rdquo; entries are sent to the submitter regardless the value of the
+&amp;ldquo;Notification mode&amp;rdquo;. &amp;ldquo;Internal Diary&amp;rdquo; entries never go to the &amp;ldquo;submitter&amp;rdquo;. They
+are reserved for exchanges amongst supporters.&lt;/p>
+&lt;p>The email addresses in the &amp;ldquo;Cc:&amp;rdquo; field can be entered by the &amp;ldquo;submitter&amp;rdquo; and
+receive the same notifications as the submitter. &amp;ldquo;Public Diary&amp;rdquo; entries are sent
+to the addresses in the &amp;ldquo;Cc:&amp;rdquo; field. &amp;ldquo;Internal Diary&amp;rdquo; entries never go to the
+people in the &amp;ldquo;Cc:&amp;rdquo; field. They are reserved for exchanges amongst supporters.&lt;/p>
+&lt;p>The email addresses in the &amp;ldquo;Involve others:&amp;rdquo; field can be entered by supporters
+only and receive the same notifications as the Support Unit (SU) to which the
+ticket is assigned. &amp;ldquo;Internal Diary&amp;rdquo; entries are sent to the relevant SU members
+AND the people in the &amp;ldquo;Involve others:&amp;rdquo; field, as they are supposed to be
+experts and contribute to the ticket solution.&lt;/p>
+&lt;p>The email address in the &amp;ldquo;Assign to one person:&amp;rdquo; field can be entered by
+supporters only and receive the same notifications as the Support Unit (SU) to
+which the ticket is assigned. &amp;ldquo;Internal Diary&amp;rdquo; entries are sent to the relevant
+SU members AND the people in the &amp;ldquo;Involve others:&amp;rdquo; field AND the email address
+in the &amp;ldquo;Assign to one person:&amp;rdquo; field as they are, all, supposed to be experts
+and contribute to the ticket solution.&lt;/p>
+&lt;p>Every ticket update triggers an email to the addresses in the &amp;ldquo;Cc:&amp;rdquo;, &amp;ldquo;Involve
+others:&amp;rdquo; and to ticket subscribers, i.e. GGUS users, unrelated to the specific
+ticket, who entered their own email in the &amp;ldquo;Subscribe to this ticket&amp;rdquo; field.&lt;/p>
+&lt;p>GGUS email notifications highlight the fields changed with the specific update.&lt;/p>
+&lt;p>Please avoid including closed mailing lists, e-groups in these fields as mail
+delivery will fail.&lt;/p>
+&lt;h2 id="browsing-all-tickets">Browsing all tickets&lt;/h2>
+&lt;p>At the bottom of the home page there are additional links for browsing:&lt;/p>
+&lt;ul>
+&lt;li>Search ticket database,&lt;/li>
+&lt;li>Show all open tickets,&lt;/li>
+&lt;/ul>
+&lt;h3 id="ggus-search-engine">GGUS search engine&lt;/h3>
+&lt;p>For browsing all tickets the GGUS search engine is a useful tool.&lt;/p>
+&lt;p>&lt;img src="GGUS_User_Search.png" alt="GGUS search engine">&lt;/p>
+&lt;p>The GGUS search engine can be entered by clicking on link “Search ticket
+database”. When accessing the search engine a default search is performed like
+shown in Figure 12: GGUS search engine. Searching via Ticket ID is the easiest
+and fastest way to look at a ticket. When searching via Ticket ID all other
+search parameters were ignored. Besides searching for all open tickets this is
+the recommended kind of search, because it avoids needless workload on the
+system. When searching via ticket ID the ticket details are shown in the same
+window. For getting back to the main page use the &amp;ldquo;Back&amp;rdquo; button of your browser.
+The various search parameters can be combined in any way wanted except
+“Untouched since”. Description fields “Keyword”, “Involved supporter” and
+“Assigned to person” trigger a LIKE search to the database. Concatenating
+keywords with “AND” or “OR” is currently not possible. The search can either be
+started by clicking on &amp;ldquo;go&amp;rdquo; or just hitting the return key. The result of a
+search by parameters is shown in the result list. For viewing ticket details
+just click on the ID. A new window opens showing ticket details. For getting
+back to the search result just close the window with the ticket details.&lt;/p>
+&lt;h3 id="showing-all-open-tickets">Showing all open tickets&lt;/h3>
+&lt;p>Clicking on this link shows all open tickets that are currently in the system.
+Unlike “Showing all open tickets” the default search in GGUS search engine uses
+a timeframe of one week for showing open tickets.&lt;/p>
+&lt;h2 id="contacting-the-ggus-team">Contacting the GGUS team&lt;/h2>
+&lt;p>Users can click on the “Envelope” icon in the menu bar for sending an email to
+the GGUS team with any comments. Note: This must not be used for submitting
+support requests as it does not create a ticket in the system!&lt;/p>
+&lt;h2 id="ggus-development-plans">GGUS development plans&lt;/h2>
+&lt;p>On GGUS home page there are a couple of links where users can get more
+information on the
+&lt;a href="https://ggus.eu/index.php?mode=development">GGUS development plans&lt;/a> as well as
+submit own feature requests. Feature requests are collected in the GGUS shopping
+lists in JIRA (only for users having a CERN account) and EGI RT.&lt;/p>
+&lt;h2 id="operation-of-ggus">Operation of GGUS&lt;/h2>
+&lt;p>The GGUS system is running on servers located at Karlsruhe Institute of
+Technology (KIT), Germany. Besides the GGUS production system a backup system is
+in place. Switching from production system to backup system currently needs
+manual interaction. An automatic switch in case of fail-over will be
+implemented. GGUS staffs at Karlsruhe are not providing support apart from
+requests concerning GGUS system itself. They can be contacted by email to
+support &amp;ldquo;at&amp;rdquo; ggus.org. Usual office hours for GGUS staffs are from 07:00 to
+15:00 o’clock (UTC).&lt;/p>
+&lt;h3 id="tpm">TPM&lt;/h3>
+&lt;p>TPM (Ticket Processing Manager) is the most important part of the support system
+for the grid. The purpose of TPM is:&lt;/p>
+&lt;ul>
+&lt;li>closing simple trouble tickets,&lt;/li>
+&lt;li>ensuring that other tickets are sent to the correct place for processing,&lt;/li>
+&lt;li>reacting to alarms that tickets have not been processed,&lt;/li>
+&lt;/ul>
+&lt;p>The TPM teams consist of people with a broad knowledge of the Grid.&lt;/p>
+&lt;h3 id="ticket-monitoring">Ticket Monitoring&lt;/h3>
+&lt;p>Besides developing and maintaining GGUS system the GGUS team is also doing the
+ticket monitoring. The ticket monitoring team is responsible for:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Waiting-For-Submitter-Process">reminding users&lt;/a>
+in case their input is required for further ticket processing&lt;/li>
+&lt;li>&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Waiting-For-PT-Process">reminding supporters&lt;/a>
+in case tickets are not processed&lt;/li>
+&lt;li>assisting in any problem during ticket processing&lt;/li>
+&lt;/ul></description></item></channel></rss>
