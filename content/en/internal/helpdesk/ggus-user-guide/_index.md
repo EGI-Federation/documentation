@@ -108,7 +108,7 @@ Most fields in the user information section are pre-filled by GGUS system.
   content could only be changed by people who have support access. Additional
   information is available by clicking on the question mark.
 
-2. Issue information
+1. Issue information
 
 Although only one field is mandatory in this section, as much fields as possible
 should be filled with information.
@@ -141,7 +141,7 @@ should be filled with information.
   files etc.) at a time. Attachments are limited to 2 MB. Please avoid uploading
   file formats “.exe”, “.php”, “.htm(l)”.
 
-3. Routing Information
+1. Routing Information
 
 - “Notify SITE” provides a drop-down list with all EGI sites registered in GOC
   DB and OSG sites registered in OIM DB. If selecting a site from the list this
@@ -273,11 +273,9 @@ Verifying a solution can help to increase the quality of solutions in GGUS.
 
 ### Modify your tickets using email
 
-### ihi
-
 Updating a ticket using email is also possible if one fundamental requirement is
 achieved. The mail subject must contain the typical GGUS string “GGUS-Ticket-ID:
-#Ticket-ID” where "Ticket-ID" is the ID of the ticket which should be updated.
+\#Ticket-ID” where "Ticket-ID" is the ID of the ticket which should be updated.
 The easiest way to do this is to reply to an update notification received from
 GGUS. When updating a ticket using email the whole mail body will be added to
 the ticket. Changing any other field (e.g. status, priority,…) is impossible
@@ -293,17 +291,13 @@ GGUS system offers various possibilities for participating in tickets. They are
 An overview on these fields is given in the table below. Ticket participation
 can be done by adding a valid mail address to one of these fields. Please avoid
 adding closed mailing lists as such produce a lot of mail errors! Several mail
-addresses have to be separated by semi-colon.
-
-<!-- markdownlint-disable no-inline-html no-bare-urls -->
+addresses have to be separated by semicolon.
 
 |                | User submit | User modify | Supporter modify |
 | -------------- | ----------- | ----------- | ---------------- |
 | CC             | Yes         | No          | Yes              |
 | Involve others | No          | No          | Yes              |
 | Subscribe      | No          | Yes         | Yes              |
-
-<!-- markdownlint-enable no-inline-html no-bare-urls -->
 
 ### The “CC” field
 
