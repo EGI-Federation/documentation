@@ -37,10 +37,8 @@ home page is like the one shown in the following figure:
 
 ![GGUS home page for unregistered users](UG_Unregistered_User.png)
 
-If the user faces problems with their certificate, they may get help here:
-
-http://wlcg.web.cern.ch/getting-started/certificates/WLCG-CA/personal
-https://wiki.egi.eu/wiki/USG_Getting_Certificate
+If the user faces problems with their certificate, they may get help at
+[wiki.egi.eu: Getting certificate](https://wiki.egi.eu/wiki/USG_Getting_Certificate)
 
 For accessing GGUS users have to register first. Registration process is described in chapter
 Registering at GGUS.
