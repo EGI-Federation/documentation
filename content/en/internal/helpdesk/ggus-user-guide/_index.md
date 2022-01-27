@@ -196,7 +196,79 @@ authentication information.
 
 This link opens a new window showing tables of all open and closed tickets of
 the user and all tickets of other users the user has subscribed to. Information
-on how to subscribe to a ticket is available in chapter
+on how to subscribe to a ticket is available in section
 "Subscribing to a ticket of another user."
 
 ![Complete ticket list on GGUS home](Complete_Ticket_List.png)
+
+## Modifying tickets
+
+### Modifying your tickets using the web
+ 
+For modifying a ticket the user can just click on the ticket ID. He is guided
+to another page. On this page are three main sections:
+
+- the ticket information,
+
+![Ticket information section](Ticket_Information.png)
+
+- the ticket history,
+
+![Ticket history](Ticket_History.png)
+
+- the modify section.
+
+![Ticket modify section](GGUS_Modifysection_User.png)
+
+The ticket information gives an overview of the personal data the user provided,
+the issue description and the ticket status. The ticket history shows all actions
+that have been taken to solve the ticket, the date and time these actions have
+been taken and the name of the supporter who did them. In the modify section the
+user can add some additional information or comment on a question of a supporter
+to them. The user can add attachments, change the email notification behavior of
+the system and change some other attributes of his ticket.
+ 
+#### Escalating a ticket
+
+Between the information section and the ticket history there is a button which
+allows the user to escalate a ticket (Figure 9).
+
+![Escalation button](GGUS_Escal_Button.png)
+
+Three escalation levels are available in GGUS:
+- Escalating ticket to the support unit it is assigned to.
+- Escalating the ticket to the support unit and the TPM on shift.
+- Escalating the ticket to the support unit, the TPM and the GGUS ticket monitoring.
+
+The escalation levels are reached one by one. It is not possible to choose one of
+them. Additional information is available by clicking on the little question mark on
+the left hand side of the button.
+
+#### Reopen a solved ticket
+
+If a ticket is already closed it could be reopened by adding a comment and changing
+the status to “reopened” in the “Modify section” (Figure 8). In this case the support
+unit which solved the ticket and the TPM receive an email about the ticket reopening.
+
+#### Verifying the solution
+
+When a ticket is solved, the user could confirm that the solution has solved their
+issue by verifying it. A solution could be verified by either:
+
+- Clicking the “Verify” button in the web portal or
+- Replying to the solution mail without changing anything.
+
+Verifying a solution can help to increase the quality of solutions in GGUS.
+
+![Verify button](GGUS_Verify_Button.png)
+
+### Modify your tickets using email
+
+Updating a ticket using email is also possible if one fundamental requirement is
+achieved. The mail subject must contain the typical GGUS string “GGUS-Ticket-ID:
+#<<Ticket-ID>>” where <<Ticket-ID>> is the ID of the ticket which should be
+updated. The easiest way to do this is to reply to an update notification
+received from GGUS. When updating a ticket using email the whole mail body will
+be added to the ticket. Changing any other field (e.g. status, priority,…)
+is impossible!
+
