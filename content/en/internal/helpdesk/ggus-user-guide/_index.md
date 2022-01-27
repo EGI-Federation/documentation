@@ -359,12 +359,73 @@ fail.
 ## Browsing all tickets
 At the bottom of the home page there are additional links for browsing:
 
-Search ticket database,
-Show all open tickets,
-GGUS search engine
+- Search ticket database,
+- Show all open tickets,
 
-Figure 12: GGUS search engine
-For browsing all tickets the GGUS search engine is a useful tool (Figure 12: GGUS search engine). The GGUS search engine can be entered by clicking on link “Search ticket database”. When accessing the search engine a default search is performed like shown in Figure 12: GGUS search engine. Searching via Ticket ID is the easiest and fastest way to look at a ticket. When searching via Ticket ID all other search parameters were ignored. Besides searching for all open tickets this is the recommended kind of search, because it avoids needless workload on the system. When searching via ticket ID the ticket details are shown in the same window. For getting back to the main page use the "Back" button of your browser. The various search parameters can be combined in any way wanted except “Untouched since”. Description fields “Keyword”, “Involved supporter” and “Assigned to person” trigger a LIKE search to the database. Concatenating keywords with “AND” or “OR” is currently not possible. The search can either be started by clicking on "go" or just hitting the return key. The result of a search by parameters is shown in the result list. For viewing ticket details just click on the ID. A new window opens showing ticket details. For getting back to the search result just close the window with the ticket details.
+### GGUS search engine
 
-Showing all open tickets
-Clicking on this link shows all open tickets that are currently in the system. Unlike “Showing all open tickets” the default search in GGUS search engine uses a timeframe of one week for showing open tickets.
+For browsing all tickets the GGUS search engine is a useful tool.
+
+![GGUS search engine](GGUS_User_Search.png)
+
+The GGUS search engine can be entered by clicking on link “Search ticket database”. When
+accessing the search engine a default search is performed like shown in Figure 12: GGUS search
+engine. Searching via Ticket ID is the easiest and fastest way to look at a ticket. When
+searching via Ticket ID all other search parameters were ignored. Besides searching for all
+open tickets this is the recommended kind of search, because it avoids needless workload on the
+system. When searching via ticket ID the ticket details are shown in the same window. For getting
+back to the main page use the "Back" button of your browser. The various search parameters can be
+combined in any way wanted except “Untouched since”. Description fields “Keyword”, “Involved
+supporter” and “Assigned to person” trigger a LIKE search to the database. Concatenating keywords
+with “AND” or “OR” is currently not possible. The search can either be started by clicking on "go"
+or just hitting the return key. The result of a search by parameters is shown in the result list.
+For viewing ticket details just click on the ID. A new window opens showing ticket details. For
+getting back to the search result just close the window with the ticket details.
+
+### Showing all open tickets
+
+Clicking on this link shows all open tickets that are currently in the system. Unlike “Showing all
+open tickets” the default search in GGUS search engine uses a timeframe of one week for showing
+open tickets.
+
+## Contacting the GGUS team
+
+Users can click on the “Envelope” icon in the menu bar for sending an email to the GGUS team with
+any comments. Note: This must not be used for submitting support requests as it does not create a
+ticket in the system!
+
+## GGUS development plans
+On GGUS home page there are a couple of links where users can get more information on the
+[GGUS development plans](https://ggus.eu/index.php?mode=development) as well as submit own feature
+requests. Feature requests are collected in the GGUS shopping lists in JIRA (only for users having
+a CERN account) and EGI RT.
+
+## Operation of GGUS
+
+The GGUS system is running on servers located at Karlsruhe Institute of Technology (KIT), Germany.
+Besides the GGUS production system a backup system is in place. Switching from production system to
+backup system currently needs manual interaction. An automatic switch in case of fail-over will be
+implemented. GGUS staffs at Karlsruhe are not providing support apart from requests concerning GGUS
+system itself. They can be contacted by email to support "at" ggus.org. Usual office hours for GGUS
+staffs are from 07:00 to 15:00 o’clock (UTC).
+
+### TPM
+TPM (Ticket Processing Manager) is the most important part of the support system for the grid.
+The purpose of TPM is:
+
+- closing simple trouble tickets,
+- ensuring that other tickets are sent to the correct place for processing,
+- reacting to alarms that tickets have not been processed,
+
+The TPM teams consist of people with a broad knowledge of the Grid.
+
+### Ticket Monitoring
+
+Besides developing and maintaining GGUS system the GGUS team is also doing the ticket monitoring.
+The ticket monitoring team is responsible for:
+
+- [reminding users](https://wiki.egi.eu/wiki/FAQ_GGUS-Waiting-For-Submitter-Process) in case their
+input is required for further ticket processing
+- [reminding supporters](https://wiki.egi.eu/wiki/FAQ_GGUS-Waiting-For-PT-Process) in case tickets
+are not processed
+- assisting in any problem during ticket processing
