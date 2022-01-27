@@ -81,16 +81,21 @@ be redirected to GGUS.
 
 ### The ticket submit form on web interface
 
-Figure 3: Ticket submit form on web interface
+
 The tickets submit form offers a set of fields which should help the user to describe his issue
 as detailed as possible. Most of the fields on the submit form are optional. Only field “Subject”
-is required. The submit form consists of three main sections: the user information, the issue
-information and the routing information.
+is required. The submit form consists of three main sections: the **user information**, the
+**issue information** and the **routing information**.
 
-User information
+![Ticket submit form on web interface](Ticket_Submit_Form.png)
+
+1. User information
+2. 
 Most fields in the user information section are pre-filled by GGUS system.
-“Name/Login” is taken from the GGUS user database.
-“E-Mail” is also taken from the GGUS user database.
+
+- “Name/Login” is taken from the GGUS user database.
+- “E-Mail” is also taken from the GGUS user database.
+
 “Notification mode” defaults to “on solution”. The “Notification mode” manages the update notifications the user receives. “On solution” means that the user only gets notified when the ticket status is set to “solved” or a comment is added to the public diary. Additional information is available by clicking on the question mark on the right hand side of the field label.
 “CC to” could be filled with any mail address of people who should be informed about this ticket. Notifications are sent on every ticket update. The field content could only be changed by people who have support access. Additional information is available by clicking on the question mark.
 Issue information
