@@ -3,7 +3,7 @@ title: HOWTO01 Using IGTF CA distribution
 weight: 100
 type: "docs"
 description:
-  "Using the IGTF CA distribution""
+  "Using the IGTF CA distribution"
 ---
 
 To ensure interoperability within and outside of EGI, the
