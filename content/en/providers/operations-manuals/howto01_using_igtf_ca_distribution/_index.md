@@ -2,8 +2,7 @@
 title: HOWTO01 Using IGTF CA distribution
 weight: 100
 type: "docs"
-description:
-  "Using the IGTF CA distribution"
+description: "Using the IGTF CA distribution"
 ---
 
 To ensure interoperability within and outside of EGI, the
@@ -23,13 +22,13 @@ then must inform the EGI Security Officer (see
 [EGI CSIRT](https://confluence.egi.eu/display/EGIBG/CSIRT)) about this
 exception.
 
-## Version 1.114 - change log and information
+## Version 1.114 - changelog and information
 
-The change log contains important notices about the release, as well as a list
-of changes to the trust fabric.
+The changelog contains important notices about the release, as well as a list of
+changes to the trust fabric.
 
-- Review the [release
-  notes](<http://repository.egi.eu/sw/production/cas/1/current/README.txt)
+- Review the
+  [release notes](http://repository.egi.eu/sw/production/cas/1/current/README.txt)
 - 1.114 was released on **2022-01-17** as a **regular** update with expedited
   release
 - With the introduction of combined assurance/adequacy, the EGEE compatibility
