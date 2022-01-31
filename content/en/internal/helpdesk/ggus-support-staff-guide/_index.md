@@ -362,4 +362,202 @@ automatically.
 be added at a time. The total number of attachments is unlimited.
 
 #### Ticket Participation
-hloj
+
+GGUS system offers various possibilities for participating in tickets. They are
+
+- the CC field,
+- the Involve others field and
+- the Subscribe field.
+
+An overview on these fields is given in the table below. Ticket participation
+can be done by adding a valid mail address to one of these fields. Please avoid
+adding closed mailing lists as such produce a lot of mail errors! Several mail
+addresses have to be separated by semicolon.
+
+|                | User submit | User modify | Supporter modify |
+| -------------- | ----------- | ----------- | ---------------- |
+| CC             | Yes         | No          | Yes              |
+| Involve others | No          | No          | Yes              |
+| Subscribe      | No          | Yes         | Yes              |
+
+##### The “CC” field
+
+The CC field can be set by the user in the ticket submit form. Updates are only
+possible for supporters for correcting or removing invalid mail addresses. Every
+ticket update triggers a notification email to the mail address specified in the
+“CC” field.
+
+##### The “Involve others” field
+
+The “Involve others” field is only for supporters use. Every ticket update
+triggers a notification email to the mail address specified in the “Involve
+others” field.
+
+##### Subscribe to this ticket field
+This field can be used by any user for participating in tickets at any time.
+The user has just to add his mail address. He will receive notifications for
+updates of the public diary or the solution for following the whole ticket life
+cycle. "Internal Diary" entries never go to the people who subscribed to a ticket.
+
+#### Master-Slave relations
+Several tickets describing the same issue can be put into a master-slave relation.
+One of them can be marked as master, the other ones as slave. Only the master
+ticket has to be dealt with. The slave tickets are set to “on hold”. They can’t
+be updated directly as long as they are in a master-slave relation. The user gets
+an automated notification if a ticket is marked as slave. All updates of the
+master were pushed to the slaves. When solving the master the slaves are solved to.
+The master-slave relation is kept after the master is solved. Nevertheless each
+ticket can be reopened separately. Updates on reopened slave tickets are possible.
+A master-slave relation can be reset manually either by removing the master ID of
+a slave ticket or by un-checking the master checkbox of the master. If a master is
+unmarked as master all slaves were reset to “standard” tickets automatically.
+
+##### Selecting slave tickets
+
+Marking a ticket as slave is only possible if there is already a master ticket.
+If a ticket is marked as slave a popup window opens showing available master
+tickets. For selecting a master just click on the ID. The master ID
+is set automatically. Once you have chosen a wrong master ID click Reset
+Master-Slave relation and select another one.
+
+![Select master ID](GGUS_Select_Master.png)
+
+##### Showing a master’s slave tickets
+To show all related slave tickets click on link “show slaves for this ticket”.
+A popup window opens showing the IDs of all slave tickets.
+
+![Ticket relation section](GGUS_Ticket_Relation.png)
+
+##### Searching for master/slave tickets
+
+If you want to search for master or slave tickets you can do this using field
+“Special attributes” of the search engine. The status value for searching is
+set to an appropriate value accordingly.
+
+##### Parent-child relations
+Parent-child relationships work in reverse to master-slave relationships. The
+parent ticket cannot be resolved until all of its child tickets are resolved.
+The parent ticket is set to the status "on hold" while the child tickets are
+waiting for their solution. For each solved child ticket a note is added to
+the parent ticket history including the solution of the child ticket. After
+the last open child ticket has been solved the status of the parent ticket
+changes to “in progress” automatically. In addition, the system sends a
+notification mail to the responsible support unit that all child tickets have
+been solved now. So the parent ticket can be “solved” too.
+
+##### Selecting child tickets
+
+A ticket can be selected as child ticket by checking the box “Mark this ticket
+as child of ticket” and adding the ticket ID of the parent ticket. A comment is
+added to the ticket history automatically stating “This ticket is a child
+ticket of GGUS ticket # 18492”. Multiple child tickets can be related to one
+parent ticket by repeating this procedure. The parent ticket is flagged as
+“parent” automatically. A comment is added to the ticket history automatically
+stating “This ticket is a parent ticket. It has to wait the solving of all its
+child tickets. GGUS ticket #18493 is a child to this ticket.".
+
+##### Resetting child tickets
+
+For resetting child tickets just remove the tick from the check box “Mark this
+ticket as child of ticket”.
+
+##### Selecting parent tickets
+
+Selecting a parent ticket explicitly is not possible. The parent tickets are
+flagged automatically by the system while the parent ID is specified for a
+child ticket.
+
+##### Searching for parent/child tickets
+
+The search for parent or child tickets is similar to the search for master or
+slave tickets. It can be done using field “Special attributes” of the search
+engine.
+
+## Working on tickets
+
+This section is a description of how the GGUS ticketing system behaves. There
+are other documents which describe the system in more detail and include more
+of the implementation details. One of the most important fields of the system
+is the status field. Many workflows are triggered by status value changes.
+Please read the Short Guide for getting information on status values. Tickets
+are normally assigned to a support unit. This means that the ticket notification
+is sent to a mailing list composed of many supporters. One of these supporters
+assigns the ticket to himself and takes responsibility for it; the supporter
+changes the status to “in progress”. This person is then in charge of the ticket.
+He either solves it or reassigns the ticket to somebody else. The status of the
+ticket stays set to “in progress” if the ticket is under the responsibility of
+one supporter and until the ticket has been solved.
+
+### User ticketing work flow
+
+A graphical view of the ticket flow in GGUS is shown here:
+![GGUS ticket flow](GGUS_Status_Values.png)
+
+The GGUS Support is organized with two main lines of support:
+
+1. First line of support gets immediate notification of tickets
+2. Second line of support is only notified of tickets by the first line of
+support.
+
+The first line support is provided by an organisation called TPM – Ticket
+Processing Manager. The TPM team has members who have very good general grid
+knowledge. It is an organisation populated by people provided from the Czech NGI.
+This organisation is responsible for the routing and processing of all active
+tickets.
+
+The second line support is formed by many support units. Each support unit is
+formed from members who are specialists in various areas of grid middleware, or
+NGI/ROC supporters for operations problems, or VO specific supporters. The
+membership of the support units is maintained on mailing lists.
+If the user responds to any e-mail received from GGUS, then the reply is added
+to the ticket history. The subject of the email includes meta data to ensure the
+association of the response with the ticket.
+
+### Tickets waiting for user input
+
+The workflows for tickets waiting for user input is described in this FAQ.
+
+### Advice for TPMs
+
+The following advice is intended for people working on TPM.
+
+1. Change support unit to “TPM” if you are working on a ticket
+2. Just typing a comment into solution field does NOT cause an email to the
+user automatically. Only changing status to “solved” causes an automatic mail.
+If you want to contact the user you can do this using the “Public Diary”.
+3. Change status to “waiting for reply” while waiting for the user's reply.
+4. Be careful when using the field “Assign ticket to one person”. Please avoid
+using mailing list names, or the mail list address of a remote help-desk system.
+With a mailing list, the mail may not reach the recipient because many mailing
+lists are closed lists and will not accept the message. Sending mail to a remote
+help-desk system can confuse the remote system and lead to trouble.
+5. Change the ticket category if you think the ticket is not dealing with an
+incident but describing a service request like a documentation update, adding
+someone to a mailing list and so on. See chapter Changing ticket category for
+details.
+
+### Changing ticket category
+
+When submitting a ticket the ticket category field could not be set but default
+to “Incident”. It is up to the supporters to decide whether a ticket describes
+an “Incident” or a service ticket. Service tickets are tickets that request
+something be done like:
+- adding someone to a mailing list
+- updating documentation
+- providing more space for storing data
+- etc.
+
+They do not report issues. This differentiation is compliant to ITIL.
+Differentiating between incident tickets and service tickets can help supporters
+to order tickets they are responsible for by urgency. The GGUS reporting also
+relies on the correct setting of the ticket category field as it does ignore
+tickets of category "Test".
+
+### Forwarding a ticket to another unit
+
+Tickets assigned to a support unit by error or tickets that need actions from
+other support units should be either assigned back to the TPM or assigned to the
+relevant support unit directly. In both cases an explanation in the public diary
+will avoid confusion.
+
+
