@@ -2145,8 +2145,8 @@ activity:&lt;/p>
 references to &lt;code>http://linuxsoft.cern.ch/LCG-CAs/current&lt;/code> from your YUM setup,
 and run&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum clean cache metadata
-yum update lcg-CA
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ yum clean cache metadata
+$ yum update lcg-CA
 &lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>
 &lt;p>and you are done. This will update the packages installed to the latest
@@ -2157,15 +2157,15 @@ version, and also install the new &lt;code>ca-policy-egi-core&lt;/code> package 
 &lt;p>&lt;strong>if you are upgrading from a previous EGI version only&lt;/strong>, just run&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum update ca-policy-egi-core
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ yum update ca-policy-egi-core
 &lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>although at times you may need to clean the yum cache using&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum clean cache metadata
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ yum clean cache metadata
 &lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>&lt;strong>if you are installing the EGI trust anchors for the first time&lt;/strong>, run&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum install ca-policy-egi-core
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ yum install ca-policy-egi-core
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-the-distribution-on-a-debian-or-debian-derived-platform">Using the distribution on a Debian or Debian-derived platform&lt;/h3>
 &lt;p>The 1.39+ releases experimentally add the option to install the trust anchors
 from Debian packages using the APT dependency management system. Although care
@@ -2176,7 +2176,7 @@ solve your issue, or may be asked to use a temporary repository. To use it:&lt;/
 &lt;ul>
 &lt;li>Install the EUGridPMA PGP key for apt:&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">wget -q -O - &lt;span style="color:#4e9a06">\
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ wget -q -O - &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> https://dist.eugridpma.info/distribution/igtf/current/GPG-KEY-EUGridPMA-RPM-3 &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> apt-key add -
 &lt;/code>&lt;/pre>&lt;/div>&lt;ul>
@@ -2187,7 +2187,8 @@ deb http://repository.egi.eu/sw/production/cas/1/current egi-igtf core
 &lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Populate the cache and install the meta-package&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">apt-get update apt-get install ca-policy-egi-core
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ apt-get update
+$ apt-get install ca-policy-egi-core
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-the-distribution-on-other-non-rpm-platforms">Using the distribution on other (non-RPM) platforms&lt;/h3>
 &lt;p>The trust anchors are provided also as simple &amp;lsquo;tar-balls&amp;rsquo; for installation on
 other platforms. Since there is no dependency management in this case, please
@@ -2196,7 +2197,7 @@ tar files can be found in the EGI repository at&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">http://repository.egi.eu/sw/production/cas/1/current/tgz/
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have downloaded the directory, you can unpack all the CA tar,gz as
 follows to your certificate directory:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87;font-weight:bold">for&lt;/span> tgz in &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>ls &amp;lt;ca download dir&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> tgz in &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>ls &amp;lt;ca download dir&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span>
 tar xzf &amp;lt;ca download dir&amp;gt;/&lt;span style="color:#000">$tgz&lt;/span> --strip-components&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -C /etc/grid-security/certificates
 &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
