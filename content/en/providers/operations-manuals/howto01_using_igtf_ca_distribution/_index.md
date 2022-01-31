@@ -76,8 +76,8 @@ activity:
   and run
 
 ```shell
-yum clean cache metadata
-yum update lcg-CA
+$ yum clean cache metadata
+$ yum update lcg-CA
 ```
 
 - and you are done. This will update the packages installed to the latest
@@ -87,19 +87,19 @@ yum update lcg-CA
 - **if you are upgrading from a previous EGI version only**, just run
 
 ```shell
-yum update ca-policy-egi-core
+$ yum update ca-policy-egi-core
 ```
 
 - although at times you may need to clean the yum cache using
 
 ```shell
-yum clean cache metadata
+$ yum clean cache metadata
 ```
 
 - **if you are installing the EGI trust anchors for the first time**, run
 
 ```shell
-yum install ca-policy-egi-core
+$ yum install ca-policy-egi-core
 ```
 
 ### Using the distribution on a Debian or Debian-derived platform
@@ -114,9 +114,9 @@ solve your issue, or may be asked to use a temporary repository. To use it:
 - Install the EUGridPMA PGP key for apt:
 
 ```shell
-wget -q -O - \
-  https://dist.eugridpma.info/distribution/igtf/current/GPG-KEY-EUGridPMA-RPM-3 \
-  | apt-key add -
+$ wget -q -O - \
+    https://dist.eugridpma.info/distribution/igtf/current/GPG-KEY-EUGridPMA-RPM-3 \
+    | apt-key add -
 ```
 
 - Add the following line to your sources.list file for APT:
@@ -129,7 +129,8 @@ deb http://repository.egi.eu/sw/production/cas/1/current egi-igtf core
 - Populate the cache and install the meta-package
 
 ```shell
-apt-get update apt-get install ca-policy-egi-core
+$ apt-get update
+$ apt-get install ca-policy-egi-core
 ```
 
 ### Using the distribution on other (non-RPM) platforms
@@ -147,10 +148,10 @@ Once you have downloaded the directory, you can unpack all the CA tar,gz as
 follows to your certificate directory:
 
 ```shell
-for tgz in $(ls  <ca download dir>); do
-  tar xzf <ca download dir>/$tgz --strip-components=1 \
-    -C /etc/grid-security/certificates
-done
+$ for tgz in $(ls  <ca download dir>); do
+    tar xzf <ca download dir>/$tgz --strip-components=1 \
+      -C /etc/grid-security/certificates
+  done
 ```
 
 ### Installing the distribution using Quattor
