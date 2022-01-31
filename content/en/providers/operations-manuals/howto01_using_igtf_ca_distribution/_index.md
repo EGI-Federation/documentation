@@ -60,7 +60,8 @@ Add the following
 to the `/etc/yum.repos.d/` directory:
 
 ```ini
-[EGI-trustanchors] name=EGI-trustanchors
+[EGI-trustanchors]
+name=EGI-trustanchors
 baseurl=http://repository.egi.eu/sw/production/cas/1/current/
 gpgkey=http://repository.egi.eu/sw/production/cas/1/GPG-KEY-EUGridPMA-RPM-3
 gpgcheck=1
