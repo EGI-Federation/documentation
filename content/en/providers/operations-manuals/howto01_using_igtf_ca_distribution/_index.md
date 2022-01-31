@@ -22,19 +22,12 @@ then must inform the EGI Security Officer (see
 [EGI CSIRT](https://confluence.egi.eu/display/EGIBG/CSIRT)) about this
 exception.
 
-## Version 1.114 - changelog and information
+## Release notes
 
-The changelog contains important notices about the release, as well as a list of
+Review the
+[release notes](http://repository.egi.eu/sw/production/cas/1/current/README.txt)
+containing important notices about the current release, as well as a list of
 changes to the trust fabric.
-
-- Review the
-  [release notes](http://repository.egi.eu/sw/production/cas/1/current/README.txt)
-- 1.114 was released on **2022-01-17** as a **regular** update with expedited
-  release
-- With the introduction of combined assurance/adequacy, the EGEE compatibility
-  RPM (lcg-CA) can no longer be supported, and - when still installed - will be
-  obsoleted. The proper dependency packages are: ca-policy-_body_-_class_ and
-  these have been installed automatically as dependencies since 2010.
 
 ## Installation
 
