@@ -61,3 +61,12 @@ the ticket again.
 | 2	| waiting for reply |	5	| second reminder to submitter |
 | 3	| waiting for reply |	5	| notification to monitoring team; the monitoring team sets status "unsolved" |
 | 4 | unsolved |	10	| manuel status change to "closed" by ticket monitoring team |
+
+### Summary
+In this workflow there is always a human intervention before closing a ticket.
+The submitter has 15 working days in total for replying to a ticket. Additionally,
+they have 10 more working days for re-opening the ticket in case they do not agree
+with setting the ticket to "unsolved".
+
+### Work flow graph
+
