@@ -27,6 +27,21 @@ usual way. In parallel, the site receives a notification email.
 ## Technical description
 This section describes the workflows of team tickets from a technical point of view.
 
-## Team ticket submission
+### Team ticket submission
 Team tickets can either be submitted using the GGUS web portal. On top of the ticket
-submit form in GGUS web portal there is a link to the submit form for team tickets Figure 1
+submit form in GGUS web portal there is a link to the submit form for team tickets.
+
+![link to submit form for team tickets](Submit_Team.png)
+
+As team ticket submitters are expected to be experts who will hopefully provide all
+necessary information, the number of fields on the team ticket submit form is
+reduced to a minimum, compared to the number of fields on the user ticket submit form
+
+![Submit form for team tickets](Submit_Form_Team.png)
+
+Three fields on this form are mandatory:
+* Subject
+* MoU Area
+* Notified Site
+
+All of the other fields are optional.
