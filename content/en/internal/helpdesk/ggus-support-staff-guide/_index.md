@@ -560,4 +560,73 @@ other support units should be either assigned back to the TPM or assigned to the
 relevant support unit directly. In both cases an explanation in the public diary
 will avoid confusion.
 
+### Solving a ticket
+In this section the usage of the different status values and input fields is described.
+
+The system offers two groups of meta states, open states and terminal states.
+
+#### Open states
+
+- new: this is the default status for submitted tickets. It is set by the system
+and can’t be selected in the drop-down list menu.
+- assigned: this status is set automatically and can't be selected in the drop-down
+list menu. After a ticket is assigned to a support unit, this unit is informed via
+e-mail about the ticket assignment.
+- in progress: support staff who work on the ticket should change status to
+“in progress”. This is necessary to announce that somebody is taking care of this
+ticket and is working on it.
+- waiting for reply: This status value should be set ONLY by the supporter and ONLY
+when asking the SUBMITTER for further information. The supporter can decide whether
+(s)he wants to be notified about this ticket by the system. (S)he can choose any date
+in the future (s)he wants to be notified and select the radio button "Please send
+reminder on".
+- on hold: some tickets are not solvable while needing a software patch or something
+similar for example. The reasons should be explained in field “Public Diary”.
+Additionally a hint in field “Related issue” may be useful. The supporter can decide
+whether he wants to be notified about this ticket by the system. He can choose any date
+in the future he wants to be notified and select the radio button “Please send reminder
+on”.
+- reopened: normally this status value is set by the user, if he is not happy with the
+provided solution. It can also be used by supporters if a better solution is found for
+a ticket already solved. In this case status should be set to “reopened”, new solution
+put in and status changed to “solved” again. Leaving status as “solved” and just putting
+in the new solution does not cause an automatic solution mail to the user.
+
+#### Terminal states
+
+- solved: If a solution is found and put into the Solution field, status has to be set
+to "solved". Only on status change to "solved" the user receives a solution mail
+automatically. Please put a full explanation in Solution field of how the issue was
+solved. You can use qualification terms like:
+  - fixed
+  - fixed (work around)
+  - works as designed
+  - other
+- unsolved: This status is for tickets that can not be solved due to any reason. Please
+add a comment in the solution field explaining why it can't be solved. You can use
+qualification terms like:
+  - duplicate
+  - invalid
+  - wont fix
+- verified: This status can only be set by the ticket submitter. TEAM tickets, by design,
+can be 'verified' by all TEAMers in the VO. ALARM tickets can also be 'verified' by all
+the authorized ALARMers in the VO, not only the submitter. This status indicates that a
+user is happy with the provided solution. "Verified" tickets cannot be further updated,
+nor re-opened.
+- closed: Solved or unsolved tickets not verified by the submitter are set to “closed”
+automatically after 10 working days.
+
+#### Fields to fill in
+
+Single steps of the solution process can be documented in field “Public Diary”.
+Information and comments which should not be visible to the user can be put into the
+“Internal diary”. When a solution is found, the modifier types the solution into the
+solution field and changes status to "solved". The “Solution” field provides 4000
+characters. If 4000 characters are not sufficient, please add an attachment. After
+changing status to “solved” and saving all changes, the solution is sent to the submitter
+via mail automatically. Tasks for solving a ticket:
+
+- change status to “in progress” while working on it,
+- fill in the solution fields and the internal diary if necessary,
+- change the status to “solved” and you are done.
 
