@@ -2220,95 +2220,31 @@ and
 and can be included in the profile in parallel with the EGI core template. All
 packages needed are also included in the EGI repository, so only a single
 repository reference is necessary.&lt;/p>
-&lt;h2 id="trust-anchor-structure-for-differentiated-collaborative-assurance">Trust Anchor structure for differentiated (collaborative) assurance&lt;/h2>
-&lt;p>EGI is moving towards support for &amp;lsquo;differentiated&amp;rsquo; or collaborative assurance,
-where different elements of trust are provided by several collaborating parties:
-the identity providers, user home organisations, and research communities. This
-means that trust anchors with varying trust assurance profiles will be
-distributed for use in distinct EGI usage scenarios. Starting mid-2017 (release
-1.82 or above) initially two profiles will be supported. For a discussion on the
-impact, see &lt;a href="https://documents.egi.eu/document/2745">EGI document 2745&lt;/a>.&lt;/p>
-&lt;h3 id="notice-for-sites-in-egi-that-support-wlcg">Notice for sites in EGI that support WLCG&lt;/h3>
-&lt;p>The WLCG collaboration - having so requested EGI and in line with long-term EGI
-developments in AAI - has included a specific CA to its own trust anchor
-distribution. Sites that are also part of WLCG should install BOTH the
-&amp;ldquo;egi-core&amp;rdquo; AND &amp;ldquo;lcg&amp;rdquo; meta-packages, according to your policies. Note that your
-organisation or NGI may also have a specific policy and may have added or
-removed CAs compared to the EGI core policy. Sites that need compliance with the
-WLCG policy should install BOTH packages, or you will miss out the CERN WLCG
-IOTA CA specific exception see
-&lt;a href="https://documents.egi.eu/document/2745">EGI document: Considerations on the coexistence of controlled and flexible community models&lt;/a>
-for details and the
-&lt;a href="http://lcg-ca.web.cern.ch/lcg-ca/doc/WLCG-CERN-IOTA-statement-MB.pdf">WLCG statement&lt;/a>.&lt;/p>
-&lt;p>The EGI production repository contains all relevant packages for both policies
-(and the WLCG repository contains also all EGI packages). There is no reason to
-reconfigure repository locations. Specifically installing (adding) also the
-&lt;code>ca-policy-lcg&lt;/code> package may be necessary for system configurations built after
-May 2009.&lt;/p>
-&lt;h3 id="combined-assuranceadequacy-model">Combined Assurance/Adequacy Model&lt;/h3>
-&lt;p>In the first quarter of 2017, full support for differentiated assurance profiles
-(combined assurance/adequacy model, also called &amp;ldquo;cam&amp;rdquo;) will be introduced in the
-EGI trust fabric infrastructure. This will take the form of an additional trust
-anchor meta-package, and replaces the specific policy mechanism described above.
-Such full support also required &lt;em>new software and configuration at each resource
-centre&lt;/em>. You must deploy the additional trust anchor meta-packages and the new
-local policies in unison, and never install the &lt;em>cam&lt;/em> package without such
-software support.&lt;/p>
-&lt;p>To enable the combined assurance/adequacy model policy, use:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">yum install ca-policy-egi-cam
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>or the equivalent for your distribution or operating system. A tarball
-installation is also available.&lt;/p>
-&lt;h4 id="implementation-notes-for-trust-anchor-releases-post-186">Implementation notes for trust anchor releases post 1.86&lt;/h4>
-&lt;p>Not installing the new &amp;ldquo;cam&amp;rdquo; package does not have any detrimental effect on
-current users - only a new class of users (that can only obtain an opaque
-identifiers and do not do full vetting at their electronic identity provider)
-could be affected, and then only those users that are member of one of the
-communities that has part of the combined-assurance programme: LCG-Atlas,
-LCG-Alice, LCG-LHCb, and LCG-CMS.&lt;/p>
-&lt;p>Also technically this means that you must &lt;strong>only&lt;/strong> install the new
-&lt;code>ca-policy-egi-cam&lt;/code> packages if you &lt;strong>also&lt;/strong> at the &lt;em>same time&lt;/em> implement
-VO-specific authorization controls in your software stack. This may require
-reconfiguration or a software update:&lt;/p>
-&lt;ul>
-&lt;li>for dCache : full support is expected in release v3.1. Meanwhile, if you
-support enumerated communities for at the DOGWOOD assurance level, you can
-upgrade to at least release 2.16 and configure negative controls to limit the
-set of acceptable VOs for those principals whose credential policy OID equals
-&lt;code>1.2.840.113612.5.2.2.6&lt;/code>. See &lt;a href="http://www.dCache.org/">dCache.org&lt;/a> for details
-or ask your software provider. In future releases, differentiated access to
-storage based on the assurance level can be added - for now decisions are best
-implemented as binary choices (either &amp;lsquo;in&amp;rsquo; or &amp;lsquo;out&amp;rsquo;) for gLExec/LCMAPS : all
-necessary software is included in UMD-3 and UMD-4, for EL6, EL7, and
-Debian-based distributions. You can use the example configuration file
-included in the &lt;code>ca-policy-egi-cam&lt;/code> package under &lt;code>/usr/share/doc&lt;/code> and see for
-more details
-&lt;a href="http://wiki.nikhef.nl/grid/Lcmaps-plugins-vo-ca-ap">the VO-CA-AP Wiki&lt;/a>.
-Authorization based on VO and CA combinations are binary (either &amp;lsquo;in&amp;rsquo; or
-&amp;lsquo;out&amp;rsquo;) for Argus : install at least version 1.7.1 and follow the instructions
-at
-&lt;a href="http://argus-documentation.readthedocs.io/en/latest/release_notes/v_1_7_1.html">the Argus documentation to enable the new PIP and include new policies in the PAP&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>When in doubt&lt;/strong> just only install the regular &lt;code>ca-policy-egi-core&lt;/code> package.
-This is what you get anyway when you upgrade using standard tools, and there are
-no changes in this case. The &lt;code>ca-policy-egi-core&lt;/code> package is approved for all
-VOs membership and assurance models.&lt;/p>
-&lt;h2 id="patches-and-work-arounds">Patches and work-arounds&lt;/h2>
-&lt;h3 id="mod_ssl-renegotiation-timeouts">mod_ssl renegotiation timeouts&lt;/h3>
-&lt;p>We provide here a workaround for the issue
-&lt;a href="https://savannah.cern.ch/bugs/?func=detailitem&amp;amp;item_id=48458#comment57">summarised in comment #57 of bug #48458&lt;/a>.
-The following rpm has been added to the repository:
-&lt;code>dummy-ca-certs-20090630-1.noarch.rpm&lt;/code>. Please note that:&lt;/p>
-&lt;ul>
-&lt;li>This rpm is not added to the &lt;code>ca-policy-egi-core&lt;/code>, &lt;code>lcg-CA&lt;/code> or &lt;code>ca-policy-lcg&lt;/code>
-metapackage dependencies&lt;/li>
-&lt;li>If you want to install it you should run: &lt;code>yum install dummy-ca-certs&lt;/code>&lt;/li>
-&lt;li>The RPM contains 60 expired CAs that cannot be used for validation, but will
-ensure the &lt;code>mod_ssl&lt;/code> renegotiation buffer is large enough&lt;/li>
-&lt;/ul>
-&lt;p>For Quattor (QWG and CDB) setups, add&lt;/p>
-&lt;pre>&lt;code class="language-quattor" data-lang="quattor">pkg_repl(&amp;quot;dummy-ca-certs&amp;quot;,&amp;quot;20090630-1&amp;quot;,&amp;quot;noarch&amp;quot;);
-&lt;/code>&lt;/pre>&lt;p>to your templates, preferably in a file &lt;em>different&lt;/em> from the
-automatically-generated &lt;code>egi-ca-policy-core.tpl&lt;/code> template.&lt;/p>
+&lt;h2 id="combined-assuranceadequacy-model">Combined Assurance/Adequacy Model&lt;/h2>
+&lt;p>The release contains a &amp;ldquo;cam&amp;rdquo; (combined assurance/adequacy) package based on the
+approved policy on differentiated assurance. Technically, this means that you
+must &lt;strong>ONLY&lt;/strong> install the new &lt;code>ca-policy-egi-cam&lt;/code> packages if you &lt;strong>ALSO&lt;/strong> at
+the same time implement VO-specific authorization controls in your software
+stack. This may require reconfiguration or a software update. Otherwise, just
+only install or update the regular &lt;code>ca-policy-egi-core&lt;/code> package. There are no
+changes in this case. The &lt;code>ca-policy-egi-core&lt;/code> package is approved for all VOs
+membership and assurance models. No configuration change is needed.&lt;/p>
+&lt;h3 id="acceptable-authentication-assurance">Acceptable Authentication Assurance&lt;/h3>
+&lt;p>If a VO registration service or e-infrastructure registration service is
+accredited by EGI to meet the approved authentication assurance, an IGTF
+&amp;ldquo;DOGWOOD&amp;rdquo; accredited Authority - used solely in combination with said
+registration service - is also adequate for user authentication. See
+&lt;a href="https://documents.egi.eu/document/2930">the policy&lt;/a> for details.&lt;/p>
+&lt;p>This additional restriction policy must be implemented by each service in the
+authorization software. The &amp;ldquo;combined assurance&amp;rdquo; model package &lt;strong>MUST NOT&lt;/strong> be
+installed unless the additional authorization is in place. You will need to
+reconfigure and may need to install upgrades. Not installing the new &amp;ldquo;cam&amp;rdquo;
+package does not have any detrimental effect on current users - only a new class
+of users (that can only obtain an opaque identifiers and do not do full vetting
+at their electronic identity provider) could be affected, and then only those
+users that are member of one of the communities that has part of the
+combined-assurance programme: LCG-Atlas, LCG-Alice, LCG-LHCb, and LCG-CMS.&lt;/p>
+&lt;h2 id="patches-and-workarounds">Patches and workarounds&lt;/h2>
 &lt;h3 id="reminder-notice-for-voms-aa-operators">Reminder notice for VOMS AA operators&lt;/h3>
 &lt;p>Several updates to this trust anchor distribution incorporate changes to the
 name of the issuing authority, but the name of the end-entities and the users
