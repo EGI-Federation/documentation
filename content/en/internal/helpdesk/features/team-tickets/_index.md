@@ -6,11 +6,27 @@ description: >
   Team tickets
 ---
 
-## Heading
+## Introduction: purpose and conditions
 
-Edit this template to create your new page.
+* The purpose of TEAM tickets is to allow all team members to modify all tickets
+of their team although they may not have support access and they do not have
+submitted the ticket themselves.
+* Only members of a few VOs are allowed to submit team tickets:
+** Alice
+** Atlas
+** Cms
+** Lhcb
+** Biomed
+** Belle
+* The VO memenbers need to have the appropriate permissions in GGUS user database
+* Other VOs can request this functionality by opening a GGUS ticket
+* Team tickets are routed to the NGI/ROC the site belongs to automatically. They
+do not need a routing by the TPM. The NGI/ROC is notified about the ticket in the
+usual way. In parallel, the site receives a notification email.
 
-* Give it a good name, ending in `.md` - e.g. `getting-started.md`
-* Edit the "front matter" section at the top of the page (weight controls how its ordered amongst other pages in the same directory; lowest number first).
-* Add a good commit message at the bottom of the page (<80 characters; use the extended description field for more detail).
-* Create a new branch so you can preview your new file and request a review via Pull Request.
+## Technical description
+This section describes the workflows of team tickets from a technical point of view.
+
+## Team ticket submission
+Team tickets can either be submitted using the GGUS web portal. On top of the ticket
+submit form in GGUS web portal there is a link to the submit form for team tickets Figure 1
