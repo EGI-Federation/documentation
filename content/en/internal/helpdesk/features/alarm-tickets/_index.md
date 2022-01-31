@@ -29,7 +29,7 @@ relevant people at any time.
 - Alarm email addresses are taken from GOC DB for the EGI sites and from OIM for
 the OSG sites. VOMS is used by GGUS as the information source for authorised alarmers.
 
-!([Tier 1s picture](LHC_T1s.png)
+![Tier 1s picture](LHC_T1s.png)
 
 ### Becoming an Alarm-ticket member
 
