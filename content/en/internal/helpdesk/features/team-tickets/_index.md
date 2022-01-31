@@ -12,22 +12,34 @@ description: >
 of their team although they may not have support access and they do not have
 submitted the ticket themselves.
 - Only members of a few VOs are allowed to submit team tickets:
--- Alice
--- Atlas
--- Cms
--- Lhcb
--- Biomed
--- Belle
+  - Alice
+  - Atlas
+  - Cms
+  - Lhcb
+  - Biomed
+  - Belle
 - The VO memenbers need to have the appropriate permissions in GGUS user database
 - Other VOs can request this functionality by opening a GGUS ticket
 - Team tickets are routed to the NGI/ROC the site belongs to automatically. They
 do not need a routing by the TPM. The NGI/ROC is notified about the ticket in the
 usual way. In parallel, the site receives a notification email.
 
+### Becoming a Team-ticket member
+
+People who want to become a team member have to:
+- register in GGUS first
+- be added to the appropriate group in a VOMS server.
+
+GGUS system synchronizes its user database once per night with the VOMS servers.
+The synchronization is based on the DN string. Please make sure the DN of your GGUS
+account is the same to the one registered in VOMS.
+
 ## Technical description
+
 This section describes the workflows of team tickets from a technical point of view.
 
 ### Team ticket submission
+
 Team tickets can either be submitted using the GGUS web portal. On top of the ticket
 submit form in GGUS web portal there is a link to the submit form for team tickets.
 
@@ -67,5 +79,3 @@ to the team ticket is given in the team notification mail. Team tickets can be u
 to alarm tickets clicking on the button “Click to convert to ALARM”.
 
 ![Team to Alarm](Team_to_alarm.png)
-
-
