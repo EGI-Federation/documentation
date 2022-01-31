@@ -267,7 +267,135 @@ have to refresh the search result by clicking the Go! button.&lt;/p>
 &lt;h3 id="exporting-search-results">Exporting search results&lt;/h3>
 &lt;p>Search results can be exported in csv or xml format for further processing. After clicking
 on the appropriate link a new window opens showing the results in the specified format.
-Out of this window you can save a local copy of this file.&lt;/p></description></item><item><title>Internal: GGUS user guide</title><link>/internal/helpdesk/ggus-user-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-user-guide/</guid><description>
+Out of this window you can save a local copy of this file.&lt;/p>
+&lt;h3 id="ticket-data">Ticket data&lt;/h3>
+&lt;p>By clicking on the ticket ID of a ticket in the results list of the search engine you can
+access the ticket data. The ticket data is divided into 3 main sections:&lt;/p>
+&lt;ul>
+&lt;li>ticket information&lt;/li>
+&lt;li>ticket history&lt;/li>
+&lt;li>ticket modify section&lt;/li>
+&lt;/ul>
+&lt;h4 id="ticket-information">Ticket information&lt;/h4>
+&lt;p>The system shows the information section after clicking on a ticket ID.It provides an
+overview of all relevant ticket parameters and could be divided into 5 areas:&lt;/p>
+&lt;ul>
+&lt;li>submitter data&lt;/li>
+&lt;li>issue data&lt;/li>
+&lt;li>ticket data&lt;/li>
+&lt;li>description&lt;/li>
+&lt;li>solution&lt;/li>
+&lt;/ul>
+&lt;p>Additional features of the ticket information section are:&lt;/p>
+&lt;ul>
+&lt;li>export of ticket information data,&lt;/li>
+&lt;li>escalate button,&lt;/li>
+&lt;li>duplicate ticket and&lt;/li>
+&lt;li>convert team to alarm.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="GGUS_Info_Support.png" alt="Ticket information">&lt;/p>
+&lt;h5 id="duplicate-ticket">Duplicate ticket&lt;/h5>
+&lt;p>Figure 5: Ticket duplication
+Supporters have the opportunity to duplicate an existing ticket up to 15 times.
+The duplicate feature is located right below ticket information. It is useful if
+a ticket concerns not only one support unit but has to be handled by several
+support units. The fields that are copied into the duplicated tickets are:&lt;/p>
+&lt;ul>
+&lt;li>Internal Diary&lt;/li>
+&lt;li>Login&lt;/li>
+&lt;li>Last Modifier&lt;/li>
+&lt;li>Submitter&lt;/li>
+&lt;li>Subject&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="GGUS_Duplicate.png" alt="Ticket duplication">&lt;/p>
+&lt;p>Attachments are not duplicated physically but linked to all duplicated tickets.
+The Responsible Unit is set to &amp;ldquo;TPM&amp;rdquo; by default.&lt;/p>
+&lt;h5 id="convert-team-tickets-to-alarm-tickets">Convert TEAM tickets to ALARM tickets&lt;/h5>
+&lt;p>Figure 3: Convert team to alarm ticket
+Support staffs with ALARM privileges are able to convert TEAM tickets to ALARM
+tickets clicking on a button in the ticket information section. This feature is
+only available for the WLCG VOs.&lt;/p>
+&lt;p>&lt;img src="GGUS_Convert_Alarm.png" alt="Convert team to alarm ticket">&lt;/p>
+&lt;h4 id="ticket-history">Ticket history&lt;/h4>
+&lt;p>The ticket history is located below ticket information. It shows all relevant
+changes of the ticket in chronological manner. Changes of these fields lead to
+a new entry in ticket history:&lt;/p>
+&lt;ul>
+&lt;li>Assign ticket to support unit&lt;/li>
+&lt;li>Assign ticket to one person&lt;/li>
+&lt;li>Affected Site&lt;/li>
+&lt;li>Public Diary&lt;/li>
+&lt;li>Change ticket category&lt;/li>
+&lt;li>Change status&lt;/li>
+&lt;li>Change VO&lt;/li>
+&lt;li>Change priority&lt;/li>
+&lt;li>Involve others&lt;/li>
+&lt;li>Type of issue&lt;/li>
+&lt;li>Internal Diary&lt;/li>
+&lt;li>Solution&lt;/li>
+&lt;li>Related issue&lt;/li>
+&lt;li>VO specific&lt;/li>
+&lt;/ul>
+&lt;p>For making the history more readable solution entries and entries in the public
+diary are marked with green colour, entries of the internal diary with orange
+colour.&lt;/p>
+&lt;h4 id="ticket-modify-section">Ticket modify section&lt;/h4>
+&lt;p>Figure 6: Ticket modify section
+The ticket modification area offers several fields for modifying a ticket. The
+fields are described in detail below.&lt;/p>
+&lt;p>&lt;img src="GGUS_Modifysection_Support.png" alt="Ticket modify section">&lt;/p>
+&lt;ul>
+&lt;li>Assign ticket to support unit is showing all support units involved in GGUS.&lt;/li>
+&lt;li>Assign ticket to specific person(s) allows assigning tickets to a dedicated
+person within the current support unit. If a mail address is typed in the
+system generates an email to inform the recipient about the ticket assignment.
+The length is limited to 254 characters.&lt;/li>
+&lt;li>Change status is a drop-down-list with all possible status values.&lt;/li>
+&lt;li>Change VO is a drop-down-list with all possible VO values.&lt;/li>
+&lt;li>Type of issue provides a drop-down-list of possible issue types.&lt;/li>
+&lt;li>Change priority provides a drop-down-list of possible priority values.&lt;/li>
+&lt;li>Notify site is for specifying the site affected by the issue. For ticket
+types “ALARM” and “TEAM” this field is not editable.&lt;/li>
+&lt;li>Change ticket category provides a drop-down list with values “Incident”,
+“Change Request”, “Documentation” and &amp;ldquo;Test&amp;rdquo;.&lt;/li>
+&lt;li>Involve others allows contacting any people who may help to solve an issue.
+Several mail addresses can be typed in separated by “;”. The length is limited
+to 254 characters.&lt;/li>
+&lt;li>VO specific is a flag indicating whether a issue is VO specific or not.
+Default is “no”.&lt;/li>
+&lt;li>Change CC recipient is for editing the mail addresses specified during ticket
+submit for notifying any person about a ticket.&lt;/li>
+&lt;li>MoU Area can only be set for tickets of type “TEAM” or “ALARM”. Possible
+values are documented here.&lt;/li>
+&lt;li>Subject is for editing the subject of a ticket.&lt;/li>
+&lt;li>Internal Diary can be used for internal remarks. It is only shown to people
+with support privileges and limited to 4000 characters.&lt;/li>
+&lt;li>Public Diary updates always trigger an update mail to the submitter. It is
+limited to 4000 characters.&lt;/li>
+&lt;li>Click here to insert… expands the solution field.&lt;/li>
+&lt;li>Solution can be up to 4000 characters. It is used for explaining the solution.&lt;/li>
+&lt;li>Hide solution hides the solution field.&lt;/li>
+&lt;li>Reminders feature can be set to “Please send reminder on” if status is changed
+to “on hold” or “waiting for reply”. In this case a date can be selected on
+which a reminder mail was sent. This feature should help supporters not to forget
+tickets which were not worked on for a longer time.&lt;/li>
+&lt;li>Related issue can be used to reference any URL. It is limited to 125 characters.&lt;/li>
+&lt;li>Click here to expand … expands the ticket relation section.&lt;/li>
+&lt;li>Hide ticket relation section hides ticket relation fields.&lt;/li>
+&lt;li>Mark this ticket as Master is described in detail in chapter Master-Slave
+relations.&lt;/li>
+&lt;li>Mark this ticket as Slave is described in detail in chapter Master-Slave
+relations.&lt;/li>
+&lt;li>Mark this ticket as child this feature is described in detail in chapter
+Parent-Child relations.&lt;/li>
+&lt;li>Cross reference is for referencing as much other GGUS tickets as necessary. For
+each ticket referenced here a symmetric link is added to the referenced ticket
+automatically.&lt;/li>
+&lt;li>Want to upload attachment? is for adding attachments. Only one attachment can
+be added at a time. The total number of attachments is unlimited.&lt;/li>
+&lt;/ul>
+&lt;h4 id="ticket-participation">Ticket Participation&lt;/h4>
+&lt;p>hloj&lt;/p></description></item><item><title>Internal: GGUS user guide</title><link>/internal/helpdesk/ggus-user-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-user-guide/</guid><description>
 &lt;blockquote>
 &lt;p>To be removed: Moving the content of
 &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide">Wiki: FAQ_GGUS-User_Guide&lt;/a>&lt;/p>
