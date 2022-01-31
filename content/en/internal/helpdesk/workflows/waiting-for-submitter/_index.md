@@ -55,4 +55,9 @@ updates by the submitter not recognized by the system and set the ticket status 
 "solved"/"unsolved" tickets and be closed after 10 working days without re-opening
 the ticket again.
 
-
+| Action | Ticket Status | Working Days | Work Flow |
+| ------- | ------------- | ------------- | ----------- |
+| 1 | waiting for reply |	5	| first reminder to submitter; adding ticket to monitoring dashboard |
+| 2	| waiting for reply |	5	| second reminder to submitter |
+| 3	| waiting for reply |	5	| notification to monitoring team; the monitoring team sets status "unsolved" |
+| 4 | unsolved |	10	| manuel status change to "closed" by ticket monitoring team |
