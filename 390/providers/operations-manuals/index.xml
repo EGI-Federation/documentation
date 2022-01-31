@@ -2132,7 +2132,8 @@ trusted CAs.&lt;/p>
 &lt;p>Add the following
 &lt;a href="http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo">repo-file&lt;/a>
 to the &lt;code>/etc/yum.repos.d/&lt;/code> directory:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#c4a000">[EGI-trustanchors] name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">EGI-trustanchors&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[EGI-trustanchors]&lt;/span>
+&lt;span style="color:#c4a000">name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">EGI-trustanchors&lt;/span>
 &lt;span style="color:#c4a000">baseurl&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">http://repository.egi.eu/sw/production/cas/1/current/&lt;/span>
 &lt;span style="color:#c4a000">gpgkey&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">http://repository.egi.eu/sw/production/cas/1/GPG-KEY-EUGridPMA-RPM-3&lt;/span>
 &lt;span style="color:#c4a000">gpgcheck&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">1&lt;/span>
