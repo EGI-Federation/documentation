@@ -630,3 +630,41 @@ via mail automatically. Tasks for solving a ticket:
 - fill in the solution fields and the internal diary if necessary,
 - change the status to “solved” and you are done.
 
+## Reminder emails
+
+Reminder mails are based on the priority colours. The algorithm of setting priority
+colours is described in the following chapters.
+Reminder mails are sent with the reply-to address ignored - atnospam - ggus.org. All mails
+sent to this mail box are deleted regularly without reading them.
+
+### What are the priority colours?
+
+Priority colours are:
+- Green: default for all new tickets
+- Yellow
+- Amber
+- Red
+- Light blue: for all tickets in status unsolved
+- Blue: for all solved and verified tickets
+
+Priority colours depend on the expected response time and the expected solution time of
+a ticket.
+
+#### Expected response time
+
+The expected response times for support units that did not agree on a dedicated quality
+of service (https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels) are listed in the relevant FAQ.
+This means, the status of a ticket should be
+set to another value than “assigned” for indicating that the support unit has
+acknowledged the ticket.
+
+#### Expected solution time
+The expected solution times are driven by the priority values of the tickets. All values
+are working days. The higher the priority the shorter is the duration within which the
+ticket is expected to be solved.
+For further details please see the priority colours FAQ
+https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour .
+
+Ticket follow-up
+Ticket follow-up is done by a team at KIT (Germany) for all tickets besides operations tickets. More information on the ticket follow-up processes are available at EGI_DMSU_Ticket_Followup https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup and
+https://wiki.egi.eu/wiki/GGUS:Ticket_monitoring .
