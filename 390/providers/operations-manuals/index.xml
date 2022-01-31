@@ -2104,19 +2104,11 @@ prevent you from installing a CA, these regulations take precedence &amp;ndash; 
 then must inform the EGI Security Officer (see
 &lt;a href="https://confluence.egi.eu/display/EGIBG/CSIRT">EGI CSIRT&lt;/a>) about this
 exception.&lt;/p>
-&lt;h2 id="version-1114---changelog-and-information">Version 1.114 - changelog and information&lt;/h2>
-&lt;p>The changelog contains important notices about the release, as well as a list of
+&lt;h2 id="release-notes">Release notes&lt;/h2>
+&lt;p>Review the
+&lt;a href="http://repository.egi.eu/sw/production/cas/1/current/README.txt">release notes&lt;/a>
+containing important notices about the current release, as well as a list of
 changes to the trust fabric.&lt;/p>
-&lt;ul>
-&lt;li>Review the
-&lt;a href="http://repository.egi.eu/sw/production/cas/1/current/README.txt">release notes&lt;/a>&lt;/li>
-&lt;li>1.114 was released on &lt;strong>2022-01-17&lt;/strong> as a &lt;strong>regular&lt;/strong> update with expedited
-release&lt;/li>
-&lt;li>With the introduction of combined assurance/adequacy, the EGEE compatibility
-RPM (lcg-CA) can no longer be supported, and - when still installed - will be
-obsoleted. The proper dependency packages are: ca-policy-&lt;em>body&lt;/em>-&lt;em>class&lt;/em> and
-these have been installed automatically as dependencies since 2010.&lt;/li>
-&lt;/ul>
 &lt;h2 id="installation">Installation&lt;/h2>
 &lt;p>To install the EGI trust anchors on a system that uses the RedHat Package
 Manager (RPM) based package management system, we provide a convenience package
