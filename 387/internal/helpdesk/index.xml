@@ -653,7 +653,39 @@ via mail automatically. Tasks for solving a ticket:&lt;/p>
 &lt;li>change status to “in progress” while working on it,&lt;/li>
 &lt;li>fill in the solution fields and the internal diary if necessary,&lt;/li>
 &lt;li>change the status to “solved” and you are done.&lt;/li>
-&lt;/ul></description></item><item><title>Internal: GGUS user guide</title><link>/internal/helpdesk/ggus-user-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-user-guide/</guid><description>
+&lt;/ul>
+&lt;h2 id="reminder-emails">Reminder emails&lt;/h2>
+&lt;p>Reminder mails are based on the priority colours. The algorithm of setting priority
+colours is described in the following chapters.
+Reminder mails are sent with the reply-to address ignored - atnospam - ggus.org. All mails
+sent to this mail box are deleted regularly without reading them.&lt;/p>
+&lt;h3 id="what-are-the-priority-colours">What are the priority colours?&lt;/h3>
+&lt;p>Priority colours are:&lt;/p>
+&lt;ul>
+&lt;li>Green: default for all new tickets&lt;/li>
+&lt;li>Yellow&lt;/li>
+&lt;li>Amber&lt;/li>
+&lt;li>Red&lt;/li>
+&lt;li>Light blue: for all tickets in status unsolved&lt;/li>
+&lt;li>Blue: for all solved and verified tickets&lt;/li>
+&lt;/ul>
+&lt;p>Priority colours depend on the expected response time and the expected solution time of
+a ticket.&lt;/p>
+&lt;h4 id="expected-response-time">Expected response time&lt;/h4>
+&lt;p>The expected response times for support units that did not agree on a dedicated quality
+of service (&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels">https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels&lt;/a>) are listed in the relevant FAQ.
+This means, the status of a ticket should be
+set to another value than “assigned” for indicating that the support unit has
+acknowledged the ticket.&lt;/p>
+&lt;h4 id="expected-solution-time">Expected solution time&lt;/h4>
+&lt;p>The expected solution times are driven by the priority values of the tickets. All values
+are working days. The higher the priority the shorter is the duration within which the
+ticket is expected to be solved.
+For further details please see the priority colours FAQ
+&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour">https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour&lt;/a> .&lt;/p>
+&lt;p>Ticket follow-up
+Ticket follow-up is done by a team at KIT (Germany) for all tickets besides operations tickets. More information on the ticket follow-up processes are available at EGI_DMSU_Ticket_Followup &lt;a href="https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup">https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup&lt;/a> and
+&lt;a href="https://wiki.egi.eu/wiki/GGUS:Ticket_monitoring">https://wiki.egi.eu/wiki/GGUS:Ticket_monitoring&lt;/a> .&lt;/p></description></item><item><title>Internal: GGUS user guide</title><link>/internal/helpdesk/ggus-user-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-user-guide/</guid><description>
 &lt;blockquote>
 &lt;p>To be removed: Moving the content of
 &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide">Wiki: FAQ_GGUS-User_Guide&lt;/a>&lt;/p>
