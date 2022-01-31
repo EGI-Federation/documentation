@@ -89,7 +89,53 @@ ticket against Helpdesk (GGUS) support unit.&lt;/p>
 &lt;h2 id="additional-information">Additional information&lt;/h2>
 &lt;p>&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide">GGUS user guide&lt;/a>
 &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Short-Guide">GGUS short guide&lt;/a>
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Staff-Guide">GGUS support staff guide&lt;/a>&lt;/p></description></item><item><title>Internal: GGUS user guide</title><link>/internal/helpdesk/ggus-user-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-user-guide/</guid><description>
+&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Staff-Guide">GGUS support staff guide&lt;/a>&lt;/p></description></item><item><title>Internal: GGUS Support Staff Guide</title><link>/internal/helpdesk/ggus-support-staff-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-support-staff-guide/</guid><description>
+&lt;h2 id="whats-new-in-the-latest-release">What’s new in the latest release?&lt;/h2>
+&lt;p>Please see the &lt;a href="https://ggus.eu/index.php?mode=release_notes">Ongoing work list&lt;/a>
+for further information.&lt;/p>
+&lt;h2 id="access-to-ggus">Access to GGUS&lt;/h2>
+&lt;p>GGUS is reachable via &lt;a href="https://helpdesk.egi.eu/">https://helpdesk.egi.eu/&lt;/a> and &lt;a href="https://ggus.eu">https://ggus.eu&lt;/a> using a web
+browser. Another way for accessing GGUS is using the direct link provided in
+the notification emails sent after ticket updates. However either a valid X509
+personal certificate or a Check-in account are required for accessing the system.&lt;/p>
+&lt;h2 id="features-of-ggus">Features of GGUS&lt;/h2>
+&lt;h3 id="ggus-home">GGUS Home&lt;/h3>
+&lt;p>GGUS home provides a quick overview over tickets submitted by the current user,
+the latest tickets of other users and a collection of news and links to useful
+information. The navigation bar is located on the left side of GGUS pages. It
+provides links to:&lt;/p>
+&lt;ul>
+&lt;li>Did you know?&lt;/li>
+&lt;li>Documentation&lt;/li>
+&lt;li>Registration&lt;/li>
+&lt;li>My dashboard&lt;/li>
+&lt;li>Search Engine&lt;/li>
+&lt;li>Submit form&lt;/li>
+&lt;li>Support staff pages&lt;/li>
+&lt;li>GGUS Home&lt;/li>
+&lt;li>Legals&lt;/li>
+&lt;li>Contact form&lt;/li>
+&lt;/ul>
+&lt;h3 id="did-you-know">Did you know&lt;/h3>
+&lt;p>After each release, a major change or new feature is explained in some
+sentences here.&lt;/p>
+&lt;h3 id="documentation">Documentation&lt;/h3>
+&lt;p>In the documentation section there is a collection of links providing useful
+information around GGUS system.&lt;/p>
+&lt;h3 id="registration">Registration&lt;/h3>
+&lt;p>All information about registration can be found on the
+&lt;a href="https://ggus.eu/index.php?mode=register_info">registration page&lt;/a>. For
+registering as support staff, click the link “Apply” and fill in the registration
+form. After registering successfully you will receive a confirmation mail from
+GGUS team.&lt;/p>
+&lt;p>If you want to update your account data, you can do this using the link &amp;ldquo;Check
+your GGUS account&amp;rdquo; on the registration page. If you can’t access GGUS web
+interface due to changed DN string of your personal certificate, you can log into
+the system using your Check-in account. Then go to the registration page and
+click on Check/update your GGUS account. The system shows you all your user data.
+It detects the new DN string of your browser automatically. Just save the changes
+by clicking on button Update now. Additional information on GGUS accounts is
+available here(link to new location of &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Account)">https://wiki.egi.eu/wiki/FAQ_GGUS-Account)&lt;/a>.&lt;/p></description></item><item><title>Internal: GGUS user guide</title><link>/internal/helpdesk/ggus-user-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-user-guide/</guid><description>
 &lt;blockquote>
 &lt;p>To be removed: Moving the content of
 &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide">Wiki: FAQ_GGUS-User_Guide&lt;/a>&lt;/p>
