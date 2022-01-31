@@ -68,5 +68,6 @@ The submitter has 15 working days in total for replying to a ticket. Additionall
 they have 10 more working days for re-opening the ticket in case they do not agree
 with setting the ticket to "unsolved".
 
-### Work flow graph
+### Workflow graph
 
+![Waiting for submitter workflow](GGUS_Graph_WaitingForSubmitter-workflow.png)
