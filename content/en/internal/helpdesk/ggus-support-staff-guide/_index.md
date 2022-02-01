@@ -538,7 +538,7 @@ formed from members who are specialists in various areas of grid middleware, or
 NGI/ROC supporters for operations problems, or VO specific supporters. The
 membership of the support units is maintained on mailing lists. If the user
 responds to any email received from GGUS, then the reply is added to the ticket
-history. The subject of the email includes meta data to ensure the association
+history. The subject of the email includes metadata to ensure the association
 of the response with the ticket.
 
 ### Tickets waiting for user input
