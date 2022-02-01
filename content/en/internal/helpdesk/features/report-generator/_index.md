@@ -105,3 +105,72 @@ calculation of performance figures.
 - [wd] means working days
 - [d] means calendar days
 
+## Reports description
+
+*Although some of the drop-down lists request the selection of values a query can be
+started anyway. In this case the query is equivalent to a query over all tickets!*
+
+The "Reset" button resets all fields to their default settings besides the time frame.
+
+### Tickets submitted
+
+This metric gives the number of tickets submitted within the specified time frame.
+Major criteria is the submit time stamp.
+The result lists shows the **current** status of the tickets.
+
+### Open tickets time
+
+The open tickets time report calculates the time from ticket submission until now in
+calendar days. The **submit time stamp** must match the specified time frame for the
+report.
+
+### Tickets closed
+
+This metric is focused on the **ticket life time**. It gives the number of tickets
+that reached the status "solved" or "unsolved" within the specified time frame.
+Major criteria is the **solution time stamp** which is the time stamp setting a
+ticket to "solved" or "unsolved". Tickets in other terminal status like "verified"
+or "closed" appear in the result list as long as they have been set to
+"solved/unsolved" in the given time frame. Besides date, status and the number of
+closed tickets the results list displays the average ticket lifetime and the median
+ticket lifetime. The result lists shows the current status of the tickets.
+
+### Response time
+
+This metric focuses on the responsiveness of support units.
+Major criteria for this report is the **submit time stamp** which must match the
+selected time frame. The result list shows:
+- the number of tickets responded
+- the number of responses
+- average response time and
+- median response time
+
+for the specified time frame. The result list shows all support units that have
+ever been in charge of a ticket. Hence the same ticket ID may appear several times.
+The number of responses may be greater than the number of tickets.
+
+*Response times are based on office hours. Hence an average response time of
+1d 3h 23min means 13 hours and 23 minutes in total.*
+
+### Violated response time
+
+Specific privileges are required for this report. Only people belonging to a
+dedicated technology provider (TP) are able doing reports for this TP. Major
+criteria for this report are the **expected response time** defined in SLAs
+and the TP.
+
+### Solution time
+
+Major criteria for this report is the **solution time stamp**. The result list
+shows:
+- the number of solutions
+- average response time and
+- median response time
+
+for the specified time frame. The result lists shows the current status of the
+tickets.
+*Solution times are based on office hours. Hence an average solution time of
+12d 3h 5min means 99 hours and 5 minutes in total.*
+The waiting time can be excluded by ticking the check box "exclude waiting time".
+In case a ticket gets re-opened the metrics calculation starts again from scratch.
+Hence the same ticket can appear several times in the solution times calculation.
