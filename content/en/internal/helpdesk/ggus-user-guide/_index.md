@@ -59,12 +59,12 @@ from the GGUS team with his access data to GGUS.
 
 ### Accessing GGUS with certificate
 
-The primary address of the GGUS portal is: [https://ggus.eu](https://ggus.eu). If
-the user enters this in the browser, a warning will be displayed by the browser
-prompting the user to specify which certificate to use (if the user has not
-selected to automatically select the certificate in the browser settings). The
-reason for this warning is that GGUS has to validate the user in order to allow
-access. After that, the user will no longer be asked to identify himself.
+The primary address of the GGUS portal is: [https://ggus.eu](https://ggus.eu).
+If the user enters this in the browser, a warning will be displayed by the
+browser prompting the user to specify which certificate to use (if the user has
+not selected to automatically select the certificate in the browser settings).
+The reason for this warning is that GGUS has to validate the user in order to
+allow access. After that, the user will no longer be asked to identify himself.
 
 The user identifies themselves with their digital certificate. At this point in
 time, GGUS has identified the user and displays the start page as shown in the
@@ -419,8 +419,8 @@ in place. Switching from production system to backup system currently needs
 manual interaction. An automatic switch in case of fail-over will be
 implemented. GGUS staffs at Karlsruhe are not providing support apart from
 requests concerning GGUS system itself. They can be contacted by email to
-support "at" ggus.eu. Usual office hours for GGUS staffs are from 07:00 to
-15:00 o’clock (UTC).
+support "at" ggus.eu. Usual office hours for GGUS staffs are from 07:00 to 15:00
+o’clock (UTC).
 
 ### TPM
 
