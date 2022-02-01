@@ -108,6 +108,6 @@ in the table below. The priority colour calculation is running every 15 minutes.
 | very urgent | Yellow | 16 |
 | | Amber | 24 |
 | | Red | 32 |
-| top priority | Yellow	12 |
+| top priority | Yellow	| 12 |
 | | Amber | 18 |
 | | Red | 24 |
