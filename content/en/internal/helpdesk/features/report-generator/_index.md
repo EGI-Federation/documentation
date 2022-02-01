@@ -174,3 +174,106 @@ tickets.
 The waiting time can be excluded by ticking the check box "exclude waiting time".
 In case a ticket gets re-opened the metrics calculation starts again from scratch.
 Hence the same ticket can appear several times in the solution times calculation.
+
+## Input parameters and results
+
+### Input parameters
+
+The input parameters vary depending on the report type chosen. Possible input
+parameters are:
+
+- Time frame
+- Responsible Unit
+- Status
+- Priority
+- Concerned VO
+- Ticket type
+- Ticket category
+- Ticket Scope
+- Notified site
+- Technology provider
+- Date aggregation
+
+#### Time frame
+
+The time frame defines begin and end date of the report. The begin date starts
+at 00:00:00. The end date ends at 00:00:00. As the implementation of the report
+generator started in October 2011 the report generator does not provide data
+for tickets submitted before December 2011!
+
+#### Responsible Units
+
+The drop-down list offers all responsible units integrated in GGUS system. They
+can be filtered by keywords. Responsible Units can be either selected all, one
+by one or by checking the boxes in front of the responsible unit groups. In case
+no responsible units are selected all responsible units are considered in the
+reports.
+
+#### Status
+
+The drop-down list offers all status values available in GGUS system.
+Multiple selections are possible.
+
+#### Priority
+
+The drop-down list offers all priority values available in GGUS system.
+Multiple selections are possible.
+
+#### Concerned VO
+
+"Concerned VO" provides a drop-down list of all VOs supported by GGUS.
+Multiple selections are possible.
+
+#### Ticket type
+
+This drop-down list lists all ticket types in GGUS.
+Multiple selections are possible.
+
+#### Ticket category
+
+Selectable categories are "Incident", "Change request", "Documentation", "Test".
+Multiple selections are possible. The category "Test" should not be considered
+for all reports and therefore, if necessary, be excluded from the selection.
+
+#### Ticket scope
+
+To distinguish between tickets under the responsibility of EGI or WLCG.
+
+#### Notified site
+
+"Notified site" lists all sites integrated in GGUS. They are derived from GOC DB
+and OIM DB. In case of reporting exclusively on tickets without any site value
+specified please ticket the "blank" value in the drop-down list.
+
+#### Technology Provider
+
+This input parameter is only visible if choosing the "violated response time"
+report. For accessing this report specific privileges are required. The drop-down
+list offers all technology providers currently integrated in GGUS and the "DMSU".
+Multiple selections are possible. In case no technology provider is selected the
+reports will be done for tickets without any technology provider specified.
+
+#### Date aggregation
+
+The results aggregation level can be chosen from the drop down list "Choose date
+aggregation".
+
+#### Group by
+Results can be grouped by one or more of the input parameters.
+
+### Results
+The results are displayed below the input parameter area. They can be sorted in
+different ways by clicking on the column labels. A drill-down is possible by
+clicking on any row of the results list. The detail results open in a new window.
+They can be sorted by clicking the column labels too. Clicking on the ticket ID
+opens the ticket in GGUS system. At the bottom of the result panel there are
+various icons offering features like:
+- Search
+- Refresh
+- Export
+- Export what you see
+
+Doing a simple *"Export"* saves the data in a csv file stripping all column
+headers. For exporting the data including the column headers please use
+*"Export what you see"*. The *"Search"* feature allows searching in the result
+list. Possible search parameters are the columns of the result list.
