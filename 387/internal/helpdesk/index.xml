@@ -726,7 +726,7 @@ certificates. Users who do not have a valid digital certificate can access GGUS
 via EGI SSO. After filling in the registration form, the user receives an e-mail
 from the GGUS team with his access data to GGUS.&lt;/p>
 &lt;h3 id="accessing-ggus-with-certificate">Accessing GGUS with certificate&lt;/h3>
-&lt;p>The primary address of the GGUS portal is: &lt;a href="http://ggus.eu">http://ggus.eu&lt;/a>. If
+&lt;p>The primary address of the GGUS portal is: &lt;a href="https://ggus.eu">https://ggus.eu&lt;/a>. If
 the user enters this in the browser, a warning will be displayed by the browser
 prompting the user to specify which certificate to use (if the user has not
 selected to automatically select the certificate in the browser settings). The
