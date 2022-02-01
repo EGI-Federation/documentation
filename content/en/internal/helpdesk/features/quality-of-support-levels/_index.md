@@ -51,9 +51,9 @@ ticket priority.
 
 ## QoS level declaration
 
-QoS level declaration for Technology Providers can be found here:
-https://wiki.egi.eu/wiki/Technology_Providers
+The QoS level for all of the SUs are available [here](
+https://ggus.eu/?mode=resp_unit_info)
 
 For the several EGI services, the QoS levels are defined in the specific
-Operational Level Agreement linked in this [page](
+Operational Level Agreements linked in this [page](
 https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework#EGIOLASLAframework-OperationalLevelAgreements)
