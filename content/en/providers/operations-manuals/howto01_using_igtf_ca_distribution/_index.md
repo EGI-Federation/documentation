@@ -208,15 +208,12 @@ Several updates to this trust anchor distribution incorporate changes to the
 name of the issuing authority, but the name of the end-entities and the users
 remains exactly the same. To make the change transparent, all operators of VOMS
 and VOMS-Admin services are requested to enable the subject-only name resolution
-mechanisms in VOMS and VOMS Admin
+mechanisms in VOMS and VOMS Admin, see additional documentation in
+[VOMS services configuration reference](https://italiangrid.github.io/voms/documentation/sysadmin-guide/3.0.14/configuration.html):
 
 - on the VOMS core Attribute Authority service, configure the `-skipcacheck`
-  flag on start-up. In YAIM this is done by setting `VOMS_SKIP_CA_CHECK` to
-  true. See
-  [VOMS Yaim Guide](https://wiki.italiangrid.it/twiki/bin/view/VOMS/VOMSYAIMGuide)
-- update VOMS-Admin to version \>= 3.3.2, and set `voms.skip_ca_check=True` in
-  the service properties. For more info, read the
-  [release notes](http://italiangrid.github.io/voms/release-notes/voms-admin-server/3.3.2/)
+  flag on start-up.
+- Set `voms.skip_ca_check=True` in the service properties.
 
 ## Concerns, issues and verification
 
