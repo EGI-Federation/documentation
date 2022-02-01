@@ -28,8 +28,8 @@ topic against an unlimited number of sites in GGUS.&lt;/li>
 &lt;h2 id="introduction-purpose-and-conditions">Introduction: purpose and conditions&lt;/h2>
 &lt;ul>
 &lt;li>The purpose of ALARM tickets is to notify WLCG Tier-0 and Tier-1
-administrators about serious problems of the site at any time, independent from
-usual office hours.&lt;/li>
+administrators about serious problems of the site at any time, independent
+from usual office hours.&lt;/li>
 &lt;li>Only experts, nominated by the WLCG VOs are allowed to submit alarm tickets.
 They need to have the appropriate permissions in GGUS user database.&lt;/li>
 &lt;li>The involved VOs are:
@@ -40,16 +40,17 @@ They need to have the appropriate permissions in GGUS user database.&lt;/li>
 &lt;li>Lhcb&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Only the Tier-0 &amp;amp; Tier-1 sites are involved in the alarm tickets process.
-The WLCG Tier-0/Tier-1 site names can be used as well as the relevant GOC DB
-site names.&lt;/li>
-&lt;li>Alarm tickets are routed to the NGI/ROC the tier site belongs to automatically.
-They do not need a routing by the TPM. The NGI/ROC is notified about the ticket in
-the usual way. In parallel the site receives an alarm email signed with a GGUS
-certificate. This alarm email is processed at the Tier-0/Tier-1 and notifies the
-relevant people at any time.&lt;/li>
+&lt;li>Only the Tier-0 &amp;amp; Tier-1 sites are involved in the alarm tickets process. The
+WLCG Tier-0/Tier-1 site names can be used as well as the relevant GOC DB site
+names.&lt;/li>
+&lt;li>Alarm tickets are routed to the NGI/ROC the tier site belongs to
+automatically. They do not need a routing by the TPM. The NGI/ROC is notified
+about the ticket in the usual way. In parallel the site receives an alarm
+email signed with a GGUS certificate. This alarm email is processed at the
+Tier-0/Tier-1 and notifies the relevant people at any time.&lt;/li>
 &lt;li>Alarm email addresses are taken from GOC DB for the EGI sites and from OIM for
-the OSG sites. VOMS is used by GGUS as the information source for authorised alarmers.&lt;/li>
+the OSG sites. VOMS is used by GGUS as the information source for authorised
+alarmers.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="LHC_T1s.png" alt="Tier 1s picture">&lt;/p>
 &lt;h3 id="becoming-an-alarm-ticket-member">Becoming an Alarm-ticket member&lt;/h3>
@@ -59,21 +60,24 @@ the OSG sites. VOMS is used by GGUS as the information source for authorised ala
 &lt;li>be added to the appropriate group in a VOMS server.&lt;/li>
 &lt;/ul>
 &lt;p>GGUS system synchronizes its user database once per night with the VOMS servers.
-The synchronization is based on the DN string. Please make sure the DN of your GGUS
-account is the same than the one registered in VOMS.&lt;/p>
-&lt;p>Tier-1 site admins can become alarmers for testing the alarm process for their site.
-They have to fill in the &lt;a href="https://ggus.eu/?mode=register">registration form&lt;/a> for
-supporters. Please add an appropriate comment (e.g. &amp;ldquo;I&amp;rsquo;m a xxx tier-1 site admins and
-I want to become an alarmer for testing purposes.&amp;quot;) in the registration form.&lt;/p>
+The synchronization is based on the DN string. Please make sure the DN of your
+GGUS account is the same than the one registered in VOMS.&lt;/p>
+&lt;p>Tier-1 site admins can become alarmers for testing the alarm process for their
+site. They have to fill in the
+&lt;a href="https://ggus.eu/?mode=register">registration form&lt;/a> for supporters. Please add
+an appropriate comment (e.g. &amp;ldquo;I&amp;rsquo;m a xxx tier-1 site admins and I want to become
+an alarmer for testing purposes.&amp;quot;) in the registration form.&lt;/p>
 &lt;h2 id="technical-description">Technical description&lt;/h2>
-&lt;p>This section describes the workflows of alarm tickets from a technical point of view.&lt;/p>
+&lt;p>This section describes the workflows of alarm tickets from a technical point of
+view.&lt;/p>
 &lt;h3 id="alarm-ticket-submission">ALARM ticket submission&lt;/h3>
-&lt;p>Alarm tickets can be submitted using the GGUS web portal. On top of the ticket submit
-form in GGUS web portal there is a link to the submit form for alarm tickets.&lt;/p>
+&lt;p>Alarm tickets can be submitted using the GGUS web portal. On top of the ticket
+submit form in GGUS web portal there is a link to the submit form for alarm
+tickets.&lt;/p>
 &lt;p>&lt;img src="Alarm_Submit_Link.png" alt="Link to Alarm tickets submit form">&lt;/p>
 &lt;p>As alarm ticket submitters are experts who will hopefully provide all necessary
-information, the number of fields on the alarm ticket submit form is reduced to a
-minimum compared to the number of fields on the user ticket submit form.&lt;/p>
+information, the number of fields on the alarm ticket submit form is reduced to
+a minimum compared to the number of fields on the user ticket submit form.&lt;/p>
 &lt;p>&lt;img src="Alarm_Submit_Form.png" alt="Alarm tickets submit form">&lt;/p>
 &lt;p>Three fields on this form are mandatory:&lt;/p>
 &lt;ul>
@@ -83,44 +87,46 @@ minimum compared to the number of fields on the user ticket submit form.&lt;/p>
 &lt;/ul>
 &lt;p>All other fields are optional.&lt;/p>
 &lt;h3 id="alarm-ticket-processing">ALARM ticket processing&lt;/h3>
-&lt;p>The processing of a team ticket consists of two main parts: the notification of the
-notified site and the routing of the ticket to the NGI/ROC the site belongs to.&lt;/p>
+&lt;p>The processing of a team ticket consists of two main parts: the notification of
+the notified site and the routing of the ticket to the NGI/ROC the site belongs
+to.&lt;/p>
 &lt;h4 id="tier-1-site-notification">Tier-1 site notification&lt;/h4>
-&lt;p>In parallel to the creation of an alarm ticket, the GGUS system sends an alarm email
-directly to the tier 1 site specified in field “Notify SITE”. This email is sent to a
-specific site alarm mail address and signed with the GGUS certificate. The tier-0
-alarm mail address is based on the VO name. It is
-&amp;ldquo;voname&amp;rdquo;-operator-alarm&amp;quot;atnospam&amp;quot;cern.ch. Tier-1 site alarm mail addresses are taken
-from the &amp;ldquo;Emergency Email&amp;rdquo; field in GOC DB. For tier-1 sites registered in the OSG OIM
-DB the alarm email address is taken from field &amp;ldquo;SMSAddress&amp;rdquo; of the &amp;ldquo;Administrative
-Contact&amp;rdquo; in OIM DB. The DN of the GGUS certificate is
-/C=DE/O=GermanGrid/OU=KIT/CN=ggusmail/ggus.eu. The alarm mail looks like the following
-figure.&lt;/p>
+&lt;p>In parallel to the creation of an alarm ticket, the GGUS system sends an alarm
+email directly to the tier 1 site specified in field “Notify SITE”. This email
+is sent to a specific site alarm mail address and signed with the GGUS
+certificate. The tier-0 alarm mail address is based on the VO name. It is
+&amp;ldquo;voname&amp;rdquo;-operator-alarm&amp;quot;atnospam&amp;quot;cern.ch. Tier-1 site alarm mail addresses are
+taken from the &amp;ldquo;Emergency Email&amp;rdquo; field in GOC DB. For tier-1 sites registered in
+the OSG OIM DB the alarm email address is taken from field &amp;ldquo;SMSAddress&amp;rdquo; of the
+&amp;ldquo;Administrative Contact&amp;rdquo; in OIM DB. The DN of the GGUS certificate is
+/C=DE/O=GermanGrid/OU=KIT/CN=ggusmail/ggus.eu. The alarm mail looks like the
+following figure.&lt;/p>
 &lt;p>&lt;img src="Alarm_Notify_Mail.png" alt="alarm notify email">&lt;/p>
 &lt;h4 id="ticket-routing">Ticket routing&lt;/h4>
-&lt;p>Alarm tickets are bypassing the TPMs and routed to the appropriate NGI/ROC automatically.
-The decision to which NGI/ROC a ticket has to be routed is done automatically, based on
-the value of the “Notify SITE” field. The “Notify SITE” drop-down menu shows both the
-tier 1 site names from GOC DB and the tier 1 site names used by WLCG.&lt;/p>
+&lt;p>Alarm tickets are bypassing the TPMs and routed to the appropriate NGI/ROC
+automatically. The decision to which NGI/ROC a ticket has to be routed is done
+automatically, based on the value of the “Notify SITE” field. The “Notify SITE”
+drop-down menu shows both the tier 1 site names from GOC DB and the tier 1 site
+names used by WLCG.&lt;/p>
 &lt;p>&lt;img src="Alarm_T1_Dropdown.png" alt="T1 dropdown menu">&lt;/p>
 &lt;h4 id="alarm-confirmation">ALARM confirmation&lt;/h4>
-&lt;p>Once the tier 1 site received the alarm email the receipt should be confirmed. Sending a
-reply mail containing the typical GGUS identifier and the ticket ID
-“GGUS-Ticket-ID: #00000000” in the subject is sufficient. Such a reply will be added to
-the alarm ticket.&lt;/p>
+&lt;p>Once the tier 1 site received the alarm email the receipt should be confirmed.
+Sending a reply mail containing the typical GGUS identifier and the ticket ID
+“GGUS-Ticket-ID: #00000000” in the subject is sufficient. Such a reply will be
+added to the alarm ticket.&lt;/p>
 &lt;h4 id="working-on-alarm-tickets">Working on ALARM tickets&lt;/h4>
-&lt;p>For working on alarm tickets and resolving them please use the GGUS portal. A reference
-link to the alarm ticket is given in the alarm email notification.&lt;/p>
+&lt;p>For working on alarm tickets and resolving them please use the GGUS portal. A
+reference link to the alarm ticket is given in the alarm email notification.&lt;/p>
 &lt;h4 id="periodic-alarm-ticket-testing-rules">Periodic ALARM ticket testing rules&lt;/h4>
 &lt;p>Alarm ticket testing is documented in
 &lt;a href="https://twiki.cern.ch/twiki/bin/view/EGEE/SA1_USAG#Periodic_ALARM_ticket_testing_ru">WLCG twiki&lt;/a>.&lt;/p></description></item><item><title>Internal: Quality of Support (QoS) levels</title><link>/internal/helpdesk/features/quality-of-support-levels/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/quality-of-support-levels/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>QoS stands for Quality of Support. It describes the level of support provided
-by Support Units in GGUS system.&lt;/p>
+&lt;p>QoS stands for Quality of Support. It describes the level of support provided by
+Support Units in GGUS system.&lt;/p>
 &lt;p>It has an impact on the ticket
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour">priority colour (wiki)&lt;/a>
-in GGUS and the warnings are sent to SUs if 75% of the maximum response time
-of the QoS level are over.&lt;/p>
+&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour">priority colour (wiki)&lt;/a> in
+GGUS and the warnings are sent to SUs if 75% of the maximum response time of the
+QoS level are over.&lt;/p>
 &lt;h2 id="qos-levels">QoS levels&lt;/h2>
 &lt;p>There are three different QoS levels, each defining different response times for
 given Ticket Priority.&lt;/p>
@@ -188,9 +194,11 @@ ticket priority.&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="qos-level-declaration">QoS level declaration&lt;/h2>
-&lt;p>The QoS level for all of the SUs are available &lt;a href="https://ggus.eu/?mode=resp_unit_info">here&lt;/a>&lt;/p>
+&lt;p>The QoS level for all of the SUs are available
+&lt;a href="https://ggus.eu/?mode=resp_unit_info">here&lt;/a>&lt;/p>
 &lt;p>For the several EGI services, the QoS levels are defined in the specific
-Operational Level Agreements linked in this &lt;a href="https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework#EGIOLASLAframework-OperationalLevelAgreements">page&lt;/a>&lt;/p></description></item><item><title>Internal: Report generator</title><link>/internal/helpdesk/features/report-generator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/report-generator/</guid><description>
+Operational Level Agreements linked in this
+&lt;a href="https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework#EGIOLASLAframework-OperationalLevelAgreements">page&lt;/a>&lt;/p></description></item><item><title>Internal: Report generator</title><link>/internal/helpdesk/features/report-generator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/report-generator/</guid><description>
 &lt;h2 id="definitions-and-prerequisites">Definitions and prerequisites&lt;/h2>
 &lt;p>The GGUS Report Generator is available at &lt;a href="https://ggus.eu/?mode=report_view">https://ggus.eu/?mode=report_view&lt;/a>.&lt;/p>
 &lt;p>The implementation of the report generator started in October 2011. Hence the
