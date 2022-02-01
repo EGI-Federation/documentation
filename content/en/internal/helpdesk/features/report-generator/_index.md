@@ -16,14 +16,14 @@ report generator does not provide data for tickets submitted before December
 
 ### Timestamps and metrics
 
-- submit time stamp: time stamp when the ticket is submitted
-- assign time stamp: time stamp when a ticket gets assigned to a support unit
-- response time stamp: time stamp when the ticket status changes from "assigned"
+- submit timestamp: timestamp when the ticket is submitted
+- assign timestamp: timestamp when a ticket gets assigned to a support unit
+- response timestamp: timestamp when the ticket status changes from "assigned"
 to any other status value or the ticket gets re-assigned to another support unit
-- expected response time stamp: time stamp when a ticket should have changed the
+- expected response timestamp: timestamp when a ticket should have changed the
 status to any other status value than "assigned" or be re-assigned to another
 support unit at latest
-- solution time stamp: time stamp when the status changes to either "solved" or
+- solution timestamp: timestamp when the status changes to either "solved" or
 "unsolved"
 
 #### Response time
@@ -37,16 +37,16 @@ or
 - assigning a ticket to a support unit and the status value "assigned" is kept
 until the support unit changes to any other support unit (re-assign).
 
-The response time is calculated as difference between the time stamp changing the
-status or re-assigning the ticket and the assign time stamp. While assigning a
-ticket to a support unit the expected response time stamp is calculated by adding
-an amount of time to the assign time stamp. The amount of time added depends on
+The response time is calculated as difference between the timestamp changing the
+status or re-assigning the ticket and the assign timestamp. While assigning a
+ticket to a support unit the expected response timestamp is calculated by adding
+an amount of time to the assign timestamp. The amount of time added depends on
 the ticket priority and the kind of support unit. For support units that have
 declared a quality of service level the response times are defined by the
 [QoS level (wiki)](https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels).
 For all the other support units a medium QoS is assumed for calculating the expected
-response time stamp. In case the actual response time stamp is greater than the
-"expected response" time stamp for middleware support units the "violate" flag is set.
+response timestamp. In case the actual response timestamp is greater than the
+"expected response" timestamp for middleware support units the "violate" flag is set.
 
 *Response times are based on office hours. Hence the results unit is working days.*
 
@@ -57,7 +57,7 @@ point of view. It describes how long it took the support unit for providing a so
 Solution time is the time from assigning a ticket to a support unit until it provides
 a solution for the problem described. "Providing a solution" means setting the ticket
 status to "solved" or "unsolved". The solution time is calculated as the difference
-between the solution time stamp and the assign time stamp.
+between the solution timestamp and the assign timestamp.
 
 *Solution times are based on office hours. Hence the results unit is working days.*
 
@@ -115,20 +115,20 @@ The "Reset" button resets all fields to their default settings besides the time 
 ### Tickets submitted
 
 This metric gives the number of tickets submitted within the specified time frame.
-Major criteria is the submit time stamp.
+Major criteria is the submit timestamp.
 The result lists shows the **current** status of the tickets.
 
 ### Open tickets time
 
 The open tickets time report calculates the time from ticket submission until now in
-calendar days. The **submit time stamp** must match the specified time frame for the
+calendar days. The **submit timestamp** must match the specified time frame for the
 report.
 
 ### Tickets closed
 
 This metric is focused on the **ticket life time**. It gives the number of tickets
 that reached the status "solved" or "unsolved" within the specified time frame.
-Major criteria is the **solution time stamp** which is the time stamp setting a
+Major criteria is the **solution timestamp** which is the timestamp setting a
 ticket to "solved" or "unsolved". Tickets in other terminal status like "verified"
 or "closed" appear in the result list as long as they have been set to
 "solved/unsolved" in the given time frame. Besides date, status and the number of
@@ -138,7 +138,7 @@ ticket lifetime. The result lists shows the current status of the tickets.
 ### Response time
 
 This metric focuses on the responsiveness of support units.
-Major criteria for this report is the **submit time stamp** which must match the
+Major criteria for this report is the **submit timestamp** which must match the
 selected time frame. The result list shows:
 - the number of tickets responded
 - the number of responses
@@ -161,7 +161,7 @@ and the TP.
 
 ### Solution time
 
-Major criteria for this report is the **solution time stamp**. The result list
+Major criteria for this report is the **solution timestamp**. The result list
 shows:
 - the number of solutions
 - average response time and
