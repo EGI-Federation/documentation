@@ -486,7 +486,7 @@ tickets. GGUS ticket #18493 is a child to this ticket.".
 
 ##### Resetting child tickets
 
-For resetting child tickets just remove the tick from the check box “Mark this
+For resetting child tickets just remove the tick from the checkbox “Mark this
 ticket as child of ticket”.
 
 ##### Selecting parent tickets
@@ -537,7 +537,7 @@ The second line support is formed by many support units. Each support unit is
 formed from members who are specialists in various areas of grid middleware, or
 NGI/ROC supporters for operations problems, or VO specific supporters. The
 membership of the support units is maintained on mailing lists. If the user
-responds to any e-mail received from GGUS, then the reply is added to the ticket
+responds to any email received from GGUS, then the reply is added to the ticket
 history. The subject of the email includes meta data to ensure the association
 of the response with the ticket.
 
@@ -603,7 +603,7 @@ The system offers two groups of meta states, open states and terminal states.
   and can’t be selected in the drop-down list menu.
 - assigned: this status is set automatically and can't be selected in the
   drop-down list menu. After a ticket is assigned to a support unit, this unit
-  is informed via e-mail about the ticket assignment.
+  is informed via email about the ticket assignment.
 - in progress: support staff who work on the ticket should change status to “in
   progress”. This is necessary to announce that somebody is taking care of this
   ticket and is working on it.

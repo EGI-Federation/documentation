@@ -52,9 +52,9 @@ For getting supporter privileges users need to be registered. For registering at
 GGUS the user should go to [GGUS home](https://ggus.eu/index.php?mode=index) and
 click the [registration link](https://ggus.eu/index.php?mode=register_info).
 This link opens the registration form that the user has to fill in. In addition,
-there are some links where the user can find information about X09 personal
+there are some links where the user can find information about X509 personal
 certificates. Users who do not have a valid digital certificate can access GGUS
-via EGI SSO. After filling in the registration form, the user receives an e-mail
+via EGI SSO. After filling in the registration form, the user receives an email
 from the GGUS team with his access data to GGUS.
 
 ### Accessing GGUS with certificate
