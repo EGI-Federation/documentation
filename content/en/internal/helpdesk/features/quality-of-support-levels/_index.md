@@ -40,15 +40,20 @@ ticket priority.
 | very urgent | 1 working day |
 | top priority | 1 working day |
 
-Advanced service
-Ticket Priority	Response time
-less urgent	5 working days
-urgent
-1 working day
-very urgent	1 working day
-top priority	4 working hours
-QoS level declaration
-QoS level declaration can be found
-for Technology Providers
-for EGI Core services
-All declarations can be found here
+### Advanced service
+
+| Ticket Priority |	Response time |
+| --------------- | ------------- |
+| less urgent	| 5 working days |
+| urgent | 1 working day
+| very urgent	| 1 working day |
+| top priority	| 4 working hours |
+
+## QoS level declaration
+
+QoS level declaration for Technology Providers can be found here:
+https://wiki.egi.eu/wiki/Technology_Providers
+
+For the several EGI services, the QoS levels are defined in the specific
+Operational Level Agreement linked in this [page](
+https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework#EGIOLASLAframework-OperationalLevelAgreements)
