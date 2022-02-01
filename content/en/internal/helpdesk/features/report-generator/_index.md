@@ -73,7 +73,7 @@ Waiting time is the sum of all time slots the ticket was set to "waiting for
 reply". Calculating the waiting time has started in July 2012. For tickets
 submitted before July 2012 no waiting time calculation was done. The waiting
 time for these tickets may be zero. The waiting time can be excluded when
-calculation solution times by ticking the check box "exclude waiting time".
+calculation solution times by ticking the checkbox "exclude waiting time".
 
 #### Ticket lifetime
 
@@ -182,7 +182,7 @@ shows:
 for the specified time frame. The result lists shows the current status of the
 tickets. _Solution times are based on office hours. Hence an average solution
 time of 12d 3h 5min means 99 hours and 5 minutes in total._ The waiting time can
-be excluded by ticking the check box "exclude waiting time". In case a ticket
+be excluded by ticking the checkbox "exclude waiting time". In case a ticket
 gets re-opened the metrics calculation starts again from scratch. Hence the same
 ticket can appear several times in the solution times calculation.
 
