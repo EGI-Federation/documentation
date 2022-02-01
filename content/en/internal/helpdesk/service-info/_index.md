@@ -18,7 +18,7 @@ description: >
 | Description                  | EGI Core service <br/>  GGUS is the central helpdesk and provides a single interface for EGI support. |
 | URL                          | http://helpdesk.egi.eu/                                                        |
 | Support Email                | support at ggus.eu                                                             |
-| [Helpdesk](..) Support Unit  | **EGI Services and Service Components** <br/> I__ Helpdesk (GGUS)              |
+| Helpdesk Support Unit        | **EGI Services and Service Components** <br/> I__ Helpdesk (GGUS)              |
 | Configuration Database entry | https://goc.egi.eu/portal/index.php?Page_Type=Site&id=247                      |
 | Supplier                     | KIT                                                                            |
 | Roadmap                      |                                                                                |
