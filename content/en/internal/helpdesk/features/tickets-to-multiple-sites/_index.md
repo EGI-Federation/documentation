@@ -1,9 +1,9 @@
 ---
-title: "Tickets to multiple sites"
+title: "'Notify Site' field and tickets to multiple sites"
 type: docs
 weight: 40
 description: >
-  Submitting tickets to multiple sites
+  Seletting a Resource Centre as recipient and submitting tickets to multiple RCs
 ---
 
 ## Notify Site field
