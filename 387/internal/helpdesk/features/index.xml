@@ -256,7 +256,7 @@ days.&lt;/em>&lt;/p>
 reply&amp;rdquo;. Calculating the waiting time has started in July 2012. For tickets
 submitted before July 2012 no waiting time calculation was done. The waiting
 time for these tickets may be zero. The waiting time can be excluded when
-calculation solution times by ticking the check box &amp;ldquo;exclude waiting time&amp;rdquo;.&lt;/p>
+calculation solution times by ticking the checkbox &amp;ldquo;exclude waiting time&amp;rdquo;.&lt;/p>
 &lt;h4 id="ticket-lifetime">Ticket lifetime&lt;/h4>
 &lt;p>The ticket lifetime is calculated from the user&amp;rsquo;s point of view. It describes
 how long it takes to provide a meaningful solution for a problem reported by the
@@ -340,7 +340,7 @@ shows:&lt;/p>
 &lt;p>for the specified time frame. The result lists shows the current status of the
 tickets. &lt;em>Solution times are based on office hours. Hence an average solution
 time of 12d 3h 5min means 99 hours and 5 minutes in total.&lt;/em> The waiting time can
-be excluded by ticking the check box &amp;ldquo;exclude waiting time&amp;rdquo;. In case a ticket
+be excluded by ticking the checkbox &amp;ldquo;exclude waiting time&amp;rdquo;. In case a ticket
 gets re-opened the metrics calculation starts again from scratch. Hence the same
 ticket can appear several times in the solution times calculation.&lt;/p>
 &lt;h2 id="input-parameters-and-results">Input parameters and results&lt;/h2>
