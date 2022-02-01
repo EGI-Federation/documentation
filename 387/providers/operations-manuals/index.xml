@@ -2087,7 +2087,183 @@ introduces new settings for publishing the accounting records via AMS.&lt;/li>
 &lt;/ul>
 &lt;h2 id="htcondor-ce">HTCondor-CE&lt;/h2>
 &lt;p>To collect and publish the accounting data you need to install the APEL software
-as explained in the general information section.&lt;/p></description></item><item><title>Providers: HOWTO02 Site Certification Required Documentation</title><link>/providers/operations-manuals/howto02_site_certification_required_documentation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto02_site_certification_required_documentation/</guid><description>
+as explained in the general information section.&lt;/p></description></item><item><title>Providers: HOWTO01 Using IGTF CA distribution</title><link>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</guid><description>
+&lt;p>To ensure interoperability within and outside of EGI, the
+&lt;a href="https://documents.egi.eu/document/2930">Policy on Acceptable Authentication Assurance&lt;/a>
+defined a common set of trust anchors (in a PKIX implementation &amp;ldquo;Certification
+Authorities&amp;rdquo;) that all sites in EGI should install. In short, all CAs accredited
+to the &lt;a href="http://www.igtf.net/">Interoperable Global Trust Federation&lt;/a> under the
+&lt;a href="https://www.igtf.net/ap/classic/">classic&lt;/a>,
+&lt;a href="https://www.igtf.net/ap/mics/">MICS&lt;/a> or &lt;a href="https://www.igtf.net/ap/slcs/">SLCS&lt;/a>
+&lt;em>Authentication Profiles&lt;/em> are approved for use in EGI. When installing the
+&amp;lsquo;combined-assurance&amp;rsquo; bundle, also &lt;a href="https://www.igtf.net/ap/iota/">IOTA&lt;/a> issuers
+complying with assurance level DOGWOOD are included. Of course, sites may add
+additional CAs as long as the integrity of the infrastructure as a whole is not
+compromised. Also, if there are site or national policies/regulations that
+prevent you from installing a CA, these regulations take precedence &amp;ndash; but you
+then must inform the EGI Security Officer (see
+&lt;a href="https://confluence.egi.eu/display/EGIBG/CSIRT">EGI CSIRT&lt;/a>) about this
+exception.&lt;/p>
+&lt;h2 id="release-notes">Release notes&lt;/h2>
+&lt;p>Review the
+&lt;a href="http://repository.egi.eu/sw/production/cas/1/current/README.txt">release notes&lt;/a>
+containing important notices about the current release, as well as a list of
+changes to the trust fabric.&lt;/p>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;p>To install the EGI trust anchors on a system that uses the RedHat Package
+Manager (RPM) based package management system, we provide a convenience package
+to manage the installation. To install the currently valid distribution, all RPM
+packages are provided at&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">http://repository.egi.eu/sw/production/cas/1/current/
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The current version is based on the
+&lt;a href="https://dl.igtf.net/distribution/igtf/current/">IGTF release&lt;/a> with the same
+version number. Install the meta-package &lt;code>ca-policy-egi-core&lt;/code> (or
+&lt;code>ca-policy-egi-cam&lt;/code>) and its dependencies to implement the core EGI policy on
+trusted CAs.&lt;/p>
+&lt;h3 id="using-yum-package-management">Using YUM package management&lt;/h3>
+&lt;p>Add the following
+&lt;a href="http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo">repo-file&lt;/a>
+to the &lt;code>/etc/yum.repos.d/&lt;/code> directory:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[EGI-trustanchors]&lt;/span>
+&lt;span style="color:#c4a000">name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">EGI-trustanchors&lt;/span>
+&lt;span style="color:#c4a000">baseurl&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">http://repository.egi.eu/sw/production/cas/1/current/&lt;/span>
+&lt;span style="color:#c4a000">gpgkey&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">http://repository.egi.eu/sw/production/cas/1/GPG-KEY-EUGridPMA-RPM-3&lt;/span>
+&lt;span style="color:#c4a000">gpgcheck&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">1&lt;/span>
+&lt;span style="color:#c4a000">enabled&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>and then update your installation. How to update depends on your previous
+activity:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>if you have previously ever installed the &lt;code>lcg-CA&lt;/code> package&lt;/strong>, remove any
+references to &lt;code>http://linuxsoft.cern.ch/LCG-CAs/current&lt;/code> from your YUM setup,
+and run&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ yum clean cache metadata
+$ yum update lcg-CA
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>
+&lt;p>and you are done. This will update the packages installed to the latest
+version, and also install the new &lt;code>ca-policy-egi-core&lt;/code> package as well as a
+&lt;code>ca-policy-lcg&lt;/code> package. All packages encode the same set of dependencies&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>if you are upgrading from a previous EGI version only&lt;/strong>, just run&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ yum update ca-policy-egi-core
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>although at times you may need to clean the yum cache using&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ yum clean cache metadata
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>if you are installing the EGI trust anchors for the first time&lt;/strong>, run&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ yum install ca-policy-egi-core
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-the-distribution-on-a-debian-or-debian-derived-platform">Using the distribution on a Debian or Debian-derived platform&lt;/h3>
+&lt;p>The 1.39+ releases experimentally add the option to install the trust anchors
+from Debian packages using the APT dependency management system. Although care
+has been taken to ensure that this distribution is installable and complete, no
+guarantees are given, but you are invited to report your issues through GGUS.
+You may have to wait for a subsequent release of the Trust Anchor release to
+solve your issue, or may be asked to use a temporary repository. To use it:&lt;/p>
+&lt;ul>
+&lt;li>Install the EUGridPMA PGP key for apt:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ wget -q -O - &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> https://dist.eugridpma.info/distribution/igtf/current/GPG-KEY-EUGridPMA-RPM-3 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> apt-key add -
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Add the following line to your sources.list file for APT:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic">#### EGI Trust Anchor Distribution ####&lt;/span>
+deb http://repository.egi.eu/sw/production/cas/1/current egi-igtf core
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Populate the cache and install the meta-package&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ apt-get update
+$ apt-get install ca-policy-egi-core
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-the-distribution-on-other-non-rpm-platforms">Using the distribution on other (non-RPM) platforms&lt;/h3>
+&lt;p>The trust anchors are provided also as simple &amp;lsquo;tar-balls&amp;rsquo; for installation on
+other platforms. Since there is no dependency management in this case, please
+review the release notes carefully for any security issues or withdrawn CAs. The
+tar files can be found in the EGI repository at&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">http://repository.egi.eu/sw/production/cas/1/current/tgz/
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have downloaded the directory, you can unpack all the CA tar,gz as
+follows to your certificate directory:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> tgz in &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>ls &amp;lt;ca download dir&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span>
+tar xzf &amp;lt;ca download dir&amp;gt;/&lt;span style="color:#000">$tgz&lt;/span> --strip-components&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -C /etc/grid-security/certificates
+&lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="installing-the-distribution-using-quattor">Installing the distribution using Quattor&lt;/h3>
+&lt;p>Quattor templates are povided as drop-in replacements for both QWG and CDB
+installations. Update your software repository (re-generating the repository
+templates as needed) and obtain the new CA templates from:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>http://repository.egi.eu/sw/production/cas/1/current/meta/ca-policy-egi-core.tpl&lt;/code>
+for QWG&lt;/li>
+&lt;li>&lt;code>http://repository.egi.eu/sw/production/cas/1/current/meta/pro_software_meta_ca_policy_egi_core.tpl&lt;/code>
+for CDB&lt;/li>
+&lt;/ul>
+&lt;p>Make sure to mirror (or refer to) the new repository at
+&lt;code>http://repository.egi.eu/sw/production/cas/1/current/&lt;/code> and create the
+appropriate repository definition file.&lt;/p>
+&lt;p>For WLCG sites that are migrating from the lcg-CA package: the WLCG policy
+companion of the EGI templates can be found at
+&lt;a href="http://lcg-ca.web.cern.ch/lcg-ca/distribution/current/meta/ca-policy-lcg.tpl">QWG&lt;/a>
+and
+&lt;a href="http://lcg-ca.web.cern.ch/lcg-ca/distribution/current/meta/pro_software_meta_ca_policy_lcg.tpl">CDB&lt;/a>
+and can be included in the profile in parallel with the EGI core template. All
+packages needed are also included in the EGI repository, so only a single
+repository reference is necessary.&lt;/p>
+&lt;h2 id="combined-assuranceadequacy-model">Combined Assurance/Adequacy Model&lt;/h2>
+&lt;p>The release contains a &amp;ldquo;cam&amp;rdquo; (combined assurance/adequacy) package based on the
+approved policy on differentiated assurance. Technically, this means that you
+must &lt;strong>ONLY&lt;/strong> install the new &lt;code>ca-policy-egi-cam&lt;/code> packages if you &lt;strong>ALSO&lt;/strong> at
+the same time implement VO-specific authorization controls in your software
+stack. This may require reconfiguration or a software update. Otherwise, just
+only install or update the regular &lt;code>ca-policy-egi-core&lt;/code> package. There are no
+changes in this case. The &lt;code>ca-policy-egi-core&lt;/code> package is approved for all VOs
+membership and assurance models. No configuration change is needed.&lt;/p>
+&lt;h3 id="acceptable-authentication-assurance">Acceptable Authentication Assurance&lt;/h3>
+&lt;p>If a VO registration service or e-infrastructure registration service is
+accredited by EGI to meet the approved authentication assurance, an IGTF
+&amp;ldquo;DOGWOOD&amp;rdquo; accredited Authority - used solely in combination with said
+registration service - is also adequate for user authentication. See
+&lt;a href="https://documents.egi.eu/document/2930">the policy&lt;/a> for details.&lt;/p>
+&lt;p>This additional restriction policy must be implemented by each service in the
+authorization software. The &amp;ldquo;combined assurance&amp;rdquo; model package &lt;strong>MUST NOT&lt;/strong> be
+installed unless the additional authorization is in place. You will need to
+reconfigure and may need to install upgrades. Not installing the new &amp;ldquo;cam&amp;rdquo;
+package does not have any detrimental effect on current users - only a new class
+of users (that can only obtain an opaque identifiers and do not do full vetting
+at their electronic identity provider) could be affected, and then only those
+users that are member of one of the communities that has part of the
+combined-assurance programme: LCG-Atlas, LCG-Alice, LCG-LHCb, and LCG-CMS.&lt;/p>
+&lt;h2 id="patches-and-workarounds">Patches and workarounds&lt;/h2>
+&lt;h3 id="reminder-notice-for-voms-aa-operators">Reminder notice for VOMS AA operators&lt;/h3>
+&lt;p>Several updates to this trust anchor distribution incorporate changes to the
+name of the issuing authority, but the name of the end-entities and the users
+remains exactly the same. To make the change transparent, all operators of VOMS
+and VOMS-Admin services are requested to enable the subject-only name resolution
+mechanisms in VOMS and VOMS Admin, see additional documentation in
+&lt;a href="https://italiangrid.github.io/voms/documentation/sysadmin-guide/3.0.14/configuration.html">VOMS services configuration reference&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>on the VOMS core Attribute Authority service, configure the &lt;code>-skipcacheck&lt;/code>
+flag on start-up.&lt;/li>
+&lt;li>Set &lt;code>voms.skip_ca_check=True&lt;/code> in the service properties.&lt;/li>
+&lt;/ul>
+&lt;h2 id="concerns-issues-and-verification">Concerns, issues and verification&lt;/h2>
+&lt;p>If you experience problems with the installation or upgrade of your trust
+anchors, or with the repository, please report such an issue through the GGUS
+system. For issues with the contents of the distribution, concerns about the
+trust fabric, or with questions about the integrity of the distribution, please
+contact the EGI IGTF liaison at &lt;code>egi-igtf-liaison@nikhef.nl&lt;/code>.&lt;/p>
+&lt;p>You can verify the contents of the EGI Trust Anchor (CA) release with those of
+the
+&lt;a href="https://dist.eugridpma.info/distribution/igtf/current/">International Grid Trust Federation&lt;/a>,
+or its &lt;a href="https://www.apgridpma.org/distribution/">mirror&lt;/a>. See the IGTF and
+EUGridPMA web pages for additional information.&lt;/p>
+&lt;p>Make sure to verify your trust anchors with &lt;a href="https://www.tacar.org/">TACAR&lt;/a>, the
+&lt;a href="http://www.terena.org">TERENA&lt;/a> Academic CA Repository, where applicable.&lt;/p></description></item><item><title>Providers: HOWTO02 Site Certification Required Documentation</title><link>/providers/operations-manuals/howto02_site_certification_required_documentation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto02_site_certification_required_documentation/</guid><description>
 &lt;p>Documents required for Resource Centre registration and certification.&lt;/p>
 &lt;p>The Resource Centre administrators should read and understand the first five
 documents. It is a further requirement that the OLA between the NGI and RC, and
