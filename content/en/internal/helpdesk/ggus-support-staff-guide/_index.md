@@ -13,11 +13,11 @@ for further information.
 
 ## Access to GGUS
 
-GGUS is reachable via https://helpdesk.egi.eu/ and https://ggus.eu using a web
-browser. Another way for accessing GGUS is using the direct link provided in the
-notification emails sent after ticket updates. However either a valid X509
-personal certificate or a Check-in account are required for accessing the
-system.
+GGUS is reachable via [https://helpdesk.egi.eu](https://helpdesk.egi.eu) and
+[https://ggus.eu](https://ggus.eu) using a web browser. Another way for
+accessing GGUS is using the direct link provided in the notification emails sent
+after ticket updates. However either a valid X509 personal certificate or a
+Check-in account are required for accessing the system.
 
 ## Features of GGUS
 

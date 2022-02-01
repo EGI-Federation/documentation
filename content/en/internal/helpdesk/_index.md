@@ -9,7 +9,7 @@ description: >
 ## What is it?
 
 Support for EGI services is available through the
-[EGI Helpdesk](https://helpdesk.egi.eu/).
+[EGI Helpdesk](https://helpdesk.egi.eu).
 
 The EGI Helpdesk is a distributed tool with central coordination, which provides
 the information and support needed to troubleshoot product and service problems.
