@@ -94,10 +94,11 @@ ticket against Helpdesk (GGUS) support unit.&lt;/p>
 &lt;p>Please see the &lt;a href="https://ggus.eu/index.php?mode=release_notes">Ongoing work list&lt;/a>
 for further information.&lt;/p>
 &lt;h2 id="access-to-ggus">Access to GGUS&lt;/h2>
-&lt;p>GGUS is reachable via &lt;a href="https://helpdesk.egi.eu/">https://helpdesk.egi.eu/&lt;/a> and &lt;a href="https://ggus.eu">https://ggus.eu&lt;/a> using a web
-browser. Another way for accessing GGUS is using the direct link provided in
-the notification emails sent after ticket updates. However either a valid X509
-personal certificate or a Check-in account are required for accessing the system.&lt;/p>
+&lt;p>GGUS is reachable via &lt;a href="https://helpdesk.egi.eu">https://helpdesk.egi.eu&lt;/a> and
+&lt;a href="https://ggus.eu">https://ggus.eu&lt;/a> using a web browser. Another way for
+accessing GGUS is using the direct link provided in the notification emails sent
+after ticket updates. However either a valid X509 personal certificate or a
+Check-in account are required for accessing the system.&lt;/p>
 &lt;h2 id="features-of-ggus">Features of GGUS&lt;/h2>
 &lt;h3 id="ggus-home">GGUS Home&lt;/h3>
 &lt;p>GGUS home provides a quick overview over tickets submitted by the current user,
@@ -117,46 +118,47 @@ provides links to:&lt;/p>
 &lt;li>Contact form&lt;/li>
 &lt;/ul>
 &lt;h3 id="did-you-know">Did you know&lt;/h3>
-&lt;p>After each release, a major change or new feature is explained in some
-sentences here.&lt;/p>
+&lt;p>After each release, a major change or new feature is explained in some sentences
+here.&lt;/p>
 &lt;h3 id="documentation">Documentation&lt;/h3>
 &lt;p>In the documentation section there is a collection of links providing useful
 information around GGUS system.&lt;/p>
 &lt;h3 id="registration">Registration&lt;/h3>
 &lt;p>All information about registration can be found on the
 &lt;a href="https://ggus.eu/index.php?mode=register_info">registration page&lt;/a>. For
-registering as support staff, click the link “Apply” and fill in the registration
-form. After registering successfully you will receive a confirmation mail from
-GGUS team.&lt;/p>
+registering as support staff, click the link “Apply” and fill in the
+registration form. After registering successfully you will receive a
+confirmation mail from GGUS team.&lt;/p>
 &lt;p>If you want to update your account data, you can do this using the link &amp;ldquo;Check
 your GGUS account&amp;rdquo; on the registration page. If you can’t access GGUS web
-interface due to changed DN string of your personal certificate, you can log into
-the system using your Check-in account. Then go to the registration page and
-click on Check/update your GGUS account. The system shows you all your user data.
-It detects the new DN string of your browser automatically. Just save the changes
-by clicking on button Update now. Additional information on GGUS accounts is
-available here(link to new location of &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Account)">https://wiki.egi.eu/wiki/FAQ_GGUS-Account)&lt;/a>.&lt;/p>
+interface due to changed DN string of your personal certificate, you can log
+into the system using your Check-in account. Then go to the registration page
+and click on Check/update your GGUS account. The system shows you all your user
+data. It detects the new DN string of your browser automatically. Just save the
+changes by clicking on button Update now. Additional information on GGUS
+accounts is available here(link to new location of
+&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Account)">https://wiki.egi.eu/wiki/FAQ_GGUS-Account)&lt;/a>.&lt;/p>
 &lt;h3 id="support-staff-page">Support staff page&lt;/h3>
-&lt;p>Access to the support staff page is restricted to users having support privileges
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Privileges">https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Privileges&lt;/a> . Depending on further
-privileges people may have there are links to e.g. news administration and other
-features. All support staffs can use the GGUS report generator and the GGUS
-ticket timeline tool as well as links to other information useful for support
-staffs.&lt;/p>
+&lt;p>Access to the support staff page is restricted to users having support
+privileges &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Privileges">https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Privileges&lt;/a> . Depending on
+further privileges people may have there are links to e.g. news administration
+and other features. All support staffs can use the GGUS report generator and the
+GGUS ticket timeline tool as well as links to other information useful for
+support staffs.&lt;/p>
 &lt;p>&lt;img src="GGUS_Support_Staff.png" alt="GGUS Support Staff">&lt;/p>
 &lt;h4 id="ggus-ticket-timeline-tool">GGUS ticket timeline tool&lt;/h4>
 &lt;p>The link to the GGUS ticket timeline tool is located on support staff page. The
-ticket timeline tool provides a graphical overview of tickets concerning a selected
-site and time range. It shows all tickets that have been updated during the
-selected time range. When moving the mouse over one of the colored bars some
-additional information is displayed. Clicking on the ticket ID opens a new window
-showing the ticket details and the modify section of the ticket.&lt;/p>
+ticket timeline tool provides a graphical overview of tickets concerning a
+selected site and time range. It shows all tickets that have been updated during
+the selected time range. When moving the mouse over one of the colored bars some
+additional information is displayed. Clicking on the ticket ID opens a new
+window showing the ticket details and the modify section of the ticket.&lt;/p>
 &lt;p>&lt;img src="GGUS_TTT.png" alt="GGUS ticket timeline tool">&lt;/p>
 &lt;h4 id="ggus-report-generator">GGUS Report Generator&lt;/h4>
-&lt;p>The link to the GGUS Report Generator is located on support staff page and on GGUS
-home page in section &amp;ldquo;GGUS tools/reports&amp;rdquo;. The GGUS Report Generator could be used
-for generating statistics and reports for all support units in GGUS. Further
-information on the report generator is available on the
+&lt;p>The link to the GGUS Report Generator is located on support staff page and on
+GGUS home page in section &amp;ldquo;GGUS tools/reports&amp;rdquo;. The GGUS Report Generator could
+be used for generating statistics and reports for all support units in GGUS.
+Further information on the report generator is available on the
 &lt;a href="https://wiki.egi.eu/wiki/FAQ_Report_Generator_(GGUS)">https://wiki.egi.eu/wiki/FAQ_Report_Generator_(GGUS)&lt;/a> .&lt;/p>
 &lt;h3 id="submit-form">Submit form&lt;/h3>
 &lt;p>Depending on the user&amp;rsquo;s privileges GGUS offers different ticket submit forms:&lt;/p>
@@ -165,32 +167,33 @@ information on the report generator is available on the
 &lt;li>team ticket&lt;/li>
 &lt;li>alarm ticket&lt;/li>
 &lt;li>CMS ticket (for members of CMS VO)&lt;/li>
-&lt;li>notify multiple sites which is a bulk submit for addressing multiple sites about
-the same issue.&lt;/li>
+&lt;li>notify multiple sites which is a bulk submit for addressing multiple sites
+about the same issue.&lt;/li>
 &lt;/ul>
 &lt;h4 id="ticket-categories-and-ticket-types">Ticket categories and ticket types&lt;/h4>
 &lt;p>GGUS offers two fields which help to classify various tickets into categories
 and types.&lt;/p>
 &lt;h5 id="ticket-categories">Ticket categories&lt;/h5>
 &lt;p>The ticket category is for differentiating between issues and service requests.
-This distinction is helpful for supporters as well as for the GGUS reporting, e.g.
-for excluding test tickets. The ticket category field offers four different values:&lt;/p>
+This distinction is helpful for supporters as well as for the GGUS reporting,
+e.g. for excluding test tickets. The ticket category field offers four different
+values:&lt;/p>
 &lt;ul>
 &lt;li>Incident (for issues),&lt;/li>
 &lt;li>Change Request (for service requests)&lt;/li>
 &lt;li>Documentation&lt;/li>
 &lt;li>Test&lt;/li>
 &lt;/ul>
-&lt;p>When submitting a ticket the ticket category field is not visible. It defaults to
-“Incident” and is only editable for supporters, not for users. So it is up to the
-supporter to check and, if necessary, classify the ticket correctly. Please see
-details in section Changing ticket category.&lt;/p>
+&lt;p>When submitting a ticket the ticket category field is not visible. It defaults
+to “Incident” and is only editable for supporters, not for users. So it is up to
+the supporter to check and, if necessary, classify the ticket correctly. Please
+see details in section Changing ticket category.&lt;/p>
 &lt;h5 id="ticket-types">Ticket types&lt;/h5>
 &lt;p>The ticket type field is for differentiating between standard user tickets and
-tickets for achieving the special requirements of various groups like the LHC VOs or
-EGI operations. It can’t be set manually, but is set automatically by the system
-based on several rules. The ticket type field could not be changed during ticket
-lifetime. Possible ticket types in GGUS are:&lt;/p>
+tickets for achieving the special requirements of various groups like the LHC
+VOs or EGI operations. It can’t be set manually, but is set automatically by the
+system based on several rules. The ticket type field could not be changed during
+ticket lifetime. Possible ticket types in GGUS are:&lt;/p>
 &lt;ul>
 &lt;li>USER&lt;/li>
 &lt;li>TEAM,&lt;/li>
@@ -198,87 +201,97 @@ lifetime. Possible ticket types in GGUS are:&lt;/p>
 &lt;li>OPS.&lt;/li>
 &lt;/ul>
 &lt;h6 id="user-tickets">USER tickets&lt;/h6>
-&lt;p>The ticket type USER is the default ticket type. User tickets are the usual tickets
-which can be submitted by everyone. They are visible to everybody. They can be
-updated either by the submitter himself or by any supporter.&lt;/p>
+&lt;p>The ticket type USER is the default ticket type. User tickets are the usual
+tickets which can be submitted by everyone. They are visible to everybody. They
+can be updated either by the submitter himself or by any supporter.&lt;/p>
 &lt;h6 id="team-tickets">TEAM tickets&lt;/h6>
 &lt;p>The purpose of TEAM tickets is to allow a group of people to submit and modify
 ticketseditable by the whole group. TEAM tickets can only be submitted by people
-who have the appropriate permissions in the GGUS user database. These people belong
-to either one of the four LHC VOs (ALICE, ATLAS, CMS, LHCB) or to the BIOMED or
-BELLE VO and are nominated by the particular VO management. TEAM tickets are editable
-by all members of the VO team (which are the so called VO shifters) regardless own
-the ticket. TEAM tickets are visible to everyone. They can be submitted for all tier-1
-sites in EGI and are routed to the appropriate NGI/ROC automatically, bypassing the
-TPM. Additionally the site is notified by mail about the ticket. By default TEAM
-tickets are routed to the appropriate NGI/ROC directly, bypassing TPM. But the
-submitter could also choose to route it to the TPM instead. Further information on
-TEAM tickets is available in the TEAM tickets FAQs.&lt;/p>
+who have the appropriate permissions in the GGUS user database. These people
+belong to either one of the four LHC VOs (ALICE, ATLAS, CMS, LHCB) or to the
+BIOMED or BELLE VO and are nominated by the particular VO management. TEAM
+tickets are editable by all members of the VO team (which are the so called VO
+shifters) regardless own the ticket. TEAM tickets are visible to everyone. They
+can be submitted for all tier-1 sites in EGI and are routed to the appropriate
+NGI/ROC automatically, bypassing the TPM. Additionally the site is notified by
+mail about the ticket. By default TEAM tickets are routed to the appropriate
+NGI/ROC directly, bypassing TPM. But the submitter could also choose to route it
+to the TPM instead. Further information on TEAM tickets is available in the TEAM
+tickets FAQs.&lt;/p>
 &lt;h6 id="alarm-tickets">ALARM tickets&lt;/h6>
-&lt;p>The purpose of ALARM tickets is to notify tier-1 administrators about serious problems
-of the site at any time, independent from usual office hours. They can only be submitted
-by experts who have the appropriate permissions in the GGUS user database. These people
-belong to one of the four LHC VOs (ALICE, ATLAS, CMS, LHCB) and are nominated by the
-particular VO management. They are about 3 to 4 people per VO. ALARM tickets are editable
-by all members of the VO team (which are the so called VO shifters) regardless they own
-the ticket. They are visible to everyone. ALARM tickets can be submitted for all tier-1
-sites in EGI and are routed to the appropriate NGI/ROC automatically, bypassing the TPM.
-Additionally the tier-1 site is notified by an ALARM email. It is up to the tier-1 site
-how to deal with this ALARM email. Further information on TEAM tickets is available in
-the ALARM tickets FAQs.&lt;/p>
+&lt;p>The purpose of ALARM tickets is to notify tier-1 administrators about serious
+problems of the site at any time, independent from usual office hours. They can
+only be submitted by experts who have the appropriate permissions in the GGUS
+user database. These people belong to one of the four LHC VOs (ALICE, ATLAS,
+CMS, LHCB) and are nominated by the particular VO management. They are about 3
+to 4 people per VO. ALARM tickets are editable by all members of the VO team
+(which are the so called VO shifters) regardless they own the ticket. They are
+visible to everyone. ALARM tickets can be submitted for all tier-1 sites in EGI
+and are routed to the appropriate NGI/ROC automatically, bypassing the TPM.
+Additionally the tier-1 site is notified by an ALARM email. It is up to the
+tier-1 site how to deal with this ALARM email. Further information on TEAM
+tickets is available in the ALARM tickets FAQs.&lt;/p>
 &lt;h5 id="ops-tickets">OPS tickets&lt;/h5>
-&lt;p>This ticket type is used for operations tickets submitted via the operations portal.&lt;/p>
+&lt;p>This ticket type is used for operations tickets submitted via the operations
+portal.&lt;/p>
 &lt;h3 id="my-dashboard">My dashboard&lt;/h3>
-&lt;p>This dashboard can be used for getting quick access to any ticket of interest. Each
-ticket has to be added manually.&lt;/p>
+&lt;p>This dashboard can be used for getting quick access to any ticket of interest.
+Each ticket has to be added manually.&lt;/p>
 &lt;h3 id="search-engine">Search Engine&lt;/h3>
 &lt;p>The search engine provides a large number of fields for creating dedicated query
-strings. Many of them have additional information hidden behind a question mark icon.
-The results of a query are shown in a results list. The default search displays all
-open tickets of last week. They were ordered by date of creation in descending manor.
-For further details on using the search engine see chapter Searching for tickets.
-The result list is showing a color schema reflecting the priority of tickets. The
-algorithm used for setting the priority colours is explained in chapter Reminder emails.&lt;/p>
+strings. Many of them have additional information hidden behind a question mark
+icon. The results of a query are shown in a results list. The default search
+displays all open tickets of last week. They were ordered by date of creation in
+descending manor. For further details on using the search engine see chapter
+Searching for tickets. The result list is showing a color schema reflecting the
+priority of tickets. The algorithm used for setting the priority colours is
+explained in chapter Reminder emails.&lt;/p>
 &lt;h3 id="searching-for-tickets">Searching for tickets&lt;/h3>
-&lt;p>Various possibilities of searching tickets in GGUS are described in this FAQ. Please
-avoid searching for “all” tickets or “solved” tickets without any time-frame if not
-necessary for some reasons as these searches cause heavy load on the machine.&lt;/p>
+&lt;p>Various possibilities of searching tickets in GGUS are described in this FAQ.
+Please avoid searching for “all” tickets or “solved” tickets without any
+time-frame if not necessary for some reasons as these searches cause heavy load
+on the machine.&lt;/p>
 &lt;h4 id="searching-via-ticket-id">Searching via Ticket ID&lt;/h4>
-&lt;p>Searching via ticket ID is the easiest and fastest way to look at a ticket. When searching
-via Ticket ID all other search parameters are ignored. Besides searching for all open
-tickets this is the recommended kind of search, because it avoids needless workload on the
-system. When searching via ticket ID the ticket details are shown in the same window. For
-getting back to the main page use the “Back” button of your browser. For Firefox users there
-is a nice add-on for adding a customized search for any web page to the browser&amp;rsquo;s search bar
+&lt;p>Searching via ticket ID is the easiest and fastest way to look at a ticket. When
+searching via Ticket ID all other search parameters are ignored. Besides
+searching for all open tickets this is the recommended kind of search, because
+it avoids needless workload on the system. When searching via ticket ID the
+ticket details are shown in the same window. For getting back to the main page
+use the “Back” button of your browser. For Firefox users there is a nice add-on
+for adding a customized search for any web page to the browser&amp;rsquo;s search bar
 available &lt;a href="https://firefox.maltekraus.de/extensions/add-to-search-bar">here&lt;/a>.&lt;/p>
 &lt;h4 id="searching-via-parameters">Searching via parameters&lt;/h4>
-&lt;p>The search parameters can be combined in any way wanted. Description fields “Keyword”,
-“Involved supporter” and “Assigned to person” trigger a LIKE search to the database.
-Concatenating keywords with “AND” or “OR” is currently not possible. The result of a search
-by parameters is shown in the result list. For viewing ticket details just click on the ID.
-A new window opens showing ticket details. For getting back to the search result just close
-the window with the ticket details.&lt;/p>
+&lt;p>The search parameters can be combined in any way wanted. Description fields
+“Keyword”, “Involved supporter” and “Assigned to person” trigger a LIKE search
+to the database. Concatenating keywords with “AND” or “OR” is currently not
+possible. The result of a search by parameters is shown in the result list. For
+viewing ticket details just click on the ID. A new window opens showing ticket
+details. For getting back to the search result just close the window with the
+ticket details.&lt;/p>
 &lt;h3 id="customizing-result-list">Customizing result list&lt;/h3>
-&lt;p>You can customize the result list in various ways. One way to customize the result list is
-by checking or un-checking the appropriate boxes in the blue bar. The related columns will
-then be added or removed. Another way for customizing the result list is by selecting
-another ticket order in field Order tickets by. After changing the result list layout you
-have to refresh the search result by clicking the Go! button.&lt;/p>
+&lt;p>You can customize the result list in various ways. One way to customize the
+result list is by checking or un-checking the appropriate boxes in the blue bar.
+The related columns will then be added or removed. Another way for customizing
+the result list is by selecting another ticket order in field Order tickets by.
+After changing the result list layout you have to refresh the search result by
+clicking the Go! button.&lt;/p>
 &lt;h3 id="exporting-search-results">Exporting search results&lt;/h3>
-&lt;p>Search results can be exported in csv or xml format for further processing. After clicking
-on the appropriate link a new window opens showing the results in the specified format.
-Out of this window you can save a local copy of this file.&lt;/p>
+&lt;p>Search results can be exported in csv or xml format for further processing.
+After clicking on the appropriate link a new window opens showing the results in
+the specified format. Out of this window you can save a local copy of this file.&lt;/p>
 &lt;h3 id="ticket-data">Ticket data&lt;/h3>
-&lt;p>By clicking on the ticket ID of a ticket in the results list of the search engine you can
-access the ticket data. The ticket data is divided into 3 main sections:&lt;/p>
+&lt;p>By clicking on the ticket ID of a ticket in the results list of the search
+engine you can access the ticket data. The ticket data is divided into 3 main
+sections:&lt;/p>
 &lt;ul>
 &lt;li>ticket information&lt;/li>
 &lt;li>ticket history&lt;/li>
 &lt;li>ticket modify section&lt;/li>
 &lt;/ul>
 &lt;h4 id="ticket-information">Ticket information&lt;/h4>
-&lt;p>The system shows the information section after clicking on a ticket ID.It provides an
-overview of all relevant ticket parameters and could be divided into 5 areas:&lt;/p>
+&lt;p>The system shows the information section after clicking on a ticket ID.It
+provides an overview of all relevant ticket parameters and could be divided into
+5 areas:&lt;/p>
 &lt;ul>
 &lt;li>submitter data&lt;/li>
 &lt;li>issue data&lt;/li>
@@ -295,11 +308,11 @@ overview of all relevant ticket parameters and could be divided into 5 areas:&lt
 &lt;/ul>
 &lt;p>&lt;img src="GGUS_Info_Support.png" alt="Ticket information">&lt;/p>
 &lt;h5 id="duplicate-ticket">Duplicate ticket&lt;/h5>
-&lt;p>Figure 5: Ticket duplication
-Supporters have the opportunity to duplicate an existing ticket up to 15 times.
-The duplicate feature is located right below ticket information. It is useful if
-a ticket concerns not only one support unit but has to be handled by several
-support units. The fields that are copied into the duplicated tickets are:&lt;/p>
+&lt;p>Figure 5: Ticket duplication Supporters have the opportunity to duplicate an
+existing ticket up to 15 times. The duplicate feature is located right below
+ticket information. It is useful if a ticket concerns not only one support unit
+but has to be handled by several support units. The fields that are copied into
+the duplicated tickets are:&lt;/p>
 &lt;ul>
 &lt;li>Internal Diary&lt;/li>
 &lt;li>Login&lt;/li>
@@ -311,15 +324,14 @@ support units. The fields that are copied into the duplicated tickets are:&lt;/p
 &lt;p>Attachments are not duplicated physically but linked to all duplicated tickets.
 The Responsible Unit is set to &amp;ldquo;TPM&amp;rdquo; by default.&lt;/p>
 &lt;h5 id="convert-team-tickets-to-alarm-tickets">Convert TEAM tickets to ALARM tickets&lt;/h5>
-&lt;p>Figure 3: Convert team to alarm ticket
-Support staffs with ALARM privileges are able to convert TEAM tickets to ALARM
-tickets clicking on a button in the ticket information section. This feature is
-only available for the WLCG VOs.&lt;/p>
+&lt;p>Figure 3: Convert team to alarm ticket Support staffs with ALARM privileges are
+able to convert TEAM tickets to ALARM tickets clicking on a button in the ticket
+information section. This feature is only available for the WLCG VOs.&lt;/p>
 &lt;p>&lt;img src="GGUS_Convert_Alarm.png" alt="Convert team to alarm ticket">&lt;/p>
 &lt;h4 id="ticket-history">Ticket history&lt;/h4>
 &lt;p>The ticket history is located below ticket information. It shows all relevant
-changes of the ticket in chronological manner. Changes of these fields lead to
-a new entry in ticket history:&lt;/p>
+changes of the ticket in chronological manner. Changes of these fields lead to a
+new entry in ticket history:&lt;/p>
 &lt;ul>
 &lt;li>Assign ticket to support unit&lt;/li>
 &lt;li>Assign ticket to one person&lt;/li>
@@ -340,9 +352,8 @@ a new entry in ticket history:&lt;/p>
 diary are marked with green colour, entries of the internal diary with orange
 colour.&lt;/p>
 &lt;h4 id="ticket-modify-section">Ticket modify section&lt;/h4>
-&lt;p>Figure 6: Ticket modify section
-The ticket modification area offers several fields for modifying a ticket. The
-fields are described in detail below.&lt;/p>
+&lt;p>Figure 6: Ticket modify section The ticket modification area offers several
+fields for modifying a ticket. The fields are described in detail below.&lt;/p>
 &lt;p>&lt;img src="GGUS_Modifysection_Support.png" alt="Ticket modify section">&lt;/p>
 &lt;ul>
 &lt;li>Assign ticket to support unit is showing all support units involved in GGUS.&lt;/li>
@@ -354,8 +365,8 @@ The length is limited to 254 characters.&lt;/li>
 &lt;li>Change VO is a drop-down-list with all possible VO values.&lt;/li>
 &lt;li>Type of issue provides a drop-down-list of possible issue types.&lt;/li>
 &lt;li>Change priority provides a drop-down-list of possible priority values.&lt;/li>
-&lt;li>Notify site is for specifying the site affected by the issue. For ticket
-types “ALARM” and “TEAM” this field is not editable.&lt;/li>
+&lt;li>Notify site is for specifying the site affected by the issue. For ticket types
+“ALARM” and “TEAM” this field is not editable.&lt;/li>
 &lt;li>Change ticket category provides a drop-down list with values “Incident”,
 “Change Request”, “Documentation” and &amp;ldquo;Test&amp;rdquo;.&lt;/li>
 &lt;li>Involve others allows contacting any people who may help to solve an issue.
@@ -377,9 +388,10 @@ limited to 4000 characters.&lt;/li>
 &lt;li>Hide solution hides the solution field.&lt;/li>
 &lt;li>Reminders feature can be set to “Please send reminder on” if status is changed
 to “on hold” or “waiting for reply”. In this case a date can be selected on
-which a reminder mail was sent. This feature should help supporters not to forget
-tickets which were not worked on for a longer time.&lt;/li>
-&lt;li>Related issue can be used to reference any URL. It is limited to 125 characters.&lt;/li>
+which a reminder mail was sent. This feature should help supporters not to
+forget tickets which were not worked on for a longer time.&lt;/li>
+&lt;li>Related issue can be used to reference any URL. It is limited to 125
+characters.&lt;/li>
 &lt;li>Click here to expand … expands the ticket relation section.&lt;/li>
 &lt;li>Hide ticket relation section hides ticket relation fields.&lt;/li>
 &lt;li>Mark this ticket as Master is described in detail in chapter Master-Slave
@@ -388,9 +400,9 @@ relations.&lt;/li>
 relations.&lt;/li>
 &lt;li>Mark this ticket as child this feature is described in detail in chapter
 Parent-Child relations.&lt;/li>
-&lt;li>Cross reference is for referencing as much other GGUS tickets as necessary. For
-each ticket referenced here a symmetric link is added to the referenced ticket
-automatically.&lt;/li>
+&lt;li>Cross reference is for referencing as much other GGUS tickets as necessary.
+For each ticket referenced here a symmetric link is added to the referenced
+ticket automatically.&lt;/li>
 &lt;li>Want to upload attachment? is for adding attachments. Only one attachment can
 be added at a time. The total number of attachments is unlimited.&lt;/li>
 &lt;/ul>
@@ -445,80 +457,81 @@ ticket update triggers a notification email to the mail address specified in the
 triggers a notification email to the mail address specified in the “Involve
 others” field.&lt;/p>
 &lt;h5 id="subscribe-to-this-ticket-field">Subscribe to this ticket field&lt;/h5>
-&lt;p>This field can be used by any user for participating in tickets at any time.
-The user has just to add his mail address. He will receive notifications for
-updates of the public diary or the solution for following the whole ticket life
-cycle. &amp;ldquo;Internal Diary&amp;rdquo; entries never go to the people who subscribed to a ticket.&lt;/p>
+&lt;p>This field can be used by any user for participating in tickets at any time. The
+user has just to add his mail address. He will receive notifications for updates
+of the public diary or the solution for following the whole ticket life cycle.
+&amp;ldquo;Internal Diary&amp;rdquo; entries never go to the people who subscribed to a ticket.&lt;/p>
 &lt;h4 id="master-slave-relations">Master-Slave relations&lt;/h4>
-&lt;p>Several tickets describing the same issue can be put into a master-slave relation.
-One of them can be marked as master, the other ones as slave. Only the master
-ticket has to be dealt with. The slave tickets are set to “on hold”. They can’t
-be updated directly as long as they are in a master-slave relation. The user gets
-an automated notification if a ticket is marked as slave. All updates of the
-master were pushed to the slaves. When solving the master the slaves are solved to.
-The master-slave relation is kept after the master is solved. Nevertheless each
-ticket can be reopened separately. Updates on reopened slave tickets are possible.
-A master-slave relation can be reset manually either by removing the master ID of
-a slave ticket or by un-checking the master checkbox of the master. If a master is
-unmarked as master all slaves were reset to “standard” tickets automatically.&lt;/p>
+&lt;p>Several tickets describing the same issue can be put into a master-slave
+relation. One of them can be marked as master, the other ones as slave. Only the
+master ticket has to be dealt with. The slave tickets are set to “on hold”. They
+can’t be updated directly as long as they are in a master-slave relation. The
+user gets an automated notification if a ticket is marked as slave. All updates
+of the master were pushed to the slaves. When solving the master the slaves are
+solved to. The master-slave relation is kept after the master is solved.
+Nevertheless each ticket can be reopened separately. Updates on reopened slave
+tickets are possible. A master-slave relation can be reset manually either by
+removing the master ID of a slave ticket or by un-checking the master checkbox
+of the master. If a master is unmarked as master all slaves were reset to
+“standard” tickets automatically.&lt;/p>
 &lt;h5 id="selecting-slave-tickets">Selecting slave tickets&lt;/h5>
 &lt;p>Marking a ticket as slave is only possible if there is already a master ticket.
 If a ticket is marked as slave a popup window opens showing available master
-tickets. For selecting a master just click on the ID. The master ID
-is set automatically. Once you have chosen a wrong master ID click Reset
-Master-Slave relation and select another one.&lt;/p>
+tickets. For selecting a master just click on the ID. The master ID is set
+automatically. Once you have chosen a wrong master ID click Reset Master-Slave
+relation and select another one.&lt;/p>
 &lt;p>&lt;img src="GGUS_Select_Master.png" alt="Select master ID">&lt;/p>
 &lt;h5 id="showing-a-masters-slave-tickets">Showing a master’s slave tickets&lt;/h5>
-&lt;p>To show all related slave tickets click on link “show slaves for this ticket”.
-A popup window opens showing the IDs of all slave tickets.&lt;/p>
+&lt;p>To show all related slave tickets click on link “show slaves for this ticket”. A
+popup window opens showing the IDs of all slave tickets.&lt;/p>
 &lt;p>&lt;img src="GGUS_Ticket_Relation.png" alt="Ticket relation section">&lt;/p>
 &lt;h5 id="searching-for-masterslave-tickets">Searching for master/slave tickets&lt;/h5>
 &lt;p>If you want to search for master or slave tickets you can do this using field
-“Special attributes” of the search engine. The status value for searching is
-set to an appropriate value accordingly.&lt;/p>
+“Special attributes” of the search engine. The status value for searching is set
+to an appropriate value accordingly.&lt;/p>
 &lt;h5 id="parent-child-relations">Parent-child relations&lt;/h5>
 &lt;p>Parent-child relationships work in reverse to master-slave relationships. The
 parent ticket cannot be resolved until all of its child tickets are resolved.
 The parent ticket is set to the status &amp;ldquo;on hold&amp;rdquo; while the child tickets are
-waiting for their solution. For each solved child ticket a note is added to
-the parent ticket history including the solution of the child ticket. After
-the last open child ticket has been solved the status of the parent ticket
-changes to “in progress” automatically. In addition, the system sends a
-notification mail to the responsible support unit that all child tickets have
-been solved now. So the parent ticket can be “solved” too.&lt;/p>
+waiting for their solution. For each solved child ticket a note is added to the
+parent ticket history including the solution of the child ticket. After the last
+open child ticket has been solved the status of the parent ticket changes to “in
+progress” automatically. In addition, the system sends a notification mail to
+the responsible support unit that all child tickets have been solved now. So the
+parent ticket can be “solved” too.&lt;/p>
 &lt;h5 id="selecting-child-tickets">Selecting child tickets&lt;/h5>
 &lt;p>A ticket can be selected as child ticket by checking the box “Mark this ticket
 as child of ticket” and adding the ticket ID of the parent ticket. A comment is
-added to the ticket history automatically stating “This ticket is a child
-ticket of GGUS ticket # 18492”. Multiple child tickets can be related to one
-parent ticket by repeating this procedure. The parent ticket is flagged as
-“parent” automatically. A comment is added to the ticket history automatically
-stating “This ticket is a parent ticket. It has to wait the solving of all its
-child tickets. GGUS ticket #18493 is a child to this ticket.&amp;quot;.&lt;/p>
+added to the ticket history automatically stating “This ticket is a child ticket
+of GGUS ticket # 18492”. Multiple child tickets can be related to one parent
+ticket by repeating this procedure. The parent ticket is flagged as “parent”
+automatically. A comment is added to the ticket history automatically stating
+“This ticket is a parent ticket. It has to wait the solving of all its child
+tickets. GGUS ticket #18493 is a child to this ticket.&amp;quot;.&lt;/p>
 &lt;h5 id="resetting-child-tickets">Resetting child tickets&lt;/h5>
 &lt;p>For resetting child tickets just remove the tick from the check box “Mark this
 ticket as child of ticket”.&lt;/p>
 &lt;h5 id="selecting-parent-tickets">Selecting parent tickets&lt;/h5>
 &lt;p>Selecting a parent ticket explicitly is not possible. The parent tickets are
-flagged automatically by the system while the parent ID is specified for a
-child ticket.&lt;/p>
+flagged automatically by the system while the parent ID is specified for a child
+ticket.&lt;/p>
 &lt;h5 id="searching-for-parentchild-tickets">Searching for parent/child tickets&lt;/h5>
 &lt;p>The search for parent or child tickets is similar to the search for master or
 slave tickets. It can be done using field “Special attributes” of the search
 engine.&lt;/p>
 &lt;h2 id="working-on-tickets">Working on tickets&lt;/h2>
 &lt;p>This section is a description of how the GGUS ticketing system behaves. There
-are other documents which describe the system in more detail and include more
-of the implementation details. One of the most important fields of the system
-is the status field. Many workflows are triggered by status value changes.
-Please read the Short Guide for getting information on status values. Tickets
-are normally assigned to a support unit. This means that the ticket notification
-is sent to a mailing list composed of many supporters. One of these supporters
+are other documents which describe the system in more detail and include more of
+the implementation details. One of the most important fields of the system is
+the status field. Many workflows are triggered by status value changes. Please
+read the Short Guide for getting information on status values. Tickets are
+normally assigned to a support unit. This means that the ticket notification is
+sent to a mailing list composed of many supporters. One of these supporters
 assigns the ticket to himself and takes responsibility for it; the supporter
-changes the status to “in progress”. This person is then in charge of the ticket.
-He either solves it or reassigns the ticket to somebody else. The status of the
-ticket stays set to “in progress” if the ticket is under the responsibility of
-one supporter and until the ticket has been solved.&lt;/p>
+changes the status to “in progress”. This person is then in charge of the
+ticket. He either solves it or reassigns the ticket to somebody else. The status
+of the ticket stays set to “in progress” if the ticket is under the
+responsibility of one supporter and until the ticket has been solved.&lt;/p>
 &lt;h3 id="user-ticketing-work-flow">User ticketing work flow&lt;/h3>
 &lt;p>A graphical view of the ticket flow in GGUS is shown here:
 &lt;img src="GGUS_Status_Values.png" alt="GGUS ticket flow">&lt;/p>
@@ -530,31 +543,32 @@ support.&lt;/li>
 &lt;/ol>
 &lt;p>The first line support is provided by an organisation called TPM – Ticket
 Processing Manager. The TPM team has members who have very good general grid
-knowledge. It is an organisation populated by people provided from the Czech NGI.
-This organisation is responsible for the routing and processing of all active
-tickets.&lt;/p>
+knowledge. It is an organisation populated by people provided from the Czech
+NGI. This organisation is responsible for the routing and processing of all
+active tickets.&lt;/p>
 &lt;p>The second line support is formed by many support units. Each support unit is
 formed from members who are specialists in various areas of grid middleware, or
 NGI/ROC supporters for operations problems, or VO specific supporters. The
-membership of the support units is maintained on mailing lists.
-If the user responds to any e-mail received from GGUS, then the reply is added
-to the ticket history. The subject of the email includes meta data to ensure the
-association of the response with the ticket.&lt;/p>
+membership of the support units is maintained on mailing lists. If the user
+responds to any e-mail received from GGUS, then the reply is added to the ticket
+history. The subject of the email includes meta data to ensure the association
+of the response with the ticket.&lt;/p>
 &lt;h3 id="tickets-waiting-for-user-input">Tickets waiting for user input&lt;/h3>
 &lt;p>The workflows for tickets waiting for user input is described in this FAQ.&lt;/p>
 &lt;h3 id="advice-for-tpms">Advice for TPMs&lt;/h3>
 &lt;p>The following advice is intended for people working on TPM.&lt;/p>
 &lt;ol>
 &lt;li>Change support unit to “TPM” if you are working on a ticket&lt;/li>
-&lt;li>Just typing a comment into solution field does NOT cause an email to the
-user automatically. Only changing status to “solved” causes an automatic mail.
-If you want to contact the user you can do this using the “Public Diary”.&lt;/li>
+&lt;li>Just typing a comment into solution field does NOT cause an email to the user
+automatically. Only changing status to “solved” causes an automatic mail. If
+you want to contact the user you can do this using the “Public Diary”.&lt;/li>
 &lt;li>Change status to “waiting for reply” while waiting for the user&amp;rsquo;s reply.&lt;/li>
 &lt;li>Be careful when using the field “Assign ticket to one person”. Please avoid
-using mailing list names, or the mail list address of a remote help-desk system.
-With a mailing list, the mail may not reach the recipient because many mailing
-lists are closed lists and will not accept the message. Sending mail to a remote
-help-desk system can confuse the remote system and lead to trouble.&lt;/li>
+using mailing list names, or the mail list address of a remote help-desk
+system. With a mailing list, the mail may not reach the recipient because
+many mailing lists are closed lists and will not accept the message. Sending
+mail to a remote help-desk system can confuse the remote system and lead to
+trouble.&lt;/li>
 &lt;li>Change the ticket category if you think the ticket is not dealing with an
 incident but describing a service request like a documentation update, adding
 someone to a mailing list and so on. See chapter Changing ticket category for
@@ -582,41 +596,43 @@ other support units should be either assigned back to the TPM or assigned to the
 relevant support unit directly. In both cases an explanation in the public diary
 will avoid confusion.&lt;/p>
 &lt;h3 id="solving-a-ticket">Solving a ticket&lt;/h3>
-&lt;p>In this section the usage of the different status values and input fields is described.&lt;/p>
+&lt;p>In this section the usage of the different status values and input fields is
+described.&lt;/p>
 &lt;p>The system offers two groups of meta states, open states and terminal states.&lt;/p>
 &lt;h4 id="open-states">Open states&lt;/h4>
 &lt;ul>
 &lt;li>new: this is the default status for submitted tickets. It is set by the system
 and can’t be selected in the drop-down list menu.&lt;/li>
-&lt;li>assigned: this status is set automatically and can&amp;rsquo;t be selected in the drop-down
-list menu. After a ticket is assigned to a support unit, this unit is informed via
-e-mail about the ticket assignment.&lt;/li>
-&lt;li>in progress: support staff who work on the ticket should change status to
-“in progress”. This is necessary to announce that somebody is taking care of this
+&lt;li>assigned: this status is set automatically and can&amp;rsquo;t be selected in the
+drop-down list menu. After a ticket is assigned to a support unit, this unit
+is informed via e-mail about the ticket assignment.&lt;/li>
+&lt;li>in progress: support staff who work on the ticket should change status to “in
+progress”. This is necessary to announce that somebody is taking care of this
 ticket and is working on it.&lt;/li>
-&lt;li>waiting for reply: This status value should be set ONLY by the supporter and ONLY
-when asking the SUBMITTER for further information. The supporter can decide whether
-(s)he wants to be notified about this ticket by the system. (S)he can choose any date
-in the future (s)he wants to be notified and select the radio button &amp;ldquo;Please send
-reminder on&amp;rdquo;.&lt;/li>
-&lt;li>on hold: some tickets are not solvable while needing a software patch or something
-similar for example. The reasons should be explained in field “Public Diary”.
-Additionally a hint in field “Related issue” may be useful. The supporter can decide
-whether he wants to be notified about this ticket by the system. He can choose any date
-in the future he wants to be notified and select the radio button “Please send reminder
-on”.&lt;/li>
-&lt;li>reopened: normally this status value is set by the user, if he is not happy with the
-provided solution. It can also be used by supporters if a better solution is found for
-a ticket already solved. In this case status should be set to “reopened”, new solution
-put in and status changed to “solved” again. Leaving status as “solved” and just putting
-in the new solution does not cause an automatic solution mail to the user.&lt;/li>
+&lt;li>waiting for reply: This status value should be set ONLY by the supporter and
+ONLY when asking the SUBMITTER for further information. The supporter can
+decide whether (s)he wants to be notified about this ticket by the system.
+(S)he can choose any date in the future (s)he wants to be notified and select
+the radio button &amp;ldquo;Please send reminder on&amp;rdquo;.&lt;/li>
+&lt;li>on hold: some tickets are not solvable while needing a software patch or
+something similar for example. The reasons should be explained in field
+“Public Diary”. Additionally a hint in field “Related issue” may be useful.
+The supporter can decide whether he wants to be notified about this ticket by
+the system. He can choose any date in the future he wants to be notified and
+select the radio button “Please send reminder on”.&lt;/li>
+&lt;li>reopened: normally this status value is set by the user, if he is not happy
+with the provided solution. It can also be used by supporters if a better
+solution is found for a ticket already solved. In this case status should be
+set to “reopened”, new solution put in and status changed to “solved” again.
+Leaving status as “solved” and just putting in the new solution does not cause
+an automatic solution mail to the user.&lt;/li>
 &lt;/ul>
 &lt;h4 id="terminal-states">Terminal states&lt;/h4>
 &lt;ul>
-&lt;li>solved: If a solution is found and put into the Solution field, status has to be set
-to &amp;ldquo;solved&amp;rdquo;. Only on status change to &amp;ldquo;solved&amp;rdquo; the user receives a solution mail
-automatically. Please put a full explanation in Solution field of how the issue was
-solved. You can use qualification terms like:
+&lt;li>solved: If a solution is found and put into the Solution field, status has to
+be set to &amp;ldquo;solved&amp;rdquo;. Only on status change to &amp;ldquo;solved&amp;rdquo; the user receives a
+solution mail automatically. Please put a full explanation in Solution field
+of how the issue was solved. You can use qualification terms like:
 &lt;ul>
 &lt;li>fixed&lt;/li>
 &lt;li>fixed (work around)&lt;/li>
@@ -624,41 +640,42 @@ solved. You can use qualification terms like:
 &lt;li>other&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>unsolved: This status is for tickets that can not be solved due to any reason. Please
-add a comment in the solution field explaining why it can&amp;rsquo;t be solved. You can use
-qualification terms like:
+&lt;li>unsolved: This status is for tickets that can not be solved due to any reason.
+Please add a comment in the solution field explaining why it can&amp;rsquo;t be solved.
+You can use qualification terms like:
 &lt;ul>
 &lt;li>duplicate&lt;/li>
 &lt;li>invalid&lt;/li>
 &lt;li>wont fix&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>verified: This status can only be set by the ticket submitter. TEAM tickets, by design,
-can be &amp;lsquo;verified&amp;rsquo; by all TEAMers in the VO. ALARM tickets can also be &amp;lsquo;verified&amp;rsquo; by all
-the authorized ALARMers in the VO, not only the submitter. This status indicates that a
-user is happy with the provided solution. &amp;ldquo;Verified&amp;rdquo; tickets cannot be further updated,
-nor re-opened.&lt;/li>
-&lt;li>closed: Solved or unsolved tickets not verified by the submitter are set to “closed”
-automatically after 10 working days.&lt;/li>
+&lt;li>verified: This status can only be set by the ticket submitter. TEAM tickets,
+by design, can be &amp;lsquo;verified&amp;rsquo; by all TEAMers in the VO. ALARM tickets can also
+be &amp;lsquo;verified&amp;rsquo; by all the authorized ALARMers in the VO, not only the
+submitter. This status indicates that a user is happy with the provided
+solution. &amp;ldquo;Verified&amp;rdquo; tickets cannot be further updated, nor re-opened.&lt;/li>
+&lt;li>closed: Solved or unsolved tickets not verified by the submitter are set to
+“closed” automatically after 10 working days.&lt;/li>
 &lt;/ul>
 &lt;h4 id="fields-to-fill-in">Fields to fill in&lt;/h4>
 &lt;p>Single steps of the solution process can be documented in field “Public Diary”.
-Information and comments which should not be visible to the user can be put into the
-“Internal diary”. When a solution is found, the modifier types the solution into the
-solution field and changes status to &amp;ldquo;solved&amp;rdquo;. The “Solution” field provides 4000
-characters. If 4000 characters are not sufficient, please add an attachment. After
-changing status to “solved” and saving all changes, the solution is sent to the submitter
-via mail automatically. Tasks for solving a ticket:&lt;/p>
+Information and comments which should not be visible to the user can be put into
+the “Internal diary”. When a solution is found, the modifier types the solution
+into the solution field and changes status to &amp;ldquo;solved&amp;rdquo;. The “Solution” field
+provides 4000 characters. If 4000 characters are not sufficient, please add an
+attachment. After changing status to “solved” and saving all changes, the
+solution is sent to the submitter via mail automatically. Tasks for solving a
+ticket:&lt;/p>
 &lt;ul>
 &lt;li>change status to “in progress” while working on it,&lt;/li>
 &lt;li>fill in the solution fields and the internal diary if necessary,&lt;/li>
 &lt;li>change the status to “solved” and you are done.&lt;/li>
 &lt;/ul>
 &lt;h2 id="reminder-emails">Reminder emails&lt;/h2>
-&lt;p>Reminder mails are based on the priority colours. The algorithm of setting priority
-colours is described in the following chapters.
-Reminder mails are sent with the reply-to address ignored - atnospam - ggus.org. All mails
-sent to this mail box are deleted regularly without reading them.&lt;/p>
+&lt;p>Reminder mails are based on the priority colours. The algorithm of setting
+priority colours is described in the following chapters. Reminder mails are sent
+with the reply-to address ignored - atnospam - ggus.eu. All mails sent to this
+mail box are deleted regularly without reading them.&lt;/p>
 &lt;h3 id="what-are-the-priority-colours">What are the priority colours?&lt;/h3>
 &lt;p>Priority colours are:&lt;/p>
 &lt;ul>
@@ -669,22 +686,23 @@ sent to this mail box are deleted regularly without reading them.&lt;/p>
 &lt;li>Light blue: for all tickets in status unsolved&lt;/li>
 &lt;li>Blue: for all solved and verified tickets&lt;/li>
 &lt;/ul>
-&lt;p>Priority colours depend on the expected response time and the expected solution time of
-a ticket.&lt;/p>
+&lt;p>Priority colours depend on the expected response time and the expected solution
+time of a ticket.&lt;/p>
 &lt;h4 id="expected-response-time">Expected response time&lt;/h4>
-&lt;p>The expected response times for support units that did not agree on a dedicated quality
-of service (&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels">https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels&lt;/a>) are listed in the relevant FAQ.
-This means, the status of a ticket should be
-set to another value than “assigned” for indicating that the support unit has
-acknowledged the ticket.&lt;/p>
+&lt;p>The expected response times for support units that did not agree on a dedicated
+quality of service (&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels">https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels&lt;/a>) are listed in
+the relevant FAQ. This means, the status of a ticket should be set to another
+value than “assigned” for indicating that the support unit has acknowledged the
+ticket.&lt;/p>
 &lt;h4 id="expected-solution-time">Expected solution time&lt;/h4>
-&lt;p>The expected solution times are driven by the priority values of the tickets. All values
-are working days. The higher the priority the shorter is the duration within which the
-ticket is expected to be solved.
-For further details please see the priority colours FAQ
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour">https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour&lt;/a> .&lt;/p>
-&lt;p>Ticket follow-up
-Ticket follow-up is done by a team at KIT (Germany) for all tickets besides operations tickets. More information on the ticket follow-up processes are available at EGI_DMSU_Ticket_Followup &lt;a href="https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup">https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup&lt;/a> and
+&lt;p>The expected solution times are driven by the priority values of the tickets.
+All values are working days. The higher the priority the shorter is the duration
+within which the ticket is expected to be solved. For further details please see
+the priority colours FAQ &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour">https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour&lt;/a> .&lt;/p>
+&lt;p>Ticket follow-up Ticket follow-up is done by a team at KIT (Germany) for all
+tickets besides operations tickets. More information on the ticket follow-up
+processes are available at EGI_DMSU_Ticket_Followup
+&lt;a href="https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup">https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup&lt;/a> and
 &lt;a href="https://wiki.egi.eu/wiki/GGUS:Ticket_monitoring">https://wiki.egi.eu/wiki/GGUS:Ticket_monitoring&lt;/a> .&lt;/p></description></item><item><title>Internal: GGUS user guide</title><link>/internal/helpdesk/ggus-user-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-user-guide/</guid><description>
 &lt;blockquote>
 &lt;p>To be removed: Moving the content of
@@ -726,12 +744,12 @@ certificates. Users who do not have a valid digital certificate can access GGUS
 via EGI SSO. After filling in the registration form, the user receives an e-mail
 from the GGUS team with his access data to GGUS.&lt;/p>
 &lt;h3 id="accessing-ggus-with-certificate">Accessing GGUS with certificate&lt;/h3>
-&lt;p>The primary address of the GGUS portal is: &lt;a href="https://ggus.eu">https://ggus.eu&lt;/a>. If
-the user enters this in the browser, a warning will be displayed by the browser
-prompting the user to specify which certificate to use (if the user has not
-selected to automatically select the certificate in the browser settings). The
-reason for this warning is that GGUS has to validate the user in order to allow
-access. After that, the user will no longer be asked to identify himself.&lt;/p>
+&lt;p>The primary address of the GGUS portal is: &lt;a href="https://ggus.eu">https://ggus.eu&lt;/a>.
+If the user enters this in the browser, a warning will be displayed by the
+browser prompting the user to specify which certificate to use (if the user has
+not selected to automatically select the certificate in the browser settings).
+The reason for this warning is that GGUS has to validate the user in order to
+allow access. After that, the user will no longer be asked to identify himself.&lt;/p>
 &lt;p>The user identifies themselves with their digital certificate. At this point in
 time, GGUS has identified the user and displays the start page as shown in the
 following figure:&lt;/p>
@@ -1051,8 +1069,8 @@ in place. Switching from production system to backup system currently needs
 manual interaction. An automatic switch in case of fail-over will be
 implemented. GGUS staffs at Karlsruhe are not providing support apart from
 requests concerning GGUS system itself. They can be contacted by email to
-support &amp;ldquo;at&amp;rdquo; ggus.org. Usual office hours for GGUS staffs are from 07:00 to
-15:00 o’clock (UTC).&lt;/p>
+support &amp;ldquo;at&amp;rdquo; ggus.eu. Usual office hours for GGUS staffs are from 07:00 to 15:00
+o’clock (UTC).&lt;/p>
 &lt;h3 id="tpm">TPM&lt;/h3>
 &lt;p>TPM (Ticket Processing Manager) is the most important part of the support system
 for the grid. The purpose of TPM is:&lt;/p>
