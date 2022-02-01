@@ -509,7 +509,7 @@ automatically. A comment is added to the ticket history automatically stating
 “This ticket is a parent ticket. It has to wait the solving of all its child
 tickets. GGUS ticket #18493 is a child to this ticket.&amp;quot;.&lt;/p>
 &lt;h5 id="resetting-child-tickets">Resetting child tickets&lt;/h5>
-&lt;p>For resetting child tickets just remove the tick from the check box “Mark this
+&lt;p>For resetting child tickets just remove the tick from the checkbox “Mark this
 ticket as child of ticket”.&lt;/p>
 &lt;h5 id="selecting-parent-tickets">Selecting parent tickets&lt;/h5>
 &lt;p>Selecting a parent ticket explicitly is not possible. The parent tickets are
@@ -550,7 +550,7 @@ active tickets.&lt;/p>
 formed from members who are specialists in various areas of grid middleware, or
 NGI/ROC supporters for operations problems, or VO specific supporters. The
 membership of the support units is maintained on mailing lists. If the user
-responds to any e-mail received from GGUS, then the reply is added to the ticket
+responds to any email received from GGUS, then the reply is added to the ticket
 history. The subject of the email includes meta data to ensure the association
 of the response with the ticket.&lt;/p>
 &lt;h3 id="tickets-waiting-for-user-input">Tickets waiting for user input&lt;/h3>
@@ -605,7 +605,7 @@ described.&lt;/p>
 and can’t be selected in the drop-down list menu.&lt;/li>
 &lt;li>assigned: this status is set automatically and can&amp;rsquo;t be selected in the
 drop-down list menu. After a ticket is assigned to a support unit, this unit
-is informed via e-mail about the ticket assignment.&lt;/li>
+is informed via email about the ticket assignment.&lt;/li>
 &lt;li>in progress: support staff who work on the ticket should change status to “in
 progress”. This is necessary to announce that somebody is taking care of this
 ticket and is working on it.&lt;/li>
@@ -739,9 +739,9 @@ described in chapter Registering at GGUS.&lt;/p>
 GGUS the user should go to &lt;a href="https://ggus.eu/index.php?mode=index">GGUS home&lt;/a> and
 click the &lt;a href="https://ggus.eu/index.php?mode=register_info">registration link&lt;/a>.
 This link opens the registration form that the user has to fill in. In addition,
-there are some links where the user can find information about X09 personal
+there are some links where the user can find information about X509 personal
 certificates. Users who do not have a valid digital certificate can access GGUS
-via EGI SSO. After filling in the registration form, the user receives an e-mail
+via EGI SSO. After filling in the registration form, the user receives an email
 from the GGUS team with his access data to GGUS.&lt;/p>
 &lt;h3 id="accessing-ggus-with-certificate">Accessing GGUS with certificate&lt;/h3>
 &lt;p>The primary address of the GGUS portal is: &lt;a href="https://ggus.eu">https://ggus.eu&lt;/a>.
