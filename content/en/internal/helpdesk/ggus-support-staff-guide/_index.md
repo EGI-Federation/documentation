@@ -634,7 +634,7 @@ via mail automatically. Tasks for solving a ticket:
 
 Reminder mails are based on the priority colours. The algorithm of setting priority
 colours is described in the following chapters.
-Reminder mails are sent with the reply-to address ignored - atnospam - ggus.org. All mails
+Reminder mails are sent with the reply-to address ignored - atnospam - ggus.eu. All mails
 sent to this mail box are deleted regularly without reading them.
 
 ### What are the priority colours?

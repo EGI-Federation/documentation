@@ -419,7 +419,7 @@ in place. Switching from production system to backup system currently needs
 manual interaction. An automatic switch in case of fail-over will be
 implemented. GGUS staffs at Karlsruhe are not providing support apart from
 requests concerning GGUS system itself. They can be contacted by email to
-support "at" ggus.org. Usual office hours for GGUS staffs are from 07:00 to
+support "at" ggus.eu. Usual office hours for GGUS staffs are from 07:00 to
 15:00 o’clock (UTC).
 
 ### TPM
