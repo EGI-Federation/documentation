@@ -29,8 +29,7 @@ best practice documents that provide optional guidelines).
 Miscellaneous collection of short How-Tos which are relevant to various other
 documentation and procedures.
 
-- [HOWTO01 Site Certification Required Information](./howto01_site_certification_required_information):
-  Information required in the GOCDB when registering a site/resource centre
+- [HOWTO01 Using IGTF CA distribution](./howto01_using_igtf_ca_distribution)
 - [HOWTO02 Site Certification Required Documentation](./howto02_site_certification_required_documentation)
 - [HOWTO03 Site Certification GIIS Check](./howto03_site_certificatoin_giis_check)
 - [HOWTO04 Site Certification Manual tests](./howto04_site_certification_manual_tests)
