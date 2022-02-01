@@ -59,7 +59,7 @@ from the GGUS team with his access data to GGUS.
 
 ### Accessing GGUS with certificate
 
-The primary address of the GGUS portal is: [http://ggus.eu](http://ggus.eu). If
+The primary address of the GGUS portal is: [https://ggus.eu](https://ggus.eu). If
 the user enters this in the browser, a warning will be displayed by the browser
 prompting the user to specify which certificate to use (if the user has not
 selected to automatically select the certificate in the browser settings). The
