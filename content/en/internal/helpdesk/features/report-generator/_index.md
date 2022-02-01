@@ -8,7 +8,8 @@ description: >
 
 ## Definitions and prerequisites
 
-The GGUS Report Generator is available at https://ggus.eu/?mode=report_view.
+The [GGUS Report Generator](https://ggus.eu/?mode=report_view) is available
+[from the support section](https://ggus.eu/?mode=support).
 
 The implementation of the report generator started in October 2011. Hence the
 report generator does not provide data for tickets submitted before December
