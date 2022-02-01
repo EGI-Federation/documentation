@@ -1,9 +1,9 @@
 ---
-title: "Report generator"
+title: "Ticket Priority"
 type: docs
 weight: 40
 description: >
-  Report generator
+  Ticket Priority
 ---
 
 ## Priority definition
