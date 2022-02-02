@@ -14,7 +14,7 @@ description: >
 | ---------------------------- | ------------------------------------------------------------------- |
 | Name                         | Helpdesk                                                            |
 | Description                  | Central helpdesk providing a single interface to EGI support        |
-| URL                          | https://helpdes.egi.eu                                              |
+| URL                          | https://helpdesk.egi.eu                                             |
 | Support Email                | support at ggus.eu                                                  |
 | [Helpdesk](..) Support Unit  | **EGI Services and Service Components** <br/> I\_\_ Helpdesk (GGUS) |
 | Configuration Database entry | https://goc.egi.eu/portal/index.php?Page_Type=Site&id=247           |
