@@ -8,16 +8,16 @@ description: >
 
 ## What’s new in the latest release?
 
-Please see the [Ongoing work list](https://ggus.eu/index.php?mode=release_notes)
-for further information.
+Please see the [release notes](https://ggus.eu/index.php?mode=release_notes) for
+further information.
 
 ## Access to GGUS
 
-GGUS is reachable via [https://helpdesk.egi.eu](https://helpdesk.egi.eu) and
-[https://ggus.eu](https://ggus.eu) using a web browser. Another way for
-accessing GGUS is using the direct link provided in the notification emails sent
-after ticket updates. However either a valid X509 personal certificate or a
-Check-in account are required for accessing the system.
+The EGI Helpdesk is reachable via [a welcome page](https://helpdesk.egi.eu).
+Another way for accessing [the ticket management interface](https://ggus.eu) is
+using the direct link provided in the notification emails sent after ticket
+updates. However either a valid X509 personal certificate or a Check-in account
+are required for accessing the system.
 
 ## Features of GGUS
 
@@ -64,17 +64,16 @@ into the system using your Check-in account. Then go to the registration page
 and click on Check/update your GGUS account. The system shows you all your user
 data. It detects the new DN string of your browser automatically. Just save the
 changes by clicking on button Update now. Additional information on GGUS
-accounts is available here(link to new location of
-https://wiki.egi.eu/wiki/FAQ_GGUS-Account).
+accounts is available [here](https://wiki.egi.eu/wiki/FAQ_GGUS-Account).
 
 ### Support staff page
 
-Access to the support staff page is restricted to users having support
-privileges https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Privileges . Depending on
-further privileges people may have there are links to e.g. news administration
-and other features. All support staffs can use the GGUS report generator and the
-GGUS ticket timeline tool as well as links to other information useful for
-support staffs.
+Access to the support staff page is restricted to users having
+[support privileges](https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Privileges).
+Depending on further privileges people may have there are links to e.g. news
+administration and other features. All support staffs can use the GGUS report
+generator and the GGUS ticket timeline tool as well as links to other
+information useful for support staffs.
 
 ![GGUS Support Staff](GGUS_Support_Staff.png)
 
@@ -95,7 +94,7 @@ The link to the GGUS Report Generator is located on support staff page and on
 GGUS home page in section "GGUS tools/reports". The GGUS Report Generator could
 be used for generating statistics and reports for all support units in GGUS.
 Further information on the report generator is available on the
-https://wiki.egi.eu/wiki/FAQ_Report_Generator_(GGUS) .
+[report generator](../features/report-generator).
 
 ### Submit form
 
@@ -538,8 +537,8 @@ formed from members who are specialists in various areas of grid middleware, or
 NGI/ROC supporters for operations problems, or VO specific supporters. The
 membership of the support units is maintained on mailing lists. If the user
 responds to any email received from GGUS, then the reply is added to the ticket
-history. The subject of the email includes metadata to ensure the association
-of the response with the ticket.
+history. The subject of the email includes metadata to ensure the association of
+the response with the ticket.
 
 ### Tickets waiting for user input
 
@@ -688,9 +687,9 @@ time of a ticket.
 #### Expected response time
 
 The expected response times for support units that did not agree on a dedicated
-quality of service (https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels) are listed in
-the relevant FAQ. This means, the status of a ticket should be set to another
-value than “assigned” for indicating that the support unit has acknowledged the
+[quality of service](../features/quality-of-support-levels) are listed in the
+relevant FAQ. This means, the status of a ticket should be set to another value
+than “assigned” for indicating that the support unit has acknowledged the
 ticket.
 
 #### Expected solution time
@@ -698,10 +697,10 @@ ticket.
 The expected solution times are driven by the priority values of the tickets.
 All values are working days. The higher the priority the shorter is the duration
 within which the ticket is expected to be solved. For further details please see
-the priority colours FAQ https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour .
+the [priority colours FAQ](https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour).
 
 Ticket follow-up Ticket follow-up is done by a team at KIT (Germany) for all
 tickets besides operations tickets. More information on the ticket follow-up
-processes are available at EGI_DMSU_Ticket_Followup
-https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup and
-https://wiki.egi.eu/wiki/GGUS:Ticket_monitoring .
+processes are available at the pages about
+[DMSU ticket follow-up](https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup) and
+[Ticket monitoring](https://wiki.egi.eu/wiki/GGUS:Ticket_monitoring).

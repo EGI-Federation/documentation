@@ -89,10 +89,10 @@ _The ticket lifetime is based on calendar days._
 GGUS support units are spread over a wide range of time zones. Some of the
 support units themselves are spread over several time zones. However most
 support units are located in European time zones. Support units and their time
-zones are listed at https://ggus.eu/?mode=resp_unit_info. For middleware product
-teams GGUS assumes time zone "UTC +1" for all support units. For all the other
-support units the system uses the relevant time zone for calculating timestamps
-as far as possible.
+zones are listed on [a dedicated page](https://ggus.eu/?mode=resp_unit_info).
+For middleware product teams GGUS assumes time zone "UTC +1" for all support
+units. For all the other support units the system uses the relevant time zone
+for calculating timestamps as far as possible.
 
 ### Office hours
 
