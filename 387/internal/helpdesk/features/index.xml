@@ -233,7 +233,7 @@ ticket to a support unit the expected response timestamp is calculated by adding
 an amount of time to the assign timestamp. The amount of time added depends on
 the ticket priority and the kind of support unit. For support units that have
 declared a quality of service level the response times are defined by the
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels">QoS level (wiki)&lt;/a>. For all the
+&lt;a href="../features/quality-of-support-levels">QoS level&lt;/a>. For all the
 other support units a medium QoS is assumed for calculating the expected
 response timestamp. In case the actual response timestamp is greater than the
 &amp;ldquo;expected response&amp;rdquo; timestamp for middleware support units the &amp;ldquo;violate&amp;rdquo; flag is
