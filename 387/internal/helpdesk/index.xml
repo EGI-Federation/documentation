@@ -283,8 +283,8 @@ can be submitted for all tier-1 sites in EGI and are routed to the appropriate
 NGI/ROC automatically, bypassing the TPM. Additionally the site is notified by
 mail about the ticket. By default TEAM tickets are routed to the appropriate
 NGI/ROC directly, bypassing TPM. But the submitter could also choose to route it
-to the TPM instead. Further information on TEAM tickets is available in the TEAM
-tickets FAQs.&lt;/p>
+to the TPM instead. Further information on TEAM tickets is available in the
+&lt;a href="../features/team-tickets">TEAM tickets page&lt;/a>.&lt;/p>
 &lt;h6 id="alarm-tickets">ALARM tickets&lt;/h6>
 &lt;p>The purpose of ALARM tickets is to notify tier-1 administrators about serious
 problems of the site at any time, independent from usual office hours. They can
@@ -296,8 +296,8 @@ to 4 people per VO. ALARM tickets are editable by all members of the VO team
 visible to everyone. ALARM tickets can be submitted for all tier-1 sites in EGI
 and are routed to the appropriate NGI/ROC automatically, bypassing the TPM.
 Additionally the tier-1 site is notified by an ALARM email. It is up to the
-tier-1 site how to deal with this ALARM email. Further information on TEAM
-tickets is available in the ALARM tickets FAQs.&lt;/p>
+tier-1 site how to deal with this ALARM email. Further information on ALARM
+tickets is available in the &lt;a href="../features/alarm-tickets">ALARM tickets page&lt;/a>.&lt;/p>
 &lt;h5 id="ops-tickets">OPS tickets&lt;/h5>
 &lt;p>This ticket type is used for operations tickets submitted via the operations
 portal.&lt;/p>
@@ -419,8 +419,8 @@ new entry in ticket history:&lt;/p>
 diary are marked with green colour, entries of the internal diary with orange
 colour.&lt;/p>
 &lt;h4 id="ticket-modify-section">Ticket modify section&lt;/h4>
-&lt;p>Figure 6: Ticket modify section The ticket modification area offers several
-fields for modifying a ticket. The fields are described in detail below.&lt;/p>
+&lt;p>The ticket modification area offers several fields for modifying a ticket.
+The fields are described in detail below.&lt;/p>
 &lt;p>&lt;img src="GGUS_Modifysection_Support.png" alt="Ticket modify section">&lt;/p>
 &lt;ul>
 &lt;li>Assign ticket to support unit is showing all support units involved in GGUS.&lt;/li>
@@ -765,7 +765,7 @@ ticket.&lt;/p>
 &lt;p>The expected solution times are driven by the priority values of the tickets.
 All values are working days. The higher the priority the shorter is the duration
 within which the ticket is expected to be solved. For further details please see
-the &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour">priority colours FAQ&lt;/a>.&lt;/p>
+the &lt;a href="../features/ticket-priority">Ticket Priority page&lt;/a>.&lt;/p>
 &lt;p>Ticket follow-up Ticket follow-up is done by a team at KIT (Germany) for all
 tickets besides operations tickets. More information on the ticket follow-up
 processes are available at the pages about
