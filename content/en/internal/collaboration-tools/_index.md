@@ -76,28 +76,11 @@ be crated on request as documented below.
 Membership in mailing lists is usually determined by membership in EGI SSO
 groups. Only group owners can manage the group membership.
 
-List administrators can find some helpful information on the
-[Mailing Lists Administration page](https://wiki.egi.eu/wiki/Mailing_list_administration).
 Note that canonical addresses are `list-name@mailman.egi.eu`, not
 `list-name@egi.eu`.
 
-#### Requesting the creation of a new mailing list
-
-> By default all mailing lists are managed using groups in EGI SSO. Only for
-> very specific they may be managed directly in mailman.
-
-Open a ticket to Collaboration Tools SU in [EGI Helpdesk](../helpdesk),
-providing:
-
-- List name
-- List Description
-- List administrator contact
-
-After validation of those information the list will be created.
-
-Name and description of the mailing list will be validated, you may be
-recommended to change name or description to follow already existing best
-practices for naming, or to improve description.
+See the [dedicated page on mailing list](./mailing-lists) for more information
+like how to request the creation of a new mailing list.
 
 ### Document server
 
