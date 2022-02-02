@@ -12,9 +12,8 @@ QoS stands for Quality of Support. It describes the level of support provided by
 Support Units in GGUS system.
 
 It has an impact on the ticket
-[priority colour (wiki)](https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour) in
-GGUS and the warnings are sent to SUs if 75% of the maximum response time of the
-QoS level are over.
+[priority colour](../features/ticket-priority) in GGUS and the warnings are sent
+to SUs if 75% of the maximum response time of the QoS level are over.
 
 ## QoS levels
 
@@ -56,5 +55,5 @@ The QoS level for all of the SUs are available
 [here](https://ggus.eu/?mode=resp_unit_info)
 
 For the several EGI services, the QoS levels are defined in the specific
-Operational Level Agreements linked in this
-[page](https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework#EGIOLASLAframework-OperationalLevelAgreements)
+Operational Level Agreements linked in the
+[EGI OLA SLA framework page](https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework#EGIOLASLAframework-OperationalLevelAgreements)
