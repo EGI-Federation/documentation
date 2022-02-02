@@ -1,8 +1,8 @@
 ---
 title: "User guide"
 type: docs
-weight: 40
-description: "User guide for EGI Helpdesk"
+weight: 50
+description: "Guide for users"
 ---
 
 ## Introduction

@@ -1,9 +1,8 @@
 ---
 title: "Service information"
-weight: 100
+weight: 10
 type: "docs"
-description: >
-  Technical details of EGI Helpdesk
+description: "Technical details of EGI Helpdesk"
 ---
 
 ## Identity card

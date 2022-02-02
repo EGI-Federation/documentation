@@ -1,9 +1,8 @@
 ---
 title: "Account and privileges"
 type: docs
-weight: 40
-description: >
-  EGI Helpdesk
+weight: 20
+description: "Managing account and privileges"
 ---
 
 ## Managing GGUS account data

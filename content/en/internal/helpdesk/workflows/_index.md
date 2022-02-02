@@ -1,7 +1,8 @@
 ---
 title: "Workflows"
 type: docs
-weight: 40
-description: >
-  Workflows
+weight: 60
+description: Workflows
 ---
+
+Description of some of the Helpdesk workflows.
