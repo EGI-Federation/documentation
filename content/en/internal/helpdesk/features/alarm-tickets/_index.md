@@ -3,7 +3,7 @@ title: "Alarm tickets"
 type: docs
 weight: 40
 description: >
-  Alarm tickets
+  Definition and usage of the Alarm tickets
 ---
 
 ## Introduction: purpose and conditions
