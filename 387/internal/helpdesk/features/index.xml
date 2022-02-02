@@ -124,9 +124,8 @@ reference link to the alarm ticket is given in the alarm email notification.&lt;
 &lt;p>QoS stands for Quality of Support. It describes the level of support provided by
 Support Units in GGUS system.&lt;/p>
 &lt;p>It has an impact on the ticket
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour">priority colour (wiki)&lt;/a> in
-GGUS and the warnings are sent to SUs if 75% of the maximum response time of the
-QoS level are over.&lt;/p>
+&lt;a href="../features/ticket-priority">priority colour&lt;/a> in GGUS and the warnings are sent
+to SUs if 75% of the maximum response time of the QoS level are over.&lt;/p>
 &lt;h2 id="qos-levels">QoS levels&lt;/h2>
 &lt;p>There are three different QoS levels, each defining different response times for
 given Ticket Priority.&lt;/p>
@@ -197,8 +196,8 @@ ticket priority.&lt;/p>
 &lt;p>The QoS level for all of the SUs are available
 &lt;a href="https://ggus.eu/?mode=resp_unit_info">here&lt;/a>&lt;/p>
 &lt;p>For the several EGI services, the QoS levels are defined in the specific
-Operational Level Agreements linked in this
-&lt;a href="https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework#EGIOLASLAframework-OperationalLevelAgreements">page&lt;/a>&lt;/p></description></item><item><title>Internal: Report generator</title><link>/internal/helpdesk/features/report-generator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/report-generator/</guid><description>
+Operational Level Agreements linked in the
+&lt;a href="https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework#EGIOLASLAframework-OperationalLevelAgreements">EGI OLA SLA framework page&lt;/a>&lt;/p></description></item><item><title>Internal: Report generator</title><link>/internal/helpdesk/features/report-generator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/report-generator/</guid><description>
 &lt;h2 id="definitions-and-prerequisites">Definitions and prerequisites&lt;/h2>
 &lt;p>The &lt;a href="https://ggus.eu/?mode=report_view">GGUS Report Generator&lt;/a> is available
 &lt;a href="https://ggus.eu/?mode=support">from the support section&lt;/a>.&lt;/p>
