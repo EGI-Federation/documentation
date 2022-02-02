@@ -1,5 +1,5 @@
 ---
-title: "Workflow for closing tickets lacking of submitter input"
+title: "Closing tickets lacking of submitter input"
 type: docs
 weight: 40
 description: >
