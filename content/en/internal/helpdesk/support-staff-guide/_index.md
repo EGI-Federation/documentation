@@ -1,9 +1,8 @@
 ---
-title: "GGUS Support Staff Guide"
+title: "Support Staff Guide"
 type: docs
 weight: 40
-description: >
-  Guides for supporters
+description: "Guide for supporters"
 ---
 
 ## What’s new in the latest release?

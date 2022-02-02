@@ -1,9 +1,8 @@
 ---
-title: "GGUS user guide"
+title: "User guide"
 type: docs
 weight: 40
-description: >
-  EGI Helpdesk
+description: "User guide for EGI Helpdesk"
 ---
 
 > To be removed: Moving the content of
