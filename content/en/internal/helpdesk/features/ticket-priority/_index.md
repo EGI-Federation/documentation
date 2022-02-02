@@ -3,7 +3,7 @@ title: "Ticket Priority"
 type: docs
 weight: 40
 description: >
-  Ticket Priority
+  Definition and computation of the ticket priority in relation to the QoS levels
 ---
 
 ## Priority definition
