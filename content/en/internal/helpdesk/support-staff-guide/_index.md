@@ -160,8 +160,8 @@ can be submitted for all tier-1 sites in EGI and are routed to the appropriate
 NGI/ROC automatically, bypassing the TPM. Additionally the site is notified by
 mail about the ticket. By default TEAM tickets are routed to the appropriate
 NGI/ROC directly, bypassing TPM. But the submitter could also choose to route it
-to the TPM instead. Further information on TEAM tickets is available in the TEAM
-tickets FAQs.
+to the TPM instead. Further information on TEAM tickets is available in the
+[TEAM tickets page](../features/team-tickets).
 
 ###### ALARM tickets
 
@@ -175,8 +175,8 @@ to 4 people per VO. ALARM tickets are editable by all members of the VO team
 visible to everyone. ALARM tickets can be submitted for all tier-1 sites in EGI
 and are routed to the appropriate NGI/ROC automatically, bypassing the TPM.
 Additionally the tier-1 site is notified by an ALARM email. It is up to the
-tier-1 site how to deal with this ALARM email. Further information on TEAM
-tickets is available in the ALARM tickets FAQs.
+tier-1 site how to deal with this ALARM email. Further information on ALARM
+tickets is available in the [ALARM tickets page](../features/alarm-tickets).
 
 ##### OPS tickets
 
@@ -327,8 +327,8 @@ colour.
 
 #### Ticket modify section
 
-Figure 6: Ticket modify section The ticket modification area offers several
-fields for modifying a ticket. The fields are described in detail below.
+The ticket modification area offers several fields for modifying a ticket.
+The fields are described in detail below.
 
 ![Ticket modify section](GGUS_Modifysection_Support.png)
 
@@ -696,7 +696,7 @@ ticket.
 The expected solution times are driven by the priority values of the tickets.
 All values are working days. The higher the priority the shorter is the duration
 within which the ticket is expected to be solved. For further details please see
-the [priority colours FAQ](https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour).
+the [Ticket Priority page](../features/ticket-priority).
 
 Ticket follow-up Ticket follow-up is done by a team at KIT (Germany) for all
 tickets besides operations tickets. More information on the ticket follow-up
