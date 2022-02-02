@@ -3,7 +3,7 @@ title: "Team tickets"
 type: docs
 weight: 40
 description: >
-  Team tickets
+  Definition and usage of the Team tickets
 ---
 
 ## Introduction: purpose and conditions
