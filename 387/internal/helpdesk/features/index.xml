@@ -124,7 +124,7 @@ reference link to the alarm ticket is given in the alarm email notification.&lt;
 &lt;p>QoS stands for Quality of Support. It describes the level of support provided by
 Support Units in GGUS system.&lt;/p>
 &lt;p>It has an impact on the ticket
-&lt;a href="../features/ticket-priority">priority colour&lt;/a> in GGUS and the warnings are sent
+&lt;a href="../ticket-priority">priority colour&lt;/a> in GGUS and the warnings are sent
 to SUs if 75% of the maximum response time of the QoS level are over.&lt;/p>
 &lt;h2 id="qos-levels">QoS levels&lt;/h2>
 &lt;p>There are three different QoS levels, each defining different response times for
