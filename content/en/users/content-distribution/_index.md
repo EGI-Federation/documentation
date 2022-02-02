@@ -19,7 +19,7 @@ standard web servers and mounted in the universal namespace /cvmfs. CernVM-FS
 uses outgoing HTTP connections only, thereby it avoids most of the firewall
 issues of other network file systems. It transfers data and meta-data on demand
 and verifies data integrity by cryptographic hashes. CVMFS is actively used by
-small and large collaborations.  In many cases, it replaces package managers and
+small and large collaborations. In many cases, it replaces package managers and
 shared software areas on cluster file systems as means to distribute the
 software used to process experiment data.
 
@@ -63,8 +63,7 @@ Read these documents:
 ## Distributing new content
 
 To login to the service, make sure you have a valid X509 proxy (with the same DN
-provided [in this step](#request-access)),
-and execute the following command:
+provided [in this step](#request-access)), and execute the following command:
 
 ```shell
 $ gsissh -p 1975 cvmfs-upload01.gridpp.rl.ac.uk
@@ -110,10 +109,9 @@ prior to distribution.
 The right approach is for you to have your own local building environment, and
 use the uploader host only to upload the new content for distribution.
 
-If you have non-relocatable software, then you will need a
-`/cvmfs/<myrepo>/` directory on your building host. One option is to use an
-actual CVMFS client, so you have ready all the existing content being already
-distributed by CVMFS.
-By default, the /cvmfs/ directory on a CVMFS client host is read-only, but that
-can be solved using an
+If you have non-relocatable software, then you will need a `/cvmfs/<myrepo>/`
+directory on your building host. One option is to use an actual CVMFS client, so
+you have ready all the existing content being already distributed by CVMFS. By
+default, the /cvmfs/ directory on a CVMFS client host is read-only, but that can
+be solved using an
 [ephemeral writable container](https://cvmfs.readthedocs.io/en/latest/cpt-enter.html).
