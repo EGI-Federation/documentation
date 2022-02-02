@@ -63,12 +63,12 @@ into the system using your Check-in account. Then go to the registration page
 and click on Check/update your GGUS account. The system shows you all your user
 data. It detects the new DN string of your browser automatically. Just save the
 changes by clicking on button Update now. Additional information on GGUS
-accounts is available [here](https://wiki.egi.eu/wiki/FAQ_GGUS-Account).
+accounts is available [here](../account-and-privileges).
 
 ### Support staff page
 
 Access to the support staff page is restricted to users having
-[support privileges](https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Privileges).
+[support privileges](../account-and-privileges).
 Depending on further privileges people may have there are links to e.g. news
 administration and other features. All support staffs can use the GGUS report
 generator and the GGUS ticket timeline tool as well as links to other
