@@ -488,8 +488,10 @@ and make it run permanently):&lt;/p>
 &lt;/ol>
 &lt;h2 id="moving-to-egi-check-in-production-instance">Moving to EGI Check-in production instance&lt;/h2>
 &lt;p>Once tests in the development instance of Check-in are successful, you can move
-to the production instance. You should open a &lt;a href="https://ggus.eu">GGUS ticket&lt;/a> for
-the request. Besides you will need to update your configuration as follows:&lt;/p>
+to the production instance. Go to &lt;a href="https://aai.egi.eu/federation">EGI Federation Registry&lt;/a>
+and submit a Service Request for the production instance of EGI Check-in.
+After the approval of the request, you will need to update your configuration
+as follows:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Update the &lt;code>remote-id&lt;/code> of the identity provider:&lt;/p>
