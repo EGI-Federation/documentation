@@ -3,7 +3,7 @@ title: "Report generator"
 type: docs
 weight: 40
 description: >
-  Report generator
+  Features and usage of the Report generator
 ---
 
 ## Definitions and prerequisites
