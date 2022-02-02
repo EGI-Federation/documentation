@@ -23,6 +23,6 @@ type: "docs"
 | Source code                             | N/A                                                                                           |
 | Issue tracker for developers            | N/A                                                                                           |
 | License                                 | Every component is having its own licence                                                     |
-| Privacy Policy                          | [Privacy policy](https://www.egi.eu/privacy-policy/), component usually have their own policy |
+| Privacy Policy                          | Parent [policy](https://www.egi.eu/privacy-policy/), components usually have their own policy |
 
 <!-- markdownlint-enable no-inline-html no-bare-urls -->
