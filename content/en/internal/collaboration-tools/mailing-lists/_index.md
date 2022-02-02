@@ -17,7 +17,7 @@ available.
 > By default all mailing lists are managed using groups in EGI SSO. Only for
 > very specific they may be managed directly in mailman.
 
-Open a ticket to Collaboration Tools SU in [EGI Helpdesk](../helpdesk),
+Open a ticket to Collaboration Tools SU in [EGI Helpdesk](../../helpdesk),
 providing:
 
 - List name
