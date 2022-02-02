@@ -42,7 +42,7 @@ Requests needs to be discussed with the
 ### EGI.eu website
 
 Information about the EGI Federation activities is published on the
-[public web site](https://www.egi.eu).
+[public website](https://www.egi.eu).
 
 ### Wiki
 
