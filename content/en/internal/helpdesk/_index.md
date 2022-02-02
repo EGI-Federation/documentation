@@ -16,6 +16,3 @@ the information and support needed to troubleshoot product and service problems.
 Users can **report incidents**, **bugs** or **request changes**.
 
 The support activities are grouped into first and second level support.
-
-{{% alert title="Note" color="info" %}} Documentation for the EGI Helpdesk is
-available in the [EGI Wiki](https://wiki.egi.eu/wiki/GGUS). {{% /alert %}}
