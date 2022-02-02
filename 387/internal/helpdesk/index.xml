@@ -91,14 +91,14 @@ ticket against Helpdesk (GGUS) support unit.&lt;/p>
 &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Short-Guide">GGUS short guide&lt;/a>
 &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Staff-Guide">GGUS support staff guide&lt;/a>&lt;/p></description></item><item><title>Internal: GGUS Support Staff Guide</title><link>/internal/helpdesk/ggus-support-staff-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-support-staff-guide/</guid><description>
 &lt;h2 id="whats-new-in-the-latest-release">What’s new in the latest release?&lt;/h2>
-&lt;p>Please see the &lt;a href="https://ggus.eu/index.php?mode=release_notes">Ongoing work list&lt;/a>
-for further information.&lt;/p>
+&lt;p>Please see the &lt;a href="https://ggus.eu/index.php?mode=release_notes">release notes&lt;/a> for
+further information.&lt;/p>
 &lt;h2 id="access-to-ggus">Access to GGUS&lt;/h2>
-&lt;p>GGUS is reachable via &lt;a href="https://helpdesk.egi.eu">https://helpdesk.egi.eu&lt;/a> and
-&lt;a href="https://ggus.eu">https://ggus.eu&lt;/a> using a web browser. Another way for
-accessing GGUS is using the direct link provided in the notification emails sent
-after ticket updates. However either a valid X509 personal certificate or a
-Check-in account are required for accessing the system.&lt;/p>
+&lt;p>The EGI Helpdesk is reachable via &lt;a href="https://helpdesk.egi.eu">a welcome page&lt;/a>.
+Another way for accessing &lt;a href="https://ggus.eu">the ticket management interface&lt;/a> is
+using the direct link provided in the notification emails sent after ticket
+updates. However either a valid X509 personal certificate or a Check-in account
+are required for accessing the system.&lt;/p>
 &lt;h2 id="features-of-ggus">Features of GGUS&lt;/h2>
 &lt;h3 id="ggus-home">GGUS Home&lt;/h3>
 &lt;p>GGUS home provides a quick overview over tickets submitted by the current user,
@@ -136,15 +136,14 @@ into the system using your Check-in account. Then go to the registration page
 and click on Check/update your GGUS account. The system shows you all your user
 data. It detects the new DN string of your browser automatically. Just save the
 changes by clicking on button Update now. Additional information on GGUS
-accounts is available here(link to new location of
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Account)">https://wiki.egi.eu/wiki/FAQ_GGUS-Account)&lt;/a>.&lt;/p>
+accounts is available &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Account">here&lt;/a>.&lt;/p>
 &lt;h3 id="support-staff-page">Support staff page&lt;/h3>
-&lt;p>Access to the support staff page is restricted to users having support
-privileges &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Privileges">https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Privileges&lt;/a> . Depending on
-further privileges people may have there are links to e.g. news administration
-and other features. All support staffs can use the GGUS report generator and the
-GGUS ticket timeline tool as well as links to other information useful for
-support staffs.&lt;/p>
+&lt;p>Access to the support staff page is restricted to users having
+&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Privileges">support privileges&lt;/a>.
+Depending on further privileges people may have there are links to e.g. news
+administration and other features. All support staffs can use the GGUS report
+generator and the GGUS ticket timeline tool as well as links to other
+information useful for support staffs.&lt;/p>
 &lt;p>&lt;img src="GGUS_Support_Staff.png" alt="GGUS Support Staff">&lt;/p>
 &lt;h4 id="ggus-ticket-timeline-tool">GGUS ticket timeline tool&lt;/h4>
 &lt;p>The link to the GGUS ticket timeline tool is located on support staff page. The
@@ -159,7 +158,7 @@ window showing the ticket details and the modify section of the ticket.&lt;/p>
 GGUS home page in section &amp;ldquo;GGUS tools/reports&amp;rdquo;. The GGUS Report Generator could
 be used for generating statistics and reports for all support units in GGUS.
 Further information on the report generator is available on the
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_Report_Generator_(GGUS)">https://wiki.egi.eu/wiki/FAQ_Report_Generator_(GGUS)&lt;/a> .&lt;/p>
+&lt;a href="../features/report-generator">report generator&lt;/a>.&lt;/p>
 &lt;h3 id="submit-form">Submit form&lt;/h3>
 &lt;p>Depending on the user&amp;rsquo;s privileges GGUS offers different ticket submit forms:&lt;/p>
 &lt;ul>
@@ -551,8 +550,8 @@ formed from members who are specialists in various areas of grid middleware, or
 NGI/ROC supporters for operations problems, or VO specific supporters. The
 membership of the support units is maintained on mailing lists. If the user
 responds to any email received from GGUS, then the reply is added to the ticket
-history. The subject of the email includes metadata to ensure the association
-of the response with the ticket.&lt;/p>
+history. The subject of the email includes metadata to ensure the association of
+the response with the ticket.&lt;/p>
 &lt;h3 id="tickets-waiting-for-user-input">Tickets waiting for user input&lt;/h3>
 &lt;p>The workflows for tickets waiting for user input is described in this FAQ.&lt;/p>
 &lt;h3 id="advice-for-tpms">Advice for TPMs&lt;/h3>
@@ -690,20 +689,20 @@ mail box are deleted regularly without reading them.&lt;/p>
 time of a ticket.&lt;/p>
 &lt;h4 id="expected-response-time">Expected response time&lt;/h4>
 &lt;p>The expected response times for support units that did not agree on a dedicated
-quality of service (&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels">https://wiki.egi.eu/wiki/FAQ_GGUS-QoS-Levels&lt;/a>) are listed in
-the relevant FAQ. This means, the status of a ticket should be set to another
-value than “assigned” for indicating that the support unit has acknowledged the
+&lt;a href="../features/quality-of-support-levels">quality of service&lt;/a> are listed in the
+relevant FAQ. This means, the status of a ticket should be set to another value
+than “assigned” for indicating that the support unit has acknowledged the
 ticket.&lt;/p>
 &lt;h4 id="expected-solution-time">Expected solution time&lt;/h4>
 &lt;p>The expected solution times are driven by the priority values of the tickets.
 All values are working days. The higher the priority the shorter is the duration
 within which the ticket is expected to be solved. For further details please see
-the priority colours FAQ &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour">https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour&lt;/a> .&lt;/p>
+the &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Priority-Colour">priority colours FAQ&lt;/a>.&lt;/p>
 &lt;p>Ticket follow-up Ticket follow-up is done by a team at KIT (Germany) for all
 tickets besides operations tickets. More information on the ticket follow-up
-processes are available at EGI_DMSU_Ticket_Followup
-&lt;a href="https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup">https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup&lt;/a> and
-&lt;a href="https://wiki.egi.eu/wiki/GGUS:Ticket_monitoring">https://wiki.egi.eu/wiki/GGUS:Ticket_monitoring&lt;/a> .&lt;/p></description></item><item><title>Internal: GGUS user guide</title><link>/internal/helpdesk/ggus-user-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-user-guide/</guid><description>
+processes are available at the pages about
+&lt;a href="https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup">DMSU ticket follow-up&lt;/a> and
+&lt;a href="https://wiki.egi.eu/wiki/GGUS:Ticket_monitoring">Ticket monitoring&lt;/a>.&lt;/p></description></item><item><title>Internal: GGUS user guide</title><link>/internal/helpdesk/ggus-user-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/ggus-user-guide/</guid><description>
 &lt;blockquote>
 &lt;p>To be removed: Moving the content of
 &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide">Wiki: FAQ_GGUS-User_Guide&lt;/a>&lt;/p>
