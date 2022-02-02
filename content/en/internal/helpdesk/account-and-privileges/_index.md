@@ -118,6 +118,6 @@ ticket against Helpdesk (GGUS) support unit.
 
 ## Additional information
 
-[GGUS user guide](https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide)
-[GGUS short guide](https://wiki.egi.eu/wiki/FAQ_GGUS-Short-Guide)
-[GGUS support staff guide](https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Staff-Guide)
+- [GGUS user guide](../user-guide)
+- [GGUS short guide](https://wiki.egi.eu/wiki/FAQ_GGUS-Short-Guide)
+- [GGUS support staff guide](../support-staff-guide)
