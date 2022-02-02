@@ -39,10 +39,10 @@ egi.eu domain.
 Requests needs to be discussed with the
 [EGI Operations team](mailto:operations@egi.eu).
 
-### EGI.eu website
+### EGI.eu site
 
 Information about the EGI Federation activities is published on the
-[public website](https://www.egi.eu).
+[public site](https://www.egi.eu).
 
 ### Wiki
 
