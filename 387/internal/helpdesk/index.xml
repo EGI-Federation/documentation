@@ -905,15 +905,15 @@ information submitted and the ticket ID.&lt;/p>
 bypass the TPM if they have good knowledge about where the problem is. For this
 purpose at the bottom of ticket submit form there is a section &amp;ldquo;Routing
 information&amp;rdquo;. Selecting either a site from the
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Notify-Sites">&amp;ldquo;Notify SITE&amp;rdquo;&lt;/a> drop-down menu
+&lt;a href="../features/tickets-to-multiple-sites">&amp;ldquo;Notify SITE&amp;rdquo;&lt;/a> drop-down menu
 or a support unit from the &amp;ldquo;Assign to support unit&amp;rdquo; drop-down menu routes the
 ticket directly to the selected support unit. If selecting a site name the
 NGI/ROC the site belongs to is set automatically. Hence the ticket is assigned
 to the relevant NGI/ROC. Additionally the site will receive a notification about
 the ticket. Selecting both, the &amp;ldquo;Notify SITE&amp;rdquo; and the &amp;ldquo;Assign to support unit&amp;rdquo;
 is not possible.&lt;/p>
-&lt;p>Tickets of type &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Team-Tickets">TEAM&lt;/a> and
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Alarm-Tickets">ALARM&lt;/a> are always routed to
+&lt;p>Tickets of type &lt;a href="../features/team-tickets">TEAM&lt;/a> and
+&lt;a href="../features/alarm-tickets">ALARM&lt;/a> are always routed to
 the relevant NGI/ROC by default.&lt;/p>
 &lt;h2 id="browsing-your-own-tickets">Browsing your own tickets&lt;/h2>
 &lt;p>After authenticating themselves the user has access to the GGUS homepage. On
@@ -1149,8 +1149,7 @@ ticket monitoring. The ticket monitoring team is responsible for:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="../workflows/waiting-for-submitter">reminding users&lt;/a> in case their input is
 required for further ticket processing&lt;/li>
-&lt;li>&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Waiting-For-PT-Process">reminding supporters&lt;/a>
-in case tickets are not processed&lt;/li>
+&lt;li>reminding supporters in case tickets are not processed&lt;/li>
 &lt;li>assisting in any problem during ticket processing&lt;/li>
 &lt;/ul></description></item><item><title>Internal: Workflows</title><link>/internal/helpdesk/workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/workflows/</guid><description>
 &lt;p>Description of some of the Helpdesk workflows.&lt;/p></description></item></channel></rss>
