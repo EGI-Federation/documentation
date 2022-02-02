@@ -161,7 +161,7 @@ The TPM (Ticket Processing Manager) is the 1st Line Support in GGUS. Users can
 bypass the TPM if they have good knowledge about where the problem is. For this
 purpose at the bottom of ticket submit form there is a section "Routing
 information". Selecting either a site from the
-["Notify SITE"](https://wiki.egi.eu/wiki/FAQ_GGUS-Notify-Sites) drop-down menu
+["Notify SITE"](../features/tickets-to-multiple-sites) drop-down menu
 or a support unit from the "Assign to support unit" drop-down menu routes the
 ticket directly to the selected support unit. If selecting a site name the
 NGI/ROC the site belongs to is set automatically. Hence the ticket is assigned
@@ -169,8 +169,8 @@ to the relevant NGI/ROC. Additionally the site will receive a notification about
 the ticket. Selecting both, the "Notify SITE" and the "Assign to support unit"
 is not possible.
 
-Tickets of type [TEAM](https://wiki.egi.eu/wiki/FAQ_GGUS-Team-Tickets) and
-[ALARM](https://wiki.egi.eu/wiki/FAQ_GGUS-Alarm-Tickets) are always routed to
+Tickets of type [TEAM](../features/team-tickets) and
+[ALARM](../features/alarm-tickets) are always routed to
 the relevant NGI/ROC by default.
 
 ## Browsing your own tickets
@@ -436,6 +436,5 @@ ticket monitoring. The ticket monitoring team is responsible for:
 
 - [reminding users](../workflows/waiting-for-submitter) in case their input is
   required for further ticket processing
-- [reminding supporters](https://wiki.egi.eu/wiki/FAQ_GGUS-Waiting-For-PT-Process)
-  in case tickets are not processed
+- reminding supporters in case tickets are not processed
 - assisting in any problem during ticket processing
