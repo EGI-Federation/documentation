@@ -1,4 +1,69 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Helpdesk</title><link>/internal/helpdesk/</link><description>Recent content in Helpdesk on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/helpdesk/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Account and privileges</title><link>/internal/helpdesk/account-and-privileges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/account-and-privileges/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Helpdesk</title><link>/internal/helpdesk/</link><description>Recent content in Helpdesk on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/helpdesk/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Service information</title><link>/internal/helpdesk/service-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/service-information/</guid><description>
+&lt;h2 id="identity-card">Identity card&lt;/h2>
+&lt;!-- markdownlint-disable no-inline-html no-bare-urls -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Name&lt;/td>
+&lt;td>Helpdesk&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Description&lt;/td>
+&lt;td>Central helpdesk providing a single interface to EGI support&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>URL&lt;/td>
+&lt;td>&lt;a href="https://helpdesk.egi.eu">https://helpdesk.egi.eu&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Support Email&lt;/td>
+&lt;td>support at ggus.eu&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="..">Helpdesk&lt;/a> Support Unit&lt;/td>
+&lt;td>&lt;strong>EGI Services and Service Components&lt;/strong> &lt;br/> I__ Helpdesk (GGUS)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Configuration Database entry&lt;/td>
+&lt;td>&lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=247">https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=247&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Supplier&lt;/td>
+&lt;td>KIT&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Roadmap&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Release notes&lt;/td>
+&lt;td>&lt;a href="https://ggus.eu/index.php?mode=release_notes">https://ggus.eu/index.php?mode=release_notes&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Source code&lt;/td>
+&lt;td>Not available&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Issue tracker for developers&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>License&lt;/td>
+&lt;td>BMC Software Inc.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Privacy Policy&lt;/td>
+&lt;td>&lt;a href="https://ggus.eu/?mode=privacy">https://ggus.eu/?mode=privacy&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item><item><title>Internal: Account and privileges</title><link>/internal/helpdesk/account-and-privileges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/account-and-privileges/</guid><description>
 &lt;h2 id="managing-ggus-account-data">Managing GGUS account data&lt;/h2>
 &lt;p>GGUS users should be able to manage their GGUS account data by themselves.&lt;/p>
 &lt;p>Information about registration and account management is collected on
@@ -706,10 +771,6 @@ tickets besides operations tickets. More information on the ticket follow-up
 processes are available at the pages about
 &lt;a href="https://wiki.egi.eu/wiki/EGI_DMSU_Ticket_Followup">DMSU ticket follow-up&lt;/a> and
 &lt;a href="https://wiki.egi.eu/wiki/GGUS:Ticket_monitoring">Ticket monitoring&lt;/a>.&lt;/p></description></item><item><title>Internal: User guide</title><link>/internal/helpdesk/user-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/user-guide/</guid><description>
-&lt;blockquote>
-&lt;p>To be removed: Moving the content of
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide">Wiki: FAQ_GGUS-User_Guide&lt;/a>&lt;/p>
-&lt;/blockquote>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>GGUS is the Helpdesk service of the EGI Infrastructure. Incident and Service
 request tickets can be recorded, and their progress is tracked until the
@@ -1086,74 +1147,10 @@ for the grid. The purpose of TPM is:&lt;/p>
 &lt;p>Besides developing and maintaining GGUS system the GGUS team is also doing the
 ticket monitoring. The ticket monitoring team is responsible for:&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Waiting-For-Submitter-Process">reminding users&lt;/a>
-in case their input is required for further ticket processing&lt;/li>
+&lt;li>&lt;a href="../workflows/waiting-for-submitter">reminding users&lt;/a> in case their input is
+required for further ticket processing&lt;/li>
 &lt;li>&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Waiting-For-PT-Process">reminding supporters&lt;/a>
 in case tickets are not processed&lt;/li>
 &lt;li>assisting in any problem during ticket processing&lt;/li>
-&lt;/ul></description></item><item><title>Internal: Workflows</title><link>/internal/helpdesk/workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/workflows/</guid><description/></item><item><title>Internal: Service information</title><link>/internal/helpdesk/service-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/service-information/</guid><description>
-&lt;h2 id="identity-card">Identity card&lt;/h2>
-&lt;!-- markdownlint-disable no-inline-html no-bare-urls -->
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Property&lt;/th>
-&lt;th>Value&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Name&lt;/td>
-&lt;td>Helpdesk&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Description&lt;/td>
-&lt;td>Central helpdesk providing a single interface to EGI support&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>URL&lt;/td>
-&lt;td>&lt;a href="https://helpdesk.egi.eu">https://helpdesk.egi.eu&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Support Email&lt;/td>
-&lt;td>support at ggus.eu&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="..">Helpdesk&lt;/a> Support Unit&lt;/td>
-&lt;td>&lt;strong>EGI Services and Service Components&lt;/strong> &lt;br/> I__ Helpdesk (GGUS)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Configuration Database entry&lt;/td>
-&lt;td>&lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=247">https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=247&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Supplier&lt;/td>
-&lt;td>KIT&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Roadmap&lt;/td>
-&lt;td>N/A&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Release notes&lt;/td>
-&lt;td>&lt;a href="https://ggus.eu/index.php?mode=release_notes">https://ggus.eu/index.php?mode=release_notes&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Source code&lt;/td>
-&lt;td>Not available&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Issue tracker for developers&lt;/td>
-&lt;td>N/A&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>License&lt;/td>
-&lt;td>BMC Software Inc.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Privacy Policy&lt;/td>
-&lt;td>&lt;a href="https://ggus.eu/?mode=privacy">https://ggus.eu/?mode=privacy&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Internal: Workflows</title><link>/internal/helpdesk/workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/workflows/</guid><description>
+&lt;p>Description of some of the Helpdesk workflows.&lt;/p></description></item></channel></rss>
