@@ -105,4 +105,4 @@ want an EGI SSO account, but want to register to some meeting in Indico.
 EGI Collaboration Tools support can be contacted via:
 
 - [EGI Helpdesk](../helpdesk) Support Unit "Collaboration Tools"
-- [EGI IT Suport](it-support@egi.eu)
+- [EGI IT Support](mailto:it-support@egi.eu)
