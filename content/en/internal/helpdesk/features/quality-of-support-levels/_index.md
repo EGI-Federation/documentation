@@ -12,7 +12,7 @@ QoS stands for Quality of Support. It describes the level of support provided by
 Support Units in GGUS system.
 
 It has an impact on the ticket
-[priority colour](../features/ticket-priority) in GGUS and the warnings are sent
+[priority colour](../ticket-priority) in GGUS and the warnings are sent
 to SUs if 75% of the maximum response time of the QoS level are over.
 
 ## QoS levels
