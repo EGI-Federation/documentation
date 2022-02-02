@@ -204,10 +204,10 @@ into the system using your Check-in account. Then go to the registration page
 and click on Check/update your GGUS account. The system shows you all your user
 data. It detects the new DN string of your browser automatically. Just save the
 changes by clicking on button Update now. Additional information on GGUS
-accounts is available &lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Account">here&lt;/a>.&lt;/p>
+accounts is available &lt;a href="../account-and-privileges">here&lt;/a>.&lt;/p>
 &lt;h3 id="support-staff-page">Support staff page&lt;/h3>
 &lt;p>Access to the support staff page is restricted to users having
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Support-Privileges">support privileges&lt;/a>.
+&lt;a href="../account-and-privileges">support privileges&lt;/a>.
 Depending on further privileges people may have there are links to e.g. news
 administration and other features. All support staffs can use the GGUS report
 generator and the GGUS ticket timeline tool as well as links to other
