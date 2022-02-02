@@ -5,9 +5,6 @@ weight: 40
 description: "User guide for EGI Helpdesk"
 ---
 
-> To be removed: Moving the content of
-> [Wiki: FAQ_GGUS-User_Guide](https://wiki.egi.eu/wiki/FAQ_GGUS-User_Guide)
-
 ## Introduction
 
 GGUS is the Helpdesk service of the EGI Infrastructure. Incident and Service
@@ -437,7 +434,7 @@ The TPM teams consist of people with a broad knowledge of the Grid.
 Besides developing and maintaining GGUS system the GGUS team is also doing the
 ticket monitoring. The ticket monitoring team is responsible for:
 
-- [reminding users](https://wiki.egi.eu/wiki/FAQ_GGUS-Waiting-For-Submitter-Process)
+- [reminding users](../workflows/waiting-for-submitter)
   in case their input is required for further ticket processing
 - [reminding supporters](https://wiki.egi.eu/wiki/FAQ_GGUS-Waiting-For-PT-Process)
   in case tickets are not processed
