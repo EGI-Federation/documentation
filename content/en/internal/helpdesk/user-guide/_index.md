@@ -434,8 +434,8 @@ The TPM teams consist of people with a broad knowledge of the Grid.
 Besides developing and maintaining GGUS system the GGUS team is also doing the
 ticket monitoring. The ticket monitoring team is responsible for:
 
-- [reminding users](../workflows/waiting-for-submitter)
-  in case their input is required for further ticket processing
+- [reminding users](../workflows/waiting-for-submitter) in case their input is
+  required for further ticket processing
 - [reminding supporters](https://wiki.egi.eu/wiki/FAQ_GGUS-Waiting-For-PT-Process)
   in case tickets are not processed
 - assisting in any problem during ticket processing
