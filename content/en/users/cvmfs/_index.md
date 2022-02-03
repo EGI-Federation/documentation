@@ -18,7 +18,7 @@ infrastructure used to run data processing applications. CVMFS is implemented as
 a POSIX read-only file system in user space. Files and directories are hosted on
 standard web servers and mounted in the universal namespace /cvmfs. CernVM-FS
 uses outgoing HTTP connections only, thereby it avoids most of the firewall
-issues of other network file systems. It transfers data and meta-data on demand
+issues of other network file systems. It transfers data and metadata on demand
 and verifies data integrity by cryptographic hashes. CVMFS is actively used by
 small and large collaborations.  In many cases, it replaces package managers and
 shared software areas on cluster file systems as means to distribute the
