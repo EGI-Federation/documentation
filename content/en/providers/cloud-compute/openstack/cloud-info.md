@@ -10,8 +10,8 @@ Information discovery provides a real-time view about the actual images and
 flavors available at the OpenStack for the federation users. It runs as a
 single python application
 [cloud-info-provider](https://github.com/EGI-Federation/cloud-info-provider)
-that pushes information through the [Argo Messaging Service
-(AMS)](https://argoeu.github.io/argo-messaging/)
+that pushes information through the
+[Argo Messaging Service (AMS)](../../../internal/messaging).
 
 {{% alert title="BDII is deprecated" color="info" %}}
 Cloud providers no longer need to provide BDII as the Argo Messaging Service
