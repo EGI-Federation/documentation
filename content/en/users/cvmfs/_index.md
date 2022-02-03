@@ -1,7 +1,7 @@
 ---
 title: "Content Distribution"
 type: docs
-weight: 130
+weight: 55
 description: >
   Documentation for Content Managers of the CVMFS Stratum-0 instance
 ---
