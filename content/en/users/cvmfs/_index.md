@@ -1,15 +1,14 @@
 ---
 title: "Content Distribution"
 type: docs
-linkTitle: "CVMFS"
 weight: 130
 description: >
-  Documentation for Content Managers of the CVMFS Stratum-0 instance at RAL
+  Documentation for Content Managers of the CVMFS Stratum-0 instance
 ---
 
 ## Overview
 
-This page is about the CVMFS service at RAL.
+This page is about the CVMFS service operated for EGI by RAL.
 
 The CernVM-File System (CVMFS) provides a scalable, reliable and low-maintenance
 software distribution service. It was developed to assist High Energy Physics
@@ -24,13 +23,6 @@ small and large collaborations.  In many cases, it replaces package managers and
 shared software areas on cluster file systems as means to distribute the
 software used to process experiment data.
 
-The STFC Scientific Computing Department at RAL maintains one of these single
-sources of data, or Stratum-0, for several communities:
-
-- GridPP
-- EGI
-- IRIS
-
 This documentation is for the VO content managers.
 
 ## Official CVMFS pages
@@ -38,19 +30,16 @@ This documentation is for the VO content managers.
 - [CVMFS Documentation](https://cvmfs.readthedocs.io/en/latest/)
 - [Q&As and Discussion Forum](https://cernvm-forum.cern.ch/)
 
-## Request the creation of a new repository
+## Requesting the creation of a new repository
 
 In the case of a new repository for EGI, steps are described
-[here](https://wiki.egi.eu/wiki/PROC22)
-
-For non-EGI repositories, simply send a request to
-cvmfs-support@gridpp.rl.ac.uk
+[in PROC22](https://ims.egi.eu/display/EGIPP/PROC22+Support+for+CVMFS+replication+across+the+EGI+Infrastructure).
 
 ## Onboarding new Content Managers
 
-Steps for a new VO Content Manager to be granted access to the Stratum-0 at RAL.
+Steps for a new VO Content Manager to be granted access to the Stratum-0.
 
-### Request access
+### Requesting access
 
 Request access to the service sending an email to cvmfs-support@gridpp.rl.ac.uk
 In the email, include the following information:
@@ -67,7 +56,7 @@ All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 
 Read these documents:
 
-- [PRIVACY NOTICE](https://www.scd.stfc.ac.uk/Pages/CVMFS-Privacy-Notice.aspx)
+- [Privacy Notice](https://www.scd.stfc.ac.uk/Pages/CVMFS-Privacy-Notice.aspx)
 - [Acceptable Use Policy](https://www.scd.stfc.ac.uk/Pages/CVMFS-Acceptable-Use-Policy.aspx)
 
 ## Distributing new content
@@ -121,9 +110,9 @@ The right approach is for you to have your own local building environment, and
 use the uploader host only to upload the new content for distribution.
 
 If you have non-relocatable software, then you will need a
-/cvmfs/&lt;myrepo&gt;/ directory on your building host. One option is to use an
+`/cvmfs/<myrepo>/` directory on your building host. One option is to use an
 actual CVMFS client, so you have ready all the existing content being already
 distributed by CVMFS.
-By default, the /cvmfs/ directory on a CVMFS client host is read-only, but that
+By default, the `/cvmfs/` directory on a CVMFS client host is read-only, but that
 can be solved using an
 [ephemeral writable container](https://cvmfs.readthedocs.io/en/latest/cpt-enter.html).
