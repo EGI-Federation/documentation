@@ -88,5 +88,5 @@ the backend.
 
 {{% alert title="Note" color="info" %}} Documentation for the ARGO Messaging
 Service is available on
-[the ARGO documentation site](https://argoeu.github.io/guides/messaging/).
+[the ARGO documentation site](https://argoeu.github.io/argo-messaging/).
 {{% /alert %}}
