@@ -16,27 +16,20 @@ The official documentation is hosted on the
 
 Using EGI Check-in it\'s possible to connect with your institute credentials.
 
-
 ![Selecting EGI to connect using EGI Check-in](datahub-connect-check-in.png)
-
 
 On this page it's possible to have an overview of all the spaces and their
 supporting providers.
 
-
 ![EGI DataHub landing page](datahub-welcome-screen.png)
-
 
 On this capture, the information about the spaces supported by a specific
 provider is displayed.
 
-
 ![Information about spaces supported by a Oneprovider](datahub-space-info.png)
-
 
 The data space can be managed (i.e. uploading/downloading/managing files and
 metadata, managing space access) using the web browser.
-
 
 ![Information about spaces supported by a Oneprovider](datahub-browse-space.png)
 

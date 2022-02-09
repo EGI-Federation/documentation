@@ -94,7 +94,7 @@ downloaded on demand.
 ![Viewing a data space in a console locally mounted using Oneclient](datahub-space-oneclient.png)
 
 In Onedata the file distribution is done on a block basis, blocks will be
-replicated on the fly, and it\'s possible to instrument the replication betwwen 
+replicated on the fly, and it\'s possible to instrument the replication between
 Oneproviders.
 
 ![Viewing file distribution over the Oneproviders](datahub-replica-management.png)
@@ -108,4 +108,3 @@ It\'s also possible to create indexes and query them.
 It\'s possible to view the popularity of a file and manage smart caching.
 
 ![Viewing file popularity for smart caching](datahub-file-popularity-smarch-caching.png)
-
