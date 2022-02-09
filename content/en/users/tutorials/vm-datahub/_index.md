@@ -32,7 +32,7 @@ The installation of oneclient package is currently supported for:
 - Centos 7
 
 Work to support more recent OSs version is ongoing, and alternatively
-a docker based installation is also provided. 
+a docker based installation is also provided.
 
 ### Oneclient installation via packages
 
@@ -60,11 +60,11 @@ ease the transfer of data
 ## Getting the token to access data
 
 In order to access data stored in EGI DataHub via oneclient,
-you need to acquire a token for authorization. You can check 
+you need to acquire a token for authorization. You can check
 [here](../../datahub/api/#getting-an-api-access-token) our
 specific documentation.
 
-## Using oneclient 
+## Using oneclient
 
 Once you have acquired a token valid for oneclient you can configure it
 on the environment as follows:
