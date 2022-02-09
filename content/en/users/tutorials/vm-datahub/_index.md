@@ -9,7 +9,7 @@ description: >
 
 ## Overview
 
-This tutorial describes the access to EGI DataHub spaces from a virtual
+This tutorial describes the access to [EGI DataHub](../../datahub) spaces from a virtual
 machine. In the following paragraphs you will learn how to access data remotely stored in EGI DataHub via POSIX, by:
 
 - installing the oneclient component
@@ -19,7 +19,7 @@ machine. In the following paragraphs you will learn how to access data remotely 
 
 In order to access the EGI DataHub data you need, first of all, to have
 an [EGI Check-in](../../check-in) account, if you don't have an EGI
-Checkin account you can sign up [here](../../check-in/signup).
+Check-in account you can sign up [here](../../check-in/signup).
 
 ## Oneclient installation
 
@@ -57,7 +57,7 @@ ease the transfer of data.
 
 In order to access data stored in EGI DataHub via oneclient,
 you need to acquire a token for authorisation. You can check
-[ our specific documentation](../../datahub/api/#getting-an-api-access-token).
+[our specific documentation](../../datahub/api/#getting-an-api-access-token).
 
 ## Using oneclient
 
