@@ -3,7 +3,6 @@ title: "Virtual machine with DataHub access"
 linkTitle: "VM with DataHub access"
 type: docs
 weight: 30
-draft: false
 description: >
   Use data in EGI DataHub from a virtual machine
 ---
