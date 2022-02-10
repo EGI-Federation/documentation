@@ -1,6 +1,6 @@
 ---
 title: "GGUS-IssueType-Values"
-linkTitle: "GGUS-Issue Type Values"
+linkTitle: "GGUS - Issues Types and Descriptions"
 weight: 100
 type: "docs"
 draft: true
