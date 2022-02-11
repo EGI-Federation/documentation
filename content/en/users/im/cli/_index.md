@@ -3,10 +3,11 @@ title: "IM CLI"
 type: docs
 weight: 20
 description: >
-  Getting started with IM Command Line Interface on EGI Cloud
+  Getting started with IM Command-Line Interface on EGI Cloud
 ---
 
-You can find here documentation on how Getting started with IM Command Line 
+
+You can find here documentation on how Getting started with IM Command-Line
 Interface on EGI Cloud Compute sites. Full documentation at
 [IM CLI documentation](https://imdocs.readthedocs.io/en/latest/client.html)
 
@@ -53,7 +54,7 @@ The authorization file stores in plain text the credentials to access the cloud
 providers, and the IM service. Each line of the file is composed by pairs of key
 and value separated by semicolon, and refers to a single credential. The key and
 value should be separated by " = ", that is an equals sign preceded and followed
-by one white space at least. The following lines shows the credentials needed to
+by one whitespace at least. The following lines shows the credentials needed to
 access an EGI Cloud Compute site:
 
 <!-- markdownlint-disable line-length -->
@@ -136,16 +137,16 @@ VM ID: 0 is in state: pending.
 
 Then valid VM and infrastructure states are the following:
 
-   * ``pending``, launched, but still in initialization stage;
-   * ``running``, created successfully and running, but still in the
-     configuration stage;
-   * ``configured``, running and contextualized;
-   * ``unconfigured``, running but not correctly contextualized;
-   * ``stopped``, stopped or suspended;
-   * ``off``, shutdown or removed from the infrastructure;
-   * ``failed``, an error happened during the launching; or
-   * ``unknown``, unable to obtain the status.
-   * ``deleting``, in the deletion process.
+- ``pending``, launched, but still in initialization stage;
+- ``running``, created successfully and running, but still in the
+  configuration stage;
+- ``configured``, running and contextualized;
+- ``unconfigured``, running but not correctly contextualized;
+- ``stopped``, stopped or suspended;
+- ``off``, shutdown or removed from the infrastructure;
+- ``failed``, an error happened during the launching; or
+- ``unknown``, unable to obtain the status.
+- ``deleting``, in the deletion process.
 
 Once the configuration step has started we can get the output of the ansible
 process using the ``getcontmsg`` operation:
