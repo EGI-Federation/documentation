@@ -43,14 +43,10 @@ below.
 | Virtual Appliance Management | Issues related to vmcatcher/vmcaster tools, and VA management in general.                                                                                                                                                                                                          |
 | Workload Management          | Issues related to workload management system and tools.                                                                                                                                                                                                                            |
 
-<!-- markdownlint-enable line-length no-inline-html no-bare-urls -->
-
 ## TEAM tickets
 
 Team and alarm tickets have a reduced number of issue types in the drop-down
 menu.
-
-<!-- markdownlint-disable line-length no-inline-html no-bare-urls -->
 
 | Issue type         | Description                                                |
 | ------------------ | ---------------------------------------------------------- |
@@ -66,8 +62,6 @@ menu.
 
 ## ALARM tickets
 
-<!-- markdownlint-disable line-length no-inline-html no-bare-urls -->
-
 | Issue type         | Description                                                |
 | ------------------ | ---------------------------------------------------------- |
 | Databases          | Issues related to Databases.                               |
@@ -80,16 +74,12 @@ menu.
 | Other              | Requests that do not match to any other issue type         |
 | Storage Systems    | Issues related to storage systems, like EOS, DCACHE or DPM |
 
-<!-- markdownlint-enable line-length no-inline-html no-bare-urls -->
-
 ## CMS tickets
 
 The CMS VO has an own ticket submit form in the GGUS system. Although this form
 provides CMS specific issue types no special privilegue is required to use it.
 This does not apply for the TEAM ticket submit webform: Here the CMS specific
 issue types are only selectable for registered CMS TEAM members.
-
-<!-- markdownlint-disable line-length no-inline-html no-bare-urls -->
 
 | Issue type                    | Description                                                   |
 | ----------------------------- | ------------------------------------------------------------- |
@@ -104,14 +94,10 @@ issue types are only selectable for registered CMS TEAM members.
 | CMS_Submission Infrastructure | Issues around CMS_Submission Infrastructure                   |
 | CMS_Tier-1 Tape Families      | For creation of Tape families/groups at Tier-1 archives       |
 
-<!-- markdownlint-disable line-length no-inline-html no-bare-urls -->
-
 ## ATLAS tickets
 
 The ATLAS specific issue types are only selectable for registered ATLAS TEAM
 members.
-
-<!-- markdownlint-disable line-length no-inline-html no-bare-urls -->
 
 | Issue type                 | Description                                 |
 | -------------------------- | ------------------------------------------- |
@@ -126,5 +112,3 @@ members.
 | ATLAS_Network Problem      | Issues with network infrastructure          |
 | ATLAS_Staging              | Issues around file staging                  |
 | ATLAS_Storage Systems      | Issues around storage                       |
-
-<!-- markdownlint-disable line-length no-inline-html no-bare-urls -->
