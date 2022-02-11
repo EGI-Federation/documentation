@@ -68,11 +68,10 @@ accounts is available [here](../account-and-privileges).
 ### Support staff page
 
 Access to the support staff page is restricted to users having
-[support privileges](../account-and-privileges).
-Depending on further privileges people may have there are links to e.g. news
-administration and other features. All support staffs can use the GGUS report
-generator and the GGUS ticket timeline tool as well as links to other
-information useful for support staffs.
+[support privileges](../account-and-privileges). Depending on further privileges
+people may have there are links to e.g. news administration and other features.
+All support staffs can use the GGUS report generator and the GGUS ticket
+timeline tool as well as links to other information useful for support staffs.
 
 ![GGUS Support Staff](GGUS_Support_Staff.png)
 
@@ -113,26 +112,27 @@ and types.
 
 ##### Ticket categories
 
-The ticket category is for differentiating between incidents and service requests.
-This distinction is helpful for supporters as well as for the GGUS reporting,
-e.g. for excluding test tickets. Other categories were added over the time.
-Currently the following values are available for selection:
+The ticket category is for differentiating between incidents and service
+requests. This distinction is helpful for supporters as well as for the GGUS
+reporting, e.g. for excluding test tickets. Other categories were added over the
+time. Currently the following values are available for selection:
 
-- Incident (see the [FitSM definition](https://ims.egi.eu/display/EGIG/Incident))
-- Service request
-(see the [FitSM definition](https://ims.egi.eu/display/EGIG/Service+request)).
-List of service requests for the
-[internal](https://confluence.egi.eu/display/EGISLM/EGI+Internal+Service+requests)
-and for the
-[external](https://confluence.egi.eu/display/EGISLM/EGI+Service+requests)
-services of the EGI portfolio
+- Incident (see the
+  [FitSM definition](https://ims.egi.eu/display/EGIG/Incident))
+- Service request (see the
+  [FitSM definition](https://ims.egi.eu/display/EGIG/Service+request)). List of
+  service requests for the
+  [internal](https://confluence.egi.eu/display/EGISLM/EGI+Internal+Service+requests)
+  and for the
+  [external](https://confluence.egi.eu/display/EGISLM/EGI+Service+requests)
+  services of the EGI portfolio
 - Documentation (used to request creation and update on documentation.)
 - Release (used when a new version of the operational tools is ready to be
-tested; see
-[RDM2 Regular release process](https://confluence.egi.eu/display/EGIPP/RDM2+Regular+release+process))
+  tested; see
+  [RDM2 Regular release process](https://confluence.egi.eu/display/EGIPP/RDM2+Regular+release+process))
 - CMS Internal (for cms VO specific tickets)
-- EGI Coordination/Planning (to track activities not falling into the
-service request definition)
+- EGI Coordination/Planning (to track activities not falling into the service
+  request definition)
 - WLCG Coordination/Planning
 - Test
 
@@ -340,8 +340,8 @@ colour.
 
 #### Ticket modify section
 
-The ticket modification area offers several fields for modifying a ticket.
-The fields are described in detail below.
+The ticket modification area offers several fields for modifying a ticket. The
+fields are described in detail below.
 
 ![Ticket modify section](GGUS_Modifysection_Support.png)
 
