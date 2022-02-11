@@ -3,7 +3,7 @@
 &lt;p>This tutorial describes the access to &lt;a href="../../datahub">EGI DataHub&lt;/a> spaces
 from a virtual machine. In the following paragraphs you will learn how to
 access data remotely stored in EGI DataHub like if they were local, using
-traditional POSIX command line commands, by:&lt;/p>
+traditional POSIX command-line commands, by:&lt;/p>
 &lt;ul>
 &lt;li>installing the &lt;code>oneclient&lt;/code> component&lt;/li>
 &lt;li>configuring access to an EGI DataHub Oneprovider via &lt;code>oneclient&lt;/code>&lt;/li>
