@@ -1,8 +1,8 @@
 ---
-title: "Features"
+title: "Helpdesk features"
 type: docs
 weight: 30
-description: "EGI Helpdesk Features"
+description: "Helpdesk features"
 ---
 
-The pages of this section detail multiple features of the Helpdesk.
+The pages of this section detail multiple features of the [EGI Helpdesk](../).
