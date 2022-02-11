@@ -38,6 +38,9 @@
     },
     {
       "pattern": "^https://ggus.eu/*"
+    },
+    {
+      "pattern": "^https://helpdesk.egi.eu"
     }
   ]
 }
