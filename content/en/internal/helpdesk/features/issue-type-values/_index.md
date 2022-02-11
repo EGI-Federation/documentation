@@ -2,8 +2,8 @@
 title: "Issue type values"
 type: docs
 weight: 30
-description: > 
-"List of the values of the Issue Type field for the several ticket types"
+description: >
+  List of the values of the Issue Type field for the several ticket types
 ---
 
 ## USER tickets
