@@ -6,11 +6,13 @@ description: "Documentation related to [EGI DataHub](https://datahub.egi.eu/)"
 weight: 10
 ---
 
-The Oneclient code and basic documentation are available on
-[GitHub](https://github.com/onedata/oneclient).
+The EGI DataHub spaces can be accessed via web interface, the `oneclient`
+component or the API.
 
-The official documentation is hosted on the
-[Onedata homepage](https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html).
+The official documentation for `oneclient` is hosted on the
+[Onedata homepage](https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html),
+and a specific [tutorial](../../tutorials/vm-datahub) on how to install and use it
+from a Virtual Machine is also available.
 
 ## Using the web interface
 
