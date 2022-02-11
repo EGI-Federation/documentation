@@ -27,7 +27,7 @@ a docker based installation is also provided.&lt;/p>
 &lt;h3 id="oneclient-installation-via-docker">Oneclient installation via docker&lt;/h3>
 &lt;p>In order to use the Dockerized version of oneclient (provided that you
 have docker installed), you can run the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run -it --privileged -v &lt;span style="color:#000">$PWD&lt;/span>:/mnt/src --entrypoint bash onedata/oneclient:20.02.15
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker run -it --privileged -v &lt;span style="color:#000">$PWD&lt;/span>:/mnt/src --entrypoint bash onedata/oneclient:20.02.15
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will also expose the current folder to the container (as &lt;code>/mnt/src&lt;/code>) to
 ease the transfer of data.&lt;/p>
 &lt;h2 id="getting-the-token-to-access-data">Getting the token to access data&lt;/h2>
