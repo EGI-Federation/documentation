@@ -118,19 +118,18 @@ This distinction is helpful for supporters as well as for the GGUS reporting,
 e.g. for excluding test tickets. Other categories were added over the time.
 Currently the following values are available for selection:
 
-- Incident (see the [FitSM definition]
-(https://ims.egi.eu/display/EGIG/Incident))
-- Service request (see the [FitSM definition]
-(https://ims.egi.eu/display/EGIG/Service+request)). List of service requests
-for the [internal]
-(https://confluence.egi.eu/display/EGISLM/EGI+Internal+Service+requests)
-and for the [external]
-(https://confluence.egi.eu/display/EGISLM/EGI+Service+requests) services
-of the EGI portfolio
+- Incident (see the [FitSM definition](https://ims.egi.eu/display/EGIG/Incident))
+- Service request
+(see the [FitSM definition](https://ims.egi.eu/display/EGIG/Service+request)).
+List of service requests for the
+[internal](https://confluence.egi.eu/display/EGISLM/EGI+Internal+Service+requests)
+and for the
+[external](https://confluence.egi.eu/display/EGISLM/EGI+Service+requests)
+services of the EGI portfolio
 - Documentation (used to request creation and update on documentation.)
 - Release (used when a new version of the operational tools is ready to be
-tested; see [RDM2 Regular release process]
-(https://confluence.egi.eu/display/EGIPP/RDM2+Regular+release+process))
+tested; see
+[RDM2 Regular release process](https://confluence.egi.eu/display/EGIPP/RDM2+Regular+release+process))
 - CMS Internal (for cms VO specific tickets)
 - EGI Coordination/Planning (to track activities not falling into the
 service request definition)
