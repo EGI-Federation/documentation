@@ -23,8 +23,8 @@ pip install IM-client
 
 ### IM-Client Docker image
 
-The IM Client has an official Docker container image available in Docker Hub that
-can be used instead of installing the CLI. You can use it by typing:
+The IM Client has an official Docker container image available in Docker Hub
+that can be used instead of installing the CLI. You can use it by typing:
 
 <!-- markdownlint-disable line-length -->
 
@@ -68,6 +68,17 @@ id = egi; type = EGI; host = CESGA; vo = vo.access.egi.eu; token = egi_aai_token
 The value of ``egi_aai_token_value`` must be replace with a valid EGI Check-in
 access token. Users of EGI Check-in can getall the information needed to obtain
 access tokens, by visiting [Check-in FedCloud client](https://aai.egi.eu/fedcloud/).
+
+Also [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/) can be used to get
+allways a valid access token:
+
+<!-- markdownlint-disable line-length -->
+
+```shell
+id = egi; type = EGI; host = CESGA; vo = vo.access.egi.eu; token = command(oidc-token OIDC_ACCOUNT)
+```
+
+<!-- markdownlint-disable line-length -->
 
 ### Create and Manage an infrastructure
 
