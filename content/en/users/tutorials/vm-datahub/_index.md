@@ -48,7 +48,7 @@ In order to use the Dockerized version of oneclient (provided that you
 have docker installed), you can run the following  command:
 
 ```shell
-docker run -it --privileged -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:20.02.15
+$ docker run -it --privileged -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:20.02.15
 ```
 
 This command will also expose the current folder to the container (as `/mnt/src`) to
