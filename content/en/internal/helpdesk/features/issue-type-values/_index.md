@@ -8,6 +8,8 @@ description: >
 
 ## USER tickets
 
+// jscpd:ignore-start
+
 For generic user tickets selectable issue types are explained in the table
 below.
 
@@ -110,3 +112,5 @@ members.
 | ATLAS_Network Problem      | Issues with network infrastructure          |
 | ATLAS_Staging              | Issues around file staging                  |
 | ATLAS_Storage Systems      | Issues around storage                       |
+
+// jscpd:ignore-end
