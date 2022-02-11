@@ -1,4 +1,335 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Features</title><link>/internal/helpdesk/features/</link><description>Recent content in Features on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/helpdesk/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: 'Notify Site' field and tickets to multiple sites</title><link>/internal/helpdesk/features/tickets-to-multiple-sites/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/tickets-to-multiple-sites/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Helpdesk features</title><link>/internal/helpdesk/features/</link><description>Recent content in Helpdesk features on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/helpdesk/features/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Issue type values</title><link>/internal/helpdesk/features/issue-type-values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/issue-type-values/</guid><description>
+&lt;h2 id="user-tickets">USER tickets&lt;/h2>
+&lt;p>// jscpd:ignore-start&lt;/p>
+&lt;p>For generic user tickets selectable issue types are explained in the table
+below.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Issue type&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Accounting&lt;/td>
+&lt;td>All kind of issues related to accounting tools (APEL, Accounting Portal and so on).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AppDB&lt;/td>
+&lt;td>All kind of issues related to the AppDB or to the interactions with the AppDB.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Authorization/Authentication&lt;/td>
+&lt;td>All issues related to authorization and authentication e.g. certificates&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>COD Operations&lt;/td>
+&lt;td>WLCG Coordinator On Duty Operations&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Catalogue&lt;/td>
+&lt;td>Issues related to file catalogues, like LFC&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Computing Services&lt;/td>
+&lt;td>All issues related to execution of jobs. It combines two other type of problems (&amp;lsquo;Workload management&amp;rsquo; and &amp;lsquo;Local batch system&amp;rsquo;). The &amp;lsquo;Computing Services&amp;rsquo; should be used when it is not clear to which subcategory the ticket refersConfiguration Issues of system configuration.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Data Management - generic&lt;/td>
+&lt;td>All kind of issues related to data management tools (GFAL, LCG_Util and so on).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Databases&lt;/td>
+&lt;td>Issues related to Databases.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Deployment - other&lt;/td>
+&lt;td>Issues of software deployment that do not fit any other category.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Documentation&lt;/td>
+&lt;td>Issues of missing, wrong, outdated documentation.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>File Access&lt;/td>
+&lt;td>File access issues.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>File Transfer&lt;/td>
+&lt;td>File transfer issues, e.g. related to FTS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GGUS&lt;/td>
+&lt;td>Bugs and feature requests related to GGUS system.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>IaaS Operations&lt;/td>
+&lt;td>Issues related to VMs and clients (OCCI, rOCCI, etc.), block storage, networking.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Information System&lt;/td>
+&lt;td>Issues related to the BDII.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Installation&lt;/td>
+&lt;td>Installation issues.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Local Batch System&lt;/td>
+&lt;td>Issues related to the local batch systems.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Middleware&lt;/td>
+&lt;td>Issues of middleware stacks like gLite, globus and others.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Monitoring&lt;/td>
+&lt;td>Issues of infrastructure and service monitoring.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Network problem&lt;/td>
+&lt;td>Issues of network connectivity.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Operations&lt;/td>
+&lt;td>Issues of general processes, procedures, information and so on of the entire infrastructure.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Other&lt;/td>
+&lt;td>Requests that do not match to any other issue type.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Security&lt;/td>
+&lt;td>Issues of infrastructure and operation security.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Storage Systems&lt;/td>
+&lt;td>Issues concerning storage systems, like EOS, dCache, DPM&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VO Specific Software&lt;/td>
+&lt;td>Issues of VO specific software tools and packages.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Virtual Appliance Management&lt;/td>
+&lt;td>Issues related to vmcatcher/vmcaster tools, and VA management in general.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Workload Management&lt;/td>
+&lt;td>Issues related to workload management system and tools.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="team-tickets">TEAM tickets&lt;/h2>
+&lt;p>Team and alarm tickets have a reduced number of issue types in the drop-down
+menu.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Issue type&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Databases&lt;/td>
+&lt;td>Issues related to Databases.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>File Access&lt;/td>
+&lt;td>File access issues.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>File Transfer&lt;/td>
+&lt;td>File transfer issues, e.g. related to FTS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Local Batch System&lt;/td>
+&lt;td>Issues related to the local batch systems.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Middleware&lt;/td>
+&lt;td>Issues of middleware stacks like gLite, globus and others.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Monitoring&lt;/td>
+&lt;td>Issues of infrastructure and service monitoring.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Network problem&lt;/td>
+&lt;td>Issues of network connectivity.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Other&lt;/td>
+&lt;td>Requests that do not match to any other issue type&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Storage Systems&lt;/td>
+&lt;td>Issues related to storage systems, like EOS, dCache or DPM&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="alarm-tickets">ALARM tickets&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Issue type&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Databases&lt;/td>
+&lt;td>Issues related to Databases.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>File Access&lt;/td>
+&lt;td>File access issues.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>File Transfer&lt;/td>
+&lt;td>File transfer issues, e.g. related to FTS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Local Batch System&lt;/td>
+&lt;td>Issues related to the local batch systems.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Middleware&lt;/td>
+&lt;td>Issues of middleware stacks like gLite, globus and others.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Monitoring&lt;/td>
+&lt;td>Issues of infrastructure and service monitoring.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Network problem&lt;/td>
+&lt;td>Issues of network connectivity.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Other&lt;/td>
+&lt;td>Requests that do not match to any other issue type&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Storage Systems&lt;/td>
+&lt;td>Issues related to storage systems, like EOS, dCache or DPM&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="cms-tickets">CMS tickets&lt;/h2>
+&lt;p>The CMS VO has an own ticket submit form in the GGUS system. Although this form
+provides CMS specific issue types no special privilege is required to use it.
+This does not apply for the TEAM ticket submit form: Here the CMS specific issue
+types are only selectable for registered CMS TEAM members.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Issue type&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>CMS_AAA WAN Access&lt;/td>
+&lt;td>Issues around WAN&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CMS_CAF Operations&lt;/td>
+&lt;td>Issues around CAF operations at CERN, incl EOS space requests&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CMS_Central Workflows&lt;/td>
+&lt;td>Issues around centrally managed MC production and processing&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CMS_Data Transfers&lt;/td>
+&lt;td>Issues around data transfers, e.g. via Phedex or ASO&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CMS_Facilities&lt;/td>
+&lt;td>Typically issues at CMS sites&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CMS_HammerCloud&lt;/td>
+&lt;td>Issues around CMS HammerCloud&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CMS_Register New CMS Site&lt;/td>
+&lt;td>Chosen when a new site gets registered with CMS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CMS_SAM tests&lt;/td>
+&lt;td>Issues around CMS SAM tests&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CMS_Submission Infrastructure&lt;/td>
+&lt;td>Issues around CMS_Submission Infrastructure&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CMS_Tier-1 Tape Families&lt;/td>
+&lt;td>For creation of Tape families/groups at Tier-1 archives&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="atlas-tickets">ATLAS tickets&lt;/h2>
+&lt;p>The ATLAS specific issue types are only selectable for registered ATLAS TEAM
+members.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Issue type&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>ATLAS_ADC Central&lt;/td>
+&lt;td>Issues around ADC in general&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ATLAS_Databases&lt;/td>
+&lt;td>Issues around databases&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ATLAS_Deletion&lt;/td>
+&lt;td>Issues around file deletions&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ATLAS_File Access/Transfer&lt;/td>
+&lt;td>Issues around file access or file transfers&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ATLAS_Frontier-Squid&lt;/td>
+&lt;td>Issues around frontier or squid&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ATLAS_Local Batch System&lt;/td>
+&lt;td>Issues around batch systems&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ATLAS_Middleware&lt;/td>
+&lt;td>Issues related to middleware&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ATLAS_Monitoring&lt;/td>
+&lt;td>Issues around monitoring&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ATLAS_Network Problem&lt;/td>
+&lt;td>Issues with network infrastructure&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ATLAS_Staging&lt;/td>
+&lt;td>Issues around file staging&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ATLAS_Storage Systems&lt;/td>
+&lt;td>Issues around storage&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>// jscpd:ignore-end&lt;/p></description></item><item><title>Internal: 'Notify Site' field and tickets to multiple sites</title><link>/internal/helpdesk/features/tickets-to-multiple-sites/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/tickets-to-multiple-sites/</guid><description>
 &lt;h2 id="notify-site-field">Notify Site field&lt;/h2>
 &lt;ul>
 &lt;li>The list of sites included in the drop-down menu of the &amp;ldquo;Notify site&amp;rdquo; field is

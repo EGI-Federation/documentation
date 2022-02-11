@@ -1,8 +1,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – DataHub</title><link>/users/datahub/</link><description>Recent content in DataHub on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/datahub/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Clients</title><link>/users/datahub/clients/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/datahub/clients/</guid><description>
-&lt;p>The Oneclient code and basic documentation are available on
-&lt;a href="https://github.com/onedata/oneclient">GitHub&lt;/a>.&lt;/p>
-&lt;p>The official documentation is hosted on the
-&lt;a href="https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html">Onedata homepage&lt;/a>.&lt;/p>
+&lt;p>The EGI DataHub spaces can be accessed via web interface, the &lt;code>oneclient&lt;/code>
+component or the API.&lt;/p>
+&lt;p>The official documentation for &lt;code>oneclient&lt;/code> is hosted on the
+&lt;a href="https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html">Onedata homepage&lt;/a>,
+and a specific &lt;a href="../../tutorials/vm-datahub">tutorial&lt;/a> on how to install and use it
+from a Virtual Machine is also available.&lt;/p>
 &lt;h2 id="using-the-web-interface">Using the web interface&lt;/h2>
 &lt;p>Using EGI Check-in it's possible to connect with your institute credentials.&lt;/p>
 &lt;p>&lt;img src="datahub-connect-check-in.png" alt="Selecting EGI to connect using EGI Check-in">&lt;/p>
