@@ -6,8 +6,6 @@ description: >
 "List of the values of the Issue Type field for the several ticket types"
 ---
 
-The pages of this section detail multiple features of the Helpdesk.
-
 ## USER tickets
 
 For generic user tickets selectable issue types are explained in the table
@@ -38,7 +36,7 @@ below.
 | Operations                   | Issues of general processes, procedures, information and so on of the entire infrastructure.                                                                                                                                                                                       |
 | Other                        | Requests that do not match to any other issue type.                                                                                                                                                                                                                                |
 | Security                     | Issues of infrastructure and operation security.                                                                                                                                                                                                                                   |
-| Storage Systems              | Issues concerning storage systems, like EOS, DCACHE, DPM                                                                                                                                                                                                                           |
+| Storage Systems              | Issues concerning storage systems, like EOS, dCache, DPM                                                                                                                                                                                                                           |
 | VO Specific Software         | Issues of VO specific software tools and packages.                                                                                                                                                                                                                                 |
 | Virtual Appliance Management | Issues related to vmcatcher/vmcaster tools, and VA management in general.                                                                                                                                                                                                          |
 | Workload Management          | Issues related to workload management system and tools.                                                                                                                                                                                                                            |
@@ -58,7 +56,7 @@ menu.
 | Monitoring         | Issues of infrastructure and service monitoring.           |
 | Network problem    | Issues of network connectivity.                            |
 | Other              | Requests that do not match to any other issue type         |
-| Storage Systems    | Issues related to storage systems, like EOS, DCACHE or DPM |
+| Storage Systems    | Issues related to storage systems, like EOS, dCache or DPM |
 
 ## ALARM tickets
 
@@ -72,21 +70,21 @@ menu.
 | Monitoring         | Issues of infrastructure and service monitoring.           |
 | Network problem    | Issues of network connectivity.                            |
 | Other              | Requests that do not match to any other issue type         |
-| Storage Systems    | Issues related to storage systems, like EOS, DCACHE or DPM |
+| Storage Systems    | Issues related to storage systems, like EOS, dCache or DPM |
 
 ## CMS tickets
 
 The CMS VO has an own ticket submit form in the GGUS system. Although this form
-provides CMS specific issue types no special privilegue is required to use it.
-This does not apply for the TEAM ticket submit webform: Here the CMS specific
-issue types are only selectable for registered CMS TEAM members.
+provides CMS specific issue types no special privilege is required to use it.
+This does not apply for the TEAM ticket submit form: Here the CMS specific issue
+types are only selectable for registered CMS TEAM members.
 
 | Issue type                    | Description                                                   |
 | ----------------------------- | ------------------------------------------------------------- |
 | CMS_AAA WAN Access            | Issues around WAN                                             |
 | CMS_CAF Operations            | Issues around CAF operations at CERN, incl EOS space requests |
 | CMS_Central Workflows         | Issues around centrally managed MC production and processing  |
-| CMS_Data Transfers            | Issues around datatransfers, e.g. via Phedex or ASO           |
+| CMS_Data Transfers            | Issues around data transfers, e.g. via Phedex or ASO          |
 | CMS_Facilities                | Typically issues at CMS sites                                 |
 | CMS_HammerCloud               | Issues around CMS HammerCloud                                 |
 | CMS_Register New CMS Site     | Chosen when a new site gets registered with CMS               |
