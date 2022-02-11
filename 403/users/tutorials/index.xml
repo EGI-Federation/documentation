@@ -1,54 +1,55 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Tutorials</title><link>/users/tutorials/</link><description>Recent content in Tutorials on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Virtual machine with DataHub access</title><link>/users/tutorials/vm-datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/vm-datahub/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Tutorials</title><link>/users/tutorials/</link><description>Recent content in Tutorials on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Access DataHub from a Virtual machine</title><link>/users/tutorials/vm-datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/vm-datahub/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>This tutorial describes the access to &lt;a href="../../datahub">EGI DataHub&lt;/a> spaces from a virtual
-machine. In the following paragraphs you will learn how to access data remotely stored in EGI DataHub via POSIX, by:&lt;/p>
+&lt;p>This tutorial describes the access to &lt;a href="../../datahub">EGI DataHub&lt;/a> spaces
+from a virtual machine. In the following paragraphs you will learn how to
+access data remotely stored in EGI DataHub like if they were local, using
+traditional POSIX command line commands, by:&lt;/p>
 &lt;ul>
-&lt;li>installing the oneclient component&lt;/li>
-&lt;li>configuring access to an EGI DataHub Oneprovider via oneclient&lt;/li>
+&lt;li>installing the &lt;code>oneclient&lt;/code> component&lt;/li>
+&lt;li>configuring access to an EGI DataHub Oneprovider via &lt;code>oneclient&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
-&lt;p>In order to access the EGI DataHub data you need, first of all, to have
-an &lt;a href="../../check-in">EGI Check-in&lt;/a> account, if you don&amp;rsquo;t have an EGI
-Check-in account you can sign up &lt;a href="../../check-in/signup">here&lt;/a>.&lt;/p>
+&lt;p>In order to access the EGI DataHub data you need an
+&lt;a href="../../check-in">EGI Check-in&lt;/a> account. If you don&amp;rsquo;t have one yet
+you can &lt;a href="../../check-in/signup">Sign up for an EGI account&lt;/a>.&lt;/p>
 &lt;h2 id="oneclient-installation">Oneclient installation&lt;/h2>
-&lt;p>The installation of oneclient package is currently supported for:&lt;/p>
+&lt;p>The installation of &lt;code>oneclient&lt;/code> package is currently supported for:&lt;/p>
 &lt;ul>
-&lt;li>Ubuntu Bionic&lt;/li>
+&lt;li>Ubuntu 18.04 LTS (Bionic Beaver)&lt;/li>
 &lt;li>Centos 7&lt;/li>
 &lt;/ul>
 &lt;p>Work to support more recent versions of Operating Systems is ongoing, and alternatively
 a docker based installation is also provided.&lt;/p>
 &lt;h3 id="oneclient-installation-via-packages">Oneclient installation via packages&lt;/h3>
-&lt;p>Use the following command in order to install the oneclient package in a supported OS:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
+&lt;p>Use the following command in order to install the &lt;code>oneclient&lt;/code> package in a supported OS:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>This will also install the needed dependencies.&lt;/p>
 &lt;h3 id="oneclient-installation-via-docker">Oneclient installation via docker&lt;/h3>
 &lt;p>In order to use the Dockerized version of oneclient (provided that you
 have docker installed), you can run the following command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run -it --privileged -v &lt;span style="color:#000">$PWD&lt;/span>:/mnt/src --entrypoint bash onedata/oneclient:20.02.15
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will also expose a local folder to the container to
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will also expose the current folder to the container (as &lt;code>/mnt/src&lt;/code>) to
 ease the transfer of data.&lt;/p>
 &lt;h2 id="getting-the-token-to-access-data">Getting the token to access data&lt;/h2>
 &lt;p>In order to access data stored in EGI DataHub via oneclient,
-you need to acquire a token for authorisation. You can check
-&lt;a href="../../datahub/api/#getting-an-api-access-token">our specific documentation&lt;/a>.&lt;/p>
+you need to &lt;a href="../../datahub/api/#getting-an-api-access-token">get an API access token&lt;/a>.&lt;/p>
 &lt;h2 id="using-oneclient">Using oneclient&lt;/h2>
 &lt;p>Once you have acquired a token valid for oneclient you can configure it
 on the environment as follows:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Also configure in the environment the provider you would like to
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You must also configure in the environment the provider you would like to
 connect to. The EGI DataHub offers a &lt;code>PLAYGROUND&lt;/code> space hosted by
 the Oneprovider &lt;code>plg-cyfronet-01.datahub.egi.eu&lt;/code> which is accessible
 for testing by anyone with a valid EGI Check-in account.&lt;/p>
 &lt;p>Therefore the access to that particular space can be configured as
 follows:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Now in order to access data from a local folder you need to run
 the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mkdir /tmp/space
-oneclient /tmp/space
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ mkdir /tmp/space
+$ oneclient /tmp/space
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>and then all usual file and folder operations (POSIX) will be available:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">root@222d3ceb86df:/tmp/space# ls -l
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ root@222d3ceb86df:/tmp/space# ls -l
 total &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
 drwxrwxr-x &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> root root &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> Jan &lt;span style="color:#0000cf;font-weight:bold">28&lt;/span> 16:56 PLAYGROUND
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Creating a file into the folder will push it to the Oneprovider and
@@ -58,7 +59,7 @@ supporting the space.&lt;/p>
 access to, but it will also be possible to specify a specific space
 to access using the option &lt;code>--space &amp;lt;space&amp;gt;&lt;/code>.&lt;/p>
 &lt;p>Oneclient offers a lot of other options for configuration
-(e.g. Buffer size, direct I/O, etc) which are listed when you
+(e.g. buffer size, direct I/O, etc) which are listed when you
 type the &lt;code>oneclient&lt;/code> command without any argument.&lt;/p></description></item><item><title>Users: Create your first Virtual Machine</title><link>/users/tutorials/create-your-first-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/create-your-first-virtual-machine/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to create your first Virtual Machine in the EGI Federation.&lt;/p>
