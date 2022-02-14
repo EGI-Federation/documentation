@@ -1,5 +1,6 @@
 ---
-title: "Networking"
+title: Virtual Machine Networking
+linkTitle: Networking
 type: docs
 weight: 40
 draft: true

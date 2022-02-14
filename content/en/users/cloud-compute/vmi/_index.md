@@ -1,5 +1,6 @@
 ---
-title: "Virtual Machine Images"
+title: Virtual Machine Images
+linkTitle: Images
 type: docs
 weight: 30
 description: >
