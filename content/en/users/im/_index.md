@@ -22,7 +22,7 @@ please visit its [documentation pages](https://imdocs.readthedocs.io).
 IM is integrated with the [EGI Check-in Service](../check-in). A very easy
 way to deploy your first Virtual Machine in the EGI Federation is using the
 [web-based GUI](https://appsgrycap.i3m.upv.es:31443/im-dashboard/). Please see
-tutorial [here](https://imdocs.readthedocs.io/en/latest/dashboard.html#usage) or
+[a tutorial](https://imdocs.readthedocs.io/en/latest/dashboard.html#usage) or
 a demo video [here](https://youtu.be/vmtzGOZxiUg).
 
 Infrastructure Manager was presented in one of the
