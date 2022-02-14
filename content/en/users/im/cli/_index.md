@@ -27,7 +27,6 @@ $ pip install IM-client
 The IM Client has an official Docker container image available on Docker Hub
 that can be used instead of installing the CLI. You can use it by typing:
 
-
 ```shell
 $ docker run --rm -ti -v "$PWD:/tmp/im" grycap/im-client \
   -r https://server.com:8800 -a /tmp/im/auth.dat list
@@ -55,7 +54,6 @@ key and value should be separated by ` = `, that is an equals sign preceded and
 followed by one whitespace at least. The following lines shows the credentials
 needed to access an EGI Cloud Compute site:
 
-
 ```shell
 type = InfrastructureManager; token = egi_aai_token_value
 id = egi; type = EGI; host = CESGA; vo = vo.access.egi.eu; token = egi_aai_token_value
@@ -77,9 +75,9 @@ id = egi; type = EGI; host = CESGA; vo = vo.access.egi.eu; token = command(oidc-
 To create a virtual infrastructure you have to describe a file documenting
 the required resources. IM supports its native language
 [RADL](https://imdocs.readthedocs.io/en/latest/radl.html) and the
-[OASIS TOSCA Simple Profile in YAML Version 1.0](http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd02/TOSCA-Simple-Profile-YAML-v1.0-csprd02.html). 
+[OASIS TOSCA Simple Profile in YAML Version 1.0](http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0).
 You can find some examples in the
-[IM GitHub repo](https://github.com/grycap/im/tree/master/examples).
+[IM GitHub repository](https://github.com/grycap/im/tree/master/examples).
 
 For example we can use RADL to define a simple VM with 1 CPU, 1 GB of RAM
 using the EGI Ubuntu 20.04 image.
