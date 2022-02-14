@@ -47,7 +47,7 @@ auth_file=auth.dat
 
 ### Authentication data file
 
-The authorization file stores, in plain text, the credentials used to access the
+The authorisation file stores, in plain text, the credentials used to access the
 cloud providers, and the IM service. Each line of the file is composed by pairs
 of key and value separated by semicolon, and refers to a single credential. The
 key and value should be separated by ` = `, that is an equals sign preceded and
