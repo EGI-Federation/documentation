@@ -21,7 +21,7 @@ client installed to get EC3 templates needed to start deployment.
 
 Your kubernetes deployment needs to be performed at an specific provider (site)
 and project. Discover them using `fedcloud` as described in the
-[EC3 tutorial](../../cloud-compute/ec3).
+[EC3 tutorial](../../ec3).
 
 ### EC3 Templates
 
