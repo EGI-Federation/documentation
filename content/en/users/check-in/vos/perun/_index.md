@@ -37,7 +37,7 @@ following features:
 
 ## VO management
 
-Administrative GUI for VO managers is available at https://perun.egi.eu
+Administrative GUI for VO managers is available at [https://perun.egi.eu](https://perun.egi.eu)
 
 It is assumed that VO managers and members have already registered their EGI
 Check-in account (A step-by-step guide is provided in this [link](../signup)).
@@ -71,10 +71,11 @@ All basic features regarding members management are available in the
 administrative GUI under the *VO manager* section. All features are
 described in the following sections in more detail.
 
-**HOW-TO**
-* Add/Remove VO members
-* Search and list VO members
-* Member detail (status, groups, settings,...)
+##### HOW-TO
+
+- Add/Remove VO members
+- Search and list VO members
+- Member detail (status, groups, settings,...)
 
 #### Accepting new members
 
@@ -98,7 +99,7 @@ programmable and can perform any specific and complex actions with the
 users and the VO. Please consult perun user support using GGUS in case you
 need this feature.
 
-**HOW-TO**
+##### HOW-TO
 
 - Configure registration form and notifications
 - Approve/reject submitted registration
@@ -144,7 +145,7 @@ In both cases you also need to define timespan, how long before the
 membership expiration are members allowed to ask for the renewal (e.g. `1m`,
 meaning one month).
 
-**HOW-TO**
+##### HOW-TO
 
 - Change VO member status and expiration
 - Set VO membership expiration rules
@@ -167,7 +168,7 @@ from the root divided by colon `:`, e.g. `projectX:students`.
 
 Top-level groups can be created only by the VO managers.
 
-**HOW-TO**
+##### HOW-TO
 
 - Search and display groups
 - Create/delete groups and subgroups
@@ -193,9 +194,9 @@ GUI using italic font in the group members list. In order to remove them
 from the group you have to remove them from the sourcing subgroup first or
 remove relation between the groups.
 
-**HOW-TO**
+##### HOW-TO
 
-- Search and display group members
+- [Search and display group members](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/14417974/Search+and+display+group+members)
 - Add/remove group members
 
 #### Accepting new group members
@@ -221,7 +222,7 @@ In case user is not a member of VO, registration application offers VO
 registration first and once submitted user can register for the group.
 VO registration must be then approved first.
 
-**HOW-TO**
+##### HOW-TO
 
 - Configure registration form and notifications
 - Approve/reject submitted registration
@@ -239,31 +240,80 @@ but there are some differences.
   group is dependent on his/hers status in all child groups and `VALID`
   status takes preference.
 
-**HOW-TO**
+##### HOW-TO
 
 - Change group member status and expiration
 - Set group membership expiration rules
 - Configure registration form and notifications
 
-### Access management
+## Access management
 
 While Perun generally uses concept of *Resources* to represent the access
-rights or roles (as service provider is giving them to the VO) and *Groups*
-are assigned to it by the VO managers, it is not usually used like this
-within the EGI services.
+rights and roles (as service provider is giving them to the VO) and *Groups*
+are assigned to it (by the VO managers), it is not usually used like this
+within the EGI infrastructure.
 
-**TODO**
+Having *Groups* and *Resources* separated allows you to represent your 
+community or organization structure without the conflict with the roles and 
+access rights for each service. You can then more easily use one single 
+group and give its members access to the various services with specific 
+roles/settings. Any change to the group membership can be then reflected to 
+all associated services, which is useful especially for the de-provisioning. 
 
-### VO management roles and their delegation
+### EGI Check-In proxy
+
+For the primary and most basic use-case, when services are behind the EGI 
+Check-In proxy, access rights are based solely on VO and group membership 
+information.
+
+Such information is then released by the EGI Check-In proxy as 
+*eduPersonEntitlement* attribute conforming
+[AARC-G002](https://aarc-community.org/guidelines/aarc-g002/) specification. 
+
+Both VOs' short name and groups' full name are used to construct the 
+entitlement value, so using correct naming for the group is required.
+
+Association of specific VO/group membership value with the role or access 
+rights within the service are responsibility of the service provider.
+
+##### Example
+
+Let's assume, that user is a member of `myvo.egi.eu` VO and the top-level group 
+`vm_operator` in it. Resulting *eduPersonEntitlement* will look like this:
+
+`urn:mace:egi.eu:group:myvo.egi.eu:vm_operator:role=member#aai.egi.eu`
+
+Perun doesn't support other *roles* within the groups than `member`. 
+
+### VOMS
 
 {{% alert title="Note" color="info" %}}
-This section cover roles within the Perun. Roles in Perun have no association
-with the roles in consumed services, unless you configure it that way and
-the nature of the service supports it. For example by using groups within
-the VO and assigning roles to them.
+Please note, that because of the nature of the VOMS, users must have
+personal certificate associated with their user entry in Perun in order to
+be provisioned to the VOMS at all.
 {{% /alert %}}
 
-**TODO**
+Perun supports direct provisioning of the VOMS. In this use-case users and VOs 
+are primarily managed within the Perun.
+The user data, including group memberships and roles, is then provisioned to 
+the VOMS, which is used solely as a backend for the services requiring it.
+
+From the VO manager perspective you are given a *Resource* by the service 
+provider (VOMS operator). It represents your association with the VOMS in 
+Perun. You can have multiple resources and they can represent either different 
+set of *VOMS roles* within the same VOMS or represent different VOMS servers.
+
+You can assign any of your groups to it and all users from all the 
+assigned groups will be provisioned to the VOMS as members of your VO.
+
+On the *Service settings* page of the *Resource* you can set *VOMS roles*, which 
+will be given to all users associated with it through all the groups. 
+Similarly, you can set *VOMS roles* on the Group-Resource level. Once you 
+assign the group to the Resource, you can check *Group settings* page of the 
+*Resource*, select proper Group and set *VOMS roles* from there. Same group 
+can have different roles for different VOMS servers like this. Also you can 
+associate group from Perun with the group in VOMS by settings *Voms group 
+name* on the same settings page. 
 
 ## FAQ
 
