@@ -21,7 +21,7 @@ parameters:&lt;/p>
 &lt;span style="color:#c4a000">restapi_url&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">https://appsgrycap.i3m.upv.es:31443/im&lt;/span>
 &lt;span style="color:#c4a000">auth_file&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">auth.dat&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="authentication-data-file">Authentication data file&lt;/h3>
-&lt;p>The authorization file stores, in plain text, the credentials used to access the
+&lt;p>The authorisation file stores, in plain text, the credentials used to access the
 cloud providers, and the IM service. Each line of the file is composed by pairs
 of key and value separated by semicolon, and refers to a single credential. The
 key and value should be separated by &lt;code>=&lt;/code>, that is an equals sign preceded and
