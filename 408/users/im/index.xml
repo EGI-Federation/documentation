@@ -85,7 +85,6 @@ configuration stage;&lt;/li>
 &lt;/ul>
 &lt;p>Once the configuration step has started we can get the output of the ansible
 process using the &lt;code>getcontmsg&lt;/code> operation:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ im_client.py getcontmsg 457273ea-85e4-11ec-aa81-faaae69bc911
 Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
 Connected with: http://localhost:8800
@@ -190,7 +189,7 @@ ID of the image.&lt;/p>
 The first column shows the name set by the user on infrastructure creation,
 then shows the ID assigned by the IM service, the third column shows the current
 status of the infrastructure, the fourth show the list of VMs with their IDs and
-finally appears a button with a set of actions.&lt;/p>
+finally a button with a set of actions appears.&lt;/p>
 &lt;p>&lt;img src="dash_inf_list.png" alt="List of infrastructures.">&lt;/p>
 &lt;h4 id="list-of-actions">List of Actions&lt;/h4>
 &lt;p>The following figure shows the list of actions available to manage the existing
