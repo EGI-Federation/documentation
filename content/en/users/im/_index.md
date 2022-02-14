@@ -3,7 +3,7 @@ title: "Infrastructure Manager"
 type: docs
 weight: 45
 description: >
-  How to use Infrastructure Manager (IM)
+  Using Infrastructure Manager on EGI Cloud
 ---
 
 [Infrastructure Manager](https://www.grycap.upv.es/im) is a tool that
