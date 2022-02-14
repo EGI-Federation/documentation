@@ -8,7 +8,7 @@ description: >
 
 
 The IM Dashboard is a graphical interface for the IM Server specially developed
-to EOSC users to access EGI Cloud Compute resources.
+for EOSC users to access EGI Cloud Compute resources.
 
 Functionalities:
 
