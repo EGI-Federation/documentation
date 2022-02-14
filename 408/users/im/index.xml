@@ -105,7 +105,7 @@ Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
 Infrastructure successfully destroyed
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: IM Dashboard</title><link>/users/im/dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/im/dashboard/</guid><description>
 &lt;p>The IM Dashboard is a graphical interface for the IM Server specially developed
-to EOSC users to access EGI Cloud Compute resources.&lt;/p>
+for EOSC users to access EGI Cloud Compute resources.&lt;/p>
 &lt;p>Functionalities:&lt;/p>
 &lt;ul>
 &lt;li>OIDC authentication&lt;/li>
@@ -190,7 +190,7 @@ ID of the image.&lt;/p>
 The first column shows the name set by the user on infrastructure creation,
 then shows the ID assigned by the IM service, the third column shows the current
 status of the infrastructure, the fourth show the list of VMs with their IDs and
-finally appears a button with a set of actions.&lt;/p>
+finally a button with a set of actions appears.&lt;/p>
 &lt;p>&lt;img src="dash_inf_list.png" alt="List of infrastructures.">&lt;/p>
 &lt;h4 id="list-of-actions">List of Actions&lt;/h4>
 &lt;p>The following figure shows the list of actions available to manage the existing
