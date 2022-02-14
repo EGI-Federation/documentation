@@ -1,5 +1,6 @@
 ---
 title: "Infrastructure Manager Command-Line Interface"
+linkTitle: "Command Line"
 type: docs
 weight: 20
 description: >

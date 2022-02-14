@@ -1,9 +1,10 @@
 ---
 title: "Infrastructure Manager Dashboard"
+linkTitle: "Dashboard"
 type: docs
 weight: 30
 description: >
-  How to run use the IM Dashboard graphical interface
+  The dashboard of the Infrastructure Manager
 ---
 
 

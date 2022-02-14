@@ -11,9 +11,9 @@ streamlines the access and the usability of IaaS clouds by automating the
 configuration, deployment, and monitoring of Virtual Appliances.
 
 IM orchestrates the deployment of custom virtual infrastructures on multiple
-back-ends. It automates the deployment, configuration, software installation,
+backends. It automates the deployment, configuration, software installation,
 monitoring and update of virtual infrastructures. It supports a wide variety
-of back-ends, either public (such as Amazon Web Services, Google Cloud or
+of backends, either public (such as Amazon Web Services, Google Cloud or
 Microsoft Azure), on-premises (such as OpenStack) or federated infrastructures
 (such as [EGI Cloud Compute](../cloud-compute)), thus making user applications
 cloud agnostic.
