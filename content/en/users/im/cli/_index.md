@@ -138,7 +138,6 @@ The valid VM and infrastructure states are the following:
 Once the configuration step has started we can get the output of the ansible
 process using the `getcontmsg` operation:
 
-<!-- markdownlint-disable line-length -->
 
 ```shell
 $ im_client.py getcontmsg 457273ea-85e4-11ec-aa81-faaae69bc911
