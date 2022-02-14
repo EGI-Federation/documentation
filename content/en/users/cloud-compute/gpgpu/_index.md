@@ -1,9 +1,9 @@
 ---
 title: "GPUs"
 type: docs
-weight: 70
+weight: 55
 description: >
-  GPU resources on EGI Cloud
+  GPU resources in the EGI Cloud
 ---
 
 ## GPU resources on EGI Cloud

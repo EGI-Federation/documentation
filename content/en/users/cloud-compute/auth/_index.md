@@ -3,7 +3,7 @@ title: "Authentication and Authorisation"
 type: docs
 weight: 20
 description: >
-  Authentication and Authorisation on EGI Cloud
+  Authentication and Authorisation in EGI Cloud
 ---
 
 ## Authentication {#oidc-auth-using-check-in}

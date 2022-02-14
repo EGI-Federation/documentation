@@ -1,12 +1,12 @@
 ---
-title: "Infrastructure Manager"
+title: "Automating Deployments"
 type: docs
-weight: 45
+weight: 70
 description: >
-  How to use Infrastructure Manager (IM)
+  Use Infrastructure Manager to automate VM deployment in the EGI Cloud
 ---
 
-[Infrastructure Manager](https://www.grycap.upv.es/im) is a tool that
+[Infrastructure Manager](https://www.grycap.upv.es/im) (IM) is a tool that
 streamlines the access and the usability of IaaS clouds by automating the
 configuration, deployment, and monitoring of [Virtual Appliances](../vmi).
 

@@ -1,5 +1,5 @@
 ---
-title: "Virtual Machine Image Management"
+title: "Virtual Machine Images"
 type: docs
 weight: 30
 description: >
