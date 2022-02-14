@@ -48,7 +48,7 @@ using the EGI Ubuntu 20.04 image.&lt;/p>
 system node &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>
 cpu.count&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> and
 memory.size&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1g and
-net_interface.0.connection &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;publica&amp;#39;&lt;/span> and
+net_interface.0.connection &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;public&amp;#39;&lt;/span> and
 disk.0.os.name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;linux&amp;#39;&lt;/span> and
 disk.0.image.url &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;appdb://egi.ubuntu.20.04?vo.access.egi.eu&amp;#39;&lt;/span> and
 &lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
