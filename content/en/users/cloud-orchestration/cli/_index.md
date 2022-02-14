@@ -8,7 +8,7 @@ description: >
 
 
 You can find here documentation covering getting started with IM Command-Line
-Interface on EGI Cloud Compute sites. Full documentation at
+Interface (CLI) on EGI Cloud Compute sites. Full documentation at
 [IM CLI documentation](https://imdocs.readthedocs.io/en/latest/client.html)
 
 ## Getting started
