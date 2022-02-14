@@ -1,5 +1,5 @@
 ---
-title: "Infrastructure Manager"
+title: "Cloud Orchestration"
 type: docs
 weight: 45
 description: >
@@ -8,7 +8,7 @@ description: >
 
 [Infrastructure Manager](https://www.grycap.upv.es/im) is a tool that
 streamlines the access and the usability of IaaS clouds by automating the
-configuration, deployment, and monitoring of [Virtual Appliances](../vmi).
+configuration, deployment, and monitoring of Virtual Appliances.
 
 IM orchestrates the deployment of custom virtual infrastructures on multiple
 back-ends. It automates the deployment, configuration, software installation,

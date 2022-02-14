@@ -1,5 +1,5 @@
 ---
-title: "IM Dashboard"
+title: "Infrastructure Manager Dashboard"
 type: docs
 weight: 30
 description: >

@@ -1,5 +1,5 @@
 ---
-title: "IM CLI"
+title: "Infrastructure Manager Command-Line Interface"
 type: docs
 weight: 20
 description: >
