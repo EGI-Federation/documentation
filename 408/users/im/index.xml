@@ -39,9 +39,9 @@ a valid access token:&lt;/p>
 &lt;p>To create a virtual infrastructure you have to describe a file documenting
 the required resources. IM supports its native language
 &lt;a href="https://imdocs.readthedocs.io/en/latest/radl.html">RADL&lt;/a> and the
-&lt;a href="http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd02/TOSCA-Simple-Profile-YAML-v1.0-csprd02.html">OASIS TOSCA Simple Profile in YAML Version 1.0&lt;/a>.
+&lt;a href="http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0">OASIS TOSCA Simple Profile in YAML Version 1.0&lt;/a>.
 You can find some examples in the
-&lt;a href="https://github.com/grycap/im/tree/master/examples">IM GitHub repo&lt;/a>.&lt;/p>
+&lt;a href="https://github.com/grycap/im/tree/master/examples">IM GitHub repository&lt;/a>.&lt;/p>
 &lt;p>For example we can use RADL to define a simple VM with 1 CPU, 1 GB of RAM
 using the EGI Ubuntu 20.04 image.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">network publica &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000">outbound&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;yes&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
