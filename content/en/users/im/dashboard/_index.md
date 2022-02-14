@@ -116,7 +116,7 @@ This page lists the infrastructures deployed by the user.
 The first column shows the name set by the user on infrastructure creation,
 then shows the ID assigned by the IM service, the third column shows the current
 status of the infrastructure, the fourth show the list of VMs with their IDs and
-finally appears a button with a set of actions.
+finally a button with a set of actions appears.
 
 ![List of infrastructures.](dash_inf_list.png)
 
