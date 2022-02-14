@@ -61,9 +61,10 @@ The main menu bar is located at the top of the pages:
 
 ### Cloud Credentials
 
-This page allows the user to specify the credentials for accessing any cloud
-provider. In the list the user can edit, delete and enable or disable the
-selected cloud credentials.
+To be able to access any Cloud site the user must specify the credentials to
+access them. This page allows the user to specify the credentials for accessing 
+any cloud provider. In the list the user can edit, delete and enable or disable
+the selected cloud credentials.
 
 ![List of Cloud Credentials](dash_cred_list.png)
 
