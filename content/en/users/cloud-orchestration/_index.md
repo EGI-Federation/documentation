@@ -3,17 +3,20 @@ title: "Infrastructure Manager"
 type: docs
 weight: 45
 description: >
-  Using Infrastructure Manager on EGI Cloud
+  Using Infrastructure Manager to orchestrate VM deployment in the EGI Cloud
 ---
 
 [Infrastructure Manager](https://www.grycap.upv.es/im) is a tool that
 streamlines the access and the usability of IaaS clouds by automating the
 configuration, deployment, and monitoring of [Virtual Appliances](../vmi).
 
-It supports APIs from a large number of _Cloud Management Frameworks (CMFs)_
-making user applications cloud-agnostic. In addition it integrates a
-contextualization system to enable the installation and configuration of user
-specific applications.
+IM orchestrates the deployment of custom virtual infrastructures on multiple
+back-ends. It automates the deployment, configuration, software installation,
+monitoring and update of virtual infrastructures. It supports a wide variety
+of back-ends, either public (such as Amazon Web Services, Google Cloud or
+Microsoft Azure), on-premises (such as OpenStack) or federated infrastructures
+(such as [EGI Cloud Compute](../cloud-compute)), thus making user applications
+cloud agnostic.
 
 It is a service that features a web-based GUI, a XML-RPC API, a REST API and a
 command-line interface. For detailed information about Infrastructure Manager
