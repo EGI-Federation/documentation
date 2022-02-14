@@ -147,9 +147,10 @@ the full name of the logged user, and an avatar obtained from
 &lt;code>Cloud Credentials&lt;/code> with the cloud providers or log out from the application.&lt;/li>
 &lt;/ul>
 &lt;h3 id="cloud-credentials">Cloud Credentials&lt;/h3>
-&lt;p>This page allows the user to specify the credentials for accessing any cloud
-provider. In the list the user can edit, delete and enable or disable the
-selected cloud credentials.&lt;/p>
+&lt;p>To be able to access any Cloud site the user must specify the credentials to
+access them. This page allows the user to specify the credentials for accessing
+any cloud provider. In the list the user can edit, delete and enable or disable
+the selected cloud credentials.&lt;/p>
 &lt;p>&lt;img src="dash_cred_list.png" alt="List of Cloud Credentials">&lt;/p>
 &lt;p>Editing or adding the credentials will show a modal form where the user has the
 ability to specify all the parameters needed to access the supported cloud providers.
