@@ -83,7 +83,7 @@ For example we can use RADL to define a simple VM with 1 CPU, 1 GB of RAM
 using the EGI Ubuntu 20.04 image.
 
 ```shell
-network publica (outbound = 'yes')
+network public (outbound = 'yes')
 
 system node (
 cpu.count>=1 and
