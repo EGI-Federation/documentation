@@ -32,7 +32,7 @@ $ docker run --rm -ti -v "$PWD:/tmp/im" grycap/im-client \
   -r https://server.com:8800 -a /tmp/im/auth.dat list
 ```
 
-### CONFIGURATION
+### Configuration
 
 To avoid typing the parameters in all the client calls, the user can define a
 config file `im_client.cfg` in the current directory or a file `.im_client.cfg`
