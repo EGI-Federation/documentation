@@ -7,7 +7,7 @@ description: >
 ---
 
 
-You can find here documentation on how Getting started with IM Command-Line
+You can find here documentation covering getting started with IM Command-Line
 Interface on EGI Cloud Compute sites. Full documentation at
 [IM CLI documentation](https://imdocs.readthedocs.io/en/latest/client.html)
 
@@ -15,34 +15,32 @@ Interface on EGI Cloud Compute sites. Full documentation at
 
 ### Install with pip
 
-You only have to call the install command of the pip tool with the IM-client
+You only have to call the install command of the `pip` tool with the `IM-client`
 package.
 
 ```shell
-pip install IM-client
+$ pip install IM-client
 ```
 
 ### IM-Client Docker image
 
-The IM Client has an official Docker container image available in Docker Hub
+The IM Client has an official Docker container image available on Docker Hub
 that can be used instead of installing the CLI. You can use it by typing:
 
-<!-- markdownlint-disable line-length -->
 
 ```shell
-$ docker run --rm -ti -v "$PWD:/tmp/im" grycap/im-client -r https://server.com:8800 -a /tmp/im/auth.dat list
+$ docker run --rm -ti -v "$PWD:/tmp/im" grycap/im-client \
+  -r https://server.com:8800 -a /tmp/im/auth.dat list
 ```
-
-<!-- markdownlint-disable line-length -->
 
 ### CONFIGURATION
 
-To avoid typing the parameters in all the client calls. The user can define a
-config file "im_client.cfg" in the current directory or a file ".im_client.cfg"
+To avoid typing the parameters in all the client calls, the user can define a
+config file `im_client.cfg` in the current directory or a file `.im_client.cfg`
 in their home directory. In the config file the user can specify the following
 parameters:
 
-```shell
+```ini
 [im_client]
 restapi_url=https://appsgrycap.i3m.upv.es:31443/im
 auth_file=auth.dat
@@ -50,49 +48,41 @@ auth_file=auth.dat
 
 ### Authentication data file
 
-The authorization file stores in plain text the credentials to access the cloud
-providers, and the IM service. Each line of the file is composed by pairs of key
-and value separated by semicolon, and refers to a single credential. The key and
-value should be separated by " = ", that is an equals sign preceded and followed
-by one whitespace at least. The following lines shows the credentials needed to
-access an EGI Cloud Compute site:
+The authorization file stores, in plain text, the credentials used to access the
+cloud providers, and the IM service. Each line of the file is composed by pairs
+of key and value separated by semicolon, and refers to a single credential. The
+key and value should be separated by ` = `, that is an equals sign preceded and
+followed by one whitespace at least. The following lines shows the credentials
+needed to access an EGI Cloud Compute site:
 
-<!-- markdownlint-disable line-length -->
 
 ```shell
 type = InfrastructureManager; token = egi_aai_token_value
 id = egi; type = EGI; host = CESGA; vo = vo.access.egi.eu; token = egi_aai_token_value
 ```
 
-<!-- markdownlint-disable line-length -->
-
-The value of ``egi_aai_token_value`` must be replace with a valid EGI Check-in
-access token. Users of EGI Check-in can getall the information needed to obtain
+The value of `egi_aai_token_value` must be replaced with a valid EGI Check-in
+access token. Users of EGI Check-in can get all the information needed to obtain
 access tokens, by visiting [Check-in FedCloud client](https://aai.egi.eu/fedcloud/).
 
-Also [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/) can be used to get
-allways a valid access token:
-
-<!-- markdownlint-disable line-length -->
+[oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/) can be used to get
+a valid access token:
 
 ```shell
 id = egi; type = EGI; host = CESGA; vo = vo.access.egi.eu; token = command(oidc-token OIDC_ACCOUNT)
 ```
 
-<!-- markdownlint-disable line-length -->
-
 ### Create and Manage an infrastructure
 
-To create a virtual infrastructure you have to describe a document with the
-requirements of the resources requested. IM supports its native language
+To create a virtual infrastructure you have to describe a file documenting
+the required resources. IM supports its native language
 [RADL](https://imdocs.readthedocs.io/en/latest/radl.html) and the
-[OASIS TOSCA Simple Profile in YAML Version 1.0](http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd02/TOSCA-Simple-Profile-YAML-v1.0-csprd02.html). In the IM GitHub repo
-you can find some [examples](https://github.com/grycap/im/tree/master/examples).
+[OASIS TOSCA Simple Profile in YAML Version 1.0](http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd02/TOSCA-Simple-Profile-YAML-v1.0-csprd02.html). 
+You can find some examples in the
+[IM GitHub repo](https://github.com/grycap/im/tree/master/examples).
 
 For example we can use RADL to define a simple VM with 1 CPU, 1 GB of RAM
 using the EGI Ubuntu 20.04 image.
-
-<!-- markdownlint-disable line-length -->
 
 ```shell
 network publica (outbound = 'yes')
@@ -116,45 +106,44 @@ configure wn (
 deploy node 1
 ```
 
-Then we can call the ``create`` operation of the IM client tool:
+Then we can call the `create` operation of the IM client tool:
 
 ```shell
-im_client.py create infra.radl
+$ im_client.py create infra.radl
 Secure connection with: https://appsgrycap.i3m.upv.es:31443/im 
 Infrastructure successfully created with ID: 457273ea-85e4-11ec-aa81-faaae69bc911
 ```
 
-Then we can call the ``create`` operation of the IM client tool:
+Then we can call get the currrent state of infrastructure using the `getstate`
+operation of the IM client tool:
 
 ```shell
-im_client.py getstate 457273ea-85e4-11ec-aa81-faaae69bc911
+$ im_client.py getstate 457273ea-85e4-11ec-aa81-faaae69bc911
 Secure connection with: https://appsgrycap.i3m.upv.es:31443/im 
 The infrastructure is in state: pending
 VM ID: 0 is in state: pending.
 ```
 
-<!-- markdownlint-enable line-length -->
+The valid VM and infrastructure states are the following:
 
-Then valid VM and infrastructure states are the following:
-
-- ``pending``, launched, but still in initialization stage;
-- ``running``, created successfully and running, but still in the
+- `pending`, launched, but still in initialization stage;
+- `running`, created successfully and running, but still in the
   configuration stage;
-- ``configured``, running and contextualized;
-- ``unconfigured``, running but not correctly contextualized;
-- ``stopped``, stopped or suspended;
-- ``off``, shutdown or removed from the infrastructure;
-- ``failed``, an error happened during the launching; or
-- ``unknown``, unable to obtain the status.
-- ``deleting``, in the deletion process.
+- `configured`, running and contextualized;
+- `unconfigured`, running but not correctly contextualized;
+- `stopped`, stopped or suspended;
+- `off`, shutdown or removed from the infrastructure;
+- `failed`, an error happened during the launching; or
+- `unknown`, unable to obtain the status.
+- `deleting`, in the deletion process.
 
 Once the configuration step has started we can get the output of the ansible
-process using the ``getcontmsg`` operation:
+process using the `getcontmsg` operation:
 
 <!-- markdownlint-disable line-length -->
 
 ```shell
-im_client.py getcontmsg 457273ea-85e4-11ec-aa81-faaae69bc911
+$ im_client.py getcontmsg 457273ea-85e4-11ec-aa81-faaae69bc911
 Secure connection with: https://appsgrycap.i3m.upv.es:31443/im 
 Connected with: http://localhost:8800
 Msg Contextualizator: 
@@ -168,19 +157,17 @@ Launch task: wait_all_ssh
 
 ```
 
-Once the VM is booted we can access it via SSH using the ``ssh`` operation:
+Once the VM is booted we can access it via SSH using the `ssh` operation:
 
 ```shell
-im_client.py ssh 457273ea-85e4-11ec-aa81-faaae69bc911
+$ im_client.py ssh 457273ea-85e4-11ec-aa81-faaae69bc911
 ```
 
-Finally once we do not need the Infrastructure we can destroy it using the ``destroy``
+Once we no more need the Infrastructure, we can destroy it using the `destroy`
 operation:
 
 ```shell
-im_client.py destroy 457273ea-85e4-11ec-aa81-faaae69bc911
+$ im_client.py destroy 457273ea-85e4-11ec-aa81-faaae69bc911
 Secure connection with: https://appsgrycap.i3m.upv.es:31443/im 
 Infrastructure successfully destroyed
 ```
-
-<!-- markdownlint-enable line-length -->
