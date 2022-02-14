@@ -62,7 +62,7 @@ The main menu bar is located at the top of the pages:
 ### Cloud Credentials
 
 To be able to access any Cloud site the user must specify the credentials to
-access them. This page allows the user to specify the credentials for accessing 
+access them. This page allows the user to specify the credentials for accessing
 any cloud provider. In the list the user can edit, delete and enable or disable
 the selected cloud credentials.
 
