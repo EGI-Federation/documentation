@@ -138,7 +138,6 @@ The valid VM and infrastructure states are the following:
 Once the configuration step has started we can get the output of the ansible
 process using the `getcontmsg` operation:
 
-
 ```shell
 $ im_client.py getcontmsg 457273ea-85e4-11ec-aa81-faaae69bc911
 Secure connection with: https://appsgrycap.i3m.upv.es:31443/im 
