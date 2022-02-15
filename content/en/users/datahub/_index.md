@@ -4,7 +4,7 @@ type: docs
 description:
   "Documentation related to [EGI DataHub
   Service](https://www.egi.eu/services/datahub/)"
-weight: 60
+weight: 100
 ---
 
 ## Overview

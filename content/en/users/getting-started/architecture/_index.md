@@ -74,12 +74,12 @@ cloud providers at three different layers:
   - **Provisioning systems** allow users to define infrastructure as code, then
     manage and combine resources from different providers, thus enabling the
     portability of application deployments between them (e.g.
-    [Infrastructure Manager](../../cloud-compute/im) or
+    [Infrastructure Manager](../../cloud-orchestration/) or
     [Terraform](https://www.terraform.io/)), and
   - **Cloud brokers** provide matchmaking for workloads to available providers
     (e.g. the
     [INDIGO-DataCloud Orchestrator](https://indigo-dc.gitbook.io/indigo-paas-orchestrator/)).
-- Using the [VMOps dashboard](../../cloud-compute/vmops).
+- Using the [VMOps dashboard](../../cloud-compute/monitor).
 
 EGI provides ready-to-use software components to enable the federation for
 OpenStack. These components rely on public APIs of the IaaS system and use

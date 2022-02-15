@@ -1,7 +1,7 @@
 ---
 title: "Online Storage"
 type: docs
-weight: 100
+weight: 90
 description: >
   [EGI Online Storage services](https://www.egi.eu/services/online-storage/)
 ---

@@ -1,9 +1,9 @@
 ---
-title: "VMOps Dashboard"
+title: "Monitoring and Management"
 type: docs
-weight: 40
+weight: 70
 description: >
-  The VMOPs Dashboard for management of VMs on the federation
+  Use VMOPs Dashboard to monitor and manage VMs in the EGI Cloud
 ---
 
 The [EGI Application Database (AppDB)](https://appdb.egi.eu/) includes a web GUI

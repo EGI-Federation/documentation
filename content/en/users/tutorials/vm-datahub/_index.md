@@ -1,7 +1,7 @@
 ---
 title: "Access DataHub from a Virtual machine"
 type: docs
-weight: 30
+weight: 40
 description: >
   Use data in EGI DataHub from a virtual machine
 ---

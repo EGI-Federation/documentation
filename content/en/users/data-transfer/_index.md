@@ -4,7 +4,7 @@ type: docs
 description:
   "Documentation related to [EGI Data
   Transfer](https://www.egi.eu/services/data-transfer/)"
-weight: 70
+weight: 110
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 title: "Cloud Orchestration"
 type: docs
-weight: 45
+weight: 80
 description: >
   Automating deployment of virtual infrastructures on EGI Cloud
 ---
