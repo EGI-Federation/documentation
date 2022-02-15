@@ -407,25 +407,7 @@ contextualisation options of the wizard described above).&lt;/p>
 &lt;p>VMOps was presented in one of the &lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>
 in 2020. The &lt;a href="https://indico.egi.eu/event/5272/">indico page&lt;/a> contains more
 details and there is also a video recording available on
-&lt;a href="https://youtu.be/0YuuKA_4pSM">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: Infrastructure Manager</title><link>/users/cloud-compute/im/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/cloud-compute/im/</guid><description>
-&lt;p>&lt;a href="https://www.grycap.upv.es/im">Infrastructure Manager&lt;/a> is a tool that
-streamlines the access and the usability of IaaS clouds by automating the
-configuration, deployment, and monitoring of &lt;a href="../vmi">Virtual Appliances&lt;/a>.&lt;/p>
-&lt;p>It supports APIs from a large number of &lt;em>Cloud Management Frameworks (CMFs)&lt;/em>
-making user applications cloud-agnostic. In addition it integrates a
-contextualization system to enable the installation and configuration of user
-specific applications.&lt;/p>
-&lt;p>It is a service that features a web-based GUI, a XML-RPC API, a REST API and a
-command-line interface. For detailed information about Infrastructure Manager
-please visit its &lt;a href="https://imdocs.readthedocs.io">documentation pages&lt;/a>.&lt;/p>
-&lt;p>IM is integrated with the &lt;a href="../../check-in">EGI Check-in Service&lt;/a>. A very easy
-way to deploy your first Virtual Machine in the EGI Federation is using the
-&lt;a href="https://appsgrycap.i3m.upv.es:31443/im-dashboard/">web-based GUI&lt;/a>. Please see
-tutorial &lt;a href="https://imdocs.readthedocs.io/en/latest/dashboard.html#usage">here&lt;/a>.&lt;/p>
-&lt;p>Infrastructure Manager was presented in one of the
-&lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>. See more details on the
-&lt;a href="https://indico.egi.eu/event/5495/">indico page&lt;/a> and the video recording
-available on &lt;a href="https://youtu.be/Q9VsYjI1mD4">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: Using OpenStack providers</title><link>/users/cloud-compute/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/cloud-compute/openstack/</guid><description>
+&lt;a href="https://youtu.be/0YuuKA_4pSM">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: Using OpenStack providers</title><link>/users/cloud-compute/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/cloud-compute/openstack/</guid><description>
 &lt;p>&lt;a href="https://openstack.org">OpenStack&lt;/a> providers of the EGI Cloud Compute service
 offer native OpenStack features via native APIs integrated with EGI Check-in
 accounts.&lt;/p>
