@@ -87,7 +87,7 @@ the VO manager.&lt;/li>
 &lt;p>All basic features regarding members management are available in the
 administrative GUI under the &lt;em>VO manager&lt;/em> section. All features are
 described in the following sections in more detail.&lt;/p>
-&lt;h5 id="how-to">HOW-TO&lt;/h5>
+&lt;h4 id="how-to">HOW-TO&lt;/h4>
 &lt;ul>
 &lt;li>Add/Remove VO members&lt;/li>
 &lt;li>Search and list VO members&lt;/li>
@@ -97,7 +97,7 @@ described in the following sections in more detail.&lt;/p>
 &lt;p>Users can register in your VO using same registration link you were provided
 during the VO registration. It has the following format:&lt;/p>
 &lt;p>&lt;code>https://perun.egi.eu/egi/registrar/?vo=[voName]&lt;/code> where &lt;code>[voName]&lt;/code> is to be
-replaced with your actual VO name (as displayed on VO Id card in
+replaced with your actual VO name (as displayed on VO ID card in
 OperationsPortal).&lt;/p>
 &lt;p>Alternatively you can configure invitation notification template and
 send registration link to the users directly from Perun.&lt;/p>
@@ -182,7 +182,7 @@ combine them as you need. Groups' names must be unique on each level of
 hierarchy and group full name consist of all groups names on the path
 from the root divided by colon &lt;code>:&lt;/code>, e.g. &lt;code>projectX:students&lt;/code>.&lt;/p>
 &lt;p>Top-level groups can be created only by the VO managers.&lt;/p>
-&lt;h5 id="how-to-3">HOW-TO&lt;/h5>
+&lt;h4 id="how-to-3">HOW-TO&lt;/h4>
 &lt;ul>
 &lt;li>Search and display groups&lt;/li>
 &lt;li>Create/delete groups and subgroups&lt;/li>
@@ -213,7 +213,7 @@ remove relation between the groups.&lt;/p>
 chosen from the available VO members as described in the above How-To.&lt;/p>
 &lt;p>They can also register themselves using similar link like for VO
 registrations: &lt;code>https://perun.egi.eu/egi/registrar/?vo=[voName]&amp;amp;group= [groupName]&lt;/code> where &lt;code>[voName]&lt;/code> is to be replaced with your actual VO name (as
-displayed on VO Id card in OperationsPortal) and &lt;code>[groupName]&lt;/code> is to be
+displayed on VO ID card in OperationsPortal) and &lt;code>[groupName]&lt;/code> is to be
 replaced with the groups full name (including hierarchy), e.g.:
 &lt;code>projectX:students&lt;/code>.&lt;/p>
 &lt;p>All settings related to the group registration are basically the same as for
@@ -270,7 +270,7 @@ information.&lt;/p>
 entitlement value, so using correct naming for the group is required.&lt;/p>
 &lt;p>Association of specific VO/group membership value with the role or access
 rights within the service are responsibility of the service provider.&lt;/p>
-&lt;h5 id="example">Example&lt;/h5>
+&lt;h4 id="example">Example&lt;/h4>
 &lt;p>Let&amp;rsquo;s assume, that user is a member of &lt;code>myvo.egi.eu&lt;/code> VO and the top-level group
 &lt;code>vm_operator&lt;/code> in it. Resulting &lt;em>eduPersonEntitlement&lt;/em> will look like this:&lt;/p>
 &lt;p>&lt;code>urn:mace:egi.eu:group:myvo.egi.eu:vm_operator:role=member#aai.egi.eu&lt;/code>&lt;/p>

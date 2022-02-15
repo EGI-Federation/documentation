@@ -65,14 +65,14 @@ with different providers in a uniform way. These tools include:
 &lt;li>&lt;strong>Provisioning systems&lt;/strong> allow users to define infrastructure as code, then
 manage and combine resources from different providers, thus enabling the
 portability of application deployments between them (e.g.
-&lt;a href="../../cloud-compute/im">Infrastructure Manager&lt;/a> or
+&lt;a href="../../cloud-orchestration/">Infrastructure Manager&lt;/a> or
 &lt;a href="https://www.terraform.io/">Terraform&lt;/a>), and&lt;/li>
 &lt;li>&lt;strong>Cloud brokers&lt;/strong> provide matchmaking for workloads to available providers
 (e.g. the
 &lt;a href="https://indigo-dc.gitbook.io/indigo-paas-orchestrator/">INDIGO-DataCloud Orchestrator&lt;/a>).&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Using the &lt;a href="../../cloud-compute/vmops">VMOps dashboard&lt;/a>.&lt;/li>
+&lt;li>Using the &lt;a href="../../cloud-compute/monitor">VMOps dashboard&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;p>EGI provides ready-to-use software components to enable the federation for
 OpenStack. These components rely on public APIs of the IaaS system and use
@@ -715,7 +715,7 @@ and extract site-specific information from unscoped/scoped tokens&lt;/li>
 allows management of site configurations&lt;/li>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.openstack">&lt;strong>OpenStack&lt;/strong>&lt;/a>
 can perform commands on &lt;a href="../openstack">OpenStack services&lt;/a> deployed to sites&lt;/li>
-&lt;li>&lt;strong>EC3&lt;/strong> allows deploying &lt;a href="../../cloud-compute/ec3">elastic cloud compute clusters&lt;/a>&lt;/li>
+&lt;li>&lt;strong>EC3&lt;/strong> allows deploying &lt;a href="../../ec3">elastic cloud compute clusters&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="installation">Installation&lt;/h3>
 &lt;p>The FedCloud client can be installed with the &lt;code>pip3&lt;/code> Python package manager
