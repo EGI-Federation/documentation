@@ -16,7 +16,7 @@ But creating VMs happens so often in the EGI Cloud that tools were developed to
 capture the provisioning of these VMs, and allow users to recreate them in a flash,
 in a **deterministic** and **repeatable** way, using an Infrastructure-as-Code (IaC) approach.
 
-Automating this activity will help researchers to: 
+Automating this activity will help researchers to:
 
 - Not forget important configuration (e.g. the size and type of the hardware resources needed).
 - Ensure the same steps are performed, in the same order (e.g. making sure the correct
