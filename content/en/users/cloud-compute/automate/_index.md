@@ -3,28 +3,26 @@ title: "Automating Deployments"
 type: docs
 weight: 70
 description: >
-  Use Infrastructure Manager to automate VM deployment in the EGI Cloud
+  Use Infrastrucure-as-Code in the EGI Cloud
 ---
 
-[Infrastructure Manager](https://www.grycap.upv.es/im) (IM) is a tool that
-streamlines the access and the usability of IaaS clouds by automating the
-configuration, deployment, and monitoring of [Virtual Appliances](../vmi).
+The [OpenStack](../../getting-started/openstack/) sites in the EGI Cloud that
+provide compute resources to run virtual machines (VMs) allow nearly everything
+to be done via an Application Programming Interface (API) or a
+[command line interface](../../getting-started/cli/) (CLI).
+This means that repetitive tasks or complex architectures can be turned into shell scripts.
 
-It supports APIs from a large number of _Cloud Management Frameworks (CMFs)_
-making user applications cloud-agnostic. In addition it integrates a
-contextualization system to enable the installation and configuration of user
-specific applications.
+But creating VMs happens so often in the EGI Cloud that tools were developed to
+capture the provisioning of these VMs, and allow users to recreate them in a flash,
+in a **deterministic** and **repeatable** way, using an Infrastructure-as-Code (IaC) approach.
 
-It is a service that features a web-based GUI, a XML-RPC API, a REST API and a
-command-line interface. For detailed information about Infrastructure Manager
-please visit its [documentation pages](https://imdocs.readthedocs.io).
+Automating this activity will help researchers to: 
 
-IM is integrated with the [EGI Check-in Service](../../check-in). A very easy
-way to deploy your first Virtual Machine in the EGI Federation is using the
-[web-based GUI](https://appsgrycap.i3m.upv.es:31443/im-dashboard/). Please see
-tutorial [here](https://imdocs.readthedocs.io/en/latest/dashboard.html#usage).
+- Not forget important configuration (e.g. the size and type of the hardware resources needed).
+- Ensure the same steps are performed, in the same order (e.g. making sure the correct
+  datasets are attached to each VM).
+- Easily share scientific pipelines with collaborators.
+- Make scientific applications cloud agnostic.
 
-Infrastructure Manager was presented in one of the
-[EGI Webinars](https://www.egi.eu/webinars/). See more details on the
-[indico page](https://indico.egi.eu/event/5495/) and the video recording
-available on [YouTube](https://youtu.be/Q9VsYjI1mD4).
+To automate VM deployment, users can use any of the [cloud orchestrators](../../cloud-orchestration/)
+available in the EGI Cloud.
