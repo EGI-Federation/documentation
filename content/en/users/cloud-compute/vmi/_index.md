@@ -172,16 +172,16 @@ See also
 Whenever possible, automate the process of creating your images. This will allow
 you to:
 
-- get reproducible results
-- avoid tedious manual installation steps
-- quickly produce updated versions of your images.
+- Get reproducible results
+- Avoid tedious manual installation steps
+- Quickly produce updated versions of your images
 
 EGI uses [packer](https://packer.io) as a tool for automating the creation of
 our base images. This tool can use [VirtualBox](https://www.virtualbox.org/) as
 a hypervisor for the creation of the images and guarantees identical results
 under different platforms and providers.
 
-Check the
+Check out the
 [fedcloud-vmi-templates GitHub repository](https://github.com/EGI-Federation/fedcloud-vmi-templates)
-with all the packer recipes used to build our images and re-use them as needed
+for all the `packer` recipes used to build our images, re-use them as needed
 for your images.
