@@ -40,7 +40,8 @@ following features:
 Administrative GUI for VO managers is available at [https://perun.egi.eu](https://perun.egi.eu)
 
 It is assumed that VO managers and members have already registered their EGI
-Check-in account (A step-by-step guide is provided in this [link](../signup)).
+Check-in account (A step-by-step guide is provided in this [link](../../signup)
+).
 
 Due to historical reasons (wide adoption of VOMS) users might have their
 user entry in Perun already directly associated with their personal
