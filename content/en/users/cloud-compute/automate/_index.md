@@ -9,7 +9,7 @@ description: >
 The [OpenStack](../../getting-started/openstack/) sites in the EGI Cloud that
 provide compute resources to run virtual machines (VMs) allow nearly everything
 to be done via an Application Programming Interface (API) or a
-[command line interface](../../getting-started/cli/) (CLI).
+[command-line interface](../../getting-started/cli/) (CLI).
 This means that repetitive tasks or complex architectures can be turned into shell scripts.
 
 But creating VMs happens so often in the EGI Cloud that tools were developed to
