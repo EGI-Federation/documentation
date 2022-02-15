@@ -20,7 +20,7 @@ The `pakiti-client` can be used to send package informations to
 [pakiti.egi.eu](https://pakiti.egi.eu).
 
 If you have the proper credentials in the
-[Configuration Database](../../configuration-database) and submit your report
+[Configuration Database](../../../configuration-database) and submit your report
 with the correct `SITE_NAME`, you, your _NGI-CSIRT_ and the _EGI-CSIRT_ will be
 able to monitor the packages installed on your hosts and potentially
 vulnerabilities. The results can be accessed on the
