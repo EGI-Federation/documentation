@@ -177,7 +177,7 @@ you to:
 - Quickly produce updated versions of your images
 
 EGI uses [packer](https://packer.io) as a tool for automating the creation of
-our base images. This tool can use [VirtualBox](https://www.virtualbox.org/) as
+our base images. This tool can use [VirtualBox](https://virtualbox.org/) as
 a hypervisor for the creation of the images and guarantees identical results
 under different platforms and providers.
 
