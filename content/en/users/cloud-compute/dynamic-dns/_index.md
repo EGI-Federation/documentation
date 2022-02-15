@@ -1,9 +1,9 @@
 ---
 title: "Dynamic DNS"
 type: docs
-weight: 80
+weight: 60
 description: >
-  Dynamic DNS for VMs in EGI Cloud
+  Dynamic domain names for VMs in the EGI Cloud
 ---
 
 The Dynamic DNS service provides a unified, federation-wide Dynamic DNS support

@@ -1,9 +1,9 @@
 ---
 title: "GPUs"
 type: docs
-weight: 70
+weight: 55
 description: >
-  GPU resources on EGI Cloud
+  GPU resources in the EGI Cloud
 ---
 
 ## GPU resources on EGI Cloud
@@ -36,7 +36,7 @@ with your Check-In account. More information is available in the
 
 GPUs sites can be accessed in different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like the OpenStack Horizon
-dashboards, [VMOps dashboard](../vmops), or [Infrastructure manager](../im).
+dashboards, [VMOps Dashboard](../monitor), or [Infrastructure manager](../automate).
 
 It is also possible to use the
 [fedcloudclient](https://fedcloudclient.fedcloud.eu/) for CLI access. Below is

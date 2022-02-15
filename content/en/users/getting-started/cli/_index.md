@@ -40,7 +40,7 @@ FedCloud client has the following modules (features):
   allows management of site configurations
 - [**OpenStack**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.openstack)
   can perform commands on [OpenStack services](../openstack) deployed to sites
-- **EC3** allows deploying [elastic cloud compute clusters](../../cloud-compute/ec3)
+- **EC3** allows deploying [elastic cloud compute clusters](../../ec3)
 
 ### Installation
 
