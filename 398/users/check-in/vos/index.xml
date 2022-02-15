@@ -63,7 +63,8 @@ or provisioned to the EGI services&lt;/li>
 &lt;h2 id="vo-management">VO management&lt;/h2>
 &lt;p>Administrative GUI for VO managers is available at &lt;a href="https://perun.egi.eu">https://perun.egi.eu&lt;/a>&lt;/p>
 &lt;p>It is assumed that VO managers and members have already registered their EGI
-Check-in account (A step-by-step guide is provided in this &lt;a href="../signup">link&lt;/a>).&lt;/p>
+Check-in account (A step-by-step guide is provided in this &lt;a href="../../signup">link&lt;/a>
+).&lt;/p>
 &lt;p>Due to historical reasons (wide adoption of VOMS) users might have their
 user entry in Perun already directly associated with their personal
 certificate. For such cases direct authentication using the certificates is
