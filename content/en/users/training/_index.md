@@ -1,7 +1,8 @@
 ---
-title: "Training Infrastructure"
+title: Training Infrastructure
+linkTitle: Training
 type: docs
-weight: 120
+weight: 150
 description: >
   The training infrastructure on EGI Cloud
 ---

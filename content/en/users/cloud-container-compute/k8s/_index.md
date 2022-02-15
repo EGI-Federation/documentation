@@ -21,7 +21,7 @@ client installed to get EC3 templates needed to start deployment.
 
 Your kubernetes deployment needs to be performed at an specific provider (site)
 and project. Discover them using `fedcloud` as described in the
-[EC3 tutorial](../../cloud-compute/ec3).
+[EC3 tutorial](../../ec3).
 
 ### EC3 Templates
 
@@ -36,7 +36,7 @@ fedcloud ec3 init --site <your site> --vo <your vo>
 ```
 
 You will also need a base image template for the deployment. Please refer to the
-[EC3 tutorial](../../cloud-compute/ec3) to create such file. Below you can see
+[EC3 tutorial](../../ec3) to create such file. Below you can see
 an example for IFCA-LCG2 site with project related to `vo.access.egi.eu`:
 
 <!-- markdownlint-disable line-length -->

@@ -1,7 +1,7 @@
 ---
 title: "Create your first Virtual Machine"
 type: docs
-weight: 70
+weight: 10
 description: >
   Step by step guide to get your first Virtual Machine up and running
 ---
@@ -35,8 +35,9 @@ AppDB is one of the service in the
 
 Once your membership to a VO has been approved you are ready to create your first
 Virtual Machine. There are several ways to achieve this. The simplest way is to
-use a web dashboard like [VMOps Dashboard](../../cloud-compute/vmops/) or
-[Infrastructure Manager](../../cloud-compute/im/). On the other hand, advanced users
+use a web dashboard like [VMOps Dashboard](../../cloud-compute/monitor) or
+[Infrastructure Manager Dashboard](../../cloud-orchestration/dashboard).
+On the other hand, advanced users
 may prefer to use the [command-line interface](../../getting-started/cli).
 
 To know more about the [Cloud Compute](https://www.egi.eu/services/cloud-compute/)

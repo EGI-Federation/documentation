@@ -2,7 +2,7 @@
 title: "Multi-VO Rucio for data management"
 type: docs
 linkTitle: "Rucio"
-weight: 100
+weight: 120
 description: >-
   Multi-VO Rucio Documentation for new users to follow to get access to, and use
   Rucio.
