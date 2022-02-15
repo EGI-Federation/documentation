@@ -3,7 +3,7 @@ title: "Cloud Orchestration"
 type: docs
 weight: 45
 description: >
-  Using Infrastructure Manager to orchestrate VM deployment in the EGI Cloud
+  Automating deployment of virtual infrastructures on EGI Cloud
 ---
 
 [Infrastructure Manager](https://www.grycap.upv.es/im) is a tool that
