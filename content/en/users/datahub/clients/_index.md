@@ -6,32 +6,34 @@ description: "Documentation related to [EGI DataHub](https://datahub.egi.eu/)"
 weight: 10
 ---
 
-The Oneclient code and basic documentation are available on
-[GitHub](https://github.com/onedata/oneclient).
+The EGI DataHub spaces can be accessed via web interface, the `oneclient`
+component or the API.
 
-The official documentation is hosted on the
-[Onedata homepage](https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html).
+The official documentation for `oneclient` is hosted on the
+[Onedata homepage](https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html),
+and a specific [tutorial](../../tutorials/vm-datahub) on how to install and use it
+from a Virtual Machine is also available.
 
 ## Using the web interface
 
-![Selecting EGI to connect using EGI Check-in](datahub-connect-check-in.png)
-
 Using EGI Check-in it\'s possible to connect with your institute credentials.
 
-![EGI DataHub landing page](datahub-welcome-screen.png)
+![Selecting EGI to connect using EGI Check-in](datahub-connect-check-in.png)
 
 On this page it's possible to have an overview of all the spaces and their
 supporting providers.
 
-![Information about spaces supported by a Oneprovider](datahub-space-info.png)
+![EGI DataHub landing page](datahub-welcome-screen.png)
 
 On this capture, the information about the spaces supported by a specific
 provider is displayed.
 
-![Information about spaces supported by a Oneprovider](datahub-browse-space.png)
+![Information about spaces supported by a Oneprovider](datahub-space-info.png)
 
 The data space can be managed (i.e. uploading/downloading/managing files and
 metadata, managing space access) using the web browser.
+
+![Information about spaces supported by a Oneprovider](datahub-browse-space.png)
 
 ## Generating tokens for using Oneclient or APIs
 

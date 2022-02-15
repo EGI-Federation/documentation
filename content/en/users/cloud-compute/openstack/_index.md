@@ -11,7 +11,7 @@ offer native OpenStack features via native APIs integrated with EGI Check-in
 accounts.
 
 The extensive [OpenStack user documentation](https://docs.openstack.org/user/)
-includes details on every OpenStack project, most providers offer access to:
+includes details on every OpenStack project most providers offer access to:
 
 - [Keystone](https://docs.openstack.org/keystone/latest/), for identity
 - [Nova](https://docs.openstack.org/nova/latest/), for VM management
@@ -117,9 +117,9 @@ sections below some useful commands for the EGI Cloud.
 
 ### Registering an existing ssh key
 
-It\'s possible to register an ssh key that can later be used as the default ssh
+It's possible to register an ssh key that can later be used as the default ssh
 key for the default user of the VM (via the `--key-name` argument to
-`openstack server create`:
+`openstack server create`):
 
 ```shell
 openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
@@ -153,7 +153,7 @@ openstack floating ip delete <IP>
 ```
 
 - [OpenStack: launch an instance on the provider network](https://docs.openstack.org/mitaka/install-guide-obs/launch-instance-provider.html)
-- [OpenStack: Manging IP addresses](https://docs.openstack.org/ocata/user-guide/cli-manage-ip-addresses.html)
+- [OpenStack: Managing IP addresses](https://docs.openstack.org/ocata/user-guide/cli-manage-ip-addresses.html)
 
 ### Using cloud-init
 
@@ -195,7 +195,7 @@ clone a given VM.
 openstack server image create <your VM> --name <name of the snapshot>
 ```
 
-Once the snapshot is ready (`openstack image show <name of the snapshot>` will
+Once the snapshot is ready `openstack image show <name of the snapshot>` will
 give your the details you can use it as any other image at the provider:
 
 ```shell
