@@ -156,8 +156,8 @@ ticket against Helpdesk (GGUS) support unit.&lt;/p>
 &lt;li>&lt;a href="../user-guide">GGUS user guide&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Short-Guide">GGUS short guide&lt;/a>&lt;/li>
 &lt;li>&lt;a href="../support-staff-guide">GGUS support staff guide&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Internal: Features</title><link>/internal/helpdesk/features/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/</guid><description>
-&lt;p>The pages of this section detail multiple features of the Helpdesk.&lt;/p></description></item><item><title>Internal: Support Staff Guide</title><link>/internal/helpdesk/support-staff-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/support-staff-guide/</guid><description>
+&lt;/ul></description></item><item><title>Internal: Helpdesk features</title><link>/internal/helpdesk/features/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/</guid><description>
+&lt;p>The pages of this section detail multiple features of the &lt;a href="../">EGI Helpdesk&lt;/a>.&lt;/p></description></item><item><title>Internal: Support Staff Guide</title><link>/internal/helpdesk/support-staff-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/support-staff-guide/</guid><description>
 &lt;h2 id="whats-new-in-the-latest-release">What’s new in the latest release?&lt;/h2>
 &lt;p>Please see the &lt;a href="https://ggus.eu/index.php?mode=release_notes">release notes&lt;/a> for
 further information.&lt;/p>
@@ -207,11 +207,10 @@ changes by clicking on button Update now. Additional information on GGUS
 accounts is available &lt;a href="../account-and-privileges">here&lt;/a>.&lt;/p>
 &lt;h3 id="support-staff-page">Support staff page&lt;/h3>
 &lt;p>Access to the support staff page is restricted to users having
-&lt;a href="../account-and-privileges">support privileges&lt;/a>.
-Depending on further privileges people may have there are links to e.g. news
-administration and other features. All support staffs can use the GGUS report
-generator and the GGUS ticket timeline tool as well as links to other
-information useful for support staffs.&lt;/p>
+&lt;a href="../account-and-privileges">support privileges&lt;/a>. Depending on further privileges
+people may have there are links to e.g. news administration and other features.
+All support staffs can use the GGUS report generator and the GGUS ticket
+timeline tool as well as links to other information useful for support staffs.&lt;/p>
 &lt;p>&lt;img src="GGUS_Support_Staff.png" alt="GGUS Support Staff">&lt;/p>
 &lt;h4 id="ggus-ticket-timeline-tool">GGUS ticket timeline tool&lt;/h4>
 &lt;p>The link to the GGUS ticket timeline tool is located on support staff page. The
@@ -241,14 +240,28 @@ about the same issue.&lt;/li>
 &lt;p>GGUS offers two fields which help to classify various tickets into categories
 and types.&lt;/p>
 &lt;h5 id="ticket-categories">Ticket categories&lt;/h5>
-&lt;p>The ticket category is for differentiating between issues and service requests.
-This distinction is helpful for supporters as well as for the GGUS reporting,
-e.g. for excluding test tickets. The ticket category field offers four different
-values:&lt;/p>
+&lt;p>The ticket category is for differentiating between incidents and service
+requests. This distinction is helpful for supporters as well as for the GGUS
+reporting, e.g. for excluding test tickets. Other categories were added over the
+time. Currently the following values are available for selection:&lt;/p>
 &lt;ul>
-&lt;li>Incident (for issues),&lt;/li>
-&lt;li>Change Request (for service requests)&lt;/li>
-&lt;li>Documentation&lt;/li>
+&lt;li>Incident (see the
+&lt;a href="https://ims.egi.eu/display/EGIG/Incident">FitSM definition&lt;/a>)&lt;/li>
+&lt;li>Service request (see the
+&lt;a href="https://ims.egi.eu/display/EGIG/Service+request">FitSM definition&lt;/a>). List of
+service requests for the
+&lt;a href="https://confluence.egi.eu/display/EGISLM/EGI+Internal+Service+requests">internal&lt;/a>
+and for the
+&lt;a href="https://confluence.egi.eu/display/EGISLM/EGI+Service+requests">external&lt;/a>
+services of the EGI portfolio&lt;/li>
+&lt;li>Documentation (used to request creation and update on documentation.)&lt;/li>
+&lt;li>Release (used when a new version of the operational tools is ready to be
+tested; see
+&lt;a href="https://confluence.egi.eu/display/EGIPP/RDM2+Regular+release+process">RDM2 Regular release process&lt;/a>)&lt;/li>
+&lt;li>CMS Internal (for cms VO specific tickets)&lt;/li>
+&lt;li>EGI Coordination/Planning (to track activities not falling into the service
+request definition)&lt;/li>
+&lt;li>WLCG Coordination/Planning&lt;/li>
 &lt;li>Test&lt;/li>
 &lt;/ul>
 &lt;p>When submitting a ticket the ticket category field is not visible. It defaults
@@ -419,8 +432,8 @@ new entry in ticket history:&lt;/p>
 diary are marked with green colour, entries of the internal diary with orange
 colour.&lt;/p>
 &lt;h4 id="ticket-modify-section">Ticket modify section&lt;/h4>
-&lt;p>The ticket modification area offers several fields for modifying a ticket.
-The fields are described in detail below.&lt;/p>
+&lt;p>The ticket modification area offers several fields for modifying a ticket. The
+fields are described in detail below.&lt;/p>
 &lt;p>&lt;img src="GGUS_Modifysection_Support.png" alt="Ticket modify section">&lt;/p>
 &lt;ul>
 &lt;li>Assign ticket to support unit is showing all support units involved in GGUS.&lt;/li>

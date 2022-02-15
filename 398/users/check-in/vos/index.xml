@@ -87,7 +87,7 @@ the VO manager.&lt;/li>
 &lt;p>All basic features regarding members management are available in the
 administrative GUI under the &lt;em>VO manager&lt;/em> section. All features are
 described in the following sections in more detail.&lt;/p>
-&lt;p>&lt;strong>HOW-TO&lt;/strong>&lt;/p>
+&lt;h5 id="how-to">HOW-TO&lt;/h5>
 &lt;ul>
 &lt;li>Add/Remove VO members&lt;/li>
 &lt;li>Search and list VO members&lt;/li>
@@ -109,7 +109,7 @@ when email is not verified by the user in timely manner).&lt;/p>
 programmable and can perform any specific and complex actions with the
 users and the VO. Please consult perun user support using GGUS in case you
 need this feature.&lt;/p>
-&lt;p>&lt;strong>HOW-TO&lt;/strong>&lt;/p>
+&lt;h5 id="how-to-1">HOW-TO&lt;/h5>
 &lt;ul>
 &lt;li>Configure registration form and notifications&lt;/li>
 &lt;li>Approve/reject submitted registration&lt;/li>
@@ -164,7 +164,7 @@ g. &lt;code>+2y&lt;/code>, &lt;code>+6m&lt;/code>, meaning 2 years or 6 months r
 In both cases you also need to define timespan, how long before the
 membership expiration are members allowed to ask for the renewal (e.g. &lt;code>1m&lt;/code>,
 meaning one month).&lt;/p>
-&lt;p>&lt;strong>HOW-TO&lt;/strong>&lt;/p>
+&lt;h5 id="how-to-2">HOW-TO&lt;/h5>
 &lt;ul>
 &lt;li>Change VO member status and expiration&lt;/li>
 &lt;li>Set VO membership expiration rules&lt;/li>
@@ -182,7 +182,7 @@ combine them as you need. Groups' names must be unique on each level of
 hierarchy and group full name consist of all groups names on the path
 from the root divided by colon &lt;code>:&lt;/code>, e.g. &lt;code>projectX:students&lt;/code>.&lt;/p>
 &lt;p>Top-level groups can be created only by the VO managers.&lt;/p>
-&lt;p>&lt;strong>HOW-TO&lt;/strong>&lt;/p>
+&lt;h5 id="how-to-3">HOW-TO&lt;/h5>
 &lt;ul>
 &lt;li>Search and display groups&lt;/li>
 &lt;li>Create/delete groups and subgroups&lt;/li>
@@ -203,9 +203,9 @@ the group at the same time.&lt;/p>
 GUI using italic font in the group members list. In order to remove them
 from the group you have to remove them from the sourcing subgroup first or
 remove relation between the groups.&lt;/p>
-&lt;p>&lt;strong>HOW-TO&lt;/strong>&lt;/p>
+&lt;h5 id="how-to-4">HOW-TO&lt;/h5>
 &lt;ul>
-&lt;li>Search and display group members&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/14417974/Search+and+display+group+members">Search and display group members&lt;/a>&lt;/li>
 &lt;li>Add/remove group members&lt;/li>
 &lt;/ul>
 &lt;h4 id="accepting-new-group-members">Accepting new group members&lt;/h4>
@@ -225,7 +225,7 @@ accepted by group manager (or automatically).
 In case user is not a member of VO, registration application offers VO
 registration first and once submitted user can register for the group.
 VO registration must be then approved first.&lt;/p>
-&lt;p>&lt;strong>HOW-TO&lt;/strong>&lt;/p>
+&lt;h5 id="how-to-5">HOW-TO&lt;/h5>
 &lt;ul>
 &lt;li>Configure registration form and notifications&lt;/li>
 &lt;li>Approve/reject submitted registration&lt;/li>
@@ -242,27 +242,64 @@ information is provided to the services about the user.&lt;/li>
 group is dependent on his/hers status in all child groups and &lt;code>VALID&lt;/code>
 status takes preference.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>HOW-TO&lt;/strong>&lt;/p>
+&lt;h5 id="how-to-6">HOW-TO&lt;/h5>
 &lt;ul>
 &lt;li>Change group member status and expiration&lt;/li>
 &lt;li>Set group membership expiration rules&lt;/li>
 &lt;li>Configure registration form and notifications&lt;/li>
 &lt;/ul>
-&lt;h3 id="access-management">Access management&lt;/h3>
+&lt;h2 id="access-management">Access management&lt;/h2>
 &lt;p>While Perun generally uses concept of &lt;em>Resources&lt;/em> to represent the access
-rights or roles (as service provider is giving them to the VO) and &lt;em>Groups&lt;/em>
-are assigned to it by the VO managers, it is not usually used like this
-within the EGI services.&lt;/p>
-&lt;p>&lt;strong>TODO&lt;/strong>&lt;/p>
-&lt;h3 id="vo-management-roles-and-their-delegation">VO management roles and their delegation&lt;/h3>
+rights and roles (as service provider is giving them to the VO) and &lt;em>Groups&lt;/em>
+are assigned to it (by the VO managers), it is not usually used like this
+within the EGI infrastructure.&lt;/p>
+&lt;p>Having &lt;em>Groups&lt;/em> and &lt;em>Resources&lt;/em> separated allows you to represent your
+community or organization structure without the conflict with the roles and
+access rights for each service. You can then more easily use one single
+group and give its members access to the various services with specific
+roles/settings. Any change to the group membership can be then reflected to
+all associated services, which is useful especially for the de-provisioning.&lt;/p>
+&lt;h3 id="egi-check-in-proxy">EGI Check-In proxy&lt;/h3>
+&lt;p>For the primary and most basic use-case, when services are behind the EGI
+Check-In proxy, access rights are based solely on VO and group membership
+information.&lt;/p>
+&lt;p>Such information is then released by the EGI Check-In proxy as
+&lt;em>eduPersonEntitlement&lt;/em> attribute conforming
+&lt;a href="https://aarc-community.org/guidelines/aarc-g002/">AARC-G002&lt;/a> specification.&lt;/p>
+&lt;p>Both VOs' short name and groups' full name are used to construct the
+entitlement value, so using correct naming for the group is required.&lt;/p>
+&lt;p>Association of specific VO/group membership value with the role or access
+rights within the service are responsibility of the service provider.&lt;/p>
+&lt;h5 id="example">Example&lt;/h5>
+&lt;p>Let&amp;rsquo;s assume, that user is a member of &lt;code>myvo.egi.eu&lt;/code> VO and the top-level group
+&lt;code>vm_operator&lt;/code> in it. Resulting &lt;em>eduPersonEntitlement&lt;/em> will look like this:&lt;/p>
+&lt;p>&lt;code>urn:mace:egi.eu:group:myvo.egi.eu:vm_operator:role=member#aai.egi.eu&lt;/code>&lt;/p>
+&lt;p>Perun doesn&amp;rsquo;t support other &lt;em>roles&lt;/em> within the groups than &lt;code>member&lt;/code>.&lt;/p>
+&lt;h3 id="voms">VOMS&lt;/h3>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-This section cover roles within the Perun. Roles in Perun have no association
-with the roles in consumed services, unless you configure it that way and
-the nature of the service supports it. For example by using groups within
-the VO and assigning roles to them.
+Please note, that because of the nature of the VOMS, users must have
+personal certificate associated with their user entry in Perun in order to
+be provisioned to the VOMS at all.
 &lt;/div>
-&lt;p>&lt;strong>TODO&lt;/strong>&lt;/p>
+&lt;p>Perun supports direct provisioning of the VOMS. In this use-case users and VOs
+are primarily managed within the Perun.
+The user data, including group memberships and roles, is then provisioned to
+the VOMS, which is used solely as a backend for the services requiring it.&lt;/p>
+&lt;p>From the VO manager perspective you are given a &lt;em>Resource&lt;/em> by the service
+provider (VOMS operator). It represents your association with the VOMS in
+Perun. You can have multiple resources and they can represent either different
+set of &lt;em>VOMS roles&lt;/em> within the same VOMS or represent different VOMS servers.&lt;/p>
+&lt;p>You can assign any of your groups to it and all users from all the
+assigned groups will be provisioned to the VOMS as members of your VO.&lt;/p>
+&lt;p>On the &lt;em>Service settings&lt;/em> page of the &lt;em>Resource&lt;/em> you can set &lt;em>VOMS roles&lt;/em>, which
+will be given to all users associated with it through all the groups.
+Similarly, you can set &lt;em>VOMS roles&lt;/em> on the Group-Resource level. Once you
+assign the group to the Resource, you can check &lt;em>Group settings&lt;/em> page of the
+&lt;em>Resource&lt;/em>, select proper Group and set &lt;em>VOMS roles&lt;/em> from there. Same group
+can have different roles for different VOMS servers like this. Also you can
+associate group from Perun with the group in VOMS by settings &lt;em>Voms group
+name&lt;/em> on the same settings page.&lt;/p>
 &lt;h2 id="faq">FAQ&lt;/h2>
 &lt;h3 id="i-need-all-vo-members-to-get-vm_operator-role-in-openstack">I need all VO members to get &amp;ldquo;vm_operator&amp;rdquo; role in OpenStack&lt;/h3>
 &lt;p>You must create top-level group within the VO and name it &lt;code>vm_operator&lt;/code>. All

@@ -430,7 +430,7 @@ available on &lt;a href="https://youtu.be/Q9VsYjI1mD4">YouTube&lt;/a>.&lt;/p></d
 offer native OpenStack features via native APIs integrated with EGI Check-in
 accounts.&lt;/p>
 &lt;p>The extensive &lt;a href="https://docs.openstack.org/user/">OpenStack user documentation&lt;/a>
-includes details on every OpenStack project, most providers offer access to:&lt;/p>
+includes details on every OpenStack project most providers offer access to:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://docs.openstack.org/keystone/latest/">Keystone&lt;/a>, for identity&lt;/li>
 &lt;li>&lt;a href="https://docs.openstack.org/nova/latest/">Nova&lt;/a>, for VM management&lt;/li>
@@ -522,9 +522,9 @@ variable with the needed token:&lt;/p>
 complete guide on the VM management features of OpenStack. We list in the
 sections below some useful commands for the EGI Cloud.&lt;/p>
 &lt;h3 id="registering-an-existing-ssh-key">Registering an existing ssh key&lt;/h3>
-&lt;p>It's possible to register an ssh key that can later be used as the default ssh
+&lt;p>It&amp;rsquo;s possible to register an ssh key that can later be used as the default ssh
 key for the default user of the VM (via the &lt;code>--key-name&lt;/code> argument to
-&lt;code>openstack server create&lt;/code>:&lt;/p>
+&lt;code>openstack server create&lt;/code>):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="creating-a-vm">Creating a VM&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack flavor list
@@ -551,7 +551,7 @@ openstack server delete &amp;lt;SERVER_ID&amp;gt;
 openstack floating ip delete &amp;lt;IP&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>&lt;a href="https://docs.openstack.org/mitaka/install-guide-obs/launch-instance-provider.html">OpenStack: launch an instance on the provider network&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.openstack.org/ocata/user-guide/cli-manage-ip-addresses.html">OpenStack: Manging IP addresses&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.openstack.org/ocata/user-guide/cli-manage-ip-addresses.html">OpenStack: Managing IP addresses&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="using-cloud-init">Using cloud-init&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack server create --flavor m3.medium &lt;span style="color:#4e9a06">\
@@ -578,7 +578,7 @@ openstack floating ip delete &amp;lt;IP&amp;gt;
 to easily recover a previous version of your VM or to use it as a template to
 clone a given VM.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack server image create &amp;lt;your VM&amp;gt; --name &amp;lt;name of the snapshot&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once the snapshot is ready (&lt;code>openstack image show &amp;lt;name of the snapshot&amp;gt;&lt;/code> will
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once the snapshot is ready &lt;code>openstack image show &amp;lt;name of the snapshot&amp;gt;&lt;/code> will
 give your the details you can use it as any other image at the provider:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack server create --flavor &amp;lt;flavor&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --image &amp;lt;name of the snapshot&amp;gt; &lt;span style="color:#4e9a06">\
