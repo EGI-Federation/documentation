@@ -638,9 +638,9 @@ $ sudo su -
 $ apt -y install cryptsetup
 ```
 
-To encrypt the disk, it must be first initialized correctly. In the example below, 
-the disk named /dev/vdb is first filled with random data and then initialized using 
-the cryptsetup luksFormat command below. This first step can be quite long. 
+To encrypt the disk, it must be first initialized correctly. In the example below,
+the disk named /dev/vdb is first filled with random data and then initialized using
+the cryptsetup luksFormat command below. This first step can be quite long.
 
 ```shell
 $ dd if=/dev/urandom of=/dev/vdb bs=4k
@@ -656,10 +656,10 @@ Please move mouse or type some text in another window to gather some random even
 Generating key (0% done).
 ```
 
-you can make the `cryptsetup luksFormat` command running faster by first 
-installing the `haveged` program in your virtual machine 
+you can make the `cryptsetup luksFormat` command running faster by first
+installing the `haveged` program in your virtual machine.
 
-The following command verifies that the disk is now of type LUKS: 
+The following command verifies that the disk is now of type LUKS:
 
 ```shell
 $ cryptsetup luksDump /dev/vdb
@@ -693,53 +693,63 @@ Key Slot 7: DISABLED
 ```
 
 The disk is now ready for use. The first time you use it, you must perform the 
-following steps: 
+following steps:
 
-Step 1: Open the encrypted disk with the `cryptsetup luksOpen` command. The name storage1 
+Step 1: Open the encrypted disk with the `cryptsetup luksOpen` command. The name storage1
 is only indicative, you can choose what you want: 
+
 ```shell
 $ cryptsetup luksOpen /dev/vdb storage1
 ```
+
 Step 2: Create a filesystem on disk:
+
 ```shell
 $ mkfs.ext4 /dev/mapper/storage1
 ```
+
 Step 3: Create the disk mount point:
+
 ```shel 
 $ mkdir /storage1
 ```
+
 Step 4: Mount the disk:
+
 ```shell
 $ mount -t ext4 /dev/mapper/storage1 /storage1
 ```
+
 Step 5: Check available space (this may be slightly different from what was entered during 
 the openstack volume create command): 
+
 ```shell
 $ df -h /storage1
 Filesystem            Size  Used Avail Use% Mounted on
 /dev/mapper/storage1  2.0G  6.0M  1.9G   1% /storage1
+
 ```
 
-Once the disk is operational, steps 2 and 3 are no longer necessary. 
+Once the disk is operational, steps 2 and 3 are no longer necessary.
 
-You can now send files (for example DATA.dat) from your personal computer to your 
-virtual machine in a secure way, for example with scp: 
+You can now send files (for example DATA.dat) from your personal computer to your
+virtual machine in a secure way, for example with scp:
 
 ```shell
 $ scp -i ${HOME}/.ssh/cloudkey DATA.dat ubuntu@134.158.151.224:/storage1
 DATA.dat                               100%   82     0.1KB/s   00:00
 ```
 
-When you are done with your work on the disk, you can remove it cleanly with the 
-following commands: 
+When you are done with your work on the disk, you can remove it cleanly with the
+following commands:
 
 ```shell
 $ umount /storage1
 $cryptsetup close storage1
 ```
 
-For the following uses of the persistent disk, there will be no need to 
-perform all these operations, only the following are necessary: 
+For the following uses of the persistent disk, there will be no need to
+perform all these operations, only the following are necessary:
 
 ```shell
 $ cryptsetup luksOpen /dev/vdb storage1
