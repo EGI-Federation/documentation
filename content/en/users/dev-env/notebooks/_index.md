@@ -75,7 +75,7 @@ available to the EGI Check-in AAI service).
 EGI currently operates community instances for:
 
 - [D4Science](https://www.d4science.org/). These instances are accessed through
-  specific VREs: [SoBigData](https://sobigdata.d4science.org/),
+  specific Gateways: [SoBigData](https://sobigdata.d4science.org/),
   [Blue-Cloud](https://blue-cloud.d4science.org/) and
   [EOSC-Pillar](https://eosc-pillar.d4science.org/). Check with your VRE manager
   for more information.
