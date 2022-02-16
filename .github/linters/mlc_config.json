@@ -41,6 +41,9 @@
     },
     {
       "pattern": "^https://helpdesk.egi.eu"
+    },
+    {
+      "pattern": "^https://aai.*.egi.eu/api/v2/VoMembers"
     }
   ]
 }

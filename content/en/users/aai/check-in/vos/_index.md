@@ -286,40 +286,242 @@ From the steps defined [above](#managing-cou-admin-members):
 
 ## VO membership API
 
+### API v2
+
 Check-in provides a REST API that allows clients to manage membership
 information only for the VOs they are authoritative for.
 
 Features:
 
-- Members of the VO are identified via their EGI Check-in ePUID
+- Members of the VO are identified via their EGI Check-in Community User Identifier (CUID)
 - Membership can be limited to a specified period
+- All [REFEDS](https://wiki.refeds.org/display/STAN/eduPerson+2020-01#eduPerson202001-eduPersonAffiliation) membership affiliations are supported
+- Role titles are supported
 - Different membership status values are supported, namely `Active`, `Expired`,
-  `Deleted`
+  `Deleted`, `Suspended`
 - Check-in automatically changes the membership status from `Active` to
   `Expired` beyond the validity period
 
-### Authentication
+#### Connection Parameters
+
+<!-- prettier-ignore -->
+{{< tabpane >}}
+{{< tab header="Production environment" lang="shell" >}}
+# Export VO API Base URL parameter
+$ export VO_API_BASE_URL=https://aai.egi.eu/api/v2/VoMembers
+# Export CO ID parameter.
+# The CO ID is the number part of the API username prefix. 
+# e.g. for the username `co_2.test`, the CO_ID is `2`
+$ export CO_ID=2
+{{< /tab >}}
+{{< tab header="Demo environment" lang="shell" >}}
+# Export VO API Base URL parameter
+$ export VO_API_BASE_URL=https://aai-demo.egi.eu/api/v2/VoMembers
+# Export CO ID parameter.
+# The CO ID is the number part of the API username prefix.
+# e.g. for the username `co_2.test`, the CO_ID is `2`
+$ export CO_ID=2
+{{< /tab >}}
+{{< tab header="Development environment" lang="shell" >}}
+# Export VO API Base URL parameter
+$ export VO_API_BASE_URL=https://aai-dev.egi.eu/api/v2/VoMembers
+# Export CO ID parameter.
+# The CO ID is the number part of the API username prefix. e.g.
+# for the username `co_2.test`, the CO_ID is `2`
+$ export CO_ID=2
+{{< /tab >}}
+{{< /tabpane >}}
+
+#### Authentication
 
 The REST client is authenticated via username/password credentials transmitted
 over HTTPS using the Basic Authentication scheme. More sophisticated
 authentication mechanisms, such as OpenID Connect/OAuth 2.0 access tokens, may
 be supported in the future.
 
-### Methods
+#### Methods
 
-1. Adding a user to a VO requires specifying the user's EGI Check-in ePUID, the
-   name of the VO (e.g. `vo.access.egi.eu` in the case of LToS), the status
+1. Adding a user to a VO requires specifying the user's EGI Check-in CUID, the
+   name of the VO (e.g. `vo.example.org`), the status
    (`Active`) and the valid from/through dates. All these parameters are
    mandatory. Here is an example using curl (see example `add.json` file below):
 
-   ```sh
-   curl -vX POST https://aai.egi.eu/api/v1/VoMembers \
-        --user "example-client":"veryverysecret" \
-        --data @add.json \
-        --header "Content-Type: application/json"
+   ```shell
+   $ curl -vX POST $VO_API_BASE_URL.json \
+          --user "example-client":"veryverysecret" \
+          --data @add.json \
+          --header "Content-Type: application/json"
    ```
 
-   `ad.json`:
+   `add.json`:
+
+   ```json
+   {
+      "RequestType": "CoPersonRoles",
+      "Version": "1.0",
+      "CoPersonRoles": [
+         {
+            "Version": "1.0",
+            "Person": {
+               "Type": "CO",
+               "Identifier": {
+                  "Type": "epuid",
+                  "Id": "01234567890123456789@egi.eu"
+               }
+            },
+            "Cou": {
+               "CoId": "2",
+               "Name": "vo.example.org"
+            },
+            "Affiliation": "member",
+            "Title": "Engineer",
+            "Status": "Active",
+            "ValidFrom": "2022-02-16 11:19:38",
+            "ValidThrough": "2022-05-16 11:19:38"
+         }
+      ]
+   }
+   ```
+
+1. Retrieving the VO membership information for a given EGI Check-in CUID:
+
+   ```shell
+   $ curl -vX GET $VO_API_BASE_URL/co/$CO_ID/cou/vo.example.org/identifier/01234567890123456789@egi.eu.json \
+          --user "example-client":"veryverysecret"
+   ```
+
+   output:
+
+   ```json
+   {
+      "RequestType": "CoPersonRoles",
+      "Version": "1.0",
+      "CoPersonRoles": [
+         {
+            "Version": "1.0",
+            "Person": {
+               "Type": "CO",
+               "Id": 1111
+            },
+            "CouId": 13,
+            "Affiliation": "member",
+            "Title": "Pilot",
+            "Status": "Active",
+            "Created": "2022-02-16 11:19:38",
+            "Modified": "2022-02-16 11:20:27",
+            "Revision": 2,
+            "Deleted": false,
+            "ActorIdentifier": "co_2.test"
+         }
+      ]
+   }
+   ```
+
+   Beyond the `valid_through` date, the status will be automatically changed to
+   `Expired`. So, when querying for VO membership information, it's important to
+   check that the status is actually set to `Active` for each of the identified
+   VOs.
+
+1. Retrieving all VO members:
+
+   ```shell
+   $ curl -vX GET $VO_API_BASE_URL/co/$CO_ID/cou/vo.example.org.json \
+          --user "example-client":"veryverysecret"
+   ```
+
+   output:
+
+   ```json
+   {
+      "RequestType": "CoPersonRoles",
+      "Version": "1.0",
+      "CoPersonRoles": [
+         {
+            "Version": "1.0",
+            "Person": {
+               "Type": "CO",
+               "Id": 1111
+            },
+            "CouId": 13,
+            "Affiliation": "member",
+            "Title": "Pilot",
+            "Status": "Active",
+            "Created": "2022-02-16 11:19:38",
+            "Modified": "2022-02-16 11:20:27",
+            "Revision": 2,
+            "Deleted": false,
+            "ActorIdentifier": "co_2.test"
+         },
+         {...},
+         {...}
+      ]
+   }
+   ```
+
+   Beyond the `valid_through` date, the status will be automatically changed to
+   `Expired`. So, when querying for VO membership information, it's important to
+   check that the status is actually set to `Active` for each of the identified
+   VOs.
+
+1. Updating existing VO membership record:
+
+   ```shell
+   $ curl -vX PUT $VO_API_BASE_URL/15.json \
+          --user "example-client":"veryverysecret"  \
+          --data @update.json \
+          --header "Content-Type: application/json"
+   ```
+
+   The request body is the same as the one used for adding new members but
+   update requires:
+   - using `PUT` instead of `POST`.
+   - provide the Role ID as part of the request URL
+
+1. Removing VO member:
+
+  Same as the update but requires setting the membership status to `Deleted`
+  and do not include a body.
+
+### API v1 (DEPRECATED)
+
+Check-in provides a REST API that allows clients to manage membership
+information only for the VOs they are authoritative for.
+
+Features:
+
+- Members of the VO are identified via their EGI Check-in Community User Identifier (CUID)
+- Membership can be limited to a specified period
+- Different membership status values are supported, namely `Active`, `Expired`,
+  `Deleted`
+- Check-in automatically changes the membership status from `Active` to
+  `Expired` beyond the validity period
+
+<!-- markdownlint-disable no-duplicate-header -->
+#### Authentication
+<!-- markdownlint-enable no-duplicate-header -->
+
+The REST client is authenticated via username/password credentials transmitted
+over HTTPS using the Basic Authentication scheme. More sophisticated
+authentication mechanisms, such as OpenID Connect/OAuth 2.0 access tokens, may
+be supported in the future.
+
+<!-- markdownlint-disable no-duplicate-header -->
+#### Methods
+<!-- markdownlint-enable no-duplicate-header -->
+
+1. Adding a user to a VO requires specifying the user's EGI Check-in CUID, the
+   name of the VO (e.g. `vo.example.org` in the case of LToS), the status
+   (`Active`) and the valid from/through dates. All these parameters are
+   mandatory. Here is an example using curl (see example `add.json` file below):
+
+   ```shell
+   $ curl -vX POST https://aai.egi.eu/api/v1/VoMembers \
+          --user "example-client":"veryverysecret" \
+          --data @add.json \
+          --header "Content-Type: application/json"
+   ```
+
+   `add.json`:
 
    ```json
    {
@@ -328,7 +530,7 @@ be supported in the future.
      "VoMembers": [
        {
          "Version": "1.0",
-         "VoId": "vo.access.egi.eu",
+         "VoId": "vo.example.org",
          "Person": {
            "Type": "CO",
            "Id": "01234567890123456789@egi.eu"
@@ -341,11 +543,11 @@ be supported in the future.
    }
    ```
 
-1. Retrieving the VO membership information for a given EGI Check-in ePUID:
+1. Retrieving the VO membership information for a given EGI Check-in CUID:
 
-   ```sh
-   curl -vX GET https://aai.egi.eu/api/v1/VoMembers/01234567890123456789@egi.eu \
-        --user "example-client":"veryverysecret"
+   ```shell
+   $ curl -vX GET https://aai.egi.eu/api/v1/VoMembers/01234567890123456789@egi.eu \
+          --user "example-client":"veryverysecret"
    ```
 
    output:
@@ -355,7 +557,7 @@ be supported in the future.
      {
        "id": 85,
        "epuid": "01234567890123456789@egi.eu",
-       "vo_id": "vo.access.egi.eu",
+       "vo_id": "vo.example.org",
        "valid_from": "2017-05-20T22:00:00.000Z",
        "valid_through": "2017-06-21T22:00:00.000Z",
        "status": "Active"
@@ -370,11 +572,11 @@ be supported in the future.
 
 1. Updating existing VO membership record:
 
-   ```sh
-   curl -vX PUT https://aai.egi.eu/api/v1/VoMembers \
-        --user "example-client":"veryverysecret"  \
-        --data @update.json \
-        --header "Content-Type: application/json"
+   ```shell
+   $ curl -vX PUT https://aai.egi.eu/api/v1/VoMembers \
+          --user "example-client":"veryverysecret"  \
+          --data @update.json \
+          --header "Content-Type: application/json"
    ```
 
    The request body is the same as the one used for adding new members but
@@ -395,7 +597,9 @@ There are two entity types in the LDAP:
 
 - Groups of collaboration members, expressed as `groupOfMembers` (with additional attributes/schema).
 
+<!-- markdownlint-disable no-duplicate-header -->
 ### Connection Parameters
+<!-- markdownlint-enable no-duplicate-header -->
 
 | | Production environment | Demo environment                   | Development environment |
 |-| ----------------------- | ------------------------------- | -------------------- |
