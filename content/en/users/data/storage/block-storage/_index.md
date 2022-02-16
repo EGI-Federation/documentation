@@ -692,11 +692,11 @@ Key Slot 6: DISABLED
 Key Slot 7: DISABLED
 ```
 
-The disk is now ready for use. The first time you use it, you must perform the 
+The disk is now ready for use. The first time you use it, you must perform the
 following steps:
 
 Step 1: Open the encrypted disk with the `cryptsetup luksOpen` command. The name storage1
-is only indicative, you can choose what you want: 
+is only indicative, you can choose what you want:
 
 ```shell
 $ cryptsetup luksOpen /dev/vdb storage1
@@ -710,7 +710,7 @@ $ mkfs.ext4 /dev/mapper/storage1
 
 Step 3: Create the disk mount point:
 
-```shel 
+```shell
 $ mkdir /storage1
 ```
 
@@ -721,7 +721,7 @@ $ mount -t ext4 /dev/mapper/storage1 /storage1
 ```
 
 Step 5: Check available space (this may be slightly different from what was entered during 
-the openstack volume create command): 
+the openstack volume create command):
 
 ```shell
 $ df -h /storage1
@@ -745,7 +745,7 @@ following commands:
 
 ```shell
 $ umount /storage1
-$cryptsetup close storage1
+$ cryptsetup close storage1
 ```
 
 For the following uses of the persistent disk, there will be no need to
@@ -754,7 +754,7 @@ perform all these operations, only the following are necessary:
 ```shell
 $ cryptsetup luksOpen /dev/vdb storage1
 $ mkdir /storage1
-$mount -t ext4 /dev/mapper/storage1 /storage1
+$ mount -t ext4 /dev/mapper/storage1 /storage1
 ```
 
 ## Access via EGI Data Transfer
