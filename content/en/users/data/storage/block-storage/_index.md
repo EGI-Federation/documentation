@@ -626,6 +626,126 @@ volume will be available. Applications will not see any difference between a
 block storage device and a regular disk, thus no major changes should be
 required in the application logic.
 
+## Storage Encryption
+
+This section describes the usage of the tool [cryptsetup](https://gitlab.com/cryptsetup/cryptsetup)
+to enable the permanent encryption of the data stored in the disk.
+The tool is available standard linux distributions, and for this guide we assume
+the installation in an Ubuntu distribution.
+
+```shell
+$ sudo su -
+$ apt -y install cryptsetup
+```
+
+To encrypt at disk, it must be first initialized correctly. In the example below, 
+the disk named /dev/vdb is first filled with random data and then initialized using 
+the cryptsetup luksFormat command below. This first step can be quite long. 
+
+```shell
+$ dd if=/dev/urandom of=/dev/vdb bs=4k
+$ cryptsetup -v --cipher aes-xts-plain64 --key-size 512 --hash sha512 \
+--iter-time 5000 --use-random luksFormat /dev/vdb
+```
+
+If this last command slows down or even blocks with the following message:
+
+```shell
+System is out of entropy while generating volume key.
+Please move mouse or type some text in another window to gather some random events.
+Generating key (0% done).
+```
+So you can make the `cryptsetup luksFormat` command runnin faster by first 
+installing the `haveged` program in your virtual machine 
+
+The following command verifies that the disk is now of type LUKS: 
+
+```shell
+$ cryptsetup luksDump /dev/vdb
+LUKS header information for /dev/vdb
+
+Version:        1
+Cipher name:    aes
+Cipher mode:    xts-plain64
+Hash spec:      sha512
+Payload offset: 4096
+MK bits:        512
+MK digest:      c4 f7 4b 02 2a 3f 12 c1 2c ba e5 c9 d2 45 9a cd 89 20 6c 73
+MK salt:        98 58 3e f3 f6 88 99 ea 2a f3 cf 71 a0 0d e5 8b
+                d5 76 64 cb d2 5c 9b d1 8a d3 1d 18 0e 04 7a eb
+MK iterations:  81250
+UUID:           c216d954-199e-4eab-a167-a3587bd41cb3
+
+Key Slot 0: ENABLED
+    Iterations:             323227
+    Salt:                   a0 45 3e 98 fa cf 60 74 c6 09 3d 54 97 89 be 65
+                            5b 96 7c 1c 39 26 47 b4 8b 0e c1 3a c9 94 83 c2
+    Key material offset:    8
+    AF stripes:             4000
+Key Slot 1: DISABLED
+Key Slot 2: DISABLED
+Key Slot 3: DISABLED
+Key Slot 4: DISABLED
+Key Slot 5: DISABLED
+Key Slot 6: DISABLED
+Key Slot 7: DISABLED
+```
+
+The disc is now ready for use. The first time you use it, you must perform the 
+following steps: 
+
+Step 1: Open the encrypted disk with the `cryptsetup luksOpen` command. The name storage1 
+is only indicative, you can choose what you want: 
+```shell
+$ cryptsetup luksOpen /dev/vdb storage1
+```
+Step 2: Create a filesystem on disk:
+```shell
+$ mkfs.ext4 /dev/mapper/storage1
+```
+Step 3: Create the disk mount point:
+```shel 
+$ mkdir /storage1
+```
+Step 4: Mount the disk:
+```shell
+$ mount -t ext4 /dev/mapper/storage1 /storage1
+```
+Step 5: Check available space (this may be slightly different from what was entered during 
+the openstack volume create command): 
+```shell
+$ df -h /storage1
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/storage1  2.0G  6.0M  1.9G   1% /storage1
+```
+
+Once the disk is operational, steps 2 and 3 are no longer necessary. 
+
+You can now send files (for example DATA.dat) from your personal computer to your 
+virtual machine in a secure way, for example with scp: 
+
+```shell
+$ scp -i ${HOME}/.ssh/cloudkey DATA.dat ubuntu@134.158.151.224:/storage1
+DATA.dat                               100%   82     0.1KB/s   00:00
+```
+
+When you are done with your work on the disc, you can remove it cleanly with the 
+following commands: 
+
+```shell
+$ umount /storage1
+$cryptsetup close storage1
+```
+
+For the following uses of the persistent virtual disk, there will be no need to 
+perform all these operations, only the following are necessary: 
+
+```shell
+$ cryptsetup luksOpen /dev/vdb storage1
+$ mkdir /storage1
+$mount -t ext4 /dev/mapper/storage1 /storage1
+```
+
 ## Access via EGI Data Transfer
 
 [EGI Data Transfer](../../../data/management/data-transfer) allows you to move any type of
