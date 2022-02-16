@@ -77,7 +77,7 @@ EGI currently operates community instances for:
 - [D4Science](https://www.d4science.org/). These instances are accessed through
   specific Gateways: [SoBigData](https://sobigdata.d4science.org/),
   [Blue-Cloud](https://blue-cloud.d4science.org/), [D4Science Services](https://services.d4science.org/) and 
-  [EOSC-Pillar](https://eosc-pillar.d4science.org/). Check with your VRE manager
+  [EOSC-Pillar](https://eosc-pillar.d4science.org/). Check with the [D4Science support](https://www.d4science.org/contact-us) 
   for more information.
 - [PaNoSC](https://panosc.eu/). Instance is available
   [here](https://notebooks-panosc.fedcloud-tf.fedcloud.eu)
