@@ -70,7 +70,7 @@ user entry in Perun already directly associated with their personal
 certificate. For such cases direct authentication using the certificates is
 available. Please consult Perun support trough GGUS if you wish to merge
 your accounts and start using EGI Check-In as identity linking needs to be
-done on Perun side and not trough Check-In.&lt;/p>
+done on Perun side and not trough EGI Check-In proxy.&lt;/p>
 &lt;h3 id="registering-your-vo">Registering your VO&lt;/h3>
 &lt;p>Standard EGI procedure for registering VO takes place. See related Check-In
 documentation about &lt;a href="../#registering-your-vo">Registering your VO&lt;/a>.&lt;/p>
@@ -90,9 +90,9 @@ administrative GUI under the &lt;em>VO manager&lt;/em> section. All features are
 described in the following sections in more detail.&lt;/p>
 &lt;h4 id="how-to">HOW-TO&lt;/h4>
 &lt;ul>
-&lt;li>Add/Remove VO members&lt;/li>
 &lt;li>Search and list VO members&lt;/li>
 &lt;li>Member detail (status, groups, settings,&amp;hellip;)&lt;/li>
+&lt;li>Add/Remove VO members&lt;/li>
 &lt;/ul>
 &lt;h4 id="accepting-new-members">Accepting new members&lt;/h4>
 &lt;p>Users can register in your VO using same registration link you were provided
@@ -185,10 +185,10 @@ from the root divided by colon &lt;code>:&lt;/code>, e.g. &lt;code>projectX:stud
 &lt;p>Top-level groups can be created only by the VO managers.&lt;/p>
 &lt;h4 id="how-to-3">HOW-TO&lt;/h4>
 &lt;ul>
-&lt;li>Search and display groups&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/15499401/Search+and+display+groups">Search and display groups&lt;/a>&lt;/li>
 &lt;li>Create/delete groups and subgroups&lt;/li>
 &lt;li>Create/remove relations between the groups&lt;/li>
-&lt;li>Rename group&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/15597689/Rename+group">Rename group&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="group-memberships">Group memberships&lt;/h4>
 &lt;p>Perun recognize two kinds of group memberships, &lt;em>direct&lt;/em> and &lt;em>indirect&lt;/em>. If
@@ -207,7 +207,7 @@ remove relation between the groups.&lt;/p>
 &lt;h5 id="how-to-4">HOW-TO&lt;/h5>
 &lt;ul>
 &lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/14417974/Search+and+display+group+members">Search and display group members&lt;/a>&lt;/li>
-&lt;li>Add/remove group members&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/13861398/Add+remove+group+members">Add/remove group members&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="accepting-new-group-members">Accepting new group members&lt;/h4>
 &lt;p>Group members can be added to the group directly by the VO/group manager
@@ -221,11 +221,10 @@ replaced with the groups full name (including hierarchy), e.g.:
 the VO registrations, they are just located under the &lt;em>Group manager&lt;/em>
 section in the GUI.&lt;/p>
 &lt;p>There is just one big difference regarding registration workflow for the
-groups. Users must become VO members before the group registration can be
-accepted by group manager (or automatically).
-In case user is not a member of VO, registration application offers VO
-registration first and once submitted user can register for the group.
-VO registration must be then approved first.&lt;/p>
+groups. User must become member of VO before the group registration can be
+accepted by the group manager (even automatically).
+User is able to submit VO and group registration at once using a two steps
+form, but VO registration must be approved first.&lt;/p>
 &lt;h5 id="how-to-5">HOW-TO&lt;/h5>
 &lt;ul>
 &lt;li>Configure registration form and notifications&lt;/li>
@@ -242,6 +241,12 @@ information is provided to the services about the user.&lt;/li>
 &lt;li>In hierarchical group structures, resulting members' status in a parent
 group is dependent on his/hers status in all child groups and &lt;code>VALID&lt;/code>
 status takes preference.&lt;/li>
+&lt;li>Membership expiration in VO and group are independent of each other.
+Member can be expired just in some groups within the VO or be expired
+within the whole VO a still be valid within its groups. In such case
+member is not considered as a member of VO by the services. Once
+membership is renewed, membership information is restored including all
+groups.&lt;/li>
 &lt;/ul>
 &lt;h5 id="how-to-6">HOW-TO&lt;/h5>
 &lt;ul>
