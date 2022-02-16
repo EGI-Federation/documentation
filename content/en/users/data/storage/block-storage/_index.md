@@ -720,7 +720,7 @@ Step 4: Mount the disk:
 $ mount -t ext4 /dev/mapper/storage1 /storage1
 ```
 
-Step 5: Check available space (this may be slightly different from what was entered during 
+Step 5: Check available space (this may be slightly different from what was entered during
 the openstack volume create command):
 
 ```shell
