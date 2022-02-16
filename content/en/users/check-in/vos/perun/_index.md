@@ -48,7 +48,7 @@ user entry in Perun already directly associated with their personal
 certificate. For such cases direct authentication using the certificates is
 available. Please consult Perun support trough GGUS if you wish to merge
 your accounts and start using EGI Check-In as identity linking needs to be
-done on Perun side and not trough Check-In.
+done on Perun side and not trough EGI Check-In proxy.
 
 ### Registering your VO
 
@@ -74,9 +74,9 @@ described in the following sections in more detail.
 
 #### HOW-TO
 
-- Add/Remove VO members
 - Search and list VO members
 - Member detail (status, groups, settings,...)
+- Add/Remove VO members
 
 #### Accepting new members
 
@@ -171,10 +171,10 @@ Top-level groups can be created only by the VO managers.
 
 #### HOW-TO
 
-- Search and display groups
+- [Search and display groups](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/15499401/Search+and+display+groups)
 - Create/delete groups and subgroups
 - Create/remove relations between the groups
-- Rename group
+- [Rename group](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/15597689/Rename+group)
 
 #### Group memberships
 
@@ -198,7 +198,7 @@ remove relation between the groups.
 ##### HOW-TO
 
 - [Search and display group members](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/14417974/Search+and+display+group+members)
-- Add/remove group members
+- [Add/remove group members](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/13861398/Add+remove+group+members)
 
 #### Accepting new group members
 
@@ -217,11 +217,10 @@ the VO registrations, they are just located under the *Group manager*
 section in the GUI.
 
 There is just one big difference regarding registration workflow for the
-groups. Users must become VO members before the group registration can be
-accepted by group manager (or automatically).
-In case user is not a member of VO, registration application offers VO
-registration first and once submitted user can register for the group.
-VO registration must be then approved first.
+groups. User must become member of VO before the group registration can be
+accepted by the group manager (even automatically).
+User is able to submit VO and group registration at once using a two steps 
+form, but VO registration must be approved first.
 
 ##### HOW-TO
 
@@ -240,6 +239,12 @@ but there are some differences.
 - In hierarchical group structures, resulting members' status in a parent
   group is dependent on his/hers status in all child groups and `VALID`
   status takes preference.
+- Membership expiration in VO and group are independent of each other.
+  Member can be expired just in some groups within the VO or be expired
+  within the whole VO a still be valid within its groups. In such case
+  member is not considered as a member of VO by the services. Once
+  membership is renewed, membership information is restored including all
+  groups. 
 
 ##### HOW-TO
 
