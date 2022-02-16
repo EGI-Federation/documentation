@@ -630,7 +630,7 @@ required in the application logic.
 
 This section describes the usage of the tool [cryptsetup](https://gitlab.com/cryptsetup/cryptsetup)
 to enable the permanent encryption of the data stored in the disk.
-The tool is available standard linux distributions, and for this guide we assume
+The tool is available in standard linux distributions, and for this guide we assume
 the installation in an Ubuntu distribution.
 
 ```shell
@@ -638,7 +638,7 @@ $ sudo su -
 $ apt -y install cryptsetup
 ```
 
-To encrypt at disk, it must be first initialized correctly. In the example below, 
+To encrypt the disk, it must be first initialized correctly. In the example below, 
 the disk named /dev/vdb is first filled with random data and then initialized using 
 the cryptsetup luksFormat command below. This first step can be quite long. 
 
@@ -655,7 +655,8 @@ System is out of entropy while generating volume key.
 Please move mouse or type some text in another window to gather some random events.
 Generating key (0% done).
 ```
-So you can make the `cryptsetup luksFormat` command runnin faster by first 
+
+you can make the `cryptsetup luksFormat` command running faster by first 
 installing the `haveged` program in your virtual machine 
 
 The following command verifies that the disk is now of type LUKS: 
@@ -691,7 +692,7 @@ Key Slot 6: DISABLED
 Key Slot 7: DISABLED
 ```
 
-The disc is now ready for use. The first time you use it, you must perform the 
+The disk is now ready for use. The first time you use it, you must perform the 
 following steps: 
 
 Step 1: Open the encrypted disk with the `cryptsetup luksOpen` command. The name storage1 
@@ -729,7 +730,7 @@ $ scp -i ${HOME}/.ssh/cloudkey DATA.dat ubuntu@134.158.151.224:/storage1
 DATA.dat                               100%   82     0.1KB/s   00:00
 ```
 
-When you are done with your work on the disc, you can remove it cleanly with the 
+When you are done with your work on the disk, you can remove it cleanly with the 
 following commands: 
 
 ```shell
@@ -737,7 +738,7 @@ $ umount /storage1
 $cryptsetup close storage1
 ```
 
-For the following uses of the persistent virtual disk, there will be no need to 
+For the following uses of the persistent disk, there will be no need to 
 perform all these operations, only the following are necessary: 
 
 ```shell
