@@ -570,15 +570,16 @@ are two scripts &lt;code>/usr/local/bin/caso-extract.sh&lt;/code> and
 &lt;code>/usr/local/bin/ssm-send.sh&lt;/code> that run the docker container with the proper
 volumes.&lt;/p></description></item><item><title>Providers: Information System</title><link>/providers/cloud-compute/openstack/cloud-info/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/cloud-info/</guid><description>
 &lt;p>Information discovery provides a real-time view about the actual images and
-flavors available at the OpenStack for the federation users. It runs as a
-single python application
+flavors available at the OpenStack for the federation users. It runs as a single
+python application
 &lt;a href="https://github.com/EGI-Federation/cloud-info-provider">cloud-info-provider&lt;/a>
-that pushes information through the &lt;a href="https://argoeu.github.io/guides/messaging/">Argo Messaging Service
-(AMS)&lt;/a>&lt;/p>
+that pushes information through the
+&lt;a href="../../../internal/messaging">Messaging Service&lt;/a>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">BDII is deprecated&lt;/h4>
-Cloud providers no longer need to provide BDII as the Argo Messaging Service
-is used instead for transferring information
+Cloud providers no longer
+need to provide BDII as the Argo Messaging Service is used instead for
+transferring information
 &lt;/div>
 &lt;p>You can either run the service by yourself or rely on central operations of the
 cloud-info-provider. In both cases you must register your host DN in the GOCDB
@@ -587,28 +588,27 @@ entry for the &lt;code>org.openstack.nova&lt;/code>.&lt;/p>
 &lt;p>EGI can manage the operation of the &lt;code>cloud-info-provider&lt;/code> for the site so you
 don&amp;rsquo;t need to do it. In order for your site to be included in the centrally
 operated &lt;code>cloud-info-provider&lt;/code>, you need to create a Pull Request at the
-&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/">EGI-Federation/fedcloud-catchall-operations
-repository&lt;/a>
+&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/">EGI-Federation/fedcloud-catchall-operations repository&lt;/a>
 adding your site configuration in the &lt;code>sites&lt;/code> directory with a file like this:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;your endpoint as declared in GOCDB&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">gocdb&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;your site name as declared in GOCDB&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">vos&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># a list of VOs you support in your deployment as follows&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>- &lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># a list of VOs you support in your deployment as follows&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">project_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;local OpenStack project identifier&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;name of the vo&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>- &lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">project_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;local OpenStack project identifier for second VO&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;name of another vo&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once PR is merged, the service will be reconfigured and your site should start
 publishing information.&lt;/p>
 &lt;h2 id="local-operations">Local operations&lt;/h2>
 &lt;p>You can operate by yourself the &lt;code>cloud-info-provider&lt;/code>. The software can be
-obtained as RPMs, debs and python packages from the &lt;a href="https://github.com/EGI-Federation/cloud-info-provider/releases">GitHub releases
-page&lt;/a>.&lt;/p>
+obtained as RPMs, debs and python packages from the
+&lt;a href="https://github.com/EGI-Federation/cloud-info-provider/releases">GitHub releases page&lt;/a>.&lt;/p>
 &lt;p>The &lt;code>cloud-info-provider&lt;/code> needs a configuration file where your site is
-described, see the &lt;a href="https://github.com/EGI-Federation/cloud-info-provider/blob/master/etc/sample.openstack.yaml">sample OpenStack
-configuration&lt;/a>
+described, see the
+&lt;a href="https://github.com/EGI-Federation/cloud-info-provider/blob/master/etc/sample.openstack.yaml">sample OpenStack configuration&lt;/a>
 for the required information. The authentication parameters for your local
 OpenStack and the AMS are passed as command-line options:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">cloud-info-provider-service --yaml-file &amp;lt;your site description.yaml&amp;gt; &lt;span style="color:#4e9a06">\
@@ -626,25 +626,25 @@ username and password use: &lt;code>--os-password&lt;/code> and &lt;code>--os-us
 complete list of options with &lt;code>cloud-info-provider-service --help&lt;/code>.&lt;/p>
 &lt;p>The AMS topic has the format: &lt;code>SITE_&amp;lt;SITE_NAME&amp;gt;_ENDPOINT_&amp;lt;GOCDB_ID&amp;gt;&lt;/code>, where
 &lt;code>&amp;lt;SITE_NAME&amp;gt;&lt;/code> is the name of the site as declared in GOCDB and &lt;code>&amp;lt;GOCDB_ID&amp;gt;&lt;/code> is
-the ID of the endpoint in GOCDB. For example, &lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Service&amp;amp;id=7513">this
-endpoint&lt;/a> would
-have a topic like: &lt;code>SITE_IFCA-LCG2_ENDPOINT_7513G0&lt;/code>.&lt;/p>
-&lt;p>You should periodically run the cloud-info-provider (e.g. with a cron
-every 5 minutes) to push the information for consumption by clients.&lt;/p>
+the ID of the endpoint in GOCDB. For example,
+&lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Service&amp;amp;id=7513">this endpoint&lt;/a>
+would have a topic like: &lt;code>SITE_IFCA-LCG2_ENDPOINT_7513G0&lt;/code>.&lt;/p>
+&lt;p>You should periodically run the cloud-info-provider (e.g. with a cron every 5
+minutes) to push the information for consumption by clients.&lt;/p>
 &lt;h3 id="using-the-egi-fedcloud-appliance">Using the EGI FedCloud Appliance&lt;/h3>
-&lt;p>The appliance provides a ready-to-use cloud-info-provider configuration
-if you want to operate it by yourself. Once you have downloaded the appliance
-check the following files:&lt;/p>
+&lt;p>The appliance provides a ready-to-use cloud-info-provider configuration if you
+want to operate it by yourself. Once you have downloaded the appliance check the
+following files:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;code>/etc/cloud-info-provider/openstack.rc&lt;/code>: the configuration of the
-account used to log into your OpenStack and the location of the host
-certificate that will be used to authenticate to the AMS.&lt;/p>
+&lt;p>&lt;code>/etc/cloud-info-provider/openstack.rc&lt;/code>: the configuration of the account used
+to log into your OpenStack and the location of the host certificate that will
+be used to authenticate to the AMS.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;code>/etc/cloud-info-provider/openstack.yaml&lt;/code>: the cloud-info-provider
-configuration. You need to enter the details about the VOs/projects that
-the site is supporting.&lt;/p>
+configuration. You need to enter the details about the VOs/projects that the
+site is supporting.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>The appliance has a cron job that will connect to the configured OpenStack API

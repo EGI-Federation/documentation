@@ -41,7 +41,8 @@ we are not providing packages):
 &lt;p>This manual provides information on how to set up a Resource Centre providing
 cloud resources in the EGI infrastructure. Integration with FedCloud requires a
 &lt;em>working OpenStack installation&lt;/em> as a pre-requirement. EGI supports any recent
-&lt;a href="http://releases.openstack.org">OpenStack version&lt;/a> (tested from OpenStack Mitaka).&lt;/p>
+&lt;a href="http://releases.openstack.org">OpenStack version&lt;/a> (tested from OpenStack
+Mitaka).&lt;/p>
 &lt;p>EGI expects the following OpenStack services to be available and accessible from
 outside your site:&lt;/p>
 &lt;ul>
@@ -71,8 +72,8 @@ deployment.&lt;/li>
 records to the central accounting database on the EGI Accounting service
 (&lt;a href="https://apel.github.io/">APEL&lt;/a>)&lt;/li>
 &lt;li>&lt;strong>cloud-info-provider&lt;/strong> registers the RC configuration and description through
-the &lt;a href="https://argoeu.github.io/guides/messaging/">ARGO Messaging Service&lt;/a> to
-facilitate service discovery&lt;/li>
+the &lt;a href="../../../internal/messaging">Messaging service&lt;/a> to facilitate service
+discovery&lt;/li>
 &lt;li>&lt;strong>cloudkeeper&lt;/strong> (and &lt;strong>cloudkeeper-os&lt;/strong>) synchronises with
 &lt;a href="https://appdb.egi.eu/browse/cloud">EGI AppDB&lt;/a> so new or updated images can be
 provided by the RC to user communities (VO).&lt;/li>
@@ -116,8 +117,8 @@ mount a volume at that location.&lt;/li>
 &lt;ul>
 &lt;li>Removes BDII, service is no longer in use&lt;/li>
 &lt;li>A cloud-info-provider cron is added&lt;/li>
-&lt;li>Uses AMS for pushing accounting records. New configuration
-file for ssmsend is available&lt;/li>
+&lt;li>Uses AMS for pushing accounting records. New configuration file for ssmsend is
+available&lt;/li>
 &lt;/ul>
 &lt;h4 id="from-20170809-to-20180507">From 2017.08.09 to 2018.05.07&lt;/h4>
 &lt;p>Configuration changes:&lt;/p>
@@ -138,8 +139,8 @@ incompatible changes.&lt;/li>
 &lt;/ul>
 &lt;h3 id="cmd-packages">CMD Packages&lt;/h3>
 &lt;p>The CMD-OS repository provides packages that have gone through a quality
-assurance process for the supported distributions. Packages are available
-via the &lt;a href="https://repository.egi.eu">EGI repository&lt;/a>.&lt;/p>
+assurance process for the supported distributions. Packages are available via
+the &lt;a href="https://repository.egi.eu">EGI repository&lt;/a>.&lt;/p>
 &lt;h2 id="open-ports">Open Ports&lt;/h2>
 &lt;p>The following &lt;strong>services&lt;/strong> must be accessible to allow access to an
 OpenStack-based FedCloud site (default ports listed below, can be adjusted to
