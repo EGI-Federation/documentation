@@ -63,8 +63,8 @@ or provisioned to the EGI services&lt;/li>
 &lt;h2 id="vo-management">VO management&lt;/h2>
 &lt;p>Administrative GUI for VO managers is available at &lt;a href="https://perun.egi.eu">https://perun.egi.eu&lt;/a>&lt;/p>
 &lt;p>It is assumed that VO managers and members have already registered their EGI
-Check-in account (A step-by-step guide is provided in this &lt;a href="../../signup">link&lt;/a>
-).&lt;/p>
+Check-in account (A step-by-step guide is provided in this
+&lt;a href="../../signup">link&lt;/a>).&lt;/p>
 &lt;p>Due to historical reasons (wide adoption of VOMS) users might have their
 user entry in Perun already directly associated with their personal
 certificate. For such cases direct authentication using the certificates is
@@ -90,9 +90,9 @@ administrative GUI under the &lt;em>VO manager&lt;/em> section. All features are
 described in the following sections in more detail.&lt;/p>
 &lt;h4 id="how-to">HOW-TO&lt;/h4>
 &lt;ul>
-&lt;li>Search and list VO members&lt;/li>
-&lt;li>Member detail (status, groups, settings,&amp;hellip;)&lt;/li>
-&lt;li>Add/Remove VO members&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16252929/Search+and+display+VO+members">Search and display VO members&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384005/Member+detail+status+groups+settings+...">Member detail (status, groups, settings,&amp;hellip;)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384022/Add+Remove+VO+members">Add/Remove VO members&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="accepting-new-members">Accepting new members&lt;/h4>
 &lt;p>Users can register in your VO using same registration link you were provided
@@ -112,9 +112,10 @@ users and the VO. Please consult perun user support using GGUS in case you
 need this feature.&lt;/p>
 &lt;h5 id="how-to-1">HOW-TO&lt;/h5>
 &lt;ul>
-&lt;li>Configure registration form and notifications&lt;/li>
-&lt;li>Approve/reject submitted registration&lt;/li>
-&lt;li>Configure and send invitation notification&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384056/Configure+registration+form">Configure registration form&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449548/Configure+registration+notifications">Configure registration notifications&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384077/Approve+Reject+submitted+registrations">Approve/reject submitted registration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384094/Configure+and+send+invitation">Configure and send invitation&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="membership-lifecycle-expiration-rules-and-renewal">Membership lifecycle, expiration rules and renewal&lt;/h4>
 &lt;div class="alert alert-info" role="alert">
@@ -167,9 +168,8 @@ membership expiration are members allowed to ask for the renewal (e.g. &lt;code>
 meaning one month).&lt;/p>
 &lt;h5 id="how-to-2">HOW-TO&lt;/h5>
 &lt;ul>
-&lt;li>Change VO member status and expiration&lt;/li>
-&lt;li>Set VO membership expiration rules&lt;/li>
-&lt;li>Configure registration form and notifications&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449582/Change+VO+member+status+and+expiration">Change VO member status and expiration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449599/Configure+VO+membership+expiration+rules">Configure VO membership expiration rules&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="managing-groups">Managing groups&lt;/h3>
 &lt;p>Groups are used to further categorize VO members within the VO and to assign
@@ -186,8 +186,8 @@ from the root divided by colon &lt;code>:&lt;/code>, e.g. &lt;code>projectX:stud
 &lt;h4 id="how-to-3">HOW-TO&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/15499401/Search+and+display+groups">Search and display groups&lt;/a>&lt;/li>
-&lt;li>Create/delete groups and subgroups&lt;/li>
-&lt;li>Create/remove relations between the groups&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384107/Create+delete+groups+and+subgroups">Create/delete groups and subgroups&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449565/Create+remove+relations+between+the+groups">Create/remove relations between the groups&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/15597689/Rename+group">Rename group&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="group-memberships">Group memberships&lt;/h4>
@@ -227,9 +227,10 @@ User is able to submit VO and group registration at once using a two steps
 form, but VO registration must be approved first.&lt;/p>
 &lt;h5 id="how-to-5">HOW-TO&lt;/h5>
 &lt;ul>
-&lt;li>Configure registration form and notifications&lt;/li>
-&lt;li>Approve/reject submitted registration&lt;/li>
-&lt;li>Configure and send invitation notification&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384056/Configure+registration+form">Configure registration form&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449548/Configure+registration+notifications">Configure registration notifications&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384077/Approve+Reject+submitted+registrations">Approve/reject submitted registration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384094/Configure+and+send+invitation">Configure and send invitation&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="group-membership-lifecycle-expiration-rules-and-renewal">Group membership lifecycle, expiration rules and renewal&lt;/h4>
 &lt;p>Members' lifecycle within the group is roughly the same as within the VO,
@@ -250,9 +251,8 @@ groups.&lt;/li>
 &lt;/ul>
 &lt;h5 id="how-to-6">HOW-TO&lt;/h5>
 &lt;ul>
-&lt;li>Change group member status and expiration&lt;/li>
-&lt;li>Set group membership expiration rules&lt;/li>
-&lt;li>Configure registration form and notifications&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384130/Change+group+member+status+and+expiration">Change group member status and expiration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384155/Configure+group+membership+expiration+rules">Configure group membership expiration rules&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="access-management">Access management&lt;/h2>
 &lt;p>While Perun generally uses concept of &lt;em>Resources&lt;/em> to represent the access
