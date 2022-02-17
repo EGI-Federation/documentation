@@ -219,7 +219,7 @@ section in the GUI.
 There is just one big difference regarding registration workflow for the
 groups. User must become member of VO before the group registration can be
 accepted by the group manager (even automatically).
-User is able to submit VO and group registration at once using a two steps 
+User is able to submit VO and group registration at once using a two steps
 form, but VO registration must be approved first.
 
 ##### HOW-TO
@@ -245,7 +245,7 @@ but there are some differences.
   within the whole VO a still be valid within its groups. In such case
   member is not considered as a member of VO by the services. Once
   membership is renewed, membership information is restored including all
-  groups. 
+  groups.
 
 ##### HOW-TO
 
