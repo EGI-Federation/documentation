@@ -52,13 +52,6 @@ In the email, include the following information:
 All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 [JISCMAIL](https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=cvmfs-uploader-users).
 
-### Relevant documents
-
-Read these documents:
-
-- [Privacy Notice](https://www.scd.stfc.ac.uk/Pages/CVMFS-Privacy-Notice.aspx)
-- [Acceptable Use Policy](https://www.scd.stfc.ac.uk/Pages/CVMFS-Acceptable-Use-Policy.aspx)
-
 ## Distributing new content
 
 To login to the service, make sure you have a valid X509 proxy (with the same DN
