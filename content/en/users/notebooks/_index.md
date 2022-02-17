@@ -4,7 +4,7 @@ type: docs
 description:
   "Documentation related to [EGI
   Notebooks](https://www.egi.eu/services/notebooks/)"
-weight: 90
+weight: 130
 ---
 
 The more you go in data analysis, the more you understand that the most suitable

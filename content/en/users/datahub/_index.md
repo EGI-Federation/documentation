@@ -4,7 +4,7 @@ type: docs
 description:
   "Documentation related to [EGI DataHub
   Service](https://www.egi.eu/services/datahub/)"
-weight: 60
+weight: 100
 ---
 
 ## Overview
@@ -17,7 +17,7 @@ The [EGI DataHub](https://datahub.egi.eu/) allows to:
 
 The main features offered by the DataHub are:
 
-- Discovery of data via a central portal.
+- Discovery of data spaces via a central portal
 - Access to data conforming to required policies which may be:
   1. unauthenticated open access;
   1. access after user registration or
@@ -35,7 +35,7 @@ The main features offered by the DataHub are:
   user communities existing infrastructure
 - File catalog to track replication of data: logical and physical file
 
-It is based on the [OneData technology](https://onedata.org/).
+It is based on the [Onedata technology](https://onedata.org/).
 
 ## Motivations
 
@@ -83,27 +83,28 @@ file system. Oneclient can be used from VM, containers, desktop,\...
 
 ## Highlighted features
 
-![Viewing a data space using the EGI DataHub web interface](datahub-space-web.png)
-
 Using the EGI DataHub web interface it\'s possible to manage the space.
 
-![Viewing a data space in a console locally mounted using Oneclient](datahub-space-oneclient.png)
+![Viewing a data space using the EGI DataHub web interface](datahub-space-web.png)
 
 Using Oneclient it\'s possible to mount a space locally, and access it over a
 POSIX interface, using files as they were stored locally. The file\'s blocks are
 downloaded on demand.
 
-![Viewing file distribution over the Oneproviders](datahub-replica-management.png)
+![Viewing a data space in a console locally mounted using Oneclient](datahub-space-oneclient.png)
 
 In Onedata the file distribution is done on a block basis, blocks will be
-replicated on the fly, and it\'s possible to instrument the replication.
+replicated on the fly, and it\'s possible to instrument the replication between
+Oneproviders.
 
-![Management of metadata using the web interface](datahub-metadata-management.png)
+![Viewing file distribution over the Oneproviders](datahub-replica-management.png)
 
 Three different formats of metadata can be attached to files: basic (key/value),
 JSON and RDF. The metadata can be managed using the Web interface and the APIs.
 It\'s also possible to create indexes and query them.
 
-![Viewing file popularity for smart caching](datahub-file-popularity-smarch-caching.png)
+![Management of metadata using the web interface](datahub-metadata-management.png)
 
 It\'s possible to view the popularity of a file and manage smart caching.
+
+![Viewing file popularity for smart caching](datahub-file-popularity-smarch-caching.png)

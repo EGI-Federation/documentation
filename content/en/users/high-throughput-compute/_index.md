@@ -1,7 +1,7 @@
 ---
 title: "High Throughput Compute"
 type: docs
-weight: 80
+weight: 60
 description: >
   EGI High Throughput Compute service
 ---
@@ -85,7 +85,7 @@ The key components of the EGI High Throughput Compute architecture are:
 - [Online Storage services](../online-storage/)
 - **Computing Elements** (CEs) are compute resources made available through GRID
   interfaces. The most common implementations of CEs in the EGI infrastructure
-  are [HTCondor-CE](https://htcondor-ce.readthedocs.io/en/latest/) and
+  are [HTCondor-CE](https://htcondor.com/htcondor-ce/) and
   [ARC-CE](http://www.nordugrid.org/arc/ce/).
 
 ### Access model
