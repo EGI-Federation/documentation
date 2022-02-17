@@ -40,8 +40,8 @@ following features:
 Administrative GUI for VO managers is available at [https://perun.egi.eu](https://perun.egi.eu)
 
 It is assumed that VO managers and members have already registered their EGI
-Check-in account (A step-by-step guide is provided in this [link](../../signup)
-).
+Check-in account (A step-by-step guide is provided in this
+[link](../../signup)).
 
 Due to historical reasons (wide adoption of VOMS) users might have their
 user entry in Perun already directly associated with their personal
@@ -74,9 +74,9 @@ described in the following sections in more detail.
 
 #### HOW-TO
 
-- Search and list VO members
-- Member detail (status, groups, settings,...)
-- Add/Remove VO members
+- [Search and display VO members](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16252929/Search+and+display+VO+members)
+- [Member detail (status, groups, settings,...)](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384005/Member+detail+status+groups+settings+...)
+- [Add/Remove VO members](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384022/Add+Remove+VO+members)
 
 #### Accepting new members
 
@@ -102,9 +102,10 @@ need this feature.
 
 ##### HOW-TO
 
-- Configure registration form and notifications
-- Approve/reject submitted registration
-- Configure and send invitation notification
+- [Configure registration form](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384056/Configure+registration+form)
+- [Configure registration notifications](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449548/Configure+registration+notifications)
+- [Approve/reject submitted registration](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384077/Approve+Reject+submitted+registrations)
+- [Configure and send invitation](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384094/Configure+and+send+invitation)
 
 #### Membership lifecycle, expiration rules and renewal
 
@@ -148,9 +149,8 @@ meaning one month).
 
 ##### HOW-TO
 
-- Change VO member status and expiration
-- Set VO membership expiration rules
-- Configure registration form and notifications
+- [Change VO member status and expiration](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449582/Change+VO+member+status+and+expiration)
+- [Configure VO membership expiration rules](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449599/Configure+VO+membership+expiration+rules)
 
 ### Managing groups
 
@@ -172,8 +172,8 @@ Top-level groups can be created only by the VO managers.
 #### HOW-TO
 
 - [Search and display groups](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/15499401/Search+and+display+groups)
-- Create/delete groups and subgroups
-- Create/remove relations between the groups
+- [Create/delete groups and subgroups](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384107/Create+delete+groups+and+subgroups)
+- [Create/remove relations between the groups](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449565/Create+remove+relations+between+the+groups)
 - [Rename group](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/15597689/Rename+group)
 
 #### Group memberships
@@ -224,9 +224,10 @@ form, but VO registration must be approved first.
 
 ##### HOW-TO
 
-- Configure registration form and notifications
-- Approve/reject submitted registration
-- Configure and send invitation notification
+- [Configure registration form](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384056/Configure+registration+form)
+- [Configure registration notifications](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449548/Configure+registration+notifications)
+- [Approve/reject submitted registration](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384077/Approve+Reject+submitted+registrations)
+- [Configure and send invitation](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384094/Configure+and+send+invitation)
 
 #### Group membership lifecycle, expiration rules and renewal
 
@@ -248,9 +249,8 @@ but there are some differences.
 
 ##### HOW-TO
 
-- Change group member status and expiration
-- Set group membership expiration rules
-- Configure registration form and notifications
+- [Change group member status and expiration](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384130/Change+group+member+status+and+expiration)
+- [Configure group membership expiration rules](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384155/Configure+group+membership+expiration+rules)
 
 ## Access management
 
