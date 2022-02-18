@@ -629,7 +629,7 @@ $ apt -y install cryptsetup
 ```
 
 To encrypt the disk, it must be first initialized correctly. In the example
-below, the disk named /dev/vdb is first filled with random data and then
+below, the disk named `/dev/vdb` is first filled with random data and then
 initialized using the cryptsetup luksFormat command below. This first step can
 be quite long.
 
@@ -687,7 +687,7 @@ The disk is now ready for use. The first time you use it, you must perform the
 following steps:
 
 Step 1: Open the encrypted disk with the `cryptsetup luksOpen` command. The name
-storage1 is only indicative, you can choose what you want:
+`storage1` is only indicative, you can choose what you want:
 
 ```shell
 $ cryptsetup luksOpen /dev/vdb storage1
@@ -712,7 +712,7 @@ $ mount -t ext4 /dev/mapper/storage1 /storage1
 ```
 
 Step 5: Check available space (this may be slightly different from what was
-entered during the openstack volume create command):
+entered during the `openstack volume create` command):
 
 ```shell
 $ df -h /storage1
@@ -723,8 +723,8 @@ Filesystem            Size  Used Avail Use% Mounted on
 
 Once the disk is operational, steps 2 and 3 are no longer necessary.
 
-You can now send files (for example DATA.dat) from your personal computer to
-your virtual machine in a secure way, for example with scp:
+You can now send files (for example `DATA.dat`) from your personal computer to
+your virtual machine in a secure way, for example with `scp`:
 
 ```shell
 $ scp -i ${HOME}/.ssh/cloudkey DATA.dat ubuntu@134.158.151.224:/storage1
