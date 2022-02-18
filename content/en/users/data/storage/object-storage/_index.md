@@ -99,7 +99,7 @@ Multiple command-line interfaces (CLIs) are available to manage object
 storage:
 
 - The [OpenStack CLI](https://docs.openstack.org/python-openstackclient/latest)
-- The [FedCloud Client](../../cloud-compute/openstack) is a high-level CLI for
+- The [FedCloud Client](../../../getting-started/cli) is a high-level CLI for
   interaction with the EGI Federated Cloud (**recommended**)
 - The [Swift CLI](https://docs.openstack.org/mitaka/cli-reference/swift.html)
   has some advanced features that are not available through the OpenStack CLI
@@ -130,7 +130,7 @@ use the FedCloud command below:
 {{< tabx header="Linux / Mac" >}}
 
   To avoid passing the site, VO, etc. each time, you can use
-  [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
+  [FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
   to set them once and reuse them with each command invocation.
 
   ```shell
@@ -148,7 +148,7 @@ use the FedCloud command below:
 {{< tabx  header="Windows" >}}
 
   To avoid passing the site, VO, etc. each time, you can use
-  [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
+  [FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
   to set them once and reuse them with each command invocation.
 
   ```shell
@@ -166,7 +166,7 @@ use the FedCloud command below:
 {{< tabx  header="PowerShell" >}}
 
   To avoid passing the site, VO, etc. each time, you can use
-  [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
+  [FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
   to set them once and reuse them with each command invocation.
 
   ```powershell
@@ -354,7 +354,7 @@ and delete objects from the storage.
 
 ## Access via EGI Data Transfer
 
-The [EGI Data Transfer](../../data-transfer) service can move files
+The [EGI Data Transfer](../../../data/management/data-transfer) service can move files
 to and from object storages that are compatible with the S3 protocol.
 You will have to upload the `access` keys to the EGI Data Transfer
 service, which will be able  to generate properly signed URLs for the
@@ -364,7 +364,7 @@ objects in the storage.
 at `support` `<at>` `egi.eu` for more details.
 {{% /alert %}}
 
-You can then refer to this [tutorial](../../tutorials/data-transfer-object-storage)
+You can then refer to this [tutorial](../../../tutorials/data-transfer-object-storage)
 to see how to transfer to/from an Object storage endpoint.
 
 <!--

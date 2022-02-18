@@ -1,9 +1,10 @@
 ---
-title: "Monitoring"
-linkTitle: "Monitoring"
-type: docs
-description: "Documentation related to EGI Data Transfer Monitoring"
+title: Monitoring Data Transfer
+linkTitle: Monitoring
 weight: 40
+type: docs
+description: >
+    Monitoring file transfers of EGI Data Transfer
 ---
 
 ## Overview

@@ -1,14 +1,14 @@
 ---
-title: "API"
-linkTitle: "API"
-type: docs
-description: "Documentation of [EGI DataHub](https://datahub.egi.eu/) APIs"
+title: DataHub API
+linkTitle: API
 weight: 30
+type: docs
+description: >
+  The Application Programming Interfaces of EGI DataHub
 ---
 
-Most if not all operations can be performed using the Onedata API.
-
-The official documentation is [here](https://onedata.org/#/home/api).
+Most operations in EGI DataHub can be performed using one of the
+[OneData Applicaton Programming Interfaces](https://onedata.org/#/home/api) (APIs).
 
 {{% alert title="Important" color="warning" %}} In order to be able to access
 the Onedata APIs, an access token is required. See below for instructions on how
@@ -27,7 +27,7 @@ and other Onedata APIs.
 It's possible to retrieve the `CLIENT_ID`, `CLIENT_SECRET` and `REFRESH_TOKEN`
 using a
 [special OIDC client connected to Check-in](https://aai.egi.eu/fedcloud/). See
-[Check-in documentation](../../check-in/) for more information.
+[Check-in documentation](../../../../aai/check-in) for more information.
 
 <!-- markdownlint-disable line-length -->
 ```shell

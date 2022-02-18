@@ -19,8 +19,8 @@ Three major service offerings are available:
   virtual machines (VMs) as volumes, a simple solution for durable data that
   does not need to be shared beside a single VM.
 - [Grid Storage](grid-storage) is file storage for
-  [High Throughput Compute](../../compute/high-throughput-compute/) (HTC) and/or
-  [High Performance Compute](../../compute/high-performance-compute/) (HPC)
+  [High Throughput Compute](../../compute/high-throughput-compute) (HTC) and/or
+  [High Performance Compute](../../compute/high-performance-compute) (HPC)
   scenarios.
 - [Object Storage](object-storage) is persistent, hierarchical blob storage for
   cloud native applications, archiving, or when data is shared between different

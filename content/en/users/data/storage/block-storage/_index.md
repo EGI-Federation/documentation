@@ -73,7 +73,7 @@ Multiple command-line interfaces (CLIs) are available to manage block
 storage:
 
 - The [OpenStack CLI](https://docs.openstack.org/python-openstackclient/latest)
-- The [FedCloud Client](../../cloud-compute/openstack) is a high-level CLI for
+- The [FedCloud Client](../../../getting-started/cli) is a high-level CLI for
   interaction with the EGI Federated Cloud (**recommended**)
 - The [Cinder CLI](https://docs.openstack.org/python-cinderclient/latest/user/shell.html)
   has some advanced features and administrative commands that are not available through
@@ -97,7 +97,7 @@ FedCloud command:
 {{< tabx header="Linux / Mac" >}}
 
   To avoid passing the site, VO, etc. each time, you can use
-  [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
+  [FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
   to set them once and reuse them with each command invocation.
 
   ```shell
@@ -117,7 +117,7 @@ FedCloud command:
 {{< tabx  header="Windows" >}}
 
   To avoid passing the site, VO, etc. each time, you can use
-  [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
+  [FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
   to set them once and reuse them with each command invocation.
 
   ```shell
@@ -137,7 +137,7 @@ FedCloud command:
 {{< tabx  header="PowerShell" >}}
 
   To avoid passing the site, VO, etc. each time, you can use
-  [FedCloud CLI environment variables](https://fedcloudclient.fedcloud.eu/usage.html#environment-variables)
+  [FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
   to set them once and reuse them with each command invocation.
 
   ```powershell
@@ -628,7 +628,7 @@ required in the application logic.
 
 ## Access via EGI Data Transfer
 
-The [File Transfer service](../../data-transfer) allows you to move any type of
+[EGI Data Transfer](../../../data/management/data-transfer) allows you to move any type of
 data files asynchronously from one storage to another. If you want to copy data
 from/to one VM running on the EGI cloud, you will need to run a compatible
 server (Webdav/https, GridFTP, xrootd, SRM, S3, GCloud) that can interact with
@@ -642,7 +642,7 @@ Take into account:
 - Security groups for the VM must allow ports 80, 2811 and the 50000-50200
   range.
 - The VM must have a valid DNS entry (you can use
-  [FedCloud's Dynamic DNS](https://nsupdate.fedcloud.eu) for getting one)
+  [Dynamic DNS](https://nsupdate.fedcloud.eu) in FedCloud to get one)
 - The default setup uses `/srv` as path to expose and maps users to the `nobody`
   user. Make sure that `nobody` is able to read (and write if needed) on that
   location or set the mapping to the appropriate users.

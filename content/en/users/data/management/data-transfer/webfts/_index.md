@@ -1,15 +1,17 @@
 ---
-title: "WebFTS"
-linkTitle: "WebFTS"
+title: Data Transfer Web Interface
+linkTitle: Web Interface
+weight: 10
 type: docs
-description: "Documentation related to EGI Data Transfer Web Interface"
-weight: 20
+description: >
+    The web interface of EGI Data Transfer
 ---
 
 ## Overview
 
-The WebFTS interface offers end users a way to graphically execute and monitor
-file transfer between storages using different protocols. You can check CERN
+The EGI Data Transfer web interface (WebFTS) offers an easy way to
+initiate and monitor file transfers between storages using different protocols.
+You can check the CERN
 [WebFTS documentation](https://fts3-docs.web.cern.ch/fts3-docs/docs/webfts/userguide.html)
 and [FAQ](https://fts3-docs.web.cern.ch/fts3-docs/docs/webfts/faq.html) for more
 details.

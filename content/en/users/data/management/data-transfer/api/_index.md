@@ -1,42 +1,44 @@
 ---
-title: "API"
-linkTitle: "API"
-type: docs
-description: "Documentation for EGI Data Transfer API"
+title: Data Transfer API
+linkTitle: API
 weight: 30
+type: docs
+description: >
+  The Application Programming Interface of EGI Data Transfer
 ---
 
 ## Overview
 
-The EGI Data Transfer service offers API both for Users and Admins, in this
-section we are focusing on the User API. Two APIs are available to users:
+EGI Data Transfer offers Application Programming Interfaces (APIs) for both
+regular users and administrator. This page focuses on the user APIs,
+available in two favors:
 
-- RESTFul API
+- REST API
 - Python Easy Bindings
 
-In both cases users need a way to be authenticated and authorised and this is
-explained in the next section.
+{{% alert title="Note" color="info" %}} Please check out the
+[documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html)
+for more details about the avilable APIs, their parameters and return values.
+{{% /alert %}}
 
 ## Authentication & Authorisation
 
-{{% alert title="Warning" color="warning" %}}
+Users have to authenticate before they can call the API.
 
-Users have to authenticate using a X.509 User certificate. The integration with
-EGI Check-in in order to authenticate via OIDC tokens  
-is under development and will be later made available in production endpoints.
-
+{{% alert title="Important" color="warning" %}} Authentication requires an
+**X.509 user certificate**.<br/>
+Integration with [EGI Check-in](../../../../aai/check-in), which will allow
+authentication using OIDC tokens is under development.
 {{% /alert %}}
 
 During the authentication phase, credentials are delegated to the FTS service,
 which will contact the storages to steer the data transfers on behalf of the
 users.
 
-The FTS service supports both plain X.509 proxies than
-[VOMS](https://italiangrid.github.io/voms/index.html) X.509 proxies extended
-with VO information for authentication and authorisation.
-
-Learn about
-[VOMS configuration and proxy creation](../../check-in/vos/voms/#creating-a-proxy).
+The FTS service supports both plain X.509 proxies and
+[X.509 proxies extended with VO information](https://italiangrid.github.io/voms/index.html) (VOMS)
+for authentication and authorisation. You can learn more about
+[VOMS configuration and proxy creation](../../../../aai/check-in/vos/voms#creating-a-proxy).
 
 ## RESTFul API
 
@@ -251,7 +253,3 @@ b6191212-d347-11ea-8a47-fa163e45cbc4
     u'verify_checksum': u't',
     u'vo_name': u'dteam'}
 ```
-
-Full
-[documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html)
-is also available.

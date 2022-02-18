@@ -68,12 +68,12 @@ $ lcg-infosites --vo biomed  se
 
 Access to grid storage via a command-line interface (CLI) requires users
 to obtain a valid X.509 user VOMS proxy.
-Please refer to the [Check-in](../../check-in/vos/voms) documentation for more
+Please refer to the [Check-in](../../../aai/check-in/vos/voms) documentation for more
 information.
 
 {{% alert title="Note" color="info" %}} Integration via
 [OpenID Connect](https://openid.net/connect) to the
-[EGI Check-in service](../../check-in) is under piloting at some of the
+[EGI Check-in service](../../aai/check-in) is under piloting at some of the
 endpoints of the EGI Cloud infrastructure , but it has not yet reached the
 production stage.
 {{% /alert %}}
@@ -155,10 +155,10 @@ gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file      DELETED
 
 <!-- markdown-link-check-disable -->
 
-The [EGI Data Transfer](../../data-transfer) service provides mechanisms
+The [EGI Data Transfer](../../../data/management/data-transfer) service provides mechanisms
 to optimize the transfer of files between EGI Online Storage endpoints.
-Both a [graphical user interface](../../data-transfer/webfts) (GUI) and
-[command-line interfaces](../../data-transfer/clients) (CLI) are available
+Both a [graphical user interface](../../../data/management/data-transfer/webfts) (GUI) and
+[command-line interfaces](../../../data/management/data-transfer/clients) (CLI) are available
 to perform bulk movement of data.
 Please check out the related documentation for more information.
 
@@ -170,7 +170,7 @@ Grid storage access, most of the time, is hidden from users by the integration
 with the Data Management Frameworks (DMFs) used by Collaborations and
 Experiments.
 
-For example, the [EGI Workload Manager](../../workload-manager) provides a way
+For example, [EGI Workload Manager](../../../compute/orchestration/workload-manager) provides a way
 to efficiently access grid storage endpoints in order to read/store files,
 and to catalogue the existing file and related metadata.
 

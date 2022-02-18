@@ -1,17 +1,18 @@
 ---
-title: "Clients"
-linkTitle: "Clients"
+title: DataHub Clients
+linkTitle: Clients
+weight: 20
 type: docs
-description: "Documentation related to [EGI DataHub](https://datahub.egi.eu/)"
-weight: 10
+description: > 
+  Clients for accessing data EGI DataHub
 ---
 
-The EGI DataHub spaces can be accessed via web interface, the `oneclient`
-component or the API.
+[EGI DataHub](https://datahub.egi.eu/) spaces can be accessed via web interface,
+the `oneclient` component or the [API](../api).
 
 The official documentation for `oneclient` is hosted on the
 [Onedata homepage](https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html),
-and a specific [tutorial](../../tutorials/vm-datahub) on how to install and use it
+and a specific [tutorial](../../../../tutorials/vm-datahub) on how to install and use it
 from a Virtual Machine is also available.
 
 ## Using the web interface
@@ -38,7 +39,7 @@ metadata, managing space access) using the web browser.
 ## Generating tokens for using Oneclient or APIs
 
 {{% alert title="Important" color="warning" %}} In order to be able to access
-your spaces using [Oneclient](../clients) or [APIs](../api), it's required to
+your spaces using `oneclient` or the [API](../api), it is required to
 generate an access token. {{% /alert %}}
 
 Tokens have to be generated from the **EGI DataHub** (Onezone) interface.

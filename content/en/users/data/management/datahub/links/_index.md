@@ -1,9 +1,10 @@
 ---
-title: "Links"
-linkTitle: "Links"
-type: docs
-description: "Related links"
+title: DataHub Links
+linkTitle: Links
 weight: 40
+type: docs
+description: >
+  Links to additonal DataHub resources
 ---
 
 - [EGI DataHub service](https://datahub.egi.eu)

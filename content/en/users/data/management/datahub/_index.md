@@ -15,7 +15,7 @@ environments and multiple types of underlying storage**. It allows researchers
 to share, collaborate and perform computations on the stored data easily.
 
 Users can bring data close to their community or to the
-[compute facilities](../../../compute/) they use, in order to exploit it efficiently.
+[compute facilities](../../../compute) they use, in order to exploit it efficiently.
 This is as simple as selecting which (subset of the) data should be available
 at which supporting provider. 
 
@@ -26,7 +26,7 @@ The main features of DataHub are:
 - Replication of data across providers for resiliency and availability purposes
 - Access to data from the [AppDB](../../../compute/cloud-compute/images/)
   to enable VOs to associate appropriate data with matching Virtual Appliances
-- Integration with [EGI Check-in](../../../aai/check-in/) allows access using
+- Integration with [EGI Check-in](../../../aai/check-in) allows access using
   comunity credentials, including from other EGI services and components
 - File catalog to track replication of data and manage logical and physical files
 
@@ -34,7 +34,7 @@ EGI DataHub supports multiple access policies:
 
 - Unauthenticated, open access
 - Access after user registration or
-- Access restricted to members of a [Virtual Organization](../../../aai/check-in//vos/) (VO)
+- Access restricted to members of a [Virtual Organization](../../../aai/check-in//vos) (VO)
 
 Data replication in EGI DataHub may take place either on-­demand or automatically.
 Replication uses a file catalogue to enable tracking of logical and physical copies of data.
@@ -79,7 +79,7 @@ Onezone instance.
 
 The central Onezone instance of the EGI Federation. Single Sign On
 (SSO) with all the connected storage providers (Oneprovider) is guaranteed
-through [EGI Check-in](../../../aai/check-in/)
+through [EGI Check-in](../../../aai/check-in)
 
 ### Oneclient
 

@@ -1,10 +1,12 @@
 ---
-title: "Clients"
-linkTitle: "Clients"
-type: docs
-description: "Documentation related to EGI Data Transfer Clients"
+title: Data Tranfer Clients
+linkTitle: Clients
 weight: 20
+type: docs
+description: >
+  Clients for accessing EGI Data Transfer
 ---
+
 <!--
 // jscpd:ignore-start
 -->
