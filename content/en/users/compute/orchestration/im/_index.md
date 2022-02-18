@@ -20,10 +20,10 @@ a wide variety of backends, either federated infrastructures (such as
 [Amazon Web Services](https://aws.amazon.com/),
 [Google Cloud](http://cloud.google.com/) or
 [Microsoft Azure](http://azure.microsoft.com/)) or on-premises (such as
-[OpenStack](http://www.openstack.org/)) or ,
+[OpenStack](../../../getting-started/openstack)) or ,
 thus making user applications cloud agnostic.
 IM features a [web-based GUI](https://appsgrycap.i3m.upv.es:31443/im-dashboard/),
-an XML-RPC API, a REST API and a [command-line interface](./cli/) (CLI).
+an XML-RPC API, a REST API and a [command-line interface](cli) (CLI).
 
 {{% alert title="Tip" color="info" %}} An easy way to deploy your first VM
 in the EGI Federation is from the

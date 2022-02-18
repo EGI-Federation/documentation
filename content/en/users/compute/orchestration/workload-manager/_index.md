@@ -140,7 +140,7 @@ authenticate users. These certificates are delivered to each individual by
 trusted certification authorities. If you have a personal certificate issued by
 a [EUGridPMA-certified](http://www.eugridpma.org/) authority you can use it for
 this tutorial. Otherwise refer to the information available in this
-[section](../check-in/vos/voms/#get-a-certificate), to obtain a certificate.
+[section](../../../aai/check-in/vos/voms/#get-a-certificate), to obtain a certificate.
 Your certificate may take a few days to be delivered, so please ask for your
 certificate well in advance and in any case, before the tutorial starts.
 
@@ -150,7 +150,7 @@ Your personal certificate is usually delivered to you via a site and is
 automatically loaded in your browser. You need to export it from the browser and
 put it in the appropriate format for DIRAC to use. This is a one-time operation.
 Please follow the instructions in detailed in
-[VOMS documentation page](../check-in/vos/voms) to export and in install your
+[VOMS documentation page](../../../aai/check-in/vos/voms) to export and in install your
 certificate.
 
 #### Send your certificate's subject to the DIRAC team
@@ -170,7 +170,7 @@ openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
 To access the EGI Workload Manager open a web browser to:
 [https://dirac.egi.eu/DIRAC/](https://dirac.egi.eu/DIRAC/)
 
-![The EGI Workload Manager service Web portal](./egi_workload_manager_web_portal.png)
+![The EGI Workload Manager service Web portal](egi_workload_manager_web_portal.png)
 
 The EGI Workload Manager service Web portal
 

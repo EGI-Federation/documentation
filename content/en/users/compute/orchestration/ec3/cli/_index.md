@@ -66,10 +66,9 @@ your cluster:
 1. network identifiers
 1. VM image identifiers
 
-We will use the [fedcloud](https://fedcloudclient.fedcloud.eu/) client to
-discover the required information. Set your credentials as shown in
-[the authentication guide](../../auth/#check-in-and-access-tokens) and create
-the autorisation files needed for ec3 (in this case for CESGA with VO
+We will use the [FedCloud client](../../../../getting-started/cli) to discover
+the required information. Set your credentials as shown in
+[the authentication guide](../../../../aai/auth/#check-in-and-access-tokens) and create the autorisation files needed for ec3 (in this case for CESGA with VO
 vo.access.egi.eu):
 
 ```shell

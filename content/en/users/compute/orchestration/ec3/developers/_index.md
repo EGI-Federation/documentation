@@ -1,5 +1,5 @@
 ---
-title: "Instructions for developers"
+title: Instructions for developers
 type: docs
 weight: 30
 description: >

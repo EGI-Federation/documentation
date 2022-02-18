@@ -11,7 +11,7 @@ description: >
 
 We will build a torque cluster on one of the EGI Cloud providers using EC3.
 Create a directory to store EC3 configuration and init it with the
-[fedcloud](https://fedcloudclient.fedcloud.eu/) client:
+[FedCloud client](../../../../../getting-started/cli):
 
 ```shell
 mkdir -p torque

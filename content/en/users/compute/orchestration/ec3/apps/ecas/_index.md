@@ -41,15 +41,10 @@ This guide will show how to:
 
 ## Deploy an ECAS cluster with EC3
 
-In the latest release of the EC3 platform, tailored to support the EGI
-[Applications on Demand (AoD) service](../../../../applications-on-demand), a
-new Ansible receipt is now available for researchers interested to deploy ECAS
-cluster on the EGI Infrastuctrure. Additional details on how to configure and
-deploy an ECAS cluster on EGI resources are provided in the next sections.
-
-ECAS in now available in the latest release of the EC3 platform supporting the
-EGI Applications on Demand (AoD). The next sections provide details on how to
-configure and deploy an ECAS cluster on EGI resources.
+In the latest release of the EC3 platform a new Ansible receipt is available
+for researchers interested to deploy ECAS cluster on the EGI Infrastuctrure.
+The next sections provide details on how to configure and deploy an ECAS cluster
+on EGI resources.
 
 ### Configure and deploy the cluster
 

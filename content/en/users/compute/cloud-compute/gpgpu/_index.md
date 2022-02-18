@@ -32,14 +32,14 @@ If you are not sure what VO to join, request access to the pilot VO
 [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
 by visiting the [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240)
 with your Check-In account. More information is available in the
-[Check-in](../../../users/check-in/joining-virtual-organisation/) section.
+[Check-in](../../../aai//check-in/joining-virtual-organisation) section.
 
 GPUs sites can be accessed in different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like the OpenStack Horizon
-dashboards, [VMOps Dashboard](../monitor), or [Infrastructure manager](../automate).
+dashboards, [VMOps Dashboard](../monitor), or a [cloud orchestrator](../automate).
 
 It is also possible to use the
-[fedcloudclient](https://fedcloudclient.fedcloud.eu/) for CLI access. Below is
+[FedCloud Client](../../../getting-started/cli) for command-line access. Below is
 an example on how to use the `fedcloud` command to show the GPU properties of
 the available GPU flavors on all sites for the specific VO in the command:
 

@@ -13,12 +13,12 @@ description: >
 tool to **create elastic virtual clusters on top of Infrastructure-as-a-Service
 (IaaS) providers**.
 
-Being based on [Infrastructure Manager](../im/), EC3 supports the same wide
+Being based on [Infrastructure Manager](../im), EC3 supports the same wide
 choices of back-ends, either public (such as
 [Amazon Web Services](https://aws.amazon.com/),
 [Google Cloud](http://cloud.google.com/) or
 [Microsoft Azure](http://azure.microsoft.com/)) or on-premises (such as
-[OpenStack](http://www.openstack.org/)). EC3 can provision clusters running
+[OpenStack](../../../getting-started/openstack)). EC3 can provision clusters running
 [TORQUE](https://github.com/adaptivecomputing/torque),
 [SLURM](http://slurm.schedmd.com/),
 [HTCondor](https://research.cs.wisc.edu/htcondor/),

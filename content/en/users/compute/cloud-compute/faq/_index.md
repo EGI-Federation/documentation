@@ -238,7 +238,7 @@ or boot your VM in a previous state when you need it back. We list below the
 main strategies you can use:
 
 - Use a volume to store the data to be kept: Check the
-  [Storage section of the documentation](../../online-storage/block-storage/) to
+  [Storage section of the documentation](../../../data/storage/block-storage) to
   learn how to use volumes. If you start your VM from a volume, the VM can be
   destroyed and recreated easily. OpenStack documentation cover how to
   [start a VM from a volume with CLI](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)

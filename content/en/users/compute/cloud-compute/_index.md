@@ -14,7 +14,7 @@ applications and services for research and science.
 
 This documentation focuses on using the service. Those resource providers
 willing to integrate into the service, please see the
-[EGI Federated Cloud Integration documentation](../../providers/cloud-compute).
+[EGI Federated Cloud Integration documentation](../../../providers/cloud-compute).
 
 Cloud Compute gives you the ability to deploy and scale virtual machines
 on-demand. It offers computational resources in a secure and isolated
@@ -72,4 +72,4 @@ emerged:
     [Training infrastructure](https://www.egi.eu/services/training-infrastructure/)
 
 Eager to test this service? Have a look at
-[how to create your first Virtual Machine in EGI](../tutorials/create-your-first-virtual-machine/).
+[how to create your first Virtual Machine in EGI](../../tutorials/create-your-first-virtual-machine).

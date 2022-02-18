@@ -81,8 +81,8 @@ distributed IT resources that are part of the EGI Cloud. It comprises of:
 
 The key components of the EGI High Throughput Compute architecture are:
 
-- [Data Transfer service](../data-transfer/) (FTS)
-- [Online Storage services](../online-storage/)
+- [Data Transfer service](../../data/management/data-transfer) (FTS)
+- [Online Storage services](../../data/storage)
 - **Computing Elements** (CEs) are compute resources made available through GRID
   interfaces. The most common implementations of CEs in the EGI infrastructure
   are [HTCondor-CE](https://htcondor.com/htcondor-ce/) and
@@ -91,7 +91,7 @@ The key components of the EGI High Throughput Compute architecture are:
 ### Access model
 
 Access to HTC resources in the EGI infrastructure is based on X.509 certificates
-and [Virtual Organisations](../check-in/vos) (VOs).
+and [Virtual Organisations](../../aai/check-in/vos) (VOs).
 
 VOs are fully managed by research communities, allowing communitites to manage
 their users and grant access to their services and resources. This means
@@ -110,5 +110,5 @@ Before users can access EGI HTC services, they have to:
    individually granted access to resources.
 1. Add the certificate to their internet browser of choice, or import it into
    the appropriate certificate store of their local machine (on Windows).
-1. Proceed to the [Workload Manager](../workload-manager) to submit HTC jobs or
-   retrieve job results, login using [EGI Check-in](../check-in) when prompted.
+1. Proceed to [Workload Manager](../../compute/orchestration/workload-manager) to submit HTC jobs or
+   retrieve job results, login using [EGI Check-in](../../aai/check-in) when prompted.

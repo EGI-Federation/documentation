@@ -6,10 +6,10 @@ description: >
   Use Infrastrucure-as-Code in the EGI Cloud
 ---
 
-The [OpenStack](../../getting-started/openstack/) sites in the EGI Cloud that
+The [OpenStack](../../../getting-started/openstack) sites in the EGI Cloud that
 provide compute resources to run virtual machines (VMs) allow nearly everything
 to be done via an Application Programming Interface (API) or a
-[command-line interface](../../getting-started/cli/) (CLI).
+[command-line interface](../../../getting-started/cli) (CLI).
 This means that repetitive tasks or complex architectures can be turned into shell scripts.
 
 But creating VMs happens so often in the EGI Cloud that tools were developed to
@@ -24,5 +24,5 @@ Automating this activity will help researchers to:
 - Easily share scientific pipelines with collaborators.
 - Make scientific applications cloud agnostic.
 
-To automate VM deployment, users can use any of the [cloud orchestrators](../../cloud-orchestration/)
+To automate VM deployment, users can use any of the [cloud orchestrators](../../orchestration)
 available in the EGI Cloud.

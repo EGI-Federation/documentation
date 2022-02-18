@@ -20,9 +20,10 @@ Functionalities:
 - Add nodes to an infrastructure
 - Resize VMs
 
-More details about installation and configuration in the
-[IM Dashboard documentation page](https://imdocs.readthedocs.io/en/latest/dashboard.html).
-
+{{% alert title="Tip" color="info" %}} More details about installing
+and configuring the dashboard are available in the
+[IM Dashboard documentation](https://imdocs.readthedocs.io/en/latest/dashboard.html).
+{{% /alert %}}
 ## Usage
 
 The dashboard of the IM enables non advanced users to manage their
@@ -30,14 +31,14 @@ infrastructures by launching a set of predefined TOSCA templates on top of EGI
 Cloud Compute resources. The dashboard does not provide all the features
 provided by the IM service. In case you need more advanced features use the
 [IM Web interface](https://imdocs.readthedocs.io/en/latest/web.html) or the
-[IM-CLI](../cli).
+[IM-CLI](cli).
 
 ![Landing page](dash_login.png)
 
 ### Login
 
-The user will use the [EGI Check-in Service](../../check-in) to log into the
-dashboard. Once authenticated, the user will be redirected to the portfolio
+Users must use [EGI Check-in](../../../../aai/check-in) to log into the
+dashboard. Once authenticated, they will be redirected to the portfolio
 of available TOSCA templates.
 
 ![Portfolio page](dash_configure.png)
@@ -70,8 +71,8 @@ the selected cloud credentials.
 
 Editing or adding the credentials will show a modal form where the user has the
 ability to specify all the parameters needed to access the supported cloud providers.
-In particular, for [EGI Cloud Compute](../../cloud-compute) sites the
-user has only to select one of the VOs he is member and one of sites that
+In particular, for [Cloud Compute](../../../cloud-compute) sites the
+user only has to select one of the VOs he is member of and one of sites that
 supports that VO. These dropdown fields are generated using the information
 available from the sites and the list of VOs the user is member of.
 

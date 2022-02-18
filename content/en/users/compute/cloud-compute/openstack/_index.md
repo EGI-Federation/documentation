@@ -80,7 +80,7 @@ cat /etc/grid-security/certificates/*.pem >> $(python -m requests.certs)
 ## Authentication
 
 Check the documentation at the
-[authentication and authorisation section](../auth/) on how to get the right
+[authentication and authorisation section](../auth) on how to get the right
 credentials for accessing the providers.
 
 ### OpenStack token for other clients
@@ -99,7 +99,7 @@ $ OS_TOKEN=$(openstack --os-auth-type v3oidcaccesstoken \
 ```
 
 You can easily obtain an OpenStack token with the
-[fedcloud](../../getting-started/cli/) client:
+[FedCloud client](../../../getting-started/cli):
 
 ```shell
 fedcloud openstack --site <NAME_OF_THE_SITE> --vo <NAME_OF_VO> token issue -c id -f value
@@ -218,7 +218,7 @@ openstack server create --flavor <flavor> \
 [Terraform](https://terraform.io/) supports EGI Cloud OpenStack providers by
 using valid access tokens for Keystone. For using this, just configure your
 provider as usual in Terraform, but do not include user/password information.
-Instead, use the [fedcloud](../../getting-started/cli/) client to configure
+Instead, use the [FedCloud client](../../../getting-started/cli) client to configure
 environment variables as follows:
 
 ```shell

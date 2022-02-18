@@ -42,7 +42,7 @@ Some users roles have special consideration in VOs:
 
 - Users with VO Manager, VO Deputy or VO Expert Role have extra privileges in
   the AppDB for managing the Virtual Appliances to be available at every
-  provider. Check the [Virtual Machine Image Management documentation](../vmi/)
+  provider. Check the [Virtual Machine Image Management documentation](../vmi)
   for more information.
 
 ### Pilot VO
@@ -101,7 +101,7 @@ Alternatively, you can use the
 [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/user/oidc-gen/provider/egi)
 tool that is able to manage your tokens locally, or the
 [fedcloud](https://fedcloudclient.fedcloud.eu/) client executed inside
-[EGI Notebooks](../../notebooks/integration/#fedcloud-client).
+[EGI Notebooks](../../../dev-env/notebooks/integration/#fedcloud-client).
 
 ### Discovering projects in Keystone
 
@@ -157,7 +157,7 @@ of X.509 certificates should be limited to legacy applications. {{% /alert %}}
 [VOMS](https://italiangrid.github.io/voms/index.html) uses X.509 proxies
 extended with VO information for authentication and authorisation on the
 providers. You can learn about X.509 certificates and VOMS in the
-[Check-in documentation](../../check-in/vos/voms).
+[Check-in documentation](../../../aai/check-in/vos/voms).
 
 ### VOMS configuration
 
