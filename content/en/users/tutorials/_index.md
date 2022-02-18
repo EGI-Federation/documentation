@@ -1,5 +1,6 @@
 ---
-title: "Tutorials"
+title: Tutorials & Guides
+linkTitle: Tutorials
 type: docs
 weight: 20
 description: >

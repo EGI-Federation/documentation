@@ -8,7 +8,7 @@ description: >
 
 ## Overview
 
-EGI is a federation of computing and storage resource providers united by a
+EGI is a federation of compute and storage resource providers united by a
 mission to support research and innovation.
 
 The resources in the EGI infrastructure are offered by
