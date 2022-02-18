@@ -11,7 +11,7 @@ description: >
 
 One of the challenges for researchers in recent years is to manage an ever
 increasing amount of compute and storage services, which then form ever more
-complex end-user applications or platforms.
+complex end user applications or platforms.
 
 To address this need, several cloud-based orchestrators are available that can
 support the creation of virtual infrastructures on top of

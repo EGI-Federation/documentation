@@ -9,8 +9,8 @@ description: >-
 
 ## Rucio terms
 
-- [**Rucio Storage Element**](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html) (RSE) is another name for an
-  endpoint, or storage solution.
+- [**Rucio Storage Element**](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)
+  (RSE) is another name for an endpoint, or storage solution.
 - [**Rules**](https://rucio.readthedocs.io/en/latest/replication_rules_examples.html)
   are an instruction to Rucio to do a certain thing. This can be to
   ensure file _x_ has at least 1 copy at _storagesite1_, or ensure file _y_ is on

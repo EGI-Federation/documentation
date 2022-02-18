@@ -17,7 +17,7 @@ to share, collaborate and perform computations on the stored data easily.
 Users can bring data close to their community or to the
 [compute facilities](../../../compute) they use, in order to exploit it efficiently.
 This is as simple as selecting which (subset of the) data should be available
-at which supporting provider. 
+at which supporting provider.
 
 The main features of DataHub are:
 
