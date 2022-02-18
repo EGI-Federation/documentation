@@ -18,15 +18,6 @@ HTC and cloud resource pools from the EGI Federation. This pool of computing
 resources can be easily extended and customized to support the needs of new
 scientific communities.
 
-{{% alert title="Example" color="info" %}} In the
-[LHCb](https://home.cern/science/experiments/lhcb) experiment the service has
-proven production scalability up to peaks of more than 100,000 concurrently
-running jobs. WeNMR, the structural biology community, uses the service for a
-number of community services. The community reported an improvement of jobs
-submission in the infrastructure from previous 70% to 99% with the EGI Workload
-Manager service.
-{{% /alert %}}
-
 <!-- markdownlint-disable no-inline-html -->
 
 {{% alert title="Note" color="info" %}} Workload Manager is based on
