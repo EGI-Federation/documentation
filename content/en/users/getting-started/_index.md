@@ -44,10 +44,10 @@ supporting it. {{% /alert %}}
 Access to resources (services) in the EGI infrastructure is based on
 [OpenID Connect](http://openid.net/connect/) (OIDC), which replaces the legacy
 authentication and authorization based on
-[X.509 certificates](../check-in/vos/voms).
+[X.509 certificates](../aai/check-in/vos/voms).
 
 {{% alert title="Note" color="info" %}} Some services still rely on X.509
-certificates, e.g. [High Throughput Compute](../high-throughput-compute).
+certificates, e.g. [High Throughput Compute](../compute/high-throughput-compute).
 {{% /alert %}}
 
 **EGI uses [Virtual Organisations](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
@@ -60,18 +60,18 @@ infrastructure for their scientific needs.
 Before users can access an EGI service, they have to:
 
 1. Obtain a supported ID, by signing up with either
-   [EGI Check-in](../check-in/signup) directly, or with one of the community
+   [EGI Check-in](../aai/check-in/signup) directly, or with one of the community
    identity providers from the EGI infrastructure.
-1. [Enroll into one VO](../check-in/joining-virtual-organisation/). Users need
+1. [Enroll into one VO](../aai/check-in/joining-virtual-organisation/). Users need
    to be part of a VO before using EGI services. Explore the list of available
    VOs in the [Operations Portal](https://operations-portal.egi.eu/vo/a/list).
-1. Authenticate to [EGI Check-in](../check-in) to obtain an OAuth2 access token
+1. Authenticate to [EGI Check-in](../aai/check-in) to obtain an OAuth2 access token
    (and optionally a refresh token).
 1. Manage or use the service by leveraging the access token, either implicitly
    (web interfaces and dashboards usually hide this from users) or explicitly
    (e.g. when using [command-line tools](cli)).
 
-{{% alert title="Note" color="info" %}} See the [EGI Check-in](../check-in)
+{{% alert title="Note" color="info" %}} See the [EGI Check-in](../aai/check-in)
 documentation for a detailed description of the Authentication and Authorization
 Infrastructure (AAI) of the EGI Federation, and to gain a better understanding
 of the concepts that act as building blocks for the AAI implementation.
@@ -90,7 +90,7 @@ EGI services use the following types of access conditions:
   but it is possible with various institutional accounts (through
   [EduGAIN](https://edugain.org)), or with social accounts (e.g. Google). For
   example you can [create a test Virtual Machine](../tutorials/create-your-first-virtual-machine/)
-  or launch a [Jupyter Notebook](../notebooks/).
+  or launch a [Jupyter Notebook](../dev-env/notebooks/).
 - **Policy based** - Users are granted access based on specific policies defined
   by the service providers. Access needs to be requested, and will be checked
   for such services. Example: Compute resources and tools allocated to
@@ -160,7 +160,7 @@ the users' requests before granting the access to the resources.
 ### Get access to pilot allocation
 
 1. Log into the [EGI Marketplace](https://marketplace.egi.eu) with the
-   [EGI AAI Check-In service](../check-in).
+   [EGI AAI Check-In service](../aai/check-in).
 1. Setup a profile, including details about your affiliation and role within a
    research institute/project/team.
 1. Navigate the marketplace top-menu and click on the category:
@@ -189,8 +189,8 @@ extended/renewed upon request. These resources are delivered
 [through the vo.access.egi.eu VO](https://documents.egi.eu/public/ShowDocument?docid=2773).
 
 You can manage those resources via [command-line](cli) or any of the
-dashboards of the EGI Cloud: the [VMOps dashboard](../cloud-compute/monitor)
-and the [IM dashboard](../cloud-orchestration/dashboard).
+dashboards of the EGI Cloud: the [VMOps dashboard](../compute/cloud-compute/monitor/)
+and the [IM dashboard](../compute/orchestration/im/dashboard/).
 
 You can also easily access scientific applications:
 
@@ -200,8 +200,8 @@ You can also easily access scientific applications:
   proteomics and sequence data. The application is available through the Science
   Software on Demand Service (SSoD). You can access the
   [EGI Chipster instace](https://chipster.fedcloud-tf.fedcloud.eu/)
-- [EC3](../ec3) has a list of [applications](../ec3/apps/) that you can
-  easily start from the
+- [EC3](../compute/orchestration/ec3) has a list of
+  [applications](../compute/orchestration/ec3/apps/) that you can easily start from the
   [EC3 portal](https://servproject.i3m.upv.es/ec3-ltos/index.php)
 
 ## Unused resources

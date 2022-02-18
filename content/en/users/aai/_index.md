@@ -17,6 +17,6 @@ of advanced compute and storage solution that could potentially span across
 multiple of these providers, a common Authentication and Autorization Infrastructure
 (AAI) is needed.
 
-{{% alert title="Tip" color="info" %}} The term AAI is sometimes replaces by
+{{% alert title="Tip" color="info" %}} The term AAI is sometimes replaced by
 Single Sign-On (SSO).
 {{% /alert %}}
