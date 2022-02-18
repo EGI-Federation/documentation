@@ -1,9 +1,10 @@
 ---
-title: "FAQ"
+title: Frequently Asked Questions
+linkTitle: FAQ
+weight: 40
 type: docs
 description: >
-  Frequently Asked Questions
-weight: 40
+  Most frequent questions asled about EGI Notebooks
 ---
 
 ## How do I install library _X_?

@@ -43,7 +43,7 @@ We offer different service modes depending on your needs
 Individual users can use the centrally operated service from EGI. Users can
 log in, write and play and re-play notebooks by:
 
-1. [creating an EGI account](../check-in/signup)
+1. [creating an EGI account](../../aai/check-in/signup)
 2. Enrolling to the one of the supported VOs such as
    [vo.notebooks.egi.eu VO](https://aai.egi.eu/registry/co_petitions/start/coef:111)
 3. [accessing https://notebooks.egi.eu/](https://notebooks.egi.eu/)

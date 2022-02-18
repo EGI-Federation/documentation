@@ -1,9 +1,10 @@
 ---
-title: "Training instance"
+title: Notebooks Training Instance
+title: Training Instance
+weight: 30
 type: docs
 description: >
   Notebooks for training events
-weight: 30
 ---
 
 EGI provides a training instance of the Notebooks service for training events.

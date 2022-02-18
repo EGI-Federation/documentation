@@ -1,9 +1,10 @@
 ---
-title: "Data Management"
+title: Data Management in Notebooks
+linkTitle: Data Management
+weight: 10
 type: docs
 description: >
-  Managing data on the Notebooks
-weight: 10
+  How to access and manage data in EGI Notebooks
 ---
 
 Every user of the EGI Notebooks catch-all instance has a 20GB persistent home to
@@ -27,7 +28,7 @@ enabled in the catch-all instance but can be made available on demand.
 
 ## EGI DataHub
 
-[DataHub](../../datahub) provides a scalable distributed data infrastructure. It
+[EGI DataHub](../../../data/management/datahub) provides a scalable distributed data infrastructure. It
 offers a tight integration with Jupyter and notebooks with specific drivers that
 make the DataHub Spaces accessible from any notebook.
 

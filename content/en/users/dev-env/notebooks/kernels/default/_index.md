@@ -1,9 +1,10 @@
 ---
-title: "Default environment"
+title: Default Environment
+linkTitle: Default
 type: docs
-description: >
-  EGI Notebooks default environment
 weight: 10
+description: >
+  The default environment in EGI Notebooks
 ---
 
 The default environment includes a set of
@@ -18,7 +19,7 @@ GitHub repository. These are the ones available:
   stack.
 
 - DIRAC / Python 2: A python 2 kernel that includes a DIRAC installation for
-  interacting with the [EGI Workload Manager](../../../workload-manager) service.
+  interacting with [EGI Workload Manager](../../../../compute/orchestration/workload-manager).
 
 - Julia: The Julia programming language with the libraries described in
   [jupyter/datascience-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook).

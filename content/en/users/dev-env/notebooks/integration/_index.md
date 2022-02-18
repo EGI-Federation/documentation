@@ -1,9 +1,10 @@
 ---
-title: "Integration with other services"
+title: Notebooks Integration with Other Services
+linkTitle: Integration
+weight: 20
 type: docs
 description: >
   Access new services from the Notebooks
-weight: 20
 ---
 
 Notebooks running on EGI can access other existing computing and storage
@@ -55,7 +56,7 @@ fedcloud token check
 ```
 
 If the `fedcloud` command is not available, please follow the
-[getting started](../../getting-started/cli/).
+[getting started](../../../getting-started/cli) guide to get it.
 
 ## D4Science
 
@@ -108,5 +109,5 @@ Note that inputs that point to a URL should be specified using the
 ## Other third-party services
 
 We are open for integration with other services that may be relevant for your
-research. Please contact `support _at_ egi.eu` with your request so we can
+research. Please contact `support <at> egi.eu` with your request so we can
 investigate the best way to support your needs.

@@ -1,9 +1,10 @@
 ---
-title: "Notebooks Environments"
+title: Notebooks Environments
+linkTitle: Environments
+weight: 5
 type: docs
 description: >
-  Available Environments in EGI Notebooks
-weight: 5
+  Environments available in EGI Notebooks
 ---
 
 Jupyter is an extensible environment that supports different programming

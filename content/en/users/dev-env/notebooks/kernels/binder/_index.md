@@ -1,9 +1,9 @@
 ---
-title: "Binder"
+title: Binder
+weight: 30
 type: docs
 description: >
   Reproducible notebooks in EGI
-weight: 30
 ---
 
 EGI offers a Binder instance within the Notebooks service. Binder allows to

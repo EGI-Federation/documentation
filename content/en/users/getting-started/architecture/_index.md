@@ -56,7 +56,7 @@ The IaaS capabilities (VM, block storage, network management, etc.) must be
 provided via community agreed APIs
 ([OpenStack](https://docs.openstack.org/wallaby/api/) and/or
 [OCCI](http://www.occi-wg.org/) are supported at the moment) that allow
-integration with [EGI Check-in](../../check-in) for authentication and
+integration with [EGI Check-in](../../aai/check-in) for authentication and
 authorisation of users.
 
 {{% alert title="Note" color="info" %}} Those providers that limit the

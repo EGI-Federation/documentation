@@ -18,7 +18,7 @@ requirements of the most security-sensitive institutions and organizations.
 The following services that can help you to configure and
 consume EGI services while meeting your security and compliance objectives:
 
-- The [Secrets Store](./secrets-store/) allows users to securely store credentials
+- The [Secrets Store](secrets-store) allows users to securely store credentials
   or other sensitive information, and easily retrieve it when needed, instead of
   hardcode it in code, configuration files, or environment variables.
 
