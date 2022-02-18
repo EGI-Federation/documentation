@@ -15,14 +15,13 @@ backends**. It streamlines the access and usability of Infrastructure-as-a-Servi
 and update, and monitoring of virtual infrastructures. 
 
 IM is integrated with the [EGI Check-in Service](../../../aai/check-in) and supports
-a wide variety of backends, either public (such as
+a wide variety of backends, either federated infrastructures (such as 
+[EGI Cloud Compute](../../cloud-compute)), public (such as
 [Amazon Web Services](https://aws.amazon.com/),
 [Google Cloud](http://cloud.google.com/) or
 [Microsoft Azure](http://azure.microsoft.com/)) or on-premises (such as
-[OpenStack](http://www.openstack.org/)) or federated infrastructures (such as 
-[EGI Cloud Compute](../../cloud-compute)),
+[OpenStack](http://www.openstack.org/)) or ,
 thus making user applications cloud agnostic.
-
 IM features a [web-based GUI](https://appsgrycap.i3m.upv.es:31443/im-dashboard/),
 an XML-RPC API, a REST API and a [command-line interface](./cli/) (CLI).
 

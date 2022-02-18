@@ -18,7 +18,6 @@ choices of back-ends, either public (such as
 [Amazon Web Services](https://aws.amazon.com/),
 [Google Cloud](http://cloud.google.com/) or
 [Microsoft Azure](http://azure.microsoft.com/)) or on-premises (such as
-[OpenNebula](http://www.opennebula.org/) and
 [OpenStack](http://www.openstack.org/)). EC3 can provision clusters running
 [TORQUE](https://github.com/adaptivecomputing/torque),
 [SLURM](http://slurm.schedmd.com/),
