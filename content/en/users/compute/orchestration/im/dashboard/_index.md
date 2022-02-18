@@ -24,6 +24,7 @@ Functionalities:
 and configuring the dashboard are available in the
 [IM Dashboard documentation](https://imdocs.readthedocs.io/en/latest/dashboard.html).
 {{% /alert %}}
+
 ## Usage
 
 The dashboard of the IM enables non advanced users to manage their

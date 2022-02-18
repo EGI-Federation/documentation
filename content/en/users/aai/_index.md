@@ -9,11 +9,11 @@ description: >
 
 ## Overview
 
-The [EGI is a federation](https://www.egi.eu/federation/) of
+[EGI is a federation](https://www.egi.eu/federation/) of
 compute and storage resource providers.
 
 In order for the providers to be able to contribute their services and serve
 scientific user communities, and to allow those communities to take advantage
-of advanced compute and storage solution that could potentially span across
+of advanced compute and storage solutions that could potentially span across
 multiple of these providers, a common Authentication and Autorization Infrastructure
 (AAI) is needed.

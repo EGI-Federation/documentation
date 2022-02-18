@@ -25,11 +25,15 @@ for more details about the avilable APIs, their parameters and return values.
 
 Users have to authenticate before they can call the API.
 
+<!-- markdownlint-disable no-inline-html -->
+
 {{% alert title="Important" color="warning" %}} Authentication requires an
 **X.509 user certificate**.<br/>
 Integration with [EGI Check-in](../../../../aai/check-in), which will allow
 authentication using OIDC tokens is under development.
 {{% /alert %}}
+
+<!-- markdownlint-enable no-inline-html -->
 
 During the authentication phase, credentials are delegated to the FTS service,
 which will contact the storages to steer the data transfers on behalf of the

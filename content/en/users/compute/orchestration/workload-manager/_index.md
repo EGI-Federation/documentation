@@ -11,7 +11,7 @@ description: >
 
 [EGI Workload Manager](https://www.egi.eu/services/workload-manager/) is a
 service provided to the EGI community to efficiently **manage and distribute
-computing workloads on the EGI infrastructure**. 
+computing workloads on the EGI infrastructure**.
 
 Workload Manager is configured to support a number of
 HTC and cloud resource pools from the EGI Federation. This pool of computing
@@ -27,12 +27,16 @@ submission in the infrastructure from previous 70% to 99% with the EGI Workload
 Manager service.
 {{% /alert %}}
 
+<!-- markdownlint-disable no-inline-html -->
+
 {{% alert title="Note" color="info" %}} Workload Manager is based on
 [DIRAC technology](http://diracgrid.org/).<br/>
 The delivery of the service is coordinated
 by the EGI Foundation and [IN2P3](https://in2p3.cnrs.fr/) provides the resources and
 operates the service.
 {{% /alert %}}
+
+<!-- markdownlint-enable no-inline-html -->
 
 ## Main Features
 
