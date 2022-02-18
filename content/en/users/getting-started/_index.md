@@ -44,7 +44,7 @@ supporting it. {{% /alert %}}
 Access to resources (services) in the EGI infrastructure is based on
 [OpenID Connect](http://openid.net/connect/) (OIDC), which replaces the legacy
 authentication and authorization based on
-[X.509 certificates](../aai/check-in/vos/voms).
+[X.509 certificates](../aai/check-in/vos/voms/).
 
 {{% alert title="Note" color="info" %}} Some services still rely on X.509
 certificates, e.g. [High Throughput Compute](../compute/high-throughput-compute).
