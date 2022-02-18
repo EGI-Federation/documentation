@@ -1,14 +1,15 @@
 ---
-title: "Content Distribution"
+title: Content Distribution
+linkTitle: Content Distribution
 type: docs
-weight: 55
+weight: 70
 description: >
-  Documentation for Content Managers of the CVMFS Stratum-0 instance
+  Content (software) distribution in the EGI infrastructure
 ---
 
-## Overview
-
 This page is about the CVMFS service operated for EGI by RAL.
+
+## Overview
 
 The CernVM-File System (CVMFS) provides a scalable, reliable and low-maintenance
 software distribution service. It was developed to assist High Energy Physics
