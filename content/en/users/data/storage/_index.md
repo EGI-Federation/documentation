@@ -3,7 +3,7 @@ title: Online Storage
 type: docs
 weight: 10
 description: >
-  Storage services in the EGI infrastructure
+  Data storage services in the EGI infrastructure
 ---
 
 ## Overview

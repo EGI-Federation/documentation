@@ -8,7 +8,7 @@ description: >
   Security services in the EGI Cloud
 ---
 
-## Overview
+## Using cloud services securely
 
 Cloud security in the EGI Federated Cloud is the highest priority.
 Scientists and researchers, who are the main users of the services offered by EGI,

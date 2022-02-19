@@ -7,7 +7,7 @@ description: >
   Data services in the EGI Cloud
 ---
 
-## Overview
+## Working with data
 
 One of the main daily activities of researchers is to collect or create data
 that needs to be processed, analyzed, or shared. The EGI offering in this area

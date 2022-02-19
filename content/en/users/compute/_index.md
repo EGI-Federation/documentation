@@ -7,7 +7,7 @@ description: >
   Compute services in the EGI Cloud
 ---
 
-## Overview
+## Working with compute
 
 Most scientific work researchers do includes computation. Could be the need to
 run a small analysis. Or a data reduction job that has to be repeated a million
