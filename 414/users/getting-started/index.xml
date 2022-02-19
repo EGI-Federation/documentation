@@ -692,7 +692,7 @@ including resources not based on OpenStack deployments, check out the
 &lt;p>The various &lt;a href="https://www.egi.eu/services/">public EGI services&lt;/a> can be managed
 and used/accessed with a wide variety of command-line interface (CLI) tools.
 The documentation of each service contains a summary of the CLIs that can be
-used wih that service, together with recommendations on which one to use in
+used with that service, together with recommendations on which one to use in
 what context.&lt;/p>
 &lt;h2 id="the-fedcloud-client">The FedCloud client&lt;/h2>
 &lt;p>The &lt;a href="https://fedcloudclient.fedcloud.eu/index.html">FedCloud client&lt;/a> is a
