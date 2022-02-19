@@ -15,7 +15,7 @@ description: >
 The various [public EGI services](https://www.egi.eu/services/) can be managed
 and used/accessed with a wide variety of command-line interface (CLI) tools.
 The documentation of each service contains a summary of the CLIs that can be
-used wih that service, together with recommendations on which one to use in
+used with that service, together with recommendations on which one to use in
 what context.
 
 ## The FedCloud client
