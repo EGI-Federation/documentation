@@ -55,7 +55,7 @@ comunity credentials, including from other EGI services and components&lt;/li>
 Replication uses a file catalogue to enable tracking of logical and physical copies of data.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-EGI DataHub is based on
+EGI DataHub is based on the
 &lt;a href="https://onedata.org/">Onedata technology&lt;/a>.
 &lt;/div>
 &lt;h2 id="motivations">Motivations&lt;/h2>
