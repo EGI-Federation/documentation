@@ -39,7 +39,7 @@ EGI DataHub supports multiple access policies:
 Data replication in EGI DataHub may take place either on-­demand or automatically.
 Replication uses a file catalogue to enable tracking of logical and physical copies of data.
 
-{{% alert title="Note" color="info" %}} EGI DataHub is based on
+{{% alert title="Note" color="info" %}} EGI DataHub is based on the
 [Onedata technology](https://onedata.org/).
 {{% /alert %}}
 
