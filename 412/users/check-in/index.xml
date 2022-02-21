@@ -603,19 +603,19 @@ Development environment
 &lt;/li>&lt;/ul>
 &lt;div class="tab-content" id="tabs-0-content">&lt;div class="tab-pane fade show active"
 id="tabs-0-0" role="tabpanel" aria-labelled-by="tabs-0-0-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-C" data-lang="C"> &lt;span style="color:#8f5902;font-style:italic">#Export VO API Base URL parameter
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">export&lt;/span> &lt;span style="color:#000">VO_API_BASE_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#a40000">`&lt;/span>&lt;span style="color:#f57900">https&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#8f5902;font-style:italic">//aai.egi.eu/registry/co_person_roles`
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">export&lt;/span> &lt;span style="color:#000">VO_API_BASE_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#f57900">https&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#8f5902;font-style:italic">//aai.egi.eu/registry/co_person_roles
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">#Export CO ID parameter. The number part of the API username prefix. e.g. for the username `co_2.test`, the CO_ID is `2`
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">export&lt;/span> &lt;span style="color:#000">CO_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;div class="tab-pane fade"
 id="tabs-0-1" role="tabpanel" aria-labelled-by="tabs-0-1-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-C" data-lang="C"> &lt;span style="color:#8f5902;font-style:italic">#Export VO API Base URL parameter
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">export&lt;/span> &lt;span style="color:#000">VO_API_BASE_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#a40000">`&lt;/span>&lt;span style="color:#f57900">https&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#8f5902;font-style:italic">//aai-demo.egi.eu/registry/co_person_roles`
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">export&lt;/span> &lt;span style="color:#000">VO_API_BASE_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#f57900">https&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#8f5902;font-style:italic">//aai-demo.egi.eu/registry/co_person_roles
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">#Export CO ID parameter. The number part of the API username prefix. e.g. for the username `co_2.test`, the CO_ID is `2`
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">export&lt;/span> &lt;span style="color:#000">CO_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;div class="tab-pane fade"
 id="tabs-0-2" role="tabpanel" aria-labelled-by="tabs-0-2-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-C" data-lang="C"> &lt;span style="color:#8f5902;font-style:italic">#Export VO API Base URL parameter
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">export&lt;/span> &lt;span style="color:#000">VO_API_BASE_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#a40000">`&lt;/span>&lt;span style="color:#f57900">https&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#8f5902;font-style:italic">//aai-dev.egi.eu/registry/co_person_roles`
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">export&lt;/span> &lt;span style="color:#000">VO_API_BASE_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#f57900">https&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#8f5902;font-style:italic">//aai-dev.egi.eu/registry/co_person_roles
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic">#Export CO ID parameter. The number part of the API username prefix. e.g. for the username `co_2.test`, the CO_ID is `2`
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">export&lt;/span> &lt;span style="color:#000">CO_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/div>
@@ -636,7 +636,7 @@ be supported in the future.&lt;/p>
 name of the VO (e.g. &lt;code>vo.example.org&lt;/code>), the status
 (&lt;code>Active&lt;/code>) and the valid from/through dates. All these parameters are
 mandatory. Here is an example using curl (see example &lt;code>add.json&lt;/code> file below):&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX POST &lt;span style="color:#ce5c00;font-weight:bold">{{&lt;/span> VO_API_BASE_URL &lt;span style="color:#ce5c00;font-weight:bold">}}&lt;/span>.json &lt;span style="color:#4e9a06">\
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX POST &lt;span style="color:#000">$VO_API_BASE_URL&lt;/span>.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --user &lt;span style="color:#4e9a06">&amp;#34;example-client&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;veryverysecret&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --data @add.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --header &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span>
@@ -669,7 +669,7 @@ mandatory. Here is an example using curl (see example &lt;code>add.json&lt;/code
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>Retrieving the VO membership information for a given EGI Check-in CUID:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX GET &lt;span style="color:#ce5c00;font-weight:bold">{{&lt;/span> VO_API_BASE_URL &lt;span style="color:#ce5c00;font-weight:bold">}}&lt;/span>/co/&lt;span style="color:#ce5c00;font-weight:bold">{{&lt;/span> CO_ID&lt;span style="color:#ce5c00;font-weight:bold">}}&lt;/span>/cou/vo.example.org/identifier/01234567890123456789@egi.eu.json &lt;span style="color:#4e9a06">\
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX GET &lt;span style="color:#000">$VO_API_BASE_URL&lt;/span>/co/&lt;span style="color:#000">$CO_ID&lt;/span>/cou/vo.example.org/identifier/01234567890123456789@egi.eu.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --user &lt;span style="color:#4e9a06">&amp;#34;example-client&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;veryverysecret&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>output:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
@@ -701,7 +701,7 @@ VOs.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Retrieving all VO members:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX GET &lt;span style="color:#ce5c00;font-weight:bold">{{&lt;/span> VO_API_BASE_URL &lt;span style="color:#ce5c00;font-weight:bold">}}&lt;/span>/co/&lt;span style="color:#ce5c00;font-weight:bold">{{&lt;/span> CO_ID&lt;span style="color:#ce5c00;font-weight:bold">}}&lt;/span>/cou/vo.example.org.json &lt;span style="color:#4e9a06">\
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX GET &lt;span style="color:#000">$VO_API_BASE_URL&lt;/span>/co/&lt;span style="color:#000">$CO_ID&lt;/span>/cou/vo.example.org.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --user &lt;span style="color:#4e9a06">&amp;#34;example-client&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;veryverysecret&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>output:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
@@ -735,7 +735,7 @@ VOs.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Updating existing VO membership record:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX PUT &lt;span style="color:#ce5c00;font-weight:bold">{{&lt;/span> VO_API_BASE_URL &lt;span style="color:#ce5c00;font-weight:bold">}}&lt;/span>/15.json &lt;span style="color:#4e9a06">\
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX PUT &lt;span style="color:#000">$VO_API_BASE_URL&lt;/span>/15.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --user &lt;span style="color:#4e9a06">&amp;#34;example-client&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;veryverysecret&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --data @update.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --header &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span>
