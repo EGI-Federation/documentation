@@ -1,6 +1,6 @@
 ---
 title: Rucio
-linkTitle: Data Orchestration
+linkTitle: Data Orchestrator
 type: docs
 weight: 40
 description: >-
