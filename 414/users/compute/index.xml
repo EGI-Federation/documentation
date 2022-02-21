@@ -208,13 +208,18 @@ levels of abstractions and features. See below to understand which to choose
 &lt;tbody>
 &lt;tr>
 &lt;td>&lt;a href="im">Infrastructure Manager&lt;/a>&lt;/td>
-&lt;td>VMs and containers&lt;/td>
+&lt;td>VMs, containers, storage&lt;/td>
 &lt;td>Used to run workloads on a single IaaS Cloud provider.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;a href="ec3">Elastic Cloud Compute Cluster&lt;/a>&lt;/td>
-&lt;td>VMs and containers&lt;/td>
+&lt;td>VMs, containers, storage&lt;/td>
 &lt;td>Used when you need to run workloads on clusters that can be elastically scaled and potentially span more than one IaaS Cloud provider.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="workload-manager">Workload Manager&lt;/a>&lt;/td>
+&lt;td>VMs, containers, HTC jobs&lt;/td>
+&lt;td>Used to efficiently distribute, manage, and monitor computing workloads.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

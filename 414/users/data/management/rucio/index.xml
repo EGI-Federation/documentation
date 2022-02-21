@@ -117,7 +117,7 @@ Rucio).&lt;/p>
 up to ensure that Rucio can work for you, and will track progress with the
 ticket.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Users: Rucio Commands</title><link>/users/data/management/rucio/commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/rucio/commands/</guid><description>
+&lt;/ul></description></item><item><title>Users: Rucio Command-Line Interface</title><link>/users/data/management/rucio/commands/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/rucio/commands/</guid><description>
 &lt;h2 id="introduction-to-rucio-commands">Introduction to Rucio commands&lt;/h2>
 &lt;p>There are many commands found within Rucio CLI that you may want to become
 familar with. In this guide I will provide a few of the common commands wanted
