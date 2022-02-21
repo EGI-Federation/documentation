@@ -24,7 +24,7 @@ The compute services are summarized below:
 
 - [Cloud Compute](./cloud-compute/) means **VM-based computing with associated
   storage**. It delivers customisable resources where users have complete control
-  over the software, the supporting compute type (e.g. CPU, GPU) and capacity.
+  over the software, the supporting compute type and capacity.
   Typical use-cases are user gateways or portals, interactive computing platforms
   and almost any kind of data- and/or compute-intensive workloads.
 - [Container Compute](./cloud-container-compute/) supports running **container-based
