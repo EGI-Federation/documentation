@@ -14,6 +14,7 @@ installations by research communities, with support for customization and
 configuration from EGI.
 
 ## What is it?
+
 The [openRDM](https://marketplace.eosc-portal.eu/services/openrdm-eu) service,
 an Research Data Management (RDM) tool,
 offers **advanced organisation of data during ongoing research projects,
