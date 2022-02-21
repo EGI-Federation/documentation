@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Rucio
-linkTitle: Getting started
+linkTitle: Getting Started
 type: docs
 weight: 10
 description: >-

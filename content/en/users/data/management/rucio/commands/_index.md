@@ -1,6 +1,6 @@
 ---
-title: Rucio Commands
-linkTitle: Commands
+title: Rucio Command-Line Interface
+linkTitle: Command Line
 type: docs
 weight: 20
 description: >-
