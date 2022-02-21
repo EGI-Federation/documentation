@@ -24,8 +24,6 @@ The main features of DataHub are:
 - Discovery of data spaces via a central portal
 - Policy based data access
 - Replication of data across providers for resiliency and availability purposes
-- Access to data from the [AppDB](../../../compute/cloud-compute/images/)
-  to enable VOs to associate appropriate data with matching Virtual Appliances
 - Integration with [EGI Check-in](../../../aai/check-in) allows access using
   comunity credentials, including from other EGI services and components
 - File catalog to track replication of data and manage logical and physical files

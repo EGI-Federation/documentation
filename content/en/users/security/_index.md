@@ -10,7 +10,7 @@ description: >
 
 ## Using cloud services securely
 
-Cloud security in the EGI Federated Cloud is the highest priority.
+Security in the EGI Federated infrastructure is the highest priority.
 Scientists and researchers, who are the main users of the services offered by EGI,
 benefit from data centers and network architectures that are built to meet the
 requirements of the most security-sensitive institutions and organizations.
