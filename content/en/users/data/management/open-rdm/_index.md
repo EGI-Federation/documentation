@@ -18,7 +18,7 @@ configuration from EGI.
 The [openRDM](https://marketplace.eosc-portal.eu/services/openrdm-eu) service,
 an open Research Data Management (RDM) tool,
 offers **advanced organisation of data during ongoing research projects,
-as an integrated environment with data management and digital lab notebook**. 
+as an integrated environment with data management and digital lab notebook**.
 
 openRDM combines a data management platform with a digital lab notebook and a sample and
 protocol management system. It enables scientists to meet the ever-increasing requirements
