@@ -23,7 +23,7 @@ distributed platforms that will run their jobs using CPUs, GPUs or both.
 The compute services are summarized below:
 
 - [Cloud Compute](./cloud-compute/) means **VM-based computing with associated
-  storage**. It delivers a customisable platform where users have complete control
+  storage**. It delivers a customisable computing resources where users have complete control
   over the software and the supporting compute capacity. Typical use-cases are
   user gateways or portals, interactive computing platforms and almost any kind
   of data- and/or compute-intensive workloads.
