@@ -1,30 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Data Management</title><link>/users/data/management/</link><description>Recent content in Data Management on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/data/management/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Rucio</title><link>/users/data/management/rucio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/rucio/</guid><description>
-&lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>Built on more than a decade of experience in LHC experiments, Rucio serves the
-data needs of any modern scientific experiments. Rucio can manage large amounts
-of data, countless numbers of files, heterogeneous storage systems, globally
-distributed data centres, with monitoring and analytics.&lt;/p>
-&lt;p>Rucio &lt;strong>allows management of data with expressive statements&lt;/strong>. You to say what
-you want, and Rucio will figure out the details of how to do it. For example,
-three copies of my file on different continents with a backup on tape. You can
-also automatically remove copies of data after a set period or once its access
-popularity drops.&lt;/p>
-&lt;p>While Rucio is extremely scalable, the STFC Rucio Data Management Service is
-designed for smaller communities, with expected data needs up to tens of
-Petabytes. The fact that the underlying Rucio infrastructure is managed by STFC,
-allows communities to easily start using and/or test Rucio with little setup
-cost.&lt;/p>
-&lt;h2 id="official-rucio-pages">Official Rucio Pages&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://rucio.cern.ch/">Rucio Homepage&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://rucio.cern.ch/documentation/">Rucio Documentation&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="multi-vo-specific-pages">Multi-VO specific pages&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://www.scd.stfc.ac.uk/Pages/SCD-STFC-Rucio-Data-Management-Service.aspx">Multi-VO Rucio at RAL as a service&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.scd.stfc.ac.uk/Pages/STFC-Rucio-Privacy-Notice.aspx">Privacy Policy&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.scd.stfc.ac.uk/Pages/STFC-Rucio-Acceptable-Use-Policy.aspx">Acceptable Use Policy&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Users: EGI DataHub</title><link>/users/data/management/datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Data Management</title><link>/users/data/management/</link><description>Recent content in Data Management on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/data/management/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI DataHub</title><link>/users/data/management/datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
 &lt;p>&lt;a href="https://datahub.egi.eu/">EGI DataHub&lt;/a> is a high-performance data management
 solution that offers &lt;strong>unified data access across globally distributed
@@ -183,4 +157,49 @@ to be installed:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://cafiles.cern.ch/cafiles/certificates/">CERN CA certificates&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://www.ngs.ac.uk/ukca/certificates/cacerts.html">UK eScience CA certificates&lt;/a>&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Users: Rucio</title><link>/users/data/management/rucio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/rucio/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>Built on more than a decade of experience in LHC experiments, Rucio serves the
+data needs of any modern scientific experiments. Rucio can manage large amounts
+of data, countless numbers of files, heterogeneous storage systems, globally
+distributed data centres, with monitoring and analytics.&lt;/p>
+&lt;p>Rucio &lt;strong>allows management of data with expressive statements&lt;/strong>. You to say what
+you want, and Rucio will figure out the details of how to do it. For example,
+three copies of my file on different continents with a backup on tape. You can
+also automatically remove copies of data after a set period or once its access
+popularity drops.&lt;/p>
+&lt;p>While Rucio is extremely scalable, the STFC Rucio Data Management Service is
+designed for smaller communities, with expected data needs up to tens of
+Petabytes. The fact that the underlying Rucio infrastructure is managed by STFC,
+allows communities to easily start using and/or test Rucio with little setup
+cost.&lt;/p>
+&lt;h2 id="official-rucio-pages">Official Rucio Pages&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://rucio.cern.ch/">Rucio Homepage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://rucio.cern.ch/documentation/">Rucio Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="multi-vo-specific-pages">Multi-VO specific pages&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.scd.stfc.ac.uk/Pages/SCD-STFC-Rucio-Data-Management-Service.aspx">Multi-VO Rucio at RAL as a service&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.scd.stfc.ac.uk/Pages/STFC-Rucio-Privacy-Notice.aspx">Privacy Policy&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.scd.stfc.ac.uk/Pages/STFC-Rucio-Acceptable-Use-Policy.aspx">Acceptable Use Policy&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Users: openRDM</title><link>/users/data/management/open-rdm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/open-rdm/</guid><description>
+&lt;p>While most other &lt;a href="..">data management services&lt;/a> are available in the EGI infrastructure,
+there are specialized services in the EGI portfolio that are offered for in-house
+installations by research communities, with support for customization and
+configuration from EGI.&lt;/p>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>The &lt;a href="https://marketplace.eosc-portal.eu/services/openrdm-eu">openRDM&lt;/a> service,
+an Research Data Management (RDM) tool,
+offers &lt;strong>advanced organisation of data during ongoing research projects,
+as an integrated environment with data management and digital lab notebook&lt;/strong>.&lt;/p>
+&lt;p>openRDM combines a data management platform with a digital lab notebook and a sample and
+protocol management system. It enables scientists to meet the ever-increasing requirements
+from funding agencies, journals, and academic institutions to publish data according to the
+&lt;a href="https://en.wikipedia.org/wiki/FAIR_data">FAIR&lt;/a> data principles – according to which data
+should be &lt;em>Findable&lt;/em>, &lt;em>Accessible&lt;/em>, &lt;em>Interoperable&lt;/em> and &lt;em>Reusable&lt;/em>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+The openRDM service is based around the
+active research data management (ARDM) platform &lt;a href="https://openbis.ch/">openBIS&lt;/a>.
+&lt;/div></description></item></channel></rss>
