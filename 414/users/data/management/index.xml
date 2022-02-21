@@ -39,8 +39,6 @@ at which supporting provider.&lt;/p>
 &lt;li>Discovery of data spaces via a central portal&lt;/li>
 &lt;li>Policy based data access&lt;/li>
 &lt;li>Replication of data across providers for resiliency and availability purposes&lt;/li>
-&lt;li>Access to data from the &lt;a href="../../../compute/cloud-compute/images/">AppDB&lt;/a>
-to enable VOs to associate appropriate data with matching Virtual Appliances&lt;/li>
 &lt;li>Integration with &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> allows access using
 comunity credentials, including from other EGI services and components&lt;/li>
 &lt;li>File catalog to track replication of data and manage logical and physical files&lt;/li>
