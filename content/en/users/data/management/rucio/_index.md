@@ -1,8 +1,8 @@
 ---
 title: Rucio
-linkTitle: Rucio
+linkTitle: Declarative Data Management
 type: docs
-weight: 10
+weight: 40
 description: >-
   Organise and access data at scale with Rucio
 ---

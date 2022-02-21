@@ -1,9 +1,8 @@
 ---
 title: openRDM
-linkTitle: openRDM
+linkTitle: Research Data Management
 type: docs
-weight: 40
-draft: true
+weight: 50
 weight: 
 description: >
   Organise data in research projects with openRDM
@@ -16,7 +15,7 @@ configuration from EGI.
 
 ## What is it?
 The [openRDM](https://marketplace.eosc-portal.eu/services/openrdm-eu) service,
-an open Research Data Management (RDM) tool,
+an Research Data Management (RDM) tool,
 offers **advanced organisation of data during ongoing research projects,
 as an integrated environment with data management and digital lab notebook**.
 
