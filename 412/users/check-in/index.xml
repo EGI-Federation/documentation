@@ -623,16 +623,12 @@ id="tabs-0-2" role="tabpanel" aria-labelled-by="tabs-0-2-tab">&lt;div class="hig
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#000">export&lt;/span> &lt;span style="color:#000">CO_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;/div>
-&lt;!-- markdownlint-disable no-duplicate-header -->
 &lt;h4 id="authentication">Authentication&lt;/h4>
-&lt;!-- markdownlint-enable no-duplicate-header -->
 &lt;p>The REST client is authenticated via username/password credentials transmitted
 over HTTPS using the Basic Authentication scheme. More sophisticated
 authentication mechanisms, such as OpenID Connect/OAuth 2.0 access tokens, may
 be supported in the future.&lt;/p>
-&lt;!-- markdownlint-disable no-duplicate-header -->
 &lt;h4 id="methods">Methods&lt;/h4>
-&lt;!-- markdownlint-enable no-duplicate-header -->
 &lt;ol>
 &lt;li>
 &lt;p>Adding a user to a VO requires specifying the user&amp;rsquo;s EGI Check-in CUID, the
@@ -767,12 +763,16 @@ information only for the VOs they are authoritative for.&lt;/p>
 &lt;li>Check-in automatically changes the membership status from &lt;code>Active&lt;/code> to
 &lt;code>Expired&lt;/code> beyond the validity period&lt;/li>
 &lt;/ul>
+&lt;!-- markdownlint-disable no-duplicate-header -->
 &lt;h4 id="authentication-1">Authentication&lt;/h4>
+&lt;!-- markdownlint-enable no-duplicate-header -->
 &lt;p>The REST client is authenticated via username/password credentials transmitted
 over HTTPS using the Basic Authentication scheme. More sophisticated
 authentication mechanisms, such as OpenID Connect/OAuth 2.0 access tokens, may
 be supported in the future.&lt;/p>
+&lt;!-- markdownlint-disable no-duplicate-header -->
 &lt;h4 id="methods-1">Methods&lt;/h4>
+&lt;!-- markdownlint-enable no-duplicate-header -->
 &lt;ol>
 &lt;li>
 &lt;p>Adding a user to a VO requires specifying the user&amp;rsquo;s EGI Check-in CUID, the
