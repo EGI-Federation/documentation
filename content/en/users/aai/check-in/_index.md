@@ -4,7 +4,7 @@ linkTitle: Check-in
 type: docs
 weight: 30
 description: >
-  Control access to resources in the EGI Cloud
+  Control access to resources in the EGI Infrastructure
 ---
 
 ## What is it?
