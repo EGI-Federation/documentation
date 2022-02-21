@@ -776,7 +776,7 @@ datasets are attached to each VM).&lt;/li>
 &lt;li>Easily share scientific pipelines with collaborators.&lt;/li>
 &lt;li>Make scientific applications cloud agnostic.&lt;/li>
 &lt;/ul>
-&lt;p>To automate VM deployment, users can use any of the &lt;a href="../../orchestration">cloud orchestrators&lt;/a>
+&lt;p>To automate VM deployment, you can use any of the &lt;a href="../../orchestration">cloud orchestrators&lt;/a>
 available in the EGI Cloud.&lt;/p></description></item><item><title>Users: Monitoring and Management</title><link>/users/compute/cloud-compute/monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/monitor/</guid><description>
 &lt;p>The &lt;a href="https://appdb.egi.eu/">EGI Application Database (AppDB)&lt;/a> includes a web GUI
 for management of Virtual Machines (VMs) on the federated infrastructure.&lt;/p>
