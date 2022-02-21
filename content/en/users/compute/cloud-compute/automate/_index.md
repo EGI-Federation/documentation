@@ -24,5 +24,5 @@ Automating this activity will help researchers to:
 - Easily share scientific pipelines with collaborators.
 - Make scientific applications cloud agnostic.
 
-To automate VM deployment, users can use any of the [cloud orchestrators](../../orchestration)
+To automate VM deployment, you can use any of the [cloud orchestrators](../../orchestration)
 available in the EGI Cloud.
