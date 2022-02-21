@@ -1,6 +1,6 @@
 ---
 title: Rucio
-linkTitle: Declarative Data Management
+linkTitle: Data Orchestration
 type: docs
 weight: 40
 description: >-
