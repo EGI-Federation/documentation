@@ -201,5 +201,7 @@ should be &lt;em>Findable&lt;/em>, &lt;em>Accessible&lt;/em>, &lt;em>Interoperab
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 The openRDM service is based around the
-active research data management (ARDM) platform &lt;a href="https://openbis.ch/">openBIS&lt;/a>.
+active research data management (ARDM) platform &lt;a href="https://openbis.ch/">openBIS&lt;/a>, see the
+&lt;a href="https://openbis.ch/index.php/docs/user-documentation/">documentation&lt;/a>
+for more details.
 &lt;/div></description></item></channel></rss>
