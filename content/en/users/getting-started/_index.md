@@ -36,8 +36,8 @@ requirements.
 
 {{% alert title="Tip" color="info" %}} See also an
 [overview](https://www.egi.eu/federation/egi-federated-cloud/the-egi-federated-cloud-architecture/)
-of the EGI FedCloud architecture, or read about the [task force](task-force)
-supporting it. {{% /alert %}}
+of the EGI FedCloud architecture.
+{{% /alert %}}
 
 ## Accessing resources
 
