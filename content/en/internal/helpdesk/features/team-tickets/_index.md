@@ -39,6 +39,8 @@ GGUS account is the same to the one registered in VOMS.
 
 This section describes the workflows of team tickets from a technical point of
 view.
+See also a ![schema](GGUS_Graph_TEAM_Ticket_Process.pdf) about the Team Tickets
+process
 
 ### Team ticket submission
 
