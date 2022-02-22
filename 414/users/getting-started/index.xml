@@ -588,61 +588,7 @@ Frameworks.&lt;/li>
 operations model, where providers only need to integrate their system with EGI
 Check-in but do not need to deploy and configure the different tools
 (accounting, discovery, VMI management, etc.) locally but delegate this to a
-central EGI team.&lt;/p></description></item><item><title>Users: EGI Task Force</title><link>/users/getting-started/task-force/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/task-force/</guid><description>
-&lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>The EGI Federated Cloud (FedCloud) Task Force gathers together scientific
-communities, R&amp;amp;D projects, and technology and resource providers so they can
-design the tools and services that support the federation of providers,
-share best practices, and offer user support and training in a
-collaborative fashion. This enables community cloud solutions to develop
-faster, with a lower cost, and with a more sustainable future.&lt;/p>
-&lt;h2 id="objectives">Objectives&lt;/h2>
-&lt;p>The task force members:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Capture requirements&lt;/strong> from user communities needing federated cloud
-services.&lt;/li>
-&lt;li>&lt;strong>Identify, integrate and enhance open source tools and services&lt;/strong> that
-enable cloud federations for research and education.&lt;/li>
-&lt;li>&lt;strong>Develop and maintain tools and services&lt;/strong> to fill gaps in third-party
-solutions to reach production quality cloud federations.&lt;/li>
-&lt;li>&lt;strong>Provide consultancy&lt;/strong> for communities on how to build a federated cloud
-that meets custom community demands.&lt;/li>
-&lt;li>&lt;strong>Provide training and support&lt;/strong> for existing and potential users of cloud
-federations about topics such as:
-&lt;ul>
-&lt;li>How to port existing applications to the cloud, or develop cloud-native
-applications&lt;/li>
-&lt;li>How to operate services in the cloud&lt;/li>
-&lt;li>How to join a cloud federation as a provider&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>Facilitate the reuse of tools and services&lt;/strong> across participating cloud
-federations to lower total cost of development and to improve cloud
-sustainability.&lt;/li>
-&lt;li>&lt;strong>Promote Platform-as-a-Service (PaaS) and Software-as-a-Service (SaaS)&lt;/strong>
-environments that are proven to be robust and reusable, to communities that
-interact with federated Infrastructure-as-a-Service (IaaS) providers in the
-EGI infrastructure.&lt;/li>
-&lt;li>&lt;strong>Provide service management and security oversight&lt;/strong> for participating
-clouds and cloud federations.&lt;/li>
-&lt;li>&lt;strong>Act as a discussion forum&lt;/strong> where cloud federations can be discussed and
-specific questions can be analysed with experts.&lt;/li>
-&lt;li>&lt;strong>Organise dissemination and marketing events&lt;/strong>, such as workshops and
-conferences relating to the topics of the collaboration.&lt;/li>
-&lt;/ul>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Tip&lt;/h4>
-If you are interested in joining the
-EGI FedCloud Task Force, send an email to
-&lt;code>fedcloud-tf&lt;/code> &lt;code>&amp;lt;at&amp;gt;&lt;/code> &lt;code>mailman.egi.eu&lt;/code> and introduce yourself.
-&lt;/div>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-We hold bi-weekly meetings on Tuesdays
-at 11.00 CE(S)T. Check our
-&lt;a href="https://indico.egi.eu/indico/categoryDisplay.py?categId=159">Indico category&lt;/a>
-for minutes and upcoming events.
-&lt;/div></description></item><item><title>Users: Using OpenStack Providers</title><link>/users/getting-started/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/openstack/</guid><description>
+central EGI team.&lt;/p></description></item><item><title>Users: Using OpenStack Providers</title><link>/users/getting-started/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/openstack/</guid><description>
 &lt;p>&lt;a href="https://openstack.org">OpenStack&lt;/a> providers in the EGI infrastructure
 offer services and features via OpenStack APIs, and the
 &lt;a href="../cli">command-line interface&lt;/a> (CLI), both integrated with
