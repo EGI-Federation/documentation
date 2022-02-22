@@ -123,3 +123,7 @@ reference link to the alarm ticket is given in the alarm email notification.
 
 Alarm ticket testing is documented in
 [WLCG twiki](https://twiki.cern.ch/twiki/bin/view/EGEE/SA1_USAG#Periodic_ALARM_ticket_testing_ru).
+
+#### Schema of the Alarm tickets process
+
+![Alarm tickets process graph](GGUS_Graph_Alarm-ticket-process.png)
