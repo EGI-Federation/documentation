@@ -27,5 +27,7 @@ from funding agencies, journals, and academic institutions to publish data accor
 should be _Findable_, _Accessible_, _Interoperable_ and _Reusable_.
 
 {{% alert title="Note" color="info" %}} The openRDM service is based around the
-active research data management (ARDM) platform [openBIS](https://openbis.ch/).
+active research data management (ARDM) platform [openBIS](https://openbis.ch/), see the
+[documentation](https://openbis.ch/index.php/docs/user-documentation/)
+for more details.
 {{% /alert %}}
