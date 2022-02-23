@@ -112,31 +112,31 @@ multiple programming languages, you can use a tabbed pane for code snippets:
 
 ```go-html-template
 {{</* tabpane */>}}
-  {{</* tab header="C++" lang="C++" */>}}
-    #include <iostream>
-    int main()
-    {
-        std::cout << "Hello World!" << std::endl;
+{{</* tab header="C++" lang="C++" */>}}
+#include <iostream>
+int main()
+{
+    std::cout << "Hello World!" << std::endl;
+}
+{{</* /tab */>}}
+{{</* tab header="Java" lang="Java" */>}}
+class HelloWorld {
+    static public void main( String args[] ) {
+        System.out.println( "Hello World!" );
     }
-  {{</* /tab */>}}
-  {{</* tab header="Java" lang="Java" */>}}
-    class HelloWorld {
-        static public void main( String args[] ) {
-            System.out.println( "Hello World!" );
-        }
-    }
-  {{</* /tab */>}}
-  {{</* tab header="Kotlin" lang="Kotlin" */>}}
-    fun main(args : Array<String>) {
-        println("Hello, world!")
-    }
-  {{</* /tab */>}}
-  {{</* tab header="Go" lang="Go" */>}}
-    import "fmt"
-    func main() {
-        fmt.Printf("Hello World!\n")
-    }
-  {{</* /tab */>}}
+}
+{{</* /tab */>}}
+{{</* tab header="Kotlin" lang="Kotlin" */>}}
+fun main(args : Array<String>) {
+    println("Hello, world!")
+}
+{{</* /tab */>}}
+{{</* tab header="Go" lang="Go" */>}}
+import "fmt"
+func main() {
+    fmt.Printf("Hello World!\n")
+}
+{{</* /tab */>}}
 {{</* /tabpane */>}}
 ```
 
@@ -144,31 +144,31 @@ Will render as:
 
 <!-- prettier-ignore -->
 {{< tabpane >}}
-  {{< tab header="C++" lang="C++" >}}
-    #include <iostream>
-    int main()
-    {
-        std::cout << "Hello World!" << std::endl;
+{{< tab header="C++" lang="C++" >}}
+#include <iostream>
+int main()
+{
+    std::cout << "Hello World!" << std::endl;
+}
+{{< /tab >}}
+{{< tab header="Java" lang="Java" >}}
+class HelloWorld {
+    static public void main( String args[] ) {
+        System.out.println( "Hello World!" );
     }
-  {{< /tab >}}
-  {{< tab header="Java" lang="Java" >}}
-    class HelloWorld {
-        static public void main( String args[] ) {
-            System.out.println( "Hello World!" );
-        }
-    }
-  {{< /tab >}}
-  {{< tab header="Kotlin" lang="Kotlin" >}}
-    fun main(args : Array<String>) {
-        println("Hello, world!")
-    }
-  {{< /tab >}}
-  {{< tab header="Go" lang="Go" >}}
-    import "fmt"
-    func main() {
-        fmt.Printf("Hello World!\n")
-    }
-  {{< /tab >}}
+}
+{{< /tab >}}
+{{< tab header="Kotlin" lang="Kotlin" >}}
+fun main(args : Array<String>) {
+    println("Hello, world!")
+}
+{{< /tab >}}
+{{< tab header="Go" lang="Go" >}}
+import "fmt"
+func main() {
+    fmt.Printf("Hello World!\n")
+}
+{{< /tab >}}
 {{< /tabpane >}}
 
 ## Content with multiple variants
