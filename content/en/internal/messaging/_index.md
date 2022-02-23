@@ -1,6 +1,6 @@
 ---
 title: "Messaging service"
-weight: 30
+weight: 50
 type: "docs"
 description: "Messaging service supporting other central services"
 ---
