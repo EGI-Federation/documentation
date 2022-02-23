@@ -718,7 +718,6 @@ entered during the `openstack volume create` command):
 $ df -h /storage1
 Filesystem            Size  Used Avail Use% Mounted on
 /dev/mapper/storage1  2.0G  6.0M  1.9G   1% /storage1
-
 ```
 
 Once the disk is operational, steps 2 and 3 are no longer necessary.
