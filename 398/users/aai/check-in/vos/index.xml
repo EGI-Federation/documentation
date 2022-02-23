@@ -33,7 +33,288 @@ sub-group vo.example-sub.eu:&lt;/p>
 &lt;p>&lt;img src="vo-subgroup-membership.png" alt="VO subgroup membership">&lt;/p>
 &lt;p>In such occasions the eduPersonEntitlement will have the following structure:&lt;/p>
 &lt;p>&lt;code>urn:mace:egi.eu:group:vo.example.eu:vo.example-sub.eu:role=support#aai.egi.eu&lt;/code>&lt;/p>
-&lt;p>&lt;code>urn:mace:egi.eu:group:vo.example.eu:vo.examples-sub.eu:role=member#aai.egi.eu&lt;/code>&lt;/p></description></item><item><title>Users: VOMS</title><link>/users/aai/check-in/vos/voms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/voms/</guid><description>
+&lt;p>&lt;code>urn:mace:egi.eu:group:vo.example.eu:vo.examples-sub.eu:role=member#aai.egi.eu&lt;/code>&lt;/p></description></item><item><title>Users: Perun</title><link>/users/aai/check-in/vos/perun/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/perun/</guid><description>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">How is this documentation organized&lt;/h4>
+This documentation is specific for the EGI users and use-cases. Each section
+briefly describe the concepts in Perun and available options. How-To guides
+for related common actions are available at the end of each section.
+&lt;/div>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Perun is identity and access management system and within the EGI it
+provides alternative solution for VO management. Perun provides more
+advanced features and supports complex use-cases in comparison to COManage and
+VOMS.&lt;/p>
+&lt;p>You should consider using Perun for VO management if you want or require
+following features:&lt;/p>
+&lt;ul>
+&lt;li>Customizable registration forms, flows and notifications for both VOs and
+Groups&lt;/li>
+&lt;li>Advanced group management with group hierarchies and relations&lt;/li>
+&lt;li>VO/Group management roles delegation&lt;/li>
+&lt;li>Membership expiration/renewals rules&lt;/li>
+&lt;li>Membership sponsorships as exceptions to membership rules&lt;/li>
+&lt;li>Service accounts which can be associated to owners and used for API usage
+or provisioned to the EGI services&lt;/li>
+&lt;li>Push mechanism for services provisioning&lt;/li>
+&lt;li>Fine-grained access management for service owners&lt;/li>
+&lt;li>User/group synchronizations with external systems and services&lt;/li>
+&lt;/ul>
+&lt;h2 id="vo-management">VO management&lt;/h2>
+&lt;p>Administrative GUI for VO managers is available at &lt;a href="https://perun.egi.eu">https://perun.egi.eu&lt;/a>&lt;/p>
+&lt;p>It is assumed that VO managers and members have already registered their EGI
+Check-in account (A step-by-step guide is provided in this
+&lt;a href="../../signup">link&lt;/a>).&lt;/p>
+&lt;p>Due to historical reasons (wide adoption of VOMS) users might have their
+user entry in Perun already directly associated with their personal
+certificate. For such cases direct authentication using the certificates is
+available. Please consult Perun support trough GGUS if you wish to merge
+your accounts and start using EGI Check-In as identity linking needs to be
+done on Perun side and not trough EGI Check-In proxy.&lt;/p>
+&lt;h3 id="registering-your-vo">Registering your VO&lt;/h3>
+&lt;p>Standard EGI procedure for registering VO takes place. See related Check-In
+documentation about &lt;a href="../#registering-your-vo">Registering your VO&lt;/a>.&lt;/p>
+&lt;p>Steps which are specific to Perun basically are:&lt;/p>
+&lt;ol>
+&lt;li>You will provide us with necessary information through GGUS ticket (as
+described in the procedure).&lt;/li>
+&lt;li>We will prepare empty VO for you using basic template or pre-configure it
+as mutually agreed in the GGUS.&lt;/li>
+&lt;li>You will register to your own VO using provided link and we will set you as
+the VO manager.&lt;/li>
+&lt;/ol>
+&lt;p>Any further VO management and configuration is responsibility of VO manager.&lt;/p>
+&lt;h3 id="managing-members">Managing members&lt;/h3>
+&lt;p>All basic features regarding members management are available in the
+administrative GUI under the &lt;em>VO manager&lt;/em> section. All features are
+described in the following sections in more detail.&lt;/p>
+&lt;h4 id="how-to">HOW-TO&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16252929/Search+and+display+VO+members">Search and display VO members&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384005/Member+detail+status+groups+settings+...">Member detail (status, groups, settings,&amp;hellip;)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384022/Add+Remove+VO+members">Add/Remove VO members&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="accepting-new-members">Accepting new members&lt;/h4>
+&lt;p>Users can register in your VO using same registration link you were provided
+during the VO registration. It has the following format:&lt;/p>
+&lt;p>&lt;code>https://perun.egi.eu/egi/registrar/?vo=[voName]&lt;/code> where &lt;code>[voName]&lt;/code> is to be
+replaced with your actual VO name (as displayed on VO ID card in
+OperationsPortal).&lt;/p>
+&lt;p>Alternatively you can configure invitation notification template and
+send registration link to the users directly from Perun.&lt;/p>
+&lt;p>Once user submits the registration it is up to you to review and approve or
+reject it. Perun can be configured to automatically approve
+valid registrations or reject them in case of user inactivity (for example
+when email is not verified by the user in timely manner).&lt;/p>
+&lt;p>There is a possibility to use custom registration modules which are
+programmable and can perform any specific and complex actions with the
+users and the VO. Please consult perun user support using GGUS in case you
+need this feature.&lt;/p>
+&lt;h5 id="how-to-1">HOW-TO&lt;/h5>
+&lt;ul>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384056/Configure+registration+form">Configure registration form&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449548/Configure+registration+notifications">Configure registration notifications&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384077/Approve+Reject+submitted+registrations">Approve/reject submitted registration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384094/Configure+and+send+invitation">Configure and send invitation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="membership-lifecycle-expiration-rules-and-renewal">Membership lifecycle, expiration rules and renewal&lt;/h4>
+&lt;div class="alert alert-info" role="alert">
+Almost identical features are available for each Group within the VO. See
+same section under the &lt;a href="#group-membership-lifecycle-expiration-rules-and-renewal">Groups management&lt;/a> for the differences.
+&lt;/div>
+&lt;p>By default, Perun expects that membership lifecycle is managed by the VO
+manager directly - manually. This can be done by switching each members'
+status between &lt;code>VALID&lt;/code>, &lt;code>EXPIRED&lt;/code> and &lt;code>DISABLED&lt;/code> states or by removing the
+member from VO.&lt;/p>
+&lt;p>Members' status affects which VO/group membership information is released to
+the service, hence affects users ability to access the service or state of
+users' account in the service.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Member status&lt;/th>
+&lt;th>Meaning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>VALID&lt;/code>&lt;/td>
+&lt;td>User is active member of VO. VO/group membership information is provisioned to services (e.g. through Check-In proxy).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>EXPIRED&lt;/code>&lt;/td>
+&lt;td>User is inactive member of VO, but allowed to renew membership. VO/group membership information is not provisioned to services through Check-In proxy but can be provisioned to services directly connected to Perun.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>DISABLED&lt;/code>&lt;/td>
+&lt;td>User is inactive member of VO and can&amp;rsquo;t renew membership by himself. VO/group membership information is not provisioned outside of Perun.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Switching between the states can be automated based on membership expiration
+rules of VO or simply by setting membership expiration date manually to the
+member.&lt;/p>
+&lt;p>Notifications can be set to notify members about upcoming membership
+expiration. They can then ask for membership renewal using the same
+registration link. Modified version of the form is displayed to them in such
+case.&lt;/p>
+&lt;p>Membership expiration rules can be set either to a fixed date within the
+year (in such case member is expected to renew membership every year before
+that date) or be dynamically calculated based on the date of registration. In
+the second case renewal period can be shorter or longer than one year (e.
+g. &lt;code>+2y&lt;/code>, &lt;code>+6m&lt;/code>, meaning 2 years or 6 months respectively).
+In both cases you also need to define timespan, how long before the
+membership expiration are members allowed to ask for the renewal (e.g. &lt;code>1m&lt;/code>,
+meaning one month).&lt;/p>
+&lt;h5 id="how-to-2">HOW-TO&lt;/h5>
+&lt;ul>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449582/Change+VO+member+status+and+expiration">Change VO member status and expiration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449599/Configure+VO+membership+expiration+rules">Configure VO membership expiration rules&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="managing-groups">Managing groups&lt;/h3>
+&lt;p>Groups are used to further categorize VO members within the VO and to assign
+them roles or access rights for the services. They can be also used to
+delegate members management to others as you can assign a group manager
+which is then responsible for that particular group and its child groups.&lt;/p>
+&lt;p>All VOs have one system group named &lt;em>members&lt;/em>, which automatically holds
+all VO members and can be used in groups relations.&lt;/p>
+&lt;p>Groups can be organized in a &lt;em>flat&lt;/em> or &lt;em>hierarchical&lt;/em> structure, or you can
+combine them as you need. Groups' names must be unique on each level of
+hierarchy and group full name consist of all groups names on the path
+from the root divided by colon &lt;code>:&lt;/code>, e.g. &lt;code>projectX:students&lt;/code>.&lt;/p>
+&lt;p>Top-level groups can be created only by the VO managers.&lt;/p>
+&lt;h4 id="how-to-3">HOW-TO&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/15499401/Search+and+display+groups">Search and display groups&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384107/Create+delete+groups+and+subgroups">Create/delete groups and subgroups&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449565/Create+remove+relations+between+the+groups">Create/remove relations between the groups&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/15597689/Rename+group">Rename group&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="group-memberships">Group memberships&lt;/h4>
+&lt;p>Perun recognize two kinds of group memberships, &lt;em>direct&lt;/em> and &lt;em>indirect&lt;/em>. If
+you use only flat group structure, all users are direct members of the
+groups. Once you start using hierarchical group structures or group
+relations, you will get also indirect members in some groups.&lt;/p>
+&lt;p>Both types of memberships are equal regarding the VO/group membership
+information released for the services (e.g. Check-In proxy).&lt;/p>
+&lt;p>Membership in the hierarchical group structures is inherited from the most
+bottom groups to the root and user can be both direct and indirect member of
+the group at the same time.&lt;/p>
+&lt;p>Indirect members can&amp;rsquo;t be removed from the group and are displayed in the
+GUI using italic font in the group members list. In order to remove them
+from the group you have to remove them from the sourcing subgroup first or
+remove relation between the groups.&lt;/p>
+&lt;h5 id="how-to-4">HOW-TO&lt;/h5>
+&lt;ul>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/14417974/Search+and+display+group+members">Search and display group members&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/13861398/Add+remove+group+members">Add/remove group members&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="accepting-new-group-members">Accepting new group members&lt;/h4>
+&lt;p>Group members can be added to the group directly by the VO/group manager
+chosen from the available VO members as described in the above How-To.&lt;/p>
+&lt;p>They can also register themselves using similar link like for VO
+registrations: &lt;code>https://perun.egi.eu/egi/registrar/?vo=[voName]&amp;amp;group= [groupName]&lt;/code> where &lt;code>[voName]&lt;/code> is to be replaced with your actual VO name (as
+displayed on VO ID card in OperationsPortal) and &lt;code>[groupName]&lt;/code> is to be
+replaced with the groups full name (including hierarchy), e.g.:
+&lt;code>projectX:students&lt;/code>.&lt;/p>
+&lt;p>All settings related to the group registration are basically the same as for
+the VO registrations, they are just located under the &lt;em>Group manager&lt;/em>
+section in the GUI.&lt;/p>
+&lt;p>There is just one big difference regarding registration workflow for the
+groups. User must become member of VO before the group registration can be
+accepted by the group manager (even automatically).
+User is able to submit VO and group registration at once using a two steps
+form, but VO registration must be approved first.&lt;/p>
+&lt;h5 id="how-to-5">HOW-TO&lt;/h5>
+&lt;ul>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384056/Configure+registration+form">Configure registration form&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449548/Configure+registration+notifications">Configure registration notifications&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384077/Approve+Reject+submitted+registrations">Approve/reject submitted registration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384094/Configure+and+send+invitation">Configure and send invitation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="group-membership-lifecycle-expiration-rules-and-renewal">Group membership lifecycle, expiration rules and renewal&lt;/h4>
+&lt;p>Members' lifecycle within the group is roughly the same as within the VO,
+but there are some differences.&lt;/p>
+&lt;ul>
+&lt;li>Both VO and Group member status affect, what vo/group membership
+information is provided to the services about the user.&lt;/li>
+&lt;li>Group membership statuses are only &lt;code>VALID&lt;/code> and &lt;code>EXPIRED&lt;/code>.&lt;/li>
+&lt;li>In hierarchical group structures, resulting members' status in a parent
+group is dependent on his/hers status in all child groups and &lt;code>VALID&lt;/code>
+status takes preference.&lt;/li>
+&lt;li>Membership expiration in VO and group are independent of each other.
+Member can be expired just in some groups within the VO or be expired
+within the whole VO a still be valid within its groups. In such case
+member is not considered as a member of VO by the services. Once
+membership is renewed, membership information is restored including all
+groups.&lt;/li>
+&lt;/ul>
+&lt;h5 id="how-to-6">HOW-TO&lt;/h5>
+&lt;ul>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384130/Change+group+member+status+and+expiration">Change group member status and expiration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384155/Configure+group+membership+expiration+rules">Configure group membership expiration rules&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="access-management">Access management&lt;/h2>
+&lt;p>While Perun generally uses concept of &lt;em>Resources&lt;/em> to represent the access
+rights and roles (as service provider is giving them to the VO) and &lt;em>Groups&lt;/em>
+are assigned to it (by the VO managers), it is not usually used like this
+within the EGI infrastructure.&lt;/p>
+&lt;p>Having &lt;em>Groups&lt;/em> and &lt;em>Resources&lt;/em> separated allows you to represent your
+community or organization structure without the conflict with the roles and
+access rights for each service. You can then more easily use one single
+group and give its members access to the various services with specific
+roles/settings. Any change to the group membership can be then reflected to
+all associated services, which is useful especially for the de-provisioning.&lt;/p>
+&lt;h3 id="egi-check-in-proxy">EGI Check-In proxy&lt;/h3>
+&lt;p>For the primary and most basic use-case, when services are behind the EGI
+Check-In proxy, access rights are based solely on VO and group membership
+information.&lt;/p>
+&lt;p>Such information is then released by the EGI Check-In proxy as
+&lt;em>eduPersonEntitlement&lt;/em> attribute conforming
+&lt;a href="https://aarc-community.org/guidelines/aarc-g002/">AARC-G002&lt;/a> specification.&lt;/p>
+&lt;p>Both VOs' short name and groups' full name are used to construct the
+entitlement value, so using correct naming for the group is required.&lt;/p>
+&lt;p>Association of specific VO/group membership value with the role or access
+rights within the service are responsibility of the service provider.&lt;/p>
+&lt;h4 id="example">Example&lt;/h4>
+&lt;p>Let&amp;rsquo;s assume, that user is a member of &lt;code>myvo.egi.eu&lt;/code> VO and the top-level group
+&lt;code>vm_operator&lt;/code> in it. Resulting &lt;em>eduPersonEntitlement&lt;/em> will look like this:&lt;/p>
+&lt;p>&lt;code>urn:mace:egi.eu:group:myvo.egi.eu:vm_operator:role=member#aai.egi.eu&lt;/code>&lt;/p>
+&lt;p>Perun doesn&amp;rsquo;t support other &lt;em>roles&lt;/em> within the groups than &lt;code>member&lt;/code>.&lt;/p>
+&lt;h3 id="voms">VOMS&lt;/h3>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Please note, that because of the nature of the VOMS, users must have
+personal certificate associated with their user entry in Perun in order to
+be provisioned to the VOMS at all.
+&lt;/div>
+&lt;p>Perun supports direct provisioning of the VOMS. In this use-case users and VOs
+are primarily managed within the Perun.
+The user data, including group memberships and roles, is then provisioned to
+the VOMS, which is used solely as a backend for the services requiring it.&lt;/p>
+&lt;p>From the VO manager perspective you are given a &lt;em>Resource&lt;/em> by the service
+provider (VOMS operator). It represents your association with the VOMS in
+Perun. You can have multiple resources and they can represent either different
+set of &lt;em>VOMS roles&lt;/em> within the same VOMS or represent different VOMS servers.&lt;/p>
+&lt;p>You can assign any of your groups to it and all users from all the
+assigned groups will be provisioned to the VOMS as members of your VO.&lt;/p>
+&lt;p>On the &lt;em>Service settings&lt;/em> page of the &lt;em>Resource&lt;/em> you can set &lt;em>VOMS roles&lt;/em>, which
+will be given to all users associated with it through all the groups.
+Similarly, you can set &lt;em>VOMS roles&lt;/em> on the Group-Resource level. Once you
+assign the group to the Resource, you can check &lt;em>Group settings&lt;/em> page of the
+&lt;em>Resource&lt;/em>, select proper Group and set &lt;em>VOMS roles&lt;/em> from there. Same group
+can have different roles for different VOMS servers like this. Also you can
+associate group from Perun with the group in VOMS by settings &lt;em>Voms group
+name&lt;/em> on the same settings page.&lt;/p>
+&lt;h2 id="faq">FAQ&lt;/h2>
+&lt;h3 id="i-need-all-vo-members-to-get-vm_operator-role-in-openstack">I need all VO members to get &amp;ldquo;vm_operator&amp;rdquo; role in OpenStack&lt;/h3>
+&lt;p>You must create top-level group within the VO and name it &lt;code>vm_operator&lt;/code>. All
+members of this group will get this role and Check-In proxy will release
+this information as an entitlement for the OpenStack like this:&lt;/p>
+&lt;p>&lt;code>urn:mace:egi.eu:group:[VO_NAME]:vm_operator:role=member#aai.egi.eu&lt;/code>&lt;/p>
+&lt;p>You can make sure all VO members are in this group by creating
+relation between this group and the system group &lt;em>members&lt;/em> (basically you
+include &lt;em>members&lt;/em> as a subgroup through this relation).&lt;/p></description></item><item><title>Users: VOMS</title><link>/users/aai/check-in/vos/voms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/voms/</guid><description>
 &lt;h2 id="authentication">Authentication&lt;/h2>
 &lt;p>Some EGI services authentication is based on
 &lt;a href="https://tools.ietf.org/html/rfc5280">X.509&lt;/a> certificates. The certificates are
