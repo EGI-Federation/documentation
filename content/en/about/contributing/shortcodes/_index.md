@@ -142,14 +142,33 @@ multiple programming languages, you can use a tabbed pane for code snippets:
 
 Will render as:
 
-{{< tabpane >}} {{< tab header="C++" lang="C++">}} #include <iostream> int
-main() { std::cout << "Hello World!" << std::endl; } {{< /tab >}}
-{{< tab header="Java" lang="Java">}} class HelloWorld { static public void main(
-String args[] ) { System.out.println( "Hello World!" ); } } {{< /tab >}}
-{{< tab header="Kotlin" lang="Kotlin">}} fun main(args : Array<String>) {
-println("Hello, world!") } {{< /tab >}} {{< tab header="Go" lang="Go">}} package
-main import "fmt" func main() { fmt.Printf("Hello World!\n") } {{< /tab >}}
-{{< /tabpane >}}
+{{</* tabpane */>}}
+  {{</* tab header="C++" lang="C++" */>}}
+    #include <iostream>
+    int main()
+    {
+        std::cout << "Hello World!" << std::endl;
+    }
+  {{</* /tab */>}}
+  {{</* tab header="Java" lang="Java" */>}}
+    class HelloWorld {
+        static public void main( String args[] ) {
+            System.out.println( "Hello World!" );
+        }
+    }
+  {{</* /tab */>}}
+  {{</* tab header="Kotlin" lang="Kotlin" */>}}
+    fun main(args : Array<String>) {
+        println("Hello, world!")
+    }
+  {{</* /tab */>}}
+  {{</* tab header="Go" lang="Go" */>}}
+    import "fmt"
+    func main() {
+        fmt.Printf("Hello World!\n")
+    }
+  {{</* /tab */>}}
+{{</* /tabpane */>}}
 
 ## Content with multiple variants
 
