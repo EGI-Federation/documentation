@@ -1113,46 +1113,34 @@ fmt.Printf(&amp;#34;Hello World!\n&amp;#34;)
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpane&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-6" role="tablist">&lt;li class="nav-item">
-&lt;a class="nav-link active"
-id="tabs-6-0-tab" data-toggle="tab" href="#tabs-6-0" role="tab"
-aria-controls="tabs-6-0" aria-selected="true">
-C&amp;#43;&amp;#43;
-&lt;/a>
-&lt;/li>&lt;li class="nav-item">
-&lt;a class="nav-link"
-id="tabs-6-1-tab" data-toggle="tab" href="#tabs-6-1" role="tab"
-aria-controls="tabs-6-1" aria-selected="false">
-Java
-&lt;/a>
-&lt;/li>&lt;li class="nav-item">
-&lt;a class="nav-link"
-id="tabs-6-2-tab" data-toggle="tab" href="#tabs-6-2" role="tab"
-aria-controls="tabs-6-2" aria-selected="false">
-Kotlin
-&lt;/a>
-&lt;/li>&lt;li class="nav-item">
-&lt;a class="nav-link"
-id="tabs-6-3-tab" data-toggle="tab" href="#tabs-6-3" role="tab"
-aria-controls="tabs-6-3" aria-selected="false">
-Go
-&lt;/a>
-&lt;/li>&lt;/ul>
-&lt;div class="tab-content" id="tabs-6-content">&lt;div class="tab-pane fade show active"
-id="tabs-6-0" role="tabpanel" aria-labelled-by="tabs-6-0-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-C++" data-lang="C++"> &lt;span style="color:#8f5902;font-style:italic">#include&lt;/span> &lt;span style="color:#8f5902;font-style:italic">&amp;lt;iostream&amp;gt; int&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span> &lt;span style="color:#000">std&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">::&lt;/span>&lt;span style="color:#000">cout&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Hello World!&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#000">std&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">::&lt;/span>&lt;span style="color:#000">endl&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
-&lt;div class="tab-pane fade"
-id="tabs-6-1" role="tabpanel" aria-labelled-by="tabs-6-1-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Java" data-lang="Java"> &lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">HelloWorld&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span> &lt;span style="color:#204a87;font-weight:bold">static&lt;/span> &lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>
-&lt;span style="color:#000">String&lt;/span> &lt;span style="color:#000">args&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span> &lt;span style="color:#000">System&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#c4a000">out&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#c4a000">println&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Hello World!&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">);&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span> &lt;/code>&lt;/pre>&lt;/div>&lt;/div>
-&lt;div class="tab-pane fade"
-id="tabs-6-2" role="tabpanel" aria-labelled-by="tabs-6-2-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Kotlin" data-lang="Kotlin"> &lt;span style="color:#204a87;font-weight:bold">fun&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">args&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">Array&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">String&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">println&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello, world!&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">}&lt;/span> &lt;/code>&lt;/pre>&lt;/div>&lt;/div>
-&lt;div class="tab-pane fade"
-id="tabs-6-3" role="tabpanel" aria-labelled-by="tabs-6-3-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Go" data-lang="Go"> &lt;span style="color:#204a87;font-weight:bold">package&lt;/span>
-&lt;span style="color:#000">main&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;fmt&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">func&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span> &lt;span style="color:#000">fmt&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Printf&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello World!\n&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
-&lt;/div>
+&lt;!-- prettier-ignore -->
+&lt;p>{{&amp;lt; tabpane &amp;gt;}}
+{{&amp;lt; tab header=&amp;ldquo;C++&amp;rdquo; lang=&amp;ldquo;C++&amp;rdquo; &amp;gt;}}
+#include &lt;iostream>
+int main()
+{
+std::cout &amp;laquo; &amp;ldquo;Hello World!&amp;rdquo; &amp;laquo; std::endl;
+}
+{{&amp;lt; /tab &amp;gt;}}
+{{&amp;lt; tab header=&amp;ldquo;Java&amp;rdquo; lang=&amp;ldquo;Java&amp;rdquo; &amp;gt;}}
+class HelloWorld {
+static public void main( String args[] ) {
+System.out.println( &amp;ldquo;Hello World!&amp;rdquo; );
+}
+}
+{{&amp;lt; /tab &amp;gt;}}
+{{&amp;lt; tab header=&amp;ldquo;Kotlin&amp;rdquo; lang=&amp;ldquo;Kotlin&amp;rdquo; &amp;gt;}}
+fun main(args : Array&lt;String>) {
+println(&amp;ldquo;Hello, world!&amp;quot;)
+}
+{{&amp;lt; /tab &amp;gt;}}
+{{&amp;lt; tab header=&amp;ldquo;Go&amp;rdquo; lang=&amp;ldquo;Go&amp;rdquo; &amp;gt;}}
+import &amp;ldquo;fmt&amp;rdquo;
+func main() {
+fmt.Printf(&amp;ldquo;Hello World!\n&amp;rdquo;)
+}
+{{&amp;lt; /tab &amp;gt;}}
+{{&amp;lt; /tabpane &amp;gt;}}&lt;/p>
 &lt;h2 id="content-with-multiple-variants">Content with multiple variants&lt;/h2>
 &lt;p>When you need to include multiple variants of the same content, other than code
 snippets in multiple programing languages, you can use the follwing shortcode:&lt;/p>
@@ -1183,38 +1171,38 @@ Get-ChildItem -Path .\
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-7" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-6" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-7-0-tab" data-toggle="tab" href="#tabs-7-0" role="tab"
-aria-controls="tabs-7-0" aria-selected="true">
+id="tabs-6-0-tab" data-toggle="tab" href="#tabs-6-0" role="tab"
+aria-controls="tabs-6-0" aria-selected="true">
 Linux
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-7-1-tab" data-toggle="tab" href="#tabs-7-1" role="tab"
-aria-controls="tabs-7-1" aria-selected="false">
+id="tabs-6-1-tab" data-toggle="tab" href="#tabs-6-1" role="tab"
+aria-controls="tabs-6-1" aria-selected="false">
 Mac
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-7-2-tab" data-toggle="tab" href="#tabs-7-2" role="tab"
-aria-controls="tabs-7-2" aria-selected="false">
+id="tabs-6-2-tab" data-toggle="tab" href="#tabs-6-2" role="tab"
+aria-controls="tabs-6-2" aria-selected="false">
 Windows
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-7-content">
+&lt;div class="tabx-content" id="tabs-6-content">
 &lt;div class="tab-pane show active"
-id="tabs-7-0" role="tabpanel" aria-labelled-by="tabs-7-0-tab">
+id="tabs-6-0" role="tabpanel" aria-labelled-by="tabs-6-0-tab">
 &lt;p>You can list all files in a folder using the command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ls -a -l
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-7-1" role="tabpanel" aria-labelled-by="tabs-7-1-tab">
+id="tabs-6-1" role="tabpanel" aria-labelled-by="tabs-6-1-tab">
 &lt;p>To get a list of all files in a folder, press &lt;strong>Cmd&lt;/strong> + &lt;strong>Space&lt;/strong> to open a
 spotlight search, type terminal, then press Enter. In the terminal window then
 run the command:&lt;/p>
@@ -1222,7 +1210,7 @@ run the command:&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-7-2" role="tabpanel" aria-labelled-by="tabs-7-2-tab">
+id="tabs-6-2" role="tabpanel" aria-labelled-by="tabs-6-2-tab">
 &lt;p>You can list all files in the current folder using the command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">dir
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>or you can use PowerShell:&lt;/p>
