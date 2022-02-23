@@ -143,33 +143,33 @@ multiple programming languages, you can use a tabbed pane for code snippets:
 Will render as:
 
 <!-- prettier-ignore -->
-{{</* tabpane */>}}
-  {{</* tab header="C++" lang="C++" */>}}
+{{< tabpane >}}
+  {{< tab header="C++" lang="C++" >}}
     #include <iostream>
     int main()
     {
         std::cout << "Hello World!" << std::endl;
     }
-  {{</* /tab */>}}
-  {{</* tab header="Java" lang="Java" */>}}
+  {{< /tab >}}
+  {{< tab header="Java" lang="Java" >}}
     class HelloWorld {
         static public void main( String args[] ) {
             System.out.println( "Hello World!" );
         }
     }
-  {{</* /tab */>}}
-  {{</* tab header="Kotlin" lang="Kotlin" */>}}
+  {{< /tab >}}
+  {{< tab header="Kotlin" lang="Kotlin" >}}
     fun main(args : Array<String>) {
         println("Hello, world!")
     }
-  {{</* /tab */>}}
-  {{</* tab header="Go" lang="Go" */>}}
+  {{< /tab >}}
+  {{< tab header="Go" lang="Go" >}}
     import "fmt"
     func main() {
         fmt.Printf("Hello World!\n")
     }
-  {{</* /tab */>}}
-{{</* /tabpane */>}}
+  {{< /tab >}}
+{{< /tabpane >}}
 
 ## Content with multiple variants
 
