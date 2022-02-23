@@ -1,12 +1,12 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Tutorials</title><link>/users/tutorials/</link><description>Recent content in Tutorials on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Create your first Virtual Machine</title><link>/users/tutorials/create-your-first-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/create-your-first-virtual-machine/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Tutorials &amp; Guides</title><link>/users/tutorials/</link><description>Recent content in Tutorials &amp; Guides on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Create your first Virtual Machine</title><link>/users/tutorials/create-your-first-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/create-your-first-virtual-machine/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to create your first Virtual Machine in the EGI Federation.&lt;/p>
 &lt;h2 id="step-1-signing-up">Step 1: Signing up&lt;/h2>
-&lt;p>Create an EGI account with &lt;a href="../../check-in/signup">Check-in&lt;/a>.&lt;/p>
+&lt;p>Create an EGI account with &lt;a href="../../aai/check-in/signup">Check-in&lt;/a>.&lt;/p>
 &lt;h2 id="step-2-enrolling-to-a-virtual-organisation">Step 2: Enrolling to a Virtual Organisation&lt;/h2>
 &lt;p>Once your EGI account is ready you need to join a
 &lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation (VO)&lt;/a>.
-Here are the steps to &lt;a href="../../check-in/joining-virtual-organisation/">join a VO&lt;/a>.
+Here are the steps to &lt;a href="../../aai/check-in/joining-virtual-organisation/">join a VO&lt;/a>.
 Explore the list of available VOs in the
 &lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations Portal&lt;/a>.
 We have a dedicated VO called
@@ -21,16 +21,16 @@ AppDB is one of the service in the
 &lt;h2 id="step-3-creating-a-vm">Step 3: Creating a VM&lt;/h2>
 &lt;p>Once your membership to a VO has been approved you are ready to create your first
 Virtual Machine. There are several ways to achieve this. The simplest way is to
-use a web dashboard like &lt;a href="../../cloud-compute/monitor">VMOps Dashboard&lt;/a> or
-&lt;a href="../../cloud-orchestration/dashboard">Infrastructure Manager Dashboard&lt;/a>.
+use a web dashboard like &lt;a href="../../compute/cloud-compute/monitor">VMOps Dashboard&lt;/a> or
+&lt;a href="../../compute/orchestration/im/dashboard">Infrastructure Manager Dashboard&lt;/a>.
 On the other hand, advanced users
 may prefer to use the &lt;a href="../../getting-started/cli">command-line interface&lt;/a>.&lt;/p>
 &lt;p>To know more about the &lt;a href="https://www.egi.eu/services/cloud-compute/">Cloud Compute&lt;/a>
-Service in EGI please visit its &lt;a href="../../cloud-compute">dedicated section&lt;/a>.&lt;/p>
+Service in EGI please visit its &lt;a href="../../compute/cloud-compute">dedicated section&lt;/a>.&lt;/p>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
 &lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Access DataHub from a Virtual machine</title><link>/users/tutorials/vm-datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/vm-datahub/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>This tutorial describes the access to &lt;a href="../../datahub">EGI DataHub&lt;/a> spaces
+&lt;p>This tutorial describes the access to &lt;a href="../../data/management/datahub">EGI DataHub&lt;/a> spaces
 from a virtual machine. In the following paragraphs you will learn how to
 access data remotely stored in EGI DataHub like if they were local, using
 traditional POSIX command-line commands, by:&lt;/p>
@@ -40,8 +40,8 @@ traditional POSIX command-line commands, by:&lt;/p>
 &lt;/ul>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>In order to access the EGI DataHub data you need an
-&lt;a href="../../check-in">EGI Check-in&lt;/a> account. If you don&amp;rsquo;t have one yet
-you can &lt;a href="../../check-in/signup">Sign up for an EGI account&lt;/a>.&lt;/p>
+&lt;a href="../../aai/check-in">EGI Check-in&lt;/a> account. If you don&amp;rsquo;t have one yet
+you can &lt;a href="../../aai/check-in/signup">Sign up for an EGI account&lt;/a>.&lt;/p>
 &lt;h2 id="oneclient-installation">Oneclient installation&lt;/h2>
 &lt;p>The installation of &lt;code>oneclient&lt;/code> package is currently supported for:&lt;/p>
 &lt;ul>
@@ -62,7 +62,7 @@ have docker installed), you can run the following command:&lt;/p>
 ease the transfer of data.&lt;/p>
 &lt;h2 id="getting-the-token-to-access-data">Getting the token to access data&lt;/h2>
 &lt;p>In order to access data stored in EGI DataHub via oneclient,
-you need to &lt;a href="../../datahub/api/#getting-an-api-access-token">get an API access token&lt;/a>.&lt;/p>
+you need to &lt;a href="../../data/management/datahub/api/#getting-an-api-access-token">get an API access token&lt;/a>.&lt;/p>
 &lt;h2 id="using-oneclient">Using oneclient&lt;/h2>
 &lt;p>Once you have acquired a token valid for oneclient you can configure it
 on the environment as follows:&lt;/p>
@@ -101,16 +101,16 @@ WebFTS. In the following paragraphs you will learn how to:&lt;/p>
 &lt;p>to perform data transfers between two Grid storage.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>As first step please make sure that you have installed the FTS client as
-described in &lt;a href="../../data-transfer/">Data Transfer&lt;/a>, and in particular
-&lt;a href="../../data-transfer/clients/">Clients&lt;/a> for the command-line FTS and to have
+described in &lt;a href="../../data/management/data-transfer">Data Transfer&lt;/a>, and in particular
+&lt;a href="../../data/management/data-transfer/clients">Clients&lt;/a> for the command-line FTS and to have
 your certificate installed in your browser to use
-&lt;a href="../../data-transfer/webfts/">WebFTS&lt;/a> browser based client.&lt;/p>
+&lt;a href="../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
 &lt;p>To access services and resources in the
 &lt;a href="../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
 &lt;ul>
-&lt;li>An &lt;a href="../../check-in">EGI Check-in&lt;/a> account, you can
-&lt;a href="../../check-in/signup">sign up here&lt;/a>&lt;/li>
-&lt;li>Enrollment into a &lt;a href="../../check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+&lt;li>An &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> account, you can
+&lt;a href="../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
+&lt;li>Enrollment into a &lt;a href="../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
 access to the services and resources you need&lt;/li>
 &lt;/ul>
 &lt;h2 id="fts-client-usage">FTS client usage&lt;/h2>
@@ -271,18 +271,18 @@ repository to your configuration and update the client
 &lt;/div>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>As first step please make sure that you have installed the FTS client as
-described in &lt;a href="../../data-transfer/">Data Transfer&lt;/a>, and in particular
-&lt;a href="../../data-transfer/clients/">Clients&lt;/a> for the command-line FTS and to have
+described in &lt;a href="../../data/management/data-transfer">Data Transfer&lt;/a>, and in particular
+&lt;a href="../../data/management/data-transfer/clients">Clients&lt;/a> for the command-line FTS and to have
 your certificate installed in your browser to use
-&lt;a href="../../data-transfer/webfts/">WebFTS&lt;/a> browser based client.&lt;/p>
+&lt;a href="../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
 &lt;p>To access services and resources in the
 &lt;a href="../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
 &lt;ul>
-&lt;li>An &lt;a href="../../check-in">EGI Check-in&lt;/a> account, you can
-&lt;a href="../../check-in/signup">sign up here&lt;/a>&lt;/li>
-&lt;li>Enrollment into a &lt;a href="../../check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+&lt;li>An &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> account, you can
+&lt;a href="../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
+&lt;li>Enrollment into a &lt;a href="../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
 access to the services and resources you need&lt;/li>
-&lt;li>An &lt;a href="../../online-storage/object-storage/">Object Storage&lt;/a> for which you need
+&lt;li>An &lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> for which you need
 to have all the credentials available (any S3 compatible storage should work)&lt;/li>
 &lt;li>Permission to add the Object Storage credential to the FTS server or
 alternatively for this operation you may contact support support &lt;strong>at&lt;/strong>
@@ -291,13 +291,13 @@ egi.eu.&lt;/li>
 &lt;h2 id="fts-client-usage">FTS client usage&lt;/h2>
 &lt;h3 id="step-1-configuration-check-and-proxy-creation">Step 1 Configuration check and Proxy creation&lt;/h3>
 &lt;p>For this two steps please refer to the
-&lt;a href="../data-transfer-grid-storage/">&amp;ldquo;Data transfer with grid storage&amp;rdquo;&lt;/a> tutorial.&lt;/p>
+&lt;a href="../data-transfer-grid-storage">&amp;ldquo;Data transfer with grid storage&amp;rdquo;&lt;/a> tutorial.&lt;/p>
 &lt;h3 id="step-2-find-the-storage">Step 2 Find the storage&lt;/h3>
 &lt;p>As for the &amp;ldquo;Data transfer with grid storage&amp;rdquo; tutorial you can look for the
 available storage on
 &lt;a href="https://operations-portal.egi.eu/vapor/resources/GL2ResVO">VAPOR service&lt;/a> while
 the Object Store can be one created as described in the
-&lt;a href="../../online-storage/object-storage/">Object Storage&lt;/a> section or trough a
+&lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> section or trough a
 provider such as Amazon, Azure, etc&lt;/p>
 &lt;h3 id="step-3-add-the-object-storage-credential-to-the-fts-server">Step 3 Add the Object Storage credential to the FTS server&lt;/h3>
 &lt;p>Following is an example of the command that can be used to add the Object Store

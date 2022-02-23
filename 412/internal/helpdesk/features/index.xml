@@ -450,7 +450,9 @@ added to the alarm ticket.&lt;/p>
 reference link to the alarm ticket is given in the alarm email notification.&lt;/p>
 &lt;h4 id="periodic-alarm-ticket-testing-rules">Periodic ALARM ticket testing rules&lt;/h4>
 &lt;p>Alarm ticket testing is documented in
-&lt;a href="https://twiki.cern.ch/twiki/bin/view/EGEE/SA1_USAG#Periodic_ALARM_ticket_testing_ru">WLCG twiki&lt;/a>.&lt;/p></description></item><item><title>Internal: Quality of Support (QoS) levels</title><link>/internal/helpdesk/features/quality-of-support-levels/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/quality-of-support-levels/</guid><description>
+&lt;a href="https://twiki.cern.ch/twiki/bin/view/EGEE/SA1_USAG#Periodic_ALARM_ticket_testing_ru">WLCG twiki&lt;/a>.&lt;/p>
+&lt;h4 id="schema-of-the-alarm-tickets-process">Schema of the Alarm tickets process&lt;/h4>
+&lt;p>&lt;img src="GGUS_Graph_Alarm-ticket-process.png" alt="Alarm tickets process graph">&lt;/p></description></item><item><title>Internal: Quality of Support (QoS) levels</title><link>/internal/helpdesk/features/quality-of-support-levels/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/quality-of-support-levels/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>QoS stands for Quality of Support. It describes the level of support provided by
 Support Units in GGUS system.&lt;/p>
@@ -820,7 +822,10 @@ value of the “Notify Site” field.&lt;/p>
 reference link to the team ticket is given in the team notification mail. Team
 tickets can be upgraded to alarm tickets clicking on the button “Click to
 convert to ALARM”.&lt;/p>
-&lt;p>&lt;img src="Team_to_alarm.png" alt="Team to Alarm">&lt;/p></description></item><item><title>Internal: Ticket Priority</title><link>/internal/helpdesk/features/ticket-priority/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/ticket-priority/</guid><description>
+&lt;p>&lt;img src="Team_to_alarm.png" alt="Team to Alarm">&lt;/p>
+&lt;h2 id="team-tickets-process-schema">Team tickets process schema&lt;/h2>
+&lt;p>See the
+&lt;a href="GGUS_Graph_TEAM_Ticket_Process.pdf">schema of the Team Tickets process&lt;/a>.&lt;/p></description></item><item><title>Internal: Ticket Priority</title><link>/internal/helpdesk/features/ticket-priority/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/ticket-priority/</guid><description>
 &lt;h2 id="priority-definition">Priority definition&lt;/h2>
 &lt;p>If you plan to adjust the ticket priority from the default value &amp;lsquo;less urgent&amp;rsquo;
 to &amp;lsquo;urgent&amp;rsquo;, &amp;lsquo;very urgent&amp;rsquo; or &amp;lsquo;top priority&amp;rsquo;, please make sure you add a
