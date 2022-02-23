@@ -93,5 +93,5 @@ convert to ALARM”.
 
 ## Team tickets process schema
 
-See here a [schema](GGUS_Graph_TEAM_Ticket_Process.pdf) about the Team Tickets
-process
+See the
+[schema of the Team Tickets process](GGUS_Graph_TEAM_Ticket_Process.pdf).
