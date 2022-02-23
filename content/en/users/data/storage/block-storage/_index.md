@@ -5,6 +5,7 @@ weight: 10
 description: >
   Block Storage offered by EGI Cloud providers
 ---
+
 <!--
 // jscpd:ignore-start
 -->
@@ -29,9 +30,9 @@ The main features of block storage:
 
 - Block storage is recommended for data that must be quickly accessible and
   requires long-term persistence.
-- Block storage volumes are well suited to both database-style applications
-  that rely on random reads and writes, and to throughput-intensive
-  applications that perform long, continuous reads and writes.
+- Block storage volumes are well suited to both database-style applications that
+  rely on random reads and writes, and to throughput-intensive applications that
+  perform long, continuous reads and writes.
 - Users can create point-in-time snapshots of block storage volumes, which
   protect data for long-term durability, and they can be used as the starting
   point for new block storage volumes.
@@ -40,15 +41,14 @@ The main features of block storage:
 mounted to VMs running at the same provider where the block storage is located.
 {{% /alert %}}
 
-{{% alert title="Note" color="info" %}} Block storage usage is accounted for
-the entire block storage device, regardless how much of it is actually used.
+{{% alert title="Note" color="info" %}} Block storage usage is accounted for the
+entire block storage device, regardless how much of it is actually used.
 {{% /alert %}}
 
 {{% alert title="Important" color="warning" %}} There is a limit on the number
 of block storage devices you can attach on a VM and there is a limit to the
 maximum size of such virtual disks. These values will depend on the particular
-provider and your SLA.
-{{% /alert %}}
+provider and your SLA. {{% /alert %}}
 
 ## Manage volumes
 
@@ -69,15 +69,15 @@ for details about using the legacy OCCI interface to manage block storage.
 
 ## Manage from the command-line
 
-Multiple command-line interfaces (CLIs) are available to manage block
-storage:
+Multiple command-line interfaces (CLIs) are available to manage block storage:
 
 - The [OpenStack CLI](https://docs.openstack.org/python-openstackclient/latest)
 - The [FedCloud Client](../../../getting-started/cli) is a high-level CLI for
   interaction with the EGI Federated Cloud (**recommended**)
-- The [Cinder CLI](https://docs.openstack.org/python-cinderclient/latest/user/shell.html)
-  has some advanced features and administrative commands that are not available through
-  the OpenStack CLI
+- The
+  [Cinder CLI](https://docs.openstack.org/python-cinderclient/latest/user/shell.html)
+  has some advanced features and administrative commands that are not available
+  through the OpenStack CLI
 
 The main FedCloud commands for managing volumes are detailed below.
 
@@ -214,9 +214,8 @@ To
 [view details of a volume](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume.html#volume-show)
 use the FedCloud command below:
 
-{{% alert title="Tip" color="info" %}} The volume can be specified either by
-its ID or by its name (if it has one).
-{{% /alert %}}
+{{% alert title="Tip" color="info" %}} The volume can be specified either by its
+ID or by its name (if it has one). {{% /alert %}}
 
 ```shell
 $ fedcloud openstack volume show Matlab
@@ -266,10 +265,9 @@ use the FedCloud command below:
 the volume must not be attached to any VM (volume status must be `available`).
 {{% /alert %}}
 
-{{% alert title="Caution" color="warning" %}} The optional `--device`
-argument to specify the device name in the VM should not be used. It does
-not work properly, and will be removed in the near future.
-{{% /alert %}}
+{{% alert title="Caution" color="warning" %}} The optional `--device` argument
+to specify the device name in the VM should not be used. It does not work
+properly, and will be removed in the near future. {{% /alert %}}
 
 ```shell
 $ fedcloud openstack server add volume my-server my-volume
@@ -291,8 +289,8 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+-----------+------+-----------------------+
 ```
 
-When the volume status is `in-use` the volume is attached to a VM, and it can
-be [used from the VM](#access-from-your-vms).
+When the volume status is `in-use` the volume is attached to a VM, and it can be
+[used from the VM](#access-from-your-vms).
 
 ### Detach volume from VM
 
@@ -326,13 +324,12 @@ When the volume status is `available` the volume is not attached to any VM.
 
 To
 [resize a volume](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume.html#volume-set)
-set its `size` property to the desired size. For example, if there
-is a volume named `my-volume` with a size of 10GB, it can be resized using the
-FedCloud command below:
+set its `size` property to the desired size. For example, if there is a volume
+named `my-volume` with a size of 10GB, it can be resized using the FedCloud
+command below:
 
-{{% alert title="Tip" color="info" %}} Other volume properties can be altered
-in the same way.
-{{% /alert %}}
+{{% alert title="Tip" color="info" %}} Other volume properties can be altered in
+the same way. {{% /alert %}}
 
 {{% alert title="Note" color="info" %}} To be able to resize a volume, the
 volume must not be attached to any VM (volume status must be `available`),
@@ -376,10 +373,9 @@ other
 
 {{% alert title="Note" color="info" %}} To be able to create a snapshot of a
 volume, the volume must not be attached to any VM (volume status must be
-`available`). To create a snapshot while the volume is attached
-to a VM, use the `--force` command flag, but be aware that there may be
-inconsistencies if the VM’s OS is not aware of the snapshot being taken.
-{{% /alert %}}
+`available`). To create a snapshot while the volume is attached to a VM, use the
+`--force` command flag, but be aware that there may be inconsistencies if the
+VM’s OS is not aware of the snapshot being taken. {{% /alert %}}
 
 ```shell
 $ fedcloud openstack volume snapshot create --volume my-volume my-snapshot --force
@@ -399,8 +395,8 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot create --volume
 +-------------+--------------------------------------+
 ```
 
-The status of the snapshot will probably be returned as `creating`. To check
-if the snapshot is ready, look at the
+The status of the snapshot will probably be returned as `creating`. To check if
+the snapshot is ready, look at the
 [details of the snapshot](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html#volume-snapshot-show),
 or list only the newly created snapshot (filter by snapshot name or ID):
 
@@ -414,16 +410,16 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot list --name my-
 +--------------------------------------+-------------+-------------+-----------+------+
 ```
 
-When the status of the snapshot is `available` the snapshot is ready, and can
-be used to create new volumes or to restore the source volume to the
-point-in-time when the snapshot was taken.
+When the status of the snapshot is `available` the snapshot is ready, and can be
+used to create new volumes or to restore the source volume to the point-in-time
+when the snapshot was taken.
 
 ### Backup a volume
 
-Users can also create backups of a volume, but backups can only be used later
-to create or replace other volumes. A **volume backup is a copy of a volume**
-saved to cold storage, which is cheaper than the performant storage used for
-volumes and snapshots.
+Users can also create backups of a volume, but backups can only be used later to
+create or replace other volumes. A **volume backup is a copy of a volume** saved
+to cold storage, which is cheaper than the performant storage used for volumes
+and snapshots.
 
 To
 [make a backup](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html#volume-backup-create)
@@ -434,23 +430,20 @@ of a volume, use the FedCloud command below:
 {{% /alert %}}
 
 {{% alert title="Note" color="info" %}} Not all OpenStack deployments support
-volume backups.
-{{% /alert %}}
+volume backups. {{% /alert %}}
 
 {{% alert title="Note" color="info" %}} Backups use as much storage as the
-source volume, albeit in a cheaper storage layer. This means backups take
-a long time to create (~4h for 500GB), and the space is accounted for the
-same way as for regular volumes (the entire size of the backed up volume,
-regardless of how much of the volume space is actually used).
-Thus backups should be deleted when no longer needed.
-{{% /alert %}}
+source volume, albeit in a cheaper storage layer. This means backups take a long
+time to create (~4h for 500GB), and the space is accounted for the same way as
+for regular volumes (the entire size of the backed up volume, regardless of how
+much of the volume space is actually used). Thus backups should be deleted when
+no longer needed. {{% /alert %}}
 
-{{% alert title="Note" color="info" %}} To be able to make a backup of a
-volume, the volume must not be attached to any VM (volume status must be
-`available`). To make a backup while the volume is attached to a VM,
-use the `--force` command flag, but be aware that there may be inconsistencies
-if the VM’s OS is not aware of the backup being taken.
-{{% /alert %}}
+{{% alert title="Note" color="info" %}} To be able to make a backup of a volume,
+the volume must not be attached to any VM (volume status must be `available`).
+To make a backup while the volume is attached to a VM, use the `--force` command
+flag, but be aware that there may be inconsistencies if the VM’s OS is not aware
+of the backup being taken. {{% /alert %}}
 
 ```shell
 $ fedcloud openstack volume backup create --name my-backup my-volume --force
@@ -470,8 +463,8 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume backup create --name my-
 +-------------+--------------------------------------+
 ```
 
-The status of the backup will probably be returned as `creating`. To check
-if the backup has finished, look at the
+The status of the backup will probably be returned as `creating`. To check if
+the backup has finished, look at the
 [details of the backup](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html#volume-backup-show),
 or list only the newly created backup (filter by backup name or ID):
 
@@ -502,8 +495,8 @@ $ fedcloud openstack volume delete my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume delete my-volume
 ```
 
-This starts deletion of the specified volume (the volume status changes
-to `deleting`):
+This starts deletion of the specified volume (the volume status changes to
+`deleting`):
 
 ```shell
 $ fedcloud openstack volume list --name my-volume
@@ -526,9 +519,9 @@ the list of volumes.
 Block storage volumes attached to a VM will appear as a
 [block device](https://en.wikipedia.org/wiki/Device_file#BLOCKDEV) in the VM.
 
-To find out the device name that got assigned to a volume when it was
-attached to a VM, look at the [details of the volume](#see-volume-details), or
-list only the volume in question (filter by volume name or ID):
+To find out the device name that got assigned to a volume when it was attached
+to a VM, look at the [details of the volume](#see-volume-details), or list only
+the volume in question (filter by volume name or ID):
 
 ```shell
 $ fedcloud openstack volume list --name my-volume
@@ -551,32 +544,30 @@ vda    252:0    0  20G  0 disk
 vdb    252:16   0  10G  0 disk
 ```
 
-Usually these devices are empty upon creation. The first time you attach them
-to a VM, you will need to partition the device and create filesystem(s) on it,
-by running the following command in the VM:
+Usually these devices are empty upon creation. The first time you attach them to
+a VM, you will need to partition the device and create filesystem(s) on it, by
+running the following command in the VM:
 
 {{% alert title="Tip" color="info" %}} Using a file system volume label is
 useful to avoid the need to find the out the device name, especially when
-multiple block storage volumes are attached to a VM. It is recommended to use
-a file system volume label in the VM that is the same as the name of the
-block storage volume.
-{{% /alert %}}
+multiple block storage volumes are attached to a VM. It is recommended to use a
+file system volume label in the VM that is the same as the name of the block
+storage volume. {{% /alert %}}
 
-{{% alert title="Tip" color="info" %}} The filesystem type can be one supported by
-the Linux distribution in the VM, but `xfs` and `ext4` are the most widely used.
-{{% /alert %}}
+{{% alert title="Tip" color="info" %}} The filesystem type can be one supported
+by the Linux distribution in the VM, but `xfs` and `ext4` are the most widely
+used. {{% /alert %}}
 
 {{% alert title="Caution" color="danger" %}} Only run this command the first
 time you use the device, as it deletes all data! Make sure you use the correct
-device name, otherwise you will destroy data on other devices!
-{{% /alert %}}
+device name, otherwise you will destroy data on other devices! {{% /alert %}}
 
 ```shell
 $ sudo mkfs.ext4 -L my-volume /dev/vdb
 ```
 
-Once you created a filesystem on the device, you can mount it at any
-desired path by running the following command in the VM:
+Once you created a filesystem on the device, you can mount it at any desired
+path by running the following command in the VM:
 
 ```shell
 $ sudo mount /dev/vdb1 /<path>
@@ -594,8 +585,8 @@ vdb    252:16   0  10G  0 disk
 └─vdb1 252:1    0  10G  0 part /<path>
 ```
 
-If non-root users should be able to access the mounted volume similar to the
-way e.g. `/tmp` is accessible, set the sticky bit on the mount point, with this
+If non-root users should be able to access the mounted volume similar to the way
+e.g. `/tmp` is accessible, set the sticky bit on the mount point, with this
 command in the VM:
 
 ```shell
@@ -603,8 +594,8 @@ $ sudo chmod +t /<path>
 ```
 
 If the desired behaviour is to mount the file system automatically on VM
-restart, add it to `/etc/fstab`. Using the `LABEL` parameter will ensure
-the correct volume is chosen if multiple volumes are attached:
+restart, add it to `/etc/fstab`. Using the `LABEL` parameter will ensure the
+correct volume is chosen if multiple volumes are attached:
 
 `LABEL=my-volume /<path> ext4 noatime,nodiratime,user_xattr,nofail 0 0`
 
@@ -612,19 +603,149 @@ the correct volume is chosen if multiple volumes are attached:
 recommended in order to skip (and not block on) mounting the file system volume
 if it is unavailable, e.g. in case of network issues. Remove this option from
 the _fstab_ line if you want the VM to block the boot process if the volume is
-unavailable.
-{{% /alert %}}
+unavailable. {{% /alert %}}
 
-{{% alert title="Note" color="info" %}} The use of option `nobarrier` is
-not recommended as volumes are accessed via a cache, and ignoring the correct
-ordering of journal commits may result in a corrupted file system in case of
-a hardware problem.
-{{% /alert %}}
+{{% alert title="Note" color="info" %}} The use of option `nobarrier` is not
+recommended as volumes are accessed via a cache, and ignoring the correct
+ordering of journal commits may result in a corrupted file system in case of a
+hardware problem. {{% /alert %}}
 
 With that you can access `/<path>` inside the VM, where all data stored on the
 volume will be available. Applications will not see any difference between a
 block storage device and a regular disk, thus no major changes should be
 required in the application logic.
+
+## Storage Encryption
+
+This section describes the usage of the tool
+[cryptsetup](https://gitlab.com/cryptsetup/cryptsetup) to enable the permanent
+encryption of the data stored in the disk. The tool is available in standard
+linux distributions, and for this guide we assume the installation in an Ubuntu
+distribution.
+
+```shell
+$ sudo su -
+$ apt -y install cryptsetup
+```
+
+To encrypt the disk, it must be first initialized correctly. In the example
+below, the disk named `/dev/vdb` is first filled with random data and then
+initialized using the cryptsetup luksFormat command below. This first step can
+be quite long.
+
+```shell
+$ dd if=/dev/urandom of=/dev/vdb bs=4k
+$ cryptsetup -v --cipher aes-xts-plain64 --key-size 512 --hash sha512 \
+    --iter-time 5000 --use-random luksFormat /dev/vdb
+```
+
+If this last command slows down or even blocks with the following message:
+
+```shell
+System is out of entropy while generating volume key.
+Please move mouse or type some text in another window to gather some random events.
+Generating key (0% done).
+```
+
+you can make the `cryptsetup luksFormat` command running faster by first
+installing the `haveged` program in your virtual machine.
+
+The following command verifies that the disk is now of type LUKS:
+
+```shell
+$ cryptsetup luksDump /dev/vdb
+LUKS header information for /dev/vdb
+
+Version:        1
+Cipher name:    aes
+Cipher mode:    xts-plain64
+Hash spec:      sha512
+Payload offset: 4096
+MK bits:        512
+MK digest:      c4 f7 4b 02 2a 3f 12 c1 2c ba e5 c9 d2 45 9a cd 89 20 6c 73
+MK salt:        98 58 3e f3 f6 88 99 ea 2a f3 cf 71 a0 0d e5 8b
+                d5 76 64 cb d2 5c 9b d1 8a d3 1d 18 0e 04 7a eb
+MK iterations:  81250
+UUID:           c216d954-199e-4eab-a167-a3587bd41cb3
+
+Key Slot 0: ENABLED
+    Iterations:             323227
+    Salt:                   a0 45 3e 98 fa cf 60 74 c6 09 3d 54 97 89 be 65
+                            5b 96 7c 1c 39 26 47 b4 8b 0e c1 3a c9 94 83 c2
+    Key material offset:    8
+    AF stripes:             4000
+Key Slot 1: DISABLED
+Key Slot 2: DISABLED
+Key Slot 3: DISABLED
+Key Slot 4: DISABLED
+Key Slot 5: DISABLED
+Key Slot 6: DISABLED
+Key Slot 7: DISABLED
+```
+
+The disk is now ready for use. The first time you use it, you must perform the
+following steps:
+
+Step 1: Open the encrypted disk with the `cryptsetup luksOpen` command. The name
+`storage1` is only indicative, you can choose what you want:
+
+```shell
+$ cryptsetup luksOpen /dev/vdb storage1
+```
+
+Step 2: Create a filesystem on disk:
+
+```shell
+$ mkfs.ext4 /dev/mapper/storage1
+```
+
+Step 3: Create the disk mount point:
+
+```shell
+$ mkdir /storage1
+```
+
+Step 4: Mount the disk:
+
+```shell
+$ mount -t ext4 /dev/mapper/storage1 /storage1
+```
+
+Step 5: Check available space (this may be slightly different from what was
+entered during the `openstack volume create` command):
+
+```shell
+$ df -h /storage1
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/storage1  2.0G  6.0M  1.9G   1% /storage1
+```
+
+Once the disk is operational, steps 2 and 3 are no longer necessary.
+
+You can now send files (for example `DATA.dat`) from your personal computer to
+your virtual machine in a secure way, for example with `scp`:
+
+```shell
+$ scp -i ${HOME}/.ssh/cloudkey DATA.dat ubuntu@134.158.151.224:/storage1
+DATA.dat                               100%   82     0.1KB/s   00:00
+```
+
+When you are done with your work on the disk, you can remove it cleanly with the
+following commands:
+
+```shell
+$ umount /storage1
+$ cryptsetup close storage1
+```
+
+For the following uses of the persistent disk, there will be no need to perform
+all these operations, only the following are necessary:
+
+```shell
+$ cryptsetup luksOpen /dev/vdb storage1
+$ mkdir /storage1
+$ mount -t ext4 /dev/mapper/storage1 /storage1
+```
 
 ## Access via EGI Data Transfer
 
