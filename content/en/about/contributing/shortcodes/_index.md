@@ -142,6 +142,7 @@ multiple programming languages, you can use a tabbed pane for code snippets:
 
 Will render as:
 
+<!-- prettier-ignore -->
 {{</* tabpane */>}}
   {{</* tab header="C++" lang="C++" */>}}
     #include <iostream>
