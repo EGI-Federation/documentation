@@ -45,7 +45,7 @@ resources.&lt;/p>
 provided via community agreed APIs
 (&lt;a href="https://docs.openstack.org/wallaby/api/">OpenStack&lt;/a> and/or
 &lt;a href="http://www.occi-wg.org/">OCCI&lt;/a> are supported at the moment) that allow
-integration with &lt;a href="../../check-in">EGI Check-in&lt;/a> for authentication and
+integration with &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> for authentication and
 authorisation of users.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -65,18 +65,18 @@ with different providers in a uniform way. These tools include:
 &lt;li>&lt;strong>Provisioning systems&lt;/strong> allow users to define infrastructure as code, then
 manage and combine resources from different providers, thus enabling the
 portability of application deployments between them (e.g.
-&lt;a href="../../cloud-orchestration/">Infrastructure Manager&lt;/a> or
+&lt;a href="../../compute/orchestration/im">Infrastructure Manager&lt;/a> or
 &lt;a href="https://www.terraform.io/">Terraform&lt;/a>), and&lt;/li>
 &lt;li>&lt;strong>Cloud brokers&lt;/strong> provide matchmaking for workloads to available providers
 (e.g. the
 &lt;a href="https://indigo-dc.gitbook.io/indigo-paas-orchestrator/">INDIGO-DataCloud Orchestrator&lt;/a>).&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Using the &lt;a href="../../cloud-compute/monitor">VMOps dashboard&lt;/a>.&lt;/li>
+&lt;li>Using the &lt;a href="../../compute/cloud-compute/monitor">VMOps dashboard&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;p>EGI provides ready-to-use software components to enable the federation for
 OpenStack. These components rely on public APIs of the IaaS system and use
-&lt;a href="../../check-in">Check-in&lt;/a> accounts for authenticating into the provider.&lt;/p>
+&lt;a href="../../aai/check-in">Check-in&lt;/a> accounts for authenticating into the provider.&lt;/p>
 &lt;h2 id="implementation">Implementation&lt;/h2>
 &lt;h3 id="authentication-and-authorization">Authentication and authorization&lt;/h3>
 &lt;p>Federated identity ensures that users of the federation can use a single account
@@ -588,65 +588,11 @@ Frameworks.&lt;/li>
 operations model, where providers only need to integrate their system with EGI
 Check-in but do not need to deploy and configure the different tools
 (accounting, discovery, VMI management, etc.) locally but delegate this to a
-central EGI team.&lt;/p></description></item><item><title>Users: EGI Task Force</title><link>/users/getting-started/task-force/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/task-force/</guid><description>
-&lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>The EGI Federated Cloud (FedCloud) Task Force gathers together scientific
-communities, R&amp;amp;D projects, and technology and resource providers so they can
-design the tools and services that support the federation of providers,
-share best practices, and offer user support and training in a
-collaborative fashion. This enables community cloud solutions to develop
-faster, with a lower cost, and with a more sustainable future.&lt;/p>
-&lt;h2 id="objectives">Objectives&lt;/h2>
-&lt;p>The task force members:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Capture requirements&lt;/strong> from user communities needing federated cloud
-services.&lt;/li>
-&lt;li>&lt;strong>Identify, integrate and enhance open source tools and services&lt;/strong> that
-enable cloud federations for research and education.&lt;/li>
-&lt;li>&lt;strong>Develop and maintain tools and services&lt;/strong> to fill gaps in third-party
-solutions to reach production quality cloud federations.&lt;/li>
-&lt;li>&lt;strong>Provide consultancy&lt;/strong> for communities on how to build a federated cloud
-that meets custom community demands.&lt;/li>
-&lt;li>&lt;strong>Provide training and support&lt;/strong> for existing and potential users of cloud
-federations about topics such as:
-&lt;ul>
-&lt;li>How to port existing applications to the cloud, or develop cloud-native
-applications&lt;/li>
-&lt;li>How to operate services in the cloud&lt;/li>
-&lt;li>How to join a cloud federation as a provider&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>Facilitate the reuse of tools and services&lt;/strong> across participating cloud
-federations to lower total cost of development and to improve cloud
-sustainability.&lt;/li>
-&lt;li>&lt;strong>Promote Platform-as-a-Service (PaaS) and Software-as-a-Service (SaaS)&lt;/strong>
-environments that are proven to be robust and reusable, to communities that
-interact with federated Infrastructure-as-a-Service (IaaS) providers in the
-EGI infrastructure.&lt;/li>
-&lt;li>&lt;strong>Provide service management and security oversight&lt;/strong> for participating
-clouds and cloud federations.&lt;/li>
-&lt;li>&lt;strong>Act as a discussion forum&lt;/strong> where cloud federations can be discussed and
-specific questions can be analysed with experts.&lt;/li>
-&lt;li>&lt;strong>Organise dissemination and marketing events&lt;/strong>, such as workshops and
-conferences relating to the topics of the collaboration.&lt;/li>
-&lt;/ul>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Tip&lt;/h4>
-If you are interested in joining the
-EGI FedCloud Task Force, send an email to
-&lt;code>fedcloud-tf&lt;/code> &lt;code>&amp;lt;at&amp;gt;&lt;/code> &lt;code>mailman.egi.eu&lt;/code> and introduce yourself.
-&lt;/div>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-We hold bi-weekly meetings on Tuesdays
-at 11.00 CE(S)T. Check our
-&lt;a href="https://indico.egi.eu/indico/categoryDisplay.py?categId=159">Indico category&lt;/a>
-for minutes and upcoming events.
-&lt;/div></description></item><item><title>Users: Using OpenStack Providers</title><link>/users/getting-started/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/openstack/</guid><description>
+central EGI team.&lt;/p></description></item><item><title>Users: Using OpenStack Providers</title><link>/users/getting-started/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/openstack/</guid><description>
 &lt;p>&lt;a href="https://openstack.org">OpenStack&lt;/a> providers in the EGI infrastructure
 offer services and features via OpenStack APIs, and the
 &lt;a href="../cli">command-line interface&lt;/a> (CLI), both integrated with
-&lt;a href="../../check-in">EGI Check-in&lt;/a> accounts.&lt;/p>
+&lt;a href="../../aai/check-in">EGI Check-in&lt;/a> accounts.&lt;/p>
 &lt;p>The extensive &lt;a href="https://docs.openstack.org/user/">OpenStack user documentation&lt;/a>
 includes details on every OpenStack project, but most providers offer:&lt;/p>
 &lt;ul>
@@ -692,7 +638,7 @@ including resources not based on OpenStack deployments, check out the
 &lt;p>The various &lt;a href="https://www.egi.eu/services/">public EGI services&lt;/a> can be managed
 and used/accessed with a wide variety of command-line interface (CLI) tools.
 The documentation of each service contains a summary of the CLIs that can be
-used wih that service, together with recommendations on which one to use in
+used with that service, together with recommendations on which one to use in
 what context.&lt;/p>
 &lt;h2 id="the-fedcloud-client">The FedCloud client&lt;/h2>
 &lt;p>The &lt;a href="https://fedcloudclient.fedcloud.eu/index.html">FedCloud client&lt;/a> is a
@@ -707,7 +653,7 @@ command-line interface to use with most EGI services.
 &lt;ul>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.checkin">&lt;strong>Check-in&lt;/strong>&lt;/a>
 allows checking validity of access tokens and listing
-&lt;a href="../../check-in/vos">Virtual Organisations&lt;/a> (VOs) of a token&lt;/li>
+&lt;a href="../../aai/check-in/vos">Virtual Organisations&lt;/a> (VOs) of a token&lt;/li>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.endpoint">&lt;strong>Endpoint&lt;/strong>&lt;/a>
 can search endpoints in the &lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>
 and extract site-specific information from unscoped/scoped tokens&lt;/li>
@@ -715,7 +661,7 @@ and extract site-specific information from unscoped/scoped tokens&lt;/li>
 allows management of site configurations&lt;/li>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.openstack">&lt;strong>OpenStack&lt;/strong>&lt;/a>
 can perform commands on &lt;a href="../openstack">OpenStack services&lt;/a> deployed to sites&lt;/li>
-&lt;li>&lt;strong>EC3&lt;/strong> allows deploying &lt;a href="../../ec3">elastic cloud compute clusters&lt;/a>&lt;/li>
+&lt;li>&lt;strong>EC3&lt;/strong> allows deploying &lt;a href="../../compute/orchestration/ec3">elastic cloud compute clusters&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="installation">Installation&lt;/h3>
 &lt;p>The FedCloud client can be installed with the &lt;code>pip3&lt;/code> Python package manager
@@ -850,7 +796,7 @@ then run the following commands:&lt;/p>
 &lt;p>Once you have a shell running in the container with the FedCloud client, usage
 is the same as from &lt;a href="#using-from-the-command-line">the command-line&lt;/a>.&lt;/p>
 &lt;h3 id="using-from-egi-notebooks">Using from EGI Notebooks&lt;/h3>
-&lt;p>&lt;a href="../../notebooks/">EGI Notebooks&lt;/a> are integrated with access tokens so it
+&lt;p>&lt;a href="../../dev-env/notebooks">EGI Notebooks&lt;/a> are integrated with access tokens so it
 simplifies using the FedCloud client. First make sure that you follow the
 &lt;a href="#installation">installation&lt;/a> steps above. Then, below are the commands that
 you need to run inside a terminal in JupyterLab:&lt;/p>
