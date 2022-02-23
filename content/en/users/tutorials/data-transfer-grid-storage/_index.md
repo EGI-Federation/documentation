@@ -20,17 +20,17 @@ to perform data transfers between two Grid storage.
 ## Prerequisites
 
 As first step please make sure that you have installed the FTS client as
-described in [Data Transfer](../../data-transfer/), and in particular
-[Clients](../../data-transfer/clients/) for the command-line FTS and to have
+described in [Data Transfer](../../data/management/data-transfer), and in particular
+[Clients](../../data/management/data-transfer/clients) for the command-line FTS and to have
 your certificate installed in your browser to use
-[WebFTS](../../data-transfer/webfts/) browser based client.
+[WebFTS](../../data/management/data-transfer/webfts) browser based client.
 
 To access services and resources in the
 [EGI Federated Cloud](../../getting-started), you will need:
 
-- An [EGI Check-in](../../check-in) account, you can
-  [sign up here](../../check-in/signup)
-- Enrollment into a [Virtual Organisation](../../check-in/vos) (VO) that has
+- An [EGI Check-in](../../aai/check-in) account, you can
+  [sign up here](../../aai/check-in/signup)
+- Enrollment into a [Virtual Organisation](../../aai/check-in/vos) (VO) that has
   access to the services and resources you need
 
 ## FTS client usage
