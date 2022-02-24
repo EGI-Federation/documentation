@@ -90,3 +90,8 @@ tickets can be upgraded to alarm tickets clicking on the button “Click to
 convert to ALARM”.
 
 ![Team to Alarm](Team_to_alarm.png)
+
+## Team tickets process schema
+
+See the
+[schema of the Team Tickets process](GGUS_Graph_TEAM_Ticket_Process.pdf).
