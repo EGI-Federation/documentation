@@ -18,9 +18,9 @@ they are mounted to, and they can be mounted to a single VM at any given time.&l
 &lt;ul>
 &lt;li>Block storage is recommended for data that must be quickly accessible and
 requires long-term persistence.&lt;/li>
-&lt;li>Block storage volumes are well suited to both database-style applications
-that rely on random reads and writes, and to throughput-intensive
-applications that perform long, continuous reads and writes.&lt;/li>
+&lt;li>Block storage volumes are well suited to both database-style applications that
+rely on random reads and writes, and to throughput-intensive applications that
+perform long, continuous reads and writes.&lt;/li>
 &lt;li>Users can create point-in-time snapshots of block storage volumes, which
 protect data for long-term durability, and they can be used as the starting
 point for new block storage volumes.&lt;/li>
@@ -32,8 +32,8 @@ mounted to VMs running at the same provider where the block storage is located.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-Block storage usage is accounted for
-the entire block storage device, regardless how much of it is actually used.
+Block storage usage is accounted for the
+entire block storage device, regardless how much of it is actually used.
 &lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
@@ -58,15 +58,15 @@ Please refer to
 for details about using the legacy OCCI interface to manage block storage.
 &lt;/div>
 &lt;h2 id="manage-from-the-command-line">Manage from the command-line&lt;/h2>
-&lt;p>Multiple command-line interfaces (CLIs) are available to manage block
-storage:&lt;/p>
+&lt;p>Multiple command-line interfaces (CLIs) are available to manage block storage:&lt;/p>
 &lt;ul>
 &lt;li>The &lt;a href="https://docs.openstack.org/python-openstackclient/latest">OpenStack CLI&lt;/a>&lt;/li>
 &lt;li>The &lt;a href="../../../getting-started/cli">FedCloud Client&lt;/a> is a high-level CLI for
 interaction with the EGI Federated Cloud (&lt;strong>recommended&lt;/strong>)&lt;/li>
-&lt;li>The &lt;a href="https://docs.openstack.org/python-cinderclient/latest/user/shell.html">Cinder CLI&lt;/a>
-has some advanced features and administrative commands that are not available through
-the OpenStack CLI&lt;/li>
+&lt;li>The
+&lt;a href="https://docs.openstack.org/python-cinderclient/latest/user/shell.html">Cinder CLI&lt;/a>
+has some advanced features and administrative commands that are not available
+through the OpenStack CLI&lt;/li>
 &lt;/ul>
 &lt;p>The main FedCloud commands for managing volumes are detailed below.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
@@ -204,8 +204,8 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 use the FedCloud command below:&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-The volume can be specified either by
-its ID or by its name (if it has one).
+The volume can be specified either by its
+ID or by its name (if it has one).
 &lt;/div>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume show Matlab
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume show Matlab
@@ -252,9 +252,9 @@ the volume must not be attached to any VM (volume status must be &lt;code>availa
 &lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Caution&lt;/h4>
-The optional &lt;code>--device&lt;/code>
-argument to specify the device name in the VM should not be used. It does
-not work properly, and will be removed in the near future.
+The optional &lt;code>--device&lt;/code> argument
+to specify the device name in the VM should not be used. It does not work
+properly, and will be removed in the near future.
 &lt;/div>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack server add volume my-server my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: server add volume my-server my-volume
@@ -269,8 +269,8 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+-----------+------+-----------------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe3-58e00712ee3e &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-volume &lt;span style="color:#000;font-weight:bold">|&lt;/span> in-use &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-server on /dev/vdc &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +--------------------------------------+-----------+-----------+------+-----------------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the volume status is &lt;code>in-use&lt;/code> the volume is attached to a VM, and it can
-be &lt;a href="#access-from-your-vms">used from the VM&lt;/a>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the volume status is &lt;code>in-use&lt;/code> the volume is attached to a VM, and it can be
+&lt;a href="#access-from-your-vms">used from the VM&lt;/a>.&lt;/p>
 &lt;h3 id="detach-volume-from-vm">Detach volume from VM&lt;/h3>
 &lt;p>To
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/server.html#server-remove-volume">detach a volume from a VM&lt;/a>
@@ -292,13 +292,13 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 &lt;h3 id="resize-volume">Resize volume&lt;/h3>
 &lt;p>To
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume.html#volume-set">resize a volume&lt;/a>
-set its &lt;code>size&lt;/code> property to the desired size. For example, if there
-is a volume named &lt;code>my-volume&lt;/code> with a size of 10GB, it can be resized using the
-FedCloud command below:&lt;/p>
+set its &lt;code>size&lt;/code> property to the desired size. For example, if there is a volume
+named &lt;code>my-volume&lt;/code> with a size of 10GB, it can be resized using the FedCloud
+command below:&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-Other volume properties can be altered
-in the same way.
+Other volume properties can be altered in
+the same way.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -336,9 +336,9 @@ other
 &lt;h4 class="alert-heading">Note&lt;/h4>
 To be able to create a snapshot of a
 volume, the volume must not be attached to any VM (volume status must be
-&lt;code>available&lt;/code>). To create a snapshot while the volume is attached
-to a VM, use the &lt;code>--force&lt;/code> command flag, but be aware that there may be
-inconsistencies if the VM’s OS is not aware of the snapshot being taken.
+&lt;code>available&lt;/code>). To create a snapshot while the volume is attached to a VM, use the
+&lt;code>--force&lt;/code> command flag, but be aware that there may be inconsistencies if the
+VM’s OS is not aware of the snapshot being taken.
 &lt;/div>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume snapshot create --volume my-volume my-snapshot --force
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot create --volume my-volume my-snapshot
@@ -355,8 +355,8 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot create --volume
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> updated_at &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> volume_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe3-58e0712ee3e9 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +-------------+--------------------------------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The status of the snapshot will probably be returned as &lt;code>creating&lt;/code>. To check
-if the snapshot is ready, look at the
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The status of the snapshot will probably be returned as &lt;code>creating&lt;/code>. To check if
+the snapshot is ready, look at the
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html#volume-snapshot-show">details of the snapshot&lt;/a>,
 or list only the newly created snapshot (filter by snapshot name or ID):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume snapshot list --name my-snapshot
@@ -366,14 +366,14 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume snapshot list --name my-
 +--------------------------------------+-------------+-------------+-----------+------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 15149b42-032f-4cec-b6f3-41aa5c958081 &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-snapshot &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +--------------------------------------+-------------+-------------+-----------+------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the status of the snapshot is &lt;code>available&lt;/code> the snapshot is ready, and can
-be used to create new volumes or to restore the source volume to the
-point-in-time when the snapshot was taken.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the status of the snapshot is &lt;code>available&lt;/code> the snapshot is ready, and can be
+used to create new volumes or to restore the source volume to the point-in-time
+when the snapshot was taken.&lt;/p>
 &lt;h3 id="backup-a-volume">Backup a volume&lt;/h3>
-&lt;p>Users can also create backups of a volume, but backups can only be used later
-to create or replace other volumes. A &lt;strong>volume backup is a copy of a volume&lt;/strong>
-saved to cold storage, which is cheaper than the performant storage used for
-volumes and snapshots.&lt;/p>
+&lt;p>Users can also create backups of a volume, but backups can only be used later to
+create or replace other volumes. A &lt;strong>volume backup is a copy of a volume&lt;/strong> saved
+to cold storage, which is cheaper than the performant storage used for volumes
+and snapshots.&lt;/p>
 &lt;p>To
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html#volume-backup-create">make a backup&lt;/a>
 of a volume, use the FedCloud command below:&lt;/p>
@@ -390,19 +390,19 @@ volume backups.
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Backups use as much storage as the
-source volume, albeit in a cheaper storage layer. This means backups take
-a long time to create (~4h for 500GB), and the space is accounted for the
-same way as for regular volumes (the entire size of the backed up volume,
-regardless of how much of the volume space is actually used).
-Thus backups should be deleted when no longer needed.
+source volume, albeit in a cheaper storage layer. This means backups take a long
+time to create (~4h for 500GB), and the space is accounted for the same way as
+for regular volumes (the entire size of the backed up volume, regardless of how
+much of the volume space is actually used). Thus backups should be deleted when
+no longer needed.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-To be able to make a backup of a
-volume, the volume must not be attached to any VM (volume status must be
-&lt;code>available&lt;/code>). To make a backup while the volume is attached to a VM,
-use the &lt;code>--force&lt;/code> command flag, but be aware that there may be inconsistencies
-if the VM’s OS is not aware of the backup being taken.
+To be able to make a backup of a volume,
+the volume must not be attached to any VM (volume status must be &lt;code>available&lt;/code>).
+To make a backup while the volume is attached to a VM, use the &lt;code>--force&lt;/code> command
+flag, but be aware that there may be inconsistencies if the VM’s OS is not aware
+of the backup being taken.
 &lt;/div>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume backup create --name my-backup my-volume --force
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume backup create --name my-backup my-volume
@@ -419,8 +419,8 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume backup create --name my-
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> updated_at &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> volume_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> aa711296-5cff-46ac-bbe3-58e0712ee3e9 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +-------------+--------------------------------------+
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The status of the backup will probably be returned as &lt;code>creating&lt;/code>. To check
-if the backup has finished, look at the
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The status of the backup will probably be returned as &lt;code>creating&lt;/code>. To check if
+the backup has finished, look at the
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume-snapshot.html#volume-backup-show">details of the backup&lt;/a>,
 or list only the newly created backup (filter by backup name or ID):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume backup list --name my-backup
@@ -442,8 +442,8 @@ volume must not be attached to any VM (volume status must be &lt;code>available&
 &lt;/div>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume delete my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume delete my-volume
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This starts deletion of the specified volume (the volume status changes
-to &lt;code>deleting&lt;/code>):&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This starts deletion of the specified volume (the volume status changes to
+&lt;code>deleting&lt;/code>):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+----------+------+-------------+
@@ -458,9 +458,9 @@ the list of volumes.&lt;/p>
 &lt;!-- TODO Move this under Tutorials -->
 &lt;p>Block storage volumes attached to a VM will appear as a
 &lt;a href="https://en.wikipedia.org/wiki/Device_file#BLOCKDEV">block device&lt;/a> in the VM.&lt;/p>
-&lt;p>To find out the device name that got assigned to a volume when it was
-attached to a VM, look at the &lt;a href="#see-volume-details">details of the volume&lt;/a>, or
-list only the volume in question (filter by volume name or ID):&lt;/p>
+&lt;p>To find out the device name that got assigned to a volume when it was attached
+to a VM, look at the &lt;a href="#see-volume-details">details of the volume&lt;/a>, or list only
+the volume in question (filter by volume name or ID):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack volume list --name my-volume
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list --name my-volume
 +--------------------------------------+-----------+--------+------+-----------------------+
@@ -475,21 +475,22 @@ NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
 vda 252:0 &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> 20G &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> disk
 └─vda1 252:1 &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> 20G &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> part /
 vdb 252:16 &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> 10G &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> disk
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Usually these devices are empty upon creation. The first time you attach them
-to a VM, you will need to partition the device and create filesystem(s) on it,
-by running the following command in the VM:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Usually these devices are empty upon creation. The first time you attach them to
+a VM, you will need to partition the device and create filesystem(s) on it, by
+running the following command in the VM:&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 Using a file system volume label is
 useful to avoid the need to find the out the device name, especially when
-multiple block storage volumes are attached to a VM. It is recommended to use
-a file system volume label in the VM that is the same as the name of the
-block storage volume.
+multiple block storage volumes are attached to a VM. It is recommended to use a
+file system volume label in the VM that is the same as the name of the block
+storage volume.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-The filesystem type can be one supported by
-the Linux distribution in the VM, but &lt;code>xfs&lt;/code> and &lt;code>ext4&lt;/code> are the most widely used.
+The filesystem type can be one supported
+by the Linux distribution in the VM, but &lt;code>xfs&lt;/code> and &lt;code>ext4&lt;/code> are the most widely
+used.
 &lt;/div>
 &lt;div class="alert alert-danger" role="alert">
 &lt;h4 class="alert-heading">Caution&lt;/h4>
@@ -498,8 +499,8 @@ time you use the device, as it deletes all data! Make sure you use the correct
 device name, otherwise you will destroy data on other devices!
 &lt;/div>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo mkfs.ext4 -L my-volume /dev/vdb
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you created a filesystem on the device, you can mount it at any
-desired path by running the following command in the VM:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you created a filesystem on the device, you can mount it at any desired
+path by running the following command in the VM:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo mount /dev/vdb1 /&amp;lt;path&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Continuing with the example above, if we check again the block devices by
 running the following command in the VM:&lt;/p>
@@ -509,13 +510,13 @@ vda 252:0 &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> 20G &lt;sp
 └─vda1 252:1 &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> 20G &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> part /
 vdb 252:16 &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> 10G &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> disk
 └─vdb1 252:1 &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> 10G &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> part /&amp;lt;path&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>If non-root users should be able to access the mounted volume similar to the
-way e.g. &lt;code>/tmp&lt;/code> is accessible, set the sticky bit on the mount point, with this
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>If non-root users should be able to access the mounted volume similar to the way
+e.g. &lt;code>/tmp&lt;/code> is accessible, set the sticky bit on the mount point, with this
 command in the VM:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo chmod +t /&amp;lt;path&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>If the desired behaviour is to mount the file system automatically on VM
-restart, add it to &lt;code>/etc/fstab&lt;/code>. Using the &lt;code>LABEL&lt;/code> parameter will ensure
-the correct volume is chosen if multiple volumes are attached:&lt;/p>
+restart, add it to &lt;code>/etc/fstab&lt;/code>. Using the &lt;code>LABEL&lt;/code> parameter will ensure the
+correct volume is chosen if multiple volumes are attached:&lt;/p>
 &lt;p>&lt;code>LABEL=my-volume /&amp;lt;path&amp;gt; ext4 noatime,nodiratime,user_xattr,nofail 0 0&lt;/code>&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -527,16 +528,94 @@ unavailable.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-The use of option &lt;code>nobarrier&lt;/code> is
-not recommended as volumes are accessed via a cache, and ignoring the correct
-ordering of journal commits may result in a corrupted file system in case of
-a hardware problem.
+The use of option &lt;code>nobarrier&lt;/code> is not
+recommended as volumes are accessed via a cache, and ignoring the correct
+ordering of journal commits may result in a corrupted file system in case of a
+hardware problem.
 &lt;/div>
 &lt;p>With that you can access &lt;code>/&amp;lt;path&amp;gt;&lt;/code> inside the VM, where all data stored on the
 volume will be available. Applications will not see any difference between a
 block storage device and a regular disk, thus no major changes should be
 required in the application logic.&lt;/p>
-&lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
+&lt;h2 id="storage-encryption">Storage Encryption&lt;/h2>
+&lt;p>This section describes the usage of the tool
+&lt;a href="https://gitlab.com/cryptsetup/cryptsetup">cryptsetup&lt;/a> to enable the permanent
+encryption of the data stored in the disk. The tool is available in standard
+linux distributions, and for this guide we assume the installation in an Ubuntu
+distribution.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo su -
+$ apt -y install cryptsetup
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To encrypt the disk, it must be first initialized correctly. In the example
+below, the disk named &lt;code>/dev/vdb&lt;/code> is first filled with random data and then
+initialized using the cryptsetup luksFormat command below. This first step can
+be quite long.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dd &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/urandom &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/vdb &lt;span style="color:#000">bs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>4k
+$ cryptsetup -v --cipher aes-xts-plain64 --key-size &lt;span style="color:#0000cf;font-weight:bold">512&lt;/span> --hash sha512 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --iter-time &lt;span style="color:#0000cf;font-weight:bold">5000&lt;/span> --use-random luksFormat /dev/vdb
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>If this last command slows down or even blocks with the following message:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">System is out of entropy &lt;span style="color:#204a87;font-weight:bold">while&lt;/span> generating volume key.
+Please move mouse or &lt;span style="color:#204a87">type&lt;/span> some text in another window to gather some random events.
+Generating key &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>0% &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>you can make the &lt;code>cryptsetup luksFormat&lt;/code> command running faster by first
+installing the &lt;code>haveged&lt;/code> program in your virtual machine.&lt;/p>
+&lt;p>The following command verifies that the disk is now of type LUKS:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cryptsetup luksDump /dev/vdb
+LUKS header information &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> /dev/vdb
+Version: &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+Cipher name: aes
+Cipher mode: xts-plain64
+Hash spec: sha512
+Payload offset: &lt;span style="color:#0000cf;font-weight:bold">4096&lt;/span>
+MK bits: &lt;span style="color:#0000cf;font-weight:bold">512&lt;/span>
+MK digest: c4 f7 4b &lt;span style="color:#0000cf;font-weight:bold">02&lt;/span> 2a 3f &lt;span style="color:#0000cf;font-weight:bold">12&lt;/span> c1 2c ba e5 c9 d2 &lt;span style="color:#0000cf;font-weight:bold">45&lt;/span> 9a &lt;span style="color:#204a87">cd&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">89&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">20&lt;/span> 6c &lt;span style="color:#0000cf;font-weight:bold">73&lt;/span>
+MK salt: &lt;span style="color:#0000cf;font-weight:bold">98&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">58&lt;/span> 3e f3 f6 &lt;span style="color:#0000cf;font-weight:bold">88&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">99&lt;/span> ea 2a f3 cf &lt;span style="color:#0000cf;font-weight:bold">71&lt;/span> a0 0d e5 8b
+d5 &lt;span style="color:#0000cf;font-weight:bold">76&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">64&lt;/span> cb d2 5c 9b d1 8a d3 1d &lt;span style="color:#0000cf;font-weight:bold">18&lt;/span> 0e &lt;span style="color:#0000cf;font-weight:bold">04&lt;/span> 7a eb
+MK iterations: &lt;span style="color:#0000cf;font-weight:bold">81250&lt;/span>
+UUID: c216d954-199e-4eab-a167-a3587bd41cb3
+Key Slot 0: ENABLED
+Iterations: &lt;span style="color:#0000cf;font-weight:bold">323227&lt;/span>
+Salt: a0 &lt;span style="color:#0000cf;font-weight:bold">45&lt;/span> 3e &lt;span style="color:#0000cf;font-weight:bold">98&lt;/span> fa cf &lt;span style="color:#0000cf;font-weight:bold">60&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">74&lt;/span> c6 &lt;span style="color:#0000cf;font-weight:bold">09&lt;/span> 3d &lt;span style="color:#0000cf;font-weight:bold">54&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">97&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">89&lt;/span> be &lt;span style="color:#0000cf;font-weight:bold">65&lt;/span>
+5b &lt;span style="color:#0000cf;font-weight:bold">96&lt;/span> 7c 1c &lt;span style="color:#0000cf;font-weight:bold">39&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">26&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">47&lt;/span> b4 8b 0e c1 3a c9 &lt;span style="color:#0000cf;font-weight:bold">94&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">83&lt;/span> c2
+Key material offset: &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span>
+AF stripes: &lt;span style="color:#0000cf;font-weight:bold">4000&lt;/span>
+Key Slot 1: DISABLED
+Key Slot 2: DISABLED
+Key Slot 3: DISABLED
+Key Slot 4: DISABLED
+Key Slot 5: DISABLED
+Key Slot 6: DISABLED
+Key Slot 7: DISABLED
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The disk is now ready for use. The first time you use it, you must perform the
+following steps:&lt;/p>
+&lt;p>Step 1: Open the encrypted disk with the &lt;code>cryptsetup luksOpen&lt;/code> command. The name
+&lt;code>storage1&lt;/code> is only indicative, you can choose what you want:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cryptsetup luksOpen /dev/vdb storage1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Step 2: Create a filesystem on disk:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ mkfs.ext4 /dev/mapper/storage1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Step 3: Create the disk mount point:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ mkdir /storage1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Step 4: Mount the disk:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ mount -t ext4 /dev/mapper/storage1 /storage1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Step 5: Check available space (this may be slightly different from what was
+entered during the &lt;code>openstack volume create&lt;/code> command):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ df -h /storage1
+Filesystem Size Used Avail Use% Mounted on
+/dev/mapper/storage1 2.0G 6.0M 1.9G 1% /storage1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once the disk is operational, steps 2 and 3 are no longer necessary.&lt;/p>
+&lt;p>You can now send files (for example &lt;code>DATA.dat&lt;/code>) from your personal computer to
+your virtual machine in a secure way, for example with &lt;code>scp&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ scp -i &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">HOME&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>/.ssh/cloudkey DATA.dat ubuntu@134.158.151.224:/storage1
+DATA.dat 100% &lt;span style="color:#0000cf;font-weight:bold">82&lt;/span> 0.1KB/s 00:00
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When you are done with your work on the disk, you can remove it cleanly with the
+following commands:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ umount /storage1
+$ cryptsetup close storage1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For the following uses of the persistent disk, there will be no need to perform
+all these operations, only the following are necessary:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cryptsetup luksOpen /dev/vdb storage1
+$ mkdir /storage1
+$ mount -t ext4 /dev/mapper/storage1 /storage1
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
 &lt;p>&lt;a href="../../../data/management/data-transfer">EGI Data Transfer&lt;/a> allows you to move any type of
 data files asynchronously from one storage to another. If you want to copy data
 from/to one VM running on the EGI cloud, you will need to run a compatible
