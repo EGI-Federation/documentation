@@ -948,7 +948,7 @@ connected to Check-in.
 |             **changes** | No                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |        **multiplicity** | No                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |        **availability** | Always                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|             **example** | _ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu_                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             **example** | `ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu`                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |               **notes** | Use **Community User Identifier** within your application as the unique-identifier key for the user. Obtaining the Community User Identifier from the `sub` claim using the `openid` scope for OIDC Relying Parties or from `eduPersonUniqueId` for SAML Relying Parties will be deprecated. OIDC RPs should request either the `voperson_id` or `aarc` scope to obtain the Community User Identifier. SAML PRs should request the `voPersonID` attribute to obtain the Community User Identifier. |
 |              **status** | Stable                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
@@ -965,7 +965,7 @@ connected to Check-in.
 |             **changes** | Yes                                               |
 |        **multiplicity** | Single-valued                                     |
 |        **availability** | Always                                            |
-|             **example** | _John Doe_                                        |
+|             **example** | `John Doe`                                        |
 |               **notes** | -                                                 |
 |              **status** | Stable                                            |
 
@@ -982,7 +982,7 @@ connected to Check-in.
 |             **changes** | Yes                                        |
 |        **multiplicity** | Single-valued                              |
 |        **availability** | Always                                     |
-|             **example** | _John_                                     |
+|             **example** | `John`                                     |
 |               **notes** | -                                          |
 |              **status** | Stable                                     |
 
@@ -999,7 +999,7 @@ connected to Check-in.
 |             **changes** | Yes                                        |
 |        **multiplicity** | Single-valued                              |
 |        **availability** | Always                                     |
-|             **example** | _Doe_                                      |
+|             **example** | `Doe`                                      |
 |               **notes** | -                                          |
 |              **status** | Stable                                     |
 
@@ -1016,7 +1016,7 @@ connected to Check-in.
 |             **changes** | No                                                                                  |
 |        **multiplicity** | Single-valued                                                                       |
 |        **availability** | Always                                                                              |
-|             **example** | _jdoe_                                                                              |
+|             **example** | `jdoe`                                                                              |
 |               **notes** | The Service Provider **MUST NOT** rely upon this value being unique                 |
 |              **status** | Stable                                                                              |
 
@@ -1033,7 +1033,7 @@ connected to Check-in.
 |             **changes** | Yes                                                                         |
 |        **multiplicity** | Single-valued                                                               |
 |        **availability** | Always                                                                      |
-|             **example** | _john.doe@example.org_                                                      |
+|             **example** | `john.doe@example.org`                                                      |
 |               **notes** | This **MAY NOT** be unique and is **NOT** suitable for use as a primary key |
 |              **status** | Stable                                                                      |
 
@@ -1050,7 +1050,7 @@ connected to Check-in.
 |             **changes** | Yes                                                                 |
 |        **multiplicity** | Single-valued                                                       |
 |        **availability** | Always                                                              |
-|             **example** | _true_                                                              |
+|             **example** | `true`                                                              |
 |               **notes** | This claim is available only in OpenID Connect                      |
 |              **status** | Stable                                                              |
 
@@ -1067,7 +1067,7 @@ connected to Check-in.
 |             **changes** | Yes                                                                 |
 |        **multiplicity** | Multi-valued                                                        |
 |        **availability** | Not always                                                          |
-|             **example** | <ul><li>_john.doe@example.org_</li><li>_jdoe@example.com_</li></ul> |
+|             **example** | <ul><li>`john.doe@example.org`</li><li>`jdoe@example.com`</li></ul> |
 |               **notes** | -                                                                   |
 |              **status** | Experimental                                                        |
 
@@ -1084,26 +1084,26 @@ connected to Check-in.
 |             **changes** | Yes                                                                      |
 |        **multiplicity** | Multi-valued                                                             |
 |        **availability** | Always                                                                   |
-|             **example** | _member@example.org_                                                     |
+|             **example** | <ul><li>`member@example.org`</li><li>`faculty@example.org`</li></ul>     |
 |               **notes** | Service Providers are encouraged to validate the scope of this attribute |
 |              **status** | Stable                                                                   |
 
 ### 10. Groups
 
-|          attribute name | Groups                                                                    |
-| ----------------------: | :------------------------------------------------------------------------ |
-|         **description** | The user's group/VO membership/role information expressed as entitlements |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                 |
-|          **OIDC scope** | `eduperson_entitlement`                                                   |
-|       **OIDC claim(s)** | `eduperson_entitlement`                                                   |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>        |
-|              **origin** | Group memberships are managed by group administrators                     |
-|             **changes** | Yes                                                                       |
-|        **multiplicity** | Multi-valued                                                              |
-|        **availability** | Not always                                                                |
-|             **example** | _urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu_                  |
-|               **notes** | -                                                                         |
-|              **status** | Stable                                                                    |
+|          attribute name | Groups                                                                                                                                 |
+| ----------------------: | :------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | The user's group/VO membership/role information expressed as entitlements                                                              |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                                                                              |
+|          **OIDC scope** | `eduperson_entitlement`                                                                                                                |
+|       **OIDC claim(s)** | `eduperson_entitlement`                                                                                                                |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                     |
+|              **origin** | Group memberships are managed by group administrators                                                                                  |
+|             **changes** | Yes                                                                                                                                    |
+|        **multiplicity** | Multi-valued                                                                                                                           |
+|        **availability** | Not always                                                                                                                             |
+|             **example** | <ul><li>`urn:mace:egi.eu:aai.egi.eu:member@fedcloud.egi.eu`</li><li>`urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu`</li></ul> |
+|               **notes** | -                                                                                                                                      |
+|              **status** | Stable                                                                                                                                 |
 
 ### 11. Capabilities
 
@@ -1118,26 +1118,26 @@ connected to Check-in.
 |             **changes** | Yes                                                                                                                                                                                                                                       |
 |        **multiplicity** | Multi-valued                                                                                                                                                                                                                              |
 |        **availability** | Not always                                                                                                                                                                                                                                |
-|             **example** | _urn:mace:egi.eu:res:rcauth#aai.egi.eu_                                                                                                                                                                                                   |
+|             **example** | <ul><li>`urn:mace:egi.eu:res:rcauth#aai.egi.eu`</li><li>`urn:mace:egi.eu:res:gocdb#aai.egi.eu`</li></ul>                                                                                                                                  |
 |               **notes** | -                                                                                                                                                                                                                                         |
 |              **status** | Stable                                                                                                                                                                                                                                    |
 
 ### 12. GOCDB Roles
 
-|          attribute name | GOCDB Roles                                                                     |
-| ----------------------: | :------------------------------------------------------------------------------ |
-|         **description** | The user's GOCDB role information expressed as entitlements                     |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                       |
-|          **OIDC scope** | `eduperson_entitlement`                                                         |
-|       **OIDC claim(s)** | `eduperson_entitlement`                                                         |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>              |
-|              **origin** | The roles are managed in GOCDB                                                  |
-|             **changes** | Yes                                                                             |
-|        **multiplicity** | Multi-valued                                                                    |
-|        **availability** | Not always                                                                      |
-|             **example** | _urn:mace:egi.eu:goc.egi.eu:100453G0:GRIDOPS-CheckIn:Site+Administrator@egi.eu_ |
-|               **notes** | -                                                                               |
-|              **status** | Stable                                                                          |
+|          attribute name | GOCDB Roles                                                                                                                                                                                |
+| ----------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | The user's GOCDB role information expressed as entitlements                                                                                                                                |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                                                                                                                                  |
+|          **OIDC scope** | `eduperson_entitlement`                                                                                                                                                                    |
+|       **OIDC claim(s)** | `eduperson_entitlement`                                                                                                                                                                    |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                         |
+|              **origin** | The roles are managed in GOCDB                                                                                                                                                             |
+|             **changes** | Yes                                                                                                                                                                                        |
+|        **multiplicity** | Multi-valued                                                                                                                                                                               |
+|        **availability** | Not always                                                                                                                                                                                 |
+|             **example** | <ul><li>`urn:mace:egi.eu:goc.egi.eu:100453G0:GRIDOPS-CheckIn:Site+Administrator@egi.eu`</li><li>`urn:mace:egi.eu:goc.egi.eu:92503G08:GRIDOPS-MON:Site+Operations+Manager@egi.eu`</li></ul> |
+|               **notes** | -                                                                                                                                                                                          |
+|              **status** | Stable                                                                                                                                                                                     |
 
 ### 13. Assurance
 
@@ -1152,43 +1152,43 @@ connected to Check-in.
 |             **changes** | Yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |        **multiplicity** | Multi-valued                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |        **availability** | Not always                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|             **example** | _[```https://aai.egi.eu/LoA#Low```, ```https://refeds.org/assurance/IAP/low```]_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|             **example** | <ul><li>`https://aai.egi.eu/LoA#Low`</li><li>`https://refeds.org/assurance/IAP/low`</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |               **notes** | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |              **status** | Stable                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ### 14. CertEntitlement
 
-|          attribute name | CertEntitlement                                                                                                                                                                                            |
-| ----------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|         **description** | Provides information about the user's certificate subject(s) and the associated VO(s)                                                                                                                      |
-|   **SAML Attribute(s)** | **Not available**                                                                                                                                                                                          |
-|          **OIDC scope** | `cert_entitlement`                                                                                                                                                                                         |
-|       **OIDC claim(s)** | `cert_entitlement`                                                                                                                                                                                         |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                                         |
-|              **origin** | VO/group management tools integrated with Check-in                                                                                                                                                         |
-|             **changes** | Yes                                                                                                                                                                                                        |
-|        **multiplicity** | Multi-valued                                                                                                                                                                                               |
-|        **availability** | Not always                                                                                                                                                                                                 |
-|             **example** | `{"cert_entitlement": [{"cert_subject_dn": "/C=GR/O=HellasGrid/...","cert_iss": "/C=GR/O=HellasGrid/...","eduperson_entitlement": "urn:mace:egi.eu:group:checkin-integration:role=VO-Admin#aai.egi.eu"}]}` |
-|               **notes** | This is available only for DIRAC                                                                                                                                                                           |
-|              **status** | Stable                                                                                                                                                                                                     |
+|          attribute name | CertEntitlement                                                                                                                                                                      |
+| ----------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | Provides information about the user's certificate subject(s) and the associated VO(s)                                                                                                |
+|   **SAML Attribute(s)** | **Not available**                                                                                                                                                                    |
+|          **OIDC scope** | `cert_entitlement`                                                                                                                                                                   |
+|       **OIDC claim(s)** | `cert_entitlement`                                                                                                                                                                   |
+| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                   |
+|              **origin** | VO/group management tools integrated with Check-in                                                                                                                                   |
+|             **changes** | Yes                                                                                                                                                                                  |
+|        **multiplicity** | Multi-valued                                                                                                                                                                         |
+|        **availability** | Not always                                                                                                                                                                           |
+|             **example** | `[{"cert_subject_dn": "/C=GR/O=HellasGrid/...","cert_iss": "/C=GR/O=HellasGrid/...","eduperson_entitlement": "urn:mace:egi.eu:group:checkin-integration:role=VO-Admin#aai.egi.eu"}]` |
+|               **notes** | This is available only for DIRAC                                                                                                                                                     |
+|              **status** | Stable                                                                                                                                                                               |
 
 ### 15. SSH Public Key
 
-|          attribute name | SSH Public Key                                                    |
-| ----------------------: | :---------------------------------------------------------------- |
-|         **description** | Provides information about the user's SSH public key(s)           |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.24552.500.1.1.1.13` (sshPublicKey)           |
-|          **OIDC scope** | `ssh_public_key`                                                  |
-|       **OIDC claim(s)** | `ssh_public_key`                                                  |
-| **OIDC claim location** | Userinfo endpoint                                                 |
-|              **origin** | Added SSH public key(s) in user's Check-in Profile                |
-|             **changes** | Yes                                                               |
-|        **multiplicity** | Multi-valued                                                      |
-|        **availability** | Not always                                                        |
-|             **example** | `ssh-rsa AAAAB3NzaC...qxxEEipdnZ nikosev@grnet-hq.admin.grnet.gr` |
-|               **notes** | -                                                                 |
-|              **status** | Experimental                                                      |
+|          attribute name | SSH Public Key                                                                                                                                    |
+| ----------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------ |
+|         **description** | Provides information about the user's SSH public key(s)                                                                                           |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.24552.500.1.1.1.13` (sshPublicKey)                                                                                           |
+|          **OIDC scope** | `ssh_public_key`                                                                                                                                  |
+|       **OIDC claim(s)** | `ssh_public_key`                                                                                                                                  |
+| **OIDC claim location** | Userinfo endpoint                                                                                                                                 |
+|              **origin** | Added SSH public key(s) in user's Check-in Profile                                                                                                |
+|             **changes** | Yes                                                                                                                                               |
+|        **multiplicity** | Multi-valued                                                                                                                                      |
+|        **availability** | Not always                                                                                                                                        |
+|             **example** | <ul><li>`ssh-rsa AAAAB3NzaC...qxxEEipdnZ nikosev@grnet-hq.admin.grnet.gr`</li><li>`ssh-rsa AAAA4xzdIf...fxgsRDfgAt nikosev@example.org`</li></ul> |
+|               **notes** | -                                                                                                                                                 |
+|              **status** | Experimental                                                                                                                                      |
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
