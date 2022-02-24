@@ -25,8 +25,8 @@ run on EGI infrastructure&lt;/li>
 &lt;h2 id="service-modes">Service Modes&lt;/h2>
 &lt;p>We offer different service modes depending on your needs&lt;/p>
 &lt;h3 id="notebooks-for-researchers">Notebooks for researchers&lt;/h3>
-&lt;p>Individual users can use the centrally operated service from EGI. Users can
-log in, write and play and re-play notebooks by:&lt;/p>
+&lt;p>Individual users can use the centrally operated service from EGI. Users can log
+in, write and play and re-play notebooks by:&lt;/p>
 &lt;ol>
 &lt;li>&lt;a href="../../aai/check-in/signup">creating an EGI account&lt;/a>&lt;/li>
 &lt;li>Enrolling to the one of the supported VOs such as
@@ -53,6 +53,16 @@ specific setup allows the community to use the community's own Virtual
 Organisation (i.e. federated compute and storage sites) for Jupyter, add custom
 libraries into Jupyter (e.g. discipline-specific analysis libraries) or have
 fine grained control on who can access the instance (based on the information
-available to the EGI Check-in AAI service).&lt;/p></description></item><item><title>Users: Binder</title><link>/users/dev-env/binder/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/binder/</guid><description>
+available to the EGI Check-in AAI service).&lt;/p>
+&lt;p>EGI currently operates community instances for:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.d4science.org/">D4Science&lt;/a>. These instances are accessed through
+specific Gateways: &lt;a href="https://sobigdata.d4science.org/">SoBigData&lt;/a>,
+&lt;a href="https://blue-cloud.d4science.org/">Blue-Cloud&lt;/a>, &lt;a href="https://services.d4science.org/">D4Science Services&lt;/a> and
+&lt;a href="https://eosc-pillar.d4science.org/">EOSC-Pillar&lt;/a>. Check with
+&lt;a href="https://www.d4science.org/contact-us">D4Science support&lt;/a> for more information.&lt;/li>
+&lt;li>&lt;a href="https://panosc.eu/">PaNoSC&lt;/a>. Instance is available
+&lt;a href="https://notebooks-panosc.fedcloud-tf.fedcloud.eu">here&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Users: Binder</title><link>/users/dev-env/binder/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/binder/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
 &lt;p>Repeatable, custom computing environments for notebooks&lt;/p></description></item></channel></rss>
