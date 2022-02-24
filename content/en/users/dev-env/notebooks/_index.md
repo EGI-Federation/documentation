@@ -40,8 +40,8 @@ We offer different service modes depending on your needs
 
 ### Notebooks for researchers
 
-Individual users can use the centrally operated service from EGI. Users can
-log in, write and play and re-play notebooks by:
+Individual users can use the centrally operated service from EGI. Users can log
+in, write and play and re-play notebooks by:
 
 1. [creating an EGI account](../../aai/check-in/signup)
 2. Enrolling to the one of the supported VOs such as
@@ -71,3 +71,13 @@ Organisation (i.e. federated compute and storage sites) for Jupyter, add custom
 libraries into Jupyter (e.g. discipline-specific analysis libraries) or have
 fine grained control on who can access the instance (based on the information
 available to the EGI Check-in AAI service).
+
+EGI currently operates community instances for:
+
+- [D4Science](https://www.d4science.org/). These instances are accessed through
+  specific Gateways: [SoBigData](https://sobigdata.d4science.org/),
+  [Blue-Cloud](https://blue-cloud.d4science.org/), [D4Science Services](https://services.d4science.org/) and
+  [EOSC-Pillar](https://eosc-pillar.d4science.org/). Check with
+  [D4Science support](https://www.d4science.org/contact-us) for more information.
+- [PaNoSC](https://panosc.eu/). Instance is available
+  [here](https://notebooks-panosc.fedcloud-tf.fedcloud.eu)
