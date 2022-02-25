@@ -1007,9 +1007,9 @@ again.&lt;/p>
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">--&amp;gt;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>About: Shortcodes</title><link>/about/contributing/shortcodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/contributing/shortcodes/</guid><description>
 &lt;p>In addition to the formatting support provided by
-&lt;a href="https://spec.commonmark.org/0.29/">Markdown&lt;/a>,
-Hugo adds support for &lt;em>shortcodes&lt;/em>, which are Go templates for easily including
-or displaying content (images, notes, tips, advanced display blocks, etc.).&lt;/p>
+&lt;a href="https://spec.commonmark.org/0.29/">Markdown&lt;/a>, Hugo adds support for
+&lt;em>shortcodes&lt;/em>, which are Go templates for easily including or displaying content
+(images, notes, tips, advanced display blocks, etc.).&lt;/p>
 &lt;p>For reference, the following shortcodes are available:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://gohugo.io/content-management/shortcodes/">Hugo&amp;rsquo;s shortcodes&lt;/a>&lt;/li>
@@ -1023,8 +1023,7 @@ or displaying content (images, notes, tips, advanced display blocks, etc.).&lt;/
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">{{% pageinfo %}} This is a placeholder. {{% /pageinfo %}}
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>This is a
-placeholder.&lt;/p>
+This is a placeholder.
 &lt;/div>
 &lt;h3 id="information-messages">Information messages&lt;/h3>
 &lt;p>The following code:&lt;/p>
@@ -1067,23 +1066,23 @@ $ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$HOM
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 If you click the &lt;em>Copy&lt;/em> button in the
 top-right corner of a shell example, all commands in that block are copied to
-the clipboard. The prompt in front of each command, and any command
-output is not copied.
+the clipboard. The prompt in front of each command, and any command output is
+not copied.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-In case the command(s) in your
-shell example cause the introduction of a horizontal scroll bar, &lt;a href="../style/#basic-rules">consider
-breaking the command(s) into multiple lines&lt;/a> with
-trailing backslashes (\). However, you should never break command output
-to multiple lines, as that makes understanding the output, and recognizing
-it in real life, very difficult.
+In case the command(s) in your shell
+example cause the introduction of a horizontal scroll bar,
+&lt;a href="../style/#basic-rules">consider breaking the command(s) into multiple lines&lt;/a>
+with trailing backslashes (\). However, you should never break command output
+to multiple lines, as that makes understanding the output, and recognizing it in
+real life, very difficult.
 &lt;/div>
 &lt;h3 id="code-in-multiple-languages">Code in multiple languages&lt;/h3>
 &lt;p>This is also achieved using
 &lt;a href="https://www.docsy.dev/docs/adding-content/shortcodes/#tabbed-panes">Docsy shortcodes&lt;/a>.&lt;/p>
-&lt;p>When you need to include code snippets, and you want to provide the same code
-in multiple programming languages, you can use a tabbed pane for code snippets:&lt;/p>
+&lt;p>When you need to include code snippets, and you want to provide the same code in
+multiple programming languages, you can use a tabbed pane for code snippets:&lt;/p>
 &lt;!-- markdownlint-disable no-inline-html no-missing-space-atx -->
 &lt;!-- markdownlint-disable blanks-around-fences no-space-in-code -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpane&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
@@ -1114,6 +1113,7 @@ fmt.Printf(&amp;#34;Hello World!\n&amp;#34;)
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpane&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
+&lt;!-- prettier-ignore -->
 &lt;ul class="nav nav-tabs" id="tabs-6" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active"
 id="tabs-6-0-tab" data-toggle="tab" href="#tabs-6-0" role="tab"
@@ -1156,16 +1156,14 @@ id="tabs-6-2" role="tabpanel" aria-labelled-by="tabs-6-2-tab">&lt;div class="hig
 &lt;span style="color:#000">println&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello, world!&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-6-3" role="tabpanel" aria-labelled-by="tabs-6-3-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Go" data-lang="Go">&lt;span style="color:#204a87;font-weight:bold">package&lt;/span> &lt;span style="color:#000">main&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;fmt&amp;#34;&lt;/span>
+id="tabs-6-3" role="tabpanel" aria-labelled-by="tabs-6-3-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Go" data-lang="Go">&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;fmt&amp;#34;&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">func&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#000">fmt&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Printf&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello World!\n&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;/div>
 &lt;h2 id="content-with-multiple-variants">Content with multiple variants&lt;/h2>
-&lt;p>When you need to include multiple variants of the same content, other than
-code snippets in multiple programing languages, you can use the follwing
-shortcode:&lt;/p>
+&lt;p>When you need to include multiple variants of the same content, other than code
+snippets in multiple programing languages, you can use the follwing shortcode:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 You can list all files in a folder using the command:
@@ -1219,33 +1217,25 @@ Windows
 &lt;div class="tabx-content" id="tabs-7-content">
 &lt;div class="tab-pane show active"
 id="tabs-7-0" role="tabpanel" aria-labelled-by="tabs-7-0-tab">
-&lt;pre>&lt;code>You can list all files in a folder using the command:
-```shell
-ls -a -l
-```
-&lt;/code>&lt;/pre>
+&lt;p>You can list all files in a folder using the command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ls -a -l
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-7-1" role="tabpanel" aria-labelled-by="tabs-7-1-tab">
-&lt;pre>&lt;code>To get a list of all files in a folder, press **Cmd** + **Space** to open a
-spotlight search, type terminal, then press Enter. In the terminal window
-then run the command:
-```shell
-ls -a -l
-```
-&lt;/code>&lt;/pre>
+&lt;p>To get a list of all files in a folder, press &lt;strong>Cmd&lt;/strong> + &lt;strong>Space&lt;/strong> to open a
+spotlight search, type terminal, then press Enter. In the terminal window then
+run the command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ls -a -l
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-7-2" role="tabpanel" aria-labelled-by="tabs-7-2-tab">
-&lt;pre>&lt;code>You can list all files in the current folder using the command:
-```shell
-dir
-```
-or you can use PowerShell:
-```powershell
-Get-ChildItem -Path .\
-```
-&lt;/code>&lt;/pre>
+&lt;p>You can list all files in the current folder using the command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">dir
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>or you can use PowerShell:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#204a87">Get-ChildItem&lt;/span> &lt;span style="color:#000">-Path&lt;/span> &lt;span style="color:#000;font-weight:bold">.\&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
