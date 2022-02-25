@@ -70,13 +70,13 @@ Any further VO management and configuration is the responsibility of VO manager.
 All basic features regarding members management are available in the
 administrative GUI under the *VO manager* section. All features are described
 in the following sections in more detail.
-
+<!---
 #### HOW-TO
 
 - [Search and display VO members](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16252929/Search+and+display+VO+members)
 - [Member detail (status, groups, settings,...)](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384005/Member+detail+status+groups+settings+...)
 - [Add/Remove VO members](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384022/Add+Remove+VO+members)
-
+--->
 #### Accepting new members
 
 Users can register in your VO using the same registration link provided during
@@ -97,14 +97,14 @@ verified by the user in timely manner).
 There is a possibility to use custom registration modules that are programmable
 and can perform any specific and complex actions with the users and the VO.
 Please consult Perun user support using GGUS in case you need this feature.
-
+<!---
 ##### HOW-TO
 
 - [Configure registration form](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384056/Configure+registration+form)
 - [Configure registration notifications](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449548/Configure+registration+notifications)
 - [Approve/reject submitted registration](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384077/Approve+Reject+submitted+registrations)
 - [Configure and send invitation](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384094/Configure+and+send+invitation)
-
+--->
 #### Membership lifecycle, expiration rules and renewal
 
 {{% alert color="info" %}}
@@ -143,12 +143,12 @@ second case renewal period can be shorter or longer than one year (e. g. `+2y`,
 `+6m`, meaning 2 years or 6 months respectively). In both cases, you also need
 to define the timespan, how long before the membership expiration are members
 allowed to ask for the renewal (e.g. `1m`, meaning one month).
-
+<!---
 ##### HOW-TO
 
 - [Change VO member status and expiration](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449582/Change+VO+member+status+and+expiration)
 - [Configure VO membership expiration rules](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449599/Configure+VO+membership+expiration+rules)
-
+-->
 ### Managing groups
 
 Groups are used to further categorize VO members within the VO and to assign
@@ -218,14 +218,14 @@ groups. The user must become a member of VO before the group registration can be
 accepted by the group manager (even automatically). The user is able to submit
 VO and group registration at once using a two steps form, but VO registration
 must be approved first.
-
+<!---
 ##### HOW-TO
 
 - [Configure registration form](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384056/Configure+registration+form)
 - [Configure registration notifications](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16449548/Configure+registration+notifications)
 - [Approve/reject submitted registration](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384077/Approve+Reject+submitted+registrations)
 - [Configure and send invitation](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384094/Configure+and+send+invitation)
-
+--->
 #### Group membership lifecycle, expiration rules and renewal
 
 Members' lifecycle within the group is roughly the same as within the VO,
@@ -242,12 +242,12 @@ but there are some differences.
   within the whole VO a still be valid within its groups. In such a case member
   is not considered as a member of VO by the services. Once membership is
   renewed, membership information is restored, including all groups.
-
+<!---
 ##### HOW-TO
 
 - [Change group member status and expiration](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384130/Change+group+member+status+and+expiration)
 - [Configure group membership expiration rules](https://perunaai.atlassian.net/wiki/spaces/PERUN/pages/16384155/Configure+group+membership+expiration+rules)
-
+-->
 ## Access management
 
 While Perun generally uses the concept of *Resources* to represent the access
@@ -280,7 +280,7 @@ within the service are the responsibility of the service provider.
 
 #### Example
 
-Let's assume, that the user is a member of `myvo.egi.eu` VO and the top-level 
+Let's assume, that the user is a member of `myvo.egi.eu` VO and the top-level
 group `vm_operator` in it. Resulting *eduPersonEntitlement* will look like
 this:
 `urn:mace:egi.eu:group:myvo.egi.eu:vm_operator:role=member#aai.egi.eu`
