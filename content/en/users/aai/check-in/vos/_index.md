@@ -307,32 +307,38 @@ Features:
 #### Connection Parameters
 
 <!-- prettier-ignore -->
-{{< tabpane >}}
-{{< tab header="Production environment" lang="shell" >}}
+{{< tabpanex >}}
+{{< tabx header="Production environment">}}
+```shell
 # Export VO API Base URL parameter
 $ export VO_API_BASE_URL=https://aai.egi.eu/api/v2/VoMembers
 # Export CO ID parameter.
 # The CO ID is the number part of the API username prefix. 
 # e.g. for the username `co_2.test`, the CO_ID is `2`
 $ export CO_ID=2
-{{< /tab >}}
-{{< tab header="Demo environment" lang="shell" >}}
+```
+{{< /tabx >}}
+{{< tabx header="Demo environment">}}
+```shell
 # Export VO API Base URL parameter
 $ export VO_API_BASE_URL=https://aai-demo.egi.eu/api/v2/VoMembers
 # Export CO ID parameter.
 # The CO ID is the number part of the API username prefix.
 # e.g. for the username `co_2.test`, the CO_ID is `2`
 $ export CO_ID=2
-{{< /tab >}}
-{{< tab header="Development environment" lang="shell" >}}
+```
+{{< /tabx >}}
+{{< tabx header="Development environment">}}
+```shell
 # Export VO API Base URL parameter
 $ export VO_API_BASE_URL=https://aai-dev.egi.eu/api/v2/VoMembers
 # Export CO ID parameter.
 # The CO ID is the number part of the API username prefix.
 # e.g. for the username `co_2.test`, the CO_ID is `2`
 $ export CO_ID=2
-{{< /tab >}}
-{{< /tabpane >}}
+```
+{{< /tabx >}}
+{{< /tabpanex >}}
 
 #### Authentication
 
