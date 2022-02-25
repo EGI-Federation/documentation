@@ -295,7 +295,9 @@ Features:
 
 - Members of the VO are identified via their EGI Check-in Community User Identifier (CUID)
 - Membership can be limited to a specified period
-- All [REFEDS](https://wiki.refeds.org/display/STAN/eduPerson+2020-01#eduPerson202001-eduPersonAffiliation) membership affiliations are supported
+- All
+  [REFEDS](https://wiki.refeds.org/display/STAN/eduPerson+2020-01#eduPerson202001-eduPersonAffiliation)
+  membership affiliations are supported
 - Role titles are supported
 - Different membership status values are supported, namely `Active`, `Expired`,
   `Deleted`, `Suspended`
@@ -326,8 +328,8 @@ $ export CO_ID=2
 # Export VO API Base URL parameter
 $ export VO_API_BASE_URL=https://aai-dev.egi.eu/api/v2/VoMembers
 # Export CO ID parameter.
-# The CO ID is the number part of the API username prefix. e.g.
-# for the username `co_2.test`, the CO_ID is `2`
+# The CO ID is the number part of the API username prefix.
+# e.g. for the username `co_2.test`, the CO_ID is `2`
 $ export CO_ID=2
 {{< /tab >}}
 {{< /tabpane >}}
