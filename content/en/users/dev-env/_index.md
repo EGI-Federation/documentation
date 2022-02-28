@@ -25,8 +25,8 @@ The following development environments are available:
 
 - [Notebooks](./notebooks) is a browser-based, scalable tool for interactive
   data analysis
-- [Binder](./binder) allows re-creation of custom computing environments for reproducible
-  execution of notebooks
+- [Binder](./binder) allows re-creation of custom computing environments for
+  reproducible execution of notebooks
 
 The following sections offer a more detailed description of each development
 environment.
