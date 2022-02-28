@@ -6,7 +6,7 @@ languages. For the EGI service we have enabled two different environments:&lt;/p
 Python, R, and Julia.&lt;/li>
 &lt;li>the &lt;a href="./matlab">MATLAB environment&lt;/a>, for running MATLAB.&lt;/li>
 &lt;/ul>
-&lt;p>Additionally, you can bring your own environment via &lt;a href="./binder">Binder&lt;/a>. This
+&lt;p>Additionally, you can bring your own environment via &lt;a href="../../binder">Binder&lt;/a>. This
 will allow you to build reproducible and shareable environments for your
 notebooks.&lt;/p>
 &lt;p>After logging into the service, you will be shown a form for selecting the
