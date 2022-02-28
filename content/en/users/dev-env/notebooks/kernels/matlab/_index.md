@@ -117,9 +117,9 @@ of interoperable and open formats.
 This [short video](https://www.youtube.com/watch?v=Hbf1yg32sso) and this
 [webinar](https://youtu.be/zT9aW1xHCJU?t=167s) explains how to access EGI Data
 Services from MATLAB in detail. Data from different data providers can be
-accessed from the [DataHub](../../../../data/management/datahub).
-More information on Data Management from Notebooks and persistent storage
-can be found [here](../../data).
+accessed from the [DataHub](../../../../data/management/datahub). More
+information on Data Management from Notebooks and persistent storage can be
+found [here](../../data).
 
 ## MATLAB support for data formats
 
