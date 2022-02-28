@@ -18,7 +18,7 @@ you need those changes to persist, let us know via a
 [GGUS ticket to the Notebooks Support Unit](https://ggus.eu). You can also ask
 for increasing the 20GB home via ticket.
 
-## Bring notebooks into your workspace
+## Import notebooks into your workspace
 
 The Notebooks service default environment includes
 [nbgitpuller](https://github.com/jupyterhub/nbgitpuller), an extension to sync a
@@ -27,9 +27,8 @@ filling in the
 [nbgitpuller link generator](https://jupyterhub.github.io/nbgitpuller/link?hub=https://notebooks.egi.eu/)
 with your git repository.
 
-#If you have registered your notebooks in [zenodo](https://zenodo.org/), you can
-
-#If you have a binder ready repository, you may want
+Alternatively, you can also use [Binder](../../binder) for providing a link to
+notebooks and their computing environment.
 
 ## Getting data in/out
 
