@@ -6,8 +6,8 @@ languages. For the EGI service we have enabled two different environments:&lt;/p
 Python, R, and Julia.&lt;/li>
 &lt;li>the &lt;a href="./matlab">MATLAB environment&lt;/a>, for running MATLAB.&lt;/li>
 &lt;/ul>
-&lt;p>Additionally, you can bring your own environment via &lt;a href="../../binder">Binder&lt;/a>. This
-will allow you to build reproducible and shareable environments for your
+&lt;p>Additionally, you can bring your own environment via &lt;a href="../../binder">Binder&lt;/a>.
+This will allow you to build reproducible and shareable environments for your
 notebooks.&lt;/p>
 &lt;p>After logging into the service, you will be shown a form for selecting the
 environment, pick the desired one and click start&lt;/p>
@@ -20,15 +20,15 @@ outside the home directory are not kept&lt;/strong> (e.g. installation of librar
 you need those changes to persist, let us know via a
 &lt;a href="https://ggus.eu">GGUS ticket to the Notebooks Support Unit&lt;/a>. You can also ask
 for increasing the 20GB home via ticket.&lt;/p>
-&lt;h2 id="bring-notebooks-into-your-workspace">Bring notebooks into your workspace&lt;/h2>
+&lt;h2 id="import-notebooks-into-your-workspace">Import notebooks into your workspace&lt;/h2>
 &lt;p>The Notebooks service default environment includes
 &lt;a href="https://github.com/jupyterhub/nbgitpuller">nbgitpuller&lt;/a>, an extension to sync a
 git repository one-way to a local path. You can generate a shareable link by
 filling in the
 &lt;a href="https://jupyterhub.github.io/nbgitpuller/link?hub=https://notebooks.egi.eu/">nbgitpuller link generator&lt;/a>
 with your git repository.&lt;/p>
-&lt;p>#If you have registered your notebooks in &lt;a href="https://zenodo.org/">zenodo&lt;/a>, you can&lt;/p>
-&lt;p>#If you have a binder ready repository, you may want&lt;/p>
+&lt;p>Alternatively, you can also use &lt;a href="../../binder">Binder&lt;/a> for providing a link to
+notebooks and their computing environment.&lt;/p>
 &lt;h2 id="getting-data-inout">Getting data in/out&lt;/h2>
 &lt;p>Your notebooks have outgoing internet connectivity so you can connect to any
 external service to bring data in for analysis. As with input data, you can
