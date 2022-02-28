@@ -309,6 +309,7 @@ Features:
 <!-- prettier-ignore -->
 {{< tabpanex >}}
 {{< tabx header="Production environment">}}
+
 ```shell
 # Export VO API Base URL parameter
 $ export VO_API_BASE_URL=https://aai.egi.eu/api/v2/VoMembers
@@ -317,8 +318,10 @@ $ export VO_API_BASE_URL=https://aai.egi.eu/api/v2/VoMembers
 # e.g. for the username `co_2.test`, the CO_ID is `2`
 $ export CO_ID=2
 ```
+
 {{< /tabx >}}
 {{< tabx header="Demo environment">}}
+
 ```shell
 # Export VO API Base URL parameter
 $ export VO_API_BASE_URL=https://aai-demo.egi.eu/api/v2/VoMembers
@@ -327,8 +330,10 @@ $ export VO_API_BASE_URL=https://aai-demo.egi.eu/api/v2/VoMembers
 # e.g. for the username `co_2.test`, the CO_ID is `2`
 $ export CO_ID=2
 ```
+
 {{< /tabx >}}
 {{< tabx header="Development environment">}}
+
 ```shell
 # Export VO API Base URL parameter
 $ export VO_API_BASE_URL=https://aai-dev.egi.eu/api/v2/VoMembers
@@ -337,6 +342,7 @@ $ export VO_API_BASE_URL=https://aai-dev.egi.eu/api/v2/VoMembers
 # e.g. for the username `co_2.test`, the CO_ID is `2`
 $ export CO_ID=2
 ```
+
 {{< /tabx >}}
 {{< /tabpanex >}}
 
