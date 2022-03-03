@@ -252,7 +252,7 @@ attributes that are relevant for user authorisation:
 ### References
 
 - [Shibboleth Service Provider Documentation](https://shibboleth.atlassian.net/wiki/spaces/SP3/overview)
-- [SimpleSAMLphp Service Provider QuickStart](https://simplesamlphp.org/docs/stable/simplesamlphp-sp)
+- [SimpleSAMLphp Service Provider QuickStart](https://simplesamlphp.org/docs/latest/simplesamlphp-sp.html)
 - [Simple SAML 2.0 service provider with mod_auth_mellon Apache module](https://github.com/latchset/mod_auth_mellon)
 
 ## OpenID Connect Service Provider
@@ -773,7 +773,7 @@ This guide assumes the Apache HTTP server has been installed and the document
 root is `/var/www/html`
 
 Move to the apache document root and download and extract
-[simple-oidc-client-php-v2.0.0.zip](https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php-v2.0.0.zip).
+[simple-oidc-client-php-v2.0.0.zip](https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php.tar.gz).
 
 #### Configure Client
 
