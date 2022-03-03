@@ -74,43 +74,76 @@ information.&lt;/li>
 execution of notebooks (and potentially many other types of applications) that
 can be easily shared with other users with just a link. Users that create their
 own notebooks in the EGI Notebooks to analyze data available in EGI’s
-infrastructure can easily create a shareable entry in Zenodo from a Github
-repository that anyone can then reproduce in the Binder service.&lt;/p>
-&lt;p>Binder starts from a code repository that contains the code or notebook you’d
-like to run and a set of configuration files that specify what’s the exact
-computational environment your code needs to run. Binder builds docker
-containers on-the-fly following the configuration files, which support
-specifying conda environments; installing Python, R and Julia environments;
-installing additional OS packages; and even complete custom Dockerfiles to bring
-any application to the system. The code repository can be hosted on popular git
-hosting platforms like GitHub and GitLab and can also be referenced with a DOI
-from Zenodo, FigShare or Dataverse. EGI’s binder offers a similar setup to the
-publicly accessible mybinder.org service but integrated with the EGI
-infrastructure and these features: Users have a personal access token that can
-be used to access other EGI services Selected spaces of EGI DataHub are directly
-available under the /datahub folder simplifying the access to shared data
-Environments are guaranteed 2GB of RAM and can reach 4GB as maximum and there
-are no hard limits on the session time per user, although sessions will be shut
-down automatically after 1 hour of inactivity. The public mybinder.org service
-has a 2GB memory limit and six hours of session time with automatic shut down
-after 10 minutes of inactivity. User communities can have their customized
-Binder service instance with extra features. EGI offers consultancy and support,
-as well as can operate the setup.&lt;/p>
-&lt;p>Repeatable, custom computing environments for notebooks&lt;/p>
-&lt;p>EGI offers a Binder instance within the Notebooks service. Binder allows to
-build a custom and shareable computing environment that you can interact with.&lt;/p>
-&lt;p>It builds on &lt;a href="https://github.com/jupyterhub/binderhub">BinderHub&lt;/a>, an Open
-Source tool that allows to build docker images from a Git repository and then
-make it available from JupyterHub.&lt;/p>
-&lt;p>EGI&amp;rsquo;s Binder offers similar features to the publicly available
-&lt;a href="https://mybinder.org/">mybinder.org&lt;/a> with larger capacity available for each
-user.&lt;/p>
-&lt;h2 id="access">Access&lt;/h2>
+infrastructure can easily create a shareable entry from a Github repository that
+anyone can then reproduce in the Binder service.&lt;/p>
+&lt;p>EGI’s binder offers a similar setup to the publicly accessible
+&lt;a href="https://mybinder.org">mybinder.org&lt;/a> service but integrated with the EGI
+infrastructure and these features:&lt;/p>
+&lt;ul>
+&lt;li>Users have a personal access token that can be used to access other EGI
+services.&lt;/li>
+&lt;li>Selected spaces of EGI DataHub are directly available under the /datahub
+folder simplifying the access to shared data&lt;/li>
+&lt;li>Environments are guaranteed 2GB of RAM and can reach 4GB as maximum and there
+are no hard limits on the session time per user, although sessions will be
+shut down automatically after 1 hour of inactivity (see
+&lt;a href="https://mybinder.readthedocs.io/en/latest/about/about.html#using-the-mybinder-org-service">session limitations at the public mybinder.org service&lt;/a>).&lt;/li>
+&lt;li>User communities can have their customized Binder service instance with extra
+features as requested. EGI offers consultancy and support for setting these
+instances, as well as can operate the setup.&lt;/li>
+&lt;/ul>
+&lt;p>The service builds on &lt;a href="https://github.com/jupyterhub/binderhub">BinderHub&lt;/a>, an
+Open Source tool that allows to build docker images from a Git repository and
+then make it available from JupyterHub.&lt;/p>
+&lt;h2 id="reproducible-research">Reproducible research&lt;/h2>
+&lt;p>Binder facilitates sharing and reproduce previous research. Users can develop
+their research using the EGI Notebooks service and once ready publish it as a
+shareable object that can be reproduced by anyone else.&lt;/p>
+&lt;p>&lt;img src="reproduce-flow-binder.png" alt="Reproducible research flow">&lt;/p>
+&lt;p>The Zenodo-GitHub integration allows for generating DOIs that can be cited in
+publications and can be discovered by fellow researchers, who can use that
+reference to recreate the original environment needed for the execution of the
+notebook.&lt;/p>
+&lt;h2 id="access-to-the-service">Access to the service&lt;/h2>
 &lt;p>&lt;a href="https://binder.notebooks.egi.eu/">EGI&amp;rsquo;s Binder&lt;/a> has the same access conditions
 as the &lt;a href="../../#service-modes">centrally operated Notebooks service from EGI&lt;/a>.
 Before using the service, you need to have a valid EGI account and be a member
 of &lt;a href="../../#notebooks-for-researchers">one of the supported VOs&lt;/a>.&lt;/p>
-&lt;h2 id="linking-to-egis-binder">Linking to EGI&amp;rsquo;s binder&lt;/h2>
-&lt;p>You can create a link to share your notebooks easily from the Binder interface,
-just copy the URL shown when the building is in progress&lt;/p>
-&lt;p>&lt;img src="binder-link.png" alt="Binder link">&lt;/p></description></item></channel></rss>
+&lt;h2 id="creating-a-binder-repository">Creating a Binder repository&lt;/h2>
+&lt;p>Binder starts from a code repository that contains the code or notebook you’d
+like to run and a set of configuration files that specify what’s the exact
+computational environment your code needs to run.&lt;/p>
+&lt;p>Binder then creates a reproducible container using
+&lt;a href="https://github.com/jupyterhub/repo2docker">repo2docker&lt;/a> and generates a user
+session to interact with that container and the code that it contains from the
+browser.&lt;/p>
+&lt;p>The configuration for building the container support specifying conda
+environments; installing Python, R and Julia environments; installing additional
+OS packages; and even complete custom Dockerfiles to bring any application to
+the system. The code repository can be hosted on popular git hosting platforms
+like GitHub and GitLab and can also be referenced with a DOI from Zenodo,
+FigShare or Dataverse. You can learn more on the configuration of your
+repository with Binder at the
+&lt;a href="https://mybinder.readthedocs.io/en/latest/">Binder user documentation&lt;/a>&lt;/p>
+&lt;p>You can start by forking the
+&lt;a href="https://github.com/EGI-Federation/binder-example">EGI-Federation/binder-example GitHub repository&lt;/a>
+for creating your own reproducible environment. To run this directly on EGI&amp;rsquo;s
+Binder click on the button below:&lt;/p>
+&lt;p>&lt;a href="https://binder.notebooks.egi.eu/v2/gh/EGI-Federation/binder-example/HEAD">&lt;img src="https://binder.notebooks.egi.eu/badge_logo.svg" alt="Binder">&lt;/a>&lt;/p>
+&lt;p>You can create such link to share your notebooks from the Binder interface, as
+shown in the screenshot below, you can copy the URL shown when the building is
+in progress:&lt;/p>
+&lt;p>&lt;img src="binder-link.png" alt="Binder link">&lt;/p>
+&lt;p>The &lt;a href="https://github.com/binder-examples">binder examples&lt;/a> organization on GitHub
+contains more sample repositories for common configurations that can help you to
+get started.&lt;/p>
+&lt;h2 id="accessing-data">Accessing data&lt;/h2>
+&lt;p>Your notebooks running in Binder have outgoing internet connectivity, so you can
+connect to externals service to bring data in for analysis or deposit the
+notebooks output.&lt;/p>
+&lt;p>Every session that you start will also provide access to the your spaces in the
+&lt;a href="../.././data/management/datahub/">DataHub&lt;/a> under a folder named &lt;code>datahub&lt;/code>. Only
+those spaces configured to be mounted locally will be made available
+automatically, Check the documentation for the
+&lt;a href="../../notebooks/data#egi-datahub">Notebook&amp;rsquo;s DataHub support&lt;/a> for more
+information.&lt;/p></description></item></channel></rss>
