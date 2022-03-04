@@ -119,8 +119,8 @@ the computational analysis in [EGI Binder]((&lt;a href="https://binder.notebooks
 as the &lt;a href="../../#service-modes">centrally operated Notebooks service from EGI&lt;/a>.
 Before using the service, you need to have an EGI account and be a member of
 &lt;a href="../../#notebooks-for-researchers">one of the supported resource pools&lt;/a> (alias
-Virtual Organisations). Follow the instructions on the [EGI Binder login
-page]((&lt;a href="https://binder.notebooks.egi.eu">https://binder.notebooks.egi.eu&lt;/a>) for access&lt;/p>
+Virtual Organisations). Follow the instructions on the &lt;a href="https://binder.notebooks.egi.eu">EGI Binder login
+page&lt;/a> for access&lt;/p>
 &lt;h2 id="creating-a-binder-repository">Creating a Binder repository&lt;/h2>
 &lt;p>Binder starts from a code repository that contains the code or notebook you’d
 like to run and a set of configuration files that specify what’s the exact
