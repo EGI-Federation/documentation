@@ -74,7 +74,7 @@ information.&lt;/li>
 execution of notebooks (and potentially many other types of applications). Users
 who create their own notebooks in the &lt;a href="https://notebooks.egi.eu">EGI Notebooks&lt;/a>
 to analyze data can easily create a shareable link for those notebooks in the
-form of a Github repository. Based on this link, anyone can then reproduce the
+form of a GitHub repository. Based on this link, anyone can then reproduce the
 same data analysis using the link in the
 &lt;a href="https://binder.notebooks.egi.eu">EGI Binder&lt;/a> service.&lt;/p>
 &lt;p>The service builds on &lt;a href="https://github.com/jupyterhub/binderhub">BinderHub&lt;/a>, an
