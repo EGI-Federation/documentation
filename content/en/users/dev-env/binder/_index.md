@@ -54,7 +54,7 @@ Binder facilitates the sharing and reproducibility of digital data analysis:
 1. Optionally, users can use the Zenodo-GitHub integration for generating DOIs
    that can be cited in publications and can be discovered by fellow researchers
 1. Anyone can use the link to the GitHub repository or Zenodo DOI to reproduce
-   the computational analysis in [EGI Binder]((https://binder.notebooks.egi.eu).
+   the computational analysis in [EGI Binder](https://binder.notebooks.egi.eu).
 
 ![Reproducible research flow](reproduce-flow-binder.png)
 
