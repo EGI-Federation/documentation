@@ -111,7 +111,7 @@ repository.&lt;/li>
 &lt;li>Optionally, users can use the Zenodo-GitHub integration for generating DOIs
 that can be cited in publications and can be discovered by fellow researchers&lt;/li>
 &lt;li>Anyone can use the link to the GitHub repository or Zenodo DOI to reproduce
-the computational analysis in [EGI Binder]((&lt;a href="https://binder.notebooks.egi.eu">https://binder.notebooks.egi.eu&lt;/a>).&lt;/li>
+the computational analysis in &lt;a href="https://binder.notebooks.egi.eu">EGI Binder&lt;/a>.&lt;/li>
 &lt;/ol>
 &lt;p>&lt;img src="reproduce-flow-binder.png" alt="Reproducible research flow">&lt;/p>
 &lt;h2 id="access-to-the-service">Access to the service&lt;/h2>
