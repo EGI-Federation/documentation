@@ -11,51 +11,61 @@ description: >
 ## What is it?
 
 Binder allows the re-creation of a custom computing environment for reproducible
-execution of notebooks (and potentially many other types of applications) that
-can be easily shared with other users with just a link. Users that create their
-own notebooks in the EGI Notebooks to analyze data available in EGI’s
-infrastructure can easily create a shareable entry from a Github repository that
-anyone can then reproduce in the Binder service.
-
-EGI’s binder offers a similar setup to the publicly accessible
-[mybinder.org](https://mybinder.org) service but integrated with the EGI
-infrastructure and these features:
-
-- Users have a personal access token that can be used to access other EGI
-  services.
-- Selected spaces of EGI DataHub are directly available under the /datahub
-  folder simplifying the access to shared data
-- Environments are guaranteed 2GB of RAM and can reach 4GB as maximum and there
-  are no hard limits on the session time per user, although sessions will be
-  shut down automatically after 1 hour of inactivity (see
-  [session limitations at the public mybinder.org service](https://mybinder.readthedocs.io/en/latest/about/about.html#using-the-mybinder-org-service)).
-- User communities can have their customized Binder service instance with extra
-  features as requested. EGI offers consultancy and support for setting these
-  instances, as well as can operate the setup.
+execution of notebooks (and potentially many other types of applications). Users
+who create their own notebooks in the [EGI Notebooks](https://notebooks.egi.eu)
+to analyze data can easily create a shareable link for that notebooks in the
+form of a Github repository. Based on this link, anyone can then reproduce the
+same data analysis using the link in the
+[EGI Binder](https://binder.notebooks.egi.eu) service.
 
 The service builds on [BinderHub](https://github.com/jupyterhub/binderhub), an
 Open Source tool that allows to build docker images from a Git repository and
 then make it available from JupyterHub.
 
+EGI Binder offers service similar to the publicly accessible
+[mybinder.org](https://mybinder.org) site. However EGI Binder has the following
+additional features:
+
+- Access to scalable storage: selected storage spaces of EGI DataHub are
+  directly available under the `/datahub` folder simplifying the access to
+  shared data from Binder notebooks.
+- Guaranteed capacity: environments are guaranteed 2GB of RAM and can reach 4GB
+  as maximum.
+- Persistent sessions: There is no hard limit on the session time per user,
+  although sessions will be shut down automatically after 1 hour of inactivity
+  (see
+  [session limitations at the public mybinder.org service](https://mybinder.readthedocs.io/en/latest/about/about.html#using-the-mybinder-org-service)).
+- Access to the rest of EGI services: a personal access token is available in
+  the Binder session to interact with the rest of the EGI infrastructure.
+- Community Binder environments: User communities can have their customized
+  Binder service instance from EGI, with extra features as requested (such as
+  access to GPUs, integration with community specific data repositories and
+  services). EGI offers consultancy and support the setup of these instances,
+  and provides operational oversight for them.
+
 ## Reproducible research
 
-Binder facilitates sharing and reproduce previous research. Users can develop
-their research using the EGI Notebooks service and once ready publish it as a
-shareable object that can be reproduced by anyone else.
+Binder facilitates the sharing and reproducibility of digital data analysis:
+
+1. Users can define their computational analsys in the
+   [EGI Notebooks](https://notebooks.egi.eu) service.
+1. Once the notebok is ready for publishing, it can be shared in a GitHub
+   repository.
+1. Optionally, users can use the Zenodo-GitHub integration for generating DOIs
+   that can be cited in publications and can be discovered by fellow researchers
+1. Anyone can use the link to the GitHub repository or Zenodo DOI to reproduce
+   the computational analysis in [EGI Binder]((https://binder.notebooks.egi.eu).
 
 ![Reproducible research flow](reproduce-flow-binder.png)
-
-The Zenodo-GitHub integration allows for generating DOIs that can be cited in
-publications and can be discovered by fellow researchers, who can use that
-reference to recreate the original environment needed for the execution of the
-notebook.
 
 ## Access to the service
 
 [EGI's Binder](https://binder.notebooks.egi.eu/) has the same access conditions
 as the [centrally operated Notebooks service from EGI](../../#service-modes).
-Before using the service, you need to have a valid EGI account and be a member
-of [one of the supported VOs](../../#notebooks-for-researchers).
+Before using the service, you need to have an EGI account and be a member of
+[one of the supported resource pools](../../#notebooks-for-researchers) (alias
+Virtual Organisations). Follow the instructions on the [EGI Binder login
+page]((https://binder.notebooks.egi.eu) for access
 
 ## Creating a Binder repository
 
