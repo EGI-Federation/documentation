@@ -14,7 +14,7 @@ Binder allows the re-creation of a custom computing environment for reproducible
 execution of notebooks (and potentially many other types of applications). Users
 who create their own notebooks in the [EGI Notebooks](https://notebooks.egi.eu)
 to analyze data can easily create a shareable link for those notebooks in the
-form of a Github repository. Based on this link, anyone can then reproduce the
+form of a GitHub repository. Based on this link, anyone can then reproduce the
 same data analysis using the link in the
 [EGI Binder](https://binder.notebooks.egi.eu) service.
 
