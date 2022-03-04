@@ -71,44 +71,56 @@ information.&lt;/li>
 &lt;/ul></description></item><item><title>Users: Binder</title><link>/users/dev-env/binder/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/binder/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
 &lt;p>Binder allows the re-creation of a custom computing environment for reproducible
-execution of notebooks (and potentially many other types of applications) that
-can be easily shared with other users with just a link. Users that create their
-own notebooks in the EGI Notebooks to analyze data available in EGI’s
-infrastructure can easily create a shareable entry from a Github repository that
-anyone can then reproduce in the Binder service.&lt;/p>
-&lt;p>EGI’s binder offers a similar setup to the publicly accessible
-&lt;a href="https://mybinder.org">mybinder.org&lt;/a> service but integrated with the EGI
-infrastructure and these features:&lt;/p>
-&lt;ul>
-&lt;li>Users have a personal access token that can be used to access other EGI
-services.&lt;/li>
-&lt;li>Selected spaces of EGI DataHub are directly available under the /datahub
-folder simplifying the access to shared data&lt;/li>
-&lt;li>Environments are guaranteed 2GB of RAM and can reach 4GB as maximum and there
-are no hard limits on the session time per user, although sessions will be
-shut down automatically after 1 hour of inactivity (see
-&lt;a href="https://mybinder.readthedocs.io/en/latest/about/about.html#using-the-mybinder-org-service">session limitations at the public mybinder.org service&lt;/a>).&lt;/li>
-&lt;li>User communities can have their customized Binder service instance with extra
-features as requested. EGI offers consultancy and support for setting these
-instances, as well as can operate the setup.&lt;/li>
-&lt;/ul>
+execution of notebooks (and potentially many other types of applications). Users
+who create their own notebooks in the &lt;a href="https://notebooks.egi.eu">EGI Notebooks&lt;/a>
+to analyze data can easily create a shareable link for that notebooks in the
+form of a Github repository. Based on this link, anyone can then reproduce the
+same data analysis using the link in the
+&lt;a href="https://binder.notebooks.egi.eu">EGI Binder&lt;/a> service.&lt;/p>
 &lt;p>The service builds on &lt;a href="https://github.com/jupyterhub/binderhub">BinderHub&lt;/a>, an
 Open Source tool that allows to build docker images from a Git repository and
 then make it available from JupyterHub.&lt;/p>
+&lt;p>EGI Binder offers service similar to the publicly accessible
+&lt;a href="https://mybinder.org">mybinder.org&lt;/a> site. However EGI Binder has the following
+additional features:&lt;/p>
+&lt;ul>
+&lt;li>Access to scalable storage: selected storage spaces of EGI DataHub are
+directly available under the &lt;code>/datahub&lt;/code> folder simplifying the access to
+shared data from Binder notebooks.&lt;/li>
+&lt;li>Guaranteed capacity: environments are guaranteed 2GB of RAM and can reach 4GB
+as maximum.&lt;/li>
+&lt;li>Persistent sessions: There is no hard limit on the session time per user,
+although sessions will be shut down automatically after 1 hour of inactivity
+(see
+&lt;a href="https://mybinder.readthedocs.io/en/latest/about/about.html#using-the-mybinder-org-service">session limitations at the public mybinder.org service&lt;/a>).&lt;/li>
+&lt;li>Access to the rest of EGI services: a personal access token is available in
+the Binder session to interact with the rest of the EGI infrastructure.&lt;/li>
+&lt;li>Community Binder environments: User communities can have their customized
+Binder service instance from EGI, with extra features as requested (such as
+access to GPUs, integration with community specific data repositories and
+services). EGI offers consultancy and support the setup of these instances,
+and provides operational oversight for them.&lt;/li>
+&lt;/ul>
 &lt;h2 id="reproducible-research">Reproducible research&lt;/h2>
-&lt;p>Binder facilitates sharing and reproduce previous research. Users can develop
-their research using the EGI Notebooks service and once ready publish it as a
-shareable object that can be reproduced by anyone else.&lt;/p>
+&lt;p>Binder facilitates the sharing and reproducibility of digital data analysis:&lt;/p>
+&lt;ol>
+&lt;li>Users can define their computational analsys in the
+&lt;a href="https://notebooks.egi.eu">EGI Notebooks&lt;/a> service.&lt;/li>
+&lt;li>Once the notebok is ready for publishing, it can be shared in a GitHub
+repository.&lt;/li>
+&lt;li>Optionally, users can use the Zenodo-GitHub integration for generating DOIs
+that can be cited in publications and can be discovered by fellow researchers&lt;/li>
+&lt;li>Anyone can use the link to the GitHub repository or Zenodo DOI to reproduce
+the computational analysis in [EGI Binder]((&lt;a href="https://binder.notebooks.egi.eu">https://binder.notebooks.egi.eu&lt;/a>).&lt;/li>
+&lt;/ol>
 &lt;p>&lt;img src="reproduce-flow-binder.png" alt="Reproducible research flow">&lt;/p>
-&lt;p>The Zenodo-GitHub integration allows for generating DOIs that can be cited in
-publications and can be discovered by fellow researchers, who can use that
-reference to recreate the original environment needed for the execution of the
-notebook.&lt;/p>
 &lt;h2 id="access-to-the-service">Access to the service&lt;/h2>
 &lt;p>&lt;a href="https://binder.notebooks.egi.eu/">EGI&amp;rsquo;s Binder&lt;/a> has the same access conditions
 as the &lt;a href="../../#service-modes">centrally operated Notebooks service from EGI&lt;/a>.
-Before using the service, you need to have a valid EGI account and be a member
-of &lt;a href="../../#notebooks-for-researchers">one of the supported VOs&lt;/a>.&lt;/p>
+Before using the service, you need to have an EGI account and be a member of
+&lt;a href="../../#notebooks-for-researchers">one of the supported resource pools&lt;/a> (alias
+Virtual Organisations). Follow the instructions on the [EGI Binder login
+page]((&lt;a href="https://binder.notebooks.egi.eu">https://binder.notebooks.egi.eu&lt;/a>) for access&lt;/p>
 &lt;h2 id="creating-a-binder-repository">Creating a Binder repository&lt;/h2>
 &lt;p>Binder starts from a code repository that contains the code or notebook you’d
 like to run and a set of configuration files that specify what’s the exact
