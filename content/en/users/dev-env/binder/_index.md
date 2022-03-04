@@ -65,7 +65,7 @@ as the [centrally operated Notebooks service from EGI](../../#service-modes).
 Before using the service, you need to have an EGI account and be a member of
 [one of the supported resource pools](../../#notebooks-for-researchers) (alias
 Virtual Organisations). Follow the instructions on the [EGI Binder login
-page]((https://binder.notebooks.egi.eu) for access
+page](https://binder.notebooks.egi.eu) for access
 
 ## Creating a Binder repository
 
