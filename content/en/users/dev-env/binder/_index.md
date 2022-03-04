@@ -26,6 +26,8 @@ EGI Binder offers a service similar to the publicly accessible
 [mybinder.org](https://mybinder.org) site. However EGI Binder has the following
 additional features:
 
+- Access with academic user accounts: login via [Check-in](../../aai/check-in)
+  that’s connected to eduGAIN and social media accounts.
 - Access to scalable storage: selected storage spaces of EGI DataHub are
   directly available under the `datahub` folder simplifying the access to shared
   data from Binder notebooks.
@@ -63,8 +65,8 @@ Binder facilitates the sharing and reproducibility of digital data analysis:
 [EGI's Binder](https://binder.notebooks.egi.eu/) has the same access conditions
 as the [centrally operated Notebooks service from EGI](../../#service-modes).
 Before using the service, you need to have an EGI account and be a member of
-[one of the supported resource pools](../../#notebooks-for-researchers) (alias
-Virtual Organisations). Follow the instructions on the
+[one of the supported resource pools](../notebooks/#notebooks-for-researchers)
+(alias Virtual Organisations). Follow the instructions on the
 [EGI Binder login page](https://binder.notebooks.egi.eu) for access
 
 ## Creating a Binder repository
