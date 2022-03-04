@@ -159,5 +159,5 @@ notebooks output.&lt;/p>
 &lt;a href="../.././data/management/datahub/">DataHub&lt;/a> under a folder named &lt;code>datahub&lt;/code>. Only
 those spaces configured to be mounted locally will be made available
 automatically, Check the documentation for the
-&lt;a href="../../notebooks/data#egi-datahub">Notebook&amp;rsquo;s DataHub support&lt;/a> for more
+&lt;a href="../notebooks/data#egi-datahub">Notebook&amp;rsquo;s DataHub support&lt;/a> for more
 information.&lt;/p></description></item></channel></rss>
