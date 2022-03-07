@@ -20,8 +20,6 @@ scientific communities.
 
 <!-- markdownlint-disable no-inline-html -->
 
-<!-- markdownlint-disable no-inline-html -->
-
 {{% alert title="Note" color="info" %}} Workload Manager is based on
 [DIRAC technology](http://diracgrid.org/).<br/>
 The delivery of the service is coordinated
