@@ -1,7 +1,10 @@
 ---
-title: "EC3 applications and tools"
+title: EC3 Applications and Tools
+linkTitle: Applications and Tools
 type: docs
 weight: 30
+aliases:
+  - /users/cloud-compute/ec3/apps
 description: >
   How to run scientific applications and tools with EC3
 ---

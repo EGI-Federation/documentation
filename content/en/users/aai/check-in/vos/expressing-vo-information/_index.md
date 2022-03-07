@@ -1,8 +1,10 @@
 ---
-title: "VO membership information"
-linkTitle: "VO membership"
+title: VO Membership Information
+linkTitle: VO Membership
 type: docs
 weight: 10
+aliases:
+  - /users/check-in/faq/vos/expressing-vo-information
 description: >
   Expressing VO group membership and role information
 ---

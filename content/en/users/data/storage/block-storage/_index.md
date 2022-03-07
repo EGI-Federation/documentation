@@ -1,7 +1,9 @@
 ---
-title: "Block Storage"
+title: Block Storage
 type: docs
 weight: 10
+aliases:
+  - /users/online-storage/block-storage
 description: >
   Block Storage offered by EGI Cloud providers
 ---

@@ -1,7 +1,9 @@
 ---
-title: "HTC"
+title: HTC
 type: docs
 weight: 20
+aliases:
+  - /users/cloud-compute/ec3/apps/htc
 description: >
   Using Elastic Cloud Computing Cluster (EC3) platform to create elastic virtual
   clusters on the EGI Cloud.

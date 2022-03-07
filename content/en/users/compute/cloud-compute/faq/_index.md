@@ -1,9 +1,12 @@
 ---
-title: "FAQ"
+title: Frequently Asked Questions
+linkTitle: FAQ
 type: docs
 weight: 120
+aliases:
+  - /users/cloud-compute/faq
 description: >
-  Frequenlty Asked Questions
+  Most frequent questions about EGI Cloud Compute
 ---
 
 ## Basics

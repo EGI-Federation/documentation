@@ -1,8 +1,10 @@
 ---
-title: "Grid Storage"
+title: Grid Storage
 linkTitle: "Grid Storage"
 type: docs
 weight: 20
+aliases:
+  - /users/online-storage/grid-storage
 description: >
   Grid Storage offered by EGI HTC providers
 ---

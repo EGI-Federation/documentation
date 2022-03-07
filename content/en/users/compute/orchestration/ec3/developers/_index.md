@@ -1,7 +1,9 @@
 ---
-title: Instructions for developers
+title: Instructions for Developers
 type: docs
 weight: 30
+aliases:
+  - /users/cloud-compute/ec3/developers
 description: >
   How to integrate a new application in EC3
 ---

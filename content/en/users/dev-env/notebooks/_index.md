@@ -2,9 +2,11 @@
 title: Notebooks
 linkTitle: Notebooks
 type: docs
+weight: 10
+aliases:
+  - /users/notebooks
 description:
   Interactive data analysis with EGI Notebooks
-weight: 10
 ---
 
 The more you go in data analysis, the more you understand that the most suitable

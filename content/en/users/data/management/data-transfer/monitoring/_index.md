@@ -3,6 +3,8 @@ title: Monitoring Data Transfer
 linkTitle: Monitoring
 weight: 40
 type: docs
+aliases:
+  - /users/data-transfer/monitoring
 description: >
     Monitoring file transfers of EGI Data Transfer
 ---

@@ -3,6 +3,8 @@ title: DataHub API
 linkTitle: API
 weight: 30
 type: docs
+aliases:
+  - /users/datahub/api
 description: >
   The Application Programming Interfaces of EGI DataHub
 ---

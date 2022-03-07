@@ -2,6 +2,8 @@
 title: Infrastructure Manager
 type: docs
 weight: 10
+aliases:
+  - /users/cloud-compute/im
 description: >
   Automating deployment of virtual infrastructures on EGI Cloud
 ---

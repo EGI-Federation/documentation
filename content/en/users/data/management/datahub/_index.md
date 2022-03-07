@@ -3,6 +3,8 @@ title: EGI DataHub
 linkTitle: DataHub
 weight: 20
 type: docs
+aliases:
+  - /users/datahub
 description:
   Discover, manage, and replicate data with EGI DataHub
 ---

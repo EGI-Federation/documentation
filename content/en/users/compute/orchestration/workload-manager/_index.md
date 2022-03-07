@@ -3,6 +3,8 @@ title: EGI Workload Manager
 linkTitle: Workload Manager
 type: docs
 weight: 50
+aliases:
+  - /users/workload-manager
 description: >
   Distribute and manage workloads in the EGI infrastructure
 ---

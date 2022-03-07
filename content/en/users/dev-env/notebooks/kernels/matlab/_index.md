@@ -2,6 +2,8 @@
 title: MATLAB
 weight: 20
 type: docs
+aliases:
+  - /users/notebooks/kernels/matlab
 description: >
   Using MATLAB in EGI Notebooks
 ---

@@ -2,6 +2,8 @@
 title: Infrastructure Manager Dashboard
 linkTitle: Dashboard
 type: docs
+aliases:
+  - /users/cloud-compute/im/dashboard
 weight: 30
 description: >
   The dashboard of Infrastructure Manager

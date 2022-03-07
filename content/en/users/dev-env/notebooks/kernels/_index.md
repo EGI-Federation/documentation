@@ -3,6 +3,8 @@ title: Notebooks Environments
 linkTitle: Environments
 weight: 5
 type: docs
+aliases:
+  - /users/notebooks/kernel
 description: >
   Environments available in EGI Notebooks
 ---

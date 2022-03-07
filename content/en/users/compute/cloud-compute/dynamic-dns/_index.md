@@ -1,7 +1,9 @@
 ---
-title: "Dynamic DNS"
+title: Dynamic DNS
 type: docs
 weight: 60
+aliases:
+  - /users/cloud-compute/dynamic-dns
 description: >
   Dynamic domain names for VMs in the EGI Cloud
 ---

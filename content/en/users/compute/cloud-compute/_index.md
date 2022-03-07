@@ -3,6 +3,8 @@ title: Federated Cloud Compute
 linkTitle: Cloud Compute
 type: docs
 weight: 10
+aliases:
+  - /users/cloud-compute
 description: >
   Run virtual machines in the EGI Cloud
 ---

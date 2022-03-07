@@ -1,7 +1,9 @@
 ---
-title: "Cloud Container Compute"
+title: Cloud Container Compute
 type: docs
 weight: 20
+aliases:
+  - /users/cloud-container-compute
 description: >
   Run containers on the EGI Cloud
 ---

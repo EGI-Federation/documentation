@@ -1,7 +1,10 @@
 ---
-title: "EC3 CLI"
+title: EC3 Command-Line Interface
+linkTitle: Command Line
 type: docs
 weight: 20
+aliases:
+  - /users/cloud-compute/ec3/cli
 description: >
   Getting started with Elastic Cloud Compute Cluster on EGI Cloud with the
   Command Line Interface

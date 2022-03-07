@@ -1,7 +1,9 @@
 ---
-title: "Authentication and Authorisation"
+title: Authentication and Authorisation
 type: docs
 weight: 20
+aliases:
+  - /users/cloud-compute/auth
 description: >
   Authentication and Authorisation in EGI Cloud
 ---
