@@ -1,0 +1,68 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Development Environments</title><link>/users/dev-env/</link><description>Recent content in Development Environments on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/dev-env/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Notebooks</title><link>/users/dev-env/notebooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/</guid><description>
+&lt;p>The more you go in data analysis, the more you understand that the most suitable
+tool for coding and visualizing is not pure code, or some integrated development
+environment (IDE), nor data manipulation diagrams (such as workflows or flowcharts).
+From some point on you just need a mix of all these &amp;ndash; that is what &lt;em>notebook&lt;/em> platforms
+are, &lt;a href="http://jupyter.org/">Jupyter&lt;/a> being the most popular of them.&lt;/p>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>&lt;a href="https://www.egi.eu/services/notebooks/">EGI Notebooks&lt;/a> is a service-like environment
+based on the &lt;a href="http://jupyter.org/">Jupyter technology&lt;/a>, offering a
+&lt;strong>browser-based tool for interactive data analysis&lt;/strong>.&lt;/p>
+&lt;p>The Notebooks environment provides users with &lt;em>notebooks&lt;/em> where they can combine text,
+mathematics, computations and rich media output. EGI Notebooks is a multi-user service
+that can scale on demand, being powered by the
+&lt;a href="https://www.egi.eu/services/cloud-compute/">compute services&lt;/a> of the EGI Cloud.&lt;/p>
+&lt;p>EGI Notebooks provides the well-known Jupyter interface for notebooks, with the
+following added features:&lt;/p>
+&lt;ul>
+&lt;li>Integration with &lt;a href="../../aai/check-in/">EGI Check-in&lt;/a> allows you to login with any
+EduGAIN or social accounts (e.g. Google, Facebook)&lt;/li>
+&lt;li>Persistent storage associated with each user is available in the notebooks environment&lt;/li>
+&lt;li>Customisable with new notebook environments, expose any existing notebook to your users&lt;/li>
+&lt;li>Can easily use EGI compute and storage services from your notebooks, as your notebooks
+run on EGI infrastructure&lt;/li>
+&lt;/ul>
+&lt;h2 id="service-modes">Service Modes&lt;/h2>
+&lt;p>We offer different service modes depending on your needs&lt;/p>
+&lt;h3 id="notebooks-for-researchers">Notebooks for researchers&lt;/h3>
+&lt;p>Individual users can use the centrally operated service from EGI. Users can log
+in, write and play and re-play notebooks by:&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="../../aai/check-in/signup">creating an EGI account&lt;/a>&lt;/li>
+&lt;li>Enrolling to the one of the supported VOs such as
+&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:111">vo.notebooks.egi.eu VO&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://notebooks.egi.eu/">accessing https://notebooks.egi.eu/&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>This instance has limits on the amount of resources available for each user (2
+CPU core, 4 GB RAM and 20 GB of storage). It will also kill inactive sessions
+after 1 hour.&lt;/p>
+&lt;p>The central instance supports the following VOs:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu">vo.notebooks.egi.eu&lt;/a>,
+enroll &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:111">here&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/auger">auger&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/biomed">biomed&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.reliance-project.eu">vo.reliance-project.eu&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/eiscat.se">eiscat.se&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="notebooks-for-communities">Notebooks for communities&lt;/h3>
+&lt;p>User communities can have their customised EGI Notebooks service instance. EGI
+offers consultancy, support, and can operate the setup as well. A community
+specific setup allows the community to use the community's own Virtual
+Organisation (i.e. federated compute and storage sites) for Jupyter, add custom
+libraries into Jupyter (e.g. discipline-specific analysis libraries) or have
+fine grained control on who can access the instance (based on the information
+available to the EGI Check-in AAI service).&lt;/p>
+&lt;p>EGI currently operates community instances for:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.d4science.org/">D4Science&lt;/a>. These instances are accessed through
+specific Gateways: &lt;a href="https://sobigdata.d4science.org/">SoBigData&lt;/a>,
+&lt;a href="https://blue-cloud.d4science.org/">Blue-Cloud&lt;/a>, &lt;a href="https://services.d4science.org/">D4Science Services&lt;/a> and
+&lt;a href="https://eosc-pillar.d4science.org/">EOSC-Pillar&lt;/a>. Check with
+&lt;a href="https://www.d4science.org/contact-us">D4Science support&lt;/a> for more information.&lt;/li>
+&lt;li>&lt;a href="https://panosc.eu/">PaNoSC&lt;/a>. Instance is available
+&lt;a href="https://notebooks-panosc.fedcloud-tf.fedcloud.eu">here&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Users: Binder</title><link>/users/dev-env/binder/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/binder/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>Repeatable, custom computing environments for notebooks&lt;/p></description></item></channel></rss>
