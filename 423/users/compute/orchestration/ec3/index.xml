@@ -143,7 +143,7 @@ your cluster:&lt;/p>
 &lt;/ol>
 &lt;p>We will use the &lt;a href="../../../../getting-started/cli">FedCloud client&lt;/a> to discover
 the required information. Set your credentials as shown in
-&lt;a href="../../../../aai/check-in/auth/#check-in-and-access-tokens">the authentication guide&lt;/a>
+&lt;a href="../../../../getting-started/cli#authentication">the authentication guide&lt;/a>
 and create the autorisation files needed for ec3 (in this case for CESGA with VO
 vo.access.egi.eu):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">fedcloud ec3 init --site CESGA --vo vo.access.egi.eu
