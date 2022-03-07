@@ -75,7 +75,7 @@ information.
 
 {{% alert title="Note" color="info" %}} Integration via
 [OpenID Connect](https://openid.net/connect) to the
-[EGI Check-in service](../../aai/check-in) is under piloting at some of the
+[EGI Check-in service](../../../aai/check-in) is under piloting at some of the
 endpoints of the EGI Cloud infrastructure , but it has not yet reached the
 production stage.
 {{% /alert %}}
