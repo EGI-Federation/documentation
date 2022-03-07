@@ -44,7 +44,7 @@ Some users roles have special consideration in VOs:
 
 - Users with VO Manager, VO Deputy or VO Expert Role have extra privileges in
   the AppDB for managing the Virtual Appliances to be available at every
-  provider. Check the [Virtual Machine Image Management documentation](../vmi)
+  provider. Check the [Virtual Machine Image Management documentation](../images)
   for more information.
 
 ### Pilot VO
