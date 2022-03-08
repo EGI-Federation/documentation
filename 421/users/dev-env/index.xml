@@ -87,7 +87,7 @@ additional features:&lt;/p>
 &lt;li>Access with academic user accounts: login via &lt;a href="../../aai/check-in">Check-in&lt;/a>
 that’s connected to eduGAIN and social media accounts.&lt;/li>
 &lt;li>Access to scalable storage: selected storage spaces of EGI DataHub are
-directly available under the &lt;code>datahub&lt;/code> folder simplifying the access to shared
+directly available under the &lt;code>datahub&lt;/code> folder, simplifying the access to shared
 data from Binder notebooks.&lt;/li>
 &lt;li>Guaranteed capacity: environments are guaranteed 2GB of RAM and can reach 4GB
 as maximum.&lt;/li>
