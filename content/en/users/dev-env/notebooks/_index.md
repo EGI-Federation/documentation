@@ -25,7 +25,7 @@ environment based on the [Jupyter technology](http://jupyter.org/), offering a
 The Notebooks environment provides users with _notebooks_ where they can combine
 text, mathematics, computations and rich media output. EGI Notebooks is a
 multi-user service that can scale on demand, being powered by the
-[compute services](https://www.egi.eu/services/cloud-compute/) of the EGI Cloud.
+[compute services](../../compute/) of EGI.
 
 EGI Notebooks provides the well-known Jupyter interface for notebooks, with the
 following added features:
