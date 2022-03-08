@@ -63,7 +63,7 @@ Binder facilitates the sharing and reproducibility of digital data analysis:
 ## Access to the service
 
 [EGI's Binder](https://binder.notebooks.egi.eu/) has the same access conditions
-as the [centrally operated Notebooks service from EGI](../../#service-modes).
+as the [centrally operated Notebooks service from EGI](../notebooks/#service-modes).
 Before using the service, you need to have an EGI account and be a member of
 [one of the supported resource pools](../notebooks/#notebooks-for-researchers)
 (alias Virtual Organisations). Follow the instructions on the
