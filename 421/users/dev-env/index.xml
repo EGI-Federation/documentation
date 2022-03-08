@@ -148,8 +148,8 @@ shown in the screenshot below, you can copy the URL shown when the building is
 in progress:&lt;/p>
 &lt;p>&lt;img src="binder-link.png" alt="Binder link">&lt;/p>
 &lt;p>The &lt;a href="https://github.com/binder-examples">binder examples&lt;/a> organization on GitHub
-contains more sample repositories for common configurations that can help you to
-get started.&lt;/p>
+contains more sample repositories for common configurations that can help you
+getting started.&lt;/p>
 &lt;h2 id="accessing-data">Accessing data&lt;/h2>
 &lt;p>Your notebooks running in Binder have outgoing internet connectivity, so you can
 connect to external services to bring data in for analysis or deposit the
