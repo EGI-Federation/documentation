@@ -12,7 +12,7 @@ environment based on the &lt;a href="http://jupyter.org/">Jupyter technology&lt;
 &lt;p>The Notebooks environment provides users with &lt;em>notebooks&lt;/em> where they can combine
 text, mathematics, computations and rich media output. EGI Notebooks is a
 multi-user service that can scale on demand, being powered by the
-&lt;a href="https://www.egi.eu/services/cloud-compute/">compute services&lt;/a> of the EGI Cloud.&lt;/p>
+&lt;a href="../../compute/">compute services&lt;/a> of EGI.&lt;/p>
 &lt;p>EGI Notebooks provides the well-known Jupyter interface for notebooks, with the
 following added features:&lt;/p>
 &lt;ul>
@@ -72,7 +72,7 @@ information.&lt;/li>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
 &lt;p>Binder allows the re-creation of a custom computing environment for reproducible
 execution of notebooks (and potentially many other types of applications). Users
-who create their own notebooks in the &lt;a href="https://notebooks.egi.eu">EGI Notebooks&lt;/a>
+who create their own notebooks in the &lt;a href="../notebooks/">EGI Notebooks&lt;/a>
 to analyze data can easily create a shareable link for those notebooks in the
 form of a GitHub repository. Based on this link, anyone can then reproduce the
 same data analysis using the link in the
@@ -107,7 +107,7 @@ and provides operational oversight for them.&lt;/li>
 &lt;p>Binder facilitates the sharing and reproducibility of digital data analysis:&lt;/p>
 &lt;ol>
 &lt;li>Users can define their computational analysis in the
-&lt;a href="https://notebooks.egi.eu">EGI Notebooks&lt;/a> service.&lt;/li>
+&lt;a href="../notebooks/">EGI Notebooks&lt;/a> service.&lt;/li>
 &lt;li>Once the notebook is ready for publishing, it can be shared in a GitHub
 repository.&lt;/li>
 &lt;li>Optionally, users can use the Zenodo-GitHub integration for generating DOIs
