@@ -128,9 +128,8 @@ Before using the service, you need to have an EGI account and be a member of
 like to run and a set of configuration files that specify what’s the exact
 computational environment your code needs to run.&lt;/p>
 &lt;p>Binder then creates a reproducible container using
-&lt;a href="https://github.com/jupyterhub/repo2docker">repo2docker&lt;/a> and generates a user
-session to interact with that container and the code that it contains from the
-browser.&lt;/p>
+&lt;a href="https://github.com/jupyterhub/repo2docker">repo2docker&lt;/a>, and generates a user
+session to interact with the container in the browser.&lt;/p>
 &lt;p>The configuration for building the container supports specifying conda
 environments; installing Python, R and Julia environments; installing additional
 OS packages; and even complete custom Dockerfiles to bring any application to
