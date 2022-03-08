@@ -76,9 +76,8 @@ like to run and a set of configuration files that specify what’s the exact
 computational environment your code needs to run.
 
 Binder then creates a reproducible container using
-[repo2docker](https://github.com/jupyterhub/repo2docker) and generates a user
-session to interact with that container and the code that it contains from the
-browser.
+[repo2docker](https://github.com/jupyterhub/repo2docker), and generates a user
+session to interact with the container in the browser.
 
 The configuration for building the container supports specifying conda
 environments; installing Python, R and Julia environments; installing additional
