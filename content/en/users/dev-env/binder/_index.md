@@ -114,6 +114,6 @@ notebooks output.
 Every session that you start will also provide access to your spaces in the
 [DataHub](../.././data/management/datahub/) under a folder named `datahub`. Only
 those spaces configured to be mounted locally will be made available
-automatically, Check the documentation for the
+automatically. Check the documentation for the
 [Notebook's DataHub support](../notebooks/data#egi-datahub) for more
 information.
