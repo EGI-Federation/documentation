@@ -89,7 +89,7 @@ that’s connected to eduGAIN and social media accounts.&lt;/li>
 &lt;li>Access to scalable storage: selected storage spaces of EGI DataHub are
 directly available under the &lt;code>datahub&lt;/code> folder, simplifying the access to shared
 data from Binder notebooks.&lt;/li>
-&lt;li>Guaranteed capacity: environments have 2GB of RAM guaranteed and can reach 4GB
+&lt;li>Guaranteed capacity: environments are guaranteed 2GB of RAM and can reach 4GB
 as maximum.&lt;/li>
 &lt;li>Persistent sessions: There is no hard limit on the session time per user,
 although sessions will be shut down automatically after 1 hour of inactivity
@@ -157,6 +157,6 @@ notebooks output.&lt;/p>
 &lt;p>Every session that you start will also provide access to your spaces in the
 &lt;a href="../.././data/management/datahub/">DataHub&lt;/a> under a folder named &lt;code>datahub&lt;/code>. Only
 those spaces configured to be mounted locally will be made available
-automatically. Check the documentation for the
+automatically, Check the documentation for the
 &lt;a href="../notebooks/data#egi-datahub">Notebook&amp;rsquo;s DataHub support&lt;/a> for more
 information.&lt;/p></description></item></channel></rss>
