@@ -144,7 +144,7 @@ and those from
 &lt;a href="https://www.youtube.com/watch?v=zT9aW1xHCJU&amp;amp;t=2727s">share your data and analyses&lt;/a>
 by sharing your EGI provided persistent storage space with others. Users
 belonging to a specific community can
-&lt;a href="https://docs.egi.eu/users/dev-env/notebooks/#service-modes">request community Notebooks&lt;/a>.&lt;/p>
+&lt;a href="../#service-modes">request community Notebooks&lt;/a>.&lt;/p>
 &lt;h3 id="interoperability-with-python-and-other-languages">Interoperability with Python and other languages&lt;/h3>
 &lt;p>You can collaborate with users of
 &lt;a href="https://www.mathworks.com/products/matlab/matlab-and-other-programming-languages.html">other languages&lt;/a>
