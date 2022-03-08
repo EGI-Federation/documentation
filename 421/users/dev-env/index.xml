@@ -118,7 +118,7 @@ the computational analysis in &lt;a href="https://binder.notebooks.egi.eu">EGI B
 &lt;p>&lt;img src="reproduce-flow-binder.png" alt="Reproducible research flow">&lt;/p>
 &lt;h2 id="access-to-the-service">Access to the service&lt;/h2>
 &lt;p>&lt;a href="https://binder.notebooks.egi.eu/">EGI&amp;rsquo;s Binder&lt;/a> has the same access conditions
-as the &lt;a href="../../#service-modes">centrally operated Notebooks service from EGI&lt;/a>.
+as the &lt;a href="../notebooks/#service-modes">centrally operated Notebooks service from EGI&lt;/a>.
 Before using the service, you need to have an EGI account and be a member of
 &lt;a href="../notebooks/#notebooks-for-researchers">one of the supported resource pools&lt;/a>
 (alias Virtual Organisations). Follow the instructions on the
