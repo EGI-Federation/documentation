@@ -23,7 +23,7 @@ Open Source tool that allows to build docker images from a Git repository and
 then make it available from JupyterHub.
 
 EGI Binder offers a service similar to the publicly accessible
-[mybinder.org](https://mybinder.org) site. However EGI Binder has the following
+[mybinder.org](https://mybinder.org) site. However, EGI Binder has the following
 additional features:
 
 - Access with academic user accounts: login via [Check-in](../../aai/check-in)
