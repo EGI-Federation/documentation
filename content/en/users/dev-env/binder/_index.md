@@ -31,7 +31,7 @@ additional features:
 - Access to scalable storage: selected storage spaces of EGI DataHub are
   directly available under the `datahub` folder, simplifying the access to shared
   data from Binder notebooks.
-- Guaranteed capacity: environments are guaranteed 2GB of RAM and can reach 4GB
+- Guaranteed capacity: environments have 2GB of RAM guaranteed and can reach 4GB
   as maximum.
 - Persistent sessions: There is no hard limit on the session time per user,
   although sessions will be shut down automatically after 1 hour of inactivity
