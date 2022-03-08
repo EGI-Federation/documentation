@@ -147,7 +147,7 @@ Binder click on the button below:&lt;/p>
 shown in the screenshot below, you can copy the URL shown when the building is
 in progress:&lt;/p>
 &lt;p>&lt;img src="binder-link.png" alt="Binder link">&lt;/p>
-&lt;p>The &lt;a href="https://github.com/binder-examples">binder examples&lt;/a> organization on GitHub
+&lt;p>The &lt;a href="https://github.com/binder-examples">binder examples&lt;/a> organisation on GitHub
 contains more sample repositories for common configurations that can help you
 getting started.&lt;/p>
 &lt;h2 id="accessing-data">Accessing data&lt;/h2>
@@ -157,6 +157,6 @@ notebooks output.&lt;/p>
 &lt;p>Every session that you start will also provide access to your spaces in the
 &lt;a href="../.././data/management/datahub/">DataHub&lt;/a> under a folder named &lt;code>datahub&lt;/code>. Only
 those spaces configured to be mounted locally will be made available
-automatically, Check the documentation for the
+automatically. Check the documentation for the
 &lt;a href="../notebooks/data#egi-datahub">Notebook&amp;rsquo;s DataHub support&lt;/a> for more
 information.&lt;/p></description></item></channel></rss>
