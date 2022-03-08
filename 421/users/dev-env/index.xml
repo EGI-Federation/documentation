@@ -81,7 +81,7 @@ same data analysis using the link in the
 Open Source tool that allows to build docker images from a Git repository and
 then make it available from JupyterHub.&lt;/p>
 &lt;p>EGI Binder offers a service similar to the publicly accessible
-&lt;a href="https://mybinder.org">mybinder.org&lt;/a> site. However EGI Binder has the following
+&lt;a href="https://mybinder.org">mybinder.org&lt;/a> site. However, EGI Binder has the following
 additional features:&lt;/p>
 &lt;ul>
 &lt;li>Access with academic user accounts: login via &lt;a href="../../aai/check-in">Check-in&lt;/a>
