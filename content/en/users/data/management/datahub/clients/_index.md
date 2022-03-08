@@ -3,6 +3,8 @@ title: DataHub Clients
 linkTitle: Clients
 weight: 20
 type: docs
+aliases:
+  - /users/datahub/clients
 description: > 
   Clients for accessing data EGI DataHub
 ---

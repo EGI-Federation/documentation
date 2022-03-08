@@ -1,8 +1,10 @@
 ---
-title: "Sign up for an EGI Account"
+title: Sign up for an EGI Account
 linkTitle: "Sign up"
 type: docs
 weight: 10
+aliases:
+  - /users/check-in/signup
 description: >
   Register an account with Check-in to get access to EGI services
 ---

@@ -3,6 +3,8 @@ title: DataHub Use-Cases
 linkTitle: Use-Cases
 weight: 10
 type: docs
+aliases:
+  - /users/datahub/usecases
 description: >
     Use-cases for EGI DataHub
 ---

@@ -1,7 +1,9 @@
 ---
-title: "GPUs"
+title: GPUs
 type: docs
 weight: 55
+aliases:
+  - /users/cloud-compute/gpgpu
 description: >
   GPU resources in the EGI Cloud
 ---

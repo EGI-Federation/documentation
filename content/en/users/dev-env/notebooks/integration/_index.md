@@ -3,6 +3,8 @@ title: Notebooks Integration with Other Services
 linkTitle: Integration
 weight: 20
 type: docs
+aliases:
+  - /users/notebooks/integration
 description: >
   Access new services from the Notebooks
 ---

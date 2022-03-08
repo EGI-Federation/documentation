@@ -3,6 +3,8 @@ title: EGI Check-in
 linkTitle: Check-in
 type: docs
 weight: 30
+aliases:
+  - /users/check-in
 description: >
   Control access to resources in the EGI Infrastructure
 ---

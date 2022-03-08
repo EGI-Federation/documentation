@@ -1,7 +1,9 @@
 ---
-title: "Linking identities"
+title: Linking Identities
 type: docs
 weight: 20
+aliases:
+  - /users/check-in/linking
 description: >
   Linking additional organisational/social identities to your EGI Account
 ---

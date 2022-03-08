@@ -1,8 +1,10 @@
 ---
-title: "Managing a Virtual Organisation"
+title: Managing a Virtual Organisation
 linkTitle: "Managing a VO"
 type: docs
 weight: 30
+aliases:
+  - /users/check-in/vos
 description: >
   Managing a Virtual Organisation (VO) in Check-in
 ---

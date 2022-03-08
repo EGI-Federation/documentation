@@ -1,7 +1,10 @@
 ---
-title: "EC3 portal"
+title: EC3 Portal
+linkTitle: Portal
 type: docs
 weight: 10
+aliases:
+  - /users/cloud-compute/ec3/portal
 description: >
   Deploy a virtual cluster with EC3 using the portal.
 ---

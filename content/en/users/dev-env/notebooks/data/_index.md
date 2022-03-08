@@ -3,6 +3,8 @@ title: Data Management in Notebooks
 linkTitle: Data Management
 weight: 10
 type: docs
+aliases:
+  - /users/notebooks/data
 description: >
   How to access and manage data in EGI Notebooks
 ---

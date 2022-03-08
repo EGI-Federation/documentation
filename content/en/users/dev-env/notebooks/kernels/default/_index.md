@@ -3,6 +3,8 @@ title: Default Environment
 linkTitle: Default
 type: docs
 weight: 10
+aliases:
+  - /users/notebooks/kernels/default
 description: >
   The default environment in EGI Notebooks
 ---

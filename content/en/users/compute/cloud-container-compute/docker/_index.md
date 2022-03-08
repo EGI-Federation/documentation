@@ -1,7 +1,9 @@
 ---
-title: "Docker VM"
+title: Docker VM
 type: docs
 weight: 20
+aliases:
+  - /users/cloud-container-compute/docker
 description: >
   Run containers on the EGI Cloud on a single VM with Docker
 ---

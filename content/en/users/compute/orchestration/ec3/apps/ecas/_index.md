@@ -1,7 +1,9 @@
 ---
-title: "ECAS"
+title: ECAS
 type: docs
 weight: 10
+aliases:
+  - /users/cloud-compute/ec3/apps/ecas
 description: >
   Using Elastic Cloud Computing Cluster (EC3) platform to create an ECAS
   environment.

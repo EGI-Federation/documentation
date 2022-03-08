@@ -1,8 +1,10 @@
 ---
-title: "Object Storage"
+title: Object Storage
 linkTitle: "Object Storage"
 type: docs
 weight: 30
+aliases:
+  - /users/online-storage/object-storage
 description: >
   Object Storage offered by EGI Cloud providers
 ---

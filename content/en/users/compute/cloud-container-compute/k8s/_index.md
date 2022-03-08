@@ -1,7 +1,9 @@
 ---
-title: "Kubernetes"
+title: Kubernetes
 type: docs
 weight: 20
+aliases:
+  - /users/cloud-container-compute/k8s
 description: >
   Run containers on the EGI Cloud with Kubernetes
 ---

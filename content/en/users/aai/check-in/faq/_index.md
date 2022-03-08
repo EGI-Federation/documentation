@@ -1,9 +1,12 @@
 ---
-title: "FAQ"
+title: Frequently Asked Questions
+linkTitle: FAQ
 type: docs
 weight: 40
+aliases:
+  - /users/check-in/faq
 description: >
-  Frequently Asked Questions
+  Most frequent questions about EGI Check-in
 ---
 
 ## Connect to Check-in an IdP federated in an hub and spoke federations

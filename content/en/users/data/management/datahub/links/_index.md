@@ -3,6 +3,8 @@ title: DataHub Links
 linkTitle: Links
 weight: 40
 type: docs
+aliases:
+  - /users/datahub/links
 description: >
   Links to additonal DataHub resources
 ---
