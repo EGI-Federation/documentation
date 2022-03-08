@@ -101,7 +101,7 @@ in progress:
 
 ![Binder link](binder-link.png)
 
-The [binder examples](https://github.com/binder-examples) organization on GitHub
+The [binder examples](https://github.com/binder-examples) organisation on GitHub
 contains more sample repositories for common configurations that can help you
 getting started.
 
