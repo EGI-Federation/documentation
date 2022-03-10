@@ -108,7 +108,7 @@ getting started.
 ## Accessing data
 
 Your notebooks running in Binder have outgoing internet connectivity, so you can
-connect to external services to bring data in for analysis or deposit the
+connect to external services to bring data in for analysis or deposing the
 notebooks output.
 
 Every session that you start will also provide access to your spaces in the
