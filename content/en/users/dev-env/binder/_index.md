@@ -20,7 +20,7 @@ same data analysis using the link in the
 
 The service builds on [BinderHub](https://github.com/jupyterhub/binderhub), an
 Open Source tool that allows to build docker images from a Git repository and
-then make it available from JupyterHub.
+then make it available through your browser.
 
 EGI Binder offers a service similar to the publicly accessible
 [mybinder.org](https://mybinder.org) site. However, EGI Binder has the following
