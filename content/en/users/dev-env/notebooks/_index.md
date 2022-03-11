@@ -11,30 +11,33 @@ description:
 
 The more you go in data analysis, the more you understand that the most suitable
 tool for coding and visualizing is not pure code, or some integrated development
-environment (IDE), nor data manipulation diagrams (such as workflows or flowcharts).
-From some point on you just need a mix of all these -- that is what _notebook_ platforms
-are, [Jupyter](http://jupyter.org/) being the most popular of them.
+environment (IDE), nor data manipulation diagrams (such as workflows or
+flowcharts). From some point on you just need a mix of all these -- that is what
+_notebook_ platforms are, [Jupyter](http://jupyter.org/) being the most popular
+of them.
 
 ## What is it?
 
-[EGI Notebooks](https://www.egi.eu/services/notebooks/) is a service-like environment
-based on the [Jupyter technology](http://jupyter.org/), offering a
+[EGI Notebooks](https://www.egi.eu/services/notebooks/) is a service-like
+environment based on the [Jupyter technology](http://jupyter.org/), offering a
 **browser-based tool for interactive data analysis**.
 
-The Notebooks environment provides users with _notebooks_ where they can combine text,
-mathematics, computations and rich media output. EGI Notebooks is a multi-user service
-that can scale on demand, being powered by the
-[compute services](https://www.egi.eu/services/cloud-compute/) of the EGI Cloud.
+The Notebooks environment provides users with _notebooks_ where they can combine
+text, mathematics, computations and rich media output. EGI Notebooks is a
+multi-user service that can scale on demand, being powered by the
+[compute services](../../compute/) of EGI.
 
 EGI Notebooks provides the well-known Jupyter interface for notebooks, with the
 following added features:
 
-- Integration with [EGI Check-in](../../aai/check-in/) allows you to login with any
-  EduGAIN or social accounts (e.g. Google, Facebook)
-- Persistent storage associated with each user is available in the notebooks environment
-- Customisable with new notebook environments, expose any existing notebook to your users
-- Can easily use EGI compute and storage services from your notebooks, as your notebooks
-  run on EGI infrastructure
+- Integration with [EGI Check-in](../../aai/check-in/) allows you to login with
+  any EduGAIN or social accounts (e.g. Google, Facebook)
+- Persistent storage associated with each user is available in the notebooks
+  environment
+- Customisable with new notebook environments, expose any existing notebook to
+  your users
+- Can easily use EGI compute and storage services from your notebooks, as your
+  notebooks run on EGI infrastructure
 
 ## Service Modes
 
@@ -78,8 +81,10 @@ EGI currently operates community instances for:
 
 - [D4Science](https://www.d4science.org/). These instances are accessed through
   specific Gateways: [SoBigData](https://sobigdata.d4science.org/),
-  [Blue-Cloud](https://blue-cloud.d4science.org/), [D4Science Services](https://services.d4science.org/) and
+  [Blue-Cloud](https://blue-cloud.d4science.org/),
+  [D4Science Services](https://services.d4science.org/) and
   [EOSC-Pillar](https://eosc-pillar.d4science.org/). Check with
-  [D4Science support](https://www.d4science.org/contact-us) for more information.
+  [D4Science support](https://www.d4science.org/contact-us) for more
+  information.
 - [PaNoSC](https://panosc.eu/). Instance is available
   [here](https://notebooks-panosc.fedcloud-tf.fedcloud.eu)
