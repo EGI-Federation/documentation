@@ -79,7 +79,7 @@ same data analysis using the link in the
 &lt;a href="https://binder.notebooks.egi.eu">EGI Binder&lt;/a> service.&lt;/p>
 &lt;p>The service builds on &lt;a href="https://github.com/jupyterhub/binderhub">BinderHub&lt;/a>, an
 Open Source tool that allows to build docker images from a Git repository and
-then make it available through your browser.&lt;/p>
+then makes them available through your browser.&lt;/p>
 &lt;p>EGI Binder offers a service similar to the publicly accessible
 &lt;a href="https://mybinder.org">mybinder.org&lt;/a> site. However, EGI Binder has the following
 additional features:&lt;/p>
