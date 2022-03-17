@@ -1,26 +1,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Development Environments</title><link>/users/dev-env/</link><description>Recent content in Development Environments on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/dev-env/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Notebooks</title><link>/users/dev-env/notebooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/</guid><description>
 &lt;p>The more you go in data analysis, the more you understand that the most suitable
 tool for coding and visualizing is not pure code, or some integrated development
-environment (IDE), nor data manipulation diagrams (such as workflows or flowcharts).
-From some point on you just need a mix of all these &amp;ndash; that is what &lt;em>notebook&lt;/em> platforms
-are, &lt;a href="http://jupyter.org/">Jupyter&lt;/a> being the most popular of them.&lt;/p>
+environment (IDE), nor data manipulation diagrams (such as workflows or
+flowcharts). From some point on you just need a mix of all these &amp;ndash; that is what
+&lt;em>notebook&lt;/em> platforms are, &lt;a href="http://jupyter.org/">Jupyter&lt;/a> being the most popular
+of them.&lt;/p>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>&lt;a href="https://www.egi.eu/services/notebooks/">EGI Notebooks&lt;/a> is a service-like environment
-based on the &lt;a href="http://jupyter.org/">Jupyter technology&lt;/a>, offering a
+&lt;p>&lt;a href="https://www.egi.eu/services/notebooks/">EGI Notebooks&lt;/a> is a service-like
+environment based on the &lt;a href="http://jupyter.org/">Jupyter technology&lt;/a>, offering a
 &lt;strong>browser-based tool for interactive data analysis&lt;/strong>.&lt;/p>
-&lt;p>The Notebooks environment provides users with &lt;em>notebooks&lt;/em> where they can combine text,
-mathematics, computations and rich media output. EGI Notebooks is a multi-user service
-that can scale on demand, being powered by the
-&lt;a href="https://www.egi.eu/services/cloud-compute/">compute services&lt;/a> of the EGI Cloud.&lt;/p>
+&lt;p>The Notebooks environment provides users with &lt;em>notebooks&lt;/em> where they can combine
+text, mathematics, computations and rich media output. EGI Notebooks is a
+multi-user service that can scale on demand, being powered by the
+&lt;a href="../../compute/">compute services&lt;/a> of EGI.&lt;/p>
 &lt;p>EGI Notebooks provides the well-known Jupyter interface for notebooks, with the
 following added features:&lt;/p>
 &lt;ul>
-&lt;li>Integration with &lt;a href="../../aai/check-in/">EGI Check-in&lt;/a> allows you to login with any
-EduGAIN or social accounts (e.g. Google, Facebook)&lt;/li>
-&lt;li>Persistent storage associated with each user is available in the notebooks environment&lt;/li>
-&lt;li>Customisable with new notebook environments, expose any existing notebook to your users&lt;/li>
-&lt;li>Can easily use EGI compute and storage services from your notebooks, as your notebooks
-run on EGI infrastructure&lt;/li>
+&lt;li>Integration with &lt;a href="../../aai/check-in/">EGI Check-in&lt;/a> allows you to login with
+any EduGAIN or social accounts (e.g. Google, Facebook)&lt;/li>
+&lt;li>Persistent storage associated with each user is available in the notebooks
+environment&lt;/li>
+&lt;li>Customisable with new notebook environments, expose any existing notebook to
+your users&lt;/li>
+&lt;li>Can easily use EGI compute and storage services from your notebooks, as your
+notebooks run on EGI infrastructure&lt;/li>
 &lt;/ul>
 &lt;h2 id="service-modes">Service Modes&lt;/h2>
 &lt;p>We offer different service modes depending on your needs&lt;/p>
@@ -58,11 +61,102 @@ available to the EGI Check-in AAI service).&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://www.d4science.org/">D4Science&lt;/a>. These instances are accessed through
 specific Gateways: &lt;a href="https://sobigdata.d4science.org/">SoBigData&lt;/a>,
-&lt;a href="https://blue-cloud.d4science.org/">Blue-Cloud&lt;/a>, &lt;a href="https://services.d4science.org/">D4Science Services&lt;/a> and
+&lt;a href="https://blue-cloud.d4science.org/">Blue-Cloud&lt;/a>,
+&lt;a href="https://services.d4science.org/">D4Science Services&lt;/a> and
 &lt;a href="https://eosc-pillar.d4science.org/">EOSC-Pillar&lt;/a>. Check with
-&lt;a href="https://www.d4science.org/contact-us">D4Science support&lt;/a> for more information.&lt;/li>
+&lt;a href="https://www.d4science.org/contact-us">D4Science support&lt;/a> for more
+information.&lt;/li>
 &lt;li>&lt;a href="https://panosc.eu/">PaNoSC&lt;/a>. Instance is available
 &lt;a href="https://notebooks-panosc.fedcloud-tf.fedcloud.eu">here&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Users: Binder</title><link>/users/dev-env/binder/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/binder/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>Repeatable, custom computing environments for notebooks&lt;/p></description></item></channel></rss>
+&lt;p>Binder allows the re-creation of a custom computing environment for reproducible
+execution of notebooks (and potentially many other types of applications). Users
+who create their own notebooks in the &lt;a href="../notebooks/">EGI Notebooks&lt;/a>
+to analyze data can easily create a shareable link for those notebooks in the
+form of a GitHub repository. Based on this link, anyone can then reproduce the
+same data analysis using the link in the
+&lt;a href="https://binder.notebooks.egi.eu">EGI Binder&lt;/a> service.&lt;/p>
+&lt;p>The service builds on &lt;a href="https://github.com/jupyterhub/binderhub">BinderHub&lt;/a>, an
+Open Source tool that allows to build docker images from a Git repository and
+then makes them available through your browser.&lt;/p>
+&lt;p>EGI Binder offers a service similar to the publicly accessible
+&lt;a href="https://mybinder.org">mybinder.org&lt;/a> site. However, EGI Binder has the following
+additional features:&lt;/p>
+&lt;ul>
+&lt;li>Access with academic user accounts: login via &lt;a href="../../aai/check-in">Check-in&lt;/a>
+that’s connected to eduGAIN and social media accounts.&lt;/li>
+&lt;li>Access to scalable storage: selected storage spaces of EGI DataHub are
+directly available under the &lt;code>datahub&lt;/code> folder, simplifying the access to shared
+data from Binder notebooks.&lt;/li>
+&lt;li>Guaranteed capacity: environments have 2GB of RAM guaranteed and can reach 4GB
+as maximum.&lt;/li>
+&lt;li>Persistent sessions: There is no hard limit on the session time per user,
+although sessions will be shut down automatically after 1 hour of inactivity
+(see
+&lt;a href="https://mybinder.readthedocs.io/en/latest/about/about.html#using-the-mybinder-org-service">session limitations at the public mybinder.org service&lt;/a>).&lt;/li>
+&lt;li>Access to the rest of EGI services: a personal access token is available in
+the Binder session to interact with the rest of the EGI infrastructure.&lt;/li>
+&lt;li>Community Binder environments: User communities can have their customized
+Binder service instance from EGI, with extra features as requested (such as
+access to GPUs, integration with community specific data repositories and
+services). EGI offers consultancy and support the setup of these instances,
+and provides operational oversight for them.&lt;/li>
+&lt;/ul>
+&lt;h2 id="reproducible-research">Reproducible research&lt;/h2>
+&lt;p>Binder facilitates the sharing and reproducibility of digital data analysis:&lt;/p>
+&lt;ol>
+&lt;li>Users can define their computational analysis in the
+&lt;a href="../notebooks/">EGI Notebooks&lt;/a> service.&lt;/li>
+&lt;li>Once the notebook is ready for publishing, it can be shared in a GitHub
+repository.&lt;/li>
+&lt;li>Optionally, users can use the Zenodo-GitHub integration for generating DOIs
+that can be cited in publications and can be discovered by fellow researchers&lt;/li>
+&lt;li>Anyone can use the link to the GitHub repository or Zenodo DOI to reproduce
+the computational analysis in &lt;a href="https://binder.notebooks.egi.eu">EGI Binder&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="reproduce-flow-binder.png" alt="Reproducible research flow">&lt;/p>
+&lt;h2 id="access-to-the-service">Access to the service&lt;/h2>
+&lt;p>&lt;a href="https://binder.notebooks.egi.eu/">EGI&amp;rsquo;s Binder&lt;/a> has the same access conditions
+as the &lt;a href="../notebooks/#service-modes">centrally operated Notebooks service from EGI&lt;/a>.
+Before using the service, you need to have an EGI account and be a member of
+&lt;a href="../notebooks/#notebooks-for-researchers">one of the supported resource pools&lt;/a>
+(alias Virtual Organisations). Follow the instructions on the
+&lt;a href="https://binder.notebooks.egi.eu">EGI Binder login page&lt;/a> for access&lt;/p>
+&lt;h2 id="creating-a-binder-repository">Creating a Binder repository&lt;/h2>
+&lt;p>Binder starts from a code repository that contains the code or notebook you’d
+like to run and a set of configuration files that specify what’s the exact
+computational environment your code needs to run.&lt;/p>
+&lt;p>Binder then creates a reproducible container using
+&lt;a href="https://github.com/jupyterhub/repo2docker">repo2docker&lt;/a>, and generates a user
+session to interact with the container in the browser.&lt;/p>
+&lt;p>The configuration for building the container supports specifying conda
+environments; installing Python, R and Julia environments; installing additional
+OS packages; and even complete custom Dockerfiles to bring any application to
+the system. The code repository can be hosted on popular git hosting platforms
+like GitHub and GitLab and can also be referenced with a DOI from Zenodo,
+FigShare or Dataverse. You can learn more on the configuration of your
+repository with Binder at the
+&lt;a href="https://mybinder.readthedocs.io/en/latest/">Binder user documentation&lt;/a>&lt;/p>
+&lt;p>You can start by forking the
+&lt;a href="https://github.com/EGI-Federation/binder-example">EGI-Federation/binder-example GitHub repository&lt;/a>
+for creating your own reproducible environment. To run this directly on EGI&amp;rsquo;s
+Binder click on the button below:&lt;/p>
+&lt;p>&lt;a href="https://binder.notebooks.egi.eu/v2/gh/EGI-Federation/binder-example/HEAD">&lt;img src="https://binder.notebooks.egi.eu/badge_logo.svg" alt="Binder">&lt;/a>&lt;/p>
+&lt;p>You can create such link to share your notebooks from the Binder interface, as
+shown in the screenshot below, you can copy the URL shown when the building is
+in progress:&lt;/p>
+&lt;p>&lt;img src="binder-link.png" alt="Binder link">&lt;/p>
+&lt;p>The &lt;a href="https://github.com/binder-examples">binder examples&lt;/a> organisation on GitHub
+contains more sample repositories for common configurations that can help you
+getting started.&lt;/p>
+&lt;h2 id="accessing-data">Accessing data&lt;/h2>
+&lt;p>Your notebooks running in Binder have outgoing internet connectivity, so you can
+connect to external services to bring data in for analysis or deposing the
+notebooks output.&lt;/p>
+&lt;p>Every session that you start will also provide access to your spaces in the
+&lt;a href="../.././data/management/datahub/">DataHub&lt;/a> under a folder named &lt;code>datahub&lt;/code>. Only
+those spaces configured to be mounted locally will be made available
+automatically. Check the documentation for the
+&lt;a href="../notebooks/data#egi-datahub">Notebook&amp;rsquo;s DataHub support&lt;/a> for more
+information.&lt;/p></description></item></channel></rss>

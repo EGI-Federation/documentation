@@ -127,7 +127,7 @@ infrastructures by launching a set of predefined TOSCA templates on top of EGI
 Cloud Compute resources. The dashboard does not provide all the features
 provided by the IM service. In case you need more advanced features use the
 &lt;a href="https://imdocs.readthedocs.io/en/latest/web.html">IM Web interface&lt;/a> or the
-&lt;a href="cli">IM-CLI&lt;/a>.&lt;/p>
+&lt;a href="../cli">IM-CLI&lt;/a>.&lt;/p>
 &lt;p>&lt;img src="dash_login.png" alt="Landing page">&lt;/p>
 &lt;h3 id="login">Login&lt;/h3>
 &lt;p>Users must use &lt;a href="../../../../aai/check-in">EGI Check-in&lt;/a> to log into the

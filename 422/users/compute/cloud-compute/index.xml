@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Federated Cloud Compute</title><link>/users/compute/cloud-compute/</link><description>Recent content in Federated Cloud Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/cloud-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Using OpenStack providers</title><link>/users/compute/cloud-compute/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/openstack/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Federated Cloud Compute</title><link>/users/compute/cloud-compute/</link><description>Recent content in Federated Cloud Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/cloud-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Using OpenStack Providers</title><link>/users/compute/cloud-compute/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/openstack/</guid><description>
 &lt;p>&lt;a href="https://openstack.org">OpenStack&lt;/a> providers of the EGI Cloud Compute service
 offer native OpenStack features via native APIs integrated with EGI Check-in
 accounts.&lt;/p>
@@ -267,7 +267,7 @@ do so (specially do not delete them).&lt;/p>
 &lt;ul>
 &lt;li>Users with VO Manager, VO Deputy or VO Expert Role have extra privileges in
 the AppDB for managing the Virtual Appliances to be available at every
-provider. Check the &lt;a href="../vmi">Virtual Machine Image Management documentation&lt;/a>
+provider. Check the &lt;a href="../images">Virtual Machine Image Management documentation&lt;/a>
 for more information.&lt;/li>
 &lt;/ul>
 &lt;h3 id="pilot-vo">Pilot VO&lt;/h3>
@@ -854,7 +854,7 @@ contextualisation options of the wizard described above).&lt;/p>
 &lt;p>VMOps was presented in one of the &lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>
 in 2020. The &lt;a href="https://indico.egi.eu/event/5272/">indico page&lt;/a> contains more
 details and there is also a video recording available on
-&lt;a href="https://youtu.be/0YuuKA_4pSM">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: FAQ</title><link>/users/compute/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/faq/</guid><description>
+&lt;a href="https://youtu.be/0YuuKA_4pSM">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/compute/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/faq/</guid><description>
 &lt;h2 id="basics">Basics&lt;/h2>
 &lt;h3 id="how-can-i-get-access-to-the-cloud-compute-service">How can I get access to the cloud compute service?&lt;/h3>
 &lt;p>There is a VO available for 6 months piloting activities that any researcher in
@@ -999,7 +999,7 @@ identifiers to use it in practice.&lt;/p>
 &lt;p>There are several ways to increase the disk space available at the VM. The
 fastest and easiest one is to use block storage, creating a new storage disk
 device and attaching it to the VM. Check the
-&lt;a href="../../online-storage">storage guide&lt;/a> for more information.&lt;/p>
+&lt;a href="../../../data/storage">storage guide&lt;/a> for more information.&lt;/p>
 &lt;h3 id="how-can-i-keep-my-data-after-the-vm-is-stopped">How can I keep my data after the VM is stopped?&lt;/h3>
 &lt;p>After a VM has been stopped and unless backed up in a block storage volume, all
 data in the VM is destroyed and cannot be recovered. To ensure your data will be

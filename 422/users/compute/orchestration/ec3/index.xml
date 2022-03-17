@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Elastic Cloud Compute Clusters</title><link>/users/compute/orchestration/ec3/</link><description>Recent content in Elastic Cloud Compute Clusters on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/orchestration/ec3/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EC3 portal</title><link>/users/compute/orchestration/ec3/portal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/portal/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Elastic Cloud Compute Clusters</title><link>/users/compute/orchestration/ec3/</link><description>Recent content in Elastic Cloud Compute Clusters on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/orchestration/ec3/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EC3 Portal</title><link>/users/compute/orchestration/ec3/portal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/portal/</guid><description>
 &lt;h2 id="deploy-cluster">Deploy cluster&lt;/h2>
 &lt;p>Through a &amp;ldquo;job wizard&amp;rdquo; interface the user can login to the
 &lt;a href="https://servproject.i3m.upv.es/ec3-ltos/index.php">Elastic Cloud Compute Cluster (EC3) portal&lt;/a>
@@ -103,7 +103,7 @@ node wn1 successfully disabled
 &lt;li>Cluster logs files are available in &lt;code>/var/tmp/.im/&amp;lt;cluster_id&amp;gt;&lt;/code>&lt;/li>
 &lt;li>IM log files are in &lt;code>/var/log/im/im.log&lt;/code>&lt;/li>
 &lt;li>CLUES log files are in &lt;code>/var/log/clues2/clues2.log&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Users: EC3 CLI</title><link>/users/compute/orchestration/ec3/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/cli/</guid><description>
+&lt;/ul></description></item><item><title>Users: EC3 Command-Line Interface</title><link>/users/compute/orchestration/ec3/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/cli/</guid><description>
 &lt;p>You can find here documentation on how to deploy a sample SLURM cluster, which
 you can then adapt to create other kind of clusters easily.&lt;/p>
 &lt;h2 id="getting-started">Getting started&lt;/h2>
@@ -143,7 +143,7 @@ your cluster:&lt;/p>
 &lt;/ol>
 &lt;p>We will use the &lt;a href="../../../../getting-started/cli">FedCloud client&lt;/a> to discover
 the required information. Set your credentials as shown in
-&lt;a href="../../../../aai/auth/#check-in-and-access-tokens">the authentication guide&lt;/a>
+&lt;a href="../../../../getting-started/cli#authentication">the authentication guide&lt;/a>
 and create the autorisation files needed for ec3 (in this case for CESGA with VO
 vo.access.egi.eu):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">fedcloud ec3 init --site CESGA --vo vo.access.egi.eu
@@ -296,7 +296,7 @@ mycluster configured 193.144.46.234 &lt;span style="color:#0000cf;font-weight:bo
 $ docker run -it -v &lt;span style="color:#000">$PWD&lt;/span>:/root/ -w /root grycap/ec3 destroy mycluster -a auth.dat -y
 WARNING: you are going to delete the infrastructure &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>including frontend and nodes&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
 Success deleting the cluster!
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length --></description></item><item><title>Users: EC3 applications and tools</title><link>/users/compute/orchestration/ec3/apps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/apps/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length --></description></item><item><title>Users: EC3 Applications and Tools</title><link>/users/compute/orchestration/ec3/apps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/apps/</guid><description>
 &lt;p>This section documents how to run some applications and use the existing tools
 with EC3.&lt;/p>
 &lt;h2 id="how-to-run-scientific-applications-in-ec3">How to run scientific applications in EC3&lt;/h2>
@@ -358,7 +358,7 @@ Artificial Intelligence (AI).&lt;/li>
 &lt;h3 id="slurm-cluster">SLURM cluster&lt;/h3>
 &lt;p>To deploy &lt;a href="https://slurm.schedmd.com/documentation.html">SLURM&lt;/a> clusters, please
 select SLURM from the list of available LRMS. See also the dedicated guide on
-&lt;a href="./htc/">HTC clusters&lt;/a>&lt;/p></description></item><item><title>Users: Instructions for developers</title><link>/users/compute/orchestration/ec3/developers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/developers/</guid><description>
+&lt;a href="./htc/">HTC clusters&lt;/a>&lt;/p></description></item><item><title>Users: Instructions for Developers</title><link>/users/compute/orchestration/ec3/developers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/developers/</guid><description>
 &lt;p>This section documents how to integrate a new application in EC3.&lt;/p>
 &lt;h2 id="about">About&lt;/h2>
 &lt;p>The process to integrate a new application in EC3 is described by the

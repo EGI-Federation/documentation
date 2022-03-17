@@ -13,7 +13,8 @@ stack.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>DIRAC / Python 2: A python 2 kernel that includes a DIRAC installation for
-interacting with &lt;a href="../../../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>.&lt;/p>
+interacting with
+&lt;a href="../../../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Julia: The Julia programming language with the libraries described in
@@ -127,8 +128,9 @@ of interoperable and open formats.&lt;/p>
 &lt;p>This &lt;a href="https://www.youtube.com/watch?v=Hbf1yg32sso">short video&lt;/a> and this
 &lt;a href="https://youtu.be/zT9aW1xHCJU?t=167s">webinar&lt;/a> explains how to access EGI Data
 Services from MATLAB in detail. Data from different data providers can be
-accessed from the &lt;a href="../../../../data/management/datahub">DataHub&lt;/a>. More information on Data Management
-from Notebooks and persistent storage can be found &lt;a href="../../data">here&lt;/a>.&lt;/p>
+accessed from the &lt;a href="../../../../data/management/datahub">DataHub&lt;/a>. More
+information on Data Management from Notebooks and persistent storage can be
+found &lt;a href="../../data">here&lt;/a>.&lt;/p>
 &lt;h2 id="matlab-support-for-data-formats">MATLAB support for data formats&lt;/h2>
 &lt;p>MATLAB supports several
 &lt;a href="https://www.mathworks.com/help/matlab/scientific-data.html">scientific&lt;/a> and
@@ -142,7 +144,7 @@ and those from
 &lt;a href="https://www.youtube.com/watch?v=zT9aW1xHCJU&amp;amp;t=2727s">share your data and analyses&lt;/a>
 by sharing your EGI provided persistent storage space with others. Users
 belonging to a specific community can
-&lt;a href="https://docs.egi.eu/users/notebooks/#service-modes">request community Notebooks&lt;/a>.&lt;/p>
+&lt;a href="../#service-modes">request community Notebooks&lt;/a>.&lt;/p>
 &lt;h3 id="interoperability-with-python-and-other-languages">Interoperability with Python and other languages&lt;/h3>
 &lt;p>You can collaborate with users of
 &lt;a href="https://www.mathworks.com/products/matlab/matlab-and-other-programming-languages.html">other languages&lt;/a>
@@ -180,23 +182,4 @@ Toolbox&lt;/p>
 &lt;a href="mailto:enol.fernandez@egi.eu">Enol Fernandez&lt;/a> at EGI for setting up access to
 MATLAB at the site.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Users: Binder</title><link>/users/dev-env/notebooks/kernels/binder/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/kernels/binder/</guid><description>
-&lt;p>EGI offers a Binder instance within the Notebooks service. Binder allows to
-build a custom and shareable computing environment that you can interact with.&lt;/p>
-&lt;p>It builds on &lt;a href="https://github.com/jupyterhub/binderhub">BinderHub&lt;/a>, an Open
-Source tool that allows to build docker images from a Git repository and then
-make it available from JupyterHub.&lt;/p>
-&lt;p>EGI&amp;rsquo;s Binder offers similar features to the publicly available
-&lt;a href="https://mybinder.org/">mybinder.org&lt;/a> with larger capacity available for each
-user.&lt;/p>
-&lt;h2 id="access">Access&lt;/h2>
-&lt;p>&lt;a href="https://binder.notebooks.egi.eu/">EGI&amp;rsquo;s Binder&lt;/a> has the same access conditions
-as the
-&lt;a href="../../#service-modes">centrally operated Notebooks service from EGI&lt;/a>.
-Before using the service, you need to have a valid EGI account and be a member
-of
-&lt;a href="../../#notebooks-for-researchers">one of the supported VOs&lt;/a>.&lt;/p>
-&lt;h2 id="linking-to-egis-binder">Linking to EGI&amp;rsquo;s binder&lt;/h2>
-&lt;p>You can create a link to share your notebooks easily from the Binder interface,
-just copy the URL shown when the building is in progress&lt;/p>
-&lt;p>&lt;img src="binder-link.png" alt="Binder link">&lt;/p></description></item></channel></rss>
+&lt;/ul></description></item></channel></rss>
