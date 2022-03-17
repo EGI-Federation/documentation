@@ -183,7 +183,7 @@ HTC service directly from the EOSC or the EGI Marketplace:&lt;/p>
 Team on shift.&lt;/p>
 &lt;h3 id="before-starting">Before starting&lt;/h3>
 &lt;h4 id="apply-for-your-user-credentials">Apply for your user credentials&lt;/h4>
-&lt;p>DIRAC uses &lt;a href="../check-in/vos/voms">X.509 certificates&lt;/a> to identify and
+&lt;p>DIRAC uses &lt;a href="../../../aai/check-in/vos/voms">X.509 certificates&lt;/a> to identify and
 authenticate users. These certificates are delivered to each individual by
 trusted certification authorities. If you have a personal certificate issued by
 a &lt;a href="http://www.eugridpma.org/">EUGridPMA-certified&lt;/a> authority you can use it for

@@ -637,7 +637,7 @@ attributes that are relevant for user authorisation:&lt;/p>
 &lt;h3 id="references">References&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://shibboleth.atlassian.net/wiki/spaces/SP3/overview">Shibboleth Service Provider Documentation&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://simplesamlphp.org/docs/stable/simplesamlphp-sp">SimpleSAMLphp Service Provider QuickStart&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://simplesamlphp.org/docs/latest/simplesamlphp-sp.html">SimpleSAMLphp Service Provider QuickStart&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/latchset/mod_auth_mellon">Simple SAML 2.0 service provider with mod_auth_mellon Apache module&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="openid-connect-service-provider">OpenID Connect Service Provider&lt;/h2>
@@ -1269,7 +1269,7 @@ user authorisation:&lt;/p>
 &lt;p>This guide assumes the Apache HTTP server has been installed and the document
 root is &lt;code>/var/www/html&lt;/code>&lt;/p>
 &lt;p>Move to the apache document root and download and extract
-&lt;a href="https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php-v2.0.0.zip">simple-oidc-client-php-v2.0.0.zip&lt;/a>.&lt;/p>
+&lt;a href="https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php.tar.gz">simple-oidc-client-php.tar.gz&lt;/a>.&lt;/p>
 &lt;h4 id="configure-client">Configure Client&lt;/h4>
 &lt;p>Login to the &lt;a href="https://aai.egi.eu/federation">EGI Federation Registry&lt;/a>&lt;/p>
 &lt;p>Then create a new service or edit your existing service. In &lt;code>General&lt;/code> tab fill
@@ -1479,7 +1479,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;code>ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -1538,7 +1538,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>John Doe&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;code>John Doe&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -1597,7 +1597,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>John&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;code>John&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -1656,7 +1656,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>Doe&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;code>Doe&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -1715,7 +1715,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>jdoe&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;code>jdoe&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -1774,7 +1774,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>john.doe@example.org&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;code>john.doe@example.org&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -1833,7 +1833,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>true&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;code>true&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -1892,7 +1892,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>&lt;em>john.doe@example.org&lt;/em>&lt;/li>&lt;li>&lt;em>jdoe@example.com&lt;/em>&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>&lt;code>john.doe@example.org&lt;/code>&lt;/li>&lt;li>&lt;code>jdoe@example.com&lt;/code>&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -1951,7 +1951,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>member@example.org&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>&lt;code>member@example.org&lt;/code>&lt;/li>&lt;li>&lt;code>faculty@example.org&lt;/code>&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -2010,7 +2010,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>&lt;code>urn:mace:egi.eu:aai.egi.eu:member@fedcloud.egi.eu&lt;/code>&lt;/li>&lt;li>&lt;code>urn:mace:egi.eu:aai.egi.eu:vm_operator@fedcloud.egi.eu&lt;/code>&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -2069,7 +2069,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>urn:mace:egi.eu:res:rcauth#aai.egi.eu&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>&lt;code>urn:mace:egi.eu:res:rcauth#aai.egi.eu&lt;/code>&lt;/li>&lt;li>&lt;code>urn:mace:egi.eu:res:gocdb#aai.egi.eu&lt;/code>&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -2128,7 +2128,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>urn:mace:egi.eu:goc.egi.eu:100453G0:GRIDOPS-CheckIn:Site+Administrator@egi.eu&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>&lt;code>urn:mace:egi.eu:goc.egi.eu:100453G0:GRIDOPS-CheckIn:Site+Administrator@egi.eu&lt;/code>&lt;/li>&lt;li>&lt;code>urn:mace:egi.eu:goc.egi.eu:92503G08:GRIDOPS-MON:Site+Operations+Manager@egi.eu&lt;/code>&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -2187,7 +2187,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;em>[&lt;code>https://aai.egi.eu/LoA#Low&lt;/code>, &lt;code>https://refeds.org/assurance/IAP/low&lt;/code>]&lt;/em>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>&lt;code>https://aai.egi.eu/LoA#Low&lt;/code>&lt;/li>&lt;li>&lt;code>https://refeds.org/assurance/IAP/low&lt;/code>&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -2246,7 +2246,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;code>{&amp;quot;cert_entitlement&amp;quot;: [{&amp;quot;cert_subject_dn&amp;quot;: &amp;quot;/C=GR/O=HellasGrid/...&amp;quot;,&amp;quot;cert_iss&amp;quot;: &amp;quot;/C=GR/O=HellasGrid/...&amp;quot;,&amp;quot;eduperson_entitlement&amp;quot;: &amp;quot;urn:mace:egi.eu:group:checkin-integration:role=VO-Admin#aai.egi.eu&amp;quot;}]}&lt;/code>&lt;/td>
+&lt;td style="text-align:left">&lt;code>[{&amp;quot;cert_subject_dn&amp;quot;: &amp;quot;/C=GR/O=HellasGrid/...&amp;quot;,&amp;quot;cert_iss&amp;quot;: &amp;quot;/C=GR/O=HellasGrid/...&amp;quot;,&amp;quot;eduperson_entitlement&amp;quot;: &amp;quot;urn:mace:egi.eu:group:checkin-integration:role=VO-Admin#aai.egi.eu&amp;quot;}]&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
@@ -2305,7 +2305,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;code>ssh-rsa AAAAB3NzaC...qxxEEipdnZ nikosev@grnet-hq.admin.grnet.gr&lt;/code>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>&lt;code>ssh-rsa AAAAB3NzaC...qxxEEipdnZ nikosev@grnet-hq.admin.grnet.gr&lt;/code>&lt;/li>&lt;li>&lt;code>ssh-rsa AAAA4xzdIf...fxgsRDfgAt nikosev@example.org&lt;/code>&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
