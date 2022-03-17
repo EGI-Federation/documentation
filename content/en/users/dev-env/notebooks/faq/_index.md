@@ -3,6 +3,8 @@ title: Frequently Asked Questions
 linkTitle: FAQ
 weight: 40
 type: docs
+aliases:
+  - /users/notebooks/faq
 description: >
   Most frequent questions asled about EGI Notebooks
 ---

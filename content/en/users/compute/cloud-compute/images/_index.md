@@ -3,6 +3,8 @@ title: Virtual Machine Images
 linkTitle: Images
 type: docs
 weight: 30
+aliases:
+  - /users/cloud-compute/vmi
 description: >
   Managing VM images in the EGI Cloud
 ---

@@ -3,6 +3,8 @@ title: "Joining a Virtual Organisation"
 linkTitle: "Joining a VO"
 type: docs
 weight: 25
+aliases:
+  - /users/check-in/joining-virtual-organisation
 description: >
   Joining a Virtual Organisation (VO) in Check-in
 ---

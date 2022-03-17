@@ -1,7 +1,9 @@
 ---
-title: "High Throughput Compute"
+title: High Throughput Compute
 type: docs
 weight: 30
+aliases:
+  - /users/high-throughput-compute
 description: >
   EGI High Throughput Compute service
 ---

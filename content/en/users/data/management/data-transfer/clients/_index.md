@@ -1,8 +1,10 @@
 ---
 title: Data Tranfer Clients
 linkTitle: Clients
-weight: 20
 type: docs
+weight: 20
+aliases:
+  - /users/data-transfer/clients
 description: >
   Clients for accessing EGI Data Transfer
 ---

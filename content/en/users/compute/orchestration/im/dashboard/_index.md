@@ -2,6 +2,8 @@
 title: Infrastructure Manager Dashboard
 linkTitle: Dashboard
 type: docs
+aliases:
+  - /users/cloud-compute/im/dashboard
 weight: 30
 description: >
   The dashboard of Infrastructure Manager
@@ -32,7 +34,7 @@ infrastructures by launching a set of predefined TOSCA templates on top of EGI
 Cloud Compute resources. The dashboard does not provide all the features
 provided by the IM service. In case you need more advanced features use the
 [IM Web interface](https://imdocs.readthedocs.io/en/latest/web.html) or the
-[IM-CLI](cli).
+[IM-CLI](../cli).
 
 ![Landing page](dash_login.png)
 

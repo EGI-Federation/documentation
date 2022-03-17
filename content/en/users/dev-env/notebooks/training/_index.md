@@ -3,6 +3,8 @@ title: Notebooks Training Instance
 title: Training Instance
 weight: 30
 type: docs
+aliases:
+  - /users/notebooks/training
 description: >
   Notebooks for training events
 ---

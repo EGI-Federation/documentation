@@ -3,6 +3,8 @@ title: Infrastructure Manager Command-Line Interface
 linkTitle: Command Line
 type: docs
 weight: 20
+aliases:
+  - /users/cloud-compute/im/cli
 description: >
   Getting started with the command-line interface of Infrastructure Manager
 ---

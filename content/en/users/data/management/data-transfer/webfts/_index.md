@@ -2,6 +2,8 @@
 title: Data Transfer Web Interface
 linkTitle: Web Interface
 weight: 10
+aliases:
+  - /users/data-transfer/webfts
 type: docs
 description: >
     The web interface of EGI Data Transfer

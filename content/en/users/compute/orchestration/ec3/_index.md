@@ -3,6 +3,8 @@ title: Elastic Cloud Compute Clusters
 linkTitle: Cloud Compute Clusters
 type: docs
 weight: 20
+aliases:
+  - /users/cloud-compute/ec3
 description: >
   Working with Elastic Cloud Compute Clusters in the EGI Cloud
 ---

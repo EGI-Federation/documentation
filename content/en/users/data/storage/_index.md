@@ -2,6 +2,8 @@
 title: Online Storage
 type: docs
 weight: 10
+aliases:
+  - /users/online-storage
 description: >
   Data storage services in the EGI infrastructure
 ---
