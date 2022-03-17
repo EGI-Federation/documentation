@@ -1269,7 +1269,7 @@ user authorisation:&lt;/p>
 &lt;p>This guide assumes the Apache HTTP server has been installed and the document
 root is &lt;code>/var/www/html&lt;/code>&lt;/p>
 &lt;p>Move to the apache document root and download and extract
-&lt;a href="https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php.tar.gz">simple-oidc-client-php-v2.0.0.zip&lt;/a>.&lt;/p>
+&lt;a href="https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php.tar.gz">simple-oidc-client-php.tar.gz&lt;/a>.&lt;/p>
 &lt;h4 id="configure-client">Configure Client&lt;/h4>
 &lt;p>Login to the &lt;a href="https://aai.egi.eu/federation">EGI Federation Registry&lt;/a>&lt;/p>
 &lt;p>Then create a new service or edit your existing service. In &lt;code>General&lt;/code> tab fill
