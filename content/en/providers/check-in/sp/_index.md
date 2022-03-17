@@ -773,7 +773,7 @@ This guide assumes the Apache HTTP server has been installed and the document
 root is `/var/www/html`
 
 Move to the apache document root and download and extract
-[simple-oidc-client-php-v2.0.0.zip](https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php.tar.gz).
+[simple-oidc-client-php.tar.gz](https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php.tar.gz).
 
 #### Configure Client
 
