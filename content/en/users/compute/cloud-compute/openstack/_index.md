@@ -1,7 +1,9 @@
 ---
-title: "Using OpenStack providers"
+title: Using OpenStack Providers
 type: docs
 weight: 10
+aliases:
+  - /users/cloud-compute/openstack
 description: >
   How to interact with the OpenStack providers APIs in the EGI Cloud
 ---

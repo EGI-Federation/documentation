@@ -2,6 +2,8 @@
 title: Data Transfer
 type: docs
 weight: 30
+aliases:
+  - /users/data-transfer
 description:
   Very large data transfers in the EGI infrastructure
 ---

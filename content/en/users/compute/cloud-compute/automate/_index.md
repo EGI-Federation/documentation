@@ -1,5 +1,5 @@
 ---
-title: "Automating Deployments"
+title: Automating Deployments
 type: docs
 weight: 70
 description: >

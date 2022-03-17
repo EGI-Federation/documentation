@@ -3,6 +3,8 @@ title: EGI Workload Manager
 linkTitle: Workload Manager
 type: docs
 weight: 50
+aliases:
+  - /users/workload-manager
 description: >
   Distribute and manage workloads in the EGI infrastructure
 ---
@@ -130,7 +132,7 @@ Team on shift.
 
 #### Apply for your user credentials
 
-DIRAC uses [X.509 certificates](../check-in/vos/voms) to identify and
+DIRAC uses [X.509 certificates](../../../aai/check-in/vos/voms) to identify and
 authenticate users. These certificates are delivered to each individual by
 trusted certification authorities. If you have a personal certificate issued by
 a [EUGridPMA-certified](http://www.eugridpma.org/) authority you can use it for

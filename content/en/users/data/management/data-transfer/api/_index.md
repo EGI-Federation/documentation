@@ -3,6 +3,8 @@ title: Data Transfer API
 linkTitle: API
 weight: 30
 type: docs
+aliases:
+  - /users/data-transfer/api
 description: >
   The Application Programming Interface of EGI Data Transfer
 ---

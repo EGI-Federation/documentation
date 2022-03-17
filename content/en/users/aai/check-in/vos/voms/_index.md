@@ -1,8 +1,10 @@
 ---
-title: "VOMS"
-linkTitle: "VOMS"
+title: VOMS
+linkTitle: VOMS
 type: docs
 weight: 100
+aliases:
+  - /users/check-in/faq/vos/voms
 description: >
   X.509 / VOMS based authentication and authorisation
 ---

@@ -1,7 +1,9 @@
 ---
-title: "Monitoring and Management"
+title: Monitoring and Management
 type: docs
 weight: 70
+aliases:
+  - /users/cloud-compute/vmops
 description: >
   Use VMOPs Dashboard to monitor and manage VMs in the EGI Cloud
 ---
