@@ -726,7 +726,7 @@ information.&lt;/p>
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Integration via
 &lt;a href="https://openid.net/connect">OpenID Connect&lt;/a> to the
-&lt;a href="../../aai/check-in">EGI Check-in service&lt;/a> is under piloting at some of the
+&lt;a href="../../../aai/check-in">EGI Check-in service&lt;/a> is under piloting at some of the
 endpoints of the EGI Cloud infrastructure , but it has not yet reached the
 production stage.
 &lt;/div>

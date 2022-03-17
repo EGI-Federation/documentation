@@ -103,7 +103,7 @@ Check the &lt;a href="../joining-virtual-organisation">guide about VOs&lt;/a> fo
 &lt;h2 id="next-steps">Next steps&lt;/h2>
 &lt;p>Once your Check-in account is ready you can check
 &lt;a href="../linking">how to link it with different identities&lt;/a> or
-&lt;a href="../joining-virtual-organisation">how to join an existing Virtual Organisation (VO)&lt;/a>.&lt;/p></description></item><item><title>Users: Linking identities</title><link>/users/aai/check-in/linking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/linking/</guid><description>
+&lt;a href="../joining-virtual-organisation">how to join an existing Virtual Organisation (VO)&lt;/a>.&lt;/p></description></item><item><title>Users: Linking Identities</title><link>/users/aai/check-in/linking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/linking/</guid><description>
 &lt;!--
 // jscpd:ignore-start
 -->
@@ -1020,7 +1020,7 @@ access to. Only VO managers can request LDAP credentials for a given VO.&lt;/p>
 &lt;td>&lt;code>voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Users: FAQ</title><link>/users/aai/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/faq/</guid><description>
+&lt;/table></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/aai/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/faq/</guid><description>
 &lt;h2 id="connect-to-check-in-an-idp-federated-in-an-hub-and-spoke-federations">Connect to Check-in an IdP federated in an hub and spoke federations&lt;/h2>
 &lt;!-- markdownlint-disable line-length -->
 &lt;h3 id="i-get-an-error-similar-to-error---no-connection-between-institution-and-service-surfconext-example">I get an error similar to: &amp;ldquo;Error - No connection between institution and service&amp;rdquo; (SURFconext example)&lt;/h3>
