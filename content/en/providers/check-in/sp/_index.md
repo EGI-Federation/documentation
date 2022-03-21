@@ -1190,6 +1190,8 @@ connected to Check-in.
 |               **notes** | -                                                                                                                                                 |
 |              **status** | Experimental                                                                                                                                      |
 
+<!-- textlint-disable -->
+
 ### 16. ORCID iD
 
 |          attribute name | ORCID iD                                               |
@@ -1207,6 +1209,7 @@ connected to Check-in.
 |               **notes** | The attribute is available when logging in using ORCID |
 |              **status** | Experimental                                           |
 
+<!-- textlint-enable -->
 <!-- markdownlint-enable line-length no-inline-html -->
 
 ## User authorisation
