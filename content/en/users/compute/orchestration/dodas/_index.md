@@ -1,11 +1,10 @@
 ---
 title: Dynamic On-Demand Analysis Software
 linkTitle: Dynamic On-Demand Analysis Software
-draft: true
 type: docs
 weight: 40
 description: >
-  Subtitle here
+   Instantiate on-demand customizable infrastructures for data analysis 
 ---
 
 ## What is it?
