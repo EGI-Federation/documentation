@@ -1190,6 +1190,26 @@ connected to Check-in.
 |               **notes** | -                                                                                                                                                 |
 |              **status** | Experimental                                                                                                                                      |
 
+<!-- textlint-disable -->
+
+### 16. ORCID iD
+
+|          attribute name | ORCID iD                                               |
+| ----------------------: | :----------------------------------------------------- |
+|         **description** | Provides information about the user's ORCID iD         |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.16` (eduPersonOrcid)   |
+|          **OIDC scope** | `orcid`                                                |
+|       **OIDC claim(s)** | `orcid`                                                |
+| **OIDC claim location** | Userinfo endpoint                                      |
+|              **origin** | ORCID Identity Provider                                |
+|             **changes** | No                                                     |
+|        **multiplicity** | Single-valued                                          |
+|        **availability** | Not always                                             |
+|             **example** | `https://orcid.org/XXXX-XXXX-XXXX-XXXX`                |
+|               **notes** | The attribute is available when logging in using ORCID |
+|              **status** | Experimental                                           |
+
+<!-- textlint-enable -->
 <!-- markdownlint-enable line-length no-inline-html -->
 
 ## User authorisation
