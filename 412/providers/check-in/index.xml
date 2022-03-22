@@ -2317,6 +2317,67 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;!-- textlint-disable -->
+&lt;h3 id="16-orcid-id">16. ORCID iD&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:right">attribute name&lt;/th>
+&lt;th style="text-align:left">ORCID iD&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>description&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Provides information about the user&amp;rsquo;s ORCID iD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>SAML Attribute(s)&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">&lt;code>urn:oid:1.3.6.1.4.1.5923.1.1.1.16&lt;/code> (eduPersonOrcid)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>OIDC scope&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">&lt;code>orcid&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>OIDC claim(s)&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">&lt;code>orcid&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Userinfo endpoint&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">ORCID Identity Provider&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>changes&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>multiplicity&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Single-valued&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>availability&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Not always&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>example&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">&lt;code>https://orcid.org/XXXX-XXXX-XXXX-XXXX&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>notes&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">The attribute is available when logging in using ORCID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:right">&lt;strong>status&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">Experimental&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- textlint-enable -->
 &lt;!-- markdownlint-enable line-length no-inline-html -->
 &lt;h2 id="user-authorisation">User authorisation&lt;/h2>
 &lt;p>The following information about the authenticated user can be provided by EGI
