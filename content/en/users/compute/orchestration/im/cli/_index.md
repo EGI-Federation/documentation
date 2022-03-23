@@ -71,7 +71,7 @@ access tokens, by visiting [Check-in FedCloud client](https://aai.egi.eu/fedclou
 a valid access token:
 
 ```shell
-type = InfrastructureManager; token = command(oidc-token OIDC_ACCOUNT)
+id = im; type = InfrastructureManager; token = command(oidc-token OIDC_ACCOUNT)
 id = egi; type = EGI; host = SCAI; vo = vo.access.egi.eu; token = command(oidc-token OIDC_ACCOUNT)
 ```
 
