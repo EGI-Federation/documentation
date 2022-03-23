@@ -199,8 +199,8 @@ Once the VM is booted we can access it via SSH using the `ssh` operation:
 $ im_client.py ssh 457273ea-85e4-11ec-aa81-faaae69bc911
 ```
 
-In case of having used a TOSCA yaml document to create the infrastructure
-we can also get the TOSCA output values with the `getoutputs` operation:
+When using a TOSCA yaml document to create the infrastructure,
+we can get the TOSCA output values with the `getoutputs` operation:
 
 ```shell
 $ im_client.py getoutputs 457273ea-85e4-11ec-aa81-faaae69bc911
