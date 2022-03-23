@@ -130,7 +130,7 @@ topology_template:
             network_name: PUBLIC
         host:
           properties:
-            num_cpus: 1
+            num_cpus: 2
             mem_size: 1 GB
         os:
           properties:
