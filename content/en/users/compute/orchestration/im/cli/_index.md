@@ -49,10 +49,10 @@ auth_file=auth.dat
 
 ### Authentication data file
 
-To access the IM service an authentication file must be created. It must have
+An authentication file must be created to access the IM service. It must have
 one line per authentication element. **It must have at least one line with the
-authentication data for the IM service** and another one for the Cloud/s
-provider/s the user want to access. Each line of the file is composed by pairs
+authentication data for the IM service** and another one for the Cloud
+provider(s) the user want to access. Each line of the file is composed by pairs
 of key and value separated by semicolon, and refers to a single credential. The
 key and value should be separated by ` = `, that is an equals sign preceded and
 followed by one whitespace at least. The following lines shows the credentials
