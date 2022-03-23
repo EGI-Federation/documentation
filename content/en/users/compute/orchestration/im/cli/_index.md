@@ -131,7 +131,7 @@ topology_template:
         host:
           properties:
             num_cpus: 2
-            mem_size: 1 GB
+            mem_size: 4 GB
         os:
           properties:
             image: appdb://SCAI/egi.ubuntu.20.04?vo.access.egi.eu
