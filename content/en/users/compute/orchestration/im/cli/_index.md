@@ -91,11 +91,11 @@ using the EGI Ubuntu 20.04 image.
 network public (outbound = 'yes')
 
 system node (
-cpu.count>=1 and
-memory.size>=1g and
+cpu.count>=2 and
+memory.size>=4g and
 net_interface.0.connection = 'public' and
 disk.0.os.name='linux' and
-disk.0.image.url = 'appdb://egi.ubuntu.20.04?vo.access.egi.eu' and
+disk.0.image.url = 'appdb://SCAI/egi.ubuntu.20.04?vo.access.egi.eu' and
 )
 
 configure wn (
