@@ -49,8 +49,10 @@ auth_file=auth.dat
 
 ### Authentication data file
 
-The authorisation file stores, in plain text, the credentials used to access the
-cloud providers, and the IM service. Each line of the file is composed by pairs
+To access the IM service an authentication file must be created. It must have
+one line per authentication element. **It must have at least one line with the
+authentication data for the IM service** and another one for the Cloud/s
+provider/s the user want to access. Each line of the file is composed by pairs
 of key and value separated by semicolon, and refers to a single credential. The
 key and value should be separated by ` = `, that is an equals sign preceded and
 followed by one whitespace at least. The following lines shows the credentials
@@ -69,6 +71,7 @@ access tokens, by visiting [Check-in FedCloud client](https://aai.egi.eu/fedclou
 a valid access token:
 
 ```shell
+type = InfrastructureManager; token = command(oidc-token OIDC_ACCOUNT)
 id = egi; type = EGI; host = CESGA; vo = vo.access.egi.eu; token = command(oidc-token OIDC_ACCOUNT)
 ```
 
@@ -106,7 +109,42 @@ configure wn (
 deploy node 1
 ```
 
-Then we can call the `create` operation of the IM client tool:
+IM also supports TOSCA. For example this is an equivalent TOSCA document to
+deploy a single VM::
+
+```yaml
+tosca_definitions_version: tosca_simple_yaml_1_0
+
+imports:
+- indigo_custom_types: https://raw.githubusercontent.com/indigo-dc/tosca-types/master/custom_types.yaml
+
+topology_template:
+
+node_templates:
+
+    simple_node:
+      type: tosca.nodes.indigo.Compute
+      capabilities:
+        endpoint:
+          properties:
+            network_name: PUBLIC
+        host:
+          properties:
+            num_cpus: 1
+            mem_size: 1 GB
+        os:
+          properties:
+            image: appdb://egi.ubuntu.20.04?vo.access.egi.eu
+
+outputs:
+  node_ip:
+    value: { get_attribute: [ simple_node, public_address, 0 ] }
+  node_creds:
+    value: { get_attribute: [ simple_node, endpoint, credential, 0 ] }
+```
+
+Then we can call the `create` operation of the IM client tool using the a radl
+or a TOSCA yaml file:
 
 ```shell
 $ im_client.py create infra.radl
@@ -159,6 +197,18 @@ Once the VM is booted we can access it via SSH using the `ssh` operation:
 
 ```shell
 $ im_client.py ssh 457273ea-85e4-11ec-aa81-faaae69bc911
+```
+
+In case of having used a TOSCA yaml document to create the infrastructure
+we can also get the TOSCA output values with the `getoutputs` operation:
+
+```shell
+$ im_client.py getoutputs 457273ea-85e4-11ec-aa81-faaae69bc911
+Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
+The infrastructure outputs:
+
+node_ip = 8.8.8.8
+node_creds = {'token': '...', 'user': 'cloudadm', 'token_type': 'private_key'}
 ```
 
 Once we no more need the Infrastructure, we can destroy it using the `destroy`
