@@ -110,7 +110,7 @@ deploy node 1
 ```
 
 IM also supports TOSCA. For example this is an equivalent TOSCA document to
-deploy a single VM::
+deploy a single VM:
 
 ```yaml
 tosca_definitions_version: tosca_simple_yaml_1_0
