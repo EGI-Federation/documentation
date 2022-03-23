@@ -120,7 +120,7 @@ imports:
 
 topology_template:
 
-node_templates:
+  node_templates:
 
     simple_node:
       type: tosca.nodes.indigo.Compute
@@ -136,11 +136,11 @@ node_templates:
           properties:
             image: appdb://egi.ubuntu.20.04?vo.access.egi.eu
 
-outputs:
-  node_ip:
-    value: { get_attribute: [ simple_node, public_address, 0 ] }
-  node_creds:
-    value: { get_attribute: [ simple_node, endpoint, credential, 0 ] }
+  outputs:
+    node_ip:
+      value: { get_attribute: [ simple_node, public_address, 0 ] }
+    node_creds:
+      value: { get_attribute: [ simple_node, endpoint, credential, 0 ] }
 ```
 
 Then we can call the `create` operation of the IM client tool using the a radl
