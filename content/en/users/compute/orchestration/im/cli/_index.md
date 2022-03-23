@@ -134,7 +134,7 @@ topology_template:
             mem_size: 1 GB
         os:
           properties:
-            image: appdb://egi.ubuntu.20.04?vo.access.egi.eu
+            image: appdb://SCAI/egi.ubuntu.20.04?vo.access.egi.eu
 
   outputs:
     node_ip:
