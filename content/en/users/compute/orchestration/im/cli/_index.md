@@ -72,7 +72,7 @@ a valid access token:
 
 ```shell
 type = InfrastructureManager; token = command(oidc-token OIDC_ACCOUNT)
-id = egi; type = EGI; host = CESGA; vo = vo.access.egi.eu; token = command(oidc-token OIDC_ACCOUNT)
+id = egi; type = EGI; host = SCAI; vo = vo.access.egi.eu; token = command(oidc-token OIDC_ACCOUNT)
 ```
 
 ### Create and Manage an infrastructure
