@@ -26,6 +26,8 @@ a wide variety of backends, either federated (such as
 thus making user applications cloud agnostic.
 IM features a [web-based GUI](https://appsgrycap.i3m.upv.es:31443/im-dashboard/),
 an XML-RPC API, a REST API and a [command-line interface](cli) (CLI).
+It supports
+[OASIS TOSCA Simple Profile in YAML](http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html).
 
 {{% alert title="Tip" color="info" %}} An easy way to deploy your first VM
 in the EGI Federation is from the
