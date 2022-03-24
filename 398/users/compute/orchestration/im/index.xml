@@ -21,8 +21,10 @@ parameters:&lt;/p>
 &lt;span style="color:#c4a000">restapi_url&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">https://appsgrycap.i3m.upv.es:31443/im&lt;/span>
 &lt;span style="color:#c4a000">auth_file&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">auth.dat&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="authentication-data-file">Authentication data file&lt;/h3>
-&lt;p>The authorisation file stores, in plain text, the credentials used to access the
-cloud providers, and the IM service. Each line of the file is composed by pairs
+&lt;p>An authentication file must be created to access the IM service. It must have
+one line per authentication element. &lt;strong>It must have at least one line with the
+authentication data for the IM service&lt;/strong> and another one for the Cloud
+provider(s) the user want to access. Each line of the file is composed by pairs
 of key and value separated by semicolon, and refers to a single credential. The
 key and value should be separated by &lt;code>=&lt;/code>, that is an equals sign preceded and
 followed by one whitespace at least. The following lines shows the credentials
@@ -34,7 +36,8 @@ access token. Users of EGI Check-in can get all the information needed to obtain
 access tokens, by visiting &lt;a href="https://aai.egi.eu/fedcloud/">Check-in FedCloud client&lt;/a>.&lt;/p>
 &lt;p>&lt;a href="https://indigo-dc.gitbook.io/oidc-agent/">oidc-agent&lt;/a> can be used to get
 a valid access token:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">id&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> egi&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> EGI&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> CESGA&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> vo.access.egi.eu&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> command&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>oidc-token OIDC_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">id&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> im&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> InfrastructureManager&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> command&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>oidc-token OIDC_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">id&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> egi&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> EGI&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> SCAI&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> vo.access.egi.eu&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> command&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>oidc-token OIDC_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="create-and-manage-an-infrastructure">Create and Manage an infrastructure&lt;/h3>
 &lt;p>To create a virtual infrastructure you have to describe a file documenting
 the required resources. IM supports its native language
@@ -46,11 +49,11 @@ You can find some examples in the
 using the EGI Ubuntu 20.04 image.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">network public &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000">outbound&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;yes&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 system node &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>
-cpu.count&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> and
-memory.size&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1g and
+cpu.count&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> and
+memory.size&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>4g and
 net_interface.0.connection &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;public&amp;#39;&lt;/span> and
 disk.0.os.name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;linux&amp;#39;&lt;/span> and
-disk.0.image.url &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;appdb://egi.ubuntu.20.04?vo.access.egi.eu&amp;#39;&lt;/span> and
+disk.0.image.url &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;appdb://SCAI/egi.ubuntu.20.04?vo.access.egi.eu&amp;#39;&lt;/span> and
 &lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 configure wn &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>
 @begin
@@ -60,7 +63,38 @@ configure wn &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>
 @end
 &lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 deploy node &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then we can call the &lt;code>create&lt;/code> operation of the IM client tool:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>IM also supports TOSCA. For example this is an equivalent TOSCA document to
+deploy a single VM:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">tosca_definitions_version&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tosca_simple_yaml_1_0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">imports&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>- &lt;span style="color:#204a87;font-weight:bold">indigo_custom_types&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://raw.githubusercontent.com/indigo-dc/tosca-types/master/custom_types.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">topology_template&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">node_templates&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">simple_node&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">type&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tosca.nodes.indigo.Compute&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">capabilities&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">properties&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">network_name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">PUBLIC&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">host&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">properties&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">num_cpus&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">mem_size&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">4&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GB&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">os&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">properties&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">image&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">appdb://SCAI/egi.ubuntu.20.04?vo.access.egi.eu&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">outputs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">node_ip&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">value&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>{&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">get_attribute&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">simple_node, public_address, 0 ] }&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">node_creds&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">value&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>{&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">get_attribute&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">simple_node, endpoint, credential, 0 ] }&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then we can call the &lt;code>create&lt;/code> operation of the IM client tool using the a radl
+or a TOSCA yaml file:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ im_client.py create infra.radl
 Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
 Infrastructure successfully created with ID: 457273ea-85e4-11ec-aa81-faaae69bc911
@@ -97,6 +131,13 @@ Launch task: wait_all_ssh
 ...
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Once the VM is booted we can access it via SSH using the &lt;code>ssh&lt;/code> operation:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ im_client.py ssh 457273ea-85e4-11ec-aa81-faaae69bc911
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When using a TOSCA yaml document to create the infrastructure,
+we can get the TOSCA output values with the &lt;code>getoutputs&lt;/code> operation:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ im_client.py getoutputs 457273ea-85e4-11ec-aa81-faaae69bc911
+Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
+The infrastructure outputs:
+&lt;span style="color:#000">node_ip&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> 8.8.8.8
+&lt;span style="color:#000">node_creds&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;token&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;...&amp;#39;&lt;/span>, &lt;span style="color:#4e9a06">&amp;#39;user&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;cloudadm&amp;#39;&lt;/span>, &lt;span style="color:#4e9a06">&amp;#39;token_type&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;private_key&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Once we no more need the Infrastructure, we can destroy it using the &lt;code>destroy&lt;/code>
 operation:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ im_client.py destroy 457273ea-85e4-11ec-aa81-faaae69bc911
