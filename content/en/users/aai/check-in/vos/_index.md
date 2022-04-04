@@ -346,6 +346,13 @@ $ export CO_ID=2
 {{< /tabx >}}
 {{< /tabpanex >}}
 
+The `API username` and `API password` will be assigned by the EGI Check-in
+team when you request REST API access. In order to obtain REST API credentials
+you need to email your request to [EGI Check-in Support](mailto:checkin-support@mailman.egi.eu)
+with Subject `Request REST API access for <vo_name> VO`. Make sure you indicate
+the instance of EGI Check-in (production, demo or development) hosting the VO
+you request access to. Only VO managers can request REST API credentials for a given VO.
+
 #### Authentication
 
 The REST client is authenticated via username/password credentials transmitted
