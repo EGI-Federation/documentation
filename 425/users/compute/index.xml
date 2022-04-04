@@ -221,12 +221,15 @@ levels of abstractions and features. See below to understand which to choose
 &lt;td>VMs, containers, HTC jobs&lt;/td>
 &lt;td>Used to efficiently distribute, manage, and monitor computing workloads.&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="dodas">Dynamic On-Demand Analysis Service&lt;/a>&lt;/td>
+&lt;td>Containers, storage (caches)&lt;/td>
+&lt;td>Used when you need to process your data either interactively or via a batch system.&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;!--
 | [PaaS Orchestrator](indigo-paas) | VMs, containers, HTC jobs | Used when you have both IaaS Cloud and HTC workloads. The DEEP Platform uses it for ML/DL workloads. |
-| [Dynamic On-Demand Analysis Software](dodas) | Containers | Used when your workload is composed of Docker containers (Helm charts). |
--->
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>The following sections offer more details about each of these orchestrator tools.&lt;/p></description></item><item><title>Users: Content Distribution</title><link>/users/compute/content-distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/content-distribution/</guid><description>
 &lt;p>This page is about the CVMFS service operated for EGI by RAL.&lt;/p>
