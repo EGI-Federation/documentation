@@ -108,18 +108,20 @@ Once a user submits a VO membership petition, all VO managers are notified with
 an email containing a link to the petition. Any of the VO managers can then
 review the petition and either **approve** or **deny** the request.
 
-When a user requests membership to a VO, all VO managers will receive an email, containing the petition url they have to review in order to accept or deny the request. Except from email, they will receive a notification on their COmanage profile. At the top right corner clicking the bell icon someone can see all the notifications.
+When a user requests membership to a VO, all VO managers will receive an email, containing the petition URL.
 
+Except from email, they will receive a notification on their COmanage profile. At the top right corner clicking the bell icon someone can see all the notifications.
 
 ![COmanage-notification-icon](./check-in-notification-icon.png)
 
-Clicking a notification message, similar to the above, you can find among others the petition url inside the `Notification Email Body` field.
+Clicking a notification message, you can find among others, the petition URL inside the `Notification Email Body` field.
 
 ![COmanage-notification-message](./check-in-notification-message.png)
 
-Clicking the petition url either at mail you received either at the notification message, you can review the request.
+Clicking the petition URL either at mail you received either at the notification message, you can review the request.
 
-You can accept or deny the membership, and also provide a justification at the textarea, below the two buttons. This field is optional. In case is filled, it will also be sent to the user that made the request.
+You can accept or deny the membership, and also provide a justification at the textarea, below the two buttons.
+This field is optional. In case is filled, it will also be sent to the user that made the request.
 
 ![COmanage-petition-approve-deny](./check-in-approve-deny-petition.png)
 
