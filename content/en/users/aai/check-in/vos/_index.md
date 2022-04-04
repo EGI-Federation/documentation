@@ -110,7 +110,8 @@ review the petition and either **approve** or **deny** the request.
 
 When a user requests membership to a VO, all VO managers will receive an email, containing the petition URL.
 
-Except from email, they will receive a notification on their COmanage profile. At the top right corner clicking the bell icon someone can see all the notifications.
+Except from email, they will receive a notification on their COmanage profile.
+At the top right corner clicking the bell icon someone can see all the notifications.
 
 ![COmanage-notification-icon](./check-in-notification-icon.png)
 
