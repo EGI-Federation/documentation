@@ -72,6 +72,12 @@ A step-by-step guide for the VO registration process is provided in the procedur
 
 Vo enrollments URLs are essential for someone who wants to enroll to a VO.
 
+Users can request membership in your VO by following the VO enrollment URL. The
+enrollment URL has the following form:
+
+`https://aai.egi.eu/registry/co_petitions/start/coef:##` where `##` is the
+unique numeric identifier for the enrollment flow of your VO.
+
 The VO Manager can insert this URL in an invitation email and send it directly to the users who want to join the VO.
 Also, it can be used in any registration web page as an href of a button or image etc.
 
@@ -102,12 +108,6 @@ The VO enrollment URL can be found through the EGI Check-in Registry:
    ![Member role active](./check-in-role-active.png)
 
 ### Reviewing VO membership requests
-
-Users can request membership in your VO by following the VO enrollment URL. The
-enrollment URL has the following form:
-
-`https://aai.egi.eu/registry/co_petitions/start/coef:##` where `##` is the
-unique numeric identifier for the enrollment flow of your VO.
 
 Once a user submits a VO membership petition, all VO managers are notified with
 an email containing a link to the petition. Any of the VO managers can then
