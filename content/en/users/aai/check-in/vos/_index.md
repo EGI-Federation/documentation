@@ -70,6 +70,11 @@ A step-by-step guide for the VO registration process is provided in the procedur
 
 ### VO enrollment URLs
 
+Vo enrollments URLs are essential for someone who wants to enroll to a VO.
+
+The VO Manager can insert this URL in an invitation email and send it directly to the users who want to join the VO.
+Also, it can be used in any registration web page as an href of a button or image etc.
+
 The VO enrollment URL can be found through the EGI Check-in Registry:
 
 1. Login to [Check-in registry](https://aai.egi.eu/registry) using any of the
