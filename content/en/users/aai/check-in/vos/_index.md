@@ -346,6 +346,13 @@ $ export CO_ID=2
 {{< /tabx >}}
 {{< /tabpanex >}}
 
+The `API username` and `API password` will be assigned by the EGI Check-in
+team when you request REST API access. In order to obtain REST API credentials
+you need to email your request to [EGI Check-in Support](mailto:checkin-support@mailman.egi.eu)
+with Subject `Request REST API access for <vo_name> VO`. Make sure you indicate
+the instance of EGI Check-in (production, demo or development) hosting the VO
+you request access to. Only VO managers can request REST API credentials for a given VO.
+
 #### Authentication
 
 The REST client is authenticated via username/password credentials transmitted
@@ -397,6 +404,23 @@ be supported in the future.
    }
    ```
 
+<!--
+// jscpd:ignore-start
+-->
+   Response Format:
+
+   | HTTP Status            | Description                            |   Response Body                |
+   | ---------------------- | -------------------------------------- | ------------------------------ |
+   | 201 Added              | Role Added                             | add.json response              |
+   | 400 Bad Request        | Role Request not provided in post body |                                |
+   | 400 Invalid Fields     | An error in one more fields            | Response with failing field(s) |
+   | 401 Unauthorized       | Authentication Required                |                                |
+   | 403 COU Does not exist | The specified COU does not exists      |                                |
+   | 500 Other error        | Unknown Error                          |                                |
+<!--
+// jscpd:ignore-end
+-->
+
 1. Retrieving the VO membership information for a given EGI Check-in CUID:
 
    ```shell
@@ -421,9 +445,9 @@ be supported in the future.
             "Affiliation": "member",
             "Title": "Pilot",
             "Status": "Active",
-            "Created": "2022-02-16 11:19:38",
-            "Modified": "2022-02-16 11:20:27",
-            "Revision": 2,
+            "Created": "2023-02-16 11:19:38",
+            "Modified": "2023-02-16 11:20:27",
+            "Revision": 3,
             "Deleted": false,
             "ActorIdentifier": "co_2.test"
          }
@@ -431,10 +455,28 @@ be supported in the future.
    }
    ```
 
+<!--
+// jscpd:ignore-start
+-->
    Beyond the `valid_through` date, the status will be automatically changed to
    `Expired`. So, when querying for VO membership information, it's important to
    check that the status is actually set to `Active` for each of the identified
    VOs.
+<!--
+// jscpd:ignore-end
+-->
+
+   Response Format:
+
+   | HTTP Status                 | Description                  |   Response Body   |
+   | ----------------------------| ---------------------------- | ----------------- |
+   | 200 OK                      | Role Returned                | json response     |
+   | 400 Bad Request             | CO ID unknown                |                   |
+   | 401 Unauthorized            | Authentication Required      |                   |
+   | 404 COU/VO unknown          | COU/CO name not found        |                   |
+   | 404 Person unknown          | Person Identifier not found  |                   |
+   | 404 Identifier type unknown | Identifier type is not valid |                   |
+   | 500 Other error             | Unknown Error                |                   |
 
 1. Retrieving all VO members:
 
@@ -472,10 +514,25 @@ be supported in the future.
    }
    ```
 
+<!--
+// jscpd:ignore-start
+-->
    Beyond the `valid_through` date, the status will be automatically changed to
    `Expired`. So, when querying for VO membership information, it's important to
    check that the status is actually set to `Active` for each of the identified
    VOs.
+<!--
+// jscpd:ignore-end
+-->
+   Response Format:
+
+   | HTTP Status        | Description            |   Response Body   |
+   | -----------------  | ---------------------- | ----------------- |
+   | 200 OK             | Role Returned          | json response     |
+   | 400 Bad Request    | CO ID unknown          |                   |
+   | 401 Unauthorized   | Authentication Required|                   |
+   | 404 COU/VO unknown | COU/CO name not found  |                   |
+   | 500 Other error    | Unknown Error          |                   |
 
 1. Updating existing VO membership record:
 
@@ -491,10 +548,36 @@ be supported in the future.
    - using `PUT` instead of `POST`.
    - provide the Role ID as part of the request URL
 
+<!--
+// jscpd:ignore-start
+-->
+   Response Format:
+
+   | HTTP Status            | Description                            |   Response Body                |
+   | ---------------------- | -------------------------------------- | ------------------------------ |
+   | 200 OK                 | Role Updated                           |                                |
+   | 400 Bad Request        | Role Request not provided in post body |                                |
+   | 400 Invalid Fields     | An error in one more fields            | Response with failing field(s) |
+   | 401 Unauthorized       | Authentication Required                |                                |
+   | 403 COU Does not exist | The specified COU does not exists      |                                |
+   | 500 Other error        | Unknown Error                          |                                |
+<!--
+// jscpd:ignore-end
+-->
+
 1. Removing VO member:
 
   Same as the update but requires setting the membership status to `Deleted`
   and do not include a body.
+
+   Response Format:
+
+   | HTTP Status        | Description            |   Response Body   |
+   | -----------------  | ---------------------- | ----------------- |
+   | 200 OK             | Role Returned          | json response     |
+   | 401 Unauthorized   | Authentication Required|                   |
+   | 404 Role unknown   | Role name not found    |                   |
+   | 500 Other error    | Unknown Error          |                   |
 
 ### API v1 (DEPRECATED)
 
