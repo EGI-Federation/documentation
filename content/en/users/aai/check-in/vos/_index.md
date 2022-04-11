@@ -81,7 +81,10 @@ unique numeric identifier for the enrollment flow of your VO.
 The VO Manager can insert this URL in an invitation email and send it directly to the users who want to join the VO.
 Also, it can be used in any registration web page as an href of a button or image etc.
 
-The VO enrollment URL can be found through the EGI Check-in Registry:
+The VO enrollment URL can be found both at the Operations Portal and EGI Check-in Registry.
+At the Operations Portal VO List, by quickly searching for the VO name and clicking on the Details.
+
+At EGI Check-in Registry:
 
 1. Login to [Check-in registry](https://aai.egi.eu/registry) using any of the
    login credentials already linked to your EGI account.
