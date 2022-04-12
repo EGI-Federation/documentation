@@ -32,9 +32,9 @@ Oneprovider.
 
 {{% alert title="Warning" color="warning" %}}
 
-The Oneprovider installation includes also a Memcached server running on port
-11211. Please make sure that that port is not open to the internet by setting
-up proper local firewall rules.
+The Oneprovider installation includes also a Memcached server running on
+port 11211. Please make sure that that port is not open to the internet by
+setting up proper local firewall rules.
 
 {{% /alert %}}
 
