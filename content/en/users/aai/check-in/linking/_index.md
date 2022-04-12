@@ -24,15 +24,15 @@ To link a new organisational or social identity to your EGI account:
 1. Click **Login** and authenticate using any of the login credentials _already_
    linked to your EGI account
 
-1. Navigate to **My EGI User Community Account** page in one of the following
+1. Navigate to **My EGI User Community Identity** page in one of the following
    ways:
 
    - hover over your display name next to the gear icon on the top right corner
      of the page; _or, alternatively,_
    - select **EGI User Community** from the list of available Collaborations and
-     then click **My EGI User Community Account** from the **People** menu
+     then click **My EGI User Community Identity** from the **People** menu
 
-   ![Check-in my account](./check-in-my-account.png)
+   ![Check-in my identity](./check-in-my-identity.png)
 
 1. Under the **Organisational Identities** section of your profile page, expand
    **Actions** menu and click **Link New Identity**.
@@ -70,15 +70,15 @@ To link a subject DN to your EGI account:
 1. Click **Login** and authenticate using any of the login credentials _already_
    linked to your EGI account
 
-1. Navigate to **My EGI User Community Account** page in one of the following
+1. Navigate to **My EGI User Community Identity** page in one of the following
    ways:
 
    - hover over your display name next to the gear icon on the top right corner
      of the page; _or, alternatively,_
    - select **EGI User Community** from the list of available Collaborations and
-     then click **My EGI User Community Account** from the **People** menu
+     then click **My EGI User Community Identity** from the **People** menu
 
-   ![Check-in my account](./check-in-my-account.png)
+   ![Check-in my identity](./check-in-my-identity.png)
 
 1. Under the **Organisational Identities** section of your profile page, expand
    **Actions** menu and click **Link New Identity**.
