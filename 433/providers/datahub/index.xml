@@ -31,11 +31,9 @@ Oneprovider.&lt;/p>
 &lt;/ul>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-&lt;ul>
-&lt;li>The Oneprovider installation includes also a Memcached server running
-on port 11211. Please make sure that that port is not open to the internet by
-setting up proper local firewall rules.&lt;/li>
-&lt;/ul>
+The Oneprovider installation includes also a Memcached server running on
+port 11211. Please make sure that that port is not open to the internet by
+setting up proper local firewall rules.
 &lt;/div>
 &lt;h2 id="installation-and-attach-empty-storage-to-the-egi-datahub">Installation and attach empty storage to the EGI DataHub&lt;/h2>
 &lt;p>The installation of a new Oneprovider is performed using the &lt;code>onedatify&lt;/code>
