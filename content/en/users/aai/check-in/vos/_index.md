@@ -68,7 +68,9 @@ A step-by-step guide for the VO registration process is provided in the procedur
 
    ![VO population](./check-in-my-vo-population-result.png)
 
-### Accepting new VO members
+### VO enrollment URLs
+
+Vo enrollments URLs are essential for someone who wants to enroll to a VO.
 
 Users can request membership in your VO by following the VO enrollment URL. The
 enrollment URL has the following form:
@@ -76,11 +78,13 @@ enrollment URL has the following form:
 `https://aai.egi.eu/registry/co_petitions/start/coef:##` where `##` is the
 unique numeric identifier for the enrollment flow of your VO.
 
-Once a user submits a VO membership petition, all VO managers are notified with
-an email containing a link to the petition. Any of the VO managers can then
-review the petition and either **approve** or **deny** the request.
+The VO Manager can insert this URL in an invitation email and send it directly to the users who want to join the VO.
+Also, it can be used in any registration web page as an href of a button or image etc.
 
-The VO enrollment URL can be found through the EGI Check-in Registry:
+The VO enrollment URL can be found both at the Operations Portal and EGI Check-in Registry.
+At the Operations Portal VO List, by quickly searching for the VO name and clicking on the Details.
+
+At EGI Check-in Registry:
 
 1. Login to [Check-in registry](https://aai.egi.eu/registry) using any of the
    login credentials already linked to your EGI account.
@@ -105,6 +109,30 @@ The VO enrollment URL can be found through the EGI Check-in Registry:
    status
 
    ![Member role active](./check-in-role-active.png)
+
+### Reviewing VO membership requests
+
+Once a user submits a VO membership petition, all VO managers are notified with
+an email containing a link to the petition. Any of the VO managers can then
+review the petition and either **approve** or **deny** the request.
+
+When a user requests membership to a VO, all VO managers will receive an email, containing the petition URL.
+
+Except from email, they will receive a notification on their COmanage profile.
+At the top right corner clicking the bell icon someone can see all the notifications.
+
+![COmanage-notification-icon](./check-in-notification-icon.png)
+
+Clicking a notification message, you can find among others, the petition URL inside the `Notification Email Body` field.
+
+![COmanage-notification-message](./check-in-notification-message.png)
+
+Clicking the petition URL either at mail you received either at the notification message, you can review the request.
+
+You can accept or deny the membership, and also provide a justification at the textarea, below the two buttons.
+This field is optional. In case is filled, it will also be sent to the user that made the request.
+
+![COmanage-petition-approve-deny](./check-in-approve-deny-petition.png)
 
 ### Managing VO groups
 
