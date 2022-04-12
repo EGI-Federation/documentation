@@ -30,6 +30,14 @@ Oneprovider.
 - The following ports need to be open on the local and site firewall:
   - 80, 443, 9443, 6665 (for data transfer)
 
+{{% alert title="Warning" color="warning" %}}
+
+The Oneprovider installation includes also a Memcached server running on
+port 11211. Please ensure that this port and other unused ports are not open to
+the internet by setting up proper local firewall rules.
+
+{{% /alert %}}
+
 ## Installation and attach empty storage to the EGI DataHub
 
 The installation of a new Oneprovider is performed using the `onedatify`
