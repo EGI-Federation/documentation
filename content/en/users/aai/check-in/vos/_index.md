@@ -68,7 +68,9 @@ A step-by-step guide for the VO registration process is provided in the procedur
 
    ![VO population](./check-in-my-vo-population-result.png)
 
-### Accepting new VO members
+### VO enrollment URLs
+
+Vo enrollments URLs are essential for someone who wants to enroll to a VO.
 
 Users can request membership in your VO by following the VO enrollment URL. The
 enrollment URL has the following form:
@@ -76,11 +78,13 @@ enrollment URL has the following form:
 `https://aai.egi.eu/registry/co_petitions/start/coef:##` where `##` is the
 unique numeric identifier for the enrollment flow of your VO.
 
-Once a user submits a VO membership petition, all VO managers are notified with
-an email containing a link to the petition. Any of the VO managers can then
-review the petition and either **approve** or **deny** the request.
+The VO Manager can insert this URL in an invitation email and send it directly to the users who want to join the VO.
+Also, it can be used in any registration web page as an href of a button or image etc.
 
-The VO enrollment URL can be found through the EGI Check-in Registry:
+The VO enrollment URL can be found both at the Operations Portal and EGI Check-in Registry.
+At the Operations Portal VO List, by quickly searching for the VO name and clicking on the Details.
+
+At EGI Check-in Registry:
 
 1. Login to [Check-in registry](https://aai.egi.eu/registry) using any of the
    login credentials already linked to your EGI account.
@@ -105,6 +109,30 @@ The VO enrollment URL can be found through the EGI Check-in Registry:
    status
 
    ![Member role active](./check-in-role-active.png)
+
+### Reviewing VO membership requests
+
+Once a user submits a VO membership petition, all VO managers are notified with
+an email containing a link to the petition. Any of the VO managers can then
+review the petition and either **approve** or **deny** the request.
+
+When a user requests membership to a VO, all VO managers will receive an email, containing the petition URL.
+
+Except from email, they will receive a notification on their COmanage profile.
+At the top right corner clicking the bell icon someone can see all the notifications.
+
+![COmanage-notification-icon](./check-in-notification-icon.png)
+
+Clicking a notification message, you can find among others, the petition URL inside the `Notification Email Body` field.
+
+![COmanage-notification-message](./check-in-notification-message.png)
+
+Clicking the petition URL either at mail you received either at the notification message, you can review the request.
+
+You can accept or deny the membership, and also provide a justification at the textarea, below the two buttons.
+This field is optional. In case is filled, it will also be sent to the user that made the request.
+
+![COmanage-petition-approve-deny](./check-in-approve-deny-petition.png)
 
 ### Managing VO groups
 
@@ -346,6 +374,13 @@ $ export CO_ID=2
 {{< /tabx >}}
 {{< /tabpanex >}}
 
+The `API username` and `API password` will be assigned by the EGI Check-in
+team when you request REST API access. In order to obtain REST API credentials
+you need to email your request to [EGI Check-in Support](mailto:checkin-support@mailman.egi.eu)
+with Subject `Request REST API access for <vo_name> VO`. Make sure you indicate
+the instance of EGI Check-in (production, demo or development) hosting the VO
+you request access to. Only VO managers can request REST API credentials for a given VO.
+
 #### Authentication
 
 The REST client is authenticated via username/password credentials transmitted
@@ -397,6 +432,23 @@ be supported in the future.
    }
    ```
 
+<!--
+// jscpd:ignore-start
+-->
+   Response Format:
+
+   | HTTP Status            | Description                            |   Response Body                |
+   | ---------------------- | -------------------------------------- | ------------------------------ |
+   | 201 Added              | Role Added                             | add.json response              |
+   | 400 Bad Request        | Role Request not provided in post body |                                |
+   | 400 Invalid Fields     | An error in one more fields            | Response with failing field(s) |
+   | 401 Unauthorized       | Authentication Required                |                                |
+   | 403 COU Does not exist | The specified COU does not exists      |                                |
+   | 500 Other error        | Unknown Error                          |                                |
+<!--
+// jscpd:ignore-end
+-->
+
 1. Retrieving the VO membership information for a given EGI Check-in CUID:
 
    ```shell
@@ -421,9 +473,9 @@ be supported in the future.
             "Affiliation": "member",
             "Title": "Pilot",
             "Status": "Active",
-            "Created": "2022-02-16 11:19:38",
-            "Modified": "2022-02-16 11:20:27",
-            "Revision": 2,
+            "Created": "2023-02-16 11:19:38",
+            "Modified": "2023-02-16 11:20:27",
+            "Revision": 3,
             "Deleted": false,
             "ActorIdentifier": "co_2.test"
          }
@@ -431,10 +483,28 @@ be supported in the future.
    }
    ```
 
+<!--
+// jscpd:ignore-start
+-->
    Beyond the `valid_through` date, the status will be automatically changed to
    `Expired`. So, when querying for VO membership information, it's important to
    check that the status is actually set to `Active` for each of the identified
    VOs.
+<!--
+// jscpd:ignore-end
+-->
+
+   Response Format:
+
+   | HTTP Status                 | Description                  |   Response Body   |
+   | ----------------------------| ---------------------------- | ----------------- |
+   | 200 OK                      | Role Returned                | json response     |
+   | 400 Bad Request             | CO ID unknown                |                   |
+   | 401 Unauthorized            | Authentication Required      |                   |
+   | 404 COU/VO unknown          | COU/CO name not found        |                   |
+   | 404 Person unknown          | Person Identifier not found  |                   |
+   | 404 Identifier type unknown | Identifier type is not valid |                   |
+   | 500 Other error             | Unknown Error                |                   |
 
 1. Retrieving all VO members:
 
@@ -472,10 +542,25 @@ be supported in the future.
    }
    ```
 
+<!--
+// jscpd:ignore-start
+-->
    Beyond the `valid_through` date, the status will be automatically changed to
    `Expired`. So, when querying for VO membership information, it's important to
    check that the status is actually set to `Active` for each of the identified
    VOs.
+<!--
+// jscpd:ignore-end
+-->
+   Response Format:
+
+   | HTTP Status        | Description            |   Response Body   |
+   | -----------------  | ---------------------- | ----------------- |
+   | 200 OK             | Role Returned          | json response     |
+   | 400 Bad Request    | CO ID unknown          |                   |
+   | 401 Unauthorized   | Authentication Required|                   |
+   | 404 COU/VO unknown | COU/CO name not found  |                   |
+   | 500 Other error    | Unknown Error          |                   |
 
 1. Updating existing VO membership record:
 
@@ -491,10 +576,36 @@ be supported in the future.
    - using `PUT` instead of `POST`.
    - provide the Role ID as part of the request URL
 
+<!--
+// jscpd:ignore-start
+-->
+   Response Format:
+
+   | HTTP Status            | Description                            |   Response Body                |
+   | ---------------------- | -------------------------------------- | ------------------------------ |
+   | 200 OK                 | Role Updated                           |                                |
+   | 400 Bad Request        | Role Request not provided in post body |                                |
+   | 400 Invalid Fields     | An error in one more fields            | Response with failing field(s) |
+   | 401 Unauthorized       | Authentication Required                |                                |
+   | 403 COU Does not exist | The specified COU does not exists      |                                |
+   | 500 Other error        | Unknown Error                          |                                |
+<!--
+// jscpd:ignore-end
+-->
+
 1. Removing VO member:
 
   Same as the update but requires setting the membership status to `Deleted`
   and do not include a body.
+
+   Response Format:
+
+   | HTTP Status        | Description            |   Response Body   |
+   | -----------------  | ---------------------- | ----------------- |
+   | 200 OK             | Role Returned          | json response     |
+   | 401 Unauthorized   | Authentication Required|                   |
+   | 404 Role unknown   | Role name not found    |                   |
+   | 500 Other error    | Unknown Error          |                   |
 
 ### API v1 (DEPRECATED)
 

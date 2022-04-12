@@ -27,10 +27,11 @@ you can [Sign up for an EGI account](../../aai/check-in/signup).
 The installation of `oneclient` package is currently supported for:
 
 - Ubuntu 18.04 LTS (Bionic Beaver)
-- Centos 7
+- Ubuntu 20.04 LTS (Focal Fossa)
+- CentOS 7
+- CentOS 8 Stream
 
-Work to support more recent versions of Operating Systems is ongoing, and alternatively
-a docker based installation is also provided.
+Alternatively a docker based installation is also provided.
 
 ### Oneclient installation via packages
 
