@@ -121,15 +121,15 @@ To link a new organisational or social identity to your EGI account:&lt;/p>
 linked to your EGI account&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Navigate to &lt;strong>My EGI User Community Account&lt;/strong> page in one of the following
+&lt;p>Navigate to &lt;strong>My EGI User Community Identity&lt;/strong> page in one of the following
 ways:&lt;/p>
 &lt;ul>
 &lt;li>hover over your display name next to the gear icon on the top right corner
 of the page; &lt;em>or, alternatively,&lt;/em>&lt;/li>
 &lt;li>select &lt;strong>EGI User Community&lt;/strong> from the list of available Collaborations and
-then click &lt;strong>My EGI User Community Account&lt;/strong> from the &lt;strong>People&lt;/strong> menu&lt;/li>
+then click &lt;strong>My EGI User Community Identity&lt;/strong> from the &lt;strong>People&lt;/strong> menu&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="./check-in-my-account.png" alt="Check-in my account">&lt;/p>
+&lt;p>&lt;img src="./check-in-my-identity.png" alt="Check-in my identity">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Under the &lt;strong>Organisational Identities&lt;/strong> section of your profile page, expand
@@ -172,15 +172,15 @@ browser.&lt;/p>
 linked to your EGI account&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Navigate to &lt;strong>My EGI User Community Account&lt;/strong> page in one of the following
+&lt;p>Navigate to &lt;strong>My EGI User Community Identity&lt;/strong> page in one of the following
 ways:&lt;/p>
 &lt;ul>
 &lt;li>hover over your display name next to the gear icon on the top right corner
 of the page; &lt;em>or, alternatively,&lt;/em>&lt;/li>
 &lt;li>select &lt;strong>EGI User Community&lt;/strong> from the list of available Collaborations and
-then click &lt;strong>My EGI User Community Account&lt;/strong> from the &lt;strong>People&lt;/strong> menu&lt;/li>
+then click &lt;strong>My EGI User Community Identity&lt;/strong> from the &lt;strong>People&lt;/strong> menu&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="./check-in-my-account.png" alt="Check-in my account">&lt;/p>
+&lt;p>&lt;img src="./check-in-my-identity.png" alt="Check-in my identity">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Under the &lt;strong>Organisational Identities&lt;/strong> section of your profile page, expand
@@ -344,15 +344,17 @@ Population&lt;/strong>)&lt;/p>
 &lt;p>&lt;img src="./check-in-my-vo-population-result.png" alt="VO population">&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;h3 id="accepting-new-vo-members">Accepting new VO members&lt;/h3>
+&lt;h3 id="vo-enrollment-urls">VO enrollment URLs&lt;/h3>
+&lt;p>Vo enrollments URLs are essential for someone who wants to enroll to a VO.&lt;/p>
 &lt;p>Users can request membership in your VO by following the VO enrollment URL. The
 enrollment URL has the following form:&lt;/p>
 &lt;p>&lt;code>https://aai.egi.eu/registry/co_petitions/start/coef:##&lt;/code> where &lt;code>##&lt;/code> is the
 unique numeric identifier for the enrollment flow of your VO.&lt;/p>
-&lt;p>Once a user submits a VO membership petition, all VO managers are notified with
-an email containing a link to the petition. Any of the VO managers can then
-review the petition and either &lt;strong>approve&lt;/strong> or &lt;strong>deny&lt;/strong> the request.&lt;/p>
-&lt;p>The VO enrollment URL can be found through the EGI Check-in Registry:&lt;/p>
+&lt;p>The VO Manager can insert this URL in an invitation email and send it directly to the users who want to join the VO.
+Also, it can be used in any registration web page as an href of a button or image etc.&lt;/p>
+&lt;p>The VO enrollment URL can be found both at the Operations Portal and EGI Check-in Registry.
+At the Operations Portal VO List, by quickly searching for the VO name and clicking on the Details.&lt;/p>
+&lt;p>At EGI Check-in Registry:&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>Login to &lt;a href="https://aai.egi.eu/registry">Check-in registry&lt;/a> using any of the
@@ -380,6 +382,20 @@ status&lt;/p>
 &lt;p>&lt;img src="./check-in-role-active.png" alt="Member role active">&lt;/p>
 &lt;/li>
 &lt;/ol>
+&lt;h3 id="reviewing-vo-membership-requests">Reviewing VO membership requests&lt;/h3>
+&lt;p>Once a user submits a VO membership petition, all VO managers are notified with
+an email containing a link to the petition. Any of the VO managers can then
+review the petition and either &lt;strong>approve&lt;/strong> or &lt;strong>deny&lt;/strong> the request.&lt;/p>
+&lt;p>When a user requests membership to a VO, all VO managers will receive an email, containing the petition URL.&lt;/p>
+&lt;p>Except from email, they will receive a notification on their COmanage profile.
+At the top right corner clicking the bell icon someone can see all the notifications.&lt;/p>
+&lt;p>&lt;img src="./check-in-notification-icon.png" alt="COmanage-notification-icon">&lt;/p>
+&lt;p>Clicking a notification message, you can find among others, the petition URL inside the &lt;code>Notification Email Body&lt;/code> field.&lt;/p>
+&lt;p>&lt;img src="./check-in-notification-message.png" alt="COmanage-notification-message">&lt;/p>
+&lt;p>Clicking the petition URL either at mail you received either at the notification message, you can review the request.&lt;/p>
+&lt;p>You can accept or deny the membership, and also provide a justification at the textarea, below the two buttons.
+This field is optional. In case is filled, it will also be sent to the user that made the request.&lt;/p>
+&lt;p>&lt;img src="./check-in-approve-deny-petition.png" alt="COmanage-petition-approve-deny">&lt;/p>
 &lt;h3 id="managing-vo-groups">Managing VO groups&lt;/h3>
 &lt;p>VO groups can only be created by Check-in platform administrators. Please
 contact &lt;code>checkin-support&lt;/code> &lt;code>&amp;lt;AT&amp;gt;&lt;/code> &lt;code>mailman.egi.eu&lt;/code> indicating the following
@@ -640,6 +656,12 @@ $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">CO
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>
+&lt;p>The &lt;code>API username&lt;/code> and &lt;code>API password&lt;/code> will be assigned by the EGI Check-in
+team when you request REST API access. In order to obtain REST API credentials
+you need to email your request to &lt;a href="mailto:checkin-support@mailman.egi.eu">EGI Check-in Support&lt;/a>
+with Subject &lt;code>Request REST API access for &amp;lt;vo_name&amp;gt; VO&lt;/code>. Make sure you indicate
+the instance of EGI Check-in (production, demo or development) hosting the VO
+you request access to. Only VO managers can request REST API credentials for a given VO.&lt;/p>
 &lt;h4 id="authentication">Authentication&lt;/h4>
 &lt;p>The REST client is authenticated via username/password credentials transmitted
 over HTTPS using the Basic Authentication scheme. More sophisticated
@@ -683,6 +705,56 @@ mandatory. Here is an example using curl (see example &lt;code>add.json&lt;/code
 &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;!--
+// jscpd:ignore-start
+-->
+&lt;p>Response Format:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>HTTP Status&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Response Body&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>201 Added&lt;/td>
+&lt;td>Role Added&lt;/td>
+&lt;td>add.json response&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>400 Bad Request&lt;/td>
+&lt;td>Role Request not provided in post body&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>400 Invalid Fields&lt;/td>
+&lt;td>An error in one more fields&lt;/td>
+&lt;td>Response with failing field(s)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>401 Unauthorized&lt;/td>
+&lt;td>Authentication Required&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>403 COU Does not exist&lt;/td>
+&lt;td>The specified COU does not exists&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>500 Other error&lt;/td>
+&lt;td>Unknown Error&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!--
+// jscpd:ignore-end
+-->
+&lt;ol>
 &lt;li>
 &lt;p>Retrieving the VO membership information for a given EGI Check-in CUID:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX GET &lt;span style="color:#000">$VO_API_BASE_URL&lt;/span>/co/&lt;span style="color:#000">$CO_ID&lt;/span>/cou/vo.example.org/identifier/01234567890123456789@egi.eu.json &lt;span style="color:#4e9a06">\
@@ -702,19 +774,74 @@ mandatory. Here is an example using curl (see example &lt;code>add.json&lt;/code
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;Affiliation&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;member&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;Title&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Pilot&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;Status&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Active&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;Created&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;2022-02-16 11:19:38&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;Modified&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;2022-02-16 11:20:27&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;Revision&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;Created&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;2023-02-16 11:19:38&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;Modified&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;2023-02-16 11:20:27&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;Revision&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;Deleted&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;ActorIdentifier&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;co_2.test&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Beyond the &lt;code>valid_through&lt;/code> date, the status will be automatically changed to
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;!--
+// jscpd:ignore-start
+-->
+&lt;p>Beyond the &lt;code>valid_through&lt;/code> date, the status will be automatically changed to
 &lt;code>Expired&lt;/code>. So, when querying for VO membership information, it&amp;rsquo;s important to
 check that the status is actually set to &lt;code>Active&lt;/code> for each of the identified
 VOs.&lt;/p>
-&lt;/li>
+&lt;!--
+// jscpd:ignore-end
+-->
+&lt;p>Response Format:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>HTTP Status&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Response Body&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>200 OK&lt;/td>
+&lt;td>Role Returned&lt;/td>
+&lt;td>json response&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>400 Bad Request&lt;/td>
+&lt;td>CO ID unknown&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>401 Unauthorized&lt;/td>
+&lt;td>Authentication Required&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>404 COU/VO unknown&lt;/td>
+&lt;td>COU/CO name not found&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>404 Person unknown&lt;/td>
+&lt;td>Person Identifier not found&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>404 Identifier type unknown&lt;/td>
+&lt;td>Identifier type is not valid&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>500 Other error&lt;/td>
+&lt;td>Unknown Error&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;ol>
 &lt;li>
 &lt;p>Retrieving all VO members:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX GET &lt;span style="color:#000">$VO_API_BASE_URL&lt;/span>/co/&lt;span style="color:#000">$CO_ID&lt;/span>/cou/vo.example.org.json &lt;span style="color:#4e9a06">\
@@ -744,11 +871,56 @@ VOs.&lt;/p>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#a40000">...&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Beyond the &lt;code>valid_through&lt;/code> date, the status will be automatically changed to
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;!--
+// jscpd:ignore-start
+-->
+&lt;p>Beyond the &lt;code>valid_through&lt;/code> date, the status will be automatically changed to
 &lt;code>Expired&lt;/code>. So, when querying for VO membership information, it&amp;rsquo;s important to
 check that the status is actually set to &lt;code>Active&lt;/code> for each of the identified
 VOs.&lt;/p>
-&lt;/li>
+&lt;!--
+// jscpd:ignore-end
+-->
+&lt;p>Response Format:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>HTTP Status&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Response Body&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>200 OK&lt;/td>
+&lt;td>Role Returned&lt;/td>
+&lt;td>json response&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>400 Bad Request&lt;/td>
+&lt;td>CO ID unknown&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>401 Unauthorized&lt;/td>
+&lt;td>Authentication Required&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>404 COU/VO unknown&lt;/td>
+&lt;td>COU/CO name not found&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>500 Other error&lt;/td>
+&lt;td>Unknown Error&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;ol>
 &lt;li>
 &lt;p>Updating existing VO membership record:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX PUT &lt;span style="color:#000">$VO_API_BASE_URL&lt;/span>/15.json &lt;span style="color:#4e9a06">\
@@ -762,12 +934,92 @@ update requires:&lt;/p>
 &lt;li>provide the Role ID as part of the request URL&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>
-&lt;p>Removing VO member:&lt;/p>
-&lt;/li>
+&lt;/ol>
+&lt;!--
+// jscpd:ignore-start
+-->
+&lt;p>Response Format:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>HTTP Status&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Response Body&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>200 OK&lt;/td>
+&lt;td>Role Updated&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>400 Bad Request&lt;/td>
+&lt;td>Role Request not provided in post body&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>400 Invalid Fields&lt;/td>
+&lt;td>An error in one more fields&lt;/td>
+&lt;td>Response with failing field(s)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>401 Unauthorized&lt;/td>
+&lt;td>Authentication Required&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>403 COU Does not exist&lt;/td>
+&lt;td>The specified COU does not exists&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>500 Other error&lt;/td>
+&lt;td>Unknown Error&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!--
+// jscpd:ignore-end
+-->
+&lt;ol>
+&lt;li>Removing VO member:&lt;/li>
 &lt;/ol>
 &lt;p>Same as the update but requires setting the membership status to &lt;code>Deleted&lt;/code>
 and do not include a body.&lt;/p>
+&lt;p>Response Format:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>HTTP Status&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Response Body&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>200 OK&lt;/td>
+&lt;td>Role Returned&lt;/td>
+&lt;td>json response&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>401 Unauthorized&lt;/td>
+&lt;td>Authentication Required&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>404 Role unknown&lt;/td>
+&lt;td>Role name not found&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>500 Other error&lt;/td>
+&lt;td>Unknown Error&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
 &lt;h3 id="api-v1-deprecated">API v1 (DEPRECATED)&lt;/h3>
 &lt;p>Check-in provides a REST API that allows clients to manage membership
 information only for the VOs they are authoritative for.&lt;/p>

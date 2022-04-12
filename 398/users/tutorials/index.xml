@@ -46,10 +46,11 @@ you can &lt;a href="../../aai/check-in/signup">Sign up for an EGI account&lt;/a>
 &lt;p>The installation of &lt;code>oneclient&lt;/code> package is currently supported for:&lt;/p>
 &lt;ul>
 &lt;li>Ubuntu 18.04 LTS (Bionic Beaver)&lt;/li>
-&lt;li>Centos 7&lt;/li>
+&lt;li>Ubuntu 20.04 LTS (Focal Fossa)&lt;/li>
+&lt;li>CentOS 7&lt;/li>
+&lt;li>CentOS 8 Stream&lt;/li>
 &lt;/ul>
-&lt;p>Work to support more recent versions of Operating Systems is ongoing, and alternatively
-a docker based installation is also provided.&lt;/p>
+&lt;p>Alternatively a docker based installation is also provided.&lt;/p>
 &lt;h3 id="oneclient-installation-via-packages">Oneclient installation via packages&lt;/h3>
 &lt;p>Use the following command in order to install the &lt;code>oneclient&lt;/code> package in a supported OS:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
