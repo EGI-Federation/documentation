@@ -135,15 +135,16 @@ This field is optional. In case is filled, it will also be sent to the user that
 ![COmanage-petition-approve-deny](./check-in-approve-deny-petition.png)
 
 In the petition view you can also view user's assurance per linked identity under `Assurance` section.
+More information about identity assurance can be found [here](../../../../providers/check-in/sp#identity-assurance).
 
 ![COmanage-petition-assurance](./check-in-assurance-petition-view.png)
 
-
-If you need to further investigate user information before accepting or denying membership you can navigate to his/ her profile by clicking the enrollee name under `Attached Identities` (in Petition View).
+The complete user profile can be found by clicking the enrollee name under `Attached Identities` (in Petition View).
 
 ![COmanage-petition-attached-identities](./check-in-petition-view.png)
 
-At user profile you can find also information about Organisation Identities. An Organisation Identity, among others, includes information about `Certificates` and `Assurances`.
+At user profile you can find also information about Organisation Identities. 
+An Organisation Identity, among others, includes information about `Certificates` and `Assurances`.
 
 ![COmanage-user-org-identities](./check-in-org-identities.png)
 
