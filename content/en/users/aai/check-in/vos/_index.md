@@ -143,7 +143,7 @@ The complete user profile can be found by clicking the enrollee name under `Atta
 
 ![COmanage-petition-attached-identities](./check-in-petition-view.png)
 
-At user profile you can find also information about Organisation Identities. 
+At user profile you can find also information about Organisation Identities.
 An Organisation Identity, among others, includes information about `Certificates` and `Assurances`.
 
 ![COmanage-user-org-identities](./check-in-org-identities.png)
