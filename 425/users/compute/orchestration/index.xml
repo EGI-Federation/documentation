@@ -65,7 +65,8 @@ Cloud, either using the web interface or the command-line interface, and&lt;/li>
 &lt;li>Run pre-configured scientific applications in the EC3 elastic cluster.&lt;/li>
 &lt;/ul></description></item><item><title>Users: Dynamic On-Demand Analysis Software</title><link>/users/compute/orchestration/dodas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/dodas/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>DODAS enables the execution of user analysis code both in batch mode and
+&lt;p>&lt;a href="https://dodas-iam.cloud.cnaf.infn.it/login">Dynamic On-Demand Analysis Software (DODAS)&lt;/a>
+enables the execution of user analysis code both in batch mode and
 interactively via the Jupyter interface. DODAS is highly customizable and offers
 several building blocks that can be combined together in order to create the
 best service composition for a given use case. The currently available blocks
