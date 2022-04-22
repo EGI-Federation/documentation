@@ -77,7 +77,8 @@ MinIO S3 object storage capabilities. DODAS is based on docker containers and
 the related orchestration relies on Kubernetes that enables the possibility to
 compose the building blocks via a web-based user interface thanks to Kubeapps.&lt;/p>
 &lt;p>In order to deploy it services over various backend, DODAS relies on
-&lt;a href="../im">Infrastructure Manager&lt;/a> and &lt;a href="../indigo-paas">INDIGO PaaS&lt;/a>&lt;/p>
+&lt;a href="../im">Infrastructure Manager&lt;/a> and
+&lt;a href="https://indigo-paas.cloud.ba.infn.it/home/login">INDIGO PaaS&lt;/a>&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 If you want to give it a try and deploy
