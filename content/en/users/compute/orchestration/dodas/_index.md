@@ -22,7 +22,8 @@ the related orchestration relies on Kubernetes that enables the possibility to
 compose the building blocks via a web-based user interface thanks to Kubeapps.
 
 In order to deploy it services over various backend, DODAS relies on
-[Infrastructure Manager](../im) and [INDIGO PaaS](../indigo-paas)
+[Infrastructure Manager](../im) and
+[INDIGO PaaS](https://indigo-paas.cloud.ba.infn.it/home/login)
 
 {{% alert title="Tip" color="info" %}} If you want to give it a try and deploy
 your cluster in the EGI Federation:
