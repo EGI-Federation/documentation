@@ -9,7 +9,7 @@ description: >
 
 ## What is it?
 
-[Dynamic On-Demand Analysis Software (DODAS)](https://dodas-iam.cloud.cnaf.infn.it/login) 
+[Dynamic On-Demand Analysis Software (DODAS)](https://dodas-iam.cloud.cnaf.infn.it/login)
 enables the execution of user analysis code both in batch mode and
 interactively via the Jupyter interface. DODAS is highly customizable and offers
 several building blocks that can be combined together in order to create the
