@@ -63,7 +63,37 @@ and check out the video recording on &lt;a href="https://youtu.be/cN0tTBjV3I8">Y
 &lt;li>Deploy a simple EC3 elastic cluster on top of the IaaS providers of the EGI
 Cloud, either using the web interface or the command-line interface, and&lt;/li>
 &lt;li>Run pre-configured scientific applications in the EC3 elastic cluster.&lt;/li>
-&lt;/ul></description></item><item><title>Users: EGI Workload Manager</title><link>/users/compute/orchestration/workload-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/workload-manager/</guid><description>
+&lt;/ul></description></item><item><title>Users: Dynamic On-Demand Analysis Software</title><link>/users/compute/orchestration/dodas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/dodas/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>&lt;a href="https://dodas-iam.cloud.cnaf.infn.it/login">Dynamic On-Demand Analysis Software (DODAS)&lt;/a>
+enables the execution of user analysis code both in batch mode and
+interactively via the Jupyter interface. DODAS is highly customizable and offers
+several building blocks that can be combined together in order to create the
+best service composition for a given use case. The currently available blocks
+allow to combine Jupyter and HTCondor as well as Jupyter and Spark or simply a
+jupyter interface. In addition, they allow the management of data via caches to
+optimize the processing of remote data. This can be done either via XCache or
+MinIO S3 object storage capabilities. DODAS is based on docker containers and
+the related orchestration relies on Kubernetes that enables the possibility to
+compose the building blocks via a web-based user interface thanks to Kubeapps.&lt;/p>
+&lt;p>In order to deploy it services over various backend, DODAS relies on
+&lt;a href="../im">Infrastructure Manager&lt;/a> and
+&lt;a href="https://indigo-paas.cloud.ba.infn.it/home/login">INDIGO PaaS&lt;/a>&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+If you want to give it a try and deploy
+your cluster in the EGI Federation:
+&lt;a href="https://dodas-iam.cloud.cnaf.infn.it/login">DODAS&lt;/a>.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+For detailed information about DODAS
+please see its &lt;a href="https://web.infn.it/dodas/index.php/en/">documentation&lt;/a>. It was
+also presented in one of the &lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>, more
+details are available on the &lt;a href="https://indico.egi.eu/event/5695/">indico page&lt;/a>
+and the video recording is available on
+&lt;a href="https://www.youtube.com/watch?v=bcURl4ESRW8&amp;amp;ab_channel=EGI">YouTube&lt;/a>.
+&lt;/div></description></item><item><title>Users: EGI Workload Manager</title><link>/users/compute/orchestration/workload-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/workload-manager/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
 &lt;p>&lt;a href="https://www.egi.eu/services/workload-manager/">EGI Workload Manager&lt;/a> is a
 service provided to the EGI community to efficiently &lt;strong>manage and distribute
