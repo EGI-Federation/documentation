@@ -296,17 +296,18 @@ In this case, the pending petition will be deleted and a new enrollment flow wil
 &lt;/li>
 &lt;/ol></description></item><item><title>Users: Managing a Virtual Organisation</title><link>/users/aai/check-in/vos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/vos/</guid><description>
 &lt;p>This page contains information about using Check-in for managing your Virtual
-Organisation (VO). For joining a VO please look at &lt;a href="../joining-virtual-organisation">Joining Virtual Organisation&lt;/a>.&lt;/p>
+Organisation (VO). For joining a VO please look at
+&lt;a href="../joining-virtual-organisation">Joining Virtual Organisation&lt;/a>.&lt;/p>
 &lt;h2 id="background">Background&lt;/h2>
-&lt;p>In simple terms a Virtual Organisation (VO) is just a group of users. In
-EGI VOs are created to group researchers who aim to share resources across the
-EGI Federation to achieve a common goal as part of a scientific collaboration.
-For a more formal definition of VO please look at the
+&lt;p>In simple terms a Virtual Organisation (VO) is just a group of users. In EGI VOs
+are created to group researchers who aim to share resources across the EGI
+Federation to achieve a common goal as part of a scientific collaboration. For a
+more formal definition of VO please look at the
 &lt;a href="https://ims.egi.eu/display/EGIG/Virtual+organisation">EGI Glossary&lt;/a>.&lt;/p>
 &lt;p>You can browse existing VOs in the
-&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a>. For each
-VO you can click on the &lt;em>Details&lt;/em> link to get more information. You can join
-an existing VO either using the &lt;em>enrollment URL&lt;/em> or emailing VO managers.&lt;/p>
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a>. For each VO
+you can click on the &lt;em>Details&lt;/em> link to get more information. You can join an
+existing VO either using the &lt;em>enrollment URL&lt;/em> or emailing VO managers.&lt;/p>
 &lt;p>If you are interested in creating your own VO, please see instructions in the
 section &lt;a href="#vo-management">below&lt;/a>.&lt;/p>
 &lt;h2 id="vo-management">VO management&lt;/h2>
@@ -325,7 +326,8 @@ account can register a new VO.&lt;/p>
 VO is set up and operational, the VO manager is the person who is primarily
 responsible for the operation of the VO and for providing sufficient information
 about VO activities for EGI and for VO members (to both people and sites).&lt;/p>
-&lt;p>A step-by-step guide for the VO registration process is provided in the procedure
+&lt;p>A step-by-step guide for the VO registration process is provided in the
+procedure
 &lt;a href="https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration">PROC14 VO Registration&lt;/a>.&lt;/p>
 &lt;h3 id="viewing-vo-members">Viewing VO members&lt;/h3>
 &lt;ol>
@@ -335,8 +337,7 @@ login credentials already linked to your EGI account.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>To view the existing members, expand the &lt;strong>People&lt;/strong> drop down menu and click
-on &lt;strong>&lt;em>VO-NAME&lt;/em> Population&lt;/strong> (for example, &lt;strong>vo.example.org
-Population&lt;/strong>)&lt;/p>
+on &lt;strong>&lt;em>VO-NAME&lt;/em> Population&lt;/strong> (for example, &lt;strong>vo.example.org Population&lt;/strong>)&lt;/p>
 &lt;p>&lt;img src="./check-in-my-vo-population.png" alt="VO population menu">&lt;/p>
 &lt;/li>
 &lt;li>
@@ -350,10 +351,12 @@ Population&lt;/strong>)&lt;/p>
 enrollment URL has the following form:&lt;/p>
 &lt;p>&lt;code>https://aai.egi.eu/registry/co_petitions/start/coef:##&lt;/code> where &lt;code>##&lt;/code> is the
 unique numeric identifier for the enrollment flow of your VO.&lt;/p>
-&lt;p>The VO Manager can insert this URL in an invitation email and send it directly to the users who want to join the VO.
-Also, it can be used in any registration web page as an href of a button or image etc.&lt;/p>
-&lt;p>The VO enrollment URL can be found both at the Operations Portal and EGI Check-in Registry.
-At the Operations Portal VO List, by quickly searching for the VO name and clicking on the Details.&lt;/p>
+&lt;p>The VO Manager can insert this URL in an invitation email and send it directly
+to the users who want to join the VO. Also, it can be used in any registration
+web page as an href of a button or image etc.&lt;/p>
+&lt;p>The VO enrollment URL can be found both at the Operations Portal and EGI
+Check-in Registry. At the Operations Portal VO List, by quickly searching for
+the VO name and clicking on the Details.&lt;/p>
 &lt;p>At EGI Check-in Registry:&lt;/p>
 &lt;ol>
 &lt;li>
@@ -386,16 +389,32 @@ status&lt;/p>
 &lt;p>Once a user submits a VO membership petition, all VO managers are notified with
 an email containing a link to the petition. Any of the VO managers can then
 review the petition and either &lt;strong>approve&lt;/strong> or &lt;strong>deny&lt;/strong> the request.&lt;/p>
-&lt;p>When a user requests membership to a VO, all VO managers will receive an email, containing the petition URL.&lt;/p>
+&lt;p>When a user requests membership to a VO, all VO managers will receive an email,
+containing the petition URL.&lt;/p>
 &lt;p>Except from email, they will receive a notification on their COmanage profile.
-At the top right corner clicking the bell icon someone can see all the notifications.&lt;/p>
+At the top right corner clicking the bell icon someone can see all the
+notifications.&lt;/p>
 &lt;p>&lt;img src="./check-in-notification-icon.png" alt="COmanage-notification-icon">&lt;/p>
-&lt;p>Clicking a notification message, you can find among others, the petition URL inside the &lt;code>Notification Email Body&lt;/code> field.&lt;/p>
+&lt;p>Clicking a notification message, you can find among others, the petition URL
+inside the &lt;code>Notification Email Body&lt;/code> field.&lt;/p>
 &lt;p>&lt;img src="./check-in-notification-message.png" alt="COmanage-notification-message">&lt;/p>
-&lt;p>Clicking the petition URL either at mail you received either at the notification message, you can review the request.&lt;/p>
-&lt;p>You can accept or deny the membership, and also provide a justification at the textarea, below the two buttons.
-This field is optional. In case is filled, it will also be sent to the user that made the request.&lt;/p>
+&lt;p>Clicking the petition URL either at mail you received either at the notification
+message, you can review the request.&lt;/p>
+&lt;p>You can accept or deny the membership, and also provide a justification at the
+textarea, below the two buttons. This field is optional. In case is filled, it
+will also be sent to the user that made the request.&lt;/p>
 &lt;p>&lt;img src="./check-in-approve-deny-petition.png" alt="COmanage-petition-approve-deny">&lt;/p>
+&lt;p>In the petition view you can also view user&amp;rsquo;s assurance per linked identity
+under &lt;code>Assurance&lt;/code> section. More information about identity assurance can be
+found &lt;a href="../../../../providers/check-in/sp#identity-assurance">here&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="./check-in-assurance-petition-view.png" alt="COmanage-petition-assurance">&lt;/p>
+&lt;p>The complete user profile can be found by clicking the enrollee name under
+&lt;code>Attached Identities&lt;/code> (in Petition View).&lt;/p>
+&lt;p>&lt;img src="./check-in-petition-view.png" alt="COmanage-petition-attached-identities">&lt;/p>
+&lt;p>At user profile you can find also information about Organisation Identities. An
+Organisation Identity, among others, includes information about &lt;code>Certificates&lt;/code>
+and &lt;code>Assurances&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="./check-in-org-identities.png" alt="COmanage-user-org-identities">&lt;/p>
 &lt;h3 id="managing-vo-groups">Managing VO groups&lt;/h3>
 &lt;p>VO groups can only be created by Check-in platform administrators. Please
 contact &lt;code>checkin-support&lt;/code> &lt;code>&amp;lt;AT&amp;gt;&lt;/code> &lt;code>mailman.egi.eu&lt;/code> indicating the following
@@ -551,15 +570,16 @@ on Filter button&lt;/p>
 &lt;/ol>
 &lt;h3 id="expiration-policy">Expiration Policy&lt;/h3>
 &lt;p>VO membership expires within a given time, typically a year after the VO member
-joins the VO. VO members receive a notification from &lt;a href="mailto:noreply@faai.grnet.gr">EGI Check-in Notifications&lt;/a>
-with the subject &amp;ldquo;vo.example.org membership will expire soon&amp;rdquo; warning them that
-their membership will expire four weeks before expiration. The notification
-email is sent on a weekly basis and includes all the instructions needed by
-VO members in order to reapply for a membership. If the VO member does not
-take any action to renew their membership, a final notification email is
-sent when the VO membership expires. Please note that a user with expired
-membership is not eligible for VO membership entitlements and as a result
-the user will not have access to VO resources relying on these entitlements.&lt;/p>
+joins the VO. VO members receive a notification from
+&lt;a href="mailto:noreply@faai.grnet.gr">EGI Check-in Notifications&lt;/a> with the subject
+&amp;ldquo;vo.example.org membership will expire soon&amp;rdquo; warning them that their membership
+will expire four weeks before expiration. The notification email is sent on a
+weekly basis and includes all the instructions needed by VO members in order to
+reapply for a membership. If the VO member does not take any action to renew
+their membership, a final notification email is sent when the VO membership
+expires. Please note that a user with expired membership is not eligible for VO
+membership entitlements and as a result the user will not have access to VO
+resources relying on these entitlements.&lt;/p>
 &lt;h4 id="assign-cou-member-admin-role">Assign COU member admin role&lt;/h4>
 &lt;p>From the steps defined &lt;a href="#managing-cou-admin-members">above&lt;/a>:&lt;/p>
 &lt;ol>
@@ -588,7 +608,8 @@ to be removed from Admins group&lt;/p>
 information only for the VOs they are authoritative for.&lt;/p>
 &lt;p>Features:&lt;/p>
 &lt;ul>
-&lt;li>Members of the VO are identified via their EGI Check-in Community User Identifier (CUID)&lt;/li>
+&lt;li>Members of the VO are identified via their EGI Check-in Community User
+Identifier (CUID)&lt;/li>
 &lt;li>Membership can be limited to a specified period&lt;/li>
 &lt;li>All
 &lt;a href="https://wiki.refeds.org/display/STAN/eduPerson+2020-01#eduPerson202001-eduPersonAffiliation">REFEDS&lt;/a>
@@ -630,7 +651,7 @@ id="tabs-0-0" role="tabpanel" aria-labelled-by="tabs-0-0-tab">
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Export VO API Base URL parameter&lt;/span>
 $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">VO_API_BASE_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://aai.egi.eu/api/v2/VoMembers
 &lt;span style="color:#8f5902;font-style:italic"># Export CO ID parameter.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># The CO ID is the number part of the API username prefix. &lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># The CO ID is the number part of the API username prefix.&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># e.g. for the username `co_2.test`, the CO_ID is `2`&lt;/span>
 $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">CO_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
@@ -656,12 +677,13 @@ $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">CO
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;p>The &lt;code>API username&lt;/code> and &lt;code>API password&lt;/code> will be assigned by the EGI Check-in
-team when you request REST API access. In order to obtain REST API credentials
-you need to email your request to &lt;a href="mailto:checkin-support@mailman.egi.eu">EGI Check-in Support&lt;/a>
-with Subject &lt;code>Request REST API access for &amp;lt;vo_name&amp;gt; VO&lt;/code>. Make sure you indicate
-the instance of EGI Check-in (production, demo or development) hosting the VO
-you request access to. Only VO managers can request REST API credentials for a given VO.&lt;/p>
+&lt;p>The &lt;code>API username&lt;/code> and &lt;code>API password&lt;/code> will be assigned by the EGI Check-in team
+when you request REST API access. In order to obtain REST API credentials you
+need to email your request to
+&lt;a href="mailto:checkin-support@mailman.egi.eu">EGI Check-in Support&lt;/a> with Subject
+&lt;code>Request REST API access for &amp;lt;vo_name&amp;gt; VO&lt;/code>. Make sure you indicate the instance
+of EGI Check-in (production, demo or development) hosting the VO you request
+access to. Only VO managers can request REST API credentials for a given VO.&lt;/p>
 &lt;h4 id="authentication">Authentication&lt;/h4>
 &lt;p>The REST client is authenticated via username/password credentials transmitted
 over HTTPS using the Basic Authentication scheme. More sophisticated
@@ -671,9 +693,9 @@ be supported in the future.&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>Adding a user to a VO requires specifying the user&amp;rsquo;s EGI Check-in CUID, the
-name of the VO (e.g. &lt;code>vo.example.org&lt;/code>), the status
-(&lt;code>Active&lt;/code>) and the valid from/through dates. All these parameters are
-mandatory. Here is an example using curl (see example &lt;code>add.json&lt;/code> file below):&lt;/p>
+name of the VO (e.g. &lt;code>vo.example.org&lt;/code>), the status (&lt;code>Active&lt;/code>) and the valid
+from/through dates. All these parameters are mandatory. Here is an example
+using curl (see example &lt;code>add.json&lt;/code> file below):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -vX POST &lt;span style="color:#000">$VO_API_BASE_URL&lt;/span>.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --user &lt;span style="color:#4e9a06">&amp;#34;example-client&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;veryverysecret&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --data @add.json &lt;span style="color:#4e9a06">\
@@ -986,8 +1008,8 @@ update requires:&lt;/p>
 &lt;ol>
 &lt;li>Removing VO member:&lt;/li>
 &lt;/ol>
-&lt;p>Same as the update but requires setting the membership status to &lt;code>Deleted&lt;/code>
-and do not include a body.&lt;/p>
+&lt;p>Same as the update but requires setting the membership status to &lt;code>Deleted&lt;/code> and
+do not include a body.&lt;/p>
 &lt;p>Response Format:&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1025,7 +1047,8 @@ and do not include a body.&lt;/p>
 information only for the VOs they are authoritative for.&lt;/p>
 &lt;p>Features:&lt;/p>
 &lt;ul>
-&lt;li>Members of the VO are identified via their EGI Check-in Community User Identifier (CUID)&lt;/li>
+&lt;li>Members of the VO are identified via their EGI Check-in Community User
+Identifier (CUID)&lt;/li>
 &lt;li>Membership can be limited to a specified period&lt;/li>
 &lt;li>Different membership status values are supported, namely &lt;code>Active&lt;/code>, &lt;code>Expired&lt;/code>,
 &lt;code>Deleted&lt;/code>&lt;/li>
@@ -1111,10 +1134,12 @@ Lightweight Directory Access Protocol (LDAP).&lt;/p>
 &lt;p>There are two entity types in the LDAP:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>People: Users of EGI Check-in, expressed as &lt;code>inetOrgPerson&lt;/code> (with additional attributes/schemas).&lt;/p>
+&lt;p>People: Users of EGI Check-in, expressed as &lt;code>inetOrgPerson&lt;/code> (with additional
+attributes/schemas).&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Groups of collaboration members, expressed as &lt;code>groupOfMembers&lt;/code> (with additional attributes/schema).&lt;/p>
+&lt;p>Groups of collaboration members, expressed as &lt;code>groupOfMembers&lt;/code> (with
+additional attributes/schema).&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;!-- markdownlint-disable no-duplicate-header -->
@@ -1145,12 +1170,12 @@ Lightweight Directory Access Protocol (LDAP).&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;p>&lt;strong>Bind DN&lt;/strong>: &amp;lt;provided by EGI Check-in support&amp;gt;&lt;/p>
-&lt;p>The &lt;code>Bind DN&lt;/code> and &lt;code>Bind Password&lt;/code> will be assigned by the EGI Check-in team
-when you request LDAP access. In order to obtain LDAP credentials you need to
-email your request to &lt;a href="mailto:checkin-support@mailman.egi.eu">EGI Check-in Support&lt;/a>
+&lt;p>The &lt;code>Bind DN&lt;/code> and &lt;code>Bind Password&lt;/code> will be assigned by the EGI Check-in team when
+you request LDAP access. In order to obtain LDAP credentials you need to email
+your request to &lt;a href="mailto:checkin-support@mailman.egi.eu">EGI Check-in Support&lt;/a>
 with Subject &lt;code>Request LDAP access for &amp;lt;vo_name&amp;gt; VO&lt;/code>. Make sure you indicate the
-instance of EGI Check-in (production, demo or development) hosting the VO you request
-access to. Only VO managers can request LDAP credentials for a given VO.&lt;/p>
+instance of EGI Check-in (production, demo or development) hosting the VO you
+request access to. Only VO managers can request LDAP credentials for a given VO.&lt;/p>
 &lt;h3 id="entities">Entities&lt;/h3>
 &lt;h4 id="user">User&lt;/h4>
 &lt;p>Users are present in the &lt;code>ou=people&lt;/code> subtree.&lt;/p>
