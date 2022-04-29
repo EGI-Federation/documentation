@@ -169,9 +169,8 @@ infrastructures:
   Setting an valid access token of other user, the infrastructure can be shared
   or transfered to another user. If overwrite check is set the new user will be
   the unique new owner of the infrastructure, otherwise it will be added to the
-  list of current users. If the new user does not have the correct credentials
-  to access the cloud provider where the resources were deployed the user will
-  not be able to manage the cloud resources.
+  list of current users. The new user must be a member of the VO used to create
+  the cloud resources, otherwise he will not be able to manage them.
 
    ![Change/Add User modal form](dash_change_user.png)
 
