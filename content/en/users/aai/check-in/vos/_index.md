@@ -10,20 +10,21 @@ description: >
 ---
 
 This page contains information about using Check-in for managing your Virtual
-Organisation (VO). For joining a VO please look at [Joining Virtual Organisation](../joining-virtual-organisation).
+Organisation (VO). For joining a VO please look at
+[Joining Virtual Organisation](../joining-virtual-organisation).
 
 ## Background
 
-In simple terms a Virtual Organisation (VO) is just a group of users. In
-EGI VOs are created to group researchers who aim to share resources across the
-EGI Federation to achieve a common goal as part of a scientific collaboration.
-For a more formal definition of VO please look at the
+In simple terms a Virtual Organisation (VO) is just a group of users. In EGI VOs
+are created to group researchers who aim to share resources across the EGI
+Federation to achieve a common goal as part of a scientific collaboration. For a
+more formal definition of VO please look at the
 [EGI Glossary](https://ims.egi.eu/display/EGIG/Virtual+organisation).
 
 You can browse existing VOs in the
-[EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list). For each
-VO you can click on the _Details_ link to get more information. You can join
-an existing VO either using the _enrollment URL_ or emailing VO managers.
+[EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list). For each VO
+you can click on the _Details_ link to get more information. You can join an
+existing VO either using the _enrollment URL_ or emailing VO managers.
 
 If you are interested in creating your own VO, please see instructions in the
 section [below](#vo-management).
@@ -50,7 +51,8 @@ VO is set up and operational, the VO manager is the person who is primarily
 responsible for the operation of the VO and for providing sufficient information
 about VO activities for EGI and for VO members (to both people and sites).
 
-A step-by-step guide for the VO registration process is provided in the procedure
+A step-by-step guide for the VO registration process is provided in the
+procedure
 [PROC14 VO Registration](https://confluence.egi.eu/display/EGIPP/PROC14+VO+Registration).
 
 ### Viewing VO members
@@ -59,8 +61,7 @@ A step-by-step guide for the VO registration process is provided in the procedur
    login credentials already linked to your EGI account.
 
 1. To view the existing members, expand the **People** drop down menu and click
-   on **_VO-NAME_ Population** (for example, **vo.example.org
-   Population**)
+   on **_VO-NAME_ Population** (for example, **vo.example.org Population**)
 
    ![VO population menu](./check-in-my-vo-population.png)
 
@@ -68,7 +69,9 @@ A step-by-step guide for the VO registration process is provided in the procedur
 
    ![VO population](./check-in-my-vo-population-result.png)
 
-### Accepting new VO members
+### VO enrollment URLs
+
+Vo enrollments URLs are essential for someone who wants to enroll to a VO.
 
 Users can request membership in your VO by following the VO enrollment URL. The
 enrollment URL has the following form:
@@ -76,11 +79,15 @@ enrollment URL has the following form:
 `https://aai.egi.eu/registry/co_petitions/start/coef:##` where `##` is the
 unique numeric identifier for the enrollment flow of your VO.
 
-Once a user submits a VO membership petition, all VO managers are notified with
-an email containing a link to the petition. Any of the VO managers can then
-review the petition and either **approve** or **deny** the request.
+The VO Manager can insert this URL in an invitation email and send it directly
+to the users who want to join the VO. Also, it can be used in any registration
+web page as an href of a button or image etc.
 
-The VO enrollment URL can be found through the EGI Check-in Registry:
+The VO enrollment URL can be found both at the Operations Portal and EGI
+Check-in Registry. At the Operations Portal VO List, by quickly searching for
+the VO name and clicking on the Details.
+
+At EGI Check-in Registry:
 
 1. Login to [Check-in registry](https://aai.egi.eu/registry) using any of the
    login credentials already linked to your EGI account.
@@ -105,6 +112,52 @@ The VO enrollment URL can be found through the EGI Check-in Registry:
    status
 
    ![Member role active](./check-in-role-active.png)
+
+### Reviewing VO membership requests
+
+Once a user submits a VO membership petition, all VO managers are notified with
+an email containing a link to the petition. Any of the VO managers can then
+review the petition and either **approve** or **deny** the request.
+
+When a user requests membership to a VO, all VO managers will receive an email,
+containing the petition URL.
+
+Except from email, they will receive a notification on their COmanage profile.
+At the top right corner clicking the bell icon someone can see all the
+notifications.
+
+![COmanage-notification-icon](./check-in-notification-icon.png)
+
+Clicking a notification message, you can find among others, the petition URL
+inside the `Notification Email Body` field.
+
+![COmanage-notification-message](./check-in-notification-message.png)
+
+Clicking the petition URL either at mail you received either at the notification
+message, you can review the request.
+
+You can accept or deny the membership, and also provide a justification at the
+textarea, below the two buttons. This field is optional. In case is filled, it
+will also be sent to the user that made the request.
+
+![COmanage-petition-approve-deny](./check-in-approve-deny-petition.png)
+
+In the petition view you can also view user's assurance per linked identity
+under `Assurance` section. More information about identity assurance can be
+found [here](../../../../providers/check-in/sp#identity-assurance).
+
+![COmanage-petition-assurance](./check-in-assurance-petition-view.png)
+
+The complete user profile can be found by clicking the enrollee name under
+`Attached Identities` (in Petition View).
+
+![COmanage-petition-attached-identities](./check-in-petition-view.png)
+
+At user profile you can find also information about Organisation Identities. An
+Organisation Identity, among others, includes information about `Certificates`
+and `Assurances`.
+
+![COmanage-user-org-identities](./check-in-org-identities.png)
 
 ### Managing VO groups
 
@@ -252,15 +305,16 @@ A COU admins group owner can manage the admins group member as follows:
 ### Expiration Policy
 
 VO membership expires within a given time, typically a year after the VO member
-joins the VO. VO members receive a notification from [EGI Check-in Notifications](mailto:noreply@faai.grnet.gr)
-with the subject "vo.example.org membership will expire soon" warning them that
-their membership will expire four weeks before expiration. The notification
-email is sent on a weekly basis and includes all the instructions needed by
-VO members in order to reapply for a membership. If the VO member does not
-take any action to renew their membership, a final notification email is
-sent when the VO membership expires. Please note that a user with expired
-membership is not eligible for VO membership entitlements and as a result
-the user will not have access to VO resources relying on these entitlements.
+joins the VO. VO members receive a notification from
+[EGI Check-in Notifications](mailto:noreply@faai.grnet.gr) with the subject
+"vo.example.org membership will expire soon" warning them that their membership
+will expire four weeks before expiration. The notification email is sent on a
+weekly basis and includes all the instructions needed by VO members in order to
+reapply for a membership. If the VO member does not take any action to renew
+their membership, a final notification email is sent when the VO membership
+expires. Please note that a user with expired membership is not eligible for VO
+membership entitlements and as a result the user will not have access to VO
+resources relying on these entitlements.
 
 #### Assign COU member admin role
 
@@ -293,7 +347,8 @@ information only for the VOs they are authoritative for.
 
 Features:
 
-- Members of the VO are identified via their EGI Check-in Community User Identifier (CUID)
+- Members of the VO are identified via their EGI Check-in Community User
+  Identifier (CUID)
 - Membership can be limited to a specified period
 - All
   [REFEDS](https://wiki.refeds.org/display/STAN/eduPerson+2020-01#eduPerson202001-eduPersonAffiliation)
@@ -314,13 +369,12 @@ Features:
 # Export VO API Base URL parameter
 $ export VO_API_BASE_URL=https://aai.egi.eu/api/v2/VoMembers
 # Export CO ID parameter.
-# The CO ID is the number part of the API username prefix. 
+# The CO ID is the number part of the API username prefix.
 # e.g. for the username `co_2.test`, the CO_ID is `2`
 $ export CO_ID=2
 ```
 
-{{< /tabx >}}
-{{< tabx header="Demo environment">}}
+{{< /tabx >}} {{< tabx header="Demo environment">}}
 
 ```shell
 # Export VO API Base URL parameter
@@ -331,8 +385,7 @@ $ export VO_API_BASE_URL=https://aai-demo.egi.eu/api/v2/VoMembers
 $ export CO_ID=2
 ```
 
-{{< /tabx >}}
-{{< tabx header="Development environment">}}
+{{< /tabx >}} {{< tabx header="Development environment">}}
 
 ```shell
 # Export VO API Base URL parameter
@@ -343,8 +396,15 @@ $ export VO_API_BASE_URL=https://aai-dev.egi.eu/api/v2/VoMembers
 $ export CO_ID=2
 ```
 
-{{< /tabx >}}
-{{< /tabpanex >}}
+{{< /tabx >}} {{< /tabpanex >}}
+
+The `API username` and `API password` will be assigned by the EGI Check-in team
+when you request REST API access. In order to obtain REST API credentials you
+need to email your request to
+[EGI Check-in Support](mailto:checkin-support@mailman.egi.eu) with Subject
+`Request REST API access for <vo_name> VO`. Make sure you indicate the instance
+of EGI Check-in (production, demo or development) hosting the VO you request
+access to. Only VO managers can request REST API credentials for a given VO.
 
 #### Authentication
 
@@ -356,9 +416,9 @@ be supported in the future.
 #### Methods
 
 1. Adding a user to a VO requires specifying the user's EGI Check-in CUID, the
-   name of the VO (e.g. `vo.example.org`), the status
-   (`Active`) and the valid from/through dates. All these parameters are
-   mandatory. Here is an example using curl (see example `add.json` file below):
+   name of the VO (e.g. `vo.example.org`), the status (`Active`) and the valid
+   from/through dates. All these parameters are mandatory. Here is an example
+   using curl (see example `add.json` file below):
 
    ```shell
    $ curl -vX POST $VO_API_BASE_URL.json \
@@ -371,31 +431,50 @@ be supported in the future.
 
    ```json
    {
-      "RequestType": "CoPersonRoles",
-      "Version": "1.0",
-      "CoPersonRoles": [
-         {
-            "Version": "1.0",
-            "Person": {
-               "Type": "CO",
-               "Identifier": {
-                  "Type": "epuid",
-                  "Id": "01234567890123456789@egi.eu"
-               }
-            },
-            "Cou": {
-               "CoId": "2",
-               "Name": "vo.example.org"
-            },
-            "Affiliation": "member",
-            "Title": "Engineer",
-            "Status": "Active",
-            "ValidFrom": "2022-02-16 11:19:38",
-            "ValidThrough": "2022-05-16 11:19:38"
-         }
-      ]
+     "RequestType": "CoPersonRoles",
+     "Version": "1.0",
+     "CoPersonRoles": [
+       {
+         "Version": "1.0",
+         "Person": {
+           "Type": "CO",
+           "Identifier": {
+             "Type": "epuid",
+             "Id": "01234567890123456789@egi.eu"
+           }
+         },
+         "Cou": {
+           "CoId": "2",
+           "Name": "vo.example.org"
+         },
+         "Affiliation": "member",
+         "Title": "Engineer",
+         "Status": "Active",
+         "ValidFrom": "2022-02-16 11:19:38",
+         "ValidThrough": "2022-05-16 11:19:38"
+       }
+     ]
    }
    ```
+
+<!--
+// jscpd:ignore-start
+-->
+
+Response Format:
+
+| HTTP Status            | Description                            | Response Body                  |
+| ---------------------- | -------------------------------------- | ------------------------------ |
+| 201 Added              | Role Added                             | add.json response              |
+| 400 Bad Request        | Role Request not provided in post body |                                |
+| 400 Invalid Fields     | An error in one more fields            | Response with failing field(s) |
+| 401 Unauthorized       | Authentication Required                |                                |
+| 403 COU Does not exist | The specified COU does not exists      |                                |
+| 500 Other error        | Unknown Error                          |                                |
+
+<!--
+// jscpd:ignore-end
+-->
 
 1. Retrieving the VO membership information for a given EGI Check-in CUID:
 
@@ -408,33 +487,53 @@ be supported in the future.
 
    ```json
    {
-      "RequestType": "CoPersonRoles",
-      "Version": "1.0",
-      "CoPersonRoles": [
-         {
-            "Version": "1.0",
-            "Person": {
-               "Type": "CO",
-               "Id": 1111
-            },
-            "CouId": 13,
-            "Affiliation": "member",
-            "Title": "Pilot",
-            "Status": "Active",
-            "Created": "2022-02-16 11:19:38",
-            "Modified": "2022-02-16 11:20:27",
-            "Revision": 2,
-            "Deleted": false,
-            "ActorIdentifier": "co_2.test"
-         }
-      ]
+     "RequestType": "CoPersonRoles",
+     "Version": "1.0",
+     "CoPersonRoles": [
+       {
+         "Version": "1.0",
+         "Person": {
+           "Type": "CO",
+           "Id": 1111
+         },
+         "CouId": 13,
+         "Affiliation": "member",
+         "Title": "Pilot",
+         "Status": "Active",
+         "Created": "2023-02-16 11:19:38",
+         "Modified": "2023-02-16 11:20:27",
+         "Revision": 3,
+         "Deleted": false,
+         "ActorIdentifier": "co_2.test"
+       }
+     ]
    }
    ```
 
-   Beyond the `valid_through` date, the status will be automatically changed to
-   `Expired`. So, when querying for VO membership information, it's important to
-   check that the status is actually set to `Active` for each of the identified
-   VOs.
+<!--
+// jscpd:ignore-start
+-->
+
+Beyond the `valid_through` date, the status will be automatically changed to
+`Expired`. So, when querying for VO membership information, it's important to
+check that the status is actually set to `Active` for each of the identified
+VOs.
+
+<!--
+// jscpd:ignore-end
+-->
+
+Response Format:
+
+| HTTP Status                 | Description                  | Response Body |
+| --------------------------- | ---------------------------- | ------------- |
+| 200 OK                      | Role Returned                | json response |
+| 400 Bad Request             | CO ID unknown                |               |
+| 401 Unauthorized            | Authentication Required      |               |
+| 404 COU/VO unknown          | COU/CO name not found        |               |
+| 404 Person unknown          | Person Identifier not found  |               |
+| 404 Identifier type unknown | Identifier type is not valid |               |
+| 500 Other error             | Unknown Error                |               |
 
 1. Retrieving all VO members:
 
@@ -472,10 +571,28 @@ be supported in the future.
    }
    ```
 
-   Beyond the `valid_through` date, the status will be automatically changed to
-   `Expired`. So, when querying for VO membership information, it's important to
-   check that the status is actually set to `Active` for each of the identified
-   VOs.
+<!--
+// jscpd:ignore-start
+-->
+
+Beyond the `valid_through` date, the status will be automatically changed to
+`Expired`. So, when querying for VO membership information, it's important to
+check that the status is actually set to `Active` for each of the identified
+VOs.
+
+<!--
+// jscpd:ignore-end
+-->
+
+Response Format:
+
+| HTTP Status        | Description             | Response Body |
+| ------------------ | ----------------------- | ------------- |
+| 200 OK             | Role Returned           | json response |
+| 400 Bad Request    | CO ID unknown           |               |
+| 401 Unauthorized   | Authentication Required |               |
+| 404 COU/VO unknown | COU/CO name not found   |               |
+| 500 Other error    | Unknown Error           |               |
 
 1. Updating existing VO membership record:
 
@@ -488,13 +605,42 @@ be supported in the future.
 
    The request body is the same as the one used for adding new members but
    update requires:
+
    - using `PUT` instead of `POST`.
    - provide the Role ID as part of the request URL
 
+<!--
+// jscpd:ignore-start
+-->
+
+Response Format:
+
+| HTTP Status            | Description                            | Response Body                  |
+| ---------------------- | -------------------------------------- | ------------------------------ |
+| 200 OK                 | Role Updated                           |                                |
+| 400 Bad Request        | Role Request not provided in post body |                                |
+| 400 Invalid Fields     | An error in one more fields            | Response with failing field(s) |
+| 401 Unauthorized       | Authentication Required                |                                |
+| 403 COU Does not exist | The specified COU does not exists      |                                |
+| 500 Other error        | Unknown Error                          |                                |
+
+<!--
+// jscpd:ignore-end
+-->
+
 1. Removing VO member:
 
-  Same as the update but requires setting the membership status to `Deleted`
-  and do not include a body.
+Same as the update but requires setting the membership status to `Deleted` and
+do not include a body.
+
+Response Format:
+
+| HTTP Status      | Description             | Response Body |
+| ---------------- | ----------------------- | ------------- |
+| 200 OK           | Role Returned           | json response |
+| 401 Unauthorized | Authentication Required |               |
+| 404 Role unknown | Role name not found     |               |
+| 500 Other error  | Unknown Error           |               |
 
 ### API v1 (DEPRECATED)
 
@@ -503,7 +649,8 @@ information only for the VOs they are authoritative for.
 
 Features:
 
-- Members of the VO are identified via their EGI Check-in Community User Identifier (CUID)
+- Members of the VO are identified via their EGI Check-in Community User
+  Identifier (CUID)
 - Membership can be limited to a specified period
 - Different membership status values are supported, namely `Active`, `Expired`,
   `Deleted`
@@ -511,7 +658,9 @@ Features:
   `Expired` beyond the validity period
 
 <!-- markdownlint-disable no-duplicate-header -->
+
 #### Authentication
+
 <!-- markdownlint-enable no-duplicate-header -->
 
 The REST client is authenticated via username/password credentials transmitted
@@ -520,7 +669,9 @@ authentication mechanisms, such as OpenID Connect/OAuth 2.0 access tokens, may
 be supported in the future.
 
 <!-- markdownlint-disable no-duplicate-header -->
+
 #### Methods
+
 <!-- markdownlint-enable no-duplicate-header -->
 
 1. Adding a user to a VO requires specifying the user's EGI Check-in CUID, the
@@ -598,7 +749,7 @@ be supported in the future.
 
 1. Removing VO member:
 
-  Same as the update but requires setting the membership status to `Deleted`
+Same as the update but requires setting the membership status to `Deleted`
 
 ## LDAP
 
@@ -607,27 +758,31 @@ Lightweight Directory Access Protocol (LDAP).
 
 There are two entity types in the LDAP:
 
-- People: Users of EGI Check-in, expressed as `inetOrgPerson` (with additional attributes/schemas).
+- People: Users of EGI Check-in, expressed as `inetOrgPerson` (with additional
+  attributes/schemas).
 
-- Groups of collaboration members, expressed as `groupOfMembers` (with additional attributes/schema).
+- Groups of collaboration members, expressed as `groupOfMembers` (with
+  additional attributes/schema).
 
 <!-- markdownlint-disable no-duplicate-header -->
+
 ### Connection Parameters
+
 <!-- markdownlint-enable no-duplicate-header -->
 
-| | Production environment | Demo environment                   | Development environment |
-|-| ----------------------- | ------------------------------- | -------------------- |
-| **LDAP address** | ldaps://ldap.aai.egi.eu:636/ | ldaps://ldap.aai-demo.egi.eu:636/ | ldaps://ldap.aai-dev.egi.eu:636/ |
-| **Base DN** | dc=\<vo_name\>,dc=ldap,dc=aai,dc=egi,dc=eu | dc=\<vo_name\>,dc=ldap,dc=aai-demo,dc=egi,dc=eu | dc=\<vo_name\>,dc=ldap,dc=aai-dev,dc=egi,dc=eu |
+|                  | Production environment                     | Demo environment                                | Development environment                        |
+| ---------------- | ------------------------------------------ | ----------------------------------------------- | ---------------------------------------------- |
+| **LDAP address** | ldaps://ldap.aai.egi.eu:636/               | ldaps://ldap.aai-demo.egi.eu:636/               | ldaps://ldap.aai-dev.egi.eu:636/               |
+| **Base DN**      | dc=\<vo_name\>,dc=ldap,dc=aai,dc=egi,dc=eu | dc=\<vo_name\>,dc=ldap,dc=aai-demo,dc=egi,dc=eu | dc=\<vo_name\>,dc=ldap,dc=aai-dev,dc=egi,dc=eu |
 
 **Bind DN**: \<provided by EGI Check-in support\>
 
-The `Bind DN` and `Bind Password` will be assigned by the EGI Check-in team
-when you request LDAP access. In order to obtain LDAP credentials you need to
-email your request to [EGI Check-in Support](mailto:checkin-support@mailman.egi.eu)
+The `Bind DN` and `Bind Password` will be assigned by the EGI Check-in team when
+you request LDAP access. In order to obtain LDAP credentials you need to email
+your request to [EGI Check-in Support](mailto:checkin-support@mailman.egi.eu)
 with Subject `Request LDAP access for <vo_name> VO`. Make sure you indicate the
-instance of EGI Check-in (production, demo or development) hosting the VO you request
-access to. Only VO managers can request LDAP credentials for a given VO.
+instance of EGI Check-in (production, demo or development) hosting the VO you
+request access to. Only VO managers can request LDAP credentials for a given VO.
 
 ### Entities
 
@@ -635,31 +790,31 @@ access to. Only VO managers can request LDAP credentials for a given VO.
 
 Users are present in the `ou=people` subtree.
 
-| Attribute    | Description                 | Example                                                            |
-|------------- |---------------------------- |----------------------------------------------------------------- |
-| `objectClass`    |                           | `inetOrgPerson`, `eduPerson`, `voPerson`, `eduMember`, `ldapPublicKey`   |
-| `voPersonId`    | Community User Identifier (`voPersonID`)  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu`  |
-| `uid` | user ID | `john.doe` |
-| `cn`            | Full name                 | `John Doe` |
-| `displayName`   | Full name                 | `John Doe` |
-| `givenName`     | First name                  | `John`          |
-| `sn`            | Last name                   | `Doe`      |
-| `mail`          | Email address               | `john.doe@mail.com`         |
-| `edupersonUniqueID` | Community User Identifier (see also `voPersonId`)  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
-| `eduPersonPrincipalName` | A scoped identifier for a person. The value is the same as the  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
-| `eduPersonEntitlement` | URN that indicates a set of rights to specific resources | urn:mace:egi.eu:group:vo.example.org:role=member#aai.egi.eu |
-| `sshPublicKey` | SSH public key | |
-| `isMemberOf` | Group memberships | `CO:COU:vo.example.org:members` |
-| `voPersonCertificateDN` | The Subject Distinguished Name of an X.509 certificate held by the person | `voPersonCertificateDN;scope-cert1: CN=John Doe A251,O=Example,C=US,DC=cilogon,DC=org` |
-| `voPersonCertificateIssuerDN` | The Subject Distinguished Name of the X.509 certificate issuer | `voPersonCertificateIssuerDN;scope-cert1: CN=CILogon Basic CA 1, O=CILogon, C=US, DC=cilogon, DC=org` |
+| Attribute                     | Description                                                               | Example                                                                                               |
+| ----------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `objectClass`                 |                                                                           | `inetOrgPerson`, `eduPerson`, `voPerson`, `eduMember`, `ldapPublicKey`                                |
+| `voPersonId`                  | Community User Identifier (`voPersonID`)                                  | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu`                                      |
+| `uid`                         | user ID                                                                   | `john.doe`                                                                                            |
+| `cn`                          | Full name                                                                 | `John Doe`                                                                                            |
+| `displayName`                 | Full name                                                                 | `John Doe`                                                                                            |
+| `givenName`                   | First name                                                                | `John`                                                                                                |
+| `sn`                          | Last name                                                                 | `Doe`                                                                                                 |
+| `mail`                        | Email address                                                             | `john.doe@mail.com`                                                                                   |
+| `edupersonUniqueID`           | Community User Identifier (see also `voPersonId`)                         | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu`                                      |
+| `eduPersonPrincipalName`      | A scoped identifier for a person. The value is the same as the            | `befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu`                                      |
+| `eduPersonEntitlement`        | URN that indicates a set of rights to specific resources                  | urn:mace:egi.eu:group:vo.example.org:role=member#aai.egi.eu                                           |
+| `sshPublicKey`                | SSH public key                                                            |                                                                                                       |
+| `isMemberOf`                  | Group memberships                                                         | `CO:COU:vo.example.org:members`                                                                       |
+| `voPersonCertificateDN`       | The Subject Distinguished Name of an X.509 certificate held by the person | `voPersonCertificateDN;scope-cert1: CN=John Doe A251,O=Example,C=US,DC=cilogon,DC=org`                |
+| `voPersonCertificateIssuerDN` | The Subject Distinguished Name of the X.509 certificate issuer            | `voPersonCertificateIssuerDN;scope-cert1: CN=CILogon Basic CA 1, O=CILogon, C=US, DC=cilogon, DC=org` |
 
 #### Group
 
 Groups are present in the `ou=groups` subtree.
 
-| Attribute     | Description                 | Example                                                            |
-|-------------  |---------------------------- |-----------------------------------------------------------------   |
-| `objectClass` |                            | `groupofNames`, `eduMember`  |
-| `cn`               | Common name                 | `CO:COU:vo.example.org:members` |
-| `description`   | The description of group    | `CO:COU:vo.example.org Members` |
-| `member`        | The members of this group (multivalued)   | `voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
+| Attribute     | Description                             | Example                                                                     |
+| ------------- | --------------------------------------- | --------------------------------------------------------------------------- |
+| `objectClass` |                                         | `groupofNames`, `eduMember`                                                 |
+| `cn`          | Common name                             | `CO:COU:vo.example.org:members`                                             |
+| `description` | The description of group                | `CO:COU:vo.example.org Members`                                             |
+| `member`      | The members of this group (multivalued) | `voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |

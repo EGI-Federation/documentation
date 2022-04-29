@@ -26,11 +26,9 @@ levels of abstractions and features. See below to understand which to choose
 | [Infrastructure Manager](im)                 | VMs, containers, storage  | Used to run workloads on a single IaaS Cloud provider. |
 | [Elastic Cloud Compute Cluster](ec3)         | VMs, containers, storage  | Used when you need to run workloads on clusters that can be elastically scaled and potentially span more than one IaaS Cloud provider. |
 | [Workload Manager](workload-manager)         | VMs, containers, HTC jobs | Used to efficiently distribute, manage, and monitor computing workloads. |
+| [Dynamic On-Demand Analysis Service](dodas)  | Containers, storage (caches) | Used when you need to process your data either interactively or via a batch system. |
 <!--
 | [PaaS Orchestrator](indigo-paas)             | VMs, containers, HTC jobs | Used when you have both IaaS Cloud and HTC workloads. The DEEP Platform uses it for ML/DL workloads. |
-| [Dynamic On-Demand Analysis Software](dodas) | Containers                | Used when your workload is composed of Docker containers (Helm charts). |
--->
-
 <!-- markdownlint-enable line-length -->
 
 The following sections offer more details about each of these orchestrator tools.
