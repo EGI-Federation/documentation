@@ -166,11 +166,11 @@ infrastructures:
 - Reconfigure: Starts the reconfiguration of the infrastructure.
 
 - Change User: Add or change the ownership of the infrastructure at IM level.
-  Setting a valid access token of other user, the infrastructure can be shared
-  or transfered to another user. If overwrite check is set the new user will be
-  the unique new owner of the infrastructure, otherwise it will be added to the
-  list of current users. **The new user must be member of the VO used to create
-  the cloud resources**, otherwise he will not be able to manage them.
+  Providing a valid `Access Token` of another user, the infrastructure can be shared
+  or transferred to them. If `Overwrite` is checked, the new user will be
+  the unique owner of the infrastructure (transferring), otherwise it will be added to the
+  list of current users (sharing). **The new user must be member of the VO used to create
+  the resources**, otherwise he will not be able to manage them.
 
    ![Change/Add User modal form](dash_change_user.png)
 
