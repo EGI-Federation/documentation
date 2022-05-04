@@ -9,15 +9,9 @@ description: >-
 
 ## Rucio configuration setup
 
-<<<<<<< HEAD
-To start with, you need to create a rucio.cfg file, this then needs to be
-lightly edited to add your account name. This will then be loaded into the Rucio
-client below:
-=======
 To start with, you need to create a `rucio.cfg` file, this then needs to be
-lightly edited to add your account name. This will then be loaded into the
-Rucio client.
->>>>>>> 6dad27dd54c353aa3653278e6cc0346234b73499
+lightly edited to add your account name. This will then be loaded into the Rucio
+client.
 
 ```ini
 [common]
@@ -58,15 +52,9 @@ $ docker run \
 ```
 
 Once the container is running you will need to copy some files, to have them
-<<<<<<< HEAD
-owned by the container User, rather then root, and then change the permissions
+owned by the container user, rather then root, and then change the permissions
 on those files so that they are appropriate for voms-proxy creation. To start
 with step into the container by running:
-=======
-owned by the container user, rather then root, and then change the permissions
-on those files so that they are appropriate for voms-proxy creation.
-To start with step into the container by running:
->>>>>>> 6dad27dd54c353aa3653278e6cc0346234b73499
 
 ```shell
 $ docker exec -it rucio-client bash
@@ -114,10 +102,5 @@ Once these messages have been displayed with the relevent information, as a user
 you should now have access to the Dteam VO, and can create rules, upload and
 download files from the various RSEs.
 
-<<<<<<< HEAD
-If you have any issues please do contact the Multi-VO admin / dteam VO admins at
-[rucio-support@stfc365.onmicrosoft.com](mailto:rucio-support@stfc365.onmicrosoft.com)
-=======
 If you have any issues please do contact the
 [Multi-VO admin / dteam VO admins](mailto:rucio-support@stfc365.onmicrosoft.com).
->>>>>>> 6dad27dd54c353aa3653278e6cc0346234b73499
