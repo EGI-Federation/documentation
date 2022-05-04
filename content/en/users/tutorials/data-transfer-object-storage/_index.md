@@ -1,7 +1,7 @@
 ---
 title: "Data transfer with object storage"
 type: docs
-weight: 70
+weight: 60
 description: >
   Use EGI Data transfer to handle data in object storage
 ---
@@ -26,19 +26,19 @@ repository to your configuration and update the client{{% /alert %}}
 ## Prerequisites
 
 As first step please make sure that you have installed the FTS client as
-described in [Data Transfer](../../data-transfer/), and in particular
-[Clients](../../data-transfer/clients/) for the command-line FTS and to have
+described in [Data Transfer](../../data/management/data-transfer), and in particular
+[Clients](../../data/management/data-transfer/clients) for the command-line FTS and to have
 your certificate installed in your browser to use
-[WebFTS](../../data-transfer/webfts/) browser based client.
+[WebFTS](../../data/management/data-transfer/webfts) browser based client.
 
 To access services and resources in the
 [EGI Federated Cloud](../../getting-started), you will need:
 
-- An [EGI Check-in](../../check-in) account, you can
-  [sign up here](../../check-in/signup)
-- Enrollment into a [Virtual Organisation](../../check-in/vos) (VO) that has
+- An [EGI Check-in](../../aai/check-in) account, you can
+  [sign up here](../../aai/check-in/signup)
+- Enrollment into a [Virtual Organisation](../../aai/check-in/vos) (VO) that has
   access to the services and resources you need
-- An [Object Storage](../../online-storage/object-storage/) for which you need
+- An [Object Storage](../../data/storage/object-storage) for which you need
   to have all the credentials available (any S3 compatible storage should work)
 - Permission to add the Object Storage credential to the FTS server or
   alternatively for this operation you may contact support support **at**
@@ -49,7 +49,7 @@ To access services and resources in the
 ### Step 1 Configuration check and Proxy creation
 
 For this two steps please refer to the
-["Data transfer with grid storage"](../data-transfer-grid-storage/) tutorial.
+["Data transfer with grid storage"](../data-transfer-grid-storage) tutorial.
 
 ### Step 2 Find the storage
 
@@ -57,7 +57,7 @@ As for the "Data transfer with grid storage" tutorial you can look for the
 available storage on
 [VAPOR service](https://operations-portal.egi.eu/vapor/resources/GL2ResVO) while
 the Object Store can be one created as described in the
-[Object Storage](../../online-storage/object-storage/) section or trough a
+[Object Storage](../../data/storage/object-storage) section or trough a
 provider such as Amazon, Azure, etc
 
 ### Step 3 Add the Object Storage credential to the FTS server

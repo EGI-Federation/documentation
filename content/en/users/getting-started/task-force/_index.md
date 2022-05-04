@@ -2,6 +2,7 @@
 title: "EGI Task Force"
 linkTitle: "Task Force"
 type: docs
+draft: true
 weight: 15
 description: >
   The task force behind the EGI Federation

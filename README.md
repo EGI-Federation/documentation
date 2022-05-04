@@ -78,4 +78,4 @@ git commit themes/docsy -m 'Update theme'
 
 [GitHub Actions](https://github.com/EGI-Federation/documentation/tree/main/.github/workflows)
 will automatically deploy a new version when a PR is merged to main, it will
-then be availalbe at [https://docs.egi.eu](https://docs.egi.eu).
+then be available at [https://docs.egi.eu](https://docs.egi.eu).

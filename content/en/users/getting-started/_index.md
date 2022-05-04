@@ -8,7 +8,7 @@ description: >
 
 ## Overview
 
-EGI is a federation of computing and storage resource providers united by a
+EGI is a federation of compute and storage resource providers united by a
 mission to support research and innovation.
 
 The resources in the EGI infrastructure are offered by
@@ -36,18 +36,18 @@ requirements.
 
 {{% alert title="Tip" color="info" %}} See also an
 [overview](https://www.egi.eu/federation/egi-federated-cloud/the-egi-federated-cloud-architecture/)
-of the EGI FedCloud architecture, or read about the [task force](task-force)
-supporting it. {{% /alert %}}
+of the EGI FedCloud architecture.
+{{% /alert %}}
 
 ## Accessing resources
 
 Access to resources (services) in the EGI infrastructure is based on
 [OpenID Connect](http://openid.net/connect/) (OIDC), which replaces the legacy
 authentication and authorization based on
-[X.509 certificates](../check-in/vos/voms).
+[X.509 certificates](../aai/check-in/vos/voms/).
 
 {{% alert title="Note" color="info" %}} Some services still rely on X.509
-certificates, e.g. [High Throughput Compute](../high-throughput-compute).
+certificates, e.g. [High Throughput Compute](../compute/high-throughput-compute).
 {{% /alert %}}
 
 **EGI uses [Virtual Organisations](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
@@ -60,18 +60,18 @@ infrastructure for their scientific needs.
 Before users can access an EGI service, they have to:
 
 1. Obtain a supported ID, by signing up with either
-   [EGI Check-in](../check-in/signup) directly, or with one of the community
+   [EGI Check-in](../aai/check-in/signup) directly, or with one of the community
    identity providers from the EGI infrastructure.
-1. [Enroll into one VO](../check-in/joining-virtual-organisation/). Users need
+1. [Enroll into one VO](../aai/check-in/joining-virtual-organisation/). Users need
    to be part of a VO before using EGI services. Explore the list of available
    VOs in the [Operations Portal](https://operations-portal.egi.eu/vo/a/list).
-1. Authenticate to [EGI Check-in](../check-in) to obtain an OAuth2 access token
+1. Authenticate to [EGI Check-in](../aai/check-in) to obtain an OAuth2 access token
    (and optionally a refresh token).
 1. Manage or use the service by leveraging the access token, either implicitly
    (web interfaces and dashboards usually hide this from users) or explicitly
    (e.g. when using [command-line tools](cli)).
 
-{{% alert title="Note" color="info" %}} See the [EGI Check-in](../check-in)
+{{% alert title="Note" color="info" %}} See the [EGI Check-in](../aai/check-in)
 documentation for a detailed description of the Authentication and Authorization
 Infrastructure (AAI) of the EGI Federation, and to gain a better understanding
 of the concepts that act as building blocks for the AAI implementation.
@@ -90,7 +90,7 @@ EGI services use the following types of access conditions:
   but it is possible with various institutional accounts (through
   [EduGAIN](https://edugain.org)), or with social accounts (e.g. Google). For
   example you can [create a test Virtual Machine](../tutorials/create-your-first-virtual-machine/)
-  or launch a [Jupyter Notebook](../notebooks/).
+  or launch a [Jupyter Notebook](../dev-env/notebooks/).
 - **Policy based** - Users are granted access based on specific policies defined
   by the service providers. Access needs to be requested, and will be checked
   for such services. Example: Compute resources and tools allocated to
@@ -129,6 +129,80 @@ When EGI is able to support a request for resources, it can do so in two ways:
    - If there are providers willing to support you, we will sign a Service Level
      Agreement (SLA) with you
    - A new VO will be created for your community
+
+## Pilot your application
+
+EGI offers a playground allocation for users to get access to the services and
+understand how to port applications and develop new data analytics tools that
+can be turn into online services that can be accessed by scientist worldwide.
+
+### Requirements and user registration
+
+Access **requires** acceptance of
+[Acceptable Use Policy (AUP) and Conditions of the \'EGI Applications on Demand Service\'](https://documents.egi.eu/public/ShowDocument?docid=2635).
+
+{{% alert title="Acknowledgment" color="info" %}}
+
+Users of the service are asked to provide appropriate acknowledgement of the use
+in scientific publications. The following acknowledgement text can be used for
+this purpose (you should adapt to match the exact providers in your case):
+
+**This work used advanced computing resources from the 100%IT, CESGA, CLOUDIFIN,
+CYFRONET-CLOUD, GSI-LCG2, IFCA-LCG2, IN2P3-IRES, INFN-CATANIA-STACK,
+INFN-PADOVA-STACK, SCAI, TR-FC1-ULAKBIM, UA-BITP and UNIV-LILLE resource centres
+of the EGI federation. The services are co-funded by the EGI-ACE project (grant
+number 101017567).** {{% /alert %}}
+
+When requesting access users are guided through a registration process. Members
+of the EGI support team will perform a lightweight vetting process to validate
+the users' requests before granting the access to the resources.
+
+### Get access to pilot allocation
+
+1. Log into the [EGI Marketplace](https://marketplace.egi.eu) with the
+   [EGI AAI Check-In service](../aai/check-in).
+1. Setup a profile, including details about your affiliation and role within a
+   research institute/project/team.
+1. Navigate the marketplace top-menu and click on the category:
+   **Applications**.
+1. Click on the **Applications on Demand** service and submit an order for one
+   of the available applications.
+1. When the request is approved, run the requested application(s) as described
+   below.
+
+Please check the
+[EGI Marketplace guide](https://wiki.egi.eu/wiki/HowToAccessTheEGIMarketPlace)
+for further details.
+
+### Services available
+
+Once granted access, each user will have a grant with a predefined quota of
+resources, which can be used to run the application of choice. This grant
+includes:
+
+- up to 4 CPU cores,
+- 8 GB of RAM,
+- 100GB of block storage.
+
+The grant to run applications is initially valid for 6 months and can be
+extended/renewed upon request. These resources are delivered
+[through the vo.access.egi.eu VO](https://documents.egi.eu/public/ShowDocument?docid=2773).
+
+You can manage those resources via [command-line](cli) or any of the
+dashboards of the EGI Cloud: the [VMOps dashboard](../compute/cloud-compute/monitor/)
+and the [IM dashboard](../compute/orchestration/im/dashboard/).
+
+You can also easily access scientific applications:
+
+- [Chipster](https://marketplace.egi.eu/applications-on-demand/68-chipster.html)
+  a user-friendly analysis software for high-throughput data. It contains over
+  300 analysis tools for next generation sequencing (NGS), microarray,
+  proteomics and sequence data. The application is available through the Science
+  Software on Demand Service (SSoD). You can access the
+  [EGI Chipster instace](https://chipster.fedcloud-tf.fedcloud.eu/)
+- [EC3](../compute/orchestration/ec3) has a list of
+  [applications](../compute/orchestration/ec3/apps/) that you can easily start from the
+  [EC3 portal](https://servproject.i3m.upv.es/ec3-ltos/index.php)
 
 ## Unused resources
 

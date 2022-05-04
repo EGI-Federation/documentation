@@ -35,6 +35,15 @@
     },
     {
       "pattern": "^https://www.eugridpma.org/your-identity/"
+    },
+    {
+      "pattern": "^https://ggus.eu/*"
+    },
+    {
+      "pattern": "^https://helpdesk.egi.eu"
+    },
+    {
+      "pattern": "^https://aai.*.egi.eu/api/v2/VoMembers"
     }
   ]
 }
