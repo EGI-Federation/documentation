@@ -1,6 +1,6 @@
 ---
 title: "Operations Portal"
-weight: 30
+weight: 60
 type: "docs"
 description: "Central portal supporting EGI infrastructure operations"
 ---

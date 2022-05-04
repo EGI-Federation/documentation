@@ -15,7 +15,7 @@ description: >
 The various [public EGI services](https://www.egi.eu/services/) can be managed
 and used/accessed with a wide variety of command-line interface (CLI) tools.
 The documentation of each service contains a summary of the CLIs that can be
-used wih that service, together with recommendations on which one to use in
+used with that service, together with recommendations on which one to use in
 what context.
 
 ## The FedCloud client
@@ -32,7 +32,7 @@ FedCloud client has the following modules (features):
 
 - [**Check-in**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.checkin)
   allows checking validity of access tokens and listing
-  [Virtual Organisations](../../check-in/vos) (VOs) of a token
+  [Virtual Organisations](../../aai/check-in/vos) (VOs) of a token
 - [**Endpoint**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.endpoint)
   can search endpoints in the [Configuration Database](../../../internal/configuration-database)
   and extract site-specific information from unscoped/scoped tokens
@@ -40,7 +40,7 @@ FedCloud client has the following modules (features):
   allows management of site configurations
 - [**OpenStack**](https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.openstack)
   can perform commands on [OpenStack services](../openstack) deployed to sites
-- **EC3** allows deploying [elastic cloud compute clusters](../../cloud-compute/ec3)
+- **EC3** allows deploying [elastic cloud compute clusters](../../compute/orchestration/ec3)
 
 ### Installation
 
@@ -171,7 +171,7 @@ is the same as from [the command-line](#using-from-the-command-line).
 
 ### Using from EGI Notebooks
 
-[EGI Notebooks](../../notebooks/) are integrated with access tokens so it
+[EGI Notebooks](../../dev-env/notebooks) are integrated with access tokens so it
 simplifies using the FedCloud client. First make sure that you follow the
 [installation](#installation) steps above. Then, below are the commands that
 you need to run inside a terminal in JupyterLab:

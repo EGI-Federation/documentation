@@ -452,7 +452,7 @@ members of `fedcloud.egi.eu`:
         "type": "OIDC-eduperson_entitlement",
         "regex": true,
         "any_one_of": [
-          "^urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu$"
+          "^urn:mace:egi.eu:group:fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu$"
         ]
       }
     ]
@@ -622,8 +622,10 @@ docker for facilitating the deployment:
 ## Moving to EGI Check-in production instance
 
 Once tests in the development instance of Check-in are successful, you can move
-to the production instance. You should open a [GGUS ticket](https://ggus.eu) for
-the request. Besides you will need to update your configuration as follows:
+to the production instance. Go to [EGI Federation Registry](https://aai.egi.eu/federation)
+and submit a Service Request for the production instance of EGI Check-in.
+After the approval of the request, you will need to update your configuration
+as follows:
 
 - Update the `remote-id` of the identity provider:
 
