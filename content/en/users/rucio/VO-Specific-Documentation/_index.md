@@ -7,7 +7,7 @@ description: >-
   How to get set up with the dteam VO
 ---
 
-## rucio.cfg setup
+## Rucio configuration setup
 
 To start with, you need to create a rucio.cfg file, this then needs to be lightly edited to add your account name. This will then be loaded into the Rucio client below:
 
@@ -69,6 +69,8 @@ You should now be able to generate a VOMS proxy using the credentials loaded int
 ```shell
 $ voms-proxy-init --voms dteam
 ```
+
+## Confirmation of Client setup
 
 Once this is complete you should now have access to Rucio, This can be confirmed with a ping and a whoami commands to verify one, the connection to the Rucio host and two, that you are authenticating successfully as your user.
 
