@@ -9,11 +9,17 @@ description: >-
 
 ## Rucio configuration setup
 
+<<<<<<< HEAD
 To start with, you need to create a rucio.cfg file, this then needs to be
 lightly edited to add your account name. This will then be loaded into the Rucio
 client below:
+=======
+To start with, you need to create a `rucio.cfg` file, this then needs to be
+lightly edited to add your account name. This will then be loaded into the
+Rucio client.
+>>>>>>> 6dad27dd54c353aa3653278e6cc0346234b73499
 
-```shell
+```ini
 [common]
 logdir = /var/log/rucio
 multi_vo = True
@@ -35,29 +41,35 @@ request_retries = 5
 ## Rucio-client setup
 
 To get the Rucio client that is set up for dteam please use this
-[Rucio Client](https://hub.docker.com/repository/docker/egifedcloud/rucioclient)
+[Rucio Client](https://hub.docker.com/repository/docker/egifedcloud/rucioclient).
 This would be done by running the command:
 
 ```shell
 $ docker run \
--v <path/to/the/rucio.cfg>:/opt/rucio/etc/rucio.cfg \
--v <path/to/your/usercert.pem>:/opt/rucio/etc/usercert \
--v <path/to/your/userkey.pem>:/opt/rucio/etc/usercert \
--e RUCIO_CFG_CLIENT_CERT=/opt/rucio/etc/usercert.pem \
--e RUCIO_CFG_CLIENT_KEY=/opt/rucio/etc/userkey.pem \
--e RUCIO_CFG_CA_CERT=/opt/rucio/etc/web/ca-first.pem \
---name=rucio-client \
--it \
--d egifedcloud/rucioclient:1.23.17
+     -v <path/to/the/rucio.cfg>:/opt/rucio/etc/rucio.cfg \
+     -v <path/to/your/usercert.pem>:/opt/rucio/etc/usercert \
+     -v <path/to/your/userkey.pem>:/opt/rucio/etc/usercert \
+     -e RUCIO_CFG_CLIENT_CERT=/opt/rucio/etc/usercert.pem \
+     -e RUCIO_CFG_CLIENT_KEY=/opt/rucio/etc/userkey.pem \
+     -e RUCIO_CFG_CA_CERT=/opt/rucio/etc/web/ca-first.pem \
+     --name=rucio-client \
+     -it \
+     -d egifedcloud/rucioclient:1.23.17
 ```
 
 Once the container is running you will need to copy some files, to have them
+<<<<<<< HEAD
 owned by the container User, rather then root, and then change the permissions
 on those files so that they are appropriate for voms-proxy creation. To start
 with step into the container by running:
+=======
+owned by the container user, rather then root, and then change the permissions
+on those files so that they are appropriate for voms-proxy creation.
+To start with step into the container by running:
+>>>>>>> 6dad27dd54c353aa3653278e6cc0346234b73499
 
 ```shell
-docker exec -it rucio-client bash
+$ docker exec -it rucio-client bash
 ```
 
 Once inside the container you can then copy and edit file permissions with the
@@ -102,5 +114,10 @@ Once these messages have been displayed with the relevent information, as a user
 you should now have access to the Dteam VO, and can create rules, upload and
 download files from the various RSEs.
 
+<<<<<<< HEAD
 If you have any issues please do contact the Multi-VO admin / dteam VO admins at
 [rucio-support@stfc365.onmicrosoft.com](mailto:rucio-support@stfc365.onmicrosoft.com)
+=======
+If you have any issues please do contact the
+[Multi-VO admin / dteam VO admins](mailto:rucio-support@stfc365.onmicrosoft.com).
+>>>>>>> 6dad27dd54c353aa3653278e6cc0346234b73499
