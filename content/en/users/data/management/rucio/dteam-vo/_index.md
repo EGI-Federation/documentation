@@ -2,7 +2,7 @@
 title: "Dteam Specific Documentation"
 type: docs
 linkTitle: "Rucio Dteam"
-weight: 90
+weight: 40
 description: >-
   How to get set up with the dteam VO
 ---
