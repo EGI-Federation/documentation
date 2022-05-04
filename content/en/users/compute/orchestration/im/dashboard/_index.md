@@ -178,7 +178,7 @@ infrastructures:
 ### VM Info page
 
 The VM Info page shows all the information about the selected VM and enables to
-manage the life cycle of it. On the top right corner the `Manage VM` drop-down
+manage the lifecycle of it. On the top right corner the `Manage VM` drop-down
 menu allows to Stop/Start, Reboot, Resize, Reconfigure and Terminate the VM.
 Furthermore the user can check the error or contextualisation log of this
 particular VM.
