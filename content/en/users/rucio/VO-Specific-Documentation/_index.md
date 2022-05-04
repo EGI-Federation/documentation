@@ -10,8 +10,8 @@ description: >-
 ## Rucio configuration setup
 
 To start with, you need to create a rucio.cfg file, this then needs to be
-lightly edited to add your account name. This will then be loaded into the
-Rucio client below:
+lightly edited to add your account name. This will then be loaded into the Rucio
+client below:
 
 ```shell
 [common]
@@ -53,8 +53,8 @@ $ docker run \
 
 Once the container is running you will need to copy some files, to have them
 owned by the container User, rather then root, and then change the permissions
-on those files so that they are appropriate for voms-proxy creation.
-To start with step into the container by running:
+on those files so that they are appropriate for voms-proxy creation. To start
+with step into the container by running:
 
 ```shell
 docker exec -it rucio-client bash
@@ -80,10 +80,9 @@ $ voms-proxy-init --voms dteam
 
 ## Confirmation of Client setup
 
-Once this is complete you should now have access to Rucio.
-This can be confirmed with a ping and a whoami commands to verify one,
-the connection to the Rucio host and two, that you are authenticating
-successfully as your user.
+Once this is complete you should now have access to Rucio. This can be confirmed
+with a ping and a whoami commands to verify one, the connection to the Rucio
+host and two, that you are authenticating successfully as your user.
 
 ```shell
 $ rucio ping
@@ -99,10 +98,9 @@ deleted_at : None
 email      : user@email.co.uk
 ```
 
-Once these messages have been displayed with the relevent information, as a
-user you should now have access to the Dteam VO, and can create rules,
-upload and download files from the various RSEs.
+Once these messages have been displayed with the relevent information, as a user
+you should now have access to the Dteam VO, and can create rules, upload and
+download files from the various RSEs.
 
-If you have any issues please do contact the Multi-VO admin / dteam VO admins
-at
+If you have any issues please do contact the Multi-VO admin / dteam VO admins at
 [rucio-support@stfc365.onmicrosoft.com](mailto:rucio-support@stfc365.onmicrosoft.com)
