@@ -1,0 +1,475 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Cloud Orchestration</title><link>/users/compute/orchestration/</link><description>Recent content in Cloud Orchestration on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/orchestration/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Infrastructure Manager</title><link>/users/compute/orchestration/im/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/im/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>&lt;a href="https://www.grycap.upv.es/im">Infrastructure Manager&lt;/a> (IM) is a tool that
+&lt;strong>orchestrates the deployment of custom virtual infrastructures on multiple
+backends&lt;/strong>. It streamlines the access and usability of Infrastructure-as-a-Service
+(IaaS) clouds by automating the configuration, deployment, software installation
+and update, and monitoring of virtual infrastructures.&lt;/p>
+&lt;p>IM is integrated with the &lt;a href="../../../aai/check-in">EGI Check-in Service&lt;/a> and supports
+a wide variety of backends, either federated (such as
+&lt;a href="../../cloud-compute">EGI Cloud Compute&lt;/a>), public (such as
+&lt;a href="https://aws.amazon.com/">Amazon Web Services&lt;/a>,
+&lt;a href="http://cloud.google.com/">Google Cloud&lt;/a> or
+&lt;a href="http://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
+&lt;a href="../../../getting-started/openstack">OpenStack&lt;/a>),
+thus making user applications cloud agnostic.
+IM features a &lt;a href="https://appsgrycap.i3m.upv.es:31443/im-dashboard/">web-based GUI&lt;/a>,
+an XML-RPC API, a REST API and a &lt;a href="cli">command-line interface&lt;/a> (CLI).
+It supports
+&lt;a href="http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html">OASIS TOSCA Simple Profile in YAML&lt;/a>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+An easy way to deploy your first VM
+in the EGI Federation is from the
+&lt;a href="https://appsgrycap.i3m.upv.es:31443/im-dashboard/">Infrastructure Manager dashboard&lt;/a>.
+A &lt;a href="https://imdocs.readthedocs.io/en/latest/dashboard.html#usage">tutorial&lt;/a> and
+&lt;a href="https://youtube.com/playlist?list=PLgPH186Qwh_37AMhEruhVKZSfoYpHkrUp">demo videos&lt;/a> are also available.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+For detailed information about
+Infrastructure Manager please see its &lt;a href="https://imdocs.readthedocs.io">documentation&lt;/a>.
+It was also presented in one of the
+&lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>, more details are available on the
+&lt;a href="https://indico.egi.eu/event/5495/">indico page&lt;/a> and the video recording is available on
+&lt;a href="https://youtu.be/Q9VsYjI1mD4">YouTube&lt;/a>.
+&lt;/div>
+&lt;p>The following sections document how to use IM from its GUI or CLI.&lt;/p></description></item><item><title>Users: Elastic Cloud Compute Clusters</title><link>/users/compute/orchestration/ec3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>&lt;a href="http://servproject.i3m.upv.es/ec3-ltos/">Elastic Cloud Compute Cluster&lt;/a> (EC3) is a
+tool to &lt;strong>create elastic virtual clusters on top of Infrastructure-as-a-Service
+(IaaS) providers&lt;/strong>.&lt;/p>
+&lt;p>Being based on &lt;a href="../im">Infrastructure Manager&lt;/a>, EC3 supports the same wide
+choices of back-ends, either public (such as
+&lt;a href="https://aws.amazon.com/">Amazon Web Services&lt;/a>,
+&lt;a href="http://cloud.google.com/">Google Cloud&lt;/a> or
+&lt;a href="http://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
+&lt;a href="../../../getting-started/openstack">OpenStack&lt;/a>). EC3 can provision clusters running
+&lt;a href="https://github.com/adaptivecomputing/torque">TORQUE&lt;/a>,
+&lt;a href="http://slurm.schedmd.com/">SLURM&lt;/a>,
+&lt;a href="https://research.cs.wisc.edu/htcondor/">HTCondor&lt;/a>,
+&lt;a href="http://mesos.apache.org/">Apache Mesos&lt;/a>, &lt;a href="https://www.nomadproject.io/">Nomad&lt;/a>,
+&lt;a href="https://kubernetes.io/">Kubernetes&lt;/a> and others, which will be automatically
+resized to fit the load (e.g. number of jobs at the batch system).&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+EC3 was presented in one of the
+&lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>.
+Please see more details on the &lt;a href="https://indico.egi.eu/event/5092/">Indico page&lt;/a>
+and check out the video recording on &lt;a href="https://youtu.be/cN0tTBjV3I8">YouTube&lt;/a>.
+&lt;/div>
+&lt;p>The following section of the documentation will guide you on how to:&lt;/p>
+&lt;ul>
+&lt;li>Deploy a simple EC3 elastic cluster on top of the IaaS providers of the EGI
+Cloud, either using the web interface or the command-line interface, and&lt;/li>
+&lt;li>Run pre-configured scientific applications in the EC3 elastic cluster.&lt;/li>
+&lt;/ul></description></item><item><title>Users: Dynamic On-Demand Analysis Software</title><link>/users/compute/orchestration/dodas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/dodas/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>&lt;a href="https://dodas-iam.cloud.cnaf.infn.it/login">Dynamic On-Demand Analysis Software (DODAS)&lt;/a>
+enables the execution of user analysis code both in batch mode and
+interactively via the Jupyter interface. DODAS is highly customizable and offers
+several building blocks that can be combined together in order to create the
+best service composition for a given use case. The currently available blocks
+allow to combine Jupyter and HTCondor as well as Jupyter and Spark or simply a
+jupyter interface. In addition, they allow the management of data via caches to
+optimize the processing of remote data. This can be done either via XCache or
+MinIO S3 object storage capabilities. DODAS is based on docker containers and
+the related orchestration relies on Kubernetes that enables the possibility to
+compose the building blocks via a web-based user interface thanks to Kubeapps.&lt;/p>
+&lt;p>In order to deploy it services over various backend, DODAS relies on
+&lt;a href="../im">Infrastructure Manager&lt;/a> and
+&lt;a href="https://indigo-paas.cloud.ba.infn.it/home/login">INDIGO PaaS&lt;/a>&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+If you want to give it a try and deploy
+your cluster in the EGI Federation:
+&lt;a href="https://dodas-iam.cloud.cnaf.infn.it/login">DODAS&lt;/a>.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+For detailed information about DODAS
+please see its &lt;a href="https://web.infn.it/dodas/index.php/en/">documentation&lt;/a>. It was
+also presented in one of the &lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>, more
+details are available on the &lt;a href="https://indico.egi.eu/event/5695/">indico page&lt;/a>
+and the video recording is available on
+&lt;a href="https://www.youtube.com/watch?v=bcURl4ESRW8&amp;amp;ab_channel=EGI">YouTube&lt;/a>.
+&lt;/div></description></item><item><title>Users: EGI Workload Manager</title><link>/users/compute/orchestration/workload-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/workload-manager/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>&lt;a href="https://www.egi.eu/services/workload-manager/">EGI Workload Manager&lt;/a> is a
+service provided to the EGI community to efficiently &lt;strong>manage and distribute
+computing workloads on the EGI infrastructure&lt;/strong>.&lt;/p>
+&lt;p>Workload Manager is configured to support a number of
+HTC and cloud resource pools from the EGI Federation. This pool of computing
+resources can be easily extended and customized to support the needs of new
+scientific communities.&lt;/p>
+&lt;!-- markdownlint-disable no-inline-html -->
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Workload Manager is based on
+&lt;a href="http://diracgrid.org/">DIRAC technology&lt;/a>.&lt;br/>
+The delivery of the service is coordinated
+by the EGI Foundation and &lt;a href="https://in2p3.cnrs.fr/">IN2P3&lt;/a> provides the resources and
+operates the service.
+&lt;/div>
+&lt;!-- markdownlint-enable no-inline-html -->
+&lt;h2 id="main-features">Main Features&lt;/h2>
+&lt;p>The EGI Workload Manager:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Maximizes usage efficiency by choosing appropriately computing and storage
+resources on real-time.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Provides a large-scale distributed environment to manage and handle data
+storage, data movement, accessing and processing.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Handles job submission and workload distribution in a transparent way.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Improves the general job throughput compared with native management of EGI
+Grid or Cloud computing resources.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Offers pilot-based task scheduling method, that submits pilot jobs to
+resources to check the execution environment before to start the user&amp;rsquo;s jobs.
+From a technical standpoint, the user&amp;rsquo;s job description is delivered to the
+pilot, which prepares its execution environment and executes the user
+application. The pilot-based scheduling feature solves many problems of using
+heterogeneity and unstable distributed computing resources.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Includes easy extensions to customize the environment checks to address the
+needs of a particular community. Users can choose appropriately computing and
+storage resources maximising their usage efficiency for particular user
+requirements.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Handles different storage supporting both cloud and grid capacity.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Provides a user-friendly interface that allows users to choose among different
+DIRAC services.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="target-user-groups">Target User Groups&lt;/h2>
+&lt;p>The service suits for the established Virtual Organization communities, long
+tail of users, SMEs and Industry&lt;/p>
+&lt;ul>
+&lt;li>EGI and EGI Federation participants&lt;/li>
+&lt;li>Research communities&lt;/li>
+&lt;/ul>
+&lt;h2 id="architecture">Architecture&lt;/h2>
+&lt;p>The EGI Workload Manager service is a cluster of DIRAC services running on EGI
+resources (HTC, Cloud, HPC) supporting multi-VO. All the DIRAC services are at
+or above TRL8. The main service components include:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Workload Management System (WMS) architecture is composed of multiple loosely
+coupled components working together in a collaborative manner with the help of
+a common Configuration Services ensuring reliable service discovery
+functionality. The modular architecture allows to easily incorporate new types
+of computing resources as well as new task scheduling algorithms in response
+to evolving user requirements. DIRAC services can run on multiple
+geographically distributed servers which increases the overall reliability and
+excellent scalability properties.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>REST server providing language neutral interface to DIRAC service.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Web portal provides simple and intuitive access to most of the DIRAC
+functionalities including management of computing tasks and distributed data.
+It also has a modular architecture designed specifically to allow easy
+extension for the needs of particular applications.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="dirac_web_portal.png" alt="The DIRAC Web portal">&lt;/p>
+&lt;p>The DIRAC Web portal&lt;/p>
+&lt;h2 id="how-to-access-the-egi-workload-manager-service">How to access the EGI Workload Manager service&lt;/h2>
+&lt;p>There are several options to access the service:&lt;/p>
+&lt;ol>
+&lt;li>Members of a scientific community whose resources pool is already configured
+in the EGI Workload Manager instance can use the
+&lt;a href="https://dirac.egi.eu/DIRAC/">EGI Workload Manager web portal&lt;/a> to access the
+service, or use &lt;a href="#the-dirac-client-tool">DIRAC Client&lt;/a>.&lt;/li>
+&lt;li>Individual researchers who want to do some number crunching for a limited
+period of time, with a reasonable (not too high) number of CPUs &amp;gt; can use the
+catch-all VO resource pool (&lt;code>vo.access.egi.eu&lt;/code>). Submit a request through the
+EGI Marketplace selecting:&lt;br>
+&lt;code>Compute&lt;/code> &amp;gt; &lt;code>Workload Manager&lt;/code> from the top menu.&lt;/li>
+&lt;li>Representatives of a community who want to try DIRAC and EGI &amp;gt; Same as #2.&lt;/li>
+&lt;li>Representative of a community who wants to request DIRAC for the community&amp;rsquo;s
+own resource pool &amp;gt; Submit a request through the EGI Marketplace selecting&lt;br>
+&lt;code>Compute&lt;/code> &amp;gt; &lt;code>Workload Manager&lt;/code> from the top menu.&lt;/li>
+&lt;/ol>
+&lt;h2 id="getting-started">Getting Started&lt;/h2>
+&lt;h3 id="submit-a-service-order-via-the-marketplace">Submit a service order via the Marketplace&lt;/h3>
+&lt;p>User can request access to the service submitting a service-order to use the EGI
+HTC service directly from the EOSC or the EGI Marketplace:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://marketplace.eosc-portal.eu/services/egi-workload-manager">EOSC Marketplace: Workload Manager&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://marketplace.egi.eu/compute/73-workload-manager.html">EGI Marketplace: Workload Manager&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Service orders are usually handled within 5 working days by the EGI User Support
+Team on shift.&lt;/p>
+&lt;h3 id="before-starting">Before starting&lt;/h3>
+&lt;h4 id="apply-for-your-user-credentials">Apply for your user credentials&lt;/h4>
+&lt;p>DIRAC uses &lt;a href="../../../aai/check-in/vos/voms">X.509 certificates&lt;/a> to identify and
+authenticate users. These certificates are delivered to each individual by
+trusted certification authorities. If you have a personal certificate issued by
+a &lt;a href="http://www.eugridpma.org/">EUGridPMA-certified&lt;/a> authority you can use it for
+this tutorial. Otherwise refer to the information available in this
+&lt;a href="../../../aai/check-in/vos/voms/#get-a-certificate">section&lt;/a>, to obtain a certificate.
+Your certificate may take a few days to be delivered, so please ask for your
+certificate well in advance and in any case, before the tutorial starts.&lt;/p>
+&lt;h4 id="install-your-credentials">Install your credentials&lt;/h4>
+&lt;p>Your personal certificate is usually delivered to you via a site and is
+automatically loaded in your browser. You need to export it from the browser and
+put it in the appropriate format for DIRAC to use. This is a one-time operation.
+Please follow the instructions in detailed in
+&lt;a href="../../../aai/check-in/vos/voms">VOMS documentation page&lt;/a> to export and in install your
+certificate.&lt;/p>
+&lt;h4 id="send-your-certificates-subject-to-the-dirac-team">Send your certificate&amp;rsquo;s subject to the DIRAC team&lt;/h4>
+&lt;p>In order to configure the DIRAC server so that you gets registered as a user,
+the team needs to know your certificate&amp;rsquo;s subject.&lt;/p>
+&lt;p>Please use the command below on any Unix machine and send its output to&lt;br>
+&lt;code>dirac-support&lt;/code> &lt;code>&amp;lt;AT&amp;gt;&lt;/code> &lt;code>mailman.egi.eu&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openssl x509 -in &lt;span style="color:#000">$HOME&lt;/span>/.globus/usercert.pem -subject -noout
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="the-egi-workload-manager-web-portal">The EGI Workload Manager Web Portal&lt;/h3>
+&lt;p>To access the EGI Workload Manager open a web browser to:
+&lt;a href="https://dirac.egi.eu/DIRAC/">https://dirac.egi.eu/DIRAC/&lt;/a>&lt;/p>
+&lt;p>&lt;img src="egi_workload_manager_web_portal.png" alt="The EGI Workload Manager service Web portal">&lt;/p>
+&lt;p>The EGI Workload Manager service Web portal&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>If you are a new user, you can see the welcome page where you can find links
+to user documentations.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;em>VO options&lt;/em>: you can switch to different VOs that you have membership.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;em>Log In options&lt;/em>: the service supports both X.509, Certificate and Check-in
+log-in.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;em>View options&lt;/em>: allow to choose either desktop or tabs layout.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;em>Menu&lt;/em>: a list of tools that enable the selected VO.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="upload-proxy">Upload Proxy&lt;/h4>
+&lt;p>Before submitting your job, you need to upload your Proxy. Login to the portal.
+Go to:&lt;br>
+&lt;code>Menu&lt;/code> &amp;gt; &lt;code>Tools&lt;/code> &amp;gt; &lt;code>Proxy Upload&lt;/code>, enter your certificates .p12 file and the passphrase,
+click &lt;code>Upload&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="./proxy_cert_upload_1.png" alt="The wizard to upload the .p12 proxy certificate">
+&lt;img src="./proxy_cert_upload_2.png" alt="The wizard to upload the .p12 proxy certificate">&lt;/p>
+&lt;p>The wizard to upload the .p12 proxy certificate&lt;/p>
+&lt;h4 id="job-submission">Job Submission&lt;/h4>
+&lt;p>Go to:&lt;br>
+&lt;code>Menu&lt;/code> &amp;gt; &lt;code>Tools&lt;/code> &amp;gt; &lt;code>Job Launchpad&lt;/code>. First check the &lt;code>Proxy Status&lt;/code>, click it until
+it shows &lt;code>Valid&lt;/code> in green color.&lt;/p>
+&lt;p>In the Job Launchpad, you can select your jobs from the list; add parameters,
+indicating the output Sandbox location.&lt;/p>
+&lt;p>Now, select &lt;code>Helloworld&lt;/code> from the job list, and click &lt;code>Submit&lt;/code>, you just launch
+your very first job to the EGI HTC cluster.&lt;/p>
+&lt;p>&lt;img src="job_submit.png" alt="Submit a job with the Job Launchpad">&lt;/p>
+&lt;p>Submit a job with the Job Launchpad&lt;/p>
+&lt;h4 id="monitor-job-status">Monitor Job status&lt;/h4>
+&lt;p>Go to:&lt;br>
+&lt;code>Menu&lt;/code> &amp;gt; &lt;code>Applications&lt;/code> &amp;gt; &lt;code>Job Monitor&lt;/code>.&lt;br>
+The left panel gives all kinds of search options for your jobs. Set your search
+criteria, and click &lt;code>Submit&lt;/code>, the jobs will list on the right panel.&lt;br>
+Try the various options to view different information about the jobs.&lt;/p>
+&lt;p>&lt;img src="job_monitor.png" alt="Monitor the job execution with the Job Monitor panel">&lt;/p>
+&lt;p>Monitor the job execution with the Job Monitor panel&lt;/p>
+&lt;h4 id="get-results-from-sandbox">Get Results from Sandbox&lt;/h4>
+&lt;p>Once the job has been successfully processed, the &lt;code>Status&lt;/code> of the job will
+change to green. Right click the job, select:&lt;br>
+&lt;code>Sandbox&lt;/code> &amp;gt; &lt;code>Get Output file(s)&lt;/code>, you can get the result file(s).&lt;/p>
+&lt;h4 id="full-user-guide-for-dirac-web-portal">Full User Guide for DIRAC Web Portal&lt;/h4>
+&lt;p>For further instructions, please refer to
+&lt;a href="https://dirac.readthedocs.io/en/latest/UserGuide/WebAppUserGuide/index.html">DIRAC Web Portal Guide&lt;/a>&lt;/p>
+&lt;h3 id="the-dirac-client-tool">The DIRAC client tool&lt;/h3>
+&lt;p>The easiest way to install the client is via
+&lt;a href="https://www.docker.com/">Docker Container&lt;/a>. If you have a Docker client
+installed in your machine, install the DIRAC CLI as follows:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run -it -v &lt;span style="color:#000">$HOME&lt;/span>:&lt;span style="color:#000">$HOME&lt;/span> -e &lt;span style="color:#000">HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$HOME&lt;/span> diracgrid/client:egi
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once the client software is installed, it should be configured in order to
+access the EGI Workload Manager service:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">source&lt;/span> /opt/dirac/bashrc
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To proceed further a temporary proxy of the user certificate should be created.
+This is necessary to get information from the central Configuration Service:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-proxy-init -x
+Generating proxy...
+Enter Certificate password:
+...
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now the client can be configured to work in conjunction with the EGI Workload
+Manager service:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-configure defaults-egi.cfg Executing:
+/home/jdoe/DIRAC/DIRAC/Core/scripts/dirac-configure.py defaults-egi.cfg
+Checking DIRAC installation at &lt;span style="color:#4e9a06">&amp;#34;/home/jdoe/DIRAC&amp;#34;&lt;/span> Created vomsdir file
+/home/jdoe/DIRAC/etc/grid-security/vomsdir/vo.formation.idgrilles.fr/cclcgvomsli01.in2p3.fr.lsc
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>..&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+Created vomsdir file
+/home/jdoe/DIRAC/etc/grid-security/vomsdir/fedcloud.egi.eu/voms2.grid.cesnet.cz.lsc
+Created vomses file &lt;span style="color:#4e9a06">`&lt;/span>/home/jdoe/DIRAC/etc/grid-security/vomses/fedcloud.egi.eu&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Generate the proxy containing the credentials of your VO. Specify the VO in the
+&lt;code>--group&lt;/code> option:&lt;/p>
+&lt;p>In this example, we are going to use the resources allocated for the WeNMR
+project.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-proxy-init --debug --group wenmr_user -U --rfc
+$ dirac-proxy-init --debug --group wenmr_user -U --rfc
+Generating proxy...
+Enter Certificate password:
+Contacting CS...
+Checking DN /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+jdoe@egi.eu
+Username is jdoe
+Creating proxy &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> jdoe@wenmr_user
+&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+jdoe@egi.eu&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+Requested adding a VOMS extension but no VOMS attribute defined &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> group wenmr_user
+Uploading proxy &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> wenmr_user...
+Uploading wenmr_user proxy to ProxyManager...
+Loading user proxy Uploading proxy on-the-fly
+Cert file /home/jdoe/.globus/usercert.pem Key file
+/home/jdoe/.globus/userkey.pem
+Loading cert and key User credentials loaded
+Uploading... Proxy uploaded Proxy generated:
+subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0123456789&lt;/span>
+issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
+identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
+timeleft : 23:59:58
+DIRAC group : wenmr_user
+rfc : True
+path : /tmp/x509up_u0
+username : jdoe
+properties : LimitedDelegation, GenericPilot, Pilot, NormalUser
+Proxies uploaded: DN
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> Group &lt;span style="color:#000;font-weight:bold">|&lt;/span> Until &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>GMT&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting
+EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> access.egi.eu_user &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
+/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> fedcloud_user &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
+/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> access.egi.eu_admin &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
+/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> wenmr_user &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>As a result of this command a user proxy with the same validity period of the
+certificate is uploaded to the DIRAC ProxyManager service.&lt;/p>
+&lt;p>For checking the details of you proxy, run the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-proxy-info
+subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0123456789&lt;/span>
+issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
+identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
+timeleft : 23:59:26
+DIRAC group : wenmr_user
+rfc : True
+path : /tmp/x509up_u0
+username : jdoe
+properties : LimitedDelegation, GenericPilot, Pilot, NormalUser
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="managing-simple-jobs">Managing simple jobs&lt;/h4>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>DIRAC commands&lt;/th>
+&lt;th>Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>dirac-wms-job-status&lt;/td>
+&lt;td>To check the status of a job&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>dirac-wms-job-delete&lt;/td>
+&lt;td>To delete a job&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>dirac-wms-job-logging-info&lt;/td>
+&lt;td>To retrieve history of transitions for a DIRAC job&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>dirac-wms-job-get-output&lt;/td>
+&lt;td>To retrieve the job output&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>dirac-wms-job-submit&lt;/td>
+&lt;td>To submit a job&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;p>DIRAC commands&lt;/p>
+&lt;p>Have a look at the official
+&lt;a href="http://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html">command reference documentation&lt;/a>
+for the complete list of the Workload Management commands.&lt;/p>
+&lt;p>In general, you can submit jobs, check their status, and retrieve the output.
+For example:&lt;/p>
+&lt;p>Create a simple JDL file (test.jdl) to submit the job:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#000">JobName&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Simple_Job&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Executable&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;/bin/ls&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Arguments&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;-ltr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">StdOutput&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">StdError&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">OutputSandbox&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>,&lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Submit the job:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">dirac-wms-job-submit test.jdl &lt;span style="color:#000">JobID&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check the job status:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-wms-job-status &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> &lt;span style="color:#000">JobID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">23844073&lt;/span> &lt;span style="color:#000">Status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Waiting&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">MinorStatus&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Pilot Agent Submission&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Site&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ANY&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-wms-job-status &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> &lt;span style="color:#000">JobID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> &lt;span style="color:#000">Status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Done&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">MinorStatus&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Execution Completed&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Site&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>EGI.NIKHEF.nl&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Site&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>EGI.HG-08-Okeanos.gr&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Retrieve the outputs of the job (when the status is Done):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-wms-job-get-output --Dir joboutput/ &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> Job output sandbox
+retrieved in joboutput/53755998/
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="jobs-with-input-sandbox-and-output-sandbox">Jobs with Input Sandbox and Output Sandbox&lt;/h4>
+&lt;p>In most cases the job input data or executable files are available locally and
+should be transferred to the grid to run the job. In this case the
+&lt;code>InputSandbox&lt;/code> attribute can be used to move the files together with the job.&lt;/p>
+&lt;p>Create the &lt;code>InputAndOuputSandbox.jdl&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">JobName&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;InputAndOuputSandbox&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">Executable&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;testJob.sh&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">StdOutput&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">StdError&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">InputSandbox&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;testJob.sh&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;span style="color:#000">OutputSandbox&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>,&lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a simple shell script (&lt;code>testJob.sh&lt;/code>)&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic">#!/bin/bash
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>/bin/hostname
+/bin/date
+/bin/ls -la
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>After creation of JDL file the next step is to submit the job, using the
+command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">dirac-wms-job-submit InputAndOuputSandbox.jdl &lt;span style="color:#000">JobID&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> XXXXXXXX
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="list-of-supported-vos">List of supported VOs&lt;/h4>
+&lt;ul>
+&lt;li>acc-comp.egi.eu, beapps, compchem, eiscat.se, eli-laser.eu,&lt;/li>
+&lt;li>eli-beams.eu, eng.vo.ibergrid.eu, enmr.eu, fedcloud.egi.eu,&lt;/li>
+&lt;li>hungrid, km3net.org, lofar, opencoast.eosc-hub.eu, see,&lt;/li>
+&lt;li>training.egi.eu, virgo, vlemed, vo.formation.idgrilles.fr,&lt;/li>
+&lt;li>vo.plgrid.pl, vo.access.egi.eu, auger, biomed, bitp,&lt;/li>
+&lt;li>eng_cloud and breakseq_cloud&lt;/li>
+&lt;/ul>
+&lt;h4 id="more-details">More details&lt;/h4>
+&lt;ul>
+&lt;li>JDL language and simple jobs submission:
+&lt;a href="http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JDLsAndJobManagementBasic/index.html">JDLs and Job Management&lt;/a>&lt;/li>
+&lt;li>Basic Submitting Parametric and MPI jobs, using DIRAC API:
+&lt;a href="http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html">Advanced Job Management&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11">Past tutorials&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="technical-support">Technical Support&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>DIRAC User Guide:
+&lt;a href="https://dirac.readthedocs.io/en/latest/UserGuide/">https://dirac.readthedocs.io/en/latest/UserGuide/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For technical issues and bug reports, please submit a ticket in
+&lt;a href="https://ggus.eu/?mode=ticket_submit">GGUS&lt;/a>, in &lt;code>Assign to support unit&lt;/code>,
+indicate:&lt;br>
+&lt;code>EGI Services and Service Components&lt;/code> &amp;gt; &lt;code>Workload Manager (DIRAC)&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
