@@ -186,16 +186,15 @@ individually granted access to resources.&lt;/li>
 the appropriate certificate store of their local machine (on Windows).&lt;/li>
 &lt;li>Proceed to &lt;a href="../../compute/orchestration/workload-manager">Workload Manager&lt;/a> to submit HTC jobs or
 retrieve job results, login using &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> when prompted.&lt;/li>
-&lt;/ol></description></item><item><title>Users: Cloud Orchestration</title><link>/users/compute/orchestration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/</guid><description>
+&lt;/ol></description></item><item><title>Users: Compute Orchestration</title><link>/users/compute/orchestration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>One of the challenges for researchers in recent years is to manage an ever
 increasing amount of compute and storage services, which then form ever more
 complex end user applications or platforms.&lt;/p>
-&lt;p>To address this need, several cloud-based orchestrators are available that can
-support the creation of virtual infrastructures on top of
-Infrastructure-as-a-Service (IaaS) Cloud resources. These tools have different
-levels of abstractions and features. See below to understand which to choose
-(or gets used automatically) in specific scenarios:&lt;/p>
+&lt;p>To address this need, EGI provides several orchestrators that facilitate the
+manangement of your workload using resources on the federation. These tools have
+different levels of abstractions and features. See below to understand which to
+choose (or gets used automatically) in specific scenarios:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
 &lt;table>
 &lt;thead>
@@ -218,7 +217,7 @@ levels of abstractions and features. See below to understand which to choose
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;a href="workload-manager">Workload Manager&lt;/a>&lt;/td>
-&lt;td>VMs, containers, HTC jobs&lt;/td>
+&lt;td>Jobs&lt;/td>
 &lt;td>Used to efficiently distribute, manage, and monitor computing workloads.&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -230,8 +229,9 @@ levels of abstractions and features. See below to understand which to choose
 &lt;/table>
 &lt;!--
 | [PaaS Orchestrator](indigo-paas) | VMs, containers, HTC jobs | Used when you have both IaaS Cloud and HTC workloads. The DEEP Platform uses it for ML/DL workloads. |
+-->
 &lt;!-- markdownlint-enable line-length -->
-&lt;p>The following sections offer more details about each of these orchestrator tools.&lt;/p></description></item><item><title>Users: Content Distribution</title><link>/users/compute/content-distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/content-distribution/</guid><description>
+&lt;p>The following sections offer more details about each of these orchestrators.&lt;/p></description></item><item><title>Users: Content Distribution</title><link>/users/compute/content-distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/content-distribution/</guid><description>
 &lt;p>This page is about the CVMFS service operated for EGI by RAL.&lt;/p>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The CernVM-File System (CVMFS) provides a scalable, reliable and low-maintenance
