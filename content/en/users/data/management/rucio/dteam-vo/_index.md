@@ -9,7 +9,7 @@ description: >-
 
 ## Rucio-client setup
 
-The setup for the container is the same as that found in the [Getting Started]
+The setup for the container is the same as that found in the [Getting Started](../getting-started/)
 section. But is repeated here for ease.
 
 To get the Rucio client that is set up for dteam please use this
