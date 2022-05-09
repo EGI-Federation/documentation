@@ -33,6 +33,9 @@ request_retries = 5
 
 ## Rucio-client setup
 
+The setup for the container is the same as that found in the [Getting Started]
+section. But is repeated here for ease.
+
 To get the Rucio client that is set up for dteam please use this
 [Rucio Client](https://hub.docker.com/repository/docker/egifedcloud/rucioclient).
 This would be done by running the command:
