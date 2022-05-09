@@ -7,30 +7,6 @@ description: >-
   How to get set up with the dteam VO
 ---
 
-## Rucio configuration setup
-
-To start with, you need to create a `rucio.cfg` file, this then needs to be
-lightly edited to add your account name. This will then be loaded into the Rucio
-client.
-
-```ini
-[common]
-logdir = /var/log/rucio
-multi_vo = True
-loglevel = INFO
-[client]
-rucio_host = https://rucio-server.gridpp.rl.ac.uk:443
-auth_host = https://rucio-server.gridpp.rl.ac.uk:443
-vo = dtm
-account = <your_account>
-ca_cert = /opt/rucio/etc/web/ca-first.pem
-auth_type = x509_proxy
-client_cert = /opt/rucio/etc/usercert.pem
-client_key = /opt/rucio/etc/userkey.pem
-client_x509_proxy = /tmp/x509up_u1000
-request_retries = 5
-```
-
 ## Rucio-client setup
 
 The setup for the container is the same as that found in the [Getting Started]
@@ -78,6 +54,30 @@ container:
 
 ```shell
 $ voms-proxy-init --voms dteam
+```
+
+## Rucio configuration setup
+
+Inside your docker container edit the `rucio.cfg` file to include your 3
+character VO name, and account name. This will then be loaded into the Rucio
+client.
+
+```ini
+[common]
+logdir = /var/log/rucio
+multi_vo = True
+loglevel = INFO
+[client]
+rucio_host = https://rucio-server.gridpp.rl.ac.uk:443
+auth_host = https://rucio-server.gridpp.rl.ac.uk:443
+vo = dtm
+account = <your_account>
+ca_cert = /opt/rucio/etc/web/ca-first.pem
+auth_type = x509_proxy
+client_cert = /opt/rucio/etc/usercert.pem
+client_key = /opt/rucio/etc/userkey.pem
+client_x509_proxy = /tmp/x509up_u1000
+request_retries = 5
 ```
 
 ## Confirmation of Client setup

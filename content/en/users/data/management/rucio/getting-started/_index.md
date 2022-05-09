@@ -34,6 +34,8 @@ description: >-
 
 ## Getting started as a new user
 
+### Account creation
+
 1. To get set up with a Rucio account please create a ticket on
    [GGUS](https://ggus.eu/?mode=ticket_submit). Please fill in the form with a
    subject, description, ticket catagory - service request, priority - less
@@ -56,6 +58,8 @@ accessed with IAM services,** **and
 x509 and password access.**
 
 1. Once our team has this information we will create you a Rucio account.
+
+### Docker container setup
 
 1. You will then need to install a containerised client on your computer.
 
@@ -106,10 +110,34 @@ account.
 1. Run the following commands inside the docker container to finalise set up:
 
 ```shell
-$ cd /opt/rucio/etc/
-$ cp userkey userkey.pem
-$ chmod 400 userkey.pem
-$ cp usercert usercert.pem
+$ cp /opt/rucio/etc/usercert /opt/rucio/etc/usercert.pem
+$ cp /opt/rucio/etc/userkey /opt/rucio/etc/userkey.pem
+$ chmod 600 /opt/rucio/etc/usercert.pem
+$ chmod 400 /opt/rucio/etc/userkey.pem
+```
+
+### Rucio configuration setup
+
+You need to edit the `/opt/rucio/etc/rucio.cfg` file, this then needs to be
+lightly edited to add your account name. This will then be loaded into the Rucio
+client.
+
+```ini
+[common]
+logdir = /var/log/rucio
+multi_vo = True
+loglevel = INFO
+[client]
+rucio_host = https://rucio-server.gridpp.rl.ac.uk:443
+auth_host = https://rucio-server.gridpp.rl.ac.uk:443
+vo = <3 character VO name>
+account = <your_account>
+ca_cert = /opt/rucio/etc/web/ca-first.pem
+auth_type = x509_proxy
+client_cert = /opt/rucio/etc/usercert.pem
+client_key = /opt/rucio/etc/userkey.pem
+client_x509_proxy = /tmp/x509up_u1000
+request_retries = 5
 ```
 
 **You should now have a fully set up Containerised Client for your Rucio
