@@ -25,6 +25,7 @@ from the scope and the filename, seperated by a colon (e.g.
 &lt;em>experiment1:file1&lt;/em>).&lt;/li>
 &lt;/ul>
 &lt;h2 id="getting-started-as-a-new-user">Getting started as a new user&lt;/h2>
+&lt;h3 id="account-creation">Account creation&lt;/h3>
 &lt;ol>
 &lt;li>
 &lt;p>To get set up with a Rucio account please create a ticket on
@@ -50,9 +51,10 @@ accessed with IAM services,&lt;/strong> &lt;strong>and
 &lt;a href="https://docs.egi.eu/users/check-in/">EGI Check-in&lt;/a>, but currently only support
 x509 and password access.&lt;/strong>&lt;/p>
 &lt;ol>
-&lt;li>
-&lt;p>Once our team has this information we will create you a Rucio account.&lt;/p>
-&lt;/li>
+&lt;li>Once our team has this information we will create you a Rucio account.&lt;/li>
+&lt;/ol>
+&lt;h3 id="docker-container-setup">Docker container setup&lt;/h3>
+&lt;ol>
 &lt;li>
 &lt;p>You will then need to install a containerised client on your computer.&lt;/p>
 &lt;ul>
@@ -97,10 +99,29 @@ account.&lt;/p>
 &lt;ol>
 &lt;li>Run the following commands inside the docker container to finalise set up:&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">cd&lt;/span> /opt/rucio/etc/
-$ cp userkey userkey.pem
-$ chmod &lt;span style="color:#0000cf;font-weight:bold">400&lt;/span> userkey.pem
-$ cp usercert usercert.pem
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cp /opt/rucio/etc/usercert /opt/rucio/etc/usercert.pem
+$ cp /opt/rucio/etc/userkey /opt/rucio/etc/userkey.pem
+$ chmod &lt;span style="color:#0000cf;font-weight:bold">600&lt;/span> /opt/rucio/etc/usercert.pem
+$ chmod &lt;span style="color:#0000cf;font-weight:bold">400&lt;/span> /opt/rucio/etc/userkey.pem
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="rucio-configuration-setup">Rucio configuration setup&lt;/h3>
+&lt;p>You need to edit the &lt;code>/opt/rucio/etc/rucio.cfg&lt;/code> file, this then needs to be
+lightly edited to add your account name. This will then be loaded into the Rucio
+client.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[common]&lt;/span>
+&lt;span style="color:#c4a000">logdir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/var/log/rucio&lt;/span>
+&lt;span style="color:#c4a000">multi_vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">True&lt;/span>
+&lt;span style="color:#c4a000">loglevel&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">INFO&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">[client]&lt;/span>
+&lt;span style="color:#c4a000">rucio_host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">https://rucio-server.gridpp.rl.ac.uk:443&lt;/span>
+&lt;span style="color:#c4a000">auth_host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">https://rucio-server.gridpp.rl.ac.uk:443&lt;/span>
+&lt;span style="color:#c4a000">vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;lt;3 character VO name&amp;gt;&lt;/span>
+&lt;span style="color:#c4a000">account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;lt;your_account&amp;gt;&lt;/span>
+&lt;span style="color:#c4a000">ca_cert&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/opt/rucio/etc/web/ca-first.pem&lt;/span>
+&lt;span style="color:#c4a000">auth_type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">x509_proxy&lt;/span>
+&lt;span style="color:#c4a000">client_cert&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/opt/rucio/etc/usercert.pem&lt;/span>
+&lt;span style="color:#c4a000">client_key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/opt/rucio/etc/userkey.pem&lt;/span>
+&lt;span style="color:#c4a000">client_x509_proxy&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/tmp/x509up_u1000&lt;/span>
+&lt;span style="color:#c4a000">request_retries&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">5&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>You should now have a fully set up Containerised Client for your Rucio
 Account&lt;/strong> &lt;strong>and VO which you can start in docker and use whenever you need it.&lt;/strong>&lt;/p>
 &lt;ul>
@@ -574,26 +595,7 @@ email : N/A
 &lt;span style="color:#ce5c00;font-weight:bold">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#000">CLIENT_XYZ&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">whoami&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;status&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;ACTIVE&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;account&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;jdoes_xyz_account&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;account_type&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;USER&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;created_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;2020-08-11T12:13:58&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;updated_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;2020-08-11T12:13:58&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;suspended_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">None&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;deleted_at&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">None&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;email&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">u&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;N/A&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: Dteam Specific Documentation</title><link>/users/data/management/rucio/dteam-vo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/rucio/dteam-vo/</guid><description>
-&lt;h2 id="rucio-configuration-setup">Rucio configuration setup&lt;/h2>
-&lt;p>To start with, you need to create a &lt;code>rucio.cfg&lt;/code> file, this then needs to be
-lightly edited to add your account name. This will then be loaded into the Rucio
-client.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[common]&lt;/span>
-&lt;span style="color:#c4a000">logdir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/var/log/rucio&lt;/span>
-&lt;span style="color:#c4a000">multi_vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">True&lt;/span>
-&lt;span style="color:#c4a000">loglevel&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">INFO&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">[client]&lt;/span>
-&lt;span style="color:#c4a000">rucio_host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">https://rucio-server.gridpp.rl.ac.uk:443&lt;/span>
-&lt;span style="color:#c4a000">auth_host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">https://rucio-server.gridpp.rl.ac.uk:443&lt;/span>
-&lt;span style="color:#c4a000">vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">dtm&lt;/span>
-&lt;span style="color:#c4a000">account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;lt;your_account&amp;gt;&lt;/span>
-&lt;span style="color:#c4a000">ca_cert&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/opt/rucio/etc/web/ca-first.pem&lt;/span>
-&lt;span style="color:#c4a000">auth_type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">x509_proxy&lt;/span>
-&lt;span style="color:#c4a000">client_cert&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/opt/rucio/etc/usercert.pem&lt;/span>
-&lt;span style="color:#c4a000">client_key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/opt/rucio/etc/userkey.pem&lt;/span>
-&lt;span style="color:#c4a000">client_x509_proxy&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/tmp/x509up_u1000&lt;/span>
-&lt;span style="color:#c4a000">request_retries&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">5&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="rucio-client-setup">Rucio-client setup&lt;/h2>
+&lt;h2 id="rucio-client-setup">Rucio-client setup&lt;/h2>
 &lt;p>The setup for the container is the same as that found in the [Getting Started]
 section. But is repeated here for ease.&lt;/p>
 &lt;p>To get the Rucio client that is set up for dteam please use this
@@ -624,6 +626,25 @@ $ chmod &lt;span style="color:#0000cf;font-weight:bold">400&lt;/span> /opt/rucio
 into the container, this is done by running the following command within the
 container:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ voms-proxy-init --voms dteam
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="rucio-configuration-setup">Rucio configuration setup&lt;/h2>
+&lt;p>Inside your docker container edit the &lt;code>rucio.cfg&lt;/code> file to include your 3
+character VO name, and account name. This will then be loaded into the Rucio
+client.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[common]&lt;/span>
+&lt;span style="color:#c4a000">logdir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/var/log/rucio&lt;/span>
+&lt;span style="color:#c4a000">multi_vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">True&lt;/span>
+&lt;span style="color:#c4a000">loglevel&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">INFO&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">[client]&lt;/span>
+&lt;span style="color:#c4a000">rucio_host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">https://rucio-server.gridpp.rl.ac.uk:443&lt;/span>
+&lt;span style="color:#c4a000">auth_host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">https://rucio-server.gridpp.rl.ac.uk:443&lt;/span>
+&lt;span style="color:#c4a000">vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">dtm&lt;/span>
+&lt;span style="color:#c4a000">account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;lt;your_account&amp;gt;&lt;/span>
+&lt;span style="color:#c4a000">ca_cert&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/opt/rucio/etc/web/ca-first.pem&lt;/span>
+&lt;span style="color:#c4a000">auth_type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">x509_proxy&lt;/span>
+&lt;span style="color:#c4a000">client_cert&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/opt/rucio/etc/usercert.pem&lt;/span>
+&lt;span style="color:#c4a000">client_key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/opt/rucio/etc/userkey.pem&lt;/span>
+&lt;span style="color:#c4a000">client_x509_proxy&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/tmp/x509up_u1000&lt;/span>
+&lt;span style="color:#c4a000">request_retries&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">5&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="confirmation-of-client-setup">Confirmation of Client setup&lt;/h2>
 &lt;p>Once this is complete you should now have access to Rucio. This can be confirmed
 with a ping and a whoami commands to verify one, the connection to the Rucio
