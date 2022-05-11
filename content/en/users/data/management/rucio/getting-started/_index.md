@@ -85,7 +85,7 @@ communities.
 $ run \
     -e RUCIO_CFG_RUCIO_HOST=https://rucio-server.gridpp.rl.ac.uk:443 \
     -e RUCIO_CFG_AUTH_HOST=https://rucio-server.gridpp.rl.ac.uk:443 \
-    -e RUCIO_CFG_AUTH_TYPE=x509 \
+    -e RUCIO_CFG_AUTH_TYPE=x509_proxy \
     -e RUCIO_CFG_CLIENT_VO=<3 CHAR VO NAME LOWERCASE> \
     -e RUCIO_CFG_CLIENT_CERT=/opt/rucio/etc/usercert.pem \
     -e RUCIO_CFG_CLIENT_KEY=/opt/rucio/etc/userkey.pem \
