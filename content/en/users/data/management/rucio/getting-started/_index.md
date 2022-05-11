@@ -12,25 +12,29 @@ description: >-
 - [**Rucio Storage Element**](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)
   (RSE) is another name for an endpoint, or storage solution.
 - [**Rules**](https://rucio.readthedocs.io/en/latest/replication_rules_examples.html)
-  are an instruction to Rucio to do a certain thing. This can be to
-  ensure file _x_ has at least 1 copy at _storagesite1_, or ensure file _y_ is on
-  tape, or even on tape at more than one location, or even file _z_ has 2 copies at
-  any site within a selection of sites. How you set up the RSE and the
-  attributes you give them allows for many different strategies to transfer and ordanise data.
-  Once a rule is created, Rucio will get to work to ensure that the rule is satisfied at all times.
+  are an instruction to Rucio to do a certain thing. This can be to ensure file
+  _x_ has at least 1 copy at _storagesite1_, or ensure file _y_ is on tape, or
+  even on tape at more than one location, or even file _z_ has 2 copies at any
+  site within a selection of sites. How you set up the RSE and the attributes
+  you give them allows for many different strategies to transfer and ordanise
+  data. Once a rule is created, Rucio will get to work to ensure that the rule
+  is satisfied at all times.
 - **File** is single file within Rucio.
 - **Dataset** is a collection of files, which may be a collection or related
   results, or data.
 - **Container** is a collection of Datasets which may build a larger subset of a
   whole experiment.
-- **Scope** is a collection in which files, datasets, and containers are
-  placed. Users will have their own scope, often user.username. But also
-  experiments, sub-experiments, or however you wish to orgaise the data can also
-  have scopes. Accounts can be given access to scopes by VO admins.
-- **Data Identifier** (DID) uiniquely identifies data in Rucio. It is made
-  up from the scope and the filename, seperated by a colon (e.g. _experiment1:file1_).
+- **Scope** is a collection in which files, datasets, and containers are placed.
+  Users will have their own scope, often user.username. But also experiments,
+  sub-experiments, or however you wish to orgaise the data can also have scopes.
+  Accounts can be given access to scopes by VO admins.
+- **Data Identifier** (DID) uiniquely identifies data in Rucio. It is made up
+  from the scope and the filename, seperated by a colon (e.g.
+  _experiment1:file1_).
 
 ## Getting started as a new user
+
+### Account creation
 
 1. To get set up with a Rucio account please create a ticket on
    [GGUS](https://ggus.eu/?mode=ticket_submit). Please fill in the form with a
@@ -55,6 +59,8 @@ x509 and password access.**
 
 1. Once our team has this information we will create you a Rucio account.
 
+### Docker container setup
+
 1. You will then need to install a containerised client on your computer.
 
    - Install Docker to run the container
@@ -72,7 +78,8 @@ x509 and password access.**
 1. Run the Docker container using the following command:
 
 When running the block of code below please replaces all items within `<>` with
-the relevent information.
+the relevent information. This uses a Rucio container that was setup for the EGI
+communities.
 
 ```shell
 $ run \
@@ -89,7 +96,7 @@ $ run \
     -v <PATH/TO/YOUR/USERKEY>:/opt/rucio/etc/userkey \
     --name=rucio-client \
     -it \
-    -d rucio/rucio-clients
+    -d egifedcloud/rucioclient:1.23.17
 ```
 
 This block of code may look large but it is configuring Rucio to connect to the
@@ -103,10 +110,34 @@ account.
 1. Run the following commands inside the docker container to finalise set up:
 
 ```shell
-$ cd /opt/rucio/etc/
-$ cp userkey userkey.pem
-$ chmod 400 userkey.pem
-$ cp usercert usercert.pem
+$ cp /opt/rucio/etc/usercert /opt/rucio/etc/usercert.pem
+$ cp /opt/rucio/etc/userkey /opt/rucio/etc/userkey.pem
+$ chmod 600 /opt/rucio/etc/usercert.pem
+$ chmod 400 /opt/rucio/etc/userkey.pem
+```
+
+### Rucio configuration setup
+
+You need to edit the `/opt/rucio/etc/rucio.cfg` file, this then needs to be
+lightly edited to add your account name. This will then be loaded into the Rucio
+client.
+
+```ini
+[common]
+logdir = /var/log/rucio
+multi_vo = True
+loglevel = INFO
+[client]
+rucio_host = https://rucio-server.gridpp.rl.ac.uk:443
+auth_host = https://rucio-server.gridpp.rl.ac.uk:443
+vo = <3 character VO name>
+account = <your_account>
+ca_cert = /opt/rucio/etc/web/ca-first.pem
+auth_type = x509_proxy
+client_cert = /opt/rucio/etc/usercert.pem
+client_key = /opt/rucio/etc/userkey.pem
+client_x509_proxy = /tmp/x509up_u1000
+request_retries = 5
 ```
 
 **You should now have a fully set up Containerised Client for your Rucio
