@@ -103,9 +103,9 @@ This block of code may look large but it is configuring Rucio to connect to the
 Multi-VO Rucio at RAL, your account and VO details, where you are loading them
 into the container, and mounting the authentication details into the container.
 
-The UK escience CA 2B can be [obtained here](https://ca.grid-support.ac.uk/) The
-3 character VO name will be provided to you when you sign up for a Rucio
-account.
+**The UK escience CA 2B can be [obtained here](https://ca.grid-support.ac.uk/)
+The 3 character VO name will be provided to you when you sign up for a Rucio
+account.**
 
 1. Run the following commands inside the docker container to finalise set up:
 
