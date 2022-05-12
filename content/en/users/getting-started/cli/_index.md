@@ -225,9 +225,9 @@ Users can choose whether to provide access tokens directly (via option
 with option `--oidc-client-id` and option `--oidc-client-secret`).
 
 {{% alert title="Tip" color="info" %}} Users of EGI Check-in can get a Check-in
-client ID, client secret, and refresh token, as well as all the information
-needed to obtain access tokens for their FedCloud client, by visiting
-[Check-in FedCloud client](https://aai.egi.eu/fedcloud/).
+client ID and refresh token, as well as all the information needed to obtain
+access tokens for their FedCloud client, by visiting
+[EGI Check-in Token Portal](https://aai.egi.eu/token/).
 {{% /alert %}}
 
 {{% alert title="Tip" color="info" %}} To provide access tokens automatically
