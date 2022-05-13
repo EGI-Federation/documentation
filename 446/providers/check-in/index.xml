@@ -1163,7 +1163,7 @@ Request to the token endpoint. The request contains the following para
 &lt;tr>
 &lt;td>&lt;code>client_id&lt;/code>&lt;/td>
 &lt;td>Required&lt;/td>
-&lt;td>The identifier of the client &lt;/td>
+&lt;td>The identifier of the client&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>client_secret&lt;/code>&lt;/td>

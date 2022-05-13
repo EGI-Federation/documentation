@@ -97,7 +97,7 @@ member of and the roles assigned to the user within those VOs.
 Check the &lt;a href="../joining-virtual-organisation">guide about VOs&lt;/a> for more details.&lt;/p>
 &lt;p>&lt;img src="./check-in-profile-vos.png" alt="VO/Group membership">&lt;/p>
 &lt;h3 id="linked-identities">Linked identities&lt;/h3>
-&lt;p>Information about identites linked to your account. Check the
+&lt;p>Information about linked identities to your account. Check the
 &lt;a href="../linking">guide for linking accounts&lt;/a> for more information.&lt;/p>
 &lt;p>&lt;img src="./check-in-profile-linked.png" alt="Linked identities">&lt;/p>
 &lt;h2 id="next-steps">Next steps&lt;/h2>
@@ -1297,7 +1297,10 @@ request access to. Only VO managers can request LDAP credentials for a given VO.
 &lt;td>&lt;code>voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/aai/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/faq/</guid><description>
+&lt;/table></description></item><item><title>Users: Obtaining Access/Refresh Tokens</title><link>/users/aai/check-in/obtaining-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/obtaining-tokens/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This page includes all the available ways to obtain OAuth tokens from EGI
+Check-in.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/aai/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/faq/</guid><description>
 &lt;h2 id="connect-to-check-in-an-idp-federated-in-an-hub-and-spoke-federations">Connect to Check-in an IdP federated in an hub and spoke federations&lt;/h2>
 &lt;!-- markdownlint-disable line-length -->
 &lt;h3 id="i-get-an-error-similar-to-error---no-connection-between-institution-and-service-surfconext-example">I get an error similar to: &amp;ldquo;Error - No connection between institution and service&amp;rdquo; (SURFconext example)&lt;/h3>

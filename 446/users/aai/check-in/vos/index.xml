@@ -40,7 +40,7 @@ sub-group vo.example-sub.eu:&lt;/p>
 issued by Certification Authorities (CAs) part of the
 &lt;a href="https://www.eugridpma.org/">EUGridPMA&lt;/a> federation which is also part of
 &lt;a href="https://www.igtf.net/">IGTF&lt;/a> (International Global Trust Federation).&lt;/p>
-&lt;p>The role of a Certification Authoritie (CA) is to guarantee that users are who
+&lt;p>The role of a Certification Authority (CA) is to guarantee that users are who
 they claim to be and are entitled to own their certificate. It is up to the
 users to discover which CA they should contact. In general, CAs are organised
 geographically and by research institutes. Each CA has its own procedure to
