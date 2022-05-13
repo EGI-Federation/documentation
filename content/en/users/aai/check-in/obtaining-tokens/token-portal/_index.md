@@ -4,7 +4,7 @@ linkTitle: Token Portal
 type: docs
 weight: 40
 aliases:
-  - /users/check-in/obtaining-tokens/token-portal
+  - /users/aai/check-in/obtaining-tokens/token-portal
 description: >
   Usage guide of EGI Check-in Token Portal
 ---
