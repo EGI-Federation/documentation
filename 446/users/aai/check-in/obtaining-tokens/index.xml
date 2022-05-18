@@ -2,7 +2,7 @@
 &lt;p>The EGI Check-in Token Portal allows users to create Access and Refresh Tokens.&lt;/p>
 &lt;h2 id="obtain-an-access-token">Obtain an Access Token&lt;/h2>
 &lt;p>In order to obtain an Access Token from EGI Check-in Token Portal, please follow
-the steps bellow:&lt;/p>
+the steps below:&lt;/p>
 &lt;ol>
 &lt;li>Go to &lt;a href="https://aai.egi.eu/token">https://aai.egi.eu/token&lt;/a> and click on &amp;ldquo;Authorise&amp;rdquo; to authenticate
 yourself. &lt;img src="check-in-token-login.png" alt="EGI Check-in Token Portal Home Page">&lt;/li>
@@ -19,7 +19,7 @@ yourself. &lt;img src="check-in-token-login.png" alt="EGI Check-in Token Portal 
 &lt;/ol>
 &lt;h2 id="obtain-a-refresh-token">Obtain a Refresh Token&lt;/h2>
 &lt;p>In order to obtain an Refresh Token from EGI Check-in Token Portal, please
-follow the steps bellow:&lt;/p>
+follow the steps below:&lt;/p>
 &lt;ol>
 &lt;li>Go to &lt;a href="https://aai.egi.eu/token">https://aai.egi.eu/token&lt;/a> and click on &amp;ldquo;Authorise&amp;rdquo; to authenticate
 yourself. &lt;img src="check-in-token-login.png" alt="EGI Check-in Token Portal Home Page">&lt;/li>
