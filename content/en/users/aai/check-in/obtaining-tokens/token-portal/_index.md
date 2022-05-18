@@ -14,7 +14,7 @@ The EGI Check-in Token Portal allows users to create Access and Refresh Tokens.
 ## Obtain an Access Token
 
 In order to obtain an Access Token from EGI Check-in Token Portal, please follow
-the steps bellow:
+the steps below:
 
 1. Go to <https://aai.egi.eu/token> and click on "Authorise" to authenticate
    yourself. ![EGI Check-in Token Portal Home Page](check-in-token-login.png)
@@ -29,7 +29,7 @@ the steps bellow:
 ## Obtain a Refresh Token
 
 In order to obtain an Refresh Token from EGI Check-in Token Portal, please
-follow the steps bellow:
+follow the steps below:
 
 1. Go to <https://aai.egi.eu/token> and click on "Authorise" to authenticate
    yourself. ![EGI Check-in Token Portal Home Page](check-in-token-login.png)
