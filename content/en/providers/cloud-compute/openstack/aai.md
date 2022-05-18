@@ -372,8 +372,8 @@ Once horizon is restarted you will be able to choose \"EGI Check-in\" for login.
 The
 [OpenStack Client](https://docs.openstack.org/developer/python-openstackclient/)
 has built-in support for using OpenID Connect Access Tokens to authenticate. You
-first need to get a valid token from EGI Check-in (e.g. from
-<https://aai-demo.egi.eu/fedcloud/>) and then use it in a command like:
+first need to get a valid Access Token from EGI Check-in (e.g. from
+<https://aai-demo.egi.eu/token/>) and then use it in a command like:
 
 <!-- markdownlint-disable line-length -->
 ```shell

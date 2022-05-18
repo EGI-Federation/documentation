@@ -17,7 +17,7 @@ issued by Certification Authorities (CAs) part of the
 [EUGridPMA](https://www.eugridpma.org/) federation which is also part of
 [IGTF](https://www.igtf.net/) (International Global Trust Federation).
 
-The role of a Certification Authoritie (CA) is to guarantee that users are who
+The role of a Certification Authority (CA) is to guarantee that users are who
 they claim to be and are entitled to own their certificate. It is up to the
 users to discover which CA they should contact. In general, CAs are organised
 geographically and by research institutes. Each CA has its own procedure to

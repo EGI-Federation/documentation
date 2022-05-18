@@ -103,7 +103,7 @@ Check the [guide about VOs](../joining-virtual-organisation) for more details.
 
 ### Linked identities
 
-Information about identites linked to your account. Check the
+Information about linked identities to your account. Check the
 [guide for linking accounts](../linking) for more information.
 
 ![Linked identities](./check-in-profile-linked.png)

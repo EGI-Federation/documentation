@@ -678,7 +678,7 @@ Request to the token endpoint. The request contains the following para
 | --------------- | -------- | --------------------------------------------------------------------------------------------------------- |
 | `grant_type`    | Required | `urn:ietf:params:oauth:grant-type:device_code`                                                            |
 | `device_code`   | Required | The device verification code, `device_code` from the Device Authorization Response                        |
-| `client_id`     | Required | The identifier of the client                                                                              |
+| `client_id`     | Required | The identifier of the client                                                                              |
 | `client_secret` | Required | The secret value of the client                                                                            |
 | `scope`         | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
 
