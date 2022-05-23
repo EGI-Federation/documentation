@@ -269,6 +269,11 @@ institutional IdPs registered with eduGAIN or Social Providers. Once the user
 has signed in, EGI Check-in can return OIDC Claims containing information about
 the authenticated user.
 
+{{% alert title="Important" color="warning" %}} The EGI Check-in OIDC Provider
+will be migrated to Keycloak. Please check
+[OIDC Client Migration to Keycloak](#client-migration-to-keycloak) for more
+details {{% /alert %}}
+
 ### Client registration
 
 Before your service can use the EGI Check-in OIDC Provider for user login, you
@@ -360,19 +365,21 @@ Check-in supports the following OpenID Connect/OAuth2 grant types:
 
 The most important OIDC/OAuth2 endpoints are listed below:
 
-<!-- markdownlint-disable line-length -->
+<!-- markdownlint-disable line-length no-inline-html -->
 
-| Endpoint               | Production environment                                     | Demo environment                                                | Development environment                                        |
-| ---------------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------- |
-| Provider configuration | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> |
-| Authorisation          | <https://aai.egi.eu/oidc/authorize>                        | <https://aai-demo.egi.eu/oidc/authorize>                        | <https://aai-dev.egi.eu/oidc/authorize>                        |
-| Token                  | <https://aai.egi.eu/oidc/token>                            | <https://aai-demo.egi.eu/oidc/token>                            | <https://aai-dev.egi.eu/oidc/token>                            |
-| Device Code            | <https://aai.egi.eu/oidc/devicecode>                       | <https://aai-demo.egi.eu/oidc/devicecode>                       | <https://aai-dev.egi.eu/oidc/devicecode>                       |
-| JSON Web Key(jwt)      | <https://aai.egi.eu/oidc/jwk>                              | <https://aai-demo.egi.eu/oidc/jwk>                              | <https://aai-dev.egi.eu/oidc/jwk>                              |
-| User Info              | <https://aai.egi.eu/oidc/userinfo>                         | <https://aai-demo.egi.eu/oidc/userinfo>                         | <https://aai-dev.egi.eu/oidc/userinfo>                         |
-| Introspection          | <https://aai.egi.eu/oidc/introspect>                       | <https://aai-demo.egi.eu/oidc/introspect>                       | <https://aai-dev.egi.eu/oidc/introspect>                       |
+| Endpoint               | Production environment                                     | Demo environment                                                | Development environment (Keycloak)                                                                                                                                                              |
+| ---------------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Provider configuration | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <ul><li><https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration> (Keycloak)</li></ul> |
+| Issuer                 | <https://aai.egi.eu/oidc/>                                 | <https://aai-demo.egi.eu/oidc/>                                 | <ul><li><https://aai-dev.egi.eu/oidc/> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi> (Keycloak)</li></ul>                                                                  |
+| Authorisation          | <https://aai.egi.eu/oidc/authorize>                        | <https://aai-demo.egi.eu/oidc/authorize>                        | <ul><li><https://aai-dev.egi.eu/oidc/authorize> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth> (Keycloak)</li></ul>                            |
+| Token                  | <https://aai.egi.eu/oidc/token>                            | <https://aai-demo.egi.eu/oidc/token>                            | <ul><li><https://aai-dev.egi.eu/oidc/token> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token> (Keycloak)</li></ul>                               |
+| Device Code            | <https://aai.egi.eu/oidc/devicecode>                       | <https://aai-demo.egi.eu/oidc/devicecode>                       | <ul><li><https://aai-dev.egi.eu/oidc/devicecode> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device> (Keycloak)</li></ul>                    |
+| JSON Web Key(JWK)      | <https://aai.egi.eu/oidc/jwk>                              | <https://aai-demo.egi.eu/oidc/jwk>                              | <ul><li><https://aai-dev.egi.eu/oidc/jwk> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs> (Keycloak)</li></ul>                                 |
+| User Info              | <https://aai.egi.eu/oidc/userinfo>                         | <https://aai-demo.egi.eu/oidc/userinfo>                         | <ul><li><https://aai-dev.egi.eu/oidc/userinfo> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo> (Keycloak)</li></ul>                         |
+| Introspection          | <https://aai.egi.eu/oidc/introspect>                       | <https://aai-demo.egi.eu/oidc/introspect>                       | <ul><li><https://aai-dev.egi.eu/oidc/introspect> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect>(Keycloak)</li></ul>                |
+| Logout                 | <https://aai.egi.eu/oidc/saml/logout>                      | <https://aai-demo.egi.eu/oidc/saml/logout>                      | <ul><li><https://aai-dev.egi.eu/oidc/saml/logout> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout>(Keycloak)</li></ul>                         |
 
-<!-- markdownlint-enable line-length -->
+<!-- markdownlint-enable line-length no-inline-html -->
 
 #### Authorization Endpoint
 
@@ -592,7 +599,6 @@ Example request:
 curl -X POST "${TOKEN_ENDPOINT}" \
   -u "${CLIENT_B_ID}":"${CLIENT_B_SECRET}" \
   -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
-  -d "audience=tokenExchange" \
   -d "subject_token=${ACCESS_TOKEN_A}" \
   -d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
   -d "scope=openid%20profile%20offline_access" | python -m json.tool;
@@ -865,6 +871,75 @@ $manageTokens = $issuer . "manage/user/services";
 $sessionName = "simple-oidc-client-php";
 $sessionLifetime = 60*60;  // must be equal to access token validation time in seconds
 ```
+
+### Client Migration to Keycloak
+
+The migration guide below applies to OIDC clients registered in the
+**Development** environment of Check-in. **Beginning June 10, 2022, clients
+using the legacy Check-in OIDC endpoints will no longer be supported**
+
+#### How to Migrate your Service to Keycloak
+
+All the clients that were registered in MITREid Connect have been moved to
+Keycloak preserving all the options (Client ID, Client Secret, Redirect URIs
+etc.), so you do not need to re-register your Service.
+
+The first thing you need to do is to update the OIDC endpoints according to the
+[Endpoints](#endpoints) table.
+
+The size of the Access/Refresh Tokens that are issued by Keycloak is larger of
+the respective Tokens created by MITREid Connect. For example, the size of an
+Access Token is around 1400 characters, depending on the information that are
+included in the payload of the JWT. So make sure that your OIDC implementation
+can handle larger Tokens.
+
+The Redirect URI query parameter in the logout request has been changed from
+`redirect` to `post_logout_redirect_uri` and must be URL encoded. Also, the
+value of the `post_logout_redirect_uri` must be defined in the **Valid Redirect
+URIs** of the Service configuration in the EGI Federation Registry.
+
+If you are **not** using PKCE (Proof Key for Code Exchange), please make sure to
+**disable** the "PKCE Code Challenge Method" in the Service configuration in
+[EGI Federation Registry](https://aai.egi.eu/federation), otherwise you will get
+the following HTTP response during the authentication flow:
+
+```http
+error=invalid_request&error_description=Missing parameter: code_challenge_method
+```
+
+If you are using the **Token Exchange** grant, please make sure that the
+`audience` (Optional) defines the logical name of the service that the token
+will be used for; when specified, it must match the client ID of a client
+registered in Check-in otherwise an `invalid_client` error is returned
+(`"description": "audience not found"`)
+
+If you are using the **Client Credentials** grant, there is a minor change in
+the responses from userinfo and introspection endpoints. The **Client ID** of
+the client is **not** released as the `sub` claim any more and has replaced with
+by the `client_id` claim. The `sub` contains the identifier of the client which
+is unique, non-reassignable and scoped `@egi.eu`.
+
+If you have obtained an Refresh Token from EGI Check-in Token Portal or
+oidc-agent issued by the MITREid Connect instance, you will need to replace them
+by creating new Refresh Tokens issued by Keycloak.
+
+- If you have obtained Refresh Tokens using the EGI Check-in Token Portal,
+  please check the following table:
+
+  | Issuer                   | Development                           |
+  | ------------------------ | ------------------------------------- |
+  | Keycloak                 | <https://aai-dev.egi.eu/token>        |
+  | MITREid Connect (Legacy) | <https://aai-dev.egi.eu/token-legacy> |
+
+- If you have obtained Refresh Tokens using the oidc-agent, please use the
+  following command:
+
+  ```shell
+  oidc-gen --pub --issuer <ISSUER> --scope ...
+  ```
+
+  {{% alert title="Note" color="info" %}} You can find the _ISSUER_ in the
+  [Endpoints](#endpoints) table.{{% /alert %}}
 
 ## Integrating Science Gateways with RCauth for obtaining (proxy) certificates
 
