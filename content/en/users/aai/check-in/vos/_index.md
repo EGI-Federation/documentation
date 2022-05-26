@@ -277,7 +277,7 @@ For example `CO:COU:vo.example.org:admins`
   - A COU admins group member can manage COU members:
   - Approve or decline membership petitions
 
-COU Admin role is granted to a CO Person if the following requirement are met:
+COU Admin role is granted to a CO Person if the following requirements are met:
 
 1. CO Person is declared as VO administrator in the VO's ID Card,
 under the Operations Portal
@@ -298,28 +298,6 @@ their membership, a final notification email is sent when the VO membership
 expires. Please note that a user with expired membership is not eligible for VO
 membership entitlements and as a result the user will not have access to VO
 resources relying on these entitlements.
-
-#### Assign COU member admin role
-
-From the steps defined [above](#managing-cou-admin-members):
-
-1. Follow Manage Group Memberships link
-
-   ![Manage Group Memberships link](./check-in-manage-group-link.png)
-
-1. **Filter** out the CO Person you need to apply for the admin role. Use
-   **Given, Family Name, Email, Identifier** or a combination of the former.
-
-   ![Check-in CO people filter](./check-in-co-people-filter.png)
-
-#### Remove COU admin role
-
-From the steps defined [above](#managing-cou-admin-members):
-
-1. Under Group Members tab, click on Delete action for the CO Person that needs
-   to be removed from Admins group
-
-   ![Group members tab](./check-in-group-members-tab.png)
 
 ## VO membership API
 
