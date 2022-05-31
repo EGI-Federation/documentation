@@ -118,6 +118,11 @@ can choose from:
 1. [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) - an
    extension to [OAuth 2.0](https://tools.ietf.org/html/rfc6749)
 
+> Service providers should ensure that a proper authorisation model is put in
+> place: if [low assurance](#identity-assurance) accounts, like those coming
+> from social media identity providers, are granted access without any vetting,
+> it may lead to an abuse of their service.
+
 Regardless of which of the two protocols you are going to use, you need to
 provide the following information to connect your service to EGI Check-in:
 
