@@ -237,6 +237,9 @@ Service Providers is included in the [User Attribute](#user-attributes) section.
 
 ### Attribute-based authorisation
 
+> As mentioned in [the General Information](#general-information), omitting
+> authorisation checks may lead to abuse of the service.
+
 EGI Check-in provides information about the authenticated user that may be used
 by Service Providers in order to control user access to resources. This
 information is provided by the EGI Check-in IdP in the
@@ -749,6 +752,9 @@ curl -X POST "${TOKEN_ENDPOINT}" \
 [Endpoints](#endpoints) table.{{% /alert %}}
 
 ### Claims-based authorisation
+
+> As mentioned in [the General Information](#general-information), omitting
+> authorisation checks may lead to abuse of the service.
 
 EGI Check-in provides information about the authenticated user that may be used
 by Service Providers in order to control user access to resources. This
