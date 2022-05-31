@@ -1,6 +1,6 @@
 ---
 title: Training Infrastructure
-linkTitle: Training
+linkTitle: Training Infrastructure
 type: docs
 weight: 150
 description: >
