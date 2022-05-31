@@ -97,18 +97,6 @@ The integration follows a two-step process:
    [eligibility criteria](#Services_eligible_for_integration "wikilink") and
    that integration has been thoroughly tested during Step 1.
 
-The most important URLs for each environment are listed in the table below but
-more information can be found in the protocol-specific sections that follow.
-
-<!-- markdownlint-disable line-length -->
-
-| Protocol       | Production environment                                     | Demo environment                                                | Development environment                                        |
-| -------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------- |
-| SAML           | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          |
-| OpenID Connect | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> |
-
-<!-- markdownlint-enable line-length -->
-
 ## General Information
 
 EGI Check-in supports two authentication and authorisation protocols that you
@@ -151,6 +139,18 @@ provide the following information to connect your service to EGI Check-in:
 1. Compliance with the
    [EGI Policies](https://wiki.egi.eu/wiki/Policies_and_Procedures) and the
    [GÉANT Data Protection Code of Conduct](https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home)
+
+The most important URLs for each environment are listed in the table below but
+more information can be found in the protocol-specific sections that follow.
+
+<!-- markdownlint-disable line-length -->
+
+| Protocol       | Production environment                                     | Demo environment                                                | Development environment                                        |
+| -------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------- |
+| SAML           | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          |
+| OpenID Connect | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> |
+
+<!-- markdownlint-enable line-length -->
 
 ## SAML Service Provider
 
