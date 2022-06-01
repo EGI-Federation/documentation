@@ -448,34 +448,6 @@ meets all the
 &lt;a href="#Services_eligible_for_integration" title="wikilink">eligibility criteria&lt;/a> and
 that integration has been thoroughly tested during Step 1.&lt;/li>
 &lt;/ol>
-&lt;p>The most important URLs for each environment are listed in the table below but
-more information can be found in the protocol-specific sections that follow.&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Protocol&lt;/th>
-&lt;th>Production environment&lt;/th>
-&lt;th>Demo environment&lt;/th>
-&lt;th>Development environment&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>SAML&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/proxy/saml2/idp/metadata.php">https://aai.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php">https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php">https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>OpenID Connect&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/.well-known/openid-configuration">https://aai.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/.well-known/openid-configuration">https://aai-demo.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;!-- markdownlint-enable line-length -->
 &lt;h2 id="general-information">General Information&lt;/h2>
 &lt;p>EGI Check-in supports two authentication and authorisation protocols that you
 can choose from:&lt;/p>
@@ -484,6 +456,12 @@ can choose from:&lt;/p>
 &lt;li>&lt;a href="https://openid.net/specs/openid-connect-core-1_0.html">OpenID Connect&lt;/a> - an
 extension to &lt;a href="https://tools.ietf.org/html/rfc6749">OAuth 2.0&lt;/a>&lt;/li>
 &lt;/ol>
+&lt;blockquote>
+&lt;p>Service providers should ensure that a proper authorisation model is put in
+place: if &lt;a href="#identity-assurance">low assurance&lt;/a> accounts, like those coming
+from social media identity providers, are granted access without any vetting,
+it may lead to an abuse of their service.&lt;/p>
+&lt;/blockquote>
 &lt;p>Regardless of which of the two protocols you are going to use, you need to
 provide the following information to connect your service to EGI Check-in:&lt;/p>
 &lt;ol>
@@ -519,6 +497,34 @@ encoded in base64&lt;/li>
 &lt;a href="https://wiki.egi.eu/wiki/Policies_and_Procedures">EGI Policies&lt;/a> and the
 &lt;a href="https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home">GÉANT Data Protection Code of Conduct&lt;/a>&lt;/li>
 &lt;/ol>
+&lt;p>The most important URLs for each environment are listed in the table below but
+more information can be found in the protocol-specific sections that follow.&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Protocol&lt;/th>
+&lt;th>Production environment&lt;/th>
+&lt;th>Demo environment&lt;/th>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>SAML&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/proxy/saml2/idp/metadata.php">https://aai.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php">https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php">https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenID Connect&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/oidc/.well-known/openid-configuration">https://aai.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/.well-known/openid-configuration">https://aai-demo.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
 &lt;h2 id="saml-service-provider">SAML Service Provider&lt;/h2>
 &lt;p>To enable federated access to a web-based application, you can connect to the
 EGI Check-in IdP as a SAML Service Provider (SP). Users of the application will
@@ -601,6 +607,10 @@ is an opaque identifier issued by Check-in.&lt;/li>
 &lt;p>A more extensive list of all the attributes that may be made available to
 Service Providers is included in the &lt;a href="#user-attributes">User Attribute&lt;/a> section.&lt;/p>
 &lt;h3 id="attribute-based-authorisation">Attribute-based authorisation&lt;/h3>
+&lt;blockquote>
+&lt;p>As mentioned in &lt;a href="#general-information">the General Information&lt;/a>, omitting
+authorisation checks may lead to abuse of the service.&lt;/p>
+&lt;/blockquote>
 &lt;p>EGI Check-in provides information about the authenticated user that may be used
 by Service Providers in order to control user access to resources. This
 information is provided by the EGI Check-in IdP in the
@@ -1247,6 +1257,10 @@ You can find the &lt;em>Token Endpoint&lt;/em> in the
 &lt;a href="#endpoints">Endpoints&lt;/a> table.
 &lt;/div>
 &lt;h3 id="claims-based-authorisation">Claims-based authorisation&lt;/h3>
+&lt;blockquote>
+&lt;p>As mentioned in &lt;a href="#general-information">the General Information&lt;/a>, omitting
+authorisation checks may lead to abuse of the service.&lt;/p>
+&lt;/blockquote>
 &lt;p>EGI Check-in provides information about the authenticated user that may be used
 by Service Providers in order to control user access to resources. This
 information is provided by the EGI Check-in OIDC Provider in the form of

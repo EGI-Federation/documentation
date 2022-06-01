@@ -539,33 +539,16 @@ groups is&lt;/p>
 &lt;li>Approve or decline membership petitions&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Manage members' roles
-&lt;ul>
-&lt;li>A COU admins group owner has permission to add and remove members to and
-from the group, i.e. manage the list of CO Persons who can manage the COU
-members&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>A COU admins group owner can manage the admins group member as follows:&lt;/p>
+&lt;p>COU Admin role is granted to a CO Person if the following requirements are met:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Login to &lt;a href="https://aai.egi.eu/registry">Check-in registry&lt;/a> using any of the
-login credentials already linked to your EGI account.&lt;/p>
+&lt;p>CO Person is declared as VO administrator in the VO&amp;rsquo;s ID Card,
+under the Operations Portal&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>To view the available groups expand the &lt;strong>Groups&lt;/strong> drop down list and click
-&lt;strong>All Groups&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="./check-in-groups-drop-down.png" alt="Groups drop down">&lt;/p>
-&lt;p>Expand the &lt;strong>Filter&lt;/strong> section and find the COU admin group you are interested
-in. For the case of the service-integration COU with type the string
-service-integration in the text box with the placeholder Name.Then we click
-on Filter button&lt;/p>
-&lt;p>&lt;img src="./check-in-groups-expand-filter.png" alt="Expand groups">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Locate &lt;strong>Admins&lt;/strong> group click on &lt;strong>Edit&lt;/strong> action&lt;/p>
-&lt;p>&lt;img src="./check-in-groups-actions.png" alt="Groups actions">&lt;/p>
+&lt;p>Open and assign to the Check-in support team a GGUS ticket with the role
+provisioning request.&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;h3 id="expiration-policy">Expiration Policy&lt;/h3>
@@ -580,28 +563,6 @@ their membership, a final notification email is sent when the VO membership
 expires. Please note that a user with expired membership is not eligible for VO
 membership entitlements and as a result the user will not have access to VO
 resources relying on these entitlements.&lt;/p>
-&lt;h4 id="assign-cou-member-admin-role">Assign COU member admin role&lt;/h4>
-&lt;p>From the steps defined &lt;a href="#managing-cou-admin-members">above&lt;/a>:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Follow Manage Group Memberships link&lt;/p>
-&lt;p>&lt;img src="./check-in-manage-group-link.png" alt="Manage Group Memberships link">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Filter&lt;/strong> out the CO Person you need to apply for the admin role. Use
-&lt;strong>Given, Family Name, Email, Identifier&lt;/strong> or a combination of the former.&lt;/p>
-&lt;p>&lt;img src="./check-in-co-people-filter.png" alt="Check-in CO people filter">&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;h4 id="remove-cou-admin-role">Remove COU admin role&lt;/h4>
-&lt;p>From the steps defined &lt;a href="#managing-cou-admin-members">above&lt;/a>:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Under Group Members tab, click on Delete action for the CO Person that needs
-to be removed from Admins group&lt;/p>
-&lt;p>&lt;img src="./check-in-group-members-tab.png" alt="Group members tab">&lt;/p>
-&lt;/li>
-&lt;/ol>
 &lt;h2 id="vo-membership-api">VO membership API&lt;/h2>
 &lt;h3 id="api-v2">API v2&lt;/h3>
 &lt;p>Check-in provides a REST API that allows clients to manage membership
