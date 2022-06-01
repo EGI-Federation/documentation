@@ -97,18 +97,6 @@ The integration follows a two-step process:
    [eligibility criteria](#Services_eligible_for_integration "wikilink") and
    that integration has been thoroughly tested during Step 1.
 
-The most important URLs for each environment are listed in the table below but
-more information can be found in the protocol-specific sections that follow.
-
-<!-- markdownlint-disable line-length -->
-
-| Protocol       | Production environment                                     | Demo environment                                                | Development environment                                        |
-| -------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------- |
-| SAML           | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          |
-| OpenID Connect | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> |
-
-<!-- markdownlint-enable line-length -->
-
 ## General Information
 
 EGI Check-in supports two authentication and authorisation protocols that you
@@ -117,6 +105,11 @@ can choose from:
 1. [Security Assertion Markup Language (SAML) 2.0](http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html)
 1. [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) - an
    extension to [OAuth 2.0](https://tools.ietf.org/html/rfc6749)
+
+> Service providers should ensure that a proper authorisation model is put in
+> place: if [low assurance](#identity-assurance) accounts, like those coming
+> from social media identity providers, are granted access without any vetting,
+> it may lead to an abuse of their service.
 
 Regardless of which of the two protocols you are going to use, you need to
 provide the following information to connect your service to EGI Check-in:
@@ -146,6 +139,18 @@ provide the following information to connect your service to EGI Check-in:
 1. Compliance with the
    [EGI Policies](https://wiki.egi.eu/wiki/Policies_and_Procedures) and the
    [GÉANT Data Protection Code of Conduct](https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home)
+
+The most important URLs for each environment are listed in the table below but
+more information can be found in the protocol-specific sections that follow.
+
+<!-- markdownlint-disable line-length -->
+
+| Protocol       | Production environment                                     | Demo environment                                                | Development environment                                        |
+| -------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------- |
+| SAML           | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          |
+| OpenID Connect | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> |
+
+<!-- markdownlint-enable line-length -->
 
 ## SAML Service Provider
 
@@ -231,6 +236,9 @@ A more extensive list of all the attributes that may be made available to
 Service Providers is included in the [User Attribute](#user-attributes) section.
 
 ### Attribute-based authorisation
+
+> As mentioned in [the General Information](#general-information), omitting
+> authorisation checks may lead to abuse of the service.
 
 EGI Check-in provides information about the authenticated user that may be used
 by Service Providers in order to control user access to resources. This
@@ -744,6 +752,9 @@ curl -X POST "${TOKEN_ENDPOINT}" \
 [Endpoints](#endpoints) table.{{% /alert %}}
 
 ### Claims-based authorisation
+
+> As mentioned in [the General Information](#general-information), omitting
+> authorisation checks may lead to abuse of the service.
 
 EGI Check-in provides information about the authenticated user that may be used
 by Service Providers in order to control user access to resources. This
