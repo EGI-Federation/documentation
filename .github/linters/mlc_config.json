@@ -10,6 +10,9 @@
       "pattern": "^https://aai.*.egi.eu/oidc"
     },
     {
+      "pattern": "^https://aai.*.egi.eu/auth"
+    },
+    {
       "pattern": "^https://aai.egi.eu/LoA"
     },
     {
