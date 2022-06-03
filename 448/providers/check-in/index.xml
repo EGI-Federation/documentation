@@ -448,34 +448,6 @@ meets all the
 &lt;a href="#Services_eligible_for_integration" title="wikilink">eligibility criteria&lt;/a> and
 that integration has been thoroughly tested during Step 1.&lt;/li>
 &lt;/ol>
-&lt;p>The most important URLs for each environment are listed in the table below but
-more information can be found in the protocol-specific sections that follow.&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Protocol&lt;/th>
-&lt;th>Production environment&lt;/th>
-&lt;th>Demo environment&lt;/th>
-&lt;th>Development environment&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>SAML&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/proxy/saml2/idp/metadata.php">https://aai.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php">https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php">https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>OpenID Connect&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/.well-known/openid-configuration">https://aai.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/.well-known/openid-configuration">https://aai-demo.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;!-- markdownlint-enable line-length -->
 &lt;h2 id="general-information">General Information&lt;/h2>
 &lt;p>EGI Check-in supports two authentication and authorisation protocols that you
 can choose from:&lt;/p>
@@ -484,6 +456,12 @@ can choose from:&lt;/p>
 &lt;li>&lt;a href="https://openid.net/specs/openid-connect-core-1_0.html">OpenID Connect&lt;/a> - an
 extension to &lt;a href="https://tools.ietf.org/html/rfc6749">OAuth 2.0&lt;/a>&lt;/li>
 &lt;/ol>
+&lt;blockquote>
+&lt;p>Service providers should ensure that a proper authorisation model is put in
+place: if &lt;a href="#identity-assurance">low assurance&lt;/a> accounts, like those coming
+from social media identity providers, are granted access without any vetting,
+it may lead to an abuse of their service.&lt;/p>
+&lt;/blockquote>
 &lt;p>Regardless of which of the two protocols you are going to use, you need to
 provide the following information to connect your service to EGI Check-in:&lt;/p>
 &lt;ol>
@@ -519,6 +497,34 @@ encoded in base64&lt;/li>
 &lt;a href="https://wiki.egi.eu/wiki/Policies_and_Procedures">EGI Policies&lt;/a> and the
 &lt;a href="https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home">GÉANT Data Protection Code of Conduct&lt;/a>&lt;/li>
 &lt;/ol>
+&lt;p>The most important URLs for each environment are listed in the table below but
+more information can be found in the protocol-specific sections that follow.&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Protocol&lt;/th>
+&lt;th>Production environment&lt;/th>
+&lt;th>Demo environment&lt;/th>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>SAML&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/proxy/saml2/idp/metadata.php">https://aai.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php">https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php">https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenID Connect&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/oidc/.well-known/openid-configuration">https://aai.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/.well-known/openid-configuration">https://aai-demo.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
 &lt;h2 id="saml-service-provider">SAML Service Provider&lt;/h2>
 &lt;p>To enable federated access to a web-based application, you can connect to the
 EGI Check-in IdP as a SAML Service Provider (SP). Users of the application will
@@ -601,6 +607,10 @@ is an opaque identifier issued by Check-in.&lt;/li>
 &lt;p>A more extensive list of all the attributes that may be made available to
 Service Providers is included in the &lt;a href="#user-attributes">User Attribute&lt;/a> section.&lt;/p>
 &lt;h3 id="attribute-based-authorisation">Attribute-based authorisation&lt;/h3>
+&lt;blockquote>
+&lt;p>As mentioned in &lt;a href="#general-information">the General Information&lt;/a>, omitting
+authorisation checks may lead to abuse of the service.&lt;/p>
+&lt;/blockquote>
 &lt;p>EGI Check-in provides information about the authenticated user that may be used
 by Service Providers in order to control user access to resources. This
 information is provided by the EGI Check-in IdP in the
@@ -652,6 +662,13 @@ using any of the supported backend authentication mechanisms, such as
 institutional IdPs registered with eduGAIN or Social Providers. Once the user
 has signed in, EGI Check-in can return OIDC Claims containing information about
 the authenticated user.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+The EGI Check-in OIDC Provider
+will be migrated to Keycloak. Please check
+&lt;a href="#client-migration-to-keycloak">OIDC Client Migration to Keycloak&lt;/a> for more
+details
+&lt;/div>
 &lt;h3 id="client-registration">Client registration&lt;/h3>
 &lt;p>Before your service can use the EGI Check-in OIDC Provider for user login, you
 must submit a service registration request using
@@ -755,14 +772,14 @@ OAuth flow.&lt;/li>
 &lt;/ul>
 &lt;h3 id="endpoints">Endpoints&lt;/h3>
 &lt;p>The most important OIDC/OAuth2 endpoints are listed below:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
+&lt;!-- markdownlint-disable line-length no-inline-html -->
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Endpoint&lt;/th>
 &lt;th>Production environment&lt;/th>
 &lt;th>Demo environment&lt;/th>
-&lt;th>Development environment&lt;/th>
+&lt;th>Development environment (Keycloak)&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
@@ -770,47 +787,59 @@ OAuth flow.&lt;/li>
 &lt;td>Provider configuration&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/.well-known/openid-configuration">https://aai.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/.well-known/openid-configuration">https://aai-demo.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Issuer&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/oidc/">https://aai.egi.eu/oidc/&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/">https://aai-demo.egi.eu/oidc/&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/">https://aai-dev.egi.eu/oidc/&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi">https://aai-dev.egi.eu/auth/realms/egi&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Authorisation&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/authorize">https://aai.egi.eu/oidc/authorize&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/authorize">https://aai-demo.egi.eu/oidc/authorize&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/authorize">https://aai-dev.egi.eu/oidc/authorize&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/authorize">https://aai-dev.egi.eu/oidc/authorize&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Token&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/token">https://aai.egi.eu/oidc/token&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/token">https://aai-demo.egi.eu/oidc/token&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/token">https://aai-dev.egi.eu/oidc/token&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/token">https://aai-dev.egi.eu/oidc/token&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Device Code&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/devicecode">https://aai.egi.eu/oidc/devicecode&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/devicecode">https://aai-demo.egi.eu/oidc/devicecode&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/devicecode">https://aai-dev.egi.eu/oidc/devicecode&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/devicecode">https://aai-dev.egi.eu/oidc/devicecode&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>JSON Web Key(jwt)&lt;/td>
+&lt;td>JSON Web Key(JWK)&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/jwk">https://aai.egi.eu/oidc/jwk&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/jwk">https://aai-demo.egi.eu/oidc/jwk&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/jwk">https://aai-dev.egi.eu/oidc/jwk&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/jwk">https://aai-dev.egi.eu/oidc/jwk&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>User Info&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/userinfo">https://aai.egi.eu/oidc/userinfo&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/userinfo">https://aai-demo.egi.eu/oidc/userinfo&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/userinfo">https://aai-dev.egi.eu/oidc/userinfo&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/userinfo">https://aai-dev.egi.eu/oidc/userinfo&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Introspection&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/introspect">https://aai.egi.eu/oidc/introspect&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/introspect">https://aai-demo.egi.eu/oidc/introspect&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/introspect">https://aai-dev.egi.eu/oidc/introspect&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/introspect">https://aai-dev.egi.eu/oidc/introspect&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Logout&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/oidc/saml/logout">https://aai.egi.eu/oidc/saml/logout&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/saml/logout">https://aai-demo.egi.eu/oidc/saml/logout&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/saml/logout">https://aai-dev.egi.eu/oidc/saml/logout&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;!-- markdownlint-enable line-length -->
+&lt;!-- markdownlint-enable line-length no-inline-html -->
 &lt;h4 id="authorization-endpoint">Authorization Endpoint&lt;/h4>
 &lt;p>The Authorization Endpoint performs Authentication of the end user. This is done
 by sending the User Agent to the Authorization Server's Authorization Endpoint
@@ -1062,7 +1091,6 @@ of the request are:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -u &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_B_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_B_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn:ietf:params:oauth:grant-type:token-exchange&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;audience=tokenExchange&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;subject_token=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ACCESS_TOKEN_A&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;subject_token_type=urn:ietf:params:oauth:token-type:access_token&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20profile%20offline_access&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
@@ -1229,6 +1257,10 @@ You can find the &lt;em>Token Endpoint&lt;/em> in the
 &lt;a href="#endpoints">Endpoints&lt;/a> table.
 &lt;/div>
 &lt;h3 id="claims-based-authorisation">Claims-based authorisation&lt;/h3>
+&lt;blockquote>
+&lt;p>As mentioned in &lt;a href="#general-information">the General Information&lt;/a>, omitting
+authorisation checks may lead to abuse of the service.&lt;/p>
+&lt;/blockquote>
 &lt;p>EGI Check-in provides information about the authenticated user that may be used
 by Service Providers in order to control user access to resources. This
 information is provided by the EGI Check-in OIDC Provider in the form of
@@ -1347,7 +1379,79 @@ setup earlier:&lt;/p>
 &lt;span style="color:#000">$manageTokens&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">$issuer&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;manage/user/services&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;span style="color:#000">$sessionName&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;simple-oidc-client-php&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;span style="color:#000">$sessionLifetime&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">60&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">*&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">60&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// must be equal to access token validation time in seconds
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="integrating-science-gateways-with-rcauth-for-obtaining-proxy-certificates">Integrating Science Gateways with RCauth for obtaining (proxy) certificates&lt;/h2>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="client-migration-to-keycloak">Client Migration to Keycloak&lt;/h3>
+&lt;p>The migration guide below applies to OIDC clients registered in the
+&lt;strong>Development&lt;/strong> environment of Check-in. &lt;strong>Beginning June 10, 2022, clients
+using the legacy Check-in OIDC endpoints will no longer be supported&lt;/strong>&lt;/p>
+&lt;h4 id="how-to-migrate-your-service-to-keycloak">How to Migrate your Service to Keycloak&lt;/h4>
+&lt;p>All the clients that were registered in MITREid Connect have been moved to
+Keycloak preserving all the options (Client ID, Client Secret, Redirect URIs
+etc.), so you do not need to re-register your Service.&lt;/p>
+&lt;p>The first thing you need to do is to update the OIDC endpoints according to the
+&lt;a href="#endpoints">Endpoints&lt;/a> table.&lt;/p>
+&lt;p>The size of the Access/Refresh Tokens that are issued by Keycloak is larger of
+the respective Tokens created by MITREid Connect. For example, the size of an
+Access Token is around 1400 characters, depending on the information that are
+included in the payload of the JWT. So make sure that your OIDC implementation
+can handle larger Tokens.&lt;/p>
+&lt;p>The Redirect URI query parameter in the logout request has been changed from
+&lt;code>redirect&lt;/code> to &lt;code>post_logout_redirect_uri&lt;/code> and must be URL encoded. Also, the
+value of the &lt;code>post_logout_redirect_uri&lt;/code> must be defined in the &lt;strong>Valid Redirect
+URIs&lt;/strong> of the Service configuration in the EGI Federation Registry.&lt;/p>
+&lt;p>If you are &lt;strong>not&lt;/strong> using PKCE (Proof Key for Code Exchange), please make sure to
+&lt;strong>disable&lt;/strong> the &amp;ldquo;PKCE Code Challenge Method&amp;rdquo; in the Service configuration in
+&lt;a href="https://aai.egi.eu/federation">EGI Federation Registry&lt;/a>, otherwise you will get
+the following HTTP response during the authentication flow:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-http" data-lang="http">&lt;span style="color:#a40000">error=invalid_request&amp;amp;error_description=Missing parameter: code_challenge_method
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are using the &lt;strong>Token Exchange&lt;/strong> grant, please make sure that the
+&lt;code>audience&lt;/code> (Optional) defines the logical name of the service that the token
+will be used for; when specified, it must match the client ID of a client
+registered in Check-in otherwise an &lt;code>invalid_client&lt;/code> error is returned
+(&lt;code>&amp;quot;description&amp;quot;: &amp;quot;audience not found&amp;quot;&lt;/code>)&lt;/p>
+&lt;p>If you are using the &lt;strong>Client Credentials&lt;/strong> grant, there is a minor change in
+the responses from userinfo and introspection endpoints. The &lt;strong>Client ID&lt;/strong> of
+the client is &lt;strong>not&lt;/strong> released as the &lt;code>sub&lt;/code> claim any more and has replaced with
+by the &lt;code>client_id&lt;/code> claim. The &lt;code>sub&lt;/code> contains the identifier of the client which
+is unique, non-reassignable and scoped &lt;code>@egi.eu&lt;/code>.&lt;/p>
+&lt;p>If you have obtained an Refresh Token from EGI Check-in Token Portal or
+oidc-agent issued by the MITREid Connect instance, you will need to replace them
+by creating new Refresh Tokens issued by Keycloak.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>If you have obtained Refresh Tokens using the EGI Check-in Token Portal,
+please check the following table:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Issuer&lt;/th>
+&lt;th>Development&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Keycloak&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/token">https://aai-dev.egi.eu/token&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MITREid Connect (Legacy)&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/token-legacy">https://aai-dev.egi.eu/token-legacy&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;li>
+&lt;p>If you have obtained Refresh Tokens using the oidc-agent, please use the
+following command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">oidc-gen --pub --issuer &amp;lt;ISSUER&amp;gt; --scope ...
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the &lt;em>ISSUER&lt;/em> in the
+&lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="integrating-science-gateways-with-rcauth-for-obtaining-proxy-certificates">Integrating Science Gateways with RCauth for obtaining (proxy) certificates&lt;/h2>
 &lt;p>In order for Science Gateways (VO portals) to obtain RFC proxy certificates
 derived from &lt;strong>personal&lt;/strong> end-entity certificates, an EGI Science Gateway can
 make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
