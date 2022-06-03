@@ -600,7 +600,7 @@ Machine will make the hardware available to the user.&lt;/p>
 &lt;td>&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>Pay-per-use&lt;/td>
-&lt;td>&lt;a href="https://confluence.ifca.es/display/IC/Cloud+Compute+Flavors">https://confluence.ifca.es/display/IC/Cloud+Compute+Flavors&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://confluence.ifca.es/display/IC/Cloud+Compute+Flavors">IFCA-LCG2 Documentation&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>CESNET-MCC&lt;/td>
@@ -608,7 +608,7 @@ Machine will make the hardware available to the user.&lt;/p>
 &lt;td>hpc.8core-64ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-2080-glados, hpc.32core-256ram-nvidia-t4-single-gpu, hpc.64core-238ram-nvidia-t4, hpc.64core-512ram-nvidia-t4, meta-hdm.16core-120ram-nvidia-a40, meta-hdm.64core-485ram-nvidia-a40-quad&lt;/td>
 &lt;td>vo.clarin.eu, biomed, eosc-synergy.eu, peachnote.com, cryoem.instruct-eric.eu, fusion, icecube, vo.carouseldancing.org, vo.pangeo.eu, vo.neanias.eu, umsa.cerit-sc.cz, vip, vo.notebooks.egi.eu, vo.emphasisproject.eu, vo.inactive-sarscov2.eu&lt;/td>
 &lt;td>Sponsored, conditions to be negotiated&lt;/td>
-&lt;td>&lt;a href="https://docs.cloud.muni.cz/cloud/gpus/">https://docs.cloud.muni.cz/cloud/gpus/&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://docs.cloud.muni.cz/cloud/gpus/">CESNET-MCC Documentation&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>IN2P3-IRES&lt;/td>
