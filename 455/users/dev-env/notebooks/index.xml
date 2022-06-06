@@ -63,12 +63,14 @@ automatically. You can also specify a different oneprovider host if needed.&lt;/
 &lt;p>The data on &lt;a href="https://eudat.eu/services/b2drop">EUDAT B2DROP&lt;/a> can be
 synchronized to EGI Notebooks so you can share content between the
 two services.&lt;/p>
+&lt;!-- markdown-link-check-disable -->
 &lt;p>Here is how you can get them synchronized. First, make sure
 &lt;a href="https://b2drop.eudat.eu/">you have access to B2DROP&lt;/a>. Then, configure
 &lt;code>app username&lt;/code> and &lt;code>app password&lt;/code> on B2DROP&amp;rsquo;s
 &lt;a href="https://b2drop.eudat.eu/settings/user/security">security settings&lt;/a>.
 Now back to EGI Notebooks, click on the &lt;code>B2DROP&lt;/code> drop-down menu when
 you start your session:&lt;/p>
+&lt;!-- markdown-link-check-enable -->
 &lt;p>&lt;img src="notebooks-b2drop-1.png" alt="EGI Notebook Session">&lt;/p>
 &lt;p>Enter the &lt;code>app username&lt;/code> and &lt;code>app password&lt;/code> created previously:&lt;/p>
 &lt;p>&lt;img src="notebooks-b2drop-2.png" alt="B2DROP credentials">&lt;/p>
