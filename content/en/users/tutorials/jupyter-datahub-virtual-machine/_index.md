@@ -38,7 +38,7 @@ for more information.
 
 The VM image is ready to listen on port `22` for ssh access and port `80` for
 accessing the notebooks interface. Make sure your have those ports open on your
-security ports, otherwise you will not be able to reach the Jupyter notebooks.
+security groups, otherwise you will not be able to reach the Jupyter notebooks.
 
 Once your instance is ready,
 [assign it a public IP](../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm)
