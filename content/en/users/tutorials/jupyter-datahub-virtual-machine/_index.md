@@ -23,7 +23,7 @@ This tutorial assumes you have:
 - Access to a cloud provider where the
   [Jupyter DataHub VM is available](https://appdb.egi.eu/store/vappliance/jupyter.datahub.vm).
   Alternatively, this VM can be run on your computer using a virtualization tool
-  like [VirtualBox](https://www.virtualbox.org/)
+  like VirtualBox.
 
 ## Step 1: Start your VM
 
