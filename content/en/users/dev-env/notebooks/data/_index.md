@@ -86,7 +86,7 @@ The data on B2DROP can be synchronised with EGI Notebooks so you can
 share content between the two services. This offers an easy-to-use
 storage and compute platform for the long-tail of science.
 
-Here is how you can get them synchronized. First, make sure
+Here is how you can get them synchronised. First, make sure
 [you have access to B2DROP](https://b2drop.eudat.eu/). Then, configure
 `app username` and `app password` on B2DROP's
 [security settings](https://b2drop.eudat.eu/settings/user/security).
