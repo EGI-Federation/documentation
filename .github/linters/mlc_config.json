@@ -47,6 +47,9 @@
     },
     {
       "pattern": "^https://aai.*.egi.eu/api/v2/VoMembers"
+    },
+    {
+      "pattern": "^https://b2drop.eudat.eu/settings/user/security"
     }
   ]
 }
