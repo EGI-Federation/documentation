@@ -18,11 +18,12 @@ The table below summarises the available options:
 
 <!-- markdownlint-disable line-length -->
 
-| Site           | VM configuration options               | Flavors                                                                                                                                                                                    | Supported VOs with GPUs                                    | Access conditions                                                                     |
-| -------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| IISAS-FedCloud | up to 2 NVIDIA Tesla K20m              | g1.c08r31-K20m, g1.c16r62-2xK20m                                                                                                                                                           | vo.access.egi.eu, eosc-synergy.eu, enmr.eu, training.egi.eu | Sponsored access for limited testing, conditions to be negotiated for long-term usage |
-| IFCA-LCG2      | up to 2 NVIDIA T4, up to 2 NVIDIA V100 |                                                                                                                                                                                            |                                                            | Pay-per-use                                                                           |
-| CESNET-MCC     | up to 2 NVIDIA T4                      | hpc.8core-64ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-1080-glados, hpc.38core-372ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-2080-glados, hpc.38core-372ram-nvidia-2080-glados | vo.clarin.eu, biomed, eosc-synergy.eu, peachnote.com       | Sponsored, conditions to be negotiated                                                |
+| Site | VM configuration options | Flavors | Supported VOs with GPUs | Access conditions | More information |
+| ---- | ------------------------ | ------- | ----------------------- | ----------------- | ---------------- |
+| IISAS-FedCloud | up to 8 NVIDIA Tesla K20m | g1.c08r30-K20m, g1.c16r60-2xK20m | vo.access.egi.eu, eosc-synergy.eu, enmr.eu, training.egi.eu | Sponsored access for limited testing, conditions to be negotiated for long-term usage | |
+| IFCA-LCG2 | up to 80 NVIDIA T4, up to 20 NVIDIA V100 | | | Pay-per-use | [IFCA-LCG2 Documentation](https://confluence.ifca.es/display/IC/Cloud+Compute+Flavors) |
+| CESNET-MCC | up to 2 NVIDIA Tesla T4, up to 4 NVIDIA A40, up to 2 GeForce RTX 1080/2080 (experimental use only) | hpc.8core-64ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-2080-glados, hpc.32core-256ram-nvidia-t4-single-gpu, hpc.64core-238ram-nvidia-t4, hpc.64core-512ram-nvidia-t4, meta-hdm.16core-120ram-nvidia-a40, meta-hdm.64core-485ram-nvidia-a40-quad | vo.clarin.eu, biomed, eosc-synergy.eu, peachnote.com, cryoem.instruct-eric.eu, fusion, icecube, vo.carouseldancing.org, vo.pangeo.eu, vo.neanias.eu, umsa.cerit-sc.cz, vip, vo.notebooks.egi.eu, vo.emphasisproject.eu, vo.inactive-sarscov2.eu | Sponsored, conditions to be negotiated | [CESNET-MCC Documentation](https://docs.cloud.muni.cz/cloud/gpus/) |
+| IN2P3-IRES | up to 1 NVIDIA Tesla T4 per VM, up to 1 NVIDIA A40 per VM, up to 4 GeForce RTX 2080 per VM (experimental use only) | g1.xlarge-4xmem, g2.xlarge-4xmem, g4.xlarge-4xmem | biomed, vo.emphasisproject.eu, vo.france-grilles.fr | Sponsored, conditions to be negotiated | |
 
 <!-- markdownlint-enable line-length -->
 
@@ -67,8 +68,3 @@ Site-specific dashboards and endpoints are described in the following table:
 A VM image with pre-installed NVIDIA driver and Docker is available at
 [AppDB](https://appdb.egi.eu/store/vappliance/nvidia.docker.centos.7). Some VOs
 (vo.access.egi.eu, eosc-synergy.eu) have the image included in the VO image list.
-
-For a more detailed presentation on how to access GPUs in the EGI Federation
-please have a look at the [EGI Webinar](https://www.egi.eu/webinars/) on
-[27th November 2020](https://indico.egi.eu/event/5271/). There is also a video
-recording available on [YouTube](https://youtu.be/vAuYg2oISFc).
