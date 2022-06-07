@@ -79,7 +79,7 @@ menu when you start your session:&lt;/p>
 the option to save them for future logins:&lt;/p>
 &lt;p>&lt;img src="notebooks-b2drop-2.png" alt="B2DROP credentials">&lt;/p>
 &lt;p>You will see a &lt;code>b2drop&lt;/code> folder in the list of folders (left panel) of the
-EGI Notebooks that is synchronized with the content on
+EGI Notebooks that is synchronised with the content on
 &lt;a href="https://b2drop.eudat.eu/">B2DROP&lt;/a>:&lt;/p>
 &lt;p>&lt;img src="notebooks-b2drop-3.png" alt="B2DROP folder">&lt;/p>
 &lt;h3 id="d4science-workspace">D4Science Workspace&lt;/h3>
