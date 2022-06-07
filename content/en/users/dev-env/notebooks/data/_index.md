@@ -101,7 +101,7 @@ the option to save them for future logins:
 ![B2DROP credentials](notebooks-b2drop-2.png)
 
 You will see a `b2drop` folder in the list of folders (left panel) of the
-EGI Notebooks that is synchronized with the content on
+EGI Notebooks that is synchronised with the content on
 [B2DROP](https://b2drop.eudat.eu/):
 
 ![B2DROP folder](notebooks-b2drop-3.png)
