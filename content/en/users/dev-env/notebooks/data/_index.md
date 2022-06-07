@@ -76,9 +76,15 @@ automatically. You can also specify a different oneprovider host if needed.
 
 ### EUDAT B2DROP
 
-The data on [EUDAT B2DROP](https://eudat.eu/services/b2drop) can be
-synchronized to EGI Notebooks so you can share content between the
-two services.
+[EUDAT B2DROP](https://eudat.eu/services/b2drop) is a low-barrier,
+user-friendly and trustworthy storage environment which allows users
+to synchronise their active data across different desktops and to easily
+share this data with peers. EUDAT offers a free public basic instance
+of B2DROP for any researcher with a 20 GB quota.
+
+The data on B2DROP can be synchronized with EGI Notebooks so you can
+share content between the two services. This offers an easy-to-use
+storage and compute platform for the long-tail of science.
 
 <!-- markdown-link-check-disable -->
 
