@@ -65,14 +65,14 @@ user-friendly and trustworthy storage environment which allows users
 to synchronise their active data across different desktops and to easily
 share this data with peers. EUDAT offers a free public basic instance
 of B2DROP for any researcher with a 20 GB quota.&lt;/p>
-&lt;p>The data on B2DROP can be synchronized with EGI Notebooks so you can
+&lt;p>The data on B2DROP can be synchronised with EGI Notebooks so you can
 share content between the two services. This offers an easy-to-use
 storage and compute platform for the long-tail of science.&lt;/p>
-&lt;p>Here is how you can get them synchronized. First, make sure
+&lt;p>Here is how you can get them synchronised. First, make sure
 &lt;a href="https://b2drop.eudat.eu/">you have access to B2DROP&lt;/a>. Then, configure
 &lt;code>app username&lt;/code> and &lt;code>app password&lt;/code> on B2DROP&amp;rsquo;s
 &lt;a href="https://b2drop.eudat.eu/settings/user/security">security settings&lt;/a>.
-Now back to EGI Notebooks, click on the &lt;code>B2DROP connection&lt;/code> drop-down
+Now, back to EGI Notebooks, click on the &lt;code>B2DROP connection&lt;/code> drop-down
 menu when you start your session:&lt;/p>
 &lt;p>&lt;img src="notebooks-b2drop-1.png" alt="EGI Notebook Session">&lt;/p>
 &lt;p>Enter the &lt;code>app username&lt;/code> and &lt;code>app password&lt;/code> created previously, with
