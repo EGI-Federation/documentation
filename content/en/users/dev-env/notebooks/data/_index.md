@@ -82,7 +82,7 @@ to synchronise their active data across different desktops and to easily
 share this data with peers. EUDAT offers a free public basic instance
 of B2DROP for any researcher with a 20 GB quota.
 
-The data on B2DROP can be synchronized with EGI Notebooks so you can
+The data on B2DROP can be synchronised with EGI Notebooks so you can
 share content between the two services. This offers an easy-to-use
 storage and compute platform for the long-tail of science.
 
