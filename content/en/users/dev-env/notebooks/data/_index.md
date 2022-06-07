@@ -76,11 +76,35 @@ automatically. You can also specify a different oneprovider host if needed.
 
 ### EUDAT B2DROP
 
-[EUDAT B2DROP](https://b2drop.eudat.eu/) offers a WebDAV interface that can be
-used to mount your files from the notebooks. Files are accessed as any regular
-file from the notebooks interface or from your code. This feature requires users
-to create a client in B2DROP and provide the client's credentials to the EGI
-notebooks service.
+[EUDAT B2DROP](https://eudat.eu/services/b2drop) is a low-barrier,
+user-friendly and trustworthy storage environment which allows users
+to synchronise their active data across different desktops and to easily
+share this data with peers. EUDAT offers a free public instance of B2DROP
+for any researcher with a 20 GB quota.
+
+The data on B2DROP can be synchronised with EGI Notebooks so you can
+share content between the two services. This offers an easy-to-use
+storage and compute platform for the long-tail of science.
+
+Here is how you can get them synchronised. First, make sure
+[you have access to B2DROP](https://b2drop.eudat.eu/). Then, configure
+`app username` and `app password` on B2DROP's
+[security settings](https://b2drop.eudat.eu/settings/user/security).
+Now, back to EGI Notebooks, click on the `B2DROP connection` drop-down
+menu when you start your session:
+
+![EGI Notebook Session](notebooks-b2drop-1.png)
+
+Enter the `app username` and `app password` created previously, with
+the option to save them for future logins:
+
+![B2DROP credentials](notebooks-b2drop-2.png)
+
+You will see a `b2drop` folder in the list of folders (left panel) of the
+EGI Notebooks that is synchronised with the content on
+[B2DROP](https://b2drop.eudat.eu/):
+
+![B2DROP folder](notebooks-b2drop-3.png)
 
 ### D4Science Workspace
 
