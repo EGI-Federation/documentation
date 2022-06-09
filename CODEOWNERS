@@ -10,40 +10,39 @@
 * @enolfc @glarocca @gwarf @andrea-manzi @thebe14
 
 # Internal services
-content/*/internal/ @gwarf @paolini78
+content/en/internal/ @gwarf @paolini78
 
 # Providers
-content/*/providers/ @gwarf @paolini78
+content/en/providers/ @gwarf @paolini78
 
 # Users
-content/*/users/ @enolfc @glarocca @andrea-manzi @gwarf @thebe14
+content/en/users/ @enolfc @glarocca @andrea-manzi @gwarf @thebe14 @sebastian-luna-valero
 
-# DataHub
-content/*/*/datahub/ @andrea-manzi
+# Storage-related services
+content/en/users/data/ @andrea-manzi
+content/en/providers/datahub/ @andrea-manzi
 
-# Data Transfer
-content/*/*/data-transfer/ @andrea-manzi
-
-# Online Storage
-content/*/*/online-storage/ @andrea-manzi
+# dev-env
+content/en/users/dev-env/ @enolfc
 
 # FedCloud
-content/*/*/cloud-*/ @enolfc
+content/en/users/compute/ @enolfc
+content/en/providers/cloud-compute/ @enolfc
 
 # Notebooks
-content/*/*/notebooks/ @enolfc @andrea-manzi
-
-# AoD
-content/*/*/applications-on-demand/ @glarocca
+content/en/users/dev-env/notebooks/ @enolfc @andrea-manzi @sebastian-luna-valero
+content/en/users/providers/notebooks/ @enolfc @andrea-manzi @sebastian-luna-valero
+content/en/users/dev-env/binder/ @enolfc @andrea-manzi @sebastian-luna-valero
 
 # Training
-content/*/users/training/ @glarocca @thebe14
+content/en/users/training/ @glarocca @thebe14
 
 # HTC
-content/*/*/high-throughput-compute/ @CatalinCondurache
+content/en/users/compute/high-throughput-compute/ @CatalinCondurache
 
 # Workload Manager
-content/*/*/workload-manager/ @CatalinCondurache
+content/en/users/compute/orchestration/workload-manager/ @CatalinCondurache @enolfc
 
 # Check-in 
-content/*/*/check-in/ @vardizzo-lab
+content/en/users/aai/ @vardizzo-lab
+content/en/providers/check-in/ @vardizzo-lab
