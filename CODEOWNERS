@@ -37,7 +37,11 @@ content/en/users/dev-env/binder/ @enolfc @andrea-manzi @sebastian-luna-valero
 # Training
 content/en/users/training/ @glarocca @thebe14
 
-# HTC
+# Tutorials
+content/en/users/tutorials/ @thebe14
+
+# HTC-related services
+content/en/users/compute/content-distribution/ @CatalinCondurache
 content/en/users/compute/high-throughput-compute/ @CatalinCondurache
 
 # Workload Manager
