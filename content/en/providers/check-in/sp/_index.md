@@ -375,17 +375,17 @@ The most important OIDC/OAuth2 endpoints are listed below:
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
-| Endpoint               | Production environment                                     | Demo environment                                                | Development environment (Keycloak)                                                                                                                                                              |
-| ---------------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Provider configuration | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <ul><li><https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration> (Keycloak)</li></ul> |
-| Issuer                 | <https://aai.egi.eu/oidc/>                                 | <https://aai-demo.egi.eu/oidc/>                                 | <ul><li><https://aai-dev.egi.eu/oidc/> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi> (Keycloak)</li></ul>                                                                  |
-| Authorisation          | <https://aai.egi.eu/oidc/authorize>                        | <https://aai-demo.egi.eu/oidc/authorize>                        | <ul><li><https://aai-dev.egi.eu/oidc/authorize> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth> (Keycloak)</li></ul>                            |
-| Token                  | <https://aai.egi.eu/oidc/token>                            | <https://aai-demo.egi.eu/oidc/token>                            | <ul><li><https://aai-dev.egi.eu/oidc/token> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token> (Keycloak)</li></ul>                               |
-| Device Code            | <https://aai.egi.eu/oidc/devicecode>                       | <https://aai-demo.egi.eu/oidc/devicecode>                       | <ul><li><https://aai-dev.egi.eu/oidc/devicecode> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device> (Keycloak)</li></ul>                    |
-| JSON Web Key(JWK)      | <https://aai.egi.eu/oidc/jwk>                              | <https://aai-demo.egi.eu/oidc/jwk>                              | <ul><li><https://aai-dev.egi.eu/oidc/jwk> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs> (Keycloak)</li></ul>                                 |
-| User Info              | <https://aai.egi.eu/oidc/userinfo>                         | <https://aai-demo.egi.eu/oidc/userinfo>                         | <ul><li><https://aai-dev.egi.eu/oidc/userinfo> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo> (Keycloak)</li></ul>                         |
-| Introspection          | <https://aai.egi.eu/oidc/introspect>                       | <https://aai-demo.egi.eu/oidc/introspect>                       | <ul><li><https://aai-dev.egi.eu/oidc/introspect> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect>(Keycloak)</li></ul>                |
-| Logout                 | <https://aai.egi.eu/oidc/saml/logout>                      | <https://aai-demo.egi.eu/oidc/saml/logout>                      | <ul><li><https://aai-dev.egi.eu/oidc/saml/logout> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout>(Keycloak)</li></ul>                         |
+| Endpoint               | Production environment                                     | Demo environment                                                                                                                                                                                 | Development environment (Keycloak)                                                                                                                                                              |
+| ---------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Provider configuration | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <ul><li><https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration> (Keycloak)</li></ul> | <ul><li><https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration> (Keycloak)</li></ul> |
+| Issuer                 | <https://aai.egi.eu/oidc/>                                 | <ul><li><https://aai-demo.egi.eu/oidc/> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi> (Keycloak)</li></ul>                                                                 | <ul><li><https://aai-dev.egi.eu/oidc/> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi> (Keycloak)</li></ul>                                                                  |
+| Authorisation          | <https://aai.egi.eu/oidc/authorize>                        | <ul><li><https://aai-demo.egi.eu/oidc/authorize> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth> (Keycloak)</li></ul>                           | <ul><li><https://aai-dev.egi.eu/oidc/authorize> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth> (Keycloak)</li></ul>                            |
+| Token                  | <https://aai.egi.eu/oidc/token>                            | <ul><li><https://aai-demo.egi.eu/oidc/token> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token> (Keycloak)</li></ul>                              | <ul><li><https://aai-dev.egi.eu/oidc/token> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token> (Keycloak)</li></ul>                               |
+| Device Code            | <https://aai.egi.eu/oidc/devicecode>                       | <ul><li><https://aai-demo.egi.eu/oidc/devicecode> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device> (Keycloak)</li></ul>                   | <ul><li><https://aai-dev.egi.eu/oidc/devicecode> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device> (Keycloak)</li></ul>                    |
+| JSON Web Key(JWK)      | <https://aai.egi.eu/oidc/jwk>                              | <ul><li><https://aai-demo.egi.eu/oidc/jwk> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs> (Keycloak)</li></ul>                                | <ul><li><https://aai-dev.egi.eu/oidc/jwk> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs> (Keycloak)</li></ul>                                 |
+| User Info              | <https://aai.egi.eu/oidc/userinfo>                         | <ul><li><https://aai-demo.egi.eu/oidc/userinfo> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo> (Keycloak)</li></ul>                        | <ul><li><https://aai-dev.egi.eu/oidc/userinfo> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo> (Keycloak)</li></ul>                         |
+| Introspection          | <https://aai.egi.eu/oidc/introspect>                       | <ul><li><https://aai-demo.egi.eu/oidc/introspect> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect>(Keycloak)</li></ul>               | <ul><li><https://aai-dev.egi.eu/oidc/introspect> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect>(Keycloak)</li></ul>                |
+| Logout                 | <https://aai.egi.eu/oidc/saml/logout>                      | <ul><li><https://aai-demo.egi.eu/oidc/saml/logout> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout>(Keycloak)</li></ul>                        | <ul><li><https://aai-dev.egi.eu/oidc/saml/logout> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout>(Keycloak)</li></ul>                         |
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
@@ -886,8 +886,9 @@ $sessionLifetime = 60*60;  // must be equal to access token validation time in s
 ### Client Migration to Keycloak
 
 The migration guide below applies to OIDC clients registered in the
-**Development** environment of Check-in. **Beginning June 10, 2022, clients
-using the legacy Check-in OIDC endpoints will no longer be supported**
+**Development** and the **Demo** environment of Check-in. **Beginning June 24,
+2022, clients using the legacy Check-in OIDC endpoints will no longer be
+supported**
 
 #### How to Migrate your Service to Keycloak
 
@@ -937,10 +938,10 @@ by creating new Refresh Tokens issued by Keycloak.
 - If you have obtained Refresh Tokens using the EGI Check-in Token Portal,
   please check the following table:
 
-  | Issuer                   | Development                           |
-  | ------------------------ | ------------------------------------- |
-  | Keycloak                 | <https://aai-dev.egi.eu/token>        |
-  | MITREid Connect (Legacy) | <https://aai-dev.egi.eu/token-legacy> |
+  | Issuer                   | Demo environment                       | Development environment               |
+  | ------------------------ | -------------------------------------- | ------------------------------------- |
+  | Keycloak                 | <https://aai-demo.egi.eu/token>        | <https://aai-dev.egi.eu/token>        |
+  | MITREid Connect (Legacy) | <https://aai-demo.egi.eu/token-legacy> | <https://aai-dev.egi.eu/token-legacy> |
 
 - If you have obtained Refresh Tokens using the oidc-agent, please use the
   following command:
