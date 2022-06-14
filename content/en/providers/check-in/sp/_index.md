@@ -950,6 +950,14 @@ The Redirect URI query parameter in the logout request has been changed from
 value of the `post_logout_redirect_uri` must be defined in the **Valid Redirect
 URIs** of the Service configuration in the EGI Federation Registry.
 
+The **Token Introspection** is available to all the clients that are using any
+authentication method (`client_secret_basic`, `client_secret_post`,
+`client_secret_jwt` or `private_key_jwt`) (Confidential Clients) to the Token
+Endpoint. Public Clients (clients that do not use any authentication method)
+will not be able to get a successful response from the Introspection Endpoint.
+Saying that, the "Introspection" option in the EGI Federation Registry will be
+removed.
+
 If you are **not** using PKCE (Proof Key for Code Exchange), please make sure to
 **disable** the "PKCE Code Challenge Method" in the Service configuration in
 [EGI Federation Registry](https://aai.egi.eu/federation), otherwise you will get
