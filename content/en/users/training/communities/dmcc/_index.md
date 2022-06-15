@@ -62,4 +62,4 @@ The steps that an OpenStack cloud provider needs to follow to add resources
 to the Disaster Mitigation and Agriculture community 
 [Virtual Organisation](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
 (i.e. `vo.environmental.egi.eu`) are available in the
-[VO Configuration guide for providers](../../../../providers/cloud-compute/openstack/vo_config/).
+[VO Configuration guide for providers](../../../../providers/cloud-compute/openstack/vo_config.md).
