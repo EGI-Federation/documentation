@@ -8,4 +8,3 @@ description: >
 ---
 
 Here we provide specific documentation for communities that are using EGI services.
-
