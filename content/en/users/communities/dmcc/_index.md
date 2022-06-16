@@ -47,7 +47,7 @@ EGI Infrastructure are also available:
 
 ### How to bring your data to the EGI infrastructure
 
-Different Data Management services are available in the EGI Infrastructure for dealing with data:
+For managing data, different Data Management services are available in the EGI Infrastructure:
 
 * [EGI DataHub](../../data/management/datahub/)
 * [EGI Data Transfer](../../data/management/data-transfer/)
