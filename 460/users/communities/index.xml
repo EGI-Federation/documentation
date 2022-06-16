@@ -46,7 +46,7 @@ or &lt;a href="https://wiki.appdb.egi.eu/main:faq:how_to_register_a_virtual_appl
 &lt;p>For more information, please see the &lt;a href="../../data/management/">Data Management section&lt;/a>.&lt;/p>
 &lt;h2 id="service-providers">Service Providers&lt;/h2>
 &lt;h3 id="how-to-contribute-cloud-resources">How to contribute cloud resources&lt;/h3>
-&lt;p>The steps that an OpenStack cloud provider need to follow to add resources
+&lt;p>The steps that an OpenStack cloud provider needs to follow to add resources
 to the Disaster Mitigation and Agriculture community
 &lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation&lt;/a>
 (i.e. &lt;code>vo.environmental.egi.eu&lt;/code>) are available in the
