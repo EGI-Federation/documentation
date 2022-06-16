@@ -7,7 +7,7 @@ description: >
   How to to use the EGI infrastructure for Disaster Mitigation and Agriculture community
 ---
 
-This is the documentation to suppor the Disaster Mitigation and Agriculture community.
+This is the documentation to support the Disaster Mitigation and Agriculture community.
 
 ## Researchers
 
