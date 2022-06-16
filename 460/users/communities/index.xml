@@ -27,8 +27,8 @@ is to use &lt;a href="https://cernvm.cern.ch/fs/">CVMFS&lt;/a>, the Software
 Distribution Service developed to assist High Energy Physics collaborations
 at CERN. For more details, please refer to the
 &lt;a href="../../compute/content-distribution/">Contend Distribution&lt;/a> documentation.&lt;/p>
-&lt;p>The following alternative solutions to share scientific software in the
-EGI Infrastructure are also possible:&lt;/p>
+&lt;p>The following alternative solutions for sharing scientific software in the
+EGI Infrastructure are also available:&lt;/p>
 &lt;ul>
 &lt;li>Use the &lt;a href="https://appdb.egi.eu/">EGI Applications Database&lt;/a> (AppDB):
 either &lt;a href="../../compute/cloud-compute/images/">packaging your application in a custom Virtual Machine&lt;/a>
