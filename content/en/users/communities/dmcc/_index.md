@@ -37,8 +37,8 @@ Distribution Service developed to assist High Energy Physics collaborations
 at CERN. For more details, please refer to the
 [Contend Distribution](../../compute/content-distribution/) documentation.
 
-The following alternative solutions to share scientific software in the
-EGI Infrastructure are also possible:
+The following alternative solutions for sharing scientific software in the
+EGI Infrastructure are also available:
 
 * Use the [EGI Applications Database](https://appdb.egi.eu/) (AppDB):
   either [packaging your application in a custom Virtual Machine](../../compute/cloud-compute/images/)
