@@ -26,7 +26,7 @@ VO Manager. For further information, please check the
 is to use &lt;a href="https://cernvm.cern.ch/fs/">CVMFS&lt;/a>, the Software
 Distribution Service developed to assist High Energy Physics collaborations
 at CERN. For more details, please refer to the
-&lt;a href="../../compute/content-distribution/">CVMFS&lt;/a> documentation.&lt;/p>
+&lt;a href="../../compute/content-distribution/">Contend Distribution&lt;/a> documentation.&lt;/p>
 &lt;p>The following alternative solutions to share scientific software in the
 EGI Infrastructure are also possible:&lt;/p>
 &lt;ul>
