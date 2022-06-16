@@ -2,7 +2,7 @@
 title: "Community-specific Documentation"
 linkTitle: "Community-specific Documentation"
 type: docs
-weight: 150
+weight: 160
 description: >
   Documentation for EGI Communities
 ---

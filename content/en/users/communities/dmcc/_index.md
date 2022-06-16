@@ -2,7 +2,7 @@
 title: "Disaster Mitigation and Agriculture community"
 linkTitle: "Disaster Mitigation and Agriculture community"
 type: docs
-weight: 150
+weight: 10
 description: >
   How to to use the EGI infrastructure for Disaster Mitigation and Agriculture community
 ---
