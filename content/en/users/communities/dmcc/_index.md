@@ -60,7 +60,7 @@ For more information, please see the [Data Management section](../../data/manage
 
 ### How to contribute cloud resources
 
-The steps that an OpenStack cloud provider needs to follow to add resources
+The steps that an OpenStack cloud provider need to follow to add resources
 to the Disaster Mitigation and Agriculture community
 [Virtual Organisation](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
 (i.e. `vo.environmental.egi.eu`) are available in the
