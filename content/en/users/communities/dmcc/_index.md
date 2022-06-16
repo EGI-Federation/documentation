@@ -13,7 +13,7 @@ This is the documentation to support the Disaster Mitigation and Agriculture com
 
 ### How to get access
 
-Getting access to the EGI infrastructure consist of the following steps:
+Getting access to the EGI infrastructure consists of the following steps:
 
 1. [Sign-up](../../aai/check-in/signup/) for an EGI Check-In account.
 1. Request to join the `vo.environmental.egi.eu`
