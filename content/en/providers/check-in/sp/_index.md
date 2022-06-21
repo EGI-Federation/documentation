@@ -1001,6 +1001,49 @@ by creating new Refresh Tokens issued by Keycloak.
   {{% alert title="Note" color="info" %}} You can find the _ISSUER_ in the
   [Endpoints](#endpoints) table.{{% /alert %}}
 
+#### Common issues
+
+##### Error messages referring to missing `code_challenge`, `code_challenge_method` or `code_verifier` HTTP parameter
+
+If you get error messages containing the PKCE HTTP parameters, probably the PKCE
+mode is enabled in your Service Configuration but the Application is not
+performing the PKCE mode.
+
+To solve this, you need to follow the steps below:
+
+1. Login to [Federation Registry](https://aai.egi.eu/federation)
+1. Open your Service Configuration
+1. Click on the “Protocol Specific” tab and scroll down to “Proof Key for Code
+   Exchange (PKCE) Code Challenge Method” and select “PKCE will not be used for
+   this service”
+1. Click on “Submit” to apply the reconfiguration request
+
+##### Error messages referring to `invalid_code`
+
+If you try to perform the Authorization Code flow and you get an `invalid_code`
+error message, probably the Application sends the authorization request to the
+Authorization Endpoint of the Keycloak based EGI Check-in OP and then sends the
+`code` to the Token Endpoint of the MITREid Connect based EGI Check-in OP or
+vice versa.
+
+To fix this you need to verify that you have updated all the OIDC Endpoints with
+the Keycloak ones. You can find all the OIDC Endpoints of Keycloak in the
+[Endpoint](#endpoints) table.
+
+##### Error messages referring to the `redirect_uri`
+
+If you try to perform the Authorization Code flow and you get an
+`invalid_redirect_uri` error, probably the `redirect_uri` in the Authorization
+Request mismatches with the Allowed Redirect URIs in the Service Configuration.
+
+To solve this, you need to follow the steps below:
+
+1. Login to [Federation Registry](https://aai.egi.eu/federation)
+1. Open your Service Configuration
+1. Click on the “Protocol Specific” tab and in the “Redirect URI(s)” edit the
+   URI.
+1. Click on “Submit” to apply the reconfiguration request
+
 ## Integrating Science Gateways with RCauth for obtaining (proxy) certificates
 
 In order for Science Gateways (VO portals) to obtain RFC proxy certificates
