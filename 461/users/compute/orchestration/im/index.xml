@@ -1,0 +1,309 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Infrastructure Manager</title><link>/users/compute/orchestration/im/</link><description>Recent content in Infrastructure Manager on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/orchestration/im/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Infrastructure Manager Command-Line Interface</title><link>/users/compute/orchestration/im/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/im/cli/</guid><description>
+&lt;p>You can find here documentation covering getting started with IM Command-Line
+Interface (CLI) on EGI Cloud Compute sites. Full documentation at
+&lt;a href="https://imdocs.readthedocs.io/en/latest/client.html">IM CLI documentation&lt;/a>&lt;/p>
+&lt;h2 id="getting-started">Getting started&lt;/h2>
+&lt;h3 id="install-with-pip">Install with pip&lt;/h3>
+&lt;p>You only have to call the install command of the &lt;code>pip&lt;/code> tool with the &lt;code>IM-client&lt;/code>
+package.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ pip install IM-client
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="im-client-docker-image">IM-Client Docker image&lt;/h3>
+&lt;p>The IM Client has an official Docker container image available on Docker Hub
+that can be used instead of installing the CLI. You can use it by typing:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker run --rm -ti -v &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$PWD&lt;/span>&lt;span style="color:#4e9a06">:/tmp/im&amp;#34;&lt;/span> grycap/im-client &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -r https://server.com:8800 -a /tmp/im/auth.dat list
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configuration">Configuration&lt;/h3>
+&lt;p>To avoid typing the parameters in all the client calls, the user can define a
+config file &lt;code>im_client.cfg&lt;/code> in the current directory or a file &lt;code>.im_client.cfg&lt;/code>
+in their home directory. In the config file the user can specify the following
+parameters:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[im_client]&lt;/span>
+&lt;span style="color:#c4a000">restapi_url&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">https://appsgrycap.i3m.upv.es:31443/im&lt;/span>
+&lt;span style="color:#c4a000">auth_file&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">auth.dat&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="authentication-data-file">Authentication data file&lt;/h3>
+&lt;p>An authentication file must be created to access the IM service. It must have
+one line per authentication element. &lt;strong>It must have at least one line with the
+authentication data for the IM service&lt;/strong> and another one for the Cloud
+provider(s) the user want to access. Each line of the file is composed by pairs
+of key and value separated by semicolon, and refers to a single credential. The
+key and value should be separated by &lt;code>=&lt;/code>, that is an equals sign preceded and
+followed by one whitespace at least. The following lines shows the credentials
+needed to access an EGI Cloud Compute site:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> InfrastructureManager&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> egi_aai_token_value
+&lt;span style="color:#000">id&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> egi&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> EGI&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> CESGA&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> vo.access.egi.eu&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> egi_aai_token_value
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The value of &lt;code>egi_aai_token_value&lt;/code> must be replaced with a valid EGI Check-in
+access token. Users of EGI Check-in can get all the information needed to obtain
+access tokens, by visiting
+&lt;a href="https://aai.egi.eu/token/">EGI Check-in Token Portal&lt;/a>.&lt;/p>
+&lt;p>&lt;a href="https://indigo-dc.gitbook.io/oidc-agent/">oidc-agent&lt;/a> can be used to get
+a valid access token:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">id&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> im&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> InfrastructureManager&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> command&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>oidc-token OIDC_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">id&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> egi&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> EGI&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> SCAI&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> vo.access.egi.eu&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> command&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>oidc-token OIDC_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="create-and-manage-an-infrastructure">Create and Manage an infrastructure&lt;/h3>
+&lt;p>To create a virtual infrastructure you have to describe a file documenting
+the required resources. IM supports its native language
+&lt;a href="https://imdocs.readthedocs.io/en/latest/radl.html">RADL&lt;/a> and the
+&lt;a href="http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0">OASIS TOSCA Simple Profile in YAML Version 1.0&lt;/a>.
+You can find some examples in the
+&lt;a href="https://github.com/grycap/im/tree/master/examples">IM GitHub repository&lt;/a>.&lt;/p>
+&lt;p>For example we can use RADL to define a simple VM with 1 CPU, 1 GB of RAM
+using the EGI Ubuntu 20.04 image.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">network public &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000">outbound&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;yes&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+system node &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>
+cpu.count&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> and
+memory.size&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>4g and
+net_interface.0.connection &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;public&amp;#39;&lt;/span> and
+disk.0.os.name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;linux&amp;#39;&lt;/span> and
+disk.0.image.url &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;appdb://SCAI/egi.ubuntu.20.04?vo.access.egi.eu&amp;#39;&lt;/span> and
+&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+configure wn &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>
+@begin
+---
+- tasks:
+- debug: &lt;span style="color:#000">msg&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Configured!&amp;#34;&lt;/span>
+@end
+&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+deploy node &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>IM also supports TOSCA. For example this is an equivalent TOSCA document to
+deploy a single VM:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">tosca_definitions_version&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tosca_simple_yaml_1_0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">imports&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>- &lt;span style="color:#204a87;font-weight:bold">indigo_custom_types&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://raw.githubusercontent.com/indigo-dc/tosca-types/master/custom_types.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">topology_template&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">node_templates&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">simple_node&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">type&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tosca.nodes.indigo.Compute&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">capabilities&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">properties&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">network_name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">PUBLIC&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">host&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">properties&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">num_cpus&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">mem_size&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">4&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GB&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">os&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">properties&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">image&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">appdb://SCAI/egi.ubuntu.20.04?vo.access.egi.eu&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">outputs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">node_ip&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">value&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>{&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">get_attribute&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">simple_node, public_address, 0 ] }&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">node_creds&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">value&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>{&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">get_attribute&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">simple_node, endpoint, credential, 0 ] }&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then we can call the &lt;code>create&lt;/code> operation of the IM client tool using the a radl
+or a TOSCA yaml file:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ im_client.py create infra.radl
+Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
+Infrastructure successfully created with ID: 457273ea-85e4-11ec-aa81-faaae69bc911
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then we can call get the currrent state of infrastructure using the &lt;code>getstate&lt;/code>
+operation of the IM client tool:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ im_client.py getstate 457273ea-85e4-11ec-aa81-faaae69bc911
+Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
+The infrastructure is in state: pending
+VM ID: &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> is in state: pending.
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The valid VM and infrastructure states are the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>pending&lt;/code>, launched, but still in initialization stage;&lt;/li>
+&lt;li>&lt;code>running&lt;/code>, created successfully and running, but still in the
+configuration stage;&lt;/li>
+&lt;li>&lt;code>configured&lt;/code>, running and contextualized;&lt;/li>
+&lt;li>&lt;code>unconfigured&lt;/code>, running but not correctly contextualized;&lt;/li>
+&lt;li>&lt;code>stopped&lt;/code>, stopped or suspended;&lt;/li>
+&lt;li>&lt;code>off&lt;/code>, shutdown or removed from the infrastructure;&lt;/li>
+&lt;li>&lt;code>failed&lt;/code>, an error happened during the launching; or&lt;/li>
+&lt;li>&lt;code>unknown&lt;/code>, unable to obtain the status.&lt;/li>
+&lt;li>&lt;code>deleting&lt;/code>, in the deletion process.&lt;/li>
+&lt;/ul>
+&lt;p>Once the configuration step has started we can get the output of the ansible
+process using the &lt;code>getcontmsg&lt;/code> operation:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ im_client.py getcontmsg 457273ea-85e4-11ec-aa81-faaae69bc911
+Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
+Connected with: http://localhost:8800
+Msg Contextualizator:
+2022-02-11 10:40:12.768523: Copying YAML, hosts and inventory files.
+VM 0:
+Contextualization agent output processed successfullyGenerate and copy the ssh key
+Sleeping &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> secs.
+Launch task: wait_all_ssh
+...
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once the VM is booted we can access it via SSH using the &lt;code>ssh&lt;/code> operation:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ im_client.py ssh 457273ea-85e4-11ec-aa81-faaae69bc911
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When using a TOSCA yaml document to create the infrastructure,
+we can get the TOSCA output values with the &lt;code>getoutputs&lt;/code> operation:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ im_client.py getoutputs 457273ea-85e4-11ec-aa81-faaae69bc911
+Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
+The infrastructure outputs:
+&lt;span style="color:#000">node_ip&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> 8.8.8.8
+&lt;span style="color:#000">node_creds&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;token&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;...&amp;#39;&lt;/span>, &lt;span style="color:#4e9a06">&amp;#39;user&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;cloudadm&amp;#39;&lt;/span>, &lt;span style="color:#4e9a06">&amp;#39;token_type&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;private_key&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once we no more need the Infrastructure, we can destroy it using the &lt;code>destroy&lt;/code>
+operation:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ im_client.py destroy 457273ea-85e4-11ec-aa81-faaae69bc911
+Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
+Infrastructure successfully destroyed
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: Infrastructure Manager Dashboard</title><link>/users/compute/orchestration/im/dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/im/dashboard/</guid><description>
+&lt;p>The IM Dashboard is a graphical interface for the IM Server specially developed
+for EOSC users to access EGI Cloud Compute resources.&lt;/p>
+&lt;p>Functionalities:&lt;/p>
+&lt;ul>
+&lt;li>OIDC authentication&lt;/li>
+&lt;li>Display user&amp;rsquo;s infrastructures&lt;/li>
+&lt;li>Display infrastructure details, template and log&lt;/li>
+&lt;li>Delete infrastructure&lt;/li>
+&lt;li>Create new infrastructure&lt;/li>
+&lt;li>Add nodes to an infrastructure&lt;/li>
+&lt;li>Resize VMs&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+More details about installing and
+configuring the dashboard are available in the
+&lt;a href="https://imdocs.readthedocs.io/en/latest/dashboard.html">IM Dashboard documentation&lt;/a>.
+&lt;/div>
+&lt;h2 id="usage">Usage&lt;/h2>
+&lt;p>The dashboard of the IM enables non advanced users to manage their
+infrastructures by launching a set of predefined TOSCA templates on top of EGI
+Cloud Compute resources. The dashboard does not provide all the features
+provided by the IM service. In case you need more advanced features use the
+&lt;a href="https://imdocs.readthedocs.io/en/latest/web.html">IM Web interface&lt;/a> or the
+&lt;a href="../cli">IM-CLI&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="dash_login.png" alt="Landing page">&lt;/p>
+&lt;h3 id="login">Login&lt;/h3>
+&lt;p>Users must use &lt;a href="../../../../aai/check-in">EGI Check-in&lt;/a> to log into the
+dashboard. Once authenticated, they will be redirected to the portfolio of
+available TOSCA templates.&lt;/p>
+&lt;p>&lt;img src="dash_configure.png" alt="Portfolio page">&lt;/p>
+&lt;h3 id="main-menu-bar">Main menu bar&lt;/h3>
+&lt;p>The main menu bar is located at the top of the pages:&lt;/p>
+&lt;ul>
+&lt;li>The first button &lt;code>IM Dashboard&lt;/code> enables the user to go to the portfolio of
+available TOSCA templates.&lt;/li>
+&lt;li>Second item &lt;code>Infrastructures&lt;/code> redirects to the list of current user deployed
+infrastructures.&lt;/li>
+&lt;li>In the &lt;code>Advanced&lt;/code> item the &lt;code>Settings&lt;/code> sub-item displays some configuration
+settings as the URL of the IM service or the OIDC issuer.&lt;/li>
+&lt;li>&lt;code>External Links&lt;/code> show a set of configurable information links (documentation,
+video tutorials, etc.)&lt;/li>
+&lt;li>Finally, on the right top corner, appears the &lt;code>User&lt;/code> menu item. This item
+shows the full name of the logged user, and an avatar obtained from
+&lt;a href="https://www.gravatar.com/">Gravatar&lt;/a>. In this menu the user can access their
+&lt;code>Cloud Credentials&lt;/code> with the cloud providers or log out from the application.&lt;/li>
+&lt;/ul>
+&lt;h3 id="cloud-credentials">Cloud Credentials&lt;/h3>
+&lt;p>To be able to access any Cloud site the user must specify the credentials to
+access them. This page allows the user to specify the credentials for accessing
+any cloud provider. In the list the user can edit, delete and enable or disable
+the selected cloud credentials.&lt;/p>
+&lt;p>&lt;img src="dash_cred_list.png" alt="List of Cloud Credentials">&lt;/p>
+&lt;p>Editing or adding the credentials will show a modal form where the user has the
+ability to specify all the parameters needed to access the supported cloud
+providers. In particular, for &lt;a href="../../../cloud-compute">Cloud Compute&lt;/a> sites the
+user only has to select one of the VOs he is member of and one of sites that
+supports that VO. These drop-down fields are generated using the information
+available from the sites and the list of VOs the user is member of.&lt;/p>
+&lt;p>&lt;img src="dash_edit_cred.png" alt="Edit/Add a Credential">&lt;/p>
+&lt;h3 id="tosca-templates">TOSCA Templates&lt;/h3>
+&lt;p>The list of available TOSCA templates enables the user to select the required
+topology to deploy. Each TOSCA template can be labelled by the TOSCA developer
+with any tag that will show a ribbon displayed on the right bottom corner. The
+special &lt;code>elastic&lt;/code> tag is used to mark templates that are configured to
+automatically manage the elasticity of the deployed cluster.&lt;/p>
+&lt;p>The user must click on the &lt;code>Configure&lt;/code> button to set the input values of the
+TOSCA template and select the VO, Site and Image to use for deploying the
+infrastructure.&lt;/p>
+&lt;p>Initially the user can set a name to describe the infrastructure to be deployed.
+It will simplify identifying infrastructures. In the firsts tabs, the user can
+introduce the set of input values of the topology. By default there is only one
+tab called &lt;code>Input Values&lt;/code>, but the TOSCA developer can add or rename them to
+simplify the selection of input values.&lt;/p>
+&lt;p>&lt;img src="dash_inputs.png" alt="TOSCA input values.">&lt;/p>
+&lt;p>The final tab will be the &lt;code>Cloud Provider Selection&lt;/code>. In this tab the user first
+has to select one of the Cloud providers that has been previously added (and not
+disabled) in the &lt;code>Cloud Credentials&lt;/code> page, then has to select the base image
+used to deploy the VMs. In case of EGI Cloud Compute sites, the user has two
+options: he can select an image from the list of images provided by the
+&lt;a href="https://appdb.egi.eu/">EGI AppDB information system&lt;/a> or from the list provided
+directly by the Cloud site.&lt;/p>
+&lt;p>Other providers will only show a drop-down list with the available images. Only
+in the case of AWS Cloud provider the user has to specify manually the AMI ID of
+the image.&lt;/p>
+&lt;p>&lt;img src="dash_site.png" alt="Select Cloud Provider and Image">&lt;/p>
+&lt;h3 id="infrastructures">Infrastructures&lt;/h3>
+&lt;p>This page lists the infrastructures deployed by the user. The first column shows
+the name set by the user on infrastructure creation, then shows the ID assigned
+by the IM service, the third column shows the current status of the
+infrastructure, the fourth show the list of VMs with their IDs and finally a
+button with a set of actions appears.&lt;/p>
+&lt;p>&lt;img src="dash_inf_list.png" alt="List of infrastructures.">&lt;/p>
+&lt;h4 id="list-of-actions">List of Actions&lt;/h4>
+&lt;p>The following figure shows the list of actions available to manage the existing
+infrastructures:&lt;/p>
+&lt;p>&lt;img src="dash_inf_actions.png" alt="List of infrastructure Actions">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Add nodes: The Add nodes action enables to add new VMs to the users'
+deployment. It will show the list of the different types of nodes currently
+deployed in the infrastructure and the user must set the number of nodes of
+each type he wants to deploy.&lt;/p>
+&lt;p>&lt;img src="dash_add_nodes.png" alt="Add nodes page">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Show template: This action shows the original TOSCA template submitted to
+create the infrastructure.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Log: Shows the error/contextualization log of the infrastructure.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Stop: Stops/Suspends all the VMs of the infrastructure.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start: Starts/Resumes a previously stopped infrastructure.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Outputs: Shows the outputs of the TOSCA template. Private key of credentials
+can be downloaded as a file or copied to the clipboard.&lt;/p>
+&lt;p>&lt;img src="dash_outputs.png" alt="TOSCA outputs">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Delete: Delete this infrastructure and all the associated resources. It also
+has the option to force the deletion. In this case the infrastructure will be
+removed from the IM service even if some cloud resources cannot be deleted.
+&lt;strong>Only use this option if you know what you are doing&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Delete &amp;amp; Recreate: Delete this infrastructure as the previous option, but once
+it is deleted it will redirect to the infrastructure creation form, with all
+the input fields filled with the same set of values used to create the deleted
+infrastructure.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Reconfigure: Starts the reconfiguration of the infrastructure.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Change User: Add or change the ownership of the infrastructure at IM level.
+Providing a valid &lt;code>Access Token&lt;/code> of another user, the infrastructure can be
+shared or transferred to them. If &lt;code>Overwrite&lt;/code> is checked, the new user will be
+the unique owner of the infrastructure (transferring), otherwise it will be
+added to the list of current users (sharing). &lt;strong>The new user must be member of
+the VO used to create the resources&lt;/strong>, otherwise he will not be able to manage
+them.&lt;/p>
+&lt;p>&lt;img src="dash_change_user.png" alt="Change/Add User modal form">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="vm-info-page">VM Info page&lt;/h3>
+&lt;p>The VM Info page shows all the information about the selected VM and enables to
+manage the lifecycle of it. On the top right corner the &lt;code>Manage VM&lt;/code> drop-down
+menu allows to Stop/Start, Reboot, Resize, Reconfigure and Terminate the VM.
+Furthermore the user can check the error or contextualisation log of this
+particular VM.&lt;/p>
+&lt;p>The VM information is split in two different tables, the first one with the main
+information: State, IPs, HW features and the SSH credentials needed to access
+it. The second table shows additional fields.&lt;/p>
+&lt;p>&lt;img src="dash_vm_info.png" alt="VM Info page">&lt;/p>
+&lt;p>When resizing the VM the user must provide the new size of the VM in terms of
+number of CPUs and amount of memory as shown in the figure below:&lt;/p>
+&lt;p>&lt;img src="dash_vm_resize.png" alt="VM Resize modal form.">&lt;/p></description></item></channel></rss>
