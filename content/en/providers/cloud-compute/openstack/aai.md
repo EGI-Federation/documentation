@@ -135,14 +135,14 @@ OIDCResponseType "code"
 OIDCClaimPrefix "OIDC-"
 OIDCClaimDelimiter ;
 OIDCScope "openid profile email eduperson_entitlement"
-OIDCProviderMetadataURL https://aai-demo.egi.eu/oidc/.well-known/openid-configuration
+OIDCProviderMetadataURL https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration
 OIDCClientID <client id>
 OIDCClientSecret <client secret>
 OIDCCryptoPassphrase <some crypto pass phrase>
 OIDCRedirectURI https://<your keystone endpoint>/v3/auth/OS-FEDERATION/websso/openid/redirect
 
 # OAuth for CLI access
-OIDCOAuthIntrospectionEndpoint https://aai-demo.egi.eu/oidc/introspect
+OIDCOAuthIntrospectionEndpoint https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
 OIDCOAuthClientID <client id>
 OIDCOAuthClientSecret <client secret>
 
@@ -235,19 +235,19 @@ the Keystone Federation support.
 ## Keystone Federation Support
 
 First, create a new `egi.eu` identity provider with remote id
-`https://aai-demo.egi.eu/oidc/`:
+`https://aai-demo.egi.eu/auth/realms/egi`:
 
 ```shell
-$ openstack identity provider create --remote-id https://aai-demo.egi.eu/oidc/ egi.eu
-+-------------+----------------------------------+
-| Field       | Value                            |
-+-------------+----------------------------------+
-| description | None                             |
-| domain_id   | 1cac7817dafb4740a249cc9ca6b14ea5 |
-| enabled     | True                             |
-| id          | egi.eu                           |
-| remote_ids  | https://aai-demo.egi.eu/oidc/     |
-+-------------+----------------------------------+
+$ openstack identity provider create --remote-id https://aai-demo.egi.eu/auth/realms/egi egi.eu
++-------------+-----------------------------------------+
+| Field       | Value                                   |
++-------------+-----------------------------------------+
+| description | None                                    |
+| domain_id   | 1cac7817dafb4740a249cc9ca6b14ea5        |
+| enabled     | True                                    |
+| id          | egi.eu                                  |
+| remote_ids  | https://aai-demo.egi.eu/auth/realms/egi |
++-------------+-----------------------------------------+
 ```
 
 Create a group for users coming from EGI Check-in, usual configuration is to
@@ -297,7 +297,7 @@ $ cat mapping.egi.json
             {
                 "type": "HTTP_OIDC_ISS",
                 "any_one_of": [
-                    "https://aai-demo.egi.eu/oidc/"
+                    "https://aai-demo.egi.eu/auth/realms/egi"
                 ]
             },
             {
@@ -320,14 +320,14 @@ Create the mapping in Keystone:
 <!-- markdownlint-disable line-length -->
 ```shell
 $ openstack mapping create --rules mapping.egi.json egi-mapping
-+-------+----------------------------------------------------------------------------------------------------------------------------------+
-| Field | Value                                                                                                                            |
-+-------+----------------------------------------------------------------------------------------------------------------------------------+
-| id    | egi-mapping                                                                                                                      |
-| rules | [{u'remote': [{u'type': u'HTTP_OIDC_SUB'}, {u'type': u'HTTP_OIDC_ISS', u'any_one_of': [u'https://aai-demo.egi.eu/oidc/']},        |
-|       | {u'regex': True, u'type': u'OIDC-eduperson_entitlement', u'any_one_of': [u'^urn:mace:egi.eu:.*:ops:vm_operator@egi.eu$']}],      |
-|       | u'local': [{u'group': {u'id': u'89cf5b6708354094942d9d16f0f29f8f'}, u'user': {u'name': u'{0}'}}]}]                               |
-+-------+----------------------------------------------------------------------------------------------------------------------------------+
++-------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Field | Value                                                                                                                                |
++-------+--------------------------------------------------------------------------------------------------------------------------------------+
+| id    | egi-mapping                                                                                                                          |
+| rules | [{u'remote': [{u'type': u'HTTP_OIDC_SUB'}, {u'type': u'HTTP_OIDC_ISS', u'any_one_of': [u'https://aai-demo.egi.eu/auth/realms/egi']}, |
+|       | {u'regex': True, u'type': u'OIDC-eduperson_entitlement', u'any_one_of': [u'^urn:mace:egi.eu:.*:ops:vm_operator@egi.eu$']}],          |
+|       | u'local': [{u'group': {u'id': u'89cf5b6708354094942d9d16f0f29f8f'}, u'user': {u'name': u'{0}'}}]}]                                   |
++-------+--------------------------------------------------------------------------------------------------------------------------------------+
 ```
 <!-- markdownlint-enable line-length -->
 
@@ -418,7 +418,7 @@ members of `fedcloud.egi.eu`:
       },
       {
         "type": "HTTP_OIDC_ISS",
-        "any_one_of": ["https://aai-demo.egi.eu/oidc/"]
+        "any_one_of": ["https://aai-demo.egi.eu/auth/realms/egi"]
       },
       {
         "type": "OIDC-eduperson_entitlement",
@@ -446,7 +446,7 @@ members of `fedcloud.egi.eu`:
       },
       {
         "type": "HTTP_OIDC_ISS",
-        "any_one_of": ["https://aai-demo.egi.eu/oidc/"]
+        "any_one_of": ["https://aai-demo.egi.eu/auth/realms/egi"]
       },
       {
         "type": "OIDC-eduperson_entitlement",
@@ -498,7 +498,7 @@ support, you need to create 3 files:
    Check-in:
 
    ```shell
-   curl https://aai-demo.egi.eu/oidc/.well-known/openid-configuration > \
+   curl https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration > \
         /var/lib/apache2/oidc/metadata/aai-demo.egi.eu%2Foidc.provider
    ```
 
@@ -533,7 +533,7 @@ provider with `openid` as protocol:
         # This is your Redirect URI with a new iss=<your idp iss> option added
         OIDCDiscoverURL https://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-demo.egi.eu%2Foidc%2F
         # Ensure that the user is authenticated with the expected iss
-        Require claim iss:https://aai-demo.egi.eu/oidc/
+        Require claim iss:https://aai-demo.egi.eu/auth/realms/egi
         Require valid-user
 </Location>
 ```
@@ -567,12 +567,12 @@ docker for facilitating the deployment:
    ```yaml
    oidc:
      clients:
-     - issuer-url: https://aai-demo.egi.eu/oidc/
-       client-id: "<your check-in client id>"
-       client-secret: "<your check-in client secret>"
-     - issuer-url: <another idp>
-       client-id: "<your client id for second idp>"
-       client-secret: "<your client secret for second idp>"
+       - issuer-url: https://aai-demo.egi.eu/auth/realms/egi
+         client-id: "<your check-in client id>"
+         client-secret: "<your check-in client secret>"
+       - issuer-url: <another idp>
+         client-id: "<your client id for second idp>"
+         client-secret: "<your client secret for second idp>"
    ```
 
 1. Create a environment file with the ESACO credentials you want to use
