@@ -39,10 +39,36 @@ more information can be found in the protocol-specific sections that follow.
 
 <!-- markdownlint-disable line-length -->
 
-| Protocol       | Development environment                                            | Demo environment                                                    | Production environment                                         |
-| -------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------- |
-| SAML           | <https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
-| OpenID Connect | See [client registration](#client-registration)                    | See [client registration](#client-registration)                     | See [client registration](#client-registration)                |
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Protocol       | Production environment                                         |
+| -------------- | -------------------------------------------------------------- |
+| SAML           | <https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+| OpenID Connect | See [client registration](#client-registration)                |
+
+{{< /tabx >}}
+
+{{< tabx header="Demo" >}}
+
+| Protocol       | Demo environment                                                    |
+| -------------- | ------------------------------------------------------------------- |
+| SAML           | <https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+| OpenID Connect | See [client registration](#client-registration)                     |
+
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Protocol       | Development environment                                            |
+| -------------- | ------------------------------------------------------------------ |
+| SAML           | <https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+| OpenID Connect | See [client registration](#client-registration)                    |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
 
 <!-- markdownlint-enable line-length -->
 
@@ -193,9 +219,32 @@ depends on the integration environment being used:
 
 <!-- markdownlint-disable line-length -->
 
-| Development environment                                            | Demo environment                                                    | Production environment                                         |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------- |
-| <https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Production environment                                         |
+| -------------------------------------------------------------- |
+| <https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+
+{{< /tabx >}}
+
+{{< tabx header="Demo" >}}
+
+| Demo environment                                                    |
+| ------------------------------------------------------------------- |
+| <https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Development environment                                            |
+| ------------------------------------------------------------------ |
+| <https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
 
 <!-- markdownlint-enable line-length -->
 

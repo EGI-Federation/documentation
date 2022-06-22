@@ -145,10 +145,36 @@ more information can be found in the protocol-specific sections that follow.
 
 <!-- markdownlint-disable line-length -->
 
-| Protocol       | Production environment                                     | Demo environment                                                | Development environment                                        |
-| -------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------- |
-| SAML           | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          |
-| OpenID Connect | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> |
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Protocol       | Production environment                                     |
+| -------------- | ---------------------------------------------------------- |
+| SAML           | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          |
+| OpenID Connect | <https://aai.egi.eu/oidc/.well-known/openid-configuration> |
+
+{{< /tabx >}}
+
+{{< tabx header="Demo" >}}
+
+| Protocol       | Demo environment                                                |
+| -------------- | --------------------------------------------------------------- |
+| SAML           | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          |
+| OpenID Connect | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> |
+
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Protocol       | Development environment                                        |
+| -------------- | -------------------------------------------------------------- |
+| SAML           | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          |
+| OpenID Connect | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
 
 <!-- markdownlint-enable line-length -->
 
@@ -1072,14 +1098,35 @@ running two Master Portal instances, one development, one production instance.
 
 <!-- markdownlint-disable line-length -->
 
-| Endpoint               | Development environment                                                                | Production environment                                              |
-| ---------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| Provider configuration | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> | <https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
-| Client registration    | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register>                         | <https://aai.egi.eu/mp-oa2-server/register>                         |
-| Authorisation          | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize>                        | <https://aai.egi.eu/mp-oa2-server/authorize>                        |
-| Token                  | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token>                            | <https://aai.egi.eu/mp-oa2-server/token>                            |
-| JSON Web Key(jwt)      | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs>                            | <https://aai.egi.eu/mp-oa2-server/certs>                            |
-| User Info              | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         | <https://aai.egi.eu/mp-oa2-server/userinfo>                         |
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Endpoint               | Production environment                                              |
+| ---------------------- | ------------------------------------------------------------------- |
+| Provider configuration | <https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
+| Client registration    | <https://aai.egi.eu/mp-oa2-server/register>                         |
+| Authorisation          | <https://aai.egi.eu/mp-oa2-server/authorize>                        |
+| Token                  | <https://aai.egi.eu/mp-oa2-server/token>                            |
+| JSON Web Key(jwt)      | <https://aai.egi.eu/mp-oa2-server/certs>                            |
+| User Info              | <https://aai.egi.eu/mp-oa2-server/userinfo>                         |
+
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Endpoint               | Development environment                                                                |
+| ---------------------- | -------------------------------------------------------------------------------------- |
+| Provider configuration | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
+| Client registration    | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register>                         |
+| Authorisation          | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize>                        |
+| Token                  | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token>                            |
+| JSON Web Key(jwt)      | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs>                            |
+| User Info              | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
 
 <!-- markdownlint-enable line-length -->
 
