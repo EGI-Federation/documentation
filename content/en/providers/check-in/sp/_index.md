@@ -1088,6 +1088,18 @@ To solve this, you need to follow the steps below:
    URI.
 1. Click on “Submit” to apply the reconfiguration request
 
+##### UserInfo `invalid_token` or `401 Unauthorized` error response
+
+If you are trying to make a request to the UserInfo Endpoint and the response
+contains the `invalid_token` error message, probably you are using an invalid
+Token or the UserInfo endpoint is wrong.
+
+To solve this, please make sure the that:
+
+1. You have obtained an Keycloak issued Access Token and you make a request to
+   the Keycloak based UserInfo Endpoint
+1. You have added the Access Token to the Authorization header of the request
+
 ## Integrating Science Gateways with RCauth for obtaining (proxy) certificates
 
 In order for Science Gateways (VO portals) to obtain RFC proxy certificates
