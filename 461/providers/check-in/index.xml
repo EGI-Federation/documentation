@@ -28,30 +28,94 @@ and that integration has been thoroughly tested during Step 1.&lt;/li>
 &lt;p>The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-0-0-tab" data-toggle="tab" href="#tabs-0-0" role="tab"
+aria-controls="tabs-0-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-0-1-tab" data-toggle="tab" href="#tabs-0-1" role="tab"
+aria-controls="tabs-0-1" aria-selected="false">
+Demo
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-0-2-tab" data-toggle="tab" href="#tabs-0-2" role="tab"
+aria-controls="tabs-0-2" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-0-content">
+&lt;div class="tab-pane show active"
+id="tabs-0-0" role="tabpanel" aria-labelled-by="tabs-0-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Protocol&lt;/th>
-&lt;th>Development environment&lt;/th>
-&lt;th>Demo environment&lt;/th>
 &lt;th>Production environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>SAML&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>OpenID Connect&lt;/td>
 &lt;td>See &lt;a href="#client-registration">client registration&lt;/a>&lt;/td>
-&lt;td>See &lt;a href="#client-registration">client registration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-0-1" role="tabpanel" aria-labelled-by="tabs-0-1-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Protocol&lt;/th>
+&lt;th>Demo environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>SAML&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenID Connect&lt;/td>
 &lt;td>See &lt;a href="#client-registration">client registration&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-0-2" role="tabpanel" aria-labelled-by="tabs-0-2-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Protocol&lt;/th>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>SAML&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenID Connect&lt;/td>
+&lt;td>See &lt;a href="#client-registration">client registration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
 &lt;!-- markdownlint-enable line-length -->
 &lt;h2 id="general-requirements-for-integrating-identity-providers">General requirements for integrating identity providers&lt;/h2>
 &lt;p>An institution or a community may connect their IdP with Check-in to allow their
@@ -208,22 +272,76 @@ pick the appropriate entityID from that.&lt;/p>
 &lt;p>You can get the metadata of the EGI Check-in SP Proxy on a dedicated URL that
 depends on the integration environment being used:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-1-0-tab" data-toggle="tab" href="#tabs-1-0" role="tab"
+aria-controls="tabs-1-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-1-tab" data-toggle="tab" href="#tabs-1-1" role="tab"
+aria-controls="tabs-1-1" aria-selected="false">
+Demo
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-2-tab" data-toggle="tab" href="#tabs-1-2" role="tab"
+aria-controls="tabs-1-2" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-1-content">
+&lt;div class="tab-pane show active"
+id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Development environment&lt;/th>
-&lt;th>Demo environment&lt;/th>
 &lt;th>Production environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Demo environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-2" role="tabpanel" aria-labelled-by="tabs-1-2-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>For the production environment, it is recommended that you get the metadata for
 the EGI Check-in SP (entityID:
@@ -500,30 +618,94 @@ encoded in base64&lt;/li>
 &lt;p>The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-0-0-tab" data-toggle="tab" href="#tabs-0-0" role="tab"
+aria-controls="tabs-0-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-0-1-tab" data-toggle="tab" href="#tabs-0-1" role="tab"
+aria-controls="tabs-0-1" aria-selected="false">
+Demo
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-0-2-tab" data-toggle="tab" href="#tabs-0-2" role="tab"
+aria-controls="tabs-0-2" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-0-content">
+&lt;div class="tab-pane show active"
+id="tabs-0-0" role="tabpanel" aria-labelled-by="tabs-0-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Protocol&lt;/th>
 &lt;th>Production environment&lt;/th>
-&lt;th>Demo environment&lt;/th>
-&lt;th>Development environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>SAML&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/proxy/saml2/idp/metadata.php">https://aai.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php">https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php">https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>OpenID Connect&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/.well-known/openid-configuration">https://aai.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-0-1" role="tabpanel" aria-labelled-by="tabs-0-1-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Protocol&lt;/th>
+&lt;th>Demo environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>SAML&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php">https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenID Connect&lt;/td>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/.well-known/openid-configuration">https://aai-demo.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-0-2" role="tabpanel" aria-labelled-by="tabs-0-2-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Protocol&lt;/th>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>SAML&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php">https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenID Connect&lt;/td>
 &lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;/div>
+&lt;/div>
 &lt;!-- markdownlint-enable line-length -->
 &lt;h2 id="saml-service-provider">SAML Service Provider&lt;/h2>
 &lt;p>To enable federated access to a web-based application, you can connect to the
@@ -773,32 +955,32 @@ OAuth flow.&lt;/li>
 &lt;h3 id="endpoints">Endpoints&lt;/h3>
 &lt;p>The most important OIDC/OAuth2 endpoints are listed below:&lt;/p>
 &lt;!-- markdownlint-disable line-length no-inline-html -->
-&lt;ul class="nav nav-tabs" id="tabs-2" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-2-0-tab" data-toggle="tab" href="#tabs-2-0" role="tab"
-aria-controls="tabs-2-0" aria-selected="true">
+id="tabs-3-0-tab" data-toggle="tab" href="#tabs-3-0" role="tab"
+aria-controls="tabs-3-0" aria-selected="true">
 Production
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-2-1-tab" data-toggle="tab" href="#tabs-2-1" role="tab"
-aria-controls="tabs-2-1" aria-selected="false">
+id="tabs-3-1-tab" data-toggle="tab" href="#tabs-3-1" role="tab"
+aria-controls="tabs-3-1" aria-selected="false">
 Demo
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-2-2-tab" data-toggle="tab" href="#tabs-2-2" role="tab"
-aria-controls="tabs-2-2" aria-selected="false">
+id="tabs-3-2-tab" data-toggle="tab" href="#tabs-3-2" role="tab"
+aria-controls="tabs-3-2" aria-selected="false">
 Development
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-2-content">
+&lt;div class="tabx-content" id="tabs-3-content">
 &lt;div class="tab-pane show active"
-id="tabs-2-0" role="tabpanel" aria-labelled-by="tabs-2-0-tab">
+id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -847,7 +1029,7 @@ id="tabs-2-0" role="tabpanel" aria-labelled-by="tabs-2-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-2-1" role="tabpanel" aria-labelled-by="tabs-2-1-tab">
+id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -896,7 +1078,7 @@ id="tabs-2-1" role="tabpanel" aria-labelled-by="tabs-2-1-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-2-2" role="tabpanel" aria-labelled-by="tabs-2-2-tab">
+id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1613,6 +1795,16 @@ Request mismatches with the Allowed Redirect URIs in the Service Configuration.&
 URI.&lt;/li>
 &lt;li>Click on “Submit” to apply the reconfiguration request&lt;/li>
 &lt;/ol>
+&lt;h5 id="userinfo-invalid_token-or-401-unauthorized-error-response">UserInfo &lt;code>invalid_token&lt;/code> or &lt;code>401 Unauthorized&lt;/code> error response&lt;/h5>
+&lt;p>If you are trying to make a request to the UserInfo Endpoint and the response
+contains the &lt;code>invalid_token&lt;/code> error message, probably you are using an invalid
+Token or the UserInfo endpoint is wrong.&lt;/p>
+&lt;p>To solve this, please make sure the that:&lt;/p>
+&lt;ol>
+&lt;li>You have obtained an Keycloak issued Access Token and you make a request to
+the Keycloak based UserInfo Endpoint&lt;/li>
+&lt;li>You have added the Access Token to the Authorization header of the request&lt;/li>
+&lt;/ol>
 &lt;h2 id="integrating-science-gateways-with-rcauth-for-obtaining-proxy-certificates">Integrating Science Gateways with RCauth for obtaining (proxy) certificates&lt;/h2>
 &lt;p>In order for Science Gateways (VO portals) to obtain RFC proxy certificates
 derived from &lt;strong>personal&lt;/strong> end-entity certificates, an EGI Science Gateway can
@@ -1620,47 +1812,98 @@ make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
 integration goes via an intermediary service, called a Master Portal. EGI is
 running two Master Portal instances, one development, one production instance.&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
+&lt;ul class="nav nav-tabs" id="tabs-15" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-15-0-tab" data-toggle="tab" href="#tabs-15-0" role="tab"
+aria-controls="tabs-15-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-15-1-tab" data-toggle="tab" href="#tabs-15-1" role="tab"
+aria-controls="tabs-15-1" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-15-content">
+&lt;div class="tab-pane show active"
+id="tabs-15-0" role="tabpanel" aria-labelled-by="tabs-15-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Endpoint&lt;/th>
-&lt;th>Development environment&lt;/th>
 &lt;th>Production environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>Provider configuration&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration">https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Client registration&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/register">https://aai.egi.eu/mp-oa2-server/register&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Authorisation&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/authorize">https://aai.egi.eu/mp-oa2-server/authorize&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Token&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/token">https://aai.egi.eu/mp-oa2-server/token&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>JSON Web Key(jwt)&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/certs">https://aai.egi.eu/mp-oa2-server/certs&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>User Info&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/userinfo">https://aai.egi.eu/mp-oa2-server/userinfo&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-15-1" role="tabpanel" aria-labelled-by="tabs-15-1-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Endpoint&lt;/th>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Provider configuration&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Client registration&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Authorisation&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Token&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>JSON Web Key(jwt)&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>User Info&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
 &lt;!-- markdownlint-enable line-length -->
 &lt;h3 id="registering-a-client-at-the-master-portal">Registering a client at the Master Portal&lt;/h3>
 &lt;p>In order to register a new client for your VO portal go to:&lt;/p>
