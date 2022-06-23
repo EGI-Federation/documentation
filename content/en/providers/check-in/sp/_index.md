@@ -208,9 +208,33 @@ depends on the integration environment being used:
 
 <!-- markdownlint-disable line-length -->
 
-| Production environment                            | Demo environment                                       | Development environment                               |
-| ------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------- |
-| <https://aai.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> |
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Production environment                            |
+| ------------------------------------------------- |
+| <https://aai.egi.eu/proxy/saml2/idp/metadata.php> |
+
+{{< /tabx >}}
+
+{{< tabx header="Demo" >}}
+
+| Demo environment                                       |
+| ------------------------------------------------------ |
+| <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> |
+
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Development environment                               |
+| ----------------------------------------------------- |
+| <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
 
 <!-- markdownlint-enable line-length -->
 
