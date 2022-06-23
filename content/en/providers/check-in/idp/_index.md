@@ -125,7 +125,7 @@ where:
     [IANA](https://www.iana.org/assignments/urn-namespaces/urn-namespaces.xhtml),
     as per RFC8141, ensuring global uniqueness. Implementers can and should use
     one of the existing registered URN namespaces, such as
-    [`urn:geant`](https://www.geant.org/Services/Trust_identity_and_security/Pages/NamespaceRegistry.aspx)
+    [`urn:geant`](https://wiki.geant.org/display/URN/URN+Namespace+Delegated+to+Other+Entities)
     and
     [`urn:mace`](https://www.internet2.edu/products-services/trust-identity/mace-registries/urnmace-namespace/);
   - `<DELEGATED-NAMESPACE>` is a URN sub-namespace delegated from one of the
