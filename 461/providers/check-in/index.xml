@@ -188,7 +188,7 @@ registered with
 &lt;a href="https://www.iana.org/assignments/urn-namespaces/urn-namespaces.xhtml">IANA&lt;/a>,
 as per RFC8141, ensuring global uniqueness. Implementers can and should use
 one of the existing registered URN namespaces, such as
-&lt;a href="https://www.geant.org/Services/Trust_identity_and_security/Pages/NamespaceRegistry.aspx">&lt;code>urn:geant&lt;/code>&lt;/a>
+&lt;a href="https://wiki.geant.org/display/URN/URN+Namespace+Delegated+to+Other+Entities">&lt;code>urn:geant&lt;/code>&lt;/a>
 and
 &lt;a href="https://www.internet2.edu/products-services/trust-identity/mace-registries/urnmace-namespace/">&lt;code>urn:mace&lt;/code>&lt;/a>;&lt;/li>
 &lt;li>&lt;code>&amp;lt;DELEGATED-NAMESPACE&amp;gt;&lt;/code> is a URN sub-namespace delegated from one of the
