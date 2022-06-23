@@ -731,22 +731,76 @@ issued by a trusted certificate authority.&lt;/p>
 &lt;p>You can get the metadata of the EGI Check-in IdP Proxy on a dedicated URL that
 depends on the integration environment being used:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-1-0-tab" data-toggle="tab" href="#tabs-1-0" role="tab"
+aria-controls="tabs-1-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-1-tab" data-toggle="tab" href="#tabs-1-1" role="tab"
+aria-controls="tabs-1-1" aria-selected="false">
+Demo
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-2-tab" data-toggle="tab" href="#tabs-1-2" role="tab"
+aria-controls="tabs-1-2" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-1-content">
+&lt;div class="tab-pane show active"
+id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Production environment&lt;/th>
-&lt;th>Demo environment&lt;/th>
-&lt;th>Development environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>&lt;a href="https://aai.egi.eu/proxy/saml2/idp/metadata.php">https://aai.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Demo environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php">https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-2" role="tabpanel" aria-labelled-by="tabs-1-2-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
 &lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php">https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;/div>
+&lt;/div>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>To register your SAML SP, you must submit a service registration request at
 &lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>. Your request should
@@ -955,32 +1009,32 @@ OAuth flow.&lt;/li>
 &lt;h3 id="endpoints">Endpoints&lt;/h3>
 &lt;p>The most important OIDC/OAuth2 endpoints are listed below:&lt;/p>
 &lt;!-- markdownlint-disable line-length no-inline-html -->
-&lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-4" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-3-0-tab" data-toggle="tab" href="#tabs-3-0" role="tab"
-aria-controls="tabs-3-0" aria-selected="true">
+id="tabs-4-0-tab" data-toggle="tab" href="#tabs-4-0" role="tab"
+aria-controls="tabs-4-0" aria-selected="true">
 Production
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-3-1-tab" data-toggle="tab" href="#tabs-3-1" role="tab"
-aria-controls="tabs-3-1" aria-selected="false">
+id="tabs-4-1-tab" data-toggle="tab" href="#tabs-4-1" role="tab"
+aria-controls="tabs-4-1" aria-selected="false">
 Demo
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-3-2-tab" data-toggle="tab" href="#tabs-3-2" role="tab"
-aria-controls="tabs-3-2" aria-selected="false">
+id="tabs-4-2-tab" data-toggle="tab" href="#tabs-4-2" role="tab"
+aria-controls="tabs-4-2" aria-selected="false">
 Development
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-3-content">
+&lt;div class="tabx-content" id="tabs-4-content">
 &lt;div class="tab-pane show active"
-id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
+id="tabs-4-0" role="tabpanel" aria-labelled-by="tabs-4-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1029,7 +1083,7 @@ id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
+id="tabs-4-1" role="tabpanel" aria-labelled-by="tabs-4-1-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1078,7 +1132,7 @@ id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
+id="tabs-4-2" role="tabpanel" aria-labelled-by="tabs-4-2-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1812,25 +1866,25 @@ make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
 integration goes via an intermediary service, called a Master Portal. EGI is
 running two Master Portal instances, one development, one production instance.&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
-&lt;ul class="nav nav-tabs" id="tabs-15" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-16" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-15-0-tab" data-toggle="tab" href="#tabs-15-0" role="tab"
-aria-controls="tabs-15-0" aria-selected="true">
+id="tabs-16-0-tab" data-toggle="tab" href="#tabs-16-0" role="tab"
+aria-controls="tabs-16-0" aria-selected="true">
 Production
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-15-1-tab" data-toggle="tab" href="#tabs-15-1" role="tab"
-aria-controls="tabs-15-1" aria-selected="false">
+id="tabs-16-1-tab" data-toggle="tab" href="#tabs-16-1" role="tab"
+aria-controls="tabs-16-1" aria-selected="false">
 Development
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-15-content">
+&lt;div class="tabx-content" id="tabs-16-content">
 &lt;div class="tab-pane show active"
-id="tabs-15-0" role="tabpanel" aria-labelled-by="tabs-15-0-tab">
+id="tabs-16-0" role="tabpanel" aria-labelled-by="tabs-16-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1867,7 +1921,7 @@ id="tabs-15-0" role="tabpanel" aria-labelled-by="tabs-15-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-15-1" role="tabpanel" aria-labelled-by="tabs-15-1-tab">
+id="tabs-16-1" role="tabpanel" aria-labelled-by="tabs-16-1-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
