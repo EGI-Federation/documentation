@@ -145,10 +145,36 @@ more information can be found in the protocol-specific sections that follow.
 
 <!-- markdownlint-disable line-length -->
 
-| Protocol       | Production environment                                     | Demo environment                                                | Development environment                                        |
-| -------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------- |
-| SAML           | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          |
-| OpenID Connect | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> |
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Protocol       | Production environment                                     |
+| -------------- | ---------------------------------------------------------- |
+| SAML           | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>          |
+| OpenID Connect | <https://aai.egi.eu/oidc/.well-known/openid-configuration> |
+
+{{< /tabx >}}
+
+{{< tabx header="Demo" >}}
+
+| Protocol       | Demo environment                                                |
+| -------------- | --------------------------------------------------------------- |
+| SAML           | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>          |
+| OpenID Connect | <https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> |
+
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Protocol       | Development environment                                        |
+| -------------- | -------------------------------------------------------------- |
+| SAML           | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>          |
+| OpenID Connect | <https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
 
 <!-- markdownlint-enable line-length -->
 
@@ -182,9 +208,33 @@ depends on the integration environment being used:
 
 <!-- markdownlint-disable line-length -->
 
-| Production environment                            | Demo environment                                       | Development environment                               |
-| ------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------- |
-| <https://aai.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> |
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Production environment                            |
+| ------------------------------------------------- |
+| <https://aai.egi.eu/proxy/saml2/idp/metadata.php> |
+
+{{< /tabx >}}
+
+{{< tabx header="Demo" >}}
+
+| Demo environment                                       |
+| ------------------------------------------------------ |
+| <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> |
+
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Development environment                               |
+| ----------------------------------------------------- |
+| <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
 
 <!-- markdownlint-enable line-length -->
 
@@ -375,17 +425,57 @@ The most important OIDC/OAuth2 endpoints are listed below:
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
-| Endpoint               | Production environment                                     | Demo environment                                                                                                                                                                                 | Development environment (Keycloak)                                                                                                                                                              |
-| ---------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Provider configuration | <https://aai.egi.eu/oidc/.well-known/openid-configuration> | <ul><li><https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration> (Keycloak)</li></ul> | <ul><li><https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration> (Keycloak)</li></ul> |
-| Issuer                 | <https://aai.egi.eu/oidc/>                                 | <ul><li><https://aai-demo.egi.eu/oidc/> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi> (Keycloak)</li></ul>                                                                 | <ul><li><https://aai-dev.egi.eu/oidc/> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi> (Keycloak)</li></ul>                                                                  |
-| Authorisation          | <https://aai.egi.eu/oidc/authorize>                        | <ul><li><https://aai-demo.egi.eu/oidc/authorize> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth> (Keycloak)</li></ul>                           | <ul><li><https://aai-dev.egi.eu/oidc/authorize> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth> (Keycloak)</li></ul>                            |
-| Token                  | <https://aai.egi.eu/oidc/token>                            | <ul><li><https://aai-demo.egi.eu/oidc/token> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token> (Keycloak)</li></ul>                              | <ul><li><https://aai-dev.egi.eu/oidc/token> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token> (Keycloak)</li></ul>                               |
-| Device Code            | <https://aai.egi.eu/oidc/devicecode>                       | <ul><li><https://aai-demo.egi.eu/oidc/devicecode> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device> (Keycloak)</li></ul>                   | <ul><li><https://aai-dev.egi.eu/oidc/devicecode> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device> (Keycloak)</li></ul>                    |
-| JSON Web Key(JWK)      | <https://aai.egi.eu/oidc/jwk>                              | <ul><li><https://aai-demo.egi.eu/oidc/jwk> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs> (Keycloak)</li></ul>                                | <ul><li><https://aai-dev.egi.eu/oidc/jwk> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs> (Keycloak)</li></ul>                                 |
-| User Info              | <https://aai.egi.eu/oidc/userinfo>                         | <ul><li><https://aai-demo.egi.eu/oidc/userinfo> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo> (Keycloak)</li></ul>                        | <ul><li><https://aai-dev.egi.eu/oidc/userinfo> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo> (Keycloak)</li></ul>                         |
-| Introspection          | <https://aai.egi.eu/oidc/introspect>                       | <ul><li><https://aai-demo.egi.eu/oidc/introspect> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect>(Keycloak)</li></ul>               | <ul><li><https://aai-dev.egi.eu/oidc/introspect> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect>(Keycloak)</li></ul>                |
-| Logout                 | <https://aai.egi.eu/oidc/saml/logout>                      | <ul><li><https://aai-demo.egi.eu/oidc/saml/logout> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout>(Keycloak)</li></ul>                        | <ul><li><https://aai-dev.egi.eu/oidc/saml/logout> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout>(Keycloak)</li></ul>                         |
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Endpoints              | Production environment                                     |
+| ---------------------- | ---------------------------------------------------------- |
+| Provider configuration | <https://aai.egi.eu/oidc/.well-known/openid-configuration> |
+| Issuer                 | <https://aai.egi.eu/oidc/>                                 |
+| Authorisation          | <https://aai.egi.eu/oidc/authorize>                        |
+| Token                  | <https://aai.egi.eu/oidc/token>                            |
+| Device Code            | <https://aai.egi.eu/oidc/devicecode>                       |
+| JSON Web Key(JWK)      | <https://aai.egi.eu/oidc/jwk>                              |
+| User Info              | <https://aai.egi.eu/oidc/userinfo>                         |
+| Introspection          | <https://aai.egi.eu/oidc/introspect>                       |
+| Logout                 | <https://aai.egi.eu/oidc/saml/logout>                      |
+
+{{< /tabx >}}
+
+{{< tabx header="Demo" >}}
+
+| Endpoints              | Demo environment                                                                                                                                                                                  |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Provider configuration | <ul><li><https://aai-demo.egi.eu/oidc/.well-known/openid-configuration> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration> (Keycloak)</li></ul> |
+| Issuer                 | <ul><li><https://aai-demo.egi.eu/oidc/> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi> (Keycloak)</li></ul>                                                                  |
+| Authorisation          | <ul><li><https://aai-demo.egi.eu/oidc/authorize> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth> (Keycloak)</li></ul>                            |
+| Token                  | <ul><li><https://aai-demo.egi.eu/oidc/token> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token> (Keycloak)</li></ul>                               |
+| Device Code            | <ul><li><https://aai-demo.egi.eu/oidc/devicecode> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device> (Keycloak)</li></ul>                    |
+| JSON Web Key(JWK)      | <ul><li><https://aai-demo.egi.eu/oidc/jwk> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs> (Keycloak)</li></ul>                                 |
+| User Info              | <ul><li><https://aai-demo.egi.eu/oidc/userinfo> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo> (Keycloak)</li></ul>                         |
+| Introspection          | <ul><li><https://aai-demo.egi.eu/oidc/introspect> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect>(Keycloak)</li></ul>                |
+| Logout                 | <ul><li><https://aai-demo.egi.eu/oidc/saml/logout> (MITREid Connect)</li><li><https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout>(Keycloak)</li></ul>                         |
+
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Endpoints              | Development environment                                                                                                                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Provider configuration | <ul><li><https://aai-dev.egi.eu/oidc/.well-known/openid-configuration> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration> (Keycloak)</li></ul> |
+| Issuer                 | <ul><li><https://aai-dev.egi.eu/oidc/> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi> (Keycloak)</li></ul>                                                                  |
+| Authorisation          | <ul><li><https://aai-dev.egi.eu/oidc/authorize> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth> (Keycloak)</li></ul>                            |
+| Token                  | <ul><li><https://aai-dev.egi.eu/oidc/token> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token> (Keycloak)</li></ul>                               |
+| Device Code            | <ul><li><https://aai-dev.egi.eu/oidc/devicecode> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device> (Keycloak)</li></ul>                    |
+| JSON Web Key(JWK)      | <ul><li><https://aai-dev.egi.eu/oidc/jwk> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs> (Keycloak)</li></ul>                                 |
+| User Info              | <ul><li><https://aai-dev.egi.eu/oidc/userinfo> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo> (Keycloak)</li></ul>                         |
+| Introspection          | <ul><li><https://aai-dev.egi.eu/oidc/introspect> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect>(Keycloak)</li></ul>                |
+| Logout                 | <ul><li><https://aai-dev.egi.eu/oidc/saml/logout> (MITREid Connect)</li><li><https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout>(Keycloak)</li></ul>                         |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
@@ -896,8 +986,14 @@ All the clients that were registered in MITREid Connect have been moved to
 Keycloak preserving all the options (Client ID, Client Secret, Redirect URIs
 etc.), so you do not need to re-register your Service.
 
+##### Endpoints
+
 The first thing you need to do is to update the OIDC endpoints according to the
-[Endpoints](#endpoints) table.
+[Endpoints](#endpoints) table. If the Application/Library supports Dynamic
+Discovery, then you need to update on the `issuer`. Otherwise, you need to
+update all the Endpoints separately.
+
+##### Size of the Tokens
 
 The size of the Access/Refresh Tokens that are issued by Keycloak is larger of
 the respective Tokens created by MITREid Connect. For example, the size of an
@@ -905,10 +1001,24 @@ Access Token is around 1400 characters, depending on the information that are
 included in the payload of the JWT. So make sure that your OIDC implementation
 can handle larger Tokens.
 
+##### Logout
+
 The Redirect URI query parameter in the logout request has been changed from
 `redirect` to `post_logout_redirect_uri` and must be URL encoded. Also, the
 value of the `post_logout_redirect_uri` must be defined in the **Valid Redirect
 URIs** of the Service configuration in the EGI Federation Registry.
+
+##### Token Introspection
+
+The Token Introspection is available to all the clients that are using any
+authentication method (`client_secret_basic`, `client_secret_post`,
+`client_secret_jwt` or `private_key_jwt`) (Confidential Clients) to the Token
+Endpoint. Public Clients (clients that do not use any authentication method)
+will not be able to get a successful response from the Introspection Endpoint.
+Saying that, the "Introspection" option in the EGI Federation Registry will be
+removed.
+
+##### PKCE
 
 If you are **not** using PKCE (Proof Key for Code Exchange), please make sure to
 **disable** the "PKCE Code Challenge Method" in the Service configuration in
@@ -919,17 +1029,23 @@ the following HTTP response during the authentication flow:
 error=invalid_request&error_description=Missing parameter: code_challenge_method
 ```
 
-If you are using the **Token Exchange** grant, please make sure that the
-`audience` (Optional) defines the logical name of the service that the token
-will be used for; when specified, it must match the client ID of a client
-registered in Check-in otherwise an `invalid_client` error is returned
+##### Token Exchange
+
+If you are using the Token Exchange grant, please make sure that the `audience`
+(Optional) defines the logical name of the service that the token will be used
+for; when specified, it must match the client ID of a client registered in
+Check-in otherwise an `invalid_client` error is returned
 (`"description": "audience not found"`)
 
-If you are using the **Client Credentials** grant, there is a minor change in
-the responses from userinfo and introspection endpoints. The **Client ID** of
-the client is **not** released as the `sub` claim any more and has replaced with
-by the `client_id` claim. The `sub` contains the identifier of the client which
-is unique, non-reassignable and scoped `@egi.eu`.
+##### Client Credentials
+
+If you are using the Client Credentials grant, there is a minor change in the
+responses from userinfo and introspection endpoints. The **Client ID** of the
+client is **not** released as the `sub` claim any more and has replaced with by
+the `client_id` claim. The `sub` contains the identifier of the client which is
+unique, non-reassignable and scoped `@egi.eu`.
+
+##### Obtain Refresh Tokens
 
 If you have obtained an Refresh Token from EGI Check-in Token Portal or
 oidc-agent issued by the MITREid Connect instance, you will need to replace them
@@ -953,6 +1069,61 @@ by creating new Refresh Tokens issued by Keycloak.
   {{% alert title="Note" color="info" %}} You can find the _ISSUER_ in the
   [Endpoints](#endpoints) table.{{% /alert %}}
 
+#### Common issues
+
+##### Error messages referring to missing `code_challenge`, `code_challenge_method` or `code_verifier` HTTP parameter
+
+If you get error messages containing the PKCE HTTP parameters, probably the PKCE
+mode is enabled in your Service Configuration but the Application is not
+performing the PKCE mode.
+
+To solve this, you need to follow the steps below:
+
+1. Login to [Federation Registry](https://aai.egi.eu/federation)
+1. Open your Service Configuration
+1. Click on the “Protocol Specific” tab and scroll down to “Proof Key for Code
+   Exchange (PKCE) Code Challenge Method” and select “PKCE will not be used for
+   this service”
+1. Click on “Submit” to apply the reconfiguration request
+
+##### Error messages referring to `invalid_code`
+
+If you try to perform the Authorization Code flow and you get an `invalid_code`
+error message, probably the Application sends the authorization request to the
+Authorization Endpoint of the Keycloak based EGI Check-in OP and then sends the
+`code` to the Token Endpoint of the MITREid Connect based EGI Check-in OP or
+vice versa.
+
+To fix this you need to verify that you have updated all the OIDC Endpoints with
+the Keycloak ones. You can find all the OIDC Endpoints of Keycloak in the
+[Endpoint](#endpoints) table.
+
+##### Error messages referring to the `redirect_uri`
+
+If you try to perform the Authorization Code flow and you get an
+`invalid_redirect_uri` error, probably the `redirect_uri` in the Authorization
+Request mismatches with the Allowed Redirect URIs in the Service Configuration.
+
+To solve this, you need to follow the steps below:
+
+1. Login to [Federation Registry](https://aai.egi.eu/federation)
+1. Open your Service Configuration
+1. Click on the “Protocol Specific” tab and in the “Redirect URI(s)” edit the
+   URI.
+1. Click on “Submit” to apply the reconfiguration request
+
+##### UserInfo `invalid_token` or `401 Unauthorized` error response
+
+If you are trying to make a request to the UserInfo Endpoint and the response
+contains the `invalid_token` error message, probably you are using an invalid
+Token or the UserInfo endpoint is wrong.
+
+To solve this, please make sure the that:
+
+1. You have obtained an Keycloak issued Access Token and you make a request to
+   the Keycloak based UserInfo Endpoint
+1. You have added the Access Token to the Authorization header of the request
+
 ## Integrating Science Gateways with RCauth for obtaining (proxy) certificates
 
 In order for Science Gateways (VO portals) to obtain RFC proxy certificates
@@ -963,14 +1134,35 @@ running two Master Portal instances, one development, one production instance.
 
 <!-- markdownlint-disable line-length -->
 
-| Endpoint               | Development environment                                                                | Production environment                                              |
-| ---------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| Provider configuration | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> | <https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
-| Client registration    | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register>                         | <https://aai.egi.eu/mp-oa2-server/register>                         |
-| Authorisation          | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize>                        | <https://aai.egi.eu/mp-oa2-server/authorize>                        |
-| Token                  | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token>                            | <https://aai.egi.eu/mp-oa2-server/token>                            |
-| JSON Web Key(jwt)      | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs>                            | <https://aai.egi.eu/mp-oa2-server/certs>                            |
-| User Info              | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         | <https://aai.egi.eu/mp-oa2-server/userinfo>                         |
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Endpoint               | Production environment                                              |
+| ---------------------- | ------------------------------------------------------------------- |
+| Provider configuration | <https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
+| Client registration    | <https://aai.egi.eu/mp-oa2-server/register>                         |
+| Authorisation          | <https://aai.egi.eu/mp-oa2-server/authorize>                        |
+| Token                  | <https://aai.egi.eu/mp-oa2-server/token>                            |
+| JSON Web Key(jwt)      | <https://aai.egi.eu/mp-oa2-server/certs>                            |
+| User Info              | <https://aai.egi.eu/mp-oa2-server/userinfo>                         |
+
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Endpoint               | Development environment                                                                |
+| ---------------------- | -------------------------------------------------------------------------------------- |
+| Provider configuration | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
+| Client registration    | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register>                         |
+| Authorisation          | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize>                        |
+| Token                  | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token>                            |
+| JSON Web Key(jwt)      | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs>                            |
+| User Info              | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
 
 <!-- markdownlint-enable line-length -->
 
