@@ -28,30 +28,94 @@ and that integration has been thoroughly tested during Step 1.&lt;/li>
 &lt;p>The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-0-0-tab" data-toggle="tab" href="#tabs-0-0" role="tab"
+aria-controls="tabs-0-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-0-1-tab" data-toggle="tab" href="#tabs-0-1" role="tab"
+aria-controls="tabs-0-1" aria-selected="false">
+Demo
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-0-2-tab" data-toggle="tab" href="#tabs-0-2" role="tab"
+aria-controls="tabs-0-2" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-0-content">
+&lt;div class="tab-pane show active"
+id="tabs-0-0" role="tabpanel" aria-labelled-by="tabs-0-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Protocol&lt;/th>
-&lt;th>Development environment&lt;/th>
-&lt;th>Demo environment&lt;/th>
 &lt;th>Production environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>SAML&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>OpenID Connect&lt;/td>
 &lt;td>See &lt;a href="#client-registration">client registration&lt;/a>&lt;/td>
-&lt;td>See &lt;a href="#client-registration">client registration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-0-1" role="tabpanel" aria-labelled-by="tabs-0-1-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Protocol&lt;/th>
+&lt;th>Demo environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>SAML&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenID Connect&lt;/td>
 &lt;td>See &lt;a href="#client-registration">client registration&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-0-2" role="tabpanel" aria-labelled-by="tabs-0-2-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Protocol&lt;/th>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>SAML&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenID Connect&lt;/td>
+&lt;td>See &lt;a href="#client-registration">client registration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
 &lt;!-- markdownlint-enable line-length -->
 &lt;h2 id="general-requirements-for-integrating-identity-providers">General requirements for integrating identity providers&lt;/h2>
 &lt;p>An institution or a community may connect their IdP with Check-in to allow their
@@ -124,7 +188,7 @@ registered with
 &lt;a href="https://www.iana.org/assignments/urn-namespaces/urn-namespaces.xhtml">IANA&lt;/a>,
 as per RFC8141, ensuring global uniqueness. Implementers can and should use
 one of the existing registered URN namespaces, such as
-&lt;a href="https://www.geant.org/Services/Trust_identity_and_security/Pages/NamespaceRegistry.aspx">&lt;code>urn:geant&lt;/code>&lt;/a>
+&lt;a href="https://wiki.geant.org/display/URN/URN+Namespace+Delegated+to+Other+Entities">&lt;code>urn:geant&lt;/code>&lt;/a>
 and
 &lt;a href="https://www.internet2.edu/products-services/trust-identity/mace-registries/urnmace-namespace/">&lt;code>urn:mace&lt;/code>&lt;/a>;&lt;/li>
 &lt;li>&lt;code>&amp;lt;DELEGATED-NAMESPACE&amp;gt;&lt;/code> is a URN sub-namespace delegated from one of the
@@ -208,22 +272,76 @@ pick the appropriate entityID from that.&lt;/p>
 &lt;p>You can get the metadata of the EGI Check-in SP Proxy on a dedicated URL that
 depends on the integration environment being used:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-1-0-tab" data-toggle="tab" href="#tabs-1-0" role="tab"
+aria-controls="tabs-1-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-1-tab" data-toggle="tab" href="#tabs-1-1" role="tab"
+aria-controls="tabs-1-1" aria-selected="false">
+Demo
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-2-tab" data-toggle="tab" href="#tabs-1-2" role="tab"
+aria-controls="tabs-1-2" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-1-content">
+&lt;div class="tab-pane show active"
+id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Development environment&lt;/th>
-&lt;th>Demo environment&lt;/th>
 &lt;th>Production environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Demo environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-2" role="tabpanel" aria-labelled-by="tabs-1-2-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso">https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>For the production environment, it is recommended that you get the metadata for
 the EGI Check-in SP (entityID:
@@ -500,30 +618,94 @@ encoded in base64&lt;/li>
 &lt;p>The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-0-0-tab" data-toggle="tab" href="#tabs-0-0" role="tab"
+aria-controls="tabs-0-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-0-1-tab" data-toggle="tab" href="#tabs-0-1" role="tab"
+aria-controls="tabs-0-1" aria-selected="false">
+Demo
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-0-2-tab" data-toggle="tab" href="#tabs-0-2" role="tab"
+aria-controls="tabs-0-2" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-0-content">
+&lt;div class="tab-pane show active"
+id="tabs-0-0" role="tabpanel" aria-labelled-by="tabs-0-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Protocol&lt;/th>
 &lt;th>Production environment&lt;/th>
-&lt;th>Demo environment&lt;/th>
-&lt;th>Development environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>SAML&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/proxy/saml2/idp/metadata.php">https://aai.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php">https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php">https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>OpenID Connect&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/.well-known/openid-configuration">https://aai.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-0-1" role="tabpanel" aria-labelled-by="tabs-0-1-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Protocol&lt;/th>
+&lt;th>Demo environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>SAML&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php">https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenID Connect&lt;/td>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/.well-known/openid-configuration">https://aai-demo.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-0-2" role="tabpanel" aria-labelled-by="tabs-0-2-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Protocol&lt;/th>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>SAML&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php">https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenID Connect&lt;/td>
 &lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;/div>
+&lt;/div>
 &lt;!-- markdownlint-enable line-length -->
 &lt;h2 id="saml-service-provider">SAML Service Provider&lt;/h2>
 &lt;p>To enable federated access to a web-based application, you can connect to the
@@ -549,22 +731,76 @@ issued by a trusted certificate authority.&lt;/p>
 &lt;p>You can get the metadata of the EGI Check-in IdP Proxy on a dedicated URL that
 depends on the integration environment being used:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-1-0-tab" data-toggle="tab" href="#tabs-1-0" role="tab"
+aria-controls="tabs-1-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-1-tab" data-toggle="tab" href="#tabs-1-1" role="tab"
+aria-controls="tabs-1-1" aria-selected="false">
+Demo
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-2-tab" data-toggle="tab" href="#tabs-1-2" role="tab"
+aria-controls="tabs-1-2" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-1-content">
+&lt;div class="tab-pane show active"
+id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Production environment&lt;/th>
-&lt;th>Demo environment&lt;/th>
-&lt;th>Development environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>&lt;a href="https://aai.egi.eu/proxy/saml2/idp/metadata.php">https://aai.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Demo environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php">https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-2" role="tabpanel" aria-labelled-by="tabs-1-2-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
 &lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php">https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;/div>
+&lt;/div>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>To register your SAML SP, you must submit a service registration request at
 &lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>. Your request should
@@ -773,72 +1009,178 @@ OAuth flow.&lt;/li>
 &lt;h3 id="endpoints">Endpoints&lt;/h3>
 &lt;p>The most important OIDC/OAuth2 endpoints are listed below:&lt;/p>
 &lt;!-- markdownlint-disable line-length no-inline-html -->
+&lt;ul class="nav nav-tabs" id="tabs-4" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-4-0-tab" data-toggle="tab" href="#tabs-4-0" role="tab"
+aria-controls="tabs-4-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-4-1-tab" data-toggle="tab" href="#tabs-4-1" role="tab"
+aria-controls="tabs-4-1" aria-selected="false">
+Demo
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-4-2-tab" data-toggle="tab" href="#tabs-4-2" role="tab"
+aria-controls="tabs-4-2" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-4-content">
+&lt;div class="tab-pane show active"
+id="tabs-4-0" role="tabpanel" aria-labelled-by="tabs-4-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Endpoint&lt;/th>
+&lt;th>Endpoints&lt;/th>
 &lt;th>Production environment&lt;/th>
-&lt;th>Demo environment&lt;/th>
-&lt;th>Development environment (Keycloak)&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>Provider configuration&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/.well-known/openid-configuration">https://aai.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/.well-known/openid-configuration">https://aai-demo.egi.eu/oidc/.well-known/openid-configuration&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Issuer&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/">https://aai.egi.eu/oidc/&lt;/a>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/">https://aai-demo.egi.eu/oidc/&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi">https://aai-demo.egi.eu/auth/realms/egi&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/">https://aai-dev.egi.eu/oidc/&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi">https://aai-dev.egi.eu/auth/realms/egi&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Authorisation&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/authorize">https://aai.egi.eu/oidc/authorize&lt;/a>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/authorize">https://aai-demo.egi.eu/oidc/authorize&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/authorize">https://aai-dev.egi.eu/oidc/authorize&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Token&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/token">https://aai.egi.eu/oidc/token&lt;/a>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/token">https://aai-demo.egi.eu/oidc/token&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/token">https://aai-dev.egi.eu/oidc/token&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Device Code&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/devicecode">https://aai.egi.eu/oidc/devicecode&lt;/a>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/devicecode">https://aai-demo.egi.eu/oidc/devicecode&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/devicecode">https://aai-dev.egi.eu/oidc/devicecode&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>JSON Web Key(JWK)&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/jwk">https://aai.egi.eu/oidc/jwk&lt;/a>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/jwk">https://aai-demo.egi.eu/oidc/jwk&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/jwk">https://aai-dev.egi.eu/oidc/jwk&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>User Info&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/userinfo">https://aai.egi.eu/oidc/userinfo&lt;/a>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/userinfo">https://aai-demo.egi.eu/oidc/userinfo&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/userinfo">https://aai-dev.egi.eu/oidc/userinfo&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Introspection&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/introspect">https://aai.egi.eu/oidc/introspect&lt;/a>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/introspect">https://aai-demo.egi.eu/oidc/introspect&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/introspect">https://aai-dev.egi.eu/oidc/introspect&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Logout&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/oidc/saml/logout">https://aai.egi.eu/oidc/saml/logout&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-4-1" role="tabpanel" aria-labelled-by="tabs-4-1-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Endpoints&lt;/th>
+&lt;th>Demo environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Provider configuration&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/.well-known/openid-configuration">https://aai-demo.egi.eu/oidc/.well-known/openid-configuration&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Issuer&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/">https://aai-demo.egi.eu/oidc/&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi">https://aai-demo.egi.eu/auth/realms/egi&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Authorisation&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/authorize">https://aai-demo.egi.eu/oidc/authorize&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Token&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/token">https://aai-demo.egi.eu/oidc/token&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Device Code&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/devicecode">https://aai-demo.egi.eu/oidc/devicecode&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>JSON Web Key(JWK)&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/jwk">https://aai-demo.egi.eu/oidc/jwk&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>User Info&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/userinfo">https://aai-demo.egi.eu/oidc/userinfo&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Introspection&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/introspect">https://aai-demo.egi.eu/oidc/introspect&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Logout&lt;/td>
 &lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/saml/logout">https://aai-demo.egi.eu/oidc/saml/logout&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-4-2" role="tabpanel" aria-labelled-by="tabs-4-2-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Endpoints&lt;/th>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Provider configuration&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Issuer&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/">https://aai-dev.egi.eu/oidc/&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi">https://aai-dev.egi.eu/auth/realms/egi&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Authorisation&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/authorize">https://aai-dev.egi.eu/oidc/authorize&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Token&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/token">https://aai-dev.egi.eu/oidc/token&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Device Code&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/devicecode">https://aai-dev.egi.eu/oidc/devicecode&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>JSON Web Key(JWK)&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/jwk">https://aai-dev.egi.eu/oidc/jwk&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>User Info&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/userinfo">https://aai-dev.egi.eu/oidc/userinfo&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Introspection&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/introspect">https://aai-dev.egi.eu/oidc/introspect&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Logout&lt;/td>
 &lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/saml/logout">https://aai-dev.egi.eu/oidc/saml/logout&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;/div>
+&lt;/div>
 &lt;!-- markdownlint-enable line-length no-inline-html -->
 &lt;h4 id="authorization-endpoint">Authorization Endpoint&lt;/h4>
 &lt;p>The Authorization Endpoint performs Authentication of the end user. This is done
@@ -1388,32 +1730,49 @@ supported&lt;/strong>&lt;/p>
 &lt;p>All the clients that were registered in MITREid Connect have been moved to
 Keycloak preserving all the options (Client ID, Client Secret, Redirect URIs
 etc.), so you do not need to re-register your Service.&lt;/p>
+&lt;h5 id="endpoints-1">Endpoints&lt;/h5>
 &lt;p>The first thing you need to do is to update the OIDC endpoints according to the
-&lt;a href="#endpoints">Endpoints&lt;/a> table.&lt;/p>
+&lt;a href="#endpoints">Endpoints&lt;/a> table. If the Application/Library supports Dynamic
+Discovery, then you need to update on the &lt;code>issuer&lt;/code>. Otherwise, you need to
+update all the Endpoints separately.&lt;/p>
+&lt;h5 id="size-of-the-tokens">Size of the Tokens&lt;/h5>
 &lt;p>The size of the Access/Refresh Tokens that are issued by Keycloak is larger of
 the respective Tokens created by MITREid Connect. For example, the size of an
 Access Token is around 1400 characters, depending on the information that are
 included in the payload of the JWT. So make sure that your OIDC implementation
 can handle larger Tokens.&lt;/p>
+&lt;h5 id="logout">Logout&lt;/h5>
 &lt;p>The Redirect URI query parameter in the logout request has been changed from
 &lt;code>redirect&lt;/code> to &lt;code>post_logout_redirect_uri&lt;/code> and must be URL encoded. Also, the
 value of the &lt;code>post_logout_redirect_uri&lt;/code> must be defined in the &lt;strong>Valid Redirect
 URIs&lt;/strong> of the Service configuration in the EGI Federation Registry.&lt;/p>
+&lt;h5 id="token-introspection">Token Introspection&lt;/h5>
+&lt;p>The Token Introspection is available to all the clients that are using any
+authentication method (&lt;code>client_secret_basic&lt;/code>, &lt;code>client_secret_post&lt;/code>,
+&lt;code>client_secret_jwt&lt;/code> or &lt;code>private_key_jwt&lt;/code>) (Confidential Clients) to the Token
+Endpoint. Public Clients (clients that do not use any authentication method)
+will not be able to get a successful response from the Introspection Endpoint.
+Saying that, the &amp;ldquo;Introspection&amp;rdquo; option in the EGI Federation Registry will be
+removed.&lt;/p>
+&lt;h5 id="pkce">PKCE&lt;/h5>
 &lt;p>If you are &lt;strong>not&lt;/strong> using PKCE (Proof Key for Code Exchange), please make sure to
 &lt;strong>disable&lt;/strong> the &amp;ldquo;PKCE Code Challenge Method&amp;rdquo; in the Service configuration in
 &lt;a href="https://aai.egi.eu/federation">EGI Federation Registry&lt;/a>, otherwise you will get
 the following HTTP response during the authentication flow:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-http" data-lang="http">&lt;span style="color:#a40000">error=invalid_request&amp;amp;error_description=Missing parameter: code_challenge_method
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are using the &lt;strong>Token Exchange&lt;/strong> grant, please make sure that the
-&lt;code>audience&lt;/code> (Optional) defines the logical name of the service that the token
-will be used for; when specified, it must match the client ID of a client
-registered in Check-in otherwise an &lt;code>invalid_client&lt;/code> error is returned
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="token-exchange-1">Token Exchange&lt;/h5>
+&lt;p>If you are using the Token Exchange grant, please make sure that the &lt;code>audience&lt;/code>
+(Optional) defines the logical name of the service that the token will be used
+for; when specified, it must match the client ID of a client registered in
+Check-in otherwise an &lt;code>invalid_client&lt;/code> error is returned
 (&lt;code>&amp;quot;description&amp;quot;: &amp;quot;audience not found&amp;quot;&lt;/code>)&lt;/p>
-&lt;p>If you are using the &lt;strong>Client Credentials&lt;/strong> grant, there is a minor change in
-the responses from userinfo and introspection endpoints. The &lt;strong>Client ID&lt;/strong> of
-the client is &lt;strong>not&lt;/strong> released as the &lt;code>sub&lt;/code> claim any more and has replaced with
-by the &lt;code>client_id&lt;/code> claim. The &lt;code>sub&lt;/code> contains the identifier of the client which
-is unique, non-reassignable and scoped &lt;code>@egi.eu&lt;/code>.&lt;/p>
+&lt;h5 id="client-credentials">Client Credentials&lt;/h5>
+&lt;p>If you are using the Client Credentials grant, there is a minor change in the
+responses from userinfo and introspection endpoints. The &lt;strong>Client ID&lt;/strong> of the
+client is &lt;strong>not&lt;/strong> released as the &lt;code>sub&lt;/code> claim any more and has replaced with by
+the &lt;code>client_id&lt;/code> claim. The &lt;code>sub&lt;/code> contains the identifier of the client which is
+unique, non-reassignable and scoped &lt;code>@egi.eu&lt;/code>.&lt;/p>
+&lt;h5 id="obtain-refresh-tokens">Obtain Refresh Tokens&lt;/h5>
 &lt;p>If you have obtained an Refresh Token from EGI Check-in Token Portal or
 oidc-agent issued by the MITREid Connect instance, you will need to replace them
 by creating new Refresh Tokens issued by Keycloak.&lt;/p>
@@ -1455,6 +1814,51 @@ You can find the &lt;em>ISSUER&lt;/em> in the
 &lt;/div>
 &lt;/li>
 &lt;/ul>
+&lt;h4 id="common-issues">Common issues&lt;/h4>
+&lt;h5 id="error-messages-referring-to-missing-code_challenge-code_challenge_method-or-code_verifier-http-parameter">Error messages referring to missing &lt;code>code_challenge&lt;/code>, &lt;code>code_challenge_method&lt;/code> or &lt;code>code_verifier&lt;/code> HTTP parameter&lt;/h5>
+&lt;p>If you get error messages containing the PKCE HTTP parameters, probably the PKCE
+mode is enabled in your Service Configuration but the Application is not
+performing the PKCE mode.&lt;/p>
+&lt;p>To solve this, you need to follow the steps below:&lt;/p>
+&lt;ol>
+&lt;li>Login to &lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>&lt;/li>
+&lt;li>Open your Service Configuration&lt;/li>
+&lt;li>Click on the “Protocol Specific” tab and scroll down to “Proof Key for Code
+Exchange (PKCE) Code Challenge Method” and select “PKCE will not be used for
+this service”&lt;/li>
+&lt;li>Click on “Submit” to apply the reconfiguration request&lt;/li>
+&lt;/ol>
+&lt;h5 id="error-messages-referring-to-invalid_code">Error messages referring to &lt;code>invalid_code&lt;/code>&lt;/h5>
+&lt;p>If you try to perform the Authorization Code flow and you get an &lt;code>invalid_code&lt;/code>
+error message, probably the Application sends the authorization request to the
+Authorization Endpoint of the Keycloak based EGI Check-in OP and then sends the
+&lt;code>code&lt;/code> to the Token Endpoint of the MITREid Connect based EGI Check-in OP or
+vice versa.&lt;/p>
+&lt;p>To fix this you need to verify that you have updated all the OIDC Endpoints with
+the Keycloak ones. You can find all the OIDC Endpoints of Keycloak in the
+&lt;a href="#endpoints">Endpoint&lt;/a> table.&lt;/p>
+&lt;h5 id="error-messages-referring-to-the-redirect_uri">Error messages referring to the &lt;code>redirect_uri&lt;/code>&lt;/h5>
+&lt;p>If you try to perform the Authorization Code flow and you get an
+&lt;code>invalid_redirect_uri&lt;/code> error, probably the &lt;code>redirect_uri&lt;/code> in the Authorization
+Request mismatches with the Allowed Redirect URIs in the Service Configuration.&lt;/p>
+&lt;p>To solve this, you need to follow the steps below:&lt;/p>
+&lt;ol>
+&lt;li>Login to &lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>&lt;/li>
+&lt;li>Open your Service Configuration&lt;/li>
+&lt;li>Click on the “Protocol Specific” tab and in the “Redirect URI(s)” edit the
+URI.&lt;/li>
+&lt;li>Click on “Submit” to apply the reconfiguration request&lt;/li>
+&lt;/ol>
+&lt;h5 id="userinfo-invalid_token-or-401-unauthorized-error-response">UserInfo &lt;code>invalid_token&lt;/code> or &lt;code>401 Unauthorized&lt;/code> error response&lt;/h5>
+&lt;p>If you are trying to make a request to the UserInfo Endpoint and the response
+contains the &lt;code>invalid_token&lt;/code> error message, probably you are using an invalid
+Token or the UserInfo endpoint is wrong.&lt;/p>
+&lt;p>To solve this, please make sure the that:&lt;/p>
+&lt;ol>
+&lt;li>You have obtained an Keycloak issued Access Token and you make a request to
+the Keycloak based UserInfo Endpoint&lt;/li>
+&lt;li>You have added the Access Token to the Authorization header of the request&lt;/li>
+&lt;/ol>
 &lt;h2 id="integrating-science-gateways-with-rcauth-for-obtaining-proxy-certificates">Integrating Science Gateways with RCauth for obtaining (proxy) certificates&lt;/h2>
 &lt;p>In order for Science Gateways (VO portals) to obtain RFC proxy certificates
 derived from &lt;strong>personal&lt;/strong> end-entity certificates, an EGI Science Gateway can
@@ -1462,47 +1866,98 @@ make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
 integration goes via an intermediary service, called a Master Portal. EGI is
 running two Master Portal instances, one development, one production instance.&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
+&lt;ul class="nav nav-tabs" id="tabs-16" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-16-0-tab" data-toggle="tab" href="#tabs-16-0" role="tab"
+aria-controls="tabs-16-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-16-1-tab" data-toggle="tab" href="#tabs-16-1" role="tab"
+aria-controls="tabs-16-1" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-16-content">
+&lt;div class="tab-pane show active"
+id="tabs-16-0" role="tabpanel" aria-labelled-by="tabs-16-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th>Endpoint&lt;/th>
-&lt;th>Development environment&lt;/th>
 &lt;th>Production environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>Provider configuration&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration">https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Client registration&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/register">https://aai.egi.eu/mp-oa2-server/register&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Authorisation&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/authorize">https://aai.egi.eu/mp-oa2-server/authorize&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Token&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/token">https://aai.egi.eu/mp-oa2-server/token&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>JSON Web Key(jwt)&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/certs">https://aai.egi.eu/mp-oa2-server/certs&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>User Info&lt;/td>
-&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://aai.egi.eu/mp-oa2-server/userinfo">https://aai.egi.eu/mp-oa2-server/userinfo&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-16-1" role="tabpanel" aria-labelled-by="tabs-16-1-tab">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Endpoint&lt;/th>
+&lt;th>Development environment&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Provider configuration&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Client registration&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Authorisation&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Token&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>JSON Web Key(jwt)&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>User Info&lt;/td>
+&lt;td>&lt;a href="https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo">https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
 &lt;!-- markdownlint-enable line-length -->
 &lt;h3 id="registering-a-client-at-the-master-portal">Registering a client at the Master Portal&lt;/h3>
 &lt;p>In order to register a new client for your VO portal go to:&lt;/p>

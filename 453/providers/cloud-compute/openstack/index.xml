@@ -118,13 +118,13 @@ Keystone service, using the client ID and secret obtained above:&lt;/p>
 &lt;span style="color:#204a87">OIDCClaimPrefix&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;OIDC-&amp;#34;&lt;/span>
 &lt;span style="color:#204a87">OIDCClaimDelimiter&lt;/span> ;
 &lt;span style="color:#204a87">OIDCScope&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid profile email eduperson_entitlement&amp;#34;&lt;/span>
-&lt;span style="color:#204a87">OIDCProviderMetadataURL&lt;/span> https://aai-demo.egi.eu/oidc/.well-known/openid-configuration
+&lt;span style="color:#204a87">OIDCProviderMetadataURL&lt;/span> https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration
 &lt;span style="color:#204a87">OIDCClientID&lt;/span> &amp;lt;client id&amp;gt;
 &lt;span style="color:#204a87">OIDCClientSecret&lt;/span> &amp;lt;client secret&amp;gt;
 &lt;span style="color:#204a87">OIDCCryptoPassphrase&lt;/span> &amp;lt;some crypto pass phrase&amp;gt;
 &lt;span style="color:#204a87">OIDCRedirectURI&lt;/span> https://&amp;lt;your keystone endpoint&amp;gt;/v3/auth/OS-FEDERATION/websso/openid/redirect
 &lt;span style="color:#8f5902;font-style:italic"># OAuth for CLI access&lt;/span>
-&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> https://aai-demo.egi.eu/oidc/introspect
+&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
 &lt;span style="color:#204a87">OIDCOAuthClientID&lt;/span> &amp;lt;client id&amp;gt;
 &lt;span style="color:#204a87">OIDCOAuthClientSecret&lt;/span> &amp;lt;client secret&amp;gt;
 &lt;span style="color:#8f5902;font-style:italic"># Increase Shm cache size for supporting long entitlements&lt;/span>
@@ -182,17 +182,17 @@ keystone git repository at
 the Keystone Federation support.&lt;/p>
 &lt;h2 id="keystone-federation-support">Keystone Federation Support&lt;/h2>
 &lt;p>First, create a new &lt;code>egi.eu&lt;/code> identity provider with remote id
-&lt;code>https://aai-demo.egi.eu/oidc/&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack identity provider create --remote-id https://aai-demo.egi.eu/oidc/ egi.eu
-+-------------+----------------------------------+
+&lt;code>https://aai-demo.egi.eu/auth/realms/egi&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack identity provider create --remote-id https://aai-demo.egi.eu/auth/realms/egi egi.eu
++-------------+-----------------------------------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+-------------+----------------------------------+
++-------------+-----------------------------------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> description &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> domain_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 1cac7817dafb4740a249cc9ca6b14ea5 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> enabled &lt;span style="color:#000;font-weight:bold">|&lt;/span> True &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> remote_ids &lt;span style="color:#000;font-weight:bold">|&lt;/span> https://aai-demo.egi.eu/oidc/ &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+-------------+----------------------------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> remote_ids &lt;span style="color:#000;font-weight:bold">|&lt;/span> https://aai-demo.egi.eu/auth/realms/egi &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-------------+-----------------------------------------+
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a group for users coming from EGI Check-in, usual configuration is to
 have one group per VO you want to support.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack group create ops
@@ -230,7 +230,7 @@ adequate values for your deployment:&lt;/p>
 &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>,
 &lt;span style="color:#4e9a06">&amp;#34;any_one_of&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;https://aai-demo.egi.eu/oidc/&amp;#34;&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;https://aai-demo.egi.eu/auth/realms/egi&amp;#34;&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
 &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
@@ -248,14 +248,14 @@ configuration should work for Mitaka and onwards&lt;/p>
 &lt;p>Create the mapping in Keystone:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack mapping create --rules mapping.egi.json egi-mapping
-+-------+----------------------------------------------------------------------------------------------------------------------------------+
++-------+--------------------------------------------------------------------------------------------------------------------------------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+-------+----------------------------------------------------------------------------------------------------------------------------------+
++-------+--------------------------------------------------------------------------------------------------------------------------------------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> egi-mapping &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> rules &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;remote&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;HTTP_OIDC_SUB&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>, &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;HTTP_OIDC_ISS&amp;#39;&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;any_one_of&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;https://aai-demo.egi.eu/oidc/&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]}&lt;/span>, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> rules &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;remote&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;HTTP_OIDC_SUB&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>, &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;HTTP_OIDC_ISS&amp;#39;&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;any_one_of&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;https://aai-demo.egi.eu/auth/realms/egi&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]}&lt;/span>, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;regex&amp;#39;&lt;/span>: True, u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;OIDC-eduperson_entitlement&amp;#39;&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;any_one_of&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;^urn:mace:egi.eu:.*:ops:vm_operator@egi.eu$&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]}]&lt;/span>, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> u&lt;span style="color:#4e9a06">&amp;#39;local&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;group&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;id&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;89cf5b6708354094942d9d16f0f29f8f&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;user&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;name&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;{0}&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}}]}]&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+-------+----------------------------------------------------------------------------------------------------------------------------------+
++-------+--------------------------------------------------------------------------------------------------------------------------------------+
 &lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
 &lt;p>Finally, create the federated protocol with the identity provider and mapping
 created before:&lt;/p>
@@ -324,7 +324,7 @@ members of &lt;code>fedcloud.egi.eu&lt;/code>:&lt;/p>
 &lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://aai-demo.egi.eu/oidc/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://aai-demo.egi.eu/auth/realms/egi&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;OIDC-eduperson_entitlement&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -352,7 +352,7 @@ members of &lt;code>fedcloud.egi.eu&lt;/code>:&lt;/p>
 &lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://aai-demo.egi.eu/oidc/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://aai-demo.egi.eu/auth/realms/egi&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;OIDC-eduperson_entitlement&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -390,7 +390,7 @@ support, you need to create 3 files:&lt;/p>
 with the OpenID Connect Discovery OP JSON metadata. The easiest way to create
 this file is getting its content from the OIDC server itself. For EGI
 Check-in:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl https://aai-demo.egi.eu/oidc/.well-known/openid-configuration &amp;gt; &lt;span style="color:#4e9a06">\
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration &amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> /var/lib/apache2/oidc/metadata/aai-demo.egi.eu%2Foidc.provider
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
@@ -419,7 +419,7 @@ provider with &lt;code>openid&lt;/code> as protocol:&lt;/p>
 &lt;span style="color:#8f5902;font-style:italic"># This is your Redirect URI with a new iss=&amp;lt;your idp iss&amp;gt; option added&lt;/span>
 &lt;span style="color:#204a87">OIDCDiscoverURL&lt;/span> https://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-demo.egi.eu%2Foidc%2F
 &lt;span style="color:#8f5902;font-style:italic"># Ensure that the user is authenticated with the expected iss&lt;/span>
-&lt;span style="color:#204a87">Require&lt;/span> claim iss:https://aai-demo.egi.eu/oidc/
+&lt;span style="color:#204a87">Require&lt;/span> claim iss:https://aai-demo.egi.eu/auth/realms/egi
 &lt;span style="color:#204a87">Require&lt;/span> valid-user
 &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In your Horizon configuration, set the list of providers and their mappings:&lt;/p>
@@ -444,7 +444,7 @@ docker for facilitating the deployment:&lt;/p>
 (&lt;code>application.yaml&lt;/code>):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">oidc&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">clients&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">issuer-url&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://aai-demo.egi.eu/oidc/&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">issuer-url&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://aai-demo.egi.eu/auth/realms/egi&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client id&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-secret&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client secret&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">issuer-url&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;another idp&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
