@@ -1,0 +1,36 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Obtaining Access/Refresh Tokens</title><link>/users/aai/check-in/obtaining-tokens/</link><description>Recent content in Obtaining Access/Refresh Tokens on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/check-in/obtaining-tokens/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI Check-in Token Portal</title><link>/users/aai/check-in/obtaining-tokens/token-portal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/obtaining-tokens/token-portal/</guid><description>
+&lt;p>The EGI Check-in Token Portal allows users to create Access and Refresh Tokens.&lt;/p>
+&lt;h2 id="obtain-an-access-token">Obtain an Access Token&lt;/h2>
+&lt;p>In order to obtain an Access Token from EGI Check-in Token Portal, please follow
+the steps below:&lt;/p>
+&lt;ol>
+&lt;li>Go to &lt;a href="https://aai.egi.eu/token">https://aai.egi.eu/token&lt;/a> and click on &amp;ldquo;Authorise&amp;rdquo; to authenticate
+yourself. &lt;img src="check-in-token-login.png" alt="EGI Check-in Token Portal Home Page">&lt;/li>
+&lt;li>After logging in you will obtain an Access Token as it is shown below:
+&lt;img src="check-in-token-access-token.png" alt="EGI Check-in Token Portal Access Token">
+&lt;ol>
+&lt;li>The value of the Access Token&lt;/li>
+&lt;li>The command to get user&amp;rsquo;s information from userinfo endpoint&lt;/li>
+&lt;li>Obtain a Refresh Token (more info in
+&lt;a href="#obtain-a-refresh-token">Obtain a Refresh Token&lt;/a> section)&lt;/li>
+&lt;li>Manage your active Access/Refresh Tokens&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="obtain-a-refresh-token">Obtain a Refresh Token&lt;/h2>
+&lt;p>In order to obtain an Refresh Token from EGI Check-in Token Portal, please
+follow the steps below:&lt;/p>
+&lt;ol>
+&lt;li>Go to &lt;a href="https://aai.egi.eu/token">https://aai.egi.eu/token&lt;/a> and click on &amp;ldquo;Authorise&amp;rdquo; to authenticate
+yourself. &lt;img src="check-in-token-login.png" alt="EGI Check-in Token Portal Home Page">&lt;/li>
+&lt;li>After logging in click on &amp;ldquo;Create Refresh Token&amp;rdquo;:
+&lt;img src="check-in-token-access-token-2.png" alt="EGI Check-in Token Portal Access Token">&lt;/li>
+&lt;li>Then you will be redirected back to EGI Check-in Token Portal and you will
+have obtained a Refresh Token:
+&lt;img src="check-in-token-refresh-token.png" alt="EGI Check-in Token Portal Refresh Token">
+&lt;ol>
+&lt;li>The value of the Refresh Token&lt;/li>
+&lt;li>The command to generate new Access Token using the Refresh Token&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>
