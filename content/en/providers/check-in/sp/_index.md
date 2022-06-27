@@ -756,10 +756,12 @@ Example response:
 
 ```json
 {
-  "device_code": "c4341bd6-5e82-4f9c-9f6f-5842409d48db",
+  "device_code": "HvtHOpSah_Anupq-0dtzvN7cb-wcnwxytiMzpBZBN6E",
   "expires_in": 600,
-  "user_code": "IEJSJB",
-  "verification_uri": "https://aai.egi.eu/oidc/device"
+  "interval": 5,
+  "user_code": "NMEM-SDPK",
+  "verification_uri": "https://aai.egi.eu/auth/realms/egi/device",
+  "verification_uri_complete": "https://aai.egi.eu/auth/realms/egi/device?user_code=NMEM-SDPK"
 }
 ```
 
