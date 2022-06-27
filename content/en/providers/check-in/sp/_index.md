@@ -93,8 +93,7 @@ The integration follows a two-step process:
    registration through the EGI Federation Registry Portal. The production
    instance allows access to your service through the academic and social
    Identity Providers connected to Check-in. This requires that your service
-   meets all the
-   [eligibility criteria](#Services_eligible_for_integration "wikilink") and
+   meets all the [eligibility criteria](#Services_eligible_for_integration) and
    that integration has been thoroughly tested during Step 1.
 
 ## General Information
@@ -394,15 +393,15 @@ UserInfo Endpoint:
 
 <!-- markdownlint-disable line-length no-inline-html -->
 
-| Scope                          | Claims                                                                                                                                                                                           |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `openid`                       | `sub`                                                                                                                                                                                            |
-| `profile`                      | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul>                                                                                                 |
-| `email`                        | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>                                                                                                             |
-| `aarc`                         | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li><li>`voperon_id`</li></ul> |
-| `eduperson_entitlement`        | `eduperson_entitlement`                                                                                                                                                                          |
-| `eduperson_scoped_affiliation` | `eduperson_scoped_affiliation`                                                                                                                                                                   |
-| `voperson_id`                  | `voperson_id`                                                                                                                                                                                    |
+| Scope                          | Claims                                                                                                                                                                                            |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `openid`                       | `sub`                                                                                                                                                                                             |
+| `profile`                      | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul>                                                                                                  |
+| `email`                        | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>                                                                                                              |
+| `aarc`                         | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li><li>`voperson_id`</li></ul> |
+| `eduperson_entitlement`        | `eduperson_entitlement`                                                                                                                                                                           |
+| `eduperson_scoped_affiliation` | `eduperson_scoped_affiliation`                                                                                                                                                                    |
+| `voperson_id`                  | `voperson_id`                                                                                                                                                                                     |
 
 <!-- markdownlint-enable line-length no-inline-html -->
 
@@ -901,7 +900,7 @@ form and and self approve it. Finally you should get a pair of `Client ID` and
 #### Configure simple-oidc-client-php
 
 Now that you have everything you need, you can configure your login settings. Go
-to your terminal and open `config.php` with your favorite text editor.
+to your terminal and open `config.php` with your favourite text editor.
 
 Example:
 
