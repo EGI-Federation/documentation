@@ -630,7 +630,7 @@ as follows:
 - Update the `remote-id` of the identity provider:
 
   ```shell
-  openstack identity provider set --remote-id https://aai.egi.eu/oidc/ egi.eu
+  openstack identity provider set --remote-id https://aai.egi.eu/auth/realms/egi egi.eu
   ```
 
 - Update the `HTTP_OIDC_ISS` filter in your mappings, e.g.:
@@ -644,8 +644,8 @@ as follows:
   `aai-demo.egi.eu`:
 
   ```ApacheConf
-  OIDCProviderMetadataURL https://aai.egi.eu/oidc/.well-known/openid-configuration
-  OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/oidc/introspect
+  OIDCProviderMetadataURL https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration
+  OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
   ```
 
 {{% alert title="Changes in the client settings" color="info" %}} If you want to

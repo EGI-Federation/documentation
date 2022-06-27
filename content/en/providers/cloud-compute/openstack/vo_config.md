@@ -55,7 +55,7 @@ for the VOs are listed in
             {
                 "type": "HTTP_OIDC_ISS",
                 "any_one_of": [
-                    "https://aai.egi.eu/oidc/"
+                    "https://aai.egi.eu/auth/realms/egi"
                 ]
             },
             {
