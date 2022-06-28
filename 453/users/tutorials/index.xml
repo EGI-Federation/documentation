@@ -392,7 +392,9 @@ learn how to start a VM at EGI&amp;rsquo;s Federated Cloud infrastructure.&lt;/p
 &lt;p>This VM does not contain any default credentials, in order to access it you need
 a ssh key. Check
 &lt;a href="../../compute/cloud-compute/faq/#how-can-i-inject-my-public-ssh-key-into-the-machine">this FAQ entry&lt;/a>
-for more information.&lt;/p>
+for more information. If you are starting this VM on VirtualBox, you will need
+to pass some valid context for cloud-init, see
+&lt;a href="https://superuser.com/a/853957">here for how to prepare it&lt;/a>&lt;/p>
 &lt;p>The VM image is ready to listen on port &lt;code>22&lt;/code> for ssh access and port &lt;code>80&lt;/code> for
 accessing the notebooks interface. Make sure your have those ports open on your
 security groups, otherwise you will not be able to reach the Jupyter notebooks.&lt;/p>
