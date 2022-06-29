@@ -137,9 +137,7 @@ infrastructures:
   deployed in the infrastructure and the user must set the number of nodes of
   each type he wants to deploy. It will also show the image selected to create
   the VMs (if available). In the dropdown list the user can change the base
-  image, in case that you want to use a new one on the new deployed nodes, or
-  the old one has been removed and you need to select a new one to be able to
-  deploy them.
+  image, to use a new one or because the old one has been removed.
 
   ![Add nodes page](dash_add_nodes.png)
 
