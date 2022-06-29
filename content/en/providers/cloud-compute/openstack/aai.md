@@ -729,7 +729,7 @@ oidc:
     # other clients
 ```
 
-## Keystone configuration
+### Keystone configuration
 
 Similarly to the change from Demo to Production described
 [above](#moving-to-egi-check-in-production-instance), you will need to update
