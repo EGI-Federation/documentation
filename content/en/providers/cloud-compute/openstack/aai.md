@@ -41,8 +41,10 @@ Make sure that you fill in the following options:
   > - Enable _openid_, _profile_, _email_, _eduperson_entitlement_ in the
   >   **Scope** field
   > - Enable _authorization code_ in the **Grant Types** field
-  > - Enable _Allow calls to the Introspection Endpoint?_ in **Introspection**
-  >   field
+  > - Set _Proof Key for Code Exchange (PKCE) Code Challenge Method_ to _SHA-256
+  >   hash algorithm (recommended)_
+  > - Make sure _Allow calls to the Introspection Endpoint?_ is enabled in
+  >   **Introspection** field
 
 Submit the request for review by the Check-in operations team. Once the request
 has been approved, you will get a client ID and client secret. Save them for the
