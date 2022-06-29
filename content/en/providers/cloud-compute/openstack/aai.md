@@ -744,7 +744,7 @@ the URLs on your configuration:
 1. Update the `HTTP_OIDC_ISS` filter in your mappings, e.g.:
 
    ```shell
-   sed -i 's/https:\/\/aai.egi.eu\/oidc\//https:\/\/aai.egi.eu\/aai.egi.eu/' mapping.egi.json
+   sed -i 's#https://aai.egi.eu/oidc/#https://aai.egi.eu/auth-realms/egi#' mapping.egi.json
    openstack mapping set --rules mapping.egi.json egi-mapping
    ```
 
