@@ -1,7 +1,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Joining the EOSC Compute Platform as a provider</title><link>/providers/getting-started/joining-eosc/</link><description>Recent content in Joining the EOSC Compute Platform as a provider on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/getting-started/joining-eosc/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Joining as a Federated Resource Provider - Resource Centre</title><link>/providers/getting-started/joining-eosc/federated-rp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/federated-rp/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>A Resource Centre (RC) is the smallest resource administration domain in the
 EGI Federation. It can be either localised or geographically distributed and
 provides a minimum set of local or remote IT Services compliant with
 well-defined IT Capabilities (HTC, Cloud, Storage, etc.) necessary to make
 resources accessible to Users. EGI is a Resource Infrastructure federating RCs
-to constitute a homogeneous operational domain.&lt;/p></description></item></channel></rss>
+to constitute a homogeneous operational domain.&lt;/p>
+&lt;h2 id="registration-and-certification">Registration and certification&lt;/h2>
+&lt;p>In order to join the EOSC Compute platform, a RC needs to present the request
+to the Research Infrastructure Provider (RP) existing in its country. A RP is
+a legal organisation, part of large Resource Infrastructures like EGI,
+responsible for managing and operating a number of operational services at
+national level supporting RCs and user communities that contribute to such RIs.
+Please have a look at the
+&lt;a href="../../../operations_start_guide">Operations Start Guide&lt;/a> to get familiar with
+the terms mentioned above and to have a complete picture of the several actors
+participating in our landscape.&lt;/p>
+&lt;p>The RP operators are going to guide and support the RC during the registration
+and certification procedures. First, the RC will be asked to read, understand,
+and accept:&lt;/p>
+&lt;ul>
+&lt;li>the &lt;a href="https://documents.egi.eu/document/31">“RCs Operational Level Agreement”&lt;/a>,
+an agreement made between the RC and its RP that defines the minimum set of
+operational services and the respective quality parameters that a Resource
+Centre is required to provide in EGI;&lt;/li>
+&lt;li>the &lt;a href="https://confluence.egi.eu/x/9wbSB">Security Policies&lt;/a> defined in EGI to
+guarantee that all the security aspects with the service delivery are
+fulfilled and enforced.&lt;/li>
+&lt;/ul>
+&lt;p>The next step is registering the RC in the EGI
+&lt;a href="https://goc.egi.eu/">Configuration Database&lt;/a>: the provided information, from
+the generic contacts and roles of people to the service endpoints details will
+be needed to trigger the daily operations of other services and activities
+provided by the EGI Infrastructure such as the Monitoring of the resources, the
+Accounting, the Support, and the security activities.&lt;/p></description></item></channel></rss>
