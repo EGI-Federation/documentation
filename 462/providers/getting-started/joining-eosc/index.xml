@@ -1,1 +1,7 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Joining the EOSC Compute Platform as a provider</title><link>/providers/getting-started/joining-eosc/</link><description>Recent content in Joining the EOSC Compute Platform as a provider on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/getting-started/joining-eosc/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Joining the EOSC Compute Platform as a provider</title><link>/providers/getting-started/joining-eosc/</link><description>Recent content in Joining the EOSC Compute Platform as a provider on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/getting-started/joining-eosc/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Joining as a Federated Resource Provider - Resource Centre</title><link>/providers/getting-started/joining-eosc/federated-rp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/federated-rp/</guid><description>
+&lt;p>A Resource Centre (RC) is the smallest resource administration domain in the
+EGI Federation. It can be either localised or geographically distributed and
+provides a minimum set of local or remote IT Services compliant with
+well-defined IT Capabilities (HTC, Cloud, Storage, etc.) necessary to make
+resources accessible to Users. EGI is a Resource Infrastructure federating RCs
+to constitute a homogeneous operational domain.&lt;/p></description></item></channel></rss>
