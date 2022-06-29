@@ -179,4 +179,53 @@ follow up with the resource provider to work on resolving the ticket. The first 
 resource provider is to acknowledge the vulnerability and then work on a prompt resolution
 as suggested in the ticket. In case a satisfactory resolution is not reached in due time, or
 a sign of active progress on addressing the vulnerability is not visible, the specific
-resource centre may be suspended.&lt;/p></description></item></channel></rss>
+resource centre may be suspended.&lt;/p></description></item><item><title>Providers: Joining as a Technology Provider (TP)</title><link>/providers/getting-started/joining-eosc/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/technology-provider/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Technology Providers develop or deliver technology and software for specific
+user communities or customisation for specific requirements. In our case,
+they maintain the middleware which the RCs install and that allows the users
+to exploit the compute, storage, data, and cloud resources.&lt;/p>
+&lt;h2 id="integration-of-middleware-stack">Integration of middleware stack&lt;/h2>
+&lt;p>To assure production quality of the EGI Infrastructure, every middleware stack
+(Compute, Storage, etc.) installed on and delivered by the RCs needs to fulfil
+a number of requirements.&lt;/p>
+&lt;p>For this purpose a &lt;a href="https://confluence.egi.eu/x/DCImBg">procedure&lt;/a> was defined
+to ensure that any single aspect of the integration of the new piece of
+middleware with the infrastructure is covered before the conclusion of the
+process.&lt;/p>
+&lt;p>After the creation of the request in the
+&lt;a href="https://helpdesk.egi.eu/">EGI Helpdesk&lt;/a>, with details about the technology,
+the contacts, the expected customers, and the motivation, the integration steps
+cover the following areas (where possible, steps can be done in parallel):&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://ims.egi.eu/display/EGIG/Underpinning+agreement">Underpinning Agreement&lt;/a>
+(UA) between EGI Foundation and the technology provider
+&lt;ul>
+&lt;li>it could be either the
+&lt;a href="https://documents.egi.eu/document/2589">Corporate-level Technology Provider Underpinning Agreement&lt;/a>
+or a customised version.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Configuration Management: mapping of the new technology in the Configuration
+Management Database (CMDB)&lt;/li>
+&lt;li>Information System: evaluating if the new technology should publish
+information in the Information System according to the
+&lt;a href="http://www.ogf.org/documents/GFD.147.pdf">GLUE Schema&lt;/a>.&lt;/li>
+&lt;li>Monitoring: the new technology should allow external monitoring. If particular
+aspects of the technology need to be monitored, specific monitoring probes
+should be provided by the TPs and deployed on the
+&lt;a href="https://argo.egi.eu/">EGI Monitoring service&lt;/a>.&lt;/li>
+&lt;li>Support: the Support Unit where incidents and service requests will be
+addressed needs to be defined in the EGI Helpdesk, associated to the
+&lt;a href="https://confluence.egi.eu/x/ygCrB">Quality of Support&lt;/a> defined in the UA.&lt;/li>
+&lt;li>Accounting: the need to gather usage data, which depends on the technology
+itself and on the infrastructure requirements and will be published in the
+&lt;a href="https://accounting.egi.eu/">EGI Accounting Portal&lt;/a>.&lt;/li>
+&lt;li>Integration in UMD: the Unified Middleware Distribution is the integrated set
+of software components contributed by Technology Providers and packaged for
+deployment as production quality services in EGI.&lt;/li>
+&lt;li>Documentation: exhaustive documentation for RC administrators and users should
+be provided and may be added to the &lt;a href="https://docs.egi.eu/">EGI Documentation&lt;/a>.&lt;/li>
+&lt;li>Security: a security assessment of the software is required according to a
+number of guidelines defined by the EGI Security team.&lt;/li>
+&lt;/ul></description></item></channel></rss>
