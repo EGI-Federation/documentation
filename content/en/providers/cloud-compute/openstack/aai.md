@@ -692,7 +692,7 @@ configuration to your metadata directory:
 
 ```shell
 $ curl https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration > \
-	/var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.conf
+       /var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.conf
 # copy credentials from existing client
 $ cp /var/lib/apache2/oidc/metadata/aai.egi.eu%2Foidc.client \
      /var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.client
@@ -707,7 +707,7 @@ EOF
 
 And update your Apache configuration for the authentication with Horizon:
 
-```
+```ApacheConf
 <Location ~ "/identity/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
         AuthType openid-connect
         # This is your Redirect URI with a new iss=<your idp iss> option added
