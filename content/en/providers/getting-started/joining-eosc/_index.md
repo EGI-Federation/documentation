@@ -27,6 +27,7 @@ In particular, we consider here 5 cases:
    Federation or the Platform services blocks.
 5. Joining as Core/Central service provider within the Service Management Tool
    block: providers that support all the other services of the EOSC Compute
-   Platform. Contributing a new (i.e. not yet present) service to the EOSC
-   Compute platform (to the Federated Resource Providers, Compute and Data
-   Federation, or the Platform services blocks).
+   Platform.
+6. Contributing a new (i.e. not yet present) service to the EOSC Compute
+   platform (to the Federated Resource Providers, Compute and Data Federation,
+   or the Platform services blocks).
