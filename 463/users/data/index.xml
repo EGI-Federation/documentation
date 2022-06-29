@@ -1,0 +1,120 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Data Services</title><link>/users/data/</link><description>Recent content in Data Services on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/data/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Online Storage</title><link>/users/data/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/storage/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>&lt;a href="https://www.egi.eu/services/online-storage/">Online Storage&lt;/a> includes services
+that allow users to &lt;strong>store, share and access data&lt;/strong> using the EGI infrastructure.
+Different categories of storage are available, depending on how data is stored,
+the technology used to access and consume data, and the foreseen usage.&lt;/p>
+&lt;p>Three major service offerings are available:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="block-storage">Block Storage&lt;/a> is block-level storage that can be attached to
+virtual machines (VMs) as volumes, a simple solution for durable data that
+does not need to be shared beside a single VM.&lt;/li>
+&lt;li>&lt;a href="grid-storage">Grid Storage&lt;/a> is file storage for
+&lt;a href="../../compute/high-throughput-compute">High Throughput Compute&lt;/a> (HTC) and/or
+&lt;a href="../../compute/high-performance-compute">High Performance Compute&lt;/a> (HPC)
+scenarios.&lt;/li>
+&lt;li>&lt;a href="object-storage">Object Storage&lt;/a> is persistent, hierarchical blob storage for
+cloud native applications, archiving, or when data is shared between different
+VMs or multiple steps of processing workflows.&lt;/li>
+&lt;/ul>
+&lt;h2 id="comparison-of-storage-types">Comparison of storage types&lt;/h2>
+&lt;p>The differences between Block, Grid, and Object Storage are summarized below:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Type&lt;/th>
+&lt;th>Sharing&lt;/th>
+&lt;th>Accounting&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>Block&lt;/strong>&lt;/td>
+&lt;td>From within VMs, only at the same site the VM is located&lt;/td>
+&lt;td>For the entire block&lt;/td>
+&lt;td>POSIX access, use as local disk&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Grid&lt;/strong>&lt;/td>
+&lt;td>From any device connected to the internet&lt;/td>
+&lt;td>For the data stored&lt;/td>
+&lt;td>Grid protocols and HTTP/WebDAV&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Object&lt;/strong>&lt;/td>
+&lt;td>From any device connected to the internet&lt;/td>
+&lt;td>For the data stored&lt;/td>
+&lt;td>HTTP requests to REST API&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The following sections offer a more detailed description of each storage service.&lt;/p></description></item><item><title>Users: Data Management</title><link>/users/data/management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The data management services of EGI comprises two groups of services:&lt;/p>
+&lt;ul>
+&lt;li>Services that provide data &lt;strong>management capabilities&lt;/strong> to enhance the
+&lt;a href="../storage">raw storage&lt;/a> available in the EGI infrastructure&lt;/li>
+&lt;li>Specialized services that offer &lt;strong>advanced organisation of data during
+ongoing research projects&lt;/strong>, as an integrated environment with
+data management and digital lab notebook&lt;/li>
+&lt;/ul>
+&lt;p>The EGI data management services offer both application programming
+inferfaces (APIs) and command-line interfaces (CLIs) that are integrated
+with the advanced EGI services and platforms
+(such as &lt;a href="../../dev-env">development environments&lt;/a>,
+&lt;a href="../../machine-learning">machine learning&lt;/a>, or
+&lt;a href="../../compute/orchestration">cloud orchestrators&lt;/a>),
+and can be accessed from most &lt;a href="../../compute">compute services&lt;/a>.&lt;/p>
+&lt;h2 id="generic-data-management">Generic data management&lt;/h2>
+&lt;p>These higher-level data management services are available to researchers:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="rucio">EGI Rucio&lt;/a> is tailored to medium/big scientific collaborations, allowing
+users to organise, manage, and access their data at scale. Data can be distributed
+across heterogeneous data centers at widely distributed locations.&lt;/li>
+&lt;li>&lt;a href="datahub">EGI DataHub&lt;/a> is a high-performance data management solution that
+offers unified data access across multiple types of underlying storage, allowing
+users to share, collaborate and easily perform computations on the stored data.&lt;/li>
+&lt;/ul>
+&lt;h2 id="specialized-data-management">Specialized data management&lt;/h2>
+&lt;p>The following specialized data management services are also available:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="data-transfer">EGI Data Transfer&lt;/a> is a low-level service to move data from
+one &lt;a href="../storage/grid-storage">Grid&lt;/a> or &lt;a href="../storage/object-storage">Object&lt;/a> storage
+to another. It is used internally by &lt;a href="rucio">Rucio&lt;/a> to schedule transfers based
+on the data policies defined by the users.&lt;/li>
+&lt;li>&lt;a href="open-rdm">openRDM&lt;/a> is a combined &lt;a href="https://en.wikipedia.org/wiki/FAIR_data">FAIR&lt;/a>
+data management platform, Electronic Laboratory Notebook (ELN) and Inventory Management System
+allowing a complete overview of workflows and information, from initial data generation
+to data analysis and publication.&lt;/li>
+&lt;/ul>
+&lt;h2 id="use-cases-for-storing-and-managing-research-data">Use-cases for storing and managing research data&lt;/h2>
+&lt;p>Depending on the type of the employed compute services and the use-cases being addressed,
+users might need to choose different data service to store, access, and manage data.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>User&lt;/th>
+&lt;th>Data storage&lt;/th>
+&lt;th>Data management (optional)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>Cloud user&lt;/strong>&lt;/td>
+&lt;td>Block and Object storage&lt;/td>
+&lt;td>DataHub&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>HTC user&lt;/strong>&lt;/td>
+&lt;td>Grid storage&lt;/td>
+&lt;td>Rucio&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>HPC user&lt;/strong>&lt;/td>
+&lt;td>High-performance parallel file systems or Object storage&lt;/td>
+&lt;td>DataHub or Rucio&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The following sections offer detailed descriptions for each data management service.&lt;/p></description></item></channel></rss>
