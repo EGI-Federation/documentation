@@ -19,9 +19,10 @@ existing platform service (e.g. IM, EC3, DODAS, …) in the Compute and Data
 Federation or the Platform services blocks.&lt;/li>
 &lt;li>Joining as Core/Central service provider within the Service Management Tool
 block: providers that support all the other services of the EOSC Compute
-Platform. Contributing a new (i.e. not yet present) service to the EOSC
-Compute platform (to the Federated Resource Providers, Compute and Data
-Federation, or the Platform services blocks).&lt;/li>
+Platform.&lt;/li>
+&lt;li>Contributing a new (i.e. not yet present) service to the EOSC Compute
+platform (to the Federated Resource Providers, Compute and Data Federation,
+or the Platform services blocks).&lt;/li>
 &lt;/ol></description></item><item><title>Providers: Operations Start Guide</title><link>/providers/getting-started/operations_start_guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/operations_start_guide/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The Operations Start Guide will help you start with EGI Operations duties. It
