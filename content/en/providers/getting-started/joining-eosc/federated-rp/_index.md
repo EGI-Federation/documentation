@@ -45,3 +45,54 @@ be needed to trigger the daily operations of other services and activities
 provided by the EGI Infrastructure such as the Monitoring of the resources, the
 Accounting, the Support, and the security activities.
 
+![Diagram of the RCs status flow](SiteStatusFlow.png)
+
+Once the entry in the Configuration Database is complete, the RP changes the RC
+status from “Candidate” to “Uncertified”, and the certification procedure can
+start: it comprises a series of technical controls to verify that the provided
+services work according to the expectations in the RC OLA. Any identified issue
+is notified by the RP operators to the RC and investigated until its solution.
+
+When all the certification controls are successfully passed, the RC status is
+changed to “Certified” meaning that the RC is included in the production
+infrastructure and its resources can be consumed by the users of the
+infrastructure.
+
+## Setting up agreements with customers
+
+Once moved to the production infrastructure, a RC is ready to deliver its
+resources to any of the users’ communities consuming the infrastructure. Here
+the Service Level Management (SLM) process intervenes as a matchmaker between
+service expectations and needs of the Virtual Organisations (VOs)17 and the
+capabilities of the RCs. During the selection of the providers for service
+provisioning, technical requirements collected from the customer are used by EGI
+to launch a call open to all of the providers. The Expression of Interests (EoIs)
+collected during the negotiation phase will be used to identify the provider(s)
+that best match the customer's requirements and expectations. From a technical
+perspective, several aspects will be considered during the negotiation phase
+including the geographical location of the customer, national roadmap and priority
+of the providers, and costs of the service provisioning in case of a pay-for-use
+model.
+
+In case the negotiation phase ends positively, the selected provider(s) will:
+- Define a VO Operational Level Agreement(s) (OLA) with EGI Foundation for
+  providing the services through the EGI Portfolio to support the user community.
+  EGI Foundation will share with the RCs a draft of the document(s) based on a
+  predefined template and customised with the details of the specific Agreement(s),
+  such as:
+  - the main contacts to be used for communications related to the service(s);
+  - the duration of the Agreement;
+  - conditions for operating the service (service hours and exceptions);
+  - Service Level Targets;
+  - if the resources are exclusively allocated or are subject to local
+    availability;
+  - the payment mode;
+  - responsibility in case of violations and complaints;
+  - any limitations and constraints (if any);
+  - the frequency of service performance reports.
+- Configure the service(s) in the scope of the Agreement(s) enabling the support of
+  the Customer's VO and activating the monitoring of the services/resources.
+
+At the same time, EGI Foundation sets up a VO Service Level Agreement (SLA) with the
+given user community for the provisioning of the requested service. The EGI VO SLA is
+secured with related EGI VO OLAs and is agreed on a case-by-case basis (Fig.3).
