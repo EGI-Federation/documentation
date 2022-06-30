@@ -193,7 +193,16 @@ ticket. The first duty of the resource provider is to acknowledge the
 vulnerability and then work on a prompt resolution as suggested in the ticket.
 In case a satisfactory resolution is not reached in due time, or a sign of
 active progress on addressing the vulnerability is not visible, the specific
-resource centre may be suspended.&lt;/p></description></item><item><title>Providers: Joining as a Technology Provider (TP)</title><link>/providers/getting-started/joining-eosc/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/technology-provider/</guid><description>
+resource centre may be suspended.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/getting-started/joining-eosc/core-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/core-services/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>With the term “central” or “core service” we refer to a category of services in
+the EOSC Compute Platform (like the service management tools) providing
+capabilities that support the other services of the infrastructure and the related
+activities. They are delivered through a single instance (with the fail-over and
+high-availability mechanisms deemed necessary), and differently from services with
+a distributed nature such as HTC, Cloud, and Storage, they cannot be ordered
+through the Marketplace, but they become available as soon as a user joins the
+infrastructure (e.g., the access to the EGI Helpdesk service).&lt;/p></description></item><item><title>Providers: Joining as a Technology Provider (TP)</title><link>/providers/getting-started/joining-eosc/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/technology-provider/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>Technology Providers develop or deliver technology and software for specific
 user communities or customisation for specific requirements. In our case,
