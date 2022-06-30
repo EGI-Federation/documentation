@@ -193,7 +193,13 @@ ticket. The first duty of the resource provider is to acknowledge the
 vulnerability and then work on a prompt resolution as suggested in the ticket.
 In case a satisfactory resolution is not reached in due time, or a sign of
 active progress on addressing the vulnerability is not visible, the specific
-resource centre may be suspended.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/getting-started/joining-eosc/core-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/core-services/</guid><description>
+resource centre may be suspended.&lt;/p></description></item><item><title>Providers: Joining as a new provider of existing services</title><link>/providers/getting-started/joining-eosc/new-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/new-provider/</guid><description>
+&lt;p>To become a provider of one of these services you first have to become provider
+of an EGI Foundation service within the ‘federated resources’ block. Once such
+a foundational role is fulfilled you can configure/deploy the additional service
+within your resource centre. This pre-requirement typically requires you to
+become an EGI Cloud service provider, i.e. deploy OpenStack and federate it into
+the EGI Cloud Compute service.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/getting-started/joining-eosc/core-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/core-services/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>With the term “central” or “core service” we refer to a category of services in
 the EOSC Compute Platform (like the service management tools) providing
