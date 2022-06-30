@@ -19,6 +19,9 @@ modifying server/client configurations (federated approach), can request valid
 server certificates in advance (critical for security) and many other
 advantages.
 
+A short demonstration video is available at
+[fedcloud.eu YouTube channel](https://www.youtube.com/watch?v=dk4VYT2VFmU).
+
 ## Dynamic DNS GUI portal
 
 The Dynamic DNS offers a [web GUI portal](https://nsupdate.fedcloud.eu) where
@@ -109,3 +112,10 @@ where:
 - NS-update portal does not store host secret in recoverable form. If you forget
   the secret of your hostname, simply generate new one via "Show configuration"
   button in the host edit page. The old secret will be invalid.
+
+## Support
+
+Support for Dynamic DNS service is provided via [GGUS Helpdesk](https://ggus.eu/)
+in **"Dynamic DNS"** support unit, where users can ask questions, report issues
+or make requests for additional domains for specific projects or user 
+commnunities.
