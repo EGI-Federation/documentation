@@ -115,7 +115,7 @@ where:
 
 ## Support
 
-Support for Dynamic DNS service is provided via [GGUS Helpdesk](https://ggus.eu/)
+Support for Dynamic DNS service is provided via [EGI Helpdesk](https://ggus.eu/)
 in **"Dynamic DNS"** support unit, where users can ask questions, report issues
 or make requests for additional domains for specific projects or user
 commnunities.
