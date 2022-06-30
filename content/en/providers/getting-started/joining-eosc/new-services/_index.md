@@ -2,7 +2,7 @@
 title: "Joining as a Provider of new services"
 weight: 100
 description:
-"Guidelines for Providers of new services joining the EOSC Compute Platform"
+  "Guidelines for Providers of new services joining the EOSC Compute Platform"
 type: "docs"
 ---
 
