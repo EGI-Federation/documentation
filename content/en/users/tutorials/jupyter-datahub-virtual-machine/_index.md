@@ -14,7 +14,7 @@ that runs a browser accessible jupyter server with DataHub spaces mounted. This
 setup can be used in the EGI Federation or in any other provider which
 synchronise images from AppDB but is not part of the federation.
 
-## Step 0: Requirements
+## Requirements
 
 This tutorial assumes you have:
 
@@ -25,7 +25,9 @@ This tutorial assumes you have:
   Alternatively, this VM can be run on your computer using a virtualization tool
   like VirtualBox.
 
-## Step 1: Start your VM
+## Create a VM with Jupyter and DataHub
+
+### Step 1: Start your VM
 
 Start your VM on your cloud provider or virtualization tool. You can check
 [the tutorial on how to start a VM](../create-your-first-virtual-machine) to
@@ -46,7 +48,7 @@ Once your instance is ready,
 [assign it a public IP](../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm)
 so you can reach it from your computer.
 
-## Step 2: Setup DataHub
+### Step 2: Setup DataHub
 
 Log into [EGI's DataHub](https://datahub.egi.eu/) and
 [create a token](../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis)
@@ -85,7 +87,7 @@ Getting configuration...
 Oneclient has been successfully mounted in '/mnt/datahub'.
 ```
 
-## Step 3: Get your token for the jupyter server
+### Step 3: Get your token for the jupyter server
 
 Your VM will spawn a Jupyter notebooks server upon starting. This server runs as
 an unprivileged user named `jovyan` with the software installed using
