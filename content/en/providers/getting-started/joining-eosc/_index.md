@@ -19,15 +19,11 @@ In particular, we consider here 5 cases:
 2. Joining as a software provider, also called Technology Providers, which are
    the maintainers of the middleware deployed on the ‘federated resource
    providers’ (previous point), enabling compute and storage services.
-3. Joining as a new provider of the EGI Foundation services that are already
-   included in the Compute and Data Federation or the Platform services blocks
-   (e.g. Workload Manager, Notebooks, DataHub, …).
-4. Joining as a new provider of an existing, non-EGI Foundation service of an
-   existing platform service (e.g. IM, EC3, DODAS, …) in the Compute and Data
-   Federation or the Platform services blocks.
-5. Joining as Core/Central service provider within the Service Management Tool
+3. Joining as a new provider of an existing platform service in the Compute
+   and Data Federation or the Platform services.
+4. Joining as Core/Central service provider within the Service Management Tool
    block: providers that support all the other services of the EOSC Compute
    Platform.
-6. Contributing a new (i.e. not yet present) service to the EOSC Compute
+5. Contributing a new (i.e. not yet present) service to the EOSC Compute
    platform (to the Federated Resource Providers, Compute and Data Federation,
    or the Platform services blocks).
