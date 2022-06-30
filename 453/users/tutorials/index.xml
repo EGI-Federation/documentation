@@ -375,7 +375,7 @@ status of the specified job:&lt;/p>
 that runs a browser accessible jupyter server with DataHub spaces mounted. This
 setup can be used in the EGI Federation or in any other provider which
 synchronise images from AppDB but is not part of the federation.&lt;/p>
-&lt;h2 id="step-0-requirements">Step 0: Requirements&lt;/h2>
+&lt;h2 id="requirements">Requirements&lt;/h2>
 &lt;p>This tutorial assumes you have:&lt;/p>
 &lt;ul>
 &lt;li>A valid EGI account: learn to can create one in
@@ -385,7 +385,8 @@ synchronise images from AppDB but is not part of the federation.&lt;/p>
 Alternatively, this VM can be run on your computer using a virtualization tool
 like VirtualBox.&lt;/li>
 &lt;/ul>
-&lt;h2 id="step-1-start-your-vm">Step 1: Start your VM&lt;/h2>
+&lt;h2 id="create-a-vm-with-jupyter-and-datahub">Create a VM with Jupyter and DataHub&lt;/h2>
+&lt;h3 id="step-1-start-your-vm">Step 1: Start your VM&lt;/h3>
 &lt;p>Start your VM on your cloud provider or virtualization tool. You can check
 &lt;a href="../create-your-first-virtual-machine">the tutorial on how to start a VM&lt;/a> to
 learn how to start a VM at EGI&amp;rsquo;s Federated Cloud infrastructure.&lt;/p>
@@ -401,7 +402,7 @@ security groups, otherwise you will not be able to reach the Jupyter notebooks.&
 &lt;p>Once your instance is ready,
 &lt;a href="../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm">assign it a public IP&lt;/a>
 so you can reach it from your computer.&lt;/p>
-&lt;h2 id="step-2-setup-datahub">Step 2: Setup DataHub&lt;/h2>
+&lt;h3 id="step-2-setup-datahub">Step 2: Setup DataHub&lt;/h3>
 &lt;p>Log into &lt;a href="https://datahub.egi.eu/">EGI&amp;rsquo;s DataHub&lt;/a> and
 &lt;a href="../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis">create a token&lt;/a>
 for mounting your data in the VM.&lt;/p>
@@ -424,7 +425,7 @@ oneclient -H &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="c
 Connecting to provider &lt;span style="color:#4e9a06">&amp;#39;plg-cyfronet-01.datahub.egi.eu:443&amp;#39;&lt;/span> using session ID: &lt;span style="color:#4e9a06">&amp;#39;4173323292216088977&amp;#39;&lt;/span>...
 Getting configuration...
 Oneclient has been successfully mounted in &lt;span style="color:#4e9a06">&amp;#39;/mnt/datahub&amp;#39;&lt;/span>.
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-get-your-token-for-the-jupyter-server">Step 3: Get your token for the jupyter server&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-get-your-token-for-the-jupyter-server">Step 3: Get your token for the jupyter server&lt;/h3>
 &lt;p>Your VM will spawn a Jupyter notebooks server upon starting. This server runs as
 an unprivileged user named &lt;code>jovyan&lt;/code> with the software installed using
 &lt;a href="https://mamba.readthedocs.io/">micromamba&lt;/a>. The server uses a randomly
