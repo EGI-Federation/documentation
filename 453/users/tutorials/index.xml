@@ -408,7 +408,7 @@ so you can reach it from your computer.&lt;/p>
 for mounting your data in the VM.&lt;/p>
 &lt;p>You will also need the IP or address of your closest provider for the spaces you
 are interested in accessing. This information is easily obtainable via
-&lt;a href="../../data/management/datahub/clients/#using-the-web-interface">DataHub&amp;rsquo;s web interface&lt;/a>&lt;/p>
+&lt;a href="../../data/management/datahub/clients/#using-the-web-interface">DataHub&amp;rsquo;s web interface&lt;/a>.&lt;/p>
 &lt;p>SSH to your VM as user &lt;code>ubuntu&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ssh ubuntu@&amp;lt;your VM&lt;span style="color:#a40000">&amp;#39;&lt;/span>s IP&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>And edit the &lt;code>mount.sh&lt;/code> script by adding the &lt;code>ONECLIENT_ACCESS_TOKEN&lt;/code> and
