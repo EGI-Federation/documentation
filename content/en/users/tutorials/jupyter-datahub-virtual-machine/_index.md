@@ -56,7 +56,7 @@ for mounting your data in the VM.
 
 You will also need the IP or address of your closest provider for the spaces you
 are interested in accessing. This information is easily obtainable via
-[DataHub's web interface](../../data/management/datahub/clients/#using-the-web-interface)
+[DataHub's web interface](../../data/management/datahub/clients/#using-the-web-interface).
 
 SSH to your VM as user `ubuntu`:
 
