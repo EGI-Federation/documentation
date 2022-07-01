@@ -136,7 +136,7 @@ infrastructures:
   deployment. It will show the list of the different types of nodes currently
   deployed in the infrastructure and the user must set the number of nodes of
   each type he wants to deploy. It will also show a dropdown list with the
-  available base images. It will enable changing the base image used to 
+  available base images. It will enable changing the base image used to
   deploy the new nodes. In some cases it will be necessary because the original
   one has been removed.
 
