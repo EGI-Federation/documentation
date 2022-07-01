@@ -69,7 +69,7 @@ Please include in the request the following info:
 
 ### Run the command on the host
 
-With the obitained `PROVIDER_REGISTRATION_TOKEN`,  paste the copied command 
+With the obtained `PROVIDER_REGISTRATION_TOKEN`,  paste the copied command 
 in the terminal on the Oneprovider machine as superuser.
 
 If necessary, the Onedatify script will ask for permission to install all
