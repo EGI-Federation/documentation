@@ -681,6 +681,8 @@ meaningful service names, can freely move VMs from sites to sites without
 modifying server/client configurations (federated approach), can request valid
 server certificates in advance (critical for security) and many other
 advantages.&lt;/p>
+&lt;p>A short demonstration video is available at
+&lt;a href="https://www.youtube.com/watch?v=dk4VYT2VFmU">fedcloud.eu YouTube channel&lt;/a>.&lt;/p>
 &lt;h2 id="dynamic-dns-gui-portal">Dynamic DNS GUI portal&lt;/h2>
 &lt;p>The Dynamic DNS offers a &lt;a href="https://nsupdate.fedcloud.eu">web GUI portal&lt;/a> where
 users can login using their Check-in credentials. For doing so, click on the
@@ -767,7 +769,12 @@ and not visible during transfer so it is secure to use the update URL&lt;/p>
 the secret of your hostname, simply generate new one via &amp;ldquo;Show configuration&amp;rdquo;
 button in the host edit page. The old secret will be invalid.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Users: Automating Deployments</title><link>/users/compute/cloud-compute/automate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/automate/</guid><description>
+&lt;/ul>
+&lt;h2 id="support">Support&lt;/h2>
+&lt;p>Support for Dynamic DNS service is provided via &lt;a href="https://ggus.eu/">EGI Helpdesk&lt;/a>
+in &lt;strong>&amp;ldquo;Dynamic DNS&amp;rdquo;&lt;/strong> support unit, where users can ask questions, report issues
+or make requests for additional domains for specific projects or user
+commnunities.&lt;/p></description></item><item><title>Users: Automating Deployments</title><link>/users/compute/cloud-compute/automate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/automate/</guid><description>
 &lt;p>The &lt;a href="../../../getting-started/openstack">OpenStack&lt;/a> sites in the EGI Cloud that
 provide compute resources to run virtual machines (VMs) allow nearly everything
 to be done via an Application Programming Interface (API) or a

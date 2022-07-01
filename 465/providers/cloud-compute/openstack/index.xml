@@ -52,10 +52,10 @@ following steps&lt;/p>
 &lt;h2 id="keystone-setup">Keystone setup&lt;/h2>
 &lt;h3 id="pre-requisites">Pre-requisites&lt;/h3>
 &lt;ol>
-&lt;li>Keystone must run as a WSGI application behind an HTTP server (Apache is
-used in this documentation, but any server should be possible if it has
-OpenID connect/OAuth2.0 support). Keystone project has deprecated eventlet,
-so you should be already running Keystone in such way.&lt;/li>
+&lt;li>Keystone must run as a WSGI application behind an HTTP server (Apache is used
+in this documentation, but any server should be possible if it has OpenID
+connect/OAuth2.0 support). Keystone project has deprecated eventlet, so you
+should be already running Keystone in such way.&lt;/li>
 &lt;li>Keystone must be run with SSL&lt;/li>
 &lt;li>You need to install
 &lt;a href="https://github.com/pingidentity/mod_auth_openidc">mod_auth_openidc&lt;/a> for
@@ -78,40 +78,45 @@ your server is configured with the correct Certificate and Revocation path:&lt;/
 &lt;dt>For haproxy&lt;/dt>
 &lt;dd>
 &lt;p>CA and CRLS have to be bundled into one file.&lt;/p>
-&lt;p>Client verification should be set as optional otherwise accepted CAs
-won't be presented to the EGI monitoring:&lt;/p>
+&lt;/dd>
+&lt;/dl>
+&lt;p>Client verification should be set as optional otherwise accepted CAs won't be
+presented to the EGI monitoring:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-plaintext" data-lang="plaintext"># crt: concatenated cert, key and CA
 # ca-file: all IGTF CAs, concatenated as one file
 # crl-file: all IGTF CRLs, concatenated as one file
 # verify: enable optional X.509 client authentication
 bind XXX.XXX.XXX.XXX:443 ssl crt /etc/haproxy/certs/host-cert-with-key-and-ca.pem ca-file /etc/haproxy/certs/igtf-cas-bundle.pem crl-file /etc/haproxy/certs/igtf-crls-bundle.pem verify optional
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;/dd>
+&lt;/code>&lt;/pre>&lt;/div> &lt;!-- markdownlint-enable line-length -->
+&lt;dl>
 &lt;dt>For nginx&lt;/dt>
 &lt;dd>
 &lt;p>CA and CRLS have to be bundled into one file.&lt;/p>
-&lt;p>Client verification should be set as optional otherwise accepted CAs
-won't be presented to the EGI monitoring:&lt;/p>
+&lt;/dd>
+&lt;/dl>
+&lt;p>Client verification should be set as optional otherwise accepted CAs won't be
+presented to the EGI monitoring:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Nginx" data-lang="Nginx">&lt;span style="color:#204a87;font-weight:bold">ssl_client_certificate&lt;/span> &lt;span style="color:#4e9a06">/etc/ssl/certs/igtf-cas-bundle.pem&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">ssl_crl&lt;/span> &lt;span style="color:#4e9a06">/etc/ssl/certs/igtf-crls-bundle.pem&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">ssl_verify_client&lt;/span> &lt;span style="color:#4e9a06">optional&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;/dd>
+&lt;/code>&lt;/pre>&lt;/div>&lt;dl>
 &lt;dt>Managing IGTF CAs and CRLs&lt;/dt>
 &lt;dd>
 &lt;p>IGTF CAs can be obtained from UMD, you can find repository files for your
-distribution at &lt;a href="https://repository.egi.eu/sw/production/cas/1/current/">EGI CA repository&lt;/a>&lt;/p>
-&lt;p>IGTF CAs and CRLs can be bundled using the examples command
-hereafter.&lt;/p>
-&lt;p>Please update CAs bundle after IGTF updates, and CRLs bundle after
-each CRLs update made by fetch-crl:&lt;/p>
+distribution at
+&lt;a href="https://repository.egi.eu/sw/production/cas/1/current/">EGI CA repository&lt;/a>&lt;/p>
+&lt;/dd>
+&lt;/dl>
+&lt;p>IGTF CAs and CRLs can be bundled using the examples command hereafter.&lt;/p>
+&lt;p>Please update CAs bundle after IGTF updates, and CRLs bundle after each CRLs
+update made by fetch-crl:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">cat /etc/grid-security/certificates/*.pem &amp;gt; /etc/haproxy/certs/igtf-cas-bundle.pem
 cat /etc/grid-security/certificates/*.r0 &amp;gt; /etc/haproxy/certs/igtf-crls-bundle.pem
 &lt;span style="color:#8f5902;font-style:italic"># Some CRLs files are not ending with a new line&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Ensuring that CRLs markers are separated by a line feed&lt;/span>
 perl -pe &lt;span style="color:#4e9a06">&amp;#39;s/----------/-----\n-----/&amp;#39;&lt;/span> -i /etc/haproxy/certs/igtf-crls-bundle.pem
-&lt;/code>&lt;/pre>&lt;/div>&lt;/dd>
-&lt;/dl>
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;h2 id="apache-configuration">Apache Configuration&lt;/h2>
 &lt;p>Include this configuration on the Apache config for the virtual host of your
@@ -368,9 +373,8 @@ members of &lt;code>fedcloud.egi.eu&lt;/code>:&lt;/p>
 &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="multiple-oidc-providers">Multiple OIDC providers&lt;/h2>
 &lt;p>If your OpenStack deployment needs to support multiple identity providers
-(besides EGI Check-in) you will need to configure &lt;code>mod_auth_openidc&lt;/code> to
-support &lt;a href="https://github.com/zmartzone/mod_auth_openidc/wiki/Multiple-Providers#discovery">multiple
-providers&lt;/a>
+(besides EGI Check-in) you will need to configure &lt;code>mod_auth_openidc&lt;/code> to support
+&lt;a href="https://github.com/zmartzone/mod_auth_openidc/wiki/Multiple-Providers#discovery">multiple providers&lt;/a>
 and use an OAuth2.0 token introspection proxy like
 &lt;a href="https://github.com/indigo-iam/esaco">ESACO&lt;/a>.&lt;/p>
 &lt;h3 id="mod_auth_openidc-configuration">&lt;code>mod_auth_openidc&lt;/code> configuration&lt;/h3>
@@ -397,16 +401,17 @@ Check-in:&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>&lt;code>&amp;lt;urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped&amp;gt;.client&lt;/code>
-with the client credentials. For EGI Check-in (&lt;code>aai-demo.egi.eu%2Foidc.client&lt;/code>):&lt;/p>
+with the client credentials. For EGI Check-in
+(&lt;code>aai-demo.egi.eu%2Foidc.client&lt;/code>):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_id&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your client id&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_secret&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your secret id&amp;gt;&amp;#34;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your client id&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_secret&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your secret id&amp;gt;&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>&lt;code>&amp;lt;urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped&amp;gt;.conf&lt;/code>
-with any extra configuration for the provider. This may not be needed if
-all your providers are similar. For example to specify the scopes to use for
+with any extra configuration for the provider. This may not be needed if all
+your providers are similar. For example to specify the scopes to use for
 Check-in, use a &lt;code>aai-demo.egi.eu%2Foidc.conf&lt;/code> as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;scope&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid email profile eduperson_entitlement&amp;#34;&lt;/span>
@@ -462,8 +467,8 @@ docker for facilitating the deployment:&lt;/p>
 &lt;span style="color:#000">ESACO_USER_PASSWORD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;esaco password&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
-&lt;p>Run the ESACO server (adapt this as it better fits to run on your servers
-and make it run permanently):&lt;/p>
+&lt;p>Run the ESACO server (adapt this as it better fits to run on your servers and
+make it run permanently):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run -p 8156:8156 -d -env-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>esaco.env &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -v application.yml:/esaco/config/application.yml:ro &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> indigoiam/esaco:latest
@@ -490,10 +495,10 @@ and make it run permanently):&lt;/p>
 &lt;/ol>
 &lt;h2 id="moving-to-egi-check-in-production-instance">Moving to EGI Check-in production instance&lt;/h2>
 &lt;p>Once tests in the development instance of Check-in are successful, you can move
-to the production instance. Go to &lt;a href="https://aai.egi.eu/federation">EGI Federation Registry&lt;/a>
-and submit a Service Request for the production instance of EGI Check-in.
-After the approval of the request, you will need to update your configuration
-as follows:&lt;/p>
+to the production instance. Go to
+&lt;a href="https://aai.egi.eu/federation">EGI Federation Registry&lt;/a> and submit a Service
+Request for the production instance of EGI Check-in. After the approval of the
+request, you will need to update your configuration as follows:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Update the &lt;code>remote-id&lt;/code> of the identity provider:&lt;/p>
@@ -505,8 +510,7 @@ as follows:&lt;/p>
 openstack mapping &lt;span style="color:#204a87">set&lt;/span> --rules mapping.egi.json egi-mapping
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
-&lt;p>Update Apache configuration to use &lt;code>aai.egi.eu&lt;/code> instead of
-&lt;code>aai-demo.egi.eu&lt;/code>:&lt;/p>
+&lt;p>Update Apache configuration to use &lt;code>aai.egi.eu&lt;/code> instead of &lt;code>aai-demo.egi.eu&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87">OIDCProviderMetadataURL&lt;/span> https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration
 &lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
@@ -517,7 +521,73 @@ If you want to
 make any changes to the client configuration, you need to submit a
 reconfiguration request through the
 &lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>.
-&lt;/div></description></item><item><title>Providers: Accounting</title><link>/providers/cloud-compute/openstack/accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/accounting/</guid><description>
+&lt;/div>
+&lt;h2 id="client-migration-to-keycloak">Client Migration to Keycloak&lt;/h2>
+&lt;p>Check-in is migrating its internal implmentation to Keycloak. The Development
+and Demo environments already using Keycloak since June 24th 2022 and Production
+environment expected to migrate during July 2022.&lt;/p>
+&lt;p>A general guide on migration is available on
+&lt;a href="../../check-in/sp/#client-migration-to-keycloak">Check-in documentation&lt;/a>, in
+this section we provide specific information for OpenStack providers.&lt;/p>
+&lt;h3 id="changes-in-apache-configuration">Changes in Apache configuration&lt;/h3>
+&lt;p>The new Keycloak endpoint has a different URL that needs to be updated in your
+apache config. You will also need to add PKCE configuration. These are the
+configuration parameters and their new values:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#8f5902;font-style:italic"># update Metadata URL&lt;/span>
+&lt;span style="color:#204a87">OIDCProviderMetadataURL&lt;/span> https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration
+&lt;span style="color:#8f5902;font-style:italic"># Add PKCE method&lt;/span>
+&lt;span style="color:#204a87">OIDCPKCEMethod&lt;/span> S256
+&lt;span style="color:#8f5902;font-style:italic"># update introspection endpoint&lt;/span>
+&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="multiple-oidc-providers-1">Multiple OIDC providers&lt;/h4>
+&lt;p>If you are using multiple OpenID Connect providers, you will need to add a new
+configuration to your metadata directory:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration &amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> /var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.conf
+&lt;span style="color:#8f5902;font-style:italic"># copy credentials from existing client&lt;/span>
+$ cp /var/lib/apache2/oidc/metadata/aai.egi.eu%2Foidc.client &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> /var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.client
+&lt;span style="color:#8f5902;font-style:italic"># create configuration for the client&lt;/span>
+$ cat &amp;gt; /var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.conf &lt;span style="color:#4e9a06">&amp;lt;&amp;lt; EOF
+&lt;/span>&lt;span style="color:#4e9a06">{
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;scope&amp;#34;: &amp;#34;openid email profile eduperson_entitlement&amp;#34;,
+&lt;/span>&lt;span style="color:#4e9a06"> &amp;#34;pkce_method&amp;#34;: &amp;#34;S256&amp;#34;
+&lt;/span>&lt;span style="color:#4e9a06">}
+&lt;/span>&lt;span style="color:#4e9a06">EOF&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And update your Apache configuration for the authentication with Horizon:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/identity/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;span style="color:#204a87">AuthType&lt;/span> openid-connect
+&lt;span style="color:#8f5902;font-style:italic"># This is your Redirect URI with a new iss=&amp;lt;your idp iss&amp;gt; option added&lt;/span>
+&lt;span style="color:#204a87">OIDCDiscoverURL&lt;/span> http://openstack.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai.egi.eu%2Fauth%2Frealms%2Fegi
+&lt;span style="color:#8f5902;font-style:italic"># Ensure that the user is authenticated with the expected iss&lt;/span>
+&lt;span style="color:#204a87">Require&lt;/span> claim iss:https://aai.egi.eu/auth/realms/egi
+&lt;span style="color:#204a87">Require&lt;/span> valid-user
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Also update ESACO to include the configuration of the new endpoint URL:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">oidc&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">clients&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">issuer-url&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://aai.egi.eu/auth/realms/egi&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client id&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-secret&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client secret&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># other clients&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="keystone-configuration-1">Keystone configuration&lt;/h3>
+&lt;p>Similarly to the change from Demo to Production described
+&lt;a href="#moving-to-egi-check-in-production-instance">above&lt;/a>, you will need to update
+the URLs on your configuration:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Update the &lt;code>remote-id&lt;/code> of the identity provider:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openstack identity provider &lt;span style="color:#204a87">set&lt;/span> --remote-id https://aai.egi.eu/auth/realms/egi egi.eu
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Update the &lt;code>HTTP_OIDC_ISS&lt;/code> filter in your mappings, e.g.:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sed -i &lt;span style="color:#4e9a06">&amp;#39;s#https://aai.egi.eu/oidc/#https://aai.egi.eu/auth/realms/egi#&amp;#39;&lt;/span> mapping.egi.json
+openstack mapping &lt;span style="color:#204a87">set&lt;/span> --rules mapping.egi.json egi-mapping
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>As the issuer changes, new users will be created at your site with same &lt;code>name&lt;/code>
+(the EGI identifier) but different &lt;code>ID&lt;/code>. These users will still be capable of
+managing the VMs as ownership is assigned to the project.&lt;/p></description></item><item><title>Providers: Accounting</title><link>/providers/cloud-compute/openstack/accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/accounting/</guid><description>
 &lt;p>There are two different processes handling the accounting integration:&lt;/p>
 &lt;ul>
 &lt;li>cASO, which connects to the OpenStack deployment to get the usage information,
