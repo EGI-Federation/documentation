@@ -103,7 +103,7 @@ DataHub space is similar to the installation with an empty storage.
 
 When adding support to an existing or new space you should select from the EGI
 DataHub user interface the tab : `Expose Existing dataset`.
- 
+
 Please refer to the steps described in the [Installation and attach empty
 storage to the EGI DataHub](#installation-and-attach-empty-storage-to-the-egi-datahub)
 section to request a `PROVIDER_REGISTRATION_TOKEN`.
