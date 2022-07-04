@@ -48,46 +48,7 @@ Once your instance is ready,
 [assign it a public IP](../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm)
 so you can reach it from your computer.
 
-### Step 2: Setup DataHub
-
-Log into [EGI's DataHub](https://datahub.egi.eu/) and
-[create a token](../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis)
-for mounting your data in the VM.
-
-You will also need the IP or address of your closest provider for the spaces you
-are interested in accessing. This information is easily obtainable via
-[DataHub's web interface](../../data/management/datahub/clients/#using-the-web-interface).
-
-SSH to your VM as user `ubuntu`:
-
-```shell
-$ ssh ubuntu@<your VM's IP>
-```
-
-And edit the `mount.sh` script by adding the `ONECLIENT_ACCESS_TOKEN` and
-`ONECLIENT_PROVIDER_HOST` to get access to DataHub:
-
-```shell
-#!/bin/bash
-
-# Personal token obtained from https://datahub.eu
-ONECLIENT_ACCESS_TOKEN="<your DataHub token>"
-# Closest oneprovider supporting your spaces
-ONECLIENT_PROVIDER_HOST="plg-cyfronet-01.datahub.egi.eu"
-
-oneclient -H "$ONECLIENT_PROVIDER_HOST" -t "$ONECLIENT_ACCESS_TOKEN" /mnt/datahub
-```
-
-Now, mount your spaces by invoking the script:
-
-```shell
-$ mount.sh
-Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '4173323292216088977'...
-Getting configuration...
-Oneclient has been successfully mounted in '/mnt/datahub'.
-```
-
-### Step 3: Get your token for the jupyter server
+### Step 2: Get your token for the jupyter server
 
 Your VM will spawn a Jupyter notebooks server upon starting. This server runs as
 an unprivileged user named `jovyan` with the software installed using
@@ -104,7 +65,7 @@ $ jupyter server list --jsonlist | jq -r .[].token
 <your token>
 ```
 
-## Step 4: Start your notebooks
+## Step 3: Start your notebooks
 
 Now point your browser to `http://<your VM's IP>` and you will be able to enter
 the token to get started with Jupyter. The `datahub` folder will contain all
@@ -117,3 +78,26 @@ jupyter or via ssh. For example for installing `tensorflow`:
 $ micromamba activate
 $ micromamba install -c conda-forge tensorflow
 ```
+
+### Step 4: Setup DataHub
+
+Log into [EGI's DataHub](https://datahub.egi.eu/) and
+[create a token](../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis)
+for mounting your data in the VM.
+
+You will also need the IP or address of your closest provider for the spaces you
+are interested in accessing. This information is easily obtainable via
+[DataHub's web interface](../../data/management/datahub/clients/#using-the-web-interface).
+
+Go to your Jupyter session in your browser and edit the `mount.sh` file in your
+home directory. Set the `ONECLIENT_ACCESS_TOKEN` and `ONECLIENT_PROVIDER_HOST`
+values to get access to DataHub:
+
+![Edit mount.sh](edit-mount.sh.png)
+
+Open a terminal from the launcher screen and execute the `mount.sh` script:
+
+![mount-onedata](run-mount.sh.png)
+
+You should now see a `datahub` folder with all your spaces available directly
+from your Jupyter interface
