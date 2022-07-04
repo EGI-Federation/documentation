@@ -562,8 +562,7 @@ Check-in by selecting the &amp;ldquo;Production&amp;rdquo; integration environme
 registration through the EGI Federation Registry Portal. The production
 instance allows access to your service through the academic and social
 Identity Providers connected to Check-in. This requires that your service
-meets all the
-&lt;a href="#Services_eligible_for_integration" title="wikilink">eligibility criteria&lt;/a> and
+meets all the &lt;a href="#Services_eligible_for_integration">eligibility criteria&lt;/a> and
 that integration has been thoroughly tested during Step 1.&lt;/li>
 &lt;/ol>
 &lt;h2 id="general-information">General Information&lt;/h2>
@@ -658,7 +657,7 @@ id="tabs-0-0" role="tabpanel" aria-labelled-by="tabs-0-0-tab">
 &lt;/tr>
 &lt;tr>
 &lt;td>OpenID Connect&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/.well-known/openid-configuration">https://aai.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -679,7 +678,7 @@ id="tabs-0-1" role="tabpanel" aria-labelled-by="tabs-0-1-tab">
 &lt;/tr>
 &lt;tr>
 &lt;td>OpenID Connect&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/oidc/.well-known/openid-configuration">https://aai-demo.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -700,7 +699,7 @@ id="tabs-0-2" role="tabpanel" aria-labelled-by="tabs-0-2-tab">
 &lt;/tr>
 &lt;tr>
 &lt;td>OpenID Connect&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -883,7 +882,7 @@ attributes that are relevant for user authorisation:&lt;/p>
 &lt;h3 id="references">References&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://shibboleth.atlassian.net/wiki/spaces/SP3/overview">Shibboleth Service Provider Documentation&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://simplesamlphp.org/docs/latest/simplesamlphp-sp.html">SimpleSAMLphp Service Provider QuickStart&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://simplesamlphp.org/docs/stable/simplesamlphp-sp.html">SimpleSAMLphp Service Provider QuickStart&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/latchset/mod_auth_mellon">Simple SAML 2.0 service provider with mod_auth_mellon Apache module&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="openid-connect-service-provider">OpenID Connect Service Provider&lt;/h2>
@@ -978,7 +977,7 @@ UserInfo Endpoint:&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>aarc&lt;/code>&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;code>name&lt;/code>&lt;/li>&lt;li>&lt;code>given_name&lt;/code>&lt;/li>&lt;li>&lt;code>family_name&lt;/code>&lt;/li>&lt;li>&lt;code>preferred_username&lt;/code>&lt;/li>&lt;li>&lt;code>email&lt;/code>&lt;/li>&lt;li>&lt;code>email_verified&lt;/code>&lt;/li>&lt;li>&lt;code>voperson_verified_email&lt;/code>&lt;/li>&lt;li>&lt;code>voperon_id&lt;/code>&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;code>name&lt;/code>&lt;/li>&lt;li>&lt;code>given_name&lt;/code>&lt;/li>&lt;li>&lt;code>family_name&lt;/code>&lt;/li>&lt;li>&lt;code>preferred_username&lt;/code>&lt;/li>&lt;li>&lt;code>email&lt;/code>&lt;/li>&lt;li>&lt;code>email_verified&lt;/code>&lt;/li>&lt;li>&lt;code>voperson_verified_email&lt;/code>&lt;/li>&lt;li>&lt;code>voperson_id&lt;/code>&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>eduperson_entitlement&lt;/code>&lt;/td>
@@ -1045,39 +1044,39 @@ id="tabs-4-0" role="tabpanel" aria-labelled-by="tabs-4-0-tab">
 &lt;tbody>
 &lt;tr>
 &lt;td>Provider configuration&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/.well-known/openid-configuration">https://aai.egi.eu/oidc/.well-known/openid-configuration&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai.egi.eu/oidc/.well-known/openid-configuration">https://aai.egi.eu/oidc/.well-known/openid-configuration&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Issuer&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/">https://aai.egi.eu/oidc/&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai.egi.eu/oidc/">https://aai.egi.eu/oidc/&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai.egi.eu/auth/realms/egi">https://aai.egi.eu/auth/realms/egi&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Authorisation&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/authorize">https://aai.egi.eu/oidc/authorize&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai.egi.eu/oidc/authorize">https://aai.egi.eu/oidc/authorize&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth">https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Token&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/token">https://aai.egi.eu/oidc/token&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai.egi.eu/oidc/token">https://aai.egi.eu/oidc/token&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token">https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Device Code&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/devicecode">https://aai.egi.eu/oidc/devicecode&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai.egi.eu/oidc/devicecode">https://aai.egi.eu/oidc/devicecode&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device">https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>JSON Web Key(JWK)&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/jwk">https://aai.egi.eu/oidc/jwk&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai.egi.eu/oidc/jwk">https://aai.egi.eu/oidc/jwk&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/certs">https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/certs&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>User Info&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/userinfo">https://aai.egi.eu/oidc/userinfo&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai.egi.eu/oidc/userinfo">https://aai.egi.eu/oidc/userinfo&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo">https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Introspection&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/introspect">https://aai.egi.eu/oidc/introspect&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai.egi.eu/oidc/introspect">https://aai.egi.eu/oidc/introspect&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect">https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Logout&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc/saml/logout">https://aai.egi.eu/oidc/saml/logout&lt;/a>&lt;/td>
+&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai.egi.eu/oidc/saml/logout">https://aai.egi.eu/oidc/saml/logout&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/logout">https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/logout&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1094,39 +1093,39 @@ id="tabs-4-1" role="tabpanel" aria-labelled-by="tabs-4-1-tab">
 &lt;tbody>
 &lt;tr>
 &lt;td>Provider configuration&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/.well-known/openid-configuration">https://aai-demo.egi.eu/oidc/.well-known/openid-configuration&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Issuer&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/">https://aai-demo.egi.eu/oidc/&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi">https://aai-demo.egi.eu/auth/realms/egi&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi">https://aai-demo.egi.eu/auth/realms/egi&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Authorisation&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/authorize">https://aai-demo.egi.eu/oidc/authorize&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Token&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/token">https://aai-demo.egi.eu/oidc/token&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Device Code&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/devicecode">https://aai-demo.egi.eu/oidc/devicecode&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>JSON Web Key(JWK)&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/jwk">https://aai-demo.egi.eu/oidc/jwk&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>User Info&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/userinfo">https://aai-demo.egi.eu/oidc/userinfo&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Introspection&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/introspect">https://aai-demo.egi.eu/oidc/introspect&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Logout&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-demo.egi.eu/oidc/saml/logout">https://aai-demo.egi.eu/oidc/saml/logout&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout">https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1143,39 +1142,39 @@ id="tabs-4-2" role="tabpanel" aria-labelled-by="tabs-4-2-tab">
 &lt;tbody>
 &lt;tr>
 &lt;td>Provider configuration&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/.well-known/openid-configuration">https://aai-dev.egi.eu/oidc/.well-known/openid-configuration&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration">https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Issuer&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/">https://aai-dev.egi.eu/oidc/&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi">https://aai-dev.egi.eu/auth/realms/egi&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi">https://aai-dev.egi.eu/auth/realms/egi&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Authorisation&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/authorize">https://aai-dev.egi.eu/oidc/authorize&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Token&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/token">https://aai-dev.egi.eu/oidc/token&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Device Code&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/devicecode">https://aai-dev.egi.eu/oidc/devicecode&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>JSON Web Key(JWK)&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/jwk">https://aai-dev.egi.eu/oidc/jwk&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>User Info&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/userinfo">https://aai-dev.egi.eu/oidc/userinfo&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo&lt;/a> (Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Introspection&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/introspect">https://aai-dev.egi.eu/oidc/introspect&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Logout&lt;/td>
-&lt;td>&lt;ul>&lt;li>&lt;a href="https://aai-dev.egi.eu/oidc/saml/logout">https://aai-dev.egi.eu/oidc/saml/logout&lt;/a> (MITREid Connect)&lt;/li>&lt;li>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout&lt;/a>(Keycloak)&lt;/li>&lt;/ul>&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout">https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1496,10 +1495,12 @@ in the &lt;a href="#endpoints">Endpoints&lt;/a> table.
 &lt;/div>
 &lt;p>Example response:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;device_code&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;c4341bd6-5e82-4f9c-9f6f-5842409d48db&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;device_code&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HvtHOpSah_Anupq-0dtzvN7cb-wcnwxytiMzpBZBN6E&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;expires_in&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">600&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;user_code&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;IEJSJB&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;verification_uri&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/device&amp;#34;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;interval&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">5&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;user_code&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;NMEM-SDPK&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;verification_uri&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/auth/realms/egi/device&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">&amp;#34;verification_uri_complete&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/auth/realms/egi/device?user_code=NMEM-SDPK&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h6 id="2-user-interaction">2. User Interaction&lt;/h6>
 &lt;p>After receiving a successful Authorization Response, the client displays or
@@ -1657,7 +1658,7 @@ form and and self approve it. Finally you should get a pair of &lt;code>Client I
 &lt;code>Client Secret&lt;/code>.&lt;/p>
 &lt;h4 id="configure-simple-oidc-client-php">Configure simple-oidc-client-php&lt;/h4>
 &lt;p>Now that you have everything you need, you can configure your login settings. Go
-to your terminal and open &lt;code>config.php&lt;/code> with your favorite text editor.&lt;/p>
+to your terminal and open &lt;code>config.php&lt;/code> with your favourite text editor.&lt;/p>
 &lt;p>Example:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">vi simple-oidc-client-php/config.php
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Let&amp;rsquo;s go quickly through the settings:&lt;/p>
@@ -1723,9 +1724,17 @@ setup earlier:&lt;/p>
 &lt;span style="color:#000">$sessionLifetime&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">60&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">*&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">60&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#8f5902;font-style:italic">// must be equal to access token validation time in seconds
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="client-migration-to-keycloak">Client Migration to Keycloak&lt;/h3>
 &lt;p>The migration guide below applies to OIDC clients registered in the
-&lt;strong>Development&lt;/strong> and the &lt;strong>Demo&lt;/strong> environment of Check-in. &lt;strong>Beginning June 24,
-2022, clients using the legacy Check-in OIDC endpoints will no longer be
-supported&lt;/strong>&lt;/p>
+&lt;strong>Development&lt;/strong>, &lt;strong>Demo&lt;/strong> and &lt;strong>Production&lt;/strong> environments of Check-in.&lt;/p>
+&lt;p>&lt;strong>Development and Demo&lt;/strong>: Beginning June 24, 2022, clients using the legacy
+Check-in OIDC endpoints will no longer be supported.&lt;/p>
+&lt;p>&lt;strong>Production&lt;/strong>: Beginning July 22, 2022, clients using the legacy Check-in OIDC
+endpoints will no longer be supported.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+For OpenStack Services please read the
+OpenStack specific migration guide on
+&lt;a href="../../cloud-compute/openstack/aai#client-migration-to-keycloak">Cloud Compute documentation&lt;/a>.
+&lt;/div>
 &lt;h4 id="how-to-migrate-your-service-to-keycloak">How to Migrate your Service to Keycloak&lt;/h4>
 &lt;p>All the clients that were registered in MITREid Connect have been moved to
 Keycloak preserving all the options (Client ID, Client Secret, Redirect URIs
@@ -1784,20 +1793,17 @@ please check the following table:&lt;/p>
 &lt;thead>
 &lt;tr>
 &lt;th>Issuer&lt;/th>
-&lt;th>Demo environment&lt;/th>
-&lt;th>Development environment&lt;/th>
+&lt;th>Production environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>Keycloak&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/token">https://aai-demo.egi.eu/token&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/token">https://aai-dev.egi.eu/token&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/token">https://aai.egi.eu/token&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>MITREid Connect (Legacy)&lt;/td>
-&lt;td>&lt;a href="https://aai-demo.egi.eu/token-legacy">https://aai-demo.egi.eu/token-legacy&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://aai-dev.egi.eu/token-legacy">https://aai-dev.egi.eu/token-legacy&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/token-legacy">https://aai.egi.eu/token-legacy&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1866,25 +1872,25 @@ make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
 integration goes via an intermediary service, called a Master Portal. EGI is
 running two Master Portal instances, one development, one production instance.&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
-&lt;ul class="nav nav-tabs" id="tabs-16" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-17" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-16-0-tab" data-toggle="tab" href="#tabs-16-0" role="tab"
-aria-controls="tabs-16-0" aria-selected="true">
+id="tabs-17-0-tab" data-toggle="tab" href="#tabs-17-0" role="tab"
+aria-controls="tabs-17-0" aria-selected="true">
 Production
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-16-1-tab" data-toggle="tab" href="#tabs-16-1" role="tab"
-aria-controls="tabs-16-1" aria-selected="false">
+id="tabs-17-1-tab" data-toggle="tab" href="#tabs-17-1" role="tab"
+aria-controls="tabs-17-1" aria-selected="false">
 Development
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-16-content">
+&lt;div class="tabx-content" id="tabs-17-content">
 &lt;div class="tab-pane show active"
-id="tabs-16-0" role="tabpanel" aria-labelled-by="tabs-16-0-tab">
+id="tabs-17-0" role="tabpanel" aria-labelled-by="tabs-17-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1921,7 +1927,7 @@ id="tabs-16-0" role="tabpanel" aria-labelled-by="tabs-16-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-16-1" role="tabpanel" aria-labelled-by="tabs-16-1-tab">
+id="tabs-17-1" role="tabpanel" aria-labelled-by="tabs-17-1-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
