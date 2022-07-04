@@ -882,7 +882,7 @@ attributes that are relevant for user authorisation:&lt;/p>
 &lt;h3 id="references">References&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://shibboleth.atlassian.net/wiki/spaces/SP3/overview">Shibboleth Service Provider Documentation&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://simplesamlphp.org/docs/latest/simplesamlphp-sp.html">SimpleSAMLphp Service Provider QuickStart&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://simplesamlphp.org/docs/stable/simplesamlphp-sp.html">SimpleSAMLphp Service Provider QuickStart&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/latchset/mod_auth_mellon">Simple SAML 2.0 service provider with mod_auth_mellon Apache module&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="openid-connect-service-provider">OpenID Connect Service Provider&lt;/h2>
@@ -1733,7 +1733,7 @@ endpoints will no longer be supported.&lt;/p>
 &lt;h4 class="alert-heading">Note&lt;/h4>
 For OpenStack Services please read the
 OpenStack specific migration guide on
-&lt;a href="../../cloud-compute/openstack/aai/#client-migration-to-keycloak">Cloud Compute documentation&lt;/a>.
+&lt;a href="../cloud-compute/openstack/aai/#client-migration-to-keycloak">Cloud Compute documentation&lt;/a>.
 &lt;/div>
 &lt;h4 id="how-to-migrate-your-service-to-keycloak">How to Migrate your Service to Keycloak&lt;/h4>
 &lt;p>All the clients that were registered in MITREid Connect have been moved to
