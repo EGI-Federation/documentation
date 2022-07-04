@@ -193,7 +193,7 @@ and other Onedata APIs.&lt;/p>
 &lt;span style="color:#8f5902;font-style:italic"># Retrieving an OIDC token from Check-in&lt;/span>
 curl -X POST &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#000">$CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;amp;grant_type=refresh_token&amp;amp;refresh_token=&lt;/span>&lt;span style="color:#000">$REFRESH_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;amp;scope=openid%20email%20profile%20eduperson_entitlement&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;https://aai.egi.eu/oidc/token&amp;#39;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token&amp;#39;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Token is in the access_token field of the response&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
 &lt;p>The following variables should be set:&lt;/p>
