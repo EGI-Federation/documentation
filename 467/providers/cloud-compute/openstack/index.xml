@@ -38,8 +38,10 @@ needed.&lt;/li>
 &lt;li>Enable &lt;em>openid&lt;/em>, &lt;em>profile&lt;/em>, &lt;em>email&lt;/em>, &lt;em>eduperson_entitlement&lt;/em> in the
 &lt;strong>Scope&lt;/strong> field&lt;/li>
 &lt;li>Enable &lt;em>authorization code&lt;/em> in the &lt;strong>Grant Types&lt;/strong> field&lt;/li>
-&lt;li>Enable &lt;em>Allow calls to the Introspection Endpoint?&lt;/em> in &lt;strong>Introspection&lt;/strong>
-field&lt;/li>
+&lt;li>Set &lt;em>Proof Key for Code Exchange (PKCE) Code Challenge Method&lt;/em> to &lt;em>SHA-256
+hash algorithm (recommended)&lt;/em>&lt;/li>
+&lt;li>Make sure &lt;em>Allow calls to the Introspection Endpoint?&lt;/em> is enabled in
+&lt;strong>Introspection&lt;/strong> field&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
 &lt;/li>
@@ -500,7 +502,7 @@ request, you will need to update your configuration as follows:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Update the &lt;code>remote-id&lt;/code> of the identity provider:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack identity provider &lt;span style="color:#204a87">set&lt;/span> --remote-id https://aai.egi.eu/oidc/ egi.eu
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openstack identity provider &lt;span style="color:#204a87">set&lt;/span> --remote-id https://aai.egi.eu/auth/realms/egi egi.eu
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>Update the &lt;code>HTTP_OIDC_ISS&lt;/code> filter in your mappings, e.g.:&lt;/p>
@@ -509,8 +511,8 @@ openstack mapping &lt;span style="color:#204a87">set&lt;/span> --rules mapping.e
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>Update Apache configuration to use &lt;code>aai.egi.eu&lt;/code> instead of &lt;code>aai-demo.egi.eu&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87">OIDCProviderMetadataURL&lt;/span> https://aai.egi.eu/oidc/.well-known/openid-configuration
-&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> https://aai.egi.eu/oidc/introspect
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87">OIDCProviderMetadataURL&lt;/span> https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration
+&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ul>
 &lt;div class="alert alert-info" role="alert">
@@ -521,11 +523,11 @@ reconfiguration request through the
 &lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>.
 &lt;/div>
 &lt;h2 id="client-migration-to-keycloak">Client Migration to Keycloak&lt;/h2>
-&lt;p>Check-in is migrating its internal implmentation to Keycloak. The Development
+&lt;p>Check-in is migrating its internal implementation to Keycloak. The Development
 and Demo environments already using Keycloak since June 24th 2022 and Production
 environment expected to migrate during July 2022.&lt;/p>
 &lt;p>A general guide on migration is available on
-&lt;a href="../../check-in/sp/#client-migration-to-keycloak">Check-in documentation&lt;/a>, in
+&lt;a href="../../../check-in/sp/#client-migration-to-keycloak">Check-in documentation&lt;/a>, in
 this section we provide specific information for OpenStack providers.&lt;/p>
 &lt;h3 id="changes-in-apache-configuration">Changes in Apache configuration&lt;/h3>
 &lt;p>The new Keycloak endpoint has a different URL that needs to be updated in your
@@ -943,7 +945,7 @@ for the VOs are listed in
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/&amp;#34;&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/auth/realms/egi&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;span style="color:#000;font-weight:bold">{&lt;/span>

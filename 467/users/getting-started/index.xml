@@ -665,7 +665,7 @@ can perform commands on &lt;a href="../openstack">OpenStack services&lt;/a> depl
 &lt;/ul>
 &lt;h3 id="installation">Installation&lt;/h3>
 &lt;p>The FedCloud client can be installed with the &lt;code>pip3&lt;/code> Python package manager
-(without root or aministrator privileges).&lt;/p>
+(without root or administrator privileges).&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -867,9 +867,9 @@ then obtain one using the refresh token.&lt;/p>
 protocol via the option &lt;code>--openstack-auth-protocol&lt;/code>. However, sites may have
 the protocol fixed in the site configuration (e.g. &lt;code>oidc&lt;/code> for the site
 &lt;em>INFN-CLOUD-BARI&lt;/em>).&lt;/p>
-&lt;!-- markdownlint-disable no-bare-urls -->
-&lt;p>The default OIDC identity provider is EGI Check-in (&lt;a href="https://aai.egi.eu/oidc)">https://aai.egi.eu/oidc)&lt;/a>.
-Users can set another OIDC identity provider via option &lt;code>--oidc-url&lt;/code>.&lt;/p>
+&lt;p>The default OIDC identity provider is EGI Check-in
+(&lt;a href="https://aai.egi.eu/auth/realms/egi">https://aai.egi.eu/auth/realms/egi&lt;/a>). Users can set another OIDC identity
+provider via option &lt;code>--oidc-url&lt;/code>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Remember to also set the identity
@@ -886,7 +886,7 @@ used options like site, VO, etc. using environment variables.
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 When you want commands to work on all
 sites in the EGI infrastructure, use &lt;code>ALL_SITES&lt;/code> for the &lt;code>--site&lt;/code> parameter
-(pass it directly or via an anvironment variable).
+(pass it directly or via an environment variable).
 &lt;/div>
 &lt;table>
 &lt;thead>
@@ -925,7 +925,7 @@ sites in the EGI infrastructure, use &lt;code>ALL_SITES&lt;/code> for the &lt;co
 &lt;tr>
 &lt;td>OIDC_URL&lt;/td>
 &lt;td>&lt;code>--oidc-url&lt;/code>&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/oidc">https://aai.egi.eu/oidc&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/auth/realms/egi">https://aai.egi.eu/auth/realms/egi&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>OPENSTACK_AUTH_PROTOCOL&lt;/td>
@@ -954,7 +954,6 @@ sites in the EGI infrastructure, use &lt;code>ALL_SITES&lt;/code> for the &lt;co
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;!-- markdownlint-enable no-bare-urls -->
 &lt;h4 id="getting-help">Getting help&lt;/h4>
 &lt;p>The FedCloud client can display help for the commands and subcommands it
 supports. Try running the following command to see the commands supported
@@ -965,7 +964,7 @@ Options:
 --version Show the version and exit.
 --help Show this message and exit.
 Commands:
-ec3 EC3 related comands
+ec3 EC3 related commands
 endpoint endpoint &lt;span style="color:#204a87">command&lt;/span> group &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> interaction with GOCDB and...
 openstack Executing OpenStack commands on site and VO
 openstack-int Interactive OpenStack client on site and VO
@@ -981,7 +980,7 @@ Options:
 --oidc-client-secret TEXT OIDC client secret
 --oidc-refresh-token TEXT OIDC refresh token
 --oidc-access-token TEXT OIDC access token
---oidc-url TEXT OIDC URL &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default: https://aai.egi.eu/oidc&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+--oidc-url TEXT OIDC URL &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default: &amp;lt;https://aai.egi.eu/auth/realms/egi&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 --oidc-agent-account TEXT short account name in oidc-agent
 --openstack-auth-protocol TEXT Check-in protocol &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default: openid&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 --openstack-auth-type TEXT Check-in authentication &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default:
