@@ -297,7 +297,7 @@ refresh_data = {
     'scope': 'openid email profile',
 }
 
-r = requests.post("https://aai.egi.eu/oidc/token",
+r = requests.post("https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token",
                   auth=(client_id, client_secret),
                   data=refresh_data)
 
