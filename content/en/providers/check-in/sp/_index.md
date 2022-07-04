@@ -309,7 +309,7 @@ attributes that are relevant for user authorisation:
 ### References
 
 - [Shibboleth Service Provider Documentation](https://shibboleth.atlassian.net/wiki/spaces/SP3/overview)
-- [SimpleSAMLphp Service Provider QuickStart](https://simplesamlphp.org/docs/latest/simplesamlphp-sp.html)
+- [SimpleSAMLphp Service Provider QuickStart](https://simplesamlphp.org/docs/stable/simplesamlphp-sp.html)
 - [Simple SAML 2.0 service provider with mod_auth_mellon Apache module](https://github.com/latchset/mod_auth_mellon)
 
 ## OpenID Connect Service Provider
@@ -987,7 +987,7 @@ endpoints will no longer be supported.
 
 {{% alert title="Note" color="info" %}} For OpenStack Services please read the
 OpenStack specific migration guide on
-[Cloud Compute documentation](../../cloud-compute/openstack/aai/#client-migration-to-keycloak).{{% /alert %}}
+[Cloud Compute documentation](../cloud-compute/openstack/aai/#client-migration-to-keycloak).{{% /alert %}}
 
 #### How to Migrate your Service to Keycloak
 
