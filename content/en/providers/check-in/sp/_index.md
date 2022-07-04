@@ -987,7 +987,8 @@ endpoints will no longer be supported.
 
 {{% alert title="Note" color="info" %}} For OpenStack Services please read the
 OpenStack specific migration guide on
-[Cloud Compute documentation](../../cloud-compute/openstack/aai#client-migration-to-keycloak).{{% /alert %}}
+[Cloud Compute documentation](../../cloud-compute/openstack/aai.md#client-migration-to-keycloak).
+{{% /alert %}}
 
 #### How to Migrate your Service to Keycloak
 
