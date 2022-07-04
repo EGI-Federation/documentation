@@ -402,30 +402,7 @@ security groups, otherwise you will not be able to reach the Jupyter notebooks.&
 &lt;p>Once your instance is ready,
 &lt;a href="../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm">assign it a public IP&lt;/a>
 so you can reach it from your computer.&lt;/p>
-&lt;h3 id="step-2-setup-datahub">Step 2: Setup DataHub&lt;/h3>
-&lt;p>Log into &lt;a href="https://datahub.egi.eu/">EGI&amp;rsquo;s DataHub&lt;/a> and
-&lt;a href="../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis">create a token&lt;/a>
-for mounting your data in the VM.&lt;/p>
-&lt;p>You will also need the IP or address of your closest provider for the spaces you
-are interested in accessing. This information is easily obtainable via
-&lt;a href="../../data/management/datahub/clients/#using-the-web-interface">DataHub&amp;rsquo;s web interface&lt;/a>.&lt;/p>
-&lt;p>SSH to your VM as user &lt;code>ubuntu&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ssh ubuntu@&amp;lt;your VM&lt;span style="color:#a40000">&amp;#39;&lt;/span>s IP&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>And edit the &lt;code>mount.sh&lt;/code> script by adding the &lt;code>ONECLIENT_ACCESS_TOKEN&lt;/code> and
-&lt;code>ONECLIENT_PROVIDER_HOST&lt;/code> to get access to DataHub:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic">#!/bin/bash
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Personal token obtained from https://datahub.eu&lt;/span>
-&lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your DataHub token&amp;gt;&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Closest oneprovider supporting your spaces&lt;/span>
-&lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;plg-cyfronet-01.datahub.egi.eu&amp;#34;&lt;/span>
-oneclient -H &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -t &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> /mnt/datahub
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now, mount your spaces by invoking the script:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ mount.sh
-Connecting to provider &lt;span style="color:#4e9a06">&amp;#39;plg-cyfronet-01.datahub.egi.eu:443&amp;#39;&lt;/span> using session ID: &lt;span style="color:#4e9a06">&amp;#39;4173323292216088977&amp;#39;&lt;/span>...
-Getting configuration...
-Oneclient has been successfully mounted in &lt;span style="color:#4e9a06">&amp;#39;/mnt/datahub&amp;#39;&lt;/span>.
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-get-your-token-for-the-jupyter-server">Step 3: Get your token for the jupyter server&lt;/h3>
+&lt;h3 id="step-2-get-your-token-for-the-jupyter-server">Step 2: Get your token for the jupyter server&lt;/h3>
 &lt;p>Your VM will spawn a Jupyter notebooks server upon starting. This server runs as
 an unprivileged user named &lt;code>jovyan&lt;/code> with the software installed using
 &lt;a href="https://mamba.readthedocs.io/">micromamba&lt;/a>. The server uses a randomly
@@ -437,7 +414,7 @@ $ sudo su - jovyan
 $ micromamba activate
 $ jupyter server list --jsonlist &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .&lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>.token
 &amp;lt;your token&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-start-your-notebooks">Step 4: Start your notebooks&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-start-your-notebooks">Step 3: Start your notebooks&lt;/h2>
 &lt;p>Now point your browser to &lt;code>http://&amp;lt;your VM's IP&amp;gt;&lt;/code> and you will be able to enter
 the token to get started with Jupyter. The &lt;code>datahub&lt;/code> folder will contain all
 your mounted DataHub spaces.&lt;/p>
@@ -445,4 +422,18 @@ your mounted DataHub spaces.&lt;/p>
 jupyter or via ssh. For example for installing &lt;code>tensorflow&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ micromamba activate
 $ micromamba install -c conda-forge tensorflow
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-setup-datahub">Step 4: Setup DataHub&lt;/h3>
+&lt;p>Log into &lt;a href="https://datahub.egi.eu/">EGI&amp;rsquo;s DataHub&lt;/a> and
+&lt;a href="../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis">create a token&lt;/a>
+for mounting your data in the VM.&lt;/p>
+&lt;p>You will also need the IP or address of your closest provider for the spaces you
+are interested in accessing. This information is easily obtainable via
+&lt;a href="../../data/management/datahub/clients/#using-the-web-interface">DataHub&amp;rsquo;s web interface&lt;/a>.&lt;/p>
+&lt;p>Go to your Jupyter session in your browser and edit the &lt;code>mount.sh&lt;/code> file in your
+home directory. Set the &lt;code>ONECLIENT_ACCESS_TOKEN&lt;/code> and &lt;code>ONECLIENT_PROVIDER_HOST&lt;/code>
+values to get access to DataHub:&lt;/p>
+&lt;p>&lt;img src="edit-mount.sh.png" alt="Edit mount.sh">&lt;/p>
+&lt;p>Open a terminal from the launcher screen and execute the &lt;code>mount.sh&lt;/code> script:&lt;/p>
+&lt;p>&lt;img src="run-mount.sh.png" alt="mount-onedata">&lt;/p>
+&lt;p>You should now see a &lt;code>datahub&lt;/code> folder with all your spaces available directly
+from your Jupyter interface&lt;/p></description></item></channel></rss>
