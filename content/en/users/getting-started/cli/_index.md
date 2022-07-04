@@ -45,7 +45,7 @@ FedCloud client has the following modules (features):
 ### Installation
 
 The FedCloud client can be installed with the `pip3` Python package manager
-(without root or aministrator privileges).
+(without root or administrator privileges).
 
 {{< tabpanex >}}
 {{< tabx header="Linux / Mac" >}}
@@ -252,9 +252,9 @@ protocol via the option `--openstack-auth-protocol`. However, sites may have
 the protocol fixed in the site configuration (e.g. `oidc` for the site
 _INFN-CLOUD-BARI_).
 
-<!-- markdownlint-disable no-bare-urls -->
-The default OIDC identity provider is EGI Check-in (https://aai.egi.eu/oidc).
-Users can set another OIDC identity provider via option `--oidc-url`.
+The default OIDC identity provider is EGI Check-in
+(<https://aai.egi.eu/auth/realms/egi>). Users can set another OIDC identity
+provider via option `--oidc-url`.
 
 {{% alert title="Note" color="info" %}} Remember to also set the identity
 provider's name accordingly for OpenStack commands, by using the option `--openstack-auth-provider`.
@@ -270,23 +270,22 @@ used options like site, VO, etc. using environment variables.
 
 {{% alert title="Tip" color="info" %}} When you want commands to work on all
 sites in the EGI infrastructure, use `ALL_SITES` for the `--site` parameter
-(pass it directly or via an anvironment variable).
+(pass it directly or via an environment variable).
 {{% /alert %}}
 
-| Environment variable    | Command-line option         | Default value           |
-|-------------------------|-----------------------------|-------------------------|
-| OIDC_AGENT_ACCOUNT      | `--oidc-agent-account`      |                         |
-| OIDC_ACCESS_TOKEN       | `--oidc-access-token`       |                         |
-| OIDC_REFRESH_TOKEN      | `--oidc-refresh-token`      |                         |
-| OIDC_CLIENT_ID          | `--oidc-client-id`          |                         |
-| OIDC_CLIENT_SECRET      | `--oidc-client-secret`      |                         |
-| OIDC_URL                | `--oidc-url`                | https://aai.egi.eu/oidc |
-| OPENSTACK_AUTH_PROTOCOL | `--openstack-auth-protocol` | openid                  |
-| OPENSTACK_AUTH_PROVIDER | `--openstack-auth-provider` | egi.eu                  |
-| OPENSTACK_AUTH_TYPE     | `--openstack-auth-type`     | v3oidcaccesstoken       |
-| EGI_SITE                | `--site`                    |                         |
-| EGI_VO                  | `--vo`                      |                         |
-<!-- markdownlint-enable no-bare-urls -->
+| Environment variable    | Command-line option         | Default value                        |
+| ----------------------- | --------------------------- | ------------------------------------ |
+| OIDC_AGENT_ACCOUNT      | `--oidc-agent-account`      |                                      |
+| OIDC_ACCESS_TOKEN       | `--oidc-access-token`       |                                      |
+| OIDC_REFRESH_TOKEN      | `--oidc-refresh-token`      |                                      |
+| OIDC_CLIENT_ID          | `--oidc-client-id`          |                                      |
+| OIDC_CLIENT_SECRET      | `--oidc-client-secret`      |                                      |
+| OIDC_URL                | `--oidc-url`                | <https://aai.egi.eu/auth/realms/egi> |
+| OPENSTACK_AUTH_PROTOCOL | `--openstack-auth-protocol` | openid                               |
+| OPENSTACK_AUTH_PROVIDER | `--openstack-auth-provider` | egi.eu                               |
+| OPENSTACK_AUTH_TYPE     | `--openstack-auth-type`     | v3oidcaccesstoken                    |
+| EGI_SITE                | `--site`                    |                                      |
+| EGI_VO                  | `--vo`                      |                                      |
 
 #### Getting help
 
@@ -303,7 +302,7 @@ Options:
   --help     Show this message and exit.
 
 Commands:
-  ec3            EC3 related comands
+  ec3            EC3 related commands
   endpoint       endpoint command group for interaction with GOCDB and...
   openstack      Executing OpenStack commands on site and VO
   openstack-int  Interactive OpenStack client on site and VO
@@ -325,7 +324,7 @@ Options:
   --oidc-client-secret TEXT       OIDC client secret
   --oidc-refresh-token TEXT       OIDC refresh token
   --oidc-access-token TEXT        OIDC access token
-  --oidc-url TEXT                 OIDC URL  [default: https://aai.egi.eu/oidc]
+  --oidc-url TEXT                 OIDC URL  [default: <https://aai.egi.eu/auth/realms/egi>]
   --oidc-agent-account TEXT       short account name in oidc-agent
   --openstack-auth-protocol TEXT  Check-in protocol  [default: openid]
   --openstack-auth-type TEXT      Check-in authentication type  [default:
