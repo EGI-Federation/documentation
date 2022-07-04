@@ -664,12 +664,12 @@ reconfiguration request through the
 
 ## Client Migration to Keycloak
 
-Check-in is migrating its internal implmentation to Keycloak. The Development
+Check-in is migrating its internal implementation to Keycloak. The Development
 and Demo environments already using Keycloak since June 24th 2022 and Production
 environment expected to migrate during July 2022.
 
 A general guide on migration is available on
-[Check-in documentation](../../check-in/sp/#client-migration-to-keycloak), in
+[Check-in documentation](../../../check-in/sp/#client-migration-to-keycloak), in
 this section we provide specific information for OpenStack providers.
 
 ### Changes in Apache configuration
