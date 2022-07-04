@@ -41,8 +41,10 @@ Make sure that you fill in the following options:
   > - Enable _openid_, _profile_, _email_, _eduperson_entitlement_ in the
   >   **Scope** field
   > - Enable _authorization code_ in the **Grant Types** field
-  > - Enable _Allow calls to the Introspection Endpoint?_ in **Introspection**
-  >   field
+  > - Set _Proof Key for Code Exchange (PKCE) Code Challenge Method_ to _SHA-256
+  >   hash algorithm (recommended)_
+  > - Make sure _Allow calls to the Introspection Endpoint?_ is enabled in
+  >   **Introspection** field
 
 Submit the request for review by the Check-in operations team. Once the request
 has been approved, you will get a client ID and client secret. Save them for the
@@ -638,7 +640,7 @@ request, you will need to update your configuration as follows:
 - Update the `remote-id` of the identity provider:
 
   ```shell
-  openstack identity provider set --remote-id https://aai.egi.eu/oidc/ egi.eu
+  openstack identity provider set --remote-id https://aai.egi.eu/auth/realms/egi egi.eu
   ```
 
 - Update the `HTTP_OIDC_ISS` filter in your mappings, e.g.:
@@ -651,8 +653,8 @@ request, you will need to update your configuration as follows:
 - Update Apache configuration to use `aai.egi.eu` instead of `aai-demo.egi.eu`:
 
   ```ApacheConf
-  OIDCProviderMetadataURL https://aai.egi.eu/oidc/.well-known/openid-configuration
-  OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/oidc/introspect
+  OIDCProviderMetadataURL https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration
+  OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
   ```
 
 {{% alert title="Changes in the client settings" color="info" %}} If you want to
@@ -662,12 +664,12 @@ reconfiguration request through the
 
 ## Client Migration to Keycloak
 
-Check-in is migrating its internal implmentation to Keycloak. The Development
+Check-in is migrating its internal implementation to Keycloak. The Development
 and Demo environments already using Keycloak since June 24th 2022 and Production
 environment expected to migrate during July 2022.
 
 A general guide on migration is available on
-[Check-in documentation](../../check-in/sp/#client-migration-to-keycloak), in
+[Check-in documentation](../../../check-in/sp/#client-migration-to-keycloak), in
 this section we provide specific information for OpenStack providers.
 
 ### Changes in Apache configuration
