@@ -22,14 +22,14 @@ This tutorial assumes you have:
   [Check-in](../../aai/check-in/signup).
 - Access to a cloud provider where the
   [Jupyter DataHub VM is available](https://appdb.egi.eu/store/vappliance/jupyter.datahub.vm).
-  Alternatively, this VM can be run on your computer using a virtualization tool
+  Alternatively, this VM can be run on your computer using a virtualisation tool
   like VirtualBox.
 
 ## Create a VM with Jupyter and DataHub
 
 ### Step 1: Start your VM
 
-Start your VM on your cloud provider or virtualization tool. You can check
+Start your VM on your cloud provider or virtualisation tool. You can check
 [the tutorial on how to start a VM](../create-your-first-virtual-machine) to
 learn how to start a VM at EGI's Federated Cloud infrastructure.
 
