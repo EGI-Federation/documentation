@@ -372,7 +372,7 @@ status of the specified job:&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="CERN-PROD-FTS3.png" alt="WebFTS credential delegation">&lt;/p></description></item><item><title>Users: Create a Virtual Machine with Jupyter and DataHub</title><link>/users/tutorials/jupyter-datahub-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/jupyter-datahub-virtual-machine/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to start a Virtual Machine in the EGI Federation
-that runs a browser-accessible jupyter server with DataHub spaces mounted. This
+that runs a browser-accessible Jupyter server with DataHub spaces mounted. This
 setup can be used in the EGI Federation or in any other provider which
 synchronise images from AppDB but is not part of the federation.&lt;/p>
 &lt;h2 id="requirements">Requirements&lt;/h2>
@@ -382,12 +382,12 @@ synchronise images from AppDB but is not part of the federation.&lt;/p>
 &lt;a href="../../aai/check-in/signup">Check-in&lt;/a>.&lt;/li>
 &lt;li>Access to a cloud provider where the
 &lt;a href="https://appdb.egi.eu/store/vappliance/jupyter.datahub.vm">Jupyter DataHub VM is available&lt;/a>.
-Alternatively, this VM can be run on your computer using a virtualization tool
+Alternatively, this VM can be run on your computer using a virtualisation tool
 like VirtualBox.&lt;/li>
 &lt;/ul>
 &lt;h2 id="create-a-vm-with-jupyter-and-datahub">Create a VM with Jupyter and DataHub&lt;/h2>
 &lt;h3 id="step-1-start-your-vm">Step 1: Start your VM&lt;/h3>
-&lt;p>Start your VM on your cloud provider or virtualization tool. You can check
+&lt;p>Start your VM on your cloud provider or virtualisation tool. You can check
 &lt;a href="../create-your-first-virtual-machine">the tutorial on how to start a VM&lt;/a> to
 learn how to start a VM at EGI&amp;rsquo;s Federated Cloud infrastructure.&lt;/p>
 &lt;p>This VM does not contain any default credentials, in order to access it you need
@@ -425,8 +425,8 @@ $ micromamba install -c conda-forge tensorflow
 &lt;p>Log into &lt;a href="https://datahub.egi.eu/">EGI&amp;rsquo;s DataHub&lt;/a> and
 &lt;a href="../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis">create a token&lt;/a>
 for mounting your data in the VM.&lt;/p>
-&lt;p>You will also need the IP or address of your closest Oneprovider for the spaces you
-are interested in accessing. This information is easily obtainable via
+&lt;p>You will also need the IP or address of your closest Oneprovider for the spaces
+you are interested in accessing. This information is easily obtainable via
 &lt;a href="../../data/management/datahub/clients/#using-the-web-interface">DataHub&amp;rsquo;s web interface&lt;/a>.&lt;/p>
 &lt;p>Go to your Jupyter session in your browser and edit the &lt;code>mount.sh&lt;/code> file in your
 home directory. Set the &lt;code>ONECLIENT_ACCESS_TOKEN&lt;/code> and &lt;code>ONECLIENT_PROVIDER_HOST&lt;/code>
