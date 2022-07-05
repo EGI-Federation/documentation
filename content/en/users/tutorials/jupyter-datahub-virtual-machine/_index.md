@@ -48,7 +48,7 @@ Once your instance is ready,
 [assign it a public IP](../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm)
 so you can reach it from your computer.
 
-### Step 2: Get your token for the jupyter server
+### Step 2: Get your token for the Jupyter server
 
 Your VM will spawn a Jupyter notebooks server upon starting. This server runs as
 an unprivileged user named `jovyan` with the software installed using
