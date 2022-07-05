@@ -372,7 +372,7 @@ status of the specified job:&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="CERN-PROD-FTS3.png" alt="WebFTS credential delegation">&lt;/p></description></item><item><title>Users: Create a Virtual Machine with Jupyter and DataHub</title><link>/users/tutorials/jupyter-datahub-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/jupyter-datahub-virtual-machine/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to start a Virtual Machine in the EGI Federation
-that runs a browser-accessible jupyter server with DataHub spaces mounted. This
+that runs a browser-accessible Jupyter server with DataHub spaces mounted. This
 setup can be used in the EGI Federation or in any other provider which
 synchronise images from AppDB but is not part of the federation.&lt;/p>
 &lt;h2 id="requirements">Requirements&lt;/h2>
@@ -402,7 +402,7 @@ security groups, otherwise you will not be able to reach the Jupyter notebooks.&
 &lt;p>Once your instance is ready,
 &lt;a href="../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm">assign it a public IP&lt;/a>
 so you can reach it from your computer.&lt;/p>
-&lt;h3 id="step-2-get-your-token-for-the-jupyter-server">Step 2: Get your token for the jupyter server&lt;/h3>
+&lt;h3 id="step-2-get-your-token-for-the-jupyter-server">Step 2: Get your token for the Jupyter server&lt;/h3>
 &lt;p>Your VM will spawn a Jupyter notebooks server upon starting. This server runs as
 an unprivileged user named &lt;code>jovyan&lt;/code> with the software installed using
 &lt;a href="https://mamba.readthedocs.io/">micromamba&lt;/a>. The server uses a randomly
@@ -418,14 +418,14 @@ $ jupyter server list --jsonlist &lt;span style="color:#000;font-weight:bold">|&
 &lt;p>Now point your browser to &lt;code>http://&amp;lt;your VM's IP&amp;gt;&lt;/code> and you will be able to enter
 the token to get started with Jupyter.&lt;/p>
 &lt;p>You can install additional packages with mamba from a terminal started from
-jupyter or via ssh. For example for installing &lt;code>tensorflow&lt;/code>:&lt;/p>
+Jupyter or via ssh. For example for installing &lt;code>tensorflow&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ micromamba activate
 $ micromamba install -c conda-forge tensorflow
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-mount-datahub-spaces">Step 4: Mount DataHub spaces&lt;/h3>
 &lt;p>Log into &lt;a href="https://datahub.egi.eu/">EGI&amp;rsquo;s DataHub&lt;/a> and
 &lt;a href="../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis">create a token&lt;/a>
 for mounting your data in the VM.&lt;/p>
-&lt;p>You will also need the IP or address of your closest provider for the spaces you
+&lt;p>You will also need the IP or address of your closest Oneprovider for the spaces you
 are interested in accessing. This information is easily obtainable via
 &lt;a href="../../data/management/datahub/clients/#using-the-web-interface">DataHub&amp;rsquo;s web interface&lt;/a>.&lt;/p>
 &lt;p>Go to your Jupyter session in your browser and edit the &lt;code>mount.sh&lt;/code> file in your
