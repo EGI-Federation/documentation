@@ -416,13 +416,12 @@ $ jupyter server list --jsonlist &lt;span style="color:#000;font-weight:bold">|&
 &amp;lt;your token&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-start-your-notebooks">Step 3: Start your notebooks&lt;/h3>
 &lt;p>Now point your browser to &lt;code>http://&amp;lt;your VM's IP&amp;gt;&lt;/code> and you will be able to enter
-the token to get started with Jupyter. The &lt;code>datahub&lt;/code> folder will contain all
-your mounted DataHub spaces.&lt;/p>
+the token to get started with Jupyter.&lt;/p>
 &lt;p>You can install additional packages with mamba from a terminal started from
 jupyter or via ssh. For example for installing &lt;code>tensorflow&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ micromamba activate
 $ micromamba install -c conda-forge tensorflow
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-setup-datahub">Step 4: Setup DataHub&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-mount-datahub-spaces">Step 4: Mount DataHub spaces&lt;/h3>
 &lt;p>Log into &lt;a href="https://datahub.egi.eu/">EGI&amp;rsquo;s DataHub&lt;/a> and
 &lt;a href="../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis">create a token&lt;/a>
 for mounting your data in the VM.&lt;/p>
