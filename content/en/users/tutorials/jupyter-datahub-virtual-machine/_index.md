@@ -68,7 +68,7 @@ $ jupyter server list --jsonlist | jq -r .[].token
 ### Step 3: Start your notebooks
 
 Now point your browser to `http://<your VM's IP>` and you will be able to enter
-the token to get started with Jupyter. 
+the token to get started with Jupyter.
 
 You can install additional packages with mamba from a terminal started from
 jupyter or via ssh. For example for installing `tensorflow`:
