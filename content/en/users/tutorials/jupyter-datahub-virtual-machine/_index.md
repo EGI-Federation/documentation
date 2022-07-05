@@ -10,7 +10,7 @@ description: >
 ## Overview
 
 This tutorial describes how to start a Virtual Machine in the EGI Federation
-that runs a browser-accessible jupyter server with DataHub spaces mounted. This
+that runs a browser-accessible Jupyter server with DataHub spaces mounted. This
 setup can be used in the EGI Federation or in any other provider which
 synchronise images from AppDB but is not part of the federation.
 
