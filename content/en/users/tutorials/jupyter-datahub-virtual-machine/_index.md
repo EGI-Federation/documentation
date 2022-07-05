@@ -84,7 +84,7 @@ Log into [EGI's DataHub](https://datahub.egi.eu/) and
 [create a token](../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis)
 for mounting your data in the VM.
 
-You will also need the IP or address of your closest provider for the spaces you
+You will also need the IP or address of your closest Oneprovider for the spaces you
 are interested in accessing. This information is easily obtainable via
 [DataHub's web interface](../../data/management/datahub/clients/#using-the-web-interface).
 
