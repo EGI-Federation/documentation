@@ -369,4 +369,70 @@ interface to see using one the FTS servers and appending the job ID returned
 from one of the previous examples. For instance the link below will show the
 status of the specified job:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">https://fts-public-003.cern.ch:8449/fts3/ftsmon/#/job/247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="CERN-PROD-FTS3.png" alt="WebFTS credential delegation">&lt;/p></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="CERN-PROD-FTS3.png" alt="WebFTS credential delegation">&lt;/p></description></item><item><title>Users: Create a Virtual Machine with Jupyter and DataHub</title><link>/users/tutorials/jupyter-datahub-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/jupyter-datahub-virtual-machine/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This tutorial describes how to start a Virtual Machine in the EGI Federation
+that runs a browser-accessible Jupyter server with DataHub spaces mounted. This
+setup can be used in the EGI Federation or in any other provider which
+synchronise images from AppDB but is not part of the federation.&lt;/p>
+&lt;h2 id="requirements">Requirements&lt;/h2>
+&lt;p>This tutorial assumes you have:&lt;/p>
+&lt;ul>
+&lt;li>A valid EGI account: learn to can create one in
+&lt;a href="../../aai/check-in/signup">Check-in&lt;/a>.&lt;/li>
+&lt;li>Access to a cloud provider where the
+&lt;a href="https://appdb.egi.eu/store/vappliance/jupyter.datahub.vm">Jupyter DataHub VM is available&lt;/a>.
+Alternatively, this VM can be run on your computer using a virtualisation tool
+like VirtualBox.&lt;/li>
+&lt;/ul>
+&lt;h2 id="create-a-vm-with-jupyter-and-datahub">Create a VM with Jupyter and DataHub&lt;/h2>
+&lt;h3 id="step-1-start-your-vm">Step 1: Start your VM&lt;/h3>
+&lt;p>Start your VM on your cloud provider or virtualisation tool. You can check
+&lt;a href="../create-your-first-virtual-machine">the tutorial on how to start a VM&lt;/a> to
+learn how to start a VM at EGI&amp;rsquo;s Federated Cloud infrastructure.&lt;/p>
+&lt;p>This VM does not contain any default credentials, in order to access it you need
+a ssh key. Check
+&lt;a href="../../compute/cloud-compute/faq/#how-can-i-inject-my-public-ssh-key-into-the-machine">this FAQ entry&lt;/a>
+for more information. If you are starting this VM on VirtualBox, you will need
+to pass some valid context for cloud-init, see
+&lt;a href="https://superuser.com/a/853957">here how to prepare it&lt;/a>.&lt;/p>
+&lt;p>The VM image is ready to listen on port &lt;code>22&lt;/code> for ssh access and port &lt;code>80&lt;/code> for
+accessing the notebooks interface. Make sure your have those ports open on your
+security groups, otherwise you will not be able to reach the Jupyter notebooks.&lt;/p>
+&lt;p>Once your instance is ready,
+&lt;a href="../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm">assign it a public IP&lt;/a>
+so you can reach it from your computer.&lt;/p>
+&lt;h3 id="step-2-get-your-token-for-the-jupyter-server">Step 2: Get your token for the Jupyter server&lt;/h3>
+&lt;p>Your VM will spawn a Jupyter notebooks server upon starting. This server runs as
+an unprivileged user named &lt;code>jovyan&lt;/code> with the software installed using
+&lt;a href="https://mamba.readthedocs.io/">micromamba&lt;/a>. The server uses a randomly
+generated token for authentication that you can obtain by logging into the VM
+and becoming &lt;code>jovyan&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ssh ubuntu@&amp;lt;your VM&lt;span style="color:#a40000">&amp;#39;&lt;/span>s IP&amp;gt;
+&lt;span style="color:#8f5902;font-style:italic"># become jovyan user and activate the default environment&lt;/span>
+$ sudo su - jovyan
+$ micromamba activate
+$ jupyter server list --jsonlist &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .&lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>.token
+&amp;lt;your token&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-start-your-notebooks">Step 3: Start your notebooks&lt;/h3>
+&lt;p>Now point your browser to &lt;code>http://&amp;lt;your VM's IP&amp;gt;&lt;/code> and you will be able to enter
+the token to get started with Jupyter.&lt;/p>
+&lt;p>You can install additional packages with mamba from a terminal started from
+Jupyter or via ssh. For example for installing &lt;code>tensorflow&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ micromamba activate
+$ micromamba install -c conda-forge tensorflow
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-mount-datahub-spaces">Step 4: Mount DataHub spaces&lt;/h3>
+&lt;p>Log into &lt;a href="https://datahub.egi.eu/">EGI&amp;rsquo;s DataHub&lt;/a> and
+&lt;a href="../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis">create a token&lt;/a>
+for mounting your data in the VM.&lt;/p>
+&lt;p>You will also need the IP or address of your closest Oneprovider for the spaces
+you are interested in accessing. This information is easily obtainable via
+&lt;a href="../../data/management/datahub/clients/#using-the-web-interface">DataHub&amp;rsquo;s web interface&lt;/a>.&lt;/p>
+&lt;p>Go to your Jupyter session in your browser and edit the &lt;code>mount.sh&lt;/code> file in your
+home directory. Set the &lt;code>ONECLIENT_ACCESS_TOKEN&lt;/code> and &lt;code>ONECLIENT_PROVIDER_HOST&lt;/code>
+values to get access to DataHub:&lt;/p>
+&lt;p>&lt;img src="edit-mount.sh.png" alt="Edit mount.sh">&lt;/p>
+&lt;p>Open a terminal from the launcher screen and execute the &lt;code>mount.sh&lt;/code> script:&lt;/p>
+&lt;p>&lt;img src="run-mount.sh.png" alt="mount-onedata">&lt;/p>
+&lt;p>You should now see a &lt;code>datahub&lt;/code> folder with all your spaces available directly
+from your Jupyter interface&lt;/p></description></item></channel></rss>
