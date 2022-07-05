@@ -65,7 +65,7 @@ $ jupyter server list --jsonlist | jq -r .[].token
 <your token>
 ```
 
-## Step 3: Start your notebooks
+### Step 3: Start your notebooks
 
 Now point your browser to `http://<your VM's IP>` and you will be able to enter
 the token to get started with Jupyter. The `datahub` folder will contain all
