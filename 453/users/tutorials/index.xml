@@ -414,7 +414,7 @@ $ sudo su - jovyan
 $ micromamba activate
 $ jupyter server list --jsonlist &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .&lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>.token
 &amp;lt;your token&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-start-your-notebooks">Step 3: Start your notebooks&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-start-your-notebooks">Step 3: Start your notebooks&lt;/h3>
 &lt;p>Now point your browser to &lt;code>http://&amp;lt;your VM's IP&amp;gt;&lt;/code> and you will be able to enter
 the token to get started with Jupyter. The &lt;code>datahub&lt;/code> folder will contain all
 your mounted DataHub spaces.&lt;/p>
