@@ -45,13 +45,21 @@ either select an existing space or create a new one.&lt;/p>
 &lt;p>Secondly, you can select on the space menu the &lt;code>Providers&lt;/code> section and click on
 the &lt;code>Add Support&lt;/code> button on the top right corner.&lt;/p>
 &lt;p>&lt;img src="add-support-oneprovider.png" alt="image">&lt;/p>
-&lt;p>You should then select on the page the tab: &lt;code>Deploy your own provider&lt;/code> and there
-you will have to copy the command already configured with the correct parameters
-for the OneZone to use (&lt;code>datahub.egi.eu&lt;/code>) and the space to join.&lt;/p>
+&lt;p>You should then select on the page the tab: &lt;code>Deploy your own provider&lt;/code>&lt;/p>
+&lt;p>In order to obtain the &lt;code>PROVIDER_REGISTRATION_TOKEN&lt;/code> that is part of the
+preconfigured command, you need to contact the
+&lt;a href="https://ggus.eu/?mode=ticket_submit">EGI HelpDesk&lt;/a>, selecting DataHub as
+support unit.&lt;/p>
+&lt;p>Please include in the request the following info:&lt;/p>
+&lt;ul>
+&lt;li>Use case for the installation of a Oneprovider connected to the EGI DataHub&lt;/li>
+&lt;li>Name and the email of the Oneprovider admin&lt;/li>
+&lt;li>domain name of the Oneprovider&lt;/li>
+&lt;/ul>
 &lt;p>&lt;img src="onedatify-oneprovider.png" alt="image">&lt;/p>
 &lt;h3 id="run-the-command-on-the-host">Run the command on the host&lt;/h3>
-&lt;p>Paste the copied command in the terminal on the Oneprovider machine as
-superuser.&lt;/p>
+&lt;p>With the obtained &lt;code>PROVIDER_REGISTRATION_TOKEN&lt;/code>, paste the copied command in the
+terminal on the Oneprovider machine as superuser.&lt;/p>
 &lt;p>If necessary, the Onedatify script will ask for permission to install all
 necessary dependencies including Docker and Docker Compose.&lt;/p>
 &lt;p>After the dependency installation is complete, the script will ask several
@@ -69,9 +77,12 @@ Oneprovider.&lt;/p>
 &lt;p>The installation of a new OneProvider to expose existing datasets to an EGI
 DataHub space is similar to the installation with an empty storage.&lt;/p>
 &lt;p>When adding support to an existing or new space you should select from the EGI
-DataHub user interface the tab : &lt;code>Expose Existing dataset&lt;/code> and there you will
-have to copy the command already configured with the correct parameters for the
-Onezone (&lt;code>datahub.egi.eu&lt;/code>) and the space to join.&lt;/p>
+DataHub user interface the tab : &lt;code>Expose Existing dataset&lt;/code>.&lt;/p>
+&lt;p>Please refer to the steps described in the
+&lt;a href="#installation-and-attach-empty-storage-to-the-egi-datahub">Installation and attach empty storage to the EGI DataHub&lt;/a>
+section to request a &lt;code>PROVIDER_REGISTRATION_TOKEN&lt;/code>.&lt;/p>
+&lt;p>Once obtained, you will have to copy the command already configured with the
+correct parameters for the Onezone (&lt;code>datahub.egi.eu&lt;/code>) and the space to join.&lt;/p>
 &lt;p>&lt;img src="onedatify-oneprovider-expose.png" alt="image">&lt;/p>
 &lt;h3 id="run-the-command-on-the-host-1">Run the command on the host&lt;/h3>
 &lt;p>Paste the copied command in the terminal on the Oneprovider machine as

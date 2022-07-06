@@ -1733,7 +1733,7 @@ endpoints will no longer be supported.&lt;/p>
 &lt;h4 class="alert-heading">Note&lt;/h4>
 For OpenStack Services please read the
 OpenStack specific migration guide on
-&lt;a href="../../cloud-compute/openstack/aai#client-migration-to-keycloak">Cloud Compute documentation&lt;/a>.
+&lt;a href="../../cloud-compute/openstack/aai.md#client-migration-to-keycloak">Cloud Compute documentation&lt;/a>.
 &lt;/div>
 &lt;h4 id="how-to-migrate-your-service-to-keycloak">How to Migrate your Service to Keycloak&lt;/h4>
 &lt;p>All the clients that were registered in MITREid Connect have been moved to
