@@ -744,12 +744,12 @@ the URLs on your configuration:
    issuer:
 
    ```shell
-   $ openstack identity provider set --remote-id https://aai-dev.egi.eu/auth/realms/egi --remote-id https://aai-dev.egi.eu/oidc/ egi.eu
+   $ openstack identity provider set --remote-id https://aai.egi.eu/auth/realms/egi --remote-id https://aai.egi.eu/oidc/ egi.eu
    ```
 
 1. Add the new issuer to the `HTTP_OIDC_ISS` filter in your mappings, keep both
-   the `https://aai-dev.egi.eu/oidc/` and
-   `https://aai-dev.egi.eu/auth/realms/egi` so users can still use their
+   the `https://aai.egi.eu/oidc/` and
+   `https://aai.egi.eu/auth/realms/egi` so users can still use their
    existing tokens. Check-in will handle the validation of both kind of tokens
    automatically. The `HTTP_OIDC_ISS` section should look as follows:
 
