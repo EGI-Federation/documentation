@@ -174,7 +174,7 @@ OIDCCacheType memcache
 OIDCMemCacheServers "memcache1 memcache2 memcache3"
 ```
 
-Be sure to enable the mod_auth_oidc module in Apache, in Ubuntu:
+Be sure to enable the `mod_auth_oidc` module in Apache, in Ubuntu:
 
 ```shell
 sudo a2enmod auth_openidc
@@ -538,10 +538,10 @@ the use of the dashboard. This is for a configuration of an `egi.eu` identity
 provider with `openid` as protocol:
 
 ```ApacheConf
-<Location ~ "/identity/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
+<Location ~ "/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
         AuthType openid-connect
         # This is your Redirect URI with a new iss=<your idp iss> option added
-        OIDCDiscoverURL https://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-demo.egi.eu%2Foidc%2F
+        OIDCDiscoverURL https://<your keystone endpoint>/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-demo.egi.eu%2Foidc%2F
         # Ensure that the user is authenticated with the expected iss
         Require claim iss:https://aai-demo.egi.eu/auth/realms/egi
         Require valid-user
@@ -618,12 +618,12 @@ docker for facilitating the deployment:
 1. Configure also the locations in Apache that should use OAuth:
 
    ```ApacheConf
-   <Location ~ "/identity/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/auth">
+   <Location ~ "/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/auth">
         Authtype oauth20
         Require valid-user
    </Location>
 
-   <Location ~ "/identity/v3/OS-FEDERATION/identity_providers/other_idp/protocols/openid/auth">
+   <Location ~ "/v3/OS-FEDERATION/identity_providers/other_idp/protocols/openid/auth">
         Authtype oauth20
         Require valid-user
    </Location>
@@ -669,7 +669,7 @@ and Demo environments already using Keycloak since June 24th 2022 and Production
 environment expected to migrate during July 2022.
 
 A general guide on migration is available on
-[Check-in documentation](../../../check-in/sp/#client-migration-to-keycloak), in
+[Check-in documentation](../../../check-in/sp#client-migration-to-keycloak), in
 this section we provide specific information for OpenStack providers.
 
 ### Changes in Apache configuration
@@ -688,6 +688,9 @@ OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/auth/realms/egi/protocol/openi
 ```
 
 #### Multiple OIDC providers
+
+{{% alert title="Note" color="Warning" %}} Configuration in this section is only
+needed if you are using `mod_auth_oidc` with multiple providers {{% /alert %}}
 
 If you are using multiple OpenID Connect providers, you will need to add a new
 configuration to your metadata directory:
@@ -710,10 +713,10 @@ EOF
 And update your Apache configuration for the authentication with Horizon:
 
 ```ApacheConf
-<Location ~ "/identity/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
+<Location ~ "/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
         AuthType openid-connect
         # This is your Redirect URI with a new iss=<your idp iss> option added
-        OIDCDiscoverURL http://openstack.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai.egi.eu%2Fauth%2Frealms%2Fegi
+        OIDCDiscoverURL https://<your keystone endpoint>/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai.egi.eu%2Fauth%2Frealms%2Fegi
         # Ensure that the user is authenticated with the expected iss
         Require claim iss:https://aai.egi.eu/auth/realms/egi
         Require valid-user
@@ -737,19 +740,29 @@ Similarly to the change from Demo to Production described
 [above](#moving-to-egi-check-in-production-instance), you will need to update
 the URLs on your configuration:
 
-1. Update the `remote-id` of the identity provider:
+1. Update the `remote-id` of the identity provider to also include the new
+   issuer:
 
    ```shell
-   $ openstack identity provider set --remote-id https://aai.egi.eu/auth/realms/egi egi.eu
+   $ openstack identity provider set --remote-id https://aai.egi.eu/auth/realms/egi --remote-id https://aai.egi.eu/oidc/ egi.eu
    ```
 
-1. Update the `HTTP_OIDC_ISS` filter in your mappings, e.g.:
+1. Add the new issuer to the `HTTP_OIDC_ISS` filter in your mappings, keep both
+   the `https://aai.egi.eu/oidc/` and
+   `https://aai.egi.eu/auth/realms/egi` so users can still use their
+   existing tokens. Check-in will handle the validation of both kind of tokens
+   automatically. The `HTTP_OIDC_ISS` section should look as follows:
 
-   ```shell
-   sed -i 's#https://aai.egi.eu/oidc/#https://aai.egi.eu/auth/realms/egi#' mapping.egi.json
-   openstack mapping set --rules mapping.egi.json egi-mapping
+   ```json
+   {
+     "type": "HTTP_OIDC_ISS",
+     "any_one_of": [
+       "https://aai.egi.eu/auth/realms/egi"
+       "https://aai.egi.eu/oidc/"
+     ]
+   }
    ```
 
-As the issuer changes, new users will be created at your site with same `name`
-(the EGI identifier) but different `ID`. These users will still be capable of
-managing the VMs as ownership is assigned to the project.
+As the new issuer is included in the `remote-id` configuration of the Keystone
+identity provider, there should not be any changes in your users, they will be
+still be able to manage owned resources after the change.
