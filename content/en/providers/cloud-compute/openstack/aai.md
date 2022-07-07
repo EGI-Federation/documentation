@@ -757,7 +757,7 @@ the URLs on your configuration:
    {
      "type": "HTTP_OIDC_ISS",
      "any_one_of": [
-       "https://aai.egi.eu/auth/realms/egi"
+       "https://aai.egi.eu/auth/realms/egi",
        "https://aai.egi.eu/oidc/"
      ]
    }
