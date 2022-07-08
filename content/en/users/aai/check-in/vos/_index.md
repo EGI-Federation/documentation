@@ -274,16 +274,16 @@ groups is
 For example `CO:COU:vo.example.org:admins`
 
 - A CO Person can be a member, an owner, both, or neither. Specifically:
-  - A COU admins group member can manage COU members:
+  - COU Admin Group members can manage COU members
   - Approve or decline membership petitions
 
-COU Admin role is granted to a CO Person if the following requirements are met:
+A CO Person is added to a COU Admin Group if the following requirements are met:
 
 1. CO Person is declared as VO administrator in the VO's ID Card,
-under the Operations Portal
+under the [Operations Portal](https://operations-portal.egi.eu/vo/a/list)
 
-1. Open and assign to the Check-in support team a GGUS ticket with the role
-provisioning request.
+1. A request is made to the Check-in Support Unit via a
+[GGUS ticket](https://ggus.eu/).
 
 ### Expiration Policy
 
