@@ -149,5 +149,90 @@ sudo kubectl apply -f ingress.yaml -n daskhub
 If all went well, JupyterHub will be available at
 [https://pangeo.vm.fedcloud.eu/jupyterhub/](https://pangeo.vm.fedcloud.eu/jupyterhub/)
 
-### Configure EGI Check-In
+### Step 3) Configure EGI Check-In
 
+Please follow the steps on the Check-In documentation for
+[Service Providers](https://docs.egi.eu/providers/check-in/sp/). In particular,
+the instructions using OpenID Connect as the authentication and authorization
+protocol.
+
+Check-In runs three separate instances: production, demo, and development.
+To quickly test integration with Check-In, use the steps to connect with the
+development instance.
+
+After you have successfully registered the Pangeo service in the
+[Federation Registry](https://aai.egi.eu/federation), here is the `values.yaml`
+that you need to connect Dask with Check-In:
+
+```yaml
+dask-gateway:
+  enabled: false
+  gateway:
+    auth:
+      simple:
+        password: <password>
+      type: simple
+dask-kubernetes:
+  enabled: true
+jupyterhub:
+  hub:
+    baseUrl: /jupyterhub/
+    config:
+      GenericOAuthenticator:
+        client_id: <id>
+        client_secret: <secret>
+        oauth_callback_url: https://pangeo.vm.fedcloud.eu/jupyterhub/hub/oauth_callback
+        authorize_url: https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth
+        token_url: https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token
+        userdata_url: https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo
+        login_service: EGI Check-In
+        scope:
+          - openid
+          - email
+          - profile
+          - eduperson_entitlement
+        username_key: preferred_username
+        userdata_params:
+          state: state
+        allowed_groups:
+          - urn:mace:egi.eu:group:vo.pangeo.eu:role=member#aai.egi.eu
+        claim_groups_key: eduperson_entitlement
+      JupyterHub:
+        authenticator_class: generic-oauth
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    enabled: true
+  proxy:
+    secretToken: <token>
+  singleuser:
+    image:
+      name: pangeo/ml-notebook
+      tag: latest
+```
+
+Here is the `kubectl` command to apply the changes:
+
+```bash
+sudo helm upgrade daskhub daskhub \
+    --repo=https://helm.dask.org \
+    --install \
+    --cleanup-on-fail \
+    --create-namespace \
+    --namespace daskhub \
+    --version 2022.6.0 \
+    --values values.yaml
+```
+
+{{% alert title="Warning" color="warning" %}} 
+It looks like you need to reconfigure the ingress after applying the changes
+above. Please re-run:
+{{% /alert %}}
+
+```bash
+sudo kubectl apply -f ingress.yaml -n daskhub
+```
+
+All going well, all members of the `vo.pangeo.eu` VO will be able to log into
+JupyterHub with Check-In now at the DNS name created in [Step 1](#step-1-dns-name)
+(e.g. [https://pangeo.vm.fedcloud.eu/jupyterhub/](https://pangeo.vm.fedcloud.eu/jupyterhub/)).
