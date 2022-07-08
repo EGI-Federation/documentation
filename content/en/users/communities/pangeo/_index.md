@@ -70,21 +70,21 @@ and add `Dask`. Out of all the configuration options, please pay special
 attention to the following:
 
 * `Kubernetes Data` tab:
-    * `Flag to install Cert-Manager` must be set to `True`
-    * `Email to be used in the Let's Encrypt issuer`: add your preferred email.
-    * `DNS name of the public interface of the FE node to generate the certificate`
+  * `Flag to install Cert-Manager` must be set to `True`
+  * `Email to be used in the Let's Encrypt issuer`: add your preferred email.
+  * `DNS name of the public interface of the FE node to generate the certificate`
        must be set to the one configure in [Step 1](#step-1-dns-name).
 * `Dask Data` tab:
-    * `Password for the Simple auth method in the Gateway`: please configure a
-       secure password.
-    * `Jupyterhub auth token`: please configure an auth token (e.g.
-      with `openssl rand -hex 32` on Linux)
-    * Use `Jupyterhub singleuser image` and `Jupyterhub singleuser image version`
-      to configure the default user environment in JupyterHub with a container
-      image of your choice.
+  * `Password for the Simple auth method in the Gateway`: please configure a
+     secure password.
+  * `Jupyterhub auth token`: please configure an auth token (e.g.
+    with `openssl rand -hex 32` on Linux)
+  * Use `Jupyterhub singleuser image` and `Jupyterhub singleuser image version`
+    to configure the default user environment in JupyterHub with a container
+    image of your choice.
 * `Cloud Provider Selection` tab:
-    * Select the [credentials](../../compute/orchestration/im/dashboard/#cloud-credentials)
-      configured earlier.
+  * Select the [credentials](../../compute/orchestration/im/dashboard/#cloud-credentials)
+    configured earlier.
 
 Please review all configuration options and click `Submit` and wait for the
 deployment to finish with status `configured`. Then click on `Outputs` and
@@ -226,8 +226,7 @@ sudo helm upgrade daskhub daskhub \
 
 {{% alert title="Warning" color="warning" %}} 
 It looks like you need to reconfigure the ingress after applying the changes
-above. Please re-run:
-{{% /alert %}}
+above. Please re-run:{{% /alert %}}
 
 ```bash
 sudo kubectl apply -f ingress.yaml -n daskhub
