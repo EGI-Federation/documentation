@@ -224,9 +224,8 @@ sudo helm upgrade daskhub daskhub \
     --values values.yaml
 ```
 
-{{% alert title="Warning" color="warning" %}} 
-It looks like you need to reconfigure the ingress after applying the changes
-above. Please re-run:{{% /alert %}}
+{{% alert title="Warning" color="warning" %}} It looks like you need to reconfigure
+the ingress after applying the changes above. Please re-run: {{% /alert %}}
 
 ```bash
 sudo kubectl apply -f ingress.yaml -n daskhub
