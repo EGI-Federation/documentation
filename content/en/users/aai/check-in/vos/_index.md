@@ -283,7 +283,7 @@ A CO Person is added to a COU Admin Group if the following requirements are met:
 under the [Operations Portal](https://operations-portal.egi.eu/vo/a/list)
 
 1. A request is made to the Check-in Support Unit via a
-[EGI Helpdesk ticket](https://ggus.eu/).
+[EGI Helpdesk ticket](../../../../internal/helpdesk/user-guide/).
 
 ### Expiration Policy
 
