@@ -152,7 +152,7 @@ If all went well, JupyterHub will be available at
 ### Step 3) Configure EGI Check-In
 
 Please follow the steps on the Check-In documentation for
-[Service Providers](https://docs.egi.eu/providers/check-in/sp/). In particular,
+[Service Providers](../../../providers/check-in/sp/). In particular,
 the instructions using OpenID Connect as the authentication and authorization
 protocol.
 
