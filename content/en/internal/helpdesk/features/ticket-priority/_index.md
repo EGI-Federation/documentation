@@ -81,20 +81,20 @@ calculated according to the Quality of Support the PTs voted for. The priority
 colour changes after a dedicated amount of working hours as listed in the table
 below. The priority colour calculation is processed every 15 minutes.
 
-| QoS      | Level        | Ticket priority | Colour | Working hours | Colour | Working hours | Colour | Working hours |
-| -------- | ------------ | --------------- | ------ | ------------- | ------ | ------------- | ------ | ------------- |
-| Base     | less urgent  | Yellow          | 20     | Amber         | 30     | Red           | 40     |
-|          | urgent       |                 | 20     |               | 30     |               | 40     |
-|          | very urgent  |                 | 20     |               | 30     |               | 40     |
-|          | top priority |                 | 20     |               | 30     |               | 40     |
-| Medium   | less urgent  | Yellow          | 20     | Amber         | 30     | Red           | 40     |
-|          | urgent       |                 | 20     |               | 30     |               | 40     |
-|          | very urgent  |                 | 4      |               | 6      |               | 8      |
-|          | top priority |                 | 4      |               | 6      |               | 8      |
-| Advanced | less urgent  | Yellow          | 20     | Amber         | 30     | Red           | 40     |
-|          | urgent       |                 | 4      |               | 6      |               | 8      |
-|          | very urgent  |                 | 4      |               | 6      |               | 8      |
-|          | top priority |                 | 2      |               | 3      |               | 4      |
+| QoS Level| Ticket priority | Colour          | Working hours | Colour        | Working hours | Colour        | Working hours |
+| -------- | --------------- | --------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| Base     | less urgent     | Yellow          | 20            | Amber         | 30            | Red           | 40            |
+|          | urgent          |                 | 20            |               | 30            |               | 40            |
+|          | very urgent     |                 | 20            |               | 30            |               | 40            |
+|          | top priority    |                 | 20            |               | 30            |               | 40            |
+| Medium   | less urgent     | Yellow          | 20            | Amber         | 30            | Red           | 40            |
+|          | urgent          |                 | 20            |               | 30            |               | 40            |
+|          | very urgent     |                 | 4             |               | 6             |               | 8             |
+|          | top priority    |                 | 4             |               | 6             |               | 8             |
+| Advanced | less urgent     | Yellow          | 20            | Amber         | 30            | Red           | 40            |
+|          | urgent          |                 | 4             |               | 6             |               | 8             |
+|          | very urgent     |                 | 4             |               | 6             |               | 8             |
+|          | top priority    |                 | 2             |               | 3             |               | 4             |
 
 ### Algorithm for tickets other than middleware
 
