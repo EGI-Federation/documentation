@@ -18,9 +18,9 @@ public-trust certificates, for the domains managed by EGI Foundation, like
 
 Operators of central services can request two types of certificates:
 
-- host certificates, with public-trust, and optionally IGTF trust
+- host certificates, with public-trust, and optionally IGTF trust.
 - robot email certificates, to be used as client certificate, to authenticate
-  using X509 as a service
+  using X509 as a service.
 
 ## Requesting a new certificate
 
@@ -28,16 +28,26 @@ Open a ticket to Collaboration Tools SU in [EGI Helpdesk](../../helpdesk),
 providing:
 
 - Justification of the request.
+- Type of certificate (host or robot).
 - FQDN of the service.
 - Mailing list to be used as contact address that will receive
-  [renewal notifications](#renewal-of-certificates).
-- A Certificate Signing Request, generated as documented
-  [below](#creating-a-certificate-signing-request), or mentioning the desire to
-  use the [ACME protocol](#using-acme-protocol).
+  [renewal notifications](#renewing-certificates).
+- For host certificates: a
+  [Certificate Signing Request](#creating-a-certificate-signing-request), or
+  mentioning the desire to use the [ACME protocol](#using-acme-protocol).
 
-> You can also contact scs-ra@egi.eu (or operations@egi.eu) if you need support.
+An operator will follow with the request, and help you getting the certificate.
 
-## Renewal of certificates
+> You can contact scs-ra@egi.eu (or operations@egi.eu) if you need support.
+
+## Retrieving certificates
+
+- Host certificates will be sent by email, you will receive a notification with
+  links allowing to download it.
+- For robot certificates, you will receive an invitation by email allowing to
+  generate and retrieve it.
+
+## Renewing certificates
 
 Certificates are usually valid for one year. Auto-renewal of certificates is
 enabled by default, 30 days before expiration, notifications will be sent to the
@@ -47,8 +57,8 @@ The notifications contains links allowing to renew the certificate.
 
 ## Creating a Certificate Signing Request
 
-In order to get a certificate, Service Providers should create a Certificate
-Signing Request (CSR).
+In order to get a certificate, Service Providers may be requested to send a
+Certificate Signing Request (CSR).
 
 In the CSR only the Common Name (CN) is important, it should be the (FQDN) of
 the service Most of other fields will be replaced by the CA while generating the
