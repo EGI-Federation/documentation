@@ -84,7 +84,7 @@ It can be done with the `cfssl` tool from
 ```shell
 # Replace #FQDN# by the FQDN of the service
 $ cfssl genkey <(echo '{"hosts":["#FQDN#"],"CN"#FQDN#","key":{"algo":"rsa","size":4096}}')
-  | cfssljson -bare $FQDN.rsa
+  | cfssljson -bare ##FQDN##.rsa
 ```
 
 ### Using OpenSSL
