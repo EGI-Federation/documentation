@@ -90,12 +90,19 @@ $ cfssl genkey <(echo '{"hosts":["#FQDN#"],"CN"#FQDN#","key":{"algo":"rsa","size
 ### Using OpenSSL
 
 It can be done using the following `OpenSSL` command (This will generate a
-password-protected key. Adding the `-nodes` option will disable password
-protection for the key, beware if using it.
+password-protected key.
+
+You will be asked for various questions, but the only important ones are the
+Common Name (CN) and Subject Alternative Names (SAN) (in case you want to
+request a certificates covering different FQDNs), as other values will be
+overwritten by the CA.
 
 ```shell
 $ openssl req -out CSR.csr -new -newkey rsa:4096 -keyout privateKey.key
 ```
+
+> Adding the `-nodes` option will disable password protection for the key,
+> beware if using it.
 
 ### Using ACME protocol
 
