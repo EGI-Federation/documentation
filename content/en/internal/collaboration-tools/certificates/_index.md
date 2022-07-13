@@ -22,6 +22,13 @@ Operators of central services can request two types of certificates:
 - robot email certificates, to be used as client certificate, to authenticate
   using X509 as a service.
 
+> In some specific cases, like for
+> [Cloud Compute providers](../../../providers/cloud-compute/) not having access
+> to an IGTF CA, it's possible for them to request a robot certificate, as an
+> IGTF certificate is required for sending accounting records.
+
+> You can contact scs-ra@egi.eu (or operations@egi.eu) if you need support.
+
 ## Requesting a new certificate
 
 Open a ticket to Collaboration Tools SU in [EGI Helpdesk](../../helpdesk),
@@ -37,8 +44,6 @@ providing:
   mentioning the desire to use the [ACME protocol](#using-acme-protocol).
 
 An operator will follow with the request, and help you getting the certificate.
-
-> You can contact scs-ra@egi.eu (or operations@egi.eu) if you need support.
 
 ## Retrieving certificates
 
