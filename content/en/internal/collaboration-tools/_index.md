@@ -27,14 +27,14 @@ Group owners can manage group members, and send invitations to new users. Groups
 are used in Collaboration Tools services for authorisation.
 
 > EGI SSO is now being deprecated in favour of
-> [EGI Check-in](../../users/check-in), providing a federation authentication
-> and authorisation service.
+> [EGI Check-in](../../users/aai/check-in), providing a federation
+> authentication and authorisation service.
 
 ### EGI.eu domain
 
 Domain entries can be created for the service as long as they are relevant for
 the EGI infrastructure. All EGI central services are usually available under the
-egi.eu domain.
+`egi.eu` domain.
 
 Requests needs to be discussed with the
 [EGI Operations team](mailto:operations@egi.eu).
