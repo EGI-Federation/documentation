@@ -32,7 +32,7 @@ providing:
 - Mailing list to be used as contact address that will receive
   [renewal notifications](#renewal-of-certificates).
 - A Certificate Signing Request, generated as documented
-  [below](creating-a-certificate-signing-request), or mentioning the desire to
+  [below](#creating-a-certificate-signing-request), or mentioning the desire to
   use the [ACME protocol](#using-acme-protocol).
 
 > You can also contact scs-ra@egi.eu (or operations@egi.eu) if you need support.
