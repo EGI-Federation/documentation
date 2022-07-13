@@ -39,6 +39,18 @@ egi.eu domain.
 Requests needs to be discussed with the
 [EGI Operations team](mailto:operations@egi.eu).
 
+#### Certificate for EGI.eu domain
+
+EGI Foundation is having access to a
+[GÉANT Trusted Certificate Service](https://wiki.geant.org/display/TCSNT/)
+subscription.
+
+This can be used to issue IGTF-trust (AKA eScience certificates) and
+public-trust certificates, for the domains managed by EGI Foundation, like
+`egi.eu`.
+
+Please refer to [documentation on requesting a certificate](./certificates).
+
 ### EGI.eu site
 
 Information about the EGI Federation activities is published on the
