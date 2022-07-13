@@ -74,33 +74,42 @@ public-trust certificates, for the domains managed by EGI Foundation, like
 &lt;code>egi.eu&lt;/code>.&lt;/p>
 &lt;p>Operators of central services can request two types of certificates:&lt;/p>
 &lt;ul>
-&lt;li>host certificates, with public-trust, and optionally IGTF trust&lt;/li>
+&lt;li>host certificates, with public-trust, and optionally IGTF trust.&lt;/li>
 &lt;li>robot email certificates, to be used as client certificate, to authenticate
-using X509 as a service&lt;/li>
+using X509 as a service.&lt;/li>
 &lt;/ul>
 &lt;h2 id="requesting-a-new-certificate">Requesting a new certificate&lt;/h2>
 &lt;p>Open a ticket to Collaboration Tools SU in &lt;a href="../../helpdesk">EGI Helpdesk&lt;/a>,
 providing:&lt;/p>
 &lt;ul>
 &lt;li>Justification of the request.&lt;/li>
+&lt;li>Type of certificate (host or robot).&lt;/li>
 &lt;li>FQDN of the service.&lt;/li>
 &lt;li>Mailing list to be used as contact address that will receive
-&lt;a href="#renewal-of-certificates">renewal notifications&lt;/a>.&lt;/li>
-&lt;li>A Certificate Signing Request, generated as documented
-&lt;a href="#creating-a-certificate-signing-request">below&lt;/a>, or mentioning the desire to
-use the &lt;a href="#using-acme-protocol">ACME protocol&lt;/a>.&lt;/li>
+&lt;a href="#renewing-certificates">renewal notifications&lt;/a>.&lt;/li>
+&lt;li>For host certificates: a
+&lt;a href="#creating-a-certificate-signing-request">Certificate Signing Request&lt;/a>, or
+mentioning the desire to use the &lt;a href="#using-acme-protocol">ACME protocol&lt;/a>.&lt;/li>
 &lt;/ul>
+&lt;p>An operator will follow with the request, and help you getting the certificate.&lt;/p>
 &lt;blockquote>
-&lt;p>You can also contact &lt;a href="mailto:scs-ra@egi.eu">scs-ra@egi.eu&lt;/a> (or &lt;a href="mailto:operations@egi.eu">operations@egi.eu&lt;/a>) if you need support.&lt;/p>
+&lt;p>You can contact &lt;a href="mailto:scs-ra@egi.eu">scs-ra@egi.eu&lt;/a> (or &lt;a href="mailto:operations@egi.eu">operations@egi.eu&lt;/a>) if you need support.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="renewal-of-certificates">Renewal of certificates&lt;/h2>
+&lt;h2 id="retrieving-certificates">Retrieving certificates&lt;/h2>
+&lt;ul>
+&lt;li>Host certificates will be sent by email, you will receive a notification with
+links allowing to download it.&lt;/li>
+&lt;li>For robot certificates, you will receive an invitation by email allowing to
+generate and retrieve it.&lt;/li>
+&lt;/ul>
+&lt;h2 id="renewing-certificates">Renewing certificates&lt;/h2>
 &lt;p>Certificates are usually valid for one year. Auto-renewal of certificates is
 enabled by default, 30 days before expiration, notifications will be sent to the
 contact address provided when requesting the certificate.&lt;/p>
 &lt;p>The notifications contains links allowing to renew the certificate.&lt;/p>
 &lt;h2 id="creating-a-certificate-signing-request">Creating a Certificate Signing Request&lt;/h2>
-&lt;p>In order to get a certificate, Service Providers should create a Certificate
-Signing Request (CSR).&lt;/p>
+&lt;p>In order to get a certificate, Service Providers may be requested to send a
+Certificate Signing Request (CSR).&lt;/p>
 &lt;p>In the CSR only the Common Name (CN) is important, it should be the (FQDN) of
 the service Most of other fields will be replaced by the CA while generating the
 certificate.&lt;/p>
