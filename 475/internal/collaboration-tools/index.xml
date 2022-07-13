@@ -78,6 +78,15 @@ public-trust certificates, for the domains managed by EGI Foundation, like
 &lt;li>robot email certificates, to be used as client certificate, to authenticate
 using X509 as a service.&lt;/li>
 &lt;/ul>
+&lt;blockquote>
+&lt;p>In some specific cases, like for
+&lt;a href="../../../providers/cloud-compute/">Cloud Compute providers&lt;/a> not having access
+to an IGTF CA, it&amp;rsquo;s possible for them to request a robot certificate, as an
+IGTF certificate is required for sending accounting records.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>You can contact &lt;a href="mailto:scs-ra@egi.eu">scs-ra@egi.eu&lt;/a> (or &lt;a href="mailto:operations@egi.eu">operations@egi.eu&lt;/a>) if you need support.&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="requesting-a-new-certificate">Requesting a new certificate&lt;/h2>
 &lt;p>Open a ticket to Collaboration Tools SU in &lt;a href="../../helpdesk">EGI Helpdesk&lt;/a>,
 providing:&lt;/p>
@@ -92,9 +101,6 @@ providing:&lt;/p>
 mentioning the desire to use the &lt;a href="#using-acme-protocol">ACME protocol&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;p>An operator will follow with the request, and help you getting the certificate.&lt;/p>
-&lt;blockquote>
-&lt;p>You can contact &lt;a href="mailto:scs-ra@egi.eu">scs-ra@egi.eu&lt;/a> (or &lt;a href="mailto:operations@egi.eu">operations@egi.eu&lt;/a>) if you need support.&lt;/p>
-&lt;/blockquote>
 &lt;h2 id="retrieving-certificates">Retrieving certificates&lt;/h2>
 &lt;ul>
 &lt;li>Host certificates will be sent by email, you will receive a notification with
@@ -122,13 +128,20 @@ certificate.&lt;/p>
 &lt;a href="https://github.com/cloudflare/cfssl">CloudFlare&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Replace #FQDN# by the FQDN of the service&lt;/span>
 $ cfssl genkey &amp;lt;&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;{&amp;#34;hosts&amp;#34;:[&amp;#34;#FQDN#&amp;#34;],&amp;#34;CN&amp;#34;#FQDN#&amp;#34;,&amp;#34;key&amp;#34;:{&amp;#34;algo&amp;#34;:&amp;#34;rsa&amp;#34;,&amp;#34;size&amp;#34;:4096}}&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> cfssljson -bare &lt;span style="color:#000">$FQDN&lt;/span>.rsa
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> cfssljson -bare &lt;span style="color:#8f5902;font-style:italic">##FQDN##.rsa&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-openssl">Using OpenSSL&lt;/h3>
 &lt;p>It can be done using the following &lt;code>OpenSSL&lt;/code> command (This will generate a
-password-protected key. Adding the &lt;code>-nodes&lt;/code> option will disable password
-protection for the key, beware if using it.&lt;/p>
+password-protected key.&lt;/p>
+&lt;p>You will be asked for various questions, but the only important ones are the
+Common Name (CN) and Subject Alternative Names (SAN) (in case you want to
+request a certificates covering different FQDNs), as other values will be
+overwritten by the CA.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openssl req -out CSR.csr -new -newkey rsa:4096 -keyout privateKey.key
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-acme-protocol">Using ACME protocol&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Adding the &lt;code>-nodes&lt;/code> option will disable password protection for the key,
+beware if using it.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="using-acme-protocol">Using ACME protocol&lt;/h3>
 &lt;p>It is possible to automate the certificate request and renewal using the
 &lt;a href="https://datatracker.ietf.org/doc/html/rfc8555">ACME protocol&lt;/a> via
 &lt;a href="https://certbot.eff.org/">certbot&lt;/a> or similar tools.&lt;/p>
