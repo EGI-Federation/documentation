@@ -84,9 +84,7 @@ using X509 as a service.&lt;/li>
 to an IGTF CA, it&amp;rsquo;s possible for them to request a robot certificate, as an
 IGTF certificate is required for sending accounting records.&lt;/p>
 &lt;/blockquote>
-&lt;blockquote>
 &lt;p>You can contact &lt;a href="mailto:scs-ra@egi.eu">scs-ra@egi.eu&lt;/a> (or &lt;a href="mailto:operations@egi.eu">operations@egi.eu&lt;/a>) if you need support.&lt;/p>
-&lt;/blockquote>
 &lt;h2 id="requesting-a-new-certificate">Requesting a new certificate&lt;/h2>
 &lt;p>Open a ticket to Collaboration Tools SU in &lt;a href="../../helpdesk">EGI Helpdesk&lt;/a>,
 providing:&lt;/p>
