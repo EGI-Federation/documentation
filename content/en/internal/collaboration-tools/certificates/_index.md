@@ -27,7 +27,7 @@ Operators of central services can request two types of certificates:
 > to an IGTF CA, it's possible for them to request a robot certificate, as an
 > IGTF certificate is required for sending accounting records.
 
-> You can contact scs-ra@egi.eu (or operations@egi.eu) if you need support.
+You can contact scs-ra@egi.eu (or operations@egi.eu) if you need support.
 
 ## Requesting a new certificate
 
