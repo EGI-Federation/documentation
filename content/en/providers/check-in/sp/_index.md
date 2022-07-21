@@ -982,8 +982,8 @@ The migration guide below applies to OIDC clients registered in the
 **Development and Demo**: Beginning June 24, 2022, clients using the legacy
 Check-in OIDC endpoints will no longer be supported.
 
-**Production**: Beginning July 22, 2022, clients using the legacy Check-in OIDC
-endpoints will no longer be supported.
+**Production**: Beginning September 16, 2022, clients using the legacy Check-in
+OIDC endpoints will no longer be supported.
 
 {{% alert title="Note" color="info" %}} For OpenStack Services please read the
 OpenStack specific migration guide on
