@@ -1727,8 +1727,8 @@ setup earlier:&lt;/p>
 &lt;strong>Development&lt;/strong>, &lt;strong>Demo&lt;/strong> and &lt;strong>Production&lt;/strong> environments of Check-in.&lt;/p>
 &lt;p>&lt;strong>Development and Demo&lt;/strong>: Beginning June 24, 2022, clients using the legacy
 Check-in OIDC endpoints will no longer be supported.&lt;/p>
-&lt;p>&lt;strong>Production&lt;/strong>: Beginning July 22, 2022, clients using the legacy Check-in OIDC
-endpoints will no longer be supported.&lt;/p>
+&lt;p>&lt;strong>Production&lt;/strong>: Beginning September 16, 2022, clients using the legacy Check-in
+OIDC endpoints will no longer be supported.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 For OpenStack Services please read the
