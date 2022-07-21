@@ -3,14 +3,13 @@ title: oidc-agent
 linkTitle: oidc-agent
 type: docs
 weight: 40
-aliases:
-  - /users/aai/check-in/obtaining-tokens/oidc-agent
 description: >
   Usage guide of oidc-agent
 ---
 
-The oidc-agent is a command-line tool for managing OpenID Connect tokens
-developed by Karlsruhe Institute of Technology (KIT).
+The [oidc-agent](https://github.com/indigo-dc/oidc-agent) is a command-line tool
+for managing OpenID Connect tokens developed by
+[Karlsruhe Institute of Technology (KIT)](https://www.kit.edu/).
 
 ## Obtain a Token
 
@@ -20,7 +19,7 @@ If you haven't installed oidc-agent in your system, please read the
 Make sure that the `oidc-agent-service` is started by executing the command:
 
 ```shell
-eval `oidc-agent-service start`
+$ eval `oidc-agent-service start`
 ```
 
 To obtain a Token you need to execute the following command:
@@ -30,7 +29,7 @@ To obtain a Token you need to execute the following command:
 {{< tabx header="Production" >}}
 
 ```shell
-oidc-gen --pub --issuer https://aai.egi.eu/auth/realms/egi
+$ oidc-gen --pub --issuer https://aai.egi.eu/auth/realms/egi
 ```
 
 {{< /tabx >}}
@@ -38,7 +37,7 @@ oidc-gen --pub --issuer https://aai.egi.eu/auth/realms/egi
 {{< tabx header="Demo" >}}
 
 ```shell
-oidc-gen --pub --issuer https://aai-demo.egi.eu/auth/realms/egi
+$ oidc-gen --pub --issuer https://aai-demo.egi.eu/auth/realms/egi
 ```
 
 {{< /tabx >}}
@@ -46,21 +45,21 @@ oidc-gen --pub --issuer https://aai-demo.egi.eu/auth/realms/egi
 {{< tabx header="Development" >}}
 
 ```shell
-oidc-gen --pub --issuer https://aai-dev.egi.eu/auth/realms/egi
+$ oidc-gen --pub --issuer https://aai-dev.egi.eu/auth/realms/egi
 ```
 
 {{< /tabx >}}
 
 {{< /tabpanex >}}
 
-Then enter a short name for the account to configure and the scopes that the
+Then enter a short name for the account to configure, and the scopes that the
 Access Token should contain.
 
 {{% alert title="Note" color="info" %}} To get a **Refresh Token** you need to
 specify the `offline_access` scope in the requested scopes {{% /alert %}}
 
 After that, you need to log in either by visiting the provided URL or by
-scanning the displayed QR code and then provide the **user code** displayed in
+scanning the displayed QR code, and then provide the **user code** displayed in
 the oidc-agent.
 
 Last but not least, you will need to provide an encryption password to protect
