@@ -71,12 +71,13 @@ The integration follows a two-step process:
    registration requests require approval by an administrator. The review
    process for the demo environment involves primarily the technical aspects of
    the service configuration. However, moving the service to production requires
-   compliance with all the [eligibility criteria](#services-eligible-for-integration)
-   (see Step 2). The demo instance allows for testing authentication and
-   authorisation through the academic and social Identity Providers connected
-   to Check-in without affecting the production Check-in service. Note that
-   while the demo instance has identical functionality to the production
-   instance, no information is shared between the two systems.
+   compliance with all the
+   [eligibility criteria](#services-eligible-for-integration) (see Step 2). The
+   demo instance allows for testing authentication and authorisation through the
+   academic and social Identity Providers connected to Check-in without
+   affecting the production Check-in service. Note that while the demo instance
+   has identical functionality to the production instance, no information is
+   shared between the two systems.
    - You can also test new features of Check-in that are not available in
      production yet, by registering your Service Provider and testing
      integration with the **development** instance of Check-in. In the
@@ -1064,10 +1065,10 @@ by creating new Refresh Tokens issued by Keycloak.
 - If you have obtained Refresh Tokens using the EGI Check-in Token Portal,
   please check the following table:
 
-  | Issuer                   | Production environment            |
-  | ------------------------ | --------------------------------- |
-  | Keycloak                 | <https://aai.egi.eu/token>        |
-  | MITREid Connect (Legacy) | <https://aai.egi.eu/token-legacy> |
+  | Issuer                   | Production environment              |
+  | ------------------------ | ----------------------------------- |
+  | Keycloak                 | <https://aai.egi.eu/token-keycloak> |
+  | MITREid Connect (Legacy) | <https://aai.egi.eu/token>          |
 
 - If you have obtained Refresh Tokens using the oidc-agent, please use the
   following command:
