@@ -16,6 +16,9 @@ for managing OpenID Connect tokens developed by
 If you haven't installed oidc-agent in your system, please read the
 [installation guide](https://indigo-dc.gitbook.io/oidc-agent/installation).
 
+{{% alert title="Note" color="info" %}} Please make sure that you have installed
+the version 4.3.0 or later {{% /alert %}}
+
 Make sure that the `oidc-agent-service` is started by executing the command:
 
 ```shell
