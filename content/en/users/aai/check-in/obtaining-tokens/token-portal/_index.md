@@ -43,13 +43,13 @@ follow the steps below:
 
 ## EGI Check-in OpenID Provider Migration
 
-Currently we are migrating EGI Check-in OpenID Provider to a new Authorization
-Server, as result the Refresh Tokens, that was issued by the legacy
-Authorization Server, will not be accepted by the new one and you won't be able
-to generate new Access Tokens. In this case you will need to create a new
-Refresh Token using the dedicated instance of EGI Check-in Token Portal, which
-is integrated with the new EGI Check-in OpenID Provider. In the following table
-you can find the URLs of each instance of EGI Check-in Token Portal:
+As of July 2022, we are migrating EGI Check-in OpenID Provider to a new Authorisation
+Server, as a result the Refresh Tokens, issued by the legacy Authorisation Server,
+will not be accepted by the new one and you won't be able to generate new Access
+Tokens with them. In this case you need to create a new Refresh Token using the
+environment-specific EGI Check-in Token Portal, which is integrated with the new
+EGI Check-in OpenID Provider. In the following table you can find the URLs of the
+various instances:
 
 | EGI Check-in OpenID Provider Instances | EGI Check-in Token Portal Instances |
 | -------------------------------------- | ----------------------------------- |
