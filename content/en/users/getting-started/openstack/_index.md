@@ -26,10 +26,25 @@ includes details on every OpenStack project, but most providers offer:
 - [Horizon](https://docs.openstack.org/horizon/latest/), as a web
   dashboard
 
-The web-dashboard of the individual providers can be used to manage and use
-services. It can be accessed using EGI Check-in credentials directly:
-select _OpenID Connect_ or _EGI Check-in_ in the **Authenticate using**
-drop-down menu of the login screen.
+The OpenStack Horizon web-dashboard of the individual providers can be
+used to manage and use services. It can be accessed using EGI Check-in
+credentials directly. Select _EGI Check-In_:
+
+![EGI Check-In](dashboard-login-check-in-1.png)
+
+Or _OpenID Connect_:
+
+![OpenID Connect](dashboard-login-check-in-2.png)
+
+Or _egi.eu_:
+
+![egi.eu](dashboard-login-check-in-3.png)
+
+In the **Authenticate using** drop-down menu of the login screen.
+
+Additionally you may need to select _aai.egi.eu/oidc_ as well:
+
+![aai.egi.eu/oidc](dashboard-login-check-partb.png)
 
 {{% alert title="Tip" color="info" %}} You can quickly find the dashboards of
 all providers in the EGI infrastructure that are accessible to you (use the
