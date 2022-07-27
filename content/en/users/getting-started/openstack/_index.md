@@ -26,7 +26,7 @@ includes details on every OpenStack project, but most providers offer:
 - [Horizon](https://docs.openstack.org/horizon/latest/), as a web
   dashboard
 
-The OpenStack Horizon web-dashboard of the individual providers can be
+The Horizon web-dashboard of the OpenStack providers can be
 used to manage and use services. It can be accessed using EGI Check-in
 credentials directly. Select _EGI Check-In_:
 
