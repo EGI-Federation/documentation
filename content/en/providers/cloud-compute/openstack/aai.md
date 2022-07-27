@@ -687,6 +687,20 @@ OIDCPKCEMethod S256
 OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
 ```
 
+{{% alert title="Require claim" color="Warning" %}} If you use the
+`Require claim iss:<issuer>` in your Apache configuration to restrict the
+issuer, please allow both the Keycloak and MitreID issuers during the transition
+period, e.g.:
+
+```ApacheConf
+<RequireAny>
+    Require claim iss:https://aai.egi.eu/auth/realms/egi
+    Require claim iss:https://aai.egi.eu/oidc/
+</RequireAny>
+```
+
+{{% /alert %}}
+
 #### Multiple OIDC providers
 
 {{% alert title="Note" color="Warning" %}} Configuration in this section is only
@@ -748,10 +762,10 @@ the URLs on your configuration:
    ```
 
 1. Add the new issuer to the `HTTP_OIDC_ISS` filter in your mappings, keep both
-   the `https://aai.egi.eu/oidc/` and
-   `https://aai.egi.eu/auth/realms/egi` so users can still use their
-   existing tokens. Check-in will handle the validation of both kind of tokens
-   automatically. The `HTTP_OIDC_ISS` section should look as follows:
+   the `https://aai.egi.eu/oidc/` and `https://aai.egi.eu/auth/realms/egi` so
+   users can still use their existing tokens. Check-in will handle the
+   validation of both kind of tokens automatically. The `HTTP_OIDC_ISS` section
+   should look as follows:
 
    ```json
    {
