@@ -539,7 +539,20 @@ configuration parameters and their new values:&lt;/p>
 &lt;span style="color:#204a87">OIDCPKCEMethod&lt;/span> S256
 &lt;span style="color:#8f5902;font-style:italic"># update introspection endpoint&lt;/span>
 &lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="multiple-oidc-providers-1">Multiple OIDC providers&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-Warning" role="alert">
+&lt;h4 class="alert-heading">Require claim&lt;/h4>
+&lt;p>If you use the
+&lt;code>Require claim iss:&amp;lt;issuer&amp;gt;&lt;/code> in your Apache configuration to restrict the
+issuer, please allow both the Keycloak and MitreID issuers during the transition
+period, e.g.:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="color:#204a87;font-weight:bold">&amp;lt;RequireAny&amp;gt;&lt;/span>
+&lt;span style="color:#204a87">Require&lt;/span> claim iss:https://aai.egi.eu/auth/realms/egi
+&lt;span style="color:#204a87">Require&lt;/span> claim iss:https://aai.egi.eu/oidc/
+&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/RequireAny&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h4 id="multiple-oidc-providers-1">Multiple OIDC providers&lt;/h4>
 &lt;div class="alert alert-Warning" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Configuration in this section is only
@@ -587,10 +600,10 @@ issuer:&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>Add the new issuer to the &lt;code>HTTP_OIDC_ISS&lt;/code> filter in your mappings, keep both
-the &lt;code>https://aai.egi.eu/oidc/&lt;/code> and
-&lt;code>https://aai.egi.eu/auth/realms/egi&lt;/code> so users can still use their
-existing tokens. Check-in will handle the validation of both kind of tokens
-automatically. The &lt;code>HTTP_OIDC_ISS&lt;/code> section should look as follows:&lt;/p>
+the &lt;code>https://aai.egi.eu/oidc/&lt;/code> and &lt;code>https://aai.egi.eu/auth/realms/egi&lt;/code> so
+users can still use their existing tokens. Check-in will handle the
+validation of both kind of tokens automatically. The &lt;code>HTTP_OIDC_ISS&lt;/code> section
+should look as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
