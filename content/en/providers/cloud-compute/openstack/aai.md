@@ -694,8 +694,8 @@ period, e.g.:
 
 ```ApacheConf
 <RequireAny>
-	Require claim iss:https://aai.egi.eu/auth/realms/egi
-	Require claim iss:https://aai.egi.eu/oidc/
+    Require claim iss:https://aai.egi.eu/auth/realms/egi
+    Require claim iss:https://aai.egi.eu/oidc/
 </RequireAny>
 ```
 
