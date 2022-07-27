@@ -26,12 +26,10 @@ includes details on every OpenStack project most providers offer access to:
 - [Horizon](https://docs.openstack.org/horizon/latest/), as a web
   dashboard
 
-Web-dashboard of the integrated providers can be accessed using your EGI
-Check-in credentials directly: select _OpenID Connect_ or _EGI Check-in_ in the
-**Authenticate using** drop-down menu of the login screen. You can explore
-[Horizon dashboard documentation](https://docs.openstack.org/horizon/latest/user/)
-for more information on how to manage your resources from the browser. The rest
-of this guide will focus on CLI/API access.
+The Horizon Web-dashboard of the OpenStack providers can be accessed using your
+EGI Check-in credentials directly. See the
+[Getting Started guide](../../../getting-started/openstack/) for more information.
+The rest of this guide will focus on CLI/API access.
 
 ## Installation
 
