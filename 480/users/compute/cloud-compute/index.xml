@@ -16,12 +16,10 @@ management&lt;/li>
 &lt;li>&lt;a href="https://docs.openstack.org/horizon/latest/">Horizon&lt;/a>, as a web
 dashboard&lt;/li>
 &lt;/ul>
-&lt;p>Web-dashboard of the integrated providers can be accessed using your EGI
-Check-in credentials directly: select &lt;em>OpenID Connect&lt;/em> or &lt;em>EGI Check-in&lt;/em> in the
-&lt;strong>Authenticate using&lt;/strong> drop-down menu of the login screen. You can explore
-&lt;a href="https://docs.openstack.org/horizon/latest/user/">Horizon dashboard documentation&lt;/a>
-for more information on how to manage your resources from the browser. The rest
-of this guide will focus on CLI/API access.&lt;/p>
+&lt;p>The Horizon Web-dashboard of the OpenStack providers can be accessed using your
+EGI Check-in credentials directly. See the
+&lt;a href="../../../getting-started/openstack/">Getting Started guide&lt;/a> for more information.
+The rest of this guide will focus on CLI/API access.&lt;/p>
 &lt;h2 id="installation">Installation&lt;/h2>
 &lt;p>The OpenStack client is a command-line client for OpenStack that brings the
 command set for Compute, Identity, Image, Object Storage and Block Storage APIs

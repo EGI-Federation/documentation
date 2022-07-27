@@ -607,7 +607,7 @@ management&lt;/li>
 &lt;li>&lt;a href="https://docs.openstack.org/horizon/latest/">Horizon&lt;/a>, as a web
 dashboard&lt;/li>
 &lt;/ul>
-&lt;p>The OpenStack Horizon web-dashboard of the individual providers can be
+&lt;p>The Horizon web-dashboard of the OpenStack providers can be
 used to manage and use services. It can be accessed using EGI Check-in
 credentials directly. Select &lt;em>EGI Check-In&lt;/em>:&lt;/p>
 &lt;p>&lt;img src="dashboard-login-check-in-1.png" alt="EGI Check-In">&lt;/p>
