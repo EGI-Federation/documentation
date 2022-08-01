@@ -411,8 +411,9 @@ a message as shown in the screenshot below:&lt;/p>
 safer and more secure.&lt;/p>
 &lt;p>First, you need a valid name for your VM. You can use the
 &lt;a href="https://nsupdate.fedcloud.eu">FedCloud Dynamic DNS&lt;/a> to create a name. See
-&lt;a href="../../cloud-compute/dynamic-dns/">Dynamic DNS docs&lt;/a> for more information on the
-service. Once you have your name ready, assign it your VM&amp;rsquo;s IP.&lt;/p>
+&lt;a href="../../compute/cloud-compute/dynamic-dns/">Dynamic DNS docs&lt;/a> for more
+information on the service. Once you have your name ready, assign it your VM&amp;rsquo;s
+IP.&lt;/p>
 &lt;p>Second, you need to get a certificate to enable HTTPS. The VM has
 &lt;a href="https://certbot.eff.org/">certbot&lt;/a> already installed, you just need to run it
 with the hostname you have allocated and your email address as shown here:&lt;/p>
