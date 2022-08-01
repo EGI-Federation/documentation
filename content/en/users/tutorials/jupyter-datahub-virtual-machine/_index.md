@@ -48,7 +48,7 @@ Once your instance is ready,
 [assign it a public IP](../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm)
 so you can reach it from your computer.
 
-### Step 2: Get a host name and certificate for your VM
+### Step 2: Get a hostname and certificate for your VM
 
 Your VM is ready to be accessible, but runs a plain HTTP server, which is not
 secure enough. If you try to connect with your browser to your VM, you will get
