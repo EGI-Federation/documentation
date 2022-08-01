@@ -61,8 +61,9 @@ safer and more secure.
 
 First, you need a valid name for your VM. You can use the
 [FedCloud Dynamic DNS](https://nsupdate.fedcloud.eu) to create a name. See
-[Dynamic DNS docs](../../cloud-compute/dynamic-dns/) for more information on the
-service. Once you have your name ready, assign it your VM's IP.
+[Dynamic DNS docs](../../compute/cloud-compute/dynamic-dns/) for more
+information on the service. Once you have your name ready, assign it your VM's
+IP.
 
 Second, you need to get a certificate to enable HTTPS. The VM has
 [certbot](https://certbot.eff.org/) already installed, you just need to run it
