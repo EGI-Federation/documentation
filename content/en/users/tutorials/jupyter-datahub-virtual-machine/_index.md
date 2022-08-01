@@ -48,7 +48,59 @@ Once your instance is ready,
 [assign it a public IP](../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm)
 so you can reach it from your computer.
 
-### Step 2: Get your token for the Jupyter server
+### Step 2: Get a host name and certificate for your VM
+
+Your VM is ready to be accessible, but runs a plain HTTP server, which is not
+secure enough. If you try to connect with your browser to your VM, you will get
+a message as shown in the screenshot below:
+
+![no-https](no-https-datahub-vm.png)
+
+You can enable HTTPS to encrypt requests and responses, thus making your VM
+safer and more secure.
+
+First, you need a valid name for your VM. You can use the
+[FedCloud Dynamic DNS](https://nsupdate.fedcloud.eu) to create a name. See
+[Dynamic DNS docs](../../cloud-compute/dynamic-dns/) for more information on the
+service. Once you have your name ready, assign it your VM's IP.
+
+Second, you need to get a certificate to enable HTTPS. The VM has
+[certbot](https://certbot.eff.org/) already installed, you just need to run it
+with the hostname you have allocated and your email address as shown here:
+
+```shell
+# log into your VM
+$ ssh ubuntu@<your VM's IP>
+# now request the certificate
+$ sudo certbot --nginx -d <your registered name> -m <your email>
+```
+
+Finally, open your browser and go to `https://<your registered name>/` to see
+Jupyter started. Follow next steps for getting the credentials to access the
+service.
+
+{{% alert title="Enabling insecure access" color="Danger" %}} If you really need
+to use HTTP (e.g. your VM is running without inbound connectivity and cannot
+create a certificate for it), you can disable the error shown by default in the
+nginx configuration.
+
+Open `/etc/nginx/sites-enabled/default` and comment out lines 14-16:
+
+```nginx
+    # if ( $https != 'on' ) {
+    #     return 406;
+    # }
+```
+
+And restart nginx:
+
+```shell
+$ sudo systemctl restart nginx
+```
+
+{{% /alert %}}
+
+### Step 3: Get your token for the Jupyter server
 
 Your VM will spawn a Jupyter notebooks server upon starting. This server runs as
 an unprivileged user named `jovyan` with the software installed using
@@ -65,7 +117,7 @@ $ jupyter server list --jsonlist | jq -r .[].token
 <your token>
 ```
 
-### Step 3: Start your notebooks
+### Step 4: Start your notebooks
 
 Now point your browser to `http://<your VM's IP>` and you will be able to enter
 the token to get started with Jupyter.
@@ -78,7 +130,7 @@ $ micromamba activate
 $ micromamba install -c conda-forge tensorflow
 ```
 
-### Step 4: Mount DataHub spaces
+### Step 5: Mount DataHub spaces
 
 Log into [EGI's DataHub](https://datahub.egi.eu/) and
 [create a token](../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis)
