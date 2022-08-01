@@ -402,7 +402,7 @@ security groups, otherwise you will not be able to reach the Jupyter notebooks.&
 &lt;p>Once your instance is ready,
 &lt;a href="../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm">assign it a public IP&lt;/a>
 so you can reach it from your computer.&lt;/p>
-&lt;h3 id="step-2-get-a-host-name-and-certificate-for-your-vm">Step 2: Get a host name and certificate for your VM&lt;/h3>
+&lt;h3 id="step-2-get-a-hostname-and-certificate-for-your-vm">Step 2: Get a hostname and certificate for your VM&lt;/h3>
 &lt;p>Your VM is ready to be accessible, but runs a plain HTTP server, which is not
 secure enough. If you try to connect with your browser to your VM, you will get
 a message as shown in the screenshot below:&lt;/p>
