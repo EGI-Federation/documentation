@@ -30,7 +30,8 @@ The difference between D and D' users is that:
 - D can NOT update the certification status of member sites.
 - D can NOT approve or reject role requests.
 
-###Roles
+### Roles
+
 **At Site level**
 - Site Administrator - person responsible of maintaining a grid site and
 associated information in GOCDB (C Level)
@@ -43,8 +44,9 @@ Level)
 **At NGI/Regional level**
 - Regional First Line Support - Staff providing first line support for an NGI (D
 Level)
-- Regional Staff (ROD) - staff involved in Operations Centre activities such as
-user/operations support (D Level)
+- Regional Staff (ROD) - staff involved in
+[Operations Centre](https://confluence.egi.eu/display/EGIG/Operations+Centre)
+activities such as user/operations support (D Level)
 - NGI Security officer - official security contact point at regional level (D'
 Level)
 - NGI Operations Deputy Manager - Deputy manager of NGI operations (D' Level)
