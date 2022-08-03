@@ -4,7 +4,6 @@ description: "Managing Service Endpoints entities"
 weight: 30
 type: "docs"
 ---
-The GOCDB UI attempts to authenticate you in one of two ways (the REST style API
 
 ## Definition
 A service endpoint is a single entity formed by a hostname, a hosted service and
