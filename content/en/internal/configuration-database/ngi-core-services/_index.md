@@ -18,8 +18,8 @@ from their other (non-core) services using one of two ways (see A and B below).
 The service instance MUST:
 - Define the ‘NGI’ scope (see Data Visibilty Scopes)
 https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Data_Visibility_.2F_Scopes
-- Be flagged as ‘Production’ (see Production Flag)
-https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#.22production.22_flag_.28t.2Ff.29
+- Be flagged as ‘Production’
+(see [Production Flag](../service-endpoints/_index.md#production-flag-tf))
 - Not be flagged as ‘Beta’ (see Beta Flag)
 https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#.22beta.22_flag_.28t.2Ff.29
 - Monitored flag set to true (see Monitored Flag)
