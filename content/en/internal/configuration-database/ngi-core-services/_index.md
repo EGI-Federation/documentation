@@ -16,8 +16,7 @@ from their other (non-core) services using one of two ways (see A and B below).
 ### Core Service Requirements
 
 The service instance MUST:
-- Define the ‘NGI’ scope (see Data Visibilty Scopes)
-https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Data_Visibility_.2F_Scopes
+- Define the ‘NGI’ scope (see [Data Visibilty Scopes](../scopes))
 - Be flagged as ‘Production’
 (see [Production Flag](../service-endpoints/_index.md#production-flag-tf))
 - Not be flagged as ‘Beta’
