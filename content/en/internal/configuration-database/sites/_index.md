@@ -61,8 +61,9 @@ details pages (see below)
 ### Adding a site
 
 Provided you have proper permissions (check the permissions matrix in the
-**Permissions_associated_to_roles section**), you can add a site by clicking on
-the Add a New Site link in the sidebar. Simply fill the form and validate.
+[related section](../users-roles/managing-roles/_index.md#permissions-associated-to-roles)
+, you can add a site by clicking on the Add a New Site link in the sidebar.
+Simply fill the form and validate.
 
 **Note**: If you just registered as site admin and want your new site to be
 registered in GOCDB, please contact your NGI representative.
@@ -102,8 +103,9 @@ A site will have CANDIDATE status only during certification.
 and is ready to be moved to certified status (again). The certification status of
 a site can only be changed by a user with a higher level 'Regional' (or EGI
 'Project') level role. This usually means that only regional managers/deputies/staff
-can update the status of a site that belongs to that region, see the
-**Permissions_associated_to_roles section**.
+can update the status of a site that belongs to that region, see the permissions
+associated to the roles in the
+[related section](../users-roles/managing-roles/_index.md#permissions-associated-to-roles).
 - **Certified**: the Operations Centre has verified that the site has all middleware
 installed, passes the tests and appears stable.
 - **Suspended**: Site does temporarily not conform to production requirements (e.g.
