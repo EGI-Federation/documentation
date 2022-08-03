@@ -20,10 +20,10 @@ The service instance MUST:
 https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Data_Visibility_.2F_Scopes
 - Be flagged as ‘Production’
 (see [Production Flag](../service-endpoints/_index.md#production-flag-tf))
-- Not be flagged as ‘Beta’ (see Beta Flag)
-https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#.22beta.22_flag_.28t.2Ff.29
-- Monitored flag set to true (see Monitored Flag)
-https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#.22monitoring.22_flag_.28t.2Ff.29
+- Not be flagged as ‘Beta’
+(see [Beta Flag](../service-endpoints/_index.md#beta-flag-tf))
+- Monitored flag set to true
+(see [Monitored Flag](../service-endpoints/_index.md#monitoring-flag-tf))
 - Be hosted under a ‘NGI’ scoped Site that has a certification status of
 ‘Certified’
 
