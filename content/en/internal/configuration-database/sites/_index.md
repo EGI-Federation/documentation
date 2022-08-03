@@ -7,11 +7,11 @@ type: "docs"
 
 ## Definition
 
-A site (also known as a Resource Centre) is a grouping of grid resources
-collating multiple Service Endpoints (SEs). Downtimes are recorded on selected
-SEs of a site. GOCDB stores the following information about sites (non exhaustive
-list). Note, when editing values in the portal, mandatory fields are marked with
-'*':
+A site (also known as a [Resource Centre](https://confluence.egi.eu/x/Z4IkBQ))
+is a grouping of grid resources collating multiple Service Endpoints (SEs).
+Downtimes are recorded on selected SEs of a site. GOCDB stores the following
+information about sites (non exhaustive list). Note, when editing values in the
+portal, mandatory fields are marked with '*':
 - A unique (short) name - case sensitive (GOCDB and GoCDB are considered
 different)
 - An official (long) name
@@ -159,9 +159,3 @@ More information about site certification statuses can be found in the
 
 **Note**: Site certification status cannot be changed by site administrators, and
 requires intervention of Operations Centre staff.
-
-### Defining Pay4Use Properties
-**to decide if keeping it or not**
-- GOCDB is used to define properties for the EGI Pay for Use pilot project. Please see:
-- [P4U instructions](https://wiki.egi.eu/wiki/EGI_Pay-for-Use_PoC:Processes/Instructions)
-- [price overview](https://wiki.egi.eu/wiki/EGI_Pay-for-Use_PoC:Service/Price_Overview)
