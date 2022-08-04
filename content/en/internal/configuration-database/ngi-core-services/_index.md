@@ -16,6 +16,7 @@ from their other (non-core) services using one of two ways (see A and B below).
 ### Core Service Requirements
 
 The service instance MUST:
+
 - Define the ‘NGI’ scope (see [Data Visibilty Scopes](../scopes))
 - Be flagged as ‘Production’
 (see [Production Flag](../service-endpoints/_index.md#production-flag-tf))
@@ -30,17 +31,18 @@ The service instance MUST:
 
 The following service types are mandatory and all NGIs in the EGI scope should
 define instances of these services:
+
 - ngi.SAM (Mandatory)
 - emi.ARGUS (Mandatory) (NGI ARGUS)
 - Top-BDII (Mandatory)
 
 Other Mandatory services, depending on middleware deployed by sites under NGI
-responsibility, are listed here
-https://wiki.egi.eu/wiki/NGI_services_in_GOCDB#Services
+responsibility, are listed
+[here](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB#Services)
 
 NGIs should also register their custom core services like accounting, helpdesk if
 they are registered in GOCDB (for a list of other common core service types see:
-https://wiki.egi.eu/wiki/NGI_services_in_GOCDB)
+[NGI_services_in_GOCDB](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB))
 
 ### Registering NGI Core Services
 
@@ -54,4 +56,5 @@ services to this ServiceGroup.
 
 It is important that these core service Sites/ServiceGroups adhere to the
 ‘NGI_XX_SERVICES’ naming scheme. For further details, including a list of existing
-‘NGI_XX_SERVICES’ please see: https://wiki.egi.eu/wiki/NGI_services_in_GOCDB
+‘NGI_XX_SERVICES’ please see:
+[NGI_services_in_GOCDB](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB)
