@@ -12,36 +12,37 @@ is a grouping of grid resources collating multiple Service Endpoints (SEs).
 Downtimes are recorded on selected SEs of a site. GOCDB stores the following
 information about sites (non exhaustive list). Note, when editing values in the
 portal, mandatory fields are marked with '*':
+
 - A unique (short) name - case sensitive (GOCDB and GoCDB are considered
 different)
 - An official (long) name
 - A domain name for the Site/Resource Centre
 - The home web URL of the Site/Resource Centre
 - A contact email address and telephone number
- - Emergency e-mail for a fast response time in case of urgent problem
- - Alarm e-mail is WLCG Tier1 site specific (used as part of a WLCG workflow for
- dealing with specific monitoring alarms)
+  - Emergency email for a fast response time in case of urgent problem
+  - Alarm email is WLCG Tier1 site specific (used as part of a WLCG workflow for
+    dealing with specific monitoring alarms)
 - A security contact email address and telephone number
 - The site timezone
 - The site's GIIS URL (Case Sensitive - Please ensure you enter your Site name
 which is usually encoded in the URL in the correct case!).
- - e.g. ldap://bdii-rc.some-site.uk:2170/mds-vo-name=SITE-NAME,o=grid (if your
- GOCDB site name site name is upper case)
+  - e.g. ldap://bdii-rc.some-site.uk:2170/mds-vo-name=SITE-NAME,o=grid (if your
+    GOCDB site name site name is upper case)
 - A mandatory human readable description of the site
 - The site's latitude, longitude and location
 - Production Infrastructure: The site's intended target infrastructure. This
 specifies the infrastructure that the site's services deliver to. This has one
 of the following values:
- - Production (with this target infrastructure, the EGI site certification
- transition rules apply)
- - Test (in future, if the site delivers to this infrastructure, then its
-Certification status will be fixed to 'Candidate').
+  - Production (with this target infrastructure, the EGI site certification
+    transition rules apply)
+  - Test (in future, if the site delivers to this infrastructure, then its
+    Certification status will be fixed to 'Candidate').
 - ROC [GROUP] - The NGI or Region of the site
 - Country
 - IP address range within which the Site/Resource Centre's services run
- - IP/netmask (x.x.x.x/x.x.x.x). To specify multiple IP/netmask values, use a
-comma or semi-colon separated list with no spaces, e.g. 1.2.3.4/255.255.255.0,
-1.2.3.5/255.255.255.0
+  - IP/netmask (x.x.x.x/x.x.x.x). To specify multiple IP/netmask values, use a
+    comma or semi-colon separated list with no spaces, e.g.
+    1.2.3.4/255.255.255.0, 1.2.3.5/255.255.255.0
 
 ## Manipulating sites
 
@@ -53,6 +54,7 @@ the ordering (ascending or descending).
 
 Each site also has its own listing page. By clicking the link to view a site,
 you can see all of the site's information
+
 - Site listing page is available from the sidebar by clicking on the Browse
 Sites link.
 - sites belonging to a given Operations Centre are also listed from the group
@@ -95,6 +97,7 @@ follows:
 Candidate -> Uncertified -> Certified.
 
 The different possible certification statuses are:
+
 - **Candidate**: the Resource Centre is in under registration according to the
 registration process described in the
 [RC registration certification procedure](https://confluence.egi.eu/x/FSAmBg).
@@ -134,6 +137,7 @@ require attention by the [Operations Centre](https://confluence.egi.eu/x/NoIkBQ)
 - The closed status should be the terminal one. Suspended is not a terminal state.
 
 **The following site state transitions are allowed**:
+
 - candidate -> uncertified
 - candidate -> closed
 - uncertified -> certified
@@ -143,6 +147,7 @@ require attention by the [Operations Centre](https://confluence.egi.eu/x/NoIkBQ)
 - suspended -> closed
 
 **The following transitions are explicitly forbidden**:
+
 - suspended -> certified
 - candidate -> something else but uncertified and closed
 - closed -> anything else
@@ -155,6 +160,7 @@ closed or brought back in production via the uncertified status.
 
 More information about site certification statuses can be found in the
 [EGI Federation Procedures](https://confluence.egi.eu/x/FwfSB):
+
 - [PROC09 RC Registration and Certification Procedure](https://confluence.egi.eu/x/FSAmBg)
 - [PROC11 Resource Centre Decommissioning Procedure](https://confluence.egi.eu/x/myAmBg)
 - [PROC12 Production Service Decommissioning Procedure](https://confluence.egi.eu/x/jSAmBg)
