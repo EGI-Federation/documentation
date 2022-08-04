@@ -128,7 +128,9 @@ match the one registered with your account.
 - Click on the validation link or copy/paste in your browser. Once validated,
 changes are immediate.
 
+<!-- markdownlint-disable no-inline-html -->
 ## If you mistakenly changed your accountID from your certDN to the ID issued from the EGI IdP and have lost access using your certificate
+<!-- markdownlint-enable no-inline-html -->
 
 - Go to GOCDB. If you are already logged in, then clear your caches and restart
 your browser or start a new private browser session.
