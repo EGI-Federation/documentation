@@ -6,11 +6,13 @@ type: "docs"
 ---
 
 ## Definition
+
 A service endpoint is a single entity formed by a hostname, a hosted service and
 a URL.
 
 GOCDB stores the following information about service endpoints (non exhaustive
 list):
+
 - The fully qualified hostname of the machine
 - The hosted service (see service types below)
 - The URL to reach the endpoint
@@ -23,9 +25,10 @@ machine.
 
 *Example: the machine myhost.domain.org runs a CE, an UI and a UnicoreX service.
 This will show up in GOCDB as 3 Service Endpoints:
-- *myhost.domain.orgCE URL: http://myhost.domain.org/CE
-- *myhost.domain.orgUI URL: http://myhost.domain.org/UI
-- *myhost.domain.orgunicore6.UNICOREX URL: http://myhost.domain.org/UnicoreX*
+
+- *myhost.domain.orgCE URL: `http://myhost.domain.org/CE`
+- *myhost.domain.orgUI URL: `http://myhost.domain.org/UI`
+- *myhost.domain.orgunicore6.UNICOREX URL: `http://myhost.domain.org/UnicoreX`*
 
 Note that a single host can also specify multiple services of the same service
 type.
@@ -35,6 +38,7 @@ type.
 ### Viewing service endpoints
 
 There are different pages in GOCDB where service endpoints are listed:
+
 - **A full service endpoints listing page**, that shows a listing of all the
 endpoints in the database, with controls to page through the listing. The table
 headers can be clicked to set the ordering.
@@ -43,6 +47,7 @@ are listed
 
 Each endpoint also has its own listing page. By clicking the link to view a
 service endpoint, you can see all associated information.
+
 - Service Endpoints listing page is available from the side menu in GOCDB4 by
 clicking on the *Browse Service Endpoints* link.
 
@@ -51,6 +56,7 @@ clicking on the *Browse Service Endpoints* link.
 There are 2 ways to add new service endpoints to GOCDB, provided you have proper
 permissions (check the permissions matrix in the Permissions_associated_to_roles
 section):
+
 - By clicking on the **Add a New Service** link in the sidebar. Simply select
 parent site, fill the form and validate.
 - By clicking on the **Add a New Service Endpoint** link from a given site's
@@ -87,12 +93,14 @@ allowed chars.
 
 To supply multiple or alternate DN(s) for a service, for example of the multiple
 hosts supporting a single service entry,
-see https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#HostDN
+see *(to change the link)*
+`https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#HostDN`
 
 ### "production" flag (t/f)
 
 The services Production flag indicates if this service delivers a production
 quality service to the infrastructure it belongs to (EGI).
+
 - Non-production services can be either Monitored or Not Monitored, depending on
 the Administrator's choice.
 - Even if this flag is false, the service is still considered part of the EGI and
@@ -106,6 +114,7 @@ infrastructure.
 ### "monitoring" flag (t/f)
 
 This flag is taken into account by monitoring tools.
+
 - Can only be set to "N" (false) if Production flag is also false.
 - If set to "N" the endpoint won't be tested.
 
