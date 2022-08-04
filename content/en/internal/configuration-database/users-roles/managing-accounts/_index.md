@@ -105,11 +105,11 @@ new certificate, it is as if you had no user account (you have not registered yo
 new certificate with GOCDB yet).
 - In the "user status" panel in the sidebar, click on the **retrieve an old
 account** link.
-- Specify in the form the DN of your old certificate, and the e-mail address
+- Specify in the form the DN of your old certificate, and the email address
 associated to your account.
-- Upon validation, an e-mail will be sent to the specified address, which has to
+- Upon validation, an email will be sent to the specified address, which has to
 match the one registered with your account. This is to avoid identity theft. The
-e-mail contains a validation link.
+email contains a validation link.
 - Click on the validation link or copy/paste in your browser. Once validated,
 changes are immediate.
 
@@ -121,9 +121,9 @@ account via EGI Check-In going forward
 - Access GOCDB via the EGI IdP.
 - In the "user status" panel in the sidebar, click on the retrieve an old account
 link.
-- Specify in the form: the DN of your old certificate; and the e-mail address
+- Specify in the form: the DN of your old certificate; and the email address
 associated to your account.
-- Upon validation, an e-mail will be sent to the specified address, which has to
+- Upon validation, an email will be sent to the specified address, which has to
 match the one registered with your account.
 - Click on the validation link or copy/paste in your browser. Once validated,
 changes are immediate.
@@ -140,10 +140,10 @@ account.
 - In the "user status" panel in the sidebar, click on the **retrieve an old account**
 link.
 - In the form, specify the DN of your certificate that you want to reinstate, and the
-e-mail address associated to your account.
-- Upon validation, an e-mail will be sent to the specified address, which has to
+email address associated to your account.
+- Upon validation, an email will be sent to the specified address, which has to
 match the one registered with your account. This is to avoid identity theft.
-The e-mail contains a validation link.
+The email contains a validation link.
 - Click on the validation link or copy/paste in your browser. Once validated, changes
 are immediate.
 
