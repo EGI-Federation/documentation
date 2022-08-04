@@ -35,4 +35,3 @@ details page.
 ## Deleting Groups
 
 This operation is not allowed.
-
