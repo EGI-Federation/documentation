@@ -26,6 +26,7 @@ for details.
 ## Clear Separation of Concerns
 
 It is important to understand that scopes and Projects are distinct:
+
 - Projects are used to cascade roles and permissions over child objects
 - Scope tags are used to filter resources into flexible categories/groupings
 - Scope tags can be created to mirror the projects. For example, assuming two
@@ -39,8 +40,8 @@ and resource filtering.
 
 - To make a Site, Service or ServiceGroup visible to EGI, the resource's 'EGI'
 scope tag check box must be ticked. EGI scoped resources are exposed to the
-central operational tools for monitoring and will appear in the central 
-perations portal.
+central operational tools for monitoring and will appear in the central
+operations portal.
 - **Un-ticking the EGI checkbox** and selecting the 'Local' scope makes the
 selected object invisible to EGI; it will be hidden from the central operation
 tools (it will not show in the central dashboard and it will not be monitored
@@ -62,49 +63,49 @@ and Topology Database (GOCDB)" support unit.
 ## Reserved Scope Tags
 
 - Some tags may be 'Reserved' which means they are protected - they are used to
-restrict tag usage and prevent non-authorised sites/services from using tags not
-intended for them.
+  restrict tag usage and prevent non-authorised sites/services from using tags not
+  intended for them.
 - Reserved tags are initially assigned to resources by the gocdb-admins, and can
-then be optionally inherited by child resources (tags can be initially assigned
-to NGIs, Sites, Services and ServiceGroups).
+  then be optionally inherited by child resources (tags can be initially assigned
+  to NGIs, Sites, Services and ServiceGroups).
 - When creating a new child resource (e.g. a child Site or child Service), the
-scopes that are assigned to the parent are automatically inherited and assigned
-to the child.
+  scopes that are assigned to the parent are automatically inherited and assigned
+  to the child.
 - Reserved tags assigned to a resource are optional and can be de-selected if
-required.
+  required.
 - Users can reapply Reserved tags to a resource ONLY if the tag can be inherited
-from the parent Scoped Entity (parents include NGIs/Sites).
+  from the parent Scoped Entity (parents include NGIs/Sites).
  - For Sites: If a Reserved tag is removed from a Site, then the same tag is also
-removed from all the child Services - a Service can't have a reserved tag that is
-not supported by its parent Site.
+   removed from all the child Services - a Service can't have a reserved tag that is
+   not supported by its parent Site.
  - For NGIs: If a Reserved tag is removed from an NGI, then the same tag is NOT
-removed from all the child Sites - this is intentionally different from the
-Site->Service relationship.
+   removed from all the child Sites - this is intentionally different from the
+   Site->Service relationship.
 - To request a reserved scope tag, **an approval is required from the operators of
-the relevant resources**. Details on who to contact are listed below. Once
-authorisation is given, please contact the GOCDB admins with details of the
-approval (e.g. link to a GGUS ticket that approves the tag assignment).
+  the relevant resources**. Details on who to contact are listed below. Once
+  authorisation is given, please contact the GOCDB admins with details of the
+  approval (e.g. link to a GGUS ticket that approves the tag assignment).
 
 ### FedCloud Reserved Tag
 
 - Tag for resources that contribute to the EGI Federated Cloud. To request this
-tag, please contact the FedCloud operators / EGI Operations.
+  tag, please contact the FedCloud operators / EGI Operations.
 
 ### Elixir Reserved Tag
 
 - Tag for resources that contribute to the EGI Federated Cloud. To request this
-tag, please contact the operators of the ‘ELIXIR’ NGI in GOCDB.
+  tag, please contact the operators of the ‘ELIXIR’ NGI in GOCDB.
 
 ### WLCG Reserved Tags
 
 - A number of reserved scope tags have been defined for the WLCG:
  - The ‘tierN’ tags should be requested for WLCG sites that are defined in REBUS
-(a management view of the WLCG infrastructure/sites). To request a ‘tierN’ tag,
-raise a ticket against the REBUS support unit in GGUS.
+   (a management view of the WLCG infrastructure/sites). To request a ‘tierN’ tag,
+   raise a ticket against the REBUS support unit in GGUS.
  - For the experiment VO tags (alice, atlas, cms, lhcb), raise a ticket with the
-relevant VO support unit.
+   relevant VO support unit.
  - The wlcg tag is a generic catch-all tag for sites/services with either tierN
-and VO tags and is used to gain an overall view of the WLCG infrastructure.
+   and VO tags and is used to gain an overall view of the WLCG infrastructure.
 
 ### SLA Reserved Tag
 
