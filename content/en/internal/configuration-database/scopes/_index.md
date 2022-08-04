@@ -75,10 +75,10 @@ and Topology Database (GOCDB)" support unit.
   required.
 - Users can reapply Reserved tags to a resource ONLY if the tag can be inherited
   from the parent Scoped Entity (parents include NGIs/Sites).
- - For Sites: If a Reserved tag is removed from a Site, then the same tag is also
+  - For Sites: If a Reserved tag is removed from a Site, then the same tag is also
    removed from all the child Services - a Service can't have a reserved tag that is
    not supported by its parent Site.
- - For NGIs: If a Reserved tag is removed from an NGI, then the same tag is NOT
+  - For NGIs: If a Reserved tag is removed from an NGI, then the same tag is NOT
    removed from all the child Sites - this is intentionally different from the
    Site->Service relationship.
 - To request a reserved scope tag, **an approval is required from the operators of
@@ -99,18 +99,18 @@ and Topology Database (GOCDB)" support unit.
 ### WLCG Reserved Tags
 
 - A number of reserved scope tags have been defined for the WLCG:
- - The ‘tierN’ tags should be requested for WLCG sites that are defined in REBUS
-   (a management view of the WLCG infrastructure/sites). To request a ‘tierN’ tag,
-   raise a ticket against the REBUS support unit in GGUS.
- - For the experiment VO tags (alice, atlas, cms, lhcb), raise a ticket with the
-   relevant VO support unit.
- - The wlcg tag is a generic catch-all tag for sites/services with either tierN
-   and VO tags and is used to gain an overall view of the WLCG infrastructure.
+  - The ‘tierN’ tags should be requested for WLCG sites that are defined in REBUS
+    (a management view of the WLCG infrastructure/sites). To request a ‘tierN’ tag,
+    raise a ticket against the REBUS support unit in GGUS.
+  - For the experiment VO tags (alice, atlas, cms, lhcb), raise a ticket with the
+    relevant VO support unit.
+  - The wlcg tag is a generic catch-all tag for sites/services with either tierN
+    and VO tags and is used to gain an overall view of the WLCG infrastructure.
 
 ### SLA Reserved Tag
 
 - Entitities covered by an EGI VO SLA
- - This Tag will only be applied at the request of EGI operations
+  - This Tag will only be applied at the request of EGI operations
 
 ### EOSCCore Tag
 
