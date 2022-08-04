@@ -1,0 +1,80 @@
+---
+title: "Service Types"
+weight: 30
+description: >-
+     Description of Service types.
+---
+
+The GOCDB UI attempts to authenticate you in one of two ways (the REST style API
+
+## Introduction
+
+In GOCDB a service type is a technology used to provide a service. Each service
+endpoint in GOCDB is associated with a service type. Service types are pieces of
+software while service endpoints are a particular instance of that software
+running in a certain context.
+
+## Service Type Naming Scheme
+
+- Service types include grid middleware and operational services.
+- This attribute corresponds to the Glue2 'Service.Type' attribute and is
+defined as the 'Type of service according to a namespace based classification
+(the namespace MAY be related to a middleware name, an organisation or other
+concepts)'.
+- The naming scheme for new service types in GOCDB therefore generally follow a
+reverse DNS style syntax, usually naming the technology provider/project followed
+by technology type in lowercase, i.e. ‘<provider>.<type>’ (e.g. ‘org.openstack.swift’).
+- Please note, this syntax does not necessarily indicate ownership, the main objective
+is to avoid name clashes between services. For example, different projects may have
+similar services but these may be modified/customised just enough to merit a different
+prefix or service type name.
+
+- Glue2 defines a service type list at:
+  - [Glue2 Enums](https://github.com/OGF-GLUE/Enumerations)
+  - [Glue2 service types](https://github.com/OGF-GLUE/Enumerations/blob/master/ServiceType_t.csv).
+- The Glue2 and GOCDB recommendation is to use lowercase (legacy enum values do
+exist that use camelCase).
+
+
+These service types are used at some grid sites within EGI but aren't EGI operational
+tools or a part of the core middleware distributions (EMI, gLite, ARC, UNICORE, Globus etc).
+
+
+
+
+## Service Type List
+
+
+To request a new service type, please submit a request for a new service type (described below).
+
+
+Operational Components (middleware agnostic)
+Site-BDII: [Site service] This service collects and publishes site's data for the Information System. All grid sites MUST install one Site-BDII. For cloud sites eu.egi.cloud.information.bdii MUST be installed.
+Top-BDII: [Central service] The "top-level BDII". These collect and publish the data from site-BDIIs. Only a few instances per region are required.
+MyProxy: [Central service] MyProxy is part of the authentication and authorization system. Often installed by sites installing the WMS service.
+egi.APELRepository: [Central service] The central APEL repository
+egi.AccountingPortal: [Central service] The central accounting portal
+egi.GGUS: [Central service] The central GGUS
+egi.GOCDB: [Central service] The central GOCDB
+egi.MSGBroker: [Central service] The central message broker
+egi.Portal: [Central Service] for monitoring generic web portals who dont have a specific service type
+MSG-Broker: [Central service] A broker for the backbone messaging system.
+egi.MetricsPortal: [Central service] The central metrics portal
+egi.OpsPortal: [Central service] The central operations portal
+egi.GRIDVIEW: [Central service] The central gridview portal
+egi.GSTAT: [Central service] The central GStat portal
+egi.SAM: [Central service] The central SAM monitoring
+ngi.SAM: [Regional Service] NGI-level SAM monitoring box
+vo.SAM: [Regional Service] VO-level SAM monitoring box
+site.SAM: [Regional Service] Site-level SAM monitoring box
+ngi.OpsPortal: [Regional service] NGI-level regional operations portal instance
+eu.egi.MPI: Defines a dummy Service Type to enable the running of MPI tests for services providing MPI capabilities. Sites must have one instance of this Service Type associated with a CREAM-CE service. For details see https://wiki.egi.eu/wiki/VT_MPI_within_EGI:Nagios
+argo.poem: POEM is system for managing profiles of probes and metrics in ARGO system.
+argo.mon: ARGO Monitoring Engine gathers monitoring metrics and publishes to messaging service.
+argo.consumer: ARGO Consumer collects monitoring metrics from monitoring engines.
+argo.computeengine: ARGO Compute Engine computes availability and reliability of services.
+argo.api: ARGO API service for retrieving status and A/R results.
+argo.webui: ARGO web user interface for metric A/R visualization and recalculation management.
+egi.aai.saml: EGI AAI CheckIn SAML interface. Enables federated access to EGI services and resources using Security Assertion Markup Language (SAML). Provided by GRNET.
+egi.aai.oidc: EGI AAI CheckIn OpenID Connect interface. Enables federated access to EGI services and resources using OpenID Connect (OIDC). Provided by GRNET.
+egi.aai.tts: EGI AAI CheckIn token translation service. Enables the translation between different authentication and authorisation protocols. Provided by GRNET.
