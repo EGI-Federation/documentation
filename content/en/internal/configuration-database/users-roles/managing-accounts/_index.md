@@ -6,6 +6,7 @@ description: >-
 ---
 
 ## Authentication
+
 The GOCDB UI attempts to authenticate you in one of two ways (the REST style API
 applies x509 only):
 
@@ -29,11 +30,13 @@ an account will be logged into their account, while new users may choose to
 register a new account.
 
 ## Registering a new user account
+
 Being authenticated in one of the two ways described above is enough to have
 read-only access to all the public features of GOCDB. If you need to edit data
 in GOCDB and request roles, **you will need to fill in the registration form**.
 
 **To Register**:
+
 - Go to the GOCDB web portal
 - In the left sidebar, look out for the **User status** panel
 - click on the "Register" link
@@ -44,13 +47,16 @@ because your certificate DN changed), do not register again! Instead, follow the
 steps described in the (put link)Changing_your_accountID section
 
 ## Editing your user account
+
 The editing process is the same as the registration process. To edit your user
 account, simply follow these steps:
+
 - click on the "view details" link in the "User Status" panel on the sidebar.
 You should get a page showing your user account information.
 - Click on the "edit" link on top of it.
 
 ## Viewing users
+
 Each user account has its own user details page which is accessible to anyone
 with a valid certificate.
 
@@ -60,7 +66,9 @@ section about sites). It is also possible to search for a user's account using
 the **search** feature on the sidebar.
 
 ## Deleting your user account
+
 If you wish to unregister from GOCDB, follow these steps:
+
 - click on the "view details" link in the "User Status" panel on the sidebar.
 You should get a page showing your user account information.
 - Click on the "delete" link on top of it.
@@ -69,8 +77,10 @@ You should get a page showing your user account information.
 Your account will then be deleted along with any roles the account has.
 
 ## Changing your accountID
+
 Under the following circumstances it is possible to lose access to a GOCDB account
 that was originally created using a client certificate:
+
 - If you change your certificate, it is possible that the certificate's
 distinguished name (DN) has also changed. This is what GOCDB uses to identify your
 account.
@@ -84,7 +94,9 @@ In these situations, it is usually possible to regain access using to your
 certificate based account by following one of the following procedures:
 
 ### If you have a new certificate and have lost access to your account
+
 First install your new certificate in your browser.
+
 - Go to GOCDB. If you are already logged in, then clear your caches and restart
 your browser or start a new private browser session.
 - When prompted, select your new certificate but **DON'T Register** a new account.
@@ -102,8 +114,10 @@ e-mail contains a validation link.
 changes are immediate.
 
 ### If you choose to stop using a client certificate in favour of the EGI IdP
+
 **NOTE**: Following this process will mean you can *only* login to your GOCDB
 account via EGI Check-In going forward
+
 - Access GOCDB via the EGI IdP.
 - In the "user status" panel in the sidebar, click on the retrieve an old account
 link.
@@ -115,6 +129,7 @@ match the one registered with your account.
 changes are immediate.
 
 ## If you mistakenly changed your accountID from your certDN to the ID issued from the EGI IdP and have lost access using your certificate
+
 - Go to GOCDB. If you are already logged in, then clear your caches and restart
 your browser or start a new private browser session.
 - When prompted, select your certificate you want to reinstate/re-associate with
