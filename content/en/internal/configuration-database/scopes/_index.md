@@ -39,7 +39,7 @@ and resource filtering.
 ## EGI Scopes
 
 - To make a Site, Service or ServiceGroup visible to EGI, the resource's 'EGI'
-scope tag check box must be ticked. EGI scoped resources are exposed to the
+scope tag checkbox must be ticked. EGI scoped resources are exposed to the
 central operational tools for monitoring and will appear in the central
 operations portal.
 - **Un-ticking the EGI checkbox** and selecting the 'Local' scope makes the
