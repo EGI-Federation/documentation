@@ -5,8 +5,6 @@ description: >-
      Description of Service types.
 ---
 
-The GOCDB UI attempts to authenticate you in one of two ways (the REST style API
-
 ## Introduction
 
 In GOCDB a service type is a technology used to provide a service. Each service
@@ -77,6 +75,31 @@ MUST be installed.
 - [argo.webui](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=argo.webui): ARGO web user interface for metric A/R visualization and recalculation management.
 - [egi.aai.saml](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=egi.aai.saml): EGI AAI CheckIn SAML interface. Enables federated access to EGI services and resources using Security Assertion Markup Language (SAML). Provided by GRNET.
 - [egi.aai.oidc](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=egi.aai.oidc): EGI AAI CheckIn OpenID Connect interface. Enables federated access to EGI services and resources using OpenID Connect (OIDC). Provided by GRNET.
-[egi.aai.tts](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=egi.aai.tts): EGI AAI CheckIn token translation service. Enables the translation between different authentication and authorisation protocols. Provided by GRNET.
+- [egi.aai.tts](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=egi.aai.tts): EGI AAI CheckIn token translation service. Enables the translation between different authentication and authorisation protocols. Provided by GRNET.
 
 <!-- markdownlint-enable no-inline-html -->
+
+The GOCDB UI attempts to authenticate you in one of two ways (the REST style API     
+
+## Adding new services types
+     
+Please feel free to make a request for a new service type. For CUSTOM service
+types, we would like to make this process as light-weight as possible. However,
+currently all new service type requests need to be assessed by EGI via
+lightweight review process (by OMB and EGI Ops) so that only suitable types are
+added to GOCDB and to prevent duplication.
+
+You can submit your request via GGUS to the "Configuration and Topology Database
+(GOCDB)" support unit.
+
+Please specify the following information as part of your request:
+
+- name of service type (lowercase):
+- high-level description of the service functionality (255 characters max):
+- project/community/organization maintaining the software:
+- scale of deployment (number of instances and by which organizations):
+- contact point (name/e-mail address):
+
+Note: please provide a suggested service type name following the naming scheme
+described above (technology provider's reversed domain . software name) and a
+brief sentence to describe the service type.
