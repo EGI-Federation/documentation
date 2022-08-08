@@ -10,7 +10,7 @@ A provider (that we call Resource
 Centre) delivering one of the existing EGI Foundation services within the
 Federated Resource Providers layer: Cloud Compute, HTC Compute, Cloud
 Container Compute or Online Storage.&lt;/li>
-&lt;li>&lt;a href="../joining-eosc/technology-provider/index.md">Joining as a software provider&lt;/a>,
+&lt;li>&lt;a href="../joining-eosc/technology-provider/_index.md">Joining as a software provider&lt;/a>,
 also called Technology Providers, which are
 the maintainers of the middleware deployed on the ‘federated resource
 providers’ (previous point), enabling compute and storage services.&lt;/li>
