@@ -19,7 +19,7 @@ In particular, we consider here 5 cases:
    Centre) delivering one of the existing EGI Foundation services within the
    Federated Resource Providers layer: Cloud Compute, HTC Compute, Cloud
    Container Compute or Online Storage.
-2. [Joining as a software provider](../joining-eosc/technology-provider/index.md),
+2. [Joining as a software provider](../joining-eosc/technology-provider/_index.md),
    also called Technology Providers, which are
    the maintainers of the middleware deployed on the ‘federated resource
    providers’ (previous point), enabling compute and storage services.
