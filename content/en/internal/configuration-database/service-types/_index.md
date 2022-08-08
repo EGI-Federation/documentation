@@ -21,7 +21,7 @@ defined as the 'Type of service according to a namespace based classification
 concepts)'.
 - The naming scheme for new service types in GOCDB therefore generally follow a
 reverse DNS style syntax, usually naming the technology provider/project followed
-by technology type in lowercase, i.e. ‘<provider>.<type>’ (e.g. ‘org.openstack.swift’).
+by technology type in lowercase, i.e. ‘provider.type’ (e.g. ‘org.openstack.swift’).
 - Please note, this syntax does not necessarily indicate ownership, the main objective
 is to avoid name clashes between services. For example, different projects may have
 similar services but these may be modified/customised just enough to merit a different
@@ -78,11 +78,9 @@ MUST be installed.
 - [egi.aai.tts](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=egi.aai.tts): EGI AAI CheckIn token translation service. Enables the translation between different authentication and authorisation protocols. Provided by GRNET.
 
 <!-- markdownlint-enable no-inline-html -->
-
-The GOCDB UI attempts to authenticate you in one of two ways (the REST style API     
-
-## Adding new services types
      
+## Adding new services types
+
 Please feel free to make a request for a new service type. For CUSTOM service
 types, we would like to make this process as light-weight as possible. However,
 currently all new service type requests need to be assessed by EGI via
