@@ -535,20 +535,20 @@ groups is&lt;/p>
 &lt;ul>
 &lt;li>A CO Person can be a member, an owner, both, or neither. Specifically:
 &lt;ul>
-&lt;li>A COU admins group member can manage COU members:&lt;/li>
+&lt;li>COU Admin Group members can manage COU members&lt;/li>
 &lt;li>Approve or decline membership petitions&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>COU Admin role is granted to a CO Person if the following requirements are met:&lt;/p>
+&lt;p>A CO Person is added to a COU Admin Group if the following requirements are met:&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>CO Person is declared as VO administrator in the VO&amp;rsquo;s ID Card,
-under the Operations Portal&lt;/p>
+under the &lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations Portal&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Open and assign to the Check-in support team a GGUS ticket with the role
-provisioning request.&lt;/p>
+&lt;p>A request is made to the Check-in Support Unit via a
+&lt;a href="../../../../internal/helpdesk/user-guide/">EGI Helpdesk ticket&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;h3 id="expiration-policy">Expiration Policy&lt;/h3>

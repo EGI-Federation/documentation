@@ -906,8 +906,7 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>QoS&lt;/th>
-&lt;th>Level&lt;/th>
+&lt;th>QoS Level&lt;/th>
 &lt;th>Ticket priority&lt;/th>
 &lt;th>Colour&lt;/th>
 &lt;th>Working hours&lt;/th>
@@ -927,7 +926,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>30&lt;/td>
 &lt;td>Red&lt;/td>
 &lt;td>40&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
@@ -938,7 +936,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>30&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>40&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
@@ -949,7 +946,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>30&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>40&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
@@ -960,7 +956,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>30&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>40&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Medium&lt;/td>
@@ -971,7 +966,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>30&lt;/td>
 &lt;td>Red&lt;/td>
 &lt;td>40&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
@@ -982,7 +976,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>30&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>40&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
@@ -993,7 +986,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>6&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>8&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
@@ -1004,7 +996,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>6&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>8&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Advanced&lt;/td>
@@ -1015,7 +1006,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>30&lt;/td>
 &lt;td>Red&lt;/td>
 &lt;td>40&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
@@ -1026,7 +1016,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>6&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>8&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
@@ -1037,7 +1026,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>6&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>8&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;/td>
@@ -1048,7 +1036,6 @@ below. The priority colour calculation is processed every 15 minutes.&lt;/p>
 &lt;td>3&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>4&lt;/td>
-&lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

@@ -537,8 +537,9 @@ during registration through the EGI Federation Registry Portal. Service
 registration requests require approval by an administrator. The review
 process for the demo environment involves primarily the technical aspects of
 the service configuration. However, moving the service to production requires
-compliance with all the [eligibility criteria] (see Step 2). The demo
-instance allows for testing authentication and authorisation through the
+compliance with all the
+&lt;a href="#services-eligible-for-integration">eligibility criteria&lt;/a> (see Step 2). The
+demo instance allows for testing authentication and authorisation through the
 academic and social Identity Providers connected to Check-in without
 affecting the production Check-in service. Note that while the demo instance
 has identical functionality to the production instance, no information is
@@ -562,7 +563,7 @@ Check-in by selecting the &amp;ldquo;Production&amp;rdquo; integration environme
 registration through the EGI Federation Registry Portal. The production
 instance allows access to your service through the academic and social
 Identity Providers connected to Check-in. This requires that your service
-meets all the &lt;a href="#Services_eligible_for_integration">eligibility criteria&lt;/a> and
+meets all the &lt;a href="#services-eligible-for-integration">eligibility criteria&lt;/a> and
 that integration has been thoroughly tested during Step 1.&lt;/li>
 &lt;/ol>
 &lt;h2 id="general-information">General Information&lt;/h2>
@@ -1727,13 +1728,13 @@ setup earlier:&lt;/p>
 &lt;strong>Development&lt;/strong>, &lt;strong>Demo&lt;/strong> and &lt;strong>Production&lt;/strong> environments of Check-in.&lt;/p>
 &lt;p>&lt;strong>Development and Demo&lt;/strong>: Beginning June 24, 2022, clients using the legacy
 Check-in OIDC endpoints will no longer be supported.&lt;/p>
-&lt;p>&lt;strong>Production&lt;/strong>: Beginning July 22, 2022, clients using the legacy Check-in OIDC
-endpoints will no longer be supported.&lt;/p>
+&lt;p>&lt;strong>Production&lt;/strong>: Beginning September 16, 2022, clients using the legacy Check-in
+OIDC endpoints will no longer be supported.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 For OpenStack Services please read the
 OpenStack specific migration guide on
-&lt;a href="../../cloud-compute/openstack/aai#client-migration-to-keycloak">Cloud Compute documentation&lt;/a>.
+&lt;a href="../../cloud-compute/openstack/aai.md#client-migration-to-keycloak">Cloud Compute documentation&lt;/a>.
 &lt;/div>
 &lt;h4 id="how-to-migrate-your-service-to-keycloak">How to Migrate your Service to Keycloak&lt;/h4>
 &lt;p>All the clients that were registered in MITREid Connect have been moved to
@@ -1799,11 +1800,11 @@ please check the following table:&lt;/p>
 &lt;tbody>
 &lt;tr>
 &lt;td>Keycloak&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/token">https://aai.egi.eu/token&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/token-keycloak">https://aai.egi.eu/token-keycloak&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>MITREid Connect (Legacy)&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/token-legacy">https://aai.egi.eu/token-legacy&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://aai.egi.eu/token">https://aai.egi.eu/token&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
