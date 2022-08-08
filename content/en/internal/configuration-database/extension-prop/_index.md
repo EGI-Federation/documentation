@@ -28,7 +28,7 @@ organizing content into different categories by the use of metadata such as
 electronic tags'
 - A number of use cases can be addressed; e.g. filtering Sites that support a
 specific property, e.g. ‘P4U_Pilot_Cloud_Wall’
-- Key/value pairs (currently) prevent certain characters from being used in their
+- Key-value pairs (currently) prevent certain characters from being used in their
 values. This includes the equals and opening/closing parenthesis chars ‘=()’. This
 is to simplify lexical parsing of the query. In addition, to guard against
 cross-site scripting attacks, the quote, double quote, semi-colon and back tick
