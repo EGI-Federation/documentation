@@ -96,7 +96,7 @@ Please specify the following information as part of your request:
 - high-level description of the service functionality (255 characters max):
 - project/community/organization maintaining the software:
 - scale of deployment (number of instances and by which organizations):
-- contact point (name/e-mail address):
+- contact point (name/email address):
 
 Note: please provide a suggested service type name following the naming scheme
 described above (technology provider's reversed domain . software name) and a
