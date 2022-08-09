@@ -150,3 +150,24 @@ output for these queries.
 ```markdown
 ?method=get_downtime&site_extensions=(eg.2=val.2)&service_extensions=(eg.2=)
 ```
+
+### Standard Extension Properties
+
+#### HostDN
+
+*From GOCDB 5.8.0 onwards
+
+For EGI Services, the Standard Extension property "HostDN" has been defined to
+allow the fetching the DNs of multiple hosts behind a load balanced service from
+the endpoint properties of a single GOCDB Service, rather than creating multiple
+GOCDB Services with different host DNs.
+
+#### Recommended Use
+
+To supply multiple or alternate DN(s) for a service, for example of the multiple
+hosts supporting a single service entry, the Service Extension Property
+(hereafter Ext) "HostDN" SHOULD be used. If Ext "HostDN" is present it MUST
+contain one or more x.509 DN values. Multiple values MUST be delimited by
+enclosing each within "<>" characters. If Ext "HostDN" is present, the Service
+"Host DN" SHOULD contain the x.509 SubjectAltName used in the X509 certificate(s)
+presented by the hosts identified by the Ext "HostDN" values.
