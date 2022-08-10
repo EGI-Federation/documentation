@@ -17,8 +17,11 @@ In particular, we consider here 5 cases:
 1. [Joining as a federated resource provider](../joining-eosc/federated-rp/).
    A provider (that we call Resource
    Centre) delivering one of the existing EGI Foundation services within the
-   Federated Resource Providers layer: Cloud Compute, HTC Compute, Cloud
-   Container Compute or Online Storage.
+   Federated Resource Providers layer:
+   [Cloud Compute](https://www.egi.eu/service/cloud-compute/),
+   [HTC Compute](https://www.egi.eu/service/high-throughput-compute/),
+   [Cloud Container Compute](https://www.egi.eu/service/cloud-container-compute/)
+   or [Online Storage](https://www.egi.eu/service/online-storage/).
 2. [Joining as a software provider](../joining-eosc/technology-provider/),
    also called Technology Providers, which are
    the maintainers of the middleware deployed on the ‘federated resource
