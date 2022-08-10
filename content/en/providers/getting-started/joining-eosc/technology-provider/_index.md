@@ -15,11 +15,19 @@ to exploit the compute, storage, data, and cloud resources.
 
 ## Integration of middleware stack
 
+<!-- markdownlint-disable no-inline-html -->
+
+{{% alert title="Note" color="info" %}} Related procedure:
+[PROC19 Integration of new cloud management framework or middleware stack in the EGI Infrastructure](https://confluence.egi.eu/x/DCImBg))
+{{% /alert %}}
+
+<!-- markdownlint-enable no-inline-html -->
+
 To assure production quality of the EGI Infrastructure, every middleware stack
 (Compute, Storage, etc.) installed on and delivered by the RCs needs to fulfil
 a number of requirements.
 
-For this purpose a [procedure](https://confluence.egi.eu/x/DCImBg) was defined
+For this purpose [PROC19](https://confluence.egi.eu/x/DCImBg) was defined
 to ensure that any single aspect of the integration of the new piece of
 middleware with the infrastructure is covered before the conclusion of the
 process.
