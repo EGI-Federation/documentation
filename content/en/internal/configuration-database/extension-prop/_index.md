@@ -89,6 +89,7 @@ To return all sites that define VO with a value of Alice:
 ```markdown
 ?method=get_site&extensions=(VO=Alice)
 ```
+
 Use no value to define a wildcard search, i.e. all sites that define the VO
 property regardless of value:
 
