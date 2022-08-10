@@ -16,6 +16,14 @@ to constitute a homogeneous operational domain.
 
 ## Registration and certification
 
+<!-- markdownlint-disable no-inline-html -->
+
+{{% alert title="Note" color="info" %}} Related procedure:
+[PROC09 Resource Centre Registration and Certification](https://confluence.egi.eu/x/FSAmBg)
+{{% /alert %}}
+
+<!-- markdownlint-enable no-inline-html -->
+
 In order to join the EOSC Compute platform, a RC needs to present the request to
 the Research Infrastructure Provider (RP) existing in its country. A RP is a
 legal organisation, part of large Resource Infrastructures like EGI, responsible
@@ -62,7 +70,8 @@ infrastructure.
 Once moved to the production infrastructure, a RC is ready to deliver its
 resources to any of the users’ communities consuming the infrastructure. Here
 the Service Level Management (SLM) process intervenes as a matchmaker between
-service expectations and needs of the Virtual Organisations (VOs)17 and the
+service expectations and needs of the
+[Virtual Organisations (VOs)](https://confluence.egi.eu/x/yIIkBQ) and the
 capabilities of the RCs. During the selection of the providers for service
 provisioning, technical requirements collected from the customer are used by EGI
 to launch a call open to all of the providers. The Expression of Interests
