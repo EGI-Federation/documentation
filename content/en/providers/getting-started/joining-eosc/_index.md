@@ -14,22 +14,22 @@ In particular, we consider here 5 cases:
 
 <!-- markdownlint-disable no-inline-html -->
 
-1. [Joining as a federated resource provider](../joining-eosc/federated-rp/_index.md).
+1. [Joining as a federated resource provider](../joining-eosc/federated-rp/).
    A provider (that we call Resource
    Centre) delivering one of the existing EGI Foundation services within the
    Federated Resource Providers layer: Cloud Compute, HTC Compute, Cloud
    Container Compute or Online Storage.
-2. [Joining as a software provider](../joining-eosc/technology-provider/_index.md),
+2. [Joining as a software provider](../joining-eosc/technology-provider/),
    also called Technology Providers, which are
    the maintainers of the middleware deployed on the ‘federated resource
    providers’ (previous point), enabling compute and storage services.
-3. [Joining as a new provider](../joining-eosc/new-provider/_index.md)
+3. [Joining as a new provider](../joining-eosc/new-provider/)
    of an existing platform service in the Compute and Data Federation or the
    Platform services.
-4. [Joining as Core/Central service provider](../joining-eosc/core-services/_index.md)
+4. [Joining as Core/Central service provider](../joining-eosc/core-services/)
    within the Service Management Tool block: providers that support all the
    other services of the EOSC Compute Platform.
-5. [Contributing a new service](../joining-eosc/new-services/_index.md) (i.e. not yet present) to the EOSC Compute
+5. [Contributing a new service](../joining-eosc/new-services/) (i.e. not yet present) to the EOSC Compute
    platform (to the Federated Resource Providers, Compute and Data Federation,
    or the Platform services blocks).
 
