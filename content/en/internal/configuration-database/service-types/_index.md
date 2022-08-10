@@ -38,7 +38,13 @@ tools or a part of the core middleware distributions (EMI, gLite, ARC, UNICORE, 
 ## Service Type List
 
 To request a new service type, please submit a request for a new service type
-(described below).
+(see the section "Adding a new service type").
+
+In the following section there is the list of "middleware agnostic" service types.
+You can obtain the whole list of service types by launching the following query to the
+GOCDBPI interface:
+
+ - [get_service_type](https://goc.egi.eu/gocdbpi/public/?method=get_service_types)
 
 ## Operational Components (middleware agnostic)
 
