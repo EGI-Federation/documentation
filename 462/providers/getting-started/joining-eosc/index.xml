@@ -349,10 +349,17 @@ user communities or customisation for specific requirements. In our case,
 they maintain the middleware which the RCs install and that allows the users
 to exploit the compute, storage, data, and cloud resources.&lt;/p>
 &lt;h2 id="integration-of-middleware-stack">Integration of middleware stack&lt;/h2>
+&lt;!-- markdownlint-disable no-inline-html -->
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Related procedure:
+&lt;a href="https://confluence.egi.eu/x/DCImBg">PROC19 Integration of new cloud management framework or middleware stack in the EGI Infrastructure&lt;/a>)
+&lt;/div>
+&lt;!-- markdownlint-enable no-inline-html -->
 &lt;p>To assure production quality of the EGI Infrastructure, every middleware stack
 (Compute, Storage, etc.) installed on and delivered by the RCs needs to fulfil
 a number of requirements.&lt;/p>
-&lt;p>For this purpose a &lt;a href="https://confluence.egi.eu/x/DCImBg">procedure&lt;/a> was defined
+&lt;p>For this purpose &lt;a href="https://confluence.egi.eu/x/DCImBg">PROC19&lt;/a> was defined
 to ensure that any single aspect of the integration of the new piece of
 middleware with the infrastructure is covered before the conclusion of the
 process.&lt;/p>
