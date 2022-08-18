@@ -37,7 +37,7 @@ define instances of these services:
 
 Other Mandatory services, depending on middleware deployed by sites under NGI
 responsibility, are listed
-[here](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB#Services)
+[here](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB#Services)(link to old EGI Wiki)
 
 NGIs should also register their custom core services like accounting, helpdesk if
 they are registered in GOCDB (for a list of other common core service types see:
