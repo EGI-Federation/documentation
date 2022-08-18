@@ -34,11 +34,10 @@ half way through, you need to update GOCDB to reflect the fact that your site is
 now down. There is currently no way of doing this by updating the downtime on the
 fly without having the system considering the whole downtime as being an outage.
 The best way to proceed is:
+- Modify end date of your "at risk" downtime, so that it ends in a few minutes
+- Enter a new "outage" downtime, starting when the other ends
 
-## Modify end date of your "at risk" downtime, so that it ends in a few minutes
-
-Enter a new "outage" downtime, starting when the other ends
-How do I switch monitoring on/off for my nodes?
+## How do I switch monitoring on/off for my nodes?
 Monitoring status in GOCDB cannot always be switched off. If a node is declared
 as delivering a production service, rules apply and the node has to be monitored.
 If you are running a test node and want to switch monitoring off, set both
