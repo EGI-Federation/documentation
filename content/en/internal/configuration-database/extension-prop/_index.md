@@ -17,7 +17,7 @@ parameter is used to filter resources according to the extensions they define
 (described below).
 - Properties are rendered in the XML results of the Site/Service/ServiceGroup
 using the "EXTENSIONS" XML element, for an example see a
-[sample output from get_service_endpoint](https://wiki.egi.eu/wiki/GOCDB/PI/get_service_endpoint_method)
+[sample output from get_service_endpoint](https://wiki.egi.eu/wiki/GOCDB/PI/get_service_endpoint_method)(link to old EGI Wiki)
 - Note, anyone with permissions over the target entity can add extension
 properties to that object.
 - This allows 'Folksonomy' building: 'a user-generated system of classifying and
