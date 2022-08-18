@@ -37,8 +37,8 @@ in GOCDB and request roles, **you will need to fill in the registration form**.
 - fill in the form and validate
 
 **Note**: If you were registered in GOCDB but are not recognised anymore (e.g.
-because your certificate DN changed), do not register again! Instead, follow the
-steps described in the (put link)Changing_your_accountID section
+because your certificate DN changed), follow the steps described in the
+[Lost access to your GOCDB account](#lost-access-to-your-gocdb-account) section
 
 ## Editing your user account
 
