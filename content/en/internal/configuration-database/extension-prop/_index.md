@@ -30,6 +30,8 @@ values. This includes the equals and opening/closing parenthesis chars ‘=()’
 is to simplify lexical parsing of the query. In addition, to guard against
 cross-site scripting attacks, the quote, double quote, semi-colon and back tick
 chars are also not allowed.
+- Keys must be unique for a given site, service, or service endpoint,
+or service group.
 
 ### Extension Properties in the PI
 
