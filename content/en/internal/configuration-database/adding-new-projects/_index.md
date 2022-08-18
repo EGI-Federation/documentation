@@ -2,7 +2,7 @@
 title: "Options for adding a new Project in GocDB"
 weight: 30
 description: >-
-     How to create a new Project in GocDB.
+     How to create a new Project in GOCDB.
 ---
 
 ## Introduction
