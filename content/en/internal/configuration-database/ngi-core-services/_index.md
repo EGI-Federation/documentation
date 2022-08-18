@@ -17,7 +17,6 @@ from their other (non-core) services using one of two ways (see A and B below).
 
 The service instance MUST:
 
-- Define the ‘NGI’ scope (see [Data Visibilty Scopes](../scopes))
 - Be flagged as ‘Production’
 (see [Production Flag](../service-endpoints/_index.md#production-flag-tf))
 - Not be flagged as ‘Beta’
