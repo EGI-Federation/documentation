@@ -155,8 +155,6 @@ output for these queries.
 
 #### HostDN
 
-*From GOCDB 5.8.0 onwards
-
 For EGI Services, the Standard Extension property "HostDN" has been defined to
 allow the fetching the DNs of multiple hosts behind a load balanced service from
 the endpoint properties of a single GOCDB Service, rather than creating multiple
