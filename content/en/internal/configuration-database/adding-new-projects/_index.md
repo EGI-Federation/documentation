@@ -1,5 +1,5 @@
 ---
-title: "Options for adding a new Project in GocDB"
+title: "Options for adding a new Project in GOCDB"
 weight: 30
 description: >-
      How to create a new Project in GOCDB.
