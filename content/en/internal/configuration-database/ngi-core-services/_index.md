@@ -41,7 +41,7 @@ responsibility, are listed
 
 NGIs should also register their custom core services like accounting, helpdesk if
 they are registered in GOCDB (for a list of other common core service types see:
-[NGI_services_in_GOCDB](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB))
+[NGI_services_in_GOCDB](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB)(link to old EGI Wiki)
 
 ### Registering NGI Core Services
 
