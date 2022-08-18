@@ -17,14 +17,6 @@ account section) and ask for a site admin role for your site (see the requesting
 a role section). Once your role approved, you will be able to edit and change
 your site information.
 
-## Why can't I declare downtimes for my whole site as I used to do in GOCDB3?
-
-For data clarity reasons, it has been decided long ago to only link downtimes to
-services, thus avoiding the complication of having to check both site and
-service downtimes to determine whether a service is up or not. The way to
-declare a downtime for your site is to select all the services of the site in
-one go when inserting the downtime.
-
 ## How do I extend a declared schedule downtime?
 
 Because of EGI policies it is not possible to extend a downtime. Recommended
