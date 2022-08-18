@@ -15,8 +15,7 @@ a suitable certificate is detected, you will be asked to confirm selection of yo
 certificate in your browser. **Note**: if a client certificate has been provided to GOCDB, it will take precedence over any IdP based authentication. 
 - Second, if you do not have a user certificate or you hide your certificate from
 GOCDB (e.g. by starting a new/anonymous private browser session or pressing
-'Cancel' when prompted for a certificate), you will be redirected to the EGI
-Identity Provider Service (IdP) where you can authenticate with your chosen
+'Cancel' when prompted for a certificate), you will be redirected to the GOCDB landing page where you can authenticate with the EGI Identity Provider Service (IdP) and your chosen
 institution (if available). If authentication is successful, you will be
 re-directed back to GOCDB. Please note, not all logins available in the EGI IdP
 provide a sufficient level of assurance (LoA) to login to GOCDB (the LoA must be
