@@ -12,7 +12,7 @@ applies x509 only):
 
 - First, by requesting an IGTF accredited user certificate from your browser. If
 a suitable certificate is detected, you will be asked to confirm selection of your
-certificate in your browser.
+certificate in your browser. **Note**: if a client certificate has been provided to GOCDB, it will take precedence over any IdP based authentication. 
 - Second, if you do not have a user certificate or you hide your certificate from
 GOCDB (e.g. by starting a new/anonymous private browser session or pressing
 'Cancel' when prompted for a certificate), you will be redirected to the EGI
