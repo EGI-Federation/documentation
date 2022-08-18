@@ -7,8 +7,6 @@ description: >-
 
 ## Introduction
 
-**NOTE**: From GOCDB 5.7 (Autumn/Winter 2016) keys must be unique for a given
-site, service, or service endpoint, or service group.
 
 - Sites, Services, service endpoints, and Service Groups can be extended by
 adding custom key-value pairs (this follows the GLUE2 extensibility mechanism).
