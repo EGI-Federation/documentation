@@ -7,5 +7,5 @@ description: >-
 
 ## Introduction
 
-In this section there is an explanation over the user accounts on GOCDB, how to
+In the sub-pages there is an explanation over the user accounts on GOCDB, how to
 manage them, and the roles defined in GOCDB.
