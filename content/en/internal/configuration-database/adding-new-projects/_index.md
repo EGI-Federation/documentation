@@ -7,7 +7,7 @@ description: >-
 
 ## Introduction
 
-GocDB is multi-tenanted; it can host multiple projects in the same instance.
+GOCDB is multi-tenanted; it can host multiple projects in the same instance.
 There are a number of different deployment scenarios that can be used to support
 new projects detailed below. Please contact the GocDB admins/EGI Operations to
 request the addition of a new project.
