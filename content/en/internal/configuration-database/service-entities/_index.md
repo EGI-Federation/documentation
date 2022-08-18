@@ -23,7 +23,7 @@ As a machine can host many services, there can be many Service entities per
 machine.
 
 ### Example
-Tthe machine myhost.domain.org runs a CE, an UI and a UnicoreX service.
+The machine myhost.domain.org runs a CE, an UI and a UnicoreX service.
 This will show up in GOCDB as 3 Service entities:
 
 | fully qualified hostname | ServiceType |
