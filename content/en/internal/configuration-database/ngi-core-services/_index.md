@@ -56,4 +56,4 @@ services to this ServiceGroup.
 It is important that these core service Sites/ServiceGroups adhere to the
 ‘NGI_XX_SERVICES’ naming scheme. For further details, including a list of existing
 ‘NGI_XX_SERVICES’ please see:
-[NGI_services_in_GOCDB](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB)
+[NGI_services_in_GOCDB](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB)(link to old EGI Wiki)
