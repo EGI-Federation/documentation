@@ -11,8 +11,7 @@ description: >-
 - Sites, Services, service endpoints, and Service Groups can be extended by
 adding custom key-value pairs (this follows the GLUE2 extensibility mechanism).
 - Extension properties address a number of use cases, such as filtering Sites
-and/or Services that define particular properties, e.g.
-[charging rate](https://rt.egi.eu/rt/Ticket/Display.html?id=3764)
+and/or Services that define particular properties.
 - Selected methods in the GOCDB PI support the 'extensions' URL parameter. This
 parameter is used to filter resources according to the extensions they define
 (described below).
