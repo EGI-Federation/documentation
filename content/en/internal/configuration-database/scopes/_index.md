@@ -7,7 +7,7 @@ type: "docs"
 
 ## Introducation
 
-- Scope tags are used to group Grid entities such as Sites, Services and
+- Scope tags are used to group entities such as Sites, Services and
 ServiceGroups into flexible categories. A single entity can define multiple
 scope tags, allowing the resource to be associated with different categories
 without duplication of information. This is essential to maintain the integrity
