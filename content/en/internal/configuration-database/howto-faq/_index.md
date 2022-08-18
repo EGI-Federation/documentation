@@ -5,10 +5,6 @@ description: >-
      HOW TOs and FAQs.
 ---
 
-## I get an "error 12227" message when accessing GOC portal with Mozilla/Firefox
-
-This happens when no certificate has been uploaded to your browser. Refer to the
-"Access to GOCDB" section for more information about GOCDB and X509 certificates.
 
 <!-- markdownlint-disable no-inline-html -->
 ## I am responsible for a site that has recently entered the EGI infrastructure. How do I register it?
