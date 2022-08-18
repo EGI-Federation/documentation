@@ -21,13 +21,6 @@ re-directed back to GOCDB. Please note, not all logins available in the EGI IdP
 provide a sufficient level of assurance (LoA) to login to GOCDB (the LoA must be
 'Substantial').
 
-Each GOCDB user account is linked to a single account by an ID string - this ID
-from comes **either** your Certificate DN or from the EGI IdP service. It is
-important to note that GOCDB does not perform account-linking - **each ID string
-maps to a separate GOCDB account**. Existing users who have already registered
-an account will be logged into their account, while new users may choose to
-register a new account.
-
 ## Registering a new user account
 
 Being authenticated in one of the two ways described above is enough to have
