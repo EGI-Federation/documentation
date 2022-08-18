@@ -26,9 +26,9 @@ such as site certification status changes and project controlled user membership
 
 - Resources would be hosted under an existing project, and a new scope tag would
 be added for the purposes of resource filtering.
-- Since the resources are still hosted under an existing project, the resources
-would still be subject to the rules/roles of that project such as project
-controller user memberships.
+- Since the resources are still hosted under an existing project, the new resources
+would still be subject to the rules of the existing project, such as site 
+certification status changes and project controlled user memberships.
 - The resources could be filtered using the new scope tag, but this scope tag
 would not strictly represent a project, rather a sub-grouping under the existing
 project, e.g.
