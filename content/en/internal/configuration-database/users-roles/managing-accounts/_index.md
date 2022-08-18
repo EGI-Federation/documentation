@@ -8,26 +8,20 @@ description: >-
 ## Authentication
 
 The GOCDB UI attempts to authenticate you in one of two ways (the REST style API
-applies x509 only):
+applies X.509 only):
 
 - First, by requesting an IGTF accredited user certificate from your browser. If
 a suitable certificate is detected, you will be asked to confirm selection of your
-certificate in your browser.
+certificate in your browser. **Note**: if a client certificate has been provided
+to GOCDB, it will take precedence over any IdP based authentication.
 - Second, if you do not have a user certificate or you hide your certificate from
 GOCDB (e.g. by starting a new/anonymous private browser session or pressing
-'Cancel' when prompted for a certificate), you will be redirected to the EGI
-Identity Provider Service (IdP) where you can authenticate with your chosen
-institution (if available). If authentication is successful, you will be
-re-directed back to GOCDB. Please note, not all logins available in the EGI IdP
-provide a sufficient level of assurance (LoA) to login to GOCDB (the LoA must be
-'Substantial').
-
-Each GOCDB user account is linked to a single account by an ID string - this ID
-from comes **either** your Certificate DN or from the EGI IdP service. It is
-important to note that GOCDB does not perform account-linking - **each ID string
-maps to a separate GOCDB account**. Existing users who have already registered
-an account will be logged into their account, while new users may choose to
-register a new account.
+'Cancel' when prompted for a certificate), you will be redirected to the GOCDB
+landing page where you can authenticate with the EGI Identity Provider Service
+(IdP) and your chosen institution (if available). If authentication is
+successful, you will be re-directed back to GOCDB. Please note, not all logins
+available in the EGI IdP provide a sufficient level of assurance (LoA) to
+login to GOCDB (the LoA must be 'Substantial').
 
 ## Registering a new user account
 
@@ -69,86 +63,80 @@ the **search** feature on the sidebar.
 
 If you wish to unregister from GOCDB, follow these steps:
 
-- click on the "view details" link in the "User Status" panel on the sidebar.
+- click on the **view details** link in the "User Status" panel on the sidebar.
 You should get a page showing your user account information.
 - Click on the "delete" link on top of it.
 - Confirm your choice.
 
 Your account will then be deleted along with any roles the account has.
 
-## Changing your accountID
+## Lost access to your GOCDB account
 
-Under the following circumstances it is possible to lose access to a GOCDB account
-that was originally created using a client certificate:
+Under the following circumstances it is possible to lose access to a GOCDB account:
 
-- If you change your certificate, it is possible that the certificate's
-distinguished name (DN) has also changed. This is what GOCDB uses to identify your
-account.
-- If you choose to stop using your client certificate to log into GOCDB and istead
-access GOCDB via the EGI IdP.
-- If you have an account linked to your certificate but later login via the
-EGI-IdP route and mistakenly change your accountID from your certDN to the newly
-assigned ID issued by the EGI IdP.
+- You use your IGTF X.509 certificate to access GOCDB and renew or change
+certificate, it is possible that the certificate's distinguished name
+(DN) has also changed. This is what GOCDB uses to identify your account.
+- You have authenticated with EGI IdP, but via a different underlying IdP
+(i.e. You usually log in with your institutional credentials, but today you
+logged in with EGI SSO).
+- You have changed the way you log into GOCDB (i.e. X.509 to EGI Check-In)
 
 In these situations, it is usually possible to regain access using to your
 certificate based account by following one of the following procedures:
 
-### If you have a new certificate and have lost access to your account
+If for any reason you were unable to complete the relevent procedure (e.g.
+mail confirmations problems) please open a GGUS ticket against
+"Configuration and Topology Database (GOCDB)".
 
-First install your new certificate in your browser.
+### You have a new certificate and have lost access to your account
 
+- Install your new certificate in your browser.
 - Go to GOCDB. If you are already logged in, then clear your caches and restart
 your browser or start a new private browser session.
-- When prompted, select your new certificate but **DON'T Register** a new account.
+- When prompted, select your new certificate..
 - You should be able to access GOCDB, but since you are authenticated with your
-new certificate, it is as if you had no user account (you have not registered your
-new certificate with GOCDB yet).
-- In the "user status" panel in the sidebar, click on the **retrieve an old
-account** link.
-- Specify in the form the DN of your old certificate, and the email address
-associated to your account.
-- Upon validation, an email will be sent to the specified address, which has to
+new certificate, it is as if you had no user account.
+- In the **User Status** panel in the sidebar, click on the
+**Link Identity/Recover Account** link.
+- Specify in the form:
+  - Authentication type: X.509
+  - The DN of your old certificate previously used to authenticate to your
+  X.509 based account.
+  - The email address associated to your account.
+- **Submit** and, upon validation, an email will be sent to the specified address, which has to
 match the one registered with your account. This is to avoid identity theft. The
 email contains a validation link.
 - Click on the validation link or copy/paste in your browser. Once validated,
 changes are immediate.
 
-### If you choose to stop using a client certificate in favour of the EGI IdP
+**Note**: You can only associate one X.509 DN with your GOCDB account at any given time.
 
-**NOTE**: Following this process will mean you can *only* login to your GOCDB
-account via EGI Check-In going forward
+### You have authenticated with EGI IdP, but via a different underlying IdP
 
-- Access GOCDB via the EGI IdP.
-- In the "user status" panel in the sidebar, click on the retrieve an old account
-link.
-- Specify in the form: the DN of your old certificate; and the email address
-associated to your account.
-- Upon validation, an email will be sent to the specified address, which has to
-match the one registered with your account.
-- Click on the validation link or copy/paste in your browser. Once validated,
-changes are immediate.
+It's possible to link this identity with your "other" EGI IdP identity at the
+level of the EGI IdP. Please open a GGUS ticket aganist "Check-In (AAI)". Once
+your identity is linked at the EGI IdP level, if you are still having problems
+accessing GOCDB, please reassign the ticket to
+"Configuration and Topology Database (GOCDB)"
 
-<!-- markdownlint-disable no-inline-html -->
-## If you mistakenly changed your accountID from your certDN to the ID issued from the EGI IdP and have lost access using your certificate
-<!-- markdownlint-enable no-inline-html -->
+### You have changed the way you log into GOCDB (i.e. X.509 to EGI Check-In)
 
-- Go to GOCDB. If you are already logged in, then clear your caches and restart
-your browser or start a new private browser session.
-- When prompted, select your certificate you want to reinstate/re-associate with
-your account - **DON'T Register a new account**.
-- You should be able to access GOCDB but since you are authenticated with the
-certificate that is no longer linked to your account, it is as if you had no user
-account.
-- In the "user status" panel in the sidebar, click on the **retrieve an old account**
-link.
-- In the form, specify the DN of your certificate that you want to reinstate, and the
-email address associated to your account.
-- Upon validation, an email will be sent to the specified address, which has to
-match the one registered with your account. This is to avoid identity theft.
-The email contains a validation link.
-- Click on the validation link or copy/paste in your browser. Once validated, changes
-are immediate.
+You can link these identities at the GOCDB level by following these steps.
+The steps assume an existing X.509 based account and that you are currently
+authenticated via EGI Check-In, though the steps should hold for any pair
+of supported auntentication methods.
 
-If for any reason you were unable to complete these steps (e.g. mail confirmations
-problems) please do not register a new user account, but contact the GOCDB support
-helpdesk instead.
+- In the **User Status** panel in the sidebar, click on the
+**Link Identity/Recover Account** link.
+- Specify in the form:
+  - Authentication type: X.509
+  - The DN of your certificate used to authenticate to your X.509 based account
+  - The email address associated to your X.509 based account.
+- **Submit** and, upon validation, an email will be sent to the specified address, which has to
+match the one registered with your X.509 based account. This is to avoid identity theft. The
+email contains a validation link.
+- Click on the validation link or copy/paste in your browser.
+Authenticate with your EGI Check-In identity. Once authenticated/validated, changes
+are immediate and you will be able to access your GOCDB account with both your
+X.509 and EGI Check-In identities.
