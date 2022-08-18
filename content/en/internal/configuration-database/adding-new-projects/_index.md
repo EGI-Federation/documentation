@@ -16,7 +16,7 @@ discuss the options available.
 
 - Resources (NGIs, Sites, Services) would be hosted under an existing project,
 e.g. the ‘EGI’ project.
-- The new resources would be subject to the rules/roles of the existing project,
+- The new resources would be subject to the rules of the existing project,
 such as site certification status changes and project controlled user memberships.
 - The resources could not be filtered using a custom scope tag.
 
