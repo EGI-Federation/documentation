@@ -50,8 +50,9 @@ get_services&scope=SubGroupX,EGI&scope_match=all
 
 - Resources would be hosted under a new project, and a new scope tag would be
 added named after the project for the purposes of resource filtering.
-- The resources would not be subject to the rules/roles of other projects, for
-example, allowing the project to control its own project memberships.
+- The resources would not be subject to the rules of other projects, for
+example, allowing the project to control its site certification status changes 
+and project controlled user memberships.
 - The resources could be filtered using the scope tag named after the new project,
 e.g.
 
