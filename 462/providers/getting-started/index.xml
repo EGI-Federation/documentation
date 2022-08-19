@@ -27,9 +27,8 @@ Platform services, such as &lt;a href="https://www.egi.eu/service/datahub/">Data
 &lt;a href="https://www.egi.eu/service/notebooks/">Notebooks&lt;/a>,
 &lt;a href="https://www.egi.eu/service/training-infrastructure/">Training Infrastructure&lt;/a>,
 and &lt;a href="https://www.egi.eu/service/workload-manager/">Workload Manager&lt;/a>&lt;/li>
-&lt;li>&lt;a href="../joining-eosc/core-services/">Joining as Core/Central service provider&lt;/a>
-within the Service Management Tool block: providers that support all the
-other services of the EGI Infrastructure.&lt;/li>
+&lt;li>&lt;a href="../joining-eosc/core-services/">Joining as Core/Central service provider&lt;/a>:
+providers of &lt;a href="https://www.egi.eu/services/federation/">services supporting all the other services of the EGI Infrastructure&lt;/a>.&lt;/li>
 &lt;li>&lt;a href="../joining-eosc/new-services/">Contributing a new service&lt;/a> (i.e. not yet present) to the EOSC Compute
 platform (to the Federated Resource Providers, Compute and Data Federation,
 or the Platform services blocks).&lt;/li>
