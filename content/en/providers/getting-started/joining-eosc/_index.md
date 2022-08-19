@@ -36,9 +36,8 @@ below:
    [Notebooks](https://www.egi.eu/service/notebooks/),
    [Training Infrastructure](https://www.egi.eu/service/training-infrastructure/),
    and [Workload Manager](https://www.egi.eu/service/workload-manager/)
-4. [Joining as Core/Central service provider](../joining-eosc/core-services/)
-   within the Service Management Tool block: providers that support all the
-   other services of the EGI Infrastructure.
+4. [Joining as Core/Central service provider](../joining-eosc/core-services/):
+   providers of [services supporting all the other services of the EGI Infrastructure](https://www.egi.eu/services/federation/).
 5. [Contributing a new service](../joining-eosc/new-services/) (i.e. not yet present) to the EOSC Compute
    platform (to the Federated Resource Providers, Compute and Data Federation,
    or the Platform services blocks).
