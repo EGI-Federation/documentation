@@ -1,7 +1,7 @@
 ---
 title: "Joining as a provider of a Core Service"
 weight: 100
-description: "Guidelines for joining the EOSC Compute Platform to provide a Core
+description: "Guidelines for joining the EGI Infrastructure to provide a Core
 Service supporting the other services and activities"
 type: "docs"
 ---
