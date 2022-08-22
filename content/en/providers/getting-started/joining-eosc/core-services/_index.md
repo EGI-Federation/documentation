@@ -8,30 +8,37 @@ type: "docs"
 
 ## Introduction
 
-With the term “central” or “core service” we refer to a category of services in
-the EOSC Compute Platform (like the service management tools) providing
-capabilities that support the other services of the infrastructure and the
-related activities. They are delivered through a single instance (with the
-failover and high-availability mechanisms deemed necessary), and differently
-from services with a distributed nature such as HTC, Cloud, and Storage, they
-cannot be ordered through the Marketplace, but they become available as soon as
-a user joins the infrastructure (e.g., the access to the EGI Helpdesk service).
+- With the term “central” or “core service” we refer to a category of services
+  in the EGI Infrastructure providing capabilities that support and complement
+  the other services of the infrastructure and the related activities. A list
+  of this kind of services is available in the section
+  [Services for Federation](https://www.egi.eu/services/federation/) of our
+  website.
+- The EGI Core Services are co-funded by EGI Foundation and the providers are
+  selected through a bidding process: the technical details of the services that
+  should be delivered are advertised to the 
+  [EGI Council](https://ims.egi.eu/display/EGIG/EGI+Council) and only the
+  providers with the
+  [EGI Participant](https://ims.egi.eu/display/EGIG/EGI+Participant) role in the
+  Council can apply to the bid.
+  - [How to join the EGI Federation](https://www.egi.eu/join-the-egi-federation/)
+  as a member of the Council.
+  - [Current members](https://www.egi.eu/egi-federation/#council) of the EGI
+    Council 
+- Differently from services with a distributed nature such as HTC, Cloud, and
+  Storage, they cannot be ordered through the Marketplace, but they become
+  available as soon as a user joins the infrastructure (e.g., the access to the
+  EGI Helpdesk service).
 
 ## Selection of the providers and registration
 
-When a service is co-funded by EGI Foundation, which usually covers part of the
-funding associated to a given international project, the providers are selected
-through a bidding process: a call of expression of interest is announced and
-advertised to the [EGI Council](https://ims.egi.eu/display/EGIG/EGI+Council)
-containing the technical details of the services that should be delivered and
-then any provider who is an
-[EGI Participant](https://ims.egi.eu/display/EGIG/EGI+Participant) can apply to
-the bid.
+With the selected providers, EGI Foundation negotiate and sign an
+[OLA](https://ims.egi.eu/display/EGIG/Operational+Level+Agreement) defining
+terms and conditions for the delivery of the services; at the same time, the
+process to add the services to the
+[EGI Service portfolio](https://www.egi.eu/services/) is started, if not already
+included.
 
-With the selected providers, EGI Foundation negotiate and sign an OLA defining
-terms and conditions for the delivery of the services, starting the process
-within Service Portfolio Management (SPM) to add them to the
-[EGI Service portfolio](https://www.egi.eu/services/) if not already included.
 At this point, similar steps to the ones for resource and technology providers
 follow in order to guarantee the regular day-to-day operation of the service,
 such as:
@@ -44,9 +51,10 @@ such as:
   Service Level Targets are achieved.
 
 In addition to this, the providers are also requested to create a capacity plan,
-an availability and continuity plan, and to interact with Change Management
-(CHM) and Release and Deployment Management (RDM) processes for managing changes
-and new releases of their services.
+an availability and continuity plan, and to interact with [Change Management
+(CHM)](https://confluence.egi.eu/x/_A2rB) and [Release and Deployment Management
+(RDM)](https://confluence.egi.eu/x/zgbSB) processes for managing changes and new
+releases of their services.
 
 ## Capacity plan
 
@@ -88,8 +96,7 @@ Continuity plans are reviewed on a yearly basis.
 ## Managing changes and new releases
 
 All changes to the services should be managed by the EGI Change Management (CHM)
-process according to the
-[Change Policy](https://confluence.egi.eu/display/EGIPP/Change+management+policy)
+process according to the [Change Policy](https://confluence.egi.eu/x/k4SjBQ)
 in order to evaluate the potential impact that a change can have on the service
 itself and on the infrastructure as a whole. When registering a Request for
 Change, besides a general description of the change, the providers are expected
