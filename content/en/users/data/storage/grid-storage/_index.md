@@ -30,12 +30,13 @@ Grid storage file access is based on the
 [SRM](https://www.gridpp.ac.uk/wiki/SRM) (under deprecation at some of the
 endpoints).
 
-Several grid storage implementations are available in the EGI Cloud, the most
+Several grid storage implementations are available in the EGI Infrastructure, the most
 common being:
 
 - [dCache](https://www.dcache.org/)
-- [DPM](https://twiki.cern.ch/twiki/bin/view/DPM/)
+- [DPM](https://twiki.cern.ch/twiki/bin/view/DPM/) (N.B. under decommissioning) 
 - [StoRM](https://italiangrid.github.io/storm/)
+- [EOS](https://eos-web.web.cern.ch/eos-web/)
 
 ## Endpoint discovery
 
