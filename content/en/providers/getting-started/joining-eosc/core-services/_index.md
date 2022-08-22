@@ -127,12 +127,11 @@ Post-Implementation Review is conducted after a few days to close the case.
 ## Security aspects
 
 The providers of central services are subject to the same policies, procedures
-and requirements applied to the federated service providers, as documented in
-their page.
+and requirements applied to the federated service providers, as documented at
+[this page](https://confluence.egi.eu/x/iYZQC).
 
 Nevertheless, they are also subject to the following requirement that is
-documented in the service Operational Level Agreement (OLA) that is being agreed
-with them:
+documented in the service OLA that is being agreed with them:
 
 - They should immediately report suspected security incidents to the EGI
   Foundation. This is not exempting them to follow the
@@ -143,21 +142,23 @@ It's also important to understand that when processing of personal data is
 taking place, EGI Foundation holds the role of Data Controller and the provider
 is a Data Processor, as defined in the
 [Global Data Protection Regulation (GDPR)](https://gdpr.eu/article-4-definitions/).
-Data Processing Agreements, regulating the conditions and constraints of the
-data processing activities conducted by the Data Processor on behalf of the Data
-controller, will be put in place on the initiative of the EGI Foundation staff.
-EGI Foundation will also prepare, together with the central service provider,
-adequate Privacy and Acceptable Use policies that have to be presented and made
-available to the users of the service. EGI Foundation is also complying with all
-the principles set out by the GÉANT Data Protection Code of Conduct in its more
-recent version, implying that the central service provider should also comply
-with them.
+
+- Data Processing Agreements, regulating the conditions and constraints of the
+  data processing activities conducted by the Data Processor on behalf of the Data
+  controller, will be put in place on the initiative of the EGI Foundation staff.
+- EGI Foundation will also prepare, together with the service provider, adequate
+  Privacy and Acceptable Use policies that have to be presented and made available
+  to the users of the service.
+- EGI Foundation is also complying with all the principles set out by the GÉANT
+  Data Protection Code of Conduct in its more [recent
+  version](https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home),
+  implying that the central service provider should also comply with them.
 
 The central service provider should also follow requirements relating to the
 software and covering the usage of a proper licence, the access to and
 management of the source code, implementation of best practices; as well as
 requirements relating to the IT Service management and covering the need for
 having key staff properly trained about IT Service Management, committing to
-continual improvement and having their Service Management System (SMS)
-interfacing with the EGI Service Management System, especially for important
-processes like the Change Management process.
+continual improvement and having their [Service Management System
+(SMS)](https://confluence.egi.eu/x/kIIkBQ) interfacing with the EGI SMS,
+especially for important processes like the Change Management process.
