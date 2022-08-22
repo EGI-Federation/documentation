@@ -13,10 +13,10 @@ type: "docs"
   the other services of the infrastructure and the related activities. A list
   of this kind of services is available in the section
   [Services for Federation](https://www.egi.eu/services/federation/) of our
-  website.
+  site.
 - The EGI Core Services are co-funded by EGI Foundation and the providers are
   selected through a bidding process: the technical details of the services that
-  should be delivered are advertised to the 
+  should be delivered are advertised to the
   [EGI Council](https://ims.egi.eu/display/EGIG/EGI+Council) and only the
   providers with the
   [EGI Participant](https://ims.egi.eu/display/EGIG/EGI+Participant) role in the
@@ -24,7 +24,7 @@ type: "docs"
   - [How to join the EGI Federation](https://www.egi.eu/join-the-egi-federation/)
   as a member of the Council.
   - [Current members](https://www.egi.eu/egi-federation/#council) of the EGI
-    Council 
+    Council
 - Differently from services with a distributed nature such as HTC, Cloud, and
   Storage, they cannot be ordered through the Marketplace, but they become
   available as soon as a user joins the infrastructure (e.g., the access to the
