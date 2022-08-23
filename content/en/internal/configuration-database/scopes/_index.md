@@ -51,9 +51,7 @@ It is important to understand that scopes and Projects are distinct:
   from the same Configuration Database instance.
 - A use-case for non-EGI sites/services is to hide those entities from central
   EGI tools, but to include those sites/services for use by regional versions of
-  the operational tools (such as regional monitoring). To enable regional
-  monitoring of non-EGI sites/services using SAM see this
-  [original request](https://ggus.eu/ws/ticket_info.php?ticket=76888)
+  the operational tools (such as regional monitoring).
 - Note that exposing a site / service endpoint as EGI does not override the
   production status or certification status fields. For example if a site isn't
   marked as production it won't be monitored centrally even if it's marked as
