@@ -1,6 +1,7 @@
 ---
-title: "Options for adding a new Project in EGI Configuration Database"
+title: "Adding a new Project"
 weight: 30
+type: "docs"
 description: >-
   How to create a new Project in EGI Configuration Database.
 ---
