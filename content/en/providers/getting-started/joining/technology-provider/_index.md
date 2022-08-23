@@ -1,5 +1,5 @@
 ---
-title: "Joining as a Technology Provider (TP)"
+title: "Joining as a Technology Provider"
 weight: 100
 description:
   "Guidelines for Technology Providers to join the EGI Infrastructure"
@@ -8,10 +8,10 @@ type: "docs"
 
 ## Introduction
 
-Technology Providers develop or deliver technology and software for specific
-user communities or customisation for specific requirements. In our case, they
-maintain the middleware which the RCs install and that allows the users to
-exploit the compute, storage, data, and cloud resources.
+Technology Providers (TP) develop or deliver technology and software for
+specific user communities or customisation for specific requirements. In our
+case, they maintain the middleware which the RCs install and that allows the
+users to exploit the compute, storage, data, and cloud resources.
 
 ## Integration of middleware stack
 
