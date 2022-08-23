@@ -9,39 +9,35 @@ type: "docs"
 ## Introduction
 
 Technology Providers develop or deliver technology and software for specific
-user communities or customisation for specific requirements. In our case,
-they maintain the middleware which the RCs install and that allows the users
-to exploit the compute, storage, data, and cloud resources.
+user communities or customisation for specific requirements. In our case, they
+maintain the middleware which the RCs install and that allows the users to
+exploit the compute, storage, data, and cloud resources.
 
 ## Integration of middleware stack
 
-<!-- markdownlint-disable no-inline-html -->
-
 {{% alert title="Note" color="info" %}} Related procedure:
-[PROC19 Integration of new cloud management framework or middleware stack in the EGI Infrastructure](https://confluence.egi.eu/x/DCImBg))
+[PROC19 Integration of new cloud management framework or middleware stack in the EGI Infrastructure](https://go.egi.eu/proc19))
 {{% /alert %}}
 
-<!-- markdownlint-enable no-inline-html -->
-
 To assure production quality of the EGI Infrastructure, every middleware stack
-(Compute, Storage, etc.) installed on and delivered by the RCs needs to fulfil
-a number of requirements.
+(Compute, Storage, etc.) installed on and delivered by the RCs needs to fulfil a
+number of requirements.
 
-For this purpose [PROC19](https://confluence.egi.eu/x/DCImBg) was defined
-to ensure that any single aspect of the integration of the new piece of
-middleware with the infrastructure is covered before the conclusion of the
-process.
+For this purpose [PROC19](https://go.egi.eu/proc19) was defined to ensure that
+any single aspect of the integration of the new piece of middleware with the
+infrastructure is covered before the conclusion of the process.
 
 After the creation of the request in the
-[EGI Helpdesk](https://helpdesk.egi.eu/), with details about the technology,
-the contacts, the expected customers, and the motivation, the integration steps
-cover the following areas (where possible, steps can be done in parallel):
+[EGI Helpdesk](../../../../internal/helpdesk), with details about the
+technology, the contacts, the expected customers, and the motivation, the
+integration steps cover the following areas (where possible, steps can be done
+in parallel):
 
 - [Underpinning Agreement](https://ims.egi.eu/display/EGIG/Underpinning+agreement)
-(UA) between EGI Foundation and the technology provider
+  (UA) between EGI Foundation and the technology provider
   - it could be either the
-  [Corporate-level Technology Provider Underpinning Agreement](https://documents.egi.eu/document/2589)
-  or a customised version.
+    [Corporate-level Technology Provider Underpinning Agreement](https://documents.egi.eu/document/2589)
+    or a customised version.
 - Configuration Management: mapping of the new technology in the Configuration
   Management Database (CMDB)
 - Information System: evaluating if the new technology should publish
@@ -50,10 +46,11 @@ cover the following areas (where possible, steps can be done in parallel):
 - Monitoring: the new technology should allow external monitoring. If particular
   aspects of the technology need to be monitored, specific monitoring probes
   should be provided by the TPs and deployed on the
-  [EGI Monitoring service](https://argo.egi.eu/).
+  [EGI Monitoring service](../../../../internal/monitoring).
 - Support: the Support Unit where incidents and service requests will be
   addressed needs to be defined in the EGI Helpdesk, associated to the
-  [Quality of Support](https://confluence.egi.eu/x/ygCrB) defined in the UA.
+  [Quality of Support](https://confluence.egi.eu/display/EGISLM/Service+Level+Target+-+Quality+of+Support)
+  defined in the UA.
 - Accounting: the need to gather usage data, which depends on the technology
   itself and on the infrastructure requirements and will be published in the
   [EGI Accounting Portal](https://accounting.egi.eu/).
