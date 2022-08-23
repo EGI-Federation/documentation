@@ -33,8 +33,7 @@ instance of that software running in a certain context.
   exist that use camelCase).
 
 These service types are used at some grid sites within EGI but aren't EGI
-operational tools or a part of the core middleware distributions (EMI, gLite,
-ARC, UNICORE, Globus etc).
+operational tools or a part of the core middleware distributions.
 
 ## Service Type List
 
