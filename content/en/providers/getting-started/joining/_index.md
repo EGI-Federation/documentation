@@ -24,15 +24,15 @@ options are documented below, linking to detailed instructions:
 2. [Joining as a software provider](../joining/technology-provider/), also
    called Technology Providers, which are the maintainers of the middleware
    deployed on the ‘federated resource providers’ (previous point).
-3. [Joining as a new provider](../joining/new-provider/) of an existing platform
-   service in the Compute and Data Federation or the Platform services, such as
-   [DataHub](https://www.egi.eu/service/datahub/),
+3. [Joining as a new provider](../joining/new-provider/) for an existing
+   platform service in the Compute and Data Federation or the Platform services,
+   such as [DataHub](https://www.egi.eu/service/datahub/),
    [Notebooks](https://www.egi.eu/service/notebooks/),
    [Training Infrastructure](https://www.egi.eu/service/training-infrastructure/),
    and [Workload Manager](https://www.egi.eu/service/workload-manager/)
 4. [Joining as Core/Central service provider](../joining/core-service/):
-   providers of
+   providers for
    [services supporting all the other services of the EGI Infrastructure](https://www.egi.eu/services/federation/).
 5. [Contributing a new service](../joining/new-service/) that is not yet present
-   in the [EGI service portfolio](https://www.egi.eu/services/research/)and
+   in the [EGI service portfolio](https://www.egi.eu/services/research/) and
    enables advanced computing in research and education.
