@@ -98,15 +98,20 @@ Continuity plans are reviewed on a yearly basis.
 All changes to the services should be managed by the EGI Change Management (CHM)
 process according to the [Change Policy](https://confluence.egi.eu/x/k4SjBQ)
 in order to evaluate the potential impact that a change can have on the service
-itself and on the infrastructure as a whole. When registering a Request for
-Change, besides a general description of the change, the providers are expected
-to provide: the risk level as a result of assessing the impact and the
-likelihood of things going wrong, the type of change, the eventual list of other
-services potentially affected by the change, if it is possible to revert the
-change, the proposed date for the implementation of the change, and if it is
-needed to schedule a downtime of the service. Requests for Changes are assessed
-by the Change Advisory Board (CAB), and then decided whether the Change is going
-to be approved or rejected.
+itself and on the infrastructure as a whole. When registering a [Request for
+Change](https://confluence.egi.eu/x/dIIkBQ), besides a general description of
+the change, the providers are expected to provide:
+
+- the risk level as a result of assessing the impact and the likelihood of things
+  going wrong,
+- the type of change,
+- the eventual list of other services potentially affected by the change,
+- if it is possible to revert the change,
+- the proposed date for the implementation of the change,
+- if it is needed to schedule a downtime of the service.
+
+Requests for Changes are assessed by the Change Advisory Board (CAB), and then
+decided whether the Change is going to be approved or rejected.
 
 For the recurrent changes with a relatively low risk level, the providers can
 request to classify them as Standard Changes, so that invoking the CAB won’t be
