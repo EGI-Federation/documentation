@@ -59,7 +59,7 @@ a message as shown in the screenshot below:
 You must enable HTTPS to encrypt requests and responses, thus making your VM
 safer and more secure.
 
-First, you need a valid name for your VM. You can use the
+Firstly, you need a valid name for your VM. You can use the
 [FedCloud Dynamic DNS](https://nsupdate.fedcloud.eu) to create a name. See
 [Dynamic DNS docs](../../compute/cloud-compute/dynamic-dns/) for more
 information on the service. Once you have your name ready, assign it your VM's
