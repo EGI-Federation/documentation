@@ -81,7 +81,7 @@ Jupyter started. Follow next steps for getting the credentials to access the
 service.
 
 {{% alert title="Enabling insecure access" color="Danger" %}} If you really need
-to use HTTP (e.g. your VM is running without inbound connectivity and cannot
+to use HTTP (e.g. your VM is not accessible publicly and you cannot
 create a certificate for it), you can disable the error shown by default in the
 nginx configuration.
 
