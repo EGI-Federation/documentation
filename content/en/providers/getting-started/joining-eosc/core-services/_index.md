@@ -10,32 +10,32 @@ type: "docs"
 
 - With the term “central” or “core service” we refer to a category of services
   in the EGI Infrastructure providing capabilities that support and complement
-  the other services of the infrastructure and the related activities. A list
-  of this kind of services is available in the section
+  the other services of the infrastructure and the related activities. A list of
+  this kind of services is available in the section
   [Services for Federation](https://www.egi.eu/services/federation/) of our
   site.
 - The EGI Core Services are co-funded by EGI Foundation and the providers are
   selected through a bidding process: the technical details of the services that
   should be delivered are advertised to the
-  [EGI Council](https://ims.egi.eu/display/EGIG/EGI+Council) and only the
+  [EGI Council](https://confluence.egi.eu/display/EGIG/EGI+Council) and only the
   providers with the
-  [EGI Participant](https://ims.egi.eu/display/EGIG/EGI+Participant) role in the
-  Council can apply to the bid.
+  [EGI Participant](https://confluence.egi.eu/display/EGIG/EGI+Participant) role
+  in the Council can apply to the bid.
   - [How to join the EGI Federation](https://www.egi.eu/join-the-egi-federation/)
-  as a member of the Council.
+    as a member of the Council.
   - [Current members](https://www.egi.eu/egi-federation/#council) of the EGI
     Council
 - Differently from services with a distributed nature such as HTC, Cloud, and
   Storage, they cannot be ordered through the Marketplace, but they become
   available as soon as a user joins the infrastructure (e.g., the access to the
-  EGI Helpdesk service).
+  [EGI Helpdesk](../../../../internal/helpdesk) service).
 
 ## Selection of the providers and registration
 
 With the selected providers, EGI Foundation negotiate and sign an
-[OLA](https://ims.egi.eu/display/EGIG/Operational+Level+Agreement) defining
-terms and conditions for the delivery of the services; at the same time, the
-process to add the services to the
+[OLA](https://confluence.egi.eu/display/EGIG/Operational+Level+Agreement)
+defining terms and conditions for the delivery of the services; at the same
+time, the process to add the services to the
 [EGI Service portfolio](https://www.egi.eu/services/) is started, if not already
 included.
 
@@ -44,17 +44,18 @@ follow in order to guarantee the regular day-to-day operation of the service,
 such as:
 
 - registration in the Configuration Database and certification;
-- definition of the Support Unit in the Helpdesk system to handle incidents and
+- definition of the Support Unit in the
+  [Helpdesk](../../../../internal/helpdesk) system to handle incidents and
   service requests;
 - enabling of the monitoring;
 - periodic performance reports as defined in the given OLA to verify that the
   Service Level Targets are achieved.
 
 In addition to this, the providers are also requested to create a capacity plan,
-an availability and continuity plan, and to interact with [Change Management
-(CHM)](https://confluence.egi.eu/x/_A2rB) and [Release and Deployment Management
-(RDM)](https://confluence.egi.eu/x/zgbSB) processes for managing changes and new
-releases of their services.
+an availability and continuity plan, and to interact with
+[Change Management (CHM)](https://go.egi.eu/chm) and
+[Release and Deployment Management (RDM)](https://go.egi.eu/rdm) processes for
+managing changes and new releases of their services.
 
 ## Capacity plan
 
@@ -96,14 +97,15 @@ Continuity plans are reviewed on a yearly basis.
 ## Managing changes and new releases
 
 All changes to the services should be managed by the EGI Change Management (CHM)
-process according to the [Change Policy](https://confluence.egi.eu/x/k4SjBQ)
-in order to evaluate the potential impact that a change can have on the service
-itself and on the infrastructure as a whole. When registering a [Request for
-Change](https://confluence.egi.eu/x/dIIkBQ), besides a general description of
-the change, the providers are expected to provide:
+process according to the [Change Policy](https://go.egi.eu/chm-policy) in order
+to evaluate the potential impact that a change can have on the service itself
+and on the infrastructure as a whole. When registering a
+[Request for Change](https://confluence.egi.eu/display/EGIG/Request+For+Change),
+besides a general description of the change, the providers are expected to
+provide:
 
-- the risk level as a result of assessing the impact and the likelihood of things
-  going wrong,
+- the risk level as a result of assessing the impact and the likelihood of
+  things going wrong,
 - the type of change,
 - the eventual list of other services potentially affected by the change,
 - if it is possible to revert the change,
@@ -133,7 +135,7 @@ Post-Implementation Review is conducted after a few days to close the case.
 
 The providers of central services are subject to the same policies, procedures
 and requirements applied to the federated service providers, as documented at
-[this page](https://confluence.egi.eu/x/iYZQC).
+[this page](https://go.egi.eu/policies-procedures-internal-service-providers).
 
 Nevertheless, they are also subject to the following requirement that is
 documented in the service OLA that is being agreed with them:
@@ -149,14 +151,15 @@ is a Data Processor, as defined in the
 [Global Data Protection Regulation (GDPR)](https://gdpr.eu/article-4-definitions/).
 
 - Data Processing Agreements, regulating the conditions and constraints of the
-  data processing activities conducted by the Data Processor on behalf of the Data
-  controller, will be put in place on the initiative of the EGI Foundation staff.
+  data processing activities conducted by the Data Processor on behalf of the
+  Data controller, will be put in place on the initiative of the EGI Foundation
+  staff.
 - EGI Foundation will also prepare, together with the service provider, adequate
-  Privacy and Acceptable Use policies that have to be presented and made available
-  to the users of the service.
-- EGI Foundation is also complying with all the principles set out by the GÉANT
-  Data Protection Code of Conduct in its more [recent
-  version](https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home),
+  Privacy and Acceptable Use policies that have to be presented and made
+  available to the users of the service.
+- EGI Foundation is also complying with all the principles set out by the REFEDS
+  Data Protection Code of Conduct in its most
+  [recent version](https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home),
   implying that the central service provider should also comply with them.
 
 The central service provider should also follow requirements relating to the
@@ -164,6 +167,7 @@ software and covering the usage of a proper licence, the access to and
 management of the source code, implementation of best practices; as well as
 requirements relating to the IT Service management and covering the need for
 having key staff properly trained about IT Service Management, committing to
-continual improvement and having their [Service Management System
-(SMS)](https://confluence.egi.eu/x/kIIkBQ) interfacing with the EGI SMS,
-especially for important processes like the Change Management process.
+continual improvement and having their
+[Service Management System (SMS)](https://confluence.egi.eu/display/EGIG/Service+management+system)
+interfacing with the EGI SMS, especially for important processes like the Change
+Management process.
