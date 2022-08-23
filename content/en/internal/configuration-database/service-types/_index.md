@@ -41,8 +41,8 @@ To request a new service type, please submit a request for a new service type
 (see the section "Adding a new service type").
 
 In the following section there is the list of "middleware agnostic" service types.
-You can obtain the whole list of service types by launching the following query to the
-GOCDBPI interface:
+You can obtain the whole list of service types by browsing [Poem](https://poem.egi.eu/ui/public_servicetypes),
+or by launching the following query to the GOCDBPI interface:
 
  - [get_service_type](https://goc.egi.eu/gocdbpi/public/?method=get_service_types)
 
