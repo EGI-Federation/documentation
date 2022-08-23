@@ -132,4 +132,4 @@ meant to be exhaustive, further research is welcome. {{% /alert %}}
 ## Request for information
 
 You can ask for more information about them by contacting us via
-[our site](https://www.egi.eu/more-information).
+[our site](https://www.egi.eu/contact-us).
