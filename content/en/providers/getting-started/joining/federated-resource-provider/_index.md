@@ -1,5 +1,5 @@
 ---
-title: "Joining as a Federated Resource Provider - Resource Centre"
+title: "Joining as a Federated Resource Centre"
 weight: 100
 description: "Guidelines for Resource Centres to join the EGI Infrastructure"
 type: "docs"
