@@ -776,6 +776,11 @@ the URLs on your configuration:
      ]
    }
    ```
+1. Apply the updated mappings to your Keystone configuration:
+
+   ```shell
+   $ openstack mapping set --rules mapping.egi.json egi-mapping
+   ```
 
 As the new issuer is included in the `remote-id` configuration of the Keystone
 identity provider, there should not be any changes in your users, they will be
