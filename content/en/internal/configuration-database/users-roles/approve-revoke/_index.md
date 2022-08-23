@@ -5,10 +5,6 @@ weight: 30
 type: "docs"
 ---
 
-## Changing your certificate DN
-
-Moved to Changing_your_accountID
-
 ## Approving role and change requests
 
 When a registered user applies for a role, the request has to be validated by
