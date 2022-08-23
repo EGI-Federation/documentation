@@ -1,5 +1,5 @@
 ---
-title: "Joining the EGI Infrastructure as a provider"
+title: "Joining EGI as a provider"
 weight: 100
 description: "Guidelines for service providers to join the EGI Infrastructure"
 type: "docs"
