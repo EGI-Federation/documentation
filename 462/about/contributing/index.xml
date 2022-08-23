@@ -11,7 +11,7 @@ following articles providing simple tutorials:&lt;/p>
 &lt;li>&lt;a href="https://opensource.com/article/19/7/create-pull-request-github">Creating pull request with GitHub&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>GitHub official documentation is available at
-&lt;a href="https://docs.github.com/en/github">docs.github.com&lt;/a>.&lt;/p>
+&lt;a href="https://docs.github.com/en/">docs.github.com&lt;/a>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 The
@@ -160,8 +160,8 @@ $ git commit -m &amp;lt;commit_message&amp;gt;
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Ask git to keep trace of the link between local and remote branches&lt;/span>
 $ git push --set-upstream
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Once done, the output will show a URL that you can click to generate a Pull
-Request (PR). Accessing GitHub upstream of forked repositories may also
-propose you to submit a PR.&lt;/p>
+Request (PR). Accessing GitHub upstream of forked repositories may also propose
+you to submit a PR.&lt;/p>
 &lt;p>If needed GitHub CLI can also be used to prepare the PR:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ gh pr create &amp;lt;your_username&amp;gt;:&amp;lt;feature_branch&amp;gt; --web
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="previewing-a-pull-request">Previewing a pull request&lt;/h3>
@@ -234,8 +234,8 @@ $ git pull
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can refer to the &lt;code>README.md&lt;/code> to see how to test it locally.&lt;/p>
 &lt;p>In case the PR got commits that were forced pushed you may have troubles, in
 that case it may be easier to
-&lt;a href="#cleaning-a-local-clone-of-a-pr">delete the local branch&lt;/a> and do another
-&lt;a href="#cloning-a-pull-request-to-test-and-review-it-locally">checkout of the PR&lt;/a>.&lt;/p>
+&lt;a href="#clean-a-local-clone-of-a-pr">delete the local branch&lt;/a> and do another
+&lt;a href="#clone-pr-to-edittestreview-locally">checkout of the PR&lt;/a>.&lt;/p>
 &lt;h3 id="clean-a-local-clone-of-a-pr">Clean a local clone of a PR&lt;/h3>
 &lt;p>In case you have troubles updating the local clone, as it can happens if changes
 were forced pushed to it, it maybe easier to delete the local copy of the PR and

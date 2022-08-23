@@ -209,28 +209,40 @@ within your resource centre. This pre-requirement typically requires you to
 become an EGI Cloud service provider, i.e. deploy OpenStack and federate it into
 the EGI Cloud Compute service.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/getting-started/joining-eosc/core-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/core-services/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>With the term “central” or “core service” we refer to a category of services in
-the EOSC Compute Platform (like the service management tools) providing
-capabilities that support the other services of the infrastructure and the
-related activities. They are delivered through a single instance (with the
-failover and high-availability mechanisms deemed necessary), and differently
-from services with a distributed nature such as HTC, Cloud, and Storage, they
-cannot be ordered through the Marketplace, but they become available as soon as
-a user joins the infrastructure (e.g., the access to the EGI Helpdesk service).&lt;/p>
+&lt;ul>
+&lt;li>With the term “central” or “core service” we refer to a category of services
+in the EGI Infrastructure providing capabilities that support and complement
+the other services of the infrastructure and the related activities. A list
+of this kind of services is available in the section
+&lt;a href="https://www.egi.eu/services/federation/">Services for Federation&lt;/a> of our
+site.&lt;/li>
+&lt;li>The EGI Core Services are co-funded by EGI Foundation and the providers are
+selected through a bidding process: the technical details of the services that
+should be delivered are advertised to the
+&lt;a href="https://ims.egi.eu/display/EGIG/EGI+Council">EGI Council&lt;/a> and only the
+providers with the
+&lt;a href="https://ims.egi.eu/display/EGIG/EGI+Participant">EGI Participant&lt;/a> role in the
+Council can apply to the bid.
+&lt;ul>
+&lt;li>&lt;a href="https://www.egi.eu/join-the-egi-federation/">How to join the EGI Federation&lt;/a>
+as a member of the Council.&lt;/li>
+&lt;li>&lt;a href="https://www.egi.eu/egi-federation/#council">Current members&lt;/a> of the EGI
+Council&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Differently from services with a distributed nature such as HTC, Cloud, and
+Storage, they cannot be ordered through the Marketplace, but they become
+available as soon as a user joins the infrastructure (e.g., the access to the
+EGI Helpdesk service).&lt;/li>
+&lt;/ul>
 &lt;h2 id="selection-of-the-providers-and-registration">Selection of the providers and registration&lt;/h2>
-&lt;p>When a service is co-funded by EGI Foundation, which usually covers part of the
-funding associated to a given international project, the providers are selected
-through a bidding process: a call of expression of interest is announced and
-advertised to the &lt;a href="https://ims.egi.eu/display/EGIG/EGI+Council">EGI Council&lt;/a>
-containing the technical details of the services that should be delivered and
-then any provider who is an
-&lt;a href="https://ims.egi.eu/display/EGIG/EGI+Participant">EGI Participant&lt;/a> can apply to
-the bid.&lt;/p>
-&lt;p>With the selected providers, EGI Foundation negotiate and sign an OLA defining
-terms and conditions for the delivery of the services, starting the process
-within Service Portfolio Management (SPM) to add them to the
-&lt;a href="https://www.egi.eu/services/">EGI Service portfolio&lt;/a> if not already included.
-At this point, similar steps to the ones for resource and technology providers
+&lt;p>With the selected providers, EGI Foundation negotiate and sign an
+&lt;a href="https://ims.egi.eu/display/EGIG/Operational+Level+Agreement">OLA&lt;/a> defining
+terms and conditions for the delivery of the services; at the same time, the
+process to add the services to the
+&lt;a href="https://www.egi.eu/services/">EGI Service portfolio&lt;/a> is started, if not already
+included.&lt;/p>
+&lt;p>At this point, similar steps to the ones for resource and technology providers
 follow in order to guarantee the regular day-to-day operation of the service,
 such as:&lt;/p>
 &lt;ul>
@@ -242,9 +254,10 @@ service requests;&lt;/li>
 Service Level Targets are achieved.&lt;/li>
 &lt;/ul>
 &lt;p>In addition to this, the providers are also requested to create a capacity plan,
-an availability and continuity plan, and to interact with Change Management
-(CHM) and Release and Deployment Management (RDM) processes for managing changes
-and new releases of their services.&lt;/p>
+an availability and continuity plan, and to interact with &lt;a href="https://confluence.egi.eu/x/_A2rB">Change Management
+(CHM)&lt;/a> and &lt;a href="https://confluence.egi.eu/x/zgbSB">Release and Deployment Management
+(RDM)&lt;/a> processes for managing changes and new
+releases of their services.&lt;/p>
 &lt;h2 id="capacity-plan">Capacity plan&lt;/h2>
 &lt;p>The capacity plan is important to assess if the capacity of the service is
 sufficient to respond to the current and to the future demand of the service.
@@ -277,18 +290,22 @@ that will be filled in with the details of the given service. Availability and
 Continuity plans are reviewed on a yearly basis.&lt;/p>
 &lt;h2 id="managing-changes-and-new-releases">Managing changes and new releases&lt;/h2>
 &lt;p>All changes to the services should be managed by the EGI Change Management (CHM)
-process according to the
-&lt;a href="https://confluence.egi.eu/display/EGIPP/Change+management+policy">Change Policy&lt;/a>
+process according to the &lt;a href="https://confluence.egi.eu/x/k4SjBQ">Change Policy&lt;/a>
 in order to evaluate the potential impact that a change can have on the service
-itself and on the infrastructure as a whole. When registering a Request for
-Change, besides a general description of the change, the providers are expected
-to provide: the risk level as a result of assessing the impact and the
-likelihood of things going wrong, the type of change, the eventual list of other
-services potentially affected by the change, if it is possible to revert the
-change, the proposed date for the implementation of the change, and if it is
-needed to schedule a downtime of the service. Requests for Changes are assessed
-by the Change Advisory Board (CAB), and then decided whether the Change is going
-to be approved or rejected.&lt;/p>
+itself and on the infrastructure as a whole. When registering a &lt;a href="https://confluence.egi.eu/x/dIIkBQ">Request for
+Change&lt;/a>, besides a general description of
+the change, the providers are expected to provide:&lt;/p>
+&lt;ul>
+&lt;li>the risk level as a result of assessing the impact and the likelihood of things
+going wrong,&lt;/li>
+&lt;li>the type of change,&lt;/li>
+&lt;li>the eventual list of other services potentially affected by the change,&lt;/li>
+&lt;li>if it is possible to revert the change,&lt;/li>
+&lt;li>the proposed date for the implementation of the change,&lt;/li>
+&lt;li>if it is needed to schedule a downtime of the service.&lt;/li>
+&lt;/ul>
+&lt;p>Requests for Changes are assessed by the Change Advisory Board (CAB), and then
+decided whether the Change is going to be approved or rejected.&lt;/p>
 &lt;p>For the recurrent changes with a relatively low risk level, the providers can
 request to classify them as Standard Changes, so that invoking the CAB won’t be
 necessary and they can undergo the release process after the release plan is
@@ -305,11 +322,10 @@ of the new release. If no problems are found, the release can go live, and a
 Post-Implementation Review is conducted after a few days to close the case.&lt;/p>
 &lt;h2 id="security-aspects">Security aspects&lt;/h2>
 &lt;p>The providers of central services are subject to the same policies, procedures
-and requirements applied to the federated service providers, as documented in
-their page.&lt;/p>
+and requirements applied to the federated service providers, as documented at
+&lt;a href="https://confluence.egi.eu/x/iYZQC">this page&lt;/a>.&lt;/p>
 &lt;p>Nevertheless, they are also subject to the following requirement that is
-documented in the service Operational Level Agreement (OLA) that is being agreed
-with them:&lt;/p>
+documented in the service OLA that is being agreed with them:&lt;/p>
 &lt;ul>
 &lt;li>They should immediately report suspected security incidents to the EGI
 Foundation. This is not exempting them to follow the
@@ -319,24 +335,27 @@ and inform EGI CSIRT within 4 hours.&lt;/li>
 &lt;p>It&amp;rsquo;s also important to understand that when processing of personal data is
 taking place, EGI Foundation holds the role of Data Controller and the provider
 is a Data Processor, as defined in the
-&lt;a href="https://gdpr.eu/article-4-definitions/">Global Data Protection Regulation (GDPR)&lt;/a>.
-Data Processing Agreements, regulating the conditions and constraints of the
+&lt;a href="https://gdpr.eu/article-4-definitions/">Global Data Protection Regulation (GDPR)&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>Data Processing Agreements, regulating the conditions and constraints of the
 data processing activities conducted by the Data Processor on behalf of the Data
-controller, will be put in place on the initiative of the EGI Foundation staff.
-EGI Foundation will also prepare, together with the central service provider,
-adequate Privacy and Acceptable Use policies that have to be presented and made
-available to the users of the service. EGI Foundation is also complying with all
-the principles set out by the GÉANT Data Protection Code of Conduct in its more
-recent version, implying that the central service provider should also comply
-with them.&lt;/p>
+controller, will be put in place on the initiative of the EGI Foundation staff.&lt;/li>
+&lt;li>EGI Foundation will also prepare, together with the service provider, adequate
+Privacy and Acceptable Use policies that have to be presented and made available
+to the users of the service.&lt;/li>
+&lt;li>EGI Foundation is also complying with all the principles set out by the GÉANT
+Data Protection Code of Conduct in its more &lt;a href="https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home">recent
+version&lt;/a>,
+implying that the central service provider should also comply with them.&lt;/li>
+&lt;/ul>
 &lt;p>The central service provider should also follow requirements relating to the
 software and covering the usage of a proper licence, the access to and
 management of the source code, implementation of best practices; as well as
 requirements relating to the IT Service management and covering the need for
 having key staff properly trained about IT Service Management, committing to
-continual improvement and having their Service Management System (SMS)
-interfacing with the EGI Service Management System, especially for important
-processes like the Change Management process.&lt;/p></description></item><item><title>Providers: Joining as a Provider of new services</title><link>/providers/getting-started/joining-eosc/new-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/new-services/</guid><description>
+continual improvement and having their &lt;a href="https://confluence.egi.eu/x/kIIkBQ">Service Management System
+(SMS)&lt;/a> interfacing with the EGI SMS,
+especially for important processes like the Change Management process.&lt;/p></description></item><item><title>Providers: Joining as a Provider of new services</title><link>/providers/getting-started/joining-eosc/new-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/new-services/</guid><description>
 &lt;p>The EOSC Compute Platform is currently linked to the EGI Governance, and
 services of the ECP are contributed by the EGI Council members. These
 members can propose new services through the EGI Service Strategy, that
