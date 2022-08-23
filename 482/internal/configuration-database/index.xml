@@ -361,133 +361,7 @@ page, fill in the following fields:
 &lt;code>srm://srm01.ncg.ingrid.pt:8444/srm/managerv2?SFN=/gstore/t2others/ops&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Internal: Data visibility / Scopes</title><link>/internal/configuration-database/scopes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/scopes/</guid><description>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;ul>
-&lt;li>Scope tags are used to group entities such as &lt;code>Sites&lt;/code>, &lt;code>Services&lt;/code> and
-&lt;code>ServiceGroups&lt;/code> into flexible categories. A single entity can define multiple
-scope tags, allowing the resource to be associated with different categories
-without duplication of information. This is essential to maintain the
-integrity of topology information across different infrastructures and
-projects.&lt;/li>
-&lt;li>The Configuration Database admins control which scope tags are made available
-to avoid proliferation of tags (user defined tags are reserved for the
-extensibility mechanism).&lt;/li>
-&lt;li>As an example, a site’s scope list could aggregate all of the scopes defined
-by its child services. In doing this, the site scope list becomes a union of
-its service scopes plus any other site specific tags defined by the site.&lt;/li>
-&lt;li>By defining scope tags, resources can be ‘filtered-by-scope-tag’ when querying
-for data in the PI using the ‘scope’ and ‘scope_match’ parameters, see
-&lt;a href="https://wiki.egi.eu/wiki/GOCDB/PI/Technical_Documentation">GOCDB Programmatic Interface (GOCDB-PI)&lt;/a>(link
-to old EGI Wiki) for details.&lt;/li>
-&lt;/ul>
-&lt;h2 id="clear-separation-of-concerns">Clear Separation of Concerns&lt;/h2>
-&lt;p>It is important to understand that scopes and Projects are distinct:&lt;/p>
-&lt;ul>
-&lt;li>Projects are used to cascade roles and permissions over child objects&lt;/li>
-&lt;li>Scope tags are used to filter resources into flexible categories/groupings&lt;/li>
-&lt;li>Scope tags can be created to mirror the projects. For example, assuming two
-projects (e.g. EGI.eu and EUDAT), two corresponding tags may be defined.&lt;/li>
-&lt;li>In addition, it is also possible define additional scopes for finer grained
-resource filtering e.g. ‘SubGroupX’ and ‘EGI_TEST’.&lt;/li>
-&lt;li>The key benefit: A clear separation of concerns between cascading permissions
-and resource filtering.&lt;/li>
-&lt;/ul>
-&lt;h2 id="egi-scopes">EGI Scopes&lt;/h2>
-&lt;ul>
-&lt;li>To make a &lt;code>Site&lt;/code>, &lt;code>Service&lt;/code> or &lt;code>ServiceGroup&lt;/code> visible to EGI, the resource&amp;rsquo;s
-&amp;lsquo;EGI&amp;rsquo; scope tag checkbox must be ticked. EGI scoped resources are exposed to
-the central operational tools for monitoring and will appear in the central
-operations portal.&lt;/li>
-&lt;li>&lt;strong>Un-ticking the EGI checkbox&lt;/strong> and selecting the &amp;lsquo;Local&amp;rsquo; scope makes the
-selected object invisible to EGI; it will be hidden from the central operation
-tools (it will not show in the central dashboard and it will not be monitored
-centrally). This can be useful if you wish to hide certain parts of your
-infrastructure from EGI but still have the information stored and accessed
-from the same Configuration Database instance.&lt;/li>
-&lt;li>A use-case for non-EGI sites/services is to hide those entities from central
-EGI tools, but to include those sites/services for use by regional versions of
-the operational tools (such as regional monitoring).&lt;/li>
-&lt;li>Note that exposing a site / service endpoint as EGI does not override the
-production status or certification status fields. For example if a site isn&amp;rsquo;t
-marked as production it won&amp;rsquo;t be monitored centrally even if it&amp;rsquo;s marked as
-visible to EGI.&lt;/li>
-&lt;li>You can submit your request for new scope tags via
-&lt;a href="../../helpdesk">EGI Helpdesk&lt;/a> to the &amp;ldquo;Configuration and Topology Database
-(GOCDB)&amp;rdquo; support unit.&lt;/li>
-&lt;/ul>
-&lt;h2 id="reserved-scope-tags">Reserved Scope Tags&lt;/h2>
-&lt;ul>
-&lt;li>Some tags may be &amp;lsquo;Reserved&amp;rsquo; which means they are protected - they are used to
-restrict tag usage and prevent non-authorised sites/services from using tags
-not intended for them.&lt;/li>
-&lt;li>Reserved tags are initially assigned to resources by the Configuration
-Database admins, and can then be optionally inherited by child resources (tags
-can be initially assigned to NGIs, Sites, Services and ServiceGroups).&lt;/li>
-&lt;li>When creating a new child resource (e.g. a child Site or child Service), the
-scopes that are assigned to the parent are automatically inherited and
-assigned to the child.&lt;/li>
-&lt;li>Reserved tags assigned to a resource are optional and can be de-selected if
-required.&lt;/li>
-&lt;li>Users can reapply Reserved tags to a resource ONLY if the tag can be inherited
-from the parent Scoped Entity (parents include NGIs/Sites).
-&lt;ul>
-&lt;li>For Sites: If a Reserved tag is removed from a Site, then the same tag is
-also removed from all the child Services - a Service can&amp;rsquo;t have a reserved
-tag that is not supported by its parent Site.&lt;/li>
-&lt;li>For NGIs: If a Reserved tag is removed from an NGI, then the same tag is NOT
-removed from all the child Sites - this is intentionally different from the
-&lt;code>Site&lt;/code>-&amp;gt;&lt;code>Service&lt;/code> relationship.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>To request a reserved scope tag, &lt;strong>an approval is required from the operators
-of the relevant resources&lt;/strong>. Details on who to contact are listed below. Once
-authorisation is given, please contact the Configuration Database admins with
-details of the approval (e.g. link to an &lt;a href="../../helpdesk">EGI Helpdesk&lt;/a> ticket
-that approves the tag assignment).&lt;/li>
-&lt;/ul>
-&lt;h3 id="fedcloud-reserved-tag">FedCloud Reserved Tag&lt;/h3>
-&lt;ul>
-&lt;li>Tag for resources that contribute to the EGI Federated Cloud. To request this
-tag, please contact the FedCloud operators / EGI Operations.&lt;/li>
-&lt;/ul>
-&lt;h3 id="elixir-reserved-tag">Elixir Reserved Tag&lt;/h3>
-&lt;ul>
-&lt;li>Tag for resources that contribute to the EGI Federated Cloud. To request this
-tag, please contact the operators of the ‘ELIXIR’ NGI in the EGI Configuration
-Database.&lt;/li>
-&lt;/ul>
-&lt;h3 id="wlcg-reserved-tags">WLCG Reserved Tags&lt;/h3>
-&lt;ul>
-&lt;li>A number of reserved scope tags have been defined for the WLCG:
-&lt;ul>
-&lt;li>The ‘tierN’ tags should be requested for WLCG sites that are defined in
-REBUS (a management view of the WLCG infrastructure/sites). To request a
-‘tierN’ tag, raise a ticket against the REBUS support unit in GGUS.&lt;/li>
-&lt;li>For the experiment VO tags (alice, atlas, cms, lhcb), raise a ticket with
-the relevant VO support unit.&lt;/li>
-&lt;li>The wlcg tag is a generic catch-all tag for sites/services with either tierN
-and VO tags and is used to gain an overall view of the WLCG infrastructure.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="sla-reserved-tag">SLA Reserved Tag&lt;/h3>
-&lt;ul>
-&lt;li>Entities covered by an EGI VO SLA
-&lt;ul>
-&lt;li>This Tag will only be applied at the request of EGI operations&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="eosccore-tag">EOSCCore Tag&lt;/h3>
-&lt;ul>
-&lt;li>Tag for resources that contribute to core services of the EOSC. To request
-this tag, please raise an &lt;a href="../../helpdesk">EGI Helpdesk&lt;/a> ticket against the
-Operations SU.&lt;/li>
-&lt;/ul>
-&lt;h3 id="egicore-tag">EGICore Tag&lt;/h3>
-&lt;p>Tag for resources that are part of the EGI Core services. To request this tag,
-please raise an &lt;a href="../../helpdesk">EGI Helpdesk&lt;/a> ticket against the Operations SU.&lt;/p></description></item><item><title>Internal: Downtimes</title><link>/internal/configuration-database/downtimes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/downtimes/</guid><description>
+&lt;/ul></description></item><item><title>Internal: Downtimes</title><link>/internal/configuration-database/downtimes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/downtimes/</guid><description>
 &lt;h2 id="definition">Definition&lt;/h2>
 &lt;p>A downtime is a period of time for which a service is declared to be inoperable.
 Downtimes may be scheduled (e.g. for software/hardware upgrades), or unscheduled
@@ -876,7 +750,133 @@ services to this ServiceGroup.&lt;/li>
 ‘NGI_XX_SERVICES’ naming scheme. For further details, including a list of
 existing ‘NGI_XX_SERVICES’ please see:
 &lt;a href="https://wiki.egi.eu/wiki/NGI_services_in_GOCDB">NGI_services_in_GOCDB&lt;/a>(link to
-old EGI Wiki)&lt;/p></description></item><item><title>Internal: Service Entities</title><link>/internal/configuration-database/service-entities/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-entities/</guid><description>
+old EGI Wiki)&lt;/p></description></item><item><title>Internal: Scoping</title><link>/internal/configuration-database/scopes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/scopes/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;ul>
+&lt;li>Scope tags are used to group entities such as &lt;code>Sites&lt;/code>, &lt;code>Services&lt;/code> and
+&lt;code>ServiceGroups&lt;/code> into flexible categories. A single entity can define multiple
+scope tags, allowing the resource to be associated with different categories
+without duplication of information. This is essential to maintain the
+integrity of topology information across different infrastructures and
+projects.&lt;/li>
+&lt;li>The Configuration Database admins control which scope tags are made available
+to avoid proliferation of tags (user defined tags are reserved for the
+extensibility mechanism).&lt;/li>
+&lt;li>As an example, a site’s scope list could aggregate all of the scopes defined
+by its child services. In doing this, the site scope list becomes a union of
+its service scopes plus any other site specific tags defined by the site.&lt;/li>
+&lt;li>By defining scope tags, resources can be ‘filtered-by-scope-tag’ when querying
+for data in the PI using the ‘scope’ and ‘scope_match’ parameters, see
+&lt;a href="https://wiki.egi.eu/wiki/GOCDB/PI/Technical_Documentation">GOCDB Programmatic Interface (GOCDB-PI)&lt;/a>(link
+to old EGI Wiki) for details.&lt;/li>
+&lt;/ul>
+&lt;h2 id="clear-separation-of-concerns">Clear Separation of Concerns&lt;/h2>
+&lt;p>It is important to understand that scopes and Projects are distinct:&lt;/p>
+&lt;ul>
+&lt;li>Projects are used to cascade roles and permissions over child objects&lt;/li>
+&lt;li>Scope tags are used to filter resources into flexible categories/groupings&lt;/li>
+&lt;li>Scope tags can be created to mirror the projects. For example, assuming two
+projects (e.g. EGI.eu and EUDAT), two corresponding tags may be defined.&lt;/li>
+&lt;li>In addition, it is also possible define additional scopes for finer grained
+resource filtering e.g. ‘SubGroupX’ and ‘EGI_TEST’.&lt;/li>
+&lt;li>The key benefit: A clear separation of concerns between cascading permissions
+and resource filtering.&lt;/li>
+&lt;/ul>
+&lt;h2 id="egi-scopes">EGI Scopes&lt;/h2>
+&lt;ul>
+&lt;li>To make a &lt;code>Site&lt;/code>, &lt;code>Service&lt;/code> or &lt;code>ServiceGroup&lt;/code> visible to EGI, the resource&amp;rsquo;s
+&amp;lsquo;EGI&amp;rsquo; scope tag checkbox must be ticked. EGI scoped resources are exposed to
+the central operational tools for monitoring and will appear in the central
+operations portal.&lt;/li>
+&lt;li>&lt;strong>Un-ticking the EGI checkbox&lt;/strong> and selecting the &amp;lsquo;Local&amp;rsquo; scope makes the
+selected object invisible to EGI; it will be hidden from the central operation
+tools (it will not show in the central dashboard and it will not be monitored
+centrally). This can be useful if you wish to hide certain parts of your
+infrastructure from EGI but still have the information stored and accessed
+from the same Configuration Database instance.&lt;/li>
+&lt;li>A use-case for non-EGI sites/services is to hide those entities from central
+EGI tools, but to include those sites/services for use by regional versions of
+the operational tools (such as regional monitoring).&lt;/li>
+&lt;li>Note that exposing a site / service endpoint as EGI does not override the
+production status or certification status fields. For example if a site isn&amp;rsquo;t
+marked as production it won&amp;rsquo;t be monitored centrally even if it&amp;rsquo;s marked as
+visible to EGI.&lt;/li>
+&lt;li>You can submit your request for new scope tags via
+&lt;a href="../../helpdesk">EGI Helpdesk&lt;/a> to the &amp;ldquo;Configuration and Topology Database
+(GOCDB)&amp;rdquo; support unit.&lt;/li>
+&lt;/ul>
+&lt;h2 id="reserved-scope-tags">Reserved Scope Tags&lt;/h2>
+&lt;ul>
+&lt;li>Some tags may be &amp;lsquo;Reserved&amp;rsquo; which means they are protected - they are used to
+restrict tag usage and prevent non-authorised sites/services from using tags
+not intended for them.&lt;/li>
+&lt;li>Reserved tags are initially assigned to resources by the Configuration
+Database admins, and can then be optionally inherited by child resources (tags
+can be initially assigned to NGIs, Sites, Services and ServiceGroups).&lt;/li>
+&lt;li>When creating a new child resource (e.g. a child Site or child Service), the
+scopes that are assigned to the parent are automatically inherited and
+assigned to the child.&lt;/li>
+&lt;li>Reserved tags assigned to a resource are optional and can be de-selected if
+required.&lt;/li>
+&lt;li>Users can reapply Reserved tags to a resource ONLY if the tag can be inherited
+from the parent Scoped Entity (parents include NGIs/Sites).
+&lt;ul>
+&lt;li>For Sites: If a Reserved tag is removed from a Site, then the same tag is
+also removed from all the child Services - a Service can&amp;rsquo;t have a reserved
+tag that is not supported by its parent Site.&lt;/li>
+&lt;li>For NGIs: If a Reserved tag is removed from an NGI, then the same tag is NOT
+removed from all the child Sites - this is intentionally different from the
+&lt;code>Site&lt;/code>-&amp;gt;&lt;code>Service&lt;/code> relationship.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>To request a reserved scope tag, &lt;strong>an approval is required from the operators
+of the relevant resources&lt;/strong>. Details on who to contact are listed below. Once
+authorisation is given, please contact the Configuration Database admins with
+details of the approval (e.g. link to an &lt;a href="../../helpdesk">EGI Helpdesk&lt;/a> ticket
+that approves the tag assignment).&lt;/li>
+&lt;/ul>
+&lt;h3 id="fedcloud-reserved-tag">FedCloud Reserved Tag&lt;/h3>
+&lt;ul>
+&lt;li>Tag for resources that contribute to the EGI Federated Cloud. To request this
+tag, please contact the FedCloud operators / EGI Operations.&lt;/li>
+&lt;/ul>
+&lt;h3 id="elixir-reserved-tag">Elixir Reserved Tag&lt;/h3>
+&lt;ul>
+&lt;li>Tag for resources that contribute to the EGI Federated Cloud. To request this
+tag, please contact the operators of the ‘ELIXIR’ NGI in the EGI Configuration
+Database.&lt;/li>
+&lt;/ul>
+&lt;h3 id="wlcg-reserved-tags">WLCG Reserved Tags&lt;/h3>
+&lt;ul>
+&lt;li>A number of reserved scope tags have been defined for the WLCG:
+&lt;ul>
+&lt;li>The ‘tierN’ tags should be requested for WLCG sites that are defined in
+REBUS (a management view of the WLCG infrastructure/sites). To request a
+‘tierN’ tag, raise a ticket against the REBUS support unit in GGUS.&lt;/li>
+&lt;li>For the experiment VO tags (alice, atlas, cms, lhcb), raise a ticket with
+the relevant VO support unit.&lt;/li>
+&lt;li>The wlcg tag is a generic catch-all tag for sites/services with either tierN
+and VO tags and is used to gain an overall view of the WLCG infrastructure.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="sla-reserved-tag">SLA Reserved Tag&lt;/h3>
+&lt;ul>
+&lt;li>Entities covered by an EGI VO SLA
+&lt;ul>
+&lt;li>This Tag will only be applied at the request of EGI operations&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="eosccore-tag">EOSCCore Tag&lt;/h3>
+&lt;ul>
+&lt;li>Tag for resources that contribute to core services of the EOSC. To request
+this tag, please raise an &lt;a href="../../helpdesk">EGI Helpdesk&lt;/a> ticket against the
+Operations SU.&lt;/li>
+&lt;/ul>
+&lt;h3 id="egicore-tag">EGICore Tag&lt;/h3>
+&lt;p>Tag for resources that are part of the EGI Core services. To request this tag,
+please raise an &lt;a href="../../helpdesk">EGI Helpdesk&lt;/a> ticket against the Operations SU.&lt;/p></description></item><item><title>Internal: Service Entities</title><link>/internal/configuration-database/service-entities/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-entities/</guid><description>
 &lt;h2 id="definition">Definition&lt;/h2>
 &lt;p>A Service entity is formed by a hostname, a hosted service and a URL.&lt;/p>
 &lt;p>The EGI Configuration Database stores the following information about Service
@@ -1040,6 +1040,35 @@ raised in the Operations Dashboard in case of &lt;code>CRITICAL&lt;/code> failur
 ROD Operations Dashboard in case of &lt;code>CRITICAL&lt;/code> failure of the test. These
 alarms are visible in the Operations Dashboard and are tagged as &amp;ldquo;non
 production&amp;rdquo;.&lt;/li>
+&lt;/ul></description></item><item><title>Internal: Service groups</title><link>/internal/configuration-database/service-groups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-groups/</guid><description>
+&lt;h2 id="service-groups">Service Groups&lt;/h2>
+&lt;p>A service group is an arbitrary grouping of existing service endpoints that can
+be distributed across different physical sites and users that belong to the SG
+(SGs were previously known as &amp;lsquo;Virtual Sites&amp;rsquo;):&lt;/p>
+&lt;ul>
+&lt;li>Each service that appears in a group &lt;strong>must already exist and be hosted by a
+physical site&lt;/strong>.&lt;/li>
+&lt;li>A service group role does &lt;strong>not extend any permissions&lt;/strong> over its child
+services. This means that you cannot declare a downtime on the services that
+you group together or modify the service attributes.&lt;/li>
+&lt;li>Any GOCDB user can create their own service group and as the &amp;lsquo;Service Group
+Administator&amp;rsquo; you can control subsequent user membership requests to the SG
+(everything is logged, including who created the service group).&lt;/li>
+&lt;li>GOCDB users can request to join an existing service group by finding the
+target SG and requesting a role on that SG.&lt;/li>
+&lt;li>Service groups are typically used for monitoring a particular collection of
+services and/or users using the GOCDB &amp;lsquo;get_service_group&amp;rsquo; and
+&amp;lsquo;get_service_group_role&amp;rsquo; PI methods.&lt;/li>
+&lt;li>SG memebers can be listed using the get_service_group_role PI method.&lt;/li>
+&lt;li>PI doc:
+&lt;ul>
+&lt;li>&lt;a href="https://wiki.egi.eu/wiki/GOCDB/PI/get_service_group">get_service_group&lt;/a>(link
+to old EGI Wiki)&lt;/li>
+&lt;li>&lt;a href="https://wiki.egi.eu/wiki/GOCDB/PI/get_service_group_role">get_service_group_role&lt;/a>(link
+to old EGI Wiki)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>If you have any further use-cases or suggestions, please submit a GGUS ticket.&lt;/li>
 &lt;/ul></description></item><item><title>Internal: Service Types</title><link>/internal/configuration-database/service-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-types/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>In the EGI Configuration Database, a service type is a technology used to
@@ -1329,34 +1358,7 @@ closed or brought back in production via the uncertified status.&lt;/p>
 &lt;li>&lt;a href="https://confluence.egi.eu/x/jSAmBg">PROC12 Production Service Decommissioning Procedure&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>&lt;strong>Note&lt;/strong>: Site certification status cannot be changed by site administrators, and
-requires intervention of Operations Centre staff.&lt;/p></description></item><item><title>Internal: Understanding and manipulating roles</title><link>/internal/configuration-database/service-groups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-groups/</guid><description>
-&lt;h2 id="service-groups">Service Groups&lt;/h2>
-&lt;p>A service group is an arbitrary grouping of existing service endpoints that can
-be distributed across different physical sites and users that belong to the SG
-(SGs were previously known as &amp;lsquo;Virtual Sites&amp;rsquo;):&lt;/p>
-&lt;ul>
-&lt;li>Each service that appears in a group &lt;strong>must already exist and be hosted by a
-physical site&lt;/strong>.&lt;/li>
-&lt;li>A service group role does &lt;strong>not extend any permissions&lt;/strong> over its child
-services. This means that you cannot declare a downtime on the services that you
-group together or modify the service attributes.&lt;/li>
-&lt;li>Any GOCDB user can create their own service group and as the &amp;lsquo;Service Group
-Administator&amp;rsquo; you can control subsequent user membership requests to the SG
-(everything is logged, including who created the service group).&lt;/li>
-&lt;li>GOCDB users can request to join an existing service group by finding the
-target SG and requesting a role on that SG.&lt;/li>
-&lt;li>Service groups are typically used for monitoring a particular collection of
-services and/or users using the GOCDB &amp;lsquo;get_service_group&amp;rsquo; and
-&amp;lsquo;get_service_group_role&amp;rsquo; PI methods.&lt;/li>
-&lt;li>SG memebers can be listed using the get_service_group_role PI method.&lt;/li>
-&lt;li>PI doc:
-&lt;ul>
-&lt;li>&lt;a href="https://wiki.egi.eu/wiki/GOCDB/PI/get_service_group">get_service_group&lt;/a>(link to old EGI Wiki)&lt;/li>
-&lt;li>&lt;a href="https://wiki.egi.eu/wiki/GOCDB/PI/get_service_group_role">get_service_group_role&lt;/a>(link to old EGI Wiki)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>If you have any further use-cases or suggestions, please submit a GGUS ticket.&lt;/li>
-&lt;/ul></description></item><item><title>Internal: Users and roles</title><link>/internal/configuration-database/users-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/users-roles/</guid><description>
+requires intervention of Operations Centre staff.&lt;/p></description></item><item><title>Internal: Users and roles</title><link>/internal/configuration-database/users-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/users-roles/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>In the sub-pages there is an explanation over the user accounts on GOCDB, how to
 manage them, and the roles defined in GOCDB.&lt;/p></description></item><item><title>Internal: Service registration requirements</title><link>/internal/configuration-database/service-registration-requirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-registration-requirements/</guid><description>
