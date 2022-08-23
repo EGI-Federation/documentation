@@ -30,10 +30,9 @@ options are documented below, linking to detailed instructions:
    [Notebooks](https://www.egi.eu/service/notebooks/),
    [Training Infrastructure](https://www.egi.eu/service/training-infrastructure/),
    and [Workload Manager](https://www.egi.eu/service/workload-manager/)
-4. [Joining as Core/Central service provider](../joining/core-services/):
+4. [Joining as Core/Central service provider](../joining/core-service/):
    providers of
    [services supporting all the other services of the EGI Infrastructure](https://www.egi.eu/services/federation/).
-5. [Contributing a new service](../joining/new-services/) that is not yet
-   present in the
-   [EGI service portfolio](https://www.egi.eu/services/research/)and enables
-   advanced computing in research and education.
+5. [Contributing a new service](../joining/new-service/) that is not yet present
+   in the [EGI service portfolio](https://www.egi.eu/services/research/)and
+   enables advanced computing in research and education.

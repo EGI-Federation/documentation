@@ -1,8 +1,7 @@
 ---
-title: "Joining as a Provider of new services"
+title: "Introducing a new EGI service"
 weight: 100
-description:
-  "Guidelines for Providers of new services joining the EGI Infrastructure"
+description: "How new services are added to the EGI service catalogue"
 type: "docs"
 ---
 
