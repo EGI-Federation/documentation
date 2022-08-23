@@ -87,11 +87,9 @@ MUST be installed.
      
 ## Adding new services types
 
-Please feel free to make a request for a new service type. For CUSTOM service
-types, we would like to make this process as light-weight as possible. However,
-currently all new service type requests need to be assessed by EGI via
-lightweight review process (by OMB and EGI Ops) so that only suitable types are
-added to GOCDB and to prevent duplication.
+Please feel free to make a request for a new service type. All new service type requests need
+to be assessed by EGI via lightweight review process (by OMB and EGI Ops) so that only
+suitable types are added to GOCDB and to prevent duplication.
 
 You can submit your request via GGUS to the "Configuration and Topology Database
 (GOCDB)" support unit.
