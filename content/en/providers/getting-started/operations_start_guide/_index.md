@@ -7,8 +7,9 @@ type: docs
 
 The Operations Start Guide will help you start with EGI Operations duties. It
 covers the responsibilities of the various parties involved in the running of
-the [EGI infrastructure](https://confluence.egi.eu/display/EGIG/EGI+Infrastructure) and
-guide how to join operations. As a newcomer, you need to understand the
+the
+[EGI infrastructure](https://confluence.egi.eu/display/EGIG/EGI+Infrastructure)
+and guide how to join operations. As a newcomer, you need to understand the
 structure of the infrastructure and roles of operators at different levels.
 Reading the whole document will give you a complete overall picture of daily
 operations within EGI.
@@ -16,11 +17,11 @@ operations within EGI.
 ## Resource Centres and Resource Infrastructures
 
 Resources are geographically distributed and are contributed by
-[Resource Centres](https://confluence.egi.eu/display/EGIG/Resource+Centre). A Resource
-Centre is the smallest resource administration domain within EGI. It can be
-either localized or geographically distributed. A Resource Centre is also known
-as a _site_. It provides a minimum set of local or remote IT Services, such as
-High Throughput Compute (HTC), Cloud Compute, Storage and Data Transfer,
+[Resource Centres](https://confluence.egi.eu/display/EGIG/Resource+Centre). A
+Resource Centre is the smallest resource administration domain within EGI. It
+can be either localized or geographically distributed. A Resource Centre is also
+known as a _site_. It provides a minimum set of local or remote IT Services,
+such as High Throughput Compute (HTC), Cloud Compute, Storage and Data Transfer,
 compliant to well-defined IT Capabilities necessary to make resources accessible
 to authorised users. Users can access the services using common interfaces.
 
@@ -121,8 +122,8 @@ subscribed to the relevant mailing lists.
 #### Resource Centre Security Officer
 
 The person responsible for keeping the site compliant with the
-[EGI security policies](https://go.egi.eu/policies-and-procedures). They are
-the primary contact for the [NGI Security officer](#ngi-security-officer) and
+[EGI security policies](https://go.egi.eu/policies-and-procedures). They are the
+primary contact for the [NGI Security officer](#ngi-security-officer) and
 [EGI Computer Security Incident Response Team (CSIRT)](#egi-csirt). The Site
 Security Officer deals with security incidents and shall respond to enquiries in
 a timely fashion as defined in the collection of
@@ -223,8 +224,8 @@ on a weekly rota basis.
 
 #### EGI Foundation SDIS team
 
-The [EGI Foundation](https://confluence.egi.eu/display/EGIG/EGI+Foundation) Service
-Delivery and Information Security (SDIS) team, formerly known as the EGI
+The [EGI Foundation](https://confluence.egi.eu/display/EGIG/EGI+Foundation)
+Service Delivery and Information Security (SDIS) team, formerly known as the EGI
 Operations team, is responsible of
 [coordinating and supporting the operational activities](https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight)
 of all the EGI Infrastructure.
@@ -280,7 +281,7 @@ Please use this resource and contact your CA if your certificate does not work.
 
 As soon as you try to access an EGI service with your federated identity, you
 will be requested to register an account in EGI Check-in if not existing yet.
-The [Check-in sign up guide](../../../users/check-in/signup/) explains how to
+The [Check-in sign up guide](../../../users/aai/check-in/signup) explains how to
 sign up for an EGI account. If you already own an account, you will be simply
 asked to login through EGI Check-in.
 
