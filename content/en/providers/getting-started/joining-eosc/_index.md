@@ -14,8 +14,8 @@ Providers are offered with 5 options to become members in the EGI Federation and
 deliver services for advanced computing within the EGI Infrastructure. The
 options are documented below, linking to detailed instructions:
 
-1. [Joining as a federated resource provider](../joining-eosc/federated-rp/). A
-   provider (that we call Resource Centre) delivering one of the following
+1. [Joining as a federated resource provider](../joining-eosc/federated-resource-provider).
+   A provider (that we call Resource Centre) delivering one of the following
    services: [Cloud Compute](https://www.egi.eu/service/cloud-compute/),
    [HTC Compute](https://www.egi.eu/service/high-throughput-compute/),
    [Cloud Container Compute](https://www.egi.eu/service/cloud-container-compute/),
