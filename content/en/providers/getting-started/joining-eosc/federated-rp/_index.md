@@ -16,13 +16,9 @@ to constitute a homogeneous operational domain.
 
 ## Registration and certification
 
-<!-- markdownlint-disable no-inline-html -->
-
 {{% alert title="Note" color="info" %}} Related procedure:
-[PROC09 Resource Centre Registration and Certification](https://confluence.egi.eu/x/FSAmBg)
+[PROC09 Resource Centre Registration and Certification](https://go.egi.eu/proc09)
 {{% /alert %}}
-
-<!-- markdownlint-enable no-inline-html -->
 
 In order to join the EOSC Compute platform, a RC needs to present the request to
 the Research Infrastructure Provider (RP) existing in its country. A RP is a
@@ -41,16 +37,17 @@ and accept:
   an agreement made between the RC and its RP that defines the minimum set of
   operational services and the respective quality parameters that a Resource
   Centre is required to provide in EGI;
-- the [Security Policies](https://confluence.egi.eu/x/9wbSB) defined in EGI to
-  guarantee that all the security aspects with the service delivery are
+- the [Security Policies](https://go.egi.eu/policies_procedures) defined in EGI
+  to guarantee that all the security aspects with the service delivery are
   fulfilled and enforced.
 
 The next step is registering the RC in the EGI
-[Configuration Database](https://goc.egi.eu/): the provided information, from
-the generic contacts and roles of people to the service endpoints details will
-be needed to trigger the daily operations of other services and activities
-provided by the EGI Infrastructure such as the Monitoring of the resources, the
-Accounting, the Support, and the security activities.
+[Configuration Database](../../../../internal/configuration-database): the
+provided information, from the generic contacts and roles of people to the
+service endpoints details will be needed to trigger the daily operations of
+other services and activities provided by the EGI Infrastructure such as the
+Monitoring of the resources, the Accounting, the Support, and the security
+activities.
 
 ![Diagram of the RCs status flow](SiteStatusFlow.png)
 
@@ -71,16 +68,16 @@ Once moved to the production infrastructure, a RC is ready to deliver its
 resources to any of the users’ communities consuming the infrastructure. Here
 the Service Level Management (SLM) process intervenes as a matchmaker between
 service expectations and needs of the
-[Virtual Organisations (VOs)](https://confluence.egi.eu/x/yIIkBQ) and the
-capabilities of the RCs. During the selection of the providers for service
-provisioning, technical requirements collected from the customer are used by EGI
-to launch a call open to all of the providers. The Expression of Interests
-(EoIs) collected during the negotiation phase will be used to identify the
-provider(s) that best match the customer's requirements and expectations. From a
-technical perspective, several aspects will be considered during the negotiation
-phase including the geographical location of the customer, national roadmap and
-priority of the providers, and costs of the service provisioning in case of a
-pay-for-use model.
+[Virtual Organisations (VOs)](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
+and the capabilities of the RCs. During the selection of the providers for
+service provisioning, technical requirements collected from the customer are
+used by EGI to launch a call open to all of the providers. The Expression of
+Interests (EoIs) collected during the negotiation phase will be used to identify
+the provider(s) that best match the customer's requirements and expectations.
+From a technical perspective, several aspects will be considered during the
+negotiation phase including the geographical location of the customer, national
+roadmap and priority of the providers, and costs of the service provisioning in
+case of a pay-for-use model.
 
 In case the negotiation phase ends positively, the selected provider(s) will:
 
@@ -141,11 +138,12 @@ in the RC OLA, the RC will handle
 registered as tickets in the EGI Helpdesk service, with the expectation to
 acknowledge and process any notified issue within the agreed response time
 associated with the priority of the ticket. The response time is defined by the
-Quality of [Support levels](https://confluence.egi.eu/x/ygCrB), and for the RCs
-the level will be Medium, meaning that there will 4 priorities for the incidents
-(requiring for example up to 5 working days for the “less urgent” tickets and up
-to 1 working day for the “top priority” ones), while any service request will be
-processed as “less urgent” ticket.
+Quality of
+[Support levels](https://confluence.egi.eu/display/EGISLM/Service+Level+Target+-+Quality+of+Support),
+and for the RCs the level will be Medium, meaning that there will 4 priorities
+for the incidents (requiring for example up to 5 working days for the “less
+urgent” tickets and up to 1 working day for the “top priority” ones), while any
+service request will be processed as “less urgent” ticket.
 
 ## Performance reports: enforcing OLAs
 
@@ -226,11 +224,12 @@ vulnerability. The status is closely monitored by the security team and
 accessible to the affected RCs.
 
 Using this information correlated with the one from
-[Pakiti](https://pakiti.egi.eu/) (the patch management service collecting
-information about the patches deployed at the various High Throughput Compute
-RCs), the Incident Response Task Force (IRTF) on duty security officer will open
-tickets against the impacted sites according to the
-[WI07 Security Vulnerability Handling](https://go.egi.eu/wi07) procedure.
+[Pakiti](../../../../internal/security-coordination/monitoring/pakiti) (the
+patch management service collecting information about the patches deployed at
+the various High Throughput Compute RCs), the Incident Response Task Force
+(IRTF) on duty security officer will open tickets against the impacted sites
+according to the [WI07 Security Vulnerability Handling](https://go.egi.eu/wi07)
+procedure.
 
 The EGI Service Delivery and Information Security (SDIS) team of the EGI
 Foundation will follow up with the resource provider to work on resolving the
