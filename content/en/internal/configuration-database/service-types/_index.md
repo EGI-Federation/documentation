@@ -19,7 +19,7 @@ running in a certain context.
 defined as the 'Type of service according to a namespace based classification
 (the namespace MAY be related to a middleware name, an organisation or other
 concepts)'.
-- The naming scheme for new service types in GOCDB therefore generally follow a
+- The naming scheme for new service types in GOCDB therefore follow a
 reverse DNS style syntax, usually naming the technology provider/project followed
 by technology type in lowercase, i.e. ‘provider.type’ (e.g. ‘org.openstack.swift’).
 - Please note, this syntax does not necessarily indicate ownership, the main objective
