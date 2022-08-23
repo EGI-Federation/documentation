@@ -247,7 +247,7 @@ existing VOs
    **Again, this is usually guided by the EGI support team. You should already
    have a meeting with them to discuss your requirements. They will help you to
    get resources from EGI providers, and sign
-   [SLA](https://wiki.egi.eu/wiki/EGI_OLA_SLA_framework#Service_Level_Agreemens)
+   [SLA](https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework)
    with you.**
 
 1. Request your VO membership at VO VOMS page. You will have to enter required
