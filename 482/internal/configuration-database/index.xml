@@ -117,7 +117,51 @@ also disallows single quotes in all Relative Distinguished Name (RDN)
 components, and the OGF Certificate Authority Working Group (CAOPS) who strongly
 discourage any type of quote in a certificate DN as specified by their
 &lt;a href="https://www.ogf.org/documents/GFD.125.pdf">Grid Certificate Profile&lt;/a> document.&lt;/p>
-&lt;/div></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
+&lt;/div></description></item><item><title>Internal: Adding a new Project</title><link>/internal/configuration-database/adding-new-projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-new-projects/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>GOCDB, the software powering the EGI Configuration Database, is multi-tenanted;
+it can host multiple projects in the same instance. There are a number of
+different deployment scenarios that can be used to support new projects detailed
+below. Please contact the EGI Configuration Database admins and EGI Operations
+to discuss the options available.&lt;/p>
+&lt;h2 id="1-add-resources-sitesservices-to-an-existing-project">1) Add resources (sites/services) to an existing project&lt;/h2>
+&lt;ul>
+&lt;li>Resources (NGIs, Sites, Services) would be hosted under an existing project,
+e.g. the ‘EGI’ project.&lt;/li>
+&lt;li>The new resources would be subject to the rules of the existing project, such
+as site certification status changes and project controlled user memberships.&lt;/li>
+&lt;li>The resources could not be filtered using a custom scope tag.&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-add-resources-sitesservices-to-an-existing-project-and-add-a-new-scope-tag-to-represent-a-sub-grouping">2) Add resources (sites/services) to an existing project and add a new Scope tag to represent a sub-grouping&lt;/h2>
+&lt;ul>
+&lt;li>Resources would be hosted under an existing project, and a new scope tag would
+be added for the purposes of resource filtering.&lt;/li>
+&lt;li>Since the resources are still hosted under an existing project, the new
+resources would still be subject to the rules of the existing project, such as
+site certification status changes and project controlled user memberships.&lt;/li>
+&lt;li>The resources could be filtered using the new scope tag, but this scope tag
+would not strictly represent a project, rather a sub-grouping under the
+existing project, e.g.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
+projects and sub-groups:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="3-add-resources-sitesservices-to-a-new-project-and-add-a-new-scope-tag-to-filter-by-project">3) Add resources (sites/services) to a new Project and add a new Scope tag to filter by project&lt;/h2>
+&lt;ul>
+&lt;li>Resources would be hosted under a new project, and a new scope tag would be
+added named after the project for the purposes of resource filtering.&lt;/li>
+&lt;li>The resources would not be subject to the rules of other projects, for
+example, allowing the project to control its site certification status changes
+and project controlled user memberships.&lt;/li>
+&lt;li>The resources could be filtered using the scope tag named after the new
+project, e.g.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
+projects:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
 &lt;p>For monitoring purposes, each service endpoints registered into the
 Configuration Database, and having the flags &lt;em>production&lt;/em> and &lt;em>monitored&lt;/em> should
 include the endpoint URL information in order to be contacted by the
@@ -830,51 +874,7 @@ procedure but has to be done by the Configuration Database admins.&lt;/p>
 &lt;p>To edit a group, simply click on the &amp;ldquo;edit&amp;rdquo; link at the top of the group&amp;rsquo;s
 details page.&lt;/p>
 &lt;h2 id="deleting-groups">Deleting Groups&lt;/h2>
-&lt;p>This operation is not allowed.&lt;/p></description></item><item><title>Internal: Options for adding a new Project in EGI Configuration Database</title><link>/internal/configuration-database/adding-new-projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-new-projects/</guid><description>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>GOCDB, the software powering the EGI Configuration Database, is multi-tenanted;
-it can host multiple projects in the same instance. There are a number of
-different deployment scenarios that can be used to support new projects detailed
-below. Please contact the EGI Configuration Database admins and EGI Operations
-to discuss the options available.&lt;/p>
-&lt;h2 id="1-add-resources-sitesservices-to-an-existing-project">1) Add resources (sites/services) to an existing project&lt;/h2>
-&lt;ul>
-&lt;li>Resources (NGIs, Sites, Services) would be hosted under an existing project,
-e.g. the ‘EGI’ project.&lt;/li>
-&lt;li>The new resources would be subject to the rules of the existing project, such
-as site certification status changes and project controlled user memberships.&lt;/li>
-&lt;li>The resources could not be filtered using a custom scope tag.&lt;/li>
-&lt;/ul>
-&lt;h2 id="2-add-resources-sitesservices-to-an-existing-project-and-add-a-new-scope-tag-to-represent-a-sub-grouping">2) Add resources (sites/services) to an existing project and add a new Scope tag to represent a sub-grouping&lt;/h2>
-&lt;ul>
-&lt;li>Resources would be hosted under an existing project, and a new scope tag would
-be added for the purposes of resource filtering.&lt;/li>
-&lt;li>Since the resources are still hosted under an existing project, the new
-resources would still be subject to the rules of the existing project, such as
-site certification status changes and project controlled user memberships.&lt;/li>
-&lt;li>The resources could be filtered using the new scope tag, but this scope tag
-would not strictly represent a project, rather a sub-grouping under the
-existing project, e.g.&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
-projects and sub-groups:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="3-add-resources-sitesservices-to-a-new-project-and-add-a-new-scope-tag-to-filter-by-project">3) Add resources (sites/services) to a new Project and add a new Scope tag to filter by project&lt;/h2>
-&lt;ul>
-&lt;li>Resources would be hosted under a new project, and a new scope tag would be
-added named after the project for the purposes of resource filtering.&lt;/li>
-&lt;li>The resources would not be subject to the rules of other projects, for
-example, allowing the project to control its site certification status changes
-and project controlled user memberships.&lt;/li>
-&lt;li>The resources could be filtered using the scope tag named after the new
-project, e.g.&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
-projects:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Internal: Service Entities</title><link>/internal/configuration-database/service-entities/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-entities/</guid><description>
+&lt;p>This operation is not allowed.&lt;/p></description></item><item><title>Internal: Service Entities</title><link>/internal/configuration-database/service-entities/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-entities/</guid><description>
 &lt;h2 id="definition">Definition&lt;/h2>
 &lt;p>A Service entity is formed by a hostname, a hosted service and a URL.&lt;/p>
 &lt;p>The EGI Configuration Database stores the following information about Service
