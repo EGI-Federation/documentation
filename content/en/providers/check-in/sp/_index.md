@@ -71,8 +71,9 @@ The integration follows a two-step process:
    registration requests require approval by an administrator. The review
    process for the demo environment involves primarily the technical aspects of
    the service configuration. However, moving the service to production requires
-   compliance with all the [eligibility criteria] (see Step 2). The demo
-   instance allows for testing authentication and authorisation through the
+   compliance with all the
+   [eligibility criteria](#services-eligible-for-integration) (see Step 2). The
+   demo instance allows for testing authentication and authorisation through the
    academic and social Identity Providers connected to Check-in without
    affecting the production Check-in service. Note that while the demo instance
    has identical functionality to the production instance, no information is
@@ -93,7 +94,7 @@ The integration follows a two-step process:
    registration through the EGI Federation Registry Portal. The production
    instance allows access to your service through the academic and social
    Identity Providers connected to Check-in. This requires that your service
-   meets all the [eligibility criteria](#Services_eligible_for_integration) and
+   meets all the [eligibility criteria](#services-eligible-for-integration) and
    that integration has been thoroughly tested during Step 1.
 
 ## General Information
@@ -982,12 +983,13 @@ The migration guide below applies to OIDC clients registered in the
 **Development and Demo**: Beginning June 24, 2022, clients using the legacy
 Check-in OIDC endpoints will no longer be supported.
 
-**Production**: Beginning July 22, 2022, clients using the legacy Check-in OIDC
-endpoints will no longer be supported.
+**Production**: Beginning September 16, 2022, clients using the legacy Check-in
+OIDC endpoints will no longer be supported.
 
 {{% alert title="Note" color="info" %}} For OpenStack Services please read the
 OpenStack specific migration guide on
-[Cloud Compute documentation](../../cloud-compute/openstack/aai#client-migration-to-keycloak).{{% /alert %}}
+[Cloud Compute documentation](../../cloud-compute/openstack/aai.md#client-migration-to-keycloak).
+{{% /alert %}}
 
 #### How to Migrate your Service to Keycloak
 
@@ -1063,10 +1065,10 @@ by creating new Refresh Tokens issued by Keycloak.
 - If you have obtained Refresh Tokens using the EGI Check-in Token Portal,
   please check the following table:
 
-  | Issuer                   | Production environment            |
-  | ------------------------ | --------------------------------- |
-  | Keycloak                 | <https://aai.egi.eu/token>        |
-  | MITREid Connect (Legacy) | <https://aai.egi.eu/token-legacy> |
+  | Issuer                   | Production environment              |
+  | ------------------------ | ----------------------------------- |
+  | Keycloak                 | <https://aai.egi.eu/token-keycloak> |
+  | MITREid Connect (Legacy) | <https://aai.egi.eu/token>          |
 
 - If you have obtained Refresh Tokens using the oidc-agent, please use the
   following command:

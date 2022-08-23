@@ -13,9 +13,9 @@ description: >
 
 Grid storage enables **storage of files in a fault-tolerant and scalable
 environment**, and sharing it with distributed teams. Your data can be accessed
-through multiple protocols, and can be replicated across different providers
-to increase fault-tolerance. Grid storage gives you complete control over what
-data you share, and with whom you share the data.
+through multiple protocols, and can be replicated across different providers to
+increase fault-tolerance. Grid storage gives you complete control over what data
+you share, and with whom you share the data.
 
 The main features of grid storage:
 
@@ -30,12 +30,13 @@ Grid storage file access is based on the
 [SRM](https://www.gridpp.ac.uk/wiki/SRM) (under deprecation at some of the
 endpoints).
 
-Several grid storage implementations are available in the EGI Cloud, the most
-common being:
+Several grid storage implementations are available in the EGI Infrastructure,
+the most common being:
 
 - [dCache](https://www.dcache.org/)
-- [DPM](https://twiki.cern.ch/twiki/bin/view/DPM/)
+- [DPM](https://twiki.cern.ch/twiki/bin/view/DPM/) (N.B. under decommissioning)
 - [StoRM](https://italiangrid.github.io/storm/)
+- [EOS](https://eos-web.web.cern.ch/eos-web/)
 
 ## Endpoint discovery
 
@@ -68,25 +69,23 @@ $ lcg-infosites --vo biomed  se
 
 ## Access from the command-line
 
-Access to grid storage via a command-line interface (CLI) requires users
-to obtain a valid X.509 user VOMS proxy.
-Please refer to the [Check-in](../../../aai/check-in/vos/voms) documentation for more
-information.
+Access to grid storage via a command-line interface (CLI) requires users to
+obtain a valid X.509 user VOMS proxy. Please refer to the
+[Check-in](../../../aai/check-in/vos/voms) documentation for more information.
 
 {{% alert title="Note" color="info" %}} Integration via
 [OpenID Connect](https://openid.net/connect) to the
 [EGI Check-in service](../../../aai/check-in) is under piloting at some of the
 endpoints of the EGI Cloud infrastructure , but it has not yet reached the
-production stage.
-{{% /alert %}}
+production stage. {{% /alert %}}
 
 The CLI widely used to access grid-storage is
 [gfal2](https://dmc-docs.web.cern.ch/dmc-docs/gfal2/gfal2.html), which is
 available for installation both on RHEL and Debian compatible systems.
 
 In particular, `gfal2` provides an abstraction layer on top of several storage
-protocols (XRootD, WebDAV, SRM, gsiftp, etc), offerint a convenient API that
-can be used over different protocols.
+protocols (XRootD, WebDAV, SRM, gsiftp, etc), offerint a convenient API that can
+be used over different protocols.
 
 The `gfal2` CLI can be installed as follows (for RHEL compatible systems):
 
@@ -94,17 +93,16 @@ The `gfal2` CLI can be installed as follows (for RHEL compatible systems):
 $ yum install gfal2-util gfal2-all
 ```
 
-where `gfal2-all` will install all the plug-ins (to deal with all the
-available protocols).
+where `gfal2-all` will install all the plug-ins (to deal with all the available
+protocols).
 
 Below you can find examples of the usual commands needed to access storage via
 `gfal2`. For a complete list of available commands, and the guide on how to use
 them, please refer to the
 [gfal2-util documentation](https://dmc-docs.web.cern.ch/dmc-docs/gfal2-util.html).
 
-{{% alert title="Note" color="info" %}} In the examples below, the used
-`gsiftp` protocol can be replaced by any other supported protocol.
-{{% /alert %}}
+{{% alert title="Note" color="info" %}} In the examples below, the used `gsiftp`
+protocol can be replaced by any other supported protocol. {{% /alert %}}
 
 ### List files on a given endpoint
 
@@ -123,6 +121,7 @@ tpctest
 ```shell
 $ gfal-mkdir gsiftp://dcache-door-doma01.desy.de/dteam/test
 ```
+
 <!-- markdownlint-enable commands-show-output -->
 
 ### Copy a local file
@@ -157,12 +156,13 @@ gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file      DELETED
 
 <!-- markdown-link-check-disable -->
 
-The [EGI Data Transfer](../../../data/management/data-transfer) service provides mechanisms
-to optimize the transfer of files between EGI Online Storage endpoints.
-Both a [graphical user interface](../../../data/management/data-transfer/webfts) (GUI) and
-[command-line interfaces](../../../data/management/data-transfer/clients) (CLI) are available
-to perform bulk movement of data.
-Please check out the related documentation for more information.
+The [EGI Data Transfer](../../../data/management/data-transfer) service provides
+mechanisms to optimize the transfer of files between EGI Online Storage
+endpoints. Both a
+[graphical user interface](../../../data/management/data-transfer/webfts) (GUI)
+and [command-line interfaces](../../../data/management/data-transfer/clients)
+(CLI) are available to perform bulk movement of data. Please check out the
+related documentation for more information.
 
 <!-- markdown-link-check-enable -->
 
@@ -172,8 +172,9 @@ Grid storage access, most of the time, is hidden from users by the integration
 with the Data Management Frameworks (DMFs) used by Collaborations and
 Experiments.
 
-For example, [EGI Workload Manager](../../../compute/orchestration/workload-manager) provides a way
-to efficiently access grid storage endpoints in order to read/store files,
+For example,
+[EGI Workload Manager](../../../compute/orchestration/workload-manager) provides
+a way to efficiently access grid storage endpoints in order to read/store files,
 and to catalogue the existing file and related metadata.
 
 When running computation via the EGI Workload Manager, users do not actually
