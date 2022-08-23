@@ -805,7 +805,29 @@ role, they are likely to be your fellow site admins or your NGI operators.&lt;/p
 &lt;p>Accessing the backend through another way than the
 &lt;a href="https://goc.egi.eu">Configuration Database web interface&lt;/a> is out of the scope
 of this documentation. Please refer to the technical documentation instead,
-which is available from GOCDB Documentation.&lt;/p></description></item><item><title>Internal: NGI Core Services</title><link>/internal/configuration-database/ngi-core-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/ngi-core-services/</guid><description>
+which is available from GOCDB Documentation.&lt;/p></description></item><item><title>Internal: Managing NGIs entities</title><link>/internal/configuration-database/ngis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/ngis/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>An NGI forms a grouping of Sites in EGI Configuration Database. The
+Configuration Database stores the following information about these groups. The
+main page listing groups actually shows NGIs/ROCs, and is available from &lt;strong>&amp;ldquo;List
+of NGIs/ROCs and associated contacts&amp;rdquo;&lt;/strong>, linked from the main menu.&lt;/p>
+&lt;p>Each NGI has its own listing page, accessible by clicking on the &amp;ldquo;view&amp;rdquo; link in
+group listing pages. A group details page shows users with a role on that group,
+as well as member sites and associated contacts and roles.&lt;/p>
+&lt;h2 id="adding-ngis">Adding NGIs&lt;/h2>
+&lt;p>Adding groups is not possible through the Input System web interface. If you
+want to start the registration process of a new NGI, please follow the procedure
+described on:&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a href="https://go.egi.eu/proc02">PROC02: Operations Centre creation&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>Integration of the new group in the EGI Configuration Database is part of the
+procedure but has to be done by the Configuration Database admins.&lt;/p>
+&lt;h2 id="editing-groups">Editing Groups&lt;/h2>
+&lt;p>To edit a group, simply click on the &amp;ldquo;edit&amp;rdquo; link at the top of the group&amp;rsquo;s
+details page.&lt;/p>
+&lt;h2 id="deleting-groups">Deleting Groups&lt;/h2>
+&lt;p>This operation is not allowed.&lt;/p></description></item><item><title>Internal: NGI Core Services</title><link>/internal/configuration-database/ngi-core-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/ngi-core-services/</guid><description>
 &lt;h2 id="ngi-core-services">NGI Core Services&lt;/h2>
 &lt;p>NGIs can register a number of ‘NGI-Core’ services in the Configuration Database.
 A core NGI service is one that is used to calculate the availability and
@@ -854,27 +876,7 @@ services to this ServiceGroup.&lt;/li>
 ‘NGI_XX_SERVICES’ naming scheme. For further details, including a list of
 existing ‘NGI_XX_SERVICES’ please see:
 &lt;a href="https://wiki.egi.eu/wiki/NGI_services_in_GOCDB">NGI_services_in_GOCDB&lt;/a>(link to
-old EGI Wiki)&lt;/p></description></item><item><title>Internal: NGIs</title><link>/internal/configuration-database/ngis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/ngis/</guid><description>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>An NGI forms a grouping of Sites in EGI Configuration Database. The
-Configuration Database stores the following information about these groups. The
-main page listing groups actually shows NGIs/ROCs, and is available from &lt;strong>&amp;ldquo;List
-of NGIs/ROCs and associated contacts&amp;rdquo;&lt;/strong>, linked from the main menu.&lt;/p>
-&lt;p>Each NGI has its own listing page, accessible by clicking on the &amp;ldquo;view&amp;rdquo; link in
-group listing pages. A group details page shows users with a role on that group,
-as well as member sites and associated contacts and roles.&lt;/p>
-&lt;h2 id="adding-ngis">Adding NGIs&lt;/h2>
-&lt;p>Adding groups is not possible through the Input System web interface. If you
-want to start the registration process of a new NGI, please follow the procedure
-described on:&lt;/p>
-&lt;p>&lt;a href="https://go.egi.eu/proc02">Operations Centre creation procedure&lt;/a>&lt;/p>
-&lt;p>Integration of the new group in the EGI Configuration Database is part of the
-procedure but has to be done by the Configuration Database admins.&lt;/p>
-&lt;h2 id="editing-groups">Editing Groups&lt;/h2>
-&lt;p>To edit a group, simply click on the &amp;ldquo;edit&amp;rdquo; link at the top of the group&amp;rsquo;s
-details page.&lt;/p>
-&lt;h2 id="deleting-groups">Deleting Groups&lt;/h2>
-&lt;p>This operation is not allowed.&lt;/p></description></item><item><title>Internal: Service Entities</title><link>/internal/configuration-database/service-entities/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-entities/</guid><description>
+old EGI Wiki)&lt;/p></description></item><item><title>Internal: Service Entities</title><link>/internal/configuration-database/service-entities/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/service-entities/</guid><description>
 &lt;h2 id="definition">Definition&lt;/h2>
 &lt;p>A Service entity is formed by a hostname, a hosted service and a URL.&lt;/p>
 &lt;p>The EGI Configuration Database stores the following information about Service
