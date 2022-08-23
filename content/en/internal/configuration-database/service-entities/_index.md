@@ -89,7 +89,7 @@ ServiceType egi.GOCDB) defines the following Service Endpoint entities:
 | Name                                                                                                    | URL                        | Interface Name   |
 | ------------------------------------------------------------------------------------------------------- | -------------------------- | ---------------- |
 | [ProductionPortalInstance](https://goc.egi.eu/portal/index.php?Page_Type=View_Service_Endpoint&id=6313) | https://goc.egi.eu/portal  | egi.GOCDB.Portal |
-| [Production PI base url](https://goc.egi.eu/portal/index.php?Page_Type=View_Service_Endpoint&id=6314)   | https://goc.egi.eu/gocdbpi | egi.GOCDB.PI     |
+| [Production PI base URL](https://goc.egi.eu/portal/index.php?Page_Type=View_Service_Endpoint&id=6314)   | https://goc.egi.eu/gocdbpi | egi.GOCDB.PI     |
 
 ## Specific Service entities fields and their impact
 
