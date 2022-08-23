@@ -96,7 +96,7 @@ following query to the GOCDBPI interface:
 - [eu.egi.MPI](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=eu.egi.MPI):
   Defines a dummy Service Type to enable the running of MPI tests for services
   providing MPI capabilities. Sites must have one instance of this Service Type
-  associated with a CREAM-CE service.
+  associated with a CE service.
 - [argo.poem](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=argo.poem):
   POEM is system for managing profiles of probes and metrics in ARGO system.
 - [argo.mon](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=argo.mon):
