@@ -64,11 +64,6 @@ of a provider, from a [command-line interface](#manage-from-the-command-line)
 (CLI), or via the
 [OpenStack Block Storage API](https://docs.openstack.org/api-ref/block-storage/).
 
-{{% alert title="Note" color="info" %}} Please refer to
-[OCCI How-To](https://wiki.egi.eu/wiki/HOWTO11_How_to_use_the_rOCCI_Client#How_to_create_block_storage.3F)
-for details about using the legacy OCCI interface to manage block storage.
-{{% /alert %}}
-
 ## Manage from the command-line
 
 Multiple command-line interfaces (CLIs) are available to manage block storage:
