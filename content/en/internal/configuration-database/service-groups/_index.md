@@ -24,7 +24,7 @@ group together or modify the service attributes.
   services and/or users using the GOCDB 'get_service_group' and
   'get_service_group_role' PI methods.
 - SG memebers can be listed using the get_service_group_role PI method.
-- PI doc: (links to EGI WIKI to be replaced)
-  - [get_service_group](https://wiki.egi.eu/wiki/GOCDB/PI/get_service_group)
-  - [get_service_group_role](https://wiki.egi.eu/wiki/GOCDB/PI/get_service_group_role)
+- PI doc:
+  - [get_service_group](https://wiki.egi.eu/wiki/GOCDB/PI/get_service_group)(link to old EGI Wiki)
+  - [get_service_group_role](https://wiki.egi.eu/wiki/GOCDB/PI/get_service_group_role)(link to old EGI Wiki)
 - If you have any further use-cases or suggestions, please submit a GGUS ticket.
