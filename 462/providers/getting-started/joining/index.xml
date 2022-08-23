@@ -1,4 +1,23 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Joining the EGI Infrastructure as a provider</title><link>/providers/getting-started/joining-eosc/</link><description>Recent content in Joining the EGI Infrastructure as a provider on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/getting-started/joining-eosc/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Joining as a Federated Resource Provider - Resource Centre</title><link>/providers/getting-started/joining-eosc/federated-resource-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/federated-resource-provider/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Joining EGI as a provider</title><link>/providers/getting-started/joining/</link><description>Recent content in Joining EGI as a provider on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/getting-started/joining/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Introducing a new EGI service</title><link>/providers/getting-started/joining/new-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/new-service/</guid><description>
+&lt;p>The EGI services are contributed by the
+&lt;a href="https://www.egi.eu/egi-federation/#council">EGI Council members&lt;/a>, who can
+propose new services through the
+&lt;a href="https://www.egi.eu/publication/egi-federation-service-strategy-2022-2024/">EGI Service Strategy&lt;/a>,
+that defines the overall direction to EGI services for a few years time window.
+The services are designed, validated through the EGI Community, with the help of
+the &lt;a href="https://go.egi.eu/ssb">EGI Services and Solutions Board (SSB)&lt;/a>.&lt;/p>
+&lt;p>The evolution of the services is driven by 5 Strategic Objectives (SO) which are
+based on the knowledge of the user community needs that are being gathered
+through research and innovation projects, customer interviews and analysis of
+trends. Each defines an area for possible future work, and if approved, can be
+developed into more concrete goals and intended results.&lt;/p>
+&lt;ul>
+&lt;li>SO1: Federated compute continuum&lt;/li>
+&lt;li>SO2: Federated Data Lakes and repositories&lt;/li>
+&lt;li>SO3: Data analytics and scientific tools including AI&lt;/li>
+&lt;li>SO4: Professional support and consultancy&lt;/li>
+&lt;li>SO5: Investigation of a trusted compute platform for sensitive data processing&lt;/li>
+&lt;/ul></description></item><item><title>Providers: Joining as a Federated Resource Centre</title><link>/providers/getting-started/joining/federated-resource-centre/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/federated-resource-centre/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>A Resource Centre (RC) is the smallest resource administration domain in the EGI
 Federation. It can be either localised or geographically distributed and
@@ -207,14 +226,14 @@ users in the VO SLAs should be met on a monthly basis: also in this case, when a
 violation occurs, the RC is requested to provide a justification and a plan for
 improving the quality of the provided services. If repeated violations occur,
 the SLA can be renegotiated with the customer, either by changing the Service
-Level Targets, or by choosing a different RCs as a provider.&lt;/p></description></item><item><title>Providers: Joining as a new provider of existing services</title><link>/providers/getting-started/joining-eosc/new-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/new-provider/</guid><description>
+Level Targets, or by choosing a different RCs as a provider.&lt;/p></description></item><item><title>Providers: Joining as a provider for existing EGI services</title><link>/providers/getting-started/joining/new-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/new-provider/</guid><description>
 &lt;p>To become a provider of one of these services, you first have to become provider
 of an EGI Foundation service within the
-&lt;a href="../federated-resource-provider">federated resources&lt;/a> block. Once such a
+&lt;a href="../federated-resource-center">federated resources&lt;/a> block. Once such a
 foundational role is fulfilled you can configure/deploy the additional service
-within your resource centre. This pre-requirement typically requires you to
-become an EGI Cloud service provider, i.e. deploy OpenStack and federate it into
-the &lt;a href="../../../cloud-compute">EGI Cloud Compute&lt;/a> service.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/getting-started/joining-eosc/core-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/core-services/</guid><description>
+within your resource centre. This first step typically requires you to become an
+EGI Cloud service provider, i.e. deploy OpenStack and federate it into the
+&lt;a href="../../../cloud-compute">EGI Cloud Compute&lt;/a> service.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/getting-started/joining/core-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/core-service/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;ul>
 &lt;li>With the term “central” or “core service” we refer to a category of services
@@ -366,31 +385,12 @@ having key staff properly trained about IT Service Management, committing to
 continual improvement and having their
 &lt;a href="https://confluence.egi.eu/display/EGIG/Service+management+system">Service Management System (SMS)&lt;/a>
 interfacing with the EGI SMS, especially for important processes like the Change
-Management process.&lt;/p></description></item><item><title>Providers: Joining as a Provider of new services</title><link>/providers/getting-started/joining-eosc/new-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/new-services/</guid><description>
-&lt;p>The EGI services are contributed by the
-&lt;a href="https://www.egi.eu/egi-federation/#council">EGI Council members&lt;/a>, who can
-propose new services through the
-&lt;a href="https://www.egi.eu/publication/egi-federation-service-strategy-2022-2024/">EGI Service Strategy&lt;/a>,
-that defines the overall direction to EGI services for a few years time window.
-The services are designed, validated through the EGI Community, with the help of
-the &lt;a href="https://go.egi.eu/ssb">EGI Services and Solutions Board (SSB)&lt;/a>.&lt;/p>
-&lt;p>The evolution of the services is driven by 5 Strategic Objectives (SO) which are
-based on the knowledge of the user community needs that are being gathered
-through research and innovation projects, customer interviews and analysis of
-trends. Each defines an area for possible future work, and if approved, can be
-developed into more concrete goals and intended results.&lt;/p>
-&lt;ul>
-&lt;li>SO1: Federated compute continuum&lt;/li>
-&lt;li>SO2: Federated Data Lakes and repositories&lt;/li>
-&lt;li>SO3: Data analytics and scientific tools including AI&lt;/li>
-&lt;li>SO4: Professional support and consultancy&lt;/li>
-&lt;li>SO5: Investigation of a trusted compute platform for sensitive data processing&lt;/li>
-&lt;/ul></description></item><item><title>Providers: Joining as a Technology Provider (TP)</title><link>/providers/getting-started/joining-eosc/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/technology-provider/</guid><description>
+Management process.&lt;/p></description></item><item><title>Providers: Joining as a Technology Provider</title><link>/providers/getting-started/joining/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/technology-provider/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>Technology Providers develop or deliver technology and software for specific
-user communities or customisation for specific requirements. In our case, they
-maintain the middleware which the RCs install and that allows the users to
-exploit the compute, storage, data, and cloud resources.&lt;/p>
+&lt;p>Technology Providers (TP) develop or deliver technology and software for
+specific user communities or customisation for specific requirements. In our
+case, they maintain the middleware which the RCs install and that allows the
+users to exploit the compute, storage, data, and cloud resources.&lt;/p>
 &lt;h2 id="integration-of-middleware-stack">Integration of middleware stack&lt;/h2>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
