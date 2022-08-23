@@ -402,7 +402,43 @@ security groups, otherwise you will not be able to reach the Jupyter notebooks.&
 &lt;p>Once your instance is ready,
 &lt;a href="../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm">assign it a public IP&lt;/a>
 so you can reach it from your computer.&lt;/p>
-&lt;h3 id="step-2-get-your-token-for-the-jupyter-server">Step 2: Get your token for the Jupyter server&lt;/h3>
+&lt;h3 id="step-2-get-a-hostname-and-certificate-for-your-vm">Step 2: Get a hostname and certificate for your VM&lt;/h3>
+&lt;p>Your VM is ready to be accessible, but runs a plain HTTP server, which is not
+secure enough. If you try to connect with your browser to your VM, you will get
+a message as shown in the screenshot below:&lt;/p>
+&lt;p>&lt;img src="no-https-datahub-vm.png" alt="no-https">&lt;/p>
+&lt;p>You must enable HTTPS to encrypt requests and responses, thus making your VM
+safer and more secure.&lt;/p>
+&lt;p>Firstly, you need a valid name for your VM. You can use the
+&lt;a href="https://nsupdate.fedcloud.eu">FedCloud Dynamic DNS&lt;/a> to create a name. See
+&lt;a href="../../compute/cloud-compute/dynamic-dns/">Dynamic DNS docs&lt;/a> for more
+information on the service. Once you have your name ready, assign it your VM&amp;rsquo;s
+IP.&lt;/p>
+&lt;p>Secondly, you need to get a certificate to enable HTTPS. The VM has
+&lt;a href="https://certbot.eff.org/">certbot&lt;/a> already installed, you just need to run it
+with the hostname you have allocated and your email address as shown here:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># log into your VM&lt;/span>
+$ ssh ubuntu@&amp;lt;your VM&lt;span style="color:#a40000">&amp;#39;&lt;/span>s IP&amp;gt;
+&lt;span style="color:#8f5902;font-style:italic"># now request the certificate&lt;/span>
+$ sudo certbot --nginx -d &amp;lt;your registered name&amp;gt; -m &amp;lt;your email&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, open your browser and go to &lt;code>https://&amp;lt;your registered name&amp;gt;/&lt;/code> to see
+Jupyter started. Follow next steps for getting the credentials to access the
+service.&lt;/p>
+&lt;div class="alert alert-Danger" role="alert">
+&lt;h4 class="alert-heading">Enabling insecure access&lt;/h4>
+&lt;p>If you really need
+to use HTTP (e.g. your VM is not accessible publicly and you cannot
+create a certificate for it), you can disable the error shown by default in the
+nginx configuration.&lt;/p>
+&lt;p>Open &lt;code>/etc/nginx/sites-enabled/default&lt;/code> and comment out lines 14-16:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-nginx" data-lang="nginx"> &lt;span style="color:#8f5902;font-style:italic"># if ( $https != &amp;#39;on&amp;#39; ) {
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># return 406;
+&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># }
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And restart nginx:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo systemctl restart nginx
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;h3 id="step-3-get-your-token-for-the-jupyter-server">Step 3: Get your token for the Jupyter server&lt;/h3>
 &lt;p>Your VM will spawn a Jupyter notebooks server upon starting. This server runs as
 an unprivileged user named &lt;code>jovyan&lt;/code> with the software installed using
 &lt;a href="https://mamba.readthedocs.io/">micromamba&lt;/a>. The server uses a randomly
@@ -414,14 +450,14 @@ $ sudo su - jovyan
 $ micromamba activate
 $ jupyter server list --jsonlist &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .&lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>.token
 &amp;lt;your token&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-start-your-notebooks">Step 3: Start your notebooks&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-start-your-notebooks">Step 4: Start your notebooks&lt;/h3>
 &lt;p>Now point your browser to &lt;code>http://&amp;lt;your VM's IP&amp;gt;&lt;/code> and you will be able to enter
 the token to get started with Jupyter.&lt;/p>
 &lt;p>You can install additional packages with mamba from a terminal started from
 Jupyter or via ssh. For example for installing &lt;code>tensorflow&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ micromamba activate
 $ micromamba install -c conda-forge tensorflow
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-mount-datahub-spaces">Step 4: Mount DataHub spaces&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-mount-datahub-spaces">Step 5: Mount DataHub spaces&lt;/h3>
 &lt;p>Log into &lt;a href="https://datahub.egi.eu/">EGI&amp;rsquo;s DataHub&lt;/a> and
 &lt;a href="../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis">create a token&lt;/a>
 for mounting your data in the VM.&lt;/p>
