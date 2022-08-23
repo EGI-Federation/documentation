@@ -18,11 +18,11 @@ from their other (non-core) services using one of two ways (see A and B below).
 The service instance MUST:
 
 - Be flagged as ‘Production’
-(see [Production Flag](../service-endpoints/_index.md#production-flag-tf))
+(see [Production Flag](../service-entities/#production-flag-tf))
 - Not be flagged as ‘Beta’
-(see [Beta Flag](../service-endpoints/_index.md#beta-flag-tf))
+(see [Beta Flag](../service-entities/#beta-flag-tf))
 - Monitored flag set to true
-(see [Monitored Flag](../service-endpoints/_index.md#monitoring-flag-tf))
+(see [Monitored Flag](../service-entities/#monitoring-flag-tf))
 - Be hosted under a ‘NGI’ scoped Site that has a certification status of
 ‘Certified’
 
