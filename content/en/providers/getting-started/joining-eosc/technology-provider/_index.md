@@ -2,7 +2,7 @@
 title: "Joining as a Technology Provider (TP)"
 weight: 100
 description:
-  "Guidelines for Technology Providers to join the EOSC Compute Platform"
+  "Guidelines for Technology Providers to join the EGI Infrastructure"
 type: "docs"
 ---
 
