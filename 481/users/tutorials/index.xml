@@ -255,10 +255,10 @@ additional details. The reason for the failure of a job which can be seen by
 moving the mouse pointer over the &lt;code>File ID&lt;/code> on the detailed view.&lt;/p></description></item><item><title>Users: Data transfer with object storage</title><link>/users/tutorials/data-transfer-object-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-object-storage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
-WebFTS. In the following paragraps you will learn how to:&lt;/p>
+WebFTS. In the following paragraphs you will learn how to:&lt;/p>
 &lt;ul>
-&lt;li>use the &lt;a href="##Using-the-WebFTS-Data-Transfer-interface">FTS&lt;/a> command-line client&lt;/li>
-&lt;li>use the &lt;a href="##FTS-client-usage">WebFTS&lt;/a> web interface&lt;/li>
+&lt;li>use the &lt;a href="#fts-client-usage">FTS&lt;/a> command-line client&lt;/li>
+&lt;li>use the &lt;a href="#step-6-web-interface">WebFTS&lt;/a> web interface&lt;/li>
 &lt;/ul>
 &lt;p>to perform data transfers between a Grid storage and object storage or between
 two object storage.&lt;/p>
@@ -272,9 +272,9 @@ repository to your configuration and update the client
 &lt;/div>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>As first step please make sure that you have installed the FTS client as
-described in &lt;a href="../../data/management/data-transfer">Data Transfer&lt;/a>, and in particular
-&lt;a href="../../data/management/data-transfer/clients">Clients&lt;/a> for the command-line FTS and to have
-your certificate installed in your browser to use
+described in &lt;a href="../../data/management/data-transfer">Data Transfer&lt;/a>, and in
+particular &lt;a href="../../data/management/data-transfer/clients">Clients&lt;/a> for the
+command-line FTS and to have your certificate installed in your browser to use
 &lt;a href="../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
 &lt;p>To access services and resources in the
 &lt;a href="../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
@@ -283,8 +283,8 @@ your certificate installed in your browser to use
 &lt;a href="../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
 &lt;li>Enrollment into a &lt;a href="../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
 access to the services and resources you need&lt;/li>
-&lt;li>An &lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> for which you need
-to have all the credentials available (any S3 compatible storage should work)&lt;/li>
+&lt;li>An &lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> for which you need to
+have all the credentials available (any S3 compatible storage should work)&lt;/li>
 &lt;li>Permission to add the Object Storage credential to the FTS server or
 alternatively for this operation you may contact support support &lt;strong>at&lt;/strong>
 egi.eu.&lt;/li>
@@ -298,8 +298,8 @@ egi.eu.&lt;/li>
 available storage on
 &lt;a href="https://operations-portal.egi.eu/vapor/resources/GL2ResVO">VAPOR service&lt;/a> while
 the Object Store can be one created as described in the
-&lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> section or trough a
-provider such as Amazon, Azure, etc&lt;/p>
+&lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> section or trough a provider
+such as Amazon, Azure, etc&lt;/p>
 &lt;h3 id="step-3-add-the-object-storage-credential-to-the-fts-server">Step 3 Add the Object Storage credential to the FTS server&lt;/h3>
 &lt;p>Following is an example of the command that can be used to add the Object Store
 credential to the FTS server. The fist step is to register the Object Storage.
