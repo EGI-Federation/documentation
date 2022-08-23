@@ -775,8 +775,6 @@ the URLs on your configuration:
        "https://aai.egi.eu/oidc/"
      ]
    }
-   ```
-1. Apply the updated mappings to your Keystone configuration:
 
    ```shell
    $ openstack mapping set --rules mapping.egi.json egi-mapping
