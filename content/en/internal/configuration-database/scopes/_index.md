@@ -1,6 +1,6 @@
 ---
-title: Data visibility / Scopes
-description: "Understanding and manipulating roles"
+title: Scoping
+description: "Understanding and manipulating scopes"
 weight: 30
 type: "docs"
 ---
