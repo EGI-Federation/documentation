@@ -611,6 +611,8 @@ should look as follows:&lt;/p>
 &lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;span style="color:#a40000">```shell&lt;/span>
+&lt;span style="color:#a40000">$&lt;/span> &lt;span style="color:#a40000">openstack&lt;/span> &lt;span style="color:#a40000">mapping&lt;/span> &lt;span style="color:#a40000">set&lt;/span> &lt;span style="color:#a40000">--rules&lt;/span> &lt;span style="color:#a40000">mapping.egi.json&lt;/span> &lt;span style="color:#a40000">egi-mapping&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ol>
 &lt;p>As the new issuer is included in the &lt;code>remote-id&lt;/code> configuration of the Keystone

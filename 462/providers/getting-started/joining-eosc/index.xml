@@ -356,12 +356,28 @@ having key staff properly trained about IT Service Management, committing to
 continual improvement and having their &lt;a href="https://confluence.egi.eu/x/kIIkBQ">Service Management System
 (SMS)&lt;/a> interfacing with the EGI SMS,
 especially for important processes like the Change Management process.&lt;/p></description></item><item><title>Providers: Joining as a Provider of new services</title><link>/providers/getting-started/joining-eosc/new-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/new-services/</guid><description>
-&lt;p>The EOSC Compute Platform is currently linked to the EGI Governance, and
-services of the ECP are contributed by the EGI Council members. These
-members can propose new services through the EGI Service Strategy, that
-defines the overall direction to EGI services for a few-year time window.
+&lt;!-- markdownlint-disable no-inline-html -->
+&lt;p>The EGI services are contributed by the
+&lt;a href="https://www.egi.eu/egi-federation/#council">EGI Council members&lt;/a>, who can
+propose new services through the
+&lt;a href="https://www.egi.eu/publication/egi-federation-service-strategy-2022-2024/">EGI Service Strategy&lt;/a>,
+that defines the overall direction to EGI services for a few-year time window.
 The services are designed, validated through the EGI Community, with the
-help of the EGI Services and Solutions Board (SSB).&lt;/p></description></item><item><title>Providers: Joining as a Technology Provider (TP)</title><link>/providers/getting-started/joining-eosc/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/technology-provider/</guid><description>
+help of the EGI Services and Solutions Board (SSB).&lt;/p>
+&lt;p>The evolution of the services is driven by 5 Strategic Objectives (SO) which
+are based on the knowledge of the user community needs that are being gathered
+through research and innovation projects, customer interviews and analysis of trends.
+Each defines an area for possible future work, and if approved, can be developed
+into more concrete goals and intended results.&lt;/p>
+&lt;!-- markdownlint-enable no-inline-html -->
+&lt;ul>
+&lt;li>SO1: Federated compute continuum&lt;/li>
+&lt;li>SO2: Federated Data Lakes and repositories&lt;/li>
+&lt;li>SO3: Data analytics and scientific tools including AI&lt;/li>
+&lt;li>SO4: Professional support and consultancy&lt;/li>
+&lt;li>SO5: Investigation of a trusted compute platform for sensitive data
+processing&lt;/li>
+&lt;/ul></description></item><item><title>Providers: Joining as a Technology Provider (TP)</title><link>/providers/getting-started/joining-eosc/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining-eosc/technology-provider/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>Technology Providers develop or deliver technology and software for specific
 user communities or customisation for specific requirements. In our case,
