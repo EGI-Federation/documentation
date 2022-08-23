@@ -56,7 +56,7 @@ a message as shown in the screenshot below:
 
 ![no-https](no-https-datahub-vm.png)
 
-You can enable HTTPS to encrypt requests and responses, thus making your VM
+You must enable HTTPS to encrypt requests and responses, thus making your VM
 safer and more secure.
 
 First, you need a valid name for your VM. You can use the
