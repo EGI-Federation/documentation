@@ -86,10 +86,14 @@ For example: The Service entity
 [goc.egi.eu](https://goc.egi.eu/portal/index.php?Page_Type=Service&id=4180) (of
 ServiceType egi.GOCDB) defines the following Service Endpoint entities:
 
+<!-- markdownlint-disable no-inline-html -->
+
 | Name                                                                                                    | URL                        | Interface Name   |
 | ------------------------------------------------------------------------------------------------------- | -------------------------- | ---------------- |
 | [ProductionPortalInstance](https://goc.egi.eu/portal/index.php?Page_Type=View_Service_Endpoint&id=6313) | https://goc.egi.eu/portal  | egi.GOCDB.Portal |
 | [Production PI base URL](https://goc.egi.eu/portal/index.php?Page_Type=View_Service_Endpoint&id=6314)   | https://goc.egi.eu/gocdbpi | egi.GOCDB.PI     |
+
+<!-- markdownlint-enable no-inline-html -->
 
 ## Specific Service entities fields and their impact
 
