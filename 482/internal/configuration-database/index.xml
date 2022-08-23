@@ -764,7 +764,7 @@ hosts supporting a single service entry, the Service Extension Property
 contain one or more x.509 DN values. Multiple values MUST be delimited by
 enclosing each within &amp;ldquo;&amp;lt;&amp;gt;&amp;rdquo; characters. If Ext &amp;ldquo;HostDN&amp;rdquo; is present, the Service
 &amp;ldquo;Host DN&amp;rdquo; SHOULD contain the x.509 SubjectAltName used in the X509
-certificate(s) presented by the hosts identified by the Ext &amp;ldquo;HostDN&amp;rdquo; values.&lt;/p></description></item><item><title>Internal: HOW TOs and FAQs</title><link>/internal/configuration-database/howto-faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/howto-faq/</guid><description>
+certificate(s) presented by the hosts identified by the Ext &amp;ldquo;HostDN&amp;rdquo; values.&lt;/p></description></item><item><title>Internal: FAQ</title><link>/internal/configuration-database/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/faq/</guid><description>
 &lt;h2 id="i-am-responsible-for-a-site-that-has-recently-entered-the-egi-infrastructure-how-do-i-register-it">I am responsible for a site that has recently entered the EGI infrastructure. How do I register it?&lt;/h2>
 &lt;p>Only registered users with an approved role on an NGI can add a new site. If you
 are the site administrator, the first thing to do is to contact your NGI staff
