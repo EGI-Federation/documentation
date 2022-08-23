@@ -11,8 +11,7 @@ objective is to avoid name clashes between services. For example, different
 projects may have similar services but these may be modified/customised just
 enough to merit a different prefix or service type name.</li><li>Glue2 defines a service type list at:<ul><li><a href=https://github.com/OGF-GLUE/Enumerations>Glue2 Enums</a></li><li><a href=https://github.com/OGF-GLUE/Enumerations/blob/master/ServiceType_t.csv>Glue2 service types</a>.</li></ul></li><li>The Glue2 and GOCDB recommendation is to use lowercase (legacy enum values do
 exist that use camelCase).</li></ul><p>These service types are used at some grid sites within EGI but aren&rsquo;t EGI
-operational tools or a part of the core middleware distributions (EMI, gLite,
-ARC, UNICORE, Globus etc).</p><h2 id=service-type-list>Service Type List</h2><p>To request a new service type, please submit a request for a new service type
+operational tools or a part of the core middleware distributions.</p><h2 id=service-type-list>Service Type List</h2><p>To request a new service type, please submit a request for a new service type
 (see the section &ldquo;Adding a new service type&rdquo;).</p><p>In the following section there is the list of &ldquo;middleware agnostic&rdquo; service
 types. You can obtain the whole list of service types by browsing
 <a href=https://poem.egi.eu/ui/public_servicetypes>Poem</a>, or by launching the
@@ -43,7 +42,7 @@ system.</li><li><a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_e
 (Regional service) NGI-level regional operations portal instance</li><li><a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=eu.egi.MPI">eu.egi.MPI</a>:
 Defines a dummy Service Type to enable the running of MPI tests for services
 providing MPI capabilities. Sites must have one instance of this Service Type
-associated with a CREAM-CE service.</li><li><a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=argo.poem">argo.poem</a>:
+associated with a CE service.</li><li><a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=argo.poem">argo.poem</a>:
 POEM is system for managing profiles of probes and metrics in ARGO system.</li><li><a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=argo.mon">argo.mon</a>:
 ARGO Monitoring Engine gathers monitoring metrics and publishes to messaging
 service.</li><li><a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=argo.consumer">argo.consumer</a>:

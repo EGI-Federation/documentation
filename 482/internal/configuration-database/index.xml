@@ -1099,8 +1099,7 @@ enough to merit a different prefix or service type name.&lt;/li>
 exist that use camelCase).&lt;/li>
 &lt;/ul>
 &lt;p>These service types are used at some grid sites within EGI but aren&amp;rsquo;t EGI
-operational tools or a part of the core middleware distributions (EMI, gLite,
-ARC, UNICORE, Globus etc).&lt;/p>
+operational tools or a part of the core middleware distributions.&lt;/p>
 &lt;h2 id="service-type-list">Service Type List&lt;/h2>
 &lt;p>To request a new service type, please submit a request for a new service type
 (see the section &amp;ldquo;Adding a new service type&amp;rdquo;).&lt;/p>
@@ -1159,7 +1158,7 @@ system.&lt;/li>
 &lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;service_type=eu.egi.MPI">eu.egi.MPI&lt;/a>:
 Defines a dummy Service Type to enable the running of MPI tests for services
 providing MPI capabilities. Sites must have one instance of this Service Type
-associated with a CREAM-CE service.&lt;/li>
+associated with a CE service.&lt;/li>
 &lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;service_type=argo.poem">argo.poem&lt;/a>:
 POEM is system for managing profiles of probes and metrics in ARGO system.&lt;/li>
 &lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;service_type=argo.mon">argo.mon&lt;/a>:
