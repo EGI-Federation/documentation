@@ -7,8 +7,8 @@ type: "docs"
 
 ## Introduction
 
-- Scope tags are used to group entities such as Sites, Services and
-  ServiceGroups into flexible categories. A single entity can define multiple
+- Scope tags are used to group entities such as `Sites`, `Services` and
+  `ServiceGroups` into flexible categories. A single entity can define multiple
   scope tags, allowing the resource to be associated with different categories
   without duplication of information. This is essential to maintain the
   integrity of topology information across different infrastructures and
@@ -39,9 +39,9 @@ It is important to understand that scopes and Projects are distinct:
 
 ## EGI Scopes
 
-- To make a Site, Service or ServiceGroup visible to EGI, the resource's 'EGI'
-  scope tag checkbox must be ticked. EGI scoped resources are exposed to the
-  central operational tools for monitoring and will appear in the central
+- To make a `Site`, `Service` or `ServiceGroup` visible to EGI, the resource's
+  'EGI' scope tag checkbox must be ticked. EGI scoped resources are exposed to
+  the central operational tools for monitoring and will appear in the central
   operations portal.
 - **Un-ticking the EGI checkbox** and selecting the 'Local' scope makes the
   selected object invisible to EGI; it will be hidden from the central operation
@@ -56,8 +56,9 @@ It is important to understand that scopes and Projects are distinct:
   production status or certification status fields. For example if a site isn't
   marked as production it won't be monitored centrally even if it's marked as
   visible to EGI.
-- You can submit your request for new scope tags via GGUS to the "Configuration
-  and Topology Database (GOCDB)" support unit.
+- You can submit your request for new scope tags via
+  [EGI Helpdesk](../../helpdesk) to the "Configuration and Topology Database
+  (GOCDB)" support unit.
 
 ## Reserved Scope Tags
 
@@ -79,12 +80,12 @@ It is important to understand that scopes and Projects are distinct:
     tag that is not supported by its parent Site.
   - For NGIs: If a Reserved tag is removed from an NGI, then the same tag is NOT
     removed from all the child Sites - this is intentionally different from the
-    Site->Service relationship.
+    `Site`->`Service` relationship.
 - To request a reserved scope tag, **an approval is required from the operators
   of the relevant resources**. Details on who to contact are listed below. Once
   authorisation is given, please contact the Configuration Database admins with
-  details of the approval (e.g. link to a GGUS ticket that approves the tag
-  assignment).
+  details of the approval (e.g. link to an [EGI Helpdesk](../../helpdesk) ticket
+  that approves the tag assignment).
 
 ### FedCloud Reserved Tag
 
@@ -116,9 +117,10 @@ It is important to understand that scopes and Projects are distinct:
 ### EOSCCore Tag
 
 - Tag for resources that contribute to core services of the EOSC. To request
-  this tag, please raise a GGUS ticket against the Operations SU.
+  this tag, please raise an [EGI Helpdesk](../../helpdesk) ticket against the
+  Operations SU.
 
 ### EGICore Tag
 
 Tag for resources that are part of the EGI Core services. To request this tag,
-please raise a GGUS ticket against the Operations SU.
+please raise an [EGI Helpdesk](../../helpdesk) ticket against the Operations SU.
