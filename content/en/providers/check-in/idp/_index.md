@@ -19,7 +19,7 @@ printed and signed copy should be sent to `operations_at_egi.eu`
 
 To integrate your Identity Provider with the EGI Check-in service, you need to
 submit a [GGUS](https://ggus.eu) ticket indicating your request. The responsible
-support unit is [AAI Support](https://wiki.egi.eu/wiki/GGUS:AAI_SUPPORT_FAQ).
+support unit is [AAI Support](https://confluence.egi.eu/display/EGIPP/GGUS%3A+Check-in+%28AAI%29+FAQ).
 The integration follows a two-step process:
 
 1. Register your Identity Provider and test integration with the development
