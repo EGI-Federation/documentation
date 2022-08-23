@@ -40,15 +40,13 @@ other services and activities provided by the EGI Infrastructure such as the
 Monitoring of the resources, the Accounting, the Support, and the security
 activities.&lt;/p>
 &lt;p>&lt;img src="SiteStatusFlow.png" alt="Diagram of the RCs status flow">&lt;/p>
-&lt;!-- markdownlint-disable no-inline-html -->
 &lt;p>Once the entry in the Configuration Database is complete, the RP changes the RC
 status from “Candidate” to “Uncertified”, and the certification procedure can
 start: it comprises a
-&lt;a href="https://docs.egi.eu/providers/operations-manuals/howto04_site_certification_manual_tests/">series of technical controls&lt;/a>
-to verify that the provided
-services work according to the expectations in the RC OLA. Any identified issue
-is notified by the RP operators to the RC and investigated until its solution.&lt;/p>
-&lt;!-- markdownlint-enable no-inline-html -->
+&lt;a href="../../../operations-manuals/howto04_site_certification_manual_tests">series of technical controls&lt;/a>
+to verify that the provided services work according to the expectations in the
+RC OLA. Any identified issue is notified by the RP operators to the RC and
+investigated until its solution.&lt;/p>
 &lt;p>When all the certification controls are successfully passed, the RC status is
 changed to “Certified” meaning that the RC is included in the production
 infrastructure and its resources can be consumed by the users of the
@@ -90,9 +88,9 @@ Response Team (CSIRT) within 4 hours of discovery. This initial step will start
 the coordination of the incident response as documented in the procedure
 &lt;a href="https://go.egi.eu/sec01">SEC01 EGI CSIRT Security Incident Handling Procedure&lt;/a>.&lt;/p>
 &lt;ul>
-&lt;li>This procedure has been implemented according to the Security Incident Response
-Policy, to minimise the impact of security incidents affecting the Resource
-Centres part of the infrastructure&lt;/li>
+&lt;li>This procedure has been implemented according to the Security Incident
+Response Policy, to minimise the impact of security incidents affecting the
+Resource Centres part of the infrastructure&lt;/li>
 &lt;li>It covers guidance on how the incident response should be coordinated,
 describing the responsibilities of the various parties, and encourages
 post-mortem analysis and promotes cooperation between Resource Centres.&lt;/li>
