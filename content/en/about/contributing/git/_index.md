@@ -18,7 +18,7 @@ following articles providing simple tutorials:
 - [Creating pull request with GitHub](https://opensource.com/article/19/7/create-pull-request-github)
 
 GitHub official documentation is available at
-[docs.github.com](https://docs.github.com/en/github).
+[docs.github.com](https://docs.github.com/en/).
 
 {{% alert title="Tip" color="info" %}} The
 [first-contributions](https://github.com/firstcontributions/first-contributions)
