@@ -51,17 +51,13 @@ activities.
 
 ![Diagram of the RCs status flow](SiteStatusFlow.png)
 
-<!-- markdownlint-disable no-inline-html -->
-
 Once the entry in the Configuration Database is complete, the RP changes the RC
 status from “Candidate” to “Uncertified”, and the certification procedure can
 start: it comprises a
-[series of technical controls](https://docs.egi.eu/providers/operations-manuals/howto04_site_certification_manual_tests/)
-to verify that the provided
-services work according to the expectations in the RC OLA. Any identified issue
-is notified by the RP operators to the RC and investigated until its solution.
-
-<!-- markdownlint-enable no-inline-html -->
+[series of technical controls](../../../operations-manuals/howto04_site_certification_manual_tests)
+to verify that the provided services work according to the expectations in the
+RC OLA. Any identified issue is notified by the RP operators to the RC and
+investigated until its solution.
 
 When all the certification controls are successfully passed, the RC status is
 changed to “Certified” meaning that the RC is included in the production
@@ -113,9 +109,9 @@ Response Team (CSIRT) within 4 hours of discovery. This initial step will start
 the coordination of the incident response as documented in the procedure
 [SEC01 EGI CSIRT Security Incident Handling Procedure](https://go.egi.eu/sec01).
 
-- This procedure has been implemented according to the Security Incident Response
-  Policy, to minimise the impact of security incidents affecting the Resource
-  Centres part of the infrastructure
+- This procedure has been implemented according to the Security Incident
+  Response Policy, to minimise the impact of security incidents affecting the
+  Resource Centres part of the infrastructure
 - It covers guidance on how the incident response should be coordinated,
   describing the responsibilities of the various parties, and encourages
   post-mortem analysis and promotes cooperation between Resource Centres.
