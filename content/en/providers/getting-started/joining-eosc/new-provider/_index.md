@@ -2,8 +2,8 @@
 title: "Joining as a new provider of existing services"
 weight: 100
 description:
-  "Guidelines for new providers of existing services to join the EOSC Compute
-  Platform"
+  "Guidelines for new providers of existing services to join the EGI
+  Infrastructure"
 type: "docs"
 ---
 
