@@ -243,8 +243,8 @@ $ git push --set-upstream
 ```
 
 Once done, the output will show a URL that you can click to generate a Pull
-Request (PR). Accessing GitHub upstream of forked repositories may also
-propose you to submit a PR.
+Request (PR). Accessing GitHub upstream of forked repositories may also propose
+you to submit a PR.
 
 If needed GitHub CLI can also be used to prepare the PR:
 
@@ -359,8 +359,8 @@ Then you can refer to the `README.md` to see how to test it locally.
 
 In case the PR got commits that were forced pushed you may have troubles, in
 that case it may be easier to
-[delete the local branch](#cleaning-a-local-clone-of-a-pr) and do another
-[checkout of the PR](#cloning-a-pull-request-to-test-and-review-it-locally).
+[delete the local branch](#clean-a-local-clone-of-a-pr) and do another
+[checkout of the PR](#clone-pr-to-edittestreview-locally).
 
 ### Clean a local clone of a PR
 
