@@ -56,7 +56,7 @@ Resource Centre integrated into the EGI Federation.
    [Accounting Portal](https://accounting.egi.eu/).
 
    - Accounting probes and [APEL SSM](https://github.com/apel/ssm) are properlly
-   installed and configured:
+     installed and configured:
      - HTC: [APEL client](https://github.com/apel/apel)
      - Cloud: [cASO](https://github.com/IFCA/caso).
 
@@ -68,7 +68,10 @@ Resource Centre integrated into the EGI Federation.
      [added to the fedcloud-catchall-operations repository](../../cloud-compute/openstack/#catch-all-operations)
 
 1. Middleware: latest version of technology products are installed using the
-   [UMD](https://confluence.egi.eu/display/EGIBG/Unified+Middleware+Distribution) and [CMD](https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution) releases.
+   [UMD](https://confluence.egi.eu/display/EGIBG/Unified+Middleware+Distribution)
+   and
+   [CMD](https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution)
+   releases.
 
 1. Software distribution:
    - HTC (Optional): [CVMFS](https://github.com/cvmfs-contrib/egi-cvmfs)
