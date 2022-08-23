@@ -1,5 +1,5 @@
 ---
-title: Understanding and manipulating roles
+title: Using roles
 description: "Understanding and manipulating roles"
 weight: 30
 type: "docs"
@@ -16,11 +16,11 @@ perform any useful tasks.
 - B role: Registered users with no role
 - C role: Users with a role at site level (site admin)
 - C' role: Users with a management role at site level (site operations manager,
-site security officer...)
-- D role: Users with a role at regional level (regional staff support staff, ROD,
-1st Line Support)
-- D' role: Users with a management role at regional level (NGI manager or deputy,
-security officer)
+  site security officer...)
+- D role: Users with a role at regional level (regional staff support staff,
+  ROD, 1st Line Support)
+- D' role: Users with a management role at regional level (NGI manager or
+  deputy, security officer)
 - E role: Users with a role at project level
 
 The only difference between C and C' users is that:
@@ -39,22 +39,22 @@ The difference between D and D' users is that:
 #### At Site level
 
 - Site Administrator - person responsible of maintaining a grid site and
-associated information in GOCDB (C Level)
+  associated information in GOCDB (C Level)
 - Site Security officer - official security contact point at site level (C'
-Level)
-- Site Operations Deputy Manager - The deputy manager of operations at a site (C'
-Level)
+  Level)
+- Site Operations Deputy Manager - The deputy manager of operations at a site
+  (C' Level)
 - Site Operations Manager - The manager of site operations (C' Level)
 
 #### At NGI/Regional level
 
 - Regional First Line Support - Staff providing first line support for an NGI (D
-Level)
+  Level)
 - Regional Staff (ROD) - staff involved in
-[Operations Centre](https://confluence.egi.eu/display/EGIG/Operations+Centre)
-activities such as user/operations support (D Level)
+  [Operations Centre](https://confluence.egi.eu/display/EGIG/Operations+Centre)
+  activities such as user/operations support (D Level)
 - NGI Security officer - official security contact point at regional level (D'
-Level)
+  Level)
 - NGI Operations Deputy Manager - Deputy manager of NGI operations (D' Level)
 - NGI Operations Manager - Manager of NGI operations (D' Level)
 
@@ -67,11 +67,12 @@ Level)
 
 ## Permissions associated to roles
 
-GOCDB roles and permissions are based on whether the considered object is owned or
-not. In the table below the following definitions apply:
+GOCDB roles and permissions are based on whether the considered object is owned
+or not. In the table below the following definitions apply:
 
 - **Owned group**: a group on which the role applies (ROC, NGI, project)
-- **Owned site**: a site on which the role applies, or belonging to an owned group
+- **Owned site**: a site on which the role applies, or belonging to an owned
+  group
 - **Owned service endpoint**: a service endpoint belonging to an owned site
 
 Each role has a set of associated permissions which apply on the role's scope
@@ -128,11 +129,11 @@ Each role has a set of associated permissions which apply on the role's scope
 There are 2 ways to request new roles.
 
 - By clicking on the **manage role** link (sidebar, user status panel)
-  - the first form allows you to choose the entity (site or group) on which you want
-to request a role
+  - the first form allows you to choose the entity (site or group) on which you
+    want to request a role
   - the second form lets you choose the role you want to apply for
-- By clicking on the **request role** link from site detail pages or group detail
-pages.
+- By clicking on the **request role** link from site detail pages or group
+  detail pages.
   - displayed form lets you choose the role you want to apply for
 
 Once made, role requests have to be validated before the role is granted to you.
