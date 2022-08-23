@@ -4,8 +4,6 @@ description: "Understanding and manipulating roles"
 weight: 30
 type: "docs"
 ---
-The GOCDB UI attempts to authenticate you in one of two ways (the REST style API
-
 ## Service Groups
 
 A service group is an arbitrary grouping of existing service endpoints that can
