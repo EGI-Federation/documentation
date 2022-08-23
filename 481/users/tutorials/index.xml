@@ -407,9 +407,9 @@ so you can reach it from your computer.&lt;/p>
 secure enough. If you try to connect with your browser to your VM, you will get
 a message as shown in the screenshot below:&lt;/p>
 &lt;p>&lt;img src="no-https-datahub-vm.png" alt="no-https">&lt;/p>
-&lt;p>You can enable HTTPS to encrypt requests and responses, thus making your VM
+&lt;p>You must enable HTTPS to encrypt requests and responses, thus making your VM
 safer and more secure.&lt;/p>
-&lt;p>First, you need a valid name for your VM. You can use the
+&lt;p>Firstly, you need a valid name for your VM. You can use the
 &lt;a href="https://nsupdate.fedcloud.eu">FedCloud Dynamic DNS&lt;/a> to create a name. See
 &lt;a href="../../compute/cloud-compute/dynamic-dns/">Dynamic DNS docs&lt;/a> for more
 information on the service. Once you have your name ready, assign it your VM&amp;rsquo;s
