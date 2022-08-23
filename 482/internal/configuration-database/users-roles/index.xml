@@ -1,0 +1,646 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Users and roles</title><link>/internal/configuration-database/users-roles/</link><description>Recent content in Users and roles on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/configuration-database/users-roles/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Approving/revoking accounts, roles and other actions</title><link>/internal/configuration-database/users-roles/approve-revoke/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/users-roles/approve-revoke/</guid><description>
+&lt;h2 id="approving-role-and-change-requests">Approving role and change requests&lt;/h2>
+&lt;p>When a registered user applies for a role, the request has to be validated by
+someone who has the proper permissions to grant such a role. If you request a
+role on a given entity, any user with a valid role on that entity or above will
+be able to approve your request.&lt;/p>
+&lt;p>&lt;em>Example&lt;/em> - If you request a &amp;ldquo;site administrator&amp;rdquo; role on site X, then the
+following users can approve your request:&lt;/p>
+&lt;ul>
+&lt;li>site administrators and security officers of site X&lt;/li>
+&lt;li>regional operations staff, managers and deputies of the
+&lt;a href="https://confluence.egi.eu/display/EGIG/Operations+Centre">Operations Centre&lt;/a>
+to which site X belongs&lt;/li>
+&lt;li>GOCDB admins&lt;/li>
+&lt;/ul>
+&lt;p>Role requests you can approve are listed on the &lt;strong>Manage roles&lt;/strong> page (accessible
+by clicking the &lt;strong>Manage roles&lt;/strong> link in the user status panel in the sidebar).&lt;/p>
+&lt;p>In order to approve or decline role requests, simply click on the &lt;strong>accept&lt;/strong> or
+&lt;strong>deny&lt;/strong> links in front of each role request.&lt;/p>
+&lt;h2 id="revoking-roles">Revoking roles&lt;/h2>
+&lt;p>If a user within your scope has a role that needs to be revoked, you can do this
+from the user&amp;rsquo;s page, where user&amp;rsquo;s details are listed along with his/her current
+roles. To revoke a role, simply click on the role name then on the &lt;strong>revoke&lt;/strong>
+link at the top right of the role&amp;rsquo;s details page.&lt;/p>
+&lt;p>&lt;strong>Note&lt;/strong>: This works for other users within your scope but also for yourself.
+However just note that if you revoke your own roles you may not have proper
+permissions to recover them afterwards.&lt;/p></description></item><item><title>Internal: Understanding and manipulating roles</title><link>/internal/configuration-database/users-roles/managing-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/users-roles/managing-roles/</guid><description>
+&lt;h2 id="roles-definition">Roles definition&lt;/h2>
+&lt;p>Registered users with a user account will need at least one role in order to
+perform any useful tasks.&lt;/p>
+&lt;h3 id="role-types">Role Types&lt;/h3>
+&lt;ul>
+&lt;li>A role: Unregistered users&lt;/li>
+&lt;li>B role: Registered users with no role&lt;/li>
+&lt;li>C role: Users with a role at site level (site admin)&lt;/li>
+&lt;li>C' role: Users with a management role at site level (site operations manager,
+site security officer&amp;hellip;)&lt;/li>
+&lt;li>D role: Users with a role at regional level (regional staff support staff, ROD,
+1st Line Support)&lt;/li>
+&lt;li>D' role: Users with a management role at regional level (NGI manager or deputy,
+security officer)&lt;/li>
+&lt;li>E role: Users with a role at project level&lt;/li>
+&lt;/ul>
+&lt;p>The only difference between C and C' users is that:&lt;/p>
+&lt;ul>
+&lt;li>C can NOT approve/reject role requests.&lt;/li>
+&lt;li>C' can only approve/reject role requests for their SITE.&lt;/li>
+&lt;/ul>
+&lt;p>The difference between D and D' users is that:&lt;/p>
+&lt;ul>
+&lt;li>D can NOT add/delete sites to/from their NGI.&lt;/li>
+&lt;li>D can NOT update the certification status of member sites.&lt;/li>
+&lt;li>D can NOT approve or reject role requests.&lt;/li>
+&lt;/ul>
+&lt;h3 id="roles">Roles&lt;/h3>
+&lt;h4 id="at-site-level">At Site level&lt;/h4>
+&lt;ul>
+&lt;li>Site Administrator - person responsible of maintaining a grid site and
+associated information in GOCDB (C Level)&lt;/li>
+&lt;li>Site Security officer - official security contact point at site level (C'
+Level)&lt;/li>
+&lt;li>Site Operations Deputy Manager - The deputy manager of operations at a site (C'
+Level)&lt;/li>
+&lt;li>Site Operations Manager - The manager of site operations (C' Level)&lt;/li>
+&lt;/ul>
+&lt;h4 id="at-ngiregional-level">At NGI/Regional level&lt;/h4>
+&lt;ul>
+&lt;li>Regional First Line Support - Staff providing first line support for an NGI (D
+Level)&lt;/li>
+&lt;li>Regional Staff (ROD) - staff involved in
+&lt;a href="https://confluence.egi.eu/display/EGIG/Operations+Centre">Operations Centre&lt;/a>
+activities such as user/operations support (D Level)&lt;/li>
+&lt;li>NGI Security officer - official security contact point at regional level (D'
+Level)&lt;/li>
+&lt;li>NGI Operations Deputy Manager - Deputy manager of NGI operations (D' Level)&lt;/li>
+&lt;li>NGI Operations Manager - Manager of NGI operations (D' Level)&lt;/li>
+&lt;/ul>
+&lt;h4 id="at-project-level">At Project level&lt;/h4>
+&lt;ul>
+&lt;li>COD staff - COD staff (E Level)&lt;/li>
+&lt;li>COD administrator - People administrating Central COD roles (E Level)&lt;/li>
+&lt;li>EGI CSIRT Officer - official security contact point at project level (E Level)&lt;/li>
+&lt;li>Chief Operations Officer (COO) - The EGI Chief Operations Officer (E Level)&lt;/li>
+&lt;/ul>
+&lt;h2 id="permissions-associated-to-roles">Permissions associated to roles&lt;/h2>
+&lt;p>GOCDB roles and permissions are based on whether the considered object is owned or
+not. In the table below the following definitions apply:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Owned group&lt;/strong>: a group on which the role applies (ROC, NGI, project)&lt;/li>
+&lt;li>&lt;strong>Owned site&lt;/strong>: a site on which the role applies, or belonging to an owned group&lt;/li>
+&lt;li>&lt;strong>Owned service endpoint&lt;/strong>: a service endpoint belonging to an owned site&lt;/li>
+&lt;/ul>
+&lt;p>Each role has a set of associated permissions which apply on the role&amp;rsquo;s scope
+(site, region or project). Main permissions are summarised in the table below&lt;/p>
+&lt;!-- markdownlint-disable no-inline-html -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Action&lt;/th>
+&lt;th>A) Unregistered users&lt;/th>
+&lt;th>B) Registered users with no role&lt;/th>
+&lt;th>C) Site level users&lt;/th>
+&lt;th>C' ) Site Management Level Users&lt;/th>
+&lt;th>D) NGI level users&lt;/th>
+&lt;th>D' ) NGI Management Level Users&lt;/th>
+&lt;th>E) Project level users&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Add a site to an owned group&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Add a site to a non owned group&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Add a service endpoint to an owned site&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Add a service endpoint to a non owned site&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Add a downtime to an owned service endpoint&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Add downtime to a non owned service endpoint&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update information of an owned site&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update information of a non owned site&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update certification status of an owned site&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update certification status of a non owned site&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update information of a owned service endpoint&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update information of a non owned service endpoint&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update information of an owned group&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update information of a non owned group&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update own user account details&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update other user&amp;rsquo;s account&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update a downtime on an owned service endpoint&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update a downtime on a non owned service endpoint&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delete an owned site&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delete a non owned site&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delete an owned service endpoint&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delete a non owned service endpoint&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delete an owned group&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delete a non owned group&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delete a downtime on an owned service endpoint&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delete a downtime on a non owned service endpoint&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delete your own user account&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delete other user&amp;rsquo;s account&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Register a new user account&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Request a new role&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Approve a role request on an owned group&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Approve a role request on an owned site&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Approve a role request on a non owned site or group&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Reject a role request on an owned group&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Reject a role request on an owned site&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Reject a role request on a non owned site or group&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Revoke an existing role on an owned object&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>irr.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Revoke an existing role on a non owned object&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>no&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Retrieve an existing account/ change certificate DN&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;td>yes&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable no-inline-html -->
+&lt;h2 id="requesting-roles-for-your-account">Requesting roles for your account&lt;/h2>
+&lt;p>There are 2 ways to request new roles.&lt;/p>
+&lt;ul>
+&lt;li>By clicking on the &lt;strong>manage role&lt;/strong> link (sidebar, user status panel)
+&lt;ul>
+&lt;li>the first form allows you to choose the entity (site or group) on which you want
+to request a role&lt;/li>
+&lt;li>the second form lets you choose the role you want to apply for&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>By clicking on the &lt;strong>request role&lt;/strong> link from site detail pages or group detail
+pages.
+&lt;ul>
+&lt;li>displayed form lets you choose the role you want to apply for&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Once made, role requests have to be validated before the role is granted to you.
+This part of the process is described in the next section.&lt;/p></description></item><item><title>Internal: Understanding and manipulating user accounts</title><link>/internal/configuration-database/users-roles/managing-accounts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/users-roles/managing-accounts/</guid><description>
+&lt;h2 id="authentication">Authentication&lt;/h2>
+&lt;p>The GOCDB UI attempts to authenticate you in one of two ways (the REST style API
+applies X.509 only):&lt;/p>
+&lt;ul>
+&lt;li>First, by requesting an IGTF accredited user certificate from your browser. If
+a suitable certificate is detected, you will be asked to confirm selection of your
+certificate in your browser. &lt;strong>Note&lt;/strong>: if a client certificate has been provided
+to GOCDB, it will take precedence over any IdP based authentication.&lt;/li>
+&lt;li>Second, if you do not have a user certificate or you hide your certificate from
+GOCDB (e.g. by starting a new/anonymous private browser session or pressing
+&amp;lsquo;Cancel&amp;rsquo; when prompted for a certificate), you will be redirected to the GOCDB
+landing page where you can authenticate with the EGI Identity Provider Service
+(IdP) and your chosen institution (if available). If authentication is
+successful, you will be re-directed back to GOCDB. Please note, not all logins
+available in the EGI IdP provide a sufficient level of assurance (LoA) to
+login to GOCDB (the LoA must be &amp;lsquo;Substantial&amp;rsquo;).&lt;/li>
+&lt;/ul>
+&lt;h2 id="registering-a-new-user-account">Registering a new user account&lt;/h2>
+&lt;p>Being authenticated in one of the two ways described above is enough to have
+read-only access to all the public features of GOCDB. If you need to edit data
+in GOCDB and request roles, &lt;strong>you will need to fill in the registration form&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>To Register&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Go to the GOCDB web portal&lt;/li>
+&lt;li>In the left sidebar, look out for the &lt;strong>User status&lt;/strong> panel&lt;/li>
+&lt;li>click on the &amp;ldquo;Register&amp;rdquo; link&lt;/li>
+&lt;li>fill in the form and validate&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Note&lt;/strong>: If you were registered in GOCDB but are not recognised anymore (e.g.
+because your certificate DN changed), follow the steps described in the
+&lt;a href="#lost-access-to-your-gocdb-account">Lost access to your GOCDB account&lt;/a> section&lt;/p>
+&lt;h2 id="editing-your-user-account">Editing your user account&lt;/h2>
+&lt;p>The editing process is the same as the registration process. To edit your user
+account, simply follow these steps:&lt;/p>
+&lt;ul>
+&lt;li>click on the &amp;ldquo;view details&amp;rdquo; link in the &amp;ldquo;User Status&amp;rdquo; panel on the sidebar.
+You should get a page showing your user account information.&lt;/li>
+&lt;li>Click on the &amp;ldquo;edit&amp;rdquo; link on top of it.&lt;/li>
+&lt;/ul>
+&lt;h2 id="viewing-users">Viewing users&lt;/h2>
+&lt;p>Each user account has its own user details page which is accessible to anyone
+with a valid certificate.&lt;/p>
+&lt;p>There is currently no facility for listing all users in the database. List of
+users that have a role on a given site appears on site details pages (see
+section about sites). It is also possible to search for a user&amp;rsquo;s account using
+the &lt;strong>search&lt;/strong> feature on the sidebar.&lt;/p>
+&lt;h2 id="deleting-your-user-account">Deleting your user account&lt;/h2>
+&lt;p>If you wish to unregister from GOCDB, follow these steps:&lt;/p>
+&lt;ul>
+&lt;li>click on the &lt;strong>view details&lt;/strong> link in the &amp;ldquo;User Status&amp;rdquo; panel on the sidebar.
+You should get a page showing your user account information.&lt;/li>
+&lt;li>Click on the &amp;ldquo;delete&amp;rdquo; link on top of it.&lt;/li>
+&lt;li>Confirm your choice.&lt;/li>
+&lt;/ul>
+&lt;p>Your account will then be deleted along with any roles the account has.&lt;/p>
+&lt;h2 id="lost-access-to-your-gocdb-account">Lost access to your GOCDB account&lt;/h2>
+&lt;p>Under the following circumstances it is possible to lose access to a GOCDB account:&lt;/p>
+&lt;ul>
+&lt;li>You use your IGTF X.509 certificate to access GOCDB and renew or change
+certificate, it is possible that the certificate&amp;rsquo;s distinguished name
+(DN) has also changed. This is what GOCDB uses to identify your account.&lt;/li>
+&lt;li>You have authenticated with EGI IdP, but via a different underlying IdP
+(i.e. You usually log in with your institutional credentials, but today you
+logged in with EGI SSO).&lt;/li>
+&lt;li>You have changed the way you log into GOCDB (i.e. X.509 to EGI Check-In)&lt;/li>
+&lt;/ul>
+&lt;p>In these situations, it is usually possible to regain access using to your
+certificate based account by following one of the following procedures:&lt;/p>
+&lt;p>If for any reason you were unable to complete the relevent procedure (e.g.
+mail confirmations problems) please open a GGUS ticket against
+&amp;ldquo;Configuration and Topology Database (GOCDB)&amp;rdquo;.&lt;/p>
+&lt;h3 id="you-have-a-new-certificate-and-have-lost-access-to-your-account">You have a new certificate and have lost access to your account&lt;/h3>
+&lt;ul>
+&lt;li>Install your new certificate in your browser.&lt;/li>
+&lt;li>Go to GOCDB. If you are already logged in, then clear your caches and restart
+your browser or start a new private browser session.&lt;/li>
+&lt;li>When prompted, select your new certificate..&lt;/li>
+&lt;li>You should be able to access GOCDB, but since you are authenticated with your
+new certificate, it is as if you had no user account.&lt;/li>
+&lt;li>In the &lt;strong>User Status&lt;/strong> panel in the sidebar, click on the
+&lt;strong>Link Identity/Recover Account&lt;/strong> link.&lt;/li>
+&lt;li>Specify in the form:
+&lt;ul>
+&lt;li>Authentication type: X.509&lt;/li>
+&lt;li>The DN of your old certificate previously used to authenticate to your
+X.509 based account.&lt;/li>
+&lt;li>The email address associated to your account.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Submit&lt;/strong> and, upon validation, an email will be sent to the specified address, which has to
+match the one registered with your account. This is to avoid identity theft. The
+email contains a validation link.&lt;/li>
+&lt;li>Click on the validation link or copy/paste in your browser. Once validated,
+changes are immediate.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Note&lt;/strong>: You can only associate one X.509 DN with your GOCDB account at any given time.&lt;/p>
+&lt;h3 id="you-have-authenticated-with-egi-idp-but-via-a-different-underlying-idp">You have authenticated with EGI IdP, but via a different underlying IdP&lt;/h3>
+&lt;p>It&amp;rsquo;s possible to link this identity with your &amp;ldquo;other&amp;rdquo; EGI IdP identity at the
+level of the EGI IdP. Please open a GGUS ticket aganist &amp;ldquo;Check-In (AAI)&amp;rdquo;. Once
+your identity is linked at the EGI IdP level, if you are still having problems
+accessing GOCDB, please reassign the ticket to
+&amp;ldquo;Configuration and Topology Database (GOCDB)&amp;rdquo;&lt;/p>
+&lt;h3 id="you-have-changed-the-way-you-log-into-gocdb-ie-x509-to-egi-check-in">You have changed the way you log into GOCDB (i.e. X.509 to EGI Check-In)&lt;/h3>
+&lt;p>You can link these identities at the GOCDB level by following these steps.
+The steps assume an existing X.509 based account and that you are currently
+authenticated via EGI Check-In, though the steps should hold for any pair
+of supported auntentication methods.&lt;/p>
+&lt;ul>
+&lt;li>In the &lt;strong>User Status&lt;/strong> panel in the sidebar, click on the
+&lt;strong>Link Identity/Recover Account&lt;/strong> link.&lt;/li>
+&lt;li>Specify in the form:
+&lt;ul>
+&lt;li>Authentication type: X.509&lt;/li>
+&lt;li>The DN of your certificate used to authenticate to your X.509 based account&lt;/li>
+&lt;li>The email address associated to your X.509 based account.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Submit&lt;/strong> and, upon validation, an email will be sent to the specified address, which has to
+match the one registered with your X.509 based account. This is to avoid identity theft. The
+email contains a validation link.&lt;/li>
+&lt;li>Click on the validation link or copy/paste in your browser.
+Authenticate with your EGI Check-In identity. Once authenticated/validated, changes
+are immediate and you will be able to access your GOCDB account with both your
+X.509 and EGI Check-In identities.&lt;/li>
+&lt;/ul></description></item></channel></rss>
