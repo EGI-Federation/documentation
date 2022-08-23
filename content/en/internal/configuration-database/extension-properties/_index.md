@@ -1,8 +1,9 @@
 ---
 title: "Extension Properties"
 weight: 30
-description: >-
-  Extension Properties.
+type: "docs"
+description: >
+  Extension Properties
 ---
 
 ## Introduction
