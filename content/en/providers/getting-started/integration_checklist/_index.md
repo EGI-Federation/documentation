@@ -7,7 +7,7 @@ This page provides an overview of what are the required steps to get a new
 Resource Centre integrated into the EGI Federation.
 
 1. Be aware of the
-   [security policies](https://wiki.egi.eu/wiki/EGI_CSIRT:Policies).
+   [security policies](https://go.egi.eu/policies-and-procedures).
 
 1. Acceptance of the
    [RC OLA](https://documents.egi.eu/public/ShowDocument?docid=31) (agreed with
@@ -35,7 +35,7 @@ Resource Centre integrated into the EGI Federation.
 
 1. Security:
 
-   - HTC: [pakiti](https://wiki.egi.eu/wiki/EGI_CSIRT:Pakiti_client) is
+   - HTC: [pakiti](../../../internal/security-coordination/monitoring/pakiti) is
      installed and the outcome of the EGI CSIRT assessment is positive;
    - Cloud: the
      [EGI security Survey](https://www.surveymonkey.com/r/Cloud_Security_Questionnaire_for_Resource_Centres)
@@ -68,7 +68,7 @@ Resource Centre integrated into the EGI Federation.
      [added to the fedcloud-catchall-operations repository](../../cloud-compute/openstack/#catch-all-operations)
 
 1. Middleware: latest version of technology products are installed using the
-   [UMD/CMD release](https://wiki.egi.eu/wiki/Middleware).
+   [UMD](https://confluence.egi.eu/display/EGIBG/Unified+Middleware+Distribution) and [CMD](https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution) releases.
 
 1. Software distribution:
    - HTC (Optional): [CVMFS](https://github.com/cvmfs-contrib/egi-cvmfs)
