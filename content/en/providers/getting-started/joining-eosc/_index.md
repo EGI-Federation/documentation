@@ -38,8 +38,8 @@ below:
    and [Workload Manager](https://www.egi.eu/service/workload-manager/)
 4. [Joining as Core/Central service provider](../joining-eosc/core-services/):
    providers of [services supporting all the other services of the EGI Infrastructure](https://www.egi.eu/services/federation/).
-5. [Contributing a new service](../joining-eosc/new-services/) (i.e. not yet present) to the EOSC Compute
-   platform (to the Federated Resource Providers, Compute and Data Federation,
-   or the Platform services blocks).
+5. [Contributing a new service](../joining-eosc/new-services/) that is not yet present
+   in the [EGI service portfolio](https://www.egi.eu/services/research/)and enables
+   advanced computing in research and education.
 
 <!-- markdownlint-disable no-inline-html -->
