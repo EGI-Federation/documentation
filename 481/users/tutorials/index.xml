@@ -427,7 +427,7 @@ service.&lt;/p>
 &lt;div class="alert alert-Danger" role="alert">
 &lt;h4 class="alert-heading">Enabling insecure access&lt;/h4>
 &lt;p>If you really need
-to use HTTP (e.g. your VM is running without inbound connectivity and cannot
+to use HTTP (e.g. your VM is not accessible publicly and you cannot
 create a certificate for it), you can disable the error shown by default in the
 nginx configuration.&lt;/p>
 &lt;p>Open &lt;code>/etc/nginx/sites-enabled/default&lt;/code> and comment out lines 14-16:&lt;/p>
