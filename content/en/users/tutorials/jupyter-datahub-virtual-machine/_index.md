@@ -65,7 +65,7 @@ Firstly, you need a valid name for your VM. You can use the
 information on the service. Once you have your name ready, assign it your VM's
 IP.
 
-Second, you need to get a certificate to enable HTTPS. The VM has
+Secondly, you need to get a certificate to enable HTTPS. The VM has
 [certbot](https://certbot.eff.org/) already installed, you just need to run it
 with the hostname you have allocated and your email address as shown here:
 
