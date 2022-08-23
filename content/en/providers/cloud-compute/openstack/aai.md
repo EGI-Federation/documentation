@@ -775,6 +775,9 @@ the URLs on your configuration:
        "https://aai.egi.eu/oidc/"
      ]
    }
+
+   ```shell
+   $ openstack mapping set --rules mapping.egi.json egi-mapping
    ```
 
 As the new issuer is included in the `remote-id` configuration of the Keystone
