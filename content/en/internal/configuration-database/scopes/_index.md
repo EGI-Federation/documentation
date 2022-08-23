@@ -7,7 +7,7 @@ type: "docs"
 
 ## Introducation
 
-- Scope tags are used to group Grid entities such as Sites, Services and
+- Scope tags are used to group entities such as Sites, Services and
 ServiceGroups into flexible categories. A single entity can define multiple
 scope tags, allowing the resource to be associated with different categories
 without duplication of information. This is essential to maintain the integrity
@@ -20,7 +20,7 @@ its child services. In doing this, the site scope list becomes a union of its
 service scopes plus any other site specific tags defined by the site.
 - By defining scope tags, resources can be ‘filtered-by-scope-tag’ when querying
 for data in the PI using the ‘scope’ and ‘scope_match’ parameters, see
-[GOCDB Programmatic Interface (GOCDB-PI)](https://wiki.egi.eu/wiki/GOCDB/PI/Technical_Documentation)
+[GOCDB Programmatic Interface (GOCDB-PI)](https://wiki.egi.eu/wiki/GOCDB/PI/Technical_Documentation)(link to old EGI Wiki)
 for details.
 
 ## Clear Separation of Concerns

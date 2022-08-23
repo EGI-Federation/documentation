@@ -1,22 +1,22 @@
 ---
-title: "Options for adding a new Project in GocDB"
+title: "Options for adding a new Project in GOCDB"
 weight: 30
 description: >-
-     How to create a new Project in GocDB.
+     How to create a new Project in GOCDB.
 ---
 
 ## Introduction
 
-GocDB is multi-tenanted; it can host multiple projects in the same instance.
+GOCDB is multi-tenanted; it can host multiple projects in the same instance.
 There are a number of different deployment scenarios that can be used to support
-new projects detailed below. Please contact the GocDB admins/EGI Operations to
-request the addition of a new project.
+new projects detailed below. Please contact the GOCDB admins and EGI Operations to
+discuss the options available.
 
 ## 1) Add resources (sites/services) to an existing project
 
 - Resources (NGIs, Sites, Services) would be hosted under an existing project,
 e.g. the ‘EGI’ project.
-- The new resources would be subject to the rules/roles of the existing project,
+- The new resources would be subject to the rules of the existing project,
 such as site certification status changes and project controlled user memberships.
 - The resources could not be filtered using a custom scope tag.
 
@@ -26,9 +26,9 @@ such as site certification status changes and project controlled user membership
 
 - Resources would be hosted under an existing project, and a new scope tag would
 be added for the purposes of resource filtering.
-- Since the resources are still hosted under an existing project, the resources
-would still be subject to the rules/roles of that project such as project
-controller user memberships.
+- Since the resources are still hosted under an existing project, the new resources
+would still be subject to the rules of the existing project, such as site 
+certification status changes and project controlled user memberships.
 - The resources could be filtered using the new scope tag, but this scope tag
 would not strictly represent a project, rather a sub-grouping under the existing
 project, e.g.
@@ -50,8 +50,9 @@ get_services&scope=SubGroupX,EGI&scope_match=all
 
 - Resources would be hosted under a new project, and a new scope tag would be
 added named after the project for the purposes of resource filtering.
-- The resources would not be subject to the rules/roles of other projects, for
-example, allowing the project to control its own project memberships.
+- The resources would not be subject to the rules of other projects, for
+example, allowing the project to control its site certification status changes 
+and project controlled user memberships.
 - The resources could be filtered using the scope tag named after the new project,
 e.g.
 

@@ -5,10 +5,6 @@ description: >-
      HOW TOs and FAQs.
 ---
 
-## I get an "error 12227" message when accessing GOC portal with Mozilla/Firefox
-
-This happens when no certificate has been uploaded to your browser. Refer to the
-"Access to GOCDB" section for more information about GOCDB and X509 certificates.
 
 <!-- markdownlint-disable no-inline-html -->
 ## I am responsible for a site that has recently entered the EGI infrastructure. How do I register it?
@@ -20,14 +16,6 @@ and ask them to add the site for you. Then, register to GOCDB (see the user
 account section) and ask for a site admin role for your site (see the requesting
 a role section). Once your role approved, you will be able to edit and change
 your site information.
-
-## Why can't I declare downtimes for my whole site as I used to do in GOCDB3?
-
-For data clarity reasons, it has been decided long ago to only link downtimes to
-services, thus avoiding the complication of having to check both site and
-service downtimes to determine whether a service is up or not. The way to
-declare a downtime for your site is to select all the services of the site in
-one go when inserting the downtime.
 
 ## How do I extend a declared schedule downtime?
 
@@ -46,11 +34,10 @@ half way through, you need to update GOCDB to reflect the fact that your site is
 now down. There is currently no way of doing this by updating the downtime on the
 fly without having the system considering the whole downtime as being an outage.
 The best way to proceed is:
+- Modify end date of your "at risk" downtime, so that it ends in a few minutes
+- Enter a new "outage" downtime, starting when the other ends
 
-## Modify end date of your "at risk" downtime, so that it ends in a few minutes
-
-Enter a new "outage" downtime, starting when the other ends
-How do I switch monitoring on/off for my nodes?
+## How do I switch monitoring on/off for my nodes?
 Monitoring status in GOCDB cannot always be switched off. If a node is declared
 as delivering a production service, rules apply and the node has to be monitored.
 If you are running a test node and want to switch monitoring off, set both
