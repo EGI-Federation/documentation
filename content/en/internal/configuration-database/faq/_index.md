@@ -1,8 +1,8 @@
 ---
-title: "HOW TOs and FAQs"
+title: "FAQ"
 weight: 30
-description: >-
-  HOW TOs and FAQs.
+type: "docs"
+description: "Frequently Asked Questions"
 ---
 
 ## I am responsible for a site that has recently entered the EGI infrastructure. How do I register it?
