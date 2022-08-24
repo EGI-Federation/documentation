@@ -30,9 +30,8 @@ $ /usr/bin/ngstat -q -l -c <CE hostname> -t 20
 ...
 ```
 
-If a
-[monitoring host of your NGI](http://wiki.nordugrid.org/wiki/Service_Monitoring)
-is available, then the probes can easily be executed from there:
+If a monitoring host of your NGI is available, then the probes can easily be
+executed from there:
 
 Check the status of the CE with:
 
@@ -157,8 +156,8 @@ $ lcg-cr -v --vo <VO>-d<Your SE> \
     -l lfn:/grid/<VO>/test.txt file:</path/to/your/local/file>
 ```
 
-3\) Create a new replica in other SE (to check the third-party transfer between 2
-SEs)
+3\) Create a new replica in other SE (to check the third-party transfer between
+2 SEs)
 
 ```shell
 $ lcg-rep -v --vo <VO>-d<Other SE> <SURL>
@@ -1083,7 +1082,8 @@ Check that the folder does not exist anymore
 $ bcdmi -e <cdmi_endpoint> list /
 ```
 
-See Site Certification GIIS Check [HOWTO03](../howto03_site_certificatoin_giis_check).
+See Site Certification GIIS Check
+[HOWTO03](../howto03_site_certificatoin_giis_check).
 
 See to Resource Centre registration and certification procedure
 [PROC09](https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification).
