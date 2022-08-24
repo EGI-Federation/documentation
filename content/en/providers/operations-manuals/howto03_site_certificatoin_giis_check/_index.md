@@ -70,7 +70,7 @@ fields:
   [FAQ HEP SPEC06](https://wiki.egi.eu/wiki/FAQ_HEP_SPEC06))
 - `GlueHostOperatingSystemName`, `GlueHostOperatingSystemVersion` and
   `GlueHostOperatingSystemRelease` (see
-  [HOWTO05](https://wiki.egi.eu/wiki/HOWTO05_How_to_publish_the_OS_name))
+  [publishing the OS name below](#Publishing-the-os-name)).
 
 **Example:**
 
@@ -82,6 +82,29 @@ $ ldapsearch -x -LLL -H `<ldap://virgo-ce.roma1.infn.it:2170>` \
 dn: GlueSubClusterUniqueID=virgo-ce.roma1.infn.it,GlueClusterUniqueID=virgo-ce.roma1.infn.it,Mds-Vo-name=resource,o=grid
 GlueHostProcessorOtherDescription: Cores=4, Benchmark=7.83-HEP-SPEC06
 ```
+
+#### Publishing the OS name
+
+It has been decided that the 3 fields
+
+- `GlueHostOperatingSystemName`
+- `GlueHostOperatingSystemRelease`
+- `GlueHostOperatingSystemVersion`
+
+should be parsed from the output of `/usr/bin/lsb_release`, like this:
+
+- `GlueHostOperatingSystemName`: `lsb_release -i | cut -f2`
+- `GlueHostOperatingSystemRelease`: `lsb_release -r | cut -f2`
+- `GlueHostOperatingSystemVersion`: `lsb_release -c | cut -f2`
+
+yielding values like
+
+- `GlueHostOperatingSystemName`: CentOS
+- `GlueHostOperatingSystemRelease`: 7.9.2009
+- `GlueHostOperatingSystemVersion`: Core
+
+This has been tested on various Linux flavours and should work on every serious
+GNU/Linux distribution.
 
 ### Information about the batch system
 
