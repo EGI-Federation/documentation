@@ -7,7 +7,7 @@ weight: 10
 The pages under this section depict how to join the EGI infrastructure as a
 service providers offering innovative services to the European Research Area.
 
-> The [Operations Start Guide](./operations_start_guide) will help you start
+> The [Operations Start Guide](./operations-start-guide) will help you start
 > with EGI Operations duties.
 
 - Interested in integrating your service with Check-in? Head to the
