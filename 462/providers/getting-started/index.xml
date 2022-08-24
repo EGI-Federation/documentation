@@ -7,28 +7,28 @@ policies.&lt;/p>
 deliver services for advanced computing within the EGI Infrastructure. The
 options are documented below, linking to detailed instructions:&lt;/p>
 &lt;ol>
-&lt;li>&lt;a href="../joining/federated-resource-centre">Joining as a federated resource centre&lt;/a>.
-A provider (that we call Resource Centre) delivering one of the following
-services: &lt;a href="https://www.egi.eu/service/cloud-compute/">Cloud Compute&lt;/a>,
+&lt;li>&lt;a href="../joining/federated-resource-centre">Joining as a federated resource centre&lt;/a>,
+becoming a provider (that we call Resource Centre) delivering one of the
+following services:
+&lt;a href="https://www.egi.eu/service/cloud-compute/">Cloud Compute&lt;/a>,
 &lt;a href="https://www.egi.eu/service/high-throughput-compute/">HTC Compute&lt;/a>,
 &lt;a href="https://www.egi.eu/service/cloud-container-compute/">Cloud Container Compute&lt;/a>,
 or &lt;a href="https://www.egi.eu/service/online-storage/">Online Storage&lt;/a>. More than
 200 Resource Centres have been integrated in this way.&lt;/li>
 &lt;li>&lt;a href="../joining/technology-provider/">Joining as a software provider&lt;/a>, also
-called Technology Providers, which are the maintainers of the middleware
-deployed on the ‘federated resource providers’ (previous point).&lt;/li>
-&lt;li>&lt;a href="../joining/new-provider/">Joining as a new provider&lt;/a> for an existing
-platform service in the Compute and Data Federation or the Platform services,
-such as &lt;a href="https://www.egi.eu/service/datahub/">DataHub&lt;/a>,
+called Technology Provider, which is providing middleware deployed on the
+&lt;a href="./federated-resource-centre">federated resource centres&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="../joining/new-provider/">Joining as a new provider&lt;/a> for an existing service
+in the Compute and Data Federation or the Platform services, such as
+&lt;a href="https://www.egi.eu/service/datahub/">DataHub&lt;/a>,
 &lt;a href="https://www.egi.eu/service/notebooks/">Notebooks&lt;/a>,
 &lt;a href="https://www.egi.eu/service/training-infrastructure/">Training Infrastructure&lt;/a>,
 and &lt;a href="https://www.egi.eu/service/workload-manager/">Workload Manager&lt;/a>&lt;/li>
-&lt;li>&lt;a href="../joining/core-service/">Joining as Core/Central service provider&lt;/a>:
-providers for
+&lt;li>&lt;a href="../joining/core-service/">Joining as Core/Central service provider&lt;/a> for
 &lt;a href="https://www.egi.eu/services/federation/">services supporting all the other services of the EGI Infrastructure&lt;/a>.&lt;/li>
-&lt;li>&lt;a href="../joining/new-service/">Contributing a new service&lt;/a> that is not yet present
-in the &lt;a href="https://www.egi.eu/services/research/">EGI service portfolio&lt;/a> and
-enables advanced computing in research and education.&lt;/li>
+&lt;li>&lt;a href="../joining/new-service/">Contributing a new service&lt;/a>, enabling advanced
+computing in research and education, and not yet present in the
+&lt;a href="https://www.egi.eu/services/research/">EGI service portfolio&lt;/a>.&lt;/li>
 &lt;/ol></description></item><item><title>Providers: Operations Start Guide</title><link>/providers/getting-started/operations-start-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/operations-start-guide/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The Operations Start Guide will help you start with EGI Operations duties. It
