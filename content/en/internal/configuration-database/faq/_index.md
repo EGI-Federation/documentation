@@ -1,6 +1,6 @@
 ---
 title: "FAQ"
-weight: 30
+weight: 100
 type: "docs"
 description: "Frequently Asked Questions"
 ---
