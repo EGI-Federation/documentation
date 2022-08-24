@@ -222,9 +222,9 @@ terminated by the customer.
 
 ## Managing service orders
 
-Customers can request access to the services of the EOSC Compute Platform
-through the EOSC Portal Marketplace. Access to the services is either fully
-open, or behind service-specific authentication and authorisation steps.
+Customers can request access to the services of the EGI Infrastructure through
+the EOSC Portal Marketplace. Access to the services is either fully open, or
+behind service-specific authentication and authorisation steps.
 
 Depending on the nature of the service ordered, different levels of technical
 support are requested to the service providers including the activation of a new
