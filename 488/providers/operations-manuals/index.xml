@@ -2621,9 +2621,8 @@ with &lt;strong>YOUR OWN&lt;/strong> NGI and site credentials when running the t
 ...
 ... plenty of output
 ...
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>If a
-&lt;a href="http://wiki.nordugrid.org/wiki/Service_Monitoring">monitoring host of your NGI&lt;/a>
-is available, then the probes can easily be executed from there:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>If a monitoring host of your NGI is available, then the probes can easily be
+executed from there:&lt;/p>
 &lt;p>Check the status of the CE with:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ /usr/libexec/grid-monitoring/probes/org.ndgf/ARCCE-status &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &amp;lt;CE hostname&amp;gt; -x /etc/nagios/globus/userproxy.pem-ops
@@ -2686,8 +2685,8 @@ This command output will return a SURL that you can use latter for other tests.&
 &lt;code>srm://srm01.ncg.ingrid.pt/ibergrid/iber/generated/2011-02-01/file4034a935-8d7a-48f4-914f-16f2634d4802&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ lcg-cr -v --vo &amp;lt;VO&amp;gt;-d&amp;lt;Your SE&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -l lfn:/grid/&amp;lt;VO&amp;gt;/test.txt file:&amp;lt;/path/to/your/local/file&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>3) Create a new replica in other SE (to check the third-party transfer between 2
-SEs)&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>3) Create a new replica in other SE (to check the third-party transfer between
+2 SEs)&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ lcg-rep -v --vo &amp;lt;VO&amp;gt;-d&amp;lt;Other SE&amp;gt; &amp;lt;SURL&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>4) List Replicas&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ lcg-lr -v --vo &amp;lt;VO&amp;gt; lfn:/grid/&amp;lt;VO&amp;gt;/test.txt
@@ -3325,6 +3324,7 @@ Files are equal
 $ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; delete -r test/
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Check that the folder does not exist anymore&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; list /
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>See Site Certification GIIS Check &lt;a href="../howto03_site_certificatoin_giis_check">HOWTO03&lt;/a>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>See Site Certification GIIS Check
+&lt;a href="../howto03_site_certificatoin_giis_check">HOWTO03&lt;/a>.&lt;/p>
 &lt;p>See to Resource Centre registration and certification procedure
 &lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item></channel></rss>
