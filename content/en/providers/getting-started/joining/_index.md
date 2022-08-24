@@ -10,7 +10,7 @@ follow to join the [EGI Infrastructure](https://www.egi.eu/egi-infrastructure/),
 and to ensure the high-quality delivery of service according to the EGI
 policies.
 
-Providers are offered with 5 options to become members in the EGI Federation and
+Providers have different options to become members of the EGI Federation, and
 deliver services for advanced computing within the EGI Infrastructure. The
 options are documented below, linking to detailed instructions:
 
