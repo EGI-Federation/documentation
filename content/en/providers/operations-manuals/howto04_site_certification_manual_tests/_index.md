@@ -298,40 +298,6 @@ several things, like the environment on WN and installed RPMs. Moreover it
 performs some replica management tests. With a `grep TEST` you may get a summary
 of the results: in case of errors, you have to see in detail what is gone wrong!
 
-As already said, if the site supports any flavour of MPI, launch a MPI test job,
-like [this](https://wiki.egi.eu/wiki/MPI_Certification_Job_template).
-
-Don't forget to set a reasonable value in `CPUNumber`: most important is that
-your job starts running quickly.
-
-If you want less stuff in the `.out` and `.err` files, in the file
-`mpi-start-wrapper.sh` comment the line
-
-```shell
-$ export I2G_MPI_START_DEBUG=1
-```
-
-A successful output will look like the following one (extract)
-
-```shell
-[...]
-mpi-start [DEBUG ]: using user supplied startup : '/opt/mpich-1.2.7p1/bin/mpirun '
-mpi-start [DEBUG ]: => MPI_SPECIFIC_PARAMS=
-mpi-start [DEBUG ]: => I2G_MPI_PRECOMMAND=
-mpi-start [DEBUG ]: => MPIEXEC=/opt/mpich-1.2.7p1/bin/mpirun
-mpi-start [DEBUG ]: => I2G_MACHINEFILE_AND_NP=-machinefile /tmp/tmp.iBypc12521 -np 6
-mpi-start [DEBUG ]: => I2G_MPI_APPLICATION=/home/dteam022/globus-tmp.t3-wn-13.11955.0/https_3a_2f_2falbalonga.cnaf.infn.it_3a9000_2fI06uWaKi1evxL3tTF-DTOg/hello
-mpi-start [DEBUG ]: => I2G_MPI_APPLICATION_ARGS=
-mpi-start [DEBUG ]: /opt/mpich-1.2.7p1/bin/mpirun -machinefile /tmp/tmp.iBypc12521 -np 6 /home/dteam022/globus-tmp.t3-wn-13.11955.0/https_3a_2f_2falbalonga.cnaf.infn.it_3a9000_2fI06uWaKi1evxL3tTF-DTOg/hello
-Process 4 on t3-wn-37.pn.pd.infn.it out of 6
-Process 3 on t3-wn-34.pn.pd.infn.it out of 6
-Process 1 on t3-wn-13.pn.pd.infn.it out of 6
-Process 2 on t3-wn-34.pn.pd.infn.it out of 6
-Process 5 on t3-wn-37.pn.pd.infn.it out of 6
-Process 0 on t3-wn-13.pn.pd.infn.it out of 6
-[...]
-```
-
 ### Globus checks
 
 > These checks should be executed depending on the services registered in GOCDB
