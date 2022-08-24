@@ -345,7 +345,3 @@ following table (see also
 <!--
 // jscpd:ignore-end
 -->
-
-## Integration success stories
-
-- [EGI AAI integration with ELIXIR](https://wiki.egi.eu/wiki/EGI_AAI_integration_with_ELIXIR_AAI)
