@@ -281,7 +281,7 @@ Please use this resource and contact your CA if your certificate does not work.
 
 As soon as you try to access an EGI service with your federated identity, you
 will be requested to register an account in EGI Check-in if not existing yet.
-The [Check-in sign up guide](../../../users/check-in/signup/) explains how to
+The [Check-in sign up guide](../../../users/aai/check-in/signup/) explains how to
 sign up for an EGI account. If you already own an account, you will be simply
 asked to login through EGI Check-in.
 
