@@ -456,8 +456,8 @@ Management process.&lt;/p></description></item><item><title>Providers: Introduci
 propose new services through the
 &lt;a href="https://www.egi.eu/publication/egi-federation-service-strategy-2022-2024/">EGI Service Strategy&lt;/a>,
 that defines the overall direction to EGI services for a few years time window.
-The services are designed, validated through the EGI Community, with the help of
-the &lt;a href="https://go.egi.eu/ssb">EGI Services and Solutions Board (SSB)&lt;/a>.&lt;/p>
+The services are designed, validated with the EGI Community, and with the help
+of the &lt;a href="https://go.egi.eu/ssb">EGI Services and Solutions Board (SSB)&lt;/a>.&lt;/p>
 &lt;p>The evolution of the services is driven by 5 Strategic Objectives (SO) which are
 based on the knowledge of the user community needs that are being gathered
 through research and innovation projects, customer interviews and analysis of
@@ -469,4 +469,8 @@ developed into more concrete goals and intended results.&lt;/p>
 &lt;li>SO3: Data analytics and scientific tools including AI&lt;/li>
 &lt;li>SO4: Professional support and consultancy&lt;/li>
 &lt;li>SO5: Investigation of a trusted compute platform for sensitive data processing&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>If you want to propose a new service, you should approach your national EGI
+Council member, or fallback to the &lt;a href="https://go.egi.eu/ssb">EGI SSB&lt;/a>.&lt;/p>
+&lt;/blockquote></description></item></channel></rss>
