@@ -14,17 +14,18 @@ Related procedure:
 &lt;/div>
 &lt;p>In order to join the EGI Infrastructure, a RC needs to present the request to
 the Research Infrastructure Provider (RP) existing in its country. A RP is a
-legal organisation, part of large Resource Infrastructures like EGI, responsible
-for managing and operating a number of operational services at national level
-supporting RCs and user communities that contribute to such RIs. Please have a
-look at the &lt;a href="../../operations_start_guide">Operations Start Guide&lt;/a> to get
-familiar with the terms mentioned above and to have a complete picture of the
-several actors participating in our landscape.&lt;/p>
+legal organisation, part of the EGI Resource Infrastructure, responsible for
+managing and operating a number of operational services at national level,
+supporting EGI RCs and user communities. Please have a look at the
+&lt;a href="../../operations_start_guide">Operations Start Guide&lt;/a> to get familiar with the
+terms mentioned above, and to have a complete picture of the several actors
+participating in our landscape.&lt;/p>
 &lt;p>The RP operators are going to guide and support the RC during the registration
-and certification procedures. First, the RC will be asked to read, understand,
-and accept:&lt;/p>
+and certification procedures.&lt;/p>
+&lt;p>Firstly, the RC will be asked to read, understand, and accept:&lt;/p>
 &lt;ul>
-&lt;li>the &lt;a href="https://documents.egi.eu/document/31">“RCs Operational Level Agreement”&lt;/a>,
+&lt;li>the
+&lt;a href="https://documents.egi.eu/document/31">RCs Operational Level Agreement (OLA)&lt;/a>,
 an agreement made between the RC and its RP that defines the minimum set of
 operational services and the respective quality parameters that a Resource
 Centre is required to provide in EGI;&lt;/li>
@@ -32,38 +33,40 @@ Centre is required to provide in EGI;&lt;/li>
 to guarantee that all the security aspects with the service delivery are
 fulfilled and enforced.&lt;/li>
 &lt;/ul>
-&lt;p>The next step is registering the RC in the EGI
+&lt;p>Secondly, the RC should be registered in the EGI
 &lt;a href="../../../../internal/configuration-database">Configuration Database&lt;/a>: the
 provided information, from the generic contacts and roles of people to the
-service endpoints details will be needed to trigger the daily operations of
-other services and activities provided by the EGI Infrastructure such as the
-Monitoring of the resources, the Accounting, the Support, and the security
-activities.&lt;/p>
+service endpoints details, is needed to trigger the daily operations of other
+services and activities provided by the EGI Infrastructure such as the
+&lt;a href="../../../../internal/monitoring">Monitoring&lt;/a> of the resources, the
+&lt;a href="../../../../internal/accounting">Accounting&lt;/a>, the
+&lt;a href="../../../../internal/helpdesk">Support&lt;/a>, and the
+&lt;a href="../../../../internal/security-coordination">Security&lt;/a> activities.&lt;/p>
 &lt;p>&lt;img src="SiteStatusFlow.png" alt="Diagram of the RCs status flow">&lt;/p>
 &lt;p>Once the entry in the Configuration Database is complete, the RP changes the RC
 status from “Candidate” to “Uncertified”, and the certification procedure can
 start: it comprises a
 &lt;a href="../../../operations-manuals/howto04_site_certification_manual_tests">series of technical controls&lt;/a>
-to verify that the provided services work according to the expectations in the
-RC OLA. Any identified issue is notified by the RP operators to the RC and
-investigated until its solution.&lt;/p>
+to verify that the provided services work according to the expectations defined
+in the RC OLA. Any identified issue is notified by the RP operators to the RC
+and investigated until its solution.&lt;/p>
 &lt;p>When all the certification controls are successfully passed, the RC status is
-changed to “Certified” meaning that the RC is included in the production
+changed to “Certified” meaning that the RC is included in the EGI production
 infrastructure and its resources can be consumed by the users of the
 infrastructure.&lt;/p>
 &lt;h2 id="resource-centres-responsibilities">Resource Centres responsibilities&lt;/h2>
 &lt;h3 id="incidents-and-service-requests">Incidents and service requests&lt;/h3>
 &lt;p>Providing support is a fundamental part of the daily activity of a provider
-participating in a large research infrastructure like EGI. The support is meant
-not only towards the users accessing the resources but also towards those who
-are involved in the management and oversight of the infrastructure.&lt;/p>
+participating in a large research infrastructure such as EGI. The support is not
+only for the users accessing the resources but also for those who are involved
+in the management and oversight of the infrastructure.&lt;/p>
 &lt;p>As defined in the RC OLA, the RC will handle
 &lt;a href="https://confluence.egi.eu/display/EGIG/Incident">incidents&lt;/a> and
 &lt;a href="https://confluence.egi.eu/display/EGIG/Service+request">service requests&lt;/a>
-registered as tickets in the EGI Helpdesk service, with the expectation to
-acknowledge and process any notified issue within the agreed response time
-associated with the priority of the ticket. The response time is defined by the
-Quality of
+registered as tickets in the &lt;a href="./../../../../internal/helpdesk">EGI Helpdesk&lt;/a>
+service, with the expectation to acknowledge and process any notified issue,
+within the agreed response time associated with the priority of the ticket.&lt;/p>
+&lt;p>The response time is defined by the Quality of
 &lt;a href="https://confluence.egi.eu/display/EGISLM/Service+Level+Target+-+Quality+of+Support">Support levels&lt;/a>,
 and for the RCs the level will be Medium, meaning that there will 4 priorities
 for the incidents (requiring for example up to 5 working days for the “less
@@ -78,14 +81,18 @@ incidents and vulnerabilities.&lt;/p>
 &lt;h4 id="dealing-with-security-incidents">Dealing with security incidents&lt;/h4>
 &lt;p>The
 &lt;a href="https://go.egi.eu/security-incident-response-policy">Security Incident Response Policy&lt;/a>
-aims at ensuring that all incidents are investigated as fully as possible, and
-that Resource Centres promptly report intrusions. In particular, security
-incidents are to be treated as serious matters and their investigation must be
-resourced appropriately.&lt;/p>
-&lt;p>In case of the suspected security incidents, Resources Centres report it to
-their Operations Centre Security Officer and to EGI Computer Security Incident
-Response Team (CSIRT) within 4 hours of discovery. This initial step will start
-the coordination of the incident response as documented in the procedure
+aims at coordinating the incident response across the infrastructure, ensuring
+that that incidents are promptly reported, and that all incidents are
+investigated as fully as possible.&lt;/p>
+&lt;blockquote>
+&lt;p>Security incidents are to be treated as serious matters and their
+investigation must be resourced appropriately.&lt;/p>
+&lt;/blockquote>
+&lt;p>Resources Centres must report suspected security incidents to their RP Security
+Officer and to
+&lt;a href="https://confluence.egi.eu/display/EGIBG/CSIRT">EGI Computer Security Incident Response Team (CSIRT)&lt;/a>
+within 4 hours of discovery. This initial step will start the coordination of
+the incident response as documented in the procedure
 &lt;a href="https://go.egi.eu/sec01">SEC01 EGI CSIRT Security Incident Handling Procedure&lt;/a>.&lt;/p>
 &lt;ul>
 &lt;li>This procedure has been implemented according to the Security Incident
@@ -97,19 +104,19 @@ post-mortem analysis and promotes cooperation between Resource Centres.&lt;/li>
 &lt;/ul>
 &lt;h4 id="handling-of-vulnerabilities">Handling of vulnerabilities&lt;/h4>
 &lt;p>The handling of vulnerabilities is a very formal process involving many
-different entities, as presented below.&lt;/p>
+different entities.&lt;/p>
 &lt;p>Anyone can report a software vulnerability via a
 &lt;a href="https://csirt.egi.eu/report-vulnerability/">form&lt;/a> or by email contacting the
-Software Vulnerability Group.&lt;/p>
+&lt;a href="https://confluence.egi.eu/display/EGIBG/SVG">Software Vulnerability Group (SVG)&lt;/a>.&lt;/p>
 &lt;p>The report will trigger an assessment, following the
 &lt;a href="https://go.egi.eu/sec02">SEC02 Software Vulnerability Issue Handling&lt;/a>
-procedure, by the Software Vulnerability Group (SVG), of the risk level
-associated with this vulnerability in the context of the activities of the EGI
+procedure, by the Software Vulnerability Group, of the risk level associated
+with this vulnerability in the context of the activities of the EGI
 Infrastructure.&lt;/p>
 &lt;p>Once a vulnerability has been identified as presenting a risk to the
 infrastructure, it will be decided if an advisory should be prepared and
-circulated to the security contacts of the sites. After an agreed period of time
-and depending on their confidentiality, advisories are made public.&lt;/p>
+circulated to the security contacts of the sites. After an agreed period of
+time, and depending on their confidentiality, advisories are made public.&lt;/p>
 &lt;p>Vulnerabilities identified as critical are handled according to the procedure
 &lt;a href="https://go.egi.eu/sec03">SEC03 EGI-CSIRT Critical Vulnerability Handling&lt;/a>. When
 applicable, this usually involves developing a custom
@@ -118,35 +125,35 @@ identify on High Throughput Compute RCs if their resources are vulnerable to the
 vulnerability. The status is closely monitored by the security team and
 accessible to the affected RCs.&lt;/p>
 &lt;p>Using this information correlated with the one from
-&lt;a href="../../../../internal/security-coordination/monitoring/pakiti">Pakiti&lt;/a> (the
+&lt;a href="../../../../internal/security-coordination/monitoring/pakiti">Pakiti&lt;/a>, the
 patch management service collecting information about the patches deployed at
-the various High Throughput Compute RCs), the Incident Response Task Force
-(IRTF) on duty security officer will open tickets against the impacted sites
-according to the &lt;a href="https://go.egi.eu/wi07">WI07 Security Vulnerability Handling&lt;/a>
-procedure.&lt;/p>
+the various High Throughput Compute RCs, the Incident Response Task Force (IRTF)
+on duty Security Officer will open tickets against the impacted sites according
+to the &lt;a href="https://go.egi.eu/wi07">WI07 Security Vulnerability Handling&lt;/a> procedure.&lt;/p>
 &lt;p>The EGI Service Delivery and Information Security (SDIS) team of the EGI
-Foundation will follow up with the resource provider to work on resolving the
-ticket. The first duty of the resource provider is to acknowledge the
-vulnerability and then work on a prompt resolution as suggested in the ticket.
-In case a satisfactory resolution is not reached in due time, or a sign of
-active progress on addressing the vulnerability is not visible, the specific
-resource centre may be suspended.&lt;/p>
+Foundation, formerly known as the EGI Operations team, will follow up with the
+resource provider to work on resolving the ticket. The first duty of the
+resource provider is to acknowledge the vulnerability and then work on a prompt
+resolution as suggested in the ticket. In case a satisfactory resolution is not
+reached in due time, or a sign of active progress on addressing the
+vulnerability is not visible, the specific Resource Centre may be suspended.&lt;/p>
 &lt;h2 id="setting-up-agreements-with-customers">Setting up agreements with customers&lt;/h2>
-&lt;p>Once moved to the production infrastructure, a RC is ready to deliver its
-resources to any of the users’ communities consuming the infrastructure. Here
-the Service Level Management (SLM) process intervenes as a matchmaker between
-service expectations and needs of the
-&lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisations (VOs)&lt;/a>
-and the capabilities of the RCs. During the selection of the providers for
-service provisioning, technical requirements collected from the customer are
-used by EGI to launch a call open to all of the providers. The Expression of
-Interests (EoIs) collected during the negotiation phase will be used to identify
-the provider(s) that best match the customer&amp;rsquo;s requirements and expectations.
-From a technical perspective, several aspects will be considered during the
-negotiation phase including the geographical location of the customer, national
-roadmap and priority of the providers, and costs of the service provisioning in
-case of a pay-for-use model.&lt;/p>
-&lt;p>In case the negotiation phase ends positively, the selected provider(s) will:&lt;/p>
+&lt;p>Once part of the production infrastructure, the RC is ready to deliver its
+resources to any of the users’ communities consuming the infrastructure.&lt;/p>
+&lt;p>Here the Service Level Management (SLM) process intervenes as a matchmaker
+between service expectations and needs of the user communities, acting as
+customers, and the capabilities of the RCs. Customers are managed as
+&lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisations (VOs)&lt;/a>.&lt;/p>
+&lt;p>In order to select providers for provisioning services to a given customer,
+technical requirements collected from the customer are used by EGI to launch a
+call open to all the providers. The Expression of Interests (EoIs) collected
+during the negotiation phase are used to identify the provider(s) that best
+match the customer&amp;rsquo;s requirements and expectations. From a technical
+perspective, several aspects will be considered during the negotiation phase
+including the geographical location of the customer, national roadmap and
+priority of the providers, and costs of the service provisioning in case of a
+pay-for-use model.&lt;/p>
+&lt;p>When the negotiation phase ends, the selected provider(s) will:&lt;/p>
 &lt;ul>
 &lt;li>Define a VO Operational Level Agreement(s) (OLA) with EGI Foundation for
 providing the services through the EGI Portfolio to support the user
@@ -188,26 +195,32 @@ support are requested to the service providers including the activation of a new
 Virtual Organisation (VO), or the customization of the service with dedicated
 set-up to meet the customer&amp;rsquo;s expectations. Service providers receive
 notifications about services orders via
-&lt;a href="https://opsportal.eosc-portal.eu/login/">SOMBO&lt;/a> and with the support and
-oversight of the EGI Foundation they deal with them.&lt;/p>
+&lt;a href="https://opsportal.eosc-portal.eu/login/">SOMBO&lt;/a>, and they handle them with the
+support and oversight of the EGI Foundation.&lt;/p>
 &lt;h2 id="performance-reports-enforcing-olas">Performance reports: enforcing OLAs&lt;/h2>
 &lt;p>As defined in the RCs OLA, the performance of the delivered services should meet
 the Service Level Targets: the monthly performance of the RCs is monitored, and
 when the targets are not achieved for three consecutive months, the affected RCs
 are notified through a ticket about the OLA violation and requested to provide
 within 10 working days an explanation for the low performance and a plan for
-improvement. The RCs not providing a satisfactory explanation or not replying at
-all are eligible for suspension. In order to re-join the EGI Infrastructure, any
-suspended RC should undergo a new certification procedure. The “Suspended”
-status cannot last for more than 4 months, after which a RCs is either in
-production again or definitely closed.&lt;/p>
-&lt;p>Besides the Targets defined in the RCs OLA which are enforced to guarantee the
-permanence of the RC in the infrastructure, also the targets promised to the
-users in the VO SLAs should be met on a monthly basis: also in this case, when a
-violation occurs, the RC is requested to provide a justification and a plan for
-improving the quality of the provided services. If repeated violations occur,
-the SLA can be renegotiated with the customer, either by changing the Service
-Level Targets, or by choosing a different RCs as a provider.&lt;/p></description></item><item><title>Providers: Joining as a Technology Provider</title><link>/providers/getting-started/joining/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/technology-provider/</guid><description>
+improvement.&lt;/p>
+&lt;blockquote>
+&lt;p>The RCs not providing a satisfactory explanation or not replying at all are
+eligible for suspension.&lt;/p>
+&lt;/blockquote>
+&lt;p>In order to re-join the EGI Infrastructure, any suspended RC should undergo a
+new certification procedure. The “Suspended” status cannot last for more than 4
+months, after which a RCs is either in production again or definitely closed.&lt;/p>
+&lt;p>Besides the Targets defined in the RCs OLA, which are enforced to guarantee the
+permanence of the RC in the infrastructure, the targets promised to the users in
+the VO SLAs should also be met on a monthly basis: when a violation occurs, the
+RC is requested to provide a justification and a plan for improving the quality
+of the provided services.&lt;/p>
+&lt;blockquote>
+&lt;p>If repeated violations occur, the SLA can be renegotiated with the customer,
+either by changing the Service Level Targets, or by choosing a different RCs
+as a provider.&lt;/p>
+&lt;/blockquote></description></item><item><title>Providers: Joining as a Technology Provider</title><link>/providers/getting-started/joining/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/technology-provider/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>Technology Providers (TP) develop or deliver technology and software for
 specific user communities or customisation for specific requirements. In our
