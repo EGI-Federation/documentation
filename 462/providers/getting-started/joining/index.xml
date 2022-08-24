@@ -187,9 +187,9 @@ a month before the expiration date. In case of termination of the Agreement, the
 provider must remove the support of the customer. The Agreement can also be
 terminated by the customer.&lt;/p>
 &lt;h2 id="managing-service-orders">Managing service orders&lt;/h2>
-&lt;p>Customers can request access to the services of the EOSC Compute Platform
-through the EOSC Portal Marketplace. Access to the services is either fully
-open, or behind service-specific authentication and authorisation steps.&lt;/p>
+&lt;p>Customers can request access to the services of the EGI Infrastructure through
+the EOSC Portal Marketplace. Access to the services is either fully open, or
+behind service-specific authentication and authorisation steps.&lt;/p>
 &lt;p>Depending on the nature of the service ordered, different levels of technical
 support are requested to the service providers including the activation of a new
 Virtual Organisation (VO), or the customization of the service with dedicated
