@@ -3,20 +3,19 @@ title: "FAQ HEP SPEC 06"
 weight: 100
 type: "docs"
 description: >-
-     Questions about Transition to HEP SPEC, a new CPU benchmark.
+  Questions about Transition to HEP SPEC, a new CPU benchmark.
 ---
 
 ## Transition to HEP SPEC, a new CPU benchmark
 
 ### Q1: Why adopting HEP SPEC 06?
 
-The traditional si2k CPU benchmark is now obsolete and it is time to move to---
-HEP SPEC, a new CPU benchmark that will replace si2k and will become the
-reference benchmark for accounting purposes.
+The traditional si2k CPU benchmark is now obsolete and it is time to move to HEP
+SPEC, a new CPU benchmark that will replace si2k and will become the reference
+benchmark for accounting purposes.
 
-Have a look at the
-"[Transition to a new CPU benchmarking unit for the WLCG](http://indico.cern.ch/getFile.py/access?contribId=3&sessionId=0&resId=0&materialId=0&confId=49388)"
-for a detailed description of “why".
+Detailed description of the reasons are provided on the
+[transition to a new CPU benchmarking unit for the WLCG](http://indico.cern.ch/getFile.py/access?contribId=3&sessionId=0&resId=0&materialId=0&confId=49388).
 
 ### Q2: What is HEP SPEC 06?
 
@@ -37,16 +36,16 @@ change.
 ### Q3: Where can I find information about HEP SPEC 06 measurements?
 
 Some example results are available on the
-[HEPIX group-page](http://w3.hepix.org/benchmarking.html),
-where one can see the differences between gcc3.4.x and gcc4.1.x.
+[HEPIX group-page](http://w3.hepix.org/benchmarking.html), where one can see the
+differences between gcc3.4.x and gcc4.1.x.
 
 Additional results tables are available from various EGI partners:
 
 - [GRIDPP](https://www.gridpp.ac.uk/wiki/HEPSPEC06)
 
-If you don't find your computing machine in that table, then it is better to
-try to do the measurement because extrapolating the results increases further
-the error.
+If you don't find your computing machine in that table, then it is better to try
+to do the measurement because extrapolating the results increases further the
+error.
 
 ### Q4: How can I run the HEP SPEC 06 benchmark?
 
@@ -61,8 +60,8 @@ In Short you need the following:
 2. The gcc compiler should be installed
 3. Configuration files and run script (available as a gzipped tar archive from
    the CERN Wiki). The archive's md5sum is 9fed92b8d515b88904705f76809c4028
-4. A tar ball of the SPECcpu2006 DVD called SPEC2006_v11.tar.bz2 that should be
-   in the same directory as the run script
+4. A tar ball of the SPECcpu2006 DVD called `SPEC2006_v11.tar.bz2` that should
+   be in the same directory as the run script
 
 ### Q5: My site already adopted HEP SPEC 06. Do I still need to publish SpecInt2000?
 
@@ -71,32 +70,32 @@ power in SpecInt2000 (due to backward compatibility with sites not publishing
 yet HEP-SPEC). In this case you may calculate the value SpecInt2000 starting
 from HEP-SPEC through the following relation:
 
-- value_kSI2K = value_HEP-SPEC / 4 (or value_HEP-SPEC = 4 * value_kSI2K)
+- value_kSI2K = value_HEP-SPEC / 4 (or value_HEP-SPEC = 4 \* value_kSI2K)
 
-For the *GlueHostBenchmarkSI00* attribute in the GLUE v1.3 schema the following
+For the `GlueHostBenchmarkSI00` attribute in the GLUE v1.3 schema the following
 relation is easier to use:
 
-- value_SI00 = value_HEP-SPEC * 250 rounded to the nearest integer
+- value_SI00 = value_HEP-SPEC \* 250 rounded to the nearest integer
 
 ### Q6: How are HEP SPEC 06 results set in YAIM?
 
-The YAIM variable *CE_OTHERDESCR* is used to set the
-*GlueHostProcessorOtherDescription* attribute. The value of this variable MUST
-be defined in your site-info.def file as:
+The YAIM variable `CE_OTHERDESCR` is used to set the
+`GlueHostProcessorOtherDescription` attribute. The value of this variable MUST
+be defined in your `site-info.def` file as:
 
-```markdown
+```shell
 Cores=<CE_LOGCPU/CE_PHYSICALCPU> [, Benchmark=<value>-HEP-SPEC06]
 ```
 
-where the ratio CE_LOGCPU / CE_PHYSICALCPU means the average number of cores per
-physical CPU in a SubCluster; in the case of (slightly) heterogeneous
-subclusters it could be non-integer. The second value of this attribute MUST be
-published only in the case the CPU power of the SubCluster has been computed
+where the ratio `CE_LOGCPU` / `CE_PHYSICALCPU` means the average number of cores
+per physical CPU in a sub-cluster; in the case of (slightly) heterogeneous
+sub-clusters it could be non-integer. The second value of this attribute MUST be
+published only in the case the CPU power of the sub-cluster has been computed
 using the HEP-SPEC06 benchmark. The Benchmark value must be the average
-HEP_SPEC06 result per core, in the SubCluster.
+HEP_SPEC06 result per core, in the sub-cluster.
 
-These variables are set in your site-info.def file. After this, the variables
+These variables are set in your `site-info.def` file. After this, the variables
 need to be published by the CE's resource BDII, configured e.g. by standard YAIM
 commands.
 
-The total CPU capacity of the cluster is computed as Benchmark * CE_LOGCPU.
+The total CPU capacity of the cluster is computed as Benchmark \* `CE_LOGCPU`.
