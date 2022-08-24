@@ -25,7 +25,7 @@ the Research Infrastructure Provider (RP) existing in its country. A RP is a
 legal organisation, part of the EGI Resource Infrastructure, responsible for
 managing and operating a number of operational services at national level,
 supporting EGI RCs and user communities. Please have a look at the
-[Operations Start Guide](../../operations_start_guide) to get familiar with the
+[Operations Start Guide](../../operations-start-guide) to get familiar with the
 terms mentioned above, and to have a complete picture of the several actors
 participating in our landscape.
 
