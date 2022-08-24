@@ -2087,7 +2087,79 @@ introduces new settings for publishing the accounting records via AMS.&lt;/li>
 &lt;/ul>
 &lt;h2 id="htcondor-ce">HTCondor-CE&lt;/h2>
 &lt;p>To collect and publish the accounting data you need to install the APEL software
-as explained in the general information section.&lt;/p></description></item><item><title>Providers: HOWTO01 Using IGTF CA distribution</title><link>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</guid><description>
+as explained in the general information section.&lt;/p></description></item><item><title>Providers: FAQ HEP SPEC 06</title><link>/providers/operations-manuals/faq-hepspec06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/faq-hepspec06/</guid><description>
+&lt;h2 id="transition-to-hep-spec-a-new-cpu-benchmark">Transition to HEP SPEC, a new CPU benchmark&lt;/h2>
+&lt;h3 id="q1-why-adopting-hep-spec-06">Q1: Why adopting HEP SPEC 06?&lt;/h3>
+&lt;p>The traditional si2k CPU benchmark is now obsolete and it is time to move to HEP
+SPEC, a new CPU benchmark that will replace si2k and will become the reference
+benchmark for accounting purposes.&lt;/p>
+&lt;p>Detailed description of the reasons are provided on the
+&lt;a href="http://indico.cern.ch/getFile.py/access?contribId=3&amp;amp;sessionId=0&amp;amp;resId=0&amp;amp;materialId=0&amp;amp;confId=49388">transition to a new CPU benchmarking unit for the WLCG&lt;/a>.&lt;/p>
+&lt;h3 id="q2-what-is-hep-spec-06">Q2: What is HEP SPEC 06?&lt;/h3>
+&lt;p>The &lt;strong>HEP-SPEC06 benchmark&lt;/strong> is designed to scale with the performances of the
+high-energy physics codes on similar machines. The goal was to have an accuracy
+of ± 5% but for the moment the agreement is significantly higher.&lt;/p>
+&lt;p>The measurement of HEP-SPEC repeated on identical machines varies less than 1%.
+If the computing machines are similar, i.e. same processors and at least 2 GB
+per core, the results obtained are very close, within some percent, so that it
+is unnecessary to perform measures on all computing hosts. It is enough to do
+the measurement for one type of processor and consider it valid for all the
+machines with the same processor.&lt;/p>
+&lt;p>If you are using different OS and specially different compilers, the data will
+change.&lt;/p>
+&lt;h3 id="q3-where-can-i-find-information-about-hep-spec-06-measurements">Q3: Where can I find information about HEP SPEC 06 measurements?&lt;/h3>
+&lt;p>Some example results are available on the
+&lt;a href="http://w3.hepix.org/benchmarking.html">HEPIX group-page&lt;/a>, where one can see the
+differences between gcc3.4.x and gcc4.1.x.&lt;/p>
+&lt;p>Additional results tables are available from various EGI partners:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.gridpp.ac.uk/wiki/HEPSPEC06">GRIDPP&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>If you don&amp;rsquo;t find your computing machine in that table, then it is better to try
+to do the measurement because extrapolating the results increases further the
+error.&lt;/p>
+&lt;h3 id="q4-how-can-i-run-the-hep-spec-06-benchmark">Q4: How can I run the HEP SPEC 06 benchmark?&lt;/h3>
+&lt;p>If you want to make HEP-SPEC06 on your own own, detailed instructions are
+available at
+&lt;a href="https://twiki.cern.ch/twiki/bin/view/FIOgroup/TsiBenchHEPSPECWlcg">CERN wiki&lt;/a>.&lt;/p>
+&lt;p>In Short you need the following:&lt;/p>
+&lt;ol>
+&lt;li>A machine with any version of Linux compatible with Scientific Linux (RHEL,
+SL, SLC, CentOS)&lt;/li>
+&lt;li>The gcc compiler should be installed&lt;/li>
+&lt;li>Configuration files and run script (available as a gzipped tar archive from
+the CERN Wiki). The archive&amp;rsquo;s md5sum is 9fed92b8d515b88904705f76809c4028&lt;/li>
+&lt;li>A tar ball of the SPECcpu2006 DVD called &lt;code>SPEC2006_v11.tar.bz2&lt;/code> that should
+be in the same directory as the run script&lt;/li>
+&lt;/ol>
+&lt;h3 id="q5-my-site-already-adopted-hep-spec-06-do-i-still-need-to-publish-specint2000">Q5: My site already adopted HEP SPEC 06. Do I still need to publish SpecInt2000?&lt;/h3>
+&lt;p>The transition to HEP-SPEC does not eliminate the need to publish the computing
+power in SpecInt2000 (due to backward compatibility with sites not publishing
+yet HEP-SPEC). In this case you may calculate the value SpecInt2000 starting
+from HEP-SPEC through the following relation:&lt;/p>
+&lt;ul>
+&lt;li>value_kSI2K = value_HEP-SPEC / 4 (or value_HEP-SPEC = 4 * value_kSI2K)&lt;/li>
+&lt;/ul>
+&lt;p>For the &lt;code>GlueHostBenchmarkSI00&lt;/code> attribute in the GLUE v1.3 schema the following
+relation is easier to use:&lt;/p>
+&lt;ul>
+&lt;li>value_SI00 = value_HEP-SPEC * 250 rounded to the nearest integer&lt;/li>
+&lt;/ul>
+&lt;h3 id="q6-how-are-hep-spec-06-results-set-in-yaim">Q6: How are HEP SPEC 06 results set in YAIM?&lt;/h3>
+&lt;p>The YAIM variable &lt;code>CE_OTHERDESCR&lt;/code> is used to set the
+&lt;code>GlueHostProcessorOtherDescription&lt;/code> attribute. The value of this variable MUST
+be defined in your &lt;code>site-info.def&lt;/code> file as:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">Cores&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;CE_LOGCPU/CE_PHYSICALCPU&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>, &lt;span style="color:#000">Benchmark&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;value&amp;gt;-HEP-SPEC06&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>where the ratio &lt;code>CE_LOGCPU&lt;/code> / &lt;code>CE_PHYSICALCPU&lt;/code> means the average number of cores
+per physical CPU in a sub-cluster; in the case of (slightly) heterogeneous
+sub-clusters it could be non-integer. The second value of this attribute MUST be
+published only in the case the CPU power of the sub-cluster has been computed
+using the HEP-SPEC06 benchmark. The Benchmark value must be the average
+HEP_SPEC06 result per core, in the sub-cluster.&lt;/p>
+&lt;p>These variables are set in your &lt;code>site-info.def&lt;/code> file. After this, the variables
+need to be published by the CE&amp;rsquo;s resource BDII, configured e.g. by standard YAIM
+commands.&lt;/p>
+&lt;p>The total CPU capacity of the cluster is computed as Benchmark * &lt;code>CE_LOGCPU&lt;/code>.&lt;/p></description></item><item><title>Providers: HOWTO01 Using IGTF CA distribution</title><link>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</guid><description>
 &lt;p>To ensure interoperability within and outside of EGI, the
 &lt;a href="https://documents.egi.eu/document/2930">Policy on Acceptable Authentication Assurance&lt;/a>
 defined a common set of trust anchors (in a PKIX implementation &amp;ldquo;Certification
@@ -2356,8 +2428,7 @@ tags (i.e. LCG-2 LCG-2_1_0 LCG-2_1_1 LCG-2_2_0 LCG-2_3_0 LCG-2_3_1 LCG-2_4_0
 LCG-2_5_0 LCG-2_6_0 LCG-2_7_0 GLITE-3_0_0 GLITE-3_1_0 GLITE-3_2_0 R-GMA).&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;code>GlueHostProcessorOtherDescription&lt;/code> (see
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_HEP_SPEC06">FAQ HEP SPEC06&lt;/a>)&lt;/li>
+&lt;li>&lt;code>GlueHostProcessorOtherDescription&lt;/code> (see &lt;a href="../faq-hepspec06">FAQ HEP SPEC06&lt;/a>)&lt;/li>
 &lt;li>&lt;code>GlueHostOperatingSystemName&lt;/code>, &lt;code>GlueHostOperatingSystemVersion&lt;/code> and
 &lt;code>GlueHostOperatingSystemRelease&lt;/code> (see
 &lt;a href="#publishing-the-os-name">publishing the OS name&lt;/a>).&lt;/li>
