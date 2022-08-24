@@ -75,8 +75,7 @@ installed in the internet browser, or the local machine&amp;rsquo;s certificate 
 &lt;p>Users can access the system as soon as they are authenticated. However, they
 will only be able to update information based on their roles. More information
 about roles and associated permission is available in the
-&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles">&lt;em>Users and roles&lt;/em>&lt;/a>
-section of the documentation.&lt;/p>
+&lt;a href="../users-roles">&lt;em>Users and roles&lt;/em>&lt;/a> section of the documentation.&lt;/p>
 &lt;p>Applications requesting a specific role have to be validated by parent roles or
 administrators. Once granted, users can access and/or modify relevant
 information, according to the roles granted to them.&lt;/p>
@@ -187,7 +186,7 @@ published in the BDII&lt;/li>
 will also be monitored if the &amp;ldquo;Monitored&amp;rdquo; flag is set.&lt;/p>
 &lt;p>For having more information about managing the Service endpoints in the
 Configuration Database, please consult the
-&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Service_Endpoints">service endpoints documentation&lt;/a>.&lt;/p>
+&lt;a href="../service-entities">service endpoints documentation&lt;/a>.&lt;/p>
 &lt;h2 id="retrieving-the-information">Retrieving the information&lt;/h2>
 &lt;p>For retrieving the queue URL from the BDII, you can use the command
 &lt;code>lcg-infosites&lt;/code>, to be executed from an UI. Be sure to query a production Top
@@ -402,7 +401,7 @@ affecting sites selected using a filter. The downtimes notifications can be sent
 by email, RSS and iCal, allowing to easily integrate with your calendar.&lt;/p>
 &lt;h3 id="adding-downtimes">Adding downtimes&lt;/h3>
 &lt;p>Provided you have proper permissions (check the
-&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Permissions_associated_to_roles">permissions matrix&lt;/a>
+&lt;a href="../users-roles/managing-roles/#permissions-associated-to-roles">permissions matrix&lt;/a>
 section), you can add a downtime by clicking on the &lt;code>Add Downtime&lt;/code> link in the
 sidebar.&lt;/p>
 &lt;p>This is done in 2 steps:&lt;/p>
@@ -993,8 +992,7 @@ characters that cannot be expressed in printable 7-bit ASCII. For a list of
 allowed chars.&lt;/p>
 &lt;p>To supply multiple or alternate DN(s) for a service, for example of the multiple
 hosts supporting a single Service entity, see
-&lt;code>https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#HostDN&lt;/code> (link to
-old EGI Wiki)&lt;/p>
+&lt;a href="../extension-properties/#standard-extension-properties">strandard extension properties&lt;/a>.&lt;/p>
 &lt;h3 id="production-flag-tf">&amp;ldquo;production&amp;rdquo; flag (t/f)&lt;/h3>
 &lt;p>The Service entities' Production flag indicates if this service delivers a
 production quality service to the infrastructure it belongs to (EGI).&lt;/p>
