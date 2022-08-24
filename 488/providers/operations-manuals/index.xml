@@ -2749,91 +2749,7 @@ $ gsissh USER@HOST -p &lt;span style="color:#0000cf;font-weight:bold">2222&lt;/s
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ globusrun -a -r HOST:2119
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Check job submission:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ globusrun -s -r HOST:2119 &lt;span style="color:#4e9a06">&amp;#34;&amp;amp;(executable=&amp;#34;&lt;/span>/bin/date&lt;span style="color:#4e9a06">&amp;#34;)&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="unicore-checks">Unicore checks&lt;/h3>
-&lt;p>This testing manual assumes that the test instance has not been added to the
-“Global” registry. “Global” registry does not have to be global (for the whole
-infrastructure) - is a register used by a group of site which work together. For
-example each Resource Infrastructure Provider can have own “Global” registry.&lt;/p>
-&lt;p>It is suggested to add the instance to the “Global” registry only if it was
-tested and works properly. For this reason this instruction refers to the local
-registry.&lt;/p>
-&lt;h4 id="preliminary-testing">Preliminary testing&lt;/h4>
-&lt;p>After installation and configuration, start all the services and see if
-functioning properly. To avoid errors/warnings in the logs first start the TSI
-and the Gateway and then the Unicore/X (requires two other servers to operate).
-The first step of verification is to verify proper configuration of log files
-for all services whether they running. Logs for Unicore/X and Gateway are in
-standard locations &lt;code>/var/log/unicore/unicorex/unicorex.log&lt;/code> and
-&lt;code>/var/log/unicore/gateway/gateway.log&lt;/code>. In the case where there is no log file,
-check the file &lt;code>/var/log/unicore/unicorex/unicorex-startup.log&lt;/code> or
-&lt;code>/var/log/unicore/gateway/gateway-startup.log&lt;/code> - those file contain the servers'
-standard output  output, and can be useful in case of generic, system-wide
-issues as missing  Java virtual machine. Log files should be checked carefully
-for warnings and errors. They should show only the information about the start
-of the service, without any warnings (the WARN label) or errors (the ERROR
-label). In case of problems, you should proceed according to the information
-found in the log files. If they are unclear you should increase logging detail
-(for Unicore/X and Gateway). This is set in the file
-&lt;code>/etc/unicore/gateway/logging.properties&lt;/code> and
-&lt;code>/etc/unicore/unicorex/logging.properties&lt;/code>. UNICORE uses log4j logging
-subsystem. When you change the login parameters is not required to restart the
-component. After the successful initialization of all services you can begin to
-test them in practice. Please connect to the site via any UNICORE client (URC or
-UCC). Since the registration of newly created VSite was initially turned off in
-the global registry, you should use the local registry. The local registry
-address is:
-&lt;code>https://GATEWAY-ADDESS/VSITE_NAME/services/Registry?res=default_registry&lt;/code>. Is
-recommended for test script execution, which displays the user. This should be a
-user associated with the certificate.&lt;/p>
-&lt;h4 id="testing-using-the-urc">Testing using the URC&lt;/h4>
-&lt;ol>
-&lt;li>Testing should start from setting up the user&amp;rsquo;s credentials,&lt;/li>
-&lt;li>A local registry should be added in URC Grid Browser view..&lt;/li>
-&lt;li>The registry contents should be listed, by double clicking on its node. It is
-worth to enable the display of all sites by clicking on the Grid Browser the
-&amp;ldquo;Show&amp;rdquo; button and selecting from the list &amp;ldquo;All services&amp;rdquo;. If you see a red
-cross on the service, click on it and see the details of the error message in
-the URC and the error on the server-side.&lt;/li>
-&lt;li>If all services are available, you can send the job. At the same time it is
-recommended to monitor the logs Unicore/X and TSI for errors.&lt;/li>
-&lt;/ol>
-&lt;h4 id="testing-using-the-ucc">Testing using the UCC&lt;/h4>
-&lt;ol>
-&lt;li>Configure UCC credentials&lt;/li>
-&lt;li>Configure the registry in UCC preferences file (the registry property).&lt;/li>
-&lt;li>Invoke:&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">/ucc shell
-ucc&amp;gt; connect
-You can access &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> target system&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
-ucc&amp;gt; list-sites
-VSITE_NAME https://GATEWAY_ADDRESS/VSITE_NAME/services/TargetSystemService?res&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-ucc&amp;gt; list-storages
-SHARE https://GATEWAY_ADDRESS/VSITE_NAME/services/services/StorageManagement?res&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>default_storage
-ucc&amp;gt; ls u6://SHARE
-/a5063ea0-ecbe-4097-9abc-f55ec9437376
-/3f501d37-5851-4c9e-a1da-5ad7b9f16633
-/3bf169c2-2149-4564-b827-0b6560a3dd35
-...
-ucc&amp;gt; list-applications
-Applications on target system &amp;lt;VSITE_NAME&amp;gt;
-R 2.10.0
-BLAST 2.2.22
-POVRay 3.6.1
-...
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>We should get a message similar to the above. Then test the file transfer:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ucc&amp;gt; put-file -s LOCAL_FILE_PATH &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -t https://GATEWAY_ADDRESS/VSITE_NAME/services/StorageManagement?res&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>default_storage#TARGET_FILE_NAME
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>And job submission:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ucc&amp;gt; run -s VSITE_NAME JOB_FILE_PATH.u
-SUCCESSFUL &lt;span style="color:#204a87">exit&lt;/span> code: &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>If an error occurs, you can on each of these commands add the &amp;ldquo;-v&amp;rdquo; flag, what
-increases  UCC verbosity. As in the URC case it is advised to simultaneously
-monitor Unicore / Xa and TSI log files.&lt;/p>
-&lt;h5 id="after-testing">After testing&lt;/h5>
-&lt;p>If testing was successful, you can unlock the registration system in the global
-registry.&lt;/p>
-&lt;h2 id="qcg-checks">QCG checks&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="qcg-checks">QCG checks&lt;/h2>
 &lt;h3 id="qcg-computhng-checks">QCG Computhng checks&lt;/h3>
 &lt;p>The presented tests of QCG-Computing service use the qcg-comp, the client
 program for QCG-Computing, that may be installed from provided RPMS. In order to
@@ -3066,9 +2982,6 @@ Contacting voms2.grid.cesnet.cz:15002 &lt;span style="color:#ce5c00;font-weight:
 Creating proxy .............................................................................. Done
 Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Fri Nov &lt;span style="color:#0000cf;font-weight:bold">14&lt;/span> 04:59:26 &lt;span style="color:#0000cf;font-weight:bold">2014&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="openstack-compute-checks-orgopenstacknova-service-type">OpenStack Compute checks (org.openstack.nova service type)&lt;/h3>
-&lt;p>&lt;em>NOTE:&lt;/em> Prerequisite: run the following commands is the installation of the
-OpenStack CLI with VOMS extensions, as shown in
-&lt;a href="https://wiki.egi.eu/wiki/Federated_Cloud_APIs_and_SDKs#CLI_2">on the API and SDK guide&lt;/a>.&lt;/p>
 &lt;p>Export the following variables on your shell (keystone URL can be obtained from
 GOCDB URL of the endpoint)&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &amp;lt;keystone URL&amp;gt;
