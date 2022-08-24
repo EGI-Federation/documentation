@@ -78,7 +78,7 @@ EGI Foundation and other Operations Centres.
 
 The following sections covers the roles that are commonly involved in the
 operations of the EGI Infrastructure. The correspondent
-[roles defined in Configuration Database (GOCDB)](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles)
+[roles defined in Configuration Database (GOCDB)](../../../internal/configuration-database/users-roles/managing-roles/#roles)
 give specific rights in the Configuration Database itself and in other EGI
 services. There are roles whose scope is limited to the operation of a Resource
 Centre. A number of other roles act on a higher level, involving the operations
@@ -297,10 +297,10 @@ useful to test the RCs and to debug related issues.
 ### Requesting GOCDB access
 
 - Read
-  [Input System User Documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation)
+  [Input System User Documentation](../../../internal/configuration-database)
   first.
 - Go to the [Configuration Database](https://goc.egi.eu/) and follow
-  [the instruction](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles)
+  [the instruction](../../../internal/configuration-database/users-roles/managing-roles/#roles).
 
 All members **should notify their NGI operations manager** about their role
 requests, to be sure they are considered on time.

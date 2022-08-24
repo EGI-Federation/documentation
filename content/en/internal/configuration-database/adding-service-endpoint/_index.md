@@ -29,7 +29,7 @@ will also be monitored if the "Monitored" flag is set.
 
 For having more information about managing the Service endpoints in the
 Configuration Database, please consult the
-[service endpoints documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Service_Endpoints).
+[service endpoints documentation](../service-entities).
 
 ## Retrieving the information
 

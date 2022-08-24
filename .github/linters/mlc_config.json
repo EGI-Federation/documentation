@@ -43,6 +43,9 @@
       "pattern": "^https://ggus.eu/*"
     },
     {
+      "pattern": "^https://goc.egi.eu/gocdbpi"
+    },
+    {
       "pattern": "^https://helpdesk.egi.eu"
     },
     {
