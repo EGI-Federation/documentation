@@ -27,7 +27,7 @@
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;a href="../../helpdesk">Helpdesk&lt;/a> Support Unit&lt;/td>
-&lt;td>&lt;strong>EGI Services and Service Components&lt;/strong> &lt;br/> I__ Configuration Database (GOCDB)&lt;/td>
+&lt;td>&lt;strong>EGI Services and Service Components&lt;/strong> &lt;br /> I__ Configuration Database (GOCDB)&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Configuration Database entry&lt;/td>
@@ -39,7 +39,7 @@
 &lt;/tr>
 &lt;tr>
 &lt;td>Roadmap&lt;/td>
-&lt;td>&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Roadmap">Roadmap&lt;/a>&lt;/td>
+&lt;td>N/A&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Release notes&lt;/td>
