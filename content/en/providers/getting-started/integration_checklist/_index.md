@@ -37,9 +37,8 @@ Resource Centre integrated into the EGI Federation.
 
    - HTC: [pakiti](../../../internal/security-coordination/monitoring/pakiti) is
      installed and the outcome of the EGI CSIRT assessment is positive;
-   - Cloud: the
-     [EGI security Survey](https://www.surveymonkey.com/r/Cloud_Security_Questionnaire_for_Resource_Centres)
-     was sent to the EGI CSIRT and the outcome was positive.
+   - Cloud: the [EGI security Survey](https://survey.egi.eu/327232) was sent to
+     the EGI CSIRT and the outcome was positive.
 
 1. AAI:
 
