@@ -127,7 +127,7 @@ where:
     one of the existing registered URN namespaces, such as
     [`urn:geant`](https://wiki.geant.org/display/URN/URN+Namespace+Delegated+to+Other+Entities)
     and
-    [`urn:mace`](https://www.internet2.edu/products-services/trust-identity/mace-registries/urnmace-namespace/);
+    [`urn:mace`](https://incommon.org/community/mace-registries/mace-urn-registry/);
   - `<DELEGATED-NAMESPACE>` is a URN sub-namespace delegated from one of the
     IANA registered NIDs
 
