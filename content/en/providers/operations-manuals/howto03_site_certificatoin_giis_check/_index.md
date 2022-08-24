@@ -70,7 +70,7 @@ fields:
   [FAQ HEP SPEC06](https://wiki.egi.eu/wiki/FAQ_HEP_SPEC06))
 - `GlueHostOperatingSystemName`, `GlueHostOperatingSystemVersion` and
   `GlueHostOperatingSystemRelease` (see
-  [publishing the OS name below](#Publishing-the-os-name)).
+  [publishing the OS name](#publishing-the-os-name)).
 
 **Example:**
 
