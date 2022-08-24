@@ -263,13 +263,16 @@ be provided and may be added to the &lt;a href="https://docs.egi.eu/">EGI Docume
 &lt;li>Security: a security assessment of the software is required according to a
 number of guidelines defined by the EGI Security team.&lt;/li>
 &lt;/ul></description></item><item><title>Providers: Joining as a provider for existing EGI services</title><link>/providers/getting-started/joining/new-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/new-provider/</guid><description>
-&lt;p>To become a provider of one of these services, you first have to become provider
-of an EGI Foundation service within the
-&lt;a href="../federated-resource-centre">federated resources&lt;/a> block. Once such a
-foundational role is fulfilled you can configure/deploy the additional service
-within your resource centre. This first step typically requires you to become an
-EGI Cloud service provider, i.e. deploy OpenStack and federate it into the
-&lt;a href="../../../cloud-compute">EGI Cloud Compute&lt;/a> service.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/getting-started/joining/core-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/core-service/</guid><description>
+&lt;p>To become a provider of one of the
+&lt;a href="https://www.egi.eu/services/research/">Services for Research&lt;/a> already included
+in the EGI Portfolio, you first have to become provider of a &lt;a href="../federated-resource-centre">federated resource
+centre&lt;/a>: as explained in the related page, this
+first step typically requires you to become either an
+&lt;a href="../../../high-throughput-compute">EGI HTC&lt;/a> provider by deploying Compute and
+Storage capabilities, or a Cloud service provider, i.e. deploy OpenStack and
+federate it into the &lt;a href="../../../cloud-compute">EGI Cloud Compute&lt;/a> service.&lt;/p>
+&lt;p>Once such a foundational role is fulfilled you can configure/deploy the
+additional service within your resource centre.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/getting-started/joining/core-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/core-service/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;ul>
 &lt;li>With the term “central” or “core service” we refer to a category of services
