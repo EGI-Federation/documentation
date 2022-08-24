@@ -113,8 +113,7 @@ allowed chars.
 
 To supply multiple or alternate DN(s) for a service, for example of the multiple
 hosts supporting a single Service entity, see
-`https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#HostDN` (link to
-old EGI Wiki)
+[strandard extension properties](../extension-properties/#standard-extension-properties).
 
 ### "production" flag (t/f)
 
