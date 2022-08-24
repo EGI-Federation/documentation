@@ -53,6 +53,9 @@
     },
     {
       "pattern": "^https://b2drop.eudat.eu/settings/user/security"
+    },
+    {
+      "pattern": "^https://opensource.org/licenses"
     }
   ]
 }

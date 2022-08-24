@@ -19,7 +19,7 @@ printed and signed copy should be sent to `operations_at_egi.eu`
 
 To integrate your Identity Provider with the EGI Check-in service, you need to
 submit a [GGUS](https://ggus.eu) ticket indicating your request. The responsible
-support unit is [AAI Support](https://wiki.egi.eu/wiki/GGUS:AAI_SUPPORT_FAQ).
+support unit is [AAI Support](https://confluence.egi.eu/display/EGIPP/GGUS%3A+Check-in+%28AAI%29+FAQ).
 The integration follows a two-step process:
 
 1. Register your Identity Provider and test integration with the development
@@ -127,7 +127,7 @@ where:
     one of the existing registered URN namespaces, such as
     [`urn:geant`](https://wiki.geant.org/display/URN/URN+Namespace+Delegated+to+Other+Entities)
     and
-    [`urn:mace`](https://www.internet2.edu/products-services/trust-identity/mace-registries/urnmace-namespace/);
+    [`urn:mace`](https://incommon.org/community/mace-registries/mace-urn-registry/);
   - `<DELEGATED-NAMESPACE>` is a URN sub-namespace delegated from one of the
     IANA registered NIDs
 
@@ -345,7 +345,3 @@ following table (see also
 <!--
 // jscpd:ignore-end
 -->
-
-## Integration success stories
-
-- [EGI AAI integration with ELIXIR](https://wiki.egi.eu/wiki/EGI_AAI_integration_with_ELIXIR_AAI)
