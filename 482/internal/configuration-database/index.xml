@@ -85,7 +85,7 @@ institutional account, users need to:&lt;/p>
 &lt;ol>
 &lt;li>Have their Identity Provider (IdP) federated in EGI Check-in (via
 &lt;a href="https://edugain.org/">eduGAIN&lt;/a> or directly).&lt;/li>
-&lt;li>Have created an &lt;a href="../../../users/check-in/signup">EGI Check-in account&lt;/a>.&lt;/li>
+&lt;li>Have created an &lt;a href="../../../users/aai/check-in/signup">EGI Check-in account&lt;/a>.&lt;/li>
 &lt;/ol>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
