@@ -584,10 +584,6 @@ Your proxy is valid until Fri Nov 14 04:59:26 2014
 
 ### OpenStack Compute checks (org.openstack.nova service type)
 
-_NOTE:_ Prerequisite: run the following commands is the installation of the
-OpenStack CLI with VOMS extensions, as shown in
-[on the API and SDK guide](https://wiki.egi.eu/wiki/Federated_Cloud_APIs_and_SDKs#CLI_2).
-
 Export the following variables on your shell (keystone URL can be obtained from
 GOCDB URL of the endpoint)
 
