@@ -38,8 +38,8 @@ The difference between D and D' users is that:
 
 #### At Site level
 
-- Site Administrator - person responsible of maintaining a grid site and
-  associated information in GOCDB (C Level)
+- Site Administrator - person responsible of maintaining a site and associated
+  information in the EGI Configuration Database (C Level)
 - Site Security officer - official security contact point at site level (C'
   Level)
 - Site Operations Deputy Manager - The deputy manager of operations at a site
@@ -67,8 +67,8 @@ The difference between D and D' users is that:
 
 ## Permissions associated to roles
 
-GOCDB roles and permissions are based on whether the considered object is owned
-or not. In the table below the following definitions apply:
+Roles and permissions are based on whether the considered object is owned or
+not. In the table below the following definitions apply:
 
 - **Owned group**: a group on which the role applies (ROC, NGI, project)
 - **Owned site**: a site on which the role applies, or belonging to an owned
@@ -77,8 +77,6 @@ or not. In the table below the following definitions apply:
 
 Each role has a set of associated permissions which apply on the role's scope
 (site, region or project). Main permissions are summarised in the table below
-
-<!-- markdownlint-disable no-inline-html -->
 
 | Action                                              | A) Unregistered users | B) Registered users with no role | C) Site level users | C' ) Site Management Level Users | D) NGI level users | D' ) NGI Management Level Users | E) Project level users |
 | --------------------------------------------------- | --------------------- | -------------------------------- | ------------------- | -------------------------------- | ------------------ | ------------------------------- | ---------------------- |
@@ -121,8 +119,6 @@ Each role has a set of associated permissions which apply on the role's scope
 | Revoke an existing role on an owned object          | irr.                  | irr.                             | no                  | yes                              | no                 | yes                             | irr.                   |
 | Revoke an existing role on a non owned object       | no                    | no                               | no                  | no                               | no                 | no                              | no                     |
 | Retrieve an existing account/ change certificate DN | yes                   | yes                              | yes                 | yes                              | yes                | yes                             | yes                    |
-
-<!-- markdownlint-enable no-inline-html -->
 
 ## Requesting roles for your account
 

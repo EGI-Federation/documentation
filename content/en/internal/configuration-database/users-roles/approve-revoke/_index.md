@@ -12,17 +12,18 @@ someone who has the proper permissions to grant such a role. If you request a
 role on a given entity, any user with a valid role on that entity or above will
 be able to approve your request.
 
-*Example* - If you request a "site administrator" role on site X, then the
+_Example_ - If you request a "site administrator" role on site X, then the
 following users can approve your request:
 
 - site administrators and security officers of site X
 - regional operations staff, managers and deputies of the
-[Operations Centre](https://confluence.egi.eu/display/EGIG/Operations+Centre)
-to which site X belongs
+  [Operations Centre](https://confluence.egi.eu/display/EGIG/Operations+Centre)
+  to which site X belongs
 - GOCDB admins
 
-Role requests you can approve are listed on the **Manage roles** page (accessible
-by clicking the **Manage roles** link in the user status panel in the sidebar).
+Role requests you can approve are listed on the **Manage roles** page
+(accessible by clicking the **Manage roles** link in the user status panel in
+the sidebar).
 
 In order to approve or decline role requests, simply click on the **accept** or
 **deny** links in front of each role request.
