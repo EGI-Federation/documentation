@@ -94,7 +94,7 @@ Infrastructure.&lt;/li>
 &lt;h2 id="roles">Roles&lt;/h2>
 &lt;p>The following sections covers the roles that are commonly involved in the
 operations of the EGI Infrastructure. The correspondent
-&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles">roles defined in Configuration Database (GOCDB)&lt;/a>
+&lt;a href="../../../internal/configuration-database/users-roles/managing-roles/#roles">roles defined in Configuration Database (GOCDB)&lt;/a>
 give specific rights in the Configuration Database itself and in other EGI
 services. There are roles whose scope is limited to the operation of a Resource
 Centre. A number of other roles act on a higher level, involving the operations
@@ -265,10 +265,10 @@ useful to test the RCs and to debug related issues.&lt;/p>
 &lt;h3 id="requesting-gocdb-access">Requesting GOCDB access&lt;/h3>
 &lt;ul>
 &lt;li>Read
-&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation">Input System User Documentation&lt;/a>
+&lt;a href="../../../internal/configuration-database">Input System User Documentation&lt;/a>
 first.&lt;/li>
 &lt;li>Go to the &lt;a href="https://goc.egi.eu/">Configuration Database&lt;/a> and follow
-&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles">the instruction&lt;/a>&lt;/li>
+&lt;a href="../../../internal/configuration-database/users-roles/managing-roles/#roles">the instruction&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;p>All members &lt;strong>should notify their NGI operations manager&lt;/strong> about their role
 requests, to be sure they are considered on time.&lt;/p>
