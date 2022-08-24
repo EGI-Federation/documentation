@@ -16,8 +16,7 @@ Database (GOCDB), users can either:
 Users can access the system as soon as they are authenticated. However, they
 will only be able to update information based on their roles. More information
 about roles and associated permission is available in the
-[_Users and roles_](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles)
-section of the documentation.
+[_Users and roles_](../users-roles) section of the documentation.
 
 Applications requesting a specific role have to be validated by parent roles or
 administrators. Once granted, users can access and/or modify relevant
