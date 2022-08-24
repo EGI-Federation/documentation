@@ -337,7 +337,7 @@ be subscribed to noc-managers mailing list `noc-managers@mailman.egi.eu`.
 Procedures and policies are accessible on the
 [EGI Policies and Procedures space](https://confluence.egi.eu/display/EGIPP/EGI+Federation+Procedures).
 Additional documentation relevant to EGI operations is available at
-[EGI Documentation](../../../../en)
+[EGI Documentation](../../../../en).
 
 ## Tools
 
