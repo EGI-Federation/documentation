@@ -443,9 +443,9 @@ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 #### More details
 
 - JDL language and simple jobs submission:
-  [JDLs and Job Management](http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JDLsAndJobManagementBasic/index.html)
-- Basic Submitting Parametric and MPI jobs, using DIRAC API:
-  [Advanced Job Management](http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html)
+  [JDLs and Job Management](https://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JDLsAndJobManagementBasic/index.html)
+- Basic Submitting Parametric jobs, using DIRAC API:
+  [Advanced Job Management](https://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html)
 - [Past tutorials](https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11)
 
 #### Technical Support
