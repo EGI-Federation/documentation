@@ -8,7 +8,9 @@ The pages under this section depict how to join the EGI infrastructure as a
 service providers offering innovative services to the European Research Area.
 
 > If you want to join the EGI Infrastructure as a provider, follow the
-> guidelines for [./joining].
+> guidelines for [./joining]. The
+> [Operations Start Guide](./operations-start-guide) will help starting with EGI
+> Operations duties.
 
 - Interested in integrating your service with Check-in? Head to the
   [Check-in for service providers](../check-in/sp)!
@@ -20,5 +22,3 @@ service providers offering innovative services to the European Research Area.
 - Willing to deploy a Oneprovider? Head to [DataHub](../datahub) section!
 - And if you want learn about EGI Notebooks, head to the
   [Notebooks](../notebooks) section!
-- The [Operations Start Guide](./operations-start-guide) will help you start
-  with EGI Operations duties.
