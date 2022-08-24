@@ -16,8 +16,7 @@ Database (GOCDB), users can either:
 Users can access the system as soon as they are authenticated. However, they
 will only be able to update information based on their roles. More information
 about roles and associated permission is available in the
-[_Users and roles_](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles)
-section of the documentation.
+[_Users and roles_](../users-roles) section of the documentation.
 
 Applications requesting a specific role have to be validated by parent roles or
 administrators. Once granted, users can access and/or modify relevant
@@ -30,7 +29,7 @@ institutional account, users need to:
 
 1. Have their Identity Provider (IdP) federated in EGI Check-in (via
    [eduGAIN](https://edugain.org/) or directly).
-1. Have created an [EGI Check-in account](../../../users/check-in/signup).
+1. Have created an [EGI Check-in account](../../../users/aai/check-in/signup).
 
 {{% alert title="Important" color="warning" %}} In the case the user cannot use
 an IdP compliant with [REFEDS R&S](https://refeds.org/research-and-scholarship)

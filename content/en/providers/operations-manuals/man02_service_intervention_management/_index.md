@@ -30,7 +30,7 @@ the planning of the outage, we have two types of intervention:
 Interventions are recorded through the
 [Configuration Database](../../../internal/configuration-database). For more
 information, have a look at the
-[description](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Downtimes).
+[description](../../../internal/configuration-database/downtimes).
 
 ### Scheduled interventions
 

@@ -53,7 +53,7 @@ by email, RSS and iCal, allowing to easily integrate with your calendar.
 ### Adding downtimes
 
 Provided you have proper permissions (check the
-[permissions matrix](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Permissions_associated_to_roles)
+[permissions matrix](../users-roles/managing-roles/#permissions-associated-to-roles)
 section), you can add a downtime by clicking on the `Add Downtime` link in the
 sidebar.
 
