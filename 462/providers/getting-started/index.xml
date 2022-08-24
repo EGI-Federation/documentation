@@ -7,7 +7,7 @@ policies.&lt;/p>
 deliver services for advanced computing within the EGI Infrastructure. The
 options are documented below, linking to detailed instructions:&lt;/p>
 &lt;ol>
-&lt;li>&lt;a href="../joining/federated-resource-center">Joining as a federated resource centre&lt;/a>.
+&lt;li>&lt;a href="../joining/federated-resource-centre">Joining as a federated resource centre&lt;/a>.
 A provider (that we call Resource Centre) delivering one of the following
 services: &lt;a href="https://www.egi.eu/service/cloud-compute/">Cloud Compute&lt;/a>,
 &lt;a href="https://www.egi.eu/service/high-throughput-compute/">HTC Compute&lt;/a>,

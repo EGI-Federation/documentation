@@ -1,23 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Joining EGI as a provider</title><link>/providers/getting-started/joining/</link><description>Recent content in Joining EGI as a provider on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/getting-started/joining/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Introducing a new EGI service</title><link>/providers/getting-started/joining/new-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/new-service/</guid><description>
-&lt;p>The EGI services are contributed by the
-&lt;a href="https://www.egi.eu/egi-federation/#council">EGI Council members&lt;/a>, who can
-propose new services through the
-&lt;a href="https://www.egi.eu/publication/egi-federation-service-strategy-2022-2024/">EGI Service Strategy&lt;/a>,
-that defines the overall direction to EGI services for a few years time window.
-The services are designed, validated through the EGI Community, with the help of
-the &lt;a href="https://go.egi.eu/ssb">EGI Services and Solutions Board (SSB)&lt;/a>.&lt;/p>
-&lt;p>The evolution of the services is driven by 5 Strategic Objectives (SO) which are
-based on the knowledge of the user community needs that are being gathered
-through research and innovation projects, customer interviews and analysis of
-trends. Each defines an area for possible future work, and if approved, can be
-developed into more concrete goals and intended results.&lt;/p>
-&lt;ul>
-&lt;li>SO1: Federated compute continuum&lt;/li>
-&lt;li>SO2: Federated Data Lakes and repositories&lt;/li>
-&lt;li>SO3: Data analytics and scientific tools including AI&lt;/li>
-&lt;li>SO4: Professional support and consultancy&lt;/li>
-&lt;li>SO5: Investigation of a trusted compute platform for sensitive data processing&lt;/li>
-&lt;/ul></description></item><item><title>Providers: Joining as a Federated Resource Centre</title><link>/providers/getting-started/joining/federated-resource-centre/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/federated-resource-centre/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Joining EGI as a provider</title><link>/providers/getting-started/joining/</link><description>Recent content in Joining EGI as a provider on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/getting-started/joining/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Joining as a Federated Resource Centre</title><link>/providers/getting-started/joining/federated-resource-centre/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/federated-resource-centre/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>A Resource Centre (RC) is the smallest resource administration domain in the EGI
 Federation. It can be either localised or geographically distributed and
@@ -226,7 +207,62 @@ users in the VO SLAs should be met on a monthly basis: also in this case, when a
 violation occurs, the RC is requested to provide a justification and a plan for
 improving the quality of the provided services. If repeated violations occur,
 the SLA can be renegotiated with the customer, either by changing the Service
-Level Targets, or by choosing a different RCs as a provider.&lt;/p></description></item><item><title>Providers: Joining as a provider for existing EGI services</title><link>/providers/getting-started/joining/new-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/new-provider/</guid><description>
+Level Targets, or by choosing a different RCs as a provider.&lt;/p></description></item><item><title>Providers: Joining as a Technology Provider</title><link>/providers/getting-started/joining/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/technology-provider/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Technology Providers (TP) develop or deliver technology and software for
+specific user communities or customisation for specific requirements. In our
+case, they maintain the middleware which the RCs install and that allows the
+users to exploit the compute, storage, data, and cloud resources.&lt;/p>
+&lt;h2 id="integration-of-middleware-stack">Integration of middleware stack&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Related procedure:
+&lt;a href="https://go.egi.eu/proc19">PROC19 Integration of new cloud management framework or middleware stack in the EGI Infrastructure&lt;/a>)
+&lt;/div>
+&lt;p>To assure production quality of the EGI Infrastructure, every middleware stack
+(Compute, Storage, etc.) installed on and delivered by the RCs needs to fulfil a
+number of requirements.&lt;/p>
+&lt;p>For this purpose &lt;a href="https://go.egi.eu/proc19">PROC19&lt;/a> was defined to ensure that
+any single aspect of the integration of the new piece of middleware with the
+infrastructure is covered before the conclusion of the process.&lt;/p>
+&lt;p>After the creation of the request in the
+&lt;a href="../../../../internal/helpdesk">EGI Helpdesk&lt;/a>, with details about the
+technology, the contacts, the expected customers, and the motivation, the
+integration steps cover the following areas (where possible, steps can be done
+in parallel):&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://ims.egi.eu/display/EGIG/Underpinning+agreement">Underpinning Agreement&lt;/a>
+(UA) between EGI Foundation and the technology provider
+&lt;ul>
+&lt;li>it could be either the
+&lt;a href="https://documents.egi.eu/document/2589">Corporate-level Technology Provider Underpinning Agreement&lt;/a>
+or a customised version.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Configuration Management: mapping of the new technology in the Configuration
+Management Database (CMDB)&lt;/li>
+&lt;li>Information System: evaluating if the new technology should publish
+information in the Information System according to the
+&lt;a href="http://www.ogf.org/documents/GFD.147.pdf">GLUE Schema&lt;/a>.&lt;/li>
+&lt;li>Monitoring: the new technology should allow external monitoring. If particular
+aspects of the technology need to be monitored, specific monitoring probes
+should be provided by the TPs and deployed on the
+&lt;a href="../../../../internal/monitoring">EGI Monitoring service&lt;/a>.&lt;/li>
+&lt;li>Support: the Support Unit where incidents and service requests will be
+addressed needs to be defined in the EGI Helpdesk, associated to the
+&lt;a href="https://confluence.egi.eu/display/EGISLM/Service+Level+Target+-+Quality+of+Support">Quality of Support&lt;/a>
+defined in the UA.&lt;/li>
+&lt;li>Accounting: the need to gather usage data, which depends on the technology
+itself and on the infrastructure requirements and will be published in the
+&lt;a href="https://accounting.egi.eu/">EGI Accounting Portal&lt;/a>.&lt;/li>
+&lt;li>Integration in UMD: the Unified Middleware Distribution is the integrated set
+of software components contributed by Technology Providers and packaged for
+deployment as production quality services in EGI.&lt;/li>
+&lt;li>Documentation: exhaustive documentation for RC administrators and users should
+be provided and may be added to the &lt;a href="https://docs.egi.eu/">EGI Documentation&lt;/a>.&lt;/li>
+&lt;li>Security: a security assessment of the software is required according to a
+number of guidelines defined by the EGI Security team.&lt;/li>
+&lt;/ul></description></item><item><title>Providers: Joining as a provider for existing EGI services</title><link>/providers/getting-started/joining/new-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/new-provider/</guid><description>
 &lt;p>To become a provider of one of these services, you first have to become provider
 of an EGI Foundation service within the
 &lt;a href="../federated-resource-center">federated resources&lt;/a> block. Once such a
@@ -385,59 +421,23 @@ having key staff properly trained about IT Service Management, committing to
 continual improvement and having their
 &lt;a href="https://confluence.egi.eu/display/EGIG/Service+management+system">Service Management System (SMS)&lt;/a>
 interfacing with the EGI SMS, especially for important processes like the Change
-Management process.&lt;/p></description></item><item><title>Providers: Joining as a Technology Provider</title><link>/providers/getting-started/joining/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/technology-provider/</guid><description>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>Technology Providers (TP) develop or deliver technology and software for
-specific user communities or customisation for specific requirements. In our
-case, they maintain the middleware which the RCs install and that allows the
-users to exploit the compute, storage, data, and cloud resources.&lt;/p>
-&lt;h2 id="integration-of-middleware-stack">Integration of middleware stack&lt;/h2>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-Related procedure:
-&lt;a href="https://go.egi.eu/proc19">PROC19 Integration of new cloud management framework or middleware stack in the EGI Infrastructure&lt;/a>)
-&lt;/div>
-&lt;p>To assure production quality of the EGI Infrastructure, every middleware stack
-(Compute, Storage, etc.) installed on and delivered by the RCs needs to fulfil a
-number of requirements.&lt;/p>
-&lt;p>For this purpose &lt;a href="https://go.egi.eu/proc19">PROC19&lt;/a> was defined to ensure that
-any single aspect of the integration of the new piece of middleware with the
-infrastructure is covered before the conclusion of the process.&lt;/p>
-&lt;p>After the creation of the request in the
-&lt;a href="../../../../internal/helpdesk">EGI Helpdesk&lt;/a>, with details about the
-technology, the contacts, the expected customers, and the motivation, the
-integration steps cover the following areas (where possible, steps can be done
-in parallel):&lt;/p>
+Management process.&lt;/p></description></item><item><title>Providers: Introducing a new EGI service</title><link>/providers/getting-started/joining/new-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/new-service/</guid><description>
+&lt;p>The EGI services are contributed by the
+&lt;a href="https://www.egi.eu/egi-federation/#council">EGI Council members&lt;/a>, who can
+propose new services through the
+&lt;a href="https://www.egi.eu/publication/egi-federation-service-strategy-2022-2024/">EGI Service Strategy&lt;/a>,
+that defines the overall direction to EGI services for a few years time window.
+The services are designed, validated through the EGI Community, with the help of
+the &lt;a href="https://go.egi.eu/ssb">EGI Services and Solutions Board (SSB)&lt;/a>.&lt;/p>
+&lt;p>The evolution of the services is driven by 5 Strategic Objectives (SO) which are
+based on the knowledge of the user community needs that are being gathered
+through research and innovation projects, customer interviews and analysis of
+trends. Each defines an area for possible future work, and if approved, can be
+developed into more concrete goals and intended results.&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://ims.egi.eu/display/EGIG/Underpinning+agreement">Underpinning Agreement&lt;/a>
-(UA) between EGI Foundation and the technology provider
-&lt;ul>
-&lt;li>it could be either the
-&lt;a href="https://documents.egi.eu/document/2589">Corporate-level Technology Provider Underpinning Agreement&lt;/a>
-or a customised version.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Configuration Management: mapping of the new technology in the Configuration
-Management Database (CMDB)&lt;/li>
-&lt;li>Information System: evaluating if the new technology should publish
-information in the Information System according to the
-&lt;a href="http://www.ogf.org/documents/GFD.147.pdf">GLUE Schema&lt;/a>.&lt;/li>
-&lt;li>Monitoring: the new technology should allow external monitoring. If particular
-aspects of the technology need to be monitored, specific monitoring probes
-should be provided by the TPs and deployed on the
-&lt;a href="../../../../internal/monitoring">EGI Monitoring service&lt;/a>.&lt;/li>
-&lt;li>Support: the Support Unit where incidents and service requests will be
-addressed needs to be defined in the EGI Helpdesk, associated to the
-&lt;a href="https://confluence.egi.eu/display/EGISLM/Service+Level+Target+-+Quality+of+Support">Quality of Support&lt;/a>
-defined in the UA.&lt;/li>
-&lt;li>Accounting: the need to gather usage data, which depends on the technology
-itself and on the infrastructure requirements and will be published in the
-&lt;a href="https://accounting.egi.eu/">EGI Accounting Portal&lt;/a>.&lt;/li>
-&lt;li>Integration in UMD: the Unified Middleware Distribution is the integrated set
-of software components contributed by Technology Providers and packaged for
-deployment as production quality services in EGI.&lt;/li>
-&lt;li>Documentation: exhaustive documentation for RC administrators and users should
-be provided and may be added to the &lt;a href="https://docs.egi.eu/">EGI Documentation&lt;/a>.&lt;/li>
-&lt;li>Security: a security assessment of the software is required according to a
-number of guidelines defined by the EGI Security team.&lt;/li>
+&lt;li>SO1: Federated compute continuum&lt;/li>
+&lt;li>SO2: Federated Data Lakes and repositories&lt;/li>
+&lt;li>SO3: Data analytics and scientific tools including AI&lt;/li>
+&lt;li>SO4: Professional support and consultancy&lt;/li>
+&lt;li>SO5: Investigation of a trusted compute platform for sensitive data processing&lt;/li>
 &lt;/ul></description></item></channel></rss>
