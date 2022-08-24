@@ -136,8 +136,8 @@ provide the following information to connect your service to EGI Check-in:
    - have a size larger than 40000 and smaller than 50000 characters when
      encoded in base64
 1. Country of the service
-1. Compliance with the
-   [EGI Policies](https://go.egi.eu/policies-and-procedures) and the
+1. Compliance with the [EGI Policies](https://go.egi.eu/policies-and-procedures)
+   and the
    [GÉANT Data Protection Code of Conduct](https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home)
 
 The most important URLs for each environment are listed in the table below but
@@ -1668,9 +1668,7 @@ the selected authentication mechanism as follows:
 
 #### Background
 
-GOCDB roles, as per
-[GOCDB documentations](https://wiki.egi.eu/wiki/GOCDB/PI/get_user_method), are
-encoded (`eduPersonEntitlement` attribute values in SAML or
+GOCDB roles are encoded (`eduPersonEntitlement` attribute values in SAML or
 `eduperson_entitlement` claim in OIDC). These entitlements are typically used to
 indicate access rights to protected resources. Entitlements are multi-valued,
 with each value formatted as a URN.
