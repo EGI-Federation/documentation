@@ -2360,7 +2360,7 @@ LCG-2_5_0 LCG-2_6_0 LCG-2_7_0 GLITE-3_0_0 GLITE-3_1_0 GLITE-3_2_0 R-GMA).&lt;/li
 &lt;a href="https://wiki.egi.eu/wiki/FAQ_HEP_SPEC06">FAQ HEP SPEC06&lt;/a>)&lt;/li>
 &lt;li>&lt;code>GlueHostOperatingSystemName&lt;/code>, &lt;code>GlueHostOperatingSystemVersion&lt;/code> and
 &lt;code>GlueHostOperatingSystemRelease&lt;/code> (see
-&lt;a href="#Publishing-the-os-name">publishing the OS name below&lt;/a>).&lt;/li>
+&lt;a href="#publishing-the-os-name">publishing the OS name&lt;/a>).&lt;/li>
 &lt;/ul>
 &lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H &lt;span style="color:#4e9a06">`&lt;/span>&amp;lt;ldap://virgo-ce.roma1.infn.it:2170&amp;gt;&lt;span style="color:#4e9a06">`&lt;/span> &lt;span style="color:#4e9a06">\
