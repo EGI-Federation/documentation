@@ -68,8 +68,7 @@ fields:
     LCG-2_5_0 LCG-2_6_0 LCG-2_7_0 GLITE-3_0_0 GLITE-3_1_0 GLITE-3_2_0 R-GMA).
   - If the site supports MPI, check
     [MAN03](https://wiki.egi.eu/wiki/MAN03_MPI-Start_Installation_and_Configuration#Information_System)
-- `GlueHostProcessorOtherDescription` (see
-  [FAQ HEP SPEC06](https://wiki.egi.eu/wiki/FAQ_HEP_SPEC06))
+- `GlueHostProcessorOtherDescription` (see [FAQ HEP SPEC06](../faq-hepspec06))
 - `GlueHostOperatingSystemName`, `GlueHostOperatingSystemVersion` and
   `GlueHostOperatingSystemRelease` (see
   [HOWTO05](https://wiki.egi.eu/wiki/HOWTO05_How_to_publish_the_OS_name))
