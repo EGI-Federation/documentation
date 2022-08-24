@@ -300,7 +300,7 @@ useful to test the RCs and to debug related issues.
   [Input System User Documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation)
   first.
 - Go to the [Configuration Database](https://goc.egi.eu/) and follow
-  [the instruction](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles)
+  [the instruction](../../../internal/configuration-database/users-roles).
 
 All members **should notify their NGI operations manager** about their role
 requests, to be sure they are considered on time.
