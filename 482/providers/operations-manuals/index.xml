@@ -795,7 +795,7 @@ failure&lt;/li>
 &lt;p>Interventions are recorded through the
 &lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>. For more
 information, have a look at the
-&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Downtimes">description&lt;/a>.&lt;/p>
+&lt;a href="../../../internal/configuration-database/downtimes">description&lt;/a>.&lt;/p>
 &lt;h3 id="scheduled-interventions">Scheduled interventions&lt;/h3>
 &lt;ul>
 &lt;li>Scheduled interventions &lt;strong>MUST&lt;/strong> be declared at least 24 h in advance,
