@@ -1,6 +1,7 @@
 ---
 title: "Service Types"
 weight: 30
+type: "docs"
 description: >-
   Description of Service types.
 ---
