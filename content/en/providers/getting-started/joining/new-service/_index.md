@@ -10,8 +10,8 @@ The EGI services are contributed by the
 propose new services through the
 [EGI Service Strategy](https://www.egi.eu/publication/egi-federation-service-strategy-2022-2024/),
 that defines the overall direction to EGI services for a few years time window.
-The services are designed, validated through the EGI Community, with the help of
-the [EGI Services and Solutions Board (SSB)](https://go.egi.eu/ssb).
+The services are designed, validated with the EGI Community, and with the help
+of the [EGI Services and Solutions Board (SSB)](https://go.egi.eu/ssb).
 
 The evolution of the services is driven by 5 Strategic Objectives (SO) which are
 based on the knowledge of the user community needs that are being gathered
@@ -24,3 +24,6 @@ developed into more concrete goals and intended results.
 - SO3: Data analytics and scientific tools including AI
 - SO4: Professional support and consultancy
 - SO5: Investigation of a trusted compute platform for sensitive data processing
+
+> If you want to propose a new service, you should approach your national EGI
+> Council member, or fallback to the [EGI SSB](https://go.egi.eu/ssb).
