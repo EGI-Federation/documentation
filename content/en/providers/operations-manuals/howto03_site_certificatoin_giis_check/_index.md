@@ -66,8 +66,7 @@ fields:
     'LCG-2', the current middleware version and the list of previous middleware
     tags (i.e. LCG-2 LCG-2_1_0 LCG-2_1_1 LCG-2_2_0 LCG-2_3_0 LCG-2_3_1 LCG-2_4_0
     LCG-2_5_0 LCG-2_6_0 LCG-2_7_0 GLITE-3_0_0 GLITE-3_1_0 GLITE-3_2_0 R-GMA).
-- `GlueHostProcessorOtherDescription` (see
-  [FAQ HEP SPEC06](https://wiki.egi.eu/wiki/FAQ_HEP_SPEC06))
+- `GlueHostProcessorOtherDescription` (see [FAQ HEP SPEC06](../faq-hepspec06))
 - `GlueHostOperatingSystemName`, `GlueHostOperatingSystemVersion` and
   `GlueHostOperatingSystemRelease` (see
   [publishing the OS name](#publishing-the-os-name)).
