@@ -29,7 +29,7 @@ institutional account, users need to:
 
 1. Have their Identity Provider (IdP) federated in EGI Check-in (via
    [eduGAIN](https://edugain.org/) or directly).
-1. Have created an [EGI Check-in account](../../../users/check-in/signup).
+1. Have created an [EGI Check-in account](../../../users/aai/check-in/signup).
 
 {{% alert title="Important" color="warning" %}} In the case the user cannot use
 an IdP compliant with [REFEDS R&S](https://refeds.org/research-and-scholarship)
