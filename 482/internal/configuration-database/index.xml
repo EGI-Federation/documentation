@@ -1153,10 +1153,6 @@ system.&lt;/li>
 (Regional Service) Site-level SAM monitoring box&lt;/li>
 &lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;service_type=ngi.OpsPortal">ngi.OpsPortal&lt;/a>:
 (Regional service) NGI-level regional operations portal instance&lt;/li>
-&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;service_type=eu.egi.MPI">eu.egi.MPI&lt;/a>:
-Defines a dummy Service Type to enable the running of MPI tests for services
-providing MPI capabilities. Sites must have one instance of this Service Type
-associated with a CE service.&lt;/li>
 &lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;service_type=argo.poem">argo.poem&lt;/a>:
 POEM is system for managing profiles of probes and metrics in ARGO system.&lt;/li>
 &lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;service_type=argo.mon">argo.mon&lt;/a>:
