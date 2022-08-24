@@ -116,51 +116,7 @@ also disallows single quotes in all Relative Distinguished Name (RDN)
 components, and the OGF Certificate Authority Working Group (CAOPS) who strongly
 discourage any type of quote in a certificate DN as specified by their
 &lt;a href="https://www.ogf.org/documents/GFD.125.pdf">Grid Certificate Profile&lt;/a> document.&lt;/p>
-&lt;/div></description></item><item><title>Internal: Adding a new Project</title><link>/internal/configuration-database/adding-new-projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-new-projects/</guid><description>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>GOCDB, the software powering the EGI Configuration Database, is multi-tenanted;
-it can host multiple projects in the same instance. There are a number of
-different deployment scenarios that can be used to support new projects detailed
-below. Please contact the EGI Configuration Database admins and EGI Operations
-to discuss the options available.&lt;/p>
-&lt;h2 id="1-add-resources-sitesservices-to-an-existing-project">1) Add resources (sites/services) to an existing project&lt;/h2>
-&lt;ul>
-&lt;li>Resources (NGIs, Sites, Services) would be hosted under an existing project,
-e.g. the ‘EGI’ project.&lt;/li>
-&lt;li>The new resources would be subject to the rules of the existing project, such
-as site certification status changes and project controlled user memberships.&lt;/li>
-&lt;li>The resources could not be filtered using a custom scope tag.&lt;/li>
-&lt;/ul>
-&lt;h2 id="2-add-resources-sitesservices-to-an-existing-project-and-add-a-new-scope-tag-to-represent-a-sub-grouping">2) Add resources (sites/services) to an existing project and add a new Scope tag to represent a sub-grouping&lt;/h2>
-&lt;ul>
-&lt;li>Resources would be hosted under an existing project, and a new scope tag would
-be added for the purposes of resource filtering.&lt;/li>
-&lt;li>Since the resources are still hosted under an existing project, the new
-resources would still be subject to the rules of the existing project, such as
-site certification status changes and project controlled user memberships.&lt;/li>
-&lt;li>The resources could be filtered using the new scope tag, but this scope tag
-would not strictly represent a project, rather a sub-grouping under the
-existing project, e.g.&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
-projects and sub-groups:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="3-add-resources-sitesservices-to-a-new-project-and-add-a-new-scope-tag-to-filter-by-project">3) Add resources (sites/services) to a new Project and add a new Scope tag to filter by project&lt;/h2>
-&lt;ul>
-&lt;li>Resources would be hosted under a new project, and a new scope tag would be
-added named after the project for the purposes of resource filtering.&lt;/li>
-&lt;li>The resources would not be subject to the rules of other projects, for
-example, allowing the project to control its site certification status changes
-and project controlled user memberships.&lt;/li>
-&lt;li>The resources could be filtered using the scope tag named after the new
-project, e.g.&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
-projects:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
+&lt;/div></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
 &lt;p>For monitoring purposes, each service endpoints registered into the
 Configuration Database, and having the flags &lt;em>production&lt;/em> and &lt;em>monitored&lt;/em> should
 include the endpoint URL information in order to be contacted by the
@@ -637,48 +593,7 @@ hosts supporting a single service entry, the Service Extension Property
 contain one or more x.509 DN values. Multiple values MUST be delimited by
 enclosing each within &amp;ldquo;&amp;lt;&amp;gt;&amp;rdquo; characters. If Ext &amp;ldquo;HostDN&amp;rdquo; is present, the Service
 &amp;ldquo;Host DN&amp;rdquo; SHOULD contain the x.509 SubjectAltName used in the X509
-certificate(s) presented by the hosts identified by the Ext &amp;ldquo;HostDN&amp;rdquo; values.&lt;/p></description></item><item><title>Internal: FAQ</title><link>/internal/configuration-database/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/faq/</guid><description>
-&lt;h2 id="i-am-responsible-for-a-site-that-has-recently-entered-the-egi-infrastructure-how-do-i-register-it">I am responsible for a site that has recently entered the EGI infrastructure. How do I register it?&lt;/h2>
-&lt;p>Only registered users with an approved role on an NGI can add a new site. If you
-are the site administrator, the first thing to do is to contact your NGI staff
-and ask them to add the site for you. Then, register to EGI Configuration
-Database (see the user account section) and ask for a site admin role for your
-site (see the requesting a role section). Once your role approved, you will be
-able to edit and change your site information.&lt;/p>
-&lt;h2 id="how-do-i-extend-a-declared-schedule-downtime">How do I extend a declared schedule downtime?&lt;/h2>
-&lt;p>Because of EGI policies it is not possible to extend a downtime. Recommended
-good practice for any downtime extension is to declare a new unscheduled
-downtime, starting just when the first one finishes. Please refer to the
-downtimes section of this documentation for more information, especially the
-&amp;ldquo;downtime extension&amp;rdquo; paragraph.&lt;/p>
-&lt;h2 id="i-have-declared-a-downtime-at-risk-and-it-turns-out-to-be-an-outage-how-can-i-declare-this-properly">I have declared a downtime &amp;ldquo;at risk&amp;rdquo;, and it turns out to be an outage. How can I declare this properly?&lt;/h2>
-&lt;p>If you have declared the downtime as being at risk and an outage actually
-happens half way through, you need to update the Configuration Database to
-reflect the fact that your site is now down. There is currently no way of doing
-this by updating the downtime on the fly without having the system considering
-the whole downtime as being an outage. The best way to proceed is:&lt;/p>
-&lt;ul>
-&lt;li>Modify end date of your &amp;ldquo;at risk&amp;rdquo; downtime, so that it ends in a few minutes&lt;/li>
-&lt;li>Enter a new &amp;ldquo;outage&amp;rdquo; downtime, starting when the other ends&lt;/li>
-&lt;/ul>
-&lt;h2 id="how-do-i-switch-monitoring-onoff-for-my-nodes">How do I switch monitoring on/off for my nodes?&lt;/h2>
-&lt;p>Monitoring status in Configuration Database cannot always be switched off. If a
-node is declared as delivering a production service, rules apply and the node
-has to be monitored. If you are running a test node and want to switch
-monitoring off, set both &amp;ldquo;monitoring&amp;rdquo; and &amp;ldquo;production&amp;rdquo; to &amp;ldquo;N&amp;rdquo;.&lt;/p>
-&lt;h2 id="why-nobody-has-approved-my-role-request-yet">Why nobody has approved my role request yet?&lt;/h2>
-&lt;p>Someone has to approve any request you make, in order to ensure nobody is trying
-to get inappropriate roles. If yours is not getting approved, this can either be
-because your request was not legitimate, or most likely because the people that
-are supposed to do it forgot about it. Please refer to the Roles permissions
-definitions section of this documentation to determine who should validate your
-role, and try to get in touch with them. If you are requesting a site admin
-role, they are likely to be your fellow site admins or your NGI operators.&lt;/p>
-&lt;h2 id="i-am-not-an-egi-user-but-need-access-to-the-backend-to-retrieve-information-for-my-project-what-can-i-do">I am not an EGI user but need access to the backend to retrieve information for my project. What can I do?&lt;/h2>
-&lt;p>Accessing the backend through another way than the
-&lt;a href="https://goc.egi.eu">Configuration Database web interface&lt;/a> is out of the scope
-of this documentation. Please refer to the technical documentation instead,
-which is available from GOCDB Documentation.&lt;/p></description></item><item><title>Internal: Managing NGIs entities</title><link>/internal/configuration-database/ngis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/ngis/</guid><description>
+certificate(s) presented by the hosts identified by the Ext &amp;ldquo;HostDN&amp;rdquo; values.&lt;/p></description></item><item><title>Internal: Managing NGIs entities</title><link>/internal/configuration-database/ngis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/ngis/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>An NGI forms a grouping of Sites in EGI Configuration Database. The
 Configuration Database stores the following information about these groups. The
@@ -1385,4 +1300,89 @@ able to reselect the tag - it will be moved to the &amp;lsquo;Protected Reserved
 list): none&lt;/li>
 &lt;li>✗ Protected Reserved Tags (Can only be assigned on request): alice atlas cms
 elixir lhcb tier1 tier2 wlcg&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Internal: Adding a new project</title><link>/internal/configuration-database/adding-new-projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-new-projects/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>GOCDB, the software powering the EGI Configuration Database, is multi-tenanted;
+it can host multiple projects in the same instance. There are a number of
+different deployment scenarios that can be used to support new projects detailed
+below. Please contact the EGI Configuration Database admins and EGI Operations
+to discuss the options available.&lt;/p>
+&lt;h2 id="1-add-resources-sitesservices-to-an-existing-project">1) Add resources (sites/services) to an existing project&lt;/h2>
+&lt;ul>
+&lt;li>Resources (NGIs, Sites, Services) would be hosted under an existing project,
+e.g. the ‘EGI’ project.&lt;/li>
+&lt;li>The new resources would be subject to the rules of the existing project, such
+as site certification status changes and project controlled user memberships.&lt;/li>
+&lt;li>The resources could not be filtered using a custom scope tag.&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-add-resources-sitesservices-to-an-existing-project-and-add-a-new-scope-tag-to-represent-a-sub-grouping">2) Add resources (sites/services) to an existing project and add a new Scope tag to represent a sub-grouping&lt;/h2>
+&lt;ul>
+&lt;li>Resources would be hosted under an existing project, and a new scope tag would
+be added for the purposes of resource filtering.&lt;/li>
+&lt;li>Since the resources are still hosted under an existing project, the new
+resources would still be subject to the rules of the existing project, such as
+site certification status changes and project controlled user memberships.&lt;/li>
+&lt;li>The resources could be filtered using the new scope tag, but this scope tag
+would not strictly represent a project, rather a sub-grouping under the
+existing project, e.g.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
+projects and sub-groups:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="3-add-resources-sitesservices-to-a-new-project-and-add-a-new-scope-tag-to-filter-by-project">3) Add resources (sites/services) to a new Project and add a new Scope tag to filter by project&lt;/h2>
+&lt;ul>
+&lt;li>Resources would be hosted under a new project, and a new scope tag would be
+added named after the project for the purposes of resource filtering.&lt;/li>
+&lt;li>The resources would not be subject to the rules of other projects, for
+example, allowing the project to control its site certification status changes
+and project controlled user memberships.&lt;/li>
+&lt;li>The resources could be filtered using the scope tag named after the new
+project, e.g.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
+projects:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Internal: FAQ</title><link>/internal/configuration-database/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/faq/</guid><description>
+&lt;h2 id="i-am-responsible-for-a-site-that-has-recently-entered-the-egi-infrastructure-how-do-i-register-it">I am responsible for a site that has recently entered the EGI infrastructure. How do I register it?&lt;/h2>
+&lt;p>Only registered users with an approved role on an NGI can add a new site. If you
+are the site administrator, the first thing to do is to contact your NGI staff
+and ask them to add the site for you. Then, register to EGI Configuration
+Database (see the user account section) and ask for a site admin role for your
+site (see the requesting a role section). Once your role approved, you will be
+able to edit and change your site information.&lt;/p>
+&lt;h2 id="how-do-i-extend-a-declared-schedule-downtime">How do I extend a declared schedule downtime?&lt;/h2>
+&lt;p>Because of EGI policies it is not possible to extend a downtime. Recommended
+good practice for any downtime extension is to declare a new unscheduled
+downtime, starting just when the first one finishes. Please refer to the
+downtimes section of this documentation for more information, especially the
+&amp;ldquo;downtime extension&amp;rdquo; paragraph.&lt;/p>
+&lt;h2 id="i-have-declared-a-downtime-at-risk-and-it-turns-out-to-be-an-outage-how-can-i-declare-this-properly">I have declared a downtime &amp;ldquo;at risk&amp;rdquo;, and it turns out to be an outage. How can I declare this properly?&lt;/h2>
+&lt;p>If you have declared the downtime as being at risk and an outage actually
+happens half way through, you need to update the Configuration Database to
+reflect the fact that your site is now down. There is currently no way of doing
+this by updating the downtime on the fly without having the system considering
+the whole downtime as being an outage. The best way to proceed is:&lt;/p>
+&lt;ul>
+&lt;li>Modify end date of your &amp;ldquo;at risk&amp;rdquo; downtime, so that it ends in a few minutes&lt;/li>
+&lt;li>Enter a new &amp;ldquo;outage&amp;rdquo; downtime, starting when the other ends&lt;/li>
+&lt;/ul>
+&lt;h2 id="how-do-i-switch-monitoring-onoff-for-my-nodes">How do I switch monitoring on/off for my nodes?&lt;/h2>
+&lt;p>Monitoring status in Configuration Database cannot always be switched off. If a
+node is declared as delivering a production service, rules apply and the node
+has to be monitored. If you are running a test node and want to switch
+monitoring off, set both &amp;ldquo;monitoring&amp;rdquo; and &amp;ldquo;production&amp;rdquo; to &amp;ldquo;N&amp;rdquo;.&lt;/p>
+&lt;h2 id="why-nobody-has-approved-my-role-request-yet">Why nobody has approved my role request yet?&lt;/h2>
+&lt;p>Someone has to approve any request you make, in order to ensure nobody is trying
+to get inappropriate roles. If yours is not getting approved, this can either be
+because your request was not legitimate, or most likely because the people that
+are supposed to do it forgot about it. Please refer to the Roles permissions
+definitions section of this documentation to determine who should validate your
+role, and try to get in touch with them. If you are requesting a site admin
+role, they are likely to be your fellow site admins or your NGI operators.&lt;/p>
+&lt;h2 id="i-am-not-an-egi-user-but-need-access-to-the-backend-to-retrieve-information-for-my-project-what-can-i-do">I am not an EGI user but need access to the backend to retrieve information for my project. What can I do?&lt;/h2>
+&lt;p>Accessing the backend through another way than the
+&lt;a href="https://goc.egi.eu">Configuration Database web interface&lt;/a> is out of the scope
+of this documentation. Please refer to the technical documentation instead,
+which is available from GOCDB Documentation.&lt;/p></description></item></channel></rss>
