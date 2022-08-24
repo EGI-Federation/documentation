@@ -252,7 +252,7 @@ Please use this resource and contact your CA if your certificate does not work.&
 &lt;h4 id="create-a-federated-identity-registration-in-egi-check-in">Create a federated identity: registration in EGI Check-in&lt;/h4>
 &lt;p>As soon as you try to access an EGI service with your federated identity, you
 will be requested to register an account in EGI Check-in if not existing yet.
-The &lt;a href="../../../users/check-in/signup/">Check-in sign up guide&lt;/a> explains how to
+The &lt;a href="../../../users/aai/check-in/signup/">Check-in sign up guide&lt;/a> explains how to
 sign up for an EGI account. If you already own an account, you will be simply
 asked to login through EGI Check-in.&lt;/p>
 &lt;h3 id="joining-dteam-vo">Joining dteam VO&lt;/h3>
