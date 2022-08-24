@@ -10,10 +10,10 @@ Centres (RC) and joining the Federated Cloud Task Force to contribute to the
 design, creation and implementation of the federation.
 
 Resource Centers are free to use any Cloud Management Framework (OpenStack,
-etc\...) as long as they are able to integrate with the EGI
-Federation components as described in the
-[Federated Cloud Architecture](https://wiki.egi.eu/wiki/Federated_Cloud_Architecture).
-At the moment this compliance is guaranteed for OpenStack.
+etc\...) as long as they are able to integrate with the EGI Federation
+components as described in the
+[Federated Cloud Architecture](../../../users/getting-started/architecture). At
+the moment this compliance is guaranteed for OpenStack.
 
 The general minimal requirements are:
 
