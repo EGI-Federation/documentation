@@ -1,6 +1,6 @@
 ---
 title: "Introducing a new EGI service"
-weight: 100
+weight: 50
 description: "How new services are added to the EGI service catalogue"
 type: "docs"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Joining as a provider for existing EGI services"
-weight: 100
+weight: 30
 description: "Guidelines for new providers for existing EGI services"
 type: "docs"
 ---

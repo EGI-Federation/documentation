@@ -1,6 +1,6 @@
 ---
 title: "Joining as a Technology Provider"
-weight: 100
+weight: 20
 description:
   "Guidelines for Technology Providers to join the EGI Infrastructure"
 type: "docs"
