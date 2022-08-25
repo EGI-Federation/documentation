@@ -400,8 +400,8 @@ The Davix Client does not support access to public buckets
 
 #### Access via Python
 
-The possibilty to access progammatically via S3 object storage is also quite
-important, for intance in the case of interactive computing via EGI Notebooks.
+The possibility to access progammatically via S3 object storage is also quite
+important, for instance in the case of interactive computing via EGI Notebooks.
 
 When using Python for instance, [S3Fs](https://s3fs.readthedocs.io/en/latest/)
 is a practical Pythonic file interface to S3.
