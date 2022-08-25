@@ -105,9 +105,6 @@ storage:
   interaction with the EGI Federated Cloud (**recommended**)
 - The [Swift CLI](https://docs.openstack.org/mitaka/cli-reference/swift.html)
   has some advanced features that are not available through the OpenStack CLI
-- The [Davix Client](https://davix.web.cern.ch), developed at CERN for RHEL and
-  Debian environments, is another alternative for working with S3-compatible
-  object storage
 
 ### Access with the FedCloud CLI
 
@@ -342,7 +339,50 @@ to access object storage offered by other providers.
 
 In order to access the storage via S3, an EGI Federated Cloud site admin needs to create
 and associate to your EGI credentials both `access` and  `secret` keys which could then
-be used by clients like `davix` to have access to the storage.
+be used by clients to have access to the storage.
+
+#### AWS CLI
+
+The [AWS CLI](https://aws.amazon.com/cli/) can be used to manage object
+storages having S3 interface.
+
+First of all the configuration of the access and secret keys need to be done:
+
+```shell
+$ aws configure
+```
+
+then it offers many commands to list, create buckets, objects, e.g.:
+
+```shell
+$ aws  s3 ls --endpoint-url  https://object-store.cloud.muni.cz  s3://test-egi-2
+```
+
+{{% alert title="Note" color="info" %}}
+In order to access public buckets the `--no-sign-request` is needed
+{{% /alert %}}
+
+#### Minio Client
+
+The [MinIO CLI](https://docs.min.io/docs/minio-client-quickstart-guide)
+supports filesystems and Amazon S3 compatible cloud storage services.
+
+It offers a modern alternative to UNIX commands like ls, cat, e.g.:
+
+```shell
+# key and secret are not mandatory in case of public buckets
+$ ./mc alias set cesnet https://object-store.cloud.muni.cz
+
+$ ./mc ls cesnet/test-egi-2
+
+$ ./mc cat cesnet/test-egi-2/
+```
+
+#### Davix
+
+The [Davix Client](https://davix.web.cern.ch), developed at CERN for RHEL and
+Debian  environments, is another alternative for working with S3-compatible
+object storage.
 
 For example, to list containers/objects via the S3 protocol, use the command:
 
@@ -353,6 +393,30 @@ $ davix-ls --s3accesskey 'access' --s3secretkey 'secret' \
 
 `davix-get`, `davix-put` and `davix-del` are also available to download, store
 and delete objects from the storage.
+
+{{% alert title="Note" color="info" %}}
+The Davix Client does not support access to public buckets
+{{% /alert %}}
+
+#### Access via Python
+
+The possibilty to access progammatically via S3 object storage is also quite
+important, for intance in the case of interactive computing via EGI Notebooks.
+
+When using Python for instance, [S3Fs](https://s3fs.readthedocs.io/en/latest/)
+is a practical Pythonic file interface to S3.
+
+The top-level class `S3FileSystem` holds connection information and allows typical
+file-system style operations like cp, mv, ls, du, glob, etc., as well as put/get
+of local files to/from S3.
+
+```python
+import s3fs
+fs = s3fs.S3FileSystem(anon=True,
+      client_kwargs={
+         'endpoint_url': 'https://object-store.cloud.muni.cz'
+      })
+```
 
 ## Access via EGI Data Transfer
 
