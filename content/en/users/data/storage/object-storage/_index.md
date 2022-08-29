@@ -355,7 +355,7 @@ $ aws configure
 then it offers many commands to list, create buckets, objects, e.g.:
 
 ```shell
-$ aws  s3 ls --endpoint-url  https://object-store.cloud.muni.cz  s3://test-egi-2
+$ aws s3 ls --no-sign-request --endpoint-url https://object-store.cloud.muni.cz s3://test-egi-public
 ```
 
 {{% alert title="Note" color="info" %}}
@@ -373,9 +373,9 @@ It offers a modern alternative to UNIX commands like ls, cat, e.g.:
 # key and secret are not mandatory in case of public buckets
 $ ./mc alias set cesnet https://object-store.cloud.muni.cz
 
-$ ./mc ls cesnet/test-egi-2
+$ ./mc ls cesnet/test-egi-public
 
-$ ./mc cat cesnet/test-egi-2/
+$ ./mc cat cesnet/test-egi-public/file1.txt
 ```
 
 #### Davix
@@ -412,12 +412,20 @@ of local files to/from S3.
 
 ```python
 import s3fs
+
 fs = s3fs.S3FileSystem(anon=True,
       client_kwargs={
          'endpoint_url': 'https://object-store.cloud.muni.cz'
       })
-```
 
+print(fs.ls('s3://test-egi-public'))
+s3path = 's3://test-egi-public/file1.txt'
+
+with fs.open(s3path, 'rb') as f:
+    print(f.read())
+
+There is a good collection of examples on the
+[S3Fs GitHub repository](https://github.com/minio/minio-py/tree/master/examples).
 ## Access via EGI Data Transfer
 
 The [EGI Data Transfer](../../../data/management/data-transfer) service can move files
