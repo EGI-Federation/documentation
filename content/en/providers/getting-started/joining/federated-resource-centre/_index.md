@@ -174,13 +174,13 @@ resources to any of the users’ communities consuming the infrastructure.
 
 The RC can continue serving local user communities, and at the same time deliver
 capacity for international user communities that approach EGI and therefore
-reach the federated RCs. 
+reach the federated RCs.
 
 International communities reach EGI through the following channels:
 
 - The EGI Website where they can
   [request access to services](https://www.egi.eu/services/research/).
-- The [EGI-ACE Call for Use Cases](https://www.egi.eu/egi-ace-open-call/). 
+- The [EGI-ACE Call for Use Cases](https://www.egi.eu/egi-ace-open-call/).
 - The [Marketplace](https://marketplace.eosc-portal.eu/) of the European Open
   Science Cloud.
 
