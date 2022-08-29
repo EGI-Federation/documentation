@@ -423,9 +423,11 @@ s3path = 's3://test-egi-public/file1.txt'
 
 with fs.open(s3path, 'rb') as f:
     print(f.read())
+```
 
 There is a good collection of examples on the
 [S3Fs GitHub repository](https://github.com/minio/minio-py/tree/master/examples).
+
 ## Access via EGI Data Transfer
 
 The [EGI Data Transfer](../../../data/management/data-transfer) service can move files
