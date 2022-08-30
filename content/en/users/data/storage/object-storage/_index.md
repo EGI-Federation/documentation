@@ -398,7 +398,9 @@ $ aws configure
 then it offers many commands to list, create buckets, objects, e.g.:
 
 ```shell
-$ aws s3 ls --no-sign-request --endpoint-url https://object-store.cloud.muni.cz s3://test-egi-public
+$ aws s3 ls --no-sign-request \
+  --endpoint-url https://object-store.cloud.muni.cz \
+  s3://test-egi-public
 ```
 
 {{% alert title="Note" color="info" %}} In order to access public buckets the
