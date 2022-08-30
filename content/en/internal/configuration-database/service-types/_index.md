@@ -102,8 +102,10 @@ following query to the GOCDBPI interface:
   ARGO Consumer collects monitoring metrics from monitoring engines.
 - [argo.computeengine](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=argo.computeengine):
   ARGO Compute Engine computes availability and reliability of services.
+  <!-- textlint-disable terminology -->
 - [argo.api](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=argo.api):
   ARGO API service for retrieving status and A/R results.
+  <!-- textlint-enable terminology -->
 - [argo.webui](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&service_type=argo.webui):
   ARGO web user interface for metric A/R visualization and recalculation
   management.
