@@ -75,8 +75,8 @@ environment:
 ```yaml
 hub:
   extraEnv:
-    OAUTH2_AUTHORIZE_URL: https://aai.egi.eu/oidc/authorize
-    OAUTH2_TOKEN_URL: https://aai.egi.eu/oidc/token
+    OAUTH2_AUTHORIZE_URL: https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth
+    OAUTH2_TOKEN_URL: https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token
     OAUTH_CALLBACK_URL: https://<your host>/hub/oauth_callback
 
 auth:
@@ -89,8 +89,8 @@ auth:
       client_secret: "<your client secret>"
       oauth_callback_url: "https://<your host>/hub/oauth_callback"
       username_key: "sub"
-      token_url: "https://aai.egi.eu/oidc/token"
-      userdata_url: "https://aai.egi.eu/oidc/userinfo"
+      token_url: "https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token"
+      userdata_url: "https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo"
       scope: ["openid", "profile", "email", "eduperson_scoped_affiliation", "eduperson_entitlement"]
 ```
 

@@ -9,7 +9,8 @@ description: >
 This manual provides information on how to set up a Resource Centre providing
 cloud resources in the EGI infrastructure. Integration with FedCloud requires a
 _working OpenStack installation_ as a pre-requirement. EGI supports any recent
-[OpenStack version](http://releases.openstack.org) (tested from OpenStack Mitaka).
+[OpenStack version](http://releases.openstack.org) (tested from OpenStack
+Mitaka).
 
 EGI expects the following OpenStack services to be available and accessible from
 outside your site:
@@ -22,8 +23,7 @@ outside your site:
 - Swift (if providing Object Storage)
 
 FedCloud components are distributed through
-[CMD (Cloud Middleware Distribution)](https://wiki.egi.eu/wiki/EGI_Cloud_Middleware_Distribution)
-or docker container images available in [dockerhub](https://hub.docker.com/).
+[CMD (Cloud Middleware Distribution)](https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution)
 These docker containers come pre-packaged and ready to use in the EGI FedCloud
 Appliance so you do not need to install any extra components on your site but
 just run a VM and configure it approprietely to interact with your services.
@@ -42,8 +42,8 @@ OpenStack services APIs:
   records to the central accounting database on the EGI Accounting service
   ([APEL](https://apel.github.io/))
 - **cloud-info-provider** registers the RC configuration and description through
-  the [ARGO Messaging Service](https://argoeu.github.io/guides/messaging/) to
-  facilitate service discovery
+  the [Messaging service](../../../internal/messaging) to facilitate service
+  discovery
 - **cloudkeeper** (and **cloudkeeper-os**) synchronises with
   [EGI AppDB](https://appdb.egi.eu/browse/cloud) so new or updated images can be
   provided by the RC to user communities (VO).
@@ -58,7 +58,7 @@ EGI distributes the integration components as:
 - A Virtual Appliance (VA) that uses Docker containers to bundle all of the
   components in a single VM and just needs minor configuration to get started
 - RPM and DEB Packages in the
-  [CMD distribution](https://wiki.egi.eu/wiki/EGI_Cloud_Middleware_Distribution)
+  [CMD distribution](https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution)
 
 ### FedCloud Virtual Appliance
 
@@ -67,15 +67,14 @@ The EGI FedCloud Appliance is available at
 as an OVA file. You can easily extract the VMDK disk by untaring and optionally
 converting it to your preferred format with qemu-img:
 
-<!-- markdownlint-disable line-length -->
 ```shell
 # get image and extract VMDK
-$ curl $(curl "https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict" | jq -r .url) | \
-    tar x "*.vmdk"
+$ curl $(curl "https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict" \
+    | jq -r .url) \
+    | tar x "*.vmdk"
 # convert to qcow2
 $ qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.qcow2
 ```
-<!-- markdownlint-enable line-length -->
 
 The appliance running at your OpenStack must:
 
@@ -96,8 +95,8 @@ Configuration changes:
 
 - Removes BDII, service is no longer in use
 - A cloud-info-provider cron is added
-- Uses AMS for pushing accounting records. New configuration
-  file for ssmsend is available
+- Uses AMS for pushing accounting records. New configuration file for ssmsend is
+  available
 
 #### From 2017.08.09 to 2018.05.07
 
@@ -121,8 +120,8 @@ There are several major changes between these versions, namely:
 ### CMD Packages
 
 The CMD-OS repository provides packages that have gone through a quality
-assurance process for the supported distributions. Packages are available
-via the [EGI repository](https://repository.egi.eu).
+assurance process for the supported distributions. Packages are available via
+the [EGI repository](https://repository.egi.eu).
 
 ## Open Ports
 
@@ -131,13 +130,15 @@ OpenStack-based FedCloud site (default ports listed below, can be adjusted to
 your installation)
 
 <!-- markdownlint-disable line-length -->
-| Port         | Application            | Note                                                             |
-| ------------ | ---------------------- | ---------------------------------------------------------------- |
-| **5000**/TCP | **OpenStack**/Keystone | Authentication to your OpenStack.                                |
-| **8776**/TCP | **OpenStack**/cinder   | Block Storage management.                                        |
-| **8774**/TCP | **OpenStack**/nova     | VM management.                                                   |
-| **9696**/TCP | **OpenStack**/neutron  | Network management.                                              |
-| **9292**/TCP | **OpenStack**/glance   | VM Image management.                                             |
+
+| Port         | Application            | Note                              |
+| ------------ | ---------------------- | --------------------------------- |
+| **5000**/TCP | **OpenStack**/Keystone | Authentication to your OpenStack. |
+| **8776**/TCP | **OpenStack**/cinder   | Block Storage management.         |
+| **8774**/TCP | **OpenStack**/nova     | VM management.                    |
+| **9696**/TCP | **OpenStack**/neutron  | Network management.               |
+| **9292**/TCP | **OpenStack**/glance   | VM Image management.              |
+
 <!-- markdownlint-enable line-length -->
 
 ### Outgoing ports
@@ -145,12 +146,14 @@ your installation)
 The EGI Cloud components require the following outgoing connections open:
 
 <!-- markdownlint-disable line-length -->
-| Port          | Host                    | Note                                                            |
-| ------------- | ----------------------- | --------------------------------------------------------------- |
-| **443**/TCP   | `msg.argo.grnet.gr`     | ARGO Messaging System (used to send accounting records by SSM). |
-| **8443**/TCP  | `msg.argo.grnet.gr`     | AMS authentication (used to send accounting records by SSM).    |
-| **443**/TCP   | `vmcaster.appdb.egi.eu` | AppDB image lists (used by cloudkeeper).                        |
-| **8080**/TCP  | `cephrgw01.ifca.es`     | Swift server hosting EGI images (used by cloudkeeper).          |
+
+| Port         | Host                    | Note                                                            |
+| ------------ | ----------------------- | --------------------------------------------------------------- |
+| **443**/TCP  | `msg.argo.grnet.gr`     | ARGO Messaging System (used to send accounting records by SSM). |
+| **8443**/TCP | `msg.argo.grnet.gr`     | AMS authentication (used to send accounting records by SSM).    |
+| **443**/TCP  | `vmcaster.appdb.egi.eu` | AppDB image lists (used by cloudkeeper).                        |
+| **8080**/TCP | `cephrgw01.ifca.es`     | Swift server hosting EGI images (used by cloudkeeper).          |
+
 <!-- markdownlint-enable line-length -->
 
 Images listed in AppDB may be hosted in other servers besides
@@ -162,10 +165,12 @@ This is an overview of the expected account permissions used in an OpenStack
 site, these accounts can be merged as needed for your deployment:
 
 <!-- markdownlint-disable line-length -->
+
 | Component    | Permission                                                                                   |
 | ------------ | -------------------------------------------------------------------------------------------- |
 | cloud-info   | Member of all projects supporting EGI VOs                                                    |
 | accounting   | Member of all projects and able to list users (allowed to `identity:list_users` in keystone) |
 | cloud-keeper | Permission to manage the images for all the projects supporting EGI VOs                      |
 | Other users  | Automatically created by Keystone and permission set as configured in the mappings           |
+
 <!-- markdownlint-enable line-length -->

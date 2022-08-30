@@ -30,15 +30,13 @@ understood.
 - [PROC12 Production Service Decommissioning Procedure](https://confluence.egi.eu/display/EGIPP/PROC12+Production+Service+Decommissioning):
   Procedure document describing the steps required to decommission a production
   service.
-- [Helpdesk](../../../internal/helpdesk) and
-  [FAQs](https://wiki.egi.eu/wiki/GGUS:FAQ): A collection of documentation
-  relevant to the EGI Helpdesk (GGUS). The User Guide and FAQ for direct site
-  notification are probably the most helpful.
+- [Helpdesk](../../../internal/helpdesk): A collection of documentation
+  relevant to the EGI Helpdesk (GGUS).
 
 ## Tools
 
 - [Configuration Database (GOCDB)](../../../internal/configuration-database)
-- [Operations Portal](ttp://operations-portal.egi.eu)
+- [Operations Portal](https://operations-portal.egi.eu)
 - ARGO Monitoring:
   [RCs status](https://argo.egi.eu/egi/report-status/Critical/SITES),
   [A/R reports](https://argo.egi.eu/egi/report-ar/Critical/SITES): The ARGO

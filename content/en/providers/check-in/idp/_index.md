@@ -19,7 +19,7 @@ printed and signed copy should be sent to `operations_at_egi.eu`
 
 To integrate your Identity Provider with the EGI Check-in service, you need to
 submit a [GGUS](https://ggus.eu) ticket indicating your request. The responsible
-support unit is [AAI Support](https://wiki.egi.eu/wiki/GGUS:AAI_SUPPORT_FAQ).
+support unit is [AAI Support](https://confluence.egi.eu/display/EGIPP/GGUS%3A+Check-in+%28AAI%29+FAQ).
 The integration follows a two-step process:
 
 1. Register your Identity Provider and test integration with the development
@@ -39,10 +39,36 @@ more information can be found in the protocol-specific sections that follow.
 
 <!-- markdownlint-disable line-length -->
 
-| Protocol       | Development environment                                            | Demo environment                                                    | Production environment                                         |
-| -------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------- |
-| SAML           | <https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
-| OpenID Connect | See [client registration](#client-registration)                    | See [client registration](#client-registration)                     | See [client registration](#client-registration)                |
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Protocol       | Production environment                                         |
+| -------------- | -------------------------------------------------------------- |
+| SAML           | <https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+| OpenID Connect | See [client registration](#client-registration)                |
+
+{{< /tabx >}}
+
+{{< tabx header="Demo" >}}
+
+| Protocol       | Demo environment                                                    |
+| -------------- | ------------------------------------------------------------------- |
+| SAML           | <https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+| OpenID Connect | See [client registration](#client-registration)                     |
+
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Protocol       | Development environment                                            |
+| -------------- | ------------------------------------------------------------------ |
+| SAML           | <https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+| OpenID Connect | See [client registration](#client-registration)                    |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
 
 <!-- markdownlint-enable line-length -->
 
@@ -99,9 +125,9 @@ where:
     [IANA](https://www.iana.org/assignments/urn-namespaces/urn-namespaces.xhtml),
     as per RFC8141, ensuring global uniqueness. Implementers can and should use
     one of the existing registered URN namespaces, such as
-    [`urn:geant`](https://www.geant.org/Services/Trust_identity_and_security/Pages/NamespaceRegistry.aspx)
+    [`urn:geant`](https://wiki.geant.org/display/URN/URN+Namespace+Delegated+to+Other+Entities)
     and
-    [`urn:mace`](https://www.internet2.edu/products-services/trust-identity/mace-registries/urnmace-namespace/);
+    [`urn:mace`](https://incommon.org/community/mace-registries/mace-urn-registry/);
   - `<DELEGATED-NAMESPACE>` is a URN sub-namespace delegated from one of the
     IANA registered NIDs
 
@@ -193,9 +219,33 @@ depends on the integration environment being used:
 
 <!-- markdownlint-disable line-length -->
 
-| Development environment                                            | Demo environment                                                    | Production environment                                         |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------- |
-| <https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> | <https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Production environment                                         |
+| -------------------------------------------------------------- |
+| <https://aai.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+
+{{< /tabx >}}
+
+{{< tabx header="Demo" >}}
+
+| Demo environment                                                    |
+| ------------------------------------------------------------------- |
+| <https://aai-demo.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Development environment                                            |
+| ------------------------------------------------------------------ |
+| <https://aai-dev.egi.eu/proxy/module.php/saml/sp/metadata.php/sso> |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
 
 <!-- markdownlint-enable line-length -->
 
@@ -295,7 +345,3 @@ following table (see also
 <!--
 // jscpd:ignore-end
 -->
-
-## Integration success stories
-
-- [EGI AAI integration with ELIXIR](https://wiki.egi.eu/wiki/EGI_AAI_integration_with_ELIXIR_AAI)

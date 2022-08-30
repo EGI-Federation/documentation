@@ -26,9 +26,9 @@ OAuth2.0 credentials and register one or more redirect URIs.
 Make sure that you fill in the following options:
 
 - _General_ tab:
-  
+
   > - Set _Integration Environment_ to _Demo_ and fill the form with the
-  information about your Service.
+  >   information about your Service.
 
 - _Protocol Specific_ tab:
 
@@ -41,8 +41,10 @@ Make sure that you fill in the following options:
   > - Enable _openid_, _profile_, _email_, _eduperson_entitlement_ in the
   >   **Scope** field
   > - Enable _authorization code_ in the **Grant Types** field
-  > - Enable _Allow calls to the Introspection Endpoint?_ in **Introspection**
-  >   field
+  > - Set _Proof Key for Code Exchange (PKCE) Code Challenge Method_ to _SHA-256
+  >   hash algorithm (recommended)_
+  > - Make sure _Allow calls to the Introspection Endpoint?_ is enabled in
+  >   **Introspection** field
 
 Submit the request for review by the Check-in operations team. Once the request
 has been approved, you will get a client ID and client secret. Save them for the
@@ -52,10 +54,10 @@ following steps
 
 ### Pre-requisites
 
-1. Keystone must run as a WSGI application behind an HTTP server (Apache is
-   used in this documentation, but any server should be possible if it has
-   OpenID connect/OAuth2.0 support). Keystone project has deprecated eventlet,
-   so you should be already running Keystone in such way.
+1. Keystone must run as a WSGI application behind an HTTP server (Apache is used
+   in this documentation, but any server should be possible if it has OpenID
+   connect/OAuth2.0 support). Keystone project has deprecated eventlet, so you
+   should be already running Keystone in such way.
 1. Keystone must be run with SSL
 1. You need to install
    [mod_auth_openidc](https://github.com/pingidentity/mod_auth_openidc) for
@@ -78,50 +80,52 @@ For haproxy
 
 : CA and CRLS have to be bundled into one file.
 
-  Client verification should be set as optional otherwise accepted CAs
-  won\'t be presented to the EGI monitoring:
+Client verification should be set as optional otherwise accepted CAs won\'t be
+presented to the EGI monitoring:
 
   <!-- markdownlint-disable line-length -->
-  ```plaintext
-  # crt: concatenated cert, key and CA
-  # ca-file: all IGTF CAs, concatenated as one file
-  # crl-file: all IGTF CRLs, concatenated as one file
-  # verify: enable optional X.509 client authentication
-  bind XXX.XXX.XXX.XXX:443 ssl crt /etc/haproxy/certs/host-cert-with-key-and-ca.pem ca-file /etc/haproxy/certs/igtf-cas-bundle.pem crl-file /etc/haproxy/certs/igtf-crls-bundle.pem verify optional
-  ```
+
+```plaintext
+# crt: concatenated cert, key and CA
+# ca-file: all IGTF CAs, concatenated as one file
+# crl-file: all IGTF CRLs, concatenated as one file
+# verify: enable optional X.509 client authentication
+bind XXX.XXX.XXX.XXX:443 ssl crt /etc/haproxy/certs/host-cert-with-key-and-ca.pem ca-file /etc/haproxy/certs/igtf-cas-bundle.pem crl-file /etc/haproxy/certs/igtf-crls-bundle.pem verify optional
+```
+
   <!-- markdownlint-enable line-length -->
 
 For nginx
 
 : CA and CRLS have to be bundled into one file.
 
-  Client verification should be set as optional otherwise accepted CAs
-  won\'t be presented to the EGI monitoring:
+Client verification should be set as optional otherwise accepted CAs won\'t be
+presented to the EGI monitoring:
 
-  ```Nginx configuration file
-  ssl_client_certificate /etc/ssl/certs/igtf-cas-bundle.pem;
-  ssl_crl /etc/ssl/certs/igtf-crls-bundle.pem;
-  ssl_verify_client optional;
-  ```
+```Nginx configuration file
+ssl_client_certificate /etc/ssl/certs/igtf-cas-bundle.pem;
+ssl_crl /etc/ssl/certs/igtf-crls-bundle.pem;
+ssl_verify_client optional;
+```
 
 Managing IGTF CAs and CRLs
 
 : IGTF CAs can be obtained from UMD, you can find repository files for your
-  distribution at [EGI CA repository](https://repository.egi.eu/sw/production/cas/1/current/)
+distribution at
+[EGI CA repository](https://repository.egi.eu/sw/production/cas/1/current/)
 
-  IGTF CAs and CRLs can be bundled using the examples command
-  hereafter.
+IGTF CAs and CRLs can be bundled using the examples command hereafter.
 
-  Please update CAs bundle after IGTF updates, and CRLs bundle after
-  each CRLs update made by fetch-crl:
+Please update CAs bundle after IGTF updates, and CRLs bundle after each CRLs
+update made by fetch-crl:
 
-  ```shell
-  cat /etc/grid-security/certificates/*.pem > /etc/haproxy/certs/igtf-cas-bundle.pem
-  cat /etc/grid-security/certificates/*.r0 > /etc/haproxy/certs/igtf-crls-bundle.pem
-  # Some CRLs files are not ending with a new line
-  # Ensuring that CRLs markers are separated by a line feed
-  perl -pe 's/----------/-----\n-----/' -i /etc/haproxy/certs/igtf-crls-bundle.pem
-  ```
+```shell
+cat /etc/grid-security/certificates/*.pem > /etc/haproxy/certs/igtf-cas-bundle.pem
+cat /etc/grid-security/certificates/*.r0 > /etc/haproxy/certs/igtf-crls-bundle.pem
+# Some CRLs files are not ending with a new line
+# Ensuring that CRLs markers are separated by a line feed
+perl -pe 's/----------/-----\n-----/' -i /etc/haproxy/certs/igtf-crls-bundle.pem
+```
 
 {{% /alert %}}
 
@@ -135,14 +139,14 @@ OIDCResponseType "code"
 OIDCClaimPrefix "OIDC-"
 OIDCClaimDelimiter ;
 OIDCScope "openid profile email eduperson_entitlement"
-OIDCProviderMetadataURL https://aai-demo.egi.eu/oidc/.well-known/openid-configuration
+OIDCProviderMetadataURL https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration
 OIDCClientID <client id>
 OIDCClientSecret <client secret>
 OIDCCryptoPassphrase <some crypto pass phrase>
 OIDCRedirectURI https://<your keystone endpoint>/v3/auth/OS-FEDERATION/websso/openid/redirect
 
 # OAuth for CLI access
-OIDCOAuthIntrospectionEndpoint https://aai-demo.egi.eu/oidc/introspect
+OIDCOAuthIntrospectionEndpoint https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
 OIDCOAuthClientID <client id>
 OIDCOAuthClientSecret <client secret>
 
@@ -170,7 +174,7 @@ OIDCCacheType memcache
 OIDCMemCacheServers "memcache1 memcache2 memcache3"
 ```
 
-Be sure to enable the mod_auth_oidc module in Apache, in Ubuntu:
+Be sure to enable the `mod_auth_oidc` module in Apache, in Ubuntu:
 
 ```shell
 sudo a2enmod auth_openidc
@@ -223,10 +227,12 @@ keystone git repository at
 `https://github.com/openstack/keystone/blob/master/etc/sso_callback_template.html`
 
 <!-- markdownlint-disable line-length -->
+
 ```shell
 curl -L https://raw.githubusercontent.com/openstack/keystone/master/etc/sso_callback_template.html \
     > /etc/keystone/sso_callback_template.html
 ```
+
 <!-- markdownlint-enable line-length -->
 
 Now restart your Apache (and Keystone if running in uwsgi) so you can configure
@@ -235,19 +241,19 @@ the Keystone Federation support.
 ## Keystone Federation Support
 
 First, create a new `egi.eu` identity provider with remote id
-`https://aai-demo.egi.eu/oidc/`:
+`https://aai-demo.egi.eu/auth/realms/egi`:
 
 ```shell
-$ openstack identity provider create --remote-id https://aai-demo.egi.eu/oidc/ egi.eu
-+-------------+----------------------------------+
-| Field       | Value                            |
-+-------------+----------------------------------+
-| description | None                             |
-| domain_id   | 1cac7817dafb4740a249cc9ca6b14ea5 |
-| enabled     | True                             |
-| id          | egi.eu                           |
-| remote_ids  | https://aai-demo.egi.eu/oidc/     |
-+-------------+----------------------------------+
+$ openstack identity provider create --remote-id https://aai-demo.egi.eu/auth/realms/egi egi.eu
++-------------+-----------------------------------------+
+| Field       | Value                                   |
++-------------+-----------------------------------------+
+| description | None                                    |
+| domain_id   | 1cac7817dafb4740a249cc9ca6b14ea5        |
+| enabled     | True                                    |
+| id          | egi.eu                                  |
+| remote_ids  | https://aai-demo.egi.eu/auth/realms/egi |
++-------------+-----------------------------------------+
 ```
 
 Create a group for users coming from EGI Check-in, usual configuration is to
@@ -297,7 +303,7 @@ $ cat mapping.egi.json
             {
                 "type": "HTTP_OIDC_ISS",
                 "any_one_of": [
-                    "https://aai-demo.egi.eu/oidc/"
+                    "https://aai-demo.egi.eu/auth/realms/egi"
                 ]
             },
             {
@@ -318,17 +324,19 @@ configuration should work for Mitaka and onwards
 Create the mapping in Keystone:
 
 <!-- markdownlint-disable line-length -->
+
 ```shell
 $ openstack mapping create --rules mapping.egi.json egi-mapping
-+-------+----------------------------------------------------------------------------------------------------------------------------------+
-| Field | Value                                                                                                                            |
-+-------+----------------------------------------------------------------------------------------------------------------------------------+
-| id    | egi-mapping                                                                                                                      |
-| rules | [{u'remote': [{u'type': u'HTTP_OIDC_SUB'}, {u'type': u'HTTP_OIDC_ISS', u'any_one_of': [u'https://aai-demo.egi.eu/oidc/']},        |
-|       | {u'regex': True, u'type': u'OIDC-eduperson_entitlement', u'any_one_of': [u'^urn:mace:egi.eu:.*:ops:vm_operator@egi.eu$']}],      |
-|       | u'local': [{u'group': {u'id': u'89cf5b6708354094942d9d16f0f29f8f'}, u'user': {u'name': u'{0}'}}]}]                               |
-+-------+----------------------------------------------------------------------------------------------------------------------------------+
++-------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Field | Value                                                                                                                                |
++-------+--------------------------------------------------------------------------------------------------------------------------------------+
+| id    | egi-mapping                                                                                                                          |
+| rules | [{u'remote': [{u'type': u'HTTP_OIDC_SUB'}, {u'type': u'HTTP_OIDC_ISS', u'any_one_of': [u'https://aai-demo.egi.eu/auth/realms/egi']}, |
+|       | {u'regex': True, u'type': u'OIDC-eduperson_entitlement', u'any_one_of': [u'^urn:mace:egi.eu:.*:ops:vm_operator@egi.eu$']}],          |
+|       | u'local': [{u'group': {u'id': u'89cf5b6708354094942d9d16f0f29f8f'}, u'user': {u'name': u'{0}'}}]}]                                   |
++-------+--------------------------------------------------------------------------------------------------------------------------------------+
 ```
+
 <!-- markdownlint-enable line-length -->
 
 Finally, create the federated protocol with the identity provider and mapping
@@ -372,10 +380,11 @@ Once horizon is restarted you will be able to choose \"EGI Check-in\" for login.
 The
 [OpenStack Client](https://docs.openstack.org/developer/python-openstackclient/)
 has built-in support for using OpenID Connect Access Tokens to authenticate. You
-first need to get a valid token from EGI Check-in (e.g. from
-<https://aai-demo.egi.eu/fedcloud/>) and then use it in a command like:
+first need to get a valid Access Token from EGI Check-in (e.g. from
+<https://aai-demo.egi.eu/token/>) and then use it in a command like:
 
 <!-- markdownlint-disable line-length -->
+
 ```shell
 $ openstack --os-auth-url https://<your keystone endpoint>/v3 \
             --os-auth-type v3oidcaccesstoken --os-protocol openid \
@@ -390,6 +399,7 @@ $ openstack --os-auth-url https://<your keystone endpoint>/v3 \
 | user_id | 020864ea9415413f9d706f6b473dbeba                                                      |
 +---------+---------------------------------------------------------------------------------------+
 ```
+
 <!-- markdownlint-enable line-length -->
 
 ## Additional VOs
@@ -418,7 +428,7 @@ members of `fedcloud.egi.eu`:
       },
       {
         "type": "HTTP_OIDC_ISS",
-        "any_one_of": ["https://aai-demo.egi.eu/oidc/"]
+        "any_one_of": ["https://aai-demo.egi.eu/auth/realms/egi"]
       },
       {
         "type": "OIDC-eduperson_entitlement",
@@ -446,13 +456,13 @@ members of `fedcloud.egi.eu`:
       },
       {
         "type": "HTTP_OIDC_ISS",
-        "any_one_of": ["https://aai-demo.egi.eu/oidc/"]
+        "any_one_of": ["https://aai-demo.egi.eu/auth/realms/egi"]
       },
       {
         "type": "OIDC-eduperson_entitlement",
         "regex": true,
         "any_one_of": [
-          "^urn:mace:egi.eu:group:fedcloud.egi.eu:role=vm_operator#aai.egi.eu$"
+          "^urn:mace:egi.eu:group:fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu$"
         ]
       }
     ]
@@ -463,9 +473,8 @@ members of `fedcloud.egi.eu`:
 ## Multiple OIDC providers
 
 If your OpenStack deployment needs to support multiple identity providers
-(besides EGI Check-in) you will need to configure `mod_auth_openidc` to
-support [multiple
-providers](https://github.com/zmartzone/mod_auth_openidc/wiki/Multiple-Providers#discovery)
+(besides EGI Check-in) you will need to configure `mod_auth_openidc` to support
+[multiple providers](https://github.com/zmartzone/mod_auth_openidc/wiki/Multiple-Providers#discovery)
 and use an OAuth2.0 token introspection proxy like
 [ESACO](https://github.com/indigo-iam/esaco).
 
@@ -498,23 +507,24 @@ support, you need to create 3 files:
    Check-in:
 
    ```shell
-   curl https://aai-demo.egi.eu/oidc/.well-known/openid-configuration > \
+   curl https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration > \
         /var/lib/apache2/oidc/metadata/aai-demo.egi.eu%2Foidc.provider
    ```
 
 1. `<urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped>.client`
-   with the client credentials. For EGI Check-in (`aai-demo.egi.eu%2Foidc.client`):
+   with the client credentials. For EGI Check-in
+   (`aai-demo.egi.eu%2Foidc.client`):
 
    ```json
    {
-     "client_id" : "<your client id>",
-     "client_secret" : "<your secret id>"
+     "client_id": "<your client id>",
+     "client_secret": "<your secret id>"
    }
    ```
 
 1. `<urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped>.conf`
-   with any extra configuration for the provider. This may not be needed if
-   all your providers are similar. For example to specify the scopes to use for
+   with any extra configuration for the provider. This may not be needed if all
+   your providers are similar. For example to specify the scopes to use for
    Check-in, use a `aai-demo.egi.eu%2Foidc.conf` as follows:
 
    ```json
@@ -528,12 +538,12 @@ the use of the dashboard. This is for a configuration of an `egi.eu` identity
 provider with `openid` as protocol:
 
 ```ApacheConf
-<Location ~ "/identity/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
+<Location ~ "/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
         AuthType openid-connect
         # This is your Redirect URI with a new iss=<your idp iss> option added
-        OIDCDiscoverURL https://openstack-test.test.fedcloud.eu/identity/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-demo.egi.eu%2Foidc%2F
+        OIDCDiscoverURL https://<your keystone endpoint>/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-demo.egi.eu%2Foidc%2F
         # Ensure that the user is authenticated with the expected iss
-        Require claim iss:https://aai-demo.egi.eu/oidc/
+        Require claim iss:https://aai-demo.egi.eu/auth/realms/egi
         Require valid-user
 </Location>
 ```
@@ -567,12 +577,12 @@ docker for facilitating the deployment:
    ```yaml
    oidc:
      clients:
-     - issuer-url: https://aai-demo.egi.eu/oidc/
-       client-id: "<your check-in client id>"
-       client-secret: "<your check-in client secret>"
-     - issuer-url: <another idp>
-       client-id: "<your client id for second idp>"
-       client-secret: "<your client secret for second idp>"
+       - issuer-url: https://aai-demo.egi.eu/auth/realms/egi
+         client-id: "<your check-in client id>"
+         client-secret: "<your check-in client secret>"
+       - issuer-url: <another idp>
+         client-id: "<your client id for second idp>"
+         client-secret: "<your client secret for second idp>"
    ```
 
 1. Create a environment file with the ESACO credentials you want to use
@@ -586,8 +596,8 @@ docker for facilitating the deployment:
    ESACO_USER_PASSWORD=<esaco password>
    ```
 
-1. Run the ESACO server (adapt this as it better fits to run on your servers
-   and make it run permanently):
+1. Run the ESACO server (adapt this as it better fits to run on your servers and
+   make it run permanently):
 
    ```shell
    docker run -p 8156:8156 -d -env-file=esaco.env \
@@ -608,12 +618,12 @@ docker for facilitating the deployment:
 1. Configure also the locations in Apache that should use OAuth:
 
    ```ApacheConf
-   <Location ~ "/identity/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/auth">
+   <Location ~ "/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/auth">
         Authtype oauth20
         Require valid-user
    </Location>
 
-   <Location ~ "/identity/v3/OS-FEDERATION/identity_providers/other_idp/protocols/openid/auth">
+   <Location ~ "/v3/OS-FEDERATION/identity_providers/other_idp/protocols/openid/auth">
         Authtype oauth20
         Require valid-user
    </Location>
@@ -622,13 +632,15 @@ docker for facilitating the deployment:
 ## Moving to EGI Check-in production instance
 
 Once tests in the development instance of Check-in are successful, you can move
-to the production instance. You should open a [GGUS ticket](https://ggus.eu) for
-the request. Besides you will need to update your configuration as follows:
+to the production instance. Go to
+[EGI Federation Registry](https://aai.egi.eu/federation) and submit a Service
+Request for the production instance of EGI Check-in. After the approval of the
+request, you will need to update your configuration as follows:
 
 - Update the `remote-id` of the identity provider:
 
   ```shell
-  openstack identity provider set --remote-id https://aai.egi.eu/oidc/ egi.eu
+  openstack identity provider set --remote-id https://aai.egi.eu/auth/realms/egi egi.eu
   ```
 
 - Update the `HTTP_OIDC_ISS` filter in your mappings, e.g.:
@@ -638,15 +650,136 @@ the request. Besides you will need to update your configuration as follows:
   openstack mapping set --rules mapping.egi.json egi-mapping
   ```
 
-- Update Apache configuration to use `aai.egi.eu` instead of
-  `aai-demo.egi.eu`:
+- Update Apache configuration to use `aai.egi.eu` instead of `aai-demo.egi.eu`:
 
   ```ApacheConf
-  OIDCProviderMetadataURL https://aai.egi.eu/oidc/.well-known/openid-configuration
-  OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/oidc/introspect
+  OIDCProviderMetadataURL https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration
+  OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
   ```
 
 {{% alert title="Changes in the client settings" color="info" %}} If you want to
 make any changes to the client configuration, you need to submit a
 reconfiguration request through the
 [Federation Registry](https://aai.egi.eu/federation). {{% /alert %}}
+
+## Client Migration to Keycloak
+
+Check-in is migrating its internal implementation to Keycloak. The Development
+and Demo environments already using Keycloak since June 24th 2022 and Production
+environment expected to migrate during July 2022.
+
+A general guide on migration is available on
+[Check-in documentation](../../../check-in/sp#client-migration-to-keycloak), in
+this section we provide specific information for OpenStack providers.
+
+### Changes in Apache configuration
+
+The new Keycloak endpoint has a different URL that needs to be updated in your
+apache config. You will also need to add PKCE configuration. These are the
+configuration parameters and their new values:
+
+```ApacheConf
+# update Metadata URL
+OIDCProviderMetadataURL https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration
+# Add PKCE method
+OIDCPKCEMethod S256
+# update introspection endpoint
+OIDCOAuthIntrospectionEndpoint https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
+```
+
+{{% alert title="Require claim" color="Warning" %}} If you use the
+`Require claim iss:<issuer>` in your Apache configuration to restrict the
+issuer, please allow both the Keycloak and MitreID issuers during the transition
+period, e.g.:
+
+```ApacheConf
+<RequireAny>
+    Require claim iss:https://aai.egi.eu/auth/realms/egi
+    Require claim iss:https://aai.egi.eu/oidc/
+</RequireAny>
+```
+
+{{% /alert %}}
+
+#### Multiple OIDC providers
+
+{{% alert title="Note" color="Warning" %}} Configuration in this section is only
+needed if you are using `mod_auth_oidc` with multiple providers {{% /alert %}}
+
+If you are using multiple OpenID Connect providers, you will need to add a new
+configuration to your metadata directory:
+
+```shell
+$ curl https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration > \
+       /var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.conf
+# copy credentials from existing client
+$ cp /var/lib/apache2/oidc/metadata/aai.egi.eu%2Foidc.client \
+     /var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.client
+# create configuration for the client
+$ cat >  /var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.conf << EOF
+{
+  "scope": "openid email profile eduperson_entitlement",
+  "pkce_method": "S256"
+}
+EOF
+```
+
+And update your Apache configuration for the authentication with Horizon:
+
+```ApacheConf
+<Location ~ "/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso">
+        AuthType openid-connect
+        # This is your Redirect URI with a new iss=<your idp iss> option added
+        OIDCDiscoverURL https://<your keystone endpoint>/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai.egi.eu%2Fauth%2Frealms%2Fegi
+        # Ensure that the user is authenticated with the expected iss
+        Require claim iss:https://aai.egi.eu/auth/realms/egi
+        Require valid-user
+</Location>
+```
+
+Also update ESACO to include the configuration of the new endpoint URL:
+
+```yaml
+oidc:
+  clients:
+    - issuer-url: https://aai.egi.eu/auth/realms/egi
+      client-id: "<your check-in client id>"
+      client-secret: "<your check-in client secret>"
+    # other clients
+```
+
+### Keystone configuration
+
+Similarly to the change from Demo to Production described
+[above](#moving-to-egi-check-in-production-instance), you will need to update
+the URLs on your configuration:
+
+1. Update the `remote-id` of the identity provider to also include the new
+   issuer:
+
+   ```shell
+   $ openstack identity provider set --remote-id https://aai.egi.eu/auth/realms/egi --remote-id https://aai.egi.eu/oidc/ egi.eu
+   ```
+
+1. Add the new issuer to the `HTTP_OIDC_ISS` filter in your mappings, keep both
+   the `https://aai.egi.eu/oidc/` and `https://aai.egi.eu/auth/realms/egi` so
+   users can still use their existing tokens. Check-in will handle the
+   validation of both kind of tokens automatically. The `HTTP_OIDC_ISS` section
+   should look as follows:
+
+   ```json
+   {
+     "type": "HTTP_OIDC_ISS",
+     "any_one_of": [
+       "https://aai.egi.eu/auth/realms/egi",
+       "https://aai.egi.eu/oidc/"
+     ]
+   }
+
+   ```shell
+   $ openstack mapping set --rules mapping.egi.json egi-mapping
+   ```
+
+As the new issuer is included in the `remote-id` configuration of the Keystone
+identity provider, there should not be any changes in your users, they will be
+still be able to manage owned resources after the change.

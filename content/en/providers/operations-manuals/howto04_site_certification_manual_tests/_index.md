@@ -19,96 +19,6 @@ System your NGI will use for your certification.
 Note that the examples here use the Italian NGI and sites. Please substitute
 with **YOUR OWN** NGI and site credentials when running the test.
 
-### Cream-CE checks
-
-Open in your browser the following URL:
-`https://<hostname-of-cream-ce>:8443/ce-cream/services`
-
-A page with link to the CREAM WSDL should be shown.
-
-Try a gsiftp (e.g. using `globus-url-copy` or `uberftp`) towards that CREAM CE.
-E.g.:
-
-```shell
-$ globus-url-copy \
-    gsiftp://<hostname-of-cream-ce>/opt/glite/yaim/etc/versions/glite-yaim-core \
-    file:/tmp/yaim-version-test
-```
-
-Try the following command:
-
-```shell
-$ glite-ce-allowed-submission <hostname-of-cream-ce>:8443
-```
-
-It should report: `Job Submission to this CREAM CE is enabled`.
-
-Try a submission to Cream-CE using the `glite-ce-job-submit` command, e.g.:
-
-```shell
-$ cat sleep.jdl
-
-[
-executable="/bin/sleep";
-arguments="1";
-]
-```
-
-```shell
-$ glite-ce-job-submit -a -r <hostname-of-cream-ce>:8443/<queue> sleep.jdl
-```
-
-```shell
-$ glite-ce-job-submit -a -r ce-cr-02.ts.infn.it:8443/cream-lsf-cert sleep.jdl
-
-https://ce-cr-02.ts.infn.it:8443/CREAM127814374
-```
-
-Check the status of that job, which eventually should be `DONE-OK`:
-
-```shell
-$ glite-ce-job-status https://ce-cr-02.ts.infn.it:8443/CREAM127814374
-
-2010-07-27 11:55:37,986 WARN - No configuration file suitable for loading. Using built-in configuration
-
-******  JobID=[https://ce-cr-02.ts.infn.it:8443/CREAM127814374]
-Status        = [DONE-OK]
-ExitCode      = [0]
-```
-
-Try a submission to that CE using the `glite-ce-job-submit` command, and then
-tries to cancel it (using the `glite-ce-job-cancel` command):
-
-```shell
-$ cat sleep2.jdl
-
-[
-executable="/bin/sleep";
-arguments="1000";
-]
-```
-
-```shell
-$ glite-ce-job-submit -a -r cecream-cyb.ca.infn.it:8443/cream-lsf-poncert sleep2.jdl
-
-https://cecream-cyb.ca.infn.it:8443/CREAM126335182
-```
-
-```shell
-$ glite-ce-job-cancel https://cecream-cyb.ca.infn.it:8443/CREAM126335182
-```
-
-```shell
-$ glite-ce-job-status https://cecream-cyb.ca.infn.it:8443/CREAM126335182
-
-2010-07-27 12:18:26,973 WARN - No configuration file suitable for loading. Using built-in configuration
-
-******  JobID=[https://cecream-cyb.ca.infn.it:8443/CREAM126335182]
-Status        = [CANCELLED]
-ExitCode      = []
-Description   = [Cancelled by user]
-```
-
 ### ARC CE checks
 
 A first test can be done using ARC's `ngstat` command:
@@ -120,9 +30,8 @@ $ /usr/bin/ngstat -q -l -c <CE hostname> -t 20
 ...
 ```
 
-If a
-[monitoring host of your NGI](http://wiki.nordugrid.org/wiki/Service_Monitoring)
-is available, then the probes can easily be executed from there:
+If a monitoring host of your NGI is available, then the probes can easily be
+executed from there:
 
 Check the status of the CE with:
 
@@ -247,8 +156,8 @@ $ lcg-cr -v --vo <VO>-d<Your SE> \
     -l lfn:/grid/<VO>/test.txt file:</path/to/your/local/file>
 ```
 
-3\) Create a new replica in other SE (to check the third-party transfer between 2
-SEs)
+3\) Create a new replica in other SE (to check the third-party transfer between
+2 SEs)
 
 ```shell
 $ lcg-rep -v --vo <VO>-d<Other SE> <SURL>
@@ -297,40 +206,6 @@ The [test job](https://wiki.egi.eu/wiki/Certification_Job_template) checks
 several things, like the environment on WN and installed RPMs. Moreover it
 performs some replica management tests. With a `grep TEST` you may get a summary
 of the results: in case of errors, you have to see in detail what is gone wrong!
-
-As already said, if the site supports any flavour of MPI, launch a MPI test job,
-like [this](https://wiki.egi.eu/wiki/MPI_Certification_Job_template).
-
-Don't forget to set a reasonable value in `CPUNumber`: most important is that
-your job starts running quickly.
-
-If you want less stuff in the `.out` and `.err` files, in the file
-`mpi-start-wrapper.sh` comment the line
-
-```shell
-$ export I2G_MPI_START_DEBUG=1
-```
-
-A successful output will look like the following one (extract)
-
-```shell
-[...]
-mpi-start [DEBUG ]: using user supplied startup : '/opt/mpich-1.2.7p1/bin/mpirun '
-mpi-start [DEBUG ]: => MPI_SPECIFIC_PARAMS=
-mpi-start [DEBUG ]: => I2G_MPI_PRECOMMAND=
-mpi-start [DEBUG ]: => MPIEXEC=/opt/mpich-1.2.7p1/bin/mpirun
-mpi-start [DEBUG ]: => I2G_MACHINEFILE_AND_NP=-machinefile /tmp/tmp.iBypc12521 -np 6
-mpi-start [DEBUG ]: => I2G_MPI_APPLICATION=/home/dteam022/globus-tmp.t3-wn-13.11955.0/https_3a_2f_2falbalonga.cnaf.infn.it_3a9000_2fI06uWaKi1evxL3tTF-DTOg/hello
-mpi-start [DEBUG ]: => I2G_MPI_APPLICATION_ARGS=
-mpi-start [DEBUG ]: /opt/mpich-1.2.7p1/bin/mpirun -machinefile /tmp/tmp.iBypc12521 -np 6 /home/dteam022/globus-tmp.t3-wn-13.11955.0/https_3a_2f_2falbalonga.cnaf.infn.it_3a9000_2fI06uWaKi1evxL3tTF-DTOg/hello
-Process 4 on t3-wn-37.pn.pd.infn.it out of 6
-Process 3 on t3-wn-34.pn.pd.infn.it out of 6
-Process 1 on t3-wn-13.pn.pd.infn.it out of 6
-Process 2 on t3-wn-34.pn.pd.infn.it out of 6
-Process 5 on t3-wn-37.pn.pd.infn.it out of 6
-Process 0 on t3-wn-13.pn.pd.infn.it out of 6
-[...]
-```
 
 ### Globus checks
 
@@ -384,109 +259,6 @@ Check job submission:
 ```shell
 $ globusrun -s -r HOST:2119 "&(executable="/bin/date")"
 ```
-
-### Unicore checks
-
-This testing manual assumes that the test instance has not been added to the
-“Global” registry. “Global” registry does not have to be global (for the whole
-infrastructure) - is a register used by a group of site which work together. For
-example each Resource Infrastructure Provider can have own “Global” registry.
-
-It is suggested to add the instance to the “Global” registry only if it was
-tested and works properly. For this reason this instruction refers to the local
-registry.
-
-#### Preliminary testing
-
-After installation and configuration, start all the services and see if
-functioning properly. To avoid errors/warnings in the logs first start the TSI
-and the Gateway and then the Unicore/X (requires two other servers to operate).
-The first step of verification is to verify proper configuration of log files
-for all services whether they running. Logs for Unicore/X and Gateway are in
-standard locations `/var/log/unicore/unicorex/unicorex.log` and
-`/var/log/unicore/gateway/gateway.log`. In the case where there is no log file,
-check the file `/var/log/unicore/unicorex/unicorex-startup.log` or
-`/var/log/unicore/gateway/gateway-startup.log` - those file contain the servers'
-standard output  output, and can be useful in case of generic, system-wide
-issues as missing  Java virtual machine. Log files should be checked carefully
-for warnings and errors. They should show only the information about the start
-of the service, without any warnings (the WARN label) or errors (the ERROR
-label). In case of problems, you should proceed according to the information
-found in the log files. If they are unclear you should increase logging detail
-(for Unicore/X and Gateway). This is set in the file
-`/etc/unicore/gateway/logging.properties` and
-`/etc/unicore/unicorex/logging.properties`. UNICORE uses log4j logging
-subsystem. When you change the login parameters is not required to restart the
-component. After the successful initialization of all services you can begin to
-test them in practice. Please connect to the site via any UNICORE client (URC or
-UCC). Since the registration of newly created VSite was initially turned off in
-the global registry, you should use the local registry. The local registry
-address is:
-`https://GATEWAY-ADDESS/VSITE_NAME/services/Registry?res=default_registry`. Is
-recommended for test script execution, which displays the user. This should be a
-user associated with the certificate.
-
-#### Testing using the URC
-
-1. Testing should start from setting up the user's credentials,
-2. A local registry should be added in URC Grid Browser view..
-3. The registry contents should be listed, by double clicking on its node. It is
-   worth to enable the display of all sites by clicking on the Grid Browser the
-   "Show" button and selecting from the list "All services". If you see a red
-   cross on the service, click on it and see the details of the error message in
-   the URC and the error on the server-side.
-4. If all services are available, you can send the job. At the same time it is
-   recommended to monitor the logs Unicore/X and TSI for errors.
-
-#### Testing using the UCC
-
-1. Configure UCC credentials
-2. Configure the registry in UCC preferences file (the registry property).
-3. Invoke:
-
-```shell
-/ucc shell
-ucc> connect
-You can access 1 target system(s).
-ucc> list-sites
-VSITE_NAME https://GATEWAY_ADDRESS/VSITE_NAME/services/TargetSystemService?res=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-ucc> list-storages
-SHARE https://GATEWAY_ADDRESS/VSITE_NAME/services/services/StorageManagement?res=default_storage
-ucc> ls u6://SHARE
-/a5063ea0-ecbe-4097-9abc-f55ec9437376
-/3f501d37-5851-4c9e-a1da-5ad7b9f16633
-/3bf169c2-2149-4564-b827-0b6560a3dd35
-...
-ucc> list-applications
-Applications on target system <VSITE_NAME>
-R 2.10.0
-BLAST 2.2.22
-POVRay 3.6.1
-...
-```
-
-We should get a message similar to the above. Then test the file transfer:
-
-```shell
-ucc> put-file -s LOCAL_FILE_PATH \
-    -t https://GATEWAY_ADDRESS/VSITE_NAME/services/StorageManagement?res=default_storage#TARGET_FILE_NAME
-```
-
-And job submission:
-
-```shell
-ucc> run -s VSITE_NAME JOB_FILE_PATH.u
-SUCCESSFUL exit code: 0
-```
-
-If an error occurs, you can on each of these commands add the "-v" flag, what
-increases  UCC verbosity. As in the URC case it is advised to simultaneously
-monitor Unicore / Xa and TSI log files.
-
-##### After testing
-
-If testing was successful, you can unlock the registration system in the global
-registry.
 
 ## QCG checks
 
@@ -718,17 +490,12 @@ LocalFinishTime: Fri Feb 15 14:52:09 CET 2013
 
 Sites can provide any (not necessarily all) of the interfaces listed below:
 
-- OCCI for VM Management
 - OpenStack Compute for VM Management
 - CDMI for Object Storage
 
-### Cloud Compute (OCCI/OpenStack) checks prerequisites
+### Cloud Compute checks prerequisites
 
 #### AppDB integration
-
-_NOTE:_ Prerequisite: run the following commands is the installation of the EGI
-rOCCI CLI environment, according to
-[this guide](https://wiki.egi.eu/wiki/Fedcloud-tf:CLI_Environment).
 
 Go to AppDB and look for a OS image member of the `fedcloud.egi.eu` VO (all
 sites should support), e.g.
@@ -815,218 +582,7 @@ Creating proxy .................................................................
 Your proxy is valid until Fri Nov 14 04:59:26 2014
 ```
 
-### OCCI checks (eu.egi.cloud.vm-management.occi service type)
-
-_NOTE:_ Prerequisite: run the following commands is the installation of the EGI
-EGI CLI environment, according to
-[this guide](https://wiki.egi.eu/wiki/Fedcloud-tf:CLI_Environment).
-
-Describe OS templates (`occi_endpoint` is the one retrieved from AppDB). Check
-also that the OCCI ID provided by in AppDB is listed:
-
-```shell
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X -a describe -r os_tpl
-
-[...]
-[[/_http://occi.carach5.ics.muni.cz/occi/infrastructure/os_tpl#uuid_ubuntu_server_14_04_lts_fedcloud_dukan_84_| http://occi.carach5.ics.muni.cz/occi/infrastructure/os_tpl#uuid_ubuntu_server_14_04_lts_fedcloud_dukan_84 ]]
-title: Ubuntu-Server-14.04-LTS@fedcloud-dukan
-term: uuid_ubuntu_server_14_04_lts_fedcloud_dukan_84
-location: /mixin/os_tpl/uuid_ubuntu_server_14_04_lts_fedcloud_dukan_84/
-[...]
-```
-
-Describe the resource templates, and check that the resource ID provided but
-AppDB is returned:
-
-```shell
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X -a describe \
-    -r resource_tpl
-[...]
-[[/_http://schema.fedcloud.egi.eu/occi/infrastructure/resource_tpl#small_| http://schema.fedcloud.egi.eu/occi/infrastructure/resource_tpl#small ]]
-title: Small Instance - 1 core and 2 GB RAM term: small
-location: /mixin/resource_tpl/small/
-```
-
-Start a VM (using the OCCI ID and Resource ID as provided by AppDB for the
-mixins, and for context the file created above). The returned ID will be used in
-the commands below:
-
-```shell
-$ occi -e  <occi_endpoint> -n x509 -x $X509_USER_PROXY -X \
-    -a create -r compute -M  <resource_id> -M <occi_id> \
-    -t occi.core.title="My OCCI VM" \
-    -T user_data= <file://$PWD/ctx.txt>
-
-https://carach5.ics.muni.cz:11443/compute/46934
-```
-
-Check that the VM is active by describing it (it may take a few minutes):
-
-```shell
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X -a describe -r <vm_id>
-
-[...]
-occi.compute.state = active
-[...]
-occi.networkinterface.address = 147.251.3.62
-[...]
-```
-
-If the VM does not have a public IP, you will need to get an IP for it
-
-```shell
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X -a link \
-    -r <vm_id> -j /network/public
-```
-
-ssh to the machine to the provided IP (the options avoid problems when different
-VMs have the same IP, don't use them in production) and check that
-contextualization script was executed:
-
-```shell
-$ ssh -i tempkey -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
-    testadm@ <ip_addr> "sudo cat /tmp/deployment.log"
-
-OK
-```
-
-Create a block storage entity of 1 GB and save the ID returned:
-
-```shell
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X \
-    -a create -r storage -t occi.storage.size=num(1) \
-    -t occi.core.title=storage_test
-
-https://carach5.ics.muni.cz:11443/storage/296
-```
-
-Describe the newly created storage ID:
-
-```shell
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X \
-    -a describe -r <storage_id>
-
-[...]
-occi.storage.size = 1.0
-occi.storage.state = online
-[...]
-```
-
-Link that storage to the running VM:
-
-```shell
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X \
-    -a link -r <vm_id> -j <storage_id>
-
-https://carach5.ics.muni.cz:11443/link/storagelink/compute_46936_disk_2
-```
-
-Check the device where the storage is attached:
-
-```shell
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X \
-    -a describe -r <storage_link_id>
-
-[...]
-occi.storagelink.deviceid = /dev/xvdb
-[...]
-```
-
-And login into the machine to create a filesystem, mount it, create a file, and
-umount:
-
-```shell
-$ ssh -i tempkey -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
-    testadm@ <ip_addr>
-
-testadm $ sudo mke2fs <device_id>
-mke2fs 1.42.9 (4-Feb-2014) Filesystem label= OS type: Linux
-Block size=4096 (log=2) Fragment size=4096 (log=2)
-Stride=0 blocks, Stripe width=0 blocks 65536 inodes, 262144 blocks
-13107 blocks (5.00%) reserved for the super user First data block=0
-Maximum filesystem blocks=268435456 8 block groups
-32768 blocks per group, 32768 fragments per group 8192 inodes per group
-Superblock backups stored on blocks:   32768, 98304, 163840, 229376
-
-Allocating group tables: done  Writing inode tables: done
-Writing superblocks and filesystem accounting information: done
-
-testadm $ sudo mount  <device_id> /mnt
-testadm $ touch /mnt/test
-testadm $ ls -l /mnt/
-
-total 16 drwx------ 2 root root 16384 Nov 13 17:43 lost+found
--rw-r--r-- 1 root root 0 Nov 13 17:45 test
-
-testadm $ sudo umount /mnt
-testadm $ exit
-```
-
-Unlink the storage from that VM and start a new one with that storage attached:
-
-```shell
-$ occi -a unlink -r  <storage_link_id>
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X \
-    -a create -r compute -M  <resource_id> -M <occi_id> \
-    -t occi.core.title="My OCCI VM" \
-    -T user_data= <file://$PWD/ctx.txt> \
-    -j <storage_id>** https://carach5.ics.muni.cz:11443/compute/46936
-```
-
-Check the IP of the new VM and login:
-
-```shell
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X \
-    -a describe -r <new_vm_id>**
-
-[...]
-occi.compute.state = active
-[...]
->> location: /link/storagelink/compute_46936_disk_2
-[...]
-occi.storagelink.deviceid = /dev/xvdb
-[...]
-occi.networkinterface.address = 147.251.3.63
-[...]
-
-$ ssh -i tempkey -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
-    testadm@ <new_vm_ip_addr>
-testadm $ sudo mount <device_id> /mnt
-testadm $ ls -ltr /mnt/
-
-total 16
-drwx------ 2 root root 16384 Nov 13 17:43 lost+found
--rw-r--r-- 1 root root 0 Nov 13 17:45 test
-
-testadm $ sudo umount /mnt
-testadm $ exit
-```
-
-Clean up by unlinking the storage, and removing VMs and storage:
-
-```shell
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X \
-    -a unlink -r <new_storage_link_id>
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X \
-    -a delete -r <vm_id>
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X \
-    -a delete -r <new_vm_id>
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X \
-    -a delete -r <storage_id>
-```
-
-Finally check that the VMs and storage are not listed by occi:
-
-```shell
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X -a list -r compute
-$ occi -e <occi_endpoint> -n x509 -x $X509_USER_PROXY -X -a list -r storage
-```
-
 ### OpenStack Compute checks (org.openstack.nova service type)
-
-_NOTE:_ Prerequisite: run the following commands is the installation of the
-OpenStack CLI with VOMS extensions, as shown in
-[on the API and SDK guide](https://wiki.egi.eu/wiki/Federated_Cloud_APIs_and_SDKs#CLI_2).
 
 Export the following variables on your shell (keystone URL can be obtained from
 GOCDB URL of the endpoint)
@@ -1356,10 +912,6 @@ $ openstack ip floating delete <ip id>
 
 ### Cloud Storage (CDMI) checks (eu.egi.cloud.storage-management.cdmi service type)
 
-_NOTE:_ Prerequisite: run the following commands is the installation of the
-EGI CLI environment, according to
-[this guide](https://wiki.egi.eu/wiki/Fedcloud-tf:CLI_Environment).
-
 List the content of the repository:
 
 ```shell
@@ -1423,7 +975,8 @@ Check that the folder does not exist anymore
 $ bcdmi -e <cdmi_endpoint> list /
 ```
 
-See Site Certification GIIS Check [HOWTO03](../howto03_site_certificatoin_giis_check).
+See Site Certification GIIS Check
+[HOWTO03](../howto03_site_certificatoin_giis_check).
 
 See to Resource Centre registration and certification procedure
 [PROC09](https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification).
