@@ -178,7 +178,7 @@ reach the federated RCs.
 
 International communities reach EGI through the following channels:
 
-- The EGI Website where they can
+- The EGI site where they can
   [request access to services](https://www.egi.eu/services/research/).
 - The [EGI-ACE Call for Use Cases](https://www.egi.eu/egi-ace-open-call/).
 - The [Marketplace](https://marketplace.eosc-portal.eu/) of the European Open
@@ -186,8 +186,8 @@ International communities reach EGI through the following channels:
 
 ### Service and Operation Level Agreements (SLAs, OLAs)
 
-The User Community Support team of the EGI Foundation receives these requests and
-negotiates the details of access, with the involvement of relevant and
+The User Community Support team of the EGI Foundation receives these requests
+and negotiates the details of access, with the involvement of relevant and
 ‘fit-for-purpose’ RPs. This Service Level Management (SLM) process intervenes as
 a matchmaker between service expectations and needs of the user communities,
 acting as ‘customers’, and the capabilities of the RCs. Customers are enabled
@@ -197,11 +197,12 @@ access to the resources in the form of
 In order to select providers for provisioning services to a given customer,
 technical requirements are collected from the customer then transferred to
 relevant providers. The Expression of Interests for support (EoIs) are collected
-from the interested providers during the negotiation phase, resulting in the best
-match with customer’s requirements and expectations (both technical and financial).
-Several aspects are considered during the negotiation phase, including the
-geographical location of the customer, national roadmap and priority of the
-providers, and costs of the service provisioning in case of a pay-for-use model.
+from the interested providers during the negotiation phase, resulting in the
+best match with customer’s requirements and expectations (both technical and
+financial). Several aspects are considered during the negotiation phase,
+including the geographical location of the customer, national roadmap and
+priority of the providers, and costs of the service provisioning in case of a
+pay-for-use model.
 
 ![Relationship between SLA and OLA](SLAs-Picture.png)
 
