@@ -340,7 +340,9 @@ $ fedcloud endpoint list --service-type org.openstack.swift --site ALL_SITES
 $ fedcloud openstack --site <site> --vo <virtual-organisation> catalog show keystone
 
 # get OS_AUTH_TOKEN
-$ fedcloud openstack --site <site> --vo <virtual-organisation> token issue -c id -f value
+$ fedcloud openstack --site <site> --vo <virtual-organisation> token issue \
+  -c id \
+  -f value
 
 # get OS_STORAGE_URL for your site and Virtual Organisation
 $ fedcloud openstack --site <site> --vo <virtual-organisation> catalog show swift
