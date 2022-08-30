@@ -1114,7 +1114,9 @@ having S3 interface.&lt;/p>
 &lt;p>First of all the configuration of the access and secret keys need to be done:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ aws configure
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>then it offers many commands to list, create buckets, objects, e.g.:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ aws s3 ls --no-sign-request --endpoint-url https://object-store.cloud.muni.cz s3://test-egi-public
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ aws s3 ls --no-sign-request &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --endpoint-url https://object-store.cloud.muni.cz &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> s3://test-egi-public
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
