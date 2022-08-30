@@ -323,6 +323,48 @@ objects in OpenStack storage containers cannot be protected against deletion.
 $ fedcloud openstack container delete test-egi
 ```
 
+#### Rclone
+
+[Rclone](https://rclone.org/) is a command-line program to manage files on cloud storage.
+This section explains how to use `rclone` to interact with
+[OpenStack Swift](https://docs.openstack.org/swift/latest/) available in the
+EGI Federated Cloud.
+
+As a prerequisite, we need to configure the following environment variables: `OS_AUTH_URL`,
+`OS_AUTH_TOKEN`, `OS_STORAGE_URL`. Use the [FedCloud Client](../../../getting-started/cli)
+to get their values:
+
+```shell
+# explore sites with swift storage
+fedcloud endpoint list --service-type org.openstack.swift --site ALL_SITES
+
+# get OS_AUTH_URL
+fedcloud openstack --site <site> --vo <virtual-organisation> catalog show keystone
+
+# get OS_AUTH_TOKEN
+fedcloud openstack --site <site> --vo <virtual-organisation> token issue -c id -f value
+
+# get OS_STORAGE_URL for your site and Virtual Organisation
+fedcloud openstack --site <site> --vo <virtual-organisation> catalog show swift
+ ```
+
+Now configure `rclone` to work with the environment variables:
+
+```shell
+rclone config create egiswift swift env_auth true
+```
+
+Finally, check that you have access to swift:
+
+```shell
+export OS_AUTH_TOKEN=<token>
+export OS_AUTH_URL=<keystone-url>
+export OS_STORAGE_URL=<swift-url>
+rclone lsd egiswift:
+```
+
+For more information, please see [Rclone documentation for Swift](https://rclone.org/swift/).
+
 ### Access via the S3 protocol
 
 The OpenStack [Swift](https://docs.openstack.org/swift/latest/) service is
@@ -361,46 +403,6 @@ $ aws s3 ls --no-sign-request --endpoint-url https://object-store.cloud.muni.cz 
 {{% alert title="Note" color="info" %}}
 In order to access public buckets the `--no-sign-request` is needed
 {{% /alert %}}
-
-#### Rclone
-
-[Rclone](https://rclone.org/) is a command-line program to manage files on cloud storage.
-This section explains how to use `rclone` to interact with
-[OpenStack Swift](https://docs.openstack.org/swift/latest/) available in the
-EGI Federated Cloud.
-
-As a prerequisite, we need to configure the following environment variables: `OS_AUTH_URL`,
-`OS_AUTH_TOKEN`, `OS_STORAGE_URL`. Use the [FedCloud Client](../../../getting-started/cli)
-to get their values:
-
-```shell
-# explore sites with swift storage
-fedcloud endpoint list --service-type org.openstack.swift --site ALL_SITES
-
-# get OS_AUTH_URL
-fedcloud endpoint list --service-type org.openstack.keystone --site <site> # or
-fedcloud site env --site <site> --vo <virtual-organisation>
-
-# get OS_AUTH_TOKEN
-fedcloud openstack --site <site> --vo <virtual-organisation> token issue -c id -f value
-
-# get OS_STORAGE_URL for your site and Virtual Organisation
-fedcloud endpoint list --service-type org.openstack.swift --site <site>
- ```
-
-Now configure `rclone` to work with the environment variables:
-
-```shell
-rclone config create egiswift swift env_auth true
-```
-
-Finally, check that you have access to swift:
-
-```shell
-rclone lsd egiswift:
-```
-
-For more information, please see [Rclone documentation for Swift](https://rclone.org/swift/).
 
 #### Minio Client
 
