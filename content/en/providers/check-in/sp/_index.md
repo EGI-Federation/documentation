@@ -138,7 +138,7 @@ provide the following information to connect your service to EGI Check-in:
 1. Country of the service
 1. Compliance with the [EGI Policies](https://go.egi.eu/policies-and-procedures)
    and the
-   [GÉANT Data Protection Code of Conduct](https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home)
+   [REFEDS Data Protection Code of Conduct](https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home)
 
 The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.
