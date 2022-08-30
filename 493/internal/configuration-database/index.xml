@@ -1076,9 +1076,13 @@ service.&lt;/li>
 &lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;service_type=argo.consumer">argo.consumer&lt;/a>:
 ARGO Consumer collects monitoring metrics from monitoring engines.&lt;/li>
 &lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;service_type=argo.computeengine">argo.computeengine&lt;/a>:
-ARGO Compute Engine computes availability and reliability of services.&lt;/li>
+ARGO Compute Engine computes availability and reliability of services.
+&lt;!-- textlint-disable terminology -->
+&lt;/li>
 &lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;service_type=argo.api">argo.api&lt;/a>:
-ARGO API service for retrieving status and A/R results.&lt;/li>
+ARGO API service for retrieving status and A/R results.
+&lt;!-- textlint-enable terminology -->
+&lt;/li>
 &lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;service_type=argo.webui">argo.webui&lt;/a>:
 ARGO web user interface for metric A/R visualization and recalculation
 management.&lt;/li>
