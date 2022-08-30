@@ -1077,7 +1077,9 @@ $ fedcloud endpoint list --service-type org.openstack.swift --site ALL_SITES
 &lt;span style="color:#8f5902;font-style:italic"># get OS_AUTH_URL&lt;/span>
 $ fedcloud openstack --site &amp;lt;site&amp;gt; --vo &amp;lt;virtual-organisation&amp;gt; catalog show keystone
 &lt;span style="color:#8f5902;font-style:italic"># get OS_AUTH_TOKEN&lt;/span>
-$ fedcloud openstack --site &amp;lt;site&amp;gt; --vo &amp;lt;virtual-organisation&amp;gt; token issue -c id -f value
+$ fedcloud openstack --site &amp;lt;site&amp;gt; --vo &amp;lt;virtual-organisation&amp;gt; token issue &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -c id &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -f value
 &lt;span style="color:#8f5902;font-style:italic"># get OS_STORAGE_URL for your site and Virtual Organisation&lt;/span>
 $ fedcloud openstack --site &amp;lt;site&amp;gt; --vo &amp;lt;virtual-organisation&amp;gt; catalog show swift
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Now configure &lt;code>rclone&lt;/code> to work with the environment variables:&lt;/p>
