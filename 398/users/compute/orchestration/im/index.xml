@@ -33,7 +33,8 @@ needed to access an EGI Cloud Compute site:&lt;/p>
 &lt;span style="color:#000">id&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> egi&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> EGI&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> CESGA&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> vo.access.egi.eu&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> egi_aai_token_value
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>The value of &lt;code>egi_aai_token_value&lt;/code> must be replaced with a valid EGI Check-in
 access token. Users of EGI Check-in can get all the information needed to obtain
-access tokens, by visiting &lt;a href="https://aai.egi.eu/fedcloud/">Check-in FedCloud client&lt;/a>.&lt;/p>
+access tokens, by visiting
+&lt;a href="https://aai.egi.eu/token/">EGI Check-in Token Portal&lt;/a>.&lt;/p>
 &lt;p>&lt;a href="https://indigo-dc.gitbook.io/oidc-agent/">oidc-agent&lt;/a> can be used to get
 a valid access token:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">id&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> im&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> InfrastructureManager&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> command&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>oidc-token OIDC_ACCOUNT&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
@@ -158,8 +159,8 @@ for EOSC users to access EGI Cloud Compute resources.&lt;/p>
 &lt;/ul>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-More details about installing
-and configuring the dashboard are available in the
+More details about installing and
+configuring the dashboard are available in the
 &lt;a href="https://imdocs.readthedocs.io/en/latest/dashboard.html">IM Dashboard documentation&lt;/a>.
 &lt;/div>
 &lt;h2 id="usage">Usage&lt;/h2>
@@ -172,22 +173,22 @@ provided by the IM service. In case you need more advanced features use the
 &lt;p>&lt;img src="dash_login.png" alt="Landing page">&lt;/p>
 &lt;h3 id="login">Login&lt;/h3>
 &lt;p>Users must use &lt;a href="../../../../aai/check-in">EGI Check-in&lt;/a> to log into the
-dashboard. Once authenticated, they will be redirected to the portfolio
-of available TOSCA templates.&lt;/p>
+dashboard. Once authenticated, they will be redirected to the portfolio of
+available TOSCA templates.&lt;/p>
 &lt;p>&lt;img src="dash_configure.png" alt="Portfolio page">&lt;/p>
 &lt;h3 id="main-menu-bar">Main menu bar&lt;/h3>
 &lt;p>The main menu bar is located at the top of the pages:&lt;/p>
 &lt;ul>
-&lt;li>The first button &lt;code>IM Dashboard&lt;/code> enables the user to go to the the portfolio of
+&lt;li>The first button &lt;code>IM Dashboard&lt;/code> enables the user to go to the portfolio of
 available TOSCA templates.&lt;/li>
 &lt;li>Second item &lt;code>Infrastructures&lt;/code> redirects to the list of current user deployed
 infrastructures.&lt;/li>
-&lt;li>In the &lt;code>Advanced&lt;/code> item the &lt;code>Settings&lt;/code> subitem displays some
-configuration settings as the URL of the IM service or the OIDC issuer.&lt;/li>
-&lt;li>&lt;code>External Links&lt;/code> show a set of configurables information links (documentation,
+&lt;li>In the &lt;code>Advanced&lt;/code> item the &lt;code>Settings&lt;/code> sub-item displays some configuration
+settings as the URL of the IM service or the OIDC issuer.&lt;/li>
+&lt;li>&lt;code>External Links&lt;/code> show a set of configurable information links (documentation,
 video tutorials, etc.)&lt;/li>
-&lt;li>Finally, on the right top corner, appears the &lt;code>User&lt;/code> menu item. This item shows
-the full name of the logged user, and an avatar obtained from
+&lt;li>Finally, on the right top corner, appears the &lt;code>User&lt;/code> menu item. This item
+shows the full name of the logged user, and an avatar obtained from
 &lt;a href="https://www.gravatar.com/">Gravatar&lt;/a>. In this menu the user can access their
 &lt;code>Cloud Credentials&lt;/code> with the cloud providers or log out from the application.&lt;/li>
 &lt;/ul>
@@ -198,17 +199,17 @@ any cloud provider. In the list the user can edit, delete and enable or disable
 the selected cloud credentials.&lt;/p>
 &lt;p>&lt;img src="dash_cred_list.png" alt="List of Cloud Credentials">&lt;/p>
 &lt;p>Editing or adding the credentials will show a modal form where the user has the
-ability to specify all the parameters needed to access the supported cloud providers.
-In particular, for &lt;a href="../../../cloud-compute">Cloud Compute&lt;/a> sites the
+ability to specify all the parameters needed to access the supported cloud
+providers. In particular, for &lt;a href="../../../cloud-compute">Cloud Compute&lt;/a> sites the
 user only has to select one of the VOs he is member of and one of sites that
-supports that VO. These dropdown fields are generated using the information
+supports that VO. These drop-down fields are generated using the information
 available from the sites and the list of VOs the user is member of.&lt;/p>
-&lt;p>&lt;img src="dash_edit_cred.png" alt="Edit/Add a Crecential">&lt;/p>
+&lt;p>&lt;img src="dash_edit_cred.png" alt="Edit/Add a Credential">&lt;/p>
 &lt;h3 id="tosca-templates">TOSCA Templates&lt;/h3>
 &lt;p>The list of available TOSCA templates enables the user to select the required
 topology to deploy. Each TOSCA template can be labelled by the TOSCA developer
-with any tag that will show a ribbon displayed on the right bottom corner.
-The special &lt;code>elastic&lt;/code> tag is used to mark templates that are configured to
+with any tag that will show a ribbon displayed on the right bottom corner. The
+special &lt;code>elastic&lt;/code> tag is used to mark templates that are configured to
 automatically manage the elasticity of the deployed cluster.&lt;/p>
 &lt;p>The user must click on the &lt;code>Configure&lt;/code> button to set the input values of the
 TOSCA template and select the VO, Site and Image to use for deploying the
@@ -220,22 +221,22 @@ tab called &lt;code>Input Values&lt;/code>, but the TOSCA developer can add or r
 simplify the selection of input values.&lt;/p>
 &lt;p>&lt;img src="dash_inputs.png" alt="TOSCA input values.">&lt;/p>
 &lt;p>The final tab will be the &lt;code>Cloud Provider Selection&lt;/code>. In this tab the user first
-has to select one of the Cloud providers that has been previously added (and
-not disabled) in the &lt;code>Cloud Credentials&lt;/code> page, then has to select the base
-image used to deploy the VMs. In case of EGI Cloud Compute sites, the user has
-two options: he can select an image from the list of images provided by the
+has to select one of the Cloud providers that has been previously added (and not
+disabled) in the &lt;code>Cloud Credentials&lt;/code> page, then has to select the base image
+used to deploy the VMs. In case of EGI Cloud Compute sites, the user has two
+options: he can select an image from the list of images provided by the
 &lt;a href="https://appdb.egi.eu/">EGI AppDB information system&lt;/a> or from the list provided
 directly by the Cloud site.&lt;/p>
-&lt;p>Other providers will only show a dropdown list with the available images.
-Only in the case of AWS Cloud provider the user has to specify manually the AMI
-ID of the image.&lt;/p>
+&lt;p>Other providers will only show a drop-down list with the available images. Only
+in the case of AWS Cloud provider the user has to specify manually the AMI ID of
+the image.&lt;/p>
 &lt;p>&lt;img src="dash_site.png" alt="Select Cloud Provider and Image">&lt;/p>
 &lt;h3 id="infrastructures">Infrastructures&lt;/h3>
-&lt;p>This page lists the infrastructures deployed by the user.
-The first column shows the name set by the user on infrastructure creation,
-then shows the ID assigned by the IM service, the third column shows the current
-status of the infrastructure, the fourth show the list of VMs with their IDs and
-finally a button with a set of actions appears.&lt;/p>
+&lt;p>This page lists the infrastructures deployed by the user. The first column shows
+the name set by the user on infrastructure creation, then shows the ID assigned
+by the IM service, the third column shows the current status of the
+infrastructure, the fourth show the list of VMs with their IDs and finally a
+button with a set of actions appears.&lt;/p>
 &lt;p>&lt;img src="dash_inf_list.png" alt="List of infrastructures.">&lt;/p>
 &lt;h4 id="list-of-actions">List of Actions&lt;/h4>
 &lt;p>The following figure shows the list of actions available to manage the existing
@@ -244,9 +245,12 @@ infrastructures:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Add nodes: The Add nodes action enables to add new VMs to the users'
-deployment. It will show the list of the different types of nodes
-currently deployed in the infrastructure and the user must set the number
-of nodes of each type he wants to deploy.&lt;/p>
+deployment. It will show the list of the different types of nodes currently
+deployed in the infrastructure and the user must set the number of nodes of
+each type he wants to deploy. It will also show a dropdown list with the
+available base images. It will enable changing the base image used to
+deploy the new nodes. In some cases it will be necessary because the original
+one has been removed.&lt;/p>
 &lt;p>&lt;img src="dash_add_nodes.png" alt="Add nodes page">&lt;/p>
 &lt;/li>
 &lt;li>
@@ -263,36 +267,46 @@ create the infrastructure.&lt;/p>
 &lt;p>Start: Starts/Resumes a previously stopped infrastructure.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Outputs: Shows the outputs of the TOSCA template. Private key of
-credentials can be downloaded as a file or copied to the clipboard.&lt;/p>
+&lt;p>Outputs: Shows the outputs of the TOSCA template. Private key of credentials
+can be downloaded as a file or copied to the clipboard.&lt;/p>
 &lt;p>&lt;img src="dash_outputs.png" alt="TOSCA outputs">&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Delete: Delete this infrastructure and all the asociated resources. It also
-has the option to force the deletion. In this case the infrastructure will
-be removed from the IM service even if some cloud resources cannot be deleted.
+&lt;p>Delete: Delete this infrastructure and all the associated resources. It also
+has the option to force the deletion. In this case the infrastructure will be
+removed from the IM service even if some cloud resources cannot be deleted.
 &lt;strong>Only use this option if you know what you are doing&lt;/strong>.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Delete &amp;amp; Recreate: Delete this infrastructure as the previous option, but
-once it is deleted it will redirect to the infrastructure creation form, with
-all the input fields filled with the same set of values used to create the
-deleted infrastructure.&lt;/p>
+&lt;p>Delete &amp;amp; Recreate: Delete this infrastructure as the previous option, but once
+it is deleted it will redirect to the infrastructure creation form, with all
+the input fields filled with the same set of values used to create the deleted
+infrastructure.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Reconfigure: Starts the reconfiguration of the infrastructure.&lt;/p>
 &lt;/li>
+&lt;li>
+&lt;p>Change User: Add or change the ownership of the infrastructure at IM level.
+Providing a valid &lt;code>Access Token&lt;/code> of another user, the infrastructure can be
+shared or transferred to them. If &lt;code>Overwrite&lt;/code> is checked, the new user will be
+the unique owner of the infrastructure (transferring), otherwise it will be
+added to the list of current users (sharing). &lt;strong>The new user must be member of
+the VO used to create the resources&lt;/strong>, otherwise he will not be able to manage
+them.&lt;/p>
+&lt;p>&lt;img src="dash_change_user.png" alt="Change/Add User modal form">&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;h3 id="vm-info-page">VM Info page&lt;/h3>
-&lt;p>The VM Info page shows all the information about the selected VM and
-enables to manage the lifecycle of it. On the top right corner the &lt;code>Manage VM&lt;/code>
-dropdown menu allows to Stop/Start, Reboot, Resize, Reconfigure and Terminate
-the VM. Furthermore the user can check the error or contextualisation log of this
+&lt;p>The VM Info page shows all the information about the selected VM and enables to
+manage the lifecycle of it. On the top right corner the &lt;code>Manage VM&lt;/code> drop-down
+menu allows to Stop/Start, Reboot, Resize, Reconfigure and Terminate the VM.
+Furthermore the user can check the error or contextualisation log of this
 particular VM.&lt;/p>
-&lt;p>The VM infomation is splitted in two dofferent tables, the first one with the
-main information: State, IPs, HW features and the SSH credentials needed to
-access it. The second table shows additional fields.&lt;/p>
+&lt;p>The VM information is split in two different tables, the first one with the main
+information: State, IPs, HW features and the SSH credentials needed to access
+it. The second table shows additional fields.&lt;/p>
 &lt;p>&lt;img src="dash_vm_info.png" alt="VM Info page">&lt;/p>
-&lt;p>When resizing the VM the user must provide the new size of the VM in terms
-of number of CPUs and amount of memory as shown in the figure below:&lt;/p>
+&lt;p>When resizing the VM the user must provide the new size of the VM in terms of
+number of CPUs and amount of memory as shown in the figure below:&lt;/p>
 &lt;p>&lt;img src="dash_vm_resize.png" alt="VM Resize modal form.">&lt;/p></description></item></channel></rss>

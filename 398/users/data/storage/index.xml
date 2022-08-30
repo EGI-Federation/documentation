@@ -51,12 +51,6 @@ provider and your SLA.
 of a provider, from a &lt;a href="#manage-from-the-command-line">command-line interface&lt;/a>
 (CLI), or via the
 &lt;a href="https://docs.openstack.org/api-ref/block-storage/">OpenStack Block Storage API&lt;/a>.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-Please refer to
-&lt;a href="https://wiki.egi.eu/wiki/HOWTO11_How_to_use_the_rOCCI_Client#How_to_create_block_storage.3F">OCCI How-To&lt;/a>
-for details about using the legacy OCCI interface to manage block storage.
-&lt;/div>
 &lt;h2 id="manage-from-the-command-line">Manage from the command-line&lt;/h2>
 &lt;p>Multiple command-line interfaces (CLIs) are available to manage block storage:&lt;/p>
 &lt;ul>
@@ -80,32 +74,32 @@ documentation about
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/volume.html#volume-list">list the volumes&lt;/a>
 in the site IN2P3-IRES via the Pilot VO (vo.access.egi.eu), use the following
 FedCloud command:&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-5" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-4" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-5-0-tab" data-toggle="tab" href="#tabs-5-0" role="tab"
-aria-controls="tabs-5-0" aria-selected="true">
+id="tabs-4-0-tab" data-toggle="tab" href="#tabs-4-0" role="tab"
+aria-controls="tabs-4-0" aria-selected="true">
 Linux / Mac
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-5-1-tab" data-toggle="tab" href="#tabs-5-1" role="tab"
-aria-controls="tabs-5-1" aria-selected="false">
+id="tabs-4-1-tab" data-toggle="tab" href="#tabs-4-1" role="tab"
+aria-controls="tabs-4-1" aria-selected="false">
 Windows
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-5-2-tab" data-toggle="tab" href="#tabs-5-2" role="tab"
-aria-controls="tabs-5-2" aria-selected="false">
+id="tabs-4-2-tab" data-toggle="tab" href="#tabs-4-2" role="tab"
+aria-controls="tabs-4-2" aria-selected="false">
 PowerShell
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-5-content">
+&lt;div class="tabx-content" id="tabs-4-content">
 &lt;div class="tab-pane show active"
-id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab">
+id="tabs-4-0" role="tabpanel" aria-labelled-by="tabs-4-0-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
 &lt;a href="../../../getting-started/cli#environment-variables">FedCloud CLI environment variables&lt;/a>
 to set them once and reuse them with each command invocation.&lt;/p>
@@ -122,7 +116,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-5-1" role="tabpanel" aria-labelled-by="tabs-5-1-tab">
+id="tabs-4-1" role="tabpanel" aria-labelled-by="tabs-4-1-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
 &lt;a href="../../../getting-started/cli#environment-variables">FedCloud CLI environment variables&lt;/a>
 to set them once and reuse them with each command invocation.&lt;/p>
@@ -139,7 +133,7 @@ Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-5-2" role="tabpanel" aria-labelled-by="tabs-5-2-tab">
+id="tabs-4-2" role="tabpanel" aria-labelled-by="tabs-4-2-tab">
 &lt;p>To avoid passing the site, VO, etc. each time, you can use
 &lt;a href="../../../getting-started/cli#environment-variables">FedCloud CLI environment variables&lt;/a>
 to set them once and reuse them with each command invocation.&lt;/p>
@@ -679,9 +673,9 @@ can check this with &lt;code>ip addr&lt;/code>). In your &lt;code>docker-compose
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
 &lt;p>Grid storage enables &lt;strong>storage of files in a fault-tolerant and scalable
 environment&lt;/strong>, and sharing it with distributed teams. Your data can be accessed
-through multiple protocols, and can be replicated across different providers
-to increase fault-tolerance. Grid storage gives you complete control over what
-data you share, and with whom you share the data.&lt;/p>
+through multiple protocols, and can be replicated across different providers to
+increase fault-tolerance. Grid storage gives you complete control over what data
+you share, and with whom you share the data.&lt;/p>
 &lt;p>The main features of grid storage:&lt;/p>
 &lt;ul>
 &lt;li>Access highly-scalable storage from anywhere&lt;/li>
@@ -694,12 +688,13 @@ data you share, and with whom you share the data.&lt;/p>
 &lt;a href="https://xrootd.slac.stanford.edu/">XRootD&lt;/a> and legacy
 &lt;a href="https://www.gridpp.ac.uk/wiki/SRM">SRM&lt;/a> (under deprecation at some of the
 endpoints).&lt;/p>
-&lt;p>Several grid storage implementations are available in the EGI Cloud, the most
-common being:&lt;/p>
+&lt;p>Several grid storage implementations are available in the EGI Infrastructure,
+the most common being:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://www.dcache.org/">dCache&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://twiki.cern.ch/twiki/bin/view/DPM/">DPM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://twiki.cern.ch/twiki/bin/view/DPM/">DPM&lt;/a> (N.B. under decommissioning)&lt;/li>
 &lt;li>&lt;a href="https://italiangrid.github.io/storm/">StoRM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://eos-web.web.cern.ch/eos-web/">EOS&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="endpoint-discovery">Endpoint discovery&lt;/h2>
 &lt;p>The grid storage endpoints that are available to a user&amp;rsquo;s Virtual Organizations
@@ -718,10 +713,9 @@ Avail Space&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>kB&lt;span
 &lt;span style="color:#0000cf;font-weight:bold">280375465082&lt;/span> n.a SRM ccsrm.ihep.ac.cn
 &lt;span style="color:#0000cf;font-weight:bold">10995116266&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">11&lt;/span> SRM cirigridse01.univ-bpclermont.fr
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-from-the-command-line">Access from the command-line&lt;/h2>
-&lt;p>Access to grid storage via a command-line interface (CLI) requires users
-to obtain a valid X.509 user VOMS proxy.
-Please refer to the &lt;a href="../../../aai/check-in/vos/voms">Check-in&lt;/a> documentation for more
-information.&lt;/p>
+&lt;p>Access to grid storage via a command-line interface (CLI) requires users to
+obtain a valid X.509 user VOMS proxy. Please refer to the
+&lt;a href="../../../aai/check-in/vos/voms">Check-in&lt;/a> documentation for more information.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Integration via
@@ -734,20 +728,20 @@ production stage.
 &lt;a href="https://dmc-docs.web.cern.ch/dmc-docs/gfal2/gfal2.html">gfal2&lt;/a>, which is
 available for installation both on RHEL and Debian compatible systems.&lt;/p>
 &lt;p>In particular, &lt;code>gfal2&lt;/code> provides an abstraction layer on top of several storage
-protocols (XRootD, WebDAV, SRM, gsiftp, etc), offerint a convenient API that
-can be used over different protocols.&lt;/p>
+protocols (XRootD, WebDAV, SRM, gsiftp, etc), offerint a convenient API that can
+be used over different protocols.&lt;/p>
 &lt;p>The &lt;code>gfal2&lt;/code> CLI can be installed as follows (for RHEL compatible systems):&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ yum install gfal2-util gfal2-all
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>gfal2-all&lt;/code> will install all the plug-ins (to deal with all the
-available protocols).&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>gfal2-all&lt;/code> will install all the plug-ins (to deal with all the available
+protocols).&lt;/p>
 &lt;p>Below you can find examples of the usual commands needed to access storage via
 &lt;code>gfal2&lt;/code>. For a complete list of available commands, and the guide on how to use
 them, please refer to the
 &lt;a href="https://dmc-docs.web.cern.ch/dmc-docs/gfal2-util.html">gfal2-util documentation&lt;/a>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-In the examples below, the used
-&lt;code>gsiftp&lt;/code> protocol can be replaced by any other supported protocol.
+In the examples below, the used &lt;code>gsiftp&lt;/code>
+protocol can be replaced by any other supported protocol.
 &lt;/div>
 &lt;h3 id="list-files-on-a-given-endpoint">List files on a given endpoint&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ gfal-ls gsiftp://dcache-door-doma01.desy.de/dteam
@@ -774,19 +768,21 @@ Copying gsiftp://prometheus.desy.de/VOs/dteam/public-file &lt;span style="color:
 gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file DELETED
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
 &lt;!-- markdown-link-check-disable -->
-&lt;p>The &lt;a href="../../../data/management/data-transfer">EGI Data Transfer&lt;/a> service provides mechanisms
-to optimize the transfer of files between EGI Online Storage endpoints.
-Both a &lt;a href="../../../data/management/data-transfer/webfts">graphical user interface&lt;/a> (GUI) and
-&lt;a href="../../../data/management/data-transfer/clients">command-line interfaces&lt;/a> (CLI) are available
-to perform bulk movement of data.
-Please check out the related documentation for more information.&lt;/p>
+&lt;p>The &lt;a href="../../../data/management/data-transfer">EGI Data Transfer&lt;/a> service provides
+mechanisms to optimize the transfer of files between EGI Online Storage
+endpoints. Both a
+&lt;a href="../../../data/management/data-transfer/webfts">graphical user interface&lt;/a> (GUI)
+and &lt;a href="../../../data/management/data-transfer/clients">command-line interfaces&lt;/a>
+(CLI) are available to perform bulk movement of data. Please check out the
+related documentation for more information.&lt;/p>
 &lt;!-- markdown-link-check-enable -->
 &lt;h2 id="integration-with-data-management-frameworks">Integration with Data Management frameworks&lt;/h2>
 &lt;p>Grid storage access, most of the time, is hidden from users by the integration
 with the Data Management Frameworks (DMFs) used by Collaborations and
 Experiments.&lt;/p>
-&lt;p>For example, &lt;a href="../../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a> provides a way
-to efficiently access grid storage endpoints in order to read/store files,
+&lt;p>For example,
+&lt;a href="../../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a> provides
+a way to efficiently access grid storage endpoints in order to read/store files,
 and to catalogue the existing file and related metadata.&lt;/p>
 &lt;p>When running computation via the EGI Workload Manager, users do not actually
 access the storage directly. However, users can retrieve the output of the
@@ -795,18 +791,18 @@ computation once it has been stored on the grid.&lt;/p></description></item><ite
 // jscpd:ignore-start
 -->
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>Object storage is a standalone service that &lt;strong>stores data as individual
-objects, organized into containers&lt;/strong>. It is a highly scalable, reliable,
-fast, and inexpensive data storage. It has a simple web services interface
-that can be used to store and retrieve any amount of data, at any time,
-from anywhere on the web.&lt;/p>
+&lt;p>Object storage is a standalone service that &lt;strong>stores data as individual objects,
+organized into containers&lt;/strong>. It is a highly scalable, reliable, fast, and
+inexpensive data storage. It has a simple web services interface that can be
+used to store and retrieve any amount of data, at any time, from anywhere on the
+web.&lt;/p>
 &lt;p>The main features of object storage:&lt;/p>
 &lt;ul>
 &lt;li>Storage containers and objects have unique URLs, which can be used to access,
 manage, and share them.&lt;/li>
-&lt;li>Data can be accessed from anywhere, using standard HTTP requests to a REST
-API (e.g. VMs running in the EGI Cloud or in other cloud provider&amp;rsquo;s cloud,
-from any browser/laptop, etc.)&lt;/li>
+&lt;li>Data can be accessed from anywhere, using standard HTTP requests to a REST API
+(e.g. VMs running in the EGI Cloud or in other cloud provider&amp;rsquo;s cloud, from
+any browser/laptop, etc.)&lt;/li>
 &lt;li>Access can be public or can be restricted using access control lists.&lt;/li>
 &lt;li>There is virtually no limit to the amount of data you can store, only the
 space used is accounted for.&lt;/li>
@@ -820,8 +816,8 @@ object is stored in a storage container. You can store any number of objects in
 a storage container.&lt;/p>
 &lt;p>Storage containers have an unique name and act as the root folders of the
 storage space.&lt;/p>
-&lt;p>Each storage container has a unique URL (that includes the name) by which
-anyone can refer to it.&lt;/p>
+&lt;p>Each storage container has a unique URL (that includes the name) by which anyone
+can refer to it.&lt;/p>
 &lt;h3 id="objects">Objects&lt;/h3>
 &lt;p>Objects are the fundamental entities stored in object storage. Objects consist
 of object data and metadata. The data portion is opaque to object storage. The
@@ -829,16 +825,16 @@ metadata is a set of name-value pairs that describe the object. These include
 some default metadata, such as the date last modified, and standard HTTP
 metadata, such as &lt;code>Content-Type&lt;/code>. You can also specify custom metadata at the
 time the object is stored.&lt;/p>
-&lt;p>An object is uniquely identified within a storage container by a key (name)
-and a version.&lt;/p>
+&lt;p>An object is uniquely identified within a storage container by a key (name) and
+a version.&lt;/p>
 &lt;p>Each object has a unique URL, based on the storage container&amp;rsquo;s URL (that
 includes the key, and optionally the version) by which anyone can refer to it.&lt;/p>
 &lt;h3 id="permissions">Permissions&lt;/h3>
-&lt;p>Storage containers and objects can be shared by sharing their URLs.
-However, access to a storage container or to an object is controlled by
-access control lists (ACLs). When a request is received against a resource,
-object storage checks the corresponding ACL to verify that the requester has
-the necessary access permissions.&lt;/p>
+&lt;p>Storage containers and objects can be shared by sharing their URLs. However,
+access to a storage container or to an object is controlled by access control
+lists (ACLs). When a request is received against a resource, object storage
+checks the corresponding ACL to verify that the requester has the necessary
+access permissions.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 It is possible to set permissions so
@@ -850,34 +846,30 @@ that the storage container or object can be accessed publicly.
 &lt;a href="https://docs.openstack.org/swift/latest/">Swift&lt;/a> service.&lt;/p>
 &lt;p>Users can manage object storage using the
 &lt;a href="https://docs.openstack.org/horizon/latest/user/">OpenStack Horizon dashboard&lt;/a>
-of a provider or from the &lt;a href="#access-from-the-command-line">command-line&lt;/a>
-(CLI). More advanced usage include access via the
+of a provider or from the &lt;a href="#access-from-the-command-line">command-line&lt;/a> (CLI).
+More advanced usage include access via the
 &lt;a href="#access-via-the-s3-protocol">S3 protocol&lt;/a>, via the
 &lt;a href="https://docs.openstack.org/api-ref/object-store/">OpenStack Object Store API&lt;/a>,
 or using the &lt;a href="#access-via-egi-data-transfer">EGI Data Transfer service&lt;/a>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-Available object storage resources
-can be discovered in the
+Available object storage resources can
+be discovered in the
 &lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Services&amp;amp;serviceType=org.openstack.swift&amp;amp;selectItemserviceType=org.openstack.swift&amp;amp;ngi=&amp;amp;searchTerm=&amp;amp;production=TRUE&amp;amp;monitored=TRUE&amp;amp;certStatus=Certified&amp;amp;scopeMatch=all&amp;amp;servKeyNames=&amp;amp;servKeyValue=">Configuration Database&lt;/a>
 (GOCDB).
 &lt;/div>
 &lt;h2 id="access-from-the-command-line">Access from the command-line&lt;/h2>
-&lt;p>Multiple command-line interfaces (CLIs) are available to manage object
-storage:&lt;/p>
+&lt;p>Multiple command-line interfaces (CLIs) are available to manage object storage:&lt;/p>
 &lt;ul>
 &lt;li>The &lt;a href="https://docs.openstack.org/python-openstackclient/latest">OpenStack CLI&lt;/a>&lt;/li>
 &lt;li>The &lt;a href="../../../getting-started/cli">FedCloud Client&lt;/a> is a high-level CLI for
 interaction with the EGI Federated Cloud (&lt;strong>recommended&lt;/strong>)&lt;/li>
 &lt;li>The &lt;a href="https://docs.openstack.org/mitaka/cli-reference/swift.html">Swift CLI&lt;/a>
 has some advanced features that are not available through the OpenStack CLI&lt;/li>
-&lt;li>The &lt;a href="https://davix.web.cern.ch">Davix Client&lt;/a>, developed at CERN for RHEL and
-Debian environments, is another alternative for working with S3-compatible
-object storage&lt;/li>
 &lt;/ul>
 &lt;h3 id="access-with-the-fedcloud-cli">Access with the FedCloud CLI&lt;/h3>
-&lt;p>The main FedCloud commands for managing storage containers and storage objects are
-described below.&lt;/p>
+&lt;p>The main FedCloud commands for managing storage containers and storage objects
+are described below.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 See
@@ -887,8 +879,8 @@ for documentation on all storage container-related commands, and
 for all object-related commands.
 &lt;/div>
 &lt;h4 id="list-storage-containers">List storage containers&lt;/h4>
-&lt;p>For example, to access to the SWIFT endpoint at IFCA-LCG2 via the
-Pilot VO (vo.access.egi.eu), and
+&lt;p>For example, to access to the SWIFT endpoint at IFCA-LCG2 via the Pilot VO
+(vo.access.egi.eu), and
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html#container-list">list the available storage containers&lt;/a>,
 use the FedCloud command below:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">
@@ -977,8 +969,9 @@ named &lt;code>test-egi&lt;/code>, use the follwoing FedCloud command:&lt;/p>
 into a storage container named &lt;code>test-egi&lt;/code>, use the following FedCloud command:&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-The newly created object can have a different
-name than the file being uploaded, use the &lt;code>--name&lt;/code> command flag for this.
+The newly created object can have a
+different name than the file being uploaded, use the &lt;code>--name&lt;/code> command flag for
+this.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
@@ -1009,27 +1002,27 @@ named &lt;code>file1.txt&lt;/code> located in storage container &lt;code>test-eg
 to a file use the FedCloud command below:&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-The object can be saved into a file
-named differently than the object itselft, by using the &lt;code>--filename&lt;/code> command
-flag.
+The object can be saved into a file named
+differently than the object itselft, by using the &lt;code>--filename&lt;/code> command flag.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-Multiple files can be downloaded at
-once, but in that case the resulting files will have the same names as the
-downloaded objects.
+Multiple files can be downloaded at once,
+but in that case the resulting files will have the same names as the downloaded
+objects.
 &lt;/div>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack object save test-egi file1.txt
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="add-metadata-to-an-object">Add metadata to an object&lt;/h4>
-&lt;p>You can &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/object.html#object-set">add/update object metadata&lt;/a>,
-stored as key-value pairs among the object properties.
-E.g. to add a property named &lt;code>key1&lt;/code> with the value &lt;code>value2&lt;/code> to an object
-named &lt;code>file1.txt&lt;/code> located in the storage container named &lt;code>test-egi&lt;/code>, you can
-use the FedCloud command below:&lt;/p>
+&lt;p>You can
+&lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/object.html#object-set">add/update object metadata&lt;/a>,
+stored as key-value pairs among the object properties. E.g. to add a property
+named &lt;code>key1&lt;/code> with the value &lt;code>value2&lt;/code> to an object named &lt;code>file1.txt&lt;/code> located in
+the storage container named &lt;code>test-egi&lt;/code>, you can use the FedCloud command below:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack object &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --property &lt;span style="color:#000">key1&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>value2 test-egi file1.txt
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="remove-metadata-from-an-object">Remove metadata from an object&lt;/h4>
-&lt;p>You can also &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html#container-unset">remove metadata from objects&lt;/a>.
+&lt;p>You can also
+&lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html#container-unset">remove metadata from objects&lt;/a>.
 E.g. to remove the property named &lt;code>key1&lt;/code> from the object named &lt;code>file1.txt&lt;/code>
 located in the storage container named &lt;code>test-egi&lt;/code>, you can use the FedCloud
 command below:&lt;/p>
@@ -1059,51 +1052,131 @@ objects in OpenStack storage containers cannot be protected against deletion.
 including all objects in it, use the FedCloud command below.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-You can add the &lt;code>-r&lt;/code> option
-to recursively remove sub-containers.
+You can add the &lt;code>-r&lt;/code> option to
+recursively remove sub-containers.
 &lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Caution&lt;/h4>
 Deleting all objects from a
-storage container is final, there is no way to recover deleted objects. Unlike in
+storage container is final, there is no way to recover deleted objects. Unlike
+in
 &lt;a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">AWS S3&lt;/a>,
 objects in OpenStack storage containers cannot be protected against deletion.
 &lt;/div>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack container delete test-egi
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="access-via-the-s3-protocol">Access via the S3 protocol&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="access-via-rclone">Access via Rclone&lt;/h3>
+&lt;p>&lt;a href="https://rclone.org/">Rclone&lt;/a> is a command-line program to manage files on cloud
+storage. This section explains how to use &lt;code>rclone&lt;/code> to interact with
+&lt;a href="https://docs.openstack.org/swift/latest/">OpenStack Swift&lt;/a> available in the EGI
+Federated Cloud.&lt;/p>
+&lt;p>As a prerequisite, we need to configure the following environment variables:
+&lt;code>OS_AUTH_URL&lt;/code>, &lt;code>OS_AUTH_TOKEN&lt;/code>, &lt;code>OS_STORAGE_URL&lt;/code>. Use the
+&lt;a href="../../../getting-started/cli">FedCloud Client&lt;/a> to get their values:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># explore sites with swift storage&lt;/span>
+$ fedcloud endpoint list --service-type org.openstack.swift --site ALL_SITES
+&lt;span style="color:#8f5902;font-style:italic"># get OS_AUTH_URL&lt;/span>
+$ fedcloud openstack --site &amp;lt;site&amp;gt; --vo &amp;lt;virtual-organisation&amp;gt; catalog show keystone
+&lt;span style="color:#8f5902;font-style:italic"># get OS_AUTH_TOKEN&lt;/span>
+$ fedcloud openstack --site &amp;lt;site&amp;gt; --vo &amp;lt;virtual-organisation&amp;gt; token issue &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -c id &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -f value
+&lt;span style="color:#8f5902;font-style:italic"># get OS_STORAGE_URL for your site and Virtual Organisation&lt;/span>
+$ fedcloud openstack --site &amp;lt;site&amp;gt; --vo &amp;lt;virtual-organisation&amp;gt; catalog show swift
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now configure &lt;code>rclone&lt;/code> to work with the environment variables:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ rclone config create egiswift swift env_auth &lt;span style="color:#204a87">true&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, check that you have access to swift:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;token&amp;gt;
+$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;keystone-url&amp;gt;
+$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_STORAGE_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;swift-url&amp;gt;
+$ rclone lsd egiswift:
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For more information, please see
+&lt;a href="https://rclone.org/swift/">Rclone documentation for Swift&lt;/a>.&lt;/p>
+&lt;h3 id="access-via-the-s3-protocol">Access via the S3 protocol&lt;/h3>
 &lt;p>The OpenStack &lt;a href="https://docs.openstack.org/swift/latest/">Swift&lt;/a> service is
 compatible with the S3 protocol, therefore when properly configured, it can be
 accessed as any other S3-compatible object store.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-The S3 protocol was created by &lt;a href="https://www.aws.com">Amazon
-Web Services&lt;/a> (AWS) for their object storage,
-called &lt;a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">Simple Storage Service&lt;/a>
+The S3 protocol was created by
+&lt;a href="https://www.aws.com">Amazon Web Services&lt;/a> (AWS) for their object storage,
+called
+&lt;a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">Simple Storage Service&lt;/a>
 (S3), but it was
 &lt;a href="https://www.architecting.it/blog/object-storage-standardising-on-the-s3-api/">adopted as the de-facto standard&lt;/a>
 to access object storage offered by other providers.
 &lt;/div>
-&lt;p>In order to access the storage via S3, an EGI Federated Cloud site admin needs to create
-and associate to your EGI credentials both &lt;code>access&lt;/code> and &lt;code>secret&lt;/code> keys which could then
-be used by clients like &lt;code>davix&lt;/code> to have access to the storage.&lt;/p>
+&lt;p>In order to access the storage via S3, an EGI Federated Cloud site admin needs
+to create and associate to your EGI credentials both &lt;code>access&lt;/code> and &lt;code>secret&lt;/code> keys
+which could then be used by clients to have access to the storage.&lt;/p>
+&lt;h4 id="aws-cli">AWS CLI&lt;/h4>
+&lt;p>The &lt;a href="https://aws.amazon.com/cli/">AWS CLI&lt;/a> can be used to manage object storages
+having S3 interface.&lt;/p>
+&lt;p>First of all the configuration of the access and secret keys need to be done:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ aws configure
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>then it offers many commands to list, create buckets, objects, e.g.:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ aws s3 ls --no-sign-request &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --endpoint-url https://object-store.cloud.muni.cz &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> s3://test-egi-public
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+In order to access public buckets the
+&lt;code>--no-sign-request&lt;/code> is needed
+&lt;/div>
+&lt;h4 id="minio-client">Minio Client&lt;/h4>
+&lt;p>The &lt;a href="https://docs.min.io/docs/minio-client-quickstart-guide">MinIO CLI&lt;/a> supports
+filesystems and Amazon S3 compatible cloud storage services.&lt;/p>
+&lt;p>It offers a modern alternative to UNIX commands like ls, cat, e.g.:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># key and secret are not mandatory in case of public buckets&lt;/span>
+$ ./mc &lt;span style="color:#204a87">alias&lt;/span> &lt;span style="color:#204a87">set&lt;/span> cesnet https://object-store.cloud.muni.cz
+$ ./mc ls cesnet/test-egi-public
+$ ./mc cat cesnet/test-egi-public/file1.txt
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="davix">Davix&lt;/h4>
+&lt;p>The &lt;a href="https://davix.web.cern.ch">Davix Client&lt;/a>, developed at CERN for RHEL and
+Debian environments, is another alternative for working with S3-compatible
+object storage.&lt;/p>
 &lt;p>For example, to list containers/objects via the S3 protocol, use the command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ davix-ls --s3accesskey &lt;span style="color:#4e9a06">&amp;#39;access&amp;#39;&lt;/span> --s3secretkey &lt;span style="color:#4e9a06">&amp;#39;secret&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --s3alternate s3s://s3.cl2.du.cesnet.cz/&amp;lt;bucket-name&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>davix-get&lt;/code>, &lt;code>davix-put&lt;/code> and &lt;code>davix-del&lt;/code> are also available to download, store
 and delete objects from the storage.&lt;/p>
-&lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
-&lt;p>The &lt;a href="../../../data/management/data-transfer">EGI Data Transfer&lt;/a> service can move files
-to and from object storages that are compatible with the S3 protocol.
-You will have to upload the &lt;code>access&lt;/code> keys to the EGI Data Transfer
-service, which will be able to generate properly signed URLs for the
-objects in the storage.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-Please contact support
-at &lt;code>support&lt;/code> &lt;code>&amp;lt;at&amp;gt;&lt;/code> &lt;code>egi.eu&lt;/code> for more details.
+The Davix Client does not support access
+to public buckets
 &lt;/div>
-&lt;p>You can then refer to this &lt;a href="../../../tutorials/data-transfer-object-storage">tutorial&lt;/a>
-to see how to transfer to/from an Object storage endpoint.&lt;/p>
+&lt;h4 id="access-via-python">Access via Python&lt;/h4>
+&lt;p>The possibility to access progammatically via S3 object storage is also quite
+important, for instance in the case of interactive computing via EGI Notebooks.&lt;/p>
+&lt;p>When using Python for instance, &lt;a href="https://s3fs.readthedocs.io/en/latest/">S3Fs&lt;/a>
+is a practical Pythonic file interface to S3.&lt;/p>
+&lt;p>The top-level class &lt;code>S3FileSystem&lt;/code> holds connection information and allows
+typical file-system style operations like cp, mv, ls, du, glob, etc., as well as
+put/get of local files to/from S3.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">s3fs&lt;/span>
+&lt;span style="color:#000">fs&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">s3fs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">S3FileSystem&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">anon&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">True&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">client_kwargs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#39;endpoint_url&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;https://object-store.cloud.muni.cz&amp;#39;&lt;/span>
+&lt;span style="color:#000;font-weight:bold">})&lt;/span>
+&lt;span style="color:#204a87">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">fs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ls&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;s3://test-egi-public&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">))&lt;/span>
+&lt;span style="color:#000">s3path&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;s3://test-egi-public/file1.txt&amp;#39;&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">with&lt;/span> &lt;span style="color:#000">fs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">open&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">s3path&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;rb&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#204a87;font-weight:bold">as&lt;/span> &lt;span style="color:#000">f&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>
+&lt;span style="color:#204a87">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">f&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">read&lt;/span>&lt;span style="color:#000;font-weight:bold">())&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>There is a good collection of examples on the
+&lt;a href="https://github.com/minio/minio-py/tree/master/examples">S3Fs GitHub repository&lt;/a>.&lt;/p>
+&lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
+&lt;p>The &lt;a href="../../../data/management/data-transfer">EGI Data Transfer&lt;/a> service can move
+files to and from object storages that are compatible with the S3 protocol. You
+will have to upload the &lt;code>access&lt;/code> keys to the EGI Data Transfer service, which
+will be able to generate properly signed URLs for the objects in the storage.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Please contact support at &lt;code>support&lt;/code>
+&lt;code>&amp;lt;at&amp;gt;&lt;/code> &lt;code>egi.eu&lt;/code> for more details.
+&lt;/div>
+&lt;p>You can then refer to this
+&lt;a href="../../../tutorials/data-transfer-object-storage">tutorial&lt;/a> to see how to
+transfer to/from an Object storage endpoint.&lt;/p>
 &lt;!--
 // jscpd:ignore-end
 --></description></item></channel></rss>

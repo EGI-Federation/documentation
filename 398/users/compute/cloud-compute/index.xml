@@ -16,12 +16,10 @@ management&lt;/li>
 &lt;li>&lt;a href="https://docs.openstack.org/horizon/latest/">Horizon&lt;/a>, as a web
 dashboard&lt;/li>
 &lt;/ul>
-&lt;p>Web-dashboard of the integrated providers can be accessed using your EGI
-Check-in credentials directly: select &lt;em>OpenID Connect&lt;/em> or &lt;em>EGI Check-in&lt;/em> in the
-&lt;strong>Authenticate using&lt;/strong> drop-down menu of the login screen. You can explore
-&lt;a href="https://docs.openstack.org/horizon/latest/user/">Horizon dashboard documentation&lt;/a>
-for more information on how to manage your resources from the browser. The rest
-of this guide will focus on CLI/API access.&lt;/p>
+&lt;p>The Horizon Web-dashboard of the OpenStack providers can be accessed using your
+EGI Check-in credentials directly. See the
+&lt;a href="../../../getting-started/openstack/">Getting Started guide&lt;/a> for more information.
+The rest of this guide will focus on CLI/API access.&lt;/p>
 &lt;h2 id="installation">Installation&lt;/h2>
 &lt;p>The OpenStack client is a command-line client for OpenStack that brings the
 command set for Compute, Identity, Image, Object Storage and Block Storage APIs
@@ -213,7 +211,7 @@ for details. See below two code samples for using them&lt;/p>
 &lt;span style="color:#4e9a06">&amp;#39;refresh_token&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;&amp;lt;your refresh_token&amp;gt;&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#4e9a06">&amp;#39;scope&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;openid email profile&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000">r&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">requests&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">post&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/token&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;span style="color:#000">r&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">requests&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">post&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;span style="color:#000">auth&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">client_id&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">client_secret&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>
 &lt;span style="color:#000">data&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">refresh_data&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#000">access_token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">r&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">json&lt;/span>&lt;span style="color:#000;font-weight:bold">()[&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;access_token&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
@@ -302,11 +300,11 @@ collect credentials every single time one expires. You can request this token
 alongside the access and/or ID tokens as part of a user&amp;rsquo;s initial authentication
 flow.&lt;/p>
 &lt;p>If you need to obtain these kind of tokens for using it in command-line tools or APIs,
-you can easily do so with the special &lt;em>fedcloud&lt;/em> client. You can access the
-&lt;a href="https://aai.egi.eu/fedcloud">FedCloud Check-in client&lt;/a> and click on
+you can easily do so with the EGI Check-in Token Portal. You can access the
+&lt;a href="https://aai.egi.eu/token">EGI Check-in Token Portal&lt;/a> and click on
 'Authorise' to log in with your Check-in credentials to obtain:&lt;/p>
 &lt;ul>
-&lt;li>a client ID (&lt;code>fedcloud&lt;/code>)&lt;/li>
+&lt;li>a client ID (&lt;code>token-portal&lt;/code>)&lt;/li>
 &lt;li>a refresh token&lt;/li>
 &lt;/ul>
 &lt;div class="alert alert-danger" role="alert">
@@ -582,29 +580,41 @@ Machine will make the hardware available to the user.&lt;/p>
 &lt;th>Flavors&lt;/th>
 &lt;th>Supported VOs with GPUs&lt;/th>
 &lt;th>Access conditions&lt;/th>
+&lt;th>More information&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>IISAS-FedCloud&lt;/td>
-&lt;td>up to 2 NVIDIA Tesla K20m&lt;/td>
-&lt;td>g1.c08r31-K20m, g1.c16r62-2xK20m&lt;/td>
+&lt;td>up to 8 NVIDIA Tesla K20m&lt;/td>
+&lt;td>g1.c08r30-K20m, g1.c16r60-2xK20m&lt;/td>
 &lt;td>vo.access.egi.eu, eosc-synergy.eu, enmr.eu, training.egi.eu&lt;/td>
 &lt;td>Sponsored access for limited testing, conditions to be negotiated for long-term usage&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>IFCA-LCG2&lt;/td>
-&lt;td>up to 2 NVIDIA T4, up to 2 NVIDIA V100&lt;/td>
+&lt;td>up to 80 NVIDIA T4, up to 20 NVIDIA V100&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>Pay-per-use&lt;/td>
+&lt;td>&lt;a href="https://confluence.ifca.es/display/IC/Cloud+Compute+Flavors">IFCA-LCG2 Documentation&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>CESNET-MCC&lt;/td>
-&lt;td>up to 2 NVIDIA T4&lt;/td>
-&lt;td>hpc.8core-64ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-1080-glados, hpc.38core-372ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-2080-glados, hpc.38core-372ram-nvidia-2080-glados&lt;/td>
-&lt;td>vo.clarin.eu, biomed, eosc-synergy.eu, peachnote.com&lt;/td>
+&lt;td>up to 2 NVIDIA Tesla T4, up to 4 NVIDIA A40, up to 2 GeForce RTX 1080/2080 (experimental use only)&lt;/td>
+&lt;td>hpc.8core-64ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-1080-glados, hpc.19core-176ram-nvidia-2080-glados, hpc.32core-256ram-nvidia-t4-single-gpu, hpc.64core-238ram-nvidia-t4, hpc.64core-512ram-nvidia-t4, meta-hdm.16core-120ram-nvidia-a40, meta-hdm.64core-485ram-nvidia-a40-quad&lt;/td>
+&lt;td>vo.clarin.eu, biomed, eosc-synergy.eu, peachnote.com, cryoem.instruct-eric.eu, fusion, icecube, vo.carouseldancing.org, vo.pangeo.eu, vo.neanias.eu, umsa.cerit-sc.cz, vip, vo.notebooks.egi.eu, vo.emphasisproject.eu, vo.inactive-sarscov2.eu&lt;/td>
 &lt;td>Sponsored, conditions to be negotiated&lt;/td>
+&lt;td>&lt;a href="https://docs.cloud.muni.cz/cloud/gpus/">CESNET-MCC Documentation&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>IN2P3-IRES&lt;/td>
+&lt;td>up to 1 NVIDIA Tesla T4 per VM, up to 1 NVIDIA A40 per VM, up to 4 GeForce RTX 2080 per VM (experimental use only)&lt;/td>
+&lt;td>g1.xlarge-4xmem, g2.xlarge-4xmem, g4.xlarge-4xmem&lt;/td>
+&lt;td>biomed, vo.emphasisproject.eu, vo.france-grilles.fr&lt;/td>
+&lt;td>Sponsored, conditions to be negotiated&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -659,11 +669,7 @@ the available GPU flavors on all sites for the specific VO in the command:&lt;/p
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>A VM image with pre-installed NVIDIA driver and Docker is available at
 &lt;a href="https://appdb.egi.eu/store/vappliance/nvidia.docker.centos.7">AppDB&lt;/a>. Some VOs
-(vo.access.egi.eu, eosc-synergy.eu) have the image included in the VO image list.&lt;/p>
-&lt;p>For a more detailed presentation on how to access GPUs in the EGI Federation
-please have a look at the &lt;a href="https://www.egi.eu/webinars/">EGI Webinar&lt;/a> on
-&lt;a href="https://indico.egi.eu/event/5271/">27th November 2020&lt;/a>. There is also a video
-recording available on &lt;a href="https://youtu.be/vAuYg2oISFc">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: Dynamic DNS</title><link>/users/compute/cloud-compute/dynamic-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/dynamic-dns/</guid><description>
+(vo.access.egi.eu, eosc-synergy.eu) have the image included in the VO image list.&lt;/p></description></item><item><title>Users: Dynamic DNS</title><link>/users/compute/cloud-compute/dynamic-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/dynamic-dns/</guid><description>
 &lt;p>The Dynamic DNS service provides a unified, federation-wide Dynamic DNS support
 for VMs in EGI infrastructure. Users can register their chosen meaningful and
 memorable DNS hostnames in given domains (e.g. &lt;code>my-server.vo.fedcloud.eu&lt;/code>) and
@@ -673,6 +679,8 @@ meaningful service names, can freely move VMs from sites to sites without
 modifying server/client configurations (federated approach), can request valid
 server certificates in advance (critical for security) and many other
 advantages.&lt;/p>
+&lt;p>A short demonstration video is available at
+&lt;a href="https://www.youtube.com/watch?v=dk4VYT2VFmU">fedcloud.eu YouTube channel&lt;/a>.&lt;/p>
 &lt;h2 id="dynamic-dns-gui-portal">Dynamic DNS GUI portal&lt;/h2>
 &lt;p>The Dynamic DNS offers a &lt;a href="https://nsupdate.fedcloud.eu">web GUI portal&lt;/a> where
 users can login using their Check-in credentials. For doing so, click on the
@@ -759,7 +767,12 @@ and not visible during transfer so it is secure to use the update URL&lt;/p>
 the secret of your hostname, simply generate new one via &amp;ldquo;Show configuration&amp;rdquo;
 button in the host edit page. The old secret will be invalid.&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Users: Automating Deployments</title><link>/users/compute/cloud-compute/automate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/automate/</guid><description>
+&lt;/ul>
+&lt;h2 id="support">Support&lt;/h2>
+&lt;p>Support for Dynamic DNS service is provided via &lt;a href="https://ggus.eu/">EGI Helpdesk&lt;/a>
+in &lt;strong>&amp;ldquo;Dynamic DNS&amp;rdquo;&lt;/strong> support unit, where users can ask questions, report issues
+or make requests for additional domains for specific projects or user
+commnunities.&lt;/p></description></item><item><title>Users: Automating Deployments</title><link>/users/compute/cloud-compute/automate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/automate/</guid><description>
 &lt;p>The &lt;a href="../../../getting-started/openstack">OpenStack&lt;/a> sites in the EGI Cloud that
 provide compute resources to run virtual machines (VMs) allow nearly everything
 to be done via an Application Programming Interface (API) or a
@@ -861,8 +874,8 @@ details and there is also a video recording available on
 Europe can join. Just place an order into the
 &lt;a href="https://marketplace.egi.eu/31-cloud-compute">EGI Marketplace&lt;/a>.&lt;/p>
 &lt;h3 id="how-can-i-get-an-oauth20-token">How can I get an OAuth2.0 token?&lt;/h3>
-&lt;p>Authentication via CLI or API requires a valid Check-in token. The
-&lt;a href="https://aai.egi.eu/fedcloud">FedCloud Check-in client&lt;/a> allows you to get one as
+&lt;p>Authentication via CLI or API requires a valid Access Token from Check-in. The
+&lt;a href="https://aai.egi.eu/token">EGI Check-in Token Portal&lt;/a> allows you to get one as
 needed. Check the &lt;a href="../auth">Authentication and Authorisation&lt;/a> guide for more
 information.&lt;/p>
 &lt;h3 id="is-occi-still-supported">Is OCCI still supported?&lt;/h3>

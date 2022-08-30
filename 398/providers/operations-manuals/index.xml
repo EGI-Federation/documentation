@@ -795,7 +795,7 @@ failure&lt;/li>
 &lt;p>Interventions are recorded through the
 &lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>. For more
 information, have a look at the
-&lt;a href="https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Downtimes">description&lt;/a>.&lt;/p>
+&lt;a href="../../../internal/configuration-database/downtimes">description&lt;/a>.&lt;/p>
 &lt;h3 id="scheduled-interventions">Scheduled interventions&lt;/h3>
 &lt;ul>
 &lt;li>Scheduled interventions &lt;strong>MUST&lt;/strong> be declared at least 24 h in advance,
@@ -870,7 +870,7 @@ unscheduled failure of central operational tool.&lt;/p>
 &lt;h2 id="scope">Scope&lt;/h2>
 &lt;p>This manual only applies to unscheduled downtimes of central operational tools.
 The list of central operational tool is available
-&lt;a href="https://wiki.egi.eu/wiki/Tools">here&lt;/a>.&lt;/p>
+&lt;a href="https://www.egi.eu/services/federation/">here&lt;/a>.&lt;/p>
 &lt;p>Note: Scheduled downtimes are management according to existing procedures
 (&lt;a href="../man02_service_intervention_management">MAN02&lt;/a>).&lt;/p>
 &lt;h2 id="announcements">Announcements&lt;/h2>
@@ -2087,7 +2087,79 @@ introduces new settings for publishing the accounting records via AMS.&lt;/li>
 &lt;/ul>
 &lt;h2 id="htcondor-ce">HTCondor-CE&lt;/h2>
 &lt;p>To collect and publish the accounting data you need to install the APEL software
-as explained in the general information section.&lt;/p></description></item><item><title>Providers: HOWTO01 Using IGTF CA distribution</title><link>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</guid><description>
+as explained in the general information section.&lt;/p></description></item><item><title>Providers: FAQ HEP SPEC 06</title><link>/providers/operations-manuals/faq-hepspec06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/faq-hepspec06/</guid><description>
+&lt;h2 id="transition-to-hep-spec-a-new-cpu-benchmark">Transition to HEP SPEC, a new CPU benchmark&lt;/h2>
+&lt;h3 id="q1-why-adopting-hep-spec-06">Q1: Why adopting HEP SPEC 06?&lt;/h3>
+&lt;p>The traditional si2k CPU benchmark is now obsolete and it is time to move to HEP
+SPEC, a new CPU benchmark that will replace si2k and will become the reference
+benchmark for accounting purposes.&lt;/p>
+&lt;p>Detailed description of the reasons are provided on the
+&lt;a href="http://indico.cern.ch/getFile.py/access?contribId=3&amp;amp;sessionId=0&amp;amp;resId=0&amp;amp;materialId=0&amp;amp;confId=49388">transition to a new CPU benchmarking unit for the WLCG&lt;/a>.&lt;/p>
+&lt;h3 id="q2-what-is-hep-spec-06">Q2: What is HEP SPEC 06?&lt;/h3>
+&lt;p>The &lt;strong>HEP-SPEC06 benchmark&lt;/strong> is designed to scale with the performances of the
+high-energy physics codes on similar machines. The goal was to have an accuracy
+of ± 5% but for the moment the agreement is significantly higher.&lt;/p>
+&lt;p>The measurement of HEP-SPEC repeated on identical machines varies less than 1%.
+If the computing machines are similar, i.e. same processors and at least 2 GB
+per core, the results obtained are very close, within some percent, so that it
+is unnecessary to perform measures on all computing hosts. It is enough to do
+the measurement for one type of processor and consider it valid for all the
+machines with the same processor.&lt;/p>
+&lt;p>If you are using different OS and specially different compilers, the data will
+change.&lt;/p>
+&lt;h3 id="q3-where-can-i-find-information-about-hep-spec-06-measurements">Q3: Where can I find information about HEP SPEC 06 measurements?&lt;/h3>
+&lt;p>Some example results are available on the
+&lt;a href="http://w3.hepix.org/benchmarking.html">HEPIX group-page&lt;/a>, where one can see the
+differences between gcc3.4.x and gcc4.1.x.&lt;/p>
+&lt;p>Additional results tables are available from various EGI partners:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.gridpp.ac.uk/wiki/HEPSPEC06">GRIDPP&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>If you don&amp;rsquo;t find your computing machine in that table, then it is better to try
+to do the measurement because extrapolating the results increases further the
+error.&lt;/p>
+&lt;h3 id="q4-how-can-i-run-the-hep-spec-06-benchmark">Q4: How can I run the HEP SPEC 06 benchmark?&lt;/h3>
+&lt;p>If you want to make HEP-SPEC06 on your own own, detailed instructions are
+available at
+&lt;a href="https://twiki.cern.ch/twiki/bin/view/FIOgroup/TsiBenchHEPSPECWlcg">CERN wiki&lt;/a>.&lt;/p>
+&lt;p>In Short you need the following:&lt;/p>
+&lt;ol>
+&lt;li>A machine with any version of Linux compatible with Scientific Linux (RHEL,
+SL, SLC, CentOS)&lt;/li>
+&lt;li>The gcc compiler should be installed&lt;/li>
+&lt;li>Configuration files and run script (available as a gzipped tar archive from
+the CERN Wiki). The archive&amp;rsquo;s md5sum is 9fed92b8d515b88904705f76809c4028&lt;/li>
+&lt;li>A tar ball of the SPECcpu2006 DVD called &lt;code>SPEC2006_v11.tar.bz2&lt;/code> that should
+be in the same directory as the run script&lt;/li>
+&lt;/ol>
+&lt;h3 id="q5-my-site-already-adopted-hep-spec-06-do-i-still-need-to-publish-specint2000">Q5: My site already adopted HEP SPEC 06. Do I still need to publish SpecInt2000?&lt;/h3>
+&lt;p>The transition to HEP-SPEC does not eliminate the need to publish the computing
+power in SpecInt2000 (due to backward compatibility with sites not publishing
+yet HEP-SPEC). In this case you may calculate the value SpecInt2000 starting
+from HEP-SPEC through the following relation:&lt;/p>
+&lt;ul>
+&lt;li>value_kSI2K = value_HEP-SPEC / 4 (or value_HEP-SPEC = 4 * value_kSI2K)&lt;/li>
+&lt;/ul>
+&lt;p>For the &lt;code>GlueHostBenchmarkSI00&lt;/code> attribute in the GLUE v1.3 schema the following
+relation is easier to use:&lt;/p>
+&lt;ul>
+&lt;li>value_SI00 = value_HEP-SPEC * 250 rounded to the nearest integer&lt;/li>
+&lt;/ul>
+&lt;h3 id="q6-how-are-hep-spec-06-results-set-in-yaim">Q6: How are HEP SPEC 06 results set in YAIM?&lt;/h3>
+&lt;p>The YAIM variable &lt;code>CE_OTHERDESCR&lt;/code> is used to set the
+&lt;code>GlueHostProcessorOtherDescription&lt;/code> attribute. The value of this variable MUST
+be defined in your &lt;code>site-info.def&lt;/code> file as:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">Cores&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;CE_LOGCPU/CE_PHYSICALCPU&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>, &lt;span style="color:#000">Benchmark&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;value&amp;gt;-HEP-SPEC06&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>where the ratio &lt;code>CE_LOGCPU&lt;/code> / &lt;code>CE_PHYSICALCPU&lt;/code> means the average number of cores
+per physical CPU in a sub-cluster; in the case of (slightly) heterogeneous
+sub-clusters it could be non-integer. The second value of this attribute MUST be
+published only in the case the CPU power of the sub-cluster has been computed
+using the HEP-SPEC06 benchmark. The Benchmark value must be the average
+HEP_SPEC06 result per core, in the sub-cluster.&lt;/p>
+&lt;p>These variables are set in your &lt;code>site-info.def&lt;/code> file. After this, the variables
+need to be published by the CE&amp;rsquo;s resource BDII, configured e.g. by standard YAIM
+commands.&lt;/p>
+&lt;p>The total CPU capacity of the cluster is computed as Benchmark * &lt;code>CE_LOGCPU&lt;/code>.&lt;/p></description></item><item><title>Providers: HOWTO01 Using IGTF CA distribution</title><link>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</guid><description>
 &lt;p>To ensure interoperability within and outside of EGI, the
 &lt;a href="https://documents.egi.eu/document/2930">Policy on Acceptable Authentication Assurance&lt;/a>
 defined a common set of trust anchors (in a PKIX implementation &amp;ldquo;Certification
@@ -2286,15 +2358,13 @@ Centre.&lt;/li>
 &lt;li>&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC12+Production+Service+Decommissioning">PROC12 Production Service Decommissioning Procedure&lt;/a>:
 Procedure document describing the steps required to decommission a production
 service.&lt;/li>
-&lt;li>&lt;a href="../../../internal/helpdesk">Helpdesk&lt;/a> and
-&lt;a href="https://wiki.egi.eu/wiki/GGUS:FAQ">FAQs&lt;/a>: A collection of documentation
-relevant to the EGI Helpdesk (GGUS). The User Guide and FAQ for direct site
-notification are probably the most helpful.&lt;/li>
+&lt;li>&lt;a href="../../../internal/helpdesk">Helpdesk&lt;/a>: A collection of documentation
+relevant to the EGI Helpdesk (GGUS).&lt;/li>
 &lt;/ul>
 &lt;h2 id="tools">Tools&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="../../../internal/configuration-database">Configuration Database (GOCDB)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="ttp://operations-portal.egi.eu">Operations Portal&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://operations-portal.egi.eu">Operations Portal&lt;/a>&lt;/li>
 &lt;li>ARGO Monitoring:
 &lt;a href="https://argo.egi.eu/egi/report-status/Critical/SITES">RCs status&lt;/a>,
 &lt;a href="https://argo.egi.eu/egi/report-ar/Critical/SITES">A/R reports&lt;/a>: The ARGO
@@ -2356,15 +2426,12 @@ of software tags supported by the site.
 &amp;lsquo;LCG-2&amp;rsquo;, the current middleware version and the list of previous middleware
 tags (i.e. LCG-2 LCG-2_1_0 LCG-2_1_1 LCG-2_2_0 LCG-2_3_0 LCG-2_3_1 LCG-2_4_0
 LCG-2_5_0 LCG-2_6_0 LCG-2_7_0 GLITE-3_0_0 GLITE-3_1_0 GLITE-3_2_0 R-GMA).&lt;/li>
-&lt;li>If the site supports MPI, check
-&lt;a href="https://wiki.egi.eu/wiki/MAN03_MPI-Start_Installation_and_Configuration#Information_System">MAN03&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;code>GlueHostProcessorOtherDescription&lt;/code> (see
-&lt;a href="https://wiki.egi.eu/wiki/FAQ_HEP_SPEC06">FAQ HEP SPEC06&lt;/a>)&lt;/li>
+&lt;li>&lt;code>GlueHostProcessorOtherDescription&lt;/code> (see &lt;a href="../faq-hepspec06">FAQ HEP SPEC06&lt;/a>)&lt;/li>
 &lt;li>&lt;code>GlueHostOperatingSystemName&lt;/code>, &lt;code>GlueHostOperatingSystemVersion&lt;/code> and
 &lt;code>GlueHostOperatingSystemRelease&lt;/code> (see
-&lt;a href="https://wiki.egi.eu/wiki/HOWTO05_How_to_publish_the_OS_name">HOWTO05&lt;/a>)&lt;/li>
+&lt;a href="#publishing-the-os-name">publishing the OS name&lt;/a>).&lt;/li>
 &lt;/ul>
 &lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H &lt;span style="color:#4e9a06">`&lt;/span>&amp;lt;ldap://virgo-ce.roma1.infn.it:2170&amp;gt;&lt;span style="color:#4e9a06">`&lt;/span> &lt;span style="color:#4e9a06">\
@@ -2372,7 +2439,28 @@ LCG-2_5_0 LCG-2_6_0 LCG-2_7_0 GLITE-3_0_0 GLITE-3_1_0 GLITE-3_2_0 R-GMA).&lt;/li
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueHostProcessorOtherDescription
 dn: &lt;span style="color:#000">GlueSubClusterUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>virgo-ce.roma1.infn.it,GlueClusterUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>virgo-ce.roma1.infn.it,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>resource,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
 GlueHostProcessorOtherDescription: &lt;span style="color:#000">Cores&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>4, &lt;span style="color:#000">Benchmark&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>7.83-HEP-SPEC06
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="information-about-the-batch-system">Information about the batch system&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="publishing-the-os-name">Publishing the OS name&lt;/h4>
+&lt;p>It has been decided that the 3 fields&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GlueHostOperatingSystemName&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueHostOperatingSystemRelease&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueHostOperatingSystemVersion&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>should be parsed from the output of &lt;code>/usr/bin/lsb_release&lt;/code>, like this:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GlueHostOperatingSystemName&lt;/code>: &lt;code>lsb_release -i | cut -f2&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueHostOperatingSystemRelease&lt;/code>: &lt;code>lsb_release -r | cut -f2&lt;/code>&lt;/li>
+&lt;li>&lt;code>GlueHostOperatingSystemVersion&lt;/code>: &lt;code>lsb_release -c | cut -f2&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>yielding values like&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>GlueHostOperatingSystemName&lt;/code>: CentOS&lt;/li>
+&lt;li>&lt;code>GlueHostOperatingSystemRelease&lt;/code>: 7.9.2009&lt;/li>
+&lt;li>&lt;code>GlueHostOperatingSystemVersion&lt;/code>: Core&lt;/li>
+&lt;/ul>
+&lt;p>This has been tested on various Linux flavours and should work on every serious
+GNU/Linux distribution.&lt;/p>
+&lt;h3 id="information-about-the-batch-system">Information about the batch system&lt;/h3>
 &lt;p>Under the branch &lt;code>GlueCEUniqueID&lt;/code> check the values of the following fields:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>GlueCEInfoTotalCPUs&lt;/code>: Check that the value is higher than 0.&lt;/li>
@@ -2598,58 +2686,14 @@ certification tests to become part of the EGI Production infrastructure.&lt;/p>
 System your NGI will use for your certification.&lt;/p>
 &lt;p>Note that the examples here use the Italian NGI and sites. Please substitute
 with &lt;strong>YOUR OWN&lt;/strong> NGI and site credentials when running the test.&lt;/p>
-&lt;h3 id="cream-ce-checks">Cream-CE checks&lt;/h3>
-&lt;p>Open in your browser the following URL:
-&lt;code>https://&amp;lt;hostname-of-cream-ce&amp;gt;:8443/ce-cream/services&lt;/code>&lt;/p>
-&lt;p>A page with link to the CREAM WSDL should be shown.&lt;/p>
-&lt;p>Try a gsiftp (e.g. using &lt;code>globus-url-copy&lt;/code> or &lt;code>uberftp&lt;/code>) towards that CREAM CE.
-E.g.:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ globus-url-copy &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> gsiftp://&amp;lt;hostname-of-cream-ce&amp;gt;/opt/glite/yaim/etc/versions/glite-yaim-core &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> file:/tmp/yaim-version-test
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Try the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ glite-ce-allowed-submission &amp;lt;hostname-of-cream-ce&amp;gt;:8443
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>It should report: &lt;code>Job Submission to this CREAM CE is enabled&lt;/code>.&lt;/p>
-&lt;p>Try a submission to Cream-CE using the &lt;code>glite-ce-job-submit&lt;/code> command, e.g.:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cat sleep.jdl
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
-&lt;span style="color:#000">executable&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/bin/sleep&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">arguments&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ glite-ce-job-submit -a -r &amp;lt;hostname-of-cream-ce&amp;gt;:8443/&amp;lt;queue&amp;gt; sleep.jdl
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ glite-ce-job-submit -a -r ce-cr-02.ts.infn.it:8443/cream-lsf-cert sleep.jdl
-https://ce-cr-02.ts.infn.it:8443/CREAM127814374
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check the status of that job, which eventually should be &lt;code>DONE-OK&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ glite-ce-job-status https://ce-cr-02.ts.infn.it:8443/CREAM127814374
-2010-07-27 11:55:37,986 WARN - No configuration file suitable &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> loading. Using built-in configuration
-****** &lt;span style="color:#000">JobID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=[&lt;/span>https://ce-cr-02.ts.infn.it:8443/CREAM127814374&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#000">Status&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DONE-OK&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#000">ExitCode&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>0&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Try a submission to that CE using the &lt;code>glite-ce-job-submit&lt;/code> command, and then
-tries to cancel it (using the &lt;code>glite-ce-job-cancel&lt;/code> command):&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cat sleep2.jdl
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
-&lt;span style="color:#000">executable&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/bin/sleep&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">arguments&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1000&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ glite-ce-job-submit -a -r cecream-cyb.ca.infn.it:8443/cream-lsf-poncert sleep2.jdl
-https://cecream-cyb.ca.infn.it:8443/CREAM126335182
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ glite-ce-job-cancel https://cecream-cyb.ca.infn.it:8443/CREAM126335182
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ glite-ce-job-status https://cecream-cyb.ca.infn.it:8443/CREAM126335182
-2010-07-27 12:18:26,973 WARN - No configuration file suitable &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> loading. Using built-in configuration
-****** &lt;span style="color:#000">JobID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=[&lt;/span>https://cecream-cyb.ca.infn.it:8443/CREAM126335182&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#000">Status&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>CANCELLED&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#000">ExitCode&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>
-&lt;span style="color:#000">Description&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>Cancelled by user&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="arc-ce-checks">ARC CE checks&lt;/h3>
+&lt;h3 id="arc-ce-checks">ARC CE checks&lt;/h3>
 &lt;p>A first test can be done using ARC&amp;rsquo;s &lt;code>ngstat&lt;/code> command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ /usr/bin/ngstat -q -l -c &amp;lt;CE hostname&amp;gt; -t &lt;span style="color:#0000cf;font-weight:bold">20&lt;/span>
 ...
 ... plenty of output
 ...
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>If a
-&lt;a href="http://wiki.nordugrid.org/wiki/Service_Monitoring">monitoring host of your NGI&lt;/a>
-is available, then the probes can easily be executed from there:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>If a monitoring host of your NGI is available, then the probes can easily be
+executed from there:&lt;/p>
 &lt;p>Check the status of the CE with:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ /usr/libexec/grid-monitoring/probes/org.ndgf/ARCCE-status &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &amp;lt;CE hostname&amp;gt; -x /etc/nagios/globus/userproxy.pem-ops
@@ -2712,8 +2756,8 @@ This command output will return a SURL that you can use latter for other tests.&
 &lt;code>srm://srm01.ncg.ingrid.pt/ibergrid/iber/generated/2011-02-01/file4034a935-8d7a-48f4-914f-16f2634d4802&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ lcg-cr -v --vo &amp;lt;VO&amp;gt;-d&amp;lt;Your SE&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -l lfn:/grid/&amp;lt;VO&amp;gt;/test.txt file:&amp;lt;/path/to/your/local/file&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>3) Create a new replica in other SE (to check the third-party transfer between 2
-SEs)&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>3) Create a new replica in other SE (to check the third-party transfer between
+2 SEs)&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ lcg-rep -v --vo &amp;lt;VO&amp;gt;-d&amp;lt;Other SE&amp;gt; &amp;lt;SURL&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>4) List Replicas&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ lcg-lr -v --vo &amp;lt;VO&amp;gt; lfn:/grid/&amp;lt;VO&amp;gt;/test.txt
@@ -2750,31 +2794,7 @@ enable the forwarding of accounting data from the 2° level HLR to APEL.&lt;/p>
 several things, like the environment on WN and installed RPMs. Moreover it
 performs some replica management tests. With a &lt;code>grep TEST&lt;/code> you may get a summary
 of the results: in case of errors, you have to see in detail what is gone wrong!&lt;/p>
-&lt;p>As already said, if the site supports any flavour of MPI, launch a MPI test job,
-like &lt;a href="https://wiki.egi.eu/wiki/MPI_Certification_Job_template">this&lt;/a>.&lt;/p>
-&lt;p>Don&amp;rsquo;t forget to set a reasonable value in &lt;code>CPUNumber&lt;/code>: most important is that
-your job starts running quickly.&lt;/p>
-&lt;p>If you want less stuff in the &lt;code>.out&lt;/code> and &lt;code>.err&lt;/code> files, in the file
-&lt;code>mpi-start-wrapper.sh&lt;/code> comment the line&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">I2G_MPI_START_DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>A successful output will look like the following one (extract)&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-mpi-start &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DEBUG &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: using user supplied startup : &lt;span style="color:#4e9a06">&amp;#39;/opt/mpich-1.2.7p1/bin/mpirun &amp;#39;&lt;/span>
-mpi-start &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DEBUG &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;gt; &lt;span style="color:#000">MPI_SPECIFIC_PARAMS&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>
-mpi-start &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DEBUG &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;gt; &lt;span style="color:#000">I2G_MPI_PRECOMMAND&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>
-mpi-start &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DEBUG &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;gt; &lt;span style="color:#000">MPIEXEC&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/opt/mpich-1.2.7p1/bin/mpirun
-mpi-start &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DEBUG &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;gt; &lt;span style="color:#000">I2G_MACHINEFILE_AND_NP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>-machinefile /tmp/tmp.iBypc12521 -np &lt;span style="color:#0000cf;font-weight:bold">6&lt;/span>
-mpi-start &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DEBUG &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;gt; &lt;span style="color:#000">I2G_MPI_APPLICATION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/home/dteam022/globus-tmp.t3-wn-13.11955.0/https_3a_2f_2falbalonga.cnaf.infn.it_3a9000_2fI06uWaKi1evxL3tTF-DTOg/hello
-mpi-start &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DEBUG &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;gt; &lt;span style="color:#000">I2G_MPI_APPLICATION_ARGS&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>
-mpi-start &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DEBUG &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: /opt/mpich-1.2.7p1/bin/mpirun -machinefile /tmp/tmp.iBypc12521 -np &lt;span style="color:#0000cf;font-weight:bold">6&lt;/span> /home/dteam022/globus-tmp.t3-wn-13.11955.0/https_3a_2f_2falbalonga.cnaf.infn.it_3a9000_2fI06uWaKi1evxL3tTF-DTOg/hello
-Process &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span> on t3-wn-37.pn.pd.infn.it out of &lt;span style="color:#0000cf;font-weight:bold">6&lt;/span>
-Process &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> on t3-wn-34.pn.pd.infn.it out of &lt;span style="color:#0000cf;font-weight:bold">6&lt;/span>
-Process &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> on t3-wn-13.pn.pd.infn.it out of &lt;span style="color:#0000cf;font-weight:bold">6&lt;/span>
-Process &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> on t3-wn-34.pn.pd.infn.it out of &lt;span style="color:#0000cf;font-weight:bold">6&lt;/span>
-Process &lt;span style="color:#0000cf;font-weight:bold">5&lt;/span> on t3-wn-37.pn.pd.infn.it out of &lt;span style="color:#0000cf;font-weight:bold">6&lt;/span>
-Process &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> on t3-wn-13.pn.pd.infn.it out of &lt;span style="color:#0000cf;font-weight:bold">6&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="globus-checks">Globus checks&lt;/h3>
+&lt;h3 id="globus-checks">Globus checks&lt;/h3>
 &lt;blockquote>
 &lt;p>These checks should be executed depending on the services registered in GOCDB
 under a Resource Centre. Not all services are compulsory for a RC, but upon
@@ -2800,91 +2820,7 @@ $ gsissh USER@HOST -p &lt;span style="color:#0000cf;font-weight:bold">2222&lt;/s
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ globusrun -a -r HOST:2119
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Check job submission:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ globusrun -s -r HOST:2119 &lt;span style="color:#4e9a06">&amp;#34;&amp;amp;(executable=&amp;#34;&lt;/span>/bin/date&lt;span style="color:#4e9a06">&amp;#34;)&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="unicore-checks">Unicore checks&lt;/h3>
-&lt;p>This testing manual assumes that the test instance has not been added to the
-“Global” registry. “Global” registry does not have to be global (for the whole
-infrastructure) - is a register used by a group of site which work together. For
-example each Resource Infrastructure Provider can have own “Global” registry.&lt;/p>
-&lt;p>It is suggested to add the instance to the “Global” registry only if it was
-tested and works properly. For this reason this instruction refers to the local
-registry.&lt;/p>
-&lt;h4 id="preliminary-testing">Preliminary testing&lt;/h4>
-&lt;p>After installation and configuration, start all the services and see if
-functioning properly. To avoid errors/warnings in the logs first start the TSI
-and the Gateway and then the Unicore/X (requires two other servers to operate).
-The first step of verification is to verify proper configuration of log files
-for all services whether they running. Logs for Unicore/X and Gateway are in
-standard locations &lt;code>/var/log/unicore/unicorex/unicorex.log&lt;/code> and
-&lt;code>/var/log/unicore/gateway/gateway.log&lt;/code>. In the case where there is no log file,
-check the file &lt;code>/var/log/unicore/unicorex/unicorex-startup.log&lt;/code> or
-&lt;code>/var/log/unicore/gateway/gateway-startup.log&lt;/code> - those file contain the servers'
-standard output  output, and can be useful in case of generic, system-wide
-issues as missing  Java virtual machine. Log files should be checked carefully
-for warnings and errors. They should show only the information about the start
-of the service, without any warnings (the WARN label) or errors (the ERROR
-label). In case of problems, you should proceed according to the information
-found in the log files. If they are unclear you should increase logging detail
-(for Unicore/X and Gateway). This is set in the file
-&lt;code>/etc/unicore/gateway/logging.properties&lt;/code> and
-&lt;code>/etc/unicore/unicorex/logging.properties&lt;/code>. UNICORE uses log4j logging
-subsystem. When you change the login parameters is not required to restart the
-component. After the successful initialization of all services you can begin to
-test them in practice. Please connect to the site via any UNICORE client (URC or
-UCC). Since the registration of newly created VSite was initially turned off in
-the global registry, you should use the local registry. The local registry
-address is:
-&lt;code>https://GATEWAY-ADDESS/VSITE_NAME/services/Registry?res=default_registry&lt;/code>. Is
-recommended for test script execution, which displays the user. This should be a
-user associated with the certificate.&lt;/p>
-&lt;h4 id="testing-using-the-urc">Testing using the URC&lt;/h4>
-&lt;ol>
-&lt;li>Testing should start from setting up the user&amp;rsquo;s credentials,&lt;/li>
-&lt;li>A local registry should be added in URC Grid Browser view..&lt;/li>
-&lt;li>The registry contents should be listed, by double clicking on its node. It is
-worth to enable the display of all sites by clicking on the Grid Browser the
-&amp;ldquo;Show&amp;rdquo; button and selecting from the list &amp;ldquo;All services&amp;rdquo;. If you see a red
-cross on the service, click on it and see the details of the error message in
-the URC and the error on the server-side.&lt;/li>
-&lt;li>If all services are available, you can send the job. At the same time it is
-recommended to monitor the logs Unicore/X and TSI for errors.&lt;/li>
-&lt;/ol>
-&lt;h4 id="testing-using-the-ucc">Testing using the UCC&lt;/h4>
-&lt;ol>
-&lt;li>Configure UCC credentials&lt;/li>
-&lt;li>Configure the registry in UCC preferences file (the registry property).&lt;/li>
-&lt;li>Invoke:&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">/ucc shell
-ucc&amp;gt; connect
-You can access &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> target system&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
-ucc&amp;gt; list-sites
-VSITE_NAME https://GATEWAY_ADDRESS/VSITE_NAME/services/TargetSystemService?res&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-ucc&amp;gt; list-storages
-SHARE https://GATEWAY_ADDRESS/VSITE_NAME/services/services/StorageManagement?res&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>default_storage
-ucc&amp;gt; ls u6://SHARE
-/a5063ea0-ecbe-4097-9abc-f55ec9437376
-/3f501d37-5851-4c9e-a1da-5ad7b9f16633
-/3bf169c2-2149-4564-b827-0b6560a3dd35
-...
-ucc&amp;gt; list-applications
-Applications on target system &amp;lt;VSITE_NAME&amp;gt;
-R 2.10.0
-BLAST 2.2.22
-POVRay 3.6.1
-...
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>We should get a message similar to the above. Then test the file transfer:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ucc&amp;gt; put-file -s LOCAL_FILE_PATH &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -t https://GATEWAY_ADDRESS/VSITE_NAME/services/StorageManagement?res&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>default_storage#TARGET_FILE_NAME
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>And job submission:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ucc&amp;gt; run -s VSITE_NAME JOB_FILE_PATH.u
-SUCCESSFUL &lt;span style="color:#204a87">exit&lt;/span> code: &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>If an error occurs, you can on each of these commands add the &amp;ldquo;-v&amp;rdquo; flag, what
-increases  UCC verbosity. As in the URC case it is advised to simultaneously
-monitor Unicore / Xa and TSI log files.&lt;/p>
-&lt;h5 id="after-testing">After testing&lt;/h5>
-&lt;p>If testing was successful, you can unlock the registration system in the global
-registry.&lt;/p>
-&lt;h2 id="qcg-checks">QCG checks&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="qcg-checks">QCG checks&lt;/h2>
 &lt;h3 id="qcg-computhng-checks">QCG Computhng checks&lt;/h3>
 &lt;p>The presented tests of QCG-Computing service use the qcg-comp, the client
 program for QCG-Computing, that may be installed from provided RPMS. In order to
@@ -3046,15 +2982,11 @@ LocalFinishTime: Fri Feb &lt;span style="color:#0000cf;font-weight:bold">15&lt;/
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="check-the-functionality-of-the-cloud-elements">Check the functionality of the cloud elements&lt;/h2>
 &lt;p>Sites can provide any (not necessarily all) of the interfaces listed below:&lt;/p>
 &lt;ul>
-&lt;li>OCCI for VM Management&lt;/li>
 &lt;li>OpenStack Compute for VM Management&lt;/li>
 &lt;li>CDMI for Object Storage&lt;/li>
 &lt;/ul>
-&lt;h3 id="cloud-compute-occiopenstack-checks-prerequisites">Cloud Compute (OCCI/OpenStack) checks prerequisites&lt;/h3>
+&lt;h3 id="cloud-compute-checks-prerequisites">Cloud Compute checks prerequisites&lt;/h3>
 &lt;h4 id="appdb-integration">AppDB integration&lt;/h4>
-&lt;p>&lt;em>NOTE:&lt;/em> Prerequisite: run the following commands is the installation of the EGI
-rOCCI CLI environment, according to
-&lt;a href="https://wiki.egi.eu/wiki/Fedcloud-tf:CLI_Environment">this guide&lt;/a>.&lt;/p>
 &lt;p>Go to AppDB and look for a OS image member of the &lt;code>fedcloud.egi.eu&lt;/code> VO (all
 sites should support), e.g.
 &lt;a href="https://appdb.egi.eu/store/vappliance/egi.centos.7">EGI CentOS 7 image&lt;/a>&lt;/p>
@@ -3120,138 +3052,7 @@ Creating temporary proxy .......................................................
 Contacting voms2.grid.cesnet.cz:15002 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Domain Control Validated/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms2.grid.cesnet.cz&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;fedcloud.egi.eu&amp;#34;&lt;/span> Done
 Creating proxy .............................................................................. Done
 Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Fri Nov &lt;span style="color:#0000cf;font-weight:bold">14&lt;/span> 04:59:26 &lt;span style="color:#0000cf;font-weight:bold">2014&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="occi-checks-euegicloudvm-managementocci-service-type">OCCI checks (eu.egi.cloud.vm-management.occi service type)&lt;/h3>
-&lt;p>&lt;em>NOTE:&lt;/em> Prerequisite: run the following commands is the installation of the EGI
-EGI CLI environment, according to
-&lt;a href="https://wiki.egi.eu/wiki/Fedcloud-tf:CLI_Environment">this guide&lt;/a>.&lt;/p>
-&lt;p>Describe OS templates (&lt;code>occi_endpoint&lt;/code> is the one retrieved from AppDB). Check
-also that the OCCI ID provided by in AppDB is listed:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X -a describe -r os_tpl
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>/_http://occi.carach5.ics.muni.cz/occi/infrastructure/os_tpl#uuid_ubuntu_server_14_04_lts_fedcloud_dukan_84_&lt;span style="color:#000;font-weight:bold">|&lt;/span> http://occi.carach5.ics.muni.cz/occi/infrastructure/os_tpl#uuid_ubuntu_server_14_04_lts_fedcloud_dukan_84 &lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span>
-title: Ubuntu-Server-14.04-LTS@fedcloud-dukan
-term: uuid_ubuntu_server_14_04_lts_fedcloud_dukan_84
-location: /mixin/os_tpl/uuid_ubuntu_server_14_04_lts_fedcloud_dukan_84/
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Describe the resource templates, and check that the resource ID provided but
-AppDB is returned:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X -a describe &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -r resource_tpl
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">[[&lt;/span>/_http://schema.fedcloud.egi.eu/occi/infrastructure/resource_tpl#small_&lt;span style="color:#000;font-weight:bold">|&lt;/span> http://schema.fedcloud.egi.eu/occi/infrastructure/resource_tpl#small &lt;span style="color:#ce5c00;font-weight:bold">]]&lt;/span>
-title: Small Instance - &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> core and &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> GB RAM term: small
-location: /mixin/resource_tpl/small/
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Start a VM (using the OCCI ID and Resource ID as provided by AppDB for the
-mixins, and for context the file created above). The returned ID will be used in
-the commands below:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a create -r compute -M &amp;lt;resource_id&amp;gt; -M &amp;lt;occi_id&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -t occi.core.title&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;My OCCI VM&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -T &lt;span style="color:#000">user_data&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &amp;lt;file://&lt;span style="color:#000">$PWD&lt;/span>/ctx.txt&amp;gt;
-https://carach5.ics.muni.cz:11443/compute/46934
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check that the VM is active by describing it (it may take a few minutes):&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X -a describe -r &amp;lt;vm_id&amp;gt;
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-occi.compute.state &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> active
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-occi.networkinterface.address &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> 147.251.3.62
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the VM does not have a public IP, you will need to get an IP for it&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X -a link &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -r &amp;lt;vm_id&amp;gt; -j /network/public
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>ssh to the machine to the provided IP (the options avoid problems when different
-VMs have the same IP, don&amp;rsquo;t use them in production) and check that
-contextualization script was executed:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ssh -i tempkey -o &lt;span style="color:#000">StrictHostKeyChecking&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>no -o &lt;span style="color:#000">UserKnownHostsFile&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/null &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> testadm@ &amp;lt;ip_addr&amp;gt; &lt;span style="color:#4e9a06">&amp;#34;sudo cat /tmp/deployment.log&amp;#34;&lt;/span>
-OK
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a block storage entity of 1 GB and save the ID returned:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a create -r storage -t occi.storage.size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>num&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>1&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -t occi.core.title&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>storage_test
-https://carach5.ics.muni.cz:11443/storage/296
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Describe the newly created storage ID:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a describe -r &amp;lt;storage_id&amp;gt;
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-occi.storage.size &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> 1.0
-occi.storage.state &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> online
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Link that storage to the running VM:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a link -r &amp;lt;vm_id&amp;gt; -j &amp;lt;storage_id&amp;gt;
-https://carach5.ics.muni.cz:11443/link/storagelink/compute_46936_disk_2
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check the device where the storage is attached:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a describe -r &amp;lt;storage_link_id&amp;gt;
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-occi.storagelink.deviceid &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /dev/xvdb
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>And login into the machine to create a filesystem, mount it, create a file, and
-umount:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ssh -i tempkey -o &lt;span style="color:#000">StrictHostKeyChecking&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>no -o &lt;span style="color:#000">UserKnownHostsFile&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/null &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> testadm@ &amp;lt;ip_addr&amp;gt;
-testadm $ sudo mke2fs &amp;lt;device_id&amp;gt;
-mke2fs 1.42.9 &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>4-Feb-2014&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> Filesystem &lt;span style="color:#000">label&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> OS type: Linux
-Block &lt;span style="color:#000">size&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">4096&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000">log&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>2&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> Fragment &lt;span style="color:#000">size&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">4096&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000">log&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>2&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000">Stride&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> blocks, Stripe &lt;span style="color:#000">width&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> blocks &lt;span style="color:#0000cf;font-weight:bold">65536&lt;/span> inodes, &lt;span style="color:#0000cf;font-weight:bold">262144&lt;/span> blocks
-&lt;span style="color:#0000cf;font-weight:bold">13107&lt;/span> blocks &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>5.00%&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> reserved &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> the super user First data &lt;span style="color:#000">block&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
-Maximum filesystem &lt;span style="color:#000">blocks&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">268435456&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span> block groups
-&lt;span style="color:#0000cf;font-weight:bold">32768&lt;/span> blocks per group, &lt;span style="color:#0000cf;font-weight:bold">32768&lt;/span> fragments per group &lt;span style="color:#0000cf;font-weight:bold">8192&lt;/span> inodes per group
-Superblock backups stored on blocks: 32768, 98304, 163840, &lt;span style="color:#0000cf;font-weight:bold">229376&lt;/span>
-Allocating group tables: &lt;span style="color:#204a87;font-weight:bold">done&lt;/span> Writing inode tables: &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
-Writing superblocks and filesystem accounting information: &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
-testadm $ sudo mount &amp;lt;device_id&amp;gt; /mnt
-testadm $ touch /mnt/test
-testadm $ ls -l /mnt/
-total &lt;span style="color:#0000cf;font-weight:bold">16&lt;/span> drwx------ &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> root root &lt;span style="color:#0000cf;font-weight:bold">16384&lt;/span> Nov &lt;span style="color:#0000cf;font-weight:bold">13&lt;/span> 17:43 lost+found
--rw-r--r-- &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> root root &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> Nov &lt;span style="color:#0000cf;font-weight:bold">13&lt;/span> 17:45 &lt;span style="color:#204a87">test&lt;/span>
-testadm $ sudo umount /mnt
-testadm $ &lt;span style="color:#204a87">exit&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Unlink the storage from that VM and start a new one with that storage attached:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -a unlink -r &amp;lt;storage_link_id&amp;gt;
-$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a create -r compute -M &amp;lt;resource_id&amp;gt; -M &amp;lt;occi_id&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -t occi.core.title&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;My OCCI VM&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -T &lt;span style="color:#000">user_data&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &amp;lt;file://&lt;span style="color:#000">$PWD&lt;/span>/ctx.txt&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -j &amp;lt;storage_id&amp;gt;** https://carach5.ics.muni.cz:11443/compute/46936
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check the IP of the new VM and login:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a describe -r &amp;lt;new_vm_id&amp;gt;**
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-occi.compute.state &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> active
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&amp;gt;&amp;gt; location: /link/storagelink/compute_46936_disk_2
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-occi.storagelink.deviceid &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /dev/xvdb
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-occi.networkinterface.address &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> 147.251.3.63
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-$ ssh -i tempkey -o &lt;span style="color:#000">StrictHostKeyChecking&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>no -o &lt;span style="color:#000">UserKnownHostsFile&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/null &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> testadm@ &amp;lt;new_vm_ip_addr&amp;gt;
-testadm $ sudo mount &amp;lt;device_id&amp;gt; /mnt
-testadm $ ls -ltr /mnt/
-total &lt;span style="color:#0000cf;font-weight:bold">16&lt;/span>
-drwx------ &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> root root &lt;span style="color:#0000cf;font-weight:bold">16384&lt;/span> Nov &lt;span style="color:#0000cf;font-weight:bold">13&lt;/span> 17:43 lost+found
--rw-r--r-- &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> root root &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> Nov &lt;span style="color:#0000cf;font-weight:bold">13&lt;/span> 17:45 &lt;span style="color:#204a87">test&lt;/span>
-testadm $ sudo umount /mnt
-testadm $ &lt;span style="color:#204a87">exit&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Clean up by unlinking the storage, and removing VMs and storage:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a unlink -r &amp;lt;new_storage_link_id&amp;gt;
-$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a delete -r &amp;lt;vm_id&amp;gt;
-$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a delete -r &amp;lt;new_vm_id&amp;gt;
-$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a delete -r &amp;lt;storage_id&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally check that the VMs and storage are not listed by occi:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X -a list -r compute
-$ occi -e &amp;lt;occi_endpoint&amp;gt; -n x509 -x &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> -X -a list -r storage
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="openstack-compute-checks-orgopenstacknova-service-type">OpenStack Compute checks (org.openstack.nova service type)&lt;/h3>
-&lt;p>&lt;em>NOTE:&lt;/em> Prerequisite: run the following commands is the installation of the
-OpenStack CLI with VOMS extensions, as shown in
-&lt;a href="https://wiki.egi.eu/wiki/Federated_Cloud_APIs_and_SDKs#CLI_2">on the API and SDK guide&lt;/a>.&lt;/p>
 &lt;p>Export the following variables on your shell (keystone URL can be obtained from
 GOCDB URL of the endpoint)&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &amp;lt;keystone URL&amp;gt;
@@ -3477,9 +3278,6 @@ $ openstack server delete &amp;lt;vm id&amp;gt;
 $ openstack volume delete &amp;lt;volume id&amp;gt;
 $ openstack ip floating delete &amp;lt;ip id&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="cloud-storage-cdmi-checks-euegicloudstorage-managementcdmi-service-type">Cloud Storage (CDMI) checks (eu.egi.cloud.storage-management.cdmi service type)&lt;/h3>
-&lt;p>&lt;em>NOTE:&lt;/em> Prerequisite: run the following commands is the installation of the
-EGI CLI environment, according to
-&lt;a href="https://wiki.egi.eu/wiki/Fedcloud-tf:CLI_Environment">this guide&lt;/a>.&lt;/p>
 &lt;p>List the content of the repository:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; list /
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a test directory:&lt;/p>
@@ -3510,6 +3308,7 @@ Files are equal
 $ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; delete -r test/
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Check that the folder does not exist anymore&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; list /
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>See Site Certification GIIS Check &lt;a href="../howto03_site_certificatoin_giis_check">HOWTO03&lt;/a>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>See Site Certification GIIS Check
+&lt;a href="../howto03_site_certificatoin_giis_check">HOWTO03&lt;/a>.&lt;/p>
 &lt;p>See to Resource Centre registration and certification procedure
 &lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item></channel></rss>

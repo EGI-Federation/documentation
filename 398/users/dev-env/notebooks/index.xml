@@ -60,11 +60,28 @@ variable will contain a valid access token for the service.&lt;/p>
 part of the login process and made available in the notebooks environment
 automatically. You can also specify a different oneprovider host if needed.&lt;/p>
 &lt;h3 id="eudat-b2drop">EUDAT B2DROP&lt;/h3>
-&lt;p>&lt;a href="https://b2drop.eudat.eu/">EUDAT B2DROP&lt;/a> offers a WebDAV interface that can be
-used to mount your files from the notebooks. Files are accessed as any regular
-file from the notebooks interface or from your code. This feature requires users
-to create a client in B2DROP and provide the client&amp;rsquo;s credentials to the EGI
-notebooks service.&lt;/p>
+&lt;p>&lt;a href="https://eudat.eu/services/b2drop">EUDAT B2DROP&lt;/a> is a low-barrier,
+user-friendly and trustworthy storage environment which allows users
+to synchronise their active data across different desktops and to easily
+share this data with peers. EUDAT offers a free public instance of B2DROP
+for any researcher with a 20 GB quota.&lt;/p>
+&lt;p>The data on B2DROP can be synchronised with EGI Notebooks so you can
+share content between the two services. This offers an easy-to-use
+storage and compute platform for the long-tail of science.&lt;/p>
+&lt;p>Here is how you can get them synchronised. First, make sure
+&lt;a href="https://b2drop.eudat.eu/">you have access to B2DROP&lt;/a>. Then, configure
+&lt;code>app username&lt;/code> and &lt;code>app password&lt;/code> on B2DROP&amp;rsquo;s
+&lt;a href="https://b2drop.eudat.eu/settings/user/security">security settings&lt;/a>.
+Now, back to EGI Notebooks, click on the &lt;code>B2DROP connection&lt;/code> drop-down
+menu when you start your session:&lt;/p>
+&lt;p>&lt;img src="notebooks-b2drop-1.png" alt="EGI Notebook Session">&lt;/p>
+&lt;p>Enter the &lt;code>app username&lt;/code> and &lt;code>app password&lt;/code> created previously, with
+the option to save them for future logins:&lt;/p>
+&lt;p>&lt;img src="notebooks-b2drop-2.png" alt="B2DROP credentials">&lt;/p>
+&lt;p>You will see a &lt;code>b2drop&lt;/code> folder in the list of folders (left panel) of the
+EGI Notebooks that is synchronised with the content on
+&lt;a href="https://b2drop.eudat.eu/">B2DROP&lt;/a>:&lt;/p>
+&lt;p>&lt;img src="notebooks-b2drop-3.png" alt="B2DROP folder">&lt;/p>
 &lt;h3 id="d4science-workspace">D4Science Workspace&lt;/h3>
 &lt;p>&lt;a href="https://www.d4science.org/">D4Science&lt;/a> VREs provide a shared workspace via a
 dedicated &lt;a href="https://gcube.wiki.gcube-system.org/gcube/StorageHub_REST_API">API&lt;/a>.

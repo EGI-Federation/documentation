@@ -3,10 +3,10 @@
 Centres (RC) and joining the Federated Cloud Task Force to contribute to the
 design, creation and implementation of the federation.&lt;/p>
 &lt;p>Resource Centers are free to use any Cloud Management Framework (OpenStack,
-etc...) as long as they are able to integrate with the EGI
-Federation components as described in the
-&lt;a href="https://wiki.egi.eu/wiki/Federated_Cloud_Architecture">Federated Cloud Architecture&lt;/a>.
-At the moment this compliance is guaranteed for OpenStack.&lt;/p>
+etc...) as long as they are able to integrate with the EGI Federation
+components as described in the
+&lt;a href="../../../users/getting-started/architecture">Federated Cloud Architecture&lt;/a>. At
+the moment this compliance is guaranteed for OpenStack.&lt;/p>
 &lt;p>The general minimal requirements are:&lt;/p>
 &lt;ul>
 &lt;li>Hardware requirements greatly depend on your cloud infrastructure, EGI
@@ -54,8 +54,7 @@ outside your site:&lt;/p>
 &lt;li>Swift (if providing Object Storage)&lt;/li>
 &lt;/ul>
 &lt;p>FedCloud components are distributed through
-&lt;a href="https://wiki.egi.eu/wiki/EGI_Cloud_Middleware_Distribution">CMD (Cloud Middleware Distribution)&lt;/a>
-or docker container images available in &lt;a href="https://hub.docker.com/">dockerhub&lt;/a>.
+&lt;a href="https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution">CMD (Cloud Middleware Distribution)&lt;/a>
 These docker containers come pre-packaged and ready to use in the EGI FedCloud
 Appliance so you do not need to install any extra components on your site but
 just run a VM and configure it approprietely to interact with your services.&lt;/p>
@@ -86,21 +85,20 @@ configured, you can use different credentials and permissions if desired.&lt;/p>
 &lt;li>A Virtual Appliance (VA) that uses Docker containers to bundle all of the
 components in a single VM and just needs minor configuration to get started&lt;/li>
 &lt;li>RPM and DEB Packages in the
-&lt;a href="https://wiki.egi.eu/wiki/EGI_Cloud_Middleware_Distribution">CMD distribution&lt;/a>&lt;/li>
+&lt;a href="https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution">CMD distribution&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="fedcloud-virtual-appliance">FedCloud Virtual Appliance&lt;/h3>
 &lt;p>The EGI FedCloud Appliance is available at
 &lt;a href="https://appdb.egi.eu/store/vappliance/fedcloud.integration.appliance.openstack">AppDB&lt;/a>
 as an OVA file. You can easily extract the VMDK disk by untaring and optionally
 converting it to your preferred format with qemu-img:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># get image and extract VMDK&lt;/span>
-$ curl &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl &lt;span style="color:#4e9a06">&amp;#34;https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .url&lt;span style="color:#204a87;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> tar x &lt;span style="color:#4e9a06">&amp;#34;*.vmdk&amp;#34;&lt;/span>
+$ curl &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl &lt;span style="color:#4e9a06">&amp;#34;https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .url&lt;span style="color:#204a87;font-weight:bold">)&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> tar x &lt;span style="color:#4e9a06">&amp;#34;*.vmdk&amp;#34;&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># convert to qcow2&lt;/span>
 $ qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.qcow2
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>The appliance running at your OpenStack must:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The appliance running at your OpenStack must:&lt;/p>
 &lt;ul>
 &lt;li>Have a host certificate to send the accounting information to the accounting
 repository. DN of the host certificate must be registered in GOCDB with
@@ -298,12 +296,10 @@ ones used for monitoring purposes.&lt;/p>
 &lt;/ul></description></item><item><title>Providers: Installation Validation</title><link>/providers/cloud-compute/validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/validation/</guid><description>
 &lt;p>Once the site services are registered in GOCDB (and flagged as &amp;quot;monitored&amp;quot;)
 they will appear in the EGI service monitoring tools. EGI will check the status
-of the services (see
-&lt;a href="https://wiki.egi.eu/wiki/Federated_Cloud_infrastructure_status">Infrastructure Status&lt;/a>
-for details). Check if your services are present in the EGI service monitoring
-tools and passing the tests; if you experience any issues (services not shown,
-services are not OK...) please contact back EGI Operations or your reference
-Resource Infrastructure.&lt;/p>
+of the services. Check if your services are present in the EGI service
+monitoring tools and passing the tests; if you experience any issues (services
+not shown, services are not OK...) please contact back EGI Operations or your
+reference Resource Infrastructure.&lt;/p>
 &lt;p>Extra checks for your installation:&lt;/p>
 &lt;ul>
 &lt;li>
@@ -313,19 +309,15 @@ is already in good shape.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Check that you are publishing cloud information in your site BDII: :&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ldapsearch -x -h &amp;lt;site bdii host&amp;gt; -p &lt;span style="color:#0000cf;font-weight:bold">2170&lt;/span> -b &lt;span style="color:#000">Glue2GroupID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cloud,Glue2DomainID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;your site name&amp;gt;,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>glue
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;/li>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>Check that all the images listed in the AppDB for the VOs you support (e.g.
 &lt;a href="https://appdb.egi.eu/store/vo/fedcloud.egi.eu">AppDB page for fedlcoud.egi.eu VO&lt;/a>)
 are listed in your BDII. This sample query will return all the template IDs
 registered in your BDII: :&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ldapsearch -x -h &amp;lt;site bdii host&amp;gt; -p &lt;span style="color:#0000cf;font-weight:bold">2170&lt;/span> -b &lt;span style="color:#000">Glue2GroupID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cloud,Glue2DomainID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;your site name&amp;gt;,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>glue &lt;span style="color:#000">objectClass&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GLUE2ApplicationEnvironment GLUE2ApplicationEnvironmentRepository
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;/li>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>Try to start one of those images in your cloud. You can do it with
 [onetemplate instantiate]{.title-ref} or OCCI commands, the result should be
@@ -333,7 +325,7 @@ the same.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Execute the
-&lt;a href="https://docs.egi.eu/providers/operations-manuals/howto04_site_certification_manual_tests/#check-the-functionality-of-the-cloud-elements">site certification manual tests&lt;/a>
+&lt;a href="../../../providers/operations-manuals/howto04_site_certification_manual_tests/#check-the-functionality-of-the-cloud-elements">site certification manual tests&lt;/a>
 against your endpoints.&lt;/p>
 &lt;/li>
 &lt;li>

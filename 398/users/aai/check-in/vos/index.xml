@@ -318,7 +318,7 @@ between this group and the system group &lt;em>members&lt;/em> (basically you in
 issued by Certification Authorities (CAs) part of the
 &lt;a href="https://www.eugridpma.org/">EUGridPMA&lt;/a> federation which is also part of
 &lt;a href="https://www.igtf.net/">IGTF&lt;/a> (International Global Trust Federation).&lt;/p>
-&lt;p>The role of a Certification Authoritie (CA) is to guarantee that users are who
+&lt;p>The role of a Certification Authority (CA) is to guarantee that users are who
 they claim to be and are entitled to own their certificate. It is up to the
 users to discover which CA they should contact. In general, CAs are organised
 geographically and by research institutes. Each CA has its own procedure to
@@ -526,7 +526,7 @@ information can be found at
 &lt;strong>Again, this is usually guided by the EGI support team. You should already
 have a meeting with them to discuss your requirements. They will help you to
 get resources from EGI providers, and sign
-&lt;a href="https://wiki.egi.eu/wiki/EGI_OLA_SLA_framework#Service_Level_Agreemens">SLA&lt;/a>
+&lt;a href="https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework">SLA&lt;/a>
 with you.&lt;/strong>&lt;/p>
 &lt;/li>
 &lt;li>

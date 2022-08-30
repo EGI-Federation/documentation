@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Cloud Orchestration</title><link>/users/compute/orchestration/</link><description>Recent content in Cloud Orchestration on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/orchestration/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Infrastructure Manager</title><link>/users/compute/orchestration/im/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/im/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Compute Orchestration</title><link>/users/compute/orchestration/</link><description>Recent content in Compute Orchestration on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/orchestration/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Infrastructure Manager</title><link>/users/compute/orchestration/im/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/im/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
 &lt;p>&lt;a href="https://www.grycap.upv.es/im">Infrastructure Manager&lt;/a> (IM) is a tool that
 &lt;strong>orchestrates the deployment of custom virtual infrastructures on multiple
@@ -36,7 +36,7 @@ It was also presented in one of the
 &lt;/div>
 &lt;p>The following sections document how to use IM from its GUI or CLI.&lt;/p></description></item><item><title>Users: Elastic Cloud Compute Clusters</title><link>/users/compute/orchestration/ec3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>&lt;a href="http://servproject.i3m.upv.es/ec3/">Elastic Cloud Compute Cluster&lt;/a> (EC3) is a
+&lt;p>&lt;a href="http://servproject.i3m.upv.es/ec3-ltos/">Elastic Cloud Compute Cluster&lt;/a> (EC3) is a
 tool to &lt;strong>create elastic virtual clusters on top of Infrastructure-as-a-Service
 (IaaS) providers&lt;/strong>.&lt;/p>
 &lt;p>Being based on &lt;a href="../im">Infrastructure Manager&lt;/a>, EC3 supports the same wide
@@ -455,9 +455,9 @@ command:&lt;/p>
 &lt;h4 id="more-details">More details&lt;/h4>
 &lt;ul>
 &lt;li>JDL language and simple jobs submission:
-&lt;a href="http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JDLsAndJobManagementBasic/index.html">JDLs and Job Management&lt;/a>&lt;/li>
-&lt;li>Basic Submitting Parametric and MPI jobs, using DIRAC API:
-&lt;a href="http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html">Advanced Job Management&lt;/a>&lt;/li>
+&lt;a href="https://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JDLsAndJobManagementBasic/index.html">JDLs and Job Management&lt;/a>&lt;/li>
+&lt;li>Basic Submitting Parametric jobs, using DIRAC API:
+&lt;a href="https://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html">Advanced Job Management&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11">Past tutorials&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h4 id="technical-support">Technical Support&lt;/h4>
