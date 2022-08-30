@@ -54,16 +54,25 @@ the `Add Support` button on the top right corner.
 
 ![image](add-support-oneprovider.png)
 
-You should then select on the page the tab: `Deploy your own provider` and there
-you will have to copy the command already configured with the correct parameters
-for the OneZone to use (`datahub.egi.eu`) and the space to join.
+You should then select on the page the tab: `Deploy your own provider`
+
+In order to obtain the `PROVIDER_REGISTRATION_TOKEN` that is part of the
+preconfigured command, you need to contact the
+[EGI HelpDesk](https://ggus.eu/?mode=ticket_submit), selecting DataHub as
+support unit.
+
+Please include in the request the following info:
+
+- Use case for the installation of a Oneprovider connected to the EGI DataHub
+- Name and the email of the Oneprovider admin
+- domain name of the Oneprovider
 
 ![image](onedatify-oneprovider.png)
 
 ### Run the command on the host
 
-Paste the copied command in the terminal on the Oneprovider machine as
-superuser.
+With the obtained `PROVIDER_REGISTRATION_TOKEN`, paste the copied command in the
+terminal on the Oneprovider machine as superuser.
 
 If necessary, the Onedatify script will ask for permission to install all
 necessary dependencies including Docker and Docker Compose.
@@ -94,9 +103,14 @@ The installation of a new OneProvider to expose existing datasets to an EGI
 DataHub space is similar to the installation with an empty storage.
 
 When adding support to an existing or new space you should select from the EGI
-DataHub user interface the tab : `Expose Existing dataset` and there you will
-have to copy the command already configured with the correct parameters for the
-Onezone (`datahub.egi.eu`) and the space to join.
+DataHub user interface the tab : `Expose Existing dataset`.
+
+Please refer to the steps described in the
+[Installation and attach empty storage to the EGI DataHub](#installation-and-attach-empty-storage-to-the-egi-datahub)
+section to request a `PROVIDER_REGISTRATION_TOKEN`.
+
+Once obtained, you will have to copy the command already configured with the
+correct parameters for the Onezone (`datahub.egi.eu`) and the space to join.
 
 ![image](onedatify-oneprovider-expose.png)
 

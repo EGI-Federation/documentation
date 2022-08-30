@@ -26,20 +26,18 @@ or using a command-line call as documented hereafter.
 Bear in mind that a single API token can be used with both Onezone, Oneprovider
 and other Onedata APIs.
 
-It's possible to retrieve the `CLIENT_ID`, `CLIENT_SECRET` and `REFRESH_TOKEN`
-using a
-[special OIDC client connected to Check-in](https://aai.egi.eu/fedcloud/). See
+It's possible to retrieve the `CLIENT_ID` and `REFRESH_TOKEN` using the
+[EGI Check-in Token Portal](https://aai.egi.eu/token/). See
 [Check-in documentation](../../../../aai/check-in) for more information.
 
 <!-- markdownlint-disable line-length -->
 ```shell
 CLIENT_ID=<CLIENT_ID>
-CLIENT_SECRET=<CLIENT_SECRET>
 REFRESH_TOKEN=<REFRESH_TOKEN>
 # Retrieving an OIDC token from Check-in
-curl -X POST -u "$CLIENT_ID":"$CLIENT_SECRET"  \
-  -d "client_id=$CLIENT_ID&$CLIENT_SECRET&grant_type=refresh_token&refresh_token=$REFRESH_TOKEN&scope=openid%20email%20profile" \
-  'https://aai.egi.eu/oidc/token' | python -m json.tool;
+curl -X POST \
+  -d "client_id=$CLIENT_ID&grant_type=refresh_token&refresh_token=$REFRESH_TOKEN&scope=openid%20email%20profile%20eduperson_entitlement" \
+  'https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token' | python -m json.tool;
 # Token is in the access_token field of the response
 ```
 <!-- markdownlint-enable line-length -->

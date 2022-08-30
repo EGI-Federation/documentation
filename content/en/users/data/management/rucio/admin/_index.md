@@ -1,6 +1,6 @@
 ---
 title: Administering Rucio
-linkTitle: Adminstration
+linkTitle: Administration
 type: docs
 weight: 30
 description: >-

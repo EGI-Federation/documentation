@@ -274,33 +274,16 @@ groups is
 For example `CO:COU:vo.example.org:admins`
 
 - A CO Person can be a member, an owner, both, or neither. Specifically:
-  - A COU admins group member can manage COU members:
+  - COU Admin Group members can manage COU members
   - Approve or decline membership petitions
-- Manage members' roles
-  - A COU admins group owner has permission to add and remove members to and
-    from the group, i.e. manage the list of CO Persons who can manage the COU
-    members
 
-A COU admins group owner can manage the admins group member as follows:
+A CO Person is added to a COU Admin Group if the following requirements are met:
 
-1. Login to [Check-in registry](https://aai.egi.eu/registry) using any of the
-   login credentials already linked to your EGI account.
+1. CO Person is declared as VO administrator in the VO's ID Card,
+under the [Operations Portal](https://operations-portal.egi.eu/vo/a/list)
 
-1. To view the available groups expand the **Groups** drop down list and click
-   **All Groups**
-
-   ![Groups drop down](./check-in-groups-drop-down.png)
-
-   Expand the **Filter** section and find the COU admin group you are interested
-   in. For the case of the service-integration COU with type the string
-   service-integration in the text box with the placeholder Name.Then we click
-   on Filter button
-
-   ![Expand groups](./check-in-groups-expand-filter.png)
-
-1. Locate **Admins** group click on **Edit** action
-
-   ![Groups actions](./check-in-groups-actions.png)
+1. A request is made to the Check-in Support Unit via a
+[EGI Helpdesk ticket](../../../../internal/helpdesk/user-guide/).
 
 ### Expiration Policy
 
@@ -315,28 +298,6 @@ their membership, a final notification email is sent when the VO membership
 expires. Please note that a user with expired membership is not eligible for VO
 membership entitlements and as a result the user will not have access to VO
 resources relying on these entitlements.
-
-#### Assign COU member admin role
-
-From the steps defined [above](#managing-cou-admin-members):
-
-1. Follow Manage Group Memberships link
-
-   ![Manage Group Memberships link](./check-in-manage-group-link.png)
-
-1. **Filter** out the CO Person you need to apply for the admin role. Use
-   **Given, Family Name, Email, Identifier** or a combination of the former.
-
-   ![Check-in CO people filter](./check-in-co-people-filter.png)
-
-#### Remove COU admin role
-
-From the steps defined [above](#managing-cou-admin-members):
-
-1. Under Group Members tab, click on Delete action for the CO Person that needs
-   to be removed from Admins group
-
-   ![Group members tab](./check-in-group-members-tab.png)
 
 ## VO membership API
 

@@ -54,10 +54,10 @@ meant to be exhaustive, further research is welcome. {{% /alert %}}
 - Security best practices must be taken into account
 - Security-related aspects must be considered from the beginning
 - Security issues must be addressed in priority and following the
-  [EGI SVG recommendations](https://wiki.egi.eu/wiki/SVG) and must take into
-  account the points mentioned in the
-  [SVG Secure Coding](https://wiki.egi.eu/wiki/SVG:Secure_Coding) and
-  [Software Security Checklist](https://wiki.egi.eu/wiki/SVG:Software_Security_Checklist)
+  [EGI SVG recommendations](https://go.egi.eu/svg) and must take into account
+  the points mentioned in the
+  [SVG Secure Coding](https://confluence.egi.eu/display/EGIBG/Secure+Coding) and
+  [Software Security Checklist](https://confluence.egi.eu/display/EGIBG/Software+Security+Checklist)
 - The Open Web Application Security Project ([OWASP](https://owasp.org/))
   provides extensive documentation, standards (such as
   [ASVS](https://owasp.org/www-project-application-security-verification-standard/))
@@ -132,4 +132,4 @@ meant to be exhaustive, further research is welcome. {{% /alert %}}
 ## Request for information
 
 You can ask for more information about them by contacting us via
-[our site](https://www.egi.eu/more-information).
+[our site](https://www.egi.eu/contact-us).

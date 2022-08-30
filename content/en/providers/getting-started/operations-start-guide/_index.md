@@ -7,8 +7,9 @@ type: docs
 
 The Operations Start Guide will help you start with EGI Operations duties. It
 covers the responsibilities of the various parties involved in the running of
-the [EGI infrastructure](https://ims.egi.eu/display/EGIG/EGI+Infrastructure) and
-guide how to join operations. As a newcomer, you need to understand the
+the
+[EGI infrastructure](https://confluence.egi.eu/display/EGIG/EGI+Infrastructure)
+and guide how to join operations. As a newcomer, you need to understand the
 structure of the infrastructure and roles of operators at different levels.
 Reading the whole document will give you a complete overall picture of daily
 operations within EGI.
@@ -16,27 +17,27 @@ operations within EGI.
 ## Resource Centres and Resource Infrastructures
 
 Resources are geographically distributed and are contributed by
-[Resource Centres](https://ims.egi.eu/display/EGIG/Resource+Centre). A Resource
-Centre is the smallest resource administration domain within EGI. It can be
-either localized or geographically distributed. A Resource Centre is also known
-as a _site_. It provides a minimum set of local or remote IT Services, such as
-High Throughput Compute (HTC), Cloud Compute, Storage and Data Transfer,
+[Resource Centres](https://confluence.egi.eu/display/EGIG/Resource+Centre). A
+Resource Centre is the smallest resource administration domain within EGI. It
+can be either localized or geographically distributed. A Resource Centre is also
+known as a _site_. It provides a minimum set of local or remote IT Services,
+such as High Throughput Compute (HTC), Cloud Compute, Storage and Data Transfer,
 compliant to well-defined IT Capabilities necessary to make resources accessible
 to authorised users. Users can access the services using common interfaces.
 
 The EGI Federation is a
-[Resource Infrastructure](https://ims.egi.eu/display/EGIG/Resource+Infrastructure)
+[Resource Infrastructure](https://confluence.egi.eu/display/EGIG/Resource+Infrastructure)
 federating Resource Centres to constitute a homogeneous operational domain, and
 the
-[Resource Infrastructure Provider](https://ims.egi.eu/display/EGIG/Resource+Infrastructure+Provider)
+[Resource Infrastructure Provider](https://confluence.egi.eu/display/EGIG/Resource+Infrastructure+Provider)
 is the legal organisation that is responsible of establishing, managing and of
 operating directly or indirectly the operational services to an agreed level of
 quality needed by the Resource Centres and the user community. It holds the
 responsibility of integrating them in EGI to enable uniform resource access and
 sharing for the benefit of their consuming end users. Examples of a Resource
 infrastructure Provider are the
-[European Intergovernmental Research Organisations (EIRO)](https://ims.egi.eu/display/EGIG/European+Intergovernmental+Research+Organisation)
-and the [NGIs](https://ims.egi.eu/display/EGIG/NGI).
+[European Intergovernmental Research Organisations (EIRO)](https://confluence.egi.eu/display/EGIG/European+Intergovernmental+Research+Organisation)
+and the [NGIs](https://confluence.egi.eu/display/EGIG/NGI).
 
 In Europe, Resource Centres are required to be affiliated to the respective
 NGIs, which (a) have a mandate to represent their national users community in
@@ -77,7 +78,7 @@ EGI Foundation and other Operations Centres.
 
 The following sections covers the roles that are commonly involved in the
 operations of the EGI Infrastructure. The correspondent
-[roles defined in Configuration Database (GOCDB)](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Roles)
+[roles defined in Configuration Database (GOCDB)](../../../internal/configuration-database/users-roles/managing-roles/#roles)
 give specific rights in the Configuration Database itself and in other EGI
 services. There are roles whose scope is limited to the operation of a Resource
 Centre. A number of other roles act on a higher level, involving the operations
@@ -102,7 +103,7 @@ operate supported middleware versions. This implies upgrading it regularly.
 Emergency releases are treated in a special way. Resource Centre Administrators
 **MUST** react to security issues that are at a global level, but affect their
 site. See
-[SEC03 EGI-CSIRT Critical Vulnerability Handling](https://wiki.egi.eu/wiki/SEC03_EGI-CSIRT_Critical_Vulnerability_Handling).
+[SEC03 EGI-CSIRT Critical Vulnerability Handling](https://go.egi.eu/sec03).
 
 #### Resource Centre Operations Manager
 
@@ -121,12 +122,12 @@ subscribed to the relevant mailing lists.
 #### Resource Centre Security Officer
 
 The person responsible for keeping the site compliant with the
-[EGI security policies](https://wiki.egi.eu/wiki/EGI_CSIRT:Policies). They are
-the primary contact for the [NGI Security officer](#ngi-security-officer) and
+[EGI security policies](https://go.egi.eu/policies-and-procedures). They are the
+primary contact for the [NGI Security officer](#ngi-security-officer) and
 [EGI Computer Security Incident Response Team (CSIRT)](#egi-csirt). The Site
 Security Officer deals with security incidents and shall respond to enquiries in
 a timely fashion as defined in the collection of
-[security procedures and policies](https://wiki.egi.eu/wiki/EGI_CSIRT:Policies).
+[security procedures and policies](https://go.egi.eu/policies-and-procedures).
 
 ### Regional level
 
@@ -200,7 +201,7 @@ coordinating the operations of the infrastructure across the project.
 contact point at project level.
 
 - [EGI-CSIRT site](https://csirt.egi.eu)
-- [EGI-CSIRT profile according to RFC-2350](https://wiki.egi.eu/wiki/EGI_CSIRT:RFC_2350)
+- [EGI-CSIRT profile according to RFC-2350](https://confluence.egi.eu/display/EGIBG/EGI+CSIRT+-+RFC+2350)
 - [EGI-CSIRT Terms of References](https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf)
 
 ##### EGI-CSIRT's IRTF
@@ -223,8 +224,8 @@ on a weekly rota basis.
 
 #### EGI Foundation SDIS team
 
-The [EGI Foundation](https://ims.egi.eu/display/EGIG/EGI+Foundation) Service
-Delivery and Information Security (SDIS) team, formerly known as the EGI
+The [EGI Foundation](https://confluence.egi.eu/display/EGIG/EGI+Foundation)
+Service Delivery and Information Security (SDIS) team, formerly known as the EGI
 Operations team, is responsible of
 [coordinating and supporting the operational activities](https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight)
 of all the EGI Infrastructure.
@@ -232,15 +233,14 @@ of all the EGI Infrastructure.
 #### VO
 
 A
-[Virtual Organisation (VO)](https://ims.egi.eu/display/EGIG/Virtual+organisation)
+[Virtual Organisation (VO)](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
 is a group of users and, optionally, resources, often not bound to a single
 institution or national borders, who, by reason of their common membership and
 in sharing a common goal, are given authority to use a set of resources. Each VO
 member signs the VO Acceptable Usage Policy (AUP) (during registration) which is
 the policy describing the goals of the VO thereby defining the expected and
 acceptable use of the resources by the users of the VO. User documentation can
-be found [in the users section](../../../users/) and
-[in the EGI Wiki](https://wiki.egi.eu/wiki/User_Documentation).
+be found [in the users section](../../../users/).
 
 #### VO manager
 
@@ -281,7 +281,7 @@ Please use this resource and contact your CA if your certificate does not work.
 
 As soon as you try to access an EGI service with your federated identity, you
 will be requested to register an account in EGI Check-in if not existing yet.
-The [Check-in sign up guide](../../../users/check-in/signup/) explains how to
+The [Check-in sign up guide](../../../users/aai/check-in/signup) explains how to
 sign up for an EGI account. If you already own an account, you will be simply
 asked to login through EGI Check-in.
 
@@ -297,10 +297,10 @@ useful to test the RCs and to debug related issues.
 ### Requesting GOCDB access
 
 - Read
-  [Input System User Documentation](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation)
+  [Input System User Documentation](../../../internal/configuration-database)
   first.
 - Go to the [Configuration Database](https://goc.egi.eu/) and follow
-  [the instruction](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Users_and_roles)
+  [the instruction](../../../internal/configuration-database/users-roles/managing-roles/#roles).
 
 All members **should notify their NGI operations manager** about their role
 requests, to be sure they are considered on time.
@@ -337,7 +337,7 @@ be subscribed to noc-managers mailing list `noc-managers@mailman.egi.eu`.
 Procedures and policies are accessible on the
 [EGI Policies and Procedures space](https://confluence.egi.eu/display/EGIPP/EGI+Federation+Procedures).
 Additional documentation relevant to EGI operations is available at
-[EGI Documentation wiki page](https://wiki.egi.eu/wiki/Documentation).
+[EGI Documentation](../../../../en).
 
 ## Tools
 

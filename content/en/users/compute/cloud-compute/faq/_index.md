@@ -19,8 +19,8 @@ Europe can join. Just place an order into the
 
 ### How can I get an OAuth2.0 token?
 
-Authentication via CLI or API requires a valid Check-in token. The
-[FedCloud Check-in client](https://aai.egi.eu/fedcloud) allows you to get one as
+Authentication via CLI or API requires a valid Access Token from Check-in. The
+[EGI Check-in Token Portal](https://aai.egi.eu/token) allows you to get one as
 needed. Check the [Authentication and Authorisation](../auth) guide for more
 information.
 

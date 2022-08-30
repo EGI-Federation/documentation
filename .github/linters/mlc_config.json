@@ -10,6 +10,9 @@
       "pattern": "^https://aai.*.egi.eu/oidc"
     },
     {
+      "pattern": "^https://aai.*.egi.eu/auth"
+    },
+    {
       "pattern": "^https://aai.egi.eu/LoA"
     },
     {
@@ -40,10 +43,19 @@
       "pattern": "^https://ggus.eu/*"
     },
     {
+      "pattern": "^https://goc.egi.eu/gocdbpi"
+    },
+    {
       "pattern": "^https://helpdesk.egi.eu"
     },
     {
       "pattern": "^https://aai.*.egi.eu/api/v2/VoMembers"
+    },
+    {
+      "pattern": "^https://b2drop.eudat.eu/settings/user/security"
+    },
+    {
+      "pattern": "^https://opensource.org/licenses"
     }
   ]
 }

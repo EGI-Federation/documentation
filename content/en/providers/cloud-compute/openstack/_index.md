@@ -23,8 +23,7 @@ outside your site:
 - Swift (if providing Object Storage)
 
 FedCloud components are distributed through
-[CMD (Cloud Middleware Distribution)](https://wiki.egi.eu/wiki/EGI_Cloud_Middleware_Distribution)
-or docker container images available in [dockerhub](https://hub.docker.com/).
+[CMD (Cloud Middleware Distribution)](https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution)
 These docker containers come pre-packaged and ready to use in the EGI FedCloud
 Appliance so you do not need to install any extra components on your site but
 just run a VM and configure it approprietely to interact with your services.
@@ -59,7 +58,7 @@ EGI distributes the integration components as:
 - A Virtual Appliance (VA) that uses Docker containers to bundle all of the
   components in a single VM and just needs minor configuration to get started
 - RPM and DEB Packages in the
-  [CMD distribution](https://wiki.egi.eu/wiki/EGI_Cloud_Middleware_Distribution)
+  [CMD distribution](https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution)
 
 ### FedCloud Virtual Appliance
 
@@ -68,17 +67,14 @@ The EGI FedCloud Appliance is available at
 as an OVA file. You can easily extract the VMDK disk by untaring and optionally
 converting it to your preferred format with qemu-img:
 
-<!-- markdownlint-disable line-length -->
-
 ```shell
 # get image and extract VMDK
-$ curl $(curl "https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict" | jq -r .url) | \
-    tar x "*.vmdk"
+$ curl $(curl "https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict" \
+    | jq -r .url) \
+    | tar x "*.vmdk"
 # convert to qcow2
 $ qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.qcow2
 ```
-
-<!-- markdownlint-enable line-length -->
 
 The appliance running at your OpenStack must:
 

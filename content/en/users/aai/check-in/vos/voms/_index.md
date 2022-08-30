@@ -17,7 +17,7 @@ issued by Certification Authorities (CAs) part of the
 [EUGridPMA](https://www.eugridpma.org/) federation which is also part of
 [IGTF](https://www.igtf.net/) (International Global Trust Federation).
 
-The role of a Certification Authoritie (CA) is to guarantee that users are who
+The role of a Certification Authority (CA) is to guarantee that users are who
 they claim to be and are entitled to own their certificate. It is up to the
 users to discover which CA they should contact. In general, CAs are organised
 geographically and by research institutes. Each CA has its own procedure to
@@ -247,7 +247,7 @@ existing VOs
    **Again, this is usually guided by the EGI support team. You should already
    have a meeting with them to discuss your requirements. They will help you to
    get resources from EGI providers, and sign
-   [SLA](https://wiki.egi.eu/wiki/EGI_OLA_SLA_framework#Service_Level_Agreemens)
+   [SLA](https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework)
    with you.**
 
 1. Request your VO membership at VO VOMS page. You will have to enter required

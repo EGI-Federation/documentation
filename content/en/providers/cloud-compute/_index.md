@@ -13,7 +13,7 @@ providing few details about:
 - the projects you may be involved in as cloud provider.
 
 - the user communities you want to support (AKA Virtual Organisations or VOs).
-  You can also support the 'long-tail of science' through the access.egi.eu VO.
+  You can also support the 'long-tail of science' through the vo.access.egi.eu VO.
 
 - the technologies (Cloud Management Framework) you want to provide.
 

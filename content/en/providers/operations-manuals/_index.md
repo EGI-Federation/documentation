@@ -5,10 +5,6 @@ type: "docs"
 description: "Operations manuals for Service Providers"
 ---
 
-{{% alert title="Note" color="info" %}} Additional Operations Manuals and
-How-tos are available on the
-[EGI Wiki](https://wiki.egi.eu/wiki/Operations_Manuals). {{% /alert %}}
-
 ## Manuals
 
 The EGI Operations Manuals are **approved** technical documents that provide

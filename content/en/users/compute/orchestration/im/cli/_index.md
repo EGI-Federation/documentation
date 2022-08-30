@@ -65,7 +65,8 @@ id = egi; type = EGI; host = CESGA; vo = vo.access.egi.eu; token = egi_aai_token
 
 The value of `egi_aai_token_value` must be replaced with a valid EGI Check-in
 access token. Users of EGI Check-in can get all the information needed to obtain
-access tokens, by visiting [Check-in FedCloud client](https://aai.egi.eu/fedcloud/).
+access tokens, by visiting
+[EGI Check-in Token Portal](https://aai.egi.eu/token/).
 
 [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/) can be used to get
 a valid access token:

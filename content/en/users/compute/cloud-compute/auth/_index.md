@@ -86,11 +86,11 @@ alongside the access and/or ID tokens as part of a user's initial authentication
 flow.
 
 If you need to obtain these kind of tokens for using it in command-line tools or APIs,
-you can easily do so with the special _fedcloud_ client. You can access the
-[FedCloud Check-in client](https://aai.egi.eu/fedcloud) and click on
+you can easily do so with the EGI Check-in Token Portal. You can access the
+[EGI Check-in Token Portal](https://aai.egi.eu/token) and click on
 \'Authorise\' to log in with your Check-in credentials to obtain:
 
-- a client ID (`fedcloud`)
+- a client ID (`token-portal`)
 - a refresh token
 
 {{% alert title="Refresh tokens" color="danger" %}}

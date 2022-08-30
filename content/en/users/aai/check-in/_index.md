@@ -33,7 +33,7 @@ The main features of Check-in:
   providers in a transparent way
 
 {{% alert title="Note" color="info" %}} EGI Check-In is based on
-the [AARC Bluprint Architecture](https://aarc-project.eu/architecture/).
+the [AARC Blueprint Architecture](https://aarc-project.eu/architecture/).
 {{% /alert %}}
 
 The following sections cover how to sign up for and EGI account, and how to
