@@ -188,7 +188,7 @@ International communities reach EGI through the following channels:
 
 The User Community Support team of the EGI Foundation receives these requests
 and negotiates the details of access, with the involvement of relevant and
-‘fit-for-purpose’ RPs. This Service Level Management (SLM) process intervenes as
+‘fit-for-purpose’ RCs. This Service Level Management (SLM) process intervenes as
 a matchmaker between service expectations and needs of the user communities,
 acting as ‘customers’, and the capabilities of the RCs. Customers are enabled
 access to the resources in the form of
