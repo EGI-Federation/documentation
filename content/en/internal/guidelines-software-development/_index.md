@@ -70,6 +70,7 @@ meant to be exhaustive, further research is welcome. {{% /alert %}}
 - [NIST: Cybersecurity](https://www.nist.gov/cybersecurity)
 - [Cybersecurity & Infrastructure Security Agency](https://www.cisa.gov/cybersecurity)
 - [Microsoft Security Development Lifecycle (SDL)](https://www.microsoft.com/en-us/securityengineering/sdl/)
+- [Introduction to Software Security (video course by Trusted CI, WISC, UAB)](https://research.cs.wisc.edu/mist/SoftwareSecurityCourse/)
 
 ### Tooling and telemetry
 
