@@ -321,7 +321,7 @@ objects in OpenStack storage containers cannot be protected against deletion.
 $ fedcloud openstack container delete test-egi
 ```
 
-### Rclone
+### Access via Rclone
 
 [Rclone](https://rclone.org/) is a command-line program to manage files on cloud
 storage. This section explains how to use `rclone` to interact with
