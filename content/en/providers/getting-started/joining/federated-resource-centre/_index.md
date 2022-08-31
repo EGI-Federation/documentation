@@ -167,72 +167,52 @@ resolution as suggested in the ticket. In case a satisfactory resolution is not
 reached in due time, or a sign of active progress on addressing the
 vulnerability is not visible, the specific Resource Centre may be suspended.
 
-## Setting up agreements with customers
+## Serving user communities
 
 Once part of the production infrastructure, the RC is ready to deliver its
 resources to any of the users’ communities consuming the infrastructure.
 
-Here the Service Level Management (SLM) process intervenes as a matchmaker
-between service expectations and needs of the user communities, acting as
-customers, and the capabilities of the RCs. Customers are managed as
+The RC can continue serving local user communities, and at the same time deliver
+capacity for international user communities that approach EGI and therefore
+reach the federated RCs.
+
+International communities reach EGI through the following channels:
+
+- The EGI site where they can
+  [request access to services](https://www.egi.eu/services/research/).
+- The [EGI-ACE Call for Use Cases](https://www.egi.eu/egi-ace-open-call/).
+- The [Marketplace](https://marketplace.eosc-portal.eu/) of the European Open
+  Science Cloud.
+
+### Service and Operation Level Agreements (SLAs, OLAs)
+
+The User Community Support team of the EGI Foundation receives these requests
+and negotiates the details of access, with the involvement of relevant and
+‘fit-for-purpose’ RCs. This Service Level Management (SLM) process intervenes as
+a matchmaker between service expectations and needs of the user communities,
+acting as ‘customers’, and the capabilities of the RCs. Customers are enabled
+access to the resources in the form of
 [Virtual Organisations (VOs)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
 
 In order to select providers for provisioning services to a given customer,
-technical requirements collected from the customer are used by EGI to launch a
-call open to all the providers. The Expression of Interests (EoIs) collected
-during the negotiation phase are used to identify the provider(s) that best
-match the customer's requirements and expectations. From a technical
-perspective, several aspects will be considered during the negotiation phase
+technical requirements are collected from the customer then transferred to
+relevant providers. The Expression of Interests for support (EoIs) are collected
+from the interested providers during the negotiation phase, resulting in the
+best match with customer’s requirements and expectations (both technical and
+financial). Several aspects are considered during the negotiation phase,
 including the geographical location of the customer, national roadmap and
 priority of the providers, and costs of the service provisioning in case of a
 pay-for-use model.
 
-When the negotiation phase ends, the selected provider(s) will:
-
-- Define a VO Operational Level Agreement(s) (OLA) with EGI Foundation for
-  providing the services through the EGI Portfolio to support the user
-  community. EGI Foundation will share with the RCs a draft of the document(s)
-  based on a predefined template and customised with the details of the specific
-  Agreement(s), such as:
-  - the main contacts to be used for communications related to the service(s);
-  - the duration of the Agreement;
-  - conditions for operating the service (service hours and exceptions);
-  - Service Level Targets;
-  - if the resources are exclusively allocated or are subject to local
-    availability;
-  - the payment mode;
-  - responsibility in case of violations and complaints;
-  - any limitations and constraints (if any);
-  - the frequency of service performance reports.
-- Configure the service(s) in the scope of the Agreement(s) enabling the support
-  of the Customer's VO and activating the monitoring of the services/resources.
-
-At the same time, EGI Foundation sets up a VO Service Level Agreement (SLA) with
-the given user community for the provisioning of the requested service. The EGI
-VO SLA is secured with related EGI VO OLAs and is agreed on a case-by-case basis
-(Fig.3).
-
 ![Relationship between SLA and OLA](SLAs-Picture.png)
 
-Once approved, the Agreement is automatically renewed, as long as the
-provider(s) does (do) not express a decision to terminate the Agreement at least
-a month before the expiration date. In case of termination of the Agreement, the
-provider must remove the support of the customer. The Agreement can also be
-terminated by the customer.
+The result of the negotiation is a ‘Service Level Agreement’ (SLA), and several
+‘Operation Level Agreements’ (OLA), one with each contributing provider. (See
+[https://documents.egi.eu/public/ListBy?topicid=65](SLAs-OLAs examples).)
 
-## Managing service orders
-
-Customers can request access to the services of the EGI Infrastructure through
-the EOSC Portal Marketplace. Access to the services is either fully open, or
-behind service-specific authentication and authorisation steps.
-
-Depending on the nature of the service ordered, different levels of technical
-support are requested to the service providers including the activation of a new
-Virtual Organisation (VO), or the customization of the service with dedicated
-set-up to meet the customer's expectations. Service providers receive
-notifications about services orders via
-[SOMBO](https://opsportal.eosc-portal.eu/login/), and they handle them with the
-support and oversight of the EGI Foundation.
+SLAs and OLAs are typically signed for at least 1 year, and are automatically
+renewed, as long as the provider(s) or the customer do not express a decision to
+terminate the Agreement at least a month before the expiration date.
 
 ## Performance reports: enforcing OLAs
 
