@@ -568,7 +568,7 @@ resources relying on these entitlements.&lt;/p>
 &lt;p>Check-in provides a REST API that allows clients to:&lt;/p>
 &lt;ul>
 &lt;li>manage membership information only for the VOs they are authoritative for&lt;/li>
-&lt;li>GET VO group information only for the VOs they are authoritative for&lt;/li>
+&lt;li>Get VO group information only for the VOs they are authoritative for&lt;/li>
 &lt;/ul>
 &lt;p>Membership Features:&lt;/p>
 &lt;ul>
@@ -843,7 +843,7 @@ be supported in the future.&lt;/p>
 &lt;tr>
 &lt;td>200 OK&lt;/td>
 &lt;td>Role Returned&lt;/td>
-&lt;td>json response&lt;/td>
+&lt;td>JSON response&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>400 Bad Request&lt;/td>
