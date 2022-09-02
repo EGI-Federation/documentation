@@ -779,4 +779,4 @@ Groups are present in the `ou=groups` subtree.
 | `cn`          | Common name                             | `CO:COU:vo.example.org:members`                                             |
 | `description` | The description of group                | `CO:COU:vo.example.org Members`                                             |
 | `member`      | The members of this group (multivalued) | `voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu`                                             |
-| `businessCategory`      | The VO type (multivalued, optional) | `mailman` |
+| `businessCategory`      | The VO/group type (multivalued, optional) | `mailman` |
