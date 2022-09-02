@@ -136,9 +136,9 @@ provide the following information to connect your service to EGI Check-in:
    - have a size larger than 40000 and smaller than 50000 characters when
      encoded in base64
 1. Country of the service
-1. Compliance with the
-   [EGI Policies](https://go.egi.eu/policies-and-procedures) and the
-   [GÉANT Data Protection Code of Conduct](https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home)
+1. Compliance with the [EGI Policies](https://go.egi.eu/policies-and-procedures)
+   and the
+   [REFEDS Data Protection Code of Conduct](https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home)
 
 The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.
@@ -745,7 +745,8 @@ Example request:
 ```shell
 curl -X POST "${DEVICE_CODE_ENDPOINT}" \
   -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "client_id=${CLIENT_ID}" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "client_secret=${CLIENT_SECRET}" \
   -d "scope=openid%20email%20profile" | python -m json.tool
 ```
 
@@ -827,6 +828,7 @@ To combine Device Code flow with PKCE you need to make the following requests:
 curl -X POST "${DEVICE_CODE_ENDPOINT}" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "client_id=${CLIENT_ID}" \
+  -d "client_secret=${CLIENT_SECRET}" \
   -d "scope=openid%20email%20profile" \
   -d "code_challenge=${CODE_CHALLENGE}" \
   -d "code_challenge_method=S256" | python -m json.tool
@@ -843,6 +845,7 @@ curl -X POST "${TOKEN_ENDPOINT}" \
   -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
   -d "device_code=${DEVICE_CODE}" \
   -d "client_id=${CLIENT_ID}" \
+  -d "client_secret=${CLIENT_SECRET}" \
   -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
 ```
 
@@ -1039,6 +1042,13 @@ the following HTTP response during the authentication flow:
 ```http
 error=invalid_request&error_description=Missing parameter: code_challenge_method
 ```
+
+##### Device Code
+
+If you are using a confidential client with the Device Code grant, please make
+sure that the `client_secret` is present in the request to the Device Code
+Endpoint either as HTTP Basic or HTTP POST parameter (see
+[Device Authorization Request](#1-device-authorization-request)).
 
 ##### Token Exchange
 
