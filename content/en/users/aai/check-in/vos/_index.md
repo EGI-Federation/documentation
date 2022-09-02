@@ -588,7 +588,7 @@ Response Format:
 
 | HTTP Status        | Description             | Response Body |
 | ------------------ | ----------------------- | ------------- |
-| 200 OK             | Role Returned           | json response |
+| 200 OK             | Role Returned           | JSON response |
 | 400 Bad Request    | CO ID unknown           |               |
 | 401 Unauthorized   | Authentication Required |               |
 | 404 COU/VO unknown | COU/CO name not found   |               |
