@@ -74,7 +74,7 @@ installed in the internet browser, or the local machine&amp;rsquo;s certificate 
 &lt;/ul>
 &lt;p>Users can access the system as soon as they are authenticated. However, they
 will only be able to update information based on their roles, and only once they
-will have &lt;a href="#registering-a-new-user-account">registering a new user account&lt;/a>.&lt;/p>
+will have &lt;a href="#registering-a-new-user-account">registered a new user account&lt;/a>.&lt;/p>
 &lt;p>More information about roles and associated permission is available in the
 &lt;a href="../users-roles">&lt;em>Users and roles&lt;/em>&lt;/a> section of the documentation.&lt;/p>
 &lt;p>Applications requesting a specific role have to be validated by parent roles or
