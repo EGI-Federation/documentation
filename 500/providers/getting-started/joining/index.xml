@@ -1,0 +1,460 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Joining EGI as a provider</title><link>/providers/getting-started/joining/</link><description>Recent content in Joining EGI as a provider on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/getting-started/joining/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Joining as a Federated Resource Centre</title><link>/providers/getting-started/joining/federated-resource-centre/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/federated-resource-centre/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>A Resource Centre (RC) is the smallest resource administration domain in the EGI
+Federation. It can be either localised or geographically distributed and
+provides a minimum set of local or remote IT Services compliant with
+well-defined IT Capabilities (HTC, Cloud, Storage, etc.) necessary to make
+resources accessible to Users. EGI is a Resource Infrastructure federating RCs
+to constitute a homogeneous operational domain.&lt;/p>
+&lt;h2 id="registration-and-certification">Registration and certification&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Related procedure:
+&lt;a href="https://go.egi.eu/proc09">PROC09 Resource Centre Registration and Certification&lt;/a>
+&lt;/div>
+&lt;p>In order to join the EGI Infrastructure, a RC needs to present the request to
+the Research Infrastructure Provider (RP) existing in its country. A RP is a
+legal organisation, part of the EGI Resource Infrastructure, responsible for
+managing and operating a number of operational services at national level,
+supporting EGI RCs and user communities. Please have a look at the
+&lt;a href="../../operations-start-guide">Operations Start Guide&lt;/a> to get familiar with the
+terms mentioned above, and to have a complete picture of the several actors
+participating in our landscape.&lt;/p>
+&lt;p>The RP operators are going to guide and support the RC during the registration
+and certification procedures.&lt;/p>
+&lt;p>Firstly, the RC will be asked to read, understand, and accept:&lt;/p>
+&lt;ul>
+&lt;li>the
+&lt;a href="https://documents.egi.eu/document/31">RCs Operational Level Agreement (OLA)&lt;/a>,
+an agreement made between the RC and its RP that defines the minimum set of
+operational services and the respective quality parameters that a Resource
+Centre is required to provide in EGI;&lt;/li>
+&lt;li>the &lt;a href="https://go.egi.eu/policies_procedures">Security Policies&lt;/a> defined in EGI
+to guarantee that all the security aspects with the service delivery are
+fulfilled and enforced.&lt;/li>
+&lt;/ul>
+&lt;p>Secondly, the RC should be registered in the EGI
+&lt;a href="../../../../internal/configuration-database">Configuration Database&lt;/a>: the
+provided information, from the generic contacts and roles of people to the
+service endpoints details, is needed to trigger the daily operations of other
+services and activities provided by the EGI Infrastructure such as the
+&lt;a href="../../../../internal/monitoring">Monitoring&lt;/a> of the resources, the
+&lt;a href="../../../../internal/accounting">Accounting&lt;/a>, the
+&lt;a href="../../../../internal/helpdesk">Support&lt;/a>, and the
+&lt;a href="../../../../internal/security-coordination">Security&lt;/a> activities.&lt;/p>
+&lt;p>&lt;img src="SiteStatusFlow.png" alt="Diagram of the RCs status flow">&lt;/p>
+&lt;p>Once the entry in the Configuration Database is complete, the RP changes the RC
+status from “Candidate” to “Uncertified”, and the certification procedure can
+start: it comprises a
+&lt;a href="../../../operations-manuals/howto04_site_certification_manual_tests">series of technical controls&lt;/a>
+to verify that the provided services work according to the expectations defined
+in the RC OLA. Any identified issue is notified by the RP operators to the RC
+and investigated until its solution.&lt;/p>
+&lt;p>When all the certification controls are successfully passed, the RC status is
+changed to “Certified” meaning that the RC is included in the EGI production
+infrastructure and its resources can be consumed by the users of the
+infrastructure.&lt;/p>
+&lt;h2 id="resource-centres-responsibilities">Resource Centres responsibilities&lt;/h2>
+&lt;h3 id="incidents-and-service-requests">Incidents and service requests&lt;/h3>
+&lt;p>Providing support is a fundamental part of the daily activity of a provider
+participating in a large research infrastructure such as EGI. The support is not
+only for the users accessing the resources but also for those who are involved
+in the management and oversight of the infrastructure.&lt;/p>
+&lt;p>As defined in the RC OLA, the RC will handle
+&lt;a href="https://confluence.egi.eu/display/EGIG/Incident">incidents&lt;/a> and
+&lt;a href="https://confluence.egi.eu/display/EGIG/Service+request">service requests&lt;/a>
+registered as tickets in the &lt;a href="./../../../../internal/helpdesk">EGI Helpdesk&lt;/a>
+service, with the expectation to acknowledge and process any notified issue,
+within the agreed response time associated with the priority of the ticket.&lt;/p>
+&lt;p>The response time is defined by the Quality of
+&lt;a href="https://confluence.egi.eu/display/EGISLM/Service+Level+Target+-+Quality+of+Support">Support levels&lt;/a>,
+and for the RCs the level will be Medium, meaning that there will 4 priorities
+for the incidents (requiring for example up to 5 working days for the “less
+urgent” tickets and up to 1 working day for the “top priority” ones), while any
+service request will be processed as “less urgent” ticket.&lt;/p>
+&lt;h3 id="security-topics">Security topics&lt;/h3>
+&lt;p>The security posture of the infrastructure is framed by the set of policies
+constituting the &lt;a href="https://go.egi.eu/security-policies">Security Policies&lt;/a>. Those
+policies cover different complementary activities including the operation of
+services, the processing of personal data and the management of security
+incidents and vulnerabilities.&lt;/p>
+&lt;h4 id="dealing-with-security-incidents">Dealing with security incidents&lt;/h4>
+&lt;p>The
+&lt;a href="https://go.egi.eu/security-incident-response-policy">Security Incident Response Policy&lt;/a>
+aims at coordinating the incident response across the infrastructure, ensuring
+that that incidents are promptly reported, and that all incidents are
+investigated as fully as possible.&lt;/p>
+&lt;blockquote>
+&lt;p>Security incidents are to be treated as serious matters and their
+investigation must be resourced appropriately.&lt;/p>
+&lt;/blockquote>
+&lt;p>Resources Centres must report suspected security incidents to their RP Security
+Officer and to
+&lt;a href="https://confluence.egi.eu/display/EGIBG/CSIRT">EGI Computer Security Incident Response Team (CSIRT)&lt;/a>
+within 4 hours of discovery. This initial step will start the coordination of
+the incident response as documented in the procedure
+&lt;a href="https://go.egi.eu/sec01">SEC01 EGI CSIRT Security Incident Handling Procedure&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>This procedure has been implemented according to the Security Incident
+Response Policy, to minimise the impact of security incidents affecting the
+Resource Centres part of the infrastructure&lt;/li>
+&lt;li>It covers guidance on how the incident response should be coordinated,
+describing the responsibilities of the various parties, and encourages
+post-mortem analysis and promotes cooperation between Resource Centres.&lt;/li>
+&lt;/ul>
+&lt;h4 id="handling-of-vulnerabilities">Handling of vulnerabilities&lt;/h4>
+&lt;p>The handling of vulnerabilities is a very formal process involving many
+different entities.&lt;/p>
+&lt;p>Anyone can report a software vulnerability via a
+&lt;a href="https://csirt.egi.eu/report-vulnerability/">form&lt;/a> or by email contacting the
+&lt;a href="https://confluence.egi.eu/display/EGIBG/SVG">Software Vulnerability Group (SVG)&lt;/a>.&lt;/p>
+&lt;p>The report will trigger an assessment, following the
+&lt;a href="https://go.egi.eu/sec02">SEC02 Software Vulnerability Issue Handling&lt;/a>
+procedure, by the Software Vulnerability Group, of the risk level associated
+with this vulnerability in the context of the activities of the EGI
+Infrastructure.&lt;/p>
+&lt;p>Once a vulnerability has been identified as presenting a risk to the
+infrastructure, it will be decided if an advisory should be prepared and
+circulated to the security contacts of the sites. After an agreed period of
+time, and depending on their confidentiality, advisories are made public.&lt;/p>
+&lt;p>Vulnerabilities identified as critical are handled according to the procedure
+&lt;a href="https://go.egi.eu/sec03">SEC03 EGI-CSIRT Critical Vulnerability Handling&lt;/a>. When
+applicable, this usually involves developing a custom
+&lt;a href="https://github.com/ARGOeu/secmon-probes/">security monitoring probe&lt;/a> created to
+identify on High Throughput Compute RCs if their resources are vulnerable to the
+vulnerability. The status is closely monitored by the security team and
+accessible to the affected RCs.&lt;/p>
+&lt;p>Using this information correlated with the one from
+&lt;a href="../../../../internal/security-coordination/monitoring/pakiti">Pakiti&lt;/a>, the
+patch management service collecting information about the patches deployed at
+the various High Throughput Compute RCs, the Incident Response Task Force (IRTF)
+on duty Security Officer will open tickets against the impacted sites according
+to the &lt;a href="https://go.egi.eu/wi07">WI07 Security Vulnerability Handling&lt;/a> procedure.&lt;/p>
+&lt;p>The EGI Service Delivery and Information Security (SDIS) team of the EGI
+Foundation, formerly known as the EGI Operations team, will follow up with the
+resource provider to work on resolving the ticket. The first duty of the
+resource provider is to acknowledge the vulnerability and then work on a prompt
+resolution as suggested in the ticket. In case a satisfactory resolution is not
+reached in due time, or a sign of active progress on addressing the
+vulnerability is not visible, the specific Resource Centre may be suspended.&lt;/p>
+&lt;h2 id="serving-user-communities">Serving user communities&lt;/h2>
+&lt;p>Once part of the production infrastructure, the RC is ready to deliver its
+resources to any of the users’ communities consuming the infrastructure.&lt;/p>
+&lt;p>The RC can continue serving local user communities, and at the same time deliver
+capacity for international user communities that approach EGI and therefore
+reach the federated RCs.&lt;/p>
+&lt;p>International communities reach EGI through the following channels:&lt;/p>
+&lt;ul>
+&lt;li>The EGI site where they can
+&lt;a href="https://www.egi.eu/services/research/">request access to services&lt;/a>.&lt;/li>
+&lt;li>The &lt;a href="https://www.egi.eu/egi-ace-open-call/">EGI-ACE Call for Use Cases&lt;/a>.&lt;/li>
+&lt;li>The &lt;a href="https://marketplace.eosc-portal.eu/">Marketplace&lt;/a> of the European Open
+Science Cloud.&lt;/li>
+&lt;/ul>
+&lt;h3 id="service-and-operation-level-agreements-slas-olas">Service and Operation Level Agreements (SLAs, OLAs)&lt;/h3>
+&lt;p>The User Community Support team of the EGI Foundation receives these requests
+and negotiates the details of access, with the involvement of relevant and
+‘fit-for-purpose’ RCs. This Service Level Management (SLM) process intervenes as
+a matchmaker between service expectations and needs of the user communities,
+acting as ‘customers’, and the capabilities of the RCs. Customers are enabled
+access to the resources in the form of
+&lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisations (VOs)&lt;/a>.&lt;/p>
+&lt;p>In order to select providers for provisioning services to a given customer,
+technical requirements are collected from the customer then transferred to
+relevant providers. The Expression of Interests for support (EoIs) are collected
+from the interested providers during the negotiation phase, resulting in the
+best match with customer’s requirements and expectations (both technical and
+financial). Several aspects are considered during the negotiation phase,
+including the geographical location of the customer, national roadmap and
+priority of the providers, and costs of the service provisioning in case of a
+pay-for-use model.&lt;/p>
+&lt;p>&lt;img src="SLAs-Picture.png" alt="Relationship between SLA and OLA">&lt;/p>
+&lt;p>The result of the negotiation is a ‘Service Level Agreement’ (SLA), and several
+‘Operation Level Agreements’ (OLA), one with each contributing provider. (See
+[https://documents.egi.eu/public/ListBy?topicid=65](SLAs-OLAs examples).)&lt;/p>
+&lt;p>SLAs and OLAs are typically signed for at least 1 year, and are automatically
+renewed, as long as the provider(s) or the customer do not express a decision to
+terminate the Agreement at least a month before the expiration date.&lt;/p>
+&lt;h2 id="performance-reports-enforcing-olas">Performance reports: enforcing OLAs&lt;/h2>
+&lt;p>As defined in the RCs OLA, the performance of the delivered services should meet
+the Service Level Targets: the monthly performance of the RCs is monitored, and
+when the targets are not achieved for three consecutive months, the affected RCs
+are notified through a ticket about the OLA violation and requested to provide
+within 10 working days an explanation for the low performance and a plan for
+improvement.&lt;/p>
+&lt;blockquote>
+&lt;p>The RCs not providing a satisfactory explanation or not replying at all are
+eligible for suspension.&lt;/p>
+&lt;/blockquote>
+&lt;p>In order to re-join the EGI Infrastructure, any suspended RC should undergo a
+new certification procedure. The “Suspended” status cannot last for more than 4
+months, after which a RCs is either in production again or definitely closed.&lt;/p>
+&lt;p>Besides the Targets defined in the RCs OLA, which are enforced to guarantee the
+permanence of the RC in the infrastructure, the targets promised to the users in
+the VO SLAs should also be met on a monthly basis: when a violation occurs, the
+RC is requested to provide a justification and a plan for improving the quality
+of the provided services.&lt;/p>
+&lt;blockquote>
+&lt;p>If repeated violations occur, the SLA can be renegotiated with the customer,
+either by changing the Service Level Targets, or by choosing a different RCs
+as a provider.&lt;/p>
+&lt;/blockquote></description></item><item><title>Providers: Joining as a Technology Provider</title><link>/providers/getting-started/joining/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/technology-provider/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Technology Providers (TP) develop or deliver technology and software for
+specific user communities or customisation for specific requirements. In EGI
+case, they maintain the middleware which the RCs install and allowing the users
+to exploit the compute, storage, data, and cloud resources.&lt;/p>
+&lt;h2 id="integration-of-middleware-stack">Integration of middleware stack&lt;/h2>
+&lt;p>To maintain an appropriate quality of service of the EGI production
+infrastructure, every middleware stack (Compute, Storage, etc.) installed on and
+delivered by the RCs must fulfil a number of requirements.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Related procedure:
+&lt;a href="https://go.egi.eu/proc19">PROC19 Integration of new cloud management framework or middleware stack in the EGI Infrastructure&lt;/a>)
+&lt;/div>
+&lt;p>&lt;a href="https://go.egi.eu/proc19">PROC19&lt;/a> was defined to ensure that any single aspect
+of the integration of the new piece of middleware with the infrastructure is
+reviewed and assessed.&lt;/p>
+&lt;p>After the creation of the request in the
+&lt;a href="../../../../internal/helpdesk">EGI Helpdesk&lt;/a>, with details about the
+technology, the contacts, the expected customers, and the motivation, the
+integration steps cover the following areas (where possible, steps can be done
+in parallel):&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://ims.egi.eu/display/EGIG/Underpinning+agreement">Underpinning Agreement&lt;/a>
+(UA) between EGI Foundation and the technology provider
+&lt;ul>
+&lt;li>it could be either the
+&lt;a href="https://documents.egi.eu/document/2589">Corporate-level Technology Provider Underpinning Agreement&lt;/a>
+or a customised version.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Configuration Management: mapping of the new technology in the Configuration
+Management Database (CMDB)&lt;/li>
+&lt;li>Information System: evaluating if the new technology should publish
+information in the Information System according to the
+&lt;a href="http://www.ogf.org/documents/GFD.147.pdf">GLUE Schema&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="../../../../internal/monitoring">Monitoring&lt;/a>: the new technology should allow
+external monitoring. If particular aspects of the technology need to be
+monitored, specific monitoring probes should be provided by the TPs and
+deployed on the EGI Monitoring service.&lt;/li>
+&lt;li>Support: the Support Unit where incidents and service requests will be
+addressed needs to be defined in the
+&lt;a href="../../../../internal/helpdesk">EGI Helpdesk&lt;/a>, associated to the
+&lt;a href="https://confluence.egi.eu/display/EGISLM/Service+Level+Target+-+Quality+of+Support">Quality of Support&lt;/a>
+defined in the UA.&lt;/li>
+&lt;li>&lt;a href="../../../../internal/accounting">Accounting&lt;/a>: the need to gather usage data,
+which depends on the technology itself and on the infrastructure requirements
+and will be published in the
+&lt;a href="https://accounting.egi.eu/">EGI Accounting Portal&lt;/a>.&lt;/li>
+&lt;li>Integration in UMD or CMD: the
+&lt;a href="https://confluence.egi.eu/display/EGIBG/Unified+Middleware+Distribution">Unified Middleware Distribution (UMD)&lt;/a>
+and
+&lt;a href="https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution">Cloud Middleware Distribution (CMD)&lt;/a>
+are the integrated sets of software components contributed by Technology
+Providers and packaged for deployment as production quality services in EGI.&lt;/li>
+&lt;li>Documentation: exhaustive documentation for RC administrators and users should
+be provided and may be added to the &lt;a href="https://docs.egi.eu/">EGI Documentation&lt;/a>.&lt;/li>
+&lt;li>Security: a security assessment of the software is required according to a
+number of guidelines defined by the
+&lt;a href="../../../../internal/security-coordination">EGI Security team&lt;/a>.&lt;/li>
+&lt;/ul></description></item><item><title>Providers: Joining as a provider for existing EGI services</title><link>/providers/getting-started/joining/new-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/new-provider/</guid><description>
+&lt;p>To become a provider of one of the
+&lt;a href="https://www.egi.eu/services/research/">Services for Research&lt;/a> already included
+in the EGI Portfolio, you first have to become provider of a
+&lt;a href="../federated-resource-centre">federated resource centre&lt;/a>. This first step
+typically requires you to become either an
+&lt;a href="../../../high-throughput-compute">EGI High Throughput Compute (HTC)&lt;/a> provider,
+by deploying Compute and Storage capabilities, or a Cloud service provider, by
+deploying OpenStack and federating it into the
+&lt;a href="../../../cloud-compute">EGI Cloud Compute&lt;/a> service.&lt;/p>
+&lt;p>Once such a foundational role is fulfilled you can configure/deploy the
+additional service within your resource centre.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/getting-started/joining/core-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/core-service/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;ul>
+&lt;li>With the term &amp;ldquo;Central&amp;rdquo; or &amp;ldquo;Core&amp;rdquo; Service we refer to a category of services
+in the EGI Infrastructure providing capabilities that support and complement
+the other services of the infrastructure and the related activities. A list of
+those services is available in the section
+&lt;a href="https://www.egi.eu/services/federation/">Services for Federation&lt;/a> of our
+site.&lt;/li>
+&lt;li>The EGI Core Services are co-funded by EGI Foundation and the providers are
+selected through a bidding process: the technical details of the services that
+should be delivered are advertised to the
+&lt;a href="https://confluence.egi.eu/display/EGIG/EGI+Council">EGI Council&lt;/a>, and only
+the providers with the
+&lt;a href="https://confluence.egi.eu/display/EGIG/EGI+Participant">EGI Participant&lt;/a> role
+in the Council can apply to the bid.
+&lt;ul>
+&lt;li>&lt;a href="https://www.egi.eu/join-the-egi-federation/">How to join the EGI Federation&lt;/a>
+as a member of the Council.&lt;/li>
+&lt;li>&lt;a href="https://www.egi.eu/egi-federation/#council">Current members&lt;/a> of the EGI
+Council&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Differently from services with a distributed nature such as HTC, Cloud, and
+Storage, they cannot be ordered through the Marketplace, but they become
+available as soon as a user joins the infrastructure (e.g., the access to the
+&lt;a href="../../../../internal/helpdesk">EGI Helpdesk&lt;/a> service).&lt;/li>
+&lt;/ul>
+&lt;h2 id="selection-of-the-providers-and-registration">Selection of the providers and registration&lt;/h2>
+&lt;p>With the selected providers, EGI Foundation negotiates and signs an
+&lt;a href="https://confluence.egi.eu/display/EGIG/Operational+Level+Agreement">OLA&lt;/a>
+defining the terms and conditions for the delivery of the services; at the same
+time, the process to add the services to the
+&lt;a href="https://www.egi.eu/services/">EGI Service portfolio&lt;/a> is started, if the service
+is not already included.&lt;/p>
+&lt;p>At this point, steps, similar to the ones for
+&lt;a href="../federated-resource-centre">Resource Centers&lt;/a> and
+&lt;a href="../technology-provider">Technology Providers&lt;/a>, follow in order to guarantee the
+regular day-to-day operation of the service, such as:&lt;/p>
+&lt;ul>
+&lt;li>registration in the
+&lt;a href="../../../../internal/configuration-database">Configuration Database&lt;/a> and
+certification;&lt;/li>
+&lt;li>definition of the Support Unit in the
+&lt;a href="../../../../internal/helpdesk">Helpdesk&lt;/a> system to handle incidents and
+service requests;&lt;/li>
+&lt;li>enabling of the monitoring;&lt;/li>
+&lt;li>periodic performance reports as defined in the given OLA to verify that the
+Service Level Targets are achieved.&lt;/li>
+&lt;/ul>
+&lt;p>In addition to this, the providers are also requested to create a
+&lt;a href="#capacity-plan">capacity plan&lt;/a>, an
+&lt;a href="#availability-and-continuity-plan">availability and continuity plan&lt;/a>, and to
+interact with &lt;a href="https://go.egi.eu/chm">Change Management (CHM)&lt;/a> and
+&lt;a href="https://go.egi.eu/rdm">Release and Deployment Management (RDM)&lt;/a> processes for
+&lt;a href="#managing-changes-and-new-releases">managing changes and new releases&lt;/a> of their
+services.&lt;/p>
+&lt;h2 id="capacity-plan">Capacity plan&lt;/h2>
+&lt;blockquote>
+&lt;p>The capacity plan is important to assess if the capacity of the service is
+sufficient to respond to the current and to the future demand of the service.&lt;/p>
+&lt;/blockquote>
+&lt;p>Any capacity aspect of the service delivery is analysed (human, technical, and
+financial) with the definition of quantitative parameters to measure the usage
+and the load of the service. The approach to adjust the capacity of the service
+in relation to a change in the demand is defined, and recommendations on
+capacity requirements for the next reporting period are provided as well.&lt;/p>
+&lt;p>EGI Foundation defined a template for the Capacity plans and contacts and
+supports the service providers for the creation of a new Capacity plan or for
+their regular reviews (the reviews are usually performed at least twice per
+year).&lt;/p>
+&lt;h2 id="availability-and-continuity-plan">Availability and continuity plan&lt;/h2>
+&lt;p>In the Availability and Continuity plan, a number of risks affecting the
+availability and continuity of the service is identified and assessed: each risk
+is rated in terms of likelihood and impact with the definition of
+countermeasures to implement that should avoid the occurrence of the given risk.
+Any remaining vulnerability is identified as well, and in case the rating of a
+risk is considered to be too high in relation to the risk acceptance criteria, a
+plan either to improve the existing countermeasures or to implement new ones is
+created, with the aim either to reduce the likelihood of a risk or to mitigate
+the impact in case a risk occurs.&lt;/p>
+&lt;p>The plan is completed by a continuity and recovery test, where the continuity of
+the service and its recovery capacity are tested against a simulated disruption
+scenario: the performance of this test is useful to spot any issue in the
+recovery procedures of the service.&lt;/p>
+&lt;p>Also in this case, the discussion of the Availability and Continuity plan is
+started and overseen by EGI Foundation who shares with the providers a template
+that will be filled in with the details of the given service. Availability and
+Continuity plans are reviewed on a yearly basis.&lt;/p>
+&lt;h2 id="managing-changes-and-new-releases">Managing changes and new releases&lt;/h2>
+&lt;blockquote>
+&lt;p>All changes to the services should follow the EGI Change Management (CHM)
+process according to the &lt;a href="https://go.egi.eu/chm-policy">Change Policy&lt;/a>, in
+order to evaluate the potential impact that a change can have on the service
+and on the infrastructure as a whole.&lt;/p>
+&lt;/blockquote>
+&lt;p>When registering a
+&lt;a href="https://confluence.egi.eu/display/EGIG/Request+For+Change">Request for Change&lt;/a>,
+besides a general description of the change, the providers are expected to
+provide:&lt;/p>
+&lt;ul>
+&lt;li>the risk level as a result of assessing the impact and the likelihood of
+things going wrong,&lt;/li>
+&lt;li>the type of change,&lt;/li>
+&lt;li>the eventual list of other services potentially affected by the change,&lt;/li>
+&lt;li>if it is possible to revert the change,&lt;/li>
+&lt;li>the proposed date for the implementation of the change,&lt;/li>
+&lt;li>if it is needed to schedule a downtime of the service.&lt;/li>
+&lt;/ul>
+&lt;p>Requests for Changes are assessed by the Change Advisory Board (CAB), deciding
+whether the Change is going to be approved or rejected.&lt;/p>
+&lt;p>For recurrent changes with a relatively low risk level, the providers can
+request to classify them as Standard Changes, so that invoking the CAB won’t be
+necessary and they can undergo the release process after the release plan is
+agreed with the EGI CHM staff.&lt;/p>
+&lt;p>The Emergency Changes are created when there is an urgent need to fix either a
+newly discovered security vulnerability or a critical issue: in this case the
+formal approval of the CAB is not required, and it is enough that the release
+plan is accepted by CHM staff.&lt;/p>
+&lt;p>In all of the other situations the changes are classified as Normal and
+depending on their risk level they might need to be assessed by the CAB.&lt;/p>
+&lt;p>Before the release in the production environment, the providers may invite the
+users or other impacted service providers, to test the new changes on a
+pre-production instance in order to gather feedback and to find out possible
+issues that might be overlooked during the preparation of the new release. If no
+problems are found, the release can go live, and a Post Implementation Review is
+conducted after a few days to close the case.&lt;/p>
+&lt;h2 id="security-aspects">Security aspects&lt;/h2>
+&lt;p>The providers of central services are subject to the same policies, procedures
+and requirements applying to the federated service providers, as documented at
+&lt;a href="https://go.egi.eu/policies-procedures-internal-service-providers">this page&lt;/a>.&lt;/p>
+&lt;p>Nevertheless, they are also subject to the following requirement that is
+documented in the service OLA that is being agreed with them:&lt;/p>
+&lt;ul>
+&lt;li>They should immediately report suspected security incidents to the EGI
+Foundation. This is not exempting them to follow the
+&lt;a href="https://go.egi.eu/sec01">SEC01 EGI CSIRT Security Incident Handling Procedure&lt;/a>
+and inform EGI CSIRT within 4 hours.&lt;/li>
+&lt;/ul>
+&lt;p>It&amp;rsquo;s also important to understand that when processing of personal data is
+taking place, EGI Foundation holds the role of Data Controller and the provider
+is a Data Processor, as defined in the
+&lt;a href="https://gdpr.eu/article-4-definitions/">Global Data Protection Regulation (GDPR)&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>Data Processing Agreements, regulating the conditions and constraints of the
+data processing activities conducted by the Data Processor on behalf of the
+Data controller, will be put in place on the initiative of the EGI Foundation
+staff.&lt;/li>
+&lt;li>EGI Foundation will also prepare, together with the service provider, adequate
+Privacy Notice and Acceptable Use policy that have to be presented and made
+available to the users of the service.&lt;/li>
+&lt;li>EGI Foundation is also complying with all the principles set out by the REFEDS
+Data Protection Code of Conduct in its most
+&lt;a href="https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home">recent version&lt;/a>,
+implying that the central service provider should also comply with them.&lt;/li>
+&lt;/ul>
+&lt;p>The central service provider should also follow requirements relating to the
+software and covering the usage of a proper licence, the access to and
+management of the source code, implementation of best practices; as well as
+requirements relating to the IT Service management and covering the need for
+having key staff properly trained about IT Service Management, committing to
+continual improvement and having their
+&lt;a href="https://confluence.egi.eu/display/EGIG/Service+management+system">Service Management System (SMS)&lt;/a>
+interfacing with the EGI SMS, especially for important processes like the Change
+Management process.&lt;/p></description></item><item><title>Providers: Introducing a new EGI service</title><link>/providers/getting-started/joining/new-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/new-service/</guid><description>
+&lt;p>The EGI services are contributed by the
+&lt;a href="https://www.egi.eu/egi-federation/#council">EGI Council members&lt;/a>, who can
+propose new services through the
+&lt;a href="https://www.egi.eu/publication/egi-federation-service-strategy-2022-2024/">EGI Service Strategy&lt;/a>,
+that defines the overall direction to EGI services for a few years time window.
+The services are designed, validated with the EGI Community, and with the help
+of the &lt;a href="https://go.egi.eu/ssb">EGI Services and Solutions Board (SSB)&lt;/a>.&lt;/p>
+&lt;p>The evolution of the services is driven by 5 Strategic Objectives (SO) which are
+based on the knowledge of the user community needs that are being gathered
+through research and innovation projects, customer interviews and analysis of
+trends. Each defines an area for possible future work, and if approved, can be
+developed into more concrete goals and intended results.&lt;/p>
+&lt;ul>
+&lt;li>SO1: Federated compute continuum&lt;/li>
+&lt;li>SO2: Federated Data Lakes and repositories&lt;/li>
+&lt;li>SO3: Data analytics and scientific tools including AI&lt;/li>
+&lt;li>SO4: Professional support and consultancy&lt;/li>
+&lt;li>SO5: Investigation of a trusted compute platform for sensitive data processing&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>If you want to propose a new service, you should approach your national EGI
+Council member, or fallback to the &lt;a href="https://go.egi.eu/ssb">EGI SSB&lt;/a>.&lt;/p>
+&lt;/blockquote></description></item></channel></rss>
