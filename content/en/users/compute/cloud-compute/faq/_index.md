@@ -261,7 +261,7 @@ main strategies you can use:
 
 ### How can I find all the VMs that I own in the EGI Federated Cloud?
 
-We suggest using the [fedcloudclient](https://fedcloudclient.fedcloud.eu/cheat.html#useful-commands):
+We suggest using the [fedcloudclient](../../../../users/getting-started/cli/):
 
 ```bash
 # list the Virtual Organisations that you belong to
@@ -270,3 +270,6 @@ fedcloud token list-vos
 # then, for each VO, run:
 list-all-my-own-vms.sh --vo <virtual-organisation>
 ```
+
+See the [fedcloudclient documentation](https://fedcloudclient.fedcloud.eu/cheat.html#useful-commands)
+for more information.
