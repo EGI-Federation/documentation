@@ -534,7 +534,7 @@ Response Format:
 
 | HTTP Status        | Description             | Response Body |
 | ------------------ | ----------------------- | ------------- |
-| 200 OK             | Role Returned           | json response |
+| 200 OK             | Role Returned           | JSON response |
 | 400 Bad Request    | CO ID unknown           |               |
 | 401 Unauthorized   | Authentication Required |               |
 | 500 Other error    | Unknown Error           |               |
