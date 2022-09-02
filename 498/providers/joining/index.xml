@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Joining EGI as a provider</title><link>/providers/getting-started/joining/</link><description>Recent content in Joining EGI as a provider on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/getting-started/joining/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Joining as a Federated Resource Centre</title><link>/providers/getting-started/joining/federated-resource-centre/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/federated-resource-centre/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Joining EGI as a provider</title><link>/providers/joining/</link><description>Recent content in Joining EGI as a provider on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/joining/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Joining as a Federated Resource Centre</title><link>/providers/joining/federated-resource-centre/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/joining/federated-resource-centre/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>A Resource Centre (RC) is the smallest resource administration domain in the EGI
 Federation. It can be either localised or geographically distributed and
@@ -198,7 +198,7 @@ of the provided services.&lt;/p>
 &lt;p>If repeated violations occur, the SLA can be renegotiated with the customer,
 either by changing the Service Level Targets, or by choosing a different RCs
 as a provider.&lt;/p>
-&lt;/blockquote></description></item><item><title>Providers: Joining as a Technology Provider</title><link>/providers/getting-started/joining/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/technology-provider/</guid><description>
+&lt;/blockquote></description></item><item><title>Providers: Joining as a Technology Provider</title><link>/providers/joining/technology-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/joining/technology-provider/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>Technology Providers (TP) develop or deliver technology and software for
 specific user communities or customisation for specific requirements. In EGI
@@ -259,7 +259,7 @@ be provided and may be added to the &lt;a href="https://docs.egi.eu/">EGI Docume
 &lt;li>Security: a security assessment of the software is required according to a
 number of guidelines defined by the
 &lt;a href="../../../../internal/security-coordination">EGI Security team&lt;/a>.&lt;/li>
-&lt;/ul></description></item><item><title>Providers: Joining as a provider for existing EGI services</title><link>/providers/getting-started/joining/new-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/new-provider/</guid><description>
+&lt;/ul></description></item><item><title>Providers: Joining as a provider for existing EGI services</title><link>/providers/joining/new-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/joining/new-provider/</guid><description>
 &lt;p>To become a provider of one of the
 &lt;a href="https://www.egi.eu/services/research/">Services for Research&lt;/a> already included
 in the EGI Portfolio, you first have to become provider of a
@@ -270,7 +270,7 @@ by deploying Compute and Storage capabilities, or a Cloud service provider, by
 deploying OpenStack and federating it into the
 &lt;a href="../../../cloud-compute">EGI Cloud Compute&lt;/a> service.&lt;/p>
 &lt;p>Once such a foundational role is fulfilled you can configure/deploy the
-additional service within your resource centre.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/getting-started/joining/core-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/core-service/</guid><description>
+additional service within your resource centre.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/joining/core-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/joining/core-service/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;ul>
 &lt;li>With the term &amp;ldquo;Central&amp;rdquo; or &amp;ldquo;Core&amp;rdquo; Service we refer to a category of services
@@ -434,7 +434,7 @@ having key staff properly trained about IT Service Management, committing to
 continual improvement and having their
 &lt;a href="https://confluence.egi.eu/display/EGIG/Service+management+system">Service Management System (SMS)&lt;/a>
 interfacing with the EGI SMS, especially for important processes like the Change
-Management process.&lt;/p></description></item><item><title>Providers: Introducing a new EGI service</title><link>/providers/getting-started/joining/new-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/getting-started/joining/new-service/</guid><description>
+Management process.&lt;/p></description></item><item><title>Providers: Introducing a new EGI service</title><link>/providers/joining/new-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/joining/new-service/</guid><description>
 &lt;p>The EGI services are contributed by the
 &lt;a href="https://www.egi.eu/egi-federation/#council">EGI Council members&lt;/a>, who can
 propose new services through the
