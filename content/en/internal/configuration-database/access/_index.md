@@ -15,7 +15,7 @@ Database (GOCDB), users can either:
 
 Users can access the system as soon as they are authenticated. However, they
 will only be able to update information based on their roles, and only once they
-will have [registering a new user account](#registering-a-new-user-account).
+will have [registered a new user account](#registering-a-new-user-account).
 
 More information about roles and associated permission is available in the
 [_Users and roles_](../users-roles) section of the documentation.
