@@ -299,66 +299,16 @@ expires. Please note that a user with expired membership is not eligible for VO
 membership entitlements and as a result the user will not have access to VO
 resources relying on these entitlements.
 
-## VO Groups API
-
-Check-in provides a REST API that allows clients to GET VO group
-information only for the VOs they are authoritative for.
-
-### Connection Parameters for VO Groups
-
-<!-- prettier-ignore -->
-{{< tabpanex >}}
-{{< tabx header="Production environment">}}
-
-```shell
-# Export VO API Base URL parameter
-$ export VO_API_BASE_URL=https://aai.egi.eu/registry/cous
-# Export CO ID parameter.
-# The CO ID is the number part of the API username prefix.
-# e.g. for the username `co_2.test`, the CO_ID is `2`
-$ export CO_ID=2
-```
-
-{{< /tabx >}} {{< tabx header="Demo environment">}}
-
-```shell
-# Export VO API Base URL parameter
-$ export VO_API_BASE_URL=https://aai-demo.egi.eu/registry/cous
-# Export CO ID parameter.
-# The CO ID is the number part of the API username prefix.
-# e.g. for the username `co_2.test`, the CO_ID is `2`
-$ export CO_ID=2
-```
-
-{{< /tabx >}} {{< tabx header="Development environment">}}
-
-```shell
-# Export VO API Base URL parameter
-$ export VO_API_BASE_URL=https://aai-dev.egi.eu/api/cous
-# Export CO ID parameter.
-# The CO ID is the number part of the API username prefix.
-# e.g. for the username `co_2.test`, the CO_ID is `2`
-$ export CO_ID=2
-```
-
-{{< /tabx >}} {{< /tabpanex >}}
-
-The `API username` and `API password` will be assigned by the EGI Check-in team
-when you request REST API access. In order to obtain REST API credentials you
-need to email your request to
-[EGI Check-in Support](mailto:checkin-support@mailman.egi.eu) with Subject
-`Request REST API access for <vo_name> VO`. Make sure you indicate the instance
-of EGI Check-in (production, demo or development) hosting the VO you request
-access to. Only VO managers can request REST API credentials for a given VO.
-
-## VO membership API
+## VO API
 
 ### API v2
 
-Check-in provides a REST API that allows clients to manage membership
-information only for the VOs they are authoritative for.
+Check-in provides a REST API that allows clients to:
 
-Features:
+- manage membership information only for the VOs they are authoritative for
+- GET VO group information only for the VOs they are authoritative for
+
+Membership Features:
 
 - Members of the VO are identified via their EGI Check-in Community User
   Identifier (CUID)
@@ -372,7 +322,58 @@ Features:
 - Check-in automatically changes the membership status from `Active` to
   `Expired` beyond the validity period
 
-#### Connection Parameters for VO Memberships
+#### Endpoints for VO Groups
+
+<!--
+// jscpd:ignore-start
+-->
+
+<!-- prettier-ignore -->
+{{< tabpanex >}}
+{{< tabx header="Production environment">}}
+
+```shell
+# Export VO API Base URL parameter
+$ export VO_API_BASE_URL=https://aai.egi.eu/registry/cous.json
+# Export CO ID parameter.
+# The CO ID is the number part of the API username prefix.
+# e.g. for the username `co_2.test`, the CO_ID is `2`
+$ export CO_ID=2
+```
+
+{{< /tabx >}} {{< tabx header="Demo environment">}}
+
+```shell
+# Export VO API Base URL parameter
+$ export VO_API_BASE_URL=https://aai-demo.egi.eu/registry/cous.json
+# Export CO ID parameter.
+# The CO ID is the number part of the API username prefix.
+# e.g. for the username `co_2.test`, the CO_ID is `2`
+$ export CO_ID=2
+```
+
+{{< /tabx >}} {{< tabx header="Development environment">}}
+
+```shell
+# Export VO API Base URL parameter
+$ export VO_API_BASE_URL=https://aai-dev.egi.eu/api/cous.json
+# Export CO ID parameter.
+# The CO ID is the number part of the API username prefix.
+# e.g. for the username `co_2.test`, the CO_ID is `2`
+$ export CO_ID=2
+```
+
+{{< /tabx >}} {{< /tabpanex >}}
+
+<!--
+// jscpd:ignore-end
+-->
+
+#### Endpoints for VO Memberships
+
+<!--
+// jscpd:ignore-start
+-->
 
 <!-- prettier-ignore -->
 {{< tabpanex >}}
@@ -411,6 +412,12 @@ $ export CO_ID=2
 
 {{< /tabx >}} {{< /tabpanex >}}
 
+<!--
+// jscpd:ignore-end
+-->
+
+#### Connection Parameters
+
 The `API username` and `API password` will be assigned by the EGI Check-in team
 when you request REST API access. In order to obtain REST API credentials you
 need to email your request to
@@ -426,7 +433,172 @@ over HTTPS using the Basic Authentication scheme. More sophisticated
 authentication mechanisms, such as OpenID Connect/OAuth 2.0 access tokens, may
 be supported in the future.
 
-#### Methods
+#### VO Groups Methods
+
+1. Retrieving all VO groups:
+
+   ```shell
+   $ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID \
+          --user "example-client":"veryverysecret"
+   ```
+
+   output:
+
+   ```json
+   {
+      "ResponseType": "Cous",
+      "Version": "1.0",
+      "Cous": [
+         {
+            "Version": "1.0",
+            "Id": 123,
+            "CoId": 2,
+            "Name": "vo.example.org",
+            "Description": "Example Virtual Organisation",
+            "Lft": 109,
+            "Rght": 112,
+            "Created": "2020-09-09 08:17:51",
+            "Modified": "2020-09-09 08:17:51",
+            "Revision": 0,
+            "Deleted": false,
+            "ActorIdentifier": "actoridentifier@egi.eu",
+            "Metadata": [
+               {
+                  "Type": "mailman"
+               }
+            ]
+         },
+         {...},
+         {...}
+      ]
+   }
+   ```
+
+<!--
+// jscpd:ignore-start
+-->
+
+The JSON object `Metadata` encapsulates additional VO group information like the
+`type`.
+
+<!--
+// jscpd:ignore-end
+-->
+
+Response Format:
+
+| HTTP Status        | Description             | Response Body |
+| ------------------ | ----------------------- | ------------- |
+| 200 OK             | Role Returned           | json response |
+| 400 Bad Request    | CO ID unknown           |               |
+| 401 Unauthorized   | Authentication Required |               |
+| 500 Other error    | Unknown Error           |               |
+
+1. Retrieving all VO groups filtered by Group type:
+
+   ```shell
+   $ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID&dept=mailman \
+          --user "example-client":"veryverysecret"
+   ```
+
+   output:
+
+   ```json
+   {
+      "ResponseType": "Cous",
+      "Version": "1.0",
+      "Cous": [
+         {
+            "Version": "1.0",
+            "Id": 123,
+            "CoId": 2,
+            "Name": "vo.example.org",
+            "Description": "Example Virtual Organisation",
+            "Lft": 109,
+            "Rght": 112,
+            "Created": "2020-09-09 08:17:51",
+            "Modified": "2020-09-09 08:17:51",
+            "Revision": 0,
+            "Deleted": false,
+            "ActorIdentifier": "actoridentifier@egi.eu",
+         },
+      ]
+   }
+   ```
+
+<!--
+// jscpd:ignore-start
+-->
+
+Response Format:
+
+| HTTP Status        | Description             | Response Body |
+| ------------------ | ----------------------- | ------------- |
+| 200 OK             | Role Returned           | json response |
+| 400 Bad Request    | CO ID unknown           |               |
+| 401 Unauthorized   | Authentication Required |               |
+| 500 Other error    | Unknown Error           |               |
+
+<!--
+// jscpd:ignore-end
+-->
+
+1. Retrieving VO Group by name:
+
+   ```shell
+   $ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID&name=vo.example.org \
+          --user "example-client":"veryverysecret"
+   ```
+
+   output:
+
+   ```json
+   {
+      "ResponseType": "Cous",
+      "Version": "1.0",
+      "Cous": [
+         {
+            "Version": "1.0",
+            "Id": 123,
+            "CoId": 2,
+            "Name": "vo.example.org",
+            "Description": "Example Virtual Organisation",
+            "Lft": 109,
+            "Rght": 112,
+            "Created": "2020-09-09 08:17:51",
+            "Modified": "2020-09-09 08:17:51",
+            "Revision": 0,
+            "Deleted": false,
+            "ActorIdentifier": "actoridentifier@egi.eu",
+            "Metadata": [
+               {
+                  "Type": "mailman"
+               }
+            ]
+         },
+      ]
+   }
+   ```
+
+<!--
+// jscpd:ignore-start
+-->
+
+Response Format:
+
+| HTTP Status        | Description             | Response Body |
+| ------------------ | ----------------------- | ------------- |
+| 200 OK             | Role Returned           | json response |
+| 400 Bad Request    | CO ID unknown           |               |
+| 401 Unauthorized   | Authentication Required |               |
+| 404 COU/VO unknown | COU/CO name not found   |               |
+| 500 Other error    | Unknown Error           |               |
+
+<!--
+// jscpd:ignore-end
+-->
+
+#### VO Memberships Methods
 
 1. Adding a user to a VO requires specifying the user's EGI Check-in CUID, the
    name of the VO (e.g. `vo.example.org`), the status (`Active`) and the valid
