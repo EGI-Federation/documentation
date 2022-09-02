@@ -73,8 +73,9 @@ institutional account, or&lt;/li>
 installed in the internet browser, or the local machine&amp;rsquo;s certificate store.&lt;/li>
 &lt;/ul>
 &lt;p>Users can access the system as soon as they are authenticated. However, they
-will only be able to update information based on their roles. More information
-about roles and associated permission is available in the
+will only be able to update information based on their roles, and only once they
+will have &lt;a href="#registering-a-new-user-account">registered a new user account&lt;/a>.&lt;/p>
+&lt;p>More information about roles and associated permission is available in the
 &lt;a href="../users-roles">&lt;em>Users and roles&lt;/em>&lt;/a> section of the documentation.&lt;/p>
 &lt;p>Applications requesting a specific role have to be validated by parent roles or
 administrators. Once granted, users can access and/or modify relevant
@@ -116,7 +117,25 @@ also disallows single quotes in all Relative Distinguished Name (RDN)
 components, and the OGF Certificate Authority Working Group (CAOPS) who strongly
 discourage any type of quote in a certificate DN as specified by their
 &lt;a href="https://www.ogf.org/documents/GFD.125.pdf">Grid Certificate Profile&lt;/a> document.&lt;/p>
-&lt;/div></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
+&lt;/div>
+&lt;h2 id="registering-a-new-user-account">Registering a new user account&lt;/h2>
+&lt;p>Being authenticated in one of the two ways described above is enough to have
+read-only access to all the public features of the EGI Configuration Database.
+If you need to edit data in and request roles, you will need to fill in the
+registration form.&lt;/p>
+&lt;p>&lt;strong>To Register&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Go to the &lt;a href="https://goc.egi.eu">EGI Configuration Database web portal&lt;/a>&lt;/li>
+&lt;li>In the left sidebar, look out for the &lt;strong>User status&lt;/strong> panel&lt;/li>
+&lt;li>click on the &amp;ldquo;Register&amp;rdquo; link&lt;/li>
+&lt;li>fill in the form and validate&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>If you were registered but are not recognised anymore (e.g. because your
+certificate DN changed), do not register again! Instead, follow the steps
+&lt;a href="../users-roles/managing-accounts#lost-access-to-your-account">Lost access to your Configuration Database account&lt;/a>
+section.&lt;/p>
+&lt;/blockquote></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
 &lt;p>For monitoring purposes, each service endpoints registered into the
 Configuration Database, and having the flags &lt;em>production&lt;/em> and &lt;em>monitored&lt;/em> should
 include the endpoint URL information in order to be contacted by the
