@@ -123,96 +123,19 @@ discourage any type of quote in a certificate DN as specified by their
 read-only access to all the public features of the EGI Configuration Database.
 If you need to edit data in and request roles, you will need to fill in the
 registration form.&lt;/p>
-&lt;p>To Register:&lt;/p>
+&lt;p>&lt;strong>To Register&lt;/strong>:&lt;/p>
 &lt;ul>
 &lt;li>Go to the &lt;a href="https://goc.egi.eu">EGI Configuration Database web portal&lt;/a>&lt;/li>
-&lt;li>In the left sidebar, look out for the User status panel&lt;/li>
+&lt;li>In the left sidebar, look out for the &lt;strong>User status&lt;/strong> panel&lt;/li>
 &lt;li>click on the &amp;ldquo;Register&amp;rdquo; link&lt;/li>
 &lt;li>fill in the form and validate&lt;/li>
 &lt;/ul>
 &lt;blockquote>
 &lt;p>If you were registered but are not recognised anymore (e.g. because your
 certificate DN changed), do not register again! Instead, follow the steps
-described in the &lt;a href="#changing-your-account-id">Changing your account ID&lt;/a>
+&lt;a href="../users-roles/managing-accounts#lost-access-to-your-account">Lost access to your Configuration Database account&lt;/a>
 section.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="changing-your-account-id">Changing your account ID&lt;/h2>
-&lt;p>Under the following circumstances it is possible to lose access to your account
-that was originally created using a client certificate:&lt;/p>
-&lt;ul>
-&lt;li>If you change your certificate, it is possible that the certificate&amp;rsquo;s
-distinguished name (DN) has also changed. This is what the EGI Configuration
-Database uses to identify your account.&lt;/li>
-&lt;li>If you choose to stop using your client certificate to log in and instead
-access via EGI Check-in.&lt;/li>
-&lt;li>If you have an account linked to your certificate but later login via the EGI
-Check-in route and mistakenly change your account ID from your certificate DN
-to the newly assigned ID issued by EGI Check-in.&lt;/li>
-&lt;/ul>
-&lt;p>In these situations, it is usually possible to regain access using to your
-certificate based account by following one of the following procedures:&lt;/p>
-&lt;h3 id="if-you-have-a-new-certificate-and-have-lost-access-to-your-account">If you have a new certificate and have lost access to your account&lt;/h3>
-&lt;ul>
-&lt;li>First install your new certificate in your browser.&lt;/li>
-&lt;li>Go to &lt;a href="https://goc.egi.eu">EGI Configuration Database web portal&lt;/a>. If you are
-already logged in, then clear your caches and restart your browser or start a
-new private browser session.&lt;/li>
-&lt;li>When prompted, select your new certificate but &lt;strong>DON&amp;rsquo;T&lt;/strong> register a new
-account.&lt;/li>
-&lt;li>You should be able to access, but since you are authenticated with your new
-certificate, it is as if you had no user account (you have not registered your
-new certificate yet).&lt;/li>
-&lt;li>In the &amp;ldquo;user status&amp;rdquo; panel in the sidebar, click on the retrieve an old
-account link.&lt;/li>
-&lt;li>Specify in the form the DN of your old certificate, and the e-mail address
-associated to your account.&lt;/li>
-&lt;li>Upon validation, an e-mail will be sent to the specified address, which has to
-match the one registered with your account. This is to avoid identity theft.
-The e-mail contains a validation link.&lt;/li>
-&lt;li>Click on the validation link or copy/paste in your browser. Once validated,
-changes are immediate.&lt;/li>
-&lt;/ul>
-&lt;h3 id="if-you-choose-to-stop-using-a-client-certificate-in-favour-of-egi-check-in">If you choose to stop using a client certificate in favour of EGI Check-in&lt;/h3>
-&lt;blockquote>
-&lt;p>Following this process will mean you can &lt;em>only&lt;/em> login via EGI Check&amp;ndash;n going
-forward&lt;/p>
-&lt;/blockquote>
-&lt;ul>
-&lt;li>Access &lt;a href="https://goc.egi.eu">EGI Configuration Database web portal&lt;/a> via EGI
-Check-in&lt;/li>
-&lt;li>In the &amp;ldquo;user status&amp;rdquo; panel in the sidebar, click on the retrieve an old
-account link.&lt;/li>
-&lt;li>Specify in the form: the DN of your old certificate; and the e-mail address
-associated to your account.&lt;/li>
-&lt;li>Upon validation, an e-mail will be sent to the specified address, which has to
-match the one registered with your account.&lt;/li>
-&lt;li>Click on the validation link or copy/paste in your browser. Once validated,
-changes are immediate.&lt;/li>
-&lt;/ul>
-&lt;h3 id="if-you-mistakenly-changed-your-account-id-from-your-certificate-dn-to-the-id-issued-from-egi-check-in-and-have-lost-access-using-your-certificate">If you mistakenly changed your account ID from your certificate DN to the ID issued from EGI Check-in and have lost access using your certificate&lt;/h3>
-&lt;ul>
-&lt;li>Go to &lt;a href="https://goc.egi.eu">EGI Configuration Database web portal&lt;/a>. If you are
-already logged in, then clear your caches and restart your browser or start a
-new private browser session.&lt;/li>
-&lt;li>When prompted, select your certificate you want to reinstate/re-associate with
-your account - DON&amp;rsquo;T Register a new account.&lt;/li>
-&lt;li>You should be able to access but since you are authenticated with the
-certificate that is no longer linked to your account, it is as if you had no
-user account.&lt;/li>
-&lt;li>In the &amp;ldquo;user status&amp;rdquo; panel in the sidebar, click on the retrieve an old
-account link.&lt;/li>
-&lt;li>In the form, specify the DN of your certificate that you want to reinstate,
-and the e-mail address associated to your account.&lt;/li>
-&lt;li>Upon validation, an e-mail will be sent to the specified address, which has to
-match the one registered with your account. This is to avoid identity theft.
-The e-mail contains a validation link.&lt;/li>
-&lt;li>Click on the validation link or copy/paste in your browser. Once validated,
-changes are immediate.&lt;/li>
-&lt;/ul>
-&lt;p>If for any reason you were unable to complete these steps (e.g. mail
-confirmations problems) please do not register a new user account, but contact
-the Configuration Database support unit in the &lt;a href="../../helpdesk">helpdesk&lt;/a>
-instead.&lt;/p></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
+&lt;/blockquote></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
 &lt;p>For monitoring purposes, each service endpoints registered into the
 Configuration Database, and having the flags &lt;em>production&lt;/em> and &lt;em>monitored&lt;/em> should
 include the endpoint URL information in order to be contacted by the

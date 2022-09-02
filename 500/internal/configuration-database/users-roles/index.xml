@@ -43,22 +43,6 @@ successful, you will be redirected back to the Configuration Database. Please
 note, not all logins available in the EGI IdP provide a sufficient level of
 assurance (LoA) to login (the LoA must be &amp;lsquo;Substantial&amp;rsquo;).&lt;/li>
 &lt;/ul>
-&lt;h2 id="registering-a-new-user-account">Registering a new user account&lt;/h2>
-&lt;p>Being authenticated in one of the two ways described above is enough to have
-read-only access to all the public features of the Configuration Database. If
-you need to edit data and request roles, &lt;strong>you will need to fill in the
-registration form&lt;/strong>.&lt;/p>
-&lt;p>&lt;strong>To Register&lt;/strong>:&lt;/p>
-&lt;ul>
-&lt;li>Go to the Configuration Database web portal&lt;/li>
-&lt;li>In the left sidebar, look out for the &lt;strong>User status&lt;/strong> panel&lt;/li>
-&lt;li>click on the &amp;ldquo;Register&amp;rdquo; link&lt;/li>
-&lt;li>fill in the form and validate&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Note&lt;/strong>: If you were registered but are not recognised anymore (e.g. because
-your certificate DN changed), follow the steps described in the
-&lt;a href="#lost-access-to-your-account">Lost access to your Configuration Database account&lt;/a>
-section&lt;/p>
 &lt;h2 id="editing-your-user-account">Editing your user account&lt;/h2>
 &lt;p>The editing process is the same as the registration process. To edit your user
 account, simply follow these steps:&lt;/p>
@@ -90,10 +74,10 @@ You should get a page showing your user account information.&lt;/li>
 it is possible that the certificate&amp;rsquo;s distinguished name (DN) has also
 changed. This is what the Configuration Database uses to identify your
 account.&lt;/li>
-&lt;li>You have authenticated with EGI IdP, but via a different underlying IdP (i.e.
-You usually log in with your institutional credentials, but today you logged
-in with EGI SSO).&lt;/li>
-&lt;li>You have changed the way you log in (i.e. X.509 to EGI Check-In)&lt;/li>
+&lt;li>You have authenticated with EGI Check-in, but via a different underlying IdP
+(i.e. You usually log in with your institutional credentials, but today you
+logged in with EGI SSO).&lt;/li>
+&lt;li>You have changed the way you log in (i.e. X.509 to EGI Check-in)&lt;/li>
 &lt;/ul>
 &lt;p>In these situations, it is usually possible to regain access using to your
 certificate based account by following one of the following procedures:&lt;/p>
@@ -103,8 +87,9 @@ addressed to the &amp;ldquo;Configuration and Topology Database (GOCDB)&amp;rdqu
 &lt;h3 id="you-have-a-new-certificate-and-have-lost-access-to-your-account">You have a new certificate and have lost access to your account&lt;/h3>
 &lt;ul>
 &lt;li>Install your new certificate in your browser.&lt;/li>
-&lt;li>Go to EGI Configuration Database. If you are already logged in, then clear
-your caches and restart your browser or start a new private browser session.&lt;/li>
+&lt;li>Go to &lt;a href="https://goc.egi.eu">EGI Configuration Database&lt;/a>. If you are already
+logged in, then clear your caches and restart your browser or start a new
+private browser session.&lt;/li>
 &lt;li>When prompted, select your new certificate.&lt;/li>
 &lt;li>You should be able to access, but since you are authenticated with your new
 certificate, it is as if you had no user account.&lt;/li>
@@ -124,15 +109,17 @@ avoid identity theft. The email contains a validation link.&lt;/li>
 &lt;li>Click on the validation link or copy/paste in your browser. Once validated,
 changes are immediate.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>Note&lt;/strong>: You can only associate one X.509 DN with your account at any given
-time.&lt;/p>
+&lt;blockquote>
+&lt;p>You can only associate one X.509 DN with your account at any given time.&lt;/p>
+&lt;/blockquote>
 &lt;h3 id="you-have-authenticated-with-egi-check-in-but-via-a-different-identity-provider">You have authenticated with EGI Check-in, but via a different Identity Provider&lt;/h3>
 &lt;p>It&amp;rsquo;s possible to link this identity with your &amp;ldquo;other&amp;rdquo;
 &lt;a href="../../../../users/aai/check-in">EGI Check-in&lt;/a> identity at the level of the EGI
-Check-in. Please open an &lt;a href="../../../helpdesk">EGI Helpdesk&lt;/a> ticket addressed to
-the &amp;ldquo;Check-in (AAI)&amp;rdquo; support unit. Once your identity is linked at the EGI
-Check-in level, if you are still having problems accessing, please reassign the
-ticket to &amp;ldquo;Configuration and Topology Database (GOCDB)&amp;rdquo;&lt;/p>
+Check-in, see
+&lt;a href="../../../../users/aai/check-in/linking">account linking documentation&lt;/a>.&lt;/p>
+&lt;p>Once your identity is linked at the EGI Check-in level, if you are still having
+problems accessing, please reassign the ticket to &amp;ldquo;Configuration and Topology
+Database (GOCDB)&amp;rdquo;&lt;/p>
 &lt;h3 id="you-have-changed-the-way-you-log-in-ie-x509-to-egi-check-in">You have changed the way you log in (i.e. X.509 to EGI Check-in)&lt;/h3>
 &lt;p>You can link these identities at the EGI Configuration Database level by
 following these steps. The steps assume an existing X.509 based account and that
