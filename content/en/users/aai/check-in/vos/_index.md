@@ -306,7 +306,7 @@ resources relying on these entitlements.
 Check-in provides a REST API that allows clients to:
 
 - manage membership information only for the VOs they are authoritative for
-- GET VO group information only for the VOs they are authoritative for
+- Get VO group information only for the VOs they are authoritative for
 
 Membership Features:
 
