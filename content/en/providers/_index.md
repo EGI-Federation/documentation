@@ -35,7 +35,7 @@ deliver high-quality services for advanced computing within the EGI
 Infrastructure. The options are documented below, linking to detailed
 instructions:
 
-1. [Joining as a federated resource centre](../joining/federated-resource-centre),
+1. [Joining as a federated resource centre](./joining/federated-resource-centre),
    becoming a provider (that we call Resource Centre) delivering one of the
    following services:
    [Cloud Compute](https://www.egi.eu/service/cloud-compute/),
@@ -43,28 +43,28 @@ instructions:
    [Cloud Container Compute](https://www.egi.eu/service/cloud-container-compute/),
    or [Online Storage](https://www.egi.eu/service/online-storage/). More than
    200 Resource Centres have been integrated in this way.
-2. [Joining as a software provider](../joining/technology-provider/), also
-   called Technology Provider, which is providing middleware deployed on the
-   [federated resource centres](./federated-resource-centre).
-3. [Joining as a new provider](../joining/new-provider/) for an existing service
+2. [Joining as a software provider](./joining/technology-provider/), also called
+   Technology Provider, which is providing middleware deployed on the
+   [federated resource centres](./joining/federated-resource-centre).
+3. [Joining as a new provider](./joining/new-provider/) for an existing service
    in the Compute and Data Federation or the Platform services, such as
    [DataHub](https://www.egi.eu/service/datahub/),
    [Notebooks](https://www.egi.eu/service/notebooks/),
    [Training Infrastructure](https://www.egi.eu/service/training-infrastructure/),
    and [Workload Manager](https://www.egi.eu/service/workload-manager/)
-4. [Joining as Core/Central service provider](../joining/core-service/) for
+4. [Joining as Core/Central service provider](./joining/core-service/) for
    [services supporting all the other services of the EGI Infrastructure](https://www.egi.eu/services/federation/).
-5. [Contributing a new service](../joining/new-service/), enabling advanced
+5. [Contributing a new service](./joining/new-service/), enabling advanced
    computing in research and education, and not yet present in the
    [EGI service portfolio](https://www.egi.eu/services/research/).
 
-> The [Operations Start Guide](./operations-start-guide) will help you starting
-> with EGI Operations duties.
+> The [Operations Start Guide](./operations-manuals/operations-start-guide) will
+> help you starting with EGI Operations duties.
 
 ## Integrating a service with EGI Check-in
 
 1. If you are interested in **integrating your service with Check-in**, head to
-   the [Check-in for service providers](../check-in/sp)!
+   the [Check-in for service providers](./check-in/sp)!
 2. If you are willing to **connect your Identity Providers** and allowing your
    users to access services via Check-in, look at the documentation for
-   [Check-in for Identity Providers](../check-in/idp)!
+   [Check-in for Identity Providers](./check-in/idp)!
