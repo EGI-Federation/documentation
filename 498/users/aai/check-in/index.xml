@@ -843,7 +843,7 @@ be supported in the future.&lt;/p>
 &lt;tr>
 &lt;td>200 OK&lt;/td>
 &lt;td>Role Returned&lt;/td>
-&lt;td>JSON response&lt;/td>
+&lt;td>json response&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>400 Bad Request&lt;/td>
