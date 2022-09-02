@@ -5,6 +5,15 @@ type: "docs"
 description: "Operations manuals for Service Providers"
 ---
 
+## Generic documentation
+
+The [Operations start guide](./operations-start-guide) will help you start with
+EGI Operations duties.
+
+The [Resource Centre integration check list](./integration-checklist) provides
+an overview of what are the required steps to get a new Resource Centre
+integrated into the EGI Federation.
+
 ## Manuals
 
 The EGI Operations Manuals are **approved** technical documents that provide
