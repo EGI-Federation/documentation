@@ -258,3 +258,15 @@ main strategies you can use:
   provider that can be used to boot a new instance of the VM with the same disk
   content. You can use this technique for creating a base template image that
   can be later re-used to start similar VMs easily.
+
+### How can I find all the VMs that I own in the EGI Federated Cloud?
+
+We suggest using the [fedcloudclient](https://fedcloudclient.fedcloud.eu/cheat.html#useful-commands):
+
+```bash
+# list the Virtual Organisations that you belong to
+fedcloud token list-vos
+
+# then, for each VO, run:
+list-all-my-own-vms.sh --vo <virtual-organisation>
+```
