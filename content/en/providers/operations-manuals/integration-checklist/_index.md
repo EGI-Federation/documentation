@@ -1,6 +1,8 @@
 ---
 title: Resource Centre Integration Check List
+weight: 5
 type: docs
+description: "Steps required to integrate a Resource Centre"
 ---
 
 This page provides an overview of what are the required steps to get a new
