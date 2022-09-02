@@ -14,8 +14,10 @@ Database (GOCDB), users can either:
   installed in the internet browser, or the local machine's certificate store.
 
 Users can access the system as soon as they are authenticated. However, they
-will only be able to update information based on their roles. More information
-about roles and associated permission is available in the
+will only be able to update information based on their roles, and only once they
+will have [registered a new user account](#registering-a-new-user-account).
+
+More information about roles and associated permission is available in the
 [_Users and roles_](../users-roles) section of the documentation.
 
 Applications requesting a specific role have to be validated by parent roles or
@@ -60,3 +62,22 @@ components, and the OGF Certificate Authority Working Group (CAOPS) who strongly
 discourage any type of quote in a certificate DN as specified by their
 [Grid Certificate Profile](https://www.ogf.org/documents/GFD.125.pdf) document.
 {{% /alert %}}
+
+## Registering a new user account
+
+Being authenticated in one of the two ways described above is enough to have
+read-only access to all the public features of the EGI Configuration Database.
+If you need to edit data in and request roles, you will need to fill in the
+registration form.
+
+**To Register**:
+
+- Go to the [EGI Configuration Database web portal](https://goc.egi.eu)
+- In the left sidebar, look out for the **User status** panel
+- click on the "Register" link
+- fill in the form and validate
+
+> If you were registered but are not recognised anymore (e.g. because your
+> certificate DN changed), do not register again! Instead, follow the steps
+> [Lost access to your Configuration Database account](../users-roles/managing-accounts#lost-access-to-your-account)
+> section.
