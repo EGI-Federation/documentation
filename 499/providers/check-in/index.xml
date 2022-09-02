@@ -607,9 +607,9 @@ encoded in base64&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Country of the service&lt;/li>
-&lt;li>Compliance with the
-&lt;a href="https://go.egi.eu/policies-and-procedures">EGI Policies&lt;/a> and the
-&lt;a href="https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home">GÉANT Data Protection Code of Conduct&lt;/a>&lt;/li>
+&lt;li>Compliance with the &lt;a href="https://go.egi.eu/policies-and-procedures">EGI Policies&lt;/a>
+and the
+&lt;a href="https://wiki.refeds.org/display/CODE/Data+Protection+Code+of+Conduct+Home">REFEDS Data Protection Code of Conduct&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;p>The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.&lt;/p>
@@ -1482,7 +1482,8 @@ with the following parameters:&lt;/p>
 &lt;p>Example request:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_secret=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
@@ -1574,6 +1575,7 @@ You can find the &lt;em>Token Endpoint&lt;/em> in the
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_secret=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;scope=openid%20email%20profile&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code_challenge=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_CHALLENGE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code_challenge_method=S256&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
@@ -1589,6 +1591,7 @@ in the &lt;a href="#endpoints">Endpoints&lt;/a> table.
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;device_code=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">DEVICE_CODE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_id=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;client_secret=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code_verifier=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CODE_VERIFIER&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
@@ -1766,7 +1769,12 @@ removed.&lt;/p>
 &lt;a href="https://aai.egi.eu/federation">EGI Federation Registry&lt;/a>, otherwise you will get
 the following HTTP response during the authentication flow:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-http" data-lang="http">&lt;span style="color:#a40000">error=invalid_request&amp;amp;error_description=Missing parameter: code_challenge_method
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="token-exchange-1">Token Exchange&lt;/h5>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="device-code-1">Device Code&lt;/h5>
+&lt;p>If you are using a confidential client with the Device Code grant, please make
+sure that the &lt;code>client_secret&lt;/code> is present in the request to the Device Code
+Endpoint either as HTTP Basic or HTTP POST parameter (see
+&lt;a href="#1-device-authorization-request">Device Authorization Request&lt;/a>).&lt;/p>
+&lt;h5 id="token-exchange-1">Token Exchange&lt;/h5>
 &lt;p>If you are using the Token Exchange grant, please make sure that the &lt;code>audience&lt;/code>
 (Optional) defines the logical name of the service that the token will be used
 for; when specified, it must match the client ID of a client registered in
