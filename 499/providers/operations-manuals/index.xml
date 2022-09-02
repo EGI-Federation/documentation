@@ -1,4 +1,376 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Operations manuals and How-Tos</title><link>/providers/operations-manuals/</link><description>Recent content in Operations manuals and How-Tos on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/operations-manuals/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: MAN01 How to publish site information</title><link>/providers/operations-manuals/man01_how_to_publish_site_information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man01_how_to_publish_site_information/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Operations manuals and How-Tos</title><link>/providers/operations-manuals/</link><description>Recent content in Operations manuals and How-Tos on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/operations-manuals/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Operations Start Guide</title><link>/providers/operations-manuals/operations-start-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/operations-start-guide/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The Operations Start Guide will help you start with EGI Operations duties. It
+covers the responsibilities of the various parties involved in the running of
+the
+&lt;a href="https://confluence.egi.eu/display/EGIG/EGI+Infrastructure">EGI infrastructure&lt;/a>
+and guide how to join operations. As a newcomer, you need to understand the
+structure of the infrastructure and roles of operators at different levels.
+Reading the whole document will give you a complete overall picture of daily
+operations within EGI.&lt;/p>
+&lt;h2 id="resource-centres-and-resource-infrastructures">Resource Centres and Resource Infrastructures&lt;/h2>
+&lt;p>Resources are geographically distributed and are contributed by
+&lt;a href="https://confluence.egi.eu/display/EGIG/Resource+Centre">Resource Centres&lt;/a>. A
+Resource Centre is the smallest resource administration domain within EGI. It
+can be either localized or geographically distributed. A Resource Centre is also
+known as a &lt;em>site&lt;/em>. It provides a minimum set of local or remote IT Services,
+such as High Throughput Compute (HTC), Cloud Compute, Storage and Data Transfer,
+compliant to well-defined IT Capabilities necessary to make resources accessible
+to authorised users. Users can access the services using common interfaces.&lt;/p>
+&lt;p>The EGI Federation is a
+&lt;a href="https://confluence.egi.eu/display/EGIG/Resource+Infrastructure">Resource Infrastructure&lt;/a>
+federating Resource Centres to constitute a homogeneous operational domain, and
+the
+&lt;a href="https://confluence.egi.eu/display/EGIG/Resource+Infrastructure+Provider">Resource Infrastructure Provider&lt;/a>
+is the legal organisation that is responsible of establishing, managing and of
+operating directly or indirectly the operational services to an agreed level of
+quality needed by the Resource Centres and the user community. It holds the
+responsibility of integrating them in EGI to enable uniform resource access and
+sharing for the benefit of their consuming end users. Examples of a Resource
+infrastructure Provider are the
+&lt;a href="https://confluence.egi.eu/display/EGIG/European+Intergovernmental+Research+Organisation">European Intergovernmental Research Organisations (EIRO)&lt;/a>
+and the &lt;a href="https://confluence.egi.eu/display/EGIG/NGI">NGIs&lt;/a>.&lt;/p>
+&lt;p>In Europe, Resource Centres are required to be affiliated to the respective
+NGIs, which (a) have a mandate to represent their national users community in
+all matters falling within the scope of the EGI Infrastructure, and (b) are the
+only organization having the mandate described in (a) for its country and thus
+provide a single contact point at the national level.&lt;/p>
+&lt;h2 id="operations-centres">Operations Centres&lt;/h2>
+&lt;p>A Resource Infrastructure Provider is responsible for delivering, to different
+groups of customers, a number of services, either technical or humans : services
+supporting the activities of the given Resource Infrastructure Provider and
+facilitating and making secure the access to the provided resources and
+services.&lt;/p>
+&lt;p>In order to contribute resources to EGI, a Resource Infrastructure Provider must
+be associated to an
+&lt;a href="https://confluence.egi.eu/display/EGIG/Operations+Centre">Operations Centre&lt;/a>
+which will deliver the services on behalf of them.&lt;/p>
+&lt;p>A single Operations Centre can be federated and operate services for multiple
+Resource Infrastructure Providers. Federation of operations can be a
+cost-effective approach for Resource Infrastructure Providers wishing to share
+their effort and services, or in order to operate the infrastructures in an
+early stage of maturity.&lt;/p>
+&lt;p>The Operations Centre provides services in collaboration with the respective
+Resource Centres via the Resource Centre Operations Manager, and globally with
+EGI Foundation and other Operations Centres.&lt;/p>
+&lt;ul>
+&lt;li>Locally, Operations Centres are responsible for supporting the Resource
+Centres, for monitoring their Quality of Service (QoS), for collecting
+requirements and representing them in the EGI operations boards.&lt;/li>
+&lt;li>Globally they are in charge of contributing to the evolution of the EGI
+Infrastructure.&lt;/li>
+&lt;/ul>
+&lt;h2 id="roles">Roles&lt;/h2>
+&lt;p>The following sections covers the roles that are commonly involved in the
+operations of the EGI Infrastructure. The correspondent
+&lt;a href="../../../internal/configuration-database/users-roles/managing-roles/#roles">roles defined in Configuration Database (GOCDB)&lt;/a>
+give specific rights in the Configuration Database itself and in other EGI
+services. There are roles whose scope is limited to the operation of a Resource
+Centre. A number of other roles act on a higher level, involving the operations
+activities related either to the NGI (Regional level) or to the EGI
+infrastructure as a whole (global level). Other terms and definitions can be
+found in the &lt;a href="https://go.egi.eu/glossary">EGI Glossary&lt;/a>.&lt;/p>
+&lt;h3 id="resource-centre-level">Resource Centre level&lt;/h3>
+&lt;h4 id="resource-centre-administrator">Resource Centre Administrator&lt;/h4>
+&lt;p>An individual responsible for installing, operating, maintaining and supporting
+one or more Resources or IT Services in a Resource Centre. In the scope of
+Operations, Resource Centres (RC) administrators primarily receive and react on
+incidents at their Resource Centre and on service requests notified through
+tickets created on the &lt;a href="../../../internal/helpdesk">EGI Helpdesk service&lt;/a>. They
+should respond to the tickets in a suitable time frame as defined in the
+&lt;a href="https://documents.egi.eu/document/31">Resource Centre Operational Level Agreement (OLA)&lt;/a>
+and be aware of the alarms at their site, eg. through the
+&lt;a href="https://operations-portal.egi.eu">Operations Dashboard&lt;/a>. Sites &lt;strong>MUST&lt;/strong> only
+operate supported middleware versions. This implies upgrading it regularly.
+Emergency releases are treated in a special way. Resource Centre Administrators
+&lt;strong>MUST&lt;/strong> react to security issues that are at a global level, but affect their
+site. See
+&lt;a href="https://go.egi.eu/sec03">SEC03 EGI-CSIRT Critical Vulnerability Handling&lt;/a>.&lt;/p>
+&lt;h4 id="resource-centre-operations-manager">Resource Centre Operations Manager&lt;/h4>
+&lt;p>An individual who leads the Resource Centre operations, who is the official
+technical contact person in the connected organisation, and who is locally
+supported by a team of Resource Centre Administrators. The Resource Centre
+Operations Manager is responsible for the site at the political and legal levels
+and for signing the
+&lt;a href="https://documents.egi.eu/public/ShowDocument?docid=31">Operational Level Agreement&lt;/a>)
+between the Resource Centre and its hosting NGI. The Resource Centre Operations
+Manager is also responsible for enforcing the EGI policies and procedures by the
+Resource Centre and for assigning and approving the other site roles in the
+Configuration Database. Further, they should ensure that administrators are
+subscribed to the relevant mailing lists.&lt;/p>
+&lt;h4 id="resource-centre-security-officer">Resource Centre Security Officer&lt;/h4>
+&lt;p>The person responsible for keeping the site compliant with the
+&lt;a href="https://go.egi.eu/policies-and-procedures">EGI security policies&lt;/a>. They are the
+primary contact for the &lt;a href="#ngi-security-officer">NGI Security officer&lt;/a> and
+&lt;a href="#egi-csirt">EGI Computer Security Incident Response Team (CSIRT)&lt;/a>. The Site
+Security Officer deals with security incidents and shall respond to enquiries in
+a timely fashion as defined in the collection of
+&lt;a href="https://go.egi.eu/policies-and-procedures">security procedures and policies&lt;/a>.&lt;/p>
+&lt;h3 id="regional-level">Regional level&lt;/h3>
+&lt;h4 id="regional-operator-on-duty-rod">Regional Operator on Duty (ROD)&lt;/h4>
+&lt;p>A team responsible for solving problems and incidents in the infrastructure
+according to agreed procedures. ROD teams monitor the Resource Centres in their
+region, react to incidents identified by the monitoring tools, and oversee
+incidents and related problems through to their resolution. They ensure that
+incidents are properly recorded and that the solutions progress according to
+specified time lines. They also provide support to Resource Centres and Virtual
+Organisations (VOs) and provide support to oversight bodies in cases of
+unresponsive Resource Centres. They ensure that all the necessary information is
+available to all parties. The team is provided by each NGI and requires
+procedural knowledge on the process (rather than technical skills) for their
+work. New ROD team members are required to read the
+&lt;a href="https://wiki.egi.eu/wiki/Regional_Operator_on_Duty_welcome">ROD Welcome page&lt;/a>
+and be familiar with
+&lt;a href="https://wiki.egi.eu/wiki/Regional_Operator_on_Duty">ROD wiki page&lt;/a>.&lt;/p>
+&lt;h4 id="ngi-security-officer">NGI Security officer&lt;/h4>
+&lt;p>The NGI Security Officer is member of the &lt;a href="#egi-csirt">EGI-CSIRT&lt;/a>.&lt;/p>
+&lt;p>The NGI Security Officer coordinates the security activities within its NGI and
+serves as the primary contact for all security related requests, in particular
+from &lt;a href="#egi-csirts-irtf">EGI-CSIRT&amp;rsquo;s IRTF&lt;/a> concerning issues with the sites
+within the NGI.&lt;/p>
+&lt;p>Further, the NGI Security Officer is responsible for overseeing the security
+related aspects of the operations of the NGI and coordinates the security
+activities within its NGI.&lt;/p>
+&lt;p>NGIs and Sites &lt;strong>MUST&lt;/strong> respond in a timely manner to the security requests and
+alerts coming from the EGI-CSIRT&amp;rsquo;s IRTF.&lt;/p>
+&lt;p>The NGI Security Officer name and contact address needs to be registered in the
+&lt;a href="https://goc.egi.eu">Configuration Database (GOCDB)&lt;/a> and the information
+maintained by the NGI.&lt;/p>
+&lt;h4 id="ngi-operations-manager">NGI Operations manager&lt;/h4>
+&lt;p>The NGI Operations manager is the contact point for all operational matters and
+represents the NGI within the
+&lt;a href="https://confluence.egi.eu/display/EGIBG/Operations+Management+Board">Operations Management Board (OMB)&lt;/a>.&lt;/p>
+&lt;p>They are mainly responsible for:&lt;/p>
+&lt;ul>
+&lt;li>keeping up to date the NGI entry in the Configuration Database and managing
+the status of all sites under their NGI, and ensuring their information is
+also kept current&lt;/li>
+&lt;li>addressing problems with Site availability or reliability. The reports are
+issued on a monthly basis and the NGI operations managers have 10 days to
+respond to identified problems&lt;/li>
+&lt;li>attending regular
+&lt;a href="https://indico.egi.eu/category/19/">Operations Management Board meetings&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>All NGI operations management responsibilities are listed in the
+&lt;a href="https://documents.egi.eu/document/463">Resource Infrastructure Provider OLA document&lt;/a>.&lt;/p>
+&lt;h3 id="global-level">Global level&lt;/h3>
+&lt;h4 id="chief-operations-officer">Chief Operations Officer&lt;/h4>
+&lt;p>The Chief Operations Officer leads EGI Operations, and is responsible for
+coordinating the operations of the infrastructure across the project.&lt;/p>
+&lt;h4 id="egi-csirt">EGI-CSIRT&lt;/h4>
+&lt;p>&lt;a href="https://csirt.egi.eu">EGI-CSIRT&lt;/a> is the official security coordination team and
+contact point at project level.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://csirt.egi.eu">EGI-CSIRT site&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://confluence.egi.eu/display/EGIBG/EGI+CSIRT+-+RFC+2350">EGI-CSIRT profile according to RFC-2350&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf">EGI-CSIRT Terms of References&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h5 id="egi-csirts-irtf">EGI-CSIRT&amp;rsquo;s IRTF&lt;/h5>
+&lt;p>The Incident Response Team for the Federation (IRTF) is a subgroup of EGI-CSIRT
+which acts as the primary contact for all security related requests concerning
+the Federation and the projects the EGI Foundation is involved in.&lt;/p>
+&lt;p>EGI-CSIRTs IRTF provides the Security Officer on Duty role on a weekly rota
+basis. Details are in the
+&lt;a href="https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf">EGI-CSIRT Terms of References&lt;/a>.&lt;/p>
+&lt;h4 id="egi-security-officer">EGI Security Officer&lt;/h4>
+&lt;p>The EGI Security Officer, having the EGI CSIRT Officer role in the Configuration
+Database, is leading and coordinating EGI-CSIRT.&lt;/p>
+&lt;p>The role of the EGI Security Officer is provided by a member of EGI-CSIRT&amp;rsquo;s IRTF
+on a weekly rota basis.&lt;/p>
+&lt;h4 id="egi-foundation-sdis-team">EGI Foundation SDIS team&lt;/h4>
+&lt;p>The &lt;a href="https://confluence.egi.eu/display/EGIG/EGI+Foundation">EGI Foundation&lt;/a>
+Service Delivery and Information Security (SDIS) team, formerly known as the EGI
+Operations team, is responsible of
+&lt;a href="https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight">coordinating and supporting the operational activities&lt;/a>
+of all the EGI Infrastructure.&lt;/p>
+&lt;h4 id="vo">VO&lt;/h4>
+&lt;p>A
+&lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation (VO)&lt;/a>
+is a group of users and, optionally, resources, often not bound to a single
+institution or national borders, who, by reason of their common membership and
+in sharing a common goal, are given authority to use a set of resources. Each VO
+member signs the VO Acceptable Usage Policy (AUP) (during registration) which is
+the policy describing the goals of the VO thereby defining the expected and
+acceptable use of the resources by the users of the VO. User documentation can
+be found &lt;a href="../../../users/">in the users section&lt;/a>.&lt;/p>
+&lt;h4 id="vo-manager">VO manager&lt;/h4>
+&lt;p>An individual responsible for the management of the membership registry of the
+VO ensuring its accuracy and integrity.&lt;/p>
+&lt;h2 id="joining-operations">Joining operations&lt;/h2>
+&lt;p>In order to join any of the organisational groups in your NGI, you will need to
+go through the following steps in order:&lt;/p>
+&lt;h3 id="authentication">Authentication&lt;/h3>
+&lt;p>In general the authentication in EGI infrastructure works either with X509
+personal certificates or through federated identities using
+&lt;a href="../../check-in">Check-in&lt;/a>. For some services (HTC and Storage) the access is
+granted only by using a X509 personal certificate due to legacy reasons: the
+process of moving the authentication and authorisation mechanism to federated
+identities has started but it will takes time before having everything compliant
+with federated identities.&lt;/p>
+&lt;h4 id="obtaining-a-x509-personal-certificate">Obtaining a X509 personal certificate&lt;/h4>
+&lt;p>If you do not already have a X509 personal certificate
+&lt;a href="https://www.eugridpma.org/members/worldmap/">the EUGridPMA worlmap&lt;/a> provides a
+map of all certification authorities according to the country (or NGI). Select
+your country on the map to find out who is your local CA. Follow the procedure
+of your local CA to request a certificate. When you have received your
+certificate, install it into your web browser.&lt;/p>
+&lt;p>If case of setting up a new Resource Centre please request Host certificates.&lt;/p>
+&lt;p>EUGridPMA provides
+&lt;a href="https://www.eugridpma.org/your-identity/">a web page allowing to test your certificate&lt;/a>.
+Please use this resource and contact your CA if your certificate does not work.&lt;/p>
+&lt;h4 id="create-a-federated-identity-registration-in-egi-check-in">Create a federated identity: registration in EGI Check-in&lt;/h4>
+&lt;p>As soon as you try to access an EGI service with your federated identity, you
+will be requested to register an account in EGI Check-in if not existing yet.
+The &lt;a href="../../../users/aai/check-in/signup">Check-in sign up guide&lt;/a> explains how to
+sign up for an EGI account. If you already own an account, you will be simply
+asked to login through EGI Check-in.&lt;/p>
+&lt;h3 id="joining-dteam-vo">Joining dteam VO&lt;/h3>
+&lt;p>It is recommended to join the &lt;a href="https://wiki.egi.eu/wiki/Dteam_vo">dteam VO&lt;/a> at
+the &lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/">dteam Registration&lt;/a> page. You
+should request group membership for &lt;code>/dteam&lt;/code> and &lt;code>/dteam/YOUR_NGI&lt;/code>. The dteam
+group manager will then be notified and review your application. The membership
+to dteam VO is possible only by using a X09 personal certificate and it is
+useful to test the RCs and to debug related issues.&lt;/p>
+&lt;h3 id="requesting-gocdb-access">Requesting GOCDB access&lt;/h3>
+&lt;ul>
+&lt;li>Read
+&lt;a href="../../../internal/configuration-database">Input System User Documentation&lt;/a>
+first.&lt;/li>
+&lt;li>Go to the &lt;a href="https://goc.egi.eu/">Configuration Database&lt;/a> and follow
+&lt;a href="../../../internal/configuration-database/users-roles/managing-roles/#roles">the instruction&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>All members &lt;strong>should notify their NGI operations manager&lt;/strong> about their role
+requests, to be sure they are considered on time.&lt;/p>
+&lt;h3 id="registering-into-ggus">Registering into GGUS&lt;/h3>
+&lt;p>To register into GGUS please follow the
+&lt;a href="https://ggus.eu/?mode=register">Central GGUS registration&lt;/a> link. GGUS can be
+accessed either with your X509 personal certificate or with your federated
+identity. Do not forget to apply for
+&lt;a href="https://ggus.eu/?mode=register">the support role&lt;/a> as well. (The GGUS support
+staff will approve you quickly as they get the notification automatically). To
+get the supporter role with your federated identity, please enroll to the
+&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">GGUS Supporters group&lt;/a>
+in Check-in.&lt;/p>
+&lt;p>If your NGI also have a local helpdesk interfaced with GGUS, please ensure that
+you are properly registered also there: your NGI managers will take care of
+that.&lt;/p>
+&lt;h3 id="subscribing-to-mailing-lists">Subscribing to mailing lists&lt;/h3>
+&lt;p>NGIs and Sites have local mailing lists for ROD team members and Site
+Administrators respectively. Please ensure that you subscribe to them. Depending
+on your role ask your NGI operations manager or Site operations manager to have
+you included on the necessary mailing lists if there is no automatic
+subscription process.&lt;/p>
+&lt;p>NGI operations manager should contact &lt;code>operations@egi.eu&lt;/code> and state that wish to
+be subscribed to noc-managers mailing list &lt;code>noc-managers@mailman.egi.eu&lt;/code>.&lt;/p>
+&lt;h2 id="documentation">Documentation&lt;/h2>
+&lt;p>Procedures and policies are accessible on the
+&lt;a href="https://confluence.egi.eu/display/EGIPP/EGI+Federation+Procedures">EGI Policies and Procedures space&lt;/a>.
+Additional documentation relevant to EGI operations is available at
+&lt;a href="../../../../en">EGI Documentation&lt;/a>.&lt;/p>
+&lt;h2 id="tools">Tools&lt;/h2>
+&lt;p>A list of services relevant to EGI operations can be found at
+&lt;a href="../../../internal">the section about internal services&lt;/a>.&lt;/p></description></item><item><title>Providers: Resource Centre Integration Check List</title><link>/providers/operations-manuals/integration-checklist/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/integration-checklist/</guid><description>
+&lt;p>This page provides an overview of what are the required steps to get a new
+Resource Centre integrated into the EGI Federation.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Be aware of the
+&lt;a href="https://go.egi.eu/policies-and-procedures">security policies&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Acceptance of the
+&lt;a href="https://documents.egi.eu/public/ShowDocument?docid=31">RC OLA&lt;/a> (agreed with
+the NGI the RC belongs to).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Registration on the
+&lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>an entry for the resource centre was created&lt;/li>
+&lt;li>Required mailing lists are registered&lt;/li>
+&lt;li>people operating the services are registered&lt;/li>
+&lt;li>service endpoints are registered associated to the proper service types
+(&lt;a href="../../cloud-compute/registration">e.g. for cloud providers&lt;/a>), and the
+flags &lt;em>monitored&lt;/em> and &lt;em>production&lt;/em> are set to &lt;em>yes&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Support through the &lt;a href="../../../internal/helpdesk">EGI Helpdesk service&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>The RC name is listed in the GGUS fields “Affected site” and “Notify Site”&lt;/li>
+&lt;li>The site administrators can modify and reply to the tickets assigned to
+their RC
+&lt;ul>
+&lt;li>The Supporter role can be requested either directly on GGUS by using the
+own X509 personal certificate or by
+&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">enrolling to the ggus-supporters&lt;/a>
+group in Check-in.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Security:&lt;/p>
+&lt;ul>
+&lt;li>HTC: &lt;a href="../../../internal/security-coordination/monitoring/pakiti">pakiti&lt;/a> is
+installed and the outcome of the EGI CSIRT assessment is positive;&lt;/li>
+&lt;li>Cloud: the &lt;a href="https://survey.egi.eu/327232">EGI security Survey&lt;/a> was sent to
+the EGI CSIRT and the outcome was positive.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>AAI:&lt;/p>
+&lt;ul>
+&lt;li>HTC/Storage Compliant with X509 certificates and VOMS attributes&lt;/li>
+&lt;li>&lt;a href="../../cloud-compute/openstack/#egi-aai">OpenStack clouds integration with Check-in&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../check-in/sp/">General integration with Check-in for SPs&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Monitoring: the registered endpoints are automaticall detected by
+&lt;a href="../../../internal/monitoring">ARGO&lt;/a> and monitored according to their type
+registered in the Configuration Database.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="../../../internal/accounting">Accounting&lt;/a>: The accounting records are
+properly sent to the accounting repository and displayed by the
+&lt;a href="https://accounting.egi.eu/">Accounting Portal&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>Accounting probes and &lt;a href="https://github.com/apel/ssm">APEL SSM&lt;/a> are properlly
+installed and configured:
+&lt;ul>
+&lt;li>HTC: &lt;a href="https://github.com/apel/apel">APEL client&lt;/a>&lt;/li>
+&lt;li>Cloud: &lt;a href="https://github.com/IFCA/caso">cASO&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Information discovery:&lt;/p>
+&lt;ul>
+&lt;li>HTC/Storage: the information about compute and storage endpoints are
+&lt;a href="../../operations-manuals/man01_how_to_publish_site_information/">published by the site-bdii into the Top-BDIIs&lt;/a>.&lt;/li>
+&lt;li>Cloud: site is
+&lt;a href="../../cloud-compute/openstack/#catch-all-operations">added to the fedcloud-catchall-operations repository&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Middleware: latest version of technology products are installed using the
+&lt;a href="https://confluence.egi.eu/display/EGIBG/Unified+Middleware+Distribution">UMD&lt;/a>
+and
+&lt;a href="https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution">CMD&lt;/a>
+releases.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Software distribution:&lt;/p>
+&lt;ul>
+&lt;li>HTC (Optional): &lt;a href="https://github.com/cvmfs-contrib/egi-cvmfs">CVMFS&lt;/a>&lt;/li>
+&lt;li>Cloud: VM image synchronisation is configured with a HEPIX VM image list
+compliant software (e.g.
+&lt;a href="https://github.com/the-cloudkeeper-project/cloudkeeper">cloudkeeper&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol></description></item><item><title>Providers: MAN01 How to publish site information</title><link>/providers/operations-manuals/man01_how_to_publish_site_information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/man01_how_to_publish_site_information/</guid><description>
 &lt;h2 id="document-control">Document control&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -2087,79 +2459,7 @@ introduces new settings for publishing the accounting records via AMS.&lt;/li>
 &lt;/ul>
 &lt;h2 id="htcondor-ce">HTCondor-CE&lt;/h2>
 &lt;p>To collect and publish the accounting data you need to install the APEL software
-as explained in the general information section.&lt;/p></description></item><item><title>Providers: FAQ HEP SPEC 06</title><link>/providers/operations-manuals/faq-hepspec06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/faq-hepspec06/</guid><description>
-&lt;h2 id="transition-to-hep-spec-a-new-cpu-benchmark">Transition to HEP SPEC, a new CPU benchmark&lt;/h2>
-&lt;h3 id="q1-why-adopting-hep-spec-06">Q1: Why adopting HEP SPEC 06?&lt;/h3>
-&lt;p>The traditional si2k CPU benchmark is now obsolete and it is time to move to HEP
-SPEC, a new CPU benchmark that will replace si2k and will become the reference
-benchmark for accounting purposes.&lt;/p>
-&lt;p>Detailed description of the reasons are provided on the
-&lt;a href="http://indico.cern.ch/getFile.py/access?contribId=3&amp;amp;sessionId=0&amp;amp;resId=0&amp;amp;materialId=0&amp;amp;confId=49388">transition to a new CPU benchmarking unit for the WLCG&lt;/a>.&lt;/p>
-&lt;h3 id="q2-what-is-hep-spec-06">Q2: What is HEP SPEC 06?&lt;/h3>
-&lt;p>The &lt;strong>HEP-SPEC06 benchmark&lt;/strong> is designed to scale with the performances of the
-high-energy physics codes on similar machines. The goal was to have an accuracy
-of ± 5% but for the moment the agreement is significantly higher.&lt;/p>
-&lt;p>The measurement of HEP-SPEC repeated on identical machines varies less than 1%.
-If the computing machines are similar, i.e. same processors and at least 2 GB
-per core, the results obtained are very close, within some percent, so that it
-is unnecessary to perform measures on all computing hosts. It is enough to do
-the measurement for one type of processor and consider it valid for all the
-machines with the same processor.&lt;/p>
-&lt;p>If you are using different OS and specially different compilers, the data will
-change.&lt;/p>
-&lt;h3 id="q3-where-can-i-find-information-about-hep-spec-06-measurements">Q3: Where can I find information about HEP SPEC 06 measurements?&lt;/h3>
-&lt;p>Some example results are available on the
-&lt;a href="http://w3.hepix.org/benchmarking.html">HEPIX group-page&lt;/a>, where one can see the
-differences between gcc3.4.x and gcc4.1.x.&lt;/p>
-&lt;p>Additional results tables are available from various EGI partners:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://www.gridpp.ac.uk/wiki/HEPSPEC06">GRIDPP&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>If you don&amp;rsquo;t find your computing machine in that table, then it is better to try
-to do the measurement because extrapolating the results increases further the
-error.&lt;/p>
-&lt;h3 id="q4-how-can-i-run-the-hep-spec-06-benchmark">Q4: How can I run the HEP SPEC 06 benchmark?&lt;/h3>
-&lt;p>If you want to make HEP-SPEC06 on your own own, detailed instructions are
-available at
-&lt;a href="https://twiki.cern.ch/twiki/bin/view/FIOgroup/TsiBenchHEPSPECWlcg">CERN wiki&lt;/a>.&lt;/p>
-&lt;p>In Short you need the following:&lt;/p>
-&lt;ol>
-&lt;li>A machine with any version of Linux compatible with Scientific Linux (RHEL,
-SL, SLC, CentOS)&lt;/li>
-&lt;li>The gcc compiler should be installed&lt;/li>
-&lt;li>Configuration files and run script (available as a gzipped tar archive from
-the CERN Wiki). The archive&amp;rsquo;s md5sum is 9fed92b8d515b88904705f76809c4028&lt;/li>
-&lt;li>A tar ball of the SPECcpu2006 DVD called &lt;code>SPEC2006_v11.tar.bz2&lt;/code> that should
-be in the same directory as the run script&lt;/li>
-&lt;/ol>
-&lt;h3 id="q5-my-site-already-adopted-hep-spec-06-do-i-still-need-to-publish-specint2000">Q5: My site already adopted HEP SPEC 06. Do I still need to publish SpecInt2000?&lt;/h3>
-&lt;p>The transition to HEP-SPEC does not eliminate the need to publish the computing
-power in SpecInt2000 (due to backward compatibility with sites not publishing
-yet HEP-SPEC). In this case you may calculate the value SpecInt2000 starting
-from HEP-SPEC through the following relation:&lt;/p>
-&lt;ul>
-&lt;li>value_kSI2K = value_HEP-SPEC / 4 (or value_HEP-SPEC = 4 * value_kSI2K)&lt;/li>
-&lt;/ul>
-&lt;p>For the &lt;code>GlueHostBenchmarkSI00&lt;/code> attribute in the GLUE v1.3 schema the following
-relation is easier to use:&lt;/p>
-&lt;ul>
-&lt;li>value_SI00 = value_HEP-SPEC * 250 rounded to the nearest integer&lt;/li>
-&lt;/ul>
-&lt;h3 id="q6-how-are-hep-spec-06-results-set-in-yaim">Q6: How are HEP SPEC 06 results set in YAIM?&lt;/h3>
-&lt;p>The YAIM variable &lt;code>CE_OTHERDESCR&lt;/code> is used to set the
-&lt;code>GlueHostProcessorOtherDescription&lt;/code> attribute. The value of this variable MUST
-be defined in your &lt;code>site-info.def&lt;/code> file as:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">Cores&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;CE_LOGCPU/CE_PHYSICALCPU&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>, &lt;span style="color:#000">Benchmark&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;value&amp;gt;-HEP-SPEC06&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>where the ratio &lt;code>CE_LOGCPU&lt;/code> / &lt;code>CE_PHYSICALCPU&lt;/code> means the average number of cores
-per physical CPU in a sub-cluster; in the case of (slightly) heterogeneous
-sub-clusters it could be non-integer. The second value of this attribute MUST be
-published only in the case the CPU power of the sub-cluster has been computed
-using the HEP-SPEC06 benchmark. The Benchmark value must be the average
-HEP_SPEC06 result per core, in the sub-cluster.&lt;/p>
-&lt;p>These variables are set in your &lt;code>site-info.def&lt;/code> file. After this, the variables
-need to be published by the CE&amp;rsquo;s resource BDII, configured e.g. by standard YAIM
-commands.&lt;/p>
-&lt;p>The total CPU capacity of the cluster is computed as Benchmark * &lt;code>CE_LOGCPU&lt;/code>.&lt;/p></description></item><item><title>Providers: HOWTO01 Using IGTF CA distribution</title><link>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</guid><description>
+as explained in the general information section.&lt;/p></description></item><item><title>Providers: HOWTO01 Using IGTF CA distribution</title><link>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</guid><description>
 &lt;p>To ensure interoperability within and outside of EGI, the
 &lt;a href="https://documents.egi.eu/document/2930">Policy on Acceptable Authentication Assurance&lt;/a>
 defined a common set of trust anchors (in a PKIX implementation &amp;ldquo;Certification
@@ -3311,376 +3611,76 @@ $ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; delete -r test/
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>See Site Certification GIIS Check
 &lt;a href="../howto03_site_certificatoin_giis_check">HOWTO03&lt;/a>.&lt;/p>
 &lt;p>See to Resource Centre registration and certification procedure
-&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item><item><title>Providers: Operations Start Guide</title><link>/providers/operations-manuals/operations-start-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/operations-start-guide/</guid><description>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>The Operations Start Guide will help you start with EGI Operations duties. It
-covers the responsibilities of the various parties involved in the running of
-the
-&lt;a href="https://confluence.egi.eu/display/EGIG/EGI+Infrastructure">EGI infrastructure&lt;/a>
-and guide how to join operations. As a newcomer, you need to understand the
-structure of the infrastructure and roles of operators at different levels.
-Reading the whole document will give you a complete overall picture of daily
-operations within EGI.&lt;/p>
-&lt;h2 id="resource-centres-and-resource-infrastructures">Resource Centres and Resource Infrastructures&lt;/h2>
-&lt;p>Resources are geographically distributed and are contributed by
-&lt;a href="https://confluence.egi.eu/display/EGIG/Resource+Centre">Resource Centres&lt;/a>. A
-Resource Centre is the smallest resource administration domain within EGI. It
-can be either localized or geographically distributed. A Resource Centre is also
-known as a &lt;em>site&lt;/em>. It provides a minimum set of local or remote IT Services,
-such as High Throughput Compute (HTC), Cloud Compute, Storage and Data Transfer,
-compliant to well-defined IT Capabilities necessary to make resources accessible
-to authorised users. Users can access the services using common interfaces.&lt;/p>
-&lt;p>The EGI Federation is a
-&lt;a href="https://confluence.egi.eu/display/EGIG/Resource+Infrastructure">Resource Infrastructure&lt;/a>
-federating Resource Centres to constitute a homogeneous operational domain, and
-the
-&lt;a href="https://confluence.egi.eu/display/EGIG/Resource+Infrastructure+Provider">Resource Infrastructure Provider&lt;/a>
-is the legal organisation that is responsible of establishing, managing and of
-operating directly or indirectly the operational services to an agreed level of
-quality needed by the Resource Centres and the user community. It holds the
-responsibility of integrating them in EGI to enable uniform resource access and
-sharing for the benefit of their consuming end users. Examples of a Resource
-infrastructure Provider are the
-&lt;a href="https://confluence.egi.eu/display/EGIG/European+Intergovernmental+Research+Organisation">European Intergovernmental Research Organisations (EIRO)&lt;/a>
-and the &lt;a href="https://confluence.egi.eu/display/EGIG/NGI">NGIs&lt;/a>.&lt;/p>
-&lt;p>In Europe, Resource Centres are required to be affiliated to the respective
-NGIs, which (a) have a mandate to represent their national users community in
-all matters falling within the scope of the EGI Infrastructure, and (b) are the
-only organization having the mandate described in (a) for its country and thus
-provide a single contact point at the national level.&lt;/p>
-&lt;h2 id="operations-centres">Operations Centres&lt;/h2>
-&lt;p>A Resource Infrastructure Provider is responsible for delivering, to different
-groups of customers, a number of services, either technical or humans : services
-supporting the activities of the given Resource Infrastructure Provider and
-facilitating and making secure the access to the provided resources and
-services.&lt;/p>
-&lt;p>In order to contribute resources to EGI, a Resource Infrastructure Provider must
-be associated to an
-&lt;a href="https://confluence.egi.eu/display/EGIG/Operations+Centre">Operations Centre&lt;/a>
-which will deliver the services on behalf of them.&lt;/p>
-&lt;p>A single Operations Centre can be federated and operate services for multiple
-Resource Infrastructure Providers. Federation of operations can be a
-cost-effective approach for Resource Infrastructure Providers wishing to share
-their effort and services, or in order to operate the infrastructures in an
-early stage of maturity.&lt;/p>
-&lt;p>The Operations Centre provides services in collaboration with the respective
-Resource Centres via the Resource Centre Operations Manager, and globally with
-EGI Foundation and other Operations Centres.&lt;/p>
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item><item><title>Providers: FAQ HEP SPEC 06</title><link>/providers/operations-manuals/faq-hepspec06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/faq-hepspec06/</guid><description>
+&lt;h2 id="transition-to-hep-spec-a-new-cpu-benchmark">Transition to HEP SPEC, a new CPU benchmark&lt;/h2>
+&lt;h3 id="q1-why-adopting-hep-spec-06">Q1: Why adopting HEP SPEC 06?&lt;/h3>
+&lt;p>The traditional si2k CPU benchmark is now obsolete and it is time to move to HEP
+SPEC, a new CPU benchmark that will replace si2k and will become the reference
+benchmark for accounting purposes.&lt;/p>
+&lt;p>Detailed description of the reasons are provided on the
+&lt;a href="http://indico.cern.ch/getFile.py/access?contribId=3&amp;amp;sessionId=0&amp;amp;resId=0&amp;amp;materialId=0&amp;amp;confId=49388">transition to a new CPU benchmarking unit for the WLCG&lt;/a>.&lt;/p>
+&lt;h3 id="q2-what-is-hep-spec-06">Q2: What is HEP SPEC 06?&lt;/h3>
+&lt;p>The &lt;strong>HEP-SPEC06 benchmark&lt;/strong> is designed to scale with the performances of the
+high-energy physics codes on similar machines. The goal was to have an accuracy
+of ± 5% but for the moment the agreement is significantly higher.&lt;/p>
+&lt;p>The measurement of HEP-SPEC repeated on identical machines varies less than 1%.
+If the computing machines are similar, i.e. same processors and at least 2 GB
+per core, the results obtained are very close, within some percent, so that it
+is unnecessary to perform measures on all computing hosts. It is enough to do
+the measurement for one type of processor and consider it valid for all the
+machines with the same processor.&lt;/p>
+&lt;p>If you are using different OS and specially different compilers, the data will
+change.&lt;/p>
+&lt;h3 id="q3-where-can-i-find-information-about-hep-spec-06-measurements">Q3: Where can I find information about HEP SPEC 06 measurements?&lt;/h3>
+&lt;p>Some example results are available on the
+&lt;a href="http://w3.hepix.org/benchmarking.html">HEPIX group-page&lt;/a>, where one can see the
+differences between gcc3.4.x and gcc4.1.x.&lt;/p>
+&lt;p>Additional results tables are available from various EGI partners:&lt;/p>
 &lt;ul>
-&lt;li>Locally, Operations Centres are responsible for supporting the Resource
-Centres, for monitoring their Quality of Service (QoS), for collecting
-requirements and representing them in the EGI operations boards.&lt;/li>
-&lt;li>Globally they are in charge of contributing to the evolution of the EGI
-Infrastructure.&lt;/li>
+&lt;li>&lt;a href="https://www.gridpp.ac.uk/wiki/HEPSPEC06">GRIDPP&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h2 id="roles">Roles&lt;/h2>
-&lt;p>The following sections covers the roles that are commonly involved in the
-operations of the EGI Infrastructure. The correspondent
-&lt;a href="../../../internal/configuration-database/users-roles/managing-roles/#roles">roles defined in Configuration Database (GOCDB)&lt;/a>
-give specific rights in the Configuration Database itself and in other EGI
-services. There are roles whose scope is limited to the operation of a Resource
-Centre. A number of other roles act on a higher level, involving the operations
-activities related either to the NGI (Regional level) or to the EGI
-infrastructure as a whole (global level). Other terms and definitions can be
-found in the &lt;a href="https://go.egi.eu/glossary">EGI Glossary&lt;/a>.&lt;/p>
-&lt;h3 id="resource-centre-level">Resource Centre level&lt;/h3>
-&lt;h4 id="resource-centre-administrator">Resource Centre Administrator&lt;/h4>
-&lt;p>An individual responsible for installing, operating, maintaining and supporting
-one or more Resources or IT Services in a Resource Centre. In the scope of
-Operations, Resource Centres (RC) administrators primarily receive and react on
-incidents at their Resource Centre and on service requests notified through
-tickets created on the &lt;a href="../../../internal/helpdesk">EGI Helpdesk service&lt;/a>. They
-should respond to the tickets in a suitable time frame as defined in the
-&lt;a href="https://documents.egi.eu/document/31">Resource Centre Operational Level Agreement (OLA)&lt;/a>
-and be aware of the alarms at their site, eg. through the
-&lt;a href="https://operations-portal.egi.eu">Operations Dashboard&lt;/a>. Sites &lt;strong>MUST&lt;/strong> only
-operate supported middleware versions. This implies upgrading it regularly.
-Emergency releases are treated in a special way. Resource Centre Administrators
-&lt;strong>MUST&lt;/strong> react to security issues that are at a global level, but affect their
-site. See
-&lt;a href="https://go.egi.eu/sec03">SEC03 EGI-CSIRT Critical Vulnerability Handling&lt;/a>.&lt;/p>
-&lt;h4 id="resource-centre-operations-manager">Resource Centre Operations Manager&lt;/h4>
-&lt;p>An individual who leads the Resource Centre operations, who is the official
-technical contact person in the connected organisation, and who is locally
-supported by a team of Resource Centre Administrators. The Resource Centre
-Operations Manager is responsible for the site at the political and legal levels
-and for signing the
-&lt;a href="https://documents.egi.eu/public/ShowDocument?docid=31">Operational Level Agreement&lt;/a>)
-between the Resource Centre and its hosting NGI. The Resource Centre Operations
-Manager is also responsible for enforcing the EGI policies and procedures by the
-Resource Centre and for assigning and approving the other site roles in the
-Configuration Database. Further, they should ensure that administrators are
-subscribed to the relevant mailing lists.&lt;/p>
-&lt;h4 id="resource-centre-security-officer">Resource Centre Security Officer&lt;/h4>
-&lt;p>The person responsible for keeping the site compliant with the
-&lt;a href="https://go.egi.eu/policies-and-procedures">EGI security policies&lt;/a>. They are the
-primary contact for the &lt;a href="#ngi-security-officer">NGI Security officer&lt;/a> and
-&lt;a href="#egi-csirt">EGI Computer Security Incident Response Team (CSIRT)&lt;/a>. The Site
-Security Officer deals with security incidents and shall respond to enquiries in
-a timely fashion as defined in the collection of
-&lt;a href="https://go.egi.eu/policies-and-procedures">security procedures and policies&lt;/a>.&lt;/p>
-&lt;h3 id="regional-level">Regional level&lt;/h3>
-&lt;h4 id="regional-operator-on-duty-rod">Regional Operator on Duty (ROD)&lt;/h4>
-&lt;p>A team responsible for solving problems and incidents in the infrastructure
-according to agreed procedures. ROD teams monitor the Resource Centres in their
-region, react to incidents identified by the monitoring tools, and oversee
-incidents and related problems through to their resolution. They ensure that
-incidents are properly recorded and that the solutions progress according to
-specified time lines. They also provide support to Resource Centres and Virtual
-Organisations (VOs) and provide support to oversight bodies in cases of
-unresponsive Resource Centres. They ensure that all the necessary information is
-available to all parties. The team is provided by each NGI and requires
-procedural knowledge on the process (rather than technical skills) for their
-work. New ROD team members are required to read the
-&lt;a href="https://wiki.egi.eu/wiki/Regional_Operator_on_Duty_welcome">ROD Welcome page&lt;/a>
-and be familiar with
-&lt;a href="https://wiki.egi.eu/wiki/Regional_Operator_on_Duty">ROD wiki page&lt;/a>.&lt;/p>
-&lt;h4 id="ngi-security-officer">NGI Security officer&lt;/h4>
-&lt;p>The NGI Security Officer is member of the &lt;a href="#egi-csirt">EGI-CSIRT&lt;/a>.&lt;/p>
-&lt;p>The NGI Security Officer coordinates the security activities within its NGI and
-serves as the primary contact for all security related requests, in particular
-from &lt;a href="#egi-csirts-irtf">EGI-CSIRT&amp;rsquo;s IRTF&lt;/a> concerning issues with the sites
-within the NGI.&lt;/p>
-&lt;p>Further, the NGI Security Officer is responsible for overseeing the security
-related aspects of the operations of the NGI and coordinates the security
-activities within its NGI.&lt;/p>
-&lt;p>NGIs and Sites &lt;strong>MUST&lt;/strong> respond in a timely manner to the security requests and
-alerts coming from the EGI-CSIRT&amp;rsquo;s IRTF.&lt;/p>
-&lt;p>The NGI Security Officer name and contact address needs to be registered in the
-&lt;a href="https://goc.egi.eu">Configuration Database (GOCDB)&lt;/a> and the information
-maintained by the NGI.&lt;/p>
-&lt;h4 id="ngi-operations-manager">NGI Operations manager&lt;/h4>
-&lt;p>The NGI Operations manager is the contact point for all operational matters and
-represents the NGI within the
-&lt;a href="https://confluence.egi.eu/display/EGIBG/Operations+Management+Board">Operations Management Board (OMB)&lt;/a>.&lt;/p>
-&lt;p>They are mainly responsible for:&lt;/p>
-&lt;ul>
-&lt;li>keeping up to date the NGI entry in the Configuration Database and managing
-the status of all sites under their NGI, and ensuring their information is
-also kept current&lt;/li>
-&lt;li>addressing problems with Site availability or reliability. The reports are
-issued on a monthly basis and the NGI operations managers have 10 days to
-respond to identified problems&lt;/li>
-&lt;li>attending regular
-&lt;a href="https://indico.egi.eu/category/19/">Operations Management Board meetings&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>All NGI operations management responsibilities are listed in the
-&lt;a href="https://documents.egi.eu/document/463">Resource Infrastructure Provider OLA document&lt;/a>.&lt;/p>
-&lt;h3 id="global-level">Global level&lt;/h3>
-&lt;h4 id="chief-operations-officer">Chief Operations Officer&lt;/h4>
-&lt;p>The Chief Operations Officer leads EGI Operations, and is responsible for
-coordinating the operations of the infrastructure across the project.&lt;/p>
-&lt;h4 id="egi-csirt">EGI-CSIRT&lt;/h4>
-&lt;p>&lt;a href="https://csirt.egi.eu">EGI-CSIRT&lt;/a> is the official security coordination team and
-contact point at project level.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://csirt.egi.eu">EGI-CSIRT site&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://confluence.egi.eu/display/EGIBG/EGI+CSIRT+-+RFC+2350">EGI-CSIRT profile according to RFC-2350&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf">EGI-CSIRT Terms of References&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h5 id="egi-csirts-irtf">EGI-CSIRT&amp;rsquo;s IRTF&lt;/h5>
-&lt;p>The Incident Response Team for the Federation (IRTF) is a subgroup of EGI-CSIRT
-which acts as the primary contact for all security related requests concerning
-the Federation and the projects the EGI Foundation is involved in.&lt;/p>
-&lt;p>EGI-CSIRTs IRTF provides the Security Officer on Duty role on a weekly rota
-basis. Details are in the
-&lt;a href="https://csirt.egi.eu/files/2020/11/EGI-CSIRT-ToR_V2_20190819.pdf">EGI-CSIRT Terms of References&lt;/a>.&lt;/p>
-&lt;h4 id="egi-security-officer">EGI Security Officer&lt;/h4>
-&lt;p>The EGI Security Officer, having the EGI CSIRT Officer role in the Configuration
-Database, is leading and coordinating EGI-CSIRT.&lt;/p>
-&lt;p>The role of the EGI Security Officer is provided by a member of EGI-CSIRT&amp;rsquo;s IRTF
-on a weekly rota basis.&lt;/p>
-&lt;h4 id="egi-foundation-sdis-team">EGI Foundation SDIS team&lt;/h4>
-&lt;p>The &lt;a href="https://confluence.egi.eu/display/EGIG/EGI+Foundation">EGI Foundation&lt;/a>
-Service Delivery and Information Security (SDIS) team, formerly known as the EGI
-Operations team, is responsible of
-&lt;a href="https://confluence.egi.eu/display/EGIPP/EGI+Infrastructure+operations+oversight">coordinating and supporting the operational activities&lt;/a>
-of all the EGI Infrastructure.&lt;/p>
-&lt;h4 id="vo">VO&lt;/h4>
-&lt;p>A
-&lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation (VO)&lt;/a>
-is a group of users and, optionally, resources, often not bound to a single
-institution or national borders, who, by reason of their common membership and
-in sharing a common goal, are given authority to use a set of resources. Each VO
-member signs the VO Acceptable Usage Policy (AUP) (during registration) which is
-the policy describing the goals of the VO thereby defining the expected and
-acceptable use of the resources by the users of the VO. User documentation can
-be found &lt;a href="../../../users/">in the users section&lt;/a>.&lt;/p>
-&lt;h4 id="vo-manager">VO manager&lt;/h4>
-&lt;p>An individual responsible for the management of the membership registry of the
-VO ensuring its accuracy and integrity.&lt;/p>
-&lt;h2 id="joining-operations">Joining operations&lt;/h2>
-&lt;p>In order to join any of the organisational groups in your NGI, you will need to
-go through the following steps in order:&lt;/p>
-&lt;h3 id="authentication">Authentication&lt;/h3>
-&lt;p>In general the authentication in EGI infrastructure works either with X509
-personal certificates or through federated identities using
-&lt;a href="../../check-in">Check-in&lt;/a>. For some services (HTC and Storage) the access is
-granted only by using a X509 personal certificate due to legacy reasons: the
-process of moving the authentication and authorisation mechanism to federated
-identities has started but it will takes time before having everything compliant
-with federated identities.&lt;/p>
-&lt;h4 id="obtaining-a-x509-personal-certificate">Obtaining a X509 personal certificate&lt;/h4>
-&lt;p>If you do not already have a X509 personal certificate
-&lt;a href="https://www.eugridpma.org/members/worldmap/">the EUGridPMA worlmap&lt;/a> provides a
-map of all certification authorities according to the country (or NGI). Select
-your country on the map to find out who is your local CA. Follow the procedure
-of your local CA to request a certificate. When you have received your
-certificate, install it into your web browser.&lt;/p>
-&lt;p>If case of setting up a new Resource Centre please request Host certificates.&lt;/p>
-&lt;p>EUGridPMA provides
-&lt;a href="https://www.eugridpma.org/your-identity/">a web page allowing to test your certificate&lt;/a>.
-Please use this resource and contact your CA if your certificate does not work.&lt;/p>
-&lt;h4 id="create-a-federated-identity-registration-in-egi-check-in">Create a federated identity: registration in EGI Check-in&lt;/h4>
-&lt;p>As soon as you try to access an EGI service with your federated identity, you
-will be requested to register an account in EGI Check-in if not existing yet.
-The &lt;a href="../../../users/aai/check-in/signup">Check-in sign up guide&lt;/a> explains how to
-sign up for an EGI account. If you already own an account, you will be simply
-asked to login through EGI Check-in.&lt;/p>
-&lt;h3 id="joining-dteam-vo">Joining dteam VO&lt;/h3>
-&lt;p>It is recommended to join the &lt;a href="https://wiki.egi.eu/wiki/Dteam_vo">dteam VO&lt;/a> at
-the &lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/">dteam Registration&lt;/a> page. You
-should request group membership for &lt;code>/dteam&lt;/code> and &lt;code>/dteam/YOUR_NGI&lt;/code>. The dteam
-group manager will then be notified and review your application. The membership
-to dteam VO is possible only by using a X09 personal certificate and it is
-useful to test the RCs and to debug related issues.&lt;/p>
-&lt;h3 id="requesting-gocdb-access">Requesting GOCDB access&lt;/h3>
-&lt;ul>
-&lt;li>Read
-&lt;a href="../../../internal/configuration-database">Input System User Documentation&lt;/a>
-first.&lt;/li>
-&lt;li>Go to the &lt;a href="https://goc.egi.eu/">Configuration Database&lt;/a> and follow
-&lt;a href="../../../internal/configuration-database/users-roles/managing-roles/#roles">the instruction&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;p>All members &lt;strong>should notify their NGI operations manager&lt;/strong> about their role
-requests, to be sure they are considered on time.&lt;/p>
-&lt;h3 id="registering-into-ggus">Registering into GGUS&lt;/h3>
-&lt;p>To register into GGUS please follow the
-&lt;a href="https://ggus.eu/?mode=register">Central GGUS registration&lt;/a> link. GGUS can be
-accessed either with your X509 personal certificate or with your federated
-identity. Do not forget to apply for
-&lt;a href="https://ggus.eu/?mode=register">the support role&lt;/a> as well. (The GGUS support
-staff will approve you quickly as they get the notification automatically). To
-get the supporter role with your federated identity, please enroll to the
-&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">GGUS Supporters group&lt;/a>
-in Check-in.&lt;/p>
-&lt;p>If your NGI also have a local helpdesk interfaced with GGUS, please ensure that
-you are properly registered also there: your NGI managers will take care of
-that.&lt;/p>
-&lt;h3 id="subscribing-to-mailing-lists">Subscribing to mailing lists&lt;/h3>
-&lt;p>NGIs and Sites have local mailing lists for ROD team members and Site
-Administrators respectively. Please ensure that you subscribe to them. Depending
-on your role ask your NGI operations manager or Site operations manager to have
-you included on the necessary mailing lists if there is no automatic
-subscription process.&lt;/p>
-&lt;p>NGI operations manager should contact &lt;code>operations@egi.eu&lt;/code> and state that wish to
-be subscribed to noc-managers mailing list &lt;code>noc-managers@mailman.egi.eu&lt;/code>.&lt;/p>
-&lt;h2 id="documentation">Documentation&lt;/h2>
-&lt;p>Procedures and policies are accessible on the
-&lt;a href="https://confluence.egi.eu/display/EGIPP/EGI+Federation+Procedures">EGI Policies and Procedures space&lt;/a>.
-Additional documentation relevant to EGI operations is available at
-&lt;a href="../../../../en">EGI Documentation&lt;/a>.&lt;/p>
-&lt;h2 id="tools">Tools&lt;/h2>
-&lt;p>A list of services relevant to EGI operations can be found at
-&lt;a href="../../../internal">the section about internal services&lt;/a>.&lt;/p></description></item><item><title>Providers: Resource Centre Integration Check List</title><link>/providers/operations-manuals/integration-checklist/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/integration-checklist/</guid><description>
-&lt;p>This page provides an overview of what are the required steps to get a new
-Resource Centre integrated into the EGI Federation.&lt;/p>
+&lt;p>If you don&amp;rsquo;t find your computing machine in that table, then it is better to try
+to do the measurement because extrapolating the results increases further the
+error.&lt;/p>
+&lt;h3 id="q4-how-can-i-run-the-hep-spec-06-benchmark">Q4: How can I run the HEP SPEC 06 benchmark?&lt;/h3>
+&lt;p>If you want to make HEP-SPEC06 on your own own, detailed instructions are
+available at
+&lt;a href="https://twiki.cern.ch/twiki/bin/view/FIOgroup/TsiBenchHEPSPECWlcg">CERN wiki&lt;/a>.&lt;/p>
+&lt;p>In Short you need the following:&lt;/p>
 &lt;ol>
-&lt;li>
-&lt;p>Be aware of the
-&lt;a href="https://go.egi.eu/policies-and-procedures">security policies&lt;/a>.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Acceptance of the
-&lt;a href="https://documents.egi.eu/public/ShowDocument?docid=31">RC OLA&lt;/a> (agreed with
-the NGI the RC belongs to).&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Registration on the
-&lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>:&lt;/p>
+&lt;li>A machine with any version of Linux compatible with Scientific Linux (RHEL,
+SL, SLC, CentOS)&lt;/li>
+&lt;li>The gcc compiler should be installed&lt;/li>
+&lt;li>Configuration files and run script (available as a gzipped tar archive from
+the CERN Wiki). The archive&amp;rsquo;s md5sum is 9fed92b8d515b88904705f76809c4028&lt;/li>
+&lt;li>A tar ball of the SPECcpu2006 DVD called &lt;code>SPEC2006_v11.tar.bz2&lt;/code> that should
+be in the same directory as the run script&lt;/li>
+&lt;/ol>
+&lt;h3 id="q5-my-site-already-adopted-hep-spec-06-do-i-still-need-to-publish-specint2000">Q5: My site already adopted HEP SPEC 06. Do I still need to publish SpecInt2000?&lt;/h3>
+&lt;p>The transition to HEP-SPEC does not eliminate the need to publish the computing
+power in SpecInt2000 (due to backward compatibility with sites not publishing
+yet HEP-SPEC). In this case you may calculate the value SpecInt2000 starting
+from HEP-SPEC through the following relation:&lt;/p>
 &lt;ul>
-&lt;li>an entry for the resource centre was created&lt;/li>
-&lt;li>Required mailing lists are registered&lt;/li>
-&lt;li>people operating the services are registered&lt;/li>
-&lt;li>service endpoints are registered associated to the proper service types
-(&lt;a href="../../cloud-compute/registration">e.g. for cloud providers&lt;/a>), and the
-flags &lt;em>monitored&lt;/em> and &lt;em>production&lt;/em> are set to &lt;em>yes&lt;/em>&lt;/li>
+&lt;li>value_kSI2K = value_HEP-SPEC / 4 (or value_HEP-SPEC = 4 * value_kSI2K)&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Support through the &lt;a href="../../../internal/helpdesk">EGI Helpdesk service&lt;/a>:&lt;/p>
+&lt;p>For the &lt;code>GlueHostBenchmarkSI00&lt;/code> attribute in the GLUE v1.3 schema the following
+relation is easier to use:&lt;/p>
 &lt;ul>
-&lt;li>The RC name is listed in the GGUS fields “Affected site” and “Notify Site”&lt;/li>
-&lt;li>The site administrators can modify and reply to the tickets assigned to
-their RC
-&lt;ul>
-&lt;li>The Supporter role can be requested either directly on GGUS by using the
-own X509 personal certificate or by
-&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">enrolling to the ggus-supporters&lt;/a>
-group in Check-in.&lt;/li>
+&lt;li>value_SI00 = value_HEP-SPEC * 250 rounded to the nearest integer&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Security:&lt;/p>
-&lt;ul>
-&lt;li>HTC: &lt;a href="../../../internal/security-coordination/monitoring/pakiti">pakiti&lt;/a> is
-installed and the outcome of the EGI CSIRT assessment is positive;&lt;/li>
-&lt;li>Cloud: the &lt;a href="https://survey.egi.eu/327232">EGI security Survey&lt;/a> was sent to
-the EGI CSIRT and the outcome was positive.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>AAI:&lt;/p>
-&lt;ul>
-&lt;li>HTC/Storage Compliant with X509 certificates and VOMS attributes&lt;/li>
-&lt;li>&lt;a href="../../cloud-compute/openstack/#egi-aai">OpenStack clouds integration with Check-in&lt;/a>&lt;/li>
-&lt;li>&lt;a href="../../check-in/sp/">General integration with Check-in for SPs&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Monitoring: the registered endpoints are automaticall detected by
-&lt;a href="../../../internal/monitoring">ARGO&lt;/a> and monitored according to their type
-registered in the Configuration Database.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="../../../internal/accounting">Accounting&lt;/a>: The accounting records are
-properly sent to the accounting repository and displayed by the
-&lt;a href="https://accounting.egi.eu/">Accounting Portal&lt;/a>.&lt;/p>
-&lt;ul>
-&lt;li>Accounting probes and &lt;a href="https://github.com/apel/ssm">APEL SSM&lt;/a> are properlly
-installed and configured:
-&lt;ul>
-&lt;li>HTC: &lt;a href="https://github.com/apel/apel">APEL client&lt;/a>&lt;/li>
-&lt;li>Cloud: &lt;a href="https://github.com/IFCA/caso">cASO&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Information discovery:&lt;/p>
-&lt;ul>
-&lt;li>HTC/Storage: the information about compute and storage endpoints are
-&lt;a href="../../operations-manuals/man01_how_to_publish_site_information/">published by the site-bdii into the Top-BDIIs&lt;/a>.&lt;/li>
-&lt;li>Cloud: site is
-&lt;a href="../../cloud-compute/openstack/#catch-all-operations">added to the fedcloud-catchall-operations repository&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Middleware: latest version of technology products are installed using the
-&lt;a href="https://confluence.egi.eu/display/EGIBG/Unified+Middleware+Distribution">UMD&lt;/a>
-and
-&lt;a href="https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution">CMD&lt;/a>
-releases.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Software distribution:&lt;/p>
-&lt;ul>
-&lt;li>HTC (Optional): &lt;a href="https://github.com/cvmfs-contrib/egi-cvmfs">CVMFS&lt;/a>&lt;/li>
-&lt;li>Cloud: VM image synchronisation is configured with a HEPIX VM image list
-compliant software (e.g.
-&lt;a href="https://github.com/the-cloudkeeper-project/cloudkeeper">cloudkeeper&lt;/a>)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ol></description></item></channel></rss>
+&lt;h3 id="q6-how-are-hep-spec-06-results-set-in-yaim">Q6: How are HEP SPEC 06 results set in YAIM?&lt;/h3>
+&lt;p>The YAIM variable &lt;code>CE_OTHERDESCR&lt;/code> is used to set the
+&lt;code>GlueHostProcessorOtherDescription&lt;/code> attribute. The value of this variable MUST
+be defined in your &lt;code>site-info.def&lt;/code> file as:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">Cores&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;CE_LOGCPU/CE_PHYSICALCPU&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>, &lt;span style="color:#000">Benchmark&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;value&amp;gt;-HEP-SPEC06&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>where the ratio &lt;code>CE_LOGCPU&lt;/code> / &lt;code>CE_PHYSICALCPU&lt;/code> means the average number of cores
+per physical CPU in a sub-cluster; in the case of (slightly) heterogeneous
+sub-clusters it could be non-integer. The second value of this attribute MUST be
+published only in the case the CPU power of the sub-cluster has been computed
+using the HEP-SPEC06 benchmark. The Benchmark value must be the average
+HEP_SPEC06 result per core, in the sub-cluster.&lt;/p>
+&lt;p>These variables are set in your &lt;code>site-info.def&lt;/code> file. After this, the variables
+need to be published by the CE&amp;rsquo;s resource BDII, configured e.g. by standard YAIM
+commands.&lt;/p>
+&lt;p>The total CPU capacity of the cluster is computed as Benchmark * &lt;code>CE_LOGCPU&lt;/code>.&lt;/p></description></item></channel></rss>
