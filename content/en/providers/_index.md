@@ -58,8 +58,8 @@ instructions:
    computing in research and education, and not yet present in the
    [EGI service portfolio](https://www.egi.eu/services/research/).
 
-> The [Operations Start Guide](./operations-manuals/operations-start-guide) will
-> help you starting with EGI Operations duties.
+> The [Operations-related documentation ](./operations-manuals) will help you
+> starting with EGI Operations duties.
 
 ## Integrating a service with EGI Check-in
 
