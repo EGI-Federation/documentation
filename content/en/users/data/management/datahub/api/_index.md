@@ -275,3 +275,20 @@ curl --tlsv1.2 -H "X-Auth-Token: $API_ACCESS_TOKEN" \
   "$ONEZONE_HOST/api/v3/onezone/user/handles/$HANDLE_ID"
 ```
 <!-- markdownlint-enable line-length -->
+
+
+## Subscribe to file events
+Following is an example of how to subscribe to DataHub to receive notification on file events which is described in details in the official documentation [Subscribe to file events](https://onedata.org/#/home/api/stable/oneprovider?anchor=operation/get_space_changes):
+
+<!-- markdownlint-disable line-length -->
+```shell
+curl -N -H "X-Auth-Token: $TOKEN" \
+-X POST "https://$HOST/api/v3/oneprovider/changes/metadata/$SPACE_ID" \
+-H "Content-Type: application/json" -d "@./changes_req.json"
+```
+
+This requires the permission set as following:
+
+![Viewing file popularity for smart caching](datahub-space-permissions.png)
+
+For groups or single users. For single users, one way to add one is to select Effective members" -> in the user list search for the required user and "Make an owner". In this case the user will have admins privileges in addition to the one required. As this might not be the desired configuration it will be enough to remove all the unwanted permissions, e.g.: make it the same as the VO to which the user belongs to, and leave only, as extra, the permission shown in the screenshot.
