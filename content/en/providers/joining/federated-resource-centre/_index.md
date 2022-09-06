@@ -25,7 +25,7 @@ the Research Infrastructure Provider (RP) existing in its country. A RP is a
 legal organisation, part of the EGI Resource Infrastructure, responsible for
 managing and operating a number of operational services at national level,
 supporting EGI RCs and user communities. Please have a look at the
-[Operations Start Guide](../../operations-start-guide) to get familiar with the
+[Operations Start Guide](../../operations-manuals/operations-start-guide/) to get familiar with the
 terms mentioned above, and to have a complete picture of the several actors
 participating in our landscape.
 
@@ -208,7 +208,7 @@ pay-for-use model.
 
 The result of the negotiation is a ‘Service Level Agreement’ (SLA), and several
 ‘Operation Level Agreements’ (OLA), one with each contributing provider. (See
-[https://documents.egi.eu/public/ListBy?topicid=65](SLAs-OLAs examples).)
+[SLAs-OLAs examples](https://documents.egi.eu/public/ListBy?topicid=65).)
 
 SLAs and OLAs are typically signed for at least 1 year, and are automatically
 renewed, as long as the provider(s) or the customer do not express a decision to
