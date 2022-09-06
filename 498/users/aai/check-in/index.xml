@@ -543,8 +543,8 @@ groups is&lt;/p>
 &lt;p>A CO Person is added to a COU Admin Group if the following requirements are met:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>CO Person is declared as VO administrator in the VO&amp;rsquo;s ID Card,
-under the &lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations Portal&lt;/a>&lt;/p>
+&lt;p>CO Person is declared as VO administrator in the VO&amp;rsquo;s ID Card, under the
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations Portal&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>A request is made to the Check-in Support Unit via a
@@ -1547,6 +1547,11 @@ request access to. Only VO managers can request LDAP credentials for a given VO.
 &lt;td>&lt;code>member&lt;/code>&lt;/td>
 &lt;td>The members of this group (multivalued)&lt;/td>
 &lt;td>&lt;code>voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>businessCategory&lt;/code>&lt;/td>
+&lt;td>The VO/group type (multivalued, optional)&lt;/td>
+&lt;td>&lt;code>mailman&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Users: Obtaining Access/Refresh Tokens</title><link>/users/aai/check-in/obtaining-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/obtaining-tokens/</guid><description>
