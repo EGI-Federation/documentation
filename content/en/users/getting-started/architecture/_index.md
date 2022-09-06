@@ -54,10 +54,9 @@ The IaaS federation is a thin layer that brings the providers together with:
 
 The IaaS capabilities (VM, block storage, network management, etc.) must be
 provided via community agreed APIs
-([OpenStack](https://docs.openstack.org/wallaby/api/) and/or
-[OCCI](http://www.occi-wg.org/) are supported at the moment) that allow
-integration with [EGI Check-in](../../aai/check-in) for authentication and
-authorisation of users.
+([OpenStack](https://docs.openstack.org/wallaby/api/) is supported at the
+moment) that allow integration with [EGI Check-in](../../aai/check-in) for
+authentication and authorisation of users.
 
 {{% alert title="Note" color="info" %}} Those providers that limit the
 interaction to web dashboards and do not expose APIs to direct consumption for
@@ -124,7 +123,6 @@ service types are avialable:
 - `org.openstack.nova`
 - `org.openstack.swift`
 - `eu.egi.cloud.accounting`
-- `eu.egi.cloud.vm-management.occi`
 - `eu.egi.cloud.vm-metadata.marketplace`
 
 All providers **must** enter cloud service endpoints into the Configuration
@@ -192,7 +190,7 @@ below:
 | SiteName                    | `varchar(255)`  | No   | GOCDB SiteName - GOCDB now has cloud service types and a cloud-only site is allowed.                                                                                                                                                                        |
 | CloudComputeService (NEW)   | `varchar(255)`  |      | Name identifying cloud resource within the site. Allows multiple cloud resources within a sitei.e. a level of granularity.                                                                                                                                  |
 | MachineName                 | `varchar(255)`  | No   | VM ID - the site name for the VM                                                                                                                                                                                                                            |
-| LocalUserId                 | `varchar(255)`  |      | Local username                                                                                                                                                                                                                                             |
+| LocalUserId                 | `varchar(255)`  |      | Local username                                                                                                                                                                                                                                              |
 | LocalGroupId                | `varchar(255)`  |      | Local group name                                                                                                                                                                                                                                            |
 | GlobalUserName              | `varchar(255)`  |      | Global identity of user (certificate DN)                                                                                                                                                                                                                    |
 | FQAN                        | `varchar(255)`  |      | Use if VOs part of authorization mechanism                                                                                                                                                                                                                  |
@@ -295,15 +293,10 @@ availability of services must be provided by service developers.
 
 The current set of probes used for monitoring IaaS resources consists of:
 
-- OCCI probes (`eu.egi.cloud.OCCI-VM` and `eu.egi.cloud.OCCI-Context`): OCCI-VM
-  creates an instance of a given image by using OCCI, checks its status and
-  deletes it afterwards. OCCI-Context checks that the OCCI interfaces correctly
-  supports the standard and the FedCloud contextualization extension.
 - Accounting probe (`eu.egi.cloud.APEL-Pub`): Checks if the cloud resource is
   publishing data to the Accounting repository
-- TCP checks (`org.nagios.Broker-TCP`, `org.nagios.CDMI-TCP`,
-  `org.nagios.OCCI-TCP` and `org.nagios.CloudBDII-Check`): Basic TCP checks for
-  services.
+- TCP checks (`org.nagios.Broker-TCP`, `org.nagios.CDMI-TCP`, and
+  `org.nagios.CloudBDII-Check`): Basic TCP checks for services.
 - VM Marketplace probe (`eu.egi.cloud.AppDB-Update`): gets a predetermined image
   list from AppDB and checks its update interval.
 - Perun probe (`eu.egi.cloud.Perun-Check`): connects to the server and checks

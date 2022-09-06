@@ -14,11 +14,11 @@ This section offers an [introduction](getting-started) to the
 [EGI services](https://www.egi.eu/services/), together with
 [tutorials](tutorials) about how to set up, use, and combine these services.
 
-{{% alert title="Note" color="info" %}} See the [Service Providers](../providers)
-section for details on how to integrate providers into the EGI Federation.
-{{% /alert %}}
+{{% alert title="Note" color="info" %}} See the
+[Service Providers](../providers) section for details on how to integrate
+providers into the EGI Federation. {{% /alert %}}
 
 ## Request for information
 
 You can ask for more information about the public EGI services
-[on our site](https://www.egi.eu/more-information).
+[on our site](https://www.egi.eu/contact-us).
