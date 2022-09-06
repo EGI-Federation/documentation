@@ -7,13 +7,11 @@ description: >-
   Help Rucio admins understand and perform actions for their VO
 ---
 
-Within Rucio there are several levels of administrators. There are the
-**super admins**,
-which are the staff that runs Multi-VO Rucio.
-Then there are virtual organisation (VO) specific admins that will look after
-the day-to-day operations of thier VO.
-Below are some of the tasks that VO admins will need to do to
-set up and maintain their VO.
+Within Rucio there are several levels of administrators. There are the **super
+admins**, which are the staff that runs Multi-VO Rucio. Then there are virtual
+organisation (VO) specific admins that will look after the day-to-day operations
+of thier VO. Below are some of the tasks that VO admins will need to do to set
+up and maintain their VO.
 
 ## Creating Accounts, Identities, and Quotas
 
@@ -24,7 +22,7 @@ authentication methods. The identities bind authentication methods and
 permissions to the account. The account you want to create identities for is
 input as an argument. Accounts will have different permissions and access (such
 as how much data they can store on a particular
-[RSE](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)).
+[RSE](https://rucio.cern.ch/documentation/rucio_storage_element)).
 
 ### CLI Example
 
@@ -64,7 +62,7 @@ True
 
 ## Creating RSE(s)
 
-[Rucio Storage Elements](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)
+[Rucio Storage Elements](https://rucio.cern.ch/documentation/rucio_storage_element)
 (RSEs) are how Rucio represents the physical storage available to your VO. As
 with many aspects of Rucio there are a lot of optional attributes that can be
 set for an RSE, but as a minimum a protocol for transfers need to be added
@@ -195,9 +193,9 @@ documentation or the help for the function in question.
 
 Most operations in Rucio (such as transfers, deletions, rule evaluation) require
 one or more of the
-[daemons](https://rucio.readthedocs.io/en/latest/man/daemons.html) to be running
-in order to take effect. For a multi-VO instance, these should be running for
-all VOs already. However, on new VO's joining Rucio some updating of the daemons
+[daemons](https://rucio.cern.ch/documentation/main_components) to be running in
+order to take effect. For a multi-VO instance, these should be running for all
+VOs already. However, on new VO's joining Rucio some updating of the daemons
 will be neccessary.
 
 If it seems like it is not quite right please contact the Rucio team through
@@ -206,11 +204,11 @@ If it seems like it is not quite right please contact the Rucio team through
 ## Uploading Data
 
 In Rucio files and their replicas are represented by Data IDentifiers
-([DIDs](https://rucio.readthedocs.io/en/latest/overview_File_Dataset_Container.html)),
-which are composed of a scope and name. Furthermore, multiple files can be
-attached to a dataset, which in turn can be attached to a container (which can
-be attached to another container and so on). Datasets and containers are also
-represented by DIDs.
+([DIDs](https://rucio.cern.ch/documentation/file_dataset_container)), which are
+composed of a scope and name. Furthermore, multiple files can be attached to a
+dataset, which in turn can be attached to a container (which can be attached to
+another container and so on). Datasets and containers are also represented by
+DIDs.
 
 Scopes are always associated with a particular Rucio account, and must be added
 to Rucio using an admin account. If no scope is provided when uploading, Rucio
@@ -305,8 +303,8 @@ True
 
 Once a DID exists within the Rucio catalogue, replicas of that file, dataset or
 collection are created and maintained by
-[Replication rules](https://rucio.readthedocs.io/en/latest/overview_Replica_management.html).
-By uploading a file to a particular RSE, a replication rule is created for that
+[Replication rules](https://rucio.cern.ch/documentation/replica_management). By
+uploading a file to a particular RSE, a replication rule is created for that
 file, however rules can also be added for existing DIDs. As a minimum an RSE and
 number of copies must be specified, but further options such as lifetime of the
 rule and selecting RSEs based on user set attributes are also possible.
