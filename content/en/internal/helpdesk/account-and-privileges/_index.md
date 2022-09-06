@@ -69,8 +69,8 @@ from the GGUS team (usually) confirming their supporter privileges.
 ### Registration with the EGI AAI account
 
 Users who do not have a valid X509 certificate can access GGUS via
-[EGI Check-in](../../../users/check-in). For getting support privileges the user
-needs to be member of the
+[EGI Check-in](../../../users/aai/check-in). For getting support privileges the
+user needs to be member of the
 [ggus-supporters](https://aai.egi.eu/registry/co_petitions/start/coef:69) group
 in EGI Check-in. However the user should fill in the
 [registration form](https://ggus.eu/?mode=register_info) for creating an account

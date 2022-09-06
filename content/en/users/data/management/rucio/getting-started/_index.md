@@ -9,16 +9,16 @@ description: >-
 
 ## Rucio terms
 
-- [**Rucio Storage Element**](https://rucio.readthedocs.io/en/latest/overview_Rucio_Storage_Element.html)
+- [**Rucio Storage Element**](https://rucio.cern.ch/documentation/rucio_storage_element)
   (RSE) is another name for an endpoint, or storage solution.
-- [**Rules**](https://rucio.readthedocs.io/en/latest/replication_rules_examples.html)
-  are an instruction to Rucio to do a certain thing. This can be to ensure file
-  _x_ has at least 1 copy at _storagesite1_, or ensure file _y_ is on tape, or
-  even on tape at more than one location, or even file _z_ has 2 copies at any
-  site within a selection of sites. How you set up the RSE and the attributes
-  you give them allows for many different strategies to transfer and ordanise
-  data. Once a rule is created, Rucio will get to work to ensure that the rule
-  is satisfied at all times.
+- [**Rules**](https://rucio.cern.ch/documentation/replica_management) are an
+  instruction to Rucio to do a certain thing. This can be to ensure file _x_ has
+  at least 1 copy at _storagesite1_, or ensure file _y_ is on tape, or even on
+  tape at more than one location, or even file _z_ has 2 copies at any site
+  within a selection of sites. How you set up the RSE and the attributes you
+  give them allows for many different strategies to transfer and ordanise data.
+  Once a rule is created, Rucio will get to work to ensure that the rule is
+  satisfied at all times.
 - **File** is single file within Rucio.
 - **Dataset** is a collection of files, which may be a collection or related
   results, or data.
