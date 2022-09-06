@@ -28,7 +28,7 @@ type: "docs"
 - Differently from services with a distributed nature such as HTC, Cloud, and
   Storage, they cannot be ordered through the Marketplace, but they become
   available as soon as a user joins the infrastructure (e.g., the access to the
-  [EGI Helpdesk](../../../../internal/helpdesk) service).
+  [EGI Helpdesk](../../../internal/helpdesk) service).
 
 ## Selection of the providers and registration
 
@@ -45,10 +45,10 @@ At this point, steps, similar to the ones for
 regular day-to-day operation of the service, such as:
 
 - registration in the
-  [Configuration Database](../../../../internal/configuration-database) and
+  [Configuration Database](../../../internal/configuration-database) and
   certification;
 - definition of the Support Unit in the
-  [Helpdesk](../../../../internal/helpdesk) system to handle incidents and
+  [Helpdesk](../../../internal/helpdesk) system to handle incidents and
   service requests;
 - enabling of the monitoring;
 - periodic performance reports as defined in the given OLA to verify that the

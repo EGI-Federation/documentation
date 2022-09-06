@@ -12,11 +12,11 @@ description: >
 
 Binder allows the re-creation of a custom computing environment for reproducible
 execution of notebooks (and potentially many other types of applications). Users
-who create their own notebooks in the [EGI Notebooks](../notebooks/)
-to analyze data can easily create a shareable link for those notebooks in the
-form of a GitHub repository. Based on this link, anyone can then reproduce the
-same data analysis using the link in the
-[EGI Binder](https://binder.notebooks.egi.eu) service.
+who create their own notebooks in the [EGI Notebooks](../notebooks/) to analyze
+data can easily create a shareable link for those notebooks in the form of a
+GitHub repository. Based on this link, anyone can then reproduce the same data
+analysis using the link in the [EGI Binder](https://binder.notebooks.egi.eu)
+service.
 
 The service builds on [BinderHub](https://github.com/jupyterhub/binderhub), an
 Open Source tool that allows to build docker images from a Git repository and
@@ -29,14 +29,14 @@ additional features:
 - Access with academic user accounts: login via [Check-in](../../aai/check-in)
   that’s connected to eduGAIN and social media accounts.
 - Access to scalable storage: selected storage spaces of EGI DataHub are
-  directly available under the `datahub` folder, simplifying the access to shared
-  data from Binder notebooks.
+  directly available under the `datahub` folder, simplifying the access to
+  shared data from Binder notebooks.
 - Guaranteed capacity: environments have 2GB of RAM guaranteed and can reach 4GB
   as maximum.
 - Persistent sessions: There is no hard limit on the session time per user,
   although sessions will be shut down automatically after 1 hour of inactivity
   (see
-  [session limitations at the public mybinder.org service](https://mybinder.readthedocs.io/en/latest/about/about.html#using-the-mybinder-org-service)).
+  [session limitations at the public mybinder.org service](https://mybinder.readthedocs.io/en/latest/about/user-guidelines.html)).
 - Access to the rest of EGI services: a personal access token is available in
   the Binder session to interact with the rest of the EGI infrastructure.
 - Community Binder environments: User communities can have their customized
@@ -63,7 +63,8 @@ Binder facilitates the sharing and reproducibility of digital data analysis:
 ## Access to the service
 
 [EGI's Binder](https://binder.notebooks.egi.eu/) has the same access conditions
-as the [centrally operated Notebooks service from EGI](../notebooks/#service-modes).
+as the
+[centrally operated Notebooks service from EGI](../notebooks/#service-modes).
 Before using the service, you need to have an EGI account and be a member of
 [one of the supported resource pools](../notebooks/#notebooks-for-researchers)
 (alias Virtual Organisations). Follow the instructions on the

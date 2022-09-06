@@ -67,7 +67,7 @@ other topics using MATLAB.
 
    - Free trial MATLAB Licenses If you do not have a MATLAB license and would
      like to try it out, you can download a free MATLAB trial license
-     [here](https://www.mathworks.com/campaigns/products/trials/targeted/dkr.html.html).
+     [here](https://www.mathworks.com/campaigns/products/trials/targeted/dkr.html).
      Note that the trial license is for MATLAB only and does not have any
      toolboxes.
 
