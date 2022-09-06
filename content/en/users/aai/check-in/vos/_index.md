@@ -279,11 +279,11 @@ For example `CO:COU:vo.example.org:admins`
 
 A CO Person is added to a COU Admin Group if the following requirements are met:
 
-1. CO Person is declared as VO administrator in the VO's ID Card,
-under the [Operations Portal](https://operations-portal.egi.eu/vo/a/list)
+1. CO Person is declared as VO administrator in the VO's ID Card, under the
+   [Operations Portal](https://operations-portal.egi.eu/vo/a/list)
 
 1. A request is made to the Check-in Support Unit via a
-[EGI Helpdesk ticket](../../../../internal/helpdesk/user-guide/).
+   [EGI Helpdesk ticket](../../../../internal/helpdesk/user-guide/).
 
 ### Expiration Policy
 
@@ -773,9 +773,10 @@ Users are present in the `ou=people` subtree.
 
 Groups are present in the `ou=groups` subtree.
 
-| Attribute     | Description                             | Example                                                                     |
-| ------------- | --------------------------------------- | --------------------------------------------------------------------------- |
-| `objectClass` |                                         | `groupofNames`, `eduMember`                                                 |
-| `cn`          | Common name                             | `CO:COU:vo.example.org:members`                                             |
-| `description` | The description of group                | `CO:COU:vo.example.org Members`                                             |
-| `member`      | The members of this group (multivalued) | `voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
+| Attribute          | Description                               | Example                                                                     |
+| ------------------ | ----------------------------------------- | --------------------------------------------------------------------------- |
+| `objectClass`      |                                           | `groupofNames`, `eduMember`                                                 |
+| `cn`               | Common name                               | `CO:COU:vo.example.org:members`                                             |
+| `description`      | The description of group                  | `CO:COU:vo.example.org Members`                                             |
+| `member`           | The members of this group (multivalued)   | `voPersonID=befd2b9ed8878c542555829cb21da3e25ad91a0f9cg54gsdcs35htf@egi.eu` |
+| `businessCategory` | The VO/group type (multivalued, optional) | `mailman`                                                                   |
