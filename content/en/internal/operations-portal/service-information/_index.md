@@ -23,6 +23,6 @@ type: "docs"
 | Source code                             | https://gitlab.in2p3.fr/opsportal/sf3                                                              |
 | Issue tracker for developers            | https://gitlab.in2p3.fr/opsportal/sf3/-/issues                                                     |
 | License                                 | Apache 2                                                                                           |
-| Privacy Policy                          | https://operations-portal.egi.eu/home/a/aup                                                 |
+| Privacy Policy                          | https://operations-portal.egi.eu/home/a/aup                                                        |
 
 <!-- markdownlint-enable no-inline-html no-bare-urls -->
