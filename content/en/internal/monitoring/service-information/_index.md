@@ -23,6 +23,6 @@ type: "docs"
 | Source code                             | https://github.com/ARGOeu                                             |
 | Issue tracker for developers            | https://github.com/ARGOeu                                             |
 | License                                 | Apache 2.0                                                            |
-| Privacy Policy                          | https://argo.egi.eu/egi/policies                                      |
+| Privacy Policy                          | https://argo.egi.eu/egi/Critical/policies                             |
 
 <!-- markdownlint-enable no-inline-html no-bare-urls -->
