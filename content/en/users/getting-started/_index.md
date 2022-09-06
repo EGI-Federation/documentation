@@ -36,8 +36,7 @@ requirements.
 
 {{% alert title="Tip" color="info" %}} See also an
 [overview](https://www.egi.eu/federation/egi-federated-cloud/the-egi-federated-cloud-architecture/)
-of the EGI FedCloud architecture.
-{{% /alert %}}
+of the EGI FedCloud architecture. {{% /alert %}}
 
 ## Accessing resources
 
@@ -47,26 +46,28 @@ authentication and authorization based on
 [X.509 certificates](../aai/check-in/vos/voms/).
 
 {{% alert title="Note" color="info" %}} Some services still rely on X.509
-certificates, e.g. [High Throughput Compute](../compute/high-throughput-compute).
-{{% /alert %}}
+certificates, e.g.
+[High Throughput Compute](../compute/high-throughput-compute). {{% /alert %}}
 
-**EGI uses [Virtual Organisations](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
-(VOs) to control access to resources**. VOs are fully managed by research communities, allowing
-communitites to manage their users and grant access to their services and
-resources. This means communities can either own their resources and use EGI
-services to share (federate) them, or can use the resources available in the EGI
-infrastructure for their scientific needs.
+**EGI uses
+[Virtual Organisations](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
+(VOs) to control access to resources**. VOs are fully managed by research
+communities, allowing communitites to manage their users and grant access to
+their services and resources. This means communities can either own their
+resources and use EGI services to share (federate) them, or can use the
+resources available in the EGI infrastructure for their scientific needs.
 
 Before users can access an EGI service, they have to:
 
 1. Obtain a supported ID, by signing up with either
    [EGI Check-in](../aai/check-in/signup) directly, or with one of the community
    identity providers from the EGI infrastructure.
-1. [Enroll into one VO](../aai/check-in/joining-virtual-organisation/). Users need
-   to be part of a VO before using EGI services. Explore the list of available
-   VOs in the [Operations Portal](https://operations-portal.egi.eu/vo/a/list).
-1. Authenticate to [EGI Check-in](../aai/check-in) to obtain an OAuth2 access token
-   (and optionally a refresh token).
+1. [Enroll into one VO](../aai/check-in/joining-virtual-organisation/). Users
+   need to be part of a VO before using EGI services. Explore the list of
+   available VOs in the
+   [Operations Portal](https://operations-portal.egi.eu/vo/a/list).
+1. Authenticate to [EGI Check-in](../aai/check-in) to obtain an OAuth2 access
+   token (and optionally a refresh token).
 1. Manage or use the service by leveraging the access token, either implicitly
    (web interfaces and dashboards usually hide this from users) or explicitly
    (e.g. when using [command-line tools](cli)).
@@ -89,14 +90,15 @@ EGI services use the following types of access conditions:
 - **Wide access** - Users can freely access the service. Login may be required
   but it is possible with various institutional accounts (through
   [EduGAIN](https://edugain.org)), or with social accounts (e.g. Google). For
-  example you can [create a test Virtual Machine](../tutorials/create-your-first-virtual-machine/)
+  example you can
+  [create a test Virtual Machine](../tutorials/create-your-first-virtual-machine/)
   or launch a [Jupyter Notebook](../dev-env/notebooks/).
 - **Policy based** - Users are granted access based on specific policies defined
   by the service providers. Access needs to be requested, and will be checked
   for such services. Example: Compute resources and tools allocated to
   researchers in medical imaging ([Biomed VO](http://lsgc.org/biomed.html)).
 - **Pay-for-use** - Services are provided for a fee. Example:
-  [FitSM In-house course](https://www.egi.eu/services/fitsm-training/in-house-training/)
+  [FitSM Training](https://www.egi.eu/services/fitsm-training)
 
 The EGI user community support team handles access requests (orders) for the
 _Policy based_ and _Pay-for-use_ access modes. They will respond to the request
@@ -119,8 +121,8 @@ When EGI is able to support a request for resources, it can do so in two ways:
 
 1. **We grant you access to an existing service**, for example to compute
    resource pools (Virtual Organisations) that already exist in EGI for specific
-   scientific disciplines or for researchers in specific regions. You can
-   browse these in the
+   scientific disciplines or for researchers in specific regions. You can browse
+   these in the
    [EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list). If there
    is a suitable VO, we help you join it and use its services.
 1. **We create a new VO for your community** when none of the existing resource
@@ -188,21 +190,14 @@ The grant to run applications is initially valid for 6 months and can be
 extended/renewed upon request. These resources are delivered
 [through the vo.access.egi.eu VO](https://documents.egi.eu/public/ShowDocument?docid=2773).
 
-You can manage those resources via [command-line](cli) or any of the
-dashboards of the EGI Cloud: the [VMOps dashboard](../compute/cloud-compute/monitor/)
-and the [IM dashboard](../compute/orchestration/im/dashboard/).
+You can manage those resources via [command-line](cli) or any of the dashboards
+of the EGI Cloud: the [VMOps dashboard](../compute/cloud-compute/monitor/) and
+the [IM dashboard](../compute/orchestration/im/dashboard/).
 
-You can also easily access scientific applications:
-
-- [Chipster](https://marketplace.egi.eu/applications-on-demand/68-chipster.html)
-  a user-friendly analysis software for high-throughput data. It contains over
-  300 analysis tools for next generation sequencing (NGS), microarray,
-  proteomics and sequence data. The application is available through the Science
-  Software on Demand Service (SSoD). You can access the
-  [EGI Chipster instace](https://chipster.fedcloud-tf.fedcloud.eu/)
-- [EC3](../compute/orchestration/ec3) has a list of
-  [applications](../compute/orchestration/ec3/apps/) that you can easily start from the
-  [EC3 portal](https://servproject.i3m.upv.es/ec3-ltos/index.php)
+You can also easily access scientific applications,
+[EC3](../compute/orchestration/ec3) has a list of
+[applications](../compute/orchestration/ec3/apps/) that you can easily start
+from the [EC3 portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
 
 ## Unused resources
 
