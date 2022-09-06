@@ -44,21 +44,21 @@ Firstly, the RC will be asked to read, understand, and accept:
   fulfilled and enforced.
 
 Secondly, the RC should be registered in the EGI
-[Configuration Database](../../../../internal/configuration-database): the
+[Configuration Database](../../../internal/configuration-database): the
 provided information, from the generic contacts and roles of people to the
 service endpoints details, is needed to trigger the daily operations of other
 services and activities provided by the EGI Infrastructure such as the
-[Monitoring](../../../../internal/monitoring) of the resources, the
-[Accounting](../../../../internal/accounting), the
-[Support](../../../../internal/helpdesk), and the
-[Security](../../../../internal/security-coordination) activities.
+[Monitoring](../../../internal/monitoring) of the resources, the
+[Accounting](../../../internal/accounting), the
+[Support](../../../internal/helpdesk), and the
+[Security](../../../internal/security-coordination) activities.
 
 ![Diagram of the RCs status flow](SiteStatusFlow.png)
 
 Once the entry in the Configuration Database is complete, the RP changes the RC
 status from “Candidate” to “Uncertified”, and the certification procedure can
 start: it comprises a
-[series of technical controls](../../../operations-manuals/howto04_site_certification_manual_tests)
+[series of technical controls](../../operations-manuals/howto04_site_certification_manual_tests/)
 to verify that the provided services work according to the expectations defined
 in the RC OLA. Any identified issue is notified by the RP operators to the RC
 and investigated until its solution.
@@ -80,7 +80,7 @@ in the management and oversight of the infrastructure.
 As defined in the RC OLA, the RC will handle
 [incidents](https://confluence.egi.eu/display/EGIG/Incident) and
 [service requests](https://confluence.egi.eu/display/EGIG/Service+request)
-registered as tickets in the [EGI Helpdesk](./../../../../internal/helpdesk)
+registered as tickets in the [EGI Helpdesk](../../../internal/helpdesk)
 service, with the expectation to acknowledge and process any notified issue,
 within the agreed response time associated with the priority of the ticket.
 
@@ -153,7 +153,7 @@ vulnerability. The status is closely monitored by the security team and
 accessible to the affected RCs.
 
 Using this information correlated with the one from
-[Pakiti](../../../../internal/security-coordination/monitoring/pakiti), the
+[Pakiti](../../../internal/security-coordination/monitoring/pakiti), the
 patch management service collecting information about the patches deployed at
 the various High Throughput Compute RCs, the Incident Response Task Force (IRTF)
 on duty Security Officer will open tickets against the impacted sites according
