@@ -43,10 +43,9 @@ resources.&lt;/p>
 &lt;/ul>
 &lt;p>The IaaS capabilities (VM, block storage, network management, etc.) must be
 provided via community agreed APIs
-(&lt;a href="https://docs.openstack.org/wallaby/api/">OpenStack&lt;/a> and/or
-&lt;a href="http://www.occi-wg.org/">OCCI&lt;/a> are supported at the moment) that allow
-integration with &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> for authentication and
-authorisation of users.&lt;/p>
+(&lt;a href="https://docs.openstack.org/wallaby/api/">OpenStack&lt;/a> is supported at the
+moment) that allow integration with &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> for
+authentication and authorisation of users.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Those providers that limit the
@@ -106,7 +105,6 @@ service types are avialable:&lt;/p>
 &lt;li>&lt;code>org.openstack.nova&lt;/code>&lt;/li>
 &lt;li>&lt;code>org.openstack.swift&lt;/code>&lt;/li>
 &lt;li>&lt;code>eu.egi.cloud.accounting&lt;/code>&lt;/li>
-&lt;li>&lt;code>eu.egi.cloud.vm-management.occi&lt;/code>&lt;/li>
 &lt;li>&lt;code>eu.egi.cloud.vm-metadata.marketplace&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>All providers &lt;strong>must&lt;/strong> enter cloud service endpoints into the Configuration
@@ -558,15 +556,10 @@ via &lt;a href="https://argo.egi.eu/">ARGO&lt;/a>. Specific probes to check func
 availability of services must be provided by service developers.&lt;/p>
 &lt;p>The current set of probes used for monitoring IaaS resources consists of:&lt;/p>
 &lt;ul>
-&lt;li>OCCI probes (&lt;code>eu.egi.cloud.OCCI-VM&lt;/code> and &lt;code>eu.egi.cloud.OCCI-Context&lt;/code>): OCCI-VM
-creates an instance of a given image by using OCCI, checks its status and
-deletes it afterwards. OCCI-Context checks that the OCCI interfaces correctly
-supports the standard and the FedCloud contextualization extension.&lt;/li>
 &lt;li>Accounting probe (&lt;code>eu.egi.cloud.APEL-Pub&lt;/code>): Checks if the cloud resource is
 publishing data to the Accounting repository&lt;/li>
-&lt;li>TCP checks (&lt;code>org.nagios.Broker-TCP&lt;/code>, &lt;code>org.nagios.CDMI-TCP&lt;/code>,
-&lt;code>org.nagios.OCCI-TCP&lt;/code> and &lt;code>org.nagios.CloudBDII-Check&lt;/code>): Basic TCP checks for
-services.&lt;/li>
+&lt;li>TCP checks (&lt;code>org.nagios.Broker-TCP&lt;/code>, &lt;code>org.nagios.CDMI-TCP&lt;/code>, and
+&lt;code>org.nagios.CloudBDII-Check&lt;/code>): Basic TCP checks for services.&lt;/li>
 &lt;li>VM Marketplace probe (&lt;code>eu.egi.cloud.AppDB-Update&lt;/code>): gets a predetermined image
 list from AppDB and checks its update interval.&lt;/li>
 &lt;li>Perun probe (&lt;code>eu.egi.cloud.Perun-Check&lt;/code>): connects to the server and checks
@@ -643,10 +636,10 @@ including resources not based on OpenStack deployments, check out the
 -->
 &lt;h2 id="command-line-tools">Command-line tools&lt;/h2>
 &lt;p>The various &lt;a href="https://www.egi.eu/services/">public EGI services&lt;/a> can be managed
-and used/accessed with a wide variety of command-line interface (CLI) tools.
-The documentation of each service contains a summary of the CLIs that can be
-used with that service, together with recommendations on which one to use in
-what context.&lt;/p>
+and used/accessed with a wide variety of command-line interface (CLI) tools. The
+documentation of each service contains a summary of the CLIs that can be used
+with that service, together with recommendations on which one to use in what
+context.&lt;/p>
 &lt;h2 id="the-fedcloud-client">The FedCloud client&lt;/h2>
 &lt;p>The &lt;a href="https://fedcloudclient.fedcloud.eu/index.html">FedCloud client&lt;/a> is a
 high-level Python package for a command-line client designed for interaction
@@ -662,13 +655,15 @@ command-line interface to use with most EGI services.
 allows checking validity of access tokens and listing
 &lt;a href="../../aai/check-in/vos">Virtual Organisations&lt;/a> (VOs) of a token&lt;/li>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.endpoint">&lt;strong>Endpoint&lt;/strong>&lt;/a>
-can search endpoints in the &lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>
-and extract site-specific information from unscoped/scoped tokens&lt;/li>
+can search endpoints in the
+&lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a> and extract
+site-specific information from unscoped/scoped tokens&lt;/li>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.sites">&lt;strong>Sites&lt;/strong>&lt;/a>
 allows management of site configurations&lt;/li>
 &lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/fedcloudclient.html#module-fedcloudclient.openstack">&lt;strong>OpenStack&lt;/strong>&lt;/a>
 can perform commands on &lt;a href="../openstack">OpenStack services&lt;/a> deployed to sites&lt;/li>
-&lt;li>&lt;strong>EC3&lt;/strong> allows deploying &lt;a href="../../compute/orchestration/ec3">elastic cloud compute clusters&lt;/a>&lt;/li>
+&lt;li>&lt;strong>EC3&lt;/strong> allows deploying
+&lt;a href="../../compute/orchestration/ec3">elastic cloud compute clusters&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="installation">Installation&lt;/h3>
 &lt;p>The FedCloud client can be installed with the &lt;code>pip3&lt;/code> Python package manager
@@ -694,20 +689,18 @@ Windows
 id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
 &lt;p>To install the FedCloud client:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ pip3 install fedcloudclient
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with
-its required packages (like &lt;em>openstackclient&lt;/em>). It will also create
-executables &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;code>bin&lt;/code>
-folder corresponding to your current Python execution environment
-(&lt;code>$VIRTUAL_ENV/bin&lt;/code> for executing pip3 in a Python virtual environment,
-&lt;code>~/.local/bin&lt;/code> for executing pip3 as user (with &lt;code>--user&lt;/code> option), and
-&lt;code>/usr/local/bin&lt;/code> when executing pip3 as root).&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with its
+required packages (like &lt;em>openstackclient&lt;/em>). It will also create executables
+&lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;code>bin&lt;/code> folder corresponding to
+your current Python execution environment (&lt;code>$VIRTUAL_ENV/bin&lt;/code> for executing pip3
+in a Python virtual environment, &lt;code>~/.local/bin&lt;/code> for executing pip3 as user (with
+&lt;code>--user&lt;/code> option), and &lt;code>/usr/local/bin&lt;/code> when executing pip3 as root).&lt;/p>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
 &lt;p>As there are non-pure Python packages needed for installation, the
 &lt;a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Microsoft C++ Build Tools&lt;/a>
-is a prerequisite, make sure it&amp;rsquo;s installed with the following options
-selected:&lt;/p>
+is a prerequisite, make sure it&amp;rsquo;s installed with the following options selected:&lt;/p>
 &lt;ul>
 &lt;li>C++ CMake tools for Windows&lt;/li>
 &lt;li>C++ ATL for latest v142 build tools (x86 &amp;amp; x64)&lt;/li>
@@ -718,29 +711,28 @@ selected:&lt;/p>
 packages, please see &lt;a href="https://wiki.python.org/moin/WindowsCompilers">here&lt;/a>.&lt;/p>
 &lt;p>To install the FedCloud client:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; pip3 install fedcloudclient
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with
-its required packages (like &lt;em>openstackclient&lt;/em>). It will also create
-executables &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;code>bin&lt;/code>
-folder corresponding to your current Python execution environment.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with its
+required packages (like &lt;em>openstackclient&lt;/em>). It will also create executables
+&lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;code>bin&lt;/code> folder corresponding to
+your current Python execution environment.&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;p>Check if the installation is correct by executing the client:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud --version
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="installing-egi-core-trust-anchor-certificates">Installing EGI Core Trust Anchor certificates&lt;/h4>
-&lt;p>Some sites in the EGI infrastructure use certificates issued by
-Certificate Authorities (CAs) that are not included in the default OS
-distribution. If you receive error message &amp;ldquo;&lt;em>SSL exception connecting
-to&amp;hellip;&lt;/em>&amp;rdquo;, install the EGI Core Trust Anchor Certificates by running
-the following commands:&lt;/p>
+&lt;p>Some sites in the EGI infrastructure use certificates issued by Certificate
+Authorities (CAs) that are not included in the default OS distribution. If you
+receive error message &amp;ldquo;&lt;em>SSL exception connecting to&amp;hellip;&lt;/em>&amp;rdquo;, install the EGI Core
+Trust Anchor Certificates by running the following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ wget https://raw.githubusercontent.com/tdviet/python-requests-bundle-certs/main/scripts/install_certs.sh
 $ bash install_certs.sh
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 The above script does not work on all
-Linux distributions. Change &lt;em>python&lt;/em> to &lt;em>python3&lt;/em> in the script if needed,
-see the &lt;a href="https://github.com/tdviet/python-requests-bundle-certs#usage">README&lt;/a>
-for more details, or follow the
+Linux distributions. Change &lt;em>python&lt;/em> to &lt;em>python3&lt;/em> in the script if needed, see
+the &lt;a href="https://github.com/tdviet/python-requests-bundle-certs#usage">README&lt;/a> for
+more details, or follow the
 &lt;a href="https://github.com/tdviet/python-requests-bundle-certs/blob/main/docs/Install_certificates.md">official instructions&lt;/a>
 for installing EGI Core Trust Anchor certificates in production environments.
 &lt;/div>
@@ -775,8 +767,8 @@ Windows
 &lt;div class="tab-pane show active"
 id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
 &lt;p>To run the FedCloud client in a container, make sure
-&lt;a href="https://docs.docker.com/engine/install/#server">Docker is installed&lt;/a>,
-then run the following commands:&lt;/p>
+&lt;a href="https://docs.docker.com/engine/install/#server">Docker is installed&lt;/a>, then run
+the following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker pull tdviet/fedcloudclient
 $ docker run -it tdviet/fedcloudclient bash
 &lt;/code>&lt;/pre>&lt;/div>
@@ -784,8 +776,8 @@ $ docker run -it tdviet/fedcloudclient bash
 &lt;div class="tab-pane "
 id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
 &lt;p>To run the FedCloud client in a container, make sure
-&lt;a href="https://docs.docker.com/desktop/mac/install/">Docker is installed&lt;/a>,
-then run the following commands:&lt;/p>
+&lt;a href="https://docs.docker.com/desktop/mac/install/">Docker is installed&lt;/a>, then run
+the following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker pull tdviet/fedcloudclient
 $ docker run -it tdviet/fedcloudclient bash
 &lt;/code>&lt;/pre>&lt;/div>
@@ -793,8 +785,8 @@ $ docker run -it tdviet/fedcloudclient bash
 &lt;div class="tab-pane "
 id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;p>To run the FedCloud client in a container, make sure
-&lt;a href="https://docs.docker.com/desktop/windows/install/">Docker is installed&lt;/a>,
-then run the following commands:&lt;/p>
+&lt;a href="https://docs.docker.com/desktop/windows/install/">Docker is installed&lt;/a>, then
+run the following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; docker pull tdviet/fedcloudclient
 &amp;gt; docker run -it tdviet/fedcloudclient bash
 &lt;/code>&lt;/pre>&lt;/div>
@@ -805,33 +797,32 @@ is the same as from &lt;a href="#using-from-the-command-line">the command-line&l
 &lt;h3 id="using-from-egi-notebooks">Using from EGI Notebooks&lt;/h3>
 &lt;p>&lt;a href="../../dev-env/notebooks">EGI Notebooks&lt;/a> are integrated with access tokens so it
 simplifies using the FedCloud client. First make sure that you follow the
-&lt;a href="#installation">installation&lt;/a> steps above. Then, below are the commands that
-you need to run inside a terminal in JupyterLab:&lt;/p>
+&lt;a href="#installation">installation&lt;/a> steps above. Then, below are the commands that you
+need to run inside a terminal in JupyterLab:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>cat /var/run/secrets/egi.eu/access_token&lt;span style="color:#4e9a06">`&lt;/span>
 fedcloud token check
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Please follow instructions &lt;a href="#using-from-the-command-line">below&lt;/a> to learn
-how to use the &lt;code>fedcloud&lt;/code> command.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Please follow instructions &lt;a href="#using-from-the-command-line">below&lt;/a> to learn how to
+use the &lt;code>fedcloud&lt;/code> command.&lt;/p>
 &lt;h3 id="using-from-the-command-line">Using from the command-line&lt;/h3>
 &lt;p>The FedCloud client has these subcommands:&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>fedcloud token&lt;/strong> for checking access tokens
-(see token &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-token-commands">subcommands&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>fedcloud endpoint&lt;/strong> for querying the Configuration Database
-(see endpoint &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-endpoint-commands">subcommands&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>fedcloud site&lt;/strong> for manipulating site configurations
-(see site &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-site-commands">subcommands&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>fedcloud openstack&lt;/strong> or &lt;strong>fedcloud openstack-int&lt;/strong> for performing
-OpenStack commands on sites
-(see openstack &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-openstack-commands">subcommands&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>fedcloud ec3&lt;/strong> for provisioning elastic cloud compute clusters
-(see cluster &lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-ec3-commands">subcommands&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>fedcloud token&lt;/strong> for checking access tokens (see token
+&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-token-commands">subcommands&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>fedcloud endpoint&lt;/strong> for querying the Configuration Database (see endpoint
+&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-endpoint-commands">subcommands&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>fedcloud site&lt;/strong> for manipulating site configurations (see site
+&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-site-commands">subcommands&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>fedcloud openstack&lt;/strong> or &lt;strong>fedcloud openstack-int&lt;/strong> for performing OpenStack
+commands on sites (see openstack
+&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-openstack-commands">subcommands&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>fedcloud ec3&lt;/strong> for provisioning elastic cloud compute clusters (see cluster
+&lt;a href="https://fedcloudclient.fedcloud.eu/usage.html#fedcloud-ec3-commands">subcommands&lt;/a>)&lt;/li>
 &lt;/ul>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 See also the
-&lt;a href="https://fedcloudclient.fedcloud.eu/index.html">complete documentation&lt;/a>
-or read and contribute to the
-&lt;a href="https://github.com/EGI-Federation/fedcloudclient">source code&lt;/a>.
+&lt;a href="https://fedcloudclient.fedcloud.eu/index.html">complete documentation&lt;/a> or read
+and contribute to the &lt;a href="https://github.com/tdviet/fedcloudclient">source code&lt;/a>.
 &lt;/div>
 &lt;p>Performing any OpenStack command on any site requires only three options: the
 site, the VO and the command. For example, to list virtual machine (VM) images
@@ -841,10 +832,10 @@ the following command:&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="authentication">Authentication&lt;/h4>
 &lt;p>Many of the FedCloud client commands need access tokens for authentication.
 Users can choose whether to provide access tokens directly (via option
-&lt;code>--oidc-access-token&lt;/code>), or generate them on the fly with &lt;strong>oidc-agent&lt;/strong>
-(via option &lt;code>--oidc-agent-account&lt;/code>) or from refresh tokens (via option
-&lt;code>--oidc-refresh-token&lt;/code>, which must be provided together
-with option &lt;code>--oidc-client-id&lt;/code> and option &lt;code>--oidc-client-secret&lt;/code>).&lt;/p>
+&lt;code>--oidc-access-token&lt;/code>), or generate them on the fly with &lt;strong>oidc-agent&lt;/strong> (via
+option &lt;code>--oidc-agent-account&lt;/code>) or from refresh tokens (via option
+&lt;code>--oidc-refresh-token&lt;/code>, which must be provided together with option
+&lt;code>--oidc-client-id&lt;/code> and option &lt;code>--oidc-client-secret&lt;/code>).&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 Users of EGI Check-in can get a Check-in
@@ -855,9 +846,10 @@ access tokens for their FedCloud client, by visiting
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 To provide access tokens automatically
-via &lt;strong>oidc-agent&lt;/strong>, follow &lt;a href="https://indigo-dc.gitbook.io/oidc-agent/user/oidc-gen/provider/egi/">these instructions&lt;/a>
-to register a client, then pass the client name (account name used during
-client registration) to the FedCloud client via option &lt;code>--oidc-agent-account&lt;/code>.
+via &lt;strong>oidc-agent&lt;/strong>, follow
+&lt;a href="https://indigo-dc.gitbook.io/oidc-agent/user/oidc-gen/provider/egi/">these instructions&lt;/a>
+to register a client, then pass the client name (account name used during client
+registration) to the FedCloud client via option &lt;code>--oidc-agent-account&lt;/code>.
 &lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
@@ -871,8 +863,8 @@ considered insecure and will be disabled in the near future in favor of using
 FedCloud client will try to get an access token from the &lt;strong>oidc-agent&lt;/strong> first,
 then obtain one using the refresh token.&lt;/p>
 &lt;p>The default authentication protocol is &lt;code>openid&lt;/code>. Users can change the default
-protocol via the option &lt;code>--openstack-auth-protocol&lt;/code>. However, sites may have
-the protocol fixed in the site configuration (e.g. &lt;code>oidc&lt;/code> for the site
+protocol via the option &lt;code>--openstack-auth-protocol&lt;/code>. However, sites may have the
+protocol fixed in the site configuration (e.g. &lt;code>oidc&lt;/code> for the site
 &lt;em>INFN-CLOUD-BARI&lt;/em>).&lt;/p>
 &lt;p>The default OIDC identity provider is EGI Check-in
 (&lt;a href="https://aai.egi.eu/auth/realms/egi">https://aai.egi.eu/auth/realms/egi&lt;/a>). Users can set another OIDC identity
@@ -880,7 +872,8 @@ provider via option &lt;code>--oidc-url&lt;/code>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Remember to also set the identity
-provider&amp;rsquo;s name accordingly for OpenStack commands, by using the option &lt;code>--openstack-auth-provider&lt;/code>.
+provider&amp;rsquo;s name accordingly for OpenStack commands, by using the option
+&lt;code>--openstack-auth-provider&lt;/code>.
 &lt;/div>
 &lt;h4 id="environment-variables">Environment variables&lt;/h4>
 &lt;p>Most of the FedCloud client options can be set via environment variables:&lt;/p>
@@ -963,8 +956,8 @@ sites in the EGI infrastructure, use &lt;code>ALL_SITES&lt;/code> for the &lt;co
 &lt;/table>
 &lt;h4 id="getting-help">Getting help&lt;/h4>
 &lt;p>The FedCloud client can display help for the commands and subcommands it
-supports. Try running the following command to see the commands supported
-by the FedCloud client:&lt;/p>
+supports. Try running the following command to see the commands supported by the
+FedCloud client:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud --help
 Usage: fedcloud &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>OPTIONS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> COMMAND &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>ARGS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>...
 Options:
@@ -1002,9 +995,8 @@ egi.eu&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-Most commands support multiple levels
-of subcommands, you can get help for all of them using the same principle as
-above.
+Most commands support multiple levels of
+subcommands, you can get help for all of them using the same principle as above.
 &lt;/div>
 &lt;h3 id="using-from-python">Using from Python&lt;/h3>
 &lt;p>The FedCloud client can be used as a library for developing other services and
@@ -1055,7 +1047,8 @@ $ fedcloud site show-project-id
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;51f736d36ce34b9ebdf196cfcabd24ee&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the same command but set environment variables with the returned values:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command returned:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command
+returned:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_AUTH_URL&lt;/span>
 https://cloud.ui.savba.sk:5000/v3/
 $ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_PROJECT_ID&lt;/span>
@@ -1073,7 +1066,8 @@ id="tabs-12-1" role="tabpanel" aria-labelled-by="tabs-12-1-tab">
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>If you copy the returned output and execute it as commands in a command prompt:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
 &amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>51f736d36ce34b9ebdf196cfcabd24ee
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command returned:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command
+returned:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; &lt;span style="color:#204a87">set&lt;/span> OS_AUTH_URL
 &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
 &amp;gt; &lt;span style="color:#204a87">set&lt;/span> OS_PROJECT_ID
@@ -1090,7 +1084,8 @@ id="tabs-12-2" role="tabpanel" aria-labelled-by="tabs-12-2-tab">
 &lt;span style="color:#000">$Env:OS_PROJECT_ID&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;51f736d36ce34b9ebdf196cfcabd24ee&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the same command but set environment variables with the returned values:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">site&lt;/span> &lt;span style="color:#204a87">show-project&lt;/span>&lt;span style="color:#000">-id&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Out-String&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Invoke-Expression&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command returned:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command
+returned:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:OS_AUTH_URL&lt;/span>
 &lt;span style="color:#000">https&lt;/span>&lt;span style="color:#a40000">:&lt;/span>&lt;span style="color:#000;font-weight:bold">//&lt;/span>&lt;span style="color:#000">cloud&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ui&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">savba&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">sk&lt;/span>&lt;span style="color:#a40000">:&lt;/span>&lt;span style="color:#000">5000&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">v3&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>
 &lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:OS_PROJECT_ID&lt;/span>
@@ -1107,8 +1102,8 @@ processing of the command output.&lt;/p>
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 JSON output can be processed with a tool
 like &lt;a href="https://stedolan.github.io/jq/">jq&lt;/a>, which can slice, filter, map, and
-transform structured data. It acts as a filter: it takes an input and produces an
-output. Check out the &lt;a href="https://stedolan.github.io/jq/tutorial/">tutorial&lt;/a> for
+transform structured data. It acts as a filter: it takes an input and produces
+an output. Check out the &lt;a href="https://stedolan.github.io/jq/tutorial/">tutorial&lt;/a> for
 using it to extract data from JSON sources.
 &lt;/div>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
@@ -1151,10 +1146,10 @@ m1.medium
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-Note that &lt;code>--json-output&lt;/code> option can
-be used only with those OpenStack commands that have outputs. Using this
-parameter with commands with no output (e.g. setting properties) will generate
-an unsupported parameter error.
+Note that &lt;code>--json-output&lt;/code> option can be
+used only with those OpenStack commands that have outputs. Using this parameter
+with commands with no output (e.g. setting properties) will generate an
+unsupported parameter error.
 &lt;/div>
 &lt;!--
 // jscpd:ignore-end

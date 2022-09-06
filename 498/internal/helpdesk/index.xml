@@ -115,8 +115,8 @@ check whether support privileges can be granted. The user will receive an email
 from the GGUS team (usually) confirming their supporter privileges.&lt;/p>
 &lt;h3 id="registration-with-the-egi-aai-account">Registration with the EGI AAI account&lt;/h3>
 &lt;p>Users who do not have a valid X509 certificate can access GGUS via
-&lt;a href="../../../users/check-in">EGI Check-in&lt;/a>. For getting support privileges the user
-needs to be member of the
+&lt;a href="../../../users/aai/check-in">EGI Check-in&lt;/a>. For getting support privileges the
+user needs to be member of the
 &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">ggus-supporters&lt;/a> group
 in EGI Check-in. However the user should fill in the
 &lt;a href="https://ggus.eu/?mode=register_info">registration form&lt;/a> for creating an account

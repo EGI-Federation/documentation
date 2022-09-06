@@ -17,7 +17,7 @@ the Research Infrastructure Provider (RP) existing in its country. A RP is a
 legal organisation, part of the EGI Resource Infrastructure, responsible for
 managing and operating a number of operational services at national level,
 supporting EGI RCs and user communities. Please have a look at the
-&lt;a href="../../operations-start-guide">Operations Start Guide&lt;/a> to get familiar with the
+&lt;a href="../../operations-manuals/operations-start-guide/">Operations Start Guide&lt;/a> to get familiar with the
 terms mentioned above, and to have a complete picture of the several actors
 participating in our landscape.&lt;/p>
 &lt;p>The RP operators are going to guide and support the RC during the registration
@@ -34,19 +34,19 @@ to guarantee that all the security aspects with the service delivery are
 fulfilled and enforced.&lt;/li>
 &lt;/ul>
 &lt;p>Secondly, the RC should be registered in the EGI
-&lt;a href="../../../../internal/configuration-database">Configuration Database&lt;/a>: the
+&lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a>: the
 provided information, from the generic contacts and roles of people to the
 service endpoints details, is needed to trigger the daily operations of other
 services and activities provided by the EGI Infrastructure such as the
-&lt;a href="../../../../internal/monitoring">Monitoring&lt;/a> of the resources, the
-&lt;a href="../../../../internal/accounting">Accounting&lt;/a>, the
-&lt;a href="../../../../internal/helpdesk">Support&lt;/a>, and the
-&lt;a href="../../../../internal/security-coordination">Security&lt;/a> activities.&lt;/p>
+&lt;a href="../../../internal/monitoring">Monitoring&lt;/a> of the resources, the
+&lt;a href="../../../internal/accounting">Accounting&lt;/a>, the
+&lt;a href="../../../internal/helpdesk">Support&lt;/a>, and the
+&lt;a href="../../../internal/security-coordination">Security&lt;/a> activities.&lt;/p>
 &lt;p>&lt;img src="SiteStatusFlow.png" alt="Diagram of the RCs status flow">&lt;/p>
 &lt;p>Once the entry in the Configuration Database is complete, the RP changes the RC
 status from “Candidate” to “Uncertified”, and the certification procedure can
 start: it comprises a
-&lt;a href="../../../operations-manuals/howto04_site_certification_manual_tests">series of technical controls&lt;/a>
+&lt;a href="../../operations-manuals/howto04_site_certification_manual_tests/">series of technical controls&lt;/a>
 to verify that the provided services work according to the expectations defined
 in the RC OLA. Any identified issue is notified by the RP operators to the RC
 and investigated until its solution.&lt;/p>
@@ -63,7 +63,7 @@ in the management and oversight of the infrastructure.&lt;/p>
 &lt;p>As defined in the RC OLA, the RC will handle
 &lt;a href="https://confluence.egi.eu/display/EGIG/Incident">incidents&lt;/a> and
 &lt;a href="https://confluence.egi.eu/display/EGIG/Service+request">service requests&lt;/a>
-registered as tickets in the &lt;a href="./../../../../internal/helpdesk">EGI Helpdesk&lt;/a>
+registered as tickets in the &lt;a href="../../../internal/helpdesk">EGI Helpdesk&lt;/a>
 service, with the expectation to acknowledge and process any notified issue,
 within the agreed response time associated with the priority of the ticket.&lt;/p>
 &lt;p>The response time is defined by the Quality of
@@ -125,7 +125,7 @@ identify on High Throughput Compute RCs if their resources are vulnerable to the
 vulnerability. The status is closely monitored by the security team and
 accessible to the affected RCs.&lt;/p>
 &lt;p>Using this information correlated with the one from
-&lt;a href="../../../../internal/security-coordination/monitoring/pakiti">Pakiti&lt;/a>, the
+&lt;a href="../../../internal/security-coordination/monitoring/pakiti">Pakiti&lt;/a>, the
 patch management service collecting information about the patches deployed at
 the various High Throughput Compute RCs, the Incident Response Task Force (IRTF)
 on duty Security Officer will open tickets against the impacted sites according
@@ -171,7 +171,7 @@ pay-for-use model.&lt;/p>
 &lt;p>&lt;img src="SLAs-Picture.png" alt="Relationship between SLA and OLA">&lt;/p>
 &lt;p>The result of the negotiation is a ‘Service Level Agreement’ (SLA), and several
 ‘Operation Level Agreements’ (OLA), one with each contributing provider. (See
-[https://documents.egi.eu/public/ListBy?topicid=65](SLAs-OLAs examples).)&lt;/p>
+&lt;a href="https://documents.egi.eu/public/ListBy?topicid=65">SLAs-OLAs examples&lt;/a>.)&lt;/p>
 &lt;p>SLAs and OLAs are typically signed for at least 1 year, and are automatically
 renewed, as long as the provider(s) or the customer do not express a decision to
 terminate the Agreement at least a month before the expiration date.&lt;/p>
@@ -217,7 +217,7 @@ Related procedure:
 of the integration of the new piece of middleware with the infrastructure is
 reviewed and assessed.&lt;/p>
 &lt;p>After the creation of the request in the
-&lt;a href="../../../../internal/helpdesk">EGI Helpdesk&lt;/a>, with details about the
+&lt;a href="../../../internal/helpdesk">EGI Helpdesk&lt;/a>, with details about the
 technology, the contacts, the expected customers, and the motivation, the
 integration steps cover the following areas (where possible, steps can be done
 in parallel):&lt;/p>
@@ -235,16 +235,16 @@ Management Database (CMDB)&lt;/li>
 &lt;li>Information System: evaluating if the new technology should publish
 information in the Information System according to the
 &lt;a href="http://www.ogf.org/documents/GFD.147.pdf">GLUE Schema&lt;/a>.&lt;/li>
-&lt;li>&lt;a href="../../../../internal/monitoring">Monitoring&lt;/a>: the new technology should allow
+&lt;li>&lt;a href="../../../internal/monitoring">Monitoring&lt;/a>: the new technology should allow
 external monitoring. If particular aspects of the technology need to be
 monitored, specific monitoring probes should be provided by the TPs and
 deployed on the EGI Monitoring service.&lt;/li>
 &lt;li>Support: the Support Unit where incidents and service requests will be
 addressed needs to be defined in the
-&lt;a href="../../../../internal/helpdesk">EGI Helpdesk&lt;/a>, associated to the
+&lt;a href="../../../internal/helpdesk">EGI Helpdesk&lt;/a>, associated to the
 &lt;a href="https://confluence.egi.eu/display/EGISLM/Service+Level+Target+-+Quality+of+Support">Quality of Support&lt;/a>
 defined in the UA.&lt;/li>
-&lt;li>&lt;a href="../../../../internal/accounting">Accounting&lt;/a>: the need to gather usage data,
+&lt;li>&lt;a href="../../../internal/accounting">Accounting&lt;/a>: the need to gather usage data,
 which depends on the technology itself and on the infrastructure requirements
 and will be published in the
 &lt;a href="https://accounting.egi.eu/">EGI Accounting Portal&lt;/a>.&lt;/li>
@@ -258,17 +258,17 @@ Providers and packaged for deployment as production quality services in EGI.&lt;
 be provided and may be added to the &lt;a href="https://docs.egi.eu/">EGI Documentation&lt;/a>.&lt;/li>
 &lt;li>Security: a security assessment of the software is required according to a
 number of guidelines defined by the
-&lt;a href="../../../../internal/security-coordination">EGI Security team&lt;/a>.&lt;/li>
+&lt;a href="../../../internal/security-coordination">EGI Security team&lt;/a>.&lt;/li>
 &lt;/ul></description></item><item><title>Providers: Joining as a provider for existing EGI services</title><link>/providers/joining/new-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/joining/new-provider/</guid><description>
 &lt;p>To become a provider of one of the
 &lt;a href="https://www.egi.eu/services/research/">Services for Research&lt;/a> already included
 in the EGI Portfolio, you first have to become provider of a
 &lt;a href="../federated-resource-centre">federated resource centre&lt;/a>. This first step
 typically requires you to become either an
-&lt;a href="../../../high-throughput-compute">EGI High Throughput Compute (HTC)&lt;/a> provider,
+&lt;a href="../../high-throughput-compute">EGI High Throughput Compute (HTC)&lt;/a> provider,
 by deploying Compute and Storage capabilities, or a Cloud service provider, by
 deploying OpenStack and federating it into the
-&lt;a href="../../../cloud-compute">EGI Cloud Compute&lt;/a> service.&lt;/p>
+&lt;a href="../../cloud-compute">EGI Cloud Compute&lt;/a> service.&lt;/p>
 &lt;p>Once such a foundational role is fulfilled you can configure/deploy the
 additional service within your resource centre.&lt;/p></description></item><item><title>Providers: Joining as a provider of a Core Service</title><link>/providers/joining/core-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/joining/core-service/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
@@ -296,7 +296,7 @@ Council&lt;/li>
 &lt;li>Differently from services with a distributed nature such as HTC, Cloud, and
 Storage, they cannot be ordered through the Marketplace, but they become
 available as soon as a user joins the infrastructure (e.g., the access to the
-&lt;a href="../../../../internal/helpdesk">EGI Helpdesk&lt;/a> service).&lt;/li>
+&lt;a href="../../../internal/helpdesk">EGI Helpdesk&lt;/a> service).&lt;/li>
 &lt;/ul>
 &lt;h2 id="selection-of-the-providers-and-registration">Selection of the providers and registration&lt;/h2>
 &lt;p>With the selected providers, EGI Foundation negotiates and signs an
@@ -311,10 +311,10 @@ is not already included.&lt;/p>
 regular day-to-day operation of the service, such as:&lt;/p>
 &lt;ul>
 &lt;li>registration in the
-&lt;a href="../../../../internal/configuration-database">Configuration Database&lt;/a> and
+&lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a> and
 certification;&lt;/li>
 &lt;li>definition of the Support Unit in the
-&lt;a href="../../../../internal/helpdesk">Helpdesk&lt;/a> system to handle incidents and
+&lt;a href="../../../internal/helpdesk">Helpdesk&lt;/a> system to handle incidents and
 service requests;&lt;/li>
 &lt;li>enabling of the monitoring;&lt;/li>
 &lt;li>periodic performance reports as defined in the given OLA to verify that the
