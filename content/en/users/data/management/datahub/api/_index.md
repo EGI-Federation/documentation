@@ -286,7 +286,7 @@ on file events which is described in details in the official documentation
 
 ```shell
 $ curl -N -H "X-Auth-Token: $TOKEN" \
-    -X POST "https://$HOST/api/v3/oneprovider/changes/metadata/$SPACE_ID" \
+    -X POST "https://$ONEPROVIDER_HOST/api/v3/oneprovider/changes/metadata/$SPACE_ID" \
     -H "Content-Type: application/json" -d "@./changes_req.json"
 ```
 
