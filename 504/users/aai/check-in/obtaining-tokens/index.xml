@@ -81,7 +81,7 @@ yourself. &lt;img src="check-in-token-login.png" alt="EGI Check-in Token Portal 
 &lt;li>The command to get user&amp;rsquo;s information from userinfo endpoint&lt;/li>
 &lt;li>Obtain a Refresh Token (more info in
 &lt;a href="#obtain-a-refresh-token">Obtain a Refresh Token&lt;/a> section)&lt;/li>
-&lt;li>Manage your active Access/Refresh Tokens&lt;/li>
+&lt;li>View and manage the applications you have given permissions&lt;/li>
 &lt;/ol>
 &lt;/li>
 &lt;/ol>
