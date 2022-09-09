@@ -24,7 +24,7 @@ the steps below:
    2. The command to get user's information from userinfo endpoint
    3. Obtain a Refresh Token (more info in
       [Obtain a Refresh Token](#obtain-a-refresh-token) section)
-   4. Manage your active Access/Refresh Tokens
+   4. View and manage the applications you have given permissions
 
 ## Obtain a Refresh Token
 
