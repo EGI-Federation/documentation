@@ -75,6 +75,10 @@ the case, please try reconfiguring the
 for the docker daemon:
 
 ```shell
+# check current MTU value
+sudo docker network inspect bridge  | grep mtu | awk '{print $2}'
+
+# the default 1500 value does not work properly
 # edit docker configuration
 vi /etc/docker/daemon.json
 
