@@ -64,8 +64,9 @@ meant to be exhaustive, further research is welcome. {{% /alert %}}
   and tools to ensure that your software has capabilities to defend against
   common attacks.
 
-#### Suggested references
+#### Suggested material and references
 
+- [Microsoft® Open Source Software (OSS) Secure Supply Chain (SSC) Framework Simplified Requirements](https://github.com/microsoft/oss-ssc-framework/blob/main/specification/framework.md)
 - [Secure Software Development Framework | CSRC](https://csrc.nist.gov/Projects/ssdf)
 - [NIST: Cybersecurity](https://www.nist.gov/cybersecurity)
 - [Cybersecurity & Infrastructure Security Agency](https://www.cisa.gov/cybersecurity)
