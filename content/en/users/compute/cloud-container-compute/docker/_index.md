@@ -86,6 +86,7 @@ vi /etc/docker/daemon.json
 # then restart docker
 sudo systemctl restart docker
 ```
+
 We experienced this issue when trying to install a pip dependency using
 `continuumio/miniconda3` container from
 [docker hub](https://hub.docker.com/r/continuumio/miniconda3).
