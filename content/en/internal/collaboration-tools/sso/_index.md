@@ -20,11 +20,12 @@ intended to access the [EGI Collaboration Tools](../../collaboration-tools).
 - Central Identity Provider allowing to access EGI Collaboration Tools
 - Group management
 - Synchronisation of groups with other EGI Collaboration Tools
-- Linking of X.509 certificate DN to authenticate using a client certificate
+- Linking of X.509 certificate Distinguished Name (DN) to authenticate using a
+  client certificate
 
 ## Linking an X.509 certificate to an EGI SSO account
 
-1. Open https://sso.egi.eu/admin/user
+1. Open [the EGI SSO user management page](https://sso.egi.eu/admin/user)
 1. Select your new certificate to authenticate with it
 1. Complete the login process using your username and password
 1. Once logged, your new DN will be linked to your user account
