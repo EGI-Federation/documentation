@@ -18,7 +18,7 @@ intended to access the [EGI Collaboration Tools](../../collaboration-tools).
 ## Features
 
 - Central Identity Provider allowing to access EGI Collaboration Tools
-- SSO group management
+- Group management
 - Synchronisation of groups with other EGI Collaboration Tools
 - Linking of X.509 certificate DN to authenticate using a client certificate
 
