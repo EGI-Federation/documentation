@@ -9,11 +9,9 @@ description: "EGI SSO usage"
 intended to access the [EGI Collaboration Tools](../../collaboration-tools).
 
 > For most services people should look into using federated authentication via
-> [EGI Check-in](../../../users/aai/check-in).
-
-> Still, for some services not yet integrated with Check-in, an EGI SSO account
-> should be used, in that case you can
-> [create an EGI SSO account](https://sso.egi.eu/admin/email).
+> [EGI Check-in](../../../users/aai/check-in). Still, for some services not yet
+> integrated with Check-in, an EGI SSO account should be used, in that case you
+> can [create an EGI SSO account](https://sso.egi.eu/admin/email).
 
 ## Features
 
