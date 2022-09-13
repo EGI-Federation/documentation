@@ -24,10 +24,10 @@ intended to access the [EGI Collaboration Tools](../../collaboration-tools).
 
 ## Linking an X.509 certificate to an EGI SSO account
 
-- Opening https://sso.egi.eu/admin/user
-- Selecting your new certificate to authenticate with it
-- Completing the login process using your username and password
-- Once logged, your new DN will be linked to your user account
+1. Open https://sso.egi.eu/admin/user
+1. Select your new certificate to authenticate with it
+1. Complete the login process using your username and password
+1. Once logged, your new DN will be linked to your user account
 
 ## Updating the DN of a certificate linked to a given EGI SSO account
 
