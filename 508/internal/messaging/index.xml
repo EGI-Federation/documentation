@@ -1,0 +1,66 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Messaging service</title><link>/internal/messaging/</link><description>Recent content in Messaging service on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/messaging/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Service information</title><link>/internal/messaging/service-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/messaging/service-information/</guid><description>
+&lt;h2 id="identity-card">Identity card&lt;/h2>
+&lt;!-- markdownlint-disable no-inline-html no-bare-urls -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Name&lt;/td>
+&lt;td>Messaging service&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Description&lt;/td>
+&lt;td>Facilitate messages exchange between EGI services&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>URL&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Support Email&lt;/td>
+&lt;td>&lt;code>argo-ggus-support&lt;/code> at &lt;code>grnet.gr&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="../../helpdesk">Helpdesk&lt;/a> Support Unit&lt;/td>
+&lt;td>&lt;strong>EGI Services and Service Components&lt;/strong> &lt;br/> I__ Messaging&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Configuration Database entry&lt;/td>
+&lt;td>&lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=429">https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=429&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Supplier&lt;/td>
+&lt;td>GRNET, SRCE&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Roadmap&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Release notes&lt;/td>
+&lt;td>&lt;a href="https://github.com/ARGOeu/argo-messaging/releases">https://github.com/ARGOeu/argo-messaging/releases&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Source code&lt;/td>
+&lt;td>&lt;a href="https://github.com/ARGOeu/argo-messaging">https://github.com/ARGOeu/argo-messaging&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Issue tracker for developers&lt;/td>
+&lt;td>&lt;a href="https://github.com/ARGOeu/argo-messaging/issues">https://github.com/ARGOeu/argo-messaging/issues&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>License&lt;/td>
+&lt;td>Apache 2.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Privacy Policy&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item></channel></rss>
