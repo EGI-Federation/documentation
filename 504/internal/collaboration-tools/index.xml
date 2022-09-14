@@ -194,7 +194,45 @@ notifications, if it&amp;rsquo;s a required feature.&lt;/p>
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --email &amp;lt;CONTACT_EMAIL&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --domain fakedomaindonotexist.egi.eu
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Other usual certbot options should also work. You may also be able to use other
-tools that can speak the ACME protocol, it should be standard.&lt;/p></description></item><item><title>Internal: Mailing lists</title><link>/internal/collaboration-tools/mailing-lists/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/collaboration-tools/mailing-lists/</guid><description>
+tools that can speak the ACME protocol, it should be standard.&lt;/p></description></item><item><title>Internal: EGI SSO</title><link>/internal/collaboration-tools/sso/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/collaboration-tools/sso/</guid><description>
+&lt;p>&lt;a href="https://sso.egi.eu">EGI SSO&lt;/a> is a legacy central Identity Provider mainly
+intended to access the &lt;a href="../../collaboration-tools">EGI Collaboration Tools&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>For most services people should look into using federated authentication via
+&lt;a href="../../../users/aai/check-in">EGI Check-in&lt;/a>. Still, for some services not yet
+integrated with Check-in, an EGI SSO account should be used, in that case you
+can &lt;a href="https://sso.egi.eu/admin/email">create an EGI SSO account&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="features">Features&lt;/h2>
+&lt;ul>
+&lt;li>Central Identity Provider allowing to access EGI Collaboration Tools&lt;/li>
+&lt;li>Group management&lt;/li>
+&lt;li>Synchronisation of groups with other EGI Collaboration Tools&lt;/li>
+&lt;li>Linking of X.509 certificate Distinguished Name (DN) to authenticate using a
+client certificate&lt;/li>
+&lt;/ul>
+&lt;h2 id="linking-an-x509-certificate-to-an-egi-sso-account">Linking an X.509 certificate to an EGI SSO account&lt;/h2>
+&lt;ol>
+&lt;li>Open &lt;a href="https://sso.egi.eu/admin/user">the EGI SSO user management page&lt;/a>&lt;/li>
+&lt;li>Select your new certificate to authenticate with it&lt;/li>
+&lt;li>Complete the login process using your username and password&lt;/li>
+&lt;li>Once logged, your new DN will be linked to your user account&lt;/li>
+&lt;/ol>
+&lt;h2 id="updating-the-dn-of-a-certificate-linked-to-a-given-egi-sso-account">Updating the DN of a certificate linked to a given EGI SSO account&lt;/h2>
+&lt;blockquote>
+&lt;p>On purpose a user cannot manually edit a certificate DN&lt;/p>
+&lt;/blockquote>
+&lt;p>You usually just need to link your new DN to your EGI SSO account, as documented
+&lt;a href="#linking-an-x509-certificate-to-an-egi-sso-account">above&lt;/a>.&lt;/p>
+&lt;p>You may have to do this by in a private browser session to ensure that your
+previous certificate is used.&lt;/p>
+&lt;p>Once you have done this, you can request us to remove the former DN by opening
+an &lt;a href="../../helpdesk">Helpdesk&lt;/a> ticket to the &lt;strong>Collaboration Tools&lt;/strong> Support
+Unit.&lt;/p>
+&lt;blockquote>
+&lt;p>Legacy DNs shouldn&amp;rsquo;t prevent you accessing any service with a newer
+certificate, as long as its DN is linked to your account.&lt;/p>
+&lt;/blockquote></description></item><item><title>Internal: Mailing lists</title><link>/internal/collaboration-tools/mailing-lists/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/collaboration-tools/mailing-lists/</guid><description>
 &lt;p>Mailing lists are managed by software called Mailman.&lt;/p>
 &lt;p>The software provides a web interface and a
 &lt;a href="https://mailman.egi.eu/mailman/listinfo">public list of mailing lists&lt;/a> is
