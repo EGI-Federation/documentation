@@ -63,3 +63,34 @@ For more examples and ideas, visit:
 Docker-compose can be also used to execute applications with more than one
 container running together,
 [follow this documentation](https://docs.docker.com/compose/) to learn more.
+
+### Known issues
+
+#### MTU and docker
+
+Depending on the cloud provider you may encounter unexpected network
+connectivity issues when working inside the docker container. If that is
+the case, please try reconfiguring the
+[MTU](https://en.wikipedia.org/wiki/Maximum_transmission_unit)
+for the docker daemon:
+
+```shell
+# check current MTU value
+sudo docker network inspect bridge  | grep mtu | awk '{print $2}'
+
+# the default 1500 value does not work properly
+# edit docker configuration
+vi /etc/docker/daemon.json
+
+# ensure MTU value is 1376
+{
+  "mtu": 1376
+}
+
+# then restart docker
+sudo systemctl restart docker
+```
+
+We experienced this issue when trying to install a pip dependency using
+`continuumio/miniconda3` container from
+[docker hub](https://hub.docker.com/r/continuumio/miniconda3).
