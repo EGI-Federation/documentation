@@ -81,7 +81,7 @@ yourself. &lt;img src="check-in-token-login.png" alt="EGI Check-in Token Portal 
 &lt;li>The command to get user&amp;rsquo;s information from userinfo endpoint&lt;/li>
 &lt;li>Obtain a Refresh Token (more info in
 &lt;a href="#obtain-a-refresh-token">Obtain a Refresh Token&lt;/a> section)&lt;/li>
-&lt;li>Manage your active Access/Refresh Tokens&lt;/li>
+&lt;li>View and manage the applications you have given permissions&lt;/li>
 &lt;/ol>
 &lt;/li>
 &lt;/ol>
@@ -101,30 +101,4 @@ have obtained a Refresh Token:
 &lt;li>The command to generate new Access Token using the Refresh Token&lt;/li>
 &lt;/ol>
 &lt;/li>
-&lt;/ol>
-&lt;h2 id="egi-check-in-openid-provider-migration">EGI Check-in OpenID Provider Migration&lt;/h2>
-&lt;p>As of July 2022, we are migrating EGI Check-in OpenID Provider to a new Authorisation
-Server, as a result the Refresh Tokens, issued by the legacy Authorisation Server,
-will not be accepted by the new one and you won&amp;rsquo;t be able to generate new Access
-Tokens with them. In this case you need to create a new Refresh Token using the
-environment-specific EGI Check-in Token Portal, which is integrated with the new
-EGI Check-in OpenID Provider. In the following table you can find the URLs of the
-various instances:&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>EGI Check-in OpenID Provider Instances&lt;/th>
-&lt;th>EGI Check-in Token Portal Instances&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>EGI Check-in OpenID Provider - New&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/token-keycloak">https://aai.egi.eu/token-keycloak&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>EGI Check-in OpenID Provider - Legacy&lt;/td>
-&lt;td>&lt;a href="https://aai.egi.eu/token">https://aai.egi.eu/token&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;/ol></description></item></channel></rss>
