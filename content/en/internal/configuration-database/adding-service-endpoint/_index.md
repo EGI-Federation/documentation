@@ -154,7 +154,7 @@ In order to properly monitor your webdav endpoint:
 - you should register a new service endpoint with the webdav service type,
   separated from the SRM one;
 - the endpoint url information used for monitoring purposes should be set in the
-  [extension property](../extension-properties) section. Create the following:
+  [extension properties](../extension-properties) section. Create the following:
   - Name: ARGO_WEBDAV_OPS_URL
   - Value: webdav URL containing also the VO ops folder, for example:
     `https://darkstorm.cnaf.infn.it:8443/webdav/ops` or
@@ -172,7 +172,7 @@ following:
 
 - you should register a new service endpoint with the XrootD service type;
 - the endpoint url information used for monitoring purposes should be set in the
-  [extension property](../extension-properties) section. Create the following:
+  [extension properties](../extension-properties) section. Create the following:
   - Name: ARGO_XROOTD_OPS_URL
   - Value: XRootD base SURL to test (the path where ops VO has write access),
     for example: `root://eosatlas.cern.ch//eos/atlas/opstest/egi/`,
@@ -186,8 +186,8 @@ In order to properly monitor your gridftp endpoint for ops VO
 
 - register a new service endpoint, associating the storage element hostname to
   the service type `globus-GRIDFTP`, with the "production" flag disabled;
-- in the “Extension Properties” section of the service endpoint page, fill in
-  the following fields:
+- in the “[Extension Properties](../extension-properties)” section of the
+  service endpoint page, fill in the following fields:
   - Name: SE_PATH
   - Value: `/dpm/ui.savba.sk/home/ops` (this is an example, set the proper path)
 - check if the tests are OK (it might take some hours for detecting the new
@@ -241,8 +241,8 @@ GlueVOInfoLocalID: ops:data01
 ```
 
 - Pay attention to use the storage path for the ops VO
-- On GOCDB, in the “Extension Properties” section of the SRM service endpoint
-  page, fill in the following fields:
+- On GOCDB, in the “[Extension Properties](../extension-properties)” section
+  of the SRM service endpoint page, fill in the following fields:
   - Name: SURL
   - Value: the actual SURL value, for example:
     `srm://srm01.ncg.ingrid.pt:8444/srm/managerv2?SFN=/gstore/t2others/ops`
