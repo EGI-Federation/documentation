@@ -153,13 +153,32 @@ In order to properly monitor your webdav endpoint:
 
 - you should register a new service endpoint with the webdav service type,
   separated from the SRM one;
-- fill in the webdav URL containing also the VO ops folder, for example:
-  `https://darkstorm.cnaf.infn.it:8443/webdav/ops` or
-  `https://hepgrid11.ph.liv.ac.uk/dpm/ph.liv.ac.uk/home/ops/`
-  - it corresponds to the value of GLUE2 attribute `GLUE2EndpointURL`
-    (containing the used port and without the VO folder);
+- the endpoint url information used for monitoring purposes should be set in the
+  [extension property](../extension-properties) section. Create the following:
+  - Name: ARGO_WEBDAV_OPS_URL
+  - Value: webdav URL containing also the VO ops folder, for example:
+    `https://darkstorm.cnaf.infn.it:8443/webdav/ops` or
+    `https://hepgrid11.ph.liv.ac.uk/dpm/ph.liv.ac.uk/home/ops/`
+    - it corresponds to the value of GLUE2 attribute `GLUE2EndpointURL`
+      (containing the used port and without the VO folder);
 - verify that the webdav URL (for example:
   `https://darkstorm.cnaf.infn.it:8443/webdav`) is properly accessible.
+
+### EOS and XrootD service endpoints
+
+The EOS service endpoints expose an XrootD interface, so in order to properly
+monitor them, even in case you provide a plain XrootD endpoint, please do the
+following:
+
+- you should register a new service endpoint with the XrootD service type;
+- the endpoint url information used for monitoring purposes should be set in the
+  [extension property](../extension-properties) section. Create the following:
+  - Name: ARGO_XROOTD_OPS_URL
+  - Value: XRootD base SURL to test (the path where ops VO has write access),
+    for example: `root://eosatlas.cern.ch//eos/atlas/opstest/egi/`,
+    `root://recas-se-01.cs.infn.it:1094/dpm/cs.infn.it/home/ops/`,
+    `root://dcache-atlas-xrootd-ops.desy.de:2811/pnfs/desy.de/ops` or similar).
+    Pay attention to the port configured for the interface.
 
 ### GridFTP
 
