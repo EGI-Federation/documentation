@@ -65,19 +65,19 @@ In this section are linked manuals and procedures which RODs should be familiar 
     - [ROD duties](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=230)
     - [ROD procedures](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=355)
   - Becoming ROD team Member
-    - Obtaining X509 certificate
-    - Registration in GOCDB [1]
-    - Registration in GGUS
-    - Registration in dteam VO
+    - [Obtaining X509 certificate](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=427)
+    - [Registration in GOCDB](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=496)
+    - [Registration in GGUS](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=690)
+    - [Registration in dteam VO](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=747)
   - ROD shift
-    - Dashboard overview
-    - Issues aka alarms
-    - Tickets
-    - Notepads
-    - Handover
+    - [Dashboard overview](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=872)
+    - [Issues aka alarms](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=1493)
+    - [Tickets](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=1967)
+    - [Notepads](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=2232)
+    - [Handover](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=2475)
   - Webinar Presentation
-    - Slides
-- FAQ_Regional_Operator_on_Duty
+    - [Slides](https://documents.egi.eu/public/RetrieveFile?docid=301&version=7&filename=ROD-webinar.pdf)
+- [ROD FAQ](https://wiki.egi.eu/wiki/FAQ_Regional_Operator_on_Duty)
 
 ## Resources
 
