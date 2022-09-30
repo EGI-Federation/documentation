@@ -61,7 +61,7 @@ In this section are linked manuals and procedures which RODs should be familiar 
 - [PROC01: Infrastructure Oversight escalation](https://confluence.egi.eu/x/SiAmBg)
 - [Dashboard HowTOs and Training Guides](https://documents.egi.eu/document/301)
   - Webinar shortcuts.
-  - Introduction. 
+  - Introduction.
     - [ROD duties](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=230)
     - [ROD procedures](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=355)
   - Becoming ROD team Member
@@ -83,4 +83,3 @@ In this section are linked manuals and procedures which RODs should be familiar 
 
 - [Operational tools](https://docs.egi.eu/internal/)
 - [Procedures](https://confluence.egi.eu/display/EGIPP/EGI+Federation+Procedures)
-
