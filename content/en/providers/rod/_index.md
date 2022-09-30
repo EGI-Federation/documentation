@@ -26,7 +26,7 @@ In this text, the acronym ROD will be used both for the whole team, or for the
 person who is actually working on shift.
 
 In order to become a ROD member, one first needs to go through the steps
-described in [Joining operations](https://wiki.egi.eu/wiki/Regional_Operator_on_Duty_welcome).
+described in [Checklist for ROD](../checklist).
 
 The following text describes the duties that ROD (teams) are responsible for.
 
@@ -34,25 +34,25 @@ Contact: all-operator-on-duty AT mailman.egi.eu
 
 ## Duties
 
-A list describing [Duties](https://wiki.egi.eu/wiki/ROD_Duties).
+A list describing [Duties](../duties).
 
 ## Alarms and tickets
 
-Information on how to [deal](https://wiki.egi.eu/wiki/ROD_Alarms_and_tickets)
+Information on how to [deal](../alarms-tickets)
 with alarms raised in the Dashboard and how to generate and deal with tickets.
 
 ## Downtimes
 
-How [downtimes](https://wiki.egi.eu/wiki/ROD_Downtimes) are managed.
+How [downtimes](../downtimes) are managed.
 
 ## Communication
 
-Communication [channels](https://wiki.egi.eu/wiki/ROD_Communication) for ROD to
+Communication [channels](../communication) for ROD to
 Sites and to management.
 
 ## Security
 
-How ROD should deal with [security](https://wiki.egi.eu/wiki/ROD_Security) issues.
+How ROD should deal with [security](../security) issues.
 
 ## Manuals and procedures
 
@@ -77,7 +77,7 @@ In this section are linked manuals and procedures which RODs should be familiar 
     - [Handover](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=2475)
   - Webinar Presentation
     - [Slides](https://documents.egi.eu/public/RetrieveFile?docid=301&version=7&filename=ROD-webinar.pdf)
-- [ROD FAQ](https://wiki.egi.eu/wiki/FAQ_Regional_Operator_on_Duty)
+- [ROD FAQ](../faq)
 
 ## Resources
 
