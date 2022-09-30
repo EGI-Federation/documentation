@@ -26,7 +26,7 @@ In this text, the acronym ROD will be used both for the whole team, or for the
 person who is actually working on shift.
 
 In order to become a ROD member, one first needs to go through the steps
-described in [Checklist for ROD](../checklist).
+described in [Checklist for ROD](./checklist).
 
 The following text describes the duties that ROD (teams) are responsible for.
 
@@ -34,25 +34,25 @@ Contact: all-operator-on-duty AT mailman.egi.eu
 
 ## Duties
 
-A list describing [Duties](../duties).
+A list describing [Duties](./duties).
 
 ## Alarms and tickets
 
-Information on how to [deal](../alarms-tickets)
+Information on how to [deal](./alarms-tickets)
 with alarms raised in the Dashboard and how to generate and deal with tickets.
 
 ## Downtimes
 
-How [downtimes](../downtimes) are managed.
+How [downtimes](./downtimes) are managed.
 
 ## Communication
 
-Communication [channels](../communication) for ROD to
+Communication [channels](./communication) for ROD to
 Sites and to management.
 
 ## Security
 
-How ROD should deal with [security](../security) issues.
+How ROD should deal with [security](./security) issues.
 
 ## Manuals and procedures
 
@@ -77,7 +77,7 @@ In this section are linked manuals and procedures which RODs should be familiar 
     - [Handover](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=2475)
   - Webinar Presentation
     - [Slides](https://documents.egi.eu/public/RetrieveFile?docid=301&version=7&filename=ROD-webinar.pdf)
-- [ROD FAQ](../faq)
+- [ROD FAQ](./faq)
 
 ## Resources
 
