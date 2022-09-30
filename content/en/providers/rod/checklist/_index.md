@@ -52,3 +52,92 @@ There are few actions which needs to be taken before you start your work:
 To see how to perform all those actions please watch video
 [How to become a ROD member](http://www.youtube.com/watch?v=p-SrqJMDlOo) (7
 steps which should be done to become a ROD member also).
+
+## ROD duties
+
+The Regional Operations team is responsible for detecting problems,
+coordinating the diagnosis, and monitoring the problems through to a
+resolution. It monitors sites in their region, and react to problems identified
+by the monitors, either directly or indirectly, provide support to sites as
+needed, add to the knowledge base, and provide informational flow to oversight
+bodies in cases of non-reactive or non-responsive sites. ROD is a team
+responsible for solving problems on the infrastructure according to agreed
+procedures. They ensure that problems are properly recorded and progress
+according to specified time lines. They ensure that necessary information is
+available to all parties. The team is provided by each Operation Center and
+requires procedural knowledge on the process (rather than technical skills) for
+their work.
+
+All duties listed are mandatory for ROD team:
+
+- Handling incidents. The main responsibility of ROD is to deal with incidents
+  at sites in the region. This includes making sure that the tickets are opened
+  and handled properly. The procedure for handling tickets is described in [EGI
+  Infrastructure
+  Oversight escalation procedure](https://confluence.egi.eu/x/SiAmBg)
+- Propagate actions from EGI Operations down to sites. ROD is responsible for
+  ensuring that decisions taken on the EGI Operations level are propagated to
+  sites.
+- Putting a site in downtime or suspend for urgent matters. In general, ROD can
+  place a site in downtime (in the GOCDB) if it is either requested by the site,
+  or ROD sees an urgent need to put the site into downtime. ROD may also suspend
+  a site, under exceptional circumstances, without going through all the steps of
+  the escalation procedure. For example, if a security hazard occurs, ROD must
+  suspend a site on the spot in the case of such an emergency. It is important to
+  know that EGI Operations can also suspend a site in the case of an emergency e.g.
+  security incidents or lack of response.
+- Notify EGI Operations about core or urgent matters. ROD should create tickets to
+  EGI Operations in the case of core or urgent matters.
+
+## Important to read
+
+Before you start your duties you should get familiar with following documents:
+
+- [EGI Infrastructure Oversight escalation
+  procedure](https://confluence.egi.eu/x/SiAmBg). This document defines escalation
+  procedure for operational problems. It describes steps and timelines which ROD
+  team should follow.
+- [Dashboard HowTOs and Training Guides](https://documents.egi.eu/document/301).
+  A collection of HowTOs and guides for EGI Operations. It includes a Dashboard
+  HOWTO, Training Guides which can be used as a presentation for training staff
+  and quick sheets.
+- [ROD FAQ](../faq). Frequently Asked Questions related to ROD work
+
+It is also important to watch
+[video tutorials](../rod/_index.md#manuals-and-procedures) prepared for ROD teams.
+They will walk you through several topics which are important for your work.
+
+### Operational Tools
+
+ROD uses several operational tools to perform theirs duties
+([Operations tools video](http://www.youtube.com/watch?v=bNm4oupAmqI)):
+
+- [Operations Portal](https://docs.egi.eu/internal/operations-portal/). Dashboard
+  tool on the Operations Portal is a main tool which is used by ROD teams. All
+  actions concerning incidents (alarms and tickets) should be performed using this
+  tool.
+- [Service Monitoring ARGO](https://docs.egi.eu/internal/monitoring/). ARGO is the
+  official EGI monitoring system based on Nagios. It checks the availability of the
+  services and creates alarms visible on the Operations Portal dashboard when a
+  failure occurs.
+- [Helpdesk GGUS](https://docs.egi.eu/internal/helpdesk/) is the EGI central helpdesk
+  system designed for problem reporting and tracking.
+- [GOCDB](https://docs.egi.eu/internal/configuration-database/) is a central database
+  which contains all static information about the infrastructure (sites and people).
+
+## Contact
+
+Each ROD teams is supposed to provide own mailing list as a contact point to the team.
+The list of people responsible for ROD in a given NGI and contact points can be found
+in GOCDB.
+
+All ROD mailing list are also subscibed to
+"all-central-operator-on-duty AT mailman.egi.eu" mailing list so to contact other ROD
+teams you can use this list.
+
+To contact EGI Operations team you can:
+
+- send a GGUS ticket and assign it to EGI Operation support unit
+- send an emai to "operations AT egi.eu"
+
+You are welcome to send us questions in case of any doubts concerning ROD duties.
