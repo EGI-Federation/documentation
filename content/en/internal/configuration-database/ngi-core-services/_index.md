@@ -28,23 +28,20 @@ The service instance MUST:
 
 ### Required Service Types
 
-The following service types are mandatory and all NGIs in the EGI scope should
-define instances of these services:
+The following service types are mandatory to support the central operations and
+all NGIs in the EGI scope should define instances of these services:
 
-- ngi.SAM (Mandatory)
 - emi.ARGUS (Mandatory) (NGI ARGUS)
 - Top-BDII (Mandatory)
 
 Other Mandatory services, depending on middleware deployed by sites under NGI
-responsibility, are listed
-[here](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB#Services)(link to old EGI
-Wiki)
+responsibility, are the following:
+
+- MyProxy
+- VOMS
 
 NGIs should also register their custom core services like accounting, helpdesk
-if they are registered in GOCDB (for a list of other common core service types
-see:
-[NGI_services_in_GOCDB](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB)(link to
-old EGI Wiki)
+if provided. 
 
 ### Registering NGI Core Services
 
@@ -57,7 +54,6 @@ NGI core services can be grouped/flagged in one of two ways:
   services to this ServiceGroup.
 
 It is important that these core service Sites/ServiceGroups adhere to the
-‘NGI_XX_SERVICES’ naming scheme. For further details, including a list of
-existing ‘NGI_XX_SERVICES’ please see:
-[NGI_services_in_GOCDB](https://wiki.egi.eu/wiki/NGI_services_in_GOCDB)(link to
-old EGI Wiki)
+‘NGI_XX_SERVICES’ naming scheme. The list of existing Service Groups is
+available on
+[GOCDB](https://goc.egi.eu/portal/index.php?Page_Type=Service_Groups).
