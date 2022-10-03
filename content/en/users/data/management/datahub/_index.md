@@ -109,7 +109,7 @@ Oneproviders.
 
 ![Viewing file distribution over the Oneproviders](datahub-replica-management.png)
 
-Three different formats of metadata can be attached to files: basic (key/value),
+Three different formats of metadata can be attached to files: basic (key-value),
 JSON and RDF. The metadata can be managed using the Web interface and the APIs.
 It\'s also possible to create indexes and query them.
 
