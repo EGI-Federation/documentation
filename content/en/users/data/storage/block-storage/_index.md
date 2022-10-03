@@ -749,7 +749,7 @@ $ mount -t ext4 /dev/mapper/storage1 /storage1
 [EGI Data Transfer](../../../data/management/data-transfer) allows you to move any type of
 data files asynchronously from one storage to another. If you want to copy data
 from/to one VM running on the EGI cloud, you will need to run a compatible
-server (Webdav/https, GridFTP, xrootd, SRM, S3, GCloud) that can interact with
+server (Webdav/HTTPS, GridFTP, xrootd, SRM, S3, GCloud) that can interact with
 the FTS3 software.
 
 An easy way to provide a GridFTP server on your VM is to use the
