@@ -3,15 +3,15 @@ title: "Managing downtime"
 weight: 1
 type: docs
 description: >-
-     Description on how to deal with scheduled and unscheduled interventions.
+  Description on how to deal with scheduled and unscheduled interventions.
 ---
 
 ## Downtime
 
-To properly manage downtime it is important to highlight the differences
-between the possible types of downtime. Downtime can't be added retroactively,
-and it is always defined in UTC. The error messages when adding downtime are
-cryptic, usually it's a parsing error in the time/date.
+To properly manage downtime it is important to highlight the differences between
+the possible types of downtime. Downtime can't be added retroactively, and it is
+always defined in UTC. The error messages when adding downtime are cryptic,
+usually it's a parsing error in the time/date.
 
 ### Downtime classification
 
@@ -28,8 +28,8 @@ cryptic, usually it's a parsing error in the time/date.
 
 WARNING (formerly known as AT_RISK) implicates a type of severity that does not
 have operational consequences. It is only an information for users that some
-small temporary failures can appear. All failures during that time will be
-taken into account in the reliability calculations. Examples include:
+small temporary failures can appear. All failures during that time will be taken
+into account in the reliability calculations. Examples include:
 
 - Admins not present on site (conference, vacations).
 - Reduced redundancy in network, power or cooling.
@@ -48,10 +48,10 @@ the expiry date on the ticket can be extended.
 
 When a ticket is open against a site that continues to add downtime the ticket
 must be closed and the NGI requested to take action either by suspending or
-uncertifying the site until such time that the problem is resolved. This usually
-happens when a middleware upgrade is due or a bug in the middleware is causing a
-site to fail. Sites then may choose to wait for the next middleware release
-rather than spend effort trying to resolve the issue locally.
+un-certifying the site until such time that the problem is resolved. This
+usually happens when a middleware upgrade is due or a bug in the middleware is
+causing a site to fail. Sites then may choose to wait for the next middleware
+release rather than spend effort trying to resolve the issue locally.
 
 Sites that are in downtime will still have monitoring switched on and therefore
 may appear to be failing tests. ROD must take care that when opening tickets to
@@ -76,18 +76,18 @@ servers.
 2. Edit the description of the ticket to state clearly that even though the
    failure is reported for a given CE, this is not a CE failure but a failure on
    the APEL service for the whole site.
-3. Proceed with all sites in the same way. Please beware: APEL tests are not helped
-   by scheduling downtime, the site admins need to get APEL publishing working
-   again.
+3. Proceed with all sites in the same way. Please beware: APEL tests are not
+   helped by scheduling downtime, the site admins need to get APEL publishing
+   working again.
 
 ## Nodes not in production
 
-When a node of a production site is declared as non-production in the GOCDB or the
-node appears in BDII but is not declared in GOCDB then the ROD should do the
+When a node of a production site is declared as non-production in the GOCDB or
+the node appears in BDII but is not declared in GOCDB then the ROD should do the
 following:
 
 - Recommend to the sites to take these nodes out of their site BDII
-- If this is not a possibility then the site should set those nodes in downtime in
-  GOCDB
-- If the node is a test node and is in BDII but not in GOCDB then the sites should
-  register it in GOCDB and turn monitoring off.
+- If this is not a possibility then the site should set those nodes in downtime
+  in GOCDB
+- If the node is a test node and is in BDII but not in GOCDB then the sites
+  should register it in GOCDB and turn monitoring off.

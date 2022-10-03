@@ -1,9 +1,8 @@
 ---
-title: "ROD FAQs"
+title: "FAQs"
 weight: 1
 type: docs
-description: >-
-     FAQs concerning the ROD activity.
+description: "FAQs concerning the ROD activity."
 ---
 
 ## How to handle issues during weekends and public holidays?
@@ -25,8 +24,8 @@ recommended to put such non-production node in downtime.
 
 When opening a ticket against a site with existing tickets ROD should consider
 that these problems may be linked or dependant on pending solutions. In such
-case ROD should use grouping mechanism to gather and assign alarms to one
-ticket rather than open a ticket for each alarm.
+case ROD should use grouping mechanism to gather and assign alarms to one ticket
+rather than open a ticket for each alarm.
 
 If the problem is different but maybe linked the expiry dates for each ticket
 should be synchronized to the latest date.
@@ -51,8 +50,9 @@ more than 72h when the issue is escalated to Operations.
 
 ROD should not create a ticket for sites/nodes in Downtime and is not obligated
 to deal with such alarms but it is recommended to close these alarms to avoid
-being escalated to Operations. In such case as a reson of closing NON-OK alarm
-ROD should put link to the downtime in GOC DB.
+being escalated to Operations. In such case as a reason of closing NON-OK alarm
+ROD should put link to the downtime in the
+[EGI Configuration Database](../../../internal/configuration-database/downtimes).
 
 ### Site in downtime for more than a month
 
@@ -62,17 +62,18 @@ should go to the suspended status.
 ## What to do in case of accounting issue?
 
 In case of problems with accounting it is not recommended to suggest downtime at
-the second step of the escalation process for this test. Accounting service is not
-a functionality which is critical for users but it still need to be follow up.
+the second step of the escalation process for this test. Accounting service is
+not a functionality which is critical for users but it still need to be follow
+up.
 
 ## Watch out for flapping states
 
-You may want to wait for a second test to be run before closing an alarm which is
-in an OK status. This ensures that the OK result for that tests is stable. The
-waiting period is, of course, dependent on how long the test takes and how
+You may want to wait for a second test to be run before closing an alarm which
+is in an OK status. This ensures that the OK result for that tests is stable.
+The waiting period is, of course, dependent on how long the test takes and how
 frequently it is checked.
 
 ## How to handle the eu.egi.lowAvailability alarm?
 
-Go to procedure [PROC04 Quality verification of monthly availability and
-reliability statistcs](https://confluence.egi.eu/x/xx4mBg).
+Go to procedure
+[PROC04 Quality verification of monthly availability and reliability statistics](https://go.egi.eu/proc04).
