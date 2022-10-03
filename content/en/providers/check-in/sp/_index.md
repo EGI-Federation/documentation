@@ -143,8 +143,6 @@ provide the following information to connect your service to EGI Check-in:
 The most important URLs for each environment are listed in the table below but
 more information can be found in the protocol-specific sections that follow.
 
-<!-- markdownlint-disable line-length -->
-
 {{< tabpanex >}}
 
 {{< tabx header="Production" >}}
@@ -176,8 +174,6 @@ more information can be found in the protocol-specific sections that follow.
 
 {{< /tabpanex >}}
 
-<!-- markdownlint-enable line-length -->
-
 ## SAML Service Provider
 
 To enable federated access to a web-based application, you can connect to the
@@ -206,8 +202,6 @@ issued by a trusted certificate authority.
 You can get the metadata of the EGI Check-in IdP Proxy on a dedicated URL that
 depends on the integration environment being used:
 
-<!-- markdownlint-disable line-length -->
-
 {{< tabpanex >}}
 
 {{< tabx header="Production" >}}
@@ -235,8 +229,6 @@ depends on the integration environment being used:
 {{< /tabx >}}
 
 {{< /tabpanex >}}
-
-<!-- markdownlint-enable line-length -->
 
 To register your SAML SP, you must submit a service registration request at
 [Federation Registry](https://aai.egi.eu/federation). Your request should
@@ -296,16 +288,12 @@ information is provided by the EGI Check-in IdP in the
 [SAML attribute assertion](#attributes). The table below lists the SAML
 attributes that are relevant for user authorisation:
 
-<!-- markdownlint-disable line-length -->
-
 | Description                                                                                     | SAML Attribute         |
 | ----------------------------------------------------------------------------------------------- | ---------------------- |
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduPersonEntitlement` |
 | [Capabilities](#capabilities)                                                                   | `eduPersonEntitlement` |
 | [GOCDB roles](#gocdb-roles)                                                                     | `eduPersonEntitlement` |
 | [Identity Assurance](#identity-assurance)                                                       | `eduPersonAssurance`   |
-
-<!-- markdownlint-enable line-length -->
 
 ### References
 
@@ -382,7 +370,7 @@ the client. Lastly, you need to set the email addresses of one or more contacts.
 
 The EGI Check-in UserInfo Endpoint is an OAuth 2.0 Protected Resource that
 returns specific information about the authenticated end user as Claim Values.
-To obtain the requested Claims about the End-User, the Client makes a request to
+To obtain the requested Claims about the end user, the Client makes a request to
 the UserInfo Endpoint using an Access Token obtained through OpenID Connect
 Authentication. The scopes associated with the Access Token used to access the
 EGI Check-in UserInfo Endpoint will determine what Claims will be released.
@@ -392,7 +380,7 @@ and value pairs for the Claims.
 The following scope values can be used to request Claims from the EGI Check-in
 UserInfo Endpoint:
 
-<!-- markdownlint-disable line-length no-inline-html -->
+<!-- markdownlint-disable no-inline-html -->
 
 | Scope                          | Claims                                                                                                                                                                                            |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -404,7 +392,7 @@ UserInfo Endpoint:
 | `eduperson_scoped_affiliation` | `eduperson_scoped_affiliation`                                                                                                                                                                    |
 | `voperson_id`                  | `voperson_id`                                                                                                                                                                                     |
 
-<!-- markdownlint-enable line-length no-inline-html -->
+<!-- markdownlint-enable no-inline-html -->
 
 A more extensive list of all the attributes that may be made available to
 Service Providers is included in the [User Attribute](#user-attributes) section.
@@ -423,7 +411,7 @@ Check-in supports the following OpenID Connect/OAuth2 grant types:
 
 The most important OIDC/OAuth2 endpoints are listed below:
 
-<!-- markdownlint-disable line-length no-inline-html -->
+<!-- markdownlint-disable no-inline-html -->
 
 {{< tabpanex >}}
 
@@ -477,7 +465,7 @@ The most important OIDC/OAuth2 endpoints are listed below:
 
 {{< /tabpanex >}}
 
-<!-- markdownlint-enable line-length no-inline-html -->
+<!-- markdownlint-enable no-inline-html -->
 
 #### Authorization Endpoint
 
@@ -507,15 +495,11 @@ Depending on the grant type, the following parameters are required:
 
 ##### Authorization Code
 
-<!-- markdownlint-disable line-length -->
-
 | Parameter      | Presence | Values                                                                                             |
 | -------------- | -------- | -------------------------------------------------------------------------------------------------- |
 | `grant_type`   | Required | `authorization_code`                                                                               |
 | `code`         | Required | The value of the code in the response from authorization endpoint.                                 |
 | `redirect_uri` | Required | URI to which the response will be sent (must be the same as the request to authorization endpoint) |
-
-<!-- markdownlint-enable line-length -->
 
 ##### Proof Key for Code Exchange (PKCE)
 
@@ -679,8 +663,6 @@ curl -X POST "${TOKEN_ENDPOINT}" \
 To get a token from client B using a token issued for client A, the parameters
 of the request are:
 
-<!-- markdownlint-disable line-length -->
-
 | Parameter            | Presence | Values                                                                                                    |
 | -------------------- | -------- | --------------------------------------------------------------------------------------------------------- |
 | `grant_type`         | Required | `urn:ietf:params:oauth:grant-type:token-exchange`                                                         |
@@ -688,8 +670,6 @@ of the request are:
 | `subject_token`      | Required | The value of the access token                                                                             |
 | `subject_token_type` | Required | `urn:ietf:params:oauth:token-type:access_token` (because this feature accepts access tokens only)         |
 | `scope`              | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
-
-<!-- markdownlint-enable line-length -->
 
 Example request:
 
@@ -731,14 +711,10 @@ verification codes from the authorization server by making an HTTP "PO
 request to the device authorization endpoint. The client constructs the request
 with the following parameters:
 
-<!-- markdownlint-disable line-length -->
-
 | Parameter   | Presence | Values                                                                                                    |
 | ----------- | -------- | --------------------------------------------------------------------------------------------------------- |
 | `client_id` | Required | The identifier of the client                                                                              |
 | `scope`     | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
-
-<!-- markdownlint-enable line-length -->
 
 Example request:
 
@@ -779,8 +755,6 @@ user code.
 After displaying instructions to the user, the client makes an Access Token
 Request to the token endpoint. The request contains the following parameters:
 
-<!-- markdownlint-disable line-length -->
-
 | Parameter       | Presence | Values                                                                                                    |
 | --------------- | -------- | --------------------------------------------------------------------------------------------------------- |
 | `grant_type`    | Required | `urn:ietf:params:oauth:grant-type:device_code`                                                            |
@@ -788,8 +762,6 @@ Request to the token endpoint. The request contains the following para
 | `client_id`     | Required | The identifier of the client                                                                              |
 | `client_secret` | Required | The secret value of the client                                                                            |
 | `scope`         | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
-
-<!-- markdownlint-enable line-length -->
 
 Example request:
 
@@ -863,16 +835,12 @@ information is provided by the EGI Check-in OIDC Provider in the form of
 [OIDC claims](#claims). The table below lists the claims that are relevant for
 user authorisation:
 
-<!-- markdownlint-disable line-length -->
-
 | Description                                                                                     | OIDC Claim              |
 | ----------------------------------------------------------------------------------------------- | ----------------------- |
 | [VO/group membership/roles of the authenticated user](#vogroup-membership-and-role-information) | `eduperson_entitlement` |
 | [Capabilities](#capabilities)                                                                   | `eduperson_entitlement` |
 | [GOCDB roles](#gocdb-roles)                                                                     | `eduperson_entitlement` |
 | [Identity Assurance](#identity-assurance)                                                       | `eduperson_assurance`   |
-
-<!-- markdownlint-enable line-length -->
 
 ### Example OIDC Client
 
@@ -1153,8 +1121,6 @@ make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
 integration goes via an intermediary service, called a Master Portal. EGI is
 running two Master Portal instances, one development, one production instance.
 
-<!-- markdownlint-disable line-length -->
-
 {{< tabpanex >}}
 
 {{< tabx header="Production" >}}
@@ -1184,8 +1150,6 @@ running two Master Portal instances, one development, one production instance.
 {{< /tabx >}}
 
 {{< /tabpanex >}}
-
-<!-- markdownlint-enable line-length -->
 
 ### Registering a client at the Master Portal
 
@@ -1233,7 +1197,7 @@ the API described at the
 This section defines the attributes that can be made available to services
 connected to Check-in.
 
-<!-- markdownlint-disable line-length no-inline-html -->
+<!-- markdownlint-disable no-inline-html -->
 
 ### 1. Community User Identifier
 
@@ -1510,7 +1474,7 @@ connected to Check-in.
 |              **status** | Experimental                                           |
 
 <!-- textlint-enable -->
-<!-- markdownlint-enable line-length no-inline-html -->
+<!-- markdownlint-enable no-inline-html -->
 
 ## User authorisation
 
