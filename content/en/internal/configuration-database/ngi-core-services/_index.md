@@ -41,7 +41,7 @@ responsibility, are the following:
 - VOMS
 
 NGIs should also register their custom core services like accounting, helpdesk
-if provided. 
+if provided.
 
 ### Registering NGI Core Services
 
