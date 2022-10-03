@@ -5,8 +5,7 @@ weight: 20
 type: docs
 aliases:
   - /users/datahub
-description:
-  Discover, manage, and replicate data with EGI DataHub
+description: Discover, manage, and replicate data with EGI DataHub
 ---
 
 ## What is it?
@@ -17,9 +16,9 @@ environments and multiple types of underlying storage**. It allows researchers
 to share, collaborate and perform computations on the stored data easily.
 
 Users can bring data close to their community or to the
-[compute facilities](../../../compute) they use, in order to exploit it efficiently.
-This is as simple as selecting which (subset of the) data should be available
-at which supporting provider.
+[compute facilities](../../../compute) they use, in order to exploit it
+efficiently. This is as simple as selecting which (subset of the) data should be
+available at which supporting provider.
 
 The main features of DataHub are:
 
@@ -28,20 +27,22 @@ The main features of DataHub are:
 - Replication of data across providers for resiliency and availability purposes
 - Integration with [EGI Check-in](../../../aai/check-in) allows access using
   comunity credentials, including from other EGI services and components
-- File catalog to track replication of data and manage logical and physical files
+- File catalog to track replication of data and manage logical and physical
+  files
 
 EGI DataHub supports multiple access policies:
 
 - Unauthenticated, open access
 - Access after user registration or
-- Access restricted to members of a [Virtual Organization](../../../aai/check-in//vos) (VO)
+- Access restricted to members of a
+  [Virtual Organization](../../../aai/check-in//vos) (VO)
 
-Data replication in EGI DataHub may take place either on-­demand or automatically.
-Replication uses a file catalogue to enable tracking of logical and physical copies of data.
+Data replication in EGI DataHub may take place either on-­demand or
+automatically. Replication uses a file catalogue to enable tracking of logical
+and physical copies of data.
 
 {{% alert title="Note" color="info" %}} EGI DataHub is based on the
-[Onedata technology](https://onedata.org/).
-{{% /alert %}}
+[Onedata technology](https://onedata.org/). {{% /alert %}}
 
 ## Motivations
 
@@ -55,18 +56,19 @@ Replication uses a file catalogue to enable tracking of logical and physical cop
 
 ## Components and concepts
 
-The following concepts (components) will help you undesrtand how EGI DataHub works.
+The following concepts (components) will help you undesrtand how EGI DataHub
+works.
 
 ### Space
 
-Virtual volume where users will organize their data. A space is supported by
-one or more Oneproviders that provide the actual storage resources.
+Virtual volume where users will organize their data. A space is supported by one
+or more Oneproviders that provide the actual storage resources.
 
 ### Oneprovider
 
-Data management component deployed in the data centres, provisioning data
-and managing transfers. A Oneprovider is typically deployed at a site near the
-local storage resources, and can access local storage resources over multiple
+Data management component deployed in the data centres, provisioning data and
+managing transfers. A Oneprovider is typically deployed at a site near the local
+storage resources, and can access local storage resources over multiple
 connectors (e.g. CEPH, POSIX). A default one is operated for EGI by CYFRONET.
 
 ### Onezone
@@ -77,19 +79,19 @@ Onezone instance.
 
 ### EGI DataHub
 
-The central Onezone instance of the EGI Federation. Single Sign On
-(SSO) with all the connected storage providers (Oneprovider) is guaranteed
-through [EGI Check-in](../../../aai/check-in)
+The central Onezone instance of the EGI Federation. Single Sign On (SSO) with
+all the connected storage providers (Oneprovider) is guaranteed through
+[EGI Check-in](../../../aai/check-in)
 
 ### Oneclient
 
 Client application providing access to the spaces through a Linux
 [FUSE mount point](https://www.kernel.org/doc/html/latest/filesystems/fuse.html)
-(local POSIX access), as if they were part of the local file system.
-Oneclient can be used from VMs, containers, desktops, etc.
+(local POSIX access), as if they were part of the local file system. Oneclient
+can be used from VMs, containers, desktops, etc.
 
-{{% alert title="Note" color="info" %}} Web interfaces and APIs are also available.
-{{% /alert %}}
+{{% alert title="Note" color="info" %}} Web interfaces and APIs are also
+available. {{% /alert %}}
 
 ## Highlighted features
 
