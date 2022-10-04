@@ -70,8 +70,7 @@ your identity.
 ### Install a Certificate
 
 After approval, the certificate is generated and delivered to you. This can be
-done via e-mail, or by giving instructions to you to download it from a web
-page.
+done via email, or by giving instructions to you to download it from a web page.
 
 #### Browser installation
 
@@ -247,8 +246,8 @@ existing VOs
    **Again, this is usually guided by the EGI support team. You should already
    have a meeting with them to discuss your requirements. They will help you to
    get resources from EGI providers, and sign
-   [SLA](https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework)
-   with you.**
+   [SLA](https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework) with
+   you.**
 
 1. Request your VO membership at VO VOMS page. You will have to enter required
    information and then wait for approval.

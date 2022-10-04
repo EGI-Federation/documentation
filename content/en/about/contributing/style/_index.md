@@ -21,7 +21,7 @@ weight: 20
 
 ## Markdown writing guidelines
 
-Documentation pages have to be written in markdown, compliant with
+Documentation pages have to be written in Markdown, compliant with
 [CommonMark](https://spec.commonmark.org/0.29/) and
 [GitHub Flavored Markdown](https://github.github.com/gfm/).
 
