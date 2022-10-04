@@ -95,7 +95,7 @@ fill in the appropriate fields as when creating a ticket for an alarm.
 ### Ticket content templates
 
 The email is addressed to the corresponding NGI, together with the site and ROD.
-To view the list of NGI e-mail addresses, click the Regional List link in the
+To view the list of NGI email addresses, click the Regional List link in the
 Dashboard menu.
 
 Generally, you should not remove any content from the template, but you are free
