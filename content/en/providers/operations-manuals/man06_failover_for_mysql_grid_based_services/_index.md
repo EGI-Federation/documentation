@@ -17,11 +17,11 @@ description: "Implementing failover of MySQL grid-based services."
 
 ## Introduction
 
-- Several critical grid services such as the Logical File Catalogue (LFC) or the
-  VO Management Service (VOMS) server represent single points of failure in a
-  grid infrastructure. When unavailable, a user can no longer access to the
-  infrastructure since it is prevented from issuing new proxies, or is no longer
-  able to access to the physical location of his data.
+- Several critical grid services such as the VO Management Service (VOMS) server
+  represent single points of failure in a grid infrastructure. When unavailable,
+  a user can no longer access to the infrastructure since it is prevented from
+  issuing new proxies, or is no longer able to access to the physical location
+  of his data.
 
 - However, those services rely on MySQL backends which opens a window to
   replicate the relevant databases to different / backup services which could be
@@ -336,115 +336,6 @@ mysql> SHOW PROCESSLIST;
 +------+-----------+-----------------+------+-------------+---------+----------------------------------------------------------------+------+
 | 2778 | ibrepifca | localhost:42281 | NULL | Binlog Dump | 1400477 | Has sent all binlog to slave; waiting for binlog to be updated | NULL |
 +------+-----------+-----------------+------+-------------+---------+----------------------------------------------------------------+------+
-```
-
-### The LFC case
-
-#### An working example
-
-Using the MySQL replication mechanism, you can setup a read-only LFC which can
-start to operate if the primary LFC is unavailable. The following workflow tries
-to demonstrate how the mechanism is working:
-
-- Only the primary LFC is available in the information system
-
-```shell
-$ lcg-infosites --vo ict.vo.ibergrid.eu lfc lfc01.ncg.ingrid.pt
-```
-
-- If `LFC_HOST` env variable is not defined, `lcg_utils` will query the
-  information system to get the VO LFC
-
-```log
-06/15/11-18:19:53 --> unset LFC_HOST env variable
-06/15/11-18:19:53 --> copy data to SE and register it on the catalogue
-06/15/11-18:19:53 --> running command: lcg-cr -v --vo ict.vo.ibergrid.eu -d se01-tic.ciemat.es -l lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt <file:/home/ingrid/csys/goncalo/scriptInputData.jdl>
-Using grid catalog type: lfc Using grid catalog : lfc01.ncg.ingrid.pt
-Checksum type: None SE type: SRMv2
-Destination SURL : srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6
-Source SRM Request Token: da0f6de5-3dad-4d14-bd17-a5ae601043ec
-Source URL: <file:/home/ingrid/csys/goncalo/scriptInputData.jdl>
-File size: 565 VO name: ict.vo.ibergrid.eu
-Destination specified: se01-tic.ciemat.es
-Destination URL for copy: gsiftp://se01-tic.ciemat.es/se01-tic.ciemat.es:/storage10/ict.vo.ibergrid.eu/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6.1488163.0
-# streams: 1  565 bytes 1.19 KB/sec avg 1.19 KB/sec inst
-Transfer took 1020 ms
-Using LFN: lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt
-Using GUID: guid:f602407d-bc36-4c0b-8346-219fb14f830b
-Registering LFN: /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt (f602407d-bc36-4c0b-8346-219fb14f830b)
-Registering SURL: srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6 (f602407d-bc36-4c0b-8346-219fb14f830b)
-guid:f602407d-bc36-4c0b-8346-219fb14f830b
-```
-
-- We now explicitly switch to the backup LFC (not being published in the
-  information system), and we do see that the file already appears there
-  registered.
-
-```log
-`06/15/11-18:20:01 --> export LFC_HOST to backup LFC`
-`06/15/11-18:20:01 --> running command: export LFC_HOST=ibergrid-lfc.ifca.es`
-`06/15/11-18:20:01 --> list the backup LFC`
-`06/15/11-18:20:01 --> running command: lfc-ls /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt`
-`/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt`
-```
-
-- We can copy data around reading entries from the backup LFC
-
-```log
-06/15/11-18:20:01 --> Copy data using the backup LFC
-06/15/11-18:20:01 --> running command: lcg-cp -v --vo ict.vo.ibergrid.eu lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt <file:/home/ingrid/csys/goncalo/scriptInputData.jdl2>
-Using grid catalog type: LFC Using grid catalog : ibergrid-lfc.ifca.es
-VO name: ict.vo.ibergrid.eu Checksum type: None
-Trying SURL srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6 ...
-Source SE type: SRMv2
-Source SRM Request Token: 3e0be4f1-f9e9-40f4-8f9f-321a115840ba
-Source URL: /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest.txt
-File size: 565
-Source URL for copy: gsiftp://se01-tic.ciemat.es/se01-tic.ciemat.es:/storage10/ict.vo.ibergrid.eu/2011-06-15/filea0e24e4a-4caf-4d31-a871-da0138bca1b6.1488163.0
-Destination URL: <file:/home/ingrid/csys/goncalo/scriptInputData.jdl2>
-# streams: 1  0 bytes 0.00 KB/sec avg 0.00 KB/sec inst
-Transfer took 1030 ms
-```
-
-- However, we can not register new files in the backup LFC
-
-```log
-06/15/11-18:30:10 --> copy data to SE and register it on the catalogue
-06/15/11-18:30:10 --> running command: lcg-cr -v --vo ict.vo.ibergrid.eu -d se01-tic.ciemat.es -l lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest2.txt <file:/home/ingrid/csys/goncalo/scriptInputData.jdl>
-Using grid catalog type: lfc Using grid catalog : ibergrid-lfc.ifca.es
-Checksum type: None SE type: SRMv2
-Destination SURL : srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/file8a30add9-b247-4037-9d42-981728ae3e76
-Source SRM Request Token: 4029fcc2-281f-4e9a-a843-e8a3a67623ff
-Source URL: <file:/home/ingrid/csys/goncalo/scriptInputData.jdl>
-File size: 565 VO name: ict.vo.ibergrid.eu
-Destination specified: se01-tic.ciemat.es
-Destination URL for copy: gsiftp://se01-tic.ciemat.es/se01-tic.ciemat.es:/storage17/ict.vo.ibergrid.eu/2011-06-15/file8a30add9-b247-4037-9d42-981728ae3e76.1488174.0
-# streams: 1  565 bytes 1.28 KB/sec avg 1.28 KB/sec inst
-Transfer took 1020 ms
-Using LFN: lfn:/grid/ict.vo.ibergrid.eu/goncalo_borges/mytest2.txt
-Using GUID: guid:e1b977c7-290a-410f-ad31-be4feeb67b11
-Registering LFN: /grid/ict.vo.ibergrid.eu/goncalo_borges/mytest2.txt (e1b977c7-290a-410f-ad31-be4feeb67b11)
-[LFC][lfc_creatg][] ibergrid-lfc.ifca.es: guid:e1b977c7-290a-410f-ad31-be4feeb67b11: Read-only file system
-srm://se01-tic.ciemat.es/dpm/ciemat.es/home/ict.vo.ibergrid.eu/generated/2011-06-15/file8a30add9-b247-4037-9d42-981728ae3e76: Registration failed, please register it by hand, when the problem will be solved
-guid:e1b977c7-290a-410f-ad31-be4feeb67b11
-lcg_cr: Communication error on send
-```
-
-#### Swapping between LFCs
-
-- Unfortunately the middleware does not offer an automatic way to swap to the
-  backup LFC in case the primary fails. Therefore, it is up to the user (or to
-  the application) to determine if a given LFC is available or not.
-
-- In the previous example, we have followed the approach where only the primary
-  LFC is available through the information system. One can assume that, if the
-  primary LFC is not available in the information system, it means that either
-  it is down or unreachable. In that case, the user or application could switch
-  to the backup LFC.
-
-```shell
-$ export LFC_HOST=lcg-infosites --vo ict.vo.ibergrid.eu lfc
-$ if [ "X$LFC_HOST" == "X" ]; then export LFC_HOST=<backup LFC FQDN>; fi
 ```
 
 ### The VOMS case

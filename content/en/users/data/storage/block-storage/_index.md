@@ -91,66 +91,70 @@ in the site IN2P3-IRES via the Pilot VO (vo.access.egi.eu), use the following
 FedCloud command:
 
 {{< tabpanex >}}
+
 {{< tabx header="Linux / Mac" >}}
 
-  To avoid passing the site, VO, etc. each time, you can use
-  [FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
-  to set them once and reuse them with each command invocation.
+To avoid passing the site, VO, etc. each time, you can use
+[FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
+to set them once and reuse them with each command invocation.
 
-  ```shell
-  $ export EGI_SITE=IN2P3-IRES
-  $ export EGI_VO=vo.access.egi.eu
-  $ fedcloud openstack volume list
-  Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
-  +---------------------------+--------+-----------+------+--------------------------------+
-  | ID                        | Name   | Status    | Size | Attached to                    |
-  +---------------------------+--------+-----------+------+--------------------------------+
-  | aa711296-5cff-46ac-bbe... | Matlab | in-use    |   50 | Attached to Moodle on /dev/vdb |
-  | b0abc762-a503-129d-3c1... |        | available |   30 |                                |
-  +---------------------------+--------+-----------+------+--------------------------------+
-  ```
+```shell
+$ export EGI_SITE=IN2P3-IRES
+$ export EGI_VO=vo.access.egi.eu
+$ fedcloud openstack volume list
+Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
++---------------------------+--------+-----------+------+--------------------------------+
+| ID                        | Name   | Status    | Size | Attached to                    |
++---------------------------+--------+-----------+------+--------------------------------+
+| aa711296-5cff-46ac-bbe... | Matlab | in-use    |   50 | Attached to Moodle on /dev/vdb |
+| b0abc762-a503-129d-3c1... |        | available |   30 |                                |
++---------------------------+--------+-----------+------+--------------------------------+
+```
 
 {{< /tabx >}}
+
 {{< tabx  header="Windows" >}}
 
-  To avoid passing the site, VO, etc. each time, you can use
-  [FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
-  to set them once and reuse them with each command invocation.
+To avoid passing the site, VO, etc. each time, you can use
+[FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
+to set them once and reuse them with each command invocation.
 
-  ```shell
-  > set EGI_SITE=IN2P3-IRES
-  > set EGI_VO=vo.access.egi.eu
-  > fedcloud openstack volume list
-  Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
-  +---------------------------+--------+-----------+------+--------------------------------+
-  | ID                        | Name   | Status    | Size | Attached to                    |
-  +---------------------------+--------+-----------+------+--------------------------------+
-  | aa711296-5cff-46ac-bbe... | Matlab | in-use    |   50 | Attached to Moodle on /dev/vdb |
-  | b0abc762-a503-129d-3c1... |        | available |   30 |                                |
-  +---------------------------+--------+-----------+------+--------------------------------+
-  ```
+```shell
+> set EGI_SITE=IN2P3-IRES
+> set EGI_VO=vo.access.egi.eu
+> fedcloud openstack volume list
+Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
++---------------------------+--------+-----------+------+--------------------------------+
+| ID                        | Name   | Status    | Size | Attached to                    |
++---------------------------+--------+-----------+------+--------------------------------+
+| aa711296-5cff-46ac-bbe... | Matlab | in-use    |   50 | Attached to Moodle on /dev/vdb |
+| b0abc762-a503-129d-3c1... |        | available |   30 |                                |
++---------------------------+--------+-----------+------+--------------------------------+
+```
 
 {{< /tabx >}}
+
 {{< tabx  header="PowerShell" >}}
 
-  To avoid passing the site, VO, etc. each time, you can use
-  [FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
-  to set them once and reuse them with each command invocation.
+To avoid passing the site, VO, etc. each time, you can use
+[FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
+to set them once and reuse them with each command invocation.
 
-  ```powershell
-  > $Env:EGI_SITE="IN2P3-IRES"
-  > $Env:EGI_VO="vo.access.egi.eu"
-  > fedcloud openstack volume list
-  Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
-  +---------------------------+--------+-----------+------+--------------------------------+
-  | ID                        | Name   | Status    | Size | Attached to                    |
-  +---------------------------+--------+-----------+------+--------------------------------+
-  | aa711296-5cff-46ac-bbe... | Matlab | in-use    |   50 | Attached to Moodle on /dev/vdb |
-  | b0abc762-a503-129d-3c1... |        | available |   30 |                                |
-  +---------------------------+--------+-----------+------+--------------------------------+
-  ```
+```powershell
+> $Env:EGI_SITE="IN2P3-IRES"
+> $Env:EGI_VO="vo.access.egi.eu"
+> fedcloud openstack volume list
+Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
++---------------------------+--------+-----------+------+--------------------------------+
+| ID                        | Name   | Status    | Size | Attached to                    |
++---------------------------+--------+-----------+------+--------------------------------+
+| aa711296-5cff-46ac-bbe... | Matlab | in-use    |   50 | Attached to Moodle on /dev/vdb |
+| b0abc762-a503-129d-3c1... |        | available |   30 |                                |
++---------------------------+--------+-----------+------+--------------------------------+
+```
 
 {{< /tabx >}}
+
 {{< /tabpanex >}}
 
 ### Create volume
@@ -746,11 +750,11 @@ $ mount -t ext4 /dev/mapper/storage1 /storage1
 
 ## Access via EGI Data Transfer
 
-[EGI Data Transfer](../../../data/management/data-transfer) allows you to move any type of
-data files asynchronously from one storage to another. If you want to copy data
-from/to one VM running on the EGI cloud, you will need to run a compatible
-server (Webdav/https, GridFTP, xrootd, SRM, S3, GCloud) that can interact with
-the FTS3 software.
+[EGI Data Transfer](../../../data/management/data-transfer) allows you to move
+any type of data files asynchronously from one storage to another. If you want
+to copy data from/to one VM running on the EGI cloud, you will need to run a
+compatible server (Webdav/HTTPS, GridFTP, xrootd, SRM, S3, GCloud) that can
+interact with the FTS3 software.
 
 An easy way to provide a GridFTP server on your VM is to use the
 [gridftp-le ready2go docker stack](https://github.com/cern-fts/ready2go/tree/master/gridftp-le)
