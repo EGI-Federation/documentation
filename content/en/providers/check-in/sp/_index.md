@@ -706,10 +706,10 @@ on-device user-agent, provided that they have an internet connection.
 
 ###### 1. Device Authorization Request
 
-The client initiates the authorization flow by requesting a set of
-verification codes from the authorization server by making an HTTP "POST"
-request to the device authorization endpoint. The client constructs the request
-with the following parameters:
+The client initiates the authorization flow by requesting a set of verification
+codes from the authorization server by making an HTTP "POST" request to the
+device authorization endpoint. The client constructs the request with the
+following parameters:
 
 | Parameter   | Presence | Values                                                                                                    |
 | ----------- | -------- | --------------------------------------------------------------------------------------------------------- |
@@ -746,9 +746,8 @@ Example response:
 
 After receiving a successful Authorization Response, the client displays or
 otherwise communicates the `user_code` and the `verification_uri` to the end
-user and instructs them to visit the URI in a user agent on a secondary
-device (for example, in a browser on their mobile phone), and enter the
-user code.
+user and instructs them to visit the URI in a user agent on a secondary device
+(for example, in a browser on their mobile phone), and enter the user code.
 
 ###### 3. Device Access Token Request
 
