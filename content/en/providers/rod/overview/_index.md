@@ -1,8 +1,8 @@
 ---
-title: "Checklist"
-weight: 1
+title: "Overview"
+weight: 10
 type: docs
-description: Summary of the information and guidelines needed by ROD
+description: Overview of the information and guidelines for ROD
 ---
 
 ## Introduction
