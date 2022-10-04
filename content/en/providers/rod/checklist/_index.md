@@ -101,10 +101,9 @@ Before you start your duties you should get familiar with following documents:
   and quick sheets.
 - [ROD FAQ](../faq). Frequently Asked Questions related to ROD work
 
-It is also important to watch
-[video tutorials](../rod/_index.md#manuals-and-procedures) prepared for ROD
-teams. They will walk you through several topics which are important for your
-work.
+It is also important to watch [video tutorials](../#manuals-and-procedures)
+prepared for ROD teams. They will walk you through several topics which are
+important for your work.
 
 ### Operational Tools
 
