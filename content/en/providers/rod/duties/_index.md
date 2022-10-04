@@ -1,6 +1,6 @@
 ---
-title: ROD duties
-weight: 1
+title: Duties
+weight: 20
 type: docs
 description: "Description of duties of regional operators"
 ---
@@ -36,9 +36,10 @@ The ROD on duty is required to:
 ROD can place a site or a service endpoint (there can be multiple services
 running on a single host) in downtime in the GOCDB if it is either requested by
 the site, or if ROD sees an urgent need to do it.
-**Note: This is actually optional; an NGI may decide on a different policy if
-the site admins are not happy with ROD setting downtimes for them. However, it
-should be considered mandatory in case of urgent security incidents.**
+
+> **Note**: This is actually optional; an NGI may decide on a different policy
+> if the site admins are not happy with ROD setting downtimes for them. However,
+> it should be considered mandatory in case of urgent security incidents.
 
 ROD may also suspend a site, under exceptional circumstances, without going
 through all the steps of the escalation procedure. For example, if a security
