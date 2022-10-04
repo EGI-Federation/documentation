@@ -5,7 +5,7 @@ type: docs
 description: Summary of the information and guidelines needed by ROD
 ---
 
-## Welcome on board!
+## Introduction
 
 This page was created to help you, as a ROD, start with ROD duties.
 
@@ -14,8 +14,9 @@ steps which needs to be taken before starting working as a ROD. The section
 [ROD duties](#rod-duties) documents all the tasks that make up the ROD duties.
 Section [Important to read](#important-to-read) introduces all documents which
 concern this activity and which are supposed to be read at the beginning.
-Section [Tools](#tools) describes all tools used by ROD teams. Finally,
-[Contact](#contact) section is going to inform you how to contact others.
+Section [Operational Tools](#operational-tools) describes all tools used by ROD
+teams. Finally, [Contact](#contact) section is going to inform you how to
+contact others.
 
 ## How to become a ROD member
 
