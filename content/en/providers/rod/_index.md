@@ -24,7 +24,7 @@ In this text, the acronym ROD will be used both for the whole team, or for the
 person who is actually working on shift.
 
 In order to become a ROD member, one first needs to go through the steps
-described in [Checklist for ROD](./checklist).
+described in the [Overview for ROD](./overview).
 
 The following text describes the duties that ROD (teams) are responsible for.
 
