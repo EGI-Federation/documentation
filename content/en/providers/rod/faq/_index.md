@@ -1,8 +1,8 @@
 ---
-title: "FAQs"
-weight: 1
+title: "FAQ"
+weight: 70
 type: docs
-description: "FAQs concerning the ROD activity."
+description: "FAQ concerning the ROD activity."
 ---
 
 ## How to handle issues during weekends and public holidays?

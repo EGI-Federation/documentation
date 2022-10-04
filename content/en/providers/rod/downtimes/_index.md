@@ -1,6 +1,6 @@
 ---
 title: "Managing downtimes"
-weight: 1
+weight: 50
 type: docs
 description: >-
   Description on how to deal with scheduled and unscheduled interventions and

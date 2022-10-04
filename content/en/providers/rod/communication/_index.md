@@ -1,6 +1,6 @@
 ---
-title: "Communication channels for RODs"
-weight: 1
+title: "Communication channels"
+weight: 30
 type: docs
 description: "Communication channels for RODs."
 ---

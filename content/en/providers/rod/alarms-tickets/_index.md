@@ -1,6 +1,6 @@
 ---
 title: "Handling alarms and tickets"
-weight: 1
+weight: 60
 type: docs
 description: >-
   How the ROD should deal with alarms and tickets using the dashboard.

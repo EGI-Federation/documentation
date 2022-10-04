@@ -1,6 +1,6 @@
 ---
 title: "Dealing with security incidents"
-weight: 1
+weight: 40
 type: docs
 description: >-
   Information about procedures to deal with security incidents.
