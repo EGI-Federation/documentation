@@ -1,6 +1,6 @@
 ---
 title: "Service Providers"
-description: "Check-in guide for Service Providers"
+description: "Check-in guide for Service Providers"
 weight: 20
 type: "docs"
 ---
@@ -619,11 +619,11 @@ using the `grant_type` value `refresh_token`:
 Example request:
 
 ```shell
-curl -X POST "${TOKEN_ENDPOINT}" \
-  -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
-  -d "grant_type=refresh_token" \
-  -d "refresh_token=${REFRESH_TOKEN}" \
-  -d "scope=openid%20email%20profile" | python -m json.tool;
+curl -X POST "${TOKEN_ENDPOINT}" \
+  -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
+  -d "grant_type=refresh_token" \
+  -d "refresh_token=${REFRESH_TOKEN}" \
+  -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
@@ -637,7 +637,7 @@ Example response:
   "expires_in": 3599,
   "id_token": "eyJraWQiOiJvaWRjIiwiYW...",
   "refresh_token": "eyJhbGciOiJub25...",
-  "scope": "openid profile email",
+  "scope": "openid profile email",
   "token_type": "Bearer"
 }
 ```
@@ -648,11 +648,11 @@ To combine the refresh token grant type with PKCE you need to make the following
 request:
 
 ```shell
-curl -X POST "${TOKEN_ENDPOINT}" \
-  -d "client_id=${CLIENT_ID}" \
-  -d "grant_type=refresh_token" \
-  -d "refresh_token=${REFRESH_TOKEN}" \
-  -d "scope=openid%20email%20profile" | python -m json.tool;
+curl -X POST "${TOKEN_ENDPOINT}" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "grant_type=refresh_token" \
+  -d "refresh_token=${REFRESH_TOKEN}" \
+  -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
@@ -668,18 +668,18 @@ of the request are:
 | `grant_type`         | Required | `urn:ietf:params:oauth:grant-type:token-exchange`                                                         |
 | `audience`           | Optional | Define the logical name of the service that the token will be used for                                    |
 | `subject_token`      | Required | The value of the access token                                                                             |
-| `subject_token_type` | Required | `urn:ietf:params:oauth:token-type:access_token` (because this feature accepts access tokens only)         |
+| `subject_token_type` | Required | `urn:ietf:params:oauth:token-type:access_token` (because this feature accepts access tokens only)         |
 | `scope`              | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
 
 Example request:
 
 ```shell
-curl -X POST "${TOKEN_ENDPOINT}" \
-  -u "${CLIENT_B_ID}":"${CLIENT_B_SECRET}" \
-  -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
-  -d "subject_token=${ACCESS_TOKEN_A}" \
-  -d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
-  -d "scope=openid%20profile%20offline_access" | python -m json.tool;
+curl -X POST "${TOKEN_ENDPOINT}" \
+  -u "${CLIENT_B_ID}":"${CLIENT_B_SECRET}" \
+  -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
+  -d "subject_token=${ACCESS_TOKEN_A}" \
+  -d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
+  -d "scope=openid%20profile%20offline_access" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
@@ -693,7 +693,7 @@ Example response:
   "expires_in": 3599,
   "id_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUl...",
   "refresh_token": "eyJhbGciOiJub25lIn0.eyJleHAiO...",
-  "scope": "openid profile offline_access",
+  "scope": "openid profile offline_access",
   "token_type": "Bearer"
 }
 ```
@@ -706,10 +706,10 @@ on-device user-agent, provided that they have an internet connection.
 
 ###### 1. Device Authorization Request
 
-The client initiates the authorization flow by requesting a set of
-verification codes from the authorization server by making an HTTP "POST"
-request to the device authorization endpoint. The client constructs the request
-with the following parameters:
+The client initiates the authorization flow by requesting a set of
+verification codes from the authorization server by making an HTTP "POST"
+request to the device authorization endpoint. The client constructs the request
+with the following parameters:
 
 | Parameter   | Presence | Values                                                                                                    |
 | ----------- | -------- | --------------------------------------------------------------------------------------------------------- |
@@ -719,11 +719,11 @@ with the following parameters:
 Example request:
 
 ```shell
-curl -X POST "${DEVICE_CODE_ENDPOINT}" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
+curl -X POST "${DEVICE_CODE_ENDPOINT}" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
   -d "client_id=${CLIENT_ID}" \
   -d "client_secret=${CLIENT_SECRET}" \
-  -d "scope=openid%20email%20profile" | python -m json.tool
+  -d "scope=openid%20email%20profile" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Device Code Endpoint_
@@ -744,35 +744,35 @@ Example response:
 
 ###### 2. User Interaction
 
-After receiving a successful Authorization Response, the client displays or
-otherwise communicates the `user_code` and the `verification_uri` to the end
-user and instructs them to visit the URI in a user agent on a secondary
-device (for example, in a browser on their mobile phone), and enter the
-user code.
+After receiving a successful Authorization Response, the client displays or
+otherwise communicates the `user_code` and the `verification_uri` to the end
+user and instructs them to visit the URI in a user agent on a secondary
+device (for example, in a browser on their mobile phone), and enter the
+user code.
 
 ###### 3. Device Access Token Request
 
-After displaying instructions to the user, the client makes an Access Token
-Request to the token endpoint. The request contains the following parameters:
+After displaying instructions to the user, the client makes an Access Token
+Request to the token endpoint. The request contains the following parameters:
 
 | Parameter       | Presence | Values                                                                                                    |
 | --------------- | -------- | --------------------------------------------------------------------------------------------------------- |
 | `grant_type`    | Required | `urn:ietf:params:oauth:grant-type:device_code`                                                            |
-| `device_code`   | Required | The device verification code, `device_code` from the Device Authorization Response                        |
-| `client_id`     | Required | The identifier of the client                                                                              |
-| `client_secret` | Required | The secret value of the client                                                                            |
+| `device_code`   | Required | The device verification code, `device_code` from the Device Authorization Response                        |
+| `client_id`     | Required | The identifier of the client                                                                              |
+| `client_secret` | Required | The secret value of the client                                                                            |
 | `scope`         | Optional | Define one or more scopes that are contained in the original token; otherwise all scopes will be selected |
 
 Example request:
 
 ```shell
-curl -X POST "${TOKEN_ENDPOINT}" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
-  -d "device_code=${DEVICE_CODE}" \
-  -d "client_id=${CLIENT_ID}" \
-  -d "client_secret=${CLIENT_SECRET}" \
-  -d "scope=openid%20profile" | python -m json.tool
+curl -X POST "${TOKEN_ENDPOINT}" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
+  -d "device_code=${DEVICE_CODE}" \
+  -d "client_id=${CLIENT_ID}" \
+  -d "client_secret=${CLIENT_SECRET}" \
+  -d "scope=openid%20profile" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
@@ -785,7 +785,7 @@ Example response:
   "access_token": "eyJraWQiOiJyc2ExIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJhZG1pbiIs...",
   "expires_in": 3599,
   "id_token": "eyJraWQiOiJyc2ExIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI5MDM0Mi...",
-  "scope": "openid profile",
+  "scope": "openid profile",
   "token_type": "Bearer"
 }
 ```
@@ -1181,7 +1181,7 @@ certificate is present in MasterPortal, e.g. by going to
 doing
 
 ```shell
-ssh proxy@ssh.aai.egi.eu
+ssh proxy@ssh.aai.egi.eu
 ```
 
 and storing the output in `/tmp/x509up_u$(id -u)`
