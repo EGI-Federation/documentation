@@ -32,8 +32,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          # NodeJS 12 is maintained until 2022-04-30
-          node-version: "12.x"
+          # NodeJS 16 is maintained until 2023-09-11
+          node-version: "16.x"
 
       - name: Cache dependencies
         uses: actions/cache@v1
