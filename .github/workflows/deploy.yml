@@ -17,7 +17,7 @@ jobs:
     if: ${{ github.repository == 'EGI-Federation/documentation' }}
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           # Fetch the Docsy theme
           submodules: recursive
