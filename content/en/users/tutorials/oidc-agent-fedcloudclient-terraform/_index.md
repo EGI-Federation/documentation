@@ -344,6 +344,16 @@ resource "local_file" "hosts_cfg" {
 }
 ```
 
+Configure Ansible environment in a `ansible.cfg` file:
+
+```ansible
+[defaults]
+# Use user created using cloud-init.yml
+remote_user = egi
+# Use generated inventory file
+inventory = ./inventory/hosts.cfg
+```
+
 ```shell
 # Initialise working directory, install dependencies
 terraform init
