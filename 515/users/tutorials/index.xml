@@ -758,7 +758,7 @@ multi-distribution method for cross-platform cloud instance initialization.&lt;/
 &lt;p>The &lt;code>curl&lt;/code> call in the &lt;code>cloud-init.yaml&lt;/code> configuration below, will register the
 IP of the virtual machine in the DNS zone managed using the
 &lt;a href="https://nsupdate.fedcloud.eu/">EGI Dynamic DNS service&lt;/a>, allowing to access the
-virtual machine using a fully qualified host name and allowing to retrieve a
+virtual machine using a fully qualified hostname and allowing to retrieve a
 &lt;a href="https://letsencrypt.org/">Let&amp;rsquo;s Encrypt certificate&lt;/a>.&lt;/p>
 &lt;blockquote>
 &lt;p>Please look at the
