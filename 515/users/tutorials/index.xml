@@ -816,9 +816,10 @@ $ terraform apply --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt
 &lt;span style="color:#8f5902;font-style:italic"># Connect to the server using ssh&lt;/span>
 $ ssh egi@&lt;span style="color:#000">$NSUPATE_HOSTNAME&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>From here you can extend the &lt;code>cloud-init.yaml&lt;/code> and/or use
-&lt;a href="#testing-ansible-access">Ansible&lt;/a> to configure the remote machine, as well as
-doing manual work via SSH.&lt;/p>
+&lt;p>From here you can extend the
+&lt;a href="#initial-configuration-of-the-vm-using-cloud-init">cloud-init.yaml&lt;/a> and/or
+use &lt;a href="#step-3-using-ansible">Ansible&lt;/a> to configure the remote machine, as well
+as doing manual work via SSH.&lt;/p>
 &lt;/blockquote>
 &lt;h4 id="debugging-terraform">Debugging terraform&lt;/h4>
 &lt;p>The token used by Terraform for accessing OpenStack is short lived, it will have
@@ -834,7 +835,9 @@ $ &lt;span style="color:#000">OS_DEBUG&lt;/span>&lt;span style="color:#ce5c00;fo
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Debugging&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Destroying the created infrastructure&lt;/span>
 $ terraform destroy --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="testing-ansible-access">Testing Ansible access&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-using-ansible">Step 3: Using Ansible&lt;/h2>
+&lt;p>&lt;a href="https://www.ansible.com/">Ansible&lt;/a> can be used to manage the configuration of
+the crated virtual machine.&lt;/p>
 &lt;p>The &lt;a href="#deploying-the-virtual-machine-with-terraform">terraform deployment&lt;/a>
 generated an
 &lt;a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">Ansible inventory&lt;/a>,
@@ -849,5 +852,7 @@ generated an
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can verify that the Virtual Machine is accessible by Ansible:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Confirming ansible can reach the VM&lt;/span>
 $ ansible all -m ping
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="asking-for-help">Asking for help&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once this works, you can create advanced playbooks to manage your deployed
+host(s).&lt;/p>
+&lt;h2 id="asking-for-help">Asking for help&lt;/h2>
 &lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item></channel></rss>
