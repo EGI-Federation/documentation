@@ -429,9 +429,10 @@ $ terraform apply --var-file="${EGI_SITE}.tfvars"
 $ ssh egi@$NSUPATE_HOSTNAME
 ```
 
-> From here you can extend the `cloud-init.yaml` and/or use
-> [Ansible](#testing-ansible-access) to configure the remote machine, as well as
-> doing manual work via SSH.
+> From here you can extend the
+> [cloud-init.yaml](#initial-configuration-of-the-vm-using-cloud-init) and/or
+> use [Ansible](#step-3-using-ansible) to configure the remote machine, as well
+> as doing manual work via SSH.
 
 #### Debugging terraform
 
@@ -460,7 +461,10 @@ $ OS_DEBUG=1 TF_LOG=DEBUG terraform apply --var-file="${EGI_SITE}.tfvars"
 $ terraform destroy --var-file="${EGI_SITE}.tfvars"
 ```
 
-### Testing Ansible access
+## Step 3: Using Ansible
+
+[Ansible](https://www.ansible.com/) can be used to manage the configuration of
+the crated virtual machine.
 
 The [terraform deployment](#deploying-the-virtual-machine-with-terraform)
 generated an
@@ -484,6 +488,9 @@ Then you can verify that the Virtual Machine is accessible by Ansible:
 # Confirming ansible can reach the VM
 $ ansible all -m ping
 ```
+
+Once this works, you can create advanced playbooks to manage your deployed
+host(s).
 
 ## Asking for help
 
