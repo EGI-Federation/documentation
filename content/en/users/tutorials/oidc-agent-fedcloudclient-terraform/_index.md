@@ -16,7 +16,8 @@ with the [EGI Cloud Compute service](../../compute/cloud-compute),
 [terraform](https://www.terraform.io) and [Ansible](https://www.ansible.com/) to
 simplify deploying an infrastructure.
 [EGI Dynamic DNS](../../compute/cloud-compute/dynamic-dns) is also used to
-assign a domain name to the virtual machine.
+assign a domain name to the virtual machine, which can then be used to get a
+valid TLS certificate from [Let's Encrypt](https://letsencrypt.org/).
 
 ## Step 1: Signing up
 
@@ -68,18 +69,18 @@ from EGI Check-in.
 
 ```shell
 # Generate configuration for EGI Check-in
-oidc-gen --pub --issuer https://aai.egi.eu/auth/realms/egi \
+$ oidc-gen --pub --issuer https://aai.egi.eu/auth/realms/egi \
             --scope "email \
              eduperson_entitlement \
              eduperson_scoped_affiliation \
              eduperson_unique_id" egi
 # List existing configuration
-oidc-add -l
+$ oidc-add -l
 # Request an OIDC access token
-oidc-token egi
+$ oidc-token egi
 # Setting a variable for an access token to be used with OpenStack
 # XXX access tokens are short lived, relaunch command to obtain a new token
-export OS_ACCESS_TOKEN=`oidc-token egi`
+$ export OS_ACCESS_TOKEN=`oidc-token egi`
 ```
 
 It's possible to automatically start `oidc-agent` in your shell initialisation,
@@ -125,16 +126,16 @@ ansible
 
 ```shell
 # Creating a python 3 virutal env
-python3 -m venv ~/.virtualenvs/fedcloud
+$ python3 -m venv ~/.virtualenvs/fedcloud
 # Activating the virutal env
-source ~/.virtualenvs/fedcloud
+$ source ~/.virtualenvs/fedcloud
 # Installing required python packages
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 ```shell
 # Listing the VO membership related to your OIDC access token
-fedcloud token list-vos
+$ fedcloud token list-vos
 ```
 
 In order to look for sites supporting a particular VO, you can use the
@@ -150,72 +151,6 @@ You can retrieve information from the AppDB about the sites supporting the
 
 In the following example, the `IN2P3-IRES` site supporting the
 `vo.access.egi.eu` VO will be used.
-
-#### Creating the VM manually
-
-```shell
-# Setting environement up
-export EGI_SITE='IN2P3-IRES'
-export EGI_VO='vo.access.egi.eu'
-# Export variables for OpenStack access
-eval `fedcloud site env`
-# Selecting an image
-fedcloud select image --image-specs "Name =~ 'EGI.*22'"
-export IMAGE_ID="..."
-# Selecting a flavor
-fedcloud select flavor --flavor-specs "RAM>=2096" --flavor-specs "Disk > 10" --vcpus 2
-export FLAVOR_ID="..."
-# Selecting network
-fedcloud select network --network-specs default
-export NETWORK_ID="..."
-# Registering an ssh key
-openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
-# Identifying and configuring security groups
-openstack security group list
-openstack security group rule list default
-openstack security group rule list http
-# Creating the server (the Virtual Machine)
-openstack server create --flavor $FLAVOR_ID \
-  --image $IMAGE_ID \
-  --nic net-id=$NETWORK_ID \
-  --security-group default --security-group http \
-  --key-name mykey vm1-scoreboard
-export SERVER_ID="..."
-# Listing VMS
-fedcloud openstack --site $EGI_SITE server list
-# List the created VM
-fedcloud openstack --site $EGI_SITE server show $SERVER_ID
-# Listing network and find external one
-openstack network list
-# Creating a floating IP on external/public network (ext-net for this site)
-openstack floating ip create ext-net
-export FLOATING_IP='XXX.XXX.XXX.XXX'
-# Assigning the public floating IP to the VM
-openstack server add floating ip $SERVER_ID $FLOATING_IP
-# Accessing the VM
-ssh ubuntu@$FLOATING_IP
-```
-
-##### Using the EGI Dynamic DNS service
-
-Once connected to the VM, it's possible to use the
-[EGI Dynamic DNS service](https://docs.egi.eu/users/compute/cloud-compute/dynamic-dns/)
-to get a registered domain name, that can also be used for getting a
-[Let's Encrypt certificate](https://letsencrypt.org/).
-
-```shell
-# Accessing the VM using its IP Address
-ssh ubuntu@$FLOATING_IP
-sudo apt update && sudo apt upgrade
-# Login to NSupdate service with EGI
-# https://docs.egi.eu/users/compute/cloud-compute/dynamic-dns/
-https://nsupdate.fedcloud.eu/
-# Register a new VM, and get URL with secret
-# From the VM
-curl "https://<hostname>:<secret>@nsupdate.fedcloud.eu/nic/update"
-# Accessing the VM using its domain name
-ssh ubuntu@<hostname>
-```
 
 #### Creating the VM with terraform
 
@@ -235,18 +170,36 @@ Once terraform is installed locally, you can make use of it.
 Setting up the environment (OS\_\* variables will be used by terraform):
 
 ```shell
-source ~/.virtualenvs/fedcloudclient/bin/activate
-export EGI_VO='vo.access.egi.eu'
-export EGI_SITE='IN2P3-IRES'
+# Activate virtualenv
+$ source ~/.virtualenvs/fedcloudclient/bin/activate
+# Export variable for VO and SITE to avoid having to repeat them
+$ export EGI_VO='vo.access.egi.eu'
+$ export EGI_SITE='IN2P3-IRES'
 eval `fedcloud site env`
-# Need an OS_TOKEN for terraform
-# XXX this breaks using openstackclient
-# rely on fedcloudclient or unset OS_TOKEN before using openstackclient
-export OS_TOKEN=$(fedcloud openstack token issue --site "$EGI_SITE" --vo "$EGI_VO" -j | jq -r '.[0].Result.id')
+# Get an OS_TOKEN for terraform
+# XXX this breaks using openstackclient: use fedcloudclient
+# or unset OS_TOKEN before using openstackclient
+$ export OS_TOKEN=$(fedcloud openstack token issue --site "$EGI_SITE" \
+    --vo "$EGI_VO" -j | jq -r '.[0].Result.id')
 ```
 
-Configure flavor, image, network variables for the site you want to use, see
-example of [`IN2P3-IRES.tfvars`](IN2P3-IRES.tfvars):
+Identify and configure flavor, image, network variables for the site you want to
+use, using the information gathered via `fedcloudclient`, see the example
+[`IN2P3-IRES.tfvars`](IN2P3-IRES.tfvars):
+
+```shell
+# Identifying an image
+$ fedcloud select image --image-specs "Name =~ 'EGI.*22'"
+# Identikfying a flavor
+$ fedcloud select flavor --flavor-specs "RAM>=2096" \
+    --flavor-specs "Disk > 10" --vcpus 2
+# Identifying a network
+$ fedcloud select network --network-specs default
+# Identifying security groups
+$ fedcloud openstack security group list
+$ fedcloud openstack security group rule list default
+$ fedcloud openstack security group rule list http
+```
 
 ```terraform
 # Internal network
@@ -348,32 +301,35 @@ resource "local_file" "hosts_cfg" {
 }
 ```
 
-Configure Ansible environment in a `ansible.cfg` file:
+Configure a basic Ansible environment in the `ansible.cfg` file:
 
 ```ansible
 [defaults]
 # Use user created using cloud-init.yml
 remote_user = egi
-# Use generated inventory file
+# Use inventory file generated by terraform
 inventory = ./inventory/hosts.cfg
 ```
 
 ```shell
 # Initialise working directory, install dependencies
-terraform init
+$ terraform init
 # Review plan of actions for creating the infrastructure
 # Use relevant site-specific config file
-terraform plan --var-file="${EGI_SITE}.tfvars"
+$ terraform plan --var-file="${EGI_SITE}.tfvars"
 # Create the infrastructure
 # Manual approval can be skipped using -auto-approve
 # The SERVER_ID will be printed (openstack_compute_instance_v2.scoreboard)
-terraform apply --var-file="${EGI_SITE}.tfvars"
+$ terraform apply --var-file="${EGI_SITE}.tfvars"
 # Wait a few minutes for the setup to be finalised
 # Test if ansible can reach the vm
-ansible all -m ping
+$ ansible all -m ping
 # Connect to the server using ssh
-ssh egi@$NSUPATE_HOSTNAME
+$ ssh egi@$NSUPATE_HOSTNAME
 ```
+
+> From here you can extend the `cloud-init.yaml` and/or use Ansible locally to
+> configure the remote machine, as well as doing manual work via SSH.
 
 ##### Debugging terraform
 
@@ -382,7 +338,8 @@ to be renewed from time to time.
 
 ```shell
 # Creating a new token to access the OpenStack endpoint
-export OS_TOKEN=$(fedcloud openstack token issue --site "$EGI_SITE" --vo "$EGI_VO" -j | jq -r '.[0].Result.id')
+$ export OS_TOKEN=$(fedcloud openstack token issue --site "$EGI_SITE" \
+    --vo "$EGI_VO" -j | jq -r '.[0].Result.id')
 ```
 
 It is possible to print a verbose/debug output to get details on interactions
@@ -390,7 +347,7 @@ with the OpenStack endpoint.
 
 ```shell
 # Debugging
-OS_DEBUG=1 TF_LOG=DEBUG terraform apply -auto-approve --var-file="${EGI_SITE}.tfvars"
+$ OS_DEBUG=1 TF_LOG=DEBUG terraform apply --var-file="${EGI_SITE}.tfvars"
 ```
 
 ##### Destroying the resources created by terraform
@@ -398,10 +355,8 @@ OS_DEBUG=1 TF_LOG=DEBUG terraform apply -auto-approve --var-file="${EGI_SITE}.tf
 ```shell
 # Debugging
 # Destroying the created infrastructure
-terraform destroy --var-file="${EGI_SITE}.tfvars"
+$ terraform destroy --var-file="${EGI_SITE}.tfvars"
 ```
-
-#### Integrating Terraform with Ansible
 
 ## Asking for help
 
