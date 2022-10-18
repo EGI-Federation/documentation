@@ -470,7 +470,7 @@ generated an
 
 Configure a basic Ansible environment in the `ansible.cfg` file:
 
-```ansible
+```ini
 [defaults]
 # Use user created using cloud-init.yml
 remote_user = egi
