@@ -363,7 +363,7 @@ The initial configuration of the VM is done using a `cloud-init.yaml` file.
 The `curl` call in the `cloud-init.yaml` configuration below, will register the
 IP of the virtual machine in the DNS zone managed using the
 [EGI Dynamic DNS service](https://nsupdate.fedcloud.eu/), allowing to access the
-virtual machine using a fully qualified host name and allowing to retrieve a
+virtual machine using a fully qualified hostname and allowing to retrieve a
 [Let's Encrypt certificate](https://letsencrypt.org/).
 
 > Please look at the
