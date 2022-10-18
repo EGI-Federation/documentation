@@ -1,9 +1,10 @@
 ---
-title: "Using Terraform with oidc-agent and fedcloudclient"
+title: "Automating with oidc-agent, fedcloudclient, terraform and Ansible"
 type: docs
-weight: 10
+weight: 150
 description: >
-  Step by step guide to Terraform with oidc-agent and fedcloudclient
+  Step by step guide to automating the deployment using Ansible with Terraform,
+  oidc-agent and fedcloudclient
 ---
 
 ## Overview
@@ -68,17 +69,17 @@ once `oidc-agent` is installed it can be used to retrieve an OIDC access token
 from EGI Check-in.
 
 ```shell
-# Generate configuration for EGI Check-in
+# Generating configuration for EGI Check-in
 $ oidc-gen --pub --issuer https://aai.egi.eu/auth/realms/egi \
             --scope "email \
              eduperson_entitlement \
              eduperson_scoped_affiliation \
              eduperson_unique_id" egi
-# List existing configuration
+# Listing existing configuration
 $ oidc-add -l
-# Request an OIDC access token
+# Requesting an OIDC access token
 $ oidc-token egi
-# Setting a variable for an access token to be used with OpenStack
+# Exporting a variable with a Check-in OIDC access token to be used with OpenStack
 # XXX access tokens are short lived, relaunch command to obtain a new token
 $ export OS_ACCESS_TOKEN=`oidc-token egi`
 ```
@@ -94,14 +95,15 @@ if command -v oidc-agent-service &> /dev/null
 fi
 ```
 
+When using `oidc-agent-service`,
+[fedcloudclient](#installing-fedcloudclient-and-ansible) will be able to
+automatically request a new access token from `oidc-agent`.
+
 See [full documentation](https://indigo-dc.gitbook.io/oidc-agent/).
 
-### Identifying a suitable cloud site
+### Installing fedcloudclient and ansible
 
-It's possible to deploy an OpenStack Virtual Machine (VM) on any of the sites
-supporting the Virtual Organisations (VO) you are a member of.
-
-[`fedcloudlcient`](https://fedcloudclient.fedcloud.eu/) is an high-level Python
+[`fedcloudclient`](https://fedcloudclient.fedcloud.eu/) is an high-level Python
 package for a command-line client designed for interaction with the OpenStack
 services in the EGI infrastructure. The client can access various EGI services
 and can perform many tasks for users including managing access tokens, listing
@@ -111,48 +113,62 @@ services, and mainly execute commands on OpenStack sites in EGI infrastructure.
 installed and properly configured.
 
 `fedcloudclient` and
-[`opentackclient`](https://docs.openstack.org/python-openstackclient/latest/)
-will be used to interact with the EGI Cloud Compute service. Both of them can be
-installed in a
-[python virtualenv](https://docs.python.org/3/tutorial/venv.html):
+[`opentackclient`](https://docs.openstack.org/python-openstackclient/latest/),
+the official OpenStack python client, will be used to interact with the EGI
+Cloud Compute service.
 
-Document required python dependencies in a `requirements.txt` file:
+Required python dependencies are documented in a `requirements.txt` file
+(Ansible will be used at a later stage, but is installed at the same time):
 
-```requirements
+```requirements.txt
 openstackclient
 fedcloudclient
 ansible
 ```
 
+For keeping the main system tidy and isolating the environment, the python
+packages will be installed in a dedicated
+[python virtualenv](https://docs.python.org/3/tutorial/venv.html):
+
 ```shell
-# Creating a python 3 virutal env
+# Creating an arbitrary directory where to store python virtual environments
+$ mkdir -p ~/.virtualenvs
+# Creating a python 3 virtual environment
 $ python3 -m venv ~/.virtualenvs/fedcloud
-# Activating the virutal env
+# Activating the virtual environment
 $ source ~/.virtualenvs/fedcloud
-# Installing required python packages
+# Installing required python packages in the virtual environment
 $ pip install -r requirements.txt
 ```
 
+### Identifying a suitable cloud site
+
+It's possible to deploy an OpenStack Virtual Machine (VM) on any of the sites
+supporting the Virtual Organisations (VO) you are a member of.
+
+Once [fedcloudclient](#installing-fedcloudclient-openstackclient-and-ansible) is
+installed it's possible to get information about the OIDC token accessed via
+[oidc-agent](#setting-up-oidc-agent).
+
 ```shell
-# Listing the VO membership related to your OIDC access token
+# Verifying that an OS_ACCESS_TOKEN is available
+$ echo $OS_ACCESS_TOKEN
+# Listing the VO membership related to the OIDC access token
 $ fedcloud token list-vos
 ```
 
 In order to look for sites supporting a particular VO, you can use the
 [EGI Application Database](https://appdb.egi.eu/browse/vos/cloud).
 
-`vo.access.egi.eu` is a VO for piloting activities, you can enrol via
-[EGI Check-in](https://aai.egi.eu/registry/co_petitions/start/coef:240).
-
 You can retrieve information from the AppDB about the sites supporting the
 [vo.access.egi.eu VO](https://appdb.egi.eu/store/vo/vo.access.egi.eu).
 
-### Deploying the Virtual Machine
+> In the following example, the `IN2P3-IRES` site supporting the
+> `vo.access.egi.eu` VO will be used, see
+> [Step 2: Enrolling to a Virtual Organisation](#step-2-enrolling-to-a-virtual-organisation)
+> to request access.
 
-In the following example, the `IN2P3-IRES` site supporting the
-`vo.access.egi.eu` VO will be used.
-
-#### Creating the VM with terraform
+### Deploying the Virtual Machine with terraform
 
 Instead of creating the server manually, it is possible to use
 [terraform with EGI Cloud Compute](../../compute/cloud-compute/openstack/#terraform).
@@ -183,22 +199,21 @@ $ export OS_TOKEN=$(fedcloud openstack token issue --site "$EGI_SITE" \
     --vo "$EGI_VO" -j | jq -r '.[0].Result.id')
 ```
 
-Identify and configure flavor, image, network variables for the site you want to
-use, using the information gathered via `fedcloudclient`, they should be
-documented in a `$EGI_SITE.tfvars` file, as documented below.
+Identify flavor, image, network and security groups for the site you want to
+use, using the information gathered with `fedcloudclient`.
 
 ```shell
-# Identifying an image
+# Selecting an image
 $ fedcloud select image --image-specs "Name =~ 'EGI.*22'"
-# Identikfying a flavor
+# Selecting a flavor
 $ fedcloud select flavor --flavor-specs "RAM>=2096" \
     --flavor-specs "Disk > 10" --vcpus 2
-# Identifying a network
-$ fedcloud select network --network-specs default
+# Identifying available networks
 $ fedcloud openstack --site "$EGI_SITE" network list
+$ fedcloud select network --network-specs default
 # Identifying security groups
 $ fedcloud openstack --site "$EGI_SITE" security group list
-# Listing rules from a specific security group
+# Listing rules of a specific security group
 $ fedcloud openstack --site "$EGI_SITE" security group rule list default
 ```
 
@@ -206,7 +221,10 @@ $ fedcloud openstack --site "$EGI_SITE" security group rule list default
 > For `IN2P3-IRES`, one has to request a floating IP from the public network IP
 > pool `ext-net` and assign this floating IP to the created instance.
 
-See the example [`IN2P3-IRES.tfvars`](IN2P3-IRES.tfvars):
+The chosen flavor, image, network and security group should be documented in a
+`$EGI_SITE.tfvars` file that will be passed as an argument to terraform
+commands. See the example [`IN2P3-IRES.tfvars`](IN2P3-IRES.tfvars), to be
+adjusted for the requirements and according to the site:
 
 ```terraform
 # Internal network
@@ -230,6 +248,25 @@ security_groups  = ["default"]
 ```
 
 The initial configuration of the VM is done using a `cloud-init.yaml` file.
+
+This `curl` call in the `cloud-init.yaml` configuration below, will register the
+IP of the virtual machine in the DNS zone managed using the
+[EGI Dynamic DNS service](https://nsupdate.fedcloud.eu/), allowing to access the
+virtual machine using a fully qualified host name and allowing to retrieve a
+[Let's Encrypt certificate](https://letsencrypt.org/).
+
+> Please look at the
+> [EGI Dynamic DNS documentation](../../compute/cloud-compute/dynamic-dns/) for
+> instructions on creating the configuration for a new host.
+
+The `users` block in the `cloud-init.yaml` configuration below, will create a
+new user with password-less [sudo](https://www.sudo.ws/) access.
+
+> While this `egi` user can only be accessed via the specified SSH key(s),
+> setting a user password and requesting password verification for using sudo
+> should be considered, as a compromise of this user account would mean a
+> compromise of the complete virtual machine.
+
 Replace `<NSUPATE_HOSTNAME>`, `<NSUPDATE_SECRET>`, `<SSH_AUTHORIZED_KEY>` (the
 content of your SSH public key) by the proper values.
 
@@ -260,7 +297,43 @@ package_upgrade: true
 package_reboot_if_required: true
 ```
 
-Create terraform configuration in `main.tf`:
+The main terraform configuration file is using variables that have to be
+described in a `vars.tf` file:
+
+```terraform
+# Terraform variables definition
+# Values to be provided in a *.tfvars file passed on the command line
+
+variable "internal_net_id" {
+  type        = string
+  description = "The id of the internal network"
+}
+
+variable "public_ip_pool" {
+  type        = string
+  description = "The name of the public IP address pool"
+}
+
+variable "image_id" {
+  type        = string
+  description = "VM image id"
+}
+
+variable "flavor_id" {
+  type        = string
+  description = "VM flavor id"
+}
+
+variable "security_groups" {
+  type        = list(string)
+  description = "List of security groups"
+}
+
+```
+
+To be more reusable, the `main.tf` configuration file is referencing variables
+described in a `vars.tf` file created previously, and will take the values from
+the `$EGI_SITE.tfvars` file passed as an argument to the terraform command.
 
 ```terraform
 # Terraform versions and providers
@@ -308,15 +381,9 @@ resource "local_file" "hosts_cfg" {
 }
 ```
 
-Configure a basic Ansible environment in the `ansible.cfg` file:
-
-```ansible
-[defaults]
-# Use user created using cloud-init.yml
-remote_user = egi
-# Use inventory file generated by terraform
-inventory = ./inventory/hosts.cfg
-```
+Now that all the files have been created, it's possible to deploy the
+infrastructure, currently only a single VM, but it can easily be extended to a
+more complex setup, using terraform:
 
 ```shell
 # Initialise working directory, install dependencies
@@ -329,16 +396,39 @@ $ terraform plan --var-file="${EGI_SITE}.tfvars"
 # The SERVER_ID will be printed (openstack_compute_instance_v2.scoreboard)
 $ terraform apply --var-file="${EGI_SITE}.tfvars"
 # Wait a few minutes for the setup to be finalised
-# Test if ansible can reach the vm
-$ ansible all -m ping
 # Connect to the server using ssh
 $ ssh egi@$NSUPATE_HOSTNAME
 ```
 
-> From here you can extend the `cloud-init.yaml` and/or use Ansible locally to
-> configure the remote machine, as well as doing manual work via SSH.
+> From here you can extend the `cloud-init.yaml` and/or use
+> [Ansible](#testing-ansible-access) to configure the remote machine, as well as
+> doing manual work via SSH.
 
-##### Debugging terraform
+#### Testing Ansible access
+
+The [terraform deployment](#deploying-the-virtual-machine-with-terraform)
+generated an
+[Ansible inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html),
+`inventory/hosts.cfg`, that can directly be used by Ansible.
+
+Configure a basic Ansible environment in the `ansible.cfg` file:
+
+```ansible
+[defaults]
+# Use user created using cloud-init.yml
+remote_user = egi
+# Use inventory file generated by terraform
+inventory = ./inventory/hosts.cfg
+```
+
+Then you can verify that the Virtual Machine is accessible by Ansible:
+
+```shell
+# Test if ansible can reach the vm
+$ ansible all -m ping
+```
+
+#### Debugging terraform
 
 The token used by Terraform for accessing OpenStack is short lived, it will have
 to be renewed from time to time.
@@ -357,7 +447,7 @@ with the OpenStack endpoint.
 $ OS_DEBUG=1 TF_LOG=DEBUG terraform apply --var-file="${EGI_SITE}.tfvars"
 ```
 
-##### Destroying the resources created by terraform
+#### Destroying the resources created by terraform
 
 ```shell
 # Debugging
