@@ -258,16 +258,20 @@ public_ip_pool = "ext-net"
 # Flavor: m1.medium
 flavor_id = "ab1fbd4c-324d-4155-bd0f-72f077f0ebce"
 
-# Image: CentOS 7 with docker
-image_id = "8901c279-8aee-4b5b-be03-d4460cfe4008"
+# Image: EGI CentOS 8
+# https://appdb.egi.eu/store/vappliance/egi.centos.8
+image_id = "38ced5bf-bbfd-434b-ae41-3ab35d929aba"
+# Image: EGI Ubuntu 22.04
+# https://appdb.egi.eu/store/vappliance/egi.ubuntu.22.04
+# image_id = "fc6c83a3-845f-4f29-b44d-2584f0ca4177"
 
 # Security groups
 security_groups  = ["default"]
 ```
 
 The initial configuration of the VM is done using a `cloud-init.yaml` file.
-Replace `<NSUPATE_HOSTNAME>`, `<NSUPDATE_SECRET>`, `<GITHUB_USER_NAME>` by the
-proper values.
+Replace `<NSUPATE_HOSTNAME>`, `<NSUPDATE_SECRET>`, `<SSH_AUTHORIZED_KEY>` (the
+content of your SSH public key) by the proper values.
 
 ```yaml
 ---
@@ -285,8 +289,8 @@ users:
     groups: users
     shell: /bin/bash
     sudo: ALL=(ALL) NOPASSWD:ALL
-    ssh_import_id:
-      - gh:<GITHUB_USER_NAME>
+    ssh_authorized_keys:
+      - <SSH_AUTHORIZED_KEY>
 
 packages:
   - vim
