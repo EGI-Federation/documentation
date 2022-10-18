@@ -115,14 +115,21 @@ will be used to interact with the EGI Cloud Compute service. Both of them can be
 installed in a
 [python virtualenv](https://docs.python.org/3/tutorial/venv.html):
 
+Document required python dependencies in a `requirements.txt` file:
+
+```requirements
+openstackclient
+fedcloudclient
+ansible
+```
+
 ```shell
 # Creating a python 3 virutal env
 python3 -m venv ~/.virtualenvs/fedcloud
 # Activating the virutal env
 source ~/.virtualenvs/fedcloud
-# Installing required packages
-pip install -U openstackclient
-pip install -U fedcloudclient
+# Installing required python packages
+pip install -r requirements.txt
 ```
 
 ```shell
