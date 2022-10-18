@@ -461,7 +461,7 @@ $ OS_DEBUG=1 TF_LOG=DEBUG terraform apply --var-file="${EGI_SITE}.tfvars"
 $ terraform destroy --var-file="${EGI_SITE}.tfvars"
 ```
 
-## Step 3: Using Ansible
+## Step 4: Using Ansible
 
 [Ansible](https://www.ansible.com/) can be used to manage the configuration of
 the crated virtual machine.
