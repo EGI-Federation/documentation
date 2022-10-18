@@ -354,7 +354,10 @@ terraform plan --var-file="${EGI_SITE}.tfvars"
 # Manual approval can be skipped using -auto-approve
 # The SERVER_ID will be printed (openstack_compute_instance_v2.scoreboard)
 terraform apply --var-file="${EGI_SITE}.tfvars"
-# Wait a few minutes for the setup to be finalised and connect to the server
+# Wait a few minutes for the setup to be finalised
+# Test if ansible can reach the vm
+ansible all -m ping
+# Connect to the server using ssh
 ssh egi@$NSUPATE_HOSTNAME
 ```
 
