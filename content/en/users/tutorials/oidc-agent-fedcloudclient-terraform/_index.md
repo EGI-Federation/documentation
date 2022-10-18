@@ -460,12 +460,13 @@ $ OS_DEBUG=1 TF_LOG=DEBUG terraform apply --var-file="${EGI_SITE}.tfvars"
 $ terraform destroy --var-file="${EGI_SITE}.tfvars"
 ```
 
-#### Testing Ansible access
+### Testing Ansible access
 
 The [terraform deployment](#deploying-the-virtual-machine-with-terraform)
 generated an
 [Ansible inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html),
-`inventory/hosts.cfg`, that can directly be used by Ansible.
+`inventory/hosts.cfg`, that can directly be used by
+[Ansible](https://www.ansible.com/).
 
 Configure a basic Ansible environment in the `ansible.cfg` file:
 
