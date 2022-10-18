@@ -181,124 +181,33 @@ Terraform provides
 [installation instructions](https://www.terraform.io/downloads) for all usual
 platforms.
 
-Once terraform is installed locally, you can make use of it.
+Once terraform is installed locally, we will create a deployment as documented
+in the following sections.
 
-Setting up the environment (OS\_\* variables will be used by terraform):
+#### Setting up the environment
+
+The `OS_*` variables that will be used by terraform can be generated using
+`fedcloudclient`.
 
 ```shell
-# Activate virtualenv
+# Activating the virtual environment
 $ source ~/.virtualenvs/fedcloudclient/bin/activate
-# Export variable for VO and SITE to avoid having to repeat them
+# Exporting variable for VO and SITE to avoid having to repeat them
 $ export EGI_VO='vo.access.egi.eu'
 $ export EGI_SITE='IN2P3-IRES'
 eval `fedcloud site env`
-# Get an OS_TOKEN for terraform
+# Obtaining an OS_TOKEN for terraform
 # XXX this breaks using openstackclient: use fedcloudclient
 # or unset OS_TOKEN before using openstackclient
 $ export OS_TOKEN=$(fedcloud openstack token issue --site "$EGI_SITE" \
     --vo "$EGI_VO" -j | jq -r '.[0].Result.id')
 ```
 
-Identify flavor, image, network and security groups for the site you want to
-use, using the information gathered with `fedcloudclient`.
+#### Describing the terraform variables
 
-```shell
-# Selecting an image
-$ fedcloud select image --image-specs "Name =~ 'EGI.*22'"
-# Selecting a flavor
-$ fedcloud select flavor --flavor-specs "RAM>=2096" \
-    --flavor-specs "Disk > 10" --vcpus 2
-# Identifying available networks
-$ fedcloud openstack --site "$EGI_SITE" network list
-$ fedcloud select network --network-specs default
-# Identifying security groups
-$ fedcloud openstack --site "$EGI_SITE" security group list
-# Listing rules of a specific security group
-$ fedcloud openstack --site "$EGI_SITE" security group rule list default
-```
-
-> The network configuration can be tricky and is usually dependant on the site.
-> For `IN2P3-IRES`, one has to request a floating IP from the public network IP
-> pool `ext-net` and assign this floating IP to the created instance.
-
-The chosen flavor, image, network and security group should be documented in a
-`$EGI_SITE.tfvars` file that will be passed as an argument to terraform
-commands. See the example [`IN2P3-IRES.tfvars`](IN2P3-IRES.tfvars), to be
-adjusted for the requirements and according to the site:
-
-```terraform
-# Internal network
-internal_net_id = "7ae7b0ca-f122-4445-836a-5fb7af524dcb"
-
-# Public IP pool for floating IPs
-public_ip_pool = "ext-net"
-
-# Flavor: m1.medium
-flavor_id = "ab1fbd4c-324d-4155-bd0f-72f077f0ebce"
-
-# Image: EGI CentOS 8
-# https://appdb.egi.eu/store/vappliance/egi.centos.8
-image_id = "38ced5bf-bbfd-434b-ae41-3ab35d929aba"
-# Image: EGI Ubuntu 22.04
-# https://appdb.egi.eu/store/vappliance/egi.ubuntu.22.04
-# image_id = "fc6c83a3-845f-4f29-b44d-2584f0ca4177"
-
-# Security groups
-security_groups  = ["default"]
-```
-
-The initial configuration of the VM is done using a `cloud-init.yaml` file.
-
-This `curl` call in the `cloud-init.yaml` configuration below, will register the
-IP of the virtual machine in the DNS zone managed using the
-[EGI Dynamic DNS service](https://nsupdate.fedcloud.eu/), allowing to access the
-virtual machine using a fully qualified host name and allowing to retrieve a
-[Let's Encrypt certificate](https://letsencrypt.org/).
-
-> Please look at the
-> [EGI Dynamic DNS documentation](../../compute/cloud-compute/dynamic-dns/) for
-> instructions on creating the configuration for a new host.
-
-The `users` block in the `cloud-init.yaml` configuration below, will create a
-new user with password-less [sudo](https://www.sudo.ws/) access.
-
-> While this `egi` user can only be accessed via the specified SSH key(s),
-> setting a user password and requesting password verification for using sudo
-> should be considered, as a compromise of this user account would mean a
-> compromise of the complete virtual machine.
-
-Replace `<NSUPATE_HOSTNAME>`, `<NSUPDATE_SECRET>`, `<SSH_AUTHORIZED_KEY>` (the
-content of your SSH public key) by the proper values.
-
-```yaml
----
-# cloud-config
-runcmd:
-  - [
-      curl,
-      "https://<NSUPATE_HOSTNAME>:<NSUPDATE_SECRET>@nsupdate.fedcloud.eu/nic/update",
-    ]
-
-users:
-  - name: egi
-    gecos: EGI
-    primary_group: egi
-    groups: users
-    shell: /bin/bash
-    sudo: ALL=(ALL) NOPASSWD:ALL
-    ssh_authorized_keys:
-      - <SSH_AUTHORIZED_KEY>
-
-packages:
-  - vim
-
-package_update: true
-package_upgrade: true
-package_reboot_if_required: true
-```
-
-The main terraform configuration file is using variables that have to be
-described in a `vars.tf` file:
+The main terraform configuration file,
+[main.tf](#creating-the-main-terraform-deployment-file) is using variables that
+have to be described in a `vars.tf` file:
 
 ```terraform
 # Terraform variables definition
@@ -328,12 +237,75 @@ variable "security_groups" {
   type        = list(string)
   description = "List of security groups"
 }
-
 ```
 
+The SITE and VO specific values for those variables will be
+[identified](#identifying-the-cloud-resources) and documented in a
+[`$EGI_SITE.tfvars` file](#documenting-the-cloud-resources-for-the-selected-site).
+
+#### Identifying the cloud resources
+
+Identify flavor, image, network and security groups for the site you want to
+use, using the information gathered with `fedcloudclient`.
+
+```shell
+# Selecting an image
+$ fedcloud select image --image-specs "Name =~ 'EGI.*22'"
+# Selecting a flavor
+$ fedcloud select flavor --flavor-specs "RAM>=2096" \
+    --flavor-specs "Disk > 10" --vcpus 2
+# Identifying available networks
+$ fedcloud openstack --site "$EGI_SITE" network list
+$ fedcloud select network --network-specs default
+# Identifying security groups
+$ fedcloud openstack --site "$EGI_SITE" security group list
+# Listing rules of a specific security group
+$ fedcloud openstack --site "$EGI_SITE" security group rule list default
+```
+
+#### Documenting the cloud resources for the selected site
+
+The chosen flavor, image, network and security group should be documented in a
+`$EGI_SITE.tfvars` file that will be passed as an argument to terraform
+commands.
+
+> The network configuration can be tricky and is usually dependant on the site.
+> For `IN2P3-IRES`, one has to request a floating IP from the public network IP
+> pool `ext-net` and assign this floating IP to the created instance, for
+> another site it may not be needed, and in that case the `main.tf` will have to
+> be adjusted accordingly.
+
+See the example [`IN2P3-IRES.tfvars`](IN2P3-IRES.tfvars), to be adjusted
+according to the requirements and to the selected site and VO:
+
+```terraform
+# Internal network
+internal_net_id = "7ae7b0ca-f122-4445-836a-5fb7af524dcb"
+
+# Public IP pool for floating IPs
+public_ip_pool = "ext-net"
+
+# Flavor: m1.medium
+flavor_id = "ab1fbd4c-324d-4155-bd0f-72f077f0ebce"
+
+# Image: EGI CentOS 8
+# https://appdb.egi.eu/store/vappliance/egi.centos.8
+image_id = "38ced5bf-bbfd-434b-ae41-3ab35d929aba"
+# Image: EGI Ubuntu 22.04
+# https://appdb.egi.eu/store/vappliance/egi.ubuntu.22.04
+# image_id = "fc6c83a3-845f-4f29-b44d-2584f0ca4177"
+
+# Security groups
+security_groups  = ["default"]
+```
+
+#### Creating the main terraform deployment file
+
 To be more reusable, the `main.tf` configuration file is referencing variables
-described in a `vars.tf` file created previously, and will take the values from
-the `$EGI_SITE.tfvars` file passed as an argument to the terraform command.
+described in the [vars.tf](#describing-the-terraform-variables) file created
+previously, and will take the values from the
+[`$EGI_SITE.tfvars`](#documenting-the-cloud-resources-for-the-selected-site)
+file passed as an argument to the terraform command.
 
 ```terraform
 # Terraform versions and providers
@@ -381,6 +353,63 @@ resource "local_file" "hosts_cfg" {
 }
 ```
 
+#### Initial configuration of the VM using cloud-init
+
+> [cloud-init](https://cloudinit.readthedocs.io/) is the industry standard
+> multi-distribution method for cross-platform cloud instance initialization.
+
+The initial configuration of the VM is done using a `cloud-init.yaml` file.
+
+The `curl` call in the `cloud-init.yaml` configuration below, will register the
+IP of the virtual machine in the DNS zone managed using the
+[EGI Dynamic DNS service](https://nsupdate.fedcloud.eu/), allowing to access the
+virtual machine using a fully qualified host name and allowing to retrieve a
+[Let's Encrypt certificate](https://letsencrypt.org/).
+
+> Please look at the
+> [EGI Dynamic DNS documentation](../../compute/cloud-compute/dynamic-dns/) for
+> instructions on creating the configuration for a new host.
+
+The `users` block in the `cloud-init.yaml` configuration below, will create a
+new user with password-less [sudo](https://www.sudo.ws/) access.
+
+> While this `egi` user can only be accessed via the specified SSH key(s),
+> setting a user password and requesting password verification for using sudo
+> should be considered, as a compromise of this user account would mean a
+> compromise of the complete virtual machine.
+
+Replace `<NSUPATE_HOSTNAME>`, `<NSUPDATE_SECRET>`, `<SSH_AUTHORIZED_KEY>` (the
+content of your SSH public key) by the proper values.
+
+```yaml
+---
+# cloud-config
+runcmd:
+  - [
+      curl,
+      "https://<NSUPATE_HOSTNAME>:<NSUPDATE_SECRET>@nsupdate.fedcloud.eu/nic/update",
+    ]
+
+users:
+  - name: egi
+    gecos: EGI
+    primary_group: egi
+    groups: users
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh_authorized_keys:
+      - <SSH_AUTHORIZED_KEY>
+
+packages:
+  - vim
+
+package_update: true
+package_upgrade: true
+package_reboot_if_required: true
+```
+
+#### Launching the terraform deployment
+
 Now that all the files have been created, it's possible to deploy the
 infrastructure, currently only a single VM, but it can easily be extended to a
 more complex setup, using terraform:
@@ -403,30 +432,6 @@ $ ssh egi@$NSUPATE_HOSTNAME
 > From here you can extend the `cloud-init.yaml` and/or use
 > [Ansible](#testing-ansible-access) to configure the remote machine, as well as
 > doing manual work via SSH.
-
-#### Testing Ansible access
-
-The [terraform deployment](#deploying-the-virtual-machine-with-terraform)
-generated an
-[Ansible inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html),
-`inventory/hosts.cfg`, that can directly be used by Ansible.
-
-Configure a basic Ansible environment in the `ansible.cfg` file:
-
-```ansible
-[defaults]
-# Use user created using cloud-init.yml
-remote_user = egi
-# Use inventory file generated by terraform
-inventory = ./inventory/hosts.cfg
-```
-
-Then you can verify that the Virtual Machine is accessible by Ansible:
-
-```shell
-# Test if ansible can reach the vm
-$ ansible all -m ping
-```
 
 #### Debugging terraform
 
@@ -453,6 +458,30 @@ $ OS_DEBUG=1 TF_LOG=DEBUG terraform apply --var-file="${EGI_SITE}.tfvars"
 # Debugging
 # Destroying the created infrastructure
 $ terraform destroy --var-file="${EGI_SITE}.tfvars"
+```
+
+#### Testing Ansible access
+
+The [terraform deployment](#deploying-the-virtual-machine-with-terraform)
+generated an
+[Ansible inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html),
+`inventory/hosts.cfg`, that can directly be used by Ansible.
+
+Configure a basic Ansible environment in the `ansible.cfg` file:
+
+```ansible
+[defaults]
+# Use user created using cloud-init.yml
+remote_user = egi
+# Use inventory file generated by terraform
+inventory = ./inventory/hosts.cfg
+```
+
+Then you can verify that the Virtual Machine is accessible by Ansible:
+
+```shell
+# Test if ansible can reach the vm
+$ ansible all -m ping
 ```
 
 ## Asking for help
