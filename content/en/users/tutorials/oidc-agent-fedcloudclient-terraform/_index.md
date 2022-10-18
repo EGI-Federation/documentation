@@ -275,8 +275,8 @@ commands.
 > another site it may not be needed, and in that case the `main.tf` will have to
 > be adjusted accordingly.
 
-See the example [`IN2P3-IRES.tfvars`](IN2P3-IRES.tfvars), to be adjusted
-according to the requirements and to the selected site and VO:
+See the example `IN2P3-IRES.tfvars` below, to be adjusted according to the
+requirements and to the selected site and VO:
 
 ```terraform
 # Internal network
