@@ -20,7 +20,7 @@ simplify deploying an infrastructure.
 assign a domain name to the virtual machine, which can then be used to get a
 valid TLS certificate from [Let's Encrypt](https://letsencrypt.org/).
 
-## Step 1: Signing up
+## Step 1: Signing up for an EGI Check-in account
 
 Create an EGI account with [Check-in](../../aai/check-in/signup).
 
