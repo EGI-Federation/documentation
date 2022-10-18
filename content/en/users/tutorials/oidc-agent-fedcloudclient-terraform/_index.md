@@ -184,8 +184,8 @@ $ export OS_TOKEN=$(fedcloud openstack token issue --site "$EGI_SITE" \
 ```
 
 Identify and configure flavor, image, network variables for the site you want to
-use, using the information gathered via `fedcloudclient`, see the example
-[`IN2P3-IRES.tfvars`](IN2P3-IRES.tfvars):
+use, using the information gathered via `fedcloudclient`, they should be
+documented in a `$EGI_SITE.tfvars` file, as documented below.
 
 ```shell
 # Identifying an image
@@ -195,11 +195,18 @@ $ fedcloud select flavor --flavor-specs "RAM>=2096" \
     --flavor-specs "Disk > 10" --vcpus 2
 # Identifying a network
 $ fedcloud select network --network-specs default
+$ fedcloud openstack --site "$EGI_SITE" network list
 # Identifying security groups
-$ fedcloud openstack security group list
-$ fedcloud openstack security group rule list default
-$ fedcloud openstack security group rule list http
+$ fedcloud openstack --site "$EGI_SITE" security group list
+$ fedcloud openstack --site "$EGI_SITE" security group rule list default
+$ fedcloud openstack --site "$EGI_SITE" security group rule list http
 ```
+
+> The network configuration can be tricky and is usually dependant on the site.
+> For `IN2P3-IRES`, one has to request a floating IP from the public network IP
+> pool `ext-net` and assign this floating IP to the created instance.
+
+See the example [`IN2P3-IRES.tfvars`](IN2P3-IRES.tfvars):
 
 ```terraform
 # Internal network
