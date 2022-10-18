@@ -483,7 +483,7 @@ simplify deploying an infrastructure.
 &lt;a href="../../compute/cloud-compute/dynamic-dns">EGI Dynamic DNS&lt;/a> is also used to
 assign a domain name to the virtual machine, which can then be used to get a
 valid TLS certificate from &lt;a href="https://letsencrypt.org/">Let&amp;rsquo;s Encrypt&lt;/a>.&lt;/p>
-&lt;h2 id="step-1-signing-up">Step 1: Signing up&lt;/h2>
+&lt;h2 id="step-1-signing-up-for-an-egi-check-in-account">Step 1: Signing up for an EGI Check-in account&lt;/h2>
 &lt;p>Create an EGI account with &lt;a href="../../aai/check-in/signup">Check-in&lt;/a>.&lt;/p>
 &lt;h2 id="step-2-enrolling-to-a-virtual-organisation">Step 2: Enrolling to a Virtual Organisation&lt;/h2>
 &lt;p>Once your EGI account is ready you need to join a
