@@ -680,8 +680,8 @@ pool &lt;code>ext-net&lt;/code> and assign this floating IP to the created insta
 another site it may not be needed, and in that case the &lt;code>main.tf&lt;/code> will have to
 be adjusted accordingly.&lt;/p>
 &lt;/blockquote>
-&lt;p>See the example &lt;a href="IN2P3-IRES.tfvars">&lt;code>IN2P3-IRES.tfvars&lt;/code>&lt;/a>, to be adjusted
-according to the requirements and to the selected site and VO:&lt;/p>
+&lt;p>See the example &lt;code>IN2P3-IRES.tfvars&lt;/code> below, to be adjusted according to the
+requirements and to the selected site and VO:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-terraform" data-lang="terraform">&lt;span style="color:#8f5902;font-style:italic"># Internal network
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">internal_net_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;7ae7b0ca-f122-4445-836a-5fb7af524dcb&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">
