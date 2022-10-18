@@ -198,8 +198,8 @@ $ fedcloud select network --network-specs default
 $ fedcloud openstack --site "$EGI_SITE" network list
 # Identifying security groups
 $ fedcloud openstack --site "$EGI_SITE" security group list
+# Listing rules from a specific security group
 $ fedcloud openstack --site "$EGI_SITE" security group rule list default
-$ fedcloud openstack --site "$EGI_SITE" security group rule list http
 ```
 
 > The network configuration can be tricky and is usually dependant on the site.
