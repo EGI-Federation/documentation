@@ -481,7 +481,7 @@ inventory = ./inventory/hosts.cfg
 Then you can verify that the Virtual Machine is accessible by Ansible:
 
 ```shell
-# Test if ansible can reach the vm
+# Confirming ansible can reach the VM
 $ ansible all -m ping
 ```
 
