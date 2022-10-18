@@ -38,7 +38,8 @@ with the &lt;a href="../../compute/cloud-compute">EGI Cloud Compute service&lt;/
 &lt;a href="https://www.terraform.io">terraform&lt;/a> and &lt;a href="https://www.ansible.com/">Ansible&lt;/a> to
 simplify deploying an infrastructure.
 &lt;a href="../../compute/cloud-compute/dynamic-dns">EGI Dynamic DNS&lt;/a> is also used to
-assign a domain name to the virtual machine.&lt;/p>
+assign a domain name to the virtual machine, which can then be used to get a
+valid TLS certificate from &lt;a href="https://letsencrypt.org/">Let&amp;rsquo;s Encrypt&lt;/a>.&lt;/p>
 &lt;h2 id="step-1-signing-up">Step 1: Signing up&lt;/h2>
 &lt;p>Create an EGI account with &lt;a href="../../aai/check-in/signup">Check-in&lt;/a>.&lt;/p>
 &lt;h2 id="step-2-enrolling-to-a-virtual-organisation">Step 2: Enrolling to a Virtual Organisation&lt;/h2>
@@ -80,18 +81,18 @@ line.&lt;/p>
 once &lt;code>oidc-agent&lt;/code> is installed it can be used to retrieve an OIDC access token
 from EGI Check-in.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Generate configuration for EGI Check-in&lt;/span>
-oidc-gen --pub --issuer https://aai.egi.eu/auth/realms/egi &lt;span style="color:#4e9a06">\
+$ oidc-gen --pub --issuer https://aai.egi.eu/auth/realms/egi &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --scope &lt;span style="color:#4e9a06">&amp;#34;email \
 &lt;/span>&lt;span style="color:#4e9a06"> eduperson_entitlement \
 &lt;/span>&lt;span style="color:#4e9a06"> eduperson_scoped_affiliation \
 &lt;/span>&lt;span style="color:#4e9a06"> eduperson_unique_id&amp;#34;&lt;/span> egi
 &lt;span style="color:#8f5902;font-style:italic"># List existing configuration&lt;/span>
-oidc-add -l
+$ oidc-add -l
 &lt;span style="color:#8f5902;font-style:italic"># Request an OIDC access token&lt;/span>
-oidc-token egi
+$ oidc-token egi
 &lt;span style="color:#8f5902;font-style:italic"># Setting a variable for an access token to be used with OpenStack&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># XXX access tokens are short lived, relaunch command to obtain a new token&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>oidc-token egi&lt;span style="color:#4e9a06">`&lt;/span>
+$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>oidc-token egi&lt;span style="color:#4e9a06">`&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s possible to automatically start &lt;code>oidc-agent&lt;/code> in your shell initialisation,
 example that can be added to &lt;code>~/.bash_profile&lt;/code> or &lt;code>~/.zshrc&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#204a87">command&lt;/span> -v oidc-agent-service &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&amp;gt; /dev/null
@@ -120,13 +121,13 @@ installed in a
 fedcloudclient
 ansible
 &lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Creating a python 3 virutal env&lt;/span>
-python3 -m venv ~/.virtualenvs/fedcloud
+$ python3 -m venv ~/.virtualenvs/fedcloud
 &lt;span style="color:#8f5902;font-style:italic"># Activating the virutal env&lt;/span>
-&lt;span style="color:#204a87">source&lt;/span> ~/.virtualenvs/fedcloud
+$ &lt;span style="color:#204a87">source&lt;/span> ~/.virtualenvs/fedcloud
 &lt;span style="color:#8f5902;font-style:italic"># Installing required python packages&lt;/span>
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 &lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Listing the VO membership related to your OIDC access token&lt;/span>
-fedcloud token list-vos
+$ fedcloud token list-vos
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In order to look for sites supporting a particular VO, you can use the
 &lt;a href="https://appdb.egi.eu/browse/vos/cloud">EGI Application Database&lt;/a>.&lt;/p>
 &lt;p>&lt;code>vo.access.egi.eu&lt;/code> is a VO for piloting activities, you can enrol via
@@ -136,64 +137,7 @@ fedcloud token list-vos
 &lt;h3 id="deploying-the-virtual-machine">Deploying the Virtual Machine&lt;/h3>
 &lt;p>In the following example, the &lt;code>IN2P3-IRES&lt;/code> site supporting the
 &lt;code>vo.access.egi.eu&lt;/code> VO will be used.&lt;/p>
-&lt;h4 id="creating-the-vm-manually">Creating the VM manually&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Setting environement up&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;IN2P3-IRES&amp;#39;&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;vo.access.egi.eu&amp;#39;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Export variables for OpenStack access&lt;/span>
-&lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">`&lt;/span>fedcloud site env&lt;span style="color:#4e9a06">`&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Selecting an image&lt;/span>
-fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> image --image-specs &lt;span style="color:#4e9a06">&amp;#34;Name =~ &amp;#39;EGI.*22&amp;#39;&amp;#34;&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">IMAGE_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;...&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Selecting a flavor&lt;/span>
-fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> flavor --flavor-specs &lt;span style="color:#4e9a06">&amp;#34;RAM&amp;gt;=2096&amp;#34;&lt;/span> --flavor-specs &lt;span style="color:#4e9a06">&amp;#34;Disk &amp;gt; 10&amp;#34;&lt;/span> --vcpus &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">FLAVOR_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;...&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Selecting network&lt;/span>
-fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> network --network-specs default
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">NETWORK_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;...&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Registering an ssh key&lt;/span>
-openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
-&lt;span style="color:#8f5902;font-style:italic"># Identifying and configuring security groups&lt;/span>
-openstack security group list
-openstack security group rule list default
-openstack security group rule list http
-&lt;span style="color:#8f5902;font-style:italic"># Creating the server (the Virtual Machine)&lt;/span>
-openstack server create --flavor &lt;span style="color:#000">$FLAVOR_ID&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --image &lt;span style="color:#000">$IMAGE_ID&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --nic net-id&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$NETWORK_ID&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --security-group default --security-group http &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --key-name mykey vm1-scoreboard
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">SERVER_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;...&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Listing VMS&lt;/span>
-fedcloud openstack --site &lt;span style="color:#000">$EGI_SITE&lt;/span> server list
-&lt;span style="color:#8f5902;font-style:italic"># List the created VM&lt;/span>
-fedcloud openstack --site &lt;span style="color:#000">$EGI_SITE&lt;/span> server show &lt;span style="color:#000">$SERVER_ID&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Listing network and find external one&lt;/span>
-openstack network list
-&lt;span style="color:#8f5902;font-style:italic"># Creating a floating IP on external/public network (ext-net for this site)&lt;/span>
-openstack floating ip create ext-net
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">FLOATING_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;XXX.XXX.XXX.XXX&amp;#39;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Assigning the public floating IP to the VM&lt;/span>
-openstack server add floating ip &lt;span style="color:#000">$SERVER_ID&lt;/span> &lt;span style="color:#000">$FLOATING_IP&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Accessing the VM&lt;/span>
-ssh ubuntu@&lt;span style="color:#000">$FLOATING_IP&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="using-the-egi-dynamic-dns-service">Using the EGI Dynamic DNS service&lt;/h5>
-&lt;p>Once connected to the VM, it&amp;rsquo;s possible to use the
-&lt;a href="https://docs.egi.eu/users/compute/cloud-compute/dynamic-dns/">EGI Dynamic DNS service&lt;/a>
-to get a registered domain name, that can also be used for getting a
-&lt;a href="https://letsencrypt.org/">Let&amp;rsquo;s Encrypt certificate&lt;/a>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Accessing the VM using its IP Address&lt;/span>
-ssh ubuntu@&lt;span style="color:#000">$FLOATING_IP&lt;/span>
-sudo apt update &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> sudo apt upgrade
-&lt;span style="color:#8f5902;font-style:italic"># Login to NSupdate service with EGI&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># https://docs.egi.eu/users/compute/cloud-compute/dynamic-dns/&lt;/span>
-https://nsupdate.fedcloud.eu/
-&lt;span style="color:#8f5902;font-style:italic"># Register a new VM, and get URL with secret&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># From the VM&lt;/span>
-curl &lt;span style="color:#4e9a06">&amp;#34;https://&amp;lt;hostname&amp;gt;:&amp;lt;secret&amp;gt;@nsupdate.fedcloud.eu/nic/update&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Accessing the VM using its domain name&lt;/span>
-ssh ubuntu@&amp;lt;hostname&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="creating-the-vm-with-terraform">Creating the VM with terraform&lt;/h4>
+&lt;h4 id="creating-the-vm-with-terraform">Creating the VM with terraform&lt;/h4>
 &lt;p>Instead of creating the server manually, it is possible to use
 &lt;a href="../../compute/cloud-compute/openstack/#terraform">terraform with EGI Cloud Compute&lt;/a>.&lt;/p>
 &lt;p>The
@@ -204,16 +148,38 @@ provides official documentation.&lt;/p>
 platforms.&lt;/p>
 &lt;p>Once terraform is installed locally, you can make use of it.&lt;/p>
 &lt;p>Setting up the environment (OS_* variables will be used by terraform):&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">source&lt;/span> ~/.virtualenvs/fedcloudclient/bin/activate
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;vo.access.egi.eu&amp;#39;&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;IN2P3-IRES&amp;#39;&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Activate virtualenv&lt;/span>
+$ &lt;span style="color:#204a87">source&lt;/span> ~/.virtualenvs/fedcloudclient/bin/activate
+&lt;span style="color:#8f5902;font-style:italic"># Export variable for VO and SITE to avoid having to repeat them&lt;/span>
+$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;vo.access.egi.eu&amp;#39;&lt;/span>
+$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;IN2P3-IRES&amp;#39;&lt;/span>
 &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">`&lt;/span>fedcloud site env&lt;span style="color:#4e9a06">`&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Need an OS_TOKEN for terraform&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># XXX this breaks using openstackclient&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># rely on fedcloudclient or unset OS_TOKEN before using openstackclient&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack token issue --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> --vo &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_VO&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -j &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[0].Result.id&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Configure flavor, image, network variables for the site you want to use, see
-example of &lt;a href="IN2P3-IRES.tfvars">&lt;code>IN2P3-IRES.tfvars&lt;/code>&lt;/a>:&lt;/p>
+&lt;span style="color:#8f5902;font-style:italic"># Get an OS_TOKEN for terraform&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># XXX this breaks using openstackclient: use fedcloudclient&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># or unset OS_TOKEN before using openstackclient&lt;/span>
+$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack token issue --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --vo &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_VO&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -j &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[0].Result.id&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Identify and configure flavor, image, network variables for the site you want to
+use, using the information gathered via &lt;code>fedcloudclient&lt;/code>, they should be
+documented in a &lt;code>$EGI_SITE.tfvars&lt;/code> file, as documented below.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Identifying an image&lt;/span>
+$ fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> image --image-specs &lt;span style="color:#4e9a06">&amp;#34;Name =~ &amp;#39;EGI.*22&amp;#39;&amp;#34;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Identikfying a flavor&lt;/span>
+$ fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> flavor --flavor-specs &lt;span style="color:#4e9a06">&amp;#34;RAM&amp;gt;=2096&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --flavor-specs &lt;span style="color:#4e9a06">&amp;#34;Disk &amp;gt; 10&amp;#34;&lt;/span> --vcpus &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Identifying a network&lt;/span>
+$ fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> network --network-specs default
+$ fedcloud openstack --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> network list
+&lt;span style="color:#8f5902;font-style:italic"># Identifying security groups&lt;/span>
+$ fedcloud openstack --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> security group list
+$ fedcloud openstack --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> security group rule list default
+$ fedcloud openstack --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> security group rule list http
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>The network configuration can be tricky and is usually dependant on the site.
+For &lt;code>IN2P3-IRES&lt;/code>, one has to request a floating IP from the public network IP
+pool &lt;code>ext-net&lt;/code> and assign this floating IP to the created instance.&lt;/p>
+&lt;/blockquote>
+&lt;p>See the example &lt;a href="IN2P3-IRES.tfvars">&lt;code>IN2P3-IRES.tfvars&lt;/code>&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-terraform" data-lang="terraform">&lt;span style="color:#8f5902;font-style:italic"># Internal network
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">internal_net_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;7ae7b0ca-f122-4445-836a-5fb7af524dcb&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
 &lt;/span>&lt;span style="color:#8f5902;font-style:italic">
@@ -303,41 +269,45 @@ content of your SSH public key) by the proper values.&lt;/p>
 &lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;span style="color:#c4a000">filename&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;./inventory/hosts.cfg&amp;#34;&lt;/span>
 &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Configure Ansible environment in a &lt;code>ansible.cfg&lt;/code> file:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Configure a basic Ansible environment in the &lt;code>ansible.cfg&lt;/code> file:&lt;/p>
 &lt;pre>&lt;code class="language-ansible" data-lang="ansible">[defaults]
 # Use user created using cloud-init.yml
 remote_user = egi
-# Use generated inventory file
+# Use inventory file generated by terraform
 inventory = ./inventory/hosts.cfg
 &lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Initialise working directory, install dependencies&lt;/span>
-terraform init
+$ terraform init
 &lt;span style="color:#8f5902;font-style:italic"># Review plan of actions for creating the infrastructure&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Use relevant site-specific config file&lt;/span>
-terraform plan --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
+$ terraform plan --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Create the infrastructure&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Manual approval can be skipped using -auto-approve&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># The SERVER_ID will be printed (openstack_compute_instance_v2.scoreboard)&lt;/span>
-terraform apply --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
+$ terraform apply --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Wait a few minutes for the setup to be finalised&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Test if ansible can reach the vm&lt;/span>
-ansible all -m ping
+$ ansible all -m ping
 &lt;span style="color:#8f5902;font-style:italic"># Connect to the server using ssh&lt;/span>
-ssh egi@&lt;span style="color:#000">$NSUPATE_HOSTNAME&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="debugging-terraform">Debugging terraform&lt;/h5>
+$ ssh egi@&lt;span style="color:#000">$NSUPATE_HOSTNAME&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>From here you can extend the &lt;code>cloud-init.yaml&lt;/code> and/or use Ansible locally to
+configure the remote machine, as well as doing manual work via SSH.&lt;/p>
+&lt;/blockquote>
+&lt;h5 id="debugging-terraform">Debugging terraform&lt;/h5>
 &lt;p>The token used by Terraform for accessing OpenStack is short lived, it will have
 to be renewed from time to time.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Creating a new token to access the OpenStack endpoint&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack token issue --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> --vo &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_VO&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -j &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[0].Result.id&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack token issue --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --vo &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_VO&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -j &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[0].Result.id&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>It is possible to print a verbose/debug output to get details on interactions
 with the OpenStack endpoint.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Debugging&lt;/span>
-&lt;span style="color:#000">OS_DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000">TF_LOG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>DEBUG terraform apply -auto-approve --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
+$ &lt;span style="color:#000">OS_DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000">TF_LOG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>DEBUG terraform apply --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="destroying-the-resources-created-by-terraform">Destroying the resources created by terraform&lt;/h5>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Debugging&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Destroying the created infrastructure&lt;/span>
-terraform destroy --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="integrating-terraform-with-ansible">Integrating Terraform with Ansible&lt;/h4>
-&lt;h2 id="asking-for-help">Asking for help&lt;/h2>
+$ terraform destroy --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="asking-for-help">Asking for help&lt;/h2>
 &lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Access DataHub from a Virtual machine</title><link>/users/tutorials/vm-datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/vm-datahub/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes the access to &lt;a href="../../data/management/datahub">EGI DataHub&lt;/a> spaces
