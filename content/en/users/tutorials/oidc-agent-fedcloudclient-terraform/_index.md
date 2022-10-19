@@ -415,17 +415,17 @@ infrastructure, currently only a single VM, but it can easily be extended to a
 more complex setup, using terraform:
 
 ```shell
-# Initialise working directory, install dependencies
+# Initialising working directory, install dependencies
 $ terraform init
-# Review plan of actions for creating the infrastructure
+# Reviewing plan of actions for creating the infrastructure
 # Use relevant site-specific config file
 $ terraform plan --var-file="${EGI_SITE}.tfvars"
-# Create the infrastructure
+# Creating the infrastructure
 # Manual approval can be skipped using -auto-approve
 # The SERVER_ID will be printed (openstack_compute_instance_v2.scoreboard)
 $ terraform apply --var-file="${EGI_SITE}.tfvars"
 # Wait a few minutes for the setup to be finalised
-# Connect to the server using ssh
+# Connecting to the server using ssh
 $ ssh egi@$NSUPATE_HOSTNAME
 ```
 
@@ -456,7 +456,6 @@ $ OS_DEBUG=1 TF_LOG=DEBUG terraform apply --var-file="${EGI_SITE}.tfvars"
 #### Destroying the resources created by terraform
 
 ```shell
-# Debugging
 # Destroying the created infrastructure
 $ terraform destroy --var-file="${EGI_SITE}.tfvars"
 ```
