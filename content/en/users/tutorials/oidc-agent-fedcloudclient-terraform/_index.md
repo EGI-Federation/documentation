@@ -146,8 +146,8 @@ $ pip install -r requirements.txt
 It's possible to deploy an OpenStack Virtual Machine (VM) on any of the sites
 supporting the Virtual Organisations (VO) you are a member of.
 
-Once [fedcloudclient](#installing-fedcloudclient-openstackclient-and-ansible) is
-installed it's possible to get information about the OIDC token accessed via
+Once [fedcloudclient](#installing-fedcloudclient-and-ansible) is installed it's
+possible to get information about the OIDC token accessed via
 [oidc-agent](#setting-up-oidc-agent).
 
 ```shell
@@ -440,7 +440,7 @@ $ ssh egi@$NSUPATE_HOSTNAME
 
 > From here you can extend the
 > [cloud-init.yaml](#initial-configuration-of-the-vm-using-cloud-init) and/or
-> use [Ansible](#step-3-using-ansible) to configure the remote machine, as well
+> use [Ansible](#step-4-using-ansible) to configure the remote machine, as well
 > as doing manual work via SSH.
 
 #### Debugging terraform
