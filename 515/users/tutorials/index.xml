@@ -578,8 +578,8 @@ $ pip install -r requirements.txt
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="identifying-a-suitable-cloud-site">Identifying a suitable cloud site&lt;/h3>
 &lt;p>It&amp;rsquo;s possible to deploy an OpenStack Virtual Machine (VM) on any of the sites
 supporting the Virtual Organisations (VO) you are a member of.&lt;/p>
-&lt;p>Once &lt;a href="#installing-fedcloudclient-openstackclient-and-ansible">fedcloudclient&lt;/a> is
-installed it&amp;rsquo;s possible to get information about the OIDC token accessed via
+&lt;p>Once &lt;a href="#installing-fedcloudclient-and-ansible">fedcloudclient&lt;/a> is installed it&amp;rsquo;s
+possible to get information about the OIDC token accessed via
 &lt;a href="#setting-up-oidc-agent">oidc-agent&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Verifying that an OS_ACCESS_TOKEN is available&lt;/span>
 $ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_ACCESS_TOKEN&lt;/span>
@@ -826,7 +826,7 @@ $ ssh egi@&lt;span style="color:#000">$NSUPATE_HOSTNAME&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>From here you can extend the
 &lt;a href="#initial-configuration-of-the-vm-using-cloud-init">cloud-init.yaml&lt;/a> and/or
-use &lt;a href="#step-3-using-ansible">Ansible&lt;/a> to configure the remote machine, as well
+use &lt;a href="#step-4-using-ansible">Ansible&lt;/a> to configure the remote machine, as well
 as doing manual work via SSH.&lt;/p>
 &lt;/blockquote>
 &lt;h4 id="debugging-terraform">Debugging terraform&lt;/h4>
