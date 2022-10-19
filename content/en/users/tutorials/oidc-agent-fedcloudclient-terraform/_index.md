@@ -353,6 +353,11 @@ resource "local_file" "hosts_cfg" {
 }
 ```
 
+The last resource is relying on
+[templatefile](https://www.terraform.io/language/functions/templatefile) to
+populate the inventory file that will later be used by
+[ansible](#step-4-using-ansible).
+
 #### Initial configuration of the VM using cloud-init
 
 > [cloud-init](https://cloudinit.readthedocs.io/) is the industry standard
@@ -488,8 +493,9 @@ Then you can verify that the Virtual Machine is accessible by Ansible:
 $ ansible all -m ping
 ```
 
-Once this works, you can create advanced playbooks to manage your deployed
-host(s).
+Once this works, you can
+[create advanced playbooks](https://docs.ansible.com/ansible/latest/user_guide/index.html)
+to configure your deployed host(s).
 
 ## Asking for help
 
