@@ -30,7 +30,7 @@ jobs:
           # Always check all the content
           VALIDATE_ALL_CODEBASE: true
           # Debug super-linter
-          ACTIONS_RUNNER_DEBUG: true
+          ACTIONS_RUNNER_DEBUG: false
           # Fail on errors
           DISABLE_ERRORS: false
           FILTER_REGEX_EXCLUDE: "(layouts/)|(.*/egi.js)|(assets/scss/)|(static/css/)"
