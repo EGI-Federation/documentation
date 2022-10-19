@@ -759,8 +759,10 @@ populate the inventory file that will later be used by
 multi-distribution method for cross-platform cloud instance initialization.&lt;/p>
 &lt;/blockquote>
 &lt;p>The initial configuration of the VM is done using a &lt;code>cloud-init.yaml&lt;/code> file.&lt;/p>
-&lt;p>The &lt;code>curl&lt;/code> call in the &lt;code>cloud-init.yaml&lt;/code> configuration below, will register the
-IP of the virtual machine in the DNS zone managed using the
+&lt;p>The &lt;code>curl&lt;/code> call from the
+&lt;a href="https://cloudinit.readthedocs.io/en/latest/topics/modules.html#runcmd">runcmd&lt;/a>
+block in the &lt;code>cloud-init.yaml&lt;/code> configuration below, will register the IP of the
+virtual machine in the DNS zone managed using the
 &lt;a href="https://nsupdate.fedcloud.eu/">EGI Dynamic DNS service&lt;/a>, allowing to access the
 virtual machine using a fully qualified hostname and allowing to retrieve a
 &lt;a href="https://letsencrypt.org/">Let&amp;rsquo;s Encrypt certificate&lt;/a>.&lt;/p>
@@ -769,8 +771,10 @@ virtual machine using a fully qualified hostname and allowing to retrieve a
 &lt;a href="../../compute/cloud-compute/dynamic-dns/">EGI Dynamic DNS documentation&lt;/a> for
 instructions on creating the configuration for a new host.&lt;/p>
 &lt;/blockquote>
-&lt;p>The &lt;code>users&lt;/code> block in the &lt;code>cloud-init.yaml&lt;/code> configuration below, will create a
-new user with password-less &lt;a href="https://www.sudo.ws/">sudo&lt;/a> access.&lt;/p>
+&lt;p>The
+&lt;a href="https://cloudinit.readthedocs.io/en/latest/topics/modules.html#users-and-groups">users&lt;/a>
+block in the &lt;code>cloud-init.yaml&lt;/code> configuration below, will create a new user with
+password-less &lt;a href="https://www.sudo.ws/">sudo&lt;/a> access.&lt;/p>
 &lt;blockquote>
 &lt;p>While this &lt;code>egi&lt;/code> user can only be accessed via the specified SSH key(s),
 setting a user password and requesting password verification for using sudo
