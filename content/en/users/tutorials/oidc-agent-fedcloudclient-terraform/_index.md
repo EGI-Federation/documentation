@@ -365,8 +365,10 @@ populate the inventory file that will later be used by
 
 The initial configuration of the VM is done using a `cloud-init.yaml` file.
 
-The `curl` call in the `cloud-init.yaml` configuration below, will register the
-IP of the virtual machine in the DNS zone managed using the
+The `curl` call from the
+[runcmd](https://cloudinit.readthedocs.io/en/latest/topics/modules.html#runcmd)
+block in the `cloud-init.yaml` configuration below, will register the IP of the
+virtual machine in the DNS zone managed using the
 [EGI Dynamic DNS service](https://nsupdate.fedcloud.eu/), allowing to access the
 virtual machine using a fully qualified hostname and allowing to retrieve a
 [Let's Encrypt certificate](https://letsencrypt.org/).
@@ -375,8 +377,10 @@ virtual machine using a fully qualified hostname and allowing to retrieve a
 > [EGI Dynamic DNS documentation](../../compute/cloud-compute/dynamic-dns/) for
 > instructions on creating the configuration for a new host.
 
-The `users` block in the `cloud-init.yaml` configuration below, will create a
-new user with password-less [sudo](https://www.sudo.ws/) access.
+The
+[users](https://cloudinit.readthedocs.io/en/latest/topics/modules.html#users-and-groups)
+block in the `cloud-init.yaml` configuration below, will create a new user with
+password-less [sudo](https://www.sudo.ws/) access.
 
 > While this `egi` user can only be accessed via the specified SSH key(s),
 > setting a user password and requesting password verification for using sudo
