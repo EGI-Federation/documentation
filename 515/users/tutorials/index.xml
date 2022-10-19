@@ -803,17 +803,17 @@ content of your SSH public key) by the proper values.&lt;/p>
 &lt;p>Now that all the files have been created, it&amp;rsquo;s possible to deploy the
 infrastructure, currently only a single VM, but it can easily be extended to a
 more complex setup, using terraform:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Initialise working directory, install dependencies&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Initialising working directory, install dependencies&lt;/span>
 $ terraform init
-&lt;span style="color:#8f5902;font-style:italic"># Review plan of actions for creating the infrastructure&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Reviewing plan of actions for creating the infrastructure&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Use relevant site-specific config file&lt;/span>
 $ terraform plan --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Create the infrastructure&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Creating the infrastructure&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Manual approval can be skipped using -auto-approve&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># The SERVER_ID will be printed (openstack_compute_instance_v2.scoreboard)&lt;/span>
 $ terraform apply --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Wait a few minutes for the setup to be finalised&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Connect to the server using ssh&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Connecting to the server using ssh&lt;/span>
 $ ssh egi@&lt;span style="color:#000">$NSUPATE_HOSTNAME&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>From here you can extend the
@@ -832,8 +832,7 @@ with the OpenStack endpoint.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Debugging&lt;/span>
 $ &lt;span style="color:#000">OS_DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000">TF_LOG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>DEBUG terraform apply --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="destroying-the-resources-created-by-terraform">Destroying the resources created by terraform&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Debugging&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Destroying the created infrastructure&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Destroying the created infrastructure&lt;/span>
 $ terraform destroy --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-using-ansible">Step 4: Using Ansible&lt;/h2>
 &lt;p>&lt;a href="https://www.ansible.com/">Ansible&lt;/a> can be used to manage the configuration of
