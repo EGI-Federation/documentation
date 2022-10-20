@@ -244,8 +244,9 @@ The SITE and VO specific values for those variables will be
 
 #### Identifying the cloud resources
 
-Identify flavor, image, network and security groups for the site you want to
-use, using the information gathered with `fedcloudclient`.
+Once the [environment is properly configure](#setting-up-the-environment),
+`fedcloudclient` is used to gather information and identify flavor, image,
+network and security groups for the site you want to use.
 
 ```shell
 # Selecting an image
