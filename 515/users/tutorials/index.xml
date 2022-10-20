@@ -657,6 +657,13 @@ have to be described in a &lt;code>vars.tf&lt;/code> file:&lt;/p>
 &lt;p>Once the &lt;a href="#setting-up-the-environment">environment is properly configure&lt;/a>,
 &lt;code>fedcloudclient&lt;/code> is used to gather information and identify flavor, image,
 network and security groups for the site you want to use.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>fedcloud openstack&lt;/code> currently requires an explicit &lt;code>--site&lt;/code> parameter, this
+will be addressed in a
+&lt;a href="https://github.com/tdviet/fedcloudclient/issues/150">future fedcloud release&lt;/a>.
+In the meantime the &lt;code>$EGI_VO&lt;/code> environment variable can be reused using
+&lt;code>--site &amp;quot;$EGI_VO&amp;quot;&lt;/code>.&lt;/p>
+&lt;/blockquote>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Selecting an image&lt;/span>
 $ fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> image --image-specs &lt;span style="color:#4e9a06">&amp;#34;Name =~ &amp;#39;EGI.*22&amp;#39;&amp;#34;&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Selecting a flavor&lt;/span>
