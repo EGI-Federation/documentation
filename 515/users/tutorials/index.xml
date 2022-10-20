@@ -556,7 +556,7 @@ services, and mainly execute commands on OpenStack sites in EGI infrastructure.&
 &lt;p>&lt;code>fedcloudclient&lt;/code> can leverage &lt;a href="#setting-up-oidc-agent">&lt;code>oidc-agent&lt;/code>&lt;/a> if it&amp;rsquo;s
 installed and properly configured.&lt;/p>
 &lt;p>&lt;code>fedcloudclient&lt;/code> and
-&lt;a href="https://docs.openstack.org/python-openstackclient/latest/">&lt;code>opentackclient&lt;/code>&lt;/a>,
+&lt;a href="https://docs.openstack.org/python-openstackclient/latest/">&lt;code>openstackclient&lt;/code>&lt;/a>,
 the official OpenStack python client, will be used to interact with the EGI
 Cloud Compute service.&lt;/p>
 &lt;p>Required python dependencies are documented in a &lt;code>requirements.txt&lt;/code> file

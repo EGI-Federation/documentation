@@ -283,9 +283,9 @@ move to a production VO, or establish a new VO.&lt;/li>
 providers. &lt;strong>Back-up frequently to avoid losing your work!&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;p>For joining this VO, just place an order in the
-&lt;a href="https://marketplace.egi.eu/31-cloud-compute">EGI Marketplace&lt;/a> and once approved
-you will be able to interact with the infrastructure.&lt;/p>
+&lt;p>For joining this VO, please click on the
+&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:240">enrollment URL&lt;/a>
+using your &lt;a href="../../../aai/check-in/">EGI account&lt;/a>.&lt;/p>
 &lt;h3 id="other-vos">Other VOs&lt;/h3>
 &lt;p>Pre-existing VOs of EGI can be also used on IaaS cloud providers. Consult with
 your VO manager or browse the existing VOs at the
@@ -871,8 +871,8 @@ details and there is also a video recording available on
 &lt;h2 id="basics">Basics&lt;/h2>
 &lt;h3 id="how-can-i-get-access-to-the-cloud-compute-service">How can I get access to the cloud compute service?&lt;/h3>
 &lt;p>There is a VO available for 6 months piloting activities that any researcher in
-Europe can join. Just place an order into the
-&lt;a href="https://marketplace.egi.eu/31-cloud-compute">EGI Marketplace&lt;/a>.&lt;/p>
+Europe can join. Just request access to the
+&lt;a href="../auth/#pilot-vo">pilot Virtual Organisation&lt;/a>.&lt;/p>
 &lt;h3 id="how-can-i-get-an-oauth20-token">How can I get an OAuth2.0 token?&lt;/h3>
 &lt;p>Authentication via CLI or API requires a valid Access Token from Check-in. The
 &lt;a href="https://aai.egi.eu/token">EGI Check-in Token Portal&lt;/a> allows you to get one as
