@@ -505,6 +505,29 @@ Once this works, you can
 [create advanced playbooks](https://docs.ansible.com/ansible/latest/user_guide/index.html)
 to configure your deployed host(s).
 
+Various Ansible roles are available in the
+[egi-qc/ansible-playbooks repository](https://github.com/egi-qc/ansible-playbooks)
+and in the
+[EGI Federation GitHub organisation](https://github.com/EGI-Federation?q=ansible-role).
+
+> A
+> [style guide for writing Ansible roles](https://github.com/EGI-Federation/ansible-style-guide)
+> is providing a skeleton that you can use fore creating new roles.
+
+## Additional resources
+
+Additional resources are available, and can help with addressing different use
+cases, or be used as a source of inspiration:
+
+- [egi-qc/deployment-howtos](https://github.com/egi-qc/deployment-howtos):
+  Deployment recipes extracted from Jenkins builds for the
+  [UMD](https://go.egi.eu/umd) and [CMD](https://go.egi.eu/cmd) products
+- [EGI-ILM/fedcloud-terraform](https://github.com/EGI-ILM/fedcloud-terraform):
+  providing an advanced helper script allowing to interact with EGI Cloud
+  Compute.
+- [EGI-ILM/automated-containers](https://github.com/EGI-ILM/automated-containers):
+  providing documentation for automated on-demand execution of Docker containers
+
 ## Asking for help
 
 If you find issues please do not hesitate to [contact us](../../../support/).
