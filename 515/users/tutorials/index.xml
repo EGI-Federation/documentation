@@ -540,7 +540,7 @@ $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s possible to automatically start &lt;code>oidc-agent&lt;/code> in your shell initialisation,
 example that can be added to &lt;code>~/.bash_profile&lt;/code> or &lt;code>~/.zshrc&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#204a87">command&lt;/span> -v oidc-agent-service &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&amp;gt; /dev/null
-&lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">`&lt;/span>oidc-agent-service use&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>oidc-agent-service use&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># for fedcloudclient, once egi account got created&lt;/span>
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_AGENT_ACCOUNT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>egi
 &lt;span style="color:#204a87;font-weight:bold">fi&lt;/span>
@@ -613,7 +613,7 @@ $ &lt;span style="color:#204a87">source&lt;/span> ~/.virtualenvs/fedcloudclient/
 &lt;span style="color:#8f5902;font-style:italic"># Exporting variable for VO and SITE to avoid having to repeat them&lt;/span>
 $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;vo.access.egi.eu&amp;#39;&lt;/span>
 $ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;IN2P3-IRES&amp;#39;&lt;/span>
-&lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">`&lt;/span>fedcloud site env&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site env&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Obtaining an OS_TOKEN for terraform&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># XXX this breaks using openstackclient: use fedcloudclient&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># or unset OS_TOKEN before using openstackclient&lt;/span>
