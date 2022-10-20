@@ -251,8 +251,8 @@ network and security groups for the site you want to use.
 > `fedcloud openstack` currently requires an explicit `--site` parameter, this
 > will be addressed in a
 > [future fedcloud release](https://github.com/tdviet/fedcloudclient/issues/150).
-> In the meantime the `$EGI_VO` environment variable can be reused using
-> `--site "$EGI_VO"`.
+> In the meantime the `$EGI_SITE` environment variable can be reused using
+> `--site "$EGI_SITE"`.
 
 ```shell
 # Selecting an image
