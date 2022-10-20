@@ -865,5 +865,27 @@ $ ansible all -m ping
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Once this works, you can
 &lt;a href="https://docs.ansible.com/ansible/latest/user_guide/index.html">create advanced playbooks&lt;/a>
 to configure your deployed host(s).&lt;/p>
+&lt;p>Various Ansible roles are available in the
+&lt;a href="https://github.com/egi-qc/ansible-playbooks">egi-qc/ansible-playbooks repository&lt;/a>
+and in the
+&lt;a href="https://github.com/EGI-Federation?q=ansible-role">EGI Federation GitHub organisation&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>A
+&lt;a href="https://github.com/EGI-Federation/ansible-style-guide">style guide for writing Ansible roles&lt;/a>
+is providing a skeleton that you can use fore creating new roles.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="additional-resources">Additional resources&lt;/h2>
+&lt;p>Additional resources are available, and can help with addressing different use
+cases, or be used as a source of inspiration:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/egi-qc/deployment-howtos">egi-qc/deployment-howtos&lt;/a>:
+Deployment recipes extracted from Jenkins builds for the
+&lt;a href="https://go.egi.eu/umd">UMD&lt;/a> and &lt;a href="https://go.egi.eu/cmd">CMD&lt;/a> products&lt;/li>
+&lt;li>&lt;a href="https://github.com/EGI-ILM/fedcloud-terraform">EGI-ILM/fedcloud-terraform&lt;/a>:
+providing an advanced helper script allowing to interact with EGI Cloud
+Compute.&lt;/li>
+&lt;li>&lt;a href="https://github.com/EGI-ILM/automated-containers">EGI-ILM/automated-containers&lt;/a>:
+providing documentation for automated on-demand execution of Docker containers&lt;/li>
+&lt;/ul>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
 &lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item></channel></rss>
