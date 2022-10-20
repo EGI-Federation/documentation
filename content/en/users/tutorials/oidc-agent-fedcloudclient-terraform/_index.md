@@ -248,6 +248,12 @@ Once the [environment is properly configure](#setting-up-the-environment),
 `fedcloudclient` is used to gather information and identify flavor, image,
 network and security groups for the site you want to use.
 
+> `fedcloud openstack` currently requires an explicit `--site` parameter, this
+> will be addressed in a
+> [future fedcloud release](https://github.com/tdviet/fedcloudclient/issues/150).
+> In the meantime the `$EGI_VO` environment variable can be reused using
+> `--site "$EGI_VO"`.
+
 ```shell
 # Selecting an image
 $ fedcloud select image --image-specs "Name =~ 'EGI.*22'"
