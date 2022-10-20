@@ -14,8 +14,8 @@ description: >
 ### How can I get access to the cloud compute service?
 
 There is a VO available for 6 months piloting activities that any researcher in
-Europe can join. Just place an order into the
-[EGI Marketplace](https://marketplace.egi.eu/31-cloud-compute).
+Europe can join. Just request access to the
+[pilot Virtual Organisation](../auth/#pilot-vo).
 
 ### How can I get an OAuth2.0 token?
 
