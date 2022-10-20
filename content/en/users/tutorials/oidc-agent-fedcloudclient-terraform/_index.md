@@ -275,11 +275,12 @@ The chosen flavor, image, network and security group should be documented in a
 `$EGI_SITE.tfvars` file that will be passed as an argument to terraform
 commands.
 
-> The network configuration can be tricky and is usually dependant on the site.
+> The network configuration can be tricky, and is usually dependant on the site.
 > For `IN2P3-IRES`, one has to request a floating IP from the public network IP
-> pool `ext-net` and assign this floating IP to the created instance, for
-> another site it may not be needed, and in that case the `main.tf` will have to
-> be adjusted accordingly.
+> pool `ext-net`, and assign this floating IP to the created instance. For
+> another site it may not be needed, in that case the
+> [main.tf](#creating-the-main-terraform-deployment-file) will have to be
+> adjusted accordingly.
 
 See the example `IN2P3-IRES.tfvars` below, to be adjusted according to the
 requirements and to the selected site and VO:
@@ -294,9 +295,12 @@ public_ip_pool = "ext-net"
 # Flavor: m1.medium
 flavor_id = "ab1fbd4c-324d-4155-bd0f-72f077f0ebce"
 
+# Image for EGI CentOS 7
+# https://appdb.egi.eu/store/vappliance/egi.centos.7
+image_id = "09093c70-f2bb-46b8-a87f-00e2cc0c8542"
 # Image: EGI CentOS 8
 # https://appdb.egi.eu/store/vappliance/egi.centos.8
-image_id = "38ced5bf-bbfd-434b-ae41-3ab35d929aba"
+# image_id = "38ced5bf-bbfd-434b-ae41-3ab35d929aba"
 # Image: EGI Ubuntu 22.04
 # https://appdb.egi.eu/store/vappliance/egi.ubuntu.22.04
 # image_id = "fc6c83a3-845f-4f29-b44d-2584f0ca4177"
@@ -343,16 +347,16 @@ resource "openstack_compute_instance_v2" "egi_vm" {
 }
 
 # Attach the floating public IP to the created instance
-resource "openstack_compute_floatingip_associate_v2" "egi_ui_fip_1" {
-  instance_id = "${openstack_compute_instance_v2.egi_ui.id}"
-  floating_ip = "${openstack_networking_floatingip_v2.egi_ui_floatip_1.address}"
+resource "openstack_compute_floatingip_associate_v2" "egi_vm_fip_1" {
+  instance_id = "${openstack_compute_instance_v2.egi_vm.id}"
+  floating_ip = "${openstack_networking_floatingip_v2.egi_vm_floatip_1.address}"
 }
 
 # Create inventory file for Ansible
 resource "local_file" "hosts_cfg" {
   content = templatefile("${path.module}/hosts.cfg.tpl",
     {
-      ui = "${openstack_networking_floatingip_v2.egi_ui_floatip_1.address}"
+      ui = "${openstack_networking_floatingip_v2.egi_vm_floatip_1.address}"
     }
   )
   filename = "./inventory/hosts.cfg"
