@@ -91,7 +91,7 @@ example that can be added to `~/.bash_profile` or `~/.zshrc`:
 ```bash
 if command -v oidc-agent-service &> /dev/null
   eval $(oidc-agent-service use)
-  # for fedcloudclient, once egi account got created
+  # for fedcloudclient, selecting egi configuration generated with oidc-gen
   export OIDC_AGENT_ACCOUNT=egi
 fi
 ```
