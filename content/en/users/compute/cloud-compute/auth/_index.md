@@ -64,9 +64,9 @@ user.
 
 {{% /alert %}}
 
-For joining this VO, just place an order in the
-[EGI Marketplace](https://marketplace.egi.eu/31-cloud-compute) and once approved
-you will be able to interact with the infrastructure.
+For joining this VO, please click on the
+[enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240)
+using your [EGI account](../../../aai/check-in/).
 
 ### Other VOs
 

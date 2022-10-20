@@ -81,9 +81,7 @@ of the concepts that act as building blocks for the AAI implementation.
 ## Requesting resources
 
 Depending on the access conditions, a service (or an instance of the service)
-may be open for any user, or it may require requesting access (ordering). The
-[EGI site](https://www.egi.eu/services/) together with the connected
-[EGI Marketplace](https://marketplace.egi.eu) streamlines the ordering process.
+may be open for any user, or it may require requesting access (ordering).
 
 EGI services use the following types of access conditions:
 
@@ -161,30 +159,10 @@ the users' requests before granting the access to the resources.
 
 ### Get access to pilot allocation
 
-1. Log into the [EGI Marketplace](https://marketplace.egi.eu) with the
-   [EGI AAI Check-In service](../aai/check-in).
-1. Setup a profile, including details about your affiliation and role within a
-   research institute/project/team.
-1. Navigate the marketplace top-menu and click on the category:
-   **Applications**.
-1. Click on the **Applications on Demand** service and submit an order for one
-   of the available applications.
-1. When the request is approved, run the requested application(s) as described
-   below.
-
-Please check the
-[EGI Marketplace guide](https://wiki.egi.eu/wiki/HowToAccessTheEGIMarketPlace)
-for further details.
-
-### Services available
-
-Once granted access, each user will have a grant with a predefined quota of
-resources, which can be used to run the application of choice. This grant
-includes:
-
-- up to 4 CPU cores,
-- 8 GB of RAM,
-- 100GB of block storage.
+1. Create an [EGI Check-In account](../aai/check-in/).
+2. Enroll the `vo.access.egi.eu` Virtual Organisation by following the
+   [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240).
+   Make sure you use your EGI Check-In account for the enrollment.
 
 The grant to run applications is initially valid for 6 months and can be
 extended/renewed upon request. These resources are delivered

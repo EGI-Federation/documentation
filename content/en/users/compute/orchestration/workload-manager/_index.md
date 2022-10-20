@@ -120,10 +120,9 @@ There are several options to access the service:
 ### Submit a service order via the Marketplace
 
 User can request access to the service submitting a service-order to use the EGI
-HTC service directly from the EOSC or the EGI Marketplace:
+HTC service directly from the EOSC Marketplace:
 
 - [EOSC Marketplace: Workload Manager](https://marketplace.eosc-portal.eu/services/egi-workload-manager)
-- [EGI Marketplace: Workload Manager](https://marketplace.egi.eu/compute/73-workload-manager.html)
 
 Service orders are usually handled within 5 working days by the EGI User Support
 Team on shift.
