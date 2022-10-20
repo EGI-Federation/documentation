@@ -113,7 +113,7 @@ services, and mainly execute commands on OpenStack sites in EGI infrastructure.
 installed and properly configured.
 
 `fedcloudclient` and
-[`opentackclient`](https://docs.openstack.org/python-openstackclient/latest/),
+[`openstackclient`](https://docs.openstack.org/python-openstackclient/latest/),
 the official OpenStack python client, will be used to interact with the EGI
 Cloud Compute service.
 
