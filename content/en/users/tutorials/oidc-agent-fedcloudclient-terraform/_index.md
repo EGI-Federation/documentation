@@ -90,7 +90,7 @@ example that can be added to `~/.bash_profile` or `~/.zshrc`:
 
 ```bash
 if command -v oidc-agent-service &> /dev/null
-  eval `oidc-agent-service use`
+  eval $(oidc-agent-service use)
   # for fedcloudclient, once egi account got created
   export OIDC_AGENT_ACCOUNT=egi
 fi
@@ -194,7 +194,7 @@ $ source ~/.virtualenvs/fedcloudclient/bin/activate
 # Exporting variable for VO and SITE to avoid having to repeat them
 $ export EGI_VO='vo.access.egi.eu'
 $ export EGI_SITE='IN2P3-IRES'
-eval `fedcloud site env`
+eval $(fedcloud site env)
 # Obtaining an OS_TOKEN for terraform
 # XXX this breaks using openstackclient: use fedcloudclient
 # or unset OS_TOKEN before using openstackclient
