@@ -81,7 +81,8 @@ $ oidc-add -l
 $ oidc-token egi
 # Exporting a variable with a Check-in OIDC access token to be used with OpenStack
 # XXX access tokens are short lived, relaunch command to obtain a new token
-$ export OS_ACCESS_TOKEN=`oidc-token egi`
+# This is *not* required for following this tutorial, it's an example
+$ export OS_ACCESS_TOKEN=$(oidc-token egi)
 ```
 
 It's possible to automatically start `oidc-agent` in your shell initialisation,
@@ -151,8 +152,6 @@ possible to get information about the OIDC token accessed via
 [oidc-agent](#setting-up-oidc-agent).
 
 ```shell
-# Verifying that an OS_ACCESS_TOKEN is available
-$ echo $OS_ACCESS_TOKEN
 # Listing the VO membership related to the OIDC access token
 $ fedcloud token list-vos
 ```
