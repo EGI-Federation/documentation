@@ -535,7 +535,8 @@ $ oidc-add -l
 $ oidc-token egi
 &lt;span style="color:#8f5902;font-style:italic"># Exporting a variable with a Check-in OIDC access token to be used with OpenStack&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># XXX access tokens are short lived, relaunch command to obtain a new token&lt;/span>
-$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>oidc-token egi&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># This is *not* required for following this tutorial, it&amp;#39;s an example&lt;/span>
+$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>oidc-token egi&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s possible to automatically start &lt;code>oidc-agent&lt;/code> in your shell initialisation,
 example that can be added to &lt;code>~/.bash_profile&lt;/code> or &lt;code>~/.zshrc&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#204a87">command&lt;/span> -v oidc-agent-service &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&amp;gt; /dev/null
@@ -581,9 +582,7 @@ supporting the Virtual Organisations (VO) you are a member of.&lt;/p>
 &lt;p>Once &lt;a href="#installing-fedcloudclient-and-ansible">fedcloudclient&lt;/a> is installed it&amp;rsquo;s
 possible to get information about the OIDC token accessed via
 &lt;a href="#setting-up-oidc-agent">oidc-agent&lt;/a>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Verifying that an OS_ACCESS_TOKEN is available&lt;/span>
-$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_ACCESS_TOKEN&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Listing the VO membership related to the OIDC access token&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Listing the VO membership related to the OIDC access token&lt;/span>
 $ fedcloud token list-vos
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In order to look for sites supporting a particular VO, you can use the
 &lt;a href="https://appdb.egi.eu/browse/vos/cloud">EGI Application Database&lt;/a>.&lt;/p>
@@ -655,8 +654,9 @@ have to be described in a &lt;code>vars.tf&lt;/code> file:&lt;/p>
 &lt;a href="#identifying-the-cloud-resources">identified&lt;/a> and documented in a
 &lt;a href="#documenting-the-cloud-resources-for-the-selected-site">&lt;code>$EGI_SITE.tfvars&lt;/code> file&lt;/a>.&lt;/p>
 &lt;h4 id="identifying-the-cloud-resources">Identifying the cloud resources&lt;/h4>
-&lt;p>Identify flavor, image, network and security groups for the site you want to
-use, using the information gathered with &lt;code>fedcloudclient&lt;/code>.&lt;/p>
+&lt;p>Once the &lt;a href="#setting-up-the-environment">environment is properly configure&lt;/a>,
+&lt;code>fedcloudclient&lt;/code> is used to gather information and identify flavor, image,
+network and security groups for the site you want to use.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Selecting an image&lt;/span>
 $ fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> image --image-specs &lt;span style="color:#4e9a06">&amp;#34;Name =~ &amp;#39;EGI.*22&amp;#39;&amp;#34;&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Selecting a flavor&lt;/span>
