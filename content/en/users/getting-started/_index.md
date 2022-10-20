@@ -163,9 +163,6 @@ the users' requests before granting the access to the resources.
 2. Enroll the `vo.access.egi.eu` Virtual Organisation by following the
    [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240).
    Make sure you use your EGI Check-In account for the enrollment.
-3. Browse EGI services in the
-   [EOSC Marketplace](https://marketplace.eosc-portal.eu/providers/egi-fed)
-   and place an order.
 
 The grant to run applications is initially valid for 6 months and can be
 extended/renewed upon request. These resources are delivered
