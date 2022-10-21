@@ -7,7 +7,7 @@
 # These owners will be the default owners for everything in the repo.
 # Unless a later match takes precedence, they will be requested for
 # review when someone opens a pull request.
-* @enolfc @glarocca @gwarf @andrea-manzi @thebe14
+* @enolfc @glarocca @gwarf @andrea-manzi
 
 # Internal services
 content/en/internal/ @gwarf @paolini78
@@ -16,7 +16,7 @@ content/en/internal/ @gwarf @paolini78
 content/en/providers/ @gwarf @paolini78
 
 # Users
-content/en/users/ @enolfc @glarocca @andrea-manzi @gwarf @thebe14 @sebastian-luna-valero
+content/en/users/ @enolfc @glarocca @andrea-manzi @gwarf @sebastian-luna-valero
 
 # Storage-related services
 content/en/users/data/ @andrea-manzi
@@ -35,10 +35,10 @@ content/en/users/providers/notebooks/ @enolfc @andrea-manzi @sebastian-luna-vale
 content/en/users/dev-env/binder/ @enolfc @andrea-manzi @sebastian-luna-valero
 
 # Training
-content/en/users/training/ @glarocca @thebe14
+content/en/users/training/ @glarocca
 
 # Tutorials
-content/en/users/tutorials/ @thebe14
+content/en/users/tutorials/ @enolfc @sebastian-luna-valero
 
 # HTC-related services
 content/en/users/compute/content-distribution/ @CatalinCondurache
