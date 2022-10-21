@@ -22,7 +22,7 @@ jobs:
           ref: "pr_previews"
 
       - name: Delete pull request preview and commit changes
-        uses: EndBug/add-and-commit@v7
+        uses: EndBug/add-and-commit@v9
         with:
           branch: "pr_previews"
           remove: "-r ${{ github.event.number }}/"
