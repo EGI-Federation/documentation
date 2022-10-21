@@ -30,7 +30,7 @@ jobs:
           extended: true
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           # NodeJS 16 is maintained until 2023-09-11
           node-version: "16.x"
