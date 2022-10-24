@@ -1,0 +1,104 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Obtaining Access/Refresh Tokens</title><link>/users/aai/check-in/obtaining-tokens/</link><description>Recent content in Obtaining Access/Refresh Tokens on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/check-in/obtaining-tokens/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: oidc-agent</title><link>/users/aai/check-in/obtaining-tokens/oidc-agent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/obtaining-tokens/oidc-agent/</guid><description>
+&lt;p>The &lt;a href="https://github.com/indigo-dc/oidc-agent">oidc-agent&lt;/a> is a command-line tool
+for managing OpenID Connect tokens developed by
+&lt;a href="https://www.kit.edu/">Karlsruhe Institute of Technology (KIT)&lt;/a>.&lt;/p>
+&lt;h2 id="obtain-a-token">Obtain a Token&lt;/h2>
+&lt;p>If you haven&amp;rsquo;t installed oidc-agent in your system, please read the
+&lt;a href="https://indigo-dc.gitbook.io/oidc-agent/installation">installation guide&lt;/a>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Please make sure that you have installed
+the version 4.3.0 or later
+&lt;/div>
+&lt;p>Make sure that the &lt;code>oidc-agent-service&lt;/code> is started by executing the command:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#4e9a06">`&lt;/span>oidc-agent-service start&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To obtain a Token you need to execute the following command:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-1-0-tab" data-toggle="tab" href="#tabs-1-0" role="tab"
+aria-controls="tabs-1-0" aria-selected="true">
+Production
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-1-tab" data-toggle="tab" href="#tabs-1-1" role="tab"
+aria-controls="tabs-1-1" aria-selected="false">
+Demo
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-2-tab" data-toggle="tab" href="#tabs-1-2" role="tab"
+aria-controls="tabs-1-2" aria-selected="false">
+Development
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-1-content">
+&lt;div class="tab-pane show active"
+id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ oidc-gen --pub --issuer https://aai.egi.eu/auth/realms/egi
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ oidc-gen --pub --issuer https://aai-demo.egi.eu/auth/realms/egi
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-2" role="tabpanel" aria-labelled-by="tabs-1-2-tab">
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ oidc-gen --pub --issuer https://aai-dev.egi.eu/auth/realms/egi
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>Then enter a short name for the account to configure, and the scopes that the
+Access Token should contain.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+To get a &lt;strong>Refresh Token&lt;/strong> you need to
+specify the &lt;code>offline_access&lt;/code> scope in the requested scopes
+&lt;/div>
+&lt;p>After that, you need to log in either by visiting the provided URL or by
+scanning the displayed QR code, and then provide the &lt;strong>user code&lt;/strong> displayed in
+the oidc-agent.&lt;/p>
+&lt;p>Last but not least, you will need to provide an encryption password to protect
+the obtained Access/Refresh Token.&lt;/p>
+&lt;p>For more information, please read the
+&lt;a href="https://indigo-dc.gitbook.io/oidc-agent/">oidc-agent documentation&lt;/a>.&lt;/p></description></item><item><title>Users: EGI Check-in Token Portal</title><link>/users/aai/check-in/obtaining-tokens/token-portal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/obtaining-tokens/token-portal/</guid><description>
+&lt;p>The EGI Check-in Token Portal allows users to create Access and Refresh Tokens.&lt;/p>
+&lt;h2 id="obtain-an-access-token">Obtain an Access Token&lt;/h2>
+&lt;p>In order to obtain an Access Token from EGI Check-in Token Portal, please follow
+the steps below:&lt;/p>
+&lt;ol>
+&lt;li>Go to &lt;a href="https://aai.egi.eu/token">https://aai.egi.eu/token&lt;/a> and click on &amp;ldquo;Authorise&amp;rdquo; to authenticate
+yourself. &lt;img src="check-in-token-login.png" alt="EGI Check-in Token Portal Home Page">&lt;/li>
+&lt;li>After logging in you will obtain an Access Token as it is shown below:
+&lt;img src="check-in-token-access-token.png" alt="EGI Check-in Token Portal Access Token">
+&lt;ol>
+&lt;li>The value of the Access Token&lt;/li>
+&lt;li>The command to get user&amp;rsquo;s information from userinfo endpoint&lt;/li>
+&lt;li>Obtain a Refresh Token (more info in
+&lt;a href="#obtain-a-refresh-token">Obtain a Refresh Token&lt;/a> section)&lt;/li>
+&lt;li>View and manage the applications you have given permissions&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="obtain-a-refresh-token">Obtain a Refresh Token&lt;/h2>
+&lt;p>In order to obtain an Refresh Token from EGI Check-in Token Portal, please
+follow the steps below:&lt;/p>
+&lt;ol>
+&lt;li>Go to &lt;a href="https://aai.egi.eu/token">https://aai.egi.eu/token&lt;/a> and click on &amp;ldquo;Authorise&amp;rdquo; to authenticate
+yourself. &lt;img src="check-in-token-login.png" alt="EGI Check-in Token Portal Home Page">&lt;/li>
+&lt;li>After logging in click on &amp;ldquo;Create Refresh Token&amp;rdquo;:
+&lt;img src="check-in-token-access-token-2.png" alt="EGI Check-in Token Portal Access Token">&lt;/li>
+&lt;li>Then you will be redirected back to EGI Check-in Token Portal and you will
+have obtained a Refresh Token:
+&lt;img src="check-in-token-refresh-token.png" alt="EGI Check-in Token Portal Refresh Token">
+&lt;ol>
+&lt;li>The value of the Refresh Token&lt;/li>
+&lt;li>The command to generate new Access Token using the Refresh Token&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>
