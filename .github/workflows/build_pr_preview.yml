@@ -12,7 +12,6 @@ jobs:
   build_preview:
     # Do not run on forks, and only if "safe for preview" label is set
     if: >
-      github.repository == 'EGI-Federation/documentation' &&
       ((github.event.action == 'labeled' && github.event.label.name == 'safe for
       preview') || (github.event.action != 'labeled' &&
       contains(github.event.pull_request.labels.*.name, 'safe for preview')))
