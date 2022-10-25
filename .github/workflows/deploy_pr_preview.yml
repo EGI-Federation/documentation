@@ -20,10 +20,10 @@ jobs:
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success'
     name: Deploy pull request preview
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: "Download artifact"
-        uses: actions/github-script@v6.3.3
+        uses: actions/github-script@v6
         with:
           script: |
             var artifacts = await github.rest.actions.listWorkflowRunArtifacts({
@@ -49,7 +49,7 @@ jobs:
         run: |
           unzip pr.zip
           PR_NUMBER="$(cat ./PR)"
-          echo "::set-output name=pr_number::$PR_NUMBER"
+          echo "::set-output name=pr_number::$PR_NUMBER" >> "$GITHUB_OUTPUT"
 
       - name: Deploy Pull Request preview
         uses: peaceiris/actions-gh-pages@v3
@@ -71,7 +71,7 @@ jobs:
           commit_message: ${{ github.event.head_commit.message }}
 
       - name: Update Pull Request
-        uses: actions/github-script@v6.3.3
+        uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
