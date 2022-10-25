@@ -744,6 +744,7 @@ all these operations, only the following are necessary:
 
 ```shell
 $ cryptsetup luksOpen /dev/vdb storage1
+$ mkfs.ext4 /dev/mapper/storage1
 $ mkdir /storage1
 $ mount -t ext4 /dev/mapper/storage1 /storage1
 ```
