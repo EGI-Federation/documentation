@@ -1,0 +1,53 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Security Monitoring</title><link>/internal/security-coordination/monitoring/</link><description>Recent content in Security Monitoring on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/security-coordination/monitoring/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Pakiti</title><link>/internal/security-coordination/monitoring/pakiti/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/security-coordination/monitoring/pakiti/</guid><description>
+&lt;h2 id="pakiti">Pakiti&lt;/h2>
+&lt;p>&lt;a href="https://github.com/CESNET/pakiti-server">Pakiti&lt;/a> is a client-server tool to
+collect and evaluate data about packages installed on Linux machines, primarily
+meant to identify vulnerable SW that have not been properly updated. The
+&lt;a href="https://csirt.egi.eu">EGI CSIRT&lt;/a> operates the
+&lt;a href="https://pakiti.egi.eu">EGI Pakiti instance&lt;/a> that is used to monitor the state
+of the EGI sites.&lt;/p>
+&lt;h2 id="pakiti-client">Pakiti client&lt;/h2>
+&lt;p>The &lt;code>pakiti-client&lt;/code> can be used to send package informations to
+&lt;a href="https://pakiti.egi.eu">pakiti.egi.eu&lt;/a>.&lt;/p>
+&lt;p>If you have the proper credentials in the
+&lt;a href="../../../configuration-database">Configuration Database&lt;/a> and submit your report
+with the correct &lt;code>SITE_NAME&lt;/code>, you, your &lt;em>NGI-CSIRT&lt;/em> and the &lt;em>EGI-CSIRT&lt;/em> will be
+able to monitor the packages installed on your hosts and potentially
+vulnerabilities. The results can be accessed on the
+&lt;a href="https://pakiti.egi.eu">EGI Pakiti central instance&lt;/a>.&lt;/p>
+&lt;h3 id="running-the-pakiti-client-from-cvmfs-for-egi">Running the Pakiti client from CVMFS for EGI&lt;/h3>
+&lt;p>If you have CVMFS installed and configured to mount &lt;code>grid.cern.ch&lt;/code>, you can run
+pakiti by simply running:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ /cvmfs/grid.cern.ch/pakiti/bin/pakiti-client &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --url &lt;span style="color:#4e9a06">&amp;#34;https://pakiti.egi.eu/feed/&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --site SITE_NAME
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Please remember to replace SITE_NAME by your actual site name&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="manual-installation">Manual installation&lt;/h3>
+&lt;h4 id="installing-the-pakiti-client">Installing the Pakiti client&lt;/h4>
+&lt;p>The &lt;code>pakiti-client&lt;/code> is now available from
+&lt;a href="https://docs.fedoraproject.org/en-US/epel/">EPEL&lt;/a>. If your machine already has
+EPEL enabled, the following command is enough to install it:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ yum install pakiti-client
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="running-the-pakiti-client-for-egi">Running the Pakiti client for EGI&lt;/h4>
+&lt;p>With the package and the configuration, the following commands will run the&lt;/p>
+&lt;p>&lt;code>pakiti-client&lt;/code> and transmit all its data to the EGI CSIRT pakiti instance!&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pakiti-client --url &lt;span style="color:#4e9a06">&amp;#34;https://pakiti.egi.eu/feed/&amp;#34;&lt;/span> --site SITE_NAME
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Please remember to replace SITE_NAME by your actual site name&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="puppet-installation">Puppet Installation&lt;/h3>
+&lt;p>The simplest way to configure and run the &lt;code>pakiti-client&lt;/code> on a cluster is to use
+puppet: You just need to create a file and a manifest.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-puppet" data-lang="puppet">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">package&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;pakiti-client&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span> &lt;span style="color:#c4a000">ensure&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;present&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">cron&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;pakiti-egi&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span> &lt;span style="color:#c4a000">ensure&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;present&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span> &lt;span style="color:#c4a000">command&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;pakiti-client --url &amp;#34;https://pakiti.egi.eu/feed/&amp;#34; --site SITE_NAME&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span> &lt;span style="color:#204a87;font-weight:bold">user&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;nobody&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span> &lt;span style="color:#c4a000">hour&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">fqdn_rand&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">24&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span> &lt;span style="color:#c4a000">minute&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&amp;gt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">fqdn_rand&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">60&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;span style="color:#a40000">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
