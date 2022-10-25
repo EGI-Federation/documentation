@@ -12,12 +12,11 @@ jobs:
   build_preview:
     # Do not run on forks, and only if "safe for preview" label is set
     if: >
-      github.repository == 'EGI-Federation/documentation' &&
       ((github.event.action == 'labeled' && github.event.label.name == 'safe for
       preview') || (github.event.action != 'labeled' &&
       contains(github.event.pull_request.labels.*.name, 'safe for preview')))
     name: Build with Hugo
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -41,11 +40,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          # NodeJS 16 is maintained until 2023-09-11
-          node-version: "16.x"
+          node-version: "lts/*"
 
       - name: Cache dependencies
-        uses: actions/cache@v3.0.11
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}

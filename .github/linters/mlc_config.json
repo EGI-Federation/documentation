@@ -59,6 +59,9 @@
     },
     {
       "pattern": "^https://servproject.i3m.upv.es/ec3-ltos/index.php"
+    },
+    {
+      "pattern": "^https://operations-portal.egi.eu/downtimes/subscription"
     }
   ]
 }
