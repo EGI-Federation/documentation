@@ -53,13 +53,13 @@ you can &lt;a href="../../aai/check-in/signup">Sign up for an EGI account&lt;/a>
 &lt;p>Alternatively a docker based installation is also provided.&lt;/p>
 &lt;h3 id="oneclient-installation-via-packages">Oneclient installation via packages&lt;/h3>
 &lt;p>Use the following command in order to install the &lt;code>oneclient&lt;/code> package in a supported OS:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will also install the needed dependencies.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will also install the needed dependencies.&lt;/p>
 &lt;h3 id="oneclient-installation-via-docker">Oneclient installation via docker&lt;/h3>
 &lt;p>In order to use the Dockerized version of oneclient (provided that you
 have docker installed), you can run the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker run -it --privileged -v &lt;span style="color:#000">$PWD&lt;/span>:/mnt/src --entrypoint bash onedata/oneclient:20.02.15
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will also expose the current folder to the container (as &lt;code>/mnt/src&lt;/code>) to
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -it --privileged -v &lt;span style="color:#000">$PWD&lt;/span>:/mnt/src --entrypoint bash onedata/oneclient:20.02.15
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will also expose the current folder to the container (as &lt;code>/mnt/src&lt;/code>) to
 ease the transfer of data.&lt;/p>
 &lt;h2 id="getting-the-token-to-access-data">Getting the token to access data&lt;/h2>
 &lt;p>In order to access data stored in EGI DataHub via oneclient,
@@ -67,23 +67,24 @@ you need to &lt;a href="../../data/management/datahub/api/#getting-an-api-access
 &lt;h2 id="using-oneclient">Using oneclient&lt;/h2>
 &lt;p>Once you have acquired a token valid for oneclient you can configure it
 on the environment as follows:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You must also configure in the environment the provider you would like to
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You must also configure in the environment the provider you would like to
 connect to. The EGI DataHub offers a &lt;code>PLAYGROUND&lt;/code> space hosted by
 the Oneprovider &lt;code>plg-cyfronet-01.datahub.egi.eu&lt;/code> which is accessible
 for testing by anyone with a valid EGI Check-in account.&lt;/p>
 &lt;p>Therefore the access to that particular space can be configured as
 follows:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now in order to access data from a local folder you need to run
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now in order to access data from a local folder you need to run
 the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ mkdir /tmp/space
-$ oneclient /tmp/space
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>and then all usual file and folder operations (POSIX) will be available:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ root@222d3ceb86df:/tmp/space# ls -l
-total &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
-drwxrwxr-x &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> root root &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> Jan &lt;span style="color:#0000cf;font-weight:bold">28&lt;/span> 16:56 PLAYGROUND
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Creating a file into the folder will push it to the Oneprovider and
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ mkdir /tmp/space
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ oneclient /tmp/space
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and then all usual file and folder operations (POSIX) will be available:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ root@222d3ceb86df:/tmp/space# ls -l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>total &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>drwxrwxr-x &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> root root &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> Jan &lt;span style="color:#0000cf;font-weight:bold">28&lt;/span> 16:56 PLAYGROUND
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Creating a file into the folder will push it to the Oneprovider and
 it will be accessible in the web interface and from other providers
 supporting the space.&lt;/p>
 &lt;p>By using the default settings you can see all the spaces you have
@@ -118,14 +119,14 @@ access to the services and resources you need&lt;/li>
 &lt;h3 id="step-1-configuration-check">Step 1 Configuration check&lt;/h3>
 &lt;p>To verify that everything is configured properly you can check with the
 following command and pointing to the certificates directly:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-rest-whoami --key ~/.globus/userkey.pem --cert ~/.globus/usercert.pem &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446/
-User DN: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
-VO: AndreaCristoforiac@egi.eu@tcs.terena.org
-VO id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-Delegation id: XXXXXXXXXXXXXXXX
-Base id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>In general the commands can be used by specifying the user public and private
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-rest-whoami --key ~/.globus/userkey.pem --cert ~/.globus/usercert.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>User DN: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VO: AndreaCristoforiac@egi.eu@tcs.terena.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VO id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Delegation id: XXXXXXXXXXXXXXXX
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Base id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In general the commands can be used by specifying the user public and private
 key like shown in the example or by creating a proxy certificate as described in
 the following section.&lt;/p>
 &lt;h3 id="step-2-proxy-creation">Step 2 Proxy creation&lt;/h3>
@@ -142,40 +143,43 @@ the tool expect to find them in:&lt;/p>
 &lt;/ul>
 &lt;p>Following is an example of running this command with the public and private key
 already setup as described:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ voms-proxy-init
-Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
-Creating proxy ........................................... Done
-Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Wed Aug &lt;span style="color:#0000cf;font-weight:bold">25&lt;/span> 04:18:14 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The output of the command shows, a proxy certificate valid for 12 hours has been
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-init
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy ........................................... Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Wed Aug &lt;span style="color:#0000cf;font-weight:bold">25&lt;/span> 04:18:14 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The output of the command shows, a proxy certificate valid for 12 hours has been
 generated This is the default behaviour and can be usually increased, for
 example to 48 hours, with the following option:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ voms-proxy-init -valid 48:00
-Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
-Creating proxy ................................... Done
-Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Thu Aug &lt;span style="color:#0000cf;font-weight:bold">26&lt;/span> 16:23:01 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>To verify for how long the proxy is still valid you can use the following
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-init -valid 48:00
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy ................................... Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Thu Aug &lt;span style="color:#0000cf;font-weight:bold">26&lt;/span> 16:23:01 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To verify for how long the proxy is still valid you can use the following
 command: command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ voms-proxy-info
-subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1451339003&lt;/span>
-issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
-identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
-&lt;span style="color:#204a87">type&lt;/span> : RFC compliant proxy
-strength : &lt;span style="color:#0000cf;font-weight:bold">1024&lt;/span> bits
-path : /tmp/x509up_u1000
-timeleft : 19:59:57
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the &lt;code>timeleft&lt;/code> reaches zero the same command will produce the following
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-info
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1451339003&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">type&lt;/span> : RFC compliant proxy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>strength : &lt;span style="color:#0000cf;font-weight:bold">1024&lt;/span> bits
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>path : /tmp/x509up_u1000
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>timeleft : 19:59:57
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the &lt;code>timeleft&lt;/code> reaches zero the same command will produce the following
 message:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-rest-whoami -s https://fts3-public.cern.ch:8446/
-Error: Proxy expired!
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option that you need to use is specify the VO that you want to use for
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-rest-whoami -s https://fts3-public.cern.ch:8446/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Error: Proxy expired!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option that you need to use is specify the VO that you want to use for
 the proxy being created. In the following example the &lt;em>dteam&lt;/em> VO has been used:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ voms-proxy-init --voms dteam
-Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
-Creating temporary proxy ................................................................... Done
-Contacting voms2.hellasgrid.gr:15004 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GR/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>HellasGrid/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>hellasgrid.gr/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms2.hellasgrid.gr&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;dteam&amp;#34;&lt;/span> Done
-Creating proxy .............................................................................. Done
-Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Wed Sep &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span> 04:37:07 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>With a proxy now available for the user it is now possible to execute the FTS
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-init --voms dteam
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Cristofori ac@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating temporary proxy ................................................................... Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Contacting voms2.hellasgrid.gr:15004 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GR/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>HellasGrid/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>hellasgrid.gr/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms2.hellasgrid.gr&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;dteam&amp;#34;&lt;/span> Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy .............................................................................. Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Wed Sep &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span> 04:37:07 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>With a proxy now available for the user it is now possible to execute the FTS
 commands without specifying the public and private keys as it will be shown in
 the following sections.&lt;/p>
 &lt;h3 id="step-3-find-the-storage">Step 3 Find the storage&lt;/h3>
@@ -197,17 +201,17 @@ of the list of storage available to &lt;em>dteam&lt;/em>.&lt;/p>
 transfer you can proceed with the transfer between the two endpoints. To do that
 you can use a command of this type, returning the job ID corresponding to the
 transfer that you started:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -o cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>To check the status of the transfer you can use the returned job ID and use the
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -o cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To check the status of the transfer you can use the returned job ID and use the
 following command specifying the server controlling the transfer, the source and
 the transfer itself:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
-FINISHED
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option &lt;code>-o&lt;/code> specify that the file should be overwritten if present on
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FINISHED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option &lt;code>-o&lt;/code> specify that the file should be overwritten if present on
 the destination. If this option is not present and a file with the same name
 exists on the destination, the transfer itself will fail. If you use this option
 you should make sure that it is safe to do so.&lt;/p>
@@ -217,11 +221,11 @@ you should make sure that it is safe to do so.&lt;/p>
 Similarly to what has been done from the command-line interface you need to
 provide our private key for delegation of the credential. To do that you use the
 following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openssl pkcs12 -in yourCert.p12 -nocerts -nodes &lt;span style="color:#000;font-weight:bold">|&lt;/span> openssl rsa
-Enter Import Password:
-writing RSA key
-&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Which extract the private key in RSA format and you can paste it in the windows
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openssl pkcs12 -in yourCert.p12 -nocerts -nodes &lt;span style="color:#000;font-weight:bold">|&lt;/span> openssl rsa
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter Import Password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>writing RSA key
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Which extract the private key in RSA format and you can paste it in the windows
 that opens:&lt;/p>
 &lt;p>&lt;img src="WebFTS-credential_delegation.png" alt="WebFTS credential delegation">&lt;/p>
 &lt;p>And select the desired VO. Once the delegation is set it&amp;rsquo;s possible to move to
@@ -305,28 +309,28 @@ such as Amazon, Azure, etc&lt;/p>
 credential to the FTS server. The fist step is to register the Object Storage.
 The name of the storage, is S3: + the domain part of the URL (for example
 &lt;code>https://s3.cl2.du.cesnet.cz&lt;/code> -&amp;gt; &lt;code>S3:s3.cl2.du.cesnet.cz&lt;/code>)&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -E &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --cacert &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --capath &lt;span style="color:#4e9a06">&amp;#34;/etc/grid-security/certificates&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> https://fts3devel01.cern.ch:8446/config/cloud_storage &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -X POST &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#39;{&amp;#34;storage_name&amp;#34;:&amp;#34;S3:s3.cl2.du.cesnet.cz&amp;#34;}&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then, add the keys, so the requests can be signed.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ curl -E &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --cacert &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --capath &lt;span style="color:#4e9a06">&amp;#34;/etc/grid-security/certificates&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://fts3devel01.cern.ch:8446/config/cloud_storage/S3:s3.cl2.du.cesnet.cz&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -X POST &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --data @config.json
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where &lt;code>config.json&lt;/code> is a JSON file with the following content:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;vo_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;/dteam/Role=NULL/Capability=NULL&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;access_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ACCESS_KEY&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">&amp;#34;secret_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;SECRET_KEY&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where ACCESS_KEY and SECRET KEY are the corresponding key necessary to access
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -E &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --cacert &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --capath &lt;span style="color:#4e9a06">&amp;#34;/etc/grid-security/certificates&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://fts3devel01.cern.ch:8446/config/cloud_storage &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -X POST &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#39;{&amp;#34;storage_name&amp;#34;:&amp;#34;S3:s3.cl2.du.cesnet.cz&amp;#34;}&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then, add the keys, so the requests can be signed.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -E &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --cacert &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --capath &lt;span style="color:#4e9a06">&amp;#34;/etc/grid-security/certificates&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://fts3devel01.cern.ch:8446/config/cloud_storage/S3:s3.cl2.du.cesnet.cz&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -X POST &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --data @config.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where &lt;code>config.json&lt;/code> is a JSON file with the following content:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;vo_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;/dteam/Role=NULL/Capability=NULL&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;access_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ACCESS_KEY&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;secret_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;SECRET_KEY&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where ACCESS_KEY and SECRET KEY are the corresponding key necessary to access
 the object storage. See also the
 &lt;a href="https://fts3-docs.web.cern.ch/fts3-docs/docs/s3_support.html#doing-a-transfer">S3 Support&lt;/a>
 pages on the FTS docs pages.&lt;/p>
@@ -337,39 +341,39 @@ following examples, an object storage available in &lt;code>s3://s3.cl2.du.cesne
 with an already available bucket is used. To manage the object storage is
 possible to use any compatible tool. Following will be only shown an example of
 transfer.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-submit --s3alternate &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3
-247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The command returns a job ID that we can use to check the status of the transfer
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-submit --s3alternate &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The command returns a job ID that we can use to check the status of the transfer
 itself:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-status -d &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> 247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
-FINISHED
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-transfer-between-two-object-storage">Step 5 Transfer between two object storage&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-status -d &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> 247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FINISHED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-transfer-between-two-object-storage">Step 5 Transfer between two object storage&lt;/h3>
 &lt;p>We can also use the data transfer service to perform transfers between two
 object storage. In this case the transfer will be controlled by the FTS service
 you can use a command like:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-submit --s3alternate &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/A
-c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case too we can verify the status of the transfer with the same command
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-submit --s3alternate &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/A
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case too we can verify the status of the transfer with the same command
 as before using the new job ID.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fts-transfer-status -d &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
-FINISHED
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-6-web-interface">Step 6 Web interface&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-status -d &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FINISHED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-6-web-interface">Step 6 Web interface&lt;/h3>
 &lt;p>An alternative way to check the status of the job is to use the FTS web
 interface to see using one the FTS servers and appending the job ID returned
 from one of the previous examples. For instance the link below will show the
 status of the specified job:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">https://fts-public-003.cern.ch:8449/fts3/ftsmon/#/job/247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="CERN-PROD-FTS3.png" alt="WebFTS credential delegation">&lt;/p></description></item><item><title>Users: Create a Virtual Machine with Jupyter and DataHub</title><link>/users/tutorials/jupyter-datahub-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/jupyter-datahub-virtual-machine/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>https://fts-public-003.cern.ch:8449/fts3/ftsmon/#/job/247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="CERN-PROD-FTS3.png" alt="WebFTS credential delegation">&lt;/p></description></item><item><title>Users: Create a Virtual Machine with Jupyter and DataHub</title><link>/users/tutorials/jupyter-datahub-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/jupyter-datahub-virtual-machine/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to start a Virtual Machine in the EGI Federation
 that runs a browser-accessible Jupyter server with DataHub spaces mounted. This
@@ -417,11 +421,11 @@ IP.&lt;/p>
 &lt;p>Secondly, you need to get a certificate to enable HTTPS. The VM has
 &lt;a href="https://certbot.eff.org/">certbot&lt;/a> already installed, you just need to run it
 with the hostname you have allocated and your email address as shown here:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># log into your VM&lt;/span>
-$ ssh ubuntu@&amp;lt;your VM&lt;span style="color:#a40000">&amp;#39;&lt;/span>s IP&amp;gt;
-&lt;span style="color:#8f5902;font-style:italic"># now request the certificate&lt;/span>
-$ sudo certbot --nginx -d &amp;lt;your registered name&amp;gt; -m &amp;lt;your email&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, open your browser and go to &lt;code>https://&amp;lt;your registered name&amp;gt;/&lt;/code> to see
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># log into your VM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh ubuntu@&amp;lt;your VM&lt;span style="color:#a40000">&amp;#39;&lt;/span>s IP&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># now request the certificate&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo certbot --nginx -d &amp;lt;your registered name&amp;gt; -m &amp;lt;your email&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, open your browser and go to &lt;code>https://&amp;lt;your registered name&amp;gt;/&lt;/code> to see
 Jupyter started. Follow next steps for getting the credentials to access the
 service.&lt;/p>
 &lt;div class="alert alert-Danger" role="alert">
@@ -431,12 +435,12 @@ to use HTTP (e.g. your VM is not accessible publicly and you cannot
 create a certificate for it), you can disable the error shown by default in the
 nginx configuration.&lt;/p>
 &lt;p>Open &lt;code>/etc/nginx/sites-enabled/default&lt;/code> and comment out lines 14-16:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-nginx" data-lang="nginx"> &lt;span style="color:#8f5902;font-style:italic"># if ( $https != &amp;#39;on&amp;#39; ) {
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># return 406;
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># }
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And restart nginx:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo systemctl restart nginx
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nginx" data-lang="nginx">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># if ( $https != &amp;#39;on&amp;#39; ) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># return 406;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># }
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And restart nginx:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ sudo systemctl restart nginx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;h3 id="step-3-get-your-token-for-the-jupyter-server">Step 3: Get your token for the Jupyter server&lt;/h3>
 &lt;p>Your VM will spawn a Jupyter notebooks server upon starting. This server runs as
@@ -444,20 +448,20 @@ an unprivileged user named &lt;code>jovyan&lt;/code> with the software installed
 &lt;a href="https://mamba.readthedocs.io/">micromamba&lt;/a>. The server uses a randomly
 generated token for authentication that you can obtain by logging into the VM
 and becoming &lt;code>jovyan&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ssh ubuntu@&amp;lt;your VM&lt;span style="color:#a40000">&amp;#39;&lt;/span>s IP&amp;gt;
-&lt;span style="color:#8f5902;font-style:italic"># become jovyan user and activate the default environment&lt;/span>
-$ sudo su - jovyan
-$ micromamba activate
-$ jupyter server list --jsonlist &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .&lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>.token
-&amp;lt;your token&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-start-your-notebooks">Step 4: Start your notebooks&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ssh ubuntu@&amp;lt;your VM&lt;span style="color:#a40000">&amp;#39;&lt;/span>s IP&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># become jovyan user and activate the default environment&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo su - jovyan
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ micromamba activate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ jupyter server list --jsonlist &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .&lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>.token
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;your token&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-start-your-notebooks">Step 4: Start your notebooks&lt;/h3>
 &lt;p>Now point your browser to &lt;code>http://&amp;lt;your VM's IP&amp;gt;&lt;/code> and you will be able to enter
 the token to get started with Jupyter.&lt;/p>
 &lt;p>You can install additional packages with mamba from a terminal started from
 Jupyter or via ssh. For example for installing &lt;code>tensorflow&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ micromamba activate
-$ micromamba install -c conda-forge tensorflow
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-mount-datahub-spaces">Step 5: Mount DataHub spaces&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ micromamba activate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ micromamba install -c conda-forge tensorflow
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-mount-datahub-spaces">Step 5: Mount DataHub spaces&lt;/h3>
 &lt;p>Log into &lt;a href="https://datahub.egi.eu/">EGI&amp;rsquo;s DataHub&lt;/a> and
 &lt;a href="../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis">create a token&lt;/a>
 for mounting your data in the VM.&lt;/p>
@@ -523,28 +527,28 @@ line.&lt;/p>
 &lt;a href="https://indigo-dc.gitbook.io/oidc-agent/installation">official documentation&lt;/a>,
 once &lt;code>oidc-agent&lt;/code> is installed it can be used to retrieve an OIDC access token
 from EGI Check-in.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Generating configuration for EGI Check-in&lt;/span>
-$ oidc-gen --pub --issuer https://aai.egi.eu/auth/realms/egi &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --scope &lt;span style="color:#4e9a06">&amp;#34;email \
-&lt;/span>&lt;span style="color:#4e9a06"> eduperson_entitlement \
-&lt;/span>&lt;span style="color:#4e9a06"> eduperson_scoped_affiliation \
-&lt;/span>&lt;span style="color:#4e9a06"> eduperson_unique_id&amp;#34;&lt;/span> egi
-&lt;span style="color:#8f5902;font-style:italic"># Listing existing configuration&lt;/span>
-$ oidc-add -l
-&lt;span style="color:#8f5902;font-style:italic"># Requesting an OIDC access token&lt;/span>
-$ oidc-token egi
-&lt;span style="color:#8f5902;font-style:italic"># Exporting a variable with a Check-in OIDC access token to be used with OpenStack&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># XXX access tokens are short lived, relaunch command to obtain a new token&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># This is *not* required for following this tutorial, it&amp;#39;s an example&lt;/span>
-$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>oidc-token egi&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s possible to automatically start &lt;code>oidc-agent&lt;/code> in your shell initialisation,
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Generating configuration for EGI Check-in&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ oidc-gen --pub --issuer https://aai.egi.eu/auth/realms/egi &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --scope &lt;span style="color:#4e9a06">&amp;#34;email \
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> eduperson_entitlement \
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> eduperson_scoped_affiliation \
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> eduperson_unique_id&amp;#34;&lt;/span> egi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Listing existing configuration&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ oidc-add -l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Requesting an OIDC access token&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ oidc-token egi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Exporting a variable with a Check-in OIDC access token to be used with OpenStack&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># XXX access tokens are short lived, relaunch command to obtain a new token&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># This is *not* required for following this tutorial, it&amp;#39;s an example&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>oidc-token egi&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s possible to automatically start &lt;code>oidc-agent&lt;/code> in your shell initialisation,
 example that can be added to &lt;code>~/.bash_profile&lt;/code> or &lt;code>~/.zshrc&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#204a87">command&lt;/span> -v oidc-agent-service &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&amp;gt; /dev/null
-&lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>oidc-agent-service use&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># for fedcloudclient, selecting egi configuration generated with oidc-gen&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_AGENT_ACCOUNT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>egi
-&lt;span style="color:#204a87;font-weight:bold">fi&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>When using &lt;code>oidc-agent-service&lt;/code>,
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#204a87">command&lt;/span> -v oidc-agent-service &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&amp;gt; /dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>oidc-agent-service use&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># for fedcloudclient, selecting egi configuration generated with oidc-gen&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_AGENT_ACCOUNT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>egi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When using &lt;code>oidc-agent-service&lt;/code>,
 &lt;a href="#installing-fedcloudclient-and-ansible">fedcloudclient&lt;/a> will be able to
 automatically request a new access token from &lt;code>oidc-agent&lt;/code>.&lt;/p>
 &lt;p>See &lt;a href="https://indigo-dc.gitbook.io/oidc-agent/">full documentation&lt;/a>.&lt;/p>
@@ -562,29 +566,29 @@ the official OpenStack python client, will be used to interact with the EGI
 Cloud Compute service.&lt;/p>
 &lt;p>Required python dependencies are documented in a &lt;code>requirements.txt&lt;/code> file
 (Ansible will be used at a later stage, but is installed at the same time):&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-requirements.txt" data-lang="requirements.txt">openstackclient
-fedcloudclient
-ansible
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>For keeping the main system tidy and isolating the environment, the python
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-requirements.txt" data-lang="requirements.txt">&lt;span style="display:flex;">&lt;span>openstackclient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloudclient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ansible
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For keeping the main system tidy and isolating the environment, the python
 packages will be installed in a dedicated
 &lt;a href="https://docs.python.org/3/tutorial/venv.html">python virtualenv&lt;/a>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Creating an arbitrary directory where to store python virtual environments&lt;/span>
-$ mkdir -p ~/.virtualenvs
-&lt;span style="color:#8f5902;font-style:italic"># Creating a python 3 virtual environment&lt;/span>
-$ python3 -m venv ~/.virtualenvs/fedcloud
-&lt;span style="color:#8f5902;font-style:italic"># Activating the virtual environment&lt;/span>
-$ &lt;span style="color:#204a87">source&lt;/span> ~/.virtualenvs/fedcloud
-&lt;span style="color:#8f5902;font-style:italic"># Installing required python packages in the virtual environment&lt;/span>
-$ pip install -r requirements.txt
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="identifying-a-suitable-cloud-site">Identifying a suitable cloud site&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating an arbitrary directory where to store python virtual environments&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ mkdir -p ~/.virtualenvs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating a python 3 virtual environment&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ python3 -m venv ~/.virtualenvs/fedcloud
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Activating the virtual environment&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">source&lt;/span> ~/.virtualenvs/fedcloud
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Installing required python packages in the virtual environment&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="identifying-a-suitable-cloud-site">Identifying a suitable cloud site&lt;/h3>
 &lt;p>It&amp;rsquo;s possible to deploy an OpenStack Virtual Machine (VM) on any of the sites
 supporting the Virtual Organisations (VO) you are a member of.&lt;/p>
 &lt;p>Once &lt;a href="#installing-fedcloudclient-and-ansible">fedcloudclient&lt;/a> is installed it&amp;rsquo;s
 possible to get information about the OIDC token accessed via
 &lt;a href="#setting-up-oidc-agent">oidc-agent&lt;/a>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Listing the VO membership related to the OIDC access token&lt;/span>
-$ fedcloud token list-vos
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>In order to look for sites supporting a particular VO, you can use the
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Listing the VO membership related to the OIDC access token&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud token list-vos
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In order to look for sites supporting a particular VO, you can use the
 &lt;a href="https://appdb.egi.eu/browse/vos/cloud">EGI Application Database&lt;/a>.&lt;/p>
 &lt;p>You can retrieve information from the AppDB about the sites supporting the
 &lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">vo.access.egi.eu VO&lt;/a>.&lt;/p>
@@ -608,49 +612,49 @@ in the following sections.&lt;/p>
 &lt;h4 id="setting-up-the-environment">Setting up the environment&lt;/h4>
 &lt;p>The &lt;code>OS_*&lt;/code> variables that will be used by terraform can be generated using
 &lt;code>fedcloudclient&lt;/code>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Activating the virtual environment&lt;/span>
-$ &lt;span style="color:#204a87">source&lt;/span> ~/.virtualenvs/fedcloudclient/bin/activate
-&lt;span style="color:#8f5902;font-style:italic"># Exporting variable for VO and SITE to avoid having to repeat them&lt;/span>
-$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;vo.access.egi.eu&amp;#39;&lt;/span>
-$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;IN2P3-IRES&amp;#39;&lt;/span>
-&lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site env&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Obtaining an OS_TOKEN for terraform&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># XXX this breaks using openstackclient: use fedcloudclient&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># or unset OS_TOKEN before using openstackclient&lt;/span>
-$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack token issue --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --vo &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_VO&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -j &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[0].Result.id&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="describing-the-terraform-variables">Describing the terraform variables&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Activating the virtual environment&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">source&lt;/span> ~/.virtualenvs/fedcloudclient/bin/activate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Exporting variable for VO and SITE to avoid having to repeat them&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;vo.access.egi.eu&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;IN2P3-IRES&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site env&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Obtaining an OS_TOKEN for terraform&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># XXX this breaks using openstackclient: use fedcloudclient&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># or unset OS_TOKEN before using openstackclient&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack token issue --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --vo &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_VO&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -j &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[0].Result.id&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="describing-the-terraform-variables">Describing the terraform variables&lt;/h4>
 &lt;p>The main terraform configuration file,
 &lt;a href="#creating-the-main-terraform-deployment-file">main.tf&lt;/a> is using variables that
 have to be described in a &lt;code>vars.tf&lt;/code> file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-terraform" data-lang="terraform">&lt;span style="color:#8f5902;font-style:italic"># Terraform variables definition
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Values to be provided in a *.tfvars file passed on the command line
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">
-&lt;/span>&lt;span style="color:#204a87;font-weight:bold">variable&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;internal_net_id&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">type&lt;/span> = &lt;span style="color:#000">string&lt;/span>
-&lt;span style="color:#c4a000">description&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;The id of the internal network&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">
-&lt;/span>&lt;span style="color:#204a87;font-weight:bold">variable&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;public_ip_pool&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">type&lt;/span> = &lt;span style="color:#000">string&lt;/span>
-&lt;span style="color:#c4a000">description&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;The name of the public IP address pool&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">
-&lt;/span>&lt;span style="color:#204a87;font-weight:bold">variable&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;image_id&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">type&lt;/span> = &lt;span style="color:#000">string&lt;/span>
-&lt;span style="color:#c4a000">description&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;VM image id&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">
-&lt;/span>&lt;span style="color:#204a87;font-weight:bold">variable&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;flavor_id&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">type&lt;/span> = &lt;span style="color:#000">string&lt;/span>
-&lt;span style="color:#c4a000">description&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;VM flavor id&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">
-&lt;/span>&lt;span style="color:#204a87;font-weight:bold">variable&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;security_groups&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">type&lt;/span> =&lt;span style="color:#204a87"> list&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">string&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#c4a000">description&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;List of security groups&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The SITE and VO specific values for those variables will be
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-terraform" data-lang="terraform">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Terraform variables definition
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Values to be provided in a *.tfvars file passed on the command line
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">variable&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;internal_net_id&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">type&lt;/span> = &lt;span style="color:#000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">description&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;The id of the internal network&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">variable&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;public_ip_pool&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">type&lt;/span> = &lt;span style="color:#000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">description&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;The name of the public IP address pool&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">variable&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;image_id&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">type&lt;/span> = &lt;span style="color:#000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">description&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;VM image id&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">variable&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;flavor_id&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">type&lt;/span> = &lt;span style="color:#000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">description&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;VM flavor id&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">variable&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;security_groups&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">type&lt;/span> =&lt;span style="color:#204a87"> list&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">string&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">description&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;List of security groups&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The SITE and VO specific values for those variables will be
 &lt;a href="#identifying-the-cloud-resources">identified&lt;/a> and documented in a
 &lt;a href="#documenting-the-cloud-resources-for-the-selected-site">&lt;code>$EGI_SITE.tfvars&lt;/code> file&lt;/a>.&lt;/p>
 &lt;h4 id="identifying-the-cloud-resources">Identifying the cloud resources&lt;/h4>
@@ -664,19 +668,19 @@ will be addressed in a
 In the meantime the &lt;code>$EGI_SITE&lt;/code> environment variable can be reused using
 &lt;code>--site &amp;quot;$EGI_SITE&amp;quot;&lt;/code>.&lt;/p>
 &lt;/blockquote>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Selecting an image&lt;/span>
-$ fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> image --image-specs &lt;span style="color:#4e9a06">&amp;#34;Name =~ &amp;#39;EGI.*22&amp;#39;&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Selecting a flavor&lt;/span>
-$ fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> flavor --flavor-specs &lt;span style="color:#4e9a06">&amp;#34;RAM&amp;gt;=2096&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --flavor-specs &lt;span style="color:#4e9a06">&amp;#34;Disk &amp;gt; 10&amp;#34;&lt;/span> --vcpus &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Identifying available networks&lt;/span>
-$ fedcloud openstack --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> network list
-$ fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> network --network-specs default
-&lt;span style="color:#8f5902;font-style:italic"># Identifying security groups&lt;/span>
-$ fedcloud openstack --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> security group list
-&lt;span style="color:#8f5902;font-style:italic"># Listing rules of a specific security group&lt;/span>
-$ fedcloud openstack --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> security group rule list default
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="documenting-the-cloud-resources-for-the-selected-site">Documenting the cloud resources for the selected site&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Selecting an image&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> image --image-specs &lt;span style="color:#4e9a06">&amp;#34;Name =~ &amp;#39;EGI.*22&amp;#39;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Selecting a flavor&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> flavor --flavor-specs &lt;span style="color:#4e9a06">&amp;#34;RAM&amp;gt;=2096&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --flavor-specs &lt;span style="color:#4e9a06">&amp;#34;Disk &amp;gt; 10&amp;#34;&lt;/span> --vcpus &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Identifying available networks&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud openstack --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> network list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud &lt;span style="color:#204a87;font-weight:bold">select&lt;/span> network --network-specs default
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Identifying security groups&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud openstack --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> security group list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Listing rules of a specific security group&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud openstack --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> security group rule list default
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="documenting-the-cloud-resources-for-the-selected-site">Documenting the cloud resources for the selected site&lt;/h4>
 &lt;p>The chosen flavor, image, network and security group should be documented in a
 &lt;code>$EGI_SITE.tfvars&lt;/code> file that will be passed as an argument to terraform
 commands.&lt;/p>
@@ -690,77 +694,77 @@ adjusted accordingly.&lt;/p>
 &lt;/blockquote>
 &lt;p>See the example &lt;code>IN2P3-IRES.tfvars&lt;/code> below, to be adjusted according to the
 requirements and to the selected site and VO:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-terraform" data-lang="terraform">&lt;span style="color:#8f5902;font-style:italic"># Internal network
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">internal_net_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;7ae7b0ca-f122-4445-836a-5fb7af524dcb&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Public IP pool for floating IPs
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">public_ip_pool&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;ext-net&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Flavor: m1.medium
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">flavor_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;ab1fbd4c-324d-4155-bd0f-72f077f0ebce&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Image for EGI CentOS 7
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.centos.7
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">image_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;09093c70-f2bb-46b8-a87f-00e2cc0c8542&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Image: EGI CentOS 8
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.centos.8
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># image_id = &amp;#34;38ced5bf-bbfd-434b-ae41-3ab35d929aba&amp;#34;
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Image: EGI Ubuntu 22.04
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.ubuntu.22.04
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># image_id = &amp;#34;fc6c83a3-845f-4f29-b44d-2584f0ca4177&amp;#34;
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Security groups
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">security_groups&lt;/span> = &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;default&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="creating-the-main-terraform-deployment-file">Creating the main terraform deployment file&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-terraform" data-lang="terraform">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Internal network
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">internal_net_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;7ae7b0ca-f122-4445-836a-5fb7af524dcb&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Public IP pool for floating IPs
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">public_ip_pool&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;ext-net&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Flavor: m1.medium
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">flavor_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;ab1fbd4c-324d-4155-bd0f-72f077f0ebce&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Image for EGI CentOS 7
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.centos.7
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">image_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;09093c70-f2bb-46b8-a87f-00e2cc0c8542&amp;#34;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Image: EGI CentOS 8
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.centos.8
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># image_id = &amp;#34;38ced5bf-bbfd-434b-ae41-3ab35d929aba&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Image: EGI Ubuntu 22.04
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># https://appdb.egi.eu/store/vappliance/egi.ubuntu.22.04
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># image_id = &amp;#34;fc6c83a3-845f-4f29-b44d-2584f0ca4177&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Security groups
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#c4a000">security_groups&lt;/span> = &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;default&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="creating-the-main-terraform-deployment-file">Creating the main terraform deployment file&lt;/h4>
 &lt;p>To be more reusable, the &lt;code>main.tf&lt;/code> configuration file is referencing variables
 described in the &lt;a href="#describing-the-terraform-variables">vars.tf&lt;/a> file created
 previously, and will take the values from the
 &lt;a href="#documenting-the-cloud-resources-for-the-selected-site">&lt;code>$EGI_SITE.tfvars&lt;/code>&lt;/a>
 file passed as an argument to the terraform command.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-terraform" data-lang="terraform">&lt;span style="color:#8f5902;font-style:italic"># Terraform versions and providers
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">terraform&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">required_version&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;&amp;gt;= 0.14.0&amp;#34;&lt;/span>
-&lt;span style="color:#000">required_providers&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">openstack&lt;/span> = &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">source&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;terraform-provider-openstack/openstack&amp;#34;&lt;/span>
-&lt;span style="color:#c4a000">version&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;~&amp;gt; 1.35.0&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Allocate a floating IP from the public IP pool
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">resource&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openstack_networking_floatingip_v2&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;egi_vm_floatip_1&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">pool&lt;/span> = &lt;span style="color:#204a87">var&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">public_ip_pool&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Creating the VM
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">resource&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openstack_compute_instance_v2&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;egi_vm&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">name&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;egi_test_vm&amp;#34;&lt;/span>
-&lt;span style="color:#c4a000">image_id&lt;/span> = &lt;span style="color:#204a87">var&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">image_id&lt;/span>
-&lt;span style="color:#c4a000">flavor_id&lt;/span> = &lt;span style="color:#204a87">var&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">flavor_id&lt;/span>
-&lt;span style="color:#c4a000">security_groups&lt;/span> = &lt;span style="color:#204a87">var&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">security_groups&lt;/span>
-&lt;span style="color:#c4a000">user_data&lt;/span> = &lt;span style="color:#204a87">file&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;cloud-init.yaml&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000">network&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">uuid&lt;/span> = &lt;span style="color:#204a87">var&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">internal_net_id&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Attach the floating public IP to the created instance
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">resource&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openstack_compute_floatingip_associate_v2&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;egi_vm_fip_1&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">instance_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">openstack_compute_instance_v2&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">egi_vm&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">id&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
-&lt;span style="color:#c4a000">floating_ip&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">openstack_networking_floatingip_v2&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">egi_vm_floatip_1&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">address&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Create inventory file for Ansible
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">resource&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;local_file&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;hosts_cfg&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">content&lt;/span> = &lt;span style="color:#204a87">templatefile&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#204a87">module&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">/hosts.cfg.tpl&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#c4a000">ui&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">openstack_networking_floatingip_v2&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">egi_vm_floatip_1&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">address&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#c4a000">filename&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;./inventory/hosts.cfg&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last resource is relying on
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-terraform" data-lang="terraform">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Terraform versions and providers
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#000">terraform&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">required_version&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;&amp;gt;= 0.14.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">required_providers&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">openstack&lt;/span> = &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">source&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;terraform-provider-openstack/openstack&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">version&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;~&amp;gt; 1.35.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Allocate a floating IP from the public IP pool
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">resource&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openstack_networking_floatingip_v2&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;egi_vm_floatip_1&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">pool&lt;/span> = &lt;span style="color:#204a87">var&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">public_ip_pool&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating the VM
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">resource&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openstack_compute_instance_v2&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;egi_vm&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">name&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;egi_test_vm&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">image_id&lt;/span> = &lt;span style="color:#204a87">var&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">image_id&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">flavor_id&lt;/span> = &lt;span style="color:#204a87">var&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">flavor_id&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">security_groups&lt;/span> = &lt;span style="color:#204a87">var&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">security_groups&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">user_data&lt;/span> = &lt;span style="color:#204a87">file&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;cloud-init.yaml&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">network&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">uuid&lt;/span> = &lt;span style="color:#204a87">var&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">internal_net_id&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Attach the floating public IP to the created instance
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">resource&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openstack_compute_floatingip_associate_v2&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;egi_vm_fip_1&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">instance_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">openstack_compute_instance_v2&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">egi_vm&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">id&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">floating_ip&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">openstack_networking_floatingip_v2&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">egi_vm_floatip_1&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">address&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Create inventory file for Ansible
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">resource&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;local_file&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;hosts_cfg&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">content&lt;/span> = &lt;span style="color:#204a87">templatefile&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">path&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#204a87">module&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">/hosts.cfg.tpl&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">ui&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">openstack_networking_floatingip_v2&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">egi_vm_floatip_1&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">address&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">filename&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;./inventory/hosts.cfg&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last resource is relying on
 &lt;a href="https://www.terraform.io/language/functions/templatefile">templatefile&lt;/a> to
 populate the inventory file that will later be used by
 &lt;a href="#step-4-using-ansible">ansible&lt;/a>.&lt;/p>
@@ -794,47 +798,47 @@ compromise of the complete virtual machine.&lt;/p>
 &lt;/blockquote>
 &lt;p>Replace &lt;code>&amp;lt;NSUPATE_HOSTNAME&amp;gt;&lt;/code>, &lt;code>&amp;lt;NSUPDATE_SECRET&amp;gt;&lt;/code>, &lt;code>&amp;lt;SSH_AUTHORIZED_KEY&amp;gt;&lt;/code> (the
 content of your SSH public key) by the proper values.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#000">---&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># cloud-config&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">runcmd&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">curl,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://&amp;lt;NSUPATE_HOSTNAME&amp;gt;:&amp;lt;NSUPDATE_SECRET&amp;gt;@nsupdate.fedcloud.eu/nic/update&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">users&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">egi&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">gecos&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">EGI&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">primary_group&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">egi&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">groups&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">users&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">shell&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/bin/bash&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">sudo&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">ALL=(ALL) NOPASSWD:ALL&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">ssh_authorized_keys&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">&amp;lt;SSH_AUTHORIZED_KEY&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">packages&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">vim&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">package_update&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">package_upgrade&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">package_reboot_if_required&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="launching-the-terraform-deployment">Launching the terraform deployment&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">---&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># cloud-config&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">runcmd&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">curl,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://&amp;lt;NSUPATE_HOSTNAME&amp;gt;:&amp;lt;NSUPDATE_SECRET&amp;gt;@nsupdate.fedcloud.eu/nic/update&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">users&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">egi&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">gecos&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">EGI&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">primary_group&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">egi&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">groups&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">users&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">shell&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/bin/bash&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">sudo&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">ALL=(ALL) NOPASSWD:ALL&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">ssh_authorized_keys&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">&amp;lt;SSH_AUTHORIZED_KEY&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">packages&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">vim&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">package_update&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">package_upgrade&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">package_reboot_if_required&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="launching-the-terraform-deployment">Launching the terraform deployment&lt;/h4>
 &lt;p>Now that all the files have been created, it&amp;rsquo;s possible to deploy the
 infrastructure, currently only a single VM, but it can easily be extended to a
 more complex setup, using terraform:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Initialising working directory, install dependencies&lt;/span>
-$ terraform init
-&lt;span style="color:#8f5902;font-style:italic"># Reviewing plan of actions for creating the infrastructure&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Use relevant site-specific config file&lt;/span>
-$ terraform plan --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Creating the infrastructure&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Manual approval can be skipped using -auto-approve&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># The SERVER_ID will be printed (openstack_compute_instance_v2.scoreboard)&lt;/span>
-$ terraform apply --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Wait a few minutes for the setup to be finalised&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Connecting to the server using ssh&lt;/span>
-$ ssh egi@&lt;span style="color:#000">$NSUPATE_HOSTNAME&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Initialising working directory, install dependencies&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ terraform init
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Reviewing plan of actions for creating the infrastructure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Use relevant site-specific config file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ terraform plan --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating the infrastructure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Manual approval can be skipped using -auto-approve&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The SERVER_ID will be printed (openstack_compute_instance_v2.scoreboard)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ terraform apply --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Wait a few minutes for the setup to be finalised&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Connecting to the server using ssh&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh egi@&lt;span style="color:#000">$NSUPATE_HOSTNAME&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>From here you can extend the
 &lt;a href="#initial-configuration-of-the-vm-using-cloud-init">cloud-init.yaml&lt;/a> and/or
 use &lt;a href="#step-4-using-ansible">Ansible&lt;/a> to configure the remote machine, as well
@@ -843,17 +847,17 @@ as doing manual work via SSH.&lt;/p>
 &lt;h4 id="debugging-terraform">Debugging terraform&lt;/h4>
 &lt;p>The token used by Terraform for accessing OpenStack is short lived, it will have
 to be renewed from time to time.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Creating a new token to access the OpenStack endpoint&lt;/span>
-$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack token issue --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --vo &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_VO&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -j &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[0].Result.id&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is possible to print a verbose/debug output to get details on interactions
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating a new token to access the OpenStack endpoint&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack token issue --site &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --vo &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EGI_VO&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -j &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[0].Result.id&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is possible to print a verbose/debug output to get details on interactions
 with the OpenStack endpoint.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Debugging&lt;/span>
-$ &lt;span style="color:#000">OS_DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000">TF_LOG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>DEBUG terraform apply --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="destroying-the-resources-created-by-terraform">Destroying the resources created by terraform&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Destroying the created infrastructure&lt;/span>
-$ terraform destroy --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-using-ansible">Step 4: Using Ansible&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Debugging&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#000">OS_DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000">TF_LOG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>DEBUG terraform apply --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="destroying-the-resources-created-by-terraform">Destroying the resources created by terraform&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Destroying the created infrastructure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ terraform destroy --var-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">.tfvars&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-using-ansible">Step 4: Using Ansible&lt;/h2>
 &lt;p>&lt;a href="https://www.ansible.com/">Ansible&lt;/a> can be used to manage the configuration of
 the crated virtual machine.&lt;/p>
 &lt;p>The &lt;a href="#deploying-the-virtual-machine-with-terraform">terraform deployment&lt;/a>
@@ -862,18 +866,19 @@ generated an
 &lt;code>inventory/hosts.cfg&lt;/code>, that can directly be used by
 &lt;a href="https://www.ansible.com/">Ansible&lt;/a>.&lt;/p>
 &lt;p>Configure a basic Ansible environment in the &lt;code>ansible.cfg&lt;/code> file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ini" data-lang="ini">&lt;span style="color:#204a87;font-weight:bold">[defaults]&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Use user created using cloud-init.yml&lt;/span>
-&lt;span style="color:#c4a000">remote_user&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">egi&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Use inventory file generated by terraform&lt;/span>
-&lt;span style="color:#c4a000">inventory&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">./inventory/hosts.cfg&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">[privilege_escalation]&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Escalate privileges using password-less sudo&lt;/span>
-&lt;span style="color:#c4a000">become&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">yes&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can verify that the Virtual Machine is accessible by Ansible:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Confirming ansible can reach the VM&lt;/span>
-$ ansible all -m ping
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once this works, you can
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">[defaults]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Use user created using cloud-init.yml&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">remote_user&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">egi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Use inventory file generated by terraform&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">inventory&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">./inventory/hosts.cfg&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">[privilege_escalation]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Escalate privileges using password-less sudo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">become&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">yes&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can verify that the Virtual Machine is accessible by Ansible:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Confirming ansible can reach the VM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ansible all -m ping
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once this works, you can
 &lt;a href="https://docs.ansible.com/ansible/latest/user_guide/index.html">create advanced playbooks&lt;/a>
 to configure your deployed host(s).&lt;/p>
 &lt;p>Various Ansible roles are available in the

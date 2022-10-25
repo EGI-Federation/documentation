@@ -397,7 +397,7 @@ GGUS account is the same than the one registered in VOMS.&lt;/p>
 site. They have to fill in the
 &lt;a href="https://ggus.eu/?mode=register">registration form&lt;/a> for supporters. Please add
 an appropriate comment (e.g. &amp;ldquo;I&amp;rsquo;m a xxx tier-1 site admins and I want to become
-an alarmer for testing purposes.&amp;quot;) in the registration form.&lt;/p>
+an alarmer for testing purposes.&amp;rdquo;) in the registration form.&lt;/p>
 &lt;h2 id="technical-description">Technical description&lt;/h2>
 &lt;p>This section describes the workflows of alarm tickets from a technical point of
 view.&lt;/p>
@@ -827,8 +827,8 @@ convert to ALARM”.&lt;/p>
 &lt;p>See the
 &lt;a href="GGUS_Graph_TEAM_Ticket_Process.pdf">schema of the Team Tickets process&lt;/a>.&lt;/p></description></item><item><title>Internal: Ticket Priority</title><link>/internal/helpdesk/features/ticket-priority/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/ticket-priority/</guid><description>
 &lt;h2 id="priority-definition">Priority definition&lt;/h2>
-&lt;p>If you plan to adjust the ticket priority from the default value &amp;lsquo;less urgent&amp;rsquo;
-to &amp;lsquo;urgent&amp;rsquo;, &amp;lsquo;very urgent&amp;rsquo; or &amp;lsquo;top priority&amp;rsquo;, please make sure you add a
+&lt;p>If you plan to adjust the ticket priority from the default value &amp;rsquo;less urgent'
+to &amp;lsquo;urgent&amp;rsquo;, &amp;lsquo;very urgent&amp;rsquo; or &amp;rsquo;top priority&amp;rsquo;, please make sure you add a
 justification for this change in the problem description field.&lt;/p>
 &lt;p>The following table will help you to find an appropriate priority value:&lt;/p>
 &lt;table>
@@ -857,7 +857,7 @@ justification for this change in the problem description field.&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>In particular, be very economical when choosing &amp;lsquo;top priority&amp;rsquo;. This value, when
+&lt;p>In particular, be very economical when choosing &amp;rsquo;top priority&amp;rsquo;. This value, when
 reaching the supporters via another ticketing system interface, might become a
 beep or phone alert even in the middle of the night. This level of support is
 ONLY committed by WLCG Tier0 and Tier1s and ONLY for ALARM tickets.&lt;/p>

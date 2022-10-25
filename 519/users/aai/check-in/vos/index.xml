@@ -54,7 +54,7 @@ be stored in the web browser to access EGI web tools and services.&lt;/p>
 &lt;h3 id="get-a-certificate">Get a Certificate&lt;/h3>
 &lt;p>The &lt;a href="http://www.eugridpma.org/members/worldmap/">list of EGI recognised CAs&lt;/a>
 provides a clickable map to find your nearby CA. Several of these offer the
-option to get an &amp;lsquo;eScience Personal&amp;rsquo; certificate online from the Terena
+option to get an &amp;rsquo;eScience Personal&amp;rsquo; certificate online from the Terena
 Certificate Service CA.
 &lt;a href="https://www.terena.org/activities/tcs/participants.html">Check the countries where this is available&lt;/a>.&lt;/p>
 &lt;p>If eScience Personal certificate is not available in your country, then request
@@ -106,8 +106,8 @@ using &lt;code>pkcs12&lt;/code>:&lt;/p>
 &lt;li>
 &lt;p>First you will need to create the private key, use &lt;code>-nocerts&lt;/code>. Open your
 terminal, enter the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">openssl pkcs12 -nocerts -in my_cert.p12 -out userkey.pem
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>where:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>openssl pkcs12 -nocerts -in my_cert.p12 -out userkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where:&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -138,8 +138,8 @@ to &lt;code>“Enter PEM pass phrase”&lt;/code>, enter the pass phrase of your
 &lt;li>
 &lt;p>Now you can create the certificate, use &lt;code>-clcerts&lt;/code>, (use &lt;code>-nokeys&lt;/code> hereu will
 not output private key), and the command is:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">openssl pkcs12 -clcerts -nokeys -in my_cert.p12 -out usercert.pem
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>When prompted to &lt;code>“Enter Import Password”&lt;/code>, simply press enter since no
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>openssl pkcs12 -clcerts -nokeys -in my_cert.p12 -out usercert.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When prompted to &lt;code>“Enter Import Password”&lt;/code>, simply press enter since no
 password should have been given when exporting from keychain.&lt;/p>
 &lt;p>For further information on the options of the pkcs12 command, consult
 &lt;code>man pkcs12&lt;/code>&lt;/p>
@@ -277,14 +277,15 @@ the &lt;code>vomses&lt;/code> and &lt;code>.lsc&lt;/code> files is shown.&lt;/p>
 &lt;p>Once you have the VO information configured (&lt;code>vomses&lt;/code> and &lt;code>.lsc&lt;/code>) and your
 certificate available in your &lt;code>$HOME/.globus&lt;/code> directory you can create a VOMS
 proxy to be used with clients with:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">voms-proxy-init --voms &amp;lt;name of the vo&amp;gt; --rfc
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>See for example, using &lt;code>fedcloud.egi.eu&lt;/code> VO:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>voms-proxy-init --voms &amp;lt;name of the vo&amp;gt; --rfc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See for example, using &lt;code>fedcloud.egi.eu&lt;/code> VO:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">voms-proxy-init --voms fedcloud.egi.eu --rfc
-Enter GRID pass phrase:
-Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>EGI/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>UCST/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Enol Fernandez
-Creating temporary proxy ......................................................... Done
-Contacting voms1.grid.cesnet.cz:15002 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cz/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cesnet-ca/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>CESNET/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms1.grid.cesnet.cz&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;fedcloud.egi.eu&amp;#34;&lt;/span> Done
-Creating proxy ................................................................... Done
-Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Mon Feb &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span> 23:37:21 &lt;span style="color:#0000cf;font-weight:bold">2019&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length --></description></item></channel></rss>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>voms-proxy-init --voms fedcloud.egi.eu --rfc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter GRID pass phrase:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>EGI/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>UCST/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Enol Fernandez
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating temporary proxy ......................................................... Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Contacting voms1.grid.cesnet.cz:15002 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cz/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cesnet-ca/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>CESNET/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms1.grid.cesnet.cz&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;fedcloud.egi.eu&amp;#34;&lt;/span> Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy ................................................................... Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Mon Feb &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span> 23:37:21 &lt;span style="color:#0000cf;font-weight:bold">2019&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length --></description></item></channel></rss>

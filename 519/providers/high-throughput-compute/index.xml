@@ -48,9 +48,9 @@ turn off the old Site BDII and remove it from the Configuration Database&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>Stop and remove the service&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">service bdii stop
-yum remove glite-BDII glite-yaim-bdii
-&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>service bdii stop
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>yum remove glite-BDII glite-yaim-bdii
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>Delete some info-providers and ldif file (
 &lt;code>/opt/glite/etc/gip/ldif/stub-site.ldif&lt;/code>,

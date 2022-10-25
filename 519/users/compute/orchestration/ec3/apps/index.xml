@@ -94,27 +94,27 @@ cluster.
 &lt;li>access via SSH providing the key as identity file for public key
 authentication.&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>user@localhost EC3&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>$ ssh -i key.pem cloudadm@&amp;lt;YOUR_CLUSTER_IP&amp;gt;
-Last login: Mon Nov &lt;span style="color:#0000cf;font-weight:bold">18&lt;/span> 11:37:29 &lt;span style="color:#0000cf;font-weight:bold">2019&lt;/span> from torito.i3m.upv.es
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>cloudadm@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>$ sudo su -
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Both the frontend and the working nodes are configured by Ansible. This
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>user@localhost EC3&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>$ ssh -i key.pem cloudadm@&amp;lt;YOUR_CLUSTER_IP&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Last login: Mon Nov &lt;span style="color:#0000cf;font-weight:bold">18&lt;/span> 11:37:29 &lt;span style="color:#0000cf;font-weight:bold">2019&lt;/span> from torito.i3m.upv.es
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>cloudadm@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>$ sudo su -
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Both the frontend and the working nodes are configured by Ansible. This
 process usually takes some time. You can monitor the status of the cluster
 configuration using the &lt;code>is_cluster_ready&lt;/code> command-line tool:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># is_cluster_ready&lt;/span>
-Cluster is still configuring.
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The cluster is successfully configured when the command returns the following
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># is_cluster_ready&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Cluster is still configuring.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The cluster is successfully configured when the command returns the following
 message:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># is_cluster_ready&lt;/span>
-Cluster configured!
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>As SLURM is used as workload manager, it is possible to check the status of the
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># is_cluster_ready&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Cluster configured!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>As SLURM is used as workload manager, it is possible to check the status of the
 working nodes by using the sinfo command, which provides information about Slurm
 nodes and partitions.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># sinfo&lt;/span>
-PARTITION AVAIL TIMELIMIT NODES STATE NODELIST
-debug* up infinite &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> down* oph-io2
-debug* up infinite &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> idle oph-io1
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="accessing-the-scientific-eco-system">Accessing the scientific eco-system&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>root@oph-server ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># sinfo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PARTITION AVAIL TIMELIMIT NODES STATE NODELIST
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>debug* up infinite &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> down* oph-io2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>debug* up infinite &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> idle oph-io1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="accessing-the-scientific-eco-system">Accessing the scientific eco-system&lt;/h3>
 &lt;p>ECAS provides two different ways to get access to its scientific eco-system:
 Ophidia client (&lt;code>oph_term&lt;/code>) and JupyterHub.&lt;/p>
 &lt;h4 id="perform-some-basic-operations-with-ophidia">Perform some basic operations with Ophidia&lt;/h4>
@@ -122,11 +122,11 @@ Ophidia client (&lt;code>oph_term&lt;/code>) and JupyterHub.&lt;/p>
 &lt;p>&lt;img src="ecas-oph_term.png" alt="Ophidia terminal">&lt;/p>
 &lt;p>The default parameters are already defined as environmental variables inside the
 &lt;code>.bashrc&lt;/code> file:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OPH_SERVER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;127.0.0.1&amp;#34;&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OPH_SERVER_PORT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;11732&amp;#34;&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OPH_PASSWD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;abcd&amp;#34;&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OPH_USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;oph-test&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create an empty container and a new datacube with random data and dimensions.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OPH_SERVER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;127.0.0.1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OPH_SERVER_PORT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;11732&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OPH_PASSWD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;abcd&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OPH_USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;oph-test&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create an empty container and a new datacube with random data and dimensions.&lt;/p>
 &lt;p>&lt;img src="ecas-container-1.png" alt="Create container">&lt;/p>
 &lt;p>&lt;img src="ecas-container-2.png" alt="Create random datacube">&lt;/p>
 &lt;p>Now, you can submit your first operation of data transformation: let&amp;rsquo;s reduce
@@ -220,10 +220,10 @@ management page.&lt;/p>
 &lt;p>We will build a torque cluster on one of the EGI Cloud providers using EC3.
 Create a directory to store EC3 configuration and init it with the
 &lt;a href="../../../../../getting-started/cli">FedCloud client&lt;/a>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">mkdir -p torque
-&lt;span style="color:#204a87">cd&lt;/span> torque
-fedcloud ec3 init --site &amp;lt;your site&amp;gt; --vo &amp;lt;your vo&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>We will use the following templates:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mkdir -p torque
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> torque
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud ec3 init --site &amp;lt;your site&amp;gt; --vo &amp;lt;your vo&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We will use the following templates:&lt;/p>
 &lt;ol>
 &lt;li>&lt;code>torque&lt;/code> (from ec3 default templates)&lt;/li>
 &lt;li>&lt;code>nfs&lt;/code> (from ec3 detault templates),&lt;/li>
@@ -232,182 +232,185 @@ fedcloud ec3 init --site &amp;lt;your site&amp;gt; --vo &amp;lt;your vo&amp;gt;
 &lt;/ol>
 &lt;p>You can find the content below (make sure that you adapt them to your needs):&lt;/p>
 &lt;p>&lt;code>templates/ubuntu-1604.radl&lt;/code> specifies the VM image to use in the deployment:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-plaintext" data-lang="plaintext">description ubuntu-1604 (
-kind = &amp;#39;images&amp;#39; and
-short = &amp;#39;Ubuntu 16.04&amp;#39; and
-content = &amp;#39;FEDCLOUD Image for EGI Ubuntu 16.04 LTS [Ubuntu/16.04/VirtualBox]&amp;#39;
-)
-system front (
-cpu.arch = &amp;#39;x86_64&amp;#39; and
-cpu.count &amp;gt;= 4 and
-memory.size &amp;gt;= 8196 and
-disk.0.os.name = &amp;#39;linux&amp;#39; and
-disk.0.image.url = &amp;#39;ost://&amp;lt;url&amp;gt;/&amp;lt;image_id&amp;gt;&amp;#39; and
-disk.0.os.credentials.username = &amp;#39;ubuntu&amp;#39;
-)
-system wn (
-cpu.arch = &amp;#39;x86_64&amp;#39; and
-cpu.count &amp;gt;= 2 and
-memory.size &amp;gt;= 2048m and
-ec3_max_instances = 10 and # maximum number of working nodes in the cluster
-disk.0.os.name = &amp;#39;linux&amp;#39; and
-disk.0.image.url = &amp;#39;ost://&amp;lt;url&amp;gt;/&amp;lt;image_id&amp;gt;&amp;#39; and
-disk.0.os.credentials.username = &amp;#39;ubuntu&amp;#39;
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>templates/cluster_configure.radl&lt;/code> customises the torque deployment to match our
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span>description ubuntu-1604 (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kind = &amp;#39;images&amp;#39; and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> short = &amp;#39;Ubuntu 16.04&amp;#39; and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> content = &amp;#39;FEDCLOUD Image for EGI Ubuntu 16.04 LTS [Ubuntu/16.04/VirtualBox]&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>system front (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cpu.arch = &amp;#39;x86_64&amp;#39; and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cpu.count &amp;gt;= 4 and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> memory.size &amp;gt;= 8196 and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> disk.0.os.name = &amp;#39;linux&amp;#39; and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> disk.0.image.url = &amp;#39;ost://&amp;lt;url&amp;gt;/&amp;lt;image_id&amp;gt;&amp;#39; and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> disk.0.os.credentials.username = &amp;#39;ubuntu&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>system wn (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cpu.arch = &amp;#39;x86_64&amp;#39; and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cpu.count &amp;gt;= 2 and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> memory.size &amp;gt;= 2048m and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ec3_max_instances = 10 and # maximum number of working nodes in the cluster
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> disk.0.os.name = &amp;#39;linux&amp;#39; and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> disk.0.image.url = &amp;#39;ost://&amp;lt;url&amp;gt;/&amp;lt;image_id&amp;gt;&amp;#39; and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> disk.0.os.credentials.username = &amp;#39;ubuntu&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>templates/cluster_configure.radl&lt;/code> customises the torque deployment to match our
 needs:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-plaintext" data-lang="plaintext">configure front (
-@begin
----
-- vars:
-- USERS:
-- { name: user01, password: &amp;lt;PASSWORD&amp;gt; }
-- { name: user02, password: &amp;lt;PASSWORD&amp;gt; }
-[..]
-tasks:
-- user:
-name: &amp;#34;{{ item.name }}&amp;#34;
-password: &amp;#34;{{ item.password }}&amp;#34;
-shell: /bin/bash
-append: yes
-state: present
-with_items: &amp;#34;{{ USERS }}&amp;#34;
-- name: Install missing dependences in Debian system
-apt: pkg={{ item }} state=present
-with_items:
-- build-essential
-- mpich
-- gcc
-- g++
-- vim
-become: yes
-when: ansible_os_family == &amp;#34;Debian&amp;#34;
-- name: SSH without password
-include_role:
-name: grycap.ssh
-vars:
-ssh_type_of_node: front
-ssh_user: &amp;#34;{{ user.name }}&amp;#34;
-loop: &amp;#39;{{ USERS }}&amp;#39;
-loop_control:
-loop_var: user
-- name: Updating the /etc/hosts.allow file
-lineinfile:
-path: /etc/hosts.allow
-line: &amp;#39;sshd: XXX.XXX.XXX.*&amp;#39;
-become: yes
-- name: Updating the /etc/hosts.deny file
-lineinfile:
-path: /etc/hosts.deny
-line: &amp;#39;ALL: ALL&amp;#39;
-become: yes
-@end
-)
-configure wn (
-@begin
----
-- vars:
-- USERS:
-- { name: user01, password: &amp;lt;PASSWORD&amp;gt; }
-- { name: user02, password: &amp;lt;PASSWORD&amp;gt; }
-[..]
-tasks:
-- user:
-name: &amp;#34;{{ item.name }}&amp;#34;
-password: &amp;#34;{{ item.password }}&amp;#34;
-shell: /bin/bash
-append: yes
-state: present
-with_items: &amp;#34;{{ USERS }}&amp;#34;
-- name: Install missing dependences in Debian system
-apt: pkg={{ item }} state=present
-with_items:
-- build-essential
-- mpich
-- gcc
-- g++
-- vim
-become: yes
-when: ansible_os_family == &amp;#34;Debian&amp;#34;
-- name: SSH without password
-include_role:
-name: grycap.ssh
-vars:
-ssh_type_of_node: wn
-ssh_user: &amp;#34;{{ user.name }}&amp;#34;
-loop: &amp;#39;{{ USERS }}&amp;#39;
-loop_control:
-loop_var: user
-- name: Updating the /etc/hosts.allow file
-lineinfile:
-path: /etc/hosts.allow
-line: &amp;#39;sshd: XXX.XXX.XXX.*&amp;#39;
-become: yes
-- name: Updating the /etc/hosts.deny file
-lineinfile:
-path: /etc/hosts.deny
-line: &amp;#39;ALL: ALL&amp;#39;
-become: yes
-@end
-)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="create-the-cluster">Create the cluster&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span>configure front (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@begin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - vars:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - USERS:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - { name: user01, password: &amp;lt;PASSWORD&amp;gt; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - { name: user02, password: &amp;lt;PASSWORD&amp;gt; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[..]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tasks:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - user:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: &amp;#34;{{ item.name }}&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> password: &amp;#34;{{ item.password }}&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> shell: /bin/bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> append: yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> state: present
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> with_items: &amp;#34;{{ USERS }}&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Install missing dependences in Debian system
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apt: pkg={{ item }} state=present
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> with_items:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - build-essential
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - mpich
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - gcc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - g++
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - vim
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> become: yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> when: ansible_os_family == &amp;#34;Debian&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: SSH without password
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> include_role:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: grycap.ssh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vars:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssh_type_of_node: front
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssh_user: &amp;#34;{{ user.name }}&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> loop: &amp;#39;{{ USERS }}&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> loop_control:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> loop_var: user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Updating the /etc/hosts.allow file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lineinfile:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path: /etc/hosts.allow
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> line: &amp;#39;sshd: XXX.XXX.XXX.*&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> become: yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Updating the /etc/hosts.deny file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lineinfile:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path: /etc/hosts.deny
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> line: &amp;#39;ALL: ALL&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> become: yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@end
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>configure wn (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@begin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - vars:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - USERS:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - { name: user01, password: &amp;lt;PASSWORD&amp;gt; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - { name: user02, password: &amp;lt;PASSWORD&amp;gt; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[..]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tasks:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - user:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: &amp;#34;{{ item.name }}&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> password: &amp;#34;{{ item.password }}&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> shell: /bin/bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> append: yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> state: present
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> with_items: &amp;#34;{{ USERS }}&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Install missing dependences in Debian system
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apt: pkg={{ item }} state=present
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> with_items:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - build-essential
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - mpich
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - gcc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - g++
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - vim
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> become: yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> when: ansible_os_family == &amp;#34;Debian&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: SSH without password
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> include_role:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: grycap.ssh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vars:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssh_type_of_node: wn
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssh_user: &amp;#34;{{ user.name }}&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> loop: &amp;#39;{{ USERS }}&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> loop_control:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> loop_var: user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Updating the /etc/hosts.allow file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lineinfile:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path: /etc/hosts.allow
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> line: &amp;#39;sshd: XXX.XXX.XXX.*&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> become: yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Updating the /etc/hosts.deny file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lineinfile:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path: /etc/hosts.deny
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> line: &amp;#39;ALL: ALL&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> become: yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@end
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="create-the-cluster">Create the cluster&lt;/h2>
 &lt;p>Deploy the cluster using ec3 docker image:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker run -it -v &lt;span style="color:#000">$PWD&lt;/span>:/root/ -w /root &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> grycap/ec3 launch torque_cluster &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> torque nfs ubuntu-1604 refresh cluster_configure &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -a auth.dat
-Creating infrastructure
-Infrastructure successfully created with ID: 529c62ec-343e-11e9-8b1d-300000000002
-Front-end state: launching
-Front-end state: pending
-Front-end state: running
-IP: 212.189.145.XXX
-Front-end configured with IP 212.189.145.XXX
-Transferring infrastructure
-Front-end ready!
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>To access the cluster, use the command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker run -ti -v &lt;span style="color:#000">$PWD&lt;/span>:/root/ -w /root grycap/ec3 ssh torque_cluster
-Warning: Permanently added &lt;span style="color:#4e9a06">&amp;#39;212.189.145.140&amp;#39;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>ECDSA&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> to the list of known hosts.
-Welcome to Ubuntu 14.04.5 LTS &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>GNU/Linux 3.13.0-164-generic x86_64&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-* Documentation: https://help.ubuntu.com/
-Last login: Tue Feb &lt;span style="color:#0000cf;font-weight:bold">19&lt;/span> 13:04:45 &lt;span style="color:#0000cf;font-weight:bold">2019&lt;/span> from servproject.i3m.upv.es
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configuration-of-the-cluster">Configuration of the cluster&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -it -v &lt;span style="color:#000">$PWD&lt;/span>:/root/ -w /root &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> grycap/ec3 launch torque_cluster &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> torque nfs ubuntu-1604 refresh cluster_configure &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -a auth.dat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating infrastructure
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Infrastructure successfully created with ID: 529c62ec-343e-11e9-8b1d-300000000002
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Front-end state: launching
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Front-end state: pending
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Front-end state: running
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>IP: 212.189.145.XXX
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Front-end configured with IP 212.189.145.XXX
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Transferring infrastructure
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Front-end ready!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To access the cluster, use the command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -ti -v &lt;span style="color:#000">$PWD&lt;/span>:/root/ -w /root grycap/ec3 ssh torque_cluster
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Warning: Permanently added &lt;span style="color:#4e9a06">&amp;#39;212.189.145.140&amp;#39;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>ECDSA&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> to the list of known hosts.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Welcome to Ubuntu 14.04.5 LTS &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>GNU/Linux 3.13.0-164-generic x86_64&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> * Documentation: https://help.ubuntu.com/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Last login: Tue Feb &lt;span style="color:#0000cf;font-weight:bold">19&lt;/span> 13:04:45 &lt;span style="color:#0000cf;font-weight:bold">2019&lt;/span> from servproject.i3m.upv.es
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configuration-of-the-cluster">Configuration of the cluster&lt;/h2>
 &lt;h3 id="enable-password-based-authentication">Enable Password-based authentication&lt;/h3>
 &lt;p>Change settings in &lt;code>/etc/ssh/sshd_config&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-plaintext" data-lang="plaintext"># Change to no to disable tunnelled clear text passwords
-PasswordAuthentication yes
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>and restart the ssh daemon:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">sudo service ssh restart
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configure-the-number-of-processors-of-the-cluster">Configure the number of processors of the cluster&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cat /var/spool/torque/server_priv/nodes
-wn1 &lt;span style="color:#000">np&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>XX
-wn2 &lt;span style="color:#000">np&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>XX
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>To obtain the number of CPU/cores (np) in Linux, use the command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ lscpu &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep -i CPU
-CPU op-mode&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>: 32-bit, 64-bit
-CPU&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>: &lt;span style="color:#0000cf;font-weight:bold">16&lt;/span>
-On-line CPU&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> list: 0-15
-CPU family: &lt;span style="color:#0000cf;font-weight:bold">6&lt;/span>
-Model name: Intel&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>R&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> Xeon&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>R&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> CPU E5520 @ 2.27GHz
-CPU MHz: 2266.858
-NUMA node0 CPU&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>: 0-3,8-11
-NUMA node1 CPU&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>: 4-7,12-15
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="test-the-cluster">Test the cluster&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span># Change to no to disable tunnelled clear text passwords
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PasswordAuthentication yes
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and restart the ssh daemon:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo service ssh restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configure-the-number-of-processors-of-the-cluster">Configure the number of processors of the cluster&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ cat /var/spool/torque/server_priv/nodes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wn1 &lt;span style="color:#000">np&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>XX
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wn2 &lt;span style="color:#000">np&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>XX
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To obtain the number of CPU/cores (np) in Linux, use the command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ lscpu &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep -i CPU
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CPU op-mode&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>: 32-bit, 64-bit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CPU&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>: &lt;span style="color:#0000cf;font-weight:bold">16&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>On-line CPU&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> list: 0-15
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CPU family: &lt;span style="color:#0000cf;font-weight:bold">6&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Model name: Intel&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>R&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> Xeon&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>R&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> CPU E5520 @ 2.27GHz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CPU MHz: 2266.858
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NUMA node0 CPU&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>: 0-3,8-11
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NUMA node1 CPU&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>: 4-7,12-15
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="test-the-cluster">Test the cluster&lt;/h3>
 &lt;p>Create a simple test script:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ cat test.sh
-&lt;span style="color:#8f5902;font-style:italic">#!/bin/bash&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">#PBS -N job&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">#PBS -q batch&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">#cd $PBS_O_WORKDIR/&lt;/span>
-hostname -f
-sleep &lt;span style="color:#0000cf;font-weight:bold">5&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Submit to the batch queue:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">qsub -l &lt;span style="color:#000">nodes&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> test.sh
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="destroy-the-cluster">Destroy the cluster&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ cat test.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#!/bin/bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#PBS -N job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#PBS -q batch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#cd $PBS_O_WORKDIR/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hostname -f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sleep &lt;span style="color:#0000cf;font-weight:bold">5&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Submit to the batch queue:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>qsub -l &lt;span style="color:#000">nodes&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> test.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="destroy-the-cluster">Destroy the cluster&lt;/h2>
 &lt;p>To destroy the running cluster, use the command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker run -it -v &lt;span style="color:#000">$PWD&lt;/span>:/root/ -w /root grycap/ec3 destroy torque_cluster
-WARNING: you are going to delete the infrastructure &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>including frontend and nodes&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
-Continue &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>y/N&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>? y
-Success deleting the cluster!
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -it -v &lt;span style="color:#000">$PWD&lt;/span>:/root/ -w /root grycap/ec3 destroy torque_cluster
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARNING: you are going to delete the infrastructure &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>including frontend and nodes&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Continue &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>y/N&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>? y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Success deleting the cluster!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

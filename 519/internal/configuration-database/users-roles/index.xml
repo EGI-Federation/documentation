@@ -151,20 +151,20 @@ perform any useful tasks.&lt;/p>
 &lt;li>A role: Unregistered users&lt;/li>
 &lt;li>B role: Registered users with no role&lt;/li>
 &lt;li>C role: Users with a role at site level (site admin)&lt;/li>
-&lt;li>C' role: Users with a management role at site level (site operations manager,
+&lt;li>C&amp;rsquo; role: Users with a management role at site level (site operations manager,
 site security officer&amp;hellip;)&lt;/li>
 &lt;li>D role: Users with a role at regional level (regional staff support staff,
 ROD, 1st Line Support)&lt;/li>
-&lt;li>D' role: Users with a management role at regional level (NGI manager or
+&lt;li>D&amp;rsquo; role: Users with a management role at regional level (NGI manager or
 deputy, security officer)&lt;/li>
 &lt;li>E role: Users with a role at project level&lt;/li>
 &lt;/ul>
-&lt;p>The only difference between C and C' users is that:&lt;/p>
+&lt;p>The only difference between C and C&amp;rsquo; users is that:&lt;/p>
 &lt;ul>
 &lt;li>C can NOT approve/reject role requests.&lt;/li>
-&lt;li>C' can only approve/reject role requests for their SITE.&lt;/li>
+&lt;li>C&amp;rsquo; can only approve/reject role requests for their SITE.&lt;/li>
 &lt;/ul>
-&lt;p>The difference between D and D' users is that:&lt;/p>
+&lt;p>The difference between D and D&amp;rsquo; users is that:&lt;/p>
 &lt;ul>
 &lt;li>D can NOT add/delete sites to/from their NGI.&lt;/li>
 &lt;li>D can NOT update the certification status of member sites.&lt;/li>
@@ -178,8 +178,8 @@ information in the EGI Configuration Database (C Level)&lt;/li>
 &lt;li>Site Security officer - official security contact point at site level (C'
 Level)&lt;/li>
 &lt;li>Site Operations Deputy Manager - The deputy manager of operations at a site
-(C' Level)&lt;/li>
-&lt;li>Site Operations Manager - The manager of site operations (C' Level)&lt;/li>
+(C&amp;rsquo; Level)&lt;/li>
+&lt;li>Site Operations Manager - The manager of site operations (C&amp;rsquo; Level)&lt;/li>
 &lt;/ul>
 &lt;h4 id="at-ngiregional-level">At NGI/Regional level&lt;/h4>
 &lt;ul>
@@ -190,8 +190,8 @@ Level)&lt;/li>
 activities such as user/operations support (D Level)&lt;/li>
 &lt;li>NGI Security officer - official security contact point at regional level (D'
 Level)&lt;/li>
-&lt;li>NGI Operations Deputy Manager - Deputy manager of NGI operations (D' Level)&lt;/li>
-&lt;li>NGI Operations Manager - Manager of NGI operations (D' Level)&lt;/li>
+&lt;li>NGI Operations Deputy Manager - Deputy manager of NGI operations (D&amp;rsquo; Level)&lt;/li>
+&lt;li>NGI Operations Manager - Manager of NGI operations (D&amp;rsquo; Level)&lt;/li>
 &lt;/ul>
 &lt;h4 id="at-project-level">At Project level&lt;/h4>
 &lt;ul>
@@ -218,9 +218,9 @@ group&lt;/li>
 &lt;th>A) Unregistered users&lt;/th>
 &lt;th>B) Registered users with no role&lt;/th>
 &lt;th>C) Site level users&lt;/th>
-&lt;th>C' ) Site Management Level Users&lt;/th>
+&lt;th>C&amp;rsquo; ) Site Management Level Users&lt;/th>
 &lt;th>D) NGI level users&lt;/th>
-&lt;th>D' ) NGI Management Level Users&lt;/th>
+&lt;th>D&amp;rsquo; ) NGI Management Level Users&lt;/th>
 &lt;th>E) Project level users&lt;/th>
 &lt;/tr>
 &lt;/thead>

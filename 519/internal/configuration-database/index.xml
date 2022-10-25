@@ -169,22 +169,24 @@ BDII: you can either use the one provided by your Operations Centre or choose
 one from
 &lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Service_Group&amp;amp;id=1205">the Configuration Database&lt;/a>&lt;/p>
 &lt;p>For example:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">LCG_GFAL_INFOSYS&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>egee-bdii.cnaf.infn.it:2170
-$ lcg-infosites --vo ops ce &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep nikhef
-&lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> dissel.nikhef.nl:2119/jobmanager-pbs-infra
-&lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">17&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> gazon.nikhef.nl:8443/cream-pbs-infra
-&lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> juk.nikhef.nl:8443/cream-pbs-infra
-&lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> klomp.nikhef.nl:8443/cream-pbs-infra
-&lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">16&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> stremsel.nikhef.nl:8443/cream-pbs-infra
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>In order to find the &lt;code>GlueServiceEndpoint&lt;/code> URL of your SRM service, you can
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">LCG_GFAL_INFOSYS&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>egee-bdii.cnaf.infn.it:2170
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ lcg-infosites --vo ops ce &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep nikhef
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> dissel.nikhef.nl:2119/jobmanager-pbs-infra
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">17&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> gazon.nikhef.nl:8443/cream-pbs-infra
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> juk.nikhef.nl:8443/cream-pbs-infra
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> klomp.nikhef.nl:8443/cream-pbs-infra
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">5680&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">16&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> stremsel.nikhef.nl:8443/cream-pbs-infra
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In order to find the &lt;code>GlueServiceEndpoint&lt;/code> URL of your SRM service, you can
 launch a LDAP query to your Site BDII (or directly to the SRM service):&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H ldap://sbdii01.ncg.ingrid.pt:2170 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;mds-vo-name=NCG-INGRID-PT,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueService)(GlueServiceType=SRM))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueServiceEndpoint
-dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>httpg://srm01.ncg.ingrid.pt:8444/srm/managerv2,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NCG-INGRID-PT,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
-GlueServiceEndpoint: httpg://srm01.ncg.ingrid.pt:8444/srm/managerv2
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>In a similar way, by just changing the value of &lt;code>GlueServiceType&lt;/code>, you can
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://sbdii01.ncg.ingrid.pt:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;mds-vo-name=NCG-INGRID-PT,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueService)(GlueServiceType=SRM))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueServiceEndpoint
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dn: &lt;span style="color:#000">GlueServiceUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>httpg://srm01.ncg.ingrid.pt:8444/srm/managerv2,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NCG-INGRID-PT,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlueServiceEndpoint: httpg://srm01.ncg.ingrid.pt:8444/srm/managerv2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In a similar way, by just changing the value of &lt;code>GlueServiceType&lt;/code>, you can
 retrieve the endpoint URLs of other services.&lt;/p>
 &lt;p>An alternative way for retrieving the &lt;code>GlueServiceEndpoint&lt;/code> URL is using the
 GLUE2 information browser provided by
@@ -324,32 +326,35 @@ service endpoint) and then switch the production flag to &amp;ldquo;yes&amp;rdqu
 &lt;code>GlueServiceEndpoint&lt;/code> URL information.&lt;/li>
 &lt;li>If your SE provides &lt;code>GlueSAPath&lt;/code> information, use that. To retrieve it:&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H &amp;lt;ldap://sbdii01.ncg.ingrid.pt:2170&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;mds-vo-name=NCG-INGRID-PT,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueSA)(GlueSAAccessControlBaseRule=VO:ops))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueSAPath GlueChunkKey
-dn: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>opsdisk:replica:online,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>srm01.ncg.ingrid.pt,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NCG-INGRID-PT,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
-GlueChunkKey: &lt;span style="color:#000">GlueSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>srm01.ncg.ingrid.pt
-GlueSAPath: /gstore/t2others/ops
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H &amp;lt;ldap://sbdii01.ncg.ingrid.pt:2170&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;mds-vo-name=NCG-INGRID-PT,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueSA)(GlueSAAccessControlBaseRule=VO:ops))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueSAPath GlueChunkKey
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dn: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>opsdisk:replica:online,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>srm01.ncg.ingrid.pt,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NCG-INGRID-PT,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlueChunkKey: &lt;span style="color:#000">GlueSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>srm01.ncg.ingrid.pt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlueSAPath: /gstore/t2others/ops
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>if your SE doesn&amp;rsquo;t provide &lt;code>GlueSAPath&lt;/code> information, use instead the
 &lt;code>GlueVOInfoPath&lt;/code> one:&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ldapsearch -x -LLL -H &amp;lt;ldap://ntugrid5.phys.ntu.edu.tw:2170&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-name=TW-NTU-HEP,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000">objectClass&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GlueVOInfo&lt;span style="color:#ce5c00;font-weight:bold">)(&lt;/span>&lt;span style="color:#000">GlueVOInfoAccessControlBaseRule&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>VO:ops&lt;span style="color:#ce5c00;font-weight:bold">))&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> GlueVOInfoLocalID GlueChunkKey
-dn: &lt;span style="color:#000">GlueVOInfoLocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ops:SRR,GlueSALocalID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>SRR:SR:replica:*****,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>TW-NTU-HEP,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
-GlueVOInfoPath: /dpm/phys.ntu.edu.tw/home/ops
-GlueChunkKey: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>SRR:SR:replica:*****
-GlueChunkKey: &lt;span style="color:#000">GlueSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw
-GlueVOInfoLocalID: ops:SRR
-dn: &lt;span style="color:#000">GlueVOInfoLocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ops:data01,GlueSALocalID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>data01:replica:online,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>TW-NTU-HEP,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
-GlueVOInfoPath: /dpm/phys.ntu.edu.tw/home/ops
-GlueChunkKey: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>data01:replica:online
-GlueChunkKey: &lt;span style="color:#000">GlueSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw
-GlueVOInfoLocalID: ops:data01
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H &amp;lt;ldap://ntugrid5.phys.ntu.edu.tw:2170&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-name=TW-NTU-HEP,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000">objectClass&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GlueVOInfo&lt;span style="color:#ce5c00;font-weight:bold">)(&lt;/span>&lt;span style="color:#000">GlueVOInfoAccessControlBaseRule&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>VO:ops&lt;span style="color:#ce5c00;font-weight:bold">))&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueVOInfoLocalID GlueChunkKey
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dn: &lt;span style="color:#000">GlueVOInfoLocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ops:SRR,GlueSALocalID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>SRR:SR:replica:*****,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>TW-NTU-HEP,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlueVOInfoPath: /dpm/phys.ntu.edu.tw/home/ops
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlueChunkKey: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>SRR:SR:replica:*****
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlueChunkKey: &lt;span style="color:#000">GlueSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlueVOInfoLocalID: ops:SRR
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dn: &lt;span style="color:#000">GlueVOInfoLocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ops:data01,GlueSALocalID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>data01:replica:online,GlueSEUniqueID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw,Mds-Vo-name&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>TW-NTU-HEP,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>grid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlueVOInfoPath: /dpm/phys.ntu.edu.tw/home/ops
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlueChunkKey: &lt;span style="color:#000">GlueSALocalID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>data01:replica:online
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlueChunkKey: &lt;span style="color:#000">GlueSEUniqueID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ntugrid6.phys.ntu.edu.tw
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlueVOInfoLocalID: ops:data01
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Pay attention to use the storage path for the ops VO&lt;/li>
 &lt;li>On GOCDB, in the “&lt;a href="../extension-properties">Extension Properties&lt;/a>” section of
 the SRM service endpoint page, fill in the following fields:
@@ -504,7 +509,7 @@ adding custom key-value pairs (this follows the GLUE2 extensibility
 mechanism).&lt;/li>
 &lt;li>Extension properties address a number of use cases, such as filtering Sites
 and/or Services that define particular properties.&lt;/li>
-&lt;li>Selected methods in the Configuration Database API support the &amp;lsquo;extensions&amp;rsquo;
+&lt;li>Selected methods in the Configuration Database API support the &amp;rsquo;extensions'
 URL parameter. This parameter is used to filter resources according to the
 extensions they define (described below).&lt;/li>
 &lt;li>Properties are rendered in the XML results of the Site/Service/ServiceGroup
@@ -529,13 +534,13 @@ group.&lt;/li>
 &lt;h3 id="extension-properties-in-the-pi">Extension Properties in the PI&lt;/h3>
 &lt;ul>
 &lt;li>Selected PI methods allow results to be filtered by extension properties via
-the &amp;lsquo;extensions&amp;rsquo; PI parameter.&lt;/li>
+the &amp;rsquo;extensions&amp;rsquo; PI parameter.&lt;/li>
 &lt;li>Supported methods include: get_site, get_site_list, get_service_endpoints and
 get_service_group, get_downtime, get_downtime_nested, get_site_list.&lt;/li>
 &lt;li>For individual method support please refer to the PI documentation:
 &lt;a href="https://wiki.egi.eu/wiki/GOCDB/PI/Technical_Documentation">GOCDB/PI/Technical Documentation&lt;/a>
 (link to old EGI Wiki)&lt;/li>
-&lt;li>The format of the &amp;lsquo;extensions&amp;rsquo; PI parameter is one or more (key=value) pairs
+&lt;li>The format of the &amp;rsquo;extensions&amp;rsquo; PI parameter is one or more (key=value) pairs
 enclosed in brackets.
 &lt;ul>
 &lt;li>The value part of a (k=v) pair can be ommitted if filtering by value is not
@@ -597,33 +602,33 @@ NOT(key6=val6)&lt;/li>
 &lt;/li>
 &lt;/ul>
 &lt;p>To return all sites that define VO with a value of Alice:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">?method=get_site&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=(VO=Alice)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Use no value to define a wildcard search, i.e. all sites that define the VO
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>?method=get_site&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=(VO=Alice)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Use no value to define a wildcard search, i.e. all sites that define the VO
 property regardless of value:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">?method=get_site&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=(VO=)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>NOTE: From version 5.7 (Autumn/Winter 2016) keys must be unique for a given
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>?method=get_site&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=(VO=)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>NOTE: From version 5.7 (Autumn/Winter 2016) keys must be unique for a given
 site, service, or service endpoint, or service group. The following section of
 documentation has not yet been changed to reflect this.&lt;/p>
 &lt;p>Extensions also supports OR/AND/NOT operators. This can be used to search
 against multiple key values eg:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">?method=get_site&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=AND(VO=Alice)(VO=Atlas)(VO=LHCB)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>These can be used together:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">?method=get_site&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=AND(VO=Alice)(VO=Atlas)NOT(VO=LHCB)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">?method= get_service_endpoint&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=(CPU_HS01_HOUR=1)OR(CPU_HS02_HOUR=2)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>When no operator is specified the default is AND, therefore the following:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">?method= get_service_endpoint&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=(CPU_HS01_HOUR=1)(CPU_HS02_HOUR=2)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Is the same as:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">?method= get_service_endpoint&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=AND(CPU_HS01_HOUR=1)(CPU_HS02_HOUR=2)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The extensions parameter can also be used in conjunction with the existing
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>?method=get_site&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=AND(VO=Alice)(VO=Atlas)(VO=LHCB)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These can be used together:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>?method=get_site&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=AND(VO=Alice)(VO=Atlas)NOT(VO=LHCB)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>?method= get_service_endpoint&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=(CPU_HS01_HOUR=1)OR(CPU_HS02_HOUR=2)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When no operator is specified the default is AND, therefore the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>?method= get_service_endpoint&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=(CPU_HS01_HOUR=1)(CPU_HS02_HOUR=2)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Is the same as:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>?method= get_service_endpoint&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=AND(CPU_HS01_HOUR=1)(CPU_HS02_HOUR=2)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The extensions parameter can also be used in conjunction with the existing
 parameters previously supported:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">?method=get_site&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=(VO=Alice)NOT(VO=LHCB)&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>roc=NGI_UK
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;em>site_extensions&lt;/em> and &lt;em>service_extensions&lt;/em> can also be used on the
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>?method=get_site&lt;span style="color:#a40000">&amp;amp;&lt;/span>extensions=(VO=Alice)NOT(VO=LHCB)&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>roc=NGI_UK
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;em>site_extensions&lt;/em> and &lt;em>service_extensions&lt;/em> can also be used on the
 &lt;em>get_downtime&lt;/em> and &lt;em>get_downtime_nested_services&lt;/em> methods using same logic
 described above. Note, the &lt;em>EXTENSIONS&lt;/em> element is not rendered in the XML
 output for these queries.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">?method=get_downtime_nested_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>site_extensions=(eg.2=val.2)&lt;span style="color:#a40000">&amp;amp;&lt;/span>service_extensions=(eg.2=)
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">?method=get_downtime&lt;span style="color:#a40000">&amp;amp;&lt;/span>site_extensions=(eg.2=val.2)&lt;span style="color:#a40000">&amp;amp;&lt;/span>service_extensions=(eg.2=)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="standard-extension-properties">Standard Extension Properties&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>?method=get_downtime_nested_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>site_extensions=(eg.2=val.2)&lt;span style="color:#a40000">&amp;amp;&lt;/span>service_extensions=(eg.2=)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>?method=get_downtime&lt;span style="color:#a40000">&amp;amp;&lt;/span>site_extensions=(eg.2=val.2)&lt;span style="color:#a40000">&amp;amp;&lt;/span>service_extensions=(eg.2=)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="standard-extension-properties">Standard Extension Properties&lt;/h3>
 &lt;h4 id="hostdn">HostDN&lt;/h4>
 &lt;p>For EGI Services, the Standard Extension property &amp;ldquo;HostDN&amp;rdquo; has been defined to
 allow the fetching the DNs of multiple hosts behind a load balanced service from
@@ -902,7 +907,7 @@ Service entities, simply click the &amp;ldquo;&lt;strong>edit&lt;/strong>&amp;rd
 details page.&lt;/p>
 &lt;h3 id="removing-a-service-entity-from-a-site">Removing a Service entity from a site&lt;/h3>
 &lt;p>To delete a Service entity you have permissions on, simply click on the
-&amp;ldquo;&lt;strong>delete&lt;/strong>&amp;rdquo; link on top of the entities' details page. The interface asks for
+&amp;ldquo;&lt;strong>delete&lt;/strong>&amp;rdquo; link on top of the entities&amp;rsquo; details page. The interface asks for
 confirmation before proceeding.&lt;/p>
 &lt;h2 id="service-endpoint-entities">Service Endpoint entities&lt;/h2>
 &lt;p>A Service entity may optionally define Service Endpoint entities which model
@@ -949,7 +954,7 @@ allowed chars.&lt;/p>
 hosts supporting a single Service entity, see
 &lt;a href="../extension-properties/#standard-extension-properties">strandard extension properties&lt;/a>.&lt;/p>
 &lt;h3 id="production-flag-tf">&amp;ldquo;production&amp;rdquo; flag (t/f)&lt;/h3>
-&lt;p>The Service entities' Production flag indicates if this service delivers a
+&lt;p>The Service entities&amp;rsquo; Production flag indicates if this service delivers a
 production quality service to the infrastructure it belongs to (EGI).&lt;/p>
 &lt;ul>
 &lt;li>Non-production Service entities can be either Monitored or Not Monitored,
@@ -1159,7 +1164,7 @@ brief sentence to describe the service type.&lt;/p></description></item><item><t
 is a grouping of grid resources collating multiple Service Endpoints (SEs).
 Downtimes are recorded on selected SEs of a site. GOCDB stores the following
 information about sites (non exhaustive list). Note, when editing values in the
-portal, mandatory fields are marked with &amp;lsquo;*':&lt;/p>
+portal, mandatory fields are marked with &amp;lsquo;*&amp;rsquo;:&lt;/p>
 &lt;ul>
 &lt;li>A unique (short) name - case sensitive (GOCDB and GoCDB are considered
 different)&lt;/li>
@@ -1320,7 +1325,7 @@ asterisk are mandatory):&lt;/p>
 &lt;li>Hosting Site * (select the appropriate RC under which you are registering the
 service)&lt;/li>
 &lt;li>Service Type * (select the appropriate service type)&lt;/li>
-&lt;li>Service URL (Alphanumeric and $-_.+!*'(),:)&lt;/li>
+&lt;li>Service URL (Alphanumeric and $-_.+!*&amp;rsquo;(),:)&lt;/li>
 &lt;li>Hostname * (valid FQDN format)&lt;/li>
 &lt;li>Host IP a.b.c.d&lt;/li>
 &lt;li>Host IPv6 (0000:0000:0000:0000:0000:0000:0000:0000[/int]) (optional [/int]
@@ -1370,11 +1375,11 @@ site certification status changes and project controlled user memberships.&lt;/l
 would not strictly represent a project, rather a sub-grouping under the
 existing project, e.g.&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
 projects and sub-groups:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="3-add-resources-sitesservices-to-a-new-project-and-add-a-new-scope-tag-to-filter-by-project">3) Add resources (sites/services) to a new Project and add a new Scope tag to filter by project&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=SubGroupX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="3-add-resources-sitesservices-to-a-new-project-and-add-a-new-scope-tag-to-filter-by-project">3) Add resources (sites/services) to a new Project and add a new Scope tag to filter by project&lt;/h2>
 &lt;ul>
 &lt;li>Resources would be hosted under a new project, and a new scope tag would be
 added named after the project for the purposes of resource filtering.&lt;/li>
@@ -1384,11 +1389,11 @@ and project controlled user memberships.&lt;/li>
 &lt;li>The resources could be filtered using the scope tag named after the new
 project, e.g.&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
 projects:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Internal: FAQ</title><link>/internal/configuration-database/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/faq/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Internal: FAQ</title><link>/internal/configuration-database/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/faq/</guid><description>
 &lt;h2 id="i-am-responsible-for-a-site-that-has-recently-entered-the-egi-infrastructure-how-do-i-register-it">I am responsible for a site that has recently entered the EGI infrastructure. How do I register it?&lt;/h2>
 &lt;p>Only registered users with an approved role on an NGI can add a new site. If you
 are the site administrator, the first thing to do is to contact your NGI staff

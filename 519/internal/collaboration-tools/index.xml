@@ -124,18 +124,18 @@ certificate.&lt;/p>
 &lt;h3 id="using-cloudfalre-cfssl-tool">Using CloudFalre cfssl tool&lt;/h3>
 &lt;p>It can be done with the &lt;code>cfssl&lt;/code> tool from
 &lt;a href="https://github.com/cloudflare/cfssl">CloudFlare&lt;/a>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Replace #FQDN# by the FQDN of the service&lt;/span>
-$ cfssl genkey &amp;lt;&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;{&amp;#34;hosts&amp;#34;:[&amp;#34;#FQDN#&amp;#34;],&amp;#34;CN&amp;#34;#FQDN#&amp;#34;,&amp;#34;key&amp;#34;:{&amp;#34;algo&amp;#34;:&amp;#34;rsa&amp;#34;,&amp;#34;size&amp;#34;:4096}}&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> cfssljson -bare &lt;span style="color:#8f5902;font-style:italic">##FQDN##.rsa&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-openssl">Using OpenSSL&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Replace #FQDN# by the FQDN of the service&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cfssl genkey &amp;lt;&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;{&amp;#34;hosts&amp;#34;:[&amp;#34;#FQDN#&amp;#34;],&amp;#34;CN&amp;#34;#FQDN#&amp;#34;,&amp;#34;key&amp;#34;:{&amp;#34;algo&amp;#34;:&amp;#34;rsa&amp;#34;,&amp;#34;size&amp;#34;:4096}}&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> cfssljson -bare &lt;span style="color:#8f5902;font-style:italic">##FQDN##.rsa&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-openssl">Using OpenSSL&lt;/h3>
 &lt;p>It can be done using the following &lt;code>OpenSSL&lt;/code> command (This will generate a
 password-protected key.&lt;/p>
 &lt;p>You will be asked for various questions, but the only important ones are the
 Common Name (CN) and Subject Alternative Names (SAN) (in case you want to
 request a certificates covering different FQDNs), as other values will be
 overwritten by the CA.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ openssl req -out CSR.csr -new -newkey rsa:4096 -keyout privateKey.key
-&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openssl req -out CSR.csr -new -newkey rsa:4096 -keyout privateKey.key
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>Adding the &lt;code>-nodes&lt;/code> option will disable password protection for the key,
 beware if using it.&lt;/p>
 &lt;/blockquote>
@@ -161,25 +161,27 @@ credentials are shared, only a given client is able to manage the certificates
 it requested. Email address is used for urgent renewal and security notices.
 This is preferred way if you need to get notifications on certificate expiration
 and if you are doing some manual management or testing.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo certbot register --no-eff-email &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --server https://acme.sectigo.com/v2/OV &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --eab-kid &amp;lt;EAB_KID&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --eab-hmac-key &amp;lt;EAB_HMAC_KEY&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --email &amp;lt;CONTACT_EMAIL&amp;gt;
-&lt;span style="color:#8f5902;font-style:italic"># Checking existing account&lt;/span>
-$ sudo certbot show_account --server https://acme.sectigo.com/v2/OV
-&lt;span style="color:#8f5902;font-style:italic"># Unregistering an account&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Beware: you won&amp;#39;t any more be able to revoke certificate issued with the account&lt;/span>
-$ sudo certbot unregister --server https://acme.sectigo.com/v2/OV
-&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="requesting-a-certificate">Requesting a certificate&lt;/h5>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo certbot certonly --standalone --non-interactive &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --server https://acme.sectigo.com/v2/OV &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --domain fakedomaindonotexist.egi.eu
-&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="revoking-a-certificate">Revoking a certificate&lt;/h5>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo certbot revoke &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --server https://acme.sectigo.com/v2/OV &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --cert-name fakedomaindonotexist.egi.eu
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="registering-and-requesting-a-certificate-all-at-once">Registering and requesting a certificate all at once&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ sudo certbot register --no-eff-email &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --server https://acme.sectigo.com/v2/OV &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --eab-kid &amp;lt;EAB_KID&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --eab-hmac-key &amp;lt;EAB_HMAC_KEY&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --email &amp;lt;CONTACT_EMAIL&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Checking existing account&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo certbot show_account --server https://acme.sectigo.com/v2/OV
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Unregistering an account&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Beware: you won&amp;#39;t any more be able to revoke certificate issued with the account&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo certbot unregister --server https://acme.sectigo.com/v2/OV
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="requesting-a-certificate">Requesting a certificate&lt;/h5>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ sudo certbot certonly --standalone --non-interactive &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --server https://acme.sectigo.com/v2/OV &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --domain fakedomaindonotexist.egi.eu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="revoking-a-certificate">Revoking a certificate&lt;/h5>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ sudo certbot revoke &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --server https://acme.sectigo.com/v2/OV &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --cert-name fakedomaindonotexist.egi.eu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="registering-and-requesting-a-certificate-all-at-once">Registering and requesting a certificate all at once&lt;/h4>
 &lt;p>This is useful when you don&amp;rsquo;t want interactive registration, like for one shot
 scripts. Email address is used for urgent renewal and security notices.&lt;/p>
 &lt;blockquote>
@@ -187,13 +189,13 @@ scripts. Email address is used for urgent renewal and security notices.&lt;/p>
 and the first option with explicit registration may be safer to get the
 notifications, if it&amp;rsquo;s a required feature.&lt;/p>
 &lt;/blockquote>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ sudo certbot certonly --standalone --non-interactive --agree-tos &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --server https://acme.sectigo.com/v2/OV &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --eab-kid &amp;lt;EAB_KID&amp;gt; --eab-hmac-key &amp;lt;EAB_HMAC_KEY&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --rsa-key-size &lt;span style="color:#0000cf;font-weight:bold">4096&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --email &amp;lt;CONTACT_EMAIL&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --domain fakedomaindonotexist.egi.eu
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Other usual certbot options should also work. You may also be able to use other
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ sudo certbot certonly --standalone --non-interactive --agree-tos &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --server https://acme.sectigo.com/v2/OV &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --eab-kid &amp;lt;EAB_KID&amp;gt; --eab-hmac-key &amp;lt;EAB_HMAC_KEY&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --rsa-key-size &lt;span style="color:#0000cf;font-weight:bold">4096&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --email &amp;lt;CONTACT_EMAIL&amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --domain fakedomaindonotexist.egi.eu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Other usual certbot options should also work. You may also be able to use other
 tools that can speak the ACME protocol, it should be standard.&lt;/p></description></item><item><title>Internal: EGI SSO</title><link>/internal/collaboration-tools/sso/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/collaboration-tools/sso/</guid><description>
 &lt;p>&lt;a href="https://sso.egi.eu">EGI SSO&lt;/a> is a legacy central Identity Provider mainly
 intended to access the &lt;a href="../../collaboration-tools">EGI Collaboration Tools&lt;/a>.&lt;/p>

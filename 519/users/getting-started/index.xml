@@ -616,8 +616,8 @@ credentials directly. Select &lt;em>EGI Check-In&lt;/em>:&lt;/p>
 &lt;p>You can quickly find the dashboards of
 all providers in the EGI infrastructure that are accessible to you (use the
 correct VO) with the &lt;a href="../cli">FedCloud Client&lt;/a>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud endpoint list --service-type org.openstack.horizon --site ALL_SITES
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The same way you can also discover other types of resources, just use the
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud endpoint list --service-type org.openstack.horizon --site ALL_SITES
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The same way you can also discover other types of resources, just use the
 correct resource type:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>org.openstack.horizon&lt;/code> for dashboards&lt;/li>
@@ -688,8 +688,8 @@ Windows
 &lt;div class="tab-pane show active"
 id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
 &lt;p>To install the FedCloud client:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ pip3 install fedcloudclient
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with its
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pip3 install fedcloudclient
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with its
 required packages (like &lt;em>openstackclient&lt;/em>). It will also create executables
 &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;code>bin&lt;/code> folder corresponding to
 your current Python execution environment (&lt;code>$VIRTUAL_ENV/bin&lt;/code> for executing pip3
@@ -710,23 +710,23 @@ is a prerequisite, make sure it&amp;rsquo;s installed with the following options
 &lt;p>In case you prefer to use non-Microsoft alternatives for building non-pure
 packages, please see &lt;a href="https://wiki.python.org/moin/WindowsCompilers">here&lt;/a>.&lt;/p>
 &lt;p>To install the FedCloud client:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; pip3 install fedcloudclient
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with its
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; pip3 install fedcloudclient
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This installs the latest version of the FedCloud client, together with its
 required packages (like &lt;em>openstackclient&lt;/em>). It will also create executables
 &lt;strong>fedcloud&lt;/strong> and &lt;strong>openstack&lt;/strong>, adding them to the &lt;code>bin&lt;/code> folder corresponding to
 your current Python execution environment.&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;p>Check if the installation is correct by executing the client:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud --version
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="installing-egi-core-trust-anchor-certificates">Installing EGI Core Trust Anchor certificates&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud --version
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="installing-egi-core-trust-anchor-certificates">Installing EGI Core Trust Anchor certificates&lt;/h4>
 &lt;p>Some sites in the EGI infrastructure use certificates issued by Certificate
 Authorities (CAs) that are not included in the default OS distribution. If you
 receive error message &amp;ldquo;&lt;em>SSL exception connecting to&amp;hellip;&lt;/em>&amp;rdquo;, install the EGI Core
 Trust Anchor Certificates by running the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ wget https://raw.githubusercontent.com/tdviet/python-requests-bundle-certs/main/scripts/install_certs.sh
-$ bash install_certs.sh
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ wget https://raw.githubusercontent.com/tdviet/python-requests-bundle-certs/main/scripts/install_certs.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ bash install_certs.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 The above script does not work on all
@@ -769,27 +769,27 @@ id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
 &lt;p>To run the FedCloud client in a container, make sure
 &lt;a href="https://docs.docker.com/engine/install/#server">Docker is installed&lt;/a>, then run
 the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker pull tdviet/fedcloudclient
-$ docker run -it tdviet/fedcloudclient bash
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker pull tdviet/fedcloudclient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ docker run -it tdviet/fedcloudclient bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
 &lt;p>To run the FedCloud client in a container, make sure
 &lt;a href="https://docs.docker.com/desktop/mac/install/">Docker is installed&lt;/a>, then run
 the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ docker pull tdviet/fedcloudclient
-$ docker run -it tdviet/fedcloudclient bash
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker pull tdviet/fedcloudclient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ docker run -it tdviet/fedcloudclient bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;p>To run the FedCloud client in a container, make sure
 &lt;a href="https://docs.docker.com/desktop/windows/install/">Docker is installed&lt;/a>, then
 run the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; docker pull tdviet/fedcloudclient
-&amp;gt; docker run -it tdviet/fedcloudclient bash
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; docker pull tdviet/fedcloudclient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; docker run -it tdviet/fedcloudclient bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;p>Once you have a shell running in the container with the FedCloud client, usage
@@ -799,9 +799,9 @@ is the same as from &lt;a href="#using-from-the-command-line">the command-line&l
 simplifies using the FedCloud client. First make sure that you follow the
 &lt;a href="#installation">installation&lt;/a> steps above. Then, below are the commands that you
 need to run inside a terminal in JupyterLab:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>cat /var/run/secrets/egi.eu/access_token&lt;span style="color:#4e9a06">`&lt;/span>
-fedcloud token check
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Please follow instructions &lt;a href="#using-from-the-command-line">below&lt;/a> to learn how to
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>cat /var/run/secrets/egi.eu/access_token&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud token check
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Please follow instructions &lt;a href="#using-from-the-command-line">below&lt;/a> to learn how to
 use the &lt;code>fedcloud&lt;/code> command.&lt;/p>
 &lt;h3 id="using-from-the-command-line">Using from the command-line&lt;/h3>
 &lt;p>The FedCloud client has these subcommands:&lt;/p>
@@ -828,8 +828,8 @@ and contribute to the &lt;a href="https://github.com/tdviet/fedcloudclient">sour
 site, the VO and the command. For example, to list virtual machine (VM) images
 available to members of VO &lt;em>fedcloud.egi.eu&lt;/em> on the site &lt;em>CYFRONET-CLOUD&lt;/em>, run
 the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack image list --vo fedcloud.egi.eu --site CYFRONET-CLOUD
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="authentication">Authentication&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud openstack image list --vo fedcloud.egi.eu --site CYFRONET-CLOUD
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="authentication">Authentication&lt;/h4>
 &lt;p>Many of the FedCloud client commands need access tokens for authentication.
 Users can choose whether to provide access tokens directly (via option
 &lt;code>--oidc-access-token&lt;/code>), or generate them on the fly with &lt;strong>oidc-agent&lt;/strong> (via
@@ -958,41 +958,45 @@ sites in the EGI infrastructure, use &lt;code>ALL_SITES&lt;/code> for the &lt;co
 &lt;p>The FedCloud client can display help for the commands and subcommands it
 supports. Try running the following command to see the commands supported by the
 FedCloud client:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud --help
-Usage: fedcloud &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>OPTIONS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> COMMAND &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>ARGS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>...
-Options:
---version Show the version and exit.
---help Show this message and exit.
-Commands:
-ec3 EC3 related commands
-endpoint endpoint &lt;span style="color:#204a87">command&lt;/span> group &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> interaction with GOCDB and...
-openstack Executing OpenStack commands on site and VO
-openstack-int Interactive OpenStack client on site and VO
-site Site &lt;span style="color:#204a87">command&lt;/span> group &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> manipulation with site...
-token Token &lt;span style="color:#204a87">command&lt;/span> group &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> manipulation with tokens
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Similarly, you can see help for e.g. the &lt;code>openstack&lt;/code> subcommand by running the
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud --help
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Usage: fedcloud &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>OPTIONS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> COMMAND &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>ARGS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Options:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --version Show the version and exit.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --help Show this message and exit.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Commands:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ec3 EC3 related commands
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> endpoint endpoint &lt;span style="color:#204a87">command&lt;/span> group &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> interaction with GOCDB and...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> openstack Executing OpenStack commands on site and VO
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> openstack-int Interactive OpenStack client on site and VO
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> site Site &lt;span style="color:#204a87">command&lt;/span> group &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> manipulation with site...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> token Token &lt;span style="color:#204a87">command&lt;/span> group &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> manipulation with tokens
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Similarly, you can see help for e.g. the &lt;code>openstack&lt;/code> subcommand by running the
 command below:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ fedcloud openstack --help
-Usage: fedcloud openstack &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>OPTIONS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> OPENSTACK_COMMAND...
-Executing OpenStack commands on site and VO
-Options:
---oidc-client-id TEXT OIDC client id
---oidc-client-secret TEXT OIDC client secret
---oidc-refresh-token TEXT OIDC refresh token
---oidc-access-token TEXT OIDC access token
---oidc-url TEXT OIDC URL &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default: &amp;lt;https://aai.egi.eu/auth/realms/egi&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
---oidc-agent-account TEXT short account name in oidc-agent
---openstack-auth-protocol TEXT Check-in protocol &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default: openid&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
---openstack-auth-type TEXT Check-in authentication &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default:
-v3oidcaccesstoken&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
---openstack-auth-provider TEXT Check-in identity provider &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default:
-egi.eu&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
---site TEXT Name of the site or ALL_SITES &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>required&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
---vo TEXT Name of the VO &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>required&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
--i, --ignore-missing-vo Ignore sites that &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> not support the VO
--j, --json-output Print output as a big JSON object
---help Show this message and exit.
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud openstack --help
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Usage: fedcloud openstack &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>OPTIONS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> OPENSTACK_COMMAND...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Executing OpenStack commands on site and VO
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Options:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --oidc-client-id TEXT OIDC client id
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --oidc-client-secret TEXT OIDC client secret
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --oidc-refresh-token TEXT OIDC refresh token
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --oidc-access-token TEXT OIDC access token
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --oidc-url TEXT OIDC URL &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default: &amp;lt;https://aai.egi.eu/auth/realms/egi&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --oidc-agent-account TEXT short account name in oidc-agent
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --openstack-auth-protocol TEXT Check-in protocol &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default: openid&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --openstack-auth-type TEXT Check-in authentication &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v3oidcaccesstoken&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --openstack-auth-provider TEXT Check-in identity provider &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> egi.eu&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --site TEXT Name of the site or ALL_SITES &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>required&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --vo TEXT Name of the VO &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>required&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -i, --ignore-missing-vo Ignore sites that &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> not support the VO
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -j, --json-output Print output as a big JSON object
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --help Show this message and exit.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Most commands support multiple levels of
@@ -1040,57 +1044,60 @@ PowerShell
 &lt;div class="tab-pane show active"
 id="tabs-12-0" role="tabpanel" aria-labelled-by="tabs-12-0-tab">
 &lt;p>Run a command to get details of a project:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
-$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
-$ fedcloud site show-project-id
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://cloud.ui.savba.sk:5000/v3/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;51f736d36ce34b9ebdf196cfcabd24ee&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the same command but set environment variables with the returned values:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud site show-project-id
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://cloud.ui.savba.sk:5000/v3/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;51f736d36ce34b9ebdf196cfcabd24ee&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the same command but set environment variables with the returned values:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">eval&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud site show-project-id&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command
 returned:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_AUTH_URL&lt;/span>
-https://cloud.ui.savba.sk:5000/v3/
-$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_PROJECT_ID&lt;/span>
-51f736d36ce34b9ebdf196cfcabd24ee
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_AUTH_URL&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://cloud.ui.savba.sk:5000/v3/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$OS_PROJECT_ID&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>51f736d36ce34b9ebdf196cfcabd24ee
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-12-1" role="tabpanel" aria-labelled-by="tabs-12-1-tab">
 &lt;p>Run a command to get details of a project:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
-&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
-&amp;gt; fedcloud site show-project-id
-&lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
-&lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>51f736d36ce34b9ebdf196cfcabd24ee
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you copy the returned output and execute it as commands in a command prompt:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
-&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>51f736d36ce34b9ebdf196cfcabd24ee
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud site show-project-id
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>51f736d36ce34b9ebdf196cfcabd24ee
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you copy the returned output and execute it as commands in a command prompt:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>51f736d36ce34b9ebdf196cfcabd24ee
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command
 returned:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&amp;gt; &lt;span style="color:#204a87">set&lt;/span> OS_AUTH_URL
-&lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
-&amp;gt; &lt;span style="color:#204a87">set&lt;/span> OS_PROJECT_ID
-&lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>51f736d36ce34b9ebdf196cfcabd24ee
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> OS_AUTH_URL
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> OS_PROJECT_ID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>51f736d36ce34b9ebdf196cfcabd24ee
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-12-2" role="tabpanel" aria-labelled-by="tabs-12-2-tab">
 &lt;p>Run a command to get details of a project:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;IISAS-FedCloud&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_VO&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;eosc-synergy.eu&amp;#34;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">site&lt;/span> &lt;span style="color:#204a87">show-project&lt;/span>&lt;span style="color:#000">-id&lt;/span>
-&lt;span style="color:#000">$Env:OS_AUTH_URL&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://cloud.ui.savba.sk:5000/v3/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">$Env:OS_PROJECT_ID&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;51f736d36ce34b9ebdf196cfcabd24ee&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the same command but set environment variables with the returned values:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">site&lt;/span> &lt;span style="color:#204a87">show-project&lt;/span>&lt;span style="color:#000">-id&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Out-String&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Invoke-Expression&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;IISAS-FedCloud&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_VO&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;eosc-synergy.eu&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">site&lt;/span> &lt;span style="color:#204a87">show-project&lt;/span>&lt;span style="color:#000">-id&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">$Env:OS_AUTH_URL&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://cloud.ui.savba.sk:5000/v3/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">$Env:OS_PROJECT_ID&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;51f736d36ce34b9ebdf196cfcabd24ee&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the same command but set environment variables with the returned values:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">site&lt;/span> &lt;span style="color:#204a87">show-project&lt;/span>&lt;span style="color:#000">-id&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Out-String&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Invoke-Expression&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command
 returned:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:OS_AUTH_URL&lt;/span>
-&lt;span style="color:#000">https&lt;/span>&lt;span style="color:#a40000">:&lt;/span>&lt;span style="color:#000;font-weight:bold">//&lt;/span>&lt;span style="color:#000">cloud&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ui&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">savba&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">sk&lt;/span>&lt;span style="color:#a40000">:&lt;/span>&lt;span style="color:#000">5000&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">v3&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>
-&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:OS_PROJECT_ID&lt;/span>
-&lt;span style="color:#000">51f736d36ce34b9ebdf196cfcabd24ee&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:OS_AUTH_URL&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">https&lt;/span>&lt;span style="color:#a40000">:&lt;/span>&lt;span style="color:#000;font-weight:bold">//&lt;/span>&lt;span style="color:#000">cloud&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">ui&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">savba&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">sk&lt;/span>&lt;span style="color:#a40000">:&lt;/span>&lt;span style="color:#000">5000&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">v3&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:OS_PROJECT_ID&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">51f736d36ce34b9ebdf196cfcabd24ee&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;h4 id="processing-output-from-openstack-commands">Processing output from OpenStack commands&lt;/h4>
@@ -1106,44 +1113,45 @@ transform structured data. It acts as a filter: it takes an input and produces
 an output. Check out the &lt;a href="https://stedolan.github.io/jq/tutorial/">tutorial&lt;/a> for
 using it to extract data from JSON sources.
 &lt;/div>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
-$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
-$ fedcloud openstack flavor list --json-output
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;Site&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;IISAS-FedCloud&amp;#34;&lt;/span>,
-&lt;span style="color:#4e9a06">&amp;#34;VO&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;eosc-synergy.eu&amp;#34;&lt;/span>,
-&lt;span style="color:#4e9a06">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;flavor list&amp;#34;&lt;/span>,
-&lt;span style="color:#4e9a06">&amp;#34;Exception&amp;#34;&lt;/span>: null,
-&lt;span style="color:#4e9a06">&amp;#34;Error code&amp;#34;&lt;/span>: 0,
-&lt;span style="color:#4e9a06">&amp;#34;Result&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;ID&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;0&amp;#34;&lt;/span>,
-&lt;span style="color:#4e9a06">&amp;#34;Name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;m1.nano&amp;#34;&lt;/span>,
-&lt;span style="color:#4e9a06">&amp;#34;RAM&amp;#34;&lt;/span>: 64,
-&lt;span style="color:#4e9a06">&amp;#34;Disk&amp;#34;&lt;/span>: 1,
-&lt;span style="color:#4e9a06">&amp;#34;Ephemeral&amp;#34;&lt;/span>: 0,
-&lt;span style="color:#4e9a06">&amp;#34;VCPUs&amp;#34;&lt;/span>: 1,
-&lt;span style="color:#4e9a06">&amp;#34;Is Public&amp;#34;&lt;/span>: &lt;span style="color:#204a87">true&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
-&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
-&lt;span style="color:#4e9a06">&amp;#34;ID&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;2e562a51-8861-40d5-8fc9-2638bab4662c&amp;#34;&lt;/span>,
-&lt;span style="color:#4e9a06">&amp;#34;Name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;m1.xlarge&amp;#34;&lt;/span>,
-&lt;span style="color:#4e9a06">&amp;#34;RAM&amp;#34;&lt;/span>: 16384,
-&lt;span style="color:#4e9a06">&amp;#34;Disk&amp;#34;&lt;/span>: 40,
-&lt;span style="color:#4e9a06">&amp;#34;Ephemeral&amp;#34;&lt;/span>: 0,
-&lt;span style="color:#4e9a06">&amp;#34;VCPUs&amp;#34;&lt;/span>: 8,
-&lt;span style="color:#4e9a06">&amp;#34;Is Public&amp;#34;&lt;/span>: &lt;span style="color:#204a87">true&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
-...
-&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># The following jq command selects flavors with VCPUs=2 and prints their names&lt;/span>
-$ fedcloud openstack flavor list--json-output &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[].Result[] | select(.VCPUs == 2) | .Name&amp;#39;&lt;/span>
-m1.medium
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud openstack flavor list --json-output
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Site&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;IISAS-FedCloud&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;VO&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;eosc-synergy.eu&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;flavor list&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Exception&amp;#34;&lt;/span>: null,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Error code&amp;#34;&lt;/span>: 0,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Result&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;ID&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;0&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;m1.nano&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;RAM&amp;#34;&lt;/span>: 64,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Disk&amp;#34;&lt;/span>: 1,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Ephemeral&amp;#34;&lt;/span>: 0,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;VCPUs&amp;#34;&lt;/span>: 1,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Is Public&amp;#34;&lt;/span>: &lt;span style="color:#204a87">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;ID&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;2e562a51-8861-40d5-8fc9-2638bab4662c&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;m1.xlarge&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;RAM&amp;#34;&lt;/span>: 16384,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Disk&amp;#34;&lt;/span>: 40,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Ephemeral&amp;#34;&lt;/span>: 0,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;VCPUs&amp;#34;&lt;/span>: 8,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Is Public&amp;#34;&lt;/span>: &lt;span style="color:#204a87">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The following jq command selects flavors with VCPUs=2 and prints their names&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud openstack flavor list--json-output &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[].Result[] | select(.VCPUs == 2) | .Name&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>m1.medium
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Note that &lt;code>--json-output&lt;/code> option can be

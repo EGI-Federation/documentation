@@ -59,29 +59,29 @@ repositories from a terminal.&lt;/p>
 &lt;a href="https://cli.github.com/">their homepage&lt;/a>. There is also a
 &lt;a href="https://cli.github.com/manual/">manual&lt;/a>.&lt;/p>
 &lt;p>Once installed you will have to start by setting up authentication.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Authenticate with GitHub, favor SSH protocol&lt;/span>
-$ gh auth login
-$ gh config &lt;span style="color:#204a87">set&lt;/span> git_protocol ssh
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="working-with-repositories">Working with repositories&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Authenticate with GitHub, favor SSH protocol&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ gh auth login
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ gh config &lt;span style="color:#204a87">set&lt;/span> git_protocol ssh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="working-with-repositories">Working with repositories&lt;/h2>
 &lt;p>The easiest way is to do it via the GitHub CLI that will also clone it locally.
 But it can also be done via the web interface, using the &lt;em>fork&lt;/em> button and then
 cloning it locally manually.&lt;/p>
 &lt;h3 id="fork-and-clone">Fork and clone&lt;/h3>
 &lt;p>This command will fork the repository to your GitHub account and clone a local
 copy for you to work with.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ gh repo fork EGI-Federation/documentation
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="clone-existing-fork">Clone existing fork&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gh repo fork EGI-Federation/documentation
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="clone-existing-fork">Clone existing fork&lt;/h3>
 &lt;p>If you want to clone an existing fork you should use:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ gh repo clone &amp;lt;your_username&amp;gt;/documentation
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="validate-the-local-clone">Validate the local clone&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gh repo clone &amp;lt;your_username&amp;gt;/documentation
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="validate-the-local-clone">Validate the local clone&lt;/h3>
 &lt;p>If your local clone of you fork is correctly setup you should see references to
 the origin and upstream repositories.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ git remote -v
-origin git@github.com:&amp;lt;your_username&amp;gt;/documentation &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>fetch&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-origin git@github.com:&amp;lt;your_username&amp;gt;/documentation &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>push&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-upstream git@github.com:EGI-Federation/documentation.git &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>fetch&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-upstream git@github.com:EGI-Federation/documentation.git &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>push&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="run-the-site-locally">Run the site locally&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ git remote -v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>origin git@github.com:&amp;lt;your_username&amp;gt;/documentation &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>fetch&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>origin git@github.com:&amp;lt;your_username&amp;gt;/documentation &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>push&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>upstream git@github.com:EGI-Federation/documentation.git &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>fetch&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>upstream git@github.com:EGI-Federation/documentation.git &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>push&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="run-the-site-locally">Run the site locally&lt;/h2>
 &lt;p>The documentation site is built from the source files using
 &lt;a href="https://gohugo.io/">Hugo&lt;/a>. The repository
 &lt;a href="https://github.com/EGI-Federation/documentation/blob/main/README.md">README&lt;/a>
@@ -102,20 +102,20 @@ dependencies:
 &lt;a href="https://www.npmjs.com/get-npm">official instructions&lt;/a>.&lt;/p>
 &lt;p>Everything has been tested with Node.js 12.&lt;/p>
 &lt;p>The dependencies of the docsy theme can be installed as follows:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># From the root of the repository clone&lt;/span>
-$ npm ci
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hugo can be installed following
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># From the root of the repository clone&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ npm ci
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hugo can be installed following
 &lt;a href="https://gohugo.io/getting-started/installing">the official documentation&lt;/a>.&lt;/p>
 &lt;p>Hugo (extended) releases can be downloaded at
 &lt;a href="https://github.com/gohugoio/hugo/releases">the Hugo releases page&lt;/a>.&lt;/p>
 &lt;h3 id="building-the-site">Building the site&lt;/h3>
 &lt;p>To build and run the site, from the repository root:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ git submodule update --init --recursive --depth &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
-$ hugo --minify
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="testing-the-site-locally">Testing the site locally&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ git submodule update --init --recursive --depth &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ hugo --minify
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="testing-the-site-locally">Testing the site locally&lt;/h3>
 &lt;p>To launch the site locally, from the repository root:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ hugo serve -D
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The site is available locally at:
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ hugo serve -D
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The site is available locally at:
 &lt;a href="http://localhost:1313/">http://localhost:1313/&lt;/a>.&lt;/p>
 &lt;h2 id="branches-and-commits">Branches and commits&lt;/h2>
 &lt;p>You should submit your patch as a git branch ideally named with a meaningful
@@ -127,10 +127,10 @@ the differences between the upstream main branch and your &lt;em>feature branch&
 &lt;p>Try to avoid committing changes to the &lt;em>main&lt;/em> branch of your clone to simplify
 management, creating a dedicated &lt;em>feature branch&lt;/em> helps a lot. Try to pick a
 meaningful name for the branch (my_nice_update in the example).&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># This should be done from the up-to-date main branch&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Read furthermore to see documentation on updating a local clone&lt;/span>
-$ git checkout -b my_nice_update
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="write-changes">Write changes&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># This should be done from the up-to-date main branch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Read furthermore to see documentation on updating a local clone&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git checkout -b my_nice_update
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="write-changes">Write changes&lt;/h2>
 &lt;p>The documentation being made of plain text files you are free to use whatever
 text editor or Integrated Development Environment (IDE) suits you, from
 &lt;a href="https://neovim.io/">neovim&lt;/a> to
@@ -144,27 +144,28 @@ preview, they are worth checking.&lt;/p>
 includes the issue number, followed by an empty line and then a brief
 description of the commit. This also helps other contributors understand the
 purpose of changes to the code.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text"> #3 - platform_family and style
-* use platform_family for platform checking
-* update notifies syntax to &amp;#34;resource_type[resource_name]&amp;#34; instead of
-resources() lookup
-* GH-692 - delete config files dropped off by packages in conf.d
-* dropped debian 4 support because all other platforms have the same
-values, and it is older than &amp;#34;old stable&amp;#34; debian release
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Select the modified files to be committed&lt;/span>
-$ git add files1 path2/
-&lt;span style="color:#8f5902;font-style:italic"># Commit the changes&lt;/span>
-$ git commit -m &amp;lt;commit_message&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="push-feature-branch-to-the-fork-in-preparation-of-a-pr">Push feature branch to the fork in preparation of a PR&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> #3 - platform_family and style
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> * use platform_family for platform checking
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> * update notifies syntax to &amp;#34;resource_type[resource_name]&amp;#34; instead of
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> resources() lookup
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> * GH-692 - delete config files dropped off by packages in conf.d
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> * dropped debian 4 support because all other platforms have the same
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values, and it is older than &amp;#34;old stable&amp;#34; debian release
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Select the modified files to be committed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git add files1 path2/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Commit the changes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git commit -m &amp;lt;commit_message&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="push-feature-branch-to-the-fork-in-preparation-of-a-pr">Push feature branch to the fork in preparation of a PR&lt;/h2>
 &lt;p>From inside a feature branch you can push it to your remote fork.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Ask git to keep trace of the link between local and remote branches&lt;/span>
-$ git push --set-upstream
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once done, the output will show a URL that you can click to generate a Pull
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Ask git to keep trace of the link between local and remote branches&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git push --set-upstream
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once done, the output will show a URL that you can click to generate a Pull
 Request (PR). Accessing GitHub upstream of forked repositories may also propose
 you to submit a PR.&lt;/p>
 &lt;p>If needed GitHub CLI can also be used to prepare the PR:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ gh pr create &amp;lt;your_username&amp;gt;:&amp;lt;feature_branch&amp;gt; --web
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="previewing-a-pull-request">Previewing a pull request&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gh pr create &amp;lt;your_username&amp;gt;:&amp;lt;feature_branch&amp;gt; --web
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="previewing-a-pull-request">Previewing a pull request&lt;/h3>
 &lt;p>If a repository maintainer adds the label &lt;code>safe for preview&lt;/code> to a pull request
 it will be possible to preview it using a pull request-specific URL:
 &lt;code>https://docs.egi.eu/documentation/[PR_NUMBER]&lt;/code>&lt;/p>
@@ -180,58 +181,58 @@ contributors.&lt;/p>
 &lt;p>Once you PR have been opened it will be reviewed, and reviewers can propose and
 commit changes to your PR. If you need to make further changes be sure to update
 the local clone with the remote changes.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Retrieve changes made on your PR in the upstream repository&lt;/span>
-$ git pull
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can commit new changes and push them to your remote fork.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieve changes made on your PR in the upstream repository&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git pull
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can commit new changes and push them to your remote fork.&lt;/p>
 &lt;h2 id="update-repository-clone-with-the-upstream-changes">Update repository clone with the upstream changes&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># If you are still in a branch created for a previous PR, move to main&lt;/span>
-$ git checkout main
-&lt;span style="color:#8f5902;font-style:italic"># Get the latest data from the upstream repository&lt;/span>
-$ git fetch upstream
-&lt;span style="color:#8f5902;font-style:italic"># Update your local copy with this data&lt;/span>
-$ git rebase upstream/main main
-&lt;span style="color:#8f5902;font-style:italic"># Update your remote GitHub fork with those changes&lt;/span>
-$ git push
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="update-local-feature-branch-with-changes-made-on-the-main-branch">Update local feature branch with changes made on the main branch&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># If you are still in a branch created for a previous PR, move to main&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git checkout main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Get the latest data from the upstream repository&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git fetch upstream
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Update your local copy with this data&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git rebase upstream/main main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Update your remote GitHub fork with those changes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git push
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="update-local-feature-branch-with-changes-made-on-the-main-branch">Update local feature branch with changes made on the main branch&lt;/h2>
 &lt;p>In case the &lt;em>main&lt;/em> branch evolved since the feature branch was created, it may
 be required to merge the new changes in the feature branch.&lt;/p>
 &lt;p>It can easily be done via the PR page on the GitHub web interface, but it can
 also be done in your repository clone using &lt;code>git rebase&lt;/code>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Retrieve changes made in the upstream repository&lt;/span>
-$ git fetch upstream
-&lt;span style="color:#8f5902;font-style:italic"># Check out the feature branch&lt;/span>
-$ git checkout feature_branch
-&lt;span style="color:#8f5902;font-style:italic"># Apply the new changes on main to your feature branch&lt;/span>
-$ git rebase upstream/main
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>In case some files have been changed on both sides you will will have to merge
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieve changes made in the upstream repository&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git fetch upstream
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Check out the feature branch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git checkout feature_branch
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Apply the new changes on main to your feature branch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git rebase upstream/main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In case some files have been changed on both sides you will will have to merge
 the conflicts manually.&lt;/p>
 &lt;h2 id="clone-pr-to-edittestreview-locally">Clone PR to edit/test/review locally&lt;/h2>
 &lt;p>It&amp;rsquo;s possible to clone a Pull Request to a local branch to test it locally. It&amp;rsquo;s
 done using the PR number.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># List available PR and their identifiers.&lt;/span>
-$ gh pr list
-&lt;span style="color:#8f5902;font-style:italic"># Clone specific PR, updating sudmodules&lt;/span>
-$ gh pr checkout XX --recurse-submodules
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once done it&amp;rsquo;s possible to build and run the site locally:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># From the root of the repository clone&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Here on MacOS X, adapt depending on your platform&lt;/span>
-$ hugo serve -D
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The documentation will then be accessible on
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># List available PR and their identifiers.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ gh pr list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Clone specific PR, updating sudmodules&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ gh pr checkout XX --recurse-submodules
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once done it&amp;rsquo;s possible to build and run the site locally:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># From the root of the repository clone&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Here on MacOS X, adapt depending on your platform&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ hugo serve -D
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The documentation will then be accessible on
 &lt;a href="http://localhost:1313">http://localhost:1313&lt;/a>.&lt;/p>
 &lt;blockquote>
 &lt;p>People having write access to the repository hosting the branch related to the
 PR (ie. usually the PR author) will be able to add and edit files.&lt;/p>
 &lt;/blockquote>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># From the local clone of the repository&lt;/span>
-$ gh pr checkout XXX --recurse-submodules
-$ vim yyy.zz
-$ git add yyy.zz
-$ git commit yyy.zz -m &amp;lt;commit_message&amp;gt;
-$ git push
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="update-a-local-clone-of-a-pr">Update a local clone of a PR&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># It will ask you to merge changes&lt;/span>
-$ git pull
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can refer to the &lt;code>README.md&lt;/code> to see how to test it locally.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># From the local clone of the repository&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ gh pr checkout XXX --recurse-submodules
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ vim yyy.zz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git add yyy.zz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git commit yyy.zz -m &amp;lt;commit_message&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git push
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="update-a-local-clone-of-a-pr">Update a local clone of a PR&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># It will ask you to merge changes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git pull
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can refer to the &lt;code>README.md&lt;/code> to see how to test it locally.&lt;/p>
 &lt;p>In case the PR got commits that were forced pushed you may have troubles, in
 that case it may be easier to
 &lt;a href="#clean-a-local-clone-of-a-pr">delete the local branch&lt;/a> and do another
@@ -240,34 +241,34 @@ that case it may be easier to
 &lt;p>In case you have troubles updating the local clone, as it can happens if changes
 were forced pushed to it, it maybe easier to delete the local copy of the PR and
 recreate it.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Switch to main branch&lt;/span>
-$ git checkout main
-&lt;span style="color:#8f5902;font-style:italic"># Check local branches&lt;/span>
-$ git branch -vv
-&lt;span style="color:#8f5902;font-style:italic"># Delete a specific branch&lt;/span>
-$ git branch -d &amp;lt;branch_name&amp;gt;
-&lt;span style="color:#8f5902;font-style:italic"># If you need to force the deletion use -D&lt;/span>
-$ git branch -D &amp;lt;branch_name&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-stashes">Using stashes&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Switch to main branch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git checkout main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Check local branches&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git branch -vv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Delete a specific branch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git branch -d &amp;lt;branch_name&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># If you need to force the deletion use -D&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git branch -D &amp;lt;branch_name&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-stashes">Using stashes&lt;/h2>
 &lt;p>Sometimes we realise just before committing a change that we are not in the
 correct branch (ie. that we forgot to create a dedicated feature branch), when
 this happens &lt;code>git stash&lt;/code> can be helpful.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Saving a change&lt;/span>
-$ git stash save &amp;lt;optional message&amp;gt;
-&lt;span style="color:#8f5902;font-style:italic"># Creating the forgotten branch&lt;/span>
-$ git checkout -b &amp;lt;my_feature_branch&amp;gt;
-&lt;span style="color:#8f5902;font-style:italic"># Reviewing the saved changes, use TAB completion&lt;/span>
-$ git stash show &amp;lt;TAB&amp;gt;
-&lt;span style="color:#8f5902;font-style:italic"># Applying the saved changes, use TAB completion&lt;/span>
-$ git stash pop &amp;lt;TAB&amp;gt;
-&lt;span style="color:#8f5902;font-style:italic"># Review the changes to be committed&lt;/span>
-$ git diff
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you already committed your change(s) you may have to look at &lt;code>git reset&lt;/code>.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Viewing the diff of the two last commits&lt;/span>
-$ git log -n &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> -p
-&lt;span style="color:#8f5902;font-style:italic"># Reverting the last change, keeping the change in the local directory&lt;/span>
-$ git reset HEAD^
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>About: Style Guide</title><link>/about/contributing/style/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/contributing/style/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Saving a change&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git stash save &amp;lt;optional message&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating the forgotten branch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git checkout -b &amp;lt;my_feature_branch&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Reviewing the saved changes, use TAB completion&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git stash show &amp;lt;TAB&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Applying the saved changes, use TAB completion&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git stash pop &amp;lt;TAB&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Review the changes to be committed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git diff
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you already committed your change(s) you may have to look at &lt;code>git reset&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Viewing the diff of the two last commits&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git log -n &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> -p
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Reverting the last change, keeping the change in the local directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git reset HEAD^
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>About: Style Guide</title><link>/about/contributing/style/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/contributing/style/</guid><description>
 &lt;h2 id="general-recommendations">General recommendations&lt;/h2>
 &lt;ul>
 &lt;li>All files and folders should be lower case&lt;/li>
@@ -277,8 +278,8 @@ $ git reset HEAD^
 &lt;li>Service names should never be replaced by acronyms&lt;/li>
 &lt;li>When introducing services, link to the public page of the service, if any:&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">[&lt;span style="color:#204a87;font-weight:bold">EGI Cloud Compute&lt;/span>](&lt;span style="color:#c4a000">https://www.egi.eu/services/cloud-compute/&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="markdown-writing-guidelines">Markdown writing guidelines&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#204a87;font-weight:bold">EGI Cloud Compute&lt;/span>](&lt;span style="color:#c4a000">https://www.egi.eu/services/cloud-compute/&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="markdown-writing-guidelines">Markdown writing guidelines&lt;/h2>
 &lt;p>Documentation pages have to be written in Markdown, compliant with
 &lt;a href="https://spec.commonmark.org/0.29/">CommonMark&lt;/a> and
 &lt;a href="https://github.github.com/gfm/">GitHub Flavored Markdown&lt;/a>.&lt;/p>
@@ -319,8 +320,8 @@ Prettier can be integrated with
 &lt;a href="https://prettier.io/docs/en/editors.html#visual-studio-code">official documentation&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>Configuration is provided in &lt;code>.prettierrc&lt;/code>, options can be set as follows:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">--print-width &lt;span style="color:#0000cf;font-weight:bold">80&lt;/span> --tab-width &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> --prose-wrap always
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>When a contribution is received (via a pull request), the proposed changes are
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>--print-width &lt;span style="color:#0000cf;font-weight:bold">80&lt;/span> --tab-width &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> --prose-wrap always
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When a contribution is received (via a pull request), the proposed changes are
 checked using
 &lt;a href="https://github.com/EGI-Federation/documentation/tree/main/.github/workflows">various linters&lt;/a>.&lt;/p>
 &lt;h2 id="general-writing-guidelines">General writing guidelines&lt;/h2>
@@ -935,12 +936,14 @@ to disable the &lt;code>no-inline-html&lt;/code> check, as in the following exam
 When having a table is not absolutely
 necessary, use a different construct to present the information.
 &lt;/div>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- markdownlint-disable no-inline-html --&amp;gt;&lt;/span>
-| Action | OCCI | OpenStack | This is a very long column with important data |
-| ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
-| List images | &lt;span style="color:#4e9a06">`occi -a list -r os_tpl`&lt;/span> | &lt;span style="color:#4e9a06">`openstack image list`&lt;/span> | &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Lorem&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>ipsum&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> |
-&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- markdownlint-enable no-inline-html --&amp;gt;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- markdownlint-disable no-inline-html --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| Action | OCCI | OpenStack | This is a very long column with important data |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| ----------- | ------------------------ | ---------------------- | ---------------------------------------------- |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| List images | &lt;span style="color:#4e9a06">`occi -a list -r os_tpl`&lt;/span> | &lt;span style="color:#4e9a06">`openstack image list`&lt;/span> | &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>Lorem&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>ipsum&lt;span style="color:#000;font-weight:bold">&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">li&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&amp;lt;/&lt;/span>&lt;span style="color:#204a87;font-weight:bold">ul&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!-- markdownlint-enable no-inline-html --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 Do not forget to follow up with a HTML
@@ -963,49 +966,58 @@ reported:&lt;/p>
 &lt;!--
 // jscpd:ignore-start
 -->
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-To run the FedCloud client in a container, make sure
-[Docker is installed](https://docs.docker.com/engine/install/#server),
-then run the following commands:
-```shell
-$ docker pull tdviet/fedcloudclient
-$ docker run -it tdviet/fedcloudclient bash
-```
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Mac&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-To run the FedCloud client in a container, make sure
-[Docker is installed](https://docs.docker.com/desktop/mac/install/),
-then run the following commands:
-```shell
-$ docker pull tdviet/fedcloudclient
-$ docker run -it tdviet/fedcloudclient bash
-```
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Windows&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-To run the FedCloud client in a container, make sure
-[Docker is installed](https://docs.docker.com/desktop/windows/install/),
-then run the following commands:
-```shell
-&amp;gt; docker pull tdviet/fedcloudclient
-&amp;gt; docker run -it tdviet/fedcloudclient bash
-```
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> To run the FedCloud client in a container, make sure
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [Docker is installed](https://docs.docker.com/engine/install/#server),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> then run the following commands:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ```shell
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ docker pull tdviet/fedcloudclient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ docker run -it tdviet/fedcloudclient bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ```
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Mac&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> To run the FedCloud client in a container, make sure
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [Docker is installed](https://docs.docker.com/desktop/mac/install/),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> then run the following commands:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ```shell
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ docker pull tdviet/fedcloudclient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ docker run -it tdviet/fedcloudclient bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ```
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Windows&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> To run the FedCloud client in a container, make sure
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [Docker is installed](https://docs.docker.com/desktop/windows/install/),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> then run the following commands:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ```shell
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt; docker pull tdviet/fedcloudclient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt; docker run -it tdviet/fedcloudclient bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ```
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!--
 // jscpd:ignore-end
 -->
 &lt;p>This type of content should be preceded by a HTML comment that disables the
 check for duplicates, and followed by another HTML comment that enables it
 again.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!--
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">// jscpd:ignore-start
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">--&amp;gt;&lt;/span>
-...content with duplicates here...
-&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!--
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">// jscpd:ignore-end
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">--&amp;gt;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>About: Shortcodes</title><link>/about/contributing/shortcodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/contributing/shortcodes/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!--
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">// jscpd:ignore-start
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...content with duplicates here...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&amp;lt;!--
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">// jscpd:ignore-end
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>About: Shortcodes</title><link>/about/contributing/shortcodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/contributing/shortcodes/</guid><description>
 &lt;p>In addition to the formatting support provided by
 &lt;a href="https://spec.commonmark.org/0.29/">Markdown&lt;/a>, Hugo adds support for
 &lt;em>shortcodes&lt;/em>, which are Go templates for easily including or displaying content
@@ -1020,24 +1032,24 @@ again.&lt;/p>
 &lt;a href="https://www.docsy.dev/docs/adding-content/shortcodes/#shortcode-helpers">Docsy shortcodes&lt;/a>.&lt;/p>
 &lt;h3 id="placeholders">Placeholders&lt;/h3>
 &lt;p>The following code:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">{{% pageinfo %}} This is a placeholder. {{% /pageinfo %}}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>{{% pageinfo %}} This is a placeholder. {{% /pageinfo %}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
 &lt;div class="pageinfo pageinfo-primary">
 This is a placeholder.
 &lt;/div>
 &lt;h3 id="information-messages">Information messages&lt;/h3>
 &lt;p>The following code:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">{{% alert title=&amp;#34;Note&amp;#34; color=&amp;#34;info&amp;#34; %}} This is a Note. {{% /alert %}}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>{{% alert title=&amp;#34;Note&amp;#34; color=&amp;#34;info&amp;#34; %}} This is a Note. {{% /alert %}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 This is a Note.
 &lt;/div>
 &lt;h3 id="warning-messages">Warning messages&lt;/h3>
 &lt;p>The following code:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">{{% alert title=&amp;#34;Important&amp;#34; color=&amp;#34;warning&amp;#34; %}} This is a warning.
-{{% /alert %}}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>{{% alert title=&amp;#34;Important&amp;#34; color=&amp;#34;warning&amp;#34; %}} This is a warning.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{% /alert %}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
 This is a warning.
@@ -1054,14 +1066,14 @@ itself on the mardkown parser.&lt;/p>
 &lt;a href="https://prismjs.com/download.html#themes=prism">Prism syntax highlighting&lt;/a>.
 &lt;/div>
 &lt;p>The following Markdown creates a shell excerpt:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="color:#4e9a06">```shell
-&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>$ ssh-keygen -f fedcloud
-$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>
-&lt;span style="color:#4e9a06">```&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ ssh-keygen -f fedcloud
-$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">```shell
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span>$ ssh-keygen -f fedcloud
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">```&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ssh-keygen -f fedcloud
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$HOME&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 If you click the &lt;em>Copy&lt;/em> button in the
@@ -1085,34 +1097,34 @@ real life, very difficult.
 multiple programming languages, you can use a tabbed pane for code snippets:&lt;/p>
 &lt;!-- markdownlint-disable no-inline-html no-missing-space-atx -->
 &lt;!-- markdownlint-disable blanks-around-fences no-space-in-code -->
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpane&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;C++&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lang&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;C++&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-#include &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">iostream&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
-int main()
-{
-std::cout &lt;span style="color:#a40000">&amp;lt;&amp;lt;&lt;/span> &amp;#34;Hello World!&amp;#34; &lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">std::endl&lt;/span>&lt;span style="color:#a40000">;&lt;/span>
-&lt;span style="color:#a40000">}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Java&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lang&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Java&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#c4a000">class&lt;/span> &lt;span style="color:#c4a000">HelloWorld&lt;/span> &lt;span style="color:#a40000">{&lt;/span>
-&lt;span style="color:#c4a000">static&lt;/span> &lt;span style="color:#c4a000">public&lt;/span> &lt;span style="color:#c4a000">void&lt;/span> &lt;span style="color:#c4a000">main&lt;/span>&lt;span style="color:#a40000">(&lt;/span> &lt;span style="color:#c4a000">String&lt;/span> &lt;span style="color:#c4a000">args&lt;/span>&lt;span style="color:#a40000">[]&lt;/span> &lt;span style="color:#a40000">)&lt;/span> &lt;span style="color:#a40000">{&lt;/span>
-&lt;span style="color:#c4a000">System&lt;/span>&lt;span style="color:#a40000">.&lt;/span>&lt;span style="color:#c4a000">out&lt;/span>&lt;span style="color:#a40000">.&lt;/span>&lt;span style="color:#c4a000">println&lt;/span>&lt;span style="color:#a40000">(&lt;/span> &lt;span style="color:#a40000">&amp;#34;&lt;/span>&lt;span style="color:#c4a000">Hello&lt;/span> &lt;span style="color:#c4a000">World&lt;/span>&lt;span style="color:#a40000">!&amp;#34;&lt;/span> &lt;span style="color:#a40000">);&lt;/span>
-&lt;span style="color:#a40000">}&lt;/span>
-&lt;span style="color:#a40000">}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Kotlin&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lang&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Kotlin&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#c4a000">fun&lt;/span> &lt;span style="color:#c4a000">main&lt;/span>&lt;span style="color:#a40000">(&lt;/span>&lt;span style="color:#c4a000">args&lt;/span> &lt;span style="color:#c4a000">:&lt;/span> &lt;span style="color:#c4a000">Array&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#c4a000">String&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>) {
-println(&amp;#34;Hello, world!&amp;#34;)
-}
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Go&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lang&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Go&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-import &amp;#34;fmt&amp;#34;
-func main() {
-fmt.Printf(&amp;#34;Hello World!\n&amp;#34;)
-}
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpane&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpane&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;C++&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lang&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;C++&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>#include &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">iostream&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int main()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> std::cout &lt;span style="color:#a40000">&amp;lt;&amp;lt;&lt;/span> &amp;#34;Hello World!&amp;#34; &lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">std::endl&lt;/span>&lt;span style="color:#a40000">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Java&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lang&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Java&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">class&lt;/span> &lt;span style="color:#c4a000">HelloWorld&lt;/span> &lt;span style="color:#a40000">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">static&lt;/span> &lt;span style="color:#c4a000">public&lt;/span> &lt;span style="color:#c4a000">void&lt;/span> &lt;span style="color:#c4a000">main&lt;/span>&lt;span style="color:#a40000">(&lt;/span> &lt;span style="color:#c4a000">String&lt;/span> &lt;span style="color:#c4a000">args&lt;/span>&lt;span style="color:#a40000">[]&lt;/span> &lt;span style="color:#a40000">)&lt;/span> &lt;span style="color:#a40000">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#c4a000">System&lt;/span>&lt;span style="color:#a40000">.&lt;/span>&lt;span style="color:#c4a000">out&lt;/span>&lt;span style="color:#a40000">.&lt;/span>&lt;span style="color:#c4a000">println&lt;/span>&lt;span style="color:#a40000">(&lt;/span> &lt;span style="color:#a40000">&amp;#34;&lt;/span>&lt;span style="color:#c4a000">Hello&lt;/span> &lt;span style="color:#c4a000">World&lt;/span>&lt;span style="color:#a40000">!&amp;#34;&lt;/span> &lt;span style="color:#a40000">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a40000">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Kotlin&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lang&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Kotlin&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">fun&lt;/span> &lt;span style="color:#c4a000">main&lt;/span>&lt;span style="color:#a40000">(&lt;/span>&lt;span style="color:#c4a000">args&lt;/span> &lt;span style="color:#c4a000">:&lt;/span> &lt;span style="color:#c4a000">Array&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#c4a000">String&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println(&amp;#34;Hello, world!&amp;#34;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Go&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lang&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Go&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>import &amp;#34;fmt&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>func main() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.Printf(&amp;#34;Hello World!\n&amp;#34;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpane&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
 &lt;!-- prettier-ignore -->
 &lt;ul class="nav nav-tabs" id="tabs-6" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -1140,57 +1152,69 @@ Go
 &lt;/a>
 &lt;/li>&lt;/ul>
 &lt;div class="tab-content" id="tabs-6-content">&lt;div class="tab-pane fade show active"
-id="tabs-6-0" role="tabpanel" aria-labelled-by="tabs-6-0-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-C++" data-lang="C++">&lt;span style="color:#8f5902;font-style:italic">#include&lt;/span> &lt;span style="color:#8f5902;font-style:italic">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">int&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
-&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">std&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">::&lt;/span>&lt;span style="color:#000">cout&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Hello World!&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#000">std&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">::&lt;/span>&lt;span style="color:#000">endl&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+id="tabs-6-0" role="tabpanel" aria-labelled-by="tabs-6-0-tab">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-C++" data-lang="C++">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#include&lt;/span> &lt;span style="color:#8f5902;font-style:italic">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">int&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">std&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">::&lt;/span>&lt;span style="color:#000">cout&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Hello World!&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#000">std&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">::&lt;/span>&lt;span style="color:#000">endl&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-6-1" role="tabpanel" aria-labelled-by="tabs-6-1-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Java" data-lang="Java">&lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">HelloWorld&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">static&lt;/span> &lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span> &lt;span style="color:#000">String&lt;/span> &lt;span style="color:#000">args&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">System&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#c4a000">out&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#c4a000">println&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Hello World!&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">);&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+id="tabs-6-1" role="tabpanel" aria-labelled-by="tabs-6-1-tab">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">HelloWorld&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">static&lt;/span> &lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span> &lt;span style="color:#000">String&lt;/span> &lt;span style="color:#000">args&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">System&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#c4a000">out&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#c4a000">println&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Hello World!&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-6-2" role="tabpanel" aria-labelled-by="tabs-6-2-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Kotlin" data-lang="Kotlin">&lt;span style="color:#204a87;font-weight:bold">fun&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">args&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">Array&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">String&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">println&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello, world!&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+id="tabs-6-2" role="tabpanel" aria-labelled-by="tabs-6-2-tab">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Kotlin" data-lang="Kotlin">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">fun&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">args&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">Array&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">String&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">println&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello, world!&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-6-3" role="tabpanel" aria-labelled-by="tabs-6-3-tab">&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Go" data-lang="Go">&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;fmt&amp;#34;&lt;/span>
-&lt;span style="color:#204a87;font-weight:bold">func&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;span style="color:#000">fmt&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Printf&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello World!\n&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+id="tabs-6-3" role="tabpanel" aria-labelled-by="tabs-6-3-tab">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Go" data-lang="Go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">func&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">fmt&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Printf&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello World!\n&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;/div>
 &lt;h2 id="content-with-multiple-variants">Content with multiple variants&lt;/h2>
 &lt;p>When you need to include multiple variants of the same content, other than code
 snippets in multiple programing languages, you can use the follwing shortcode:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-You can list all files in a folder using the command:
-```shell
-ls -a -l
-```
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Mac&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-To get a list of all files in a folder, press **Cmd** + **Space** to open
-a spotlight search, type terminal, then press Enter. In the terminal window
-then run the command:
-```shell
-ls -a -l
-```
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Windows&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-You can list all files in the current folder using the command:
-```shell
-dir
-```
-or you can use PowerShell:
-```powershell
-Get-ChildItem -Path .\
-```
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>You can list all files in a folder using the command:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```shell
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ls -a -l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Mac&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>To get a list of all files in a folder, press **Cmd** + **Space** to open
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a spotlight search, type terminal, then press Enter. In the terminal window
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>then run the command:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```shell
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ls -a -l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Windows&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>You can list all files in the current folder using the command:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```shell
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dir
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>or you can use PowerShell:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```powershell
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-ChildItem -Path .\
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will render as:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-7" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -1218,24 +1242,24 @@ Windows
 &lt;div class="tab-pane show active"
 id="tabs-7-0" role="tabpanel" aria-labelled-by="tabs-7-0-tab">
 &lt;p>You can list all files in a folder using the command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ls -a -l
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ls -a -l
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-7-1" role="tabpanel" aria-labelled-by="tabs-7-1-tab">
 &lt;p>To get a list of all files in a folder, press &lt;strong>Cmd&lt;/strong> + &lt;strong>Space&lt;/strong> to open a
 spotlight search, type terminal, then press Enter. In the terminal window then
 run the command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ls -a -l
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ls -a -l
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane "
 id="tabs-7-2" role="tabpanel" aria-labelled-by="tabs-7-2-tab">
 &lt;p>You can list all files in the current folder using the command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">dir
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>or you can use PowerShell:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="color:#204a87">Get-ChildItem&lt;/span> &lt;span style="color:#000">-Path&lt;/span> &lt;span style="color:#000;font-weight:bold">.\&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>dir
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or you can use PowerShell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">Get-ChildItem&lt;/span> &lt;span style="color:#000">-Path&lt;/span> &lt;span style="color:#000;font-weight:bold">.\&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">

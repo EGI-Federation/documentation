@@ -234,8 +234,8 @@ certificate.&lt;/p>
 the team needs to know your certificate&amp;rsquo;s subject.&lt;/p>
 &lt;p>Please use the command below on any Unix machine and send its output to&lt;br>
 &lt;code>dirac-support&lt;/code> &lt;code>&amp;lt;AT&amp;gt;&lt;/code> &lt;code>mailman.egi.eu&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">openssl x509 -in &lt;span style="color:#000">$HOME&lt;/span>/.globus/usercert.pem -subject -noout
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="the-egi-workload-manager-web-portal">The EGI Workload Manager Web Portal&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>openssl x509 -in &lt;span style="color:#000">$HOME&lt;/span>/.globus/usercert.pem -subject -noout
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="the-egi-workload-manager-web-portal">The EGI Workload Manager Web Portal&lt;/h3>
 &lt;p>To access the EGI Workload Manager open a web browser to:
 &lt;a href="https://dirac.egi.eu/DIRAC/">https://dirac.egi.eu/DIRAC/&lt;/a>&lt;/p>
 &lt;p>&lt;img src="egi_workload_manager_web_portal.png" alt="The EGI Workload Manager service Web portal">&lt;/p>
@@ -296,81 +296,84 @@ change to green. Right click the job, select:&lt;br>
 &lt;p>The easiest way to install the client is via
 &lt;a href="https://www.docker.com/">Docker Container&lt;/a>. If you have a Docker client
 installed in your machine, install the DIRAC CLI as follows:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">docker run -it -v &lt;span style="color:#000">$HOME&lt;/span>:&lt;span style="color:#000">$HOME&lt;/span> -e &lt;span style="color:#000">HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$HOME&lt;/span> diracgrid/client:egi
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once the client software is installed, it should be configured in order to
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -it -v &lt;span style="color:#000">$HOME&lt;/span>:&lt;span style="color:#000">$HOME&lt;/span> -e &lt;span style="color:#000">HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$HOME&lt;/span> diracgrid/client:egi
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once the client software is installed, it should be configured in order to
 access the EGI Workload Manager service:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#204a87">source&lt;/span> /opt/dirac/bashrc
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>To proceed further a temporary proxy of the user certificate should be created.
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">source&lt;/span> /opt/dirac/bashrc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To proceed further a temporary proxy of the user certificate should be created.
 This is necessary to get information from the central Configuration Service:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-proxy-init -x
-Generating proxy...
-Enter Certificate password:
-...
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now the client can be configured to work in conjunction with the EGI Workload
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-proxy-init -x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Generating proxy...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter Certificate password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now the client can be configured to work in conjunction with the EGI Workload
 Manager service:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-configure defaults-egi.cfg Executing:
-/home/jdoe/DIRAC/DIRAC/Core/scripts/dirac-configure.py defaults-egi.cfg
-Checking DIRAC installation at &lt;span style="color:#4e9a06">&amp;#34;/home/jdoe/DIRAC&amp;#34;&lt;/span> Created vomsdir file
-/home/jdoe/DIRAC/etc/grid-security/vomsdir/vo.formation.idgrilles.fr/cclcgvomsli01.in2p3.fr.lsc
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>..&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-Created vomsdir file
-/home/jdoe/DIRAC/etc/grid-security/vomsdir/fedcloud.egi.eu/voms2.grid.cesnet.cz.lsc
-Created vomses file &lt;span style="color:#4e9a06">`&lt;/span>/home/jdoe/DIRAC/etc/grid-security/vomses/fedcloud.egi.eu&lt;span style="color:#4e9a06">`&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Generate the proxy containing the credentials of your VO. Specify the VO in the
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-configure defaults-egi.cfg Executing:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/jdoe/DIRAC/DIRAC/Core/scripts/dirac-configure.py defaults-egi.cfg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Checking DIRAC installation at &lt;span style="color:#4e9a06">&amp;#34;/home/jdoe/DIRAC&amp;#34;&lt;/span> Created vomsdir file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/jdoe/DIRAC/etc/grid-security/vomsdir/vo.formation.idgrilles.fr/cclcgvomsli01.in2p3.fr.lsc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>..&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Created vomsdir file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/jdoe/DIRAC/etc/grid-security/vomsdir/fedcloud.egi.eu/voms2.grid.cesnet.cz.lsc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Created vomses file &lt;span style="color:#4e9a06">`&lt;/span>/home/jdoe/DIRAC/etc/grid-security/vomses/fedcloud.egi.eu&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Generate the proxy containing the credentials of your VO. Specify the VO in the
 &lt;code>--group&lt;/code> option:&lt;/p>
 &lt;p>In this example, we are going to use the resources allocated for the WeNMR
 project.&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-proxy-init --debug --group wenmr_user -U --rfc
-$ dirac-proxy-init --debug --group wenmr_user -U --rfc
-Generating proxy...
-Enter Certificate password:
-Contacting CS...
-Checking DN /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
-jdoe@egi.eu
-Username is jdoe
-Creating proxy &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> jdoe@wenmr_user
-&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
-jdoe@egi.eu&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-Requested adding a VOMS extension but no VOMS attribute defined &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> group wenmr_user
-Uploading proxy &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> wenmr_user...
-Uploading wenmr_user proxy to ProxyManager...
-Loading user proxy Uploading proxy on-the-fly
-Cert file /home/jdoe/.globus/usercert.pem Key file
-/home/jdoe/.globus/userkey.pem
-Loading cert and key User credentials loaded
-Uploading... Proxy uploaded Proxy generated:
-subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0123456789&lt;/span>
-issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
-identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
-timeleft : 23:59:58
-DIRAC group : wenmr_user
-rfc : True
-path : /tmp/x509up_u0
-username : jdoe
-properties : LimitedDelegation, GenericPilot, Pilot, NormalUser
-Proxies uploaded: DN
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> Group &lt;span style="color:#000;font-weight:bold">|&lt;/span> Until &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>GMT&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting
-EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> access.egi.eu_user &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
-/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
-jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> fedcloud_user &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
-/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
-jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> access.egi.eu_admin &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
-/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
-jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> wenmr_user &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>As a result of this command a user proxy with the same validity period of the
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-proxy-init --debug --group wenmr_user -U --rfc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ dirac-proxy-init --debug --group wenmr_user -U --rfc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Generating proxy...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter Certificate password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Contacting CS...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Checking DN /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jdoe@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Username is jdoe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> jdoe@wenmr_user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jdoe@egi.eu&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Requested adding a VOMS extension but no VOMS attribute defined &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> group wenmr_user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Uploading proxy &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> wenmr_user...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Uploading wenmr_user proxy to ProxyManager...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Loading user proxy Uploading proxy on-the-fly
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Cert file /home/jdoe/.globus/usercert.pem Key file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/home/jdoe/.globus/userkey.pem
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Loading cert and key User credentials loaded
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Uploading... Proxy uploaded Proxy generated:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0123456789&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>timeleft : 23:59:58
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>DIRAC group : wenmr_user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rfc : True
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>path : /tmp/x509up_u0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>username : jdoe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>properties : LimitedDelegation, GenericPilot, Pilot, NormalUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Proxies uploaded: DN
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> Group &lt;span style="color:#000;font-weight:bold">|&lt;/span> Until &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>GMT&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> access.egi.eu_user &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> fedcloud_user &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> access.egi.eu_admin &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jdoe@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> wenmr_user &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2021/09/14 23:54
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>As a result of this command a user proxy with the same validity period of the
 certificate is uploaded to the DIRAC ProxyManager service.&lt;/p>
 &lt;p>For checking the details of you proxy, run the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-proxy-info
-subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0123456789&lt;/span>
-issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
-identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
-timeleft : 23:59:26
-DIRAC group : wenmr_user
-rfc : True
-path : /tmp/x509up_u0
-username : jdoe
-properties : LimitedDelegation, GenericPilot, Pilot, NormalUser
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="managing-simple-jobs">Managing simple jobs&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-proxy-info
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0123456789&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jdoe@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>timeleft : 23:59:26
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>DIRAC group : wenmr_user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rfc : True
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>path : /tmp/x509up_u0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>username : jdoe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>properties : LimitedDelegation, GenericPilot, Pilot, NormalUser
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="managing-simple-jobs">Managing simple jobs&lt;/h4>
 &lt;!-- markdownlint-disable line-length -->
 &lt;table>
 &lt;thead>
@@ -410,39 +413,39 @@ for the complete list of the Workload Management commands.&lt;/p>
 &lt;p>In general, you can submit jobs, check their status, and retrieve the output.
 For example:&lt;/p>
 &lt;p>Create a simple JDL file (test.jdl) to submit the job:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#000">JobName&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Simple_Job&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Executable&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;/bin/ls&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Arguments&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;-ltr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">StdOutput&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">StdError&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">OutputSandbox&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>,&lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Submit the job:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">dirac-wms-job-submit test.jdl &lt;span style="color:#000">JobID&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check the job status:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-wms-job-status &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> &lt;span style="color:#000">JobID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">23844073&lt;/span> &lt;span style="color:#000">Status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Waiting&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">MinorStatus&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Pilot Agent Submission&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Site&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ANY&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-wms-job-status &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> &lt;span style="color:#000">JobID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> &lt;span style="color:#000">Status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Done&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">MinorStatus&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Execution Completed&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Site&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>EGI.NIKHEF.nl&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Site&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>EGI.HG-08-Okeanos.gr&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Retrieve the outputs of the job (when the status is Done):&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ dirac-wms-job-get-output --Dir joboutput/ &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> Job output sandbox
-retrieved in joboutput/53755998/
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="jobs-with-input-sandbox-and-output-sandbox">Jobs with Input Sandbox and Output Sandbox&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#000">JobName&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Simple_Job&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Executable&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;/bin/ls&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Arguments&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;-ltr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">StdOutput&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">StdError&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">OutputSandbox&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>,&lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Submit the job:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>dirac-wms-job-submit test.jdl &lt;span style="color:#000">JobID&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check the job status:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-wms-job-status &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> &lt;span style="color:#000">JobID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">23844073&lt;/span> &lt;span style="color:#000">Status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Waiting&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">MinorStatus&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Pilot Agent Submission&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Site&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ANY&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-wms-job-status &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> &lt;span style="color:#000">JobID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> &lt;span style="color:#000">Status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Done&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">MinorStatus&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Execution Completed&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Site&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>EGI.NIKHEF.nl&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Site&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>EGI.HG-08-Okeanos.gr&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Retrieve the outputs of the job (when the status is Done):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-wms-job-get-output --Dir joboutput/ &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> Job output sandbox
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>retrieved in joboutput/53755998/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="jobs-with-input-sandbox-and-output-sandbox">Jobs with Input Sandbox and Output Sandbox&lt;/h4>
 &lt;p>In most cases the job input data or executable files are available locally and
 should be transferred to the grid to run the job. In this case the
 &lt;code>InputSandbox&lt;/code> attribute can be used to move the files together with the job.&lt;/p>
 &lt;p>Create the &lt;code>InputAndOuputSandbox.jdl&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">JobName&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;InputAndOuputSandbox&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">Executable&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;testJob.sh&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">StdOutput&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">StdError&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">InputSandbox&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;testJob.sh&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;span style="color:#000">OutputSandbox&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>,&lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a simple shell script (&lt;code>testJob.sh&lt;/code>)&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic">#!/bin/bash
-&lt;/span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>/bin/hostname
-/bin/date
-/bin/ls -la
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>After creation of JDL file the next step is to submit the job, using the
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">JobName&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;InputAndOuputSandbox&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">Executable&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;testJob.sh&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">StdOutput&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">StdError&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">InputSandbox&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;testJob.sh&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">OutputSandbox&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>,&lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a simple shell script (&lt;code>testJob.sh&lt;/code>)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>/bin/hostname
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/bin/date
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/bin/ls -la
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After creation of JDL file the next step is to submit the job, using the
 command:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">dirac-wms-job-submit InputAndOuputSandbox.jdl &lt;span style="color:#000">JobID&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> XXXXXXXX
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="list-of-supported-vos">List of supported VOs&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>dirac-wms-job-submit InputAndOuputSandbox.jdl &lt;span style="color:#000">JobID&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> XXXXXXXX
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="list-of-supported-vos">List of supported VOs&lt;/h4>
 &lt;ul>
 &lt;li>acc-comp.egi.eu, beapps, compchem, eiscat.se, eli-laser.eu,&lt;/li>
 &lt;li>eli-beams.eu, eng.vo.ibergrid.eu, enmr.eu, fedcloud.egi.eu,&lt;/li>
