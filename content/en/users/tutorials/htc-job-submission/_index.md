@@ -1,8 +1,7 @@
 ---
 title: "Submitting HTC Jobs"
 type: docs
-weight: 150
-draft: true
+weight: 160
 description: >
   Submitting High Throughput Compute jobs
 ---
