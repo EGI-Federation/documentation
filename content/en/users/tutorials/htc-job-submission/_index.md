@@ -47,7 +47,9 @@ distribution, but it will also required additional software and configuration.
 
 In order to help with deploying an UI, different solutions are possible:
 
-- Some [Ansible roles]() are available in the
+- Some
+  [Ansible roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html)
+  are available in the
   [EGI Federation GitHub organisation](https://github.com/EGI-Federation?q=ansible-role),
   mainly [ansible-role-ui](https://github.com/EGI-Federation/ansible-role-ui)
   that should be used together with
@@ -59,17 +61,19 @@ In order to help with deploying an UI, different solutions are possible:
   installed.
 - The repository
   [ui-deployment](https://github.com/EGI-Federation/ui-deployment) provides an
-  [terraform]() based deployment allowing to deploy a `User Interface (UI)` in a
-  [Cloud Compute virtual machine](). This integrated is based on the ansible
-  modules, and can be use as a skeleton or example on how to use them.
+  [terraform](terraform.io) based deployment allowing to deploy a
+  `User Interface (UI)` in a
+  [Cloud Compute virtual machine](../../compute/cloud-compute). This integrated
+  is based on the Ansible modules, and can be use as a skeleton or example on
+  how to use them.
 
 > This tutorial is based on using a VM deployed using the
 > [ui-deployment](https://github.com/EGI-Federation/ui-deployment) repository,
-> refer to the repository for detailled instructions on deploying the UI.
+> refer to the repository for detailed instructions on deploying the UI.
 
 ## Step 2: creating a VOMS proxy
 
-Creating a VOMS proxy for dteam VO
+Creating a VOMS proxy for `dteam` VO
 
 ```shell
 # Creating the proxy
@@ -291,9 +295,9 @@ Fetching data files...
 
 #### References
 
-- https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html
-- https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html
-- https://htcondor.readthedocs.io/en/latest/man-pages/condor_transfer_data.html
+- [HTCondor Quick Start Guide](https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html)
+- [HTCondor: condor_submit](https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html)
+- [HTCondor: condor_transfer_data](https://htcondor.readthedocs.io/en/latest/man-pages/condor_transfer_data.html)
 
 ### To an ARC-CE Computing Element
 
@@ -363,11 +367,8 @@ $ arcstat -l "$JOB_ID"
 
 #### References
 
-- http://www.nordugrid.org/arc/arc6/users/submit_job.html
-- http://www.nordugrid.org/arc/arc6/users/client_tools.html#job-submission-and-management
-- https://www.gridpp.ac.uk/wiki/ARC_HTCondor_Basic_Install
-- https://www.gridpp.ac.uk/wiki/Imperial_arc_ce_for_cloud
-- https://www.gridpp.ac.uk/wiki/RAL_Tier1_BatchFarm
+- [ARC: submit a job](http://www.nordugrid.org/arc/arc6/users/submit_job.html)
+- [ARC client tools](http://www.nordugrid.org/arc/arc6/users/client_tools.html)
 
 ### To a CREAM Computing Element
 
