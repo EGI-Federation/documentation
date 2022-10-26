@@ -904,4 +904,326 @@ Compute.&lt;/li>
 providing documentation for automated on-demand execution of Docker containers&lt;/li>
 &lt;/ul>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
-&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Submitting HTC Jobs</title><link>/users/tutorials/htc-job-submission/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/htc-job-submission/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This tutorial describes how to submit
+&lt;a href="../../compute/high-throughput-compute">High Throughput Compute (HTC)&lt;/a> jobs
+using command-line.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>To submit an EGI HTC job, you will have to:&lt;/p>
+&lt;ol>
+&lt;li>Obtain an X.509 certificate. The certificates are issued by Certification
+Authorities (CAs) part of the
+&lt;a href="https://www.eugridpma.org">European Policy Management Authority for Grid Authentication&lt;/a>
+(EUGridPMA), which is also part of the
+&lt;a href="https://www.igtf.net">International Global Trust Federation&lt;/a> (IGTF).&lt;/li>
+&lt;li>Enrol into a VO having access to HTC resources.&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>This tutorial will be using &lt;code>dteam&lt;/code> a test Virtual Organisation that can be
+used by resource providers, commands should be adjusted to the appropriate VO.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="step-1-getting-access-to-a-user-interface-ui">Step 1: getting access to a User Interface (UI)&lt;/h2>
+&lt;p>In order to interact with HTC resources, you should have access to a
+&lt;code>User Interface&lt;/code>, often referred to as a &lt;code>UI&lt;/code>. This software environment will
+provide all the tools required to interact with the different middleware, as
+different sites can be using different Computing Element (CE), such as
+HTCondorCE and ARC-CE (CREAM is a legacy software stack that is now more
+officially supported).&lt;/p>
+&lt;p>Different possibilities are available to access an UI:&lt;/p>
+&lt;ul>
+&lt;li>Having access to an UI provided by/for your community&lt;/li>
+&lt;li>Deploying a UI&lt;/li>
+&lt;/ul>
+&lt;h3 id="deploying-an-ui">Deploying an UI&lt;/h3>
+&lt;p>The UI is available as a package in the &lt;a href="https://go.egi.eu/umd">UMD&lt;/a> software
+distribution, but it will also required additional software and configuration.&lt;/p>
+&lt;p>In order to help with deploying an UI, different solutions are possible:&lt;/p>
+&lt;ul>
+&lt;li>Some &lt;a href="">Ansible roles&lt;/a> are available in the
+&lt;a href="https://github.com/EGI-Federation?q=ansible-role">EGI Federation GitHub organisation&lt;/a>,
+mainly &lt;a href="https://github.com/EGI-Federation/ansible-role-ui">ansible-role-ui&lt;/a>
+that should be used together with
+&lt;a href="https://github.com/EGI-Federation/ansible-role-VOMS-client">ansible-role-VOMS-client&lt;/a>,
+providing software and material required for the authentication and
+authorisation, and
+&lt;a href="https://github.com/EGI-Federation/ansible-role-umd">ansible-role-umd&lt;/a>
+configuring the software repositories from where all the software will be
+installed.&lt;/li>
+&lt;li>The repository
+&lt;a href="https://github.com/EGI-Federation/ui-deployment">ui-deployment&lt;/a> provides an
+&lt;a href="">terraform&lt;/a> based deployment allowing to deploy a &lt;code>User Interface (UI)&lt;/code> in a
+&lt;a href="">Cloud Compute virtual machine&lt;/a>. This integrated is based on the ansible
+modules, and can be use as a skeleton or example on how to use them.&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>This tutorial is based on using a VM deployed using the
+&lt;a href="https://github.com/EGI-Federation/ui-deployment">ui-deployment&lt;/a> repository,
+refer to the repository for detailled instructions on deploying the UI.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="step-2-creating-a-voms-proxy">Step 2: creating a VOMS proxy&lt;/h2>
+&lt;p>Creating a VOMS proxy for dteam VO&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating the proxy&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ voms-proxy-init -voms dteam --rfc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter GRID pass phrase &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> this identity:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Contacting voms2.hellasgrid.gr:15004 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GR/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>HellasGrid/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>hellasgrid.gr/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms2.hellasgrid.gr&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;dteam&amp;#34;&lt;/span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Remote VOMS server contacted succesfully.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Created proxy in /tmp/x509up_u1001.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Wed Oct &lt;span style="color:#0000cf;font-weight:bold">26&lt;/span> 23:27:30 CEST &lt;span style="color:#0000cf;font-weight:bold">2022&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Checking the proxy&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ voms-proxy-info
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">123456319&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">type&lt;/span> : RFC3820 compliant impersonation proxy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>strength : &lt;span style="color:#0000cf;font-weight:bold">2048&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>path : /tmp/x509up_u1001
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>timeleft : 11:58:48
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>key usage : Digital Signature, Key Encipherment
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-identifying-available-resources">Step 3: identifying available resources&lt;/h2>
+&lt;p>Nowadays two Computing Element (CE) &amp;ldquo;flavours&amp;rdquo; are mainly used:&lt;/p>
+&lt;ul>
+&lt;li>HTCondorCE&lt;/li>
+&lt;li>ARC-CE&lt;/li>
+&lt;/ul>
+&lt;p>The CREAM CE is a legacy and no more supported middleware.&lt;/p>
+&lt;p>In this section we will document querying the EGI Information System to retrieve
+information about the available resources.&lt;/p>
+&lt;blockquote>
+&lt;p>Those examples are relying on the Top BDII maintained by EGI Foundation:
+&lt;code>ldap://lcg-bdii.egi.eu:2170&lt;/code>&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Dumping the glue schema&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -H ldap://lcg-bdii.egi.eu:2170 -b &lt;span style="color:#000">o&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>glue
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The following queries can be used to retrieve information about &lt;strong>all&lt;/strong> the
+Computing Elements of a given type. You will likely be able to use only a subset
+of them, only the ones supporting the Virtual Organisation you are a member of,
+and for which you have a valid VOMS proxy.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying for all HTCondorCE compute resources&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEInfoJobManager=HTCondorCE))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEImplementationVersion GlueCEImplementationName &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus GlueCEUniqueID GlueServiceEndpoint GlueServiceType
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying for all ARC CE compute resources&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEInfoJobManager=arc))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEImplementationVersion GlueCEImplementationName &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus GlueCEUniqueID GlueServiceEndpoint GlueServiceType
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Using &lt;code>lcg-info&lt;/code> it&amp;rsquo;s possible to easily do more targeted queries, like focusing
+on a specific VO.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Identify compute resources available for dteam VO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Identify storage resources available for dteam VO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ lcg-info --list-se --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --attrs CEImpl --query &lt;span style="color:#4e9a06">&amp;#39;CEImpl=*HTCondorCE&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- CE: ce01.knu.ac.kr:9619/ce01.knu.ac.kr-condor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - CEImpl HTCondorCE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- CE: ce13.pic.es:9619/ce13.pic.es-condor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - CEImpl HTCondorCE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- CE: condorce1.ciemat.es:9619/condorce1.ciemat.es-condor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - CEImpl HTCondorCE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- CE: condorce2.ciemat.es:9619/condorce2.ciemat.es-condor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - CEImpl HTCondorCE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We can see that the &lt;code>dteam&lt;/code> VO should be able to access Computing Elements from
+the various types:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --attrs CEImpl --query &lt;span style="color:#4e9a06">&amp;#39;CEImpl=*&amp;#39;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep CEImpl &lt;span style="color:#000;font-weight:bold">|&lt;/span> sort &lt;span style="color:#000;font-weight:bold">|&lt;/span> uniq -c
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">123&lt;/span> - CEImpl ARC-CE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">22&lt;/span> - CEImpl CREAM
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">7&lt;/span> - CEImpl HTCondorCE
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have selected a site, you can start sending jobs there.&lt;/p>
+&lt;p>The following sites will be used in this tutorial:&lt;/p>
+&lt;ul>
+&lt;li>HTCondorCE: &lt;code>condorce1.ciemat.es:9619/condorce1.ciemat.es-condor&lt;/code>&lt;/li>
+&lt;li>ARC-CE: &lt;code>alex4.nipne.ro:2811/nordugrid-SLURM-dteam&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>You can query for information using &lt;code>ldapsearch&lt;/code>, and the information returned
+by &lt;code>lcg-info&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying information about the HTCondor CE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=condorce1.ciemat.es:9619/condorce1.ciemat.es-condor))&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Limiting output for the Condor CE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=condorce1.ciemat.es:9619/condorce1.ciemat.es-condor))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoHostName GlueCEUniqueID &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoJobManager GlueCEImplementationName GlueCEImplementationVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoLRMSType GlueCEInfoLRMSVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEAccessControlBaseRule &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoTotalCPUs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying information about the ARC CE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=alex4.nipne.ro:2811/nordugrid-SLURM-dteam))&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Limiting output for the ARC CE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=alex4.nipne.ro:2811/nordugrid-SLURM-dteam))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoHostName GlueCEUniqueID &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoJobManager GlueCEImplementationName GlueCEImplementationVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoLRMSType GlueCEInfoLRMSVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEAccessControlBaseRule &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoTotalCPUs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-submitting-and-managing-jobs">Step 4: submitting and managing jobs&lt;/h2>
+&lt;h3 id="to-an-htcondorce-computing-element">To an HTCondorCE Computing Element&lt;/h3>
+&lt;p>The &lt;code>condor&lt;/code> package will install all the required dependencies.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># XXX probably to be added to the UI ansible role&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>yum install condor
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Condor will use the
+&lt;a href="#step-2-creating-a-voms-proxy">VOMS proxy created earlier&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;p>Create &lt;code>env.sub&lt;/code>, the compute job to be executed on the remote Computing
+Element:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">executable&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /usr/bin/env
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">log&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> env.log
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">output&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> outfile.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">error&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> errors.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">should_transfer_files&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> Yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">when_to_transfer_output&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> ON_EXIT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>queue
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Submission of a job with the -spool option causes HTCondor to spool all input
+files, the job event log, and any proxy across a connection to the machine
+where the condor_schedd daemon is running. After spooling these files, the
+machine from which the job is submitted may disconnect from the network or
+modify its local copies of the spooled files.&lt;/p>
+&lt;/blockquote>
+&lt;p>Submit job:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Submitting a job, spooling input and output files to&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ condor_submit --spool --name condorce1.ciemat.es &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --pool condorce1.ciemat.es:9619 env.sub
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Submitting job&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> job&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> submitted to cluster 97412.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Checking the status of a specific job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ condor_q --name condorce1.ciemat.es --pool condorce1.ciemat.es:9619 &lt;span style="color:#0000cf;font-weight:bold">97412&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-- Schedd: condorce1.ciemat.es : &amp;lt;192.101.161.188:9619?... @ 10/26/22 16:31:00
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OWNER BATCH_NAME SUBMITTED DONE RUN IDLE TOTAL JOB_IDS
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dteam050 ID: &lt;span style="color:#0000cf;font-weight:bold">97412&lt;/span> 10/26 16:21 _ _ _ &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 97412.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Total &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> query: &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> jobs&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> completed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> removed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> idle, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> running, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> held, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> suspended
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Total &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> all users: &lt;span style="color:#0000cf;font-weight:bold">884&lt;/span> jobs&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">412&lt;/span> completed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> removed, &lt;span style="color:#0000cf;font-weight:bold">200&lt;/span> idle, &lt;span style="color:#0000cf;font-weight:bold">259&lt;/span> running, &lt;span style="color:#0000cf;font-weight:bold">13&lt;/span> held, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> suspended
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Checking the status of all jobs running on that&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ condor_q --name condorce1.ciemat.es --pool condorce1.ciemat.es:9619
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-- Schedd: condorce1.ciemat.es : &amp;lt;192.101.161.188:9619?... @ 10/26/22 16:25:03
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OWNER BATCH_NAME SUBMITTED DONE RUN IDLE TOTAL JOB_IDS
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dteam050 ID: &lt;span style="color:#0000cf;font-weight:bold">97400&lt;/span> 10/26 15:46 _ _ _ &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 97400.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dteam050 ID: &lt;span style="color:#0000cf;font-weight:bold">97412&lt;/span> 10/26 16:21 _ _ _ &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 97412.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Total &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> query: &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> jobs&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> completed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> removed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> idle, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> running, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> held, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> suspended
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Total &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> dteam050: &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> jobs&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> completed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> removed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> idle, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> running, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> held, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> suspended
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Total &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> all users: &lt;span style="color:#0000cf;font-weight:bold">883&lt;/span> jobs&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">411&lt;/span> completed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> removed, &lt;span style="color:#0000cf;font-weight:bold">200&lt;/span> idle, &lt;span style="color:#0000cf;font-weight:bold">259&lt;/span> running, &lt;span style="color:#0000cf;font-weight:bold">13&lt;/span> held, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> suspended
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieving the output of a specific job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ condor_transfer_data -name condorce1.ciemat.es -pool condorce1.ciemat.es:9619 97412.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Fetching data files...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references">References&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html">https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html">https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/man-pages/condor_transfer_data.html">https://htcondor.readthedocs.io/en/latest/man-pages/condor_transfer_data.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="to-an-arc-ce-computing-element">To an ARC-CE Computing Element&lt;/h3>
+&lt;p>Test job showing env where it run&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-xrsl" data-lang="xrsl">&amp;amp;( executable = &amp;#34;/usr/bin/env&amp;#34; )
+( jobname = &amp;#34;arctest&amp;#34; )
+( stdout = &amp;#34;stdout&amp;#34; )
+( join = &amp;#34;yes&amp;#34; )
+( gmlog = &amp;#34;gmlog&amp;#34; )
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Generating a proxy for ARC&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcproxy --voms dteam
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter pass phrase &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> private key:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Contacting VOMS server &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>named dteam&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>: voms2.hellasgrid.gr on port: &lt;span style="color:#0000cf;font-weight:bold">15004&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Proxy generation succeeded
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span>: 2022-10-27 02:23:52
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Sending a job using ARC&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Select a CE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --attrs CEImpl --query &lt;span style="color:#4e9a06">&amp;#39;CEImpl=*ARC-CE&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Example: arc01.grid.cyfronet.pl:2811/nordugrid-SLURM-grid-dteam&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Get info about the selected CE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=alex4.nipne.ro*))&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Submitting the job, the JOB_ID will be written on the output&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcsub --jobdescrfile testjob.xrsl --computing-element alex4.nipne.ro
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Job submitted with jobid: gsiftp://alex4.nipne.ro:2811/jobs/....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Export JOB_ID to be used for other commands&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#000">JOB_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;gsiftp://alex4.nipne.ro:2811/jobs/....&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Monitoring the status of the job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Jobs will be in state Finished once completed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcstat &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Use -l parameter with arcstat to get more information on the status of the Job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcstat -l &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieve output of finished job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieve output files of the finished job, removing them from the server&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcget &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Results stored at: Ow7KmRKv71nuvw3Vp3UrRNqABFKDmABFKDmfJKDmABFKDmoeT5zn
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Jobs processed: 1, successfully retrieved: 1, successfully cleaned: &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Instead of manually selecting a site, it&amp;rsquo;s possible to do some automatic
+selection from CE registered in a central registry, such as &lt;code>nordugrid.org&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Automatic selection on the CE in the nordugrid.org registry&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcsub --jobdescrfile testjob.xrsl --registry nordugrid.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gsiftp://vm3.tier2.hep.manchester.ac.uk:2811/jobs/...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">JOB_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;gsiftp://vm3.tier2.hep.manchester.ac.uk:2811/jobs/..&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Use -l paramter to get more information on the status of the Job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcstat -l &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references-1">References&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="http://www.nordugrid.org/arc/arc6/users/submit_job.html">http://www.nordugrid.org/arc/arc6/users/submit_job.html&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://www.nordugrid.org/arc/arc6/users/client_tools.html#job-submission-and-management">http://www.nordugrid.org/arc/arc6/users/client_tools.html#job-submission-and-management&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.gridpp.ac.uk/wiki/ARC_HTCondor_Basic_Install">https://www.gridpp.ac.uk/wiki/ARC_HTCondor_Basic_Install&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.gridpp.ac.uk/wiki/Imperial_arc_ce_for_cloud">https://www.gridpp.ac.uk/wiki/Imperial_arc_ce_for_cloud&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.gridpp.ac.uk/wiki/RAL_Tier1_BatchFarm">https://www.gridpp.ac.uk/wiki/RAL_Tier1_BatchFarm&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="to-a-cream-computing-element">To a CREAM Computing Element&lt;/h3>
+&lt;blockquote>
+&lt;p>Broken on the UI installed from UMD via our Ansible module&lt;/p>
+&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code class="language-jdl" data-lang="jdl">[
+Type = &amp;#34;Job&amp;#34;;
+JobType = &amp;#34;Normal&amp;#34;;
+Executable = &amp;#34;/usr/bin/env&amp;#34;;
+StdOutput = &amp;#34;output.txt&amp;#34;;
+StdError = &amp;#34;error.txt&amp;#34;;
+OutputSandbox = {&amp;#34;output.txt&amp;#34;, &amp;#34;error.txt&amp;#34;};
+]
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ glite-ce-job-submit &lt;span style="color:#4e9a06">&amp;#39;lpsc-cream-ce.in2p3.fr:8443/cream-pbs-dteam&amp;#39;&lt;/span> testjob.jdl
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>glite-ce-job-submit: error &lt;span style="color:#204a87;font-weight:bold">while&lt;/span> loading shared libraries: libclassad.so.7: cannot open shared object file: No such file or directory
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="via-the-egi-workload-manager">Via the EGI Workload Manager&lt;/h3>
+&lt;blockquote>
+&lt;p>FIXME: To be documented.&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>In the webportal: using EGI Check-in&lt;/li>
+&lt;/ul></description></item></channel></rss>
