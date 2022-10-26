@@ -328,7 +328,7 @@ $ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 \
 $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170
     -b "Mds-Vo-Name=local,o=grid" \
     '(&(objectClass=GlueCE)(GlueCEUniqueID=alex4.nipne.ro*))'
-# Submitting the job, the JOB_ID will be outpute
+# Submitting the job, the JOB_ID will be written on the output
 $ arcsub --jobdescrfile testjob.xrsl --computing-element alex4.nipne.ro
 Job submitted with jobid: gsiftp://alex4.nipne.ro:2811/jobs/....
 # Export JOB_ID to be used for other commands
@@ -373,7 +373,7 @@ $ arcstat -l "$JOB_ID"
 
 ### To a CREAM Computing Element
 
-> Broken on the UI installed via our ansible module
+> Broken on the UI installed from UMD via our Ansible module
 
 ```jdl
 [
@@ -392,5 +392,7 @@ glite-ce-job-submit: error while loading shared libraries: libclassad.so.7: cann
 ```
 
 ### Via the EGI Workload Manager
+
+> FIXME: To be documented.
 
 - In the webportal: using EGI Check-in
