@@ -881,7 +881,7 @@ interact with the AppDB API over the web using HTTP commands following the
 The API endpoint is located at &lt;code>http://appdb-pi.egi.eu&lt;/code> and it allows
 information retrieval and modification from third party applications without
 having to reside on the rich user interface of the AppDB portal. Thus one is
-given the opportunity to design one&amp;rsquo;s own front-ends.&lt;/p>
+given the opportunity to design one&amp;rsquo;s own frontends.&lt;/p>
 &lt;h2 id="getting-started">Getting started&lt;/h2>
 &lt;h3 id="operations">Operations&lt;/h3>
 &lt;p>Starting with version 1.0, the AppDB API features write access as well, by
@@ -993,14 +993,14 @@ to reduce load; this value can be retrieved from the relevant attributes of the
 response’s root node. If the paging parameters were set by the client but the
 page length exceeds that of the server&amp;rsquo;s default maximum value, then the later
 is used. Otherwise the page length set by the client will be used. Moreover,
-some of the API’s resources support filtering when doing Read/Listing
-operations; filter expressions may be passed in the querystring by assigning a
-value to the flt parameter, in order to retrieve just the subset of data that
-match certain criteria. These filter expressions are strings that may range from
-simple keywords to complex queries. They are search arguments which will be
-matched to results that are deemed relevant in the scope of the search target.
-These expressions can range from the simple and obvious space separated keyword
-list, to complex operator and field specific queries. In particular, filter
+some of the API resources support filtering when doing Read/Listing operations;
+filter expressions may be passed in the querystring by assigning a value to the
+flt parameter, in order to retrieve just the subset of data that match certain
+criteria. These filter expressions are strings that may range from simple
+keywords to complex queries. They are search arguments which will be matched to
+results that are deemed relevant in the scope of the search target. These
+expressions can range from the simple and obvious space separated keyword list,
+to complex operator and field specific queries. In particular, filter
 expressions are composed of one or more keywords, optionally prefixed by
 operators and/or specifiers. The syntax in BNF is:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-BNF" data-lang="BNF">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">expression&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">keyword&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>*
@@ -1123,10 +1123,10 @@ following parameters must be provided in the query string, or POST fields
 accordingly:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>username&lt;/code> or &lt;code>userid&lt;/code>: the &lt;a href="https://www.egi.eu/sso/">EGI SSO&lt;/a> username or the
-EGI AppDB user ID (it can be found on the top of you personal profile at the
+EGI AppDB user id (it can be found on the top of you personal profile at the
 &lt;a href="http://appdb.egi.eu/">AppDB portal&lt;/a>)&lt;/li>
 &lt;li>&lt;code>passwd&lt;/code>: the &lt;a href="https://www.egi.eu/sso/">EGI SSO&lt;/a> password if providing a
-username, or the MD5 sum of the password if providing an EGI AppDB user ID&lt;/li>
+username, or the MD5 sum of the password if providing an EGI AppDB user id&lt;/li>
 &lt;li>&lt;code>apikey&lt;/code>: a valid API key. Registered users can generate API keys from within
 the AppDB portal, under their profile preferences tab&lt;/li>
 &lt;/ul>
@@ -1149,7 +1149,7 @@ adds an extra level of security by allowing access only from specific sources
 via netfilters. Defining netfilters for an API key is not required, but it is
 strongly suggested, since they can help safeguard its use. Special care should
 be taken by client applications that make client-side API calls (e.g. web pages
-with javascript via XHR), since the API key would then probably be visible to
+with JavaScript via XHR), since the API key would then probably be visible to
 the public. In such cases, it is advised to use a proxy which routes API calls
 and append the API key server-side.&lt;/p>
 &lt;h4 id="sample-use-cases">Sample Use Cases&lt;/h4>
@@ -1158,25 +1158,23 @@ and append the API key server-side.&lt;/p>
 &lt;p>&lt;strong>Example 1&lt;/strong>: NGI_MARS wants to launch its own web portal, with interface in
 the Martian language, which will only display applications that have been
 developed by Martians, and which will allow its users to modify data. The
-senior developer creates an &lt;a href="https://www.egi.eu/sso/">EGI SSO&lt;/a>account if he or
-she does not have one already, logs into the
+senior developer creates an &lt;a href="https://www.egi.eu/sso/">EGI SSO&lt;/a> account if they
+do not have one already, logs into the
 &lt;a href="http://appdb.egi.eu/">EGI AppDB portal&lt;/a> and creates a new API key in his or
 her profile page. The new web portal gets developed and launched. When a user
-visits the site, he or she provides a username and password in order to log
-in. The webpage sends the username and password over HTTPS back to a PHP
-server, which then makes a &lt;a href="http://php.net/manual/en/book.curl.php">cURL&lt;/a> GET
-call to&lt;/p>
+visits the site, they provide a username and password in order to log in. The
+web page sends the username and password over HTTPS back to a PHP server,
+which then makes a &lt;a href="http://php.net/manual/en/book.curl.php">cURL&lt;/a> GET call to&lt;/p>
 &lt;p>&lt;code>https://appdb-pi.egi.eu/rest/1.0/people/profile?username={username}&amp;amp;passwd={password}&amp;amp;apikey={apikey}&lt;/code>&lt;/p>
 &lt;p>with the API key hard-coded in the PHP code, or read from a server-side config
 file. The AppDB server returns the XML representation of the user&amp;rsquo;s profile,
-which contains its user ID. The Martian website then stores the user ID and
-the MD5 sum of the password in the server session and/or in a client-side
-cookie, and the log in procedure is complete. All future authenticated calls
-to the AppDB API from the Martial website are then done either though PHP
-server side cURL calls in a similar fasion, where the user ID and password are
-retrieved from the session information, or via javascript XHR proxied through
-the Martian server in order to securely append the API key, if the website
-uses AJAX.&lt;/p>
+which contains its user id. The Martian site then stores the user id and the
+MD5 sum of the password in the server session and/or in a client-side cookie,
+and the log in procedure is complete. All future authenticated calls to the
+AppDB API from the Martial site are then done either though PHP server-side
+cURL calls in a similar fasion, where the user id and password are retrieved
+from the session information, or via JavaScript XHR proxied through the
+Martian server in order to securely append the API key, if the site uses Ajax.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>Example 2&lt;/strong>: The Grid4Martians distributed computing project, which has its
@@ -1186,27 +1184,27 @@ and by providing its users with information about applications from the
 &lt;a href="http://www.egi.eu">EGI project&lt;/a>. The project has its own complicated
 authorization system and does not want to force its users to create
 &lt;a href="https://www.egi.eu/sso/">EGI SSO&lt;/a> accounts. The senior developer creates an
-&lt;a href="https://www.egi.eu/sso/">EGI SSO&lt;/a>account if he or she does not have one
-already, logs into the &lt;a href="http://appdb.egi.eu/">EGI AppDB portal&lt;/a> and creates a
-new API key in his or her profile page, like in example 1, but creates a
-system account as well, named &lt;em>The Grid4Martians Project&lt;/em> with a username of
+&lt;a href="https://www.egi.eu/sso/">EGI SSO&lt;/a> account if they do not have one already,
+logs into the &lt;a href="http://appdb.egi.eu/">EGI AppDB portal&lt;/a> and creates a new API
+key in his or her profile page, like in example 1, but creates a system
+account as well, named &lt;em>The Grid4Martians Project&lt;/em> with a username of
 &lt;em>grid4martians&lt;/em>. All AppDB API calls have been planed to be made server-side
 from an array of 3 servers in their domain, so the appropriate netfilters are
-also set. The project already has its own webpage setup, which gets upgraded
+also set. The project already has its own web page setup, which gets upgraded
 with a newly developed module that synchronizes data with the
 &lt;a href="http://appdb.egi.eu/">EGI AppDB&lt;/a>. Initially, the module issues multiple
 server-side PUT operations to&lt;/p>
 &lt;p>&lt;code>https://appdb-pi.egi.eu/rest/1.0/applications?username=grid4martians&amp;amp;passwd={password}&amp;amp;apikey={apikey}&lt;/code>&lt;/p>
 &lt;p>providing XML representation of its own applications, in order to register
 them with the &lt;a href="http://appdb.egi.eu">EGI AppDB&lt;/a>, and associates the returned
-IDs with the entries in its own backend. It also issues a GET operation to&lt;/p>
+ids with the entries in its own backend. It also issues a GET operation to&lt;/p>
 &lt;p>&lt;code>https://appdb-pi.egi.eu/rest/1.0/applications?listmode=listing&lt;/code>&lt;/p>
 &lt;p>to get a list of all the applications registered in the AppDB, and then issues
 multiple GET operations to&lt;/p>
 &lt;p>&lt;code>https://appdb-pi.egi.eu/rest/1.0/applications/{id}?username=grid4martians&amp;amp;passwd={password}&amp;amp;apikey={apikey}&lt;/code>&lt;/p>
-&lt;p>one for each of the application IDs returned by the listing, in order to
+&lt;p>one for each of the application ids returned by the listing, in order to
 migrate EGI applications into their own backend. Now, each time one of its
-users uses the project&amp;rsquo;s website to modify an application, the server issues a
+users uses the project&amp;rsquo;s site to modify an application, the server issues a
 POST operation to the AppDB API, in order to synchronize the changes.&lt;/p>
 &lt;p>&lt;code>https://appdb-pi.egi.eu/rest/1.0/applications/{id}?username=grid4martians&amp;amp;passwd={password}&amp;amp;apikey={apikey}&lt;/code>&lt;/p>
 &lt;p>Moreover, it periodically checks the AppDB by issuing a GET operation when an
@@ -1287,7 +1285,7 @@ Virtual Appliances)&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:description&amp;gt;&lt;/span>some new description&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:description&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will update application with ID &lt;code>123&lt;/code> setting it description to
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will update application with id &lt;code>123&lt;/code> setting it description to
 &lt;code>&amp;quot;some new description&amp;quot;&lt;/code> and leaving all other properties as-is.&lt;/p>
 &lt;p>Similarly, providing&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
@@ -1299,8 +1297,8 @@ and providing&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:discipline&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:discipline&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;5&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will replace the list of associated disciplines of the application with ID
-&lt;code>123&lt;/code>, with the disciplines with IDs &lt;code>1&lt;/code> and &lt;code>5&lt;/code> (&amp;ldquo;Life Sciences&amp;rdquo; and &amp;ldquo;Earth
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will replace the list of associated disciplines of the application with id
+&lt;code>123&lt;/code>, with the disciplines with ids &lt;code>1&lt;/code> and &lt;code>5&lt;/code> (&amp;ldquo;Life Sciences&amp;rdquo; and &amp;ldquo;Earth
 Sciences&amp;rdquo; respectively)&lt;/p>
 &lt;p>Note that providing &lt;code>{data}&lt;/code> as&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
@@ -1351,12 +1349,12 @@ must have at least on discipline in their complete representation.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will add a new application to the database, with the following properties:&lt;/p>
 &lt;ul>
-&lt;li>belonging to two categories, of which the one with ID equal to 1 will be the
+&lt;li>belonging to two categories, of which the one with id equal to 1 will be the
 primary&lt;/li>
 &lt;li>related to one discipline&lt;/li>
-&lt;li>with an application status with ID 6&lt;/li>
-&lt;li>listed as supported by the VO with ID 951&lt;/li>
-&lt;li>having two people in its scientific contact list, those with IDs 189 and 190&lt;/li>
+&lt;li>with an application status with id 6&lt;/li>
+&lt;li>listed as supported by the VO with id 951&lt;/li>
+&lt;li>having two people in its scientific contact list, those with ids 189 and 190&lt;/li>
 &lt;li>having one publication with two authors, one internal (i.e. registered with
 the AppDB) and one external (not registered, name-only entry)&lt;/li>
 &lt;li>listed as supported by two middlewares, and&lt;/li>
@@ -1396,7 +1394,7 @@ access only.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:moderationReason&amp;gt;&lt;/span>copyright violation&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:moderationReason&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will moderate the application with ID &lt;code>123&lt;/code>, providing &lt;code>&amp;quot;copyright violation&amp;quot;&lt;/code>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will moderate the application with id &lt;code>123&lt;/code>, providing &lt;code>&amp;quot;copyright violation&amp;quot;&lt;/code>
 as the reason&lt;/p>
 &lt;/li>
 &lt;/ul>
@@ -1443,7 +1441,7 @@ from &lt;code>application/{id}&lt;/code> resources&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>echo {data} | PUT https://appdb-pi.egi.eu/rest/1.0/applications/123/tags?username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{data}&lt;/code> is&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:tag&amp;gt;&lt;/span>C++&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:tag&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will apply the tag &lt;code>C++&lt;/code> to the application with ID &lt;code>123&lt;/code>&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will apply the tag &lt;code>C++&lt;/code> to the application with id &lt;code>123&lt;/code>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="application-tag-entry">Application Tag Entry&lt;/h3>
@@ -1562,7 +1560,7 @@ access only.&lt;/p>
 &lt;li>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/people/123/applications/bookmarked?flt=discipline:chemistry
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all application entries with a discipline related to chemistry and
-which have been bookmarked by the user with ID &lt;code>123&lt;/code>&lt;/p>
+which have been bookmarked by the user with id &lt;code>123&lt;/code>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="bookmarked-application-entry">Bookmarked Application Entry&lt;/h3>
@@ -1580,8 +1578,8 @@ which have been bookmarked by the user with ID &lt;code>123&lt;/code>&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>DELETE https://appdb-pi.egi.eu/rest/1.0/people/123/applications/bookmarked/111?username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will delete the application with ID &lt;code>111&lt;/code> from the list of bookmarked
-applications of the user with ID &lt;code>123&lt;/code>&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will delete the application with id &lt;code>111&lt;/code> from the list of bookmarked
+applications of the user with id &lt;code>123&lt;/code>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="editable-application-list">Editable Application List&lt;/h3>
@@ -1716,8 +1714,8 @@ available to application and user entries&lt;/p>
 &lt;li>Authenticated Operations: none&lt;/li>
 &lt;/ul>
 &lt;p>List of VOs registered with the
-&lt;a href="http://operations-portal.egi.eu/vo">EGI Operations Portal&lt;/a> and available to
-application entries&lt;/p>
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a> and
+available to application entries&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/vos/?flt={flt}
@@ -1739,8 +1737,8 @@ properties&lt;/p>
 &lt;li>Authenticated Operations: none&lt;/li>
 &lt;/ul>
 &lt;p>Detailed description of a VO registered with the
-&lt;a href="http://operations-portal.egi.eu/vo">EGI Operations Portal&lt;/a> and available to
-application entries&lt;/p>
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a> and
+available to application entries&lt;/p>
 &lt;h3 id="user-role-list">User Role List&lt;/h3>
 &lt;ul>
 &lt;li>Resource: &lt;code>people/roles/&lt;/code>&lt;/li>
