@@ -61,7 +61,7 @@ In order to help with deploying an UI, different solutions are possible:
   installed.
 - The repository
   [ui-deployment](https://github.com/EGI-Federation/ui-deployment) provides an
-  [terraform](terraform.io) based deployment allowing to deploy a
+  [terraform](https://terraform.io) based deployment allowing to deploy a
   `User Interface (UI)` in a
   [Cloud Compute virtual machine](../../compute/cloud-compute). This integrated
   is based on the Ansible modules, and can be use as a skeleton or example on
