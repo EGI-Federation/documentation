@@ -1,0 +1,212 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Data Management</title><link>/users/data/management/</link><description>Recent content in Data Management on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/data/management/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI DataHub</title><link>/users/data/management/datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>&lt;a href="https://datahub.egi.eu/">EGI DataHub&lt;/a> is a high-performance data management
+solution that offers &lt;strong>unified data access across globally distributed
+environments and multiple types of underlying storage&lt;/strong>. It allows researchers
+to share, collaborate and perform computations on the stored data easily.&lt;/p>
+&lt;p>Users can bring data close to their community or to the
+&lt;a href="../../../compute">compute facilities&lt;/a> they use, in order to exploit it
+efficiently. This is as simple as selecting which (subset of the) data should be
+available at which supporting provider.&lt;/p>
+&lt;p>The main features of DataHub are:&lt;/p>
+&lt;ul>
+&lt;li>Discovery of data spaces via a central portal&lt;/li>
+&lt;li>Policy based data access&lt;/li>
+&lt;li>Replication of data across providers for resiliency and availability purposes&lt;/li>
+&lt;li>Integration with &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> allows access using
+comunity credentials, including from other EGI services and components&lt;/li>
+&lt;li>File catalog to track replication of data and manage logical and physical
+files&lt;/li>
+&lt;/ul>
+&lt;p>EGI DataHub supports multiple access policies:&lt;/p>
+&lt;ul>
+&lt;li>Unauthenticated, open access&lt;/li>
+&lt;li>Access after user registration or&lt;/li>
+&lt;li>Access restricted to members of a
+&lt;a href="../../../aai/check-in//vos">Virtual Organization&lt;/a> (VO)&lt;/li>
+&lt;/ul>
+&lt;p>Data replication in EGI DataHub may take place either on-­demand or
+automatically. Replication uses a file catalogue to enable tracking of logical
+and physical copies of data.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+EGI DataHub is based on the
+&lt;a href="https://onedata.org/">Onedata technology&lt;/a>.
+&lt;/div>
+&lt;h2 id="motivations">Motivations&lt;/h2>
+&lt;ul>
+&lt;li>Putting up a (scalable) distributed data infrastructure needs specific
+expertise, resources and knowledge&lt;/li>
+&lt;li>No easy way to discover and transfer data&lt;/li>
+&lt;li>No easy way of making data (publicly) accessible without transferring it with
+a sharing service&lt;/li>
+&lt;li>No easy way of combining multiple datasets from different data providers&lt;/li>
+&lt;li>Users need to access data locally and from compute resources&lt;/li>
+&lt;/ul>
+&lt;h2 id="components-and-concepts">Components and concepts&lt;/h2>
+&lt;p>The following concepts (components) will help you undesrtand how EGI DataHub
+works.&lt;/p>
+&lt;h3 id="space">Space&lt;/h3>
+&lt;p>Virtual volume where users will organize their data. A space is supported by one
+or more Oneproviders that provide the actual storage resources.&lt;/p>
+&lt;h3 id="oneprovider">Oneprovider&lt;/h3>
+&lt;p>Data management component deployed in the data centres, provisioning data and
+managing transfers. A Oneprovider is typically deployed at a site near the local
+storage resources, and can access local storage resources over multiple
+connectors (e.g. CEPH, POSIX). A default one is operated for EGI by CYFRONET.&lt;/p>
+&lt;h3 id="onezone">Onezone&lt;/h3>
+&lt;p>Central component for federating providers. It takes care of Authentication and
+Authorization and other management tasks (like space creation). EGI DataHub is a
+Onezone instance.&lt;/p>
+&lt;h3 id="egi-datahub">EGI DataHub&lt;/h3>
+&lt;p>The central Onezone instance of the EGI Federation. Single Sign On (SSO) with
+all the connected storage providers (Oneprovider) is guaranteed through
+&lt;a href="../../../aai/check-in">EGI Check-in&lt;/a>&lt;/p>
+&lt;h3 id="oneclient">Oneclient&lt;/h3>
+&lt;p>Client application providing access to the spaces through a Linux
+&lt;a href="https://www.kernel.org/doc/html/latest/filesystems/fuse.html">FUSE mount point&lt;/a>
+(local POSIX access), as if they were part of the local file system. Oneclient
+can be used from VMs, containers, desktops, etc.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Web interfaces and APIs are also
+available.
+&lt;/div>
+&lt;h2 id="highlighted-features">Highlighted features&lt;/h2>
+&lt;p>Using the EGI DataHub web interface it's possible to manage the space.&lt;/p>
+&lt;p>&lt;img src="datahub-space-web.png" alt="Viewing a data space using the EGI DataHub web interface">&lt;/p>
+&lt;p>Using Oneclient it's possible to mount a space locally, and access it over a
+POSIX interface, using files as they were stored locally. The file's blocks are
+downloaded on demand.&lt;/p>
+&lt;p>&lt;img src="datahub-space-oneclient.png" alt="Viewing a data space in a console locally mounted using Oneclient">&lt;/p>
+&lt;p>In Onedata the file distribution is done on a block basis, blocks will be
+replicated on the fly, and it's possible to instrument the replication between
+Oneproviders.&lt;/p>
+&lt;p>&lt;img src="datahub-replica-management.png" alt="Viewing file distribution over the Oneproviders">&lt;/p>
+&lt;p>Three different formats of metadata can be attached to files: basic (key-value),
+JSON and RDF. The metadata can be managed using the Web interface and the APIs.
+It's also possible to create indexes and query them.&lt;/p>
+&lt;p>&lt;img src="datahub-metadata-management.png" alt="Management of metadata using the web interface">&lt;/p>
+&lt;p>It's possible to view the popularity of a file and manage smart caching.&lt;/p>
+&lt;p>&lt;img src="datahub-file-popularity-smarch-caching.png" alt="Viewing file popularity for smart caching">&lt;/p></description></item><item><title>Users: Data Transfer</title><link>/users/data/management/data-transfer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/data-transfer/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>&lt;a href="https://www.egi.eu/services/data-transfer/">EGI Data Transfer&lt;/a>
+allows scientists to &lt;strong>move any type of data files asynchronously from one
+storage to another&lt;/strong>. The service includes dedicated interfaces to display statistics
+of on-going transfers and manage storage resource parameters.&lt;/p>
+&lt;p>EGI Data Transfer is ideal to move large amounts of files or very large
+files as the service has mechanisms to verify checksums and ensure automatic
+retry in case of failures.&lt;/p>
+&lt;p>The main features of EGI Data Transfer are:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Simplicity&lt;/strong>. Easy user interfaces for submitting transfers (command-line,
+Python bindings, WebFTS, Web Monitoring).&lt;/li>
+&lt;li>&lt;strong>Reliability&lt;/strong>. Checksums are automatically calculated for each transfer and
+failed transfers are retried.&lt;/li>
+&lt;li>&lt;strong>Flexibility&lt;/strong>. Multi-protocol support (WebDAV/HTTTPS, GridFTP, xrootd, SRM, S3, GCloud).&lt;/li>
+&lt;li>&lt;strong>Intelligence&lt;/strong>. Parallel transfer optimization ensures users get the most from network
+without burning the storages. Transfers can be classified by &lt;em>priority&lt;/em> and &lt;em>activity&lt;/em>.&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+Eager to test this service?
+Have a look at our tutorial on
+&lt;a href="../../../tutorials/data-transfer-grid-storage">how to transfer data in the grid&lt;/a>.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+EGI Data Transfer is based on the
+FTS3 service, developed at CERN.
+&lt;/div>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;dl>
+&lt;dt>FTS3 Server&lt;/dt>
+&lt;dd>
+&lt;p>The service is responsible of the asynchronous execution of the file transfer,
+checksumming and retries in case of errors&lt;/p>
+&lt;/dd>
+&lt;dt>FTS3 REST&lt;/dt>
+&lt;dd>
+&lt;p>The RESTFul server which is contacted by clients via REST APIs, CLI and Python
+bindings&lt;/p>
+&lt;/dd>
+&lt;dt>FTS3 Monitoring&lt;/dt>
+&lt;dd>
+&lt;p>A Web interface to monitor transfers activity and server parameters&lt;/p>
+&lt;/dd>
+&lt;dt>WebFTS&lt;/dt>
+&lt;dd>
+&lt;p>A web interface that provides a file transfer and management solution in order
+to allow users to invoke reliable, managed data transfers on distributed
+infrastructures&lt;/p>
+&lt;/dd>
+&lt;/dl>
+&lt;h2 id="service-instances">Service Instances&lt;/h2>
+&lt;p>EGI has signed OLAs with 2 Providers, CERN and STFC, in order to access their
+FTS3 Service instances.&lt;/p>
+&lt;p>The following endpoints are available:&lt;/p>
+&lt;h3 id="cern">CERN&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://fts3-public.cern.ch:8446/">FTS REST&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://fts3-public.cern.ch/fts3/ftsmon/#/">FTS Mon&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://webfts.cern.ch/">WebFTS&lt;/a> - N.B. Needs personal X.509 certificate
+installed in your Browser&lt;/li>
+&lt;/ul>
+&lt;h3 id="stfc">STFC&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://lcgfts3.gridpp.rl.ac.uk:8446">FTS REST&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://lcgfts3.gridpp.rl.ac.uk:8449/fts3/ftsmon/#/">FTS Mon&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>N.B. if you access the endpoints via Browser the following CA certificates need
+to be installed:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://cafiles.cern.ch/cafiles/certificates/">CERN CA certificates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://www.ngs.ac.uk/ukca/certificates/cacerts.html">UK eScience CA certificates&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Users: Rucio</title><link>/users/data/management/rucio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/rucio/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>Built on more than a decade of experience in LHC experiments, Rucio serves the
+data needs of any modern scientific experiments. Rucio can manage large amounts
+of data, countless numbers of files, heterogeneous storage systems, globally
+distributed data centres, with monitoring and analytics.&lt;/p>
+&lt;p>Rucio &lt;strong>allows management of data with expressive statements&lt;/strong>. You to say what
+you want, and Rucio will figure out the details of how to do it. For example,
+three copies of my file on different continents with a backup on tape. You can
+also automatically remove copies of data after a set period or once its access
+popularity drops.&lt;/p>
+&lt;p>While Rucio is extremely scalable, the STFC Rucio Data Management Service is
+designed for smaller communities, with expected data needs up to tens of
+Petabytes. The fact that the underlying Rucio infrastructure is managed by STFC,
+allows communities to easily start using and/or test Rucio with little setup
+cost.&lt;/p>
+&lt;h2 id="official-rucio-pages">Official Rucio Pages&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://rucio.cern.ch/">Rucio Homepage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://rucio.cern.ch/documentation/">Rucio Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="multi-vo-specific-pages">Multi-VO specific pages&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.scd.stfc.ac.uk/Pages/SCD-STFC-Rucio-Data-Management-Service.aspx">Multi-VO Rucio at RAL as a service&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.scd.stfc.ac.uk/Pages/STFC-Rucio-Privacy-Notice.aspx">Privacy Policy&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.scd.stfc.ac.uk/Pages/STFC-Rucio-Acceptable-Use-Policy.aspx">Acceptable Use Policy&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Users: openRDM</title><link>/users/data/management/open-rdm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/open-rdm/</guid><description>
+&lt;p>While most other &lt;a href="..">data management services&lt;/a> are available in the EGI infrastructure,
+there are specialized services in the EGI portfolio that are offered for in-house
+installations by research communities, with support for customization and
+configuration from EGI.&lt;/p>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>The &lt;a href="https://marketplace.eosc-portal.eu/services/openrdm-eu">openRDM&lt;/a> service,
+an Research Data Management (RDM) tool,
+offers &lt;strong>advanced organisation of data during ongoing research projects,
+as an integrated environment with data management and digital lab notebook&lt;/strong>.&lt;/p>
+&lt;p>openRDM combines a data management platform with a digital lab notebook and a sample and
+protocol management system. It enables scientists to meet the ever-increasing requirements
+from funding agencies, journals, and academic institutions to publish data according to the
+&lt;a href="https://en.wikipedia.org/wiki/FAIR_data">FAIR&lt;/a> data principles – according to which data
+should be &lt;em>Findable&lt;/em>, &lt;em>Accessible&lt;/em>, &lt;em>Interoperable&lt;/em> and &lt;em>Reusable&lt;/em>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+The openRDM service is based around the
+active research data management (ARDM) platform &lt;a href="https://openbis.ch/">openBIS&lt;/a>, see the
+&lt;a href="https://openbis.ch/index.php/docs/user-documentation/">documentation&lt;/a>
+for more details.
+&lt;/div></description></item></channel></rss>
