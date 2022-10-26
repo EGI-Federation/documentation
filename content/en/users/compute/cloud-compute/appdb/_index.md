@@ -917,7 +917,7 @@ List of status states available to application entries
 - Authenticated Operations: none
 
 List of VOs registered with the
-[EGI Operations Portal](http://operations-portal.egi.eu/vo) and available to
+[EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list) and available to
 application entries
 
 - ```plain
@@ -942,7 +942,7 @@ application entries
 - Authenticated Operations: none
 
 Detailed description of a VO registered with the
-[EGI Operations Portal](http://operations-portal.egi.eu/vo) and available to
+[EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list) and available to
 application entries
 
 ### User Role List
