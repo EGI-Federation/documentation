@@ -13,7 +13,7 @@ interact with the AppDB API over the web using HTTP commands following the
 The API endpoint is located at `http://appdb-pi.egi.eu` and it allows
 information retrieval and modification from third party applications without
 having to reside on the rich user interface of the AppDB portal. Thus one is
-given the opportunity to design one's own front-ends.
+given the opportunity to design one's own frontends.
 
 ## Getting started
 
@@ -111,7 +111,7 @@ to reduce load; this value can be retrieved from the relevant attributes of the
 response’s root node. If the paging parameters were set by the client but the
 page length exceeds that of the server's default maximum value, then the later
 is used. Otherwise the page length set by the client will be used. Moreover,
-some of the API’s resources support filtering when doing Read/Listing
+some of the API resources support filtering when doing Read/Listing
 operations; filter expressions may be passed in the querystring by assigning a
 value to the flt parameter, in order to retrieve just the subset of data that
 match certain criteria. These filter expressions are strings that may range from
@@ -244,10 +244,10 @@ following parameters must be provided in the query string, or POST fields
 accordingly:
 
 - `username` or `userid`: the [EGI SSO](https://www.egi.eu/sso/) username or the
-  EGI AppDB user ID (it can be found on the top of you personal profile at the
+  EGI AppDB user id (it can be found on the top of you personal profile at the
   [AppDB portal](http://appdb.egi.eu/))
 - `passwd`: the [EGI SSO](https://www.egi.eu/sso/) password if providing a
-  username, or the MD5 sum of the password if providing an EGI AppDB user ID
+  username, or the MD5 sum of the password if providing an EGI AppDB user id
 - `apikey`: a valid API key. Registered users can generate API keys from within
   the AppDB portal, under their profile preferences tab
 
@@ -270,7 +270,7 @@ adds an extra level of security by allowing access only from specific sources
 via netfilters. Defining netfilters for an API key is not required, but it is
 strongly suggested, since they can help safeguard its use. Special care should
 be taken by client applications that make client-side API calls (e.g. web pages
-with javascript via XHR), since the API key would then probably be visible to
+with JavaScript via XHR), since the API key would then probably be visible to
 the public. In such cases, it is advised to use a proxy which routes API calls
 and append the API key server-side.
 
@@ -279,12 +279,12 @@ and append the API key server-side.
 - **Example 1**: NGI_MARS wants to launch its own web portal, with interface in
   the Martian language, which will only display applications that have been
   developed by Martians, and which will allow its users to modify data. The
-  senior developer creates an [EGI SSO](https://www.egi.eu/sso/)account if he or
-  she does not have one already, logs into the
+  senior developer creates an [EGI SSO](https://www.egi.eu/sso/) account if they 
+  do not have one already, logs into the
   [EGI AppDB portal](http://appdb.egi.eu/) and creates a new API key in his or
   her profile page. The new web portal gets developed and launched. When a user
-  visits the site, he or she provides a username and password in order to log
-  in. The webpage sends the username and password over HTTPS back to a PHP
+  visits the site, they provide a username and password in order to log
+  in. The web page sends the username and password over HTTPS back to a PHP
   server, which then makes a [cURL](http://php.net/manual/en/book.curl.php) GET
   call to
 
@@ -292,14 +292,14 @@ and append the API key server-side.
 
   with the API key hard-coded in the PHP code, or read from a server-side config
   file. The AppDB server returns the XML representation of the user's profile,
-  which contains its user ID. The Martian website then stores the user ID and
+  which contains its user id. The Martian site then stores the user id and
   the MD5 sum of the password in the server session and/or in a client-side
   cookie, and the log in procedure is complete. All future authenticated calls
-  to the AppDB API from the Martial website are then done either though PHP
-  server side cURL calls in a similar fasion, where the user ID and password are
-  retrieved from the session information, or via javascript XHR proxied through
-  the Martian server in order to securely append the API key, if the website
-  uses AJAX.
+  to the AppDB API from the Martial site are then done either though PHP
+  server-side cURL calls in a similar fasion, where the user id and password are
+  retrieved from the session information, or via JavaScript XHR proxied through
+  the Martian server in order to securely append the API key, if the site
+  uses Ajax.
 
 - **Example 2**: The Grid4Martians distributed computing project, which has its
   own user base and set of applications, wants to collaborate with
@@ -308,13 +308,13 @@ and append the API key server-side.
   [EGI project](http://www.egi.eu). The project has its own complicated
   authorization system and does not want to force its users to create
   [EGI SSO](https://www.egi.eu/sso/) accounts. The senior developer creates an
-  [EGI SSO](https://www.egi.eu/sso/)account if he or she does not have one
+  [EGI SSO](https://www.egi.eu/sso/) account if they do not have one
   already, logs into the [EGI AppDB portal](http://appdb.egi.eu/) and creates a
   new API key in his or her profile page, like in example 1, but creates a
   system account as well, named _The Grid4Martians Project_ with a username of
   _grid4martians_. All AppDB API calls have been planed to be made server-side
   from an array of 3 servers in their domain, so the appropriate netfilters are
-  also set. The project already has its own webpage setup, which gets upgraded
+  also set. The project already has its own web page setup, which gets upgraded
   with a newly developed module that synchronizes data with the
   [EGI AppDB](http://appdb.egi.eu/). Initially, the module issues multiple
   server-side PUT operations to
@@ -323,7 +323,7 @@ and append the API key server-side.
 
   providing XML representation of its own applications, in order to register
   them with the [EGI AppDB](http://appdb.egi.eu), and associates the returned
-  IDs with the entries in its own backend. It also issues a GET operation to
+  ids with the entries in its own backend. It also issues a GET operation to
 
   `https://appdb-pi.egi.eu/rest/1.0/applications?listmode=listing`
 
@@ -332,9 +332,9 @@ and append the API key server-side.
 
   `https://appdb-pi.egi.eu/rest/1.0/applications/{id}?username=grid4martians&passwd={password}&apikey={apikey}`
 
-  one for each of the application IDs returned by the listing, in order to
+  one for each of the application ids returned by the listing, in order to
   migrate EGI applications into their own backend. Now, each time one of its
-  users uses the project's website to modify an application, the server issues a
+  users uses the project's site to modify an application, the server issues a
   POST operation to the AppDB API, in order to synchronize the changes.
 
   `https://appdb-pi.egi.eu/rest/1.0/applications/{id}?username=grid4martians&passwd={password}&apikey={apikey}`
@@ -431,7 +431,7 @@ Examples:
   </application:application>
   ```
 
-  will update application with ID `123` setting it description to
+  will update application with id `123` setting it description to
   `"some new description"` and leaving all other properties as-is.
 
   Similarly, providing
@@ -452,8 +452,8 @@ Examples:
   </application:application>
   ```
 
-  will replace the list of associated disciplines of the application with ID
-  `123`, with the disciplines with IDs `1` and `5` ("Life Sciences" and "Earth
+  will replace the list of associated disciplines of the application with id
+  `123`, with the disciplines with ids `1` and `5` ("Life Sciences" and "Earth
   Sciences" respectively)
 
   Note that providing `{data}` as
@@ -515,12 +515,12 @@ Examples:
 
   will add a new application to the database, with the following properties:
 
-  - belonging to two categories, of which the one with ID equal to 1 will be the
+  - belonging to two categories, of which the one with id equal to 1 will be the
     primary
   - related to one discipline
-  - with an application status with ID 6
-  - listed as supported by the VO with ID 951
-  - having two people in its scientific contact list, those with IDs 189 and 190
+  - with an application status with id 6
+  - listed as supported by the VO with id 951
+  - having two people in its scientific contact list, those with ids 189 and 190
   - having one publication with two authors, one internal (i.e. registered with
     the AppDB) and one external (not registered, name-only entry)
   - listed as supported by two middlewares, and
@@ -566,7 +566,7 @@ Examples:
   </application:application>
   ```
 
-  will moderate the application with ID `123`, providing `"copyright violation"`
+  will moderate the application with id `123`, providing `"copyright violation"`
   as the reason
 
 ### Application Publication List
@@ -621,7 +621,7 @@ Examples:
   <application:tag>C++</application:tag>
   ```
 
-  will apply the tag `C++` to the application with ID `123`
+  will apply the tag `C++` to the application with id `123`
 
 ### Application Tag Entry
 
@@ -751,7 +751,7 @@ Examples:
   ```
 
   will return all application entries with a discipline related to chemistry and
-  which have been bookmarked by the user with ID `123`
+  which have been bookmarked by the user with id `123`
 
 ### Bookmarked Application Entry
 
@@ -771,8 +771,8 @@ Examples:
   DELETE https://appdb-pi.egi.eu/rest/1.0/people/123/applications/bookmarked/111?username={username}&passwd={passwd}&apikey={apikey}
   ```
 
-  will delete the application with ID `111` from the list of bookmarked
-  applications of the user with ID `123`
+  will delete the application with id `111` from the list of bookmarked
+  applications of the user with id `123`
 
 ### Editable Application List
 
