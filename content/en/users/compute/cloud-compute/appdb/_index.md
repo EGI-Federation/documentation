@@ -111,14 +111,14 @@ to reduce load; this value can be retrieved from the relevant attributes of the
 response’s root node. If the paging parameters were set by the client but the
 page length exceeds that of the server's default maximum value, then the later
 is used. Otherwise the page length set by the client will be used. Moreover,
-some of the API resources support filtering when doing Read/Listing
-operations; filter expressions may be passed in the querystring by assigning a
-value to the flt parameter, in order to retrieve just the subset of data that
-match certain criteria. These filter expressions are strings that may range from
-simple keywords to complex queries. They are search arguments which will be
-matched to results that are deemed relevant in the scope of the search target.
-These expressions can range from the simple and obvious space separated keyword
-list, to complex operator and field specific queries. In particular, filter
+some of the API resources support filtering when doing Read/Listing operations;
+filter expressions may be passed in the querystring by assigning a value to the
+flt parameter, in order to retrieve just the subset of data that match certain
+criteria. These filter expressions are strings that may range from simple
+keywords to complex queries. They are search arguments which will be matched to
+results that are deemed relevant in the scope of the search target. These
+expressions can range from the simple and obvious space separated keyword list,
+to complex operator and field specific queries. In particular, filter
 expressions are composed of one or more keywords, optionally prefixed by
 operators and/or specifiers. The syntax in BNF is:
 
@@ -279,27 +279,25 @@ and append the API key server-side.
 - **Example 1**: NGI_MARS wants to launch its own web portal, with interface in
   the Martian language, which will only display applications that have been
   developed by Martians, and which will allow its users to modify data. The
-  senior developer creates an [EGI SSO](https://www.egi.eu/sso/) account if they 
+  senior developer creates an [EGI SSO](https://www.egi.eu/sso/) account if they
   do not have one already, logs into the
   [EGI AppDB portal](http://appdb.egi.eu/) and creates a new API key in his or
   her profile page. The new web portal gets developed and launched. When a user
-  visits the site, they provide a username and password in order to log
-  in. The web page sends the username and password over HTTPS back to a PHP
-  server, which then makes a [cURL](http://php.net/manual/en/book.curl.php) GET
-  call to
+  visits the site, they provide a username and password in order to log in. The
+  web page sends the username and password over HTTPS back to a PHP server,
+  which then makes a [cURL](http://php.net/manual/en/book.curl.php) GET call to
 
   `https://appdb-pi.egi.eu/rest/1.0/people/profile?username={username}&passwd={password}&apikey={apikey}`
 
   with the API key hard-coded in the PHP code, or read from a server-side config
   file. The AppDB server returns the XML representation of the user's profile,
-  which contains its user id. The Martian site then stores the user id and
-  the MD5 sum of the password in the server session and/or in a client-side
-  cookie, and the log in procedure is complete. All future authenticated calls
-  to the AppDB API from the Martial site are then done either though PHP
-  server-side cURL calls in a similar fasion, where the user id and password are
-  retrieved from the session information, or via JavaScript XHR proxied through
-  the Martian server in order to securely append the API key, if the site
-  uses Ajax.
+  which contains its user id. The Martian site then stores the user id and the
+  MD5 sum of the password in the server session and/or in a client-side cookie,
+  and the log in procedure is complete. All future authenticated calls to the
+  AppDB API from the Martial site are then done either though PHP server-side
+  cURL calls in a similar fasion, where the user id and password are retrieved
+  from the session information, or via JavaScript XHR proxied through the
+  Martian server in order to securely append the API key, if the site uses Ajax.
 
 - **Example 2**: The Grid4Martians distributed computing project, which has its
   own user base and set of applications, wants to collaborate with
@@ -308,10 +306,10 @@ and append the API key server-side.
   [EGI project](http://www.egi.eu). The project has its own complicated
   authorization system and does not want to force its users to create
   [EGI SSO](https://www.egi.eu/sso/) accounts. The senior developer creates an
-  [EGI SSO](https://www.egi.eu/sso/) account if they do not have one
-  already, logs into the [EGI AppDB portal](http://appdb.egi.eu/) and creates a
-  new API key in his or her profile page, like in example 1, but creates a
-  system account as well, named _The Grid4Martians Project_ with a username of
+  [EGI SSO](https://www.egi.eu/sso/) account if they do not have one already,
+  logs into the [EGI AppDB portal](http://appdb.egi.eu/) and creates a new API
+  key in his or her profile page, like in example 1, but creates a system
+  account as well, named _The Grid4Martians Project_ with a username of
   _grid4martians_. All AppDB API calls have been planed to be made server-side
   from an array of 3 servers in their domain, so the appropriate netfilters are
   also set. The project already has its own web page setup, which gets upgraded
@@ -917,8 +915,8 @@ List of status states available to application entries
 - Authenticated Operations: none
 
 List of VOs registered with the
-[EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list) and available to
-application entries
+[EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list) and
+available to application entries
 
 - ```plain
   GET http://appdb-pi.egi.eu/rest/1.0/vos/?flt={flt}
@@ -942,8 +940,8 @@ application entries
 - Authenticated Operations: none
 
 Detailed description of a VO registered with the
-[EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list) and available to
-application entries
+[EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list) and
+available to application entries
 
 ### User Role List
 
