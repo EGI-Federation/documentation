@@ -366,7 +366,6 @@ $ arcstat -l "$JOB_ID"
 
 - http://www.nordugrid.org/arc/arc6/users/submit_job.html
 - http://www.nordugrid.org/arc/arc6/users/client_tools.html#job-submission-and-management
-- https://wiki.nordugrid.org/wiki/Testing/ARC-CE
 - https://www.gridpp.ac.uk/wiki/ARC_HTCondor_Basic_Install
 - https://www.gridpp.ac.uk/wiki/Imperial_arc_ce_for_cloud
 - https://www.gridpp.ac.uk/wiki/RAL_Tier1_BatchFarm
