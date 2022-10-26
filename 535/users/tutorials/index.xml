@@ -954,7 +954,7 @@ configuring the software repositories from where all the software will be
 installed.&lt;/li>
 &lt;li>The repository
 &lt;a href="https://github.com/EGI-Federation/ui-deployment">ui-deployment&lt;/a> provides an
-&lt;a href="terraform.io">terraform&lt;/a> based deployment allowing to deploy a
+&lt;a href="https://terraform.io">terraform&lt;/a> based deployment allowing to deploy a
 &lt;code>User Interface (UI)&lt;/code> in a
 &lt;a href="../../compute/cloud-compute">Cloud Compute virtual machine&lt;/a>. This integrated
 is based on the Ansible modules, and can be use as a skeleton or example on
