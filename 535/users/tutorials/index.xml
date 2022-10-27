@@ -912,11 +912,11 @@ using command-line.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>To submit an EGI HTC job, you will have to:&lt;/p>
 &lt;ol>
-&lt;li>Obtain an X.509 certificate. The certificates are issued by Certification
-Authorities (CAs) part of the
-&lt;a href="https://www.eugridpma.org">European Policy Management Authority for Grid Authentication&lt;/a>
-(EUGridPMA), which is also part of the
-&lt;a href="https://www.igtf.net">International Global Trust Federation&lt;/a> (IGTF).&lt;/li>
+&lt;li>Obtain an X.509 user certificate. The supported certificates are issued by
+Certification Authorities (CAs) part of the
+&lt;a href="https://www.eugridpma.org">European Policy Management Authority for Grid Authentication (EUGridPMA)&lt;/a>,
+which is also part of the
+&lt;a href="https://www.igtf.net">International Global Trust Federation (IGTF)&lt;/a>.&lt;/li>
 &lt;li>Enrol into a VO having access to HTC resources.&lt;/li>
 &lt;/ol>
 &lt;blockquote>
@@ -944,25 +944,8 @@ distribution, but it will also require additional software and configuration.&lt
 &lt;a href="https://go.egi.eu/umd">UMD repositories&lt;/a>. You will need to install at least
 the &lt;code>ui&lt;/code> meta-package, with &lt;code>voms-client&lt;/code>, the
 &lt;a href="../../../providers/operations-manuals/howto01_using_igtf_ca_distribution">IGTF distribution&lt;/a>,
-and configure access for your VOMS server, using the proper &lt;code>.vomses&lt;/code> and
-&lt;code>.lsc&lt;/code> files, based on the information available on the VOMS server of the
-specific VO.
-&lt;ul>
-&lt;li>as an example with &lt;code>dteam&lt;/code>, you can find the VOMS server address in the
-&lt;a href="../../../internal/operations-portal">Operations Portal&lt;/a>:
-&lt;a href="https://operations-portal.egi.eu/vo/view/voname/dteam">https://operations-portal.egi.eu/vo/view/voname/dteam&lt;/a>.
-Then looking at
-&lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/configuration/configuration.action">dteam VOMS configuration&lt;/a>,
-you can create:
-&lt;ul>
-&lt;li>&lt;code>/etc/vomses/dteam-voms2.hellasgrid.gr&lt;/code> with the content of the &lt;strong>VOMSES
-string&lt;/strong>.&lt;/li>
-&lt;li>&lt;code>/etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc&lt;/code> with the
-content for the &lt;strong>LSC configuration&lt;/strong>.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
+and
+&lt;a href="#configuring-the-system-to-use-voms-client">configure the system to use voms-client&lt;/a>.&lt;/li>
 &lt;li>Some
 &lt;a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html">Ansible roles&lt;/a>
 are available in the
@@ -989,7 +972,76 @@ environment and needs.&lt;/li>
 refer to the repository for detailed instructions on deploying the UI.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="step-2-creating-a-voms-proxy">Step 2: creating a VOMS proxy&lt;/h2>
-&lt;p>Creating a VOMS proxy for &lt;code>dteam&lt;/code> VO&lt;/p>
+&lt;blockquote>
+&lt;p>The
+&lt;a href="https://italiangrid.github.io/voms/index.html">Virtual Organization Membership Service (VOMS)&lt;/a>
+enables Virtual Organisation (VO) access control in distributed services.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="configuring-the-system-to-use-voms-client">Configuring the system to use voms-client&lt;/h3>
+&lt;blockquote>
+&lt;p>When using
+&lt;a href="https://github.com/EGI-Federation/ansible-role-VOMS-client">ansible-role-VOMS-client&lt;/a>,
+the full environment has been setup for you, and there is no need for manual
+configuration.&lt;/p>
+&lt;/blockquote>
+&lt;p>Before being able to use &lt;code>voms-client&lt;/code>, it is required to
+&lt;a href="https://italiangrid.github.io/voms/documentation/voms-clients-guide/">configure access to the VOMS server of the chosen VO&lt;/a>,
+using the proper &lt;code>.vomses&lt;/code> and &lt;code>.lsc&lt;/code> files, based on the information available
+on the VOMS server of the specific VO.&lt;/p>
+&lt;ul>
+&lt;li>as an example with &lt;code>dteam&lt;/code>, you can find the VOMS server address in the
+&lt;a href="../../../internal/operations-portal">Operations Portal&lt;/a>:
+&lt;a href="https://operations-portal.egi.eu/vo/view/voname/dteam">https://operations-portal.egi.eu/vo/view/voname/dteam&lt;/a>.
+Then looking at
+&lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/configuration/configuration.action">dteam VOMS configuration&lt;/a>,
+you can create:
+&lt;ul>
+&lt;li>&lt;code>/etc/vomses/dteam-voms2.hellasgrid.gr&lt;/code> with the content of the &lt;strong>VOMSES
+string&lt;/strong>.&lt;/li>
+&lt;li>&lt;code>/etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc&lt;/code> with the content
+for the &lt;strong>LSC configuration&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="preparing-the-x509-credentials">Preparing the X.509 credentials&lt;/h3>
+&lt;p>Once you have obtained an X.509 user certificate issued by a Certification
+Authority (CA) part of the
+&lt;a href="https://www.igtf.net">International Global Trust Federation (IGTF)&lt;/a>, you should
+extract the certificate and private key, and add them to a &lt;code>~/.globus&lt;/code>
+directory.&lt;/p>
+&lt;p>If the X.509 certificate is in your browser&amp;rsquo;s keyring, you should export it to a
+passphrase protected &lt;code>.p12&lt;/code> file, then using
+&lt;a href="https://www.openssl.org/docs/man1.0.2/man1/pkcs12.html">&lt;code>openssl pkcs12&lt;/code>&lt;/a> you
+can extract the required &lt;strong>PEM&lt;/strong> files:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating and protecting ~/.globus directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ mkdir -p ~/.globus
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ chmod &lt;span style="color:#0000cf;font-weight:bold">750&lt;/span> ~/.globus
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Extracting the certificate from the p12 file &amp;#34;exported_cert.p12&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openssl pkcs12 -in exported_cert.p12 -out ~/.globus/usercert.pem -clcerts -nokeys
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Adjusting rights on the user certificate&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ chmod &lt;span style="color:#0000cf;font-weight:bold">640&lt;/span> ~/.globus/usercert.pem
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Extracting the certificate key from the p12, protecting it with a passphrase&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openssl pkcs12 -in exported_cert.p12 -out ~/.globus/userkey.pem -nocerts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Adjusting rights on the certificate key&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ chmod &lt;span style="color:#0000cf;font-weight:bold">400&lt;/span> ~/.globus/userkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are using a certificate provided by the
+&lt;a href="https://wiki.geant.org/display/TCSNT/">GÉANT Trusted Certificate Service (TCS)&lt;/a>,
+in addition to the official documentation provided by your organisation, you may
+be interested by looking at the following documentation:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://ca.dutchgrid.nl/tcs/">Generation 4 GEANT Trusted Certificate Service TCS&lt;/a>,
+covering how to get and install your credentials, addressing potential issues
+with an improper &lt;em>.p12&lt;/em>. &lt;strong>Highly recommended&lt;/strong>.&lt;/li>
+&lt;li>&lt;a href="https://wiki.sunet.se/display/TCS/SUNET+TCS+2020-+Information+for+administrators">SUNET TCS 2020- Information for administrators&lt;/a>,
+an exhaustive documentation mainly for administrators but also covering
+client-related aspects.&lt;/li>
+&lt;/ul>
+&lt;h3 id="using-voms-client">Using voms-client&lt;/h3>
+&lt;p>Once the
+&lt;a href="#configuring-the-system-to-use-voms-client">configuration for the VOMS client&lt;/a>
+has been completed, and when the
+&lt;a href="#preparing-the-x509-credentials">X.509 credentials have been prepared&lt;/a>, you can
+create a &lt;strong>VOMS proxy&lt;/strong> for &lt;code>dteam&lt;/code> VO:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating the proxy&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ voms-proxy-init -voms dteam --rfc
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter GRID pass phrase &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> this identity:
@@ -1010,13 +1062,20 @@ refer to the repository for detailed instructions on deploying the UI.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>path : /tmp/x509up_u1001
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>timeleft : 11:58:48
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>key usage : Digital Signature, Key Encipherment
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-identifying-available-resources">Step 3: identifying available resources&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="references">References&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://italiangrid.github.io/voms/documentation.html">VOMS Documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-3-identifying-available-resources">Step 3: identifying available resources&lt;/h2>
 &lt;p>Nowadays two Computing Element (CE) &amp;ldquo;flavours&amp;rdquo; are mainly used:&lt;/p>
 &lt;ul>
-&lt;li>HTCondorCE&lt;/li>
-&lt;li>ARC-CE&lt;/li>
+&lt;li>&lt;a href="https://htcondor.org/htcondor-ce/overview/">HTCondorCE&lt;/a>, a Compute Entrypoint
+(CE) based on &lt;a href="http://htcondor.org/">HTCondor&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="http://www.nordugrid.org/arc/ce/">ARC-CE&lt;/a>, the
+&lt;a href="http://www.nordugrid.org/arc/">ARC&lt;/a> Compute Element (CE).&lt;/li>
 &lt;/ul>
-&lt;p>The CREAM CE is a legacy and no more supported middleware.&lt;/p>
+&lt;p>The &lt;a href="https://cream-guide.readthedocs.io/en/latest/">CREAM CE&lt;/a> is a legacy and no
+more supported middleware.&lt;/p>
 &lt;p>In this section we will document querying the EGI Information System to retrieve
 information about the available resources.&lt;/p>
 &lt;blockquote>
@@ -1115,12 +1174,22 @@ by &lt;code>lcg-info&lt;/code>:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-submitting-and-managing-jobs">Step 4: submitting and managing jobs&lt;/h2>
 &lt;h3 id="to-an-htcondorce-computing-element">To an HTCondorCE Computing Element&lt;/h3>
+&lt;blockquote>
+&lt;p>The &lt;a href="https://htcondor.com/htcondor-ce/#what-is-htcondor-ce">HTCondor-CE&lt;/a>
+software is a Compute Entrypoint (CE) based on
+&lt;a href="http://htcondor.org/">HTCondor&lt;/a> for sites that are part of a larger computing
+grid (e.g. &lt;a href="https://www.egi.eu/">EGI&lt;/a>,
+&lt;a href="https://osg-htc.org/">Open Science Grid (OSG)&lt;/a>).&lt;/p>
+&lt;/blockquote>
 &lt;p>The &lt;code>condor&lt;/code> package will install all the required dependencies.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>yum install condor
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>Condor will use the
 &lt;a href="#step-2-creating-a-voms-proxy">VOMS proxy created earlier&lt;/a>.&lt;/p>
 &lt;/blockquote>
+&lt;p>While HTCondor provides an official
+&lt;a href="https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html">HTCodnor Quick Start Guide&lt;/a>,
+the main steps for managing a job will be highlighted below.&lt;/p>
 &lt;p>Create &lt;code>env.sub&lt;/code>, the compute job to be executed on the remote Computing
 Element:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">executable&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /usr/bin/env
@@ -1130,21 +1199,27 @@ Element:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">should_transfer_files&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> Yes
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">when_to_transfer_output&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> ON_EXIT
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>queue
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The format of the submit description file, is documented in
+&lt;a href="https://htcondor.readthedocs.io/en/latest/users-manual/submitting-a-job.html">HTCondor manual&lt;/a>
+and
+&lt;a href="https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html#submit-description-file-commands">&lt;code>condor_submit&lt;/code> man page&lt;/a>.&lt;/p>
+&lt;blockquote>
 &lt;p>Submission of a job with the -spool option causes HTCondor to spool all input
 files, the job event log, and any proxy across a connection to the machine
 where the condor_schedd daemon is running. After spooling these files, the
 machine from which the job is submitted may disconnect from the network or
 modify its local copies of the spooled files.&lt;/p>
 &lt;/blockquote>
-&lt;p>Submit job:&lt;/p>
+&lt;p>Submit job using
+&lt;a href="https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html">condor_submit&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Submitting a job, spooling input and output files to&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ condor_submit --spool --name condorce1.ciemat.es &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --pool condorce1.ciemat.es:9619 env.sub
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Submitting job&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> job&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> submitted to cluster 97412.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Checking the status of a specific job&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Monitor the status of the job using
+&lt;a href="https://htcondor.readthedocs.io/en/latest/man-pages/condor_q.html">condor_q&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Checking the status of a specific job&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ condor_q --name condorce1.ciemat.es --pool condorce1.ciemat.es:9619 &lt;span style="color:#0000cf;font-weight:bold">97412&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -1168,53 +1243,70 @@ modify its local copies of the spooled files.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Total &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> query: &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> jobs&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> completed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> removed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> idle, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> running, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> held, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> suspended
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Total &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> dteam050: &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> jobs&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> completed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> removed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> idle, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> running, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> held, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> suspended
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Total &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> all users: &lt;span style="color:#0000cf;font-weight:bold">883&lt;/span> jobs&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">411&lt;/span> completed, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> removed, &lt;span style="color:#0000cf;font-weight:bold">200&lt;/span> idle, &lt;span style="color:#0000cf;font-weight:bold">259&lt;/span> running, &lt;span style="color:#0000cf;font-weight:bold">13&lt;/span> held, &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> suspended
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieving the output of a specific job&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is also possible to view the output of a running job using
+&lt;a href="https://htcondor.readthedocs.io/en/latest/man-pages/condor_tail.html">condor_tail&lt;/a>.&lt;/p>
+&lt;p>Download the job output to the &lt;strong>UI&lt;/strong> using
+&lt;a href="https://htcondor.readthedocs.io/en/latest/man-pages/condor_transfer_data.html">condor_transfer_data&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieving the output of a specific job&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $ condor_transfer_data -name condorce1.ciemat.es -pool condorce1.ciemat.es:9619 97412.0
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Fetching data files...
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references">References&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references-1">References&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html">HTCondor Quick Start Guide&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/man-pages/condor_submit.html">HTCondor: condor_submit&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/man-pages/condor_transfer_data.html">HTCondor: condor_transfer_data&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://htcondor.readthedocs.io/en/latest/apis/index.html">HTCondor Application Programming Interfaces (APIs)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://osg-htc.org/docs/compute-element/htcondor-ce-overview/">OSG Site Documentation: HTCondor-CE Overview&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="to-an-arc-ce-computing-element">To an ARC-CE Computing Element&lt;/h3>
-&lt;p>Test job showing env where it run&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-xrsl" data-lang="xrsl">&amp;amp;( executable = &amp;#34;/usr/bin/env&amp;#34; )
-( jobname = &amp;#34;arctest&amp;#34; )
-( stdout = &amp;#34;stdout&amp;#34; )
-( join = &amp;#34;yes&amp;#34; )
-( gmlog = &amp;#34;gmlog&amp;#34; )
-&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Generating a proxy for ARC&lt;/span>
+&lt;blockquote>
+&lt;p>&lt;a href="http://www.nordugrid.org/arc">ARC&lt;/a> Compute Element (CE) is a Grid front-end
+on top of a conventional computing resource (e.g. a Linux cluster or a
+standalone workstation). ARC CE is sometimes also called &lt;strong>ARC server&lt;/strong>.&lt;/p>
+&lt;/blockquote>
+&lt;p>While there is an official documentation on
+&lt;a href="http://www.nordugrid.org/arc/arc6/users/submit_job.html">How to submit a job&lt;/a>,
+the main steps will be documented below.&lt;/p>
+&lt;p>You first need to generate a proxy certificate using, &lt;code>arcproxy&lt;/code>, which is using
+the same credentials as &lt;code>voms-proxy-init&lt;/code>, so you first need to
+&lt;a href="#preparing-the-x509-credentials">prepare your X.509 credentials&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Generating a proxy for ARC&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcproxy --voms dteam
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter pass phrase &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> private key:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Contacting VOMS server &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>named dteam&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>: voms2.hellasgrid.gr on port: &lt;span style="color:#0000cf;font-weight:bold">15004&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Proxy generation succeeded
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span>: 2022-10-27 02:23:52
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Sending a job using ARC&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Select a CE&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --attrs CEImpl --query &lt;span style="color:#4e9a06">&amp;#39;CEImpl=*ARC-CE&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Example: arc01.grid.cyfronet.pl:2811/nordugrid-SLURM-grid-dteam&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Get info about the selected CE&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create &lt;code>testjob.xrsl&lt;/code>, a test job expressed in
+&lt;a href="https://www.nordugrid.org/arc/arc6/users/xrsl.html">xRSL&lt;/a>, showing environment
+where it will run:&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-xrsl" data-lang="xrsl">&amp;amp;( executable = &amp;#34;/usr/bin/env&amp;#34; )
+( jobname = &amp;#34;arctest&amp;#34; )
+( stdout = &amp;#34;stdout&amp;#34; )
+( join = &amp;#34;yes&amp;#34; )
+( gmlog = &amp;#34;gmlog&amp;#34; )
+&lt;/code>&lt;/pre>&lt;p>Then review the ARC CE information and send the job using
+&lt;a href="https://www.nordugrid.org/arc/arc6/users/client_tools.html#arcsub">&lt;code>arcsub&lt;/code>&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Getting info about the selected CE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Example CE: alex4.nipne.ro:2811/nordugrid-SLURM-dteam&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=alex4.nipne.ro*))&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=alex4.nipne.ro:2811/nordugrid-SLURM-dteam))&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Submitting the job, the JOB_ID will be written on the output&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcsub --jobdescrfile testjob.xrsl --computing-element alex4.nipne.ro
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Job submitted with jobid: gsiftp://alex4.nipne.ro:2811/jobs/....
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Export JOB_ID to be used for other commands&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#000">JOB_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;gsiftp://alex4.nipne.ro:2811/jobs/....&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Monitoring the status of the job&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Jobs will be in state Finished once completed&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can use
+&lt;a href="https://www.nordugrid.org/arc/arc6/users/client_tools.html#arcstat">&lt;code>arcstat&lt;/code>&lt;/a>
+to monitor the job:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Monitoring the status of the job&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcstat &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Use -l parameter with arcstat to get more information on the status of the Job&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcstat -l &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieve output of finished job&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieve output files of the finished job, removing them from the server&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The jobs will be in state &lt;em>Finished&lt;/em> once completed.&lt;/p>
+&lt;p>You can finally retrieve the output of a finished job using
+&lt;a href="https://www.nordugrid.org/arc/arc6/users/client_tools.html#arcget">&lt;code>arcget&lt;/code>&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieve output files of the finished job, removing them from the server&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcget &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Results stored at: Ow7KmRKv71nuvw3Vp3UrRNqABFKDmABFKDmfJKDmABFKDmoeT5zn
@@ -1229,15 +1321,20 @@ selection from CE registered in a central registry, such as &lt;code>nordugrid.o
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Use -l paramter to get more information on the status of the Job&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcstat -l &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references-1">References&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references-2">References&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="http://www.nordugrid.org/arc/arc6/users/submit_job.html">ARC: submit a job&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://www.nordugrid.org/arc/arc6/users/client_tools.html">ARC client tools&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="to-a-cream-computing-element">To a CREAM Computing Element&lt;/h3>
 &lt;blockquote>
-&lt;p>Broken on the UI installed from UMD via our Ansible module&lt;/p>
+&lt;p>The CREAM (Computing Resource Execution And Management) Service is a simple,
+lightweight service that implements all the operations at the Computing
+Element (CE) level.&lt;/p>
 &lt;/blockquote>
+&lt;p>The first step is to prepare a JDL as &lt;code>testjob.jdl&lt;/code>. The
+&lt;a href="https://cream-guide.readthedocs.io/en/latest/JDL_Guide.html">CREAM JDL Guide&lt;/a>,
+documents the creation of the JDL:&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-jdl" data-lang="jdl">[
 Type = &amp;#34;Job&amp;#34;;
 JobType = &amp;#34;Normal&amp;#34;;
@@ -1246,12 +1343,35 @@ StdOutput = &amp;#34;output.txt&amp;#34;;
 StdError = &amp;#34;error.txt&amp;#34;;
 OutputSandbox = {&amp;#34;output.txt&amp;#34;, &amp;#34;error.txt&amp;#34;};
 ]
-&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ glite-ce-job-submit &lt;span style="color:#4e9a06">&amp;#39;lpsc-cream-ce.in2p3.fr:8443/cream-pbs-dteam&amp;#39;&lt;/span> testjob.jdl
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>glite-ce-job-submit: error &lt;span style="color:#204a87;font-weight:bold">while&lt;/span> loading shared libraries: libclassad.so.7: cannot open shared object file: No such file or directory
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="via-the-egi-workload-manager">Via the EGI Workload Manager&lt;/h3>
+&lt;/code>&lt;/pre>&lt;p>Then you can submit, monitor and retrieve the output of the job.&lt;/p>
 &lt;blockquote>
-&lt;p>FIXME: To be documented.&lt;/p>
+&lt;p>Those commands are broken on the UI installed from UMD via
+&lt;a href="https://github.com/EGI-Federation/ansible-role-ui">our Ansible module&lt;/a>, but
+are provided here as a reference, and for users having access to UI maintained
+by or for their community and providing the required commands.&lt;/p>
 &lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Subbmiting a job, job ID would be printed to the output&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ glite-ce-job-submit &lt;span style="color:#4e9a06">&amp;#39;lpsc-cream-ce.in2p3.fr:8443/cream-pbs-dteam&amp;#39;&lt;/span> testjob.jdl
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Use a variable with the job ID to be reused later&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">JOB_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;...&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Monitoring the job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ glite-ce-job-status &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieving the output of the job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ glite-ce-job-output &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="references-3">References&lt;/h2>
 &lt;ul>
-&lt;li>In the webportal: using EGI Check-in&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;li>&lt;a href="https://cream-guide.readthedocs.io/en/latest/User_Guide.html">CREAM User&amp;rsquo;s guide&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://wiki-igi.cnaf.infn.it/twiki/bin/view/CREAM/UserGuideEMI3">CREAM User&amp;rsquo;s Guide for EMI-3&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="via-the-egi-workload-manager">Via the EGI Workload Manager&lt;/h3>
+&lt;blockquote>
+&lt;p>The &lt;a href="https://www.egi.eu/services/workload-manager/">EGI Workload Manager&lt;/a> is a
+service provided to the EGI community to efficiently manage and distribute
+computing workloads on the EGI infrastructure.&lt;/p>
+&lt;/blockquote>
+&lt;p>Using the
+&lt;a href="../../compute/orchestration/workload-manager/#the-egi-workload-manager-web-portal">Workload Manger web interface&lt;/a>
+or the
+&lt;a href="../../compute/orchestration/workload-manager/#the-dirac-client-tool">DIRAC command-line interface (CLI)&lt;/a>
+is documented in the
+&lt;a href="../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>.&lt;/p></description></item></channel></rss>
