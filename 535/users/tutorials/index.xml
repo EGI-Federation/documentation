@@ -948,11 +948,19 @@ and configure access for your VOMS server, using the proper &lt;code>.vomses&lt;
 &lt;code>.lsc&lt;/code> files, based on the information available on the VOMS server of the
 specific VO.
 &lt;ul>
-&lt;li>as an example with &lt;code>dteam&lt;/code>, look at
+&lt;li>as an example with &lt;code>dteam&lt;/code>, you can find the VOMS server address in the
+&lt;a href="../../../internal/operations-portal">Operations Portal&lt;/a>:
+&lt;a href="https://operations-portal.egi.eu/vo/view/voname/dteam">https://operations-portal.egi.eu/vo/view/voname/dteam&lt;/a>.
+Then looking at
 &lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/configuration/configuration.action">dteam VOMS configuration&lt;/a>,
-and create &lt;code>/etc/vomses/dteam-voms2.hellasgrid.gr&lt;/code> with the &lt;strong>VOMSES
-string&lt;/strong> and &lt;code>/etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc&lt;/code> with
-the &lt;strong>LSC configuration&lt;/strong> info found on that page.&lt;/li>
+you can create:
+&lt;ul>
+&lt;li>&lt;code>/etc/vomses/dteam-voms2.hellasgrid.gr&lt;/code> with the content of the &lt;strong>VOMSES
+string&lt;/strong>.&lt;/li>
+&lt;li>&lt;code>/etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc&lt;/code> with the
+content for the &lt;strong>LSC configuration&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Some
