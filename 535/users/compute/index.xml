@@ -188,7 +188,11 @@ the appropriate certificate store of their local machine (on Windows).&lt;/li>
 &lt;li>Proceed to &lt;a href="../../compute/orchestration/workload-manager">Workload Manager&lt;/a>
 to submit HTC jobs or retrieve job results, login using
 &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> when prompted.&lt;/li>
-&lt;/ol></description></item><item><title>Users: Compute Orchestration</title><link>/users/compute/orchestration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/</guid><description>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>If you are interested in using command-line and direct submission to Compute
+Elements, there is a &lt;a href="../../tutorials/">tutorial on HTC job submission&lt;/a>.&lt;/p>
+&lt;/blockquote></description></item><item><title>Users: Compute Orchestration</title><link>/users/compute/orchestration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>One of the challenges for researchers in recent years is to manage an ever
 increasing amount of compute and storage services, which then form ever more
