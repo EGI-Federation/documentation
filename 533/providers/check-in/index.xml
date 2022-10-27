@@ -1857,7 +1857,18 @@ Token or the UserInfo endpoint is wrong.&lt;/p>
 the Keycloak based UserInfo Endpoint&lt;/li>
 &lt;li>You have added the Access Token to the Authorization header of the request&lt;/li>
 &lt;/ol>
-&lt;h2 id="integrating-science-gateways-with-rcauth-for-obtaining-proxy-certificates">Integrating Science Gateways with RCauth for obtaining (proxy) certificates&lt;/h2>
+&lt;h5 id="502-bad-gateway-error-after-redirecting-back-to-the-service">&lt;code>502 Bad Gateway&lt;/code> error after redirecting back to the Service&lt;/h5>
+&lt;p>If you are using NGINX as a Reverse Proxy, and you are getting the following
+error message in the logs:&lt;/p>
+&lt;blockquote>
+&lt;p>upstream sent too big header while reading response header from upstream&lt;/p>
+&lt;/blockquote>
+&lt;p>Then you need to increase the size of the buffer by adding the following options
+in the vhost configuration:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>proxy_buffers &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span> 256k&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>proxy_buffer_size 128k&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>proxy_busy_buffers_size 256k&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="integrating-science-gateways-with-rcauth-for-obtaining-proxy-certificates">Integrating Science Gateways with RCauth for obtaining (proxy) certificates&lt;/h2>
 &lt;p>In order for Science Gateways (VO portals) to obtain RFC proxy certificates
 derived from &lt;strong>personal&lt;/strong> end-entity certificates, an EGI Science Gateway can
 make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
