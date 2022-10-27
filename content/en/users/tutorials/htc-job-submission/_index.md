@@ -32,8 +32,8 @@ In order to interact with HTC resources, you should have access to a
 `User Interface`, often referred to as a `UI`. This software environment will
 provide all the tools required to interact with the different middleware, as
 different sites can be using different Computing Element (CE), such as
-HTCondorCE and ARC-CE (CREAM is a legacy software stack that is not
-officially supported).
+HTCondorCE and ARC-CE (CREAM is a legacy software stack that is not officially
+supported).
 
 Different possibilities are available to access an UI:
 
@@ -47,6 +47,18 @@ distribution, but it will also require additional software and configuration.
 
 In order to help with deploying an UI, different solutions are possible:
 
+- Deploying an UI manually, using the packages available from
+  [UMD repositories](https://go.egi.eu/umd). You will need to install at least
+  the `ui` meta-package, with `voms-client`, the
+  [IGTF distribution](../../../providers/operations-manuals/howto01_using_igtf_ca_distribution),
+  and configure access for your VOMS server, using the proper `.vomses` and
+  `.lsc` files, based on the information available on the VOMS server of the
+  specific VO.
+  - as an example with `dteam`, look at
+    [dteam VOMS configuration](https://voms2.hellasgrid.gr:8443/voms/dteam/configuration/configuration.action),
+    and create `/etc/vomses/dteam-voms2.hellasgrid.gr` with the **VOMSES
+    string** and `/etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc`
+    with the **LSC configuration** info found on that page.
 - Some
   [Ansible roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html)
   are available in the
@@ -64,8 +76,8 @@ In order to help with deploying an UI, different solutions are possible:
   [terraform](https://terraform.io) based deployment allowing to deploy a
   `User Interface (UI)` in a
   [Cloud Compute virtual machine](../../compute/cloud-compute). This integrated
-  is based on the Ansible modules, and can be use as a skeleton or example on
-  how to use them.
+  deployment is based on the Ansible modules, and should be adjusted to your
+  environment and needs.
 
 > This tutorial is based on using a VM deployed using the
 > [ui-deployment](https://github.com/EGI-Federation/ui-deployment) repository,
