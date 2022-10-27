@@ -32,7 +32,7 @@ In order to interact with HTC resources, you should have access to a
 `User Interface`, often referred to as a `UI`. This software environment will
 provide all the tools required to interact with the different middleware, as
 different sites can be using different Computing Element (CE), such as
-HTCondorCE and ARC-CE (CREAM is a legacy software stack that is now more
+HTCondorCE and ARC-CE (CREAM is a legacy software stack that is not
 officially supported).
 
 Different possibilities are available to access an UI:
