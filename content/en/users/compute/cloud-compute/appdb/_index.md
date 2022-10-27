@@ -238,108 +238,17 @@ check out the autocompletion list.
 
 ### Authenticated Access
 
-Some or all operations on certain resources may require authentication, as
-indicated in the API Reference section below. In order to authenticate, the
-following parameters must be provided in the query string, or POST fields
-accordingly:
+Some or all operations on certain resources may require authentication, as 
+indicated in the API Reference section below. In order to perform authenticated 
+API calls, users need to create an access token and provide the following 
+parameters in the query string, or POST fields accordingly:
 
-- `username` or `userid`: the [EGI SSO](https://www.egi.eu/sso/) username or the
-  EGI AppDB user ID (it can be found on the top of you personal profile at the
-  [AppDB portal](http://appdb.egi.eu/))
-- `passwd`: the [EGI SSO](https://www.egi.eu/sso/) password if providing a
-  username, or the MD5 sum of the password if providing an EGI AppDB user ID
-- `apikey`: a valid API key. Registered users can generate API keys from within
-  the AppDB portal, under their profile preferences tab
+- `accesstoken`: a valid access token. Registered users can generate access 
+  tokens from within the AppDB portal, under their profile preferences tab
 
-When creating a client application that makes authenticated use of the AppDB
-API, developers have a choice of either
-
-- forwarding the [EGI SSO](https://www.egi.eu/sso/) credentials of their users,
-  or
-- using a _system account_ which acts on behalf of their users. Registered users
-  can create system accounts from within the AppDB portal, under their profile
-  preferences tab. _Note that system accounts may only be used for API calls and
-  cannot log into the portal._
-
-The first case would apply best to client applications that share the same user
-base with the AppDB (e.g. NGI versions of the portal), while the second case
-would be preferred by client applications that have a different user base (e.g.
-external projects which wish to collaborate). The use of an API key permits the
-identification of the source of API requests in both of the above cases, and
-adds an extra level of security by allowing access only from specific sources
-via netfilters. Defining netfilters for an API key is not required, but it is
-strongly suggested, since they can help safeguard its use. Special care should
-be taken by client applications that make client-side API calls (e.g. web pages
-with JavaScript via XHR), since the API key would then probably be visible to
-the public. In such cases, it is advised to use a proxy which routes API calls
-and append the API key server-side.
-
-#### Sample Use Cases
-
-- **Example 1**: NGI_MARS wants to launch its own web portal, with interface in
-  the Martian language, which will only display applications that have been
-  developed by Martians, and which will allow its users to modify data. The
-  senior developer creates an [EGI SSO](https://www.egi.eu/sso/) account if they
-  do not have one already, logs into the
-  [EGI AppDB portal](http://appdb.egi.eu/) and creates a new API key in his or
-  her profile page. The new web portal gets developed and launched. When a user
-  visits the site, they provide a username and password in order to log in. The
-  web page sends the username and password over HTTPS back to a PHP server,
-  which then makes a [cURL](http://php.net/manual/en/book.curl.php) GET call to
-
-  `https://appdb-pi.egi.eu/rest/1.0/people/profile?username={username}&passwd={password}&apikey={apikey}`
-
-  with the API key hard-coded in the PHP code, or read from a server-side config
-  file. The AppDB server returns the XML representation of the user's profile,
-  which contains its user ID. The Martian site then stores the user ID and the
-  MD5 sum of the password in the server session and/or in a client-side cookie,
-  and the log in procedure is complete. All future authenticated calls to the
-  AppDB API from the Martial site are then done either though PHP server-side
-  cURL calls in a similar fasion, where the user ID and password are retrieved
-  from the session information, or via JavaScript XHR proxied through the
-  Martian server in order to securely append the API key, if the site uses Ajax.
-
-- **Example 2**: The Grid4Martians distributed computing project, which has its
-  own user base and set of applications, wants to collaborate with
-  [EGI](http://www.egi.eu), by registering its applications in the EGI AppDB,
-  and by providing its users with information about applications from the
-  [EGI project](http://www.egi.eu). The project has its own complicated
-  authorization system and does not want to force its users to create
-  [EGI SSO](https://www.egi.eu/sso/) accounts. The senior developer creates an
-  [EGI SSO](https://www.egi.eu/sso/) account if they do not have one already,
-  logs into the [EGI AppDB portal](http://appdb.egi.eu/) and creates a new API
-  key in his or her profile page, like in example 1, but creates a system
-  account as well, named _The Grid4Martians Project_ with a username of
-  _grid4martians_. All AppDB API calls have been planed to be made server-side
-  from an array of 3 servers in their domain, so the appropriate netfilters are
-  also set. The project already has its own web page setup, which gets upgraded
-  with a newly developed module that synchronizes data with the
-  [EGI AppDB](http://appdb.egi.eu/). Initially, the module issues multiple
-  server-side PUT operations to
-
-  `https://appdb-pi.egi.eu/rest/1.0/applications?username=grid4martians&passwd={password}&apikey={apikey}`
-
-  providing XML representation of its own applications, in order to register
-  them with the [EGI AppDB](http://appdb.egi.eu), and associates the returned
-  IDs with the entries in its own backend. It also issues a GET operation to
-
-  `https://appdb-pi.egi.eu/rest/1.0/applications?listmode=listing`
-
-  to get a list of all the applications registered in the AppDB, and then issues
-  multiple GET operations to
-
-  `https://appdb-pi.egi.eu/rest/1.0/applications/{id}?username=grid4martians&passwd={password}&apikey={apikey}`
-
-  one for each of the application IDs returned by the listing, in order to
-  migrate EGI applications into their own backend. Now, each time one of its
-  users uses the project's site to modify an application, the server issues a
-  POST operation to the AppDB API, in order to synchronize the changes.
-
-  `https://appdb-pi.egi.eu/rest/1.0/applications/{id}?username=grid4martians&passwd={password}&apikey={apikey}`
-
-  Moreover, it periodically checks the AppDB by issuing a GET operation when an
-  application is displayed in their portal, in order to check if the information
-  contained in their backend is up-to-date.
+Access tokens may be assigned netfilters, which will only allow authenticated 
+access from specific sources. Defining netfilters for an access token is not 
+required, but it is strongly suggested, since they can help safeguard its use.
 
 ## API Reference
 
