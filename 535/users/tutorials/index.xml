@@ -928,7 +928,7 @@ used by resource providers, commands should be adjusted to the appropriate VO.&l
 &lt;code>User Interface&lt;/code>, often referred to as a &lt;code>UI&lt;/code>. This software environment will
 provide all the tools required to interact with the different middleware, as
 different sites can be using different Computing Element (CE), such as
-HTCondorCE and ARC-CE (CREAM is a legacy software stack that is now more
+HTCondorCE and ARC-CE (CREAM is a legacy software stack that is not
 officially supported).&lt;/p>
 &lt;p>Different possibilities are available to access an UI:&lt;/p>
 &lt;ul>
