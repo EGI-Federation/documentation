@@ -1005,7 +1005,13 @@ for the &lt;strong>LSC configuration&lt;/strong>.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="preparing-the-x509-credentials">Preparing the X.509 credentials&lt;/h3>
+&lt;p>If you cannot edit content in &lt;code>/etc/vomses&lt;/code> and &lt;code>/etc/grid-security/vomsdir&lt;/code>,
+you can respectively use &lt;code>~/.glite/vomses&lt;/code> and &lt;code>~/.glite/vomsdir&lt;/code>. You may have
+to export &lt;code>X509_VOMSES&lt;/code> and &lt;code>X509_VOMS_DIR&lt;/code> in your shell, as documented
+&lt;a href="https://twiki.cern.ch/twiki/bin/view/DREAM/GridSetup">on CERN&amp;rsquo;s twiki&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">X509_VOMSES&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>~/.glite/vomses
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">X509_VOMS_DIR&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>~/.glite/vomsdir
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="preparing-the-x509-credentials">Preparing the X.509 credentials&lt;/h3>
 &lt;p>Once you have obtained an X.509 user certificate issued by a Certification
 Authority (CA) part of the
 &lt;a href="https://www.igtf.net">International Global Trust Federation (IGTF)&lt;/a>, you should
@@ -1361,7 +1367,7 @@ by or for their community and providing the required commands.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ glite-ce-job-status &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Retrieving the output of the job&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ glite-ce-job-output &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="references-3">References&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references-3">References&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://cream-guide.readthedocs.io/en/latest/User_Guide.html">CREAM User&amp;rsquo;s guide&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://wiki-igi.cnaf.infn.it/twiki/bin/view/CREAM/UserGuideEMI3">CREAM User&amp;rsquo;s Guide for EMI-3&lt;/a>&lt;/li>
@@ -1377,4 +1383,6 @@ computing workloads on the EGI infrastructure.&lt;/p>
 or the
 &lt;a href="../../compute/orchestration/workload-manager/#the-dirac-client-tool">DIRAC command-line interface (CLI)&lt;/a>
 is documented in the
-&lt;a href="../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;a href="../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>.&lt;/p>
+&lt;h2 id="asking-for-help">Asking for help&lt;/h2>
+&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item></channel></rss>
