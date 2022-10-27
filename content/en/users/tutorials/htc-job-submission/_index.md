@@ -108,6 +108,16 @@ on the VOMS server of the specific VO.
   - `/etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc` with the content
     for the **LSC configuration**.
 
+If you cannot edit content in `/etc/vomses` and `/etc/grid-security/vomsdir`,
+you can respectively use `~/.glite/vomses` and `~/.glite/vomsdir`. You may have
+to export `X509_VOMSES` and `X509_VOMS_DIR` in your shell, as documented
+[on CERN's twiki](https://twiki.cern.ch/twiki/bin/view/DREAM/GridSetup):
+
+```shell
+export X509_VOMSES=~/.glite/vomses
+export X509_VOMS_DIR=~/.glite/vomsdir
+```
+
 ### Preparing the X.509 credentials
 
 Once you have obtained an X.509 user certificate issued by a Certification
