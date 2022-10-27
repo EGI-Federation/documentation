@@ -54,11 +54,16 @@ In order to help with deploying an UI, different solutions are possible:
   and configure access for your VOMS server, using the proper `.vomses` and
   `.lsc` files, based on the information available on the VOMS server of the
   specific VO.
-  - as an example with `dteam`, look at
+  - as an example with `dteam`, you can find the VOMS server address in the
+    [Operations Portal](../../../internal/operations-portal):
+    [https://operations-portal.egi.eu/vo/view/voname/dteam](https://operations-portal.egi.eu/vo/view/voname/dteam).
+    Then looking at
     [dteam VOMS configuration](https://voms2.hellasgrid.gr:8443/voms/dteam/configuration/configuration.action),
-    and create `/etc/vomses/dteam-voms2.hellasgrid.gr` with the **VOMSES
-    string** and `/etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc` with
-    the **LSC configuration** info found on that page.
+    you can create:
+    - `/etc/vomses/dteam-voms2.hellasgrid.gr` with the content of the **VOMSES
+      string**.
+    - `/etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc` with the
+      content for the **LSC configuration**.
 - Some
   [Ansible roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html)
   are available in the
