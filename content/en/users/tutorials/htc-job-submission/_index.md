@@ -249,7 +249,6 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
 The `condor` package will install all the required dependencies.
 
 ```shell
-# XXX probably to be added to the UI ansible role
 yum install condor
 ```
 
