@@ -1116,8 +1116,7 @@ by &lt;code>lcg-info&lt;/code>:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-submitting-and-managing-jobs">Step 4: submitting and managing jobs&lt;/h2>
 &lt;h3 id="to-an-htcondorce-computing-element">To an HTCondorCE Computing Element&lt;/h3>
 &lt;p>The &lt;code>condor&lt;/code> package will install all the required dependencies.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># XXX probably to be added to the UI ansible role&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>yum install condor
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>yum install condor
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>Condor will use the
 &lt;a href="#step-2-creating-a-voms-proxy">VOMS proxy created earlier&lt;/a>.&lt;/p>
