@@ -191,7 +191,8 @@ to submit HTC jobs or retrieve job results, login using
 &lt;/ol>
 &lt;blockquote>
 &lt;p>If you are interested in using command-line and direct submission to Compute
-Elements, there is a &lt;a href="../../tutorials/">tutorial on HTC job submission&lt;/a>.&lt;/p>
+Elements, there is a
+&lt;a href="../../tutorials/htc-job-submission">tutorial on HTC job submission&lt;/a>.&lt;/p>
 &lt;/blockquote></description></item><item><title>Users: Compute Orchestration</title><link>/users/compute/orchestration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>One of the challenges for researchers in recent years is to manage an ever
