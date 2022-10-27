@@ -937,7 +937,7 @@ officially supported).&lt;/p>
 &lt;/ul>
 &lt;h3 id="deploying-an-ui">Deploying an UI&lt;/h3>
 &lt;p>The UI is available as a package in the &lt;a href="https://go.egi.eu/umd">UMD&lt;/a> software
-distribution, but it will also required additional software and configuration.&lt;/p>
+distribution, but it will also require additional software and configuration.&lt;/p>
 &lt;p>In order to help with deploying an UI, different solutions are possible:&lt;/p>
 &lt;ul>
 &lt;li>Some
