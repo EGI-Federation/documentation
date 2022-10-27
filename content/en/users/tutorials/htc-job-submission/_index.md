@@ -60,7 +60,7 @@ In order to help with deploying an UI, different solutions are possible:
   configuring the software repositories from where all the software will be
   installed.
 - The repository
-  [ui-deployment](https://github.com/EGI-Federation/ui-deployment) provides an
+  [ui-deployment](https://github.com/EGI-Federation/ui-deployment) provides a
   [terraform](https://terraform.io) based deployment allowing to deploy a
   `User Interface (UI)` in a
   [Cloud Compute virtual machine](../../compute/cloud-compute). This integrated
