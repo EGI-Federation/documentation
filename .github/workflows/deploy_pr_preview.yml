@@ -49,7 +49,7 @@ jobs:
         run: |
           unzip pr.zip
           PR_NUMBER="$(cat ./PR)"
-          echo "::set-output name=pr_number::$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
 
       - name: Deploy Pull Request preview
         uses: peaceiris/actions-gh-pages@v3
