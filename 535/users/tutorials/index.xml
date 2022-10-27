@@ -975,7 +975,9 @@ refer to the repository for detailed instructions on deploying the UI.&lt;/p>
 &lt;blockquote>
 &lt;p>The
 &lt;a href="https://italiangrid.github.io/voms/index.html">Virtual Organization Membership Service (VOMS)&lt;/a>
-enables Virtual Organisation (VO) access control in distributed services.&lt;/p>
+enables Virtual Organisation (VO) access control in distributed services. A
+proxy allows limited delegation of rights, allowing remote services to
+securely interact with other resources and services on behalf of the user.&lt;/p>
 &lt;/blockquote>
 &lt;h3 id="configuring-the-system-to-use-voms-client">Configuring the system to use voms-client&lt;/h3>
 &lt;blockquote>
@@ -1065,6 +1067,7 @@ create a &lt;strong>VOMS proxy&lt;/strong> for &lt;code>dteam&lt;/code> VO:&lt;/
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="references">References&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://italiangrid.github.io/voms/documentation.html">VOMS Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://wiki.egi.eu/wiki/USG_Proxy_Certificates">USG Proxy Certificates&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="step-3-identifying-available-resources">Step 3: identifying available resources&lt;/h2>
 &lt;p>Nowadays two Computing Element (CE) &amp;ldquo;flavours&amp;rdquo; are mainly used:&lt;/p>
