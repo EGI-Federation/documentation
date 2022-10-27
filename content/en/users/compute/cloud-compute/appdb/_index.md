@@ -238,16 +238,16 @@ check out the autocompletion list.
 
 ### Authenticated Access
 
-Some or all operations on certain resources may require authentication, as 
-indicated in the API Reference section below. In order to perform authenticated 
-API calls, users need to create an access token and provide the following 
+Some or all operations on certain resources may require authentication, as
+indicated in the API Reference section below. In order to perform authenticated
+API calls, users need to create an access token and provide the following
 parameters in the query string, or POST fields accordingly:
 
-- `accesstoken`: a valid access token. Registered users can generate access 
+- `accesstoken`: a valid access token. Registered users can generate access
   tokens from within the AppDB portal, under their profile preferences tab
 
-Access tokens may be assigned netfilters, which will only allow authenticated 
-access from specific sources. Defining netfilters for an access token is not 
+Access tokens may be assigned netfilters, which will only allow authenticated
+access from specific sources. Defining netfilters for an access token is not
 required, but it is strongly suggested, since they can help safeguard its use.
 
 ## API Reference
