@@ -928,8 +928,8 @@ used by resource providers, commands should be adjusted to the appropriate VO.&l
 &lt;code>User Interface&lt;/code>, often referred to as a &lt;code>UI&lt;/code>. This software environment will
 provide all the tools required to interact with the different middleware, as
 different sites can be using different Computing Element (CE), such as
-HTCondorCE and ARC-CE (CREAM is a legacy software stack that is not
-officially supported).&lt;/p>
+HTCondorCE and ARC-CE (CREAM is a legacy software stack that is not officially
+supported).&lt;/p>
 &lt;p>Different possibilities are available to access an UI:&lt;/p>
 &lt;ul>
 &lt;li>Having access to an UI provided by/for your community&lt;/li>
@@ -940,6 +940,21 @@ officially supported).&lt;/p>
 distribution, but it will also require additional software and configuration.&lt;/p>
 &lt;p>In order to help with deploying an UI, different solutions are possible:&lt;/p>
 &lt;ul>
+&lt;li>Deploying an UI manually, using the packages available from
+&lt;a href="https://go.egi.eu/umd">UMD repositories&lt;/a>. You will need to install at least
+the &lt;code>ui&lt;/code> meta-package, with &lt;code>voms-client&lt;/code>, the
+&lt;a href="../../../providers/operations-manuals/howto01_using_igtf_ca_distribution">IGTF distribution&lt;/a>,
+and configure access for your VOMS server, using the proper &lt;code>.vomses&lt;/code> and
+&lt;code>.lsc&lt;/code> files, based on the information available on the VOMS server of the
+specific VO.
+&lt;ul>
+&lt;li>as an example with &lt;code>dteam&lt;/code>, look at
+&lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/configuration/configuration.action">dteam VOMS configuration&lt;/a>,
+and create &lt;code>/etc/vomses/dteam-voms2.hellasgrid.gr&lt;/code> with the &lt;strong>VOMSES
+string&lt;/strong> and &lt;code>/etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc&lt;/code> with
+the &lt;strong>LSC configuration&lt;/strong> info found on that page.&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>Some
 &lt;a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html">Ansible roles&lt;/a>
 are available in the
@@ -957,8 +972,8 @@ installed.&lt;/li>
 &lt;a href="https://terraform.io">terraform&lt;/a> based deployment allowing to deploy a
 &lt;code>User Interface (UI)&lt;/code> in a
 &lt;a href="../../compute/cloud-compute">Cloud Compute virtual machine&lt;/a>. This integrated
-is based on the Ansible modules, and can be use as a skeleton or example on
-how to use them.&lt;/li>
+deployment is based on the Ansible modules, and should be adjusted to your
+environment and needs.&lt;/li>
 &lt;/ul>
 &lt;blockquote>
 &lt;p>This tutorial is based on using a VM deployed using the
@@ -1020,6 +1035,11 @@ and for which you have a valid VOMS proxy.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus GlueCEUniqueID GlueServiceEndpoint GlueServiceType
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Using &lt;code>lcg-info&lt;/code> it&amp;rsquo;s possible to easily do more targeted queries, like focusing
 on a specific VO.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>lcg-info&lt;/code> and &lt;code>lcg-infosites&lt;/code> are only taking into account the &lt;strong>GLUE 1&lt;/strong>
+schema, and will lack information that is only published according to the
+&lt;strong>GLUE 2&lt;/strong> schema, like for most &lt;code>HTCondorCE&lt;/code> Computing Elements.&lt;/p>
+&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Identify compute resources available for dteam VO&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Identify storage resources available for dteam VO&lt;/span>
