@@ -564,7 +564,7 @@ $ glite-ce-job-status "$JOB_ID"
 $ glite-ce-job-output "$JOB_ID"
 ```
 
-## References
+#### References
 
 - [CREAM User's guide](https://cream-guide.readthedocs.io/en/latest/User_Guide.html)
 - [CREAM User's Guide for EMI-3](https://wiki-igi.cnaf.infn.it/twiki/bin/view/CREAM/UserGuideEMI3)
@@ -581,3 +581,7 @@ or the
 [DIRAC command-line interface (CLI)](../../compute/orchestration/workload-manager/#the-dirac-client-tool)
 is documented in the
 [EGI Workload Manager](../../compute/orchestration/workload-manager).
+
+## Asking for help
+
+If you find issues please do not hesitate to [contact us](../../../support/).
