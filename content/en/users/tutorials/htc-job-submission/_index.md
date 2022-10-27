@@ -57,8 +57,8 @@ In order to help with deploying an UI, different solutions are possible:
   - as an example with `dteam`, look at
     [dteam VOMS configuration](https://voms2.hellasgrid.gr:8443/voms/dteam/configuration/configuration.action),
     and create `/etc/vomses/dteam-voms2.hellasgrid.gr` with the **VOMSES
-    string** and `/etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc`
-    with the **LSC configuration** info found on that page.
+    string** and `/etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc` with
+    the **LSC configuration** info found on that page.
 - Some
   [Ansible roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html)
   are available in the
@@ -152,6 +152,10 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
 
 Using `lcg-info` it's possible to easily do more targeted queries, like focusing
 on a specific VO.
+
+> `lcg-info` and `lcg-infosites` are only taking into account the **GLUE 1**
+> schema, and will lack information that is only published according to the
+> **GLUE 2** schema, like for most `HTCondorCE` Computing Elements.
 
 ```shell
 # Identify compute resources available for dteam VO
