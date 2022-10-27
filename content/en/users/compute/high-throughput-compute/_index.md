@@ -116,3 +116,6 @@ Before users can access EGI HTC services, they have to:
 1. Proceed to [Workload Manager](../../compute/orchestration/workload-manager)
    to submit HTC jobs or retrieve job results, login using
    [EGI Check-in](../../aai/check-in) when prompted.
+
+> If you are interested in using command-line and direct submission to Compute
+> Elements, there is a [tutorial on HTC job submission](../../tutorials/).
