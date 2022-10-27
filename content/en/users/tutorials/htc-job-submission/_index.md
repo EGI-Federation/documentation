@@ -43,7 +43,7 @@ Different possibilities are available to access an UI:
 ### Deploying an UI
 
 The UI is available as a package in the [UMD](https://go.egi.eu/umd) software
-distribution, but it will also required additional software and configuration.
+distribution, but it will also require additional software and configuration.
 
 In order to help with deploying an UI, different solutions are possible:
 
