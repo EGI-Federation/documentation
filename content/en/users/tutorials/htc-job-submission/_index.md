@@ -81,7 +81,9 @@ In order to help with deploying an UI, different solutions are possible:
 
 > The
 > [Virtual Organization Membership Service (VOMS)](https://italiangrid.github.io/voms/index.html)
-> enables Virtual Organisation (VO) access control in distributed services.
+> enables Virtual Organisation (VO) access control in distributed services. A
+> proxy allows limited delegation of rights, allowing remote services to
+> securely interact with other resources and services on behalf of the user.
 
 ### Configuring the system to use voms-client
 
@@ -179,6 +181,7 @@ key usage : Digital Signature, Key Encipherment
 ### References
 
 - [VOMS Documentation](https://italiangrid.github.io/voms/documentation.html)
+- [USG Proxy Certificates](https://wiki.egi.eu/wiki/USG_Proxy_Certificates)
 
 ## Step 3: identifying available resources
 
