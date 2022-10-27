@@ -118,4 +118,5 @@ Before users can access EGI HTC services, they have to:
    [EGI Check-in](../../aai/check-in) when prompted.
 
 > If you are interested in using command-line and direct submission to Compute
-> Elements, there is a [tutorial on HTC job submission](../../tutorials/).
+> Elements, there is a
+> [tutorial on HTC job submission](../../tutorials/htc-job-submission).
