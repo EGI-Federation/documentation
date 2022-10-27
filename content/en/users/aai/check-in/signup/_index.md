@@ -71,10 +71,6 @@ get started:
 1. After reviewing your request, click **Confirm** and re-authenticate yourself
    using the Identity Provider you selected before.
 
-1. In the case of the **Sign Up** registration, you need to wait for an EGI User
-   Sponsor to approve your request to join the EGI User Community. Upon
-   approval, EGI AAI will send you a notification email.
-
 Note: After your registration has been completed, you can manage your profile
 through the [EGI Account Registry portal](https://aai.egi.eu/registry).
 
