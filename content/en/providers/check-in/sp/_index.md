@@ -1112,6 +1112,22 @@ To solve this, please make sure the that:
    the Keycloak based UserInfo Endpoint
 1. You have added the Access Token to the Authorization header of the request
 
+##### `502 Bad Gateway` error after redirecting back to the Service
+
+If you are using NGINX as a Reverse Proxy, and you are getting the following
+error message in the logs:
+
+> upstream sent too big header while reading response header from upstream
+
+Then you need to increase the size of the buffer by adding the following options
+in the vhost configuration:
+
+```shell
+proxy_buffers 4 256k;
+proxy_buffer_size 128k;
+proxy_busy_buffers_size 256k;
+```
+
 ## Integrating Science Gateways with RCauth for obtaining (proxy) certificates
 
 In order for Science Gateways (VO portals) to obtain RFC proxy certificates
