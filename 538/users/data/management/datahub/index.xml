@@ -424,7 +424,7 @@ Details on how to use are described
 &lt;li>access control lists&lt;/li>
 &lt;/ul>
 &lt;h2 id="posix-permissions">POSIX Permissions&lt;/h2>
-&lt;p>Onedata allows you to control access to your data in a POSIX-like fashion for
+&lt;p>DataHub allows you to control access to your data in a POSIX-like fashion for
 users, group and others in terms of read, write and executable permissions.&lt;/p>
 &lt;p>An important nuance regarding file permissions is that all space members are
 treated as a virtual group which is the group owner of all files in the space.
@@ -446,10 +446,10 @@ to access the file through a share will fail to do so as all permissions are
 declined for &amp;ldquo;others&amp;rdquo;.&lt;/p>
 &lt;p>In order to edit permissions:&lt;/p>
 &lt;ol>
-&lt;li>Navigate to &lt;strong>Oneprovider&lt;/strong> page&lt;/li>
-&lt;li>Navigate to data management page, by click on &lt;strong>Data&lt;/strong> on the left menubar&lt;/li>
-&lt;li>Select a &lt;strong>file&lt;/strong> or a &lt;strong>directory&lt;/strong> by clicking on it&lt;/li>
-&lt;li>Click on the &lt;strong>lock icon&lt;/strong>&lt;/li>
+&lt;li>Click on &lt;strong>Data&lt;/strong> on the left menubar&lt;/li>
+&lt;li>Select the Space you want to access and the &lt;strong>Data&lt;/strong> option&lt;/li>
+&lt;li>Select a &lt;strong>file&lt;/strong> or a &lt;strong>directory&lt;/strong> and right clicking on it&lt;/li>
+&lt;li>Click on the &lt;strong>Permissions&lt;/strong> option&lt;/li>
 &lt;li>Select &lt;strong>POSIX&lt;/strong> type of permissions radio button at the top&lt;/li>
 &lt;li>Enter privileges in octal form (e.g. 770)&lt;/li>
 &lt;li>Click &lt;strong>OK&lt;/strong> in order to save changes&lt;/li>
