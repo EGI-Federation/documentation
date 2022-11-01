@@ -76,7 +76,7 @@ In order to edit permissions:
 1. Navigate to **Oneprovider** page
 1. Navigate to data management page, by click on **Data** on the left menubar
 1. Select a **file** or a **directory** and right clicking on it
-1. Click on the **lock icon**
+1. Click on the **Permissions** option
 1. Select **POSIX** type of permissions radio button at the top
 1. Enter privileges in octal form (e.g. 770)
 1. Click **OK** in order to save changes
