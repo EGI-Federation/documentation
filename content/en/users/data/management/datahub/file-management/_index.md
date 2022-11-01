@@ -9,7 +9,6 @@ description: >
   File Management in DataHub
 ---
 
-# Managing files
 ## Web interface
 
 All files in Onedata are organized in spaces. The Web User interface allows for uploading new files as well as opening existing files.
@@ -32,6 +31,7 @@ For more advanced use cases, files can be managed using [CDMI](http://www.snia.o
 ## File Permissions
 
 You can control access to your data with a combination of:
+
 * classical (POSIX) file permissions
 * access control lists
 
