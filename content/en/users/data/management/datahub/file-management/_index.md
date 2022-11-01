@@ -91,7 +91,7 @@ to control permissions for individual users and groups.
 In order to edit ACL's:
 
 1. Navigate to **Data** tab
-1. Select a **file** or a **directory** by clicking on it
+1. Select a **file** or a **directory** by right clicking on it
 1. Click on the **Permissions** option
 1. Click on the **ACL** radio button
 1. Edit permissions by clicking on the appropriate **checkbox**
