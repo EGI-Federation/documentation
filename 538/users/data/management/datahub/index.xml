@@ -448,8 +448,8 @@ declined for &amp;ldquo;others&amp;rdquo;.&lt;/p>
 &lt;ol>
 &lt;li>Navigate to &lt;strong>Oneprovider&lt;/strong> page&lt;/li>
 &lt;li>Navigate to data management page, by click on &lt;strong>Data&lt;/strong> on the left menubar&lt;/li>
-&lt;li>Select a &lt;strong>file&lt;/strong> or a &lt;strong>directory&lt;/strong> and right clicking on it&lt;/li>
-&lt;li>Click on the &lt;strong>Permissions&lt;/strong> option&lt;/li>
+&lt;li>Select a &lt;strong>file&lt;/strong> or a &lt;strong>directory&lt;/strong> by clicking on it&lt;/li>
+&lt;li>Click on the &lt;strong>lock icon&lt;/strong>&lt;/li>
 &lt;li>Select &lt;strong>POSIX&lt;/strong> type of permissions radio button at the top&lt;/li>
 &lt;li>Enter privileges in octal form (e.g. 770)&lt;/li>
 &lt;li>Click &lt;strong>OK&lt;/strong> in order to save changes&lt;/li>
