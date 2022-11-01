@@ -462,7 +462,7 @@ to control permissions for individual users and groups.&lt;/p>
 &lt;ol>
 &lt;li>Navigate to &lt;strong>Data&lt;/strong> tab&lt;/li>
 &lt;li>Select a &lt;strong>file&lt;/strong> or a &lt;strong>directory&lt;/strong> by clicking on it&lt;/li>
-&lt;li>Click on the &lt;strong>lock icon&lt;/strong>&lt;/li>
+&lt;li>Click on the &lt;strong>Permissions&lt;/strong> option&lt;/li>
 &lt;li>Click on the &lt;strong>ACL&lt;/strong> radio button&lt;/li>
 &lt;li>Edit permissions by clicking on the appropriate &lt;strong>checkbox&lt;/strong>&lt;/li>
 &lt;li>Click &lt;strong>OK&lt;/strong> in order to save changes&lt;/li>
