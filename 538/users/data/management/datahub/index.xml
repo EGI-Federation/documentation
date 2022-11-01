@@ -424,7 +424,7 @@ Details on how to use are described
 &lt;li>access control lists&lt;/li>
 &lt;/ul>
 &lt;h2 id="posix-permissions">POSIX Permissions&lt;/h2>
-&lt;p>DataHub allows you to control access to your data in a POSIX-like fashion for
+&lt;p>Onedata allows you to control access to your data in a POSIX-like fashion for
 users, group and others in terms of read, write and executable permissions.&lt;/p>
 &lt;p>An important nuance regarding file permissions is that all space members are
 treated as a virtual group which is the group owner of all files in the space.
