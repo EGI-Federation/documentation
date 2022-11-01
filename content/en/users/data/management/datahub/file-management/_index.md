@@ -11,7 +11,7 @@ description: >
 
 ## Web interface
 
-All files in Onedata are organized in spaces. The Web User interface allows for
+All files in DataHub are organized in spaces. The Web User interface allows for
 uploading new files as well as opening existing files.
 
 In order to upload a file simply open the directory in which the file should be
