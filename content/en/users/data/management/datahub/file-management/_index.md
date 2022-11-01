@@ -1,6 +1,6 @@
 ---
 title: DataHub File Management
-linkTitle: DataHub-File-Management
+linkTitle: File Management
 weight: 30
 type: docs
 aliases:
