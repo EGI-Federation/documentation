@@ -44,7 +44,7 @@ You can control access to your data with a combination of:
 
 ## POSIX Permissions
 
-Onedata allows you to control access to your data in a POSIX-like fashion for
+DataHub allows you to control access to your data in a POSIX-like fashion for
 users, group and others in terms of read, write and executable permissions.
 
 An important nuance regarding file permissions is that all space members are
