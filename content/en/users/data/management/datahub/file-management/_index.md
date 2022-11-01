@@ -20,7 +20,8 @@ placed and drag the file into the browser window:
 ![drag the file into the browser window](datahub-drag-file.png)
 
 Opening or downloading a file simply requires double clicking on the file in the
-file window. \*Make sure that the popups for this browser window are not
+file window. 
+{{% alert title="Note" color="info" %}} Make sure that the popups for this browser window are not
 blocked, and unblock them if necessary.{{% /alert %}} 
 
 ## Direct access via POSIX
