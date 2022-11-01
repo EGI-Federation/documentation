@@ -20,9 +20,9 @@ placed and drag the file into the browser window:
 ![drag the file into the browser window](datahub-drag-file.png)
 
 Opening or downloading a file simply requires double clicking on the file in the
-file window. 
+file window.
 {{% alert title="Note" color="info" %}} Make sure that the popups for this browser window are not
-blocked, and unblock them if necessary.{{% /alert %}} 
+blocked, and unblock them if necessary.{{% /alert %}}
 
 ## Direct access via POSIX
 
@@ -75,7 +75,7 @@ declined for "others".
 In order to edit permissions:
 
 1. Click on **Data** on the left menubar
-2. Select the Space you want to access and the **Data** option
+1. Select the Space you want to access and the **Data** option
 1. Select a **file** or a **directory** and right clicking on it
 1. Click on the **Permissions** option
 1. Select **POSIX** type of permissions radio button at the top
