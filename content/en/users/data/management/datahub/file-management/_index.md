@@ -21,7 +21,7 @@ placed and drag the file into the browser window:
 
 Opening or downloading a file simply requires double clicking on the file in the
 file window. \*Make sure that the popups for this browser window are not
-blocked, and unblock them if necessary.\*\*
+blocked, and unblock them if necessary.{{% /alert %}} 
 
 ## Direct access via POSIX
 
