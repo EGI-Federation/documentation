@@ -73,7 +73,6 @@ declined for "others".
 
 In order to edit permissions:
 
-1. Navigate to **Oneprovider** page
 1. Click on **Data** on the left menubar
 2. Select the Space you want to access and the **Data** option
 1. Select a **file** or a **directory** and right clicking on it
