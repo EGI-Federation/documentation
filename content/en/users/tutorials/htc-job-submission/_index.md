@@ -439,8 +439,10 @@ While there is an official documentation on
 [How to submit a job](http://www.nordugrid.org/arc/arc6/users/submit_job.html),
 the main steps will be documented below.
 
-You first need to generate a proxy certificate using, `arcproxy`, which is using
-the same credentials as `voms-proxy-init`, so you first need to
+If you haven't already generated a credential with `voms-proxy-init`, you can
+generate a proxy certificate using ARC's own tool: `arcproxy`, which is using
+the same credentials as `voms-proxy-init`, and should produce an equivalent
+proxy. To do this you first need to
 [prepare your X.509 credentials](#preparing-the-x509-credentials).
 
 ```shell
