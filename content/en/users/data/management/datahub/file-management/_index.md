@@ -3,8 +3,6 @@ title: DataHub File Management
 linkTitle: File Management
 weight: 30
 type: docs
-aliases:
-  - /users/datahub/datahub-file-management
 description: >
   File Management in DataHub
 ---
