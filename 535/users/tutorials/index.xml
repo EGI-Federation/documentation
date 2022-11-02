@@ -1274,8 +1274,10 @@ standalone workstation). ARC CE is sometimes also called &lt;strong>ARC server&l
 &lt;p>While there is an official documentation on
 &lt;a href="http://www.nordugrid.org/arc/arc6/users/submit_job.html">How to submit a job&lt;/a>,
 the main steps will be documented below.&lt;/p>
-&lt;p>You first need to generate a proxy certificate using, &lt;code>arcproxy&lt;/code>, which is using
-the same credentials as &lt;code>voms-proxy-init&lt;/code>, so you first need to
+&lt;p>If you haven&amp;rsquo;t already generated a credential with &lt;code>voms-proxy-init&lt;/code>, you can
+generate a proxy certificate using ARC&amp;rsquo;s own tool: &lt;code>arcproxy&lt;/code>, which is using
+the same credentials as &lt;code>voms-proxy-init&lt;/code>, and should produce an equivalent
+proxy. To do this you first need to
 &lt;a href="#preparing-the-x509-credentials">prepare your X.509 credentials&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Generating a proxy for ARC&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcproxy --voms dteam
