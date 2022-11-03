@@ -909,6 +909,10 @@ providing documentation for automated on-demand execution of Docker containers&l
 &lt;p>This tutorial describes how to submit
 &lt;a href="../../compute/high-throughput-compute">High Throughput Compute (HTC)&lt;/a> jobs
 using command-line.&lt;/p>
+&lt;blockquote>
+&lt;p>This tutorial is meant for somewhat advanced users or the ones willing or
+needing to interact with the resources at a low level.&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>To submit an EGI HTC job, you will have to:&lt;/p>
 &lt;ol>
@@ -932,8 +936,9 @@ HTCondorCE and ARC-CE (CREAM is a legacy software stack that is not officially
 supported).&lt;/p>
 &lt;p>Different possibilities are available to access an UI:&lt;/p>
 &lt;ul>
-&lt;li>Having access to an UI provided by/for your community&lt;/li>
-&lt;li>Deploying a UI&lt;/li>
+&lt;li>Having access to an UI provided by/for your community, please get in touch
+with them about this.&lt;/li>
+&lt;li>Deploying a UI, as documented below.&lt;/li>
 &lt;/ul>
 &lt;h3 id="deploying-an-ui">Deploying an UI&lt;/h3>
 &lt;p>The UI is available as a package in the &lt;a href="https://go.egi.eu/umd">UMD&lt;/a> software
