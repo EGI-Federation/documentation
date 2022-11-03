@@ -12,6 +12,9 @@ This tutorial describes how to submit
 [High Throughput Compute (HTC)](../../compute/high-throughput-compute) jobs
 using command-line.
 
+> This tutorial is meant for somewhat advanced users or the ones willing or
+> needing to interact with the resources at a low level.
+
 ## Prerequisites
 
 To submit an EGI HTC job, you will have to:
@@ -37,8 +40,9 @@ supported).
 
 Different possibilities are available to access an UI:
 
-- Having access to an UI provided by/for your community
-- Deploying a UI
+- Having access to an UI provided by/for your community, please get in touch
+  with them about this.
+- Deploying a UI, as documented below.
 
 ### Deploying an UI
 
