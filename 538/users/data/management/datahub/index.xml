@@ -401,32 +401,31 @@ remove all the unwanted permissions, e.g.: make it the same as the VO to which
 the user belongs to, and leave only, as extra, the permission shown in the
 screenshot.&lt;/p></description></item><item><title>Users: DataHub File Management</title><link>/users/data/management/datahub/file-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/file-management/</guid><description>
 &lt;h2 id="web-interface">Web interface&lt;/h2>
-&lt;p>All files in DataHub are organized in spaces. The Web User interface allows for
-uploading new files as well as opening existing files.&lt;/p>
-&lt;p>In order to upload a file simply open the directory in which the file should be
-placed and drag the file into the browser window:&lt;/p>
+&lt;p>In the &lt;a href="../">EGI DataHub&lt;/a>, all files are organized in spaces. The Web User
+interface allows for uploading new files as well as opening existing files.&lt;/p>
+&lt;p>In order to upload a file, open the directory in which the file should be placed
+and drag the file into the browser window:&lt;/p>
 &lt;p>&lt;img src="datahub-drag-file.png" alt="drag the file into the browser window">&lt;/p>
-&lt;p>Opening or downloading a file simply requires double clicking on the file in the
-file window.
+&lt;p>Opening or downloading a file requires double clicking on the file in the file
+window.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-Make sure that the popups for this browser window are not
-blocked, and unblock them if necessary.
+Make sure that the pop-ups for this
+browser window are not blocked, and unblock them if necessary.
 &lt;/div>
-&lt;/p>
 &lt;h2 id="direct-access-via-posix">Direct access via POSIX&lt;/h2>
-&lt;p>Files can also be accessed directly via POSIX protocol, using Oneclient tool.
-Details on how to use are described
-&lt;a href="https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html">here&lt;/a>.&lt;/p>
+&lt;p>Files can also be accessed directly via the POSIX interface, using &lt;code>Oneclient&lt;/code>
+tool. Details on how to use are described in the
+&lt;a href="https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html">official Oneclient documentation&lt;/a>.&lt;/p>
 &lt;h2 id="cdmi-cloud-data-management-interface">CDMI (Cloud Data Management Interface)&lt;/h2>
-&lt;p>For more advanced use cases, files can be managed using
+&lt;p>For more advanced use cases, files can be managed using the
 &lt;a href="http://www.snia.org/cdmi">CDMI&lt;/a> protocol, as described in details
-&lt;a href="https://onedata.org/#/home/documentation/doc/advanced/cdmi.html">here&lt;/a>.&lt;/p>
+&lt;a href="https://onedata.org/#/home/documentation/doc/advanced/cdmi.html">in the Onedata CDMI documentation&lt;/a>.&lt;/p>
 &lt;h2 id="file-permissions">File Permissions&lt;/h2>
 &lt;p>You can control access to your data with a combination of:&lt;/p>
 &lt;ul>
 &lt;li>classical (POSIX) file permissions&lt;/li>
-&lt;li>access control lists&lt;/li>
+&lt;li>Access Control Lists (ACL)&lt;/li>
 &lt;/ul>
 &lt;h2 id="posix-permissions">POSIX Permissions&lt;/h2>
 &lt;p>DataHub allows you to control access to your data in a POSIX-like fashion for
@@ -437,21 +436,21 @@ That means that whenever a file is accessed by a space member who is not the
 owner of the file, the group permissions are taken into consideration.
 Permissions for &amp;ldquo;others&amp;rdquo; are considered when accessing
 &lt;a href="https://onedata.org/#/home/documentation/doc/using_onedata/shares.html">shares&lt;/a>.&lt;/p>
-&lt;p>Consider the following example of file&amp;rsquo;s POSIX permissions:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>rwx r-- ---
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> guests
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> space members
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;p>Consider the following example of a file&amp;rsquo;s POSIX permissions:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>rwx r-- ---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | guests
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | space members
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> |
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> owner user
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the above case, the creator of the file (its owner user) has a full access to
-the file. All space members have read access to the file. Users (guests) who try
-to access the file through a share will fail to do so as all permissions are
-declined for &amp;ldquo;others&amp;rdquo;.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the above case, the creator of the file, its &lt;em>owner user&lt;/em>, has a full access
+to the file. All &lt;em>space members&lt;/em> have read access to the file. Other users,
+&lt;em>guests&lt;/em>, who try to access the file through a share will fail to do so as all
+permissions are declined for &amp;ldquo;others&amp;rdquo;.&lt;/p>
 &lt;p>In order to edit permissions:&lt;/p>
 &lt;ol>
-&lt;li>Click on &lt;strong>Data&lt;/strong> on the left menubar&lt;/li>
+&lt;li>Click on &lt;strong>Data&lt;/strong> on the left menu bar&lt;/li>
 &lt;li>Select the Space you want to access and the &lt;strong>Data&lt;/strong> option&lt;/li>
 &lt;li>Select a &lt;strong>file&lt;/strong> or a &lt;strong>directory&lt;/strong> and right clicking on it&lt;/li>
 &lt;li>Click on the &lt;strong>Permissions&lt;/strong> option&lt;/li>
@@ -463,7 +462,7 @@ declined for &amp;ldquo;others&amp;rdquo;.&lt;/p>
 &lt;h2 id="access-control-lists">Access Control Lists&lt;/h2>
 &lt;p>You can also setup permissions using more advanced Access Control Lists option
 to control permissions for individual users and groups.&lt;/p>
-&lt;p>In order to edit ACL&amp;rsquo;s:&lt;/p>
+&lt;p>In order to edit ACLs:&lt;/p>
 &lt;ol>
 &lt;li>Navigate to &lt;strong>Data&lt;/strong> tab&lt;/li>
 &lt;li>Select a &lt;strong>file&lt;/strong> or a &lt;strong>directory&lt;/strong> by right clicking on it&lt;/li>
@@ -472,8 +471,10 @@ to control permissions for individual users and groups.&lt;/p>
 &lt;li>Edit permissions by clicking on the appropriate &lt;strong>checkbox&lt;/strong>&lt;/li>
 &lt;li>Click &lt;strong>OK&lt;/strong> in order to save changes&lt;/li>
 &lt;/ol>
-&lt;p>&lt;em>Note, that access lists take precedence over POSIX permissions. If access list
-is set, POSIX are set to octal value of 000.&lt;/em>&lt;/p>
+&lt;blockquote>
+&lt;p>Note, that access lists take precedence over POSIX permissions. If access list
+is set, POSIX are set to octal value of 000.&lt;/p>
+&lt;/blockquote>
 &lt;p>The order in which permissions take precedence is indicated with an arrow.&lt;/p>
 &lt;p>&lt;img src="datahub-acl.png" alt="DataHub ACL">&lt;/p></description></item><item><title>Users: DataHub Links</title><link>/users/data/management/datahub/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/links/</guid><description>
 &lt;ul>
