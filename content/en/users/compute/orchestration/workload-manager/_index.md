@@ -341,6 +341,15 @@ username     : jdoe
 properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 ```
 
+#### Access the client via CVMFS
+
+The DIRAC client may be accessed via CVMFS with the following tow command lines:
+
+```shell
+$ source /cvmfs/dirac.egi.eu/dirac/bashrc_egi_dev
+$ dirac-login --issuer=https://dirac.egi.eu/auth
+```
+
 #### Managing simple jobs
 
 <!-- markdownlint-disable line-length -->
@@ -447,7 +456,7 @@ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
   [Advanced Job Management](https://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html)
 - [Past tutorials](https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11)
 
-#### Technical Support
+### Technical Support
 
 - DIRAC User Guide:
   [https://dirac.readthedocs.io/en/latest/UserGuide/](https://dirac.readthedocs.io/en/latest/UserGuide/)
