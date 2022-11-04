@@ -343,7 +343,7 @@ properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 
 #### Access the client via CVMFS
 
-The DIRAC client may be accessed via CVMFS with the following tow command lines:
+The DIRAC client may be accessed via CVMFS with the following two command lines:
 
 ```shell
 $ source /cvmfs/dirac.egi.eu/dirac/bashrc_egi_dev
