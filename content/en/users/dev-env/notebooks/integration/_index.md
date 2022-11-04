@@ -110,7 +110,7 @@ Note that inputs that point to a URL should be specified using the
 
 ## EGI-WMS (DIRAC)
 
-If you are using a Notebooks instance integrated with D4Science, you may access the DIRAC client via CVMFS with the following two command lines:
+If you are using a Notebooks instance integrated with EGI Workload Manager, you may access the DIRAC client via CVMFS with the following two command lines:
 
 ```shell
 $ source /cvmfs/dirac.egi.eu/dirac/bashrc_egi_dev
