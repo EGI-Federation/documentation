@@ -108,6 +108,15 @@ print(execution.status)
 Note that inputs that point to a URL should be specified using the
 `ComplextDataInput` class as shown above.
 
+## EGI-WMS (DIRAC)
+
+If you are using a Notebooks instance integrated with D4Science, you may access the DITAC client via CVMFS with the following tow command lines:
+
+```shell
+$ source /cvmfs/dirac.egi.eu/dirac/bashrc_egi_dev
+$ dirac-login --issuer=https://dirac.egi.eu/auth
+```
+
 ## Other third-party services
 
 We are open for integration with other services that may be relevant for your
