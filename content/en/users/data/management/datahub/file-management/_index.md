@@ -102,3 +102,32 @@ In order to edit ACLs:
 The order in which permissions take precedence is indicated with an arrow.
 
 ![DataHub ACL](datahub-acl.png)
+
+## File sharing
+
+It is possible to share DataHub data available with other user of DataHub or external by generating a unique URL. This can be done, on the web interface by selecting  a directory or file and right-clicking on it or clicking the three dots on the right like in the following screenshot and selecting "share":
+
+![select](datahub-share-01.png)
+
+this will open a window that allows you to give a name to the share that you are about to create. This is shown in the following screenshot:
+
+![select](datahub-share-02.png)
+
+by clicking on the "Create" button the share is created and you are taken to the last window where the  URL of the share can copied for further use. This is shown in the following screenshot:
+
+![select](datahub-share-03.png)
+
+To manage existing shares, in the space that is in use, it is sufficient to click the "Share" section and a list of the existing ones is shown. By clicking on the three dots on the right of the share you can rename, remove or copy the URL of the share.
+This is shown in the following screenshot:
+
+![select](datahub-share-04.png)
+
+By clicking on the share itself it is possible to edit additional attributes of the share like the description and the possibility to publish it as Open Data trough one of the supported handle service.
+
+An API is also availabble for the creation and administration of the shares at [this](https://onedata.org/#/home/api/stable/onezone?anchor=tag/Share) address.
+
+## Data transfer management
+
+After uploading some data to DataHub you can manage the replication and transfer to other DataHub providers that support the same space. To do so, after uploading some files, select them, right click on the selection and select "Data distribution". This will open the following window:
+
+![select](datahub-transfer-01.png)
