@@ -158,7 +158,7 @@ Please use the command below on any Unix machine and send its output to\
 `dirac-support` `<AT>` `mailman.egi.eu`
 
 ```shell
-openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
+$ openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
 ```
 
 ### The EGI Workload Manager Web Portal
@@ -240,14 +240,14 @@ The easiest way to install the client is via
 installed in your machine, install the DIRAC CLI as follows:
 
 ```shell
-docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
+$ docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
 ```
 
 Once the client software is installed, it should be configured in order to
 access the EGI Workload Manager service:
 
 ```shell
-source /opt/dirac/bashrc
+$ source /opt/dirac/bashrc
 ```
 
 To proceed further a temporary proxy of the user certificate should be created.
@@ -384,7 +384,7 @@ StdOutput = "StdOut"; StdError = "StdErr"; OutputSandbox = {"StdOut","StdErr"};
 Submit the job:
 
 ```shell
-dirac-wms-job-submit test.jdl JobID = 53755998
+$ dirac-wms-job-submit test.jdl JobID = 53755998
 ```
 
 Check the job status:
@@ -436,7 +436,7 @@ After creation of JDL file the next step is to submit the job, using the
 command:
 
 ```shell
-dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
+$ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 ```
 
 #### List of supported VOs
