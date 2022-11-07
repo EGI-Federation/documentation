@@ -136,7 +136,12 @@ client. Once logged into the EGI Notebooks open a terminal and run:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fedcloud token check
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the &lt;code>fedcloud&lt;/code> command is not available, please follow the
 &lt;a href="../../../getting-started/cli">getting started&lt;/a> guide to get it.&lt;/p>
-&lt;h2 id="d4science">D4Science&lt;/h2>
+&lt;h2 id="egi-workload-manager-dirac">EGI Workload Manager (DIRAC)&lt;/h2>
+&lt;p>If you are using a Notebooks instance integrated with &lt;a href="../../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>,
+you may access the DIRAC client via CVMFS with the following two command lines:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">source&lt;/span> /cvmfs/dirac.egi.eu/dirac/bashrc_egi_dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ dirac-login --issuer&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://dirac.egi.eu/auth
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="d4science">D4Science&lt;/h2>
 &lt;p>If you are using a Notebooks instance integrated with D4Science, you can easily
 invoke DataMiner or any other D4Science functionality as the service will
 provide the &lt;code>GCUBE_TOKEN&lt;/code> environment variable with a valid token.&lt;/p>

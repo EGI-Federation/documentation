@@ -234,7 +234,7 @@ certificate.&lt;/p>
 the team needs to know your certificate&amp;rsquo;s subject.&lt;/p>
 &lt;p>Please use the command below on any Unix machine and send its output to&lt;br>
 &lt;code>dirac-support&lt;/code> &lt;code>&amp;lt;AT&amp;gt;&lt;/code> &lt;code>mailman.egi.eu&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>openssl x509 -in &lt;span style="color:#000">$HOME&lt;/span>/.globus/usercert.pem -subject -noout
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openssl x509 -in &lt;span style="color:#000">$HOME&lt;/span>/.globus/usercert.pem -subject -noout
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="the-egi-workload-manager-web-portal">The EGI Workload Manager Web Portal&lt;/h3>
 &lt;p>To access the EGI Workload Manager open a web browser to:
 &lt;a href="https://dirac.egi.eu/DIRAC/">https://dirac.egi.eu/DIRAC/&lt;/a>&lt;/p>
@@ -296,10 +296,10 @@ change to green. Right click the job, select:&lt;br>
 &lt;p>The easiest way to install the client is via
 &lt;a href="https://www.docker.com/">Docker Container&lt;/a>. If you have a Docker client
 installed in your machine, install the DIRAC CLI as follows:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -it -v &lt;span style="color:#000">$HOME&lt;/span>:&lt;span style="color:#000">$HOME&lt;/span> -e &lt;span style="color:#000">HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$HOME&lt;/span> diracgrid/client:egi
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -it -v &lt;span style="color:#000">$HOME&lt;/span>:&lt;span style="color:#000">$HOME&lt;/span> -e &lt;span style="color:#000">HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$HOME&lt;/span> diracgrid/client:egi
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once the client software is installed, it should be configured in order to
 access the EGI Workload Manager service:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">source&lt;/span> /opt/dirac/bashrc
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">source&lt;/span> /opt/dirac/bashrc
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To proceed further a temporary proxy of the user certificate should be created.
 This is necessary to get information from the central Configuration Service:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-proxy-init -x
@@ -373,6 +373,10 @@ certificate is uploaded to the DIRAC ProxyManager service.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>path : /tmp/x509up_u0
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>username : jdoe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>properties : LimitedDelegation, GenericPilot, Pilot, NormalUser
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="access-the-client-via-cvmfs">Access the client via CVMFS&lt;/h4>
+&lt;p>The DIRAC client may be accessed via CVMFS with the following two command lines:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">source&lt;/span> /cvmfs/dirac.egi.eu/dirac/bashrc_egi_dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ dirac-login --issuer&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://dirac.egi.eu/auth
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="managing-simple-jobs">Managing simple jobs&lt;/h4>
 &lt;!-- markdownlint-disable line-length -->
 &lt;table>
@@ -417,7 +421,7 @@ For example:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">StdOutput&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">StdError&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">OutputSandbox&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;StdOut&amp;#34;&lt;/span>,&lt;span style="color:#4e9a06">&amp;#34;StdErr&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Submit the job:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>dirac-wms-job-submit test.jdl &lt;span style="color:#000">JobID&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-wms-job-submit test.jdl &lt;span style="color:#000">JobID&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check the job status:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-wms-job-status &lt;span style="color:#0000cf;font-weight:bold">53755998&lt;/span> &lt;span style="color:#000">JobID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">23844073&lt;/span> &lt;span style="color:#000">Status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Waiting&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">MinorStatus&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Pilot Agent Submission&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">Site&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ANY&lt;span style="color:#000;font-weight:bold">;&lt;/span>
@@ -444,7 +448,7 @@ should be transferred to the grid to run the job. In this case the
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/bin/ls -la
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After creation of JDL file the next step is to submit the job, using the
 command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>dirac-wms-job-submit InputAndOuputSandbox.jdl &lt;span style="color:#000">JobID&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> XXXXXXXX
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dirac-wms-job-submit InputAndOuputSandbox.jdl &lt;span style="color:#000">JobID&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> XXXXXXXX
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="list-of-supported-vos">List of supported VOs&lt;/h4>
 &lt;ul>
 &lt;li>acc-comp.egi.eu, beapps, compchem, eiscat.se, eli-laser.eu,&lt;/li>
@@ -462,7 +466,7 @@ command:&lt;/p>
 &lt;a href="https://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html">Advanced Job Management&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11">Past tutorials&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h4 id="technical-support">Technical Support&lt;/h4>
+&lt;h2 id="technical-support">Technical Support&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>DIRAC User Guide:
