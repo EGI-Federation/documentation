@@ -103,46 +103,71 @@ The order in which permissions take precedence is indicated with an arrow.
 
 ![DataHub ACL](datahub-acl.png)
 
-> To limit the risk of making data inaccessible to yourself it is advisable to first add the required ACL if new ones are needed and if necessary remove the ones not needed. While using ACLs there should be at least one active or no user might be able to access the data. To regain the access the space owner would then need to modify the permissions.
+> To limit the risk of making data inaccessible to yourself it is advisable to
+> first add the required ACL if new ones are needed and if necessary remove the
+> ones not needed. While using ACLs there should be at least one active or no
+> user might be able to access the data. To regain the access the space owner
+> would then need to modify the permissions.
 
 ## File sharing
 
-It is possible to share DataHub data available with other user of DataHub or external by generating a unique URL. This can be done, on the web interface by selecting  a directory or file and right-clicking on it or clicking the three dots on the right like in the following screenshot and selecting "share":
+It is possible to share DataHub data available with other user of DataHub or
+external by generating a unique URL. This can be done, on the web interface by
+selecting a directory or file and right-clicking on it or clicking the three
+dots on the right like in the following screenshot and selecting "share":
 
 ![select](datahub-share-01.png)
 
-this will open a window that allows you to give a name to the share that you are about to create. This is shown in the following screenshot:
+this will open a window that allows you to give a name to the share that you are
+about to create. This is shown in the following screenshot:
 
 ![select](datahub-share-02.png)
 
-by clicking on the "Create" button the share is created and you are taken to the last window where the  URL of the share can copied for further use. This is shown in the following screenshot:
+by clicking on the "Create" button the share is created and you are taken to the
+last window where the URL of the share can copied for further use. This is shown
+in the following screenshot:
 
 ![select](datahub-share-03.png)
 
-To manage existing shares, in the space that is in use, it is sufficient to click the "Share" section and a list of the existing ones is shown. By clicking on the three dots on the right of the share you can rename, remove or copy the URL of the share.
-This is shown in the following screenshot:
+To manage existing shares, in the space that is in use, it is sufficient to
+click the "Share" section and a list of the existing ones is shown. By clicking
+on the three dots on the right of the share you can rename, remove or copy the
+URL of the share. This is shown in the following screenshot:
 
 ![select](datahub-share-04.png)
 
-By clicking on the share itself it is possible to edit additional attributes of the share like the description and the possibility to publish it as Open Data trough one of the supported handle service.
+By clicking on the share itself it is possible to edit additional attributes of
+the share like the description and the possibility to publish it as Open Data
+trough one of the supported handle service.
 
-An API is also availabble for the creation and administration of the shares at [this](https://onedata.org/#/home/api/stable/onezone?anchor=tag/Share) address.
+An API is also availabble for the creation and administration of the shares at
+[this](https://onedata.org/#/home/api/stable/onezone?anchor=tag/Share) address.
 
 ## Data transfer management
 
-After uploading some data to DataHub you can manage the replication and transfer to other DataHub providers that support the same space. To do so, after uploading some files, select them, right click on the selection and select "Data distribution". This will open the following window:
+After uploading some data to DataHub you can manage the replication and transfer
+to other DataHub providers that support the same space. To do so, after
+uploading some files, select them, right click on the selection and select "Data
+distribution". This will open the following window:
 
 ![select](datahub-transfer-01.png)
 
-This will show the providers available for the space being used and the current operation being performed if any. By clicking on the three dots next to the provider the following operation can be performed:
+This will show the providers available for the space being used and the current
+operation being performed if any. By clicking on the three dots next to the
+provider the following operation can be performed:
 
-- Migrate the data if the provider selected contain the data. This will copy the data to the other provider if not present and remove them from the selected one.
+- Migrate the data if the provider selected contain the data. This will copy the
+  data to the other provider if not present and remove them from the selected
+  one.
 - Replicate the data if the data is not present in the provider selected
-- Evic the data if the it is present in the current provider and al least in another one
+- Evic the data if the it is present in the current provider and al least in
+  another one
 
-The /transfers/ operations provide basic transfer management functionality based on the ID of transfer returned by /transfers [POST] operation.
+The /transfers/ operations provide basic transfer management functionality based
+on the ID of transfer returned by /transfers [POST] operation.
 
-With the API it is possible to get information about a specific transfer by simply queryinf the following resource:
+With the API it is possible to get information about a specific transfer by
+simply queryinf the following resource:
 
 ```shell
 curl -X GET -H "X-Auth-Token: $ACCESS_TOKEN" \
@@ -163,4 +188,9 @@ curl -X DELETE -H "X-Auth-Token: $ACCESS_TOKEN" \
 https://$ONEPROVIDER_HOST/api/v3/oneprovider/transfers/<TRANSFER_ID>
 ```
 
-The full API is available [here](https://onedata.org/#/home/api/21.02.0-alpha28/oneprovider?anchor=section/Overview/API-structure) which can be also used to schedule transfers, an option which is not available trough the web interface. Furthermore the status of the transfer can also be checked from the same page in the dedicated section [here](https://onedata.org/#/home/api/21.02.0-alpha28/oneprovider?anchor=operation/get_transfer_status).
+The full API is available
+[here](https://onedata.org/#/home/api/21.02.0-alpha28/oneprovider?anchor=section/Overview/API-structure)
+which can be also used to schedule transfers, an option which is not available
+trough the web interface. Furthermore the status of the transfer can also be
+checked from the same page in the dedicated section
+[here](https://onedata.org/#/home/api/21.02.0-alpha28/oneprovider?anchor=operation/get_transfer_status).
