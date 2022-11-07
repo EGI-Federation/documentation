@@ -108,7 +108,7 @@ print(execution.status)
 Note that inputs that point to a URL should be specified using the
 `ComplextDataInput` class as shown above.
 
-## EGI-WMS (DIRAC)
+## EGI Workload Manager (DIRAC)
 
 If you are using a Notebooks instance integrated with EGI Workload Manager,
 you may access the DIRAC client via CVMFS with the following two command lines:
