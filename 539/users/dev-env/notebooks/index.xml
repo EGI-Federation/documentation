@@ -173,7 +173,7 @@ sample:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">execution&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">status&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that inputs that point to a URL should be specified using the
 &lt;code>ComplextDataInput&lt;/code> class as shown above.&lt;/p>
-&lt;h2 id="egi-wms-dirac">EGI-WMS (DIRAC)&lt;/h2>
+&lt;h2 id="egi-workload-manager-dirac">EGI Workload Manager (DIRAC)&lt;/h2>
 &lt;p>If you are using a Notebooks instance integrated with EGI Workload Manager,
 you may access the DIRAC client via CVMFS with the following two command lines:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">source&lt;/span> /cvmfs/dirac.egi.eu/dirac/bashrc_egi_dev
