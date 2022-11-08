@@ -157,7 +157,7 @@ operation being performed if any. By clicking on the three dots, next to the
 provider, the following operation can be performed:
 
 - Migrate the data if the provider selected contain the data. This will copy the
-  data to the other provider if not present and remove them from the selected
+  data to the other provider, if not present, and remove them from the selected
   one.
 - Replicate the data if the data is not present in the provider selected
 - Evic the data if the it is present in the current provider and al least in
