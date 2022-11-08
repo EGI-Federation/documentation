@@ -123,8 +123,8 @@ about to create. This is shown in the following screenshot:
 
 ![select](datahub-share-02.png)
 
-by clicking on the "Create" button the share is created and you are taken to the
-last window where the URL of the share can copied for further use. This is shown
+By clicking on the "Create" button, the share is created and you are taken to the
+last window where the URL of the share can be copied for further use. This is shown
 in the following screenshot:
 
 ![select](datahub-share-03.png)
