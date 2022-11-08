@@ -163,11 +163,11 @@ provider, the following operation can be performed:
 - Evict the data, if the data is present in the current provider, and al least in
   another one
 
-The /transfers/ operations provide basic transfer management functionality based
-on the ID of transfer returned by /transfers [POST] operation.
+The `/transfers/` operations provide basic transfer management functionality based
+on the ID of transfer returned by `/transfers` `[POST]` operation.
 
 With the API it is possible to get information about a specific transfer by
-simply queryinf the following resource:
+simply querying the following resource:
 
 ```shell
 $ curl -X GET -H "X-Auth-Token: $ACCESS_TOKEN" \
