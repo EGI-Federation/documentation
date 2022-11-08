@@ -136,7 +136,7 @@ URL of the share. This is shown in the following screenshot:
 
 ![select](datahub-share-04.png)
 
-By clicking on the share itself it is possible to edit additional attributes of
+By clicking on the share itself, it is possible to edit additional attributes of
 the share like the description and the possibility to publish it as Open Data
 trough one of the supported handle service.
 
