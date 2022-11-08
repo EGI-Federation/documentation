@@ -170,8 +170,8 @@ With the API it is possible to get information about a specific transfer by
 simply queryinf the following resource:
 
 ```shell
-curl -X GET -H "X-Auth-Token: $ACCESS_TOKEN" \
-https://$ONEPROVIDER_HOST/api/v3/oneprovider/transfers/<TRANSFER_ID>
+$ curl -X GET -H "X-Auth-Token: $ACCESS_TOKEN" \
+    https://$ONEPROVIDER_HOST/api/v3/oneprovider/transfers/<TRANSFER_ID>
 ```
 
 or request all transfers for given space:
