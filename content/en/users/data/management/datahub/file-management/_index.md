@@ -188,9 +188,8 @@ $ curl -X DELETE -H "X-Auth-Token: $ACCESS_TOKEN" \
     https://$ONEPROVIDER_HOST/api/v3/oneprovider/transfers/<TRANSFER_ID>
 ```
 
-The full API is available
-[here](https://onedata.org/#/home/api/21.02.0-alpha28/oneprovider?anchor=section/Overview/API-structure)
-which can be also used to schedule transfers, an option which is not available
+[The full API](https://onedata.org/#/home/api/stable/oneprovider?anchor=section/Overview/API-structure)
+can also be used to schedule transfers, an option which is not available
 trough the web interface. Furthermore the status of the transfer can also be
-checked from the same page in the dedicated section
-[here](https://onedata.org/#/home/api/21.02.0-alpha28/oneprovider?anchor=operation/get_transfer_status).
+checked from in the section
+[get_transfer_status](https://onedata.org/#/home/api/stable/oneprovider?anchor=operation/get_transfer_status).
