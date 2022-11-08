@@ -103,9 +103,9 @@ The order in which permissions take precedence is indicated with an arrow.
 
 ![DataHub ACL](datahub-acl.png)
 
-> To limit the risk of making data inaccessible to yourself it is advisable to
-> first add the required ACL if new ones are needed and if necessary remove the
-> ones not needed. While using ACLs there should be at least one active or no
+> To limit the risk of making data inaccessible to yourself, it is advisable to
+> first add the required ACL if new ones are needed, and if necessary remove the
+> ones not needed. While using ACLs there should be at least one active, or no
 > user might be able to access the data. To regain the access the space owner
 > would then need to modify the permissions.
 
