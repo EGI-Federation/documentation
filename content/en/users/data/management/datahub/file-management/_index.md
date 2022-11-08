@@ -177,8 +177,8 @@ $ curl -X GET -H "X-Auth-Token: $ACCESS_TOKEN" \
 or request all transfers for given space:
 
 ```shell
-curl -X GET -H "X-Auth-Token: $ACCESS_TOKEN" \
-https://$ONEPROVIDER_HOST/api/v3/oneprovider/spaces/$SPACE_ID/transfers
+$ curl -X GET -H "X-Auth-Token: $ACCESS_TOKEN" \
+    https://$ONEPROVIDER_HOST/api/v3/oneprovider/spaces/$SPACE_ID/transfers
 ```
 
 Each transfer can be cancelled using the HTTP DELETE method:
