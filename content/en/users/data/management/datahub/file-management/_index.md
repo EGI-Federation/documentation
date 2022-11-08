@@ -118,7 +118,7 @@ dots on the right like in the following screenshot and selecting "share":
 
 ![select](datahub-share-01.png)
 
-this will open a window that allows you to give a name to the share that you are
+This will open a window allowing you to give a name to the share that you are
 about to create. This is shown in the following screenshot:
 
 ![select](datahub-share-02.png)
