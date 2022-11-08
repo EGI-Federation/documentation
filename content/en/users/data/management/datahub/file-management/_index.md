@@ -130,8 +130,8 @@ in the following screenshot:
 ![select](datahub-share-03.png)
 
 To manage existing shares, in the space that is in use, it is sufficient to
-click the "Share" section and a list of the existing ones is shown. By clicking
-on the three dots on the right of the share you can rename, remove or copy the
+click the "Share" section, then a list of the existing ones is shown. By clicking
+on the three dots on the right of the share, you can rename, remove or copy the
 URL of the share. This is shown in the following screenshot:
 
 ![select](datahub-share-04.png)
