@@ -140,8 +140,8 @@ By clicking on the share itself, it is possible to edit additional attributes of
 the share like the description and the possibility to publish it as Open Data
 trough one of the supported handle service.
 
-An API is also availabble for the creation and administration of the shares at
-[this](https://onedata.org/#/home/api/stable/onezone?anchor=tag/Share) address.
+An API is also available for the
+[creation and administration of the shares](https://onedata.org/#/home/api/stable/onezone?anchor=tag/Share).
 
 ## Data transfer management
 
