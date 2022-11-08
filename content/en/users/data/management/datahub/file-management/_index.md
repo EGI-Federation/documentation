@@ -111,9 +111,9 @@ The order in which permissions take precedence is indicated with an arrow.
 
 ## File sharing
 
-It is possible to share DataHub data available with other user of DataHub or
-external by generating a unique URL. This can be done, on the web interface by
-selecting a directory or file and right-clicking on it or clicking the three
+It is possible to share available DataHub data with other users or
+externally by generating a unique URL. This can be done, on the web interface, by
+selecting a directory or file, and right-clicking on it or clicking the three
 dots on the right like in the following screenshot and selecting "share":
 
 ![select](datahub-share-01.png)
