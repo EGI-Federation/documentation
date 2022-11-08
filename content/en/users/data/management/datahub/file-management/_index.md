@@ -152,9 +152,9 @@ distribution". This will open the following window:
 
 ![select](datahub-transfer-01.png)
 
-This will show the providers available for the space being used and the current
-operation being performed if any. By clicking on the three dots next to the
-provider the following operation can be performed:
+This will show the providers available for the space being used, and the current
+operation being performed if any. By clicking on the three dots, next to the
+provider, the following operation can be performed:
 
 - Migrate the data if the provider selected contain the data. This will copy the
   data to the other provider if not present and remove them from the selected
