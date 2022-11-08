@@ -184,8 +184,8 @@ https://$ONEPROVIDER_HOST/api/v3/oneprovider/spaces/$SPACE_ID/transfers
 Each transfer can be cancelled using the HTTP DELETE method:
 
 ```shell
-curl -X DELETE -H "X-Auth-Token: $ACCESS_TOKEN" \
-https://$ONEPROVIDER_HOST/api/v3/oneprovider/transfers/<TRANSFER_ID>
+$ curl -X DELETE -H "X-Auth-Token: $ACCESS_TOKEN" \
+    https://$ONEPROVIDER_HOST/api/v3/oneprovider/transfers/<TRANSFER_ID>
 ```
 
 The full API is available
