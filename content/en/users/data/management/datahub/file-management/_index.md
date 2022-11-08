@@ -111,10 +111,10 @@ The order in which permissions take precedence is indicated with an arrow.
 
 ## File sharing
 
-It is possible to share available DataHub data with other users or
-externally by generating a unique URL. This can be done, on the web interface, by
-selecting a directory or file, and right-clicking on it or clicking the three
-dots on the right like in the following screenshot and selecting "share":
+It is possible to share available DataHub data with other users or externally by
+generating a unique URL. This can be done, on the web interface, by selecting a
+directory or file, and right-clicking on it or clicking the three dots on the
+right like in the following screenshot and selecting "share":
 
 ![select](datahub-share-01.png)
 
@@ -123,16 +123,16 @@ about to create. This is shown in the following screenshot:
 
 ![select](datahub-share-02.png)
 
-By clicking on the "Create" button, the share is created and you are taken to the
-last window where the URL of the share can be copied for further use. This is shown
-in the following screenshot:
+By clicking on the "Create" button, the share is created and you are taken to
+the last window where the URL of the share can be copied for further use. This
+is shown in the following screenshot:
 
 ![select](datahub-share-03.png)
 
 To manage existing shares, in the space that is in use, it is sufficient to
-click the "Share" section, then a list of the existing ones is shown. By clicking
-on the three dots on the right of the share, you can rename, remove or copy the
-URL of the share. This is shown in the following screenshot:
+click the "Share" section, then a list of the existing ones is shown. By
+clicking on the three dots on the right of the share, you can rename, remove or
+copy the URL of the share. This is shown in the following screenshot:
 
 ![select](datahub-share-04.png)
 
@@ -145,10 +145,10 @@ An API is also available for the
 
 ## Data transfer management
 
-After uploading some data to DataHub, you can manage the replication and transfer
-to other DataHub providers supporting the same space. To do so, after
-uploading some files, select them, right click on the selection, and select "Data
-distribution". This will open the following window:
+After uploading some data to DataHub, you can manage the replication and
+transfer to other DataHub providers supporting the same space. To do so, after
+uploading some files, select them, right click on the selection, and select
+"Data distribution". This will open the following window:
 
 ![select](datahub-transfer-01.png)
 
@@ -160,11 +160,11 @@ provider, the following operation can be performed:
   data to the other provider, if not present, and remove them from the selected
   one.
 - Replicate the data, if the data is not present in the provider selected
-- Evict the data, if the data is present in the current provider, and al least in
-  another one
+- Evict the data, if the data is present in the current provider, and al least
+  in another one
 
-The `/transfers/` operations provide basic transfer management functionality based
-on the ID of transfer returned by `/transfers` `[POST]` operation.
+The `/transfers/` operations provide basic transfer management functionality
+based on the ID of transfer returned by `/transfers` `[POST]` operation.
 
 With the API it is possible to get information about a specific transfer by
 simply querying the following resource:
@@ -189,7 +189,8 @@ $ curl -X DELETE -H "X-Auth-Token: $ACCESS_TOKEN" \
 ```
 
 [The full API](https://onedata.org/#/home/api/stable/oneprovider?anchor=section/Overview/API-structure)
-can also be used to schedule transfers, an option which is not available
-trough the web interface. Furthermore the status of the transfer can also be
-checked from in the section
-[get_transfer_status](https://onedata.org/#/home/api/stable/oneprovider?anchor=operation/get_transfer_status).
+can also be used to schedule transfers, an option which is not available trough
+the web interface. Furthermore the status of the transfer can also be checked
+from in the section
+[Get transfer status](https://onedata.org/#/home/api/stable/oneprovider?anchor=operation/get_transfer_status)
+of the same page.
