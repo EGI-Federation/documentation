@@ -145,9 +145,9 @@ An API is also available for the
 
 ## Data transfer management
 
-After uploading some data to DataHub you can manage the replication and transfer
-to other DataHub providers that support the same space. To do so, after
-uploading some files, select them, right click on the selection and select "Data
+After uploading some data to DataHub, you can manage the replication and transfer
+to other DataHub providers supporting the same space. To do so, after
+uploading some files, select them, right click on the selection, and select "Data
 distribution". This will open the following window:
 
 ![select](datahub-transfer-01.png)
