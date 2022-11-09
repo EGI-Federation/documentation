@@ -215,9 +215,22 @@ information about the available resources.
 > Those examples are relying on the Top BDII maintained by EGI Foundation:
 > `ldap://lcg-bdii.egi.eu:2170`
 
+Information about resources is documented according to the
+[GLUE Schema](https://gridinfo-documentation.readthedocs.io/en/latest/glue.html).
+
+Information in the Top BDII is provided for two GLUE schema versions:
+
+- [GLUE 1.3](https://redmine.ogf.org/dmsf_files/61): the legacy version of the
+  specification, under the LDAP base `Mds-Vo-Name=local,o=grid`.
+- [GLUE 2.0](https://www.ogf.org/documents/GFD.147.pdf): the most recent version
+  of the specification, under the LDAP base `GLUE2GroupID=grid,o=glue`.
+
+> Some resources may not yet be exposed via GLUE 2.0, and it may be required to
+> use GLUE 1.3 for those ones.
+
 ```shell
-# Dumping the glue schema
-$ ldapsearch -x -H ldap://lcg-bdii.egi.eu:2170 -b o=glue
+# Dumping all the information from GLUE 2.0
+$ ldapsearch -x -H ldap://lcg-bdii.egi.eu:2170 -b "GLUE2GroupID=grid,o=glue"
 ```
 
 The following queries can be used to retrieve information about **all** the
@@ -225,14 +238,98 @@ Computing Elements of a given type. You will likely be able to use only a subset
 of them, only the ones supporting the Virtual Organisation you are a member of,
 and for which you have a valid VOMS proxy.
 
+### Querying for HTCondorCE compute resources
+
+Most, if not all the HTCondorCE should be discoverable via GLUE 2.0.
+
 ```shell
-# Querying for all HTCondorCE compute resources
+# Querying for all HTCondorCE compute resources, using GLUE 2.0
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2Endpoint)(GLUE2EndpointImplementationName=HTCondor))' \
+    GLUE2EndpointInterfaceName \
+    GLUE2EndpointImplementationVersion \
+    GLUE2EndpointURL
+
+# To have the version of the HTCondor batch system
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+   '(&(objectClass=GLUE2Manager)(GLUE2ManagerProductName=HTCondor))' \
+   GLUE2ManagerProductVersion \
+   GLUE2ComputingManagerTotalLogicalCPUs \
+   GLUE2ComputingManagerComputingServiceForeignKey
+```
+
+It's also possible to look into GLUE 1.3.
+
+```shell
+# Querying for all HTCondorCE compute resources, using GLUE 1.3
 $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     -b "Mds-Vo-Name=local,o=grid" \
     '(&(objectClass=GlueCE)(GlueCEInfoJobManager=HTCondorCE))' \
     GlueCEImplementationVersion GlueCEImplementationName \
     GlueCEStateStatus GlueCEUniqueID GlueServiceEndpoint GlueServiceType
-# Querying for all ARC CE compute resources
+```
+
+### Querying for ARC-CE compute resources
+
+Most, if not all the ARC-CE should be discoverable via GLUE 2.0.
+
+```shell
+# Querying for all HTCondorCE compute resources, using GLUE 2.0
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2Endpoint)(GLUE2EndpointImplementationName=ARC-CE))' \
+    GLUE2EndpointInterfaceName \
+    GLUE2EndpointImplementationVersion \
+    GLUE2EndpointURL
+```
+
+Once you have selected a given CE, you can look into getting more information
+about this one.
+
+```shell
+# All information about a specific ARC-CE
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2Share)(GLUE2ShareID=*atlas-ce-02.roma1.infn.it*))'
+
+# Information about a specific ARC-CE, filtering for information on the endpoint
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2Share)(GLUE2ShareID=*atlas-ce-02.roma1.infn.it*))' \
+    GLUE2EndpointInterfaceName \
+    GLUE2EndpointImplementationVersion \
+    GLUE2EndpointURL
+
+# Information about a specific ARC-CE, filtering for details on the queue
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2Share)(GLUE2ShareID=*atlas-ce-02.roma1.infn.it*))' \
+    GLUE2ComputingShareMappingQueue \
+    GLUE2ShareIDGLUE2ComputingShareMaxWallTime \
+    GLUE2ComputingShareMaxVirtualMemory \
+    GLUE2ComputingShareMaxUserRunningJobs \
+    GLUE2ComputingShareMaxRunningJobs \
+    GLUE2ComputingShareMaxCPUTime \
+    GLUE2ComputingShareWaitingJobs \
+    GLUE2ComputingShareUsedSlots \
+    GLUE2ComputingShareTotalJobsGLUE2ComputingShareRunningJobs
+
+
+# Information about a specific ARC-CE, filtering for supported VOs
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2Share)(GLUE2ShareID=*atlas-ce-02.roma1.infn.it*))' \
+    GLUE2PolicyRule \
+    GLUE2PolicyID \
+    GLUE2MappingPolicyShareForeignKey
+```
+
+It's also possible to look into GLUE 1.3.
+
+```shell
+# Querying for all ARC CE compute resources, using GLUE 1.3
 $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     -b "Mds-Vo-Name=local,o=grid" \
     '(&(objectClass=GlueCE)(GlueCEInfoJobManager=arc))' \
@@ -240,48 +337,10 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GlueCEStateStatus GlueCEUniqueID GlueServiceEndpoint GlueServiceType
 ```
 
-Using `lcg-info` it's possible to easily do more targeted queries, like focusing
-on a specific VO.
+### Use case: identifying all the Computing Elements supporting the dteam VO
 
-> `lcg-info` and `lcg-infosites` are only taking into account the **GLUE 1**
-> schema, and will lack information that is only published according to the
-> **GLUE 2** schema, like for most `HTCondorCE` Computing Elements.
-
-```shell
-# Identify compute resources available for dteam VO
-$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170
-# Identify storage resources available for dteam VO
-$ lcg-info --list-se --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170
-```
-
-```shell
-$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 \
-    --attrs CEImpl --query 'CEImpl=*HTCondorCE'
-(...)
-- CE: ce01.knu.ac.kr:9619/ce01.knu.ac.kr-condor
-  - CEImpl              HTCondorCE
-
-- CE: ce13.pic.es:9619/ce13.pic.es-condor
-  - CEImpl              HTCondorCE
-(...)
-- CE: condorce1.ciemat.es:9619/condorce1.ciemat.es-condor
-  - CEImpl              HTCondorCE
-
-- CE: condorce2.ciemat.es:9619/condorce2.ciemat.es-condor
-  - CEImpl              HTCondorCE
-(...)
-```
-
-We can see that the `dteam` VO should be able to access Computing Elements from
-the various types:
-
-```shell
-$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 \
-    --attrs CEImpl --query 'CEImpl=*' | grep CEImpl | sort | uniq -c
-    123   - CEImpl              ARC-CE
-     22   - CEImpl              CREAM
-      7   - CEImpl              HTCondorCE
-```
+> FIXME: need to add `ldapsearch` queries for identifying all the sites/CE
+> supporting **dteam**
 
 Once you have selected a site, you can start sending jobs there.
 
@@ -325,6 +384,51 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GlueCEAccessControlBaseRule \
     GlueCEInfoTotalCPUs \
     GlueCEStateStatus
+```
+
+#### Using legacy tools for GLUE 1.3
+
+Using `lcg-info` it's possible to easily do more targeted queries, like focusing
+on a specific VO.
+
+> `lcg-info` and `lcg-infosites` are only taking into account the **GLUE 1.3**
+> schema, and will lack information that is only published according to the
+> **GLUE 2** schema, like for most `HTCondorCE` Computing Elements.
+
+```shell
+# Identify compute resources available for dteam VO
+$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170
+# Identify storage resources available for dteam VO
+$ lcg-info --list-se --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170
+```
+
+```shell
+$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 \
+    --attrs CEImpl --query 'CEImpl=*HTCondorCE'
+(...)
+- CE: ce01.knu.ac.kr:9619/ce01.knu.ac.kr-condor
+  - CEImpl              HTCondorCE
+
+- CE: ce13.pic.es:9619/ce13.pic.es-condor
+  - CEImpl              HTCondorCE
+(...)
+- CE: condorce1.ciemat.es:9619/condorce1.ciemat.es-condor
+  - CEImpl              HTCondorCE
+
+- CE: condorce2.ciemat.es:9619/condorce2.ciemat.es-condor
+  - CEImpl              HTCondorCE
+(...)
+```
+
+We can see that the `dteam` VO should be able to access Computing Elements from
+the various types:
+
+```shell
+$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 \
+    --attrs CEImpl --query 'CEImpl=*' | grep CEImpl | sort | uniq -c
+    123   - CEImpl              ARC-CE
+     22   - CEImpl              CREAM
+      7   - CEImpl              HTCondorCE
 ```
 
 ## Step 4: submitting and managing jobs
