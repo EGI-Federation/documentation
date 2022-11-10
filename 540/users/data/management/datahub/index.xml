@@ -295,6 +295,10 @@ one.&lt;/li>
 &lt;li>Evict the data, if the data is present in the current provider, and al least
 in another one&lt;/li>
 &lt;/ul>
+&lt;h3 id="data-transfer-management-api">Data transfer management API&lt;/h3>
+&lt;p>The DataHub &lt;a href="https://onedata.org/#/home/api/stable/oneprovider?anchor=section/Overview/API-structure">REST API structure&lt;/a> gives an overview of the REST calls available. In particular the section on &lt;a href="https://onedata.org/#/home/api/stable/oneprovider?anchor=tag/Transfer">Transfer&lt;/a> focus on the transfer operation which include the operation previously described using the web interface and include option to schedule transfers, a feature which is not available trough the web interface. Furthermore the status of the transfer can also be checked from the section
+&lt;a href="https://onedata.org/#/home/api/stable/oneprovider?anchor=operation/get_transfer_status">Get transfer status&lt;/a>
+of the same page.&lt;/p>
 &lt;p>The &lt;code>/transfers/&lt;/code> operations provide basic transfer management functionality
 based on the ID of transfer returned by &lt;code>/transfers&lt;/code> &lt;code>[POST]&lt;/code> operation.&lt;/p>
 &lt;p>With the API it is possible to get information about a specific transfer by
@@ -307,12 +311,7 @@ simply querying the following resource:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Each transfer can be cancelled using the HTTP DELETE method:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -X DELETE -H &lt;span style="color:#4e9a06">&amp;#34;X-Auth-Token: &lt;/span>&lt;span style="color:#000">$ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://&lt;span style="color:#000">$ONEPROVIDER_HOST&lt;/span>/api/v3/oneprovider/transfers/&amp;lt;TRANSFER_ID&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://onedata.org/#/home/api/stable/oneprovider?anchor=section/Overview/API-structure">The full API&lt;/a>
-can also be used to schedule transfers, an option which is not available trough
-the web interface. Furthermore the status of the transfer can also be checked
-from in the section
-&lt;a href="https://onedata.org/#/home/api/stable/oneprovider?anchor=operation/get_transfer_status">Get transfer status&lt;/a>
-of the same page.&lt;/p></description></item><item><title>Users: DataHub API</title><link>/users/data/management/datahub/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/api/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: DataHub API</title><link>/users/data/management/datahub/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/api/</guid><description>
 &lt;p>Most operations in EGI DataHub can be performed using one of the
 &lt;a href="https://onedata.org/#/home/api">OneData Application Programming Interfaces&lt;/a>
 (APIs).&lt;/p>
