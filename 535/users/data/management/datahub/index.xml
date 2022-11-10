@@ -247,7 +247,78 @@ to control permissions for individual users and groups.&lt;/p>
 is set, POSIX are set to octal value of 000.&lt;/p>
 &lt;/blockquote>
 &lt;p>The order in which permissions take precedence is indicated with an arrow.&lt;/p>
-&lt;p>&lt;img src="datahub-acl.png" alt="DataHub ACL">&lt;/p></description></item><item><title>Users: DataHub API</title><link>/users/data/management/datahub/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/api/</guid><description>
+&lt;p>&lt;img src="datahub-acl.png" alt="DataHub ACL">&lt;/p>
+&lt;blockquote>
+&lt;p>To limit the risk of making data inaccessible to yourself, it is advisable to
+first add the required ACL if new ones are needed, and if necessary remove the
+ones not needed. While using ACLs there should be at least one active, or no
+user might be able to access the data. To regain the access the space owner
+would then need to modify the permissions.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="file-sharing">File sharing&lt;/h2>
+&lt;p>It is possible to share available DataHub data with other users or externally by
+generating a unique URL. This can be done, on the web interface, by selecting a
+directory or file, and right-clicking on it or clicking the three dots on the
+right like in the following screenshot and selecting &amp;ldquo;share&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="datahub-share-01.png" alt="select">&lt;/p>
+&lt;p>This will open a window allowing you to give a name to the share that you are
+about to create. This is shown in the following screenshot:&lt;/p>
+&lt;p>&lt;img src="datahub-share-02.png" alt="select">&lt;/p>
+&lt;p>By clicking on the &amp;ldquo;Create&amp;rdquo; button, the share is created and you are taken to
+the last window where the URL of the share can be copied for further use. This
+is shown in the following screenshot:&lt;/p>
+&lt;p>&lt;img src="datahub-share-03.png" alt="select">&lt;/p>
+&lt;p>To manage existing shares, in the space that is in use, it is sufficient to
+click the &amp;ldquo;Share&amp;rdquo; section, then a list of the existing ones is shown. By
+clicking on the three dots on the right of the share, you can rename, remove or
+copy the URL of the share. This is shown in the following screenshot:&lt;/p>
+&lt;p>&lt;img src="datahub-share-04.png" alt="select">&lt;/p>
+&lt;p>By clicking on the share itself, it is possible to edit additional attributes of
+the share like the description and the possibility to publish it as Open Data
+trough one of the supported handle service.&lt;/p>
+&lt;p>An API is also available for the
+&lt;a href="https://onedata.org/#/home/api/stable/onezone?anchor=tag/Share">creation and administration of the shares&lt;/a>.&lt;/p>
+&lt;h2 id="data-transfer-management">Data transfer management&lt;/h2>
+&lt;p>After uploading some data to DataHub, you can manage the replication and
+transfer to other DataHub providers supporting the same space. To do so, after
+uploading some files, select them, right click on the selection, and select
+&amp;ldquo;Data distribution&amp;rdquo;. This will open the following window:&lt;/p>
+&lt;p>&lt;img src="datahub-transfer-01.png" alt="select">&lt;/p>
+&lt;p>This will show the providers available for the space being used, and the current
+operation being performed if any. By clicking on the three dots, next to the
+provider, the following operation can be performed:&lt;/p>
+&lt;ul>
+&lt;li>Migrate the data if the provider selected contain the data. This will copy the
+data to the other provider, if not present, and remove them from the selected
+one.&lt;/li>
+&lt;li>Replicate the data, if the data is not present in the provider selected&lt;/li>
+&lt;li>Evict the data, if the data is present in the current provider, and al least
+in another one&lt;/li>
+&lt;/ul>
+&lt;h3 id="data-transfer-management-api">Data transfer management API&lt;/h3>
+&lt;p>The DataHub
+&lt;a href="https://onedata.org/#/home/api/stable/oneprovider?anchor=section/Overview/API-structure">REST API structure&lt;/a>
+gives an overview of the REST calls available. In particular the section on
+&lt;a href="https://onedata.org/#/home/api/stable/oneprovider?anchor=tag/Transfer">Transfer&lt;/a>
+focus on the transfer operation which include the operation previously described
+using the web interface and include option to schedule transfers, a feature
+which is not available trough the web interface. Furthermore the status of the
+transfer can also be checked from the section
+&lt;a href="https://onedata.org/#/home/api/stable/oneprovider?anchor=operation/get_transfer_status">Get transfer status&lt;/a>
+of the same page.&lt;/p>
+&lt;p>The &lt;code>/transfers/&lt;/code> operations provide basic transfer management functionality
+based on the ID of transfer returned by &lt;code>/transfers&lt;/code> &lt;code>[POST]&lt;/code> operation.&lt;/p>
+&lt;p>With the API it is possible to get information about a specific transfer by
+simply querying the following resource:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -X GET -H &lt;span style="color:#4e9a06">&amp;#34;X-Auth-Token: &lt;/span>&lt;span style="color:#000">$ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://&lt;span style="color:#000">$ONEPROVIDER_HOST&lt;/span>/api/v3/oneprovider/transfers/&amp;lt;TRANSFER_ID&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or request all transfers for given space:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -X GET -H &lt;span style="color:#4e9a06">&amp;#34;X-Auth-Token: &lt;/span>&lt;span style="color:#000">$ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://&lt;span style="color:#000">$ONEPROVIDER_HOST&lt;/span>/api/v3/oneprovider/spaces/&lt;span style="color:#000">$SPACE_ID&lt;/span>/transfers
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Each transfer can be cancelled using the HTTP DELETE method:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -X DELETE -H &lt;span style="color:#4e9a06">&amp;#34;X-Auth-Token: &lt;/span>&lt;span style="color:#000">$ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://&lt;span style="color:#000">$ONEPROVIDER_HOST&lt;/span>/api/v3/oneprovider/transfers/&amp;lt;TRANSFER_ID&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: DataHub API</title><link>/users/data/management/datahub/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/api/</guid><description>
 &lt;p>Most operations in EGI DataHub can be performed using one of the
 &lt;a href="https://onedata.org/#/home/api">OneData Application Programming Interfaces&lt;/a>
 (APIs).&lt;/p>
