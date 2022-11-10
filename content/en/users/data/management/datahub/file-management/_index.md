@@ -163,6 +163,12 @@ provider, the following operation can be performed:
 - Evict the data, if the data is present in the current provider, and al least
   in another one
 
+### Data transfer management API
+
+The DataHub [REST API structure](https://onedata.org/#/home/api/stable/oneprovider?anchor=section/Overview/API-structure) gives an overview of the REST calls available. In particular the section on [Transfer](https://onedata.org/#/home/api/stable/oneprovider?anchor=tag/Transfer) focus on the transfer operation which include the operation previously described using the web interface and include option to schedule transfers, a feature which is not available trough the web interface. Furthermore the status of the transfer can also be checked from the section
+[Get transfer status](https://onedata.org/#/home/api/stable/oneprovider?anchor=operation/get_transfer_status)
+of the same page.
+
 The `/transfers/` operations provide basic transfer management functionality
 based on the ID of transfer returned by `/transfers` `[POST]` operation.
 
@@ -187,10 +193,3 @@ Each transfer can be cancelled using the HTTP DELETE method:
 $ curl -X DELETE -H "X-Auth-Token: $ACCESS_TOKEN" \
     https://$ONEPROVIDER_HOST/api/v3/oneprovider/transfers/<TRANSFER_ID>
 ```
-
-[The full API](https://onedata.org/#/home/api/stable/oneprovider?anchor=section/Overview/API-structure)
-can also be used to schedule transfers, an option which is not available trough
-the web interface. Furthermore the status of the transfer can also be checked
-from in the section
-[Get transfer status](https://onedata.org/#/home/api/stable/oneprovider?anchor=operation/get_transfer_status)
-of the same page.
