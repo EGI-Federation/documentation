@@ -95,4 +95,4 @@ as explained in the general information section.
 In addition, HTCondor-CE must be configured to create accounting records:
 
 - Information on configuring HTCondor-CE for APEL accounting:
-  [APEL Accounting for HTCondor-CE](../../high-throughput-compute/htcondor-ce-apel)
+  [APEL Accounting for HTCondor-CE](../../high-throughput-compute/htcondor_ce_apel)
