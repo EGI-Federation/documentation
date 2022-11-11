@@ -3,7 +3,6 @@ title: "Accessing virtual machines with SSH"
 linkTitle: "Accessing VMs with SSH"
 type: docs
 weight: 20
-draft: true
 description: >
   SSH & OpenStack networking essentials
 ---
