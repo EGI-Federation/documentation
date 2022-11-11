@@ -30,7 +30,7 @@ Service in EGI please visit its &lt;a href="../../compute/cloud-compute">dedicat
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
 &lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Accessing virtual machines with SSH</title><link>/users/tutorials/accessing-vm-with-ssh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/accessing-vm-with-ssh/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>An introduction of connecting a local computer to a cloud host via SSH is provided in this page.
+&lt;p>An introduction of connecting a local computer to a cloud host via SSH is provided in this page.&lt;br>
 General guidelines, SSH setup options, tips, and examples for setting up the OpenStack environment.&lt;/p>
 &lt;h2 id="username-and-password">Username and password&lt;/h2>
 &lt;p>&lt;code>Username&lt;/code> and &lt;code>password&lt;/code> access to cloud virtual machine images is usually &lt;strong>disabled&lt;/strong> for security reasons and it is
@@ -51,8 +51,9 @@ the virtual machine, at deployment time, and use your &lt;strong>private key&lt;
 &lt;pre>&lt;code>https://github.com/${github_username}.keys
 &lt;/code>&lt;/pre>
 &lt;p>i.e.:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>wget https://github.com/github_username.keys
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="ssh-username">SSH username&lt;/h3>
+&lt;pre>&lt;code>wget https://github.com/github_username.keys
+&lt;/code>&lt;/pre>
+&lt;h3 id="ssh-username">SSH username&lt;/h3>
 &lt;p>The username to use to connect with a virtual machine is dependent on the virtual machine image and is generally
 different in each operative system image.&lt;/p>
 &lt;p>For &lt;code>official OS virtual machine images&lt;/code> you can use this page as a general reference for that:
@@ -147,7 +148,7 @@ ssh centos@192.168.1.3
 &lt;p>The Infrastructure Manager (IM) provides the SSH key that can be used to connect to the virtual machine in the VM
 info page of the IM-Dashboard (see Fig 14):&lt;/p>
 &lt;p>&lt;a href="https://imdocs.readthedocs.io/en/latest/dashboard.html#infrastructures">https://imdocs.readthedocs.io/en/latest/dashboard.html#infrastructures&lt;/a>&lt;/p>
-&lt;p>The page shows the information related with the virtual machine: the IP, the username (usually &amp;ldquo;cloudadm&amp;rdquo;), and the SSH key.&lt;/p>
+&lt;p>The page shows the information related with the virtual machine: the IP, the username (usually &lt;code>cloudadm&lt;/code>), and the SSH key.&lt;/p>
 &lt;h2 id="token-based-authentication">Token-based authentication&lt;/h2>
 &lt;p>If supported by your virtual machine, you can also use &lt;a href="https://github.com/EOSC-synergy/ssh-oidc">ssh-oidc&lt;/a> which
 implements the authentication consuming under-the-hood tokens from a local demon installed on your local machine.&lt;/p>
