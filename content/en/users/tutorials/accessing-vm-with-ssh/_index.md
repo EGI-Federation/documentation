@@ -49,13 +49,13 @@ The username to use to connect with a virtual machine is dependent on the virtua
 different in each operative system image.
 
 For `official OS virtual machine images` you can use this page as a general reference for that:
-[https://docs.openstack.org/image-guide/obtain-images.html](content/en/users/tutorials/accessing-vm-with-ssh/_index.md)
+[https://docs.openstack.org/image-guide/obtain-images.html](https://docs.openstack.org/image-guide/obtain-images.html)
 
 For custom virtual machine images you need to refer to your virtual machine image provider (i.e. it could be something
 specific like `cloudadm`).
 
 It is also possible to change the username using CloudInit cloud-config, user-data script (i.e. here some
-[https://alestic.com/2014/01/ec2-change-username/](content/en/users/tutorials/accessing-vm-with-ssh/_index.md)) or
+[https://alestic.com/2014/01/ec2-change-username/](https://alestic.com/2014/01/ec2-change-username/)) or
 inject some code to add additional users (i.e. with Ansible).
 
 ### Local ssh key configuration
@@ -165,12 +165,12 @@ If the ssh local key is not the default `~/.ssh/id_rsa` it needs to be specified
 
 ## Infrastructure Manager (IM)
 
-The Infrastructure Manager (IM) provides the SH key that can be used to connect to the virtual machine in the virtual
-machine info page of the IM-Dashboard (see Fig 14):
+The Infrastructure Manager (IM) provides the SSH key that can be used to connect to the virtual machine in the VM
+info page of the IM-Dashboard (see Fig 14):
 
 https://imdocs.readthedocs.io/en/latest/dashboard.html#infrastructures
 
-This page shows the information related to the virtual machine: the IP, the username (usually "cloudadm"), and the SSH key.
+The page shows the information related with the virtual machine: the IP, the username (usually "cloudadm"), and the SSH key.
 
 ## Token-based authentication
 
