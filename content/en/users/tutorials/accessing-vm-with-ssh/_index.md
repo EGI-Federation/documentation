@@ -31,7 +31,7 @@ deployment tool if supported (i.e. the Infrastructure Manager and a custom TOSCA
 A common method to access a cloud virtual machine is via ssh using **SSH keys**, you may inject your **public key** into
 the virtual machine, at deployment time, and use your **private key** to connect via ssh without any password.
 
-#### TIP
+- TIP
 
 If you are using ssh keys in GitHub your public keys are available at:
 
@@ -39,7 +39,7 @@ If you are using ssh keys in GitHub your public keys are available at:
 
 i.e.:
 
-```
+```sh
 wget https://github.com/github_username.keys
 ```
 
@@ -49,22 +49,21 @@ The username to use to connect with a virtual machine is dependent on the virtua
 different in each operative system image.
 
 For `official OS virtual machine images` you can use this page as a general reference for that:
-[https://docs.openstack.org/image-guide/obtain-images.html]()
+[https://docs.openstack.org/image-guide/obtain-images.html](content/en/users/tutorials/accessing-vm-with-ssh/_index.md)
 
 For custom virtual machine images you need to refer to your virtual machine image provider (i.e. it could be something
 specific like `cloudadm`).
 
 It is also possible to change the username using CloudInit cloud-config, user-data script (i.e. here some
-[https://alestic.com/2014/01/ec2-change-username/]()) or inject some code to add additional users (i.e. with Ansible).
+[https://alestic.com/2014/01/ec2-change-username/](content/en/users/tutorials/accessing-vm-with-ssh/_index.md)) or
+inject some code to add additional users (i.e. with Ansible).
 
 ### Local ssh key configuration
 
 The `private ssh-key` stored on your local computer is required to have restrictive file permissions. Depending on your
 local operative system you may need to run:
 
-```
-chmod 600 ~/.ssh/id_rsa
-```
+    chmod 600 ~/.ssh/id_rsa
 
 (with `id_rsa` being the name of the private key associated with the public key in use).
 
@@ -93,7 +92,7 @@ Virtual machines in OpenStack are configured in a private network (often in the 
 directly SSH-connect with them from the internet only using a `Public IP`, which has to be associated with a virtual
 machine in the private network.
 
-### Accessing virtual machines in the private network.
+### Accessing virtual machines in the private network
 
 In general, to reach all the virtual machines in a private network, only a single public IP is needed.
 
@@ -104,37 +103,33 @@ a single command.
 
 #### Example: ssh configuration for Jump host
 
-```
-cat ~/.ssh/config
-```
-
-```
-# Bastion
-Host bastion 193.1.1.2
-   User ubuntu
-   Hostname 193.168.1.2
-   IdentityFile ~/.ssh/id_rsa
-   IdentitiesOnly yes
-
-# with ProxyJump
-Host private_vm
-   HostName 192.168.1.2
-   ProxyJump bastion
-
-# old-style with ProxyCommand and additional settings
-Host private_vm 192.168.1.2
-   Hostname 192.168.1.2
-   ProxyCommand ssh -q -A bastion nc %h %p
-   User ubuntu
-   ServerAliveInterval 60
-   TCPKeepAlive yes
-   ControlMaster auto
-   ControlPath ~/.ssh/mux-%r@%h:%p
-   ControlPersist 8h
-   IdentityFile ~/.ssh/dev
-   CheckHostIP=no
-   StrictHostKeyChecking=no
-```
+    cat ~/.ssh/config
+    
+    # Bastion
+    Host bastion 193.1.1.2
+       User ubuntu
+       Hostname 193.168.1.2
+       IdentityFile ~/.ssh/id_rsa
+       IdentitiesOnly yes
+    
+    # with ProxyJump
+    Host private_vm
+       HostName 192.168.1.2
+       ProxyJump bastion
+    
+    # old-style with ProxyCommand and additional settings
+    Host private_vm 192.168.1.2
+       Hostname 192.168.1.2
+       ProxyCommand ssh -q -A bastion nc %h %p
+       User ubuntu
+       ServerAliveInterval 60
+       TCPKeepAlive yes
+       ControlMaster auto
+       ControlPath ~/.ssh/mux-%r@%h:%p
+       ControlPersist 8h
+       IdentityFile ~/.ssh/dev
+       CheckHostIP=no
+       StrictHostKeyChecking=no
 
 General considerations related to the setup of the ssh configuration are valid also for the connection between hosts in
 the private network (i.e. the ssh destination host needs to have a `public key` in the `~/.ssh/known_hosts` file of the
@@ -149,27 +144,24 @@ Network configuration of two virtual machines `A` and `B` :
 
 ### Connecting from a local machine to `A`
 
-```
-#ssh VM_OS_username@PUBLIC_IP
-ssh centos@193.1.1.2
-```
+    # ssh VM_OS_username@PUBLIC_IP
+    ssh centos@193.1.1.2
+
 
 If the ssh local key is not the default `~/.ssh/id_rsa` it needs to be specified with:
 
-```
-#ssh -i /path_of_your_private_ssh_key VM_OS_username@PUBLIC_IP
-ssh -i ~/private_key centos@193.1.1.2
-```
+    # ssh -i /path_of_your_private_ssh_key VM_OS_username@PUBLIC_IP
+    ssh -i ~/private_key centos@193.1.1.2
 
 ### Connecting from a local machine to `B`
 
-```
-# (from your computer) - connect to A
-ssh centos@193.1.1.2
-
-# (from the shell opened in 193.1.1.2) -  connect from A to B
-ssh centos@192.168.1.3
-```
+    # from your computer
+    # connect to A
+    ssh centos@193.1.1.2
+    
+    # from the shell opened in 193.1.1.2
+    # connect from A to B
+    ssh centos@192.168.1.3
 
 ## Infrastructure Manager (IM)
 
