@@ -9,7 +9,7 @@ description: >
 
 ## Overview
 
-An introduction of connecting a local computer to a cloud host via SSH is provided in this page.
+An introduction of connecting a local computer to a cloud host via SSH is provided in this page.  
 General guidelines, SSH setup options, tips, and examples for setting up the OpenStack environment.
 
 ## Username and password
@@ -39,9 +39,7 @@ If you are using ssh keys in GitHub your public keys are available at:
 
 i.e.:
 
-```sh
-wget https://github.com/github_username.keys
-```
+    wget https://github.com/github_username.keys
 
 ### SSH username
 
@@ -147,7 +145,6 @@ Network configuration of two virtual machines `A` and `B` :
     # ssh VM_OS_username@PUBLIC_IP
     ssh centos@193.1.1.2
 
-
 If the ssh local key is not the default `~/.ssh/id_rsa` it needs to be specified with:
 
     # ssh -i /path_of_your_private_ssh_key VM_OS_username@PUBLIC_IP
@@ -168,9 +165,10 @@ If the ssh local key is not the default `~/.ssh/id_rsa` it needs to be specified
 The Infrastructure Manager (IM) provides the SSH key that can be used to connect to the virtual machine in the VM
 info page of the IM-Dashboard (see Fig 14):
 
-https://imdocs.readthedocs.io/en/latest/dashboard.html#infrastructures
+[https://imdocs.readthedocs.io/en/latest/dashboard.html#infrastructures](
+https://imdocs.readthedocs.io/en/latest/dashboard.html#infrastructures)
 
-The page shows the information related with the virtual machine: the IP, the username (usually "cloudadm"), and the SSH key.
+The page shows the information related with the virtual machine: the IP, the username (usually `cloudadm`), and the SSH key.
 
 ## Token-based authentication
 
