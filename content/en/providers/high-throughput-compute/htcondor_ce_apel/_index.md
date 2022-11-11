@@ -75,7 +75,7 @@ separate ways to do so:
   the attributes of the StartD.
 
   ```lang-none
-  # The performance per core on this StartD
+  # The absolute performance per core on this StartD
   ApelSpecs = [HEPSPEC=14.37; SI2K=2793]
   STARTD_ATTRS = $(STARTD_ATTRS) ApelSpecs
   ```
@@ -89,7 +89,7 @@ separate ways to do so:
   attributes of the StartD.
 
   ```lang-none
-  # The performance per core on this StartD
+  # The relative performance per core on this StartD
   ApelScaling = 1.15
   STARTD_ATTRS = $(STARTD_ATTRS) ApelScaling
   ```
