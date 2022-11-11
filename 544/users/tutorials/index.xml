@@ -28,7 +28,100 @@ may prefer to use the &lt;a href="../../getting-started/cli">command-line interf
 &lt;p>To know more about the &lt;a href="https://www.egi.eu/services/cloud-compute/">Cloud Compute&lt;/a>
 Service in EGI please visit its &lt;a href="../../compute/cloud-compute">dedicated section&lt;/a>.&lt;/p>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
-&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Access DataHub from a Virtual machine</title><link>/users/tutorials/vm-datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/vm-datahub/</guid><description>
+&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Accessing virtual machines with SSH</title><link>/users/tutorials/accessing-vm-with-ssh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/accessing-vm-with-ssh/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>An introduction of connecting a local computer to a cloud host via SSH is provided in this page.
+General guidelines, SSH setup options, tips, and examples for setting up the OpenStack environment.&lt;/p>
+&lt;h2 id="username-and-password">Username and password&lt;/h2>
+&lt;p>&lt;code>Username&lt;/code> and &lt;code>password&lt;/code> access to cloud virtual machine images is usually &lt;strong>disabled&lt;/strong> for security reasons and it is &lt;strong>strongly suggested not to be used&lt;/strong>.&lt;/p>
+&lt;p>To enable SSH password authentication, the destination virtual machine needs to have changed &lt;code>PasswordAuthentication no&lt;/code> to &lt;code>PasswordAuthentication yes&lt;/code>
+in the &lt;code>/etc/ssh/sshd_config&lt;/code> file.&lt;/p>
+&lt;p>If needed, a custom image with &lt;code>PasswordAuthentication&lt;/code> enabled can be used or that can be injected when the virtual machine is deployed.&lt;/p>
+&lt;p>Depending on your deployment method it could be done with Ansible, Terraform, Salt, Puppet, Chef, Cloudinit, or your own deployment tool if supported (i.e. the Infrastructure Manager and a custom TOSCA template).&lt;/p>
+&lt;h2 id="ssh-keys">SSH Keys&lt;/h2>
+&lt;p>A common method to access a cloud virtual machine is via ssh using &lt;strong>SSH keys&lt;/strong>, you may inject your &lt;strong>public key&lt;/strong> into the virtual machine, at deployment time, and use your &lt;strong>private key&lt;/strong> to connect via ssh without any password.&lt;/p>
+&lt;h4 id="tip">TIP&lt;/h4>
+&lt;p>If you are using ssh keys in GitHub your public keys are available at:&lt;/p>
+&lt;pre>&lt;code>https://github.com/${github_username}.keys
+&lt;/code>&lt;/pre>
+&lt;p>i.e.:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>wget https://github.com/github_username.keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="ssh-username">SSH username&lt;/h3>
+&lt;p>The username to use to connect with a virtual machine is dependent on the virtual machine image and is generally different in each operative system image.&lt;/p>
+&lt;p>For &lt;code>official OS virtual machine images&lt;/code> you can use this page as a general reference for that:
+&lt;a href="https://docs.openstack.org/image-guide/obtain-images.html">https://docs.openstack.org/image-guide/obtain-images.html&lt;/a>&lt;/p>
+&lt;p>For custom virtual machine images you need to refer to your virtual machine image provider (i.e. it could be something specific like &lt;code>cloudadm&lt;/code>).&lt;/p>
+&lt;p>It is also possible to change the username using CloudInit cloud-config, user-data script.
+(i.e. here some &lt;a href="https://alestic.com/2014/01/ec2-change-username/">https://alestic.com/2014/01/ec2-change-username/&lt;/a>) or inject some code to add additional users (i.e. with Ansible).&lt;/p>
+&lt;h3 id="local-ssh-key-configuration">Local ssh key configuration&lt;/h3>
+&lt;p>The &lt;code>private ssh-key&lt;/code> stored on your local computer is required to have restrictive file permissions. Depending on your local operative system you may need to run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#0000cf;font-weight:bold">600&lt;/span> ~/.ssh/id_rsa
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>(with &lt;code>id_rsa&lt;/code> being the name of the private key associated with the public key in use).&lt;/p>
+&lt;h2 id="openstack-networking">OpenStack networking&lt;/h2>
+&lt;p>The OpenStack environment needs to be populated with the necessary configurations and virtual hardware.
+To access the virtual machine from outside the OpenStack project you have to associate a &lt;code>floating IP&lt;/code> to the virtual machine (which will provide a &lt;code>public IP&lt;/code> to the virtual machine), you also have to open the necessary ports and add or edit the security groups, (more details on that in the specific section).&lt;/p>
+&lt;p>Depending on the default configuration of the OpenStack project in order to associate a floating IP to a virtual machine in a private network it may be necessary to set up a virtual &lt;code>router&lt;/code> in OpenStack and &lt;code>attach&lt;/code> it with an &lt;code>interface&lt;/code> to the private network. This step is usually not required as the OpenStack router is usually pre-configured by the cloud provider.&lt;/p>
+&lt;h3 id="security-groups-rules">Security Groups Rules&lt;/h3>
+&lt;p>The Virtual Machine that you want to connect needs to have the SSH port (22) reachable by your local machine.
+For that, it is necessary that a specific &lt;code>Rule&lt;/code> is set up in one of the &lt;code>Security Groups&lt;/code> associated with the virtual machine.
+The rule has to open &lt;code>port 22&lt;/code> either to any IPs (with &lt;code>CIDR 0.0.0.0/0&lt;/code>) or to a specific IP (or subnet) matching the IP of the local machine used to connect with the virtual machine.&lt;/p>
+&lt;h3 id="private-ip-vs-public-ip">Private IP vs public IP&lt;/h3>
+&lt;p>Virtual machines in OpenStack are configured in a private network (often in the subnet 192.168.0.0/24) but you can directly SSH-connect with them from the internet only using a &lt;code>Public IP&lt;/code>, which has to be associated with a virtual machine in the private network.&lt;/p>
+&lt;h3 id="accessing-virtual-machines-in-the-private-network">Accessing virtual machines in the private network.&lt;/h3>
+&lt;p>In general, to reach all the virtual machines in a private network, only a single public IP is needed.&lt;/p>
+&lt;p>The virtual machine associated with a public IP is often referred to as a &lt;code>Bastion&lt;/code> host, once you connect with the bastion host, you can connect with the other virtual machine in the same private network using the private IPs.
+Alternatively, it is also possible to set up a &lt;code>JumpHost&lt;/code> configuration in your local ssh configuration to do that with a single command.&lt;/p>
+&lt;h4 id="example-ssh-configuration-for-jump-host">Example: ssh configuration for Jump host&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cat ~/.ssh/config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code># Bastion
+Host bastion 193.1.1.2
+User ubuntu
+Hostname 193.168.1.2
+IdentityFile ~/.ssh/id_rsa
+IdentitiesOnly yes
+# with ProxyJump
+Host private_vm
+HostName 192.168.1.2
+ProxyJump bastion
+# old-style with ProxyCommand and additional settings
+Host private_vm 192.168.1.2
+Hostname 192.168.1.2
+ProxyCommand ssh -q -A bastion nc %h %p
+User ubuntu
+ServerAliveInterval 60
+TCPKeepAlive yes
+ControlMaster auto
+ControlPath ~/.ssh/mux-%r@%h:%p
+ControlPersist 8h
+IdentityFile ~/.ssh/dev
+CheckHostIP=no
+StrictHostKeyChecking=no
+&lt;/code>&lt;/pre>&lt;p>General considerations related to the setup of the ssh configuration are valid also for the connection between hosts in the private network (i.e. the ssh destination host needs to have a &lt;code>public key&lt;/code> in the &lt;code>~/.ssh/known_hosts&lt;/code> file of the destination user, matching the &lt;code>private key&lt;/code> used for the connection).&lt;/p>
+&lt;h2 id="ssh-connection-practical-example">SSH connection practical example&lt;/h2>
+&lt;p>Network configuration of two virtual machines &lt;code>A&lt;/code> and &lt;code>B&lt;/code> :&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>A&lt;/code> private IP 192.168.1.2, public IP 193.168.1.2&lt;/li>
+&lt;li>&lt;code>B&lt;/code> private IP 192.168.1.3&lt;/li>
+&lt;/ul>
+&lt;h3 id="connecting-from-a-local-machine-to-a">Connecting from a local machine to &lt;code>A&lt;/code>&lt;/h3>
+&lt;pre tabindex="0">&lt;code>#ssh VM_OS_username@PUBLIC_IP
+ssh centos@193.1.1.2
+&lt;/code>&lt;/pre>&lt;p>If the ssh local key is not the default &lt;code>~/.ssh/id_rsa&lt;/code> it needs to be specified with:&lt;/p>
+&lt;pre tabindex="0">&lt;code>#ssh -i /path_of_your_private_ssh_key VM_OS_username@PUBLIC_IP
+ssh -i ~/private_key centos@193.1.1.2
+&lt;/code>&lt;/pre>&lt;h3 id="connecting-from-a-local-machine-to-b">Connecting from a local machine to &lt;code>B&lt;/code>&lt;/h3>
+&lt;pre tabindex="0">&lt;code># (from your computer) - connect to A
+ssh centos@193.1.1.2
+# (from the shell opened in 193.1.1.2) - connect from A to B
+ssh centos@192.168.1.3
+&lt;/code>&lt;/pre>&lt;h2 id="infrastructure-manager-im">Infrastructure Manager (IM)&lt;/h2>
+&lt;p>The Infrastructure Manager (IM) provides the SH key that can be used to connect to the virtual machine in the virtual machine info page of the IM-Dashboard (see Fig 14):&lt;/p>
+&lt;p>&lt;a href="https://imdocs.readthedocs.io/en/latest/dashboard.html#infrastructures">https://imdocs.readthedocs.io/en/latest/dashboard.html#infrastructures&lt;/a>&lt;/p>
+&lt;p>This page shows the information related to the virtual machine: the IP, the username (usually &amp;ldquo;cloudadm&amp;rdquo;), and the SSH key.&lt;/p>
+&lt;h2 id="token-based-authentication">Token-based authentication&lt;/h2>
+&lt;p>If supported by your virtual machine, you can also use &lt;a href="https://github.com/EOSC-synergy/ssh-oidc">ssh-oidc&lt;/a> which implements the authentication consuming under-the-hood tokens from a local demon installed on your local machine.&lt;/p>
+&lt;p>More details on that soon.&lt;/p>
+&lt;p>The Infrastructure Manager (IM) can &lt;code>Enable SSH OIDC access to the VM&lt;/code> in virtual machines by selecting the related &lt;code>Optional Features&lt;/code>.&lt;/p></description></item><item><title>Users: Access DataHub from a Virtual machine</title><link>/users/tutorials/vm-datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/vm-datahub/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes the access to &lt;a href="../../data/management/datahub">EGI DataHub&lt;/a> spaces
 from a virtual machine. In the following paragraphs you will learn how to
