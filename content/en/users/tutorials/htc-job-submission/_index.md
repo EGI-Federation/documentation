@@ -396,10 +396,10 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
 It is possible to filter for the different types of Computing Element, and
 select only specific attributes.
 
+#### Looking for a HTCondorCE for dteam
+
 ```shell
 # Information about the HTCondorCE supporting dteam VO
-# FIXME not matching HTCondorCE like GLUE2ComputingShareComputingEndpointForeignKey=*htcondorce*
-# like for condorce1.ciemat.es used in the examples
 $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     -b "GLUE2GroupID=grid,o=glue" \
     '(&(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*)(GLUE2ComputingShareComputingEndpointForeignKey=*HTCondorCE*))' \
@@ -409,22 +409,60 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GLUE2ComputingShareRunningJobs \
     GLUE2ComputingShareWaitingJobs
 
+# Most HTCondorCE have the Endpoint spelled HTCondorCE, but some have htcondorce
+# like for the CE condorce1.ciemat.es used in this tutorial
+# The query should be updated to match them:
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*)(|(GLUE2ComputingShareComputingEndpointForeignKey=*HTCondorCE*)(GLUE2ComputingShareComputingEndpointForeignKey=*htcondorce*)))' \
+    GLUE2ShareEndpointForeignKey \
+    GLUE2ShareID \
+    GLUE2ComputingShareTotalJobs \
+    GLUE2ComputingShareRunningJobs \
+    GLUE2ComputingShareWaitingJobs
+```
+
+Assuming it was decided (based on the site location, available resources, prior
+experience,...) to go for `condorce1.ciemat.es`, the information about the CE
+can be requested using the following request, filtering on the `GLUE2ShareID`
+from the previous query: `grid_dteam_condorce1.ciemat.es_ComputingElement`.
+
+```shell
+# FIXME provide queries allowing to retrieve the info required for contacting
+# HTCondorCE: CE name (like condorce1.ciemat.es) + pool (like condorce1.ciemat.es:9619)
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*grid_dteam_condorce1.ciemat.es_ComputingElement*))' \
+    GLUE2ShareID \
+    GLUE2ShareDescription \
+    GLUE2ComputingShareExecutionEnvironmentForeignKey \
+    GLUE2EntityOtherInfo
+```
+
+HTCondorCE are usually running on port `9619`, this is confirmed by the results.
+Based on those results, it's possible to guess the following parameters that
+will have to be used when submitting the job:
+
+- **CE Name**: `condorce1.ciemat.es` (reported in
+  `GLUE2ComputingShareExecutionEnvironmentForeignKey: condorce1.ciemat.es`)
+- **CE Pool**: `condorce1.ciemat.es:9619` (reported in
+  `GLUE2EntityOtherInfo: HTCondorCEId=condorce1.ciemat.es:9619/htcondorce-condor-group_dteam`)
+
+#### Looking for an ARC-CE for dteam
+
+```shell
 # Information about the ARC-CE supporting dteam VO
 $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     -b "GLUE2GroupID=grid,o=glue" \
     '(&(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*)(GLUE2ComputingShareComputingEndpointForeignKey=*urn:ogf*))' \
     GLUE2ComputingShareComputingEndpointForeignKey \
+    GLUE2ShareEndpointForeignKey \
     GLUE2ComputingShareTotalJobs \
     GLUE2ComputingShareRunningJobs \
     GLUE2ComputingShareWaitingJobs
 
-# Finding all the Storage resources available to dteam VO
-$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
-    -b "GLUE2GroupID=grid,o=glue" \
-    '(&(objectClass=GLUE2StorageShare)(GLUE2ShareID=*dteam*))' \
-    GLUE2ShareID \
-    GLUE2StorageShareStorageServiceForeignKey \
-    GLUE2ShareDescription
+# FIXME provide queries allowing to retrieve the info required for contacting
+# ARC-CE: CE name (like alex4.nipne.ro)
 ```
 
 Once you have selected a site, you can start sending jobs there.
@@ -433,33 +471,6 @@ The following sites will be used in this tutorial:
 
 - HTCondorCE: `condorce1.ciemat.es:9619/condorce1.ciemat.es-condor`
 - ARC-CE: `alex4.nipne.ro:2811/nordugrid-SLURM-dteam`
-
-You can query for information using `ldapsearch`:
-
-```shell
-# Querying information about the HTCondor CE via GLUE 2.0
-$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
-    -b "GLUE2GroupID=grid,o=glue" \
-    '(&(objectClass=GLUE2Share)(GLUE2ShareID=*condorce1.ciemat.es*))'
-
-# Querying information about the HTCondor CE via GLUE 2.0, filtering for details on the queue
-$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
-    -b "GLUE2GroupID=grid,o=glue" \
-    '(&(objectClass=GLUE2Share)(GLUE2ShareID=*condorce1.ciemat.es*))' \
-    GLUE2ComputingShareMappingQueue \
-    GLUE2ShareIDGLUE2ComputingShareMaxWallTime \
-    GLUE2ComputingShareMaxVirtualMemory \
-    GLUE2ComputingShareMaxUserRunningJobs \
-    GLUE2ComputingShareMaxRunningJobs \
-    GLUE2ComputingShareMaxCPUTime \
-    GLUE2ComputingShareWaitingJobs \
-    GLUE2ComputingShareUsedSlots \
-    GLUE2ComputingShareTotalJobsGLUE2ComputingShareRunningJobs
-```
-
-```shell
-
-```
 
 #### Using VAPOR to query resources using a graphical interface
 
