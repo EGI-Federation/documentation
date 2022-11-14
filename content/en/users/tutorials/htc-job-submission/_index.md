@@ -199,7 +199,7 @@ key usage : Digital Signature, Key Encipherment
 
 ## Step 3: identifying available resources
 
-Nowadays two Computing Element (CE) "flavours" are mainly used:
+Nowadays mainly two Computing Element (CE) "flavours" are used in production:
 
 - [HTCondorCE](https://htcondor.org/htcondor-ce/overview/), a Compute Entrypoint
   (CE) based on [HTCondor](http://htcondor.org/).
@@ -212,8 +212,9 @@ more supported middleware.
 In this section we will document querying the EGI Information System to retrieve
 information about the available resources.
 
-> Those examples are relying on the Top BDII maintained by EGI Foundation:
-> `ldap://lcg-bdii.egi.eu:2170`
+{{% alert title="Tip" color="info" %}} It's also possible to use
+[VAPOR to query resources using a graphical interface](#using-vapor-to-query-resources-using-a-graphical-interface).
+{{% /alert %}}
 
 Information about resources is documented according to the
 [GLUE Schema](https://gridinfo-documentation.readthedocs.io/en/latest/glue.html).
@@ -238,9 +239,13 @@ Computing Elements of a given type. You will likely be able to use only a subset
 of them, only the ones supporting the Virtual Organisation you are a member of,
 and for which you have a valid VOMS proxy.
 
+> Those examples are relying on the Top BDII service maintained by EGI
+> Foundation: `ldap://lcg-bdii.egi.eu:2170`.
+
 ### Querying for HTCondorCE compute resources
 
-Most, if not all the HTCondorCE should be discoverable via GLUE 2.0.
+Most, if not all the HTCondorCE Computing Elements should be discoverable via
+GLUE 2.0.
 
 ```shell
 # Querying for all HTCondorCE compute resources, using GLUE 2.0
@@ -315,7 +320,6 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GLUE2ComputingShareWaitingJobs \
     GLUE2ComputingShareUsedSlots \
     GLUE2ComputingShareTotalJobsGLUE2ComputingShareRunningJobs
-
 
 # Information about a specific ARC-CE, filtering for supported VOs
 $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
@@ -439,6 +443,16 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GlueCEInfoTotalCPUs \
     GlueCEStateStatus
 ```
+
+#### Using VAPOR to query resources using a graphical interface
+
+[VAPOR](https://operations-portal.egi.eu/vapor/), a component of the
+[Operations Portal](../../../internal/operations-portal), provides a graphical
+resources explorer.
+
+It can be used as an alternative to querying the Top BDII using `ldapsearch`.
+
+![VAPOR: computing resources for dteam](vapor-dteam-computing-resources.png)
 
 #### Using legacy tools for GLUE 1.3
 
