@@ -1293,7 +1293,12 @@ by &lt;code>lcg-info&lt;/code>:&lt;/p>
 &lt;a href="../../../internal/operations-portal">Operations Portal&lt;/a>, provides a graphical
 resources explorer.&lt;/p>
 &lt;p>It can be used as an alternative to querying the Top BDII using &lt;code>ldapsearch&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="vapor-dteam-computing-resources.png" alt="VAPOR: computing resources for dteam">&lt;/p>
+&lt;p>&lt;img src="vapor-dteam-computing-overview.png" alt="VAPOR: overview of resources for dteam">&lt;/p>
+&lt;p>Using the left menu you can select a VO and filter the different resources
+types.&lt;/p>
+&lt;p>&lt;img src="vapor-dteam-computing-shares.png" alt="VAPOR: filtering resources for dteam">&lt;/p>
+&lt;p>VAPOR will list the matching resources.&lt;/p>
+&lt;p>&lt;img src="vapor-dteam-computing-resources.png" alt="VAPOR: detail of resources for dteam">&lt;/p>
 &lt;h4 id="using-legacy-tools-for-glue-13">Using legacy tools for GLUE 1.3&lt;/h4>
 &lt;p>Using &lt;code>lcg-info&lt;/code> it&amp;rsquo;s possible to easily do more targeted queries, like focusing
 on a specific VO.&lt;/p>
@@ -1436,12 +1441,12 @@ proxy. To do this you first need to
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create &lt;code>testjob.xrsl&lt;/code>, a test job expressed in
 &lt;a href="https://www.nordugrid.org/arc/arc6/users/xrsl.html">xRSL&lt;/a>, showing environment
 where it will run:&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-xrsl" data-lang="xrsl">&amp;amp;( executable = &amp;#34;/usr/bin/env&amp;#34; )
-( jobname = &amp;#34;arctest&amp;#34; )
-( stdout = &amp;#34;stdout&amp;#34; )
-( join = &amp;#34;yes&amp;#34; )
-( gmlog = &amp;#34;gmlog&amp;#34; )
-&lt;/code>&lt;/pre>&lt;p>Then review the ARC CE information and send the job using
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>&amp;amp;( executable = &amp;#34;/usr/bin/env&amp;#34; )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( jobname = &amp;#34;arctest&amp;#34; )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( stdout = &amp;#34;stdout&amp;#34; )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( join = &amp;#34;yes&amp;#34; )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>( gmlog = &amp;#34;gmlog&amp;#34; )
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then review the ARC CE information and send the job using
 &lt;a href="https://www.nordugrid.org/arc/arc6/users/client_tools.html#arcsub">&lt;code>arcsub&lt;/code>&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Getting info about the selected CE&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Example CE: alex4.nipne.ro:2811/nordugrid-SLURM-dteam&lt;/span>
@@ -1493,15 +1498,15 @@ Element (CE) level.&lt;/p>
 &lt;p>The first step is to prepare a JDL as &lt;code>testjob.jdl&lt;/code>. The
 &lt;a href="https://cream-guide.readthedocs.io/en/latest/JDL_Guide.html">CREAM JDL Guide&lt;/a>,
 documents the creation of the JDL:&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-jdl" data-lang="jdl">[
-Type = &amp;#34;Job&amp;#34;;
-JobType = &amp;#34;Normal&amp;#34;;
-Executable = &amp;#34;/usr/bin/env&amp;#34;;
-StdOutput = &amp;#34;output.txt&amp;#34;;
-StdError = &amp;#34;error.txt&amp;#34;;
-OutputSandbox = {&amp;#34;output.txt&amp;#34;, &amp;#34;error.txt&amp;#34;};
-]
-&lt;/code>&lt;/pre>&lt;p>Then you can submit, monitor and retrieve the output of the job.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>[
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Type = &amp;#34;Job&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>JobType = &amp;#34;Normal&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Executable = &amp;#34;/usr/bin/env&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>StdOutput = &amp;#34;output.txt&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>StdError = &amp;#34;error.txt&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OutputSandbox = {&amp;#34;output.txt&amp;#34;, &amp;#34;error.txt&amp;#34;};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then you can submit, monitor and retrieve the output of the job.&lt;/p>
 &lt;blockquote>
 &lt;p>Those commands are broken on the UI installed from UMD via
 &lt;a href="https://github.com/EGI-Federation/ansible-role-ui">our Ansible module&lt;/a>, but
