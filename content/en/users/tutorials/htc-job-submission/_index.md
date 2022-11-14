@@ -339,8 +339,62 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
 
 ### Use case: identifying all the Computing Elements supporting the dteam VO
 
-> FIXME: need to add `ldapsearch` queries for identifying all the sites/CE
-> supporting **dteam**
+In **GLUE 2.0**, the access granted to a given VO to a compute or storage
+resource, is published using the `GLUE2Share` object. There are also
+`GLUE2ComputingShare` and `GLUE2StorageShare` to specifically document sharing
+of compute ore storage resources.
+
+{{% alert title="Tip" color="info" %}} You can use `-o ldif-wrap=no` to disable
+wrapping the results. {{% /alert %}}
+
+```shell
+# Finding all the resources available to dteam VO
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2Share)(GLUE2ShareID=*dteam*))'
+
+# Finding all the compute resources available to dteam VO
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*))'
+
+# Finding all the storage resources available to dteam VO
+ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2StorageShare)(GLUE2ShareID=*dteam*))'
+```
+
+It is possible to filter for the different types of Computing Element, and
+select only specific attributes.
+
+```shell
+# Information about the HTCondorCE supporting dteam VO
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*)(GLUE2ComputingShareComputingEndpointForeignKey=*HTCondorCE*))' \
+    GLUE2ShareEndpointForeignKey \
+    GLUE2ShareID \
+    GLUE2ComputingShareTotalJobs \
+    GLUE2ComputingShareRunningJobs \
+    GLUE2ComputingShareWaitingJobs
+
+# Information about the ARC-CE supporting dteam VO
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*)(GLUE2ComputingShareComputingEndpointForeignKey=*urn:ogf*))' \
+    GLUE2ComputingShareComputingEndpointForeignKey \
+    GLUE2ComputingShareTotalJobs \
+    GLUE2ComputingShareRunningJobs \
+    GLUE2ComputingShareWaitingJobs
+
+# Finding all the Storage resources available to dteam VO
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2StorageShare)(GLUE2ShareID=*dteam*))' \
+    GLUE2ShareID \
+    GLUE2StorageShareStorageServiceForeignKey \
+    GLUE2ShareDescription
+```
 
 Once you have selected a site, you can start sending jobs there.
 
