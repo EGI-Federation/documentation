@@ -452,7 +452,16 @@ resources explorer.
 
 It can be used as an alternative to querying the Top BDII using `ldapsearch`.
 
-![VAPOR: computing resources for dteam](vapor-dteam-computing-resources.png)
+![VAPOR: overview of resources for dteam](vapor-dteam-computing-overview.png)
+
+Using the left menu you can select a VO and filter the different resources
+types.
+
+![VAPOR: filtering resources for dteam](vapor-dteam-computing-shares.png)
+
+VAPOR will list the matching resources.
+
+![VAPOR: detail of resources for dteam](vapor-dteam-computing-resources.png)
 
 #### Using legacy tools for GLUE 1.3
 
@@ -635,7 +644,7 @@ Create `testjob.xrsl`, a test job expressed in
 [xRSL](https://www.nordugrid.org/arc/arc6/users/xrsl.html), showing environment
 where it will run:
 
-```xrsl
+```text
 &( executable = "/usr/bin/env" )
 ( jobname = "arctest" )
 ( stdout = "stdout" )
@@ -713,7 +722,7 @@ The first step is to prepare a JDL as `testjob.jdl`. The
 [CREAM JDL Guide](https://cream-guide.readthedocs.io/en/latest/JDL_Guide.html),
 documents the creation of the JDL:
 
-```jdl
+```text
 [
 Type = "Job";
 JobType = "Normal";
