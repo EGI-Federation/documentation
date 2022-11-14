@@ -279,7 +279,7 @@ Most, if not all the ARC-CE should be discoverable via GLUE 2.0.
 # Querying for all HTCondorCE compute resources, using GLUE 2.0
 $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     -b "GLUE2GroupID=grid,o=glue" \
-    '(&(objectClass=GLUE2Endpoint)(GLUE2EndpointImplementationName=ARC-CE))' \
+    '(&(objectClass=GLUE2Endpoint)(GLUE2EndpointImplementationName=nordugrid-arc))' \
     GLUE2EndpointInterfaceName \
     GLUE2EndpointImplementationVersion \
     GLUE2EndpointURL
