@@ -363,7 +363,7 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     '(&(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*))'
 
 # Finding all the storage resources available to dteam VO
-ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     -b "GLUE2GroupID=grid,o=glue" \
     '(&(objectClass=GLUE2StorageShare)(GLUE2ShareID=*dteam*))'
 ```
