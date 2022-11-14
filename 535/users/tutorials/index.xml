@@ -1251,9 +1251,8 @@ wrapping the results.
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2StorageShare)(GLUE2ShareID=*dteam*))&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is possible to filter for the different types of Computing Element, and
 select only specific attributes.&lt;/p>
+&lt;h4 id="looking-for-a-htcondorce-for-dteam">Looking for a HTCondorCE for dteam&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Information about the HTCondorCE supporting dteam VO&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># FIXME not matching HTCondorCE like GLUE2ComputingShareComputingEndpointForeignKey=*htcondorce*&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># like for condorce1.ciemat.es used in the examples&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*)(GLUE2ComputingShareComputingEndpointForeignKey=*HTCondorCE*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
@@ -1263,48 +1262,59 @@ select only specific attributes.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareRunningJobs &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareWaitingJobs
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Information about the ARC-CE supporting dteam VO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Most HTCondorCE have the Endpoint spelled HTCondorCE, but some have htcondorce&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># like for the CE condorce1.ciemat.es used in this tutorial&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The query should be updated to match them:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*)(|(GLUE2ComputingShareComputingEndpointForeignKey=*HTCondorCE*)(GLUE2ComputingShareComputingEndpointForeignKey=*htcondorce*)))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareEndpointForeignKey &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareID &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareTotalJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareRunningJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareWaitingJobs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Assuming it was decided (based on the site location, available resources, prior
+experience,&amp;hellip;) to go for &lt;code>condorce1.ciemat.es&lt;/code>, the information about the CE
+can be requested using the following request, filtering on the &lt;code>GLUE2ShareID&lt;/code>
+from the previous query: &lt;code>grid_dteam_condorce1.ciemat.es_ComputingElement&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># FIXME provide queries allowing to retrieve the info required for contacting&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># HTCondorCE: CE name (like condorce1.ciemat.es) + pool (like condorce1.ciemat.es:9619)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*grid_dteam_condorce1.ciemat.es_ComputingElement*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareID &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareDescription &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareExecutionEnvironmentForeignKey &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2EntityOtherInfo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>HTCondorCE are usually running on port &lt;code>9619&lt;/code>, this is confirmed by the results.
+Based on those results, it&amp;rsquo;s possible to guess the following parameters that
+will have to be used when submitting the job:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>CE Name&lt;/strong>: &lt;code>condorce1.ciemat.es&lt;/code> (reported in
+&lt;code>GLUE2ComputingShareExecutionEnvironmentForeignKey: condorce1.ciemat.es&lt;/code>)&lt;/li>
+&lt;li>&lt;strong>CE Pool&lt;/strong>: &lt;code>condorce1.ciemat.es:9619&lt;/code> (reported in
+&lt;code>GLUE2EntityOtherInfo: HTCondorCEId=condorce1.ciemat.es:9619/htcondorce-condor-group_dteam&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;h4 id="looking-for-an-arc-ce-for-dteam">Looking for an ARC-CE for dteam&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Information about the ARC-CE supporting dteam VO&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*)(GLUE2ComputingShareComputingEndpointForeignKey=*urn:ogf*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareComputingEndpointForeignKey &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareEndpointForeignKey &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareTotalJobs &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareRunningJobs &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareWaitingJobs
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Finding all the Storage resources available to dteam VO&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2StorageShare)(GLUE2ShareID=*dteam*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareID &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2StorageShareStorageServiceForeignKey &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareDescription
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># FIXME provide queries allowing to retrieve the info required for contacting&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># ARC-CE: CE name (like alex4.nipne.ro)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have selected a site, you can start sending jobs there.&lt;/p>
 &lt;p>The following sites will be used in this tutorial:&lt;/p>
 &lt;ul>
 &lt;li>HTCondorCE: &lt;code>condorce1.ciemat.es:9619/condorce1.ciemat.es-condor&lt;/code>&lt;/li>
 &lt;li>ARC-CE: &lt;code>alex4.nipne.ro:2811/nordugrid-SLURM-dteam&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>You can query for information using &lt;code>ldapsearch&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying information about the HTCondor CE via GLUE 2.0&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Share)(GLUE2ShareID=*condorce1.ciemat.es*))&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying information about the HTCondor CE via GLUE 2.0, filtering for details on the queue&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Share)(GLUE2ShareID=*condorce1.ciemat.es*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMappingQueue &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareIDGLUE2ComputingShareMaxWallTime &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxVirtualMemory &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxUserRunningJobs &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxRunningJobs &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxCPUTime &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareWaitingJobs &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareUsedSlots &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareTotalJobsGLUE2ComputingShareRunningJobs
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="using-vapor-to-query-resources-using-a-graphical-interface">Using VAPOR to query resources using a graphical interface&lt;/h4>
+&lt;h4 id="using-vapor-to-query-resources-using-a-graphical-interface">Using VAPOR to query resources using a graphical interface&lt;/h4>
 &lt;p>&lt;a href="https://operations-portal.egi.eu/vapor/">VAPOR&lt;/a>, a component of the
 &lt;a href="../../../internal/operations-portal">Operations Portal&lt;/a>, provides a graphical
 resources explorer.&lt;/p>
