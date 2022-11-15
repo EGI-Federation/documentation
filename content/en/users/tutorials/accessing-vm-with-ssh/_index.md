@@ -59,9 +59,10 @@ in use).
 to cloud virtual machine images is usually **disabled** for security reasons and
 it is **strongly suggested not to be used**. {{% /alert %}}
 
-To enable SSH password authentication, the destination virtual machine needs to
-have changed `PasswordAuthentication no` to `PasswordAuthentication yes` in the
-`/etc/ssh/sshd_config` file.
+In case you have **no other option**, and are conscious of the risks, in order to
+enable SSH password authentication, the destination virtual machine needs to
+have `/etc/ssh/sshd_config` configuration changed from
+`PasswordAuthentication no` to `PasswordAuthentication yes`.
 
 If really needed, a custom image with `PasswordAuthentication` enabled can be
 used or that can be injected when the virtual machine is deployed.
