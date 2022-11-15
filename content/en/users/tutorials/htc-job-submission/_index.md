@@ -461,6 +461,8 @@ will have to be used when submitting the job:
 
 #### Looking for an ARC-CE for dteam
 
+// jscpd:ignore-start
+
 ```shell
 # Information about the ARC-CE supporting dteam VO
 $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
@@ -489,6 +491,8 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GLUE2ComputingShareComputingServiceForeignKey \
     GLUE2ComputingShareExecutionEnvironmentForeignKey
 ```
+
+// jscpd:ignore-end
 
 - **CE Name**: `alex4.nipne.ro` (exported from the
   `GLUE2ComputingShareComputingServiceForeignKey: urn:ogf:ComputingService:alex4.nipne.ro:arex`)
