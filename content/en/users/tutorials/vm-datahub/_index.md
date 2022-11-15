@@ -1,5 +1,5 @@
 ---
-title: "Access DataHub from a Virtual machine"
+title: "Access DataHub from a VM"
 type: docs
 weight: 40
 description: >

@@ -2,7 +2,7 @@
 title: "Data transfer with grid storage"
 linkTitle: "Data transfer with grid storage"
 type: docs
-weight: 50
+weight: 160
 description: >
   Use EGI Data transfer to handle data in grid storage
 ---

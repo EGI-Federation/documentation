@@ -1,7 +1,7 @@
 ---
 title: "Data transfer with object storage"
 type: docs
-weight: 60
+weight: 170
 description: >
   Use EGI Data transfer to handle data in object storage
 ---

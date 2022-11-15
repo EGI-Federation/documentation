@@ -1,5 +1,5 @@
 ---
-title: "Create your first Virtual Machine"
+title: "Create your first Virtual Machine (VM)"
 type: docs
 weight: 10
 description: >

@@ -1,6 +1,6 @@
 ---
 title: "Accessing virtual machines with SSH"
-linkTitle: "Accessing VMs with SSH"
+linkTitle: "Access a VM with SSH"
 type: docs
 weight: 20
 description: "Accessing virtual machines with SSH"
@@ -59,8 +59,8 @@ in use).
 to cloud virtual machine images is usually **disabled** for security reasons and
 it is **strongly suggested not to be used**. {{% /alert %}}
 
-In case you have **no other option**, and are conscious of the risks, in order to
-enable SSH password authentication, the destination virtual machine needs to
+In case you have **no other option**, and are conscious of the risks, in order
+to enable SSH password authentication, the destination virtual machine needs to
 have `/etc/ssh/sshd_config` configuration changed from
 `PasswordAuthentication no` to `PasswordAuthentication yes`.
 
