@@ -409,9 +409,10 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GLUE2ComputingShareRunningJobs \
     GLUE2ComputingShareWaitingJobs
 
-# Most HTCondorCE have the Endpoint spelled HTCondorCE, but some have htcondorce
-# like for the CE condorce1.ciemat.es used in this tutorial
-# The query should be updated to match them:
+# XXX Most HTCondorCE have the Endpoint ending in `HTCondorCE`, but some have
+# it ending with `htcondorce`, like in this tutorial for `condorce1.ciemat.es`
+# XXX The attribute `GLUE2ComputingShareComputingEndpointForeignKey` is matched
+$ in a case sensitive way, and the filter should be updated to match them
 $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     -b "GLUE2GroupID=grid,o=glue" \
     '(&(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*)(|(GLUE2ComputingShareComputingEndpointForeignKey=*HTCondorCE*)(GLUE2ComputingShareComputingEndpointForeignKey=*htcondorce*)))' \
@@ -422,10 +423,11 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GLUE2ComputingShareWaitingJobs
 ```
 
-Assuming it was decided (based on the site location, available resources, prior
-experience,...) to go for `condorce1.ciemat.es`, the information about the CE
-can be requested using the following request, filtering on the `GLUE2ShareID`
-from the previous query: `grid_dteam_condorce1.ciemat.es_ComputingElement`.
+Assuming it was decided, based on the site location, available resources, prior
+experience, or any other reason, to go for `condorce1.ciemat.es`, the
+information about the CE can be requested using the following request, filtering
+on the `GLUE2ShareID` from the previous query:
+`grid_dteam_condorce1.ciemat.es_ComputingElement`.
 
 ```shell
 # FIXME provide queries allowing to retrieve the info required for contacting
