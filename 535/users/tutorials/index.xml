@@ -1309,6 +1309,7 @@ will have to be used when submitting the job:&lt;/p>
 &lt;code>GLUE2EntityOtherInfo: HTCondorCEId=condorce1.ciemat.es:9619/htcondorce-condor-group_dteam&lt;/code>)&lt;/li>
 &lt;/ul>
 &lt;h4 id="looking-for-an-arc-ce-for-dteam">Looking for an ARC-CE for dteam&lt;/h4>
+&lt;p>// jscpd:ignore-start&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Information about the ARC-CE supporting dteam VO&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
@@ -1331,7 +1332,8 @@ on the &lt;code>GLUE2ShareID&lt;/code> from the previous query:
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareDescription &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareComputingServiceForeignKey &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareExecutionEnvironmentForeignKey
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>// jscpd:ignore-end&lt;/p>
+&lt;ul>
 &lt;li>&lt;strong>CE Name&lt;/strong>: &lt;code>alex4.nipne.ro&lt;/code> (exported from the
 &lt;code>GLUE2ComputingShareComputingServiceForeignKey: urn:ogf:ComputingService:alex4.nipne.ro:arex&lt;/code>)&lt;/li>
 &lt;/ul>
