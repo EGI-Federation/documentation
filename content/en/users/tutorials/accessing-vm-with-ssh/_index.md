@@ -12,34 +12,12 @@ This page provides an introduction of connecting from a local computer to a
 cloud host via SSH. It provides general guidelines, SSH options, tips, and
 examples for setting up the OpenStack environment.
 
-## Username and password
-
-{{% alert title="Warning" color="warning" %}} `Username` and `password` access
-to cloud virtual machine images is usually **disabled** for security reasons and
-it is **strongly suggested not to be used**. {{% /alert %}}
-
-To enable SSH password authentication, the destination virtual machine needs to
-have changed `PasswordAuthentication no` to `PasswordAuthentication yes` in the
-`/etc/ssh/sshd_config` file.
-
-If really needed, a custom image with `PasswordAuthentication` enabled can be
-used or that can be injected when the virtual machine is deployed.
-
-Depending on your deployment method it could be done with Ansible, Terraform,
-Salt, Puppet, Chef, cloud-init, or your own deployment tool if supported (i.e.
-the Infrastructure Manager and a custom TOSCA template).
-
-{{% alert title="Warning" color="warning" %}} If you enable
-`PasswordAuthentication`, be sure to
-[generate a strong and unique password or passphrase](https://bitwarden.com/password-generator/)
-for your account, otherwise you virtual machines **will be** compromised, and
-you access may be suspended.{{% /alert %}}
-
 ## SSH Keys
 
-A common method to access a cloud virtual machine is via ssh using **SSH keys**,
-you may inject your **public key** into the virtual machine, at deployment time,
-and use your **private key** to connect via ssh without any password.
+The recommended method to access a cloud virtual machine is via ssh using **SSH
+keys**, you may inject your **public key** into the virtual machine, at
+deployment time, and use your **private key** to connect via ssh without any
+password.
 
 {{% alert title="Tip" color="info" %}} If you are using ssh keys in GitHub your
 public keys are available at: `https://github.com/${github_username}.keys`.
@@ -74,6 +52,29 @@ $ chmod 600 ~/.ssh/id_rsa
 
 (with `id_rsa` being the name of the private key associated with the public key
 in use).
+
+## Username and password
+
+{{% alert title="Warning" color="warning" %}} `Username` and `password` access
+to cloud virtual machine images is usually **disabled** for security reasons and
+it is **strongly suggested not to be used**. {{% /alert %}}
+
+To enable SSH password authentication, the destination virtual machine needs to
+have changed `PasswordAuthentication no` to `PasswordAuthentication yes` in the
+`/etc/ssh/sshd_config` file.
+
+If really needed, a custom image with `PasswordAuthentication` enabled can be
+used or that can be injected when the virtual machine is deployed.
+
+Depending on your deployment method it could be done with Ansible, Terraform,
+Salt, Puppet, Chef, cloud-init, or your own deployment tool if supported (i.e.
+the Infrastructure Manager and a custom TOSCA template).
+
+{{% alert title="Warning" color="warning" %}} If you enable
+`PasswordAuthentication`, be sure to
+[generate a strong and unique password or passphrase](https://bitwarden.com/password-generator/)
+for your account, otherwise you virtual machines **will be** compromised, and
+you access may be suspended.{{% /alert %}}
 
 ## OpenStack networking
 
