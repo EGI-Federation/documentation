@@ -307,7 +307,7 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GLUE2MappingPolicyShareForeignKey
 ```
 
-It's also possible to look into [GLUE 1.3](#using-glue13).
+It's also possible to look into [GLUE 1.3](#using-glue-13).
 
 ### Querying for ARC-CE compute resources
 
@@ -364,7 +364,7 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GLUE2MappingPolicyShareForeignKey
 ```
 
-It's also possible to look into [GLUE 1.3](#using-glue13).
+It's also possible to look into [GLUE 1.3](#using-glue-13).
 
 ### Use case: identifying all the Computing Elements supporting the dteam VO
 
