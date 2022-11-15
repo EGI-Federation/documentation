@@ -42,8 +42,8 @@ you may inject your **public key** into the virtual machine, at deployment time,
 and use your **private key** to connect via ssh without any password.
 
 {{% alert title="Tip" color="info" %}} If you are using ssh keys in GitHub your
-public keys are available at: https://github.com/${github_username}.keys i.e.:
-wget https://github.com/github_username.keys {{% /alert %}}
+public keys are available at: `https://github.com/${github_username}.keys`.
+i.e.: `wget https://github.com/github_username.keys` {{% /alert %}}
 
 ### SSH username
 
