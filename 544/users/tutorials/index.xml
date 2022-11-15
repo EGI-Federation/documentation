@@ -63,8 +63,8 @@ and use your &lt;strong>private key&lt;/strong> to connect via ssh without any p
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 If you are using ssh keys in GitHub your
-public keys are available at: &lt;a href="https://github.com/$%7Bgithub_username%7D.keys">https://github.com/${github_username}.keys&lt;/a> i.e.:
-wget &lt;a href="https://github.com/github_username.keys">https://github.com/github_username.keys&lt;/a>
+public keys are available at: &lt;code>https://github.com/${github_username}.keys&lt;/code>.
+i.e.: &lt;code>wget https://github.com/github_username.keys&lt;/code>
 &lt;/div>
 &lt;h3 id="ssh-username">SSH username&lt;/h3>
 &lt;p>The username to use to connect to a virtual machine is dependent on the virtual
