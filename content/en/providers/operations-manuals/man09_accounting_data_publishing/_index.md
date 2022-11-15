@@ -91,4 +91,8 @@ refer to the NorduGrid ARC 6 documentation:
 ## HTCondor-CE
 
 To collect and publish the accounting data you need to install the APEL software
-as explained in the general information section.
+as explained in the general information section. In addition, HTCondor-CE must
+be configured to create accounting records:
+
+- Information on configuring HTCondor-CE for APEL accounting:
+  [APEL Accounting for HTCondor-CE](../../high-throughput-compute/htcondor-ce-apel)
