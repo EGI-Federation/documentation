@@ -33,33 +33,11 @@ Service in EGI please visit its &lt;a href="../../compute/cloud-compute">dedicat
 &lt;p>This page provides an introduction of connecting from a local computer to a
 cloud host via SSH. It provides general guidelines, SSH options, tips, and
 examples for setting up the OpenStack environment.&lt;/p>
-&lt;h2 id="username-and-password">Username and password&lt;/h2>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-&lt;code>Username&lt;/code> and &lt;code>password&lt;/code> access
-to cloud virtual machine images is usually &lt;strong>disabled&lt;/strong> for security reasons and
-it is &lt;strong>strongly suggested not to be used&lt;/strong>.
-&lt;/div>
-&lt;p>To enable SSH password authentication, the destination virtual machine needs to
-have changed &lt;code>PasswordAuthentication no&lt;/code> to &lt;code>PasswordAuthentication yes&lt;/code> in the
-&lt;code>/etc/ssh/sshd_config&lt;/code> file.&lt;/p>
-&lt;p>If really needed, a custom image with &lt;code>PasswordAuthentication&lt;/code> enabled can be
-used or that can be injected when the virtual machine is deployed.&lt;/p>
-&lt;p>Depending on your deployment method it could be done with Ansible, Terraform,
-Salt, Puppet, Chef, cloud-init, or your own deployment tool if supported (i.e.
-the Infrastructure Manager and a custom TOSCA template).&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-If you enable
-&lt;code>PasswordAuthentication&lt;/code>, be sure to
-&lt;a href="https://bitwarden.com/password-generator/">generate a strong and unique password or passphrase&lt;/a>
-for your account, otherwise you virtual machines &lt;strong>will be&lt;/strong> compromised, and
-you access may be suspended.
-&lt;/div>
 &lt;h2 id="ssh-keys">SSH Keys&lt;/h2>
-&lt;p>A common method to access a cloud virtual machine is via ssh using &lt;strong>SSH keys&lt;/strong>,
-you may inject your &lt;strong>public key&lt;/strong> into the virtual machine, at deployment time,
-and use your &lt;strong>private key&lt;/strong> to connect via ssh without any password.&lt;/p>
+&lt;p>The recommended method to access a cloud virtual machine is via ssh using &lt;strong>SSH
+keys&lt;/strong>, you may inject your &lt;strong>public key&lt;/strong> into the virtual machine, at
+deployment time, and use your &lt;strong>private key&lt;/strong> to connect via ssh without any
+password.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 If you are using ssh keys in GitHub your
@@ -85,6 +63,30 @@ need to run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ chmod &lt;span style="color:#0000cf;font-weight:bold">600&lt;/span> ~/.ssh/id_rsa
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>(with &lt;code>id_rsa&lt;/code> being the name of the private key associated with the public key
 in use).&lt;/p>
+&lt;h2 id="username-and-password">Username and password&lt;/h2>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+&lt;code>Username&lt;/code> and &lt;code>password&lt;/code> access
+to cloud virtual machine images is usually &lt;strong>disabled&lt;/strong> for security reasons and
+it is &lt;strong>strongly suggested not to be used&lt;/strong>.
+&lt;/div>
+&lt;p>In case you have &lt;strong>no other option&lt;/strong>, and are conscious of the risks, in order to
+enable SSH password authentication, the destination virtual machine needs to
+have &lt;code>/etc/ssh/sshd_config&lt;/code> configuration changed from
+&lt;code>PasswordAuthentication no&lt;/code> to &lt;code>PasswordAuthentication yes&lt;/code>.&lt;/p>
+&lt;p>If really needed, a custom image with &lt;code>PasswordAuthentication&lt;/code> enabled can be
+used or that can be injected when the virtual machine is deployed.&lt;/p>
+&lt;p>Depending on your deployment method it could be done with Ansible, Terraform,
+Salt, Puppet, Chef, cloud-init, or your own deployment tool if supported (i.e.
+the Infrastructure Manager and a custom TOSCA template).&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+If you enable
+&lt;code>PasswordAuthentication&lt;/code>, be sure to
+&lt;a href="https://bitwarden.com/password-generator/">generate a strong and unique password or passphrase&lt;/a>
+for your account, otherwise you virtual machines &lt;strong>will be&lt;/strong> compromised, and
+you access may be suspended.
+&lt;/div>
 &lt;h2 id="openstack-networking">OpenStack networking&lt;/h2>
 &lt;p>The OpenStack environment needs to be populated with the necessary
 configurations and virtual hardware. To access the virtual machine from outside
