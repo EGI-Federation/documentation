@@ -570,7 +570,7 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GlueCEStateStatus
 ```
 
-#### Using legacy tools for GLUE 1.3
+##### Using legacy tools for GLUE 1.3
 
 Using `lcg-info` it's possible to easily do more targeted queries, like focusing
 on a specific VO.
