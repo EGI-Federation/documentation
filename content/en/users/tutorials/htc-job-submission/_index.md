@@ -171,7 +171,7 @@ create a **VOMS proxy** for `dteam` VO:
 
 ```shell
 # Creating the proxy
-$ voms-proxy-init -voms dteam --rfc
+$ voms-proxy-init -voms dteam
 Enter GRID pass phrase for this identity:
 Contacting voms2.hellasgrid.gr:15004 [/C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr] "dteam"...
 Remote VOMS server contacted succesfully.
