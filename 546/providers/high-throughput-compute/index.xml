@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – High-Throughput Compute</title><link>/providers/high-throughput-compute/</link><description>Recent content in High-Throughput Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: APEL Accounting for HTCondor-CE</title><link>/providers/high-throughput-compute/htcondor_ce_apel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/htcondor_ce_apel/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – High-Throughput Compute</title><link>/providers/high-throughput-compute/</link><description>Recent content in High-Throughput Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: APEL Accounting for HTCondor-CE</title><link>/providers/high-throughput-compute/htcondor-ce-apel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/htcondor-ce-apel/</guid><description>
 &lt;p>&lt;a href="https://htcondor.com/htcondor-ce/">HTCondor-CE&lt;/a> can be configured to
 automatically publish accounting data to
 &lt;a href="../../../internal/accounting">EGI Accounting service&lt;/a>, if compute resources are
@@ -89,7 +89,7 @@ attributes of the &lt;code>StartD&lt;/code>.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">STARTD_ATTRS&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">$(STARTD_ATTRS) ApelScaling&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ul>
-&lt;p>If both &lt;code>ApelSpecs&lt;/code> and &lt;code>ApelScaling&lt;/code> are defined, &lt;code>ApelSpecs&lt;/code> takes precedence.&lt;/p></description></item><item><title>Providers: Changing the Site BDII</title><link>/providers/high-throughput-compute/changing_site_bdii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/changing_site_bdii/</guid><description>
+&lt;p>If both &lt;code>ApelSpecs&lt;/code> and &lt;code>ApelScaling&lt;/code> are defined, &lt;code>ApelSpecs&lt;/code> takes precedence.&lt;/p></description></item><item><title>Providers: Changing the Site BDII</title><link>/providers/high-throughput-compute/changing-site-bdii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/changing-site-bdii/</guid><description>
 &lt;h2 id="moving-the-site-bdii-to-another-machine">Moving the Site BDII to another machine&lt;/h2>
 &lt;ol>
 &lt;li>
