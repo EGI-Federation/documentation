@@ -32,4 +32,4 @@ Main characteristics of the service:
 Miscellaneous collection of documentation related to High-Throughput Compute.
 
 - [Changing the Site BDII](./changing_site_bdii)
-- [APEL Accounting for HTCondor-CE](./htcondor_ce_apel)
+- [APEL Accounting for HTCondor-CE](./htcondor-ce-apel)

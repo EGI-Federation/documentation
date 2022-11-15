@@ -22,7 +22,7 @@ EGI Accounting consists of two main components:
 ## Publishing Accounting
 
 - Publishing
-  [APEL Accounting for HTCondor-CE](../../providers/high-throughput-compute/htcondor_ce_apel).
+  [APEL Accounting for HTCondor-CE](../../providers/high-throughput-compute/htcondor-ce-apel).
 
 {{% alert title="Note" color="info" %}} Documentation for the Accounting
 Repository is also available in the
