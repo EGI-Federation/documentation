@@ -229,6 +229,9 @@ Information in the Top BDII is provided for two GLUE schema versions:
 > Some resources may not yet be exposed via GLUE 2.0, and it may be required to
 > use GLUE 1.3 for those ones.
 
+{{% alert title="Tip" color="info" %}} You can use `-o ldif-wrap=no` to disable
+wrapping the results. {{% /alert %}}
+
 ```shell
 # Dumping all the information from GLUE 2.0
 $ ldapsearch -x -H ldap://lcg-bdii.egi.eu:2170 -b "GLUE2GroupID=grid,o=glue"
@@ -369,12 +372,9 @@ It's also possible to look into [GLUE 1.3](#using-glue-13).
 ### Use case: identifying all the Computing Elements supporting the dteam VO
 
 In **GLUE 2.0**, the access granted to a given VO to a compute or storage
-resource, is published using the `GLUE2Share` object. There are also
-`GLUE2ComputingShare` and `GLUE2StorageShare` to specifically document sharing
-of compute ore storage resources.
-
-{{% alert title="Tip" color="info" %}} You can use `-o ldif-wrap=no` to disable
-wrapping the results. {{% /alert %}}
+resource, is published using the `GLUE2Share` and `GLUE2Policy` objects. There
+are also `GLUE2ComputingShare` and `GLUE2StorageShare` to specifically document
+sharing of compute or storage resources.
 
 ```shell
 # Querying GLUE2Share for all the resources available to dteam VO
@@ -395,6 +395,16 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
 
 It is possible to filter for the different types of Computing Element, and
 select only specific attributes.
+
+Once you have selected a site, using the `ldapsearch` queries from the next
+subsections, you can start sending jobs to them, as documented in the
+[Step4: submitting and managing jobs](#step-4-submitting-and-managing-jobs).
+
+{{% alert title="Information" color="info" %}} The following Computing Elements
+have been arbitrarily chosen to be used in this tutorial:
+
+- HTCondorCE: `condorce1.ciemat.es`
+- ARC-CE: `alex4.nipne.ro` {{% /alert %}}
 
 #### Looking for a HTCondorCE for dteam
 
@@ -430,8 +440,7 @@ on the `GLUE2ShareID` from the previous query:
 `grid_dteam_condorce1.ciemat.es_ComputingElement`.
 
 ```shell
-# FIXME provide queries allowing to retrieve the info required for contacting
-# HTCondorCE: CE name (like condorce1.ciemat.es) + pool (like condorce1.ciemat.es:9619)
+# condor_submit needs CE (condorce1.ciemat.es) and pool (condorce1.ciemat.es:9619)
 $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     -b "GLUE2GroupID=grid,o=glue" \
     '(&(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*grid_dteam_condorce1.ciemat.es_ComputingElement*))' \
@@ -462,17 +471,27 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GLUE2ComputingShareTotalJobs \
     GLUE2ComputingShareRunningJobs \
     GLUE2ComputingShareWaitingJobs
-
-# FIXME provide queries allowing to retrieve the info required for contacting
-# ARC-CE: CE name (like alex4.nipne.ro)
 ```
 
-Once you have selected a site, you can start sending jobs there.
+Assuming it was decided, based on the site location, available resources, prior
+experience, or any other reason, to go for `condorce1.ciemat.es`, the
+information about the CE can be requested using the following request, filtering
+on the `GLUE2ShareID` from the previous query:
+`grid_dteam_condorce1.ciemat.es_ComputingElement`.
 
-The following sites will be used in this tutorial:
+```shell
+# arcsub needs CE name (alex4.nipne.ro)
+$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
+    -b "GLUE2GroupID=grid,o=glue" \
+    '(&(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*urn:ogf:ComputingShare:alex4.nipne.ro:dteam_dteam*))' \
+    GLUE2ShareID \
+    GLUE2ShareDescription \
+    GLUE2ComputingShareComputingServiceForeignKey \
+    GLUE2ComputingShareExecutionEnvironmentForeignKey
+```
 
-- HTCondorCE: `condorce1.ciemat.es:9619/condorce1.ciemat.es-condor`
-- ARC-CE: `alex4.nipne.ro:2811/nordugrid-SLURM-dteam`
+- **CE Name**: `alex4.nipne.ro` (exported from the
+  `GLUE2ComputingShareComputingServiceForeignKey: urn:ogf:ComputingService:alex4.nipne.ro:arex`)
 
 #### Using VAPOR to query resources using a graphical interface
 
