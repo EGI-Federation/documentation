@@ -62,13 +62,9 @@ you may inject your &lt;strong>public key&lt;/strong> into the virtual machine, 
 and use your &lt;strong>private key&lt;/strong> to connect via ssh without any password.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-&lt;p>If you are using ssh keys in GitHub your
-public keys are available at:&lt;/p>
-&lt;pre>&lt;code>https://github.com/${github_username}.keys
-&lt;/code>&lt;/pre>
-&lt;p>i.e.:&lt;/p>
-&lt;pre>&lt;code>wget https://github.com/github_username.keys
-&lt;/code>&lt;/pre>
+If you are using ssh keys in GitHub your
+public keys are available at: &lt;a href="https://github.com/$%7Bgithub_username%7D.keys">https://github.com/${github_username}.keys&lt;/a> i.e.:
+wget &lt;a href="https://github.com/github_username.keys">https://github.com/github_username.keys&lt;/a>
 &lt;/div>
 &lt;h3 id="ssh-username">SSH username&lt;/h3>
 &lt;p>The username to use to connect to a virtual machine is dependent on the virtual
@@ -86,7 +82,7 @@ or inject some code to add additional users (i.e. with Ansible).&lt;/p>
 &lt;p>The &lt;code>private ssh-key&lt;/code> stored on your local computer is required to have
 restrictive file permissions. Depending on your local operative system you may
 need to run:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#0000cf;font-weight:bold">600&lt;/span> ~/.ssh/id_rsa
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ chmod &lt;span style="color:#0000cf;font-weight:bold">600&lt;/span> ~/.ssh/id_rsa
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>(with &lt;code>id_rsa&lt;/code> being the name of the private key associated with the public key
 in use).&lt;/p>
 &lt;h2 id="openstack-networking">OpenStack networking&lt;/h2>
