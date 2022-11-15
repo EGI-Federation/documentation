@@ -1177,7 +1177,7 @@ about this one.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2PolicyRule &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2PolicyID &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2MappingPolicyShareForeignKey
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s also possible to look into &lt;a href="#using-glue13">GLUE 1.3&lt;/a>.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s also possible to look into &lt;a href="#using-glue-13">GLUE 1.3&lt;/a>.&lt;/p>
 &lt;h3 id="querying-for-arc-ce-compute-resources">Querying for ARC-CE compute resources&lt;/h3>
 &lt;p>Most, if not all the ARC-CE should be discoverable via GLUE 2.0.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying for all ARC-CE compute resources&lt;/span>
@@ -1224,7 +1224,7 @@ about this one.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2PolicyRule &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2PolicyID &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2MappingPolicyShareForeignKey
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s also possible to look into &lt;a href="#using-glue13">GLUE 1.3&lt;/a>.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s also possible to look into &lt;a href="#using-glue-13">GLUE 1.3&lt;/a>.&lt;/p>
 &lt;h3 id="use-case-identifying-all-the-computing-elements-supporting-the-dteam-vo">Use case: identifying all the Computing Elements supporting the dteam VO&lt;/h3>
 &lt;p>In &lt;strong>GLUE 2.0&lt;/strong>, the access granted to a given VO to a compute or storage
 resource, is published using the &lt;code>GLUE2Share&lt;/code> object. There are also
