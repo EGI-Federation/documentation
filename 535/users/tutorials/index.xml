@@ -1056,7 +1056,7 @@ has been completed, and when the
 &lt;a href="#preparing-the-x509-credentials">X.509 credentials have been prepared&lt;/a>, you can
 create a &lt;strong>VOMS proxy&lt;/strong> for &lt;code>dteam&lt;/code> VO:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating the proxy&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ voms-proxy-init -voms dteam --rfc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ voms-proxy-init -voms dteam
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter GRID pass phrase &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> this identity:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Contacting voms2.hellasgrid.gr:15004 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GR/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>HellasGrid/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>hellasgrid.gr/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms2.hellasgrid.gr&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;dteam&amp;#34;&lt;/span>...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Remote VOMS server contacted succesfully.
