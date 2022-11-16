@@ -244,19 +244,37 @@ the name in other languages which are commonly used in the geographic scope of
 the deployment. The name should be placed in the `<md:ServiceName>` in the
 `<md:AttributeConsumingService>` container.
 
-It is recommended that the `<md:IDPSSODescriptor>` element included in your SP
-metadata contains both an `AuthnRequestsSigned` and an `WantAssertionsSigned`
-attribute set to `true`.
+It is recommended that your SP metadata contains:
 
-Your SP metadata should also contain contact information for support and for a
-technical contact. The `<md:EntityDescriptor>` element should contain both a
-`<md:ContactPerson>` element with a `contactType` of `"support"` and a
-`<md:ContactPerson>` element with a `contactType` of `"technical"`. The
-`<md:ContactPerson>` elements should contain at least one `<md:EmailAddress>`.
-The support address may be used for generic support questions about the service,
-while the technical contact may be contacted regarding technical
-interoperability problems. The technical contact must be responsible for the
-technical operation of the service represented by your SP.
+- an `<md:SPSSODescriptor>` role element containing
+  - an `AuthnRequestsSigned` and an `WantAssertionsSigned` attribute set to
+    `true`
+  - at least one `<md:AssertionConsumerService>` endpoint element
+  - at least one `<md:KeyDescriptor>` element whose use attribute is omitted or
+    set to encryption
+  - an `<md:Extensions>` element at the role level containing
+    - an `<mdui:UIInfo>` extension element containing the child elements
+      `<mdui:DisplayName>`, `<mdui:Logo>`, and `<mdui:PrivacyStatementURL>`
+    - an `<mdattr:EntityAttributes>` extension element for signaling Subject
+      Identifier requirements with previously prescribed content
+  - an `<md:ContactPerson>` element with a contactType of `support` and/or a
+    `<md:ContactPerson>` element with a contactType of `technical`. The
+    `<md:ContactPerson>` element(s) should contain at least one
+    `<md:EmailAddress>`. The support address may be used for generic support
+    questions about the service, while the technical contact may be contacted
+    regarding technical interoperability problems. The technical contact must be
+    responsible for the technical operation of the service represented by your
+    SP.
+
+If the SP supports the Single Logout profile, then its metadata MUST contain
+(within its `<md:SPSSODescriptor>` role element):
+
+- at least one `<md:KeyDescriptor>` element whose use attribute is omitted or
+  set to signing
+- at least one `<md:SingleLogoutService>` endpoint element (this MAY be omitted
+  if the SP solely issues `<samlp:LogoutRequest>` messages containing the
+  `<aslo:Asynchronous>` extension
+  [SAML2ASLO](http://docs.oasis-open.org/security/saml/Post2.0/saml-async-slo/v1.0/cs01/saml-async-slo-v1.0-cs01.pdf))
 
 ### Attributes
 
