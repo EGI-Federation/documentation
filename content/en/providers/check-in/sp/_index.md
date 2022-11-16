@@ -570,8 +570,8 @@ GET "${AUTHORIZATION_ENDPOINT}?
       &code_challenge_method=S256"
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _Authorization
-Endpoint_ in the [Endpoints](#endpoints) table.{{% /alert %}}
+{{% alert title="Note" color="info" %}} You can find the
+`AUTHORIZATION_ENDPOINT` in the [Endpoints](#endpoints) table.{{% /alert %}}
 
 The Authorization Endpoint responds as usual but records `code_challenge` and
 the `code_challenge_method`.
@@ -598,7 +598,7 @@ curl -X POST "${TOKEN_ENDPOINT}" \
   -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+{{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
 The Authorization Server transforms `code_verifier` and compares it to
@@ -639,7 +639,7 @@ curl -X POST "${TOKEN_ENDPOINT}" \
   -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+{{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
@@ -668,7 +668,7 @@ curl -X POST "${TOKEN_ENDPOINT}" \
   -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+{{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
 ##### Token Exchange
@@ -695,7 +695,7 @@ curl -X POST "${TOKEN_ENDPOINT}" \
   -d "scope=openid%20profile%20offline_access" | python -m json.tool;
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+{{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
@@ -732,15 +732,16 @@ following parameters:
 Example request:
 
 ```shell
-curl -X POST "${DEVICE_CODE_ENDPOINT}" \
+curl -X POST "${DEVICE_AUTHORIZATION_ENDPOINT}" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "client_id=${CLIENT_ID}" \
   -d "client_secret=${CLIENT_SECRET}" \
   -d "scope=openid%20email%20profile" | python -m json.tool
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _Device Code Endpoint_
-in the [Endpoints](#endpoints) table.{{% /alert %}}
+{{% alert title="Note" color="info" %}} You can find the
+`DEVICE_AUTHORIZATION_ENDPOINT` in the [Endpoints](#endpoints)
+table.{{% /alert %}}
 
 Example response:
 
@@ -787,7 +788,7 @@ curl -X POST "${TOKEN_ENDPOINT}" \
   -d "scope=openid%20profile" | python -m json.tool
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+{{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
@@ -809,7 +810,7 @@ To combine Device Code flow with PKCE you need to make the following requests:
 1 - Device Authorization Request:
 
 ```shell
-curl -X POST "${DEVICE_CODE_ENDPOINT}" \
+curl -X POST "${DEVICE_AUTHORIZATION_ENDPOINT}" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "client_id=${CLIENT_ID}" \
   -d "client_secret=${CLIENT_SECRET}" \
@@ -818,8 +819,9 @@ curl -X POST "${DEVICE_CODE_ENDPOINT}" \
   -d "code_challenge_method=S256" | python -m json.tool
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _Device Code Endpoint_
-in the [Endpoints](#endpoints) table.{{% /alert %}}
+{{% alert title="Note" color="info" %}} You can find the
+`DEVICE_AUTHORIZATION_ENDPOINT` in the [Endpoints](#endpoints)
+table.{{% /alert %}}
 
 2 - Device Access Token Request
 
@@ -833,7 +835,7 @@ curl -X POST "${TOKEN_ENDPOINT}" \
   -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
+{{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
 #### UserInfo Endpoint
@@ -863,7 +865,7 @@ curl -X GET ${USERINFO_ENDPOINT}?
   -H "Authorization: Bearer ${ACCESS_TOKEN}" | python -m json.tool;
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _USERINFO_ENDPOINT_ in
+{{% alert title="Note" color="info" %}} You can find the `USERINFO_ENDPOINT` in
 the [Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
@@ -913,7 +915,7 @@ curl -X POST "${INTROSPECTION_ENDPOINT}" \
 ```
 
 {{% alert title="Note" color="info" %}} You can find the
-_INTROSPECTION_ENDPOINT_ in the [Endpoints](#endpoints) table.{{% /alert %}}
+`INTROSPECTION_ENDPOINT` in the [Endpoints](#endpoints) table.{{% /alert %}}
 
 Example response:
 
@@ -985,7 +987,7 @@ curl -X GET ${LOGOUT_ENDPOINT}?
   id_token_hint=${ID_TOKEN}
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _LOGOUT_ENDPOINT_ in
+{{% alert title="Note" color="info" %}} You can find the `LOGOUT_ENDPOINT` in
 the [Endpoints](#endpoints) table.{{% /alert %}}
 
 ##### Example Request with redirection
@@ -996,7 +998,7 @@ curl -X GET ${LOGOUT_ENDPOINT}?
   client_id=${CLIENT_ID}
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _LOGOUT_ENDPOINT_ in
+{{% alert title="Note" color="info" %}} You can find the `LOGOUT_ENDPOINT` in
 the [Endpoints](#endpoints) table.{{% /alert %}}
 
 ### Claims-based authorisation
@@ -1231,7 +1233,7 @@ by creating new Refresh Tokens issued by Keycloak.
   oidc-gen --pub --issuer <ISSUER> --scope ...
   ```
 
-  {{% alert title="Note" color="info" %}} You can find the _ISSUER_ in the
+  {{% alert title="Note" color="info" %}} You can find the `ISSUER` in the
   [Endpoints](#endpoints) table.{{% /alert %}}
 
 #### Common issues
