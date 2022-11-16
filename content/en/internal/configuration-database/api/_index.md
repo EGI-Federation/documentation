@@ -5,9 +5,10 @@ weight: 90
 type: "docs"
 ---
 
-{{% alert title="Note" color="info" %}} The API for the
-[GOCDB service](https://github.com/GOCDB/gocdb), powering the EGI Configuration
-Database, is available [on a dedicated site](https://gocdb.github.io/api/).
+{{% alert title="Note" color="info" %}} Exhaustive documentation of the API for
+the [GOCDB service](https://github.com/GOCDB/gocdb), powering the
+[EGI Configuration Database](../), is available
+[on the dedicated GOCDB API documentation site](https://gocdb.github.io/api/).
 {{% /alert %}}
 
 ## API endpoints
