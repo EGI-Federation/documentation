@@ -1396,9 +1396,10 @@ projects:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Internal: API</title><link>/internal/configuration-database/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/api/</guid><description>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-The API for the
-&lt;a href="https://github.com/GOCDB/gocdb">GOCDB service&lt;/a>, powering the EGI Configuration
-Database, is available &lt;a href="https://gocdb.github.io/api/">on a dedicated site&lt;/a>.
+Exhaustive documentation of the API for
+the &lt;a href="https://github.com/GOCDB/gocdb">GOCDB service&lt;/a>, powering the
+&lt;a href="../">EGI Configuration Database&lt;/a>, is available
+&lt;a href="https://gocdb.github.io/api/">on the dedicated GOCDB API documentation site&lt;/a>.
 &lt;/div>
 &lt;h2 id="api-endpoints">API endpoints&lt;/h2>
 &lt;p>The API is accessible in two different ways:&lt;/p>
