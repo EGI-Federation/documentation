@@ -420,93 +420,7 @@ Check-in supports the following OpenID Connect/OAuth2 grant types:
 - Device Code: used by devices that lack a browser to perform a user-agent based
   OAuth flow.
 
-### Endpoints
-
-The most important OIDC/OAuth2 endpoints are listed below:
-
-<!-- markdownlint-disable no-inline-html -->
-
-{{< tabpanex >}}
-
-{{< tabx header="Production" >}}
-
-| Endpoints               | Production environment                                                        |
-| ----------------------- | ----------------------------------------------------------------------------- |
-| Provider configuration  | <https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
-| Issuer                  | <https://aai.egi.eu/auth/realms/egi>                                          |
-| Authorization           | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
-| Token                   | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
-| Device Authorization    | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
-| JSON Web Key Sets(JWKS) | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
-| UserInfo                | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
-| Introspection           | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
-| Logout                  | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
-
-{{< /tabx >}}
-
-{{< tabx header="Demo" >}}
-
-| Endpoints               | Demo environment                                                                   |
-| ----------------------- | ---------------------------------------------------------------------------------- |
-| Provider configuration  | <https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
-| Issuer                  | <https://aai-demo.egi.eu/auth/realms/egi>                                          |
-| Authorization           | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
-| Token                   | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
-| Device Authorization    | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
-| JSON Web Key Sets(JWKS) | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
-| UserInfo                | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
-| Introspection           | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
-| Logout                  | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
-
-{{< /tabx >}}
-
-{{< tabx header="Development" >}}
-
-| Endpoints               | Development environment                                                           |
-| ----------------------- | --------------------------------------------------------------------------------- |
-| Provider configuration  | <https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
-| Issuer                  | <https://aai-dev.egi.eu/auth/realms/egi>                                          |
-| Authorization           | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
-| Token                   | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
-| Device Authorization    | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
-| JSON Web Key Sets(JWKS) | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
-| UserInfo                | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
-| Introspection           | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
-| Logout                  | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
-
-{{< /tabx >}}
-
-{{< /tabpanex >}}
-
-<!-- markdownlint-enable no-inline-html -->
-
-#### Authorization Endpoint
-
-The Authorization Endpoint performs Authentication of the end user. This is done
-by sending the User Agent to the Authorization Server\'s Authorization Endpoint
-for Authentication and Authorisation, using request parameters defined by OAuth
-2.0 and additional parameters and parameter values defined by OpenID Connect.
-
-The request parameters of the Authorization Endpoint are:
-
-- `client_id`: ID of the client that ask for authentication to the Authorization
-  Server.
-- `redirect_uri`: URI to which the response will be sent.
-- `scope`: A list of attributes that the application requires.
-- `state`: Opaque value used to maintain state between the request and the
-  callback.
-- `response_type`: value that determines the authorisation processing flow to be
-  used. For **Authorization Code** grant set `response_type=code`. This way the
-  response will include an Authorization Code.
-
-#### Token Endpoint
-
-To obtain an Access Token, an ID Token, and optionally a Refresh Token, the
-Client sends a Token Request to the Token Endpoint.
-
-Depending on the grant type, the following parameters are required:
-
-##### Authorization Code
+#### Authorization Code
 
 | Parameter      | Presence | Values                                                                                             |
 | -------------- | -------- | -------------------------------------------------------------------------------------------------- |
@@ -514,7 +428,7 @@ Depending on the grant type, the following parameters are required:
 | `code`         | Required | The value of the code in the response from Authorization Endpoint                                  |
 | `redirect_uri` | Required | URI to which the response will be sent (must be the same as the request to Authorization Endpoint) |
 
-##### Proof Key for Code Exchange (PKCE)
+#### Proof Key for Code Exchange (PKCE)
 
 The Proof Key for Code Exchange (PKCE, pronounced pixie) extension
 ([RFC 7636](https://tools.ietf.org/html/rfc7636)) describes a technique for
@@ -524,7 +438,7 @@ first creating a secret, and then using that secret again when exchanging the
 Authorization Code for an access token. This way if the code is intercepted, it
 will not be useful since the token request relies on the initial secret.
 
-###### Client configuration
+##### Client configuration
 
 To enable PKCE you need to go to the
 [Manage Services Page](https://aai.egi.eu/federation) and create/edit a client.
@@ -532,7 +446,7 @@ In "Protocol" tab under "Token Endpoint Authentication Method" select "No
 authentication" and in "Crypto" tab under "Proof Key for Code Exchange (PKCE)
 Code Challenge Method" select "SHA-256 hash algorithm".
 
-###### Protocol Flow
+##### Protocol Flow
 
 Because the PKCE-enhanced Authorization Code Flow builds upon the standard
 Authorization Code Flow, the steps are very similar.
@@ -616,7 +530,7 @@ Example response:
 }
 ```
 
-##### Refresh request
+#### Refresh flow
 
 The following request allows obtaining an access token from a refresh token
 using the `grant_type` value `refresh_token`:
@@ -655,7 +569,7 @@ Example response:
 }
 ```
 
-###### Refresh Request with PKCE
+##### Refresh Request when using PKCE
 
 To combine the refresh token grant type with PKCE you need to make the following
 request:
@@ -671,7 +585,7 @@ curl -X POST "${TOKEN_ENDPOINT}" \
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
-##### Token Exchange
+#### Token Exchange
 
 To get a token from client B using a token issued for client A, the parameters
 of the request are:
@@ -711,13 +625,13 @@ Example response:
 }
 ```
 
-##### Device Code
+#### Device Code
 
 The device code flow enables OAuth clients on (input-constrained) devices to
 obtain user authorisation for accessing protected resources without using an
 on-device user-agent, provided that they have an internet connection.
 
-###### 1. Device Authorization Request
+##### 1. Device Authorization Request
 
 The client initiates the authorisation flow by requesting a set of verification
 codes from the Authorization Server by making an HTTP "POST" request to the
@@ -756,14 +670,14 @@ Example response:
 }
 ```
 
-###### 2. User Interaction
+##### 2. User Interaction
 
 After receiving a successful Authorization Response, the client displays or
 otherwise communicates the `user_code` and the `verification_uri` to the end
 user and instructs them to visit the URI in a user agent on a secondary device
 (for example, in a browser on their mobile phone), and enter the user code.
 
-###### 3. Device Access Token Request
+##### 3. Device Access Token Request
 
 After displaying instructions to the user, the client makes an Access Token
 Request to the token endpoint. The request contains the following parameters:
@@ -803,7 +717,7 @@ Example response:
 }
 ```
 
-###### Device Code with PKCE
+##### Device Code with PKCE
 
 To combine Device Code flow with PKCE you need to make the following requests:
 
@@ -837,6 +751,97 @@ curl -X POST "${TOKEN_ENDPOINT}" \
 
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
 [Endpoints](#endpoints) table.{{% /alert %}}
+
+### Endpoints
+
+The most important OIDC/OAuth2 endpoints are listed below:
+
+<!-- markdownlint-disable no-inline-html -->
+
+{{< tabpanex >}}
+
+{{< tabx header="Production" >}}
+
+| Endpoints               | Production environment                                                        |
+| ----------------------- | ----------------------------------------------------------------------------- |
+| Provider configuration  | <https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
+| Issuer                  | <https://aai.egi.eu/auth/realms/egi>                                          |
+| Authorization           | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
+| Token                   | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
+| Device Authorization    | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
+| JSON Web Key Sets(JWKS) | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
+| UserInfo                | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
+| Introspection           | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
+| Logout                  | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
+
+{{< /tabx >}}
+
+{{< tabx header="Demo" >}}
+
+| Endpoints               | Demo environment                                                                   |
+| ----------------------- | ---------------------------------------------------------------------------------- |
+| Provider configuration  | <https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
+| Issuer                  | <https://aai-demo.egi.eu/auth/realms/egi>                                          |
+| Authorization           | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
+| Token                   | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
+| Device Authorization    | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
+| JSON Web Key Sets(JWKS) | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
+| UserInfo                | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
+| Introspection           | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
+| Logout                  | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
+
+{{< /tabx >}}
+
+{{< tabx header="Development" >}}
+
+| Endpoints               | Development environment                                                           |
+| ----------------------- | --------------------------------------------------------------------------------- |
+| Provider configuration  | <https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
+| Issuer                  | <https://aai-dev.egi.eu/auth/realms/egi>                                          |
+| Authorization           | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
+| Token                   | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
+| Device Authorization    | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
+| JSON Web Key Sets(JWKS) | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
+| UserInfo                | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
+| Introspection           | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
+| Logout                  | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
+
+{{< /tabx >}}
+
+{{< /tabpanex >}}
+
+<!-- markdownlint-enable no-inline-html -->
+
+#### Authorization Endpoint
+
+The Authorization Endpoint performs Authentication of the end user. This is done
+by sending the User Agent to the Authorization Server\'s Authorization Endpoint
+for Authentication and Authorisation, using request parameters defined by OAuth
+2.0 and additional parameters and parameter values defined by OpenID Connect.
+
+The request parameters of the Authorization Endpoint are:
+
+- `client_id`: ID of the client that ask for authentication to the Authorization
+  Server.
+- `redirect_uri`: URI to which the response will be sent.
+- `scope`: A list of attributes that the application requires.
+- `state`: Opaque value used to maintain state between the request and the
+  callback.
+- `response_type`: value that determines the authorization processing flow to be
+  used. For **Authorization Code** grant set `response_type=code`. This way the
+  response will include an Authorization Code.
+
+#### Token Endpoint
+
+To obtain an Access Token, an ID Token, and optionally a Refresh Token, the
+Client sends a Token Request to the Token Endpoint.
+
+This endpoint is used in the following flows:
+
+- [Authorization Code](#authorization-code)
+- [Refresh Token](#refresh-flow)
+- [Token Exchange](#token-exchange)
+- [Device Code](#device-code)
 
 #### UserInfo Endpoint
 
