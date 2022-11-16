@@ -836,6 +836,61 @@ curl -X POST "${TOKEN_ENDPOINT}" \
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
+#### UserInfo Endpoint
+
+The UserInfo Endpoint is an OAuth 2.0 Protected Resource that returns Claims
+about the authenticated End-User. To obtain the requested Claims about the
+End-User, the Client makes a request to the UserInfo Endpoint using an Access
+Token obtained through OpenID Connect Authentication. These Claims are normally
+represented by a JSON object that contains a collection of name and value pairs
+for the Claims.
+
+##### UserInfo Request
+
+The Client sends the UserInfo Request using either HTTP `GET` or HTTP `POST`.
+The Access Token obtained from an OpenID Connect Authentication Request must be
+sent as a Bearer Token, per Section 2 of
+[OAuth 2.0 Bearer Token Usage (RFC6750)](https://www.rfc-editor.org/rfc/rfc6750#section-2).
+
+It is recommended that the request use the HTTP `GET` method and the Access
+Token be sent using the Authorization header field.
+
+Example request:
+
+```shell
+curl -X GET ${USERINFO_ENDPOINT}?
+  -H "Content-type: application/json"
+  -H "Authorization: Bearer ${ACCESS_TOKEN}" | python -m json.tool;
+```
+
+{{% alert title="Note" color="info" %}} You can find the _USERINFO_ENDPOINT_ in
+the [Endpoints](#endpoints) table.{{% /alert %}}
+
+Example response:
+
+```json
+{
+  "eduperson_assurance": [
+    "https://refeds.org/assurance/IAP/low",
+    "https://aai.egi.eu/LoA#Substantial"
+  ],
+  "eduperson_entitlement": [
+    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:members:role=member#aai.egi.eu",
+    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:role=member#aai.egi.eu",
+    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu"
+  ],
+  "email": "jdoe@example.org",
+  "email_verified": true,
+  "family_name": "John",
+  "given_name": "Doe",
+  "name": "John Doe",
+  "preferred_username": "jdoe",
+  "sub": "1234567890123456789012345678901234567890123456789012345678901234@egi.eu",
+  "voperson_id": "1234567890123456789012345678901234567890123456789012345678901234@egi.eu",
+  "voperson_verified_email": ["jdoe@example.org"]
+}
+```
+
 #### Logout Endpoint
 
 The OpenID Connect protocol supports global logout (like the Single Logout in
