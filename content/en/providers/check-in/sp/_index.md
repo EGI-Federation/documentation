@@ -308,20 +308,20 @@ Service Providers can be integrated with EGI Check-in using OpenID Connect
 IdP provides an OpenID Connect (OAuth2) API based on
 [Keycloak](https://www.keycloak.org), which has been
 [certified by the OpenID Foundation](http://openid.net/certification/).
-Interconnection with the EGI Check-in OIDC Provider allows users to sign in
+Interconnection with the EGI Check-in OpenID Provider allows users to sign in
 using any of the supported backend authentication mechanisms, such as
 institutional IdPs registered with eduGAIN or Social Providers. Once the user
 has signed in, EGI Check-in can return OIDC Claims containing information about
 the authenticated user.
 
-{{% alert title="Important" color="warning" %}} The EGI Check-in OIDC Provider
+{{% alert title="Important" color="warning" %}} The EGI Check-in OpenID Provider
 will be migrated to Keycloak. Please check
 [OIDC Client Migration to Keycloak](#client-migration-to-keycloak) for more
 details {{% /alert %}}
 
 ### Client registration
 
-Before your service can use the EGI Check-in OIDC Provider for user login, you
+Before your service can use the EGI Check-in OpenID Provider for user login, you
 must submit a service registration request using
 [Federation Registry](https://aai.egi.eu/federation) in order to obtain OAuth
 2.0 credentials. The client configuration should include the general information
@@ -331,7 +331,7 @@ section.
 #### Obtaining OAuth 2.0 credentials
 
 You need OAuth 2.0 credentials, which typically include a client ID and client
-secret, to authenticate users through the EGI Check-in OIDC Provider.
+secret, to authenticate users through the EGI Check-in OpenID Provider.
 
 You can specify the client ID and secret when creating/editing your client or
 let them being automatically generated during registration (_recommended_).
@@ -349,7 +349,7 @@ green copy button next to the desired field.{{% /alert %}}
 #### Setting one or more Redirection URIs
 
 The Redirection URI(s) that you set when creating/editing your client determine
-where the EGI Check-in OIDC Provider sends responses to your authentication
+where the EGI Check-in OpenID Provider sends responses to your authentication
 requests. Note that the Redirection URI MUST use the `https` scheme; the use of
 `http` Redirection URIs is only allowed in the development environment.
 
@@ -416,49 +416,49 @@ The most important OIDC/OAuth2 endpoints are listed below:
 
 {{< tabx header="Production" >}}
 
-| Endpoints              | Production environment                                                        |
-| ---------------------- | ----------------------------------------------------------------------------- |
-| Provider configuration | <https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
-| Issuer                 | <https://aai.egi.eu/auth/realms/egi>                                          |
-| Authorisation          | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
-| Token                  | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
-| Device Code            | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
-| JSON Web Key(JWK)      | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
-| User Info              | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
-| Introspection          | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
-| Logout                 | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
+| Endpoints               | Production environment                                                        |
+| ----------------------- | ----------------------------------------------------------------------------- |
+| Provider configuration  | <https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
+| Issuer                  | <https://aai.egi.eu/auth/realms/egi>                                          |
+| Authorization           | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
+| Token                   | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
+| Device Authorization    | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
+| JSON Web Key Sets(JWKS) | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
+| UserInfo                | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
+| Introspection           | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
+| Logout                  | <https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
 
 {{< /tabx >}}
 
 {{< tabx header="Demo" >}}
 
-| Endpoints              | Demo environment                                                                   |
-| ---------------------- | ---------------------------------------------------------------------------------- |
-| Provider configuration | <https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
-| Issuer                 | <https://aai-demo.egi.eu/auth/realms/egi>                                          |
-| Authorisation          | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
-| Token                  | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
-| Device Code            | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
-| JSON Web Key(JWK)      | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
-| User Info              | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
-| Introspection          | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
-| Logout                 | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
+| Endpoints               | Demo environment                                                                   |
+| ----------------------- | ---------------------------------------------------------------------------------- |
+| Provider configuration  | <https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
+| Issuer                  | <https://aai-demo.egi.eu/auth/realms/egi>                                          |
+| Authorization           | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
+| Token                   | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
+| Device Authorization    | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
+| JSON Web Key Sets(JWKS) | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
+| UserInfo                | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
+| Introspection           | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
+| Logout                  | <https://aai-demo.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
 
 {{< /tabx >}}
 
 {{< tabx header="Development" >}}
 
-| Endpoints              | Development environment                                                           |
-| ---------------------- | --------------------------------------------------------------------------------- |
-| Provider configuration | <https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
-| Issuer                 | <https://aai-dev.egi.eu/auth/realms/egi>                                          |
-| Authorisation          | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
-| Token                  | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
-| Device Code            | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
-| JSON Web Key(JWK)      | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
-| User Info              | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
-| Introspection          | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
-| Logout                 | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
+| Endpoints               | Development environment                                                           |
+| ----------------------- | --------------------------------------------------------------------------------- |
+| Provider configuration  | <https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration>         |
+| Issuer                  | <https://aai-dev.egi.eu/auth/realms/egi>                                          |
+| Authorization           | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth>             |
+| Token                   | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token>            |
+| Device Authorization    | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/auth/device>      |
+| JSON Web Key Sets(JWKS) | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/certs>            |
+| UserInfo                | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo>         |
+| Introspection           | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect> |
+| Logout                  | <https://aai-dev.egi.eu/auth/realms/egi/protocol/openid-connect/logout>           |
 
 {{< /tabx >}}
 
@@ -470,10 +470,10 @@ The most important OIDC/OAuth2 endpoints are listed below:
 
 The Authorization Endpoint performs Authentication of the end user. This is done
 by sending the User Agent to the Authorization Server\'s Authorization Endpoint
-for Authentication and Authorization, using request parameters defined by OAuth
+for Authentication and Authorisation, using request parameters defined by OAuth
 2.0 and additional parameters and parameter values defined by OpenID Connect.
 
-The request parameters of the Authorization endpoint are:
+The request parameters of the Authorization Endpoint are:
 
 - `client_id`: ID of the client that ask for authentication to the Authorization
   Server.
@@ -481,9 +481,9 @@ The request parameters of the Authorization endpoint are:
 - `scope`: A list of attributes that the application requires.
 - `state`: Opaque value used to maintain state between the request and the
   callback.
-- `response_type`: value that determines the authorization processing flow to be
+- `response_type`: value that determines the authorisation processing flow to be
   used. For **Authorization Code** grant set `response_type=code`. This way the
-  response will include an authorization code.
+  response will include an Authorization Code.
 
 #### Token Endpoint
 
@@ -497,17 +497,17 @@ Depending on the grant type, the following parameters are required:
 | Parameter      | Presence | Values                                                                                             |
 | -------------- | -------- | -------------------------------------------------------------------------------------------------- |
 | `grant_type`   | Required | `authorization_code`                                                                               |
-| `code`         | Required | The value of the code in the response from authorization endpoint.                                 |
-| `redirect_uri` | Required | URI to which the response will be sent (must be the same as the request to authorization endpoint) |
+| `code`         | Required | The value of the code in the response from Authorization Endpoint                                  |
+| `redirect_uri` | Required | URI to which the response will be sent (must be the same as the request to Authorization Endpoint) |
 
 ##### Proof Key for Code Exchange (PKCE)
 
 The Proof Key for Code Exchange (PKCE, pronounced pixie) extension
 ([RFC 7636](https://tools.ietf.org/html/rfc7636)) describes a technique for
 public clients (clients without `client_secret`) to mitigate the threat of
-having the authorization code intercepted. The technique involves the client
+having the Authorization Code intercepted. The technique involves the client
 first creating a secret, and then using that secret again when exchanging the
-authorization code for an access token. This way if the code is intercepted, it
+Authorization Code for an access token. This way if the code is intercepted, it
 will not be useful since the token request relies on the initial secret.
 
 ###### Client configuration
@@ -547,7 +547,7 @@ transformation method (`code_challenge_method`).
 Example request:
 
 ```shell
-GET "${AUTHORISATION_ENDPOINT}?
+GET "${AUTHORIZATION_ENDPOINT}?
       client_id=${CLIENT_ID}
       &scope=openid%20profile%20email
       &redirect_uri=${REDIRECT_URI}
@@ -556,7 +556,7 @@ GET "${AUTHORISATION_ENDPOINT}?
       &code_challenge_method=S256"
 ```
 
-{{% alert title="Note" color="info" %}} You can find the _Authorisation
+{{% alert title="Note" color="info" %}} You can find the _Authorization
 Endpoint_ in the [Endpoints](#endpoints) table.{{% /alert %}}
 
 The Authorization Endpoint responds as usual but records `code_challenge` and
@@ -570,7 +570,7 @@ HTTP/1.1 302 Found
     code=fgtLHT
 ```
 
-The client then sends the authorization code in the Access Token Request as
+The client then sends the Authorization Code in the Access Token Request as
 usual but includes the `code_verifier` secret generated in the first request.
 
 Example request:
@@ -587,7 +587,7 @@ curl -X POST "${TOKEN_ENDPOINT}" \
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
-The authorization server transforms `code_verifier` and compares it to
+The Authorization Server transforms `code_verifier` and compares it to
 `code_challenge` from the first request. Access is denied if they are not equal.
 
 Example response:
@@ -700,14 +700,14 @@ Example response:
 ##### Device Code
 
 The device code flow enables OAuth clients on (input-constrained) devices to
-obtain user authorization for accessing protected resources without using an
+obtain user authorisation for accessing protected resources without using an
 on-device user-agent, provided that they have an internet connection.
 
 ###### 1. Device Authorization Request
 
-The client initiates the authorization flow by requesting a set of verification
-codes from the authorization server by making an HTTP "POST" request to the
-device authorization endpoint. The client constructs the request with the
+The client initiates the authorisation flow by requesting a set of verification
+codes from the Authorization Server by making an HTTP "POST" request to the
+device Authorization Endpoint. The client constructs the request with the
 following parameters:
 
 | Parameter   | Presence | Values                                                                                                    |
@@ -825,7 +825,7 @@ curl -X POST "${TOKEN_ENDPOINT}" \
 #### Logout Endpoint
 
 The OpenID Connect protocol supports global logout (like the Single Logout in
-SAML). EGI Check-in OP supports the
+SAML). EGI Check-in OpenID Provider supports the
 [OpenID Connect RP-Initiated Logout](https://openid.net/specs/openid-connect-rpinitiated-1_0.html)
 specification where the logout starts by redirecting the user to a specific
 endpoint at the OpenID Provider.
@@ -834,10 +834,10 @@ This endpoint is normally obtained via the `end_session_endpoint` element of the
 OP's Configuration page and the parameters that are used in the logout request
 at the Logout Endpoint are defined below:
 
-- `id_token_hint`: ID Token previously issued by the OP to the RP passed to the
-  Logout Endpoint as a hint about the End-User's current authenticated session
-  with the Client. This is used as an indication of the identity of the End-User
-  that the RP is requesting be logged out by the OP.
+- `id_token_hint`: ID Token previously issued by the OP to the Relying Party
+  passed to the Logout Endpoint as a hint about the End-User's current
+  authenticated session with the Client. This is used as an indication of the
+  identity of the End-User that the RP is requesting be logged out by the OP.
 - `client_id`: OAuth 2.0 Client Identifier valid at the Authorization Server.
   This parameter is needed to specify the Client Identifier when
   `post_logout_redirect_uri` is used but `id_token_hint` is not. Using this
@@ -878,7 +878,7 @@ the [Endpoints](#endpoints) table.{{% /alert %}}
 
 EGI Check-in provides information about the authenticated user that may be used
 by Service Providers in order to control user access to resources. This
-information is provided by the EGI Check-in OIDC Provider in the form of
+information is provided by the EGI Check-in OpenID Provider in the form of
 [OIDC claims](#claims). The table below lists the claims that are relevant for
 user authorisation:
 
@@ -936,7 +936,7 @@ Let's go quickly through the settings:
 - `issuer` required, the base URL of our IdentityServer instance. This will
   allow oidc-client to query the metadata endpoint so it can validate the tokens
 - `client_id` required, the ID of the client we want to use when hitting the
-  authorization endpoint
+  Authorization Endpoint
 - `client_secret` optional, a value the offers better security to the message
   flow
 - `pkceCodeChallengeMethod` optional, a string that defines the code challenge
@@ -1076,7 +1076,7 @@ Check-in otherwise an `invalid_client` error is returned
 ##### Client Credentials
 
 If you are using the Client Credentials grant, there is a minor change in the
-responses from userinfo and introspection endpoints. The **Client ID** of the
+responses from UserInfo and Introspection Endpoints. The **Client ID** of the
 client is **not** released as the `sub` claim any more and has replaced with by
 the `client_id` claim. The `sub` contains the identifier of the client which is
 unique, non-reassignable and scoped `@egi.eu`.
@@ -1126,7 +1126,7 @@ To solve this, you need to follow the steps below:
 ##### Error messages referring to `invalid_code`
 
 If you try to perform the Authorization Code flow and you get an `invalid_code`
-error message, probably the Application sends the authorization request to the
+error message, probably the Application sends the Authorization Request to the
 Authorization Endpoint of the Keycloak based EGI Check-in OP and then sends the
 `code` to the Token Endpoint of the MITREid Connect based EGI Check-in OP or
 vice versa.
@@ -1153,7 +1153,7 @@ To solve this, you need to follow the steps below:
 
 If you are trying to make a request to the UserInfo Endpoint and the response
 contains the `invalid_token` error message, probably you are using an invalid
-Token or the UserInfo endpoint is wrong.
+Token or the UserInfo Endpoint is wrong.
 
 To solve this, please make sure the that:
 
@@ -1189,27 +1189,27 @@ running two Master Portal instances, one development, one production instance.
 
 {{< tabx header="Production" >}}
 
-| Endpoint               | Production environment                                              |
-| ---------------------- | ------------------------------------------------------------------- |
-| Provider configuration | <https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
-| Client registration    | <https://aai.egi.eu/mp-oa2-server/register>                         |
-| Authorisation          | <https://aai.egi.eu/mp-oa2-server/authorize>                        |
-| Token                  | <https://aai.egi.eu/mp-oa2-server/token>                            |
-| JSON Web Key(jwt)      | <https://aai.egi.eu/mp-oa2-server/certs>                            |
-| User Info              | <https://aai.egi.eu/mp-oa2-server/userinfo>                         |
+| Endpoint                | Production environment                                              |
+| ----------------------- | ------------------------------------------------------------------- |
+| Provider configuration  | <https://aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
+| Client registration     | <https://aai.egi.eu/mp-oa2-server/register>                         |
+| Authorization           | <https://aai.egi.eu/mp-oa2-server/authorize>                        |
+| Token                   | <https://aai.egi.eu/mp-oa2-server/token>                            |
+| JSON Web Key Sets(JWKS) | <https://aai.egi.eu/mp-oa2-server/certs>                            |
+| UserInfo                | <https://aai.egi.eu/mp-oa2-server/userinfo>                         |
 
 {{< /tabx >}}
 
 {{< tabx header="Development" >}}
 
-| Endpoint               | Development environment                                                                |
-| ---------------------- | -------------------------------------------------------------------------------------- |
-| Provider configuration | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
-| Client registration    | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register>                         |
-| Authorisation          | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize>                        |
-| Token                  | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token>                            |
-| JSON Web Key(jwt)      | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs>                            |
-| User Info              | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         |
+| Endpoint                | Development environment                                                                |
+| ----------------------- | -------------------------------------------------------------------------------------- |
+| Provider configuration  | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/.well-known/openid-configuration> |
+| Client registration     | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/register>                         |
+| Authorization           | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/authorize>                        |
+| Token                   | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/token>                            |
+| JSON Web Key Sets(JWKS) | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/certs>                            |
+| UserInfo                | <https://masterportal-pilot.aai.egi.eu/mp-oa2-server/userinfo>                         |
 
 {{< /tabx >}}
 
@@ -1265,20 +1265,20 @@ connected to Check-in.
 
 ### 1. Community User Identifier
 
-|          attribute name | Community User Identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ----------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|         **description** | The User’s Community Identifier is a globally unique, opaque, persistent and non-reassignable identifier identifying the user. For users whose community identity is managed by Check-in, this identifier is of the form `<uniqueID>@egi.eu`. The `<uniqueID>` portion is an opaque identifier issued by Check-in                                                                                                                                                                                  |
-|   **SAML Attribute(s)** | <ul><li>`urn:oid:1.3.6.1.4.1.25178.4.1.6` (voPersonID)</li><li>`urn:oid:1.3.6.1.4.1.5923.1.1.1.13` (eduPersonUniqueId)</li></ul>                                                                                                                                                                                                                                                                                                                                                                   |
-|          **OIDC scope** | <ul><li>`voperson_id`</li><li>`aarc`</li><li>`openid`</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|       **OIDC claim(s)** | <ul><li>`voperson_id`</li><li>`sub`</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **OIDC claim location** | <ul><li>ID token</li><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                |
-|              **origin** | The Community User Identifier is assigned by Check-in or an external AAI service managing the community identity of the user                                                                                                                                                                                                                                                                                                                                                                       |
-|             **changes** | No                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|        **multiplicity** | No                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|        **availability** | Always                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|             **example** | `ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu`                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|               **notes** | Use **Community User Identifier** within your application as the unique-identifier key for the user. Obtaining the Community User Identifier from the `sub` claim using the `openid` scope for OIDC Relying Parties or from `eduPersonUniqueId` for SAML Relying Parties will be deprecated. OIDC RPs should request either the `voperson_id` or `aarc` scope to obtain the Community User Identifier. SAML PRs should request the `voPersonID` attribute to obtain the Community User Identifier. |
-|              **status** | Stable                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|          attribute name | Community User Identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ----------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | The User’s Community Identifier is a globally unique, opaque, persistent and non-reassignable identifier identifying the user. For users whose community identity is managed by Check-in, this identifier is of the form `<uniqueID>@egi.eu`. The `<uniqueID>` portion is an opaque identifier issued by Check-in                                                                                                                                                                                    |
+|   **SAML Attribute(s)** | <ul><li>`urn:oid:1.3.6.1.4.1.25178.4.1.6` (voPersonID)</li><li>`urn:oid:1.3.6.1.4.1.5923.1.1.1.13` (eduPersonUniqueId)</li></ul>                                                                                                                                                                                                                                                                                                                                                                     |
+|          **OIDC scope** | <ul><li>`voperson_id`</li><li>`aarc`</li><li>`openid`</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|       **OIDC claim(s)** | <ul><li>`voperson_id`</li><li>`sub`</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **OIDC claim location** | <ul><li>ID token</li><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|              **origin** | The Community User Identifier is assigned by Check-in or an external AAI service managing the community identity of the user                                                                                                                                                                                                                                                                                                                                                                         |
+|             **changes** | No                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|        **multiplicity** | No                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|        **availability** | Always                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|             **example** | `ef72285491ffe53c39b75bdcef46689f5d26ddfa00312365cc4fb5ce97e9ca87@egi.eu`                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|               **notes** | Use **Community User Identifier** within your application as the unique-identifier key for the user. Obtaining the Community User Identifier from the `sub` claim using the `openid` scope for OIDC Relying Parties or from `eduPersonUniqueId` for SAML Service Providers will be deprecated. OIDC RPs should request either the `voperson_id` or `aarc` scope to obtain the Community User Identifier. SAML PRs should request the `voPersonID` attribute to obtain the Community User Identifier. |
+|              **status** | Stable                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 ### 2. Display Name
 
@@ -1288,7 +1288,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:2.16.840.1.113730.3.1.241` (displayName) |
 |          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul>        |
 |       **OIDC claim(s)** | `name`                                            |
-| **OIDC claim location** | Userinfo endpoint                                 |
+| **OIDC claim location** | UserInfo Endpoint                                 |
 |              **origin** | Provided by user's Identity Provider              |
 |             **changes** | Yes                                               |
 |        **multiplicity** | Single-valued                                     |
@@ -1305,7 +1305,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:2.5.4.42` (givenName)             |
 |          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul> |
 |       **OIDC claim(s)** | `given_name`                               |
-| **OIDC claim location** | Userinfo endpoint                          |
+| **OIDC claim location** | UserInfo Endpoint                          |
 |              **origin** | Provided by user's Identity Provider       |
 |             **changes** | Yes                                        |
 |        **multiplicity** | Single-valued                              |
@@ -1322,7 +1322,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:2.5.4.4` (sn)                     |
 |          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul> |
 |       **OIDC claim(s)** | `family_name`                              |
-| **OIDC claim location** | Userinfo endpoint                          |
+| **OIDC claim location** | UserInfo Endpoint                          |
 |              **origin** | Provided by user's Identity Provider       |
 |             **changes** | Yes                                        |
 |        **multiplicity** | Single-valued                              |
@@ -1339,7 +1339,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:0.9.2342.19200300.100.1.1` (uid)                                           |
 |          **OIDC scope** | <ul><li>`profile`</li><li>`aarc`</li></ul>                                          |
 |       **OIDC claim(s)** | `preferred_username`                                                                |
-| **OIDC claim location** | <ul><li>ID token</li><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul> |
+| **OIDC claim location** | <ul><li>ID token</li><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul> |
 |              **origin** | Check-in assigns this attribute on user registration                                |
 |             **changes** | No                                                                                  |
 |        **multiplicity** | Single-valued                                                                       |
@@ -1356,7 +1356,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:0.9.2342.19200300.100.1.3` (mail)                                  |
 |          **OIDC scope** | <ul><li>`email`</li><li>`aarc`</li></ul>                                    |
 |       **OIDC claim(s)** | `email`                                                                     |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>          |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>          |
 |              **origin** | Provided by user's Identity Provider                                        |
 |             **changes** | Yes                                                                         |
 |        **multiplicity** | Single-valued                                                               |
@@ -1373,7 +1373,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | See [Verified email list](#8-verified-email-list)                   |
 |          **OIDC scope** | <ul><li>`email`</li><li>`aarc`</li></ul>                            |
 |       **OIDC claim(s)** | `email_verified`                                                    |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>  |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>  |
 |              **origin** | Check-in assigns this attribute on user registration                |
 |             **changes** | Yes                                                                 |
 |        **multiplicity** | Single-valued                                                       |
@@ -1390,7 +1390,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.14` (voPersonVerifiedEmail)          |
 |          **OIDC scope** | <ul><li>`email`</li><li>`aarc`</li></ul>                            |
 |       **OIDC claim(s)** | `voperson_verified_email`                                           |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>  |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>  |
 |              **origin** | Check-in or the user's Identity Provider                            |
 |             **changes** | Yes                                                                 |
 |        **multiplicity** | Multi-valued                                                        |
@@ -1407,7 +1407,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.9` (eduPersonScopedAffiliation)          |
 |          **OIDC scope** | `eduperson_scoped_affiliation`                                           |
 |       **OIDC claim(s)** | `eduperson_scoped_affiliation`                                           |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>       |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>       |
 |              **origin** | Check-in assigns this attribute on user registration                     |
 |             **changes** | Yes                                                                      |
 |        **multiplicity** | Multi-valued                                                             |
@@ -1424,7 +1424,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                                                                              |
 |          **OIDC scope** | `eduperson_entitlement`                                                                                                                |
 |       **OIDC claim(s)** | `eduperson_entitlement`                                                                                                                |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                     |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                     |
 |              **origin** | Group memberships are managed by group administrators                                                                                  |
 |             **changes** | Yes                                                                                                                                    |
 |        **multiplicity** | Multi-valued                                                                                                                           |
@@ -1441,7 +1441,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                                                                                                                                                                                 |
 |          **OIDC scope** | `eduperson_entitlement`                                                                                                                                                                                                                   |
 |       **OIDC claim(s)** | `eduperson_entitlement`                                                                                                                                                                                                                   |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                                                                        |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                                                                                                        |
 |              **origin** | Capabilities are managed by Check-in                                                                                                                                                                                                      |
 |             **changes** | Yes                                                                                                                                                                                                                                       |
 |        **multiplicity** | Multi-valued                                                                                                                                                                                                                              |
@@ -1458,7 +1458,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.7` (eduPersonEntitlement)                                                                                                                                  |
 |          **OIDC scope** | `eduperson_entitlement`                                                                                                                                                                    |
 |       **OIDC claim(s)** | `eduperson_entitlement`                                                                                                                                                                    |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                         |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                                                         |
 |              **origin** | The roles are managed in GOCDB                                                                                                                                                             |
 |             **changes** | Yes                                                                                                                                                                                        |
 |        **multiplicity** | Multi-valued                                                                                                                                                                               |
@@ -1475,7 +1475,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.11` (eduPersonAssurance)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |          **OIDC scope** | `eduperson_assurance`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |       **OIDC claim(s)** | `eduperson_assurance`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |              **origin** | Check-in assigns this attribute on user registration                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |             **changes** | Yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |        **multiplicity** | Multi-valued                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -1492,7 +1492,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | **Not available**                                                                                                                                                                    |
 |          **OIDC scope** | `cert_entitlement`                                                                                                                                                                   |
 |       **OIDC claim(s)** | `cert_entitlement`                                                                                                                                                                   |
-| **OIDC claim location** | <ul><li>Userinfo endpoint</li><li>Introspection endpoint</li></ul>                                                                                                                   |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                                                   |
 |              **origin** | VO/group management tools integrated with Check-in                                                                                                                                   |
 |             **changes** | Yes                                                                                                                                                                                  |
 |        **multiplicity** | Multi-valued                                                                                                                                                                         |
@@ -1509,7 +1509,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.24552.500.1.1.1.13` (sshPublicKey)                                                                                           |
 |          **OIDC scope** | `ssh_public_key`                                                                                                                                  |
 |       **OIDC claim(s)** | `ssh_public_key`                                                                                                                                  |
-| **OIDC claim location** | Userinfo endpoint                                                                                                                                 |
+| **OIDC claim location** | UserInfo Endpoint                                                                                                                                 |
 |              **origin** | Added SSH public key(s) in user's Check-in Profile                                                                                                |
 |             **changes** | Yes                                                                                                                                               |
 |        **multiplicity** | Multi-valued                                                                                                                                      |
@@ -1528,7 +1528,7 @@ connected to Check-in.
 |   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.16` (eduPersonOrcid)   |
 |          **OIDC scope** | `orcid`                                                |
 |       **OIDC claim(s)** | `orcid`                                                |
-| **OIDC claim location** | Userinfo endpoint                                      |
+| **OIDC claim location** | UserInfo Endpoint                                      |
 |              **origin** | ORCID Identity Provider                                |
 |             **changes** | No                                                     |
 |        **multiplicity** | Single-valued                                          |
