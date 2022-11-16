@@ -822,6 +822,55 @@ curl -X POST "${TOKEN_ENDPOINT}" \
 {{% alert title="Note" color="info" %}} You can find the _Token Endpoint_ in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
+#### Logout Endpoint
+
+The OpenID Connect protocol supports global logout (like the Single Logout in
+SAML). EGI Check-in OP supports the
+[OpenID Connect RP-Initiated Logout](https://openid.net/specs/openid-connect-rpinitiated-1_0.html)
+specification where the logout starts by redirecting the user to a specific
+endpoint at the OpenID Provider.
+
+This endpoint is normally obtained via the `end_session_endpoint` element of the
+OP's Configuration page and the parameters that are used in the logout request
+at the Logout Endpoint are defined below:
+
+- `id_token_hint`: ID Token previously issued by the OP to the RP passed to the
+  Logout Endpoint as a hint about the End-User's current authenticated session
+  with the Client. This is used as an indication of the identity of the End-User
+  that the RP is requesting be logged out by the OP.
+- `client_id`: OAuth 2.0 Client Identifier valid at the Authorization Server.
+  This parameter is needed to specify the Client Identifier when
+  `post_logout_redirect_uri` is used but `id_token_hint` is not. Using this
+  parameter, a confirmation dialog will be presented to the End-User.
+- `post_logout_redirect_uri`: URI to which the RP is requesting that the
+  End-User's browser be redirected after a logout has been performed. This URI
+  should use the https scheme and the value must have been previously registered
+  in the configuration of the Service in
+  [EGI Federation Registry](https://aai.egi.eu/federation). Note that you need
+  to include either the `client_id` or `id_token_hint` parameter in case the
+  `post_logout_redirect_uri` is included.
+
+##### Example Request
+
+```shell
+curl -X GET ${LOGOUT_ENDPOINT}?
+  id_token_hint=${ID_TOKEN}
+```
+
+{{% alert title="Note" color="info" %}} You can find the _LOGOUT_ENDPOINT_ in
+the [Endpoints](#endpoints) table.{{% /alert %}}
+
+##### Example Request with redirection
+
+```shell
+curl -X GET ${LOGOUT_ENDPOINT}?
+  post_logout_redirect_uri=${POST_LOGOUT_REDIRECT_URI}&
+  client_id=${CLIENT_ID}
+```
+
+{{% alert title="Note" color="info" %}} You can find the _LOGOUT_ENDPOINT_ in
+the [Endpoints](#endpoints) table.{{% /alert %}}
+
 ### Claims-based authorisation
 
 > As mentioned in [the General Information](#general-information), omitting
