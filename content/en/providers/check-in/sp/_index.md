@@ -364,24 +364,20 @@ To find the ID and secret of your client, do the following:
 {{% alert title="Note" color="info" %}} You can copy these values using the
 green copy button next to the desired field.{{% /alert %}}
 
-#### Setting one or more Redirection URIs
+### Redirection URIs
 
-The Redirection URI(s) that you set when creating/editing your client determine
-where the EGI Check-in OpenID Provider sends responses to your authentication
-requests. Note that the Redirection URI MUST use the `https` scheme; the use of
-`http` Redirection URIs is only allowed in the development environment.
-
-To find the Redirection URI(s) for your client, do the following:
-
-1. Open the [Manage Services](https://aai.egi.eu/federation)
-1. Find the redirect URIs for your client listed under the **Protocol** column
-   of the overview table or **Edit** the particular client and look for the
-   **Redirect URI(s)** in the **Protocol** tab.
-
-#### Setting additional information about the client
-
-It is strongly suggested that you add a short **description** and a **logo** for
-the client. Lastly, you need to set the email addresses of one or more contacts.
+OpenID Connect Services MUST pre-register one or more Redirection URI(s) to
+which authentication responses from EGI Check-in will be sent. EGI Check-in
+utilises exact matching of the redirect URI specified in an authentication
+request against the pre-registered URIs
+[OAuth2-BCP](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics#section-4.1),
+with the matching performed as described in
+[RFC3986](https://www.rfc-editor.org/rfc/rfc3986#section-6.2.1) (Simple String
+Comparison). Redirection URIs MUST use the schemata defined in Section 3.1.2.1
+of the
+[OIDC-Core](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest)
+specification. Note that the Redirection URI MUST use the `https` scheme; the
+use of `http` Redirection URIs is only allowed in the development environment.
 
 ### Claims
 
