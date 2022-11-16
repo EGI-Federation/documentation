@@ -130,12 +130,15 @@ registration form.&lt;/p>
 &lt;li>click on the &amp;ldquo;Register&amp;rdquo; link&lt;/li>
 &lt;li>fill in the form and validate&lt;/li>
 &lt;/ul>
-&lt;blockquote>
-&lt;p>If you were registered but are not recognised anymore (e.g. because your
-certificate DN changed), do not register again! Instead, follow the steps
+&lt;h2 id="recovering-access-to-an-existing-account">Recovering access to an existing account&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+If you were registered but are not
+recognised anymore (e.g. because your certificate DN changed), do not register
+again! Instead, follow the steps
 &lt;a href="../users-roles/managing-accounts#lost-access-to-your-account">Lost access to your Configuration Database account&lt;/a>
-section.&lt;/p>
-&lt;/blockquote></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
+section.
+&lt;/div></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
 &lt;p>For monitoring purposes, each service endpoints registered into the
 Configuration Database, and having the flags &lt;em>production&lt;/em> and &lt;em>monitored&lt;/em> should
 include the endpoint URL information in order to be contacted by the
@@ -1447,6 +1450,12 @@ an X.509 client certificate.&lt;/p>
 &lt;h3 id="looking-for-fedcloud-endpoints">Looking for FedCloud endpoints&lt;/h3>
 &lt;p>See
 &lt;a href="https://github.com/EGI-Federation/cloud-info-provider/blob/master/cloud_info_provider/providers/gocdb.py">python script from cloud-info-provider repository&lt;/a>.&lt;/p></description></item><item><title>Internal: FAQ</title><link>/internal/configuration-database/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/faq/</guid><description>
+&lt;h2 id="i-have-lost-access-to-my-account-what-should-i-do">I have lost access to my account, what should I do?&lt;/h2>
+&lt;p>If you were registered but are not recognised anymore (e.g. because your
+certificate DN changed), do not register again!&lt;/p>
+&lt;p>Instead, follow the steps
+&lt;a href="../users-roles/managing-accounts#lost-access-to-your-account">Lost access to your Configuration Database account&lt;/a>
+section.&lt;/p>
 &lt;h2 id="i-am-responsible-for-a-site-that-has-recently-entered-the-egi-infrastructure-how-do-i-register-it">I am responsible for a site that has recently entered the EGI infrastructure. How do I register it?&lt;/h2>
 &lt;p>Only registered users with an approved role on an NGI can add a new site. If you
 are the site administrator, the first thing to do is to contact your NGI staff
