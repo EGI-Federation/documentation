@@ -891,6 +891,65 @@ Example response:
 }
 ```
 
+#### Introspection Endpoint
+
+The introspection endpoint is an OAuth 2.0 endpoint that takes a parameter
+representing an OAuth 2.0 token and returns a JSON document representing the
+meta information surrounding the token, including whether this token is
+currently active.
+
+##### Introspection Request
+
+The protected resource calls the introspection endpoint using an HTTP `POST`
+request with parameters sent as `application/x-www-form-urlencoded`.
+
+Example request:
+
+```shell
+curl -X POST "${INTROSPECTION_ENDPOINT}" \
+  -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "token=${ACCESS_TOKEN}" | python -m json.tool;
+```
+
+{{% alert title="Note" color="info" %}} You can find the
+_INTROSPECTION_ENDPOINT_ in the [Endpoints](#endpoints) table.{{% /alert %}}
+
+Example response:
+
+```json
+{
+  "active": true,
+  "auth_time": 1668613335,
+  "authenticating_authority": "https://idp.admin.grnet.gr/idp/shibboleth",
+  "azp": "token-portal",
+  "client_id": "token-portal",
+  "eduperson_assurance": [
+    "https://refeds.org/assurance/IAP/low",
+    "https://aai.egi.eu/LoA#Substantial"
+  ],
+  "eduperson_entitlement": [
+    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:members:role=member#aai.egi.eu",
+    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:role=member#aai.egi.eu",
+    "urn:mace:egi.eu:group:demo.fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu"
+  ],
+  "email": "jdoe@example.org",
+  "email_verified": true,
+  "exp": 1668616935,
+  "iat": 1668613335,
+  "iss": "https://aai.egi.eu/auth/realms/egi",
+  "jti": "fecaf906-8578-4155-9783-f2083900b93c",
+  "nonce": "30ccf6777eb726aae4f71fc72684c07c",
+  "scope": "openid eduperson_entitlement voperson_id profile email",
+  "session_state": "dc0feb13-8a3d-4b91-86c6-039ee27503df",
+  "sid": "dc0feb13-8a3d-4b91-86c6-039ee27503df",
+  "sub": "1234567890123456789012345678901234567890123456789012345678901234@egi.eu",
+  "typ": "Bearer",
+  "voperson_id": "1234567890123456789012345678901234567890123456789012345678901234@egi.eu",
+  "voperson_verified_email": ["jdoe@example.org"]
+}
+```
+
 #### Logout Endpoint
 
 The OpenID Connect protocol supports global logout (like the Single Logout in
