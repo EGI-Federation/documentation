@@ -1150,7 +1150,7 @@ All the clients that were registered in MITREid Connect have been moved to
 Keycloak preserving all the options (Client ID, Client Secret, Redirect URIs
 etc.), so you do not need to re-register your Service.
 
-##### Endpoints
+##### New Endpoints
 
 The first thing you need to do is to update the OIDC endpoints according to the
 [Endpoints](#endpoints) table. If the Application/Library supports Dynamic
@@ -1193,14 +1193,14 @@ the following HTTP response during the authentication flow:
 error=invalid_request&error_description=Missing parameter: code_challenge_method
 ```
 
-##### Device Code
+##### Device Code Grant
 
 If you are using a confidential client with the Device Code grant, please make
 sure that the `client_secret` is present in the request to the Device Code
 Endpoint either as HTTP Basic or HTTP POST parameter (see
 [Device Authorization Request](#1-device-authorization-request)).
 
-##### Token Exchange
+##### Token Exchange Grant
 
 If you are using the Token Exchange grant, please make sure that the `audience`
 (Optional) defines the logical name of the service that the token will be used
@@ -1208,7 +1208,7 @@ for; when specified, it must match the client ID of a client registered in
 Check-in otherwise an `invalid_client` error is returned
 (`"description": "audience not found"`)
 
-##### Client Credentials
+##### Client Credentials Grant
 
 If you are using the Client Credentials grant, there is a minor change in the
 responses from UserInfo and Introspection Endpoints. The **Client ID** of the
