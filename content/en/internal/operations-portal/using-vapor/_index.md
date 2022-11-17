@@ -11,7 +11,7 @@ VAPOR is a component of the Operations Portal allowing to query the information
 system, aggregating information from Top BDII and
 [EGI Configuration Database](../../configuration-database).
 
-#### Using VAPOR to query resources using a graphical interface
+## Using VAPOR to query resources using a graphical interface
 
 [VAPOR](https://operations-portal.egi.eu/vapor/), a component of the
 [Operations Portal](../../../internal/operations-portal), provides a graphical
