@@ -227,7 +227,7 @@ the various types:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">123&lt;/span> - CEImpl ARC-CE
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">22&lt;/span> - CEImpl CREAM
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">7&lt;/span> - CEImpl HTCondorCE
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="identifying-all-the-resources-accessible-by-a-given-vo">Identifying all the resources accessible by a given VO&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="identifying-all-the-resources-accessible-by-a-given-vo">Identifying all the resources accessible by a given VO&lt;/h2>
 &lt;p>In &lt;strong>GLUE 2.0&lt;/strong>, the access granted to a given VO to a compute or storage
 resource, is published using the &lt;code>GLUE2Share&lt;/code> and &lt;code>GLUE2Policy&lt;/code> objects. There
 are also &lt;code>GLUE2ComputingShare&lt;/code> and &lt;code>GLUE2StorageShare&lt;/code> to specifically document
@@ -248,7 +248,7 @@ sharing of compute or storage resources.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2StorageShare)(GLUE2ShareID=*dteam*))&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is possible to filter for the different types of Computing Element, and
 select only specific attributes.&lt;/p>
-&lt;h4 id="looking-for-a-htcondorce-for-dteam">Looking for a HTCondorCE for dteam&lt;/h4>
+&lt;h3 id="looking-for-a-htcondorce-for-dteam">Looking for a HTCondorCE for dteam&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Information about the HTCondorCE supporting dteam VO&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
@@ -271,7 +271,7 @@ on the &lt;code>GLUE2ShareID&lt;/code> from the previous query:
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareDescription &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareExecutionEnvironmentForeignKey &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2EntityOtherInfo
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="looking-for-an-arc-ce-for-dteam">Looking for an ARC-CE for dteam&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="looking-for-an-arc-ce-for-dteam">Looking for an ARC-CE for dteam&lt;/h3>
 &lt;p>// jscpd:ignore-start&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Information about the ARC-CE supporting dteam VO&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
