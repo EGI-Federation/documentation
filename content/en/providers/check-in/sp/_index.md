@@ -846,8 +846,8 @@ This endpoint is used in the following flows:
 #### UserInfo Endpoint
 
 The UserInfo Endpoint is an OAuth 2.0 Protected Resource that returns Claims
-about the authenticated End-User. To obtain the requested Claims about the
-End-User, the Client makes a request to the UserInfo Endpoint using an Access
+about the authenticated end user. To obtain the requested Claims about the
+end user, the Client makes a request to the UserInfo Endpoint using an Access
 Token obtained through OpenID Connect Authentication. These Claims are normally
 represented by a JSON object that contains a collection of name and value pairs
 for the Claims.
@@ -970,16 +970,16 @@ OP's Configuration page and the parameters that are used in the logout request
 at the Logout Endpoint are defined below:
 
 - `id_token_hint`: ID Token previously issued by the OP to the Relying Party
-  passed to the Logout Endpoint as a hint about the End-User's current
+  passed to the Logout Endpoint as a hint about the end user's current
   authenticated session with the Client. This is used as an indication of the
-  identity of the End-User that the RP is requesting be logged out by the OP.
+  identity of the end user that the RP is requesting be logged out by the OP.
 - `client_id`: OAuth 2.0 Client Identifier valid at the Authorization Server.
   This parameter is needed to specify the Client Identifier when
   `post_logout_redirect_uri` is used but `id_token_hint` is not. Using this
-  parameter, a confirmation dialog will be presented to the End-User.
+  parameter, a confirmation dialog will be presented to the end user.
 - `post_logout_redirect_uri`: URI to which the RP is requesting that the
-  End-User's browser be redirected after a logout has been performed. This URI
-  should use the https scheme and the value must have been previously registered
+  end user's browser be redirected after a logout has been performed. This URI
+  should use the HTTPS scheme and the value must have been previously registered
   in the configuration of the Service in
   [EGI Federation Registry](https://aai.egi.eu/federation). Note that you need
   to include either the `client_id` or `id_token_hint` parameter in case the
