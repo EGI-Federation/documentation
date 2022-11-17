@@ -213,7 +213,7 @@ In this section we will document querying the EGI Information System to retrieve
 information about the available resources.
 
 {{% alert title="Tip" color="info" %}} It's also possible to use
-[VAPOR to query resources using a graphical interface](#using-vapor-to-query-resources-using-a-graphical-interface).
+[VAPOR to query resources using a graphical interface](../../../internal/operations-portal/using-vapor#using-vapor-to-query-resources-using-a-graphical-interface).
 {{% /alert %}}
 
 Information about resources is documented according to the
@@ -496,25 +496,6 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
 
 - **CE Name**: `alex4.nipne.ro` (exported from the
   `GLUE2ComputingShareComputingServiceForeignKey: urn:ogf:ComputingService:alex4.nipne.ro:arex`)
-
-#### Using VAPOR to query resources using a graphical interface
-
-[VAPOR](https://operations-portal.egi.eu/vapor/), a component of the
-[Operations Portal](../../../internal/operations-portal), provides a graphical
-resources explorer.
-
-It can be used as an alternative to querying the Top BDII using `ldapsearch`.
-
-![VAPOR: overview of resources for dteam](vapor-dteam-computing-overview.png)
-
-Using the left menu you can select a VO and filter the different resources
-types.
-
-![VAPOR: filtering resources for dteam](vapor-dteam-computing-shares.png)
-
-VAPOR will list the matching resources.
-
-![VAPOR: detail of resources for dteam](vapor-dteam-computing-resources.png)
 
 #### Using GLUE 1.3
 
