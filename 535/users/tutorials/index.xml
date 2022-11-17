@@ -1095,7 +1095,7 @@ information about the available resources.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 It&amp;rsquo;s also possible to use
-&lt;a href="#using-vapor-to-query-resources-using-a-graphical-interface">VAPOR to query resources using a graphical interface&lt;/a>.
+&lt;a href="../../../internal/operations-portal/using-vapor#using-vapor-to-query-resources-using-a-graphical-interface">VAPOR to query resources using a graphical interface&lt;/a>.
 &lt;/div>
 &lt;p>Information about resources is documented according to the
 &lt;a href="https://gridinfo-documentation.readthedocs.io/en/latest/glue.html">GLUE Schema&lt;/a>.&lt;/p>
@@ -1337,17 +1337,6 @@ on the &lt;code>GLUE2ShareID&lt;/code> from the previous query:
 &lt;li>&lt;strong>CE Name&lt;/strong>: &lt;code>alex4.nipne.ro&lt;/code> (exported from the
 &lt;code>GLUE2ComputingShareComputingServiceForeignKey: urn:ogf:ComputingService:alex4.nipne.ro:arex&lt;/code>)&lt;/li>
 &lt;/ul>
-&lt;h4 id="using-vapor-to-query-resources-using-a-graphical-interface">Using VAPOR to query resources using a graphical interface&lt;/h4>
-&lt;p>&lt;a href="https://operations-portal.egi.eu/vapor/">VAPOR&lt;/a>, a component of the
-&lt;a href="../../../internal/operations-portal">Operations Portal&lt;/a>, provides a graphical
-resources explorer.&lt;/p>
-&lt;p>It can be used as an alternative to querying the Top BDII using &lt;code>ldapsearch&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="vapor-dteam-computing-overview.png" alt="VAPOR: overview of resources for dteam">&lt;/p>
-&lt;p>Using the left menu you can select a VO and filter the different resources
-types.&lt;/p>
-&lt;p>&lt;img src="vapor-dteam-computing-shares.png" alt="VAPOR: filtering resources for dteam">&lt;/p>
-&lt;p>VAPOR will list the matching resources.&lt;/p>
-&lt;p>&lt;img src="vapor-dteam-computing-resources.png" alt="VAPOR: detail of resources for dteam">&lt;/p>
 &lt;h4 id="using-glue-13">Using GLUE 1.3&lt;/h4>
 &lt;blockquote>
 &lt;p>&lt;strong>GLUE 1.3&lt;/strong> is legacy.&lt;/p>

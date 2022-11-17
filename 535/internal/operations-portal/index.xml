@@ -63,4 +63,19 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item></channel></rss>
+&lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item><item><title>Internal: Using VAPOR</title><link>/internal/operations-portal/using-vapor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/operations-portal/using-vapor/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>VAPOR is a component of the Operations Portal allowing to query the information
+system, aggregating information from Top BDII and
+&lt;a href="../../configuration-database">EGI Configuration Database&lt;/a>.&lt;/p>
+&lt;h4 id="using-vapor-to-query-resources-using-a-graphical-interface">Using VAPOR to query resources using a graphical interface&lt;/h4>
+&lt;p>&lt;a href="https://operations-portal.egi.eu/vapor/">VAPOR&lt;/a>, a component of the
+&lt;a href="../../../internal/operations-portal">Operations Portal&lt;/a>, provides a graphical
+resources explorer.&lt;/p>
+&lt;p>It can be used as an alternative to querying the Top BDII using &lt;code>ldapsearch&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="vapor-dteam-computing-overview.png" alt="VAPOR: overview of resources for dteam">&lt;/p>
+&lt;p>Using the left menu you can select a VO and filter the different resources
+types.&lt;/p>
+&lt;p>&lt;img src="vapor-dteam-computing-shares.png" alt="VAPOR: filtering resources for dteam">&lt;/p>
+&lt;p>VAPOR will list the matching resources.&lt;/p>
+&lt;p>&lt;img src="vapor-dteam-computing-resources.png" alt="VAPOR: detail of resources for dteam">&lt;/p></description></item></channel></rss>
