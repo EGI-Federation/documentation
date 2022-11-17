@@ -275,7 +275,7 @@ $ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 \
       7   - CEImpl              HTCondorCE
 ```
 
-### Identifying all the resources accessible by a given VO
+## Identifying all the resources accessible by a given VO
 
 In **GLUE 2.0**, the access granted to a given VO to a compute or storage
 resource, is published using the `GLUE2Share` and `GLUE2Policy` objects. There
@@ -302,7 +302,7 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
 It is possible to filter for the different types of Computing Element, and
 select only specific attributes.
 
-#### Looking for a HTCondorCE for dteam
+### Looking for a HTCondorCE for dteam
 
 ```shell
 # Information about the HTCondorCE supporting dteam VO
@@ -333,7 +333,7 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GLUE2EntityOtherInfo
 ```
 
-#### Looking for an ARC-CE for dteam
+### Looking for an ARC-CE for dteam
 
 // jscpd:ignore-start
 
