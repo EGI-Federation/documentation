@@ -947,7 +947,7 @@ distribution, but it will also require additional software and configuration.&lt
 &lt;ul>
 &lt;li>Deploying an UI manually, using the packages available from
 &lt;a href="https://go.egi.eu/umd">UMD repositories&lt;/a>. You will need to install at least
-the &lt;code>ui&lt;/code> meta-package, with &lt;code>voms-client&lt;/code>, the
+the &lt;code>ui&lt;/code> meta-package, the
 &lt;a href="../../../providers/operations-manuals/howto01_using_igtf_ca_distribution">IGTF distribution&lt;/a>,
 and
 &lt;a href="#configuring-the-system-to-use-voms-client">configure the system to use voms-client&lt;/a>.&lt;/li>
@@ -1014,8 +1014,8 @@ for the &lt;strong>LSC configuration&lt;/strong>.&lt;/li>
 you can respectively use &lt;code>~/.glite/vomses&lt;/code> and &lt;code>~/.glite/vomsdir&lt;/code>. You may have
 to export &lt;code>X509_VOMSES&lt;/code> and &lt;code>X509_VOMS_DIR&lt;/code> in your shell, as documented
 &lt;a href="https://twiki.cern.ch/twiki/bin/view/DREAM/GridSetup">on CERN&amp;rsquo;s twiki&lt;/a>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">X509_VOMSES&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>~/.glite/vomses
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">X509_VOMS_DIR&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>~/.glite/vomsdir
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">X509_VOMSES&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>~/.glite/vomses
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">X509_VOMS_DIR&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>~/.glite/vomsdir
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="preparing-the-x509-credentials">Preparing the X.509 credentials&lt;/h3>
 &lt;p>Once you have obtained an X.509 user certificate issued by a Certification
 Authority (CA) part of the
