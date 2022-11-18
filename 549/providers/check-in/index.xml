@@ -927,6 +927,23 @@ must submit a service registration request using
 2.0 credentials. The client configuration should include the general information
 about your service, as described in &lt;a href="#general-information">General Information&lt;/a>
 section.&lt;/p>
+&lt;h4 id="obtaining-oauth-20-credentials">Obtaining OAuth 2.0 credentials&lt;/h4>
+&lt;p>You need OAuth 2.0 credentials, which typically include a client ID and client
+secret, to authenticate users through the EGI Check-in OpenID Provider.&lt;/p>
+&lt;p>You can specify the client ID and secret when creating/editing your client or
+let them being automatically generated during registration (&lt;em>recommended&lt;/em>).&lt;/p>
+&lt;p>To find the ID and secret of your client, do the following:&lt;/p>
+&lt;ol>
+&lt;li>Select your client from the
+&lt;a href="https://aai.egi.eu/federation">Manage Services Page&lt;/a>.&lt;/li>
+&lt;li>Look for the &lt;strong>Client ID&lt;/strong> in the &lt;strong>Protocol&lt;/strong> tab.&lt;/li>
+&lt;li>Select the &lt;strong>Display/edit client secret:&lt;/strong> option from the &lt;strong>Protocol&lt;/strong> tab.&lt;/li>
+&lt;/ol>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can copy these values using the
+green copy button next to the desired field.
+&lt;/div>
 &lt;h3 id="redirection-uris">Redirection URIs&lt;/h3>
 &lt;p>OpenID Connect Services MUST pre-register one or more Redirection URI(s) to
 which authentication responses from EGI Check-in will be sent. EGI Check-in
@@ -938,7 +955,8 @@ with the matching performed as described in
 Comparison). Redirection URIs MUST use the schemata defined in Section 3.1.2.1
 of the
 &lt;a href="https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest">OIDC-Core&lt;/a>
-specification.&lt;/p>
+specification. Note that the Redirection URI MUST use the &lt;code>https&lt;/code> scheme; the
+use of &lt;code>http&lt;/code> Redirection URIs is only allowed in the development environment.&lt;/p>
 &lt;h3 id="claims">Claims&lt;/h3>
 &lt;p>The EGI Check-in UserInfo Endpoint is an OAuth 2.0 Protected Resource that
 returns specific information about the authenticated end user as Claim Values.
@@ -1397,32 +1415,32 @@ You can find the &lt;code>TOKEN_ENDPOINT&lt;/code> in the
 &lt;h3 id="endpoints">Endpoints&lt;/h3>
 &lt;p>The most important OIDC/OAuth2 endpoints are listed below:&lt;/p>
 &lt;!-- markdownlint-disable no-inline-html -->
-&lt;ul class="nav nav-tabs" id="tabs-13" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-14" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-13-0-tab" data-toggle="tab" href="#tabs-13-0" role="tab"
-aria-controls="tabs-13-0" aria-selected="true">
+id="tabs-14-0-tab" data-toggle="tab" href="#tabs-14-0" role="tab"
+aria-controls="tabs-14-0" aria-selected="true">
 Production
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-13-1-tab" data-toggle="tab" href="#tabs-13-1" role="tab"
-aria-controls="tabs-13-1" aria-selected="false">
+id="tabs-14-1-tab" data-toggle="tab" href="#tabs-14-1" role="tab"
+aria-controls="tabs-14-1" aria-selected="false">
 Demo
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-13-2-tab" data-toggle="tab" href="#tabs-13-2" role="tab"
-aria-controls="tabs-13-2" aria-selected="false">
+id="tabs-14-2-tab" data-toggle="tab" href="#tabs-14-2" role="tab"
+aria-controls="tabs-14-2" aria-selected="false">
 Development
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-13-content">
+&lt;div class="tabx-content" id="tabs-14-content">
 &lt;div class="tab-pane show active"
-id="tabs-13-0" role="tabpanel" aria-labelled-by="tabs-13-0-tab">
+id="tabs-14-0" role="tabpanel" aria-labelled-by="tabs-14-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1471,7 +1489,7 @@ id="tabs-13-0" role="tabpanel" aria-labelled-by="tabs-13-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-13-1" role="tabpanel" aria-labelled-by="tabs-13-1-tab">
+id="tabs-14-1" role="tabpanel" aria-labelled-by="tabs-14-1-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1520,7 +1538,7 @@ id="tabs-13-1" role="tabpanel" aria-labelled-by="tabs-13-1-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-13-2" role="tabpanel" aria-labelled-by="tabs-13-2-tab">
+id="tabs-14-2" role="tabpanel" aria-labelled-by="tabs-14-2-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1632,15 +1650,15 @@ the &lt;a href="#endpoints">Endpoints&lt;/a> table.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;urn:mace:egi.eu:group:demo.fedcloud.egi.eu:role=member#aai.egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;urn:mace:egi.eu:group:demo.fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">],&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;nikosev@admin.grnet.gr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;jdoe@example.org&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;email_verified&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;family_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Evangelou&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;given_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Nikolaos&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Nikolaos Evangelou&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;preferred_username&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;nevangelou&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;sub&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;3091b82bc13e7707726799364aa4c370b137ae40794d40073e2036f3a4bcd589@egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;voperson_id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;3091b82bc13e7707726799364aa4c370b137ae40794d40073e2036f3a4bcd589@egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;voperson_verified_email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;nikosev@admin.grnet.gr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;family_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;John&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;given_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Doe&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;John Doe&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;preferred_username&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;jdoe&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;sub&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;1234567890123456789012345678901234567890123456789012345678901234@egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;voperson_id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;1234567890123456789012345678901234567890123456789012345678901234@egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;voperson_verified_email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;jdoe@example.org&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="introspection-endpoint">Introspection Endpoint&lt;/h4>
 &lt;p>The introspection endpoint is an OAuth 2.0 endpoint that takes a parameter
@@ -1677,7 +1695,7 @@ You can find the
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;urn:mace:egi.eu:group:demo.fedcloud.egi.eu:role=member#aai.egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;urn:mace:egi.eu:group:demo.fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">],&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;nikosev@admin.grnet.gr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;jdoe@example.org&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;email_verified&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;exp&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1668616935&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;iat&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1668613335&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -1687,10 +1705,10 @@ You can find the
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;scope&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid eduperson_entitlement voperson_id profile email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;session_state&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;dc0feb13-8a3d-4b91-86c6-039ee27503df&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;sid&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;dc0feb13-8a3d-4b91-86c6-039ee27503df&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;sub&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;bf009c87cb04f0a69fb2cc98767147e5b7408bedaef07b70ef33ef777318e610@egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;sub&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;1234567890123456789012345678901234567890123456789012345678901234@egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;typ&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Bearer&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;voperson_id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;bf009c87cb04f0a69fb2cc98767147e5b7408bedaef07b70ef33ef777318e610@egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;voperson_verified_email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;nikosev@admin.grnet.gr&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;voperson_id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;1234567890123456789012345678901234567890123456789012345678901234@egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;voperson_verified_email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;jdoe@example.org&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="logout-endpoint">Logout Endpoint&lt;/h4>
 &lt;p>The OpenID Connect protocol supports global logout (like the Single Logout in
@@ -1919,7 +1937,7 @@ Check-in otherwise an &lt;code>invalid_client&lt;/code> error is returned
 (&lt;code>&amp;quot;description&amp;quot;: &amp;quot;audience not found&amp;quot;&lt;/code>)&lt;/p>
 &lt;h5 id="client-credentials-grant">Client Credentials Grant&lt;/h5>
 &lt;p>If you are using the Client Credentials grant, there is a minor change in the
-responses from UserInfo and introspection endpoints. The &lt;strong>Client ID&lt;/strong> of the
+responses from UserInfo and Introspection Endpoints. The &lt;strong>Client ID&lt;/strong> of the
 client is &lt;strong>not&lt;/strong> released as the &lt;code>sub&lt;/code> claim any more and has replaced with by
 the &lt;code>client_id&lt;/code> claim. The &lt;code>sub&lt;/code> contains the identifier of the client which is
 unique, non-reassignable and scoped &lt;code>@egi.eu&lt;/code>.&lt;/p>
@@ -2004,7 +2022,7 @@ URI.&lt;/li>
 &lt;h5 id="userinfo-invalid_token-or-401-unauthorized-error-response">UserInfo &lt;code>invalid_token&lt;/code> or &lt;code>401 Unauthorized&lt;/code> error response&lt;/h5>
 &lt;p>If you are trying to make a request to the UserInfo Endpoint and the response
 contains the &lt;code>invalid_token&lt;/code> error message, probably you are using an invalid
-Token or the UserInfo endpoint is wrong.&lt;/p>
+Token or the UserInfo Endpoint is wrong.&lt;/p>
 &lt;p>To solve this, please make sure the that:&lt;/p>
 &lt;ol>
 &lt;li>You have obtained an Keycloak issued Access Token and you make a request to
@@ -2028,25 +2046,25 @@ derived from &lt;strong>personal&lt;/strong> end-entity certificates, an EGI Sci
 make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
 integration goes via an intermediary service, called a Master Portal. EGI is
 running two Master Portal instances, one development, one production instance.&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-20" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-21" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-20-0-tab" data-toggle="tab" href="#tabs-20-0" role="tab"
-aria-controls="tabs-20-0" aria-selected="true">
+id="tabs-21-0-tab" data-toggle="tab" href="#tabs-21-0" role="tab"
+aria-controls="tabs-21-0" aria-selected="true">
 Production
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-20-1-tab" data-toggle="tab" href="#tabs-20-1" role="tab"
-aria-controls="tabs-20-1" aria-selected="false">
+id="tabs-21-1-tab" data-toggle="tab" href="#tabs-21-1" role="tab"
+aria-controls="tabs-21-1" aria-selected="false">
 Development
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-20-content">
+&lt;div class="tabx-content" id="tabs-21-content">
 &lt;div class="tab-pane show active"
-id="tabs-20-0" role="tabpanel" aria-labelled-by="tabs-20-0-tab">
+id="tabs-21-0" role="tabpanel" aria-labelled-by="tabs-21-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2083,7 +2101,7 @@ id="tabs-20-0" role="tabpanel" aria-labelled-by="tabs-20-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-20-1" role="tabpanel" aria-labelled-by="tabs-20-1-tab">
+id="tabs-21-1" role="tabpanel" aria-labelled-by="tabs-21-1-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2183,7 +2201,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>ID token&lt;/li>&lt;li>UserInfo endpoint&lt;/li>&lt;li>Introspection endpoint&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>ID token&lt;/li>&lt;li>UserInfo Endpoint&lt;/li>&lt;li>Introspection Endpoint&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2242,7 +2260,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">UserInfo endpoint&lt;/td>
+&lt;td style="text-align:left">UserInfo Endpoint&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2301,7 +2319,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">UserInfo endpoint&lt;/td>
+&lt;td style="text-align:left">UserInfo Endpoint&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2360,7 +2378,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">UserInfo endpoint&lt;/td>
+&lt;td style="text-align:left">UserInfo Endpoint&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2419,7 +2437,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>ID token&lt;/li>&lt;li>UserInfo endpoint&lt;/li>&lt;li>Introspection endpoint&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>ID token&lt;/li>&lt;li>UserInfo Endpoint&lt;/li>&lt;li>Introspection Endpoint&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2478,7 +2496,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo endpoint&lt;/li>&lt;li>Introspection endpoint&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo Endpoint&lt;/li>&lt;li>Introspection Endpoint&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2537,7 +2555,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo endpoint&lt;/li>&lt;li>Introspection endpoint&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo Endpoint&lt;/li>&lt;li>Introspection Endpoint&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2596,7 +2614,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo endpoint&lt;/li>&lt;li>Introspection endpoint&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo Endpoint&lt;/li>&lt;li>Introspection Endpoint&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2655,7 +2673,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo endpoint&lt;/li>&lt;li>Introspection endpoint&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo Endpoint&lt;/li>&lt;li>Introspection Endpoint&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2714,7 +2732,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo endpoint&lt;/li>&lt;li>Introspection endpoint&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo Endpoint&lt;/li>&lt;li>Introspection Endpoint&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2773,7 +2791,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo endpoint&lt;/li>&lt;li>Introspection endpoint&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo Endpoint&lt;/li>&lt;li>Introspection Endpoint&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2832,7 +2850,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo endpoint&lt;/li>&lt;li>Introspection endpoint&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo Endpoint&lt;/li>&lt;li>Introspection Endpoint&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2891,7 +2909,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo endpoint&lt;/li>&lt;li>Introspection endpoint&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo Endpoint&lt;/li>&lt;li>Introspection Endpoint&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -2950,7 +2968,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo endpoint&lt;/li>&lt;li>Introspection endpoint&lt;/li>&lt;/ul>&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>UserInfo Endpoint&lt;/li>&lt;li>Introspection Endpoint&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -3009,7 +3027,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">UserInfo endpoint&lt;/td>
+&lt;td style="text-align:left">UserInfo Endpoint&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
@@ -3069,7 +3087,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC claim location&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">UserInfo endpoint&lt;/td>
+&lt;td style="text-align:left">UserInfo Endpoint&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>origin&lt;/strong>&lt;/td>
