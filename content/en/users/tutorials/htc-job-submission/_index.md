@@ -53,7 +53,7 @@ In order to help with deploying an UI, different solutions are possible:
 
 - Deploying an UI manually, using the packages available from
   [UMD repositories](https://go.egi.eu/umd). You will need to install at least
-  the `ui` meta-package, with `voms-client`, the
+  the `ui` meta-package, the
   [IGTF distribution](../../../providers/operations-manuals/howto01_using_igtf_ca_distribution),
   and
   [configure the system to use voms-client](#configuring-the-system-to-use-voms-client).
@@ -118,8 +118,8 @@ to export `X509_VOMSES` and `X509_VOMS_DIR` in your shell, as documented
 [on CERN's twiki](https://twiki.cern.ch/twiki/bin/view/DREAM/GridSetup):
 
 ```shell
-export X509_VOMSES=~/.glite/vomses
-export X509_VOMS_DIR=~/.glite/vomsdir
+$ export X509_VOMSES=~/.glite/vomses
+$ export X509_VOMS_DIR=~/.glite/vomsdir
 ```
 
 ### Preparing the X.509 credentials
