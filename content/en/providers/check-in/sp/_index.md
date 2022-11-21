@@ -950,6 +950,13 @@ request on a separate device. This interaction is defined as follows.
 
 For more information please check the [Device Code Flow](#device-code).
 
+#### JSON Web Key Sets Endpoint
+
+This URL points to the Authorization Server's JWK Set
+[JWK](https://www.rfc-editor.org/info/rfc7517) document. The referenced document
+contains the signing key(s) the client uses to validate signatures from the
+authorization server.
+
 #### UserInfo Endpoint
 
 The UserInfo Endpoint is an OAuth 2.0 Protected Resource that returns Claims
