@@ -422,11 +422,115 @@ Check-in supports the following OpenID Connect/OAuth2 grant types:
 
 #### Authorization Code
 
+The Authorization Code Flow returns an Authorization Code to the Client, which
+can then exchange it for an ID Token and an Access Token directly. This provides
+the benefit of not exposing any tokens to the User Agent and possibly other
+malicious applications with access to the User Agent. The Authorization Server
+can also authenticate the Client before exchanging the Authorization Code for an
+Access Token. The Authorization Code flow is suitable for Clients that can
+securely maintain a Client Secret between themselves and the Authorization
+Server.
+
+##### Authorization Code Flow Steps
+
+The Authorization Code Flow goes through the following steps.
+
+1. Client prepares an Authentication Request containing the desired request
+   parameters.
+1. Client sends the request to the Authorization Server.
+1. Authorization Server Authenticates the end user.
+1. Authorization Server obtains end user Consent/Authorization.
+1. Authorization Server sends the end user back to the Client with an
+   Authorization Code.
+1. Client requests a response using the Authorization Code at the Token
+   Endpoint.
+1. Client receives a response that contains an ID Token and Access Token in the
+   response body.
+1. Client validates the ID token and retrieves the end user's Subject
+   Identifier.
+
+##### Authentication Request
+
+The request parameters of the Authorization Endpoint are:
+
+- `client_id`: ID of the client that ask for authentication to the Authorization
+  Server.
+- `redirect_uri`: URI to which the response will be sent.
+- `scope`: A list of attributes that the application requires.
+- `state`: Opaque value used to maintain state between the request and the
+  callback.
+- `response_type`: value that determines the authorization processing flow to be
+  used. For **Authorization Code** grant set `response_type=code`. This way the
+  response will include an Authorization Code.
+
+Example request:
+
+```shell
+  HTTP/1.1 302 Found
+  Location: ${AUTHORIZATION_ENDPOINT}?
+    response_type=code
+    &scope=openid%20profile%20email
+    &client_id=s6BhdRkqt3
+    &state=af0ifjsldkj
+    &redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
+```
+
+{{% alert title="Note" color="info" %}} You can find the
+`AUTHORIZATION_ENDPOINT` in the [Endpoints](#endpoints) table.{{% /alert %}}
+
+Example response:
+
+```shell
+  HTTP/1.1 302 Found
+  Location: https://client.example.org/cb?
+    code=SplxlOBeZQQYbYS6WxSbIA
+    &state=af0ifjsldkj
+```
+
+##### Token Request
+
+A Client makes a Token Request by presenting its Authorization Grant (in the
+form of an Authorization Code) to the Token Endpoint using the `grant_type`
+value `authorization_code`, as described in Section 4.1.3 of OAuth 2.0
+[RFC6749](https://www.rfc-editor.org/rfc/rfc6749#section-4.1.3). If the Client
+is a Confidential Client, then it MUST authenticate to the Token Endpoint using
+the authentication method registered for its `client_id`. The Client sends the
+parameters to the Token Endpoint using the HTTP `POST` method and the Form
+Serialization.
+
+The parameters that are present in the token request are described in the table
+below:
+
 | Parameter      | Presence | Values                                                                                             |
 | -------------- | -------- | -------------------------------------------------------------------------------------------------- |
 | `grant_type`   | Required | `authorization_code`                                                                               |
 | `code`         | Required | The value of the code in the response from Authorization Endpoint                                  |
 | `redirect_uri` | Required | URI to which the response will be sent (must be the same as the request to Authorization Endpoint) |
+
+Example request:
+
+```shell
+curl -X POST "${TOKEN_ENDPOINT}" \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
+  -d "grant_type=authorization_code" \
+  -d "code=SplxlOBeZQQYbYS6WxSbIA" \
+  -d "redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb" | python -m json.tool
+```
+
+{{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
+[Endpoints](#endpoints) table.{{% /alert %}}
+
+Example response:
+
+```json
+{
+  "access_token": "SlAV32hkKG...",
+  "expires_in": 3600,
+  "id_token": "eyJhbGciOiJSUzI1N...",
+  "token_type": "Bearer"
+}
+```
 
 #### Proof Key for Code Exchange (PKCE)
 
@@ -819,17 +923,8 @@ by sending the User Agent to the Authorization Server\'s Authorization Endpoint
 for Authentication and Authorisation, using request parameters defined by OAuth
 2.0 and additional parameters and parameter values defined by OpenID Connect.
 
-The request parameters of the Authorization Endpoint are:
-
-- `client_id`: ID of the client that ask for authentication to the Authorization
-  Server.
-- `redirect_uri`: URI to which the response will be sent.
-- `scope`: A list of attributes that the application requires.
-- `state`: Opaque value used to maintain state between the request and the
-  callback.
-- `response_type`: value that determines the authorization processing flow to be
-  used. For **Authorization Code** grant set `response_type=code`. This way the
-  response will include an Authorization Code.
+For more information please check the
+[Authorization Code Flow](#authorization-code).
 
 #### Token Endpoint
 
@@ -846,9 +941,9 @@ This endpoint is used in the following flows:
 #### UserInfo Endpoint
 
 The UserInfo Endpoint is an OAuth 2.0 Protected Resource that returns Claims
-about the authenticated end user. To obtain the requested Claims about the
-end user, the Client makes a request to the UserInfo Endpoint using an Access
-Token obtained through OpenID Connect Authentication. These Claims are normally
+about the authenticated end user. To obtain the requested Claims about the end
+user, the Client makes a request to the UserInfo Endpoint using an Access Token
+obtained through OpenID Connect Authentication. These Claims are normally
 represented by a JSON object that contains a collection of name and value pairs
 for the Claims.
 
@@ -977,8 +1072,8 @@ at the Logout Endpoint are defined below:
   This parameter is needed to specify the Client Identifier when
   `post_logout_redirect_uri` is used but `id_token_hint` is not. Using this
   parameter, a confirmation dialog will be presented to the end user.
-- `post_logout_redirect_uri`: URI to which the RP is requesting that the
-  end user's browser be redirected after a logout has been performed. This URI
+- `post_logout_redirect_uri`: URI to which the RP is requesting that the end
+  user's browser be redirected after a logout has been performed. This URI
   should use the HTTPS scheme and the value must have been previously registered
   in the configuration of the Service in
   [EGI Federation Registry](https://aai.egi.eu/federation). Note that you need
