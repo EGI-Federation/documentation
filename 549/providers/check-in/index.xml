@@ -1020,6 +1020,71 @@ support of delegated access to resources.&lt;/li>
 OAuth flow.&lt;/li>
 &lt;/ul>
 &lt;h4 id="authorization-code">Authorization Code&lt;/h4>
+&lt;p>The Authorization Code Flow returns an Authorization Code to the Client, which
+can then exchange it for an ID Token and an Access Token directly. This provides
+the benefit of not exposing any tokens to the User Agent and possibly other
+malicious applications with access to the User Agent. The Authorization Server
+can also authenticate the Client before exchanging the Authorization Code for an
+Access Token. The Authorization Code flow is suitable for Clients that can
+securely maintain a Client Secret between themselves and the Authorization
+Server.&lt;/p>
+&lt;h5 id="authorization-code-flow-steps">Authorization Code Flow Steps&lt;/h5>
+&lt;p>The Authorization Code Flow goes through the following steps.&lt;/p>
+&lt;ol>
+&lt;li>Client prepares an Authentication Request containing the desired request
+parameters.&lt;/li>
+&lt;li>Client sends the request to the Authorization Server.&lt;/li>
+&lt;li>Authorization Server Authenticates the end user.&lt;/li>
+&lt;li>Authorization Server obtains end user Consent/Authorization.&lt;/li>
+&lt;li>Authorization Server sends the end user back to the Client with an
+Authorization Code.&lt;/li>
+&lt;li>Client requests a response using the Authorization Code at the Token
+Endpoint.&lt;/li>
+&lt;li>Client receives a response that contains an ID Token and Access Token in the
+response body.&lt;/li>
+&lt;li>Client validates the ID token and retrieves the end user&amp;rsquo;s Subject
+Identifier.&lt;/li>
+&lt;/ol>
+&lt;h5 id="authentication-request">Authentication Request&lt;/h5>
+&lt;p>The request parameters of the Authorization Endpoint are:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>client_id&lt;/code>: ID of the client that ask for authentication to the Authorization
+Server.&lt;/li>
+&lt;li>&lt;code>redirect_uri&lt;/code>: URI to which the response will be sent.&lt;/li>
+&lt;li>&lt;code>scope&lt;/code>: A list of attributes that the application requires.&lt;/li>
+&lt;li>&lt;code>state&lt;/code>: Opaque value used to maintain state between the request and the
+callback.&lt;/li>
+&lt;li>&lt;code>response_type&lt;/code>: value that determines the authorization processing flow to be
+used. For &lt;strong>Authorization Code&lt;/strong> grant set &lt;code>response_type=code&lt;/code>. This way the
+response will include an Authorization Code.&lt;/li>
+&lt;/ul>
+&lt;p>Example request:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span> HTTP/1.1 &lt;span style="color:#0000cf;font-weight:bold">302&lt;/span> Found
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Location: &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">AUTHORIZATION_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>?
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">response_type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>code
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">scope&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>openid%20profile%20email
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">client_id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>s6BhdRkqt3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">state&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>af0ifjsldkj
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">redirect_uri&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https%3A%2F%2Fclient.example.org%2Fcb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example response:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span> GET /authorize?
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">response_type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>code
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">scope&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>openid%20profile%20email
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">client_id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>s6BhdRkqt3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">state&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>af0ifjsldkj
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">redirect_uri&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https%3A%2F%2Fclient.example.org%2Fcb HTTP/1.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Host: aai.egi.eu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="token-request">Token Request&lt;/h5>
+&lt;p>A Client makes a Token Request by presenting its Authorization Grant (in the
+form of an Authorization Code) to the Token Endpoint using the &lt;code>grant_type&lt;/code>
+value &lt;code>authorization_code&lt;/code>, as described in Section 4.1.3 of OAuth 2.0
+&lt;a href="https://www.rfc-editor.org/rfc/rfc6749#section-4.1.3">RFC6749&lt;/a>. If the Client
+is a Confidential Client, then it MUST authenticate to the Token Endpoint using
+the authentication method registered for its &lt;code>client_id&lt;/code>. The Client sends the
+parameters to the Token Endpoint using the HTTP &lt;code>POST&lt;/code> method and the Form
+Serialization.&lt;/p>
+&lt;p>The parameters that are present in the token request are described in the table
+below:&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1046,7 +1111,21 @@ OAuth flow.&lt;/li>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h4 id="proof-key-for-code-exchange-pkce">Proof Key for Code Exchange (PKCE)&lt;/h4>
+&lt;p>Example request:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl -X POST &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#39;Content-Type: application/x-www-form-urlencoded&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -u &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>:&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">CLIENT_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=authorization_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code=SplxlOBeZQQYbYS6WxSbIA&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example response:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;access_token&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;SlAV32hkKG...&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;expires_in&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3600&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id_token&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;eyJhbGciOiJSUzI1N...&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;token_type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Bearer&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="proof-key-for-code-exchange-pkce">Proof Key for Code Exchange (PKCE)&lt;/h4>
 &lt;p>The Proof Key for Code Exchange (PKCE, pronounced pixie) extension
 (&lt;a href="https://tools.ietf.org/html/rfc7636">RFC 7636&lt;/a>) describes a technique for
 public clients (clients without &lt;code>client_secret&lt;/code>) to mitigate the threat of
@@ -1593,18 +1672,8 @@ id="tabs-14-2" role="tabpanel" aria-labelled-by="tabs-14-2-tab">
 by sending the User Agent to the Authorization Server's Authorization Endpoint
 for Authentication and Authorisation, using request parameters defined by OAuth
 2.0 and additional parameters and parameter values defined by OpenID Connect.&lt;/p>
-&lt;p>The request parameters of the Authorization Endpoint are:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>client_id&lt;/code>: ID of the client that ask for authentication to the Authorization
-Server.&lt;/li>
-&lt;li>&lt;code>redirect_uri&lt;/code>: URI to which the response will be sent.&lt;/li>
-&lt;li>&lt;code>scope&lt;/code>: A list of attributes that the application requires.&lt;/li>
-&lt;li>&lt;code>state&lt;/code>: Opaque value used to maintain state between the request and the
-callback.&lt;/li>
-&lt;li>&lt;code>response_type&lt;/code>: value that determines the authorization processing flow to be
-used. For &lt;strong>Authorization Code&lt;/strong> grant set &lt;code>response_type=code&lt;/code>. This way the
-response will include an Authorization Code.&lt;/li>
-&lt;/ul>
+&lt;p>For more information please check the
+&lt;a href="#authorization-code">Authorization Code flow&lt;/a>.&lt;/p>
 &lt;h4 id="token-endpoint">Token Endpoint&lt;/h4>
 &lt;p>To obtain an Access Token, an ID Token, and optionally a Refresh Token, the
 Client sends a Token Request to the Token Endpoint.&lt;/p>
@@ -1615,11 +1684,24 @@ Client sends a Token Request to the Token Endpoint.&lt;/p>
 &lt;li>&lt;a href="#token-exchange">Token Exchange&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#device-code">Device Code&lt;/a>&lt;/li>
 &lt;/ul>
+&lt;h4 id="device-authorization-endpoint">Device Authorization Endpoint&lt;/h4>
+&lt;p>This endpoint has been introduced in the OAuth 2.0 Device Authorization Grant
+specification &lt;a href="https://www.rfc-editor.org/rfc/rfc8628#section-3.1">RFC8628&lt;/a> and
+it is used in Device Code Flow.&lt;/p>
+&lt;p>The OAuth client on the device interacts with the authorization server directly
+without presenting the request in a user agent, and the end user authorizes the
+request on a separate device. This interaction is defined as follows.&lt;/p>
+&lt;p>For more information please check the &lt;a href="#device-code">Device Code Flow&lt;/a>.&lt;/p>
+&lt;h4 id="json-web-key-sets-endpoint">JSON Web Key Sets Endpoint&lt;/h4>
+&lt;p>This URL points to the Authorization Server&amp;rsquo;s JWK Set
+&lt;a href="https://www.rfc-editor.org/info/rfc7517">JWK&lt;/a> document. The referenced document
+contains the signing key(s) the client uses to validate signatures from the
+authorization server.&lt;/p>
 &lt;h4 id="userinfo-endpoint">UserInfo Endpoint&lt;/h4>
 &lt;p>The UserInfo Endpoint is an OAuth 2.0 Protected Resource that returns Claims
-about the authenticated end user. To obtain the requested Claims about the
-end user, the Client makes a request to the UserInfo Endpoint using an Access
-Token obtained through OpenID Connect Authentication. These Claims are normally
+about the authenticated end user. To obtain the requested Claims about the end
+user, the Client makes a request to the UserInfo Endpoint using an Access Token
+obtained through OpenID Connect Authentication. These Claims are normally
 represented by a JSON object that contains a collection of name and value pairs
 for the Claims.&lt;/p>
 &lt;h5 id="userinfo-request">UserInfo Request&lt;/h5>
@@ -1728,8 +1810,8 @@ identity of the end user that the RP is requesting be logged out by the OP.&lt;/
 This parameter is needed to specify the Client Identifier when
 &lt;code>post_logout_redirect_uri&lt;/code> is used but &lt;code>id_token_hint&lt;/code> is not. Using this
 parameter, a confirmation dialog will be presented to the end user.&lt;/li>
-&lt;li>&lt;code>post_logout_redirect_uri&lt;/code>: URI to which the RP is requesting that the
-end user&amp;rsquo;s browser be redirected after a logout has been performed. This URI
+&lt;li>&lt;code>post_logout_redirect_uri&lt;/code>: URI to which the RP is requesting that the end
+user&amp;rsquo;s browser be redirected after a logout has been performed. This URI
 should use the HTTPS scheme and the value must have been previously registered
 in the configuration of the Service in
 &lt;a href="https://aai.egi.eu/federation">EGI Federation Registry&lt;/a>. Note that you need
