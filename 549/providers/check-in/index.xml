@@ -1066,14 +1066,17 @@ response will include an Authorization Code.&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">client_id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>s6BhdRkqt3
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">state&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>af0ifjsldkj
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">redirect_uri&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https%3A%2F%2Fclient.example.org%2Fcb
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example response:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span> GET /authorize?
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">response_type&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>code
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">scope&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>openid%20profile%20email
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">client_id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>s6BhdRkqt3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the
+&lt;code>AUTHORIZATION_ENDPOINT&lt;/code> in the &lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;p>Example response:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span> HTTP/1.1 &lt;span style="color:#0000cf;font-weight:bold">302&lt;/span> Found
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Location: https://client.example.org/cb?
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">code&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>SplxlOBeZQQYbYS6WxSbIA
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">state&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>af0ifjsldkj
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>&lt;span style="color:#000">redirect_uri&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https%3A%2F%2Fclient.example.org%2Fcb HTTP/1.1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Host: aai.egi.eu
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="token-request">Token Request&lt;/h5>
 &lt;p>A Client makes a Token Request by presenting its Authorization Grant (in the
 form of an Authorization Code) to the Token Endpoint using the &lt;code>grant_type&lt;/code>
@@ -1118,7 +1121,13 @@ below:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;grant_type=authorization_code&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;code=SplxlOBeZQQYbYS6WxSbIA&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example response:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can find the &lt;code>TOKEN_ENDPOINT&lt;/code> in the
+&lt;a href="#endpoints">Endpoints&lt;/a> table.
+&lt;/div>
+&lt;p>Example response:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;access_token&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;SlAV32hkKG...&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;expires_in&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3600&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -1494,32 +1503,32 @@ You can find the &lt;code>TOKEN_ENDPOINT&lt;/code> in the
 &lt;h3 id="endpoints">Endpoints&lt;/h3>
 &lt;p>The most important OIDC/OAuth2 endpoints are listed below:&lt;/p>
 &lt;!-- markdownlint-disable no-inline-html -->
-&lt;ul class="nav nav-tabs" id="tabs-14" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-16" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-14-0-tab" data-toggle="tab" href="#tabs-14-0" role="tab"
-aria-controls="tabs-14-0" aria-selected="true">
+id="tabs-16-0-tab" data-toggle="tab" href="#tabs-16-0" role="tab"
+aria-controls="tabs-16-0" aria-selected="true">
 Production
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-14-1-tab" data-toggle="tab" href="#tabs-14-1" role="tab"
-aria-controls="tabs-14-1" aria-selected="false">
+id="tabs-16-1-tab" data-toggle="tab" href="#tabs-16-1" role="tab"
+aria-controls="tabs-16-1" aria-selected="false">
 Demo
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-14-2-tab" data-toggle="tab" href="#tabs-14-2" role="tab"
-aria-controls="tabs-14-2" aria-selected="false">
+id="tabs-16-2-tab" data-toggle="tab" href="#tabs-16-2" role="tab"
+aria-controls="tabs-16-2" aria-selected="false">
 Development
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-14-content">
+&lt;div class="tabx-content" id="tabs-16-content">
 &lt;div class="tab-pane show active"
-id="tabs-14-0" role="tabpanel" aria-labelled-by="tabs-14-0-tab">
+id="tabs-16-0" role="tabpanel" aria-labelled-by="tabs-16-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1568,7 +1577,7 @@ id="tabs-14-0" role="tabpanel" aria-labelled-by="tabs-14-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-14-1" role="tabpanel" aria-labelled-by="tabs-14-1-tab">
+id="tabs-16-1" role="tabpanel" aria-labelled-by="tabs-16-1-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1617,7 +1626,7 @@ id="tabs-14-1" role="tabpanel" aria-labelled-by="tabs-14-1-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-14-2" role="tabpanel" aria-labelled-by="tabs-14-2-tab">
+id="tabs-16-2" role="tabpanel" aria-labelled-by="tabs-16-2-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1673,7 +1682,7 @@ by sending the User Agent to the Authorization Server's Authorization Endpoint
 for Authentication and Authorisation, using request parameters defined by OAuth
 2.0 and additional parameters and parameter values defined by OpenID Connect.&lt;/p>
 &lt;p>For more information please check the
-&lt;a href="#authorization-code">Authorization Code flow&lt;/a>.&lt;/p>
+&lt;a href="#authorization-code">Authorization Code Flow&lt;/a>.&lt;/p>
 &lt;h4 id="token-endpoint">Token Endpoint&lt;/h4>
 &lt;p>To obtain an Access Token, an ID Token, and optionally a Refresh Token, the
 Client sends a Token Request to the Token Endpoint.&lt;/p>
@@ -2128,25 +2137,25 @@ derived from &lt;strong>personal&lt;/strong> end-entity certificates, an EGI Sci
 make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
 integration goes via an intermediary service, called a Master Portal. EGI is
 running two Master Portal instances, one development, one production instance.&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-21" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-23" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-21-0-tab" data-toggle="tab" href="#tabs-21-0" role="tab"
-aria-controls="tabs-21-0" aria-selected="true">
+id="tabs-23-0-tab" data-toggle="tab" href="#tabs-23-0" role="tab"
+aria-controls="tabs-23-0" aria-selected="true">
 Production
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-21-1-tab" data-toggle="tab" href="#tabs-21-1" role="tab"
-aria-controls="tabs-21-1" aria-selected="false">
+id="tabs-23-1-tab" data-toggle="tab" href="#tabs-23-1" role="tab"
+aria-controls="tabs-23-1" aria-selected="false">
 Development
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-21-content">
+&lt;div class="tabx-content" id="tabs-23-content">
 &lt;div class="tab-pane show active"
-id="tabs-21-0" role="tabpanel" aria-labelled-by="tabs-21-0-tab">
+id="tabs-23-0" role="tabpanel" aria-labelled-by="tabs-23-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2183,7 +2192,7 @@ id="tabs-21-0" role="tabpanel" aria-labelled-by="tabs-21-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-21-1" role="tabpanel" aria-labelled-by="tabs-21-1-tab">
+id="tabs-23-1" role="tabpanel" aria-labelled-by="tabs-23-1-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
