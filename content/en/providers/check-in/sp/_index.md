@@ -938,6 +938,18 @@ This endpoint is used in the following flows:
 - [Token Exchange](#token-exchange)
 - [Device Code](#device-code)
 
+#### Device Authorization Endpoint
+
+This endpoint has been introduced in the OAuth 2.0 Device Authorization Grant
+specification [RFC8628](https://www.rfc-editor.org/rfc/rfc8628#section-3.1) and
+it is used in Device Code Flow.
+
+The OAuth client on the device interacts with the authorization server directly
+without presenting the request in a user agent, and the end user authorizes the
+request on a separate device. This interaction is defined as follows.
+
+For more information please check the [Device Code Flow](#device-code).
+
 #### UserInfo Endpoint
 
 The UserInfo Endpoint is an OAuth 2.0 Protected Resource that returns Claims
