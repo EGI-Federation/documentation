@@ -37,7 +37,7 @@ external service to bring data in for analysis. As with input data, you can
 connect to any external service to deposit the notebooks output.
 
 This is convenient for smaller datasets but not practical for larger ones, for
-those cases we can offer integration with several data services. 
+those cases we can offer integration with several data services.
 
 ### EGI DataHub
 
