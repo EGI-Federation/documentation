@@ -30,8 +30,8 @@ client machine:
 
 ### Get the configuration repository
 
-All the configuration of the notebooks is stored at a git repository available 
-in Github. 
+All the configuration of the notebooks is stored at a git repository available
+in Github.
 Start by cloning the repo:
 
 ```shell
