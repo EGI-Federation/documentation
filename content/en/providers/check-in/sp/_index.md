@@ -1423,7 +1423,7 @@ error message in the logs:
 Then you need to increase the size of the buffer by adding the following options
 in the vhost configuration:
 
-```shell
+```nginx
 proxy_buffers 4 256k;
 proxy_buffer_size 128k;
 proxy_busy_buffers_size 256k;
