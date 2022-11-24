@@ -1102,8 +1102,7 @@ at the Logout Endpoint are defined below:
 ##### Example Request
 
 ```shell
-curl -X GET ${LOGOUT_ENDPOINT}?
-  id_token_hint=${ID_TOKEN}
+$ curl -X GET "${LOGOUT_ENDPOINT}?id_token_hint=${ID_TOKEN}"
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `LOGOUT_ENDPOINT` in
