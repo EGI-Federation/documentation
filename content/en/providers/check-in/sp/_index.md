@@ -979,9 +979,9 @@ Token be sent using the Authorization header field.
 Example request:
 
 ```shell
-curl -X GET ${USERINFO_ENDPOINT}?
-  -H "Content-type: application/json"
-  -H "Authorization: Bearer ${ACCESS_TOKEN}" | python -m json.tool;
+$ curl -X GET "${USERINFO_ENDPOINT}?"
+    -H "Content-type: application/json"
+    -H "Authorization: Bearer ${ACCESS_TOKEN}" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `USERINFO_ENDPOINT` in
