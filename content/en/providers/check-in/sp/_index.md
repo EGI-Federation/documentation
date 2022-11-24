@@ -510,12 +510,12 @@ below:
 Example request:
 
 ```shell
-curl -X POST "${TOKEN_ENDPOINT}" \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
-  -d "grant_type=authorization_code" \
-  -d "code=SplxlOBeZQQYbYS6WxSbIA" \
-  -d "redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb" | python -m json.tool
+$ curl -X POST "${TOKEN_ENDPOINT}" \
+    -H 'Content-Type: application/x-www-form-urlencoded' \
+    -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
+    -d "grant_type=authorization_code" \
+    -d "code=SplxlOBeZQQYbYS6WxSbIA" \
+    -d "redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
@@ -609,12 +609,12 @@ usual but includes the `code_verifier` secret generated in the first request.
 Example request:
 
 ```shell
-curl -X POST "${TOKEN_ENDPOINT}" \
-  -d "grant_type=authorization_code" \
-  -d "code=${CODE}" \
-  -d "client_id=${CLIENT_ID}" \
-  -d "redirect_uri=${REDIRECT_URI}" \
-  -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
+$ curl -X POST "${TOKEN_ENDPOINT}" \
+    -d "grant_type=authorization_code" \
+    -d "code=${CODE}" \
+    -d "client_id=${CLIENT_ID}" \
+    -d "redirect_uri=${REDIRECT_URI}" \
+    -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
@@ -651,11 +651,11 @@ using the `grant_type` value `refresh_token`:
 Example request:
 
 ```shell
-curl -X POST "${TOKEN_ENDPOINT}" \
-  -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
-  -d "grant_type=refresh_token" \
-  -d "refresh_token=${REFRESH_TOKEN}" \
-  -d "scope=openid%20email%20profile" | python -m json.tool;
+$ curl -X POST "${TOKEN_ENDPOINT}" \
+    -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
+    -d "grant_type=refresh_token" \
+    -d "refresh_token=${REFRESH_TOKEN}" \
+    -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
@@ -680,11 +680,11 @@ To combine the refresh token grant type with PKCE you need to make the following
 request:
 
 ```shell
-curl -X POST "${TOKEN_ENDPOINT}" \
-  -d "client_id=${CLIENT_ID}" \
-  -d "grant_type=refresh_token" \
-  -d "refresh_token=${REFRESH_TOKEN}" \
-  -d "scope=openid%20email%20profile" | python -m json.tool;
+$ curl -X POST "${TOKEN_ENDPOINT}" \
+    -d "client_id=${CLIENT_ID}" \
+    -d "grant_type=refresh_token" \
+    -d "refresh_token=${REFRESH_TOKEN}" \
+    -d "scope=openid%20email%20profile" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
@@ -706,12 +706,12 @@ of the request are:
 Example request:
 
 ```shell
-curl -X POST "${TOKEN_ENDPOINT}" \
-  -u "${CLIENT_B_ID}":"${CLIENT_B_SECRET}" \
-  -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
-  -d "subject_token=${ACCESS_TOKEN_A}" \
-  -d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
-  -d "scope=openid%20profile%20offline_access" | python -m json.tool;
+$ curl -X POST "${TOKEN_ENDPOINT}" \
+    -u "${CLIENT_B_ID}":"${CLIENT_B_SECRET}" \
+    -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
+    -d "subject_token=${ACCESS_TOKEN_A}" \
+    -d "subject_token_type=urn:ietf:params:oauth:token-type:access_token" \
+    -d "scope=openid%20profile%20offline_access" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
@@ -751,11 +751,11 @@ following parameters:
 Example request:
 
 ```shell
-curl -X POST "${DEVICE_AUTHORIZATION_ENDPOINT}" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "client_id=${CLIENT_ID}" \
-  -d "client_secret=${CLIENT_SECRET}" \
-  -d "scope=openid%20email%20profile" | python -m json.tool
+$ curl -X POST "${DEVICE_AUTHORIZATION_ENDPOINT}" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -d "client_id=${CLIENT_ID}" \
+    -d "client_secret=${CLIENT_SECRET}" \
+    -d "scope=openid%20email%20profile" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the
@@ -798,13 +798,13 @@ Request to the token endpoint. The request contains the following parameters:
 Example request:
 
 ```shell
-curl -X POST "${TOKEN_ENDPOINT}" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
-  -d "device_code=${DEVICE_CODE}" \
-  -d "client_id=${CLIENT_ID}" \
-  -d "client_secret=${CLIENT_SECRET}" \
-  -d "scope=openid%20profile" | python -m json.tool
+$ curl -X POST "${TOKEN_ENDPOINT}" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
+    -d "device_code=${DEVICE_CODE}" \
+    -d "client_id=${CLIENT_ID}" \
+    -d "client_secret=${CLIENT_SECRET}" \
+    -d "scope=openid%20profile" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
@@ -829,13 +829,13 @@ To combine Device Code flow with PKCE you need to make the following requests:
 1 - Device Authorization Request:
 
 ```shell
-curl -X POST "${DEVICE_AUTHORIZATION_ENDPOINT}" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "client_id=${CLIENT_ID}" \
-  -d "client_secret=${CLIENT_SECRET}" \
-  -d "scope=openid%20email%20profile" \
-  -d "code_challenge=${CODE_CHALLENGE}" \
-  -d "code_challenge_method=S256" | python -m json.tool
+$ curl -X POST "${DEVICE_AUTHORIZATION_ENDPOINT}" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -d "client_id=${CLIENT_ID}" \
+    -d "client_secret=${CLIENT_SECRET}" \
+    -d "scope=openid%20email%20profile" \
+    -d "code_challenge=${CODE_CHALLENGE}" \
+    -d "code_challenge_method=S256" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the
@@ -845,13 +845,13 @@ table.{{% /alert %}}
 2 - Device Access Token Request
 
 ```shell
-curl -X POST "${TOKEN_ENDPOINT}" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
-  -d "device_code=${DEVICE_CODE}" \
-  -d "client_id=${CLIENT_ID}" \
-  -d "client_secret=${CLIENT_SECRET}" \
-  -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
+$ curl -X POST "${TOKEN_ENDPOINT}" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -d "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code" \
+    -d "device_code=${DEVICE_CODE}" \
+    -d "client_id=${CLIENT_ID}" \
+    -d "client_secret=${CLIENT_SECRET}" \
+    -d "code_verifier=${CODE_VERIFIER}" | python -m json.tool
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
@@ -980,7 +980,7 @@ Token be sent using the Authorization header field.
 Example request:
 
 ```shell
-$ curl -X GET "${USERINFO_ENDPOINT}?"
+$ curl -X GET "${USERINFO_ENDPOINT}"
     -H "Content-type: application/json"
     -H "Authorization: Bearer ${ACCESS_TOKEN}" | python -m json.tool;
 ```
@@ -1176,7 +1176,7 @@ to your terminal and open `config.php` with your favourite text editor.
 Example:
 
 ```shell
-vi simple-oidc-client-php/config.php
+$ vi simple-oidc-client-php/config.php
 ```
 
 Let's go quickly through the settings:
@@ -1352,7 +1352,7 @@ by creating new Refresh Tokens issued by Keycloak.
   following command:
 
   ```shell
-  oidc-gen --pub --issuer <ISSUER> --scope ...
+  $ oidc-gen --pub --issuer <ISSUER> --scope ...
   ```
 
   {{% alert title="Note" color="info" %}} You can find the `ISSUER` in the
@@ -1497,7 +1497,7 @@ certificate is present in MasterPortal, e.g. by going to
 doing
 
 ```shell
-ssh proxy@ssh.aai.egi.eu
+$ ssh proxy@ssh.aai.egi.eu
 ```
 
 and storing the output in `/tmp/x509up_u$(id -u)`
