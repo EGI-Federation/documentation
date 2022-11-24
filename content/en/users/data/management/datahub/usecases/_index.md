@@ -25,17 +25,17 @@ CDMI).
 
 ## Integrate DataHub with EGI Notebooks
 
-EGI Notebooks has been integrated with DataHub in order to easily 
+EGI Notebooks has been integrated with DataHub in order to easily
 access and store files from the JupyterLab interface.
 
-On the central EGI Notebooks instance, a predefined space open to 
-all users or VO specific spaces are available.
+On the central EGI Notebooks instance, a predefined space open to
+all users and VO specific spaces are available.
 
 ![image](datahub-notebooks-integration.png)
 
 ## Make your data FAIR
 
-Users can assign metadata to files, create shares and mint DOIs. 
+Users can assign metadata to files, create shares and mint DOIs.
 
 The EGI DataHub offers an OAI-PMH interface which enables standard
 discoverability and access to datasets.
