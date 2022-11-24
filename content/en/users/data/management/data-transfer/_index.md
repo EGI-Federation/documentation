@@ -62,7 +62,7 @@ infrastructures
 
 ## Service Instances
 
-EGI has signed OLAs with 2 Providers, CERN and STFC, in order to access their
+EGI has signed OLAs with 2 Providers, CERN and UKRI-STFC, in order to access their
 FTS3 Service instances.
 
 The following endpoints are available:
@@ -70,14 +70,14 @@ The following endpoints are available:
 ### CERN
 
 - [FTS REST](https://fts3-public.cern.ch:8446/)
-- [FTS Mon](https://fts3-public.cern.ch/fts3/ftsmon/#/)
+- [FTS Mon](https://fts3-public.cern.ch/fts3/ftsmon/)
 - [WebFTS](https://webfts.cern.ch/) - N.B. Needs personal X.509 certificate
   installed in your Browser
 
-### STFC
+### UKRI-STFC
 
-- [FTS REST](https://lcgfts3.gridpp.rl.ac.uk:8446)
-- [FTS Mon](https://lcgfts3.gridpp.rl.ac.uk:8449/fts3/ftsmon/#/)
+- [FTS REST](https://fts3egi.scd.rl.ac.uk:8446/)
+- [FTS Mon](https://fts3egi.scd.rl.ac.uk:8449/fts3/ftsmon/)
 
 N.B. if you access the endpoints via Browser the following CA certificates need
 to be installed:
