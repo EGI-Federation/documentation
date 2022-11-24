@@ -1111,9 +1111,7 @@ the [Endpoints](#endpoints) table.{{% /alert %}}
 ##### Example Request with redirection
 
 ```shell
-curl -X GET ${LOGOUT_ENDPOINT}?
-  post_logout_redirect_uri=${POST_LOGOUT_REDIRECT_URI}&
-  client_id=${CLIENT_ID}
+$ curl -X GET "${LOGOUT_ENDPOINT}post_logout_redirect_uri=${POST_LOGOUT_REDIRECT_URI}&client_id=${CLIENT_ID}"
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `LOGOUT_ENDPOINT` in
