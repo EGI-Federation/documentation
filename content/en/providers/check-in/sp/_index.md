@@ -1027,10 +1027,10 @@ request with parameters sent as `application/x-www-form-urlencoded`.
 Example request:
 
 ```shell
-curl -X POST "${INTROSPECTION_ENDPOINT}" \
-  -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "token=${ACCESS_TOKEN}" | python -m json.tool;
+$ curl -X POST "${INTROSPECTION_ENDPOINT}" \
+    -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -d "token=${ACCESS_TOKEN}" | python -m json.tool;
 ```
 
 {{% alert title="Note" color="info" %}} You can find the
