@@ -465,7 +465,7 @@ The request parameters of the Authorization Endpoint are:
 
 Example request:
 
-```shell
+```http
   HTTP/1.1 302 Found
   Location: ${AUTHORIZATION_ENDPOINT}?
     response_type=code
@@ -480,7 +480,7 @@ Example request:
 
 Example response:
 
-```shell
+```http
   HTTP/1.1 302 Found
   Location: https://client.example.org/cb?
     code=SplxlOBeZQQYbYS6WxSbIA
@@ -578,14 +578,15 @@ transformation method (`code_challenge_method`).
 
 Example request:
 
-```shell
-GET "${AUTHORIZATION_ENDPOINT}?
+```http
+  HTTP/1.1 302 Found
+  Location: ${AUTHORIZATION_ENDPOINT}?
       client_id=${CLIENT_ID}
       &scope=openid%20profile%20email
       &redirect_uri=${REDIRECT_URI}
       &response_type=code
       &code_challenge=${CODE_CHALLENGE}
-      &code_challenge_method=S256"
+      &code_challenge_method=S256
 ```
 
 {{% alert title="Note" color="info" %}} You can find the
@@ -596,8 +597,8 @@ the `code_challenge_method`.
 
 Example response:
 
-```shell
-HTTP/1.1 302 Found
+```http
+  HTTP/1.1 302 Found
   Location: ${REDIRECT_URI}?
     code=fgtLHT
 ```
@@ -1101,8 +1102,10 @@ at the Logout Endpoint are defined below:
 
 ##### Example Request
 
-```shell
-$ curl -X GET "${LOGOUT_ENDPOINT}?id_token_hint=${ID_TOKEN}"
+```http
+  HTTP/1.1 302 Found
+  Location: ${LOGOUT_ENDPOINT}?
+    id_token_hint=${ID_TOKEN}
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `LOGOUT_ENDPOINT` in
@@ -1110,8 +1113,11 @@ the [Endpoints](#endpoints) table.{{% /alert %}}
 
 ##### Example Request with redirection
 
-```shell
-$ curl -X GET "${LOGOUT_ENDPOINT}post_logout_redirect_uri=${POST_LOGOUT_REDIRECT_URI}&client_id=${CLIENT_ID}"
+```http
+  HTTP/1.1 302 Found
+  Location: ${LOGOUT_ENDPOINT}?
+    post_logout_redirect_uri=${POST_LOGOUT_REDIRECT_URI}
+    &client_id=${CLIENT_ID}
 ```
 
 {{% alert title="Note" color="info" %}} You can find the `LOGOUT_ENDPOINT` in
