@@ -30,12 +30,12 @@ client machine:
 
 ### Get the configuration repository
 
-All the configuration of the notebooks is stored at a git repository available in
-keybase. You\'ll need to be part of the `opslife` team in keybase to access.
+All the configuration of the notebooks is stored at a git repository available
+in GitHub.
 Start by cloning the repo:
 
 ```shell
-git clone keybase://team/opslife/egi-notebooks
+git clone https://github.com/EGI-Federation/notebooks-operations
 ```
 
 ## Kubernetes
