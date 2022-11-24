@@ -1721,7 +1721,7 @@ sent as a Bearer Token, per Section 2 of
 &lt;p>It is recommended that the request use the HTTP &lt;code>GET&lt;/code> method and the Access
 Token be sent using the Authorization header field.&lt;/p>
 &lt;p>Example request:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl -X GET &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">USERINFO_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>?
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -X GET &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">USERINFO_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">?&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-type: application/json&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -H &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer &lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> python -m json.tool&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
@@ -1828,8 +1828,7 @@ to include either the &lt;code>client_id&lt;/code> or &lt;code>id_token_hint&lt;
 &lt;code>post_logout_redirect_uri&lt;/code> is included.&lt;/li>
 &lt;/ul>
 &lt;h5 id="example-request">Example Request&lt;/h5>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl -X GET &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">LOGOUT_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>?
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">id_token_hint&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ID_TOKEN&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -X GET &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">LOGOUT_ENDPOINT&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">?id_token_hint=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ID_TOKEN&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
