@@ -37,8 +37,7 @@ external service to bring data in for analysis. As with input data, you can
 connect to any external service to deposit the notebooks output.
 
 This is convenient for smaller datasets but not practical for larger ones, for
-those cases we can offer integration with several data services. These are not
-enabled in the catch-all instance but can be made available on demand.
+those cases we can offer integration with several data services.
 
 ### EGI DataHub
 
@@ -52,27 +51,10 @@ under the `datahub` folder. If you need support for any additional space, please
 
 ![Datahub folder](datahub-folder.png)
 
-Alternatively, you can also use the
-[`fs-onedatafs`](https://github.com/onedata/fs-onedatafs) library from your
-code. For convenience, the `ONEPROVIDER_HOST` environment variable will point to
-the default oneprovider for the Notebooks and the `ONECLIENT_ACCESS_TOKEN`
-variable will contain a valid access token for the service.
-
-```python
-from fs.onedatafs import OnedataFS
-
-# create the OnedataFS driver using defaults from env
-odfs = OnedataFS(os.environ['ONEPROVIDER_HOST'],
-                 os.environ['ONECLIENT_ACCESS_TOKEN'],
-                 force_direct_io=True)
-
-# use it to open a file
-f = odfs.open("<datahub file path>")
-```
-
-The `ONEPROVIDER_HOST` and `ONECLIENT_ACCESS_TOKEN` variables are obtained as
-part of the login process and made available in the notebooks environment
-automatically. You can also specify a different oneprovider host if needed.
+By default the `notebooks-shared` space is open for writing to any EGI Notebooks
+user part of the `vo.notebooks.egi.eu` VO. Please check the [File Management](../../../data/management/datahub/file-management/)
+section in the EGI DataHub documentation for more information on how to upload
+files.
 
 ### EUDAT B2DROP
 
