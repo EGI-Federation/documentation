@@ -194,14 +194,13 @@ in the EGI Workload Manager instance can use the
 &lt;a href="https://dirac.egi.eu/DIRAC/">EGI Workload Manager web portal&lt;/a> to access the
 service, or use &lt;a href="#the-dirac-client-tool">DIRAC Client&lt;/a>.&lt;/li>
 &lt;li>Individual researchers who want to do some number crunching for a limited
-period of time, with a reasonable (not too high) number of CPUs &amp;gt; can use the
+period of time, with a reasonable (not too high) number of CPUs can use the
 catch-all VO resource pool (&lt;code>vo.access.egi.eu&lt;/code>). Submit a request through the
-EGI Marketplace selecting:&lt;br>
-&lt;code>Compute&lt;/code> &amp;gt; &lt;code>Workload Manager&lt;/code> from the top menu.&lt;/li>
+&lt;a href="https://marketplace.eosc-portal.eu/services/egi-workload-manager">EOSC Marketplace&lt;/a>.&lt;/li>
 &lt;li>Representatives of a community who want to try DIRAC and EGI &amp;gt; Same as #2.&lt;/li>
 &lt;li>Representative of a community who wants to request DIRAC for the community&amp;rsquo;s
-own resource pool &amp;gt; Submit a request through the EGI Marketplace selecting&lt;br>
-&lt;code>Compute&lt;/code> &amp;gt; &lt;code>Workload Manager&lt;/code> from the top menu.&lt;/li>
+own resource pool &amp;gt; Submit a request through the
+&lt;a href="https://marketplace.eosc-portal.eu/services/egi-workload-manager">EOSC Marketplace&lt;/a>.&lt;/li>
 &lt;/ol>
 &lt;h2 id="getting-started">Getting Started&lt;/h2>
 &lt;h3 id="submit-a-service-order-via-the-marketplace">Submit a service order via the Marketplace&lt;/h3>
