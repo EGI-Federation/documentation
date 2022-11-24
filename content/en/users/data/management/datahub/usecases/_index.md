@@ -12,14 +12,14 @@ description: >
 An overview of the use cases and possible deployment scenarios of the
 [EGI DataHub](https://datahub.egi.eu/).
 
-## Build Data Spaces for Commmunities
+## Build Data Spaces for Communities
 
 Users can access with their EGI Check-in credentials data available
 at one or more providers which are abstracting over heterogeneus
 backends.
 
 Different data access interfaces are available (Web, REST, POSIX,
-CDMI)
+CDMI).
 
 ![image](datahub-federation-of-service-providers.png)
 
@@ -28,7 +28,7 @@ CDMI)
 EGI Notebooks has been integrated with DataHub in order to easily 
 access and store files from the JupyterLab interface.
 
-On the central EGI Notebooks instance, a predefined spaces open to 
+On the central EGI Notebooks instance, a predefined space open to 
 all users or VO specific spaces are available.
 
 ![image](datahub-notebooks-integration.png)
