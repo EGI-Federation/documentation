@@ -833,7 +833,7 @@ SP.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>If the SP supports the Single Logout profile, then its metadata MUST contain
+&lt;p>If the SP supports the Single Logout profile, then its metadata &lt;strong>MUST&lt;/strong> contain
 (within its &lt;code>&amp;lt;md:SPSSODescriptor&amp;gt;&lt;/code> role element):&lt;/p>
 &lt;ul>
 &lt;li>at least one &lt;code>&amp;lt;md:KeyDescriptor&amp;gt;&lt;/code> element whose use attribute is omitted or
@@ -955,7 +955,7 @@ with the matching performed as described in
 Comparison). Redirection URIs &lt;strong>MUST&lt;/strong> use the schemata defined in Section 3.1.2.1
 of the
 &lt;a href="https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest">OIDC-Core&lt;/a>
-specification. Note that the Redirection URI MUST use the &lt;code>https&lt;/code> scheme; the
+specification. Note that the Redirection URI &lt;strong>MUST&lt;/strong> use the &lt;code>https&lt;/code> scheme; the
 use of &lt;code>http&lt;/code> Redirection URIs is only allowed in the development environment.&lt;/p>
 &lt;h3 id="claims">Claims&lt;/h3>
 &lt;p>The EGI Check-in UserInfo Endpoint is an OAuth 2.0 Protected Resource that
