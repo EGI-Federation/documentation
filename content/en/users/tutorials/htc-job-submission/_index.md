@@ -576,7 +576,6 @@ $ glite-ce-job-status "$JOB_ID"
 # Retrieving the output of the job
 $ glite-ce-job-output "$JOB_ID"
 ```
-
 #### References
 
 - [CREAM User's guide](https://cream-guide.readthedocs.io/en/latest/User_Guide.html)
@@ -594,6 +593,20 @@ or the
 [DIRAC command-line interface (CLI)](../../compute/orchestration/workload-manager/#the-dirac-client-tool)
 is documented in the
 [EGI Workload Manager](../../compute/orchestration/workload-manager).
+
+### Troubleshooting
+
+In case you receive errors when submitting jobs to Computing Elements, it may
+be possible that the service is in Downtime for an intervention/upgrade or there
+is an issue already reported by the EGI Monitoring System [ARGO](https://argo.egi.eu/).
+
+To check the information about downtimes or issues you can browse the
+[ARGO Issues Page](https://argo.egi.eu/egi/issues/ALL) and, as shown in the
+figure below, check if there are active Downtimes for the service you are
+trying to use (By clicking on the Downtime button) or issues (By clicking on
+the CRITICAL button).
+
+![argo-issues](argo_issues.png)
 
 ## Asking for help
 
