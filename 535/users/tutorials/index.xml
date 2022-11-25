@@ -1399,5 +1399,15 @@ or the
 &lt;a href="../../compute/orchestration/workload-manager/#the-dirac-client-tool">DIRAC command-line interface (CLI)&lt;/a>
 is documented in the
 &lt;a href="../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>.&lt;/p>
+&lt;h3 id="troubleshooting">Troubleshooting&lt;/h3>
+&lt;p>In case you receive errors when submitting jobs to Computing Elements, it may
+be possible that the service is in Downtime for an intervention/upgrade or there
+is an issue already reported by the EGI Monitoring System &lt;a href="https://argo.egi.eu/">ARGO&lt;/a>.&lt;/p>
+&lt;p>To check the information about downtimes or issues you can browse the
+&lt;a href="https://argo.egi.eu/egi/issues/ALL">ARGO Issues Page&lt;/a> and, as shown in the
+figure below, check if there are active Downtimes for the service you are
+trying to use (By clicking on the Downtime button) or issues (By clicking on
+the CRITICAL button).&lt;/p>
+&lt;p>&lt;img src="argo_issues.png" alt="argo-issues">&lt;/p>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
 &lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item></channel></rss>
