@@ -1082,7 +1082,7 @@ You can find the
 form of an Authorization Code) to the Token Endpoint using the &lt;code>grant_type&lt;/code>
 value &lt;code>authorization_code&lt;/code>, as described in Section 4.1.3 of OAuth 2.0
 &lt;a href="https://www.rfc-editor.org/rfc/rfc6749#section-4.1.3">RFC6749&lt;/a>. If the Client
-is a Confidential Client, then it MUST authenticate to the Token Endpoint using
+is a Confidential Client, then it &lt;strong>MUST&lt;/strong> authenticate to the Token Endpoint using
 the authentication method registered for its &lt;code>client_id&lt;/code>. The Client sends the
 parameters to the Token Endpoint using the HTTP &lt;code>POST&lt;/code> method and the Form
 Serialization.&lt;/p>
