@@ -266,7 +266,7 @@ It is recommended that your SP metadata contains:
     responsible for the technical operation of the service represented by your
     SP.
 
-If the SP supports the Single Logout profile, then its metadata MUST contain
+If the SP supports the Single Logout profile, then its metadata **MUST** contain
 (within its `<md:SPSSODescriptor>` role element):
 
 - at least one `<md:KeyDescriptor>` element whose use attribute is omitted or
