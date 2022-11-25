@@ -366,7 +366,7 @@ green copy button next to the desired field.{{% /alert %}}
 
 ### Redirection URIs
 
-OpenID Connect Services MUST pre-register one or more Redirection URI(s) to
+OpenID Connect Services **MUST** pre-register one or more Redirection URI(s) to
 which authentication responses from EGI Check-in will be sent. EGI Check-in
 utilises exact matching of the redirect URI specified in an authentication
 request against the pre-registered URIs
