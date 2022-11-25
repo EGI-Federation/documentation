@@ -376,7 +376,7 @@ with the matching performed as described in
 Comparison). Redirection URIs **MUST** use the schemata defined in Section 3.1.2.1
 of the
 [OIDC-Core](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest)
-specification. Note that the Redirection URI MUST use the `https` scheme; the
+specification. Note that the Redirection URI **MUST** use the `https` scheme; the
 use of `http` Redirection URIs is only allowed in the development environment.
 
 ### Claims
