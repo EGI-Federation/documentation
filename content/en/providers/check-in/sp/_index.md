@@ -373,7 +373,7 @@ request against the pre-registered URIs
 [OAuth2-BCP](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics#section-4.1),
 with the matching performed as described in
 [RFC3986](https://www.rfc-editor.org/rfc/rfc3986#section-6.2.1) (Simple String
-Comparison). Redirection URIs MUST use the schemata defined in Section 3.1.2.1
+Comparison). Redirection URIs **MUST** use the schemata defined in Section 3.1.2.1
 of the
 [OIDC-Core](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest)
 specification. Note that the Redirection URI MUST use the `https` scheme; the
