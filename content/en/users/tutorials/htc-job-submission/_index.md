@@ -576,6 +576,7 @@ $ glite-ce-job-status "$JOB_ID"
 # Retrieving the output of the job
 $ glite-ce-job-output "$JOB_ID"
 ```
+
 #### References
 
 - [CREAM User's guide](https://cream-guide.readthedocs.io/en/latest/User_Guide.html)
