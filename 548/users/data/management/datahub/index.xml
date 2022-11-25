@@ -1,37 +1,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – EGI DataHub</title><link>/users/data/management/datahub/</link><description>Recent content in EGI DataHub on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/data/management/datahub/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: DataHub Use-Cases</title><link>/users/data/management/datahub/usecases/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/usecases/</guid><description>
 &lt;p>An overview of the use cases and possible deployment scenarios of the
 &lt;a href="https://datahub.egi.eu/">EGI DataHub&lt;/a>.&lt;/p>
-&lt;h2 id="transparent-data-access">Transparent data access&lt;/h2>
-&lt;p>&lt;img src="datahub-transparent-data-access.png" alt="image">&lt;/p>
-&lt;ul>
-&lt;li>Clients use one ore more providers to access data&lt;/li>
-&lt;li>Data can be accessed over multiple protocols&lt;/li>
-&lt;/ul>
-&lt;h2 id="federation-of-service-providers">Federation of service providers&lt;/h2>
+&lt;h2 id="build-data-spaces-for-communities">Build Data Spaces for Communities&lt;/h2>
+&lt;p>Users can access with their EGI Check-in credentials data available
+at one or more providers which are abstracting over heterogeneus
+backends.&lt;/p>
+&lt;p>Different data access interfaces are available (Web, REST, POSIX,
+CDMI).&lt;/p>
 &lt;p>&lt;img src="datahub-federation-of-service-providers.png" alt="image">&lt;/p>
-&lt;ul>
-&lt;li>Heterogeneous backend storage&lt;/li>
-&lt;li>Common interfaces (Web, REST, POSIX, CDMI)&lt;/li>
-&lt;li>Common AAI with Check-in&lt;/li>
-&lt;li>Discovery of Datasets in the EGI DataHub&lt;/li>
-&lt;/ul>
+&lt;h2 id="integrate-datahub-with-egi-notebooks">Integrate DataHub with EGI Notebooks&lt;/h2>
+&lt;p>EGI Notebooks has been integrated with DataHub in order to easily
+access and store files from the JupyterLab interface.&lt;/p>
+&lt;p>On the central EGI Notebooks instance, a predefined space open to
+all users and VO specific spaces are available.&lt;/p>
+&lt;p>&lt;img src="datahub-notebooks-integration.png" alt="image">&lt;/p>
+&lt;h2 id="make-your-data-fair">Make your data FAIR&lt;/h2>
+&lt;p>Users can assign metadata to files, create shares and mint DOIs.&lt;/p>
+&lt;p>The EGI DataHub offers an OAI-PMH interface which enables standard
+discoverability and access to datasets.&lt;/p>
+&lt;p>&lt;img src="datahub-publication-of-datasets.png" alt="image">&lt;/p>
 &lt;h2 id="smart-caching">Smart caching&lt;/h2>
-&lt;p>&lt;img src="datahub-smart-caching.png" alt="image">&lt;/p>
 &lt;ul>
 &lt;li>Site A hosts data and computing resources&lt;/li>
 &lt;li>Site B hosts only data&lt;/li>
 &lt;li>Site X uses data from A and B without pre-staging&lt;/li>
 &lt;li>Pre-staging can also be done using APIs&lt;/li>
-&lt;li>Data is accessed locally &amp;ldquo;à la&amp;rdquo; POSIX with FUSE&lt;/li>
+&lt;li>Data is accessed locally via POSIX with FUSE&lt;/li>
 &lt;/ul>
-&lt;h2 id="publication-of-datasets">Publication of datasets&lt;/h2>
-&lt;p>&lt;img src="datahub-publication-of-datasets.png" alt="image">&lt;/p>
-&lt;ul>
-&lt;li>PID minting&lt;/li>
-&lt;li>Publishing, discovery and access to datasets&lt;/li>
-&lt;/ul>
-&lt;h2 id="integrating-datahub-and-egi-notebooks">Integrating DataHub and EGI Notebooks&lt;/h2>
-&lt;p>&lt;img src="datahub-notebooks-integration.png" alt="image">&lt;/p></description></item><item><title>Users: DataHub Clients</title><link>/users/data/management/datahub/clients/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/clients/</guid><description>
+&lt;p>&lt;img src="datahub-smart-caching.png" alt="image">&lt;/p></description></item><item><title>Users: DataHub Clients</title><link>/users/data/management/datahub/clients/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/clients/</guid><description>
 &lt;p>&lt;a href="https://datahub.egi.eu/">EGI DataHub&lt;/a> spaces can be accessed via web interface,
 the &lt;code>oneclient&lt;/code> component or the &lt;a href="../api">API&lt;/a>.&lt;/p>
 &lt;p>The official documentation for &lt;code>oneclient&lt;/code> is hosted on the
