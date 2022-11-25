@@ -493,7 +493,7 @@ A Client makes a Token Request by presenting its Authorization Grant (in the
 form of an Authorization Code) to the Token Endpoint using the `grant_type`
 value `authorization_code`, as described in Section 4.1.3 of OAuth 2.0
 [RFC6749](https://www.rfc-editor.org/rfc/rfc6749#section-4.1.3). If the Client
-is a Confidential Client, then it MUST authenticate to the Token Endpoint using
+is a Confidential Client, then it **MUST** authenticate to the Token Endpoint using
 the authentication method registered for its `client_id`. The Client sends the
 parameters to the Token Endpoint using the HTTP `POST` method and the Form
 Serialization.
