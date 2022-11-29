@@ -4,7 +4,7 @@ linkTitle: "Perun"
 type: docs
 weight: 50
 description: >
-  VO management trough Identity and Access management system Perun
+  VO management through the EGI Attribute Management service Perun
 ---
 
 {{% alert title="How is this documentation organized" color="info" %}}
@@ -15,7 +15,7 @@ for related common actions are available at the end of each section.
 
 ## Overview
 
-Perun is identity and access management system, and within the EGI it provides
+Perun is attribute management system, and within the EGI it provides
 an alternative solution for VO management. Perun provides more advanced features
 and supports complex use-cases compared to COManage and VOMS.
 
@@ -28,9 +28,6 @@ Groups
 - VO/Group management roles delegation
 - Membership expiration/renewals rules
 - Membership sponsorships as exceptions to membership rules
-- Service accounts which can be associated with owners and used for API usage
-or provisioned to the EGI services
-- Push mechanism for services provisioning
 - Fine-grained access management for service owners
 - User/group synchronizations with external systems and services
 
@@ -41,13 +38,6 @@ Administrative GUI for VO managers is available at [https://perun.egi.eu](https:
 It is assumed that VO managers and members have already registered their EGI
 Check-in account (A step-by-step guide is provided in this
 [link](../../signup)).
-
-Due to historical reasons (wide adoption of VOMS), users might have their user
-entry in Perun already directly associated with their personal certificate.
-For such cases, direct authentication using the certificates is available.
-Please consult Perun support through GGUS if you wish to merge your accounts
-and start using EGI Check-In as identity linking needs to be done on Perun side
-and not through EGI Check-In proxy.
 
 ### Registering your VO
 
@@ -330,3 +320,12 @@ this information as an entitlement for the OpenStack like this:
 You can make sure all VO members are in this group by creating a relation
 between this group and the system group *members* (basically you include
 *members* as a subgroup through this relation).
+
+### Access with personal certificates
+
+Due to historical reasons (wide adoption of VOMS), users might have their user
+entry in Perun already directly associated with their personal certificate.
+For such cases, direct authentication using the certificates is still available.
+Please consult Perun support through GGUS if you wish to merge your accounts
+and start using EGI Check-In as identity linking needs to be done on Perun side
+and not through EGI Check-In proxy.
