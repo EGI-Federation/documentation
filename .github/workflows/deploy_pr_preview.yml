@@ -20,13 +20,13 @@ jobs:
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success'
     name: Deploy pull request preview
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: "Download artifact"
-        uses: actions/github-script@v3.1.0
+        uses: actions/github-script@v6
         with:
           script: |
-            var artifacts = await github.actions.listWorkflowRunArtifacts({
+            var artifacts = await github.rest.actions.listWorkflowRunArtifacts({
                owner: context.repo.owner,
                repo: context.repo.repo,
                run_id: ${{github.event.workflow_run.id }},
@@ -34,7 +34,7 @@ jobs:
             var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
               return artifact.name == "pr"
             })[0];
-            var download = await github.actions.downloadArtifact({
+            var download = await github.rest.actions.downloadArtifact({
                owner: context.repo.owner,
                repo: context.repo.repo,
                artifact_id: matchArtifact.id,
@@ -49,7 +49,7 @@ jobs:
         run: |
           unzip pr.zip
           PR_NUMBER="$(cat ./PR)"
-          echo "::set-output name=pr_number::$PR_NUMBER"
+          echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
 
       - name: Deploy Pull Request preview
         uses: peaceiris/actions-gh-pages@v3
@@ -71,7 +71,7 @@ jobs:
           commit_message: ${{ github.event.head_commit.message }}
 
       - name: Update Pull Request
-        uses: actions/github-script@v4.1
+        uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -79,7 +79,7 @@ jobs:
             var issue_number = Number('${{steps.extract.outputs.pr_number}}');
             const output = `#### Documentation preview deployed!
             Available at https://docs.egi.eu/documentation/${issue_number}`;
-            github.issues.createComment({
+            github.rest.issues.createComment({
               issue_number: issue_number,
               owner: context.repo.owner,
               repo: context.repo.repo,

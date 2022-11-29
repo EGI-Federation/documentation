@@ -20,8 +20,9 @@ maintained by the upstream software providers. {{% /alert %}}
 
 ### EGI Single Sign On (EGI SSO)
 
-Central authentication and authorisation service allowing to use a single
-username and password to access various Collaboration Tools.
+The [EGI SSO](./sso) is a central authentication and authorisation service
+allowing to use a single username and password to access various Collaboration
+Tools.
 
 Group owners can manage group members, and send invitations to new users. Groups
 are used in Collaboration Tools services for authorisation.

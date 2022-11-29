@@ -5,8 +5,7 @@ type: docs
 weight: 10
 aliases:
   - /users/notebooks
-description:
-  Interactive data analysis with EGI Notebooks
+description: Interactive data analysis with EGI Notebooks
 ---
 
 The more you go in data analysis, the more you understand that the most suitable
@@ -86,5 +85,3 @@ EGI currently operates community instances for:
   [EOSC-Pillar](https://eosc-pillar.d4science.org/). Check with
   [D4Science support](https://www.d4science.org/contact-us) for more
   information.
-- [PaNoSC](https://panosc.eu/). Instance is available
-  [here](https://notebooks-panosc.fedcloud-tf.fedcloud.eu)

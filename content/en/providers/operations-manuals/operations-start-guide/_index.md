@@ -1,6 +1,8 @@
 ---
 title: Operations Start Guide
+weight: 1
 type: docs
+description: "Starting with EGI Operations duties"
 ---
 
 ## Introduction

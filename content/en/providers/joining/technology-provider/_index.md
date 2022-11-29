@@ -28,7 +28,7 @@ of the integration of the new piece of middleware with the infrastructure is
 reviewed and assessed.
 
 After the creation of the request in the
-[EGI Helpdesk](../../../../internal/helpdesk), with details about the
+[EGI Helpdesk](../../../internal/helpdesk), with details about the
 technology, the contacts, the expected customers, and the motivation, the
 integration steps cover the following areas (where possible, steps can be done
 in parallel):
@@ -43,16 +43,16 @@ in parallel):
 - Information System: evaluating if the new technology should publish
   information in the Information System according to the
   [GLUE Schema](http://www.ogf.org/documents/GFD.147.pdf).
-- [Monitoring](../../../../internal/monitoring): the new technology should allow
+- [Monitoring](../../../internal/monitoring): the new technology should allow
   external monitoring. If particular aspects of the technology need to be
   monitored, specific monitoring probes should be provided by the TPs and
   deployed on the EGI Monitoring service.
 - Support: the Support Unit where incidents and service requests will be
   addressed needs to be defined in the
-  [EGI Helpdesk](../../../../internal/helpdesk), associated to the
+  [EGI Helpdesk](../../../internal/helpdesk), associated to the
   [Quality of Support](https://confluence.egi.eu/display/EGISLM/Service+Level+Target+-+Quality+of+Support)
   defined in the UA.
-- [Accounting](../../../../internal/accounting): the need to gather usage data,
+- [Accounting](../../../internal/accounting): the need to gather usage data,
   which depends on the technology itself and on the infrastructure requirements
   and will be published in the
   [EGI Accounting Portal](https://accounting.egi.eu/).
@@ -66,4 +66,4 @@ in parallel):
   be provided and may be added to the [EGI Documentation](https://docs.egi.eu/).
 - Security: a security assessment of the software is required according to a
   number of guidelines defined by the
-  [EGI Security team](../../../../internal/security-coordination).
+  [EGI Security team](../../../internal/security-coordination).

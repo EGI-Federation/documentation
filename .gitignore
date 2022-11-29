@@ -3,5 +3,5 @@
 !/public/.gitkeep
 # From NodeJS for docsy
 node_modules/
-
+.hugo_build.lock
 .DS_Store

@@ -10,10 +10,10 @@ To become a provider of one of the
 in the EGI Portfolio, you first have to become provider of a
 [federated resource centre](../federated-resource-centre). This first step
 typically requires you to become either an
-[EGI High Throughput Compute (HTC)](../../../high-throughput-compute) provider,
+[EGI High Throughput Compute (HTC)](../../high-throughput-compute) provider,
 by deploying Compute and Storage capabilities, or a Cloud service provider, by
 deploying OpenStack and federating it into the
-[EGI Cloud Compute](../../../cloud-compute) service.
+[EGI Cloud Compute](../../cloud-compute) service.
 
 Once such a foundational role is fulfilled you can configure/deploy the
 additional service within your resource centre.
