@@ -3,6 +3,8 @@ title: Changing the Site BDII
 weight: 10
 type: "docs"
 description: "Changing the Site BDII"
+aliases:
+  - /providers/high-throughput-compute/changing_site_bdii
 ---
 
 ## Moving the Site BDII to another machine

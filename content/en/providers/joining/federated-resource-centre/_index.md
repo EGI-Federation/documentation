@@ -25,7 +25,7 @@ the Research Infrastructure Provider (RP) existing in its country. A RP is a
 legal organisation, part of the EGI Resource Infrastructure, responsible for
 managing and operating a number of operational services at national level,
 supporting EGI RCs and user communities. Please have a look at the
-[Operations Start Guide](../../operations-start-guide) to get familiar with the
+[Operations Start Guide](../../operations-manuals/operations-start-guide/) to get familiar with the
 terms mentioned above, and to have a complete picture of the several actors
 participating in our landscape.
 
@@ -44,21 +44,21 @@ Firstly, the RC will be asked to read, understand, and accept:
   fulfilled and enforced.
 
 Secondly, the RC should be registered in the EGI
-[Configuration Database](../../../../internal/configuration-database): the
+[Configuration Database](../../../internal/configuration-database): the
 provided information, from the generic contacts and roles of people to the
 service endpoints details, is needed to trigger the daily operations of other
 services and activities provided by the EGI Infrastructure such as the
-[Monitoring](../../../../internal/monitoring) of the resources, the
-[Accounting](../../../../internal/accounting), the
-[Support](../../../../internal/helpdesk), and the
-[Security](../../../../internal/security-coordination) activities.
+[Monitoring](../../../internal/monitoring) of the resources, the
+[Accounting](../../../internal/accounting), the
+[Support](../../../internal/helpdesk), and the
+[Security](../../../internal/security-coordination) activities.
 
 ![Diagram of the RCs status flow](SiteStatusFlow.png)
 
 Once the entry in the Configuration Database is complete, the RP changes the RC
 status from “Candidate” to “Uncertified”, and the certification procedure can
 start: it comprises a
-[series of technical controls](../../../operations-manuals/howto04_site_certification_manual_tests)
+[series of technical controls](../../operations-manuals/howto04_site_certification_manual_tests/)
 to verify that the provided services work according to the expectations defined
 in the RC OLA. Any identified issue is notified by the RP operators to the RC
 and investigated until its solution.
@@ -80,7 +80,7 @@ in the management and oversight of the infrastructure.
 As defined in the RC OLA, the RC will handle
 [incidents](https://confluence.egi.eu/display/EGIG/Incident) and
 [service requests](https://confluence.egi.eu/display/EGIG/Service+request)
-registered as tickets in the [EGI Helpdesk](./../../../../internal/helpdesk)
+registered as tickets in the [EGI Helpdesk](../../../internal/helpdesk)
 service, with the expectation to acknowledge and process any notified issue,
 within the agreed response time associated with the priority of the ticket.
 
@@ -153,7 +153,7 @@ vulnerability. The status is closely monitored by the security team and
 accessible to the affected RCs.
 
 Using this information correlated with the one from
-[Pakiti](../../../../internal/security-coordination/monitoring/pakiti), the
+[Pakiti](../../../internal/security-coordination/monitoring/pakiti), the
 patch management service collecting information about the patches deployed at
 the various High Throughput Compute RCs, the Incident Response Task Force (IRTF)
 on duty Security Officer will open tickets against the impacted sites according
@@ -167,72 +167,52 @@ resolution as suggested in the ticket. In case a satisfactory resolution is not
 reached in due time, or a sign of active progress on addressing the
 vulnerability is not visible, the specific Resource Centre may be suspended.
 
-## Setting up agreements with customers
+## Serving user communities
 
 Once part of the production infrastructure, the RC is ready to deliver its
 resources to any of the users’ communities consuming the infrastructure.
 
-Here the Service Level Management (SLM) process intervenes as a matchmaker
-between service expectations and needs of the user communities, acting as
-customers, and the capabilities of the RCs. Customers are managed as
+The RC can continue serving local user communities, and at the same time deliver
+capacity for international user communities that approach EGI and therefore
+reach the federated RCs.
+
+International communities reach EGI through the following channels:
+
+- The EGI site where they can
+  [request access to services](https://www.egi.eu/services/research/).
+- The [EGI-ACE Call for Use Cases](https://www.egi.eu/egi-ace-open-call/).
+- The [Marketplace](https://marketplace.eosc-portal.eu/) of the European Open
+  Science Cloud.
+
+### Service and Operation Level Agreements (SLAs, OLAs)
+
+The User Community Support team of the EGI Foundation receives these requests
+and negotiates the details of access, with the involvement of relevant and
+‘fit-for-purpose’ RCs. This Service Level Management (SLM) process intervenes as
+a matchmaker between service expectations and needs of the user communities,
+acting as ‘customers’, and the capabilities of the RCs. Customers are enabled
+access to the resources in the form of
 [Virtual Organisations (VOs)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
 
 In order to select providers for provisioning services to a given customer,
-technical requirements collected from the customer are used by EGI to launch a
-call open to all the providers. The Expression of Interests (EoIs) collected
-during the negotiation phase are used to identify the provider(s) that best
-match the customer's requirements and expectations. From a technical
-perspective, several aspects will be considered during the negotiation phase
+technical requirements are collected from the customer then transferred to
+relevant providers. The Expression of Interests for support (EoIs) are collected
+from the interested providers during the negotiation phase, resulting in the
+best match with customer’s requirements and expectations (both technical and
+financial). Several aspects are considered during the negotiation phase,
 including the geographical location of the customer, national roadmap and
 priority of the providers, and costs of the service provisioning in case of a
 pay-for-use model.
 
-When the negotiation phase ends, the selected provider(s) will:
-
-- Define a VO Operational Level Agreement(s) (OLA) with EGI Foundation for
-  providing the services through the EGI Portfolio to support the user
-  community. EGI Foundation will share with the RCs a draft of the document(s)
-  based on a predefined template and customised with the details of the specific
-  Agreement(s), such as:
-  - the main contacts to be used for communications related to the service(s);
-  - the duration of the Agreement;
-  - conditions for operating the service (service hours and exceptions);
-  - Service Level Targets;
-  - if the resources are exclusively allocated or are subject to local
-    availability;
-  - the payment mode;
-  - responsibility in case of violations and complaints;
-  - any limitations and constraints (if any);
-  - the frequency of service performance reports.
-- Configure the service(s) in the scope of the Agreement(s) enabling the support
-  of the Customer's VO and activating the monitoring of the services/resources.
-
-At the same time, EGI Foundation sets up a VO Service Level Agreement (SLA) with
-the given user community for the provisioning of the requested service. The EGI
-VO SLA is secured with related EGI VO OLAs and is agreed on a case-by-case basis
-(Fig.3).
-
 ![Relationship between SLA and OLA](SLAs-Picture.png)
 
-Once approved, the Agreement is automatically renewed, as long as the
-provider(s) does (do) not express a decision to terminate the Agreement at least
-a month before the expiration date. In case of termination of the Agreement, the
-provider must remove the support of the customer. The Agreement can also be
-terminated by the customer.
+The result of the negotiation is a ‘Service Level Agreement’ (SLA), and several
+‘Operation Level Agreements’ (OLA), one with each contributing provider. (See
+[SLAs-OLAs examples](https://documents.egi.eu/public/ListBy?topicid=65).)
 
-## Managing service orders
-
-Customers can request access to the services of the EGI Infrastructure through
-the EOSC Portal Marketplace. Access to the services is either fully open, or
-behind service-specific authentication and authorisation steps.
-
-Depending on the nature of the service ordered, different levels of technical
-support are requested to the service providers including the activation of a new
-Virtual Organisation (VO), or the customization of the service with dedicated
-set-up to meet the customer's expectations. Service providers receive
-notifications about services orders via
-[SOMBO](https://opsportal.eosc-portal.eu/login/), and they handle them with the
-support and oversight of the EGI Foundation.
+SLAs and OLAs are typically signed for at least 1 year, and are automatically
+renewed, as long as the provider(s) or the customer do not express a decision to
+terminate the Agreement at least a month before the expiration date.
 
 ## Performance reports: enforcing OLAs
 

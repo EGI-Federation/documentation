@@ -153,13 +153,32 @@ In order to properly monitor your webdav endpoint:
 
 - you should register a new service endpoint with the webdav service type,
   separated from the SRM one;
-- fill in the webdav URL containing also the VO ops folder, for example:
-  `https://darkstorm.cnaf.infn.it:8443/webdav/ops` or
-  `https://hepgrid11.ph.liv.ac.uk/dpm/ph.liv.ac.uk/home/ops/`
-  - it corresponds to the value of GLUE2 attribute `GLUE2EndpointURL`
-    (containing the used port and without the VO folder);
+- the endpoint URL information used for monitoring purposes should be set in the
+  [extension properties](../extension-properties) section. Create the following:
+  - Name: ARGO_WEBDAV_OPS_URL
+  - Value: webdav URL containing also the VO ops folder, for example:
+    `https://darkstorm.cnaf.infn.it:8443/webdav/ops` or
+    `https://hepgrid11.ph.liv.ac.uk/dpm/ph.liv.ac.uk/home/ops/`
+    - it corresponds to the value of GLUE2 attribute `GLUE2EndpointURL`
+      (containing the used port and without the VO folder);
 - verify that the webdav URL (for example:
   `https://darkstorm.cnaf.infn.it:8443/webdav`) is properly accessible.
+
+### EOS and XrootD service endpoints
+
+The EOS service endpoints expose an XrootD interface, so in order to properly
+monitor them, even in case you provide a plain XrootD endpoint, please do the
+following:
+
+- you should register a new service endpoint with the XrootD service type;
+- the endpoint URL information used for monitoring purposes should be set in the
+  [extension properties](../extension-properties) section. Create the following:
+  - Name: ARGO_XROOTD_OPS_URL
+  - Value: XRootD base SURL to test (the path where ops VO has write access),
+    for example: `root://eosatlas.cern.ch//eos/atlas/opstest/egi/`,
+    `root://recas-se-01.cs.infn.it:1094/dpm/cs.infn.it/home/ops/`,
+    `root://dcache-atlas-xrootd-ops.desy.de:2811/pnfs/desy.de/ops` or similar).
+    Pay attention to the port configured for the interface.
 
 ### GridFTP
 
@@ -167,8 +186,8 @@ In order to properly monitor your gridftp endpoint for ops VO
 
 - register a new service endpoint, associating the storage element hostname to
   the service type `globus-GRIDFTP`, with the "production" flag disabled;
-- in the “Extension Properties” section of the service endpoint page, fill in
-  the following fields:
+- in the “[Extension Properties](../extension-properties)” section of the
+  service endpoint page, fill in the following fields:
   - Name: SE_PATH
   - Value: `/dpm/ui.savba.sk/home/ops` (this is an example, set the proper path)
 - check if the tests are OK (it might take some hours for detecting the new
@@ -222,8 +241,8 @@ GlueVOInfoLocalID: ops:data01
 ```
 
 - Pay attention to use the storage path for the ops VO
-- On GOCDB, in the “Extension Properties” section of the SRM service endpoint
-  page, fill in the following fields:
+- On GOCDB, in the “[Extension Properties](../extension-properties)” section of
+  the SRM service endpoint page, fill in the following fields:
   - Name: SURL
   - Value: the actual SURL value, for example:
     `srm://srm01.ncg.ingrid.pt:8444/srm/managerv2?SFN=/gstore/t2others/ops`

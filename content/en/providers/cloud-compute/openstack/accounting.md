@@ -19,7 +19,7 @@ ssmsend every six hours.
 ### Using the VM Appliance
 
 [cASO configuration](http://caso.readthedocs.org/en/latest/configuration.html)
-is stored at `/etc/caso/caso.conf`. Most default values should be ok, but you
+is stored at `/etc/caso/caso.conf`. Most default values should be OK, but you
 must set:
 
 - `site_name` (line 12), with the name of your site as defined in GOCDB.

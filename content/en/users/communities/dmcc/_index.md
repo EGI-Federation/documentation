@@ -16,12 +16,10 @@ This is the documentation to support the Disaster Mitigation and Agriculture com
 Getting access to the EGI infrastructure consists of the following steps:
 
 1. [Sign-up](../../aai/check-in/signup/) for an EGI Check-In account.
-1. Request to join the `vo.environmental.egi.eu`
-   [Virtual Organisation (VO)](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
+1. Request to join the `vo.environmental.egi.eu` Virtual Organisation (VO)
    by visiting the [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:369)
    with your EGI Check-In account. The subscription requires approval from the
-   VO Manager. For further information, please check the
-   [VO ID card](https://operations-portal.egi.eu/vo/view/voname/vo.environmental.egi.eu).
+   VO Manager.
 1. Access the cloud-based resources at CESNET-MCC:
    * [Horizon OpenStack dashboard](https://dashboard.cloud.muni.cz/)
    * Project name: `vo.environmental.egi.eu`
@@ -43,7 +41,12 @@ EGI Infrastructure are also available:
 * Use the [EGI Applications Database](https://appdb.egi.eu/) (AppDB):
   either [packaging your application in a custom Virtual Machine](../../compute/cloud-compute/images/)
   or [uploading a Virtual Appliance](https://wiki.appdb.egi.eu/main:faq:how_to_register_a_virtual_appliance).
-* Use [Docker](https://www.docker.com/) containers.
+* Use [Docker](https://www.docker.com/) containers via the
+  [EGI Cloud Compute Service](../../compute/cloud-container-compute/).
+
+To get started, have a look at the tutorial to
+[create your first Virtual Machine](../../tutorials/create-your-first-virtual-machine/)
+in the EGI Infrastructure.
 
 ### How to bring your data to the EGI infrastructure
 
@@ -54,7 +57,11 @@ For managing data, different Data Management services are available in the EGI I
 * [EGI Data Orchestrator](../../data/management/rucio/)
 * [OpenRDM](../../data/management/open-rdm/)
 
-For more information, please see the [Data Management section](../../data/management/).
+For more information, please see the [Data Management section](../../data/management/) and
+the [tutorials](../../tutorials/). The following tutorials may be relevant:
+
+* [Create a Virtual Machine with Jupyter and DataHub](../..//tutorials/jupyter-datahub-virtual-machine/)
+* [Access DataHub from a Virtual Machine](../../tutorials/vm-datahub/)
 
 ## Service Providers
 
@@ -62,6 +69,5 @@ For more information, please see the [Data Management section](../../data/manage
 
 The steps that an OpenStack cloud provider needs to follow to add resources
 to the Disaster Mitigation and Agriculture community
-[Virtual Organisation](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
-(i.e. `vo.environmental.egi.eu`) are available in the
-[VO Configuration guide for providers](../../../providers/cloud-compute/openstack/vo_config.md).
+Virtual Organisation (i.e. `vo.environmental.egi.eu`) are available in the
+[VO Configuration guide for providers](../../../providers/cloud-compute/openstack/vo_config/).

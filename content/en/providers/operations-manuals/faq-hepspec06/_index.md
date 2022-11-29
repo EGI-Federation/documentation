@@ -1,6 +1,6 @@
 ---
 title: "FAQ HEP SPEC 06"
-weight: 100
+weight: 140
 type: "docs"
 description: >-
   Questions about Transition to HEP SPEC, a new CPU benchmark.
