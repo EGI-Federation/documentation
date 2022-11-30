@@ -75,7 +75,7 @@ $ curl -v --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem \
 
 ### Querying using python
 
-##### Looking for FedCloud endpoints
+#### Looking for FedCloud endpoints
 
 See
 [python script from cloud-info-provider repository](https://github.com/EGI-Federation/cloud-info-provider/blob/master/cloud_info_provider/providers/gocdb.py).
