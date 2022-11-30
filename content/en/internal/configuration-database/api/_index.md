@@ -11,19 +11,23 @@ the [GOCDB service](https://github.com/GOCDB/gocdb), powering the
 [on the dedicated GOCDB API documentation site](https://gocdb.github.io/api/).
 {{% /alert %}}
 
-## API endpoints
+The GOCDB Programmatic Interface (PI) is available under `/gocdbpi`.
 
-The API is accessible in two different ways:
+## API components
 
-- [Public/read](https://gocdb.github.io/api/read/), allowing only to read some
-  information.
-- [Private/write](https://gocdb.github.io/api/write/), allowing to read all
-  information and to edit content according to your roles.
+The GOCDB PI has two main components:
 
-Prefer to use the [read API](https://gocdb.github.io/api/read/) if possible, but
-some information (like personal data) is only available via the
-[write API](https://gocdb.github.io/api/write/). It's only possible to write
-using the [write API](https://gocdb.github.io/api/write/).
+- The [Read API](https://gocdb.github.io/api/read/)
+- The [Write API](https://gocdb.github.io/api/write/)
+
+The Read API provides programmatic access to the data within GOCDB. Access to
+some information (security/critical, personal details, otherwise sensitive
+info) is restricted, more details can be found
+[here](https://gocdb.github.io/api/read/#data-protection-levels).
+
+The Write API provides limited functionality to add, update, and delete
+entities within GOCDB. Access is restricted, more details can be found
+[here](https://gocdb.github.io/api/write/#authenticationauthorisation).
 
 ## Querying the API
 
