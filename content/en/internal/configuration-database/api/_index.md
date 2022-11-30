@@ -29,7 +29,9 @@ The Write API provides limited functionality to add, update, and delete
 entities within GOCDB. Access is restricted, more details can be found
 [here](https://gocdb.github.io/api/write/#authenticationauthorisation).
 
-## Querying the API
+## Using the Read API
+
+### Querying
 
 API calls can be tested in a browser or done from the commmand-line interface,
 using `curl`.
@@ -49,7 +51,7 @@ Below are some examples:
 - [Querying for Security officer at FedCloud sites](https://goc.egi.eu/gocdbpi/private/?method=get_site_contacts&roletype=Site%20Security%20Officer&scope=FedCloud,EGI&scope_match=all)
   (Write API)
 
-## Extracting content
+### Extracting content
 
 It is possible to filter content using `xpath`. Download
 [information about endpoints under the EGI and FedCloud scopes](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&scope=EGI,FedCloud)
@@ -61,7 +63,7 @@ $ xpath -q -e "//SERVICE_ENDPOINT[IN_PRODUCTION='Y']/HOSTNAME/text()" \
     egi_fedcloud_service_endpoints.xml | sort | uniq
 ```
 
-## Using an X.509 client certificate to authenticate from the CLI
+### Using an X.509 client certificate to authenticate from the CLI
 
 Querying information about a specific site using CURL, and authenticating with
 an X.509 client certificate.
@@ -71,9 +73,14 @@ $ curl -v --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem \
     'https://goc.egi.eu/gocdbpi/private/?method=get_site&sitename=CESGA'
 ```
 
-## Querying using python
+### Querying using python
 
-### Looking for FedCloud endpoints
+##### Looking for FedCloud endpoints
 
 See
 [python script from cloud-info-provider repository](https://github.com/EGI-Federation/cloud-info-provider/blob/master/cloud_info_provider/providers/gocdb.py).
+
+## Using the Write API
+
+Examples of using the Write API can be found
+[here](https://gocdb.github.io/api/write/#examples).
