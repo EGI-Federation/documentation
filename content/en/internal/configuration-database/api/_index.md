@@ -20,14 +20,14 @@ The GOCDB PI has two main components:
 - The [Read API](https://gocdb.github.io/api/read/)
 - The [Write API](https://gocdb.github.io/api/write/)
 
-The Read API provides programmatic access to the data within GOCDB. Access to
-some information (security/critical, personal details, otherwise sensitive
-info) is restricted, more details can be found
-[here](https://gocdb.github.io/api/read/#data-protection-levels).
+The **Read API** provides programmatic access to the data. Access to some
+information (security/critical, personal details, otherwise sensitive info) is
+restricted, more details are available in the section about
+[data protection levels](https://gocdb.github.io/api/read/#data-protection-levels).
 
-The Write API provides limited functionality to add, update, and delete
-entities within GOCDB. Access is restricted, more details can be found
-[here](https://gocdb.github.io/api/write/#authenticationauthorisation).
+The **Write API** provides limited functionality to add, update, and delete
+entities. Access is restricted, more details can be found in the section about
+[authentication and authorisation](https://gocdb.github.io/api/write/#authenticationauthorisation).
 
 ## Using the Read API
 
@@ -82,5 +82,5 @@ See
 
 ## Using the Write API
 
-Examples of using the Write API can be found
-[here](https://gocdb.github.io/api/write/#examples).
+Examples of using the Write API can be found on the
+[GOCDB PI site](https://gocdb.github.io/api/write/#examples).
