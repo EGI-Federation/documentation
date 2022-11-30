@@ -55,7 +55,7 @@ Below are some examples:
 
 It is possible to filter content using `xpath`. Download
 [information about endpoints under the EGI and FedCloud scopes](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&scope=EGI,FedCloud)
-as `egi_fedcloud_service_endpoints.xml`
+as `egi_fedcloud_service_endpoints.xml`.
 
 ```shell
 # Extracting endpoints in production
