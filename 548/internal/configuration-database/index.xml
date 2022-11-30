@@ -1411,13 +1411,13 @@ the &lt;a href="https://github.com/GOCDB/gocdb">GOCDB service&lt;/a>, powering t
 &lt;li>The &lt;a href="https://gocdb.github.io/api/read/">Read API&lt;/a>&lt;/li>
 &lt;li>The &lt;a href="https://gocdb.github.io/api/write/">Write API&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>The Read API provides programmatic access to the data within GOCDB. Access to
-some information (security/critical, personal details, otherwise sensitive
-info) is restricted, more details can be found
-&lt;a href="https://gocdb.github.io/api/read/#data-protection-levels">here&lt;/a>.&lt;/p>
-&lt;p>The Write API provides limited functionality to add, update, and delete
-entities within GOCDB. Access is restricted, more details can be found
-&lt;a href="https://gocdb.github.io/api/write/#authenticationauthorisation">here&lt;/a>.&lt;/p>
+&lt;p>The &lt;strong>Read API&lt;/strong> provides programmatic access to the data. Access to some
+information (security/critical, personal details, otherwise sensitive info) is
+restricted, more details are available in the section about
+&lt;a href="https://gocdb.github.io/api/read/#data-protection-levels">data protection levels&lt;/a>.&lt;/p>
+&lt;p>The &lt;strong>Write API&lt;/strong> provides limited functionality to add, update, and delete
+entities. Access is restricted, more details can be found in the section about
+&lt;a href="https://gocdb.github.io/api/write/#authenticationauthorisation">authentication and authorisation&lt;/a>.&lt;/p>
 &lt;h2 id="using-the-read-api">Using the Read API&lt;/h2>
 &lt;h3 id="querying">Querying&lt;/h3>
 &lt;p>API calls can be tested in a browser or done from the commmand-line interface,
@@ -1440,7 +1440,7 @@ using &lt;code>curl&lt;/code>.&lt;/p>
 &lt;h3 id="extracting-content">Extracting content&lt;/h3>
 &lt;p>It is possible to filter content using &lt;code>xpath&lt;/code>. Download
 &lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;scope=EGI,FedCloud">information about endpoints under the EGI and FedCloud scopes&lt;/a>
-as &lt;code>egi_fedcloud_service_endpoints.xml&lt;/code>&lt;/p>
+as &lt;code>egi_fedcloud_service_endpoints.xml&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Extracting endpoints in production&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ xpath -q -e &lt;span style="color:#4e9a06">&amp;#34;//SERVICE_ENDPOINT[IN_PRODUCTION=&amp;#39;Y&amp;#39;]/HOSTNAME/text()&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> egi_fedcloud_service_endpoints.xml &lt;span style="color:#000;font-weight:bold">|&lt;/span> sort &lt;span style="color:#000;font-weight:bold">|&lt;/span> uniq
@@ -1450,12 +1450,12 @@ an X.509 client certificate.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -v --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;https://goc.egi.eu/gocdbpi/private/?method=get_site&amp;amp;sitename=CESGA&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="querying-using-python">Querying using python&lt;/h3>
-&lt;h5 id="looking-for-fedcloud-endpoints">Looking for FedCloud endpoints&lt;/h5>
+&lt;h4 id="looking-for-fedcloud-endpoints">Looking for FedCloud endpoints&lt;/h4>
 &lt;p>See
 &lt;a href="https://github.com/EGI-Federation/cloud-info-provider/blob/master/cloud_info_provider/providers/gocdb.py">python script from cloud-info-provider repository&lt;/a>.&lt;/p>
 &lt;h2 id="using-the-write-api">Using the Write API&lt;/h2>
-&lt;p>Examples of using the Write API can be found
-&lt;a href="https://gocdb.github.io/api/write/#examples">here&lt;/a>.&lt;/p></description></item><item><title>Internal: FAQ</title><link>/internal/configuration-database/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/faq/</guid><description>
+&lt;p>Examples of using the Write API can be found on the
+&lt;a href="https://gocdb.github.io/api/write/#examples">GOCDB PI site&lt;/a>.&lt;/p></description></item><item><title>Internal: FAQ</title><link>/internal/configuration-database/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/faq/</guid><description>
 &lt;h2 id="i-have-lost-access-to-my-account-what-should-i-do">I have lost access to my account, what should I do?&lt;/h2>
 &lt;p>If you were registered but are not recognised anymore (e.g. because your
 certificate DN changed), do not register again!&lt;/p>
