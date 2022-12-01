@@ -40,12 +40,8 @@ content/en/users/training/ @glarocca
 # Tutorials
 content/en/users/tutorials/ @enolfc @sebastian-luna-valero
 
-# HTC-related services
-content/en/users/compute/content-distribution/ @CatalinCondurache
-content/en/users/compute/high-throughput-compute/ @CatalinCondurache
-
 # Workload Manager
-content/en/users/compute/orchestration/workload-manager/ @CatalinCondurache @enolfc
+content/en/users/compute/orchestration/workload-manager/ @enolfc
 
 # Check-in 
 content/en/users/aai/ @vardizzo-lab

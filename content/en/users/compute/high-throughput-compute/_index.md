@@ -30,7 +30,7 @@ respective organisation's access policies.
 In case of local compute resources researchers can request access to the local
 compute cluster from their IT department. However, when researchers join
 collaborations that need to share their research activities, data collections,
-and repositories, they need a homogenous and coordinated operation of the
+and repositories, they need a homogeneous and coordinated operation of the
 compute resources, which are not uniformly accessible. In addition, nowadays
 many research collaborations generate large amounts of data, and managing such
 data volumes is time consuming and error-prone.
@@ -43,9 +43,9 @@ uniformly distributed in the EGI Cloud, etc.).
 
 ## Features
 
-EGI High Throughput Compute provides easy, uniform access to shared computating
+EGI High Throughput Compute provides easy, uniform access to shared computing
 and data services of EGI service providers. Most software deployed in the
-distributed resource centers is based on
+distributed resource centres is based on
 [open standards](https://en.wikipedia.org/wiki/Open_standard) and
 [open source](https://en.wikipedia.org/wiki/Open_source) middleware services.
 
@@ -66,13 +66,14 @@ resources provided by EGI providers. Its aim is to share in a secure way the
 distributed IT resources that are part of the EGI Cloud. It comprises of:
 
 - **Compute Resources** -- execution environment for computing tasks, organized
-  into clusters distributed across multiple resource centers in Europe and the
+  into clusters distributed across multiple resource centres in Europe and the
   World.
-- **Data Infrastructure** -- storage servers from different resource centers
+- **Data Infrastructure** -- storage servers from different resource centres
   where users can store their data/files in a distributed manner.
-- **Federated Operations** -- global operational tasks (e.g., AAI, accounting,
-  helpdesk) needed to federate the heterogeneous resources of resource centers
-  and their operational activities.
+- **Federated Operations** -- global operational tasks (e.g., [AAI](../../aai),
+  [Accounting](../../../internal/accounting),
+  [Helpdesk](../../../internal/helpdesk)) needed to federate the heterogeneous
+  resources of resource centres and their operational activities.
 - **User Support** -- EGI provides the central user support and coordinates
   support activities of EGI providers, who offer user support for the
   services/resources they contribute to the EGI ecosystem.
@@ -95,7 +96,7 @@ The key components of the EGI High Throughput Compute architecture are:
 Access to HTC resources in the EGI infrastructure is based on X.509 certificates
 and [Virtual Organisations](../../aai/check-in/vos) (VOs).
 
-VOs are fully managed by research communities, allowing communitites to manage
+VOs are fully managed by research communities, allowing communities to manage
 their users and grant access to their services and resources. This means
 communities can either own their resources and use EGI services to share
 (federate) them, or can use the resources available in the EGI infrastructure
@@ -103,14 +104,19 @@ for their scientific needs.
 
 Before users can access EGI HTC services, they have to:
 
-1. Obtain an X.509 certficate. The certificates are issued by Certification
+1. Obtain an X.509 certificate. The certificates are issued by Certification
    Authorities (CAs) part of the
    [European Policy Management Authority for Grid Authentication](https://www.eugridpma.org)
    (EUGridPMA), which is also part of the
    [International Global Trust Federation](https://www.igtf.net) (IGTF).
-1. Enroll into a VO before they can use the services, as users are not
-   individually granted access to resources.
+1. Enrol into a VO having access to HTC resources, as users are not individually
+   granted access to resources.
 1. Add the certificate to their internet browser of choice, or import it into
    the appropriate certificate store of their local machine (on Windows).
-1. Proceed to [Workload Manager](../../compute/orchestration/workload-manager) to submit HTC jobs or
-   retrieve job results, login using [EGI Check-in](../../aai/check-in) when prompted.
+1. Proceed to [Workload Manager](../../compute/orchestration/workload-manager)
+   to submit HTC jobs or retrieve job results, login using
+   [EGI Check-in](../../aai/check-in) when prompted.
+
+> If you are interested in using command-line and direct submission to Compute
+> Elements, there is a
+> [tutorial on HTC job submission](../../tutorials/htc-job-submission).
