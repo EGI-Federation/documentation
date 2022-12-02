@@ -95,15 +95,24 @@ you can easily do so with the EGI Check-in Token Portal. You can access the
 
 {{% alert title="Refresh tokens" color="danger" %}}
 
-Refresh tokens should be treated with care! This is a secret that can be used to
-impersonate you in the infrastructure. It is recommended not to store them in
+`Refresh tokens` should be treated with care! This is a secret that can be used to
+impersonate you in the infrastructure. The life time of `refresh tokens` is up to one year!
+It is recommended not to store them in
 plain text.{{% /alert %}}
 
-Alternatively, you can use the
-[oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/user/oidc-gen/provider/egi)
-tool that is able to manage your tokens locally, or the
-[fedcloud](https://fedcloudclient.fedcloud.eu/) client executed inside
-[EGI Notebooks](../../../dev-env/notebooks/integration/#fedcloud-client).
+There are more secure alternatives for handling `refresh tokens`:
+
+1. From your personal computer: use 
+  [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/user/oidc-gen/provider/egi)
+  It is a tool that manages your tokens locally in a secure way `refresh
+  tokens` are even encrypted in RAM). 
+2. [fedcloud](https://fedcloudclient.fedcloud.eu/) client executed inside
+  [EGI Notebooks](../../../dev-env/notebooks/integration/#fedcloud-client).
+3. [mytoken](https://mytoken.data.kit.edu) Securely stores refresh tokens
+   on the mytoken-server. Users obtain `mytokens`, which can be used to
+   obtain `access tokens`. `mytokens` are more secure, because they can
+   carry `capabilities` and `restrictions` to fine tune their power for
+   specific use cases. Details here: <https://mytoken-docs.data.kit.edu>
 
 ### Discovering projects in Keystone
 
