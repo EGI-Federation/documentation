@@ -95,7 +95,7 @@ you can easily do so with the EGI Check-in Token Portal. You can access the
 
 {{% alert title="Refresh tokens" color="danger" %}}
 
-`Refresh tokens` should be treated with care! This is a secret that can be used to
+`Refresh tokens` MUST be treated with care! This is a secret that can be used to
 impersonate you in the infrastructure. The life time of `refresh tokens` is up to one year!
 It is recommended not to store them in
 plain text.{{% /alert %}}
