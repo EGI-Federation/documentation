@@ -266,10 +266,10 @@ client machine:&lt;/p>
 &lt;li>&lt;code>terraform-inventory&lt;/code> to get the list of hosts to use from terraform.&lt;/li>
 &lt;/ul>
 &lt;h3 id="get-the-configuration-repository">Get the configuration repository&lt;/h3>
-&lt;p>All the configuration of the notebooks is stored at a git repository available
-in GitHub.
+&lt;p>All the configuration of the notebooks is stored at a git repository available in
+keybase. You'll need to be part of the &lt;code>opslife&lt;/code> team in keybase to access.
 Start by cloning the repo:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git clone https://github.com/EGI-Federation/notebooks-operations
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git clone keybase://team/opslife/egi-notebooks
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="kubernetes">Kubernetes&lt;/h2>
 &lt;p>We use &lt;code>terraform&lt;/code> and &lt;code>ansible&lt;/code> to build the cluster at one of the EGI Cloud
 providers. If you are building the cluster for the first time, create a new

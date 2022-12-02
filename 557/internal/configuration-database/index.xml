@@ -484,8 +484,8 @@ tools.&lt;/p>
 &lt;h3 id="downtime-shortening-and-extension">Downtime shortening and extension&lt;/h3>
 &lt;p>Limitation rules to downtime extensions are enforced as follows:&lt;/p>
 &lt;ul>
-&lt;li>Scheduled downtimes due to start in 24 hours cannot be edited in any way, nor
-deleted.&lt;/li>
+&lt;li>Scheduled downtimes due to start in 24 hours cannot be edited in any way, but
+can be deleted.&lt;/li>
 &lt;li>Other downtimes that have not yet started can be edit and deleted.
 &lt;ul>
 &lt;li>They can be shortened or moved, i.e. They can be edited such that:

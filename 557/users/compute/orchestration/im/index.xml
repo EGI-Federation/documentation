@@ -298,7 +298,7 @@ shared or transferred to them. If &lt;code>Overwrite&lt;/code> is checked, the n
 the unique owner of the infrastructure (transferring), otherwise it will be
 added to the list of current users (sharing). &lt;strong>The new user must be member of
 the VO used to create the resources&lt;/strong>, otherwise he will not be able to manage
-them. The list of current owners of the infrastructure will also be displayed.&lt;/p>
+them.&lt;/p>
 &lt;p>&lt;img src="dash_change_user.png" alt="Change/Add User modal form">&lt;/p>
 &lt;/li>
 &lt;/ul>

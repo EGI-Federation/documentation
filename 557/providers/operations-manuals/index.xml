@@ -2414,12 +2414,7 @@ introduces new settings for publishing the accounting records via AMS.&lt;/li>
 &lt;/ul>
 &lt;h2 id="htcondor-ce">HTCondor-CE&lt;/h2>
 &lt;p>To collect and publish the accounting data you need to install the APEL software
-as explained in the general information section. In addition, HTCondor-CE must
-be configured to create accounting records:&lt;/p>
-&lt;ul>
-&lt;li>Information on configuring HTCondor-CE for APEL accounting:
-&lt;a href="../../high-throughput-compute/htcondor-ce-apel">APEL Accounting for HTCondor-CE&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Providers: HOWTO01 Using IGTF CA distribution</title><link>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</guid><description>
+as explained in the general information section.&lt;/p></description></item><item><title>Providers: HOWTO01 Using IGTF CA distribution</title><link>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</guid><description>
 &lt;p>To ensure interoperability within and outside of EGI, the
 &lt;a href="https://documents.egi.eu/document/2930">Policy on Acceptable Authentication Assurance&lt;/a>
 defined a common set of trust anchors (in a PKIX implementation &amp;ldquo;Certification

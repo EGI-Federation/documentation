@@ -606,14 +606,12 @@ your virtual machine in a secure way, for example with &lt;code>scp&lt;/code>:&l
 following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ umount /storage1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cryptsetup close storage1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For subsequent uses of the persistent disk, there will be no need to perform
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For the following uses of the persistent disk, there will be no need to perform
 all these operations, only the following are necessary:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ cryptsetup luksOpen /dev/vdb storage1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ mkdir -p /storage1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ mkdir /storage1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ mount -t ext4 /dev/mapper/storage1 /storage1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that directory &lt;code>/storage1&lt;/code> will be created only if it does not already
-exist.&lt;/p>
-&lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
 &lt;p>&lt;a href="../../../data/management/data-transfer">EGI Data Transfer&lt;/a> allows you to move
 any type of data files asynchronously from one storage to another. If you want
 to copy data from/to one VM running on the EGI cloud, you will need to run a

@@ -72,6 +72,11 @@ about your EGI ID.
 &lt;p>After reviewing your request, click &lt;strong>Confirm&lt;/strong> and re-authenticate yourself
 using the Identity Provider you selected before.&lt;/p>
 &lt;/li>
+&lt;li>
+&lt;p>In the case of the &lt;strong>Sign Up&lt;/strong> registration, you need to wait for an EGI User
+Sponsor to approve your request to join the EGI User Community. Upon
+approval, EGI AAI will send you a notification email.&lt;/p>
+&lt;/li>
 &lt;/ol>
 &lt;p>Note: After your registration has been completed, you can manage your profile
 through the &lt;a href="https://aai.egi.eu/registry">EGI Account Registry portal&lt;/a>.&lt;/p>

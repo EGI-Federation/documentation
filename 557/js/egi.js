@@ -65,7 +65,6 @@ jQuery(document).ready(function () {
           $('.progress').stop(true, false, true).fadeToggle(100);
       });
   }
-});
 
 jQuery(window).on("load", function () {
   // store this page in session
