@@ -102,10 +102,10 @@ plain text.{{% /alert %}}
 
 There are more secure alternatives for handling `refresh tokens`:
 
-1. From your personal computer: use 
+1. From your personal computer: use
   [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/user/oidc-gen/provider/egi)
   It is a tool that manages your tokens locally in a secure way `refresh
-  tokens` are even encrypted in RAM). 
+  tokens` are even encrypted in RAM).
 2. [fedcloud](https://fedcloudclient.fedcloud.eu/) client executed inside
   [EGI Notebooks](../../../dev-env/notebooks/integration/#fedcloud-client).
 3. [mytoken](https://mytoken.data.kit.edu) Securely stores refresh tokens
