@@ -1412,8 +1412,8 @@ the &lt;a href="https://github.com/GOCDB/gocdb">GOCDB service&lt;/a>, powering t
 &lt;li>The &lt;a href="https://gocdb.github.io/api/write/">Write API&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>The &lt;strong>Read API&lt;/strong> provides programmatic access to the data. Access to some
-information (security/critical, personal details, otherwise sensitive info) is
-restricted, more details are available in the section about
+information (security/critical, personal details, otherwise sensitive
+information) is restricted, more details are available in the section about
 &lt;a href="https://gocdb.github.io/api/read/#data-protection-levels">data protection levels&lt;/a>.&lt;/p>
 &lt;p>The &lt;strong>Write API&lt;/strong> provides limited functionality to add, update, and delete
 entities. Access is restricted, more details can be found in the section about
@@ -1422,20 +1422,27 @@ entities. Access is restricted, more details can be found in the section about
 &lt;h3 id="querying">Querying&lt;/h3>
 &lt;p>API calls can be tested in a browser or done from the commmand-line interface,
 using &lt;code>curl&lt;/code>.&lt;/p>
-&lt;p>Below are some examples:&lt;/p>
+&lt;p>Below are some examples, including methods with different
+&lt;a href="https://gocdb.github.io/api/read/#data-protection-levels">data protection levels&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>API calls starting with &lt;code>https://goc.egi.eu/gocdbpi/private&lt;/code> require the
+client to present a valid credential.&lt;/p>
+&lt;/blockquote>
 &lt;ul>
-&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint">Retrieving all service endpoints&lt;/a>
-(Read API)&lt;/li>
-&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;scope=EGI,FedCloud">Collecting information about endpoints under the EGI and FedCloud scopes&lt;/a>
-(Read API)&lt;/li>
-&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_user&amp;amp;roletype=EGI%20CSIRT%20Officer,COD%20Staff">Retrieving all COD Staff and EGI CSIRT Officer to be allowed in secmon&lt;/a>
-(Write API)&lt;/li>
-&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_cert_status_changes&amp;amp;site=mainz">Querying for certification history for a site&lt;/a>
-(Write API)&lt;/li>
-&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_site&amp;amp;scope=FedCloud,EGI&amp;amp;scope_match=all&amp;amp;certification_status=Certified&amp;amp;production_status=Production">Querying for CSIRT emails of FedCloud sites&lt;/a>
-(Write API)&lt;/li>
-&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_site_contacts&amp;amp;roletype=Site%20Security%20Officer&amp;amp;scope=FedCloud,EGI&amp;amp;scope_match=all">Querying for Security officer at FedCloud sites&lt;/a>
-(Write API)&lt;/li>
+&lt;li>&lt;strong>Public&lt;/strong> calls, no authentication required:
+&lt;ul>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint">Retrieving all service endpoints&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;scope=EGI,FedCloud">Collecting information about endpoints under the EGI and FedCloud scopes&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Private&lt;/strong> calls, with authentication required:
+&lt;ul>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_user&amp;amp;roletype=EGI%20CSIRT%20Officer,COD%20Staff">Retrieving all COD Staff and EGI CSIRT Officer to be allowed in secmon&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_cert_status_changes&amp;amp;site=mainz">Querying for certification history for a site&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_site&amp;amp;scope=FedCloud,EGI&amp;amp;scope_match=all&amp;amp;certification_status=Certified&amp;amp;production_status=Production">Querying for CSIRT emails of FedCloud sites&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_site_contacts&amp;amp;roletype=Site%20Security%20Officer&amp;amp;scope=FedCloud,EGI&amp;amp;scope_match=all">Querying for Security officer at FedCloud sites&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;h3 id="extracting-content">Extracting content&lt;/h3>
 &lt;p>It is possible to filter content using &lt;code>xpath&lt;/code>. Download
