@@ -82,8 +82,9 @@ addressed to the "Configuration and Topology Database (GOCDB)" support unit.
 - When prompted, select your new certificate.
 - You should be able to access, but since you are authenticated with your new
   certificate, it is as if you had no user account.
-- In the **User Status** panel in the sidebar, click on the **Link
-  Identity/Recover Account** link.
+- In the **User Status** panel in the sidebar, click on the
+  **[Link Identity/Recover Account](https://goc.egi.eu/portal/index.php?Page_Type=Link_Identity)**
+  link.
 - Specify in the form:
   - Authentication type: X.509
   - The DN of your old certificate previously used to authenticate to your X.509
