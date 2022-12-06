@@ -21,8 +21,8 @@ The GOCDB PI has two main components:
 - The [Write API](https://gocdb.github.io/api/write/)
 
 The **Read API** provides programmatic access to the data. Access to some
-information (security/critical, personal details, otherwise sensitive info) is
-restricted, more details are available in the section about
+information (security/critical, personal details, otherwise sensitive
+information) is restricted, more details are available in the section about
 [data protection levels](https://gocdb.github.io/api/read/#data-protection-levels).
 
 The **Write API** provides limited functionality to add, update, and delete
@@ -36,20 +36,20 @@ entities. Access is restricted, more details can be found in the section about
 API calls can be tested in a browser or done from the commmand-line interface,
 using `curl`.
 
-Below are some examples:
+Below are some examples, including methods with different
+[data protection levels](https://gocdb.github.io/api/read/#data-protection-levels).
 
-- [Retrieving all service endpoints](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint)
-  (Read API)
-- [Collecting information about endpoints under the EGI and FedCloud scopes](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&scope=EGI,FedCloud)
-  (Read API)
-- [Retrieving all COD Staff and EGI CSIRT Officer to be allowed in secmon](https://goc.egi.eu/gocdbpi/private/?method=get_user&roletype=EGI%20CSIRT%20Officer,COD%20Staff)
-  (Write API)
-- [Querying for certification history for a site](https://goc.egi.eu/gocdbpi/private/?method=get_cert_status_changes&site=mainz)
-  (Write API)
-- [Querying for CSIRT emails of FedCloud sites](https://goc.egi.eu/gocdbpi/private/?method=get_site&scope=FedCloud,EGI&scope_match=all&certification_status=Certified&production_status=Production)
-  (Write API)
-- [Querying for Security officer at FedCloud sites](https://goc.egi.eu/gocdbpi/private/?method=get_site_contacts&roletype=Site%20Security%20Officer&scope=FedCloud,EGI&scope_match=all)
-  (Write API)
+> API calls starting with `https://goc.egi.eu/gocdbpi/private` require the
+> client to present a valid credential.
+
+- **Public** calls, no authentication required:
+  - [Retrieving all service endpoints](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint)
+  - [Collecting information about endpoints under the EGI and FedCloud scopes](https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&scope=EGI,FedCloud)
+- **Private** calls, with authentication required:
+  - [Retrieving all COD Staff and EGI CSIRT Officer to be allowed in secmon](https://goc.egi.eu/gocdbpi/private/?method=get_user&roletype=EGI%20CSIRT%20Officer,COD%20Staff)
+  - [Querying for certification history for a site](https://goc.egi.eu/gocdbpi/private/?method=get_cert_status_changes&site=mainz)
+  - [Querying for CSIRT emails of FedCloud sites](https://goc.egi.eu/gocdbpi/private/?method=get_site&scope=FedCloud,EGI&scope_match=all&certification_status=Certified&production_status=Production)
+  - [Querying for Security officer at FedCloud sites](https://goc.egi.eu/gocdbpi/private/?method=get_site_contacts&roletype=Site%20Security%20Officer&scope=FedCloud,EGI&scope_match=all)
 
 ### Extracting content
 
