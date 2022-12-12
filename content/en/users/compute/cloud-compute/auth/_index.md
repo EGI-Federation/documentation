@@ -162,7 +162,8 @@ The tools share these common design criteria:
 
 - None of the ssh-client or ssh-server components will be modified
 - Do not store state whenever possible
-  - Single exception: federated-user -> local-user mapping is stored in `passwd`
+    - Single exception: federated-user -> local-user mapping is stored in
+        `passwd`
 - Small components that work individually (one tool for one job)
 
 #### Installation (client-side)
