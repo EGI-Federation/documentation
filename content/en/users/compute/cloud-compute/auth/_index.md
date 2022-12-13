@@ -171,7 +171,7 @@ The tools share these common design criteria:
 `ssh-oidc` does not require specific clients per se. OIDC Access-Tokens
 may simply be passed, when ssh prompts for the "Access Token".
 Unfortunately, the most-popular ssh-client does not support access-tokens
-which are longer than 1024 byte _and_ EGI uses tokens that are typically
+which are longer than 1024 bytes _and_ EGI uses tokens that are typically
 longer than 1024 byte.
 
 Hence, we suggest using [mccli](https://mccli.readthedocs.org) (`pip
