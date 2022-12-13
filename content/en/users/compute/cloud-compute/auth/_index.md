@@ -177,7 +177,7 @@ longer than 1024 bytes.
 Hence, we suggest using [mccli](https://mccli.readthedocs.org) (`pip
 install mccli`) on Unix/Mac. Windows users should use the putty
 `oidc-plugin`, which conveniently ships with
-[oidc-agent-for-windows](http://repo.data.kit.edu/windows/oidc-agent/)
+[oidc-agent-for-windows](http://repo.data.kit.edu/windows/oidc-agent/).
 
 For conveniently obtaining access tokens,
 [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent) is probably the most
