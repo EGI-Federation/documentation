@@ -30,6 +30,10 @@ These are the available kernels:
   [jupyter/r-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-r-notebook)
   and some extra libraries.
 
+- RStudio:
+  [RStudio Server](https://posit.co/products/open-source/rstudio-server/) offers
+  a RStudio IDE from the Notebooks interface.
+
 - Octave: The [Octave](https://www.gnu.org/software/octave/) programming
   language installed on its own conda environment (named `octave`).
 
@@ -73,7 +77,8 @@ following these steps:
      - /home/jovyan/conda-envs/
    ```
 
-1. Create your environmnets as needed, make sure to install a kernel (`ipykernel`) for it to show automatically:
+1. Create your environmnets as needed, make sure to install a kernel
+   (`ipykernel`) for it to show automatically:
 
    ```shell
    $ conda create -p /home/jovyan/conda-envs/myenv ipykernel scipy
