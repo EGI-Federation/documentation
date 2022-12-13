@@ -189,7 +189,7 @@ Within the federated cloud, there are multiple options for installing
 the ssh-oidc server-side components:
 
 1. Via the [Infrastructure Manager (IM)](https://im.egi.eu):
-   - Choosing the "virtual machine with extra HD".
+   - Choosing the `virtual machine with extra HD`.
    - Add **motley-cue** to enable SSH-OIDC.
    - Configure whether you want to allow other members of your VOs (or a
        specific VO) that should be authorised to use ssh.
