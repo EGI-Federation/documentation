@@ -201,8 +201,7 @@ the ssh-oidc server-side components:
 
 1. Manual installation:
     - Install `motley-cue`, and `pam-ssh-oidc` (or
-      `pam-ssh-oidc-autoconfig`). Details here:
-          <https://github.com/EOSC-synergy/ssh-oidc/blob/master/installation.md>
+      `pam-ssh-oidc-autoconfig`). Details in the [ssh-oid repository](https://github.com/EOSC-synergy/ssh-oidc/blob/master/installation.md).
     - Configure `motley-cue`. Details here:
         <https://github.com/EOSC-synergy/ssh-oidc/blob/master/configuration.md>
 
