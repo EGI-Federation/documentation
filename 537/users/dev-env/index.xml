@@ -66,20 +66,20 @@ specific Gateways: &lt;a href="https://sobigdata.d4science.org/">SoBigData&lt;/a
 &lt;a href="https://eosc-pillar.d4science.org/">EOSC-Pillar&lt;/a>. Check with
 &lt;a href="https://www.d4science.org/contact-us">D4Science support&lt;/a> for more
 information.&lt;/li>
-&lt;/ul></description></item><item><title>Users: Binder</title><link>/users/dev-env/binder/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/binder/</guid><description>
+&lt;/ul></description></item><item><title>Users: Replay</title><link>/users/dev-env/replay/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/replay/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>Binder allows the re-creation of a custom computing environment for reproducible
+&lt;p>Replay allows the re-creation of a custom computing environment for reproducible
 execution of notebooks (and potentially many other types of applications). Users
 who create their own notebooks in the &lt;a href="../notebooks/">EGI Notebooks&lt;/a> to analyze
 data can easily create a shareable link for those notebooks in the form of a
 GitHub repository. Based on this link, anyone can then reproduce the same data
-analysis using the link in the &lt;a href="https://binder.notebooks.egi.eu">EGI Binder&lt;/a>
+analysis using the link in the &lt;a href="https://replay.notebooks.egi.eu">EGI Replay&lt;/a>
 service.&lt;/p>
 &lt;p>The service builds on &lt;a href="https://github.com/jupyterhub/binderhub">BinderHub&lt;/a>, an
 Open Source tool that allows to build docker images from a Git repository and
 then makes them available through your browser.&lt;/p>
-&lt;p>EGI Binder offers a service similar to the publicly accessible
-&lt;a href="https://mybinder.org">mybinder.org&lt;/a> site. However, EGI Binder has the following
+&lt;p>EGI Replay offers a service similar to the publicly accessible
+&lt;a href="https://mybinder.org">mybinder.org&lt;/a> site. However, EGI Replay has the following
 additional features:&lt;/p>
 &lt;ul>
 &lt;li>Access with academic user accounts: login via &lt;a href="../../aai/check-in">Check-in&lt;/a>
@@ -94,15 +94,15 @@ although sessions will be shut down automatically after 1 hour of inactivity
 (see
 &lt;a href="https://mybinder.readthedocs.io/en/latest/about/user-guidelines.html">session limitations at the public mybinder.org service&lt;/a>).&lt;/li>
 &lt;li>Access to the rest of EGI services: a personal access token is available in
-the Binder session to interact with the rest of the EGI infrastructure.&lt;/li>
-&lt;li>Community Binder environments: User communities can have their customized
-Binder service instance from EGI, with extra features as requested (such as
+the Replay session to interact with the rest of the EGI infrastructure.&lt;/li>
+&lt;li>Community Replay environments: User communities can have their customized
+Replay service instance from EGI, with extra features as requested (such as
 access to GPUs, integration with community specific data repositories and
 services). EGI offers consultancy and support the setup of these instances,
 and provides operational oversight for them.&lt;/li>
 &lt;/ul>
 &lt;h2 id="reproducible-research">Reproducible research&lt;/h2>
-&lt;p>Binder facilitates the sharing and reproducibility of digital data analysis:&lt;/p>
+&lt;p>Replay facilitates the sharing and reproducibility of digital data analysis:&lt;/p>
 &lt;ol>
 &lt;li>Users can define their computational analysis in the
 &lt;a href="../notebooks/">EGI Notebooks&lt;/a> service.&lt;/li>
@@ -111,22 +111,22 @@ repository.&lt;/li>
 &lt;li>Optionally, users can use the Zenodo-GitHub integration for generating DOIs
 that can be cited in publications and can be discovered by fellow researchers&lt;/li>
 &lt;li>Anyone can use the link to the GitHub repository or Zenodo DOI to reproduce
-the computational analysis in &lt;a href="https://binder.notebooks.egi.eu">EGI Binder&lt;/a>.&lt;/li>
+the computational analysis in &lt;a href="https://replay.notebooks.egi.eu">EGI Replay&lt;/a>.&lt;/li>
 &lt;/ol>
 &lt;p>&lt;img src="reproduce-flow-binder.png" alt="Reproducible research flow">&lt;/p>
 &lt;h2 id="access-to-the-service">Access to the service&lt;/h2>
-&lt;p>&lt;a href="https://binder.notebooks.egi.eu/">EGI&amp;rsquo;s Binder&lt;/a> has the same access conditions
+&lt;p>&lt;a href="https://replay.notebooks.egi.eu/">EGI&amp;rsquo;s Replay&lt;/a> has the same access conditions
 as the
 &lt;a href="../notebooks/#service-modes">centrally operated Notebooks service from EGI&lt;/a>.
 Before using the service, you need to have an EGI account and be a member of
 &lt;a href="../notebooks/#notebooks-for-researchers">one of the supported resource pools&lt;/a>
 (alias Virtual Organisations). Follow the instructions on the
-&lt;a href="https://binder.notebooks.egi.eu">EGI Binder login page&lt;/a> for access&lt;/p>
+&lt;a href="https://replay.notebooks.egi.eu">EGI Replay login page&lt;/a> for access&lt;/p>
 &lt;h2 id="creating-a-binder-repository">Creating a Binder repository&lt;/h2>
-&lt;p>Binder starts from a code repository that contains the code or notebook you’d
+&lt;p>Replay starts from a code repository that contains the code or notebook you’d
 like to run and a set of configuration files that specify what’s the exact
 computational environment your code needs to run.&lt;/p>
-&lt;p>Binder then creates a reproducible container using
+&lt;p>Replay then creates a reproducible container using
 &lt;a href="https://github.com/jupyterhub/repo2docker">repo2docker&lt;/a>, and generates a user
 session to interact with the container in the browser.&lt;/p>
 &lt;p>The configuration for building the container supports specifying conda
@@ -135,14 +135,14 @@ OS packages; and even complete custom Dockerfiles to bring any application to
 the system. The code repository can be hosted on popular git hosting platforms
 like GitHub and GitLab and can also be referenced with a DOI from Zenodo,
 FigShare or Dataverse. You can learn more on the configuration of your
-repository with Binder at the
+repository with Replay at the
 &lt;a href="https://mybinder.readthedocs.io/en/latest/">Binder user documentation&lt;/a>&lt;/p>
 &lt;p>You can start by forking the
 &lt;a href="https://github.com/EGI-Federation/binder-example">EGI-Federation/binder-example GitHub repository&lt;/a>
 for creating your own reproducible environment. To run this directly on EGI&amp;rsquo;s
-Binder click on the button below:&lt;/p>
-&lt;p>&lt;a href="https://binder.notebooks.egi.eu/v2/gh/EGI-Federation/binder-example/HEAD">&lt;img src="https://binder.notebooks.egi.eu/badge_logo.svg" alt="Binder">&lt;/a>&lt;/p>
-&lt;p>You can create such link to share your notebooks from the Binder interface, as
+Replay click on the button below:&lt;/p>
+&lt;p>&lt;a href="https://replay.notebooks.egi.eu/v2/gh/EGI-Federation/binder-example/HEAD">&lt;img src="https://replay.notebooks.egi.eu/badge_logo.svg" alt="Binder">&lt;/a>&lt;/p>
+&lt;p>You can create such link to share your notebooks from the Replay interface, as
 shown in the screenshot below, you can copy the URL shown when the building is
 in progress:&lt;/p>
 &lt;p>&lt;img src="binder-link.png" alt="Binder link">&lt;/p>
@@ -150,7 +150,7 @@ in progress:&lt;/p>
 contains more sample repositories for common configurations that can help you
 getting started.&lt;/p>
 &lt;h2 id="accessing-data">Accessing data&lt;/h2>
-&lt;p>Your notebooks running in Binder have outgoing internet connectivity, so you can
+&lt;p>Your notebooks running in Replay have outgoing internet connectivity, so you can
 connect to external services to bring data in for analysis or deposing the
 notebooks output.&lt;/p>
 &lt;p>Every session that you start will also provide access to your spaces in the

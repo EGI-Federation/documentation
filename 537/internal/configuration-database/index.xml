@@ -130,12 +130,15 @@ registration form.&lt;/p>
 &lt;li>click on the &amp;ldquo;Register&amp;rdquo; link&lt;/li>
 &lt;li>fill in the form and validate&lt;/li>
 &lt;/ul>
-&lt;blockquote>
-&lt;p>If you were registered but are not recognised anymore (e.g. because your
-certificate DN changed), do not register again! Instead, follow the steps
+&lt;h2 id="recovering-access-to-an-existing-account">Recovering access to an existing account&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+If you were registered but are not
+recognised anymore (e.g. because your certificate DN changed), do not register
+again! Instead, follow the steps
 &lt;a href="../users-roles/managing-accounts#lost-access-to-your-account">Lost access to your Configuration Database account&lt;/a>
-section.&lt;/p>
-&lt;/blockquote></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
+section.
+&lt;/div></description></item><item><title>Internal: Adding service endpoints</title><link>/internal/configuration-database/adding-service-endpoint/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/adding-service-endpoint/</guid><description>
 &lt;p>For monitoring purposes, each service endpoints registered into the
 Configuration Database, and having the flags &lt;em>production&lt;/em> and &lt;em>monitored&lt;/em> should
 include the endpoint URL information in order to be contacted by the
@@ -1393,7 +1396,79 @@ project, e.g.&lt;/li>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note, resources can be tagged multiple times to declare support for multiple
 projects:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>get_services&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope=ProjectX,EGI&lt;span style="color:#a40000">&amp;amp;&lt;/span>scope_match=all
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Internal: FAQ</title><link>/internal/configuration-database/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/faq/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Internal: API</title><link>/internal/configuration-database/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/api/</guid><description>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Exhaustive documentation of the API for
+the &lt;a href="https://github.com/GOCDB/gocdb">GOCDB service&lt;/a>, powering the
+&lt;a href="../">EGI Configuration Database&lt;/a>, is available
+&lt;a href="https://gocdb.github.io/api/">on the dedicated GOCDB API documentation site&lt;/a>.
+&lt;/div>
+&lt;p>The GOCDB Programmatic Interface (PI) is available under &lt;code>/gocdbpi&lt;/code>.&lt;/p>
+&lt;h2 id="api-components">API components&lt;/h2>
+&lt;p>The GOCDB PI has two main components:&lt;/p>
+&lt;ul>
+&lt;li>The &lt;a href="https://gocdb.github.io/api/read/">Read API&lt;/a>&lt;/li>
+&lt;li>The &lt;a href="https://gocdb.github.io/api/write/">Write API&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;strong>Read API&lt;/strong> provides programmatic access to the data. Access to some
+information (security/critical, personal details, otherwise sensitive
+information) is restricted, more details are available in the section about
+&lt;a href="https://gocdb.github.io/api/read/#data-protection-levels">data protection levels&lt;/a>.&lt;/p>
+&lt;p>The &lt;strong>Write API&lt;/strong> provides limited functionality to add, update, and delete
+entities. Access is restricted, more details can be found in the section about
+&lt;a href="https://gocdb.github.io/api/write/#authenticationauthorisation">authentication and authorisation&lt;/a>.&lt;/p>
+&lt;h2 id="using-the-read-api">Using the Read API&lt;/h2>
+&lt;h3 id="querying">Querying&lt;/h3>
+&lt;p>API calls can be tested in a browser or done from the commmand-line interface,
+using &lt;code>curl&lt;/code>.&lt;/p>
+&lt;p>Below are some examples, including methods with different
+&lt;a href="https://gocdb.github.io/api/read/#data-protection-levels">data protection levels&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>API calls starting with &lt;code>https://goc.egi.eu/gocdbpi/private&lt;/code> require the
+client to present a valid credential.&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;strong>Public&lt;/strong> calls, no authentication required:
+&lt;ul>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint">Retrieving all service endpoints&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;scope=EGI,FedCloud">Collecting information about endpoints under the EGI and FedCloud scopes&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Private&lt;/strong> calls, with authentication required:
+&lt;ul>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_user&amp;amp;roletype=EGI%20CSIRT%20Officer,COD%20Staff">Retrieving all COD Staff and EGI CSIRT Officer to be allowed in secmon&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_cert_status_changes&amp;amp;site=mainz">Querying for certification history for a site&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_site&amp;amp;scope=FedCloud,EGI&amp;amp;scope_match=all&amp;amp;certification_status=Certified&amp;amp;production_status=Production">Querying for CSIRT emails of FedCloud sites&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://goc.egi.eu/gocdbpi/private/?method=get_site_contacts&amp;amp;roletype=Site%20Security%20Officer&amp;amp;scope=FedCloud,EGI&amp;amp;scope_match=all">Querying for Security officer at FedCloud sites&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="extracting-content">Extracting content&lt;/h3>
+&lt;p>It is possible to filter content using &lt;code>xpath&lt;/code>. Download
+&lt;a href="https://goc.egi.eu/gocdbpi/public/?method=get_service_endpoint&amp;amp;scope=EGI,FedCloud">information about endpoints under the EGI and FedCloud scopes&lt;/a>
+as &lt;code>egi_fedcloud_service_endpoints.xml&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Extracting endpoints in production&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ xpath -q -e &lt;span style="color:#4e9a06">&amp;#34;//SERVICE_ENDPOINT[IN_PRODUCTION=&amp;#39;Y&amp;#39;]/HOSTNAME/text()&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> egi_fedcloud_service_endpoints.xml &lt;span style="color:#000;font-weight:bold">|&lt;/span> sort &lt;span style="color:#000;font-weight:bold">|&lt;/span> uniq
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-an-x509-client-certificate-to-authenticate-from-the-cli">Using an X.509 client certificate to authenticate from the CLI&lt;/h3>
+&lt;p>Querying information about a specific site using CURL, and authenticating with
+an X.509 client certificate.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -v --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;https://goc.egi.eu/gocdbpi/private/?method=get_site&amp;amp;sitename=CESGA&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="querying-using-python">Querying using python&lt;/h3>
+&lt;h4 id="looking-for-fedcloud-endpoints">Looking for FedCloud endpoints&lt;/h4>
+&lt;p>See
+&lt;a href="https://github.com/EGI-Federation/cloud-info-provider/blob/master/cloud_info_provider/providers/gocdb.py">python script from cloud-info-provider repository&lt;/a>.&lt;/p>
+&lt;h2 id="using-the-write-api">Using the Write API&lt;/h2>
+&lt;p>Examples of using the Write API can be found on the
+&lt;a href="https://gocdb.github.io/api/write/#examples">GOCDB PI site&lt;/a>.&lt;/p></description></item><item><title>Internal: FAQ</title><link>/internal/configuration-database/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/faq/</guid><description>
+&lt;h2 id="i-have-lost-access-to-my-account-what-should-i-do">I have lost access to my account, what should I do?&lt;/h2>
+&lt;p>If you were registered but are not recognised anymore (e.g. because your
+certificate DN changed), do not register again!&lt;/p>
+&lt;p>Instead, follow the steps
+&lt;a href="../users-roles/managing-accounts#lost-access-to-your-account">Lost access to your Configuration Database account&lt;/a>
+section.&lt;/p>
 &lt;h2 id="i-am-responsible-for-a-site-that-has-recently-entered-the-egi-infrastructure-how-do-i-register-it">I am responsible for a site that has recently entered the EGI infrastructure. How do I register it?&lt;/h2>
 &lt;p>Only registered users with an approved role on an NGI can add a new site. If you
 are the site administrator, the first thing to do is to contact your NGI staff

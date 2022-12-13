@@ -29,6 +29,10 @@ outside the home directory are not kept&lt;/strong> (e.g. installation of librar
 you need those changes to persist, let us know via a
 &lt;a href="https://ggus.eu">GGUS ticket to the Notebooks Support Unit&lt;/a>. You can also ask
 for increasing the 20GB home via ticket.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Your home directoriy is backed up daily.
+&lt;/div>
 &lt;h2 id="import-notebooks-into-your-workspace">Import notebooks into your workspace&lt;/h2>
 &lt;p>The Notebooks service default environment includes
 &lt;a href="https://github.com/jupyterhub/nbgitpuller">nbgitpuller&lt;/a>, an extension to sync a
@@ -36,15 +40,14 @@ git repository one-way to a local path. You can generate a shareable link by
 filling in the
 &lt;a href="https://jupyterhub.github.io/nbgitpuller/link?hub=https://notebooks.egi.eu/">nbgitpuller link generator&lt;/a>
 with your git repository.&lt;/p>
-&lt;p>Alternatively, you can also use &lt;a href="../../binder">Binder&lt;/a> for providing a link to
+&lt;p>Alternatively, you can also use &lt;a href="../../replay">Replay&lt;/a> for providing a link to
 notebooks and their computing environment.&lt;/p>
 &lt;h2 id="getting-data-inout">Getting data in/out&lt;/h2>
 &lt;p>Your notebooks have outgoing internet connectivity so you can connect to any
 external service to bring data in for analysis. As with input data, you can
 connect to any external service to deposit the notebooks output.&lt;/p>
 &lt;p>This is convenient for smaller datasets but not practical for larger ones, for
-those cases we can offer integration with several data services. These are not
-enabled in the catch-all instance but can be made available on demand.&lt;/p>
+those cases we can offer integration with several data services.&lt;/p>
 &lt;h3 id="egi-datahub">EGI DataHub&lt;/h3>
 &lt;p>&lt;a href="../../../data/management/datahub">EGI DataHub&lt;/a> provides a scalable distributed
 data infrastructure. It offers a tight integration with Jupyter and notebooks
@@ -53,44 +56,31 @@ with specific drivers that make the DataHub Spaces accessible from any notebook.
 under the &lt;code>datahub&lt;/code> folder. If you need support for any additional space, please
 &lt;a href="https://ggus.eu">open a ticket in GGUS&lt;/a> to add it.&lt;/p>
 &lt;p>&lt;img src="datahub-folder.png" alt="Datahub folder">&lt;/p>
-&lt;p>Alternatively, you can also use the
-&lt;a href="https://github.com/onedata/fs-onedatafs">&lt;code>fs-onedatafs&lt;/code>&lt;/a> library from your
-code. For convenience, the &lt;code>ONEPROVIDER_HOST&lt;/code> environment variable will point to
-the default oneprovider for the Notebooks and the &lt;code>ONECLIENT_ACCESS_TOKEN&lt;/code>
-variable will contain a valid access token for the service.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">from&lt;/span> &lt;span style="color:#000">fs.onedatafs&lt;/span> &lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#000">OnedataFS&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># create the OnedataFS driver using defaults from env&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">odfs&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">OnedataFS&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">os&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">environ&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;ONEPROVIDER_HOST&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">os&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">environ&lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;ONECLIENT_ACCESS_TOKEN&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">force_direct_io&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">True&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># use it to open a file&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">f&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">odfs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#000">open&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;datahub file path&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>ONEPROVIDER_HOST&lt;/code> and &lt;code>ONECLIENT_ACCESS_TOKEN&lt;/code> variables are obtained as
-part of the login process and made available in the notebooks environment
-automatically. You can also specify a different oneprovider host if needed.&lt;/p>
+&lt;p>By default the &lt;code>notebooks-shared&lt;/code> space is open for writing to any EGI Notebooks
+user part of the &lt;code>vo.notebooks.egi.eu&lt;/code> VO. Please check the &lt;a href="../../../data/management/datahub/file-management/">File Management&lt;/a>
+section in the EGI DataHub documentation for more information on how to upload
+files.&lt;/p>
 &lt;h3 id="eudat-b2drop">EUDAT B2DROP&lt;/h3>
-&lt;p>&lt;a href="https://eudat.eu/services/b2drop">EUDAT B2DROP&lt;/a> is a low-barrier,
-user-friendly and trustworthy storage environment which allows users
-to synchronise their active data across different desktops and to easily
-share this data with peers. EUDAT offers a free public instance of B2DROP
-for any researcher with a 20 GB quota.&lt;/p>
-&lt;p>The data on B2DROP can be synchronised with EGI Notebooks so you can
-share content between the two services. This offers an easy-to-use
-storage and compute platform for the long-tail of science.&lt;/p>
+&lt;p>&lt;a href="https://eudat.eu/services/b2drop">EUDAT B2DROP&lt;/a> is a low-barrier, user-friendly
+and trustworthy storage environment which allows users to synchronise their
+active data across different desktops and to easily share this data with peers.
+EUDAT offers a free public instance of B2DROP for any researcher with a 20 GB
+quota.&lt;/p>
+&lt;p>The data on B2DROP can be synchronised with EGI Notebooks so you can share
+content between the two services. This offers an easy-to-use storage and compute
+platform for the long-tail of science.&lt;/p>
 &lt;p>Here is how you can get them synchronised. First, make sure
 &lt;a href="https://b2drop.eudat.eu/">you have access to B2DROP&lt;/a>. Then, configure
 &lt;code>app username&lt;/code> and &lt;code>app password&lt;/code> on B2DROP&amp;rsquo;s
-&lt;a href="https://b2drop.eudat.eu/settings/user/security">security settings&lt;/a>.
-Now, back to EGI Notebooks, click on the &lt;code>B2DROP connection&lt;/code> drop-down
-menu when you start your session:&lt;/p>
+&lt;a href="https://b2drop.eudat.eu/settings/user/security">security settings&lt;/a>. Now, back
+to EGI Notebooks, click on the &lt;code>B2DROP connection&lt;/code> drop-down menu when you start
+your session:&lt;/p>
 &lt;p>&lt;img src="notebooks-b2drop-1.png" alt="EGI Notebook Session">&lt;/p>
-&lt;p>Enter the &lt;code>app username&lt;/code> and &lt;code>app password&lt;/code> created previously, with
-the option to save them for future logins:&lt;/p>
+&lt;p>Enter the &lt;code>app username&lt;/code> and &lt;code>app password&lt;/code> created previously, with the option
+to save them for future logins:&lt;/p>
 &lt;p>&lt;img src="notebooks-b2drop-2.png" alt="B2DROP credentials">&lt;/p>
-&lt;p>You will see a &lt;code>b2drop&lt;/code> folder in the list of folders (left panel) of the
-EGI Notebooks that is synchronised with the content on
+&lt;p>You will see a &lt;code>b2drop&lt;/code> folder in the list of folders (left panel) of the EGI
+Notebooks that is synchronised with the content on
 &lt;a href="https://b2drop.eudat.eu/">B2DROP&lt;/a>:&lt;/p>
 &lt;p>&lt;img src="notebooks-b2drop-3.png" alt="B2DROP folder">&lt;/p>
 &lt;h3 id="d4science-workspace">D4Science Workspace&lt;/h3>
@@ -146,8 +136,9 @@ client. Once logged into the EGI Notebooks open a terminal and run:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the &lt;code>fedcloud&lt;/code> command is not available, please follow the
 &lt;a href="../../../getting-started/cli">getting started&lt;/a> guide to get it.&lt;/p>
 &lt;h2 id="egi-workload-manager-dirac">EGI Workload Manager (DIRAC)&lt;/h2>
-&lt;p>If you are using a Notebooks instance integrated with &lt;a href="../../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>,
-you may access the DIRAC client via CVMFS with the following two command lines:&lt;/p>
+&lt;p>If you are using a Notebooks instance integrated with
+&lt;a href="../../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>, you may
+access the DIRAC client via CVMFS with the following two command lines:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">source&lt;/span> /cvmfs/dirac.egi.eu/dirac/bashrc_egi_dev
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ dirac-login --issuer&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://dirac.egi.eu/auth
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="d4science">D4Science&lt;/h2>

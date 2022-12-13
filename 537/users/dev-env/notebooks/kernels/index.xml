@@ -3,18 +3,14 @@
 &lt;a href="https://jupyter.readthedocs.io/en/latest/projects/kernels.html">kernels&lt;/a> that
 are automatically built from the
 &lt;a href="https://github.com/EGI-Federation/egi-notebooks-images">EGI-Federation/egi-notebooks-images&lt;/a>
-GitHub repository. These are the ones available:&lt;/p>
+GitHub repository.&lt;/p>
+&lt;p>These are the available kernels:&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Python: Default Python 3 kernel, it includes commonly used data analysis and
 machine learning libraries. Created from the
 &lt;a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-scipy-notebook">jupyter/scipy-notebook&lt;/a>
 stack.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>DIRAC / Python 2: A python 2 kernel that includes a DIRAC installation for
-interacting with
-&lt;a href="../../../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Julia: The Julia programming language with the libraries described in
@@ -32,7 +28,48 @@ language installed on its own conda environment (named &lt;code>octave&lt;/code>
 &lt;/li>
 &lt;/ul>
 &lt;p>If you want to add a new kernel, just let us know and we will discuss the best
-way to support your request.&lt;/p></description></item><item><title>Users: MATLAB</title><link>/users/dev-env/notebooks/kernels/matlab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/kernels/matlab/</guid><description>
+way to support your request.&lt;/p>
+&lt;h2 id="cvmfs">CVMFS&lt;/h2>
+&lt;p>Notebooks mounts several &lt;a href="../../../compute/content-distribution/">CVMFS&lt;/a>
+repositories where you can find software relevant to your community. These are
+accessible from the default CVMFS location &lt;code>/cvmfs&lt;/code> and also linked in your home
+directory &lt;code>/home/jovyan/cvmfs&lt;/code>. These repositories are available:&lt;/p>
+&lt;ul>
+&lt;li>atlas-condb.cern.ch&lt;/li>
+&lt;li>atlas.cern.ch&lt;/li>
+&lt;li>auger.egi.eu&lt;/li>
+&lt;li>biomed.egi.eu&lt;/li>
+&lt;li>cms.cern.ch&lt;/li>
+&lt;li>dirac.egi.eu&lt;/li>
+&lt;li>eiscat.egi.eu&lt;/li>
+&lt;li>grid.cern.ch&lt;/li>
+&lt;li>notebooks.egi.eu&lt;/li>
+&lt;/ul>
+&lt;p>If you need access to any other repositories, please open a request in
+&lt;a href="https://ggus.eu">GGUS&lt;/a>.&lt;/p>
+&lt;h2 id="installing-your-own-kernelsenvironments-permanently">Installing your own kernels/environments permanently&lt;/h2>
+&lt;p>If you want to have a completely customised environment for your Notebooks that
+persists across sessions, you can create your own conda environment in your home
+directory. Thanks to the
+[nb_conda_kernels}(https://github.com/Anaconda-Platform/nb_conda_kernels) plugin
+these will show up automatically as an option to start notebooks with by
+following these steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create a &lt;code>$HOME/.condarc&lt;/code> file specifying where your environments will be
+created, e.g. in &lt;code>/home/jovyan/conda-envs/&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">env_dirs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">/home/jovyan/conda-envs/&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Create your environmnets as needed, make sure to install a kernel (&lt;code>ipykernel&lt;/code>) for it to show automatically:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ conda create -p /home/jovyan/conda-envs/myenv ipykernel scipy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>The environment will show up in the launcher as a new option&lt;/p>
+&lt;p>&lt;img src="notebooks-custom-env.png" alt="Launcher with custom env">&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>Users: MATLAB</title><link>/users/dev-env/notebooks/kernels/matlab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/kernels/matlab/</guid><description>
 &lt;p>EGI offers MATLAB on the cloud using the
 &lt;a href="https://www.mathworks.com/products/reference-architectures/jupyter.html">MATLAB Integration for Jupyter&lt;/a>
 and shares data and code with other EGI users. MATLAB is also available directly
