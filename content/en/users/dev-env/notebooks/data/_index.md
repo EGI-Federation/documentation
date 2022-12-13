@@ -55,9 +55,9 @@ under the `datahub` folder. If you need support for any additional space, please
 ![Datahub folder](datahub-folder.png)
 
 By default the `notebooks-shared` space is open for writing to any EGI Notebooks
-user part of the `vo.notebooks.egi.eu` VO. Please check the [File Management](../../../data/management/datahub/file-management/)
-section in the EGI DataHub documentation for more information on how to upload
-files.
+user part of the `vo.notebooks.egi.eu` VO. Please check the
+[File Management](../../../data/management/datahub/file-management/) section in
+the EGI DataHub documentation for more information on how to upload files.
 
 ### EUDAT B2DROP
 
