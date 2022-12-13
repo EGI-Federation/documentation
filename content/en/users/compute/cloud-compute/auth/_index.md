@@ -186,7 +186,7 @@ convenient choice.
 #### Installation (server-side)
 
 Within the federated cloud, there are multiple options for installing
-the ssh-oidc server-side components
+the ssh-oidc server-side components:
 
 1. Via the Infrastructure Manager (IM) <https://im.egi.eu>: IM offers
    starting a variety of VM infrastructures.
