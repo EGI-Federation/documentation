@@ -152,7 +152,7 @@ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
 ### Using ssh-oidc
 
 [ssh-oidc](https://github.com/EOSC-synergy/ssh-oidc) is a collection of
-tools that provide enable ssh, using OpenID-Connect access tokens.
+tools that enable ssh using OpenID-Connect access tokens.
 
 Most of the individual tools work standalone, but they may be combined to
 establish complex installations with dynamic account provisioning in
