@@ -172,7 +172,7 @@ The tools share these common design criteria:
 may simply be passed, when ssh prompts for the "Access Token".
 Unfortunately, the most-popular ssh-client does not support access-tokens
 which are longer than 1024 bytes _and_ EGI uses tokens that are typically
-longer than 1024 byte.
+longer than 1024 bytes.
 
 Hence, we suggest using [mccli](https://mccli.readthedocs.org) (`pip
 install mccli`) on Unix/Mac. Windows users should use the putty
