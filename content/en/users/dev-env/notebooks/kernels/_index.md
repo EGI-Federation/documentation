@@ -33,6 +33,6 @@ If you have special needs that cannot be covered with the
 [default environment](./default) environment, let us know by opening a ticket to
 the Notebooks Support Unit in [GGUS](https://ggus.eu).
 
-Additionally, you can build your own environment via [Binder](../../binder).
+Additionally, you can build your own environment via [Replay](../../replay).
 This will allow you to build reproducible and shareable environments for your
 notebooks.
