@@ -23,6 +23,11 @@ provided by
 and some extra libraries.&lt;/p>
 &lt;/li>
 &lt;li>
+&lt;p>RStudio:
+&lt;a href="https://posit.co/products/open-source/rstudio-server/">RStudio Server&lt;/a> offers
+a RStudio IDE from the Notebooks interface.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>Octave: The &lt;a href="https://www.gnu.org/software/octave/">Octave&lt;/a> programming
 language installed on its own conda environment (named &lt;code>octave&lt;/code>).&lt;/p>
 &lt;/li>
@@ -62,7 +67,8 @@ created, e.g. in &lt;code>/home/jovyan/conda-envs/&lt;/code>:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">/home/jovyan/conda-envs/&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
-&lt;p>Create your environmnets as needed, make sure to install a kernel (&lt;code>ipykernel&lt;/code>) for it to show automatically:&lt;/p>
+&lt;p>Create your environmnets as needed, make sure to install a kernel
+(&lt;code>ipykernel&lt;/code>) for it to show automatically:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ conda create -p /home/jovyan/conda-envs/myenv ipykernel scipy
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>

@@ -18,7 +18,7 @@ members are presented with a runtime environment built matching their needs:&lt;
 &lt;p>If you have special needs that cannot be covered with the
 &lt;a href="./default">default environment&lt;/a> environment, let us know by opening a ticket to
 the Notebooks Support Unit in &lt;a href="https://ggus.eu">GGUS&lt;/a>.&lt;/p>
-&lt;p>Additionally, you can build your own environment via &lt;a href="../../binder">Binder&lt;/a>.
+&lt;p>Additionally, you can build your own environment via &lt;a href="../../replay">Replay&lt;/a>.
 This will allow you to build reproducible and shareable environments for your
 notebooks.&lt;/p></description></item><item><title>Users: Data Management in Notebooks</title><link>/users/dev-env/notebooks/data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/dev-env/notebooks/data/</guid><description>
 &lt;p>Every user of the EGI Notebooks catch-all instance has a 20GB persistent home to
@@ -57,9 +57,9 @@ under the &lt;code>datahub&lt;/code> folder. If you need support for any additio
 &lt;a href="https://ggus.eu">open a ticket in GGUS&lt;/a> to add it.&lt;/p>
 &lt;p>&lt;img src="datahub-folder.png" alt="Datahub folder">&lt;/p>
 &lt;p>By default the &lt;code>notebooks-shared&lt;/code> space is open for writing to any EGI Notebooks
-user part of the &lt;code>vo.notebooks.egi.eu&lt;/code> VO. Please check the &lt;a href="../../../data/management/datahub/file-management/">File Management&lt;/a>
-section in the EGI DataHub documentation for more information on how to upload
-files.&lt;/p>
+user part of the &lt;code>vo.notebooks.egi.eu&lt;/code> VO. Please check the
+&lt;a href="../../../data/management/datahub/file-management/">File Management&lt;/a> section in
+the EGI DataHub documentation for more information on how to upload files.&lt;/p>
 &lt;h3 id="eudat-b2drop">EUDAT B2DROP&lt;/h3>
 &lt;p>&lt;a href="https://eudat.eu/services/b2drop">EUDAT B2DROP&lt;/a> is a low-barrier, user-friendly
 and trustworthy storage environment which allows users to synchronise their
