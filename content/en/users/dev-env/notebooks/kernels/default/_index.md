@@ -42,7 +42,7 @@ way to support your request.
 
 ## CVMFS
 
-Notebooks mounts several [CVMFS](../../../compute/content-distribution/)
+Notebooks mounts several [CVMFS](../../../../compute/content-distribution/)
 repositories where you can find software relevant to your community. These are
 accessible from the default CVMFS location `/cvmfs` and also linked in your home
 directory `/home/jovyan/cvmfs`. These repositories are available:
@@ -65,7 +65,7 @@ If you need access to any other repositories, please open a request in
 If you want to have a completely customised environment for your Notebooks that
 persists across sessions, you can create your own conda environment in your home
 directory. Thanks to the
-[nb_conda_kernels}(https://github.com/Anaconda-Platform/nb_conda_kernels) plugin
+[nb_conda_kernels](https://github.com/Anaconda-Platform/nb_conda_kernels) plugin
 these will show up automatically as an option to start notebooks with by
 following these steps:
 
