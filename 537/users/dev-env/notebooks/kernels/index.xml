@@ -35,7 +35,7 @@ language installed on its own conda environment (named &lt;code>octave&lt;/code>
 &lt;p>If you want to add a new kernel, just let us know and we will discuss the best
 way to support your request.&lt;/p>
 &lt;h2 id="cvmfs">CVMFS&lt;/h2>
-&lt;p>Notebooks mounts several &lt;a href="../../../compute/content-distribution/">CVMFS&lt;/a>
+&lt;p>Notebooks mounts several &lt;a href="../../../../compute/content-distribution/">CVMFS&lt;/a>
 repositories where you can find software relevant to your community. These are
 accessible from the default CVMFS location &lt;code>/cvmfs&lt;/code> and also linked in your home
 directory &lt;code>/home/jovyan/cvmfs&lt;/code>. These repositories are available:&lt;/p>
@@ -56,7 +56,7 @@ directory &lt;code>/home/jovyan/cvmfs&lt;/code>. These repositories are availabl
 &lt;p>If you want to have a completely customised environment for your Notebooks that
 persists across sessions, you can create your own conda environment in your home
 directory. Thanks to the
-[nb_conda_kernels}(https://github.com/Anaconda-Platform/nb_conda_kernels) plugin
+&lt;a href="https://github.com/Anaconda-Platform/nb_conda_kernels">nb_conda_kernels&lt;/a> plugin
 these will show up automatically as an option to start notebooks with by
 following these steps:&lt;/p>
 &lt;ol>

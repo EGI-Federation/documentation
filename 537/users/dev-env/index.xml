@@ -158,4 +158,9 @@ notebooks output.&lt;/p>
 those spaces configured to be mounted locally will be made available
 automatically. Check the documentation for the
 &lt;a href="../notebooks/data#egi-datahub">Notebook&amp;rsquo;s DataHub support&lt;/a> for more
-information.&lt;/p></description></item></channel></rss>
+information.&lt;/p>
+&lt;h2 id="errors-when-launching">Errors when launching&lt;/h2>
+&lt;p>You can only have one notebook server instance running at any given time, if you try to launch a second instance while there is already one running you will get an error like shown in the screenshot:&lt;/p>
+&lt;p>&lt;img src="launch-error.png" alt="Launch Error">&lt;/p>
+&lt;p>In that case, you can either stop your existing server or connect to it at your &lt;a href="https://replay.notebooks.egi.eu/hub/hub/home">Replay JupyterHub home&lt;/a>:&lt;/p>
+&lt;p>&lt;img src="replay-hub-home.png" alt="Replay JupyterHub home">&lt;/p></description></item></channel></rss>
