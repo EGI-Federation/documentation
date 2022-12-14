@@ -128,7 +128,7 @@ an error like shown in the screenshot:
 
 ![Launch Error](launch-error.png)
 
-In that case, you can either stop your existing server or connect to it at your
+In that case, you can either stop your existing server or connect to it from your
 [Replay JupyterHub home](https://replay.notebooks.egi.eu/hub/hub/home):
 
 ![Replay JupyterHub home](replay-hub-home.png)
