@@ -122,10 +122,13 @@ information.
 
 ## Errors when launching
 
-You can only have one notebook server instance running at any given time, if you try to launch a second instance while there is already one running you will get an error like shown in the screenshot:
+You can only have one notebook server instance running at any given time, if you
+try to launch a second instance while there is already one running you will get
+an error like shown in the screenshot:
 
 ![Launch Error](launch-error.png)
 
-In that case, you can either stop your existing server or connect to it at your [Replay JupyterHub home](https://replay.notebooks.egi.eu/hub/hub/home):
+In that case, you can either stop your existing server or connect to it at your
+[Replay JupyterHub home](https://replay.notebooks.egi.eu/hub/hub/home):
 
 ![Replay JupyterHub home](replay-hub-home.png)
