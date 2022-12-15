@@ -151,5 +151,58 @@ export OS_TOKEN=$(fedcloud openstack --site <NAME_OF_SITE> --vo <NAME_OF_VO> \
 
 ### Using ssh-oidc
 
-[ssh-oidc](https://github.com/EOSC-synergy/ssh-oidc) is a set of tools that
-allows ssh with OIDC.
+[ssh-oidc](https://github.com/EOSC-synergy/ssh-oidc) is a collection of
+tools that enable ssh using OpenID-Connect access tokens.
+
+Most of the individual tools work standalone, but they may be combined to
+establish complex installations with dynamic account provisioning in
+multi-VO contexts. All VOs may originate from different OIDC-Providers
+(OP) that use different attribute profiles, so that for example supporting
+EGI-Checkin (EOSC-AAI Attribute Profile) and Indigo IAM (WLCG Attribute
+Profile) at the same time is well supported.
+
+The tools share these common design criteria:
+
+- None of the ssh-client or ssh-server components will be modified
+- Do not store state whenever possible
+  - Single exception: federated-user -> local-user mapping is stored in
+    `passwd`
+- Small components that work individually (one tool for one job)
+
+#### Installation (client-side)
+
+`ssh-oidc` does not require specific clients per se. OIDC Access-Tokens
+may simply be passed, when ssh prompts for the "Access Token".
+Unfortunately, the most-popular ssh-client does not support access-tokens
+which are longer than 1024 bytes _and_ EGI uses tokens that are typically
+longer than 1024 bytes.
+
+Hence, we suggest using [mccli](https://mccli.readthedocs.org) (`pip
+install mccli`) on Unix/Mac. Windows users should use the putty
+`oidc-plugin`, which ships with
+[oidc-agent-for-windows](http://repo.data.kit.edu/windows/oidc-agent/).
+
+For obtaining access tokens,
+[oidc-agent](https://indigo-dc.gitbook.io/oidc-agent) is probably the most
+convenient choice.
+
+#### Installation (server-side)
+
+Within the federated cloud, there are multiple options for installing
+the ssh-oidc server-side components:
+
+1. Via the [Infrastructure Manager (IM)](https://im.egi.eu):
+   - Choosing the `virtual machine with extra HD`.
+   - Add **motley-cue** to enable SSH-OIDC.
+   - Configure whether you want to allow other members of your VOs (or a
+       specific VO) that should be authorised to use ssh.
+
+   The started VM will then allow ssh access with an OIDC Access Token.
+
+   The user that started the VM will be mapped to `cloudadm` and be able to execute
+   `sudo`.
+
+1. Manual installation:
+    - Install `motley-cue`, and `pam-ssh-oidc` (or
+      `pam-ssh-oidc-autoconfig`). Details in the [ssh-oid repository](https://github.com/EOSC-synergy/ssh-oidc/blob/master/installation.md).
+    - Configure `motley-cue`. See example in the [ssh-oidc repository](https://github.com/EOSC-synergy/ssh-oidc/blob/master/configuration.md).
