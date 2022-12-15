@@ -356,7 +356,7 @@ the following command:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> token issue -c id -f value&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-ssh-oidc">Using ssh-oidc&lt;/h3>
 &lt;p>&lt;a href="https://github.com/EOSC-synergy/ssh-oidc">ssh-oidc&lt;/a> is a collection of
-tools that provide enable ssh, using OpenID-Connect access tokens.&lt;/p>
+tools that enable ssh using OpenID-Connect access tokens.&lt;/p>
 &lt;p>Most of the individual tools work standalone, but they may be combined to
 establish complex installations with dynamic account provisioning in
 multi-OP and multi-VO contexts.&lt;/p>
@@ -365,7 +365,8 @@ multi-OP and multi-VO contexts.&lt;/p>
 &lt;li>None of the ssh-client or ssh-server components will be modified&lt;/li>
 &lt;li>Do not store state whenever possible
 &lt;ul>
-&lt;li>Single exception: federated-user -&amp;gt; local-user mapping is stored in &lt;code>passwd&lt;/code>&lt;/li>
+&lt;li>Single exception: federated-user -&amp;gt; local-user mapping is stored in
+&lt;code>passwd&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Small components that work individually (one tool for one job)&lt;/li>
@@ -374,23 +375,22 @@ multi-OP and multi-VO contexts.&lt;/p>
 &lt;p>&lt;code>ssh-oidc&lt;/code> does not require specific clients per se. OIDC Access-Tokens
 may simply be passed, when ssh prompts for the &amp;ldquo;Access Token&amp;rdquo;.
 Unfortunately, the most-popular ssh-client does not support access-tokens
-which are longer than 1024 byte &lt;em>and&lt;/em> EGI uses tokens that are typically
-longer than 1024 byte.&lt;/p>
+which are longer than 1024 bytes &lt;em>and&lt;/em> EGI uses tokens that are typically
+longer than 1024 bytes.&lt;/p>
 &lt;p>Hence, we suggest using &lt;a href="https://mccli.readthedocs.org">mccli&lt;/a> (&lt;code>pip install mccli&lt;/code>) on Unix/Mac. Windows users should use the putty
 &lt;code>oidc-plugin&lt;/code>, which conveniently ships with
-&lt;a href="http://repo.data.kit.edu/windows/oidc-agent/">oidc-agent-for-windows&lt;/a>&lt;/p>
+&lt;a href="http://repo.data.kit.edu/windows/oidc-agent/">oidc-agent-for-windows&lt;/a>.&lt;/p>
 &lt;p>For conveniently obtaining access tokens,
 &lt;a href="https://indigo-dc.gitbook.io/oidc-agent">oidc-agent&lt;/a> is probably the most
 convenient choice.&lt;/p>
 &lt;h4 id="installation-server-side">Installation (server-side)&lt;/h4>
 &lt;p>Within the federated cloud, there are multiple options for installing
-the ssh-oidc server-side components&lt;/p>
+the ssh-oidc server-side components:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Via the Infrastructure Manager (IM) &lt;a href="https://im.egi.eu">https://im.egi.eu&lt;/a>: IM offers
-starting a variety of VM infrastructures.&lt;/p>
+&lt;p>Via the &lt;a href="https://im.egi.eu">Infrastructure Manager (IM)&lt;/a>:&lt;/p>
 &lt;ul>
-&lt;li>Choosing the &amp;ldquo;virtual machine with extra HD&amp;rdquo;.&lt;/li>
+&lt;li>Choosing the &lt;code>virtual machine with extra HD&lt;/code>.&lt;/li>
 &lt;li>Add &lt;strong>motley-cue&lt;/strong> to enable SSH-OIDC.&lt;/li>
 &lt;li>Configure whether you want to allow other members of your VOs (or a
 specific VO) that should be authorised to use ssh.&lt;/li>
@@ -403,10 +403,8 @@ specific VO) that should be authorised to use ssh.&lt;/li>
 &lt;p>Manual installation:&lt;/p>
 &lt;ul>
 &lt;li>Install &lt;code>motley-cue&lt;/code>, and &lt;code>pam-ssh-oidc&lt;/code> (or
-&lt;code>pam-ssh-oidc-autoconfig&lt;/code>). Details here:
-&lt;a href="https://github.com/EOSC-synergy/ssh-oidc/blob/master/installation.md">https://github.com/EOSC-synergy/ssh-oidc/blob/master/installation.md&lt;/a>&lt;/li>
-&lt;li>Configure &lt;code>motley-cue&lt;/code>. Details here:
-&lt;a href="https://github.com/EOSC-synergy/ssh-oidc/blob/master/configuration.md">https://github.com/EOSC-synergy/ssh-oidc/blob/master/configuration.md&lt;/a>&lt;/li>
+&lt;code>pam-ssh-oidc-autoconfig&lt;/code>). Details in the &lt;a href="https://github.com/EOSC-synergy/ssh-oidc/blob/master/installation.md">ssh-oid repository&lt;/a>.&lt;/li>
+&lt;li>Configure &lt;code>motley-cue&lt;/code>. See example in the [ssh-oidc repository]https://github.com/EOSC-synergy/ssh-oidc/blob/master/configuration.md).&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ol></description></item><item><title>Users: Virtual Machine Images</title><link>/users/compute/cloud-compute/images/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/images/</guid><description>
