@@ -69,7 +69,7 @@ as the
 Before using the service, you need to have an EGI account and be a member of
 [one of the supported resource pools](../notebooks/#notebooks-for-researchers)
 (alias Virtual Organisations). Follow the instructions on the
-[EGI Replay login page](https://replay.notebooks.egi.eu) for access
+[EGI Replay login page](https://replay.notebooks.egi.eu) for access.
 
 ## Creating a Binder repository
 
