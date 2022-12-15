@@ -1,4 +1,95 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – High-Throughput Compute</title><link>/providers/high-throughput-compute/</link><description>Recent content in High-Throughput Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Changing the Site BDII</title><link>/providers/high-throughput-compute/changing_site_bdii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/changing_site_bdii/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – High-Throughput Compute</title><link>/providers/high-throughput-compute/</link><description>Recent content in High-Throughput Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: APEL Accounting for HTCondor-CE</title><link>/providers/high-throughput-compute/htcondor-ce-apel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/htcondor-ce-apel/</guid><description>
+&lt;p>&lt;a href="https://htcondor.com/htcondor-ce/">HTCondor-CE&lt;/a> can be configured to
+automatically publish accounting data to
+&lt;a href="../../../internal/accounting">EGI Accounting service&lt;/a>, if compute resources are
+provided by an &lt;a href="https://htcondor.com/htcondor/overview/">HTCondor&lt;/a> pool.
+Optionally, the HTCondor pool can also be configured to provide per-machine
+performance data for increased accounting accuracy.&lt;/p>
+&lt;h2 id="enabling-accounting-records-on-each-htcondor-ce">Enabling accounting records on each HTCondor-CE&lt;/h2>
+&lt;p>Each HTCondor-CE must be configured separately to create accounting data for its
+jobs and feed them to APEL.&lt;/p>
+&lt;blockquote>
+&lt;p>See &lt;a href="../../operations-manuals/man09_accounting_data_publishing">MAN09&lt;/a> for
+general configuration instructions of APEL.&lt;/p>
+&lt;/blockquote>
+&lt;ol>
+&lt;li>
+&lt;p>Install &lt;code>htcondor-ce-apel&lt;/code>, available from the
+&lt;a href="https://repository.egi.eu/">EGI UMD&lt;/a> or
+&lt;a href="https://htcondor.readthedocs.io/en/latest/getting-htcondor/from-our-repositories.html">HTCondor&lt;/a>
+RPM repositories.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Configure the APEL parser via &lt;code>parser.cfg&lt;/code> to read the HTCondor-CE accounting
+records:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">[blah]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">enabled&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">dir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/var/lib/condor-ce/apel/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">filename_prefix&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">blah&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">[batch]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">enabled&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">dir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/var/lib/condor-ce/apel/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">filename_prefix&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">batch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">HTCondor&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure the APEL client via &lt;code>client.cfg&lt;/code> section &lt;code>[spec_updater]&lt;/code> to know
+the cluster specs:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>site_name&lt;/code> must equal your
+&lt;a href="../../../internal/configuration-database">EGI Configuration Database (GOCDB)&lt;/a>
+site name.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>manual_spec1&lt;/code> must equal the CE identifier, spec type and average spec
+value of the cluster. The format is:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">manual_spec1&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;lt;fqdn&amp;gt;:9619/&amp;lt;fqdn&amp;gt;-condor,&amp;lt;spec_type&amp;gt;,&amp;lt;spec_value&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For example, if the CE has the Fully Qualified Domain Name (FQDN)
+&lt;code>my-htcondor-ce.example.com&lt;/code> and resources averaging 12.5
+&lt;a href="https://w3.hepix.org/benchmarking.html">HEPSPEC&lt;/a> per core:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">manual_spec1&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">my-htcondor-ce.example.com:9619/my-htcondor-ce.example.com-condor,HEPSPEC,12.5&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Start and enable the &lt;code>condor-ce-apel.timer&lt;/code> unit.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="enabling-per-machine-performance-information">Enabling per-machine performance information&lt;/h2>
+&lt;p>By default, HTCondor-CE APEL accounting assumes that all machines in the cluster
+have comparable performance. If this is not the case, accounting accuracy can be
+improved by adding performance information per machine.&lt;/p>
+&lt;p>Performance information may be added to each HTCondor StartD. There are two
+separate ways to do so:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>An &lt;em>absolute&lt;/em> performance spec value can be assigned to the &lt;code>StartD&lt;/code>, similar
+to the average spec value assigned to the CE. HTCondor-CE APEL accounting
+weights resource usage by comparing the &lt;code>StartD&lt;/code> spec value to the average
+spec value.&lt;/p>
+&lt;p>In the &lt;code>StartD&lt;/code> configuration, define &lt;code>ApelSpecs&lt;/code> as a new-style classad
+mapping between a spec type and its value; multiple spec types are supported,
+but in practice &lt;code>HEPSPEC&lt;/code> is currently the only one needed. Also add
+&lt;code>ApelSpecs&lt;/code> to the attributes of the &lt;code>StartD&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The absolute performance per core on this StartD&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">ApelSpecs&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">[HEPSPEC=14.37; SI2K=2793]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">STARTD_ATTRS&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">$(STARTD_ATTRS) ApelSpecs&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>A &lt;em>relative&lt;/em> performance spec value can be assigned to the &lt;code>StartD&lt;/code>, as a
+factor to the average spec value assigned to the CE. HTCondor-CE APEL
+accounting directly weights resource usage by the relative StartD spec factor.&lt;/p>
+&lt;p>In the &lt;code>StartD&lt;/code> configuration, define &lt;code>ApelScaling&lt;/code> as a number; values above
+1 means the performance is above average. Also add &lt;code>ApelScaling&lt;/code> to the
+attributes of the &lt;code>StartD&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The relative performance per core on this StartD&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">ApelScaling&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">1.15&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">STARTD_ATTRS&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">$(STARTD_ATTRS) ApelScaling&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>If both &lt;code>ApelSpecs&lt;/code> and &lt;code>ApelScaling&lt;/code> are defined, &lt;code>ApelSpecs&lt;/code> takes precedence.&lt;/p></description></item><item><title>Providers: Changing the Site BDII</title><link>/providers/high-throughput-compute/changing-site-bdii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/changing-site-bdii/</guid><description>
 &lt;h2 id="moving-the-site-bdii-to-another-machine">Moving the Site BDII to another machine&lt;/h2>
 &lt;ol>
 &lt;li>

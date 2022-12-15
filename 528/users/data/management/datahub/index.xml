@@ -1,43 +1,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – EGI DataHub</title><link>/users/data/management/datahub/</link><description>Recent content in EGI DataHub on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/data/management/datahub/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: DataHub Use-Cases</title><link>/users/data/management/datahub/usecases/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/usecases/</guid><description>
 &lt;p>An overview of the use cases and possible deployment scenarios of the
 &lt;a href="https://datahub.egi.eu/">EGI DataHub&lt;/a>.&lt;/p>
-&lt;h2 id="transparent-data-access">Transparent data access&lt;/h2>
-&lt;p>&lt;img src="datahub-transparent-data-access.png" alt="image">&lt;/p>
-&lt;ul>
-&lt;li>Clients use one ore more providers to access data&lt;/li>
-&lt;li>Data can be accessed over multiple protocols&lt;/li>
-&lt;/ul>
-&lt;h2 id="federation-of-service-providers">Federation of service providers&lt;/h2>
+&lt;h2 id="build-data-spaces-for-communities">Build Data Spaces for Communities&lt;/h2>
+&lt;p>Users can access with their EGI Check-in credentials data available
+at one or more providers which are abstracting over heterogeneus
+backends.&lt;/p>
+&lt;p>Different data access interfaces are available (Web, REST, POSIX,
+CDMI).&lt;/p>
 &lt;p>&lt;img src="datahub-federation-of-service-providers.png" alt="image">&lt;/p>
-&lt;ul>
-&lt;li>Heterogeneous backend storage&lt;/li>
-&lt;li>Common interfaces (Web, REST, POSIX, CDMI)&lt;/li>
-&lt;li>Common AAI with Check-in&lt;/li>
-&lt;li>Discovery of Datasets in the EGI DataHub&lt;/li>
-&lt;/ul>
+&lt;h2 id="integrate-datahub-with-egi-notebooks">Integrate DataHub with EGI Notebooks&lt;/h2>
+&lt;p>EGI Notebooks has been integrated with DataHub in order to easily
+access and store files from the JupyterLab interface.&lt;/p>
+&lt;p>On the central EGI Notebooks instance, a predefined space open to
+all users and VO specific spaces are available.&lt;/p>
+&lt;p>&lt;img src="datahub-notebooks-integration.png" alt="image">&lt;/p>
+&lt;h2 id="make-your-data-fair">Make your data FAIR&lt;/h2>
+&lt;p>Users can assign metadata to files, create shares and mint DOIs.&lt;/p>
+&lt;p>The EGI DataHub offers an OAI-PMH interface which enables standard
+discoverability and access to datasets.&lt;/p>
+&lt;p>&lt;img src="datahub-publication-of-datasets.png" alt="image">&lt;/p>
 &lt;h2 id="smart-caching">Smart caching&lt;/h2>
-&lt;p>&lt;img src="datahub-smart-caching.png" alt="image">&lt;/p>
 &lt;ul>
 &lt;li>Site A hosts data and computing resources&lt;/li>
 &lt;li>Site B hosts only data&lt;/li>
 &lt;li>Site X uses data from A and B without pre-staging&lt;/li>
 &lt;li>Pre-staging can also be done using APIs&lt;/li>
-&lt;li>Data is accessed locally &amp;ldquo;à la&amp;rdquo; POSIX with FUSE&lt;/li>
+&lt;li>Data is accessed locally via POSIX with FUSE&lt;/li>
 &lt;/ul>
-&lt;h2 id="publication-of-datasets">Publication of datasets&lt;/h2>
-&lt;p>&lt;img src="datahub-publication-of-datasets.png" alt="image">&lt;/p>
-&lt;ul>
-&lt;li>PID minting&lt;/li>
-&lt;li>Publishing, discovery and access to datasets&lt;/li>
-&lt;/ul>
-&lt;h2 id="integrating-datahub-and-egi-notebooks">Integrating DataHub and EGI Notebooks&lt;/h2>
-&lt;p>&lt;img src="datahub-notebooks-integration.png" alt="image">&lt;/p></description></item><item><title>Users: DataHub Clients</title><link>/users/data/management/datahub/clients/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/clients/</guid><description>
+&lt;p>&lt;img src="datahub-smart-caching.png" alt="image">&lt;/p></description></item><item><title>Users: DataHub Clients</title><link>/users/data/management/datahub/clients/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/clients/</guid><description>
 &lt;p>&lt;a href="https://datahub.egi.eu/">EGI DataHub&lt;/a> spaces can be accessed via web interface,
 the &lt;code>oneclient&lt;/code> component or the &lt;a href="../api">API&lt;/a>.&lt;/p>
 &lt;p>The official documentation for &lt;code>oneclient&lt;/code> is hosted on the
 &lt;a href="https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html">Onedata homepage&lt;/a>,
-and a specific &lt;a href="../../../../tutorials/vm-datahub">tutorial&lt;/a> on how to install and use it
-from a Virtual Machine is also available.&lt;/p>
+and a specific &lt;a href="../../../../tutorials/vm-datahub">tutorial&lt;/a> on how to install
+and use it from a Virtual Machine is also available.&lt;/p>
 &lt;h2 id="using-the-web-interface">Using the web interface&lt;/h2>
 &lt;p>Using EGI Check-in it's possible to connect with your institute credentials.&lt;/p>
 &lt;p>&lt;img src="datahub-connect-check-in.png" alt="Selecting EGI to connect using EGI Check-in">&lt;/p>
@@ -54,16 +50,16 @@ metadata, managing space access) using the web browser.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
 In order to be able to access
-your spaces using &lt;code>oneclient&lt;/code> or the &lt;a href="../api">API&lt;/a>, it is required to
-generate an access token.
+your spaces using &lt;code>oneclient&lt;/code> or the &lt;a href="../api">API&lt;/a>, it is required to generate
+an access token.
 &lt;/div>
 &lt;p>Tokens have to be generated from the &lt;strong>EGI DataHub&lt;/strong> (Onezone) interface.&lt;/p>
 &lt;p>&lt;img src="datahub-space-token.png" alt="Managing access tokens from EGI DataHub">&lt;/p>
 &lt;p>The access tokens can be created and managed using the EGI DataHub web
 interface.&lt;/p>
 &lt;h3 id="environment-variables">Environment variables&lt;/h3>
-&lt;p>The sections below assume you have defined the following variables in
-your environment:&lt;/p>
+&lt;p>The sections below assume you have defined the following variables in your
+environment:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>ONECLIENT_ACCESS_TOKEN&lt;/code>: access token allowing to access &lt;strong>all&lt;/strong> the spaces&lt;/li>
 &lt;li>&lt;code>ONECLIENT_PROVIDER_HOST&lt;/code>: name or IP of the Oneprovider the client should
@@ -78,7 +74,7 @@ the container should run in &lt;strong>privileged&lt;/strong> mode.
 &lt;p>A quick and simple solution for testing is to install the client on demand in a
 container for a supported Operating System flavor (mainly various CentOS and
 Ubuntu releases).&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -it --privileged centos:7 /bin/bash
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -it --privileged centos:7 /bin/bash
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root@81dbd7e84438 /&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># curl -sS http://get.onedata.org/oneclient.sh | bash&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># (...)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Complete!
@@ -101,18 +97,19 @@ seen on the
 &lt;p>It&amp;rsquo;s possible to use the most recent version by specifying the &lt;code>latest&lt;/code> tag. We
 also recommend using the same version as shown on the Onezone and Oneprovider
 pages.&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run -it --privileged -e &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_ACCESS_TOKEN&lt;/span> -e &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_PROVIDER_HOST&lt;/span> onedata/oneclient:20.02.7
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ docker run -it --privileged &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_ACCESS_TOKEN&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_PROVIDER_HOST&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> onedata/oneclient:20.02.7
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Connecting to provider &lt;span style="color:#4e9a06">&amp;#39;plg-cyfronet-01.datahub.egi.eu:443&amp;#39;&lt;/span> using session ID: &lt;span style="color:#4e9a06">&amp;#39;4138963898952098752&amp;#39;&lt;/span>...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Getting configuration...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Oneclient has been successfully mounted in &lt;span style="color:#4e9a06">&amp;#39;/mnt/oneclient&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>Now the client will run in the background and the data will be available through
-&lt;strong>samba/CIFS&lt;/strong> or &lt;strong>nfs&lt;/strong> protocols:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now the client will run in the background and the data will be available through
+&lt;strong>samba/CIFS&lt;/strong> or &lt;strong>NFS&lt;/strong> protocols:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Identifying the IP of the container&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker inspect --format &lt;span style="color:#4e9a06">&amp;#34;{{ .NetworkSettings.IPAddress }}&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>docker ps -ql&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ docker inspect --format &lt;span style="color:#4e9a06">&amp;#34;{{ .NetworkSettings.IPAddress }}&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>docker ps -ql&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>172.17.0.2
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So the data can be accessed at&lt;/p>
 &lt;ul>
@@ -126,10 +123,12 @@ thus allowing to easily exchange files between a local directory and a Onedata
 space.&lt;/p>
 &lt;p>In order to do this we will open a &lt;code>bash&lt;/code> shell in the container then we will
 mount manually the Onedata spaces.&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run -it --privileged -e &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_ACCESS_TOKEN&lt;/span> -e &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_PROVIDER_HOST&lt;/span> -v &lt;span style="color:#000">$PWD&lt;/span>:/mnt/src --entrypoint bash onedata/oneclient:20.02.7
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ docker run -it --privileged &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_ACCESS_TOKEN&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_PROVIDER_HOST&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -v &lt;span style="color:#000">$PWD&lt;/span>:/mnt/src --entrypoint bash onedata/oneclient:20.02.7
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root@aca612a84fb4:/tmp# oneclient /mnt/oneclient
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Connecting to provider &lt;span style="color:#4e9a06">&amp;#39;plg-cyfronet-01.datahub.egi.eu:443&amp;#39;&lt;/span> using session ID: &lt;span style="color:#4e9a06">&amp;#39;1641165171427694510&amp;#39;&lt;/span>...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Getting configuration...
@@ -138,8 +137,7 @@ mount manually the Onedata spaces.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root@aca612a84fb4:/tmp# ls /mnt/src
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>Now it's possible to use the following mount points:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now it's possible to use the following mount points:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>/mnt/oneclient&lt;/code>: the Onedata spaces&lt;/li>
 &lt;li>&lt;code>/mnt/src&lt;/code>: the local directory (any absolute path could have been used
@@ -152,22 +150,170 @@ instead of &lt;code>$PWD&lt;/code> that points to the working directory)&lt;/li>
 &lt;li>&lt;code>ONECLIENT_PROVIDER_HOST&lt;/code>: name or IP of the Oneprovider the client should
 connect to.&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /tmp/space
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>oneclient /tmp/space
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ mkdir /tmp/space
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ oneclient /tmp/space
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="testing-oneclient-in-a-vagrant-box">Testing Oneclient in a Vagrant box&lt;/h2>
 &lt;p>It's possible to quickly test Oneclient using
 &lt;a href="https://www.vagrantup.com/">Vagrant&lt;/a>.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>vagrant init ubuntu/xenial64
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vagrant up
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vagrant ssh
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /tmp/space
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>oneclient /tmp/space
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ vagrant init ubuntu/xenial64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ vagrant up
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ vagrant ssh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ mkdir /tmp/space
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ oneclient /tmp/space
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: DataHub File Management</title><link>/users/data/management/datahub/file-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/file-management/</guid><description>
+&lt;h2 id="web-interface">Web interface&lt;/h2>
+&lt;p>In the &lt;a href="../">EGI DataHub&lt;/a>, all files are organized in spaces. The Web User
+interface allows for uploading new files as well as opening existing files.&lt;/p>
+&lt;p>In order to upload a file, open the directory in which the file should be placed
+and drag the file into the browser window:&lt;/p>
+&lt;p>&lt;img src="datahub-drag-file.png" alt="drag the file into the browser window">&lt;/p>
+&lt;p>Opening or downloading a file requires double clicking on the file in the file
+window.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Make sure that the pop-ups for this
+browser window are not blocked, and unblock them if necessary.
+&lt;/div>
+&lt;h2 id="direct-access-via-posix">Direct access via POSIX&lt;/h2>
+&lt;p>Files can also be accessed directly via the POSIX interface, using &lt;code>Oneclient&lt;/code>
+tool. Details on how to use are described in the
+&lt;a href="https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html">official Oneclient documentation&lt;/a>.&lt;/p>
+&lt;h2 id="cdmi-cloud-data-management-interface">CDMI (Cloud Data Management Interface)&lt;/h2>
+&lt;p>For more advanced use cases, files can be managed using the
+&lt;a href="http://www.snia.org/cdmi">CDMI&lt;/a> protocol, as described in details
+&lt;a href="https://onedata.org/#/home/documentation/doc/advanced/cdmi.html">in the Onedata CDMI documentation&lt;/a>.&lt;/p>
+&lt;h2 id="file-permissions">File Permissions&lt;/h2>
+&lt;p>You can control access to your data with a combination of:&lt;/p>
+&lt;ul>
+&lt;li>classical (POSIX) file permissions&lt;/li>
+&lt;li>Access Control Lists (ACL)&lt;/li>
+&lt;/ul>
+&lt;h2 id="posix-permissions">POSIX Permissions&lt;/h2>
+&lt;p>DataHub allows you to control access to your data in a POSIX-like fashion for
+users, group and others in terms of read, write and executable permissions.&lt;/p>
+&lt;p>An important nuance regarding file permissions is that all space members are
+treated as a virtual group which is the group owner of all files in the space.
+That means that whenever a file is accessed by a space member who is not the
+owner of the file, the group permissions are taken into consideration.
+Permissions for &amp;ldquo;others&amp;rdquo; are considered when accessing
+&lt;a href="https://onedata.org/#/home/documentation/doc/using_onedata/shares.html">shares&lt;/a>.&lt;/p>
+&lt;p>Consider the following example of a file&amp;rsquo;s POSIX permissions:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>rwx r-- ---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | guests
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | space members
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> owner user
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the above case, the creator of the file, its &lt;em>owner user&lt;/em>, has a full access
+to the file. All &lt;em>space members&lt;/em> have read access to the file. Other users,
+&lt;em>guests&lt;/em>, who try to access the file through a share will fail to do so as all
+permissions are declined for &amp;ldquo;others&amp;rdquo;.&lt;/p>
+&lt;p>In order to edit permissions:&lt;/p>
+&lt;ol>
+&lt;li>Click on &lt;strong>Data&lt;/strong> on the left menu bar&lt;/li>
+&lt;li>Select the Space you want to access and the &lt;strong>Data&lt;/strong> option&lt;/li>
+&lt;li>Select a &lt;strong>file&lt;/strong> or a &lt;strong>directory&lt;/strong> and right clicking on it&lt;/li>
+&lt;li>Click on the &lt;strong>Permissions&lt;/strong> option&lt;/li>
+&lt;li>Select &lt;strong>POSIX&lt;/strong> type of permissions radio button at the top&lt;/li>
+&lt;li>Enter privileges in octal form (e.g. 770)&lt;/li>
+&lt;li>Click &lt;strong>OK&lt;/strong> in order to save changes&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="datahub-posix.png" alt="DataHub POSIX">&lt;/p>
+&lt;h2 id="access-control-lists">Access Control Lists&lt;/h2>
+&lt;p>You can also setup permissions using more advanced Access Control Lists option
+to control permissions for individual users and groups.&lt;/p>
+&lt;p>In order to edit ACLs:&lt;/p>
+&lt;ol>
+&lt;li>Navigate to &lt;strong>Data&lt;/strong> tab&lt;/li>
+&lt;li>Select a &lt;strong>file&lt;/strong> or a &lt;strong>directory&lt;/strong> by right clicking on it&lt;/li>
+&lt;li>Click on the &lt;strong>Permissions&lt;/strong> option&lt;/li>
+&lt;li>Click on the &lt;strong>ACL&lt;/strong> radio button&lt;/li>
+&lt;li>Edit permissions by clicking on the appropriate &lt;strong>checkbox&lt;/strong>&lt;/li>
+&lt;li>Click &lt;strong>OK&lt;/strong> in order to save changes&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>Note, that access lists take precedence over POSIX permissions. If access list
+is set, POSIX are set to octal value of 000.&lt;/p>
+&lt;/blockquote>
+&lt;p>The order in which permissions take precedence is indicated with an arrow.&lt;/p>
+&lt;p>&lt;img src="datahub-acl.png" alt="DataHub ACL">&lt;/p>
+&lt;blockquote>
+&lt;p>To limit the risk of making data inaccessible to yourself, it is advisable to
+first add the required ACL if new ones are needed, and if necessary remove the
+ones not needed. While using ACLs there should be at least one active, or no
+user might be able to access the data. To regain the access the space owner
+would then need to modify the permissions.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="file-sharing">File sharing&lt;/h2>
+&lt;p>It is possible to share available DataHub data with other users or externally by
+generating a unique URL. This can be done, on the web interface, by selecting a
+directory or file, and right-clicking on it or clicking the three dots on the
+right like in the following screenshot and selecting &amp;ldquo;share&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="datahub-share-01.png" alt="select">&lt;/p>
+&lt;p>This will open a window allowing you to give a name to the share that you are
+about to create. This is shown in the following screenshot:&lt;/p>
+&lt;p>&lt;img src="datahub-share-02.png" alt="select">&lt;/p>
+&lt;p>By clicking on the &amp;ldquo;Create&amp;rdquo; button, the share is created and you are taken to
+the last window where the URL of the share can be copied for further use. This
+is shown in the following screenshot:&lt;/p>
+&lt;p>&lt;img src="datahub-share-03.png" alt="select">&lt;/p>
+&lt;p>To manage existing shares, in the space that is in use, it is sufficient to
+click the &amp;ldquo;Share&amp;rdquo; section, then a list of the existing ones is shown. By
+clicking on the three dots on the right of the share, you can rename, remove or
+copy the URL of the share. This is shown in the following screenshot:&lt;/p>
+&lt;p>&lt;img src="datahub-share-04.png" alt="select">&lt;/p>
+&lt;p>By clicking on the share itself, it is possible to edit additional attributes of
+the share like the description and the possibility to publish it as Open Data
+trough one of the supported handle service.&lt;/p>
+&lt;p>An API is also available for the
+&lt;a href="https://onedata.org/#/home/api/stable/onezone?anchor=tag/Share">creation and administration of the shares&lt;/a>.&lt;/p>
+&lt;h2 id="data-transfer-management">Data transfer management&lt;/h2>
+&lt;p>After uploading some data to DataHub, you can manage the replication and
+transfer to other DataHub providers supporting the same space. To do so, after
+uploading some files, select them, right click on the selection, and select
+&amp;ldquo;Data distribution&amp;rdquo;. This will open the following window:&lt;/p>
+&lt;p>&lt;img src="datahub-transfer-01.png" alt="select">&lt;/p>
+&lt;p>This will show the providers available for the space being used, and the current
+operation being performed if any. By clicking on the three dots, next to the
+provider, the following operation can be performed:&lt;/p>
+&lt;ul>
+&lt;li>Migrate the data if the provider selected contain the data. This will copy the
+data to the other provider, if not present, and remove them from the selected
+one.&lt;/li>
+&lt;li>Replicate the data, if the data is not present in the provider selected&lt;/li>
+&lt;li>Evict the data, if the data is present in the current provider, and al least
+in another one&lt;/li>
+&lt;/ul>
+&lt;h3 id="data-transfer-management-api">Data transfer management API&lt;/h3>
+&lt;p>The DataHub
+&lt;a href="https://onedata.org/#/home/api/stable/oneprovider?anchor=section/Overview/API-structure">REST API structure&lt;/a>
+gives an overview of the REST calls available. In particular the section on
+&lt;a href="https://onedata.org/#/home/api/stable/oneprovider?anchor=tag/Transfer">Transfer&lt;/a>
+focus on the transfer operation which include the operation previously described
+using the web interface and include option to schedule transfers, a feature
+which is not available trough the web interface. Furthermore the status of the
+transfer can also be checked from the section
+&lt;a href="https://onedata.org/#/home/api/stable/oneprovider?anchor=operation/get_transfer_status">Get transfer status&lt;/a>
+of the same page.&lt;/p>
+&lt;p>The &lt;code>/transfers/&lt;/code> operations provide basic transfer management functionality
+based on the ID of transfer returned by &lt;code>/transfers&lt;/code> &lt;code>[POST]&lt;/code> operation.&lt;/p>
+&lt;p>With the API it is possible to get information about a specific transfer by
+simply querying the following resource:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -X GET -H &lt;span style="color:#4e9a06">&amp;#34;X-Auth-Token: &lt;/span>&lt;span style="color:#000">$ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://&lt;span style="color:#000">$ONEPROVIDER_HOST&lt;/span>/api/v3/oneprovider/transfers/&amp;lt;TRANSFER_ID&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or request all transfers for given space:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -X GET -H &lt;span style="color:#4e9a06">&amp;#34;X-Auth-Token: &lt;/span>&lt;span style="color:#000">$ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://&lt;span style="color:#000">$ONEPROVIDER_HOST&lt;/span>/api/v3/oneprovider/spaces/&lt;span style="color:#000">$SPACE_ID&lt;/span>/transfers
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Each transfer can be cancelled using the HTTP DELETE method:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -X DELETE -H &lt;span style="color:#4e9a06">&amp;#34;X-Auth-Token: &lt;/span>&lt;span style="color:#000">$ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://&lt;span style="color:#000">$ONEPROVIDER_HOST&lt;/span>/api/v3/oneprovider/transfers/&amp;lt;TRANSFER_ID&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: DataHub API</title><link>/users/data/management/datahub/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/api/</guid><description>
 &lt;p>Most operations in EGI DataHub can be performed using one of the
 &lt;a href="https://onedata.org/#/home/api">OneData Application Programming Interfaces&lt;/a>

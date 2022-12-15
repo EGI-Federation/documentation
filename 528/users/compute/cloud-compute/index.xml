@@ -355,8 +355,62 @@ the following command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack --site &amp;lt;NAME_OF_SITE&amp;gt; --vo &amp;lt;NAME_OF_VO&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> token issue -c id -f value&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-ssh-oidc">Using ssh-oidc&lt;/h3>
-&lt;p>&lt;a href="https://github.com/EOSC-synergy/ssh-oidc">ssh-oidc&lt;/a> is a set of tools that
-allows ssh with OIDC.&lt;/p></description></item><item><title>Users: Virtual Machine Images</title><link>/users/compute/cloud-compute/images/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/images/</guid><description>
+&lt;p>&lt;a href="https://github.com/EOSC-synergy/ssh-oidc">ssh-oidc&lt;/a> is a collection of
+tools that enable ssh using OpenID-Connect access tokens.&lt;/p>
+&lt;p>Most of the individual tools work standalone, but they may be combined to
+establish complex installations with dynamic account provisioning in
+multi-VO contexts. All VOs may originate from different OIDC-Providers
+(OP) that use different attribute profiles, so that for example supporting
+EGI-Checkin (EOSC-AAI Attribute Profile) and Indigo IAM (WLCG Attribute
+Profile) at the same time is well supported.&lt;/p>
+&lt;p>The tools share these common design criteria:&lt;/p>
+&lt;ul>
+&lt;li>None of the ssh-client or ssh-server components will be modified&lt;/li>
+&lt;li>Do not store state whenever possible
+&lt;ul>
+&lt;li>Single exception: federated-user -&amp;gt; local-user mapping is stored in
+&lt;code>passwd&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Small components that work individually (one tool for one job)&lt;/li>
+&lt;/ul>
+&lt;h4 id="installation-client-side">Installation (client-side)&lt;/h4>
+&lt;p>&lt;code>ssh-oidc&lt;/code> does not require specific clients per se. OIDC Access-Tokens
+may simply be passed, when ssh prompts for the &amp;ldquo;Access Token&amp;rdquo;.
+Unfortunately, the most-popular ssh-client does not support access-tokens
+which are longer than 1024 bytes &lt;em>and&lt;/em> EGI uses tokens that are typically
+longer than 1024 bytes.&lt;/p>
+&lt;p>Hence, we suggest using &lt;a href="https://mccli.readthedocs.org">mccli&lt;/a> (&lt;code>pip install mccli&lt;/code>) on Unix/Mac. Windows users should use the putty
+&lt;code>oidc-plugin&lt;/code>, which ships with
+&lt;a href="http://repo.data.kit.edu/windows/oidc-agent/">oidc-agent-for-windows&lt;/a>.&lt;/p>
+&lt;p>For obtaining access tokens,
+&lt;a href="https://indigo-dc.gitbook.io/oidc-agent">oidc-agent&lt;/a> is probably the most
+convenient choice.&lt;/p>
+&lt;h4 id="installation-server-side">Installation (server-side)&lt;/h4>
+&lt;p>Within the federated cloud, there are multiple options for installing
+the ssh-oidc server-side components:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Via the &lt;a href="https://im.egi.eu">Infrastructure Manager (IM)&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>Choosing the &lt;code>virtual machine with extra HD&lt;/code>.&lt;/li>
+&lt;li>Add &lt;strong>motley-cue&lt;/strong> to enable SSH-OIDC.&lt;/li>
+&lt;li>Configure whether you want to allow other members of your VOs (or a
+specific VO) that should be authorised to use ssh.&lt;/li>
+&lt;/ul>
+&lt;p>The started VM will then allow ssh access with an OIDC Access Token.&lt;/p>
+&lt;p>The user that started the VM will be mapped to &lt;code>cloudadm&lt;/code> and be able to execute
+&lt;code>sudo&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Manual installation:&lt;/p>
+&lt;ul>
+&lt;li>Install &lt;code>motley-cue&lt;/code>, and &lt;code>pam-ssh-oidc&lt;/code> (or
+&lt;code>pam-ssh-oidc-autoconfig&lt;/code>). Details in the &lt;a href="https://github.com/EOSC-synergy/ssh-oidc/blob/master/installation.md">ssh-oid repository&lt;/a>.&lt;/li>
+&lt;li>Configure &lt;code>motley-cue&lt;/code>. See example in the &lt;a href="https://github.com/EOSC-synergy/ssh-oidc/blob/master/configuration.md">ssh-oidc repository&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol></description></item><item><title>Users: Virtual Machine Images</title><link>/users/compute/cloud-compute/images/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/images/</guid><description>
 &lt;p>Users of the EGI Cloud create Virtual Machines (VMs) on the providers. Those VMs
 are started from images: templates for the root volume of the running instances,
 i.e. operating system and applications available initially on a VM. The AppDB
@@ -824,7 +878,917 @@ contextualisation options of the wizard described above).&lt;/p>
 &lt;p>VMOps was presented in one of the &lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>
 in 2020. The &lt;a href="https://indico.egi.eu/event/5272/">indico page&lt;/a> contains more
 details and there is also a video recording available on
-&lt;a href="https://youtu.be/0YuuKA_4pSM">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/compute/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/faq/</guid><description>
+&lt;a href="https://youtu.be/0YuuKA_4pSM">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: AppDB REST API v1.0</title><link>/users/compute/cloud-compute/appdb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/appdb/</guid><description>
+&lt;p>This document is intended for developers who want to write applications that
+interact with the AppDB API over the web using HTTP commands following the
+&lt;a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST&lt;/a> paradigm.
+The API endpoint is located at &lt;code>http://appdb-pi.egi.eu&lt;/code> and it allows
+information retrieval and modification from third party applications without
+having to reside on the rich user interface of the AppDB portal. Thus one is
+given the opportunity to design one&amp;rsquo;s own frontends.&lt;/p>
+&lt;h2 id="getting-started">Getting started&lt;/h2>
+&lt;h3 id="operations">Operations&lt;/h3>
+&lt;p>Starting with version 1.0, the AppDB API features write access as well, by
+supporting HTTP verbs such as &lt;code>PUT&lt;/code>, &lt;code>POST&lt;/code>, and &lt;code>DELETE&lt;/code>. Verb mappings to data
+operations follow a
+&lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a> convention,
+as depicted in the following table:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Operation&lt;/th>
+&lt;th>HTTP Verb&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Create&lt;/td>
+&lt;td>&lt;code>PUT&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Read&lt;/td>
+&lt;td>&lt;code>GET&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Update&lt;/td>
+&lt;td>&lt;code>POST&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delete&lt;/td>
+&lt;td>&lt;code>DELETE&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The API also supports the Listing operation
+(&lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUDL&lt;/a>
+extension), by passing the parameter listmode=listing in the querystring when
+performing a &lt;code>GET&lt;/code> request. Please note that in order to simplify the access
+model, Update operations are always partial, meaning that properties of the
+resource that is being updated which are entirely missing from the
+representation, are ignored (i.e. their state in the backend does not change).
+Therefore, in order to unset/remove a property, one has to explicitly specify it
+as &lt;code>NULL&lt;/code>, provided that this is permitted. This is the reason why Create and
+Update &lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a>
+mappings are inverted with regards to what is usually accustomed. Finally, the
+API also supports the &lt;code>OPTIONS&lt;/code> HTTP verb, which returns a list of the
+operations that are permitted, in principle, for the resource in question. The
+base URI for this version of the RESTful API is&lt;/p>
+&lt;p>&lt;code>http://appdb-pi.egi.eu/rest/1.0/&lt;/code>&lt;/p>
+&lt;p>and requests must be followed by at least one resource name, which may be
+followed by one or more optional sub-resource names, separated by slashes, as in
+the examples given bellow:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>http://appdb-pi.egi.eu/rest/1.0/applications/&lt;/code>&lt;/li>
+&lt;li>&lt;code>http://appdb-pi.egi.eu/rest/1.0/applications/50/&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="response-types">Response types&lt;/h3>
+&lt;p>Because the API conforms to the REST paradigm, responses to all
+&lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a> operations
+are always &lt;a href="http://en.wikipedia.org/wiki/XML">XML&lt;/a> document representations of
+the resource in question. These documents are described by schema files which
+reside publicly in the web server. All the XML documents are enveloped in a
+common root element named &lt;code>appdb&lt;/code> with attributes that describe request status,
+such as paging, or errors. These attributes are:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>count&lt;/code> (number) : the count of the entries found in the applications
+database. In case of paging, where only a subset of the results gets returned,
+the attribute is left unaffected.&lt;/li>
+&lt;li>&lt;code>pagelength&lt;/code>, &lt;code>pageoffset&lt;/code> (numbers) : paging data in case the response is a
+list of resources. More information follows in the next section.&lt;/li>
+&lt;li>&lt;code>datatype&lt;/code> (string) : an identifier for the resource data that is enclosed in
+the response as defined in the XML schema.&lt;/li>
+&lt;li>&lt;code>type&lt;/code> (string) : the type of the response. Possible values are:
+&lt;ul>
+&lt;li>&lt;code>list&lt;/code>: A collection of references to entries in the applications&amp;rsquo; database.
+In order to obtain the referenced entry, a request should be made using the
+entry&amp;rsquo;s ID.&lt;/li>
+&lt;li>&lt;code>entry&lt;/code>: Detailed information about an entry in the applications&amp;rsquo; database.
+Paging is never used for this type of response.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>version&lt;/code> (number) : The version of the API that was accessed.&lt;/li>
+&lt;li>&lt;code>error&lt;/code> (string) : If an error occurs, this attribute will contain the error
+message.&lt;/li>
+&lt;li>&lt;code>errornum&lt;/code> (number) : If an error occurs, this attribute will contain the
+error number.&lt;/li>
+&lt;li>&lt;code>errordesc&lt;/code> (string) : If an error occurs, this attribute might contain a more
+detailed description about the error.&lt;/li>
+&lt;li>&lt;code>host&lt;/code>, &lt;code>apihost&lt;/code> (strings) : the URIs of the host that provided the data and
+API access, respectively.&lt;/li>
+&lt;/ul>
+&lt;h3 id="paging-and-filtering">Paging and Filtering&lt;/h3>
+&lt;p>The paging mechanism that the API provides, as far as Read/Listing operations
+are concerned, can be used through two query parameters (if allowed) and can be
+displayed in the attributes of the root element of the response XML document.
+The query parameters are:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>pagelength&lt;/code>: defines the count of entries to be displayed in each page.&lt;/li>
+&lt;li>&lt;code>pageoffset&lt;/code>: defines the position in the list of entries from which the page
+will start.&lt;/li>
+&lt;/ul>
+&lt;p>So if the client wants a list of 50 entries and wants to display the first 10,
+then the parameters should be set as page length=10 and page offset=0. To view
+the next 10 entries it should change the page offset to 10, for the next 10, it
+should set page length to 20, etc. One must remember that paging is not valid
+for all resources, as documented in the query parameters section in the API
+reference. A final note about paging is that if the client hasn&amp;rsquo;t explicitly
+enable paging, then the server will default to a preset paging value, in order
+to reduce load; this value can be retrieved from the relevant attributes of the
+response’s root node. If the paging parameters were set by the client but the
+page length exceeds that of the server&amp;rsquo;s default maximum value, then the later
+is used. Otherwise the page length set by the client will be used. Moreover,
+some of the API resources support filtering when doing Read/Listing operations;
+filter expressions may be passed in the querystring by assigning a value to the
+flt parameter, in order to retrieve just the subset of data that match certain
+criteria. These filter expressions are strings that may range from simple
+keywords to complex queries. They are search arguments which will be matched to
+results that are deemed relevant in the scope of the search target. These
+expressions can range from the simple and obvious space separated keyword list,
+to complex operator and field specific queries. In particular, filter
+expressions are composed of one or more keywords, optionally prefixed by
+operators and/or specifiers. The syntax in BNF is:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-BNF" data-lang="BNF">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">expression&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">keyword&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>*
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">keyword&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> [&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>][&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">specifier&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>:]some_string
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> [&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">context_operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>]&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">comparison_operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">context_operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">comparison_operator&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> = | * | ~ | $ | &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">[=] | &lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>[=] | +[=|*|~|$|&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">[=]|&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>[=]] | -[=|*|~|$|&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">[=]|&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>[=]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">specifier&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">related_entity&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>[.property_name] | property_name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">related_entity&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">::=&lt;/span> application | person | vo | middleware | country | [sub]discipline
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Rules are as follow:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Each keyword without an operator may partially match any property related to
+the filtered entity.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If a keyword is prefixed with the &lt;code>=&lt;/code> operator, then the keyword may exactly
+match any related property.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If a keyword is prefixed with the &lt;code>*&lt;/code> operator, then any part of a
+comma-separated set of keywords may exactly match any related property.&lt;/p>
+&lt;p>Please note that in this case, the keyword &lt;code>NULL&lt;/code> takes on the special meaning
+of a nil value&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If a keyword is prefixed with the &lt;code>&amp;lt;&lt;/code> or &lt;code>&amp;gt;&lt;/code> comparison operator, then the
+keyword may be greater than or lesser than any related property, respectively.&lt;/p>
+&lt;p>Optionally prefixing the &lt;code>=&lt;/code> operator as well, will make the comparison
+operator non-strict.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If a keyword is prefixed with the &lt;code>~&lt;/code> operator, then the keyword will be
+treated as a regular expression which may match any related property.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If a keyword is prefixed with the &lt;code>$&lt;/code> operator, then the keyword will be
+treated as a soundex phonem which may match any related property that sounds
+alike in the english language.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If a keyword is prefixed with the &lt;code>+&lt;/code> operator, then the keyword must match
+any related property.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If a keyword is prefixed with the &lt;code>-&lt;/code> operator, then the keyword must not
+match any related property.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If a specifier is present, then the keyword applies only to the specified
+property.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Specifiers refering to related entities may omit the property name, in which
+case the special property any will be implicit.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In keywords without specifiers, the special specifier any.any will be
+implicit.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>&amp;amp;&lt;/code> context operator makes an entity&amp;rsquo;s context private when present; this
+reduces results to the immediate neighborhoud of the target.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Consider the following examples when searching for software:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>cms atlas
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return a software item named &lt;code>CMSSW&lt;/code>, another named &lt;code>ATLAS&lt;/code>, another
+belonging to the &lt;code>atlas&lt;/code> VO, etc.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>cms atlas +greece
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return only the subset of the previous example&amp;rsquo;s results that actually
+mention Greece (e.g. in the description, or by having a researcher from Greece
+in their contact list, etc.)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>cms atlas -greece
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return only the subset of the first example&amp;rsquo;s results that do not mention
+Greece&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>vo:biomed
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software that belong to the VO&amp;rsquo;s that contain biomed in their name
+or description&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>=vo.name:biomed
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software that belong to the VO named &lt;code>biomed&lt;/code> only&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>&amp;lt;dateadded:2011
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software that have been registered before the year 2011&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>&amp;gt;=name:x
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software whose names begin with &lt;code>x&lt;/code>,&lt;code>y&lt;/code>, or &lt;code>z&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>person:&amp;#34;john doe&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software that has someone whose name contains &lt;code>john doe&lt;/code> listed as
+a contact&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>discipline:physics +tag:portal
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return software that are filed under disciplines that are related to
+physics, and that are tagged as portals&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>For a list of possible specifiers, you can look up the &lt;code>/filter/reflect&lt;/code>
+subresource of any searchable resource (e.g. &lt;code>/applications/filter/reflect&lt;/code>), or
+you can also try using any search box in the &lt;a href="http://appdb.egi.eu">portal&lt;/a>, and
+check out the autocompletion list.&lt;/p>
+&lt;h3 id="authenticated-access">Authenticated Access&lt;/h3>
+&lt;p>Some or all operations on certain resources may require authentication, as
+indicated in the API Reference section below. In order to perform authenticated
+API calls, users need to create an access token and provide the following
+parameters in the query string, or POST fields accordingly:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>accesstoken&lt;/code>: a valid access token. Registered users can generate access
+tokens from within the AppDB portal, under their profile preferences tab&lt;/li>
+&lt;/ul>
+&lt;p>Access tokens may be assigned netfilters, which will only allow authenticated
+access from specific sources. Defining netfilters for an access token is not
+required, but it is strongly suggested, since they can help safeguard its use.&lt;/p>
+&lt;h2 id="api-reference">API Reference&lt;/h2>
+&lt;p>Below you may find an exhaustive list of the resources v1.0 of the AppDB RESTful
+API offers. Details and documentation about a resource&amp;rsquo;s representation may be
+found as &lt;a href="http://en.wikipedia.org/wiki/XSD">XSD&lt;/a> annotations inside the
+appropriate schema file, under
+&lt;a href="http://appdb-pi.egi.eu/rest/1.0/schema">the schemata base resource&lt;/a>. Note that
+when performing &lt;code>POST&lt;/code> operations, the representation must be passed as a
+URL-encoded string in the query-string under the parameter &lt;code>data&lt;/code>, whereas when
+performing &lt;code>PUT&lt;/code> operations, the representation must be passed as a normal text
+stream. Representations passed to &lt;code>PUT&lt;/code>/&lt;code>POST&lt;/code> operations must be enclosed
+within an &lt;code>appdb:appdb&lt;/code> root element, with the appropriate
+&lt;a href="http://en.wikipedia.org/wiki/XML">XML&lt;/a> namespaces declared, the same way that
+responses are; nevertheless, this will be omitted in all following examples, in
+order to reduce clutter. Also note that since all Update (&lt;code>POST&lt;/code>) operations are
+partial, &lt;a href="http://en.wikipedia.org/wiki/XML">XML&lt;/a> elements that represent
+properties with a cardinality 0..* must be either&lt;/p>
+&lt;ul>
+&lt;li>omitted, in which case the present state in the backend is left untouched,&lt;/li>
+&lt;li>fully disclosed, in which case entities present in the backend but absent from
+the POSTed representation are deleted, and vice versa&lt;/li>
+&lt;li>explicitly declared NULL by passing a single instance of the element, with no
+node value (is of &lt;em>mixed&lt;/em> type) and the single attribute &lt;code>xsi:nil&lt;/code> with value
+&lt;code>true&lt;/code>, in which case all instances of the entity are erased from the backend.&lt;/li>
+&lt;/ul>
+&lt;p>This way, it is possible to perform modifications to a resource&amp;rsquo;s properties
+without having to re-declare all instances of other properties with 0..*
+cardinality, lest they were to be erased. Properties of 0..1 cardinality may
+also be declared &lt;code>NULL&lt;/code> in a similar fasion, in which case their value in the
+backed becomes undefined. Moreover, one should also note that the response of
+all &lt;code>PUT&lt;/code>/&lt;code>POST&lt;/code>/&lt;code>DELETE&lt;/code> operations equivalent to that of a &lt;code>GET&lt;/code> operation,
+with the state of the resource&lt;/p>
+&lt;ul>
+&lt;li>after the operation, in case of &lt;code>PUT&lt;/code>/&lt;code>POST&lt;/code>&lt;/li>
+&lt;li>before the operation, in case of &lt;code>DELETE&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>This way, it is possible - as well as advised - to differentiate the response
+with the input to such operations, in order to verify that the result is what
+was intended, since properties that are malformed or invalid will not break the
+operation, but rather be ignored, as long as the representation is well-formed
+(i.e. passes the &lt;a href="http://en.wikipedia.org/wiki/XSD">XSD&lt;/a> compilation).&lt;/p>
+&lt;h3 id="application-list">Application List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: application&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: yes&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>PUT&lt;/code> &lt;code>POST&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>List of all application entries registered in the database&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all applications that are listed under the Software Marketplace
+(i.e. Software)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all applications that are listed under the Cloud Marketplace (i.e.
+Virtual Appliances)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/applications?flt=country:Greece
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all applications that are related to Greece&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>POST https://appdb-pi.egi.eu/rest/1.0/applications?data={data}&amp;amp;username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{data}&lt;/code> is&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:description&amp;gt;&lt;/span>some new description&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:description&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will update application with ID &lt;code>123&lt;/code> setting it description to
+&lt;code>&amp;quot;some new description&amp;quot;&lt;/code> and leaving all other properties as-is.&lt;/p>
+&lt;p>Similarly, providing&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:subdiscipline&lt;/span> &lt;span style="color:#c4a000">xsi:nil=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>as &lt;code>{data}&lt;/code> will remove all subdiscipline associations from the application,
+and providing&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:discipline&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:discipline&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;5&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will replace the list of associated disciplines of the application with ID
+&lt;code>123&lt;/code>, with the disciplines with IDs &lt;code>1&lt;/code> and &lt;code>5&lt;/code> (&amp;ldquo;Life Sciences&amp;rdquo; and &amp;ldquo;Earth
+Sciences&amp;rdquo; respectively)&lt;/p>
+&lt;p>Note that providing &lt;code>{data}&lt;/code> as&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:discipline&lt;/span> &lt;span style="color:#c4a000">xsi:nil=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>to a &lt;code>POST&lt;/code> operation will result in an error, since discipline elements are
+not defined as nillable in the schemata, meaning that all application entries
+must have at least on discipline in their complete representation.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>echo {data} | PUT https://appdb-pi.egi.eu/rest/1.0/applications?username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>with &lt;code>{data}&lt;/code> defined as&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">tagPolicy=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:name&amp;gt;&lt;/span>MyGridApp&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:name&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:description&amp;gt;&lt;/span>my grid application&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:description&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:abstract/&amp;gt;&lt;/span>this is a grid application which performs task X&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:abstract&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:category&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span> &lt;span style="color:#c4a000">primary=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;true&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:category&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;2&amp;#34;&lt;/span> &lt;span style="color:#c4a000">primary=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;false&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;discipline:discipline&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:status&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;6&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;vo:vo&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;951&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:contact&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;189&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:contact&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;190&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:publication&lt;/span> &lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:title&amp;gt;&lt;/span>Evidence of Y using novel method X&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:title&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:url&amp;gt;&lt;/span>http://linkto.my.pub&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:url&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:conference&amp;gt;&lt;/span>X developments 2012&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:conference&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:proceedings/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:isbn&amp;gt;&lt;/span>ISSN 0000-0000&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:isbn&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:startPage&amp;gt;&lt;/span>592&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:startPage&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:endPage&amp;gt;&lt;/span>597&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:endPage&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:volume&amp;gt;&lt;/span>18&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:volume&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:publisher/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:journal/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:year&amp;gt;&lt;/span>2012&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:year&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:type&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>Full Paper&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:type&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:author&lt;/span> &lt;span style="color:#c4a000">main=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#c4a000">type=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;internal&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;person:person&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;189&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:author&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:author&lt;/span> &lt;span style="color:#c4a000">type=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;external&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;publication:extAuthor&amp;gt;&lt;/span>John Doe&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:extAuthor&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:author&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;/publication:publication&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;middleware:middleware&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>gLite&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/middleware:middleware&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;middleware:middleware&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;5&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>MyGrid&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/middleware:middleware&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:tag&amp;gt;&lt;/span>methodX&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:tag&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:tag&amp;gt;&lt;/span>countryZ&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:tag&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will add a new application to the database, with the following properties:&lt;/p>
+&lt;ul>
+&lt;li>belonging to two categories, of which the one with ID equal to 1 will be the
+primary&lt;/li>
+&lt;li>related to one discipline&lt;/li>
+&lt;li>with an application status with ID 6&lt;/li>
+&lt;li>listed as supported by the VO with ID 951&lt;/li>
+&lt;li>having two people in its scientific contact list, those with IDs 189 and 190&lt;/li>
+&lt;li>having one publication with two authors, one internal (i.e. registered with
+the AppDB) and one external (not registered, name-only entry)&lt;/li>
+&lt;li>listed as supported by two middlewares, and&lt;/li>
+&lt;li>with two tags applied&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="application-entry">Application Entry&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: application&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>DELETE&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Detailed description of a specific application entry&lt;/p>
+&lt;h3 id="moderated-application-list">Moderated Application List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/moderated&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: application&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: none&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>GET&lt;/code> &lt;code>PUT&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>List of applications that have been moderated some some particular reason, and
+thus hidden from public view until the issue gets resolved. Administrative
+access only.&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>echo {data} | PUT https://appdb-pi.egi.eu/rest/1.0/applications/moderated?username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{data}&lt;/code> is&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:application&lt;/span> &lt;span style="color:#c4a000">id=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:moderationReason&amp;gt;&lt;/span>copyright violation&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:moderationReason&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:application&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will moderate the application with ID &lt;code>123&lt;/code>, providing &lt;code>&amp;quot;copyright violation&amp;quot;&lt;/code>
+as the reason&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="application-publication-list">Application Publication List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/publications&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: publication&lt;/li>
+&lt;li>Schema: publication&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>PUT&lt;/code> &lt;code>POST&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>List of scientific publications related to an application entry. Publications
+can be individually managed from this resource (and its sub-resources), or
+collectively defined directly from &lt;code>application/{id}&lt;/code> resources&lt;/p>
+&lt;h3 id="application-publication-entry">Application Publication Entry&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/publications/{id}&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: publication&lt;/li>
+&lt;li>Schema: publication&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>DELETE&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Detailed description of a publication related to an application entry&lt;/p>
+&lt;h3 id="application-tag-list">Application Tag List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/tags&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: tag&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>PUT&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>List of tags applied to an application entry. Tags can be individually managed
+from this resource (and its sub-resources), or collectively defined directly
+from &lt;code>application/{id}&lt;/code> resources&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>echo {data} | PUT https://appdb-pi.egi.eu/rest/1.0/applications/123/tags?username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{data}&lt;/code> is&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;application:tag&amp;gt;&lt;/span>C++&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/application:tag&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will apply the tag &lt;code>C++&lt;/code> to the application with ID &lt;code>123&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="application-tag-entry">Application Tag Entry&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/tags/{id}&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: tag&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>DELETE&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Detailed description of a tag applied to an application&lt;/p>
+&lt;h3 id="related-application-list">Related Application List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/relatedapps&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: relatedapp&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>List of applications related to an application entry&lt;/p>
+&lt;h3 id="application-rating-report">Application Rating Report&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/ratingsreport&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: ratingreport&lt;/li>
+&lt;li>Schema: appratingreport&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>Report on all user ratings of an application entry&lt;/p>
+&lt;h3 id="external-application-rating-report">External Application Rating Report&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/ratingsreport/internal&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: ratingreport&lt;/li>
+&lt;li>Schema: appratingreport&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>Report on user ratings of an application entry made by registered users&lt;/p>
+&lt;h3 id="internal-application-rating-report">Internal Application Rating Report&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/ratingsreport/external&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: ratingreport&lt;/li>
+&lt;li>Schema: appratingreport&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>Report on user ratings of an application entry made by anonymous users&lt;/p>
+&lt;h3 id="application-rating-list">Application Rating List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/ratings&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: rating&lt;/li>
+&lt;li>Schema: apprating&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>List of user rating entries applied to an application entry&lt;/p>
+&lt;h3 id="application-rating-entry">Application Rating Entry&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/ratings/{id}&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: rating&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>Detailed description of a rating entry applied to an application entry&lt;/p>
+&lt;h3 id="application-state-history-list">Application State History List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/history&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: history&lt;/li>
+&lt;li>Schema: history&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: none&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>List of previous states of an application entry. Administrative access only.&lt;/p>
+&lt;h3 id="application-state-history-entry">Application State History Entry&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/{id}/history/{id}&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: history&lt;/li>
+&lt;li>Schema: history&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: none&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Detailed description of a previous state of an application entry. Administrative
+access only.&lt;/p>
+&lt;h3 id="bookmarked-application-list">Bookmarked Application List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>people/{id}/applications/bookmarked&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: application&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: yes&lt;/li>
+&lt;li>Public Operations: none&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>GET&lt;/code> &lt;code>PUT&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>List of application entries bookmarked by a user&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/people/123/applications/bookmarked?flt=discipline:chemistry
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all application entries with a discipline related to chemistry and
+which have been bookmarked by the user with ID &lt;code>123&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="bookmarked-application-entry">Bookmarked Application Entry&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>people/{id}/applications/bookmarked/{id}&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: application&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: none&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>DELETE&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Detailed description of an application entry bookmarked by a user&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>DELETE https://appdb-pi.egi.eu/rest/1.0/people/123/applications/bookmarked/111?username={username}&amp;amp;passwd={passwd}&amp;amp;apikey={apikey}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will delete the application with ID &lt;code>111&lt;/code> from the list of bookmarked
+applications of the user with ID &lt;code>123&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="editable-application-list">Editable Application List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>people/{id}/applications/editable&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: application&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: yes&lt;/li>
+&lt;li>Public Operations: none&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>List of application entries that a user has permission to edit&lt;/p>
+&lt;h3 id="owned-application-list">Owned Application List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>people/{id}/applications/owned&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: application&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: none&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>List of application entries that a user holds ownership of&lt;/p>
+&lt;h3 id="associated-application-list">Associated Application List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>people/{id}/applications/associated&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: application&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: none&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>List of application entries that a user is associated to, as a member of the
+application&amp;rsquo;s contact list&lt;/p>
+&lt;h3 id="people-list">People List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>people/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: person&lt;/li>
+&lt;li>Schema: person&lt;/li>
+&lt;li>Filtering: yes&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>PUT&lt;/code> &lt;code>POST&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>List of users (people) that have registered with the database&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/people/?flt={flt}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{flt}&lt;/code> is the URL-encoded representation of
+&lt;code>&amp;gt;=registeredon:2012-02 +=vo.name:SEE -country:Greece&lt;/code>&lt;/p>
+&lt;p>will return a list of all people who have registered after or in Feb 2012,
+have a relation to the VO named &lt;code>SEE&lt;/code> and that are not related with Greece&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="person-entry">Person Entry&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>people/{id}&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: person&lt;/li>
+&lt;li>Schema: person&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>DELETE&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Detailed description of a user entry&lt;/p>
+&lt;h3 id="regional-information-list">Regional Information List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>regional/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: regional&lt;/li>
+&lt;li>Schema: regional&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>List of countries, regions, and service providers participating in EGI and
+available to application and user entries&lt;/p>
+&lt;h3 id="application-category-list">Application Category List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/categories/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: category&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>List of category types available for application entries&lt;/p>
+&lt;h3 id="disciplinesubdiscipline-list">Discipline/Subdiscipline List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>disciplines/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: discipline&lt;/li>
+&lt;li>Schema: discipline&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>List of discipline and subdiscipline types available for application entries&lt;/p>
+&lt;h3 id="middleware-list">Middleware List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>middlewares/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: middleware&lt;/li>
+&lt;li>Schema: middleware&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>List of grid middlewares supported by application entries and VOs&lt;/p>
+&lt;h3 id="application-status-list">Application Status List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/statuses/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: status&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>List of status states available to application entries&lt;/p>
+&lt;h3 id="vo-list">VO List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>vos/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: vo&lt;/li>
+&lt;li>Schema: vo&lt;/li>
+&lt;li>Filtering: yes&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>List of VOs registered with the
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a> and
+available to application entries&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/vos/?flt={flt}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{flt}&lt;/code> is the URL-encoded representation of
+&lt;code>application:CMS +description:CERN&lt;/code>&lt;/p>
+&lt;p>will return the list of VOs that contain the word CERN in their description,
+and that are related to any application that mentions CMS in any of its
+properties&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="vo-entry">VO Entry&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>vos/{id}&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: vo&lt;/li>
+&lt;li>Schema: vo&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>Detailed description of a VO registered with the
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a> and
+available to application entries&lt;/p>
+&lt;h3 id="user-role-list">User Role List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>people/roles/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: role&lt;/li>
+&lt;li>Schema: person&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>List of user roles available, which define base user privileges&lt;/p>
+&lt;h3 id="available-tag-list">Available Tag List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/tags/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: tag&lt;/li>
+&lt;li>Schema: application&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>List of all tag entries that have been attached at least once on any application
+entry&lt;/p>
+&lt;h3 id="contact-type-list">Contact Type List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>people/contacttypes/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: tag&lt;/li>
+&lt;li>Schema: person&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>List of contact types available to user contact information entries&lt;/p>
+&lt;h3 id="application-filter-normalization">Application Filter Normalization&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/filter/normalize&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: filter&lt;/li>
+&lt;li>Schema: filter&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>Validates and normalizes a filter expression for application searches, defined
+by the querystring parameter &lt;code>flt&lt;/code>&lt;/p>
+&lt;h3 id="application-filter-reflection">Application Filter Reflection&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>applications/filter/reflect&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: filter&lt;/li>
+&lt;li>Schema: filter&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>Returns a nested representation of the filtering expression specifiers available
+to application searches&lt;/p>
+&lt;h3 id="person-filter-normalization">Person Filter Normalization&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>people/filter/normalize&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: filter&lt;/li>
+&lt;li>Schema: filter&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>Validates and normalizes a filter expression for user searches, defined by the
+querystring parameter &lt;code>flt&lt;/code>&lt;/p>
+&lt;h3 id="person-filter-reflection">Person Filter Reflection&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>people/filter/reflect&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: filter&lt;/li>
+&lt;li>Schema: filter&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>Returns a nested representation of the filtering expression specifiers available
+to user searches&lt;/p>
+&lt;h3 id="vo-filter-normalization">VO Filter Normalization&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>vos/filter/normalize&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: filter&lt;/li>
+&lt;li>Schema: filter&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>Validates and normalizes a filter expression for VO searches, defined by the
+querystring parameter &lt;code>flt&lt;/code>&lt;/p>
+&lt;h3 id="vo-filter-reflection">VO Filter Reflection&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>vos/filter/reflect&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: filter&lt;/li>
+&lt;li>Schema: filter&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;li>Authenticated Operations: none&lt;/li>
+&lt;/ul>
+&lt;p>Returns a nested representation of the filtering expression specifiers available
+to VO searches&lt;/p>
+&lt;h3 id="dissemination-log-list">Dissemination Log List&lt;/h3>
+&lt;ul>
+&lt;li>Resource: &lt;code>dissemination/&lt;/code>&lt;/li>
+&lt;li>Type: list&lt;/li>
+&lt;li>Datatype: dissemination&lt;/li>
+&lt;li>Schema: dissemination&lt;/li>
+&lt;li>Filtering: no&lt;/li>
+&lt;li>Public Operations: none&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>List of dissemination messages that have been dispatched to registered users.
+Administrative access only.&lt;/p>
+&lt;h2 id="dissemination-log-entry">Dissemination Log Entry&lt;/h2>
+&lt;ul>
+&lt;li>Resource: &lt;code>dissemination/{id}&lt;/code>&lt;/li>
+&lt;li>Type: entry&lt;/li>
+&lt;li>Datatype: dissemination&lt;/li>
+&lt;li>Schema: dissemination&lt;/li>
+&lt;li>Filtering: N/A&lt;/li>
+&lt;li>Public Operations: none&lt;/li>
+&lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Detailed description of a dissemination message that has been dispatched to
+registered users. Administrative access only.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/compute/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/faq/</guid><description>
 &lt;h2 id="basics">Basics&lt;/h2>
 &lt;h3 id="how-can-i-get-access-to-the-cloud-compute-service">How can I get access to the cloud compute service?&lt;/h3>
 &lt;p>There is a VO available for 6 months piloting activities that any researcher in
