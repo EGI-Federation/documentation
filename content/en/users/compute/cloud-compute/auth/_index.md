@@ -156,7 +156,10 @@ tools that enable ssh using OpenID-Connect access tokens.
 
 Most of the individual tools work standalone, but they may be combined to
 establish complex installations with dynamic account provisioning in
-multi-OP and multi-VO contexts.
+multi-VO contexts. All VOs may originate from different OIDC-Providers
+(OP) that use different attribute profiles, so that for example supporting
+EGI-Checkin (EOSC-AAI Attribute Profile) and Indigo IAM (WLCG Attribute
+Profile) at the same time is well supported.
 
 The tools share these common design criteria:
 
@@ -176,10 +179,10 @@ longer than 1024 bytes.
 
 Hence, we suggest using [mccli](https://mccli.readthedocs.org) (`pip
 install mccli`) on Unix/Mac. Windows users should use the putty
-`oidc-plugin`, which conveniently ships with
+`oidc-plugin`, which ships with
 [oidc-agent-for-windows](http://repo.data.kit.edu/windows/oidc-agent/).
 
-For conveniently obtaining access tokens,
+For obtaining access tokens,
 [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent) is probably the most
 convenient choice.
 
