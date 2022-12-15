@@ -359,7 +359,10 @@ the following command:&lt;/p>
 tools that enable ssh using OpenID-Connect access tokens.&lt;/p>
 &lt;p>Most of the individual tools work standalone, but they may be combined to
 establish complex installations with dynamic account provisioning in
-multi-OP and multi-VO contexts.&lt;/p>
+multi-VO contexts. All VOs may originate from different OIDC-Providers
+(OP) that use different attribute profiles, so that for example supporting
+EGI-Checkin (EOSC-AAI Attribute Profile) and Indigo IAM (WLCG Attribute
+Profile) at the same time is well supported.&lt;/p>
 &lt;p>The tools share these common design criteria:&lt;/p>
 &lt;ul>
 &lt;li>None of the ssh-client or ssh-server components will be modified&lt;/li>
@@ -378,9 +381,9 @@ Unfortunately, the most-popular ssh-client does not support access-tokens
 which are longer than 1024 bytes &lt;em>and&lt;/em> EGI uses tokens that are typically
 longer than 1024 bytes.&lt;/p>
 &lt;p>Hence, we suggest using &lt;a href="https://mccli.readthedocs.org">mccli&lt;/a> (&lt;code>pip install mccli&lt;/code>) on Unix/Mac. Windows users should use the putty
-&lt;code>oidc-plugin&lt;/code>, which conveniently ships with
+&lt;code>oidc-plugin&lt;/code>, which ships with
 &lt;a href="http://repo.data.kit.edu/windows/oidc-agent/">oidc-agent-for-windows&lt;/a>.&lt;/p>
-&lt;p>For conveniently obtaining access tokens,
+&lt;p>For obtaining access tokens,
 &lt;a href="https://indigo-dc.gitbook.io/oidc-agent">oidc-agent&lt;/a> is probably the most
 convenient choice.&lt;/p>
 &lt;h4 id="installation-server-side">Installation (server-side)&lt;/h4>
