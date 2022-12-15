@@ -88,7 +88,7 @@ the system. The code repository can be hosted on popular git hosting platforms
 like GitHub and GitLab and can also be referenced with a DOI from Zenodo,
 FigShare or Dataverse. You can learn more on the configuration of your
 repository with Replay at the
-[Binder user documentation](https://mybinder.readthedocs.io/en/latest/)
+[Binder user documentation](https://mybinder.readthedocs.io/).
 
 You can start by forking the
 [EGI-Federation/binder-example GitHub repository](https://github.com/EGI-Federation/binder-example)
