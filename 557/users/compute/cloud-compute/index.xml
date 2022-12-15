@@ -404,7 +404,7 @@ specific VO) that should be authorised to use ssh.&lt;/li>
 &lt;ul>
 &lt;li>Install &lt;code>motley-cue&lt;/code>, and &lt;code>pam-ssh-oidc&lt;/code> (or
 &lt;code>pam-ssh-oidc-autoconfig&lt;/code>). Details in the &lt;a href="https://github.com/EOSC-synergy/ssh-oidc/blob/master/installation.md">ssh-oid repository&lt;/a>.&lt;/li>
-&lt;li>Configure &lt;code>motley-cue&lt;/code>. See example in the [ssh-oidc repository]https://github.com/EOSC-synergy/ssh-oidc/blob/master/configuration.md).&lt;/li>
+&lt;li>Configure &lt;code>motley-cue&lt;/code>. See example in the &lt;a href="https://github.com/EOSC-synergy/ssh-oidc/blob/master/configuration.md">ssh-oidc repository&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ol></description></item><item><title>Users: Virtual Machine Images</title><link>/users/compute/cloud-compute/images/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/images/</guid><description>
