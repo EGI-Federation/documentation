@@ -12,39 +12,42 @@ description: >
 An overview of the use cases and possible deployment scenarios of the
 [EGI DataHub](https://datahub.egi.eu/).
 
-## Transparent data access
+## Build Data Spaces for Communities
 
-![image](datahub-transparent-data-access.png)
+Users can access with their EGI Check-in credentials data available
+at one or more providers which are abstracting over heterogeneus
+backends.
 
-- Clients use one ore more providers to access data
-- Data can be accessed over multiple protocols
-
-## Federation of service providers
+Different data access interfaces are available (Web, REST, POSIX,
+CDMI).
 
 ![image](datahub-federation-of-service-providers.png)
 
-- Heterogeneous backend storage
-- Common interfaces (Web, REST, POSIX, CDMI)
-- Common AAI with Check-in
-- Discovery of Datasets in the EGI DataHub
+## Integrate DataHub with EGI Notebooks
+
+EGI Notebooks has been integrated with DataHub in order to easily
+access and store files from the JupyterLab interface.
+
+On the central EGI Notebooks instance, a predefined space open to
+all users and VO specific spaces are available.
+
+![image](datahub-notebooks-integration.png)
+
+## Make your data FAIR
+
+Users can assign metadata to files, create shares and mint DOIs.
+
+The EGI DataHub offers an OAI-PMH interface which enables standard
+discoverability and access to datasets.
+
+![image](datahub-publication-of-datasets.png)
 
 ## Smart caching
-
-![image](datahub-smart-caching.png)
 
 - Site A hosts data and computing resources
 - Site B hosts only data
 - Site X uses data from A and B without pre-staging
 - Pre-staging can also be done using APIs
-- Data is accessed locally "à la" POSIX with FUSE
+- Data is accessed locally via POSIX with FUSE
 
-## Publication of datasets
-
-![image](datahub-publication-of-datasets.png)
-
-- PID minting
-- Publishing, discovery and access to datasets
-
-## Integrating DataHub and EGI Notebooks
-
-![image](datahub-notebooks-integration.png)
+![image](datahub-smart-caching.png)

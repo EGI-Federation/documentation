@@ -106,14 +106,13 @@ There are several options to access the service:
    [EGI Workload Manager web portal](https://dirac.egi.eu/DIRAC/) to access the
    service, or use [DIRAC Client](#the-dirac-client-tool).
 1. Individual researchers who want to do some number crunching for a limited
-   period of time, with a reasonable (not too high) number of CPUs > can use the
+   period of time, with a reasonable (not too high) number of CPUs can use the
    catch-all VO resource pool (`vo.access.egi.eu`). Submit a request through the
-   EGI Marketplace selecting:\
-   `Compute` > `Workload Manager` from the top menu.
+   [EOSC Marketplace](https://marketplace.eosc-portal.eu/services/egi-workload-manager).
 1. Representatives of a community who want to try DIRAC and EGI > Same as #2.
 1. Representative of a community who wants to request DIRAC for the community's
-   own resource pool > Submit a request through the EGI Marketplace selecting\
-   `Compute` > `Workload Manager` from the top menu.
+   own resource pool > Submit a request through the
+   [EOSC Marketplace](https://marketplace.eosc-portal.eu/services/egi-workload-manager).
 
 ## Getting Started
 
@@ -158,7 +157,7 @@ Please use the command below on any Unix machine and send its output to\
 `dirac-support` `<AT>` `mailman.egi.eu`
 
 ```shell
-openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
+$ openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
 ```
 
 ### The EGI Workload Manager Web Portal
@@ -240,14 +239,14 @@ The easiest way to install the client is via
 installed in your machine, install the DIRAC CLI as follows:
 
 ```shell
-docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
+$ docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
 ```
 
 Once the client software is installed, it should be configured in order to
 access the EGI Workload Manager service:
 
 ```shell
-source /opt/dirac/bashrc
+$ source /opt/dirac/bashrc
 ```
 
 To proceed further a temporary proxy of the user certificate should be created.
@@ -341,6 +340,15 @@ username     : jdoe
 properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 ```
 
+#### Access the client via CVMFS
+
+The DIRAC client may be accessed via CVMFS with the following two command lines:
+
+```shell
+$ source /cvmfs/dirac.egi.eu/dirac/bashrc_egi_dev
+$ dirac-login --issuer=https://dirac.egi.eu/auth
+```
+
 #### Managing simple jobs
 
 <!-- markdownlint-disable line-length -->
@@ -375,7 +383,7 @@ StdOutput = "StdOut"; StdError = "StdErr"; OutputSandbox = {"StdOut","StdErr"};
 Submit the job:
 
 ```shell
-dirac-wms-job-submit test.jdl JobID = 53755998
+$ dirac-wms-job-submit test.jdl JobID = 53755998
 ```
 
 Check the job status:
@@ -427,7 +435,7 @@ After creation of JDL file the next step is to submit the job, using the
 command:
 
 ```shell
-dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
+$ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 ```
 
 #### List of supported VOs
@@ -447,7 +455,7 @@ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
   [Advanced Job Management](https://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html)
 - [Past tutorials](https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11)
 
-#### Technical Support
+## Technical Support
 
 - DIRAC User Guide:
   [https://dirac.readthedocs.io/en/latest/UserGuide/](https://dirac.readthedocs.io/en/latest/UserGuide/)

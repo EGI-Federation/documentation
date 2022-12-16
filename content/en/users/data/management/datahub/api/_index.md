@@ -1,7 +1,7 @@
 ---
 title: DataHub API
 linkTitle: API
-weight: 30
+weight: 40
 type: docs
 aliases:
   - /users/datahub/api

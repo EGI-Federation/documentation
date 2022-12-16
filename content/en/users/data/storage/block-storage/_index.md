@@ -739,14 +739,17 @@ $ umount /storage1
 $ cryptsetup close storage1
 ```
 
-For the following uses of the persistent disk, there will be no need to perform
+For subsequent uses of the persistent disk, there will be no need to perform
 all these operations, only the following are necessary:
 
 ```shell
 $ cryptsetup luksOpen /dev/vdb storage1
-$ mkdir /storage1
+$ mkdir -p /storage1
 $ mount -t ext4 /dev/mapper/storage1 /storage1
 ```
+
+Note that directory `/storage1` will be created only if it does not already
+exist.
 
 ## Access via EGI Data Transfer
 

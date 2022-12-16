@@ -5,7 +5,7 @@ weight: 20
 type: docs
 aliases:
   - /users/datahub/clients
-description: > 
+description: >
   Clients for accessing data EGI DataHub
 ---
 
@@ -14,8 +14,8 @@ the `oneclient` component or the [API](../api).
 
 The official documentation for `oneclient` is hosted on the
 [Onedata homepage](https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html),
-and a specific [tutorial](../../../../tutorials/vm-datahub) on how to install and use it
-from a Virtual Machine is also available.
+and a specific [tutorial](../../../../tutorials/vm-datahub) on how to install
+and use it from a Virtual Machine is also available.
 
 ## Using the web interface
 
@@ -41,8 +41,8 @@ metadata, managing space access) using the web browser.
 ## Generating tokens for using Oneclient or APIs
 
 {{% alert title="Important" color="warning" %}} In order to be able to access
-your spaces using `oneclient` or the [API](../api), it is required to
-generate an access token. {{% /alert %}}
+your spaces using `oneclient` or the [API](../api), it is required to generate
+an access token. {{% /alert %}}
 
 Tokens have to be generated from the **EGI DataHub** (Onezone) interface.
 
@@ -53,8 +53,8 @@ interface.
 
 ### Environment variables
 
-The sections below assume you have defined the following variables in
-your environment:
+The sections below assume you have defined the following variables in your
+environment:
 
 - `ONECLIENT_ACCESS_TOKEN`: access token allowing to access **all** the spaces
 - `ONECLIENT_PROVIDER_HOST`: name or IP of the Oneprovider the client should
@@ -70,7 +70,7 @@ container for a supported Operating System flavor (mainly various CentOS and
 Ubuntu releases).
 
 ```shell
-docker run -it --privileged centos:7 /bin/bash
+$ docker run -it --privileged centos:7 /bin/bash
 root@81dbd7e84438 /]# curl -sS  http://get.onedata.org/oneclient.sh | bash
 # (...)
 Complete!
@@ -100,23 +100,24 @@ It's possible to use the most recent version by specifying the `latest` tag. We
 also recommend using the same version as shown on the Onezone and Oneprovider
 pages.
 
-<!-- markdownlint-disable line-length -->
 ```shell
-export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
-export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
-docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST onedata/oneclient:20.02.7
+$ export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
+$ export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
+$ docker run -it --privileged \
+    -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN \
+    -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST \
+    onedata/oneclient:20.02.7
 Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '4138963898952098752'...
 Getting configuration...
 Oneclient has been successfully mounted in '/mnt/oneclient'
 ```
-<!-- markdownlint-enable line-length -->
 
 Now the client will run in the background and the data will be available through
-**samba/CIFS** or **nfs** protocols:
+**samba/CIFS** or **NFS** protocols:
 
 ```shell
 # Identifying the IP of the container
-docker inspect --format "{{ .NetworkSettings.IPAddress }}" $(docker ps -ql)
+$ docker inspect --format "{{ .NetworkSettings.IPAddress }}" $(docker ps -ql)
 172.17.0.2
 ```
 
@@ -135,11 +136,13 @@ space.
 In order to do this we will open a `bash` shell in the container then we will
 mount manually the Onedata spaces.
 
-<!-- markdownlint-disable line-length -->
 ```shell
-export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
-export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
-docker run -it --privileged -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:20.02.7
+$ export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
+$ export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
+$ docker run -it --privileged \
+    -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN \
+    -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST \
+    -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:20.02.7
 root@aca612a84fb4:/tmp# oneclient /mnt/oneclient
 Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '1641165171427694510'...
 Getting configuration...
@@ -149,7 +152,6 @@ root@aca612a84fb4:/tmp# ls /mnt/oneclient
 root@aca612a84fb4:/tmp# ls /mnt/src
 (...)
 ```
-<!-- markdownlint-enable line-length -->
 
 Now it\'s possible to use the following mount points:
 
@@ -166,11 +168,11 @@ The following variables have to be exported:
   connect to.
 
 ```shell
-curl -sS http://get.onedata.org/oneclient.sh | bash
-export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
-export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
-mkdir /tmp/space
-oneclient /tmp/space
+$ curl -sS http://get.onedata.org/oneclient.sh | bash
+$ export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
+$ export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
+$ mkdir /tmp/space
+$ oneclient /tmp/space
 ```
 
 ## Testing Oneclient in a Vagrant box
@@ -179,12 +181,12 @@ It\'s possible to quickly test Oneclient using
 [Vagrant](https://www.vagrantup.com/).
 
 ```shell
-vagrant init ubuntu/xenial64
-vagrant up
-vagrant ssh
-curl -sS http://get.onedata.org/oneclient.sh | bash
-export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
-export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
-mkdir /tmp/space
-oneclient /tmp/space
+$ vagrant init ubuntu/xenial64
+$ vagrant up
+$ vagrant ssh
+$ curl -sS http://get.onedata.org/oneclient.sh | bash
+$ export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
+$ export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
+$ mkdir /tmp/space
+$ oneclient /tmp/space
 ```
