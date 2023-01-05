@@ -46,3 +46,9 @@ Edit SSM's `sender.cfg` to have `path:/var/spool/dcache/star` so that it can
 find and publish the records dcache generated.
 
 ### Accounting script for DPM
+
+
+
+### Accounting script for EOS
+
+jgfkhfkhg
