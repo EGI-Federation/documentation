@@ -47,7 +47,21 @@ find and publish the records dcache generated.
 
 ### Accounting script for DPM
 
+{{% alert title="Important" color="warning" %}} DPM/DMLite is supported until June
+2023.
+All of the RCs providing DPM have been invited to move to a different storage
+solution.
+A decommission and migration campaign was started at this purpose.
+{{% /alert %}}
 
+You need to install DPM-DMLITE 1.8.7 or higher.
+The [Storage Accounting](https://twiki.cern.ch/twiki/bin/view/DPM/DpmSetupPuppetInstallation#DPM_Accounting)
+is implemented as a puppet module that adds cron configuration to execute the
+script daily.
+
+Please be sure to have installed the
+[star-accounting.py script](https://gitlab.cern.ch/lcgdm/dmlite/-/blob/master/scripts/StAR-accounting/star-accounting.py)
+v1.0.4 at least.
 
 ### Accounting script for EOS
 
