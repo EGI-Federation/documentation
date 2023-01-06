@@ -8,9 +8,10 @@ description: >
 
 ## What is it?
 
-EGI Accounting **tracks and reports usage of EGI services**, offering insights
-and control over resource consumption. EGI Federation members can use it to
-account for the resource usage of their own services.
+[EGI Accounting](./service-information) **tracks and reports usage of EGI
+services**, offering insights and control over resource consumption. EGI
+Federation members can use it to account for the resource usage of their own
+services.
 
 EGI Accounting consists of two main components:
 
@@ -21,8 +22,8 @@ EGI Accounting consists of two main components:
 
 ## Publishing Accounting
 
-- Publishing
-  [APEL Accounting for HTCondor-CE](../../providers/high-throughput-compute/htcondor-ce-apel).
+- [HTCondor-CE Accounting](../../providers/high-throughput-compute/htcondor-ce-accounting).
+- [Storage Accounting](../../providers/high-throughput-compute/storage-accounting).
 
 {{% alert title="Note" color="info" %}} Documentation for the Accounting
 Repository is also available in the
