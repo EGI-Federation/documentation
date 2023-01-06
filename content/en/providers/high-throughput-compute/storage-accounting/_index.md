@@ -22,6 +22,10 @@ StAR records via the EGI Messaging Service to
 
 ### Accounting script for dCache
 
+{{% alert title="Note" color="info" %}} Find dCache documentation on the
+[dCache website](https://www.dcache.org/documentation/)
+{{% /alert %}}
+
 The configuration follows the same configuration system that is common to all
 dCache components. As with other dCache components, the default values are
 exposed and documented.
