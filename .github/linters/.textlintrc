@@ -1,11 +1,15 @@
 {
-  "filters": {
-    "comments": true
-  },
   "rules": {
     "terminology": {
       "exclude": [
-        "Node(?:js)?",
+        "Node(?:js)?"
+      ]
+    }
+  },
+  "filters": {
+    "comments": true,
+    "allowlist": {
+      "allow": [
         "postcss-cli"
       ]
     }
