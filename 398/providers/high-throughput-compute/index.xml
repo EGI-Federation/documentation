@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – High-Throughput Compute</title><link>/providers/high-throughput-compute/</link><description>Recent content in High-Throughput Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: APEL Accounting for HTCondor-CE</title><link>/providers/high-throughput-compute/htcondor-ce-apel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/htcondor-ce-apel/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – High-Throughput Compute</title><link>/providers/high-throughput-compute/</link><description>Recent content in High-Throughput Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: HTCondor-CE Accounting</title><link>/providers/high-throughput-compute/htcondor-ce-accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/htcondor-ce-accounting/</guid><description>
 &lt;p>&lt;a href="https://htcondor.com/htcondor-ce/">HTCondor-CE&lt;/a> can be configured to
 automatically publish accounting data to
 &lt;a href="../../../internal/accounting">EGI Accounting service&lt;/a>, if compute resources are
@@ -89,7 +89,106 @@ attributes of the &lt;code>StartD&lt;/code>.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">STARTD_ATTRS&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">$(STARTD_ATTRS) ApelScaling&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ul>
-&lt;p>If both &lt;code>ApelSpecs&lt;/code> and &lt;code>ApelScaling&lt;/code> are defined, &lt;code>ApelSpecs&lt;/code> takes precedence.&lt;/p></description></item><item><title>Providers: Changing the Site BDII</title><link>/providers/high-throughput-compute/changing-site-bdii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/changing-site-bdii/</guid><description>
+&lt;p>If both &lt;code>ApelSpecs&lt;/code> and &lt;code>ApelScaling&lt;/code> are defined, &lt;code>ApelSpecs&lt;/code> takes precedence.&lt;/p></description></item><item><title>Providers: Storage accounting</title><link>/providers/high-throughput-compute/storage-accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/storage-accounting/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Storage space usage accounting is based on the StAR (Storage Accounting Record)
+developed during the EMI project in conjunction with the OGF Usage Record Work
+Group (UR-WG). The format is documented
+&lt;a href="http://cds.cern.ch/record/1452920/files/GFD.201.pdf">in GFD-I.201&lt;/a>.&lt;/p>
+&lt;p>EMI delivered StAR solutions for dCache and DPM in EMI-3. In both cases the
+storage service queries its database at a site and extracts data to populate
+StAR usage records. The site then uses SSM as a transport method to send the
+StAR records via the EGI Messaging Service to
+&lt;a href="../../../internal/accounting">EGI Accounting&lt;/a> repository.&lt;/p>
+&lt;h2 id="deployment-instructions">Deployment instructions&lt;/h2>
+&lt;h3 id="accounting-script-for-dcache">Accounting script for dCache&lt;/h3>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Find dCache documentation on the
+&lt;a href="https://www.dcache.org/documentation/">dCache site&lt;/a>.
+&lt;/div>
+&lt;p>The configuration follows the same configuration system that is common to all
+dCache components. As with other dCache components, the default values are
+exposed and documented.&lt;/p>
+&lt;p>In general, a site should review the &lt;code>star.properties&lt;/code> file (in the standard
+location for configuration defaults) and update their site-specific
+configuration, if necessary.&lt;/p>
+&lt;p>Information on how to set the &lt;code>star.properties&lt;/code> file can be found
+&lt;a href="https://github.com/dCache/dcache/blob/master/skel/share/defaults/star.properties">in the dCache repository&lt;/a>.&lt;/p>
+&lt;p>Map &lt;code>local groupid&lt;/code> to the VO names as appropriate, for example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">star.gid-mapping&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">12345=/atlas,12346=/cms,12347=/lhcb (EXAMPLE)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Running the &lt;code>dcache-star&lt;/code> command generates records according to that site&amp;rsquo;s
+configuration.&lt;/p>
+&lt;p>Edit SSM&amp;rsquo;s &lt;code>sender.cfg&lt;/code> to have &lt;code>path:/var/spool/dcache/star&lt;/code> so that it can
+find and publish the records dCache generated.&lt;/p>
+&lt;h3 id="accounting-script-for-dpm">Accounting script for DPM&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+DPM/DMLite is supported until
+June 2023. All the RCs providing DPM have been invited to move to a different
+storage solution. A decommissioning and migration campaign was started for this
+purpose.
+&lt;/div>
+&lt;p>You need to install DPM-DMLITE 1.8.7 or higher. The
+&lt;a href="https://twiki.cern.ch/twiki/bin/view/DPM/DpmSetupPuppetInstallation#DPM_Accounting">Storage Accounting&lt;/a>
+is implemented as a puppet module that adds cron configuration to execute the
+script daily.&lt;/p>
+&lt;p>Please be sure to have installed the
+&lt;a href="https://gitlab.cern.ch/lcgdm/dmlite/-/blob/master/scripts/StAR-accounting/star-accounting.py">star-accounting.py script&lt;/a>
+v1.0.4 at least.&lt;/p>
+&lt;h3 id="accounting-script-for-eos">Accounting script for EOS&lt;/h3>
+&lt;p>The script generating the required space accounting information is available in
+the &lt;code>eos-server&lt;/code> package starting with release 5.0.15.&lt;/p>
+&lt;p>Please have a look at the
+&lt;a href="https://eos-docs.web.cern.ch/configuration/egi.html#storage-accounting">EOS documentation&lt;/a>
+for more information.&lt;/p>
+&lt;h3 id="install-the-apel-ssm-software">Install the APEL SSM software&lt;/h3>
+&lt;p>The &lt;a href="https://github.com/apel/ssm">APEL SSM&lt;/a> software can be installed from the
+&lt;a href="https://repository.egi.eu/">UMD-4 repository&lt;/a>.&lt;/p>
+&lt;h3 id="add-the-information-to-egi-configuration-database">Add the information to EGI Configuration Database&lt;/h3>
+&lt;p>You need to add a new service endpoint for that host to
+&lt;a href="https://goc.egi.eu/">EGI Configuration Database&lt;/a> with the service type
+&lt;code>eu.egi.storage.accounting&lt;/code> and the correct host certificate DN. The Accounting
+Repository takes up to an hour to update its ACL from the configuration Database
+and the &lt;a href="../../../internal/messaging/">EGI Messaging Service&lt;/a> take up to 4
+hours. If you get warnings in your SSM log about invalid username or password
+you can retry again after a delay. If this persists for over 4 hours, then do
+open a &lt;a href="https://ggus.eu/">Helpdesk ticket&lt;/a>.&lt;/p>
+&lt;h3 id="configure-ssm">Configure SSM&lt;/h3>
+&lt;p>Set the configuration files as explained in the
+&lt;a href="https://github.com/apel/ssm#sender-sending-via-the-argo-messaging-service-ams">general documentation&lt;/a>
+and in the
+&lt;a href="https://github.com/apel/ssm/blob/dev/migrating_to_ams.md#sender">migration instructions&lt;/a>.&lt;/p>
+&lt;h2 id="running-the-accounting-software">Running the Accounting Software&lt;/h2>
+&lt;p>Create a cron job to run your accounting script followed by calling the SSM
+sender. We recommend that you send storage accounting data once per day. There
+will be a delay of up to 24 hours before you see the data you have sent
+reflected in the Accounting Portal.&lt;/p>
+&lt;ul>
+&lt;li>Example:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ cat /etc/cron.daily/dmlite-StAR-accounting
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#!/bin/sh&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">set&lt;/span> -e
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir -p /var/spool/apel/outgoing/&lt;span style="color:#4e9a06">`&lt;/span>date +%Y%m%d&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/usr/share/dmlite/StAR-accounting/star-accounting.py --reportgroups &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --dbhost&lt;span style="color:#ce5c00;font-weight:bold">=[&lt;/span>hostname&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --dbuser&lt;span style="color:#ce5c00;font-weight:bold">=[&lt;/span>username&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --dbpwd&lt;span style="color:#ce5c00;font-weight:bold">=[&lt;/span>password&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --nsdbname&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cns_db &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --dpmdbname&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dpm_db &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --site&lt;span style="color:#ce5c00;font-weight:bold">=[&lt;/span>site name&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &amp;gt; /var/spool/apel/outgoing/&lt;span style="color:#4e9a06">`&lt;/span>date +%Y%m%d&lt;span style="color:#4e9a06">`&lt;/span>/&lt;span style="color:#4e9a06">`&lt;/span>date +%Y%m%d%H%M%S&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssmsend
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>You can confirm if the &lt;a href="../../../internal/accounting/">Accounting Repository&lt;/a>
+receives your data by looking at the
+&lt;a href="http://goc-accounting.grid-support.ac.uk/storagetest/storagesitesystems.html">sites publishing storage accounting records&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The page is updated on a daily basis.&lt;/p>
+&lt;h2 id="storage-accounting-data-at-the-egi-accounting-portal">Storage Accounting Data at the EGI Accounting Portal&lt;/h2>
+&lt;p>The storage accounting view is currently available on the
+&lt;a href="http://accounting-devel.egi.eu/storage.php">development instance&lt;/a> of the
+Accounting Portal.&lt;/p></description></item><item><title>Providers: Changing the Site BDII</title><link>/providers/high-throughput-compute/changing-site-bdii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/changing-site-bdii/</guid><description>
 &lt;h2 id="moving-the-site-bdii-to-another-machine">Moving the Site BDII to another machine&lt;/h2>
 &lt;ol>
 &lt;li>

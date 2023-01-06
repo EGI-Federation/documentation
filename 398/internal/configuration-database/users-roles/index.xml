@@ -93,8 +93,9 @@ private browser session.&lt;/li>
 &lt;li>When prompted, select your new certificate.&lt;/li>
 &lt;li>You should be able to access, but since you are authenticated with your new
 certificate, it is as if you had no user account.&lt;/li>
-&lt;li>In the &lt;strong>User Status&lt;/strong> panel in the sidebar, click on the &lt;strong>Link
-Identity/Recover Account&lt;/strong> link.&lt;/li>
+&lt;li>In the &lt;strong>User Status&lt;/strong> panel in the sidebar, click on the
+&lt;strong>&lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Link_Identity">Link Identity/Recover Account&lt;/a>&lt;/strong>
+link.&lt;/li>
 &lt;li>Specify in the form:
 &lt;ul>
 &lt;li>Authentication type: X.509&lt;/li>
