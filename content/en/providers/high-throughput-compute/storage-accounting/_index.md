@@ -115,3 +115,9 @@ here:
 - [Sites publishing storage accounting records](http://goc-accounting.grid-support.ac.uk/storagetest/storagesitesystems.html)
 
 The page is updated on a daily basis.
+
+## Storage Accounting Data at the EGI Accounting Portal
+
+The storage accounting view is currently available on the
+[developing instancce](http://accounting-devel.egi.eu/storage.php) of the
+Accounting Portal.
