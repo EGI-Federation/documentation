@@ -166,6 +166,11 @@ StAR records via the EGI Messaging Service to
 &lt;a href="../../../internal/accounting">EGI Accounting&lt;/a> repository.&lt;/p>
 &lt;h2 id="deployment-instructions">Deployment instructions&lt;/h2>
 &lt;h3 id="accounting-script-for-dcache">Accounting script for dCache&lt;/h3>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Find dCache documentation on the
+&lt;a href="https://www.dcache.org/documentation/">dCache website&lt;/a>
+&lt;/div>
 &lt;p>The configuration follows the same configuration system that is common to all
 dCache components. As with other dCache components, the default values are
 exposed and documented.&lt;/p>
