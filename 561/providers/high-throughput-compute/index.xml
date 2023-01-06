@@ -169,7 +169,7 @@ StAR records via the EGI Messaging Service to
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Find dCache documentation on the
-&lt;a href="https://www.dcache.org/documentation/">dCache website&lt;/a>
+&lt;a href="https://www.dcache.org/documentation/">dCache site&lt;/a>.
 &lt;/div>
 &lt;p>The configuration follows the same configuration system that is common to all
 dCache components. As with other dCache components, the default values are
