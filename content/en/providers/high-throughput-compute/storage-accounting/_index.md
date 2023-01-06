@@ -79,16 +79,39 @@ The [APEL SSM](https://github.com/apel/ssm) software can be installed from the
 
 ### Add the information to GOCDB
 
-You need to add a new service for that host to [GOCDB](https://goc.egi.eu/)
-with the service type `eu.egi.storage.accounting` and the correct host
-certificate DN. The Accounting Repository takes up to an hour to update its ACL
-from GOCDB and the [ARGO Message Service]((../../../internal/messaging/) take
-up to 4 hours. If you get warnings in your SSM log about invalid user name or
-password you can just retry again after a period. If this persists for over 4
-hours, then do open a [GGUS ticket](https://ggus.eu/).
+You need to add a new service endpoint for that host to
+[GOCDB](https://goc.egi.eu/) with the service type `eu.egi.storage.accounting`
+and the correct host certificate DN. The Accounting Repository takes up to an
+hour to update its ACL from GOCDB and the
+[ARGO Message Service]((../../../internal/messaging/) take up to 4 hours. If
+you get warnings in your SSM log about invalid user name or password you can
+just retry again after a period. If this persists for over 4 hours, then do
+open a [GGUS ticket](https://ggus.eu/).
 
 ### Configure SSM
 
 Set the configuration files as explained in the
 [general documentation](https://github.com/apel/ssm#sender-sending-via-the-argo-messaging-service-ams)
 and in the [migration instructions](https://github.com/apel/ssm/blob/dev/migrating_to_ams.md#sender)
+
+## Running the Accounting Software
+
+Create a cron job to run your accounting script followed by the SSM sender. We
+recommend that you send storage accounting data once per day. There will be a
+delay of up to 24 hours before you see the data you have sent reflected in the
+Accounting Portal.
+
+- Example:
+
+```shell
+$ cat /etc/cron.daily/dmlite-StAR-accounting
+#!/bin/sh
+/bin/mkdir -p /var/spool/apel/outgoing/`date +%Y%m%d` && /usr/share/dmlite/StAR-accounting/star-accounting.py --reportgroups --dbhost=[hostname] --dbuser=[username] --dbpwd=[password] --nsdbname=cns_db --dpmdbname=dpm_db --site=[site name] > /var/spool/apel/outgoing/`date +%Y%m%d`/`date +%Y%m%d%H%M%S` && ssmsend
+```
+
+You can check that your data is being received by the Accounting Repository
+here:
+
+- [Sites publishing storage accounting records](http://goc-accounting.grid-support.ac.uk/storagetest/storagesitesystems.html)
+
+The page is updated on a daily basis.
