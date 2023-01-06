@@ -65,4 +65,30 @@ v1.0.4 at least.
 
 ### Accounting script for EOS
 
-jgfkhfkhg
+The script that generate the required space acconting information is available
+in the `eos-server` package starting with release 5.0.15.
+
+Please have a look at the
+[EOS documentation](https://eos-docs.web.cern.ch/configuration/egi.html#storage-accounting)
+for more information.
+
+### Install the APEL SSM software
+
+The [APEL SSM](https://github.com/apel/ssm) software can be installed from the
+[UMD-4 repository](https://repository.egi.eu/).
+
+### Add the information to GOCDB
+
+You need to add a new service for that host to [GOCDB](https://goc.egi.eu/)
+with the service type `eu.egi.storage.accounting` and the correct host
+certificate DN. The Accounting Repository takes up to an hour to update its ACL
+from GOCDB and the [ARGO Message Service]((../../../internal/messaging/) take
+up to 4 hours. If you get warnings in your SSM log about invalid user name or
+password you can just retry again after a period. If this persists for over 4
+hours, then do open a [GGUS ticket](https://ggus.eu/).
+
+### Configure SSM
+
+Set the configuration files as explained in the
+[general documentation](https://github.com/apel/ssm#sender-sending-via-the-argo-messaging-service-ams)
+and in the [migration instructions](https://github.com/apel/ssm/blob/dev/migrating_to_ams.md#sender)
