@@ -1,8 +1,10 @@
 ---
-title: APEL Accounting for HTCondor-CE
+title: HTCondor-CE Accounting
 weight: 10
 type: "docs"
-description: "APEL Accounting for HTCondor-CE"
+description: "HTCondor-CE Accounting"
+aliases:
+  - /providers/high-throughput-compute/htcondor-ce-apel
 ---
 
 [HTCondor-CE](https://htcondor.com/htcondor-ce/) can be configured to

@@ -1,6 +1,6 @@
 ---
 title: "Service information"
-description: "Technical details of the Configuration Database"
+description: "Configuration Database identity card"
 weight: 10
 type: "docs"
 ---
@@ -22,7 +22,7 @@ type: "docs"
 | Release notes                           | [Release notes](https://github.com/GOCDB/gocdb/releases)                            |
 | Source code                             | https://github.com/GOCDB                                                            |
 | Issue tracker for developers            | https://github.com/GOCDB/gocdb/issues                                               |
-| License                                 | Apache 2                                                                            |
-| Privacy Policy                          | [Privacy policy](https://goc.egi.eu/privacy.html)                                   |
+| Licence                                 | Apache 2.0                                                                          |
+| Privacy Notice                          | [Privacy notice](https://goc.egi.eu/privacy.html)                                   |
 
 <!-- markdownlint-enable no-inline-html no-bare-urls -->
