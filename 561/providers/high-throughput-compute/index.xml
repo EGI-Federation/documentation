@@ -1,0 +1,250 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – High-Throughput Compute</title><link>/providers/high-throughput-compute/</link><description>Recent content in High-Throughput Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: APEL Accounting for HTCondor-CE</title><link>/providers/high-throughput-compute/htcondor-ce-apel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/htcondor-ce-apel/</guid><description>
+&lt;p>&lt;a href="https://htcondor.com/htcondor-ce/">HTCondor-CE&lt;/a> can be configured to
+automatically publish accounting data to
+&lt;a href="../../../internal/accounting">EGI Accounting service&lt;/a>, if compute resources are
+provided by an &lt;a href="https://htcondor.com/htcondor/overview/">HTCondor&lt;/a> pool.
+Optionally, the HTCondor pool can also be configured to provide per-machine
+performance data for increased accounting accuracy.&lt;/p>
+&lt;h2 id="enabling-accounting-records-on-each-htcondor-ce">Enabling accounting records on each HTCondor-CE&lt;/h2>
+&lt;p>Each HTCondor-CE must be configured separately to create accounting data for its
+jobs and feed them to APEL.&lt;/p>
+&lt;blockquote>
+&lt;p>See &lt;a href="../../operations-manuals/man09_accounting_data_publishing">MAN09&lt;/a> for
+general configuration instructions of APEL.&lt;/p>
+&lt;/blockquote>
+&lt;ol>
+&lt;li>
+&lt;p>Install &lt;code>htcondor-ce-apel&lt;/code>, available from the
+&lt;a href="https://repository.egi.eu/">EGI UMD&lt;/a> or
+&lt;a href="https://htcondor.readthedocs.io/en/latest/getting-htcondor/from-our-repositories.html">HTCondor&lt;/a>
+RPM repositories.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Configure the APEL parser via &lt;code>parser.cfg&lt;/code> to read the HTCondor-CE accounting
+records:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">[blah]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">enabled&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">dir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/var/lib/condor-ce/apel/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">filename_prefix&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">blah&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">[batch]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">enabled&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">dir&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">/var/lib/condor-ce/apel/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">filename_prefix&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">batch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">HTCondor&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure the APEL client via &lt;code>client.cfg&lt;/code> section &lt;code>[spec_updater]&lt;/code> to know
+the cluster specs:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>site_name&lt;/code> must equal your
+&lt;a href="../../../internal/configuration-database">EGI Configuration Database (GOCDB)&lt;/a>
+site name.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>manual_spec1&lt;/code> must equal the CE identifier, spec type and average spec
+value of the cluster. The format is:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">manual_spec1&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;lt;fqdn&amp;gt;:9619/&amp;lt;fqdn&amp;gt;-condor,&amp;lt;spec_type&amp;gt;,&amp;lt;spec_value&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For example, if the CE has the Fully Qualified Domain Name (FQDN)
+&lt;code>my-htcondor-ce.example.com&lt;/code> and resources averaging 12.5
+&lt;a href="https://w3.hepix.org/benchmarking.html">HEPSPEC&lt;/a> per core:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">manual_spec1&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">my-htcondor-ce.example.com:9619/my-htcondor-ce.example.com-condor,HEPSPEC,12.5&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Start and enable the &lt;code>condor-ce-apel.timer&lt;/code> unit.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="enabling-per-machine-performance-information">Enabling per-machine performance information&lt;/h2>
+&lt;p>By default, HTCondor-CE APEL accounting assumes that all machines in the cluster
+have comparable performance. If this is not the case, accounting accuracy can be
+improved by adding performance information per machine.&lt;/p>
+&lt;p>Performance information may be added to each HTCondor StartD. There are two
+separate ways to do so:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>An &lt;em>absolute&lt;/em> performance spec value can be assigned to the &lt;code>StartD&lt;/code>, similar
+to the average spec value assigned to the CE. HTCondor-CE APEL accounting
+weights resource usage by comparing the &lt;code>StartD&lt;/code> spec value to the average
+spec value.&lt;/p>
+&lt;p>In the &lt;code>StartD&lt;/code> configuration, define &lt;code>ApelSpecs&lt;/code> as a new-style classad
+mapping between a spec type and its value; multiple spec types are supported,
+but in practice &lt;code>HEPSPEC&lt;/code> is currently the only one needed. Also add
+&lt;code>ApelSpecs&lt;/code> to the attributes of the &lt;code>StartD&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The absolute performance per core on this StartD&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">ApelSpecs&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">[HEPSPEC=14.37; SI2K=2793]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">STARTD_ATTRS&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">$(STARTD_ATTRS) ApelSpecs&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>A &lt;em>relative&lt;/em> performance spec value can be assigned to the &lt;code>StartD&lt;/code>, as a
+factor to the average spec value assigned to the CE. HTCondor-CE APEL
+accounting directly weights resource usage by the relative StartD spec factor.&lt;/p>
+&lt;p>In the &lt;code>StartD&lt;/code> configuration, define &lt;code>ApelScaling&lt;/code> as a number; values above
+1 means the performance is above average. Also add &lt;code>ApelScaling&lt;/code> to the
+attributes of the &lt;code>StartD&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The relative performance per core on this StartD&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">ApelScaling&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">1.15&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">STARTD_ATTRS&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">$(STARTD_ATTRS) ApelScaling&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>If both &lt;code>ApelSpecs&lt;/code> and &lt;code>ApelScaling&lt;/code> are defined, &lt;code>ApelSpecs&lt;/code> takes precedence.&lt;/p></description></item><item><title>Providers: Changing the Site BDII</title><link>/providers/high-throughput-compute/changing-site-bdii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/changing-site-bdii/</guid><description>
+&lt;h2 id="moving-the-site-bdii-to-another-machine">Moving the Site BDII to another machine&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Ensure the new Site BDII is working fine and publishing all the necessary
+site information&lt;/p>
+&lt;ul>
+&lt;li>See &lt;a href="../../operations-manuals/man01_how_to_publish_site_information">MAN01&lt;/a>
+for general information about how to configure a Site BDII. In particular,
+remember that the Site BDII configuration must include the BDII node
+itself.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Put the old Site BDII in scheduled downtime in the
+&lt;a href="../../../internal/configuration-database">Configuration Database&lt;/a> for a
+couple of hours&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Register the new service in the Configuration Database by adding a new
+Service Endpoint:&lt;/p>
+&lt;ul>
+&lt;li>select &lt;code>Site BDII&lt;/code> in &lt;code>Service Type&lt;/code> field&lt;/li>
+&lt;li>fill in at least the hostname&lt;/li>
+&lt;li>select &lt;code>Y&lt;/code> for production and monitoring, &lt;code>N&lt;/code> for beta service field&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Properly modify the &lt;code>GIIS URL&lt;/code> field with the new &lt;code>SITE-BDII ldap URL&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>Note that the site name in the GIIS URL is case-sensitive&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Mark the old Site BDII as not production and turn off its monitoring&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Top BDIIs updates their sites list every hour so the new Site BDII should be
+published in less than an hour; instead Nagios updates the monitored hosts
+every 3 hours&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>When the new Site BDII is appeared on Nagios and the old one is disappeared,
+turn off the old Site BDII and remove it from the Configuration Database&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="turning-off-a-site-bdii-co-hosted-with-other-services">Turning off a Site BDII co-hosted with other services&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Stop and remove the service&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>service bdii stop
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>yum remove glite-BDII glite-yaim-bdii
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Delete some info-providers and ldif file (
+&lt;code>/opt/glite/etc/gip/ldif/stub-site.ldif&lt;/code>,
+&lt;code>/opt/glite/etc/gip/site-urls.conf&lt;/code>,
+&lt;code>/opt/glite/etc/gip/provider/glite-info-provider-site&lt;/code>,
+&lt;code>/opt/glite/etc/gip/provider/glite-info-provider-service-bdii-site-wrapper&lt;/code>,
+&lt;code>/opt/glite/etc/gip/ldif/glite-info-site.ldif&lt;/code>)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Reconfigure with yaim without specifying the BDII_site profile&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>Providers: Storage accounting</title><link>/providers/high-throughput-compute/storage-accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/high-throughput-compute/storage-accounting/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Storage space usage accounting is based on the StAR (Storage Accounting Record)
+developed during the EMI project in conjunction with the OGF Usage Record Work
+Group (UR-WG). The format is documented
+&lt;a href="http://cds.cern.ch/record/1452920/files/GFD.201.pdf">in GFD-I.201&lt;/a>.&lt;/p>
+&lt;p>EMI delivered StAR solutions for dCache and DPM in EMI-3. In both cases the
+storage service queries its database at a site and extracts data to populate
+StAR usage records. The site then uses SSM as a transport method to send the
+StAR records via the EGI Messaging Service to
+&lt;a href="../../../internal/accounting">EGI Accounting&lt;/a> repository.&lt;/p>
+&lt;h2 id="deployment-instructions">Deployment instructions&lt;/h2>
+&lt;h3 id="accounting-script-for-dcache">Accounting script for dCache&lt;/h3>
+&lt;p>The configuration follows the same configuration system that is common to all
+dCache components. As with other dCache components, the default values are
+exposed and documented.&lt;/p>
+&lt;p>In general, a site should review the &lt;code>star.properties&lt;/code> file (in the standard
+location for configuration defaults) and update their site-specific
+configuration, if necessary.&lt;/p>
+&lt;p>Information on how to set the &lt;code>star.properties&lt;/code> file can be found
+&lt;a href="https://github.com/dCache/dcache/blob/master/skel/share/defaults/star.properties">in the dCache repository&lt;/a>.&lt;/p>
+&lt;p>Map &lt;code>local groupid&lt;/code> to the VO names as appropriate, for example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">star.gid-mapping&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">12345=/atlas,12346=/cms,12347=/lhcb (EXAMPLE)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Running the &lt;code>dcache-star&lt;/code> command generates records according to that site&amp;rsquo;s
+configuration.&lt;/p>
+&lt;p>Edit SSM&amp;rsquo;s &lt;code>sender.cfg&lt;/code> to have &lt;code>path:/var/spool/dcache/star&lt;/code> so that it can
+find and publish the records dCache generated.&lt;/p>
+&lt;h3 id="accounting-script-for-dpm">Accounting script for DPM&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+DPM/DMLite is supported until
+June 2023. All the RCs providing DPM have been invited to move to a different
+storage solution. A decommissioning and migration campaign was started for this
+purpose.
+&lt;/div>
+&lt;p>You need to install DPM-DMLITE 1.8.7 or higher. The
+&lt;a href="https://twiki.cern.ch/twiki/bin/view/DPM/DpmSetupPuppetInstallation#DPM_Accounting">Storage Accounting&lt;/a>
+is implemented as a puppet module that adds cron configuration to execute the
+script daily.&lt;/p>
+&lt;p>Please be sure to have installed the
+&lt;a href="https://gitlab.cern.ch/lcgdm/dmlite/-/blob/master/scripts/StAR-accounting/star-accounting.py">star-accounting.py script&lt;/a>
+v1.0.4 at least.&lt;/p>
+&lt;h3 id="accounting-script-for-eos">Accounting script for EOS&lt;/h3>
+&lt;p>The script generating the required space accounting information is available in
+the &lt;code>eos-server&lt;/code> package starting with release 5.0.15.&lt;/p>
+&lt;p>Please have a look at the
+&lt;a href="https://eos-docs.web.cern.ch/configuration/egi.html#storage-accounting">EOS documentation&lt;/a>
+for more information.&lt;/p>
+&lt;h3 id="install-the-apel-ssm-software">Install the APEL SSM software&lt;/h3>
+&lt;p>The &lt;a href="https://github.com/apel/ssm">APEL SSM&lt;/a> software can be installed from the
+&lt;a href="https://repository.egi.eu/">UMD-4 repository&lt;/a>.&lt;/p>
+&lt;h3 id="add-the-information-to-egi-information-database">Add the information to EGI Information Database&lt;/h3>
+&lt;p>You need to add a new service endpoint for that host to
+&lt;a href="https://goc.egi.eu/">EGI Information Database&lt;/a> with the service type
+&lt;code>eu.egi.storage.accounting&lt;/code> and the correct host certificate DN. The Accounting
+Repository takes up to an hour to update its ACL from the configuration Database
+and the &lt;a href="../../../internal/messaging/">EGI Messaging Service&lt;/a> take up to 4
+hours. If you get warnings in your SSM log about invalid username or password
+you can retry again after a delay. If this persists for over 4 hours, then do
+open a &lt;a href="https://ggus.eu/">Helpdesk ticket&lt;/a>.&lt;/p>
+&lt;h3 id="configure-ssm">Configure SSM&lt;/h3>
+&lt;p>Set the configuration files as explained in the
+&lt;a href="https://github.com/apel/ssm#sender-sending-via-the-argo-messaging-service-ams">general documentation&lt;/a>
+and in the
+&lt;a href="https://github.com/apel/ssm/blob/dev/migrating_to_ams.md#sender">migration instructions&lt;/a>.&lt;/p>
+&lt;h2 id="running-the-accounting-software">Running the Accounting Software&lt;/h2>
+&lt;p>Create a cron job to run your accounting script followed by calling the SSM
+sender. We recommend that you send storage accounting data once per day. There
+will be a delay of up to 24 hours before you see the data you have sent
+reflected in the Accounting Portal.&lt;/p>
+&lt;ul>
+&lt;li>Example:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ cat /etc/cron.daily/dmlite-StAR-accounting
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#!/bin/sh&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">set&lt;/span> -e
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir -p /var/spool/apel/outgoing/&lt;span style="color:#4e9a06">`&lt;/span>date +%Y%m%d&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/usr/share/dmlite/StAR-accounting/star-accounting.py --reportgroups &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --dbhost&lt;span style="color:#ce5c00;font-weight:bold">=[&lt;/span>hostname&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --dbuser&lt;span style="color:#ce5c00;font-weight:bold">=[&lt;/span>username&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --dbpwd&lt;span style="color:#ce5c00;font-weight:bold">=[&lt;/span>password&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --nsdbname&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cns_db &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --dpmdbname&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dpm_db &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --site&lt;span style="color:#ce5c00;font-weight:bold">=[&lt;/span>site name&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &amp;gt; /var/spool/apel/outgoing/&lt;span style="color:#4e9a06">`&lt;/span>date +%Y%m%d&lt;span style="color:#4e9a06">`&lt;/span>/&lt;span style="color:#4e9a06">`&lt;/span>date +%Y%m%d%H%M%S&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssmsend
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>You can confirm if the &lt;a href="../../../internal/accounting/">Accounting Repository&lt;/a>
+receives your data by looking at the
+&lt;a href="http://goc-accounting.grid-support.ac.uk/storagetest/storagesitesystems.html">sites publishing storage accounting records&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>The page is updated on a daily basis.&lt;/p>
+&lt;h2 id="storage-accounting-data-at-the-egi-accounting-portal">Storage Accounting Data at the EGI Accounting Portal&lt;/h2>
+&lt;p>The storage accounting view is currently available on the
+&lt;a href="http://accounting-devel.egi.eu/storage.php">development instance&lt;/a> of the
+Accounting Portal.&lt;/p></description></item></channel></rss>
