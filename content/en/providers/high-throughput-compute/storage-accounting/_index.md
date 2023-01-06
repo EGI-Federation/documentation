@@ -1,8 +1,8 @@
 ---
 title: "Storage accounting"
-weight: 35
+weight: 20
 type: "docs"
-description: "Enable Storage Accounting Record (StAR) in your storage element"
+description: "Using Storage Accounting Record (StAR)"
 ---
 
 ## Introduction
