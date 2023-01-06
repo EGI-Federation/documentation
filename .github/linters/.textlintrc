@@ -6,7 +6,8 @@
     "terminology": {
       "exclude": [
         "Node(?:js)?",
-        "CSS"
+        "CSS",
+        "css"
       ]
     }
   }
