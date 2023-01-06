@@ -83,7 +83,7 @@ You need to add a new service endpoint for that host to
 [GOCDB](https://goc.egi.eu/) with the service type `eu.egi.storage.accounting`
 and the correct host certificate DN. The Accounting Repository takes up to an
 hour to update its ACL from GOCDB and the
-[ARGO Message Service]((../../../internal/messaging/) take up to 4 hours. If
+[ARGO Message Service](../../../internal/messaging/) take up to 4 hours. If
 you get warnings in your SSM log about invalid user name or password you can
 just retry again after a period. If this persists for over 4 hours, then do
 open a [GGUS ticket](https://ggus.eu/).
