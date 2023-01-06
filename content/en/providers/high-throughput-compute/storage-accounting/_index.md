@@ -84,7 +84,7 @@ You need to add a new service endpoint for that host to
 and the correct host certificate DN. The Accounting Repository takes up to an
 hour to update its ACL from GOCDB and the
 [ARGO Message Service](../../../internal/messaging/) take up to 4 hours. If
-you get warnings in your SSM log about invalid user name or password you can
+you get warnings in your SSM log about invalid username or password you can
 just retry again after a period. If this persists for over 4 hours, then do
 open a [GGUS ticket](https://ggus.eu/).
 
