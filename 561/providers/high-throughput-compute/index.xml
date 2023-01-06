@@ -209,9 +209,9 @@ for more information.&lt;/p>
 &lt;h3 id="install-the-apel-ssm-software">Install the APEL SSM software&lt;/h3>
 &lt;p>The &lt;a href="https://github.com/apel/ssm">APEL SSM&lt;/a> software can be installed from the
 &lt;a href="https://repository.egi.eu/">UMD-4 repository&lt;/a>.&lt;/p>
-&lt;h3 id="add-the-information-to-egi-information-database">Add the information to EGI Information Database&lt;/h3>
+&lt;h3 id="add-the-information-to-egi-configuration-database">Add the information to EGI Configuration Database&lt;/h3>
 &lt;p>You need to add a new service endpoint for that host to
-&lt;a href="https://goc.egi.eu/">EGI Information Database&lt;/a> with the service type
+&lt;a href="https://goc.egi.eu/">EGI Configuration Database&lt;/a> with the service type
 &lt;code>eu.egi.storage.accounting&lt;/code> and the correct host certificate DN. The Accounting
 Repository takes up to an hour to update its ACL from the configuration Database
 and the &lt;a href="../../../internal/messaging/">EGI Messaging Service&lt;/a> take up to 4
