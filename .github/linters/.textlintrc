@@ -6,8 +6,7 @@
     "terminology": {
       "exclude": [
         "Node(?:js)?",
-        "CSS",
-        "css"
+        "postcss-cli"
       ]
     }
   }
