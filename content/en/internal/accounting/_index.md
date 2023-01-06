@@ -8,9 +8,10 @@ description: >
 
 ## What is it?
 
-EGI Accounting **tracks and reports usage of EGI services**, offering insights
-and control over resource consumption. EGI Federation members can use it to
-account for the resource usage of their own services.
+[EGI Accounting](./service-information) **tracks and reports usage of EGI
+services**, offering insights and control over resource consumption. EGI
+Federation members can use it to account for the resource usage of their own
+services.
 
 EGI Accounting consists of two main components:
 
