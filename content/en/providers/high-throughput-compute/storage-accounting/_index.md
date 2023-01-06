@@ -23,7 +23,7 @@ StAR records via the EGI Messaging Service to
 ### Accounting script for dCache
 
 {{% alert title="Note" color="info" %}} Find dCache documentation on the
-[dCache website](https://www.dcache.org/documentation/)
+[dCache site](https://www.dcache.org/documentation/).
 {{% /alert %}}
 
 The configuration follows the same configuration system that is common to all
