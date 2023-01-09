@@ -10,7 +10,7 @@ description: >
 
 ## Authentication {#oidc-auth-using-check-in}
 
-[OpenID Connect](http://openid.net/connect/) is the main authentication protocol
+[OpenID Connect](https://openid.net/connect/) is the main authentication protocol
 used on the EGI Cloud. It replaces the legacy VOMS-based authentication for all
 OpenStack providers.
 

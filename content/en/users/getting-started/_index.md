@@ -41,7 +41,7 @@ of the EGI FedCloud architecture. {{% /alert %}}
 ## Accessing resources
 
 Access to resources (services) in the EGI infrastructure is based on
-[OpenID Connect](http://openid.net/connect/) (OIDC), which replaces the legacy
+[OpenID Connect](https://openid.net/connect/) (OIDC), which replaces the legacy
 authentication and authorization based on
 [X.509 certificates](../aai/check-in/vos/voms/).
 

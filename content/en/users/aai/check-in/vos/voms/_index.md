@@ -33,7 +33,7 @@ be stored in the web browser to access EGI web tools and services.
 
 ### Get a Certificate
 
-The [list of EGI recognised CAs](http://www.eugridpma.org/members/worldmap/)
+The [list of EGI recognised CAs](https://www.eugridpma.org/members/worldmap/)
 provides a clickable map to find your nearby CA. Several of these offer the
 option to get an 'eScience Personal' certificate online from the Terena
 Certificate Service CA.

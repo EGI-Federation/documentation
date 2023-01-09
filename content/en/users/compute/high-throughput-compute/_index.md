@@ -89,7 +89,7 @@ The key components of the EGI High Throughput Compute architecture are:
 - **Computing Elements** (CEs) are compute resources made available through GRID
   interfaces. The most common implementations of CEs in the EGI infrastructure
   are [HTCondor-CE](https://htcondor.com/htcondor-ce/) and
-  [ARC-CE](http://www.nordugrid.org/arc/ce/).
+  [ARC-CE](https://www.nordugrid.org/arc/ce/).
 
 ### Access model
 

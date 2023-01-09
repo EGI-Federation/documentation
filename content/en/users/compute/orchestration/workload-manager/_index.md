@@ -23,7 +23,7 @@ scientific communities.
 <!-- markdownlint-disable no-inline-html -->
 
 {{% alert title="Note" color="info" %}} Workload Manager is based on
-[DIRAC technology](http://diracgrid.org/).<br/>
+[DIRAC technology](https://diracgrid.org/).<br/>
 The delivery of the service is coordinated
 by the EGI Foundation and [IN2P3](https://in2p3.cnrs.fr/) provides the resources and
 operates the service.
@@ -133,7 +133,7 @@ Team on shift.
 DIRAC uses [X.509 certificates](../../../aai/check-in/vos/voms) to identify and
 authenticate users. These certificates are delivered to each individual by
 trusted certification authorities. If you have a personal certificate issued by
-a [EUGridPMA-certified](http://www.eugridpma.org/) authority you can use it for
+a [EUGridPMA-certified](https://www.eugridpma.org/) authority you can use it for
 this tutorial. Otherwise refer to the information available in this
 [section](../../../aai/check-in/vos/voms/#get-a-certificate), to obtain a certificate.
 Your certificate may take a few days to be delivered, so please ask for your
@@ -366,7 +366,7 @@ $ dirac-login --issuer=https://dirac.egi.eu/auth
 DIRAC commands
 
 Have a look at the official
-[command reference documentation](http://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html)
+[command reference documentation](https://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html)
 for the complete list of the Workload Management commands.
 
 In general, you can submit jobs, check their status, and retrieve the output.

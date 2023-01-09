@@ -87,7 +87,7 @@ The list of providers and VAs is also discoverable in the
 [training.egi.eu VO entry of
 AppDB](https://appdb.egi.eu/store/vo/training.egi.eu). The VO is also
 described at the [EGI Operations Portal training.egi.eu VO id
-card](http://operations-portal.egi.eu/vo/view/voname/training.egi.eu).
+card](https://operations-portal.egi.eu/vo/view/voname/training.egi.eu).
 
 ## Booking the infrastructure
 

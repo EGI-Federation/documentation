@@ -205,9 +205,9 @@ It is possible to identify available resources by
 Two Computing Element (CE) "flavours" are used in production:
 
 - [HTCondorCE](https://htcondor.org/htcondor-ce/overview/), a Compute Entrypoint
-  (CE) based on [HTCondor](http://htcondor.org/).
-- [ARC-CE](http://www.nordugrid.org/arc/ce/), the
-  [ARC](http://www.nordugrid.org/arc/) Compute Element (CE).
+  (CE) based on [HTCondor](https://htcondor.org/).
+- [ARC-CE](https://www.nordugrid.org/arc/ce/), the
+  [ARC](https://www.nordugrid.org/arc/) Compute Element (CE).
 
 In this section we will document querying the EGI Information System to retrieve
 information about the available resources.
@@ -340,7 +340,7 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
 
 > The [HTCondor-CE](https://htcondor.com/htcondor-ce/#what-is-htcondor-ce)
 > software is a Compute Entrypoint (CE) based on
-> [HTCondor](http://htcondor.org/) for sites that are part of a larger computing
+> [HTCondor](https://htcondor.org/) for sites that are part of a larger computing
 > grid (e.g. [EGI](https://www.egi.eu/),
 > [Open Science Grid (OSG)](https://osg-htc.org/)).
 
@@ -442,12 +442,12 @@ Fetching data files...
 
 ### To an ARC-CE Computing Element
 
-> [ARC](http://www.nordugrid.org/arc) Compute Element (CE) is a Grid front-end
+> [ARC](https://www.nordugrid.org/arc) Compute Element (CE) is a Grid front-end
 > on top of a conventional computing resource (e.g. a Linux cluster or a
 > standalone workstation). ARC CE is sometimes also called **ARC server**.
 
 While there is an official documentation on
-[How to submit a job](http://www.nordugrid.org/arc/arc6/users/submit_job.html),
+[How to submit a job](https://www.nordugrid.org/arc/arc6/users/submit_job.html),
 the main steps will be documented below.
 
 If you haven't already generated a credential with `voms-proxy-init`, you can
@@ -535,8 +535,8 @@ $ arcstat -l "$JOB_ID"
 
 #### References
 
-- [ARC: submit a job](http://www.nordugrid.org/arc/arc6/users/submit_job.html)
-- [ARC client tools](http://www.nordugrid.org/arc/arc6/users/client_tools.html)
+- [ARC: submit a job](https://www.nordugrid.org/arc/arc6/users/submit_job.html)
+- [ARC client tools](https://www.nordugrid.org/arc/arc6/users/client_tools.html)
 
 ### To a CREAM Computing Element
 

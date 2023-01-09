@@ -18,13 +18,13 @@ Infrastructure-as-a-Service (IaaS) providers**.
 Being based on [Infrastructure Manager](../im), EC3 supports the same wide
 choices of backends, either public (such as
 [Amazon Web Services](https://aws.amazon.com/),
-[Google Cloud](http://cloud.google.com/) or
-[Microsoft Azure](http://azure.microsoft.com/)) or on-premises (such as
+[Google Cloud](https://cloud.google.com/) or
+[Microsoft Azure](https://azure.microsoft.com/)) or on-premises (such as
 [OpenStack](../../../getting-started/openstack)). EC3 can provision clusters
 running [TORQUE](https://github.com/adaptivecomputing/torque),
-[SLURM](http://slurm.schedmd.com/),
+[SLURM](https://slurm.schedmd.com/),
 [HTCondor](https://research.cs.wisc.edu/htcondor/),
-[Apache Mesos](http://mesos.apache.org/), [Nomad](https://www.nomadproject.io/),
+[Apache Mesos](https://mesos.apache.org/), [Nomad](https://www.nomadproject.io/),
 [Kubernetes](https://kubernetes.io/) and others, which will be automatically
 resized to fit the load (e.g. number of jobs at the batch system).
 

@@ -12,13 +12,13 @@ The more you go in data analysis, the more you understand that the most suitable
 tool for coding and visualizing is not pure code, or some integrated development
 environment (IDE), nor data manipulation diagrams (such as workflows or
 flowcharts). From some point on you just need a mix of all these -- that is what
-_notebook_ platforms are, [Jupyter](http://jupyter.org/) being the most popular
+_notebook_ platforms are, [Jupyter](https://jupyter.org/) being the most popular
 of them.
 
 ## What is it?
 
 [EGI Notebooks](https://www.egi.eu/service/notebooks/) is a service-like
-environment based on the [Jupyter technology](http://jupyter.org/), offering a
+environment based on the [Jupyter technology](https://jupyter.org/), offering a
 **browser-based tool for interactive data analysis**.
 
 The Notebooks environment provides users with _notebooks_ where they can combine

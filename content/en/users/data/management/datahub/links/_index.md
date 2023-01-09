@@ -10,7 +10,7 @@ description: >
 ---
 
 - [EGI DataHub service](https://datahub.egi.eu)
-  - [Overview slides](http://go.egi.eu/datahub-intro)
+  - [Overview slides](https://go.egi.eu/datahub-intro)
   - [Community Forum](https://community.egi.eu/c/egi-services/datahub)
   - [EGI Webinar](https://indico.egi.eu/event/5089/) and
     [YouTube video](https://youtu.be/ayAplV2kEN4)

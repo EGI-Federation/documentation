@@ -81,7 +81,7 @@ To register a new DNS host name:
 
 Dynamic DNS update server uses dydns2 protocol, compatible with commercial
 providers like [dyn.com](https://help.dyn.com/remote-access-api/perform-update/),
-and [noip.com](http://www.noip.com/integrate/request). The API is specified as
+and [noip.com](https://www.noip.com/integrate/request). The API is specified as
 follows:
 
 ```plain

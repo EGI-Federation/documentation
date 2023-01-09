@@ -20,14 +20,14 @@ IM is integrated with the [EGI Check-in Service](../../../aai/check-in) and supp
 a wide variety of backends, either federated (such as
 [EGI Cloud Compute](../../cloud-compute)), public (such as
 [Amazon Web Services](https://aws.amazon.com/),
-[Google Cloud](http://cloud.google.com/) or
-[Microsoft Azure](http://azure.microsoft.com/)) or on-premises (such as
+[Google Cloud](https://cloud.google.com/) or
+[Microsoft Azure](https://azure.microsoft.com/)) or on-premises (such as
 [OpenStack](../../../getting-started/openstack)),
 thus making user applications cloud agnostic.
 IM features a [web-based GUI](https://appsgrycap.i3m.upv.es:31443/im-dashboard/),
 an XML-RPC API, a REST API and a [command-line interface](cli) (CLI).
 It supports
-[OASIS TOSCA Simple Profile in YAML](http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html).
+[OASIS TOSCA Simple Profile in YAML](https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html).
 
 {{% alert title="Tip" color="info" %}} An easy way to deploy your first VM
 in the EGI Federation is from the

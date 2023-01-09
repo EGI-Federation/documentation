@@ -31,7 +31,7 @@ tool. Details on how to use are described in the
 ## CDMI (Cloud Data Management Interface)
 
 For more advanced use cases, files can be managed using the
-[CDMI](http://www.snia.org/cdmi) protocol, as described in details
+[CDMI](https://www.snia.org/cdmi) protocol, as described in details
 [in the Onedata CDMI documentation](https://onedata.org/#/home/documentation/doc/advanced/cdmi.html).
 
 ## File Permissions
