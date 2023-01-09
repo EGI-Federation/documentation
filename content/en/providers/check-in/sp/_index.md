@@ -102,7 +102,7 @@ The integration follows a two-step process:
 EGI Check-in supports two authentication and authorisation protocols that you
 can choose from:
 
-1. [Security Assertion Markup Language (SAML) 2.0](http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html)
+1. [Security Assertion Markup Language (SAML) 2.0](https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html)
 1. [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) - an
    extension to [OAuth 2.0](https://tools.ietf.org/html/rfc6749)
 
@@ -274,7 +274,7 @@ If the SP supports the Single Logout profile, then its metadata **MUST** contain
 - at least one `<md:SingleLogoutService>` endpoint element (this MAY be omitted
   if the SP solely issues `<samlp:LogoutRequest>` messages containing the
   `<aslo:Asynchronous>` extension
-  [SAML2ASLO](http://docs.oasis-open.org/security/saml/Post2.0/saml-async-slo/v1.0/cs01/saml-async-slo-v1.0-cs01.pdf))
+  [SAML2ASLO](https://docs.oasis-open.org/security/saml/Post2.0/saml-async-slo/v1.0/cs01/saml-async-slo-v1.0-cs01.pdf))
 
 ### Attributes
 
@@ -325,7 +325,7 @@ Service Providers can be integrated with EGI Check-in using OpenID Connect
 (OIDC) as an alternative to the SAML2 protocol. To allow this, the EGI Check-in
 IdP provides an OpenID Connect (OAuth2) API based on
 [Keycloak](https://www.keycloak.org), which has been
-[certified by the OpenID Foundation](http://openid.net/certification/).
+[certified by the OpenID Foundation](https://openid.net/certification/).
 Interconnection with the EGI Check-in OpenID Provider allows users to sign in
 using any of the supported backend authentication mechanisms, such as
 institutional IdPs registered with eduGAIN or Social Providers. Once the user
@@ -1927,7 +1927,7 @@ Identity Assurance, which is conveyed to the SP through both the
 (`AuthnContextClassRef`) of the SAML authentication response. EGI Check-in uses
 Assurance Profiles which distinguish between three Identity Assurance levels,
 similarly to the
-[eID Assurance Framework (eIDAF)](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_235_R_0002).
+[eID Assurance Framework (eIDAF)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_235_R_0002).
 Each level is represented by a URI as follows:
 
 - **Low**: Authentication through a social identity provider or other low

@@ -9,7 +9,7 @@ To ensure interoperability within and outside of EGI, the
 [Policy on Acceptable Authentication Assurance](https://documents.egi.eu/document/2930)
 defined a common set of trust anchors (in a PKIX implementation "Certification
 Authorities") that all sites in EGI should install. In short, all CAs accredited
-to the [Interoperable Global Trust Federation](http://www.igtf.net/) under the
+to the [Interoperable Global Trust Federation](https://www.igtf.net/) under the
 [classic](https://www.igtf.net/ap/classic/),
 [MICS](https://www.igtf.net/ap/mics/) or [SLCS](https://www.igtf.net/ap/slcs/)
 _Authentication Profiles_ are approved for use in EGI. When installing the
@@ -25,7 +25,7 @@ exception.
 ## Release notes
 
 Review the
-[release notes](http://repository.egi.eu/sw/production/cas/1/current/README.txt)
+[release notes](https://repository.egi.eu/sw/production/cas/1/current/README.txt)
 containing important notices about the current release, as well as a list of
 changes to the trust fabric.
 
@@ -37,7 +37,7 @@ to manage the installation. To install the currently valid distribution, all RPM
 packages are provided at
 
 ```text
-http://repository.egi.eu/sw/production/cas/1/current/
+https://repository.egi.eu/sw/production/cas/1/current/
 ```
 
 The current version is based on the
@@ -49,14 +49,14 @@ trusted CAs.
 ### Using YUM package management
 
 Add the following
-[repo-file](http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo)
+[repo-file](https://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo)
 to the `/etc/yum.repos.d/` directory:
 
 ```ini
 [EGI-trustanchors]
 name=EGI-trustanchors
-baseurl=http://repository.egi.eu/sw/production/cas/1/current/
-gpgkey=http://repository.egi.eu/sw/production/cas/1/GPG-KEY-EUGridPMA-RPM-3
+baseurl=https://repository.egi.eu/sw/production/cas/1/current/
+gpgkey=https://repository.egi.eu/sw/production/cas/1/GPG-KEY-EUGridPMA-RPM-3
 gpgcheck=1
 enabled=1
 ```
@@ -65,7 +65,7 @@ and then update your installation. How to update depends on your previous
 activity:
 
 - **if you have previously ever installed the `lcg-CA` package**, remove any
-  references to `http://linuxsoft.cern.ch/LCG-CAs/current` from your YUM setup,
+  references to `https://linuxsoft.cern.ch/LCG-CAs/current` from your YUM setup,
   and run
 
 ```shell
@@ -116,7 +116,7 @@ $ wget -q -O - \
 
 ```shell
 #### EGI Trust Anchor Distribution ####
-deb http://repository.egi.eu/sw/production/cas/1/current egi-igtf core
+deb https://repository.egi.eu/sw/production/cas/1/current egi-igtf core
 ```
 
 - Populate the cache and install the meta-package
@@ -134,7 +134,7 @@ review the release notes carefully for any security issues or withdrawn CAs. The
 tar files can be found in the EGI repository at
 
 ```text
-http://repository.egi.eu/sw/production/cas/1/current/tgz/
+https://repository.egi.eu/sw/production/cas/1/current/tgz/
 ```
 
 Once you have downloaded the directory, you can unpack all the CA tar,gz as
@@ -153,20 +153,20 @@ Quattor templates are povided as drop-in replacements for both QWG and CDB
 installations. Update your software repository (re-generating the repository
 templates as needed) and obtain the new CA templates from:
 
-- `http://repository.egi.eu/sw/production/cas/1/current/meta/ca-policy-egi-core.tpl`
+- `https://repository.egi.eu/sw/production/cas/1/current/meta/ca-policy-egi-core.tpl`
   for QWG
-- `http://repository.egi.eu/sw/production/cas/1/current/meta/pro_software_meta_ca_policy_egi_core.tpl`
+- `https://repository.egi.eu/sw/production/cas/1/current/meta/pro_software_meta_ca_policy_egi_core.tpl`
   for CDB
 
 Make sure to mirror (or refer to) the new repository at
-`http://repository.egi.eu/sw/production/cas/1/current/` and create the
+`https://repository.egi.eu/sw/production/cas/1/current/` and create the
 appropriate repository definition file.
 
 For WLCG sites that are migrating from the lcg-CA package: the WLCG policy
 companion of the EGI templates can be found at
-[QWG](http://lcg-ca.web.cern.ch/lcg-ca/distribution/current/meta/ca-policy-lcg.tpl)
+[QWG](https://lcg-ca.web.cern.ch/lcg-ca/distribution/current/meta/ca-policy-lcg.tpl)
 and
-[CDB](http://lcg-ca.web.cern.ch/lcg-ca/distribution/current/meta/pro_software_meta_ca_policy_lcg.tpl)
+[CDB](https://lcg-ca.web.cern.ch/lcg-ca/distribution/current/meta/pro_software_meta_ca_policy_lcg.tpl)
 and can be included in the profile in parallel with the EGI core template. All
 packages needed are also included in the EGI repository, so only a single
 repository reference is necessary.
@@ -230,4 +230,4 @@ or its [mirror](https://www.apgridpma.org/distribution/). See the IGTF and
 EUGridPMA web pages for additional information.
 
 Make sure to verify your trust anchors with [TACAR](https://www.tacar.org/), the
-[TERENA](http://www.terena.org) Academic CA Repository, where applicable.
+[TERENA](https://www.terena.org) Academic CA Repository, where applicable.

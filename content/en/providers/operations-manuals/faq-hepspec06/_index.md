@@ -15,7 +15,7 @@ SPEC, a new CPU benchmark that will replace si2k and will become the reference
 benchmark for accounting purposes.
 
 Detailed description of the reasons are provided on the
-[transition to a new CPU benchmarking unit for the WLCG](http://indico.cern.ch/getFile.py/access?contribId=3&sessionId=0&resId=0&materialId=0&confId=49388).
+[transition to a new CPU benchmarking unit for the WLCG](https://indico.cern.ch/getFile.py/access?contribId=3&sessionId=0&resId=0&materialId=0&confId=49388).
 
 ### Q2: What is HEP SPEC 06?
 
@@ -36,7 +36,7 @@ change.
 ### Q3: Where can I find information about HEP SPEC 06 measurements?
 
 Some example results are available on the
-[HEPIX group-page](http://w3.hepix.org/benchmarking.html), where one can see the
+[HEPIX group-page](https://w3.hepix.org/benchmarking.html), where one can see the
 differences between gcc3.4.x and gcc4.1.x.
 
 Additional results tables are available from various EGI partners:

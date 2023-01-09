@@ -83,7 +83,7 @@ ARC uses its own system to publish the accounting data through AMS, so please
 refer to the NorduGrid ARC 6 documentation:
 
 - Information relevant only for 6.4 ARC releases and beyond:
-  [Accounting-NG](http://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech)
+  [Accounting-NG](https://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech)
 - The old ActiveMQ network was dismissed.
   [ARC 6.12](https://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.html)
   introduces new settings for publishing the accounting records via AMS.
