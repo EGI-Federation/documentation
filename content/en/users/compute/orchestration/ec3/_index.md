@@ -11,7 +11,7 @@ description: >
 
 ## What is it?
 
-[Elastic Cloud Compute Cluster](http://servproject.i3m.upv.es/ec3-ltos/) (EC3)
+[Elastic Cloud Compute Cluster](https://servproject.i3m.upv.es/ec3-ltos/) (EC3)
 is a tool to **create elastic virtual clusters on top of
 Infrastructure-as-a-Service (IaaS) providers**.
 
