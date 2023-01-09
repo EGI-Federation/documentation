@@ -65,6 +65,9 @@
     },
     {
       "pattern": "^https://github.com/.*.keys"
+    },
+    {
+      "pattern": "^https://tools.ietf.org/html/rfc*"
     }
   ]
 }
