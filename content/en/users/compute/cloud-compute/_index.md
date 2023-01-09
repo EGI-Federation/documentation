@@ -63,8 +63,8 @@ emerged:
   providers to satisfy extremly intensive HW resource requirements.
   - Example:
     [VERCE platform](https://www.egi.eu/news/new-egi-use-case-a-close-look-at-the-amatrice-earthquake/),
-    [The Genetics of Salmonella Infections](https://www.egi.eu/use-cases/research-stories/the-genetics-of-salmonella-infections/),
-    [The Chipster Platform](https://www.egi.eu/use-cases/research-stories/new-viruses-implicated-in-fatal-snake-disease/).
+    [The Genetics of Salmonella Infections](https://www.egi.eu/article/the-genetics-of-salmonella-infections/),
+    [The Chipster Platform](https://www.egi.eu/article/new-viruses-implicated-in-fatal-snake-disease/).
 - **Datasets repository**: the EGI Cloud can be used to store and manage large
   datasets exploiting the large amount of disk storage available in the
   Federation.
