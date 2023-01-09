@@ -29,7 +29,7 @@ running [TORQUE](https://github.com/adaptivecomputing/torque),
 resized to fit the load (e.g. number of jobs at the batch system).
 
 {{% alert title="Note" color="info" %}} EC3 was presented in one of the
-[EGI Webinars](https://www.egi.eu/webinars/). Please see more details on the
+[EGI Webinars](https://www.egi.eu/trainings-and-webinars/). Please see more details on the
 [Indico page](https://indico.egi.eu/event/5092/) and check out the video
 recording on [YouTube](https://youtu.be/cN0tTBjV3I8). {{% /alert %}}
 

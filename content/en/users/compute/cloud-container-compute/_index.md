@@ -27,6 +27,6 @@ Federated Cloud. There are two main ways of executing containers:
 Follow the guides below to learn more about them.
 
 The EGI Cloud Container Compute service was presented in one of the
-[EGI Webinars](https://www.egi.eu/webinars/). See more details on the
+[EGI Webinars](https://www.egi.eu/trainings-and-webinars/). See more details on the
 [indico page](https://indico.egi.eu/event/5492/) and a video recording on
 [YouTube](https://youtu.be/cZ3M47ON0pg).
