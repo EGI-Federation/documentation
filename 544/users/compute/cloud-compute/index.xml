@@ -871,7 +871,7 @@ status and IP. VMOps will create a default &lt;code>cloudadm&lt;/code> user for 
 ssh-key pair for login (you can create as many users as needed with the
 contextualisation options of the wizard described above).&lt;/p>
 &lt;p>&lt;img src="vmops_vm.png" alt="VM details">&lt;/p>
-&lt;p>VMOps was presented in one of the &lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>
+&lt;p>VMOps was presented in one of the &lt;a href="https://www.egi.eu/trainings-and-webinars/">EGI Webinars&lt;/a>
 in 2020. The &lt;a href="https://indico.egi.eu/event/5272/">indico page&lt;/a> contains more
 details and there is also a video recording available on
 &lt;a href="https://youtu.be/0YuuKA_4pSM">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: AppDB REST API v1.0</title><link>/users/compute/cloud-compute/appdb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/appdb/</guid><description>
