@@ -17,7 +17,7 @@ of them.
 
 ## What is it?
 
-[EGI Notebooks](https://www.egi.eu/services/notebooks/) is a service-like
+[EGI Notebooks](https://www.egi.eu/service/notebooks/) is a service-like
 environment based on the [Jupyter technology](http://jupyter.org/), offering a
 **browser-based tool for interactive data analysis**.
 

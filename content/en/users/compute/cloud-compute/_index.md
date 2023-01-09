@@ -9,7 +9,7 @@ description: >
   Run virtual machines in the EGI Cloud
 ---
 
-The [EGI Federated Cloud Compute](https://www.egi.eu/services/cloud-compute/) (FedCloud)
+The [EGI Federated Cloud Compute](https://www.egi.eu/service/cloud-compute/) (FedCloud)
 service offers a multi-cloud IaaS federation that brings together
 research clouds as a scalable computing platform for data and/or compute driven
 applications and services for research and science.
@@ -26,7 +26,7 @@ servers.
 Cloud Compute service is provided through a federation of IaaS cloud sites that
 offer:
 
-- Single Sign-On via [EGI Check-in](https://www.egi.eu/services/check-in/),
+- Single Sign-On via [EGI Check-in](https://www.egi.eu/service/check-in/),
   users can login into every provider with their institutional credentials and
   use modern industry standards like
   [OpenID Connect](https://openid.net/connect/).
@@ -71,7 +71,7 @@ emerged:
 - **Disposable and testing environments**: environments for training or testing
   new developments.
   - Example:
-    [Training infrastructure](https://www.egi.eu/services/training-infrastructure/)
+    [Training infrastructure](https://www.egi.eu/service/training-infrastructure/)
 
 Eager to test this service? Have a look at
 [how to create your first Virtual Machine in EGI](../../tutorials/create-your-first-virtual-machine).

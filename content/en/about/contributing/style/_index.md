@@ -16,7 +16,7 @@ weight: 20
 - When introducing services, link to the public page of the service, if any:
 
 ```markdown
-[EGI Cloud Compute](https://www.egi.eu/services/cloud-compute/)
+[EGI Cloud Compute](https://www.egi.eu/service/cloud-compute/)
 ```
 
 ## Markdown writing guidelines

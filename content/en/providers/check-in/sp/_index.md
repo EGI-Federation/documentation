@@ -6,7 +6,7 @@ type: "docs"
 ---
 
 This page contains information about connecting services to
-[EGI Check-in](https://www.egi.eu/services/check-in/) in order to allow user
+[EGI Check-in](https://www.egi.eu/service/check-in/) in order to allow user
 login through Check-in and to receive users' attributes. Check-in is connected
 to a wide range of academic and social Identity Providers that users can choose
 from in order to access your service.

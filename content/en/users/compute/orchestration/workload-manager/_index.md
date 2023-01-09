@@ -11,7 +11,7 @@ description: >
 
 ## What is it?
 
-[EGI Workload Manager](https://www.egi.eu/services/workload-manager/) is a
+[EGI Workload Manager](https://www.egi.eu/service/workload-manager/) is a
 service provided to the EGI community to efficiently **manage and distribute
 computing workloads on the EGI infrastructure**.
 

@@ -17,7 +17,7 @@ either run their own [data centers](https://www.egi.eu/federation/data-centres/)
 or rely on community, private and/or public cloud services. These service
 providers offer:
 
-- **Single Sign-On** via [EGI Check-in](https://www.egi.eu/services/check-in/)
+- **Single Sign-On** via [EGI Check-in](https://www.egi.eu/service/check-in/)
   allows users to login with their institutional (community) credentials
 - **Global image catalogue** at [AppDB](https://appdb.egi.eu) with
   pre-configured virtual machine images
@@ -96,7 +96,7 @@ EGI services use the following types of access conditions:
   for such services. Example: Compute resources and tools allocated to
   researchers in medical imaging ([Biomed VO](http://lsgc.org/biomed.html)).
 - **Pay-for-use** - Services are provided for a fee. Example:
-  [FitSM Training](https://www.egi.eu/services/fitsm-training)
+  [FitSM Training](https://www.egi.eu/service/fitsm-training)
 
 The EGI user community support team handles access requests (orders) for the
 _Policy based_ and _Pay-for-use_ access modes. They will respond to the request

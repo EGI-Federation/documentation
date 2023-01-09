@@ -9,7 +9,7 @@ description: >
 ---
 
 The
-[EGI Cloud Container Compute service](https://www.egi.eu/services/cloud-container/)
+[EGI Cloud Container Compute service](https://www.egi.eu/service/cloud-container/)
 allows you to run container-based applications on the providers of the EGI
 Federated Cloud. There are two main ways of executing containers:
 
