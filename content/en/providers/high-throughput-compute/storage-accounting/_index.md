@@ -10,7 +10,7 @@ description: "Using Storage Accounting Record (StAR)"
 Storage space usage accounting is based on the StAR (Storage Accounting Record)
 developed during the EMI project in conjunction with the OGF Usage Record Work
 Group (UR-WG). The format is documented
-[in GFD-I.201](http://cds.cern.ch/record/1452920/files/GFD.201.pdf).
+[in GFD-I.201](https://cds.cern.ch/record/1452920/files/GFD.201.pdf).
 
 EMI delivered StAR solutions for dCache and DPM in EMI-3. In both cases the
 storage service queries its database at a site and extracts data to populate
@@ -130,5 +130,5 @@ The page is updated on a daily basis.
 ## Storage Accounting Data at the EGI Accounting Portal
 
 The storage accounting view is currently available on the
-[development instance](http://accounting-devel.egi.eu/storage.php) of the
+[development instance](https://accounting-devel.egi.eu/storage.php) of the
 Accounting Portal.

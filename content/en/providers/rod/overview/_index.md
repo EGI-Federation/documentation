@@ -24,7 +24,7 @@ There are few actions which needs to be taken before you start your work:
 
 1. Get a valid grid certificate delivered by Certificate Authorities (CA) - this
    step is important because most of the tools used during the shift require
-   certificate. [Find](http://www.eugridpma.org/members/worldmap/) EUGRIDPMA
+   certificate. [Find](https://www.eugridpma.org/members/worldmap/) EUGRIDPMA
    members.
 2. [Register to Dteam VO](https://voms2.hellasgrid.gr:8443/voms/dteam/). Dteam
    membership will give you possibility to test sites and debug problems.
@@ -49,7 +49,7 @@ There are few actions which needs to be taken before you start your work:
    you will find all information relevant to your work as a ROD.
 
 To see how to perform all those actions please watch video
-[How to become a ROD member](http://www.youtube.com/watch?v=p-SrqJMDlOo) (7
+[How to become a ROD member](https://www.youtube.com/watch?v=p-SrqJMDlOo) (7
 steps which should be done to become a ROD member also).
 
 ## ROD duties
@@ -109,7 +109,7 @@ important for your work.
 ### Operational Tools
 
 ROD uses several operational tools to perform theirs duties
-([Operations tools video](http://www.youtube.com/watch?v=bNm4oupAmqI)):
+([Operations tools video](https://www.youtube.com/watch?v=bNm4oupAmqI)):
 
 - [Operations Portal](../../../internal/operations-portal/). Dashboard tool on
   the Operations Portal is a main tool which is used by ROD teams. All actions

@@ -42,7 +42,7 @@ in parallel):
   Management Database (CMDB)
 - Information System: evaluating if the new technology should publish
   information in the Information System according to the
-  [GLUE Schema](http://www.ogf.org/documents/GFD.147.pdf).
+  [GLUE Schema](https://www.ogf.org/documents/GFD.147.pdf).
 - [Monitoring](../../../internal/monitoring): the new technology should allow
   external monitoring. If particular aspects of the technology need to be
   monitored, specific monitoring probes should be provided by the TPs and
