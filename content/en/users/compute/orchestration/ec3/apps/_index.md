@@ -42,7 +42,7 @@ Mesos + Marathon + Chronos from the list of available LRMS.
 ### OSCAR cluster
 
 To deploy
-[Serverless computing for data-processing applications](https://www.egi.eu/about/newsletters/serverless-computing-for-data-processing-applications-in-egi/)
+[Serverless computing for data-processing applications](https://www.egi.eu/article/serverless-computing-for-data-processing-applications-in-egi/)
 in EGI, please select OSCAR from the list of LRMS (Local Resource Management
 System). OSCAR supports data-driven serverless computing for file-processing
 applications. A file upload, to the object storage backend [MinIO](https://minio.io),

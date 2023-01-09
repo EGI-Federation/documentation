@@ -62,7 +62,7 @@ emerged:
   intensive I/O. Ad-hoc computing environments can be created in the EGI cloud
   providers to satisfy extremly intensive HW resource requirements.
   - Example:
-    [VERCE platform](https://www.egi.eu/news/new-egi-use-case-a-close-look-at-the-amatrice-earthquake/),
+    [VERCE platform](https://www.egi.eu/article/what-happened-during-the-august-2016-amatrice-earthquake/),
     [The Genetics of Salmonella Infections](https://www.egi.eu/article/the-genetics-of-salmonella-infections/),
     [The Chipster Platform](https://www.egi.eu/article/new-viruses-implicated-in-fatal-snake-disease/).
 - **Datasets repository**: the EGI Cloud can be used to store and manage large
