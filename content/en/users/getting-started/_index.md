@@ -34,10 +34,6 @@ each with their own virtualised resources built around open standards. The
 development of these communities is driven by by their own scientific
 requirements.
 
-{{% alert title="Tip" color="info" %}} See also an
-[overview](https://www.egi.eu/federation/egi-federated-cloud/the-egi-federated-cloud-architecture/)
-of the EGI FedCloud architecture. {{% /alert %}}
-
 ## Accessing resources
 
 Access to resources (services) in the EGI infrastructure is based on
