@@ -40,7 +40,7 @@ use a web dashboard like [VMOps Dashboard](../../compute/cloud-compute/monitor) 
 On the other hand, advanced users
 may prefer to use the [command-line interface](../../getting-started/cli).
 
-To know more about the [Cloud Compute](https://www.egi.eu/services/cloud-compute/)
+To know more about the [Cloud Compute](https://www.egi.eu/service/cloud-compute/)
 Service in EGI please visit its [dedicated section](../../compute/cloud-compute).
 
 ## Asking for help
