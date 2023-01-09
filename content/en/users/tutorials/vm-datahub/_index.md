@@ -38,7 +38,7 @@ Alternatively a docker based installation is also provided.
 Use the following command in order to install the `oneclient` package in a supported OS:
 
 ```shell
-$ curl -sS http://get.onedata.org/oneclient.sh | bash
+$ curl -sS https://get.onedata.org/oneclient.sh | bash
 ```
 
 This will also install the needed dependencies.

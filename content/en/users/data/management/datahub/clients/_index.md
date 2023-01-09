@@ -71,7 +71,7 @@ Ubuntu releases).
 
 ```shell
 $ docker run -it --privileged centos:7 /bin/bash
-root@81dbd7e84438 /]# curl -sS  http://get.onedata.org/oneclient.sh | bash
+root@81dbd7e84438 /]# curl -sS  https://get.onedata.org/oneclient.sh | bash
 # (...)
 Complete!
 Installation has been completed successfully.
@@ -168,7 +168,7 @@ The following variables have to be exported:
   connect to.
 
 ```shell
-$ curl -sS http://get.onedata.org/oneclient.sh | bash
+$ curl -sS https://get.onedata.org/oneclient.sh | bash
 $ export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 $ export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
 $ mkdir /tmp/space
@@ -184,7 +184,7 @@ It\'s possible to quickly test Oneclient using
 $ vagrant init ubuntu/xenial64
 $ vagrant up
 $ vagrant ssh
-$ curl -sS http://get.onedata.org/oneclient.sh | bash
+$ curl -sS https://get.onedata.org/oneclient.sh | bash
 $ export ONECLIENT_ACCESS_TOKEN=<ACCESS_TOKEN_FROM_ONEZONE>
 $ export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
 $ mkdir /tmp/space
