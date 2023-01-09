@@ -111,7 +111,7 @@ typically covers two topics:
   much RAM per CPU, which software services, and for how long do you need them,
   etc.
 
-[Contact us](https://www.egi.eu/contact/) if you want to discuss further.
+[Contact us](https://www.egi.eu/contact-us/) if you want to discuss further.
 
 ## Capacity allocation
 
