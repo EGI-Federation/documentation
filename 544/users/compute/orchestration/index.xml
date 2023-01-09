@@ -9,14 +9,14 @@ and update, and monitoring of virtual infrastructures.&lt;/p>
 a wide variety of backends, either federated (such as
 &lt;a href="../../cloud-compute">EGI Cloud Compute&lt;/a>), public (such as
 &lt;a href="https://aws.amazon.com/">Amazon Web Services&lt;/a>,
-&lt;a href="http://cloud.google.com/">Google Cloud&lt;/a> or
-&lt;a href="http://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
+&lt;a href="https://cloud.google.com/">Google Cloud&lt;/a> or
+&lt;a href="https://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
 &lt;a href="../../../getting-started/openstack">OpenStack&lt;/a>),
 thus making user applications cloud agnostic.
 IM features a &lt;a href="https://appsgrycap.i3m.upv.es:31443/im-dashboard/">web-based GUI&lt;/a>,
 an XML-RPC API, a REST API and a &lt;a href="cli">command-line interface&lt;/a> (CLI).
 It supports
-&lt;a href="http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html">OASIS TOSCA Simple Profile in YAML&lt;/a>.&lt;/p>
+&lt;a href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html">OASIS TOSCA Simple Profile in YAML&lt;/a>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 An easy way to deploy your first VM
@@ -42,13 +42,13 @@ Infrastructure-as-a-Service (IaaS) providers&lt;/strong>.&lt;/p>
 &lt;p>Being based on &lt;a href="../im">Infrastructure Manager&lt;/a>, EC3 supports the same wide
 choices of backends, either public (such as
 &lt;a href="https://aws.amazon.com/">Amazon Web Services&lt;/a>,
-&lt;a href="http://cloud.google.com/">Google Cloud&lt;/a> or
-&lt;a href="http://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
+&lt;a href="https://cloud.google.com/">Google Cloud&lt;/a> or
+&lt;a href="https://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
 &lt;a href="../../../getting-started/openstack">OpenStack&lt;/a>). EC3 can provision clusters
 running &lt;a href="https://github.com/adaptivecomputing/torque">TORQUE&lt;/a>,
-&lt;a href="http://slurm.schedmd.com/">SLURM&lt;/a>,
+&lt;a href="https://slurm.schedmd.com/">SLURM&lt;/a>,
 &lt;a href="https://research.cs.wisc.edu/htcondor/">HTCondor&lt;/a>,
-&lt;a href="http://mesos.apache.org/">Apache Mesos&lt;/a>, &lt;a href="https://www.nomadproject.io/">Nomad&lt;/a>,
+&lt;a href="https://mesos.apache.org/">Apache Mesos&lt;/a>, &lt;a href="https://www.nomadproject.io/">Nomad&lt;/a>,
 &lt;a href="https://kubernetes.io/">Kubernetes&lt;/a> and others, which will be automatically
 resized to fit the load (e.g. number of jobs at the batch system).&lt;/p>
 &lt;div class="alert alert-info" role="alert">
@@ -106,7 +106,7 @@ scientific communities.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Workload Manager is based on
-&lt;a href="http://diracgrid.org/">DIRAC technology&lt;/a>.&lt;br/>
+&lt;a href="https://diracgrid.org/">DIRAC technology&lt;/a>.&lt;br/>
 The delivery of the service is coordinated
 by the EGI Foundation and &lt;a href="https://in2p3.cnrs.fr/">IN2P3&lt;/a> provides the resources and
 operates the service.
@@ -216,7 +216,7 @@ Team on shift.&lt;/p>
 &lt;p>DIRAC uses &lt;a href="../../../aai/check-in/vos/voms">X.509 certificates&lt;/a> to identify and
 authenticate users. These certificates are delivered to each individual by
 trusted certification authorities. If you have a personal certificate issued by
-a &lt;a href="http://www.eugridpma.org/">EUGridPMA-certified&lt;/a> authority you can use it for
+a &lt;a href="https://www.eugridpma.org/">EUGridPMA-certified&lt;/a> authority you can use it for
 this tutorial. Otherwise refer to the information available in this
 &lt;a href="../../../aai/check-in/vos/voms/#get-a-certificate">section&lt;/a>, to obtain a certificate.
 Your certificate may take a few days to be delivered, so please ask for your
@@ -411,7 +411,7 @@ certificate is uploaded to the DIRAC ProxyManager service.&lt;/p>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>DIRAC commands&lt;/p>
 &lt;p>Have a look at the official
-&lt;a href="http://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html">command reference documentation&lt;/a>
+&lt;a href="https://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html">command reference documentation&lt;/a>
 for the complete list of the Workload Management commands.&lt;/p>
 &lt;p>In general, you can submit jobs, check their status, and retrieve the output.
 For example:&lt;/p>

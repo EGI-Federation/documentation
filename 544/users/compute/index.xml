@@ -164,7 +164,7 @@ services/resources they contribute to the EGI ecosystem.&lt;/li>
 &lt;li>&lt;strong>Computing Elements&lt;/strong> (CEs) are compute resources made available through GRID
 interfaces. The most common implementations of CEs in the EGI infrastructure
 are &lt;a href="https://htcondor.com/htcondor-ce/">HTCondor-CE&lt;/a> and
-&lt;a href="http://www.nordugrid.org/arc/ce/">ARC-CE&lt;/a>.&lt;/li>
+&lt;a href="https://www.nordugrid.org/arc/ce/">ARC-CE&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;h3 id="access-model">Access model&lt;/h3>
 &lt;p>Access to HTC resources in the EGI infrastructure is based on X.509 certificates

@@ -41,7 +41,7 @@ we are not providing packages):
 &lt;p>This manual provides information on how to set up a Resource Centre providing
 cloud resources in the EGI infrastructure. Integration with FedCloud requires a
 &lt;em>working OpenStack installation&lt;/em> as a pre-requirement. EGI supports any recent
-&lt;a href="http://releases.openstack.org">OpenStack version&lt;/a> (tested from OpenStack
+&lt;a href="https://releases.openstack.org">OpenStack version&lt;/a> (tested from OpenStack
 Mitaka).&lt;/p>
 &lt;p>EGI expects the following OpenStack services to be available and accessible from
 outside your site:&lt;/p>
@@ -329,7 +329,7 @@ the same.&lt;/p>
 against your endpoints.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Check in the &lt;a href="http://accounting.egi.eu/">accounting portal&lt;/a> that your site is
+&lt;p>Check in the &lt;a href="https://accounting.egi.eu/">accounting portal&lt;/a> that your site is
 listed and the values reported look consistent with the usage of your site.&lt;/p>
 &lt;/li>
 &lt;/ul></description></item><item><title>Providers: FAQ</title><link>/providers/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/faq/</guid><description>

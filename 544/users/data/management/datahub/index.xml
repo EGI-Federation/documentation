@@ -75,7 +75,7 @@ the container should run in &lt;strong>privileged&lt;/strong> mode.
 container for a supported Operating System flavor (mainly various CentOS and
 Ubuntu releases).&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -it --privileged centos:7 /bin/bash
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root@81dbd7e84438 /&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># curl -sS http://get.onedata.org/oneclient.sh | bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root@81dbd7e84438 /&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#8f5902;font-style:italic"># curl -sS https://get.onedata.org/oneclient.sh | bash&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># (...)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Complete!
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Installation has been completed successfully.
@@ -150,7 +150,7 @@ instead of &lt;code>$PWD&lt;/code> that points to the working directory)&lt;/li>
 &lt;li>&lt;code>ONECLIENT_PROVIDER_HOST&lt;/code>: name or IP of the Oneprovider the client should
 connect to.&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -sS https://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ mkdir /tmp/space
@@ -161,7 +161,7 @@ connect to.&lt;/li>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ vagrant init ubuntu/xenial64
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ vagrant up
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ vagrant ssh
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ curl -sS https://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ACCESS_TOKEN_FROM_ONEZONE&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>plg-cyfronet-01.datahub.egi.eu
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ mkdir /tmp/space
@@ -186,7 +186,7 @@ tool. Details on how to use are described in the
 &lt;a href="https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html">official Oneclient documentation&lt;/a>.&lt;/p>
 &lt;h2 id="cdmi-cloud-data-management-interface">CDMI (Cloud Data Management Interface)&lt;/h2>
 &lt;p>For more advanced use cases, files can be managed using the
-&lt;a href="http://www.snia.org/cdmi">CDMI&lt;/a> protocol, as described in details
+&lt;a href="https://www.snia.org/cdmi">CDMI&lt;/a> protocol, as described in details
 &lt;a href="https://onedata.org/#/home/documentation/doc/advanced/cdmi.html">in the Onedata CDMI documentation&lt;/a>.&lt;/p>
 &lt;h2 id="file-permissions">File Permissions&lt;/h2>
 &lt;p>You can control access to your data with a combination of:&lt;/p>
@@ -549,7 +549,7 @@ screenshot.&lt;/p></description></item><item><title>Users: DataHub Links</title>
 &lt;ul>
 &lt;li>&lt;a href="https://datahub.egi.eu">EGI DataHub service&lt;/a>
 &lt;ul>
-&lt;li>&lt;a href="http://go.egi.eu/datahub-intro">Overview slides&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://go.egi.eu/datahub-intro">Overview slides&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://community.egi.eu/c/egi-services/datahub">Community Forum&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://indico.egi.eu/event/5089/">EGI Webinar&lt;/a> and
 &lt;a href="https://youtu.be/ayAplV2kEN4">YouTube video&lt;/a>&lt;/li>

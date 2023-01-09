@@ -214,7 +214,7 @@ you can &lt;a href="../../aai/check-in/signup">Sign up for an EGI account&lt;/a>
 &lt;p>Alternatively a docker based installation is also provided.&lt;/p>
 &lt;h3 id="oneclient-installation-via-packages">Oneclient installation via packages&lt;/h3>
 &lt;p>Use the following command in order to install the &lt;code>oneclient&lt;/code> package in a supported OS:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -sS https://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will also install the needed dependencies.&lt;/p>
 &lt;h3 id="oneclient-installation-via-docker">Oneclient installation via docker&lt;/h3>
 &lt;p>In order to use the Dockerized version of oneclient (provided that you
@@ -1130,9 +1130,9 @@ create a &lt;strong>VOMS proxy&lt;/strong> for &lt;code>dteam&lt;/code> VO:&lt;/
 &lt;p>Two Computing Element (CE) &amp;ldquo;flavours&amp;rdquo; are used in production:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://htcondor.org/htcondor-ce/overview/">HTCondorCE&lt;/a>, a Compute Entrypoint
-(CE) based on &lt;a href="http://htcondor.org/">HTCondor&lt;/a>.&lt;/li>
-&lt;li>&lt;a href="http://www.nordugrid.org/arc/ce/">ARC-CE&lt;/a>, the
-&lt;a href="http://www.nordugrid.org/arc/">ARC&lt;/a> Compute Element (CE).&lt;/li>
+(CE) based on &lt;a href="https://htcondor.org/">HTCondor&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="https://www.nordugrid.org/arc/ce/">ARC-CE&lt;/a>, the
+&lt;a href="https://www.nordugrid.org/arc/">ARC&lt;/a> Compute Element (CE).&lt;/li>
 &lt;/ul>
 &lt;p>In this section we will document querying the EGI Information System to retrieve
 information about the available resources.&lt;/p>
@@ -1243,7 +1243,7 @@ the previous query: &lt;code>urn:ogf:ComputingShare:alex4.nipne.ro:dteam_dteam&l
 &lt;blockquote>
 &lt;p>The &lt;a href="https://htcondor.com/htcondor-ce/#what-is-htcondor-ce">HTCondor-CE&lt;/a>
 software is a Compute Entrypoint (CE) based on
-&lt;a href="http://htcondor.org/">HTCondor&lt;/a> for sites that are part of a larger computing
+&lt;a href="https://htcondor.org/">HTCondor&lt;/a> for sites that are part of a larger computing
 grid (e.g. &lt;a href="https://www.egi.eu/">EGI&lt;/a>,
 &lt;a href="https://osg-htc.org/">Open Science Grid (OSG)&lt;/a>).&lt;/p>
 &lt;/blockquote>
@@ -1324,12 +1324,12 @@ modify its local copies of the spooled files.&lt;/p>
 &lt;/ul>
 &lt;h3 id="to-an-arc-ce-computing-element">To an ARC-CE Computing Element&lt;/h3>
 &lt;blockquote>
-&lt;p>&lt;a href="http://www.nordugrid.org/arc">ARC&lt;/a> Compute Element (CE) is a Grid front-end
+&lt;p>&lt;a href="https://www.nordugrid.org/arc">ARC&lt;/a> Compute Element (CE) is a Grid front-end
 on top of a conventional computing resource (e.g. a Linux cluster or a
 standalone workstation). ARC CE is sometimes also called &lt;strong>ARC server&lt;/strong>.&lt;/p>
 &lt;/blockquote>
 &lt;p>While there is an official documentation on
-&lt;a href="http://www.nordugrid.org/arc/arc6/users/submit_job.html">How to submit a job&lt;/a>,
+&lt;a href="https://www.nordugrid.org/arc/arc6/users/submit_job.html">How to submit a job&lt;/a>,
 the main steps will be documented below.&lt;/p>
 &lt;p>If you haven&amp;rsquo;t already generated a credential with &lt;code>voms-proxy-init&lt;/code>, you can
 generate a proxy certificate using ARC&amp;rsquo;s own tool: &lt;code>arcproxy&lt;/code>, which is using
@@ -1391,8 +1391,8 @@ selection from CE registered in a central registry, such as &lt;code>nordugrid.o
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcstat -l &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references-2">References&lt;/h4>
 &lt;ul>
-&lt;li>&lt;a href="http://www.nordugrid.org/arc/arc6/users/submit_job.html">ARC: submit a job&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://www.nordugrid.org/arc/arc6/users/client_tools.html">ARC client tools&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.nordugrid.org/arc/arc6/users/submit_job.html">ARC: submit a job&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.nordugrid.org/arc/arc6/users/client_tools.html">ARC client tools&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="to-a-cream-computing-element">To a CREAM Computing Element&lt;/h3>
 &lt;blockquote>
