@@ -278,7 +278,7 @@ this happens &lt;code>git stash&lt;/code> can be helpful.&lt;/p>
 &lt;li>Service names should never be replaced by acronyms&lt;/li>
 &lt;li>When introducing services, link to the public page of the service, if any:&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#204a87;font-weight:bold">EGI Cloud Compute&lt;/span>](&lt;span style="color:#c4a000">https://www.egi.eu/services/cloud-compute/&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#204a87;font-weight:bold">EGI Cloud Compute&lt;/span>](&lt;span style="color:#c4a000">https://www.egi.eu/service/cloud-compute/&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="markdown-writing-guidelines">Markdown writing guidelines&lt;/h2>
 &lt;p>Documentation pages have to be written in Markdown, compliant with
 &lt;a href="https://spec.commonmark.org/0.29/">CommonMark&lt;/a> and

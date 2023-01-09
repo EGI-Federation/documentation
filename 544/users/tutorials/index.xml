@@ -25,7 +25,7 @@ use a web dashboard like &lt;a href="../../compute/cloud-compute/monitor">VMOps 
 &lt;a href="../../compute/orchestration/im/dashboard">Infrastructure Manager Dashboard&lt;/a>.
 On the other hand, advanced users
 may prefer to use the &lt;a href="../../getting-started/cli">command-line interface&lt;/a>.&lt;/p>
-&lt;p>To know more about the &lt;a href="https://www.egi.eu/services/cloud-compute/">Cloud Compute&lt;/a>
+&lt;p>To know more about the &lt;a href="https://www.egi.eu/service/cloud-compute/">Cloud Compute&lt;/a>
 Service in EGI please visit its &lt;a href="../../compute/cloud-compute">dedicated section&lt;/a>.&lt;/p>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
 &lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Accessing virtual machines with SSH</title><link>/users/tutorials/accessing-vm-with-ssh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/accessing-vm-with-ssh/</guid><description>
@@ -1433,7 +1433,7 @@ by or for their community and providing the required commands.&lt;/p>
 &lt;/ul>
 &lt;h3 id="via-the-egi-workload-manager">Via the EGI Workload Manager&lt;/h3>
 &lt;blockquote>
-&lt;p>The &lt;a href="https://www.egi.eu/services/workload-manager/">EGI Workload Manager&lt;/a> is a
+&lt;p>The &lt;a href="https://www.egi.eu/service/workload-manager/">EGI Workload Manager&lt;/a> is a
 service provided to the EGI community to efficiently manage and distribute
 computing workloads on the EGI infrastructure.&lt;/p>
 &lt;/blockquote>

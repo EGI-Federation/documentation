@@ -6,7 +6,7 @@ flowcharts). From some point on you just need a mix of all these &amp;ndash; tha
 &lt;em>notebook&lt;/em> platforms are, &lt;a href="http://jupyter.org/">Jupyter&lt;/a> being the most popular
 of them.&lt;/p>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>&lt;a href="https://www.egi.eu/services/notebooks/">EGI Notebooks&lt;/a> is a service-like
+&lt;p>&lt;a href="https://www.egi.eu/service/notebooks/">EGI Notebooks&lt;/a> is a service-like
 environment based on the &lt;a href="http://jupyter.org/">Jupyter technology&lt;/a>, offering a
 &lt;strong>browser-based tool for interactive data analysis&lt;/strong>.&lt;/p>
 &lt;p>The Notebooks environment provides users with &lt;em>notebooks&lt;/em> where they can combine

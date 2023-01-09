@@ -1,6 +1,6 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Data Services</title><link>/users/data/</link><description>Recent content in Data Services on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/data/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Online Storage</title><link>/users/data/storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/storage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>&lt;a href="https://www.egi.eu/services/online-storage/">Online Storage&lt;/a> includes services
+&lt;p>&lt;a href="https://www.egi.eu/service/online-storage/">Online Storage&lt;/a> includes services
 that allow users to &lt;strong>store, share and access data&lt;/strong> using the EGI infrastructure.
 Different categories of storage are available, depending on how data is stored,
 the technology used to access and consume data, and the foreseen usage.&lt;/p>

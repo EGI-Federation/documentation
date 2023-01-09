@@ -1,5 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Compute Services</title><link>/users/compute/</link><description>Recent content in Compute Services on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Federated Cloud Compute</title><link>/users/compute/cloud-compute/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/</guid><description>
-&lt;p>The &lt;a href="https://www.egi.eu/services/cloud-compute/">EGI Federated Cloud Compute&lt;/a> (FedCloud)
+&lt;p>The &lt;a href="https://www.egi.eu/service/cloud-compute/">EGI Federated Cloud Compute&lt;/a> (FedCloud)
 service offers a multi-cloud IaaS federation that brings together
 research clouds as a scalable computing platform for data and/or compute driven
 applications and services for research and science.&lt;/p>
@@ -13,7 +13,7 @@ servers.&lt;/p>
 &lt;p>Cloud Compute service is provided through a federation of IaaS cloud sites that
 offer:&lt;/p>
 &lt;ul>
-&lt;li>Single Sign-On via &lt;a href="https://www.egi.eu/services/check-in/">EGI Check-in&lt;/a>,
+&lt;li>Single Sign-On via &lt;a href="https://www.egi.eu/service/check-in/">EGI Check-in&lt;/a>,
 users can login into every provider with their institutional credentials and
 use modern industry standards like
 &lt;a href="https://openid.net/connect/">OpenID Connect&lt;/a>.&lt;/li>
@@ -64,14 +64,14 @@ Federation.&lt;/li>
 new developments.
 &lt;ul>
 &lt;li>Example:
-&lt;a href="https://www.egi.eu/services/training-infrastructure/">Training infrastructure&lt;/a>&lt;/li>
+&lt;a href="https://www.egi.eu/service/training-infrastructure/">Training infrastructure&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
 &lt;p>Eager to test this service? Have a look at
 &lt;a href="../../tutorials/create-your-first-virtual-machine">how to create your first Virtual Machine in EGI&lt;/a>.&lt;/p></description></item><item><title>Users: Cloud Container Compute</title><link>/users/compute/cloud-container-compute/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-container-compute/</guid><description>
 &lt;p>The
-&lt;a href="https://www.egi.eu/services/cloud-container/">EGI Cloud Container Compute service&lt;/a>
+&lt;a href="https://www.egi.eu/service/cloud-container/">EGI Cloud Container Compute service&lt;/a>
 allows you to run container-based applications on the providers of the EGI
 Federated Cloud. There are two main ways of executing containers:&lt;/p>
 &lt;ol>

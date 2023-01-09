@@ -95,7 +95,7 @@ and the video recording is available on
 &lt;a href="https://www.youtube.com/watch?v=bcURl4ESRW8&amp;amp;ab_channel=EGI">YouTube&lt;/a>.
 &lt;/div></description></item><item><title>Users: EGI Workload Manager</title><link>/users/compute/orchestration/workload-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/workload-manager/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>&lt;a href="https://www.egi.eu/services/workload-manager/">EGI Workload Manager&lt;/a> is a
+&lt;p>&lt;a href="https://www.egi.eu/service/workload-manager/">EGI Workload Manager&lt;/a> is a
 service provided to the EGI community to efficiently &lt;strong>manage and distribute
 computing workloads on the EGI infrastructure&lt;/strong>.&lt;/p>
 &lt;p>Workload Manager is configured to support a number of
