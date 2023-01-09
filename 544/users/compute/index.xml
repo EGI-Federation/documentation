@@ -42,14 +42,14 @@ service as web servers, databases, etc. Cloud features, as elasticity, can
 help users to provide better performance and reliable services.
 &lt;ul>
 &lt;li>Example:
-&lt;a href="https://www.egi.eu/use-cases/scientific-applications-tools/nbis-toolkit/">NBIS Web Services&lt;/a>,
+&lt;a href="https://www.egi.eu/case-study/nbis/">NBIS Web Services&lt;/a>,
 &lt;a href="https://www.egi.eu/news/peachnote-in-unison-with-egi/">Peachnote analysis platform&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;strong>Compute and data intensive applications&lt;/strong>: for those applications needing
 considerable amount of resources in terms of computation and/or memory and/or
 intensive I/O. Ad-hoc computing environments can be created in the EGI cloud
-providers to satisfy extremly intensive HW resource requirements.
+providers to satisfy extremely intensive HW resource requirements.
 &lt;ul>
 &lt;li>Example:
 &lt;a href="https://www.egi.eu/article/what-happened-during-the-august-2016-amatrice-earthquake/">VERCE platform&lt;/a>,
