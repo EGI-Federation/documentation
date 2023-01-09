@@ -12,7 +12,7 @@ EGI is a federation of compute and storage resource providers united by a
 mission to support research and innovation.
 
 The resources in the EGI infrastructure are offered by
-[service providers](https://www.egi.eu/federation/egi-federated-cloud/) that
+[service providers](https://www.egi.eu/egi-infrastructure/) that
 either run their own [data centers](https://www.egi.eu/federation/data-centres/)
 or rely on community, private and/or public cloud services. These service
 providers offer:
