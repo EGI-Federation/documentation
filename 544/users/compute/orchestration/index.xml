@@ -36,7 +36,7 @@ It was also presented in one of the
 &lt;/div>
 &lt;p>The following sections document how to use IM from its GUI or CLI.&lt;/p></description></item><item><title>Users: Elastic Cloud Compute Clusters</title><link>/users/compute/orchestration/ec3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>&lt;a href="http://servproject.i3m.upv.es/ec3-ltos/">Elastic Cloud Compute Cluster&lt;/a> (EC3)
+&lt;p>&lt;a href="https://servproject.i3m.upv.es/ec3-ltos/">Elastic Cloud Compute Cluster&lt;/a> (EC3)
 is a tool to &lt;strong>create elastic virtual clusters on top of
 Infrastructure-as-a-Service (IaaS) providers&lt;/strong>.&lt;/p>
 &lt;p>Being based on &lt;a href="../im">Infrastructure Manager&lt;/a>, EC3 supports the same wide

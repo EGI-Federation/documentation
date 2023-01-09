@@ -71,7 +71,7 @@ new developments.
 &lt;p>Eager to test this service? Have a look at
 &lt;a href="../../tutorials/create-your-first-virtual-machine">how to create your first Virtual Machine in EGI&lt;/a>.&lt;/p></description></item><item><title>Users: Cloud Container Compute</title><link>/users/compute/cloud-container-compute/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-container-compute/</guid><description>
 &lt;p>The
-&lt;a href="https://www.egi.eu/service/cloud-container/">EGI Cloud Container Compute service&lt;/a>
+&lt;a href="https://www.egi.eu/service/cloud-container-compute/">EGI Cloud Container Compute service&lt;/a>
 allows you to run container-based applications on the providers of the EGI
 Federated Cloud. There are two main ways of executing containers:&lt;/p>
 &lt;ol>
