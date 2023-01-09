@@ -272,6 +272,6 @@ management page.
 - [ECASLab DKRZ](https://ecaslab.dkrz.de/home.html)
 - [Ophidia](https://ophidia.cmcc.it/)
 - [GitHub: ECAS-Lab](https://github.com/ECAS-Lab)
-- [GitHub: ansible role Ophidia cluster](https://github.com/OphidiaBigData/ansible-role-ophidia-cluster>)
+- [GitHub: ansible role Ophidia cluster](https://github.com/OphidiaBigData/ansible-role-ophidia-cluster)
 - [EC3](https://www.grycap.upv.es/ec3)
 - [GitHub EC3](https://www.github.com/grycap/ec3)
