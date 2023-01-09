@@ -64,6 +64,9 @@
       "pattern": "^https://operations-portal.egi.eu/downtimes/subscription"
     },
     {
+      "pattern": "^https://operations-portal.egi.eu/vo"
+    },
+    {
       "pattern": "^https://github.com/.*.keys"
     },
     {
