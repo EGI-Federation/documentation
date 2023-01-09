@@ -55,12 +55,12 @@ emerged:
   service as web servers, databases, etc. Cloud features, as elasticity, can
   help users to provide better performance and reliable services.
   - Example:
-    [NBIS Web Services](https://www.egi.eu/use-cases/scientific-applications-tools/nbis-toolkit/),
+    [NBIS Web Services](https://www.egi.eu/case-study/nbis/),
     [Peachnote analysis platform](https://www.egi.eu/news/peachnote-in-unison-with-egi/).
 - **Compute and data intensive applications**: for those applications needing
   considerable amount of resources in terms of computation and/or memory and/or
   intensive I/O. Ad-hoc computing environments can be created in the EGI cloud
-  providers to satisfy extremly intensive HW resource requirements.
+  providers to satisfy extremely intensive HW resource requirements.
   - Example:
     [VERCE platform](https://www.egi.eu/article/what-happened-during-the-august-2016-amatrice-earthquake/),
     [The Genetics of Salmonella Infections](https://www.egi.eu/article/the-genetics-of-salmonella-infections/),
