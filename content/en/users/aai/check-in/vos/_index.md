@@ -635,14 +635,23 @@ $ curl -vX POST $VO_API_BASE_URL.json \
          "Name": "vo.example.org"
       },
       "Affiliation": "member",
-      "Title": "Engineer",
+      "Title": "Engineer",                   // Optional
       "Status": "Active",
-      "ValidFrom": "2022-02-16 11:19:38",
-      "ValidThrough": "2022-05-16 11:19:38"
+      "ValidFrom": "2022-02-16 11:19:38",    // Optional
+      "ValidThrough": "2022-05-16 11:19:38"  // Optional
       }
    ]
 }
 ```
+
+{{% alert title="Info" color="info" %}}
+`Title` field is Optional and designates a custom Role name.
+{{% /alert %}}
+
+{{% alert title="Info" color="info" %}}
+`ValidFrom` and `ValidThrough` fields are Optional and designate the Role validity period.
+As soon as the `ValidThrough` date is passed the Check-in Registry will expire the membership.
+{{% /alert %}}
 
 <!--
 // jscpd:ignore-start
@@ -819,8 +828,8 @@ Response Format:
 
 ##### Removing VO member
 
-Same as the update but requires setting the membership status to `Deleted` and
-do not include a body.
+{{% alert title="Info" color="info" %}} Removing a VO membership is an update
+action where the status of the role is set to `Deleted`. {{% /alert %}}
 
 Response Format:
 
