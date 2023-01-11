@@ -609,7 +609,7 @@ credentials directly. Select &lt;em>EGI Check-In&lt;/em>:&lt;/p>
 &lt;p>Or &lt;em>egi.eu&lt;/em>:&lt;/p>
 &lt;p>&lt;img src="dashboard-login-check-in-3.png" alt="egi.eu">&lt;/p>
 &lt;p>In the &lt;strong>Authenticate using&lt;/strong> drop-down menu of the login screen.&lt;/p>
-&lt;p>Additionally you may need to select &lt;em>aai.egi.eu/oidc&lt;/em> as well:&lt;/p>
+&lt;p>Additionally you may need to select &lt;em>aai.egi.eu/auth/realms/egi&lt;/em> as well:&lt;/p>
 &lt;p>&lt;img src="dashboard-login-check-partb.png" alt="aai.egi.eu/oidc">&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>

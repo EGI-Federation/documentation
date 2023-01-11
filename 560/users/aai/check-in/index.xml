@@ -963,13 +963,12 @@ using curl (see example &lt;code>add.json&lt;/code> file below):&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-Title is Optional and designates a custom role name.
+&lt;code>Title&lt;/code> field is Optional and designates a custom Role name.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-ValidFrom and ValidThrough fields are optional and designate the role validity period.
-As soon as the ValidThrough date is passed the Check-in Registry
-will expire the membership.
+&lt;code>ValidFrom&lt;/code> and &lt;code>ValidThrough&lt;/code> fields are Optional and designate the Role validity period.
+As soon as the &lt;code>ValidThrough&lt;/code> date is passed the Check-in Registry will expire the membership.
 &lt;/div>
 &lt;!--
 // jscpd:ignore-start
@@ -1238,8 +1237,8 @@ update requires:&lt;/p>
 // jscpd:ignore-end
 -->
 &lt;h5 id="removing-vo-member">Removing VO member&lt;/h5>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
 Removing a VO membership is an update
 action where the status of the role is set to &lt;code>Deleted&lt;/code>.
 &lt;/div>
