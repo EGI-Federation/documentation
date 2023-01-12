@@ -14,5 +14,6 @@ to work with their site. Below is a list:
 - [IFCA-LCG2](https://confluence.ifca.es/display/IC/Computing+Resources)
 - [IN2P3-IRES](https://scigne.fr/en/user-support/online-documentation/)
 
-This information is handy to deal with the particularities of each OpenStack
-deployment.
+This information is handy to deal with the particularities of each services
+deployed by a given provider. It usually covers OpenStack deployments,
+but may also document other services.
