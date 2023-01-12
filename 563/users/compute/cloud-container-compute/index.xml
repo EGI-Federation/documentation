@@ -61,7 +61,7 @@ for the docker daemon:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># the default 1500 value does not work properly&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># edit docker configuration&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vi /etc/docker/daemon.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo vi /etc/docker/daemon.json
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># ensure MTU value is 1376&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
