@@ -1,13 +1,13 @@
 ---
-title: Site-specific documentation for Service Providers
+title: Service provider specific documentation for Users
 linkTitle: Service provider specific documentation
 type: docs
 weight: 100
 description: >
-  Documentation provided by each cloud provider in the EGI Federation.
+  Documentation specific to the individual services providers.
 ---
 
-Some cloud providers in the EGI Federation publish documentation about how
+Some service providers in the EGI Federation publish documentation about how
 to work with their site. Below is a list:
 
 - [CESNET-MCC](https://docs.cloud.muni.cz/)
