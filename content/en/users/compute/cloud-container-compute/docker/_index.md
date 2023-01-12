@@ -80,7 +80,7 @@ sudo docker network inspect bridge  | awk '/mtu/ {print $2}'
 
 # the default 1500 value does not work properly
 # edit docker configuration
-vi /etc/docker/daemon.json
+sudo vi /etc/docker/daemon.json
 
 # ensure MTU value is 1376
 {
