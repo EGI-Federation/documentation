@@ -1784,16 +1784,7 @@ Administrative access only.&lt;/p>
 &lt;li>Authenticated Operations: &lt;code>GET&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>Detailed description of a dissemination message that has been dispatched to
-registered users. Administrative access only.&lt;/p></description></item><item><title>Users: Site-specific documentation for cloud providers</title><link>/users/compute/cloud-compute/sites/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/sites/</guid><description>
-&lt;p>Some cloud providers in the EGI Federation publish documentation about how
-to work with their site. Below is a list:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://docs.cloud.muni.cz/">CESNET-MCC&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://confluence.ifca.es/display/IC/Cloud+Computing">IFCA-LCG2&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://scigne.fr/en/user-support/online-documentation/openstack-user-guide/">IN2P3-IRES&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>This information is handy to deal with the particularities of each OpenStack
-deployment.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/compute/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/faq/</guid><description>
+registered users. Administrative access only.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/compute/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/faq/</guid><description>
 &lt;h2 id="basics">Basics&lt;/h2>
 &lt;h3 id="how-can-i-get-access-to-the-cloud-compute-service">How can I get access to the cloud compute service?&lt;/h3>
 &lt;p>There is a VO available for 6 months piloting activities that any researcher in
