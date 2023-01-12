@@ -76,11 +76,11 @@ for the docker daemon:
 
 ```shell
 # check current MTU value
-sudo docker network inspect bridge  | awk '/mtu/ {print $2}'
+$ sudo docker network inspect bridge  | awk '/mtu/ {print $2}'
 
 # the default 1500 value does not work properly
 # edit docker configuration
-sudo vi /etc/docker/daemon.json
+$ sudo vi /etc/docker/daemon.json
 
 # ensure MTU value is 1376
 {
@@ -88,7 +88,7 @@ sudo vi /etc/docker/daemon.json
 }
 
 # then restart docker
-sudo systemctl restart docker
+$ sudo systemctl restart docker
 ```
 
 We experienced this issue when trying to install a pip dependency using
