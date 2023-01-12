@@ -1,0 +1,402 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Cloud Compute</title><link>/providers/cloud-compute/</link><description>Recent content in Cloud Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/cloud-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Requirements</title><link>/providers/cloud-compute/requirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/requirements/</guid><description>
+&lt;p>IaaS providers are very welcome to join the EGI Federated Cloud as a Resource
+Centres (RC) and joining the Federated Cloud Task Force to contribute to the
+design, creation and implementation of the federation.&lt;/p>
+&lt;p>Resource Centers are free to use any Cloud Management Framework (OpenStack,
+etc...) as long as they are able to integrate with the EGI Federation
+components as described in the
+&lt;a href="../../../users/getting-started/architecture">Federated Cloud Architecture&lt;/a>. At
+the moment this compliance is guaranteed for OpenStack.&lt;/p>
+&lt;p>The general minimal requirements are:&lt;/p>
+&lt;ul>
+&lt;li>Hardware requirements greatly depend on your cloud infrastructure, EGI
+components in general do lightweigth operations by interacting with your
+services APIs.
+&lt;ul>
+&lt;li>&lt;code>cloudkeeper&lt;/code> requires enough disk space to download and convert images
+before uploading into your local catalogue. The number and size of images
+which will be downloaded depends on the communities you plan to support. For
+the piloting VO &lt;code>fedcloud.egi.eu&lt;/code>, 100GB of disk should be enough.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Servers need to authenticate each other in the EGI Federated Cloud context
+using X.509 certificates. So a Resource Centre should be able to obtain server
+certificates for some services.&lt;/li>
+&lt;li>User and research communities are called Virtual Organisations (VO). Resource
+Centres are expected to join:
+&lt;ul>
+&lt;li>&lt;code>ops&lt;/code> and &lt;code>dteam&lt;/code> VOs, used for operational purposes as per RC OLA&lt;/li>
+&lt;li>a community-VO that supports EGI users (e.g. &lt;code>vo.access.egi.eu&lt;/code> for
+piloting)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>EGI provides packages for the following operating systems (others may work but
+we are not providing packages):
+&lt;ul>
+&lt;li>CentOS 7 (and in general RHEL-compatible)&lt;/li>
+&lt;li>Ubuntu 16.04 (and in general Debian-based)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Providers: OpenStack</title><link>/providers/cloud-compute/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/</guid><description>
+&lt;p>This manual provides information on how to set up a Resource Centre providing
+cloud resources in the EGI infrastructure. Integration with FedCloud requires a
+&lt;em>working OpenStack installation&lt;/em> as a pre-requirement. EGI supports any recent
+&lt;a href="http://releases.openstack.org">OpenStack version&lt;/a> (tested from OpenStack
+Mitaka).&lt;/p>
+&lt;p>EGI expects the following OpenStack services to be available and accessible from
+outside your site:&lt;/p>
+&lt;ul>
+&lt;li>Keystone&lt;/li>
+&lt;li>Nova&lt;/li>
+&lt;li>Cinder&lt;/li>
+&lt;li>Glance&lt;/li>
+&lt;li>Neutron&lt;/li>
+&lt;li>Swift (if providing Object Storage)&lt;/li>
+&lt;/ul>
+&lt;p>FedCloud components are distributed through
+&lt;a href="https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution">CMD (Cloud Middleware Distribution)&lt;/a>
+These docker containers come pre-packaged and ready to use in the EGI FedCloud
+Appliance so you do not need to install any extra components on your site but
+just run a VM and configure it approprietely to interact with your services.&lt;/p>
+&lt;p>The integration is performed by a set of EGI components that interact with the
+OpenStack services APIs:&lt;/p>
+&lt;p>&lt;img src="openstacksite.png" alt="image">&lt;/p>
+&lt;ul>
+&lt;li>Authentication of EGI users into your system is performed by configuring the
+native OpenID Connect support of Keystone. Support for legacy VOs using VOMS
+requires the installation of the &lt;strong>Keystone-VOMS Authorization plugin&lt;/strong> to
+allow users with a valid VOMS proxy to obtain tokens to access your OpenStack
+deployment.&lt;/li>
+&lt;li>&lt;strong>cASO&lt;/strong> collects accounting data from OpenStack and uses &lt;strong>SSM&lt;/strong> to send the
+records to the central accounting database on the EGI Accounting service
+(&lt;a href="https://apel.github.io/">APEL&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>cloud-info-provider&lt;/strong> registers the RC configuration and description through
+the &lt;a href="../../../internal/messaging">Messaging service&lt;/a> to facilitate service
+discovery&lt;/li>
+&lt;li>&lt;strong>cloudkeeper&lt;/strong> (and &lt;strong>cloudkeeper-os&lt;/strong>) synchronises with
+&lt;a href="https://appdb.egi.eu/browse/cloud">EGI AppDB&lt;/a> so new or updated images can be
+provided by the RC to user communities (VO).&lt;/li>
+&lt;/ul>
+&lt;p>Not all EGI components need to share the same credentials. They are individually
+configured, you can use different credentials and permissions if desired.&lt;/p>
+&lt;h2 id="installation-options">Installation options&lt;/h2>
+&lt;p>EGI distributes the integration components as:&lt;/p>
+&lt;ul>
+&lt;li>A Virtual Appliance (VA) that uses Docker containers to bundle all of the
+components in a single VM and just needs minor configuration to get started&lt;/li>
+&lt;li>RPM and DEB Packages in the
+&lt;a href="https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution">CMD distribution&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="fedcloud-virtual-appliance">FedCloud Virtual Appliance&lt;/h3>
+&lt;p>The EGI FedCloud Appliance is available at
+&lt;a href="https://appdb.egi.eu/store/vappliance/fedcloud.integration.appliance.openstack">AppDB&lt;/a>
+as an OVA file. You can easily extract the VMDK disk by untaring and optionally
+converting it to your preferred format with qemu-img:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># get image and extract VMDK&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ curl &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl &lt;span style="color:#4e9a06">&amp;#34;https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .url&lt;span style="color:#204a87;font-weight:bold">)&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> tar x &lt;span style="color:#4e9a06">&amp;#34;*.vmdk&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># convert to qcow2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.qcow2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The appliance running at your OpenStack must:&lt;/p>
+&lt;ul>
+&lt;li>Have a host certificate to send the accounting information to the accounting
+repository. DN of the host certificate must be registered in GOCDB with
+service type &lt;code>eu.egi.cloud.accounting&lt;/code>. The host certificate and key in PEM
+format are expected in &lt;code>/etc/grid-security/hostcert.pem&lt;/code> and
+&lt;code>/etc/grid-security/hostkey.pem&lt;/code> respectively.&lt;/li>
+&lt;li>Have enough disk space for handling the VM image replication (~ 100GB for
+&lt;code>fedcloud.egi.eu&lt;/code> VO). By default these are stored at /image_data. You can
+mount a volume at that location.&lt;/li>
+&lt;/ul>
+&lt;h3 id="upgrading-the-openstack-appliance">Upgrading the OpenStack Appliance&lt;/h3>
+&lt;h4 id="from-20180507-or-newer-to-20210312">From 2018.05.07 or newer to 2021.03.12&lt;/h4>
+&lt;p>Configuration changes:&lt;/p>
+&lt;ul>
+&lt;li>Removes BDII, service is no longer in use&lt;/li>
+&lt;li>A cloud-info-provider cron is added&lt;/li>
+&lt;li>Uses AMS for pushing accounting records. New configuration file for ssmsend is
+available&lt;/li>
+&lt;/ul>
+&lt;h4 id="from-20170809-to-20180507">From 2017.08.09 to 2018.05.07&lt;/h4>
+&lt;p>Configuration changes:&lt;/p>
+&lt;ul>
+&lt;li>This upgrade moves the &lt;code>voms.json&lt;/code> file to the respective &lt;code>caso&lt;/code> and
+&lt;code>cloudkeeper-os&lt;/code> directories under &lt;code>/etc/&lt;/code>&lt;/li>
+&lt;li>No other changes in configuration are needed&lt;/li>
+&lt;/ul>
+&lt;h4 id="from-20160403-to-20170809">From 20160403 to 2017.08.09&lt;/h4>
+&lt;p>There are several major changes between these versions, namely:&lt;/p>
+&lt;ul>
+&lt;li>atrope has been deprecated and cloudkeeper is used instead. The configuration
+cannot be reused directly and the new services need to be configured as
+described above&lt;/li>
+&lt;li>caso is upgraded to version 1.1.1, the configuration file has some
+incompatible changes.&lt;/li>
+&lt;li>A new bdii.service is available for managing the process is available.&lt;/li>
+&lt;/ul>
+&lt;h3 id="cmd-packages">CMD Packages&lt;/h3>
+&lt;p>The CMD-OS repository provides packages that have gone through a quality
+assurance process for the supported distributions. Packages are available via
+the &lt;a href="https://repository.egi.eu">EGI repository&lt;/a>.&lt;/p>
+&lt;h2 id="open-ports">Open Ports&lt;/h2>
+&lt;p>The following &lt;strong>services&lt;/strong> must be accessible to allow access to an
+OpenStack-based FedCloud site (default ports listed below, can be adjusted to
+your installation)&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Port&lt;/th>
+&lt;th>Application&lt;/th>
+&lt;th>Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>5000&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OpenStack&lt;/strong>/Keystone&lt;/td>
+&lt;td>Authentication to your OpenStack.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>8776&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OpenStack&lt;/strong>/cinder&lt;/td>
+&lt;td>Block Storage management.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>8774&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OpenStack&lt;/strong>/nova&lt;/td>
+&lt;td>VM management.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>9696&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OpenStack&lt;/strong>/neutron&lt;/td>
+&lt;td>Network management.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>9292&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;strong>OpenStack&lt;/strong>/glance&lt;/td>
+&lt;td>VM Image management.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;h3 id="outgoing-ports">Outgoing ports&lt;/h3>
+&lt;p>The EGI Cloud components require the following outgoing connections open:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Port&lt;/th>
+&lt;th>Host&lt;/th>
+&lt;th>Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>443&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;code>msg.argo.grnet.gr&lt;/code>&lt;/td>
+&lt;td>ARGO Messaging System (used to send accounting records by SSM).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>8443&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;code>msg.argo.grnet.gr&lt;/code>&lt;/td>
+&lt;td>AMS authentication (used to send accounting records by SSM).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>443&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;code>vmcaster.appdb.egi.eu&lt;/code>&lt;/td>
+&lt;td>AppDB image lists (used by cloudkeeper).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>8080&lt;/strong>/TCP&lt;/td>
+&lt;td>&lt;code>cephrgw01.ifca.es&lt;/code>&lt;/td>
+&lt;td>Swift server hosting EGI images (used by cloudkeeper).&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;p>Images listed in AppDB may be hosted in other servers besides
+&lt;code>cephrgw01.ifca.es&lt;/code>. Check the specific VO-wide image lists for details.&lt;/p>
+&lt;h2 id="permissions">Permissions&lt;/h2>
+&lt;p>This is an overview of the expected account permissions used in an OpenStack
+site, these accounts can be merged as needed for your deployment:&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Component&lt;/th>
+&lt;th>Permission&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>cloud-info&lt;/td>
+&lt;td>Member of all projects supporting EGI VOs&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>accounting&lt;/td>
+&lt;td>Member of all projects and able to list users (allowed to &lt;code>identity:list_users&lt;/code> in keystone)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>cloud-keeper&lt;/td>
+&lt;td>Permission to manage the images for all the projects supporting EGI VOs&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Other users&lt;/td>
+&lt;td>Automatically created by Keystone and permission set as configured in the mappings&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length --></description></item><item><title>Providers: GOCDB Registration</title><link>/providers/cloud-compute/registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/registration/</guid><description>
+&lt;p>Site endpoints must be registered in
+&lt;a href="https://goc.egi.eu">EGI Configuration Management Database (GOCDB)&lt;/a>. If you are
+creating a new site for your cloud services, check the
+&lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09 Resource Centre Registration and Certification&lt;/a>
+procedure. Services can also coexist within an existing (grid) site.&lt;/p>
+&lt;h2 id="expected-services">Expected Services&lt;/h2>
+&lt;p>These are the expected services for a working site:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>If offering native OpenStack access (nova), register: &lt;code>org.openstack.nova&lt;/code>
+for the Nova endpoint of the site. The &lt;strong>endpoint URL&lt;/strong> must contain the
+Keystone v3 URL: &lt;code>https://hostname:port/url/v3&lt;/code>. Set the &lt;strong>Host DN&lt;/strong> so the
+cloud-info-provider can be enabled in the AMS.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If offering native OpenStack access (swift), register: &lt;code>org.openstack.swift&lt;/code>
+for the swift endpoint of the site. The &lt;strong>endpoint URL&lt;/strong> field must contain the
+Keystone v3 URL: &lt;code>https://hostname:port/url/v3&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>eu.egi.cloud.accounting&lt;/code> for the host sending the records to the
+accounting repository (executing SSM send).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="deprecated-services">Deprecated services&lt;/h2>
+&lt;p>Deprecated services for cloud providers:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>Site-BDII&lt;/code>. This service collects and publishes site's data for the
+Information System. Existing sites should already have this registered.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>eu.egi.cloud.vm-metadata.vmcatcher&lt;/code> for the VMI replication mechanism.
+Register here the host providing the replication (i.e. the host with
+cloudkeeper installation)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If offering OCCI interface, &lt;code>eu.egi.cloud.vm-management.occi&lt;/code> for the OCCI
+endpoint offered by the site. The endpoint URL must follow this syntax:&lt;/p>
+&lt;p>&lt;code>https://hostname:port/?image=&amp;lt;image_name&amp;gt;&amp;amp;resource=&amp;lt;resource_name&amp;gt;&lt;/code>&lt;/p>
+&lt;p>where &lt;code>&amp;lt;image_name&amp;gt;&lt;/code> and &lt;code>&amp;lt;resource_name&amp;gt;&lt;/code> cannot contain spaces. These
+attributes map to &lt;code>os_tpl&lt;/code> and &lt;code>resource_tpl&lt;/code> respectively and will be the
+ones used for monitoring purposes.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Providers: Installation Validation</title><link>/providers/cloud-compute/validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/validation/</guid><description>
+&lt;p>Once the site services are registered in GOCDB (and flagged as &amp;quot;monitored&amp;quot;)
+they will appear in the EGI service monitoring tools. EGI will check the status
+of the services. Check if your services are present in the EGI service
+monitoring tools and passing the tests; if you experience any issues (services
+not shown, services are not OK...) please contact back EGI Operations or your
+reference Resource Infrastructure.&lt;/p>
+&lt;p>Extra checks for your installation:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Check in &lt;a href="https://argo-mon2.egi.eu/nagios">ARGO-Mon2&lt;/a> that your services are
+listed and are passing the tests. If all the tests are OK, your installation
+is already in good shape.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Check that you are publishing cloud information in your site BDII: :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ldapsearch -x -h &amp;lt;site bdii host&amp;gt; -p &lt;span style="color:#0000cf;font-weight:bold">2170&lt;/span> -b &lt;span style="color:#000">Glue2GroupID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cloud,Glue2DomainID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;your site name&amp;gt;,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>glue
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Check that all the images listed in the AppDB for the VOs you support (e.g.
+&lt;a href="https://appdb.egi.eu/store/vo/fedcloud.egi.eu">AppDB page for fedlcoud.egi.eu VO&lt;/a>)
+are listed in your BDII. This sample query will return all the template IDs
+registered in your BDII: :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ldapsearch -x -h &amp;lt;site bdii host&amp;gt; -p &lt;span style="color:#0000cf;font-weight:bold">2170&lt;/span> -b &lt;span style="color:#000">Glue2GroupID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>cloud,Glue2DomainID&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;your site name&amp;gt;,o&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>glue &lt;span style="color:#000">objectClass&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GLUE2ApplicationEnvironment GLUE2ApplicationEnvironmentRepository
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Try to start one of those images in your cloud. You can do it with
+[onetemplate instantiate]{.title-ref} or OCCI commands, the result should be
+the same.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Execute the
+&lt;a href="../../../providers/operations-manuals/howto04_site_certification_manual_tests/#check-the-functionality-of-the-cloud-elements">site certification manual tests&lt;/a>
+against your endpoints.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Check in the &lt;a href="http://accounting.egi.eu/">accounting portal&lt;/a> that your site is
+listed and the values reported look consistent with the usage of your site.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Providers: FAQ</title><link>/providers/cloud-compute/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/faq/</guid><description>
+&lt;h2 id="why-joining-the-egi-cloud">Why joining the EGI Cloud?&lt;/h2>
+&lt;ul>
+&lt;li>To support international communities supported by EGI (e.g.
+&lt;a href="https://www.egi.eu/use-cases/">these research communities and applications&lt;/a>
+or
+&lt;a href="https://eosc-hub.eu/research-communities">these research infrastructures in EOSC-hub&lt;/a>
+or
+&lt;a href="https://eosc-hub.eu/digital-innovation-hub">these business pilots in the EOSC Digital Innovation Hub&lt;/a>.&lt;/li>
+&lt;li>To participate in e-Infrastructure projects (H2020, EOSC) as an EGI compliant
+IaaS cloud provider.&lt;/li>
+&lt;li>To participate in resource allocation and in pay-for-use campaigns run by EGI.&lt;/li>
+&lt;li>To align access policies and operational model of your cloud with
+international good practices.&lt;/li>
+&lt;li>To adopt best practices of multi-cloud federation for the benefit of your
+local users.&lt;/li>
+&lt;/ul>
+&lt;h2 id="do-i-lose-control-on-who-can-access-my-resources-if-i-join-federated-cloud">Do I lose control on who can access my resources if I join federated cloud?&lt;/h2>
+&lt;p>&lt;strong>No&lt;/strong>. EGI uses the concept of Virtual Organisation (VO) to group users. The
+resource provider has complete control on which VOs he wants to allow on its
+resources and which quotas or restrictions to assign to each VO. In the case of
+OpenStack, each VO is mapped to a regular OpenStack project that can be managed
+as any other and are isolated to other projects you may have configured in your
+deployment. Although not recommended, you can even restrict the automatic access
+of users within a VO and manually enable individual members.&lt;/p>
+&lt;h2 id="how-many-components-do-i-have-to-install">How many components do I have to install?&lt;/h2>
+&lt;p>Depending on your cloud management framework and the kind of integration this
+will vary.&lt;/p>
+&lt;p>In general, the federation requires your cloud management framework to be
+configured to support Federated AAI with EGI Check-in. This may require changes
+in your current setup.&lt;/p>
+&lt;p>Other components are designed to access your cloud management framework public
+APIs and do not require modification of your deployment. For OpenStack, these
+components can be run on a single VM that encapsulates them for convenience.&lt;/p>
+&lt;h2 id="which-components-of-my-cloud-will-interact-with-the-federated-cloud-components">Which components of my cloud will interact with the federated cloud components?&lt;/h2>
+&lt;p>For OpenStack they are:&lt;/p>
+&lt;ul>
+&lt;li>Keystone&lt;/li>
+&lt;li>Nova&lt;/li>
+&lt;li>Glance&lt;/li>
+&lt;li>Swift (optional)&lt;/li>
+&lt;/ul>
+&lt;p>Users will also interact with:&lt;/p>
+&lt;ul>
+&lt;li>Neutron&lt;/li>
+&lt;li>Cinder&lt;/li>
+&lt;/ul>
+&lt;p>to perform their regular activities.&lt;/p>
+&lt;h2 id="how-will-my-daily-operational-activities-change">How will my daily operational activities change?&lt;/h2>
+&lt;p>For the most part daily operations will not change.&lt;/p>
+&lt;p>A resource centre part of the EGI Federation, and supporting international
+communities, needs to provide support through the EGI channels. This means
+following up &lt;a href="https://ggus.eu">GGUS tickets&lt;/a>. This includes requests from user
+communities and tickets triggered by failures detected by the monitoring
+infrastructure.&lt;/p>
+&lt;p>A resource centre needs to maintain the services federated in EGI properly
+configured with the EGI AAI.&lt;/p>
+&lt;p>The resource centre will have to comply with the operational and security
+requirements. All the EGI policies aim at implementing service provisioning best
+practices and common requirements. EGI operations may conduct campaigns targeted
+to mitigate security vulnerabilities and to update unsupported operating system
+and software. These activities are part of the regular activities of a resource
+centre anyways (also for the non-federated ones). EGI and the Operations Centres
+coordinate these actions in order to have them implemented in a timely manner.&lt;/p>
+&lt;p>In summary, most of the site activities that are coordinated by EGI and the NGIs
+are already part of the work plan of a well-maintained resource centre, the
+additional task for a site manager is to acknowledge to EGI that the task has
+been performed.&lt;/p></description></item></channel></rss>
