@@ -807,6 +807,33 @@ update requires:
 - using `PUT` instead of `POST`.
 - provide the Role ID as part of the request URL
 
+`update.json` request body example:
+
+```json
+{
+  "RequestType": "CoPersonRoles",
+  "Version": "1.0",
+  "CoPersonRoles": [
+    {
+      "Version": "1.0",
+      "Person": {
+        "Type": "CO",
+        "Id": "171"                         // VO Member Registry ID
+      },
+      "Cou": {
+        "CoId": "2",                        // CO ID has to be 2
+        "Name": "vo.example.org"            // VO name
+      },
+      "Affiliation": "member",
+      "Title": "engineer",                  // Custom Role Title
+      "ValidFrom": "2022-11-20 23:00:00",
+      "ValidThrough": "2023-11-07 23:00:00",
+      "Status": "Active"                    // Status can be Active,Deleted,Expired, etc
+    }
+  ]
+}
+```
+
 <!--
 // jscpd:ignore-start
 -->
