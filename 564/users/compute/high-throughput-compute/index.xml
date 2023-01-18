@@ -1,0 +1,298 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – High Throughput Compute</title><link>/users/compute/high-throughput-compute/</link><description>Recent content in High Throughput Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Querying the Information System</title><link>/users/compute/high-throughput-compute/querying-information-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/high-throughput-compute/querying-information-system/</guid><description>
+&lt;h2 id="about-the-information-system">About the information system&lt;/h2>
+&lt;p>Information about resources is documented according to the
+&lt;a href="https://gridinfo-documentation.readthedocs.io/en/latest/glue.html">GLUE Schema&lt;/a>.&lt;/p>
+&lt;p>Information in the Top BDII is provided for two GLUE schema versions:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://redmine.ogf.org/dmsf_files/61">GLUE 1.3&lt;/a>: the legacy version of the
+specification, under the LDAP base &lt;code>Mds-Vo-Name=local,o=grid&lt;/code>.&lt;/li>
+&lt;li>&lt;a href="https://www.ogf.org/documents/GFD.147.pdf">GLUE 2.0&lt;/a>: the most recent version
+of the specification, under the LDAP base &lt;code>GLUE2GroupID=grid,o=glue&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>Some resources may not yet be exposed via GLUE 2.0, and it may be required to
+use GLUE 1.3 for those ones.&lt;/p>
+&lt;/blockquote>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+You can use &lt;code>-o ldif-wrap=no&lt;/code> to disable
+wrapping the results.
+&lt;/div>
+&lt;blockquote>
+&lt;p>Those examples are relying on the Top BDII service maintained by EGI
+Foundation: &lt;code>ldap://lcg-bdii.egi.eu:2170&lt;/code>.&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Dumping all the information from GLUE 2.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -H ldap://lcg-bdii.egi.eu:2170 -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>In order to retrieve information required to contact a given CE, you can look
+for &lt;code>GLUE2EndpointURL&lt;/code> objects.&lt;/li>
+&lt;li>In order to retrieve information about the batch systems, you can look for
+&lt;code>GLUE2Manager&lt;/code> objects.&lt;/li>
+&lt;li>In order to look for information about a specific CE, you can look into
+&lt;code>GLUE2Service&lt;/code>.&lt;/li>
+&lt;li>In order to look for information about the resources available to VOs, you can
+look into &lt;code>GLUE2Share&lt;/code> and &lt;code>GLUE2Policy&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>The following queries can be used to retrieve information about &lt;strong>all&lt;/strong> the
+Computing Elements of a given type. You will likely be able to use only a subset
+of them, only the ones supporting the Virtual Organisation you are a member of,
+and for which you have a valid VOMS proxy.&lt;/p>
+&lt;h2 id="computing-elements">Computing Elements&lt;/h2>
+&lt;p>Nowadays mainly two Computing Element (CE) &amp;ldquo;flavours&amp;rdquo; are used in production:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://htcondor.org/htcondor-ce/overview/">HTCondorCE&lt;/a>, a Compute Entrypoint
+(CE) based on &lt;a href="http://htcondor.org/">HTCondor&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="http://www.nordugrid.org/arc/ce/">ARC-CE&lt;/a>, the
+&lt;a href="http://www.nordugrid.org/arc/">ARC&lt;/a> Compute Element (CE).&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;a href="https://cream-guide.readthedocs.io/en/latest/">CREAM CE&lt;/a> is a legacy and no
+more supported middleware.&lt;/p>
+&lt;h3 id="querying-for-htcondorce-compute-resources">Querying for HTCondorCE compute resources&lt;/h3>
+&lt;p>Most, if not all the HTCondorCE Computing Elements should be discoverable via
+GLUE 2.0.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2EndpointURL for all HTCondorCE compute endpoints&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Endpoint)(GLUE2EndpointImplementationName=HTCondor))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2EndpointInterfaceName &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2EndpointImplementationVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2EndpointURL
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2Manager for the batch systems&amp;#39; versions and number of CPUs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Manager)(GLUE2ManagerProductName=HTCondor))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ManagerProductName &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ManagerProductVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingManagerTotalLogicalCPUs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingManagerComputingServiceForeignKey
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have selected a given CE, you can look into getting more information
+about this one.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2Service for information about a specific CE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Service)(GLUE2ServiceID=*condorce1.ciemat.es*))&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2Share for a specific CE, filtering for details on the queues&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Share)(GLUE2ShareID=*condorce1.ciemat.es*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMappingQueue &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareIDGLUE2ComputingShareMaxWallTime &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxVirtualMemory &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxUserRunningJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxRunningJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxCPUTime &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareWaitingJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareUsedSlots &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareTotalJobsGLUE2ComputingShareRunningJobs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2Policy for a specific CE, filtering for supported VOs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Policy)(GLUE2PolicyID=*condorce1.ciemat.es*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2PolicyRule &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2PolicyID &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2MappingPolicyShareForeignKey
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s also possible to look into &lt;a href="#using-glue-13">GLUE 1.3&lt;/a>.&lt;/p>
+&lt;h3 id="querying-for-arc-ce-compute-resources">Querying for ARC-CE compute resources&lt;/h3>
+&lt;p>Most, if not all the ARC-CE should be discoverable via GLUE 2.0.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying for all ARC-CE compute resources&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Endpoint)(GLUE2EndpointImplementationName=nordugrid-arc))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2EndpointInterfaceName &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2EndpointImplementationVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2EndpointURL
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2Manager for the batch systems&amp;#39; versions and number of CPUs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Manager)(GLUE2ComputingManagerComputingServiceForeignKey=*urn:ogf:ComputingService*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ManagerProductName &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ManagerProductVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingManagerTotalLogicalCPUs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingManagerComputingServiceForeignKey
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have selected a given CE, you can look into getting more information
+about this one.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2Service for information about a specific CE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Service)(GLUE2ServiceID=*alex4.nipne.ro*))&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2Share for a specific CE, filtering for details on the queues&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Share)(GLUE2ShareID=*alex4.nipne.ro*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMappingQueue &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareIDGLUE2ComputingShareMaxWallTime &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxVirtualMemory &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxUserRunningJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxRunningJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareMaxCPUTime &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareWaitingJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareUsedSlots &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareTotalJobsGLUE2ComputingShareRunningJobs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2Policy for a specific CE, filtering for supported VOs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Policy)(GLUE2PolicyID=*alex4.nipne.ro*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2PolicyRule &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2PolicyID &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2MappingPolicyShareForeignKey
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It&amp;rsquo;s also possible to look into &lt;a href="#using-glue-13">GLUE 1.3&lt;/a>.&lt;/p>
+&lt;h3 id="using-glue-13">Using GLUE 1.3&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;strong>GLUE 1.3&lt;/strong> is legacy.&lt;/p>
+&lt;/blockquote>
+&lt;p>Querying for information about HTCondor CE using GLUE 1.3.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying for all HTCondorCE compute resources, using GLUE 1.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEInfoJobManager=HTCondorCE))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEImplementationVersion GlueCEImplementationName &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus GlueCEUniqueID GlueServiceEndpoint GlueServiceType
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying information about the HTCondor CE via GLUE 1.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=condorce1.ciemat.es:9619/condorce1.ciemat.es-condor))&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Limiting output for the Condor CE via GLUE 1.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=condorce1.ciemat.es:9619/condorce1.ciemat.es-condor))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoHostName GlueCEUniqueID &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoJobManager GlueCEImplementationName GlueCEImplementationVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoLRMSType GlueCEInfoLRMSVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEAccessControlBaseRule &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoTotalCPUs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Querying for information about ARC-CE using GLUE 1.3.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying for all ARC CE compute resources, using GLUE 1.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEInfoJobManager=arc))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEImplementationVersion GlueCEImplementationName &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus GlueCEUniqueID GlueServiceEndpoint GlueServiceType
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying information about the ARC CE via GLUE 1.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=alex4.nipne.ro:2811/nordugrid-SLURM-dteam))&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Limiting output for the ARC CE via GLUE 1.3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;Mds-Vo-Name=local,o=grid&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GlueCE)(GlueCEUniqueID=alex4.nipne.ro:2811/nordugrid-SLURM-dteam))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoHostName GlueCEUniqueID &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoJobManager GlueCEImplementationName GlueCEImplementationVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoLRMSType GlueCEInfoLRMSVersion &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEAccessControlBaseRule &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEInfoTotalCPUs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GlueCEStateStatus
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="using-legacy-tools-for-glue-13">Using legacy tools for GLUE 1.3&lt;/h4>
+&lt;p>Using &lt;code>lcg-info&lt;/code> it&amp;rsquo;s possible to easily do more targeted queries, like focusing
+on a specific VO.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>lcg-info&lt;/code> and &lt;code>lcg-infosites&lt;/code> are only taking into account the &lt;strong>GLUE 1.3&lt;/strong>
+schema, and will lack information that is only published according to the
+&lt;strong>GLUE 2&lt;/strong> schema, like for most &lt;code>HTCondorCE&lt;/code> Computing Elements.&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Identify compute resources available for dteam VO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Identify storage resources available for dteam VO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ lcg-info --list-se --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --attrs CEImpl --query &lt;span style="color:#4e9a06">&amp;#39;CEImpl=*HTCondorCE&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- CE: ce01.knu.ac.kr:9619/ce01.knu.ac.kr-condor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - CEImpl HTCondorCE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- CE: ce13.pic.es:9619/ce13.pic.es-condor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - CEImpl HTCondorCE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- CE: condorce1.ciemat.es:9619/condorce1.ciemat.es-condor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - CEImpl HTCondorCE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- CE: condorce2.ciemat.es:9619/condorce2.ciemat.es-condor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - CEImpl HTCondorCE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We can see that the &lt;code>dteam&lt;/code> VO should be able to access Computing Elements from
+the various types:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ lcg-info --list-ce --vo dteam --bdii ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --attrs CEImpl --query &lt;span style="color:#4e9a06">&amp;#39;CEImpl=*&amp;#39;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep CEImpl &lt;span style="color:#000;font-weight:bold">|&lt;/span> sort &lt;span style="color:#000;font-weight:bold">|&lt;/span> uniq -c
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">123&lt;/span> - CEImpl ARC-CE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">22&lt;/span> - CEImpl CREAM
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">7&lt;/span> - CEImpl HTCondorCE
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="identifying-all-the-resources-accessible-by-a-given-vo">Identifying all the resources accessible by a given VO&lt;/h2>
+&lt;p>In &lt;strong>GLUE 2.0&lt;/strong>, the access granted to a given VO to a compute or storage
+resource, is published using the &lt;code>GLUE2Share&lt;/code> and &lt;code>GLUE2Policy&lt;/code> objects. There
+are also &lt;code>GLUE2ComputingShare&lt;/code> and &lt;code>GLUE2StorageShare&lt;/code> to specifically document
+sharing of compute or storage resources.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2Share for all the resources available to dteam VO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2Share)(GLUE2ShareID=*dteam*))&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2ComputingShare for all the computing resources available to dteam VO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*))&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Querying GLUE2StorageShare for all the storage resources available to dteam VO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2StorageShare)(GLUE2ShareID=*dteam*))&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is possible to filter for the different types of Computing Element, and
+select only specific attributes.&lt;/p>
+&lt;h3 id="looking-for-a-htcondorce-for-dteam">Looking for a HTCondorCE for dteam&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Information about the HTCondorCE supporting dteam VO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*)(GLUE2ComputingShareComputingEndpointForeignKey=*HTCondorCE*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareEndpointForeignKey &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareID &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareTotalJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareRunningJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareWaitingJobs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Assuming it was decided, based on the site location, available resources, prior
+experience, or any other reason, to go for &lt;code>condorce1.ciemat.es&lt;/code>, the
+information about the CE can be requested using the following request, filtering
+on the &lt;code>GLUE2ShareID&lt;/code> from the previous query:
+&lt;code>grid_dteam_condorce1.ciemat.es_ComputingElement&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># condor_submit needs CE (condorce1.ciemat.es) and pool (condorce1.ciemat.es:9619)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*grid_dteam_condorce1.ciemat.es_ComputingElement*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareID &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareDescription &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareExecutionEnvironmentForeignKey &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2EntityOtherInfo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="looking-for-an-arc-ce-for-dteam">Looking for an ARC-CE for dteam&lt;/h3>
+&lt;p>// jscpd:ignore-start&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Information about the ARC-CE supporting dteam VO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*dteam*)(GLUE2ComputingShareComputingEndpointForeignKey=*urn:ogf*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareComputingEndpointForeignKey &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareEndpointForeignKey &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareTotalJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareRunningJobs &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareWaitingJobs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Assuming it was decided, based on the site location, available resources, prior
+experience, or any other reason, to go for &lt;code>condorce1.ciemat.es&lt;/code>, the
+information about the CE can be requested using the following request, filtering
+on the &lt;code>GLUE2ShareID&lt;/code> from the previous query:
+&lt;code>grid_dteam_condorce1.ciemat.es_ComputingElement&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># arcsub needs CE name (alex4.nipne.ro)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;(&amp;amp;(objectClass=GLUE2ComputingShare)(GLUE2ShareID=*urn:ogf:ComputingShare:alex4.nipne.ro:dteam_dteam*))&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareID &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareDescription &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareComputingServiceForeignKey &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareExecutionEnvironmentForeignKey
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>// jscpd:ignore-end&lt;/p></description></item></channel></rss>
