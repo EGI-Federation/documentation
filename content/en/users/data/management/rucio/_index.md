@@ -29,7 +29,8 @@ cost.
 ## Requirements to consider to use Rucio
 
 For Rucio to mangage your data in this setup, Rucio will need X509 certificate
-access, or soon, through [EGI Check-in](../../providers/check-in) to:
+access, or soon, through
+[EGI Check-in](../../../../providers/check-in/_index.md) to:
 
 - Your experiments Storage Element that is X509 capable
 - Your experiments Tape Archive that is X509 capable
