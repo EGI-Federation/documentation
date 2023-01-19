@@ -154,7 +154,7 @@ scan:
    is only modified via DataHub -> In this case the auto scan is not needed
    however it needs to somehow guard the storage from external modifications
    otherwise it will desync with the space. E.g.: all changes should be done
-   trough API, DataHub oneclient or the web interface.
+   trough API, DataHub client or the web interface.
 1. A space that exposes a dataset from a storage that later is still dynamically
    changing outside of DataHub (when it is assumed that some modification can
    happen at some point) -> in this case continuous scan is needed.
@@ -163,8 +163,10 @@ Every storage import scan causes additional load on the Oneprovider. If the
 space is large and changes very often outside of Onedata, it might have a
 visible impact on the overall performance - but we are talking millions of files
 and hundreds of changes per second. Otherwise, having the continuous scan run in
-the background every now and then is not a problem. You can also adjust the scan
-interval if needed.
+the background at the default value, with interval of 60 seconds should not
+cause any issues. Depending on the specific needs however, if the loads becomes
+too high or if the changes need to be applied timely it is possible to increase
+or decrease this interval respectively.
 
 In the following screenshot is shown how to access the configuration for the
 storage import:
