@@ -128,7 +128,7 @@ interval if needed.&lt;/p>
 &lt;p>In the following screenshot is shown how to access the configuration for the
 storage import:&lt;/p>
 &lt;p>&lt;img src="storage-import-01.png" alt="image">&lt;/p>
-&lt;p>Thois configuration page is located under the &amp;ldquo;CLUSTER&amp;rdquo; tab in the main page.
+&lt;p>This configuration page is located under the &amp;ldquo;CLUSTER&amp;rdquo; tab in the main page.
 There we should select the cluster that is providing the space that we need to
 configure, Spaces and select the specific space that need to be configured. In
 the example shown, the &amp;ldquo;Auto storage import configuration&amp;rdquo; menu has been
