@@ -154,7 +154,7 @@ scan:
    is only modified via DataHub -> In this case the auto scan is not needed
    however it needs to somehow guard the storage from external modifications
    otherwise it will desync with the space. E.g.: all changes should be done
-   trough API, DataHub client or the weg interface.
+   trough API, DataHub oneclient or the web interface.
 1. A space that exposes a dataset from a storage that later is still dynamically
    changing outside of DataHub (when it is assumed that some modification can
    happen at some point) -> in this case continuous scan is needed.
