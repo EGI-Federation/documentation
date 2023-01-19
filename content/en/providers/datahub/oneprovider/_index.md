@@ -171,7 +171,7 @@ storage import:
 
 ![image](storage-import-01.png)
 
-Thois configuration page is located under the "CLUSTER" tab in the main page.
+This configuration page is located under the "CLUSTER" tab in the main page.
 There we should select the cluster that is providing the space that we need to
 configure, Spaces and select the specific space that need to be configured. In
 the example shown, the "Auto storage import configuration" menu has been
