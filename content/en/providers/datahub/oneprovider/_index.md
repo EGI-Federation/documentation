@@ -156,7 +156,7 @@ scan:
    otherwise it will desync with the space. E.g.: all changes should be done
    trough API, DataHub client or the weg interface.
 1. A space that exposes a dataset from a storage that later is still dynamically
-   changing outside of DataHub (when it sis assumed that some modification can
+   changing outside of DataHub (when it is assumed that some modification can
    happen at some point) -> in this case continuous scan is needed.
 
 Every storage import scan causes additional load on the Oneprovider. If the
