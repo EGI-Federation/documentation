@@ -116,7 +116,7 @@ however it needs to somehow guard the storage from external modifications
 otherwise it will desync with the space. E.g.: all changes should be done
 trough API, DataHub client or the weg interface.&lt;/li>
 &lt;li>A space that exposes a dataset from a storage that later is still dynamically
-changing outside of DataHub (when it sis assumed that some modification can
+changing outside of DataHub (when it is assumed that some modification can
 happen at some point) -&amp;gt; in this case continuous scan is needed.&lt;/li>
 &lt;/ol>
 &lt;p>Every storage import scan causes additional load on the Oneprovider. If the
