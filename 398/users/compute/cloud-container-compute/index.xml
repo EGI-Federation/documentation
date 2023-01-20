@@ -22,9 +22,10 @@ the provider.&lt;/p>
 &lt;/ol>
 &lt;h3 id="using-docker-from-inside-the-vm">Using docker from inside the VM&lt;/h3>
 &lt;p>You can log in with user &lt;code>ubuntu&lt;/code> and your ssh key:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ssh -i &amp;lt;yourprivatekey&amp;gt; ubuntu@&amp;lt;your VM ip&amp;gt;
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ssh -i &amp;lt;yourprivatekey&amp;gt; ubuntu@&amp;lt;your VM ip&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once in, you can run any docker command, e.g.:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ubuntu@fedcloud_vm:~$ sudo docker run hello-world
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ sudo docker run hello-world
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Unable to find image &lt;span style="color:#4e9a06">&amp;#39;hello-world:latest&amp;#39;&lt;/span> locally
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>latest: Pulling from library/hello-world
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b901d36b6f2f: Pull &lt;span style="color:#204a87">complete&lt;/span>
@@ -57,11 +58,11 @@ the case, please try reconfiguring the
 &lt;a href="https://en.wikipedia.org/wiki/Maximum_transmission_unit">MTU&lt;/a>
 for the docker daemon:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># check current MTU value&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker network inspect bridge &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep mtu &lt;span style="color:#000;font-weight:bold">|&lt;/span> awk &lt;span style="color:#4e9a06">&amp;#39;{print $2}&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo docker network inspect bridge &lt;span style="color:#000;font-weight:bold">|&lt;/span> awk &lt;span style="color:#4e9a06">&amp;#39;/mtu/ {print $2}&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># the default 1500 value does not work properly&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># edit docker configuration&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vi /etc/docker/daemon.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo vi /etc/docker/daemon.json
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># ensure MTU value is 1376&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
@@ -69,7 +70,7 @@ for the docker daemon:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># then restart docker&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl restart docker
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo systemctl restart docker
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We experienced this issue when trying to install a pip dependency using
 &lt;code>continuumio/miniconda3&lt;/code> container from
 &lt;a href="https://hub.docker.com/r/continuumio/miniconda3">docker hub&lt;/a>.&lt;/p></description></item><item><title>Users: Kubernetes</title><link>/users/compute/cloud-container-compute/k8s/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-container-compute/k8s/</guid><description>
