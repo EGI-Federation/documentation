@@ -178,6 +178,42 @@ designed for smaller communities, with expected data needs up to tens of
 Petabytes. The fact that the underlying Rucio infrastructure is managed by STFC,
 allows communities to easily start using and/or test Rucio with little setup
 cost.&lt;/p>
+&lt;h2 id="requirements-to-consider-to-use-rucio">Requirements to consider to use Rucio&lt;/h2>
+&lt;p>For Rucio to manage your data in this setup, Rucio will need X509 certificate
+access, or soon, through
+&lt;a href="../../../../providers/check-in/_index.md">EGI Check-in&lt;/a> to:&lt;/p>
+&lt;ul>
+&lt;li>Your experiments Storage Element that is X509 capable&lt;/li>
+&lt;li>Your experiments Tape Archive that is X509 capable&lt;/li>
+&lt;li>Your experiments Voms server information to check Users credentials against&lt;/li>
+&lt;/ul>
+&lt;p>Rucio is a system that sits on top of already established storage elements to
+unify users access for data management, and retrieval. Rucio consists of a
+database of the storage element&amp;rsquo;s details, users and their access credential
+information, access levels, the data, and its location, Rucio is not a direct
+data storage solution.&lt;/p>
+&lt;h2 id="rucio-use-cases">Rucio Use Cases&lt;/h2>
+&lt;p>Rucio is a data management software, that integrates with your experiments
+currently provisioned storage. This section will highlight some use cases that
+Rucio will fill for your experiment.&lt;/p>
+&lt;h3 id="management-of-data-for-archive-when-no-longer-used-actively">Management of data for archive when no longer used actively&lt;/h3>
+&lt;p>A simple use case for Rucio is to manage data between &amp;lsquo;hot&amp;rsquo; storage, made of
+HDDs or SSD, and &amp;lsquo;cold&amp;rsquo; storage made up of tape. When your experiment generates
+data that data will be accessed much more than older data as your collegues work
+with the data. Within Rucio the data will be registered to be on the &amp;lsquo;hot&amp;rsquo; and
+&amp;lsquo;cold&amp;rsquo; storages. This ensures the integrity of the data by providing multiple
+copies of the data, one on the slower tape archive, and one copy on the more
+easy to access HDDs and SSDs. Then as the usage of this data declines, the data
+on the &amp;lsquo;hot&amp;rsquo; storage can be removed to make way for newer data that is more
+frequently accessed. Should the archived data be requested again Rucio can stage
+the data from tape back to disk makking it available for users.&lt;/p>
+&lt;h3 id="management-of-data-between-sites-for-jobs">Management of data between sites for jobs&lt;/h3>
+&lt;p>Another useful use case for Rucio is to manage the data between different sites
+within your experiment. This can provide users with better access to the data
+that they want to work on. Another option is to have Rucio integrated with your
+workflow management software (PanDA and DiRAC both have integrated with Rucio),
+so data can be moved to sites as job slots are available, streamlining the
+dataflow for the user.&lt;/p>
 &lt;h2 id="official-rucio-pages">Official Rucio Pages&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://rucio.cern.ch/">Rucio Homepage&lt;/a>&lt;/li>
