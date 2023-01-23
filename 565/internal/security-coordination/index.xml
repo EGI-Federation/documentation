@@ -1,0 +1,99 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Security Coordination</title><link>/internal/security-coordination/</link><description>Recent content in Security Coordination on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/security-coordination/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Service information</title><link>/internal/security-coordination/service-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/security-coordination/service-information/</guid><description>
+&lt;h2 id="identity-card">Identity card&lt;/h2>
+&lt;!-- markdownlint-disable no-inline-html no-bare-urls -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Name&lt;/td>
+&lt;td>Security coordination&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Description&lt;/td>
+&lt;td>Enhance local security for a safer global infrastructure&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>URL&lt;/td>
+&lt;td>&lt;a href="https://csirt.egi.eu">https://csirt.egi.eu&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Support Email&lt;/td>
+&lt;td>abuse at egi.eu&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="..">Helpdesk&lt;/a> Support Unit&lt;/td>
+&lt;td>&lt;strong>EGI Services and Service Components&lt;/strong> &lt;br/> I__ Security Coordination &lt;br/> I__ Security Monitoring&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Configuration Database entry&lt;/td>
+&lt;td>&lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=968">https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=968&lt;/a> &lt;br /> &lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=1127">https://goc.egi.eu/portal/index.php?Page_Type=Site&amp;amp;id=1127&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Supplier&lt;/td>
+&lt;td>UKRI, FOM-Nikhef, CERN, CESNET, GRNET, IJS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Roadmap&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Release notes&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Source code&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Issue tracker for developers&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>License&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Privacy Policy&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item><item><title>Internal: Security Monitoring</title><link>/internal/security-coordination/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/security-coordination/monitoring/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>EGI is an interconnected federation where a single vulnerable place may have a
+huge impact on the whole infrastructure. In order to recognise the risks and to
+address potential vulnerabilities in a timely manner, the EGI Security
+Monitoring provides an oversight of the infrastructure from the security
+standpoint.&lt;/p>
+&lt;p>Also, sites connected to EGI differ significantly in the level of security and
+detecting weaknesses exposed by the sites allows the EGI security operations to
+contact the sites before the issue leads to an incident.&lt;/p>
+&lt;p>Information produced by security monitoring is also important during assessment
+of new risks and vulnerabilities since it enables to identify the scope and
+impact of a potential security incident.&lt;/p>
+&lt;h2 id="technical-description">Technical description&lt;/h2>
+&lt;p>This service includes the following components.&lt;/p>
+&lt;h3 id="secmon">Secmon&lt;/h3>
+&lt;p>A Nagios-based service provided to monitor a range of assets like CRLs, file
+system permissions, vulnerable file permissions etc.&lt;/p>
+&lt;p>Ad-hoc probes are deployed to support incident management, to assess the
+vulnerability of the infrastructure with regards to specific security issues and
+for proactive security management.&lt;/p>
+&lt;p>The results produced are available to the EGI Security dashboard of the
+&lt;a href="../../operations-portal">Operations Portal&lt;/a> for visualisation.&lt;/p>
+&lt;h3 id="pakiti">Pakiti&lt;/h3>
+&lt;p>&lt;a href="./pakiti">Pakiti&lt;/a> is the monitoring and notification service which is
+responsible for checking the patching status of systems.&lt;/p>
+&lt;p>The results produced are available to the EGI Security dashboard of the
+&lt;a href="../../operations-portal">Operations Portal&lt;/a> for visualisation.&lt;/p>
+&lt;h3 id="incident-reporting-tool">Incident reporting tool&lt;/h3>
+&lt;p>Ticketing system for tracking of incident.&lt;/p>
+&lt;h3 id="tools-for-security-service-challenge-support">Tools for Security Service Challenge support&lt;/h3>
+&lt;p>Security challenges are a mechanism to check the compliance of sites/NGIs/EGI
+with security requirements. Runs of Security Service Challenges need a set of
+tools that are used during various stages of the runs.&lt;/p></description></item></channel></rss>

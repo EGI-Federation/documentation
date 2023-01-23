@@ -1,0 +1,85 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Workflows</title><link>/internal/helpdesk/workflows/</link><description>Recent content in Workflows on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/helpdesk/workflows/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Closing tickets lacking of submitter input</title><link>/internal/helpdesk/workflows/waiting-for-submitter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/workflows/waiting-for-submitter/</guid><description>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>After discussions in the &lt;a href="https://indico.egi.eu/event/1265/">GGUS-AB&lt;/a> and the
+&lt;a href="https://indico.egi.eu/event/1234/">OMB&lt;/a> meetings, members agreed on
+implementing a work flow for closing tickets waiting for submitter input after a
+reasonable amount of time. This work flow was also presented at the
+&lt;a href="https://indico.egi.eu/indico/categoryDisplay.py?categId=21">UCB&lt;/a> meeting.&lt;/p>
+&lt;h2 id="status-value-waiting-for-reply">Status value &amp;ldquo;waiting for reply&amp;rdquo;&lt;/h2>
+&lt;p>The status value &amp;ldquo;waiting for reply&amp;rdquo; should only be used when input from the
+ticket submitter is required. Setting the ticket status to &amp;ldquo;waiting for reply&amp;rdquo;
+in GGUS triggers an email notification to the submitter&amp;rsquo;s email address
+registered in the ticket. After the submitter has replied either by&lt;/p>
+&lt;ul>
+&lt;li>sending an email using the same sender mail address as registered in the
+ticket or by&lt;/li>
+&lt;li>updating the ticket in web portal using the same credentials/certificate used
+for submitting the ticket,&lt;/li>
+&lt;/ul>
+&lt;p>the ticket status changes to &amp;ldquo;in progress&amp;rdquo; automatically. Updates on the ticket
+done using different credentials/certificates or email addresses than registered
+in the ticket will not be recognized as reply by the system and hence have no
+impact on the work flow. The status value &amp;ldquo;waiting for reply&amp;rdquo; must not be used
+in case of waiting for input of any other person involved in the solving
+process.&lt;/p>
+&lt;h2 id="workflow">Workflow&lt;/h2>
+&lt;h3 id="first-action">First action&lt;/h3>
+&lt;p>5 working days after setting the ticket status to &amp;ldquo;waiting for reply&amp;rdquo; the first
+reminder is sent to the ticket submitter requesting input. The ticket will also
+be added to the
+&lt;a href="https://ggus.eu/index.php?mode=ticket_monitor">ticket monitoring dashboard&lt;/a>.
+The ticket monitoring team will make sure that the status value &amp;ldquo;waiting for
+reply&amp;rdquo; is used in a correct sense.&lt;/p>
+&lt;h3 id="second-action">Second action&lt;/h3>
+&lt;p>In case the submitter does not reply, the second reminder is sent to the ticket
+submitter requesting input after 5 more working days.&lt;/p>
+&lt;h3 id="third-action">Third action&lt;/h3>
+&lt;p>In case the submitter does not reply after another 5 more working days the
+ticket monitoring team gets notified. The monitoring team will check the ticket
+for any updates by the submitter not recognized by the system and set the ticket
+status to &amp;ldquo;unsolved&amp;rdquo; if none. The ticket will follow the usual process for
+&amp;ldquo;solved&amp;rdquo;/&amp;ldquo;unsolved&amp;rdquo; tickets and be closed after 10 working days without
+re-opening the ticket again.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Action&lt;/th>
+&lt;th>Ticket Status&lt;/th>
+&lt;th>Working Days&lt;/th>
+&lt;th>Work Flow&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>waiting for reply&lt;/td>
+&lt;td>5&lt;/td>
+&lt;td>first reminder to submitter; adding ticket to monitoring dashboard&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>waiting for reply&lt;/td>
+&lt;td>5&lt;/td>
+&lt;td>second reminder to submitter&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>waiting for reply&lt;/td>
+&lt;td>5&lt;/td>
+&lt;td>notification to monitoring team; the monitoring team sets status &amp;ldquo;unsolved&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>unsolved&lt;/td>
+&lt;td>10&lt;/td>
+&lt;td>manuel status change to &amp;ldquo;closed&amp;rdquo; by ticket monitoring team&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="summary">Summary&lt;/h3>
+&lt;p>In this workflow there is always a human intervention before closing a ticket.
+The submitter has 15 working days in total for replying to a ticket.
+Additionally, they have 10 more working days for re-opening the ticket in case
+they do not agree with setting the ticket to &amp;ldquo;unsolved&amp;rdquo;.&lt;/p>
+&lt;h3 id="workflow-graph">Workflow graph&lt;/h3>
+&lt;p>&lt;img src="GGUS_Graph_WaitingForSubmitter-workflow.png" alt="Waiting for submitter workflow">&lt;/p></description></item></channel></rss>

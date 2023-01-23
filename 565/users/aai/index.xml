@@ -1,0 +1,28 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Authentication &amp; Authorization</title><link>/users/aai/</link><description>Recent content in Authentication &amp; Authorization on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI Check-in</title><link>/users/aai/check-in/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>&lt;a href="https://www.egi.eu/services/check-in/">EGI Check-in&lt;/a> is a proxy service that
+&lt;strong>allows scientific communities to securely access and control access to
+resources in the EGI Federated infrastructure&lt;/strong>. It operates as a central hub
+that connects federated &lt;a href="../../../providers/check-in/idp">Identity Providers&lt;/a> (IdPs)
+with EGI service providers.&lt;/p>
+&lt;p>Users can authenticate with their preferred IdP
+(e.g an &lt;a href="https://edugain.org">eduGAIN&lt;/a> account, institutional account,
+social media account, etc.) to access and use EGI services in a uniform
+and easy way.&lt;/p>
+&lt;p>The main features of Check-in:&lt;/p>
+&lt;ul>
+&lt;li>Enables multiple federated authentication sources using different technologies&lt;/li>
+&lt;li>Has an user registration portal that also allows linking accounts&lt;/li>
+&lt;li>Increases productivity and security by simplifying user authentication and authorization&lt;/li>
+&lt;li>Federated in &lt;a href="https://edugain.org">eduGAIN&lt;/a> as a service provider&lt;/li>
+&lt;li>Combines user attributes originating from various authoritative sources
+(IdPs and attribute provider services) and delivers them to EGI service
+providers in a transparent way&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+EGI Check-In is based on
+the &lt;a href="https://aarc-project.eu/architecture/">AARC Blueprint Architecture&lt;/a>.
+&lt;/div>
+&lt;p>The following sections cover how to sign up for and EGI account, and how to
+use it to access resources.&lt;/p></description></item></channel></rss>
