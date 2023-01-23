@@ -1201,12 +1201,14 @@ user authorisation:
 | [GOCDB roles](#gocdb-roles)                                                                     | `eduperson_entitlement` |
 | [Identity Assurance](#identity-assurance)                                                       | `eduperson_assurance`   |
 
-### Example OIDC Client
+### Example OIDC Client Configurations
+
+#### simple-oidc-client-php
 
 In this guide we will demonstrate how to install and configure a
 [Simple OIDC Client](https://github.com/rciam/simple-oidc-client-php).
 
-#### Install simple-oidc-client-php
+##### Install simple-oidc-client-php
 
 This guide assumes the Apache HTTP server has been installed and the document
 root is `/var/www/html`
@@ -1214,7 +1216,7 @@ root is `/var/www/html`
 Move to the apache document root and download and extract
 [simple-oidc-client-php.tar.gz](https://github.com/rciam/simple-oidc-client-php/releases/download/v2.0.0/simple-oidc-client-php.tar.gz).
 
-#### Configure Client
+##### Configure Client
 
 Login to the [EGI Federation Registry](https://aai.egi.eu/federation)
 
@@ -1228,7 +1230,7 @@ Next, in `Scope` select the scopes that your service needs. Then, submit the
 form and and self approve it. Finally you should get a pair of `Client ID` and
 `Client Secret`.
 
-#### Configure simple-oidc-client-php
+##### Configure simple-oidc-client-php
 
 Now that you have everything you need, you can configure your login settings. Go
 to your terminal and open `config.php` with your favourite text editor.
