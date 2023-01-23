@@ -17,7 +17,7 @@ either run their own [data centers](https://www.egi.eu/federation/data-centres/)
 or rely on community, private and/or public cloud services. These service
 providers offer:
 
-- **Single Sign-On** via [EGI Check-in](https://www.egi.eu/services/check-in/)
+- **Single Sign-On** via [EGI Check-in](https://www.egi.eu/service/check-in/)
   allows users to login with their institutional (community) credentials
 - **Global image catalogue** at [AppDB](https://appdb.egi.eu) with
   pre-configured virtual machine images

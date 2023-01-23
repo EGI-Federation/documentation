@@ -26,7 +26,7 @@ servers.
 Cloud Compute service is provided through a federation of IaaS cloud sites that
 offer:
 
-- Single Sign-On via [EGI Check-in](https://www.egi.eu/services/check-in/),
+- Single Sign-On via [EGI Check-in](https://www.egi.eu/service/check-in/),
   users can login into every provider with their institutional credentials and
   use modern industry standards like
   [OpenID Connect](https://openid.net/connect/).
