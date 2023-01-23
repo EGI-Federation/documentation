@@ -420,6 +420,9 @@ Check-in supports the following OpenID Connect/OAuth2 grant types:
   support of delegated access to resources.
 - Device Code: used by devices that lack a browser to perform a user-agent based
   OAuth flow.
+- Client credentials: used by clients to obtain an access token outside of the
+  context of a user. Such an access token is typically used by clients to access
+  resources about themselves rather than to access a user's resources.
 
 #### Authorization Code
 
@@ -858,6 +861,61 @@ $ curl -X POST "${TOKEN_ENDPOINT}" \
 {{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
 [Endpoints](#endpoints) table.{{% /alert %}}
 
+#### Client credentials
+
+The parameters that are used in the Client Credentials flow are:
+
+| Parameter    | Presence | Values                     |
+| ------------ | -------- | -------------------------- |
+| `grant_type` | Required | `client_credentials`       |
+| `scope`      | Optional | Define scope(s) to request |
+
+Example request:
+
+```shell
+$ curl -X POST "${TOKEN_ENDPOINT}" \
+    -u "${CLIENT_ID}":"${CLIENT_SECRET}" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -d "grant_type=client_credentials" \
+    -d "scope=openid%20email%20profile%20eduperson_entitlement%20voperson_id" | python -m json.tool;
+```
+
+{{% alert title="Note" color="info" %}} You can find the `TOKEN_ENDPOINT` in the
+[Endpoints](#endpoints) table.{{% /alert %}}
+
+Example response:
+
+```json
+{
+  "access_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUl...",
+  "expires_in": 3599,
+  "id_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUl...",
+  "not-before-policy": 0,
+  "refresh_expires_in": 0,
+  "scope": "openid eduperson_entitlement voperson_id profile email",
+  "token_type": "Bearer"
+}
+```
+
+Example Access Token (decoded payload):
+
+```json
+{
+  "azp": "1deb9fbd-44a3-4dff-ab4a-49e092e7f566",
+  "clientAddress": "xxx.xxx.xxx.xxx",
+  "clientHost": "xxx.xxx.xxx.xxx",
+  "client_id": "1deb9fbd-44a3-4dff-ab4a-49e092e7f566",
+  "exp": 1674473629,
+  "iat": 1674470029,
+  "iss": "https://aai.egi.eu/auth/realms/egi",
+  "jti": "bdf15737-01ba-4e61-b5bc-3304d637e2b6",
+  "scope": "openid eduperson_entitlement voperson_id profile email",
+  "sub": "253b69f3-2325-4fd5-a26d-95e26b42bbaf@egi.eu",
+  "typ": "Bearer",
+  "voperson_id": "253b69f3-2325-4fd5-a26d-95e26b42bbaf@egi.eu"
+}
+```
+
 ### Endpoints
 
 The most important OIDC/OAuth2 endpoints are listed below:
@@ -939,6 +997,7 @@ This endpoint is used in the following flows:
 - [Refresh Token](#refresh-flow)
 - [Token Exchange](#token-exchange)
 - [Device Code](#device-code)
+- [Client Credentials](#client-credentials)
 
 #### Device Authorization Endpoint
 
