@@ -373,11 +373,12 @@ request against the pre-registered URIs
 [OAuth2-BCP](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics#section-4.1),
 with the matching performed as described in
 [RFC3986](https://www.rfc-editor.org/rfc/rfc3986#section-6.2.1) (Simple String
-Comparison). Redirection URIs **MUST** use the schemata defined in Section 3.1.2.1
-of the
+Comparison). Redirection URIs **MUST** use the schemata defined in Section
+3.1.2.1 of the
 [OIDC-Core](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest)
-specification. Note that the Redirection URI **MUST** use the `https` scheme; the
-use of `http` Redirection URIs is only allowed in the development environment.
+specification. Note that the Redirection URI **MUST** use the `https` scheme;
+the use of `http` Redirection URIs is only allowed in the development
+environment.
 
 ### Claims
 
@@ -493,9 +494,9 @@ A Client makes a Token Request by presenting its Authorization Grant (in the
 form of an Authorization Code) to the Token Endpoint using the `grant_type`
 value `authorization_code`, as described in Section 4.1.3 of OAuth 2.0
 [RFC6749](https://www.rfc-editor.org/rfc/rfc6749#section-4.1.3). If the Client
-is a Confidential Client, then it **MUST** authenticate to the Token Endpoint using
-the authentication method registered for its `client_id`. The Client sends the
-parameters to the Token Endpoint using the HTTP `POST` method and the Form
+is a Confidential Client, then it **MUST** authenticate to the Token Endpoint
+using the authentication method registered for its `client_id`. The Client sends
+the parameters to the Token Endpoint using the HTTP `POST` method and the Form
 Serialization.
 
 The parameters that are present in the token request are described in the table
