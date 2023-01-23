@@ -1203,6 +1203,76 @@ user authorisation:
 
 ### Example OIDC Client Configurations
 
+#### Keycloak
+
+If you are using Keycloak as an OIDC Relying Party, then you need to follow the
+steps below in order to register EGI Check-in as an Identity Provider:
+
+1. Access the administrator console of your Keycloak instance and navigate to
+   "Identity Providers" and then select "OpenID Connect v1.0"
+
+   ![Keycloak IdP Page](oidc-examples-keycloak-idp.png)
+
+1. In the next page, complete the following fields:
+
+   - Alias: `egi-check-in-oidc`
+   - Display name: `EGI Check-in`
+
+   ![Add OIDC IdP](oidc-examples-keycloak-add-oidc-idp-1.png)
+
+   Scroll down, and complete the rest options:
+
+   - Discovery endpoint:
+     `https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration`
+   - Client ID: `<YOUR_CLIENT_ID>`
+   - Client Secret: `<YOUR_CLIENT_SECRET>`
+
+   ![Add OIDC IdP](oidc-examples-keycloak-add-oidc-idp-2.png)
+
+   And then click on the "Add" button.
+
+1. After adding EGI Check-in IdP, scroll down to the "OpenID Connect settings"
+   section and expand the "Advanced" option and then add the scopes that the
+   Service needs. For example:
+
+   Scopes: `openid voperson_id email profile eduperson_entitlement`
+
+   ![OpenID Connect Settings](oidc-examples-keycloak-oidc-idp-oidc.png)
+
+1. Then, scroll down to the "Advanced settings" section and enable the "Trust
+   Email" option and click on "Save" button.
+
+   ![Advanced Settings](oidc-examples-keycloak-oidc-idp-advanced.png)
+
+1. Next, you will need to add two mappers to store the `voperson_id` and the
+   `eduperson_entitlement` claims because Keycloak can map only the
+   [standard claims](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims).
+   Go to the "Mappers" tab and then click on "Add Mapper".
+
+   For the `voperson_id` claim you will need to add the following options:
+
+   - Name: `voPersonID`
+   - Sync Mode Override: `import`
+   - Mapper Type: `Username Template Importer`
+   - Template: `${CLAIM.voperson_id}`
+   - Target: `LOCAL`
+
+   ![voPersonID mapper](oidc-examples-keycloak-oidc-voperson-id-mapper.png)
+
+   And for the `eduperson_entitlement` claim:
+
+   - Name: `eduPersonEntitlement`
+   - Sync Mode Override: `Inherit`
+   - Mapper Type: `Attribute Importer`
+   - Claim: `eduperson_entitlement`
+   - User Attribute Name: `eduPersonEntitlement`
+
+   ![eduPersonEntitlement mapper](oidc-examples-keycloak-oidc-eduperson-entitlement-mapper.png)
+
+   {{% alert title="Note" color="info" %}} For other
+   [attributes](#user-attributes), create a mapper similar to the
+   `eduPersonEntitlement` mapper.{{% /alert %}}
+
 #### simple-oidc-client-php
 
 In this guide we will demonstrate how to install and configure a
