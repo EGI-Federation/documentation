@@ -3,9 +3,9 @@ title: Security Services
 linkTitle: Security
 type: docs
 draft: true
-weight: 60
+weight: 70
 description: >
-  Security services in the EGI Cloud
+  Security services in the EGI infrastructure
 ---
 
 ## Using cloud services securely
@@ -19,7 +19,7 @@ The following services that can help you to configure and
 consume EGI services while meeting your security and compliance objectives:
 
 - The [Secrets Store](secrets-store) allows users to securely store credentials
-  or other sensitive information, and easily retrieve it when needed, instead of
-  hardcode it in code, configuration files, or environment variables.
+  or other sensitive information then easily retrieve it when needed, instead of
+  hardcoding it into code, configuration files, or environment variables.
 
-See the following sections for more details on these security-related services.
+Explore the areas below for further details.
