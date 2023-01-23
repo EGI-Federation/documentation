@@ -2,8 +2,8 @@
 title: Machine Learning & Deep Learning
 linkTitle: Machine Learning
 type: docs
+weight: 60
 draft: true
-weight: 70
 description: >
   Artificial Intelligence in the EGI Cloud
 ---
