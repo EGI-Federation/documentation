@@ -320,6 +320,83 @@ attributes that are relevant for user authorisation:
 - [SimpleSAMLphp Service Provider QuickStart](https://simplesamlphp.org/docs/stable/simplesamlphp-sp.html)
 - [Simple SAML 2.0 service provider with mod_auth_mellon Apache module](https://github.com/latchset/mod_auth_mellon)
 
+### Example SAML Service Provider Configurations
+
+#### Keycloak
+
+If you are using Keycloak as an SAML Service Provider, then you need to follow
+the steps below in order to register EGI Check-in as an Identity Provider:
+
+1. Access the administrator console of your Keycloak instance and navigate to
+   "Identity Providers" and then select "SAML v2.0"
+
+   ![Keycloak IdP Page](saml-examples-keycloak-idp.png)
+
+1. In the next page, complete the following fields:
+
+   - Alias: `egi-check-in-saml`
+   - Display name: `EGI Check-in`
+
+   ![Add SAML IdP](saml-examples-keycloak-add-saml-idp-1.png)
+
+   Scroll down, and complete the rest options:
+
+   - SAML entity descriptor: `https://aai.egi.eu/proxy/saml2/idp/metadata.php`
+
+   ![Add SAML IdP](saml-examples-keycloak-add-saml-idp-2.png)
+
+   And then click on the "Add" button.
+
+1. After adding EGI Check-in IdP, scroll down to the "SAML settings" section and
+   edit the following options:
+
+   - Principal type: `Attribute [Name]`
+   - Principal attribute: `urn:oid:1.3.6.1.4.1.25178.4.1.6`
+   - HTTP-POST binding response: `On`
+   - Want AuthnRequests signed: `On`
+
+   {{% alert title="Note" color="info" %}} `urn:oid:1.3.6.1.4.1.25178.4.1.6` is
+   the OID presentation of voPersonID attribute.{{% /alert %}}
+
+   ![SAML Settings](saml-examples-keycloak-saml-idp-saml-setting.png)
+
+1. Then, scroll down to the "Advanced settings" section and enable the "Trust
+   Email" option and click on "Save".
+
+   ![Advanced Settings](saml-examples-keycloak-saml-idp-advanced.png)
+
+1. Next, you will need to create a mapper for each attribute that your Service
+   Provider will request from EGI Check-in Proxy. Go to the "Mappers" tab and
+   then click on "Add Mapper".
+
+   For the `voPersonID` attribute you will need to add the following options:
+
+   - Name: `voPersonID`
+   - Sync Mode Override: `import`
+   - Mapper Type: `Attribute Importer`
+   - Attribute Name: `urn:oid:1.3.6.1.4.1.25178.4.1.6`
+   - Friendly Name: `voPersonID`
+   - Name Format: `ATTRIBUTE_FORMAT_URI`
+   - User Attribute Name: `voPersonID`
+
+   ![voPersonID mapper](saml-examples-keycloak-saml-vopersonid-mapper.png)
+
+   And for the `eduperson_entitlement` claim:
+
+   - Name: `eduPersonEntitlement`
+   - Sync Mode Override: `Inherit`
+   - Mapper Type: `Attribute Importer`
+   - Attribute Name: `urn:oid:1.3.6.1.4.1.5923.1.1.1.7`
+   - Friendly Name: `eduPersonEntitlement`
+   - Name Format: `ATTRIBUTE_FORMAT_URI`
+   - User Attribute Name: `eduPersonEntitlement`
+
+   ![eduPersonEntitlement mapper](saml-examples-keycloak-saml-edupersonentitlement-mapper.png)
+
+   {{% alert title="Note" color="info" %}} For other
+   [attributes](#user-attributes), create a mapper similar to the
+   `eduPersonEntitlement` mapper.{{% /alert %}}
+
 ## OpenID Connect Service Provider
 
 Service Providers can be integrated with EGI Check-in using OpenID Connect
