@@ -126,8 +126,6 @@ You can monitor the import activity from the administration panel at port 9443.
 
 ![image](onedatify_step_6.png)
 
-![image](onedata-logo.png)
-
 ## Additional configuration for EGI DataHub
 
 After completing the installation it might be necessary to add some specific
