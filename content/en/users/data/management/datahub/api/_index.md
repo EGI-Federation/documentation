@@ -6,7 +6,7 @@ type: docs
 aliases:
   - /users/datahub/api
 description: >
-  The Application Programming Interfaces of EGI DataHub
+  The programmatic interface of EGI DataHub
 ---
 
 Most operations in EGI DataHub can be performed using one of the
