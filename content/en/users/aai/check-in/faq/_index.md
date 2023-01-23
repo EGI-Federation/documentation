@@ -13,7 +13,7 @@ description: >
 
 <!-- markdownlint-disable line-length -->
 
-### I get an error similar to: "Error - No connection between institution and service" (SURFconext example)
+### I get an error similar to: "Error - EGI Check-in Service not accessible through your institution" (SURFconext example)
 
 <!-- markdownlint-enable line-length -->
 
@@ -31,15 +31,15 @@ credentials from a Dutch IdP in eduGAIN, you or your IdP administrators need to
 request the connection. The following steps will lead you to perform the
 connection:
 
-- Connect to [SURFconext dashboard](https://dashboard.surfconext.nl/apps)
-- Search for "EGI AAI Service provider proxy"
+- Connect to [SURFconext dashboard](https://dashboard.surfconext.nl/apps/all)
+- Search for "EGI Check-in Service"
   - If the service does not show in the search, you need to ask SURFnet to add
     it in the dashboard, please write to `support at surfconext dot nl`
-- In the dashboard, near the "EGI AAI Service provider proxy" there should be a
+- In the dashboard, near the "EGI Check-in Service" there should be a
   "Connect" button, this will create a service ticket and the SURFconext team
   will make the connection active.
-- After you received confirmation that the "EGI AAI Service provider proxy" is
-  accessible, you will be able to login in Check-in
+- After you received confirmation that the "EGI Check-in Service" is
+  accessible, you will be able to log into Check-in
 
 ## Authentication error with ADFS-based Identity Providers
 
