@@ -156,6 +156,12 @@ abcdef
 
 {{< /tabx >}}{{< /tabpanex >}}
 
+Deleting a secret is easy, but it is irreversible:
+
+```shell
+$ fedcloud secret delete my_app_secrets
+```
+
 ### Secret values from small text files
 
 If the secret value starts with `@` the content of the file with that name is
