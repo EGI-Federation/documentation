@@ -62,9 +62,11 @@ Once you identified your secret space, click on it to browse your secrets.
 To create your first secret, click on _Secrets_ in the top navigation bar,
 then click on folder **secrets**, then click _Create secret_ on the right.
 
+<!-- markdown-link-check-disable -->
 Use your EGI Check-in ID (e.g. e0b6...@egi.eu in the image below) as the path,
 followed by the name of your secret. Add at least one key to your secret,
 together with a value.
+<!-- markdown-link-check-enable -->
 
 ![Create secret](vault-create-secret.png)
 
