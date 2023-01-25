@@ -57,5 +57,5 @@ a healthy server.
 The recovery time of the generic endpoint, in the case of an unscheduled
 downtime of the generic endpoint’s server, is _T+1_ minutes, where _T_ is the
 interval between cron checks (usually 1 minute). In the case of scheduled
-downtime for maintenance, admins simply assign the generic endpoint to another
-server instance.
+downtime for maintenance, administrators simply assign the generic endpoint to
+another server instance.
