@@ -9,7 +9,7 @@ description: >
 
 [Hashicorp Vault](https://www.vaultproject.io/), the service on which
 EGI Secrets Store is based, has a REST API with similar inputs like the
-[Vault CLI](../cli#vault-cli). See the
+[Vault CLI](../cli#access-via-vault-client). See the
 [full documentation](https://www.vaultproject.io/api) for more details.
 
 {{% alert title="Note" color="info" %}} There is a long list of
