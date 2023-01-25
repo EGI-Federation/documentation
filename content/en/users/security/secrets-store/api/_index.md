@@ -13,5 +13,5 @@ EGI Secrets Store is based, has a REST API with similar inputs like the
 [full documentation](https://www.vaultproject.io/api) for more details.
 
 {{% alert title="Note" color="info" %}} There is a long list of
-[libraries, clients, and tools]((https://www.vaultproject.io/api-docs/relatedtools))
+[libraries, clients, and tools](https://www.vaultproject.io/api-docs/relatedtools)
 for working with Hashicorp Vault.{{% /alert %}}
