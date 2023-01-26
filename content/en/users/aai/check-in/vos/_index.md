@@ -739,7 +739,6 @@ in Check-in Registry database. It can easily found from the URL of the CO Person
 Canvas View.
 {{% /alert %}}
 
-
 <!--
 // jscpd:ignore-start
 -->
