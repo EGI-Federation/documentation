@@ -364,7 +364,7 @@ secret object with all key:value pairs from the YAML file.{{% /alert %}}
 
 ### Client-side encrypted secrets
 
-EGI Secret Store encrypts secret obejcts both in transit and at rest. For
+EGI Secret Store encrypts secret objects both in transit and at rest. For
 highly-sensitive secrets, you can opt to also encrypt your secret values
 on the client-side, before storing them in EGI Secrets Store.
 
