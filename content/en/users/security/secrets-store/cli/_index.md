@@ -21,7 +21,7 @@ advanced Vault features not exposed via other tools.
 
 ## Prerequisites
 
-To access the EGI Secrets Store service from the command line you need a valid
+To access the EGI Secrets Store service from the command-line you need a valid
 [EGI Check-in](../../../aai/check-in) access token. Get it either from the
 [EGI Check-in Token Portal](https://aai.egi.eu/token), or from the
 **oidc-agent** (see [here](../../../getting-started/cli#authentication) for
@@ -189,7 +189,7 @@ permanent [cloud storage](../../../data/storage).{{% /alert %}}
 
 It is recommended to store secret values as text for compatibility and ease of
 manipulation. However, the FedCloud client supports storing small binary files
-as secret values by encoding/decoding the binary data to ASCII via Base64.
+as secret values by encoding/decoding the binary data to ASCII via base64.
 
 Add option `--binary-file` or `-b` when using binary files as the secret value:
 
@@ -464,7 +464,7 @@ $ fedcloud secret get certificate -f json |
 ## Access via Vault client
 
 To access EGI Secrets Store using the Vault client, visit the
-[Vault project's website](https://www.vaultproject.io/downloads), download the
+[Vault project's site](https://www.vaultproject.io/downloads), download the
 correct version for your operating system, and install it.
 
 {{< tabpanex >}} {{< tabx header="Mac" >}}
