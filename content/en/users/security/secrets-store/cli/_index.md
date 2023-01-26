@@ -16,8 +16,7 @@ out of the box without additional configuration, has a simple syntax and
 supports advanced features such as client-side encrypted secrets.
 
 The [Hashicorp Vault client](#access-via-vault-client) can be used to access
-advanced Vault features not exposed via other tools. 
-
+advanced Vault features not exposed via other tools.
 
 ## Prerequisites
 
@@ -46,7 +45,6 @@ $ export OIDC_ACCESS_TOKEN=<token>
 ```
 
 {{< /tabx >}}{{< /tabpanex >}}
-
 
 ## Access via FedCloud client
 
@@ -354,7 +352,7 @@ see the differences between them.
 Importing secret objects from files in text format with `key=value` lines is
 not supported, as the format is error-prone, especially for multi-line secret
 values or values with special characters. You can replace `=` with `:` for
-converting simple text files to YAML files. 
+converting simple text files to YAML files.
 
 {{% alert title="Tip" color="info" %}} Do not forget that in YAML files a
 blank space is required after the `:` separating keys and values.{{% /alert %}}
@@ -459,7 +457,6 @@ $ fedcloud secret get certificate -f json |
 ```
 
 {{< /tabx >}}{{< /tabpanex >}}
-
 
 ## Access via Vault client
 

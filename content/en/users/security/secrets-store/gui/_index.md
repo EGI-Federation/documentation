@@ -13,17 +13,19 @@ web interface.
 
 {{% alert title="Tip" color="info" %}} Tutorials about using the web interface
 are available on the
-[Hashicorp Vault website](https://developer.hashicorp.com/vault/tutorials/getting-started-ui).
+[Hashicorp Vault site](https://developer.hashicorp.com/vault/tutorials/getting-started-ui).
 {{% /alert %}}
 
 ## Using the web interface
 
 Follow the steps below to access the web interface of EGI Secrets Store:
 
+<!-- markdownlint-disable no-bare-urls -->
 - Open https://vault.services.fedcloud.eu:8200 in your browser.
 - Choose the _OIDC authentication_ method in the pulldown menu, then click
 _Sign in with OIDC provider_.
 - Login via _EGI Check-in_ and authorize the Vault GUI.
+<!-- markdownlint-enable no-bare-urls -->
 
 ![Sign-in](vault-login-oidc.png)
 
