@@ -3,7 +3,6 @@ title: Secrets Store Architecture
 linkTitle: Architecture
 type: docs
 weight: 40
-draft: true
 description: >
   The service architecture of EGI Secrets Store
 ---
