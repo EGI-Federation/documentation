@@ -756,11 +756,12 @@ in Check-in
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#a40000">...&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-disable no-proper-names -->
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-The &amp;ldquo;ID&amp;rdquo; field represents the Id of the record in the database.
+The &lt;code>ID&lt;/code> field represents the Id of the record in the database.
 &lt;/div>
+&lt;!-- markdownlint-enable no-proper-names -->
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 The &lt;code>ActorIdentifier&lt;/code> field represents the user who modified
