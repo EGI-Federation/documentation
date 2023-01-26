@@ -645,7 +645,8 @@ To create or update a secret:
 {{< /tabx >}}{{< /tabpanex >}}
 
 {{% alert title="Tip" color="info" %}} Use quotes if the key or value includes
-whitespaces.{{% /alert %}}
+whitespaces. You can include in the same quote both the key and the value.
+{{% /alert %}}
 
 {{% alert title="Note" color="info" %}} You can add as many key to a secret as
 needed, but keep in mind that they will always be handled (read, written, or
