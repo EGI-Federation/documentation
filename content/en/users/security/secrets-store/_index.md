@@ -45,6 +45,4 @@ may contain several different passwords for different components: database,
 message queue, cache, storage system, etc. Each of these passwords will be a
 distinct secret value in your secret object.{{% /alert %}}
 
-Secret objects in Secret management service are created, retrieved, updated,
-and deleted as a whole, users cannot edit individual secret values of an
-existing secret.
+Secret objects are always created, retrieved, updated, and deleted as a whole, users cannot manipulate individual secret values of an existing secret.
