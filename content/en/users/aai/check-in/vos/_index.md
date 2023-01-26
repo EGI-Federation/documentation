@@ -480,11 +480,9 @@ output:
 }
 ```
 
-<!-- markdownlint-disable no-proper-names -->
 {{% alert title="Info" color="info" %}}
-The `ID` field represents the Id of the record in the database.
+The `ID` field represents the "ID" of the record in the database.
 {{% /alert %}}
-<!-- markdownlint-enable no-proper-names -->
 
 {{% alert title="Info" color="info" %}}
 The `ActorIdentifier` field represents the user who modified
@@ -736,7 +734,7 @@ output:
 ```
 
 {{% alert title="Info" color="info" %}}
-"ID" field of `Person` json object represents the Id of the User(Person)
+"ID" field of `Person` json object represents the "ID" of the User(Person)
 in Check-in Registry database. It can easily found from the URL of the CO Person
 Canvas View.
 {{% /alert %}}
