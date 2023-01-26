@@ -78,7 +78,8 @@ yourself. &lt;img src="check-in-token-login.png" alt="EGI Check-in Token Portal 
 &lt;img src="check-in-token-access-token.png" alt="EGI Check-in Token Portal Access Token">
 &lt;ol>
 &lt;li>The value of the Access Token&lt;/li>
-&lt;li>The command to get user&amp;rsquo;s information from userinfo endpoint&lt;/li>
+&lt;li>The command to get user&amp;rsquo;s information from &lt;code>userinfo&lt;/code> endpoint. Running
+this &lt;code>curl&lt;/code> command will also print out your OIDC entitlements.&lt;/li>
 &lt;li>Obtain a Refresh Token (more info in
 &lt;a href="#obtain-a-refresh-token">Obtain a Refresh Token&lt;/a> section)&lt;/li>
 &lt;li>View and manage the applications you have given permissions&lt;/li>
