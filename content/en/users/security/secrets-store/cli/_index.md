@@ -181,7 +181,8 @@ $ fedcloud secret get certificate key  > hostkey.pem
 {{% alert title="Note" color="info" %}} The size of the secret object (all the
 values in it) is limited to 512kB, which is sufficient for storing tokens,
 certificates, configuration files and so on. For larger datasets, please use
-permanent [cloud storage](../../../data/storage).{{% /alert %}}
+[encrypted cloud storage](../../../data/storage/block-storage#storage-encryption).
+{{% /alert %}}
 
 ### Secret values from small binary files
 
