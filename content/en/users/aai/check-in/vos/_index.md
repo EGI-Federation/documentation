@@ -435,7 +435,13 @@ be supported in the future.
 
 #### VO Groups Methods
 
-##### Retrieving all VO groups
+##### Retrieving all VO groups details
+
+{{% alert title="Info" color="info" %}}
+The response will NOT fetch all the groups contained in a VO
+(i.e. the subgroups) but all the EGI's groups (VOs) existing
+in Check-in
+{{% /alert %}}
 
 ```shell
 $ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID \
@@ -474,6 +480,25 @@ output:
 }
 ```
 
+{{% alert title="Info" color="info" %}}
+The `Id` field represents the Id of the record in the database.
+{{% /alert %}}
+
+{{% alert title="Info" color="info" %}}
+The `ActorIdentifier` field represents the user who modified
+the record in the database
+{{% /alert %}}
+
+{{% alert title="Info" color="info" %}}
+The `Metadata` object contains extra information about the VO group.
+For example this group is identified as a group used to support Mailman
+integration. More Types are supported or can be requested by the VO
+admins.
+The `type` field can be used as a query parameter and allows the filtering
+of the available VOs, managed by a VO admin, by that types. More details in
+the request below.
+{{% /alert %}}
+
 <!--
 // jscpd:ignore-start
 -->
@@ -494,7 +519,7 @@ Response Format:
 | 401 Unauthorized   | Authentication Required |               |
 | 500 Other error    | Unknown Error           |               |
 
-##### Retrieving all VO groups filtered by Group type
+##### Retrieving all VO groups details filtered by Group type
 
 ```shell
 $ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID&dept=mailman \
@@ -543,7 +568,7 @@ Response Format:
 // jscpd:ignore-end
 -->
 
-##### Retrieving VO Group by name
+##### Retrieving VO Group details by VO name
 
 ```shell
 $ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID&name=vo.example.org \
@@ -707,6 +732,13 @@ output:
    ]
 }
 ```
+
+{{% alert title="Info" color="info" %}}
+`Id` field of `Person` json object represents the Id of the User(Person)
+in Check-in Registry database. It can easily found from the URL of the CO Person
+Canvas View.
+{{% /alert %}}
+
 
 <!--
 // jscpd:ignore-start
