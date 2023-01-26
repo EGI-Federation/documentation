@@ -2,7 +2,6 @@
 title: Security Services
 linkTitle: Security
 type: docs
-draft: true
 weight: 70
 description: >
   Security services in the EGI infrastructure
