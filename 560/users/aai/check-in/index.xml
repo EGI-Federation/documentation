@@ -759,7 +759,7 @@ in Check-in
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-The &lt;code>ID&lt;/code> field represents the Id of the record in the database.
+The &amp;ldquo;ID&amp;rdquo; field represents the Id of the record in the database.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
@@ -1074,7 +1074,7 @@ As soon as the &lt;code>ValidThrough&lt;/code> date is passed the Check-in Regis
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-&lt;code>ID&lt;/code> field of &lt;code>Person&lt;/code> json object represents the Id of the User(Person)
+&amp;ldquo;ID&amp;rdquo; field of &lt;code>Person&lt;/code> json object represents the Id of the User(Person)
 in Check-in Registry database. It can easily found from the URL of the CO Person
 Canvas View.
 &lt;/div>
