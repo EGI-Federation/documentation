@@ -438,7 +438,7 @@ be supported in the future.
 ##### Retrieving all VO groups details
 
 {{% alert title="Info" color="info" %}}
-The response will NOT fetch all the groups contained in a VO
+The Request will NOT fetch all the groups contained in a VO
 (i.e. the subgroups) but all the EGI's groups (VOs) existing
 in Check-in
 {{% /alert %}}
@@ -495,8 +495,8 @@ For example this group is identified as a group used to support Mailman
 integration. More Types are supported or can be requested by the VO
 admins.
 The `type` field can be used as a query parameter and allows the filtering
-of the available VOs, managed by a VO admin, by that types. More details in
-the request below.
+of the available VOs, managed by a VO admin, by that types. The how to can
+be found in the Request below.
 {{% /alert %}}
 
 <!--
