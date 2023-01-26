@@ -481,7 +481,7 @@ output:
 ```
 
 {{% alert title="Info" color="info" %}}
-The `Id` field represents the Id of the record in the database.
+The `ID` field represents the Id of the record in the database.
 {{% /alert %}}
 
 {{% alert title="Info" color="info" %}}
@@ -734,7 +734,7 @@ output:
 ```
 
 {{% alert title="Info" color="info" %}}
-`Id` field of `Person` json object represents the Id of the User(Person)
+`ID` field of `Person` json object represents the Id of the User(Person)
 in Check-in Registry database. It can easily found from the URL of the CO Person
 Canvas View.
 {{% /alert %}}
