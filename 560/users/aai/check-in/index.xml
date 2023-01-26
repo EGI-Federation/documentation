@@ -756,12 +756,11 @@ in Check-in
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>&lt;span style="color:#a40000">...&lt;/span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-disable no-proper-names -->
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-The &lt;code>ID&lt;/code> field represents the Id of the record in the database.
+The &lt;code>ID&lt;/code> field represents the &amp;ldquo;ID&amp;rdquo; of the record in the database.
 &lt;/div>
-&lt;!-- markdownlint-enable no-proper-names -->
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 The &lt;code>ActorIdentifier&lt;/code> field represents the user who modified
@@ -1075,7 +1074,7 @@ As soon as the &lt;code>ValidThrough&lt;/code> date is passed the Check-in Regis
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-&amp;ldquo;ID&amp;rdquo; field of &lt;code>Person&lt;/code> json object represents the Id of the User(Person)
+&amp;ldquo;ID&amp;rdquo; field of &lt;code>Person&lt;/code> json object represents the &amp;ldquo;ID&amp;rdquo; of the User(Person)
 in Check-in Registry database. It can easily found from the URL of the CO Person
 Canvas View.
 &lt;/div>
