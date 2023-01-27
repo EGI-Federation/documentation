@@ -435,44 +435,69 @@ be supported in the future.
 
 #### VO Groups Methods
 
-1. Retrieving all VO groups:
+##### Retrieving all VO groups details
 
-   ```shell
-   $ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID \
-          --user "example-client":"veryverysecret"
-   ```
+{{% alert title="Info" color="info" %}}
+The Request will NOT fetch all the groups contained in a VO
+(i.e. the subgroups) but all the EGI's groups (VOs) existing
+in Check-in
+{{% /alert %}}
 
-   output:
+```shell
+$ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID \
+         --user "example-client":"veryverysecret"
+```
 
-   ```json
-   {
-      "ResponseType": "Cous",
-      "Version": "1.0",
-      "Cous": [
-         {
-            "Version": "1.0",
-            "Id": 123,
-            "CoId": 2,
-            "Name": "vo.example.org",
-            "Description": "Example Virtual Organisation",
-            "Lft": 109,
-            "Rght": 112,
-            "Created": "2020-09-09 08:17:51",
-            "Modified": "2020-09-09 08:17:51",
-            "Revision": 0,
-            "Deleted": false,
-            "ActorIdentifier": "actoridentifier@egi.eu",
-            "Metadata": [
-               {
-                  "Type": "mailman"
-               }
-            ]
-         },
-         {...},
-         {...}
-      ]
-   }
-   ```
+output:
+
+```json
+{
+   "ResponseType": "Cous",
+   "Version": "1.0",
+   "Cous": [
+      {
+         "Version": "1.0",
+         "Id": 123,
+         "CoId": 2,
+         "Name": "vo.example.org",
+         "Description": "Example Virtual Organisation",
+         "Lft": 109,
+         "Rght": 112,
+         "Created": "2020-09-09 08:17:51",
+         "Modified": "2020-09-09 08:17:51",
+         "Revision": 0,
+         "Deleted": false,
+         "ActorIdentifier": "actoridentifier@egi.eu",
+         "Metadata": [
+            {
+               "Type": "mailman"
+            }
+         ]
+      },
+      {...},
+      {...}
+   ]
+}
+```
+
+{{% alert title="Info" color="info" %}}
+The `ID` field represents the "ID" of the record in the database.
+{{% /alert %}}
+
+{{% alert title="Info" color="info" %}}
+The `ActorIdentifier` field represents the user who modified
+the record in the database
+{{% /alert %}}
+
+{{% alert title="Info" color="info" %}}
+The `Metadata` object contains extra information about the VO group.
+For example this group is identified as a group used to support Mailman
+integration. More Types are supported or can be requested by the VO
+admins.
+The `type` field can be used as a query parameter and allows the filtering
+of the available VOs, managed by a VO admin, by that types. The how to can
+be found in the Request below.
+{{% /alert %}}
 
 <!--
 // jscpd:ignore-start
@@ -494,37 +519,37 @@ Response Format:
 | 401 Unauthorized   | Authentication Required |               |
 | 500 Other error    | Unknown Error           |               |
 
-1. Retrieving all VO groups filtered by Group type:
+##### Retrieving all VO groups details filtered by Group type
 
-   ```shell
-   $ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID&dept=mailman \
-          --user "example-client":"veryverysecret"
-   ```
+```shell
+$ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID&dept=mailman \
+         --user "example-client":"veryverysecret"
+```
 
-   output:
+output:
 
-   ```json
-   {
-      "ResponseType": "Cous",
-      "Version": "1.0",
-      "Cous": [
-         {
-            "Version": "1.0",
-            "Id": 123,
-            "CoId": 2,
-            "Name": "vo.example.org",
-            "Description": "Example Virtual Organisation",
-            "Lft": 109,
-            "Rght": 112,
-            "Created": "2020-09-09 08:17:51",
-            "Modified": "2020-09-09 08:17:51",
-            "Revision": 0,
-            "Deleted": false,
-            "ActorIdentifier": "actoridentifier@egi.eu",
-         },
-      ]
-   }
-   ```
+```json
+{
+   "ResponseType": "Cous",
+   "Version": "1.0",
+   "Cous": [
+      {
+         "Version": "1.0",
+         "Id": 123,
+         "CoId": 2,
+         "Name": "vo.example.org",
+         "Description": "Example Virtual Organisation",
+         "Lft": 109,
+         "Rght": 112,
+         "Created": "2020-09-09 08:17:51",
+         "Modified": "2020-09-09 08:17:51",
+         "Revision": 0,
+         "Deleted": false,
+         "ActorIdentifier": "actoridentifier@egi.eu",
+      },
+   ]
+}
+```
 
 <!--
 // jscpd:ignore-start
@@ -543,42 +568,42 @@ Response Format:
 // jscpd:ignore-end
 -->
 
-1. Retrieving VO Group by name:
+##### Retrieving VO Group details by VO name
 
-   ```shell
-   $ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID&name=vo.example.org \
-          --user "example-client":"veryverysecret"
-   ```
+```shell
+$ curl -vX GET $VO_API_BASE_URL?coid=$CO_ID&name=vo.example.org \
+         --user "example-client":"veryverysecret"
+```
 
-   output:
+output:
 
-   ```json
-   {
-      "ResponseType": "Cous",
-      "Version": "1.0",
-      "Cous": [
-         {
-            "Version": "1.0",
-            "Id": 123,
-            "CoId": 2,
-            "Name": "vo.example.org",
-            "Description": "Example Virtual Organisation",
-            "Lft": 109,
-            "Rght": 112,
-            "Created": "2020-09-09 08:17:51",
-            "Modified": "2020-09-09 08:17:51",
-            "Revision": 0,
-            "Deleted": false,
-            "ActorIdentifier": "actoridentifier@egi.eu",
-            "Metadata": [
-               {
-                  "Type": "mailman"
-               }
-            ]
-         },
-      ]
-   }
-   ```
+```json
+{
+   "ResponseType": "Cous",
+   "Version": "1.0",
+   "Cous": [
+      {
+         "Version": "1.0",
+         "Id": 123,
+         "CoId": 2,
+         "Name": "vo.example.org",
+         "Description": "Example Virtual Organisation",
+         "Lft": 109,
+         "Rght": 112,
+         "Created": "2020-09-09 08:17:51",
+         "Modified": "2020-09-09 08:17:51",
+         "Revision": 0,
+         "Deleted": false,
+         "ActorIdentifier": "actoridentifier@egi.eu",
+         "Metadata": [
+            {
+               "Type": "mailman"
+            }
+         ]
+      },
+   ]
+}
+```
 
 <!--
 // jscpd:ignore-start
@@ -600,47 +625,58 @@ Response Format:
 
 #### VO Memberships Methods
 
-1. Adding a user to a VO requires specifying the user's EGI Check-in CUID, the
-   name of the VO (e.g. `vo.example.org`), the status (`Active`) and the valid
-   from/through dates. All these parameters are mandatory. Here is an example
-   using curl (see example `add.json` file below):
+##### Adding a Member to a VO
 
-   ```shell
-   $ curl -vX POST $VO_API_BASE_URL.json \
-          --user "example-client":"veryverysecret" \
-          --data @add.json \
-          --header "Content-Type: application/json"
-   ```
+Adding a user to a VO requires specifying the user's EGI Check-in CUID, the
+name of the VO (e.g. `vo.example.org`), the status (`Active`) and the valid
+from/through dates. All these parameters are mandatory. Here is an example
+using curl (see example `add.json` file below):
 
-   `add.json`:
+```shell
+$ curl -vX POST $VO_API_BASE_URL.json \
+         --user "example-client":"veryverysecret" \
+         --data @add.json \
+         --header "Content-Type: application/json"
+```
 
-   ```json
-   {
-     "RequestType": "CoPersonRoles",
-     "Version": "1.0",
-     "CoPersonRoles": [
-       {
-         "Version": "1.0",
-         "Person": {
-           "Type": "CO",
-           "Identifier": {
-             "Type": "epuid",
-             "Id": "01234567890123456789@egi.eu"
-           }
-         },
-         "Cou": {
-           "CoId": "2",
-           "Name": "vo.example.org"
-         },
-         "Affiliation": "member",
-         "Title": "Engineer",
-         "Status": "Active",
-         "ValidFrom": "2022-02-16 11:19:38",
-         "ValidThrough": "2022-05-16 11:19:38"
-       }
-     ]
-   }
-   ```
+`add.json`:
+
+```json
+{
+   "RequestType": "CoPersonRoles",
+   "Version": "1.0",
+   "CoPersonRoles": [
+      {
+      "Version": "1.0",
+      "Person": {
+         "Type": "CO",
+         "Identifier": {
+            "Type": "epuid",
+            "Id": "01234567890123456789@egi.eu"
+         }
+      },
+      "Cou": {
+         "CoId": "2",
+         "Name": "vo.example.org"
+      },
+      "Affiliation": "member",
+      "Title": "Engineer",                   // Optional
+      "Status": "Active",
+      "ValidFrom": "2022-02-16 11:19:38",    // Optional
+      "ValidThrough": "2022-05-16 11:19:38"  // Optional
+      }
+   ]
+}
+```
+
+{{% alert title="Info" color="info" %}}
+`Title` field is Optional and designates a custom Role name.
+{{% /alert %}}
+
+{{% alert title="Info" color="info" %}}
+`ValidFrom` and `ValidThrough` fields are Optional and designate the Role validity period.
+As soon as the `ValidThrough` date is passed the Check-in Registry will expire the membership.
+{{% /alert %}}
 
 <!--
 // jscpd:ignore-start
@@ -661,39 +697,47 @@ Response Format:
 // jscpd:ignore-end
 -->
 
-1. Retrieving the VO membership information for a given EGI Check-in CUID:
+##### Retrieve VO membership information
 
-   ```shell
-   $ curl -vX GET $VO_API_BASE_URL/co/$CO_ID/cou/vo.example.org/identifier/01234567890123456789@egi.eu.json \
-          --user "example-client":"veryverysecret"
-   ```
+Retrieving the VO membership information for a given EGI Check-in CUID:
 
-   output:
+```shell
+$ curl -vX GET $VO_API_BASE_URL/co/$CO_ID/cou/vo.example.org/identifier/01234567890123456789@egi.eu.json \
+         --user "example-client":"veryverysecret"
+```
 
-   ```json
-   {
-     "RequestType": "CoPersonRoles",
-     "Version": "1.0",
-     "CoPersonRoles": [
-       {
-         "Version": "1.0",
-         "Person": {
-           "Type": "CO",
-           "Id": 1111
-         },
-         "CouId": 13,
-         "Affiliation": "member",
-         "Title": "Pilot",
-         "Status": "Active",
-         "Created": "2023-02-16 11:19:38",
-         "Modified": "2023-02-16 11:20:27",
-         "Revision": 3,
-         "Deleted": false,
-         "ActorIdentifier": "co_2.test"
-       }
-     ]
-   }
-   ```
+output:
+
+```json
+{
+   "RequestType": "CoPersonRoles",
+   "Version": "1.0",
+   "CoPersonRoles": [
+      {
+      "Version": "1.0",
+      "Person": {
+         "Type": "CO",
+         "Id": 1111
+      },
+      "CouId": 13,
+      "Affiliation": "member",
+      "Title": "Pilot",
+      "Status": "Active",
+      "Created": "2023-02-16 11:19:38",
+      "Modified": "2023-02-16 11:20:27",
+      "Revision": 3,
+      "Deleted": false,
+      "ActorIdentifier": "co_2.test"
+      }  
+   ]
+}
+```
+
+{{% alert title="Info" color="info" %}}
+"ID" field of `Person` json object represents the "ID" of the User(Person)
+in Check-in Registry database. It can easily found from the URL of the CO Person
+Canvas View.
+{{% /alert %}}
 
 <!--
 // jscpd:ignore-start
@@ -720,41 +764,41 @@ Response Format:
 | 404 Identifier type unknown | Identifier type is not valid |               |
 | 500 Other error             | Unknown Error                |               |
 
-1. Retrieving all VO members:
+##### Retrieving all VO members
 
-   ```shell
-   $ curl -vX GET $VO_API_BASE_URL/co/$CO_ID/cou/vo.example.org.json \
-          --user "example-client":"veryverysecret"
-   ```
+```shell
+$ curl -vX GET $VO_API_BASE_URL/co/$CO_ID/cou/vo.example.org.json \
+         --user "example-client":"veryverysecret"
+```
 
-   output:
+output:
 
-   ```json
-   {
-      "RequestType": "CoPersonRoles",
-      "Version": "1.0",
-      "CoPersonRoles": [
-         {
-            "Version": "1.0",
-            "Person": {
-               "Type": "CO",
-               "Id": 1111
-            },
-            "CouId": 13,
-            "Affiliation": "member",
-            "Title": "Pilot",
-            "Status": "Active",
-            "Created": "2022-02-16 11:19:38",
-            "Modified": "2022-02-16 11:20:27",
-            "Revision": 2,
-            "Deleted": false,
-            "ActorIdentifier": "co_2.test"
+```json
+{
+   "RequestType": "CoPersonRoles",
+   "Version": "1.0",
+   "CoPersonRoles": [
+      {
+         "Version": "1.0",
+         "Person": {
+            "Type": "CO",
+            "Id": 1111
          },
-         {...},
-         {...}
-      ]
-   }
-   ```
+         "CouId": 13,
+         "Affiliation": "member",
+         "Title": "Pilot",
+         "Status": "Active",
+         "Created": "2022-02-16 11:19:38",
+         "Modified": "2022-02-16 11:20:27",
+         "Revision": 2,
+         "Deleted": false,
+         "ActorIdentifier": "co_2.test"
+      },
+      {...},
+      {...}
+   ]
+}
+```
 
 <!--
 // jscpd:ignore-start
@@ -779,20 +823,47 @@ Response Format:
 | 404 COU/VO unknown | COU/CO name not found   |               |
 | 500 Other error    | Unknown Error           |               |
 
-1. Updating existing VO membership record:
+##### Updating/Editing a VO membership record
 
-   ```shell
-   $ curl -vX PUT $VO_API_BASE_URL/15.json \
-          --user "example-client":"veryverysecret"  \
-          --data @update.json \
-          --header "Content-Type: application/json"
-   ```
+```shell
+$ curl -vX PUT $VO_API_BASE_URL/15.json \
+         --user "example-client":"veryverysecret"  \
+         --data @update.json \
+         --header "Content-Type: application/json"
+```
 
-   The request body is the same as the one used for adding new members but
-   update requires:
+The request body is the same as the one used for adding new members but
+update requires:
 
-   - using `PUT` instead of `POST`.
-   - provide the Role ID as part of the request URL
+- using `PUT` instead of `POST`.
+- provide the Role ID as part of the request URL
+
+`update.json` request body example:
+
+```json
+{
+  "RequestType": "CoPersonRoles",
+  "Version": "1.0",
+  "CoPersonRoles": [
+    {
+      "Version": "1.0",
+      "Person": {
+        "Type": "CO",
+        "Id": "171"                         // VO Member Registry ID
+      },
+      "Cou": {
+        "CoId": "2",                        // CO ID has to be 2
+        "Name": "vo.example.org"            // VO name
+      },
+      "Affiliation": "member",
+      "Title": "engineer",                  // Custom Role Title
+      "ValidFrom": "2022-11-20 23:00:00",
+      "ValidThrough": "2023-11-07 23:00:00",
+      "Status": "Active"                    // Status can be Active,Deleted,Expired, etc
+    }
+  ]
+}
+```
 
 <!--
 // jscpd:ignore-start
@@ -813,10 +884,10 @@ Response Format:
 // jscpd:ignore-end
 -->
 
-1. Removing VO member:
+##### Removing VO member
 
-Same as the update but requires setting the membership status to `Deleted` and
-do not include a body.
+{{% alert title="Info" color="info" %}} Removing a VO membership is an update
+action where the status of the role is set to `Deleted`. {{% /alert %}}
 
 Response Format:
 
