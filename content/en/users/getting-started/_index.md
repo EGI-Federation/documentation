@@ -35,7 +35,7 @@ development of these communities is driven by by their own scientific
 requirements.
 
 {{% alert title="Tip" color="info" %}} See also an
-[overview](https://www.egi.eu/federation/egi-federated-cloud/the-egi-federated-cloud-architecture/)
+[overview](https://www.egi.eu/egi-infrastructure/)
 of the EGI FedCloud architecture. {{% /alert %}}
 
 ## Accessing resources
