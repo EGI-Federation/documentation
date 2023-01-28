@@ -9,17 +9,17 @@ difficult to change (rotate).&lt;/p>
 &lt;strong>securely store, retrieve, and rotate credentials for your services&lt;/strong>.&lt;/p>
 &lt;p>The main features of EGI Secrets Store:&lt;/p>
 &lt;ul>
-&lt;li>Simplifies, standardizes and secures the way users store secrets,&lt;/li>
-&lt;li>Secure storage of secrets, as they are encrypted both in transit and at rest.&lt;/li>
-&lt;li>Makes it easy to rotate secrets, while administrators can track usage and
+&lt;li>Simplifies, standardizes, and secures the way users store secrets.&lt;/li>
+&lt;li>Offers secure storage of secrets, encrypted both in transit and at rest.&lt;/li>
+&lt;li>Allows easy rotation of secrets, while administrators can track usage and
 manage access.&lt;/li>
-&lt;li>Integration with &lt;a href="../../aai/check-in/">EGI Check-in&lt;/a> allows access with
-community credentials, no additional registration needed.&lt;/li>
-&lt;li>High-availability ensures this critical service is always accessible to
-users, applications and other services built on top of it.&lt;/li>
-&lt;li>Service is easy to maintain, upgrade, and extend, as it is based on
-well-known open-source software, with many client tools and libraries that
-have strong community support.&lt;/li>
+&lt;li>Integrates with &lt;a href="../../aai/check-in/">EGI Check-in&lt;/a> to allow access with
+home organisation credentials, no additional registration needed.&lt;/li>
+&lt;li>High-availability ensures the service is always accessible to
+users, applications and other services that rely of it.&lt;/li>
+&lt;li>Easy to maintain, upgrade, and extend, as it is based on
+well-known open-source software, with many client tools and libraries
+with strong community support.&lt;/li>
 &lt;/ul>
 &lt;h2 id="concepts">Concepts&lt;/h2>
 &lt;p>&lt;strong>Secret objects&lt;/strong> (or secrets, for short) in EGI Secrets Store are identified

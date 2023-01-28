@@ -38,8 +38,8 @@ path.
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 You can find your EGI Check-in ID
-&lt;a href="https://aai.egi.eu/registry/">here&lt;/a> or by clicking the down arrow next to the
-user icon in the top right corner.
+&lt;a href="https://aai.egi.eu/registry/">via the user registry&lt;/a> or by clicking the down
+arrow next to the user icon in the top right corner.
 &lt;/div>
 &lt;p>&lt;img src="vault-homes.png" alt="Home directory">&lt;/p>
 &lt;p>Once you identified your secret space, click on it to browse your secrets.&lt;/p>
@@ -887,10 +887,10 @@ and is fully integrated with &lt;a href="../../../aai/check-in/">EGI Check-in&lt
 users to use it with their community credentials.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Important&lt;/h4>
-Due to the fact that when this
-service is adopted by any application it becomes a critical component of that
-application, the EGI Secrets Store is implemented using a highly-available (HA)
-approach.
+When this
+service is adopted by an application, it becomes a critical dependency for that
+application, thus the EGI Secrets Store is implemented using a highly-available
+(HA) approach.
 &lt;/div>
 &lt;h2 id="service-design">Service design&lt;/h2>
 &lt;p>Multiple Vault servers in
