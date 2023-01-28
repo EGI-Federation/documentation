@@ -11,10 +11,10 @@ EGI Secrets Store is based on [Hashicorp Vault](https://www.vaultproject.io/)
 and is fully integrated with [EGI Check-in](../../../aai/check-in/), allowing
 users to use it with their community credentials.
 
-{{% alert title="Important" color="warning" %}} Due to the fact that when this
-service is adopted by any application it becomes a critical component of that
-application, the EGI Secrets Store is implemented using a highly-available (HA)
-approach.{{% /alert %}}
+{{% alert title="Important" color="warning" %}} When this
+service is adopted by an application, it becomes a critical dependency for that
+application, thus the EGI Secrets Store is implemented using a highly-available
+(HA) approach.{{% /alert %}}
 
 ## Service design
 

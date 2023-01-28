@@ -20,17 +20,17 @@ The EGI Secrets Store helps you to
 
 The main features of EGI Secrets Store:
 
-- Simplifies, standardizes and secures the way users store secrets,
-- Secure storage of secrets, as they are encrypted both in transit and at rest.
-- Makes it easy to rotate secrets, while administrators can track usage and
+- Simplifies, standardizes, and secures the way users store secrets.
+- Offers secure storage of secrets, encrypted both in transit and at rest.
+- Allows easy rotation of secrets, while administrators can track usage and
   manage access.
-- Integration with [EGI Check-in](../../aai/check-in/) allows access with
-  community credentials, no additional registration needed.
-- High-availability ensures this critical service is always accessible to
-  users, applications and other services built on top of it.
-- Service is easy to maintain, upgrade, and extend, as it is based on
-  well-known open-source software, with many client tools and libraries that
-  have strong community support.
+- Integrates with [EGI Check-in](../../aai/check-in/) to allow access with
+  home organisation credentials, no additional registration needed.
+- High-availability ensures the service is always accessible to
+  users, applications and other services that rely of it.
+- Easy to maintain, upgrade, and extend, as it is based on
+  well-known open-source software, with many client tools and libraries
+  with strong community support.
 
 ## Concepts
 

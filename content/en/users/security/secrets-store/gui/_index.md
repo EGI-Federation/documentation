@@ -49,9 +49,8 @@ interface. [Create a secret](#create-secrets) with your EGI Check-in ID as the
 path.{{% /alert %}}
 
 {{% alert title="Tip" color="info" %}} You can find your EGI Check-in ID
-[here](https://aai.egi.eu/registry/) or by clicking the down arrow next to the
-user icon in the top right corner.
-{{% /alert %}}
+[via the user registry](https://aai.egi.eu/registry/) or by clicking the down
+arrow next to the user icon in the top right corner.{{% /alert %}}
 
 ![Home directory](vault-homes.png)
 
