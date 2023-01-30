@@ -6,7 +6,7 @@ type: "docs"
 ---
 
 This page contains information about integrating your identity provider (IdP)
-with [Check-in](https://www.egi.eu/services/check-in/) in order to allow users
+with [Check-in](https://www.egi.eu/service/check-in/) in order to allow users
 in your community to access EGI tools and services.
 
 Organisations who want to register their IdP in Check-in needs to fill this
