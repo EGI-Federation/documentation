@@ -24,7 +24,7 @@ with strong community support.&lt;/li>
 &lt;h2 id="concepts">Concepts&lt;/h2>
 &lt;p>&lt;strong>Secret objects&lt;/strong> (or secrets, for short) in EGI Secrets Store are identified
 by their paths, like files on disk. Each user has a private &lt;strong>secret space&lt;/strong>
-for storing his/her secret objects, and cannot see secrets of other users.
+for storing their secret objects, and cannot see secrets of other users.
 Each secret object may contain several &lt;strong>secret values&lt;/strong>, and each value is
 identified by its &lt;strong>key&lt;/strong> (name).&lt;/p>
 &lt;div class="alert alert-info" role="alert">
