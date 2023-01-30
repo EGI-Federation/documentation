@@ -59,6 +59,15 @@
 
 /* Sizing calibration for the top nav bar */
 
+.navbar {
+ padding: 0.7rem 1rem 0.5rem;
+}
+
+.navbar-logo {
+  position: relative;
+  top: -10px;
+}
+
 .td-navbar {
   min-height: 0;
 }
