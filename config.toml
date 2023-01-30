@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "EGI Documentation"
+title = "Documentation"
 
 enableRobotsTXT = true
 
@@ -62,7 +62,7 @@ anchor = "smart"
 
 [languages]
   [languages.en]
-  title = "EGI Documentation"
+  title = "Documentation"
   description = "EGI documentation"
   languageName = "English"
   # Weight used for sorting.
