@@ -36,7 +36,7 @@ The main features of EGI Secrets Store:
 
 **Secret objects** (or secrets, for short) in EGI Secrets Store are identified
 by their paths, like files on disk. Each user has a private **secret space**
-for storing his/her secret objects, and cannot see secrets of other users.
+for storing their secret objects, and cannot see secrets of other users.
 Each secret object may contain several **secret values**, and each value is
 identified by its **key** (name).
 
