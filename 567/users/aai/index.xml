@@ -1,6 +1,6 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Authentication &amp; Authorization</title><link>/users/aai/</link><description>Recent content in Authentication &amp; Authorization on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI Check-in</title><link>/users/aai/check-in/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>&lt;a href="https://www.egi.eu/services/check-in/">EGI Check-in&lt;/a> is a proxy service that
+&lt;p>&lt;a href="https://www.egi.eu/service/check-in/">EGI Check-in&lt;/a> is a proxy service that
 &lt;strong>allows scientific communities to securely access and control access to
 resources in the EGI Federated infrastructure&lt;/strong>. It operates as a central hub
 that connects federated &lt;a href="../../../providers/check-in/idp">Identity Providers&lt;/a> (IdPs)
