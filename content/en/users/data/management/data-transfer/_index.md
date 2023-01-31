@@ -1,5 +1,5 @@
 ---
-title: Data Transfer
+title: EGI Data Transfer
 type: docs
 weight: 30
 aliases:
@@ -10,7 +10,7 @@ description:
 
 ## What is it?
 
-[EGI Data Transfer](https://www.egi.eu/services/data-transfer/)
+[EGI Data Transfer](https://www.egi.eu/service/data-transfer/)
 allows scientists to **move any type of data files asynchronously from one
 storage to another**. The service includes dedicated interfaces to display statistics
 of on-going transfers and manage storage resource parameters.
