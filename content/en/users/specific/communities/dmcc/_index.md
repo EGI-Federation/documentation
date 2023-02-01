@@ -1,6 +1,6 @@
 ---
-title: Disaster Mitigation and Agriculture community
-linkTitle: Disaster mitigation and agriculture
+title: Disaster Mitigation and Agriculture
+linkTitle: Disaster Mitigation and Agriculture
 type: docs
 weight: 10
 description: >
