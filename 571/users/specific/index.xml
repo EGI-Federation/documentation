@@ -1,0 +1,15 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Specific User Documentation</title><link>/users/specific/</link><description>Recent content in Specific User Documentation on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/specific/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Provider Specific Documentation</title><link>/users/specific/providers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/specific/providers/</guid><description>
+&lt;p>Some service providers in the EGI Federation publish documentation about how
+to work with their sites. Below is a list:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.cloud.muni.cz/">CESNET-MCC&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://confluence.ifca.es/display/IC/Computing+Resources">IFCA-LCG2&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://scigne.fr/en/user-support/online-documentation/">IN2P3-IRES&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>This information is handy to deal with the particularities of the services
+deployed by a given provider. It usually covers OpenStack deployments,
+but may also document other services.&lt;/p></description></item><item><title>Users: Community Specific Documentation</title><link>/users/specific/communities/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/specific/communities/</guid><description>
+&lt;p>In the following sections you can find documentation for communities that are
+using EGI services. These will typically cover an introduction of the
+scientific or research community, the procedure to gain access to the resources
+of the community, and guidelines about how to participate in the community.&lt;/p></description></item></channel></rss>
