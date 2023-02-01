@@ -13,7 +13,8 @@ menu:
 Welcome to the home page of Service Providers. This section provides
 documentation aimed at Service Providers across the EGI Federation.
 
-> See [the users section](../users) for user-centric documentation.
+{{% alert title="Tip" color="info" %}} See the
+[users section](../users) for user-centric documentation.{{% /alert %}}
 
 ## Joining the EGI Infrastructure
 
@@ -58,8 +59,9 @@ instructions:
    computing in research and education, and not yet present in the
    [EGI service portfolio](https://www.egi.eu/services/research/).
 
-> The [Operations-related documentation](./operations-manuals) will help you
-> starting with EGI Operations duties.
+{{% alert title="Tip" color="info" %}} See the
+[operations manuals](./operations-manuals) to get started with your
+EGI Operations duties.{{% /alert %}}
 
 ## Integrating a service with EGI Check-in
 
