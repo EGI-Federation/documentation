@@ -27,6 +27,8 @@ following process:
 * [RADL](https://github.com/grycap/ec3/tree/master/templates)
 
 {{% alert title="Note" color="info" %}} For more information please contact
-- Miguel Caballer: `micafer1 <at> upv.es`
-- Amanda Calatrav: `amcaar <at> i3m.upv.es`
+
+* Miguel Caballer: `micafer1 <at> upv.es`
+* Amanda Calatrav: `amcaar <at> i3m.upv.es`
+
 {{% /alert %}}
