@@ -29,7 +29,7 @@ resources can immediately benefit from EGI federation services.
 In order to make a difference in helping to define the strategic direction of
 the EGI Federation and its federation services, countries or international
 organisations can join the EGI Council. More details may be found
-[on the EGI site](https://www.egi.eu/about/egi-council/joining-the-egi-council/).
+[on the EGI site](https://www.egi.eu/join-the-egi-federation/).
 
 Providers have different options to become members of the EGI Federation, and
 deliver high-quality services for advanced computing within the EGI
