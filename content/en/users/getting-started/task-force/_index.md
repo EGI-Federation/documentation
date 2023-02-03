@@ -51,7 +51,7 @@ The task force members:
 
 {{% alert title="Tip" color="info" %}} If you are interested in joining the
 EGI FedCloud Task Force, send an email to
-`fedcloud-tf` `<at>` `mailman.egi.eu` and introduce yourself.
+`fedcloud-tf <at> mailman.egi.eu` and introduce yourself.
 {{% /alert %}}
 
 {{% alert title="Note" color="info" %}} We hold bi-weekly meetings on Tuesdays
