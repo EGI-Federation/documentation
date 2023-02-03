@@ -880,13 +880,12 @@ provider&amp;rsquo;s name accordingly for OpenStack commands, by using the optio
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 To save a lot of time, set the frequently
-used options like site, VO, etc. using environment variables.
+used options like access token, VO, etc. using environment variables.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 When you want commands to work on all
-sites in the EGI infrastructure, use &lt;code>ALL_SITES&lt;/code> for the &lt;code>--site&lt;/code> parameter
-(pass it directly or via an environment variable).
+sites in the EGI infrastructure, use &lt;code>ALL_SITES&lt;/code> for the &lt;code>--site&lt;/code> parameter.
 &lt;/div>
 &lt;table>
 &lt;thead>
@@ -943,11 +942,6 @@ sites in the EGI infrastructure, use &lt;code>ALL_SITES&lt;/code> for the &lt;co
 &lt;td>v3oidcaccesstoken&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>EGI_SITE&lt;/td>
-&lt;td>&lt;code>--site&lt;/code>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
 &lt;td>EGI_VO&lt;/td>
 &lt;td>&lt;code>--vo&lt;/code>&lt;/td>
 &lt;td>&lt;/td>
@@ -991,7 +985,6 @@ command below:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v3oidcaccesstoken&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --openstack-auth-provider TEXT Check-in identity provider &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> egi.eu&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --site TEXT Name of the site or ALL_SITES &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>required&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --vo TEXT Name of the VO &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>required&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -i, --ignore-missing-vo Ignore sites that &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> not support the VO
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -j, --json-output Print output as a big JSON object
@@ -1046,7 +1039,7 @@ id="tabs-12-0" role="tabpanel" aria-labelled-by="tabs-12-0-tab">
 &lt;p>Run a command to get details of a project:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud site show-project-id
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud site show-project-id --site &lt;span style="color:#000">$EGI_SITE&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://cloud.ui.savba.sk:5000/v3/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;51f736d36ce34b9ebdf196cfcabd24ee&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the same command but set environment variables with the returned values:&lt;/p>
@@ -1065,7 +1058,7 @@ id="tabs-12-1" role="tabpanel" aria-labelled-by="tabs-12-1-tab">
 &lt;p>Run a command to get details of a project:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud site show-project-id
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud site show-project-id --site %EGI_SITE%
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OS_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>51f736d36ce34b9ebdf196cfcabd24ee
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you copy the returned output and execute it as commands in a command prompt:&lt;/p>
@@ -1083,13 +1076,14 @@ returned:&lt;/p>
 &lt;div class="tab-pane "
 id="tabs-12-2" role="tabpanel" aria-labelled-by="tabs-12-2-tab">
 &lt;p>Run a command to get details of a project:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;IISAS-FedCloud&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_VO&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;eosc-synergy.eu&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">site&lt;/span> &lt;span style="color:#204a87">show-project&lt;/span>&lt;span style="color:#000">-id&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;IISAS-FedCloud&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:EGI_VO&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;eosc-synergy.eu&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">site&lt;/span> &lt;span style="color:#204a87">show-project&lt;/span>&lt;span style="color:#000">-id&lt;/span> &lt;span style="color:#000;font-weight:bold">-&lt;/span>&lt;span style="color:#000">-site&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">$Env:OS_AUTH_URL&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://cloud.ui.savba.sk:5000/v3/&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">$Env:OS_PROJECT_ID&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;51f736d36ce34b9ebdf196cfcabd24ee&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the same command but set environment variables with the returned values:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">site&lt;/span> &lt;span style="color:#204a87">show-project&lt;/span>&lt;span style="color:#000">-id&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Out-String&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Invoke-Expression&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">site&lt;/span> &lt;span style="color:#204a87">show-project&lt;/span>&lt;span style="color:#000">-id&lt;/span> &lt;span style="color:#000;font-weight:bold">-&lt;/span>&lt;span style="color:#000">-site&lt;/span> &lt;span style="color:#000">$Env:EGI_SITE&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Out-String&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Invoke-Expression&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The environment variables will have their values set to what the command
 returned:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$Env:OS_AUTH_URL&lt;/span>
@@ -1115,7 +1109,7 @@ using it to extract data from JSON sources.
 &lt;/div>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_SITE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>IISAS-FedCloud
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EGI_VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>eosc-synergy.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud openstack flavor list --json-output
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud openstack flavor list --site &lt;span style="color:#000">$EGI_SITE&lt;/span> --json-output
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;Site&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;IISAS-FedCloud&amp;#34;&lt;/span>,
@@ -1148,7 +1142,7 @@ using it to extract data from JSON sources.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The following jq command selects flavors with VCPUs=2 and prints their names&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud openstack flavor list--json-output &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud openstack flavor list --site IISAS-FedCloud --json-output &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.[].Result[] | select(.VCPUs == 2) | .Name&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>m1.medium
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
