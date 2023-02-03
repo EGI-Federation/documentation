@@ -248,18 +248,19 @@ provider via option `--oidc-url`.
 
 {{% alert title="Note" color="info" %}} Remember to also set the identity
 provider's name accordingly for OpenStack commands, by using the option
-`--openstack-auth-provider`. {{% /alert %}}
+`--openstack-auth-provider`.{{% /alert %}}
 
 #### Environment variables
 
 Most of the FedCloud client options can be set via environment variables:
 
 {{% alert title="Tip" color="info" %}} To save a lot of time, set the frequently
-used options like site, VO, etc. using environment variables. {{% /alert %}}
+used options like access token, VO, etc. using environment variables.
+{{% /alert %}}
 
 {{% alert title="Tip" color="info" %}} When you want commands to work on all
-sites in the EGI infrastructure, use `ALL_SITES` for the `--site` parameter
-(pass it directly or via an environment variable). {{% /alert %}}
+sites in the EGI infrastructure, use `ALL_SITES` for the `--site` parameter.
+{{% /alert %}}
 
 | Environment variable    | Command-line option         | Default value                        |
 | ----------------------- | --------------------------- | ------------------------------------ |
@@ -272,7 +273,6 @@ sites in the EGI infrastructure, use `ALL_SITES` for the `--site` parameter
 | OPENSTACK_AUTH_PROTOCOL | `--openstack-auth-protocol` | openid                               |
 | OPENSTACK_AUTH_PROVIDER | `--openstack-auth-provider` | egi.eu                               |
 | OPENSTACK_AUTH_TYPE     | `--openstack-auth-type`     | v3oidcaccesstoken                    |
-| EGI_SITE                | `--site`                    |                                      |
 | EGI_VO                  | `--vo`                      |                                      |
 
 #### Getting help
@@ -319,7 +319,6 @@ Options:
                                   v3oidcaccesstoken]
   --openstack-auth-provider TEXT  Check-in identity provider  [default:
                                   egi.eu]
-  --site TEXT                     Name of the site or ALL_SITES  [required]
   --vo TEXT                       Name of the VO  [required]
   -i, --ignore-missing-vo         Ignore sites that do not support the VO
   -j, --json-output               Print output as a big JSON object
@@ -359,7 +358,7 @@ Run a command to get details of a project:
 ```shell
 $ export EGI_SITE=IISAS-FedCloud
 $ export EGI_VO=eosc-synergy.eu
-$ fedcloud site show-project-id
+$ fedcloud site show-project-id --site $EGI_SITE
 export OS_AUTH_URL="https://cloud.ui.savba.sk:5000/v3/";
 export OS_PROJECT_ID="51f736d36ce34b9ebdf196cfcabd24ee";
 ```
@@ -388,7 +387,7 @@ Run a command to get details of a project:
 ```shell
 > set EGI_SITE=IISAS-FedCloud
 > set EGI_VO=eosc-synergy.eu
-> fedcloud site show-project-id
+> fedcloud site show-project-id --site %EGI_SITE%
 set OS_AUTH_URL=https://cloud.ui.savba.sk:5000/v3/
 set OS_PROJECT_ID=51f736d36ce34b9ebdf196cfcabd24ee
 ```
@@ -416,9 +415,9 @@ OS_PROJECT_ID=51f736d36ce34b9ebdf196cfcabd24ee
 Run a command to get details of a project:
 
 ```powershell
-> $Env:EGI_SITE = "IISAS-FedCloud"
-> $Env:EGI_VO = "eosc-synergy.eu"
-> fedcloud site show-project-id
+> $Env:EGI_SITE="IISAS-FedCloud"
+> $Env:EGI_VO="eosc-synergy.eu"
+> fedcloud site show-project-id --site $Env:EGI_SITE
 $Env:OS_AUTH_URL="https://cloud.ui.savba.sk:5000/v3/";
 $Env:OS_PROJECT_ID="51f736d36ce34b9ebdf196cfcabd24ee";
 ```
@@ -426,7 +425,8 @@ $Env:OS_PROJECT_ID="51f736d36ce34b9ebdf196cfcabd24ee";
 Run the same command but set environment variables with the returned values:
 
 ```powershell
-> fedcloud site show-project-id | Out-String | Invoke-Expression
+> fedcloud site show-project-id --site $Env:EGI_SITE `
+                | Out-String | Invoke-Expression
 ```
 
 The environment variables will have their values set to what the command
@@ -458,7 +458,7 @@ using it to extract data from JSON sources. {{% /alert %}}
 ```shell
 $ export EGI_SITE=IISAS-FedCloud
 $ export EGI_VO=eosc-synergy.eu
-$ fedcloud openstack flavor list --json-output
+$ fedcloud openstack flavor list --site $EGI_SITE --json-output
 [
 {
   "Site": "IISAS-FedCloud",
@@ -491,7 +491,7 @@ $ fedcloud openstack flavor list --json-output
 ]
 
 # The following jq command selects flavors with VCPUs=2 and prints their names
-$ fedcloud openstack flavor list--json-output | \
+$ fedcloud openstack flavor list --site IISAS-FedCloud --json-output | \
     jq -r '.[].Result[] | select(.VCPUs == 2) | .Name'
 m1.medium
 ```
@@ -499,7 +499,7 @@ m1.medium
 {{% alert title="Note" color="info" %}} Note that `--json-output` option can be
 used only with those OpenStack commands that have outputs. Using this parameter
 with commands with no output (e.g. setting properties) will generate an
-unsupported parameter error. {{% /alert %}}
+unsupported parameter error.{{% /alert %}}
 
 <!--
 // jscpd:ignore-end
