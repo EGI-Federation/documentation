@@ -10,8 +10,8 @@ description: "Documentation related to EGI activities"
     <p class="lead mt-3">
       <a href="https://www.egi.eu">EGI</a> is an international e-Infrastructure
      providing advanced computing and data analytics services for research
-      and innovation. The EGI Federation offers a wide range of services for compute,
-      storage, data and support.
+      and innovation. The EGI Federation offers a wide range of services for
+      compute, storage, data management, training, and support.
     </p>
     <p class="lead mt-3">
       This is the start page for the user and provider documentation of the
@@ -23,7 +23,7 @@ description: "Documentation related to EGI activities"
 {{< blocks/section type="features" color="primary" morecolor="info" oncover="true" ismore="true">}}
 
   {{% blocks/feature icon="fa-user-friends" title="For Users" url="/users" %}}
-  How to access and use the EGI services to benefit from advanced computing.
+  How to access and use EGI services to benefit from advanced computing.
   {{% /blocks/feature %}}
 
   {{% blocks/feature icon="fa-users-cog" title="For Providers" url="/providers" %}}

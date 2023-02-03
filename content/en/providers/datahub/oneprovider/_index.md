@@ -126,4 +126,53 @@ You can monitor the import activity from the administration panel at port 9443.
 
 ![image](onedatify_step_6.png)
 
-![image](onedata-logo.png)
+## Additional configuration for EGI DataHub
+
+After completing the installation it might be necessary to add some specific
+configuration depending on the use case.
+
+### Storage Import
+
+Storage import function is used to import files located on a storage and not
+added or modified directly by DataHub API, client or web interface. For example
+if another application access the storage directly as, for example in an NFS
+share. The file registration process creates the necessary metadata so that
+files that are added, removed or modified directly on the storage are reflected
+and accessible in the corresponding space. It is possible to configure the
+storage to automatically detect changes made on the storage using the continuous
+scan option or by manually triggering scans.
+
+In general, there are three basic space usage scenarios to be considered before
+deciding to enable the automatic scan of the storage or to perform a single
+scan:
+
+1. An initially empty space, modified only via DataHub -> no need to enable the
+   autoscan or to perform a manual scan.
+1. A space with some initial data that has been imported once and then the space
+   is only modified via DataHub -> In this case the auto scan is not needed
+   however it needs to somehow guard the storage from external modifications
+   otherwise it will desync with the space. E.g.: all changes should be done
+   trough API, DataHub client or the web interface.
+1. A space that exposes a dataset from a storage that later is still dynamically
+   changing outside of DataHub (when it is assumed that some modification can
+   happen at some point) -> in this case continuous scan is needed.
+
+Every storage import scan causes additional load on the Oneprovider. If the
+space is large and changes very often outside of Onedata, it might have a
+visible impact on the overall performance - but we are talking millions of files
+and hundreds of changes per second. Otherwise, having the continuous scan run in
+the background at the default value, with interval of 60 seconds should not
+cause any issues. Depending on the specific needs however, if the loads becomes
+too high or if the changes need to be applied timely it is possible to increase
+or decrease this interval respectively.
+
+In the following screenshot is shown how to access the configuration for the
+storage import:
+
+![image](storage-import-01.png)
+
+This configuration page is located under the "CLUSTER" tab in the main page.
+There we should select the cluster that is providing the space that we need to
+configure, Spaces and select the specific space that need to be configured. In
+the example shown, the "Auto storage import configuration" menu has been
+expanded and continuos scan enabled.

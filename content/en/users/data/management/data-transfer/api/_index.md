@@ -6,7 +6,7 @@ type: docs
 aliases:
   - /users/data-transfer/api
 description: >
-  The Application Programming Interface of EGI Data Transfer
+  The programmatic interface of EGI Data Transfer
 ---
 
 ## Overview

@@ -335,7 +335,9 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
 
 ### Looking for an ARC-CE for dteam
 
+<!--
 // jscpd:ignore-start
+-->
 
 ```shell
 # Information about the ARC-CE supporting dteam VO
@@ -366,4 +368,6 @@ $ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 \
     GLUE2ComputingShareExecutionEnvironmentForeignKey
 ```
 
+<!--
 // jscpd:ignore-end
+-->

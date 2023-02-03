@@ -42,7 +42,7 @@ Or _egi.eu_:
 
 In the **Authenticate using** drop-down menu of the login screen.
 
-Additionally you may need to select _aai.egi.eu/oidc_ as well:
+Additionally you may need to select _aai.egi.eu/auth/realms/egi_ as well:
 
 ![aai.egi.eu/oidc](dashboard-login-check-partb.png)
 

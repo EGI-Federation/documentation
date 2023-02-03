@@ -183,7 +183,7 @@ snippets in multiple programing languages, you can use the follwing shortcode:
 
 You can list all files in a folder using the command:
 ```shell
-ls -a -l
+$ ls -a -l
 ```
 {{</* /tabx */>}}
 
@@ -193,7 +193,7 @@ a spotlight search, type terminal, then press Enter. In the terminal window
 then run the command:
 
 ```shell
-ls -a -l
+$ ls -a -l
 ```
 
 {{</* /tabx */>}}
@@ -203,13 +203,13 @@ ls -a -l
 You can list all files in the current folder using the command:
 
 ```shell
-dir
+> dir
 ```
 
 or you can use PowerShell:
 
 ```powershell
-Get-ChildItem -Path .\
+> Get-ChildItem -Path .\
 ```
 
 {{</* /tabx */>}}
@@ -226,7 +226,7 @@ Will render as:
 You can list all files in a folder using the command:
 
 ```shell
-ls -a -l
+$ ls -a -l
 ```
 
 {{< /tabx >}}
@@ -238,7 +238,7 @@ spotlight search, type terminal, then press Enter. In the terminal window then
 run the command:
 
 ```shell
-ls -a -l
+$ ls -a -l
 ```
 
 {{< /tabx >}}
@@ -248,13 +248,13 @@ ls -a -l
 You can list all files in the current folder using the command:
 
 ```shell
-dir
+> dir
 ```
 
 or you can use PowerShell:
 
 ```powershell
-Get-ChildItem -Path .\
+> Get-ChildItem -Path .\
 ```
 
 {{< /tabx >}}
