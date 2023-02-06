@@ -80,7 +80,7 @@ provider.
 {{% alert title="Join the training infrastructure!" color="info" %}}
 
 Do you want to join as a resource provider? Please email at
-`support _at_ egi.eu`.
+`support <at> egi.eu`.
 {{% /alert %}}
 
 The list of providers and VAs is also discoverable in the
@@ -95,4 +95,4 @@ The infrastructure currently includes enough capacity to scale up to
 class-room size audiences, approximately up to 100 participants.
 
 Do you want to book the infrastructure for a course? Please send a
-request through [our site](https://www.egi.eu/services/training-infrastructure/).
+request through [our site](https://www.egi.eu/service/training-infrastructure/).
