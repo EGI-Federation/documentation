@@ -379,8 +379,11 @@ management, and application deployment.&lt;/li>
 &lt;li>&lt;a href="http://ec3.readthedocs.io/en/devel/templates.html">EC3 documentation&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/grycap/ec3/tree/master/templates">RADL&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h3 id="contacts">Contacts&lt;/h3>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+&lt;p>For more information please contact&lt;/p>
 &lt;ul>
-&lt;li>Miguel Caballer at: micafer1 &lt;code>&amp;lt;at&amp;gt;&lt;/code> upv &lt;code>&amp;lt;dot&amp;gt;&lt;/code> es&lt;/li>
-&lt;li>Amanda Calatrava at: amcaar &lt;code>&amp;lt;at&amp;gt;&lt;/code> i3m &lt;code>&amp;lt;dot&amp;gt;&lt;/code> upv &lt;code>&amp;lt;dot&amp;gt;&lt;/code> es&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;li>Miguel Caballer: &lt;code>micafer1 &amp;lt;at&amp;gt; upv.es&lt;/code>&lt;/li>
+&lt;li>Amanda Calatrav: &lt;code>amcaar &amp;lt;at&amp;gt; i3m.upv.es&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>
