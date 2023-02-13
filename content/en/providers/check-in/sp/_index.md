@@ -315,6 +315,61 @@ attributes that are relevant for user authorisation:
 | [GOCDB roles](#gocdb-roles)                                                                     | `eduPersonEntitlement` |
 | [Identity Assurance](#identity-assurance)                                                       | `eduPersonAssurance`   |
 
+### Service Provider Migration to Keycloak
+
+The migration guide below applies to SAML Service Providers (SPs) registered in
+the **Development** and **Demo** environments of Check-in.
+
+**Development and Demo**: Beginning March 9, 2023, clients using the legacy
+Check-in IdP metadata will no longer be supported.
+
+#### How to Migrate your Service to Keycloak
+
+All the SPs that were registered to the legacy EGI Check-in IdP in the **Demo**
+environment have been moved to Keycloak, so you do not need to re-register your
+Service.
+
+{{% alert title="Important" color="warning" %}} If your SAML SP relies on
+experimental features of Check-in which are only available in the
+**Development** environment, you will need to re-register your SP through the
+[Federation Registry](https://aai.egi.eu/federation) using the "Copy Service"
+functionality.{{% /alert %}}
+
+##### New Identity Provider Metadata
+
+The first thing you need to do is to update the IdP metadata URL in the SP
+configuration, according to the [Metadata registration](#metadata-registration)
+section.
+
+##### New Attributes
+
+Some attributes will not be supported when moving your SP to the Keycloak-based
+EGI Check-in IdP. These attributes will be replaced by new ones, as described in
+the table below:
+
+| Deprecated Attributes        | New Attributes                |
+| ---------------------------- | ----------------------------- |
+| `eduPersonScopedAffiliation` | `voPersonExternalAffiliation` |
+| `eduPersonUniqueId`          | `voPersonID`                  |
+
+{{% alert title="Note" color="info" %}} The values of the deprecated attributes
+will remain the same. Only the name of the attributes is changed.{{% /alert %}}
+
+You need to update the SP configuration to map the values the new attribute
+names.
+
+##### NameID
+
+NameID formats control how the users at IdPs are mapped to users at SPs during
+single sign-on. The SPs need to advertise in their metadata which of the
+following formats they support, otherwise Keycloak will assign the unspecified
+(`urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`) NameID to the SP.
+
+- Transient (`urn:oasis:names:tc:SAML:2.0:nameid-format:transient`)
+- Persistent (`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`)
+- Email address (`urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`)
+- Unspecified (`urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`)
+
 ### References
 
 - [Keycloak Service Provider Documentation](https://www.keycloak.org/docs/latest/server_admin/#saml-v2-0-identity-providers)
