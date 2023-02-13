@@ -214,17 +214,19 @@ depends on the integration environment being used:
 
 {{< tabx header="Demo" >}}
 
-| Demo environment                                       |
-| ------------------------------------------------------ |
-| <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> |
+| Instance                        | Demo environment                                                   |
+| ------------------------------- | ------------------------------------------------------------------ |
+| Legacy EGI Check-in IdP         | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>             |
+| Keycloak-based EGI Check-in IdP | <https://aai-demo.egi.eu/auth/realms/egi/protocol/saml/descriptor> |
 
 {{< /tabx >}}
 
 {{< tabx header="Development" >}}
 
-| Development environment                               |
-| ----------------------------------------------------- |
-| <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> |
+| Instance                        | Development environment                                           |
+| ------------------------------- | ----------------------------------------------------------------- |
+| Legacy EGI Check-in IdP         | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>             |
+| Keycloak-based EGI Check-in IdP | <https://aai-dev.egi.eu/auth/realms/egi/protocol/saml/descriptor> |
 
 {{< /tabx >}}
 
