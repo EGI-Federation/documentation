@@ -14,7 +14,7 @@ description: >
 Requests for technical assistance and other issues related to Check-in can be
 obtained by sending an email to:
 
-**checkin-support@mailman.egi.eu**
+> **checkin-support@mailman.egi.eu**
 
 Alternatively, if you already have a Check-in account, the [EGI Helpdesk](https://ggus.eu/)
 can be used. More information can be found in the
