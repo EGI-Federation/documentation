@@ -1596,7 +1596,7 @@ request access to. Only VO managers can request LDAP credentials for a given VO.
 Check-in.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/aai/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/faq/</guid><description>
 &lt;h2 id="getting-help">Getting help&lt;/h2>
 &lt;p>Requests for technical assistance and other issues related to Check-in can be
-obtained by sending an e-mail to:&lt;/p>
+obtained by sending an email to:&lt;/p>
 &lt;p>&lt;strong>&lt;a href="mailto:checkin-support@mailman.egi.eu">checkin-support@mailman.egi.eu&lt;/a>&lt;/strong>&lt;/p>
 &lt;p>Alternatively, if you already have a Check-in account, the &lt;a href="https://ggus.eu/">EGI Helpdesk&lt;/a>
 can be used. More information can be found in the
