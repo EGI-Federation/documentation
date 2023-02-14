@@ -16,11 +16,11 @@ obtained by sending an e-mail to:
 
 **checkin-support@mailman.egi.eu**
 
-Alternatively, if you already have a Check-in account, the [EGI HelpDesk]
-(https://ggus.eu/) can be used. In that case, submit a new ticket and make
+Alternatively, if you already have a Check-in account, the [EGI HelpDesk](https://ggus.eu/)
+can be used. In that case, submit a new ticket and make
 sure that the support unit is assigned to "Check-in (AAI)".
 
-![image](https://user-images.githubusercontent.com/97176673/218549965-e40ebaa0-52c2-4dd8-a68b-e6b2e972ffd0.png)
+![Check-in support unit in HelpDesk](./check-in-support-unit.png)
 
 ## Connect to Check-in an IdP federated in an hub and spoke federations
 
