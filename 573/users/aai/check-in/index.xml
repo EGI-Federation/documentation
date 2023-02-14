@@ -1597,7 +1597,9 @@ Check-in.&lt;/p></description></item><item><title>Users: Frequently Asked Questi
 &lt;h2 id="getting-help">Getting help&lt;/h2>
 &lt;p>Requests for technical assistance and other issues related to Check-in can be
 obtained by sending an email to:&lt;/p>
+&lt;blockquote>
 &lt;p>&lt;strong>&lt;a href="mailto:checkin-support@mailman.egi.eu">checkin-support@mailman.egi.eu&lt;/a>&lt;/strong>&lt;/p>
+&lt;/blockquote>
 &lt;p>Alternatively, if you already have a Check-in account, the &lt;a href="https://ggus.eu/">EGI Helpdesk&lt;/a>
 can be used. More information can be found in the
 &lt;a href="https://docs.egi.eu/internal/helpdesk/user-guide/">Helpdesk documentation&lt;/a>. In that case,
