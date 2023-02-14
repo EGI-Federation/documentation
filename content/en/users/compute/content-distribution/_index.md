@@ -1,13 +1,13 @@
 ---
-title: Content Distribution
+title: Software Distribution
 linkTitle: Content Distribution
 type: docs
 weight: 70
 description: >
-  Content (software) distribution in the EGI infrastructure
+  Software distribution in the EGI infrastructure
 ---
 
-This page is about the CVMFS service operated for EGI by RAL.
+This page is about the CernVM-FS (CVMFS) service operated for EGI by UKRI-STFC.
 
 ## Overview
 
