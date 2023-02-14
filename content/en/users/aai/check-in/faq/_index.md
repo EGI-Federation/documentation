@@ -12,7 +12,7 @@ description: >
 ## Getting help
 
 Requests for technical assistance and other issues related to Check-in can be
-obtained by sending an e-mail to:
+obtained by sending an email to:
 
 **checkin-support@mailman.egi.eu**
 
