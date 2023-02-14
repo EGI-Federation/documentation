@@ -16,9 +16,10 @@ obtained by sending an e-mail to:
 
 **checkin-support@mailman.egi.eu**
 
-Alternatively, if you already have a Check-in account, the [EGI HelpDesk](https://ggus.eu/)
-can be used. In that case, submit a new ticket and make
-sure that the support unit is assigned to "Check-in (AAI)".
+Alternatively, if you already have a Check-in account, the [EGI Helpdesk](https://ggus.eu/)
+can be used. More information can be found in the
+[Helpdesk documentation](https://docs.egi.eu/internal/helpdesk/user-guide/). In that case,
+submit a new ticket and make sure that the support unit is assigned to "Check-in (AAI)".
 
 ![Check-in support unit in HelpDesk](./check-in-support-unit.png)
 
