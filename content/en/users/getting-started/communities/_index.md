@@ -1,6 +1,6 @@
 ---
 title: Community Specific Documentation
-linkTitle: Community Specific
+linkTitle: Communities
 type: docs
 weight: 160
 description: >
