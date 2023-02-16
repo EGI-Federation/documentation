@@ -78,6 +78,9 @@ Infrastructure (AAI) of the EGI Federation, and to gain a better understanding
 of the concepts that act as building blocks for the AAI implementation.
 {{% /alert %}}
 
+See the [Communities](communities) section for guidance on how to access
+resources allocated to specific research communities (projects).
+
 ## Requesting resources
 
 Depending on the access conditions, a service (or an instance of the service)
