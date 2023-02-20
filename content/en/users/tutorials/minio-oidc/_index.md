@@ -9,7 +9,7 @@ description: >
 
 ## Overview
 
-This tutorial describes how to configure access to 
+This tutorial describes how to configure access to
 [MinIO console](https://min.io/docs/minio/linux/operations/external-iam.html)
 using [EGI Check-in](../../aai/check-in) as external OpenID Connect Identity
 Provider.
@@ -37,7 +37,7 @@ Select the entitlement for the Virtual Organisation that you want to
 enable access to. For example, here is the entitlement for the
 `vo.access.egi.eu` Virtual Organisation:
 
-```
+```shell
 urn:mace:egi.eu:group:vo.access.egi.eu:role=member#aai.egi.eu
 ```
 
@@ -46,9 +46,8 @@ urn:mace:egi.eu:group:vo.access.egi.eu:role=member#aai.egi.eu
 Go to `https://<minio-console-endpoint>/identity/policies` and create a
 new policy, where:
 
-* The name of the policy is the OIDC entitlement obtained in Step 1.
-
-* The policy is configured with the value below:
+- The name of the policy is the OIDC entitlement obtained in Step 1.
+- The policy is configured with the value below:
 
 ```yaml
 {
@@ -60,7 +59,7 @@ new policy, where:
                 "s3:*"
             ],
             "Resource": [
-                "arn:aws:s3:::${jwt:preferred_username}*"
+                "arn:aws:s3:::${jwt:preferred_username}-*"
             ]
         }
     ]
@@ -76,8 +75,8 @@ in the *Amazon Resource Name* string:
 
 `arn:aws:s3:::${jwt:preferred_username}*`
 
-This will allow every user full control of their own buckets, and restrict
-access to other users' buckets.
+This will allow every user full control of their own buckets under
+`s3://preferred_username-` prefix, and restrict access to other users' buckets.
 {{% /alert %}}
 
 See the
@@ -95,7 +94,7 @@ Apart from selecting `OIDC Service` as the `protocol` when adding this service
 to the [EGI Federation Registry](https://aai.egi.eu/federation/), you should
 use the below as the `Redirect URI`:
 
-```
+```shell
 https://<minio-console-endpoint>/oauth_callback
 ```
 
@@ -131,7 +130,7 @@ users may want to use the command-line interface. MinIO comes with its own
 but it also works with S3-compatible tools. Go to the web interface and
 create `access and secret keys` that you can use from the CLI.
 
-```
+```shell
 https://<minio-console-endpoint>/access-keys
 ```
 
