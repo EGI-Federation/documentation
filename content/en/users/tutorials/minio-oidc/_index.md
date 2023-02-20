@@ -117,10 +117,22 @@ and set the following values
 
 Next you need to restart MinIO for the changes to take effect.
 
-## Step 4: Confirm configuration change
+## Step 4: Access MinIO console with Check-in
 
 All going well, when you restart MinIO and go back to the console endpoint
 you should see `Login with SSO` login button.
+
+Please note that you will only be able to create buckets with the
+`<preferred_username>-` prefix. `preferred_username` is an
+[OIDC claim](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes)
+whose value can be obtained using the same `curl` command as the one in Step 1
+above. For example, user `John Doe` will have a `preferred_username` similar to
+`jdoe`. With the configuration detailed on this tutorial, he will be able to
+create buckets with the following names:
+
+- `s3://johndoe-private-bucket`
+- `s3://johndoe-public-bucket`
+- etc.
 
 ## Step 5: Command-line interface
 
