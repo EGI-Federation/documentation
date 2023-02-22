@@ -167,9 +167,14 @@ the users' requests before granting the access to the resources.
    [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240).
    Make sure you use your EGI Check-In account for the enrollment.
 
-The grant to run applications is initially valid for 6 months and can be
+Once your petition is approved, you will be granted access. The grant to
+run applications is initially valid for 6 months and can be
 extended/renewed upon request. These resources are delivered
-[through the vo.access.egi.eu VO](https://documents.egi.eu/public/ShowDocument?docid=2773).
+[through the vo.access.egi.eu VO](https://documents.egi.eu/document/2773).
+
+For pre-configured services (e.g.: [EGI Notebooks](../dev-env/notebooks/)),
+the capacity allocated includes up to **4 vCPU cores, 8 GB of RAM and
+10 GB of block storage**.
 
 You can manage those resources via [command-line](cli) or any of the dashboards
 of the EGI Cloud: the [VMOps dashboard](../compute/cloud-compute/monitor/) and
