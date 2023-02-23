@@ -768,12 +768,18 @@ id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
+&lt;th>Instance&lt;/th>
 &lt;th>Demo environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
+&lt;td>Legacy EGI Check-in IdP&lt;/td>
 &lt;td>&lt;a href="https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php">https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Keycloak-based EGI Check-in IdP&lt;/td>
+&lt;td>&lt;a href="https://aai-demo.egi.eu/auth/realms/egi/protocol/saml/descriptor">https://aai-demo.egi.eu/auth/realms/egi/protocol/saml/descriptor&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -783,12 +789,18 @@ id="tabs-1-2" role="tabpanel" aria-labelled-by="tabs-1-2-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
+&lt;th>Instance&lt;/th>
 &lt;th>Development environment&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
+&lt;td>Legacy EGI Check-in IdP&lt;/td>
 &lt;td>&lt;a href="https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php">https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Keycloak-based EGI Check-in IdP&lt;/td>
+&lt;td>&lt;a href="https://aai-dev.egi.eu/auth/realms/egi/protocol/saml/descriptor">https://aai-dev.egi.eu/auth/realms/egi/protocol/saml/descriptor&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -896,6 +908,67 @@ attributes that are relevant for user authorisation:&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;h3 id="service-provider-migration-to-keycloak">Service Provider Migration to Keycloak&lt;/h3>
+&lt;p>The migration guide below applies to SAML Service Providers (SPs) registered in
+the &lt;strong>Development&lt;/strong> and &lt;strong>Demo&lt;/strong> environments of Check-in.&lt;/p>
+&lt;p>&lt;strong>Development and Demo&lt;/strong>: Beginning March 9, 2023, clients using the legacy
+Check-in IdP metadata will no longer be supported.&lt;/p>
+&lt;h4 id="how-to-migrate-your-service-to-keycloak">How to Migrate your Service to Keycloak&lt;/h4>
+&lt;p>All the SPs that were registered to the legacy EGI Check-in IdP in the &lt;strong>Demo&lt;/strong>
+environment have been moved to Keycloak, so you do not need to re-register your
+Service.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+If your SAML SP relies on
+experimental features of Check-in which are only available in the
+&lt;strong>Development&lt;/strong> environment, you will need to re-register your SP through the
+&lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a> using the &amp;ldquo;Copy Service&amp;rdquo;
+functionality.
+&lt;/div>
+&lt;h5 id="new-identity-provider-metadata">New Identity Provider Metadata&lt;/h5>
+&lt;p>The first thing you need to do is to update the IdP metadata URL in the SP
+configuration, according to the &lt;a href="#metadata-registration">Metadata registration&lt;/a>
+section.&lt;/p>
+&lt;h5 id="new-attributes">New Attributes&lt;/h5>
+&lt;p>Some attributes will not be supported when moving your SP to the Keycloak-based
+EGI Check-in IdP. These attributes will be replaced by new ones, as described in
+the table below:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Deprecated Attributes&lt;/th>
+&lt;th>New Attributes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>eduPersonScopedAffiliation&lt;/code>&lt;/td>
+&lt;td>&lt;code>voPersonExternalAffiliation&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>eduPersonUniqueId&lt;/code>&lt;/td>
+&lt;td>&lt;code>voPersonID&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+The values of the deprecated attributes
+will remain the same. Only the name of the attributes is changed.
+&lt;/div>
+&lt;p>You need to update the SP configuration to map the values the new attribute
+names.&lt;/p>
+&lt;h5 id="nameid">NameID&lt;/h5>
+&lt;p>NameID formats control how the users at IdPs are mapped to users at SPs during
+single sign-on. The SPs need to advertise in their metadata which of the
+following formats they support, otherwise Keycloak will assign the unspecified
+(&lt;code>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified&lt;/code>) NameID to the SP.&lt;/p>
+&lt;ul>
+&lt;li>Transient (&lt;code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient&lt;/code>)&lt;/li>
+&lt;li>Persistent (&lt;code>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent&lt;/code>)&lt;/li>
+&lt;li>Email address (&lt;code>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress&lt;/code>)&lt;/li>
+&lt;li>Unspecified (&lt;code>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified&lt;/code>)&lt;/li>
+&lt;/ul>
 &lt;h3 id="references">References&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://www.keycloak.org/docs/latest/server_admin/#saml-v2-0-identity-providers">Keycloak Service Provider Documentation&lt;/a>&lt;/li>
@@ -1648,32 +1721,32 @@ You can find the &lt;code>TOKEN_ENDPOINT&lt;/code> in the
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="endpoints">Endpoints&lt;/h3>
 &lt;p>The most important OIDC/OAuth2 endpoints are listed below:&lt;/p>
 &lt;!-- markdownlint-disable no-inline-html -->
-&lt;ul class="nav nav-tabs" id="tabs-19" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-21" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-19-0-tab" data-toggle="tab" href="#tabs-19-0" role="tab"
-aria-controls="tabs-19-0" aria-selected="true">
+id="tabs-21-0-tab" data-toggle="tab" href="#tabs-21-0" role="tab"
+aria-controls="tabs-21-0" aria-selected="true">
 Production
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-19-1-tab" data-toggle="tab" href="#tabs-19-1" role="tab"
-aria-controls="tabs-19-1" aria-selected="false">
+id="tabs-21-1-tab" data-toggle="tab" href="#tabs-21-1" role="tab"
+aria-controls="tabs-21-1" aria-selected="false">
 Demo
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-19-2-tab" data-toggle="tab" href="#tabs-19-2" role="tab"
-aria-controls="tabs-19-2" aria-selected="false">
+id="tabs-21-2-tab" data-toggle="tab" href="#tabs-21-2" role="tab"
+aria-controls="tabs-21-2" aria-selected="false">
 Development
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-19-content">
+&lt;div class="tabx-content" id="tabs-21-content">
 &lt;div class="tab-pane show active"
-id="tabs-19-0" role="tabpanel" aria-labelled-by="tabs-19-0-tab">
+id="tabs-21-0" role="tabpanel" aria-labelled-by="tabs-21-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1722,7 +1795,7 @@ id="tabs-19-0" role="tabpanel" aria-labelled-by="tabs-19-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-19-1" role="tabpanel" aria-labelled-by="tabs-19-1-tab">
+id="tabs-21-1" role="tabpanel" aria-labelled-by="tabs-21-1-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -1771,7 +1844,7 @@ id="tabs-19-1" role="tabpanel" aria-labelled-by="tabs-19-1-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-19-2" role="tabpanel" aria-labelled-by="tabs-19-2-tab">
+id="tabs-21-2" role="tabpanel" aria-labelled-by="tabs-21-2-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2199,7 +2272,7 @@ For OpenStack Services please read the
 OpenStack specific migration guide on
 &lt;a href="../../cloud-compute/openstack/aai.md#client-migration-to-keycloak">Cloud Compute documentation&lt;/a>.
 &lt;/div>
-&lt;h4 id="how-to-migrate-your-service-to-keycloak">How to Migrate your Service to Keycloak&lt;/h4>
+&lt;h4 id="how-to-migrate-your-service-to-keycloak-1">How to Migrate your Service to Keycloak&lt;/h4>
 &lt;p>All the clients that were registered in MITREid Connect have been moved to
 Keycloak preserving all the options (Client ID, Client Secret, Redirect URIs
 etc.), so you do not need to re-register your Service.&lt;/p>
@@ -2355,25 +2428,25 @@ derived from &lt;strong>personal&lt;/strong> end-entity certificates, an EGI Sci
 make use of the IGTF-approved IOTA-type RCauth.eu online CA. The actual
 integration goes via an intermediary service, called a Master Portal. EGI is
 running two Master Portal instances, one development, one production instance.&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-27" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-29" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-27-0-tab" data-toggle="tab" href="#tabs-27-0" role="tab"
-aria-controls="tabs-27-0" aria-selected="true">
+id="tabs-29-0-tab" data-toggle="tab" href="#tabs-29-0" role="tab"
+aria-controls="tabs-29-0" aria-selected="true">
 Production
 &lt;/a>
 &lt;/li>
 &lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-27-1-tab" data-toggle="tab" href="#tabs-27-1" role="tab"
-aria-controls="tabs-27-1" aria-selected="false">
+id="tabs-29-1-tab" data-toggle="tab" href="#tabs-29-1" role="tab"
+aria-controls="tabs-29-1" aria-selected="false">
 Development
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tabx-content" id="tabs-27-content">
+&lt;div class="tabx-content" id="tabs-29-content">
 &lt;div class="tab-pane show active"
-id="tabs-27-0" role="tabpanel" aria-labelled-by="tabs-27-0-tab">
+id="tabs-29-0" role="tabpanel" aria-labelled-by="tabs-29-0-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2410,7 +2483,7 @@ id="tabs-27-0" role="tabpanel" aria-labelled-by="tabs-27-0-tab">
 &lt;/table>
 &lt;/div>
 &lt;div class="tab-pane "
-id="tabs-27-1" role="tabpanel" aria-labelled-by="tabs-27-1-tab">
+id="tabs-29-1" role="tabpanel" aria-labelled-by="tabs-29-1-tab">
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2970,7 +3043,7 @@ connected to Check-in.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>SAML Attribute(s)&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;code>urn:oid:1.3.6.1.4.1.5923.1.1.1.9&lt;/code> (eduPersonScopedAffiliation)&lt;/td>
+&lt;td style="text-align:left">&lt;ul>&lt;li>&lt;code>urn:oid:1.3.6.1.4.1.5923.1.1.1.9&lt;/code> (eduPersonScopedAffiliation)&lt;/li>&lt;li>&lt;code>urn:oid:1.3.6.1.4.1.25178.4.1.11&lt;/code> (voPersonExternalAffiliation)&lt;/li>&lt;/ul>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:right">&lt;strong>OIDC scope&lt;/strong>&lt;/td>

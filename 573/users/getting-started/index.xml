@@ -1155,4 +1155,8 @@ unsupported parameter error.
 &lt;/div>
 &lt;!--
 // jscpd:ignore-end
---></description></item></channel></rss>
+--></description></item><item><title>Users: Community Specific Documentation</title><link>/users/getting-started/communities/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/communities/</guid><description>
+&lt;p>In the following sections you can find documentation for communities that are
+using EGI services. These will typically cover an introduction of the
+scientific or research community, the procedure to gain access to the resources
+of the community, and guidelines about how to participate in the community.&lt;/p></description></item></channel></rss>

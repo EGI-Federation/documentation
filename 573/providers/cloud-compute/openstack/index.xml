@@ -686,7 +686,7 @@ flavors available at the OpenStack for the federation users. It runs as a single
 python application
 &lt;a href="https://github.com/EGI-Federation/cloud-info-provider">cloud-info-provider&lt;/a>
 that pushes information through the
-&lt;a href="../../../internal/messaging">Messaging Service&lt;/a>.&lt;/p>
+&lt;a href="../../../../internal/messaging">Messaging Service&lt;/a>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">BDII is deprecated&lt;/h4>
 Cloud providers no longer
