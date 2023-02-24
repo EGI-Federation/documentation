@@ -9,6 +9,20 @@ description: >
   Most frequent questions about EGI Check-in
 ---
 
+## Getting help
+
+Requests for technical assistance and other issues related to Check-in can be
+obtained by sending an email to:
+
+> **checkin-support@mailman.egi.eu**
+
+Alternatively, if you already have a Check-in account, the [EGI Helpdesk](https://ggus.eu/)
+can be used. More information can be found in the
+[Helpdesk documentation](https://docs.egi.eu/internal/helpdesk/user-guide/). In that case,
+submit a new ticket and make sure that the support unit is assigned to "Check-in (AAI)".
+
+![Check-in support unit in HelpDesk](./check-in-support-unit.png)
+
 ## Connect to Check-in an IdP federated in an hub and spoke federations
 
 <!-- markdownlint-disable line-length -->
