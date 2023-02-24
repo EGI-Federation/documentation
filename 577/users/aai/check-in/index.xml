@@ -1594,6 +1594,17 @@ request access to. Only VO managers can request LDAP credentials for a given VO.
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This page includes all the available ways to obtain OAuth tokens from EGI
 Check-in.&lt;/p></description></item><item><title>Users: Frequently Asked Questions</title><link>/users/aai/check-in/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/faq/</guid><description>
+&lt;h2 id="getting-help">Getting help&lt;/h2>
+&lt;p>Requests for technical assistance and other issues related to Check-in can be
+obtained by sending an email to:&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>&lt;a href="mailto:checkin-support@mailman.egi.eu">checkin-support@mailman.egi.eu&lt;/a>&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>Alternatively, if you already have a Check-in account, the &lt;a href="https://ggus.eu/">EGI Helpdesk&lt;/a>
+can be used. More information can be found in the
+&lt;a href="https://docs.egi.eu/internal/helpdesk/user-guide/">Helpdesk documentation&lt;/a>. In that case,
+submit a new ticket and make sure that the support unit is assigned to &amp;ldquo;Check-in (AAI)&amp;rdquo;.&lt;/p>
+&lt;p>&lt;img src="./check-in-support-unit.png" alt="Check-in support unit in HelpDesk">&lt;/p>
 &lt;h2 id="connect-to-check-in-an-idp-federated-in-an-hub-and-spoke-federations">Connect to Check-in an IdP federated in an hub and spoke federations&lt;/h2>
 &lt;!-- markdownlint-disable line-length -->
 &lt;h3 id="i-get-an-error-similar-to-error---egi-check-in-service-not-accessible-through-your-institution-surfconext-example">I get an error similar to: &amp;ldquo;Error - EGI Check-in Service not accessible through your institution&amp;rdquo; (SURFconext example)&lt;/h3>
