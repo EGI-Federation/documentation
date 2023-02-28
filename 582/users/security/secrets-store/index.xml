@@ -1,0 +1,932 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – EGI Secrets Store</title><link>/users/security/secrets-store/</link><description>Recent content in EGI Secrets Store on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/security/secrets-store/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Secrets Store Web Interface</title><link>/users/security/secrets-store/gui/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/security/secrets-store/gui/</guid><description>
+&lt;p>Although the recommended way to access and use EGI Secrets Store is via the
+&lt;a href="../cli">command-line interface&lt;/a>, the service can also be accessed via its
+web interface.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+Tutorials about using the web interface
+are available on the
+&lt;a href="https://developer.hashicorp.com/vault/tutorials/getting-started-ui">Hashicorp Vault site&lt;/a>.
+&lt;/div>
+&lt;h2 id="using-the-web-interface">Using the web interface&lt;/h2>
+&lt;p>Follow the steps below to access the web interface of EGI Secrets Store:&lt;/p>
+&lt;!-- markdownlint-disable no-bare-urls -->
+&lt;ul>
+&lt;li>Open &lt;a href="https://vault.services.fedcloud.eu:8200">https://vault.services.fedcloud.eu:8200&lt;/a> in your browser.&lt;/li>
+&lt;li>Choose the &lt;em>OIDC authentication&lt;/em> method in the pulldown menu, then click
+&lt;em>Sign in with OIDC provider&lt;/em>.&lt;/li>
+&lt;li>Login via &lt;em>EGI Check-in&lt;/em> and authorize the Vault GUI.&lt;/li>
+&lt;/ul>
+&lt;!-- markdownlint-enable no-bare-urls -->
+&lt;p>&lt;img src="vault-login-oidc.png" alt="Sign-in">&lt;/p>
+&lt;p>The main page will open, with a top folder &lt;strong>secrets&lt;/strong> that contains a space for
+each user.&lt;/p>
+&lt;p>&lt;img src="vault-main-window.png" alt="Main page">&lt;/p>
+&lt;h3 id="browse-secrets">Browse secrets&lt;/h3>
+&lt;p>To browse and manage your secrets, click on &lt;em>Secrets&lt;/em> in the top navigation
+bar, then click on folder &lt;strong>secrets&lt;/strong>.&lt;/p>
+&lt;p>Each user has a private secret space, or a &amp;ldquo;home directory&amp;rdquo;, under the root
+folder &lt;strong>secrets&lt;/strong>, with the user&amp;rsquo;s EGI Check-in ID as the folder name. You can
+only create secrets in your own secret space.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Your &amp;ldquo;home directory&amp;rdquo; is not created
+automatically, you have to create it the first time you login using the web
+interface. &lt;a href="#create-secrets">Create a secret&lt;/a> with your EGI Check-in ID as the
+path.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+You can find your EGI Check-in ID
+&lt;a href="https://aai.egi.eu/registry/">via the user registry&lt;/a> or by clicking the down
+arrow next to the user icon in the top right corner.
+&lt;/div>
+&lt;p>&lt;img src="vault-homes.png" alt="Home directory">&lt;/p>
+&lt;p>Once you identified your secret space, click on it to browse your secrets.&lt;/p>
+&lt;p>&lt;img src="vault-home-directory.png" alt="Home directory">&lt;/p>
+&lt;h3 id="create-secrets">Create secrets&lt;/h3>
+&lt;p>To create your first secret, click on &lt;em>Secrets&lt;/em> in the top navigation bar,
+then click on folder &lt;strong>secrets&lt;/strong>, then click &lt;em>Create secret&lt;/em> on the right.&lt;/p>
+&lt;!-- markdown-link-check-disable -->
+&lt;p>Use your EGI Check-in ID (e.g. &lt;a href="mailto:e0b6...@egi.eu">e0b6...@egi.eu&lt;/a> in the image below) as the path,
+followed by the name of your secret. Add at least one key to your secret,
+together with a value.&lt;/p>
+&lt;!-- markdown-link-check-enable -->
+&lt;p>&lt;img src="vault-create-secret.png" alt="Create secret">&lt;/p>
+&lt;p>Click &lt;em>Save&lt;/em> and your &amp;ldquo;home directory&amp;rdquo; will be created together with your
+first secret.&lt;/p>
+&lt;p>Once you created your first secret, you can create the subsequent secrets
+without having to enter your Check-in ID in the path. Just navigate to your
+&amp;ldquo;home folder&amp;rdquo; and create a secret there.&lt;/p></description></item><item><title>Users: Secrets Store Command-Line Interface</title><link>/users/security/secrets-store/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/security/secrets-store/cli/</guid><description>
+&lt;p>Multiple tools and command-line interfaces are available for accessing and
+working with EGI Secrets Store.&lt;/p>
+&lt;p>The &lt;a href="#access-via-fedcloud-client">FedCloud client&lt;/a>
+is strongly recommended as it is tightly integrated with the service, it works
+out of the box without additional configuration, has a simple syntax and
+supports advanced features such as client-side encrypted secrets.&lt;/p>
+&lt;p>The &lt;a href="#access-via-vault-client">Hashicorp Vault client&lt;/a> can be used to access
+advanced Vault features not exposed via other tools.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>To access the EGI Secrets Store service from the command-line you need a valid
+&lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> access token. Get it either from the
+&lt;a href="https://aai.egi.eu/token">EGI Check-in Token Portal&lt;/a>, or from the
+&lt;strong>oidc-agent&lt;/strong> (see &lt;a href="../../../getting-started/cli#authentication">here&lt;/a> for
+details), then set it to an environment variable:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-0-0-tab" data-toggle="tab" href="#tabs-0-0" role="tab"
+aria-controls="tabs-0-0" aria-selected="true">
+Mac / Linux
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-0-1-tab" data-toggle="tab" href="#tabs-0-1" role="tab"
+aria-controls="tabs-0-1" aria-selected="false">
+Powershell
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-0-2-tab" data-toggle="tab" href="#tabs-0-2" role="tab"
+aria-controls="tabs-0-2" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-0-content">
+&lt;div class="tab-pane show active"
+id="tabs-0-0" role="tabpanel" aria-labelled-by="tabs-0-0-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;token&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-0-1" role="tabpanel" aria-labelled-by="tabs-0-1-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$env:OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;token&amp;gt;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-0-2" role="tabpanel" aria-labelled-by="tabs-0-2-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;token&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="access-via-fedcloud-client">Access via FedCloud client&lt;/h2>
+&lt;p>The &lt;a href="../../../getting-started/cli">FedCloud client&lt;/a> is integrated with the EGI
+Secrets Store service, so that users can access the service immediately with
+simple commands. Below is a quickstart to using the service.&lt;/p>
+&lt;h3 id="basic-usage">Basic usage&lt;/h3>
+&lt;p>Let&amp;rsquo;s assume you want to create a secret &lt;code>my_app_secrets&lt;/code> and store passwords
+for two services in it:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-1-0-tab" data-toggle="tab" href="#tabs-1-0" role="tab"
+aria-controls="tabs-1-0" aria-selected="true">
+Mac / Linux
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-1-tab" data-toggle="tab" href="#tabs-1-1" role="tab"
+aria-controls="tabs-1-1" aria-selected="false">
+Powershell
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-1-2-tab" data-toggle="tab" href="#tabs-1-2" role="tab"
+aria-controls="tabs-1-2" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-1-content">
+&lt;div class="tab-pane show active"
+id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret put my_app_secrets &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000">mysql_password&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">123456&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000">redis_password&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>abcdef
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">put&lt;/span> &lt;span style="color:#000">my_app_secrets&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">mysql_password&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">123456&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">redis_password&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">abcdef&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-1-2" role="tabpanel" aria-labelled-by="tabs-1-2-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud secret put my_app_secrets ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">mysql_password&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">123456&lt;/span> ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">redis_password&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>abcdef
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>Listing all your secrets is very simple:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_app_secrets
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Using any of the keys (actually, their vaules) is straighforward too:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-2" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-2-0-tab" data-toggle="tab" href="#tabs-2-0" role="tab"
+aria-controls="tabs-2-0" aria-selected="true">
+Mac / Linux
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-2-1-tab" data-toggle="tab" href="#tabs-2-1" role="tab"
+aria-controls="tabs-2-1" aria-selected="false">
+Powershell
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-2-2-tab" data-toggle="tab" href="#tabs-2-2" role="tab"
+aria-controls="tabs-2-2" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-2-content">
+&lt;div class="tab-pane show active"
+id="tabs-2-0" role="tabpanel" aria-labelled-by="tabs-2-0-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Get all keys and their values&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud secret get my_app_secrets
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>key value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-------------- -------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>redis_password abcdef
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql_password &lt;span style="color:#0000cf;font-weight:bold">123456&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Get the value of a specific key from a secret&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud secret get my_app_secrets mysql_password
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0000cf;font-weight:bold">123456&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Using the value of a specific key from a secret&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ADMIN_PASSWORD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud secret get my_app_secrets admin_password&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$ADMIN_PASSWORD&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>abcdef
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-2-1" role="tabpanel" aria-labelled-by="tabs-2-1-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Get all keys and their values&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">get&lt;/span> &lt;span style="color:#000">my_app_secrets&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">key&lt;/span> &lt;span style="color:#000">value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">--------------&lt;/span> &lt;span style="color:#000;font-weight:bold">-------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">redis_password&lt;/span> &lt;span style="color:#000">abcdef&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">mysql_password&lt;/span> &lt;span style="color:#000">123456&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Get the value of a specific key from a secret&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">get&lt;/span> &lt;span style="color:#000">my_app_secrets&lt;/span> &lt;span style="color:#000">mysql_password&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">123456&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Using the value of a specific key from a secret&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$env:ADMIN_PASSWORD&lt;/span>&lt;span style="color:#000;font-weight:bold">=$(&lt;/span>&lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">get&lt;/span> &lt;span style="color:#000">my_app_secrets&lt;/span> &lt;span style="color:#000">admin_password&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#204a87">echo &lt;/span>&lt;span style="color:#000">$env:ADMIN_PASSWORD&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">abcdef&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-2-2" role="tabpanel" aria-labelled-by="tabs-2-2-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>:: Get all keys and their values
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud secret get my_app_secrets
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>key value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-------------- -------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>redis_password abcdef
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql_password &lt;span style="color:#0000cf;font-weight:bold">123456&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>:: Get the value of a specific key from a secret
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud secret get my_app_secrets mysql_password
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0000cf;font-weight:bold">123456&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>:: Using the value of a specific key from a secret
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">ADMIN_PASSWORD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=(&lt;/span>fedcloud secret get my_app_secrets admin_password&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">echo&lt;/span> %ADMIN_PASSWORD%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>abcdef
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>Deleting a secret is easy, but it is irreversible:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret delete my_app_secrets
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="secret-values-from-small-text-files">Secret values from small text files&lt;/h3>
+&lt;p>If the secret value starts with &lt;code>@&lt;/code> the content of the file with that name is
+used as the value of the key. The following example creates a secret named
+&lt;code>certificate&lt;/code> for storing the certificate file and its keyfile:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret put certificate &lt;span style="color:#000">cert&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@hostcert.pem &lt;span style="color:#000">key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@hostkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can get the certificate and its keyfile (e.g. when you want to use it on a
+virtual machine) as follows:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret get certificate cert &amp;gt; hostcert.pem
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud secret get certificate key &amp;gt; hostkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+The size of the secret object (all the
+values in it) is limited to 512kB, which is sufficient for storing tokens,
+certificates, configuration files and so on. For larger datasets, please use
+&lt;a href="../../../data/storage/block-storage#storage-encryption">encrypted cloud storage&lt;/a>.
+&lt;/div>
+&lt;h3 id="secret-values-from-small-binary-files">Secret values from small binary files&lt;/h3>
+&lt;p>It is recommended to store secret values as text for compatibility and ease of
+manipulation. However, the FedCloud client supports storing small binary files
+as secret values by encoding/decoding the binary data to ASCII via base64.&lt;/p>
+&lt;p>Add option &lt;code>--binary-file&lt;/code> or &lt;code>-b&lt;/code> when using binary files as the secret value:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret put secret-image &lt;span style="color:#000">image&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@secret-image.png -b
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud secret get secret-image image -b &amp;gt; received-image.png
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="modifying-existing-secrets">Modifying existing secrets&lt;/h3>
+&lt;p>Secret values in secret objects cannot be edited individually. However, you
+can get the contents of existing secret objects, change them locally, and put
+the new contents back, overwriting the old secret. Some examples are shown
+below.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+You will probably want to
+take care of securely disposing of the local temporary file(s) involved in
+the update. Omitted here for brevity.
+&lt;/div>
+&lt;ul class="nav nav-tabs" id="tabs-5" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-5-0-tab" data-toggle="tab" href="#tabs-5-0" role="tab"
+aria-controls="tabs-5-0" aria-selected="true">
+Mac / Linux
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-5-1-tab" data-toggle="tab" href="#tabs-5-1" role="tab"
+aria-controls="tabs-5-1" aria-selected="false">
+Powershell
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-5-2-tab" data-toggle="tab" href="#tabs-5-2" role="tab"
+aria-controls="tabs-5-2" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-5-content">
+&lt;div class="tab-pane show active"
+id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab">
+&lt;p>For a secret named &lt;code>certificate&lt;/code> containing two keys named &lt;code>cert&lt;/code> and &lt;code>key&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret get certificate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>key value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-------------- -------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cert ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>key ...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To add new values to an existing secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret get certificate -f json &amp;gt; certificate.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud secret put certificate @certificate.json &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000">another_cert&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@usercert.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000">another_key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@userkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To delete values from an existing secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret get certificate -f json &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> jq &lt;span style="color:#4e9a06">&amp;#39;del (.another_cert, .another_key)&amp;#39;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &amp;gt; certificate.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud secret put certificate @certificate.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To replace existing values in an existing secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret get certificate -f json &amp;gt; certificate.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud secret put certificate @certificate.json &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000">cert&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@new_hostcert.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000">key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@new_hostkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-5-1" role="tabpanel" aria-labelled-by="tabs-5-1-tab">
+&lt;p>For a secret named &lt;code>certificate&lt;/code> containing two keys named &lt;code>cert&lt;/code> and &lt;code>key&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">get&lt;/span> &lt;span style="color:#000">certificate&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">key&lt;/span> &lt;span style="color:#000">value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">--------------&lt;/span> &lt;span style="color:#000;font-weight:bold">-------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">cert&lt;/span> &lt;span style="color:#000;font-weight:bold">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">key&lt;/span> &lt;span style="color:#000;font-weight:bold">...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To add new values to an existing secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">get&lt;/span> &lt;span style="color:#000">certificate&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">-f&lt;/span> &lt;span style="color:#000">json&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">certificate&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">json&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">put&lt;/span> &lt;span style="color:#000">certificate&lt;/span> &lt;span style="color:#000">@certificate&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">json&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">another_cert&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">@usercert&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">pem&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">another_key&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">@userkey&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">pem&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To delete values from an existing secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">$&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">get&lt;/span> &lt;span style="color:#000">certificate&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">-f&lt;/span> &lt;span style="color:#000">json&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">jq&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;del (.another_cert, .another_key)&amp;#39;&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">certificate&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">json&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">$&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">put&lt;/span> &lt;span style="color:#000">certificate&lt;/span> &lt;span style="color:#000">@certificate&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">json&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To replace existing values in an existing secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">$&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">get&lt;/span> &lt;span style="color:#000">certificate&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">-f&lt;/span> &lt;span style="color:#000">json&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">certificate&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">json&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">$&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">put&lt;/span> &lt;span style="color:#000">certificate&lt;/span> &lt;span style="color:#000">@certificate&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">json&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">cert&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">@new_hostcert&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">pem&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">key&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">@new_hostkey&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">pem&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-5-2" role="tabpanel" aria-labelled-by="tabs-5-2-tab">
+&lt;p>For a secret named &lt;code>certificate&lt;/code> containing two keys named &lt;code>cert&lt;/code> and &lt;code>key&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud secret get certificate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>key value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-------------- -------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cert ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>key ...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To add new values to an existing secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud secret get certificate -f json &amp;gt; certificate.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud secret put certificate @certificate.json ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">another_cert&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@usercert.pem ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">another_key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@userkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To delete values from an existing secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud secret get certificate -f json ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq &lt;span style="color:#4e9a06">&amp;#39;del (.another_cert, .another_key)&amp;#39;&lt;/span> ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt; certificate.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud secret put certificate @certificate.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To replace existing values in an existing secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud secret get certificate -f json &amp;gt; certificate.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud secret put certificate @certificate.json ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">cert&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@new_hostcert.pem ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@new_hostkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="export-and-import-secrets">Export and import secrets&lt;/h3>
+&lt;p>FedCloud client can output secrets in &lt;a href="https://yaml.org">YAML&lt;/a> or
+&lt;a href="https://json.org">JSON&lt;/a> format for further processing when using option
+&lt;code>--output-format&lt;/code> or &lt;code>-f&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret get my_secrets -f json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud secret get my_secrets -f yaml &amp;gt; my_secrets.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The YAML or JSON files created by FedCloud client can be imported back into EGI
+Secrets Store by using a single key and adding &lt;code>@&lt;/code> before its name, followed by
+the filename to load the value(s) from:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">$fedcloud&lt;/span> secret put my_other_secrets @my_other_secrets.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>As the YAML format is a superset of JSON, it is expected by default, unless the
+filename has &lt;em>.json&lt;/em> extension. Try to export your secrets to both formats to
+see the differences between them.&lt;/p>
+&lt;p>Importing secret objects from files in text format with &lt;code>key=value&lt;/code> lines is
+not supported, as the format is error-prone, especially for multi-line secret
+values or values with special characters. You can replace &lt;code>=&lt;/code> with &lt;code>:&lt;/code> for
+converting simple text files to YAML files.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+Do not forget that in YAML files a
+blank space is required after the &lt;code>:&lt;/code> separating keys and values.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+There is a difference between
+&lt;code>cert=@hostcert.pem&lt;/code> for reading the content of the file &lt;em>horstcert.pem&lt;/em> as
+the value for the key &lt;code>cert&lt;/code>, and &lt;code>@my_secrets.yaml&lt;/code> for reading the whole
+secret object with all key:value pairs from the YAML file.
+&lt;/div>
+&lt;h3 id="client-side-encrypted-secrets">Client-side encrypted secrets&lt;/h3>
+&lt;p>EGI Secret Store encrypts secret objects both in transit and at rest. For
+highly-sensitive secrets, you can opt to also encrypt your secret values
+on the client-side, before storing them in EGI Secrets Store.&lt;/p>
+&lt;p>The client-side encryption is done on the fly by the FedCloud client if an
+encryption key (passphrase) is provided via option &lt;code>--encrypt-key&lt;/code> or &lt;code>-e&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret put sensitive &lt;span style="color:#000">data&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@sensitive-data.txt -e password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Decryption is done in a similar way, just by providing the passphrase via
+option &lt;code>--decrypt-key&lt;/code> or &lt;code>-d&lt;/code>. The secret values will be decrypted on the fly
+if the passphrase is correct:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret get sensitive data -d password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Only secret values are encrypted, not
+the (names of) the keys.
+&lt;/div>
+&lt;p>Verifying what is actually stored in a secret can be done without providing
+the passphrase:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret get sensitive data
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gAAAAAB...............................
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+The encryption/decryption is done with
+the standard Python crytography library. Security experts are invited to review
+the code (available on
+&lt;a href="https://github.com/tdviet/fedcloudclient/blob/master/fedcloudclient/secret.py#L159">GitHub&lt;/a>)
+and provide feedback and suggestions for improvements.
+&lt;/div>
+&lt;h3 id="reading-data-from-standard-inputs">Reading data from standard inputs&lt;/h3>
+&lt;p>Reading data from &lt;code>stdin&lt;/code> may help in creating shorter scripts and to avoid
+storing secrets in intermediate files on disk, for security reasons. The symbol
+&lt;code>-&lt;/code> in input parameters means the data will be read from the standard input in
+the same way as &lt;code>@&lt;/code> can be used to read from files. For example:&lt;/p>
+&lt;p>To read entire secret from standard input, which must to be in JSON or YAML
+format:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;{&amp;#34;mysql_pwd&amp;#34;:&amp;#34;123&amp;#34;}&amp;#39;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> fedcloud secret put my_secrets -
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To read only a secret value from standard input:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;abcdef&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> fedcloud secret put my_secrets &lt;span style="color:#000">admin_password&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>-
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To copy a secret object export it to JSON, then import it as a new copy:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret get my_secrets -f json &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fedcloud secret put my_secret_copy -
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To add new values to an existing secret, without using intermediate files:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-10" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-10-0-tab" data-toggle="tab" href="#tabs-10-0" role="tab"
+aria-controls="tabs-10-0" aria-selected="true">
+Mac / Linux
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-10-1-tab" data-toggle="tab" href="#tabs-10-1" role="tab"
+aria-controls="tabs-10-1" aria-selected="false">
+Powershell
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-10-2-tab" data-toggle="tab" href="#tabs-10-2" role="tab"
+aria-controls="tabs-10-2" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-10-content">
+&lt;div class="tab-pane show active"
+id="tabs-10-0" role="tabpanel" aria-labelled-by="tabs-10-0-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret get certificate -f json &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fedcloud secret put certificate - &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000">another_cert&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@usercert.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000">another_key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@userkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-10-1" role="tabpanel" aria-labelled-by="tabs-10-1-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">get&lt;/span> &lt;span style="color:#000">certificate&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">-f&lt;/span> &lt;span style="color:#000">json&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">fedcloud&lt;/span> &lt;span style="color:#000">secret&lt;/span> &lt;span style="color:#000">put&lt;/span> &lt;span style="color:#000">certificate&lt;/span> &lt;span style="color:#000;font-weight:bold">-&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">another_cert&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">@usercert&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">pem&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">another_key&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">@userkey&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">pem&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-10-2" role="tabpanel" aria-labelled-by="tabs-10-2-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; fedcloud secret get certificate -f json &lt;span style="color:#000;font-weight:bold">|&lt;/span> ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fedcloud secret put certificate - ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">another_cert&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@usercert.pem ^
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">another_key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>@userkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="access-via-vault-client">Access via Vault client&lt;/h2>
+&lt;p>To access EGI Secrets Store using the Vault client, visit the
+&lt;a href="https://www.vaultproject.io/downloads">Vault project&amp;rsquo;s site&lt;/a>, download the
+correct version for your operating system, and install it.&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-11" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-11-0-tab" data-toggle="tab" href="#tabs-11-0" role="tab"
+aria-controls="tabs-11-0" aria-selected="true">
+Mac
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-11-1-tab" data-toggle="tab" href="#tabs-11-1" role="tab"
+aria-controls="tabs-11-1" aria-selected="false">
+Ubuntu / Debian
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-11-2-tab" data-toggle="tab" href="#tabs-11-2" role="tab"
+aria-controls="tabs-11-2" aria-selected="false">
+CentOS / RHEL
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-11-3-tab" data-toggle="tab" href="#tabs-11-3" role="tab"
+aria-controls="tabs-11-3" aria-selected="false">
+Amazon Linux
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-11-4-tab" data-toggle="tab" href="#tabs-11-4" role="tab"
+aria-controls="tabs-11-4" aria-selected="false">
+Fedora
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-11-content">
+&lt;div class="tab-pane show active"
+id="tabs-11-0" role="tabpanel" aria-labelled-by="tabs-11-0-tab">
+&lt;p>To install the Vault client:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ brew tap hashicorp/tap
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ brew install hashicorp/tap/vault
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-11-1" role="tabpanel" aria-labelled-by="tabs-11-1-tab">
+&lt;p>To install the Vault client:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ wget -O- https://apt.releases.hashicorp.com/gpg &lt;span style="color:#000;font-weight:bold">|&lt;/span> gpg --dearmor &lt;span style="color:#000;font-weight:bold">|&lt;/span> sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com &lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>lsb_release -cs&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06"> main&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> sudo tee /etc/apt/sources.list.d/hashicorp.list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo apt update &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> sudo apt install vault
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-11-2" role="tabpanel" aria-labelled-by="tabs-11-2-tab">
+&lt;p>To install the Vault client:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ sudo yum install -y yum-utils
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo yum -y install vault
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-11-3" role="tabpanel" aria-labelled-by="tabs-11-3-tab">
+&lt;p>To install the Vault client:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ sudo yum install -y yum-utils shadow-utils
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo yum -y install vault
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-11-4" role="tabpanel" aria-labelled-by="tabs-11-4-tab">
+&lt;p>To install the Vault client:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ sudo dnf install -y dnf-plugins-core
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo dnf -y install vault
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>To create/read secrets and to manage the EGI Secrets Store service, you
+need a Vault token. You can get one from your EGI Check-in access token.&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-12" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-12-0-tab" data-toggle="tab" href="#tabs-12-0" role="tab"
+aria-controls="tabs-12-0" aria-selected="true">
+Mac / Linux
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-12-1-tab" data-toggle="tab" href="#tabs-12-1" role="tab"
+aria-controls="tabs-12-1" aria-selected="false">
+Powershell
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-12-2-tab" data-toggle="tab" href="#tabs-12-2" role="tab"
+aria-controls="tabs-12-2" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-12-content">
+&lt;div class="tab-pane show active"
+id="tabs-12-0" role="tabpanel" aria-labelled-by="tabs-12-0-tab">
+&lt;p>To get a Vault token:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">VAULT_ADDR&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://vault.services.fedcloud.eu:8200
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">VAULT_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>vault write auth/jwt/login &lt;span style="color:#000">jwt&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$OIDC_ACCESS_TOKEN&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> grep -Po &lt;span style="color:#4e9a06">&amp;#39;token\s+\K[^\s]+$&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-12-1" role="tabpanel" aria-labelled-by="tabs-12-1-tab">
+&lt;p>To get a Vault token:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$env:VAULT_ADDR&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://vault.services.fedcloud.eu:8200&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$env:VAULT_TOKEN&lt;/span>&lt;span style="color:#000;font-weight:bold">=$(&lt;/span>&lt;span style="color:#000">vault&lt;/span> &lt;span style="color:#204a87">write &lt;/span>&lt;span style="color:#000">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">jwt&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">login&lt;/span> &lt;span style="color:#000">jwt&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$env:OIDC_ACCESS_TOKEN&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87">Select-String&lt;/span> &lt;span style="color:#000">-Pattern&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;(?&amp;lt;=token\s+)[^\s]+(?=$)&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">%{&lt;/span>&lt;span style="color:#000">$_&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">Matches&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">value&lt;/span>&lt;span style="color:#000;font-weight:bold">})&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-12-2" role="tabpanel" aria-labelled-by="tabs-12-2-tab">
+&lt;p>To get a Vault token:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">VAULT_ADDR&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://vault.services.fedcloud.eu:8200
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> /f &lt;span style="color:#4e9a06">&amp;#34;delims=&amp;#34;&lt;/span> %a in &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;vault write auth/jwt/login &amp;#34;jwt=%OIDC_ACCESS_TOKEN%&amp;#34; ^| findstr /r /c:&amp;#34;token[ ][ ]*[^^ ]*&amp;#34;&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> @set &lt;span style="color:#000">VAULT_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>%a:token&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">VAULT_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>%VAULT_TOKEN: &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>%
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>For convenience, add the path to your secret space to an environment
+variable:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-13" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-13-0-tab" data-toggle="tab" href="#tabs-13-0" role="tab"
+aria-controls="tabs-13-0" aria-selected="true">
+Mac / Linux
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-13-1-tab" data-toggle="tab" href="#tabs-13-1" role="tab"
+aria-controls="tabs-13-1" aria-selected="false">
+Powershell
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-13-2-tab" data-toggle="tab" href="#tabs-13-2" role="tab"
+aria-controls="tabs-13-2" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-13-content">
+&lt;div class="tab-pane show active"
+id="tabs-13-0" role="tabpanel" aria-labelled-by="tabs-13-0-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">VAULT_HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/secrets/&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer &lt;/span>&lt;span style="color:#000">$OIDC_ACCESS_TOKEN&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .voperson_id&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-13-1" role="tabpanel" aria-labelled-by="tabs-13-1-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">$env:VAULT_HOME&lt;/span>&lt;span style="color:#000;font-weight:bold">=/&lt;/span>&lt;span style="color:#000">secrets&lt;/span>&lt;span style="color:#000;font-weight:bold">/$(&lt;/span>&lt;span style="color:#204a87">curl &lt;/span>&lt;span style="color:#000">-X&lt;/span> &lt;span style="color:#000">POST&lt;/span> &lt;span style="color:#000">https&lt;/span>&lt;span style="color:#a40000">:&lt;/span>&lt;span style="color:#000;font-weight:bold">//&lt;/span>&lt;span style="color:#000">aai&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">egi&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">eu&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">realms&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">egi&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#204a87">openid-connect&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">userinfo&lt;/span> &lt;span style="color:#000">-H&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer $env:OIDC_ACCESS_TOKEN&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000">jq&lt;/span> &lt;span style="color:#000">-r&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">voperson_id&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-13-2" role="tabpanel" aria-labelled-by="tabs-13-2-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> /f &lt;span style="color:#4e9a06">&amp;#34;delims=&amp;#34;&lt;/span> %a in &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;curl -X POST https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/userinfo -H &amp;#34;Authorization: Bearer %OIDC_ACCESS_TOKEN%&amp;#34; ^| jq -r .voperson_id&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> &lt;span style="color:#204a87">set&lt;/span> &lt;span style="color:#000">VAULT_HOME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/secrets/%a&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="list-secrets">List secrets&lt;/h3>
+&lt;p>After setting the environment variables &lt;code>VAULT_TOKEN&lt;/code> and &lt;code>VAULT_HOME&lt;/code>, you can
+list the secrets in your personal secret space:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-14" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-14-0-tab" data-toggle="tab" href="#tabs-14-0" role="tab"
+aria-controls="tabs-14-0" aria-selected="true">
+Mac / Linux
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-14-1-tab" data-toggle="tab" href="#tabs-14-1" role="tab"
+aria-controls="tabs-14-1" aria-selected="false">
+Powershell
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-14-2-tab" data-toggle="tab" href="#tabs-14-2" role="tab"
+aria-controls="tabs-14-2" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-14-content">
+&lt;div class="tab-pane show active"
+id="tabs-14-0" role="tabpanel" aria-labelled-by="tabs-14-0-tab">
+&lt;p>To list your secrets:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ vault list &lt;span style="color:#000">$VAULT_HOME&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-14-1" role="tabpanel" aria-labelled-by="tabs-14-1-tab">
+&lt;p>To list your secrets:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">vault&lt;/span> &lt;span style="color:#000">list&lt;/span> &lt;span style="color:#000">$env:VAULT_HOME&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-14-2" role="tabpanel" aria-labelled-by="tabs-14-2-tab">
+&lt;p>To list your secrets:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; vault list %VAULT_HOME%
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="create-secret">Create secret&lt;/h3>
+&lt;p>To create a new secret named &lt;code>test&lt;/code> in your personal secret space, containing a
+key &lt;code>my-key&lt;/code> having the value &lt;code>test value&lt;/code> use the command below.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+The command below will replace,
+without warning, a previous secret named &lt;code>test&lt;/code>, including all its keys, with a
+new one that will only include the keys you provide as part of the command.
+&lt;/div>
+&lt;ul class="nav nav-tabs" id="tabs-16" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-16-0-tab" data-toggle="tab" href="#tabs-16-0" role="tab"
+aria-controls="tabs-16-0" aria-selected="true">
+Mac / Linux
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-16-1-tab" data-toggle="tab" href="#tabs-16-1" role="tab"
+aria-controls="tabs-16-1" aria-selected="false">
+Powershell
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-16-2-tab" data-toggle="tab" href="#tabs-16-2" role="tab"
+aria-controls="tabs-16-2" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-16-content">
+&lt;div class="tab-pane show active"
+id="tabs-16-0" role="tabpanel" aria-labelled-by="tabs-16-0-tab">
+&lt;p>To create or update a secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ vault write &lt;span style="color:#000">$VAULT_HOME&lt;/span>/test &lt;span style="color:#4e9a06">&amp;#34;my-key=test value&amp;#34;&lt;/span> db-pass&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1234&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-16-1" role="tabpanel" aria-labelled-by="tabs-16-1-tab">
+&lt;p>To create or update a secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">vault&lt;/span> &lt;span style="color:#204a87">write &lt;/span>&lt;span style="color:#000">$env:VAULT_HOME&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">test&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;my-key=test value&amp;#34;&lt;/span> &lt;span style="color:#204a87">db-pass&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#000">1234&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-16-2" role="tabpanel" aria-labelled-by="tabs-16-2-tab">
+&lt;p>To create or update a secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; vault write %VAULT_HOME%/test &lt;span style="color:#4e9a06">&amp;#34;my-key=test value&amp;#34;&lt;/span> db-pass&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1234&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+Use quotes if the key or value includes
+whitespaces. You can include in the same quote both the key and the value.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+You can add as many key to a secret as
+needed, but keep in mind that they will always be handled (read, written, or
+deleted) atomically.
+&lt;/div>
+&lt;h3 id="read-secret">Read secret&lt;/h3>
+&lt;p>To read a secret named &lt;code>test&lt;/code> from your personal secret space use the commands
+below.&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-19" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-19-0-tab" data-toggle="tab" href="#tabs-19-0" role="tab"
+aria-controls="tabs-19-0" aria-selected="true">
+Mac / Linux
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-19-1-tab" data-toggle="tab" href="#tabs-19-1" role="tab"
+aria-controls="tabs-19-1" aria-selected="false">
+Powershell
+&lt;/a>
+&lt;/li>
+&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-19-2-tab" data-toggle="tab" href="#tabs-19-2" role="tab"
+aria-controls="tabs-19-2" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tabx-content" id="tabs-19-content">
+&lt;div class="tab-pane show active"
+id="tabs-19-0" role="tabpanel" aria-labelled-by="tabs-19-0-tab">
+&lt;p>To read all keys from a secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ vault &lt;span style="color:#204a87">read&lt;/span> &lt;span style="color:#000">$VAULT_HOME&lt;/span>/test
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Key Value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>--- -----
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>refresh_interval 768h
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my-key &lt;span style="color:#204a87">test&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>db-pass &lt;span style="color:#0000cf;font-weight:bold">1234&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To read specific keys from a secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ vault &lt;span style="color:#204a87">read&lt;/span> -field&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;my-key&amp;#34;&lt;/span> &lt;span style="color:#000">$VAULT_HOME&lt;/span>/test
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">test&lt;/span> value
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-19-1" role="tabpanel" aria-labelled-by="tabs-19-1-tab">
+&lt;p>To read all keys from a secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span> &lt;span style="color:#000">vault&lt;/span> &lt;span style="color:#000">read&lt;/span> &lt;span style="color:#000">$env:VAULT_HOME&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">test&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">Key&lt;/span> &lt;span style="color:#000">Value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">---&lt;/span> &lt;span style="color:#000;font-weight:bold">-----&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">refresh_interval&lt;/span> &lt;span style="color:#000">768h&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">my-key&lt;/span> &lt;span style="color:#000">test&lt;/span> &lt;span style="color:#000">value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">db-pass&lt;/span> &lt;span style="color:#000">1234&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To read specific keys from a secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">$&lt;/span> &lt;span style="color:#000">vault&lt;/span> &lt;span style="color:#000">read&lt;/span> &lt;span style="color:#000">-field&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;my-key&amp;#34;&lt;/span> &lt;span style="color:#000">$env:VAULT_HOME&lt;/span>&lt;span style="color:#000;font-weight:bold">/&lt;/span>&lt;span style="color:#000">test&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">test&lt;/span> &lt;span style="color:#000">value&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane "
+id="tabs-19-2" role="tabpanel" aria-labelled-by="tabs-19-2-tab">
+&lt;p>To read all keys from a secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt; vault &lt;span style="color:#204a87">read&lt;/span> %VAULT_HOME%/test
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Key Value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>--- -----
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>refresh_interval 768h
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my-key &lt;span style="color:#204a87">test&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>db-pass &lt;span style="color:#0000cf;font-weight:bold">1234&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To read specific keys from a secret:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ vault &lt;span style="color:#204a87">read&lt;/span> -field&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;my-key&amp;#34;&lt;/span> %VAULT_HOME%/test
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">test&lt;/span> value
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+Alternative commands &lt;code>kv put&lt;/code> and
+&lt;code>kv get&lt;/code> exist for &lt;code>vault write&lt;/code> and &lt;code>vault read&lt;/code>. Be sure to check out the
+&lt;a href="https://www.vaultproject.io/docs/commands">full list of Vault commands&lt;/a>
+for more information.
+&lt;/div></description></item><item><title>Users: Secrets Store API</title><link>/users/security/secrets-store/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/security/secrets-store/api/</guid><description>
+&lt;p>&lt;a href="https://www.vaultproject.io/">Hashicorp Vault&lt;/a>, the service on which
+EGI Secrets Store is based, has a REST API with similar inputs like the
+&lt;a href="../cli#access-via-vault-client">Vault CLI&lt;/a>. See the
+&lt;a href="https://www.vaultproject.io/api">full documentation&lt;/a> for more details.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+There is a long list of
+&lt;a href="https://www.vaultproject.io/api-docs/relatedtools">libraries, clients, and tools&lt;/a>
+for working with Hashicorp Vault.
+&lt;/div></description></item><item><title>Users: Secrets Store Architecture</title><link>/users/security/secrets-store/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/security/secrets-store/architecture/</guid><description>
+&lt;p>EGI Secrets Store is based on &lt;a href="https://www.vaultproject.io/">Hashicorp Vault&lt;/a>
+and is fully integrated with &lt;a href="../../../aai/check-in/">EGI Check-in&lt;/a>, allowing
+users to use it with their community credentials.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+When this
+service is adopted by an application, it becomes a critical dependency for that
+application, thus the EGI Secrets Store is implemented using a highly-available
+(HA) approach.
+&lt;/div>
+&lt;h2 id="service-design">Service design&lt;/h2>
+&lt;p>Multiple Vault servers in
+&lt;a href="https://developer.hashicorp.com/vault/docs/concepts/ha">HA mode&lt;/a>,
+located at different geographical locations (in different resource centres) are
+connected into a cluster, with &lt;strong>one active and multiple standby&lt;/strong> instances.
+Data is replicated among servers using the &lt;em>Raft Consensus&lt;/em> algorithm supported
+by the
+&lt;a href="https://developer.hashicorp.com/vault/docs/concepts/integrated-storage">Vault Integrated Storage&lt;/a>.&lt;/p>
+&lt;p>Should the active server fail, one of the standby servers will become active
+automatically. Each server does a periodic check, and the active one will
+update the main service endpoint to point to itself, via
+&lt;a href="../../../compute/cloud-compute/dynamic-dns/">Dynamic DNS&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="sstore-design.png" alt="Service design">&lt;/p>
+&lt;h2 id="service-endpoints">Service endpoints&lt;/h2>
+&lt;p>During normal operation users can access any of the nodes of EGI Secrets Store
+directly:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vault-iisas.services.fedcloud.eu:8200">IISAS node&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vault-ifca.services.fedcloud.eu:8200">IFCA node&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vault-infn.services.fedcloud.eu:8200">INFN node&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Accessing EGI Secrets Store via the
+node endpoints is not recommended: if a server is down, its endpoint is not
+accessible.
+&lt;/div>
+&lt;p>For convenience and high availability, you should use the
+&lt;a href="https://vault.services.fedcloud.eu:8200">generic endpoint&lt;/a> to access the
+service. This generic endpoint will be pointed to one of the service nodes
+automatically via &lt;a href="../../../compute/cloud-compute/dynamic-dns/">Dynamic DNS&lt;/a>.
+A simple cron script periodically checks and assigns the generic hostname to
+a healthy server.&lt;/p>
+&lt;p>The recovery time of the generic endpoint, in the case of an unscheduled
+downtime of the generic endpoint’s server, is &lt;em>T+1&lt;/em> minutes, where &lt;em>T&lt;/em> is the
+interval between cron checks (usually 1 minute). In the case of scheduled
+downtime for maintenance, administrators simply assign the generic endpoint to
+another server instance.&lt;/p></description></item></channel></rss>
