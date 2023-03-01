@@ -592,10 +592,10 @@ Machine will make the hardware available to the user.&lt;/p>
 &lt;tbody>
 &lt;tr>
 &lt;td>IISAS-FedCloud&lt;/td>
-&lt;td>up to 8 NVIDIA Tesla K20m&lt;/td>
-&lt;td>g1.c08r30-K20m, g1.c16r60-2xK20m&lt;/td>
-&lt;td>vo.access.egi.eu, eosc-synergy.eu, enmr.eu, training.egi.eu&lt;/td>
-&lt;td>Sponsored access for limited testing, conditions to be negotiated for long-term usage&lt;/td>
+&lt;td>up to 7 NVIDIA A100 40GB, up to 8 NVIDIA Tesla K20m&lt;/td>
+&lt;td>g1.c08r30-K20m, g1.c16r60-2xK20m, A100 GPUs accessible using private flavors&lt;/td>
+&lt;td>vo.access.egi.eu, training.egi.eu, eosc-synergy.eu, vo.ai4eosc.eu, icecube, vo.beamide.com&lt;/td>
+&lt;td>Sponsored, conditions to be negotiated&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
