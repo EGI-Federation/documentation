@@ -90,7 +90,7 @@ $ fedcloud secret list
 my_app_secrets
 ```
 
-Using any of the keys (actually, their vaules) is straighforward too:
+Using any of the keys (actually, their values) is straightforward too:
 
 {{< tabpanex >}} {{< tabx header="Mac / Linux" >}}
 
