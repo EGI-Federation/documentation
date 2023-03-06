@@ -786,7 +786,7 @@ output:
             "EmailAddress": [
                {
                   "type": "official",
-                  "mail": "ioigoume@mailinator.com",
+                  "mail": "jdoe@mailinator.com",
                   "verified": true
                }
             ],
@@ -797,14 +797,14 @@ output:
                },
                {
                   "type": "uid",
-                  "identifier": "iigoumenos"
+                  "identifier": "jdoe"
                }
             ],
             "Name": [
                {
                   "type": "official",
-                  "given": "Ioannis",
-                  "family": "Igoumenos",
+                  "given": "jane",
+                  "family": "doe",
                   "middle": null
                }
             ]
