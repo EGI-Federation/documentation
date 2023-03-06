@@ -976,7 +976,7 @@ $ bcdmi -e <cdmi_endpoint> list /
 ```
 
 See Site Certification GIIS Check
-[HOWTO03](../howto03_site_certificatoin_giis_check).
+[HOWTO03](../howto03_site_certification_giis_check).
 
 See to Resource Centre registration and certification procedure
 [PROC09](https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification).

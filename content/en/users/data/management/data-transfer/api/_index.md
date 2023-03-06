@@ -20,7 +20,7 @@ available in two favors:
 
 {{% alert title="Note" color="info" %}} Please check out the
 [documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html)
-for more details about the avilable APIs, their parameters and return values.
+for more details about the available APIs, their parameters and return values.
 {{% /alert %}}
 
 ## Authentication & Authorisation
