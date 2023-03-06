@@ -8,7 +8,7 @@ matrix:
   dictionary:
     wordlists:
     # Words in the permitted list are case sensitive.
-    # - .github/linters/spellcheck-permitted-words.txt
+      - .github/actions/spelling/allow.txt
   pipeline:
   # Pyspelling has better filter options when handling HTML, so
   # we need to use the markdown filter to transform out markdown
