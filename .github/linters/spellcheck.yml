@@ -1,0 +1,28 @@
+---
+# The configuration file for the spellcheck job in the validate workflow.
+matrix:
+- name: Markdown
+  aspell:
+    lang: en
+    ignore-case: false
+  dictionary:
+    wordlists:
+    # Words in the permitted list are case sensitive.
+    # - .github/linters/spellcheck-permitted-words.txt
+  pipeline:
+  # Pyspelling has better filter options when handling HTML, so
+  # we need to use the markdown filter to transform out markdown
+  # to HTML.
+  - pyspelling.filters.markdown:
+      # In order to parse our "tight" code blocks, we need to
+      # enable the superfence extension.
+      # https://spec.commonmark.org/0.29/#tight
+      markdown_extensions:
+      - pymdownx.superfences:
+  - pyspelling.filters.html:
+      ignores:
+        - code
+        - pre
+  sources:
+    - '**/*.md'
+  default_encoding: utf-8
