@@ -2033,7 +2033,7 @@ connected to Check-in.
 |             **changes** | Yes                                                                                                                                               |
 |        **multiplicity** | Multi-valued                                                                                                                                      |
 |        **availability** | Not always                                                                                                                                        |
-|             **example** | <ul><li>`ssh-rsa AAAAB3NzaC...qxxEEipdnZ nikosev@grnet-hq.admin.grnet.gr`</li><li>`ssh-rsa AAAA4xzdIf...fxgsRDfgAt nikosev@example.org`</li></ul> |
+|             **example** | <ul><li>`ssh-rsa AAAAB3NzaC...qxxEEipdnZ jdoe@grnet-hq.admin.grnet.gr`</li><li>`ssh-rsa AAAA4xzdIf...fxgsRDfgAt jdoe@example.org`</li></ul> |
 |               **notes** | -                                                                                                                                                 |
 |              **status** | Experimental                                                                                                                                      |
 
