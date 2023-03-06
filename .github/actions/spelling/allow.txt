@@ -88,6 +88,7 @@ httpg
 https
 hungridibergrid
 iisas
+jdoe
 jupyter
 jupyterhub
 ldap
@@ -154,6 +155,7 @@ ssds
 ssh
 submodule
 synnefo
+theophys
 topbdii
 uberftp
 ubuntu
