@@ -128,7 +128,7 @@ absolute needs of an important international VO or to flag a site coping with
 [Operations Centre](https://confluence.egi.eu/x/NoIkBQ) requirements but not with EGI
 availability/reliability thresholds.
 - Suspended is always having a temporary meaning. It is used to flag a site temporarily
-not coping with with EGI availability/reliability thresholds or security requirements,
+not coping with EGI availability/reliability thresholds or security requirements,
 and which should be closed or uncertified by its
 [Operations Centre](https://confluence.egi.eu/x/NoIkBQ) within 4 months. When being
 suspended, sites can express that they want to pass certification again. The suspended
