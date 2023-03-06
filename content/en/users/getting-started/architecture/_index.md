@@ -117,7 +117,7 @@ used to catalogue the static information of the production infrastructure
 topology (e.g. the list of resource centres and their endpoints).
 
 To allow resource providers to expose IaaS federation endpoints, the following
-service types are avialable:
+service types are available:
 
 - `org.openstack.horizon`
 - `org.openstack.nova`
