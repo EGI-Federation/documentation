@@ -1432,7 +1432,7 @@ all the required fields. For `Integration Environment` select `Demo`. In
 `http://localhost/simple-oidc-client-php/refreshtoken.php`). This URL must link
 to `refreshtoken.php` which is located in simple-oidc-client-php directory.
 Next, in `Scope` select the scopes that your service needs. Then, submit the
-form and and self approve it. Finally you should get a pair of `Client ID` and
+form and self approve it. Finally you should get a pair of `Client ID` and
 `Client Secret`.
 
 ##### Configure simple-oidc-client-php

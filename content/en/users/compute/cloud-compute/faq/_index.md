@@ -236,7 +236,7 @@ one as a gateway as described in the
 
 Whenever you delete a VM, the ephemeral disks associated with it will be also
 deleted. If you don't plan to use your VM for some time, there are several ways
-to release resources consumed by the VM (e.g. CPU, RAM) and recover the the data
+to release resources consumed by the VM (e.g. CPU, RAM) and recover the data
 or boot your VM in a previous state when you need it back. We list below the
 main strategies you can use:
 

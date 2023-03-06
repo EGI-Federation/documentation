@@ -455,7 +455,7 @@ Detailed description of a specific application entry
 - Public Operations: none
 - Authenticated Operations: `GET` `PUT`
 
-List of applications that have been moderated some some particular reason, and
+List of applications that have been moderated for some particular reason, and
 thus hidden from public view until the issue gets resolved. Administrative
 access only.
 
