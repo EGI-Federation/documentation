@@ -1,4 +1,12 @@
 # See https://github.com/check-spelling/check-spelling/wiki/Configuration-Examples:-excludes
+# Ignore some docsy-realted folders
+^archetypes/
+^assets/
+^themes/
+^layouts/
+^public/
+^static/
+^resources/
 (?:^|/)(?i)COPYRIGHT
 (?:^|/)(?i)LICEN[CS]E
 (?:^|/)3rdparty/
