@@ -27,6 +27,7 @@ blockstorage
 bnl
 bpclermont
 catania
+cdmi
 ceid
 ceph
 cerit
