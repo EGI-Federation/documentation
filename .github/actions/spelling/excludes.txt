@@ -9,6 +9,7 @@
 ^resources/
 ^\.github/
 ^\.gitmodules
+CODEOWNERS
 (?:^|/)(?i)COPYRIGHT
 (?:^|/)(?i)LICEN[CS]E
 (?:^|/)3rdparty/
