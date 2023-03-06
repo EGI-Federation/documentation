@@ -85,6 +85,8 @@ jobs:
           cspell:aws/aws.txt
           cspell:bash/bash-words.txt
           cspell:cpp/src/cpp.txt
+          cspell:django/django.txt
+          cspell:elixir/elixir.txt
           cspell:filetypes/filetypes.txt
           cspell:fullstack/fullstack.txt
           cspell:html/html.txt
@@ -92,6 +94,8 @@ jobs:
           cspell:node/node.txt
           cspell:npm/npm.txt
           cspell:php/php.txt
+          cspell:powershell/powershell.txt
+          cspell:public-licenses/src/generated/public-licenses.txt
           cspell:python/src/common/extra.txt
           cspell:python/src/python/python-lib.txt
           cspell:python/src/python/python.txt
