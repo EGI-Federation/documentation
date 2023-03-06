@@ -24,3 +24,10 @@ jobs:
         with:
           config_path: .github/linters/spellcheck.yml
           output_file: spellcheck-output.txt
+
+      - name: Upload spellcheck-output.txt
+        uses: actions/upload-artifact@v3
+        with:
+          name: spellcheck-output.txt
+          path: |
+            spellcheck-output.txt
