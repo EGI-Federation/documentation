@@ -131,7 +131,7 @@ availability/reliability thresholds.
 not coping with with EGI availability/reliability thresholds or security requirements,
 and which should be closed or uncertified by its
 [Operations Centre](https://confluence.egi.eu/x/NoIkBQ) within 4 months. When being
-suspended, sites can express that they want to pass certification again. The suspened
+suspended, sites can express that they want to pass certification again. The suspended
 status is useful to EGI and to the Operations Centre themselves to flag the sites that
 require attention by the [Operations Centre](https://confluence.egi.eu/x/NoIkBQ).
 - The closed status should be the terminal one. Suspended is not a terminal state.
