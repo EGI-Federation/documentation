@@ -86,4 +86,4 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 -[0-9a-f]{10}-\w{5}\s
 
 # check-in fake data
-\b[^\s]+AAAAB[^\s]+\b
+\b[^\s]*AAAAB[^\s]*\b

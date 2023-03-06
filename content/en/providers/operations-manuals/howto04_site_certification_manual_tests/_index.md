@@ -380,12 +380,12 @@ $ qcg-sub sleep.qcg
 
 https://qcg-broker.man.poznan.pl:8443/qcg/services/
 /C=PL/O=GRID/O=PSNC/CN=qcg-broker/qcg-broker.man.poznan.pl
-Your identity: C=PL,O=GRID,O=PSNC,CN=Bartosz Bosak
+Your identity: C=PL,O=GRID,O=PSNC,CN=Jane Doe
 Enter GRID pass phrase for this identity:
 Creating proxy, please wait...
 Proxy verify OK
 Your proxy is valid until Tue Mar 12 14:50:27 CET 2013
-UserDN = /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN = /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 ProxyLifetime = 24 Days 23 Hours 59 Minutes 58 Seconds
 
 jobId = J1360936230540__0152
@@ -398,13 +398,13 @@ $ qcg-info
 
 https://qcg-broker.man.poznan.pl:8443/qcg/services/
 /C=PL/O=GRID/O=PSNC/CN=qcg-broker/qcg-broker.man.poznan.pl
-UserDN = /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN = /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 ProxyLifetime = 24 Days 23 Hours 59 Minutes 49 Seconds
 
 Command translated to:
 "task_info" "J1360936230540__0152" "task"
 Note:
-UserDN: /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN: /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 TaskType: SINGLE
 SubmissionTime: Fri Feb 15 14:50:31 CET 2013
 FinishTime:
@@ -429,13 +429,13 @@ $ qcg-info
 
 https://qcg-broker.man.poznan.pl:8443/qcg/services/
 /C=PL/O=GRID/O=PSNC/CN=qcg-broker/qcg-broker.man.poznan.pl
-UserDN = /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN = /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 ProxyLifetime = 24 Days 23 Hours 59 Minutes 23 Seconds
 
 Command translated to:
 "task_info" "J1360936230540__0152" "task"
 Note:
-UserDN: /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN: /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 TaskType: SINGLE
 SubmissionTime: Fri Feb 15 14:50:31 CET 2013
 FinishTime:
@@ -458,13 +458,13 @@ LocalFinishTime:
 $ qcg-info
 https://qcg-broker.man.poznan.pl:8443/qcg/services/
 /C=PL/O=GRID/O=PSNC/CN=qcg-broker/qcg-broker.man.poznan.pl
-UserDN = /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN = /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 ProxyLifetime = 24 Days 23 Hours 56 Minutes 10 Seconds
 
 Command translated to:
 "task_info" "J1360936230540__0152" "task"
 Note:
-UserDN: /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN: /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 TaskType: SINGLE
 SubmissionTime: Fri Feb 15 14:50:31 CET 2013
 FinishTime: Fri Feb 15 14:52:17 CET 2013
