@@ -1,4 +1,13 @@
+bdii
+cli
+docsy
+egi
 github
 https
+ldap
+localhost
+nodejs
+postcss
 ssh
+submodule
 ubuntu
