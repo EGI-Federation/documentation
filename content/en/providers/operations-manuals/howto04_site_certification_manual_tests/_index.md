@@ -501,7 +501,7 @@ Go to AppDB and look for a OS image member of the `fedcloud.egi.eu` VO (all
 sites should support), e.g.
 [EGI CentOS 7 image](https://appdb.egi.eu/store/vappliance/egi.centos.7)
 
-Check that the site is visible in to the AppDB "Availability and Usage" panel
+Check that the site is visible into the AppDB "Availability and Usage" panel
 for the image. If not, probably the site has not registered the FedCloud VO into
 their middleware (vmcatcher) or it did not properly configured the BDII provider
 script.

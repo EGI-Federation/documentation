@@ -70,7 +70,7 @@ using your [EGI account](../../../aai/check-in/).
 
 ### Other VOs
 
-Pre-existing VOs of EGI can be also used on IaaS cloud providers. Consult with
+Preexisting VOs of EGI can be also used on IaaS cloud providers. Consult with
 your VO manager or browse the existing VOs at the
 [EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list).
 

@@ -66,7 +66,7 @@ Users and Community platforms built on top of the EGI IaaS can interact with the
 cloud providers at three different layers:
 
 - Directly using the IaaS APIs or [CLIs](../cli) to manage individual resources.
-  This option is recommended for pre-existing use cases with requirements on
+  This option is recommended for preexisting use cases with requirements on
   specific APIs.
 - Using federated access tools that allow managing the complexity of dealing
   with different providers in a uniform way. These tools include:
