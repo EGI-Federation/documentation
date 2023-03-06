@@ -218,7 +218,7 @@ transfer and getting the job status:
     u'vos': [u'dteam'],
     u'vos_id': [u'6b10f4e4-8fdc-5555-baa2-7d4850d4f406']}
 
-# creating a new transfer and submiting a job
+# creating a new transfer and submitting a job
 >>> transfer = fts3.new_transfer(
 ...   'gsiftp://source/path', 'gsiftp://destination/path',
 ...   checksum='ADLER32:1234', filesize=1024,
