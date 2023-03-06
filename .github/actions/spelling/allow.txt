@@ -390,6 +390,7 @@ voname
 voperson
 vos
 vre
+vres
 wayf
 webdav
 webfts
