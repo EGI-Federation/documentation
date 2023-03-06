@@ -23,3 +23,4 @@ jobs:
         name: Spellcheck
         with:
           config_path: .github/linters/spellcheck.yml
+          output_file: spellcheck-output.txt
