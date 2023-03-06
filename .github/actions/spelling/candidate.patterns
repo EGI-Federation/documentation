@@ -525,3 +525,6 @@ customObjectInstantitationMethod
 \btput\s+(?:(?:-[SV]|-T\s*\w+)\s+)*\w{3,5}\b
 # macOS temp folders
 /var/folders/\w\w/[+\w]+/(?:T|-Caches-)/
+
+# Ignore markdown links
+\[[^\]]+\]\([^\)]+\)
