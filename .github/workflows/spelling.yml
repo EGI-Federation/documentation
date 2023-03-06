@@ -116,7 +116,7 @@ jobs:
       uses: check-spelling/check-spelling@prerelease
       with:
         checkout: true
-        spell_check_this: check-spelling/spell-check-this@prerelease
+        spell-check-this: check-spelling/spell-check-this@prerelease
         task: ${{ needs.spelling.outputs.followup }}
 
   comment-pr:
@@ -132,7 +132,7 @@ jobs:
       uses: check-spelling/check-spelling@main
       with:
         checkout: true
-        spell_check_this: check-spelling/spell-check-this@prerelease
+        spell-check-this: check-spelling/spell-check-this@prerelease
         task: ${{ needs.spelling.outputs.followup }}
         experimental_apply_changes_via_bot: 1
 
