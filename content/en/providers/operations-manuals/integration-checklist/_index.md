@@ -48,7 +48,7 @@ Resource Centre integrated into the EGI Federation.
    - [OpenStack clouds integration with Check-in](../../cloud-compute/openstack/#egi-aai)
    - [General integration with Check-in for SPs](../../check-in/sp/)
 
-1. Monitoring: the registered endpoints are automaticall detected by
+1. Monitoring: the registered endpoints are automatically detected by
    [ARGO](../../../internal/monitoring) and monitored according to their type
    registered in the Configuration Database.
 
