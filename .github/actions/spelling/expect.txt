@@ -1,3 +1,3 @@
-usecases
-blockstorage
-gridstorage
+# Expected "words" that aren't in the dictionary, one word per line.
+# Some arbitrary strings that are in test files that aren't really words.
+# They should be removed if the test are changed/removed.
