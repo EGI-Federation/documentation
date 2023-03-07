@@ -154,14 +154,14 @@ Rules are as follow:
   treated as a regular expression which may match any related property.
 - If a keyword is prefixed with the `$` operator, then the keyword will be
   treated as a soundex phoneme which may match any related property that sounds
-  alike in the english language.
+  alike in the English language.
 - If a keyword is prefixed with the `+` operator, then the keyword must match
   any related property.
 - If a keyword is prefixed with the `-` operator, then the keyword must not
   match any related property.
 - If a specifier is present, then the keyword applies only to the specified
   property.
-- Specifiers refering to related entities may omit the property name, in which
+- Specifiers referring to related entities may omit the property name, in which
   case the special property any will be implicit.
 - In keywords without specifiers, the special specifier any.any will be
   implicit.
