@@ -115,7 +115,7 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \bGet-ChildItem -Path\b
 
 # Dates
-YYYY.MM.DD[^\s]*
+.*YYYY.MM.DD.*
 
 # Command-line arguments
 --[^\s]+=[^\s]+
