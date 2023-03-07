@@ -88,8 +88,12 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 # ssh
 (?:ssh-\S+|-nistp256) [-a-zA-Z=;:/0-9+]{12,}
 
+# urn
+\burn:[a-z:\.-#=]+\b
+
 # Fake data
 \b[^\s]*AAAAB[^\s]*\b
 \b[^\s]*zzzz[^\s]*\b
 \b[^\s]*xxxx[^\s]*\b
 \b[^\s]*abcd[^\s]*\b
+\b[^\s]{18,}\b
