@@ -46,7 +46,7 @@ i.e.: &lt;code>wget https://github.com/github_username.keys&lt;/code>
 &lt;/div>
 &lt;h3 id="ssh-username">SSH username&lt;/h3>
 &lt;p>The username to use to connect to a virtual machine is dependent on the virtual
-machine image and is generally different in each operative system image.&lt;/p>
+machine image and is generally different in each operating system image.&lt;/p>
 &lt;p>For &lt;code>official OS virtual machine images&lt;/code> you can use the general reference
 documentation on
 &lt;a href="https://docs.openstack.org/image-guide/obtain-images.html">obtaining images&lt;/a>.&lt;/p>
