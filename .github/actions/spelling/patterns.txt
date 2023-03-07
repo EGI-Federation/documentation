@@ -101,9 +101,12 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 # VOMS and VO names
 \bvo.[^\s]*\b
 \bvoms[^\s]*\b
+\b[^\s]*voms\b
+\b[^\s]*VOMS[^\s]*\b
 
 # Glue*
 \bGlue[^\s]*\b
+\bCE_[^\s]*\b
 
 # OIDCO*
 \bOIDC[^\s]*\b
@@ -112,14 +115,17 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \bGet-ChildItem -Path\b
 
 # Dates
-\bYYYY-MM-DDTHH:MM:SS\b
+\bYYYY-MM-DD.*\b
 
 # Misc
 \bSURF[^\s]+\b
 \bmy.cnf\b
 \b[^\s]*SAML[^\s]*\b
-\bmicrok8s\b
 \bsudo .*\b
 \bqcg-ntf-client\b
 \bHostname: [^\s]*\b
 \b--[^\s]+=[^\s]+\b
+\b(TEAM|ALARM)er.\b
+\b.*ntf_client.*\b
+\bX509_[^\s]*\b
+\b.*IN2P3.*\b
