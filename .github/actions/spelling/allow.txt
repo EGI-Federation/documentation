@@ -3,7 +3,12 @@ aaiproxy
 aarc
 accesspoint
 accesstoken
+actoridentifier
+adozione
+alarmer
+amcaar
 amga
+ams
 ansible
 apel
 apihost
@@ -15,7 +20,10 @@ arcproxy
 arcstat
 arcsub
 arctest
+atnospam
 autoprofixer
+backticks
+bcdmi
 bcdmi
 bdii
 bdiis
@@ -26,6 +34,7 @@ bitp
 blockstorage
 bnl
 bpclermont
+caso
 catania
 cdmi
 ceid
