@@ -623,7 +623,7 @@ Example response:
   HTTP/1.1 302 Found
   Location: https://client.example.org/cb?
     code=SplxlOBeZQQYbYS6WxSbIA
-    &state=af0ifjsldkj
+    &state=af0ifabcd
 ```
 
 ##### Token Request

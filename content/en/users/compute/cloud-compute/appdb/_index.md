@@ -13,7 +13,7 @@ interact with the AppDB API over the web using HTTP commands following the
 The API endpoint is located at `http://appdb-pi.egi.eu` and it allows
 information retrieval and modification from third party applications without
 having to reside on the rich user interface of the AppDB portal. Thus one is
-given the opportunity to design one's own frontends.
+given the opportunity to design one's own front-ends.
 
 ## Getting started
 
@@ -153,7 +153,7 @@ Rules are as follow:
 - If a keyword is prefixed with the `~` operator, then the keyword will be
   treated as a regular expression which may match any related property.
 - If a keyword is prefixed with the `$` operator, then the keyword will be
-  treated as a soundex phonem which may match any related property that sounds
+  treated as a soundex phoneme which may match any related property that sounds
   alike in the english language.
 - If a keyword is prefixed with the `+` operator, then the keyword must match
   any related property.
@@ -430,7 +430,7 @@ Examples:
   - having two people in its scientific contact list, those with IDs 189 and 190
   - having one publication with two authors, one internal (i.e. registered with
     the AppDB) and one external (not registered, name-only entry)
-  - listed as supported by two middlewares, and
+  - listed as supported by two middleware, and
   - with two tags applied
 
 ### Application Entry
@@ -791,7 +791,7 @@ List of discipline and subdiscipline types available for application entries
 
 ### Middleware List
 
-- Resource: `middlewares/`
+- Resource: `middleware/`
 - Type: list
 - Datatype: middleware
 - Schema: middleware
@@ -799,7 +799,7 @@ List of discipline and subdiscipline types available for application entries
 - Public Operations: `GET`
 - Authenticated Operations: none
 
-List of grid middlewares supported by application entries and VOs
+List of grid middleware supported by application entries and VOs
 
 ### Application Status List
 

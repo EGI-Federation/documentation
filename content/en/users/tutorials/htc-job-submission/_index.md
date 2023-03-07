@@ -567,7 +567,7 @@ Then you can submit, monitor and retrieve the output of the job.
 > by or for their community and providing the required commands.
 
 ```shell
-# Subbmiting a job, job ID would be printed to the output
+# Submitting a job, job ID would be printed to the output
 $ glite-ce-job-submit 'lpsc-cream-ce.in2p3.fr:8443/cream-pbs-dteam' testjob.jdl
 # Use a variable with the job ID to be reused later
 JOB_ID='...'

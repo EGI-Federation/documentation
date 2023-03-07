@@ -1,5 +1,5 @@
 ---
-title: Data Tranfer Clients
+title: Data Transfer Clients
 linkTitle: Clients
 type: docs
 weight: 20

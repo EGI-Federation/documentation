@@ -203,7 +203,7 @@ If it seems like it is not quite right please contact the Rucio team through
 
 ## Uploading Data
 
-In Rucio files and their replicas are represented by Data IDentifiers
+In Rucio files and their replicas are represented by Data Identifiers
 ([DIDs](https://rucio.cern.ch/documentation/file_dataset_container)), which are
 composed of a scope and name. Furthermore, multiple files can be attached to a
 dataset, which in turn can be attached to a container (which can be attached to

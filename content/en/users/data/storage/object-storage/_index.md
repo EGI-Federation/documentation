@@ -443,7 +443,7 @@ to public buckets {{% /alert %}}
 
 #### Access via Python
 
-The possibility to access progammatically via S3 object storage is also quite
+The possibility to access programmatically via S3 object storage is also quite
 important, for instance in the case of interactive computing via EGI Notebooks.
 
 When using Python for instance, [S3Fs](https://s3fs.readthedocs.io/en/latest/)

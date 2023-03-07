@@ -251,7 +251,7 @@ shown in [WLCG CRIC](https://wlcg-cric-2.cern.ch).
 <!-- markdown-link-check-enable -->
 <!-- markdownlint-enable no-bare-urls -->
 
-> Important: The EGEE Grid name was decomissioned on
+> Important: The EGEE Grid name was decommissioned on
 > [[Agenda-14-02-2011|14-02-2011]]. All sites need to replace this grid name
 > with EGI.
 

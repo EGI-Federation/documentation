@@ -273,7 +273,7 @@ connect to QCG-Computing the grid proxy must be created.
 ```shell
 $ grid-proxy-init
 
-Your identity: /C=PL/O=GRID/O=PSNC/CN=Mariusz Mamonski
+Your identity: /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 Enter GRID pass phrase for this identity:
 Creating proxy ............................ Done
 Your proxy is valid until: Fri Jun 10 06:23:32 2011

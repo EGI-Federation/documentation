@@ -48,7 +48,7 @@ the main commands in rOCCI and OpenStack equivalent in the table below:
 | Create volume    | `occi -a create -r storage -t occi.storage.size='num(<site in GB>)' -t occi.core.title=<storage_resource_name>`      | `openstack volume create --size <size in GB> <storage resource name>`                    |
 | List volume      | `occi -a list -r storage`                                                                                            | `openstack volume list`                                                                  |
 | Attach volume    | `occi -a link -r <vm_id> -j <storage_resource_id>`                                                                   | `openstack server add volume <vm id> <volume id>`                                        |
-| Dettach volume   | `occi -a unlink -r <storage_link_id>`                                                                                | `openstack server remove volume <vm id> <volume id>`                                     |
+| Detach volume    | `occi -a unlink -r <storage_link_id>`                                                                                | `openstack server remove volume <vm id> <volume id>`                                     |
 | Delete volume    | `occi -a delete -r <volume id>`                                                                                      | `openstack volume delete <volume id>`                                                    |
 | Attach public IP | `occi -a link -r <vm id> --link /network/public`                                                                     | `openstack server add floating ip <vm id> <ip>`                                          |
 
