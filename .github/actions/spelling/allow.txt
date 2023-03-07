@@ -1,9 +1,8 @@
 FZK
 GMA
+ield
 GRISU
 Griglia
-HEPiX
-HEPiX
 HLR
 HPDA
 JWKS
@@ -12,7 +11,6 @@ LToS
 Livepatch
 Minio
 NAMD
-NAMEICON
 NIDs
 NPU
 OIM
@@ -37,7 +35,6 @@ UPM
 VMIs
 VMUUID
 Verdana
-WLCG_NAMEICON
 WSL
 a2enmod
 aai
@@ -515,7 +512,6 @@ schedd
 scipy
 scotgrid
 scs
-se_path
 secmon
 secretkey
 sectigo
