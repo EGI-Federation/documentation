@@ -119,7 +119,7 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 
 # Command-line arguments
 --[^\s]+=[^\s]+
--?[fF]ield.*
+-?[fF]ield.*b
 
 # Misc
 \bSURF[^\s]+\b
@@ -144,3 +144,4 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \b.*HEP.*\b
 \bDigiCert\b
 \bSPECcpu2006\b
+\bWLCG.*\b
