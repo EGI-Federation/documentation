@@ -105,4 +105,4 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \bglue[^\s]*\b
 
 # OIDCO*
-\bOIDC)[^\s]*\b
+\bOIDC[^\s]*\b
