@@ -98,11 +98,28 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \b[^\s]*abcd[^\s]*\b
 \b[^\s]{18,}\b
 
-# VO names
+# VOMS and VO names
 \bvo.[^\s]*\b
+\bvoms[^\s]*\b
 
 # Glue*
-\bglue[^\s]*\b
+\bGlue[^\s]*\b
 
 # OIDCO*
 \bOIDC[^\s]*\b
+
+# Powershell
+\bGet-ChildItem -Path\b
+
+# Dates
+\bYYYY-MM-DDTHH:MM:SS\b
+
+# Misc
+\bSURF[^\s]+\b
+\bmy.cnf\b
+\b[^\s]*SAML[^\s]*\b
+\bmicrok8s\b
+\bsudo .*\b
+\bqcg-ntf-client\b
+\bHostname: [^\s]*\b
+\b--[^\s]+=[^\s]+\b
