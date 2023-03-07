@@ -37,7 +37,7 @@ These are the available kernels:
 - Octave: The [Octave](https://www.gnu.org/software/octave/) programming
   language installed on its own conda environment (named `octave`).
 
-If you want to add a new kernel, just let us know and we will discuss the best
+If you want to add a new kernel, just let us know, and we will discuss the best
 way to support your request.
 
 ## CVMFS
@@ -77,7 +77,7 @@ following these steps:
      - /home/jovyan/conda-envs/
    ```
 
-1. Create your environmnets as needed, make sure to install a kernel
+1. Create your environments as needed, make sure to install a kernel
    (`ipykernel`) for it to show automatically:
 
    ```shell

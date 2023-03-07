@@ -859,7 +859,7 @@ $ openstack server create \
 | accessIPv4                  |                                             |
 | accessIPv6                  |                                             |
 | addresses                   |                                             |
-| adminPass                   | 9imSRC9EZhhX                                |
+| adminPass                   | veryverysecret                              |
 | config_drive                |                                             |
 | created                     | 2016-03-01T13:45:21Z                        |
 | flavor                      | m1.tiny (1)                                 |

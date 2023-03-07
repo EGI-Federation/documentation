@@ -9,16 +9,14 @@ description: >
 
 ## Overview
 
-One of the challenges for researchers in recent years is to manage an ever
-increasing amount of compute and storage services, which then form ever more
-complex end user applications or platforms.
+One of the challenges for researchers in recent years is to manage an ever-increasing
+amount of compute and storage services, which then form ever more complex end user
+applications or platforms.
 
 To address this need, EGI provides several orchestrators that facilitate the
-manangement of your workload using resources on the federation. These tools have
+management of your workload using resources on the federation. These tools have
 different levels of abstractions and features. See below to understand which to
 choose (or gets used automatically) in specific scenarios:
-
-<!-- markdownlint-disable line-length -->
 
 | Service Name                                | Workload Type                | Use-Case                                                                                                                               |
 | ------------------------------------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -29,6 +27,5 @@ choose (or gets used automatically) in specific scenarios:
 <!--
 | [PaaS Orchestrator](indigo-paas)             | VMs, containers, HTC jobs | Used when you have both IaaS Cloud and HTC workloads. The DEEP Platform uses it for ML/DL workloads. |
 -->
-<!-- markdownlint-enable line-length -->
 
 The following sections offer more details about each of these orchestrators.

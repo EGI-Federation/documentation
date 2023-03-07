@@ -388,7 +388,7 @@ different VO they have access to.
 $ rucio whoami
 
 status     : ACTIVE
-account    : jdoes_abc_account
+account    : jdoe_abc_account
 account_type : USER
 created_at : 2020-08-07T08:27:29
 updated_at : 2020-08-07T08:27:29
@@ -399,7 +399,7 @@ email      : N/A
 $ rucio --vo xyz whoami
 
 status     : ACTIVE
-account    : jdoes_xyz_account
+account    : jdoe_xyz_account
 account_type : USER
 created_at : 2020-08-11T12:13:58
 updated_at : 2020-08-11T12:13:58
@@ -415,10 +415,10 @@ email      : N/A
 >>> CLIENT = Client()
 >>> CLIENT.whoami()
 
-{u'status': u'ACTIVE', u'account': u'jdoes_abc_account', u'account_type': u'USER', u'created_at': u'2020-08-07T08:27:29', u'updated_at': u'2020-08-07T08:27:29', u'suspended_at': None, u'deleted_at': None, u'email': u'N/A'}
+{u'status': u'ACTIVE', u'account': u'jdoe_abc_account', u'account_type': u'USER', u'created_at': u'2020-08-07T08:27:29', u'updated_at': u'2020-08-07T08:27:29', u'suspended_at': None, u'deleted_at': None, u'email': u'N/A'}
 
 >>> CLIENT_XYZ = Client(vo='xyz')
 >>> CLIENT_XYZ.whoami()
 
-{u'status': u'ACTIVE', u'account': u'jdoes_xyz_account', u'account_type': u'USER', u'created_at': u'2020-08-11T12:13:58', u'updated_at': u'2020-08-11T12:13:58', u'suspended_at': None, u'deleted_at': None, u'email': u'N/A'}
+{u'status': u'ACTIVE', u'account': u'jdoe_xyz_account', u'account_type': u'USER', u'created_at': u'2020-08-11T12:13:58', u'updated_at': u'2020-08-11T12:13:58', u'suspended_at': None, u'deleted_at': None, u'email': u'N/A'}
 ```

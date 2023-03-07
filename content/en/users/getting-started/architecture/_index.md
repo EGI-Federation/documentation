@@ -281,7 +281,7 @@ received from the Resource Providers are sent to the EGI Accounting Portal. The
 summaries and provides a web view of the accounting data received from the
 Resource Providers.
 
-[cASO](https://github.com/IFCA/caso) delivers an implmentation of the extrator
+[cASO](https://github.com/IFCA/caso) delivers an implementation of the extractor
 probes for OpenStack.
 
 ### Monitoring
@@ -299,8 +299,8 @@ The current set of probes used for monitoring IaaS resources consists of:
   `org.nagios.CloudBDII-Check`): Basic TCP checks for services.
 - VM Marketplace probe (`eu.egi.cloud.AppDB-Update`): gets a predetermined image
   list from AppDB and checks its update interval.
-- Perun probe (`eu.egi.cloud.Perun-Check`): connects to the server and checks
-  the status by using internal Perun interface
+- PERUN probe (`eu.egi.cloud.Perun-Check`): connects to the server and checks
+  the status by using internal PERUN interface.
 
 ## Roadmap
 
@@ -315,7 +315,7 @@ Cloud. All the components are continuously maintained to:
   upstream distributions; and c) use only public APIs of the Cloud Management
   Frameworks.
 
-Currently the EGI FedCloud TaskForce is focused on moving to a central
+Currently, the EGI FedCloud TaskForce is focused on moving to a central
 operations model, where providers only need to integrate their system with EGI
 Check-in but do not need to deploy and configure the different tools
 (accounting, discovery, VMI management, etc.) locally but delegate this to a

@@ -244,7 +244,7 @@ named `file1.txt` located in storage container `test-egi`, and save its content
 to a file use the FedCloud command below:
 
 {{% alert title="Tip" color="info" %}} The object can be saved into a file named
-differently than the object itselft, by using the `--filename` command flag.
+differently than the object itself, by using the `--filename` command flag.
 {{% /alert %}}
 
 {{% alert title="Tip" color="info" %}} Multiple files can be downloaded at once,

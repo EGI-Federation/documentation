@@ -77,7 +77,7 @@ site, simply click the "**edit**" link on top of the site's details page.
 
 ### Renaming a site
 
-Provided you have permissios, you can change the Short Name, Official Name and
+Provided you have permissions, you can change the Short Name, Official Name and
 GIIS URL to the new Resource Center details. For more information regarding the
 site renaming procedure please see [PROC15](https://confluence.egi.eu/x/3SAmBg)
 

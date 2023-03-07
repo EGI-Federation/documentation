@@ -166,7 +166,7 @@ Rules are as follow:
 - In keywords without specifiers, the special specifier any.any will be
   implicit.
 - The `&` context operator makes an entity's context private when present; this
-  reduces results to the immediate neighborhoud of the target.
+  reduces results to the immediate neighbourhood of the target.
 
 Consider the following examples when searching for software:
 

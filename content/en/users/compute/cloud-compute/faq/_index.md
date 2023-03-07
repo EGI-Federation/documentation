@@ -40,7 +40,7 @@ the main commands in rOCCI and OpenStack equivalent in the table below:
 | ---------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | List images      | `occi -a list -r os_tpl`                                                                                             | `openstack image list`                                                                   |
 | Describe images  | `occi -a describe -r <image_id>`                                                                                     | `openstack image show <image_id>`                                                        |
-| List flavors     | `occi -a list -r resorce_tpl`                                                                                        | `openstack flavor list`                                                                  |
+| List flavors     | `occi -a list -r resource_tpl`                                                                                       | `openstack flavor list`                                                                  |
 | Describe flavors | `occi -a describe -r <template_id>`                                                                                  | `openstack flavor show <image_id>`                                                       |
 | Create VM        | `occi -a create -r compute -t occi.core.title="MyFirstVM" -M <flavor id> -M <image id> -T user_data="file://<file>"` | `openstack server create --flavor <flavor> --image <image> --user-data <file> MyFirstVM` |
 | Describe VM      | `occi -a describe -r <vm id>`                                                                                        | `openstack server show <vm id>`                                                          |
@@ -212,7 +212,7 @@ contextualisation. EGI images in AppDB do support `cloud-init`. Check the
 
 ### How can I pass secrets to my VMs?
 
-EGI Cloud endpoints use **HTTPS** so information passed to contextualise the VMs
+EGI Cloud endpoints use **HTTPS** so information passed to contextualize the VMs
 can be assumed to be safe and only readable within your VM. However, take into
 account that anyone with access to the VM may be able to access also the
 contextualisation information.
