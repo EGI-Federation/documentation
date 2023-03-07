@@ -270,7 +270,7 @@ Every VO needs two different pieces of information:
   for each of the VOMS server of the VO.
 
 You can check specific configuration for your VO at the
-[Operations portal](https://operations-portal.egi.eu/vo). Normally each VOMS
+[Operations portal](https://operations-portal.egi.eu/vo/a/list). Normally each VOMS
 server has a _Configuration Info_ link where the exact information to include in
 the `vomses` and `.lsc` files is shown.
 
