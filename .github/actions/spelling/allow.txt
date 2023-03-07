@@ -1,4 +1,3 @@
-ALARMers
 beapps
 CE_LOGCPU
 FZK
@@ -8,10 +7,13 @@ HEPiX
 HLR
 HPDA
 IaaS
+NIDs
+iaas
 JWKS
 LRMSs
 Livepatch
-mitreid
+MITREid
+reassignable
 Minio
 NAMD
 NCG-INGRID-PT
@@ -37,12 +39,9 @@ OIM
 OTHERDESCR
 Petabytes
 Phedex
-R-GMA
+GMA
 RAL
-SURFconext
-SURFnet
 SUs
-SimpleSAMLphp
 TAMers
 UPM
 Verdana
@@ -71,6 +70,7 @@ actoridentifier
 adozione
 alarmer
 alarmers
+ALARMers
 alex
 amcaar
 amga
@@ -123,7 +123,6 @@ caops
 cartopy
 caso
 catania
-ccin2p3
 ccsrm
 cdmi
 ceid
@@ -159,7 +158,6 @@ cmfs
 cmssw
 cnaf
 cnrs
-cns_db
 cous
 customisations
 matplotlib
@@ -207,6 +205,7 @@ desynchronise
 dgas
 dids
 digicert
+DigiCert
 dirac
 diracgrid
 dmcc
@@ -322,6 +321,9 @@ hdds
 hellasgrid
 helpdesk
 hepix
+HEPiX
+CCIN2P3
+ost
 hepspec
 hostcert
 hostkey
@@ -412,16 +414,16 @@ mdui
 mesos
 metalink
 micafer
-microk8s
 micromamba
+LToS
 miniconda
 mitaka
-mke2fs
 morecolor
+StoRM
 mpi
 multiattach
+iat
 multidisk
-my.cnf
 mycluster
 myemail
 myenv
@@ -457,6 +459,7 @@ nodiratime
 nokeys
 noout
 nordugrid
+NorduGrid
 northgrid
 nostreams
 novaclient
@@ -548,7 +551,7 @@ smes
 softver
 somekey
 southgrid
-speccpu2006
+SPECcpu2006
 srce
 srm
 ssds
@@ -622,9 +625,8 @@ ucert
 TPU
 tpctest
 torito
-Thh
 Theano
-restful
+RESTful
 tapn
 Simulink
 SGs
@@ -653,10 +655,6 @@ vmi
 vmops
 vms
 vobox
-voms
-voms_hervo
-vomsdir
-vomses
 voname
 voperson
 vos
