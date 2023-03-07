@@ -101,7 +101,7 @@ to set them once and reuse them with each command invocation.
 ```shell
 $ export EGI_SITE=IN2P3-IRES
 $ export EGI_VO=vo.access.egi.eu
-$ fedcloud openstack volume list
+$ fedcloud openstack volume list --site $EGI_SITE
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
 +---------------------------+--------+-----------+------+--------------------------------+
 | ID                        | Name   | Status    | Size | Attached to                    |
@@ -122,7 +122,7 @@ to set them once and reuse them with each command invocation.
 ```shell
 > set EGI_SITE=IN2P3-IRES
 > set EGI_VO=vo.access.egi.eu
-> fedcloud openstack volume list
+> fedcloud openstack volume list --site %EGI_SITE%
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
 +---------------------------+--------+-----------+------+--------------------------------+
 | ID                        | Name   | Status    | Size | Attached to                    |
@@ -143,7 +143,7 @@ to set them once and reuse them with each command invocation.
 ```powershell
 > $Env:EGI_SITE="IN2P3-IRES"
 > $Env:EGI_VO="vo.access.egi.eu"
-> fedcloud openstack volume list
+> fedcloud openstack volume list --site $Env:EGI_SITE
 Site: IN2P3-IRES, VO: vo.access.egi.eu, command: volume list
 +---------------------------+--------+-----------+------+--------------------------------+
 | ID                        | Name   | Status    | Size | Attached to                    |

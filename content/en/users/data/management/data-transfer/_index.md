@@ -1,5 +1,5 @@
 ---
-title: Data Transfer
+title: EGI Data Transfer
 type: docs
 weight: 30
 aliases:

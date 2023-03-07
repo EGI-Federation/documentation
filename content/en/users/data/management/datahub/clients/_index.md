@@ -19,7 +19,7 @@ and use it from a Virtual Machine is also available.
 
 ## Using the web interface
 
-Using EGI Check-in it\'s possible to connect with your institute credentials.
+Using EGI Check-in allows you to connect with your institute's credentials.
 
 ![Selecting EGI to connect using EGI Check-in](datahub-connect-check-in.png)
 

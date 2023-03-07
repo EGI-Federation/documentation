@@ -1,13 +1,14 @@
 ---
-title: "Disaster Mitigation and Agriculture community"
-linkTitle: "Disaster Mitigation and Agriculture community"
+title: Disaster Mitigation and Agriculture
+linkTitle: Disaster Mitigation and Agriculture
 type: docs
 weight: 10
 description: >
-  How to to use the EGI infrastructure for Disaster Mitigation and Agriculture community
+  EGI infrastructure for the Disaster Mitigation and Agriculture community
 ---
 
-This is the documentation to support the Disaster Mitigation and Agriculture community.
+This is the documentation to support the **Disaster Mitigation and Agriculture**
+community.
 
 ## Researchers
 

@@ -10,12 +10,11 @@ description: >
 ## Overview
 
 Achieving the core objective of the
-[EGI Federation](https://www.egi.eu/federation/) to advance research and
+[EGI Federation](https://www.egi.eu/egi-federation/) to advance research and
 innovation, embracing
 [Open Science](https://en.wikipedia.org/wiki/Open_science), is possible by
-empowering scientists and researchers to easily perform domain-specific research
-tasks, without having to deal with the complexities of the underlying
-infrastructure.
+empowering scientists and researchers to perform domain-specific research tasks,
+without having to deal with the complexities of the underlying infrastructure.
 
 An essential tool that contributes to this objective is a flexible development
 environment, where users can create and share documents containing live code,
@@ -24,9 +23,9 @@ equations, narrative text, and rich media output.
 The following development environments are available:
 
 - [Notebooks](./notebooks) is a browser-based, scalable tool for interactive
-  data analysis
-- [Binder](./binder) allows re-creation of custom computing environments for
-  reproducible execution of notebooks
+  data analysis.
+- [Replay](./replay) allows re-creation of custom computing environments for
+  reproducible execution of notebooks.
 
-The following sections offer a more detailed description of each development
+Their dedicated sections offer a detailed description of each development
 environment.
