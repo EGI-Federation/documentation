@@ -24,8 +24,5 @@ choose (or gets used automatically) in specific scenarios:
 | [Elastic Cloud Compute Cluster](ec3)        | VMs, containers, storage     | Used when you need to run workloads on clusters that can be elastically scaled and potentially span more than one IaaS Cloud provider. |
 | [Workload Manager](workload-manager)        | Jobs                         | Used to efficiently distribute, manage, and monitor computing workloads.                                                               |
 | [Dynamic On-Demand Analysis Service](dodas) | Containers, storage (caches) | Used when you need to process your data either interactively or via a batch system.                                                    |
-<!--
-| [PaaS Orchestrator](indigo-paas)             | VMs, containers, HTC jobs | Used when you have both IaaS Cloud and HTC workloads. The DEEP Platform uses it for ML/DL workloads. |
--->
 
 The following sections offer more details about each of these orchestrators.
