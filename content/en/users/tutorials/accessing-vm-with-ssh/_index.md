@@ -26,7 +26,7 @@ i.e.: `wget https://github.com/github_username.keys` {{% /alert %}}
 ### SSH username
 
 The username to use to connect to a virtual machine is dependent on the virtual
-machine image and is generally different in each operative system image.
+machine image and is generally different in each operating system image.
 
 For `official OS virtual machine images` you can use the general reference
 documentation on
