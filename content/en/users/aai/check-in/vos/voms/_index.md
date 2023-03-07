@@ -206,7 +206,7 @@ Membership Service (VOMS).
 
 The Virtual Organization Membership Service (VOMS) is an attribute authority
 which serves as central repository for VO user authorization information,
-providing support for sorting users into group hierarchies, keeping track ofu
+providing support for sorting users into group hierarchies, keeping track of
 their roles and other attributes in order to issue trusted attribute
 certificates and SAML assertions used in the Grid environment for authorization
 purposes. VOMS is composed of two main components:
