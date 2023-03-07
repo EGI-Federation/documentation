@@ -97,3 +97,12 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \b[^\s]*xxxx[^\s]*\b
 \b[^\s]*abcd[^\s]*\b
 \b[^\s]{18,}\b
+
+# VO names
+\bvo.[^\s]*\b
+
+# Glue*
+\bglue[^\s]*\b
+
+# OIDCO*
+\bOIDC)[^\s]*\b
