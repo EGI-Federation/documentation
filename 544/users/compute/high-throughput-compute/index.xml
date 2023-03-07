@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – High Throughput Compute</title><link>/users/compute/high-throughput-compute/</link><description>Recent content in High Throughput Compute on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Querying the Information System</title><link>/users/compute/high-throughput-compute/querying-information-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/high-throughput-compute/querying-information-system/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – High Throughput Compute</title><link>/users/compute/high-throughput-compute/</link><description>Recent content in High Throughput Compute on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Querying the Information System</title><link>/users/compute/high-throughput-compute/querying-information-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/high-throughput-compute/querying-information-system/</guid><description>
 &lt;h2 id="about-the-information-system">About the information system&lt;/h2>
 &lt;p>Information about resources is documented according to the
 &lt;a href="https://gridinfo-documentation.readthedocs.io/en/latest/glue.html">GLUE Schema&lt;/a>.&lt;/p>
@@ -272,7 +272,9 @@ on the &lt;code>GLUE2ShareID&lt;/code> from the previous query:
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareExecutionEnvironmentForeignKey &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2EntityOtherInfo
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="looking-for-an-arc-ce-for-dteam">Looking for an ARC-CE for dteam&lt;/h3>
-&lt;p>// jscpd:ignore-start&lt;/p>
+&lt;!--
+// jscpd:ignore-start
+-->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Information about the ARC-CE supporting dteam VO&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ldapsearch -x -LLL -H ldap://lcg-bdii.egi.eu:2170 &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -b &lt;span style="color:#4e9a06">&amp;#34;GLUE2GroupID=grid,o=glue&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
@@ -295,4 +297,6 @@ on the &lt;code>GLUE2ShareID&lt;/code> from the previous query:
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ShareDescription &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareComputingServiceForeignKey &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> GLUE2ComputingShareExecutionEnvironmentForeignKey
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>// jscpd:ignore-end&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!--
+// jscpd:ignore-end
+--></description></item></channel></rss>
