@@ -115,7 +115,7 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \bGet-ChildItem -Path\b
 
 # Dates
-\bYYYY-MM-DD.*\b
+\bYYYY.MM.DD.*\b
 
 # Misc
 \bSURF[^\s]+\b
@@ -129,3 +129,15 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \b.*ntf_client.*\b
 \bX509_[^\s]*\b
 \b.*IN2P3.*\b
+\b.*INGRID.*\b
+\bOAI-PMH\b
+\bNorduGrid\b
+\bRESTful\b
+\bLToS\b
+\bMITREid\b
+\bIaaS\b
+\bStoRM\b
+\b.*SDPK.*\b
+\b.*HEP.*\b
+\bDigiCert\b
+\bSPECcpu2006\b

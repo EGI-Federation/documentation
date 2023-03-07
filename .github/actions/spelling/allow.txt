@@ -14,7 +14,6 @@ Minio
 NAMD
 NAMEICON
 NIDs
-NMEM
 NPU
 OIM
 OTHERDESCR
@@ -26,14 +25,11 @@ RAL
 RDIG
 RTX
 RWO
-SDPK
 SGs
 STARTD
 STORAGECLASS
 SUs
 Simulink
-StoRM
-TAMers
 TPU
 Theano
 UKNGS
@@ -51,6 +47,8 @@ accesspoint
 accesstoken
 actoridentifier
 adozione
+alarmer
+alarmers
 alex
 amcaar
 amga
@@ -325,7 +323,6 @@ inaf
 infn
 infngrid
 infosites
-ingrid
 installable
 interoperation
 ipykernel
