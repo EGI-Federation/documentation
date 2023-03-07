@@ -37,19 +37,19 @@ name: Check Spelling
 on:
   push:
     branches:
-    - "**"
+      - "**"
     tags-ignore:
-    - "**"
+      - "**"
   pull_request_target:
     branches:
-    - "**"
+      - "**"
     types:
-    - 'opened'
-    - 'reopened'
-    - 'synchronize'
+      - 'opened'
+      - 'reopened'
+      - 'synchronize'
   issue_comment:
     types:
-    - 'created'
+      - 'created'
 
 jobs:
   spelling:
@@ -68,44 +68,44 @@ jobs:
       # note: If you use only_check_changed_files, you do not want cancel-in-progress
       cancel-in-progress: true
     steps:
-    - name: check-spelling
-      id: spelling
-      uses: check-spelling/check-spelling@main
-      with:
-        suppress_push_for_open_pull_request: 1
-        checkout: true
-        check_file_names: 1
-        spell_check_this: check-spelling/spell-check-this@prerelease
-        post_comment: 0
-        use_magic_file: 1
-        experimental_apply_changes_via_bot: 1
-        use_sarif: 1
-        extra_dictionary_limit: 10
-        extra_dictionaries:
-          cspell:aws/aws.txt
-          cspell:bash/bash-words.txt
-          cspell:cpp/src/cpp.txt
-          cspell:django/django.txt
-          cspell:elixir/elixir.txt
-          cspell:filetypes/filetypes.txt
-          cspell:fullstack/fullstack.txt
-          cspell:html/html.txt
-          cspell:java/java.txt
-          cspell:node/node.txt
-          cspell:npm/npm.txt
-          cspell:php/php.txt
-          cspell:powershell/powershell.txt
-          cspell:public-licenses/src/generated/public-licenses.txt
-          cspell:python/src/common/extra.txt
-          cspell:python/src/python/python-lib.txt
-          cspell:python/src/python/python.txt
-          cspell:r/src/r.txt
-          cspell:rust/rust.txt
-          cspell:scala/scala.txt
-          cspell:software-terms/src/software-terms.txt
-          cspell:sql/src/tsql.txt
-          cspell:typescript/typescript.txt
-          cspell:win32/src/win32.txt
+      - name: check-spelling
+        id: spelling
+        uses: check-spelling/check-spelling@main
+        with:
+          suppress_push_for_open_pull_request: 1
+          checkout: true
+          check_file_names: 1
+          spell_check_this: check-spelling/spell-check-this@prerelease
+          post_comment: 0
+          use_magic_file: 1
+          experimental_apply_changes_via_bot: 1
+          use_sarif: 1
+          extra_dictionary_limit: 10
+          extra_dictionaries:
+            cspell:aws/aws.txt
+            cspell:bash/bash-words.txt
+            cspell:cpp/src/cpp.txt
+            cspell:django/django.txt
+            cspell:elixir/elixir.txt
+            cspell:filetypes/filetypes.txt
+            cspell:fullstack/fullstack.txt
+            cspell:html/html.txt
+            cspell:java/java.txt
+            cspell:node/node.txt
+            cspell:npm/npm.txt
+            cspell:php/php.txt
+            cspell:powershell/powershell.txt
+            cspell:public-licenses/src/generated/public-licenses.txt
+            cspell:python/src/common/extra.txt
+            cspell:python/src/python/python-lib.txt
+            cspell:python/src/python/python.txt
+            cspell:r/src/r.txt
+            cspell:rust/rust.txt
+            cspell:scala/scala.txt
+            cspell:software-terms/src/software-terms.txt
+            cspell:sql/src/tsql.txt
+            cspell:typescript/typescript.txt
+            cspell:win32/src/win32.txt
 
   comment-push:
     name: Report (Push)
@@ -116,12 +116,12 @@ jobs:
       contents: write
     if: (success() || failure()) && needs.spelling.outputs.followup && github.event_name == 'push'
     steps:
-    - name: comment
-      uses: check-spelling/check-spelling@prerelease
-      with:
-        checkout: true
-        spell-check-this: check-spelling/spell-check-this@prerelease
-        task: ${{ needs.spelling.outputs.followup }}
+      - name: comment
+        uses: check-spelling/check-spelling@prerelease
+        with:
+          checkout: true
+          spell-check-this: check-spelling/spell-check-this@prerelease
+          task: ${{ needs.spelling.outputs.followup }}
 
   comment-pr:
     name: Report (PR)
@@ -132,13 +132,13 @@ jobs:
       pull-requests: write
     if: (success() || failure()) && needs.spelling.outputs.followup && contains(github.event_name, 'pull_request')
     steps:
-    - name: comment
-      uses: check-spelling/check-spelling@main
-      with:
-        checkout: true
-        spell-check-this: check-spelling/spell-check-this@prerelease
-        task: ${{ needs.spelling.outputs.followup }}
-        experimental_apply_changes_via_bot: 1
+      - name: comment
+        uses: check-spelling/check-spelling@main
+        with:
+          checkout: true
+          spell-check-this: check-spelling/spell-check-this@prerelease
+          task: ${{ needs.spelling.outputs.followup }}
+          experimental_apply_changes_via_bot: 1
 
   update:
     name: Update PR
@@ -156,9 +156,9 @@ jobs:
       group: spelling-update-${{ github.event.issue.number }}
       cancel-in-progress: false
     steps:
-    - name: apply spelling updates
-      uses: check-spelling/check-spelling@main
-      with:
-        experimental_apply_changes_via_bot: 1
-        checkout: true
-        ssh_key: "${{ secrets.CHECK_SPELLING }}"
+      - name: apply spelling updates
+        uses: check-spelling/check-spelling@main
+        with:
+          experimental_apply_changes_via_bot: 1
+          checkout: true
+          ssh_key: "${{ secrets.CHECK_SPELLING }}"
