@@ -168,8 +168,8 @@ You should be able to change the number of workers in the cluster and re-apply
 terraform to start them and then execute the playbook to get them added to the
 cluster.
 
-Any changes in the master, NFS or ingress VMs should be done carfully as those
-will probably break the configuration of the kubernetes cluster and of any
+Any changes in the master, NFS or ingress VMs should be done carefully as those
+will probably break the configuration of the Kubernetes cluster and of any
 application running on top.
 
 Destroying the cluster can be done with a single command:
@@ -203,7 +203,7 @@ Then add `offline_access` to the list of scopes and sumbit the request. After
 the approval of the Service request, save the client and take note of the
 client ID and client secret for later.
 
-Finally you will also need 3 different random strings generated with
+Finally, you will also need 3 different random strings generated with
 `openssl rand -hex 32` that will be used as secrets in the file describing the
 deployment.
 
