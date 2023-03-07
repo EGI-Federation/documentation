@@ -100,7 +100,7 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 
 # VOMS and VO names
 \bvo.[^\s]*\b
-\bvoms[^\s]*\b
+\b[vV]oms[^\s]*\b
 \b[^\s]*voms\b
 \b[^\s]*VOMS[^\s]*\b
 
@@ -115,7 +115,10 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \bGet-ChildItem -Path\b
 
 # Dates
-\bYYYY.MM.DD.*\b
+YYYY.MM.DD[^\s]*
+
+# Command-line arguments
+--[^\s]+=[^\s]+
 
 # Misc
 \bSURF[^\s]+\b
@@ -124,7 +127,6 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \bsudo .*\b
 \bqcg-ntf-client\b
 \bHostname: [^\s]*\b
-\b--[^\s]+=[^\s]+\b
 \b(TEAM|ALARM)er.\b
 \b.*ntf_client.*\b
 \bX509_[^\s]*\b
