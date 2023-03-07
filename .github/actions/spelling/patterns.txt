@@ -119,6 +119,7 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 
 # Command-line arguments
 --[^\s]+=[^\s]+
+\b-field.*\b
 
 # Misc
 \bSURF[^\s]+\b
