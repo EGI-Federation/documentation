@@ -119,7 +119,7 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 
 # Command-line arguments
 --[^\s]+=[^\s]+
--?[fF]ield.*b
+-?[fF]ield.*
 
 # Misc
 \bSURF[^\s]+\b
