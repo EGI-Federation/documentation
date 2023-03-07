@@ -64,7 +64,7 @@ The code or instructions should be surrounded with three backticks, followed by
 an optional highlighting type parameter.
 
 The supported languages are dependent on the syntax highlighter, which depends
-itself on the markdown parser.
+itself on the Markdown parser.
 
 {{% alert title="Note" color="info" %}} [Hugo](https://gohugo.io/) uses the
 [goldmark parser](https://github.com/yuin/goldmark), which relies on
