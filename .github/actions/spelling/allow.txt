@@ -20,7 +20,9 @@ arcproxy
 arcstat
 arcsub
 arctest
+asgc
 atnospam
+atrope
 autoprofixer
 backticks
 bcdmi
@@ -310,6 +312,8 @@ refreshtoken
 rfio
 roadmap
 rpms
+rse
+rstudio
 rucio
 rucioclient
 runcmd
@@ -318,6 +322,7 @@ scai
 schedd
 scotgrid
 secretkey
+secmon
 sectigo
 sfn
 shortcode
