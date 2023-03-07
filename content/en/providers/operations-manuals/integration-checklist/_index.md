@@ -56,7 +56,7 @@ Resource Centre integrated into the EGI Federation.
    properly sent to the accounting repository and displayed by the
    [Accounting Portal](https://accounting.egi.eu/).
 
-   - Accounting probes and [APEL SSM](https://github.com/apel/ssm) are properlly
+   - Accounting probes and [APEL SSM](https://github.com/apel/ssm) are properly
      installed and configured:
      - HTC: [APEL client](https://github.com/apel/apel)
      - Cloud: [cASO](https://github.com/IFCA/caso).

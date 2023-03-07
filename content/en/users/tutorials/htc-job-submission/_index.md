@@ -529,7 +529,7 @@ $ arcsub --jobdescrfile testjob.xrsl --registry nordugrid.org
 gsiftp://vm3.tier2.hep.manchester.ac.uk:2811/jobs/...
 JOB_ID="gsiftp://vm3.tier2.hep.manchester.ac.uk:2811/jobs/.."
 
-# Use -l paramter to get more information on the status of the Job
+# Use -l parameter to get more information on the status of the Job
 $ arcstat -l "$JOB_ID"
 ```
 

@@ -278,7 +278,7 @@ properties with a cardinality 0..\* must be either
 This way, it is possible to perform modifications to a resource's properties
 without having to re-declare all instances of other properties with 0..\*
 cardinality, lest they were to be erased. Properties of 0..1 cardinality may
-also be declared `NULL` in a similar fasion, in which case their value in the
+also be declared `NULL` in a similar fashion, in which case their value in the
 backed becomes undefined. Moreover, one should also note that the response of
 all `PUT`/`POST`/`DELETE` operations equivalent to that of a `GET` operation,
 with the state of the resource

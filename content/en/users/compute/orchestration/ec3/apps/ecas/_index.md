@@ -44,7 +44,7 @@ This guide will show how to:
 ## Deploy an ECAS cluster with EC3
 
 In the latest release of the EC3 platform a new Ansible receipt is available
-for researchers interested to deploy ECAS cluster on the EGI Infrastuctrure.
+for researchers interested to deploy ECAS cluster on the EGI Infrastructure.
 The next sections provide details on how to configure and deploy an ECAS cluster
 on EGI resources.
 

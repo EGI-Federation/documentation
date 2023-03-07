@@ -121,7 +121,7 @@ for installing EGI Core Trust Anchor certificates in production environments.
 
 The FedCloud client can also be used without installation, by running it in a
 Docker container. In this case, the EGI Core Trust Anchor certificates are
-preinstalled.
+pre-installed.
 
 {{< tabpanex >}} {{< tabx header="Linux " >}}
 

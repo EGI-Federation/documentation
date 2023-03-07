@@ -262,7 +262,7 @@ $ globusrun -s -r HOST:2119 "&(executable="/bin/date")"
 
 ## QCG checks
 
-### QCG Computhng checks
+### QCG Computing checks
 
 The presented tests of QCG-Computing service use the qcg-comp, the client
 program for QCG-Computing, that may be installed from provided RPMS. In order to
@@ -515,7 +515,7 @@ steps.
 
 #### Credentials
 
-Generate a set of keys for your user (it is not required to set a phassphrase
+Generate a set of keys for your user (it is not required to set a passphrase
 for the keys, since these are just temporary keys for the test), make sure to
 set key permissions to `400`:
 

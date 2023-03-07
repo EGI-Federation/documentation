@@ -162,7 +162,7 @@ to set them once and reuse them with each command invocation.
 
 {{< /tabx >}}
 
-{{< tabx  header="PowerShell" >}}
+{{< tabx header="PowerShell" >}}
 
 To avoid passing the site, VO, etc. each time, you can use
 [FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
@@ -187,7 +187,7 @@ to set them once and reuse them with each command invocation.
 
 To
 [create a new storage container](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html#container-create)
-named `test-egi`, use the follwoing FedCloud command:
+named `test-egi`, use the following FedCloud command:
 
 ```shell
 $ fedcloud openstack container create test-egi
