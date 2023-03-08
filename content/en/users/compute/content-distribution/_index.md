@@ -81,7 +81,7 @@ When running the ssh/scp commands, a message like this is displayed:
 [neo@matrix ~]# ssh gridppsgm@cvmfs-upload01.gridpp.rl.ac.uk
 Authenticate at
 -----------------
-https://aai.egi.eu/device?user_code=IITC-KKUP
+[https://aai.egi.eu/device?user_code=AAAAA-BBBBB](https://aai.egi.eu/device?user_code=AAAAA-BBBBB)
 -----------------
 Hit enter when you have finished authenticating  
 ```  
