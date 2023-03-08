@@ -66,7 +66,7 @@ jobs:
     concurrency:
       group: spelling-${{ github.event.pull_request.number || github.ref }}
       # note: If you use only_check_changed_files, you do not want cancel-in-progress
-      cancel-in-progress: true
+      cancel-in-progress: false
     steps:
       - name: check-spelling
         id: spelling
@@ -74,6 +74,7 @@ jobs:
         with:
           suppress_push_for_open_pull_request: 1
           checkout: true
+          only_check_changed_files: 1
           check_file_names: 1
           spell_check_this: check-spelling/spell-check-this@prerelease
           post_comment: 0
