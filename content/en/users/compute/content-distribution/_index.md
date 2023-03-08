@@ -84,7 +84,7 @@ When running the `ssh` or `scp` commands, a message like this is displayed:
 $ ssh diracsgm@cvmfs-upload01.gridpp.rl.ac.uk
 Authenticate at
 -----------------
-[https://aai.egi.eu/device?user_code=AAAAA-BBBBB](https://aai.egi.eu/device?user_code=AAAAA-BBBBB)
+https://aai.egi.eu/device?user_code=AAAAA-BBBBB
 -----------------
 Hit enter when you have finished authenticating
 ```
