@@ -13,7 +13,7 @@ interact with the AppDB API over the web using HTTP commands following the
 The API endpoint is located at `http://appdb-pi.egi.eu` and it allows
 information retrieval and modification from third party applications without
 having to reside on the rich user interface of the AppDB portal. Thus one is
-given the opportunity to design one's own front-ends.
+given the opportunity to design one's own frontends.
 
 ## Getting started
 
