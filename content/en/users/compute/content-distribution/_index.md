@@ -66,7 +66,8 @@ specify explicitly which account you want to login to. This account is built as 
 For example, for repository `dirac.egi.eu`, UNIX account is `diracsgm`.
 
 ```shell
-$ ssh \<myreposgm\>@cvmfs-upload01.gridpp.rl.ac.uk
+# Replace with the proper username
+$ ssh diracsgm@cvmfs-upload01.gridpp.rl.ac.uk
 ```
 
 To copy data:
