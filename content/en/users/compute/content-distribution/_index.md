@@ -46,7 +46,7 @@ Request access to the service sending an email to cvmfs-support@gridpp.rl.ac.uk
 In the email, include the following information:
 
 - Name of the VO or CVMFS repository.
-- Your voperson_id from EGI CheckIn.
+- Your `voperson_id` from EGI CheckIn.
 
 ### Mailing list
 
@@ -55,24 +55,24 @@ All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 
 ## Distributing new content
 
-To login to the service, just ssh:  
+To login to the service, just `ssh`:  
 
 ```shell
 $  ssh @cvmfs-upload01.gridpp.rl.ac.uk
 ```
 
 If you are the Content Manager for more than one repository, you would need to
-specify explicit which account you want to login to. This account is built as <reponame>+"sgm". 
+specify explicitly which account you want to login to. This account is built as `<reponame>+"sgm"`. 
 For example, for repository **dirac.egi.eu**, UNIX account is **diracsgm**.
 
 ```shell
-$ ssh <myreposgm>@cvmfs-upload01.gridpp.rl.ac.uk
+$ ssh \<myreposgm\>@cvmfs-upload01.gridpp.rl.ac.uk
 ```
 
 To copy data:
 
 ```shell
-$ scp <source> cvmfs-upload01.gridpp.rl.ac.uk:<destination>
+$ scp \<source\> cvmfs-upload01.gridpp.rl.ac.uk:<destination>
 ```
 
 When running the ssh/scp commands, a message like this is displayed:
