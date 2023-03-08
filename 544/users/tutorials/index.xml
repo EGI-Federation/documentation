@@ -46,16 +46,23 @@ i.e.: &lt;code>wget https://github.com/github_username.keys&lt;/code>
 &lt;/div>
 &lt;h3 id="ssh-username">SSH username&lt;/h3>
 &lt;p>The username to use to connect to a virtual machine is dependent on the virtual
-machine image and is generally different in each operating system image.&lt;/p>
-&lt;p>For &lt;code>official OS virtual machine images&lt;/code> you can use the general reference
-documentation on
-&lt;a href="https://docs.openstack.org/image-guide/obtain-images.html">obtaining images&lt;/a>.&lt;/p>
-&lt;p>For custom virtual machine images you need to refer to your virtual machine
-image provider (i.e. it could be something specific like &lt;code>cloudadm&lt;/code>).&lt;/p>
-&lt;p>It is also possible to change the username using cloud-init with a user-data
+machine image and is generally different in each operating system image:&lt;/p>
+&lt;ul>
+&lt;li>For images available in the
+&lt;a href="https://appdb.egi.eu/browse/cloud">EGI AppDB Cloud Marketplace&lt;/a>, you should
+be able to find the username in the image description.&lt;/li>
+&lt;li>For &lt;code>official OS virtual machine images&lt;/code> you can use the general OpenStack
+reference documentation on
+&lt;a href="https://docs.openstack.org/image-guide/obtain-images.html">obtaining images&lt;/a>.&lt;/li>
+&lt;li>For custom virtual machine images you need to refer to your virtual machine image
+provider (i.e. it could be something specific like &lt;code>cloudadm&lt;/code>).&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>It is also possible to change the username using &lt;code>cloud-init&lt;/code> with a user-data
 configuration (i.e. see the
 &lt;a href="https://cloudinit.readthedocs.io/en/latest/topics/examples.html">cloud config examples&lt;/a>)
 or inject some code to add additional users (i.e. with Ansible).&lt;/p>
+&lt;/blockquote>
 &lt;h3 id="local-ssh-key-configuration">Local ssh key configuration&lt;/h3>
 &lt;p>The &lt;code>private ssh-key&lt;/code> stored on your local computer is required to have
 restrictive file permissions. Depending on your local operative system you may
