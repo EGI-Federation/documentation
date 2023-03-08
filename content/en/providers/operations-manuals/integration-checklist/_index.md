@@ -48,7 +48,7 @@ Resource Centre integrated into the EGI Federation.
    - [OpenStack clouds integration with Check-in](../../cloud-compute/openstack/#egi-aai)
    - [General integration with Check-in for SPs](../../check-in/sp/)
 
-1. Monitoring: the registered endpoints are automaticall detected by
+1. Monitoring: the registered endpoints are automatically detected by
    [ARGO](../../../internal/monitoring) and monitored according to their type
    registered in the Configuration Database.
 
@@ -56,7 +56,7 @@ Resource Centre integrated into the EGI Federation.
    properly sent to the accounting repository and displayed by the
    [Accounting Portal](https://accounting.egi.eu/).
 
-   - Accounting probes and [APEL SSM](https://github.com/apel/ssm) are properlly
+   - Accounting probes and [APEL SSM](https://github.com/apel/ssm) are properly
      installed and configured:
      - HTC: [APEL client](https://github.com/apel/apel)
      - Cloud: [cASO](https://github.com/IFCA/caso).

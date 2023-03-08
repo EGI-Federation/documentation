@@ -40,7 +40,7 @@ the main commands in rOCCI and OpenStack equivalent in the table below:
 | ---------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | List images      | `occi -a list -r os_tpl`                                                                                             | `openstack image list`                                                                   |
 | Describe images  | `occi -a describe -r <image_id>`                                                                                     | `openstack image show <image_id>`                                                        |
-| List flavors     | `occi -a list -r resorce_tpl`                                                                                        | `openstack flavor list`                                                                  |
+| List flavors     | `occi -a list -r resource_tpl`                                                                                       | `openstack flavor list`                                                                  |
 | Describe flavors | `occi -a describe -r <template_id>`                                                                                  | `openstack flavor show <image_id>`                                                       |
 | Create VM        | `occi -a create -r compute -t occi.core.title="MyFirstVM" -M <flavor id> -M <image id> -T user_data="file://<file>"` | `openstack server create --flavor <flavor> --image <image> --user-data <file> MyFirstVM` |
 | Describe VM      | `occi -a describe -r <vm id>`                                                                                        | `openstack server show <vm id>`                                                          |
@@ -48,7 +48,7 @@ the main commands in rOCCI and OpenStack equivalent in the table below:
 | Create volume    | `occi -a create -r storage -t occi.storage.size='num(<site in GB>)' -t occi.core.title=<storage_resource_name>`      | `openstack volume create --size <size in GB> <storage resource name>`                    |
 | List volume      | `occi -a list -r storage`                                                                                            | `openstack volume list`                                                                  |
 | Attach volume    | `occi -a link -r <vm_id> -j <storage_resource_id>`                                                                   | `openstack server add volume <vm id> <volume id>`                                        |
-| Dettach volume   | `occi -a unlink -r <storage_link_id>`                                                                                | `openstack server remove volume <vm id> <volume id>`                                     |
+| Detach volume    | `occi -a unlink -r <storage_link_id>`                                                                                | `openstack server remove volume <vm id> <volume id>`                                     |
 | Delete volume    | `occi -a delete -r <volume id>`                                                                                      | `openstack volume delete <volume id>`                                                    |
 | Attach public IP | `occi -a link -r <vm id> --link /network/public`                                                                     | `openstack server add floating ip <vm id> <ip>`                                          |
 
@@ -212,7 +212,7 @@ contextualisation. EGI images in AppDB do support `cloud-init`. Check the
 
 ### How can I pass secrets to my VMs?
 
-EGI Cloud endpoints use **HTTPS** so information passed to contextualise the VMs
+EGI Cloud endpoints use **HTTPS** so information passed to contextualize the VMs
 can be assumed to be safe and only readable within your VM. However, take into
 account that anyone with access to the VM may be able to access also the
 contextualisation information.
@@ -236,7 +236,7 @@ one as a gateway as described in the
 
 Whenever you delete a VM, the ephemeral disks associated with it will be also
 deleted. If you don't plan to use your VM for some time, there are several ways
-to release resources consumed by the VM (e.g. CPU, RAM) and recover the the data
+to release resources consumed by the VM (e.g. CPU, RAM) and recover the data
 or boot your VM in a previous state when you need it back. We list below the
 main strategies you can use:
 

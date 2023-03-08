@@ -10,13 +10,13 @@ description: >-
 ## Introduction to Rucio commands
 
 There are many commands found within Rucio CLI that you may want to become
-familar with. In this guide I will provide a few of the common commands wanted
+familiar with. In this guide I will provide a few of the common commands wanted
 by new users.
 
 To find more of the commands that you may want to use type `rucio` into the
-containerised client will provide all of the arguments for rucio. Typing in the
+containerised client will provide all of the arguments for Rucio. Typing in the
 command followed by `-h`, or `--help` will provide you with all the options that
-are available as well as some explaination for each.
+are available as well as some explanation for each.
 
 ### ping
 
@@ -77,8 +77,8 @@ find useful:
 - `RSE` is the Rucio Storage Element or site that you wish to store the data at,
   the list of available RSEs can be seen for your VO with the command
   `rucio list-rses`.
-- `Lifetime` is how long you wish the file to exist, not specifyting will make
-  the file permenant until rucio is told to delete it.
+- `Lifetime` is how long you wish the file to exist, not specifying will make
+  the file permanent until rucio is told to delete it.
 - `Scope` can be used in many ways, but often can be an experiment name, or a
   user space, all users have their own scope assigned to them `user.<username>`.
 - `Register-after-upload` allows for files to be uploaded to the destination,
@@ -86,10 +86,10 @@ find useful:
   useful if your connection is intermittent.
 - `Name` is the name of the file that it will be registered to Rucio with, if
   this is not set it will be the name of the file or files provided.
-- `Recursive` Allows you to set the arg to a directory, and all files within
-  that directory and any sub directories will be uploaded.
+- `Recursive` Allows you to set the argument to a directory, and all files within
+  that directory and any subdirectories will be uploaded.
 - `Args` is the path to the file, or files you wish to upload, this can be a
-  single file, directory (with recursive set), or a list of files seperated with
+  single file, directory (with recursive set), or a list of files separated with
   a space e.g.
 
 ```shell
@@ -120,7 +120,7 @@ $ rucio get [-h] [--dir DIR] [--allow-tape] [--rse RSE] [--rses RSES]
   this blank will allow Rucio to decide which RSE(s) are best.
 - `nrandom` allows you to specify a number and if the target is a dataset or
   container will download n files from that DID. This allows you to check are
-  correct before commiting to download the entire dataset or container.
+  correct before committing to download the entire dataset or container.
 - `dids` is the data identifier for the file, dataset or container you wish to
   download.
 
@@ -148,7 +148,7 @@ $ rucio add-rule [-h] [--weight WEIGHT] [--lifetime LIFETIME]
   files from being added or removed.
 - `dids` the files within Rucio you wish to be replicates.
 - `copies` How many copies of the data you want to make.
-- `rse_expression` can either be a specific RSE, or can be a filter. expression,
+- `rse_expression` can either be a specific RSE, or can be a filter. Expression,
   such as `tape=True` or `country=UK` and Rucio will place as many copies as was
   requested in different sites (when possible), to fulfil the rule.
 
@@ -156,7 +156,7 @@ $ rucio add-rule [-h] [--weight WEIGHT] [--lifetime LIFETIME]
 
 A command to delete a rule which you have created. Just because you have deleted
 a rule does not mean the file will be deleted. But it will adjust your quota
-accordingly. Other people within your VO may also having a rule that states the
+accordingly. Other people within your VO may also have a rule that states the
 file needs to be at the same site.
 
 ```shell
@@ -170,12 +170,12 @@ $ rucio delete-rule [-h] [--purge-replicas] [--all]
 - `rse_expression` which RSE expression encapsulates the rules you wish to
   delete, either rse_expression, or RSE needs to be specified.
 - `RSES` exactly which RSE is the target of the rule deletion.
-- `account` which account requres the rule to be deleted, this is generally only
+- `account` which account requires the rule to be deleted, this is generally only
   needed by Rucio Admins and does not need to be specified if you are deleting
   your own rules.
 - `rule_id` is a Rucio specific ID for the file that you wish to be deleted, a
   list of the rules, and their rule_ids that are within your account can be
-  gotten by running `rucio list-rules --account youraccountname`.
+  retrieved by running `rucio list-rules --account youraccountname`.
 
 ### list-rules
 
@@ -192,7 +192,7 @@ Provide a full list of the files IDs, account, scope, state, RSE/expression
 copies and expiry.
 
 - `account` specify which account you wish to see the replication rules.
-- `file` If you know the name of a specif file, this allows you to see all the
+- `file` If you know the name of a specific file, this allows you to see all the
   rules are associated with the file.
 - `did` If a dataset or container are listed, all rules associated with the
   specific DID will be displayed.

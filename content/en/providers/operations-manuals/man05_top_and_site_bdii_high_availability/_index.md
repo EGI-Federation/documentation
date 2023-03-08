@@ -212,7 +212,7 @@ hasSubordinates: FALSE
 
 - The following table shows the meaning of the most relevant metrics:
 
-| Metric          | Desciption                                                 |
+| Metric          | Description                                                |
 | --------------- | ---------------------------------------------------------- |
 | ModifiedEntries | The number of objects to modify                            |
 | DeletedEntries  | The number of objects to delete                            |

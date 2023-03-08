@@ -33,7 +33,7 @@ entities. Access is restricted, more details can be found in the section about
 
 ### Querying
 
-API calls can be tested in a browser or done from the commmand-line interface,
+API calls can be tested in a browser or done from the command-line interface,
 using `curl`.
 
 Below are some examples, including methods with different

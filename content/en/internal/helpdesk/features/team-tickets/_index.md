@@ -9,7 +9,7 @@ description: >
 ## Introduction: purpose and conditions
 
 - The purpose of TEAM tickets is to allow all team members to modify all tickets
-  of their team although they may not have support access and they do not have
+  of their team ,although they may not have support access, and they do not have
   submitted the ticket themselves.
 - Only members of a few VOs are allowed to submit team tickets:
   - Alice
@@ -18,7 +18,7 @@ description: >
   - LHCb
   - Biomed
   - Belle
-- The VO menbers need to have the appropriate permissions in GGUS user database
+- The VO members need to have the appropriate permissions in GGUS user database
 - Other VOs can request this functionality by opening a GGUS ticket
 - Team tickets are routed to the NGI/ROC the site belongs to automatically. They
   do not need a routing by the TPM. The NGI/ROC is notified about the ticket in

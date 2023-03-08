@@ -43,7 +43,7 @@ do so (specially do not delete them).
 Some users roles have special consideration in VOs:
 
 - Users with VO Manager, VO Deputy or VO Expert Role have extra privileges in
-  the AppDB for managing the Virtual Appliances to be available at every
+  the AppDbB for managing the Virtual Appliances to be available at every
   provider. Check the [Virtual Machine Image Management documentation](../images)
   for more information.
 
@@ -70,7 +70,7 @@ using your [EGI account](../../../aai/check-in/).
 
 ### Other VOs
 
-Pre-existing VOs of EGI can be also used on IaaS cloud providers. Consult with
+Preexisting VOs of EGI can be also used on IaaS cloud providers. Consult with
 your VO manager or browse the existing VOs at the
 [EGI Operations Portal](https://operations-portal.egi.eu/vo/a/list).
 
@@ -85,7 +85,7 @@ collect credentials every single time one expires. You can request this token
 alongside the access and/or ID tokens as part of a user's initial authentication
 flow.
 
-If you need to obtain these kind of tokens for using it in command-line tools or APIs,
+If you need to obtain these kinds of tokens for using it in command-line tools or APIs,
 you can easily do so with the EGI Check-in Token Portal. You can access the
 [EGI Check-in Token Portal](https://aai.egi.eu/token) and click on
 \'Authorise\' to log in with your Check-in credentials to obtain:
@@ -128,7 +128,7 @@ $ export OIDC_ACCESS_TOKEN=<your access token>
 $ fedcloud endpoint projects
 # or with  oidc-agent
 $ export OIDC_AGENT_ACCOUNT=<account name>
-$ fedcloud enpoint projects
+$ fedcloud endpoint projects
 ```
 
 ### Using the OpenStack API

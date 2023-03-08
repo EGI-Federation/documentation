@@ -18,7 +18,7 @@ you need those changes to persist, let us know via a
 [GGUS ticket to the Notebooks Support Unit](https://ggus.eu). You can also ask
 for increasing the 20GB home via ticket.
 
-{{% alert title="Note" color="info" %}} Your home directoriy is backed up daily.
+{{% alert title="Note" color="info" %}} Your home directory is backed up daily.
 {{% /alert %}}
 
 ## Import notebooks into your workspace
