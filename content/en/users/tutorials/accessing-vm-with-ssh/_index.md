@@ -26,19 +26,21 @@ i.e.: `wget https://github.com/github_username.keys` {{% /alert %}}
 ### SSH username
 
 The username to use to connect to a virtual machine is dependent on the virtual
-machine image and is generally different in each operating system image.
+machine image and is generally different in each operating system image:
 
-For `official OS virtual machine images` you can use the general reference
-documentation on
-[obtaining images](https://docs.openstack.org/image-guide/obtain-images.html).
+- For images available in the
+ [EGI AppDB Cloud Marketplace](https://appdb.egi.eu/browse/cloud), you should
+ be able to find the username in the image description.
+- For `official OS virtual machine images` you can use the general OpenStack
+  reference documentation on
+  [obtaining images](https://docs.openstack.org/image-guide/obtain-images.html).
+- For custom virtual machine images you need to refer to your virtual machine image
+  provider (i.e. it could be something specific like `cloudadm`).
 
-For custom virtual machine images you need to refer to your virtual machine
-image provider (i.e. it could be something specific like `cloudadm`).
-
-It is also possible to change the username using cloud-init with a user-data
-configuration (i.e. see the
-[cloud config examples](https://cloudinit.readthedocs.io/en/latest/topics/examples.html))
-or inject some code to add additional users (i.e. with Ansible).
+> It is also possible to change the username using `cloud-init` with a user-data
+> configuration (i.e. see the
+> [cloud config examples](https://cloudinit.readthedocs.io/en/latest/topics/examples.html))
+> or inject some code to add additional users (i.e. with Ansible).
 
 ### Local ssh key configuration
 
