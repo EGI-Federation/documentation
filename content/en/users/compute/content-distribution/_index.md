@@ -46,7 +46,7 @@ Request access to the service sending an email to cvmfs-support@gridpp.rl.ac.uk
 In the email, include the following information:
 
 - Name of the VO or CVMFS repository.
-- Distinguish Name (DN) from your X509 grid certificate.
+- Your voperson_id from EGI CheckIn.
 
 ### Mailing list
 
@@ -55,26 +55,39 @@ All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 
 ## Distributing new content
 
-To login to the service, make sure you have a valid X509 proxy (with the same DN
-provided [in this step](#requesting-access)), and execute the following command:
+To login to the service, just ssh:  
 
 ```shell
-$ gsissh -p 1975 cvmfs-upload01.gridpp.rl.ac.uk
+$  ssh @cvmfs-upload01.gridpp.rl.ac.uk
 ```
 
 If you are the Content Manager for more than one repository, you would need to
-specify explicit which account you want to login to:
+specify explicit which account you want to login to. This account is built as <reponame>+"sgm". 
+For example, for repository **dirac.egi.eu**, UNIX account is **diracsgm**.
 
 ```shell
-$ gsissh -p 1975 <myreposgm>@cvmfs-upload01.gridpp.rl.ac.uk
+$ ssh <myreposgm>@cvmfs-upload01.gridpp.rl.ac.uk
 ```
 
 To copy data:
 
 ```shell
-$ gsiscp -P 1975 <source> cvmfs-upload01.gridpp.rl.ac.uk:<destination>
+$ scp <source> cvmfs-upload01.gridpp.rl.ac.uk:<destination>
 ```
 
+When running the ssh/scp commands, a message like this is displayed:
+ 
+```shell
+[neo@matrix ~]# ssh gridppsgm@cvmfs-upload01.gridpp.rl.ac.uk
+Authenticate at
+-----------------
+https://aai.egi.eu/device?user_code=IITC-KKUP
+-----------------
+Hit enter when you have finished authenticating  
+```  
+
+Copy and paste the URL into a browser, and follow the instructions to authenticate yourself using your home institution Identity Management Service.  
+  
 After login, you will find a single directory in the home directory:
 
 ```shell
