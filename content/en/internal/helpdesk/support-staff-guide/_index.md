@@ -643,7 +643,7 @@ The system offers two groups of meta states, open states and terminal states.
   solution mail automatically. Please put a full explanation in Solution field
   of how the issue was solved. You can use qualification terms like:
   - fixed
-  - fixed (work around)
+  - fixed (workaround)
   - works as designed
   - other
 - unsolved: This status is for tickets that can not be solved due to any reason.

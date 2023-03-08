@@ -24,7 +24,7 @@ given Ticket Priority.
 - Medium
 - Advanced
 
-The defaut QoS level, if not declared differently, is **Base**.
+The default QoS level, if not declared differently, is **Base**.
 
 ### Base Level
 

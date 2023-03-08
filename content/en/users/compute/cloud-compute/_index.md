@@ -27,7 +27,7 @@ Cloud Compute service is provided through a federation of IaaS cloud sites that
 offer:
 
 - Single Sign-On via [EGI Check-in](https://www.egi.eu/service/check-in/),
-  users can login into every provider with their institutional credentials and
+  users can log into every provider with their institutional credentials and
   use modern industry standards like
   [OpenID Connect](https://openid.net/connect/).
 - Global VM image catalogue at [AppDB](https://appdb.egi.eu) with pre-configured
@@ -60,7 +60,7 @@ emerged:
 - **Compute and data intensive applications**: for those applications needing
   considerable amount of resources in terms of computation and/or memory and/or
   intensive I/O. Ad-hoc computing environments can be created in the EGI cloud
-  providers to satisfy extremly intensive HW resource requirements.
+  providers to satisfy extremely intensive HW resource requirements.
   - Example:
     [VERCE platform](https://www.egi.eu/news/new-egi-use-case-a-close-look-at-the-amatrice-earthquake/),
     [The Genetics of Salmonella Infections](https://www.egi.eu/article/the-genetics-of-salmonella-infections/),

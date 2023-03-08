@@ -73,7 +73,7 @@ with:
     - [Issues aka alarms](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=1493)
     - [Tickets](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=1967)
     - [Notepads](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=2232)
-    - [Handover](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=2475)
+    - [hand over](https://www.youtube.com/watch?feature=player_detailpage&v=pJsCx5sj9Uc#t=2475)
   - Webinar Presentation
     - [Slides](https://documents.egi.eu/public/RetrieveFile?docid=301&version=7&filename=ROD-webinar.pdf)
 - [ROD FAQ](./faq)

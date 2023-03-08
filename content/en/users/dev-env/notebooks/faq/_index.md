@@ -6,7 +6,7 @@ type: docs
 aliases:
   - /users/notebooks/faq
 description: >
-  Most frequent questions asled about EGI Notebooks
+  Most frequent questions asked about EGI Notebooks
 ---
 
 ## How do I install library _X_?

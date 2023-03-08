@@ -97,7 +97,7 @@ auth:
 To simplify the configuration and to add refresh capabilities to the
 credentials, we have created a new
 [EGI Check-in authenticator](https://github.com/enolfc/oauthenticator) that can
-be configued as follows:
+be configured as follows:
 
 ```yaml
 auth:

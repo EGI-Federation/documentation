@@ -15,7 +15,7 @@ For reference, the following shortcodes are available:
 - [Hugo's shortcodes](https://gohugo.io/content-management/shortcodes/)
 - [Docsy theme shortcodes](https://www.docsy.dev/docs/adding-content/shortcodes/)
 
-## Highighted paragraphs
+## Highlighted paragraphs
 
 This is achieved using
 [Docsy shortcodes](https://www.docsy.dev/docs/adding-content/shortcodes/#shortcode-helpers).
@@ -63,8 +63,8 @@ Will render as:
 The code or instructions should be surrounded with three backticks, followed by
 an optional highlighting type parameter.
 
-The supported languages are dependant on the syntax highlighter, which depends
-itself on the mardkown parser.
+The supported languages are dependent on the syntax highlighter, which depends
+itself on the Markdown parser.
 
 {{% alert title="Note" color="info" %}} [Hugo](https://gohugo.io/) uses the
 [goldmark parser](https://github.com/yuin/goldmark), which relies on
@@ -174,7 +174,7 @@ func main() {
 ## Content with multiple variants
 
 When you need to include multiple variants of the same content, other than code
-snippets in multiple programing languages, you can use the follwing shortcode:
+snippets in multiple programming languages, you can use the following shortcode:
 
 ````go-html-template
 {{</* tabpanex */>}}

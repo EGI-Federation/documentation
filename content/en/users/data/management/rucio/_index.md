@@ -28,13 +28,13 @@ cost.
 
 ## Requirements to consider to use Rucio
 
-For Rucio to manage your data in this setup, Rucio will need X509 certificate
+For Rucio to manage your data in this setup, Rucio will need X.509 certificate
 access, or soon, through
 [EGI Check-in](../../../../providers/check-in/_index.md) to:
 
-- Your experiments Storage Element that is X509 capable
-- Your experiments Tape Archive that is X509 capable
-- Your experiments Voms server information to check Users credentials against
+- Your experiments Storage Element that is X.509 capable
+- Your experiments Tape Archive that is X.509 capable
+- Your experiments VOMS server information to check Users credentials against
 
 Rucio is a system that sits on top of already established storage elements to
 unify users access for data management, and retrieval. Rucio consists of a
@@ -52,23 +52,23 @@ Rucio will fill for your experiment.
 
 A simple use case for Rucio is to manage data between 'hot' storage, made of
 HDDs or SSD, and 'cold' storage made up of tape. When your experiment generates
-data that data will be accessed much more than older data as your collegues work
+data that data will be accessed much more than older data as your colleagues work
 with the data. Within Rucio the data will be registered to be on the 'hot' and
-'cold' storages. This ensures the integrity of the data by providing multiple
+'cold' storage. This ensures the integrity of the data by providing multiple
 copies of the data, one on the slower tape archive, and one copy on the more
 easy to access HDDs and SSDs. Then as the usage of this data declines, the data
 on the 'hot' storage can be removed to make way for newer data that is more
 frequently accessed. Should the archived data be requested again Rucio can stage
-the data from tape back to disk makking it available for users.
+the data from tape back to disk making it available for users.
 
 ### Management of data between sites for jobs
 
 Another useful use case for Rucio is to manage the data between different sites
 within your experiment. This can provide users with better access to the data
 that they want to work on. Another option is to have Rucio integrated with your
-workflow management software (PanDA and DiRAC both have integrated with Rucio),
+workflow management software (Panda and DIRAC both have integrated with Rucio),
 so data can be moved to sites as job slots are available, streamlining the
-dataflow for the user.
+data flow for the user.
 
 ## Official Rucio Pages
 
