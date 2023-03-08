@@ -7,7 +7,7 @@ description: >
   Content (software) distribution in the EGI infrastructure
 ---
 
-This page is about the CVMFS service operated for EGI by RAL.
+This page documents usage of the CVMFS service operated for EGI by RAL.
 
 ## Overview
 
@@ -16,7 +16,7 @@ software distribution service. It was developed to assist High Energy Physics
 collaborations to deploy software on the worldwide distributed computing
 infrastructure used to run data processing applications. CVMFS is implemented as
 a POSIX read-only file system in user space. Files and directories are hosted on
-standard web servers and mounted in the universal namespace /cvmfs. CernVM-FS
+standard web servers and mounted in the universal namespace `/cvmfs`. CernVM-FS
 uses outgoing HTTP connections only, thereby it avoids most of the firewall
 issues of other network file systems. It transfers data and metadata on demand
 and verifies data integrity by cryptographic hashes. CVMFS is actively used by
@@ -55,14 +55,14 @@ All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 
 ## Distributing new content
 
-To login to the service, just use `ssh`:  
+To login to the service, just use `ssh`:
 
 ```shell
-$  ssh cvmfs-upload01.gridpp.rl.ac.uk
+$ ssh cvmfs-upload01.gridpp.rl.ac.uk
 ```
 
-If you are the Content Manager for more than one repository, you would need to
-specify explicitly which account you want to login to. This account is built as `reponame+"sgm"`.
+If you are the Content Manager for more than one repository, you would need to specify
+explicitly which account you want to login to. This account is built as `reponame+"sgm"`.
 For example, for repository `dirac.egi.eu`, UNIX account is `diracsgm`.
 
 ```shell
@@ -77,24 +77,25 @@ To copy data:
 $ scp source_file.txt diracsgm@cvmfs-upload01.gridpp.rl.ac.uk:destination_folder/
 ```
 
-When running the ssh/scp commands, a message like this is displayed:
+When running the `ssh` or `scp` commands, a message like this is displayed:
 
 ```shell
-$ ssh gridppsgm@cvmfs-upload01.gridpp.rl.ac.uk
+# Replace with the proper username
+$ ssh diracsgm@cvmfs-upload01.gridpp.rl.ac.uk
 Authenticate at
 -----------------
 [https://aai.egi.eu/device?user_code=AAAAA-BBBBB](https://aai.egi.eu/device?user_code=AAAAA-BBBBB)
 -----------------
-Hit enter when you have finished authenticating  
-```  
+Hit enter when you have finished authenticating
+```
 
-Copy and paste the URL into a browser, and follow the instructions to authenticate yourself
-using your home institution Identity Management Service.  
-  
+Copy and paste the URL into a browser, and follow the instructions to authenticate
+yourself using your home institution Identity Management Service.
+
 After login, you will find a single directory in the home directory:
 
 ```shell
-[myreposgm@cvmfs-uploader02 ~]$ ls
+$ ls
 cvmfs_repo
 ```
 
