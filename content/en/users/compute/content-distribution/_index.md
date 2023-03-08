@@ -55,7 +55,7 @@ All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 
 ## Distributing new content
 
-To login to the service, just `ssh`:  
+To login to the service, just use `ssh`:  
 
 ```shell
 $  ssh cvmfs-upload01.gridpp.rl.ac.uk
