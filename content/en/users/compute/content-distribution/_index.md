@@ -73,7 +73,8 @@ $ ssh diracsgm@cvmfs-upload01.gridpp.rl.ac.uk
 To copy data:
 
 ```shell
-$ scp source_file.txt cvmfs-upload01.gridpp.rl.ac.uk:destination_folder/
+# Replace with the proper username
+$ scp source_file.txt diracsgm@cvmfs-upload01.gridpp.rl.ac.uk:destination_folder/
 ```
 
 When running the ssh/scp commands, a message like this is displayed:
