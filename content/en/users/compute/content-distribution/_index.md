@@ -62,7 +62,7 @@ $  ssh cvmfs-upload01.gridpp.rl.ac.uk
 ```
 
 If you are the Content Manager for more than one repository, you would need to
-specify explicitly which account you want to login to. This account is built as `\<reponame\>+"sgm"`.
+specify explicitly which account you want to login to. This account is built as `reponame+"sgm"`.
 For example, for repository **dirac.egi.eu**, UNIX account is **diracsgm**.
 
 ```shell
