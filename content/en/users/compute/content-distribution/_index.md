@@ -62,7 +62,7 @@ $  ssh @cvmfs-upload01.gridpp.rl.ac.uk
 ```
 
 If you are the Content Manager for more than one repository, you would need to
-specify explicitly which account you want to login to. This account is built as `<reponame>+"sgm"`. 
+specify explicitly which account you want to login to. This account is built as `\<reponame\>+"sgm"`.
 For example, for repository **dirac.egi.eu**, UNIX account is **diracsgm**.
 
 ```shell
@@ -76,7 +76,7 @@ $ scp \<source\> cvmfs-upload01.gridpp.rl.ac.uk:<destination>
 ```
 
 When running the ssh/scp commands, a message like this is displayed:
- 
+
 ```shell
 [neo@matrix ~]# ssh gridppsgm@cvmfs-upload01.gridpp.rl.ac.uk
 Authenticate at
@@ -86,7 +86,8 @@ Authenticate at
 Hit enter when you have finished authenticating  
 ```  
 
-Copy and paste the URL into a browser, and follow the instructions to authenticate yourself using your home institution Identity Management Service.  
+Copy and paste the URL into a browser, and follow the instructions to authenticate yourself
+using your home institution Identity Management Service.  
   
 After login, you will find a single directory in the home directory:
 
