@@ -313,6 +313,73 @@ $ git rebase upstream/main
 In case some files have been changed on both sides you will have to merge
 the conflicts manually.
 
+## Running checks from GitHub actions locally
+
+The repository leverages [GitHub Actions](https://github.com/features/actions) to do
+automatic checks.
+
+The two main checks are:
+- File lint using [Super-Linter](https://github.com/marketplace/actions/super-linter)
+  that includes many linters. Markdown files are processed using
+[markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli#readme).
+- [Markdown link check](https://github.com/marketplace/actions/markdown-link-check),
+  relying on [markdown-link-check](https://github.com/tcort/markdown-link-check/).
+- Spelling using [Check Spelling](https://github.com/marketplace/actions/check-spelling).
+
+It's possible to run those linters locally, it can be useful to test and debug why they
+are reporting errors, and test without waiting on the automatic checks.
+
+> To save time, we recommend running the specific you are interested in, but as documented
+> later for Check-Spelling, you can use `act` to run the real GitHub actions workflows.
+
+### Running markdownlint locally
+
+[markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli#readme) can be
+installed locally on some platforms, in that case it can be used like this:
+
+```shell
+$ markdownlint -c .github/linters/.markdownlint.json \
+    content/en/about/_index.md
+```
+
+If you cannot or don't want to install it locally, you can rely on using
+[Docker](https://www.docker.com/) and [GitHub Packages](https://github.com/features/packages):
+
+```shell
+$ docker run -v $PWD:/workdir:ro --rm -i ghcr.io/igorshubovych/markdownlint-cli:latest \
+    --config .github/linters/.markdownlint.json \
+    content/en/about/_index.md
+```
+
+### Running markdown-link-check locally
+
+You can use [Docker](https://www.docker.com/) and
+[GitHub Packages](https://github.com/features/packages):
+
+```shell
+$ docker run -v $PWD:/tmp:ro --rm -i ghcr.io/tcort/markdown-link-check:stable \
+    --config /tmp/.github/linters/mlc_config.json \
+    /tmp/content/en/about/_index.md
+```
+
+### Running Check-Spelling locally
+
+For spelling, it may be easier to rely on a spell checker integrated in your content editor.
+
+Nevertheless, if you are adventurous, you can use [act](https://github.com/nektos/act),
+that will use docker to run the checks locally.
+
+> While the spell check should work, other part of the job interacting with GitHub will
+> likely fail, like when errors are identified, so be sure to properly scan through the
+> command output.
+
+```shell
+# List available jobs for a given event
+$ act pull_request_target -l
+# Run the spelling job
+$ act -j spelling
+```
+
 ## Clone PR to edit/test/review locally
 
 It's possible to clone a Pull Request to a local branch to test it locally. It's
