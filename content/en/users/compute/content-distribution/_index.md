@@ -5,6 +5,8 @@ type: docs
 weight: 70
 description: >
   Software distribution in the EGI infrastructure
+aliases:
+  - /users/compute/content-distribution
 ---
 
 This page documents usage the CernVM-FS (CVMFS) service operated for EGI by UKRI-STFC.
