@@ -242,7 +242,7 @@ for details. See below two code samples for using them&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">ex_force_auth_version&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;2.0_voms&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: Authentication and Authorisation</title><link>/users/compute/cloud-compute/auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/auth/</guid><description>
 &lt;h2 id="oidc-auth-using-check-in">Authentication&lt;/h2>
-&lt;p>&lt;a href="http://openid.net/connect/">OpenID Connect&lt;/a> is the main authentication protocol
+&lt;p>&lt;a href="http://openid.net/connect/">OpenID Connect&lt;/a> (OIDC) is the main authentication protocol
 used on the EGI Cloud. It replaces the legacy VOMS-based authentication for all
 OpenStack providers.&lt;/p>
 &lt;p>Authentication to web based services (like the AppDB) will redirect you to the
@@ -316,15 +316,24 @@ you can easily do so with the EGI Check-in Token Portal. You can access the
 &lt;/ul>
 &lt;div class="alert alert-danger" role="alert">
 &lt;h4 class="alert-heading">Refresh tokens&lt;/h4>
-Refresh tokens should be treated with care! This is a secret that can be used to
-impersonate you in the infrastructure. It is recommended not to store them in
+&lt;code>Refresh tokens&lt;/code> MUST be treated with care! This is a secret that can be used to
+impersonate you in the infrastructure. The life time of &lt;code>refresh tokens&lt;/code> is up to one year!
+It is recommended not to store them in
 plain text.
 &lt;/div>
-&lt;p>Alternatively, you can use the
+&lt;p>There are more secure alternatives for handling &lt;code>refresh tokens&lt;/code>:&lt;/p>
+&lt;ol>
+&lt;li>From your personal computer: use
 &lt;a href="https://indigo-dc.gitbook.io/oidc-agent/user/oidc-gen/provider/egi">oidc-agent&lt;/a>
-tool that is able to manage your tokens locally, or the
-&lt;a href="https://fedcloudclient.fedcloud.eu/">fedcloud&lt;/a> client executed inside
-&lt;a href="../../../dev-env/notebooks/integration/#fedcloud-client">EGI Notebooks&lt;/a>.&lt;/p>
+It is a tool that manages your tokens locally in a secure way &lt;code>refresh tokens&lt;/code> are even encrypted in RAM).&lt;/li>
+&lt;li>&lt;a href="https://fedcloudclient.fedcloud.eu/">fedcloud&lt;/a> client executed inside
+&lt;a href="../../../dev-env/notebooks/integration/#fedcloud-client">EGI Notebooks&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="https://mytoken.data.kit.edu">mytoken&lt;/a> Securely stores refresh tokens
+on the mytoken-server. Users obtain &lt;code>mytokens&lt;/code>, which can be used to
+obtain &lt;code>access tokens&lt;/code>. &lt;code>mytokens&lt;/code> are more secure, because they can
+carry &lt;code>capabilities&lt;/code> and &lt;code>restrictions&lt;/code> to fine tune their power for
+specific use cases. Details here: &lt;a href="https://mytoken-docs.data.kit.edu">https://mytoken-docs.data.kit.edu&lt;/a>&lt;/li>
+&lt;/ol>
 &lt;h3 id="discovering-projects-in-keystone">Discovering projects in Keystone&lt;/h3>
 &lt;p>The &lt;em>access token&lt;/em> will provide you access to a cloud provider, but you may have
 access to several different projects within that provider (a project can be
@@ -353,59 +362,9 @@ commands for performing actual operations in the provider:&lt;/p>
 the following command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack --site &amp;lt;NAME_OF_SITE&amp;gt; --vo &amp;lt;NAME_OF_VO&amp;gt; &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> token issue -c id -f value&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="legacy-x509-aai">Legacy X.509 AAI&lt;/h2>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-OpenID Connect is the preferred federated identity technology on EGI Cloud. Use
-of X.509 certificates should be limited to legacy applications.
-&lt;/div>
-&lt;p>&lt;a href="https://italiangrid.github.io/voms/index.html">VOMS&lt;/a> uses X.509 proxies
-extended with VO information for authentication and authorisation on the
-providers. You can learn about X.509 certificates and VOMS in the
-&lt;a href="../../../aai/check-in/vos/voms">Check-in documentation&lt;/a>.&lt;/p>
-&lt;h3 id="voms-configuration">VOMS configuration&lt;/h3>
-&lt;p>Valid configuration for &lt;code>fedcloud.egi.eu&lt;/code> is available on the
-&lt;a href="https://appdb.egi.eu/store/vappliance/egi.fedcloud.clients">FedCloud client VM&lt;/a>
-as generated by the
-&lt;a href="https://raw.githubusercontent.com/EGI-FCTF/fedcloud-userinterface/master/fedcloud-ui.sh">fedcloud-ui installation script&lt;/a>.&lt;/p>
-&lt;p>VOMS client expects your certificate and private key to be available at
-&lt;code>$HOME/.globus/usercert.pem&lt;/code> and &lt;code>$HOME/.globus/userkey.pem&lt;/code> respectively.&lt;/p>
-&lt;h3 id="access-the-providers">Access the providers&lt;/h3>
-&lt;p>VOMS authentication differs from one provider to another depending on the
-technology used. There are 3 different cases handled automatically by the
-&lt;code>rOCCI-cli&lt;/code>. For accessing native OpenStack sites there are two different
-plugins available for Keystone that are installed with a single library:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pip install openstack-voms-auth-type
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For Keystone-VOMS based installations (Keystone URL ending on &lt;code>/v2.0&lt;/code>), just
-define the location of your proxy and &lt;code>v2voms&lt;/code> as authorisation plugin:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>openstack --os-auth-url https://&amp;lt;keystone-url&amp;gt;/v2.0 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --os-auth-type v2voms --os-x509-user-proxy /tmp/x509up_u1000 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> token issue
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> expires &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2019-02-04T12:41:25+0000 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> gAAAAABcWCTlMoz6Jx9IHF5hj-ZOn-CI17CfX81FTn7yy0ZJ54jkza7QNoQTRU5-KRJkphmes55bcoSaaBRnE3g2clFgY-MR2GVUJZRkCmj9TXsLZ-hVBWXQNENiX9XxUwnavj7KqDn4b9B1K22ijTrjdDVkcdpvMw &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> user_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 9310054c2b6f4fd28789ee08c2351221 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>For those Keystone installations supporting only &lt;code>v3&lt;/code>, specify &lt;code>v3voms&lt;/code> as
-authorisation plugin, &lt;code>egi.eu&lt;/code> as identity provider, &lt;code>mapped&lt;/code> as protocol, and
-the location of your proxy:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>openstack --os-auth-url https://&amp;lt;keystone url&amp;gt;/v3 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --os-auth-type v3voms --os-x509-user-proxy /tmp/x509up_u1000 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --os-identity-provider egi.eu --os-protocol mapped &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> token issue
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> expires &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2019-02-04T12:45:32+0000 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> gAAAAABcWCXcXGUDpHUYnI1IDLW3MnEpDzivw_OPaau8DQDYxA7gK9XsmOqZh1pL5Uqqs8aM-tHowdJQnJURww2-UhmQVqk5PxbjdnvLeqtXPYURCLaSsbmhkQg6kB311c_ZA1jfgdT-pG6fZz3toeH66SEFX-H0bThSUy0KFLhcZVkrZIbYgTsAOIzFkTfLjOgTw_tNChS8 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> user_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 50fa8516b2554daeae652619ba9ebf96 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------+----------------------------------------------------------------------------------------------------------------------------------------
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length --></description></item><item><title>Users: Virtual Machine Images</title><link>/users/compute/cloud-compute/images/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/images/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-ssh-oidc">Using ssh-oidc&lt;/h3>
+&lt;p>&lt;a href="https://github.com/EOSC-synergy/ssh-oidc">ssh-oidc&lt;/a> is a set of tools that
+allows ssh with OIDC.&lt;/p></description></item><item><title>Users: Virtual Machine Images</title><link>/users/compute/cloud-compute/images/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/images/</guid><description>
 &lt;p>Users of the EGI Cloud create Virtual Machines (VMs) on the providers. Those VMs
 are started from images: templates for the root volume of the running instances,
 i.e. operating system and applications available initially on a VM. The AppDB

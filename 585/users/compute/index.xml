@@ -264,7 +264,8 @@ software used to process experiment data.&lt;/p>
 In the email, include the following information:&lt;/p>
 &lt;ul>
 &lt;li>Name of the VO or CVMFS repository.&lt;/li>
-&lt;li>Your &lt;code>voperson_id&lt;/code> from EGI Check-in.&lt;/li>
+&lt;li>Your &lt;a href="../../../providers/check-in/sp/#1-community-user-identifier">voperson_id&lt;/a>
+from EGI Check-in.&lt;/li>
 &lt;/ul>
 &lt;h3 id="mailing-list">Mailing list&lt;/h3>
 &lt;p>All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
