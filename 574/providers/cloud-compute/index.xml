@@ -2,7 +2,7 @@
 &lt;p>IaaS providers are very welcome to join the EGI Federated Cloud as a Resource
 Centres (RC) and joining the Federated Cloud Task Force to contribute to the
 design, creation and implementation of the federation.&lt;/p>
-&lt;p>Resource Centers are free to use any Cloud Management Framework (OpenStack,
+&lt;p>Resource Centres are free to use any Cloud Management Framework (OpenStack,
 etc...) as long as they are able to integrate with the EGI Federation
 components as described in the
 &lt;a href="../../../users/getting-started/architecture">Federated Cloud Architecture&lt;/a>. At
@@ -10,7 +10,7 @@ the moment this compliance is guaranteed for OpenStack.&lt;/p>
 &lt;p>The general minimal requirements are:&lt;/p>
 &lt;ul>
 &lt;li>Hardware requirements greatly depend on your cloud infrastructure, EGI
-components in general do lightweigth operations by interacting with your
+components in general do lightweight operations by interacting with your
 services APIs.
 &lt;ul>
 &lt;li>&lt;code>cloudkeeper&lt;/code> requires enough disk space to download and convert images
@@ -57,7 +57,7 @@ outside your site:&lt;/p>
 &lt;a href="https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution">CMD (Cloud Middleware Distribution)&lt;/a>
 These docker containers come pre-packaged and ready to use in the EGI FedCloud
 Appliance so you do not need to install any extra components on your site but
-just run a VM and configure it approprietely to interact with your services.&lt;/p>
+just run a VM and configure it appropriately to interact with your services.&lt;/p>
 &lt;p>The integration is performed by a set of EGI components that interact with the
 OpenStack services APIs:&lt;/p>
 &lt;p>&lt;img src="openstacksite.png" alt="image">&lt;/p>

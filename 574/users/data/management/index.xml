@@ -14,7 +14,7 @@ available at which supporting provider.&lt;/p>
 &lt;li>Policy based data access&lt;/li>
 &lt;li>Replication of data across providers for resiliency and availability purposes&lt;/li>
 &lt;li>Integration with &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> allows access using
-comunity credentials, including from other EGI services and components&lt;/li>
+community credentials, including from other EGI services and components&lt;/li>
 &lt;li>File catalog to track replication of data and manage logical and physical
 files&lt;/li>
 &lt;/ul>
@@ -44,7 +44,7 @@ a sharing service&lt;/li>
 &lt;li>Users need to access data locally and from compute resources&lt;/li>
 &lt;/ul>
 &lt;h2 id="components-and-concepts">Components and concepts&lt;/h2>
-&lt;p>The following concepts (components) will help you undesrtand how EGI DataHub
+&lt;p>The following concepts (components) will help you understand how EGI DataHub
 works.&lt;/p>
 &lt;h3 id="space">Space&lt;/h3>
 &lt;p>Virtual volume where users will organize their data. A space is supported by one
@@ -93,7 +93,7 @@ It's also possible to create indexes and query them.&lt;/p>
 &lt;p>&lt;a href="https://www.egi.eu/service/data-transfer/">EGI Data Transfer&lt;/a>
 allows scientists to &lt;strong>move any type of data files asynchronously from one
 storage to another&lt;/strong>. The service includes dedicated interfaces to display statistics
-of on-going transfers and manage storage resource parameters.&lt;/p>
+of ongoing transfers and manage storage resource parameters.&lt;/p>
 &lt;p>EGI Data Transfer is ideal to move large amounts of files or very large
 files as the service has mechanisms to verify checksums and ensure automatic
 retry in case of failures.&lt;/p>
@@ -103,7 +103,7 @@ retry in case of failures.&lt;/p>
 Python bindings, WebFTS, Web Monitoring).&lt;/li>
 &lt;li>&lt;strong>Reliability&lt;/strong>. Checksums are automatically calculated for each transfer and
 failed transfers are retried.&lt;/li>
-&lt;li>&lt;strong>Flexibility&lt;/strong>. Multi-protocol support (WebDAV/HTTTPS, GridFTP, xrootd, SRM, S3, GCloud).&lt;/li>
+&lt;li>&lt;strong>Flexibility&lt;/strong>. Multi-protocol support (WebDAV/HTTPS, GridFTP, xrootd, SRM, S3, GCloud).&lt;/li>
 &lt;li>&lt;strong>Intelligence&lt;/strong>. Parallel transfer optimization ensures users get the most from network
 without burning the storages. Transfers can be classified by &lt;em>priority&lt;/em> and &lt;em>activity&lt;/em>.&lt;/li>
 &lt;/ul>
@@ -122,7 +122,7 @@ FTS3 service, developed at CERN.
 &lt;dl>
 &lt;dt>FTS3 Server&lt;/dt>
 &lt;dd>
-&lt;p>The service is responsible of the asynchronous execution of the file transfer,
+&lt;p>The service is responsible for the asynchronous execution of the file transfer,
 checksumming and retries in case of errors&lt;/p>
 &lt;/dd>
 &lt;dt>FTS3 REST&lt;/dt>
@@ -179,13 +179,13 @@ Petabytes. The fact that the underlying Rucio infrastructure is managed by STFC,
 allows communities to easily start using and/or test Rucio with little setup
 cost.&lt;/p>
 &lt;h2 id="requirements-to-consider-to-use-rucio">Requirements to consider to use Rucio&lt;/h2>
-&lt;p>For Rucio to manage your data in this setup, Rucio will need X509 certificate
+&lt;p>For Rucio to manage your data in this setup, Rucio will need X.509 certificate
 access, or soon, through
 &lt;a href="../../../../providers/check-in/_index.md">EGI Check-in&lt;/a> to:&lt;/p>
 &lt;ul>
-&lt;li>Your experiments Storage Element that is X509 capable&lt;/li>
-&lt;li>Your experiments Tape Archive that is X509 capable&lt;/li>
-&lt;li>Your experiments Voms server information to check Users credentials against&lt;/li>
+&lt;li>Your experiments Storage Element that is X.509 capable&lt;/li>
+&lt;li>Your experiments Tape Archive that is X.509 capable&lt;/li>
+&lt;li>Your experiments VOMS server information to check Users credentials against&lt;/li>
 &lt;/ul>
 &lt;p>Rucio is a system that sits on top of already established storage elements to
 unify users access for data management, and retrieval. Rucio consists of a
@@ -199,21 +199,21 @@ Rucio will fill for your experiment.&lt;/p>
 &lt;h3 id="management-of-data-for-archive-when-no-longer-used-actively">Management of data for archive when no longer used actively&lt;/h3>
 &lt;p>A simple use case for Rucio is to manage data between &amp;lsquo;hot&amp;rsquo; storage, made of
 HDDs or SSD, and &amp;lsquo;cold&amp;rsquo; storage made up of tape. When your experiment generates
-data that data will be accessed much more than older data as your collegues work
+data that data will be accessed much more than older data as your colleagues work
 with the data. Within Rucio the data will be registered to be on the &amp;lsquo;hot&amp;rsquo; and
-&amp;lsquo;cold&amp;rsquo; storages. This ensures the integrity of the data by providing multiple
+&amp;lsquo;cold&amp;rsquo; storage. This ensures the integrity of the data by providing multiple
 copies of the data, one on the slower tape archive, and one copy on the more
 easy to access HDDs and SSDs. Then as the usage of this data declines, the data
 on the &amp;lsquo;hot&amp;rsquo; storage can be removed to make way for newer data that is more
 frequently accessed. Should the archived data be requested again Rucio can stage
-the data from tape back to disk makking it available for users.&lt;/p>
+the data from tape back to disk making it available for users.&lt;/p>
 &lt;h3 id="management-of-data-between-sites-for-jobs">Management of data between sites for jobs&lt;/h3>
 &lt;p>Another useful use case for Rucio is to manage the data between different sites
 within your experiment. This can provide users with better access to the data
 that they want to work on. Another option is to have Rucio integrated with your
-workflow management software (PanDA and DiRAC both have integrated with Rucio),
+workflow management software (Panda and DIRAC both have integrated with Rucio),
 so data can be moved to sites as job slots are available, streamlining the
-dataflow for the user.&lt;/p>
+data flow for the user.&lt;/p>
 &lt;h2 id="official-rucio-pages">Official Rucio Pages&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://rucio.cern.ch/">Rucio Homepage&lt;/a>&lt;/li>

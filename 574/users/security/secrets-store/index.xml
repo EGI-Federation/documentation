@@ -168,7 +168,7 @@ id="tabs-1-2" role="tabpanel" aria-labelled-by="tabs-1-2-tab">
 &lt;p>Listing all your secrets is very simple:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud secret list
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_app_secrets
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Using any of the keys (actually, their vaules) is straighforward too:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Using any of the keys (actually, their values) is straightforward too:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-2" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"
@@ -413,7 +413,7 @@ blank space is required after the &lt;code>:&lt;/code> separating keys and value
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 There is a difference between
-&lt;code>cert=@hostcert.pem&lt;/code> for reading the content of the file &lt;em>horstcert.pem&lt;/em> as
+&lt;code>cert=@hostcert.pem&lt;/code> for reading the content of the file &lt;em>hostcert.pem&lt;/em> as
 the value for the key &lt;code>cert&lt;/code>, and &lt;code>@my_secrets.yaml&lt;/code> for reading the whole
 secret object with all key:value pairs from the YAML file.
 &lt;/div>
@@ -442,7 +442,7 @@ the passphrase:&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 The encryption/decryption is done with
-the standard Python crytography library. Security experts are invited to review
+the standard Python cryptography library. Security experts are invited to review
 the code (available on
 &lt;a href="https://github.com/tdviet/fedcloudclient/blob/master/fedcloudclient/secret.py#L159">GitHub&lt;/a>)
 and provide feedback and suggestions for improvements.

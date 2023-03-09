@@ -27,7 +27,7 @@ point for new block storage volumes.&lt;/li>
 &lt;/ul>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
-Block storage volumes can can only be
+Block storage volumes can only be
 mounted to VMs running at the same provider where the block storage is located.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
@@ -733,7 +733,7 @@ production stage.
 &lt;a href="https://dmc-docs.web.cern.ch/dmc-docs/gfal2/gfal2.html">gfal2&lt;/a>, which is
 available for installation both on RHEL and Debian compatible systems.&lt;/p>
 &lt;p>In particular, &lt;code>gfal2&lt;/code> provides an abstraction layer on top of several storage
-protocols (XRootD, WebDAV, SRM, gsiftp, etc), offerint a convenient API that can
+protocols (XRootD, WebDAV, SRM, gsiftp, etc), offering a convenient API that can
 be used over different protocols.&lt;/p>
 &lt;p>The &lt;code>gfal2&lt;/code> CLI can be installed as follows (for RHEL compatible systems):&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ yum install gfal2-util gfal2-all
@@ -961,7 +961,7 @@ to set them once and reuse them with each command invocation.&lt;/p>
 &lt;h4 id="create-new-storage-container">Create new storage container&lt;/h4>
 &lt;p>To
 &lt;a href="https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html#container-create">create a new storage container&lt;/a>
-named &lt;code>test-egi&lt;/code>, use the follwoing FedCloud command:&lt;/p>
+named &lt;code>test-egi&lt;/code>, use the following FedCloud command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud openstack container create test-egi
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------+-----------+------------------------------------------------------+
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> account &lt;span style="color:#000;font-weight:bold">|&lt;/span> container &lt;span style="color:#000;font-weight:bold">|&lt;/span> x-trans-id &lt;span style="color:#000;font-weight:bold">|&lt;/span>
@@ -1008,7 +1008,7 @@ to a file use the FedCloud command below:&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 The object can be saved into a file named
-differently than the object itselft, by using the &lt;code>--filename&lt;/code> command flag.
+differently than the object itself, by using the &lt;code>--filename&lt;/code> command flag.
 &lt;/div>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
@@ -1156,7 +1156,7 @@ The Davix Client does not support access
 to public buckets
 &lt;/div>
 &lt;h4 id="access-via-python">Access via Python&lt;/h4>
-&lt;p>The possibility to access progammatically via S3 object storage is also quite
+&lt;p>The possibility to access programmatically via S3 object storage is also quite
 important, for instance in the case of interactive computing via EGI Notebooks.&lt;/p>
 &lt;p>When using Python for instance, &lt;a href="https://s3fs.readthedocs.io/en/latest/">S3Fs&lt;/a>
 is a practical Pythonic file interface to S3.&lt;/p>
