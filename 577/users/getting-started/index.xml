@@ -56,7 +56,7 @@ users cannot be considered part of the EGI IaaS Cloud services.
 cloud providers at three different layers:&lt;/p>
 &lt;ul>
 &lt;li>Directly using the IaaS APIs or &lt;a href="../cli">CLIs&lt;/a> to manage individual resources.
-This option is recommended for pre-existing use cases with requirements on
+This option is recommended for preexisting use cases with requirements on
 specific APIs.&lt;/li>
 &lt;li>Using federated access tools that allow managing the complexity of dealing
 with different providers in a uniform way. These tools include:
@@ -99,7 +99,7 @@ providing a real-time view of the actual capabilities of federation participants
 used to catalogue the static information of the production infrastructure
 topology (e.g. the list of resource centres and their endpoints).&lt;/p>
 &lt;p>To allow resource providers to expose IaaS federation endpoints, the following
-service types are avialable:&lt;/p>
+service types are available:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>org.openstack.horizon&lt;/code>&lt;/li>
 &lt;li>&lt;code>org.openstack.nova&lt;/code>&lt;/li>
@@ -179,7 +179,7 @@ below:&lt;/p>
 &lt;td>CloudComputeService (NEW)&lt;/td>
 &lt;td>&lt;code>varchar(255)&lt;/code>&lt;/td>
 &lt;td>&lt;/td>
-&lt;td>Name identifying cloud resource within the site. Allows multiple cloud resources within a sitei.e. a level of granularity.&lt;/td>
+&lt;td>Name identifying cloud resource within the site. Allows multiple cloud resources within a site, i.e. a level of granularity.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>MachineName&lt;/td>
@@ -497,7 +497,7 @@ of the same fields as the Cloud Usage Record. A table defining &lt;em>Draft 4 â€
 &lt;td>ActiveDuration&lt;/td>
 &lt;td>&lt;code>int(11)&lt;/code>&lt;/td>
 &lt;td>Yes&lt;/td>
-&lt;td>Actual usage duration of the Accelerator in seconds for the given month/year (in case some systems could report actual usage). At the moment, ActiveDuration will be the same as the AvailableDuration due to the limitation of currently used technologies (impossible to get ACCELERATOR utilization from outside of the VM, no ACCELERATOR hot-plug into running VM) but it may change in near future so it is good to have the fields separately. Set to AvailableDuration if AcitveDuration is omitted from the record&lt;/td>
+&lt;td>Actual usage duration of the Accelerator in seconds for the given month/year (in case some systems could report actual usage). At the moment, ActiveDuration will be the same as the AvailableDuration due to the limitation of currently used technologies (impossible to get ACCELERATOR utilization from outside of the VM, no ACCELERATOR hot-plug into running VM) but it may change in near future so it is good to have the fields separately. Set to AvailableDuration if ActiveDuration is omitted from the record&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -547,7 +547,7 @@ received from the Resource Providers are sent to the EGI Accounting Portal. The
 &lt;a href="http://accounting.egi.eu/">Accounting portal&lt;/a> also runs SSM to receive these
 summaries and provides a web view of the accounting data received from the
 Resource Providers.&lt;/p>
-&lt;p>&lt;a href="https://github.com/IFCA/caso">cASO&lt;/a> delivers an implmentation of the extrator
+&lt;p>&lt;a href="https://github.com/IFCA/caso">cASO&lt;/a> delivers an implementation of the extractor
 probes for OpenStack.&lt;/p>
 &lt;h3 id="monitoring">Monitoring&lt;/h3>
 &lt;p>The endpoints published in the
@@ -562,8 +562,8 @@ publishing data to the Accounting repository&lt;/li>
 &lt;code>org.nagios.CloudBDII-Check&lt;/code>): Basic TCP checks for services.&lt;/li>
 &lt;li>VM Marketplace probe (&lt;code>eu.egi.cloud.AppDB-Update&lt;/code>): gets a predetermined image
 list from AppDB and checks its update interval.&lt;/li>
-&lt;li>Perun probe (&lt;code>eu.egi.cloud.Perun-Check&lt;/code>): connects to the server and checks
-the status by using internal Perun interface&lt;/li>
+&lt;li>PERUN probe (&lt;code>eu.egi.cloud.Perun-Check&lt;/code>): connects to the server and checks
+the status by using internal PERUN interface.&lt;/li>
 &lt;/ul>
 &lt;h2 id="roadmap">Roadmap&lt;/h2>
 &lt;p>The TCB-Cloud board defines the roadmap for the technical evolution of the EGI
@@ -577,7 +577,7 @@ by a) minimizing the number of components used; b) contributing code to
 upstream distributions; and c) use only public APIs of the Cloud Management
 Frameworks.&lt;/li>
 &lt;/ul>
-&lt;p>Currently the EGI FedCloud TaskForce is focused on moving to a central
+&lt;p>Currently, the EGI FedCloud TaskForce is focused on moving to a central
 operations model, where providers only need to integrate their system with EGI
 Check-in but do not need to deploy and configure the different tools
 (accounting, discovery, VMI management, etc.) locally but delegate this to a
@@ -739,7 +739,7 @@ for installing EGI Core Trust Anchor certificates in production environments.
 &lt;h3 id="using-via-docker-container">Using via Docker container&lt;/h3>
 &lt;p>The FedCloud client can also be used without installation, by running it in a
 Docker container. In this case, the EGI Core Trust Anchor certificates are
-preinstalled.&lt;/p>
+pre-installed.&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active"

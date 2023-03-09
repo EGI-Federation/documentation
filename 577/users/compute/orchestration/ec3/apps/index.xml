@@ -30,7 +30,7 @@ live code, equations, visualizations and explanatory text.&lt;/li>
 &lt;/ul>
 &lt;h2 id="deploy-an-ecas-cluster-with-ec3">Deploy an ECAS cluster with EC3&lt;/h2>
 &lt;p>In the latest release of the EC3 platform a new Ansible receipt is available
-for researchers interested to deploy ECAS cluster on the EGI Infrastuctrure.
+for researchers interested to deploy ECAS cluster on the EGI Infrastructure.
 The next sections provide details on how to configure and deploy an ECAS cluster
 on EGI resources.&lt;/p>
 &lt;h3 id="configure-and-deploy-the-cluster">Configure and deploy the cluster&lt;/h3>
@@ -212,7 +212,7 @@ management page.&lt;/p>
 &lt;li>&lt;a href="https://ecaslab.dkrz.de/home.html">ECASLab DKRZ&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://ophidia.cmcc.it/">Ophidia&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/ECAS-Lab">GitHub: ECAS-Lab&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/OphidiaBigData/ansible-role-ophidia-cluster%3E">GitHub: ansible role Ophidia cluster&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/OphidiaBigData/ansible-role-ophidia-cluster">GitHub: Ansible role Ophidia cluster&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://www.grycap.upv.es/ec3">EC3&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://www.github.com/grycap/ec3">GitHub EC3&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Users: HTC</title><link>/users/compute/orchestration/ec3/apps/htc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/apps/htc/</guid><description>
@@ -226,7 +226,7 @@ Create a directory to store EC3 configuration and init it with the
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We will use the following templates:&lt;/p>
 &lt;ol>
 &lt;li>&lt;code>torque&lt;/code> (from ec3 default templates)&lt;/li>
-&lt;li>&lt;code>nfs&lt;/code> (from ec3 detault templates),&lt;/li>
+&lt;li>&lt;code>nfs&lt;/code> (from ec3 default templates),&lt;/li>
 &lt;li>&lt;code>ubuntu-1604&lt;/code> (user&amp;rsquo;s template),&lt;/li>
 &lt;li>&lt;code>cluster_configure&lt;/code> (user&amp;rsquo;s template)&lt;/li>
 &lt;/ol>

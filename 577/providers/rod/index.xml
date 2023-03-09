@@ -170,8 +170,8 @@ security related issues, ROD should also notify the
 &lt;p>ROD is also responsible for propagating actions from EGI Operations down to
 sites (this occurs rather infrequently, though).&lt;/p></description></item><item><title>Providers: Communication channels</title><link>/providers/rod/communication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/rod/communication/</guid><description>
 &lt;h2 id="rod-intra-team-communication">ROD intra-team communication&lt;/h2>
-&lt;p>At the end of a shift the current ROD team should prepare the handover for
-internal ROD matters. Each ROD can decide independently on what the handover
+&lt;p>At the end of a shift the current ROD team should prepare the hand over for
+internal ROD matters. Each ROD can decide independently on what the hand over
 should look like and how it should be passed on to the next team. The following
 list provides mere suggestions for what should be included:&lt;/p>
 &lt;ul>
@@ -196,7 +196,7 @@ Operations, site administrators, or other bodies to contact them directly.&lt;/p
 (AT) egi.eu&amp;rdquo;. Urgent matters should be communicated via a Helpdesk ticket
 assigned to the EGI Operations support unit to make tracking of the case
 possible.&lt;/p>
-&lt;p>There is also the handover section in the ROD dashboard which allows for EGI
+&lt;p>There is also the hand over section in the ROD dashboard which allows for EGI
 Operations team and RODs to intercommunicate.&lt;/p></description></item><item><title>Providers: Dealing with security incidents</title><link>/providers/rod/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/rod/security/</guid><description>
 &lt;h2 id="some-procedures-to-deal-with-security-events">Some procedures to deal with security events&lt;/h2>
 &lt;p>Sites facing or suspecting a security incident on their resources have to follow

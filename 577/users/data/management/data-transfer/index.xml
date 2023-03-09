@@ -52,7 +52,7 @@ if you did not do it before. You can do this at any state by clicking the
 completed and RED if something went wrong.&lt;/p>
 &lt;p>The transfers that are not completed have a &amp;ldquo;Cancel&amp;rdquo; button on the left of the
 &amp;ldquo;Resubmit&amp;rdquo; button. Clicking this button will cancel that transfer.&lt;/p>
-&lt;p>&lt;img src="webfts_monitor.png" alt="image">&lt;/p></description></item><item><title>Users: Data Tranfer Clients</title><link>/users/data/management/data-transfer/clients/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/data-transfer/clients/</guid><description>
+&lt;p>&lt;img src="webfts_monitor.png" alt="image">&lt;/p></description></item><item><title>Users: Data Transfer Clients</title><link>/users/data/management/data-transfer/clients/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/data-transfer/clients/</guid><description>
 &lt;!--
 // jscpd:ignore-start
 -->
@@ -104,7 +104,7 @@ server.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> takes precedence&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="example">Example&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-rest-whoami -s https://fts3-public.cern.ch:8446
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>User DN: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Manzi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>User DN: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VO: dteam
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VO id: 6b10f4e4-8fdc-5555-baa2-7d4850d4f406
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Delegation id: 9ab8068853808c6b
@@ -285,7 +285,7 @@ submissions. The bulk format is as follows:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> 7e02b4fa-d568-11ea-9c80-02163e018681
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Request ID: 7e02b4fa-d568-11ea-9c80-02163e018681
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Status: FAILED
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Client DN: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Andrea Manzi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Client DN: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Reason: One or more files failed. Please have a look at the details &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> more
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>information
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Submission time: 2020-08-03T09:05:36
@@ -338,7 +338,7 @@ available in two favors:&lt;/p>
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Please check out the
 &lt;a href="https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html">documentation&lt;/a>
-for more details about the avilable APIs, their parameters and return values.
+for more details about the available APIs, their parameters and return values.
 &lt;/div>
 &lt;h2 id="authentication--authorisation">Authentication &amp;amp; Authorisation&lt;/h2>
 &lt;p>Users have to authenticate before they can call the API.&lt;/p>
@@ -369,15 +369,15 @@ Curl client.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --cacert &lt;span style="color:#000">$X509_USER_PROXY&lt;/span> https://fts3-public.cern.ch:8446/whoami
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;dn&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi/CN=proxy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe/CN=proxy&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;vos_id&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;6b10f4e4-8fdc-5555-baa2-7d4850d4f406&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;roles&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;delegation_id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;9ab8068853808c6b&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;user_dn&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;user_dn&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;level&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;transfer&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;vo&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
@@ -479,18 +479,18 @@ transfer and getting the job status:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span> u&lt;span style="color:#4e9a06">&amp;#39;base_id&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;01874efb-4735-4595-bc9c-591aef8240c9&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;delegation_id&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;9ab8068853808c6b&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;dn&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> u&lt;span style="color:#4e9a06">&amp;#39;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi/CN=proxy&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;dn&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> u&lt;span style="color:#4e9a06">&amp;#39;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe/CN=proxy&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;is_root&amp;#39;&lt;/span>: False,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;level&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span> u&lt;span style="color:#4e9a06">&amp;#39;transfer&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;vo&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;method&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;certificate&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;roles&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;user_dn&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;user_dn&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;voms_cred&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;/dteam/Role=NULL/Capability=NULL&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;vos&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;dteam&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;vos_id&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;6b10f4e4-8fdc-5555-baa2-7d4850d4f406&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># creating a new transfer and submiting a job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># creating a new transfer and submitting a job&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#000">transfer&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> fts3.new_transfer&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>... &lt;span style="color:#4e9a06">&amp;#39;gsiftp://source/path&amp;#39;&lt;/span>, &lt;span style="color:#4e9a06">&amp;#39;gsiftp://destination/path&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>... &lt;span style="color:#000">checksum&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;ADLER32:1234&amp;#39;&lt;/span>, &lt;span style="color:#000">filesize&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1024,
@@ -527,7 +527,7 @@ transfer and getting the job status:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;space_token&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;submit_host&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;fts-public-03.cern.ch&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;submit_time&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;2020-07-31T16:05:54&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;user_dn&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;user_dn&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;verify_checksum&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;t&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> u&lt;span style="color:#4e9a06">&amp;#39;vo_name&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;dteam&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: Monitoring Data Transfer</title><link>/users/data/management/data-transfer/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/data-transfer/monitoring/</guid><description>

@@ -47,7 +47,7 @@ GitHub, at &lt;a href="https://github.com/settings/keys">https://github.com/sett
 for an extensive documentation on using SSH keys with GitHub.&lt;/p>
 &lt;p>It&amp;rsquo;s worth to mention that your ssh &lt;em>public&lt;/em> keys can easily be retrieved using
 a URL like &lt;code>https://github.com/&amp;lt;your_username&amp;gt;.keys&lt;/code>.&lt;/p>
-&lt;p>In order to manage repositories over ssh, you will will have to clone them via
+&lt;p>In order to manage repositories over ssh, you will have to clone them via
 SSH, not HTTPS.&lt;/p>
 &lt;p>If you already have a local clone of a repository created via HTTPS, you can
 switch it to SSH by following
@@ -204,7 +204,7 @@ also be done in your repository clone using &lt;code>git rebase&lt;/code>.&lt;/p
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git checkout feature_branch
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Apply the new changes on main to your feature branch&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git rebase upstream/main
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In case some files have been changed on both sides you will will have to merge
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In case some files have been changed on both sides you will have to merge
 the conflicts manually.&lt;/p>
 &lt;h2 id="clone-pr-to-edittestreview-locally">Clone PR to edit/test/review locally&lt;/h2>
 &lt;p>It&amp;rsquo;s possible to clone a Pull Request to a local branch to test it locally. It&amp;rsquo;s
@@ -1027,7 +1027,7 @@ again.&lt;/p>
 &lt;li>&lt;a href="https://gohugo.io/content-management/shortcodes/">Hugo&amp;rsquo;s shortcodes&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.docsy.dev/docs/adding-content/shortcodes/">Docsy theme shortcodes&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h2 id="highighted-paragraphs">Highighted paragraphs&lt;/h2>
+&lt;h2 id="highlighted-paragraphs">Highlighted paragraphs&lt;/h2>
 &lt;p>This is achieved using
 &lt;a href="https://www.docsy.dev/docs/adding-content/shortcodes/#shortcode-helpers">Docsy shortcodes&lt;/a>.&lt;/p>
 &lt;h3 id="placeholders">Placeholders&lt;/h3>
@@ -1057,8 +1057,8 @@ This is a warning.
 &lt;h2 id="code-or-shell-snippets">Code or shell snippets&lt;/h2>
 &lt;p>The code or instructions should be surrounded with three backticks, followed by
 an optional highlighting type parameter.&lt;/p>
-&lt;p>The supported languages are dependant on the syntax highlighter, which depends
-itself on the mardkown parser.&lt;/p>
+&lt;p>The supported languages are dependent on the syntax highlighter, which depends
+itself on the Markdown parser.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 &lt;a href="https://gohugo.io/">Hugo&lt;/a> uses the
@@ -1175,7 +1175,7 @@ id="tabs-6-3" role="tabpanel" aria-labelled-by="tabs-6-3-tab">&lt;div class="hig
 &lt;/div>
 &lt;h2 id="content-with-multiple-variants">Content with multiple variants&lt;/h2>
 &lt;p>When you need to include multiple variants of the same content, other than code
-snippets in multiple programing languages, you can use the follwing shortcode:&lt;/p>
+snippets in multiple programming languages, you can use the following shortcode:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go-html-template" data-lang="go-html-template">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabpanex&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">tabx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">header&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Linux&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>

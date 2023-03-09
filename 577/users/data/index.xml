@@ -60,7 +60,7 @@ ongoing research projects&lt;/strong>, as an integrated environment with
 data management and digital lab notebook&lt;/li>
 &lt;/ul>
 &lt;p>The EGI data management services offer both application programming
-inferfaces (APIs) and command-line interfaces (CLIs) that are integrated
+interfaces (APIs) and command-line interfaces (CLIs) that are integrated
 with the advanced EGI services and platforms
 (such as &lt;a href="../../dev-env">development environments&lt;/a>,
 &lt;a href="../../machine-learning">machine learning&lt;/a>, or

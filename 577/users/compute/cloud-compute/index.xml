@@ -104,13 +104,13 @@ key for the default user of the VM (via the &lt;code>--key-name&lt;/code> argume
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">IMAGE_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;IMAGE_ID&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openstack network list
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Pick FedCloud network&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">NETWORK_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;NETOWRK_ID&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">NETWORK_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;NETWORK_ID&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openstack security group list
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openstack server create --flavor &lt;span style="color:#000">$FLAVOR&lt;/span> --image &lt;span style="color:#000">$IMAGE_ID&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --nic net-id&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$NETWORK_ID&lt;/span> --security-group default &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --key-name mykey oneprovider
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Creating a floating IP&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openstack floating ip create &amp;lt;NETOWRK_NAME&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openstack floating ip create &amp;lt;NETWORK_NAME&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Assigning floating IP to server&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openstack server add floating ip &amp;lt;SERVER_ID&amp;gt; &amp;lt;IP&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Removing floating IP from server&lt;/span>
@@ -271,7 +271,7 @@ do so (specially do not delete them).&lt;/p>
 &lt;p>Some users roles have special consideration in VOs:&lt;/p>
 &lt;ul>
 &lt;li>Users with VO Manager, VO Deputy or VO Expert Role have extra privileges in
-the AppDB for managing the Virtual Appliances to be available at every
+the AppDbB for managing the Virtual Appliances to be available at every
 provider. Check the &lt;a href="../images">Virtual Machine Image Management documentation&lt;/a>
 for more information.&lt;/li>
 &lt;/ul>
@@ -294,7 +294,7 @@ providers. &lt;strong>Back-up frequently to avoid losing your work!&lt;/strong>&
 &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:240">enrollment URL&lt;/a>
 using your &lt;a href="../../../aai/check-in/">EGI account&lt;/a>.&lt;/p>
 &lt;h3 id="other-vos">Other VOs&lt;/h3>
-&lt;p>Pre-existing VOs of EGI can be also used on IaaS cloud providers. Consult with
+&lt;p>Preexisting VOs of EGI can be also used on IaaS cloud providers. Consult with
 your VO manager or browse the existing VOs at the
 &lt;a href="https://operations-portal.egi.eu/vo/a/list">EGI Operations Portal&lt;/a>.&lt;/p>
 &lt;h2 id="check-in-and-access-tokens">Check-in and access tokens&lt;/h2>
@@ -306,7 +306,7 @@ tokens. This allows you to have short-lived access tokens without having to
 collect credentials every single time one expires. You can request this token
 alongside the access and/or ID tokens as part of a user&amp;rsquo;s initial authentication
 flow.&lt;/p>
-&lt;p>If you need to obtain these kind of tokens for using it in command-line tools or APIs,
+&lt;p>If you need to obtain these kinds of tokens for using it in command-line tools or APIs,
 you can easily do so with the EGI Check-in Token Portal. You can access the
 &lt;a href="https://aai.egi.eu/token">EGI Check-in Token Portal&lt;/a> and click on
 'Authorise' to log in with your Check-in credentials to obtain:&lt;/p>
@@ -344,7 +344,7 @@ simplify the discovery of projects.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud endpoint projects
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># or with oidc-agent&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OIDC_AGENT_ACCOUNT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;account name&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud enpoint projects
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ fedcloud endpoint projects
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-the-openstack-api">Using the OpenStack API&lt;/h3>
 &lt;p>Once you know which project to use, you can use your regular openstack cli
 commands for performing actual operations in the provider:&lt;/p>
@@ -696,7 +696,7 @@ users can login using their Check-in credentials. For doing so, click on the
 &lt;p>To register a new DNS host name:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>click on &lt;em>Overview&lt;/em> and then on &lt;em>Add Host&lt;/em>.&lt;/p>
+&lt;p>Click on &lt;em>Overview&lt;/em> and then on &lt;em>Add Host&lt;/em>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Type in the hostname you&amp;rsquo;d like to register and select the domain to use.&lt;/p>
@@ -730,17 +730,17 @@ by clicking on the hostname you&amp;rsquo;d like to manage&lt;/p>
 &lt;p>Hostnames/IP addresses are not expired so no need to refresh IP addresses if
 no changes, it is enough to run once. You can add the following command
 &lt;code>curl https://HOSTNAME:SECRET@nsupdate.fedcloud.eu/nic/update&lt;/code> to cloud-init
-as described above to assign hostname automatically at VM start&lt;/p>
+as described above to assign hostname automatically at VM start.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>DNS server set Time-to-Live (max time for caching DNS records) to 1 min for
 dynamic DNS, but MS Windows seems to not respect that. You can clear DNS cache
-in Windows with &lt;code>ipconfig /flushdns&lt;/code> command with Administrator account&lt;/p>
+in Windows with &lt;code>ipconfig /flushdns&lt;/code> command with Administrator account.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
 &lt;h2 id="api">API&lt;/h2>
-&lt;p>Dynamic DNS update server uses dydns2 protocol, compatible with commercial
+&lt;p>Dynamic DNS update server uses dyndns2 protocol, compatible with commercial
 providers like &lt;a href="https://help.dyn.com/remote-access-api/perform-update/">dyn.com&lt;/a>,
 and &lt;a href="http://www.noip.com/integrate/request">noip.com&lt;/a>. The API is specified as
 follows:&lt;/p>
@@ -778,7 +778,7 @@ button in the host edit page. The old secret will be invalid.&lt;/p>
 &lt;p>Support for Dynamic DNS service is provided via &lt;a href="https://ggus.eu/">EGI Helpdesk&lt;/a>
 in &lt;strong>&amp;ldquo;Dynamic DNS&amp;rdquo;&lt;/strong> support unit, where users can ask questions, report issues
 or make requests for additional domains for specific projects or user
-commnunities.&lt;/p></description></item><item><title>Users: Automating Deployments</title><link>/users/compute/cloud-compute/automate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/automate/</guid><description>
+communities.&lt;/p></description></item><item><title>Users: Automating Deployments</title><link>/users/compute/cloud-compute/automate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/automate/</guid><description>
 &lt;p>The &lt;a href="../../../getting-started/openstack">OpenStack&lt;/a> sites in the EGI Cloud that
 provide compute resources to run virtual machines (VMs) allow nearly everything
 to be done via an Application Programming Interface (API) or a
@@ -1037,8 +1037,8 @@ treated as a regular expression which may match any related property.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>If a keyword is prefixed with the &lt;code>$&lt;/code> operator, then the keyword will be
-treated as a soundex phonem which may match any related property that sounds
-alike in the english language.&lt;/p>
+treated as a soundex phoneme which may match any related property that sounds
+alike in the English language.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>If a keyword is prefixed with the &lt;code>+&lt;/code> operator, then the keyword must match
@@ -1053,7 +1053,7 @@ match any related property.&lt;/p>
 property.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Specifiers refering to related entities may omit the property name, in which
+&lt;p>Specifiers referring to related entities may omit the property name, in which
 case the special property any will be implicit.&lt;/p>
 &lt;/li>
 &lt;li>
@@ -1062,7 +1062,7 @@ implicit.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>The &lt;code>&amp;amp;&lt;/code> context operator makes an entity&amp;rsquo;s context private when present; this
-reduces results to the immediate neighborhoud of the target.&lt;/p>
+reduces results to the immediate neighbourhood of the target.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>Consider the following examples when searching for software:&lt;/p>
@@ -1154,7 +1154,7 @@ node value (is of &lt;em>mixed&lt;/em> type) and the single attribute &lt;code>x
 &lt;p>This way, it is possible to perform modifications to a resource&amp;rsquo;s properties
 without having to re-declare all instances of other properties with 0..*
 cardinality, lest they were to be erased. Properties of 0..1 cardinality may
-also be declared &lt;code>NULL&lt;/code> in a similar fasion, in which case their value in the
+also be declared &lt;code>NULL&lt;/code> in a similar fashion, in which case their value in the
 backed becomes undefined. Moreover, one should also note that the response of
 all &lt;code>PUT&lt;/code>/&lt;code>POST&lt;/code>/&lt;code>DELETE&lt;/code> operations equivalent to that of a &lt;code>GET&lt;/code> operation,
 with the state of the resource&lt;/p>
@@ -1272,7 +1272,7 @@ primary&lt;/li>
 &lt;li>having two people in its scientific contact list, those with IDs 189 and 190&lt;/li>
 &lt;li>having one publication with two authors, one internal (i.e. registered with
 the AppDB) and one external (not registered, name-only entry)&lt;/li>
-&lt;li>listed as supported by two middlewares, and&lt;/li>
+&lt;li>listed as supported by two middleware, and&lt;/li>
 &lt;li>with two tags applied&lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -1298,7 +1298,7 @@ the AppDB) and one external (not registered, name-only entry)&lt;/li>
 &lt;li>Public Operations: none&lt;/li>
 &lt;li>Authenticated Operations: &lt;code>GET&lt;/code> &lt;code>PUT&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>List of applications that have been moderated some some particular reason, and
+&lt;p>List of applications that have been moderated for some particular reason, and
 thus hidden from public view until the issue gets resolved. Administrative
 access only.&lt;/p>
 &lt;p>Examples:&lt;/p>
@@ -1598,7 +1598,7 @@ available to application and user entries&lt;/p>
 &lt;p>List of discipline and subdiscipline types available for application entries&lt;/p>
 &lt;h3 id="middleware-list">Middleware List&lt;/h3>
 &lt;ul>
-&lt;li>Resource: &lt;code>middlewares/&lt;/code>&lt;/li>
+&lt;li>Resource: &lt;code>middleware/&lt;/code>&lt;/li>
 &lt;li>Type: list&lt;/li>
 &lt;li>Datatype: middleware&lt;/li>
 &lt;li>Schema: middleware&lt;/li>
@@ -1606,7 +1606,7 @@ available to application and user entries&lt;/p>
 &lt;li>Public Operations: &lt;code>GET&lt;/code>&lt;/li>
 &lt;li>Authenticated Operations: none&lt;/li>
 &lt;/ul>
-&lt;p>List of grid middlewares supported by application entries and VOs&lt;/p>
+&lt;p>List of grid middleware supported by application entries and VOs&lt;/p>
 &lt;h3 id="application-status-list">Application Status List&lt;/h3>
 &lt;ul>
 &lt;li>Resource: &lt;code>applications/statuses/&lt;/code>&lt;/li>
@@ -1823,7 +1823,7 @@ the main commands in rOCCI and OpenStack equivalent in the table below:&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td>List flavors&lt;/td>
-&lt;td>&lt;code>occi -a list -r resorce_tpl&lt;/code>&lt;/td>
+&lt;td>&lt;code>occi -a list -r resource_tpl&lt;/code>&lt;/td>
 &lt;td>&lt;code>openstack flavor list&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -1862,7 +1862,7 @@ the main commands in rOCCI and OpenStack equivalent in the table below:&lt;/p>
 &lt;td>&lt;code>openstack server add volume &amp;lt;vm id&amp;gt; &amp;lt;volume id&amp;gt;&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Dettach volume&lt;/td>
+&lt;td>Detach volume&lt;/td>
 &lt;td>&lt;code>occi -a unlink -r &amp;lt;storage_link_id&amp;gt;&lt;/code>&lt;/td>
 &lt;td>&lt;code>openstack server remove volume &amp;lt;vm id&amp;gt; &amp;lt;volume id&amp;gt;&lt;/code>&lt;/td>
 &lt;/tr>
@@ -2001,7 +2001,7 @@ contextualisation. EGI images in AppDB do support &lt;code>cloud-init&lt;/code>.
 &lt;a href="https://cloudinit.readthedocs.io/">documentation&lt;/a> for more information.
 &lt;/div>
 &lt;h3 id="how-can-i-pass-secrets-to-my-vms">How can I pass secrets to my VMs?&lt;/h3>
-&lt;p>EGI Cloud endpoints use &lt;strong>HTTPS&lt;/strong> so information passed to contextualise the VMs
+&lt;p>EGI Cloud endpoints use &lt;strong>HTTPS&lt;/strong> so information passed to contextualize the VMs
 can be assumed to be safe and only readable within your VM. However, take into
 account that anyone with access to the VM may be able to access also the
 contextualisation information.&lt;/p>
@@ -2022,7 +2022,7 @@ one as a gateway as described in the
 &lt;h3 id="how-can-i-release-resources-without-destroying-my-data">How can I release resources without destroying my data?&lt;/h3>
 &lt;p>Whenever you delete a VM, the ephemeral disks associated with it will be also
 deleted. If you don&amp;rsquo;t plan to use your VM for some time, there are several ways
-to release resources consumed by the VM (e.g. CPU, RAM) and recover the the data
+to release resources consumed by the VM (e.g. CPU, RAM) and recover the data
 or boot your VM in a previous state when you need it back. We list below the
 main strategies you can use:&lt;/p>
 &lt;ul>

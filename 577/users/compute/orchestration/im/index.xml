@@ -27,7 +27,7 @@ authentication data for the IM service&lt;/strong> and another one for the Cloud
 provider(s) the user want to access. Each line of the file is composed by pairs
 of key and value separated by semicolon, and refers to a single credential. The
 key and value should be separated by &lt;code>=&lt;/code>, that is an equals sign preceded and
-followed by one whitespace at least. The following lines shows the credentials
+followed by one whitespace at least. The following lines show the credentials
 needed to access an EGI Cloud Compute site:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> InfrastructureManager&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> egi_aai_token_value
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">id&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> egi&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87">type&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> EGI&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">host&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> CESGA&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">vo&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> vo.access.egi.eu&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#000">token&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> egi_aai_token_value
@@ -46,7 +46,7 @@ the required resources. IM supports its native language
 &lt;a href="http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0">OASIS TOSCA Simple Profile in YAML Version 1.0&lt;/a>.
 You can find some examples in the
 &lt;a href="https://github.com/grycap/im/tree/master/examples">IM GitHub repository&lt;/a>.&lt;/p>
-&lt;p>For example we can use RADL to define a simple VM with 1 CPU, 1 GB of RAM
+&lt;p>For example, we can use RADL to define a simple VM with 1 CPU, 1 GB of RAM
 using the EGI Ubuntu 20.04 image.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>network public &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#000">outbound&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;yes&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -97,12 +97,12 @@ deploy a single VM:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">value&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>{&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">get_attribute&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">simple_node, public_address, 0 ] }&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">node_creds&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">value&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>{&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">get_attribute&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">simple_node, endpoint, credential, 0 ] }&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then we can call the &lt;code>create&lt;/code> operation of the IM client tool using the a radl
-or a TOSCA yaml file:&lt;/p>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then we can call the &lt;code>create&lt;/code> operation of the IM client tool using a RADL
+or a TOSCA YAML file:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ im_client.py create infra.radl
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Infrastructure successfully created with ID: 457273ea-85e4-11ec-aa81-faaae69bc911
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then we can call get the currrent state of infrastructure using the &lt;code>getstate&lt;/code>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then we can call get the current state of infrastructure using the &lt;code>getstate&lt;/code>
 operation of the IM client tool:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ im_client.py getstate 457273ea-85e4-11ec-aa81-faaae69bc911
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
@@ -121,7 +121,7 @@ configuration stage;&lt;/li>
 &lt;li>&lt;code>unknown&lt;/code>, unable to obtain the status.&lt;/li>
 &lt;li>&lt;code>deleting&lt;/code>, in the deletion process.&lt;/li>
 &lt;/ul>
-&lt;p>Once the configuration step has started we can get the output of the ansible
+&lt;p>Once the configuration step has started we can get the output of the Ansible
 process using the &lt;code>getcontmsg&lt;/code> operation:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ im_client.py getcontmsg 457273ea-85e4-11ec-aa81-faaae69bc911
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Secure connection with: https://appsgrycap.i3m.upv.es:31443/im

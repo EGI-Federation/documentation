@@ -32,7 +32,7 @@ a RStudio IDE from the Notebooks interface.&lt;/p>
 language installed on its own conda environment (named &lt;code>octave&lt;/code>).&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>If you want to add a new kernel, just let us know and we will discuss the best
+&lt;p>If you want to add a new kernel, just let us know, and we will discuss the best
 way to support your request.&lt;/p>
 &lt;h2 id="cvmfs">CVMFS&lt;/h2>
 &lt;p>Notebooks mounts several &lt;a href="../../../../compute/content-distribution/">CVMFS&lt;/a>
@@ -67,7 +67,7 @@ created, e.g. in &lt;code>/home/jovyan/conda-envs/&lt;/code>:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">/home/jovyan/conda-envs/&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
-&lt;p>Create your environmnets as needed, make sure to install a kernel
+&lt;p>Create your environments as needed, make sure to install a kernel
 (&lt;code>ipykernel&lt;/code>) for it to show automatically:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ conda create -p /home/jovyan/conda-envs/myenv ipykernel scipy
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
