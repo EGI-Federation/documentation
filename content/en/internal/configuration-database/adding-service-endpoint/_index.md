@@ -20,7 +20,7 @@ The information needed for service type are:
   - **org.openstack.swift**:The `endpoint URL` must contain the Keystone v3 URL:
     `https://hostname:port/url/v3`
   - **eu.egi.cloud.accounting**: for the host sending the records to the
-    accounting repositority
+    accounting repository
 - Other service types: the value of the attribute `GlueServiceEndpoint`
   published in the BDII
 
@@ -34,7 +34,7 @@ Configuration Database, please consult the
 ## Retrieving the information
 
 For retrieving the queue URL from the BDII, you can use the command
-`lcg-infosites`, to be executed from an UI. Be sure to query a production Top
+`lcg-infosites`, to be executed from a UI. Be sure to query a production Top
 BDII: you can either use the one provided by your Operations Centre or choose
 one from
 [the Configuration Database](https://goc.egi.eu/portal/index.php?Page_Type=Service_Group&id=1205)
@@ -91,7 +91,7 @@ information.
 
 - Editing a service
 
-> Click on the EDIT button on the top right corner
+> Click on the EDIT button in the top right corner
 
 ![Service overview](service-overview.png)
 
@@ -127,7 +127,7 @@ This is the service summary page.
 - Adding an endpoint
 
 > Fill in the proper information and don't forget to select the "Monitored" flag
-> for making nagios to detect the new endpoint.
+> for making Nagios to detect the new endpoint.
 
 ![Adding and endpoint](add-endpoint.png)
 

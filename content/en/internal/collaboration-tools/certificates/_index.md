@@ -58,7 +58,7 @@ Certificates are usually valid for one year. Auto-renewal of certificates is
 enabled by default, 30 days before expiration, notifications will be sent to the
 contact address provided when requesting the certificate.
 
-The notifications contains links allowing to renew the certificate.
+The notifications contain links allowing to renew the certificate.
 
 ## Creating a Certificate Signing Request
 
@@ -76,7 +76,7 @@ It can be done via different ways, some are documented below.
 DigiCert provides an online
 [web application](https://www.digicert.com/easy-csr/openssl.htm).
 
-### Using CloudFalre cfssl tool
+### Using CloudFlare cfssl tool
 
 It can be done with the `cfssl` tool from
 [CloudFlare](https://github.com/cloudflare/cfssl).

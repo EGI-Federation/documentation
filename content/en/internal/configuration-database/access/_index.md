@@ -77,7 +77,10 @@ registration form.
 - click on the "Register" link
 - fill in the form and validate
 
-> If you were registered but are not recognised anymore (e.g. because your
-> certificate DN changed), do not register again! Instead, follow the steps
-> [Lost access to your Configuration Database account](../users-roles/managing-accounts#lost-access-to-your-account)
-> section.
+## Recovering access to an existing account
+
+{{% alert title="Note" color="info" %}} If you were registered but are not
+recognised anymore (e.g. because your certificate DN changed), do not register
+again! Instead, follow the steps
+[Lost access to your Configuration Database account](../users-roles/managing-accounts#lost-access-to-your-account)
+section.{{% /alert %}}

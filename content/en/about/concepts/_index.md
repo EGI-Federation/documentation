@@ -14,7 +14,7 @@ which is compliant with [CommonMark](https://spec.commonmark.org/0.29/) and
 on CommonMark).
 
 The EGI documentation is organized into [sections](#sections) and
-[pages](#pages). Read below to uderstand when to use each of these,
+[pages](#pages). Read below to understand when to use each of these,
 and how to create new sections and add new pages to a section.
 
 {{% alert title="Important" color="warning" %}} Avoid using pages in the
@@ -82,7 +82,7 @@ The parameter `weight` controls the order of the pages on the same level in
 the left-side navigation tree. Pages will appear in **ascending** order of their
 weight.
 
-The above metadata produces the following result (relevant elements highlighed):
+The above metadata produces the following result (relevant elements highlighted):
 ![Page metadata](metadata.png)
 
 ### Add page to top navigation bar

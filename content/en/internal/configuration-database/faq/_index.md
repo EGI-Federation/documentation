@@ -5,6 +5,15 @@ type: "docs"
 description: "Frequently Asked Questions"
 ---
 
+## I have lost access to my account, what should I do?
+
+If you were registered but are not recognised anymore (e.g. because your
+certificate DN changed), do not register again!
+
+Instead, follow the steps
+[Lost access to your Configuration Database account](../users-roles/managing-accounts#lost-access-to-your-account)
+section.
+
 ## I am responsible for a site that has recently entered the EGI infrastructure. How do I register it?
 
 Only registered users with an approved role on an NGI can add a new site. If you

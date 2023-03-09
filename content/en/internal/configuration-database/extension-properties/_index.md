@@ -46,7 +46,7 @@ description: >
   (link to old EGI Wiki)
 - The format of the 'extensions' PI parameter is one or more (key=value) pairs
   enclosed in brackets.
-  - The value part of a (k=v) pair can be ommitted if filtering by value is not
+  - The value part of a (k=v) pair can be omitted if filtering by value is not
     required (i.e. '(somekey=)' means select all resources that define the
     'somekey' property with any value.
   - (k=v) pairs can be optionally prefixed with one of following operators: AND,

@@ -134,13 +134,13 @@ openstack image list
 IMAGE_ID=<IMAGE_ID>
 openstack network list
 # Pick FedCloud network
-NETWORK_ID=<NETOWRK_ID>
+NETWORK_ID=<NETWORK_ID>
 openstack security group list
 openstack server create --flavor $FLAVOR --image $IMAGE_ID \
   --nic net-id=$NETWORK_ID --security-group default \
   --key-name mykey oneprovider
 # Creating a floating IP
-openstack floating ip create <NETOWRK_NAME>
+openstack floating ip create <NETWORK_NAME>
 # Assigning floating IP to server
 openstack server add floating ip <SERVER_ID> <IP>
 # Removing floating IP from server

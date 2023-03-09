@@ -17,14 +17,14 @@ be distributed across different physical sites and users that belong to the SG
   services. This means that you cannot declare a downtime on the services that
   you group together or modify the service attributes.
 - Any GOCDB user can create their own service group and as the 'Service Group
-  Administator' you can control subsequent user membership requests to the SG
+  Administrator' you can control subsequent user membership requests to the SG
   (everything is logged, including who created the service group).
 - GOCDB users can request to join an existing service group by finding the
   target SG and requesting a role on that SG.
 - Service groups are typically used for monitoring a particular collection of
   services and/or users using the GOCDB 'get_service_group' and
   'get_service_group_role' PI methods.
-- SG memebers can be listed using the get_service_group_role PI method.
+- SG members can be listed using the get_service_group_role PI method.
 - PI doc:
   - [get_service_group](https://wiki.egi.eu/wiki/GOCDB/PI/get_service_group)(link
     to old EGI Wiki)

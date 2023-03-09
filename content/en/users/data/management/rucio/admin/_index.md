@@ -10,7 +10,7 @@ description: >-
 Within Rucio there are several levels of administrators. There are the **super
 admins**, which are the staff that runs Multi-VO Rucio. Then there are virtual
 organisation (VO) specific admins that will look after the day-to-day operations
-of thier VO. Below are some of the tasks that VO admins will need to do to set
+of their VO. Below are some of the tasks that VO admins will need to do to set
 up and maintain their VO.
 
 ## Creating Accounts, Identities, and Quotas
@@ -176,7 +176,7 @@ It's also worth noting that when an RSE is deleted using
 `rucio-admin rse delete`, the entry remains in the database. This "soft"
 deletion means that attempting to add a new RSE with the same name as a deleted
 RSE will fail. This is due to the RSE not having a unique name/VO combination.
-In practice it is therefore better to update a badly configured RSE rather than
+In practice, it is therefore better to update a badly configured RSE rather than
 attempting to delete and re-add it. However, if the latter method is preferred,
 it is possible manually rename the deleted RSE in the database (as there are no
 foreign key constraints on its name, just the ID and VO) so that the old name
@@ -196,14 +196,14 @@ one or more of the
 [daemons](https://rucio.cern.ch/documentation/main_components) to be running in
 order to take effect. For a multi-VO instance, these should be running for all
 VOs already. However, on new VO's joining Rucio some updating of the daemons
-will be neccessary.
+will be necessary.
 
 If it seems like it is not quite right please contact the Rucio team through
 [GGUS](https://ggus.eu/?mode=ticket_submit).
 
 ## Uploading Data
 
-In Rucio files and their replicas are represented by Data IDentifiers
+In Rucio files and their replicas are represented by Data Identifiers
 ([DIDs](https://rucio.cern.ch/documentation/file_dataset_container)), which are
 composed of a scope and name. Furthermore, multiple files can be attached to a
 dataset, which in turn can be attached to a container (which can be attached to
@@ -388,7 +388,7 @@ different VO they have access to.
 $ rucio whoami
 
 status     : ACTIVE
-account    : jdoes_abc_account
+account    : jdoe_abc_account
 account_type : USER
 created_at : 2020-08-07T08:27:29
 updated_at : 2020-08-07T08:27:29
@@ -399,7 +399,7 @@ email      : N/A
 $ rucio --vo xyz whoami
 
 status     : ACTIVE
-account    : jdoes_xyz_account
+account    : jdoe_xyz_account
 account_type : USER
 created_at : 2020-08-11T12:13:58
 updated_at : 2020-08-11T12:13:58
@@ -415,10 +415,10 @@ email      : N/A
 >>> CLIENT = Client()
 >>> CLIENT.whoami()
 
-{u'status': u'ACTIVE', u'account': u'jdoes_abc_account', u'account_type': u'USER', u'created_at': u'2020-08-07T08:27:29', u'updated_at': u'2020-08-07T08:27:29', u'suspended_at': None, u'deleted_at': None, u'email': u'N/A'}
+{u'status': u'ACTIVE', u'account': u'jdoe_abc_account', u'account_type': u'USER', u'created_at': u'2020-08-07T08:27:29', u'updated_at': u'2020-08-07T08:27:29', u'suspended_at': None, u'deleted_at': None, u'email': u'N/A'}
 
->>> CLIENT_XYX = Client(vo='xyz')
+>>> CLIENT_XYZ = Client(vo='xyz')
 >>> CLIENT_XYZ.whoami()
 
-{u'status': u'ACTIVE', u'account': u'jdoes_xyz_account', u'account_type': u'USER', u'created_at': u'2020-08-11T12:13:58', u'updated_at': u'2020-08-11T12:13:58', u'suspended_at': None, u'deleted_at': None, u'email': u'N/A'}
+{u'status': u'ACTIVE', u'account': u'jdoe_xyz_account', u'account_type': u'USER', u'created_at': u'2020-08-11T12:13:58', u'updated_at': u'2020-08-11T12:13:58', u'suspended_at': None, u'deleted_at': None, u'email': u'N/A'}
 ```

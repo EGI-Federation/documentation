@@ -136,8 +136,8 @@ definitions:
 
 Limitation rules to downtime extensions are enforced as follows:
 
-- Scheduled downtimes due to start in 24 hours cannot be edited in any way, but
-  can be deleted.
+- Scheduled downtimes due to start in 24 hours cannot be edited in any way, nor
+  deleted.
 - Other downtimes that have not yet started can be edit and deleted.
   - They can be shortened or moved, i.e. They can be edited such that:
     - Both start and end time are still in the future

@@ -1,12 +1,12 @@
 ---
 title: DataHub Links
 linkTitle: Links
-weight: 40
+weight: 50
 type: docs
 aliases:
   - /users/datahub/links
 description: >
-  Links to additonal DataHub resources
+  Links to additional DataHub resources
 ---
 
 - [EGI DataHub service](https://datahub.egi.eu)

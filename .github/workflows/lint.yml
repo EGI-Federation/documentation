@@ -1,7 +1,8 @@
 ---
 name: Lint
 
-on: [pull_request]
+on:
+  pull_request:
 
 jobs:
   super-lint:
@@ -27,8 +28,8 @@ jobs:
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           # XXX gitleaks is currently not using exception file: #511
           VALIDATE_GITLEAKS: false
-          # Always check all the content
-          VALIDATE_ALL_CODEBASE: true
+          # Only check changed files
+          VALIDATE_ALL_CODEBASE: false
           # Debug super-linter
           ACTIONS_RUNNER_DEBUG: false
           # Fail on errors

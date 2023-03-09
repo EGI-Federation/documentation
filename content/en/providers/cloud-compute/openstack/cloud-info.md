@@ -11,7 +11,7 @@ flavors available at the OpenStack for the federation users. It runs as a single
 python application
 [cloud-info-provider](https://github.com/EGI-Federation/cloud-info-provider)
 that pushes information through the
-[Messaging Service](../../../internal/messaging).
+[Messaging Service](../../../../internal/messaging).
 
 {{% alert title="BDII is deprecated" color="info" %}} Cloud providers no longer
 need to provide BDII as the Argo Messaging Service is used instead for

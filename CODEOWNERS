@@ -32,7 +32,7 @@ content/en/providers/cloud-compute/ @enolfc
 # Notebooks
 content/en/users/dev-env/notebooks/ @enolfc @andrea-manzi @sebastian-luna-valero
 content/en/users/providers/notebooks/ @enolfc @andrea-manzi @sebastian-luna-valero
-content/en/users/dev-env/binder/ @enolfc @andrea-manzi @sebastian-luna-valero
+content/en/users/dev-env/replay/ @enolfc @andrea-manzi @sebastian-luna-valero
 
 # Training
 content/en/users/training/ @glarocca
@@ -40,12 +40,8 @@ content/en/users/training/ @glarocca
 # Tutorials
 content/en/users/tutorials/ @enolfc @sebastian-luna-valero
 
-# HTC-related services
-content/en/users/compute/content-distribution/ @CatalinCondurache
-content/en/users/compute/high-throughput-compute/ @CatalinCondurache
-
 # Workload Manager
-content/en/users/compute/orchestration/workload-manager/ @CatalinCondurache @enolfc
+content/en/users/compute/orchestration/workload-manager/ @enolfc
 
 # Check-in 
 content/en/users/aai/ @vardizzo-lab

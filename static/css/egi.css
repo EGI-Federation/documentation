@@ -59,6 +59,15 @@
 
 /* Sizing calibration for the top nav bar */
 
+.navbar {
+ padding: 0.7rem 1rem 0.3rem;
+}
+
+.navbar-logo {
+  position: relative;
+  top: -9px;
+}
+
 .td-navbar {
   min-height: 0;
 }
@@ -169,9 +178,23 @@ div.code-toolbar > .toolbar {
   right: 0.45em;
 }
 
-div.code-toolbar > .toolbar button {
-  background: rgba(224, 224, 224, 0.9);
-  box-shadow: 0 2px 0 0 rgb(100 100 100 / 30%);
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
+	color: #696666;
+	font-size: .9em;
+  font-weight: bold;
+  background: rgba(132, 172, 181, 0.75);
+  box-shadow: none!important;
+}
+
+div.code-toolbar > .toolbar span {
+  background-color: transparent;
+}
+
+div.code-toolbar > .toolbar button:hover,
+div.code-toolbar > .toolbar button:focus {
+	background: rgba(65, 155, 175, 1);
 }
 
 /* Tables in code excerpts */
