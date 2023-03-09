@@ -270,10 +270,9 @@ In the email, include the following information:&lt;/p>
 &lt;p>All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 &lt;a href="https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=cvmfs-uploader-users">JISCMAIL&lt;/a>.&lt;/p>
 &lt;h2 id="distributing-new-content">Distributing new content&lt;/h2>
-&lt;p>To login to the service, just use &lt;code>ssh&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ssh cvmfs-upload01.gridpp.rl.ac.uk
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are the Content Manager for more than one repository, you would need to specify
-explicitly which account you want to login to. This account is built as &lt;code>reponame+&amp;quot;sgm&amp;quot;&lt;/code>.
+&lt;p>To login to the service, just use &lt;code>ssh&lt;/code>.
+You need to specify explicitly which account you want to login to.
+This account is built as &lt;code>reponame+&amp;quot;sgm&amp;quot;&lt;/code>.
 For example, for repository &lt;code>dirac.egi.eu&lt;/code>, UNIX account is &lt;code>diracsgm&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Replace with the proper username&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh diracsgm@cvmfs-upload01.gridpp.rl.ac.uk
