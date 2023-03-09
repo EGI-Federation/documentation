@@ -234,14 +234,14 @@ choose (or gets used automatically) in specific scenarios:&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;p>The following sections offer more details about each of these orchestrators.&lt;/p></description></item><item><title>Users: Content Distribution</title><link>/users/compute/content-distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/content-distribution/</guid><description>
-&lt;p>This page is about the CVMFS service operated for EGI by RAL.&lt;/p>
+&lt;p>This page documents usage of the CVMFS service operated for EGI by RAL.&lt;/p>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The CernVM-File System (CVMFS) provides a scalable, reliable and low-maintenance
 software distribution service. It was developed to assist High Energy Physics
 collaborations to deploy software on the worldwide distributed computing
 infrastructure used to run data processing applications. CVMFS is implemented as
 a POSIX read-only file system in user space. Files and directories are hosted on
-standard web servers and mounted in the universal namespace /cvmfs. CernVM-FS
+standard web servers and mounted in the universal namespace &lt;code>/cvmfs&lt;/code>. CernVM-FS
 uses outgoing HTTP connections only, thereby it avoids most of the firewall
 issues of other network file systems. It transfers data and metadata on demand
 and verifies data integrity by cryptographic hashes. CVMFS is actively used by
@@ -264,22 +264,34 @@ software used to process experiment data.&lt;/p>
 In the email, include the following information:&lt;/p>
 &lt;ul>
 &lt;li>Name of the VO or CVMFS repository.&lt;/li>
-&lt;li>Distinguish Name (DN) from your X509 grid certificate.&lt;/li>
+&lt;li>Your &lt;a href="../../../providers/check-in/sp/#1-community-user-identifier">Check-in ID&lt;/a>
+from &lt;a href="../../aai/check-in/">EGI Check-in&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;h3 id="mailing-list">Mailing list&lt;/h3>
 &lt;p>All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 &lt;a href="https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=cvmfs-uploader-users">JISCMAIL&lt;/a>.&lt;/p>
 &lt;h2 id="distributing-new-content">Distributing new content&lt;/h2>
-&lt;p>To login to the service, make sure you have a valid X509 proxy (with the same DN
-provided &lt;a href="#requesting-access">in this step&lt;/a>), and execute the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gsissh -p &lt;span style="color:#0000cf;font-weight:bold">1975&lt;/span> cvmfs-upload01.gridpp.rl.ac.uk
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are the Content Manager for more than one repository, you would need to
-specify explicit which account you want to login to:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gsissh -p &lt;span style="color:#0000cf;font-weight:bold">1975&lt;/span> &amp;lt;myreposgm&amp;gt;@cvmfs-upload01.gridpp.rl.ac.uk
+&lt;p>To log into the service, just use &lt;code>ssh&lt;/code>.
+You need to specify explicitly which username you want to use to log in.
+The username is composed as &lt;code>reponame+&amp;quot;sgm&amp;quot;&lt;/code>.
+For example, for the repository &lt;code>dirac.egi.eu&lt;/code>, the username is &lt;code>diracsgm&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Replace with the proper username&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh diracsgm@cvmfs-upload01.gridpp.rl.ac.uk
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To copy data:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gsiscp -P &lt;span style="color:#0000cf;font-weight:bold">1975&lt;/span> &amp;lt;source&amp;gt; cvmfs-upload01.gridpp.rl.ac.uk:&amp;lt;destination&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After login, you will find a single directory in the home directory:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>myreposgm@cvmfs-uploader02 ~&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>$ ls
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Replace with the proper username&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ scp source_file.txt diracsgm@cvmfs-upload01.gridpp.rl.ac.uk:destination_folder/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When running the &lt;code>ssh&lt;/code> or &lt;code>scp&lt;/code> commands, a message like this is displayed:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Replace with the proper username&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh diracsgm@cvmfs-upload01.gridpp.rl.ac.uk
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Authenticate at
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-----------------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://aai.egi.eu/device?user_code&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>AAAAA-BBBBB
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-----------------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Hit enter when you have finished authenticating
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy and paste the URL into a browser, and follow the instructions to authenticate
+yourself using your home institution Identity Management Service.&lt;/p>
+&lt;p>After login, you will find a single directory in the home directory:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ls
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cvmfs_repo
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add to that directory the new content you want to distribute.&lt;/p>
 &lt;p>Files and directories cannot be distributed with CVMFS if they are not
