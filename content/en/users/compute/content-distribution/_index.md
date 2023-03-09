@@ -55,14 +55,9 @@ All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 
 ## Distributing new content
 
-To login to the service, just use `ssh`:
-
-```shell
-$ ssh cvmfs-upload01.gridpp.rl.ac.uk
-```
-
-If you are the Content Manager for more than one repository, you would need to specify
-explicitly which account you want to login to. This account is built as `reponame+"sgm"`.
+To login to the service, just use `ssh`.
+You need to specify explicitly which account you want to login to.
+This account is built as `reponame+"sgm"`.
 For example, for repository `dirac.egi.eu`, UNIX account is `diracsgm`.
 
 ```shell
