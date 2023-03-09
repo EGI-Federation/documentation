@@ -2,7 +2,7 @@
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to configure access to
 &lt;a href="https://min.io/docs/minio/linux/operations/external-iam.html">MinIO console&lt;/a>
-using &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> as external OpenID Connect Identity
+using &lt;a href="../../../users/aai/check-in/">EGI Check-in&lt;/a> as external OpenID Connect Identity
 Provider.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>Be familiar with the steps to configure an OpenID Connect Service Provider with
@@ -10,14 +10,14 @@ Provider.&lt;/p>
 &lt;p>This tutorial assumes that:&lt;/p>
 &lt;ul>
 &lt;li>You have a valid EGI ID (account), you can
-&lt;a href="../../aai/check-in/signup">sign up here&lt;/a>.&lt;/li>
+&lt;a href="../../../users/aai/check-in//signup">sign up here&lt;/a>.&lt;/li>
 &lt;li>You are a member of a
-&lt;a href="../../aai/check-in/joining-virtual-organisation">Virtual Organisation&lt;/a>.&lt;/li>
+&lt;a href="../../../users/aai/check-in//joining-virtual-organisation">Virtual Organisation&lt;/a>.&lt;/li>
 &lt;li>You have deployed MinIO and have access to the console as &lt;code>admin&lt;/code>.&lt;/li>
 &lt;/ul>
 &lt;h2 id="step-1-get-the-oidc-entitlement-for-the-virtual-organisation">Step 1: Get the OIDC entitlement for the Virtual Organisation&lt;/h2>
 &lt;p>See the
-&lt;a href="../../aai/check-in/obtaining-tokens/token-portal/">page about getting tokens from Check-in&lt;/a>.
+&lt;a href="../../../users/aai/check-in//obtaining-tokens/token-portal/">page about getting tokens from Check-in&lt;/a>.
 You will get a &lt;code>curl&lt;/code> command to get your OIDC entitlements.&lt;/p>
 &lt;p>Select the entitlement for the Virtual Organisation that you want to
 enable access to. For example, here is the entitlement for the
@@ -66,7 +66,7 @@ to the &lt;a href="https://aai.egi.eu/federation/">EGI Federation Registry&lt;/a
 use the below as the &lt;code>Redirect URI&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>https://&amp;lt;minio-console-endpoint&amp;gt;/oauth_callback
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-32-configure-minio-console">Step 3.2: Configure MinIO console&lt;/h3>
-&lt;p>Now configure &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> as external OpenID Connect
+&lt;p>Now configure &lt;a href="../../../users/aai/check-in/">EGI Check-in&lt;/a> as external OpenID Connect
 Identity Provider for MinIO.&lt;/p>
 &lt;p>Go to &lt;code>https://&amp;lt;minio-console-endpoint&amp;gt;/settings/configurations/identity_openid&lt;/code>
 and set the following values&lt;/p>
