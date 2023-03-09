@@ -33,10 +33,10 @@ EGI Infrastructure are also available:&lt;/p>
 either &lt;a href="../../../compute/cloud-compute/images/">packaging your application in a custom Virtual Machine&lt;/a>
 or &lt;a href="https://wiki.appdb.egi.eu/main:faq:how_to_register_a_virtual_appliance">uploading a Virtual Appliance&lt;/a>.&lt;/li>
 &lt;li>Use &lt;a href="https://www.docker.com/">Docker&lt;/a> containers via the
-&lt;a href="../../compute/cloud-container-compute/">EGI Cloud Compute Service&lt;/a>.&lt;/li>
+&lt;a href="../../../compute/cloud-container-compute/">EGI Cloud Compute Service&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;p>To get started, have a look at the tutorial to
-&lt;a href="../../tutorials/create-your-first-virtual-machine/">create your first Virtual Machine&lt;/a>
+&lt;a href="../../../tutorials/create-your-first-virtual-machine/">create your first Virtual Machine&lt;/a>
 in the EGI Infrastructure.&lt;/p>
 &lt;h3 id="how-to-bring-your-data-to-the-egi-infrastructure">How to bring your data to the EGI infrastructure&lt;/h3>
 &lt;p>For managing data, different Data Management services are available in the EGI Infrastructure:&lt;/p>
