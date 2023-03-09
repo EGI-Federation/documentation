@@ -782,7 +782,32 @@ output:
          "Version": "1.0",
          "Person": {
             "Type": "CO",
-            "Id": 1111
+            "Id": 1111,
+            "EmailAddress": [
+               {
+                  "type": "official",
+                  "mail": "jdoe@mailinator.com",
+                  "verified": true
+               }
+            ],
+            "Identifier": [
+               {
+                  "type": "epuid",
+                  "identifier": "12345678901234566778@example.org"
+               },
+               {
+                  "type": "uid",
+                  "identifier": "jdoe"
+               }
+            ],
+            "Name": [
+               {
+                  "type": "official",
+                  "given": "jane",
+                  "family": "doe",
+                  "middle": null
+               }
+            ]
          },
          "CouId": 13,
          "Affiliation": "member",

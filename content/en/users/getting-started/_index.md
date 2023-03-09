@@ -13,12 +13,12 @@ mission to support research and innovation.
 
 The resources in the EGI infrastructure are offered by
 [service providers](https://www.egi.eu/federation/egi-federated-cloud/) that
-either run their own [data centers](https://www.egi.eu/federation/data-centres/)
+either run their own [data centres](https://www.egi.eu/federation/data-centres/)
 or rely on community, private and/or public cloud services. These service
 providers offer:
 
 - **Single Sign-On** via [EGI Check-in](https://www.egi.eu/service/check-in/)
-  allows users to login with their institutional (community) credentials
+  allows users to log in with their institutional (community) credentials
 - **Global image catalogue** at [AppDB](https://appdb.egi.eu) with
   pre-configured virtual machine images
 - **Resource discovery** features to easily understand which providers are
@@ -52,7 +52,7 @@ certificates, e.g.
 **EGI uses
 [Virtual Organisations](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
 (VOs) to control access to resources**. VOs are fully managed by research
-communities, allowing communitites to manage their users and grant access to
+communities, allowing communities to manage their users and grant access to
 their services and resources. This means communities can either own their
 resources and use EGI services to share (federate) them, or can use the
 resources available in the EGI infrastructure for their scientific needs.

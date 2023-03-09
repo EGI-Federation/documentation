@@ -33,12 +33,12 @@ MySQL setting is referred to the current MySQL version (5.0.77 in this moment)
 
 In order to allow the replica server to read the master database, you have to
 create an user with which the slave will connect to the master. Suppose the
-replica hostname is `vomsrep.cnaf.infn.it`, the user is `bonjovi` and the
+replica hostname is `vomsrep.cnaf.infn.it`, the user is `janedoe` and the
 password is `always`. What you have to launch on the master server is:
 
 ```shell
 $ mysql -p -e "grant super, reload, replication slave, replication client \
-  on *.* to bonjovi@'vomsrep.cnaf.infn.it' identified by 'always'" ;
+  on *.* to janedoe@'vomsrep.cnaf.infn.it' identified by 'always'" ;
 ```
 
 Then for each DB (VO) you want to replicate, you have to assign the right
@@ -46,7 +46,7 @@ permissions, by launching:
 
 ```shell
 mysql -p -e "grant select, lock tables on voms_myvo.* to \
-  bonjovi@'vomsrep.cnaf.infn.it'"
+  janedoe@'vomsrep.cnaf.infn.it'"
 ```
 
 Eventually you have to modify the file `/etc/my.cnf` by adding the following
@@ -159,7 +159,7 @@ Example:
 ```shell
 voms_database="" # VOMS database (leave unset)
 master_host="voms.cnaf.infn.it" # Master hostname
-master_mysql_user="bonjovi" # Master MySQL admin user for replication
+master_mysql_user="janedoe" # Master MySQL admin user for replication
 master_mysql_pwd="always" # Master MySQL admin pass for replication user
 master_log_file="" # Master LOG file (leave unset)
 master_log_pos="" # Master LOG file (leave unset)
@@ -195,7 +195,7 @@ In your `/etc/my.cnf` file you will find lines like the following:
 # Connection with master
 server-id=2
 master-host=voms.cnaf.infn.it
-master-user=bonjovi
+master-user=janedoe
 master-password=always
 
 # Replicas settings

@@ -162,7 +162,7 @@ to set them once and reuse them with each command invocation.
 
 {{< /tabx >}}
 
-{{< tabx  header="PowerShell" >}}
+{{< tabx header="PowerShell" >}}
 
 To avoid passing the site, VO, etc. each time, you can use
 [FedCloud CLI environment variables](../../../getting-started/cli#environment-variables)
@@ -187,7 +187,7 @@ to set them once and reuse them with each command invocation.
 
 To
 [create a new storage container](https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html#container-create)
-named `test-egi`, use the follwoing FedCloud command:
+named `test-egi`, use the following FedCloud command:
 
 ```shell
 $ fedcloud openstack container create test-egi
@@ -244,7 +244,7 @@ named `file1.txt` located in storage container `test-egi`, and save its content
 to a file use the FedCloud command below:
 
 {{% alert title="Tip" color="info" %}} The object can be saved into a file named
-differently than the object itselft, by using the `--filename` command flag.
+differently than the object itself, by using the `--filename` command flag.
 {{% /alert %}}
 
 {{% alert title="Tip" color="info" %}} Multiple files can be downloaded at once,
@@ -443,7 +443,7 @@ to public buckets {{% /alert %}}
 
 #### Access via Python
 
-The possibility to access progammatically via S3 object storage is also quite
+The possibility to access programmatically via S3 object storage is also quite
 important, for instance in the case of interactive computing via EGI Notebooks.
 
 When using Python for instance, [S3Fs](https://s3fs.readthedocs.io/en/latest/)

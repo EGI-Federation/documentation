@@ -134,7 +134,7 @@ of these MUST remain.
 | GlueSiteName                | RAL-LCG2                      | Free text, no whitespace       | Same as GOCDB name if in GOCDB, your choice.                                                                                                                                  |
 | GlueSiteUniqueID            | RAL-LCG2                      | Identical to your !GlueSiteName | Same as GlueSiteName                                                                                                                                                          |
 | GlueSiteWeb                 | `https://cern.ch/it`          | Free Text                       | Valid URL about the site.                                                                                                                                                     |
-| GlueSiteLatitude            | 52.42                         | NN.NN                           | Site Latitute.                                                                                                                                                                |
+| GlueSiteLatitude            | 52.42                         | NN.NN                           | Site Latitude.                                                                                                                                                                |
 | GlueSiteLongitude           | 16.91                         | NN.NN                           | Longitude of Site.                                                                                                                                                            |
 | GlueSiteDescription         | Rutherford Lab                | Free Text                       | A long name for the site.                                                                                                                                                     |
 | GlueSiteLocation            | Dublin, Ireland               | Town, City, Country             | An decreasing resolution ending with Country, agree a country name within a country. i.e UK&nbsp;!= United Kingdom. Scotland and the Balkans should write a dynamic provider. |
@@ -251,7 +251,7 @@ shown in [WLCG CRIC](https://wlcg-cric-2.cern.ch).
 <!-- markdown-link-check-enable -->
 <!-- markdownlint-enable no-bare-urls -->
 
-> Important: The EGEE Grid name was decomissioned on
+> Important: The EGEE Grid name was decommissioned on
 > [[Agenda-14-02-2011|14-02-2011]]. All sites need to replace this grid name
 > with EGI.
 
@@ -273,7 +273,7 @@ commitments to LHC computing.
 | ES-PIC       | pic                  |
 | FR-CCIN2P3   | IN2P3-CC             |
 | IT-INFN-CNAF | INFN-T1              |
-| NDGF         | NGDF-T1              |
+| NDGF         | NDGF-T1              |
 | NL-T1        | SARA-MATRIX          |
 | TW-ASGC      | Taiwan-LCG2          |
 | UK-T1-RAL    | RAL-LCG2             |

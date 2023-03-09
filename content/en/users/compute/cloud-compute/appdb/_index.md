@@ -153,20 +153,20 @@ Rules are as follow:
 - If a keyword is prefixed with the `~` operator, then the keyword will be
   treated as a regular expression which may match any related property.
 - If a keyword is prefixed with the `$` operator, then the keyword will be
-  treated as a soundex phonem which may match any related property that sounds
-  alike in the english language.
+  treated as a soundex phoneme which may match any related property that sounds
+  alike in the English language.
 - If a keyword is prefixed with the `+` operator, then the keyword must match
   any related property.
 - If a keyword is prefixed with the `-` operator, then the keyword must not
   match any related property.
 - If a specifier is present, then the keyword applies only to the specified
   property.
-- Specifiers refering to related entities may omit the property name, in which
+- Specifiers referring to related entities may omit the property name, in which
   case the special property any will be implicit.
 - In keywords without specifiers, the special specifier any.any will be
   implicit.
 - The `&` context operator makes an entity's context private when present; this
-  reduces results to the immediate neighborhoud of the target.
+  reduces results to the immediate neighbourhood of the target.
 
 Consider the following examples when searching for software:
 
@@ -278,7 +278,7 @@ properties with a cardinality 0..\* must be either
 This way, it is possible to perform modifications to a resource's properties
 without having to re-declare all instances of other properties with 0..\*
 cardinality, lest they were to be erased. Properties of 0..1 cardinality may
-also be declared `NULL` in a similar fasion, in which case their value in the
+also be declared `NULL` in a similar fashion, in which case their value in the
 backed becomes undefined. Moreover, one should also note that the response of
 all `PUT`/`POST`/`DELETE` operations equivalent to that of a `GET` operation,
 with the state of the resource
@@ -430,7 +430,7 @@ Examples:
   - having two people in its scientific contact list, those with IDs 189 and 190
   - having one publication with two authors, one internal (i.e. registered with
     the AppDB) and one external (not registered, name-only entry)
-  - listed as supported by two middlewares, and
+  - listed as supported by two middleware, and
   - with two tags applied
 
 ### Application Entry
@@ -455,7 +455,7 @@ Detailed description of a specific application entry
 - Public Operations: none
 - Authenticated Operations: `GET` `PUT`
 
-List of applications that have been moderated some some particular reason, and
+List of applications that have been moderated for some particular reason, and
 thus hidden from public view until the issue gets resolved. Administrative
 access only.
 
@@ -791,7 +791,7 @@ List of discipline and subdiscipline types available for application entries
 
 ### Middleware List
 
-- Resource: `middlewares/`
+- Resource: `middleware/`
 - Type: list
 - Datatype: middleware
 - Schema: middleware
@@ -799,7 +799,7 @@ List of discipline and subdiscipline types available for application entries
 - Public Operations: `GET`
 - Authenticated Operations: none
 
-List of grid middlewares supported by application entries and VOs
+List of grid middleware supported by application entries and VOs
 
 ### Application Status List
 

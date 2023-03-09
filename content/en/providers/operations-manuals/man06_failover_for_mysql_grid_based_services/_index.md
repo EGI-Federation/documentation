@@ -334,7 +334,7 @@ mysql> SHOW PROCESSLIST;
 +------+-----------+-----------------+------+-------------+---------+----------------------------------------------------------------+------+
 | Id   | User      | Host            | db   | Command     | Time    | State                                                          | Info |
 +------+-----------+-----------------+------+-------------+---------+----------------------------------------------------------------+------+
-| 2778 | ibrepifca | localhost:42281 | NULL | Binlog Dump | 1400477 | Has sent all binlog to slave; waiting for binlog to be updated | NULL |
+| 2778 | janedoe   | localhost:42281 | NULL | Binlog Dump | 1400477 | Has sent all binlog to slave; waiting for binlog to be updated | NULL |
 +------+-----------+-----------------+------+-------------+---------+----------------------------------------------------------------+------+
 ```
 

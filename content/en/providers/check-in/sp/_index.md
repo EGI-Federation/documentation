@@ -610,7 +610,7 @@ Example request:
     response_type=code
     &scope=openid%20profile%20email
     &client_id=s6BhdRkqt3
-    &state=af0ifjsldkj
+    &state=af0ifabcd
     &redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
 ```
 
@@ -623,7 +623,7 @@ Example response:
   HTTP/1.1 302 Found
   Location: https://client.example.org/cb?
     code=SplxlOBeZQQYbYS6WxSbIA
-    &state=af0ifjsldkj
+    &state=af0ifabcd
 ```
 
 ##### Token Request
@@ -666,7 +666,7 @@ Example response:
 {
   "access_token": "SlAV32hkKG...",
   "expires_in": 3600,
-  "id_token": "eyJhbGciOiJSUzI1N...",
+  "id_token": "eyabcdGciOiJSUzI1N...",
   "token_type": "Bearer"
 }
 ```
@@ -738,8 +738,7 @@ Example response:
 
 ```http
   HTTP/1.1 302 Found
-  Location: ${REDIRECT_URI}?
-    code=fgtLHT
+  Location: ${REDIRECT_URI}?code=fgtLHT
 ```
 
 The client then sends the Authorization Code in the Access Token Request as
@@ -807,7 +806,7 @@ Example response:
   "access_token": "eyJraWQiOiJvaWRjIiwiYWx...",
   "expires_in": 3599,
   "id_token": "eyJraWQiOiJvaWRjIiwiYW...",
-  "refresh_token": "eyJhbGciOiJub25...",
+  "refresh_token": "eyabcdGciOiJub25...",
   "scope": "openid profile email",
   "token_type": "Bearer"
 }
@@ -863,7 +862,7 @@ Example response:
   "access_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUl...",
   "expires_in": 3599,
   "id_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUl...",
-  "refresh_token": "eyJhbGciOiJub25lIn0.eyJleHAiO...",
+  "refresh_token": "eyabcdGciOiJub25lIn0.eyJleHAiO...",
   "scope": "openid profile offline_access",
   "token_type": "Bearer"
 }
@@ -1432,7 +1431,7 @@ all the required fields. For `Integration Environment` select `Demo`. In
 `http://localhost/simple-oidc-client-php/refreshtoken.php`). This URL must link
 to `refreshtoken.php` which is located in simple-oidc-client-php directory.
 Next, in `Scope` select the scopes that your service needs. Then, submit the
-form and and self approve it. Finally you should get a pair of `Client ID` and
+form and self approve it. Finally you should get a pair of `Client ID` and
 `Client Secret`.
 
 ##### Configure simple-oidc-client-php
@@ -2033,7 +2032,7 @@ connected to Check-in.
 |             **changes** | Yes                                                                                                                                               |
 |        **multiplicity** | Multi-valued                                                                                                                                      |
 |        **availability** | Not always                                                                                                                                        |
-|             **example** | <ul><li>`ssh-rsa AAAAB3NzaC...qxxEEipdnZ nikosev@grnet-hq.admin.grnet.gr`</li><li>`ssh-rsa AAAA4xzdIf...fxgsRDfgAt nikosev@example.org`</li></ul> |
+|             **example** | <ul><li>`ssh-rsa AAAAB3NzaC...qxxEEipdnZ jdoe@grnet-hq.admin.grnet.gr`</li><li>`ssh-rsa AAAA4xzdIf...fxgsRDfgAt jdoe@example.org`</li></ul> |
 |               **notes** | -                                                                                                                                                 |
 |              **status** | Experimental                                                                                                                                      |
 

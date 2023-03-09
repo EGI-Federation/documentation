@@ -41,8 +41,7 @@ To access services and resources in the
 - An [Object Storage](../../data/storage/object-storage) for which you need to
   have all the credentials available (any S3 compatible storage should work)
 - Permission to add the Object Storage credential to the FTS server or
-  alternatively for this operation you may contact support support **at**
-  egi.eu.
+  alternatively for this operation you may contact support **at** egi.eu.
 
 ## FTS client usage
 

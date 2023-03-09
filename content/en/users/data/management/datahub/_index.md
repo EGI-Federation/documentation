@@ -26,7 +26,7 @@ The main features of DataHub are:
 - Policy based data access
 - Replication of data across providers for resiliency and availability purposes
 - Integration with [EGI Check-in](../../../aai/check-in) allows access using
-  comunity credentials, including from other EGI services and components
+  community credentials, including from other EGI services and components
 - File catalog to track replication of data and manage logical and physical
   files
 
@@ -56,7 +56,7 @@ and physical copies of data.
 
 ## Components and concepts
 
-The following concepts (components) will help you undesrtand how EGI DataHub
+The following concepts (components) will help you understand how EGI DataHub
 works.
 
 ### Space

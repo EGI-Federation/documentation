@@ -1,5 +1,5 @@
 ---
-title: Data Tranfer Clients
+title: Data Transfer Clients
 linkTitle: Clients
 type: docs
 weight: 20
@@ -83,7 +83,7 @@ Options
 
 ```shell
 $ fts-rest-whoami -s https://fts3-public.cern.ch:8446
-User DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi
+User DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe
 VO: dteam
 VO id: 6b10f4e4-8fdc-5555-baa2-7d4850d4f406
 Delegation id: 9ab8068853808c6b
@@ -297,7 +297,7 @@ fts-rest-transfer-status -s https://fts3-public.cern.ch:8446 \
   7e02b4fa-d568-11ea-9c80-02163e018681
 Request ID: 7e02b4fa-d568-11ea-9c80-02163e018681
 Status: FAILED
-Client DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi
+Client DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe
 Reason: One or more files failed. Please have a look at the details for more
 information
 Submission time: 2020-08-03T09:05:36
