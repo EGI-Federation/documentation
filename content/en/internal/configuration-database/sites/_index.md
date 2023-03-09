@@ -77,7 +77,7 @@ site, simply click the "**edit**" link on top of the site's details page.
 
 ### Renaming a site
 
-Provided you have permissios, you can change the Short Name, Official Name and
+Provided you have permissions, you can change the Short Name, Official Name and
 GIIS URL to the new Resource Center details. For more information regarding the
 site renaming procedure please see [PROC15](https://confluence.egi.eu/x/3SAmBg)
 
@@ -128,10 +128,10 @@ absolute needs of an important international VO or to flag a site coping with
 [Operations Centre](https://confluence.egi.eu/x/NoIkBQ) requirements but not with EGI
 availability/reliability thresholds.
 - Suspended is always having a temporary meaning. It is used to flag a site temporarily
-not coping with with EGI availability/reliability thresholds or security requirements,
+not coping with EGI availability/reliability thresholds or security requirements,
 and which should be closed or uncertified by its
 [Operations Centre](https://confluence.egi.eu/x/NoIkBQ) within 4 months. When being
-suspended, sites can express that they want to pass certification again. The suspened
+suspended, sites can express that they want to pass certification again. The suspended
 status is useful to EGI and to the Operations Centre themselves to flag the sites that
 require attention by the [Operations Centre](https://confluence.egi.eu/x/NoIkBQ).
 - The closed status should be the terminal one. Suspended is not a terminal state.

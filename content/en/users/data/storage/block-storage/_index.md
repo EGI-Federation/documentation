@@ -39,7 +39,7 @@ The main features of block storage:
   protect data for long-term durability, and they can be used as the starting
   point for new block storage volumes.
 
-{{% alert title="Note" color="info" %}} Block storage volumes can can only be
+{{% alert title="Note" color="info" %}} Block storage volumes can only be
 mounted to VMs running at the same provider where the block storage is located.
 {{% /alert %}}
 

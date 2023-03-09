@@ -113,7 +113,7 @@ allowed chars.
 
 To supply multiple or alternate DN(s) for a service, for example of the multiple
 hosts supporting a single Service entity, see
-[strandard extension properties](../extension-properties/#standard-extension-properties).
+[standard extension properties](../extension-properties/#standard-extension-properties).
 
 ### "production" flag (t/f)
 

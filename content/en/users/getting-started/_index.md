@@ -13,12 +13,12 @@ mission to support research and innovation.
 
 The resources in the EGI infrastructure are offered by
 [service providers](https://www.egi.eu/federation/egi-federated-cloud/) that
-either run their own [data centers](https://www.egi.eu/federation/data-centres/)
+either run their own [data centres](https://www.egi.eu/federation/data-centres/)
 or rely on community, private and/or public cloud services. These service
 providers offer:
 
 - **Single Sign-On** via [EGI Check-in](https://www.egi.eu/service/check-in/)
-  allows users to login with their institutional (community) credentials
+  allows users to log in with their institutional (community) credentials
 - **Global image catalogue** at [AppDB](https://appdb.egi.eu) with
   pre-configured virtual machine images
 - **Resource discovery** features to easily understand which providers are
@@ -52,7 +52,7 @@ certificates, e.g.
 **EGI uses
 [Virtual Organisations](https://confluence.egi.eu/display/EGIG/Virtual+organisation)
 (VOs) to control access to resources**. VOs are fully managed by research
-communities, allowing communitites to manage their users and grant access to
+communities, allowing communities to manage their users and grant access to
 their services and resources. This means communities can either own their
 resources and use EGI services to share (federate) them, or can use the
 resources available in the EGI infrastructure for their scientific needs.
@@ -77,6 +77,9 @@ documentation for a detailed description of the Authentication and Authorization
 Infrastructure (AAI) of the EGI Federation, and to gain a better understanding
 of the concepts that act as building blocks for the AAI implementation.
 {{% /alert %}}
+
+See the [Communities](communities) section for guidance on how to access
+resources allocated to specific research communities (projects).
 
 ## Requesting resources
 
@@ -164,9 +167,14 @@ the users' requests before granting the access to the resources.
    [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240).
    Make sure you use your EGI Check-In account for the enrollment.
 
-The grant to run applications is initially valid for 6 months and can be
+Once your petition is approved, you will be granted access. The grant to
+run applications is initially valid for 6 months and can be
 extended/renewed upon request. These resources are delivered
-[through the vo.access.egi.eu VO](https://documents.egi.eu/public/ShowDocument?docid=2773).
+[through the vo.access.egi.eu VO](https://documents.egi.eu/document/2773).
+
+For pre-configured services (e.g.: [EGI Notebooks](../dev-env/notebooks/)),
+the capacity allocated includes up to **4 vCPU cores, 8 GB of RAM and
+10 GB of block storage**.
 
 You can manage those resources via [command-line](cli) or any of the dashboards
 of the EGI Cloud: the [VMOps dashboard](../compute/cloud-compute/monitor/) and

@@ -214,17 +214,19 @@ depends on the integration environment being used:
 
 {{< tabx header="Demo" >}}
 
-| Demo environment                                       |
-| ------------------------------------------------------ |
-| <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php> |
+| Instance                        | Demo environment                                                   |
+| ------------------------------- | ------------------------------------------------------------------ |
+| Legacy EGI Check-in IdP         | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>             |
+| Keycloak-based EGI Check-in IdP | <https://aai-demo.egi.eu/auth/realms/egi/protocol/saml/descriptor> |
 
 {{< /tabx >}}
 
 {{< tabx header="Development" >}}
 
-| Development environment                               |
-| ----------------------------------------------------- |
-| <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php> |
+| Instance                        | Development environment                                           |
+| ------------------------------- | ----------------------------------------------------------------- |
+| Legacy EGI Check-in IdP         | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>             |
+| Keycloak-based EGI Check-in IdP | <https://aai-dev.egi.eu/auth/realms/egi/protocol/saml/descriptor> |
 
 {{< /tabx >}}
 
@@ -312,6 +314,61 @@ attributes that are relevant for user authorisation:
 | [Capabilities](#capabilities)                                                                   | `eduPersonEntitlement` |
 | [GOCDB roles](#gocdb-roles)                                                                     | `eduPersonEntitlement` |
 | [Identity Assurance](#identity-assurance)                                                       | `eduPersonAssurance`   |
+
+### Service Provider Migration to Keycloak
+
+The migration guide below applies to SAML Service Providers (SPs) registered in
+the **Development** and **Demo** environments of Check-in.
+
+**Development and Demo**: Beginning March 9, 2023, clients using the legacy
+Check-in IdP metadata will no longer be supported.
+
+#### How to Migrate your Service to Keycloak
+
+All the SPs that were registered to the legacy EGI Check-in IdP in the **Demo**
+environment have been moved to Keycloak, so you do not need to re-register your
+Service.
+
+{{% alert title="Important" color="warning" %}} If your SAML SP relies on
+experimental features of Check-in which are only available in the
+**Development** environment, you will need to re-register your SP through the
+[Federation Registry](https://aai.egi.eu/federation) using the "Copy Service"
+functionality.{{% /alert %}}
+
+##### New Identity Provider Metadata
+
+The first thing you need to do is to update the IdP metadata URL in the SP
+configuration, according to the [Metadata registration](#metadata-registration)
+section.
+
+##### New Attributes
+
+Some attributes will not be supported when moving your SP to the Keycloak-based
+EGI Check-in IdP. These attributes will be replaced by new ones, as described in
+the table below:
+
+| Deprecated Attributes        | New Attributes                |
+| ---------------------------- | ----------------------------- |
+| `eduPersonScopedAffiliation` | `voPersonExternalAffiliation` |
+| `eduPersonUniqueId`          | `voPersonID`                  |
+
+{{% alert title="Note" color="info" %}} The values of the deprecated attributes
+will remain the same. Only the name of the attributes is changed.{{% /alert %}}
+
+You need to update the SP configuration to map the values the new attribute
+names.
+
+##### NameID
+
+NameID formats control how the users at IdPs are mapped to users at SPs during
+single sign-on. The SPs need to advertise in their metadata which of the
+following formats they support, otherwise Keycloak will assign the unspecified
+(`urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`) NameID to the SP.
+
+- Transient (`urn:oasis:names:tc:SAML:2.0:nameid-format:transient`)
+- Persistent (`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`)
+- Email address (`urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`)
+- Unspecified (`urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`)
 
 ### References
 
@@ -553,7 +610,7 @@ Example request:
     response_type=code
     &scope=openid%20profile%20email
     &client_id=s6BhdRkqt3
-    &state=af0ifjsldkj
+    &state=af0ifabcd
     &redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
 ```
 
@@ -566,7 +623,7 @@ Example response:
   HTTP/1.1 302 Found
   Location: https://client.example.org/cb?
     code=SplxlOBeZQQYbYS6WxSbIA
-    &state=af0ifjsldkj
+    &state=af0ifabcd
 ```
 
 ##### Token Request
@@ -609,7 +666,7 @@ Example response:
 {
   "access_token": "SlAV32hkKG...",
   "expires_in": 3600,
-  "id_token": "eyJhbGciOiJSUzI1N...",
+  "id_token": "eyabcdGciOiJSUzI1N...",
   "token_type": "Bearer"
 }
 ```
@@ -681,8 +738,7 @@ Example response:
 
 ```http
   HTTP/1.1 302 Found
-  Location: ${REDIRECT_URI}?
-    code=fgtLHT
+  Location: ${REDIRECT_URI}?code=fgtLHT
 ```
 
 The client then sends the Authorization Code in the Access Token Request as
@@ -750,7 +806,7 @@ Example response:
   "access_token": "eyJraWQiOiJvaWRjIiwiYWx...",
   "expires_in": 3599,
   "id_token": "eyJraWQiOiJvaWRjIiwiYW...",
-  "refresh_token": "eyJhbGciOiJub25...",
+  "refresh_token": "eyabcdGciOiJub25...",
   "scope": "openid profile email",
   "token_type": "Bearer"
 }
@@ -806,7 +862,7 @@ Example response:
   "access_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUl...",
   "expires_in": 3599,
   "id_token": "eyJraWQiOiJvaWRjIiwiYWxnIjoiUl...",
-  "refresh_token": "eyJhbGciOiJub25lIn0.eyJleHAiO...",
+  "refresh_token": "eyabcdGciOiJub25lIn0.eyJleHAiO...",
   "scope": "openid profile offline_access",
   "token_type": "Bearer"
 }
@@ -1375,7 +1431,7 @@ all the required fields. For `Integration Environment` select `Demo`. In
 `http://localhost/simple-oidc-client-php/refreshtoken.php`). This URL must link
 to `refreshtoken.php` which is located in simple-oidc-client-php directory.
 Next, in `Scope` select the scopes that your service needs. Then, submit the
-form and and self approve it. Finally you should get a pair of `Client ID` and
+form and self approve it. Finally you should get a pair of `Client ID` and
 `Client Secret`.
 
 ##### Configure simple-oidc-client-php
@@ -1863,20 +1919,20 @@ connected to Check-in.
 
 ### 9. Affiliation
 
-|          attribute name | Affiliation                                                              |
-| ----------------------: | :----------------------------------------------------------------------- |
-|         **description** | The user's affiliation within a particular security domain (scope)       |
-|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.5923.1.1.1.9` (eduPersonScopedAffiliation)          |
-|          **OIDC scope** | `eduperson_scoped_affiliation`                                           |
-|       **OIDC claim(s)** | `eduperson_scoped_affiliation`                                           |
-| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>       |
-|              **origin** | Check-in assigns this attribute on user registration                     |
-|             **changes** | Yes                                                                      |
-|        **multiplicity** | Multi-valued                                                             |
-|        **availability** | Always                                                                   |
-|             **example** | <ul><li>`member@example.org`</li><li>`faculty@example.org`</li></ul>     |
-|               **notes** | Service Providers are encouraged to validate the scope of this attribute |
-|              **status** | Stable                                                                   |
+|          attribute name | Affiliation                                                                                                                                                |
+| ----------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         **description** | The user's affiliation within a particular security domain (scope)                                                                                         |
+|   **SAML Attribute(s)** | <ul><li>`urn:oid:1.3.6.1.4.1.5923.1.1.1.9` (eduPersonScopedAffiliation)</li><li>`urn:oid:1.3.6.1.4.1.25178.4.1.11` (voPersonExternalAffiliation)</li></ul> |
+|          **OIDC scope** | `eduperson_scoped_affiliation`                                                                                                                             |
+|       **OIDC claim(s)** | `eduperson_scoped_affiliation`                                                                                                                             |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                         |
+|              **origin** | Check-in assigns this attribute on user registration                                                                                                       |
+|             **changes** | Yes                                                                                                                                                        |
+|        **multiplicity** | Multi-valued                                                                                                                                               |
+|        **availability** | Always                                                                                                                                                     |
+|             **example** | <ul><li>`member@example.org`</li><li>`faculty@example.org`</li></ul>                                                                                       |
+|               **notes** | Service Providers are encouraged to validate the scope of this attribute                                                                                   |
+|              **status** | Stable                                                                                                                                                     |
 
 ### 10. Groups
 
@@ -1976,7 +2032,7 @@ connected to Check-in.
 |             **changes** | Yes                                                                                                                                               |
 |        **multiplicity** | Multi-valued                                                                                                                                      |
 |        **availability** | Not always                                                                                                                                        |
-|             **example** | <ul><li>`ssh-rsa AAAAB3NzaC...qxxEEipdnZ nikosev@grnet-hq.admin.grnet.gr`</li><li>`ssh-rsa AAAA4xzdIf...fxgsRDfgAt nikosev@example.org`</li></ul> |
+|             **example** | <ul><li>`ssh-rsa AAAAB3NzaC...qxxEEipdnZ jdoe@grnet-hq.admin.grnet.gr`</li><li>`ssh-rsa AAAA4xzdIf...fxgsRDfgAt jdoe@example.org`</li></ul> |
 |               **notes** | -                                                                                                                                                 |
 |              **status** | Experimental                                                                                                                                      |
 

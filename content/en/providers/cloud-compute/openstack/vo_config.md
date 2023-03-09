@@ -15,7 +15,7 @@ The usual method of supporting a VO is by creating a local project for it. You
 should assign quotas to this project as agreed in the OLA defining the support
 for the given VO.
 
-1. Create a group where users belongig to the VO will be mapped to: :
+1. Create a group where users belonging to the VO will be mapped to: :
 
    ```shell
    group_id=$(openstack group create -f value -c id <new_group>)

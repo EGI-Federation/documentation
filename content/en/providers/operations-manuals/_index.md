@@ -36,5 +36,5 @@ documentation and procedures.
 
 - [HOWTO01 Using IGTF CA distribution](./howto01_using_igtf_ca_distribution)
 - [HOWTO02 Site Certification Required Documentation](./howto02_site_certification_required_documentation)
-- [HOWTO03 Site Certification GIIS Check](./howto03_site_certificatoin_giis_check)
+- [HOWTO03 Site Certification GIIS Check](./howto03_site_certification_giis_check)
 - [HOWTO04 Site Certification Manual tests](./howto04_site_certification_manual_tests)

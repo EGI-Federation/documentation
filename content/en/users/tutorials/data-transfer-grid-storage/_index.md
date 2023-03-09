@@ -43,8 +43,8 @@ following command and pointing to the certificates directly:
 ```shell
 $ fts-rest-whoami --key ~/.globus/userkey.pem --cert ~/.globus/usercert.pem \
    -s https://fts3-public.cern.ch:8446/
-User DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
-VO: AndreaCristoforiac@egi.eu@tcs.terena.org
+User DN: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jd@egi.eu
+VO: JaneDoejd@egi.eu@tcs.terena.org
 VO id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 Delegation id: XXXXXXXXXXXXXXXX
 Base id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -72,7 +72,7 @@ already setup as described:
 
 ```shell
 $ voms-proxy-init
-Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
+Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jd@egi.eu
 Creating proxy ........................................... Done
 
 Your proxy is valid until Wed Aug 25 04:18:14 2021
@@ -84,7 +84,7 @@ example to 48 hours, with the following option:
 
 ```shell
 $ voms-proxy-init -valid 48:00
-Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
+Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jd@egi.eu
 Creating proxy ................................... Done
 
 Your proxy is valid until Thu Aug 26 16:23:01 2021
@@ -95,9 +95,9 @@ command: command:
 
 ```shell
 $ voms-proxy-info
-subject   : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu/CN=1451339003
-issuer    : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
-identity  : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
+subject   : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jd@egi.eu/CN=1451339003
+issuer    : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jd@egi.eu
+identity  : /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jd@egi.eu
 type      : RFC compliant proxy
 strength  : 1024 bits
 path      : /tmp/x509up_u1000
@@ -117,7 +117,7 @@ the proxy being created. In the following example the _dteam_ VO has been used:
 
 ```shell
 $ voms-proxy-init --voms dteam
-Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Cristofori ac@egi.eu
+Your identity: /DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe jd@egi.eu
 Creating temporary proxy ................................................................... Done
 Contacting  voms2.hellasgrid.gr:15004 [/C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr] "dteam" Done
 Creating proxy .............................................................................. Done

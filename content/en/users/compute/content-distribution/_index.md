@@ -1,13 +1,13 @@
 ---
 title: Software Distribution
-linkTitle: Content Distribution
+linkTitle: Software Distribution
 type: docs
 weight: 70
 description: >
   Software distribution in the EGI infrastructure
 ---
 
-This page is about the CernVM-FS (CVMFS) service operated for EGI by UKRI-STFC.
+This page documents usage the CernVM-FS (CVMFS) service operated for EGI by UKRI-STFC.
 
 ## Overview
 
@@ -16,7 +16,7 @@ software distribution service. It was developed to assist High Energy Physics
 collaborations to deploy software on the worldwide distributed computing
 infrastructure used to run data processing applications. CVMFS is implemented as
 a POSIX read-only file system in user space. Files and directories are hosted on
-standard web servers and mounted in the universal namespace /cvmfs. CernVM-FS
+standard web servers and mounted in the universal namespace `/cvmfs`. CernVM-FS
 uses outgoing HTTP connections only, thereby it avoids most of the firewall
 issues of other network file systems. It transfers data and metadata on demand
 and verifies data integrity by cryptographic hashes. CVMFS is actively used by
@@ -46,7 +46,8 @@ Request access to the service sending an email to cvmfs-support@gridpp.rl.ac.uk
 In the email, include the following information:
 
 - Name of the VO or CVMFS repository.
-- Distinguish Name (DN) from your X509 grid certificate.
+- Your [Check-in ID](../../../providers/check-in/sp/#1-community-user-identifier)
+  from [EGI Check-in](../../aai/check-in/).
 
 ### Mailing list
 
@@ -55,30 +56,42 @@ All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 
 ## Distributing new content
 
-To login to the service, make sure you have a valid X509 proxy (with the same DN
-provided [in this step](#requesting-access)), and execute the following command:
+To log into the service, just use `ssh`.
+You need to specify explicitly which username you want to use to log in.
+The username is composed as `reponame+"sgm"`.
+For example, for the repository `dirac.egi.eu`, the username is `diracsgm`.
 
 ```shell
-$ gsissh -p 1975 cvmfs-upload01.gridpp.rl.ac.uk
-```
-
-If you are the Content Manager for more than one repository, you would need to
-specify explicit which account you want to login to:
-
-```shell
-$ gsissh -p 1975 <myreposgm>@cvmfs-upload01.gridpp.rl.ac.uk
+# Replace with the proper username
+$ ssh diracsgm@cvmfs-upload01.gridpp.rl.ac.uk
 ```
 
 To copy data:
 
 ```shell
-$ gsiscp -P 1975 <source> cvmfs-upload01.gridpp.rl.ac.uk:<destination>
+# Replace with the proper username
+$ scp source_file.txt diracsgm@cvmfs-upload01.gridpp.rl.ac.uk:destination_folder/
 ```
+
+When running the `ssh` or `scp` commands, a message like this is displayed:
+
+```shell
+# Replace with the proper username
+$ ssh diracsgm@cvmfs-upload01.gridpp.rl.ac.uk
+Authenticate at
+-----------------
+https://aai.egi.eu/device?user_code=AAAAA-BBBBB
+-----------------
+Hit enter when you have finished authenticating
+```
+
+Copy and paste the URL into a browser, and follow the instructions to authenticate
+yourself using your home institution Identity Management Service.
 
 After login, you will find a single directory in the home directory:
 
 ```shell
-[myreposgm@cvmfs-uploader02 ~]$ ls
+$ ls
 cvmfs_repo
 ```
 

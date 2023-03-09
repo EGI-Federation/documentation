@@ -24,7 +24,7 @@ fedcloud ec3 init --site <your site> --vo <your vo>
 We will use the following templates:
 
 1. `torque` (from ec3 default templates)
-1. `nfs` (from ec3 detault templates),
+1. `nfs` (from ec3 default templates),
 1. `ubuntu-1604` (user's template),
 1. `cluster_configure` (user's template)
 

@@ -20,7 +20,7 @@ available in two favors:
 
 {{% alert title="Note" color="info" %}} Please check out the
 [documentation](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html)
-for more details about the avilable APIs, their parameters and return values.
+for more details about the available APIs, their parameters and return values.
 {{% /alert %}}
 
 ## Authentication & Authorisation
@@ -61,15 +61,15 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
   --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/whoami
 {
   "dn": [
-    "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi",
-    "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi/CN=proxy"
+    "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe",
+    "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe/CN=proxy"
   ],
   "vos_id": [
     "6b10f4e4-8fdc-5555-baa2-7d4850d4f406"
   ],
   "roles": [],
   "delegation_id": "9ab8068853808c6b",
-  "user_dn": "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi",
+  "user_dn": "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe",
   "level": {
     "transfer": "vo"
   },
@@ -207,18 +207,18 @@ transfer and getting the job status:
 
 {   u'base_id': u'01874efb-4735-4595-bc9c-591aef8240c9',
     u'delegation_id': u'9ab8068853808c6b',
-    u'dn': [   u'/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi',
-               u'/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi/CN=proxy'],
+    u'dn': [   u'/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe',
+               u'/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe/CN=proxy'],
     u'is_root': False,
     u'level': {   u'transfer': u'vo'},
     u'method': u'certificate',
     u'roles': [],
-    u'user_dn': u'/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi',
+    u'user_dn': u'/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe',
     u'voms_cred': [u'/dteam/Role=NULL/Capability=NULL'],
     u'vos': [u'dteam'],
     u'vos_id': [u'6b10f4e4-8fdc-5555-baa2-7d4850d4f406']}
 
-# creating a new transfer and submiting a job
+# creating a new transfer and submitting a job
 >>> transfer = fts3.new_transfer(
 ...   'gsiftp://source/path', 'gsiftp://destination/path',
 ...   checksum='ADLER32:1234', filesize=1024,
@@ -255,7 +255,7 @@ b6191212-d347-11ea-8a47-fa163e45cbc4
     u'space_token': u'',
     u'submit_host': u'fts-public-03.cern.ch',
     u'submit_time': u'2020-07-31T16:05:54',
-    u'user_dn': u'/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Andrea Manzi',
+    u'user_dn': u'/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe',
     u'verify_checksum': u't',
     u'vo_name': u'dteam'}
 ```

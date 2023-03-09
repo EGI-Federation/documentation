@@ -3,7 +3,7 @@ title: "'Notify Site' field and tickets to multiple sites"
 type: docs
 weight: 40
 description: >
-  Seletting a Resource Centre as recipient and submitting tickets to multiple RCs
+  Selecting a Resource Centre as recipient and submitting tickets to multiple RCs
 ---
 
 ## Notify Site field

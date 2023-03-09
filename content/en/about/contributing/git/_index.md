@@ -60,7 +60,7 @@ for an extensive documentation on using SSH keys with GitHub.
 It's worth to mention that your ssh _public_ keys can easily be retrieved using
 a URL like `https://github.com/<your_username>.keys`.
 
-In order to manage repositories over ssh, you will will have to clone them via
+In order to manage repositories over ssh, you will have to clone them via
 SSH, not HTTPS.
 
 If you already have a local clone of a repository created via HTTPS, you can
@@ -310,7 +310,7 @@ $ git checkout feature_branch
 $ git rebase upstream/main
 ```
 
-In case some files have been changed on both sides you will will have to merge
+In case some files have been changed on both sides you will have to merge
 the conflicts manually.
 
 ## Clone PR to edit/test/review locally

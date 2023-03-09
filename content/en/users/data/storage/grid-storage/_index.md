@@ -84,7 +84,7 @@ The CLI widely used to access grid-storage is
 available for installation both on RHEL and Debian compatible systems.
 
 In particular, `gfal2` provides an abstraction layer on top of several storage
-protocols (XRootD, WebDAV, SRM, gsiftp, etc), offerint a convenient API that can
+protocols (XRootD, WebDAV, SRM, gsiftp, etc), offering a convenient API that can
 be used over different protocols.
 
 The `gfal2` CLI can be installed as follows (for RHEL compatible systems):

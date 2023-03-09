@@ -17,8 +17,8 @@ The following table will help you to find an appropriate priority value:
 | Priority     | Comment                                                        |
 | ------------ | -------------------------------------------------------------- |
 | top priority | service interrupted; needs to be addressed as soon as possible |
-| very urgent  | service degraded; no work-around available                     |
-| urgent       | service degraded; work-around available                        |
+| very urgent  | service degraded; no workaround available                      |
+| urgent       | service degraded; workaround available                         |
 | less urgent  | wishes and enhancements that are "nice to have"                |
 
 In particular, be very economical when choosing 'top priority'. This value, when
