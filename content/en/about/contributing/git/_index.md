@@ -318,7 +318,8 @@ the conflicts manually.
 The repository leverages [GitHub Actions](https://github.com/features/actions) to do
 automatic checks.
 
-The two main checks are:
+The main checks are:
+
 - File lint using [Super-Linter](https://github.com/marketplace/actions/super-linter)
   that includes many linters. Markdown files are processed using
 [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli#readme).
