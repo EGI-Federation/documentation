@@ -233,7 +233,7 @@ choose (or gets used automatically) in specific scenarios:&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>The following sections offer more details about each of these orchestrators.&lt;/p></description></item><item><title>Users: Software Distribution</title><link>/users/compute/content-distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/content-distribution/</guid><description>
+&lt;p>The following sections offer more details about each of these orchestrators.&lt;/p></description></item><item><title>Users: Software Distribution</title><link>/users/compute/software-distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/software-distribution/</guid><description>
 &lt;p>This page documents usage the CernVM-FS (CVMFS) service operated for EGI by UKRI-STFC.&lt;/p>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The CernVM-File System (CVMFS) provides a scalable, reliable and low-maintenance
