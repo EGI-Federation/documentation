@@ -1,6 +1,6 @@
 ---
 title: "High-Throughput Compute"
-weight: 35
+weight: 40
 type: "docs"
 description: Execute thousands of computational tasks to analyse large datasets
 ---

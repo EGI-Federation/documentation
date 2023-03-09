@@ -3,7 +3,7 @@ title: "Notebooks"
 linkTitle: "Notebooks"
 type: docs
 description: "Architecture and Operations of EGI Notebooks"
-weight: 40
+weight: 30
 ---
 
 Here you can find documentation about the internal architecture and operations
