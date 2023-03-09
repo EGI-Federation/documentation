@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Users and roles</title><link>/internal/configuration-database/users-roles/</link><description>Recent content in Users and roles on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/configuration-database/users-roles/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Approving/revoking accounts, roles and other actions</title><link>/internal/configuration-database/users-roles/approve-revoke/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/users-roles/approve-revoke/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Users and roles</title><link>/internal/configuration-database/users-roles/</link><description>Recent content in Users and roles on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/configuration-database/users-roles/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Approving/revoking accounts, roles and other actions</title><link>/internal/configuration-database/users-roles/approve-revoke/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/configuration-database/users-roles/approve-revoke/</guid><description>
 &lt;h2 id="approving-role-and-change-requests">Approving role and change requests&lt;/h2>
 &lt;p>When a registered user applies for a role, the request has to be validated by
 someone who has the proper permissions to grant such a role. If you request a
@@ -93,8 +93,9 @@ private browser session.&lt;/li>
 &lt;li>When prompted, select your new certificate.&lt;/li>
 &lt;li>You should be able to access, but since you are authenticated with your new
 certificate, it is as if you had no user account.&lt;/li>
-&lt;li>In the &lt;strong>User Status&lt;/strong> panel in the sidebar, click on the &lt;strong>Link
-Identity/Recover Account&lt;/strong> link.&lt;/li>
+&lt;li>In the &lt;strong>User Status&lt;/strong> panel in the sidebar, click on the
+&lt;strong>&lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Link_Identity">Link Identity/Recover Account&lt;/a>&lt;/strong>
+link.&lt;/li>
 &lt;li>Specify in the form:
 &lt;ul>
 &lt;li>Authentication type: X.509&lt;/li>

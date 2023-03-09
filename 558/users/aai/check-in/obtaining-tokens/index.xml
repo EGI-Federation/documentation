@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Obtaining Access/Refresh Tokens</title><link>/users/aai/check-in/obtaining-tokens/</link><description>Recent content in Obtaining Access/Refresh Tokens on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/check-in/obtaining-tokens/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: oidc-agent</title><link>/users/aai/check-in/obtaining-tokens/oidc-agent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/obtaining-tokens/oidc-agent/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Obtaining Access/Refresh Tokens</title><link>/users/aai/check-in/obtaining-tokens/</link><description>Recent content in Obtaining Access/Refresh Tokens on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/aai/check-in/obtaining-tokens/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: oidc-agent</title><link>/users/aai/check-in/obtaining-tokens/oidc-agent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/obtaining-tokens/oidc-agent/</guid><description>
 &lt;p>The &lt;a href="https://github.com/indigo-dc/oidc-agent">oidc-agent&lt;/a> is a command-line tool
 for managing OpenID Connect tokens developed by
 &lt;a href="https://www.kit.edu/">Karlsruhe Institute of Technology (KIT)&lt;/a>.&lt;/p>
@@ -78,7 +78,8 @@ yourself. &lt;img src="check-in-token-login.png" alt="EGI Check-in Token Portal 
 &lt;img src="check-in-token-access-token.png" alt="EGI Check-in Token Portal Access Token">
 &lt;ol>
 &lt;li>The value of the Access Token&lt;/li>
-&lt;li>The command to get user&amp;rsquo;s information from userinfo endpoint&lt;/li>
+&lt;li>The command to get user&amp;rsquo;s information from &lt;code>userinfo&lt;/code> endpoint. Running
+this &lt;code>curl&lt;/code> command will also print out your OIDC entitlements.&lt;/li>
 &lt;li>Obtain a Refresh Token (more info in
 &lt;a href="#obtain-a-refresh-token">Obtain a Refresh Token&lt;/a> section)&lt;/li>
 &lt;li>View and manage the applications you have given permissions&lt;/li>

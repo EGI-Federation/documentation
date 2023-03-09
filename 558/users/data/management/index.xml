@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EGI Documentation – Data Management</title><link>/users/data/management/</link><description>Recent content in Data Management on EGI Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/data/management/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI DataHub</title><link>/users/data/management/datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Data Management</title><link>/users/data/management/</link><description>Recent content in Data Management on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/data/management/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: EGI DataHub</title><link>/users/data/management/datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/datahub/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
 &lt;p>&lt;a href="https://datahub.egi.eu/">EGI DataHub&lt;/a> is a high-performance data management
 solution that offers &lt;strong>unified data access across globally distributed
@@ -14,7 +14,7 @@ available at which supporting provider.&lt;/p>
 &lt;li>Policy based data access&lt;/li>
 &lt;li>Replication of data across providers for resiliency and availability purposes&lt;/li>
 &lt;li>Integration with &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> allows access using
-comunity credentials, including from other EGI services and components&lt;/li>
+community credentials, including from other EGI services and components&lt;/li>
 &lt;li>File catalog to track replication of data and manage logical and physical
 files&lt;/li>
 &lt;/ul>
@@ -44,7 +44,7 @@ a sharing service&lt;/li>
 &lt;li>Users need to access data locally and from compute resources&lt;/li>
 &lt;/ul>
 &lt;h2 id="components-and-concepts">Components and concepts&lt;/h2>
-&lt;p>The following concepts (components) will help you undesrtand how EGI DataHub
+&lt;p>The following concepts (components) will help you understand how EGI DataHub
 works.&lt;/p>
 &lt;h3 id="space">Space&lt;/h3>
 &lt;p>Virtual volume where users will organize their data. A space is supported by one
@@ -88,12 +88,12 @@ JSON and RDF. The metadata can be managed using the Web interface and the APIs.
 It's also possible to create indexes and query them.&lt;/p>
 &lt;p>&lt;img src="datahub-metadata-management.png" alt="Management of metadata using the web interface">&lt;/p>
 &lt;p>It's possible to view the popularity of a file and manage smart caching.&lt;/p>
-&lt;p>&lt;img src="datahub-file-popularity-smarch-caching.png" alt="Viewing file popularity for smart caching">&lt;/p></description></item><item><title>Users: Data Transfer</title><link>/users/data/management/data-transfer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/data-transfer/</guid><description>
+&lt;p>&lt;img src="datahub-file-popularity-smarch-caching.png" alt="Viewing file popularity for smart caching">&lt;/p></description></item><item><title>Users: EGI Data Transfer</title><link>/users/data/management/data-transfer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/data-transfer/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>&lt;a href="https://www.egi.eu/services/data-transfer/">EGI Data Transfer&lt;/a>
+&lt;p>&lt;a href="https://www.egi.eu/service/data-transfer/">EGI Data Transfer&lt;/a>
 allows scientists to &lt;strong>move any type of data files asynchronously from one
 storage to another&lt;/strong>. The service includes dedicated interfaces to display statistics
-of on-going transfers and manage storage resource parameters.&lt;/p>
+of ongoing transfers and manage storage resource parameters.&lt;/p>
 &lt;p>EGI Data Transfer is ideal to move large amounts of files or very large
 files as the service has mechanisms to verify checksums and ensure automatic
 retry in case of failures.&lt;/p>
@@ -103,7 +103,7 @@ retry in case of failures.&lt;/p>
 Python bindings, WebFTS, Web Monitoring).&lt;/li>
 &lt;li>&lt;strong>Reliability&lt;/strong>. Checksums are automatically calculated for each transfer and
 failed transfers are retried.&lt;/li>
-&lt;li>&lt;strong>Flexibility&lt;/strong>. Multi-protocol support (WebDAV/HTTTPS, GridFTP, xrootd, SRM, S3, GCloud).&lt;/li>
+&lt;li>&lt;strong>Flexibility&lt;/strong>. Multi-protocol support (WebDAV/HTTPS, GridFTP, xrootd, SRM, S3, GCloud).&lt;/li>
 &lt;li>&lt;strong>Intelligence&lt;/strong>. Parallel transfer optimization ensures users get the most from network
 without burning the storages. Transfers can be classified by &lt;em>priority&lt;/em> and &lt;em>activity&lt;/em>.&lt;/li>
 &lt;/ul>
@@ -122,7 +122,7 @@ FTS3 service, developed at CERN.
 &lt;dl>
 &lt;dt>FTS3 Server&lt;/dt>
 &lt;dd>
-&lt;p>The service is responsible of the asynchronous execution of the file transfer,
+&lt;p>The service is responsible for the asynchronous execution of the file transfer,
 checksumming and retries in case of errors&lt;/p>
 &lt;/dd>
 &lt;dt>FTS3 REST&lt;/dt>
@@ -178,6 +178,42 @@ designed for smaller communities, with expected data needs up to tens of
 Petabytes. The fact that the underlying Rucio infrastructure is managed by STFC,
 allows communities to easily start using and/or test Rucio with little setup
 cost.&lt;/p>
+&lt;h2 id="requirements-to-consider-to-use-rucio">Requirements to consider to use Rucio&lt;/h2>
+&lt;p>For Rucio to manage your data in this setup, Rucio will need X.509 certificate
+access, or soon, through
+&lt;a href="../../../../providers/check-in/_index.md">EGI Check-in&lt;/a> to:&lt;/p>
+&lt;ul>
+&lt;li>Your experiments Storage Element that is X.509 capable&lt;/li>
+&lt;li>Your experiments Tape Archive that is X.509 capable&lt;/li>
+&lt;li>Your experiments VOMS server information to check Users credentials against&lt;/li>
+&lt;/ul>
+&lt;p>Rucio is a system that sits on top of already established storage elements to
+unify users access for data management, and retrieval. Rucio consists of a
+database of the storage element&amp;rsquo;s details, users and their access credential
+information, access levels, the data, and its location, Rucio is not a direct
+data storage solution.&lt;/p>
+&lt;h2 id="rucio-use-cases">Rucio Use Cases&lt;/h2>
+&lt;p>Rucio is a data management software, that integrates with your experiments
+currently provisioned storage. This section will highlight some use cases that
+Rucio will fill for your experiment.&lt;/p>
+&lt;h3 id="management-of-data-for-archive-when-no-longer-used-actively">Management of data for archive when no longer used actively&lt;/h3>
+&lt;p>A simple use case for Rucio is to manage data between &amp;lsquo;hot&amp;rsquo; storage, made of
+HDDs or SSD, and &amp;lsquo;cold&amp;rsquo; storage made up of tape. When your experiment generates
+data that data will be accessed much more than older data as your colleagues work
+with the data. Within Rucio the data will be registered to be on the &amp;lsquo;hot&amp;rsquo; and
+&amp;lsquo;cold&amp;rsquo; storage. This ensures the integrity of the data by providing multiple
+copies of the data, one on the slower tape archive, and one copy on the more
+easy to access HDDs and SSDs. Then as the usage of this data declines, the data
+on the &amp;lsquo;hot&amp;rsquo; storage can be removed to make way for newer data that is more
+frequently accessed. Should the archived data be requested again Rucio can stage
+the data from tape back to disk making it available for users.&lt;/p>
+&lt;h3 id="management-of-data-between-sites-for-jobs">Management of data between sites for jobs&lt;/h3>
+&lt;p>Another useful use case for Rucio is to manage the data between different sites
+within your experiment. This can provide users with better access to the data
+that they want to work on. Another option is to have Rucio integrated with your
+workflow management software (Panda and DIRAC both have integrated with Rucio),
+so data can be moved to sites as job slots are available, streamlining the
+data flow for the user.&lt;/p>
 &lt;h2 id="official-rucio-pages">Official Rucio Pages&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://rucio.cern.ch/">Rucio Homepage&lt;/a>&lt;/li>
