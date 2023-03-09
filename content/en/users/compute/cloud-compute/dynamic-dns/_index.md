@@ -34,7 +34,7 @@ Once logged in, you will be presented with the following page:
 
 To register a new DNS host name:
 
-1. click on _Overview_ and then on _Add Host_.
+1. Click on _Overview_ and then on _Add Host_.
 
 1. Type in the hostname you'd like to register and select the domain to use.
 
@@ -69,17 +69,17 @@ To register a new DNS host name:
 - Hostnames/IP addresses are not expired so no need to refresh IP addresses if
   no changes, it is enough to run once. You can add the following command
   `curl https://HOSTNAME:SECRET@nsupdate.fedcloud.eu/nic/update` to cloud-init
-  as described above to assign hostname automatically at VM start
+  as described above to assign hostname automatically at VM start.
 
 - DNS server set Time-to-Live (max time for caching DNS records) to 1 min for
   dynamic DNS, but MS Windows seems to not respect that. You can clear DNS cache
-  in Windows with `ipconfig /flushdns` command with Administrator account
-  
+  in Windows with `ipconfig /flushdns` command with Administrator account.
+
 {{% /alert %}}
 
 ## API
 
-Dynamic DNS update server uses dydns2 protocol, compatible with commercial
+Dynamic DNS update server uses dyndns2 protocol, compatible with commercial
 providers like [dyn.com](https://help.dyn.com/remote-access-api/perform-update/),
 and [noip.com](http://www.noip.com/integrate/request). The API is specified as
 follows:
@@ -118,4 +118,4 @@ where:
 Support for Dynamic DNS service is provided via [EGI Helpdesk](https://ggus.eu/)
 in **"Dynamic DNS"** support unit, where users can ask questions, report issues
 or make requests for additional domains for specific projects or user
-commnunities.
+communities.

@@ -7,8 +7,8 @@ description: "Communication channels for RODs."
 
 ## ROD intra-team communication
 
-At the end of a shift the current ROD team should prepare the handover for
-internal ROD matters. Each ROD can decide independently on what the handover
+At the end of a shift the current ROD team should prepare the hand over for
+internal ROD matters. Each ROD can decide independently on what the hand over
 should look like and how it should be passed on to the next team. The following
 list provides mere suggestions for what should be included:
 
@@ -37,5 +37,5 @@ ROD should communicate with EGI Operations through the mailing list "operations
 assigned to the EGI Operations support unit to make tracking of the case
 possible.
 
-There is also the handover section in the ROD dashboard which allows for EGI
+There is also the hand over section in the ROD dashboard which allows for EGI
 Operations team and RODs to intercommunicate.

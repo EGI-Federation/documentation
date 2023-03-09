@@ -17,7 +17,7 @@ The data management services of EGI comprises two groups of services:
   data management and digital lab notebook
   
 The EGI data management services offer both application programming
-inferfaces (APIs) and command-line interfaces (CLIs) that are integrated
+interfaces (APIs) and command-line interfaces (CLIs) that are integrated
 with the advanced EGI services and platforms
 (such as [development environments](../../dev-env),
 [machine learning](../../machine-learning), or

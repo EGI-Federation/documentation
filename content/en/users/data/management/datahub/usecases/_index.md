@@ -15,7 +15,7 @@ An overview of the use cases and possible deployment scenarios of the
 ## Build Data Spaces for Communities
 
 Users can access with their EGI Check-in credentials data available
-at one or more providers which are abstracting over heterogeneus
+at one or more providers which are abstracting over heterogeneous
 backends.
 
 Different data access interfaces are available (Web, REST, POSIX,

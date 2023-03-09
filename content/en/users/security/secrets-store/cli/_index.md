@@ -90,7 +90,7 @@ $ fedcloud secret list
 my_app_secrets
 ```
 
-Using any of the keys (actually, their vaules) is straighforward too:
+Using any of the keys (actually, their values) is straightforward too:
 
 {{< tabpanex >}} {{< tabx header="Mac / Linux" >}}
 
@@ -359,7 +359,7 @@ converting simple text files to YAML files.
 blank space is required after the `:` separating keys and values.{{% /alert %}}
 
 {{% alert title="Note" color="info" %}} There is a difference between
-`cert=@hostcert.pem` for reading the content of the file _horstcert.pem_ as
+`cert=@hostcert.pem` for reading the content of the file _hostcert.pem_ as
 the value for the key `cert`, and `@my_secrets.yaml` for reading the whole
 secret object with all key:value pairs from the YAML file.{{% /alert %}}
 
@@ -396,7 +396,7 @@ gAAAAAB...............................
 ```
 
 {{% alert title="Note" color="info" %}} The encryption/decryption is done with
-the standard Python crytography library. Security experts are invited to review
+the standard Python cryptography library. Security experts are invited to review
 the code (available on
 [GitHub](https://github.com/tdviet/fedcloudclient/blob/master/fedcloudclient/secret.py#L159))
 and provide feedback and suggestions for improvements.{{% /alert %}}

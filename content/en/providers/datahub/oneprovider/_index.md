@@ -147,11 +147,11 @@ deciding to enable the automatic scan of the storage or to perform a single
 scan:
 
 1. An initially empty space, modified only via DataHub -> no need to enable the
-   autoscan or to perform a manual scan.
+   auto-scan or to perform a manual scan.
 1. A space with some initial data that has been imported once and then the space
    is only modified via DataHub -> In this case the auto scan is not needed
    however it needs to somehow guard the storage from external modifications
-   otherwise it will desync with the space. E.g.: all changes should be done
+   otherwise it will desynchronise with the space. E.g.: all changes should be done
    trough API, DataHub client or the web interface.
 1. A space that exposes a dataset from a storage that later is still dynamically
    changing outside of DataHub (when it is assumed that some modification can
