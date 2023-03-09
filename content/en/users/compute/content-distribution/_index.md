@@ -46,7 +46,8 @@ Request access to the service sending an email to cvmfs-support@gridpp.rl.ac.uk
 In the email, include the following information:
 
 - Name of the VO or CVMFS repository.
-- Your `voperson_id` from EGI Check-in.
+- Your [voperson_id](../../../providers/check-in/sp/#1-community-user-identifier)
+  from EGI Check-in.
 
 ### Mailing list
 
