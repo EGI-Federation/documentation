@@ -264,17 +264,17 @@ software used to process experiment data.&lt;/p>
 In the email, include the following information:&lt;/p>
 &lt;ul>
 &lt;li>Name of the VO or CVMFS repository.&lt;/li>
-&lt;li>Your &lt;a href="../../../providers/check-in/sp/#1-community-user-identifier">voperson_id&lt;/a>
-from EGI Check-in.&lt;/li>
+&lt;li>Your &lt;a href="../../../providers/check-in/sp/#1-community-user-identifier">Check-in ID&lt;/a>
+from &lt;a href="../../aai/check-in/">EGI Check-in&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;h3 id="mailing-list">Mailing list&lt;/h3>
 &lt;p>All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 &lt;a href="https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=cvmfs-uploader-users">JISCMAIL&lt;/a>.&lt;/p>
 &lt;h2 id="distributing-new-content">Distributing new content&lt;/h2>
-&lt;p>To login to the service, just use &lt;code>ssh&lt;/code>.
-You need to specify explicitly which account you want to login to.
-This account is built as &lt;code>reponame+&amp;quot;sgm&amp;quot;&lt;/code>.
-For example, for repository &lt;code>dirac.egi.eu&lt;/code>, UNIX account is &lt;code>diracsgm&lt;/code>.&lt;/p>
+&lt;p>To log into the service, just use &lt;code>ssh&lt;/code>.
+You need to specify explicitly which username you want to use to log in.
+The username is composed as &lt;code>reponame+&amp;quot;sgm&amp;quot;&lt;/code>.
+For example, for the repository &lt;code>dirac.egi.eu&lt;/code>, the username is &lt;code>diracsgm&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Replace with the proper username&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh diracsgm@cvmfs-upload01.gridpp.rl.ac.uk
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To copy data:&lt;/p>
