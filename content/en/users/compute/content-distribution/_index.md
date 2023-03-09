@@ -46,8 +46,8 @@ Request access to the service sending an email to cvmfs-support@gridpp.rl.ac.uk
 In the email, include the following information:
 
 - Name of the VO or CVMFS repository.
-- Your [voperson_id](../../../providers/check-in/sp/#1-community-user-identifier)
-  from EGI Check-in.
+- Your [Check-in ID](../../../providers/check-in/sp/#1-community-user-identifier)
+  from [EGI Check-in](../../aai/check-in/).
 
 ### Mailing list
 
@@ -56,10 +56,10 @@ All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 
 ## Distributing new content
 
-To login to the service, just use `ssh`.
-You need to specify explicitly which account you want to login to.
-This account is built as `reponame+"sgm"`.
-For example, for repository `dirac.egi.eu`, UNIX account is `diracsgm`.
+To log into the service, just use `ssh`.
+You need to specify explicitly which username you want to use to log in.
+The username is composed as `reponame+"sgm"`.
+For example, for the repository `dirac.egi.eu`, the username is `diracsgm`.
 
 ```shell
 # Replace with the proper username
