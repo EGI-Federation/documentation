@@ -18,7 +18,7 @@ ssmsend every six hours.
 
 ### Using the VM Appliance
 
-[cASO configuration](http://caso.readthedocs.org/en/latest/configuration.html)
+[cASO configuration](https://caso.readthedocs.org/en/latest/configuration.html)
 is stored at `/etc/caso/caso.conf`. Most default values should be OK, but you
 must set:
 
@@ -29,7 +29,7 @@ must set:
 
 - credentials to access the accounting data (lines 28-47, more options also
   available). Check the
-  [cASO documentation](http://caso.readthedocs.org/en/latest/configuration.html#openstack-configuration)
+  [cASO documentation](https://caso.readthedocs.org/en/latest/configuration.html#openstack-configuration)
   for the expected permissions of the user configured here.
 
 - The mapping from EGI VOs to your local projects `/etc/caso/voms.json`,

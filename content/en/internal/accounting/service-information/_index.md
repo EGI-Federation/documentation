@@ -17,7 +17,7 @@ description: "EGI Accounting identity card"
 | Support Email                           | `apel-admins` `<at>` `stfc.ac.uk`                                                                                                                 |
 | [Helpdesk](../../helpdesk) Support Unit | **EGI Services and Service Components** <br/> I\_\_ Accounting Portal <br/> I\_\_ APEL Client and Accounting Repository                           |
 | Configuration Database entries          | [Repository](https://goc.egi.eu/portal/index.php?Page_Type=Site&id=237) <br/> [Portal](https://goc.egi.eu/portal/index.php?Page_Type=Site&id=646) |
-| Suppliers                               | [UKRI](https://www.ukri.org/) (Repository), [CESGA](http://www.cesga.es) (Portal)                                                                 |
+| Suppliers                               | [UKRI](https://www.ukri.org/) (Repository), [CESGA](https://www.cesga.es) (Portal)                                                                |
 | Roadmap                                 | N/A                                                                                                                                               |
 | Release notes                           | N/A                                                                                                                                               |
 | Source code                             | [APEL](https://github.com/apel/apel), Portal: N/A                                                                                                 |

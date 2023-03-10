@@ -54,11 +54,11 @@ Database entries.
 4. Stunnel uses Public-key cryptography with X.509 digital certificates to
    secure the SSL connection. Clients can optionally be authenticated via a
    certificate too
-5. For more references, please check [www.stunnel.org](http://www.stunnel.org/)
+5. For more references, please check [www.stunnel.org](https://www.stunnel.org/)
 
 - There are other possibilities for encryption, like enabling SSL Support
   directly in MySQL, but these approach was not tested. Details can be obtained
-  [here](http://www.howtoforge.com/how-to-set-up-mysql-database-replication-with-ssl-encryption-on-centos-5.4).
+  [here](https://www.howtoforge.com/how-to-set-up-mysql-database-replication-with-ssl-encryption-on-centos-5.4).
 
 ## MySQL replication
 
