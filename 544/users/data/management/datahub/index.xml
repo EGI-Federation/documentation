@@ -3,7 +3,7 @@
 &lt;a href="https://datahub.egi.eu/">EGI DataHub&lt;/a>.&lt;/p>
 &lt;h2 id="build-data-spaces-for-communities">Build Data Spaces for Communities&lt;/h2>
 &lt;p>Users can access with their EGI Check-in credentials data available
-at one or more providers which are abstracting over heterogeneus
+at one or more providers which are abstracting over heterogeneous
 backends.&lt;/p>
 &lt;p>Different data access interfaces are available (Web, REST, POSIX,
 CDMI).&lt;/p>

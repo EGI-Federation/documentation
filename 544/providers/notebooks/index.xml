@@ -79,7 +79,7 @@ environment:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To simplify the configuration and to add refresh capabilities to the
 credentials, we have created a new
 &lt;a href="https://github.com/enolfc/oauthenticator">EGI Check-in authenticator&lt;/a> that can
-be configued as follows:&lt;/p>
+be configured as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">auth&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">state&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -286,7 +286,6 @@ the OpenStack APIs of a given site:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">OS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>fedcloud openstack --site CESGA --vo vo.notebooks.egi.eu &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> token issue -c id -f value&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>First get the network IDs and pool to use for the site:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud openstack --site CESGA --vo vo.notebooks.egi.eu network list
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+--------------------------------------+-------------------------+--------------------------------------+
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> ID &lt;span style="color:#000;font-weight:bold">|&lt;/span> Name &lt;span style="color:#000;font-weight:bold">|&lt;/span> Subnets &lt;span style="color:#000;font-weight:bold">|&lt;/span>
@@ -294,8 +293,7 @@ the OpenStack APIs of a given site:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> 1aaf20b6-47a1-47ef-972e-7b36872f678f &lt;span style="color:#000;font-weight:bold">|&lt;/span> net-vo.notebooks.egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span> 6465a327-c261-4391-a0f5-d503cc2d43d3 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> 6174db12-932f-4ee3-bb3e-7a0ca070d8f2 &lt;span style="color:#000;font-weight:bold">|&lt;/span> public00 &lt;span style="color:#000;font-weight:bold">|&lt;/span> 6af8c4f3-8e2e-405d-adea-c0b374c5bd99 &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+--------------------------------------+-------------------------+--------------------------------------+
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>In this case we will use &lt;code>public00&lt;/code> as the pool for public IPs and
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case we will use &lt;code>public00&lt;/code> as the pool for public IPs and
 &lt;code>1aaf20b6-47a1-47ef-972e-7b36872f678f&lt;/code> as the network ID. Check with the
 provider which is the right network to use. Use these values in the
 &lt;code>terraform.tfvars&lt;/code> file:&lt;/p>
@@ -303,7 +301,6 @@ provider which is the right network to use. Use these values in the
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">net_id&lt;/span> = &lt;span style="color:#4e9a06">&amp;#34;1aaf20b6-47a1-47ef-972e-7b36872f678f&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may want to check the right flavors for your VMs and adapt other variables
 in &lt;code>terraform.tfvars&lt;/code>. To get a list of flavors you can use:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud openstack --site CESGA --vo vo.notebooks.egi.eu flavor list
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+--------------------------------------+----------------+-------+------+-----------+-------+-----------+
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> ID &lt;span style="color:#000;font-weight:bold">|&lt;/span> Name &lt;span style="color:#000;font-weight:bold">|&lt;/span> RAM &lt;span style="color:#000;font-weight:bold">|&lt;/span> Disk &lt;span style="color:#000;font-weight:bold">|&lt;/span> Ephemeral &lt;span style="color:#000;font-weight:bold">|&lt;/span> VCPUs &lt;span style="color:#000;font-weight:bold">|&lt;/span> Is Public &lt;span style="color:#000;font-weight:bold">|&lt;/span>
@@ -319,13 +316,12 @@ in &lt;code>terraform.tfvars&lt;/code>. To get a list of flavors you can use:&lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> c4aa496b-4684-4a86-bd7f-3a67c04b1fa6 &lt;span style="color:#000;font-weight:bold">|&lt;/span> cor24mem50hd50 &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">51200&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">50&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">24&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> True &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> edac68c3-50ea-42c2-ae1d-76b8beb306b5 &lt;span style="color:#000;font-weight:bold">|&lt;/span> test-bigHD &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4096&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">237&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> True &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+--------------------------------------+----------------+-------+------+-----------+-------+-----------+
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>Finally ensure your public ssh key is also listed in the &lt;code>cloud-init.yaml&lt;/code> file
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, ensure your public ssh key is also listed in the &lt;code>cloud-init.yaml&lt;/code> file
 and then you are ready to deploy the cluster with:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>terraform apply
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your VMs are up and running, it's time to get kubernetes configured and running
-with ansible.&lt;/p>
-&lt;p>The following ansible role needs to be installed first:&lt;/p>
+with Ansible.&lt;/p>
+&lt;p>The following Ansible role needs to be installed first:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ansible-galaxy install grycap.kubernetes
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and then:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> .. &lt;span style="color:#8f5902;font-style:italic"># you should be now in &amp;lt;new provider&amp;gt;&lt;/span>
@@ -337,7 +333,6 @@ with ansible.&lt;/p>
 with it, but you can still ssh into the VM using the ingress node as a gateway
 host (you can get the different hosts with
 &lt;code>TF_STATE=./terraform terraform-inventory --inventory&lt;/code>)&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ssh -o &lt;span style="color:#000">ProxyCommand&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p -q egi@&amp;lt;ingress ip&amp;gt;&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -o &lt;span style="color:#000">StrictHostKeyChecking&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>no -o &lt;span style="color:#000">UserKnownHostsFile&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/null egi@&amp;lt;master ip&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>egi@k8s-master:~$ kubectl get nodes
@@ -350,13 +345,12 @@ host (you can get the different hosts with
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>certs-man &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> Wed Jan &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span> 15:56:58 &lt;span style="color:#0000cf;font-weight:bold">2020&lt;/span> DEPLOYED cert-manager-v0.11.0 v0.11.0 cert-manager
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cluster-ingress &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> Wed Jan &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span> 15:56:53 &lt;span style="color:#0000cf;font-weight:bold">2020&lt;/span> DEPLOYED nginx-ingress-1.7.0 0.24.1 kube-system
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nfs-provisioner &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> Wed Jan &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span> 15:56:43 &lt;span style="color:#0000cf;font-weight:bold">2020&lt;/span> DEPLOYED nfs-client-provisioner-1.2.8 3.1.0 kube-system
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;h3 id="modifyingdestroying-the-cluster">Modifying/Destroying the cluster&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="modifyingdestroying-the-cluster">Modifying/Destroying the cluster&lt;/h3>
 &lt;p>You should be able to change the number of workers in the cluster and re-apply
 terraform to start them and then execute the playbook to get them added to the
 cluster.&lt;/p>
-&lt;p>Any changes in the master, NFS or ingress VMs should be done carfully as those
-will probably break the configuration of the kubernetes cluster and of any
+&lt;p>Any changes in the master, NFS or ingress VMs should be done carefully as those
+will probably break the configuration of the Kubernetes cluster and of any
 application running on top.&lt;/p>
 &lt;p>Destroying the cluster can be done with a single command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>terraform destroy
@@ -374,10 +368,10 @@ You can find more information about registering an OIDC Client in
 &lt;a href="../../check-in/sp/#service-provider-integration-workflow">EGI Check-in guide for SPs&lt;/a>
 Use the following as redirect URL:
 &lt;code>https://&amp;lt;your host domain name&amp;gt;/hub/oauth_callback&lt;/code>.&lt;/p>
-&lt;p>Then add &lt;code>offline_access&lt;/code> to the list of scopes and sumbit the request. After
+&lt;p>Then add &lt;code>offline_access&lt;/code> to the list of scopes and submit the request. After
 the approval of the Service request, save the client and take note of the
 client ID and client secret for later.&lt;/p>
-&lt;p>Finally you will also need 3 different random strings generated with
+&lt;p>Finally, you will also need 3 different random strings generated with
 &lt;code>openssl rand -hex 32&lt;/code> that will be used as secrets in the file describing the
 deployment.&lt;/p>
 &lt;p>Go and edit the deployment description file to add this information (search for

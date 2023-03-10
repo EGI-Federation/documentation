@@ -154,7 +154,7 @@ Configuration Database or BDII (e.g. &lt;code>httpg://se.egi.eu:8444/srm/manager
 &lt;li>&lt;strong>org.openstack.swift&lt;/strong>:The &lt;code>endpoint URL&lt;/code> must contain the Keystone v3 URL:
 &lt;code>https://hostname:port/url/v3&lt;/code>&lt;/li>
 &lt;li>&lt;strong>eu.egi.cloud.accounting&lt;/strong>: for the host sending the records to the
-accounting repositority&lt;/li>
+accounting repository&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Other service types: the value of the attribute &lt;code>GlueServiceEndpoint&lt;/code>
@@ -167,7 +167,7 @@ Configuration Database, please consult the
 &lt;a href="../service-entities">service endpoints documentation&lt;/a>.&lt;/p>
 &lt;h2 id="retrieving-the-information">Retrieving the information&lt;/h2>
 &lt;p>For retrieving the queue URL from the BDII, you can use the command
-&lt;code>lcg-infosites&lt;/code>, to be executed from an UI. Be sure to query a production Top
+&lt;code>lcg-infosites&lt;/code>, to be executed from a UI. Be sure to query a production Top
 BDII: you can either use the one provided by your Operations Centre or choose
 one from
 &lt;a href="https://goc.egi.eu/portal/index.php?Page_Type=Service_Group&amp;amp;id=1205">the Configuration Database&lt;/a>&lt;/p>
@@ -212,7 +212,7 @@ information.&lt;/p>
 &lt;li>Editing a service&lt;/li>
 &lt;/ul>
 &lt;blockquote>
-&lt;p>Click on the EDIT button on the top right corner&lt;/p>
+&lt;p>Click on the EDIT button in the top right corner&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;img src="service-overview.png" alt="Service overview">&lt;/p>
 &lt;ul>
@@ -248,7 +248,7 @@ endpoint URLs.&lt;/p>
 &lt;/ul>
 &lt;blockquote>
 &lt;p>Fill in the proper information and don&amp;rsquo;t forget to select the &amp;ldquo;Monitored&amp;rdquo; flag
-for making nagios to detect the new endpoint.&lt;/p>
+for making Nagios to detect the new endpoint.&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;img src="add-endpoint.png" alt="Adding and endpoint">&lt;/p>
 &lt;ul>
@@ -546,7 +546,7 @@ get_service_group, get_downtime, get_downtime_nested, get_site_list.&lt;/li>
 &lt;li>The format of the &amp;rsquo;extensions&amp;rsquo; PI parameter is one or more (key=value) pairs
 enclosed in brackets.
 &lt;ul>
-&lt;li>The value part of a (k=v) pair can be ommitted if filtering by value is not
+&lt;li>The value part of a (k=v) pair can be omitted if filtering by value is not
 required (i.e. &amp;lsquo;(somekey=)&amp;rsquo; means select all resources that define the
 &amp;lsquo;somekey&amp;rsquo; property with any value.&lt;/li>
 &lt;li>(k=v) pairs can be optionally prefixed with one of following operators: AND,
@@ -955,7 +955,7 @@ characters that cannot be expressed in printable 7-bit ASCII. For a list of
 allowed chars.&lt;/p>
 &lt;p>To supply multiple or alternate DN(s) for a service, for example of the multiple
 hosts supporting a single Service entity, see
-&lt;a href="../extension-properties/#standard-extension-properties">strandard extension properties&lt;/a>.&lt;/p>
+&lt;a href="../extension-properties/#standard-extension-properties">standard extension properties&lt;/a>.&lt;/p>
 &lt;h3 id="production-flag-tf">&amp;ldquo;production&amp;rdquo; flag (t/f)&lt;/h3>
 &lt;p>The Service entities&amp;rsquo; Production flag indicates if this service delivers a
 production quality service to the infrastructure it belongs to (EGI).&lt;/p>
@@ -1013,14 +1013,14 @@ physical site&lt;/strong>.&lt;/li>
 services. This means that you cannot declare a downtime on the services that
 you group together or modify the service attributes.&lt;/li>
 &lt;li>Any GOCDB user can create their own service group and as the &amp;lsquo;Service Group
-Administator&amp;rsquo; you can control subsequent user membership requests to the SG
+Administrator&amp;rsquo; you can control subsequent user membership requests to the SG
 (everything is logged, including who created the service group).&lt;/li>
 &lt;li>GOCDB users can request to join an existing service group by finding the
 target SG and requesting a role on that SG.&lt;/li>
 &lt;li>Service groups are typically used for monitoring a particular collection of
 services and/or users using the GOCDB &amp;lsquo;get_service_group&amp;rsquo; and
 &amp;lsquo;get_service_group_role&amp;rsquo; PI methods.&lt;/li>
-&lt;li>SG memebers can be listed using the get_service_group_role PI method.&lt;/li>
+&lt;li>SG members can be listed using the get_service_group_role PI method.&lt;/li>
 &lt;li>PI doc:
 &lt;ul>
 &lt;li>&lt;a href="https://wiki.egi.eu/wiki/GOCDB/PI/get_service_group">get_service_group&lt;/a>(link
@@ -1236,7 +1236,7 @@ registered in GOCDB, please contact your NGI representative.&lt;/p>
 &lt;p>The editing process will show you the same form as the adding process. To edit a
 site, simply click the &amp;ldquo;&lt;strong>edit&lt;/strong>&amp;rdquo; link on top of the site&amp;rsquo;s details page.&lt;/p>
 &lt;h3 id="renaming-a-site">Renaming a site&lt;/h3>
-&lt;p>Provided you have permissios, you can change the Short Name, Official Name and
+&lt;p>Provided you have permissions, you can change the Short Name, Official Name and
 GIIS URL to the new Resource Center details. For more information regarding the
 site renaming procedure please see &lt;a href="https://confluence.egi.eu/x/3SAmBg">PROC15&lt;/a>&lt;/p>
 &lt;h3 id="removing-a-site">Removing a site&lt;/h3>
@@ -1281,10 +1281,10 @@ absolute needs of an important international VO or to flag a site coping with
 &lt;a href="https://confluence.egi.eu/x/NoIkBQ">Operations Centre&lt;/a> requirements but not with EGI
 availability/reliability thresholds.&lt;/li>
 &lt;li>Suspended is always having a temporary meaning. It is used to flag a site temporarily
-not coping with with EGI availability/reliability thresholds or security requirements,
+not coping with EGI availability/reliability thresholds or security requirements,
 and which should be closed or uncertified by its
 &lt;a href="https://confluence.egi.eu/x/NoIkBQ">Operations Centre&lt;/a> within 4 months. When being
-suspended, sites can express that they want to pass certification again. The suspened
+suspended, sites can express that they want to pass certification again. The suspended
 status is useful to EGI and to the Operations Centre themselves to flag the sites that
 require attention by the &lt;a href="https://confluence.egi.eu/x/NoIkBQ">Operations Centre&lt;/a>.&lt;/li>
 &lt;li>The closed status should be the terminal one. Suspended is not a terminal state.&lt;/li>
@@ -1420,7 +1420,7 @@ entities. Access is restricted, more details can be found in the section about
 &lt;a href="https://gocdb.github.io/api/write/#authenticationauthorisation">authentication and authorisation&lt;/a>.&lt;/p>
 &lt;h2 id="using-the-read-api">Using the Read API&lt;/h2>
 &lt;h3 id="querying">Querying&lt;/h3>
-&lt;p>API calls can be tested in a browser or done from the commmand-line interface,
+&lt;p>API calls can be tested in a browser or done from the command-line interface,
 using &lt;code>curl&lt;/code>.&lt;/p>
 &lt;p>Below are some examples, including methods with different
 &lt;a href="https://gocdb.github.io/api/read/#data-protection-levels">data protection levels&lt;/a>.&lt;/p>

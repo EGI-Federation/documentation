@@ -412,7 +412,7 @@ to &lt;code>“Enter PEM pass phrase”&lt;/code>, enter the pass phrase of your
 &lt;code>1234&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Now you can create the certificate, use &lt;code>-clcerts&lt;/code>, (use &lt;code>-nokeys&lt;/code> hereu will
+&lt;p>Now you can create the certificate, use &lt;code>-clcerts&lt;/code>, (use &lt;code>-nokeys&lt;/code> here will
 not output private key), and the command is:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>openssl pkcs12 -clcerts -nokeys -in my_cert.p12 -out usercert.pem
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When prompted to &lt;code>“Enter Import Password”&lt;/code>, simply press enter since no
@@ -483,7 +483,7 @@ Membership Service (VOMS).&lt;/p>
 &lt;h3 id="voms">VOMS&lt;/h3>
 &lt;p>The Virtual Organization Membership Service (VOMS) is an attribute authority
 which serves as central repository for VO user authorization information,
-providing support for sorting users into group hierarchies, keeping track ofu
+providing support for sorting users into group hierarchies, keeping track of
 their roles and other attributes in order to issue trusted attribute
 certificates and SAML assertions used in the Grid environment for authorization
 purposes. VOMS is composed of two main components:&lt;/p>
@@ -546,7 +546,7 @@ stored at &lt;code>/etc/grid-security/vomsdir/&amp;lt;vo name&amp;gt;&lt;/code> 
 for each of the VOMS server of the VO.&lt;/li>
 &lt;/ul>
 &lt;p>You can check specific configuration for your VO at the
-&lt;a href="https://operations-portal.egi.eu/vo">Operations portal&lt;/a>. Normally each VOMS
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations portal&lt;/a>. Normally each VOMS
 server has a &lt;em>Configuration Info&lt;/em> link where the exact information to include in
 the &lt;code>vomses&lt;/code> and &lt;code>.lsc&lt;/code> files is shown.&lt;/p>
 &lt;h3 id="proxy-creation">Proxy creation&lt;/h3>

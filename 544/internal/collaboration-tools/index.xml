@@ -110,7 +110,7 @@ generate and retrieve it.&lt;/li>
 &lt;p>Certificates are usually valid for one year. Auto-renewal of certificates is
 enabled by default, 30 days before expiration, notifications will be sent to the
 contact address provided when requesting the certificate.&lt;/p>
-&lt;p>The notifications contains links allowing to renew the certificate.&lt;/p>
+&lt;p>The notifications contain links allowing to renew the certificate.&lt;/p>
 &lt;h2 id="creating-a-certificate-signing-request">Creating a Certificate Signing Request&lt;/h2>
 &lt;p>In order to get a certificate, Service Providers may be requested to send a
 Certificate Signing Request (CSR).&lt;/p>
@@ -121,7 +121,7 @@ certificate.&lt;/p>
 &lt;h3 id="using-a-web-application">Using a web application&lt;/h3>
 &lt;p>DigiCert provides an online
 &lt;a href="https://www.digicert.com/easy-csr/openssl.htm">web application&lt;/a>.&lt;/p>
-&lt;h3 id="using-cloudfalre-cfssl-tool">Using CloudFalre cfssl tool&lt;/h3>
+&lt;h3 id="using-cloudflare-cfssl-tool">Using CloudFlare cfssl tool&lt;/h3>
 &lt;p>It can be done with the &lt;code>cfssl&lt;/code> tool from
 &lt;a href="https://github.com/cloudflare/cfssl">CloudFlare&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Replace #FQDN# by the FQDN of the service&lt;/span>

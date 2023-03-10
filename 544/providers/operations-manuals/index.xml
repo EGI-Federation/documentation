@@ -327,7 +327,7 @@ the EGI CSIRT and the outcome was positive.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>Monitoring: the registered endpoints are automaticall detected by
+&lt;p>Monitoring: the registered endpoints are automatically detected by
 &lt;a href="../../../internal/monitoring">ARGO&lt;/a> and monitored according to their type
 registered in the Configuration Database.&lt;/p>
 &lt;/li>
@@ -336,7 +336,7 @@ registered in the Configuration Database.&lt;/p>
 properly sent to the accounting repository and displayed by the
 &lt;a href="https://accounting.egi.eu/">Accounting Portal&lt;/a>.&lt;/p>
 &lt;ul>
-&lt;li>Accounting probes and &lt;a href="https://github.com/apel/ssm">APEL SSM&lt;/a> are properlly
+&lt;li>Accounting probes and &lt;a href="https://github.com/apel/ssm">APEL SSM&lt;/a> are properly
 installed and configured:
 &lt;ul>
 &lt;li>HTC: &lt;a href="https://github.com/apel/apel">APEL client&lt;/a>&lt;/li>
@@ -640,7 +640,7 @@ of these MUST remain.&lt;/p>
 &lt;td>GlueSiteLatitude&lt;/td>
 &lt;td>52.42&lt;/td>
 &lt;td>NN.NN&lt;/td>
-&lt;td>Site Latitute.&lt;/td>
+&lt;td>Site Latitude.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>GlueSiteLongitude&lt;/td>
@@ -948,7 +948,7 @@ shown in &lt;a href="https://wlcg-cric-2.cern.ch">WLCG CRIC&lt;/a>.&lt;/p>
 &lt;!-- markdown-link-check-enable -->
 &lt;!-- markdownlint-enable no-bare-urls -->
 &lt;blockquote>
-&lt;p>Important: The EGEE Grid name was decomissioned on
+&lt;p>Important: The EGEE Grid name was decommissioned on
 [[Agenda-14-02-2011|14-02-2011]]. All sites need to replace this grid name
 with EGI.&lt;/p>
 &lt;/blockquote>
@@ -993,7 +993,7 @@ commitments to LHC computing.&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td>NDGF&lt;/td>
-&lt;td>NGDF-T1&lt;/td>
+&lt;td>NDGF-T1&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>NL-T1&lt;/td>
@@ -1594,7 +1594,7 @@ adding the &lt;code>+&lt;/code>:&lt;/li>
 &lt;thead>
 &lt;tr>
 &lt;th>Metric&lt;/th>
-&lt;th>Desciption&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
@@ -2083,7 +2083,7 @@ established connections, you should find a message like:&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+-----------+-----------------+------+-------------+---------+----------------------------------------------------------------+------+
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> Id &lt;span style="color:#000;font-weight:bold">|&lt;/span> User &lt;span style="color:#000;font-weight:bold">|&lt;/span> Host &lt;span style="color:#000;font-weight:bold">|&lt;/span> db &lt;span style="color:#000;font-weight:bold">|&lt;/span> Command &lt;span style="color:#000;font-weight:bold">|&lt;/span> Time &lt;span style="color:#000;font-weight:bold">|&lt;/span> State &lt;span style="color:#000;font-weight:bold">|&lt;/span> Info &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+-----------+-----------------+------+-------------+---------+----------------------------------------------------------------+------+
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2778&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> ibrepifca &lt;span style="color:#000;font-weight:bold">|&lt;/span> localhost:42281 &lt;span style="color:#000;font-weight:bold">|&lt;/span> NULL &lt;span style="color:#000;font-weight:bold">|&lt;/span> Binlog Dump &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1400477&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> Has sent all binlog to slave&lt;span style="color:#000;font-weight:bold">;&lt;/span> waiting &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> binlog to be updated &lt;span style="color:#000;font-weight:bold">|&lt;/span> NULL &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2778&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> janedoe &lt;span style="color:#000;font-weight:bold">|&lt;/span> localhost:42281 &lt;span style="color:#000;font-weight:bold">|&lt;/span> NULL &lt;span style="color:#000;font-weight:bold">|&lt;/span> Binlog Dump &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1400477&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> Has sent all binlog to slave&lt;span style="color:#000;font-weight:bold">;&lt;/span> waiting &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> binlog to be updated &lt;span style="color:#000;font-weight:bold">|&lt;/span> NULL &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------+-----------+-----------------+------+-------------+---------+----------------------------------------------------------------+------+
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="the-voms-case">The VOMS case&lt;/h3>
 &lt;h4 id="a-working-example">A working example&lt;/h4>
@@ -2165,14 +2165,14 @@ MySQL setting is referred to the current MySQL version (5.0.77 in this moment)&l
 &lt;h2 id="settings-on-the-master-server">Settings on the MASTER SERVER&lt;/h2>
 &lt;p>In order to allow the replica server to read the master database, you have to
 create an user with which the slave will connect to the master. Suppose the
-replica hostname is &lt;code>vomsrep.cnaf.infn.it&lt;/code>, the user is &lt;code>bonjovi&lt;/code> and the
+replica hostname is &lt;code>vomsrep.cnaf.infn.it&lt;/code>, the user is &lt;code>janedoe&lt;/code> and the
 password is &lt;code>always&lt;/code>. What you have to launch on the master server is:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ mysql -p -e &lt;span style="color:#4e9a06">&amp;#34;grant super, reload, replication slave, replication client \
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> on *.* to bonjovi@&amp;#39;vomsrep.cnaf.infn.it&amp;#39; identified by &amp;#39;always&amp;#39;&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> on *.* to janedoe@&amp;#39;vomsrep.cnaf.infn.it&amp;#39; identified by &amp;#39;always&amp;#39;&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then for each DB (VO) you want to replicate, you have to assign the right
 permissions, by launching:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mysql -p -e &lt;span style="color:#4e9a06">&amp;#34;grant select, lock tables on voms_myvo.* to \
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> bonjovi@&amp;#39;vomsrep.cnaf.infn.it&amp;#39;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> janedoe@&amp;#39;vomsrep.cnaf.infn.it&amp;#39;&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eventually you have to modify the file &lt;code>/etc/my.cnf&lt;/code> by adding the following
 lines into the section &lt;code>[mysqld]&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">log-bin&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">mysql-bin&lt;/span>
@@ -2254,7 +2254,7 @@ master server and to the user created on it&lt;/li>
 &lt;p>Example:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">voms_database&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># VOMS database (leave unset)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">master_host&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;voms.cnaf.infn.it&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Master hostname&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">master_mysql_user&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;bonjovi&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Master MySQL admin user for replication&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">master_mysql_user&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;janedoe&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Master MySQL admin user for replication&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">master_mysql_pwd&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;always&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Master MySQL admin pass for replication user&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">master_log_file&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Master LOG file (leave unset)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">master_log_pos&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># Master LOG file (leave unset)&lt;/span>
@@ -2278,7 +2278,7 @@ database the scripts launch syntax is the following:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Connection with master&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>server-id&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>master-host&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms.cnaf.infn.it
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>master-user&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>bonjovi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>master-user&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>janedoe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>master-password&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>always
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Replicas settings&lt;/span>
@@ -2526,7 +2526,7 @@ follows to your certificate directory:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -C /etc/grid-security/certificates
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="installing-the-distribution-using-quattor">Installing the distribution using Quattor&lt;/h3>
-&lt;p>Quattor templates are povided as drop-in replacements for both QWG and CDB
+&lt;p>Quattor templates are provided as drop-in replacements for both QWG and CDB
 installations. Update your software repository (re-generating the repository
 templates as needed) and obtain the new CA templates from:&lt;/p>
 &lt;ul>
@@ -2633,7 +2633,7 @@ services.&lt;/li>
 &lt;li>&lt;a href="https://documents.egi.eu/document/218">EGI Operations Architecture&lt;/a>: Document
 describing the roles and responsibilities of the various layers in EGI and
 also the architectural nomenclature.&lt;/li>
-&lt;/ul></description></item><item><title>Providers: HOWTO03 Site Certification GIIS Check</title><link>/providers/operations-manuals/howto03_site_certificatoin_giis_check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto03_site_certificatoin_giis_check/</guid><description>
+&lt;/ul></description></item><item><title>Providers: HOWTO03 Site Certification GIIS Check</title><link>/providers/operations-manuals/howto03_site_certification_giis_check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto03_site_certification_giis_check/</guid><description>
 &lt;p>Be sure that Resource Centre GIIS URL is contained in the BDII you use for
 certification.&lt;/p>
 &lt;h2 id="check-the-consistency-of-the-published-information">Check the consistency of the published information&lt;/h2>
@@ -3124,14 +3124,14 @@ registration of new ones, the corresponding tests should be executed.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check job submission:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ globusrun -s -r HOST:2119 &lt;span style="color:#4e9a06">&amp;#34;&amp;amp;(executable=&amp;#34;&lt;/span>/bin/date&lt;span style="color:#4e9a06">&amp;#34;)&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="qcg-checks">QCG checks&lt;/h2>
-&lt;h3 id="qcg-computhng-checks">QCG Computhng checks&lt;/h3>
+&lt;h3 id="qcg-computing-checks">QCG Computing checks&lt;/h3>
 &lt;p>The presented tests of QCG-Computing service use the qcg-comp, the client
 program for QCG-Computing, that may be installed from provided RPMS. In order to
 connect to QCG-Computing the grid proxy must be created.&lt;/p>
 &lt;p>&lt;strong>Generate user’s proxy:&lt;/strong>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ grid-proxy-init
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Mariusz Mamonski
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter GRID pass phrase &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> this identity:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy ............................ Done
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span>: Fri Jun &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> 06:23:32 &lt;span style="color:#0000cf;font-weight:bold">2011&lt;/span>
@@ -3202,12 +3202,12 @@ interaction with QCG-Broker. &lt;code>qcg-simple-client&lt;/code> may be install
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://qcg-broker.man.poznan.pl:8443/qcg/services/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>qcg-broker/qcg-broker.man.poznan.pl
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: &lt;span style="color:#000">C&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL,O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID,O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC,CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Bartosz Bosak
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: &lt;span style="color:#000">C&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL,O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID,O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC,CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter GRID pass phrase &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> this identity:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy, please wait...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Proxy verify OK
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Tue Mar &lt;span style="color:#0000cf;font-weight:bold">12&lt;/span> 14:50:27 CET &lt;span style="color:#0000cf;font-weight:bold">2013&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">UserDN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Bartosz Bosak
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">UserDN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">ProxyLifetime&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">24&lt;/span> Days &lt;span style="color:#0000cf;font-weight:bold">23&lt;/span> Hours &lt;span style="color:#0000cf;font-weight:bold">59&lt;/span> Minutes &lt;span style="color:#0000cf;font-weight:bold">58&lt;/span> Seconds
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">jobId&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> J1360936230540__0152
@@ -3216,13 +3216,13 @@ interaction with QCG-Broker. &lt;code>qcg-simple-client&lt;/code> may be install
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://qcg-broker.man.poznan.pl:8443/qcg/services/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>qcg-broker/qcg-broker.man.poznan.pl
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">UserDN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Bartosz Bosak
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">UserDN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">ProxyLifetime&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">24&lt;/span> Days &lt;span style="color:#0000cf;font-weight:bold">23&lt;/span> Hours &lt;span style="color:#0000cf;font-weight:bold">59&lt;/span> Minutes &lt;span style="color:#0000cf;font-weight:bold">49&lt;/span> Seconds
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Command translated to:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&amp;#34;task_info&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;J1360936230540__0152&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;task&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Note:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UserDN: /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Bartosz Bosak
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UserDN: /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TaskType: SINGLE
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SubmissionTime: Fri Feb &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> 14:50:31 CET &lt;span style="color:#0000cf;font-weight:bold">2013&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FinishTime:
@@ -3247,13 +3247,13 @@ interaction with QCG-Broker. &lt;code>qcg-simple-client&lt;/code> may be install
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://qcg-broker.man.poznan.pl:8443/qcg/services/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>qcg-broker/qcg-broker.man.poznan.pl
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">UserDN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Bartosz Bosak
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">UserDN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">ProxyLifetime&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">24&lt;/span> Days &lt;span style="color:#0000cf;font-weight:bold">23&lt;/span> Hours &lt;span style="color:#0000cf;font-weight:bold">59&lt;/span> Minutes &lt;span style="color:#0000cf;font-weight:bold">23&lt;/span> Seconds
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Command translated to:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&amp;#34;task_info&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;J1360936230540__0152&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;task&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Note:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UserDN: /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Bartosz Bosak
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UserDN: /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TaskType: SINGLE
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SubmissionTime: Fri Feb &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> 14:50:31 CET &lt;span style="color:#0000cf;font-weight:bold">2013&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FinishTime:
@@ -3276,13 +3276,13 @@ interaction with QCG-Broker. &lt;code>qcg-simple-client&lt;/code> may be install
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ qcg-info
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://qcg-broker.man.poznan.pl:8443/qcg/services/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>qcg-broker/qcg-broker.man.poznan.pl
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">UserDN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Bartosz Bosak
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">UserDN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">ProxyLifetime&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">24&lt;/span> Days &lt;span style="color:#0000cf;font-weight:bold">23&lt;/span> Hours &lt;span style="color:#0000cf;font-weight:bold">56&lt;/span> Minutes &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> Seconds
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Command translated to:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&amp;#34;task_info&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;J1360936230540__0152&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;task&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Note:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UserDN: /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Bartosz Bosak
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UserDN: /C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GRID/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>PSNC/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TaskType: SINGLE
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SubmissionTime: Fri Feb &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> 14:50:31 CET &lt;span style="color:#0000cf;font-weight:bold">2013&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FinishTime: Fri Feb &lt;span style="color:#0000cf;font-weight:bold">15&lt;/span> 14:52:17 CET &lt;span style="color:#0000cf;font-weight:bold">2013&lt;/span>
@@ -3313,7 +3313,7 @@ interaction with QCG-Broker. &lt;code>qcg-simple-client&lt;/code> may be install
 &lt;p>Go to AppDB and look for a OS image member of the &lt;code>fedcloud.egi.eu&lt;/code> VO (all
 sites should support), e.g.
 &lt;a href="https://appdb.egi.eu/store/vappliance/egi.centos.7">EGI CentOS 7 image&lt;/a>&lt;/p>
-&lt;p>Check that the site is visible in to the AppDB &amp;ldquo;Availability and Usage&amp;rdquo; panel
+&lt;p>Check that the site is visible into the AppDB &amp;ldquo;Availability and Usage&amp;rdquo; panel
 for the image. If not, probably the site has not registered the FedCloud VO into
 their middleware (vmcatcher) or it did not properly configured the BDII provider
 script.&lt;/p>
@@ -3324,7 +3324,7 @@ the right of the resource template. You will get the &amp;ldquo;Site Endpoint&am
 ID&amp;rdquo; and &amp;ldquo;OCCI ID&amp;rdquo;. Save these values since they will be needed in the next
 steps.&lt;/p>
 &lt;h4 id="credentials">Credentials&lt;/h4>
-&lt;p>Generate a set of keys for your user (it is not required to set a phassphrase
+&lt;p>Generate a set of keys for your user (it is not required to set a passphrase
 for the keys, since these are just temporary keys for the test), make sure to
 set key permissions to &lt;code>400&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ssh-keygen -t rsa -b &lt;span style="color:#0000cf;font-weight:bold">2048&lt;/span> -f tempkey
@@ -3589,7 +3589,7 @@ same device name shown above):&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> accessIPv4 &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> accessIPv6 &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> addresses &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> adminPass &lt;span style="color:#000;font-weight:bold">|&lt;/span> 9imSRC9EZhhX &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> adminPass &lt;span style="color:#000;font-weight:bold">|&lt;/span> veryverysecret &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> config_drive &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> created &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2016-03-01T13:45:21Z &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> flavor &lt;span style="color:#000;font-weight:bold">|&lt;/span> m1.tiny &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>1&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
@@ -3660,7 +3660,7 @@ same device name shown above):&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check that the folder does not exist anymore&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ bcdmi -e &amp;lt;cdmi_endpoint&amp;gt; list /
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See Site Certification GIIS Check
-&lt;a href="../howto03_site_certificatoin_giis_check">HOWTO03&lt;/a>.&lt;/p>
+&lt;a href="../howto03_site_certification_giis_check">HOWTO03&lt;/a>.&lt;/p>
 &lt;p>See to Resource Centre registration and certification procedure
 &lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09&lt;/a>.&lt;/p></description></item><item><title>Providers: FAQ HEP SPEC 06</title><link>/providers/operations-manuals/faq-hepspec06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/faq-hepspec06/</guid><description>
 &lt;h2 id="transition-to-hep-spec-a-new-cpu-benchmark">Transition to HEP SPEC, a new CPU benchmark&lt;/h2>

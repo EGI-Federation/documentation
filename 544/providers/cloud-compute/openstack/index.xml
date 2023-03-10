@@ -806,17 +806,17 @@ domain name in the mapping. Add as many VOs as you are supporting.&lt;/p>
 &lt;p>cloudkeeper-os should run permanently, there is a &lt;code>cloudkeeper-os.service&lt;/code> for
 systemd in the appliance. Manage as usual:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>systemctl &amp;lt;start&lt;span style="color:#000;font-weight:bold">|&lt;/span>stop&lt;span style="color:#000;font-weight:bold">|&lt;/span>status&amp;gt; cloudkeeper-os
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>cloudkeeper core is run every 4 hours with a cron script.&lt;/p></description></item><item><title>Providers: GPU Flavors</title><link>/providers/cloud-compute/openstack/gpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/gpu/</guid><description>
-&lt;h2 id="setting-up-gpu-flavors">Setting up GPU flavors&lt;/h2>
-&lt;p>Support for GPU can be added to flavors using the
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>cloudkeeper core is run every 4 hours with a cron script.&lt;/p></description></item><item><title>Providers: GPU flavours</title><link>/providers/cloud-compute/openstack/gpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/gpu/</guid><description>
+&lt;h2 id="setting-up-gpu-flavours">Setting up GPU flavours&lt;/h2>
+&lt;p>Support for GPU can be added to flavours using the
 &lt;a href="https://docs.openstack.org/nova/xena/admin/pci-passthrough.html">PCI passthrough feature in OpenStack&lt;/a>.
 This allows to plug any kind of PCI device to the Virtual Machines.&lt;/p>
 &lt;p>As a summary of the OpenStack documentation, these are the steps needed to add a
-GPU enabled flavor (be aware this may need tuning to your specific
+GPU enabled flavour (be aware this may need tuning to your specific
 hardware/configuration!):&lt;/p>
 &lt;ol>
 &lt;li>On computing node, get vendor/product ID of your hardware:
-&lt;code>lspci | grep NVDIA&lt;/code> to get pci slot of GPU, then
+&lt;code>lspci | grep NVIDIA&lt;/code> to get pci slot of GPU, then
 &lt;code>virsh nodedev-dumpxml pci_xxxx_xx_xx_x&lt;/code>&lt;/li>
 &lt;li>On computing node, unbind device from host kernel driver. Unbinding is system
 dependent, and can be done in many ways, e.g.:
@@ -841,14 +841,14 @@ where &lt;code>$dev&lt;/code> is the PCI device ID &lt;code>xx:xx.x&lt;/code> or
 &lt;a href="https://docs.openstack.org/nova/xena/admin/pci-passthrough.html#configure-nova-scheduler">nova-api&lt;/a>)&lt;/li>
 &lt;li>On controller node, enable &lt;code>PciPassthroughFilter&lt;/code> in the scheduler (see
 &lt;a href="https://docs.openstack.org/nova/xena/admin/pci-passthrough.html#configure-nova-scheduler">nova-scheduler&lt;/a>)&lt;/li>
-&lt;li>Create new flavors with &lt;code>pci_passthrough:alias&lt;/code> (or add key to existing
-flavor), e.g.
+&lt;li>Create new flavours with &lt;code>pci_passthrough:alias&lt;/code> (or add key to existing
+flavour), e.g.
 &lt;code>openstack flavor set m1.large --property &amp;quot;pci_passthrough:alias&amp;quot;=&amp;quot;GPU:2&amp;quot;&lt;/code>&lt;/li>
 &lt;/ol>
-&lt;h2 id="gpu-description-in-flavor-metadata">GPU description in flavor metadata&lt;/h2>
-&lt;p>Users should be able to easily discover the flavors that provide GPUs (or
+&lt;h2 id="gpu-description-in-flavour-metadata">GPU description in flavour metadata&lt;/h2>
+&lt;p>Users should be able to easily discover the flavours that provide GPUs (or
 accelerators in general). The following table describes the agreed metadata for
-EGI providers to add to those flavors:&lt;/p>
+EGI providers to add to those flavours:&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -865,7 +865,7 @@ EGI providers to add to those flavors:&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td>Accelerator:Number&lt;/td>
-&lt;td>Number of accelerators available in the flavor (e.g. &lt;code>1.0&lt;/code>)&lt;/td>
+&lt;td>Number of accelerators available in the flavour (e.g. &lt;code>1.0&lt;/code>)&lt;/td>
 &lt;td>Non integers allowed for the case of sharing GPU between VMs&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -885,7 +885,7 @@ EGI providers to add to those flavors:&lt;/p>
 &lt;/tr>
 &lt;tr>
 &lt;td>Accelerator:Memory&lt;/td>
-&lt;td>RAM in GBs of the accelerator&lt;/td>
+&lt;td>RAM in GB of the accelerator&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -924,7 +924,7 @@ below for completeness:&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>Adding metadata to flavors has no effects on site operations. End users can see
+&lt;p>Adding metadata to flavours has no effects on site operations. End users can see
 the metadata easily via &lt;code>openstack flavor list --long&lt;/code> or
 &lt;code>openstack flavor show &amp;lt;flavor id&amp;gt;&lt;/code> commands without any additional tools, e.g.:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fedcloud openstack flavor show gpu1cpu2 --site IISAS-GPUCloud --vo eosc-synergy.eu -f json
@@ -952,7 +952,7 @@ should assign quotas to this project as agreed in the OLA defining the support
 for the given VO.&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>Create a group where users belongig to the VO will be mapped to: :&lt;/p>
+&lt;p>Create a group where users belonging to the VO will be mapped to: :&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">group_id&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>openstack group create -f value -c id &amp;lt;new_group&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
