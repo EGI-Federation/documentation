@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Tutorials &amp; Guides</title><link>/users/tutorials/</link><description>Recent content in Tutorials &amp; Guides on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Create your first Virtual Machine</title><link>/users/tutorials/create-your-first-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/create-your-first-virtual-machine/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Tutorials &amp; Guides</title><link>/users/tutorials/</link><description>Recent content in Tutorials &amp; Guides on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Create your first Virtual Machine (VM)</title><link>/users/tutorials/create-your-first-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/create-your-first-virtual-machine/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to create your first Virtual Machine in the EGI Federation.&lt;/p>
 &lt;h2 id="step-1-signing-up">Step 1: Signing up&lt;/h2>
@@ -25,10 +25,180 @@ use a web dashboard like &lt;a href="../../compute/cloud-compute/monitor">VMOps 
 &lt;a href="../../compute/orchestration/im/dashboard">Infrastructure Manager Dashboard&lt;/a>.
 On the other hand, advanced users
 may prefer to use the &lt;a href="../../getting-started/cli">command-line interface&lt;/a>.&lt;/p>
-&lt;p>To know more about the &lt;a href="https://www.egi.eu/services/cloud-compute/">Cloud Compute&lt;/a>
+&lt;p>To know more about the &lt;a href="https://www.egi.eu/service/cloud-compute/">Cloud Compute&lt;/a>
 Service in EGI please visit its &lt;a href="../../compute/cloud-compute">dedicated section&lt;/a>.&lt;/p>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
-&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Access DataHub from a Virtual machine</title><link>/users/tutorials/vm-datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/vm-datahub/</guid><description>
+&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Accessing virtual machines with SSH</title><link>/users/tutorials/accessing-vm-with-ssh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/accessing-vm-with-ssh/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This page provides an introduction of connecting from a local computer to a
+cloud host via SSH. It provides general guidelines, SSH options, tips, and
+examples for setting up the OpenStack environment.&lt;/p>
+&lt;h2 id="ssh-keys">SSH Keys&lt;/h2>
+&lt;p>The recommended method to access a cloud virtual machine is via ssh using &lt;strong>SSH
+keys&lt;/strong>. You may inject your &lt;strong>public key&lt;/strong> into the virtual machine, at
+deployment time, and use your &lt;strong>private key&lt;/strong> to connect via ssh without any
+password.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+If you are using ssh keys in GitHub your
+public keys are available at: &lt;code>https://github.com/${github_username}.keys&lt;/code>.
+i.e.: &lt;code>wget https://github.com/github_username.keys&lt;/code>
+&lt;/div>
+&lt;h3 id="ssh-username">SSH username&lt;/h3>
+&lt;p>The username to use to connect to a virtual machine is dependent on the virtual
+machine image and is generally different in each operating system image:&lt;/p>
+&lt;ul>
+&lt;li>For images available in the
+&lt;a href="https://appdb.egi.eu/browse/cloud">EGI AppDB Cloud Marketplace&lt;/a>, you should
+be able to find the username in the image description.&lt;/li>
+&lt;li>For &lt;code>official OS virtual machine images&lt;/code> you can use the general OpenStack
+reference documentation on
+&lt;a href="https://docs.openstack.org/image-guide/obtain-images.html">obtaining images&lt;/a>.&lt;/li>
+&lt;li>For custom virtual machine images you need to refer to your virtual machine image
+provider (i.e. it could be something specific like &lt;code>cloudadm&lt;/code>).&lt;/li>
+&lt;li>For virtual machines deployed with &lt;a href="../../compute/orchestration/im/">Infrastructure Manager&lt;/a>
+the default username is &lt;code>cloudadm&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>It is also possible to change the username using &lt;code>cloud-init&lt;/code> with a user-data
+configuration (i.e. see the
+&lt;a href="https://cloudinit.readthedocs.io/en/latest/topics/examples.html">cloud config examples&lt;/a>)
+or inject some code to add additional users (i.e. with Ansible).&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="local-ssh-key-configuration">Local ssh key configuration&lt;/h3>
+&lt;p>The &lt;code>private ssh-key&lt;/code> stored on your local computer is required to have
+restrictive file permissions. Depending on your local operative system you may
+need to run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ chmod &lt;span style="color:#0000cf;font-weight:bold">600&lt;/span> ~/.ssh/id_rsa
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>(with &lt;code>id_rsa&lt;/code> being the name of the private key associated with the public key
+in use).&lt;/p>
+&lt;h2 id="username-and-password">Username and password&lt;/h2>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+&lt;code>Username&lt;/code> and &lt;code>password&lt;/code> access
+to cloud virtual machine images is usually &lt;strong>disabled&lt;/strong> for security reasons and
+it is &lt;strong>strongly suggested not to be used&lt;/strong>.
+&lt;/div>
+&lt;p>In case you have &lt;strong>no other option&lt;/strong>, and are conscious of the risks, in order
+to enable SSH password authentication, the destination virtual machine needs to
+have &lt;code>/etc/ssh/sshd_config&lt;/code> configuration changed from
+&lt;code>PasswordAuthentication no&lt;/code> to &lt;code>PasswordAuthentication yes&lt;/code>.&lt;/p>
+&lt;p>If really needed, a custom image with &lt;code>PasswordAuthentication&lt;/code> enabled can be
+used or that can be injected when the virtual machine is deployed.&lt;/p>
+&lt;p>Depending on your deployment method it could be done with Ansible, Terraform,
+Salt, Puppet, Chef, cloud-init, or your own deployment tool if supported (i.e.
+the Infrastructure Manager and a custom TOSCA template).&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+If you enable
+&lt;code>PasswordAuthentication&lt;/code>, be sure to
+&lt;a href="https://bitwarden.com/password-generator/">generate a strong and unique password or passphrase&lt;/a>
+for your account, otherwise you virtual machines &lt;strong>will be&lt;/strong> compromised, and
+your access may be suspended.
+&lt;/div>
+&lt;h2 id="openstack-networking">OpenStack networking&lt;/h2>
+&lt;p>The OpenStack environment needs to be populated with the necessary
+configurations and virtual hardware. To access the virtual machine from outside
+the OpenStack project you have to associate a &lt;code>floating IP&lt;/code> to the virtual
+machine (which will provide a &lt;code>public IP&lt;/code> to the virtual machine), you also have
+to open the necessary ports and add or edit the security groups, (more details
+on that in the specific section below).&lt;/p>
+&lt;p>Depending on the default configuration of the OpenStack project in order to
+associate a floating IP to a virtual machine in a private network it may be
+necessary to set up a virtual &lt;code>router&lt;/code> in OpenStack and &lt;code>attach&lt;/code> it with an
+&lt;code>interface&lt;/code> to the private network. This step is usually not required as the
+OpenStack router is usually pre-configured by the cloud provider.&lt;/p>
+&lt;h3 id="security-groups-rules">Security Groups Rules&lt;/h3>
+&lt;p>The Virtual Machine that you want to connect needs to have the SSH port (22)
+reachable by your local machine. For that, it is necessary that a specific
+&lt;code>Rule&lt;/code> is set up in one of the &lt;code>Security Groups&lt;/code> associated with the virtual
+machine. The rule has to open &lt;code>port 22&lt;/code> either to any IPs (with
+&lt;code>CIDR 0.0.0.0/0&lt;/code>) or to a specific IP (or subnet) matching the IP of the local
+machine used to connect with the virtual machine.&lt;/p>
+&lt;blockquote>
+&lt;p>Sites are often providing a &lt;code>default&lt;/code> security group, that may already contain
+this rule. You can check this using
+&lt;code>openstack security group rule list default&lt;/code>.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="private-ip-vs-public-ip">Private IP vs public IP&lt;/h3>
+&lt;p>Virtual machines in OpenStack are configured in a private network (like in the
+subnet 192.168.0.0/24) but you can directly SSH-connect with them from the
+internet only using a &lt;code>Public IP&lt;/code>, which has to be associated with a virtual
+machine in the private network.&lt;/p>
+&lt;h3 id="accessing-virtual-machines-in-the-private-network">Accessing virtual machines in the private network&lt;/h3>
+&lt;p>In general, to reach all the virtual machines in a private network, only a
+single public IP is needed.&lt;/p>
+&lt;p>The virtual machine associated with a public IP is often referred to as a
+&lt;code>Bastion&lt;/code> host, once you connect with the bastion host, you can connect with the
+other virtual machine in the same private network using the private IPs.
+Alternatively, it is also possible to set up a &lt;code>JumpHost&lt;/code> configuration in your
+local ssh configuration to do that with a single command.&lt;/p>
+&lt;h4 id="example-ssh-configuration-for-jump-host">Example: ssh configuration for Jump host&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ cat ~/.ssh/config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Bastion&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Host bastion 193.1.1.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> User ubuntu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Hostname 193.168.1.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IdentityFile ~/.ssh/id_rsa
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IdentitiesOnly yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># with ProxyJump&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Host private_vm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HostName 192.168.1.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ProxyJump bastion
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># old-style with ProxyCommand and additional settings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Host private_vm 192.168.1.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Hostname 192.168.1.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ProxyCommand ssh -q -A bastion nc %h %p
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> User ubuntu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ServerAliveInterval &lt;span style="color:#0000cf;font-weight:bold">60&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TCPKeepAlive yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ControlMaster auto
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ControlPath ~/.ssh/mux-%r@%h:%p
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ControlPersist 8h
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IdentityFile ~/.ssh/dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">CheckHostIP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>no
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">StrictHostKeyChecking&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>no
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>General considerations related to setting up the ssh configuration are valid
+also for the connection between hosts in the private network (i.e. the ssh
+destination host needs to have a &lt;code>public key&lt;/code> in the &lt;code>~/.ssh/known_hosts&lt;/code> file
+of the destination user, matching the &lt;code>private key&lt;/code> used for the connection).&lt;/p>
+&lt;h2 id="ssh-connection-practical-example">SSH connection practical example&lt;/h2>
+&lt;p>Network configuration of two virtual machines &lt;code>A&lt;/code> and &lt;code>B&lt;/code> :&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>A&lt;/code> private IP 192.168.1.2, public IP 193.168.1.2&lt;/li>
+&lt;li>&lt;code>B&lt;/code> private IP 192.168.1.3&lt;/li>
+&lt;/ul>
+&lt;h3 id="connecting-from-a-local-machine-to-a">Connecting from a local machine to &lt;code>A&lt;/code>&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># ssh VM_OS_username@PUBLIC_IP&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh centos@193.1.1.2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the ssh local key is not the default &lt;code>~/.ssh/id_rsa&lt;/code> it needs to be specified
+with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># ssh -i /path_of_your_private_ssh_key VM_OS_username@PUBLIC_IP&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh -i ~/private_key centos@193.1.1.2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="connecting-from-a-local-machine-to-b">Connecting from a local machine to &lt;code>B&lt;/code>&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># from your computer&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># connect to A&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh centos@193.1.1.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># from the shell opened in 193.1.1.2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># connect from A to B&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh centos@192.168.1.3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="infrastructure-manager-im">Infrastructure Manager (IM)&lt;/h2>
+&lt;p>The &lt;a href="../../compute/orchestration/im/">Infrastructure Manager (IM)&lt;/a> provides the SSH key that can be used to connect
+to the virtual machine in the VM
+&lt;a href="../../compute/orchestration/im/dashboard/#vm-info-page">info page of the IM-Dashboard&lt;/a>.&lt;/p>
+&lt;p>The page shows the information related with the virtual machine: the IP, the
+username (usually &lt;code>cloudadm&lt;/code>), and the SSH key.&lt;/p>
+&lt;h2 id="token-based-authentication">Token-based authentication&lt;/h2>
+&lt;p>If supported by your virtual machine, you can also use
+&lt;a href="https://github.com/EOSC-synergy/ssh-oidc">ssh-oidc&lt;/a> which implements the
+authentication consuming under-the-hood tokens from a local demon installed on
+your local machine.&lt;/p>
+&lt;p>More details on that soon.&lt;/p>
+&lt;p>The Infrastructure Manager (IM) can &lt;code>Enable SSH OIDC access to the VM&lt;/code> in
+virtual machines by selecting the related &lt;code>Optional Features&lt;/code>.&lt;/p></description></item><item><title>Users: Access DataHub from a VM</title><link>/users/tutorials/vm-datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/vm-datahub/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes the access to &lt;a href="../../data/management/datahub">EGI DataHub&lt;/a> spaces
 from a virtual machine. In the following paragraphs you will learn how to
@@ -53,7 +223,7 @@ you can &lt;a href="../../aai/check-in/signup">Sign up for an EGI account&lt;/a>
 &lt;p>Alternatively a docker based installation is also provided.&lt;/p>
 &lt;h3 id="oneclient-installation-via-packages">Oneclient installation via packages&lt;/h3>
 &lt;p>Use the following command in order to install the &lt;code>oneclient&lt;/code> package in a supported OS:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -sS http://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -sS https://get.onedata.org/oneclient.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> bash
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will also install the needed dependencies.&lt;/p>
 &lt;h3 id="oneclient-installation-via-docker">Oneclient installation via docker&lt;/h3>
 &lt;p>In order to use the Dockerized version of oneclient (provided that you
@@ -92,287 +262,7 @@ access to, but it will also be possible to specify a specific space
 to access using the option &lt;code>--space &amp;lt;space&amp;gt;&lt;/code>.&lt;/p>
 &lt;p>Oneclient offers a lot of other options for configuration
 (e.g. buffer size, direct I/O, etc) which are listed when you
-type the &lt;code>oneclient&lt;/code> command without any argument.&lt;/p></description></item><item><title>Users: Data transfer with grid storage</title><link>/users/tutorials/data-transfer-grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-grid-storage/</guid><description>
-&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
-WebFTS. In the following paragraphs you will learn how to:&lt;/p>
-&lt;ul>
-&lt;li>use the &lt;a href="#fts-client-usage">FTS&lt;/a> command-line client&lt;/li>
-&lt;li>use the &lt;a href="#using-the-webfts-data-transfer-interface">WebFTS&lt;/a> web interface&lt;/li>
-&lt;/ul>
-&lt;p>to perform data transfers between two Grid storage.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
-&lt;p>As first step please make sure that you have installed the FTS client as
-described in &lt;a href="../../data/management/data-transfer">Data Transfer&lt;/a>, and in particular
-&lt;a href="../../data/management/data-transfer/clients">Clients&lt;/a> for the command-line FTS and to have
-your certificate installed in your browser to use
-&lt;a href="../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
-&lt;p>To access services and resources in the
-&lt;a href="../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
-&lt;ul>
-&lt;li>An &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> account, you can
-&lt;a href="../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
-&lt;li>Enrollment into a &lt;a href="../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
-access to the services and resources you need&lt;/li>
-&lt;/ul>
-&lt;h2 id="fts-client-usage">FTS client usage&lt;/h2>
-&lt;h3 id="step-1-configuration-check">Step 1 Configuration check&lt;/h3>
-&lt;p>To verify that everything is configured properly you can check with the
-following command and pointing to the certificates directly:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-rest-whoami --key ~/.globus/userkey.pem --cert ~/.globus/usercert.pem &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>User DN: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VO: JaneDoejd@egi.eu@tcs.terena.org
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VO id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Delegation id: XXXXXXXXXXXXXXXX
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Base id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In general the commands can be used by specifying the user public and private
-key like shown in the example or by creating a proxy certificate as described in
-the following section.&lt;/p>
-&lt;h3 id="step-2-proxy-creation">Step 2 Proxy creation&lt;/h3>
-&lt;p>As you have seen in the previous section it is possible to use the FTS commands
-by specifying the location of the user public and private key. With the use of
-&lt;code>voms-proxy-init&lt;/code> it is possible to create a &lt;code>proxy&lt;/code> certificate for the user.
-With this you don&amp;rsquo;t need to specify the location of the public and private key
-for each FTS command. When running &lt;code>voms-proxy-init&lt;/code> it&amp;rsquo;s possible to specify
-the location of the public and private key. If this are not included as options,
-the tool expect to find them in:&lt;/p>
-&lt;ul>
-&lt;li>~/.globus/usercert.pem for the public key&lt;/li>
-&lt;li>~/.globus/userkey.pem for the private key with read access only for the owner&lt;/li>
-&lt;/ul>
-&lt;p>Following is an example of running this command with the public and private key
-already setup as described:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-init
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy ........................................... Done
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Wed Aug &lt;span style="color:#0000cf;font-weight:bold">25&lt;/span> 04:18:14 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The output of the command shows, a proxy certificate valid for 12 hours has been
-generated This is the default behaviour and can be usually increased, for
-example to 48 hours, with the following option:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-init -valid 48:00
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy ................................... Done
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Thu Aug &lt;span style="color:#0000cf;font-weight:bold">26&lt;/span> 16:23:01 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To verify for how long the proxy is still valid you can use the following
-command: command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-info
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1451339003&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">type&lt;/span> : RFC compliant proxy
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>strength : &lt;span style="color:#0000cf;font-weight:bold">1024&lt;/span> bits
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>path : /tmp/x509up_u1000
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>timeleft : 19:59:57
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the &lt;code>timeleft&lt;/code> reaches zero the same command will produce the following
-message:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-rest-whoami -s https://fts3-public.cern.ch:8446/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Error: Proxy expired!
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option that you need to use is specify the VO that you want to use for
-the proxy being created. In the following example the &lt;em>dteam&lt;/em> VO has been used:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-init --voms dteam
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating temporary proxy ................................................................... Done
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Contacting voms2.hellasgrid.gr:15004 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GR/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>HellasGrid/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>hellasgrid.gr/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms2.hellasgrid.gr&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;dteam&amp;#34;&lt;/span> Done
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy .............................................................................. Done
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Wed Sep &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span> 04:37:07 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>With a proxy now available for the user it is now possible to execute the FTS
-commands without specifying the public and private keys as it will be shown in
-the following sections.&lt;/p>
-&lt;h3 id="step-3-find-the-storage">Step 3 Find the storage&lt;/h3>
-&lt;p>In general, the source and destination storage for a specific project should be
-already known. However, to discover the available source or destination
-endpoints to be used for a transfer, you can use the
-&lt;a href="https://operations-portal.egi.eu/vapor/resources/GL2ResVO">VAPOR service&lt;/a>.&lt;/p>
-&lt;p>&lt;img src="VAPOR-home.png" alt="VAPOR main page">&lt;/p>
-&lt;p>Once the page is loaded on the left column it is possible to filter by VO or
-scroll the list and click the desired VO as show in the following picture:&lt;/p>
-&lt;p>&lt;img src="VAPOR-VO_detail.png" alt="VAPOR VO detail">&lt;/p>
-&lt;p>Once selected, you can see all the resources associated with the specific VO. In
-particular in this case you are interested in the information on the status,
-capacity, type of storage, etc. Following is a screenshot of the visualisation
-of the list of storage available to &lt;em>dteam&lt;/em>.&lt;/p>
-&lt;p>&lt;img src="VAPOR-storage.png" alt="VAPOR storage page">&lt;/p>
-&lt;h3 id="step-4-starting-a-transfer">Step 4 Starting a transfer&lt;/h3>
-&lt;p>Once you have identified the source and destination storage needed for the
-transfer you can proceed with the transfer between the two endpoints. To do that
-you can use a command of this type, returning the job ID corresponding to the
-transfer that you started:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -o cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To check the status of the transfer you can use the returned job ID and use the
-following command specifying the server controlling the transfer, the source and
-the transfer itself:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FINISHED
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option &lt;code>-o&lt;/code> specify that the file should be overwritten if present on
-the destination. If this option is not present and a file with the same name
-exists on the destination, the transfer itself will fail. If you use this option
-you should make sure that it is safe to do so.&lt;/p>
-&lt;h2 id="using-the-webfts-data-transfer-interface">Using the WebFTS Data Transfer interface&lt;/h2>
-&lt;h3 id="step-1-access-the-webfts-interface">Step 1 Access the WebFTS interface&lt;/h3>
-&lt;p>The WebFTS is accessible at this &lt;a href="https://webfts.cern.ch/">CERN FTS URL&lt;/a>.
-Similarly to what has been done from the command-line interface you need to
-provide our private key for delegation of the credential. To do that you use the
-following command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openssl pkcs12 -in yourCert.p12 -nocerts -nodes &lt;span style="color:#000;font-weight:bold">|&lt;/span> openssl rsa
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter Import Password:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>writing RSA key
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Which extract the private key in RSA format and you can paste it in the windows
-that opens:&lt;/p>
-&lt;p>&lt;img src="WebFTS-credential_delegation.png" alt="WebFTS credential delegation">&lt;/p>
-&lt;p>And select the desired VO. Once the delegation is set it&amp;rsquo;s possible to move to
-the following steps.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-please be careful and avoid
-sharing this information with any third party or saving this information in
-plain text. WebFTS uses the key to acquire a proxy certificate on your behalf as
-described previously and does not store it.
-&lt;/div>
-&lt;h3 id="step-2-submitting-a-transfer">Step 2 Submitting a transfer&lt;/h3>
-&lt;p>The tab &lt;code>Submit a transfer&lt;/code> is divided in two parts in which is possible to add
-two endpoints that can be used both as source or destination. After adding the
-URL for the two endpoints, it is possible to browse and select the files and
-directories to be transferred. In the destination select the destination
-directory. In the following example the file 1MB has been selected and by simply
-clicking the arrow in the middle directing to the right you are instructing the
-system to copy the file from the storage and path on the left to the one on the
-right:&lt;/p>
-&lt;p>&lt;img src="WebFTS-submit_transfer.png" alt="WebFTS submit transfer">&lt;/p>
-&lt;p>Similarly to what can be done with the command-line interface, there is the
-option to overwrite the destination if it already exists. To enable this option
-tick the &lt;code>Overwrite Files&lt;/code> below the arrow for the transfer. On the top of the
-page is also shown a confirmation that the transfer has been submitted
-successfully. This same web page shows the status of the current transfers in
-the &lt;code>My jobs&lt;/code> tab shown in the following screenshot:&lt;/p>
-&lt;p>&lt;img src="WebFTS-my_jobs.png" alt="WebFTS my jobs">&lt;/p>
-&lt;p>Each line on the list shows a different job. When clicked it will expand to show
-additional details. The reason for the failure of a job which can be seen by
-moving the mouse pointer over the &lt;code>File ID&lt;/code> on the detailed view.&lt;/p></description></item><item><title>Users: Data transfer with object storage</title><link>/users/tutorials/data-transfer-object-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-object-storage/</guid><description>
-&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
-WebFTS. In the following paragraphs you will learn how to:&lt;/p>
-&lt;ul>
-&lt;li>use the &lt;a href="#fts-client-usage">FTS&lt;/a> command-line client&lt;/li>
-&lt;li>use the &lt;a href="#step-6-web-interface">WebFTS&lt;/a> web interface&lt;/li>
-&lt;/ul>
-&lt;p>to perform data transfers between a Grid storage and object storage or between
-two object storage.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-This procedure has been tested
-with the FTS client 3.11. Older version do not support all the options
-necessary. To install the latest version please add the
-&lt;a href="https://fts-repo.web.cern.ch/fts-repo/fts3-prod-el7.repo">FTS3 Production&lt;/a>
-repository to your configuration and update the client
-&lt;/div>
-&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
-&lt;p>As first step please make sure that you have installed the FTS client as
-described in &lt;a href="../../data/management/data-transfer">Data Transfer&lt;/a>, and in
-particular &lt;a href="../../data/management/data-transfer/clients">Clients&lt;/a> for the
-command-line FTS and to have your certificate installed in your browser to use
-&lt;a href="../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
-&lt;p>To access services and resources in the
-&lt;a href="../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
-&lt;ul>
-&lt;li>An &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> account, you can
-&lt;a href="../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
-&lt;li>Enrollment into a &lt;a href="../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
-access to the services and resources you need&lt;/li>
-&lt;li>An &lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> for which you need to
-have all the credentials available (any S3 compatible storage should work)&lt;/li>
-&lt;li>Permission to add the Object Storage credential to the FTS server or
-alternatively for this operation you may contact support &lt;strong>at&lt;/strong> egi.eu.&lt;/li>
-&lt;/ul>
-&lt;h2 id="fts-client-usage">FTS client usage&lt;/h2>
-&lt;h3 id="step-1-configuration-check-and-proxy-creation">Step 1 Configuration check and Proxy creation&lt;/h3>
-&lt;p>For this two steps please refer to the
-&lt;a href="../data-transfer-grid-storage">&amp;ldquo;Data transfer with grid storage&amp;rdquo;&lt;/a> tutorial.&lt;/p>
-&lt;h3 id="step-2-find-the-storage">Step 2 Find the storage&lt;/h3>
-&lt;p>As for the &amp;ldquo;Data transfer with grid storage&amp;rdquo; tutorial you can look for the
-available storage on
-&lt;a href="https://operations-portal.egi.eu/vapor/resources/GL2ResVO">VAPOR service&lt;/a> while
-the Object Store can be one created as described in the
-&lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> section or trough a provider
-such as Amazon, Azure, etc&lt;/p>
-&lt;h3 id="step-3-add-the-object-storage-credential-to-the-fts-server">Step 3 Add the Object Storage credential to the FTS server&lt;/h3>
-&lt;p>Following is an example of the command that can be used to add the Object Store
-credential to the FTS server. The fist step is to register the Object Storage.
-The name of the storage, is S3: + the domain part of the URL (for example
-&lt;code>https://s3.cl2.du.cesnet.cz&lt;/code> -&amp;gt; &lt;code>S3:s3.cl2.du.cesnet.cz&lt;/code>)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -E &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --cacert &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --capath &lt;span style="color:#4e9a06">&amp;#34;/etc/grid-security/certificates&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://fts3devel01.cern.ch:8446/config/cloud_storage &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -X POST &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#39;{&amp;#34;storage_name&amp;#34;:&amp;#34;S3:s3.cl2.du.cesnet.cz&amp;#34;}&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then, add the keys, so the requests can be signed.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -E &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --cacert &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --capath &lt;span style="color:#4e9a06">&amp;#34;/etc/grid-security/certificates&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://fts3devel01.cern.ch:8446/config/cloud_storage/S3:s3.cl2.du.cesnet.cz&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -X POST &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --data @config.json
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where &lt;code>config.json&lt;/code> is a JSON file with the following content:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;vo_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;/dteam/Role=NULL/Capability=NULL&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;access_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ACCESS_KEY&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;secret_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;SECRET_KEY&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where ACCESS_KEY and SECRET KEY are the corresponding key necessary to access
-the object storage. See also the
-&lt;a href="https://fts3-docs.web.cern.ch/fts3-docs/docs/s3_support.html#doing-a-transfer">S3 Support&lt;/a>
-pages on the FTS docs pages.&lt;/p>
-&lt;h3 id="step-4-transfer-between-a-grid-storage-and-an-object-storage">Step 4 Transfer between a grid storage and an object storage&lt;/h3>
-&lt;p>For the grid storage to use please follow the details described in the section
-&amp;ldquo;Find the storage&amp;rdquo; of the &amp;ldquo;Data transfer with grid storage&amp;rdquo; tutorial. In the
-following examples, an object storage available in &lt;code>s3://s3.cl2.du.cesnet.cz/&lt;/code>
-with an already available bucket is used. To manage the object storage is
-possible to use any compatible tool. Following will be only shown an example of
-transfer.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-submit --s3alternate &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The command returns a job ID that we can use to check the status of the transfer
-itself:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-status -d &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> 247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FINISHED
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-transfer-between-two-object-storage">Step 5 Transfer between two object storage&lt;/h3>
-&lt;p>We can also use the data transfer service to perform transfers between two
-object storage. In this case the transfer will be controlled by the FTS service
-you can use a command like:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-submit --s3alternate &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/A
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case too we can verify the status of the transfer with the same command
-as before using the new job ID.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-status -d &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FINISHED
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-6-web-interface">Step 6 Web interface&lt;/h3>
-&lt;p>An alternative way to check the status of the job is to use the FTS web
-interface to see using one the FTS servers and appending the job ID returned
-from one of the previous examples. For instance the link below will show the
-status of the specified job:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>https://fts-public-003.cern.ch:8449/fts3/ftsmon/#/job/247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="CERN-PROD-FTS3.png" alt="WebFTS credential delegation">&lt;/p></description></item><item><title>Users: Create a Virtual Machine with Jupyter and DataHub</title><link>/users/tutorials/jupyter-datahub-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/jupyter-datahub-virtual-machine/</guid><description>
+type the &lt;code>oneclient&lt;/code> command without any argument.&lt;/p></description></item><item><title>Users: Create a VM with Jupyter and DataHub</title><link>/users/tutorials/jupyter-datahub-virtual-machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/jupyter-datahub-virtual-machine/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to start a Virtual Machine in the EGI Federation
 that runs a browser-accessible Jupyter server with DataHub spaces mounted. This
@@ -474,7 +364,7 @@ values to get access to DataHub:&lt;/p>
 &lt;p>Open a terminal from the launcher screen and execute the &lt;code>mount.sh&lt;/code> script:&lt;/p>
 &lt;p>&lt;img src="run-mount.sh.png" alt="mount-onedata">&lt;/p>
 &lt;p>You should now see a &lt;code>datahub&lt;/code> folder with all your spaces available directly
-from your Jupyter interface&lt;/p></description></item><item><title>Users: Automating with oidc-agent, fedcloudclient, terraform and Ansible</title><link>/users/tutorials/oidc-agent-fedcloudclient-terraform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/oidc-agent-fedcloudclient-terraform/</guid><description>
+from your Jupyter interface&lt;/p></description></item><item><title>Users: Automate with oidc-agent, fedcloudclient, terraform and Ansible</title><link>/users/tutorials/oidc-agent-fedcloudclient-terraform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/oidc-agent-fedcloudclient-terraform/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to create a Virtual Machine in the EGI Federation,
 leveraging &lt;a href="https://indigo-dc.gitbook.io/oidc-agent/">oidc-agent&lt;/a> to retrieve
@@ -903,7 +793,171 @@ Compute.&lt;/li>
 providing documentation for automated on-demand execution of Docker containers&lt;/li>
 &lt;/ul>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
-&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Submitting HTC Jobs</title><link>/users/tutorials/htc-job-submission/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/htc-job-submission/</guid><description>
+&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with grid storage</title><link>/users/tutorials/data-transfer-grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-grid-storage/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
+WebFTS. In the following paragraphs you will learn how to:&lt;/p>
+&lt;ul>
+&lt;li>use the &lt;a href="#fts-client-usage">FTS&lt;/a> command-line client&lt;/li>
+&lt;li>use the &lt;a href="#using-the-webfts-data-transfer-interface">WebFTS&lt;/a> web interface&lt;/li>
+&lt;/ul>
+&lt;p>to perform data transfers between two Grid storage.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>As first step please make sure that you have installed the FTS client as
+described in &lt;a href="../../data/management/data-transfer">Data Transfer&lt;/a>, and in particular
+&lt;a href="../../data/management/data-transfer/clients">Clients&lt;/a> for the command-line FTS and to have
+your certificate installed in your browser to use
+&lt;a href="../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
+&lt;p>To access services and resources in the
+&lt;a href="../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
+&lt;ul>
+&lt;li>An &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> account, you can
+&lt;a href="../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
+&lt;li>Enrollment into a &lt;a href="../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+access to the services and resources you need&lt;/li>
+&lt;/ul>
+&lt;h2 id="fts-client-usage">FTS client usage&lt;/h2>
+&lt;h3 id="step-1-configuration-check">Step 1 Configuration check&lt;/h3>
+&lt;p>To verify that everything is configured properly you can check with the
+following command and pointing to the certificates directly:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-rest-whoami --key ~/.globus/userkey.pem --cert ~/.globus/usercert.pem &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>User DN: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VO: JaneDoejd@egi.eu@tcs.terena.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VO id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Delegation id: XXXXXXXXXXXXXXXX
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Base id: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In general the commands can be used by specifying the user public and private
+key like shown in the example or by creating a proxy certificate as described in
+the following section.&lt;/p>
+&lt;h3 id="step-2-proxy-creation">Step 2 Proxy creation&lt;/h3>
+&lt;p>As you have seen in the previous section it is possible to use the FTS commands
+by specifying the location of the user public and private key. With the use of
+&lt;code>voms-proxy-init&lt;/code> it is possible to create a &lt;code>proxy&lt;/code> certificate for the user.
+With this you don&amp;rsquo;t need to specify the location of the public and private key
+for each FTS command. When running &lt;code>voms-proxy-init&lt;/code> it&amp;rsquo;s possible to specify
+the location of the public and private key. If this are not included as options,
+the tool expect to find them in:&lt;/p>
+&lt;ul>
+&lt;li>~/.globus/usercert.pem for the public key&lt;/li>
+&lt;li>~/.globus/userkey.pem for the private key with read access only for the owner&lt;/li>
+&lt;/ul>
+&lt;p>Following is an example of running this command with the public and private key
+already setup as described:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-init
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy ........................................... Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Wed Aug &lt;span style="color:#0000cf;font-weight:bold">25&lt;/span> 04:18:14 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The output of the command shows, a proxy certificate valid for 12 hours has been
+generated This is the default behaviour and can be usually increased, for
+example to 48 hours, with the following option:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-init -valid 48:00
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy ................................... Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Thu Aug &lt;span style="color:#0000cf;font-weight:bold">26&lt;/span> 16:23:01 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To verify for how long the proxy is still valid you can use the following
+command: command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-info
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subject : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1451339003&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>issuer : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>identity : /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">type&lt;/span> : RFC compliant proxy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>strength : &lt;span style="color:#0000cf;font-weight:bold">1024&lt;/span> bits
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>path : /tmp/x509up_u1000
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>timeleft : 19:59:57
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the &lt;code>timeleft&lt;/code> reaches zero the same command will produce the following
+message:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-rest-whoami -s https://fts3-public.cern.ch:8446/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Error: Proxy expired!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option that you need to use is specify the VO that you want to use for
+the proxy being created. In the following example the &lt;em>dteam&lt;/em> VO has been used:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ voms-proxy-init --voms dteam
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your identity: /DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>org/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terena/DC&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>tcs/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>NL/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Stichting EGI/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>Jane Doe jd@egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating temporary proxy ................................................................... Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Contacting voms2.hellasgrid.gr:15004 &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>/C&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>GR/O&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>HellasGrid/OU&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>hellasgrid.gr/CN&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>voms2.hellasgrid.gr&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;dteam&amp;#34;&lt;/span> Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Creating proxy .............................................................................. Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your proxy is valid &lt;span style="color:#204a87;font-weight:bold">until&lt;/span> Wed Sep &lt;span style="color:#0000cf;font-weight:bold">8&lt;/span> 04:37:07 &lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>With a proxy now available for the user it is now possible to execute the FTS
+commands without specifying the public and private keys as it will be shown in
+the following sections.&lt;/p>
+&lt;h3 id="step-3-find-the-storage">Step 3 Find the storage&lt;/h3>
+&lt;p>In general, the source and destination storage for a specific project should be
+already known. However, to discover the available source or destination
+endpoints to be used for a transfer, you can use the
+&lt;a href="https://operations-portal.egi.eu/vapor/resources/GL2ResVO">VAPOR service&lt;/a>.&lt;/p>
+&lt;p>&lt;img src="VAPOR-home.png" alt="VAPOR main page">&lt;/p>
+&lt;p>Once the page is loaded on the left column it is possible to filter by VO or
+scroll the list and click the desired VO as show in the following picture:&lt;/p>
+&lt;p>&lt;img src="VAPOR-VO_detail.png" alt="VAPOR VO detail">&lt;/p>
+&lt;p>Once selected, you can see all the resources associated with the specific VO. In
+particular in this case you are interested in the information on the status,
+capacity, type of storage, etc. Following is a screenshot of the visualisation
+of the list of storage available to &lt;em>dteam&lt;/em>.&lt;/p>
+&lt;p>&lt;img src="VAPOR-storage.png" alt="VAPOR storage page">&lt;/p>
+&lt;h3 id="step-4-starting-a-transfer">Step 4 Starting a transfer&lt;/h3>
+&lt;p>Once you have identified the source and destination storage needed for the
+transfer you can proceed with the transfer between the two endpoints. To do that
+you can use a command of this type, returning the job ID corresponding to the
+transfer that you started:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-submit -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --source https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --destination https://golias100.farm.particle.cz/dpm/farm.particle.cz/home/dteam/1M &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -o cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To check the status of the transfer you can use the returned job ID and use the
+following command specifying the server controlling the transfer, the source and
+the transfer itself:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-status -s https://fts3-public.cern.ch:8446/ &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> cfc884f8-1181-11ec-b9c7-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FINISHED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The last option &lt;code>-o&lt;/code> specify that the file should be overwritten if present on
+the destination. If this option is not present and a file with the same name
+exists on the destination, the transfer itself will fail. If you use this option
+you should make sure that it is safe to do so.&lt;/p>
+&lt;h2 id="using-the-webfts-data-transfer-interface">Using the WebFTS Data Transfer interface&lt;/h2>
+&lt;h3 id="step-1-access-the-webfts-interface">Step 1 Access the WebFTS interface&lt;/h3>
+&lt;p>The WebFTS is accessible at this &lt;a href="https://webfts.cern.ch/">CERN FTS URL&lt;/a>.
+Similarly to what has been done from the command-line interface you need to
+provide our private key for delegation of the credential. To do that you use the
+following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openssl pkcs12 -in yourCert.p12 -nocerts -nodes &lt;span style="color:#000;font-weight:bold">|&lt;/span> openssl rsa
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Enter Import Password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>writing RSA key
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>...&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Which extract the private key in RSA format and you can paste it in the windows
+that opens:&lt;/p>
+&lt;p>&lt;img src="WebFTS-credential_delegation.png" alt="WebFTS credential delegation">&lt;/p>
+&lt;p>And select the desired VO. Once the delegation is set it&amp;rsquo;s possible to move to
+the following steps.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+please be careful and avoid
+sharing this information with any third party or saving this information in
+plain text. WebFTS uses the key to acquire a proxy certificate on your behalf as
+described previously and does not store it.
+&lt;/div>
+&lt;h3 id="step-2-submitting-a-transfer">Step 2 Submitting a transfer&lt;/h3>
+&lt;p>The tab &lt;code>Submit a transfer&lt;/code> is divided in two parts in which is possible to add
+two endpoints that can be used both as source or destination. After adding the
+URL for the two endpoints, it is possible to browse and select the files and
+directories to be transferred. In the destination select the destination
+directory. In the following example the file 1MB has been selected and by simply
+clicking the arrow in the middle directing to the right you are instructing the
+system to copy the file from the storage and path on the left to the one on the
+right:&lt;/p>
+&lt;p>&lt;img src="WebFTS-submit_transfer.png" alt="WebFTS submit transfer">&lt;/p>
+&lt;p>Similarly to what can be done with the command-line interface, there is the
+option to overwrite the destination if it already exists. To enable this option
+tick the &lt;code>Overwrite Files&lt;/code> below the arrow for the transfer. On the top of the
+page is also shown a confirmation that the transfer has been submitted
+successfully. This same web page shows the status of the current transfers in
+the &lt;code>My jobs&lt;/code> tab shown in the following screenshot:&lt;/p>
+&lt;p>&lt;img src="WebFTS-my_jobs.png" alt="WebFTS my jobs">&lt;/p>
+&lt;p>Each line on the list shows a different job. When clicked it will expand to show
+additional details. The reason for the failure of a job which can be seen by
+moving the mouse pointer over the &lt;code>File ID&lt;/code> on the detailed view.&lt;/p></description></item><item><title>Users: Submitting HTC Jobs</title><link>/users/tutorials/htc-job-submission/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/htc-job-submission/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to submit
 &lt;a href="../../compute/high-throughput-compute">High Throughput Compute (HTC)&lt;/a> jobs
@@ -1085,9 +1139,9 @@ create a &lt;strong>VOMS proxy&lt;/strong> for &lt;code>dteam&lt;/code> VO:&lt;/
 &lt;p>Two Computing Element (CE) &amp;ldquo;flavours&amp;rdquo; are used in production:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://htcondor.org/htcondor-ce/overview/">HTCondorCE&lt;/a>, a Compute Entrypoint
-(CE) based on &lt;a href="http://htcondor.org/">HTCondor&lt;/a>.&lt;/li>
-&lt;li>&lt;a href="http://www.nordugrid.org/arc/ce/">ARC-CE&lt;/a>, the
-&lt;a href="http://www.nordugrid.org/arc/">ARC&lt;/a> Compute Element (CE).&lt;/li>
+(CE) based on &lt;a href="https://htcondor.org/">HTCondor&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="https://www.nordugrid.org/arc/ce/">ARC-CE&lt;/a>, the
+&lt;a href="https://www.nordugrid.org/arc/">ARC&lt;/a> Compute Element (CE).&lt;/li>
 &lt;/ul>
 &lt;p>In this section we will document querying the EGI Information System to retrieve
 information about the available resources.&lt;/p>
@@ -1198,7 +1252,7 @@ the previous query: &lt;code>urn:ogf:ComputingShare:alex4.nipne.ro:dteam_dteam&l
 &lt;blockquote>
 &lt;p>The &lt;a href="https://htcondor.com/htcondor-ce/#what-is-htcondor-ce">HTCondor-CE&lt;/a>
 software is a Compute Entrypoint (CE) based on
-&lt;a href="http://htcondor.org/">HTCondor&lt;/a> for sites that are part of a larger computing
+&lt;a href="https://htcondor.org/">HTCondor&lt;/a> for sites that are part of a larger computing
 grid (e.g. &lt;a href="https://www.egi.eu/">EGI&lt;/a>,
 &lt;a href="https://osg-htc.org/">Open Science Grid (OSG)&lt;/a>).&lt;/p>
 &lt;/blockquote>
@@ -1279,12 +1333,12 @@ modify its local copies of the spooled files.&lt;/p>
 &lt;/ul>
 &lt;h3 id="to-an-arc-ce-computing-element">To an ARC-CE Computing Element&lt;/h3>
 &lt;blockquote>
-&lt;p>&lt;a href="http://www.nordugrid.org/arc">ARC&lt;/a> Compute Element (CE) is a Grid front-end
+&lt;p>&lt;a href="https://www.nordugrid.org/arc">ARC&lt;/a> Compute Element (CE) is a Grid front-end
 on top of a conventional computing resource (e.g. a Linux cluster or a
 standalone workstation). ARC CE is sometimes also called &lt;strong>ARC server&lt;/strong>.&lt;/p>
 &lt;/blockquote>
 &lt;p>While there is an official documentation on
-&lt;a href="http://www.nordugrid.org/arc/arc6/users/submit_job.html">How to submit a job&lt;/a>,
+&lt;a href="https://www.nordugrid.org/arc/arc6/users/submit_job.html">How to submit a job&lt;/a>,
 the main steps will be documented below.&lt;/p>
 &lt;p>If you haven&amp;rsquo;t already generated a credential with &lt;code>voms-proxy-init&lt;/code>, you can
 generate a proxy certificate using ARC&amp;rsquo;s own tool: &lt;code>arcproxy&lt;/code>, which is using
@@ -1346,8 +1400,8 @@ selection from CE registered in a central registry, such as &lt;code>nordugrid.o
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ arcstat -l &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$JOB_ID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references-2">References&lt;/h4>
 &lt;ul>
-&lt;li>&lt;a href="http://www.nordugrid.org/arc/arc6/users/submit_job.html">ARC: submit a job&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://www.nordugrid.org/arc/arc6/users/client_tools.html">ARC client tools&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.nordugrid.org/arc/arc6/users/submit_job.html">ARC: submit a job&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.nordugrid.org/arc/arc6/users/client_tools.html">ARC client tools&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="to-a-cream-computing-element">To a CREAM Computing Element&lt;/h3>
 &lt;blockquote>
@@ -1388,7 +1442,7 @@ by or for their community and providing the required commands.&lt;/p>
 &lt;/ul>
 &lt;h3 id="via-the-egi-workload-manager">Via the EGI Workload Manager&lt;/h3>
 &lt;blockquote>
-&lt;p>The &lt;a href="https://www.egi.eu/services/workload-manager/">EGI Workload Manager&lt;/a> is a
+&lt;p>The &lt;a href="https://www.egi.eu/service/workload-manager/">EGI Workload Manager&lt;/a> is a
 service provided to the EGI community to efficiently manage and distribute
 computing workloads on the EGI infrastructure.&lt;/p>
 &lt;/blockquote>
@@ -1409,4 +1463,120 @@ trying to use (By clicking on the Downtime button) or issues (By clicking on
 the CRITICAL button).&lt;/p>
 &lt;p>&lt;img src="argo_issues.png" alt="argo-issues">&lt;/p>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
-&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with object storage</title><link>/users/tutorials/data-transfer-object-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/data-transfer-object-storage/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
+WebFTS. In the following paragraphs you will learn how to:&lt;/p>
+&lt;ul>
+&lt;li>use the &lt;a href="#fts-client-usage">FTS&lt;/a> command-line client&lt;/li>
+&lt;li>use the &lt;a href="#step-6-web-interface">WebFTS&lt;/a> web interface&lt;/li>
+&lt;/ul>
+&lt;p>to perform data transfers between a Grid storage and object storage or between
+two object storage.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+This procedure has been tested
+with the FTS client 3.11. Older version do not support all the options
+necessary. To install the latest version please add the
+&lt;a href="https://fts-repo.web.cern.ch/fts-repo/fts3-prod-el7.repo">FTS3 Production&lt;/a>
+repository to your configuration and update the client
+&lt;/div>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>As first step please make sure that you have installed the FTS client as
+described in &lt;a href="../../data/management/data-transfer">Data Transfer&lt;/a>, and in
+particular &lt;a href="../../data/management/data-transfer/clients">Clients&lt;/a> for the
+command-line FTS and to have your certificate installed in your browser to use
+&lt;a href="../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
+&lt;p>To access services and resources in the
+&lt;a href="../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
+&lt;ul>
+&lt;li>An &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> account, you can
+&lt;a href="../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
+&lt;li>Enrollment into a &lt;a href="../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+access to the services and resources you need&lt;/li>
+&lt;li>An &lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> for which you need to
+have all the credentials available (any S3 compatible storage should work)&lt;/li>
+&lt;li>Permission to add the Object Storage credential to the FTS server or
+alternatively for this operation you may contact support &lt;strong>at&lt;/strong> egi.eu.&lt;/li>
+&lt;/ul>
+&lt;h2 id="fts-client-usage">FTS client usage&lt;/h2>
+&lt;h3 id="step-1-configuration-check-and-proxy-creation">Step 1 Configuration check and Proxy creation&lt;/h3>
+&lt;p>For this two steps please refer to the
+&lt;a href="../data-transfer-grid-storage">&amp;ldquo;Data transfer with grid storage&amp;rdquo;&lt;/a> tutorial.&lt;/p>
+&lt;h3 id="step-2-find-the-storage">Step 2 Find the storage&lt;/h3>
+&lt;p>As for the &amp;ldquo;Data transfer with grid storage&amp;rdquo; tutorial you can look for the
+available storage on
+&lt;a href="https://operations-portal.egi.eu/vapor/resources/GL2ResVO">VAPOR service&lt;/a> while
+the Object Store can be one created as described in the
+&lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> section or trough a provider
+such as Amazon, Azure, etc&lt;/p>
+&lt;h3 id="step-3-add-the-object-storage-credential-to-the-fts-server">Step 3 Add the Object Storage credential to the FTS server&lt;/h3>
+&lt;p>Following is an example of the command that can be used to add the Object Store
+credential to the FTS server. The fist step is to register the Object Storage.
+The name of the storage, is S3: + the domain part of the URL (for example
+&lt;code>https://s3.cl2.du.cesnet.cz&lt;/code> -&amp;gt; &lt;code>S3:s3.cl2.du.cesnet.cz&lt;/code>)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -E &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --cacert &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --capath &lt;span style="color:#4e9a06">&amp;#34;/etc/grid-security/certificates&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://fts3devel01.cern.ch:8446/config/cloud_storage &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -X POST &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#39;{&amp;#34;storage_name&amp;#34;:&amp;#34;S3:s3.cl2.du.cesnet.cz&amp;#34;}&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then, add the keys, so the requests can be signed.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl -E &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --cacert &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">X509_USER_PROXY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --capath &lt;span style="color:#4e9a06">&amp;#34;/etc/grid-security/certificates&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;https://fts3devel01.cern.ch:8446/config/cloud_storage/S3:s3.cl2.du.cesnet.cz&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -X POST &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --data @config.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where &lt;code>config.json&lt;/code> is a JSON file with the following content:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;vo_name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;/dteam/Role=NULL/Capability=NULL&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;access_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ACCESS_KEY&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;secret_key&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;SECRET_KEY&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Where ACCESS_KEY and SECRET KEY are the corresponding key necessary to access
+the object storage. See also the
+&lt;a href="https://fts3-docs.web.cern.ch/fts3-docs/docs/s3_support.html#doing-a-transfer">S3 Support&lt;/a>
+pages on the FTS docs pages.&lt;/p>
+&lt;h3 id="step-4-transfer-between-a-grid-storage-and-an-object-storage">Step 4 Transfer between a grid storage and an object storage&lt;/h3>
+&lt;p>For the grid storage to use please follow the details described in the section
+&amp;ldquo;Find the storage&amp;rdquo; of the &amp;ldquo;Data transfer with grid storage&amp;rdquo; tutorial. In the
+following examples, an object storage available in &lt;code>s3://s3.cl2.du.cesnet.cz/&lt;/code>
+with an already available bucket is used. To manage the object storage is
+possible to use any compatible tool. Following will be only shown an example of
+transfer.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-submit --s3alternate &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> https://dc2-grid-64.brunel.ac.uk/dpm/brunel.ac.uk/home/dteam/1M &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The command returns a job ID that we can use to check the status of the transfer
+itself:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-status -d &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> 247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FINISHED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-transfer-between-two-object-storage">Step 5 Transfer between two object storage&lt;/h3>
+&lt;p>We can also use the data transfer service to perform transfers between two
+object storage. In this case the transfer will be controlled by the FTS service
+you can use a command like:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-submit --s3alternate &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/1M.3 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> s3://s3.cl2.du.cesnet.cz/bucket-name/A
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case too we can verify the status of the transfer with the same command
+as before using the new job ID.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ fts-transfer-status -d &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -s https://fts3-public.cern.ch:8446 &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> c1d4a8e6-4c81-11ec-8926-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FINISHED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-6-web-interface">Step 6 Web interface&lt;/h3>
+&lt;p>An alternative way to check the status of the job is to use the FTS web
+interface to see using one the FTS servers and appending the job ID returned
+from one of the previous examples. For instance the link below will show the
+status of the specified job:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>https://fts-public-003.cern.ch:8449/fts3/ftsmon/#/job/247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="CERN-PROD-FTS3.png" alt="WebFTS credential delegation">&lt;/p></description></item></channel></rss>

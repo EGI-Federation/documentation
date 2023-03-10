@@ -1472,11 +1472,11 @@ administrator.&lt;/p>
 &lt;h3 id="dns-round-robin-load-balancing">DNS round robin load balancing&lt;/h3>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="http://en.wikipedia.org/wiki/Load_distribution">Load balancing&lt;/a> is a
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Load_distribution">Load balancing&lt;/a> is a
 technique to distribute workload evenly across two or more resources. A load
 balancing method, which does not necessarily require a dedicated software or
 hardware node, is called
-&lt;a href="http://en.wikipedia.org/wiki/Round-robin_DNS">round robin DNS&lt;/a>.&lt;/p>
+&lt;a href="https://en.wikipedia.org/wiki/Round-robin_DNS">round robin DNS&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>We can assume that all transactions (queries to top or site BDII generate the
@@ -1489,7 +1489,7 @@ balancing arbiter is needed.&lt;/p>
 is a primary DNS server (&lt;code>dns.domain.tld&lt;/code>) where the DNS load balancing will
 be implemented, one simply has to add multiple A records mapping the same
 hostname to multiple IP addresses under the core.top.domain
-&lt;a href="http://en.wikipedia.org/wiki/DNS_zone">DNS zone&lt;/a>. It is equally applicable to
+&lt;a href="https://en.wikipedia.org/wiki/DNS_zone">DNS zone&lt;/a>. It is equally applicable to
 site BDII.&lt;/p>
 &lt;/li>
 &lt;/ul>
@@ -1819,12 +1819,12 @@ the underlying TLS or SSL protocol.&lt;/li>
 &lt;li>Stunnel uses Public-key cryptography with X.509 digital certificates to
 secure the SSL connection. Clients can optionally be authenticated via a
 certificate too&lt;/li>
-&lt;li>For more references, please check &lt;a href="http://www.stunnel.org/">www.stunnel.org&lt;/a>&lt;/li>
+&lt;li>For more references, please check &lt;a href="https://www.stunnel.org/">www.stunnel.org&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;ul>
 &lt;li>There are other possibilities for encryption, like enabling SSL Support
 directly in MySQL, but these approach was not tested. Details can be obtained
-&lt;a href="http://www.howtoforge.com/how-to-set-up-mysql-database-replication-with-ssl-encryption-on-centos-5.4">here&lt;/a>.&lt;/li>
+&lt;a href="https://www.howtoforge.com/how-to-set-up-mysql-database-replication-with-ssl-encryption-on-centos-5.4">here&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;h2 id="mysql-replication">MySQL replication&lt;/h2>
 &lt;h3 id="assumptions">Assumptions&lt;/h3>
@@ -2407,7 +2407,7 @@ registered in GOCDB. The certificate must not have the X509 extension:
 refer to the NorduGrid ARC 6 documentation:&lt;/p>
 &lt;ul>
 &lt;li>Information relevant only for 6.4 ARC releases and beyond:
-&lt;a href="http://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech">Accounting-NG&lt;/a>&lt;/li>
+&lt;a href="https://www.nordugrid.org/documents/arc6/tech/accounting/accounting-ng.html#accounting-ng-tech">Accounting-NG&lt;/a>&lt;/li>
 &lt;li>The old ActiveMQ network was dismissed.
 &lt;a href="https://www.nordugrid.org/arc/releases/6.12/release_notes_6.12.html">ARC 6.12&lt;/a>
 introduces new settings for publishing the accounting records via AMS.&lt;/li>
@@ -2418,13 +2418,13 @@ as explained in the general information section. In addition, HTCondor-CE must
 be configured to create accounting records:&lt;/p>
 &lt;ul>
 &lt;li>Information on configuring HTCondor-CE for APEL accounting:
-&lt;a href="../../high-throughput-compute/htcondor-ce-apel">APEL Accounting for HTCondor-CE&lt;/a>&lt;/li>
+&lt;a href="../../high-throughput-compute/htcondor-ce-accounting">APEL Accounting for HTCondor-CE&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Providers: HOWTO01 Using IGTF CA distribution</title><link>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto01_using_igtf_ca_distribution/</guid><description>
 &lt;p>To ensure interoperability within and outside of EGI, the
 &lt;a href="https://documents.egi.eu/document/2930">Policy on Acceptable Authentication Assurance&lt;/a>
 defined a common set of trust anchors (in a PKIX implementation &amp;ldquo;Certification
 Authorities&amp;rdquo;) that all sites in EGI should install. In short, all CAs accredited
-to the &lt;a href="http://www.igtf.net/">Interoperable Global Trust Federation&lt;/a> under the
+to the &lt;a href="https://www.igtf.net/">Interoperable Global Trust Federation&lt;/a> under the
 &lt;a href="https://www.igtf.net/ap/classic/">classic&lt;/a>,
 &lt;a href="https://www.igtf.net/ap/mics/">MICS&lt;/a> or &lt;a href="https://www.igtf.net/ap/slcs/">SLCS&lt;/a>
 &lt;em>Authentication Profiles&lt;/em> are approved for use in EGI. When installing the
@@ -2438,7 +2438,7 @@ then must inform the EGI Security Officer (see
 exception.&lt;/p>
 &lt;h2 id="release-notes">Release notes&lt;/h2>
 &lt;p>Review the
-&lt;a href="http://repository.egi.eu/sw/production/cas/1/current/README.txt">release notes&lt;/a>
+&lt;a href="https://repository.egi.eu/sw/production/cas/1/current/README.txt">release notes&lt;/a>
 containing important notices about the current release, as well as a list of
 changes to the trust fabric.&lt;/p>
 &lt;h2 id="installation">Installation&lt;/h2>
@@ -2446,7 +2446,7 @@ changes to the trust fabric.&lt;/p>
 Manager (RPM) based package management system, we provide a convenience package
 to manage the installation. To install the currently valid distribution, all RPM
 packages are provided at&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>http://repository.egi.eu/sw/production/cas/1/current/
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>https://repository.egi.eu/sw/production/cas/1/current/
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The current version is based on the
 &lt;a href="https://dl.igtf.net/distribution/igtf/current/">IGTF release&lt;/a> with the same
 version number. Install the meta-package &lt;code>ca-policy-egi-core&lt;/code> (or
@@ -2454,19 +2454,19 @@ version number. Install the meta-package &lt;code>ca-policy-egi-core&lt;/code> (
 trusted CAs.&lt;/p>
 &lt;h3 id="using-yum-package-management">Using YUM package management&lt;/h3>
 &lt;p>Add the following
-&lt;a href="http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo">repo-file&lt;/a>
+&lt;a href="https://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo">repo-file&lt;/a>
 to the &lt;code>/etc/yum.repos.d/&lt;/code> directory:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">[EGI-trustanchors]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">EGI-trustanchors&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">baseurl&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">http://repository.egi.eu/sw/production/cas/1/current/&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">gpgkey&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">http://repository.egi.eu/sw/production/cas/1/GPG-KEY-EUGridPMA-RPM-3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">baseurl&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">https://repository.egi.eu/sw/production/cas/1/current/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">gpgkey&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">https://repository.egi.eu/sw/production/cas/1/GPG-KEY-EUGridPMA-RPM-3&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">gpgcheck&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">1&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#c4a000">enabled&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">1&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and then update your installation. How to update depends on your previous
 activity:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>if you have previously ever installed the &lt;code>lcg-CA&lt;/code> package&lt;/strong>, remove any
-references to &lt;code>http://linuxsoft.cern.ch/LCG-CAs/current&lt;/code> from your YUM setup,
+references to &lt;code>https://linuxsoft.cern.ch/LCG-CAs/current&lt;/code> from your YUM setup,
 and run&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ yum clean cache metadata
@@ -2507,7 +2507,7 @@ solve your issue, or may be asked to use a temporary repository. To use it:&lt;/
 &lt;li>Add the following line to your sources.list file for APT:&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#### EGI Trust Anchor Distribution ####&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>deb http://repository.egi.eu/sw/production/cas/1/current egi-igtf core
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>deb https://repository.egi.eu/sw/production/cas/1/current egi-igtf core
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Populate the cache and install the meta-package&lt;/li>
 &lt;/ul>
@@ -2518,7 +2518,7 @@ solve your issue, or may be asked to use a temporary repository. To use it:&lt;/
 other platforms. Since there is no dependency management in this case, please
 review the release notes carefully for any security issues or withdrawn CAs. The
 tar files can be found in the EGI repository at&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>http://repository.egi.eu/sw/production/cas/1/current/tgz/
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>https://repository.egi.eu/sw/production/cas/1/current/tgz/
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have downloaded the directory, you can unpack all the CA tar,gz as
 follows to your certificate directory:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> tgz in &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>ls &amp;lt;ca download dir&amp;gt;&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span>
@@ -2530,19 +2530,19 @@ follows to your certificate directory:&lt;/p>
 installations. Update your software repository (re-generating the repository
 templates as needed) and obtain the new CA templates from:&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>http://repository.egi.eu/sw/production/cas/1/current/meta/ca-policy-egi-core.tpl&lt;/code>
+&lt;li>&lt;code>https://repository.egi.eu/sw/production/cas/1/current/meta/ca-policy-egi-core.tpl&lt;/code>
 for QWG&lt;/li>
-&lt;li>&lt;code>http://repository.egi.eu/sw/production/cas/1/current/meta/pro_software_meta_ca_policy_egi_core.tpl&lt;/code>
+&lt;li>&lt;code>https://repository.egi.eu/sw/production/cas/1/current/meta/pro_software_meta_ca_policy_egi_core.tpl&lt;/code>
 for CDB&lt;/li>
 &lt;/ul>
 &lt;p>Make sure to mirror (or refer to) the new repository at
-&lt;code>http://repository.egi.eu/sw/production/cas/1/current/&lt;/code> and create the
+&lt;code>https://repository.egi.eu/sw/production/cas/1/current/&lt;/code> and create the
 appropriate repository definition file.&lt;/p>
 &lt;p>For WLCG sites that are migrating from the lcg-CA package: the WLCG policy
 companion of the EGI templates can be found at
-&lt;a href="http://lcg-ca.web.cern.ch/lcg-ca/distribution/current/meta/ca-policy-lcg.tpl">QWG&lt;/a>
+&lt;a href="https://lcg-ca.web.cern.ch/lcg-ca/distribution/current/meta/ca-policy-lcg.tpl">QWG&lt;/a>
 and
-&lt;a href="http://lcg-ca.web.cern.ch/lcg-ca/distribution/current/meta/pro_software_meta_ca_policy_lcg.tpl">CDB&lt;/a>
+&lt;a href="https://lcg-ca.web.cern.ch/lcg-ca/distribution/current/meta/pro_software_meta_ca_policy_lcg.tpl">CDB&lt;/a>
 and can be included in the profile in parallel with the EGI core template. All
 packages needed are also included in the EGI repository, so only a single
 repository reference is necessary.&lt;/p>
@@ -2595,7 +2595,7 @@ the
 or its &lt;a href="https://www.apgridpma.org/distribution/">mirror&lt;/a>. See the IGTF and
 EUGridPMA web pages for additional information.&lt;/p>
 &lt;p>Make sure to verify your trust anchors with &lt;a href="https://www.tacar.org/">TACAR&lt;/a>, the
-&lt;a href="http://www.terena.org">TERENA&lt;/a> Academic CA Repository, where applicable.&lt;/p></description></item><item><title>Providers: HOWTO02 Site Certification Required Documentation</title><link>/providers/operations-manuals/howto02_site_certification_required_documentation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto02_site_certification_required_documentation/</guid><description>
+&lt;a href="https://www.terena.org">TERENA&lt;/a> Academic CA Repository, where applicable.&lt;/p></description></item><item><title>Providers: HOWTO02 Site Certification Required Documentation</title><link>/providers/operations-manuals/howto02_site_certification_required_documentation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/operations-manuals/howto02_site_certification_required_documentation/</guid><description>
 &lt;p>Documents required for Resource Centre registration and certification.&lt;/p>
 &lt;p>The Resource Centre administrators should read and understand the first five
 documents. It is a further requirement that the OLA between the NGI and RC, and
@@ -2647,7 +2647,7 @@ certification.&lt;/p>
 &lt;li>&lt;code>GlueServiceUniqueID&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>It is recommended to use the
-&lt;a href="http://directory.apache.org/studio/">Apache Studio LDAP browser&lt;/a>, although in
+&lt;a href="https://directory.apache.org/studio/">Apache Studio LDAP browser&lt;/a>, although in
 this page &lt;code>ldapsearch&lt;/code> queries are shown.&lt;/p>
 &lt;h3 id="contact-information">Contact information&lt;/h3>
 &lt;p>Under the branch &lt;code>GlueSiteUniqueID&lt;/code> check the values of the following fields:&lt;/p>
@@ -3669,7 +3669,7 @@ same device name shown above):&lt;/p>
 SPEC, a new CPU benchmark that will replace si2k and will become the reference
 benchmark for accounting purposes.&lt;/p>
 &lt;p>Detailed description of the reasons are provided on the
-&lt;a href="http://indico.cern.ch/getFile.py/access?contribId=3&amp;amp;sessionId=0&amp;amp;resId=0&amp;amp;materialId=0&amp;amp;confId=49388">transition to a new CPU benchmarking unit for the WLCG&lt;/a>.&lt;/p>
+&lt;a href="https://indico.cern.ch/getFile.py/access?contribId=3&amp;amp;sessionId=0&amp;amp;resId=0&amp;amp;materialId=0&amp;amp;confId=49388">transition to a new CPU benchmarking unit for the WLCG&lt;/a>.&lt;/p>
 &lt;h3 id="q2-what-is-hep-spec-06">Q2: What is HEP SPEC 06?&lt;/h3>
 &lt;p>The &lt;strong>HEP-SPEC06 benchmark&lt;/strong> is designed to scale with the performances of the
 high-energy physics codes on similar machines. The goal was to have an accuracy
@@ -3684,7 +3684,7 @@ machines with the same processor.&lt;/p>
 change.&lt;/p>
 &lt;h3 id="q3-where-can-i-find-information-about-hep-spec-06-measurements">Q3: Where can I find information about HEP SPEC 06 measurements?&lt;/h3>
 &lt;p>Some example results are available on the
-&lt;a href="http://w3.hepix.org/benchmarking.html">HEPIX group-page&lt;/a>, where one can see the
+&lt;a href="https://w3.hepix.org/benchmarking.html">HEPIX group-page&lt;/a>, where one can see the
 differences between gcc3.4.x and gcc4.1.x.&lt;/p>
 &lt;p>Additional results tables are available from various EGI partners:&lt;/p>
 &lt;ul>

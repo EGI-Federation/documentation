@@ -328,7 +328,7 @@ certificates are recognized at site level.&lt;/p>
 &lt;p>Usually, a certificate can be installed by command-line tools, but they can also
 be stored in the web browser to access EGI web tools and services.&lt;/p>
 &lt;h3 id="get-a-certificate">Get a Certificate&lt;/h3>
-&lt;p>The &lt;a href="http://www.eugridpma.org/members/worldmap/">list of EGI recognised CAs&lt;/a>
+&lt;p>The &lt;a href="https://www.eugridpma.org/members/worldmap/">list of EGI recognised CAs&lt;/a>
 provides a clickable map to find your nearby CA. Several of these offer the
 option to get an &amp;rsquo;eScience Personal&amp;rsquo; certificate online from the Terena
 Certificate Service CA.

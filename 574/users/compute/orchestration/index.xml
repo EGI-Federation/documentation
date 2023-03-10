@@ -9,14 +9,14 @@ and update, and monitoring of virtual infrastructures.&lt;/p>
 a wide variety of backends, either federated (such as
 &lt;a href="../../cloud-compute">EGI Cloud Compute&lt;/a>), public (such as
 &lt;a href="https://aws.amazon.com/">Amazon Web Services&lt;/a>,
-&lt;a href="http://cloud.google.com/">Google Cloud&lt;/a> or
-&lt;a href="http://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
+&lt;a href="https://cloud.google.com/">Google Cloud&lt;/a> or
+&lt;a href="https://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
 &lt;a href="../../../getting-started/openstack">OpenStack&lt;/a>),
 thus making user applications cloud agnostic.
 IM features a &lt;a href="https://appsgrycap.i3m.upv.es:31443/im-dashboard/">web-based GUI&lt;/a>,
 an XML-RPC API, a REST API and a &lt;a href="cli">command-line interface&lt;/a> (CLI).
 It supports
-&lt;a href="http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html">OASIS TOSCA Simple Profile in YAML&lt;/a>.&lt;/p>
+&lt;a href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html">OASIS TOSCA Simple Profile in YAML&lt;/a>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 An easy way to deploy your first VM
@@ -30,31 +30,31 @@ A &lt;a href="https://imdocs.readthedocs.io/en/latest/dashboard.html#usage">tuto
 For detailed information about
 Infrastructure Manager please see its &lt;a href="https://imdocs.readthedocs.io">documentation&lt;/a>.
 It was also presented in one of the
-&lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>, more details are available on the
+&lt;a href="https://www.egi.eu/trainings-and-webinars/">EGI Webinars&lt;/a>, more details are available on the
 &lt;a href="https://indico.egi.eu/event/5495/">indico page&lt;/a> and the video recording is available on
 &lt;a href="https://youtu.be/Q9VsYjI1mD4">YouTube&lt;/a>.
 &lt;/div>
 &lt;p>The following sections document how to use IM from its GUI or CLI.&lt;/p></description></item><item><title>Users: Elastic Cloud Compute Clusters</title><link>/users/compute/orchestration/ec3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>&lt;a href="http://servproject.i3m.upv.es/ec3-ltos/">Elastic Cloud Compute Cluster&lt;/a> (EC3)
+&lt;p>&lt;a href="https://servproject.i3m.upv.es/ec3-ltos/">Elastic Cloud Compute Cluster&lt;/a> (EC3)
 is a tool to &lt;strong>create elastic virtual clusters on top of
 Infrastructure-as-a-Service (IaaS) providers&lt;/strong>.&lt;/p>
 &lt;p>Being based on &lt;a href="../im">Infrastructure Manager&lt;/a>, EC3 supports the same wide
 choices of backends, either public (such as
 &lt;a href="https://aws.amazon.com/">Amazon Web Services&lt;/a>,
-&lt;a href="http://cloud.google.com/">Google Cloud&lt;/a> or
-&lt;a href="http://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
+&lt;a href="https://cloud.google.com/">Google Cloud&lt;/a> or
+&lt;a href="https://azure.microsoft.com/">Microsoft Azure&lt;/a>) or on-premises (such as
 &lt;a href="../../../getting-started/openstack">OpenStack&lt;/a>). EC3 can provision clusters
 running &lt;a href="https://github.com/adaptivecomputing/torque">TORQUE&lt;/a>,
-&lt;a href="http://slurm.schedmd.com/">SLURM&lt;/a>,
+&lt;a href="https://slurm.schedmd.com/">SLURM&lt;/a>,
 &lt;a href="https://research.cs.wisc.edu/htcondor/">HTCondor&lt;/a>,
-&lt;a href="http://mesos.apache.org/">Apache Mesos&lt;/a>, &lt;a href="https://www.nomadproject.io/">Nomad&lt;/a>,
+&lt;a href="https://mesos.apache.org/">Apache Mesos&lt;/a>, &lt;a href="https://www.nomadproject.io/">Nomad&lt;/a>,
 &lt;a href="https://kubernetes.io/">Kubernetes&lt;/a> and others, which will be automatically
 resized to fit the load (e.g. number of jobs at the batch system).&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 EC3 was presented in one of the
-&lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>. Please see more details on the
+&lt;a href="https://www.egi.eu/trainings-and-webinars/">EGI Webinars&lt;/a>. Please see more details on the
 &lt;a href="https://indico.egi.eu/event/5092/">Indico page&lt;/a> and check out the video
 recording on &lt;a href="https://youtu.be/cN0tTBjV3I8">YouTube&lt;/a>.
 &lt;/div>
@@ -89,13 +89,13 @@ your cluster in the EGI Federation:
 &lt;h4 class="alert-heading">Note&lt;/h4>
 For detailed information about DODAS
 please see its &lt;a href="https://web.infn.it/dodas/index.php/en/">documentation&lt;/a>. It was
-also presented in one of the &lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>, more
+also presented in one of the &lt;a href="https://www.egi.eu/trainings-and-webinars/">EGI Webinars&lt;/a>, more
 details are available on the &lt;a href="https://indico.egi.eu/event/5695/">indico page&lt;/a>
 and the video recording is available on
 &lt;a href="https://www.youtube.com/watch?v=bcURl4ESRW8&amp;amp;ab_channel=EGI">YouTube&lt;/a>.
 &lt;/div></description></item><item><title>Users: EGI Workload Manager</title><link>/users/compute/orchestration/workload-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/workload-manager/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
-&lt;p>&lt;a href="https://www.egi.eu/services/workload-manager/">EGI Workload Manager&lt;/a> is a
+&lt;p>&lt;a href="https://www.egi.eu/service/workload-manager/">EGI Workload Manager&lt;/a> is a
 service provided to the EGI community to efficiently &lt;strong>manage and distribute
 computing workloads on the EGI infrastructure&lt;/strong>.&lt;/p>
 &lt;p>Workload Manager is configured to support a number of
@@ -106,7 +106,7 @@ scientific communities.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Workload Manager is based on
-&lt;a href="http://diracgrid.org/">DIRAC technology&lt;/a>.&lt;br/>
+&lt;a href="https://diracgrid.org/">DIRAC technology&lt;/a>.&lt;br/>
 The delivery of the service is coordinated
 by the EGI Foundation and &lt;a href="https://in2p3.cnrs.fr/">IN2P3&lt;/a> provides the resources and
 operates the service.
@@ -216,7 +216,7 @@ Team on shift.&lt;/p>
 &lt;p>DIRAC uses &lt;a href="../../../aai/check-in/vos/voms">X.509 certificates&lt;/a> to identify and
 authenticate users. These certificates are delivered to each individual by
 trusted certification authorities. If you have a personal certificate issued by
-a &lt;a href="http://www.eugridpma.org/">EUGridPMA-certified&lt;/a> authority you can use it for
+a &lt;a href="https://www.eugridpma.org/">EUGridPMA-certified&lt;/a> authority you can use it for
 this tutorial. Otherwise refer to the information available in this
 &lt;a href="../../../aai/check-in/vos/voms/#get-a-certificate">section&lt;/a>, to obtain a certificate.
 Your certificate may take a few days to be delivered, so please ask for your
@@ -411,7 +411,7 @@ certificate is uploaded to the DIRAC ProxyManager service.&lt;/p>
 &lt;!-- markdownlint-enable line-length -->
 &lt;p>DIRAC commands&lt;/p>
 &lt;p>Have a look at the official
-&lt;a href="http://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html">command reference documentation&lt;/a>
+&lt;a href="https://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html">command reference documentation&lt;/a>
 for the complete list of the Workload Management commands.&lt;/p>
 &lt;p>In general, you can submit jobs, check their status, and retrieve the output.
 For example:&lt;/p>

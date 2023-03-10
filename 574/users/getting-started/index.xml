@@ -544,7 +544,7 @@ APEL SSM (Secure STOMP Messenger). SSM client packages can be obtained at
 &lt;a href="https://apel.github.io">https://apel.github.io&lt;/a>. A Cloud Accounting Summary Usage Record has also been
 defined and summaries created on a daily basis from all the accounting records
 received from the Resource Providers are sent to the EGI Accounting Portal. The
-&lt;a href="http://accounting.egi.eu/">Accounting portal&lt;/a> also runs SSM to receive these
+&lt;a href="https://accounting.egi.eu/">Accounting portal&lt;/a> also runs SSM to receive these
 summaries and provides a web view of the accounting data received from the
 Resource Providers.&lt;/p>
 &lt;p>&lt;a href="https://github.com/IFCA/caso">cASO&lt;/a> delivers an implementation of the extractor

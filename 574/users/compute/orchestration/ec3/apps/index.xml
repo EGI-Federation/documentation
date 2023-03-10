@@ -8,14 +8,14 @@ and aims to:&lt;/p>
 &lt;li>avoid data transfer, and&lt;/li>
 &lt;li>improve reusability of data and workflows.&lt;/li>
 &lt;/ol>
-&lt;p>It relies on &lt;a href="http://ophidia.cmcc.it/">Ophidia&lt;/a>, a data analytics framework for
+&lt;p>It relies on &lt;a href="https://ophidia.cmcc.it/">Ophidia&lt;/a>, a data analytics framework for
 eScience, which provides declarative, server-side, and parallel data analysis,
 jointly with an internal storage model able to efficiently deal with
 multidimensional data and a hierarchical data organization to manage large data
 volumes (&amp;ldquo;datacubes&amp;rdquo;), and on JupyterHub, to give users access to ready-to-use
 computational environments and resources.&lt;/p>
 &lt;p>Thanks to the Elastic Cloud Compute Cluster (EC3) platform, operated by the
-&lt;a href="http://www.upv.es/index-en.html">Polytechnic University of Valencia (UPV)&lt;/a>,
+&lt;a href="https://www.upv.es/index-en.html">Polytechnic University of Valencia (UPV)&lt;/a>,
 researchers will be able to rely on the EGI Cloud Compute service to scale up to
 larger simulations without being worried about the complexity of the underlying
 infrastructure.&lt;/p>
@@ -140,7 +140,7 @@ the session:&lt;/p>
 can use the &lt;code>oph_explorecube&lt;/code> operator to visualize the first 100 values.&lt;/p>
 &lt;p>&lt;img src="ecas-explore.png" alt="Explore cube">&lt;/p>
 &lt;p>For further details about the Ophidia operators, please refer to the official
-&lt;a href="http://ophidia.cmcc.it/">documentation&lt;/a>.&lt;/p>
+&lt;a href="https://ophidia.cmcc.it/">documentation&lt;/a>.&lt;/p>
 &lt;h4 id="accessing-the-jupyter-interface">Accessing the Jupyter interface&lt;/h4>
 &lt;p>To access the Jupyter interface, open the browser at
 &lt;code>https://&amp;lt;YOUR_CLUSTER_IP&amp;gt;:443/jupyter&lt;/code> and log in to the system using the
@@ -210,11 +210,11 @@ management page.&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://ecaslab.cmcc.it/web/home.html">ECASLab CMCC&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://ecaslab.dkrz.de/home.html">ECASLab DKRZ&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://ophidia.cmcc.it/">Ophidia&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ophidia.cmcc.it/">Ophidia&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/ECAS-Lab">GitHub: ECAS-Lab&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/OphidiaBigData/ansible-role-ophidia-cluster">GitHub: Ansible role Ophidia cluster&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://www.grycap.upv.es/ec3">EC3&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://www.github.com/grycap/ec3">GitHub EC3&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.grycap.upv.es/ec3">EC3&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.github.com/grycap/ec3">GitHub EC3&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Users: HTC</title><link>/users/compute/orchestration/ec3/apps/htc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/ec3/apps/htc/</guid><description>
 &lt;h2 id="templates">Templates&lt;/h2>
 &lt;p>We will build a torque cluster on one of the EGI Cloud providers using EC3.

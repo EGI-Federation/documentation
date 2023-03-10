@@ -638,7 +638,7 @@ repository.&lt;/li>
 &lt;p>They should be run by cron periodically, settings below run cASO every hour and
 ssmsend every six hours.&lt;/p>
 &lt;h3 id="using-the-vm-appliance">Using the VM Appliance&lt;/h3>
-&lt;p>&lt;a href="http://caso.readthedocs.org/en/latest/configuration.html">cASO configuration&lt;/a>
+&lt;p>&lt;a href="https://caso.readthedocs.org/en/latest/configuration.html">cASO configuration&lt;/a>
 is stored at &lt;code>/etc/caso/caso.conf&lt;/code>. Most default values should be OK, but you
 must set:&lt;/p>
 &lt;ul>
@@ -652,7 +652,7 @@ from.&lt;/p>
 &lt;li>
 &lt;p>credentials to access the accounting data (lines 28-47, more options also
 available). Check the
-&lt;a href="http://caso.readthedocs.org/en/latest/configuration.html#openstack-configuration">cASO documentation&lt;/a>
+&lt;a href="https://caso.readthedocs.org/en/latest/configuration.html#openstack-configuration">cASO documentation&lt;/a>
 for the expected permissions of the user configured here.&lt;/p>
 &lt;/li>
 &lt;li>

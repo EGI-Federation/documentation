@@ -14,7 +14,7 @@ contact others.&lt;/p>
 &lt;ol>
 &lt;li>Get a valid grid certificate delivered by Certificate Authorities (CA) - this
 step is important because most of the tools used during the shift require
-certificate. &lt;a href="http://www.eugridpma.org/members/worldmap/">Find&lt;/a> EUGRIDPMA
+certificate. &lt;a href="https://www.eugridpma.org/members/worldmap/">Find&lt;/a> EUGRIDPMA
 members.&lt;/li>
 &lt;li>&lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/">Register to Dteam VO&lt;/a>. Dteam
 membership will give you possibility to test sites and debug problems.&lt;/li>
@@ -39,7 +39,7 @@ NGI).&lt;/li>
 you will find all information relevant to your work as a ROD.&lt;/li>
 &lt;/ol>
 &lt;p>To see how to perform all those actions please watch video
-&lt;a href="http://www.youtube.com/watch?v=p-SrqJMDlOo">How to become a ROD member&lt;/a> (7
+&lt;a href="https://www.youtube.com/watch?v=p-SrqJMDlOo">How to become a ROD member&lt;/a> (7
 steps which should be done to become a ROD member also).&lt;/p>
 &lt;h2 id="rod-duties">ROD duties&lt;/h2>
 &lt;p>The Regional Operations team is responsible for detecting problems, coordinating
@@ -93,7 +93,7 @@ prepared for ROD teams. They will walk you through several topics which are
 important for your work.&lt;/p>
 &lt;h3 id="operational-tools">Operational Tools&lt;/h3>
 &lt;p>ROD uses several operational tools to perform theirs duties
-(&lt;a href="http://www.youtube.com/watch?v=bNm4oupAmqI">Operations tools video&lt;/a>):&lt;/p>
+(&lt;a href="https://www.youtube.com/watch?v=bNm4oupAmqI">Operations tools video&lt;/a>):&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="../../../internal/operations-portal/">Operations Portal&lt;/a>. Dashboard tool on
 the Operations Portal is a main tool which is used by ROD teams. All actions

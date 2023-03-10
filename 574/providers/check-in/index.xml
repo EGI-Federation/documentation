@@ -566,7 +566,7 @@ that integration has been thoroughly tested during Step 1.&lt;/li>
 &lt;p>EGI Check-in supports two authentication and authorisation protocols that you
 can choose from:&lt;/p>
 &lt;ol>
-&lt;li>&lt;a href="http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html">Security Assertion Markup Language (SAML) 2.0&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html">Security Assertion Markup Language (SAML) 2.0&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://openid.net/specs/openid-connect-core-1_0.html">OpenID Connect&lt;/a> - an
 extension to &lt;a href="https://tools.ietf.org/html/rfc6749">OAuth 2.0&lt;/a>&lt;/li>
 &lt;/ol>
@@ -853,7 +853,7 @@ set to signing&lt;/li>
 &lt;li>at least one &lt;code>&amp;lt;md:SingleLogoutService&amp;gt;&lt;/code> endpoint element (this MAY be omitted
 if the SP solely issues &lt;code>&amp;lt;samlp:LogoutRequest&amp;gt;&lt;/code> messages containing the
 &lt;code>&amp;lt;aslo:Asynchronous&amp;gt;&lt;/code> extension
-&lt;a href="http://docs.oasis-open.org/security/saml/Post2.0/saml-async-slo/v1.0/cs01/saml-async-slo-v1.0-cs01.pdf">SAML2ASLO&lt;/a>)&lt;/li>
+&lt;a href="https://docs.oasis-open.org/security/saml/Post2.0/saml-async-slo/v1.0/cs01/saml-async-slo-v1.0-cs01.pdf">SAML2ASLO&lt;/a>)&lt;/li>
 &lt;/ul>
 &lt;h3 id="attributes">Attributes&lt;/h3>
 &lt;p>The EGI Check-in IdP is guaranteed to release a minimal subset of the
@@ -1060,7 +1060,7 @@ For other
 (OIDC) as an alternative to the SAML2 protocol. To allow this, the EGI Check-in
 IdP provides an OpenID Connect (OAuth2) API based on
 &lt;a href="https://www.keycloak.org">Keycloak&lt;/a>, which has been
-&lt;a href="http://openid.net/certification/">certified by the OpenID Foundation&lt;/a>.
+&lt;a href="https://openid.net/certification/">certified by the OpenID Foundation&lt;/a>.
 Interconnection with the EGI Check-in OpenID Provider allows users to sign in
 using any of the supported backend authentication mechanisms, such as
 institutional IdPs registered with eduGAIN or Social Providers. Once the user
@@ -3622,7 +3622,7 @@ Identity Assurance, which is conveyed to the SP through both the
 (&lt;code>AuthnContextClassRef&lt;/code>) of the SAML authentication response. EGI Check-in uses
 Assurance Profiles which distinguish between three Identity Assurance levels,
 similarly to the
-&lt;a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_235_R_0002">eID Assurance Framework (eIDAF)&lt;/a>.
+&lt;a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:JOL_2015_235_R_0002">eID Assurance Framework (eIDAF)&lt;/a>.
 Each level is represented by a URI as follows:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Low&lt;/strong>: Authentication through a social identity provider or other low

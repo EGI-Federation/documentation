@@ -43,7 +43,7 @@ a valid access token:&lt;/p>
 &lt;p>To create a virtual infrastructure you have to describe a file documenting
 the required resources. IM supports its native language
 &lt;a href="https://imdocs.readthedocs.io/en/latest/radl.html">RADL&lt;/a> and the
-&lt;a href="http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0">OASIS TOSCA Simple Profile in YAML Version 1.0&lt;/a>.
+&lt;a href="https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0">OASIS TOSCA Simple Profile in YAML Version 1.0&lt;/a>.
 You can find some examples in the
 &lt;a href="https://github.com/grycap/im/tree/master/examples">IM GitHub repository&lt;/a>.&lt;/p>
 &lt;p>For example, we can use RADL to define a simple VM with 1 CPU, 1 GB of RAM

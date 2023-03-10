@@ -242,7 +242,7 @@ for details. See below two code samples for using them&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">ex_force_auth_version&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;2.0_voms&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: Authentication and Authorisation</title><link>/users/compute/cloud-compute/auth/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/auth/</guid><description>
 &lt;h2 id="oidc-auth-using-check-in">Authentication&lt;/h2>
-&lt;p>&lt;a href="http://openid.net/connect/">OpenID Connect&lt;/a> (OIDC) is the main authentication protocol
+&lt;p>&lt;a href="https://openid.net/connect/">OpenID Connect&lt;/a> (OIDC) is the main authentication protocol
 used on the EGI Cloud. It replaces the legacy VOMS-based authentication for all
 OpenStack providers.&lt;/p>
 &lt;p>Authentication to web based services (like the AppDB) will redirect you to the
@@ -510,7 +510,7 @@ minimally open.&lt;/li>
 &lt;p>You should also follow the best practice guides for each service that's exposed
 to the outside world. See for example guides for:&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="http://wiki.centos.org/HowTos/Network/SecuringSSH">ssh&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://wiki.centos.org/HowTos/Network/SecuringSSH">ssh&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.owasp.org/index.php/Securing_tomcat">tomcat&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>See also
@@ -701,7 +701,7 @@ in Windows with &lt;code>ipconfig /flushdns&lt;/code> command with Administrator
 &lt;h2 id="api">API&lt;/h2>
 &lt;p>Dynamic DNS update server uses dyndns2 protocol, compatible with commercial
 providers like &lt;a href="https://help.dyn.com/remote-access-api/perform-update/">dyn.com&lt;/a>,
-and &lt;a href="http://www.noip.com/integrate/request">noip.com&lt;/a>. The API is specified as
+and &lt;a href="https://www.noip.com/integrate/request">noip.com&lt;/a>. The API is specified as
 follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET /nic/update?hostname=yourhostname&amp;amp;myip=ipaddress
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Host: nsupdate.fedcloud.eu
@@ -829,14 +829,14 @@ status and IP. VMOps will create a default &lt;code>cloudadm&lt;/code> user for 
 ssh-key pair for login (you can create as many users as needed with the
 contextualisation options of the wizard described above).&lt;/p>
 &lt;p>&lt;img src="vmops_vm.png" alt="VM details">&lt;/p>
-&lt;p>VMOps was presented in one of the &lt;a href="https://www.egi.eu/webinars/">EGI Webinars&lt;/a>
+&lt;p>VMOps was presented in one of the &lt;a href="https://www.egi.eu/trainings-and-webinars/">EGI Webinars&lt;/a>
 in 2020. The &lt;a href="https://indico.egi.eu/event/5272/">indico page&lt;/a> contains more
 details and there is also a video recording available on
 &lt;a href="https://youtu.be/0YuuKA_4pSM">YouTube&lt;/a>.&lt;/p></description></item><item><title>Users: AppDB REST API v1.0</title><link>/users/compute/cloud-compute/appdb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/cloud-compute/appdb/</guid><description>
 &lt;p>This document is intended for developers who want to write applications that
 interact with the AppDB API over the web using HTTP commands following the
-&lt;a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST&lt;/a> paradigm.
-The API endpoint is located at &lt;code>http://appdb-pi.egi.eu&lt;/code> and it allows
+&lt;a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST&lt;/a> paradigm.
+The API endpoint is located at &lt;code>https://appdb-pi.egi.eu&lt;/code> and it allows
 information retrieval and modification from third party applications without
 having to reside on the rich user interface of the AppDB portal. Thus one is
 given the opportunity to design one&amp;rsquo;s own frontends.&lt;/p>
@@ -845,7 +845,7 @@ given the opportunity to design one&amp;rsquo;s own frontends.&lt;/p>
 &lt;p>Starting with version 1.0, the AppDB API features write access as well, by
 supporting HTTP verbs such as &lt;code>PUT&lt;/code>, &lt;code>POST&lt;/code>, and &lt;code>DELETE&lt;/code>. Verb mappings to data
 operations follow a
-&lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a> convention,
+&lt;a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a> convention,
 as depicted in the following table:&lt;/p>
 &lt;table>
 &lt;thead>
@@ -874,7 +874,7 @@ as depicted in the following table:&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;p>The API also supports the Listing operation
-(&lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUDL&lt;/a>
+(&lt;a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUDL&lt;/a>
 extension), by passing the parameter listmode=listing in the querystring when
 performing a &lt;code>GET&lt;/code> request. Please note that in order to simplify the access
 model, Update operations are always partial, meaning that properties of the
@@ -882,23 +882,23 @@ resource that is being updated which are entirely missing from the
 representation, are ignored (i.e. their state in the backend does not change).
 Therefore, in order to unset/remove a property, one has to explicitly specify it
 as &lt;code>NULL&lt;/code>, provided that this is permitted. This is the reason why Create and
-Update &lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a>
+Update &lt;a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a>
 mappings are inverted with regards to what is usually accustomed. Finally, the
 API also supports the &lt;code>OPTIONS&lt;/code> HTTP verb, which returns a list of the
 operations that are permitted, in principle, for the resource in question. The
 base URI for this version of the RESTful API is&lt;/p>
-&lt;p>&lt;code>http://appdb-pi.egi.eu/rest/1.0/&lt;/code>&lt;/p>
+&lt;p>&lt;code>https://appdb-pi.egi.eu/rest/1.0/&lt;/code>&lt;/p>
 &lt;p>and requests must be followed by at least one resource name, which may be
 followed by one or more optional sub-resource names, separated by slashes, as in
 the examples given bellow:&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>http://appdb-pi.egi.eu/rest/1.0/applications/&lt;/code>&lt;/li>
-&lt;li>&lt;code>http://appdb-pi.egi.eu/rest/1.0/applications/50/&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://appdb-pi.egi.eu/rest/1.0/applications/&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://appdb-pi.egi.eu/rest/1.0/applications/50/&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h3 id="response-types">Response types&lt;/h3>
 &lt;p>Because the API conforms to the REST paradigm, responses to all
-&lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a> operations
-are always &lt;a href="http://en.wikipedia.org/wiki/XML">XML&lt;/a> document representations of
+&lt;a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD&lt;/a> operations
+are always &lt;a href="https://en.wikipedia.org/wiki/XML">XML&lt;/a> document representations of
 the resource in question. These documents are described by schema files which
 reside publicly in the web server. All the XML documents are enveloped in a
 common root element named &lt;code>appdb&lt;/code> with attributes that describe request status,
@@ -1072,7 +1072,7 @@ physics, and that are tagged as portals&lt;/p>
 &lt;/ul>
 &lt;p>For a list of possible specifiers, you can look up the &lt;code>/filter/reflect&lt;/code>
 subresource of any searchable resource (e.g. &lt;code>/applications/filter/reflect&lt;/code>), or
-you can also try using any search box in the &lt;a href="http://appdb.egi.eu">portal&lt;/a>, and
+you can also try using any search box in the &lt;a href="https://appdb.egi.eu">portal&lt;/a>, and
 check out the autocompletion list.&lt;/p>
 &lt;h3 id="authenticated-access">Authenticated Access&lt;/h3>
 &lt;p>Some or all operations on certain resources may require authentication, as
@@ -1089,18 +1089,18 @@ required, but it is strongly suggested, since they can help safeguard its use.&l
 &lt;h2 id="api-reference">API Reference&lt;/h2>
 &lt;p>Below you may find an exhaustive list of the resources v1.0 of the AppDB RESTful
 API offers. Details and documentation about a resource&amp;rsquo;s representation may be
-found as &lt;a href="http://en.wikipedia.org/wiki/XSD">XSD&lt;/a> annotations inside the
+found as &lt;a href="https://en.wikipedia.org/wiki/XSD">XSD&lt;/a> annotations inside the
 appropriate schema file, under
-&lt;a href="http://appdb-pi.egi.eu/rest/1.0/schema">the schemata base resource&lt;/a>. Note that
+&lt;a href="https://appdb-pi.egi.eu/rest/1.0/schema">the schemata base resource&lt;/a>. Note that
 when performing &lt;code>POST&lt;/code> operations, the representation must be passed as a
 URL-encoded string in the query-string under the parameter &lt;code>data&lt;/code>, whereas when
 performing &lt;code>PUT&lt;/code> operations, the representation must be passed as a normal text
 stream. Representations passed to &lt;code>PUT&lt;/code>/&lt;code>POST&lt;/code> operations must be enclosed
 within an &lt;code>appdb:appdb&lt;/code> root element, with the appropriate
-&lt;a href="http://en.wikipedia.org/wiki/XML">XML&lt;/a> namespaces declared, the same way that
+&lt;a href="https://en.wikipedia.org/wiki/XML">XML&lt;/a> namespaces declared, the same way that
 responses are; nevertheless, this will be omitted in all following examples, in
 order to reduce clutter. Also note that since all Update (&lt;code>POST&lt;/code>) operations are
-partial, &lt;a href="http://en.wikipedia.org/wiki/XML">XML&lt;/a> elements that represent
+partial, &lt;a href="https://en.wikipedia.org/wiki/XML">XML&lt;/a> elements that represent
 properties with a cardinality 0..* must be either&lt;/p>
 &lt;ul>
 &lt;li>omitted, in which case the present state in the backend is left untouched,&lt;/li>
@@ -1125,7 +1125,7 @@ with the state of the resource&lt;/p>
 with the input to such operations, in order to verify that the result is what
 was intended, since properties that are malformed or invalid will not break the
 operation, but rather be ignored, as long as the representation is well-formed
-(i.e. passes the &lt;a href="http://en.wikipedia.org/wiki/XSD">XSD&lt;/a> compilation).&lt;/p>
+(i.e. passes the &lt;a href="https://en.wikipedia.org/wiki/XSD">XSD&lt;/a> compilation).&lt;/p>
 &lt;h3 id="application-list">Application List&lt;/h3>
 &lt;ul>
 &lt;li>Resource: &lt;code>applications/&lt;/code>&lt;/li>
@@ -1140,17 +1140,17 @@ operation, but rather be ignored, as long as the representation is well-formed
 &lt;p>Examples:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:0
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:0
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all applications that are listed under the Software Marketplace
 (i.e. Software)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:1
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:1
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all applications that are listed under the Cloud Marketplace (i.e.
 Virtual Appliances)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/applications?flt=country:Greece
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/applications?flt=country:Greece
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all applications that are related to Greece&lt;/p>
 &lt;/li>
 &lt;li>
@@ -1432,7 +1432,7 @@ access only.&lt;/p>
 &lt;p>Examples:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/people/123/applications/bookmarked?flt=discipline:chemistry
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/people/123/applications/bookmarked?flt=discipline:chemistry
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>will return all application entries with a discipline related to chemistry and
 which have been bookmarked by the user with ID &lt;code>123&lt;/code>&lt;/p>
 &lt;/li>
@@ -1503,7 +1503,7 @@ application&amp;rsquo;s contact list&lt;/p>
 &lt;p>List of users (people) that have registered with the database&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/people/?flt={flt}
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/people/?flt={flt}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{flt}&lt;/code> is the URL-encoded representation of
 &lt;code>&amp;gt;=registeredon:2012-02 +=vo.name:SEE -country:Greece&lt;/code>&lt;/p>
 &lt;p>will return a list of all people who have registered after or in Feb 2012,
@@ -1592,7 +1592,7 @@ available to application and user entries&lt;/p>
 available to application entries&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET http://appdb-pi.egi.eu/rest/1.0/vos/?flt={flt}
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>GET https://appdb-pi.egi.eu/rest/1.0/vos/?flt={flt}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>{flt}&lt;/code> is the URL-encoded representation of
 &lt;code>application:CMS +description:CERN&lt;/code>&lt;/p>
 &lt;p>will return the list of VOs that contain the word CERN in their description,
