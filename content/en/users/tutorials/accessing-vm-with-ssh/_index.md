@@ -199,7 +199,7 @@ $ ssh centos@192.168.1.3
 
 ## Infrastructure Manager (IM)
 
-The Infrastructure Manager (IM) provides the SSH key that can be used to connect
+The [Infrastructure Manager (IM)](../../compute/orchestration/im/) provides the SSH key that can be used to connect
 to the virtual machine in the VM
 [info page of the IM-Dashboard](../../compute/orchestration/im/dashboard/#vm-info-page).
 
