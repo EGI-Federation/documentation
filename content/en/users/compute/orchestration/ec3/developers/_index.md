@@ -22,8 +22,8 @@ following process:
 
 ### Documentations
 
-* [Ansible documentation](http://docs.ansible.com/)
-* [EC3 documentation](http://ec3.readthedocs.io/en/devel/templates.html)
+* [Ansible documentation](https://docs.ansible.com/)
+* [EC3 documentation](https://ec3.readthedocs.io/en/devel/templates.html)
 * [RADL](https://github.com/grycap/ec3/tree/master/templates)
 
 {{% alert title="Note" color="info" %}} For more information please contact

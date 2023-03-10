@@ -50,9 +50,9 @@ and for which you have a valid VOMS proxy.
 Nowadays mainly two Computing Element (CE) "flavours" are used in production:
 
 - [HTCondorCE](https://htcondor.org/htcondor-ce/overview/), a Compute Entrypoint
-  (CE) based on [HTCondor](http://htcondor.org/).
-- [ARC-CE](http://www.nordugrid.org/arc/ce/), the
-  [ARC](http://www.nordugrid.org/arc/) Compute Element (CE).
+  (CE) based on [HTCondor](https://htcondor.org/).
+- [ARC-CE](https://www.nordugrid.org/arc/ce/), the
+  [ARC](https://www.nordugrid.org/arc/) Compute Element (CE).
 
 The [CREAM CE](https://cream-guide.readthedocs.io/en/latest/) is a legacy and no
 more supported middleware.

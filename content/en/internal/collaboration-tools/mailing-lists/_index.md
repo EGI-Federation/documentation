@@ -77,6 +77,6 @@ will be assigned to the groups when they create the account.
 
 ## Documentation
 
-- [Mailman documentation](http://www.gnu.org/software/mailman/docs.html)
+- [Mailman documentation](https://www.gnu.org/software/mailman/docs.html)
 - [Mailman Frequently Asked Questions](https://wiki.list.org/DOC/Frequently%20Asked%20Questions)
 - [List administrator tasks](https://wiki.list.org/DOC/3%20List%20administrator%20tasks)

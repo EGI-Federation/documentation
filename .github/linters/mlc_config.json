@@ -1,4 +1,12 @@
 {
+  "httpHeaders": [
+    {
+      "urls": ["https://github.com/"],
+      "headers": {
+        "Accept-Encoding": "zstd, br, gzip, deflate"
+      }
+    }
+  ],
   "ignorePatterns": [
     {
       "pattern": "^http://localhost"
@@ -58,13 +66,25 @@
       "pattern": "^https://opensource.org/licenses"
     },
     {
-      "pattern": "^https://servproject.i3m.upv.es/ec3-ltos/index.php"
+      "pattern": "^https://servproject.i3m.upv.es/ec3-ltos/*"
     },
     {
       "pattern": "^https://operations-portal.egi.eu/downtimes/subscription"
     },
     {
+      "pattern": "^https://operations-portal.egi.eu/vo"
+    },
+    {
+      "pattern": "^https://github.com/.*.keys"
+    },
+    {
+      "pattern": "^https://tools.ietf.org/html/rfc*"
+    },
+    {
       "pattern": "^https://aai.egi.eu/device*"
+    },
+    {
+      "pattern": "^../.*/providers/cloud-compute/openstack/*"
     }
   ]
 }

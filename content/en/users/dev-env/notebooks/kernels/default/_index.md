@@ -42,7 +42,7 @@ way to support your request.
 
 ## CVMFS
 
-Notebooks mounts several [CVMFS](../../../../compute/content-distribution/)
+Notebooks mounts several [CVMFS](../../../../compute/software-distribution/)
 repositories where you can find software relevant to your community. These are
 accessible from the default CVMFS location `/cvmfs` and also linked in your home
 directory `/home/jovyan/cvmfs`. These repositories are available:

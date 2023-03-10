@@ -20,7 +20,7 @@ These are the main branches of the LDAP tree:
 - `GlueServiceUniqueID`
 
 It is recommended to use the
-[Apache Studio LDAP browser](http://directory.apache.org/studio/), although in
+[Apache Studio LDAP browser](https://directory.apache.org/studio/), although in
 this page `ldapsearch` queries are shown.
 
 ### Contact information

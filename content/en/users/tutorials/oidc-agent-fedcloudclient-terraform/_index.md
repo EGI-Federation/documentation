@@ -1,5 +1,5 @@
 ---
-title: "Automating with oidc-agent, fedcloudclient, terraform and Ansible"
+title: "Automate with oidc-agent, fedcloudclient, terraform and Ansible"
 type: docs
 weight: 150
 description: >

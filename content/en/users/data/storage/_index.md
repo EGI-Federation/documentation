@@ -10,7 +10,7 @@ description: >
 
 ## Overview
 
-[Online Storage](https://www.egi.eu/services/online-storage/) includes services
+[Online Storage](https://www.egi.eu/service/online-storage/) includes services
 that allow users to **store, share and access data** using the EGI infrastructure.
 Different categories of storage are available, depending on how data is stored,
 the technology used to access and consume data, and the foreseen usage.

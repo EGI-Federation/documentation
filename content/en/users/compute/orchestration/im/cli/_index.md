@@ -81,7 +81,7 @@ id = egi; type = EGI; host = SCAI; vo = vo.access.egi.eu; token = command(oidc-t
 To create a virtual infrastructure you have to describe a file documenting
 the required resources. IM supports its native language
 [RADL](https://imdocs.readthedocs.io/en/latest/radl.html) and the
-[OASIS TOSCA Simple Profile in YAML Version 1.0](http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0).
+[OASIS TOSCA Simple Profile in YAML Version 1.0](https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0).
 You can find some examples in the
 [IM GitHub repository](https://github.com/grycap/im/tree/master/examples).
 

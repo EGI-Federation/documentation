@@ -9,8 +9,8 @@ description: >
 
 This document is intended for developers who want to write applications that
 interact with the AppDB API over the web using HTTP commands following the
-[REST](http://en.wikipedia.org/wiki/Representational_state_transfer) paradigm.
-The API endpoint is located at `http://appdb-pi.egi.eu` and it allows
+[REST](https://en.wikipedia.org/wiki/Representational_state_transfer) paradigm.
+The API endpoint is located at `https://appdb-pi.egi.eu` and it allows
 information retrieval and modification from third party applications without
 having to reside on the rich user interface of the AppDB portal. Thus one is
 given the opportunity to design one's own frontends.
@@ -22,7 +22,7 @@ given the opportunity to design one's own frontends.
 Starting with version 1.0, the AppDB API features write access as well, by
 supporting HTTP verbs such as `PUT`, `POST`, and `DELETE`. Verb mappings to data
 operations follow a
-[CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) convention,
+[CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) convention,
 as depicted in the following table:
 
 | Operation | HTTP Verb |
@@ -33,7 +33,7 @@ as depicted in the following table:
 | Delete    | `DELETE`  |
 
 The API also supports the Listing operation
-([CRUDL](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
+([CRUDL](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
 extension), by passing the parameter listmode=listing in the querystring when
 performing a `GET` request. Please note that in order to simplify the access
 model, Update operations are always partial, meaning that properties of the
@@ -41,26 +41,26 @@ resource that is being updated which are entirely missing from the
 representation, are ignored (i.e. their state in the backend does not change).
 Therefore, in order to unset/remove a property, one has to explicitly specify it
 as `NULL`, provided that this is permitted. This is the reason why Create and
-Update [CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
+Update [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
 mappings are inverted with regards to what is usually accustomed. Finally, the
 API also supports the `OPTIONS` HTTP verb, which returns a list of the
 operations that are permitted, in principle, for the resource in question. The
 base URI for this version of the RESTful API is
 
-`http://appdb-pi.egi.eu/rest/1.0/`
+`https://appdb-pi.egi.eu/rest/1.0/`
 
 and requests must be followed by at least one resource name, which may be
 followed by one or more optional sub-resource names, separated by slashes, as in
 the examples given bellow:
 
-- `http://appdb-pi.egi.eu/rest/1.0/applications/`
-- `http://appdb-pi.egi.eu/rest/1.0/applications/50/`
+- `https://appdb-pi.egi.eu/rest/1.0/applications/`
+- `https://appdb-pi.egi.eu/rest/1.0/applications/50/`
 
 ### Response types
 
 Because the API conforms to the REST paradigm, responses to all
-[CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations
-are always [XML](http://en.wikipedia.org/wiki/XML) document representations of
+[CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations
+are always [XML](https://en.wikipedia.org/wiki/XML) document representations of
 the resource in question. These documents are described by schema files which
 reside publicly in the web server. All the XML documents are enveloped in a
 common root element named `appdb` with attributes that describe request status,
@@ -233,7 +233,7 @@ Consider the following examples when searching for software:
 
 For a list of possible specifiers, you can look up the `/filter/reflect`
 subresource of any searchable resource (e.g. `/applications/filter/reflect`), or
-you can also try using any search box in the [portal](http://appdb.egi.eu), and
+you can also try using any search box in the [portal](https://appdb.egi.eu), and
 check out the autocompletion list.
 
 ### Authenticated Access
@@ -254,18 +254,18 @@ required, but it is strongly suggested, since they can help safeguard its use.
 
 Below you may find an exhaustive list of the resources v1.0 of the AppDB RESTful
 API offers. Details and documentation about a resource's representation may be
-found as [XSD](http://en.wikipedia.org/wiki/XSD) annotations inside the
+found as [XSD](https://en.wikipedia.org/wiki/XSD) annotations inside the
 appropriate schema file, under
-[the schemata base resource](http://appdb-pi.egi.eu/rest/1.0/schema). Note that
+[the schemata base resource](https://appdb-pi.egi.eu/rest/1.0/schema). Note that
 when performing `POST` operations, the representation must be passed as a
 URL-encoded string in the query-string under the parameter `data`, whereas when
 performing `PUT` operations, the representation must be passed as a normal text
 stream. Representations passed to `PUT`/`POST` operations must be enclosed
 within an `appdb:appdb` root element, with the appropriate
-[XML](http://en.wikipedia.org/wiki/XML) namespaces declared, the same way that
+[XML](https://en.wikipedia.org/wiki/XML) namespaces declared, the same way that
 responses are; nevertheless, this will be omitted in all following examples, in
 order to reduce clutter. Also note that since all Update (`POST`) operations are
-partial, [XML](http://en.wikipedia.org/wiki/XML) elements that represent
+partial, [XML](https://en.wikipedia.org/wiki/XML) elements that represent
 properties with a cardinality 0..\* must be either
 
 - omitted, in which case the present state in the backend is left untouched,
@@ -290,7 +290,7 @@ This way, it is possible - as well as advised - to differentiate the response
 with the input to such operations, in order to verify that the result is what
 was intended, since properties that are malformed or invalid will not break the
 operation, but rather be ignored, as long as the representation is well-formed
-(i.e. passes the [XSD](http://en.wikipedia.org/wiki/XSD) compilation).
+(i.e. passes the [XSD](https://en.wikipedia.org/wiki/XSD) compilation).
 
 ### Application List
 
@@ -307,21 +307,21 @@ List of all application entries registered in the database
 Examples:
 
 - ```plain
-  GET http://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:0
+  GET https://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:0
   ```
 
   will return all applications that are listed under the Software Marketplace
   (i.e. Software)
 
 - ```plain
-  GET http://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:1
+  GET https://appdb-pi.egi.eu/rest/1.0/applications?flt=metatype:1
   ```
 
   will return all applications that are listed under the Cloud Marketplace (i.e.
   Virtual Appliances)
 
 - ```plain
-  GET http://appdb-pi.egi.eu/rest/1.0/applications?flt=country:Greece
+  GET https://appdb-pi.egi.eu/rest/1.0/applications?flt=country:Greece
   ```
 
   will return all applications that are related to Greece
@@ -654,7 +654,7 @@ List of application entries bookmarked by a user
 Examples:
 
 - ```plain
-  GET http://appdb-pi.egi.eu/rest/1.0/people/123/applications/bookmarked?flt=discipline:chemistry
+  GET https://appdb-pi.egi.eu/rest/1.0/people/123/applications/bookmarked?flt=discipline:chemistry
   ```
 
   will return all application entries with a discipline related to chemistry and
@@ -731,7 +731,7 @@ application's contact list
 List of users (people) that have registered with the database
 
 - ```plain
-  GET http://appdb-pi.egi.eu/rest/1.0/people/?flt={flt}
+  GET https://appdb-pi.egi.eu/rest/1.0/people/?flt={flt}
   ```
 
   where `{flt}` is the URL-encoded representation of
@@ -828,7 +828,7 @@ List of VOs registered with the
 available to application entries
 
 - ```plain
-  GET http://appdb-pi.egi.eu/rest/1.0/vos/?flt={flt}
+  GET https://appdb-pi.egi.eu/rest/1.0/vos/?flt={flt}
   ```
 
   where `{flt}` is the URL-encoded representation of

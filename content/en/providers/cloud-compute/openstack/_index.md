@@ -9,7 +9,7 @@ description: >
 This manual provides information on how to set up a Resource Centre providing
 cloud resources in the EGI infrastructure. Integration with FedCloud requires a
 _working OpenStack installation_ as a pre-requirement. EGI supports any recent
-[OpenStack version](http://releases.openstack.org) (tested from OpenStack
+[OpenStack version](https://releases.openstack.org) (tested from OpenStack
 Mitaka).
 
 EGI expects the following OpenStack services to be available and accessible from
