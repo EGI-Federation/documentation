@@ -12,14 +12,13 @@ jobs:
   build_preview:
     # Do not run on forks, and only if "safe for preview" label is set
     if: >
-      github.repository == 'EGI-Federation/documentation' &&
       ((github.event.action == 'labeled' && github.event.label.name == 'safe for
       preview') || (github.event.action != 'labeled' &&
       contains(github.event.pull_request.labels.*.name, 'safe for preview')))
     name: Build with Hugo
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           # Fetch the Docsy theme
           submodules: recursive
@@ -39,13 +38,12 @@ jobs:
           extended: true
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          # NodeJS 12 is maintained until 2022-04-30
-          node-version: "12.x"
+          node-version: "lts/*"
 
       - name: Cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -63,7 +61,7 @@ jobs:
         run: echo ${{ github.event.number }} > ./public/PR
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: pr
           path: public/

@@ -51,7 +51,7 @@ either the "Play" button in the toolbar, or Cell -\> Run in the menu bar.
 
 The execution behaviour of a cell is determined by the cell's type.
 
-There are three types of cells: cells, markdown, and raw cells. Every cell
+There are three types of cells: cells, Markdown, and raw cells. Every cell
 starts off being a code cell, but its type can be changed by using a drop-down
 on the toolbar (which will be "Code", initially).
 

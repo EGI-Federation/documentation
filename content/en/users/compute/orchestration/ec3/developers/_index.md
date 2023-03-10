@@ -22,11 +22,13 @@ following process:
 
 ### Documentations
 
-* [Ansible documentation](http://docs.ansible.com/)
-* [EC3 documentation](http://ec3.readthedocs.io/en/devel/templates.html)
+* [Ansible documentation](https://docs.ansible.com/)
+* [EC3 documentation](https://ec3.readthedocs.io/en/devel/templates.html)
 * [RADL](https://github.com/grycap/ec3/tree/master/templates)
 
-### Contacts
+{{% alert title="Note" color="info" %}} For more information please contact
 
-* Miguel Caballer at: micafer1 `<at>` upv `<dot>` es
-* Amanda Calatrava at: amcaar `<at>` i3m `<dot>` upv `<dot>` es
+* Miguel Caballer: `micafer1 <at> upv.es`
+* Amanda Calatrav: `amcaar <at> i3m.upv.es`
+
+{{% /alert %}}

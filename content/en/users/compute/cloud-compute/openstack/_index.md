@@ -26,12 +26,10 @@ includes details on every OpenStack project most providers offer access to:
 - [Horizon](https://docs.openstack.org/horizon/latest/), as a web
   dashboard
 
-Web-dashboard of the integrated providers can be accessed using your EGI
-Check-in credentials directly: select _OpenID Connect_ or _EGI Check-in_ in the
-**Authenticate using** drop-down menu of the login screen. You can explore
-[Horizon dashboard documentation](https://docs.openstack.org/horizon/latest/user/)
-for more information on how to manage your resources from the browser. The rest
-of this guide will focus on CLI/API access.
+The Horizon Web-dashboard of the OpenStack providers can be accessed using your
+EGI Check-in credentials directly. See the
+[Getting Started guide](../../../getting-started/openstack/) for more information.
+The rest of this guide will focus on CLI/API access.
 
 ## Installation
 
@@ -136,13 +134,13 @@ openstack image list
 IMAGE_ID=<IMAGE_ID>
 openstack network list
 # Pick FedCloud network
-NETWORK_ID=<NETOWRK_ID>
+NETWORK_ID=<NETWORK_ID>
 openstack security group list
 openstack server create --flavor $FLAVOR --image $IMAGE_ID \
   --nic net-id=$NETWORK_ID --security-group default \
   --key-name mykey oneprovider
 # Creating a floating IP
-openstack floating ip create <NETOWRK_NAME>
+openstack floating ip create <NETWORK_NAME>
 # Assigning floating IP to server
 openstack server add floating ip <SERVER_ID> <IP>
 # Removing floating IP from server

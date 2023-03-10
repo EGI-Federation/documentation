@@ -28,4 +28,4 @@ considered when developing a product for the EGI Federation.
 ## Request for information
 
 You can ask for more information about the internal EGI services
-[on our site](https://www.egi.eu/more-information).
+[on our site](https://www.egi.eu/contact-us).

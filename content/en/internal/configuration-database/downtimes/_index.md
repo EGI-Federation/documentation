@@ -53,7 +53,7 @@ by email, RSS and iCal, allowing to easily integrate with your calendar.
 ### Adding downtimes
 
 Provided you have proper permissions (check the
-[permissions matrix](https://wiki.egi.eu/wiki/GOCDB/Input_System_User_Documentation#Permissions_associated_to_roles)
+[permissions matrix](../users-roles/managing-roles/#permissions-associated-to-roles)
 section), you can add a downtime by clicking on the `Add Downtime` link in the
 sidebar.
 
@@ -136,8 +136,8 @@ definitions:
 
 Limitation rules to downtime extensions are enforced as follows:
 
-- Scheduled downtimes due to start in 24 hours cannot be edited in any way, but
-  can be deleted.
+- Scheduled downtimes due to start in 24 hours cannot be edited in any way, nor
+  deleted.
 - Other downtimes that have not yet started can be edit and deleted.
   - They can be shortened or moved, i.e. They can be edited such that:
     - Both start and end time are still in the future

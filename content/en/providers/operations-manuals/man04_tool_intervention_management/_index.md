@@ -20,7 +20,7 @@ unscheduled failure of central operational tool.
 
 This manual only applies to unscheduled downtimes of central operational tools.
 The list of central operational tool is available
-[here](https://wiki.egi.eu/wiki/Tools).
+[here](https://www.egi.eu/services/federation/).
 
 Note: Scheduled downtimes are management according to existing procedures
 ([MAN02](../man02_service_intervention_management)).

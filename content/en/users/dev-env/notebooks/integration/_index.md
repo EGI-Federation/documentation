@@ -60,6 +60,17 @@ fedcloud token check
 If the `fedcloud` command is not available, please follow the
 [getting started](../../../getting-started/cli) guide to get it.
 
+## EGI Workload Manager (DIRAC)
+
+If you are using a Notebooks instance integrated with
+[EGI Workload Manager](../../../compute/orchestration/workload-manager), you may
+access the DIRAC client via CVMFS with the following two command lines:
+
+```shell
+$ source /cvmfs/dirac.egi.eu/dirac/bashrc_egi_dev
+$ dirac-login --issuer=https://dirac.egi.eu/auth
+```
+
 ## D4Science
 
 If you are using a Notebooks instance integrated with D4Science, you can easily
@@ -75,7 +86,7 @@ from owslib.wps import WebProcessingService
 # init http header parameter and base folders for gCube REST API
 gcube_vre_token_header = {'gcube-token': os.environ["GCUBE_TOKEN"]}
 # init WPS access for DataMiner algorithms
-dataminer_url = 'http://dataminer-prototypes.d4science.org/wps/WebProcessingService'
+dataminer_url = 'https://dataminer-prototypes.d4science.org/wps/WebProcessingService'
 wps = WebProcessingService(dataminer_url, headers=gcube_vre_token_header)
 
 for process in wps.processes:
@@ -106,7 +117,7 @@ print(execution.status)
 ```
 
 Note that inputs that point to a URL should be specified using the
-`ComplextDataInput` class as shown above.
+`ComplexDataInput` class as shown above.
 
 ## Other third-party services
 

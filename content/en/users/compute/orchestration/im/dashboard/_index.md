@@ -174,7 +174,7 @@ infrastructures:
   the unique owner of the infrastructure (transferring), otherwise it will be
   added to the list of current users (sharing). **The new user must be member of
   the VO used to create the resources**, otherwise he will not be able to manage
-  them.
+  them. The list of current owners of the infrastructure will also be displayed.
 
   ![Change/Add User modal form](dash_change_user.png)
 

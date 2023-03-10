@@ -19,7 +19,7 @@ and aims to:
 1. avoid data transfer, and
 1. improve reusability of data and workflows.
 
-It relies on [Ophidia](http://ophidia.cmcc.it/), a data analytics framework for
+It relies on [Ophidia](https://ophidia.cmcc.it/), a data analytics framework for
 eScience, which provides declarative, server-side, and parallel data analysis,
 jointly with an internal storage model able to efficiently deal with
 multidimensional data and a hierarchical data organization to manage large data
@@ -27,7 +27,7 @@ volumes ("datacubes"), and on JupyterHub, to give users access to ready-to-use
 computational environments and resources.
 
 Thanks to the Elastic Cloud Compute Cluster (EC3) platform, operated by the
-[Polytechnic University of Valencia (UPV)](http://www.upv.es/index-en.html),
+[Polytechnic University of Valencia (UPV)](https://www.upv.es/index-en.html),
 researchers will be able to rely on the EGI Cloud Compute service to scale up to
 larger simulations without being worried about the complexity of the underlying
 infrastructure.
@@ -44,7 +44,7 @@ This guide will show how to:
 ## Deploy an ECAS cluster with EC3
 
 In the latest release of the EC3 platform a new Ansible receipt is available
-for researchers interested to deploy ECAS cluster on the EGI Infrastuctrure.
+for researchers interested to deploy ECAS cluster on the EGI Infrastructure.
 The next sections provide details on how to configure and deploy an ECAS cluster
 on EGI resources.
 
@@ -195,7 +195,7 @@ can use the `oph_explorecube` operator to visualize the first 100 values.
 ![Explore cube](ecas-explore.png)
 
 For further details about the Ophidia operators, please refer to the official
-[documentation](http://ophidia.cmcc.it/).
+[documentation](https://ophidia.cmcc.it/).
 
 #### Accessing the Jupyter interface
 
@@ -270,8 +270,8 @@ management page.
 
 - [ECASLab CMCC](https://ecaslab.cmcc.it/web/home.html)
 - [ECASLab DKRZ](https://ecaslab.dkrz.de/home.html)
-- [Ophidia](http://ophidia.cmcc.it/)
+- [Ophidia](https://ophidia.cmcc.it/)
 - [GitHub: ECAS-Lab](https://github.com/ECAS-Lab)
-- [GitHub: ansible role Ophidia cluster](https://github.com/OphidiaBigData/ansible-role-ophidia-cluster>)
-- [EC3](http://www.grycap.upv.es/ec3)
-- [GitHub EC3](http://www.github.com/grycap/ec3)
+- [GitHub: Ansible role Ophidia cluster](https://github.com/OphidiaBigData/ansible-role-ophidia-cluster)
+- [EC3](https://www.grycap.upv.es/ec3)
+- [GitHub EC3](https://www.github.com/grycap/ec3)

@@ -9,16 +9,16 @@ IaaS providers are very welcome to join the EGI Federated Cloud as a Resource
 Centres (RC) and joining the Federated Cloud Task Force to contribute to the
 design, creation and implementation of the federation.
 
-Resource Centers are free to use any Cloud Management Framework (OpenStack,
-etc\...) as long as they are able to integrate with the EGI
-Federation components as described in the
-[Federated Cloud Architecture](https://wiki.egi.eu/wiki/Federated_Cloud_Architecture).
-At the moment this compliance is guaranteed for OpenStack.
+Resource Centres are free to use any Cloud Management Framework (OpenStack,
+etc\...) as long as they are able to integrate with the EGI Federation
+components as described in the
+[Federated Cloud Architecture](../../../users/getting-started/architecture). At
+the moment this compliance is guaranteed for OpenStack.
 
 The general minimal requirements are:
 
 - Hardware requirements greatly depend on your cloud infrastructure, EGI
-  components in general do lightweigth operations by interacting with your
+  components in general do lightweight operations by interacting with your
   services APIs.
   - `cloudkeeper` requires enough disk space to download and convert images
     before uploading into your local catalogue. The number and size of images

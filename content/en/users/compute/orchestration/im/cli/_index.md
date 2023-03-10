@@ -55,7 +55,7 @@ authentication data for the IM service** and another one for the Cloud
 provider(s) the user want to access. Each line of the file is composed by pairs
 of key and value separated by semicolon, and refers to a single credential. The
 key and value should be separated by ` = `, that is an equals sign preceded and
-followed by one whitespace at least. The following lines shows the credentials
+followed by one whitespace at least. The following lines show the credentials
 needed to access an EGI Cloud Compute site:
 
 ```shell
@@ -81,11 +81,11 @@ id = egi; type = EGI; host = SCAI; vo = vo.access.egi.eu; token = command(oidc-t
 To create a virtual infrastructure you have to describe a file documenting
 the required resources. IM supports its native language
 [RADL](https://imdocs.readthedocs.io/en/latest/radl.html) and the
-[OASIS TOSCA Simple Profile in YAML Version 1.0](http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0).
+[OASIS TOSCA Simple Profile in YAML Version 1.0](https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0).
 You can find some examples in the
 [IM GitHub repository](https://github.com/grycap/im/tree/master/examples).
 
-For example we can use RADL to define a simple VM with 1 CPU, 1 GB of RAM
+For example, we can use RADL to define a simple VM with 1 CPU, 1 GB of RAM
 using the EGI Ubuntu 20.04 image.
 
 ```shell
@@ -96,7 +96,7 @@ cpu.count>=2 and
 memory.size>=4g and
 net_interface.0.connection = 'public' and
 disk.0.os.name='linux' and
-disk.0.image.url = 'appdb://SCAI/egi.ubuntu.20.04?vo.access.egi.eu' and
+disk.0.image.url = 'appdb://SCAI/egi.ubuntu.20.04?vo.access.egi.eu'
 )
 
 configure wn (
@@ -144,8 +144,8 @@ topology_template:
       value: { get_attribute: [ simple_node, endpoint, credential, 0 ] }
 ```
 
-Then we can call the `create` operation of the IM client tool using the a radl
-or a TOSCA yaml file:
+Then we can call the `create` operation of the IM client tool using a RADL
+or a TOSCA YAML file:
 
 ```shell
 $ im_client.py create infra.radl
@@ -153,7 +153,7 @@ Secure connection with: https://appsgrycap.i3m.upv.es:31443/im
 Infrastructure successfully created with ID: 457273ea-85e4-11ec-aa81-faaae69bc911
 ```
 
-Then we can call get the currrent state of infrastructure using the `getstate`
+Then we can call get the current state of infrastructure using the `getstate`
 operation of the IM client tool:
 
 ```shell
@@ -176,7 +176,7 @@ The valid VM and infrastructure states are the following:
 - `unknown`, unable to obtain the status.
 - `deleting`, in the deletion process.
 
-Once the configuration step has started we can get the output of the ansible
+Once the configuration step has started we can get the output of the Ansible
 process using the `getcontmsg` operation:
 
 ```shell

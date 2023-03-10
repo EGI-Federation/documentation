@@ -1,5 +1,5 @@
 ---
-title: Data Transfer
+title: EGI Data Transfer
 type: docs
 weight: 30
 aliases:
@@ -10,10 +10,10 @@ description:
 
 ## What is it?
 
-[EGI Data Transfer](https://www.egi.eu/services/data-transfer/)
+[EGI Data Transfer](https://www.egi.eu/service/data-transfer/)
 allows scientists to **move any type of data files asynchronously from one
 storage to another**. The service includes dedicated interfaces to display statistics
-of on-going transfers and manage storage resource parameters.
+of ongoing transfers and manage storage resource parameters.
 
 EGI Data Transfer is ideal to move large amounts of files or very large
 files as the service has mechanisms to verify checksums and ensure automatic
@@ -25,7 +25,7 @@ The main features of EGI Data Transfer are:
   Python bindings, WebFTS, Web Monitoring).
 - **Reliability**. Checksums are automatically calculated for each transfer and
   failed transfers are retried.
-- **Flexibility**. Multi-protocol support (WebDAV/HTTTPS, GridFTP, xrootd, SRM, S3, GCloud).
+- **Flexibility**. Multi-protocol support (WebDAV/HTTPS, GridFTP, xrootd, SRM, S3, GCloud).
 - **Intelligence**. Parallel transfer optimization ensures users get the most from network
   without burning the storages. Transfers can be classified by _priority_ and _activity_.
 
@@ -42,7 +42,7 @@ FTS3 service, developed at CERN.
 
 FTS3 Server
 
-: The service is responsible of the asynchronous execution of the file transfer,
+: The service is responsible for the asynchronous execution of the file transfer,
 checksumming and retries in case of errors
 
 FTS3 REST
@@ -62,7 +62,7 @@ infrastructures
 
 ## Service Instances
 
-EGI has signed OLAs with 2 Providers, CERN and STFC, in order to access their
+EGI has signed OLAs with 2 Providers, CERN and UKRI-STFC, in order to access their
 FTS3 Service instances.
 
 The following endpoints are available:
@@ -70,14 +70,14 @@ The following endpoints are available:
 ### CERN
 
 - [FTS REST](https://fts3-public.cern.ch:8446/)
-- [FTS Mon](https://fts3-public.cern.ch/fts3/ftsmon/#/)
+- [FTS Mon](https://fts3-public.cern.ch/fts3/ftsmon/)
 - [WebFTS](https://webfts.cern.ch/) - N.B. Needs personal X.509 certificate
   installed in your Browser
 
-### STFC
+### UKRI-STFC
 
-- [FTS REST](https://lcgfts3.gridpp.rl.ac.uk:8446)
-- [FTS Mon](https://lcgfts3.gridpp.rl.ac.uk:8449/fts3/ftsmon/#/)
+- [FTS REST](https://fts3egi.scd.rl.ac.uk:8446/)
+- [FTS Mon](https://fts3egi.scd.rl.ac.uk:8449/fts3/ftsmon/)
 
 N.B. if you access the endpoints via Browser the following CA certificates need
 to be installed:

@@ -33,7 +33,7 @@ be stored in the web browser to access EGI web tools and services.
 
 ### Get a Certificate
 
-The [list of EGI recognised CAs](http://www.eugridpma.org/members/worldmap/)
+The [list of EGI recognised CAs](https://www.eugridpma.org/members/worldmap/)
 provides a clickable map to find your nearby CA. Several of these offer the
 option to get an 'eScience Personal' certificate online from the Terena
 Certificate Service CA.
@@ -70,8 +70,7 @@ your identity.
 ### Install a Certificate
 
 After approval, the certificate is generated and delivered to you. This can be
-done via e-mail, or by giving instructions to you to download it from a web
-page.
+done via email, or by giving instructions to you to download it from a web page.
 
 #### Browser installation
 
@@ -118,7 +117,7 @@ using `pkcs12`:
    to `“Enter PEM pass phrase”`, enter the pass phrase of your choice, e.g.
    `1234`.
 
-1. Now you can create the certificate, use `-clcerts`, (use `-nokeys` hereu will
+1. Now you can create the certificate, use `-clcerts`, (use `-nokeys` here will
    not output private key), and the command is:
 
    ```sh
@@ -207,7 +206,7 @@ Membership Service (VOMS).
 
 The Virtual Organization Membership Service (VOMS) is an attribute authority
 which serves as central repository for VO user authorization information,
-providing support for sorting users into group hierarchies, keeping track ofu
+providing support for sorting users into group hierarchies, keeping track of
 their roles and other attributes in order to issue trusted attribute
 certificates and SAML assertions used in the Grid environment for authorization
 purposes. VOMS is composed of two main components:
@@ -247,8 +246,8 @@ existing VOs
    **Again, this is usually guided by the EGI support team. You should already
    have a meeting with them to discuss your requirements. They will help you to
    get resources from EGI providers, and sign
-   [SLA](https://wiki.egi.eu/wiki/EGI_OLA_SLA_framework#Service_Level_Agreemens)
-   with you.**
+   [SLA](https://confluence.egi.eu/display/EGISLM/EGI+OLA+SLA+framework) with
+   you.**
 
 1. Request your VO membership at VO VOMS page. You will have to enter required
    information and then wait for approval.
@@ -271,7 +270,7 @@ Every VO needs two different pieces of information:
   for each of the VOMS server of the VO.
 
 You can check specific configuration for your VO at the
-[Operations portal](https://operations-portal.egi.eu/vo). Normally each VOMS
+[Operations portal](https://operations-portal.egi.eu/vo/a/list). Normally each VOMS
 server has a _Configuration Info_ link where the exact information to include in
 the `vomses` and `.lsc` files is shown.
 

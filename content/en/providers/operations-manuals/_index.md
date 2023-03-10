@@ -5,9 +5,14 @@ type: "docs"
 description: "Operations manuals for Service Providers"
 ---
 
-{{% alert title="Note" color="info" %}} Additional Operations Manuals and
-How-tos are available on the
-[EGI Wiki](https://wiki.egi.eu/wiki/Operations_Manuals). {{% /alert %}}
+## Generic documentation
+
+The [Operations start guide](./operations-start-guide) will help you start with
+EGI Operations duties.
+
+The [Resource Centre integration check list](./integration-checklist) provides
+an overview of what are the required steps to get a new Resource Centre
+integrated into the EGI Federation.
 
 ## Manuals
 
@@ -31,5 +36,5 @@ documentation and procedures.
 
 - [HOWTO01 Using IGTF CA distribution](./howto01_using_igtf_ca_distribution)
 - [HOWTO02 Site Certification Required Documentation](./howto02_site_certification_required_documentation)
-- [HOWTO03 Site Certification GIIS Check](./howto03_site_certificatoin_giis_check)
+- [HOWTO03 Site Certification GIIS Check](./howto03_site_certification_giis_check)
 - [HOWTO04 Site Certification Manual tests](./howto04_site_certification_manual_tests)

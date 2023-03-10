@@ -11,7 +11,7 @@ description: >
 
 ## What is it?
 
-[EGI Check-in](https://www.egi.eu/services/check-in/) is a proxy service that
+[EGI Check-in](https://www.egi.eu/service/check-in/) is a proxy service that
 **allows scientific communities to securely access and control access to
 resources in the EGI Federated infrastructure**. It operates as a central hub
 that connects federated [Identity Providers](../../../providers/check-in/idp) (IdPs)

@@ -30,13 +30,14 @@ You can start that image as any other VA available from AppDB:
 You can log in with user `ubuntu` and your ssh key:
 
 ```shell
-ssh -i <yourprivatekey> ubuntu@<your VM ip>
+$ ssh -i <yourprivatekey> ubuntu@<your VM ip>
 ```
 
 Once in, you can run any docker command, e.g.:
 
 ```shell
-ubuntu@fedcloud_vm:~$ sudo docker run hello-world
+$ sudo docker run hello-world
+
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 b901d36b6f2f: Pull complete
@@ -63,3 +64,34 @@ For more examples and ideas, visit:
 Docker-compose can be also used to execute applications with more than one
 container running together,
 [follow this documentation](https://docs.docker.com/compose/) to learn more.
+
+### Known issues
+
+#### MTU and docker
+
+Depending on the cloud provider you may encounter unexpected network
+connectivity issues when working inside the docker container. If that is
+the case, please try reconfiguring the
+[MTU](https://en.wikipedia.org/wiki/Maximum_transmission_unit)
+for the docker daemon:
+
+```shell
+# check current MTU value
+$ sudo docker network inspect bridge  | awk '/mtu/ {print $2}'
+
+# the default 1500 value does not work properly
+# edit docker configuration
+$ sudo vi /etc/docker/daemon.json
+
+# ensure MTU value is 1376
+{
+  "mtu": 1376
+}
+
+# then restart docker
+$ sudo systemctl restart docker
+```
+
+We experienced this issue when trying to install a pip dependency using
+`continuumio/miniconda3` container from
+[docker hub](https://hub.docker.com/r/continuumio/miniconda3).

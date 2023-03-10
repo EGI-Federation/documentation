@@ -18,10 +18,6 @@ include entities such as operations and resource centres, service endpoints and
 their downtimes, contact information and roles of staff responsible for
 operations at different levels.
 
-The configuration database is used by all the actors (end-users, site managers,
+The configuration database is used by all the actors (end users, site managers,
 NGI managers, support teams, VO managers), by other tools, and by third party
 middleware to discover information about the infrastructure topology.
-
-{{% alert title="Note" color="info" %}} Documentation for the configuration
-database (work in progress) is available in the
-[EGI Wiki](https://wiki.egi.eu/wiki/GOCDB). {{% /alert %}}

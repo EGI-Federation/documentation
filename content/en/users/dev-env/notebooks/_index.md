@@ -5,21 +5,20 @@ type: docs
 weight: 10
 aliases:
   - /users/notebooks
-description:
-  Interactive data analysis with EGI Notebooks
+description: Interactive data analysis with EGI Notebooks
 ---
 
 The more you go in data analysis, the more you understand that the most suitable
 tool for coding and visualizing is not pure code, or some integrated development
 environment (IDE), nor data manipulation diagrams (such as workflows or
 flowcharts). From some point on you just need a mix of all these -- that is what
-_notebook_ platforms are, [Jupyter](http://jupyter.org/) being the most popular
+_notebook_ platforms are, [Jupyter](https://jupyter.org/) being the most popular
 of them.
 
 ## What is it?
 
-[EGI Notebooks](https://www.egi.eu/services/notebooks/) is a service-like
-environment based on the [Jupyter technology](http://jupyter.org/), offering a
+[EGI Notebooks](https://www.egi.eu/service/notebooks/) is a service-like
+environment based on the [Jupyter technology](https://jupyter.org/), offering a
 **browser-based tool for interactive data analysis**.
 
 The Notebooks environment provides users with _notebooks_ where they can combine
@@ -86,5 +85,3 @@ EGI currently operates community instances for:
   [EOSC-Pillar](https://eosc-pillar.d4science.org/). Check with
   [D4Science support](https://www.d4science.org/contact-us) for more
   information.
-- [PaNoSC](https://panosc.eu/). Instance is available
-  [here](https://notebooks-panosc.fedcloud-tf.fedcloud.eu)

@@ -16,12 +16,12 @@ weight: 20
 - When introducing services, link to the public page of the service, if any:
 
 ```markdown
-[EGI Cloud Compute](https://www.egi.eu/services/cloud-compute/)
+[EGI Cloud Compute](https://www.egi.eu/service/cloud-compute/)
 ```
 
 ## Markdown writing guidelines
 
-Documentation pages have to be written in markdown, compliant with
+Documentation pages have to be written in Markdown, compliant with
 [CommonMark](https://spec.commonmark.org/0.29/) and
 [GitHub Flavored Markdown](https://github.github.com/gfm/).
 

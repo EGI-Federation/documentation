@@ -11,7 +11,7 @@ description: >
 
 ## What is it?
 
-[EGI Workload Manager](https://www.egi.eu/services/workload-manager/) is a
+[EGI Workload Manager](https://www.egi.eu/service/workload-manager/) is a
 service provided to the EGI community to efficiently **manage and distribute
 computing workloads on the EGI infrastructure**.
 
@@ -23,7 +23,7 @@ scientific communities.
 <!-- markdownlint-disable no-inline-html -->
 
 {{% alert title="Note" color="info" %}} Workload Manager is based on
-[DIRAC technology](http://diracgrid.org/).<br/>
+[DIRAC technology](https://diracgrid.org/).<br/>
 The delivery of the service is coordinated
 by the EGI Foundation and [IN2P3](https://in2p3.cnrs.fr/) provides the resources and
 operates the service.
@@ -106,24 +106,22 @@ There are several options to access the service:
    [EGI Workload Manager web portal](https://dirac.egi.eu/DIRAC/) to access the
    service, or use [DIRAC Client](#the-dirac-client-tool).
 1. Individual researchers who want to do some number crunching for a limited
-   period of time, with a reasonable (not too high) number of CPUs > can use the
+   period of time, with a reasonable (not too high) number of CPUs can use the
    catch-all VO resource pool (`vo.access.egi.eu`). Submit a request through the
-   EGI Marketplace selecting:\
-   `Compute` > `Workload Manager` from the top menu.
+   [EOSC Marketplace](https://marketplace.eosc-portal.eu/services/egi-workload-manager).
 1. Representatives of a community who want to try DIRAC and EGI > Same as #2.
 1. Representative of a community who wants to request DIRAC for the community's
-   own resource pool > Submit a request through the EGI Marketplace selecting\
-   `Compute` > `Workload Manager` from the top menu.
+   own resource pool > Submit a request through the
+   [EOSC Marketplace](https://marketplace.eosc-portal.eu/services/egi-workload-manager).
 
 ## Getting Started
 
 ### Submit a service order via the Marketplace
 
 User can request access to the service submitting a service-order to use the EGI
-HTC service directly from the EOSC or the EGI Marketplace:
+HTC service directly from the EOSC Marketplace:
 
 - [EOSC Marketplace: Workload Manager](https://marketplace.eosc-portal.eu/services/egi-workload-manager)
-- [EGI Marketplace: Workload Manager](https://marketplace.egi.eu/compute/73-workload-manager.html)
 
 Service orders are usually handled within 5 working days by the EGI User Support
 Team on shift.
@@ -135,7 +133,7 @@ Team on shift.
 DIRAC uses [X.509 certificates](../../../aai/check-in/vos/voms) to identify and
 authenticate users. These certificates are delivered to each individual by
 trusted certification authorities. If you have a personal certificate issued by
-a [EUGridPMA-certified](http://www.eugridpma.org/) authority you can use it for
+a [EUGridPMA-certified](https://www.eugridpma.org/) authority you can use it for
 this tutorial. Otherwise refer to the information available in this
 [section](../../../aai/check-in/vos/voms/#get-a-certificate), to obtain a certificate.
 Your certificate may take a few days to be delivered, so please ask for your
@@ -159,7 +157,7 @@ Please use the command below on any Unix machine and send its output to\
 `dirac-support` `<AT>` `mailman.egi.eu`
 
 ```shell
-openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
+$ openssl x509 -in $HOME/.globus/usercert.pem -subject -noout
 ```
 
 ### The EGI Workload Manager Web Portal
@@ -241,14 +239,14 @@ The easiest way to install the client is via
 installed in your machine, install the DIRAC CLI as follows:
 
 ```shell
-docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
+$ docker run -it -v $HOME:$HOME -e HOME=$HOME diracgrid/client:egi
 ```
 
 Once the client software is installed, it should be configured in order to
 access the EGI Workload Manager service:
 
 ```shell
-source /opt/dirac/bashrc
+$ source /opt/dirac/bashrc
 ```
 
 To proceed further a temporary proxy of the user certificate should be created.
@@ -342,6 +340,15 @@ username     : jdoe
 properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 ```
 
+#### Access the client via CVMFS
+
+The DIRAC client may be accessed via CVMFS with the following two command lines:
+
+```shell
+$ source /cvmfs/dirac.egi.eu/dirac/bashrc_egi_dev
+$ dirac-login --issuer=https://dirac.egi.eu/auth
+```
+
 #### Managing simple jobs
 
 <!-- markdownlint-disable line-length -->
@@ -359,7 +366,7 @@ properties   : LimitedDelegation, GenericPilot, Pilot, NormalUser
 DIRAC commands
 
 Have a look at the official
-[command reference documentation](http://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html)
+[command reference documentation](https://dirac.readthedocs.io/en/latest/UserGuide/CommandReference/WorkloadManagement/index.html)
 for the complete list of the Workload Management commands.
 
 In general, you can submit jobs, check their status, and retrieve the output.
@@ -376,7 +383,7 @@ StdOutput = "StdOut"; StdError = "StdErr"; OutputSandbox = {"StdOut","StdErr"};
 Submit the job:
 
 ```shell
-dirac-wms-job-submit test.jdl JobID = 53755998
+$ dirac-wms-job-submit test.jdl JobID = 53755998
 ```
 
 Check the job status:
@@ -428,7 +435,7 @@ After creation of JDL file the next step is to submit the job, using the
 command:
 
 ```shell
-dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
+$ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 ```
 
 #### List of supported VOs
@@ -443,12 +450,12 @@ dirac-wms-job-submit InputAndOuputSandbox.jdl JobID = XXXXXXXX
 #### More details
 
 - JDL language and simple jobs submission:
-  [JDLs and Job Management](http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JDLsAndJobManagementBasic/index.html)
-- Basic Submitting Parametric and MPI jobs, using DIRAC API:
-  [Advanced Job Management](http://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html)
+  [JDLs and Job Management](https://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JDLsAndJobManagementBasic/index.html)
+- Basic Submitting Parametric jobs, using DIRAC API:
+  [Advanced Job Management](https://dirac.readthedocs.io/en/latest/UserGuide/Tutorials/JobManagementAdvanced/index.html)
 - [Past tutorials](https://github.com/DIRACGrid/DIRAC/wiki/TutorialIHEP2013-11)
 
-#### Technical Support
+## Technical Support
 
 - DIRAC User Guide:
   [https://dirac.readthedocs.io/en/latest/UserGuide/](https://dirac.readthedocs.io/en/latest/UserGuide/)
