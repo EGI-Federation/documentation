@@ -201,7 +201,7 @@ $ ssh centos@192.168.1.3
 
 The Infrastructure Manager (IM) provides the SSH key that can be used to connect
 to the virtual machine in the VM
-[info page of the IM-Dashboard (see Fig 14)](https://imdocs.readthedocs.io/en/latest/dashboard.html#infrastructures).
+[info page of the IM-Dashboard](../../compute/orchestration/im/dashboard/#vm-info-page).
 
 The page shows the information related with the virtual machine: the IP, the
 username (usually `cloudadm`), and the SSH key.
