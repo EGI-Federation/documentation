@@ -79,7 +79,7 @@ the Infrastructure Manager and a custom TOSCA template).
 `PasswordAuthentication`, be sure to
 [generate a strong and unique password or passphrase](https://bitwarden.com/password-generator/)
 for your account, otherwise you virtual machines **will be** compromised, and
-you access may be suspended.{{% /alert %}}
+your access may be suspended.{{% /alert %}}
 
 ## OpenStack networking
 
