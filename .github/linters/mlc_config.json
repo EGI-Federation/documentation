@@ -67,7 +67,7 @@
       "pattern": "^https://aai.egi.eu/device*"
     },
     {
-      "pattern": "^../.*/providers/cloud-compute/*"
+      "pattern": "^../.*/providers/cloud-compute/openstack/*"
     }
   ]
 }
