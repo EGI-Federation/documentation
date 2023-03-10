@@ -1,0 +1,15 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+# Use Unix-style new lines
+end_of_line = lf
+insert_final_newline = true
+# Default indentation is two spaces
+indent_style = space
+indent_size = 2
+# Remove whitespaces at end of line
+trim_trailing_whitespace = true
