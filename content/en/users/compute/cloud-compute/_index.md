@@ -9,7 +9,7 @@ description: >
   Run virtual machines in the EGI Cloud
 ---
 
-The [EGI Federated Cloud Compute](https://www.egi.eu/services/cloud-compute/) (FedCloud)
+The [EGI Federated Cloud Compute](https://www.egi.eu/service/cloud-compute/) (FedCloud)
 service offers a multi-cloud IaaS federation that brings together
 research clouds as a scalable computing platform for data and/or compute driven
 applications and services for research and science.
@@ -55,14 +55,14 @@ emerged:
   service as web servers, databases, etc. Cloud features, as elasticity, can
   help users to provide better performance and reliable services.
   - Example:
-    [NBIS Web Services](https://www.egi.eu/article/nbis-toolkit/),
+    [NBIS Web Services](https://www.egi.eu/case-study/nbis/),
     [Peachnote analysis platform](https://www.egi.eu/news/peachnote-in-unison-with-egi/).
 - **Compute and data intensive applications**: for those applications needing
   considerable amount of resources in terms of computation and/or memory and/or
   intensive I/O. Ad-hoc computing environments can be created in the EGI cloud
   providers to satisfy extremely intensive HW resource requirements.
   - Example:
-    [VERCE platform](https://www.egi.eu/news/new-egi-use-case-a-close-look-at-the-amatrice-earthquake/),
+    [VERCE platform](https://www.egi.eu/article/what-happened-during-the-august-2016-amatrice-earthquake/),
     [The Genetics of Salmonella Infections](https://www.egi.eu/article/the-genetics-of-salmonella-infections/),
     [The Chipster Platform](https://www.egi.eu/article/new-viruses-implicated-in-fatal-snake-disease/).
 - **Datasets repository**: the EGI Cloud can be used to store and manage large
@@ -71,7 +71,7 @@ emerged:
 - **Disposable and testing environments**: environments for training or testing
   new developments.
   - Example:
-    [Training infrastructure](https://www.egi.eu/services/training-infrastructure/)
+    [Training infrastructure](https://www.egi.eu/service/training-infrastructure/)
 
 Eager to test this service? Have a look at
 [how to create your first Virtual Machine in EGI](../../tutorials/create-your-first-virtual-machine).

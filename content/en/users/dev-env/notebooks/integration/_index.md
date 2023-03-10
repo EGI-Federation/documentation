@@ -86,7 +86,7 @@ from owslib.wps import WebProcessingService
 # init http header parameter and base folders for gCube REST API
 gcube_vre_token_header = {'gcube-token': os.environ["GCUBE_TOKEN"]}
 # init WPS access for DataMiner algorithms
-dataminer_url = 'http://dataminer-prototypes.d4science.org/wps/WebProcessingService'
+dataminer_url = 'https://dataminer-prototypes.d4science.org/wps/WebProcessingService'
 wps = WebProcessingService(dataminer_url, headers=gcube_vre_token_header)
 
 for process in wps.processes:

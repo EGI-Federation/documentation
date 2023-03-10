@@ -31,7 +31,7 @@ your cluster in the EGI Federation:
 
 {{% alert title="Note" color="info" %}} For detailed information about DODAS
 please see its [documentation](https://web.infn.it/dodas/index.php/en/). It was
-also presented in one of the [EGI Webinars](https://www.egi.eu/webinars/), more
+also presented in one of the [EGI Webinars](https://www.egi.eu/trainings-and-webinars/), more
 details are available on the [indico page](https://indico.egi.eu/event/5695/)
 and the video recording is available on
 [YouTube](https://www.youtube.com/watch?v=bcURl4ESRW8&ab_channel=EGI).

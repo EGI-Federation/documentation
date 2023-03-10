@@ -97,11 +97,11 @@ administrator.
 
 ### DNS round robin load balancing
 
-- [Load balancing](http://en.wikipedia.org/wiki/Load_distribution) is a
+- [Load balancing](https://en.wikipedia.org/wiki/Load_distribution) is a
   technique to distribute workload evenly across two or more resources. A load
   balancing method, which does not necessarily require a dedicated software or
   hardware node, is called
-  [round robin DNS](http://en.wikipedia.org/wiki/Round-robin_DNS).
+  [round robin DNS](https://en.wikipedia.org/wiki/Round-robin_DNS).
 
 - We can assume that all transactions (queries to top or site BDII generate the
   same resource load. For an effective load balancing, all top or site BDII
@@ -112,7 +112,7 @@ administrator.
   is a primary DNS server (`dns.domain.tld`) where the DNS load balancing will
   be implemented, one simply has to add multiple A records mapping the same
   hostname to multiple IP addresses under the core.top.domain
-  [DNS zone](http://en.wikipedia.org/wiki/DNS_zone). It is equally applicable to
+  [DNS zone](https://en.wikipedia.org/wiki/DNS_zone). It is equally applicable to
   site BDII.
 
 ```bind

@@ -5,3 +5,4 @@ microk8s
 diracsgm
 reponame
 sgm
+mytoken

@@ -1,5 +1,5 @@
 ---
-title: "Create a Virtual Machine with Jupyter and DataHub"
+title: "Create a VM with Jupyter and DataHub"
 type: docs
 weight: 100
 description: >

@@ -12,8 +12,8 @@ EGI is a federation of compute and storage resource providers united by a
 mission to support research and innovation.
 
 The resources in the EGI infrastructure are offered by
-[service providers](https://www.egi.eu/federation/egi-federated-cloud/) that
-either run their own [data centres](https://www.egi.eu/federation/data-centres/)
+[service providers](https://www.egi.eu/egi-infrastructure/) that
+either run their own [data centres](https://www.egi.eu/egi-federation)
 or rely on community, private and/or public cloud services. These service
 providers offer:
 
@@ -34,14 +34,10 @@ each with their own virtualised resources built around open standards. The
 development of these communities is driven by by their own scientific
 requirements.
 
-{{% alert title="Tip" color="info" %}} See also an
-[overview](https://www.egi.eu/egi-infrastructure/)
-of the EGI FedCloud architecture. {{% /alert %}}
-
 ## Accessing resources
 
 Access to resources (services) in the EGI infrastructure is based on
-[OpenID Connect](http://openid.net/connect/) (OIDC), which replaces the legacy
+[OpenID Connect](https://openid.net/connect/) (OIDC), which replaces the legacy
 authentication and authorization based on
 [X.509 certificates](../aai/check-in/vos/voms/).
 
@@ -99,7 +95,7 @@ EGI services use the following types of access conditions:
   for such services. Example: Compute resources and tools allocated to
   researchers in medical imaging ([Biomed VO](http://lsgc.org/biomed.html)).
 - **Pay-for-use** - Services are provided for a fee. Example:
-  [FitSM Training](https://www.egi.eu/services/fitsm-training)
+  [FitSM Training](https://www.egi.eu/service/fitsm-training)
 
 The EGI user community support team handles access requests (orders) for the
 _Policy based_ and _Pay-for-use_ access modes. They will respond to the request
@@ -114,7 +110,7 @@ typically covers two topics:
   much RAM per CPU, which software services, and for how long do you need them,
   etc.
 
-[Contact us](https://www.egi.eu/contact/) if you want to discuss further.
+[Contact us](https://www.egi.eu/contact-us/) if you want to discuss further.
 
 ## Capacity allocation
 

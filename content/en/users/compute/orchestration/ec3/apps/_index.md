@@ -35,17 +35,17 @@ Check the
 
 To deploy a virtual cluster with
 [Marathon](https://mesosphere.github.io/marathon/),
-[Mesos](http://mesos.apache.org/), and
+[Mesos](https://mesos.apache.org/), and
 [Chronos](https://mesos.github.io/chronos/) as an orchestration, please select
 Mesos + Marathon + Chronos from the list of available LRMS.
 
 ### OSCAR cluster
 
 To deploy
-[Serverless computing for data-processing applications](https://www.egi.eu/about/newsletters/serverless-computing-for-data-processing-applications-in-egi/)
+[Serverless computing for data-processing applications](https://www.egi.eu/article/serverless-computing-for-data-processing-applications-in-egi/)
 in EGI, please select OSCAR from the list of LRMS (Local Resource Management
 System). OSCAR supports data-driven serverless computing for file-processing
-applications. A file upload, to the object storage backend [MinIO](http://minio.io),
+applications. A file upload, to the object storage backend [MinIO](https://minio.io),
 will trigger the execution of a chosen shell script running inside a user-defined
 container. These will be orchestrated as Kubernetes batch jobs. The output data
 will be uploaded to any object storage backends support. Synchronous invocations

@@ -163,7 +163,7 @@ that will manage the configuration of the VMs during runtime.
 You should also follow the best practice guides for each service that\'s exposed
 to the outside world. See for example guides for:
 
-- [ssh](http://wiki.centos.org/HowTos/Network/SecuringSSH)
+- [ssh](https://wiki.centos.org/HowTos/Network/SecuringSSH)
 - [tomcat](https://www.owasp.org/index.php/Securing_tomcat)
 
 See also
