@@ -375,11 +375,27 @@ that will use docker to run the checks locally.
 > command output.
 
 ```shell
-# List available jobs for a given event
-$ act pull_request_target -l
-# Run the spelling job
+# Listing available jobs
+$ act -l
+# Running the spelling job
 $ act -j spelling
 ```
+
+### Running Super-Linter locally
+
+Should you want to do this, Super-Linter can be run locally.
+
+You can try using [act](https://github.com/nektos/act):
+
+```shell
+# Listing available jobs
+$ act -l
+# Running the lint job
+$ act -j super-lint
+```
+
+If it doesn't work as expected, or if you prefer another solution, you should look at the
+[Super-Linter documentation for running locally](https://github.com/github/super-linter/blob/main/docs/run-linter-locally.md).
 
 ## Clone PR to edit/test/review locally
 
