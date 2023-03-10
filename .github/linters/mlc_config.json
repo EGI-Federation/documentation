@@ -79,6 +79,9 @@
     },
     {
       "pattern": "^https://tools.ietf.org/html/rfc*"
+    },
+    {
+      "pattern": "^https://aai.egi.eu/device*"
     }
   ]
 }

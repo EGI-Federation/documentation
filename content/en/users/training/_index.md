@@ -10,7 +10,7 @@ description: >
 ## Overview
 
 The training infrastructure is a resource pool within the EGI Federated
-Cloud infrascture providing IaaS as well as access services (login,
+Cloud infrastructure providing IaaS as well as access services (login,
 application catalogue and application management portal) for
 face-to-face events, online training courses or self-paced learning
 modules.

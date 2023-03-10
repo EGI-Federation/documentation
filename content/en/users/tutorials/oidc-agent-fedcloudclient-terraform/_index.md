@@ -397,7 +397,7 @@ password-less [sudo](https://www.sudo.ws/) access.
 > should be considered, as a compromise of this user account would mean a
 > compromise of the complete virtual machine.
 
-Replace `<NSUPATE_HOSTNAME>`, `<NSUPDATE_SECRET>`, `<SSH_AUTHORIZED_KEY>` (the
+Replace `<NSUPDATE_HOSTNAME>`, `<NSUPDATE_SECRET>`, `<SSH_AUTHORIZED_KEY>` (the
 content of your SSH public key) by the proper values.
 
 ```yaml
@@ -406,7 +406,7 @@ content of your SSH public key) by the proper values.
 runcmd:
   - [
       curl,
-      "https://<NSUPATE_HOSTNAME>:<NSUPDATE_SECRET>@nsupdate.fedcloud.eu/nic/update",
+      "https://<NSUPDATE_HOSTNAME>:<NSUPDATE_SECRET>@nsupdate.fedcloud.eu/nic/update",
     ]
 
 users:
@@ -445,7 +445,7 @@ $ terraform plan --var-file="${EGI_SITE}.tfvars"
 $ terraform apply --var-file="${EGI_SITE}.tfvars"
 # Wait a few minutes for the setup to be finalised
 # Connecting to the server using ssh
-$ ssh egi@$NSUPATE_HOSTNAME
+$ ssh egi@$NSUPDATE_HOSTNAME
 ```
 
 > From here you can extend the

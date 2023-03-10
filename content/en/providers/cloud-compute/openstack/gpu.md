@@ -1,23 +1,23 @@
 ---
-title: "GPU Flavors"
+title: "GPU flavours"
 weight: 50
 type: "docs"
 description: >
-  Configuring GPU flavors
+  Configuring GPU flavours
 ---
 
-## Setting up GPU flavors
+## Setting up GPU flavours
 
-Support for GPU can be added to flavors using the
+Support for GPU can be added to flavours using the
 [PCI passthrough feature in OpenStack](https://docs.openstack.org/nova/xena/admin/pci-passthrough.html).
 This allows to plug any kind of PCI device to the Virtual Machines.
 
 As a summary of the OpenStack documentation, these are the steps needed to add a
-GPU enabled flavor (be aware this may need tuning to your specific
+GPU enabled flavour (be aware this may need tuning to your specific
 hardware/configuration!):
 
 1. On computing node, get vendor/product ID of your hardware:
-   `lspci | grep NVDIA` to get pci slot of GPU, then
+   `lspci | grep NVIDIA` to get pci slot of GPU, then
    `virsh nodedev-dumpxml pci_xxxx_xx_xx_x`
 1. On computing node, unbind device from host kernel driver. Unbinding is system
    dependent, and can be done in many ways, e.g.:
@@ -39,24 +39,24 @@ hardware/configuration!):
    [nova-api](https://docs.openstack.org/nova/xena/admin/pci-passthrough.html#configure-nova-scheduler))
 1. On controller node, enable `PciPassthroughFilter` in the scheduler (see
    [nova-scheduler](https://docs.openstack.org/nova/xena/admin/pci-passthrough.html#configure-nova-scheduler))
-1. Create new flavors with `pci_passthrough:alias` (or add key to existing
-   flavor), e.g.
+1. Create new flavours with `pci_passthrough:alias` (or add key to existing
+   flavour), e.g.
    `openstack flavor set m1.large --property "pci_passthrough:alias"="GPU:2"`
 
-## GPU description in flavor metadata
+## GPU description in flavour metadata
 
-Users should be able to easily discover the flavors that provide GPUs (or
+Users should be able to easily discover the flavours that provide GPUs (or
 accelerators in general). The following table describes the agreed metadata for
-EGI providers to add to those flavors:
+EGI providers to add to those flavours:
 
 | Metadata                       | Definition                                                  | Comments                                                                                                                                                                                                                      |
 | ------------------------------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Accelerator:Type               | Type of accelerator (e.g. `GPU`)                            | Possible values: `GPU`, `MIC`, `FPGA`, `TPU`, `NPU`                                                                                                                                                                           |
-| Accelerator:Number             | Number of accelerators available in the flavor (e.g. `1.0`) | Non integers allowed for the case of sharing GPU between VMs                                                                                                                                                                  |
+| Accelerator:Number             | Number of accelerators available in the flavour (e.g. `1.0`) | Non integers allowed for the case of sharing GPU between VMs                                                                                                                                                                  |
 | Accelerator:Vendor             | Name of accelerator Vendor (e.g. `NVIDIA`)                  |                                                                                                                                                                                                                               |
 | Accelerator:Model              | Model of accelerator (e.g. `Tesla V100`)                    | Need to make consensus and enforce. A100 is usually marketed without "Tesla" classname. Similarly, RTX A6000 usually marketed without “GeForce”. For clarity, full names should be used: “Tesla A100” and “GeForce RTX A6000” |
 | Accelerator:Version            | Version of the accelerator                                  | Some cards have different versions, e.g. A100 PCIe and NVLink. Openstack does not allow empty value, so we should give 0 if no version is specified                                                                           |
-| Accelerator:Memory             | RAM in GBs of the accelerator                               |                                                                                                                                                                                                                               |
+| Accelerator:Memory             | RAM in GB of the accelerator                                |                                                                                                                                                                                                                               |
 | Accelerator:VirtualizationType | Type of virtualisation used (e.g. `PCI passthrough`)        | Not relevant for accounting, but may be still useful in some cases                                                                                                                                                            |
 
 There are some extra fields that are defined in the GLUE2.1 schema but not so
@@ -69,7 +69,7 @@ below for completeness:
 | Accelerator:ClockSpeed        | Clockspeed of accelerator          | Defined by GLUE2.1, not so relevant, as ClockSpeed no longer related to performance. May be reserved for other types of accelerators |
 | Accelerator:Cores             | Number of cores of the accelerator | Not so useful as there are several types of cores now (CUDA, tensor). May be reserved for other types of accelerators                |
 
-Adding metadata to flavors has no effects on site operations. End users can see
+Adding metadata to flavours has no effects on site operations. End users can see
 the metadata easily via `openstack flavor list --long` or
 `openstack flavor show <flavor id>` commands without any additional tools, e.g.:
 

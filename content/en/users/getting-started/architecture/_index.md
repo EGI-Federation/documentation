@@ -66,7 +66,7 @@ Users and Community platforms built on top of the EGI IaaS can interact with the
 cloud providers at three different layers:
 
 - Directly using the IaaS APIs or [CLIs](../cli) to manage individual resources.
-  This option is recommended for pre-existing use cases with requirements on
+  This option is recommended for preexisting use cases with requirements on
   specific APIs.
 - Using federated access tools that allow managing the complexity of dealing
   with different providers in a uniform way. These tools include:
@@ -117,7 +117,7 @@ used to catalogue the static information of the production infrastructure
 topology (e.g. the list of resource centres and their endpoints).
 
 To allow resource providers to expose IaaS federation endpoints, the following
-service types are avialable:
+service types are available:
 
 - `org.openstack.horizon`
 - `org.openstack.nova`
@@ -188,7 +188,7 @@ below:
 | --------------------------- | --------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | VMUUID                      | `varchar(255)`  | No   | Virtual Machine\'s Universally Unique Identifier concatenation of CurrentTime, SiteName and MachineName                                                                                                                                                     |
 | SiteName                    | `varchar(255)`  | No   | GOCDB SiteName - GOCDB now has cloud service types and a cloud-only site is allowed.                                                                                                                                                                        |
-| CloudComputeService (NEW)   | `varchar(255)`  |      | Name identifying cloud resource within the site. Allows multiple cloud resources within a sitei.e. a level of granularity.                                                                                                                                  |
+| CloudComputeService (NEW)   | `varchar(255)`  |      | Name identifying cloud resource within the site. Allows multiple cloud resources within a site, i.e. a level of granularity.                                                                                                                                |
 | MachineName                 | `varchar(255)`  | No   | VM ID - the site name for the VM                                                                                                                                                                                                                            |
 | LocalUserId                 | `varchar(255)`  |      | Local username                                                                                                                                                                                                                                              |
 | LocalGroupId                | `varchar(255)`  |      | Local group name                                                                                                                                                                                                                                            |
@@ -261,7 +261,7 @@ of the same fields as the Cloud Usage Record. A table defining _Draft 4 –
 | SiteName                  | `varchar(255)` | No   | See the definition of your AssociatedRecordType                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | Count                     | `decimal`      | No   | A count of the Accelerators attached to the VM. At the moment Accelerators are not shared among VMs but it will change when Accelerator virtualization is applied, so we should have the field at decimal type instead of integer (e.g. Count = 0.5 when it is shared between two VMs).                                                                                                                                                                                                                                     |
 | Cores                     | `int(11)`      | Yes  | Total number of cores. i.e. So if an Accelerator has 64 cores and a VM has 2 like that attached then we would report: Count=2 and Processors=128                                                                                                                                                                                                                                                                                                                                                                            |
-| ActiveDuration            | `int(11)`      | Yes  | Actual usage duration of the Accelerator in seconds for the given month/year (in case some systems could report actual usage). At the moment, ActiveDuration will be the same as the AvailableDuration due to the limitation of currently used technologies (impossible to get ACCELERATOR utilization from outside of the VM, no ACCELERATOR hot-plug into running VM) but it may change in near future so it is good to have the fields separately. Set to AvailableDuration if AcitveDuration is omitted from the record |
+| ActiveDuration            | `int(11)`      | Yes  | Actual usage duration of the Accelerator in seconds for the given month/year (in case some systems could report actual usage). At the moment, ActiveDuration will be the same as the AvailableDuration due to the limitation of currently used technologies (impossible to get ACCELERATOR utilization from outside of the VM, no ACCELERATOR hot-plug into running VM) but it may change in near future so it is good to have the fields separately. Set to AvailableDuration if ActiveDuration is omitted from the record |
 | AvailableDuration         | `int(11)`      | No   | Time accelerator was available in seconds for the given month/year (Wall)Time that a GPU was attached to a VM.                                                                                                                                                                                                                                                                                                                                                                                                              |
 | BenchmarkType             | `varchar(255)` | Yes  | Name of benchmark used for normalization of times                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | Benchmark                 | `decimal`      | Yes  | Value of benchmark of Accelerator                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -281,7 +281,7 @@ received from the Resource Providers are sent to the EGI Accounting Portal. The
 summaries and provides a web view of the accounting data received from the
 Resource Providers.
 
-[cASO](https://github.com/IFCA/caso) delivers an implmentation of the extrator
+[cASO](https://github.com/IFCA/caso) delivers an implementation of the extractor
 probes for OpenStack.
 
 ### Monitoring
@@ -299,8 +299,8 @@ The current set of probes used for monitoring IaaS resources consists of:
   `org.nagios.CloudBDII-Check`): Basic TCP checks for services.
 - VM Marketplace probe (`eu.egi.cloud.AppDB-Update`): gets a predetermined image
   list from AppDB and checks its update interval.
-- Perun probe (`eu.egi.cloud.Perun-Check`): connects to the server and checks
-  the status by using internal Perun interface
+- PERUN probe (`eu.egi.cloud.Perun-Check`): connects to the server and checks
+  the status by using internal PERUN interface.
 
 ## Roadmap
 
@@ -315,7 +315,7 @@ Cloud. All the components are continuously maintained to:
   upstream distributions; and c) use only public APIs of the Cloud Management
   Frameworks.
 
-Currently the EGI FedCloud TaskForce is focused on moving to a central
+Currently, the EGI FedCloud TaskForce is focused on moving to a central
 operations model, where providers only need to integrate their system with EGI
 Check-in but do not need to deploy and configure the different tools
 (accounting, discovery, VMI management, etc.) locally but delegate this to a

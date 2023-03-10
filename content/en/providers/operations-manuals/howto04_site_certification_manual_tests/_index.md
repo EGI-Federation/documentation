@@ -262,7 +262,7 @@ $ globusrun -s -r HOST:2119 "&(executable="/bin/date")"
 
 ## QCG checks
 
-### QCG Computhng checks
+### QCG Computing checks
 
 The presented tests of QCG-Computing service use the qcg-comp, the client
 program for QCG-Computing, that may be installed from provided RPMS. In order to
@@ -273,7 +273,7 @@ connect to QCG-Computing the grid proxy must be created.
 ```shell
 $ grid-proxy-init
 
-Your identity: /C=PL/O=GRID/O=PSNC/CN=Mariusz Mamonski
+Your identity: /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 Enter GRID pass phrase for this identity:
 Creating proxy ............................ Done
 Your proxy is valid until: Fri Jun 10 06:23:32 2011
@@ -380,12 +380,12 @@ $ qcg-sub sleep.qcg
 
 https://qcg-broker.man.poznan.pl:8443/qcg/services/
 /C=PL/O=GRID/O=PSNC/CN=qcg-broker/qcg-broker.man.poznan.pl
-Your identity: C=PL,O=GRID,O=PSNC,CN=Bartosz Bosak
+Your identity: C=PL,O=GRID,O=PSNC,CN=Jane Doe
 Enter GRID pass phrase for this identity:
 Creating proxy, please wait...
 Proxy verify OK
 Your proxy is valid until Tue Mar 12 14:50:27 CET 2013
-UserDN = /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN = /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 ProxyLifetime = 24 Days 23 Hours 59 Minutes 58 Seconds
 
 jobId = J1360936230540__0152
@@ -398,13 +398,13 @@ $ qcg-info
 
 https://qcg-broker.man.poznan.pl:8443/qcg/services/
 /C=PL/O=GRID/O=PSNC/CN=qcg-broker/qcg-broker.man.poznan.pl
-UserDN = /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN = /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 ProxyLifetime = 24 Days 23 Hours 59 Minutes 49 Seconds
 
 Command translated to:
 "task_info" "J1360936230540__0152" "task"
 Note:
-UserDN: /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN: /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 TaskType: SINGLE
 SubmissionTime: Fri Feb 15 14:50:31 CET 2013
 FinishTime:
@@ -429,13 +429,13 @@ $ qcg-info
 
 https://qcg-broker.man.poznan.pl:8443/qcg/services/
 /C=PL/O=GRID/O=PSNC/CN=qcg-broker/qcg-broker.man.poznan.pl
-UserDN = /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN = /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 ProxyLifetime = 24 Days 23 Hours 59 Minutes 23 Seconds
 
 Command translated to:
 "task_info" "J1360936230540__0152" "task"
 Note:
-UserDN: /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN: /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 TaskType: SINGLE
 SubmissionTime: Fri Feb 15 14:50:31 CET 2013
 FinishTime:
@@ -458,13 +458,13 @@ LocalFinishTime:
 $ qcg-info
 https://qcg-broker.man.poznan.pl:8443/qcg/services/
 /C=PL/O=GRID/O=PSNC/CN=qcg-broker/qcg-broker.man.poznan.pl
-UserDN = /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN = /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 ProxyLifetime = 24 Days 23 Hours 56 Minutes 10 Seconds
 
 Command translated to:
 "task_info" "J1360936230540__0152" "task"
 Note:
-UserDN: /C=PL/O=GRID/O=PSNC/CN=Bartosz Bosak
+UserDN: /C=PL/O=GRID/O=PSNC/CN=Jane Doe
 TaskType: SINGLE
 SubmissionTime: Fri Feb 15 14:50:31 CET 2013
 FinishTime: Fri Feb 15 14:52:17 CET 2013
@@ -501,7 +501,7 @@ Go to AppDB and look for a OS image member of the `fedcloud.egi.eu` VO (all
 sites should support), e.g.
 [EGI CentOS 7 image](https://appdb.egi.eu/store/vappliance/egi.centos.7)
 
-Check that the site is visible in to the AppDB "Availability and Usage" panel
+Check that the site is visible into the AppDB "Availability and Usage" panel
 for the image. If not, probably the site has not registered the FedCloud VO into
 their middleware (vmcatcher) or it did not properly configured the BDII provider
 script.
@@ -515,7 +515,7 @@ steps.
 
 #### Credentials
 
-Generate a set of keys for your user (it is not required to set a phassphrase
+Generate a set of keys for your user (it is not required to set a passphrase
 for the keys, since these are just temporary keys for the test), make sure to
 set key permissions to `400`:
 
@@ -859,7 +859,7 @@ $ openstack server create \
 | accessIPv4                  |                                             |
 | accessIPv6                  |                                             |
 | addresses                   |                                             |
-| adminPass                   | 9imSRC9EZhhX                                |
+| adminPass                   | veryverysecret                              |
 | config_drive                |                                             |
 | created                     | 2016-03-01T13:45:21Z                        |
 | flavor                      | m1.tiny (1)                                 |
@@ -976,7 +976,7 @@ $ bcdmi -e <cdmi_endpoint> list /
 ```
 
 See Site Certification GIIS Check
-[HOWTO03](../howto03_site_certificatoin_giis_check).
+[HOWTO03](../howto03_site_certification_giis_check).
 
 See to Resource Centre registration and certification procedure
 [PROC09](https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification).

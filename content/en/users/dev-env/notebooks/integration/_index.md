@@ -117,7 +117,7 @@ print(execution.status)
 ```
 
 Note that inputs that point to a URL should be specified using the
-`ComplextDataInput` class as shown above.
+`ComplexDataInput` class as shown above.
 
 ## Other third-party services
 

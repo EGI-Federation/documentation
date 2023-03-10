@@ -174,7 +174,7 @@ create a **VOMS proxy** for `dteam` VO:
 $ voms-proxy-init -voms dteam
 Enter GRID pass phrase for this identity:
 Contacting voms2.hellasgrid.gr:15004 [/C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr] "dteam"...
-Remote VOMS server contacted succesfully.
+Remote VOMS server contacted successfully.
 
 
 Created proxy in /tmp/x509up_u1001.
@@ -529,7 +529,7 @@ $ arcsub --jobdescrfile testjob.xrsl --registry nordugrid.org
 gsiftp://vm3.tier2.hep.manchester.ac.uk:2811/jobs/...
 JOB_ID="gsiftp://vm3.tier2.hep.manchester.ac.uk:2811/jobs/.."
 
-# Use -l paramter to get more information on the status of the Job
+# Use -l parameter to get more information on the status of the Job
 $ arcstat -l "$JOB_ID"
 ```
 
@@ -567,7 +567,7 @@ Then you can submit, monitor and retrieve the output of the job.
 > by or for their community and providing the required commands.
 
 ```shell
-# Subbmiting a job, job ID would be printed to the output
+# Submitting a job, job ID would be printed to the output
 $ glite-ce-job-submit 'lpsc-cream-ce.in2p3.fr:8443/cream-pbs-dteam' testjob.jdl
 # Use a variable with the job ID to be reused later
 JOB_ID='...'

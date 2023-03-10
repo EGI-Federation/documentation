@@ -149,7 +149,7 @@ $ for tgz in $(ls  <ca download dir>); do
 
 ### Installing the distribution using Quattor
 
-Quattor templates are povided as drop-in replacements for both QWG and CDB
+Quattor templates are provided as drop-in replacements for both QWG and CDB
 installations. Update your software repository (re-generating the repository
 templates as needed) and obtain the new CA templates from:
 

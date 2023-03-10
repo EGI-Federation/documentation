@@ -26,7 +26,7 @@ FedCloud components are distributed through
 [CMD (Cloud Middleware Distribution)](https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution)
 These docker containers come pre-packaged and ready to use in the EGI FedCloud
 Appliance so you do not need to install any extra components on your site but
-just run a VM and configure it approprietely to interact with your services.
+just run a VM and configure it appropriately to interact with your services.
 
 The integration is performed by a set of EGI components that interact with the
 OpenStack services APIs:

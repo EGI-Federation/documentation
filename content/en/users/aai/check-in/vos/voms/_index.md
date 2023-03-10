@@ -117,7 +117,7 @@ using `pkcs12`:
    to `“Enter PEM pass phrase”`, enter the pass phrase of your choice, e.g.
    `1234`.
 
-1. Now you can create the certificate, use `-clcerts`, (use `-nokeys` hereu will
+1. Now you can create the certificate, use `-clcerts`, (use `-nokeys` here will
    not output private key), and the command is:
 
    ```sh
@@ -206,7 +206,7 @@ Membership Service (VOMS).
 
 The Virtual Organization Membership Service (VOMS) is an attribute authority
 which serves as central repository for VO user authorization information,
-providing support for sorting users into group hierarchies, keeping track ofu
+providing support for sorting users into group hierarchies, keeping track of
 their roles and other attributes in order to issue trusted attribute
 certificates and SAML assertions used in the Grid environment for authorization
 purposes. VOMS is composed of two main components:
@@ -270,7 +270,7 @@ Every VO needs two different pieces of information:
   for each of the VOMS server of the VO.
 
 You can check specific configuration for your VO at the
-[Operations portal](https://operations-portal.egi.eu/vo). Normally each VOMS
+[Operations portal](https://operations-portal.egi.eu/vo/a/list). Normally each VOMS
 server has a _Configuration Info_ link where the exact information to include in
 the `vomses` and `.lsc` files is shown.
 
