@@ -36,6 +36,8 @@ machine image and is generally different in each operating system image:
   [obtaining images](https://docs.openstack.org/image-guide/obtain-images.html).
 - For custom virtual machine images you need to refer to your virtual machine image
   provider (i.e. it could be something specific like `cloudadm`).
+- For virtual machines deployed with [Infrastructure Manager](../../compute/orchestration/im/)
+  the default username is `cloudadm`.
 
 > It is also possible to change the username using `cloud-init` with a user-data
 > configuration (i.e. see the
