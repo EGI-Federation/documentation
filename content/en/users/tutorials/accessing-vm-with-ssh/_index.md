@@ -15,7 +15,7 @@ examples for setting up the OpenStack environment.
 ## SSH Keys
 
 The recommended method to access a cloud virtual machine is via ssh using **SSH
-keys**, you may inject your **public key** into the virtual machine, at
+keys**. You may inject your **public key** into the virtual machine, at
 deployment time, and use your **private key** to connect via ssh without any
 password.
 
