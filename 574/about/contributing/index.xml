@@ -206,6 +206,62 @@ also be done in your repository clone using &lt;code>git rebase&lt;/code>.&lt;/p
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git rebase upstream/main
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In case some files have been changed on both sides you will have to merge
 the conflicts manually.&lt;/p>
+&lt;h2 id="running-checks-from-github-actions-locally">Running checks from GitHub actions locally&lt;/h2>
+&lt;p>The repository leverages &lt;a href="https://github.com/features/actions">GitHub Actions&lt;/a> to do
+automatic checks.&lt;/p>
+&lt;p>The main checks are:&lt;/p>
+&lt;ul>
+&lt;li>File lint using &lt;a href="https://github.com/marketplace/actions/super-linter">Super-Linter&lt;/a>
+that includes many linters. Markdown files are processed using
+&lt;a href="https://github.com/igorshubovych/markdownlint-cli#readme">markdownlint-cli&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="https://github.com/marketplace/actions/markdown-link-check">Markdown link check&lt;/a>,
+relying on &lt;a href="https://github.com/tcort/markdown-link-check/">markdown-link-check&lt;/a>.&lt;/li>
+&lt;li>Spelling using &lt;a href="https://github.com/marketplace/actions/check-spelling">Check Spelling&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;p>It&amp;rsquo;s possible to run those linters locally, it can be useful to test and debug why they
+are reporting errors, and test without waiting on the automatic checks.&lt;/p>
+&lt;blockquote>
+&lt;p>To save time, we recommend running the specific you are interested in, but as documented
+later for Check-Spelling, you can use &lt;code>act&lt;/code> to run the real GitHub actions workflows.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="running-markdownlint-locally">Running markdownlint locally&lt;/h3>
+&lt;p>&lt;a href="https://github.com/igorshubovych/markdownlint-cli#readme">markdownlint-cli&lt;/a> can be
+installed locally on some platforms, in that case it can be used like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ markdownlint -c .github/linters/.markdownlint.json &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> content/en/about/_index.md
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you cannot or don&amp;rsquo;t want to install it locally, you can rely on using
+&lt;a href="https://www.docker.com/">Docker&lt;/a> and &lt;a href="https://github.com/features/packages">GitHub Packages&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -v &lt;span style="color:#000">$PWD&lt;/span>:/workdir:ro --rm -i ghcr.io/igorshubovych/markdownlint-cli:latest &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --config .github/linters/.markdownlint.json &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> content/en/about/_index.md
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="running-markdown-link-check-locally">Running markdown-link-check locally&lt;/h3>
+&lt;p>You can use &lt;a href="https://www.docker.com/">Docker&lt;/a> and
+&lt;a href="https://github.com/features/packages">GitHub Packages&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -v &lt;span style="color:#000">$PWD&lt;/span>:/tmp:ro --rm -i ghcr.io/tcort/markdown-link-check:stable &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --config /tmp/.github/linters/mlc_config.json &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> /tmp/content/en/about/_index.md
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="running-check-spelling-locally">Running Check-Spelling locally&lt;/h3>
+&lt;p>For spelling, it may be easier to rely on a spell checker integrated in your content editor.&lt;/p>
+&lt;p>Nevertheless, if you are adventurous, you can use &lt;a href="https://github.com/nektos/act">act&lt;/a>,
+that will use docker to run the checks locally.&lt;/p>
+&lt;blockquote>
+&lt;p>While the spell check should work, other part of the job interacting with GitHub will
+likely fail, like when errors are identified, so be sure to properly scan through the
+command output.&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Listing available jobs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ act -l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Running the spelling job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ act -j spelling
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="running-super-linter-locally">Running Super-Linter locally&lt;/h3>
+&lt;p>Should you want to do this, Super-Linter can be run locally.&lt;/p>
+&lt;p>You can try using &lt;a href="https://github.com/nektos/act">act&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Listing available jobs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ act -l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Running the lint job&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ act -j super-lint
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If it doesn&amp;rsquo;t work as expected, or if you prefer another solution, you should look at the
+&lt;a href="https://github.com/github/super-linter/blob/main/docs/run-linter-locally.md">Super-Linter documentation for running locally&lt;/a>.&lt;/p>
 &lt;h2 id="clone-pr-to-edittestreview-locally">Clone PR to edit/test/review locally&lt;/h2>
 &lt;p>It&amp;rsquo;s possible to clone a Pull Request to a local branch to test it locally. It&amp;rsquo;s
 done using the PR number.&lt;/p>
