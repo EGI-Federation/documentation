@@ -88,7 +88,7 @@ configurations and virtual hardware. To access the virtual machine from outside
 the OpenStack project you have to associate a `floating IP` to the virtual
 machine (which will provide a `public IP` to the virtual machine), you also have
 to open the necessary ports and add or edit the security groups, (more details
-on that in the specific section).
+on that in the specific section below).
 
 Depending on the default configuration of the OpenStack project in order to
 associate a floating IP to a virtual machine in a private network it may be
