@@ -174,7 +174,7 @@ available for visualisation at
 #### Cloud Usage Record
 
 The federated cloud task force has agreed on a Cloud Usage Record, which
-inherits from the [OGF Usage Record](https://www.ogf.org/documents/GFD.98.pdf).
+inherits from the [OGF Usage Record (GFD.204)](https://ogf.org/documents/GFD.204.pdf).
 This record defines the data that resource providers must send to EGI's central
 Accounting repository.
 
