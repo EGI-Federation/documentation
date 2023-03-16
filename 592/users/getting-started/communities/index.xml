@@ -67,7 +67,7 @@ or &lt;a href="https://wiki.appdb.egi.eu/main:faq:how_to_register_a_virtual_appl
 &lt;/ul>
 &lt;h3 id="how-to-bring-your-scientific-application-in-cvmfs">How to bring your scientific application in CVMFS&lt;/h3>
 &lt;ul>
-&lt;li>Access the &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.environmental.egi.eu">VO id card&lt;/a>
+&lt;li>Access the &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.environmental.egi.eu">VO ID card&lt;/a>
 in the EGI Operations Portal.&lt;/li>
 &lt;li>Get the VO Admin (or VO Manager) for the &lt;code>vo.enrivonmental.egi.eu&lt;/code> VO
 (see &amp;ldquo;Generic contacts&amp;rdquo; table).&lt;/li>
@@ -76,11 +76,11 @@ in the EGI Operations Portal.&lt;/li>
 procedure, if a new software repository has to be created in CVMFS
 for the &lt;code>vo.environmental.egi.eu&lt;/code> VO.&lt;/li>
 &lt;li>Request access to the service (sending an email to &lt;a href="mailto:cvmfs-support@gridpp.rl.ac.uk">cvmfs-support@gridpp.rl.ac.uk&lt;/a>)
-to add new content in the CMVFS repo (if the VO is already supported).&lt;/li>
+to add new content in the CMVFS repository (if the VO is already supported).&lt;/li>
 &lt;/ul>
 &lt;h3 id="enable-cvmfs-with-the-egi-notebooks">Enable CVMFS with the EGI Notebooks&lt;/h3>
 &lt;p>Sending an email to &lt;a href="mailto:notebooks-support@mailman.egi.eu">notebooks-support@mailman.egi.eu&lt;/a> to enable
-the access to the CVMFS repo in the EGI Notebooks service.&lt;/p>
+the access to the CVMFS repository in the EGI Notebooks service.&lt;/p>
 &lt;h3 id="how-to-bring-your-data-to-the-egi-infrastructure">How to bring your data to the EGI infrastructure&lt;/h3>
 &lt;p>For managing data, different Data Management services are available in the EGI Infrastructure:&lt;/p>
 &lt;ul>
