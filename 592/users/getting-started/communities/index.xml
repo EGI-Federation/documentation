@@ -115,9 +115,9 @@ or a cloud storage implementing the S3 interface.&lt;/p>
 &lt;/ul>
 &lt;h3 id="how-to-use-the--egi-data-orchestrator">How to use the EGI Data Orchestrator&lt;/h3>
 &lt;p>The &lt;a href="../../../data/management/rucio/">EGI Data Orchestrator&lt;/a>,
-based on the Rucio service developed at CERN, is mainly offered for Communities
-for specific distributed data management needs as explained in our
-&lt;a href="../../../data/management/rucio/#rucio-use-cases">use cases documentation&lt;/a>.&lt;/p>
+based on the Rucio service developed at &lt;a href="https://rucio.cern.ch/">CERN&lt;/a>,
+is mainly offered for Communities for specific distributed data management
+needs as explained in our &lt;a href="../../../data/management/rucio/#rucio-use-cases">use cases documentation&lt;/a>.&lt;/p>
 &lt;p>Dedicated &lt;a href="../../../data/management/rucio/getting-started/">Getting Started documentation&lt;/a>
 is available to start the evaluation of the service and to access
 the resources made available by the
