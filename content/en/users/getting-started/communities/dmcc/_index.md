@@ -18,10 +18,10 @@ community investigates in-depth the mechanisms of the selected disaster events a
 develops the appropriate simulation models to reproduce the processes by case studies.
 The collaboration framework aims at becoming an open science platform of disaster
 mitigation so that all the tools, data, resources and simulation facilities are sharable,
-and the simulations are reproducible. 
+and the simulations are reproducible.
 
 This knowledge base is enriched by the simulation models, portals, data and visualisation
-facilities that are contributed to by the members: 
+facilities that are contributed to by the members:
 
 * Academia Sinica, Taiwan (Leading Partner, represented by
   [Academia Sinica Grid Computing Centre (ASGC)](https://www.twgrid.org/wordpress/))
@@ -56,7 +56,7 @@ Getting access to the EGI infrastructure consists of the following steps:
 1. Access the EGI Notebooks and the EGI Replay services:
    * EGI Notebooks server URL: [https://notebooks.egi.eu/](https://notebooks.egi.eu/)
    * EGI Replay server URL: [https://replay.notebooks.egi.eu/](https://replay.notebooks.egi.eu/)
-   
+
 ### How to bring your scientific application to the EGI infrastructure
 
 The official solution to distribute software in the EGI Infrastructure
@@ -76,21 +76,21 @@ EGI Infrastructure are also available:
 
 ### How to bring your scientific application in CVMFS
 
-* Access the [VO id card](https://operations-portal.egi.eu/vo/view/voname/vo.environmental.egi.eu)
+* Access the [VO ID card](https://operations-portal.egi.eu/vo/view/voname/vo.environmental.egi.eu)
   in the EGI Operations Portal.
 * Get the VO Admin (or VO Manager) for the `vo.enrivonmental.egi.eu` VO
   (see "Generic contacts" table).
 * Request the VO admin to trigger the
   [PROC22](https://ims.egi.eu/display/EGIPP/PROC22+Support+for+CVMFS+replication+across+the+EGI+Infrastructure)
   procedure, if a new software repository has to be created in CVMFS
-  for the `vo.environmental.egi.eu` VO. 
+  for the `vo.environmental.egi.eu` VO.
 * Request access to the service (sending an email to cvmfs-support@gridpp.rl.ac.uk)
-  to add new content in the CMVFS repo (if the VO is already supported).  
+  to add new content in the CMVFS repository (if the VO is already supported).  
 
 ### Enable CVMFS with the EGI Notebooks
 
 Sending an email to notebooks-support@mailman.egi.eu to enable
-the access to the CVMFS repo in the EGI Notebooks service.
+the access to the CVMFS repository in the EGI Notebooks service.
 
 ### How to bring your data to the EGI infrastructure
 
@@ -114,6 +114,7 @@ In order to access an existing space on EGI DataHub or ask for hosting
 your data in DataHub please contact our [Helpdesk](https://ggus.eu/).
 
 Additional tutorials may be relevant:
+
 * [Create a Virtual Machine with Jupyter and DataHub](../../../tutorials/jupyter-datahub-virtual-machine/)
 
 ### How to transfer your data to the EGI infrastructure via EGI Data Transfer
@@ -125,6 +126,7 @@ The storage can be either any grid storage in the EGI infrastructure
 or a cloud storage implementing the S3 interface.
 
 Relevant tutorials:
+
 * [Data Transfer with Grid Storage](../../../tutorials/data-transfer-grid-storage/)
 * [Data Transfer with Object Storage](../../../tutorials/data-transfer-object-storage/)
 
@@ -137,7 +139,7 @@ for specific distributed data management needs as explained in our
 
 Dedicated [Getting Started documentation](../../../data/management/rucio/getting-started/)
 is available to start the evaluation of the service and to access
-the resources made available by the 
+the resources made available by the
 [dteam VO](../../../data/management/rucio/dteam-vo/)
 that is used for  testing.
 
