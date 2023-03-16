@@ -63,7 +63,7 @@ The official solution to distribute software in the EGI Infrastructure
 is to use [CVMFS](https://cernvm.cern.ch/fs/), the Software
 Distribution Service developed to assist High Energy Physics collaborations
 at CERN. For more details, please refer to the
-[Contend Distribution](../../../compute/software-distribution/) documentation.
+[Content Distribution](../../../compute/software-distribution/) documentation.
 
 The following alternative solutions for sharing scientific software in the
 EGI Infrastructure are also available:
