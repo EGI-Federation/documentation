@@ -49,6 +49,7 @@ Getting access to the EGI infrastructure consists of the following steps:
     VO Manager.
 1. Access the cloud-based resources at CESNET-MCC via the OpenStack Horizon dashboard:
    * [Horizon OpenStack dashboard](https://dashboard.cloud.muni.cz/)
+   * Authenticate using: `EGI Check-in`
    * Project name: `vo.environmental.egi.eu`
    * Project ID: `29e6fbf618984a0c98ffcdf0222ad815`
    * Network ID: `group-project-network`
