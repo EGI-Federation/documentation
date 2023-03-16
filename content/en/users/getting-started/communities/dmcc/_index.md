@@ -85,7 +85,7 @@ EGI Infrastructure are also available:
   procedure, if a new software repository has to be created in CVMFS
   for the `vo.environmental.egi.eu` VO.
 * Request access to the service (sending an email to cvmfs-support@gridpp.rl.ac.uk)
-  to add new content in the CMVFS repository (if the VO is already supported).
+  to add new content in the CVMFS repository (if the VO is already supported).
 
 ### Enable CVMFS with the EGI Notebooks
 
