@@ -95,7 +95,7 @@ using traditional POSIX command-line commands you need to install the
 the component, please see the
 &lt;a href="../../../tutorials/vm-datahub/">Access DataHub from a Virtual Machine&lt;/a>
 documentation. &lt;a href="../../../data/management/datahub/api/">Access via API&lt;/a>
-is also available and it’s leveraging the integration of the service with EGI Check-in&lt;/p>
+is also available and it’s leveraging the integration of the service with EGI Check-in.&lt;/p>
 &lt;p>In order to access an existing space on EGI DataHub or ask for hosting
 your data in DataHub please contact our &lt;a href="https://ggus.eu/">Helpdesk&lt;/a>.&lt;/p>
 &lt;p>Additional tutorials may be relevant:&lt;/p>
