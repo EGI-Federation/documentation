@@ -37,6 +37,7 @@ VO Manager.&lt;/li>
 &lt;li>Access the cloud-based resources at CESNET-MCC via the OpenStack Horizon dashboard:
 &lt;ul>
 &lt;li>&lt;a href="https://dashboard.cloud.muni.cz/">Horizon OpenStack dashboard&lt;/a>&lt;/li>
+&lt;li>Authenticate using: &lt;code>EGI Check-in&lt;/code>&lt;/li>
 &lt;li>Project name: &lt;code>vo.environmental.egi.eu&lt;/code>&lt;/li>
 &lt;li>Project ID: &lt;code>29e6fbf618984a0c98ffcdf0222ad815&lt;/code>&lt;/li>
 &lt;li>Network ID: &lt;code>group-project-network&lt;/code>&lt;/li>
