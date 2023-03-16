@@ -133,9 +133,9 @@ Relevant tutorials:
 ### How to use the  EGI Data Orchestrator
 
 The [EGI Data Orchestrator](../../../data/management/rucio/),
-based on the Rucio service developed at CERN, is mainly offered for Communities
-for specific distributed data management needs as explained in our
-[use cases documentation](../../../data/management/rucio/#rucio-use-cases).
+based on the Rucio service developed at [CERN](https://rucio.cern.ch/),
+is mainly offered for Communities for specific distributed data management
+needs as explained in our [use cases documentation](../../../data/management/rucio/#rucio-use-cases).
 
 Dedicated [Getting Started documentation](../../../data/management/rucio/getting-started/)
 is available to start the evaluation of the service and to access
