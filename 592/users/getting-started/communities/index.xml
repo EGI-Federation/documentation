@@ -76,7 +76,7 @@ in the EGI Operations Portal.&lt;/li>
 procedure, if a new software repository has to be created in CVMFS
 for the &lt;code>vo.environmental.egi.eu&lt;/code> VO.&lt;/li>
 &lt;li>Request access to the service (sending an email to &lt;a href="mailto:cvmfs-support@gridpp.rl.ac.uk">cvmfs-support@gridpp.rl.ac.uk&lt;/a>)
-to add new content in the CMVFS repository (if the VO is already supported).&lt;/li>
+to add new content in the CVMFS repository (if the VO is already supported).&lt;/li>
 &lt;/ul>
 &lt;h3 id="enable-cvmfs-with-the-egi-notebooks">Enable CVMFS with the EGI Notebooks&lt;/h3>
 &lt;p>Sending an email to &lt;a href="mailto:notebooks-support@mailman.egi.eu">notebooks-support@mailman.egi.eu&lt;/a> to enable
