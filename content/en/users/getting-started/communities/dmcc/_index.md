@@ -44,9 +44,9 @@ Getting access to the EGI infrastructure consists of the following steps:
 
 1. [Sign-up](../../../aai/check-in/signup/) for an EGI Check-In account.
 1. Request to join the `vo.environmental.egi.eu` Virtual Organisation (VO)
-   by visiting the [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:369)
-   with your EGI Check-In account. The subscription requires approval from the
-   VO Manager.
+    by visiting the [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:369)
+    with your EGI Check-In account. The subscription requires approval from the
+    VO Manager.
 1. Access the cloud-based resources at CESNET-MCC via the OpenStack Horizon dashboard:
    * [Horizon OpenStack dashboard](https://dashboard.cloud.muni.cz/)
    * Project name: `vo.environmental.egi.eu`
@@ -85,7 +85,7 @@ EGI Infrastructure are also available:
   procedure, if a new software repository has to be created in CVMFS
   for the `vo.environmental.egi.eu` VO.
 * Request access to the service (sending an email to cvmfs-support@gridpp.rl.ac.uk)
-  to add new content in the CMVFS repository (if the VO is already supported).  
+  to add new content in the CMVFS repository (if the VO is already supported).
 
 ### Enable CVMFS with the EGI Notebooks
 
@@ -108,7 +108,7 @@ using traditional POSIX command-line commands you need to install the
 the component, please see the
 [Access DataHub from a Virtual Machine](../../../tutorials/vm-datahub/)
 documentation. [Access via API](../../../data/management/datahub/api/)
-is also available and it’s leveraging the integration of the service with EGI Check-in  
+is also available and it’s leveraging the integration of the service with EGI Check-in.
 
 In order to access an existing space on EGI DataHub or ask for hosting
 your data in DataHub please contact our [Helpdesk](https://ggus.eu/).
