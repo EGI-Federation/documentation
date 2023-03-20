@@ -62,7 +62,7 @@ in the EGI Operations Portal.&lt;/li>
 to add new content in the CVMFS repository (for the &lt;code>vo.environmental.egi.eu&lt;/code> VO).&lt;/li>
 &lt;li>Wait until the application is published in the CVMFS repository.&lt;/li>
 &lt;li>Sending an email to &lt;a href="mailto:notebooks-support@mailman.egi.eu">notebooks-support@mailman.egi.eu&lt;/a> to enable
-the access to the CVMFS repo in the EGI Notebooks service.&lt;/li>
+the access to the CVMFS repository in the EGI Notebooks service.&lt;/li>
 &lt;/ul>
 &lt;h3 id="how-to-make-your-datasets-available-in-datahub">How to make your datasets available in DataHub&lt;/h3>
 &lt;p>Whenever you log into the EGI Notebooks service, supported DataHub spaces
