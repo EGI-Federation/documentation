@@ -48,8 +48,8 @@ consists of the following steps:
 
 1. Sign-up for an [EGI Check-in account](../../../aai/check-in/signup/).
 1. Request to join the `vo.environmental.egi.eu` Virtual Organisation (VO) by
-   visiting the [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:369)
-   with your EGI Check-in account. The subscription requires approval from the VO Manager.
+    visiting the [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:369)
+    with your EGI Check-in account. The subscription requires approval from the VO Manager.
 
 ## How to use the EGI Notebooks service in the Asia Pacific VO
 
@@ -81,7 +81,7 @@ in the sections below.
   to add new content in the CVMFS repository (for the `vo.environmental.egi.eu` VO).
 * Wait until the application is published in the CVMFS repository.
 * Sending an email to notebooks-support@mailman.egi.eu to enable
-  the access to the CVMFS repo in the EGI Notebooks service.
+  the access to the CVMFS repository in the EGI Notebooks service.
 
 ### How to make your datasets available in DataHub
 
