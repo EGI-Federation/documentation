@@ -532,15 +532,15 @@ UserInfo Endpoint:
 
 <!-- markdownlint-disable no-inline-html -->
 
-| Scope                          | Claims                                                                                                                                                                                            |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `openid`                       | `sub`                                                                                                                                                                                             |
-| `profile`                      | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul>                                                                                                  |
-| `email`                        | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>                                                                                                              |
-| `aarc`                         | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li><li>`voperson_id`</li></ul> |
-| `eduperson_entitlement`        | `eduperson_entitlement`                                                                                                                                                                           |
-| `eduperson_scoped_affiliation` | `eduperson_scoped_affiliation`                                                                                                                                                                    |
-| `voperson_id`                  | `voperson_id`                                                                                                                                                                                     |
+| Scope                           | Claims                                                                                                                                                                                                                                    |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `openid`                        | `sub`                                                                                                                                                                                                                                     |
+| `profile`                       | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul>                                                                                                                                          |
+| `email`                         | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>                                                                                                                                                      |
+| `aarc`                          | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li><li>`voperson_external_affiliation`</li><li>`voperson_id`</li></ul> |
+| `eduperson_entitlement`         | `eduperson_entitlement`                                                                                                                                                                                                                   |
+| `voperson_external_affiliation` | `voperson_external_affiliation`                                                                                                                                                                                                           |
+| `voperson_id`                   | `voperson_id`                                                                                                                                                                                                                             |
 
 <!-- markdownlint-enable no-inline-html -->
 
@@ -1920,20 +1920,20 @@ connected to Check-in.
 
 ### 9. Affiliation
 
-|          attribute name | Affiliation                                                                                                                                                |
-| ----------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|         **description** | The user's affiliation within a particular security domain (scope)                                                                                         |
-|   **SAML Attribute(s)** | <ul><li>`urn:oid:1.3.6.1.4.1.5923.1.1.1.9` (eduPersonScopedAffiliation)</li><li>`urn:oid:1.3.6.1.4.1.25178.4.1.11` (voPersonExternalAffiliation)</li></ul> |
-|          **OIDC scope** | `eduperson_scoped_affiliation`                                                                                                                             |
-|       **OIDC claim(s)** | `eduperson_scoped_affiliation`                                                                                                                             |
-| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                                                                                         |
-|              **origin** | Check-in assigns this attribute on user registration                                                                                                       |
-|             **changes** | Yes                                                                                                                                                        |
-|        **multiplicity** | Multi-valued                                                                                                                                               |
-|        **availability** | Always                                                                                                                                                     |
-|             **example** | <ul><li>`member@example.org`</li><li>`faculty@example.org`</li></ul>                                                                                       |
-|               **notes** | Service Providers are encouraged to validate the scope of this attribute                                                                                   |
-|              **status** | Stable                                                                                                                                                     |
+|          attribute name | Affiliation                                                                                  |
+| ----------------------: | :------------------------------------------------------------------------------------------- |
+|         **description** | The user's affiliation within a particular security domain (scope)                           |
+|   **SAML Attribute(s)** | `urn:oid:1.3.6.1.4.1.25178.4.1.11` (voPersonExternalAffiliation)                             |
+|          **OIDC scope** | `voperson_external_affiliation`                                                              |
+|       **OIDC claim(s)** | `voperson_external_affiliation`                                                              |
+| **OIDC claim location** | <ul><li>UserInfo Endpoint</li><li>Introspection Endpoint</li></ul>                           |
+|              **origin** | When available, this information originates from the user's authenticating Identity Provider |
+|             **changes** | Yes                                                                                          |
+|        **multiplicity** | Multi-valued                                                                                 |
+|        **availability** | Not always                                                                                   |
+|             **example** | <ul><li>`member@example.org`</li><li>`faculty@example.org`</li></ul>                         |
+|               **notes** | Service Providers are encouraged to validate the scope of this attribute                     |
+|              **status** | Stable                                                                                       |
 
 ### 10. Groups
 
