@@ -349,6 +349,7 @@ the table below:
 
 | Deprecated Attributes        | New Attributes                |
 | ---------------------------- | ----------------------------- |
+| `distinguishedName`          | `voPersonCertificateDN`       |
 | `eduPersonScopedAffiliation` | `voPersonExternalAffiliation` |
 | `eduPersonUniqueId`          | `voPersonID`                  |
 
