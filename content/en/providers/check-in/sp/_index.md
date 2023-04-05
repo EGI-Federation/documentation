@@ -532,16 +532,16 @@ UserInfo Endpoint:
 
 <!-- markdownlint-disable no-inline-html -->
 
-| Scope                           | Claims                                                                                                                                                                                                                              |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `openid`                        | `sub`                                                                                                                                                                                                                               |
-| `profile`                       | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul>                                                                                                                                    |
-| `email`                         | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>                                                                                                                                                |
-| `aarc`                          | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li><li>`voperson_certificate_dn`</li><li>`voperson_external_affiliation`</li><li>`voperson_id`</li></ul> |
-| `eduperson_entitlement`         | `eduperson_entitlement`                                                                                                                                                                                                             |
-| `voperson_certificate`          | `voperson_certificate_dn`                                                                                                                                                                                                           |
-| `voperson_external_affiliation` | `voperson_external_affiliation`                                                                                                                                                                                                     |
-| `voperson_id`                   | `voperson_id`                                                                                                                                                                                                                       |
+| Scope                           | Claims                                                                                                                                                                                                                                                                                                               |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `openid`                        | `sub`                                                                                                                                                                                                                                                                                                                |
+| `profile`                       | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li></ul>                                                                                                                                                                                                                     |
+| `email`                         | <ul><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li></ul>                                                                                                                                                                                                                                 |
+| `aarc`                          | <ul><li>`name`</li><li>`given_name`</li><li>`family_name`</li><li>`preferred_username`</li><li>`email`</li><li>`email_verified`</li><li>`voperson_verified_email`</li><li>`voperson_certificate_dn`</li><li>`voperson_certificate_issuer_dn`</li><li>`voperson_external_affiliation`</li><li>`voperson_id`</li></ul> |
+| `eduperson_entitlement`         | `eduperson_entitlement`                                                                                                                                                                                                                                                                                              |
+| `voperson_certificate`          | <ul><li>`voperson_certificate_dn`</li><li>`voperson_certificate_issuer_dn`</li></ul>                                                                                                                                                                                                                                 |
+| `voperson_external_affiliation` | `voperson_external_affiliation`                                                                                                                                                                                                                                                                                      |
+| `voperson_id`                   | `voperson_id`                                                                                                                                                                                                                                                                                                        |
 
 <!-- markdownlint-enable no-inline-html -->
 
@@ -2075,6 +2075,23 @@ connected to Check-in.
 |             **example** | `/C=XX/O=YYY/OU=ZZZ/CN=John Doe`                                           |
 |               **notes** | -                                                                          |
 |              **status** | Experimental                                                               |
+
+### 18. Issuer Distinguished Name (DN) of user's X.509 certificate
+
+|          attribute name | Issuer Distinguished Name (DN) of user's X.509 certificate     |
+| ----------------------: | :------------------------------------------------------------- |
+|         **description** | The Subject Distinguished Name of the X.509 certificate issuer |
+|   **SAML Attribute(s)** | `1.3.6.1.4.1.25178.4.1.4` (voPersonCertificateIssuerDN)        |
+|          **OIDC scope** | <ul><li>`voperson_certificate`</li><li>`aarc`</li></ul>        |
+|       **OIDC claim(s)** | `voperson_certificate_issuer_dn`                               |
+| **OIDC claim location** | UserInfo Endpoint                                              |
+|              **origin** | Check-in or the user's Identity Provider                       |
+|             **changes** | Yes                                                            |
+|        **multiplicity** | Multi-valued                                                   |
+|        **availability** | Not always                                                     |
+|             **example** | `/C=XX/O=YYY/OU=ZZZ/CN=Example CA`                             |
+|               **notes** | -                                                              |
+|              **status** | Experimental                                                   |
 
 <!-- markdownlint-enable no-inline-html -->
 
