@@ -53,7 +53,7 @@ in, write and play and re-play notebooks by:
 3. [accessing https://notebooks.egi.eu/](https://notebooks.egi.eu/)
 
 This instance has limits on the amount of resources available for each user (2
-CPU core, 4 GB RAM and 20 GB of storage). It will also kill inactive sessions
+CPU core, 6 GB RAM and 20 GB of storage). It will also kill inactive sessions
 after 1 hour.
 
 The central instance supports the following VOs:
