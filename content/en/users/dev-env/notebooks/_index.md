@@ -65,6 +65,11 @@ The central instance supports the following VOs:
 - [biomed](https://operations-portal.egi.eu/vo/view/voname/biomed)
 - [vo.reliance-project.eu](https://operations-portal.egi.eu/vo/view/voname/vo.reliance-project.eu)
 - [eiscat.se](https://operations-portal.egi.eu/vo/view/voname/eiscat.se)
+- [eval.c-scale.eu](https://operations-portal.egi.eu/vo/view/voname/eval.c-scale.eu)
+- [vo.panosc.eu](https://operations-portal.egi.eu/vo/view/voname/vo.panosc.eu)
+- [vo.environmental.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.environmental.egi.eu)
+- [vo.lethe-project.eu](https://operations-portal.egi.eu/vo/view/voname/vo.lethe-project.eu)
+- [vo.cessda.eduteams.org](https://operations-portal.egi.eu/vo/view/voname/vo.cessda.eduteams.org)
 
 ### Notebooks for communities
 
