@@ -37,7 +37,7 @@ in, write and play and re-play notebooks by:&lt;/p>
 &lt;li>&lt;a href="https://notebooks.egi.eu/">accessing https://notebooks.egi.eu/&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;p>This instance has limits on the amount of resources available for each user (2
-CPU core, 4 GB RAM and 20 GB of storage). It will also kill inactive sessions
+CPU core, 6 GB RAM and 20 GB of storage). It will also kill inactive sessions
 after 1 hour.&lt;/p>
 &lt;p>The central instance supports the following VOs:&lt;/p>
 &lt;ul>
@@ -48,6 +48,11 @@ enroll &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:111">here
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/biomed">biomed&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.reliance-project.eu">vo.reliance-project.eu&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/eiscat.se">eiscat.se&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/eval.c-scale.eu">eval.c-scale.eu&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.panosc.eu">vo.panosc.eu&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.environmental.egi.eu">vo.environmental.egi.eu&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.lethe-project.eu">vo.lethe-project.eu&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.cessda.eduteams.org">vo.cessda.eduteams.org&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="notebooks-for-communities">Notebooks for communities&lt;/h3>
 &lt;p>User communities can have their customised EGI Notebooks service instance. EGI
@@ -87,7 +92,7 @@ that’s connected to eduGAIN and social media accounts.&lt;/li>
 &lt;li>Access to scalable storage: selected storage spaces of EGI DataHub are
 directly available under the &lt;code>datahub&lt;/code> folder, simplifying the access to
 shared data from Binder notebooks.&lt;/li>
-&lt;li>Guaranteed capacity: environments have 2GB of RAM guaranteed and can reach 4GB
+&lt;li>Guaranteed capacity: environments have 2GB of RAM guaranteed and can reach 6GB
 as maximum.&lt;/li>
 &lt;li>Persistent sessions: There is no hard limit on the session time per user,
 although sessions will be shut down automatically after 1 hour of inactivity
