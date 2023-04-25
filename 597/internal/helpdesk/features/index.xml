@@ -566,13 +566,14 @@ ticket to a support unit the expected response timestamp is calculated by adding
 an amount of time to the assign timestamp. The amount of time added depends on
 the ticket priority and the kind of support unit. For support units that have
 declared a quality of service level the response times are defined by the
-&lt;a href="../quality-of-support-levels">QoS level&lt;/a>. For all the
-other support units a medium QoS is assumed for calculating the expected
-response timestamp. In case the actual response timestamp is greater than the
-&amp;ldquo;expected response&amp;rdquo; timestamp for middleware support units the &amp;ldquo;violate&amp;rdquo; flag is
-set.&lt;/p>
-&lt;p>&lt;em>Response times are based on office hours. Hence the results unit is working
-days.&lt;/em>&lt;/p>
+&lt;a href="../quality-of-support-levels">QoS level&lt;/a>. For all the other support units a
+medium QoS is assumed for calculating the expected response timestamp. In case
+the actual response timestamp is greater than the &amp;ldquo;expected response&amp;rdquo; timestamp
+for middleware support units the &amp;ldquo;violate&amp;rdquo; flag is set.&lt;/p>
+&lt;blockquote>
+&lt;p>Response times are based on office hours. Hence the results unit is working
+days.&lt;/p>
+&lt;/blockquote>
 &lt;h4 id="solution-time">Solution time&lt;/h4>
 &lt;p>The solution time is a performance figure also calculated from the support
 unit&amp;rsquo;s point of view. It describes how long it took the support unit for
@@ -581,8 +582,10 @@ support unit until it provides a solution for the problem described. &amp;ldquo;
 a solution&amp;rdquo; means setting the ticket status to &amp;ldquo;solved&amp;rdquo; or &amp;ldquo;unsolved&amp;rdquo;. The
 solution time is calculated as the difference between the solution timestamp and
 the assign timestamp.&lt;/p>
-&lt;p>&lt;em>Solution times are based on office hours. Hence the results unit is working
-days.&lt;/em>&lt;/p>
+&lt;blockquote>
+&lt;p>Solution times are based on office hours. Hence the results unit is working
+days.&lt;/p>
+&lt;/blockquote>
 &lt;h4 id="waiting-time">Waiting time&lt;/h4>
 &lt;p>Waiting time is the sum of all time slots the ticket was set to &amp;ldquo;waiting for
 reply&amp;rdquo;. Calculating the waiting time has started in July 2012. For tickets
@@ -594,7 +597,9 @@ calculation solution times by ticking the checkbox &amp;ldquo;exclude waiting ti
 how long it takes to provide a meaningful solution for a problem reported by the
 user. Ticket lifetime is the time from ticket submission to ticket solution
 (status &amp;ldquo;solved/unsolved&amp;rdquo;).&lt;/p>
-&lt;p>&lt;em>The ticket lifetime is based on calendar days.&lt;/em>&lt;/p>
+&lt;blockquote>
+&lt;p>The ticket lifetime is based on calendar days.&lt;/p>
+&lt;/blockquote>
 &lt;h3 id="time-zones">Time zones&lt;/h3>
 &lt;p>GGUS support units are spread over a wide range of time zones. Some of the
 support units themselves are spread over several time zones. However most
@@ -614,13 +619,15 @@ unit is in charge of the ticket. Updating the priority value during ticket
 lifetime doesn&amp;rsquo;t affect the calculation of performance figures.&lt;/p>
 &lt;h3 id="unit-abbreviations">Unit abbreviations&lt;/h3>
 &lt;ul>
-&lt;li>[wd] means working days&lt;/li>
-&lt;li>[d] means calendar days&lt;/li>
+&lt;li>&lt;code>[wd]&lt;/code> means working days&lt;/li>
+&lt;li>&lt;code>[d]&lt;/code> means calendar days&lt;/li>
 &lt;/ul>
 &lt;h2 id="reports-description">Reports description&lt;/h2>
-&lt;p>&lt;em>Although some of the drop-down lists request the selection of values a query
-can be started anyway. In this case the query is equivalent to a query over all
-tickets!&lt;/em>&lt;/p>
+&lt;blockquote>
+&lt;p>Although some of the drop-down lists request the selection of values a query
+can be started anyway. In this case the query is equivalent to a query over
+all tickets!&lt;/p>
+&lt;/blockquote>
 &lt;p>The &amp;ldquo;Reset&amp;rdquo; button resets all fields to their default settings besides the time
 frame.&lt;/p>
 &lt;h3 id="tickets-submitted">Tickets submitted&lt;/h3>
@@ -654,8 +661,10 @@ frame. The result list shows:&lt;/p>
 &lt;p>for the specified time frame. The result list shows all support units that have
 ever been in charge of a ticket. Hence the same ticket ID may appear several
 times. The number of responses may be greater than the number of tickets.&lt;/p>
-&lt;p>&lt;em>Response times are based on office hours. Hence an average response time of 1d
-3h 23min means 13 hours and 23 minutes in total.&lt;/em>&lt;/p>
+&lt;blockquote>
+&lt;p>Response times are based on office hours. Hence an average response time of 1d
+3h 23min means 13 hours and 23 minutes in total_&lt;/p>
+&lt;/blockquote>
 &lt;h3 id="violated-response-time">Violated response time&lt;/h3>
 &lt;p>Specific privileges are required for this report. Only people belonging to a
 dedicated technology provider (TP) are able doing reports for this TP. Major
@@ -670,11 +679,15 @@ shows:&lt;/p>
 &lt;li>median response time&lt;/li>
 &lt;/ul>
 &lt;p>for the specified time frame. The result lists shows the current status of the
-tickets. &lt;em>Solution times are based on office hours. Hence an average solution
-time of 12d 3h 5min means 99 hours and 5 minutes in total.&lt;/em> The waiting time can
-be excluded by ticking the checkbox &amp;ldquo;exclude waiting time&amp;rdquo;. In case a ticket
-gets re-opened the metrics calculation starts again from scratch. Hence the same
-ticket can appear several times in the solution times calculation.&lt;/p>
+tickets.&lt;/p>
+&lt;blockquote>
+&lt;p>Solution times are based on office hours. Hence an average solution time of
+12d 3h 5min means 99 hours and 5 minutes in total.&lt;/p>
+&lt;/blockquote>
+&lt;p>The waiting time can be excluded by ticking the checkbox &amp;ldquo;exclude waiting time&amp;rdquo;.
+In case a ticket gets re-opened the metrics calculation starts again from
+scratch. Hence the same ticket can appear several times in the solution times
+calculation.&lt;/p>
 &lt;h2 id="input-parameters-and-results">Input parameters and results&lt;/h2>
 &lt;h3 id="input-parameters">Input parameters&lt;/h3>
 &lt;p>The input parameters vary depending on the report type chosen. Possible input
@@ -694,9 +707,9 @@ parameters are:&lt;/p>
 &lt;/ul>
 &lt;h4 id="time-frame">Time frame&lt;/h4>
 &lt;p>The time frame defines begin and end date of the report. The begin date starts
-at 00:00:00. The end date ends at 00:00:00. As the implementation of the report
-generator started in October 2011 the report generator does not provide data for
-tickets submitted before December 2011!&lt;/p>
+at &lt;code>00:00:00&lt;/code>. The end date ends at &lt;code>00:00:00&lt;/code>. As the implementation of the
+report generator started in October 2011 the report generator does not provide
+data for tickets submitted before December 2011!&lt;/p>
 &lt;h4 id="responsible-units">Responsible Units&lt;/h4>
 &lt;p>The drop-down list offers all responsible units integrated in GGUS system. They
 can be filtered by keywords. Responsible Units can be either selected all, one
@@ -720,7 +733,8 @@ possible.&lt;/p>
 Multiple selections are possible. The category &amp;ldquo;Test&amp;rdquo; should not be considered
 for all reports and therefore, if necessary, be excluded from the selection.&lt;/p>
 &lt;h4 id="ticket-scope">Ticket scope&lt;/h4>
-&lt;p>To distinguish between tickets under the responsibility of EGI or WLCG.&lt;/p>
+&lt;p>To distinguish between tickets under the responsibility of EGI or WLCG. See
+&lt;a href="../ticket-scope/">ticket scope&lt;/a>.&lt;/p>
 &lt;h4 id="notified-site">Notified site&lt;/h4>
 &lt;p>&amp;ldquo;Notified site&amp;rdquo; lists all sites integrated in GGUS. They are derived from GOC DB
 and OIM DB. In case of reporting exclusively on tickets without any site value
