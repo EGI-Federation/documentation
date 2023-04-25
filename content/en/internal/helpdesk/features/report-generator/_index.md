@@ -2,8 +2,7 @@
 title: "Report generator"
 type: docs
 weight: 40
-description: >
-  Features and usage of the Report generator
+description: Features and usage of the Report generator
 ---
 
 ## Definitions and prerequisites
@@ -11,7 +10,7 @@ description: >
 The [GGUS Report Generator](https://ggus.eu/?mode=report_view) is available
 [from the support section](https://ggus.eu/?mode=support).
 
-The implementation of the report generator started in October 2011. Hence the
+The implementation of the report generator started in October 2011. Hence, the
 report generator does not provide data for tickets submitted before December
 2011!
 
@@ -160,7 +159,7 @@ ever been in charge of a ticket. Hence the same ticket ID may appear several
 times. The number of responses may be greater than the number of tickets.
 
 > Response times are based on office hours. Hence an average response time of 1d
-> 3h 23min means 13 hours and 23 minutes in total\_
+> 3h 23min means 13 hours and 23 minutes in total.
 
 ### Violated response time
 
@@ -181,12 +180,12 @@ shows:
 for the specified time frame. The result lists shows the current status of the
 tickets.
 
-> Solution times are based on office hours. Hence an average solution time of
+> Solution times are based on office hours. Hence, an average solution time of
 > 12d 3h 5min means 99 hours and 5 minutes in total.
 
 The waiting time can be excluded by ticking the checkbox "exclude waiting time".
 In case a ticket gets re-opened the metrics calculation starts again from
-scratch. Hence the same ticket can appear several times in the solution times
+scratch. Hence, the same ticket can appear several times in the solution times
 calculation.
 
 ## Input parameters and results
