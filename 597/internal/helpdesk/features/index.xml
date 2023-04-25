@@ -534,7 +534,7 @@ Operational Level Agreements linked in the
 &lt;h2 id="definitions-and-prerequisites">Definitions and prerequisites&lt;/h2>
 &lt;p>The &lt;a href="https://ggus.eu/?mode=report_view">GGUS Report Generator&lt;/a> is available
 &lt;a href="https://ggus.eu/?mode=support">from the support section&lt;/a>.&lt;/p>
-&lt;p>The implementation of the report generator started in October 2011. Hence the
+&lt;p>The implementation of the report generator started in October 2011. Hence, the
 report generator does not provide data for tickets submitted before December
 2011!&lt;/p>
 &lt;h3 id="timestamps-and-metrics">Timestamps and metrics&lt;/h3>
@@ -663,7 +663,7 @@ ever been in charge of a ticket. Hence the same ticket ID may appear several
 times. The number of responses may be greater than the number of tickets.&lt;/p>
 &lt;blockquote>
 &lt;p>Response times are based on office hours. Hence an average response time of 1d
-3h 23min means 13 hours and 23 minutes in total_&lt;/p>
+3h 23min means 13 hours and 23 minutes in total.&lt;/p>
 &lt;/blockquote>
 &lt;h3 id="violated-response-time">Violated response time&lt;/h3>
 &lt;p>Specific privileges are required for this report. Only people belonging to a
@@ -681,12 +681,12 @@ shows:&lt;/p>
 &lt;p>for the specified time frame. The result lists shows the current status of the
 tickets.&lt;/p>
 &lt;blockquote>
-&lt;p>Solution times are based on office hours. Hence an average solution time of
+&lt;p>Solution times are based on office hours. Hence, an average solution time of
 12d 3h 5min means 99 hours and 5 minutes in total.&lt;/p>
 &lt;/blockquote>
 &lt;p>The waiting time can be excluded by ticking the checkbox &amp;ldquo;exclude waiting time&amp;rdquo;.
 In case a ticket gets re-opened the metrics calculation starts again from
-scratch. Hence the same ticket can appear several times in the solution times
+scratch. Hence, the same ticket can appear several times in the solution times
 calculation.&lt;/p>
 &lt;h2 id="input-parameters-and-results">Input parameters and results&lt;/h2>
 &lt;h3 id="input-parameters">Input parameters&lt;/h3>
