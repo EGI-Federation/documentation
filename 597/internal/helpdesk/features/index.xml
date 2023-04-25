@@ -566,10 +566,11 @@ ticket to a support unit the expected response timestamp is calculated by adding
 an amount of time to the assign timestamp. The amount of time added depends on
 the ticket priority and the kind of support unit. For support units that have
 declared a quality of service level the response times are defined by the
-&lt;a href="../quality-of-support-levels">QoS level&lt;/a>. For all the other support units a
-medium QoS is assumed for calculating the expected response timestamp. In case
-the actual response timestamp is greater than the &amp;ldquo;expected response&amp;rdquo; timestamp
-for middleware support units the &amp;ldquo;violate&amp;rdquo; flag is set.&lt;/p>
+&lt;a href="../quality-of-support-levels">QoS level&lt;/a>. For all the
+other support units a medium QoS is assumed for calculating the expected
+response timestamp. In case the actual response timestamp is greater than the
+&amp;ldquo;expected response&amp;rdquo; timestamp for middleware support units the &amp;ldquo;violate&amp;rdquo; flag is
+set.&lt;/p>
 &lt;p>&lt;em>Response times are based on office hours. Hence the results unit is working
 days.&lt;/em>&lt;/p>
 &lt;h4 id="solution-time">Solution time&lt;/h4>
@@ -692,7 +693,67 @@ parameters are:&lt;/p>
 &lt;li>Date aggregation&lt;/li>
 &lt;/ul>
 &lt;h4 id="time-frame">Time frame&lt;/h4>
-&lt;p>The time frame defi&lt;/p></description></item><item><title>Internal: Team tickets</title><link>/internal/helpdesk/features/team-tickets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/team-tickets/</guid><description>
+&lt;p>The time frame defines begin and end date of the report. The begin date starts
+at 00:00:00. The end date ends at 00:00:00. As the implementation of the report
+generator started in October 2011 the report generator does not provide data for
+tickets submitted before December 2011!&lt;/p>
+&lt;h4 id="responsible-units">Responsible Units&lt;/h4>
+&lt;p>The drop-down list offers all responsible units integrated in GGUS system. They
+can be filtered by keywords. Responsible Units can be either selected all, one
+by one or by checking the boxes in front of the responsible unit groups. In case
+no responsible units are selected all responsible units are considered in the
+reports.&lt;/p>
+&lt;h4 id="status">Status&lt;/h4>
+&lt;p>The drop-down list offers all status values available in GGUS system. Multiple
+selections are possible.&lt;/p>
+&lt;h4 id="priority">Priority&lt;/h4>
+&lt;p>The drop-down list offers all priority values available in GGUS system. Multiple
+selections are possible.&lt;/p>
+&lt;h4 id="concerned-vo">Concerned VO&lt;/h4>
+&lt;p>&amp;ldquo;Concerned VO&amp;rdquo; provides a drop-down list of all VOs supported by GGUS. Multiple
+selections are possible.&lt;/p>
+&lt;h4 id="ticket-type">Ticket type&lt;/h4>
+&lt;p>This drop-down list lists all ticket types in GGUS. Multiple selections are
+possible.&lt;/p>
+&lt;h4 id="ticket-category">Ticket category&lt;/h4>
+&lt;p>Selectable categories are &amp;ldquo;Incident&amp;rdquo;, &amp;ldquo;Change request&amp;rdquo;, &amp;ldquo;Documentation&amp;rdquo;, &amp;ldquo;Test&amp;rdquo;.
+Multiple selections are possible. The category &amp;ldquo;Test&amp;rdquo; should not be considered
+for all reports and therefore, if necessary, be excluded from the selection.&lt;/p>
+&lt;h4 id="ticket-scope">Ticket scope&lt;/h4>
+&lt;p>To distinguish between tickets under the responsibility of EGI or WLCG.&lt;/p>
+&lt;h4 id="notified-site">Notified site&lt;/h4>
+&lt;p>&amp;ldquo;Notified site&amp;rdquo; lists all sites integrated in GGUS. They are derived from GOC DB
+and OIM DB. In case of reporting exclusively on tickets without any site value
+specified please ticket the &amp;ldquo;blank&amp;rdquo; value in the drop-down list.&lt;/p>
+&lt;h4 id="technology-provider">Technology Provider&lt;/h4>
+&lt;p>This input parameter is only visible if choosing the &amp;ldquo;violated response time&amp;rdquo;
+report. For accessing this report specific privileges are required. The
+drop-down list offers all technology providers currently integrated in GGUS and
+the &amp;ldquo;DMSU&amp;rdquo;. Multiple selections are possible. In case no technology provider is
+selected the reports will be done for tickets without any technology provider
+specified.&lt;/p>
+&lt;h4 id="date-aggregation">Date aggregation&lt;/h4>
+&lt;p>The results aggregation level can be chosen from the drop down list &amp;ldquo;Choose date
+aggregation&amp;rdquo;.&lt;/p>
+&lt;h4 id="group-by">Group by&lt;/h4>
+&lt;p>Results can be grouped by one or more of the input parameters.&lt;/p>
+&lt;h3 id="results">Results&lt;/h3>
+&lt;p>The results are displayed below the input parameter area. They can be sorted in
+different ways by clicking on the column labels. A drill-down is possible by
+clicking on any row of the results list. The detail results open in a new
+window. They can be sorted by clicking the column labels too. Clicking on the
+ticket ID opens the ticket in GGUS system. At the bottom of the result panel
+there are various icons offering features like:&lt;/p>
+&lt;ul>
+&lt;li>Search&lt;/li>
+&lt;li>Refresh&lt;/li>
+&lt;li>Export&lt;/li>
+&lt;li>Export what you see&lt;/li>
+&lt;/ul>
+&lt;p>Doing a simple &lt;em>&amp;ldquo;Export&amp;rdquo;&lt;/em> saves the data in a csv file stripping all column
+headers. For exporting the data including the column headers please use &lt;em>&amp;ldquo;Export
+what you see&amp;rdquo;&lt;/em>. The &lt;em>&amp;ldquo;Search&amp;rdquo;&lt;/em> feature allows searching in the result list.
+Possible search parameters are the columns of the result list.&lt;/p></description></item><item><title>Internal: Team tickets</title><link>/internal/helpdesk/features/team-tickets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/team-tickets/</guid><description>
 &lt;h2 id="introduction-purpose-and-conditions">Introduction: purpose and conditions&lt;/h2>
 &lt;ul>
 &lt;li>The purpose of TEAM tickets is to allow all team members to modify all tickets
