@@ -16,22 +16,22 @@ in the EGI federated infrastructure.
 
 The content is organised according to four different skill levels:
 
-* **FOUNDATION** (or entry level): provides an overview of the
+* **Foundation** (or entry level): provides an overview of the
   EGI federation and of the EGI services, with highlights
   of their typical use cases.
-* **INTERMEDIATE**: provides details on individual services from
+* **Intermediate**: provides details on individual services from
   the EGI owned service portfolio, as well as services that are
   offered by the broader EGI community to complement the EGI services
   towards certain types of advanced computing use cases.
-* **ADVANCED** (for more expert users): provides a deep-diving
+* **Advanced** (for more expert users): provides a deep-diving
   on the advanced services to conduct world-class research and innovation
   will be presented.
-* **SCIENTIFIC**: presents examples of domain-specific Thematic Services
+* **Scientific**: presents examples of domain-specific Thematic Services
   benefiting from the solutions offered by the EGI Infrastructure.
 
 To get you started, click on the training modules available below!
 
-## FOUNDATION LEVEL
+## Foundation Level
 
 <table>
 <tr>
@@ -111,7 +111,7 @@ federation, and will show how these services benefit research, science and innov
 </tr>
 </table>
 
-## INTERMEDIATE LEVEL
+## Intermediate Level
 
 <table>
 <tr>
@@ -468,7 +468,7 @@ will be relevant for researchers, and IT-service providers who support research 
 </tr>
 </table>
 
-## ADVANCED LEVEL
+## Advanced Level
 
 <table>
 <tr>
@@ -678,7 +678,7 @@ and the new one-shop-stop sysadmin toolbox built around arcctl.
 </tr>
 </table>
 
-## SCIENTIFIC LEVEL
+## Scientific Level
 
 <table>
 <tr>
@@ -814,3 +814,15 @@ to serve COVID-related projects.
 </td>
 </tr>
 </table>
+
+## Do you have a specific training request?
+
+Contact us at support@egi.eu, we will be happy to discuss it with you!
+
+<b>Find out more</b>:
+<ul>
+<li>We have a comprehensive series of free webinars.</li>
+<li>Learn more about the EGI Webinars & Training
+Programme at: https://www.egi.eu/trainings-and-webinars/
+or visit the Youtube channel: https://www.youtube.com/@EGI_eInfra/</li>
+</ul>
