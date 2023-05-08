@@ -296,7 +296,7 @@ infn
 infngrid
 infosites
 installable
-Instrumentación
+Instrumentacion
 integrators
 interoperation
 ipykernel
@@ -463,7 +463,7 @@ Phedex
 pkce
 plgrid
 podman
-Politècnica
+Politecnica
 postcss
 poweron
 poznan
@@ -616,7 +616,6 @@ userinfo
 userjdoe
 userkey
 uwsgi
-València
 validgrid
 vcpus
 vda
