@@ -45,7 +45,7 @@ webinar for you!
 <td>
 <i>"An introduction to EGI" (October, 2021)</i>
 <br/><br/>  
-Recording: https://www.youtube.com/watch?v=X1VAp3O6AtY&t=114s
+Recording: <a href="https://www.youtube.com/watch?v=X1VAp3O6AtY&t=114s">Youtube</a>.
 <br/><br/>
 <b>About</b>: The EGI Federation is an international e-Infrastructure to provide
 advanced computing and data analytics services for research and innovation.
@@ -70,7 +70,7 @@ services to conduct world-class research and innovation.
 <td>
 <i>"EGI Federation - Advanced Computing for Research" (April 2020)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5083/ 
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5083/">https://indico.egi.eu/event/5083/</a>
 <br/><br/>
 <b>About</b>: The EGI federation is the largest distributed computing
 infrastructure in the world, and brings together hundreds of data centres
@@ -121,7 +121,7 @@ federation, and will show how these services benefit research, science and innov
 <td>
 <i>"Data Management in EGI with Rucio and FTS" (October, 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5711/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5711/">https://indico.egi.eu/event/5711/</a>
 <br/><br/>
 <b>About</b>: Rucio (https://rucio.cern.ch/) is a data management software, originally developed
 for ATLAS at CERN to supersede their previous data management software 10 years ago. Since then
@@ -147,7 +147,7 @@ in order to schedule transfers.
 <td>
 <i>"Using EGI Cloud infrastructure with fedcloudclient" (September, 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5694/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5694/">https://indico.egi.eu/event/5694/</a>
 <br/><br/>
 <b>About</b>: The FedCloud client is a high-level Python package for a command-line client
 designed for interaction with the OpenStack services in the EGI infrastructure. The client
@@ -164,7 +164,7 @@ The webinar will provide tutorial and demonstration of using fedcloudclient in E
 <td>
 <i>"Using Dynamic DNS service in the EGI Cloud infrastructure" (June, 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5559/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5559/">https://indico.egi.eu/event/5559/</a>
 <br/><br/>
 <b>About</b>: Nowadays, more and more services are dynamically deployed in Cloud environments.
 Usually, the services hosted on virtual machines in Cloud are accessible only via IP addresses
@@ -191,7 +191,7 @@ to Check-in for authenticating users and managing their access rights.
 <i>"Providing controlled access to distributed resources and services with EGI Check-in:
 the provider perspective"(May, 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5494/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5494/">https://indico.egi.eu/event/5494/</a>
 <br/><br/>
 <b>About</b>: This webinar will help new services to integrate with Check-in,
 the EGI Authentication & Authorisation Infrastructure enabling secure access
@@ -212,7 +212,7 @@ research and education.
 <td>
 <i>"Access and analyze data from the EGI DataHub with Jupyter notebooks and MATLAB" (May, 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5499/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5499/">https://indico.egi.eu/event/5499/</a>
 <br/><br/>
 <b>About</b>: Good, clean data is hard to come by. The EGI provides scientists and
 researchers access to a large collection of public datasets from data centres globally.
@@ -236,7 +236,7 @@ In this webinar, you will learn how to:
 <td>
 <i>"Monitoring services with ARGO" (May, 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5496/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5496/">https://indico.egi.eu/event/5496/</a>
 <br/><br/>
 <b>About</b>: <a href="https://argo.egi.eu/">ARGO</a> is a lightweight
 service for Service Level Monitoring designed for medium and large sized
@@ -272,7 +272,7 @@ ARGO is a service jointly developed and maintained by
 <td>
 <i>"Managing Singularity, Docker and udocker containers, Kubernetes clusters in the EGI Cloud" (April, 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5492/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5492/">https://indico.egi.eu/event/5492/</a>
 <br/><br/>
 <b>About</b>: Containers provide a streamlined way to build, test, deploy,
 and redeploy applications on different environments: from the developer’s
@@ -292,7 +292,7 @@ clusters to get your containers under control executed on EGI cloud providers.
 <td>
 <i>"DIRAC Services for EGI users" (October, 2020)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5267/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5267/">https://indico.egi.eu/event/5267/</a>
 <br/><br/>
 <b>About</b>: DIRAC is a complete framework for building distributed computing systems
 of any level of complexity. Initially developed for the LHCb High Energy Physics experiment
@@ -313,7 +313,7 @@ custom services will also be discussed.
 <td>
 <i>"EGI Operations and responsibilities of an NGI" (October 2020)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5268/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5268/">https://indico.egi.eu/event/5268/</a>
 <br/><br/>
 <b>About</b>: This webinar will give an overview of tried and tested approaches to
 federated operations, both at the level of the infrastructure as well as at the national
@@ -331,7 +331,7 @@ from the topics covered.
 <td>
 <i>"CernVM-FS for Containers" (October 2020)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5251/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5251/">https://indico.egi.eu/event/5251/</a>
 <br/><br/>
 <b>About</b>: Delivering complex software stacks across a worldwide distributed system
 is a challenge in high-throughput scientific computing. The global-scale virtual file
@@ -357,7 +357,7 @@ This makes it easy to set up, build and test and deploy-to-cvmfs pipelines on ku
 <td>
 <i>"The EGI Datahub to federate distributed data sets for data-intensive applications in the cloud" (June 2020)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5089/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5089/">https://indico.egi.eu/event/5089/</a>
 <br/><br/>
 <b>About</b>: The EGI DataHub allows users to make their data available using different
 levels of access: from completely unrestricted open access to open data to authenticated
@@ -382,7 +382,7 @@ environments based on EGI DataHub and Onedata solutions will be introduced.
 <td>
 <i>"The EGI AAI Check-In service for scientific communities" (May 2020)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5088/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5088/">https://indico.egi.eu/event/5088/</a>
 <br/><br/>
 <b>About</b>: The EGI Check-in service (also called EGI AAI proxy) enables access to
 EGI services and resources using federated authentication mechanisms. Specifically,
@@ -422,7 +422,7 @@ workflows for addressing non-web-based access use cases (e.g. command line and A
 <td>
 <i>"The EGI Notebooks service: Support for analytics and big data visualisation in the cloud" (May 2020)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5087/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5087/">https://indico.egi.eu/event/5087/</a>
 <br/><br/>
 <b>About</b>: The EGI Notebooks service is an environment based on Jupyter and the
 EGI cloud service that offers a browser-based, scalable tool for interactive data analysis.
@@ -446,7 +446,7 @@ he will explain how to use it with Binder and other open-source solutions to imp
 <td>
 <i>"Introduction of the EGI Cloud Compute service" (April 2020)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5085/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5085/">https://indico.egi.eu/event/5085/</a>
 <br/><br/>
 <b>About</b>: The EGI Federated Cloud is a IaaS-type cloud, made of academic private
 clouds and virtualized resources and built around open standards. Its development is
@@ -479,7 +479,8 @@ or applying (distributed) deep learning at any level.
 <td>
 <i>"Webinar: Distributed Deep Learning with Horovod" (March, 2023)</i>
 <br/><br/>
-Agenda, slides and recording: https://www.egi.eu/event/webinar-distributed-deep-learning-with-horovod/
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/webinar-distributed-deep-learning-with-horovod/">https://www.egi.eu/event/webinar-distributed-deep-learning-with-horovod/</a>
 <br/><br/>
 <b>About</b>: This webinar is focused on the Horovod distributed deep learning framework
 and the reference architecture and service(s) built for supporting it. The aim of
@@ -496,7 +497,7 @@ continuous development.
 <td>
 <i>"FAIR EVA (Evaluator, Validator & Advisor)" (April, 2022)”</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5876/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5876/">https://indico.egi.eu/event/5876/</a>
 <br/><br/>
 <b>About</b>: FAIR EVA (Evaluator, Validator and Advisor) has been developed to check
 the FAIRness level of digital objects from different repositories or data portals.
@@ -515,7 +516,7 @@ to different data systems.
 <td>
 <i>"OpenRDM - FAIR research data management as a service to the scientific community" (January, 2022)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5753/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5753/">https://indico.egi.eu/event/5753/</a>
 <br/><br/>
 <b>About</b>: <a href="https://openbis.ch/index.php/openrdm-swiss/">openRDM.eu</a>
 provides FAIR research data management. It offers research data management as a service
@@ -539,7 +540,7 @@ research projects in different quantitative sciences.
 <td>
 <i>"How to train your AI models in EOSC", (Dec. 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5742/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5742/">https://indico.egi.eu/event/5742/</a>
 <br/><br/>
 <b>About</b>: Learn how you can train and develop AI models in EOSC using the distributed and federated
 computing infrastructure of EGI and the services developed during the Deep Hybrid DataCloud project.
@@ -557,7 +558,7 @@ The webinar, sponsored by the EGI-ACE project, covers:
 <td>
 <i>"How to orchestrate services in the EOSC Compute Platform with the INDIGO PaaS" (Oct. 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5720/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5720/">https://indico.egi.eu/event/5720/</a>
 <br/><br/>
 <b>About</b>: The INDIGO PaaS implements an abstraction and federation layer on top
 of heterogeneous distributed computing environments: it allow to orchestrate and
@@ -578,7 +579,7 @@ system using both the command line interface and the web dashboard.
 <td>
 <i>"Analyze your data using DODAS generated cluster" (September, 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5695/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5695/">https://indico.egi.eu/event/5695/</a>
 <br/><br/>
 <b>About</b>: DODAS enables the execution of user analysis code both in batch mode
 and interactively via the Jupyter interface. DODAS is highly customizable and offers
@@ -600,7 +601,7 @@ In this webinar we will explain the DODAS fundamentals and we will provide a use
 <td>
 <i>"Running containers in your user space with udocker" (June, 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5541/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5541/">https://indico.egi.eu/event/5541/</a>
 <br/><br/>
 <b>About</b>: udocker enables the execution of docker containers in user
 space without requiring root privileges for installation or use. Udocker
@@ -627,7 +628,7 @@ who support research and education.
 <td>
 <i>"Deploying virtual infrastructures with Infrastructure Manager (IM)" (May, 2021)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5495/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5495/">https://indico.egi.eu/event/5495/</a>
 <br/><br/>
 <b>About</b>: The <a href="https://im.egi.eu/">Infrastructure Manager (IM)</a> is a framework that eases the
 access and the usability of IaaS clouds by automating the VMI selection, deployment,
@@ -657,7 +658,7 @@ ARC CE or planning a migration to ARC from the CREAM platform.
 <td>
 <i>"Rolling out ARC6 CE" (July 2020)</i>
 <br/><br/>
-Agenda, slides and recording: https://youtu.be/tvhsyRy9CB4
+Agenda, slides and recording: <a href="https://youtu.be/tvhsyRy9CB4">Youtube</a>
 <br/><br/>
 <b>About</b>: The Advanced Resource Connector (ARC) middleware integrates computing resources
 (usually, computing clusters managed by a batch system), making them available via a secure
@@ -694,7 +695,7 @@ and the new one-shop-stop sysadmin toolbox built around arcctl.
 <td>
 <i>"The EGI-ACE webODV – Online  extraction, analysis and visualisation of SeaDataNet and Argo data" (Nov. 2022)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5980/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5980/">https://indico.egi.eu/event/5980/</a>
 <br/><br/>
 <b>About</b>: ODV (Ocean Data View) is a widely used software package for the analysis,
 exploration and visualization of oceanographic and other environmental data with almost
@@ -720,7 +721,7 @@ to perform analytics, extractions, and visualisations will also be presented.
 <td>
 <i>"Can deep learning models help accelerate electrostatics-driven protein pKa predictions?" (Nov. 2022)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5981/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5981/">https://indico.egi.eu/event/5981/</a>
 <br/><br/>
 <b>About</b>: pH is a crucial physicochemical property that affects proteins molecular structure,
 folding, stability, and function. Many computational methods have been developed to calculate
@@ -746,7 +747,7 @@ being up to 1000x faster.
 <td>
 <i>"The Virtual Imaging Platform: Scientific Applications as a Service and Beyond" (March, 2022)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5824/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5824/">https://indico.egi.eu/event/5824/</a>
 <br/><br/>
 <b>About</b>: The Virtual Imaging Platform (VIP) is a web portal for medical simulation
 and image data analysis. It leverages resources available in the EGI biomed Virtual
@@ -770,7 +771,7 @@ benefit from EGI biomed resources in a transparent way and</li>
 <td>
 <i>"ENES Data Space Service" (March, 2022)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5743/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5743/">https://indico.egi.eu/event/5743/</a>
 <br/><br/>
 <b>About</b>: The ENES Data Space delivers an open, scalable and cloud-enabled data science
 environment for climate data analysis on top of the EOSC Compute Platform. It provides access
@@ -792,7 +793,7 @@ over more than 10 years to provide services to worldwide researchers in structur
 <td>
 <i>"WeNMR - Structural biology in the cloud - 10 years of experience of using EGI services" (April 2020)</i>
 <br/><br/>
-Agenda, slides and recording: https://indico.egi.eu/event/5083/
+Agenda, slides and recording: <a href="https://indico.egi.eu/event/5083/">https://indico.egi.eu/event/5083/</a>
 <br/><br/>
 <b>About</b>: Structural biology deals with the characterization of the structural
 (atomic coordinates) and dynamic (fluctuation of atomic coordinates over time) properties
@@ -823,6 +824,7 @@ Contact us at support@egi.eu, we will be happy to discuss it with you!
 <ul>
 <li>We have a comprehensive series of free webinars.</li>
 <li>Learn more about the EGI Webinars & Training
-Programme at: https://www.egi.eu/trainings-and-webinars/
-or visit the Youtube channel: https://www.youtube.com/@EGI_eInfra/</li>
+Programme at:
+<a href="https://www.egi.eu/trainings-and-webinars/">https://www.egi.eu/trainings-and-webinars/</a>
+or visit the <a href="https://www.youtube.com/@EGI_eInfra/">Youtube channel</a>.</li>
 </ul>
