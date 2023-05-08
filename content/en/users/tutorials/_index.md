@@ -886,8 +886,8 @@ virtual infrastructures (Kubernetes, SLURM, Mesos, Galaxy, …) in top of a wide
 with a single set of mouse clicks.
 <br/><br/>
 IM has been developed by the <a href="http://www.grycap.upv.es/">Grid and High Performance Computing Group (GRyCAP)</a>
-at the <a href="http://www.i3m.upv.es/">Instituto de Instrumentación para Imagen Molecular (I3M)</a>
-from the <a href="http://www.upv.es/">Universitat Politècnica de València (UPV)</a>.
+at the <a href="http://www.i3m.upv.es/">Instituto de Instrumentacion para Imagen Molecular (I3M)</a>
+from the <a href="http://www.upv.es/">Universitat Politecnica de Valencia (UPV)</a>.
 </td>
 </tr>
 <tr>
