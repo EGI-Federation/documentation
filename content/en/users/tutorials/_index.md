@@ -44,8 +44,15 @@ webinar for you!
 </td>
 <td>
 <i>"An introduction to EGI" (October, 2021)</i>
-<br/><br/>  
-Recording: <a href="https://www.youtube.com/watch?v=X1VAp3O6AtY&t=114s">Youtube</a>.
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/X1VAp3O6AtY"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen></iframe>
 <br/><br/>
 <b>About</b>: The EGI Federation is an international e-Infrastructure to provide
 advanced computing and data analytics services for research and innovation.
