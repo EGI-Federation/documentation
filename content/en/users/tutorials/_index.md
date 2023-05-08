@@ -113,6 +113,77 @@ federation, and will show how these services benefit research, science and innov
 
 ## INTERMEDIATE LEVEL
 
+<table>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, developers, integrators and end users.
+</td>
+<td>
+<i>"Data Management in EGI with Rucio and FTS" (October, 2021)</i>
+<br/><br/>
+Agenda: https://indico.egi.eu/event/5711/
+<br/><br/>
+<b>About</b>: Rucio (https://rucio.cern.ch/) is a data management software, originally developed
+for ATLAS at CERN to supersede their previous data management software 10 years ago. Since then
+Rucio has been constantly developed by ATLAS and other communities that have come to use Rucio,
+ensuring that it is a feature rich, and well maintained open software.
+<br/><br/>
+Multi-VO Rucio implemented by the STFC in the UK hosts Rucio as a service for many communities.
+This is to provide communities the opportunity to use Rucio for their data management solution,
+without having to learn about, and host their own instance of Rucio.
+<br/><br/>
+FTS ( https://fts.web.cern.ch/fts/ ) is a low level data movement service, responsible for
+reliable bulk transfer of files between storages. It’ s responsible for globally distributing
+the majority of the LHC data across the WLCG infrastructure and it supports many communities is EGI. 
+<br/><br/>
+In this webinar we introduce the main functionalities and show how to interact with the services
+in order to schedule transfers. 
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, developers, integrators and end users.
+</td>
+<td>
+<i>"Using EGI Cloud infrastructure with fedcloudclient" (September, 2021)</i>
+<br/><br/>
+Agenda: https://indico.egi.eu/event/5694/
+<br/><br/>
+<b>About</b>: The FedCloud client is a high-level Python package for a command-line client
+designed for interaction with the OpenStack services in the EGI infrastructure. The client
+can access various EGI services and can perform many tasks for users including managing
+access tokens, listing services, and mainly execute commands on OpenStack sites in EGI infrastructure.
+<br/><br/>
+The webinar will provide tutorial and demonstration of using fedcloudclient in EGI Cloud infrastructure.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, developers, IT service providers, and end users.
+</td>
+<td>
+<i>"Using Dynamic DNS service in the EGI Cloud infrastructure" (June, 2021)</i>
+<br/><br/>
+Agenda: https://indico.egi.eu/event/5559/
+<br/><br/>
+<b>About</b>: Nowadays, more and more services are dynamically deployed in Cloud environments.
+Usually, the services hosted on virtual machines in Cloud are accessible only via IP addresses
+or pre-configured hostnames given by the target Cloud providers, making it difficult to provide
+them with meaningful domain names.
+<br/><br/>
+The Dynamic DNS service provides a unified, federation-wide Dynamic DNS support for VMs in
+EGI infrastructure. Users can register their chosen meaningful and memorable DNS host names
+in given domains (e.g. my-server.vo.fedcloud.eu) and assign to public IPs of their servers.
+By using Dynamic DNS, users can host services in EGI Cloud with their meaningful service names,
+can freely move VMs from sites to sites without modifying server/client configurations (federated approach),
+and can request valid server certificates in advance (critical for security).
+<br/><br/>
+The webinar will provide demonstration and tutorial, also practical advice on using Dynamic DNS
+service in realistic user scenarios.
+</td>
+</tr>
+</table>
+
 ## ADVANCED LEVEL
 
 ## SCIENTIFIC LEVEL
