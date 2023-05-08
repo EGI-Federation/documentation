@@ -285,6 +285,187 @@ for executing containers in EGI infrastructure and will show how to manage Kuber
 clusters to get your containers under control executed on EGI cloud providers.
 </td>
 </tr>
+<tr>
+<td>
+<b>Target Audience</b>: Users and application experts of the EGI communities.
+</td>
+<td>
+<i>"DIRAC Services for EGI users" (October, 2020)</i>
+<br/><br/>
+Agenda, slides and recording: https://indico.egi.eu/event/5267/
+<br/><br/>
+<b>About</b>: DIRAC is a complete framework for building distributed computing systems
+of any level of complexity. Initially developed for the LHCb High Energy Physics experiment
+at the LHC collider at CERN, the framework was generalised for the use by multiple scientific
+communities in various domains. Services based on the DIRAC software are offered by several
+grid infrastructure projects such as France-Grilles or GridPP/UK. Since 2014, the DIRAC services
+have also been provided for the EGI users. During the webinar, an overview of the DIRAC framework
+will be presented together with a number of services offered to the users by EGI: how to manage
+user jobs in the EGI infrastructure, how to connect custom computing and storage resources,
+how to manage user data as well as automate regular tasks. Extending DIRAC with community
+custom services will also be discussed.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: IT service providers, site and NGI operation managers (new member of staff).
+</td>
+<td>
+<i>"EGI Operations and responsibilities of an NGI" (October 2020)</i>
+<br/><br/>
+Agenda, slides and recording: https://indico.egi.eu/event/5268/
+<br/><br/>
+<b>About</b>: This webinar will give an overview of tried and tested approaches to
+federated operations, both at the level of the infrastructure as well as at the national
+level. It will cover the most important aspects and day-to-day work covered by staff -
+both at the international infrastructure level at EGI as well as at an example National Grid
+Initiative (NGI). Example scenarios will be presented along with the tools used to deal with
+the scenarios. Finally there will be an opportunity for questions and discussions arising
+from the topics covered.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Site administrators and cluster administrators; CVMFS power users.
+</td>
+<td>
+<i>"CernVM-FS for Containers" (October 2020)</i>
+<br/><br/>
+Agenda, slides and recording: https://indico.egi.eu/event/5251/
+<br/><br/>
+<b>About</b>: Delivering complex software stacks across a worldwide distributed system
+is a challenge in high-throughput scientific computing. The global-scale virtual file
+system CernVM-FS distributes more than a billion software binaries to hundreds of thousands
+of machines around the world.
+<br/><br/>
+In this webinar, we will present the latest developments with regard to CernVM-FS container
+integration. Containers and CernVM-FS team up nicely: containers provide the isolation
+capabilities that decouple the application stack from the underlying platform and CernVM-FS
+provides efficient distribution means for the containerized software binaries. Containers are
+an enabling technology to harness opportunistic resources and HPC facilities. CernVM-FS enables
+the use of such resources at scale. In this webinar, we will show how existing repositories can
+be used with several popular container runtimes, such as docker, podman, singularity, and kubernetes.
+We will also show how operating system containers themselves can be efficiently distributed through
+CernVM-FS. Lastly, we will highlight an upcoming new way of publishing content from within a container.
+This makes it easy to set up, build and test and deploy-to-cvmfs pipelines on kubernetes.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, and IT-service providers who support research and education.
+</td>
+<td>
+<i>"The EGI Datahub to federate distributed data sets for data-intensive applications in the cloud" (June 2020)</i>
+<br/><br/>
+Agenda, slides and recording: https://indico.egi.eu/event/5089/
+<br/><br/>
+<b>About</b>: The EGI DataHub allows users to make their data available using different
+levels of access: from completely unrestricted open access to open data to authenticated
+access to closed data sets. This is possible as a result of the seamless integration with
+the EGI AAI service. The data hosted on the EGI DataHub can be readily accessible by cloud
+Virtual Machines (VMs) or running grid jobs thanks to full integration with EGI Federated
+Cloud and High-Throughput compute resources. The use of protocols such as POSIX and web
+services guarantees easy and scalable access to data from cloud and HTC applications. This
+ensures maximum compatibility with existing applications and minimum hassle for developers
+and users alike. The EGI DataHub is built on top of the EGI Open Data Platform using Onedata
+technology to connect a wide range of existing storage services, regardless of their underlying
+technology (e.g. Lustre, Amazon S3, Ceph, NFS, or dCache).
+<br/><br/>
+During this webinar the QoS and hybrid cloud data processing scenarios for distributed EOSC
+environments based on EGI DataHub and Onedata solutions will be introduced.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities and IT-service providers who operate IdP for them.
+</td>
+<td>
+<i>"The EGI AAI Check-In service for scientific communities" (May 2020)</i>
+<br/><br/>
+Agenda, slides and recording: https://indico.egi.eu/event/5088/
+<br/><br/>
+<b>About</b>: The EGI Check-in service (also called EGI AAI proxy) enables access to
+EGI services and resources using federated authentication mechanisms. Specifically,
+the proxy service is operated as a central hub between federated Identity Providers
+(IdPs) residing ‘outside’ of the EGI ecosystem, and Service Providers (SPs) that are
+part of EGI. The main advantage of this design principle is that all entities need to
+establish and maintain technical and trust relation only to a single entity,
+the EGI AAI proxy, instead of managing many-to-many relationships. In this context,
+the proxy acts as a Service Provider towards the Identity Providers and as an Identity
+Provider towards the Service Providers.
+<br/><br/>
+Through the EGI AAI proxy, users are able to authenticate with the credentials
+provided by the IdP of their Home Organisation (e.g. via eduGAIN), as well as using
+social identity providers, or other selected external identity providers (support for
+eGOV IDs is also foreseen). To achieve this, the EGI AAI has built-in support for SAML,
+OpenID Connect and OAuth2 providers and already enables user logins through Facebook,
+Google, LinkedIn, and ORCID. In addition to serving as an authentication proxy, the
+EGI AAI provides a central Discovery Service (Where Are You From – WAYF) for users to
+select their preferred IdP.
+<br/><br/>
+The EGI AAI proxy is also responsible for aggregating user attributes originating
+from various authoritative sources (IdPs and attribute provider services) and
+delivering them to the connected EGI service providers in a harmonised and
+transparent way. Service Providers can use the received attributes for authorisation
+purposes, i.e. determining the resources the user has access to.
+<br/><br/>
+During this webinar we will give an overview about the service and provide
+guidelines to support the resource providers’ and communities' needs for federated
+access through the EGI AAI Check-In service. The webinar will also cover more advanced
+workflows for addressing non-web-based access use cases (e.g. command line and API).
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, for programmers and IT-service providers who support research and education.
+</td>
+<td>
+<i>"The EGI Notebooks service: Support for analytics and big data visualisation in the cloud" (May 2020)</i>
+<br/><br/>
+Agenda, slides and recording: https://indico.egi.eu/event/5087/
+<br/><br/>
+<b>About</b>: The EGI Notebooks service is an environment based on Jupyter and the
+EGI cloud service that offers a browser-based, scalable tool for interactive data analysis.
+The notebooks environment provides users with notebooks where they can combine text,
+mathematics, computations and rich media output. The service, in production since late 2019,
+is offered in two options: (i) Notebooks for researchers: EGI offers a basic instance of the
+Notebooks as an open service. Any researcher can access this automatically to write and play
+notebooks on limited capacity cloud servers. (ii) Notebooks for communities: EGI offers customised
+Notebooks service to scientific communities. Such customised instances can be hosted on special
+hardware (for example with fat nodes and GPUs), can offer special libraries, data import/export
+and user authentication systems.
+<br/><br/>
+During the webinar Enol will go through the main features of the EGI Notebooks service and
+he will explain how to use it with Binder and other open-source solutions to implement Open Science.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Researchers, and IT-service providers who support research and education.
+</td>
+<td>
+<i>"Introduction of the EGI Cloud Compute service" (April 2020)</i>
+<br/><br/>
+Agenda, slides and recording: https://indico.egi.eu/event/5085/
+<br/><br/>
+<b>About</b>: The EGI Federated Cloud is a IaaS-type cloud, made of academic private
+clouds and virtualized resources and built around open standards. Its development is
+driven by requirements of the scientific community. The result is a new type of research
+e-infrastructure, based on the mature federated operations services that make EGI a reliable
+resource for science.
+<br/><br/>
+When using EGI Federated Cloud resources, researchers and research communities can
+count on: a.) Total control over deployed applications, b.) Elastic resource consumption
+based on real need, c.) Immediately processed workloads – no more waiting time,
+d.) An extended e-Infrastructure across resource providers in Europe, and
+e.) Service performance scaled with elastic resource consumption.
+<br/><br/>
+In this webinar an overview of the EGI Federated Cloud and how this scalable computing
+platform can be used for data and/or compute driven research and/or support the development
+of advanced services for research and science will be provided by Enol Fernandez. The webinar
+will be relevant for researchers, and IT-service providers who support research and education.
+</td>
+</tr>
 </table>
 
 ## ADVANCED LEVEL
