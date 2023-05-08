@@ -70,7 +70,7 @@ services to conduct world-class research and innovation.
 <td>
 <i>"EGI Federation - Advanced Computing for Research" (April 2020)</i>
 <br/><br/>
-Agenda: https://indico.egi.eu/event/5083/ 
+Agenda, slides and recording: https://indico.egi.eu/event/5083/ 
 <br/><br/>
 <b>About</b>: The EGI federation is the largest distributed computing
 infrastructure in the world, and brings together hundreds of data centres
@@ -121,7 +121,7 @@ federation, and will show how these services benefit research, science and innov
 <td>
 <i>"Data Management in EGI with Rucio and FTS" (October, 2021)</i>
 <br/><br/>
-Agenda: https://indico.egi.eu/event/5711/
+Agenda, slides and recording: https://indico.egi.eu/event/5711/
 <br/><br/>
 <b>About</b>: Rucio (https://rucio.cern.ch/) is a data management software, originally developed
 for ATLAS at CERN to supersede their previous data management software 10 years ago. Since then
@@ -147,7 +147,7 @@ in order to schedule transfers.
 <td>
 <i>"Using EGI Cloud infrastructure with fedcloudclient" (September, 2021)</i>
 <br/><br/>
-Agenda: https://indico.egi.eu/event/5694/
+Agenda, slides and recording: https://indico.egi.eu/event/5694/
 <br/><br/>
 <b>About</b>: The FedCloud client is a high-level Python package for a command-line client
 designed for interaction with the OpenStack services in the EGI infrastructure. The client
@@ -164,7 +164,7 @@ The webinar will provide tutorial and demonstration of using fedcloudclient in E
 <td>
 <i>"Using Dynamic DNS service in the EGI Cloud infrastructure" (June, 2021)</i>
 <br/><br/>
-Agenda: https://indico.egi.eu/event/5559/
+Agenda, slides and recording: https://indico.egi.eu/event/5559/
 <br/><br/>
 <b>About</b>: Nowadays, more and more services are dynamically deployed in Cloud environments.
 Usually, the services hosted on virtual machines in Cloud are accessible only via IP addresses
@@ -180,6 +180,109 @@ and can request valid server certificates in advance (critical for security).
 <br/><br/>
 The webinar will provide demonstration and tutorial, also practical advice on using Dynamic DNS
 service in realistic user scenarios.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Developers and administrators of relying parties that want to connect
+to Check-in for authenticating users and managing their access rights.
+</td>
+<td>
+<i>"Providing controlled access to distributed resources and services with EGI Check-in:
+the provider perspective"(May, 2021)</i>
+<br/><br/>
+Agenda, slides and recording: https://indico.egi.eu/event/5494/
+<br/><br/>
+<b>About</b>: This webinar will help new services to integrate with Check-in,
+the EGI Authentication & Authorisation Infrastructure enabling secure access
+to relying parties. The target group of the training are developers and administrators
+of services that want to connect to Check-in for user authentication and authorisation.
+<br/><br/>
+The training will showcase the use of the EGI Check-In Federation Registry tool for
+managing the lifecycle of a relying party, i.e. registration, reconfiguration and
+de-registration. The training will include hands-on sessions for the participants
+to integrate their own relying party to Check-In.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities and IT-service providers who support
+research and education.
+</td>
+<td>
+<i>"Access and analyze data from the EGI DataHub with Jupyter notebooks and MATLAB" (May, 2021)</i>
+<br/><br/>
+Agenda, slides and recording: https://indico.egi.eu/event/5499/
+<br/><br/>
+<b>About</b>: Good, clean data is hard to come by. The EGI provides scientists and
+researchers access to a large collection of public datasets from data centres globally.
+This data can be accessed using the EGI Jupyter Notebook service. MATLAB users can now
+analyse this data using the familiar MATLAB desktop, via a web browser, on the EGI’s resources.
+<br/><br/>
+In this webinar, you will learn how to:
+<ol>
+<li>Use your MATLAB licence to login to the EGI MATLAB installation</li>
+<li>Access data from the EGI DataHub</li>
+<li>Read in scientific data into MATLAB</li>
+<li>Analyse and visualise data using computational notebooks called MATLAB Live Scripts.</li>
+<li>Share your MATLAB code with your peers.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities and IT-service providers.
+</td>
+<td>
+<i>"Monitoring services with ARGO" (May, 2021)</i>
+<br/><br/>
+Agenda, slides and recording: https://indico.egi.eu/event/5496/
+<br/><br/>
+<b>About</b>: <a href="https://argo.egi.eu/">ARGO</a> is a lightweight
+service for Service Level Monitoring designed for medium and large sized
+Research Infrastructures. Services are monitored with probes compatible
+with flexible and widely adopted Nagios plugin format. Besides basic availability
+checks, services can be monitored by emulating typical user scenarios that allows
+to derive the quality of service the actual user gets.
+<br/><br/>
+ARGO offers near real-time status updates which allow both end-users and site
+admins to have an overview of the services offered at any given point in time
+via a web user interface and via enriched email notifications. ARGO generates
+custom Availability and Reliability reports based on the aggregated monitoring
+data. The rich monitoring data collected in ARGO service is actually stored in
+a highly flexible big data friendly form using state-of-the-art computational
+pipelines and formats. This provides the ability to reuse & analyse the data in
+different ways such as to highlight service usage patterns and provide a number
+of trends and insights.
+<br/><br/>
+In this training session we are going to show the process we follow to monitor a
+new service with ARGO. In addition, the real time computations and the results via
+the alerts, API and UI will be shown.
+<br/><br/>
+ARGO is a service jointly developed and maintained by
+<a href="http://www.cnrs.fr/en">CNRS</a>,
+<a href="https://grnet.gr/en/">GRNET</a> and
+<a href="https://www.srce.unizg.hr/en/">SRCE</a>.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, and programmers who support research and education.
+</td>
+<td>
+<i>"Managing Singularity, Docker and udocker containers, Kubernetes clusters in the EGI Cloud" (April, 2021)</i>
+<br/><br/>
+Agenda, slides and recording: https://indico.egi.eu/event/5492/
+<br/><br/>
+<b>About</b>: Containers provide a streamlined way to build, test, deploy,
+and redeploy applications on different environments: from the developer’s
+local machine to any cloud provider. Containers make it easy for developers
+to package applications and for operators to manage and deploy those applications
+on the infrastructure. Container orchestrators like Kubernetes facilitate the
+management of containerized workloads and services, using declarative configuration
+and automation. In this webinar we will introduce the different runtimes available
+for executing containers in EGI infrastructure and will show how to manage Kubernetes
+clusters to get your containers under control executed on EGI cloud providers.
 </td>
 </tr>
 </table>
