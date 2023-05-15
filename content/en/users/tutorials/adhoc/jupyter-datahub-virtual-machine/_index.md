@@ -2,6 +2,8 @@
 title: "Create a VM with Jupyter and DataHub"
 type: docs
 weight: 100
+aliases:
+  - /users/tutorials/jupyter-datahub-virtual-machine
 description: >
   Step by step guide to get a Virtual Machine for Jupyter and DataHub in your
   cloud provider

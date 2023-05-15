@@ -3,6 +3,8 @@ title: Ad-hoc tutorials
 linkTitle: Ad-hoc
 type: docs
 weight: 50
+aliases:
+  - /users/tutorials
 description: >
   Step-by-step tutorials for common tasks in the EGI Infrastructure.
 ---

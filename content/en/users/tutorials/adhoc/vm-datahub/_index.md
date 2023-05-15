@@ -2,6 +2,8 @@
 title: "Access DataHub from a VM"
 type: docs
 weight: 40
+aliases:
+  - /users/tutorials/vm-datahub
 description: >
   Use data in EGI DataHub from a virtual machine
 ---

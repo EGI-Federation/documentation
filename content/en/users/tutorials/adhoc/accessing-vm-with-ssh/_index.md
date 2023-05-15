@@ -3,6 +3,8 @@ title: "Accessing virtual machines with SSH"
 linkTitle: "Access a VM with SSH"
 type: docs
 weight: 20
+aliases:
+  - /users/tutorials/accessing-vm-with-ssh
 description: "Accessing virtual machines with SSH"
 ---
 
