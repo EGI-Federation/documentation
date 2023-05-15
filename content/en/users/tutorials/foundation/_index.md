@@ -7,6 +7,8 @@ description: >
   These tutorials provides an overview of the EGI federation and of the EGI services, with highlights of their typical use cases.
 ---
 
+<!-- markdownlint-disable no-inline-html -->
+
 <table>
 <tr>
 <td>

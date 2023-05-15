@@ -7,6 +7,8 @@ description: >
   A deep dive on the advanced services to conduct world-class research and innovation.
 ---
 
+<!-- markdownlint-disable no-inline-html -->
+
 <table>
 <tr>
 <td>

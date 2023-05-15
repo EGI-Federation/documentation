@@ -7,6 +7,8 @@ description: >
   Examples of domain-specific Thematic Services benefiting from the solutions offered by the EGI Infrastructure.
 ---
 
+<!-- markdownlint-disable no-inline-html -->
+
 <table>
 <tr>
 <td>
