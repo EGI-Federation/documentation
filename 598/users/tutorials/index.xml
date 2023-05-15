@@ -1,4 +1,5 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Tutorials &amp; Guides</title><link>/users/tutorials/</link><description>Recent content in Tutorials &amp; Guides on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Foundation level</title><link>/users/tutorials/tutorials-foundation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/tutorials-foundation/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Tutorials &amp; Guides</title><link>/users/tutorials/</link><description>Recent content in Tutorials &amp; Guides on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Foundation level</title><link>/users/tutorials/foundation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/foundation/</guid><description>
+&lt;!-- markdownlint-disable no-inline-html -->
 &lt;table>
 &lt;tr>
 &lt;td>
@@ -95,7 +96,8 @@ through the services that EGI provides for scientific communities, and for the m
 federation, and will show how these services benefit research, science and innovation in Europe and worldwide.
 &lt;/td>
 &lt;/tr>
-&lt;/table></description></item><item><title>Users: Intermediate level</title><link>/users/tutorials/tutorials-intermediate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/tutorials-intermediate/</guid><description>
+&lt;/table></description></item><item><title>Users: Intermediate level</title><link>/users/tutorials/intermediate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/intermediate/</guid><description>
+&lt;!-- markdownlint-disable no-inline-html -->
 &lt;table>
 &lt;tr>
 &lt;td>
@@ -610,7 +612,8 @@ will be relevant for researchers, and IT-service providers who support research 
 &lt;/ul>
 &lt;/td>
 &lt;/tr>
-&lt;/table></description></item><item><title>Users: Advanced level</title><link>/users/tutorials/tutorials-advanced/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/tutorials-advanced/</guid><description>
+&lt;/table></description></item><item><title>Users: Advanced level</title><link>/users/tutorials/advanced/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/advanced/</guid><description>
+&lt;!-- markdownlint-disable no-inline-html -->
 &lt;table>
 &lt;tr>
 &lt;td>
@@ -908,7 +911,8 @@ ARC5-based deployment. Special attention will be given to the accounting system 
 and the new one-shop-stop sysadmin toolbox built around arcctl.
 &lt;/td>
 &lt;/tr>
-&lt;/table></description></item><item><title>Users: Scientific level</title><link>/users/tutorials/tutorials-scientific/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/tutorials-scientific/</guid><description>
+&lt;/table></description></item><item><title>Users: Scientific level</title><link>/users/tutorials/scientific/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/scientific/</guid><description>
+&lt;!-- markdownlint-disable no-inline-html -->
 &lt;table>
 &lt;tr>
 &lt;td>
@@ -1097,7 +1101,7 @@ to serve COVID-related projects.
 &lt;/ul>
 &lt;/td>
 &lt;/tr>
-&lt;/table></description></item><item><title>Users: Ad-hoc tutorials</title><link>/users/tutorials/tutorials-adhoc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/tutorials-adhoc/</guid><description>
+&lt;/table></description></item><item><title>Users: Ad-hoc tutorials</title><link>/users/tutorials/adhoc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The following guides and tutorials show you how to perform common tasks
 in the EGI infrastructure. Each of the following sections addresses a
