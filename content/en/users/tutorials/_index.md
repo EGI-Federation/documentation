@@ -16,17 +16,17 @@ in the EGI federated infrastructure.
 
 The content is organised according to four different skill levels:
 
-* [Foundation](tutorials-foundation/) (or entry level): provides an
+* [Foundation](foundation/) (or entry level): provides an
   overview of the EGI federation and of the EGI services, with highlights
   of their typical use cases.
-* [Intermediate](tutorials-intermediate/): provides details on individual
+* [Intermediate](intermediate/): provides details on individual
   services from the EGI owned service portfolio, as well as services that are
   offered by the broader EGI community to complement the EGI services
   towards certain types of advanced computing use cases.
-* [Advanced](tutorials-advanced/) (for more expert users): provides a
+* [Advanced](advanced/) (for more expert users): provides a
   deep-diving on the advanced services to conduct world-class research
   and innovation will be presented.
-* [Scientific](tutorials-scientific/): presents examples of domain-specific
+* [Scientific](scientific/): presents examples of domain-specific
   Thematic Services benefiting from the solutions offered by the
   EGI Infrastructure.
 
