@@ -293,7 +293,7 @@ Agenda, slides and recording: <a href="https://indico.egi.eu/event/5157/">https:
 (usually, computing clusters managed by a batch system), making them available via a secure
 common layer. Conceptually, ARC provides an edge service to batch systems. Through this service,
 called ARC Compute Element (ARC-CE), scientific communities can launch and manage computational
-tasks in a uniform manner. 
+tasks in a uniform manner.
 <br/><br/>
 A bit more than a year ago a non backward compatible major version, the ARC6.0 was released
 bringing new functionality, enhanced manageability and increased stability to the community.

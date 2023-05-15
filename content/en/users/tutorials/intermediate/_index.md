@@ -9,7 +9,7 @@ description: >
   to complement the EGI services towards certain types of advanced computing use cases.
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+<!-- markdownlint-disable line-length no-inline-html -->
 
 <table>
 <tr>
@@ -42,10 +42,10 @@ without having to learn about, and host their own instance of Rucio.
 <br/><br/>
 FTS ( https://fts.web.cern.ch/fts/ ) is a low level data movement service, responsible for
 reliable bulk transfer of files between storages. It’ s responsible for globally distributing
-the majority of the LHC data across the WLCG infrastructure and it supports many communities is EGI. 
+the majority of the LHC data across the WLCG infrastructure and it supports many communities is EGI.
 <br/><br/>
 In this webinar we introduce the main functionalities and show how to interact with the services
-in order to schedule transfers. 
+in order to schedule transfers.
 <br/><br/>
 <b>Suggested tutorials</b>
 <ul>
