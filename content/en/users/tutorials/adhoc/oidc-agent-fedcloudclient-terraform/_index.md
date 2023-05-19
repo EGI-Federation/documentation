@@ -2,6 +2,8 @@
 title: "Automate with oidc-agent, fedcloudclient, terraform and Ansible"
 type: docs
 weight: 150
+aliases:
+  - /users/tutorials/oidc-agent-fedcloudclient-terraform
 description: >
   Step by step guide to automating the deployment using Ansible with Terraform,
   oidc-agent and fedcloudclient

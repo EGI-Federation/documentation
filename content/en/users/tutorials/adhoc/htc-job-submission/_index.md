@@ -2,6 +2,8 @@
 title: "Submitting HTC Jobs"
 type: docs
 weight: 160
+aliases:
+  - /users/tutorials/htc-job-submission
 description: >
   Submitting High Throughput Compute jobs
 ---

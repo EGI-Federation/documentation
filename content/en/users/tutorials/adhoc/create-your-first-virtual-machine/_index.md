@@ -2,6 +2,8 @@
 title: "Create your first Virtual Machine (VM)"
 type: docs
 weight: 10
+aliases:
+  - /users/tutorials/create-your-first-virtual-machine
 description: >
   Step by step guide to get your first Virtual Machine up and running
 ---
