@@ -1,0 +1,121 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Online Storage</title><link>/providers/online-storage/</link><description>Recent content in Online Storage on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/providers/online-storage/index.xml" rel="self" type="application/rss+xml"/><item><title>Providers: Access MinIO with EGI Check-in Virtual Organisations</title><link>/providers/online-storage/minio-oidc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/online-storage/minio-oidc/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This tutorial describes how to configure access to
+&lt;a href="https://min.io/docs/minio/linux/operations/external-iam.html">MinIO console&lt;/a>
+using &lt;a href="../../../users/aai/check-in/">EGI Check-in&lt;/a> as external OpenID Connect Identity
+Provider.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Be familiar with the steps to configure an OpenID Connect Service Provider with
+&lt;a href="../../../providers/check-in/sp/#openid-connect-service-provider">EGI Check-in&lt;/a>.&lt;/p>
+&lt;p>This tutorial assumes that:&lt;/p>
+&lt;ul>
+&lt;li>You have a valid EGI ID (account), you can
+&lt;a href="../../../users/aai/check-in//signup">sign up here&lt;/a>.&lt;/li>
+&lt;li>You are a member of a
+&lt;a href="../../../users/aai/check-in//joining-virtual-organisation">Virtual Organisation&lt;/a>.&lt;/li>
+&lt;li>You have deployed MinIO and have access to the console as &lt;code>admin&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-1-get-the-oidc-entitlement-for-the-virtual-organisation">Step 1: Get the OIDC entitlement for the Virtual Organisation&lt;/h2>
+&lt;p>See the
+&lt;a href="../../../users/aai/check-in//obtaining-tokens/token-portal/">page about getting tokens from Check-in&lt;/a>.
+You will get a &lt;code>curl&lt;/code> command to get your OIDC entitlements.&lt;/p>
+&lt;p>Select the entitlement for the Virtual Organisation that you want to
+enable access to. For example, here is the entitlement for the
+&lt;code>vo.access.egi.eu&lt;/code> Virtual Organisation:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>urn:mace:egi.eu:group:vo.access.egi.eu:role&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>member#aai.egi.eu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-2-configure-a-new-policy-in-minio-console">Step 2: Configure a new policy in MinIO console&lt;/h2>
+&lt;p>Go to &lt;code>https://&amp;lt;minio-console-endpoint&amp;gt;/identity/policies&lt;/code> and create a
+new policy, where:&lt;/p>
+&lt;ul>
+&lt;li>The name of the policy is the OIDC entitlement obtained in Step 1.&lt;/li>
+&lt;li>The policy is configured with the value below:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>{&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;#34;Version&amp;#34;: &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;2023-02-20&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;#34;Statement&amp;#34;: &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>{&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;#34;Effect&amp;#34;: &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Allow&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;#34;Action&amp;#34;: &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;s3:*&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">],&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;#34;Resource&amp;#34;: &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;arn:aws:s3:::${jwt:preferred_username}-*&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>}&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>}&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+&lt;p>Pay attention to the use of:&lt;/p>
+&lt;p>&lt;code>${jwt:preferred_username}*&lt;/code>&lt;/p>
+&lt;p>in the &lt;em>Amazon Resource Name&lt;/em> string:&lt;/p>
+&lt;p>&lt;code>arn:aws:s3:::${jwt:preferred_username}*&lt;/code>&lt;/p>
+&lt;p>This will allow every user full control of their own buckets under
+&lt;code>s3://preferred_username-&lt;/code> prefix, and restrict access to other users&amp;rsquo; buckets.&lt;/p>
+&lt;/div>
+&lt;p>See the
+&lt;a href="https://min.io/docs/minio/linux/administration/identity-access-management/policy-based-access-control.html">official MinIO documentation&lt;/a>
+for more details.&lt;/p>
+&lt;h2 id="step-3-configure-egi-check-in-as-external-openid-connect-identity-provider">Step 3: Configure EGI Check-in as external OpenID Connect Identity Provider&lt;/h2>
+&lt;h3 id="step-31-add-service-to-egi-federation-registry">Step 3.1: Add service to EGI Federation Registry&lt;/h3>
+&lt;p>Follow the steps to configure an OpenID Connect Service Provider with
+&lt;a href="../../../providers/check-in/sp/#openid-connect-service-provider">EGI Check-in&lt;/a>.&lt;/p>
+&lt;p>Apart from selecting &lt;code>OIDC Service&lt;/code> as the &lt;code>protocol&lt;/code> when adding this service
+to the &lt;a href="https://aai.egi.eu/federation/">EGI Federation Registry&lt;/a>, you should
+use the below as the &lt;code>Redirect URI&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>https://&amp;lt;minio-console-endpoint&amp;gt;/oauth_callback
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-32-configure-minio-console">Step 3.2: Configure MinIO console&lt;/h3>
+&lt;p>Now configure &lt;a href="../../../users/aai/check-in/">EGI Check-in&lt;/a> as external OpenID Connect
+Identity Provider for MinIO.&lt;/p>
+&lt;p>Go to &lt;code>https://&amp;lt;minio-console-endpoint&amp;gt;/settings/configurations/identity_openid&lt;/code>
+and set the following values&lt;/p>
+&lt;ol>
+&lt;li>Config URL: get &lt;code>Provider configuration&lt;/code> value
+&lt;a href="../../../providers/check-in/sp/#endpoints">in the docs&lt;/a>.&lt;/li>
+&lt;li>Client ID: get value from Step 3.1 above.&lt;/li>
+&lt;li>Secret ID: get value from Step 3.1 above.&lt;/li>
+&lt;li>Claim Name: &lt;code>eduperson_entitlement&lt;/code>&lt;/li>
+&lt;li>Claim UserInfo: &lt;code>ON&lt;/code>&lt;/li>
+&lt;li>Redirect URI: &lt;code>https://&amp;lt;minio-console-endpoint&amp;gt;/oauth_callback&lt;/code>&lt;/li>
+&lt;li>Scopes: &lt;code>eduperson_entitlement,profile&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>Next you need to restart MinIO for the changes to take effect.&lt;/p>
+&lt;h2 id="step-4-access-minio-console-with-check-in">Step 4: Access MinIO console with Check-in&lt;/h2>
+&lt;p>All going well, when you restart MinIO and go back to the console endpoint
+you should see &lt;code>Login with SSO&lt;/code> login button.&lt;/p>
+&lt;p>Please note that you will only be able to create buckets with the
+&lt;code>&amp;lt;preferred_username&amp;gt;-&lt;/code> prefix. &lt;code>preferred_username&lt;/code> is an
+&lt;a href="https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes">OIDC claim&lt;/a>
+whose value can be obtained using the same &lt;code>curl&lt;/code> command as the one in Step 1
+above. For example, user &lt;code>John Doe&lt;/code> will have a &lt;code>preferred_username&lt;/code> similar to
+&lt;code>jdoe&lt;/code>. With the configuration detailed on this tutorial, he will be able to
+create buckets with the following names:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>s3://johndoe-private-bucket&lt;/code>&lt;/li>
+&lt;li>&lt;code>s3://johndoe-public-bucket&lt;/code>&lt;/li>
+&lt;li>etc.&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-5-command-line-interface">Step 5: Command-line interface&lt;/h2>
+&lt;p>Although the MinIO web interface allows you to manage buckets, advanced
+users may want to use the command-line interface. MinIO comes with its own
+&lt;a href="https://min.io/docs/minio/linux/reference/minio-mc.html#mc-install">client&lt;/a>,
+but it also works with S3-compatible tools. Go to the web interface and
+create &lt;code>access and secret keys&lt;/code> that you can use from the CLI.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>https://&amp;lt;minio-console-endpoint&amp;gt;/access-keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="known-issues">Known issues&lt;/h2>
+&lt;p>Below is the list known issues when working with this setup.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+&lt;p>When using the web console via Check-in, often you get this error message:&lt;/p>
+&lt;p>&lt;code>The Access Key Id you provided does not exist in our records.&lt;/code>&lt;/p>
+&lt;p>and suddenly you are not able to see your buckets or access keys.&lt;/p>
+&lt;p>Simply log out and log back in and the issue disappears.&lt;/p>
+&lt;/div>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+MinIO admin is not able to login via the web console after configuring
+the OpenID Connect Identity Provider. Check this
+&lt;a href="https://github.com/minio/console/issues/2135">issue on GitHub&lt;/a> for
+more details.
+&lt;/div></description></item></channel></rss>
