@@ -23,7 +23,7 @@ content/en/users/data/ @andrea-manzi @glarocca
 content/en/providers/datahub/ @andrea-manzi @glarocca
 
 # dev-env
-content/en/users/dev-env/ @enolfc @glarroca
+content/en/users/dev-env/ @enolfc @glarocca
 
 # FedCloud
 content/en/users/compute/ @enolfc @glarocca
@@ -41,7 +41,7 @@ content/en/users/training/ @glarocca @sebastian-luna-valero
 content/en/users/tutorials/ @enolfc @sebastian-luna-valero @glarocca
 
 # Workload Manager
-content/en/users/compute/orchestration/workload-manager/ @enolfc @glarocc
+content/en/users/compute/orchestration/workload-manager/ @enolfc @glarocca
 
 # Check-in 
 content/en/users/aai/ @vardizzo-lab
