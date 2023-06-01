@@ -32,7 +32,7 @@ content/en/providers/cloud-compute/ @enolfc @CatalinCondurache
 # Notebooks
 content/en/users/dev-env/notebooks/ @enolfc @andrea-manzi @sebastian-luna-valero @glarocca
 content/en/users/providers/notebooks/ @enolfc @andrea-manzi @sebastian-luna-valero
-content/en/users/dev-env/replay/ @enolfc @andrea-manzi @sebastian-luna-valero @glarroca
+content/en/users/dev-env/replay/ @enolfc @andrea-manzi @sebastian-luna-valero @glarocca
 
 # Training
 content/en/users/training/ @glarocca @sebastian-luna-valero
