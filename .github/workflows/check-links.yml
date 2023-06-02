@@ -3,6 +3,9 @@ name: Check links
 
 on:
   pull_request:
+  schedule:
+    # run on Sundays morning
+    - cron: '32 9 * * 0'
 
 jobs:
   markdown-link-check:
@@ -23,7 +26,7 @@ jobs:
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
           config-file: ".github/linters/mlc_config.json"
-          check-modified-files-only: "yes"
+          check-modified-files-only: "no"
           use-quiet-mode: "yes"
           use-verbose-mode: "yes"
           base-branch: "main"
