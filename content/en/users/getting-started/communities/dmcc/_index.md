@@ -156,7 +156,7 @@ To access data remotely stored in EGI DataHub like if they were local,
 using traditional POSIX command-line commands you need to install the
 `oneclient` component. For more details on how to install and configure
 the component, please see the
-[Access DataHub from a Virtual Machine](../../../tutorials/vm-datahub/)
+[Access DataHub from a Virtual Machine](../../../tutorials/adhoc/vm-datahub/)
 documentation. [Access via API](../../../data/management/datahub/api/)
 is also available and it’s leveraging the integration of the service with EGI Check-in.
 
@@ -165,7 +165,7 @@ your data in DataHub please contact our [Helpdesk](https://ggus.eu/).
 
 Additional tutorials may be relevant:
 
-* [Create a Virtual Machine with Jupyter and DataHub](../../../tutorials/jupyter-datahub-virtual-machine/)
+* [Create a Virtual Machine with Jupyter and DataHub](../../../tutorials/adhoc/jupyter-datahub-virtual-machine/)
 
 ### How to transfer your data to the EGI infrastructure via EGI Data Transfer
 
@@ -177,8 +177,8 @@ or a cloud storage implementing the S3 interface.
 
 Relevant tutorials:
 
-* [Data Transfer with Grid Storage](../../../tutorials/data-transfer-grid-storage/)
-* [Data Transfer with Object Storage](../../../tutorials/data-transfer-object-storage/)
+* [Data Transfer with Grid Storage](../../../tutorials/adhoc/data-transfer-grid-storage/)
+* [Data Transfer with Object Storage](../../../tutorials/adhoc/data-transfer-object-storage/)
 
 ### How to use the  EGI Data Orchestrator
 

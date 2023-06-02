@@ -14,7 +14,7 @@ the `oneclient` component or the [API](../api).
 
 The official documentation for `oneclient` is hosted on the
 [Onedata homepage](https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html),
-and a specific [tutorial](../../../../tutorials/vm-datahub) on how to install
+and a specific [tutorial](../../../../tutorials/adhoc/vm-datahub) on how to install
 and use it from a Virtual Machine is also available.
 
 ## Using the web interface
