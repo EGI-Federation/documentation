@@ -88,7 +88,7 @@ EGI services use the following types of access conditions:
   but it is possible with various institutional accounts (through
   [EduGAIN](https://edugain.org)), or with social accounts (e.g. Google). For
   example you can
-  [create a test Virtual Machine](../tutorials/create-your-first-virtual-machine/)
+  [create a test Virtual Machine](../tutorials/adhoc/create-your-first-virtual-machine/)
   or launch a [Jupyter Notebook](../dev-env/notebooks/).
 - **Policy based** - Users are granted access based on specific policies defined
   by the service providers. Access needs to be requested, and will be checked
