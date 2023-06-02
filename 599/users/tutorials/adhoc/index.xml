@@ -2,11 +2,11 @@
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to create your first Virtual Machine in the EGI Federation.&lt;/p>
 &lt;h2 id="step-1-signing-up">Step 1: Signing up&lt;/h2>
-&lt;p>Create an EGI account with &lt;a href="../../aai/check-in/signup">Check-in&lt;/a>.&lt;/p>
+&lt;p>Create an EGI account with &lt;a href="../../../aai/check-in/signup">Check-in&lt;/a>.&lt;/p>
 &lt;h2 id="step-2-enrolling-to-a-virtual-organisation">Step 2: Enrolling to a Virtual Organisation&lt;/h2>
 &lt;p>Once your EGI account is ready you need to join a
 &lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation (VO)&lt;/a>.
-Here are the steps to &lt;a href="../../aai/check-in/joining-virtual-organisation/">join a VO&lt;/a>.
+Here are the steps to &lt;a href="../../../aai/check-in/joining-virtual-organisation/">join a VO&lt;/a>.
 Explore the list of available VOs in the
 &lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations Portal&lt;/a>.
 We have a dedicated VO called
@@ -17,18 +17,18 @@ access to the &lt;em>vo.access.egi.eu&lt;/em> VO with your EGI account by visiti
 &lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">AppDB&lt;/a> to see the list of
 Virtual Appliances and Resource Providers participating in the &lt;em>vo.access.egi.eu&lt;/em> VO.
 AppDB is one of the service in the
-&lt;a href="../../getting-started/architecture/">EGI Architecture&lt;/a>.&lt;/p>
+&lt;a href="../../../getting-started/architecture/">EGI Architecture&lt;/a>.&lt;/p>
 &lt;h2 id="step-3-creating-a-vm">Step 3: Creating a VM&lt;/h2>
 &lt;p>Once your membership to a VO has been approved you are ready to create your first
 Virtual Machine. There are several ways to achieve this. The simplest way is to
-use a web dashboard like &lt;a href="../../compute/cloud-compute/monitor">VMOps Dashboard&lt;/a> or
-&lt;a href="../../compute/orchestration/im/dashboard">Infrastructure Manager Dashboard&lt;/a>.
+use a web dashboard like &lt;a href="../../../compute/cloud-compute/monitor">VMOps Dashboard&lt;/a> or
+&lt;a href="../../../compute/orchestration/im/dashboard">Infrastructure Manager Dashboard&lt;/a>.
 On the other hand, advanced users
-may prefer to use the &lt;a href="../../getting-started/cli">command-line interface&lt;/a>.&lt;/p>
+may prefer to use the &lt;a href="../../../getting-started/cli">command-line interface&lt;/a>.&lt;/p>
 &lt;p>To know more about the &lt;a href="https://www.egi.eu/service/cloud-compute/">Cloud Compute&lt;/a>
-Service in EGI please visit its &lt;a href="../../compute/cloud-compute">dedicated section&lt;/a>.&lt;/p>
+Service in EGI please visit its &lt;a href="../../../compute/cloud-compute">dedicated section&lt;/a>.&lt;/p>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
-&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Accessing virtual machines with SSH</title><link>/users/tutorials/adhoc/accessing-vm-with-ssh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/accessing-vm-with-ssh/</guid><description>
+&lt;p>If you find issues please do not hesitate to &lt;a href="../../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Accessing virtual machines with SSH</title><link>/users/tutorials/adhoc/accessing-vm-with-ssh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/accessing-vm-with-ssh/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This page provides an introduction of connecting from a local computer to a
 cloud host via SSH. It provides general guidelines, SSH options, tips, and
@@ -56,7 +56,7 @@ reference documentation on
 &lt;a href="https://docs.openstack.org/image-guide/obtain-images.html">obtaining images&lt;/a>.&lt;/li>
 &lt;li>For custom virtual machine images you need to refer to your virtual machine image
 provider (i.e. it could be something specific like &lt;code>cloudadm&lt;/code>).&lt;/li>
-&lt;li>For virtual machines deployed with &lt;a href="../../compute/orchestration/im/">Infrastructure Manager&lt;/a>
+&lt;li>For virtual machines deployed with &lt;a href="../../../compute/orchestration/im/">Infrastructure Manager&lt;/a>
 the default username is &lt;code>cloudadm&lt;/code>.&lt;/li>
 &lt;/ul>
 &lt;blockquote>
@@ -186,9 +186,9 @@ with:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># connect from A to B&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ssh centos@192.168.1.3
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="infrastructure-manager-im">Infrastructure Manager (IM)&lt;/h2>
-&lt;p>The &lt;a href="../../compute/orchestration/im/">Infrastructure Manager (IM)&lt;/a> provides the SSH key that can be used to connect
+&lt;p>The &lt;a href="../../../compute/orchestration/im/">Infrastructure Manager (IM)&lt;/a> provides the SSH key that can be used to connect
 to the virtual machine in the VM
-&lt;a href="../../compute/orchestration/im/dashboard/#vm-info-page">info page of the IM-Dashboard&lt;/a>.&lt;/p>
+&lt;a href="../../../compute/orchestration/im/dashboard/#vm-info-page">info page of the IM-Dashboard&lt;/a>.&lt;/p>
 &lt;p>The page shows the information related with the virtual machine: the IP, the
 username (usually &lt;code>cloudadm&lt;/code>), and the SSH key.&lt;/p>
 &lt;h2 id="token-based-authentication">Token-based authentication&lt;/h2>
@@ -200,7 +200,7 @@ your local machine.&lt;/p>
 &lt;p>The Infrastructure Manager (IM) can &lt;code>Enable SSH OIDC access to the VM&lt;/code> in
 virtual machines by selecting the related &lt;code>Optional Features&lt;/code>.&lt;/p></description></item><item><title>Users: Access DataHub from a VM</title><link>/users/tutorials/adhoc/vm-datahub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/vm-datahub/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>This tutorial describes the access to &lt;a href="../../data/management/datahub">EGI DataHub&lt;/a> spaces
+&lt;p>This tutorial describes the access to &lt;a href="../../../data/management/datahub">EGI DataHub&lt;/a> spaces
 from a virtual machine. In the following paragraphs you will learn how to
 access data remotely stored in EGI DataHub like if they were local, using
 traditional POSIX command-line commands, by:&lt;/p>
@@ -210,8 +210,8 @@ traditional POSIX command-line commands, by:&lt;/p>
 &lt;/ul>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>In order to access the EGI DataHub data you need an
-&lt;a href="../../aai/check-in">EGI Check-in&lt;/a> account. If you don&amp;rsquo;t have one yet
-you can &lt;a href="../../aai/check-in/signup">Sign up for an EGI account&lt;/a>.&lt;/p>
+&lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> account. If you don&amp;rsquo;t have one yet
+you can &lt;a href="../../../aai/check-in/signup">Sign up for an EGI account&lt;/a>.&lt;/p>
 &lt;h2 id="oneclient-installation">Oneclient installation&lt;/h2>
 &lt;p>The installation of &lt;code>oneclient&lt;/code> package is currently supported for:&lt;/p>
 &lt;ul>
@@ -233,7 +233,7 @@ have docker installed), you can run the following command:&lt;/p>
 ease the transfer of data.&lt;/p>
 &lt;h2 id="getting-the-token-to-access-data">Getting the token to access data&lt;/h2>
 &lt;p>In order to access data stored in EGI DataHub via oneclient,
-you need to &lt;a href="../../data/management/datahub/api/#getting-an-api-access-token">get an API access token&lt;/a>.&lt;/p>
+you need to &lt;a href="../../../data/management/datahub/api/#getting-an-api-access-token">get an API access token&lt;/a>.&lt;/p>
 &lt;h2 id="using-oneclient">Using oneclient&lt;/h2>
 &lt;p>Once you have acquired a token valid for oneclient you can configure it
 on the environment as follows:&lt;/p>
@@ -272,7 +272,7 @@ synchronise images from AppDB but is not part of the federation.&lt;/p>
 &lt;p>This tutorial assumes you have:&lt;/p>
 &lt;ul>
 &lt;li>A valid EGI account: learn to can create one in
-&lt;a href="../../aai/check-in/signup">Check-in&lt;/a>.&lt;/li>
+&lt;a href="../../../aai/check-in/signup">Check-in&lt;/a>.&lt;/li>
 &lt;li>Access to a cloud provider where the
 &lt;a href="https://appdb.egi.eu/store/vappliance/jupyter.datahub.vm">Jupyter DataHub VM is available&lt;/a>.
 Alternatively, this VM can be run on your computer using a virtualisation tool
@@ -285,7 +285,7 @@ like VirtualBox.&lt;/li>
 learn how to start a VM at EGI&amp;rsquo;s Federated Cloud infrastructure.&lt;/p>
 &lt;p>This VM does not contain any default credentials, in order to access it you need
 a ssh key. Check
-&lt;a href="../../compute/cloud-compute/faq/#how-can-i-inject-my-public-ssh-key-into-the-machine">this FAQ entry&lt;/a>
+&lt;a href="../../../compute/cloud-compute/faq/#how-can-i-inject-my-public-ssh-key-into-the-machine">this FAQ entry&lt;/a>
 for more information. If you are starting this VM on VirtualBox, you will need
 to pass some valid context for cloud-init, see
 &lt;a href="https://superuser.com/a/853957">here how to prepare it&lt;/a>.&lt;/p>
@@ -293,7 +293,7 @@ to pass some valid context for cloud-init, see
 accessing the notebooks interface. Make sure your have those ports open on your
 security groups, otherwise you will not be able to reach the Jupyter notebooks.&lt;/p>
 &lt;p>Once your instance is ready,
-&lt;a href="../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm">assign it a public IP&lt;/a>
+&lt;a href="../../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm">assign it a public IP&lt;/a>
 so you can reach it from your computer.&lt;/p>
 &lt;h3 id="step-2-get-a-hostname-and-certificate-for-your-vm">Step 2: Get a hostname and certificate for your VM&lt;/h3>
 &lt;p>Your VM is ready to be accessible, but runs a plain HTTP server, which is not
@@ -304,7 +304,7 @@ a message as shown in the screenshot below:&lt;/p>
 safer and more secure.&lt;/p>
 &lt;p>Firstly, you need a valid name for your VM. You can use the
 &lt;a href="https://nsupdate.fedcloud.eu">FedCloud Dynamic DNS&lt;/a> to create a name. See
-&lt;a href="../../compute/cloud-compute/dynamic-dns/">Dynamic DNS docs&lt;/a> for more
+&lt;a href="../../../compute/cloud-compute/dynamic-dns/">Dynamic DNS docs&lt;/a> for more
 information on the service. Once you have your name ready, assign it your VM&amp;rsquo;s
 IP.&lt;/p>
 &lt;p>Secondly, you need to get a certificate to enable HTTPS. The VM has
@@ -352,11 +352,11 @@ Jupyter or via ssh. For example for installing &lt;code>tensorflow&lt;/code>:&lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ micromamba install -c conda-forge tensorflow
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-mount-datahub-spaces">Step 5: Mount DataHub spaces&lt;/h3>
 &lt;p>Log into &lt;a href="https://datahub.egi.eu/">EGI&amp;rsquo;s DataHub&lt;/a> and
-&lt;a href="../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis">create a token&lt;/a>
+&lt;a href="../../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis">create a token&lt;/a>
 for mounting your data in the VM.&lt;/p>
 &lt;p>You will also need the IP or address of your closest Oneprovider for the spaces
 you are interested in accessing. This information is easily obtainable via
-&lt;a href="../../data/management/datahub/clients/#using-the-web-interface">DataHub&amp;rsquo;s web interface&lt;/a>.&lt;/p>
+&lt;a href="../../../data/management/datahub/clients/#using-the-web-interface">DataHub&amp;rsquo;s web interface&lt;/a>.&lt;/p>
 &lt;p>Go to your Jupyter session in your browser and edit the &lt;code>mount.sh&lt;/code> file in your
 home directory. Set the &lt;code>ONECLIENT_ACCESS_TOKEN&lt;/code> and &lt;code>ONECLIENT_PROVIDER_HOST&lt;/code>
 values to get access to DataHub:&lt;/p>
@@ -368,21 +368,21 @@ from your Jupyter interface&lt;/p></description></item><item><title>Users: Autom
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to create a Virtual Machine in the EGI Federation,
 leveraging &lt;a href="https://indigo-dc.gitbook.io/oidc-agent/">oidc-agent&lt;/a> to retrieve
-ODIC tokens from &lt;a href="../../aai/check-in">EGI Check-in&lt;/a>,
+ODIC tokens from &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a>,
 &lt;a href="https://fedcloudclient.fedcloud.eu/">fedcloudclient&lt;/a> to simplify interacting
-with the &lt;a href="../../compute/cloud-compute">EGI Cloud Compute service&lt;/a>,
+with the &lt;a href="../../../compute/cloud-compute">EGI Cloud Compute service&lt;/a>,
 &lt;a href="https://www.terraform.io">terraform&lt;/a> and &lt;a href="https://www.ansible.com/">Ansible&lt;/a> to
 simplify deploying an infrastructure.
-&lt;a href="../../compute/cloud-compute/dynamic-dns">EGI Dynamic DNS&lt;/a> is also used to
+&lt;a href="../../../compute/cloud-compute/dynamic-dns">EGI Dynamic DNS&lt;/a> is also used to
 assign a domain name to the virtual machine, which can then be used to get a
 valid TLS certificate from &lt;a href="https://letsencrypt.org/">Let&amp;rsquo;s Encrypt&lt;/a>.&lt;/p>
 &lt;h2 id="step-1-signing-up-for-an-egi-check-in-account">Step 1: Signing up for an EGI Check-in account&lt;/h2>
-&lt;p>Create an EGI account with &lt;a href="../../aai/check-in/signup">Check-in&lt;/a>.&lt;/p>
+&lt;p>Create an EGI account with &lt;a href="../../../aai/check-in/signup">Check-in&lt;/a>.&lt;/p>
 &lt;h2 id="step-2-enrolling-to-a-virtual-organisation">Step 2: Enrolling to a Virtual Organisation&lt;/h2>
 &lt;p>Once your EGI account is ready you need to join a
 &lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisation (VO)&lt;/a>.
 Here are the steps to
-&lt;a href="../../aai/check-in/joining-virtual-organisation/">join a VO&lt;/a>. Explore the list
+&lt;a href="../../../aai/check-in/joining-virtual-organisation/">join a VO&lt;/a>. Explore the list
 of available VOs in the
 &lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations Portal&lt;/a>. We have a
 dedicated VO called
@@ -393,7 +393,7 @@ the &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:240">enrolme
 Check &lt;a href="https://appdb.egi.eu/store/vo/vo.access.egi.eu">AppDB&lt;/a> to see the list of
 Virtual Appliances and Resource Providers participating in the
 &lt;em>vo.access.egi.eu&lt;/em> VO. AppDB is one of the service in the
-&lt;a href="../../getting-started/architecture/">EGI Architecture&lt;/a>.&lt;/p>
+&lt;a href="../../../getting-started/architecture/">EGI Architecture&lt;/a>.&lt;/p>
 &lt;blockquote>
 &lt;p>This tutorial will assume you are using &lt;code>vo.access.egi.eu&lt;/code>, adapt as required
 for your specific environment.&lt;/p>
@@ -402,8 +402,8 @@ for your specific environment.&lt;/p>
 &lt;p>Once your membership to a VO has been approved you are ready to create your
 first Virtual Machine.&lt;/p>
 &lt;p>The OpenID Connect (OIDC) protocol is used to authenticate users and authorise
-access to &lt;a href="../../compute/cloud-compute/">Cloud Compute&lt;/a> resources that are
-integrated with &lt;a href="../../aai/check-in/">EGI Check-in&lt;/a>.&lt;/p>
+access to &lt;a href="../../../compute/cloud-compute/">Cloud Compute&lt;/a> resources that are
+integrated with &lt;a href="../../../aai/check-in/">EGI Check-in&lt;/a>.&lt;/p>
 &lt;p>While it&amp;rsquo;s not mandatory, a convenient way to manage the OIDC token is to use
 &lt;a href="#setting-up-oidc-agent">oidc-agent&lt;/a>.&lt;/p>
 &lt;h3 id="setting-up-oidc-agent">Setting up oidc-agent&lt;/h3>
@@ -489,7 +489,7 @@ to request access.&lt;/p>
 &lt;/blockquote>
 &lt;h3 id="deploying-the-virtual-machine-with-terraform">Deploying the Virtual Machine with terraform&lt;/h3>
 &lt;p>Instead of creating the server manually, it is possible to use
-&lt;a href="../../compute/cloud-compute/openstack/#terraform">terraform with EGI Cloud Compute&lt;/a>.&lt;/p>
+&lt;a href="../../../compute/cloud-compute/openstack/#terraform">terraform with EGI Cloud Compute&lt;/a>.&lt;/p>
 &lt;p>The
 &lt;a href="https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs">Terraform OpenStack provider&lt;/a>
 provides official documentation.&lt;/p>
@@ -672,7 +672,7 @@ virtual machine using a fully qualified hostname and allowing to retrieve a
 &lt;a href="https://letsencrypt.org/">Let&amp;rsquo;s Encrypt certificate&lt;/a>.&lt;/p>
 &lt;blockquote>
 &lt;p>Please look at the
-&lt;a href="../../compute/cloud-compute/dynamic-dns/">EGI Dynamic DNS documentation&lt;/a> for
+&lt;a href="../../../compute/cloud-compute/dynamic-dns/">EGI Dynamic DNS documentation&lt;/a> for
 instructions on creating the configuration for a new host.&lt;/p>
 &lt;/blockquote>
 &lt;p>The
@@ -793,7 +793,7 @@ Compute.&lt;/li>
 providing documentation for automated on-demand execution of Docker containers&lt;/li>
 &lt;/ul>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
-&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with grid storage</title><link>/users/tutorials/adhoc/data-transfer-grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/data-transfer-grid-storage/</guid><description>
+&lt;p>If you find issues please do not hesitate to &lt;a href="../../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with grid storage</title><link>/users/tutorials/adhoc/data-transfer-grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/data-transfer-grid-storage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
 WebFTS. In the following paragraphs you will learn how to:&lt;/p>
@@ -804,16 +804,16 @@ WebFTS. In the following paragraphs you will learn how to:&lt;/p>
 &lt;p>to perform data transfers between two Grid storage.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>As first step please make sure that you have installed the FTS client as
-described in &lt;a href="../../data/management/data-transfer">Data Transfer&lt;/a>, and in particular
-&lt;a href="../../data/management/data-transfer/clients">Clients&lt;/a> for the command-line FTS and to have
+described in &lt;a href="../../../data/management/data-transfer">Data Transfer&lt;/a>, and in particular
+&lt;a href="../../../data/management/data-transfer/clients">Clients&lt;/a> for the command-line FTS and to have
 your certificate installed in your browser to use
-&lt;a href="../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
+&lt;a href="../../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
 &lt;p>To access services and resources in the
-&lt;a href="../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
+&lt;a href="../../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
 &lt;ul>
-&lt;li>An &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> account, you can
-&lt;a href="../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
-&lt;li>Enrollment into a &lt;a href="../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+&lt;li>An &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> account, you can
+&lt;a href="../../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
+&lt;li>Enrollment into a &lt;a href="../../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
 access to the services and resources you need&lt;/li>
 &lt;/ul>
 &lt;h2 id="fts-client-usage">FTS client usage&lt;/h2>
@@ -960,7 +960,7 @@ additional details. The reason for the failure of a job which can be seen by
 moving the mouse pointer over the &lt;code>File ID&lt;/code> on the detailed view.&lt;/p></description></item><item><title>Users: Submitting HTC Jobs</title><link>/users/tutorials/adhoc/htc-job-submission/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/htc-job-submission/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes how to submit
-&lt;a href="../../compute/high-throughput-compute">High Throughput Compute (HTC)&lt;/a> jobs
+&lt;a href="../../../compute/high-throughput-compute">High Throughput Compute (HTC)&lt;/a> jobs
 using command-line.&lt;/p>
 &lt;blockquote>
 &lt;p>This tutorial is meant for somewhat advanced users or the ones willing or
@@ -1001,7 +1001,7 @@ distribution, but it will also require additional software and configuration.&lt
 &lt;li>Deploying an UI manually, using the packages available from
 &lt;a href="https://go.egi.eu/umd">UMD repositories&lt;/a>. You will need to install at least
 the &lt;code>ui&lt;/code> meta-package, the
-&lt;a href="../../../providers/operations-manuals/howto01_using_igtf_ca_distribution">IGTF distribution&lt;/a>,
+&lt;a href="../../../../providers/operations-manuals/howto01_using_igtf_ca_distribution">IGTF distribution&lt;/a>,
 and
 &lt;a href="#configuring-the-system-to-use-voms-client">configure the system to use voms-client&lt;/a>.&lt;/li>
 &lt;li>Some
@@ -1020,7 +1020,7 @@ installed.&lt;/li>
 &lt;a href="https://github.com/EGI-Federation/ui-deployment">ui-deployment&lt;/a> provides a
 &lt;a href="https://terraform.io">terraform&lt;/a> based deployment allowing to deploy a
 &lt;code>User Interface (UI)&lt;/code> in a
-&lt;a href="../../compute/cloud-compute">Cloud Compute virtual machine&lt;/a>. This integrated
+&lt;a href="../../../compute/cloud-compute">Cloud Compute virtual machine&lt;/a>. This integrated
 deployment is based on the Ansible modules, and should be adjusted to your
 environment and needs.&lt;/li>
 &lt;/ul>
@@ -1050,7 +1050,7 @@ using the proper &lt;code>.vomses&lt;/code> and &lt;code>.lsc&lt;/code> files, b
 on the VOMS server of the specific VO.&lt;/p>
 &lt;ul>
 &lt;li>as an example with &lt;code>dteam&lt;/code>, you can find the VOMS server address in the
-&lt;a href="../../../internal/operations-portal">Operations Portal&lt;/a>:
+&lt;a href="../../../../internal/operations-portal">Operations Portal&lt;/a>:
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/dteam">https://operations-portal.egi.eu/vo/view/voname/dteam&lt;/a>.
 Then looking at
 &lt;a href="https://voms2.hellasgrid.gr:8443/voms/dteam/configuration/configuration.action">dteam VOMS configuration&lt;/a>,
@@ -1135,7 +1135,7 @@ create a &lt;strong>VOMS proxy&lt;/strong> for &lt;code>dteam&lt;/code> VO:&lt;/
 &lt;/ul>
 &lt;h2 id="step-3-identifying-available-resources">Step 3: identifying available resources&lt;/h2>
 &lt;p>It is possible to identify available resources by
-&lt;a href="../../compute/high-throughput-compute/querying-information-system">querying the information system&lt;/a>.&lt;/p>
+&lt;a href="../../../compute/high-throughput-compute/querying-information-system">querying the information system&lt;/a>.&lt;/p>
 &lt;p>Two Computing Element (CE) &amp;ldquo;flavours&amp;rdquo; are used in production:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://htcondor.org/htcondor-ce/overview/">HTCondorCE&lt;/a>, a Compute Entrypoint
@@ -1148,11 +1148,11 @@ information about the available resources.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 It&amp;rsquo;s also possible to use
-&lt;a href="../../../internal/operations-portal/using-vapor#using-vapor-to-query-resources-using-a-graphical-interface">VAPOR to query resources using a graphical interface&lt;/a>.
+&lt;a href="../../../../internal/operations-portal/using-vapor#using-vapor-to-query-resources-using-a-graphical-interface">VAPOR to query resources using a graphical interface&lt;/a>.
 &lt;/div>
 &lt;h3 id="use-case-identifying-all-the-computing-elements-supporting-the-dteam-vo">Use case: identifying all the Computing Elements supporting the dteam VO&lt;/h3>
 &lt;p>As documented in the pages covering the
-&lt;a href="../../compute/high-throughput-compute/querying-information-system">querying of the Information System&lt;/a>,
+&lt;a href="../../../compute/high-throughput-compute/querying-information-system">querying of the Information System&lt;/a>,
 in &lt;strong>GLUE 2.0&lt;/strong>, the access granted to a given VO to a compute or storage
 resource, is published using the &lt;code>GLUE2Share&lt;/code> and &lt;code>GLUE2Policy&lt;/code> objects. The
 &lt;code>GLUE2ComputingShare&lt;/code> object specifically documents sharing of compute
@@ -1438,7 +1438,6 @@ by or for their community and providing the required commands.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="references-3">References&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://cream-guide.readthedocs.io/en/latest/User_Guide.html">CREAM User&amp;rsquo;s guide&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://wiki-igi.cnaf.infn.it/twiki/bin/view/CREAM/UserGuideEMI3">CREAM User&amp;rsquo;s Guide for EMI-3&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="via-the-egi-workload-manager">Via the EGI Workload Manager&lt;/h3>
 &lt;blockquote>
@@ -1447,11 +1446,11 @@ service provided to the EGI community to efficiently manage and distribute
 computing workloads on the EGI infrastructure.&lt;/p>
 &lt;/blockquote>
 &lt;p>Using the
-&lt;a href="../../compute/orchestration/workload-manager/#the-egi-workload-manager-web-portal">Workload Manger web interface&lt;/a>
+&lt;a href="../../../compute/orchestration/workload-manager/#the-egi-workload-manager-web-portal">Workload Manger web interface&lt;/a>
 or the
-&lt;a href="../../compute/orchestration/workload-manager/#the-dirac-client-tool">DIRAC command-line interface (CLI)&lt;/a>
+&lt;a href="../../../compute/orchestration/workload-manager/#the-dirac-client-tool">DIRAC command-line interface (CLI)&lt;/a>
 is documented in the
-&lt;a href="../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>.&lt;/p>
+&lt;a href="../../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a>.&lt;/p>
 &lt;h3 id="troubleshooting">Troubleshooting&lt;/h3>
 &lt;p>In case you receive errors when submitting jobs to Computing Elements, it may
 be possible that the service is in Downtime for an intervention/upgrade or there
@@ -1463,7 +1462,7 @@ trying to use (By clicking on the Downtime button) or issues (By clicking on
 the CRITICAL button).&lt;/p>
 &lt;p>&lt;img src="argo_issues.png" alt="argo-issues">&lt;/p>
 &lt;h2 id="asking-for-help">Asking for help&lt;/h2>
-&lt;p>If you find issues please do not hesitate to &lt;a href="../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with object storage</title><link>/users/tutorials/adhoc/data-transfer-object-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/data-transfer-object-storage/</guid><description>
+&lt;p>If you find issues please do not hesitate to &lt;a href="../../../../support/">contact us&lt;/a>.&lt;/p></description></item><item><title>Users: Data transfer with object storage</title><link>/users/tutorials/adhoc/data-transfer-object-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/data-transfer-object-storage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This tutorial describes the EGI Data Transfer using FTS transfers services and
 WebFTS. In the following paragraphs you will learn how to:&lt;/p>
@@ -1483,18 +1482,18 @@ repository to your configuration and update the client
 &lt;/div>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>As first step please make sure that you have installed the FTS client as
-described in &lt;a href="../../data/management/data-transfer">Data Transfer&lt;/a>, and in
-particular &lt;a href="../../data/management/data-transfer/clients">Clients&lt;/a> for the
+described in &lt;a href="../../../data/management/data-transfer">Data Transfer&lt;/a>, and in
+particular &lt;a href="../../../data/management/data-transfer/clients">Clients&lt;/a> for the
 command-line FTS and to have your certificate installed in your browser to use
-&lt;a href="../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
+&lt;a href="../../../data/management/data-transfer/webfts">WebFTS&lt;/a> browser based client.&lt;/p>
 &lt;p>To access services and resources in the
-&lt;a href="../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
+&lt;a href="../../../getting-started">EGI Federated Cloud&lt;/a>, you will need:&lt;/p>
 &lt;ul>
-&lt;li>An &lt;a href="../../aai/check-in">EGI Check-in&lt;/a> account, you can
-&lt;a href="../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
-&lt;li>Enrollment into a &lt;a href="../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
+&lt;li>An &lt;a href="../../../aai/check-in">EGI Check-in&lt;/a> account, you can
+&lt;a href="../../../aai/check-in/signup">sign up here&lt;/a>&lt;/li>
+&lt;li>Enrollment into a &lt;a href="../../../aai/check-in/vos">Virtual Organisation&lt;/a> (VO) that has
 access to the services and resources you need&lt;/li>
-&lt;li>An &lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> for which you need to
+&lt;li>An &lt;a href="../../../data/storage/object-storage">Object Storage&lt;/a> for which you need to
 have all the credentials available (any S3 compatible storage should work)&lt;/li>
 &lt;li>Permission to add the Object Storage credential to the FTS server or
 alternatively for this operation you may contact support &lt;strong>at&lt;/strong> egi.eu.&lt;/li>
@@ -1508,7 +1507,7 @@ alternatively for this operation you may contact support &lt;strong>at&lt;/stron
 available storage on
 &lt;a href="https://operations-portal.egi.eu/vapor/resources/GL2ResVO">VAPOR service&lt;/a> while
 the Object Store can be one created as described in the
-&lt;a href="../../data/storage/object-storage">Object Storage&lt;/a> section or trough a provider
+&lt;a href="../../../data/storage/object-storage">Object Storage&lt;/a> section or trough a provider
 such as Amazon, Azure, etc&lt;/p>
 &lt;h3 id="step-3-add-the-object-storage-credential-to-the-fts-server">Step 3 Add the Object Storage credential to the FTS server&lt;/h3>
 &lt;p>Following is an example of the command that can be used to add the Object Store
