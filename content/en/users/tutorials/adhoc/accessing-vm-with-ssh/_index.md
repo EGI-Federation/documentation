@@ -38,7 +38,7 @@ machine image and is generally different in each operating system image:
   [obtaining images](https://docs.openstack.org/image-guide/obtain-images.html).
 - For custom virtual machine images you need to refer to your virtual machine image
   provider (i.e. it could be something specific like `cloudadm`).
-- For virtual machines deployed with [Infrastructure Manager](../../compute/orchestration/im/)
+- For virtual machines deployed with [Infrastructure Manager](../../../compute/orchestration/im/)
   the default username is `cloudadm`.
 
 > It is also possible to change the username using `cloud-init` with a user-data
@@ -201,9 +201,9 @@ $ ssh centos@192.168.1.3
 
 ## Infrastructure Manager (IM)
 
-The [Infrastructure Manager (IM)](../../compute/orchestration/im/) provides the SSH key that can be used to connect
+The [Infrastructure Manager (IM)](../../../compute/orchestration/im/) provides the SSH key that can be used to connect
 to the virtual machine in the VM
-[info page of the IM-Dashboard](../../compute/orchestration/im/dashboard/#vm-info-page).
+[info page of the IM-Dashboard](../../../compute/orchestration/im/dashboard/#vm-info-page).
 
 The page shows the information related with the virtual machine: the IP, the
 username (usually `cloudadm`), and the SSH key.
