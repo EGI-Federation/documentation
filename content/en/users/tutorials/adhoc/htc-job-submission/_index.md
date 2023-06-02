@@ -582,7 +582,6 @@ $ glite-ce-job-output "$JOB_ID"
 #### References
 
 - [CREAM User's guide](https://cream-guide.readthedocs.io/en/latest/User_Guide.html)
-- [CREAM User's Guide for EMI-3](https://wiki-igi.cnaf.infn.it/twiki/bin/view/CREAM/UserGuideEMI3)
 
 ### Via the EGI Workload Manager
 
