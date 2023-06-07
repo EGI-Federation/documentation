@@ -131,7 +131,7 @@ different entities.
 
 Anyone can report a software vulnerability via a
 [form](https://csirt.egi.eu/report-vulnerability/) or by email contacting the
-[Software Vulnerability Group (SVG)](https://confluence.egi.eu/display/EGIBG/SVG).
+[Software Vulnerability Group (SVG)](https://confluence.egi.eu/pages/viewpage.action?pageId=82380236).
 
 The report will trigger an assessment, following the
 [SEC02 Software Vulnerability Issue Handling](https://go.egi.eu/sec02)

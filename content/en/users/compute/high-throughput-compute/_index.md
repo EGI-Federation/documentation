@@ -119,4 +119,4 @@ Before users can access EGI HTC services, they have to:
 
 > If you are interested in using command-line and direct submission to Compute
 > Elements, there is a
-> [tutorial on HTC job submission](../../tutorials/htc-job-submission).
+> [tutorial on HTC job submission](../../tutorials/adhoc/htc-job-submission).
