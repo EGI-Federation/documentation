@@ -16,8 +16,7 @@ two-step process:
    production instance of EGI Check-in to allow members of the EGI User
    Community to access your service.
 
-
-For more background information, please check the recording of the session: 
+For more background information, please check the recording of the session:
 [A Complete Guide to OpenID Connect in OpenStack](https://youtu.be/GiLcKjuTyi0?t=722),
 from the [OpenInfra Foundation](https://openinfra.dev/) Summit in Vancouver 2023.
 
