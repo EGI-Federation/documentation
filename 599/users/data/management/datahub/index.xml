@@ -32,7 +32,7 @@ discoverability and access to datasets.&lt;/p>
 the &lt;code>oneclient&lt;/code> component or the &lt;a href="../api">API&lt;/a>.&lt;/p>
 &lt;p>The official documentation for &lt;code>oneclient&lt;/code> is hosted on the
 &lt;a href="https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html">Onedata homepage&lt;/a>,
-and a specific &lt;a href="../../../../tutorials/vm-datahub">tutorial&lt;/a> on how to install
+and a specific &lt;a href="../../../../tutorials/adhoc/vm-datahub">tutorial&lt;/a> on how to install
 and use it from a Virtual Machine is also available.&lt;/p>
 &lt;h2 id="using-the-web-interface">Using the web interface&lt;/h2>
 &lt;p>Using EGI Check-in allows you to connect with your institute&amp;rsquo;s credentials.&lt;/p>
@@ -102,7 +102,7 @@ pages.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ docker run -it --privileged &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_ACCESS_TOKEN&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_PROVIDER_HOST&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> onedata/oneclient:20.02.7
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> onedata/oneclient:21.02.2
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Connecting to provider &lt;span style="color:#4e9a06">&amp;#39;plg-cyfronet-01.datahub.egi.eu:443&amp;#39;&lt;/span> using session ID: &lt;span style="color:#4e9a06">&amp;#39;4138963898952098752&amp;#39;&lt;/span>...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Getting configuration...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Oneclient has been successfully mounted in &lt;span style="color:#4e9a06">&amp;#39;/mnt/oneclient&amp;#39;&lt;/span>
@@ -128,7 +128,7 @@ mount manually the Onedata spaces.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ docker run -it --privileged &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">ONECLIENT_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_ACCESS_TOKEN&lt;/span> &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -e &lt;span style="color:#000">ONECLIENT_PROVIDER_HOST&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$ONECLIENT_PROVIDER_HOST&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -v &lt;span style="color:#000">$PWD&lt;/span>:/mnt/src --entrypoint bash onedata/oneclient:20.02.7
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -v &lt;span style="color:#000">$PWD&lt;/span>:/mnt/src --entrypoint bash onedata/oneclient:21.02.2
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root@aca612a84fb4:/tmp# oneclient /mnt/oneclient
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Connecting to provider &lt;span style="color:#4e9a06">&amp;#39;plg-cyfronet-01.datahub.egi.eu:443&amp;#39;&lt;/span> using session ID: &lt;span style="color:#4e9a06">&amp;#39;1641165171427694510&amp;#39;&lt;/span>...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Getting configuration...

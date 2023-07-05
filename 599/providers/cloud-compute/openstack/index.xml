@@ -536,7 +536,7 @@ reconfiguration request through the
 and Demo environments already using Keycloak since June 24th 2022 and Production
 environment expected to migrate during July 2022.&lt;/p>
 &lt;p>A general guide on migration is available on
-&lt;a href="../../../check-in/sp#client-migration-to-keycloak">Check-in documentation&lt;/a>, in
+&lt;a href="../../check-in/sp#client-migration-to-keycloak">Check-in documentation&lt;/a>, in
 this section we provide specific information for OpenStack providers.&lt;/p>
 &lt;h3 id="changes-in-apache-configuration">Changes in Apache configuration&lt;/h3>
 &lt;p>The new Keycloak endpoint has a different URL that needs to be updated in your
@@ -686,7 +686,7 @@ flavors available at the OpenStack for the federation users. It runs as a single
 python application
 &lt;a href="https://github.com/EGI-Federation/cloud-info-provider">cloud-info-provider&lt;/a>
 that pushes information through the
-&lt;a href="../../../../internal/messaging">Messaging Service&lt;/a>.&lt;/p>
+&lt;a href="../../../internal/messaging/">Messaging Service&lt;/a>.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">BDII is deprecated&lt;/h4>
 Cloud providers no longer

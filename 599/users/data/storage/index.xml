@@ -1188,7 +1188,7 @@ Please contact support at &lt;code>support&lt;/code>
 &lt;code>&amp;lt;at&amp;gt;&lt;/code> &lt;code>egi.eu&lt;/code> for more details.
 &lt;/div>
 &lt;p>You can then refer to this
-&lt;a href="../../../tutorials/data-transfer-object-storage">tutorial&lt;/a> to see how to
+&lt;a href="../../../tutorials/adhoc/data-transfer-object-storage">tutorial&lt;/a> to see how to
 transfer to/from an Object storage endpoint.&lt;/p>
 &lt;!--
 // jscpd:ignore-end

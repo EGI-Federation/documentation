@@ -106,7 +106,7 @@ scientific communities.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
 Workload Manager is based on
-&lt;a href="https://diracgrid.org/">DIRAC technology&lt;/a>.&lt;br/>
+&lt;a href="https://github.com/DIRACGrid/DIRAC">DIRAC technology&lt;/a>.&lt;br/>
 The delivery of the service is coordinated
 by the EGI Foundation and &lt;a href="https://in2p3.cnrs.fr/">IN2P3&lt;/a> provides the resources and
 operates the service.

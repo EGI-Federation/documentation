@@ -123,14 +123,14 @@ EGI Infrastructure:&lt;/p>
 using traditional POSIX command-line commands you need to install the
 &lt;code>oneclient&lt;/code> component. For more details on how to install and configure
 the component, please see the
-&lt;a href="../../../tutorials/vm-datahub/">Access DataHub from a Virtual Machine&lt;/a>
+&lt;a href="../../../tutorials/adhoc/vm-datahub/">Access DataHub from a Virtual Machine&lt;/a>
 documentation. &lt;a href="../../../data/management/datahub/api/">Access via API&lt;/a>
 is also available and it’s leveraging the integration of the service with EGI Check-in.&lt;/p>
 &lt;p>In order to access an existing space on EGI DataHub or ask for hosting
 your data in DataHub please contact our &lt;a href="https://ggus.eu/">Helpdesk&lt;/a>.&lt;/p>
 &lt;p>Additional tutorials may be relevant:&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="../../../tutorials/jupyter-datahub-virtual-machine/">Create a Virtual Machine with Jupyter and DataHub&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../../tutorials/adhoc/jupyter-datahub-virtual-machine/">Create a Virtual Machine with Jupyter and DataHub&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="how-to-transfer-your-data-to-the-egi-infrastructure-via-egi-data-transfer">How to transfer your data to the EGI infrastructure via EGI Data Transfer&lt;/h3>
 &lt;p>&lt;a href="https://www.egi.eu/service/data-transfer/">EGI Data Transfer&lt;/a>,
@@ -140,8 +140,8 @@ The storage can be either any grid storage in the EGI infrastructure
 or a cloud storage implementing the S3 interface.&lt;/p>
 &lt;p>Relevant tutorials:&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="../../../tutorials/data-transfer-grid-storage/">Data Transfer with Grid Storage&lt;/a>&lt;/li>
-&lt;li>&lt;a href="../../../tutorials/data-transfer-object-storage/">Data Transfer with Object Storage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../../tutorials/adhoc/data-transfer-grid-storage/">Data Transfer with Grid Storage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../../tutorials/adhoc/data-transfer-object-storage/">Data Transfer with Object Storage&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="how-to-use-the--egi-data-orchestrator">How to use the EGI Data Orchestrator&lt;/h3>
 &lt;p>The &lt;a href="../../../data/management/rucio/">EGI Data Orchestrator&lt;/a>,
