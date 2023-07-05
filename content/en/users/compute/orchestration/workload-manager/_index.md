@@ -23,7 +23,7 @@ scientific communities.
 <!-- markdownlint-disable no-inline-html -->
 
 {{% alert title="Note" color="info" %}} Workload Manager is based on
-[DIRAC technology](https://diracgrid.org/).<br/>
+[DIRAC technology](https://github.com/DIRACGrid/DIRAC).<br/>
 The delivery of the service is coordinated
 by the EGI Foundation and [IN2P3](https://in2p3.cnrs.fr/) provides the resources and
 operates the service.

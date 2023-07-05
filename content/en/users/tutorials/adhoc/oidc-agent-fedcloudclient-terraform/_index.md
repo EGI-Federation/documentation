@@ -13,25 +13,25 @@ description: >
 
 This tutorial describes how to create a Virtual Machine in the EGI Federation,
 leveraging [oidc-agent](https://indigo-dc.gitbook.io/oidc-agent/) to retrieve
-ODIC tokens from [EGI Check-in](../../aai/check-in),
+ODIC tokens from [EGI Check-in](../../../aai/check-in),
 [fedcloudclient](https://fedcloudclient.fedcloud.eu/) to simplify interacting
-with the [EGI Cloud Compute service](../../compute/cloud-compute),
+with the [EGI Cloud Compute service](../../../compute/cloud-compute),
 [terraform](https://www.terraform.io) and [Ansible](https://www.ansible.com/) to
 simplify deploying an infrastructure.
-[EGI Dynamic DNS](../../compute/cloud-compute/dynamic-dns) is also used to
+[EGI Dynamic DNS](../../../compute/cloud-compute/dynamic-dns) is also used to
 assign a domain name to the virtual machine, which can then be used to get a
 valid TLS certificate from [Let's Encrypt](https://letsencrypt.org/).
 
 ## Step 1: Signing up for an EGI Check-in account
 
-Create an EGI account with [Check-in](../../aai/check-in/signup).
+Create an EGI account with [Check-in](../../../aai/check-in/signup).
 
 ## Step 2: Enrolling to a Virtual Organisation
 
 Once your EGI account is ready you need to join a
 [Virtual Organisation (VO)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
 Here are the steps to
-[join a VO](../../aai/check-in/joining-virtual-organisation/). Explore the list
+[join a VO](../../../aai/check-in/joining-virtual-organisation/). Explore the list
 of available VOs in the
 [Operations Portal](https://operations-portal.egi.eu/vo/a/list). We have a
 dedicated VO called
@@ -42,7 +42,7 @@ the [enrolment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240).
 Check [AppDB](https://appdb.egi.eu/store/vo/vo.access.egi.eu) to see the list of
 Virtual Appliances and Resource Providers participating in the
 _vo.access.egi.eu_ VO. AppDB is one of the service in the
-[EGI Architecture](../../getting-started/architecture/).
+[EGI Architecture](../../../getting-started/architecture/).
 
 > This tutorial will assume you are using `vo.access.egi.eu`, adapt as required
 > for your specific environment.
@@ -53,8 +53,8 @@ Once your membership to a VO has been approved you are ready to create your
 first Virtual Machine.
 
 The OpenID Connect (OIDC) protocol is used to authenticate users and authorise
-access to [Cloud Compute](../../compute/cloud-compute/) resources that are
-integrated with [EGI Check-in](../../aai/check-in/).
+access to [Cloud Compute](../../../compute/cloud-compute/) resources that are
+integrated with [EGI Check-in](../../../aai/check-in/).
 
 While it's not mandatory, a convenient way to manage the OIDC token is to use
 [oidc-agent](#setting-up-oidc-agent).
@@ -172,7 +172,7 @@ You can retrieve information from the AppDB about the sites supporting the
 ### Deploying the Virtual Machine with terraform
 
 Instead of creating the server manually, it is possible to use
-[terraform with EGI Cloud Compute](../../compute/cloud-compute/openstack/#terraform).
+[terraform with EGI Cloud Compute](../../../compute/cloud-compute/openstack/#terraform).
 
 The
 [Terraform OpenStack provider](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs)
@@ -386,7 +386,7 @@ virtual machine using a fully qualified hostname and allowing to retrieve a
 [Let's Encrypt certificate](https://letsencrypt.org/).
 
 > Please look at the
-> [EGI Dynamic DNS documentation](../../compute/cloud-compute/dynamic-dns/) for
+> [EGI Dynamic DNS documentation](../../../compute/cloud-compute/dynamic-dns/) for
 > instructions on creating the configuration for a new host.
 
 The
@@ -542,4 +542,4 @@ cases, or be used as a source of inspiration:
 
 ## Asking for help
 
-If you find issues please do not hesitate to [contact us](../../../support/).
+If you find issues please do not hesitate to [contact us](../../../../support/).

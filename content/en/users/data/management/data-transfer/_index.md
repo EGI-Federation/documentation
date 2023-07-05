@@ -31,7 +31,7 @@ The main features of EGI Data Transfer are:
 
 {{% alert title="Tip" color="info" %}} Eager to test this service?
 Have a look at our tutorial on
-[how to transfer data in the grid](../../../tutorials/data-transfer-grid-storage).
+[how to transfer data in the grid](../../../tutorials/adhoc/data-transfer-grid-storage).
 {{% /alert %}}
 
 {{% alert title="Note" color="info" %}} EGI Data Transfer is based on the

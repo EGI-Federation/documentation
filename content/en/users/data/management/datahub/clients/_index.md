@@ -14,7 +14,7 @@ the `oneclient` component or the [API](../api).
 
 The official documentation for `oneclient` is hosted on the
 [Onedata homepage](https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html),
-and a specific [tutorial](../../../../tutorials/vm-datahub) on how to install
+and a specific [tutorial](../../../../tutorials/adhoc/vm-datahub) on how to install
 and use it from a Virtual Machine is also available.
 
 ## Using the web interface
@@ -106,7 +106,7 @@ $ export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
 $ docker run -it --privileged \
     -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN \
     -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST \
-    onedata/oneclient:20.02.7
+    onedata/oneclient:21.02.2
 Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '4138963898952098752'...
 Getting configuration...
 Oneclient has been successfully mounted in '/mnt/oneclient'
@@ -142,7 +142,7 @@ $ export ONECLIENT_PROVIDER_HOST=plg-cyfronet-01.datahub.egi.eu
 $ docker run -it --privileged \
     -e ONECLIENT_ACCESS_TOKEN=$ONECLIENT_ACCESS_TOKEN \
     -e ONECLIENT_PROVIDER_HOST=$ONECLIENT_PROVIDER_HOST \
-    -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:20.02.7
+    -v $PWD:/mnt/src --entrypoint bash onedata/oneclient:21.02.2
 root@aca612a84fb4:/tmp# oneclient /mnt/oneclient
 Connecting to provider 'plg-cyfronet-01.datahub.egi.eu:443' using session ID: '1641165171427694510'...
 Getting configuration...

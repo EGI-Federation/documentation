@@ -21,7 +21,7 @@ synchronise images from AppDB but is not part of the federation.
 This tutorial assumes you have:
 
 - A valid EGI account: learn to can create one in
-  [Check-in](../../aai/check-in/signup).
+  [Check-in](../../../aai/check-in/signup).
 - Access to a cloud provider where the
   [Jupyter DataHub VM is available](https://appdb.egi.eu/store/vappliance/jupyter.datahub.vm).
   Alternatively, this VM can be run on your computer using a virtualisation tool
@@ -37,7 +37,7 @@ learn how to start a VM at EGI's Federated Cloud infrastructure.
 
 This VM does not contain any default credentials, in order to access it you need
 a ssh key. Check
-[this FAQ entry](../../compute/cloud-compute/faq/#how-can-i-inject-my-public-ssh-key-into-the-machine)
+[this FAQ entry](../../../compute/cloud-compute/faq/#how-can-i-inject-my-public-ssh-key-into-the-machine)
 for more information. If you are starting this VM on VirtualBox, you will need
 to pass some valid context for cloud-init, see
 [here how to prepare it](https://superuser.com/a/853957).
@@ -47,7 +47,7 @@ accessing the notebooks interface. Make sure your have those ports open on your
 security groups, otherwise you will not be able to reach the Jupyter notebooks.
 
 Once your instance is ready,
-[assign it a public IP](../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm)
+[assign it a public IP](../../../compute/cloud-compute/faq/#how-can-i-assign-a-public-ip-to-my-vm)
 so you can reach it from your computer.
 
 ### Step 2: Get a hostname and certificate for your VM
@@ -63,7 +63,7 @@ safer and more secure.
 
 Firstly, you need a valid name for your VM. You can use the
 [FedCloud Dynamic DNS](https://nsupdate.fedcloud.eu) to create a name. See
-[Dynamic DNS docs](../../compute/cloud-compute/dynamic-dns/) for more
+[Dynamic DNS docs](../../../compute/cloud-compute/dynamic-dns/) for more
 information on the service. Once you have your name ready, assign it your VM's
 IP.
 
@@ -136,12 +136,12 @@ $ micromamba install -c conda-forge tensorflow
 ### Step 5: Mount DataHub spaces
 
 Log into [EGI's DataHub](https://datahub.egi.eu/) and
-[create a token](../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis)
+[create a token](../../../data/management/datahub/clients/#generating-tokens-for-using-oneclient-or-apis)
 for mounting your data in the VM.
 
 You will also need the IP or address of your closest Oneprovider for the spaces
 you are interested in accessing. This information is easily obtainable via
-[DataHub's web interface](../../data/management/datahub/clients/#using-the-web-interface).
+[DataHub's web interface](../../../data/management/datahub/clients/#using-the-web-interface).
 
 Go to your Jupyter session in your browser and edit the `mount.sh` file in your
 home directory. Set the `ONECLIENT_ACCESS_TOKEN` and `ONECLIENT_PROVIDER_HOST`

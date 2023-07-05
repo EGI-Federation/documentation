@@ -36,10 +36,10 @@ This service provides:
   acceptable use policies, identifying users and managing user communities),
   traceability, legal aspects, and the protection of personal data.
 - **Software Vulnerability Group Coordination** - The Software Vulnerability
-  Group [SVG](https://confluence.egi.eu/display/EGIBG/SVG) aims to eliminate
-  existing software vulnerabilities from the deployed infrastructure and prevent
-  the introduction of new ones, and runs a process for handling software
-  vulnerabilities reported.
+  Group [SVG](https://confluence.egi.eu/pages/viewpage.action?pageId=82380236)
+  aims to eliminate existing software vulnerabilities from the deployed
+  infrastructure and prevent the introduction of new ones, and runs a process
+  for handling software vulnerabilities reported.
 - **International Grid Trust Federation (IGTF) and EUGridPMA** - Representation
   of EGI in IGTF and EUGridPMA. A common authentication trust domain is required
   to persistently identify all EGI participants.
