@@ -468,11 +468,6 @@ institutional IdPs registered with eduGAIN or Social Providers. Once the user
 has signed in, EGI Check-in can return OIDC Claims containing information about
 the authenticated user.
 
-{{% alert title="Important" color="warning" %}} The EGI Check-in OpenID Provider
-will be migrated to Keycloak. Please check
-[OIDC Client Migration to Keycloak](#client-migration-to-keycloak) for more
-details {{% /alert %}}
-
 ### Client registration
 
 Before your service can use the EGI Check-in OpenID Provider for user login, you
