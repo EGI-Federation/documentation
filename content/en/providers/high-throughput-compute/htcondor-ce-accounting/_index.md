@@ -79,10 +79,9 @@ improved by adding performance information per machine.
 Performance information may be added to each HTCondor StartD. There are two
 separate ways to do so:
 
-- An _absolute_ spec value can be assigned to the `StartD`, similar
-  to the average spec value on to the CE. HTCondor-CE APEL accounting then
-  weights resource usage by comparing the `StartD` spec value to the average
-  spec value.
+- An _absolute_ spec value, similar to the average spec value on to the CE.
+  HTCondor-CE APEL accounting then weights resource usage by comparing the
+  `StartD` spec value to the average spec value.
 
   In the `StartD` configuration, define `ApelSpecs` as a new-style classad
   mapping of spec types and their values; multiple spec types are supported.
@@ -94,9 +93,8 @@ separate ways to do so:
   STARTD_ATTRS = $(STARTD_ATTRS) ApelSpecs
   ```
 
-- A _relative_ spec value can be assigned to the `StartD`, as a
-  factor to the average spec value assigned to the CE. HTCondor-CE APEL
-  accounting directly weights resource usage by the relative StartD spec factor.
+- A _relative_ spec value, as a factor to the average spec value on to the CE.
+  HTCondor-CE APEL accounting then weights resource usage by the relative spec factor.
 
   In the `StartD` configuration, define `ApelScaling` as a number; values above
   1 mean the performance is above average. Also add `ApelScaling` to the
