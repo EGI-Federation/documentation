@@ -83,12 +83,12 @@ separate ways to do so:
 
   In the `StartD` configuration, define `ApelSpecs` as a new-style classad
   mapping between a spec type and its value; multiple spec types are supported,
-  but in practice `HEPSPEC` is currently the only one needed. Also add
+  though `HEPSPEC` or `HEPscore23` are currently the only ones needed. Also add
   `ApelSpecs` to the attributes of the `StartD`.
 
   ```ini
   # The absolute performance per core on this StartD
-  ApelSpecs = [HEPSPEC=14.37; SI2K=2793]
+  ApelSpecs = [HEPSPEC=14.37; HEPscore23=14.409; SI2K=2793]
   STARTD_ATTRS = $(STARTD_ATTRS) ApelSpecs
   ```
 
