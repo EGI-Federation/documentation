@@ -4,11 +4,14 @@ linkTitle: Intermediate
 type: docs
 weight: 20
 description: >
-  Tutorials for individual services from the EGI owned service portfolio,
-  as well as services that are offered by the broader EGI community
-  to complement the EGI services towards certain types of advanced computing use cases.
+  Tutorials for individual services from the EGI owned service portfolio, as
+  well as services that are offered by the broader EGI community to complement
+  the EGI services towards certain types of advanced computing use cases.
 ---
 
+<!--
+// jscpd:ignore-start
+-->
 <!-- markdownlint-disable line-length no-inline-html -->
 
 <table>
@@ -615,3 +618,6 @@ and reliable management of their long-term data storage and processing needs.
 </td>
 </tr>
 </table>
+<!--
+// jscpd:ignore-end
+-->
