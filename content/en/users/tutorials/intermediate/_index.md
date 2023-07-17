@@ -525,4 +525,93 @@ will be relevant for researchers, and IT-service providers who support research 
 </ul>
 </td>
 </tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, for programmers and IT-service providers who support research and education.
+</td>
+<td>
+<i>"Introduction to Slurm" (March 2023)</i>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/2d0B9o43Pgg"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: Slurm is an open-source, fault-tolerant, and highly scalable
+cluster management and job scheduling system for large and small Linux clusters.
+In this tutorial, we briefly discuss the benefits of using batch schedulers,
+the motivations to use Slurm and provide a list of commands to get started with Slurm.
+<br/><br/>
+<b>Suggested material</b>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1Qo_Zpqe9MT6X6s7o2Mz_8PplET28_WAf/">Slides</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, for programmers and IT-service providers who support research and education.
+</td>
+<td>
+<i>"Introduction to Snakemake" (December 2022)</i>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/ktZf7sze1ug"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: The Snakemake workflow management system is a tool
+for creating reproducible and scalable data analyses. Workflows
+are described via a human-readable, Python-based language. They
+can be seamlessly scaled to server, cluster, grid and cloud environments
+without the need to modify the workflow definition. Finally, Snakemake
+workflows can entail a description of the required software, which will
+be automatically deployed to any execution environment.
+<br/><br/>
+<b>Slides and code</b>
+<ul>
+<li><a href="https://github.com/c-scale-community/c-scale-tutorial-snakemake/">https://github.com/c-scale-community/c-scale-tutorial-snakemake</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, for programmers and IT-service providers who support research and education.
+</td>
+<td>
+<i>"Leveraging the Onedata Platform for Long-Term Data Archiving" (June 2023)</i>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/zXYOQEpQrHU"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: In this presentation, we will discuss the latest advancements
+in the Onedata platform, focusing on its new features for long-term data
+archiving and processing. We will demonstrate how the platform has been
+optimized to meet the Open Archival Information System (OAIS) standards,
+ensuring the reliable preservation and accessibility of archived information
+over time. Furthermore, we will explore the integration of Function as a
+Service (FaaS) capabilities in the platform, allowing for seamless and
+scalable data processing on demand. By combining the robust archiving
+capabilities of the OAIS standard with the flexibility of FaaS, the Onedata
+platform emerges as a powerful solution for organizations seeking efficient
+and reliable management of their long-term data storage and processing needs.
+</td>
+</tr>
 </table>
