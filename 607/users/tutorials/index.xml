@@ -97,6 +97,9 @@ federation, and will show how these services benefit research, science and innov
 &lt;/td>
 &lt;/tr>
 &lt;/table></description></item><item><title>Users: Intermediate level</title><link>/users/tutorials/intermediate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/intermediate/</guid><description>
+&lt;!--
+// jscpd:ignore-start
+-->
 &lt;!-- markdownlint-disable line-length no-inline-html -->
 &lt;table>
 &lt;tr>
@@ -701,7 +704,10 @@ platform emerges as a powerful solution for organizations seeking efficient
 and reliable management of their long-term data storage and processing needs.
 &lt;/td>
 &lt;/tr>
-&lt;/table></description></item><item><title>Users: Advanced level</title><link>/users/tutorials/advanced/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/advanced/</guid><description>
+&lt;/table>
+&lt;!--
+// jscpd:ignore-end
+--></description></item><item><title>Users: Advanced level</title><link>/users/tutorials/advanced/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/advanced/</guid><description>
 &lt;!-- markdownlint-disable no-inline-html -->
 &lt;table>
 &lt;tr>
