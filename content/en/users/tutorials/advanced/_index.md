@@ -316,7 +316,7 @@ and the new one-shop-stop sysadmin toolbox built around arcctl.
 <iframe
   width="560"
   height="315"
-  src="https://www.youtube.com/embed/tvhsyRy9CB4"
+  src="https://www.youtube.com/embed/EyCCunB6u0c"
   title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
