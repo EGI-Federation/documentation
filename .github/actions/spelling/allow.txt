@@ -198,6 +198,7 @@ eugridpma
 eumed
 eventlet
 explorecube
+FaaS
 fakedomaindonotexist
 faqs
 fedcloud
@@ -219,6 +220,7 @@ gcloud
 gcube
 geant
 genkey
+geospatial
 geoss
 Gergely
 getcontmsg
@@ -260,6 +262,7 @@ gsiscp
 gsissh
 gsoa
 gstat
+GUISDAP
 hashicorp
 haveged
 hdds
@@ -372,6 +375,7 @@ Minio
 mitaka
 morecolor
 mpi
+MQS
 multiattach
 multidisk
 mycluster
@@ -393,6 +397,7 @@ ndgf
 ndownloader
 nearline
 neovim
+NERGY
 netfilters
 neugrid
 ngi
@@ -422,6 +427,7 @@ nsdbname
 nsupdate
 nsupdater
 nvidia
+OAIS
 occi
 ODV
 ogf
@@ -532,6 +538,7 @@ slm
 slurm
 slurmserver
 smes
+Snakemake
 softver
 somekey
 sourcing

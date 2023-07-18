@@ -306,4 +306,51 @@ ARC5-based deployment. Special attention will be given to the accounting system 
 and the new one-shop-stop sysadmin toolbox built around arcctl.
 </td>
 </tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, developers, integrators and end users.
+</td>
+<td>
+<i>"High performance software - Easy gains with simple CUDA" (April 2023)</i>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/EyCCunB6u0c"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: This tutorial provides an introduction to CUDA in high
+performance software, covering roughly these topics:
+<ul>
+<li>
+Best practices for high performance software engineering,
+such as avoiding premature optimization, ensuring cache alignment, etc.
+</li>
+<li>
+A broad introduction to GPUs, including their hardware
+and which categories of problems they are/aren't best suited for.
+</li>
+<li>Installing and working with GPU frameworks</li>
+<li>An overview of profiler tools and how to use them</li>
+<li>
+A live coding session to implement and diagnose a basic CUDA program,
+with the level of detail dependent on available time
+</li>
+<li>Q&A and stories from the trenches</li>
+</ul>
+Please note that the training will not cover multi-GPU setups or
+provide a detailed dive into GPU hardware and CUDA specifics.
+Participants should have basic knowledge of Python and matrix
+computation libraries like NumPy.
+<br/><br/>
+<b>Slides and code</b>
+<ul>
+<li><a href="https://github.com/c-scale-community/cscale-gpet-workshop">https://github.com/c-scale-community/cscale-gpet-workshop</a></li>
+</ul>
+</td>
+</tr>
 </table>

@@ -197,4 +197,149 @@ to serve COVID-related projects.
 </ul>
 </td>
 </tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities working in the domain of Earth Observation.
+</td>
+<td>
+<i>"C-SCALE Notebooks for Earth Observation" (June 2023)</i>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/r34qGShiglY"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: The C-SCALE project has been federating compute and data resource providers
+around centralized EGI services, aiming at providing users with seamless access to
+processing capacities as well as source data for their analyses. Alongside the traditional
+IaaS and PaaS services, Jupyter Notebooks have been identified as an environment suitable
+not only for interactive analysis within C-SCALE, but also for documenting the different
+steps one needs to take in discovering and accessing geospatial data across Europe.
+The demonstration of C-SCALE's example notebooks and procedures will focus on those
+essential features: simple steps to get started using the federated resources for
+interactive resources of Earth Observation data.
+<br/><br/>
+<b>Slides and code</b>
+<ul>
+<li><a href="https://github.com/c-scale-community/c-scale-notebooks">https://github.com/c-scale-community/c-scale-notebooks</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities working in the domain of Earth Observation.
+</td>
+<td>
+<i>"C-SCALE Earth Observation - Metadata Query Service" (March 2023)</i>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/cebnrOgoX_I"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: The C-SCALE Earth Observation Metadata Query Service (EO-MQS)
+makes Copernicus data distributed across providers within the C-SCALE Data
+federation discoverable and searchable.
+<br/><br/>
+<b>Slides and code</b>
+<ul>
+<li><a href="https://github.com/c-scale-community/c-scale-tutorial-eo-mqs">https://github.com/c-scale-community/c-scale-tutorial-eo-mqs</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities working in the domain of Earth Observation.
+</td>
+<td>
+<i>"Introduction to openEO Platform" (December 2022)</i>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/pMiaBMh8VCQ"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: openEO platform provides intuitive programming libraries
+to process a wide variety of earth observation datasets. This large-scale
+data access and processing is performed on multiple infrastructures, which
+all support the openEO API. This allows use cases from explorative research
+to large-scale production of EO-derived maps and information.
+<br/><br/>
+<b>Slides and code</b>
+<ul>
+<li><a href="https://github.com/c-scale-community/c-scale-tutorial-openeo">https://github.com/c-scale-community/c-scale-tutorial-openeo</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities and end users.
+</td>
+<td>
+<i>"I-NERGY, European AI-on demand platform" (July 2023)</i>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/RUVzMiDCyb4"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: I-NERGY aims to support and develop novel AI-based energy
+services as part of the enrichment of European AI-on demand platform.
+This webinar will present the objectives and scope of the project,
+its requirements in terms of resources and the successful utilisation
+of EGI infrastructure. The webinar will conclude with a demo of I-NERGY services.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities and end users.
+</td>
+<td>
+<i>"Access to the EISCAT tools with help of EGI checkin" (June 2023)</i>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/uucCLFRRW9w"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: The present era of rapid technological advances creates a
+challenge for data providers and scientists to create and maintain FAIR
+data and services not just for future operations but also for historical
+data gathered and analysed with technologies that are slowly phasing out
+of their usage. GUISDAP is an open-source software package, written in
+MATLAB, C and Fortran and provided and maintained by EISCAT, for analysis
+and visualisation of its incoherent scatter radar data as well as for some
+other radars in the world. One way how to preserve GUISDAP operability
+and accessibility by the user community is to make it accessible through
+a Jupyter notebook docker deployment through EISCAT resources and in the
+frame of an EOSC project. This will help to ensure the FAIRness of EISCAT
+data by providing tools for reanalysis and visualisation that will be
+accessible by any potential EISCAT user with the help of EGI check-in technology.
+</td>
+</tr>
 </table>
