@@ -56,10 +56,13 @@ jobs and feed them to APEL.
      ```ini
      manual_spec1 = <fqdn>:9619/<fqdn>-condor,<spec_type>,<spec_value>
      ```
+  
+     Commonly, the spec type is one of
+     [``HEPscore23`` or ``HEPSPEC``](https://w3.hepix.org/benchmarking.html).
+     The spec value is per core.
 
      For example, if the CE has the Fully Qualified Domain Name (FQDN)
-     `my-htcondor-ce.example.com` and resources averaging 12.5
-     [HEPSPEC](https://w3.hepix.org/benchmarking.html) per core:
+     `my-htcondor-ce.example.com` and resources average 12.5 HEPSPEC per core:
 
      ```ini
      manual_spec1 = my-htcondor-ce.example.com:9619/my-htcondor-ce.example.com-condor,HEPSPEC,12.5
@@ -76,29 +79,26 @@ improved by adding performance information per machine.
 Performance information may be added to each HTCondor StartD. There are two
 separate ways to do so:
 
-- An _absolute_ performance spec value can be assigned to the `StartD`, similar
-  to the average spec value assigned to the CE. HTCondor-CE APEL accounting
-  weights resource usage by comparing the `StartD` spec value to the average
-  spec value.
+- An _absolute_ spec value, similar to the average spec value on to the CE.
+  HTCondor-CE APEL accounting then weights resource usage by comparing the
+  `StartD` spec value to the average spec value.
 
   In the `StartD` configuration, define `ApelSpecs` as a new-style classad
-  mapping between a spec type and its value; multiple spec types are supported,
-  but in practice `HEPSPEC` is currently the only one needed. Also add
-  `ApelSpecs` to the attributes of the `StartD`.
+  mapping of spec types and their values; multiple spec types are supported.
+  Also add `ApelSpecs` to the classad attributes of the `StartD`:
 
   ```ini
   # The absolute performance per core on this StartD
-  ApelSpecs = [HEPSPEC=14.37; SI2K=2793]
+  ApelSpecs = [HEPSPEC=14.37; HEPscore23=14.409; SI2K=2793]
   STARTD_ATTRS = $(STARTD_ATTRS) ApelSpecs
   ```
 
-- A _relative_ performance spec value can be assigned to the `StartD`, as a
-  factor to the average spec value assigned to the CE. HTCondor-CE APEL
-  accounting directly weights resource usage by the relative StartD spec factor.
+- A _relative_ spec value, as a factor to the average spec value on to the CE.
+  HTCondor-CE APEL accounting then weights resource usage by the relative spec factor.
 
   In the `StartD` configuration, define `ApelScaling` as a number; values above
-  1 means the performance is above average. Also add `ApelScaling` to the
-  attributes of the `StartD`.
+  1 mean the performance is above average. Also add `ApelScaling` to the
+  classad attributes of the `StartD`.
 
   ```ini
   # The relative performance per core on this StartD
