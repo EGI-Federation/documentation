@@ -3,6 +3,7 @@ title: Rucio Command-Line Interface
 linkTitle: Command Line
 type: docs
 weight: 20
+draft: true
 description: >-
   The most common Rucio commands
 ---

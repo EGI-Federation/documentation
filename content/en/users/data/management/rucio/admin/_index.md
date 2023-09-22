@@ -3,6 +3,7 @@ title: Administering Rucio
 linkTitle: Administration
 type: docs
 weight: 30
+draft: true
 description: >-
   Help Rucio admins understand and perform actions for their VO
 ---

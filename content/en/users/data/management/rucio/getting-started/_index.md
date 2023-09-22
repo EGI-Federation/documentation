@@ -3,6 +3,7 @@ title: Getting Started with Rucio
 linkTitle: Getting Started
 type: docs
 weight: 10
+draft: true
 description: >-
   How to get started with Rucio
 ---
