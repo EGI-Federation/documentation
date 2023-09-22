@@ -27,7 +27,7 @@ Petabytes. The fact that the underlying Rucio infrastructure is managed by STFC,
 allows communities to easily start using and/or test Rucio with little setup
 cost.
 
-## Requirements to consider to use Rucio 
+## Requirements to consider to use Rucio
 
 For Rucio to manage your data in this setup, Rucio will need X.509 certificate
 access, or soon, through
