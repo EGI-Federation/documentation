@@ -139,6 +139,7 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \bLToS\b
 \bMITREid\b
 \bIaaS\b
+\bFaaS\b
 \bStoRM\b
 \b.*SDPK.*\b
 \b.*HEP.*\b

@@ -53,7 +53,7 @@ in, write and play and re-play notebooks by:
 3. [accessing https://notebooks.egi.eu/](https://notebooks.egi.eu/)
 
 This instance has limits on the amount of resources available for each user (2
-CPU core, 4 GB RAM and 20 GB of storage). It will also kill inactive sessions
+CPU core, 6 GB RAM and 20 GB of storage). It will also kill inactive sessions
 after 1 hour.
 
 The central instance supports the following VOs:
@@ -65,6 +65,11 @@ The central instance supports the following VOs:
 - [biomed](https://operations-portal.egi.eu/vo/view/voname/biomed)
 - [vo.reliance-project.eu](https://operations-portal.egi.eu/vo/view/voname/vo.reliance-project.eu)
 - [eiscat.se](https://operations-portal.egi.eu/vo/view/voname/eiscat.se)
+- [eval.c-scale.eu](https://operations-portal.egi.eu/vo/view/voname/eval.c-scale.eu)
+- [vo.panosc.eu](https://operations-portal.egi.eu/vo/view/voname/vo.panosc.eu)
+- [vo.environmental.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.environmental.egi.eu)
+- [vo.lethe-project.eu](https://operations-portal.egi.eu/vo/view/voname/vo.lethe-project.eu)
+- [vo.cessda.eduteams.org](https://operations-portal.egi.eu/vo/view/voname/vo.cessda.eduteams.org)
 
 ### Notebooks for communities
 

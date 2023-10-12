@@ -74,4 +74,4 @@ emerged:
     [Training infrastructure](https://www.egi.eu/service/training-infrastructure/)
 
 Eager to test this service? Have a look at
-[how to create your first Virtual Machine in EGI](../../tutorials/create-your-first-virtual-machine).
+[how to create your first Virtual Machine in EGI](../../tutorials/adhoc/create-your-first-virtual-machine).

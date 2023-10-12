@@ -32,5 +32,5 @@ Main characteristics of the service:
 Miscellaneous collection of documentation related to High-Throughput Compute.
 
 - [Changing the Site BDII](./changing-site-bdii)
-- [HTCondor-CE Accounring](./htcondor-ce-accounting)
+- [HTCondor-CE Accounting](./htcondor-ce-accounting)
 - [Storage Accounting](./storage-accounting)

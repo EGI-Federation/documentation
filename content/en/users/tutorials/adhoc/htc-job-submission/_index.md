@@ -2,6 +2,8 @@
 title: "Submitting HTC Jobs"
 type: docs
 weight: 160
+aliases:
+  - /users/tutorials/htc-job-submission
 description: >
   Submitting High Throughput Compute jobs
 ---
@@ -9,7 +11,7 @@ description: >
 ## Overview
 
 This tutorial describes how to submit
-[High Throughput Compute (HTC)](../../compute/high-throughput-compute) jobs
+[High Throughput Compute (HTC)](../../../compute/high-throughput-compute) jobs
 using command-line.
 
 > This tutorial is meant for somewhat advanced users or the ones willing or
@@ -54,7 +56,7 @@ In order to help with deploying an UI, different solutions are possible:
 - Deploying an UI manually, using the packages available from
   [UMD repositories](https://go.egi.eu/umd). You will need to install at least
   the `ui` meta-package, the
-  [IGTF distribution](../../../providers/operations-manuals/howto01_using_igtf_ca_distribution),
+  [IGTF distribution](../../../../providers/operations-manuals/howto01_using_igtf_ca_distribution),
   and
   [configure the system to use voms-client](#configuring-the-system-to-use-voms-client).
 - Some
@@ -73,7 +75,7 @@ In order to help with deploying an UI, different solutions are possible:
   [ui-deployment](https://github.com/EGI-Federation/ui-deployment) provides a
   [terraform](https://terraform.io) based deployment allowing to deploy a
   `User Interface (UI)` in a
-  [Cloud Compute virtual machine](../../compute/cloud-compute). This integrated
+  [Cloud Compute virtual machine](../../../compute/cloud-compute). This integrated
   deployment is based on the Ansible modules, and should be adjusted to your
   environment and needs.
 
@@ -102,7 +104,7 @@ using the proper `.vomses` and `.lsc` files, based on the information available
 on the VOMS server of the specific VO.
 
 - as an example with `dteam`, you can find the VOMS server address in the
-  [Operations Portal](../../../internal/operations-portal):
+  [Operations Portal](../../../../internal/operations-portal):
   [https://operations-portal.egi.eu/vo/view/voname/dteam](https://operations-portal.egi.eu/vo/view/voname/dteam).
   Then looking at
   [dteam VOMS configuration](https://voms2.hellasgrid.gr:8443/voms/dteam/configuration/configuration.action),
@@ -200,7 +202,7 @@ key usage : Digital Signature, Key Encipherment
 ## Step 3: identifying available resources
 
 It is possible to identify available resources by
-[querying the information system](../../compute/high-throughput-compute/querying-information-system).
+[querying the information system](../../../compute/high-throughput-compute/querying-information-system).
 
 Two Computing Element (CE) "flavours" are used in production:
 
@@ -213,13 +215,13 @@ In this section we will document querying the EGI Information System to retrieve
 information about the available resources.
 
 {{% alert title="Tip" color="info" %}} It's also possible to use
-[VAPOR to query resources using a graphical interface](../../../internal/operations-portal/using-vapor#using-vapor-to-query-resources-using-a-graphical-interface).
+[VAPOR to query resources using a graphical interface](../../../../internal/operations-portal/using-vapor#using-vapor-to-query-resources-using-a-graphical-interface).
 {{% /alert %}}
 
 ### Use case: identifying all the Computing Elements supporting the dteam VO
 
 As documented in the pages covering the
-[querying of the Information System](../../compute/high-throughput-compute/querying-information-system),
+[querying of the Information System](../../../compute/high-throughput-compute/querying-information-system),
 in **GLUE 2.0**, the access granted to a given VO to a compute or storage
 resource, is published using the `GLUE2Share` and `GLUE2Policy` objects. The
 `GLUE2ComputingShare` object specifically documents sharing of compute
@@ -580,7 +582,6 @@ $ glite-ce-job-output "$JOB_ID"
 #### References
 
 - [CREAM User's guide](https://cream-guide.readthedocs.io/en/latest/User_Guide.html)
-- [CREAM User's Guide for EMI-3](https://wiki-igi.cnaf.infn.it/twiki/bin/view/CREAM/UserGuideEMI3)
 
 ### Via the EGI Workload Manager
 
@@ -589,11 +590,11 @@ $ glite-ce-job-output "$JOB_ID"
 > computing workloads on the EGI infrastructure.
 
 Using the
-[Workload Manger web interface](../../compute/orchestration/workload-manager/#the-egi-workload-manager-web-portal)
+[Workload Manger web interface](../../../compute/orchestration/workload-manager/#the-egi-workload-manager-web-portal)
 or the
-[DIRAC command-line interface (CLI)](../../compute/orchestration/workload-manager/#the-dirac-client-tool)
+[DIRAC command-line interface (CLI)](../../../compute/orchestration/workload-manager/#the-dirac-client-tool)
 is documented in the
-[EGI Workload Manager](../../compute/orchestration/workload-manager).
+[EGI Workload Manager](../../../compute/orchestration/workload-manager).
 
 ### Troubleshooting
 
@@ -611,4 +612,4 @@ the CRITICAL button).
 
 ## Asking for help
 
-If you find issues please do not hesitate to [contact us](../../../support/).
+If you find issues please do not hesitate to [contact us](../../../../support/).

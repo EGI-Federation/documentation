@@ -2,13 +2,15 @@
 title: "Access DataHub from a VM"
 type: docs
 weight: 40
+aliases:
+  - /users/tutorials/vm-datahub
 description: >
   Use data in EGI DataHub from a virtual machine
 ---
 
 ## Overview
 
-This tutorial describes the access to [EGI DataHub](../../data/management/datahub) spaces
+This tutorial describes the access to [EGI DataHub](../../../data/management/datahub) spaces
 from a virtual machine. In the following paragraphs you will learn how to
 access data remotely stored in EGI DataHub like if they were local, using
 traditional POSIX command-line commands, by:
@@ -19,8 +21,8 @@ traditional POSIX command-line commands, by:
 ## Prerequisites
 
 In order to access the EGI DataHub data you need an
-[EGI Check-in](../../aai/check-in) account. If you don't have one yet
-you can [Sign up for an EGI account](../../aai/check-in/signup).
+[EGI Check-in](../../../aai/check-in) account. If you don't have one yet
+you can [Sign up for an EGI account](../../../aai/check-in/signup).
 
 ## Oneclient installation
 
@@ -58,7 +60,7 @@ ease the transfer of data.
 ## Getting the token to access data
 
 In order to access data stored in EGI DataHub via oneclient,
-you need to [get an API access token](../../data/management/datahub/api/#getting-an-api-access-token).
+you need to [get an API access token](../../../data/management/datahub/api/#getting-an-api-access-token).
 
 ## Using oneclient
 

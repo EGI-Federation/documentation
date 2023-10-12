@@ -9,7 +9,7 @@ menu:
 ---
 
 Support for EGI services is available through the
-[EGI Helpdesk](http://helpdesk.egi.eu/), an internal EGI
+[EGI Helpdesk](https://helpdesk.egi.eu/), an internal EGI
 [service](../internal/helpdesk).
 
 The EGI Helpdesk is a distributed tool with central coordination, which

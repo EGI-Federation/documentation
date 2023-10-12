@@ -2,8 +2,7 @@
 title: "Report generator"
 type: docs
 weight: 40
-description: >
-  Features and usage of the Report generator
+description: Features and usage of the Report generator
 ---
 
 ## Definitions and prerequisites
@@ -11,7 +10,7 @@ description: >
 The [GGUS Report Generator](https://ggus.eu/?mode=report_view) is available
 [from the support section](https://ggus.eu/?mode=support).
 
-The implementation of the report generator started in October 2011. Hence the
+The implementation of the report generator started in October 2011. Hence, the
 report generator does not provide data for tickets submitted before December
 2011!
 
@@ -45,14 +44,13 @@ ticket to a support unit the expected response timestamp is calculated by adding
 an amount of time to the assign timestamp. The amount of time added depends on
 the ticket priority and the kind of support unit. For support units that have
 declared a quality of service level the response times are defined by the
-[QoS level](../quality-of-support-levels). For all the
-other support units a medium QoS is assumed for calculating the expected
-response timestamp. In case the actual response timestamp is greater than the
-"expected response" timestamp for middleware support units the "violate" flag is
-set.
+[QoS level](../quality-of-support-levels). For all the other support units a
+medium QoS is assumed for calculating the expected response timestamp. In case
+the actual response timestamp is greater than the "expected response" timestamp
+for middleware support units the "violate" flag is set.
 
-_Response times are based on office hours. Hence the results unit is working
-days._
+> Response times are based on office hours. Hence the results unit is working
+> days.
 
 #### Solution time
 
@@ -64,8 +62,8 @@ a solution" means setting the ticket status to "solved" or "unsolved". The
 solution time is calculated as the difference between the solution timestamp and
 the assign timestamp.
 
-_Solution times are based on office hours. Hence the results unit is working
-days._
+> Solution times are based on office hours. Hence the results unit is working
+> days.
 
 #### Waiting time
 
@@ -82,7 +80,7 @@ how long it takes to provide a meaningful solution for a problem reported by the
 user. Ticket lifetime is the time from ticket submission to ticket solution
 (status "solved/unsolved").
 
-_The ticket lifetime is based on calendar days._
+> The ticket lifetime is based on calendar days.
 
 ### Time zones
 
@@ -109,14 +107,14 @@ lifetime doesn't affect the calculation of performance figures.
 
 ### Unit abbreviations
 
-- [wd] means working days
-- [d] means calendar days
+- `[wd]` means working days
+- `[d]` means calendar days
 
 ## Reports description
 
-_Although some of the drop-down lists request the selection of values a query
-can be started anyway. In this case the query is equivalent to a query over all
-tickets!_
+> Although some of the drop-down lists request the selection of values a query
+> can be started anyway. In this case the query is equivalent to a query over
+> all tickets!
 
 The "Reset" button resets all fields to their default settings besides the time
 frame.
@@ -160,8 +158,8 @@ for the specified time frame. The result list shows all support units that have
 ever been in charge of a ticket. Hence the same ticket ID may appear several
 times. The number of responses may be greater than the number of tickets.
 
-_Response times are based on office hours. Hence an average response time of 1d
-3h 23min means 13 hours and 23 minutes in total._
+> Response times are based on office hours. Hence an average response time of 1d
+> 3h 23min means 13 hours and 23 minutes in total.
 
 ### Violated response time
 
@@ -180,11 +178,15 @@ shows:
 - median response time
 
 for the specified time frame. The result lists shows the current status of the
-tickets. _Solution times are based on office hours. Hence an average solution
-time of 12d 3h 5min means 99 hours and 5 minutes in total._ The waiting time can
-be excluded by ticking the checkbox "exclude waiting time". In case a ticket
-gets re-opened the metrics calculation starts again from scratch. Hence the same
-ticket can appear several times in the solution times calculation.
+tickets.
+
+> Solution times are based on office hours. Hence, an average solution time of
+> 12d 3h 5min means 99 hours and 5 minutes in total.
+
+The waiting time can be excluded by ticking the checkbox "exclude waiting time".
+In case a ticket gets re-opened the metrics calculation starts again from
+scratch. Hence, the same ticket can appear several times in the solution times
+calculation.
 
 ## Input parameters and results
 
@@ -208,9 +210,9 @@ parameters are:
 #### Time frame
 
 The time frame defines begin and end date of the report. The begin date starts
-at 00:00:00. The end date ends at 00:00:00. As the implementation of the report
-generator started in October 2011 the report generator does not provide data for
-tickets submitted before December 2011!
+at `00:00:00`. The end date ends at `00:00:00`. As the implementation of the
+report generator started in October 2011 the report generator does not provide
+data for tickets submitted before December 2011!
 
 #### Responsible Units
 
@@ -248,7 +250,8 @@ for all reports and therefore, if necessary, be excluded from the selection.
 
 #### Ticket scope
 
-To distinguish between tickets under the responsibility of EGI or WLCG.
+To distinguish between tickets under the responsibility of EGI or WLCG. See
+[ticket scope](../ticket-scope/).
 
 #### Notified site
 

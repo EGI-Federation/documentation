@@ -19,30 +19,30 @@ content/en/providers/ @gwarf @paolini78
 content/en/users/ @enolfc @glarocca @andrea-manzi @gwarf @sebastian-luna-valero
 
 # Storage-related services
-content/en/users/data/ @andrea-manzi
-content/en/providers/datahub/ @andrea-manzi
+content/en/users/data/ @andrea-manzi @glarocca
+content/en/providers/datahub/ @andrea-manzi @glarocca
 
 # dev-env
-content/en/users/dev-env/ @enolfc
+content/en/users/dev-env/ @enolfc @glarocca
 
 # FedCloud
-content/en/users/compute/ @enolfc
-content/en/providers/cloud-compute/ @enolfc
+content/en/users/compute/ @enolfc @glarocca
+content/en/providers/cloud-compute/ @enolfc @CatalinCondurache
 
 # Notebooks
-content/en/users/dev-env/notebooks/ @enolfc @andrea-manzi @sebastian-luna-valero
+content/en/users/dev-env/notebooks/ @enolfc @andrea-manzi @sebastian-luna-valero @glarocca
 content/en/users/providers/notebooks/ @enolfc @andrea-manzi @sebastian-luna-valero
-content/en/users/dev-env/replay/ @enolfc @andrea-manzi @sebastian-luna-valero
+content/en/users/dev-env/replay/ @enolfc @andrea-manzi @sebastian-luna-valero @glarocca
 
 # Training
-content/en/users/training/ @glarocca
+content/en/users/training/ @glarocca @sebastian-luna-valero
 
 # Tutorials
-content/en/users/tutorials/ @enolfc @sebastian-luna-valero
+content/en/users/tutorials/ @enolfc @sebastian-luna-valero @glarocca
 
 # Workload Manager
-content/en/users/compute/orchestration/workload-manager/ @enolfc
+content/en/users/compute/orchestration/workload-manager/ @enolfc @glarocca
 
-# Check-in 
+# Check-in
 content/en/users/aai/ @vardizzo-lab
 content/en/providers/check-in/ @vardizzo-lab
