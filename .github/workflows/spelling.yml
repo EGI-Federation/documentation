@@ -44,12 +44,12 @@ on:
     branches:
       - "**"
     types:
-      - 'opened'
-      - 'reopened'
-      - 'synchronize'
+      - "opened"
+      - "reopened"
+      - "synchronize"
   issue_comment:
     types:
-      - 'created'
+      - "created"
 
 jobs:
   spelling:
@@ -62,7 +62,9 @@ jobs:
     outputs:
       followup: ${{ steps.spelling.outputs.followup }}
     runs-on: ubuntu-latest
-    if: "contains(github.event_name, 'pull_request') || github.event_name == 'push'"
+    if:
+      "contains(github.event_name, 'pull_request') || github.event_name ==
+      'push'"
     concurrency:
       group: spelling-${{ github.event.pull_request.number || github.ref }}
       # note: If you use only_check_changed_files, you do not want cancel-in-progress
@@ -83,29 +85,13 @@ jobs:
           use_sarif: 0
           extra_dictionary_limit: 10
           extra_dictionaries:
-            cspell:aws/aws.txt
-            cspell:bash/bash-words.txt
-            cspell:cpp/src/cpp.txt
-            cspell:django/django.txt
-            cspell:elixir/elixir.txt
-            cspell:filetypes/filetypes.txt
-            cspell:fullstack/fullstack.txt
-            cspell:html/html.txt
-            cspell:java/java.txt
-            cspell:node/node.txt
-            cspell:npm/npm.txt
-            cspell:php/php.txt
-            cspell:powershell/powershell.txt
+            cspell:aws/aws.txt cspell:cpp/src/cpp.txt
+            cspell:filetypes/filetypes.txt cspell:node/node.txt
             cspell:public-licenses/src/generated/public-licenses.txt
             cspell:python/src/common/extra.txt
             cspell:python/src/python/python-lib.txt
-            cspell:python/src/python/python.txt
-            cspell:r/src/r.txt
-            cspell:rust/rust.txt
-            cspell:scala/scala.txt
-            cspell:software-terms/src/software-terms.txt
-            cspell:sql/src/tsql.txt
-            cspell:typescript/typescript.txt
+            cspell:python/src/python/python.txt cspell:r/src/r.txt
+            cspell:software-terms/src/software-terms.txt cspell:sql/src/tsql.txt
             cspell:win32/src/win32.txt
 
   comment-push:
@@ -115,7 +101,9 @@ jobs:
     needs: spelling
     permissions:
       contents: write
-    if: (success() || failure()) && needs.spelling.outputs.followup && github.event_name == 'push'
+    if:
+      (success() || failure()) && needs.spelling.outputs.followup &&
+      github.event_name == 'push'
     steps:
       - name: comment
         uses: check-spelling/check-spelling@prerelease
@@ -131,7 +119,9 @@ jobs:
     needs: spelling
     permissions:
       pull-requests: write
-    if: (success() || failure()) && needs.spelling.outputs.followup && contains(github.event_name, 'pull_request')
+    if:
+      (success() || failure()) && needs.spelling.outputs.followup &&
+      contains(github.event_name, 'pull_request')
     steps:
       - name: comment
         uses: check-spelling/check-spelling@main
@@ -148,11 +138,10 @@ jobs:
       pull-requests: write
       actions: read
     runs-on: ubuntu-latest
-    if: ${{
-        github.event_name == 'issue_comment' &&
-        github.event.issue.pull_request &&
-        contains(github.event.comment.body, '@check-spelling-bot apply')
-      }}
+    if:
+      ${{ github.event_name == 'issue_comment' &&
+      github.event.issue.pull_request && contains(github.event.comment.body,
+      '@check-spelling-bot apply') }}
     concurrency:
       group: spelling-update-${{ github.event.issue.number }}
       cancel-in-progress: false
