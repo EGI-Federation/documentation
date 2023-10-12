@@ -273,6 +273,7 @@ HLR
 Horovod
 hostcert
 hostkey
+HPC
 HPDA
 htc
 htcondor
