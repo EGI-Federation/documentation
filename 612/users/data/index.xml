@@ -67,28 +67,20 @@ with the advanced EGI services and platforms
 &lt;a href="../../compute/orchestration">cloud orchestrators&lt;/a>),
 and can be accessed from most &lt;a href="../../compute">compute services&lt;/a>.&lt;/p>
 &lt;h2 id="generic-data-management">Generic data management&lt;/h2>
-&lt;p>These higher-level data management services are available to researchers:&lt;/p>
+&lt;p>This higher-level data management service is available to researchers:&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="rucio">EGI Rucio&lt;/a> is tailored to medium/big scientific collaborations, allowing
-users to organise, manage, and access their data at scale. Data can be distributed
-across heterogeneous data centers at widely distributed locations.&lt;/li>
 &lt;li>&lt;a href="datahub">EGI DataHub&lt;/a> is a high-performance data management solution that
 offers unified data access across multiple types of underlying storage, allowing
 users to share, collaborate and easily perform computations on the stored data.&lt;/li>
 &lt;/ul>
 &lt;h2 id="specialized-data-management">Specialized data management&lt;/h2>
-&lt;p>The following specialized data management services are also available:&lt;/p>
+&lt;p>The following specialized data management service is also available:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="data-transfer">EGI Data Transfer&lt;/a> is a low-level service to move data from
 one &lt;a href="../storage/grid-storage">Grid&lt;/a> or &lt;a href="../storage/object-storage">Object&lt;/a> storage
-to another. It is used internally by &lt;a href="rucio">Rucio&lt;/a> to schedule transfers based
-on the data policies defined by the users.&lt;/li>
-&lt;li>&lt;a href="open-rdm">openRDM&lt;/a> is a combined &lt;a href="https://en.wikipedia.org/wiki/FAIR_data">FAIR&lt;/a>
-data management platform, Electronic Laboratory Notebook (ELN) and Inventory Management System
-allowing a complete overview of workflows and information, from initial data generation
-to data analysis and publication.&lt;/li>
+to another.&lt;/li>
 &lt;/ul>
-&lt;h2 id="use-cases-for-storing-and-managing-research-data">Use-cases for storing and managing research data&lt;/h2>
+&lt;h2 id="use-cases-for-storing-research-data">Use-cases for storing research data&lt;/h2>
 &lt;p>Depending on the type of the employed compute services and the use-cases being addressed,
 users might need to choose different data service to store, access, and manage data.&lt;/p>
 &lt;table>
@@ -96,24 +88,20 @@ users might need to choose different data service to store, access, and manage d
 &lt;tr>
 &lt;th>User&lt;/th>
 &lt;th>Data storage&lt;/th>
-&lt;th>Data management (optional)&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>&lt;strong>Cloud user&lt;/strong>&lt;/td>
 &lt;td>Block and Object storage&lt;/td>
-&lt;td>DataHub&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>HTC user&lt;/strong>&lt;/td>
 &lt;td>Grid storage&lt;/td>
-&lt;td>Rucio&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>HPC user&lt;/strong>&lt;/td>
 &lt;td>High-performance parallel file systems or Object storage&lt;/td>
-&lt;td>DataHub or Rucio&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
