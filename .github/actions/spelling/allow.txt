@@ -1,4 +1,3 @@
-a2enmod
 aai
 aaiproxy
 aarc

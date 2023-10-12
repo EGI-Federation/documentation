@@ -1,6 +1,5 @@
 CVMFS
 diracsgm
-microk8s
 mytoken
 reponame
 sgm
