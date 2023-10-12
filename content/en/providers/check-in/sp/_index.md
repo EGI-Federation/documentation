@@ -149,7 +149,7 @@ more information can be found in the protocol-specific sections that follow.
 
 | Protocol       | Production environment                                                |
 | -------------- | --------------------------------------------------------------------- |
-| SAML           | <https://aai.egi.eu/proxy/saml2/idp/metadata.php>                     |
+| SAML           | <https://aai.egi.eu/auth/realms/egi/protocol/saml/descriptor>         |
 | OpenID Connect | <https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration> |
 
 {{< /tabx >}}
@@ -158,7 +158,7 @@ more information can be found in the protocol-specific sections that follow.
 
 | Protocol       | Demo environment                                                           |
 | -------------- | -------------------------------------------------------------------------- |
-| SAML           | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>                     |
+| SAML           | <https://aai-demo.egi.eu/auth/realms/egi/protocol/saml/descriptor>         |
 | OpenID Connect | <https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration> |
 
 {{< /tabx >}}
@@ -167,7 +167,7 @@ more information can be found in the protocol-specific sections that follow.
 
 | Protocol       | Development environment                                                   |
 | -------------- | ------------------------------------------------------------------------- |
-| SAML           | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>                     |
+| SAML           | <https://aai-dev.egi.eu/auth/realms/egi/protocol/saml/descriptor>         |
 | OpenID Connect | <https://aai-dev.egi.eu/auth/realms/egi/.well-known/openid-configuration> |
 
 {{< /tabx >}}
@@ -202,13 +202,16 @@ certificate, i.e. issued by a trusted certificate authority.
 You can get the metadata of the EGI Check-in IdP Proxy on a dedicated URL that
 depends on the integration environment being used:
 
+<!-- markdownlint-disable no-inline-html -->
+
 {{< tabpanex >}}
 
 {{< tabx header="Production" >}}
 
-| Production environment                            |
-| ------------------------------------------------- |
-| <https://aai.egi.eu/proxy/saml2/idp/metadata.php> |
+| Instance                        | Production environment                                                   |
+| ------------------------------- | ------------------------------------------------------------------ |
+| Keycloak-based EGI Check-in IdP | <ul><li>SAML Metadata URL: <https://aai.egi.eu/auth/realms/egi/protocol/saml/descriptor></li><li>SAML entity ID: `https://aai.egi.eu/auth/realms/egi`</li></ul> |
+| Legacy EGI Check-in IdP         | <ul><li>SAML Metadata URL: <https://aai.egi.eu/proxy/saml2/idp/metadata.php></li><li>SAML entity ID: `https://aai.egi.eu/proxy/saml2/idp/metadata.php`</li></ul> |
 
 {{< /tabx >}}
 
@@ -216,8 +219,8 @@ depends on the integration environment being used:
 
 | Instance                        | Demo environment                                                   |
 | ------------------------------- | ------------------------------------------------------------------ |
-| Legacy EGI Check-in IdP         | <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php>             |
-| Keycloak-based EGI Check-in IdP | <https://aai-demo.egi.eu/auth/realms/egi/protocol/saml/descriptor> |
+| Keycloak-based EGI Check-in IdP | <ul><li>SAML Metadata URL: <https://aai-demo.egi.eu/auth/realms/egi/protocol/saml/descriptor></li><li>SAML entity ID: `https://aai-demo.egi.eu/auth/realms/egi`</li></ul> |
+| Legacy EGI Check-in IdP         | <ul><li>SAML Metadata URL: <https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php></li><li>SAML entity ID: `https://aai-demo.egi.eu/proxy/saml2/idp/metadata.php`</li></ul> |
 
 {{< /tabx >}}
 
@@ -225,18 +228,20 @@ depends on the integration environment being used:
 
 | Instance                        | Development environment                                           |
 | ------------------------------- | ----------------------------------------------------------------- |
-| Legacy EGI Check-in IdP         | <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php>             |
-| Keycloak-based EGI Check-in IdP | <https://aai-dev.egi.eu/auth/realms/egi/protocol/saml/descriptor> |
+| Keycloak-based EGI Check-in IdP | <ul><li>SAML Metadata URL: <https://aai-dev.egi.eu/auth/realms/egi/protocol/saml/descriptor></li><li>SAML entity ID: `https://aai-dev.egi.eu/auth/realms/egi`</li></ul> |
+| Legacy EGI Check-in IdP         | <ul><li>SAML Metadata URL: <https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php></li><li>SAML entity ID: `https://aai-dev.egi.eu/proxy/saml2/idp/metadata.php`</li></ul> |
 
 {{< /tabx >}}
 
 {{< /tabpanex >}}
 
-To register your SAML SP, you must submit a service registration request at
-[Federation Registry](https://aai.egi.eu/federation). Your request should
-include the general information about your service (see
-[General Information](#general-information)) and the SP's metadata and entity
-ID.
+<!-- markdownlint-enable no-inline-html -->
+
+To register your SAML SP, you must submit a service registration request
+through the [Federation Registry](https://aai.egi.eu/federation). Your request
+should include essential information about your service, as outlined in the
+[General Information](#general-information) section, along with your SP's
+metadata URL and entity ID.
 
 ### Metadata
 
@@ -318,16 +323,28 @@ attributes that are relevant for user authorisation:
 ### Service Provider Migration to Keycloak
 
 The migration guide below applies to SAML Service Providers (SPs) registered in
-the **Development** and **Demo** environments of Check-in.
+the **Development**, **Demo** and **Production** environments of Check-in.
 
-**Development and Demo**: Beginning March 9, 2023, clients using the legacy
+**Development and Demo**: Beginning March 9, 2023, SAML SPs using the legacy
+Check-in IdP metadata will no longer be supported.
+
+**Production**: Beginning December 12, 2023, SAML SPs using the legacy
 Check-in IdP metadata will no longer be supported.
 
 #### How to Migrate your Service to Keycloak
 
-All the SPs that were registered to the legacy EGI Check-in IdP in the **Demo**
-environment have been moved to Keycloak, so you do not need to re-register your
-Service.
+If your SAML SP is not yet registered in the
+[Federation Registry](https://aai.egi.eu/federation), you will need to submit
+a service registration request. This request should include essential
+information about your service, as described in the
+[General Information](#general-information) section, in addition to your SAML
+SP's metadata URL and entity ID.
+
+If your SAML SP is already registered, please ensure the accuracy of the
+information under the **General** tab, particularly the policy and contact
+details, as well as the **Protocol Specific** tab.
+Pay special attention to the new **Requested Attributes** section, which
+allows you to manage the user attributes available through Check-in.
 
 {{% alert title="Important" color="warning" %}} If your SAML SP relies on
 experimental features of Check-in which are only available in the
@@ -343,9 +360,9 @@ section.
 
 ##### New Attributes
 
-Some attributes will not be supported when moving your SP to the Keycloak-based
-EGI Check-in IdP. These attributes will be replaced by new ones, as described in
-the table below:
+When migrating your SP to the Keycloak-based EGI Check-in IdP, please be aware
+that some attributes will no longer be supported. These deprecated attributes
+will be replaced by new ones, as detailed in the table below:
 
 | Deprecated Attributes        | New Attributes                |
 | ---------------------------- | ----------------------------- |
@@ -354,22 +371,28 @@ the table below:
 | `eduPersonUniqueId`          | `voPersonID`                  |
 
 {{% alert title="Note" color="info" %}} The values of the deprecated attributes
-will remain the same. Only the name of the attributes is changed.{{% /alert %}}
+will remain unchanged; only the attribute names will be different.{{% /alert %}}
 
-You need to update the SP configuration to map the values the new attribute
-names.
+Ensure that you update the attribute mapping in your SP configuration to align
+with the new attribute names.
 
 ##### NameID
 
-NameID formats control how the users at IdPs are mapped to users at SPs during
-single sign-on. The SPs need to advertise in their metadata which of the
-following formats they support, otherwise Keycloak will assign the unspecified
-(`urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`) NameID to the SP.
+Use of `<saml:NameID>` elements is intended for the Single Logout profile and
+is not suitable for long-term identification of users.
+For user identification, you should use the `voPersonID` SAML attribute, as
+detailed in the [User attributes](#user-attributes) section.
+Your SAML SP should explicitly specify in its metadata the NameID formats it
+supports from the following options:
 
-- Transient (`urn:oasis:names:tc:SAML:2.0:nameid-format:transient`)
 - Persistent (`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`)
+- Transient (`urn:oasis:names:tc:SAML:2.0:nameid-format:transient`)
 - Email address (`urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`)
 - Unspecified (`urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`)
+
+Otherwise, Keycloak will assign the unspecified
+(`urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`) NameID format to
+your SP.
 
 ### References
 
@@ -399,7 +422,7 @@ the steps below in order to register EGI Check-in as an Identity Provider:
 
    Scroll down, and complete the rest options:
 
-   - SAML entity descriptor: `https://aai.egi.eu/proxy/saml2/idp/metadata.php`
+   - SAML entity descriptor: `https://aai.egi.eu/auth/realms/egi/protocol/saml/descriptor`
 
    ![Add SAML IdP](saml-examples-keycloak-add-saml-idp-2.png)
 
@@ -411,10 +434,15 @@ the steps below in order to register EGI Check-in as an Identity Provider:
    - Principal type: `Attribute [Name]`
    - Principal attribute: `urn:oid:1.3.6.1.4.1.25178.4.1.6`
    - HTTP-POST binding response: `On`
-   - Want AuthnRequests signed: `On`
+   - HTTP-POST binding for AuthnRequest: `Off`
+   - HTTP-POST binding logout: `Off`
+   - Want AuthnRequests signed: `Off`
+   - Want Assertions signed: `Off`
+   - Want Assertions encrypted: `On`
+   - Validate Signatures: `On`
 
    {{% alert title="Note" color="info" %}} `urn:oid:1.3.6.1.4.1.25178.4.1.6` is
-   the OID presentation of voPersonID attribute.{{% /alert %}}
+   the OID presentation of the `voPersonID` attribute.{{% /alert %}}
 
    ![SAML Settings](saml-examples-keycloak-saml-idp-saml-setting.png)
 
@@ -1265,24 +1293,21 @@ Example response:
 
 #### Logout Endpoint
 
-The OpenID Connect protocol supports global logout (like the Single Logout in
-SAML). EGI Check-in OpenID Provider supports the
-[OpenID Connect RP-Initiated Logout](https://openid.net/specs/openid-connect-rpinitiated-1_0.html)
-specification where the logout starts by redirecting the user to a specific
-endpoint at the OpenID Provider.
+The EGI Check-in OpenID Provider supports user logout based on the
+[OpenID Connect RP-Initiated Logout](https://openid.net/specs/openid-connect-rpinitiated-1_0.html).
 
-This endpoint is normally obtained via the `end_session_endpoint` element of the
-OP's Configuration page and the parameters that are used in the logout request
-at the Logout Endpoint are defined below:
+The Logout Endpoint is normally obtained via the `end_session_endpoint` element
+of Check-in's Provider Configuration (see [Endpoints](#endpoints) table).
+Parameters used in the logout request are detailed below:
 
-- `id_token_hint`: ID Token previously issued by the OP to the Relying Party
-  passed to the Logout Endpoint as a hint about the end user's current
-  authenticated session with the Client. This is used as an indication of the
-  identity of the end user that the RP is requesting be logged out by the OP.
-- `client_id`: OAuth 2.0 Client Identifier valid at the Authorization Server.
-  This parameter is needed to specify the Client Identifier when
-  `post_logout_redirect_uri` is used but `id_token_hint` is not. Using this
-  parameter, a confirmation dialog will be presented to the end user.
+- `id_token_hint`: The ID Token previously issued by Check-in to your Relying
+  Party (RP) and provided to the Logout Endpoint as a hint regarding the end
+  user's current authenticated session with the client. It indicates the
+  identity of the end user that the RP is requesting Check-in to log out.
+  If the `id_token_hint` parameter is omitted, the user may be prompted to
+  confirm the logout.
+- `client_id`: This parameter is used to specify the Client Identifier when
+  `post_logout_redirect_uri` is specified but `id_token_hint` is not.
 - `post_logout_redirect_uri`: URI to which the RP is requesting that the end
   user's browser be redirected after a logout has been performed. This URI
   should use the HTTPS scheme and the value must have been previously registered
@@ -1290,6 +1315,8 @@ at the Logout Endpoint are defined below:
   [EGI Federation Registry](https://aai.egi.eu/federation). Note that you need
   to include either the `client_id` or `id_token_hint` parameter in case the
   `post_logout_redirect_uri` is included.
+
+You can use either HTTP GET or HTTP POST to send the logout request to the Logout Endpoint.
 
 ##### Example Request
 
