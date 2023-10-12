@@ -29,6 +29,6 @@ following process:
 {{% alert title="Note" color="info" %}} For more information please contact
 
 * Miguel Caballer: `micafer1 <at> upv.es`
-* Amanda Calatrav: `amcaar <at> i3m.upv.es`
+* Amanda Calatrava: `amcaar <at> i3m.upv.es`
 
 {{% /alert %}}

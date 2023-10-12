@@ -21,8 +21,6 @@ choose (or gets used automatically) in specific scenarios:
 | Service Name                                | Workload Type                | Use-Case                                                                                                                               |
 | ------------------------------------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | [Infrastructure Manager](im)                | VMs, containers, storage     | Used to run workloads on a single IaaS Cloud provider.                                                                                 |
-| [Elastic Cloud Compute Cluster](ec3)        | VMs, containers, storage     | Used when you need to run workloads on clusters that can be elastically scaled and potentially span more than one IaaS Cloud provider. |
 | [Workload Manager](workload-manager)        | Jobs                         | Used to efficiently distribute, manage, and monitor computing workloads.                                                               |
-| [Dynamic On-Demand Analysis Service](dodas) | Containers, storage (caches) | Used when you need to process your data either interactively or via a batch system.                                                    |
 
 The following sections offer more details about each of these orchestrators.

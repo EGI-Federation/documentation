@@ -26,37 +26,29 @@ and can be accessed from most [compute services](../../compute).
 
 ## Generic data management
 
-These higher-level data management services are available to researchers:
+This higher-level data management service is available to researchers:
 
-- [EGI Rucio](rucio) is tailored to medium/big scientific collaborations, allowing
-  users to organise, manage, and access their data at scale. Data can be distributed
-  across heterogeneous data centers at widely distributed locations.
 - [EGI DataHub](datahub) is a high-performance data management solution that
   offers unified data access across multiple types of underlying storage, allowing
   users to share, collaborate and easily perform computations on the stored data.
 
 ## Specialized data management
 
-The following specialized data management services are also available:
+The following specialized data management service is also available:
 
 - [EGI Data Transfer](data-transfer) is a low-level service to move data from
   one [Grid](../storage/grid-storage) or [Object](../storage/object-storage) storage
-  to another. It is used internally by [Rucio](rucio) to schedule transfers based
-  on the data policies defined by the users.
-- [openRDM](open-rdm) is a combined [FAIR](https://en.wikipedia.org/wiki/FAIR_data)
-  data management platform, Electronic Laboratory Notebook (ELN) and Inventory Management System
-  allowing a complete overview of workflows and information, from initial data generation
-  to data analysis and publication.
+  to another.
 
-## Use-cases for storing and managing research data
+## Use-cases for storing research data
 
 Depending on the type of the employed compute services and the use-cases being addressed,
 users might need to choose different data service to store, access, and manage data.
 
-| User           | Data storage                                             | Data management (optional) |
-| -------------- | -------------------------------------------------------- | -------------------------- |
-| **Cloud user** | Block and Object storage                                 | DataHub                    |
-| **HTC user**   | Grid storage                                             | Rucio                      |
-| **HPC user**   | High-performance parallel file systems or Object storage | DataHub or Rucio           |
+| User           | Data storage                                             |
+| -------------- | -------------------------------------------------------- |
+| **Cloud user** | Block and Object storage                                 |
+| **HTC user**   | Grid storage                                             |
+| **HPC user**   | High-performance parallel file systems or Object storage |
 
 The following sections offer detailed descriptions for each data management service.
