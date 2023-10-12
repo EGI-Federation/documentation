@@ -147,3 +147,5 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \bSPECcpu2006\b
 \bWLCG.*\b
 \bfrontends?\b
+\bmicrok8s\b
+\ba2enmod\b
