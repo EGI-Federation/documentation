@@ -960,8 +960,8 @@ for the given VO.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack role add member --group &lt;span style="color:#000">$group_id&lt;/span> --project &amp;lt;your project&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
-&lt;p>Set the &lt;code>VO&lt;/code> property to the name of the VO that you are supporting:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack project &lt;span style="color:#204a87">set&lt;/span> --property &lt;span style="color:#000">VO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;name of the VO&amp;gt; &amp;lt;your project&amp;gt;
+&lt;p>Set the &lt;code>egi.VO&lt;/code> property to the name of the VO that you are supporting:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack project &lt;span style="color:#204a87">set&lt;/span> --property egi.VO&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;name of the VO&amp;gt; &amp;lt;your project&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ol>
 &lt;h2 id="keystone-mapping">Keystone Mapping&lt;/h2>
@@ -1024,7 +1024,7 @@ for the VOs are listed in
 have admin privileges:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>openstack role add member --user &amp;lt;your caso user&amp;gt; --project &amp;lt;your new vo project&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="information-system">Information system&lt;/h2>
-&lt;p>If you are correctly setting the &lt;code>VO&lt;/code> property to your projects, the configuration will
+&lt;p>If you are correctly setting the &lt;code>egi.VO&lt;/code> property to your projects, the configuration will
 be automatically retrieved by the cloud-info-provider.&lt;/p>
 &lt;h2 id="vm-image-management">VM Image Management&lt;/h2>
 &lt;h3 id="cloudkeeper-core">cloudkeeper-core&lt;/h3>
