@@ -27,10 +27,10 @@ for the given VO.
    $ openstack role add member --group $group_id --project <your project>
    ```
 
-1. Set the `VO` property to the name of the VO that you are supporting:
+1. Set the `egi.VO` property to the name of the VO that you are supporting:
 
    ```shell
-   $ openstack project set --property VO=<name of the VO> <your project>
+   $ openstack project set --property egi.VO=<name of the VO> <your project>
    ```
 
 ## Keystone Mapping
@@ -111,7 +111,7 @@ openstack role add member --user <your caso user> --project <your new vo project
 
 ## Information system
 
-If you are correctly setting the `VO` property to your projects, the configuration will
+If you are correctly setting the `egi.VO` property to your projects, the configuration will
 be automatically retrieved by the cloud-info-provider.
 
 ## VM Image Management
