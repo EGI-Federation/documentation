@@ -29,7 +29,7 @@ Check the dedicated [ECAS documentation](./ecas/).
 ### Kubernetes
 
 Check the
-[Cloud Container Compute documentation](../../../cloud-container-compute).
+[Cloud Container Compute documentation](../../../../cloud-container-compute).
 
 ### Mesos + Marathon + Chronos
 
