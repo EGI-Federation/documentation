@@ -15,16 +15,22 @@ The usual method of supporting a VO is by creating a local project for it. You
 should assign quotas to this project as agreed in the OLA defining the support
 for the given VO.
 
-1. Create a group where users belonging to the VO will be mapped to: :
+1. Create a group where users belonging to the VO will be mapped to:
 
    ```shell
    group_id=$(openstack group create -f value -c id <new_group>)
    ```
 
-1. Add that group to the desired local project: :
+1. Add that group to the desired local project:
 
    ```shell
    $ openstack role add member --group $group_id --project <your project>
+   ```
+
+1. Set the `egi.VO` property to the name of the VO that you are supporting:
+
+   ```shell
+   $ openstack project set --property egi.VO=<name of the VO> <your project>
    ```
 
 ## Keystone Mapping
@@ -105,16 +111,8 @@ openstack role add member --user <your caso user> --project <your new vo project
 
 ## Information system
 
-Add the mapping to your site configuration with a new Pull Request to the
-[fedcloud-catchall-operations repository](https://github.com/EGI-Federation/fedcloud-catchall-operations)
-
-```yaml
----
-vos:
-  - name: <vo name>
-    auth:
-      project_id: <your new vo project>
-```
+If you are correctly setting the `egi.VO` property to your projects, the configuration will
+be automatically retrieved by the cloud-info-provider.
 
 ## VM Image Management
 
