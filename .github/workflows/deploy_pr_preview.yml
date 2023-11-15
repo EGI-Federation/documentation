@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Download artifact"
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             var artifacts = await github.rest.actions.listWorkflowRunArtifacts({
@@ -71,7 +71,7 @@ jobs:
           commit_message: ${{ github.event.head_commit.message }}
 
       - name: Update Pull Request
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
