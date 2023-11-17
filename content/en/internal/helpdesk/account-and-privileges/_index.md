@@ -45,7 +45,6 @@ following:
 
 ![RegisterInfo_AAI_VOPersonID](https://github.com/EGI-Federation/documentation/assets/94046531/78883c1b-dcad-4a47-bd93-cec6ad72fcaf)
 
-
 ## Getting supporter privileges
 
 In order to process tickets assigned to the support unit you belong to, or in
