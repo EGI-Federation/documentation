@@ -262,27 +262,33 @@ site, these accounts can be merged as needed for your deployment:&lt;/p>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length --></description></item><item><title>Providers: GOCDB Registration</title><link>/providers/cloud-compute/registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/registration/</guid><description>
 &lt;p>Site endpoints must be registered in
-&lt;a href="https://goc.egi.eu">EGI Configuration Management Database (GOCDB)&lt;/a>. If you are
-creating a new site for your cloud services, check the
+&lt;a href="https://goc.egi.eu">EGI Configuration Management Database (GOCDB)&lt;/a>. Cloud
+services can coexist within an existing (Grid) site, but we are recommending to
+register a new site for the cloud services (as per
 &lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09 Resource Centre Registration and Certification&lt;/a>
-procedure. Services can also coexist within an existing (grid) site.&lt;/p>
+procedure - see
+&lt;a href="../registration-and-certification">Registration and Certification&lt;/a> section)&lt;/p>
 &lt;h2 id="expected-services">Expected Services&lt;/h2>
 &lt;p>These are the expected services for a working site:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>If offering native OpenStack access (nova), register: &lt;code>org.openstack.nova&lt;/code>
-for the Nova endpoint of the site. The &lt;strong>endpoint URL&lt;/strong> must contain the
-Keystone v3 URL: &lt;code>https://hostname:port/url/v3&lt;/code>. Set the &lt;strong>Host DN&lt;/strong> so the
-cloud-info-provider can be enabled in the AMS.&lt;/p>
+&lt;p>&lt;code>org.openstack.nova&lt;/code> for the Nova endpoint of the site. The &lt;strong>endpoint URL&lt;/strong>
+must contain the Keystone v3 URL: &lt;code>https://hostname:port/url/v3&lt;/code>. Set the
+&lt;strong>Host DN&lt;/strong> so the cloud-info-provider can be enabled.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>If offering native OpenStack access (swift), register: &lt;code>org.openstack.swift&lt;/code>
-for the swift endpoint of the site. The &lt;strong>endpoint URL&lt;/strong> field must contain the
-Keystone v3 URL: &lt;code>https://hostname:port/url/v3&lt;/code>.&lt;/p>
+&lt;p>&lt;code>eu.egi.cloud.accounting&lt;/code> for the host sending the records to the accounting
+repository (executing SSM send). This host needs a valid IGTF-accredited X.509
+certificate. Set the &lt;strong>Host DN&lt;/strong> so the SSM can be enabled.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;code>eu.egi.cloud.accounting&lt;/code> for the host sending the records to the
-accounting repository (executing SSM send).&lt;/p>
+&lt;p>&lt;code>org.openstack.horizon&lt;/code> for the dashboard endpoint of the site (optional). The
+endpoint URL field must contain the horizon URL: &lt;code>https://hostname:port/url/&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>(Optional, if offering object storage) &lt;code>org.openstack.swift&lt;/code> for the swift
+endpoint of the site. The &lt;strong>endpoint URL&lt;/strong> field must contain the Keystone v3
+URL: &lt;code>https://hostname:port/url/v3&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="deprecated-services">Deprecated services&lt;/h2>
@@ -290,20 +296,15 @@ accounting repository (executing SSM send).&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;code>Site-BDII&lt;/code>. This service collects and publishes site's data for the
-Information System. Existing sites should already have this registered.&lt;/p>
+Information System. There is no need to run a BDII for cloud providers.
+&lt;code>eu.egi.cloud.information.bdii&lt;/code> is also deprecated and no longer in use.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;code>eu.egi.cloud.vm-metadata.vmcatcher&lt;/code> for the VMI replication mechanism.
-Register here the host providing the replication (i.e. the host with
-cloudkeeper installation)&lt;/p>
+&lt;p>&lt;code>eu.egi.cloud.vm-metadata.vmcatcher&lt;/code> for the VMI replication mechanism.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>If offering OCCI interface, &lt;code>eu.egi.cloud.vm-management.occi&lt;/code> for the OCCI
-endpoint offered by the site. The endpoint URL must follow this syntax:&lt;/p>
-&lt;p>&lt;code>https://hostname:port/?image=&amp;lt;image_name&amp;gt;&amp;amp;resource=&amp;lt;resource_name&amp;gt;&lt;/code>&lt;/p>
-&lt;p>where &lt;code>&amp;lt;image_name&amp;gt;&lt;/code> and &lt;code>&amp;lt;resource_name&amp;gt;&lt;/code> cannot contain spaces. These
-attributes map to &lt;code>os_tpl&lt;/code> and &lt;code>resource_tpl&lt;/code> respectively and will be the
-ones used for monitoring purposes.&lt;/p>
+&lt;p>&lt;code>eu.egi.cloud.vm-management.occi&lt;/code> for the OCCI endpoint offered by the site.
+OCCI is no longer in use in FedCloud.&lt;/p>
 &lt;/li>
 &lt;/ul></description></item><item><title>Providers: Installation Validation</title><link>/providers/cloud-compute/validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/validation/</guid><description>
 &lt;p>Once the site services are registered in GOCDB (and flagged as &amp;quot;monitored&amp;quot;)
