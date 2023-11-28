@@ -5,34 +5,45 @@ weight: 10
 type: "docs"
 ---
 
-IaaS providers are very welcome to join the EGI Federated Cloud as a Resource
-Centres (RC) and joining the Federated Cloud Task Force to contribute to the
-design, creation and implementation of the federation.
+Resource Centres are free to use any Cloud Management Platform as long as they
+are able to integrate with the EGI Federation components. At the moment this
+compliance is supported for OpenStack open-source cloud platform.
 
-Resource Centres are free to use any Cloud Management Framework (OpenStack,
-etc\...) as long as they are able to integrate with the EGI Federation
-components as described in the
-[Federated Cloud Architecture](../../../users/getting-started/architecture). At
-the moment this compliance is guaranteed for OpenStack.
+The general minimum requirements are described below.
 
-The general minimal requirements are:
+- Relevant parts of
+  [PROC09 Resource Centre Registration and Certification](https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification)
+  have been successfully completed
 
 - Hardware requirements greatly depend on your cloud infrastructure, EGI
   components in general do lightweight operations by interacting with your
   services APIs.
-  - `cloudkeeper` requires enough disk space to download and convert images
-    before uploading into your local catalogue. The number and size of images
-    which will be downloaded depends on the communities you plan to support. For
-    the piloting VO `fedcloud.egi.eu`, 100GB of disk should be enough.
-- Servers need to authenticate each other in the EGI Federated Cloud context
-  using X.509 certificates. So a Resource Centre should be able to obtain server
-  certificates for some services.
-- User and research communities are called Virtual Organisations (VO). Resource
-  Centres are expected to join:
-  - `ops` and `dteam` VOs, used for operational purposes as per RC OLA
-  - a community-VO that supports EGI users (e.g. `vo.access.egi.eu` for
-    piloting)
-- EGI provides packages for the following operating systems (others may work but
-  we are not providing packages):
-  - CentOS 7 (and in general RHEL-compatible)
-  - Ubuntu 16.04 (and in general Debian-based)
+
+  - Image sync requires enough disk space to download and convert images before
+    uploading into your local catalogue. The number and size of images which
+    will be downloaded depends on the communities you plan to support. For the
+    piloting VO `vo.access.egi.eu`, 100GB of disk should be enough.
+
+- Servers need X.509 host certificates in order to authenticate to each other or
+  to act as public endpoints in the EGI Federated Cloud context. For accounting
+  purposes one IGTF-accredited X.509 certificate is needed per site, but the
+  other public endpoints can use ordinary certificates (issued by Let’s Encrypt
+  for example).
+
+  - For the IGTF-accredited certificates, a list of national / regional
+    Certificate Authorities is available at
+    [EUGridPMA Membership](https://www.eugridpma.org/members/membership); it is
+    expected that the Resource Centre will obtain the IGTF certificate from a
+    close Certificate Authority
+
+- For operational purposes, the `ops` VO needs to be supported by the Resource
+  Centre as per Resource Centre OLA. Also at least one community VO that
+  supports EGI users is expected to be supported by the Resource Centre (i.e.
+  `vo.access.egi.eu` for piloting and prototyping FedCloud usage).
+
+- The public endpoints need to have proper firewall configuration (to allow
+  inbound external access)
+
+- A flavor (a preset configuration that defines the compute, memory, and storage
+  capacity - min 8 GB - of an instance) needs to be made available by the site
+  for monitoring purposes.
