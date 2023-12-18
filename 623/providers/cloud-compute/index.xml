@@ -14,10 +14,10 @@ have been successfully completed&lt;/p>
 components in general do lightweight operations by interacting with your
 services APIs.&lt;/p>
 &lt;ul>
-&lt;li>Image sync requires enough disk space to download and convert images before
-uploading into your local catalogue. The number and size of images which
+&lt;li>Image sync requires enough space to store the community images into your
+local catalogue. The number and size of images which
 will be downloaded depends on the communities you plan to support. For the
-piloting VO &lt;code>vo.access.egi.eu&lt;/code>, 100GB of disk should be enough.&lt;/li>
+operations VO &lt;code>ops&lt;/code>, a &amp;lt; 4GB image is used.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
