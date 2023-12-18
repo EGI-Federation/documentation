@@ -50,13 +50,13 @@ capacity - min 8 GB - of an instance) needs to be made available by the site
 for monitoring purposes.&lt;/p>
 &lt;/li>
 &lt;/ul></description></item><item><title>Providers: OpenStack</title><link>/providers/cloud-compute/openstack/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/</guid><description>
-&lt;p>This manual provides information on how to set up a Resource Centre providing
+&lt;p>This section provides information on how to set up a Resource Centre providing
 cloud resources in the EGI infrastructure. Integration with FedCloud requires a
 &lt;em>working OpenStack installation&lt;/em> as a pre-requirement. EGI supports any recent
 &lt;a href="https://releases.openstack.org">OpenStack version&lt;/a> (tested from OpenStack
 Mitaka).&lt;/p>
-&lt;p>EGI expects the following OpenStack services to be available and accessible from
-outside your site:&lt;/p>
+&lt;p>The following OpenStack services are expected to be available and accessible
+from outside the site:&lt;/p>
 &lt;ul>
 &lt;li>Keystone&lt;/li>
 &lt;li>Nova&lt;/li>
@@ -65,96 +65,29 @@ outside your site:&lt;/p>
 &lt;li>Neutron&lt;/li>
 &lt;li>Swift (if providing Object Storage)&lt;/li>
 &lt;/ul>
-&lt;p>FedCloud components are distributed through
-&lt;a href="https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution">CMD (Cloud Middleware Distribution)&lt;/a>
-These docker containers come pre-packaged and ready to use in the EGI FedCloud
-Appliance so you do not need to install any extra components on your site but
-just run a VM and configure it appropriately to interact with your services.&lt;/p>
 &lt;p>The integration is performed by a set of EGI components that interact with the
 OpenStack services APIs:&lt;/p>
-&lt;p>&lt;img src="openstacksite.png" alt="image">&lt;/p>
 &lt;ul>
 &lt;li>Authentication of EGI users into your system is performed by configuring the
-native OpenID Connect support of Keystone. Support for legacy VOs using VOMS
-requires the installation of the &lt;strong>Keystone-VOMS Authorization plugin&lt;/strong> to
-allow users with a valid VOMS proxy to obtain tokens to access your OpenStack
-deployment.&lt;/li>
+native OpenID Connect support of Keystone&lt;/li>
 &lt;li>&lt;strong>cASO&lt;/strong> collects accounting data from OpenStack and uses &lt;strong>SSM&lt;/strong> to send the
 records to the central accounting database on the EGI Accounting service
-(&lt;a href="https://apel.github.io/">APEL&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>cloud-info-provider&lt;/strong> registers the RC configuration and description through
-the &lt;a href="../../../internal/messaging">Messaging service&lt;/a> to facilitate service
-discovery&lt;/li>
-&lt;li>&lt;strong>cloudkeeper&lt;/strong> (and &lt;strong>cloudkeeper-os&lt;/strong>) synchronises with
-&lt;a href="https://appdb.egi.eu/browse/cloud">EGI AppDB&lt;/a> so new or updated images can be
-provided by the RC to user communities (VO).&lt;/li>
+(&lt;a href="https://apel.github.io/">APEL&lt;/a>). cASO and SSM are operated by the site.&lt;/li>
+&lt;li>EGI runs the cloud-info-provider and cloudkeeper instances to provide
+information discovery and VM image synchronisation&lt;/li>
 &lt;/ul>
-&lt;p>Not all EGI components need to share the same credentials. They are individually
-configured, you can use different credentials and permissions if desired.&lt;/p>
+&lt;p>&lt;img src="openstacksite.png" alt="image">&lt;/p>
 &lt;h2 id="installation-options">Installation options&lt;/h2>
-&lt;p>EGI distributes the integration components as:&lt;/p>
+&lt;p>cASO and SSM releases can be be obtained from GitHub:&lt;/p>
 &lt;ul>
-&lt;li>A Virtual Appliance (VA) that uses Docker containers to bundle all of the
-components in a single VM and just needs minor configuration to get started&lt;/li>
-&lt;li>RPM and DEB Packages in the
-&lt;a href="https://confluence.egi.eu/display/EGIBG/Cloud+Middleware+Distribution">CMD distribution&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/IFCA-Advanced-Computing/caso/releases">cASO&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apel/ssm/releases">SSM&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h3 id="fedcloud-virtual-appliance">FedCloud Virtual Appliance&lt;/h3>
-&lt;p>The EGI FedCloud Appliance is available at
-&lt;a href="https://appdb.egi.eu/store/vappliance/fedcloud.integration.appliance.openstack">AppDB&lt;/a>
-as an OVA file. You can easily extract the VMDK disk by untaring and optionally
-converting it to your preferred format with qemu-img:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># get image and extract VMDK&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ curl &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl &lt;span style="color:#4e9a06">&amp;#34;https://appdb.egi.eu/store/vm/image/fc90d1aa-b0ae-46a0-b457-96f6f7a7d446:7875/json?strict&amp;#34;&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r .url&lt;span style="color:#204a87;font-weight:bold">)&lt;/span> &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> tar x &lt;span style="color:#4e9a06">&amp;#34;*.vmdk&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># convert to qcow2&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ qemu-img convert -O qcow2 FedCloud-Appliance.Ubuntu.*.vmdk fedcloud-appliance.qcow2
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The appliance running at your OpenStack must:&lt;/p>
-&lt;ul>
-&lt;li>Have a host certificate to send the accounting information to the accounting
-repository. DN of the host certificate must be registered in GOCDB with
-service type &lt;code>eu.egi.cloud.accounting&lt;/code>. The host certificate and key in PEM
-format are expected in &lt;code>/etc/grid-security/hostcert.pem&lt;/code> and
-&lt;code>/etc/grid-security/hostkey.pem&lt;/code> respectively.&lt;/li>
-&lt;li>Have enough disk space for handling the VM image replication (~ 100GB for
-&lt;code>fedcloud.egi.eu&lt;/code> VO). By default these are stored at /image_data. You can
-mount a volume at that location.&lt;/li>
-&lt;/ul>
-&lt;h3 id="upgrading-the-openstack-appliance">Upgrading the OpenStack Appliance&lt;/h3>
-&lt;h4 id="from-20180507-or-newer-to-20210312">From 2018.05.07 or newer to 2021.03.12&lt;/h4>
-&lt;p>Configuration changes:&lt;/p>
-&lt;ul>
-&lt;li>Removes BDII, service is no longer in use&lt;/li>
-&lt;li>A cloud-info-provider cron is added&lt;/li>
-&lt;li>Uses AMS for pushing accounting records. New configuration file for ssmsend is
-available&lt;/li>
-&lt;/ul>
-&lt;h4 id="from-20170809-to-20180507">From 2017.08.09 to 2018.05.07&lt;/h4>
-&lt;p>Configuration changes:&lt;/p>
-&lt;ul>
-&lt;li>This upgrade moves the &lt;code>voms.json&lt;/code> file to the respective &lt;code>caso&lt;/code> and
-&lt;code>cloudkeeper-os&lt;/code> directories under &lt;code>/etc/&lt;/code>&lt;/li>
-&lt;li>No other changes in configuration are needed&lt;/li>
-&lt;/ul>
-&lt;h4 id="from-20160403-to-20170809">From 20160403 to 2017.08.09&lt;/h4>
-&lt;p>There are several major changes between these versions, namely:&lt;/p>
-&lt;ul>
-&lt;li>atrope has been deprecated and cloudkeeper is used instead. The configuration
-cannot be reused directly and the new services need to be configured as
-described above&lt;/li>
-&lt;li>caso is upgraded to version 1.1.1, the configuration file has some
-incompatible changes.&lt;/li>
-&lt;li>A new bdii.service is available for managing the process is available.&lt;/li>
-&lt;/ul>
-&lt;h3 id="cmd-packages">CMD Packages&lt;/h3>
-&lt;p>The CMD-OS repository provides packages that have gone through a quality
-assurance process for the supported distributions. Packages are available via
-the &lt;a href="https://repository.egi.eu">EGI repository&lt;/a>.&lt;/p>
 &lt;h2 id="open-ports">Open Ports&lt;/h2>
+&lt;h3 id="inbound">Inbound&lt;/h3>
 &lt;p>The following &lt;strong>services&lt;/strong> must be accessible to allow access to an
 OpenStack-based FedCloud site (default ports listed below, can be adjusted to
-your installation)&lt;/p>
+your installation).&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
 &lt;table>
 &lt;thead>
@@ -193,7 +126,7 @@ your installation)&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length -->
-&lt;h3 id="outgoing-ports">Outgoing ports&lt;/h3>
+&lt;h3 id="outbound">Outbound&lt;/h3>
 &lt;p>The EGI Cloud components require the following outgoing connections open:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
 &lt;table>
@@ -215,52 +148,14 @@ your installation)&lt;/p>
 &lt;td>&lt;code>msg.argo.grnet.gr&lt;/code>&lt;/td>
 &lt;td>AMS authentication (used to send accounting records by SSM).&lt;/td>
 &lt;/tr>
-&lt;tr>
-&lt;td>&lt;strong>443&lt;/strong>/TCP&lt;/td>
-&lt;td>&lt;code>vmcaster.appdb.egi.eu&lt;/code>&lt;/td>
-&lt;td>AppDB image lists (used by cloudkeeper).&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;strong>8080&lt;/strong>/TCP&lt;/td>
-&lt;td>&lt;code>cephrgw01.ifca.es&lt;/code>&lt;/td>
-&lt;td>Swift server hosting EGI images (used by cloudkeeper).&lt;/td>
-&lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;!-- markdownlint-enable line-length -->
-&lt;p>Images listed in AppDB may be hosted in other servers besides
-&lt;code>cephrgw01.ifca.es&lt;/code>. Check the specific VO-wide image lists for details.&lt;/p>
-&lt;h2 id="permissions">Permissions&lt;/h2>
-&lt;p>This is an overview of the expected account permissions used in an OpenStack
-site, these accounts can be merged as needed for your deployment:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Component&lt;/th>
-&lt;th>Permission&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>cloud-info&lt;/td>
-&lt;td>Member of all projects supporting EGI VOs&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>accounting&lt;/td>
-&lt;td>Member of all projects and able to list users (allowed to &lt;code>identity:list_users&lt;/code> in keystone)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>cloud-keeper&lt;/td>
-&lt;td>Permission to manage the images for all the projects supporting EGI VOs&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Other users&lt;/td>
-&lt;td>Automatically created by Keystone and permission set as configured in the mappings&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;!-- markdownlint-enable line-length --></description></item><item><title>Providers: GOCDB Registration</title><link>/providers/cloud-compute/registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/registration/</guid><description>
+&lt;h2 id="accounts-in-openstack">Accounts in OpenStack&lt;/h2>
+&lt;p>User accounts will be managed by the
+&lt;a href="https://docs.openstack.org/keystone/latest/admin/federation/federated_identity.html">Federated Identity&lt;/a>
+features of OpenStack. cASO expects to be run with a user that is allowed to
+access &lt;code>identity:list_users&lt;/code> and &lt;code>identity:list_projects&lt;/code> in Keystone.&lt;/p></description></item><item><title>Providers: GOCDB Registration</title><link>/providers/cloud-compute/registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/registration/</guid><description>
 &lt;p>Site endpoints must be registered in
 &lt;a href="https://goc.egi.eu">EGI Configuration Management Database (GOCDB)&lt;/a>. Cloud
 services can coexist within an existing (Grid) site, but we are recommending to

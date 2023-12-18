@@ -760,53 +760,7 @@ site is supporting.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>The appliance has a cron job that will connect to the configured OpenStack API
-and send messages every 5 minutes.&lt;/p></description></item><item><title>Providers: VM Image synchronisation</title><link>/providers/cloud-compute/openstack/cloudkeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/cloudkeeper/</guid><description>
-&lt;p>VM Images are replicated using &lt;code>cloudkeeper&lt;/code>, which has two
-components:&lt;/p>
-&lt;ul>
-&lt;li>fronted (cloudkeeper-core) dealing the with image lists and downloading the
-needed images, run periodically with cron&lt;/li>
-&lt;li>backend (cloudkeeper-os) dealing with your glance catalogue, running
-permanently.&lt;/li>
-&lt;/ul>
-&lt;h3 id="using-the-vm-appliance">Using the VM Appliance&lt;/h3>
-&lt;p>Every 4 hours, the appliance will perform the following actions:&lt;/p>
-&lt;ul>
-&lt;li>download the configured lists in &lt;code>/etc/cloudkeeper/image-lists.conf&lt;/code> and
-verify its signature&lt;/li>
-&lt;li>check any changes in the lists and download new images&lt;/li>
-&lt;li>synchronise this information to the configured glance endpoint&lt;/li>
-&lt;/ul>
-&lt;p>First you need to configure and start the backend. Edit
-&lt;code>/etc/cloudkeeper-os/cloudkeeper-os.conf&lt;/code> and add the authentication parameters
-from line 117 to 136.&lt;/p>
-&lt;p>Then add as many image lists (one per line) as you would like to subscribe to
-&lt;code>/etc/cloudkeeper/image-lists.conf&lt;/code>. Use URLs with your AppDB token for
-authentication, check the following guides for getting such token and URLs:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://wiki.appdb.egi.eu/main:faq:how_to_get_access_to_vo-wide_image_lists">how to access to VO-wide image lists&lt;/a>,
-and&lt;/li>
-&lt;li>&lt;a href="https://wiki.appdb.egi.eu/main:faq:how_to_subscribe_to_a_private_image_list_using_the_vmcatcher">how to subscribe to a private image list&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;p>Finally, you need to provide a &lt;code>/etc/cloudkeeper-os/mapping.json&lt;/code> that
-configures the mapping of VOs supported in your OpenStack. The file should
-contain a json document that follows this format:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;VO_NAME&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;project&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;id of project in OpenStack for VO_NAME&amp;gt;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;VO_NAME_2&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;project&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;local name of project in OpenStack for VO_NAME_2&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;domain&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;domain name for project in OpenStack&amp;gt;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that you can either specify a project ID or the project name with the
-domain name in the mapping. Add as many VOs as you are supporting.&lt;/p>
-&lt;h4 id="running-the-services">Running the services&lt;/h4>
-&lt;p>cloudkeeper-os should run permanently, there is a &lt;code>cloudkeeper-os.service&lt;/code> for
-systemd in the appliance. Manage as usual:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>systemctl &amp;lt;start&lt;span style="color:#000;font-weight:bold">|&lt;/span>stop&lt;span style="color:#000;font-weight:bold">|&lt;/span>status&amp;gt; cloudkeeper-os
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>cloudkeeper core is run every 4 hours with a cron script.&lt;/p></description></item><item><title>Providers: GPU flavours</title><link>/providers/cloud-compute/openstack/gpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/gpu/</guid><description>
+and send messages every 5 minutes.&lt;/p></description></item><item><title>Providers: GPU flavours</title><link>/providers/cloud-compute/openstack/gpu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/gpu/</guid><description>
 &lt;h2 id="setting-up-gpu-flavours">Setting up GPU flavours&lt;/h2>
 &lt;p>Support for GPU can be added to flavours using the
 &lt;a href="https://docs.openstack.org/nova/xena/admin/pci-passthrough.html">PCI passthrough feature in OpenStack&lt;/a>.
@@ -1023,24 +977,6 @@ for the VOs are listed in
 &lt;p>Be sure to include the user running cASO as member of the project if it does not
 have admin privileges:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>openstack role add member --user &amp;lt;your caso user&amp;gt; --project &amp;lt;your new vo project&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="information-system">Information system&lt;/h2>
-&lt;p>If you are correctly setting the &lt;code>egi.VO&lt;/code> property to your projects, the configuration will
-be automatically retrieved by the cloud-info-provider.&lt;/p>
-&lt;h2 id="vm-image-management">VM Image Management&lt;/h2>
-&lt;h3 id="cloudkeeper-core">cloudkeeper-core&lt;/h3>
-&lt;p>Add the new image list to the &lt;code>cloudkeeper&lt;/code> configuration in
-&lt;code>/etc/cloudkeeper/cloudkeeper.yml&lt;/code> (or &lt;code>/etc/cloudkeeper/image-lists.conf&lt;/code> if
-using the appliance), new entry should look similar to:&lt;/p>
-&lt;p>&lt;code>https://&amp;lt;APPDB_TOKEN&amp;gt;:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/&amp;lt;your new vo&amp;gt;/image.list&lt;/code>&lt;/p>
-&lt;h3 id="cloudkeeper-os">cloudkeeper-os&lt;/h3>
-&lt;p>Add the user configured in cloudkeeper-os as member of the new project:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack role add member &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --user &amp;lt;your cloudkeeper-os user&amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --project &amp;lt;your new vo project&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add the mapping of the project to the VO in &lt;code>/etc/cloudkeeper-os/mapping.json&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;&amp;lt;your new vo&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;tenant&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your new vo project&amp;gt;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="information-system--vm-image-management">Information system / VM Image management&lt;/h2>
+&lt;p>If you are correctly setting the &lt;code>egi.VO&lt;/code> property to your projects, the
+configuration will be automatically retrieved by the catch-all components.&lt;/p></description></item></channel></rss>

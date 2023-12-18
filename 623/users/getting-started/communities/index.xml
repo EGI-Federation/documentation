@@ -157,4 +157,31 @@ that is used for testing.&lt;/p>
 &lt;p>The steps that an OpenStack cloud provider needs to follow to add resources
 to the Disaster Mitigation and Agriculture community
 Virtual Organisation (i.e. &lt;code>vo.environmental.egi.eu&lt;/code>) are available in the
-&lt;a href="../../../../providers/cloud-compute/openstack/vo_config">VO Configuration guide for providers&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;a href="../../../../providers/cloud-compute/openstack/vo_config">VO Configuration guide for providers&lt;/a>.&lt;/p></description></item><item><title>Users: Pangeo</title><link>/users/getting-started/communities/pangeo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/getting-started/communities/pangeo/</guid><description>
+&lt;p>EGI and the Pangeo community in Europe have forged
+&lt;a href="https://www.egi.eu/case-study/pangeo/">a collaboration&lt;/a>
+to provide deployments of the Pangeo ecosystem using the computing
+resources offered by the European Open Science Cloud
+(&lt;a href="https://eosc-portal.eu/about">EOSC&lt;/a>). Read on to learn more about
+how to get involved.&lt;/p>
+&lt;h2 id="about-the-pangeo-community-in-europe">About the Pangeo community in Europe&lt;/h2>
+&lt;p>Many scientific domains have been transformed into data-driven disciplines.
+Research projects increasingly and crucially depend on the exchange and
+processing of data and have developed platforms tailored to their needs.
+&lt;a href="https://pangeo.io/">Pangeo&lt;/a>, a world-wide community driven platform initially
+developed for Geoscience, has a huge potential to become a common gateway able
+to leverage a wide variety of infrastructures and data providers for various
+science fields.&lt;/p>
+&lt;p>Public pangeo deployments that are providing fast access to large amounts of
+data and compute resources are all USA-based and members from the Pangeo
+community in Europe do not have a shared platform where scientists or
+technologists can exchange know-how. The main objective of this collaboration
+with EGI is to demonstrate how to deploy and use Pangeo on EOSC and underlined
+the benefits for the European community.&lt;/p>
+&lt;h2 id="how-to-get-involved">How to get involved&lt;/h2>
+&lt;p>EGI and the Pangeo community in Europe are interacting openly via a GitHub
+repository: &lt;a href="https://github.com/pangeo-data/pangeo-eosc/">pangeo-eosc&lt;/a>. Visit
+this repository to find publications coming out of this collaboration and
+guides on how to get started
+&lt;a href="https://github.com/pangeo-data/pangeo-eosc/blob/main/users/users-getting-started.md">as a user&lt;/a>
+or &lt;a href="https://github.com/pangeo-data/pangeo-eosc/blob/main/providers/providers-getting-started.md">as a provider&lt;/a>.&lt;/p></description></item></channel></rss>
