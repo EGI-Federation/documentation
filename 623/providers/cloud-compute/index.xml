@@ -80,8 +80,12 @@ information discovery and VM image synchronisation&lt;/li>
 &lt;h2 id="installation-options">Installation options&lt;/h2>
 &lt;p>cASO and SSM releases can be be obtained from GitHub:&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://github.com/IFCA-Advanced-Computing/caso/releases">cASO&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/apel/ssm/releases">SSM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/IFCA-Advanced-Computing/caso/releases">cASO&lt;/a>. cASO
+containers are available in the
+&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations/pkgs/container/fedcloud-caso">fedcloud-caso&lt;/a>
+package from
+&lt;a href="https://github.com/EGI-Federation/fedcloud-catchall-operations">fedcloud-catchall-operations&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apel/ssm/releases">SSM&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;h2 id="open-ports">Open Ports&lt;/h2>
 &lt;h3 id="inbound">Inbound&lt;/h3>
