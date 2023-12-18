@@ -109,37 +109,7 @@ have admin privileges:
 openstack role add member --user <your caso user> --project <your new vo project>
 ```
 
-## Information system
+## Information system / VM Image management
 
-If you are correctly setting the `egi.VO` property to your projects, the configuration will
-be automatically retrieved by the cloud-info-provider.
-
-## VM Image Management
-
-### cloudkeeper-core
-
-Add the new image list to the `cloudkeeper` configuration in
-`/etc/cloudkeeper/cloudkeeper.yml` (or `/etc/cloudkeeper/image-lists.conf` if
-using the appliance), new entry should look similar to:
-
-`https://<APPDB_TOKEN>:x-oauth-basic@vmcaster.appdb.egi.eu/store/vo/<your new vo>/image.list`
-
-### cloudkeeper-os
-
-Add the user configured in cloudkeeper-os as member of the new project:
-
-```shell
-$ openstack role add member \
-            --user <your cloudkeeper-os user> \
-            --project <your new vo project>
-```
-
-Add the mapping of the project to the VO in `/etc/cloudkeeper-os/mapping.json`:
-
-```json
-{
-  "<your new vo>": {
-    "tenant": "<your new vo project>"
-  }
-}
-```
+If you are correctly setting the `egi.VO` property to your projects, the
+configuration will be automatically retrieved by the catch-all components.
