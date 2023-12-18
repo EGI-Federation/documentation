@@ -784,7 +784,7 @@ the URLs on your configuration:
    validation of both kind of tokens automatically. The `HTTP_OIDC_ISS` section
    should look as follows:
 
-   ```json
+   ````json
    {
      "type": "HTTP_OIDC_ISS",
      "any_one_of": [
@@ -795,7 +795,7 @@ the URLs on your configuration:
 
    ```shell
    $ openstack mapping set --rules mapping.egi.json egi-mapping
-   ```
+   ````
 
 As the new issuer is included in the `remote-id` configuration of the Keystone
 identity provider, there should not be any changes in your users, they will be
