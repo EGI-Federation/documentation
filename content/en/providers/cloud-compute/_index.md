@@ -33,9 +33,8 @@ summarised below:
 
 1. **Registration and certification** of the site as a
    [Federated Resource Centre](../joining/federated-resource-centre/). Briefly a
-   site parses several intermediate stages (part of
-   [PROC09 Resource Centre Registration and Certification procedure](https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification)) -
-   Registered, Candidate, Uncertified - until fully Certified.
+   site parses several intermediate stages - Registered, Candidate,
+   Uncertified - until fully Certified.
 1. [**Requirements**](./requirements/) - hardware and software, network
    configuration
 1. **Registration of endpoints in the Configuration Database**

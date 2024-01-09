@@ -698,7 +698,7 @@ reconfiguration request through the
 ### Additional VOs
 
 Once `ops` VO is working, you can include any further VOs you want to support as
-documented in the [VO Configuration guide](./vo_config/).
+documented in the [VO Configuration guide](./vo_config).
 
 ## Contacting EGI users
 
@@ -736,7 +736,7 @@ $ openstack user show d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c459816
 | Field               | Value                                                                                                                                                      |
 +---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | domain_id           | 0125ed0ebc8045a49ed8c34c2a78740d                                                                                                                           |
-| email               | XXXX-redacted@exmple.com                                                                                                                                   |
+| email               | XXXX-redacted@example.com                                                                                                                                   |
 | enabled             | True                                                                                                                                                       |
 | federated           | [{'idp_id': 'egi.eu', 'protocols': [{'protocol_id': 'openid', 'unique_id': '529a87e5ceXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXe714cb1309cc3907%40egi.eu'}]}] |
 | id                  | d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c                                                                                           |
