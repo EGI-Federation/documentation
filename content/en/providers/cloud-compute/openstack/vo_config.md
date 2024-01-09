@@ -47,7 +47,8 @@ for the VOs are listed in
         "local": [
             {
                 "user": {
-                    "name": "{0}"
+                    "name": "{0}",
+                    "email": "{1}"
                 },
                 "group": {
                     "id": "<group_id>"
@@ -57,6 +58,9 @@ for the VOs are listed in
         "remote": [
             {
                 "type": "HTTP_OIDC_SUB"
+            },
+            {
+                "type": "HTTP_OIDC_EMAIL"
             },
             {
                 "type": "HTTP_OIDC_ISS",
