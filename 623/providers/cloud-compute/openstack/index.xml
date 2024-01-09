@@ -126,6 +126,8 @@ Keystone service, using the client ID and secret obtained above:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCClaimDelimiter&lt;/span> ;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCScope&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid profile email eduperson_entitlement&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCProviderMetadataURL&lt;/span> https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># PKCE method&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCPKCEMethod&lt;/span> S256
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCClientID&lt;/span> &amp;lt;client id&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCClientSecret&lt;/span> &amp;lt;client secret&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCCryptoPassphrase&lt;/span> &amp;lt;some crypto pass phrase&amp;gt;
@@ -166,7 +168,134 @@ headers, e.g. for haproxy:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http-request set-header X-Forwarded-Port %[dst_port]
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;h2 id="keystone-configuration">Keystone Configuration&lt;/h2>
+&lt;h3 id="multiple-oidc-providers">Multiple OIDC providers&lt;/h3>
+&lt;p>If your OpenStack deployment needs to support multiple identity providers
+(besides EGI Check-in) you will need to configure &lt;code>mod_auth_openidc&lt;/code> to support
+&lt;a href="https://github.com/zmartzone/mod_auth_openidc/wiki/Multiple-Providers#discovery">multiple providers&lt;/a>
+and use an OAuth2.0 token introspection proxy like
+&lt;a href="https://github.com/indigo-iam/esaco">ESACO&lt;/a>.&lt;/p>
+&lt;h4 id="mod_auth_openidc-configuration">&lt;code>mod_auth_openidc&lt;/code> configuration&lt;/h4>
+&lt;p>First, create a directory to host each of the providers configuration, in our
+case we will use &lt;code>/var/lib/apache2/oidc/metadata&lt;/code>, but adapt this to your
+specific needs. Ensure this directory is writable by the user running apache:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mkdir -p /var/lib/apache2/oidc/metadata
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown -R www-data:www-data /var/lib/apache2/oidc/metadata
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set in your Apache configuration the &lt;code>OIDCMetadataDir&lt;/code> pointing to that
+directory&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCMetadataDir&lt;/span> &lt;span style="color:#4e9a06">/var/lib/apache2/oidc/metadata&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may remove the &lt;code>OIDCProviderMetadataURL&lt;/code>, &lt;code>OIDCClientID&lt;/code> and
+&lt;code>OIDCClientSecret&lt;/code> options from the Apache configuration as these will be now
+set in new files created in the metadata directory. For every provider you will
+support, you need to create 3 files:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code>&amp;lt;urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped&amp;gt;.provider&lt;/code>
+with the OpenID Connect Discovery OP JSON metadata. The easiest way to create
+this file is getting its content from the OIDC server itself. For EGI
+Check-in:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration &amp;gt; &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> /var/lib/apache2/oidc/metadata/aai-demo.egi.eu%2Foidc.provider
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;code>&amp;lt;urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped&amp;gt;.client&lt;/code>
+with the client credentials. For EGI Check-in
+(&lt;code>aai-demo.egi.eu%2Foidc.client&lt;/code>):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your client id&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_secret&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your secret id&amp;gt;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;code>&amp;lt;urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped&amp;gt;.conf&lt;/code>
+with any extra configuration for the provider. This may not be needed if all
+your providers are similar. For example to specify the scopes to use for
+Check-in, use a &lt;code>aai-demo.egi.eu%2Foidc.conf&lt;/code> as follows:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;scope&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid email profile eduperson_entitlement&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;pkce_method&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;S256&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>Now add for the providers you support new configuration in Apache to facilitate
+the use of the dashboard. This is for a configuration of an &lt;code>egi.eu&lt;/code> identity
+provider with &lt;code>openid&lt;/code> as protocol:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">AuthType&lt;/span> openid-connect
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># This is your Redirect URI with a new iss=&amp;lt;your idp iss&amp;gt; option added&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">OIDCDiscoverURL&lt;/span> https://&amp;lt;your keystone endpoint&amp;gt;/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-demo.egi.eu%2Foidc%2F
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># Ensure that the user is authenticated with the expected iss&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> claim iss:https://aai-demo.egi.eu/auth/realms/egi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> valid-user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="esaco-configuration">ESACO configuration&lt;/h4>
+&lt;p>ESACO will handle OAuth tokens when users hit your Keystone from API/CLI. It
+needs to run as a daemon that listens (by default) on port 8156. We will use
+docker for facilitating the deployment:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create a yaml file with the configuration of the different providers
+(&lt;code>application.yaml&lt;/code>):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">oidc&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">clients&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">issuer-url&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://aai-demo.egi.eu/auth/realms/egi&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client id&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-secret&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client secret&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">issuer-url&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;another idp&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your client id for second idp&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-secret&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your client secret for second idp&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Create a environment file with the ESACO credentials you want to use
+(&lt;code>esaco.env&lt;/code>):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># User name credential requested from clients introspecting tokens&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">ESACO_USER_NAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;esaco user name&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Password credential requested from clients introspecting tokens&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">ESACO_USER_PASSWORD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;esaco password&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Run the ESACO server (adapt this as it better fits to run on your servers and
+make it run permanently):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -p 8156:8156 -d -env-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>esaco.env &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -v application.yml:/esaco/config/application.yml:ro &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> indigoiam/esaco:latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure Keystone&amp;rsquo;s Apache to use ESACO as OAuth introspection endpoint:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># point this to the host where ESACO is running&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> http://localhost:8156/introspect
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCOAuthClientID&lt;/span> &amp;lt;esaco &lt;span style="color:#204a87;font-weight:bold">user&lt;/span> name&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCOAuthClientSecret&lt;/span> &amp;lt;esaco password&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCIDTokenIatSlack&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3600&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure also the locations in Apache that should use OAuth:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/auth&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Authtype&lt;/span> oauth20
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> valid-user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/v3/OS-FEDERATION/identity_providers/other_idp/protocols/openid/auth&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Authtype&lt;/span> oauth20
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> valid-user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h4 id="horizon-configuration">Horizon configuration&lt;/h4>
+&lt;p>In your Horizon configuration, set the list of providers and their mappings:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># this is the list that will show up in the dropdown menu&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">WEBSSO_CHOICES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;credentials&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Keystone Credentials&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;EGI Check-in&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;other-idp&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Other IdP&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># this maps the options above to keystone&amp;#39;s idps and protocols&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">WEBSSO_IDP_MAPPING&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;other-idp&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;other-idp.com&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="keystone-configuration">Keystone Configuration&lt;/h2>
 &lt;p>Configure your &lt;code>keystone.conf&lt;/code> to include in the &lt;code>[auth]&lt;/code> section &lt;code>openid&lt;/code> in
 the list of authentication methods:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">[auth]&lt;/span>
@@ -228,7 +357,8 @@ adequate values for your deployment:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;local&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;user&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;email&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;{1}&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;group&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;89cf5b6708354094942d9d16f0f29f8f&amp;#34;&lt;/span>
@@ -238,6 +368,9 @@ adequate values for your deployment:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;remote&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_SUB&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_EMAIL&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>,
@@ -255,8 +388,13 @@ adequate values for your deployment:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>More recent versions of Keystone allow for more elaborated mapping, but this
-configuration should work for Mitaka and onwards&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-Info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Note the use of the &lt;code>HTTP_OIDC_EMAIL&lt;/code> in
+the mapping will allow to store the user&amp;rsquo;s email in your local
+database.
+&lt;/div>
 &lt;p>Create the mapping in Keystone:&lt;/p>
 &lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack mapping create --rules mapping.egi.json egi-mapping
@@ -282,7 +420,7 @@ created before:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> mapping &lt;span style="color:#000;font-weight:bold">|&lt;/span> egi-mapping &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+-------------------+-------------+
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Keystone is now ready to accept EGI Check-in credentials.&lt;/p>
-&lt;h2 id="horizon-configuration">Horizon Configuration&lt;/h2>
+&lt;h2 id="horizon-configuration-1">Horizon Configuration&lt;/h2>
 &lt;p>Edit your local_settings.py to include the following values:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Enables keystone web single-sign-on if set to True.&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">WEBSSO_ENABLED&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">True&lt;/span>
@@ -314,194 +452,6 @@ first need to get a valid Access Token from EGI Check-in (e.g. from
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> user_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 020864ea9415413f9d706f6b473dbeba &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------+---------------------------------------------------------------------------------------+
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;h2 id="additional-vos">Additional VOs&lt;/h2>
-&lt;p>Configuration can include as many mappings as needed in the json file. Users
-will be members of all the groups matching the remote part of the mapping. For
-example this file has 2 mappings, one for members of &lt;code>ops&lt;/code> and another for
-members of &lt;code>fedcloud.egi.eu&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;local&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;user&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;group&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;66df3a7a0c6248cba8b729de7b042639&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">],&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;remote&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_SUB&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://aai-demo.egi.eu/auth/realms/egi&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;OIDC-eduperson_entitlement&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;regex&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;^urn:mace:egi.eu:group:ops:role=vm_operator#aai.egi.eu$&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;local&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;user&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;group&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;e1c04284718f4e19bb0516e5534a24e8&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">],&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;remote&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_SUB&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://aai-demo.egi.eu/auth/realms/egi&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;OIDC-eduperson_entitlement&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;regex&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;^urn:mace:egi.eu:group:fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu$&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="multiple-oidc-providers">Multiple OIDC providers&lt;/h2>
-&lt;p>If your OpenStack deployment needs to support multiple identity providers
-(besides EGI Check-in) you will need to configure &lt;code>mod_auth_openidc&lt;/code> to support
-&lt;a href="https://github.com/zmartzone/mod_auth_openidc/wiki/Multiple-Providers#discovery">multiple providers&lt;/a>
-and use an OAuth2.0 token introspection proxy like
-&lt;a href="https://github.com/indigo-iam/esaco">ESACO&lt;/a>.&lt;/p>
-&lt;h3 id="mod_auth_openidc-configuration">&lt;code>mod_auth_openidc&lt;/code> configuration&lt;/h3>
-&lt;p>First, create a directory to host each of the providers configuration, in our
-case we will use &lt;code>/var/lib/apache2/oidc/metadata&lt;/code>, but adapt this to your
-specific needs. Ensure this directory is writable by the user running apache:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mkdir -p /var/lib/apache2/oidc/metadata
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown -R www-data:www-data /var/lib/apache2/oidc/metadata
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set in your Apache configuration the &lt;code>OIDCMetadataDir&lt;/code> pointing to that
-directory&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCMetadataDir&lt;/span> &lt;span style="color:#4e9a06">/var/lib/apache2/oidc/metadata&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may remove the &lt;code>OIDCProviderMetadataURL&lt;/code>, &lt;code>OIDCClientID&lt;/code> and
-&lt;code>OIDCClientSecret&lt;/code> options from the Apache configuration as these will be now
-set in new files created in the metadata directory. For every provider you will
-support, you need to create 3 files:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>&lt;code>&amp;lt;urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped&amp;gt;.provider&lt;/code>
-with the OpenID Connect Discovery OP JSON metadata. The easiest way to create
-this file is getting its content from the OIDC server itself. For EGI
-Check-in:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl https://aai-demo.egi.eu/auth/realms/egi/.well-known/openid-configuration &amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> /var/lib/apache2/oidc/metadata/aai-demo.egi.eu%2Foidc.provider
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>&lt;code>&amp;lt;urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped&amp;gt;.client&lt;/code>
-with the client credentials. For EGI Check-in
-(&lt;code>aai-demo.egi.eu%2Foidc.client&lt;/code>):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your client id&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;client_secret&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your secret id&amp;gt;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>&lt;code>&amp;lt;urlencoded-issuer-value-with-https-prefix-and-trailing-slash-stripped&amp;gt;.conf&lt;/code>
-with any extra configuration for the provider. This may not be needed if all
-your providers are similar. For example to specify the scopes to use for
-Check-in, use a &lt;code>aai-demo.egi.eu%2Foidc.conf&lt;/code> as follows:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;scope&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid email profile eduperson_entitlement&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol>
-&lt;p>Now add for the providers you support new configuration in Apache to facilitate
-the use of the dashboard. This is for a configuration of an &lt;code>egi.eu&lt;/code> identity
-provider with &lt;code>openid&lt;/code> as protocol:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">AuthType&lt;/span> openid-connect
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># This is your Redirect URI with a new iss=&amp;lt;your idp iss&amp;gt; option added&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">OIDCDiscoverURL&lt;/span> https://&amp;lt;your keystone endpoint&amp;gt;/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai-demo.egi.eu%2Foidc%2F
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># Ensure that the user is authenticated with the expected iss&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> claim iss:https://aai-demo.egi.eu/auth/realms/egi
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> valid-user
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In your Horizon configuration, set the list of providers and their mappings:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># this is the list that will show up in the dropdown menu&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">WEBSSO_CHOICES&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;credentials&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Keystone Credentials&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;EGI Check-in&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;other-idp&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">_&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Other IdP&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)),&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># this maps the options above to keystone&amp;#39;s idps and protocols&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">WEBSSO_IDP_MAPPING&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;egi.eu&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">),&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;other-idp&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;other-idp.com&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;openid&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="esaco-configuration">ESACO configuration&lt;/h3>
-&lt;p>ESACO will handle OAuth tokens when users hit your Keystone from API/CLI. It
-needs to run as a daemon that listens (by default) on port 8156. We will use
-docker for facilitating the deployment:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Create a yaml file with the configuration of the different providers
-(&lt;code>application.yaml&lt;/code>):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">oidc&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">clients&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">issuer-url&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://aai-demo.egi.eu/auth/realms/egi&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client id&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-secret&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client secret&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">issuer-url&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;another idp&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your client id for second idp&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-secret&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your client secret for second idp&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>Create a environment file with the ESACO credentials you want to use
-(&lt;code>esaco.env&lt;/code>):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># User name credential requested from clients introspecting tokens&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">ESACO_USER_NAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;esaco user name&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Password credential requested from clients introspecting tokens&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">ESACO_USER_PASSWORD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;esaco password&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>Run the ESACO server (adapt this as it better fits to run on your servers and
-make it run permanently):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -p 8156:8156 -d -env-file&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>esaco.env &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> -v application.yml:/esaco/config/application.yml:ro &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> indigoiam/esaco:latest
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>Configure Keystone&amp;rsquo;s Apache to use ESACO as OAuth introspection endpoint:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># point this to the host where ESACO is running&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> http://localhost:8156/introspect
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCOAuthClientID&lt;/span> &amp;lt;esaco &lt;span style="color:#204a87;font-weight:bold">user&lt;/span> name&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCOAuthClientSecret&lt;/span> &amp;lt;esaco password&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCIDTokenIatSlack&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3600&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>Configure also the locations in Apache that should use OAuth:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/v3/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/auth&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Authtype&lt;/span> oauth20
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> valid-user
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/v3/OS-FEDERATION/identity_providers/other_idp/protocols/openid/auth&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Authtype&lt;/span> oauth20
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> valid-user
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol>
 &lt;h2 id="moving-to-egi-check-in-production-instance">Moving to EGI Check-in production instance&lt;/h2>
 &lt;p>Once tests in the development instance of Check-in are successful, you can move
 to the production instance. Go to
@@ -519,7 +469,10 @@ request, you will need to update your configuration as follows:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openstack mapping &lt;span style="color:#204a87">set&lt;/span> --rules mapping.egi.json egi-mapping
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
-&lt;p>Update Apache configuration to use &lt;code>aai.egi.eu&lt;/code> instead of &lt;code>aai-demo.egi.eu&lt;/code>:&lt;/p>
+&lt;p>Update Apache configuration to use &lt;code>aai.egi.eu&lt;/code> instead of &lt;code>aai-demo.egi.eu&lt;/code>,
+if you have multiple OIDC providers, you should as well update the providers
+metadata and ESACO configuration. For the basic Apache configuration you
+should set these values:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCProviderMetadataURL&lt;/span> https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
@@ -531,103 +484,59 @@ make any changes to the client configuration, you need to submit a
 reconfiguration request through the
 &lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>.
 &lt;/div>
-&lt;h2 id="client-migration-to-keycloak">Client Migration to Keycloak&lt;/h2>
-&lt;p>Check-in is migrating its internal implementation to Keycloak. The Development
-and Demo environments already using Keycloak since June 24th 2022 and Production
-environment expected to migrate during July 2022.&lt;/p>
-&lt;p>A general guide on migration is available on
-&lt;a href="../../check-in/sp#client-migration-to-keycloak">Check-in documentation&lt;/a>, in
-this section we provide specific information for OpenStack providers.&lt;/p>
-&lt;h3 id="changes-in-apache-configuration">Changes in Apache configuration&lt;/h3>
-&lt;p>The new Keycloak endpoint has a different URL that needs to be updated in your
-apache config. You will also need to add PKCE configuration. These are the
-configuration parameters and their new values:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># update Metadata URL&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCProviderMetadataURL&lt;/span> https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Add PKCE method&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCPKCEMethod&lt;/span> S256
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># update introspection endpoint&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">OIDCOAuthIntrospectionEndpoint&lt;/span> https://aai.egi.eu/auth/realms/egi/protocol/openid-connect/token/introspect
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;div class="alert alert-Warning" role="alert">
-&lt;h4 class="alert-heading">Require claim&lt;/h4>
-&lt;p>If you use the
-&lt;code>Require claim iss:&amp;lt;issuer&amp;gt;&lt;/code> in your Apache configuration to restrict the
-issuer, please allow both the Keycloak and MitreID issuers during the transition
-period, e.g.:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;RequireAny&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> claim iss:https://aai.egi.eu/auth/realms/egi
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> claim iss:https://aai.egi.eu/oidc/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/RequireAny&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;h4 id="multiple-oidc-providers-1">Multiple OIDC providers&lt;/h4>
-&lt;div class="alert alert-Warning" role="alert">
-&lt;h4 class="alert-heading">Note&lt;/h4>
-Configuration in this section is only
-needed if you are using &lt;code>mod_auth_oidc&lt;/code> with multiple providers
-&lt;/div>
-&lt;p>If you are using multiple OpenID Connect providers, you will need to add a new
-configuration to your metadata directory:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ curl https://aai.egi.eu/auth/realms/egi/.well-known/openid-configuration &amp;gt; &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> /var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.conf
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># copy credentials from existing client&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cp /var/lib/apache2/oidc/metadata/aai.egi.eu%2Foidc.client &lt;span style="color:#4e9a06">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> /var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.client
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># create configuration for the client&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cat &amp;gt; /var/lib/apache2/oidc/metadata/aai.egi.eu%2Fauth%2Frealms%2Fegi.conf &lt;span style="color:#4e9a06">&amp;lt;&amp;lt; EOF
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">{
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> &amp;#34;scope&amp;#34;: &amp;#34;openid email profile eduperson_entitlement&amp;#34;,
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> &amp;#34;pkce_method&amp;#34;: &amp;#34;S256&amp;#34;
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">}
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">EOF&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And update your Apache configuration for the authentication with Horizon:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ApacheConf" data-lang="ApacheConf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;Location&lt;/span> &lt;span style="color:#4e9a06">~ &amp;#34;/v3/auth/OS-FEDERATION/identity_providers/egi.eu/protocols/openid/websso&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">AuthType&lt;/span> openid-connect
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># This is your Redirect URI with a new iss=&amp;lt;your idp iss&amp;gt; option added&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">OIDCDiscoverURL&lt;/span> https://&amp;lt;your keystone endpoint&amp;gt;/v3/auth/OS-FEDERATION/websso/openid/redirect?iss=https%3A%2F%2Faai.egi.eu%2Fauth%2Frealms%2Fegi
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># Ensure that the user is authenticated with the expected iss&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> claim iss:https://aai.egi.eu/auth/realms/egi
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">Require&lt;/span> valid-user
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">&amp;lt;/Location&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Also update ESACO to include the configuration of the new endpoint URL:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">oidc&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">clients&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">issuer-url&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">https://aai.egi.eu/auth/realms/egi&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client id&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">client-secret&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&amp;lt;your check-in client secret&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># other clients&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="keystone-configuration-1">Keystone configuration&lt;/h3>
-&lt;p>Similarly to the change from Demo to Production described
-&lt;a href="#moving-to-egi-check-in-production-instance">above&lt;/a>, you will need to update
-the URLs on your configuration:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Update the &lt;code>remote-id&lt;/code> of the identity provider to also include the new
-issuer:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack identity provider &lt;span style="color:#204a87">set&lt;/span> --remote-id https://aai.egi.eu/auth/realms/egi --remote-id https://aai.egi.eu/oidc/ egi.eu
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>Add the new issuer to the &lt;code>HTTP_OIDC_ISS&lt;/code> filter in your mappings, keep both
-the &lt;code>https://aai.egi.eu/oidc/&lt;/code> and &lt;code>https://aai.egi.eu/auth/realms/egi&lt;/code> so
-users can still use their existing tokens. Check-in will handle the
-validation of both kind of tokens automatically. The &lt;code>HTTP_OIDC_ISS&lt;/code> section
-should look as follows:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;any_one_of&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/auth/realms/egi&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/oidc/&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">```shell&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">$&lt;/span> &lt;span style="color:#a40000">openstack&lt;/span> &lt;span style="color:#a40000">mapping&lt;/span> &lt;span style="color:#a40000">set&lt;/span> &lt;span style="color:#a40000">--rules&lt;/span> &lt;span style="color:#a40000">mapping.egi.json&lt;/span> &lt;span style="color:#a40000">egi-mapping&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol>
-&lt;p>As the new issuer is included in the &lt;code>remote-id&lt;/code> configuration of the Keystone
-identity provider, there should not be any changes in your users, they will be
-still be able to manage owned resources after the change.&lt;/p></description></item><item><title>Providers: Accounting</title><link>/providers/cloud-compute/openstack/accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/accounting/</guid><description>
+&lt;h3 id="additional-vos">Additional VOs&lt;/h3>
+&lt;p>Once &lt;code>ops&lt;/code> VO is working, you can include any further VOs you want to support as
+documented in the &lt;a href="./vo_config">VO Configuration guide&lt;/a>. can include as many
+mappings as needed in the json file. Users will be members of all the groups&lt;/p>
+&lt;h2 id="contacting-egi-users">Contacting EGI users&lt;/h2>
+&lt;p>Federated users are created into a specific OpenStack domain for every
+configured identity provider. All users within the egi.eu domain will have a
+unique user name. For users whose community identity is managed by Check-in,
+this identifier is of the form &lt;code>&amp;lt;uniqueID&amp;gt;@egi.eu&lt;/code>. The &lt;code>&amp;lt;uniqueID&amp;gt;&lt;/code> portion is
+an opaque identifier issued by Check-in, for example:&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ openstack domain list
++----------------------------------+----------------------------------+---------+---------------------------------------------------------------+
+| ID | Name | Enabled | Description |
++----------------------------------+----------------------------------+---------+---------------------------------------------------------------+
+| 0125ed0ebc8045a49ed8c34c2a78740d | 0125ed0ebc8045a49ed8c34c2a78740d | True | Auto generated federated domain for Identity Provider: egi.eu |
+| default | Default | True | The default domain |
++----------------------------------+----------------------------------+---------+---------------------------------------------------------------+
+$ openstack user list --domain 0125ed0ebc8045a49ed8c34c2a78740d
++------------------------------------------------------------------+-------------------------------------------------------------------------+
+| ID | Name |
++------------------------------------------------------------------+-------------------------------------------------------------------------+
+| 2c096b11a1410d44e3936fa40479ad26eaa649cfd6887f06b3c6669e5d6c03d0 | efb8534478028XXXXXXXXXXXXXXXfeed9766fafc@sram.surf.nl |
+| 933c692b53192e4d893e5ed5c026aa444acb4d75f6ee6c304422861207ce1ea5 | e9c37aa0d1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX2867bc43581b835c@egi.eu |
+| d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c | 529a87e5ceXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXe714cb1309cc3907@egi.eu |
++------------------------------------------------------------------+-------------------------------------------------------------------------+
+&lt;/code>&lt;/pre>&lt;p>If you have set the email of the user in the mapping, you will be able to also
+get this information:&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ openstack user show d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c
++---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field | Value |
++---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| domain_id | 0125ed0ebc8045a49ed8c34c2a78740d |
+| email | XXXX-redacted@exmple.com |
+| enabled | True |
+| federated | [{&amp;#39;idp_id&amp;#39;: &amp;#39;egi.eu&amp;#39;, &amp;#39;protocols&amp;#39;: [{&amp;#39;protocol_id&amp;#39;: &amp;#39;openid&amp;#39;, &amp;#39;unique_id&amp;#39;: &amp;#39;529a87e5ceXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXe714cb1309cc3907%40egi.eu&amp;#39;}]}] |
+| id | d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c |
+| name | 529a87e5ceXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXe714cb1309cc3907@egi.eu |
+| options | {} |
+| password_expires_at | None |
++---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+&lt;/code>&lt;/pre>&lt;p>Every VO has a VO identity card available via the
+&lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations Portal&lt;/a>, where you can
+also get contact information for the VO managers.&lt;/p>
+&lt;p>VMs created by
+&lt;a href="../../../users/compute/orchestration/im/">EGI&amp;rsquo;s Infrastructure Manager&lt;/a> have
+additional metadata properties that can help to identify the workload:&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ openstack server show 0f3e1420-4480-4bea-95f1-9920a70b324d -c properties -f yaml
+properties:
+eu.egi.cloud.orchestrator: es.upv.grycap.im
+eu.egi.cloud.orchestrator.id: 0afdc7ba-bf5d-11ed-9e89-86ce117c3fcf
+eu.egi.cloud.orchestrator.url: https://appsgrycap.i3m.upv.es:31443/im
+eu.egi.cloud.orchestrator.user: __OPENID__XXXXXXredacted
+&lt;/code>&lt;/pre></description></item><item><title>Providers: Accounting</title><link>/providers/cloud-compute/openstack/accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/accounting/</guid><description>
 &lt;p>There are two different processes handling the accounting integration:&lt;/p>
 &lt;ul>
 &lt;li>cASO, which connects to the OpenStack deployment to get the usage information,
@@ -929,7 +838,8 @@ for the VOs are listed in
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;local&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;user&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;email&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;{1}&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;group&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;lt;group_id&amp;gt;&amp;#34;&lt;/span>
@@ -939,6 +849,9 @@ for the VOs are listed in
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;remote&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_SUB&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_EMAIL&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
