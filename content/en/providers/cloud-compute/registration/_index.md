@@ -12,7 +12,7 @@ services can coexist within an existing (Grid) site, but we are recommending to
 register a new site for the cloud services (as per
 [PROC09 Resource Centre Registration and Certification](https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification)
 procedure - see
-[Registration and Certification](../registration-and-certification) section)
+[Joining as a provider](../../joining/federated-resource-centre/) section)
 
 ## Expected Services
 
