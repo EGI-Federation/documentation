@@ -486,7 +486,7 @@ reconfiguration request through the
 &lt;/div>
 &lt;h3 id="additional-vos">Additional VOs&lt;/h3>
 &lt;p>Once &lt;code>ops&lt;/code> VO is working, you can include any further VOs you want to support as
-documented in the &lt;a href="./vo_config/">VO Configuration guide&lt;/a>.&lt;/p>
+documented in the &lt;a href="./vo_config">VO Configuration guide&lt;/a>.&lt;/p>
 &lt;h2 id="contacting-egi-users">Contacting EGI users&lt;/h2>
 &lt;p>Federated users are created into a specific OpenStack domain for every
 configured identity provider. All users within the egi.eu domain will have a
@@ -516,7 +516,7 @@ get this information:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> domain_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 0125ed0ebc8045a49ed8c34c2a78740d &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> email &lt;span style="color:#000;font-weight:bold">|&lt;/span> XXXX-redacted@exmple.com &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> email &lt;span style="color:#000;font-weight:bold">|&lt;/span> XXXX-redacted@example.com &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> enabled &lt;span style="color:#000;font-weight:bold">|&lt;/span> True &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> federated &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;idp_id&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;egi.eu&amp;#39;&lt;/span>, &lt;span style="color:#4e9a06">&amp;#39;protocols&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;protocol_id&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;openid&amp;#39;&lt;/span>, &lt;span style="color:#4e9a06">&amp;#39;unique_id&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;529a87e5ceXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXe714cb1309cc3907%40egi.eu&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}]}]&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c &lt;span style="color:#000;font-weight:bold">|&lt;/span>
@@ -806,7 +806,7 @@ the metadata easily via &lt;code>openstack flavor list --long&lt;/code> or
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;swap&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;vcpus&amp;#34;&lt;/span>: &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: VO Configuration guide</title><link>/providers/cloud-compute/openstack/vo_config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/vo_config/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: VO Configuration guide</title><link>/providers/cloud-compute/openstack/vo-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/vo-config/</guid><description>
 &lt;p>In this page you can find a summary of the needed steps for supporting a new VO
 in your OpenStack infrastructure.&lt;/p>
 &lt;h2 id="local-project-creation">Local project creation&lt;/h2>
