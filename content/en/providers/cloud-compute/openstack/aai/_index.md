@@ -698,7 +698,7 @@ reconfiguration request through the
 ### Additional VOs
 
 Once `ops` VO is working, you can include any further VOs you want to support as
-documented in the [VO Configuration guide](./vo_config).
+documented in the [VO Configuration guide](../vo-config).
 
 ## Contacting EGI users
 
