@@ -15,9 +15,9 @@ components in general do lightweight operations by interacting with your
 services APIs.&lt;/p>
 &lt;ul>
 &lt;li>Image sync requires enough space to store the community images into your
-local catalogue. The number and size of images which
-will be downloaded depends on the communities you plan to support. For the
-operations VO &lt;code>ops&lt;/code>, a &amp;lt; 4GB image is used.&lt;/li>
+local catalogue. The number and size of images which will be downloaded
+depends on the communities you plan to support. For the operations VO &lt;code>ops&lt;/code>,
+a &amp;lt; 4GB image is used.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
@@ -166,7 +166,7 @@ services can coexist within an existing (Grid) site, but we are recommending to
 register a new site for the cloud services (as per
 &lt;a href="https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification">PROC09 Resource Centre Registration and Certification&lt;/a>
 procedure - see
-&lt;a href="../registration-and-certification">Registration and Certification&lt;/a> section)&lt;/p>
+&lt;a href="../../joining/federated-resource-centre/">Joining as a provider&lt;/a> section)&lt;/p>
 &lt;h2 id="expected-services">Expected Services&lt;/h2>
 &lt;p>These are the expected services for a working site:&lt;/p>
 &lt;ul>

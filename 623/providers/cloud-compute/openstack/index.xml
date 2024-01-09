@@ -486,57 +486,57 @@ reconfiguration request through the
 &lt;/div>
 &lt;h3 id="additional-vos">Additional VOs&lt;/h3>
 &lt;p>Once &lt;code>ops&lt;/code> VO is working, you can include any further VOs you want to support as
-documented in the &lt;a href="./vo_config">VO Configuration guide&lt;/a>. can include as many
-mappings as needed in the json file. Users will be members of all the groups&lt;/p>
+documented in the &lt;a href="./vo_config/">VO Configuration guide&lt;/a>.&lt;/p>
 &lt;h2 id="contacting-egi-users">Contacting EGI users&lt;/h2>
 &lt;p>Federated users are created into a specific OpenStack domain for every
 configured identity provider. All users within the egi.eu domain will have a
-unique user name. For users whose community identity is managed by Check-in,
-this identifier is of the form &lt;code>&amp;lt;uniqueID&amp;gt;@egi.eu&lt;/code>. The &lt;code>&amp;lt;uniqueID&amp;gt;&lt;/code> portion is
-an opaque identifier issued by Check-in, for example:&lt;/p>
-&lt;pre tabindex="0">&lt;code>$ openstack domain list
-+----------------------------------+----------------------------------+---------+---------------------------------------------------------------+
-| ID | Name | Enabled | Description |
-+----------------------------------+----------------------------------+---------+---------------------------------------------------------------+
-| 0125ed0ebc8045a49ed8c34c2a78740d | 0125ed0ebc8045a49ed8c34c2a78740d | True | Auto generated federated domain for Identity Provider: egi.eu |
-| default | Default | True | The default domain |
-+----------------------------------+----------------------------------+---------+---------------------------------------------------------------+
-$ openstack user list --domain 0125ed0ebc8045a49ed8c34c2a78740d
-+------------------------------------------------------------------+-------------------------------------------------------------------------+
-| ID | Name |
-+------------------------------------------------------------------+-------------------------------------------------------------------------+
-| 2c096b11a1410d44e3936fa40479ad26eaa649cfd6887f06b3c6669e5d6c03d0 | efb8534478028XXXXXXXXXXXXXXXfeed9766fafc@sram.surf.nl |
-| 933c692b53192e4d893e5ed5c026aa444acb4d75f6ee6c304422861207ce1ea5 | e9c37aa0d1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX2867bc43581b835c@egi.eu |
-| d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c | 529a87e5ceXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXe714cb1309cc3907@egi.eu |
-+------------------------------------------------------------------+-------------------------------------------------------------------------+
-&lt;/code>&lt;/pre>&lt;p>If you have set the email of the user in the mapping, you will be able to also
+unique username. For users whose community identity is managed by Check-in, this
+identifier is of the form &lt;code>&amp;lt;uniqueID&amp;gt;@egi.eu&lt;/code>. The &lt;code>&amp;lt;uniqueID&amp;gt;&lt;/code> portion is an
+opaque identifier issued by Check-in, for example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack domain list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+----------------------------------+----------------------------------+---------+---------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> ID &lt;span style="color:#000;font-weight:bold">|&lt;/span> Name &lt;span style="color:#000;font-weight:bold">|&lt;/span> Enabled &lt;span style="color:#000;font-weight:bold">|&lt;/span> Description &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+----------------------------------+----------------------------------+---------+---------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> 0125ed0ebc8045a49ed8c34c2a78740d &lt;span style="color:#000;font-weight:bold">|&lt;/span> 0125ed0ebc8045a49ed8c34c2a78740d &lt;span style="color:#000;font-weight:bold">|&lt;/span> True &lt;span style="color:#000;font-weight:bold">|&lt;/span> Auto generated federated domain &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> Identity Provider: egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> default &lt;span style="color:#000;font-weight:bold">|&lt;/span> Default &lt;span style="color:#000;font-weight:bold">|&lt;/span> True &lt;span style="color:#000;font-weight:bold">|&lt;/span> The default domain &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+----------------------------------+----------------------------------+---------+---------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack user list --domain 0125ed0ebc8045a49ed8c34c2a78740d
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------------------------------------------------------------------+-------------------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> ID &lt;span style="color:#000;font-weight:bold">|&lt;/span> Name &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------------------------------------------------------------------+-------------------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> 2c096b11a1410d44e3936fa40479ad26eaa649cfd6887f06b3c6669e5d6c03d0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> efb8534478028XXXXXXXXXXXXXXXfeed9766fafc@sram.surf.nl &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> 933c692b53192e4d893e5ed5c026aa444acb4d75f6ee6c304422861207ce1ea5 &lt;span style="color:#000;font-weight:bold">|&lt;/span> e9c37aa0d1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX2867bc43581b835c@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c &lt;span style="color:#000;font-weight:bold">|&lt;/span> 529a87e5ceXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXe714cb1309cc3907@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+------------------------------------------------------------------+-------------------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you have set the email of the user in the mapping, you will be able to also
 get this information:&lt;/p>
-&lt;pre tabindex="0">&lt;code>$ openstack user show d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c
-+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Field | Value |
-+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| domain_id | 0125ed0ebc8045a49ed8c34c2a78740d |
-| email | XXXX-redacted@exmple.com |
-| enabled | True |
-| federated | [{&amp;#39;idp_id&amp;#39;: &amp;#39;egi.eu&amp;#39;, &amp;#39;protocols&amp;#39;: [{&amp;#39;protocol_id&amp;#39;: &amp;#39;openid&amp;#39;, &amp;#39;unique_id&amp;#39;: &amp;#39;529a87e5ceXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXe714cb1309cc3907%40egi.eu&amp;#39;}]}] |
-| id | d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c |
-| name | 529a87e5ceXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXe714cb1309cc3907@egi.eu |
-| options | {} |
-| password_expires_at | None |
-+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-&lt;/code>&lt;/pre>&lt;p>Every VO has a VO identity card available via the
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack user show d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> domain_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 0125ed0ebc8045a49ed8c34c2a78740d &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> email &lt;span style="color:#000;font-weight:bold">|&lt;/span> XXXX-redacted@exmple.com &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> enabled &lt;span style="color:#000;font-weight:bold">|&lt;/span> True &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> federated &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;idp_id&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;egi.eu&amp;#39;&lt;/span>, &lt;span style="color:#4e9a06">&amp;#39;protocols&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;protocol_id&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;openid&amp;#39;&lt;/span>, &lt;span style="color:#4e9a06">&amp;#39;unique_id&amp;#39;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#39;529a87e5ceXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXe714cb1309cc3907%40egi.eu&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}]}]&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> name &lt;span style="color:#000;font-weight:bold">|&lt;/span> 529a87e5ceXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXe714cb1309cc3907@egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> options &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{}&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> password_expires_at &lt;span style="color:#000;font-weight:bold">|&lt;/span> None &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Every VO has a VO identity card available via the
 &lt;a href="https://operations-portal.egi.eu/vo/a/list">Operations Portal&lt;/a>, where you can
 also get contact information for the VO managers.&lt;/p>
 &lt;p>VMs created by
 &lt;a href="../../../users/compute/orchestration/im/">EGI&amp;rsquo;s Infrastructure Manager&lt;/a> have
 additional metadata properties that can help to identify the workload:&lt;/p>
-&lt;pre tabindex="0">&lt;code>$ openstack server show 0f3e1420-4480-4bea-95f1-9920a70b324d -c properties -f yaml
-properties:
-eu.egi.cloud.orchestrator: es.upv.grycap.im
-eu.egi.cloud.orchestrator.id: 0afdc7ba-bf5d-11ed-9e89-86ce117c3fcf
-eu.egi.cloud.orchestrator.url: https://appsgrycap.i3m.upv.es:31443/im
-eu.egi.cloud.orchestrator.user: __OPENID__XXXXXXredacted
-&lt;/code>&lt;/pre></description></item><item><title>Providers: Accounting</title><link>/providers/cloud-compute/openstack/accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/accounting/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack server show 0f3e1420-4480-4bea-95f1-9920a70b324d -c properties -f yaml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>properties:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> eu.egi.cloud.orchestrator: es.upv.grycap.im
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> eu.egi.cloud.orchestrator.id: 0afdc7ba-bf5d-11ed-9e89-86ce117c3fcf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> eu.egi.cloud.orchestrator.url: https://appsgrycap.i3m.upv.es:31443/im
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> eu.egi.cloud.orchestrator.user: __OPENID__XXXXXXredacted
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Providers: Accounting</title><link>/providers/cloud-compute/openstack/accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/accounting/</guid><description>
 &lt;p>There are two different processes handling the accounting integration:&lt;/p>
 &lt;ul>
 &lt;li>cASO, which connects to the OpenStack deployment to get the usage information,
@@ -871,7 +871,9 @@ for the VOs are listed in
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And update the mapping in your Keystone IdP:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack mapping &lt;span style="color:#204a87">set&lt;/span> --rules mapping.json egi-mapping
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="accounting">Accounting&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can include as many mappings as needed in the json file. Users will be
+members of all the matching groups.&lt;/p>
+&lt;h2 id="accounting">Accounting&lt;/h2>
 &lt;p>Add the project supporting the VO to cASO:&lt;/p>
 &lt;ol>
 &lt;li>
