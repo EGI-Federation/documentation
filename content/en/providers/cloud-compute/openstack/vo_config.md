@@ -86,6 +86,9 @@ And update the mapping in your Keystone IdP:
 $ openstack mapping set --rules mapping.json egi-mapping
 ```
 
+You can include as many mappings as needed in the json file. Users will be
+members of all the matching groups.
+
 ## Accounting
 
 Add the project supporting the VO to cASO:

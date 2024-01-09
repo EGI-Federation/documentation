@@ -698,18 +698,17 @@ reconfiguration request through the
 ### Additional VOs
 
 Once `ops` VO is working, you can include any further VOs you want to support as
-documented in the [VO Configuration guide](./vo_config). can include as many
-mappings as needed in the json file. Users will be members of all the groups
+documented in the [VO Configuration guide](./vo_config/).
 
 ## Contacting EGI users
 
 Federated users are created into a specific OpenStack domain for every
 configured identity provider. All users within the egi.eu domain will have a
-unique user name. For users whose community identity is managed by Check-in,
-this identifier is of the form `<uniqueID>@egi.eu`. The `<uniqueID>` portion is
-an opaque identifier issued by Check-in, for example:
+unique username. For users whose community identity is managed by Check-in, this
+identifier is of the form `<uniqueID>@egi.eu`. The `<uniqueID>` portion is an
+opaque identifier issued by Check-in, for example:
 
-```
+```shell
 $ openstack domain list
 +----------------------------------+----------------------------------+---------+---------------------------------------------------------------+
 | ID                               | Name                             | Enabled | Description                                                   |
@@ -731,7 +730,7 @@ $ openstack user list --domain 0125ed0ebc8045a49ed8c34c2a78740d
 If you have set the email of the user in the mapping, you will be able to also
 get this information:
 
-```
+```shell
 $ openstack user show d52112709a37975903576f80f37dde4604d1a227c53cb1fef43c45981673640c
 +---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Field               | Value                                                                                                                                                      |
@@ -755,7 +754,7 @@ VMs created by
 [EGI's Infrastructure Manager](../../../users/compute/orchestration/im/) have
 additional metadata properties that can help to identify the workload:
 
-```
+```shell
 $ openstack server show 0f3e1420-4480-4bea-95f1-9920a70b324d -c properties -f yaml
 properties:
   eu.egi.cloud.orchestrator: es.upv.grycap.im
