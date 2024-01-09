@@ -32,12 +32,16 @@ The series of actions that needs to be taken to achieve Cloud integration is
 summarised below:
 
 1. **Registration and certification** of the site as a
-   [Federated Resource Centre](../joining/federated-resource-centre/)
-1. **Requirements** - hardware and software, network configuration
+   [Federated Resource Centre](../joining/federated-resource-centre/). Briefly a
+   site parses several intermediate stages (part of
+   [PROC09 Resource Centre Registration and Certification procedure](https://confluence.egi.eu/display/EGIPP/PROC09+Resource+Centre+Registration+and+Certification)) -
+   Registered, Candidate, Uncertified - until fully Certified.
+1. [**Requirements**](./requirements/) - hardware and software, network
+   configuration
 1. **Registration of endpoints in the Configuration Database**
-   ([GOCDB](../../internal/configuration-database/)), a service provided by EGI as a central registry to record
-   information about the EGI Infrastructure topology and which contains general
-   information about all participating sites
+   ([GOCDB](../../internal/configuration-database/)), a service provided by EGI
+   as a central registry to record information about the EGI Infrastructure
+   topology and which contains general information about all participating sites
 1. **Authentication and Authorization Integration** (AAI), including the setup
    of an `ops` local project that will be used for monitoring your site
 1. **Accounting** configuration

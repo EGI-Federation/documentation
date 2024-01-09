@@ -20,9 +20,9 @@ The general minimum requirements are described below.
   services APIs.
 
   - Image sync requires enough space to store the community images into your
-    local catalogue. The number and size of images which
-    will be downloaded depends on the communities you plan to support. For the
-    operations VO `ops`, a < 4GB image is used.
+    local catalogue. The number and size of images which will be downloaded
+    depends on the communities you plan to support. For the operations VO `ops`,
+    a < 4GB image is used.
 
 - Servers need X.509 host certificates in order to authenticate to each other or
   to act as public endpoints in the EGI Federated Cloud context. For accounting
