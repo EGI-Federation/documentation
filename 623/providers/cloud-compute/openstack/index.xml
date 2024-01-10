@@ -486,8 +486,8 @@ reconfiguration request through the
 &lt;/div>
 &lt;h3 id="additional-vos">Additional VOs&lt;/h3>
 &lt;p>Once &lt;code>ops&lt;/code> VO is working, you can include any further VOs you want to support as
-documented in the &lt;a href="./vo_config">VO Configuration guide&lt;/a>.&lt;/p>
-&lt;h2 id="contacting-egi-users">Contacting EGI users&lt;/h2>
+documented in the &lt;a href="../vo-config">VO Configuration guide&lt;/a>.&lt;/p>
+&lt;h2 id="user-identification">User identification&lt;/h2>
 &lt;p>Federated users are created into a specific OpenStack domain for every
 configured identity provider. All users within the egi.eu domain will have a
 unique username. For users whose community identity is managed by Check-in, this
