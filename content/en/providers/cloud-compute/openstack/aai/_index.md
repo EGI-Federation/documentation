@@ -700,7 +700,7 @@ reconfiguration request through the
 Once `ops` VO is working, you can include any further VOs you want to support as
 documented in the [VO Configuration guide](../vo-config).
 
-## Contacting EGI users
+## User identification
 
 Federated users are created into a specific OpenStack domain for every
 configured identity provider. All users within the egi.eu domain will have a
