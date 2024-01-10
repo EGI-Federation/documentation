@@ -7,9 +7,8 @@ type: "docs"
 
 This documentation covers how to join the EGI Cloud federation (also known as
 Federated Cloud or FedCloud) as a provider.  If you are interested in joining
-please first contact EGI Operations team at
-[support@egi.eu](mailto:support@egi.eu), expressing interest and providing few
-details about:
+please first contact EGI at [support@egi.eu](mailto:support@egi.eu), expressing
+interest and providing few details about:
 
 - the projects you may be involved in as a cloud provider
 - the user communities you want to support (i.e.
