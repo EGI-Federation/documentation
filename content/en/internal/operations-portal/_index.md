@@ -23,5 +23,5 @@ It offers a bundle of different capabilities, such as:
   sites and SLA Violations for different group of services.
 
 {{% alert title="Note" color="info" %}} Documentation for the Operations Portal
-is available in the [EGI Wiki](https://wiki.egi.eu/wiki/Operations_Portal).
+is available in the [IN2P3 Wiki](https://forge.in2p3.fr/projects/opsportaluser/wiki/Main_Features_of_the_dashboard).
 {{% /alert %}}
