@@ -120,3 +120,15 @@ It\'s also possible to create indexes and query them.
 It\'s possible to view the popularity of a file and manage smart caching.
 
 ![Viewing file popularity for smart caching](datahub-file-popularity-smarch-caching.png)
+
+## How to get access
+
+The EGI DataHub Web interface can be accessed by any user authenticated via 
+[EGI Check-in](../../../aai/check-in). Users authenticated have access to the 
+`PLAYGROUND` space, where they can tests some of the avaialble features. Users 
+have also read-only access to the `open-datasets` space where some example 
+datasets are stored. 
+In order to access via oneclient or API please check the related [documentation](./clients/#generating-tokens-for-using-oneclient-or-apis).
+
+Advanced users willing to install their own Oneprovider can check the dedicated 
+[installation instructions](../../../../providers/datahub/oneprovider).
