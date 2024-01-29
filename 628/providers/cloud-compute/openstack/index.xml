@@ -379,7 +379,7 @@ members of &lt;code>fedcloud.egi.eu&lt;/code>:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="vo-cleaning">VO cleaning&lt;/h2>
 &lt;p>Sometimes it is easy to leave behind Virtual Machines that are no longer used,
-consuming unncessary resources. Owners of unused VMs should be notified to
+consuming unnecessary resources. Owners of unused VMs should be notified to
 check whether occupied resources can be freed.&lt;/p>
 &lt;p>EGI Check-in users get an &lt;code>ePUID&lt;/code> (i.e. a long hash ending in &lt;code>@egi.eu&lt;/code>) which
 are translated into local OpenStack user IDs. When VMs are created the owner of
