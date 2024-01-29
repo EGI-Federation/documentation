@@ -561,7 +561,7 @@ be granted permissions:
 
 Run:
 
-```bash
+```shell
 openstack mapping set --rules mapping.egi.json egi-mapping
 ```
 
