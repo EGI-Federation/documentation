@@ -470,6 +470,109 @@ members of `fedcloud.egi.eu`:
 ]
 ```
 
+## VO cleaning
+
+Sometimes it is easy to leave behind Virtual Machines that are no longer used,
+consuming unncessary resources. Owners of unused VMs should be notified to
+check whether occupied resources can be freed.
+
+EGI Check-in users get an `ePUID` (i.e. a long hash ending in `@egi.eu`) which
+are translated into local OpenStack user IDs. When VMs are created the owner of
+the VM is set to the OpenStack user ID instead of the `ePUID`. However, only
+the `ePUID` is linked to the user email in order for the user to be notified.
+The mapping between OpenStack user IDs and `ePUIDs` is shown with:
+
+```bash
+openstack user list
+```
+
+Problem is that regular users will not have the permissions to execute the
+command above. Below there are the steps to enable permissions only to staff
+of the EGI Foundation to execute the command, using the default keystone
+policy:
+
+```json
+ "identity:list_users": "(role:reader and system_scope:all) or (role:reader and domain_id:%(target.domain_id)s)"
+```
+
+### Step 1. Change the name of the egi.eu domain
+
+Check the name:
+
+```bash
+openstack domain show -f value -c name $(openstack identity provider show -f value -c domain_id egi.eu)
+```
+
+Set the name to egi.eu (if it was set to random auto-generated number):
+
+```bash
+openstack domain set --name egi.eu $(openstack identity provider show -f value -c domain_id egi.eu)
+```
+
+### Step 2. Add egi-staff group and associated role
+
+Run:
+
+```bash
+openstack group create --domain egi.eu egi-staff
+openstack role add --group egi-staff --domain egi.eu reader
+```
+
+### Step 3. Add mapping to mapping.egi.json
+
+Only EGI Foundation staff belonging to the `cloud.egi.eu` VO will
+be granted permissions:
+
+```json
+{
+    "local": [
+        {
+            "user": {
+        "name": "{0}"
+    },
+            "group": {
+                "id": "_egi-staff_group_ID_"
+            }
+        }
+    ],
+    "remote": [
+        {
+            "type": "HTTP_OIDC_SUB"
+        },
+        {
+            "type": "HTTP_OIDC_ISS",
+            "any_one_of": [
+                "https://aai.egi.eu/auth/realms/egi",
+                "https://aai.egi.eu/oidc/"
+            ]
+        },
+        {
+            "type": "OIDC-eduperson_entitlement",
+            "regex": true,
+            "any_one_of": [
+                "^urn:mace:egi.eu:group:cloud.egi.eu:role=auditor#aai.egi.eu$"
+            ]
+        }
+    ]
+}
+```
+
+### Step 4. Update mapping
+
+Run:
+
+```bash
+openstack mapping set --rules mapping.egi.json egi-mapping
+```
+
+This has been tested in production on OpenStack Ussuri thanks to the
+collaboration between EGI.eu and IISAS-Fedcloud. It should also work with
+newer versions of OpenStack.
+
+With this configuration enabled staff at EGI Foundation is able to
+proactively notify creators of long-running VMs that may not be making
+an effective use of the cloud resources.
+
 ## Multiple OIDC providers
 
 If your OpenStack deployment needs to support multiple identity providers
