@@ -473,7 +473,7 @@ members of `fedcloud.egi.eu`:
 ## VO cleaning
 
 Sometimes it is easy to leave behind Virtual Machines that are no longer used,
-consuming unncessary resources. Owners of unused VMs should be notified to
+consuming unnecessary resources. Owners of unused VMs should be notified to
 check whether occupied resources can be freed.
 
 EGI Check-in users get an `ePUID` (i.e. a long hash ending in `@egi.eu`) which
