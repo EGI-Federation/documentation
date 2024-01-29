@@ -499,7 +499,7 @@ policy:
 
 Check the name:
 
-```bash
+```shell
 openstack domain show -f value -c name $(openstack identity provider show -f value -c domain_id egi.eu)
 ```
 
