@@ -256,25 +256,38 @@ $ openstack identity provider create --remote-id https://aai-demo.egi.eu/auth/re
 +-------------+-----------------------------------------+
 ```
 
-Create a group for users coming from EGI Check-in, usual configuration is to
-have one group per VO you want to support.
+Check the name of the egi.eu domain name:
 
 ```shell
-$ openstack group create ops
-+-------------+----------------------------------+
-| Field       | Value                            |
-+-------------+----------------------------------+
-| description |                                  |
-| domain_id   | default                          |
-| id          | 89cf5b6708354094942d9d16f0f29f8f |
-| name        | ops                              |
-+-------------+----------------------------------+
+$ openstack domain show -f value -c name $(openstack identity provider show -f value -c domain_id egi.eu)
 ```
 
-Add that group to the desired local project:
+Set the name to egi.eu (if it was set to random auto-generated number):
 
 ```shell
-$ openstack role add member --group ops --project ops
+$ openstack domain set --name egi.eu $(openstack identity provider show -f value -c domain_id egi.eu)
+```
+
+Create a group per VO that you want to support:
+
+```shell
+# Support for https://operations-portal.egi.eu/vo/view/voname/ops
+$ openstack group create --domain egi.eu ops
+
+# Support for https://operations-portal.egi.eu/vo/view/voname/cloud.egi.eu
+$ openstack group create --domain egi.eu egi-staff
+```
+
+Add groups to the desired local project:
+
+```shell
+$ openstack role add --domain egi.eu --group ops --project ops member
+```
+
+Add a domain-wide role for auditing purposes (see below):
+
+```shell
+$ openstack role add --domain egi.eu --group egi-staff reader
 ```
 
 Define a mapping of users from EGI Check-in to the group just created and
@@ -292,7 +305,7 @@ $ cat mapping.egi.json
             "name": "{0}"
         },
                 "group": {
-                    "id": "89cf5b6708354094942d9d16f0f29f8f"
+                    "id": "_ops_group_ID_"
                 }
             }
         ],
@@ -315,11 +328,38 @@ $ cat mapping.egi.json
             }
         ]
     }
+    {
+        "local": [
+            {
+                "user": {
+            "name": "{0}"
+        },
+                "group": {
+                    "id": "_egi-staff_group_ID_"
+                }
+            }
+        ],
+        "remote": [
+            {
+                "type": "HTTP_OIDC_SUB"
+            },
+            {
+                "type": "HTTP_OIDC_ISS",
+                "any_one_of": [
+                    "https://aai.egi.eu/auth/realms/egi"
+                ]
+            },
+            {
+                "type": "OIDC-eduperson_entitlement",
+                "regex": true,
+                "any_one_of": [
+                    "^urn:mace:egi.eu:group:cloud.egi.eu:role=auditor#aai.egi.eu$"
+                ]
+            }
+        ]
+    }
 ]
 ```
-
-More recent versions of Keystone allow for more elaborated mapping, but this
-configuration should work for Mitaka and onwards
 
 Create the mapping in Keystone:
 
@@ -357,74 +397,6 @@ $ openstack federation protocol create \
 
 Keystone is now ready to accept EGI Check-in credentials.
 
-### Additional VOs
-
-Configuration can include as many mappings as needed in the json file. Users
-will be members of all the groups matching the remote part of the mapping. For
-example this file has 2 mappings, one for members of `ops` and another for
-members of `fedcloud.egi.eu`:
-
-```json
-[
-  {
-    "local": [
-      {
-        "user": {
-          "name": "{0}"
-        },
-        "group": {
-          "id": "66df3a7a0c6248cba8b729de7b042639"
-        }
-      }
-    ],
-    "remote": [
-      {
-        "type": "HTTP_OIDC_SUB"
-      },
-      {
-        "type": "HTTP_OIDC_ISS",
-        "any_one_of": ["https://aai-demo.egi.eu/auth/realms/egi"]
-      },
-      {
-        "type": "OIDC-eduperson_entitlement",
-        "regex": true,
-        "any_one_of": [
-          "^urn:mace:egi.eu:group:ops:role=vm_operator#aai.egi.eu$"
-        ]
-      }
-    ]
-  },
-  {
-    "local": [
-      {
-        "user": {
-          "name": "{0}"
-        },
-        "group": {
-          "id": "e1c04284718f4e19bb0516e5534a24e8"
-        }
-      }
-    ],
-    "remote": [
-      {
-        "type": "HTTP_OIDC_SUB"
-      },
-      {
-        "type": "HTTP_OIDC_ISS",
-        "any_one_of": ["https://aai-demo.egi.eu/auth/realms/egi"]
-      },
-      {
-        "type": "OIDC-eduperson_entitlement",
-        "regex": true,
-        "any_one_of": [
-          "^urn:mace:egi.eu:group:fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu$"
-        ]
-      }
-    ]
-  }
-]
-```
-
 ### VO auditing
 
 Sometimes it is easy to leave behind Virtual Machines that are no longer used,
@@ -442,68 +414,12 @@ $ openstack user list
 ```
 
 Problem is that regular users will not have the permissions to execute the
-command above. Below there are the steps to enable permissions only to staff
-of the EGI Foundation to execute the command, using the default keystone
-policy:
+command above. The steps above to configure a mapping for the `cloud.egi.eu` VO
+grant access to staff at EGI.eu to execute the command, using the default
+keystone policy:
 
 ```json
  "identity:list_users": "(role:reader and system_scope:all) or (role:reader and domain_id:%(target.domain_id)s)"
-```
-
-#### Step 1. Add egi-staff group and associated role
-
-Run:
-
-```shell
-$ openstack group create --domain egi.eu egi-staff
-$ openstack role add --group egi-staff --domain egi.eu reader
-```
-
-#### Step 2. Add mapping to mapping.egi.json
-
-Only EGI Foundation staff belonging to the `cloud.egi.eu` VO will
-be granted permissions:
-
-```json
-{
-    "local": [
-        {
-            "user": {
-        "name": "{0}"
-    },
-            "group": {
-                "id": "_egi-staff_group_ID_"
-            }
-        }
-    ],
-    "remote": [
-        {
-            "type": "HTTP_OIDC_SUB"
-        },
-        {
-            "type": "HTTP_OIDC_ISS",
-            "any_one_of": [
-                "https://aai.egi.eu/auth/realms/egi",
-                "https://aai.egi.eu/oidc/"
-            ]
-        },
-        {
-            "type": "OIDC-eduperson_entitlement",
-            "regex": true,
-            "any_one_of": [
-                "^urn:mace:egi.eu:group:cloud.egi.eu:role=auditor#aai.egi.eu$"
-            ]
-        }
-    ]
-}
-```
-
-#### Step 3. Update mapping
-
-Run:
-
-```shell
-$ openstack mapping set --rules mapping.egi.json egi-mapping
 ```
 
 This has been tested in production on OpenStack Ussuri thanks to the
@@ -532,6 +448,11 @@ $ openstack user list
 With this configuration EGI.eu staff is able to proactively notify creators
 of long-running VMs that may not be making an effective use of the cloud
 resources.
+
+### Additional VOs
+
+To configure additional VOs please follow steps in the
+[VO Configuration guide](../vo_config/).
 
 ## Horizon Configuration
 
