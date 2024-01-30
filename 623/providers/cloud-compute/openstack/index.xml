@@ -338,20 +338,21 @@ the Keystone Federation support.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack domain show -f value -c name &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>openstack identity provider show -f value -c domain_id egi.eu&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set the name to egi.eu (if it was set to random auto-generated number):&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack domain &lt;span style="color:#204a87">set&lt;/span> --name egi.eu &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>openstack identity provider show -f value -c domain_id egi.eu&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a group per VO that you want to support:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a group and add a domain-wide role for auditing purposes (see below):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Support for https://operations-portal.egi.eu/vo/view/voname/cloud.egi.eu&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack group create --domain egi.eu egi-staff
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack role add --domain egi.eu --group egi-staff reader
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Every VO you want to support should be mapped to a local project. The &lt;code>ops&lt;/code> VO
+is used by &lt;a href="../../../internal/monitoring/">EGI monitoring&lt;/a> to ensure the correct
+functioning of your site. Create a group for this vo and add the group as a
+member of it:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Support for https://operations-portal.egi.eu/vo/view/voname/ops&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack group create --domain egi.eu ops
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Support for https://operations-portal.egi.eu/vo/view/voname/cloud.egi.eu&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack group create --domain egi.eu egi-staff
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add groups to the desired local project:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack role add --domain egi.eu --group ops --project ops member
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add a domain-wide role for auditing purposes (see below):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack role add --domain egi.eu --group egi-staff reader
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Define a mapping of users from EGI Check-in to the group just created and
-restrict with the &lt;code>OIDC-eduperson_entitlement&lt;/code> the VOs you want to support for
-that group. Substitute the group ID and the allowed entitlements for the
-adequate values for your deployment:&lt;/p>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack role add --domain egi.eu --group ops --project &amp;lt;your &lt;span style="color:#204a87">local&lt;/span> ops project&amp;gt; member
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you can define the mapping of EGI Check-in users in to the groups you just
+created and restrict with the &lt;code>OIDC-eduperson_entitlement&lt;/code> attribute which users
+will be members of those groups. Substitute the group IDs to the adequate values
+for your deployment:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ cat mapping.egi.json
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
@@ -392,7 +393,8 @@ adequate values for your deployment:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;local&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;user&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;email&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;{1}&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;group&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;_egi-staff_group_ID_&amp;#34;&lt;/span>
@@ -402,6 +404,9 @@ adequate values for your deployment:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;remote&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_SUB&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_EMAIL&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>,
@@ -447,20 +452,20 @@ consuming unnecessary resources. Owners of unused VMs should be notified to
 check whether occupied resources can be freed.&lt;/p>
 &lt;p>EGI Check-in users get an &lt;code>ePUID&lt;/code> (i.e. a long hash ending in &lt;code>@egi.eu&lt;/code>) which
 are translated into local OpenStack user IDs. When VMs are created the owner of
-the VM is set to the OpenStack user ID instead of the &lt;code>ePUID&lt;/code>. However, only
-the &lt;code>ePUID&lt;/code> is linked to the user email in order for the user to be notified.
-The mapping between OpenStack user IDs and &lt;code>ePUIDs&lt;/code> is shown with:&lt;/p>
+the VM is set to the OpenStack user ID instead of the &lt;code>ePUID&lt;/code>. However, only the
+&lt;code>ePUID&lt;/code> is linked to the user email in order for the user to be notified. The
+mapping between OpenStack user IDs and &lt;code>ePUIDs&lt;/code> is shown with:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack user list
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Problem is that regular users will not have the permissions to execute the
 command above. The steps above to configure a mapping for the &lt;code>cloud.egi.eu&lt;/code> VO
-grant access to staff at EGI.eu to execute the command, using the default
-keystone policy:&lt;/p>
+grant access to selected staff at EGI.eu to execute the command, using the
+default keystone policy:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;identity:list_users&amp;#34;&lt;/span>&lt;span style="color:#a40000">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;(role:reader and system_scope:all) or (role:reader and domain_id:%(target.domain_id)s)&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This has been tested in production on OpenStack Ussuri thanks to the
-collaboration between EGI.eu and IISAS-Fedcloud. It should also work with
-newer versions of OpenStack.&lt;/p>
-&lt;p>EGI.eu staff belonging to the &lt;code>cloud.egi.eu&lt;/code> VO should use the below setup
-to get the OpenStack user list:&lt;/p>
+collaboration between EGI.eu and IISAS-Fedcloud. It should also work with newer
+versions of OpenStack.&lt;/p>
+&lt;p>EGI.eu staff belonging to the &lt;code>cloud.egi.eu&lt;/code> VO having the auditor role should
+use the below setup to get the OpenStack user list:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_INTERFACE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>public
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># get OS_AUTH_URL with &amp;#34;fedcloud site env --vo &amp;lt;vo&amp;gt; --site &amp;lt;site&amp;gt;&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3
@@ -474,12 +479,11 @@ to get the OpenStack user list:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_DOMAIN_NAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>egi.eu
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack user list
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>With this configuration EGI.eu staff is able to proactively notify creators
-of long-running VMs that may not be making an effective use of the cloud
-resources.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>With this configuration EGI.eu staff is able to proactively notify creators of
+long-running VMs that may not be making an effective use of the cloud resources.&lt;/p>
 &lt;h3 id="additional-vos">Additional VOs&lt;/h3>
 &lt;p>To configure additional VOs please follow steps in the
-&lt;a href="./vo_config/">VO Configuration guide&lt;/a>.&lt;/p>
+&lt;a href="../vo_config/">VO Configuration guide&lt;/a>.&lt;/p>
 &lt;h2 id="horizon-configuration-1">Horizon Configuration&lt;/h2>
 &lt;p>Edit your local_settings.py to include the following values:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Enables keystone web single-sign-on if set to True.&lt;/span>
