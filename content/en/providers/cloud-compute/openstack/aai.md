@@ -256,25 +256,38 @@ $ openstack identity provider create --remote-id https://aai-demo.egi.eu/auth/re
 +-------------+-----------------------------------------+
 ```
 
-Create a group for users coming from EGI Check-in, usual configuration is to
-have one group per VO you want to support.
+Check the name of the egi.eu domain name:
 
 ```shell
-$ openstack group create ops
-+-------------+----------------------------------+
-| Field       | Value                            |
-+-------------+----------------------------------+
-| description |                                  |
-| domain_id   | default                          |
-| id          | 89cf5b6708354094942d9d16f0f29f8f |
-| name        | ops                              |
-+-------------+----------------------------------+
+$ openstack domain show -f value -c name $(openstack identity provider show -f value -c domain_id egi.eu)
 ```
 
-Add that group to the desired local project:
+Set the name to egi.eu (if it was set to random auto-generated number):
 
 ```shell
-openstack role add member --group ops --project ops
+$ openstack domain set --name egi.eu $(openstack identity provider show -f value -c domain_id egi.eu)
+```
+
+Create a group per VO that you want to support:
+
+```shell
+# Support for https://operations-portal.egi.eu/vo/view/voname/ops
+$ openstack group create --domain egi.eu ops
+
+# Support for https://operations-portal.egi.eu/vo/view/voname/cloud.egi.eu
+$ openstack group create --domain egi.eu egi-staff
+```
+
+Add groups to the desired local project:
+
+```shell
+$ openstack role add --domain egi.eu --group ops --project ops member
+```
+
+Add a domain-wide role for auditing purposes (see below):
+
+```shell
+$ openstack role add --domain egi.eu --group egi-staff reader
 ```
 
 Define a mapping of users from EGI Check-in to the group just created and
@@ -292,7 +305,7 @@ $ cat mapping.egi.json
             "name": "{0}"
         },
                 "group": {
-                    "id": "89cf5b6708354094942d9d16f0f29f8f"
+                    "id": "_ops_group_ID_"
                 }
             }
         ],
@@ -314,30 +327,45 @@ $ cat mapping.egi.json
                 ]
             }
         ]
+    },
+    {
+        "local": [
+            {
+                "user": {
+            "name": "{0}"
+        },
+                "group": {
+                    "id": "_egi-staff_group_ID_"
+                }
+            }
+        ],
+        "remote": [
+            {
+                "type": "HTTP_OIDC_SUB"
+            },
+            {
+                "type": "HTTP_OIDC_ISS",
+                "any_one_of": [
+                    "https://aai.egi.eu/auth/realms/egi"
+                ]
+            },
+            {
+                "type": "OIDC-eduperson_entitlement",
+                "regex": true,
+                "any_one_of": [
+                    "^urn:mace:egi.eu:group:cloud.egi.eu:role=auditor#aai.egi.eu$"
+                ]
+            }
+        ]
     }
 ]
 ```
 
-More recent versions of Keystone allow for more elaborated mapping, but this
-configuration should work for Mitaka and onwards
-
 Create the mapping in Keystone:
-
-<!-- markdownlint-disable line-length -->
 
 ```shell
 $ openstack mapping create --rules mapping.egi.json egi-mapping
-+-------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Field | Value                                                                                                                                |
-+-------+--------------------------------------------------------------------------------------------------------------------------------------+
-| id    | egi-mapping                                                                                                                          |
-| rules | [{u'remote': [{u'type': u'HTTP_OIDC_SUB'}, {u'type': u'HTTP_OIDC_ISS', u'any_one_of': [u'https://aai-demo.egi.eu/auth/realms/egi']}, |
-|       | {u'regex': True, u'type': u'OIDC-eduperson_entitlement', u'any_one_of': [u'^urn:mace:egi.eu:.*:ops:vm_operator@egi.eu$']}],          |
-|       | u'local': [{u'group': {u'id': u'89cf5b6708354094942d9d16f0f29f8f'}, u'user': {u'name': u'{0}'}}]}]                                   |
-+-------+--------------------------------------------------------------------------------------------------------------------------------------+
 ```
-
-<!-- markdownlint-enable line-length -->
 
 Finally, create the federated protocol with the identity provider and mapping
 created before:
@@ -356,6 +384,63 @@ $ openstack federation protocol create \
 ```
 
 Keystone is now ready to accept EGI Check-in credentials.
+
+### VO auditing
+
+Sometimes it is easy to leave behind Virtual Machines that are no longer used,
+consuming unnecessary resources. Owners of unused VMs should be notified to
+check whether occupied resources can be freed.
+
+EGI Check-in users get an `ePUID` (i.e. a long hash ending in `@egi.eu`) which
+are translated into local OpenStack user IDs. When VMs are created the owner of
+the VM is set to the OpenStack user ID instead of the `ePUID`. However, only
+the `ePUID` is linked to the user email in order for the user to be notified.
+The mapping between OpenStack user IDs and `ePUIDs` is shown with:
+
+```shell
+$ openstack user list
+```
+
+Problem is that regular users will not have the permissions to execute the
+command above. The steps above to configure a mapping for the `cloud.egi.eu` VO
+grant access to staff at EGI.eu to execute the command, using the default
+keystone policy:
+
+```json
+ "identity:list_users": "(role:reader and system_scope:all) or (role:reader and domain_id:%(target.domain_id)s)"
+```
+
+This has been tested in production on OpenStack Ussuri thanks to the
+collaboration between EGI.eu and IISAS-Fedcloud. It should also work with
+newer versions of OpenStack.
+
+EGI.eu staff belonging to the `cloud.egi.eu` VO should use the below setup
+to get the OpenStack user list:
+
+```shell
+export OS_INTERFACE=public
+# get OS_AUTH_URL with "fedcloud site env --vo <vo> --site <site>"
+export OS_AUTH_URL=https://cloud.ui.savba.sk:5000/v3
+export OS_USERNAME=<ePUID> # get it from https://aai.egi.eu/
+export OS_IDENTITY_PROVIDER=egi.eu
+export OS_AUTH_TYPE=v3oidcaccesstoken
+export OS_PROTOCOL=openid
+export OS_IDENTITY_API_VERSION=3
+# get OS_ACCESS_TOKEN following https://docs.egi.eu/users/aai/check-in/obtaining-tokens/
+export OS_ACCESS_TOKEN=<token>
+export OS_DOMAIN_NAME=egi.eu
+
+$ openstack user list
+```
+
+With this configuration EGI.eu staff is able to proactively notify creators
+of long-running VMs that may not be making an effective use of the cloud
+resources.
+
+### Additional VOs
+
+To configure additional VOs please follow steps in the
+[VO Configuration guide](./vo_config/).
 
 ## Horizon Configuration
 
@@ -401,74 +486,6 @@ $ openstack --os-auth-url https://<your keystone endpoint>/v3 \
 ```
 
 <!-- markdownlint-enable line-length -->
-
-## Additional VOs
-
-Configuration can include as many mappings as needed in the json file. Users
-will be members of all the groups matching the remote part of the mapping. For
-example this file has 2 mappings, one for members of `ops` and another for
-members of `fedcloud.egi.eu`:
-
-```json
-[
-  {
-    "local": [
-      {
-        "user": {
-          "name": "{0}"
-        },
-        "group": {
-          "id": "66df3a7a0c6248cba8b729de7b042639"
-        }
-      }
-    ],
-    "remote": [
-      {
-        "type": "HTTP_OIDC_SUB"
-      },
-      {
-        "type": "HTTP_OIDC_ISS",
-        "any_one_of": ["https://aai-demo.egi.eu/auth/realms/egi"]
-      },
-      {
-        "type": "OIDC-eduperson_entitlement",
-        "regex": true,
-        "any_one_of": [
-          "^urn:mace:egi.eu:group:ops:role=vm_operator#aai.egi.eu$"
-        ]
-      }
-    ]
-  },
-  {
-    "local": [
-      {
-        "user": {
-          "name": "{0}"
-        },
-        "group": {
-          "id": "e1c04284718f4e19bb0516e5534a24e8"
-        }
-      }
-    ],
-    "remote": [
-      {
-        "type": "HTTP_OIDC_SUB"
-      },
-      {
-        "type": "HTTP_OIDC_ISS",
-        "any_one_of": ["https://aai-demo.egi.eu/auth/realms/egi"]
-      },
-      {
-        "type": "OIDC-eduperson_entitlement",
-        "regex": true,
-        "any_one_of": [
-          "^urn:mace:egi.eu:group:fedcloud.egi.eu:vm_operator:role=member#aai.egi.eu$"
-        ]
-      }
-    ]
-  }
-]
-```
 
 ## Multiple OIDC providers
 
