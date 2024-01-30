@@ -327,7 +327,7 @@ $ cat mapping.egi.json
                 ]
             }
         ]
-    }
+    },
     {
         "local": [
             {
