@@ -363,21 +363,9 @@ $ cat mapping.egi.json
 
 Create the mapping in Keystone:
 
-<!-- markdownlint-disable line-length -->
-
 ```shell
 $ openstack mapping create --rules mapping.egi.json egi-mapping
-+-------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Field | Value                                                                                                                                |
-+-------+--------------------------------------------------------------------------------------------------------------------------------------+
-| id    | egi-mapping                                                                                                                          |
-| rules | [{u'remote': [{u'type': u'HTTP_OIDC_SUB'}, {u'type': u'HTTP_OIDC_ISS', u'any_one_of': [u'https://aai-demo.egi.eu/auth/realms/egi']}, |
-|       | {u'regex': True, u'type': u'OIDC-eduperson_entitlement', u'any_one_of': [u'^urn:mace:egi.eu:.*:ops:vm_operator@egi.eu$']}],          |
-|       | u'local': [{u'group': {u'id': u'89cf5b6708354094942d9d16f0f29f8f'}, u'user': {u'name': u'{0}'}}]}]                                   |
-+-------+--------------------------------------------------------------------------------------------------------------------------------------+
 ```
-
-<!-- markdownlint-enable line-length -->
 
 Finally, create the federated protocol with the identity provider and mapping
 created before:
