@@ -215,6 +215,7 @@ flushdns
 fnal
 folksonomy
 fom
+FPGA
 fqan
 fqdns
 FZK
@@ -245,6 +246,7 @@ gpgcheck
 gpgkey
 gpgpu
 gpgpugrisu
+gpu
 grafana
 gridftp
 gridice
@@ -373,6 +375,7 @@ matplotlib
 mdui
 mesos
 metalink
+MIC
 micafer
 micromamba
 miniconda
