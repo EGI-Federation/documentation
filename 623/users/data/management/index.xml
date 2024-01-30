@@ -88,7 +88,16 @@ JSON and RDF. The metadata can be managed using the Web interface and the APIs.
 It's also possible to create indexes and query them.&lt;/p>
 &lt;p>&lt;img src="datahub-metadata-management.png" alt="Management of metadata using the web interface">&lt;/p>
 &lt;p>It's possible to view the popularity of a file and manage smart caching.&lt;/p>
-&lt;p>&lt;img src="datahub-file-popularity-smarch-caching.png" alt="Viewing file popularity for smart caching">&lt;/p></description></item><item><title>Users: EGI Data Transfer</title><link>/users/data/management/data-transfer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/data-transfer/</guid><description>
+&lt;p>&lt;img src="datahub-file-popularity-smarch-caching.png" alt="Viewing file popularity for smart caching">&lt;/p>
+&lt;h2 id="how-to-get-access">How to get access&lt;/h2>
+&lt;p>The EGI DataHub Web interface can be accessed by any user authenticated via
+&lt;a href="../../../aai/check-in">EGI Check-in&lt;/a>. Users authenticated have access to the
+&lt;code>PLAYGROUND&lt;/code> space, where they can tests some of the available features. Users
+have also read-only access to the &lt;code>open-datasets&lt;/code> space where some example
+datasets are stored.
+In order to access via oneclient or API please check the related &lt;a href="./clients/#generating-tokens-for-using-oneclient-or-apis">documentation&lt;/a>.&lt;/p>
+&lt;p>Advanced users willing to install their own Oneprovider can check the dedicated
+&lt;a href="../../../../providers/datahub/oneprovider">installation instructions&lt;/a>.&lt;/p></description></item><item><title>Users: EGI Data Transfer</title><link>/users/data/management/data-transfer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/data/management/data-transfer/</guid><description>
 &lt;h2 id="what-is-it">What is it?&lt;/h2>
 &lt;p>&lt;a href="https://www.egi.eu/service/data-transfer/">EGI Data Transfer&lt;/a>
 allows scientists to &lt;strong>move any type of data files asynchronously from one

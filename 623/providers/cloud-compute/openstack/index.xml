@@ -334,19 +334,20 @@ the Keystone Federation support.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> egi.eu &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> remote_ids &lt;span style="color:#000;font-weight:bold">|&lt;/span> https://aai-demo.egi.eu/auth/realms/egi &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+-------------+-----------------------------------------+
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a group for users coming from EGI Check-in, usual configuration is to
-have one group per VO you want to support.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack group create ops
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+-------------+----------------------------------+
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+-------------+----------------------------------+
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> description &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> domain_id &lt;span style="color:#000;font-weight:bold">|&lt;/span> default &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> 89cf5b6708354094942d9d16f0f29f8f &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> name &lt;span style="color:#000;font-weight:bold">|&lt;/span> ops &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+-------------+----------------------------------+
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add that group to the desired local project:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>openstack role add member --group ops --project ops
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check the name of the egi.eu domain name:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack domain show -f value -c name &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>openstack identity provider show -f value -c domain_id egi.eu&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set the name to egi.eu (if it was set to random auto-generated number):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack domain &lt;span style="color:#204a87">set&lt;/span> --name egi.eu &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>openstack identity provider show -f value -c domain_id egi.eu&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a group per VO that you want to support:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Support for https://operations-portal.egi.eu/vo/view/voname/ops&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack group create --domain egi.eu ops
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Support for https://operations-portal.egi.eu/vo/view/voname/cloud.egi.eu&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack group create --domain egi.eu egi-staff
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add groups to the desired local project:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack role add --domain egi.eu --group ops --project ops member
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add a domain-wide role for auditing purposes (see below):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack role add --domain egi.eu --group egi-staff reader
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Define a mapping of users from EGI Check-in to the group just created and
 restrict with the &lt;code>OIDC-eduperson_entitlement&lt;/code> the VOs you want to support for
 that group. Substitute the group ID and the allowed entitlements for the
@@ -361,7 +362,7 @@ adequate values for your deployment:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;email&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;{1}&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;group&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;89cf5b6708354094942d9d16f0f29f8f&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;_ops_group_ID_&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
@@ -386,6 +387,36 @@ adequate values for your deployment:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;local&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;user&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;{0}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;group&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;_egi-staff_group_ID_&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;remote&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_SUB&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;HTTP_OIDC_ISS&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;any_one_of&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;https://aai.egi.eu/auth/realms/egi&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;OIDC-eduperson_entitlement&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;regex&amp;#34;&lt;/span>: true,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;any_one_of&amp;#34;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;^urn:mace:egi.eu:group:cloud.egi.eu:role=auditor#aai.egi.eu&lt;/span>$&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
@@ -396,18 +427,8 @@ the mapping will allow to store the user&amp;rsquo;s email in your local
 database.
 &lt;/div>
 &lt;p>Create the mapping in Keystone:&lt;/p>
-&lt;!-- markdownlint-disable line-length -->
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack mapping create --rules mapping.egi.json egi-mapping
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+-------+--------------------------------------------------------------------------------------------------------------------------------------+
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> Field &lt;span style="color:#000;font-weight:bold">|&lt;/span> Value &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+-------+--------------------------------------------------------------------------------------------------------------------------------------+
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> id &lt;span style="color:#000;font-weight:bold">|&lt;/span> egi-mapping &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> rules &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;remote&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;HTTP_OIDC_SUB&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>, &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;HTTP_OIDC_ISS&amp;#39;&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;any_one_of&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;https://aai-demo.egi.eu/auth/realms/egi&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]}&lt;/span>, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;regex&amp;#39;&lt;/span>: True, u&lt;span style="color:#4e9a06">&amp;#39;type&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;OIDC-eduperson_entitlement&amp;#39;&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;any_one_of&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;^urn:mace:egi.eu:.*:ops:vm_operator@egi.eu$&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">]}]&lt;/span>, &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> u&lt;span style="color:#4e9a06">&amp;#39;local&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">[{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;group&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;id&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;89cf5b6708354094942d9d16f0f29f8f&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>, u&lt;span style="color:#4e9a06">&amp;#39;user&amp;#39;&lt;/span>: &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>u&lt;span style="color:#4e9a06">&amp;#39;name&amp;#39;&lt;/span>: u&lt;span style="color:#4e9a06">&amp;#39;{0}&amp;#39;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">}}]}]&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+-------+--------------------------------------------------------------------------------------------------------------------------------------+
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable line-length -->
-&lt;p>Finally, create the federated protocol with the identity provider and mapping
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, create the federated protocol with the identity provider and mapping
 created before:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack federation protocol create &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --identity-provider egi.eu &lt;span style="color:#4e9a06">\
@@ -420,6 +441,45 @@ created before:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">|&lt;/span> mapping &lt;span style="color:#000;font-weight:bold">|&lt;/span> egi-mapping &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+-------------------+-------------+
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Keystone is now ready to accept EGI Check-in credentials.&lt;/p>
+&lt;h3 id="vo-auditing">VO auditing&lt;/h3>
+&lt;p>Sometimes it is easy to leave behind Virtual Machines that are no longer used,
+consuming unnecessary resources. Owners of unused VMs should be notified to
+check whether occupied resources can be freed.&lt;/p>
+&lt;p>EGI Check-in users get an &lt;code>ePUID&lt;/code> (i.e. a long hash ending in &lt;code>@egi.eu&lt;/code>) which
+are translated into local OpenStack user IDs. When VMs are created the owner of
+the VM is set to the OpenStack user ID instead of the &lt;code>ePUID&lt;/code>. However, only
+the &lt;code>ePUID&lt;/code> is linked to the user email in order for the user to be notified.
+The mapping between OpenStack user IDs and &lt;code>ePUIDs&lt;/code> is shown with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ openstack user list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Problem is that regular users will not have the permissions to execute the
+command above. The steps above to configure a mapping for the &lt;code>cloud.egi.eu&lt;/code> VO
+grant access to staff at EGI.eu to execute the command, using the default
+keystone policy:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4e9a06">&amp;#34;identity:list_users&amp;#34;&lt;/span>&lt;span style="color:#a40000">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;(role:reader and system_scope:all) or (role:reader and domain_id:%(target.domain_id)s)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This has been tested in production on OpenStack Ussuri thanks to the
+collaboration between EGI.eu and IISAS-Fedcloud. It should also work with
+newer versions of OpenStack.&lt;/p>
+&lt;p>EGI.eu staff belonging to the &lt;code>cloud.egi.eu&lt;/code> VO should use the below setup
+to get the OpenStack user list:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_INTERFACE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>public
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># get OS_AUTH_URL with &amp;#34;fedcloud site env --vo &amp;lt;vo&amp;gt; --site &amp;lt;site&amp;gt;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_URL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>https://cloud.ui.savba.sk:5000/v3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_USERNAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ePUID&amp;gt; &lt;span style="color:#8f5902;font-style:italic"># get it from https://aai.egi.eu/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_IDENTITY_PROVIDER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_AUTH_TYPE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>v3oidcaccesstoken
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_PROTOCOL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>openid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_IDENTITY_API_VERSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># get OS_ACCESS_TOKEN following https://docs.egi.eu/users/aai/check-in/obtaining-tokens/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_ACCESS_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;token&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OS_DOMAIN_NAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>egi.eu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack user list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>With this configuration EGI.eu staff is able to proactively notify creators
+of long-running VMs that may not be making an effective use of the cloud
+resources.&lt;/p>
+&lt;h3 id="additional-vos">Additional VOs&lt;/h3>
+&lt;p>To configure additional VOs please follow steps in the
+&lt;a href="./vo_config/">VO Configuration guide&lt;/a>.&lt;/p>
 &lt;h2 id="horizon-configuration-1">Horizon Configuration&lt;/h2>
 &lt;p>Edit your local_settings.py to include the following values:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Enables keystone web single-sign-on if set to True.&lt;/span>
@@ -484,7 +544,7 @@ make any changes to the client configuration, you need to submit a
 reconfiguration request through the
 &lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>.
 &lt;/div>
-&lt;h3 id="additional-vos">Additional VOs&lt;/h3>
+&lt;h3 id="additional-vos-1">Additional VOs&lt;/h3>
 &lt;p>Once &lt;code>ops&lt;/code> VO is working, you can include any further VOs you want to support as
 documented in the &lt;a href="../vo-config">VO Configuration guide&lt;/a>.&lt;/p></description></item><item><title>Providers: Accounting</title><link>/providers/cloud-compute/openstack/accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/providers/cloud-compute/openstack/accounting/</guid><description>
 &lt;p>There are two different processes handling the accounting integration:&lt;/p>
