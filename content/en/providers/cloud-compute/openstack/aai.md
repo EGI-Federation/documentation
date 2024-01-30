@@ -274,7 +274,7 @@ $ openstack group create ops
 Add that group to the desired local project:
 
 ```shell
-openstack role add member --group ops --project ops
+$ openstack role add member --group ops --project ops
 ```
 
 Define a mapping of users from EGI Check-in to the group just created and
@@ -357,52 +357,7 @@ $ openstack federation protocol create \
 
 Keystone is now ready to accept EGI Check-in credentials.
 
-## Horizon Configuration
-
-Edit your local_settings.py to include the following values:
-
-```python
-# Enables keystone web single-sign-on if set to True.
-WEBSSO_ENABLED = True
-
-# Allow users to choose between local Keystone credentials or login
-# with EGI Check-in
-WEBSSO_CHOICES = (
-    ("credentials", _("Keystone Credentials")),
-    ("openid", _("EGI Check-in")),
-)
-```
-
-Once horizon is restarted you will be able to choose \"EGI Check-in\" for login.
-
-## CLI Access
-
-The
-[OpenStack Client](https://docs.openstack.org/developer/python-openstackclient/)
-has built-in support for using OpenID Connect Access Tokens to authenticate. You
-first need to get a valid Access Token from EGI Check-in (e.g. from
-<https://aai-demo.egi.eu/token/>) and then use it in a command like:
-
-<!-- markdownlint-disable line-length -->
-
-```shell
-$ openstack --os-auth-url https://<your keystone endpoint>/v3 \
-            --os-auth-type v3oidcaccesstoken --os-protocol openid \
-            --os-identity-provider egi.eu \
-            --os-access-token <your access token> \
-            token issue
-+---------+---------------------------------------------------------------------------------------+
-| Field   | Value                                                                                 |
-+---------+---------------------------------------------------------------------------------------+
-| expires | 2017-05-23T11:24:31+0000                                                              |
-| id      | gAAAAABZJA3fbKX....nEMAPi-IsFOCkU9QWGTISYElzYJsI3z0SJGs7QsTJv4aJQq0JDJUBz6uE85SqXDj3  |
-| user_id | 020864ea9415413f9d706f6b473dbeba                                                      |
-+---------+---------------------------------------------------------------------------------------+
-```
-
-<!-- markdownlint-enable line-length -->
-
-## Additional VOs
+### Additional VOs
 
 Configuration can include as many mappings as needed in the json file. Users
 will be members of all the groups matching the remote part of the mapping. For
@@ -470,7 +425,7 @@ members of `fedcloud.egi.eu`:
 ]
 ```
 
-## VO cleaning
+### VO auditing
 
 Sometimes it is easy to leave behind Virtual Machines that are no longer used,
 consuming unnecessary resources. Owners of unused VMs should be notified to
@@ -482,8 +437,8 @@ the VM is set to the OpenStack user ID instead of the `ePUID`. However, only
 the `ePUID` is linked to the user email in order for the user to be notified.
 The mapping between OpenStack user IDs and `ePUIDs` is shown with:
 
-```bash
-openstack user list
+```shell
+$ openstack user list
 ```
 
 Problem is that regular users will not have the permissions to execute the
@@ -495,30 +450,16 @@ policy:
  "identity:list_users": "(role:reader and system_scope:all) or (role:reader and domain_id:%(target.domain_id)s)"
 ```
 
-### Step 1. Change the name of the egi.eu domain
-
-Check the name:
-
-```shell
-openstack domain show -f value -c name $(openstack identity provider show -f value -c domain_id egi.eu)
-```
-
-Set the name to egi.eu (if it was set to random auto-generated number):
-
-```bash
-openstack domain set --name egi.eu $(openstack identity provider show -f value -c domain_id egi.eu)
-```
-
-### Step 2. Add egi-staff group and associated role
+#### Step 1. Add egi-staff group and associated role
 
 Run:
 
-```bash
-openstack group create --domain egi.eu egi-staff
-openstack role add --group egi-staff --domain egi.eu reader
+```shell
+$ openstack group create --domain egi.eu egi-staff
+$ openstack role add --group egi-staff --domain egi.eu reader
 ```
 
-### Step 3. Add mapping to mapping.egi.json
+#### Step 2. Add mapping to mapping.egi.json
 
 Only EGI Foundation staff belonging to the `cloud.egi.eu` VO will
 be granted permissions:
@@ -557,21 +498,85 @@ be granted permissions:
 }
 ```
 
-### Step 4. Update mapping
+#### Step 3. Update mapping
 
 Run:
 
 ```shell
-openstack mapping set --rules mapping.egi.json egi-mapping
+$ openstack mapping set --rules mapping.egi.json egi-mapping
 ```
 
 This has been tested in production on OpenStack Ussuri thanks to the
 collaboration between EGI.eu and IISAS-Fedcloud. It should also work with
 newer versions of OpenStack.
 
-With this configuration enabled staff at EGI Foundation is able to
-proactively notify creators of long-running VMs that may not be making
-an effective use of the cloud resources.
+EGI.eu staff belonging to the `cloud.egi.eu` VO should use the below setup
+to get the OpenStack user list:
+
+```shell
+export OS_INTERFACE=public
+# get OS_AUTH_URL with "fedcloud site env --vo <vo> --site <site>"
+export OS_AUTH_URL=https://cloud.ui.savba.sk:5000/v3
+export OS_USERNAME=<ePUID> # get it from https://aai.egi.eu/
+export OS_IDENTITY_PROVIDER=egi.eu
+export OS_AUTH_TYPE=v3oidcaccesstoken
+export OS_PROTOCOL=openid
+export OS_IDENTITY_API_VERSION=3
+# get OS_ACCESS_TOKEN following https://docs.egi.eu/users/aai/check-in/obtaining-tokens/
+export OS_ACCESS_TOKEN=<token>
+export OS_DOMAIN_NAME=egi.eu
+
+$ openstack user list
+```
+
+With this configuration EGI.eu staff is able to proactively notify creators
+of long-running VMs that may not be making an effective use of the cloud
+resources.
+
+## Horizon Configuration
+
+Edit your local_settings.py to include the following values:
+
+```python
+# Enables keystone web single-sign-on if set to True.
+WEBSSO_ENABLED = True
+
+# Allow users to choose between local Keystone credentials or login
+# with EGI Check-in
+WEBSSO_CHOICES = (
+    ("credentials", _("Keystone Credentials")),
+    ("openid", _("EGI Check-in")),
+)
+```
+
+Once horizon is restarted you will be able to choose \"EGI Check-in\" for login.
+
+## CLI Access
+
+The
+[OpenStack Client](https://docs.openstack.org/developer/python-openstackclient/)
+has built-in support for using OpenID Connect Access Tokens to authenticate. You
+first need to get a valid Access Token from EGI Check-in (e.g. from
+<https://aai-demo.egi.eu/token/>) and then use it in a command like:
+
+<!-- markdownlint-disable line-length -->
+
+```shell
+$ openstack --os-auth-url https://<your keystone endpoint>/v3 \
+            --os-auth-type v3oidcaccesstoken --os-protocol openid \
+            --os-identity-provider egi.eu \
+            --os-access-token <your access token> \
+            token issue
++---------+---------------------------------------------------------------------------------------+
+| Field   | Value                                                                                 |
++---------+---------------------------------------------------------------------------------------+
+| expires | 2017-05-23T11:24:31+0000                                                              |
+| id      | gAAAAABZJA3fbKX....nEMAPi-IsFOCkU9QWGTISYElzYJsI3z0SJGs7QsTJv4aJQq0JDJUBz6uE85SqXDj3  |
+| user_id | 020864ea9415413f9d706f6b473dbeba                                                      |
++---------+---------------------------------------------------------------------------------------+
+```
+
+<!-- markdownlint-enable line-length -->
 
 ## Multiple OIDC providers
 
