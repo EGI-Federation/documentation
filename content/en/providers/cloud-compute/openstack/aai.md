@@ -452,7 +452,7 @@ resources.
 ### Additional VOs
 
 To configure additional VOs please follow steps in the
-[VO Configuration guide](../vo_config/).
+[VO Configuration guide](./vo_config/).
 
 ## Horizon Configuration
 
