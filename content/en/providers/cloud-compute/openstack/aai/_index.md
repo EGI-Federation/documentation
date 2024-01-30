@@ -432,32 +432,29 @@ Set the name to egi.eu (if it was set to random auto-generated number):
 $ openstack domain set --name egi.eu $(openstack identity provider show -f value -c domain_id egi.eu)
 ```
 
-Create a group per VO that you want to support:
+Create a group and add a domain-wide role for auditing purposes (see below):
+
+```shell
+# Support for https://operations-portal.egi.eu/vo/view/voname/cloud.egi.eu
+$ openstack group create --domain egi.eu egi-staff
+$ openstack role add --domain egi.eu --group egi-staff reader
+```
+
+Every VO you want to support should be mapped to a local project. The `ops` VO
+is used by [EGI monitoring](/internal/monitoring/) to ensure the correct
+functioning of your site. Create a group for this vo and add the group as a
+member of it:
 
 ```shell
 # Support for https://operations-portal.egi.eu/vo/view/voname/ops
 $ openstack group create ops
-
-# Support for https://operations-portal.egi.eu/vo/view/voname/cloud.egi.eu
-$ openstack group create --domain egi.eu egi-staff
+$ openstack role add --domain egi.eu --group ops --project <your local ops project> member
 ```
 
-Add groups to the desired local project:
-
-```shell
-$ openstack role add --group ops --project ops member
-```
-
-Add a domain-wide role for auditing purposes (see below):
-
-```shell
-$ openstack role add --domain egi.eu --group egi-staff reader
-```
-
-Define a mapping of users from EGI Check-in to the group just created and
-restrict with the `OIDC-eduperson_entitlement` the VOs you want to support for
-that group. Substitute the group ID and the allowed entitlements for the
-adequate values for your deployment:
+Now you can define the mapping of EGI Check-in users into the groups you just
+created and restrict with the `OIDC-eduperson_entitlement` attribute which users
+will be members of those groups. Substitute the group IDs to the adequate values
+for your deployment:
 
 ```shell
 $ cat mapping.egi.json
@@ -468,7 +465,7 @@ $ cat mapping.egi.json
                 "user": {
                     "name": "{0}",
                     "email": "{1}"
-            },
+                },
                 "group": {
                     "id": "_ops_group_ID_"
                 }
@@ -500,9 +497,10 @@ $ cat mapping.egi.json
         "local": [
             {
                 "user": {
-            "name": "{0}"
-        },
-                "group": {
+                    "name": "{0}",
+                    "email": "{1}"
+            },
+            "group": {
                     "id": "_egi-staff_group_ID_"
                 }
             }
@@ -510,6 +508,9 @@ $ cat mapping.egi.json
         "remote": [
             {
                 "type": "HTTP_OIDC_SUB"
+            },
+            {
+                "type": "HTTP_OIDC_EMAIL"
             },
             {
                 "type": "HTTP_OIDC_ISS",
@@ -565,9 +566,9 @@ check whether occupied resources can be freed.
 
 EGI Check-in users get an `ePUID` (i.e. a long hash ending in `@egi.eu`) which
 are translated into local OpenStack user IDs. When VMs are created the owner of
-the VM is set to the OpenStack user ID instead of the `ePUID`. However, only
-the `ePUID` is linked to the user email in order for the user to be notified.
-The mapping between OpenStack user IDs and `ePUIDs` is shown with:
+the VM is set to the OpenStack user ID instead of the `ePUID`. However, only the
+`ePUID` is linked to the user email in order for the user to be notified. The
+mapping between OpenStack user IDs and `ePUIDs` is shown with:
 
 ```shell
 $ openstack user list
@@ -575,19 +576,19 @@ $ openstack user list
 
 Problem is that regular users will not have the permissions to execute the
 command above. The steps above to configure a mapping for the `cloud.egi.eu` VO
-grant access to staff at EGI.eu to execute the command, using the default
-keystone policy:
+grant access to selected staff at EGI.eu to execute the command, using the
+default keystone policy:
 
 ```json
  "identity:list_users": "(role:reader and system_scope:all) or (role:reader and domain_id:%(target.domain_id)s)"
 ```
 
 This has been tested in production on OpenStack Ussuri thanks to the
-collaboration between EGI.eu and IISAS-Fedcloud. It should also work with
-newer versions of OpenStack.
+collaboration between EGI.eu and IISAS-Fedcloud. It should also work with newer
+versions of OpenStack.
 
-EGI.eu staff belonging to the `cloud.egi.eu` VO should use the below setup
-to get the OpenStack user list:
+EGI.eu staff belonging to the `cloud.egi.eu` VO having the auditor role should
+use the below setup to get the OpenStack user list:
 
 ```shell
 export OS_INTERFACE=public
@@ -605,9 +606,8 @@ export OS_DOMAIN_NAME=egi.eu
 $ openstack user list
 ```
 
-With this configuration EGI.eu staff is able to proactively notify creators
-of long-running VMs that may not be making an effective use of the cloud
-resources.
+With this configuration EGI.eu staff is able to proactively notify creators of
+long-running VMs that may not be making an effective use of the cloud resources.
 
 ### Additional VOs
 
