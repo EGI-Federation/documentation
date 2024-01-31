@@ -347,7 +347,7 @@ is used by &lt;a href="../../../internal/monitoring/">EGI monitoring&lt;/a> to e
 functioning of your site. Create a group for this vo and add the group as a
 member of it:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Support for https://operations-portal.egi.eu/vo/view/voname/ops&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack group create --domain egi.eu ops
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack group create ops
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack role add --domain egi.eu --group ops --project &amp;lt;your &lt;span style="color:#204a87">local&lt;/span> ops project&amp;gt; member
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you can define the mapping of EGI Check-in users into the groups you just
 created and restrict with the &lt;code>OIDC-eduperson_entitlement&lt;/code> attribute which users
