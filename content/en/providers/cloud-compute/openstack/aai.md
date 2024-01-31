@@ -272,7 +272,7 @@ Create a group per VO that you want to support:
 
 ```shell
 # Support for https://operations-portal.egi.eu/vo/view/voname/ops
-$ openstack group create --domain egi.eu ops
+$ openstack group create ops
 
 # Support for https://operations-portal.egi.eu/vo/view/voname/cloud.egi.eu
 $ openstack group create --domain egi.eu egi-staff
@@ -281,7 +281,7 @@ $ openstack group create --domain egi.eu egi-staff
 Add groups to the desired local project:
 
 ```shell
-$ openstack role add --domain egi.eu --group ops --project ops member
+$ openstack role add --group ops --project ops member
 ```
 
 Add a domain-wide role for auditing purposes (see below):
