@@ -84,7 +84,7 @@ The EGI Cloud components require the following outgoing connections open:
 ### Local Users
 
 In order to get accounting information from your OpenStack, cASO needs to be run
-with a user that is a member of the projects to extract accoutning information
+with a user that is a member of the projects to extract accounting information
 from and it's allowed to access `identity:list_users` and
 `identity:list_projects` in Keystone. Check
 [cASO documentation](https://caso.readthedocs.io/en/stable/configuration.html#user-credentials-required)
