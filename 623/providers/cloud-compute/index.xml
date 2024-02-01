@@ -158,7 +158,7 @@ your installation).&lt;/p>
 &lt;h2 id="users">Users&lt;/h2>
 &lt;h3 id="local-users">Local Users&lt;/h3>
 &lt;p>In order to get accounting information from your OpenStack, cASO needs to be run
-with a user that is a member of the projects to extract accoutning information
+with a user that is a member of the projects to extract accounting information
 from and it&amp;rsquo;s allowed to access &lt;code>identity:list_users&lt;/code> and
 &lt;code>identity:list_projects&lt;/code> in Keystone. Check
 &lt;a href="https://caso.readthedocs.io/en/stable/configuration.html#user-credentials-required">cASO documentation&lt;/a>

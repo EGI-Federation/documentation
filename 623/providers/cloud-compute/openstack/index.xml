@@ -753,7 +753,7 @@ EGI providers to add to those flavours:&lt;/p>
 &lt;tr>
 &lt;td>Accelerator:Model&lt;/td>
 &lt;td>Model of accelerator (e.g. &lt;code>Tesla V100&lt;/code>)&lt;/td>
-&lt;td>Need to make consensus and enforce. A100 is usually marketed without &amp;ldquo;Tesla&amp;rdquo; classname. Similarly, RTX A6000 usually marketed without “GeForce”. For clarity, full names should be used: “Tesla A100” and “GeForce RTX A6000”&lt;/td>
+&lt;td>Need to make consensus and enforce. A100 is usually marketed without &amp;ldquo;Tesla&amp;rdquo; class name. Similarly, RTX A6000 usually marketed without “GeForce”. For clarity, full names should be used: “Tesla A100” and “GeForce RTX A6000”&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Accelerator:Version&lt;/td>
