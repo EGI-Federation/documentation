@@ -144,7 +144,6 @@ EGI Infrastructure:
 
 * [EGI DataHub](../../../data/management/datahub/)
 * [EGI Data Transfer](../../../data/management/data-transfer/)
-* [EGI Data Orchestrator](../../../data/management/rucio/)
 
 For more information, please see the
 [Data Management](../../../data/management/) section and the
