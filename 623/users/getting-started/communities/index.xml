@@ -113,7 +113,6 @@ EGI Infrastructure:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="../../../data/management/datahub/">EGI DataHub&lt;/a>&lt;/li>
 &lt;li>&lt;a href="../../../data/management/data-transfer/">EGI Data Transfer&lt;/a>&lt;/li>
-&lt;li>&lt;a href="../../../data/management/rucio/">EGI Data Orchestrator&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>For more information, please see the
 &lt;a href="../../../data/management/">Data Management&lt;/a> section and the
@@ -143,16 +142,6 @@ or a cloud storage implementing the S3 interface.&lt;/p>
 &lt;li>&lt;a href="../../../tutorials/adhoc/data-transfer-grid-storage/">Data Transfer with Grid Storage&lt;/a>&lt;/li>
 &lt;li>&lt;a href="../../../tutorials/adhoc/data-transfer-object-storage/">Data Transfer with Object Storage&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h3 id="how-to-use-the--egi-data-orchestrator">How to use the EGI Data Orchestrator&lt;/h3>
-&lt;p>The &lt;a href="../../../data/management/rucio/">EGI Data Orchestrator&lt;/a>,
-based on the Rucio service developed at &lt;a href="https://rucio.cern.ch/">CERN&lt;/a>,
-is mainly offered for Communities for specific distributed data management
-needs as explained in our &lt;a href="../../../data/management/rucio/#rucio-use-cases">use cases documentation&lt;/a>.&lt;/p>
-&lt;p>Dedicated &lt;a href="../../../data/management/rucio/getting-started/">Getting Started documentation&lt;/a>
-is available to start the evaluation of the service and to access
-the resources made available by the
-&lt;a href="../../../data/management/rucio/dteam-vo/">dteam VO&lt;/a>
-that is used for testing.&lt;/p>
 &lt;h2 id="how-to-contribute-with-cloud-resources">How to contribute with cloud resources&lt;/h2>
 &lt;p>The steps that an OpenStack cloud provider needs to follow to add resources
 to the Disaster Mitigation and Agriculture community
