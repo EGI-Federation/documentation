@@ -19,4 +19,3 @@ information please visit:
 
 Would you like to share your favourite tool to make OpenStack management easier?
 Then [contact us](../../../../support/)!
-
