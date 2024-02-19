@@ -23,7 +23,7 @@ The general minimal requirements are:
   - `cloudkeeper` requires enough disk space to download and convert images
     before uploading into your local catalogue. The number and size of images
     which will be downloaded depends on the communities you plan to support. For
-    the piloting VO `fedcloud.egi.eu`, 100GB of disk should be enough.
+    the piloting VO `vo.access.egi.eu` 100GB of disk should be enough.
 - Servers need to authenticate each other in the EGI Federated Cloud context
   using X.509 certificates. So a Resource Centre should be able to obtain server
   certificates for some services.
@@ -32,7 +32,5 @@ The general minimal requirements are:
   - `ops` and `dteam` VOs, used for operational purposes as per RC OLA
   - a community-VO that supports EGI users (e.g. `vo.access.egi.eu` for
     piloting)
-- EGI provides packages for the following operating systems (others may work but
-  we are not providing packages):
-  - CentOS 7 (and in general RHEL-compatible)
-  - Ubuntu 16.04 (and in general Debian-based)
+- EGI provides packages for RHEL and Debian derivates (i.e. CentOS/Ubuntu).
+  Others may work but we are not providing packages.
