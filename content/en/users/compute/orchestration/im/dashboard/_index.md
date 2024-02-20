@@ -10,7 +10,7 @@ description: >
 ---
 
 The [IM Dashboard](https://im.egi.eu/) is a graphical interface for the IM Server
-specially developed for EOSC users to access EGI Cloud Compute resources.
+specially developed for users to access EGI Cloud Compute resources.
 
 Functionalities:
 
