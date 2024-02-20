@@ -459,6 +459,7 @@ oph
 ophuser
 orcid
 organisations
+osidle
 ost
 OTHERDESCR
 owslib
