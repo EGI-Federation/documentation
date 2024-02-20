@@ -24,10 +24,6 @@ length of the training event - allow them to interact with the services.
 The infrastructure currently includes enough capacity to scale up to
 class-room size audiences, approximately up to 100 participants.
 
-[An introductory slideset and poster of the
-infrastructure](https://indico.egi.eu/indico/contributionDisplay.py?contribId=122&confId=2544)
-from EGI Community Forum 2015, Bari. (Outdated in some parts).
-
 ## Usage models
 
 The training infrastructure is suitable for two types of courses:
@@ -66,8 +62,9 @@ The list of VAs available on the training infrastructure is configurable
 and listed in the [training.egi.eu VO entry of
 AppDB](https://appdb.egi.eu/store/vo/training.egi.eu).
 
-The VMOps can be used as web interface for both trainers and students to
-deploy and manage VMs.
+[Infrastructure Manager Dashboard](../compute/orchestration/im/dashboard/)
+can be used as web interface for both trainers and students to deploy
+and manage VMs.
 
 ## Available resources
 
