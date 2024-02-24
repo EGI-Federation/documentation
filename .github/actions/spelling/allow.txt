@@ -351,6 +351,7 @@ lfn
 lhc
 lhcb
 libcloud
+lifecycle
 lille
 lineinfile
 listmode

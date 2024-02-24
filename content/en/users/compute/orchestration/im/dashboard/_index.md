@@ -9,8 +9,8 @@ description: >
   The dashboard of Infrastructure Manager
 ---
 
-The IM Dashboard is a graphical interface for the IM Server specially developed
-for EOSC users to access EGI Cloud Compute resources.
+The [IM Dashboard](https://im.egi.eu/) is a graphical interface for the IM Server
+specially developed for users to access EGI Cloud Compute resources.
 
 Functionalities:
 
@@ -29,10 +29,11 @@ configuring the dashboard are available in the
 
 ## Usage
 
-The dashboard of the IM enables non advanced users to manage their
-infrastructures by launching a set of predefined TOSCA templates on top of EGI
-Cloud Compute resources. The dashboard does not provide all the features
-provided by the IM service. In case you need more advanced features use the
+The [dashboard](https://im.egi.eu/) of the IM enables non advanced users
+to manage their infrastructures by launching a set of predefined TOSCA
+templates on top of EGI Cloud Compute resources. The dashboard does not
+provide all the features provided by the IM service. In case you need more
+advanced features use the
 [IM Web interface](https://imdocs.readthedocs.io/en/latest/web.html) or the
 [IM-CLI](../cli).
 
