@@ -3,3 +3,5 @@ diracsgm
 mytoken
 reponame
 sgm
+prettierrc
+toml
