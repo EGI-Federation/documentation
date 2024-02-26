@@ -47,8 +47,8 @@ GitHub, at &lt;a href="https://github.com/settings/keys">https://github.com/sett
 for an extensive documentation on using SSH keys with GitHub.&lt;/p>
 &lt;p>It&amp;rsquo;s worth to mention that your ssh &lt;em>public&lt;/em> keys can easily be retrieved using
 a URL like &lt;code>https://github.com/&amp;lt;your_username&amp;gt;.keys&lt;/code>.&lt;/p>
-&lt;p>In order to manage repositories over ssh, you will have to clone them via
-SSH, not HTTPS.&lt;/p>
+&lt;p>In order to manage repositories over ssh, you will have to clone them via SSH,
+not HTTPS.&lt;/p>
 &lt;p>If you already have a local clone of a repository created via HTTPS, you can
 switch it to SSH by following
 &lt;a href="https://docs.github.com/en/free-pro-team@latest/github/using-git/changing-a-remotes-url#switching-remote-urls-from-https-to-ssh">Switching remote URLs from HTTPS to SSH&lt;/a>.&lt;/p>
@@ -108,6 +108,20 @@ dependencies:
 &lt;a href="https://gohugo.io/getting-started/installing">the official documentation&lt;/a>.&lt;/p>
 &lt;p>Hugo (extended) releases can be downloaded at
 &lt;a href="https://github.com/gohugoio/hugo/releases">the Hugo releases page&lt;/a>.&lt;/p>
+&lt;h3 id="installing-pre-commit-hooks">Installing pre-commit hooks&lt;/h3>
+&lt;p>&lt;a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">&lt;em>Git hooks&lt;/em>&lt;/a> are
+small bits of code which run during parts of the
+&lt;a href="#branches-and-commits">git commit&lt;/a> process. In particular the &lt;code>pre-commit&lt;/code> hook
+runs before committing your changes, in order to enforce contribution
+guidelines, code quality and style conventions, &lt;em>etc&lt;/em>.&lt;/p>
+&lt;p>The &lt;a href="https://pre-commit.com">pre-commit framework&lt;/a> is used to manage the
+pre-commit hooks in this repository, and should be installed before making your
+contribution:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pip install pre-commit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ pre-commit install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pre-commit installed at .git/hooks/pre-commit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See &lt;code>.pre-commit-config.yaml&lt;/code> in the repository for more details of which hooks
+are enabled.&lt;/p>
 &lt;h3 id="building-the-site">Building the site&lt;/h3>
 &lt;p>To build and run the site, from the repository root:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ git submodule update --init --recursive --depth &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
@@ -204,33 +218,38 @@ also be done in your repository clone using &lt;code>git rebase&lt;/code>.&lt;/p
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git checkout feature_branch
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Apply the new changes on main to your feature branch&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git rebase upstream/main
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In case some files have been changed on both sides you will have to merge
-the conflicts manually.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In case some files have been changed on both sides you will have to merge the
+conflicts manually.&lt;/p>
 &lt;h2 id="running-checks-from-github-actions-locally">Running checks from GitHub actions locally&lt;/h2>
-&lt;p>The repository leverages &lt;a href="https://github.com/features/actions">GitHub Actions&lt;/a> to do
-automatic checks.&lt;/p>
+&lt;p>The repository leverages &lt;a href="https://github.com/features/actions">GitHub Actions&lt;/a>
+to do automatic checks.&lt;/p>
 &lt;p>The main checks are:&lt;/p>
 &lt;ul>
-&lt;li>File lint using &lt;a href="https://github.com/marketplace/actions/super-linter">Super-Linter&lt;/a>
-that includes many linters. Markdown files are processed using
+&lt;li>File lint using
+&lt;a href="https://github.com/marketplace/actions/super-linter">Super-Linter&lt;/a> that
+includes many linters. Markdown files are processed using
 &lt;a href="https://github.com/igorshubovych/markdownlint-cli#readme">markdownlint-cli&lt;/a>.&lt;/li>
 &lt;li>&lt;a href="https://github.com/marketplace/actions/markdown-link-check">Markdown link check&lt;/a>,
-relying on &lt;a href="https://github.com/tcort/markdown-link-check/">markdown-link-check&lt;/a>.&lt;/li>
-&lt;li>Spelling using &lt;a href="https://github.com/marketplace/actions/check-spelling">Check Spelling&lt;/a>.&lt;/li>
+relying on
+&lt;a href="https://github.com/tcort/markdown-link-check/">markdown-link-check&lt;/a>.&lt;/li>
+&lt;li>Spelling using
+&lt;a href="https://github.com/marketplace/actions/check-spelling">Check Spelling&lt;/a>.&lt;/li>
 &lt;/ul>
-&lt;p>It&amp;rsquo;s possible to run those linters locally, it can be useful to test and debug why they
-are reporting errors, and test without waiting on the automatic checks.&lt;/p>
+&lt;p>It&amp;rsquo;s possible to run those linters locally, it can be useful to test and debug
+why they are reporting errors, and test without waiting on the automatic checks.&lt;/p>
 &lt;blockquote>
-&lt;p>To save time, we recommend running the specific you are interested in, but as documented
-later for Check-Spelling, you can use &lt;code>act&lt;/code> to run the real GitHub actions workflows.&lt;/p>
+&lt;p>To save time, we recommend running the specific you are interested in, but as
+documented later for Check-Spelling, you can use &lt;code>act&lt;/code> to run the real GitHub
+actions workflows.&lt;/p>
 &lt;/blockquote>
 &lt;h3 id="running-markdownlint-locally">Running markdownlint locally&lt;/h3>
-&lt;p>&lt;a href="https://github.com/igorshubovych/markdownlint-cli#readme">markdownlint-cli&lt;/a> can be
-installed locally on some platforms, in that case it can be used like this:&lt;/p>
+&lt;p>&lt;a href="https://github.com/igorshubovych/markdownlint-cli#readme">markdownlint-cli&lt;/a> can
+be installed locally on some platforms, in that case it can be used like this:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ markdownlint -c .github/linters/.markdownlint.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> content/en/about/_index.md
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you cannot or don&amp;rsquo;t want to install it locally, you can rely on using
-&lt;a href="https://www.docker.com/">Docker&lt;/a> and &lt;a href="https://github.com/features/packages">GitHub Packages&lt;/a>:&lt;/p>
+&lt;a href="https://www.docker.com/">Docker&lt;/a> and
+&lt;a href="https://github.com/features/packages">GitHub Packages&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ docker run -v &lt;span style="color:#000">$PWD&lt;/span>:/workdir:ro --rm -i ghcr.io/igorshubovych/markdownlint-cli:latest &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --config .github/linters/.markdownlint.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> content/en/about/_index.md
@@ -241,13 +260,15 @@ installed locally on some platforms, in that case it can be used like this:&lt;/
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> --config /tmp/.github/linters/mlc_config.json &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> /tmp/content/en/about/_index.md
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="running-check-spelling-locally">Running Check-Spelling locally&lt;/h3>
-&lt;p>For spelling, it may be easier to rely on a spell checker integrated in your content editor.&lt;/p>
-&lt;p>Nevertheless, if you are adventurous, you can use &lt;a href="https://github.com/nektos/act">act&lt;/a>,
-that will use docker to run the checks locally.&lt;/p>
+&lt;p>For spelling, it may be easier to rely on a spell checker integrated in your
+content editor.&lt;/p>
+&lt;p>Nevertheless, if you are adventurous, you can use
+&lt;a href="https://github.com/nektos/act">act&lt;/a>, that will use docker to run the checks
+locally.&lt;/p>
 &lt;blockquote>
-&lt;p>While the spell check should work, other part of the job interacting with GitHub will
-likely fail, like when errors are identified, so be sure to properly scan through the
-command output.&lt;/p>
+&lt;p>While the spell check should work, other part of the job interacting with
+GitHub will likely fail, like when errors are identified, so be sure to
+properly scan through the command output.&lt;/p>
 &lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Listing available jobs&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ act -l
@@ -260,7 +281,8 @@ command output.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ act -l
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Running the lint job&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ act -j super-lint
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If it doesn&amp;rsquo;t work as expected, or if you prefer another solution, you should look at the
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If it doesn&amp;rsquo;t work as expected, or if you prefer another solution, you should
+look at the
 &lt;a href="https://github.com/github/super-linter/blob/main/docs/run-linter-locally.md">Super-Linter documentation for running locally&lt;/a>.&lt;/p>
 &lt;h2 id="clone-pr-to-edittestreview-locally">Clone PR to edit/test/review locally&lt;/h2>
 &lt;p>It&amp;rsquo;s possible to clone a Pull Request to a local branch to test it locally. It&amp;rsquo;s
