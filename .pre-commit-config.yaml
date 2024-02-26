@@ -1,0 +1,24 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        additional_dependencies:
+          - "prettier-plugin-go-template"
+        args:
+          - "--config=.prettierrc.toml"
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.28.0
+    hooks:
+      - id: check-github-workflows
+  # Disabling markdown-link-check because it can not reliably check anchors and links against the source code.
+  # Suggest using lychee instead (way faster and more accurate)
+  - repo: https://github.com/tcort/markdown-link-check
+    rev: v3.11.2
+    hooks:
+      - id: markdown-link-check
+        args:
+          - -c
+          - .github/linters/mlc_config.json

@@ -60,8 +60,8 @@ for an extensive documentation on using SSH keys with GitHub.
 It's worth to mention that your ssh _public_ keys can easily be retrieved using
 a URL like `https://github.com/<your_username>.keys`.
 
-In order to manage repositories over ssh, you will have to clone them via
-SSH, not HTTPS.
+In order to manage repositories over ssh, you will have to clone them via SSH,
+not HTTPS.
 
 If you already have a local clone of a repository created via HTTPS, you can
 switch it to SSH by following
@@ -154,6 +154,27 @@ Hugo can be installed following
 
 Hugo (extended) releases can be downloaded at
 [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
+
+### Installing pre-commit hooks
+
+[_Git hooks_](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) are
+small bits of code which run during parts of the
+[git commit](#branches-and-commits) process. In particular the `pre-commit` hook
+runs before committing your changes, in order to enforce contribution
+guidelines, code quality and style conventions, _etc_.
+
+The [pre-commit framework](https://pre-commit.com) is used to manage the
+pre-commit hooks in this repository, and should be installed before making your
+contribution:
+
+```shell
+$ pip install pre-commit
+$ pre-commit install
+pre-commit installed at .git/hooks/pre-commit
+```
+
+See `.pre-commit-config.yaml` in the repository for more details of which hooks
+are enabled.
 
 ### Building the site
 
@@ -310,33 +331,37 @@ $ git checkout feature_branch
 $ git rebase upstream/main
 ```
 
-In case some files have been changed on both sides you will have to merge
-the conflicts manually.
+In case some files have been changed on both sides you will have to merge the
+conflicts manually.
 
 ## Running checks from GitHub actions locally
 
-The repository leverages [GitHub Actions](https://github.com/features/actions) to do
-automatic checks.
+The repository leverages [GitHub Actions](https://github.com/features/actions)
+to do automatic checks.
 
 The main checks are:
 
-- File lint using [Super-Linter](https://github.com/marketplace/actions/super-linter)
-  that includes many linters. Markdown files are processed using
-[markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli#readme).
+- File lint using
+  [Super-Linter](https://github.com/marketplace/actions/super-linter) that
+  includes many linters. Markdown files are processed using
+  [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli#readme).
 - [Markdown link check](https://github.com/marketplace/actions/markdown-link-check),
-  relying on [markdown-link-check](https://github.com/tcort/markdown-link-check/).
-- Spelling using [Check Spelling](https://github.com/marketplace/actions/check-spelling).
+  relying on
+  [markdown-link-check](https://github.com/tcort/markdown-link-check/).
+- Spelling using
+  [Check Spelling](https://github.com/marketplace/actions/check-spelling).
 
-It's possible to run those linters locally, it can be useful to test and debug why they
-are reporting errors, and test without waiting on the automatic checks.
+It's possible to run those linters locally, it can be useful to test and debug
+why they are reporting errors, and test without waiting on the automatic checks.
 
-> To save time, we recommend running the specific you are interested in, but as documented
-> later for Check-Spelling, you can use `act` to run the real GitHub actions workflows.
+> To save time, we recommend running the specific you are interested in, but as
+> documented later for Check-Spelling, you can use `act` to run the real GitHub
+> actions workflows.
 
 ### Running markdownlint locally
 
-[markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli#readme) can be
-installed locally on some platforms, in that case it can be used like this:
+[markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli#readme) can
+be installed locally on some platforms, in that case it can be used like this:
 
 ```shell
 $ markdownlint -c .github/linters/.markdownlint.json \
@@ -344,7 +369,8 @@ $ markdownlint -c .github/linters/.markdownlint.json \
 ```
 
 If you cannot or don't want to install it locally, you can rely on using
-[Docker](https://www.docker.com/) and [GitHub Packages](https://github.com/features/packages):
+[Docker](https://www.docker.com/) and
+[GitHub Packages](https://github.com/features/packages):
 
 ```shell
 $ docker run -v $PWD:/workdir:ro --rm -i ghcr.io/igorshubovych/markdownlint-cli:latest \
@@ -365,14 +391,16 @@ $ docker run -v $PWD:/tmp:ro --rm -i ghcr.io/tcort/markdown-link-check:stable \
 
 ### Running Check-Spelling locally
 
-For spelling, it may be easier to rely on a spell checker integrated in your content editor.
+For spelling, it may be easier to rely on a spell checker integrated in your
+content editor.
 
-Nevertheless, if you are adventurous, you can use [act](https://github.com/nektos/act),
-that will use docker to run the checks locally.
+Nevertheless, if you are adventurous, you can use
+[act](https://github.com/nektos/act), that will use docker to run the checks
+locally.
 
-> While the spell check should work, other part of the job interacting with GitHub will
-> likely fail, like when errors are identified, so be sure to properly scan through the
-> command output.
+> While the spell check should work, other part of the job interacting with
+> GitHub will likely fail, like when errors are identified, so be sure to
+> properly scan through the command output.
 
 ```shell
 # Listing available jobs
@@ -394,7 +422,8 @@ $ act -l
 $ act -j super-lint
 ```
 
-If it doesn't work as expected, or if you prefer another solution, you should look at the
+If it doesn't work as expected, or if you prefer another solution, you should
+look at the
 [Super-Linter documentation for running locally](https://github.com/github/super-linter/blob/main/docs/run-linter-locally.md).
 
 ## Clone PR to edit/test/review locally
