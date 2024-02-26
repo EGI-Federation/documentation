@@ -13,8 +13,11 @@ repos:
     rev: 0.28.0
     hooks:
       - id: check-github-workflows
+  # Disabling markdown-link-check because it can not reliably check anchors and links against the source code.
   - repo: https://github.com/tcort/markdown-link-check
     rev: v3.11.2
     hooks:
       - id: markdown-link-check
-        args: [-q]
+        args:
+          - -c
+          - .github/linters/mlc_config.json
