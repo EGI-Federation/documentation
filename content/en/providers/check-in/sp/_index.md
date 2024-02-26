@@ -84,8 +84,12 @@ The integration follows a two-step process:
      development instance service requests can be self-reviewed without the need
      to wait for approval from an administrator. As with the demo instance, the
      development instance allows for testing authentication and authorisation
-     without affecting the production Check-in service. **NB: the list of
-     supported Identity Providers in the development instance is limited.
+     without affecting the production Check-in service. **NB: The development
+     environment is intended for testing the latest features of Check-in and
+     may differ from the demo and production environments in terms of stability
+     and functionality.
+     Keep in mind that the supported Identity Providers in the development
+     instance are limited.
      Therefore, we recommend using any of the social identity providers or the
      [EGI SSO](https://sso.egi.eu/admin/) to test the login workflow when using
      the development instance.**
