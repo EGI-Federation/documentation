@@ -1,12 +1,18 @@
 {
   "name": "egi-documentation",
   "dependencies": {
-    "postcss-cli": "^7.1.2",
-    "autoprefixer": "^9.0"
+    "@umbrelladocs/linkspector": "^0.2.7",
+    "autoprefixer": "^9.0",
+    "it": "^1.1.1",
+    "postcss-cli": "^7.1.2"
   },
   "standard": {
     "ignore": [
       "/static/js/prism.js"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^3.2",
+    "prettier-plugin-go-template": "^0.0.15"
   }
 }
