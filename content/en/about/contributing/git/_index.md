@@ -173,8 +173,8 @@ $ pre-commit install
 pre-commit installed at .git/hooks/pre-commit
 ```
 
-See `.pre-commit-config.yaml` in the repo for more details of which hooks are
-enabled.
+See `.pre-commit-config.yaml` in the repository for more details of which hooks
+are enabled.
 
 ### Building the site
 
