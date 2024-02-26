@@ -5,3 +5,7 @@ reponame
 sgm
 prettierrc
 toml
+markdownlint
+workflows
+yyy
+tmp
