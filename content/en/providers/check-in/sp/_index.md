@@ -1651,7 +1651,6 @@ for; when specified, it must match the client ID of a client registered in
 Check-in otherwise an `invalid_client` error is returned
 (`"description": "audience not found"`)
 
-
 ## Integrating Science Gateways with RCauth for obtaining (proxy) certificates
 
 In order for Science Gateways (VO portals) to obtain RFC proxy certificates
