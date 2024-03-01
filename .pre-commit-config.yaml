@@ -6,9 +6,10 @@ repos:
     hooks:
       - id: prettier
         additional_dependencies:
-          - "prettier-plugin-go-template"
+          - "prettier@v3.2.5"
         args:
-          - "--config=.prettierrc.toml"
+          - --config
+          - .prettierrc.toml
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.28.0
     hooks:
