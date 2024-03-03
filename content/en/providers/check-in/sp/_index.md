@@ -1539,7 +1539,6 @@ $sessionName = "simple-oidc-client-php";
 $sessionLifetime = 60*60;  // must be equal to access token validation time in seconds
 ```
 
-
 #### Common issues
 
 ##### Error messages referring to missing `code_challenge`, `code_challenge_method` or `code_verifier` HTTP parameter
