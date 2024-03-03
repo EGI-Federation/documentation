@@ -84,8 +84,12 @@ The integration follows a two-step process:
      development instance service requests can be self-reviewed without the need
      to wait for approval from an administrator. As with the demo instance, the
      development instance allows for testing authentication and authorisation
-     without affecting the production Check-in service. **NB: the list of
-     supported Identity Providers in the development instance is limited.
+     without affecting the production Check-in service. **NB: The development
+     environment is intended for testing the latest features of Check-in and
+     may differ from the demo and production environments in terms of stability
+     and functionality.
+     Keep in mind that the supported Identity Providers in the development
+     instance are limited.
      Therefore, we recommend using any of the social identity providers or the
      [EGI SSO](https://sso.egi.eu/admin/) to test the login workflow when using
      the development instance.**
@@ -1535,119 +1539,6 @@ $sessionName = "simple-oidc-client-php";
 $sessionLifetime = 60*60;  // must be equal to access token validation time in seconds
 ```
 
-### Client Migration to Keycloak
-
-The migration guide below applies to OIDC clients registered in the
-**Development**, **Demo** and **Production** environments of Check-in.
-
-**Development and Demo**: Beginning June 24, 2022, clients using the legacy
-Check-in OIDC endpoints will no longer be supported.
-
-**Production**: Beginning October 21, 2022, clients using the legacy Check-in
-OIDC endpoints will no longer be supported.
-
-{{% alert title="Note" color="info" %}} For OpenStack Services please read the
-OpenStack specific migration guide on
-[Cloud Compute documentation](../../cloud-compute/openstack/aai.md#client-migration-to-keycloak).
-{{% /alert %}}
-
-#### How to Migrate your Service to Keycloak
-
-All the clients that were registered in MITREid Connect have been moved to
-Keycloak preserving all the options (Client ID, Client Secret, Redirect URIs
-etc.), so you do not need to re-register your Service.
-
-##### New Endpoints
-
-The first thing you need to do is to update the OIDC endpoints according to the
-[Endpoints](#endpoints) table. If the Application/Library supports Dynamic
-Discovery, then you need to update on the `issuer`. Otherwise, you need to
-update all the Endpoints separately.
-
-##### Size of the Tokens
-
-The size of the Access/Refresh Tokens that are issued by Keycloak is larger of
-the respective Tokens created by MITREid Connect. For example, the size of an
-Access Token is around 1400 characters, depending on the information that are
-included in the payload of the JWT. So make sure that your OIDC implementation
-can handle larger Tokens.
-
-##### Logout
-
-The Redirect URI query parameter in the logout request has been changed from
-`redirect` to `post_logout_redirect_uri` and must be URL encoded. Also, the
-value of the `post_logout_redirect_uri` must be defined in the **Valid Redirect
-URIs** of the Service configuration in the EGI Federation Registry.
-
-##### Token Introspection
-
-The Token Introspection is available to all the clients that are using any
-authentication method (`client_secret_basic`, `client_secret_post`,
-`client_secret_jwt` or `private_key_jwt`) (Confidential Clients) to the Token
-Endpoint. Public Clients (clients that do not use any authentication method)
-will not be able to get a successful response from the Introspection Endpoint.
-Saying that, the "Introspection" option in the EGI Federation Registry will be
-removed.
-
-##### PKCE
-
-If you are **not** using PKCE (Proof Key for Code Exchange), please make sure to
-**disable** the "PKCE Code Challenge Method" in the Service configuration in
-[EGI Federation Registry](https://aai.egi.eu/federation), otherwise you will get
-the following HTTP response during the authentication flow:
-
-```http
-error=invalid_request&error_description=Missing parameter: code_challenge_method
-```
-
-##### Device Code Grant
-
-If you are using a confidential client with the Device Code grant, please make
-sure that the `client_secret` is present in the request to the Device Code
-Endpoint either as HTTP Basic or HTTP POST parameter (see
-[Device Authorization Request](#1-device-authorization-request)).
-
-##### Token Exchange Grant
-
-If you are using the Token Exchange grant, please make sure that the `audience`
-(Optional) defines the logical name of the service that the token will be used
-for; when specified, it must match the client ID of a client registered in
-Check-in otherwise an `invalid_client` error is returned
-(`"description": "audience not found"`)
-
-##### Client Credentials Grant
-
-If you are using the Client Credentials grant, there is a minor change in the
-responses from UserInfo and Introspection Endpoints. The **Client ID** of the
-client is **not** released as the `sub` claim any more and has replaced with by
-the `client_id` claim. The `sub` contains the identifier of the client which is
-unique, non-reassignable and scoped `@egi.eu`.
-
-##### Obtain Refresh Tokens
-
-If you have obtained an Refresh Token from EGI Check-in Token Portal or
-oidc-agent issued by the MITREid Connect instance, you will need to replace them
-by creating new Refresh Tokens issued by Keycloak.
-
-- If you have obtained Refresh Tokens using the EGI Check-in Token Portal,
-  please check the following table:
-
-  | Environment | URL                             |
-  | ----------- | ------------------------------- |
-  | Production  | <https://aai.egi.eu/token>      |
-  | Demo        | <https://aai-demo.egi.eu/token> |
-  | Development | <https://aai-dev.egi.eu/token>  |
-
-- If you have obtained Refresh Tokens using the oidc-agent, please use the
-  following command:
-
-  ```shell
-  $ oidc-gen --pub --issuer <ISSUER> --scope ...
-  ```
-
-  {{% alert title="Note" color="info" %}} You can find the `ISSUER` in the
-  [Endpoints](#endpoints) table.{{% /alert %}}
-
 #### Common issues
 
 ##### Error messages referring to missing `code_challenge`, `code_challenge_method` or `code_verifier` HTTP parameter
@@ -1718,6 +1609,46 @@ proxy_buffers 4 256k;
 proxy_buffer_size 128k;
 proxy_busy_buffers_size 256k;
 ```
+
+##### Size of the Tokens
+
+The size of an Access Token is around 1400 characters, depending on the
+information (claims) included in the payload of the JWT. So make sure that
+your OIDC implementation can handle large Tokens.
+
+##### Token Introspection errors
+
+The Token Introspection is available to all the clients that are using any
+authentication method (`client_secret_basic`, `client_secret_post`,
+`client_secret_jwt` or `private_key_jwt`) (Confidential Clients) to the Token
+Endpoint. Public Clients (clients that do not use any authentication method)
+will not be able to get a successful response from the Introspection Endpoint.
+
+##### PKCE errors
+
+If you are **not** using PKCE (Proof Key for Code Exchange), please make sure to
+**disable** the "PKCE Code Challenge Method" in the Service configuration in
+[EGI Federation Registry](https://aai.egi.eu/federation), otherwise you will get
+the following HTTP response during the authentication flow:
+
+```http
+error=invalid_request&error_description=Missing parameter: code_challenge_method
+```
+
+##### Device Code Grant
+
+If you are using a confidential client with the Device Code grant, please make
+sure that the `client_secret` is present in the request to the Device Code
+Endpoint either as HTTP Basic or HTTP POST parameter (see
+[Device Authorization Request](#1-device-authorization-request)).
+
+##### Token Exchange Grant
+
+If you are using the Token Exchange grant, please make sure that the `audience`
+(Optional) defines the logical name of the service that the token will be used
+for; when specified, it must match the client ID of a client registered in
+Check-in otherwise an `invalid_client` error is returned
+(`"description": "audience not found"`)
 
 ## Integrating Science Gateways with RCauth for obtaining (proxy) certificates
 
