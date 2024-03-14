@@ -109,11 +109,11 @@ Add the project supporting the VO to cASO:
    }
    ```
 
-Be sure to include the user running cASO as member of the project if it does not
-have admin privileges:
+Be sure to include the user running cASO at least as `reader` of the project if
+it does not have admin privileges:
 
 ```shell
-openstack role add member --user <your caso user> --project <your new vo project>
+openstack role add --user <your caso user> --project <your new vo project> reader
 ```
 
 ## Information system / VM Image management
