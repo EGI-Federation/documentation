@@ -172,14 +172,9 @@ For pre-configured services (e.g.: [EGI Notebooks](../dev-env/notebooks/)),
 the capacity allocated includes up to **4 vCPU cores, 8 GB of RAM and
 10 GB of block storage**.
 
-You can manage those resources via [command-line](cli) or any of the dashboards
-of the EGI Cloud: the [VMOps dashboard](../compute/cloud-compute/monitor/) and
-the [IM dashboard](../compute/orchestration/im/dashboard/).
-
-You can also easily access scientific applications,
-[EC3](../compute/orchestration/ec3) has a list of
-[applications](../compute/orchestration/ec3/apps/) that you can easily start
-from the [EC3 portal](https://servproject.i3m.upv.es/ec3-ltos/index.php).
+You can manage those resources via [command-line](cli) or web interface
+like the
+[Infrastructure Manager dashboard](../compute/orchestration/im/dashboard/).
 
 ## Unused resources
 
