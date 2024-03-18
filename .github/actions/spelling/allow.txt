@@ -137,6 +137,7 @@ datahub
 dataminer
 dataverse
 dateadded
+datetime
 davix
 dbhost
 dbpwd
@@ -215,6 +216,7 @@ flushdns
 fnal
 folksonomy
 fom
+FPGA
 fqan
 fqdns
 FZK
@@ -245,6 +247,7 @@ gpgcheck
 gpgkey
 gpgpu
 gpgpugrisu
+GPUs
 grafana
 gridftp
 gridice
@@ -341,6 +344,7 @@ kubectl
 kubernetes
 kubeserver
 labhub
+LCG
 lcgnames
 lcgpbs
 ldap
@@ -437,6 +441,7 @@ OAIS
 oauth
 occi
 ODV
+OGC
 ogf
 oidc
 oidcaccesstoken
@@ -464,6 +469,7 @@ osidle
 ost
 OTHERDESCR
 owslib
+PaaS
 padova
 pagelength
 pageoffset
@@ -637,6 +643,7 @@ userjdoe
 userkey
 uwsgi
 validgrid
+varchar
 vcpus
 vda
 vdb
