@@ -37,7 +37,7 @@ AppDB is one of the service in the
 
 Once your membership to a VO has been approved you are ready to create your first
 Virtual Machine. There are several ways to achieve this. The simplest way is to
-use a web dashboard like [VMOps Dashboard](../../../compute/cloud-compute/monitor) or
+use the
 [Infrastructure Manager Dashboard](../../../compute/orchestration/im/dashboard).
 On the other hand, advanced users
 may prefer to use the [command-line interface](../../../getting-started/cli).

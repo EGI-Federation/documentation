@@ -68,17 +68,11 @@ cloud providers at three different layers:
 - Directly using the IaaS APIs or [CLIs](../cli) to manage individual resources.
   This option is recommended for preexisting use cases with requirements on
   specific APIs.
-- Using federated access tools that allow managing the complexity of dealing
-  with different providers in a uniform way. These tools include:
-  - **Provisioning systems** allow users to define infrastructure as code, then
-    manage and combine resources from different providers, thus enabling the
-    portability of application deployments between them (e.g.
-    [Infrastructure Manager](../../compute/orchestration/im) or
-    [Terraform](https://www.terraform.io/)), and
-  - **Cloud brokers** provide matchmaking for workloads to available providers
-    (e.g. the
-    [INDIGO-DataCloud Orchestrator](https://indigo-dc.gitbook.io/indigo-paas-orchestrator/)).
-- Using the [VMOps dashboard](../../compute/cloud-compute/monitor).
+- Using **Provisioning systems** allow users to define infrastructure as code,
+  then manage and combine resources from different providers, thus enabling
+  the portability of application deployments between them (e.g.
+  [Infrastructure Manager](../../compute/orchestration/im) or
+  [Terraform](https://www.terraform.io/)).
 
 EGI provides ready-to-use software components to enable the federation for
 OpenStack. These components rely on public APIs of the IaaS system and use

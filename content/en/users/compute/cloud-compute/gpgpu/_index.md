@@ -39,7 +39,7 @@ with your Check-In account. More information is available in the
 
 GPUs sites can be accessed in different ways: via site-specific dashboards and
 endpoints or via common federated-cloud services like the OpenStack Horizon
-dashboards, [VMOps Dashboard](../monitor), or a [cloud orchestrator](../automate).
+dashboards or a [cloud orchestrator](../automate).
 
 It is also possible to use the
 [FedCloud Client](../../../getting-started/cli) for command-line access. Below is
