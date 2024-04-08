@@ -52,7 +52,7 @@ jobs:
           echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
 
       - name: Deploy Pull Request preview
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           # Use GITHUB_TOKEN allowing to write to local repository
           github_token: ${{ secrets.GITHUB_TOKEN }}
