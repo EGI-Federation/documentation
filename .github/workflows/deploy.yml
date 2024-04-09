@@ -63,7 +63,7 @@ jobs:
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           # Use a personal token configured as a repository-specific secret
           personal_token: ${{ steps.generate-token.outputs.token }}
