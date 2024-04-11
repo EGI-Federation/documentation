@@ -125,10 +125,12 @@ It\'s possible to view the popularity of a file and manage smart caching.
 
 The EGI DataHub Web interface can be accessed by any user authenticated via
 [EGI Check-in](../../../aai/check-in). Users authenticated have access to the
-`PLAYGROUND` space, where they can tests some of the available features. Users
-have also read-only access to the `open-datasets` space where some example
-datasets are stored.
-In order to access via oneclient or API please check the related [documentation](./clients/#generating-tokens-for-using-oneclient-or-apis).
+`PLAYGROUND` space, with a 30 GB quota, where they can tests some of the available
+features. Users have also read-only access to the `open-datasets` space where
+some example datasets are stored.
+
+In order to access via oneclient or API please check the related
+[documentation](./clients/#generating-tokens-for-using-oneclient-or-apis).
 
 Advanced users willing to install their own Oneprovider can check the dedicated
 [installation instructions](../../../../providers/datahub/oneprovider).
