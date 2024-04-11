@@ -71,6 +71,9 @@ Before using the service, you need to have an EGI account and be a member of
 (alias Virtual Organisations). Follow the instructions on the
 [EGI Replay login page](https://replay.notebooks.egi.eu) for access.
 
+The default capacity allocated for users includes up to **4 vCPU cores and 6GB
+of RAM** for every user.
+
 ## Creating a Binder repository
 
 Replay starts from a code repository that contains the code or notebook you’d
@@ -128,7 +131,7 @@ an error like shown in the screenshot:
 
 ![Launch Error](launch-error.png)
 
-In that case, you can either stop your existing server or connect to it from your
-[Replay JupyterHub home](https://replay.notebooks.egi.eu/hub/home):
+In that case, you can either stop your existing server or connect to it from
+your [Replay JupyterHub home](https://replay.notebooks.egi.eu/hub/home):
 
 ![Replay JupyterHub home](replay-hub-home.png)
