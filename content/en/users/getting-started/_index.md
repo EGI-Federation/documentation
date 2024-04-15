@@ -12,10 +12,9 @@ EGI is a federation of compute and storage resource providers united by a
 mission to support research and innovation.
 
 The resources in the EGI infrastructure are offered by
-[service providers](https://www.egi.eu/egi-infrastructure/) that
-either run their own [data centres](https://www.egi.eu/egi-federation)
-or rely on community, private and/or public cloud services. These service
-providers offer:
+[service providers](https://www.egi.eu/egi-infrastructure/) that either run
+their own [data centres](https://www.egi.eu/egi-federation) or rely on
+community, private and/or public cloud services. These service providers offer:
 
 - **Single Sign-On** via [EGI Check-in](https://www.egi.eu/service/check-in/)
   allows users to log in with their institutional (community) credentials
@@ -163,17 +162,16 @@ the users' requests before granting the access to the resources.
    [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240).
    Make sure you use your EGI Check-In account for the enrollment.
 
-Once your petition is approved, you will be granted access. The grant to
-run applications is initially valid for 6 months and can be
-extended/renewed upon request. These resources are delivered
+Once your petition is approved, you will be granted access. The grant to run
+applications is initially valid for 6 months and can be extended/renewed upon
+request. These resources are delivered
 [through the vo.access.egi.eu VO](https://documents.egi.eu/document/2773).
 
-For pre-configured services (e.g.: [EGI Notebooks](../dev-env/notebooks/)),
-the capacity allocated includes up to **4 vCPU cores, 8 GB of RAM and
-10 GB of block storage**.
+For pre-configured services (e.g.: [EGI Notebooks](../dev-env/notebooks/)), the
+capacity allocated includes up to **4 vCPU cores, 6 GB of RAM and 10 GB of block
+storage**.
 
-You can manage those resources via [command-line](cli) or web interface
-like the
+You can manage those resources via [command-line](cli) or web interface like the
 [Infrastructure Manager dashboard](../compute/orchestration/im/dashboard/).
 
 ## Unused resources
