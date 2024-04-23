@@ -26,7 +26,13 @@ Federated Cloud. There are two main ways of executing containers:
 
 Follow the guides below to learn more about them.
 
-The EGI Cloud Container Compute service was presented in one of the
-[EGI Webinars](https://www.egi.eu/trainings-and-webinars/). See more details on the
-[indico page](https://indico.egi.eu/event/5492/) and a video recording on
-[YouTube](https://youtu.be/cZ3M47ON0pg).
+The EGI Cloud Container Compute service has been presented in the
+[EGI Webinars](https://www.egi.eu/trainings-and-webinars/).
+
+* January 2024: *Introduction to the new generation EGI container execution
+  platform*. See
+  [slides and recording](https://www.egi.eu/event/webinar-introduction-to-the-container-platform/).
+
+* April 2021: *Managing Singularity, Docker and udocker containers, Kubernetes
+  clusters in the EGI Cloud*. See
+  [slides and recording](https://indico.egi.eu/event/5492/).
