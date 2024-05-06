@@ -107,24 +107,13 @@ There are several options to access the service:
    service, or use [DIRAC Client](#the-dirac-client-tool).
 1. Individual researchers who want to do some number crunching for a limited
    period of time, with a reasonable (not too high) number of CPUs can use the
-   catch-all VO resource pool (`vo.access.egi.eu`). Submit a request through the
-   [EOSC Marketplace](https://marketplace.eosc-portal.eu/services/egi-workload-manager).
+   catch-all VO resource pool (`vo.access.egi.eu`).
+   [Contact us](https://www.egi.eu/service/workload-manager/).
 1. Representatives of a community who want to try DIRAC and EGI > Same as #2.
 1. Representative of a community who wants to request DIRAC for the community's
-   own resource pool > Submit a request through the
-   [EOSC Marketplace](https://marketplace.eosc-portal.eu/services/egi-workload-manager).
+   own resource pool > Same as #2.
 
 ## Getting Started
-
-### Submit a service order via the Marketplace
-
-User can request access to the service submitting a service-order to use the EGI
-HTC service directly from the EOSC Marketplace:
-
-- [EOSC Marketplace: Workload Manager](https://marketplace.eosc-portal.eu/services/egi-workload-manager)
-
-Service orders are usually handled within 5 working days by the EGI User Support
-Team on shift.
 
 ### Before starting
 

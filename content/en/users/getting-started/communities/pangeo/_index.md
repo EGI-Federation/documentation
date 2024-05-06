@@ -11,7 +11,7 @@ EGI and the Pangeo community in Europe have forged
 [a collaboration](https://www.egi.eu/case-study/pangeo/)
 to provide deployments of the Pangeo ecosystem using the computing
 resources offered by the European Open Science Cloud
-([EOSC](https://eosc-portal.eu/about)). Read on to learn more about
+([EOSC](https://open-science-cloud.ec.europa.eu/)). Read on to learn more about
 how to get involved.
 
 ## About the Pangeo community in Europe
