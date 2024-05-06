@@ -78,6 +78,7 @@ cesga
 cesnet
 ceta
 cff
+cfg
 cfssl
 cfssljson
 chipster
@@ -273,6 +274,7 @@ hashicorp
 haveged
 hdds
 hellasgrid
+Helloworld
 helpdesk
 hepix
 hepspec
@@ -461,6 +463,7 @@ onezone
 opencoast
 openidc
 opensaml
+openssl
 openstack
 openstackclient
 oph
@@ -476,6 +479,7 @@ pagelength
 pageoffset
 pakiti
 pangeo
+passphrase
 passthrough
 pbs
 peachnote
@@ -508,6 +512,7 @@ RAL
 ratingreport
 rcauth
 rclone
+RCs
 RDIG
 rdkit
 rdm
@@ -516,6 +521,7 @@ refeds
 refreshtoken
 reportgroups
 resourced
+rfc
 rfio
 rght
 Rness
@@ -622,6 +628,7 @@ torito
 tpctest
 tpms
 TPU
+TRL
 trustanchors
 uberftp
 ubuntu
@@ -686,6 +693,7 @@ websso
 wenmr
 wlcg
 wlcgname
+WMS
 wns
 workdir
 wps
