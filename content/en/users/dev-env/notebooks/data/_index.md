@@ -9,14 +9,14 @@ description: >
   How to access and manage data in EGI Notebooks
 ---
 
-Every user of the EGI Notebooks catch-all instance has a 20GB persistent home to
+Every user of the EGI Notebooks catch-all instance has a persistent home to
 store any notebooks and associated data. The content of this home directory will
 be kept even if your notebook server is stopped (which can happen if there is no
 activity for more than 1 hour). **Modifications to the notebooks environment
 outside the home directory are not kept** (e.g. installation of libraries). If
 you need those changes to persist, let us know via a
 [GGUS ticket to the Notebooks Support Unit](https://ggus.eu). You can also ask
-for increasing the 20GB home via ticket.
+for increasing your default home allocation via ticket.
 
 {{% alert title="Note" color="info" %}} Your home directory is backed up daily.
 {{% /alert %}}
@@ -64,7 +64,7 @@ the EGI DataHub documentation for more information on how to upload files.
 [EUDAT B2DROP](https://eudat.eu/services/b2drop) is a low-barrier, user-friendly
 and trustworthy storage environment which allows users to synchronise their
 active data across different desktops and to easily share this data with peers.
-EUDAT offers a free public instance of B2DROP for any researcher with a 20 GB
+EUDAT offers a free public instance of B2DROP for any researcher with a limited
 quota.
 
 The data on B2DROP can be synchronised with EGI Notebooks so you can share
