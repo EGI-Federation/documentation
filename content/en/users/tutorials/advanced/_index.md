@@ -12,6 +12,32 @@ description: >
 <table>
 <tr>
 <td>
+<b>Target Audience</b>: Scientific communities, developers, integrators and end users.
+</td>
+<td>
+<i>"Webinar: Introduction to the new generation EGI container execution platform" (January, 2024)</i>
+<br/><br/>
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/webinar-introduction-to-the-container-platform/">https://www.egi.eu/event/webinar-introduction-to-the-container-platform/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/Jm_7BBcQHc8"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: The new generation EGI container execution platform is a system that delivers fully
+managed Kubernetes clusters for end users. The webinar covers how to build container images,
+how to store and share them through the Harbor repository, and how to run them on fully managed
+Kubernetes clusters with the Rancher service.
+</td>
+</tr>
+<tr>
+<td>
 <b>Target Audience</b>: e-Infrastructure platform and technology providers and those researching
 or applying (distributed) deep learning at any level.
 </td>

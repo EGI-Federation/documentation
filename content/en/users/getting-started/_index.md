@@ -169,7 +169,9 @@ request. These resources are delivered
 
 For pre-configured services (e.g.: [EGI Notebooks](../dev-env/notebooks/)), the
 capacity allocated includes up to **4 vCPU cores, 6 GB of RAM and 10 GB of block
-storage**.
+storage**. For the [EGI Cloud Compute](../compute/cloud-compute/) or the
+[EGI Container Cloud Compute](../compute/cloud-container-compute/), the EGI
+grant includes up to **4 vCPU cores, 8GB of RAM and 100GB of block storage**.
 
 You can manage those resources via [command-line](cli) or web interface like the
 [Infrastructure Manager dashboard](../compute/orchestration/im/dashboard/).

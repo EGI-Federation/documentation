@@ -9,7 +9,7 @@ description: >
 ## Introduction: purpose and conditions
 
 - The purpose of TEAM tickets is to allow all team members to modify all tickets
-  of their team ,although they may not have support access, and they do not have
+  of their team, although they may not have support access, and they do not have
   submitted the ticket themselves.
 - Only members of a few VOs are allowed to submit team tickets:
   - Alice

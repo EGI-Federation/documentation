@@ -181,8 +181,6 @@ International communities reach EGI through the following channels:
 - The EGI site where they can
   [request access to services](https://www.egi.eu/services/research/).
 - The [EGI-ACE Call for Use Cases](https://www.egi.eu/egi-ace-open-call/).
-- The [Marketplace](https://marketplace.eosc-portal.eu/) of the European Open
-  Science Cloud.
 
 ### Service and Operation Level Agreements (SLAs, OLAs)
 

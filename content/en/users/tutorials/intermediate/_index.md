@@ -17,6 +17,33 @@ description: >
 <table>
 <tr>
 <td>
+<b>Target Audience</b>: Scientific communities, developers, IT service providers, and end users.
+</td>
+<td>
+<i>"Webinar: Reproducible Open Science with EGI Replay" (April, 2024)</i>
+<br/><br/>
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/reproducible-open-science-with-egi-replay/">https://www.egi.eu/event/reproducible-open-science-with-egi-replay/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/YbEoX1JH8_4"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: In this webinar we showcase EGI Replay, a managed service for the EGI Community based on Binder.
+EGI Replay offers users the ability to effortlessly reproduce intricate calculations, simulations, and
+visualizations by importing Jupyter Notebooks and their respective runtime environments. With a single link,
+users can easily share their work with collaborators, making Replay an invaluable tool for workshops,
+scientific workflows, and team collaboration.
+</td>
+</tr>
+<tr>
+<td>
 <b>Target Audience</b>: Scientific communities, developers, integrators and end users.
 </td>
 <td>

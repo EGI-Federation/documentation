@@ -46,6 +46,10 @@ additional features:
   services). EGI offers consultancy and support the setup of these instances,
   and provides operational oversight for them.
 
+EGI Replay has been presented in the
+[EGI Webinars](https://www.egi.eu/trainings-and-webinars/). See
+[slides and recording](https://www.egi.eu/event/reproducible-open-science-with-egi-replay/).
+
 ## Reproducible research
 
 Replay facilitates the sharing and reproducibility of digital data analysis:
