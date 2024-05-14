@@ -47,7 +47,7 @@ node endpoints is not recommended: if a server is down, its endpoint is not
 accessible.{{% /alert %}}
 
 For convenience and high availability, you should use the
-[generic endpoint](https://vault.services.fedcloud.eu:8200) to access the
+[generic endpoint](https://secrets.egi.eu) to access the
 service. This generic endpoint will be pointed to one of the service nodes
 automatically via [Dynamic DNS](../../../compute/cloud-compute/dynamic-dns/).
 A simple cron script periodically checks and assigns the generic hostname to

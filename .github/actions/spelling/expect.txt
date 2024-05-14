@@ -1,11 +1,17 @@
 allowfullscreen
 autoplay
 CVMFS
+dearmor
+delims
 diracsgm
+findstr
 iframe
 jscpd
+jwt
+lsb
 markdownlint
 mytoken
+pem
 prettierrc
 reponame
 sgm
