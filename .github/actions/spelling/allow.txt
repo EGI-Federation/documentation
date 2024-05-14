@@ -337,6 +337,7 @@ jupyterhub
 JWKS
 kernel
 keycloak
+keyfile
 keyout
 keypair
 keyring
@@ -403,6 +404,7 @@ myproxy
 myrepo
 myreposgm
 myserver
+mysql
 mysqldump
 mysqldumpmds
 myvo
@@ -517,6 +519,7 @@ RDIG
 rdkit
 rdm
 reassignable
+redis
 refeds
 refreshtoken
 reportgroups
