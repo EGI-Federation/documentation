@@ -21,7 +21,7 @@ are available on the
 Follow the steps below to access the web interface of EGI Secrets Store:
 
 <!-- markdownlint-disable no-bare-urls -->
-- Open https://vault.services.fedcloud.eu:8200 in your browser.
+- Open https://secrets.egi.eu in your browser.
 - Choose the _OIDC authentication_ method in the pulldown menu, then click
 _Sign in with OIDC provider_.
 - Login via _EGI Check-in_ and authorize the Vault GUI.

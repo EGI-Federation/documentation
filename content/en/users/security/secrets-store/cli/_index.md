@@ -524,7 +524,7 @@ need a Vault token. You can get one from your EGI Check-in access token.
 To get a Vault token:
 
 ```shell
-$ export VAULT_ADDR=https://vault.services.fedcloud.eu:8200
+$ export VAULT_ADDR=https://secrets.egi.eu
 $ export VAULT_TOKEN=$(vault write auth/jwt/login jwt=$OIDC_ACCESS_TOKEN |
            grep -Po 'token\s+\K[^\s]+$')
 ```
@@ -534,7 +534,7 @@ $ export VAULT_TOKEN=$(vault write auth/jwt/login jwt=$OIDC_ACCESS_TOKEN |
 To get a Vault token:
 
 ```powershell
-> $env:VAULT_ADDR="https://vault.services.fedcloud.eu:8200"
+> $env:VAULT_ADDR="https://secrets.egi.eu"
 > $env:VAULT_TOKEN=$(vault write auth/jwt/login jwt=$env:OIDC_ACCESS_TOKEN `
            | Select-String -Pattern "(?<=token\s+)[^\s]+(?=$)" `
            | %{$_.Matches.value})
@@ -545,7 +545,7 @@ To get a Vault token:
 To get a Vault token:
 
 ```shell
-> set VAULT_ADDR=https://vault.services.fedcloud.eu:8200
+> set VAULT_ADDR=https://secrets.egi.eu
 > for /f "delims=" %a in ('vault write auth/jwt/login "jwt=%OIDC_ACCESS_TOKEN%" ^| findstr /r /c:"token[ ][ ]*[^^ ]*"') do @set VAULT_TOKEN=%a:token=%
 > set VAULT_TOKEN=%VAULT_TOKEN: =%
 ```
