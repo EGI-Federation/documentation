@@ -134,24 +134,24 @@ and if you are doing some manual management or testing.
 
 ```shell
 $ sudo certbot register --no-eff-email \
-   --server https://acme.sectigo.com/v2/OV \
+   --server https://acme.sectigo.com/v2/GEANTOV \
    --eab-kid <EAB_KID> \
    --eab-hmac-key <EAB_HMAC_KEY> \
     --email <CONTACT_EMAIL>
 
 # Checking existing account
-$ sudo certbot show_account --server https://acme.sectigo.com/v2/OV
+$ sudo certbot show_account --server https://acme.sectigo.com/v2/GEANTOV
 
 # Unregistering an account
 # Beware: you won't any more be able to revoke certificate issued with the account
-$ sudo certbot unregister --server https://acme.sectigo.com/v2/OV
+$ sudo certbot unregister --server https://acme.sectigo.com/v2/GEANTOV
 ```
 
 ##### Requesting a certificate
 
 ```shell
 $ sudo certbot certonly --standalone --non-interactive \
-   --server https://acme.sectigo.com/v2/OV \
+   --server https://acme.sectigo.com/v2/GEANTOV \
    --domain fakedomaindonotexist.egi.eu
 ```
 
@@ -174,7 +174,7 @@ scripts. Email address is used for urgent renewal and security notices.
 
 ```shell
 $ sudo certbot certonly --standalone --non-interactive --agree-tos \
-   --server https://acme.sectigo.com/v2/OV \
+   --server https://acme.sectigo.com/v2/GEANTOV \
    --eab-kid <EAB_KID> --eab-hmac-key <EAB_HMAC_KEY> \
    --rsa-key-size 4096 \
    --email <CONTACT_EMAIL> \
