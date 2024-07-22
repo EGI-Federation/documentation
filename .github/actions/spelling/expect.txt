@@ -1,5 +1,7 @@
+ADFS
 allowfullscreen
 autoplay
+checkin
 csr
 CVMFS
 dearmor

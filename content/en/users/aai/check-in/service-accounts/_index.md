@@ -21,13 +21,15 @@ can be requested by opening a GGUS ticket (see the
 [Getting help section](../faq/) in the FAQ) with the
 following information:
 
-{{% alert title="Service Account request" color="info" %}} 
+{{% alert title="Service Account request" color="info" %}}
 Subject: **Add VO entitlement to service account**
 
 I'd like to request the following entitlement values for the service account
 with Client ID `<CLIENT_ID>` in the `<Production/Demo/Development>` environment
 of EGI Check-in:
+
 1. `<ENTITLEMENT1>`
 2. `<ENTITLEMENT2>`
 3. `...`
+
 {{% /alert %}}
