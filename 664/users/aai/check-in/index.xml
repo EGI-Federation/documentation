@@ -1619,6 +1619,16 @@ request access to. Only VO managers can request LDAP credentials for a given VO.
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This page includes all the available ways to obtain OAuth tokens from EGI
 Check-in.&lt;/p></description></item><item><title>Users: Service Accounts</title><link>/users/aai/check-in/service-accounts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/aai/check-in/service-accounts/</guid><description>
+&lt;p>A Service Account is a special kind of account typically used by
+an application or compute workload rather than a person. Service Accounts
+are meant to represent the identity and authorization of an application
+or service. They serve as a means for applications to authenticate and
+interact with other systems, databases, or resources.&lt;/p>
+&lt;p>Service Accounts are particularly beneficial in scenarios where continuous
+and automated operations are required, such as batch processing,
+background tasks, or integration with cloud services. By using Service Accounts,
+organizations can enhance security, improve efficiency, and ensure the smooth
+functioning of their IT systems.&lt;/p>
 &lt;p>A Service Account can be created by registering an OIDC service with
 the Client Credentials grant through the
 &lt;a href="https://aai.egi.eu/federation">Federation Registry&lt;/a>.&lt;/p>
