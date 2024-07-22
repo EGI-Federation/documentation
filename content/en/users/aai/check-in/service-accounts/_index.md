@@ -7,6 +7,18 @@ description: >
   Create a Service Account using EGI Check-in
 ---
 
+A Service Account is a special kind of account typically used by
+an application or compute workload rather than a person. Service Accounts
+are meant to represent the identity and authorization of an application
+or service. They serve as a means for applications to authenticate and
+interact with other systems, databases, or resources.
+
+Service Accounts are particularly beneficial in scenarios where continuous
+and automated operations are required, such as batch processing,
+background tasks, or integration with cloud services. By using Service Accounts,
+organizations can enhance security, improve efficiency, and ensure the smooth
+functioning of their IT systems.
+
 A Service Account can be created by registering an OIDC service with
 the Client Credentials grant through the
 [Federation Registry](https://aai.egi.eu/federation).
