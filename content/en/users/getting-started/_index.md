@@ -164,8 +164,8 @@ the users' requests before granting the access to the resources.
 
 Once your petition is approved, you will be granted access. The grant to run
 applications is initially valid for 6 months and can be extended/renewed upon
-request. To review the list of providers 
-[for the vo.access.egi.eu VO](https://documents.egi.eu/document/2773), 
+request. To review the list of providers
+[for the vo.access.egi.eu VO](https://documents.egi.eu/document/2773),
 don't forget to login to access the full list.
 
 For pre-configured services (e.g.: [EGI Notebooks](../dev-env/notebooks/)), the
