@@ -98,6 +98,11 @@ It is important to understand that scopes and Projects are distinct:
   tag, please contact the operators of the ‘ELIXIR’ NGI in the EGI Configuration
   Database.
 
+### GreenDIGIT Reserved Tag
+
+- Tag for resources that contribute to the GreenDIGIT project. To request this
+  tag, please contact EGI Operations.
+
 ### WLCG Reserved Tags
 
 - A number of reserved scope tags have been defined for the WLCG:
