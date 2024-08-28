@@ -31,8 +31,8 @@ Hugo can be installed by following
 
 Hugo (extended) releases can be downloaded from
 [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
-The recommended version for Hugo is specified under the GitHub Action
-in `.github/workflows/hugo_version.txt`.
+The recommended version for Hugo is specified under the GitHub Action in
+[.github/workflows/hugo_version.txt](.github/workflows/hugo_version.txt).
 
 To install npm+nodejs please check the
 [official instructions](https://www.npmjs.com/get-npm).
