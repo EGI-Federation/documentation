@@ -169,7 +169,7 @@ you can reuse the provided environment with:
 
 ```shell
 # From the root of the repository clone
-flox activate
+$ flox activate
 ```
 
 ### Installing pre-commit hooks
