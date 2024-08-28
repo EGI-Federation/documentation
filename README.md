@@ -46,8 +46,15 @@ The dependencies of the docsy theme can be installed as follows:
 npm ci
 ```
 
-A [flox](https://flox.dev/docs/install-flox/) environment is
-also available and can be activated with:
+### Reuse the flox environment (optional)
+
+[Flox](https://flox.dev/) is a virtual environment and package manager
+all in one. We provide a flox environment in our GitHub repository
+in a way that it is easier for everybody to work with the same
+software dependencies and contribute to this repository.
+
+After [installing flox](https://flox.dev/docs/install-flox/)
+you can reuse the provided environment with:
 
 ```shell
 # From the root of the repository clone
