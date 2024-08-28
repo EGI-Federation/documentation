@@ -154,8 +154,8 @@ Hugo can be installed following
 
 Hugo (extended) releases can be downloaded at
 [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
-The recommended version of Hugo to use is
-[available here](.github/workflows/hugo_version.txt).
+The recommended version for Hugo is specified under the GitHub Action
+in `.github/workflows/hugo_version.txt`.
 
 #### Reuse the flox environment (optional)
 
