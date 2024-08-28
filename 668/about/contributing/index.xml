@@ -97,7 +97,9 @@ dependencies:
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="installing-dependencies">Installing dependencies&lt;/h3>
+&lt;p>These dependencies can be either installed manually or
+reusing a flox environment. Please see the steps below.&lt;/p>
+&lt;h4 id="installing-dependencies-manually">Installing dependencies manually&lt;/h4>
 &lt;p>To install npm+Node.js please check the
 &lt;a href="https://www.npmjs.com/get-npm">official instructions&lt;/a>.&lt;/p>
 &lt;p>Everything has been tested with Node.js 12.&lt;/p>
@@ -110,7 +112,7 @@ dependencies:
 &lt;a href="https://github.com/gohugoio/hugo/releases">the Hugo releases page&lt;/a>.
 The recommended version for Hugo is specified under the GitHub Action in
 &lt;a href="https://github.com/EGI-Federation/documentation/blob/main/.github/workflows/hugo_version.txt">.github/workflows/hugo_version.txt&lt;/a>.&lt;/p>
-&lt;h4 id="reuse-the-flox-environment-optional">Reuse the flox environment (optional)&lt;/h4>
+&lt;h4 id="reuse-the-flox-environment">Reuse the flox environment&lt;/h4>
 &lt;p>&lt;a href="https://flox.dev/">Flox&lt;/a> is a virtual environment and package manager
 all in one. We provide a flox environment in our GitHub repository
 in a way that it is easier for everybody to work with the same
@@ -119,6 +121,8 @@ software dependencies and contribute to this repository.&lt;/p>
 you can reuse the provided environment with:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># From the root of the repository clone&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ flox activate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Then install docsy dependencies with&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm ci
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="installing-pre-commit-hooks">Installing pre-commit hooks&lt;/h3>
 &lt;p>&lt;a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">&lt;em>Git hooks&lt;/em>&lt;/a> are
 small bits of code which run during parts of the
