@@ -214,6 +214,7 @@ finisheddirty
 firefox
 floatingip
 floatip
+flox
 flushdns
 fnal
 folksonomy
