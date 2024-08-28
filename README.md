@@ -31,6 +31,9 @@ Hugo can be installed by following
 
 Hugo (extended) releases can be downloaded from
 [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
+The recommended version of Hugo to use is
+[v0.110.0](https://github.com/gohugoio/hugo/releases/tag/v0.110.0).
+
 
 To install npm+nodejs please check the
 [official instructions](https://www.npmjs.com/get-npm).
@@ -42,6 +45,14 @@ The dependencies of the docsy theme can be installed as follows:
 ```shell
 # From the root of the repository clone
 npm ci
+```
+
+A [flox](https://flox.dev/docs/install-flox/) environment is
+also available and can be activated with:
+
+```shell
+# From the root of the repository clone
+flox activate
 ```
 
 ### Building the site

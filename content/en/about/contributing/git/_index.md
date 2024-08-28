@@ -154,6 +154,16 @@ Hugo can be installed following
 
 Hugo (extended) releases can be downloaded at
 [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
+The recommended version of Hugo to use is
+[v0.110.0](https://github.com/gohugoio/hugo/releases/tag/v0.110.0).
+
+A [flox](https://flox.dev/docs/install-flox/) environment is
+also available and can be activated with:
+
+```shell
+# From the root of the repository clone
+flox activate
+```
 
 ### Installing pre-commit hooks
 
