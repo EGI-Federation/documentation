@@ -24,7 +24,10 @@ Source files used to build [EGI documentation](https://docs.egi.eu).
   - postcss-cli
   - autoprofixer
 
-## Installing dependencies, building and testing locally
+These dependencies can be either installed manually or
+reusing a flox environment. Please see the steps below.
+
+### Installing dependencies manually
 
 Hugo can be installed by following
 [the official documentation](https://gohugo.io/getting-started/installing).
@@ -59,6 +62,8 @@ you can reuse the provided environment with:
 ```shell
 # From the root of the repository clone
 flox activate
+# Then install docsy dependencies with
+npm ci
 ```
 
 ### Building the site

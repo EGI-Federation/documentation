@@ -135,7 +135,10 @@ can be used as a reference for building instructions.
   - postcss-cli
   - autoprofixer
 
-### Installing dependencies
+These dependencies can be either installed manually or
+reusing a flox environment. Please see the steps below.
+
+#### Installing dependencies manually
 
 To install npm+Node.js please check the
 [official instructions](https://www.npmjs.com/get-npm).
@@ -157,7 +160,7 @@ Hugo (extended) releases can be downloaded at
 The recommended version for Hugo is specified under the GitHub Action in
 [.github/workflows/hugo_version.txt](https://github.com/EGI-Federation/documentation/blob/main/.github/workflows/hugo_version.txt).
 
-#### Reuse the flox environment (optional)
+#### Reuse the flox environment
 
 [Flox](https://flox.dev/) is a virtual environment and package manager
 all in one. We provide a flox environment in our GitHub repository
@@ -170,6 +173,8 @@ you can reuse the provided environment with:
 ```shell
 # From the root of the repository clone
 $ flox activate
+# Then install docsy dependencies with
+npm ci
 ```
 
 ### Installing pre-commit hooks
