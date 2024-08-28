@@ -174,7 +174,7 @@ you can reuse the provided environment with:
 # From the root of the repository clone
 $ flox activate
 # Then install docsy dependencies with
-npm ci
+$ npm ci
 ```
 
 ### Installing pre-commit hooks
