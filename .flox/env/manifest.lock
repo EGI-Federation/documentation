@@ -1,0 +1,404 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "hugo": {
+        "pkg-path": "hugo",
+        "version": "0.110.0"
+      },
+      "nodejs": {
+        "pkg-path": "nodejs"
+      },
+      "pre-commit": {
+        "pkg-path": "pre-commit"
+      }
+    },
+    "vars": {},
+    "hook": {},
+    "profile": {},
+    "options": {
+      "systems": [
+        "aarch64-darwin",
+        "aarch64-linux",
+        "x86_64-darwin",
+        "x86_64-linux"
+      ],
+      "allow": {
+        "licenses": []
+      },
+      "semver": {}
+    }
+  },
+  "packages": [
+    {
+      "attr_path": "hugo",
+      "broken": false,
+      "derivation": "/nix/store/fn7c5bmk4xaq34kp7fcshfhw0i7d22y1-hugo-0.110.0.drv",
+      "description": "A fast and modern static website engine",
+      "install_id": "hugo",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "hugo-0.110.0",
+      "pname": "hugo",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.110.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/3hfgvfgxb7d3w07v8dh71l8frpin9mm5-hugo-0.110.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "hugo",
+      "broken": false,
+      "derivation": "/nix/store/mi4yn849465ajcf6ny2xkk8j2jsvj7lx-hugo-0.110.0.drv",
+      "description": "A fast and modern static website engine",
+      "install_id": "hugo",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "hugo-0.110.0",
+      "pname": "hugo",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.110.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/blsavj5qs0i6ccja51zb7z02zs6kql65-hugo-0.110.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "hugo",
+      "broken": false,
+      "derivation": "/nix/store/yfmmjsrp7881dpzcn9lfnkx6y5d1z1aa-hugo-0.110.0.drv",
+      "description": "A fast and modern static website engine",
+      "install_id": "hugo",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "hugo-0.110.0",
+      "pname": "hugo",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.110.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/yrbd55hq0pay0hskwwl1bdhia8n7hpdg-hugo-0.110.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "hugo",
+      "broken": false,
+      "derivation": "/nix/store/3dhhsxqa168wg0s4clkirvp6521rigw2-hugo-0.110.0.drv",
+      "description": "A fast and modern static website engine",
+      "install_id": "hugo",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "hugo-0.110.0",
+      "pname": "hugo",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "0.110.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/00177s9cpl8k23r6ygy3q9i3ncp8q7wv-hugo-0.110.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "nodejs",
+      "broken": false,
+      "derivation": "/nix/store/iwyl1n71f9g74wxnmfgzfr6w6kz2md5h-nodejs-18.14.2.drv",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "install_id": "nodejs",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "nodejs-18.14.2",
+      "pname": "nodejs",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "18.14.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "libv8": "/nix/store/6043kvvhh1iifv8qgwfqq2zry85khc6y-nodejs-18.14.2-libv8",
+        "out": "/nix/store/5xjh3vqz7wy9fcxg83yd5n3zng91k16g-nodejs-18.14.2"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "nodejs",
+      "broken": false,
+      "derivation": "/nix/store/kvblx5p1fnyp2mvqnw4g1ygcrm9zzknl-nodejs-18.14.2.drv",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "install_id": "nodejs",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "nodejs-18.14.2",
+      "pname": "nodejs",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "18.14.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "libv8": "/nix/store/fy69nn000hk3vsvzhny8rqfyhdpgx27c-nodejs-18.14.2-libv8",
+        "out": "/nix/store/wb0r5x1xxz7cl92hnp69bxknvs8y9gsp-nodejs-18.14.2"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "nodejs",
+      "broken": false,
+      "derivation": "/nix/store/q7rsxxwljxks2b6n5ir6vmkbf11b9jx0-nodejs-18.14.2.drv",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "install_id": "nodejs",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "nodejs-18.14.2",
+      "pname": "nodejs",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "18.14.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "libv8": "/nix/store/vipysz1jh468v8ijacghridnxp9f57c2-nodejs-18.14.2-libv8",
+        "out": "/nix/store/akb5bj9yvf0in6cn6il7i0j4krrbmsp6-nodejs-18.14.2"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "nodejs",
+      "broken": false,
+      "derivation": "/nix/store/dmw17y5zgsada5ybb1bisiag7725z8dp-nodejs-18.14.2.drv",
+      "description": "Event-driven I/O framework for the V8 JavaScript engine",
+      "install_id": "nodejs",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "nodejs-18.14.2",
+      "pname": "nodejs",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "18.14.2",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "libv8": "/nix/store/hqkrmpl9k3vdkfkbjyc8bz8wh5s9ngzh-nodejs-18.14.2-libv8",
+        "out": "/nix/store/dnhhyhfql3cs9jmrhd3a05620higxy0i-nodejs-18.14.2"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "pre-commit",
+      "broken": false,
+      "derivation": "/nix/store/pbyvn4vm11n09rdy8gm4zrf3b9x2jqmn-python3.10-pre-commit-2.20.0.drv",
+      "description": "A framework for managing and maintaining multi-language pre-commit hooks",
+      "install_id": "pre-commit",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "python3.10-pre-commit-2.20.0",
+      "pname": "pre-commit",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3.10-pre-commit-2.20.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/ljzif2bjdfp6nia18wzq89bapnl0rdk5-python3.10-pre-commit-2.20.0-dist",
+        "out": "/nix/store/mcamsax8pjxf8v3cwr4aya28hl7h16ch-python3.10-pre-commit-2.20.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "pre-commit",
+      "broken": false,
+      "derivation": "/nix/store/k0yk9nimmflhk47znb81qpvh86ih6747-python3.10-pre-commit-2.20.0.drv",
+      "description": "A framework for managing and maintaining multi-language pre-commit hooks",
+      "install_id": "pre-commit",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "python3.10-pre-commit-2.20.0",
+      "pname": "pre-commit",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3.10-pre-commit-2.20.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/zjc0w421j4n3752yz6xldfw0ffc24m6y-python3.10-pre-commit-2.20.0-dist",
+        "out": "/nix/store/m3f7knjbrg0fphszghwa8czpazrh01ad-python3.10-pre-commit-2.20.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "pre-commit",
+      "broken": false,
+      "derivation": "/nix/store/dkn9sfjm42pj2jbw25ry5r2kh71c17xw-python3.10-pre-commit-2.20.0.drv",
+      "description": "A framework for managing and maintaining multi-language pre-commit hooks",
+      "install_id": "pre-commit",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "python3.10-pre-commit-2.20.0",
+      "pname": "pre-commit",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3.10-pre-commit-2.20.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/w88s1fbz93r8zbj7gydchzmzss2la3lx-python3.10-pre-commit-2.20.0-dist",
+        "out": "/nix/store/gs68xldvgbp92h1k43j6xisdfpmfi6d4-python3.10-pre-commit-2.20.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "pre-commit",
+      "broken": false,
+      "derivation": "/nix/store/f1nxb5s1r9b1y73p02nkid4a6srkfizq-python3.10-pre-commit-2.20.0.drv",
+      "description": "A framework for managing and maintaining multi-language pre-commit hooks",
+      "install_id": "pre-commit",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "name": "python3.10-pre-commit-2.20.0",
+      "pname": "pre-commit",
+      "rev": "7f5639fa3b68054ca0b062866dc62b22c3f11505",
+      "rev_count": 458394,
+      "rev_date": "2023-02-26T10:26:41Z",
+      "scrape_date": "2024-08-16T01:52:50Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "python3.10-pre-commit-2.20.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dist": "/nix/store/4ighakl0k1p6jvaizdn7njlv11rzxig0-python3.10-pre-commit-2.20.0-dist",
+        "out": "/nix/store/l9yh6fba6m03fq5r16r1bd6bkq6lr3fm-python3.10-pre-commit-2.20.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}
+

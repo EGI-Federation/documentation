@@ -24,13 +24,18 @@ Source files used to build [EGI documentation](https://docs.egi.eu).
   - postcss-cli
   - autoprofixer
 
-## Installing dependencies, building and testing locally
+These dependencies can be either installed manually or
+reusing a flox environment. Please see the steps below.
+
+### Installing dependencies manually
 
 Hugo can be installed by following
 [the official documentation](https://gohugo.io/getting-started/installing).
 
 Hugo (extended) releases can be downloaded from
 [the Hugo releases page](https://github.com/gohugoio/hugo/releases).
+The recommended version for Hugo is specified under the GitHub Action in
+[.github/workflows/hugo_version.txt](.github/workflows/hugo_version.txt).
 
 To install npm+nodejs please check the
 [official instructions](https://www.npmjs.com/get-npm).
@@ -41,6 +46,23 @@ The dependencies of the docsy theme can be installed as follows:
 
 ```shell
 # From the root of the repository clone
+npm ci
+```
+
+### Reuse the flox environment
+
+[Flox](https://flox.dev/) is a virtual environment and package manager
+all in one. We provide a flox environment in our GitHub repository
+in a way that it is easier for everybody to work with the same
+software dependencies and contribute to this repository.
+
+After [installing flox](https://flox.dev/docs/install-flox/)
+you can reuse the provided environment with:
+
+```shell
+# From the root of the repository clone
+flox activate
+# Then install docsy dependencies with
 npm ci
 ```
 
