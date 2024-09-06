@@ -43,7 +43,7 @@ parameters:
 
 ```ini
 [im_client]
-restapi_url=https://appsgrycap.i3m.upv.es/im
+restapi_url=https://im.egi.eu/im
 auth_file=auth.dat
 ```
 
@@ -149,7 +149,7 @@ or a TOSCA YAML file:
 
 ```shell
 $ im_client.py create infra.radl
-Secure connection with: https://appsgrycap.i3m.upv.es/im 
+Secure connection with: https://im.egi.eu/im
 Infrastructure successfully created with ID: 457273ea-85e4-11ec-aa81-faaae69bc911
 ```
 
@@ -158,7 +158,7 @@ operation of the IM client tool:
 
 ```shell
 $ im_client.py getstate 457273ea-85e4-11ec-aa81-faaae69bc911
-Secure connection with: https://appsgrycap.i3m.upv.es/im 
+Secure connection with: https://im.egi.eu/im
 The infrastructure is in state: pending
 VM ID: 0 is in state: pending.
 ```
@@ -181,7 +181,7 @@ process using the `getcontmsg` operation:
 
 ```shell
 $ im_client.py getcontmsg 457273ea-85e4-11ec-aa81-faaae69bc911
-Secure connection with: https://appsgrycap.i3m.upv.es/im 
+Secure connection with: https://im.egi.eu/im
 Connected with: http://localhost:8800
 Msg Contextualizator: 
 
@@ -205,7 +205,7 @@ we can get the TOSCA output values with the `getoutputs` operation:
 
 ```shell
 $ im_client.py getoutputs 457273ea-85e4-11ec-aa81-faaae69bc911
-Secure connection with: https://appsgrycap.i3m.upv.es/im
+Secure connection with: https://im.egi.eu/im
 The infrastructure outputs:
 
 node_ip = 8.8.8.8
@@ -217,6 +217,6 @@ operation:
 
 ```shell
 $ im_client.py destroy 457273ea-85e4-11ec-aa81-faaae69bc911
-Secure connection with: https://appsgrycap.i3m.upv.es/im 
+Secure connection with: https://im.egi.eu/im
 Infrastructure successfully destroyed
 ```
