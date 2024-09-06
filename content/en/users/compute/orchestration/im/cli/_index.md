@@ -166,7 +166,7 @@ VM ID: 0 is in state: pending.
 The valid VM and infrastructure states are the following:
 
 - `pending`, launched, but still in initialization stage;
-- `running`, created successfully and running, but still in the
+- `configuring`, created successfully and running, but still in the
   configuration stage;
 - `configured`, running and contextualized;
 - `unconfigured`, running but not correctly contextualized;
