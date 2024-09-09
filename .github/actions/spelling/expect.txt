@@ -1,11 +1,13 @@
 allowfullscreen
 autoplay
+creds
 csr
 CVMFS
 dearmor
 delims
 diracsgm
 findstr
+getstate
 hmac
 iframe
 jscpd
@@ -21,6 +23,7 @@ rsa
 sgm
 tmp
 toml
+unconfigured
 Unregistering
 workflows
 yyy
