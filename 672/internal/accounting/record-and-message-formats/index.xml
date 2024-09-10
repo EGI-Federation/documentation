@@ -1,0 +1,475 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – Record and Message Formats</title><link>/internal/accounting/record-and-message-formats/</link><description>Recent content in Record and Message Formats on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/internal/accounting/record-and-message-formats/index.xml" rel="self" type="application/rss+xml"/><item><title>Internal: Grid Accounting Record and Message Formats</title><link>/internal/accounting/record-and-message-formats/grid-accounting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/accounting/record-and-message-formats/grid-accounting/</guid><description>
+&lt;h2 id="individual-job-records-and-messages">Individual Job Records and Messages&lt;/h2>
+&lt;h3 id="header">Header&lt;/h3>
+&lt;p>&lt;code>APEL-individual-job-message: v0.3&lt;/code>&lt;/p>
+&lt;p>The header only appears once at the top of each message (that is once at the
+top of each file). It defines the type of record and the schema version.&lt;/p>
+&lt;h3 id="record-fields">Record Fields&lt;/h3>
+&lt;p>The table shows the equivalent field in the CAR, under the container element
+&lt;code>urf:UsageRecord&lt;/code>. If not specified, it refers to the text value of urf:Key,
+where the element is a direct child of &lt;code>urf:UsageRecord&lt;/code>.&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Key&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Mandatory&lt;/th>
+&lt;th>CAR equivalent (if different)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Site&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>GOCDB sitename&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SubmitHost&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>The CE-ID (see example)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MachineName&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>LRMS hostname&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Queue&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>Batch system queue&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LocalJobId&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>Batch System Job ID&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>urf:JobIdentity/urf:LocalJobId&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LocalUserId&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>Local username&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:UserIdentity/urf:LocalUserId&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GlobalUserName&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s X509 DN&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:UserIdentity/urf:GlobalUserName&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>FQAN&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s VOMS attributes&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:UserIdentity/urf:GroupAttribute[@type=&amp;ldquo;FQAN&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>WallDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Wallclock time for the job (seconds)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>CAR has ISO 8601 time duration&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CpuDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>CPU time for the job (seconds)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>CAR has ISO 8601 time duration&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Processors&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Number of processors&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:Processors[@metric=&amp;ldquo;max&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NodeCount&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Number of nodes&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>StartTime&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Start time of the job (epoch time)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>CAR has ISO 8601 datetime&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>EndTime&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Stop time of the job (epoch time)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>CAR has ISO 8601 datetime&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>InfrastructureDescription&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>&lt;accounting client>-&lt;CE type>-&lt;batch system type> eg. &amp;ldquo;APEL-CREAM-PBS&amp;rdquo;&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>InfrastructureType&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>grid OR local&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MemoryReal&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Memory consumed by job (kbytes)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:Memory[@metric=&amp;ldquo;max&amp;rdquo; and @type=&amp;ldquo;Physical&amp;rdquo; and @storageUnit=&amp;ldquo;KB&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MemoryVirtual&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Virtual memory consumed by job (kbytes)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>urf:Memory[@metric=&amp;ldquo;max&amp;rdquo; and @type=&amp;ldquo;Shared&amp;rdquo; and @storageUnit=&amp;ldquo;KB&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ServiceLevelType&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>Si2k OR HEPSPEC&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>urf:ServiceLevel[@type]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ServiceLevel&lt;/td>
+&lt;td>double&lt;/td>
+&lt;td>Value of either HepSpec06 or SpecInt2000&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>urf:ServiceLevel&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;h3 id="message">Message&lt;/h3>
+&lt;h4 id="end-of-record">End of record&lt;/h4>
+&lt;p>%%&lt;/p>
+&lt;h4 id="example-message">Example Message&lt;/h4>
+&lt;pre tabindex="0">&lt;code>APEL-individual-job-message: v0.2
+Site: ExampleSite
+SubmitHost: host.domain:port/queue
+LocalJobId: 11111111
+LocalUserId: User1
+GlobalUserName: /C=whatever/D=someDN
+FQAN: /voname/Role=NULL/Capability=NULL
+WallDuration: 234256
+CpuDuration: 2345
+Processors: 2
+NodeCount: 2
+StartTime: 1234567890
+EndTime: 1234567899
+MemoryReal: 1000
+MemoryVirtual: 2000
+ServiceLevelType: Si2k
+ServiceLevel: 1000
+%%
+...another job record...
+%%
+...
+%%
+&lt;/code>&lt;/pre>&lt;h3 id="notes">Notes&lt;/h3>
+&lt;p>If GlobalUserName or UserFQAN is not published, the value for these fields on
+the server will be set to &amp;lsquo;None&amp;rsquo;.&lt;/p>
+&lt;p>Jobs are assumed to be grid jobs. To specify local jobs, use:&lt;/p>
+&lt;ul>
+&lt;li>InfrastructureType: local&lt;/li>
+&lt;li>SubmitHostType: LRMS&lt;/li>
+&lt;li>SubmitHost: LRMS-hostname&lt;/li>
+&lt;/ul>
+&lt;p>The Group value specified for local jobs must be different to equivalent grid
+jobs, or you will not be able to differentiate them in the accounting portal.
+Suggestion:&lt;/p>
+&lt;ul>
+&lt;li>Group: ExampleVO - grid job&lt;/li>
+&lt;li>Group: local-ExampleVO - local job&lt;/li>
+&lt;/ul>
+&lt;h3 id="changes-since-version-02">Changes since version 0.2&lt;/h3>
+&lt;ul>
+&lt;li>InfrastructureType field (optional)&lt;/li>
+&lt;li>InfrastructureDescription field (optional)&lt;/li>
+&lt;li>SubmitHostType field (optional)&lt;/li>
+&lt;/ul>
+&lt;h3 id="changes-from-version-01-to-version-02">Changes from version 0.1 to version 0.2&lt;/h3>
+&lt;ul>
+&lt;li>LocalJobID has changed to LocalJobId&lt;/li>
+&lt;li>LocalUserID has changed to LocalUserId&lt;/li>
+&lt;li>UserFQAN has changed to FQAN&lt;/li>
+&lt;li>ScalingFactorUnit has changed to ServiceLevelType&lt;/li>
+&lt;li>The possible values of ScalingFactorType have changed from
+[&amp;ldquo;SpecInt2000&amp;rdquo;, &amp;ldquo;HepSpec06&amp;rdquo;, &amp;ldquo;custom&amp;rdquo;] to [&amp;ldquo;Si2k&amp;rdquo;], [&amp;ldquo;HEPSPEC&amp;rdquo;]&lt;/li>
+&lt;li>ScalingFactor has changed to ServiceLevel&lt;/li>
+&lt;/ul>
+&lt;h2 id="summary-job-records-and-messages">Summary Job Records and Messages&lt;/h2>
+&lt;h3 id="header-1">Header&lt;/h3>
+&lt;p>&lt;code>APEL-summary-job-message: v0.3&lt;/code>&lt;/p>
+&lt;p>The header only appears once at the top of each message. It defines the type
+of record and the schema version.&lt;/p>
+&lt;h3 id="record-fields-1">Record Fields&lt;/h3>
+&lt;p>The table shows the equivalent field in the AUR, under the container element
+&lt;code>aur:SummaryRecord&lt;/code>. If not specified, it refers to the text value of
+&lt;code>urf:Key&lt;/code>, where the element is a direct child of &lt;code>aur:SummaryRecord&lt;/code>.&lt;/p>
+&lt;!-- markdownlint-disable line-length -->
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Key&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Mandatory&lt;/th>
+&lt;th>AUR equivalent&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Site&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>GOCDB sitename&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Month&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Month of summary (see notes)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Year&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Year of summary (see notes)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GlobalUserName&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s X509 DN&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>aur:UserIdentity/urf:GlobalUserName&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VO&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s VO&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>aur:UserIdentity/urf:Group&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VOGroup&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s VOMS group&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>aur:UserIdentity/urf:GroupAttribute[@type=&amp;ldquo;vo-group&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>VORole&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>User&amp;rsquo;s VOMS role&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>aur:UserIdentity/urf:GroupAttribute[@type=&amp;ldquo;vo-role&amp;rdquo;]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SubmitHost&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>The CE-ID or LRMS hostname&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Infrastructure&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>grid OR local&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Processors&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Number of processors&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NodeCount&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Number of nodes&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>EarliestEndTime&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>End time of the first job in the month (epoch time)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>AUR has dates in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LatestEndTime&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>End time of the last job in the month (epoch time)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>AUR has dates in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>WallDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Sum of wall clock times for all jobs in the month (in seconds)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>AUR has durations in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>CpuDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Sum of CPU time for all jobs in the month (in seconds)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>AUR has durations in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NormalisedWallDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Sum of normalised wall clock time for all jobs (in seconds; normalised by HEPSPEC06)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>AUR has durations in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NormalisedCpuDuration&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Sum of normalised CPU times for all jobs (in seconds; normalised by HEPSPEC06)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>AUR has durations in ISO 8601 format&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NumberOfJobs&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Total number of jobs&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;!-- markdownlint-enable line-length -->
+&lt;h3 id="message-1">Message&lt;/h3>
+&lt;h4 id="end-of-record-1">End of record&lt;/h4>
+&lt;p>%%&lt;/p>
+&lt;h4 id="example-message-1">Example Message&lt;/h4>
+&lt;pre tabindex="0">&lt;code>APEL-summary-job-message: v0.3
+Site: ExampleSite
+Month: 3
+Year: 2010
+GlobalUserName: /C=whatever/D=someDN
+VO: ExampleVO
+VOGroup: /ExampleVO
+VORole: Role=production
+SubmitHost: host.domain:port/queue
+Infrastructure: grid
+Processors: 1
+NodeCount: 1
+EarliestEndTime: 1267527463
+LatestEndTime: 1269773863
+WallDuration: 23425
+CpuDuration: 2345
+NormalisedWallDuration: 244435
+NormalisedCpuDuration: 2500
+NumberOfJobs: 100
+%%
+...another summary job record...
+%%
+...
+%%
+&lt;/code>&lt;/pre>&lt;h3 id="notes-1">Notes&lt;/h3>
+&lt;p>If GlobalUserName, VO, Group or Role are not published, the value for these
+fields on the server will be set to &amp;lsquo;None&amp;rsquo;.&lt;/p>
+&lt;p>The job records are included in months according to the month and year of
+their EndTime. The month and year should be in UTC. Only completed jobs are
+accounted for by APEL.&lt;/p>
+&lt;p>All durations are in hours. Normalised durations should be multiplied by
+HEPSPEC06. All figures should be rounded to the nearest integer.&lt;/p>
+&lt;h2 id="summary-sync-records-and-messages">Summary Sync Records and Messages&lt;/h2>
+&lt;p>The Summary Sync records are used for the creation of the &amp;ldquo;APEL Pub/Sync&amp;rdquo;
+tests. It is a mechanism for the central APEL server to know the number of
+records that each site is storing locally. It is in general only used by
+sites which publish via the standard APEL client.&lt;/p>
+&lt;h3 id="header-2">Header&lt;/h3>
+&lt;p>&lt;code>APEL-sync-message: v0.1&lt;/code>&lt;/p>
+&lt;h3 id="record-fields-2">Record Fields&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Key&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Mandatory&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Site&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>GOCDB sitename&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SubmitHost&lt;/td>
+&lt;td>String&lt;/td>
+&lt;td>CE ID&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NumberOfJobs&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Total number of jobs for that month&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Month&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Month&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Year&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>Year&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="message-2">Message&lt;/h3>
+&lt;h4 id="end-of-record-2">End of record&lt;/h4>
+&lt;p>%%&lt;/p>
+&lt;h4 id="example-message-2">Example Message&lt;/h4>
+&lt;pre tabindex="0">&lt;code>APEL-sync-message: v0.1
+Site: ExampleSite
+SubmitHost: host.domain:port/queue
+NumberOfJobs: 3479
+Month: 1
+Year: 2010
+%%
+...another sync record...
+%%
+...
+%%
+&lt;/code>&lt;/pre></description></item></channel></rss>
