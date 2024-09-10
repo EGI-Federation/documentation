@@ -69,82 +69,82 @@
 <a href="https://github.com/EGI-Federation/documentation/issues/new?title=Grid%20Accounting" target=_blank><i class="fab fa-github fa-fw"></i> Create documentation issue</a></div><div class=td-toc><p class=td-toc-title>On this page</p><hr class=panel-line><nav id=TableOfContents><ul><li><a href=#individual-job-records-and-messages>Individual Job Records and Messages</a><ul><li><a href=#header>Header</a></li><li><a href=#record-fields>Record Fields</a></li><li><a href=#message>Message</a></li><li><a href=#notes>Notes</a></li><li><a href=#changes-since-version-02>Changes since version 0.2</a></li><li><a href=#changes-from-version-01-to-version-02>Changes from version 0.1 to version 0.2</a></li></ul></li><li><a href=#summary-job-records-and-messages>Summary Job Records and Messages</a><ul><li><a href=#header-1>Header</a></li><li><a href=#record-fields-1>Record Fields</a></li><li><a href=#message-1>Message</a></li><li><a href=#notes-1>Notes</a></li></ul></li><li><a href=#summary-sync-records-and-messages>Summary Sync Records and Messages</a><ul><li><a href=#header-2>Header</a></li><li><a href=#record-fields-2>Record Fields</a></li><li><a href=#message-2>Message</a></li></ul></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main><nav aria-label=breadcrumb class="d-none d-md-block d-print-none"><ol class="breadcrumb spb-1"><li class=breadcrumb-item><a href=../../../../internal/>Internal Services</a></li><li class=breadcrumb-item><a href=../../../../internal/accounting/>Accounting</a></li><li class=breadcrumb-item><a href=../../../../internal/accounting/record-and-message-formats/>Record and Message Formats</a></li><li class="breadcrumb-item active" aria-current=page><a href=../../../../internal/accounting/record-and-message-formats/grid-accounting/>Grid Accounting</a></li></ol></nav><div class=td-content><h1>Grid Accounting</h1><div class=lead>EGI Grid Accounting record and message formats</div><header class=article-meta></header><h2 id=individual-job-records-and-messages>Individual Job Records and Messages</h2><h3 id=header>Header</h3><p><code>APEL-individual-job-message: v0.3</code></p><p>The header only appears once at the top of each message (that is once at the
 top of each file). It defines the type of record and the schema version.</p><h3 id=record-fields>Record Fields</h3><p>The table shows the equivalent field in the CAR, under the container element
 <code>urf:UsageRecord</code>. If not specified, it refers to the text value of urf:Key,
-where the element is a direct child of <code>urf:UsageRecord</code>.</p><table><thead><tr><th>Key</th><th>Value</th><th>Description</th><th>Mandatory</th><th>CAR equivalent (if different)</th></tr></thead><tbody><tr><td>Site</td><td>String</td><td>GOCDB sitename</td><td>Yes</td><td></td></tr><tr><td>SubmitHost</td><td>String</td><td>The CE-ID (see example)</td><td>Yes</td><td></td></tr><tr><td>MachineName</td><td>String</td><td>LRMS hostname</td><td></td><td></td></tr><tr><td>Queue</td><td>String</td><td>Batch system queue</td><td></td><td></td></tr><tr><td>LocalJobId</td><td>String</td><td>Batch System Job ID</td><td>Yes</td><td>urf:JobIdentity/urf:LocalJobId</td></tr><tr><td>LocalUserId</td><td>String</td><td>Local username</td><td></td><td>urf:UserIdentity/urf:LocalUserId</td></tr><tr><td>GlobalUserName</td><td>String</td><td>User&rsquo;s X509 DN</td><td></td><td>urf:UserIdentity/urf:GlobalUserName</td></tr><tr><td>FQAN</td><td>String</td><td>User&rsquo;s VOMS attributes</td><td></td><td>urf:UserIdentity/urf:GroupAttribute[@type=&ldquo;FQAN&rdquo;]</td></tr><tr><td>WallDuration</td><td>int</td><td>Wallclock time for the job (seconds)</td><td>Yes</td><td>CAR has ISO 8601 time duration</td></tr><tr><td>CpuDuration</td><td>int</td><td>CPU time for the job (seconds)</td><td>Yes</td><td>CAR has ISO 8601 time duration</td></tr><tr><td>Processors</td><td>int</td><td>Number of processors</td><td></td><td>urf:Processors[@metric=&ldquo;max&rdquo;]</td></tr><tr><td>NodeCount</td><td>int</td><td>Number of nodes</td><td></td><td></td></tr><tr><td>StartTime</td><td>int</td><td>Start time of the job (epoch time)</td><td>Yes</td><td>CAR has ISO 8601 datetime</td></tr><tr><td>EndTime</td><td>int</td><td>Stop time of the job (epoch time)</td><td>Yes</td><td>CAR has ISO 8601 datetime</td></tr><tr><td>InfrastructureDescription</td><td>String</td><td>&lt;accounting client>-&lt;CE type>-&lt;batch system type> eg. &ldquo;APEL-CREAM-PBS&rdquo;</td><td></td><td></td></tr><tr><td>InfrastructureType</td><td>String</td><td>grid OR local</td><td></td><td></td></tr><tr><td>MemoryReal</td><td>int</td><td>Memory consumed by job (kbytes)</td><td></td><td>urf:Memory[@metric=&ldquo;max&rdquo; and @type=&ldquo;Physical&rdquo; and @storageUnit=&ldquo;KB&rdquo;]</td></tr><tr><td>MemoryVirtual</td><td>int</td><td>Virtual memory consumed by job (kbytes)</td><td></td><td>urf:Memory[@metric=&ldquo;max&rdquo; and @type=&ldquo;Shared&rdquo; and @storageUnit=&ldquo;KB&rdquo;]</td></tr><tr><td>ServiceLevelType</td><td>String</td><td>Si2k OR HEPSPEC</td><td>Yes</td><td>urf:ServiceLevel[@type]</td></tr><tr><td>ServiceLevel</td><td>double</td><td>Value of either HepSpec06 or SpecInt2000</td><td>Yes</td><td>urf:ServiceLevel</td></tr></tbody></table><h3 id=message>Message</h3><h4 id=end-of-record>End of record</h4><p>%%</p><h4 id=example-message>Example Message</h4><pre tabindex=0><code>APEL-individual-job-message: v0.2
-Site: ExampleSite
-SubmitHost: host.domain:port/queue
-LocalJobId: 11111111
-LocalUserId: User1
-GlobalUserName: /C=whatever/D=someDN
-FQAN: /voname/Role=NULL/Capability=NULL
-WallDuration: 234256
-CpuDuration: 2345
-Processors: 2
-NodeCount: 2
-StartTime: 1234567890
-EndTime: 1234567899
-MemoryReal: 1000
-MemoryVirtual: 2000
-ServiceLevelType: Si2k
-ServiceLevel: 1000
-%%
-...another job record...
-%%
-...
-%%
-</code></pre><h3 id=notes>Notes</h3><p>If GlobalUserName or UserFQAN is not published, the value for these fields on
+where the element is a direct child of <code>urf:UsageRecord</code>.</p><table><thead><tr><th>Key</th><th>Value</th><th>Description</th><th>Mandatory</th><th>CAR equivalent (if different)</th></tr></thead><tbody><tr><td>Site</td><td>String</td><td>GOCDB sitename</td><td>Yes</td><td></td></tr><tr><td>SubmitHost</td><td>String</td><td>The CE-ID (see example)</td><td>Yes</td><td></td></tr><tr><td>MachineName</td><td>String</td><td>LRMS hostname</td><td></td><td></td></tr><tr><td>Queue</td><td>String</td><td>Batch system queue</td><td></td><td></td></tr><tr><td>LocalJobId</td><td>String</td><td>Batch System Job ID</td><td>Yes</td><td>urf:JobIdentity/urf:LocalJobId</td></tr><tr><td>LocalUserId</td><td>String</td><td>Local username</td><td></td><td>urf:UserIdentity/urf:LocalUserId</td></tr><tr><td>GlobalUserName</td><td>String</td><td>User&rsquo;s X509 DN</td><td></td><td>urf:UserIdentity/urf:GlobalUserName</td></tr><tr><td>FQAN</td><td>String</td><td>User&rsquo;s VOMS attributes</td><td></td><td>urf:UserIdentity/urf:GroupAttribute[@type=&ldquo;FQAN&rdquo;]</td></tr><tr><td>WallDuration</td><td>int</td><td>Wallclock time for the job (seconds)</td><td>Yes</td><td>CAR has ISO 8601 time duration</td></tr><tr><td>CpuDuration</td><td>int</td><td>CPU time for the job (seconds)</td><td>Yes</td><td>CAR has ISO 8601 time duration</td></tr><tr><td>Processors</td><td>int</td><td>Number of processors</td><td></td><td>urf:Processors[@metric=&ldquo;max&rdquo;]</td></tr><tr><td>NodeCount</td><td>int</td><td>Number of nodes</td><td></td><td></td></tr><tr><td>StartTime</td><td>int</td><td>Start time of the job (epoch time)</td><td>Yes</td><td>CAR has ISO 8601 datetime</td></tr><tr><td>EndTime</td><td>int</td><td>Stop time of the job (epoch time)</td><td>Yes</td><td>CAR has ISO 8601 datetime</td></tr><tr><td>InfrastructureDescription</td><td>String</td><td>&lt;accounting client>-&lt;CE type>-&lt;batch system type> eg. &ldquo;APEL-CREAM-PBS&rdquo;</td><td></td><td></td></tr><tr><td>InfrastructureType</td><td>String</td><td>grid OR local</td><td></td><td></td></tr><tr><td>MemoryReal</td><td>int</td><td>Memory consumed by job (kbytes)</td><td></td><td>urf:Memory[@metric=&ldquo;max&rdquo; and @type=&ldquo;Physical&rdquo; and @storageUnit=&ldquo;KB&rdquo;]</td></tr><tr><td>MemoryVirtual</td><td>int</td><td>Virtual memory consumed by job (kbytes)</td><td></td><td>urf:Memory[@metric=&ldquo;max&rdquo; and @type=&ldquo;Shared&rdquo; and @storageUnit=&ldquo;KB&rdquo;]</td></tr><tr><td>ServiceLevelType</td><td>String</td><td>Si2k OR HEPSPEC</td><td>Yes</td><td>urf:ServiceLevel[@type]</td></tr><tr><td>ServiceLevel</td><td>double</td><td>Value of either HepSpec06 or SpecInt2000</td><td>Yes</td><td>urf:ServiceLevel</td></tr></tbody></table><h3 id=message>Message</h3><h4 id=end-of-record>End of record</h4><p>%%</p><h4 id=example-message>Example Message</h4><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>APEL-individual-job-message: v0.2
+</span></span><span style=display:flex><span>Site: ExampleSite
+</span></span><span style=display:flex><span>SubmitHost: host.domain:port/queue
+</span></span><span style=display:flex><span>LocalJobId: 11111111
+</span></span><span style=display:flex><span>LocalUserId: User1
+</span></span><span style=display:flex><span>GlobalUserName: /C=whatever/D=someDN
+</span></span><span style=display:flex><span>FQAN: /voname/Role=NULL/Capability=NULL
+</span></span><span style=display:flex><span>WallDuration: 234256
+</span></span><span style=display:flex><span>CpuDuration: 2345
+</span></span><span style=display:flex><span>Processors: 2
+</span></span><span style=display:flex><span>NodeCount: 2
+</span></span><span style=display:flex><span>StartTime: 1234567890
+</span></span><span style=display:flex><span>EndTime: 1234567899
+</span></span><span style=display:flex><span>MemoryReal: 1000
+</span></span><span style=display:flex><span>MemoryVirtual: 2000
+</span></span><span style=display:flex><span>ServiceLevelType: Si2k
+</span></span><span style=display:flex><span>ServiceLevel: 1000
+</span></span><span style=display:flex><span>%%
+</span></span><span style=display:flex><span>...another job record...
+</span></span><span style=display:flex><span>%%
+</span></span><span style=display:flex><span>...
+</span></span><span style=display:flex><span>%%
+</span></span></code></pre></div><h3 id=notes>Notes</h3><p>If GlobalUserName or UserFQAN is not published, the value for these fields on
 the server will be set to &lsquo;None&rsquo;.</p><p>Jobs are assumed to be grid jobs. To specify local jobs, use:</p><ul><li>InfrastructureType: local</li><li>SubmitHostType: LRMS</li><li>SubmitHost: LRMS-hostname</li></ul><p>The Group value specified for local jobs must be different to equivalent grid
 jobs, or you will not be able to differentiate them in the accounting portal.
 Suggestion:</p><ul><li>Group: ExampleVO - grid job</li><li>Group: local-ExampleVO - local job</li></ul><h3 id=changes-since-version-02>Changes since version 0.2</h3><ul><li>InfrastructureType field (optional)</li><li>InfrastructureDescription field (optional)</li><li>SubmitHostType field (optional)</li></ul><h3 id=changes-from-version-01-to-version-02>Changes from version 0.1 to version 0.2</h3><ul><li>LocalJobID has changed to LocalJobId</li><li>LocalUserID has changed to LocalUserId</li><li>UserFQAN has changed to FQAN</li><li>ScalingFactorUnit has changed to ServiceLevelType</li><li>The possible values of ScalingFactorType have changed from
 [&ldquo;SpecInt2000&rdquo;, &ldquo;HepSpec06&rdquo;, &ldquo;custom&rdquo;] to [&ldquo;Si2k&rdquo;], [&ldquo;HEPSPEC&rdquo;]</li><li>ScalingFactor has changed to ServiceLevel</li></ul><h2 id=summary-job-records-and-messages>Summary Job Records and Messages</h2><h3 id=header-1>Header</h3><p><code>APEL-summary-job-message: v0.3</code></p><p>The header only appears once at the top of each message. It defines the type
 of record and the schema version.</p><h3 id=record-fields-1>Record Fields</h3><p>The table shows the equivalent field in the AUR, under the container element
 <code>aur:SummaryRecord</code>. If not specified, it refers to the text value of
-<code>urf:Key</code>, where the element is a direct child of <code>aur:SummaryRecord</code>.</p><table><thead><tr><th>Key</th><th>Value</th><th>Description</th><th>Mandatory</th><th>AUR equivalent</th></tr></thead><tbody><tr><td>Site</td><td>String</td><td>GOCDB sitename</td><td>Yes</td><td></td></tr><tr><td>Month</td><td>int</td><td>Month of summary (see notes)</td><td>Yes</td><td></td></tr><tr><td>Year</td><td>int</td><td>Year of summary (see notes)</td><td>Yes</td><td></td></tr><tr><td>GlobalUserName</td><td>String</td><td>User&rsquo;s X509 DN</td><td></td><td>aur:UserIdentity/urf:GlobalUserName</td></tr><tr><td>VO</td><td>String</td><td>User&rsquo;s VO</td><td></td><td>aur:UserIdentity/urf:Group</td></tr><tr><td>VOGroup</td><td>String</td><td>User&rsquo;s VOMS group</td><td></td><td>aur:UserIdentity/urf:GroupAttribute[@type=&ldquo;vo-group&rdquo;]</td></tr><tr><td>VORole</td><td>String</td><td>User&rsquo;s VOMS role</td><td></td><td>aur:UserIdentity/urf:GroupAttribute[@type=&ldquo;vo-role&rdquo;]</td></tr><tr><td>SubmitHost</td><td>String</td><td>The CE-ID or LRMS hostname</td><td></td><td></td></tr><tr><td>Infrastructure</td><td>String</td><td>grid OR local</td><td></td><td></td></tr><tr><td>Processors</td><td>int</td><td>Number of processors</td><td></td><td></td></tr><tr><td>NodeCount</td><td>int</td><td>Number of nodes</td><td></td><td></td></tr><tr><td>EarliestEndTime</td><td>int</td><td>End time of the first job in the month (epoch time)</td><td></td><td>AUR has dates in ISO 8601 format</td></tr><tr><td>LatestEndTime</td><td>int</td><td>End time of the last job in the month (epoch time)</td><td></td><td>AUR has dates in ISO 8601 format</td></tr><tr><td>WallDuration</td><td>int</td><td>Sum of wall clock times for all jobs in the month (in seconds)</td><td>Yes</td><td>AUR has durations in ISO 8601 format</td></tr><tr><td>CpuDuration</td><td>int</td><td>Sum of CPU time for all jobs in the month (in seconds)</td><td>Yes</td><td>AUR has durations in ISO 8601 format</td></tr><tr><td>NormalisedWallDuration</td><td>int</td><td>Sum of normalised wall clock time for all jobs (in seconds; normalised by HEPSPEC06)</td><td>Yes</td><td>AUR has durations in ISO 8601 format</td></tr><tr><td>NormalisedCpuDuration</td><td>int</td><td>Sum of normalised CPU times for all jobs (in seconds; normalised by HEPSPEC06)</td><td>Yes</td><td>AUR has durations in ISO 8601 format</td></tr><tr><td>NumberOfJobs</td><td>int</td><td>Total number of jobs</td><td>Yes</td><td></td></tr></tbody></table><h3 id=message-1>Message</h3><h4 id=end-of-record-1>End of record</h4><p>%%</p><h4 id=example-message-1>Example Message</h4><pre tabindex=0><code>APEL-summary-job-message: v0.3
-Site: ExampleSite
-Month: 3
-Year: 2010
-GlobalUserName: /C=whatever/D=someDN
-VO: ExampleVO
-VOGroup: /ExampleVO
-VORole: Role=production
-SubmitHost: host.domain:port/queue
-Infrastructure: grid
-Processors: 1
-NodeCount: 1
-EarliestEndTime: 1267527463
-LatestEndTime: 1269773863
-WallDuration: 23425
-CpuDuration: 2345
-NormalisedWallDuration: 244435
-NormalisedCpuDuration: 2500
-NumberOfJobs: 100
-%%
-...another summary job record...
-%%
-...
-%%
-</code></pre><h3 id=notes-1>Notes</h3><p>If GlobalUserName, VO, Group or Role are not published, the value for these
+<code>urf:Key</code>, where the element is a direct child of <code>aur:SummaryRecord</code>.</p><table><thead><tr><th>Key</th><th>Value</th><th>Description</th><th>Mandatory</th><th>AUR equivalent</th></tr></thead><tbody><tr><td>Site</td><td>String</td><td>GOCDB sitename</td><td>Yes</td><td></td></tr><tr><td>Month</td><td>int</td><td>Month of summary (see notes)</td><td>Yes</td><td></td></tr><tr><td>Year</td><td>int</td><td>Year of summary (see notes)</td><td>Yes</td><td></td></tr><tr><td>GlobalUserName</td><td>String</td><td>User&rsquo;s X509 DN</td><td></td><td>aur:UserIdentity/urf:GlobalUserName</td></tr><tr><td>VO</td><td>String</td><td>User&rsquo;s VO</td><td></td><td>aur:UserIdentity/urf:Group</td></tr><tr><td>VOGroup</td><td>String</td><td>User&rsquo;s VOMS group</td><td></td><td>aur:UserIdentity/urf:GroupAttribute[@type=&ldquo;vo-group&rdquo;]</td></tr><tr><td>VORole</td><td>String</td><td>User&rsquo;s VOMS role</td><td></td><td>aur:UserIdentity/urf:GroupAttribute[@type=&ldquo;vo-role&rdquo;]</td></tr><tr><td>SubmitHost</td><td>String</td><td>The CE-ID or LRMS hostname</td><td></td><td></td></tr><tr><td>Infrastructure</td><td>String</td><td>grid OR local</td><td></td><td></td></tr><tr><td>Processors</td><td>int</td><td>Number of processors</td><td></td><td></td></tr><tr><td>NodeCount</td><td>int</td><td>Number of nodes</td><td></td><td></td></tr><tr><td>EarliestEndTime</td><td>int</td><td>End time of the first job in the month (epoch time)</td><td></td><td>AUR has dates in ISO 8601 format</td></tr><tr><td>LatestEndTime</td><td>int</td><td>End time of the last job in the month (epoch time)</td><td></td><td>AUR has dates in ISO 8601 format</td></tr><tr><td>WallDuration</td><td>int</td><td>Sum of wall clock times for all jobs in the month (in seconds)</td><td>Yes</td><td>AUR has durations in ISO 8601 format</td></tr><tr><td>CpuDuration</td><td>int</td><td>Sum of CPU time for all jobs in the month (in seconds)</td><td>Yes</td><td>AUR has durations in ISO 8601 format</td></tr><tr><td>NormalisedWallDuration</td><td>int</td><td>Sum of normalised wall clock time for all jobs (in seconds; normalised by HEPSPEC06)</td><td>Yes</td><td>AUR has durations in ISO 8601 format</td></tr><tr><td>NormalisedCpuDuration</td><td>int</td><td>Sum of normalised CPU times for all jobs (in seconds; normalised by HEPSPEC06)</td><td>Yes</td><td>AUR has durations in ISO 8601 format</td></tr><tr><td>NumberOfJobs</td><td>int</td><td>Total number of jobs</td><td>Yes</td><td></td></tr></tbody></table><h3 id=message-1>Message</h3><h4 id=end-of-record-1>End of record</h4><p>%%</p><h4 id=example-message-1>Example Message</h4><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>APEL-summary-job-message: v0.3
+</span></span><span style=display:flex><span>Site: ExampleSite
+</span></span><span style=display:flex><span>Month: 3
+</span></span><span style=display:flex><span>Year: 2010
+</span></span><span style=display:flex><span>GlobalUserName: /C=whatever/D=someDN
+</span></span><span style=display:flex><span>VO: ExampleVO
+</span></span><span style=display:flex><span>VOGroup: /ExampleVO
+</span></span><span style=display:flex><span>VORole: Role=production
+</span></span><span style=display:flex><span>SubmitHost: host.domain:port/queue
+</span></span><span style=display:flex><span>Infrastructure: grid
+</span></span><span style=display:flex><span>Processors: 1
+</span></span><span style=display:flex><span>NodeCount: 1
+</span></span><span style=display:flex><span>EarliestEndTime: 1267527463
+</span></span><span style=display:flex><span>LatestEndTime: 1269773863
+</span></span><span style=display:flex><span>WallDuration: 23425
+</span></span><span style=display:flex><span>CpuDuration: 2345
+</span></span><span style=display:flex><span>NormalisedWallDuration: 244435
+</span></span><span style=display:flex><span>NormalisedCpuDuration: 2500
+</span></span><span style=display:flex><span>NumberOfJobs: 100
+</span></span><span style=display:flex><span>%%
+</span></span><span style=display:flex><span>...another summary job record...
+</span></span><span style=display:flex><span>%%
+</span></span><span style=display:flex><span>...
+</span></span><span style=display:flex><span>%%
+</span></span></code></pre></div><h3 id=notes-1>Notes</h3><p>If GlobalUserName, VO, Group or Role are not published, the value for these
 fields on the server will be set to &lsquo;None&rsquo;.</p><p>The job records are included in months according to the month and year of
 their EndTime. The month and year should be in UTC. Only completed jobs are
 accounted for by APEL.</p><p>All durations are in hours. Normalised durations should be multiplied by
 HEPSPEC06. All figures should be rounded to the nearest integer.</p><h2 id=summary-sync-records-and-messages>Summary Sync Records and Messages</h2><p>The Summary Sync records are used for the creation of the &ldquo;APEL Pub/Sync&rdquo;
 tests. It is a mechanism for the central APEL server to know the number of
 records that each site is storing locally. It is in general only used by
-sites which publish via the standard APEL client.</p><h3 id=header-2>Header</h3><p><code>APEL-sync-message: v0.1</code></p><h3 id=record-fields-2>Record Fields</h3><table><thead><tr><th>Key</th><th>Value</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td>Site</td><td>String</td><td>GOCDB sitename</td><td>Yes</td></tr><tr><td>SubmitHost</td><td>String</td><td>CE ID</td><td>Yes</td></tr><tr><td>NumberOfJobs</td><td>int</td><td>Total number of jobs for that month</td><td>Yes</td></tr><tr><td>Month</td><td>int</td><td>Month</td><td>Yes</td></tr><tr><td>Year</td><td>int</td><td>Year</td><td>Yes</td></tr></tbody></table><h3 id=message-2>Message</h3><h4 id=end-of-record-2>End of record</h4><p>%%</p><h4 id=example-message-2>Example Message</h4><pre tabindex=0><code>APEL-sync-message: v0.1
-Site: ExampleSite
-SubmitHost: host.domain:port/queue
-NumberOfJobs: 3479
-Month: 1
-Year: 2010
-%%
-...another sync record...
-%%
-...
-%%
-</code></pre><div class=section-index></div><div class="text-muted mt-5 pt-3 border-top">Last modified
+sites which publish via the standard APEL client.</p><h3 id=header-2>Header</h3><p><code>APEL-sync-message: v0.1</code></p><h3 id=record-fields-2>Record Fields</h3><table><thead><tr><th>Key</th><th>Value</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td>Site</td><td>String</td><td>GOCDB sitename</td><td>Yes</td></tr><tr><td>SubmitHost</td><td>String</td><td>CE ID</td><td>Yes</td></tr><tr><td>NumberOfJobs</td><td>int</td><td>Total number of jobs for that month</td><td>Yes</td></tr><tr><td>Month</td><td>int</td><td>Month</td><td>Yes</td></tr><tr><td>Year</td><td>int</td><td>Year</td><td>Yes</td></tr></tbody></table><h3 id=message-2>Message</h3><h4 id=end-of-record-2>End of record</h4><p>%%</p><h4 id=example-message-2>Example Message</h4><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>APEL-sync-message: v0.1
+</span></span><span style=display:flex><span>Site: ExampleSite
+</span></span><span style=display:flex><span>SubmitHost: host.domain:port/queue
+</span></span><span style=display:flex><span>NumberOfJobs: 3479
+</span></span><span style=display:flex><span>Month: 1
+</span></span><span style=display:flex><span>Year: 2010
+</span></span><span style=display:flex><span>%%
+</span></span><span style=display:flex><span>...another sync record...
+</span></span><span style=display:flex><span>%%
+</span></span><span style=display:flex><span>...
+</span></span><span style=display:flex><span>%%
+</span></span></code></pre></div><div class=section-index></div><div class="text-muted mt-5 pt-3 border-top">Last modified
 September 10, 2024
 by
 <a href=mailto:gregcorbett@users.noreply.github.com>gregcorbett</a>
-: <a href=https://github.com/EGI-Federation/documentation/commit/35d6dfe32a9c2de5041c66c8bd4edc19e3610667>Shorten title of Grid Accounting page</a></div></div></main></div></div><footer class="bg-dark py-3 row d-print-none"><div class="container-fluid mx-sm-5"><div class=row><div class="col-6 col-sm-4 text-xs-center order-sm-2"><ul class="list-inline mb-0"><li class="list-inline-item footer-usr-link mx-2 h3" data-toggle=tooltip data-placement=top title="Community discussions" aria-label="Community discussions"><a class=text-white target=_blank rel=noopener href=https://community.egi.eu aria-label="Community discussions"><i class="fa fa-comments"></i></a></li><li class="list-inline-item footer-usr-link mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter><a class=text-white target=_blank rel=noopener href=https://twitter.com/EGI_eInfra aria-label=Twitter><i class="fab fa-twitter"></i></a></li></ul></div><div class="col-6 col-sm-4 text-right text-xs-center order-sm-3"><ul class="list-inline mb-0"><li class="list-inline-item github mx-0"><a class=github-button href=https://github.com/EGI-Federation/documentation data-icon=octicon-star data-show-count=true aria-label="Star EGI documentation on GitHub">Stars</a></li><li class="list-inline-item github mx-0"><a class=github-button href=https://github.com/EGI-Federation/documentation/fork data-icon=octicon-repo-forked data-show-count=true aria-label="Fork EGI documentation on GitHub">Forks</a></li><li class="list-inline-item footer-dev-link mx-2 h3" style=vertical-align:top data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub><a class=text-white target=_blank rel=noopener href=https://github.com/EGI-Federation aria-label=GitHub><i class="fab fa-github"></i></a></li></ul></div><div class="col-12 col-sm-4 text-center py-2 order-sm-2"><small class=text-white>&copy; 2024 EGI Foundation. All rights reserved.</small><br><small class=ml-1><a href=https://www.egi.eu/privacy-policy/ target=_blank rel=noopener>Privacy Policy</a></small><br><small><a href=../../../../about/>About EGI Documentation</a></small></div></div></div></footer></div><script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+: <a href=https://github.com/EGI-Federation/documentation/commit/6dca689e6cfde12406527d7b546bf631b727ca4a>fix more lint</a></div></div></main></div></div><footer class="bg-dark py-3 row d-print-none"><div class="container-fluid mx-sm-5"><div class=row><div class="col-6 col-sm-4 text-xs-center order-sm-2"><ul class="list-inline mb-0"><li class="list-inline-item footer-usr-link mx-2 h3" data-toggle=tooltip data-placement=top title="Community discussions" aria-label="Community discussions"><a class=text-white target=_blank rel=noopener href=https://community.egi.eu aria-label="Community discussions"><i class="fa fa-comments"></i></a></li><li class="list-inline-item footer-usr-link mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter><a class=text-white target=_blank rel=noopener href=https://twitter.com/EGI_eInfra aria-label=Twitter><i class="fab fa-twitter"></i></a></li></ul></div><div class="col-6 col-sm-4 text-right text-xs-center order-sm-3"><ul class="list-inline mb-0"><li class="list-inline-item github mx-0"><a class=github-button href=https://github.com/EGI-Federation/documentation data-icon=octicon-star data-show-count=true aria-label="Star EGI documentation on GitHub">Stars</a></li><li class="list-inline-item github mx-0"><a class=github-button href=https://github.com/EGI-Federation/documentation/fork data-icon=octicon-repo-forked data-show-count=true aria-label="Fork EGI documentation on GitHub">Forks</a></li><li class="list-inline-item footer-dev-link mx-2 h3" style=vertical-align:top data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub><a class=text-white target=_blank rel=noopener href=https://github.com/EGI-Federation aria-label=GitHub><i class="fab fa-github"></i></a></li></ul></div><div class="col-12 col-sm-4 text-center py-2 order-sm-2"><small class=text-white>&copy; 2024 EGI Foundation. All rights reserved.</small><br><small class=ml-1><a href=https://www.egi.eu/privacy-policy/ target=_blank rel=noopener>Privacy Policy</a></small><br><small><a href=../../../../about/>About EGI Documentation</a></small></div></div></div></footer></div><script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js integrity=sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity=sha384-uQikAXnCAqsMb3ygtdqBYvcwvHUkzGIpjdGyy9owhURXHUxLC5LgTcSxJQH/RzjK crossorigin=anonymous></script>
 <script src=../../../../js/deflate.js></script>

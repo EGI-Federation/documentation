@@ -167,29 +167,29 @@ where the element is a direct child of &lt;code>urf:UsageRecord&lt;/code>.&lt;/p
 &lt;h4 id="end-of-record">End of record&lt;/h4>
 &lt;p>%%&lt;/p>
 &lt;h4 id="example-message">Example Message&lt;/h4>
-&lt;pre tabindex="0">&lt;code>APEL-individual-job-message: v0.2
-Site: ExampleSite
-SubmitHost: host.domain:port/queue
-LocalJobId: 11111111
-LocalUserId: User1
-GlobalUserName: /C=whatever/D=someDN
-FQAN: /voname/Role=NULL/Capability=NULL
-WallDuration: 234256
-CpuDuration: 2345
-Processors: 2
-NodeCount: 2
-StartTime: 1234567890
-EndTime: 1234567899
-MemoryReal: 1000
-MemoryVirtual: 2000
-ServiceLevelType: Si2k
-ServiceLevel: 1000
-%%
-...another job record...
-%%
-...
-%%
-&lt;/code>&lt;/pre>&lt;h3 id="notes">Notes&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>APEL-individual-job-message: v0.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Site: ExampleSite
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SubmitHost: host.domain:port/queue
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>LocalJobId: 11111111
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>LocalUserId: User1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlobalUserName: /C=whatever/D=someDN
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FQAN: /voname/Role=NULL/Capability=NULL
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WallDuration: 234256
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CpuDuration: 2345
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Processors: 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NodeCount: 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>StartTime: 1234567890
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EndTime: 1234567899
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MemoryReal: 1000
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MemoryVirtual: 2000
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ServiceLevelType: Si2k
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ServiceLevel: 1000
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...another job record...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="notes">Notes&lt;/h3>
 &lt;p>If GlobalUserName or UserFQAN is not published, the value for these fields on
 the server will be set to &amp;lsquo;None&amp;rsquo;.&lt;/p>
 &lt;p>Jobs are assumed to be grid jobs. To specify local jobs, use:&lt;/p>
@@ -375,31 +375,31 @@ of record and the schema version.&lt;/p>
 &lt;h4 id="end-of-record-1">End of record&lt;/h4>
 &lt;p>%%&lt;/p>
 &lt;h4 id="example-message-1">Example Message&lt;/h4>
-&lt;pre tabindex="0">&lt;code>APEL-summary-job-message: v0.3
-Site: ExampleSite
-Month: 3
-Year: 2010
-GlobalUserName: /C=whatever/D=someDN
-VO: ExampleVO
-VOGroup: /ExampleVO
-VORole: Role=production
-SubmitHost: host.domain:port/queue
-Infrastructure: grid
-Processors: 1
-NodeCount: 1
-EarliestEndTime: 1267527463
-LatestEndTime: 1269773863
-WallDuration: 23425
-CpuDuration: 2345
-NormalisedWallDuration: 244435
-NormalisedCpuDuration: 2500
-NumberOfJobs: 100
-%%
-...another summary job record...
-%%
-...
-%%
-&lt;/code>&lt;/pre>&lt;h3 id="notes-1">Notes&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>APEL-summary-job-message: v0.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Site: ExampleSite
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Month: 3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Year: 2010
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GlobalUserName: /C=whatever/D=someDN
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VO: ExampleVO
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VOGroup: /ExampleVO
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VORole: Role=production
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SubmitHost: host.domain:port/queue
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Infrastructure: grid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Processors: 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NodeCount: 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EarliestEndTime: 1267527463
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>LatestEndTime: 1269773863
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WallDuration: 23425
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CpuDuration: 2345
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NormalisedWallDuration: 244435
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NormalisedCpuDuration: 2500
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NumberOfJobs: 100
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...another summary job record...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="notes-1">Notes&lt;/h3>
 &lt;p>If GlobalUserName, VO, Group or Role are not published, the value for these
 fields on the server will be set to &amp;lsquo;None&amp;rsquo;.&lt;/p>
 &lt;p>The job records are included in months according to the month and year of
@@ -461,15 +461,15 @@ sites which publish via the standard APEL client.&lt;/p>
 &lt;h4 id="end-of-record-2">End of record&lt;/h4>
 &lt;p>%%&lt;/p>
 &lt;h4 id="example-message-2">Example Message&lt;/h4>
-&lt;pre tabindex="0">&lt;code>APEL-sync-message: v0.1
-Site: ExampleSite
-SubmitHost: host.domain:port/queue
-NumberOfJobs: 3479
-Month: 1
-Year: 2010
-%%
-...another sync record...
-%%
-...
-%%
-&lt;/code>&lt;/pre></description></item></channel></rss>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>APEL-sync-message: v0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Site: ExampleSite
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SubmitHost: host.domain:port/queue
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NumberOfJobs: 3479
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Month: 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Year: 2010
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...another sync record...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>%%
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
