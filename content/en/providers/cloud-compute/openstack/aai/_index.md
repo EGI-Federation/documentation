@@ -441,7 +441,7 @@ $ openstack role add --domain egi.eu --group egi-staff reader
 ```
 
 Every VO you want to support should be mapped to a local project. The `ops` VO
-is used by [EGI monitoring](/internal/monitoring/) to ensure the correct
+is used by [EGI monitoring](../../../../internal/monitoring/) to ensure the correct
 functioning of your site. Create a group for this vo and add the group as a
 member of it:
 
