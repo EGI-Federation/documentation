@@ -612,7 +612,7 @@ long-running VMs that may not be making an effective use of the cloud resources.
 ### Additional VOs
 
 To configure additional VOs please follow steps in the
-[VO Configuration guide](../vo_config/).
+[VO Configuration guide](../vo-config/).
 
 ## Horizon Configuration
 
