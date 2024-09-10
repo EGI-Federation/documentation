@@ -66,7 +66,7 @@
 &lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item><item><title>Internal: Record and Message Formats</title><link>/internal/accounting/record-and-message-formats/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/accounting/record-and-message-formats/</guid><description>
 &lt;h2 id="grid-accounting">Grid Accounting&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="grid-accounting#Individual-Job-Records-and-Messages">Individual Job Records and Messages&lt;/a>&lt;/li>
-&lt;li>&lt;a href="grid-accounting#Summary-Job-Records-and-Messages">Summary Job Records and Messages&lt;/a>&lt;/li>
-&lt;li>&lt;a href="grid-accounting#Summary-Sync-Records-and-Messages">Summary Sync Records and Messages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="grid-accounting#individual-job-records-and-messages">Individual Job Records and Messages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="grid-accounting#summary-job-records-and-messages">Summary Job Records and Messages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="grid-accounting#summary-sync-records-and-messages">Summary Sync Records and Messages&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>

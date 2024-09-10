@@ -343,7 +343,7 @@ the Keystone Federation support.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack group create --domain egi.eu egi-staff
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ openstack role add --domain egi.eu --group egi-staff reader
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Every VO you want to support should be mapped to a local project. The &lt;code>ops&lt;/code> VO
-is used by &lt;a href="../../../internal/monitoring/">EGI monitoring&lt;/a> to ensure the correct
+is used by &lt;a href="../../../../internal/monitoring/">EGI monitoring&lt;/a> to ensure the correct
 functioning of your site. Create a group for this vo and add the group as a
 member of it:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Support for https://operations-portal.egi.eu/vo/view/voname/ops&lt;/span>
@@ -483,7 +483,7 @@ use the below setup to get the OpenStack user list:&lt;/p>
 long-running VMs that may not be making an effective use of the cloud resources.&lt;/p>
 &lt;h3 id="additional-vos">Additional VOs&lt;/h3>
 &lt;p>To configure additional VOs please follow steps in the
-&lt;a href="../vo_config/">VO Configuration guide&lt;/a>.&lt;/p>
+&lt;a href="../vo-config/">VO Configuration guide&lt;/a>.&lt;/p>
 &lt;h2 id="horizon-configuration-1">Horizon Configuration&lt;/h2>
 &lt;p>Edit your local_settings.py to include the following values:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Enables keystone web single-sign-on if set to True.&lt;/span>
