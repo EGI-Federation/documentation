@@ -1,5 +1,6 @@
 ---
 title: "Grid Accounting"
+linkTitle: "Grid"
 weight: 20
 type: "docs"
 description: "EGI Grid Accounting record and message formats"
