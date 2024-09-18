@@ -37,7 +37,7 @@ The current list of EGI repositories is as follows (disclaimer, some of them are
 | comet.egi.eu                  |               |
 | config-egi.egi.eu             |               |
 | dirac.egi.eu                  | [web page](https://dirac.readthedocs.io/en/latest/) |
-| eiscat.egi.eu                 |               |
+| eiscat.egi.eu                 | [web page](https://eiscat.se) |
 | eosc.egi.eu                   |               |
 | extras-fp7.egi.eu             |               |
 | galdyn.egi.eu                 |               |
