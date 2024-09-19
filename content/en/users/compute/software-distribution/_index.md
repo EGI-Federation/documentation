@@ -100,7 +100,7 @@ All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 ## Distributing new content
 
 To login into the service, just use `ssh` to log into the Uploader host.
-It's hostname is `cvmfs-uploader-egi.gridpp.rl.ac.uk`.
+Its hostname is `cvmfs-uploader-egi.gridpp.rl.ac.uk`.
 Also, to maintain backwards compatibility,
 the alias `cvmfs-upload01.gridpp.rl.ac.uk` can be used.
 You need to specify explicitly which username you want to use to log in.
