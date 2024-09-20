@@ -248,6 +248,158 @@ and verifies data integrity by cryptographic hashes. CVMFS is actively used by
 small and large collaborations. In many cases, it replaces package managers and
 shared software areas on cluster file systems as means to distribute the
 software used to process experiment data.&lt;/p>
+&lt;p>The current list of EGI repositories is as follows
+(disclaimer, some of them are inactive, but we keep them for archival purposes):&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Repository&lt;/th>
+&lt;th>Project&amp;rsquo;s URL&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>auger.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>biomed.egi.eu&lt;/td>
+&lt;td>&lt;a href="https://vip.creatis.insa-lyon.fr/home.html">web page&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>cernatschool.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>chipster.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>comet.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>config-egi.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>dirac.egi.eu&lt;/td>
+&lt;td>&lt;a href="https://dirac.readthedocs.io/en/latest/">web page&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>eiscat.egi.eu&lt;/td>
+&lt;td>&lt;a href="https://eiscat.se">web page&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>eosc.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>extras-fp7.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>galdyn.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ghost.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>glast.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gridpp.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>hyperk.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>intertwin.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>km3net.egi.eu&lt;/td>
+&lt;td>&lt;a href="https://www.km3net.org/">web page&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ligo.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>lucid.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mice.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>na62.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>neugrid.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>notebooks.egi.eu&lt;/td>
+&lt;td>&lt;a href="https://notebooks.egi.eu">web page&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>pheno.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>phys-ibergrid.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>pravda.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>researchinschools.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>seadatanet.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>snoplus.egi.eu&lt;/td>
+&lt;td>&lt;a href="https://snoplus.phy.queensu.ca">web page&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>solidexperiment.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>supernemo.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>t2k.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>unpacked.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>wenmr.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>west-life.egi.eu&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
 &lt;p>This documentation is for the VO content managers.&lt;/p>
 &lt;h2 id="official-cvmfs-pages">Official CVMFS pages&lt;/h2>
 &lt;ul>
@@ -271,7 +423,10 @@ from &lt;a href="../../aai/check-in/">EGI Check-in&lt;/a>.&lt;/li>
 &lt;p>All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 &lt;a href="https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=cvmfs-uploader-users">JISCMAIL&lt;/a>.&lt;/p>
 &lt;h2 id="distributing-new-content">Distributing new content&lt;/h2>
-&lt;p>To log into the service, just use &lt;code>ssh&lt;/code>.
+&lt;p>To login into the service, just use &lt;code>ssh&lt;/code> to log into the Uploader host.
+Its hostname is &lt;code>cvmfs-uploader-egi.gridpp.rl.ac.uk&lt;/code>.
+Also, to maintain backwards compatibility,
+the alias &lt;code>cvmfs-upload01.gridpp.rl.ac.uk&lt;/code> can be used.
 You need to specify explicitly which username you want to use to log in.
 The username is composed as &lt;code>reponame+&amp;quot;sgm&amp;quot;&lt;/code>.
 For example, for the repository &lt;code>dirac.egi.eu&lt;/code>, the username is &lt;code>diracsgm&lt;/code>.&lt;/p>
@@ -293,13 +448,8 @@ yourself using your home institution Identity Management Service.&lt;/p>
 &lt;p>After login, you will find a single directory in the home directory:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ls
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cvmfs_repo
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add to that directory the new content you want to distribute.&lt;/p>
-&lt;p>Files and directories cannot be distributed with CVMFS if they are not
-world-wide readable. You may want to ensure they have the right permissions with
-the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ find . -type d -exec chmod go+rx &lt;span style="color:#ce5c00;font-weight:bold">{}&lt;/span> &lt;span style="color:#4e9a06">\;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ find . -type f -exec chmod go+r &lt;span style="color:#ce5c00;font-weight:bold">{}&lt;/span> &lt;span style="color:#4e9a06">\;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="building-your-software">Building your software&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add the new content you want to distribute into that directory.&lt;/p>
+&lt;h3 id="building-your-software">Building your software&lt;/h3>
 &lt;p>CVMFS is an infrastructure to distribute software world-wide. However, the
 uploader host should not be used for the purposes of building and compiling it
 prior to distribution.&lt;/p>
