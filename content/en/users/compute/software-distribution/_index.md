@@ -54,6 +54,7 @@ The current list of EGI repositories is as follows
 | na62.egi.eu                   |               |
 | neugrid.egi.eu                |               |
 | notebooks.egi.eu              | [web page](https://notebooks.egi.eu) |
+| omnibenchmark.egi.eu          | [web page](https://omnibenchmark.org/) |
 | pheno.egi.eu                  |               |
 | phys-ibergrid.egi.eu          |               |
 | pravda.egi.eu                 |               |
@@ -99,8 +100,8 @@ All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 
 ## Distributing new content
 
-To login into the service, just use `ssh` to log into the Uploader host.
-Its hostname is `cvmfs-uploader-egi.gridpp.rl.ac.uk`.
+To log into the service, just use `ssh`.
+The hostname is `cvmfs-uploader-egi.gridpp.rl.ac.uk`.
 Also, to maintain backwards compatibility,
 the alias `cvmfs-upload01.gridpp.rl.ac.uk` can be used.
 You need to specify explicitly which username you want to use to log in.
