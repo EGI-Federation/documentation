@@ -11,7 +11,8 @@ on:
 
 env:
   # Apply linter fixes configuration
-  # When active, APPLY_FIXES must also be defined as environment variable (in github/workflows/mega-linter.yml or other CI tool)
+  # When active, APPLY_FIXES must also be defined as environment variable
+  # (in github/workflows/mega-linter.yml or other CI tool)
   APPLY_FIXES: all
   APPLY_FIXES_EVENT: pull_request
   # If APPLY_FIXES is used, defines if the fixes are directly committed (commit) or posted in a PR (pull_request)
@@ -49,7 +50,8 @@ jobs:
         env:
           # All available variables are described in documentation
           # https://megalinter.io/configuration/
-          VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }} # Validates all source when push on main, else just the git diff with main. Override with true if you always want to lint all sources
+          # Validates all source when push on main, else just the git diff with main. Override with true if you always want to lint all sources
+          VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # ADD YOUR CUSTOM ENV VARIABLES HERE OR DEFINE THEM IN A FILE .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
           # DISABLE: COPYPASTE,SPELL # Uncomment to disable copy-paste and spell checks
