@@ -351,6 +351,10 @@ software used to process experiment data.&lt;/p>
 &lt;td>&lt;a href="https://notebooks.egi.eu">web page&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>omnibenchmark.egi.eu&lt;/td>
+&lt;td>&lt;a href="https://omnibenchmark.org/">web page&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td>pheno.egi.eu&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
@@ -423,8 +427,8 @@ from &lt;a href="../../aai/check-in/">EGI Check-in&lt;/a>.&lt;/li>
 &lt;p>All VO content managers should join the CVMFS-UPLOADER-USERS mailing list in
 &lt;a href="https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=cvmfs-uploader-users">JISCMAIL&lt;/a>.&lt;/p>
 &lt;h2 id="distributing-new-content">Distributing new content&lt;/h2>
-&lt;p>To login into the service, just use &lt;code>ssh&lt;/code> to log into the Uploader host.
-Its hostname is &lt;code>cvmfs-uploader-egi.gridpp.rl.ac.uk&lt;/code>.
+&lt;p>To log into the service, just use &lt;code>ssh&lt;/code>.
+The hostname is &lt;code>cvmfs-uploader-egi.gridpp.rl.ac.uk&lt;/code>.
 Also, to maintain backwards compatibility,
 the alias &lt;code>cvmfs-upload01.gridpp.rl.ac.uk&lt;/code> can be used.
 You need to specify explicitly which username you want to use to log in.

@@ -180,11 +180,10 @@ operation:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Infrastructure successfully destroyed
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Users: Infrastructure Manager Dashboard</title><link>/users/compute/orchestration/im/dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/orchestration/im/dashboard/</guid><description>
 &lt;p>The &lt;a href="https://im.egi.eu/">IM Dashboard&lt;/a> is a graphical interface for the IM Server
-specially developed for users to access EGI Cloud Compute resources.
-You can access EGI&amp;rsquo;s IM Dashboard at:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://im.egi.eu">https://im.egi.eu&lt;/a>&lt;/li>
-&lt;/ul>
+specially developed for users to access EGI Cloud Compute resources.&lt;/p>
+&lt;blockquote>
+&lt;p>You can access EGI&amp;rsquo;s IM Dashboard at: &lt;a href="https://im.egi.eu">https://im.egi.eu&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;p>Functionalities:&lt;/p>
 &lt;ul>
 &lt;li>OIDC authentication&lt;/li>
