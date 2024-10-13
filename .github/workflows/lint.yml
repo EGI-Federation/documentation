@@ -26,8 +26,6 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdownlint.json
-          # XXX gitleaks is currently not using exception file: #511
-          VALIDATE_GITLEAKS: false
           # Only check changed files
           VALIDATE_ALL_CODEBASE: false
           # Debug super-linter
