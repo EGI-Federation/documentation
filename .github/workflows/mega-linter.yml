@@ -9,6 +9,8 @@ on:
   pull_request:
     branches: [main]
 
+permissions: read-all
+
 env:
   # Apply linter fixes configuration
   # When active, APPLY_FIXES must also be defined as environment variable
