@@ -5,6 +5,8 @@ name: Build documentation
 
 on: [pull_request]
 
+permissions: read-all
+
 jobs:
   build:
     name: Build with Hugo
