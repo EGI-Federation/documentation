@@ -7,6 +7,8 @@ on:
     # run on Sundays morning
     - cron: '32 9 * * 0'
 
+permissions: read-all
+
 jobs:
   markdown-link-check:
     name: Check links using markdown-link-check

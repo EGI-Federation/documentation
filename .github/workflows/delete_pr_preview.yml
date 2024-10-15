@@ -6,6 +6,8 @@ on:
     # Run when label is removed or pull request closed
     types: [unlabeled, closed]
 
+permissions: read-all
+
 jobs:
   delete_preview:
     # Do not run on forks, and only if "safe for preview" label is set
