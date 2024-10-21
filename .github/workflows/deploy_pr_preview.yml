@@ -13,6 +13,8 @@ on:
     workflows: ["Build pull request preview"]
     types: [completed]
 
+permissions: read-all
+
 jobs:
   deploy_pr_preview:
     # Only run if PR preview build was successful
@@ -58,9 +60,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # Purge older files from a given PR
           keep_files: false
-          # Accessible at http://docs.egi.eu/documentation/
-          # XXX use a different domain
-          # cname: docs.egi.eu
           # Branch to push to
           publish_branch: pr_previews
           # Source directory

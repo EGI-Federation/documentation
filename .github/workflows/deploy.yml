@@ -10,6 +10,8 @@ on:
     branches:
       - main
 
+permissions: read-all
+
 jobs:
   deploy:
     name: Build using Hugo and deploy
