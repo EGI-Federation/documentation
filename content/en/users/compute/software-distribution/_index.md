@@ -11,7 +11,7 @@ aliases:
 
 This page documents usage the CernVM-FS (CVMFS) service operated for EGI by UKRI-STFC.
 For information on how to install a client, follow the instruction in the
-[CVMFS official documentation](https://cvmfs.readthedocs.io/en/latest/cpt-configure.html)
+[CVMFS official documentation](https://cvmfs.readthedocs.io/en/latest/cpt-quickstart.html)
 
 ## Overview
 
