@@ -28,8 +28,47 @@ small and large collaborations. In many cases, it replaces package managers and
 shared software areas on cluster file systems as means to distribute the
 software used to process experiment data.
 
-The current list of EGI repositories can be found via
-[the CVMFS monitor](http://cvmfs-release01.gridpp.rl.ac.uk/cvmfsmonitor/).
+The current list of EGI repositories is as follows
+(disclaimer, some of them are inactive, but we keep them for archival purposes):
+
+| Repository                    | Project's URL |
+|-------------------------------|---------------|
+| auger.egi.eu                  |               |
+| biomed.egi.eu                 | [web page](https://vip.creatis.insa-lyon.fr/home.html) |
+| cernatschool.egi.eu           |               |
+| chipster.egi.eu               |               |
+| comet.egi.eu                  |               |
+| config-egi.egi.eu             |               |
+| dirac.egi.eu                  | [web page](https://dirac.readthedocs.io/en/latest/) |
+| eiscat.egi.eu                 | [web page](https://eiscat.se) |
+| eosc.egi.eu                   |               |
+| extras-fp7.egi.eu             |               |
+| galdyn.egi.eu                 |               |
+| ghost.egi.eu                  |               |
+| glast.egi.eu                  |               |
+| gridpp.egi.eu                 |               |
+| hyperk.egi.eu                 |               |
+| intertwin.egi.eu              |               |
+| km3net.egi.eu                 | [web page](https://www.km3net.org/) |
+| ligo.egi.eu                   |               |
+| lucid.egi.eu                  |               |
+| mice.egi.eu                   |               |
+| na62.egi.eu                   |               |
+| neugrid.egi.eu                |               |
+| notebooks.egi.eu              | [web page](https://notebooks.egi.eu) |
+| omnibenchmark.egi.eu          | [web page](https://omnibenchmark.org/) |
+| pheno.egi.eu                  |               |
+| phys-ibergrid.egi.eu          |               |
+| pravda.egi.eu                 |               |
+| researchinschools.egi.eu      |               |
+| seadatanet.egi.eu             |               |
+| snoplus.egi.eu                | [web page](https://snoplus.phy.queensu.ca) |
+| solidexperiment.egi.eu        |               |
+| supernemo.egi.eu              |               |
+| t2k.egi.eu                    |               |
+| unpacked.egi.eu               |               |
+| wenmr.egi.eu                  |               |
+| west-life.egi.eu              |               |
 
 This documentation is for the VO content managers.
 
