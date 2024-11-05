@@ -1,47 +1,56 @@
 ---
-title: Notebooks Training Instance
-title: Training Instance
-weight: 30
+title: Notebooks Quick Start
+weight: 1
 type: docs
 aliases:
   - /users/notebooks/training
 description: >
-  Notebooks for training events
+  Getting started with EGI Notebooks
 ---
 
-EGI provides a training instance of the Notebooks service for training events.
+The Notebooks Service is based on [JupyterHub](https://jupyter.org/hub). It enables
+remote use of [Jupyter Notebooks](https://jupyter.org/) in a managed environment
+integrated with other EGI services. Notebooks main interface uses
+[JupyterLab](https://jupyterlab.readthedocs.io), a highly extensible environment
+for running and authoring computational notebooks.
 
-To get started:
+You can find links below to the upstream documentation of the EGI Notebooks
+components:
 
-1. Go to <https://training.notebooks.egi.eu>.
+- [JupyterLab Documentation](https://jupyterlab.readthedocs.io) for use of the
+  integrated user environment (menus, working tabs, etc.)
+- [JupyterHub Documentation](https://jupyterhub.readthedocs.io/en/latest/) to
+  manage your remote resources (starting and stopping servers, collaborative
+  sharing, etc.)
+- Documentation for your core programming languages:
+  - [Python](https://docs.python.org/)
+  - [Julia](https://docs.julialang.org/)
+  - [R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
+  - [Octave](https://docs.octave.org/latest/)
 
-   {{% alert title="Note" color="warning" %}} This instance may not use the same
-   software version as in production and may not be always available, as it is
-   typically configured only for specific training events. {{% /alert %}}
+## Getting Started
 
-1. Start the authentication process by clicking on **Start your notebooks!**
-   button
+1. Start by [creating an EGI account](../../aai/check-in/signup)
+1. Then enroll
+   [vo.notebooks.egi.eu VO](https://aai.egi.eu/registry/co_petitions/start/coef:111)
+1. Go to [https://notebooks.egi.eu/](https://notebooks.egi.eu/)
+1. Start the authentication process by clicking on **Continue with EGI
+   Check-in!** button
 
-   ![image](training-front.png)
+   ![Notebooks welcome page](notebooks-front.png)
+1. Once logged in, you will prompted to select the [environment](../kernels/),
+   pick the "Default EGI environment"
+1. Click on "Start" to get your JupyterLab instance You will see the Jupyter
+   interface once your personal server is started
 
-1. Select the Identity Provider you belong to from the discovery page. If this
-   is the first time you access an EGI service, Check-in will guide you through
-   a registration process.
-
-   ![Check-in auth](checkin.png)
-
-1. You will see the Jupyter interface once your personal server is started
-
-   ![Classic Jupyter Notebook](classic.png)
+   ![JupyterLab](lab.png)
 
 ## Launching a notebook
 
-Click on the New \> Python 3 option to launch your notebook with Python 3
+Click on the "Python 3 (ipykernel)" option to launch your notebook with Python 3
 kernel. When you create this notebook, a new tab will be presented with a
 notebook named `Untitled.ipynb`. You can easily rename it by right-clicking on
 the current name.
-
-![New notebook](new-classic.png)
 
 ### Structure of a notebook
 
@@ -104,11 +113,10 @@ most common:
   using keyboard shortcuts.
 - `Enter` : Edit mode. In edit mode, you can edit text in cells.
 
-## Hands-on
+## Tutorials
 
-We pre-populate your home directory with some sample notebooks to get started,
-below you can find links to other notebooks that we have used in past trainings
-that may be useful to explore the system:
+You can find links to sample notebooks that we have used in past trainings that
+may be useful to explore the system:
 
 1. [A very basic notebook to get started](https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/00-first-notebook.ipynb)
 2. [Getting data and doing a simple plot](https://github.com/EGI-Federation/training-notebooks-climate-change/blob/master/cckp_historical_temperature.ipynb).
