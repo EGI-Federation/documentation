@@ -30,7 +30,7 @@ components:
 
 ## Getting Started
 
-1. Start by [creating an EGI account](../../aai/check-in/signup)
+1. Start by [creating an EGI account](../../../aai/check-in/signup)
 1. Then enroll
    [vo.notebooks.egi.eu VO](https://aai.egi.eu/registry/co_petitions/start/coef:111)
 1. Go to [https://notebooks.egi.eu/](https://notebooks.egi.eu/)
