@@ -24,6 +24,9 @@
       "pattern": "^https://aai.egi.eu/LoA"
     },
     {
+      "pattern": "^https://aai.egi.eu/proxy*"
+    },
+    {
       "pattern": "^https://.*aai.egi.eu/mp-oa2-server/"
     },
     {
@@ -33,7 +36,7 @@
       "pattern": "^https://argo-mon.*.cro-ngi.hr/nagios"
     },
     {
-      "pattern": "^https://aai.egi.eu/proxy*"
+      "pattern": "^http://cvmfs-release01.gridpp.rl.ac.uk/*"
     },
     {
       "pattern": "^https://goc.egi.eu/portal*"
@@ -61,6 +64,9 @@
     },
     {
       "pattern": "^https://opensource.org/licenses"
+    },
+    {
+      "pattern": "^https://omnibenchmark.org"
     },
     {
       "pattern": "^https://servproject.i3m.upv.es/ec3-ltos/*"
