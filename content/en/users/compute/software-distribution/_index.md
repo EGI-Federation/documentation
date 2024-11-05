@@ -70,6 +70,9 @@ The current list of EGI repositories is as follows
 | wenmr.egi.eu                  |               |
 | west-life.egi.eu              |               |
 
+The list of EGI repositories can also be found online via
+[the CVMFS monitor](http://cvmfs-release01.gridpp.rl.ac.uk/cvmfsmonitor/).
+
 This documentation is for the VO content managers.
 
 ## Official CVMFS pages
