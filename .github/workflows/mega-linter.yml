@@ -60,7 +60,7 @@ jobs:
           DISABLE: COPYPASTE
           DISABLE_LINTERS: REPOSITORY_GRYPE,REPOSITORY_TRIVY,REPOSITORY_TRUFFLEHOG,SPELL_CSPELL
           # Scan only changes in PR, otherwise scan everything
-          REPOSITORY_GITLEAKS_PR_COMMITS_SCAN: ${{ github.event_name == 'pull_request' }}
+          REPOSITORY_GITLEAKS_PR_COMMITS_SCAN: ${{ (github.event_name == 'pull_request' && 'true') || 'false' }}
 
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
