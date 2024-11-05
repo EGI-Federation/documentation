@@ -66,6 +66,9 @@
       "pattern": "^https://opensource.org/licenses"
     },
     {
+      "pattern": "^https://https://omnibenchmark.org"
+    },
+    {
       "pattern": "^https://servproject.i3m.upv.es/ec3-ltos/*"
     },
     {

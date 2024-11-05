@@ -56,7 +56,6 @@ The current list of EGI repositories is as follows
 | na62.egi.eu                   |               |
 | neugrid.egi.eu                |               |
 | notebooks.egi.eu              | [web page](https://notebooks.egi.eu) |
-<!-- markdown-link-check-disable-next-line -->
 | omnibenchmark.egi.eu          | [web page](https://omnibenchmark.org/) |
 | pheno.egi.eu                  |               |
 | phys-ibergrid.egi.eu          |               |
