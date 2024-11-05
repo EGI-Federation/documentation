@@ -8,9 +8,9 @@ description: >
   Getting started with EGI Notebooks
 ---
 
-The Notebooks Service is based on [JupyterHub](https://jupyter.org/hub). It enables
-remote use of [Jupyter Notebooks](https://jupyter.org/) in a managed environment
-integrated with other EGI services. Notebooks main interface uses
+The Notebooks Service is based on [JupyterHub](https://jupyter.org/hub). It
+enables remote use of [Jupyter Notebooks](https://jupyter.org/) in a managed
+environment integrated with other EGI services. Notebooks main interface uses
 [JupyterLab](https://jupyterlab.readthedocs.io), a highly extensible environment
 for running and authoring computational notebooks.
 
@@ -38,6 +38,7 @@ components:
    Check-in!** button
 
    ![Notebooks welcome page](notebooks-front.png)
+
 1. Once logged in, you will prompted to select the [environment](../kernels/),
    pick the "Default EGI environment"
 1. Click on "Start" to get your JupyterLab instance You will see the Jupyter
@@ -119,7 +120,7 @@ You can find links to sample notebooks that we have used in past trainings that
 may be useful to explore the system:
 
 1. [A very basic notebook to get started](https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/00-first-notebook.ipynb)
-2. [Getting data and doing a simple plot](https://github.com/EGI-Federation/training-notebooks-climate-change/blob/master/cckp_historical_temperature.ipynb).
-3. [Connect to NOAA\'s GrADS Data Server to plot wind speed](https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/02-wind-nowcast.ipynb).
-4. [Installing new libraries](https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/03-customizing.ipynb).
-5. [Interact with Check-in](https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/04-check-in.ipynb)
+1. [Getting data and doing a simple plot](https://github.com/EGI-Federation/training-notebooks-climate-change/blob/master/cckp_historical_temperature.ipynb).
+1. [Connect to NOAA\'s GrADS Data Server to plot wind speed](https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/02-wind-nowcast.ipynb).
+1. [Installing new libraries](https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/03-customizing.ipynb).
+1. [Interact with Check-in](https://github.com/EGI-Federation/training-notebooks-di4r-2018/blob/master/04-check-in.ipynb)
