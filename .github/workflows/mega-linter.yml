@@ -6,8 +6,11 @@ name: MegaLinter
 on:
   # Trigger mega-linter at every push. Action will also be visible from Pull Requests to main
   push:
+    branches:
+      - "main"
   pull_request:
-    branches: [main]
+    branches:
+      - "main"
 
 permissions: read-all
 
