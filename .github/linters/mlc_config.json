@@ -39,9 +39,6 @@
       "pattern": "^http://cvmfs-release01.gridpp.rl.ac.uk/*"
     },
     {
-      "pattern": "^https://training.notebooks.egi.eu*"
-    },
-    {
       "pattern": "^https://goc.egi.eu/portal*"
     },
     {
