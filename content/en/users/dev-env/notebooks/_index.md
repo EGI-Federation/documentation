@@ -30,7 +30,7 @@ EGI Notebooks provides the well-known Jupyter interface for notebooks, with the
 following added features:
 
 - Integration with [EGI Check-in](../../aai/check-in/) allows you to login with
-  any EduGAIN or social accounts (e.g. Google, Facebook)
+  any eduGAIN or social accounts (e.g. Google, Facebook)
 - Persistent storage associated with each user is available in the notebooks
   environment
 - Customisable with new notebook environments, expose any existing notebook to
@@ -86,3 +86,13 @@ EGI currently operates community instances for:
   [EOSC-Pillar](https://eosc-pillar.d4science.org/). Check with
   [D4Science support](https://www.d4science.org/contact-us) for more
   information.
+
+### Training instance
+
+EGI can provide a custom and temporary instance of the Notebooks service for
+training events, if you have a specific event where you would like to use EGI
+Notebooks as platform for your training, [let us know](../../../support/).
+
+{{% alert title="Note" color="warning" %}}This instance may not use the same
+software version as in production and may not be always available, as it is
+typically configured only for specific training events. {{% /alert %}}
