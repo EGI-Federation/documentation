@@ -351,6 +351,7 @@ kubernetes
 kubeserver
 labhub
 LCG
+lcg
 lcgnames
 lcgpbs
 ldap
@@ -553,6 +554,7 @@ secmon
 secretkey
 sectigo
 seqnumber
+SEs
 sfn
 sge
 SGs
