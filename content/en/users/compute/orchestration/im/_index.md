@@ -10,7 +10,7 @@ description: >
 
 ## What is it?
 
-[Infrastructure Manager](https://www.grycap.upv.es/im) (IM) is a tool that
+[Infrastructure Manager](https://im.egi.eu/) (IM) is a tool that
 **orchestrates the deployment of custom virtual infrastructures on multiple
 backends**. It streamlines the access and usability of Infrastructure-as-a-Service
 (IaaS) clouds by automating the configuration, deployment, software installation
@@ -24,14 +24,14 @@ a wide variety of backends, either federated (such as
 [Microsoft Azure](https://azure.microsoft.com/)) or on-premises (such as
 [OpenStack](../../../getting-started/openstack)),
 thus making user applications cloud agnostic.
-IM features a [web-based GUI](https://appsgrycap.i3m.upv.es:31443/im-dashboard/),
+IM features a [web-based GUI](https://im.egi.eu/),
 an XML-RPC API, a REST API and a [command-line interface](cli) (CLI).
 It supports
 [OASIS TOSCA Simple Profile in YAML](https://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html).
 
 {{% alert title="Tip" color="info" %}} An easy way to deploy your first VM
 in the EGI Federation is from the
-[Infrastructure Manager dashboard](https://appsgrycap.i3m.upv.es:31443/im-dashboard/).
+[Infrastructure Manager dashboard](https://im.egi.eu/).
 A [tutorial](https://imdocs.readthedocs.io/en/latest/dashboard.html#usage) and
 [demo videos](https://youtube.com/playlist?list=PLgPH186Qwh_37AMhEruhVKZSfoYpHkrUp) are also available.
 {{% /alert %}}

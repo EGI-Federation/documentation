@@ -60,12 +60,12 @@ name: Check Spelling
 on:
   push:
     branches:
-      - "**"
+      - "main"
     tags-ignore:
       - "**"
   pull_request_target:
     branches:
-      - "**"
+      - "main"
     types:
       - "opened"
       - "reopened"
@@ -73,6 +73,8 @@ on:
   issue_comment:
     types:
       - "created"
+
+permissions: read-all
 
 jobs:
   spelling:

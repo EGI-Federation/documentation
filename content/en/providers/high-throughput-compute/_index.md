@@ -32,5 +32,6 @@ Main characteristics of the service:
 Miscellaneous collection of documentation related to High-Throughput Compute.
 
 - [Changing the Site BDII](./changing-site-bdii)
+- [How to configure Site and Top BDII](https://twiki.cern.ch/twiki/bin/view/LCG/BDIIconfigYAIMel9) (external page)
 - [HTCondor-CE Accounting](./htcondor-ce-accounting)
 - [Storage Accounting](./storage-accounting)

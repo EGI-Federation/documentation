@@ -151,6 +151,6 @@ $ openstack server show 0f3e1420-4480-4bea-95f1-9920a70b324d -c properties -f ya
 properties:
   eu.egi.cloud.orchestrator: es.upv.grycap.im
   eu.egi.cloud.orchestrator.id: 0afdc7ba-bf5d-11ed-9e89-86ce117c3fcf
-  eu.egi.cloud.orchestrator.url: https://appsgrycap.i3m.upv.es:31443/im
+  eu.egi.cloud.orchestrator.url: https://im.egi.eu/im
   eu.egi.cloud.orchestrator.user: __OPENID__XXXXXXredacted
 ```

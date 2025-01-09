@@ -66,7 +66,7 @@ While it's not mandatory, a convenient way to manage the OIDC token is to use
 > line.
 
 Install `oidc-agent` according to
-[official documentation](https://indigo-dc.gitbook.io/oidc-agent/installation),
+[official documentation](https://indigo-dc.gitbook.io/oidc-agent/intro),
 once `oidc-agent` is installed it can be used to retrieve an OIDC access token
 from EGI Check-in.
 

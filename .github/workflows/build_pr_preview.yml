@@ -8,6 +8,8 @@ on:
     # Run when label is added or present and when pushing to the PR
     types: [labeled, opened, synchronize]
 
+permissions: read-all
+
 jobs:
   build_preview:
     # Do not run on forks, and only if "safe for preview" label is set

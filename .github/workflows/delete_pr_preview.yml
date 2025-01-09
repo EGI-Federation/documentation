@@ -6,6 +6,8 @@ on:
     # Run when label is removed or pull request closed
     types: [unlabeled, closed]
 
+permissions: read-all
+
 jobs:
   delete_preview:
     # Do not run on forks, and only if "safe for preview" label is set
@@ -14,7 +16,9 @@ jobs:
       ((github.event.action == 'unlabeled' && github.event.label.name == 'safe
       for preview') || (github.event.action == 'closed' &&
       contains(github.event.pull_request.labels.*.name, 'safe for preview')))
-    name: Build with Hugo
+    name: Delete PR preview when a PR is closed or label removed
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
