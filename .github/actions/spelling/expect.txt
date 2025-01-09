@@ -1,5 +1,7 @@
+ADFS
 allowfullscreen
 autoplay
+checkin
 creds
 csr
 CVMFS
