@@ -8,8 +8,7 @@ on:
     # Run when label is added or present and when pushing to the PR
     types: [labeled, opened, synchronize]
 
-permissions:
-  contents: write
+permissions: read-all
 
 jobs:
   build_preview:
