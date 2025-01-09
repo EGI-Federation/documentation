@@ -13,7 +13,9 @@ on:
     workflows: ["Build pull request preview"]
     types: [completed]
 
-permissions: read-all
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   deploy_pr_preview:
