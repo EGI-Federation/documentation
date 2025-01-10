@@ -1,4 +1,122 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – High Throughput Compute</title><link>/users/compute/high-throughput-compute/</link><description>Recent content in High Throughput Compute on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Querying the Information System</title><link>/users/compute/high-throughput-compute/querying-information-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/high-throughput-compute/querying-information-system/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation – High Throughput Compute</title><link>/users/compute/high-throughput-compute/</link><description>Recent content in High Throughput Compute on Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="/users/compute/high-throughput-compute/index.xml" rel="self" type="application/rss+xml"/><item><title>Users: Grid Storage</title><link>/users/compute/high-throughput-compute/grid-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/high-throughput-compute/grid-storage/</guid><description>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>Grid storage enables &lt;strong>storage of files in a fault-tolerant and scalable
+environment&lt;/strong>, and sharing it with distributed teams. Your data can be accessed
+through multiple protocols, and can be replicated across different providers to
+increase fault-tolerance. Grid storage gives you complete control over what data
+you share, and with whom you share the data.&lt;/p>
+&lt;p>The main features of grid storage:&lt;/p>
+&lt;ul>
+&lt;li>Access highly-scalable storage from anywhere&lt;/li>
+&lt;li>Control the data you share&lt;/li>
+&lt;li>Organise your data using a flexible, hierarchical structure&lt;/li>
+&lt;/ul>
+&lt;p>Grid storage file access is based on the
+&lt;a href="https://en.wikipedia.org/wiki/GridFTP">gridFTP&lt;/a> and
+&lt;a href="https://en.wikipedia.org/wiki/WebDAV">WebDav/HTTP&lt;/a> protocols, together with
+&lt;a href="https://xrootd.slac.stanford.edu/">XRootD&lt;/a> and legacy
+&lt;a href="https://www.gridpp.ac.uk/wiki/SRM">SRM&lt;/a> (under deprecation at some of the
+endpoints).&lt;/p>
+&lt;p>Several grid storage implementations are available in the EGI Infrastructure,
+the most common being:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.dcache.org/">dCache&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://twiki.cern.ch/twiki/bin/view/DPM/">DPM&lt;/a> (N.B. under decommissioning)&lt;/li>
+&lt;li>&lt;a href="https://italiangrid.github.io/storm/">StoRM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://eos-web.web.cern.ch/eos-web/">EOS&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="endpoint-discovery">Endpoint discovery&lt;/h2>
+&lt;p>The grid storage endpoints that are available to a user&amp;rsquo;s Virtual Organizations
+are discoverable via the EGI Information System (BDII).&lt;/p>
+&lt;!-- markdownlint-disable commands-show-output no-inline-html -->
+&lt;!-- TODO Add details about how to setup lcg-infosites CLI -->
+&lt;!-- markdownlint-enable no-inline-html -->
+&lt;p>The &lt;code>lcg-infosites&lt;/code> command can be used to obtain VO-specific information on
+existing grid storages, using the following syntax:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ lcg-infosites --vo voname -&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>v&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> -f &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>site name&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>option&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>s&lt;span style="color:#ce5c00;font-weight:bold">)]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#000;font-weight:bold">|&lt;/span> --help&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>--is BDII&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For example, to list the Storage Elements (SEs) available to the &lt;code>biomed&lt;/code> VO, we
+could issue the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ lcg-infosites --vo biomed se
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Avail Space&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>kB&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> Used Space&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>kB&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> Type SE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>------------------------------------------
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">280375465082&lt;/span> n.a SRM ccsrm.ihep.ac.cn
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0000cf;font-weight:bold">10995116266&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">11&lt;/span> SRM cirigridse01.univ-bpclermont.fr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-from-the-command-line">Access from the command-line&lt;/h2>
+&lt;p>Access to grid storage via a command-line interface (CLI) requires users to
+obtain a valid X.509 user VOMS proxy. Please refer to the
+&lt;a href="../../../aai/check-in/vos/voms">Check-in&lt;/a> documentation for more information.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Integration via
+&lt;a href="https://openid.net/connect">OpenID Connect&lt;/a> to the
+&lt;a href="../../../aai/check-in">EGI Check-in service&lt;/a> is under piloting at some of the
+endpoints of the EGI Cloud infrastructure , but it has not yet reached the
+production stage.
+&lt;/div>
+&lt;p>The CLI widely used to access grid-storage is
+&lt;a href="https://dmc-docs.web.cern.ch/dmc-docs/gfal2/gfal2.html">gfal2&lt;/a>, which is
+available for installation both on RHEL and Debian compatible systems.&lt;/p>
+&lt;p>In particular, &lt;code>gfal2&lt;/code> provides an abstraction layer on top of several storage
+protocols (XRootD, WebDAV, SRM, gsiftp, etc), offering a convenient API that can
+be used over different protocols.&lt;/p>
+&lt;p>The &lt;code>gfal2&lt;/code> CLI can be installed as follows (for RHEL compatible systems):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ yum install gfal2-util gfal2-all
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where &lt;code>gfal2-all&lt;/code> will install all the plug-ins (to deal with all the available
+protocols).&lt;/p>
+&lt;p>Below you can find examples of the usual commands needed to access storage via
+&lt;code>gfal2&lt;/code>. For a complete list of available commands, and the guide on how to use
+them, please refer to the
+&lt;a href="https://dmc-docs.web.cern.ch/dmc-docs/gfal2-util.html">gfal2-util documentation&lt;/a>.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+In the examples below, the used &lt;code>gsiftp&lt;/code>
+protocol can be replaced by any other supported protocol.
+&lt;/div>
+&lt;h3 id="list-files-on-a-given-endpoint">List files on a given endpoint&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gfal-ls gsiftp://dcache-door-doma01.desy.de/dteam
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1G.header-1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>domatest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gb
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SSE-demo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">test&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tpctest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="create-a-folder">Create a folder&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gfal-mkdir gsiftp://dcache-door-doma01.desy.de/dteam/test
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- markdownlint-enable commands-show-output -->
+&lt;h3 id="copy-a-local-file">Copy a local file&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gfal-copy test.json gsiftp://dcache-door-doma01.desy.de/dteam/test
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Copying file:///root/Documents/test.json &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DONE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> after 0s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="copy-files-between-storages">Copy files between storages&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gfal-copy gsiftp://prometheus.desy.de/VOs/dteam/public-file gsiftp://dcache-door-doma01.desy.de/dteam/test
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Copying gsiftp://prometheus.desy.de/VOs/dteam/public-file &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DONE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> after 3s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="download-a-file-to-a-local-folder">Download a file to a local folder&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gfal-copy gsiftp://prometheus.desy.de/VOs/dteam/public-file /tmp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Copying gsiftp://prometheus.desy.de/VOs/dteam/public-file &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>DONE&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> after 0s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="delete-a-file">Delete a file&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gfal-rm gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gsiftp://dcache-door-doma01.desy.de/dteam/test/public-file DELETED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="access-via-egi-data-transfer">Access via EGI Data Transfer&lt;/h2>
+&lt;!-- markdown-link-check-disable -->
+&lt;p>The &lt;a href="../../../data/management/data-transfer">EGI Data Transfer&lt;/a> service provides
+mechanisms to optimize the transfer of files between EGI Online Storage
+endpoints. Both a
+&lt;a href="../../../data/management/data-transfer/webfts">graphical user interface&lt;/a> (GUI)
+and &lt;a href="../../../data/management/data-transfer/clients">command-line interfaces&lt;/a>
+(CLI) are available to perform bulk movement of data. Please check out the
+related documentation for more information.&lt;/p>
+&lt;!-- markdown-link-check-enable -->
+&lt;h2 id="integration-with-data-management-frameworks">Integration with Data Management frameworks&lt;/h2>
+&lt;p>Grid storage access, most of the time, is hidden from users by the integration
+with the Data Management Frameworks (DMFs) used by Collaborations and
+Experiments.&lt;/p>
+&lt;p>For example,
+&lt;a href="../../../compute/orchestration/workload-manager">EGI Workload Manager&lt;/a> provides
+a way to efficiently access grid storage endpoints in order to read/store files,
+and to catalogue the existing file and related metadata.&lt;/p>
+&lt;p>When running computation via the EGI Workload Manager, users do not actually
+access the storage directly. However, users can retrieve the output of the
+computation once it has been stored on the grid.&lt;/p></description></item><item><title>Users: Querying the Information System</title><link>/users/compute/high-throughput-compute/querying-information-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/compute/high-throughput-compute/querying-information-system/</guid><description>
 &lt;h2 id="about-the-information-system">About the information system&lt;/h2>
 &lt;p>Information about resources is documented according to the
 &lt;a href="https://gridinfo-documentation.readthedocs.io/en/latest/glue.html">GLUE Schema&lt;/a>.&lt;/p>
