@@ -37,3 +37,5 @@ unconfigured
 Unregistering
 workflows
 yyy
+COMMITMSG
+EDITMSG
