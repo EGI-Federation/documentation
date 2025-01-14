@@ -56,6 +56,8 @@ jobs:
 
       - name: Build and minify using Hugo
         run: hugo --minify
+        env:
+          HUGO_ENV: production
 
       - name: Generate token for pushing content
         uses: tibdex/github-app-token@v2
