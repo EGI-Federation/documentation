@@ -2,21 +2,30 @@
 name: Delete pull request preview
 
 on:
-  pull_request:
-    # Run when label is removed or pull request closed
-    types: [unlabeled, closed]
+  # XXX: Use pull_request_target to delete previews of PRs from fork
+  # It grants write access using the GITHUB_TOKEN, but it is safe as:
+  # - No code from the PR is built or executed
+  # - The worklfow file in use is the one from the base branch (main)
+  pull_request_target:
+    # Run for PR against main when label is removed or pull request closed
+    types:
+      - unlabeled
+      - closed
+    branches:
+      - main
 
 permissions: read-all
 
 jobs:
   delete_preview:
-    # Do not run on forks, and only if "safe for preview" label is set
+    # XXX: Do not run at forks, and only if "safe for preview" label is set
     if: >
       github.repository == 'EGI-Federation/documentation' &&
       ((github.event.action == 'unlabeled' && github.event.label.name == 'safe
       for preview') || (github.event.action == 'closed' &&
       contains(github.event.pull_request.labels.*.name, 'safe for preview')))
     name: Delete PR preview when a PR is closed or label removed
+    # Ensure GITHUB_TOKEN can be usd to write to the repository content
     permissions:
       contents: write
     runs-on: ubuntu-latest
