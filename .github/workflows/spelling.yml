@@ -58,11 +58,6 @@ name: Check Spelling
 #     ... otherwise adjust the `with:` as you wish
 
 on:
-  push:
-    branches:
-      - "main"
-    tags-ignore:
-      - "**"
   pull_request_target:
     branches:
       - "main"
@@ -114,6 +109,7 @@ jobs:
             github.repository)) && 1 }}
           extra_dictionary_limit: 20
           extra_dictionaries: cspell:software-terms/dict/softwareTerms.txt
+          warnings: no-files-to-check
 
   comment-push:
     name: Report (Push)
