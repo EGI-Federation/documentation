@@ -4,10 +4,7 @@
 name: MegaLinter
 
 on:
-  # Trigger mega-linter at every push. Action will also be visible from Pull Requests to main
-  push:
-    branches:
-      - "main"
+  # Trigger mega-linter only on PR against main branch
   pull_request:
     branches:
       - "main"
