@@ -2,7 +2,7 @@
 title: Frequently Asked Questions
 linkTitle: FAQ
 type: docs
-weight: 40
+weight: 60
 aliases:
   - /users/check-in/faq
 description: >
