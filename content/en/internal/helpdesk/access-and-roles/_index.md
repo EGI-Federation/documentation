@@ -15,6 +15,6 @@ a role with minimal privileges by default: in such a situation you can only
 create user tickets and can't access tickets created by other users.
 
 In order to create your first ticket, please use the green "+" button in the
-lower left part of your window.
+lower left part of your screen.
 
 ![Create ticket button](create-ticket.png)
