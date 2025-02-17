@@ -75,10 +75,10 @@ users.
 - GGUS Expert
   - Advanced supporters who can submit tickets to the Third Level and Product
   Teams.
-- <vo>
+- VO
   - Indicator of Membership in the Virtual Organization (VO).
   - Enables VO specific features such as overviews and ticket areas. 
-- <vo>_team
+- VO_team
   - Permissions:
     - Ability to submit **Team tickets** on behalf of a VO.
   - Use Case: Users representing teams and submitting team-related tickets.
@@ -98,5 +98,12 @@ users.
   - Use Case: EGI and WLCG Operations to conduct middleware related campaigns.
 - Mini-Admins
   - Permissions: 
-    - Ability to grant particular roles .e.g <vo> role to other users 
+    - Ability to grant particular roles .e.g VO role to other users 
   - Use Case: Management of VO users in the helpdesk
+
+## Contact
+
+If you have any issues with roles or general questions regarding the helpdesk,
+please submit a ticket to the group "Second Level › Services › EGI Services and
+Service Components › Helpdesk (GGUS)" (start typing "ggus" in the group field
+for quick access).
