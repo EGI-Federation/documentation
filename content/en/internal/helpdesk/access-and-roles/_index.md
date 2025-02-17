@@ -18,3 +18,23 @@ In order to create your first ticket, please use the green "+" button in the
 lower left part of your screen.
 
 ![Create ticket button](create-ticket.png)
+
+## Roles management
+
+Roles in GGUS define the permissions and capabilities each user has when
+interacting with tickets. Proper role assignment ensures that users have
+access to the appropriate tools and information they need for their specific
+tasks.
+
+**Note: Currently the roles are managed within GGUS; we are planning to move
+the roles management to EGI Check-in.**
+
+### How to check your roles
+
+You can check your assigned role by following these steps (not available for
+users with the default role):
+
+1. Click on your User Logo in the lower left corner of the screen.
+2. Navigate to Profile and select Roles.
+
+![Check your roles](owned-roles.png)
