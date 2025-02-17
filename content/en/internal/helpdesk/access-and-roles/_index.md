@@ -19,6 +19,14 @@ lower left part of your screen.
 
 ![Create ticket button](create-ticket.png)
 
+### Access to the previous EGI Helpdesk
+
+The [previous EGI Helpdesk](https://ggus.eu/) is still available in read-only
+mode for hystorical reasons: users can access to the tickets that were closed
+before the migration to the new helpdesk.
+Either an X509 personal certificate or a federated identity are required for
+the access.
+
 ## Roles management
 
 Roles in GGUS define the permissions and capabilities each user has when
@@ -89,7 +97,7 @@ users.
   - Use Case: Users who are involved in the First Level Support activity.
 - Alarm
   - Permissions:
-    - Ability to create **[Alarm tickets](../features/alarms-tickets/)**.
+    - Ability to create **[Alarm tickets](../features/alarm-tickets/)**.
   - Use Case: Users who need to notify WLCG Tier-0 and Tier-1 administrators
   about serious problems of the site at any time, independent from usual office
   hours.
