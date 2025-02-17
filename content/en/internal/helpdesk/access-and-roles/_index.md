@@ -64,3 +64,39 @@ users with the default role):
   - Supporters who manage and update tickets throughout the system.
   - Permissions:
     - Full read and write access to all tickets.
+
+### Roles with Specific Capabilities
+
+These roles provide additional capabilities beyond the standard roles and are
+assigned based on specific needs. The prerequisite for obtaning any of these
+roles is having at least the Common role, which is usually sufficient for most
+users. 
+
+- GGUS Expert
+  - Advanced supporters who can submit tickets to the Third Level and Product
+  Teams.
+- <vo>
+  - Indicator of Membership in the Virtual Organization (VO).
+  - Enables VO specific features such as overviews and ticket areas. 
+- <vo>_team
+  - Permissions:
+    - Ability to submit **Team tickets** on behalf of a VO.
+  - Use Case: Users representing teams and submitting team-related tickets.
+- TPM (Ticket Process Manager)
+  - Permissions:
+    - Additional section in the Overview showing tickets submitted to the TPM.
+  - Use Case: Users who are involved in the First Level Support activity.
+- Alarm
+  - Permissions:
+    - Ability to create **Alarm tickets**.
+  - Use Case: Users who need to notify WLCG Tier-0 and Tier-1 administrators
+  about serious problems of the site at any time, independent from usual office
+  hours.
+- Multisites
+  - Permissions:
+    - Ability to create tickets to many sites in one go.
+  - Use Case: EGI and WLCG Operations to conduct middleware related campaigns.
+- Mini-Admins
+  - Permissions: 
+    - Ability to grant particular roles .e.g <vo> role to other users 
+  - Use Case: Management of VO users in the helpdesk
