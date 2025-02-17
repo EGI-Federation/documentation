@@ -7,7 +7,7 @@ description: "Registration and roles management"
 
 ## Access the EGI Helpdesk service
 
-Users can access the [EGI Helpdesk service GGUS](https://helpdesk.egi.eu/) 
+Users can access the [EGI Helpdesk service GGUS](https://helpdesk.egi.eu/)
 with an existing institutional/social account through EGI Check-in.
 
 When you access the service for the first time, you are automatically assigned
@@ -52,22 +52,22 @@ users with the default role):
 ### Standard Roles
 
 - User
-  - Default role assigned upon registration. 
+  - Default role assigned upon registration.
   - Permissions:
     - Basic ticket submission interface (only group and site fields are
-	available).
-    - Ticket submission only to TPM and NGIs. 
+    available).
+    - Ticket submission only to TPM and NGIs.
     - Visibility of only your own tickets.
 - GGUS User
   - Users who need read-only access to others' tickets, but with limited editing
   rights.
   - Permissions:
     - Enhanced ticket submission interface (category, ticket area, priority,
-	affected vo, notified groups).
-    - Ticket submission to TPM, NGIs, Second Level and Other Infrastructures. 
+    affected vo, notified groups).
+    - Ticket submission to TPM, NGIs, Second Level and Other Infrastructures.
     - Read-only access to all tickets.
     - (in development) Limited access to personal information such as names and
-	email addresses. 
+  email addresses.
 - Common
   - Supporters who manage and update tickets throughout the system.
   - Permissions:
@@ -78,14 +78,14 @@ users with the default role):
 These roles provide additional capabilities beyond the standard roles and are
 assigned based on specific needs. The prerequisite for obtaining any of these
 roles is having at least the Common role, which is usually sufficient for most
-users. 
+users.
 
 - GGUS Expert
   - Advanced supporters who can submit tickets to the Third Level and Product
   Teams.
 - VO
   - Indicator of Membership in the Virtual Organization (VO).
-  - Enables VO specific features such as overviews and ticket areas. 
+  - Enables VO specific features such as overviews and ticket areas.
 - VO_team
   - Permissions:
     - Ability to submit **[Team tickets](../features/team-tickets/)**
@@ -106,8 +106,8 @@ users.
     - Ability to create tickets to many sites in one go.
   - Use Case: EGI and WLCG Operations to conduct middleware related campaigns.
 - Mini-Admins
-  - Permissions: 
-    - Ability to grant particular roles .e.g VO role to other users 
+  - Permissions:
+    - Ability to grant particular roles .e.g VO role to other users
   - Use Case: Management of VO users in the helpdesk
 
 ## Contact
