@@ -22,7 +22,7 @@ lower left part of your screen.
 ### Access to the previous EGI Helpdesk
 
 The [previous EGI Helpdesk](https://ggus.eu/) is still available in read-only
-mode for hystorical reasons: users can access to the tickets that were closed
+mode for historical reasons: users can access to the tickets that were closed
 before the migration to the new helpdesk.
 Either an X509 personal certificate or a federated identity are required for
 the access.
@@ -59,7 +59,7 @@ users with the default role):
     - Ticket submission only to TPM and NGIs. 
     - Visibility of only your own tickets.
 - GGUS User
-  - Users who need read-only acces to others' tickets, but with limited editing
+  - Users who need read-only access to others' tickets, but with limited editing
   rights.
   - Permissions:
     - Enhanced ticket submission interface (category, ticket area, priority,
@@ -76,7 +76,7 @@ users with the default role):
 ### Roles with Specific Capabilities
 
 These roles provide additional capabilities beyond the standard roles and are
-assigned based on specific needs. The prerequisite for obtaning any of these
+assigned based on specific needs. The prerequisite for obtaining any of these
 roles is having at least the Common role, which is usually sufficient for most
 users. 
 
@@ -91,7 +91,7 @@ users.
     - Ability to submit **[Team tickets](../features/team-tickets/)**
     on behalf of a VO.
   - Use Case: Users representing teams and submitting team-related tickets.
-- TPM (Ticket Process Manager)
+- TPM ([Ticket Process Manager](https://confluence.egi.eu/x/F4a_Bw))
   - Permissions:
     - Additional section in the Overview showing tickets submitted to the TPM.
   - Use Case: Users who are involved in the First Level Support activity.
