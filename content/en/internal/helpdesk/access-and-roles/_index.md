@@ -38,3 +38,29 @@ users with the default role):
 2. Navigate to Profile and select Roles.
 
 ![Check your roles](owned-roles.png)
+
+## Role Hierarchy and Capabilities
+
+### Standard Roles
+
+- User
+  - Default role assigned upon registration. 
+  - Permissions:
+    - Basic ticket submission interface (only group and site fields are
+	available).
+    - Ticket submission only to TPM and NGIs. 
+    - Visibility of only your own tickets.
+- GGUS User
+  - Users who need read-only acces to others' tickets, but with limited editing
+  rights.
+  - Permissions:
+    - Enhanced ticket submission interface (category, ticket area, priority,
+	affected vo, notified groups).
+    - Ticket submission to TPM, NGIs, Second Level and Other Infrastructures. 
+    - Read-only access to all tickets.
+    - (in development) Limited access to personal information such as names and
+	email addresses. 
+- Common
+  - Supporters who manage and update tickets throughout the system.
+  - Permissions:
+    - Full read and write access to all tickets.
