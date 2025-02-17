@@ -80,7 +80,8 @@ users.
   - Enables VO specific features such as overviews and ticket areas. 
 - VO_team
   - Permissions:
-    - Ability to submit **Team tickets** on behalf of a VO.
+    - Ability to submit **[Team tickets](../features/team-tickets/)**
+    on behalf of a VO.
   - Use Case: Users representing teams and submitting team-related tickets.
 - TPM (Ticket Process Manager)
   - Permissions:
@@ -88,7 +89,7 @@ users.
   - Use Case: Users who are involved in the First Level Support activity.
 - Alarm
   - Permissions:
-    - Ability to create **Alarm tickets**.
+    - Ability to create **[Alarm tickets](../features/alarms-tickets/)**.
   - Use Case: Users who need to notify WLCG Tier-0 and Tier-1 administrators
   about serious problems of the site at any time, independent from usual office
   hours.
