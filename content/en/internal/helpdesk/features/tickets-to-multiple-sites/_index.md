@@ -1,24 +1,26 @@
 ---
-title: "'Notify Site' field and tickets to multiple sites"
+title: "'SITES' field and tickets to multiple sites"
 type: docs
 weight: 40
 description: >
   Selecting a Resource Centre as recipient and submitting tickets to multiple RCs
 ---
 
-## Notify Site field
+## SITES field
 
-- The list of sites included in the drop-down menu of the "Notify site" field is
-  taken from GOCDB (EGI sites) and from OIM DB (OSG sites).
-  - Sites registered in OIM are only visible if they have status "enabled".
-  - Sites registered in GOC DB are only visible if they have status "certified".
-  - Sites in other states (e.g. "suspended") are not visible in the "Notify
-    sites" drop-down list.
+- The list of sites included in the drop-down menu of the "SITES" field is taken
+  from GOCDB (EGI sites) and from OIM DB (OSG sites).
+  - Sites registered in OIM are only visible if they have certification status
+  "enabled".
+  - Sites registered in GOC DB are only visible if they have certification status
+  "certified".
+  - Sites in other statuses (e.g. "suspended") are not visible in the "SITES"
+  drop-down list.
 - the sites information is synchronized once per night.
-- In case a site's status changes, the site disappears from the "Notify sites"
-  drop-down list. Existing GGUS tickets related to this site get the "Notify
-  sites" field flushed. The NGI to which the site belongs inherits the ticket
-  from the site and is in charge of further processing this ticket.
+- In case a site's status changes, the site disappears from the "SITES"
+  drop-down list. Existing GGUS tickets related to this site get the "SITES"
+  field flushed. The NGI to which the site belongs inherits the ticket from the
+  site and is in charge of further processing this ticket.
 
 ## Notify multiple sites option
 
