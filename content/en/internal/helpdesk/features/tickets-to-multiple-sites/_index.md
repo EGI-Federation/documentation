@@ -62,7 +62,7 @@ At this point, a notification email for each submitted ticket is sent to the
 submitter (to be changed in the future to a single email containing all the
 created tickets in order to reduce the spam to the submitter). At the same
 time, all the selected sites in the list are notified and the tickets are
-assiged to the parent NGIs.
+assigned to the parent NGIs.
 
 The list of submitted tickets is available through the link "Search related
 tickets":
