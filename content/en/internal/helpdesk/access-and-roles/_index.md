@@ -51,14 +51,14 @@ users with the default role):
 
 ### Standard Roles
 
-- User
+- **User**
   - Default role assigned upon registration.
   - Permissions:
     - Basic ticket submission interface (only group and site fields are
     available).
     - Ticket submission only to TPM and NGIs.
     - Visibility of only your own tickets.
-- GGUS User
+- **GGUS User**
   - Users who need read-only access to others' tickets, but with limited editing
   rights.
   - Permissions:
@@ -68,7 +68,7 @@ users with the default role):
     - Read-only access to all tickets.
     - (in development) Limited access to personal information such as names and
   email addresses.
-- Common
+- **Common**
   - Supporters who manage and update tickets throughout the system.
   - Permissions:
     - Full read and write access to all tickets.
@@ -80,32 +80,32 @@ assigned based on specific needs. The prerequisite for obtaining any of these
 roles is having at least the Common role, which is usually sufficient for most
 users.
 
-- GGUS Expert
+- **GGUS Expert**
   - Advanced supporters who can submit tickets to the Third Level and Product
   Teams.
-- VO
+- **VO**
   - Indicator of Membership in the Virtual Organization (VO).
   - Enables VO specific features such as overviews and ticket areas.
-- VO_team
+- **VO_team**
   - Permissions:
     - Ability to submit **[Team tickets](../features/team-tickets/)**
     on behalf of a VO.
   - Use Case: Users representing teams and submitting team-related tickets.
-- TPM ([Ticket Process Manager](https://confluence.egi.eu/x/F4a_Bw))
+- **TPM ([Ticket Process Manager](https://confluence.egi.eu/x/F4a_Bw))**
   - Permissions:
     - Additional section in the Overview showing tickets submitted to the TPM.
   - Use Case: Users who are involved in the First Level Support activity.
-- Alarm
+- **Alarm**
   - Permissions:
     - Ability to create **[Alarm tickets](../features/alarm-tickets/)**.
   - Use Case: Users who need to notify WLCG Tier-0 and Tier-1 administrators
   about serious problems of the site at any time, independent from usual office
   hours.
-- Multisites
+- **Multisites**
   - Permissions:
     - Ability to create tickets to many sites in one go.
   - Use Case: EGI and WLCG Operations to conduct middleware related campaigns.
-- Mini-Admins
+- **Mini-Admins**
   - Permissions:
     - Ability to grant particular roles, e.g. VO role to other users
   - Use Case: Management of VO users in the helpdesk
