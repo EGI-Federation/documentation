@@ -107,7 +107,7 @@ users.
   - Use Case: EGI and WLCG Operations to conduct middleware related campaigns.
 - Mini-Admins
   - Permissions:
-    - Ability to grant particular roles .e.g VO role to other users
+    - Ability to grant particular roles, e.g. VO role to other users
   - Use Case: Management of VO users in the helpdesk
 
 ## Contact
