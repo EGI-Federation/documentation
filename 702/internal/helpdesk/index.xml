@@ -97,7 +97,7 @@ users with the default role):&lt;/p>
 &lt;h2 id="role-hierarchy-and-capabilities">Role Hierarchy and Capabilities&lt;/h2>
 &lt;h3 id="standard-roles">Standard Roles&lt;/h3>
 &lt;ul>
-&lt;li>User
+&lt;li>&lt;strong>User&lt;/strong>
 &lt;ul>
 &lt;li>Default role assigned upon registration.&lt;/li>
 &lt;li>Permissions:
@@ -110,7 +110,7 @@ available).&lt;/li>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>GGUS User
+&lt;li>&lt;strong>GGUS User&lt;/strong>
 &lt;ul>
 &lt;li>Users who need read-only access to others&amp;rsquo; tickets, but with limited editing
 rights.&lt;/li>
@@ -126,7 +126,7 @@ email addresses.&lt;/li>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Common
+&lt;li>&lt;strong>Common&lt;/strong>
 &lt;ul>
 &lt;li>Supporters who manage and update tickets throughout the system.&lt;/li>
 &lt;li>Permissions:
@@ -143,19 +143,19 @@ assigned based on specific needs. The prerequisite for obtaining any of these
 roles is having at least the Common role, which is usually sufficient for most
 users.&lt;/p>
 &lt;ul>
-&lt;li>GGUS Expert
+&lt;li>&lt;strong>GGUS Expert&lt;/strong>
 &lt;ul>
 &lt;li>Advanced supporters who can submit tickets to the Third Level and Product
 Teams.&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>VO
+&lt;li>&lt;strong>VO&lt;/strong>
 &lt;ul>
 &lt;li>Indicator of Membership in the Virtual Organization (VO).&lt;/li>
 &lt;li>Enables VO specific features such as overviews and ticket areas.&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>VO_team
+&lt;li>&lt;strong>VO_team&lt;/strong>
 &lt;ul>
 &lt;li>Permissions:
 &lt;ul>
@@ -166,7 +166,7 @@ on behalf of a VO.&lt;/li>
 &lt;li>Use Case: Users representing teams and submitting team-related tickets.&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>TPM (&lt;a href="https://confluence.egi.eu/x/F4a_Bw">Ticket Process Manager&lt;/a>)
+&lt;li>&lt;strong>TPM (&lt;a href="https://confluence.egi.eu/x/F4a_Bw">Ticket Process Manager&lt;/a>)&lt;/strong>
 &lt;ul>
 &lt;li>Permissions:
 &lt;ul>
@@ -176,7 +176,7 @@ on behalf of a VO.&lt;/li>
 &lt;li>Use Case: Users who are involved in the First Level Support activity.&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Alarm
+&lt;li>&lt;strong>Alarm&lt;/strong>
 &lt;ul>
 &lt;li>Permissions:
 &lt;ul>
@@ -188,7 +188,7 @@ about serious problems of the site at any time, independent from usual office
 hours.&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Multisites
+&lt;li>&lt;strong>Multisites&lt;/strong>
 &lt;ul>
 &lt;li>Permissions:
 &lt;ul>
@@ -198,7 +198,7 @@ hours.&lt;/li>
 &lt;li>Use Case: EGI and WLCG Operations to conduct middleware related campaigns.&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Mini-Admins
+&lt;li>&lt;strong>Mini-Admins&lt;/strong>
 &lt;ul>
 &lt;li>Permissions:
 &lt;ul>
