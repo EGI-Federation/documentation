@@ -396,6 +396,7 @@ MQS
 multiattach
 multidisk
 Multisite
+Multisites
 mycluster
 myemail
 myenv
