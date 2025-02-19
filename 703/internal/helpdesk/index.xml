@@ -63,98 +63,157 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item><item><title>Internal: Account and privileges</title><link>/internal/helpdesk/account-and-privileges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/account-and-privileges/</guid><description>
-&lt;h2 id="managing-ggus-account-data">Managing GGUS account data&lt;/h2>
-&lt;p>GGUS users should be able to manage their GGUS account data by themselves.&lt;/p>
-&lt;p>Information about registration and account management is collected on
-&lt;a href="https://ggus.eu/?mode=register_info">GGUS registration page&lt;/a> and could be
-reached by clicking the &amp;ldquo;Registration&amp;rdquo; link on top of
-&lt;a href="https://ggus.eu/">GGUS home page&lt;/a>.&lt;/p>
-&lt;p>For managing the GGUS account data the user has to click the link “Check your
-GGUS account” at the bottom of this page.&lt;/p>
-&lt;h2 id="updating-the-personal-certificate-information">Updating the personal certificate information&lt;/h2>
-&lt;p>Users should update their certificate information before their old certificate
-expires. They can navigate to the
-&lt;a href="https://ggus.eu/?mode=register_info">registration page&lt;/a>, click the link &amp;ldquo;Check
-your GGUS account&amp;rdquo; and update their data. Modifying the DN field will result in
-an additional DN field: the old DN will be kept and the new DN will be added.
-Subsequently, the user is identified with the two DNs. If the old DN is no more
-valid please just clear the DN field and save the change. Once the old
-certificate has expired before updating the account data, users can request an
-update via GGUS ticket against Helpdesk(GGUS) support unit.&lt;/p>
-&lt;h2 id="linking-the-egi-sso-vopersonid-to-the-ggus-account">Linking the EGI SSO VOPersonID to the GGUS account&lt;/h2>
-&lt;p>&lt;strong>Pre-requisites: the email address of your EGI SSO account must be equal to the
-email address registered in GGUS!&lt;/strong>&lt;/p>
-&lt;p>For adding your EGI SSO VOPersonID to your account data please do the
-following:&lt;/p>
+&lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item><item><title>Internal: Access and roles</title><link>/internal/helpdesk/access-and-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/access-and-roles/</guid><description>
+&lt;h2 id="access-the-egi-helpdesk-service">Access the EGI Helpdesk service&lt;/h2>
+&lt;p>Users can access the &lt;a href="https://helpdesk.egi.eu/">EGI Helpdesk service GGUS&lt;/a>
+with an existing EGI Check-in account.&lt;/p>
+&lt;p>When you access the service for the first time, you are automatically assigned
+a role with minimal privileges by default: in such a situation you can only
+create user tickets and can&amp;rsquo;t access tickets created by other users.&lt;/p>
+&lt;p>In order to create your first ticket, please use the green &amp;ldquo;+&amp;rdquo; button in the
+lower left part of your screen.&lt;/p>
+&lt;p>&lt;img src="create-ticket.png" alt="Create ticket button">&lt;/p>
+&lt;h3 id="access-to-the-previous-egi-helpdesk">Access to the previous EGI Helpdesk&lt;/h3>
+&lt;p>The &lt;a href="https://ggus.eu/">previous EGI Helpdesk&lt;/a> is still available in read-only
+mode for historical reasons: users can access to the tickets that were closed
+before the migration to the new helpdesk.
+Either an X509 personal certificate or a federated identity are required for
+the access.&lt;/p>
+&lt;h2 id="roles-management">Roles management&lt;/h2>
+&lt;p>Roles in GGUS define the permissions and capabilities each user has when
+interacting with tickets. Proper role assignment ensures that users have
+access to the appropriate tools and information they need for their specific
+tasks.&lt;/p>
+&lt;p>&lt;strong>Note: Currently the roles are managed within GGUS; we are planning to move
+the roles management to EGI Check-in.&lt;/strong>&lt;/p>
+&lt;h3 id="how-to-check-your-roles">How to check your roles&lt;/h3>
+&lt;p>You can check your assigned role by following these steps (not available for
+users with the default role):&lt;/p>
+&lt;ol>
+&lt;li>Click on your User Logo in the lower left corner of the screen.&lt;/li>
+&lt;li>Navigate to Profile and select Roles.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="owned-roles.png" alt="Check your roles">&lt;/p>
+&lt;h2 id="role-hierarchy-and-capabilities">Role Hierarchy and Capabilities&lt;/h2>
+&lt;h3 id="standard-roles">Standard Roles&lt;/h3>
 &lt;ul>
-&lt;li>login to GGUS using your EGI SSO account&lt;/li>
-&lt;li>on GGUS home click the &lt;a href="https://ggus.eu/?mode=register_info">Registration&lt;/a>
-link&lt;/li>
-&lt;li>click the button &amp;ldquo;Add my Shibboleth ID to my account&amp;rdquo; at the bottom of the
-yellow box.&lt;/li>
+&lt;li>&lt;strong>User&lt;/strong>
+&lt;ul>
+&lt;li>Default role assigned upon registration.&lt;/li>
+&lt;li>Permissions:
+&lt;ul>
+&lt;li>Basic ticket submission interface (only group and site fields are
+available).&lt;/li>
+&lt;li>Ticket submission only to TPM and NGIs.&lt;/li>
+&lt;li>Visibility of only your own tickets.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://github.com/EGI-Federation/documentation/assets/94046531/78883c1b-dcad-4a47-bd93-cec6ad72fcaf" alt="RegisterInfo_AAI_VOPersonID">&lt;/p>
-&lt;h2 id="getting-supporter-privileges">Getting supporter privileges&lt;/h2>
-&lt;p>In order to process tickets assigned to the support unit you belong to, or in
-general tickets submitted by other users and assigned to other support units,
-you need to own supporter privileges. Therefore users need to register an
-account at GGUS. Registration can be done either using an X509 personal
-certificate or using the EGI AAI account.&lt;/p>
-&lt;h3 id="registration-with-an-x509-certificate">Registration with an x509 certificate&lt;/h3>
-&lt;p>For registering with an X509 certificate the user should go to
-&lt;a href="https://ggus.eu/index.php?mode=index">GGUS home&lt;/a> and click the
-&lt;a href="https://ggus.eu/?mode=register_info">registration link&lt;/a> in the menu bar at the
-left. This link opens the registration information page which gives some
-additional information about registration process. Clicking on the
-&lt;a href="https://ggus.eu/?mode=register_info">registration link&lt;/a> guides to the form that
-the user has to fill in. After filling in the registration form, GGUS team will
-check whether support privileges can be granted. The user will receive an email
-from the GGUS team (usually) confirming their supporter privileges.&lt;/p>
-&lt;h3 id="registration-with-the-egi-aai-account">Registration with the EGI AAI account&lt;/h3>
-&lt;p>Users who do not have a valid X509 certificate can access GGUS via
-&lt;a href="../../../users/aai/check-in">EGI Check-in&lt;/a>. For getting support privileges the
-user needs to be member of the
-&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:69">ggus-supporters&lt;/a> group
-in EGI Check-in. However the user should fill in the
-&lt;a href="https://ggus.eu/?mode=register_info">registration form&lt;/a> for creating an account
-at GGUS. Support privileges will be granted automatically. The user will receive
-an automated email from GGUS system confirming their support privileges.&lt;/p>
-&lt;p>&lt;img src="GGUS_Registration_Form.png" alt="GGUS registration form">&lt;/p>
-&lt;p>Both authentication methods, X509 certificate and EGI Check-in account, will be
-guaranteed in the future. Since the use of login and password will no longer be
-guaranteed in the future, it is recommended to access GGUS with a valid digital
-certificate or EGI Check-in.&lt;/p>
-&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
-&lt;h3 id="im-member-of-ggus-supportersegieu-group-why-dont-i-have-support-privileges-in-ggus">I&amp;rsquo;m member of ggus-supporters.egi.eu group. Why don&amp;rsquo;t I have support privileges in GGUS?&lt;/h3>
-&lt;p>&lt;strong>Pre-requisites: the email address of your EGI SSO account must be equal to the
-email address registered in GGUS!&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Case 1: user isn&amp;rsquo;t registered in GGUS yet.&lt;/li>
+&lt;/li>
 &lt;/ul>
-&lt;p>Unregistered users have to register first. On
-&lt;a href="https://ggus.eu/?mode=register_info">registration page&lt;/a> you will see this text:
-“You are member of EGI AAI CheckIn ggus supporter. You will get automatically
-support right for the GGUS portal once you will submit this form.“ Support
-permissions will be granted automatically.&lt;/p>
-&lt;p>&lt;img src="Account_Update_PersistentID.png" alt="Updating PersistentID">&lt;/p>
-&lt;p>Click on the &amp;ldquo;Add my &amp;hellip;.&amp;rdquo; button.&lt;/p>
+&lt;/li>
+&lt;li>&lt;strong>GGUS User&lt;/strong>
 &lt;ul>
-&lt;li>Case 2: user already registered in GGUS with an X509 DN.&lt;/li>
+&lt;li>Users who need read-only access to others&amp;rsquo; tickets, but with limited editing
+rights.&lt;/li>
+&lt;li>Permissions:
+&lt;ul>
+&lt;li>Enhanced ticket submission interface (category, ticket area, priority,
+affected vo, notified groups).&lt;/li>
+&lt;li>Ticket submission to TPM, NGIs, Second Level and Other Infrastructures.&lt;/li>
+&lt;li>Read-only access to all tickets.&lt;/li>
+&lt;li>(in development) Limited access to personal information such as names and
+email addresses.&lt;/li>
 &lt;/ul>
-&lt;p>You can decide to add the Shibboleth ID to the existing account and check the
-updated account. In case the email addresses are different you may either
-harmonize your email address in EGI SSO and GGUS account or create a new account
-using EGI SSO data.&lt;/p>
-&lt;h2 id="getting-in-touch-wit-the-ggus-team">Getting in touch wit the GGUS team?&lt;/h2>
-&lt;p>The preferred way to get in contact with the GGUS team is by submitting a GGUS
-ticket against Helpdesk (GGUS) support unit.&lt;/p>
-&lt;h2 id="additional-information">Additional information&lt;/h2>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Common&lt;/strong>
 &lt;ul>
-&lt;li>&lt;a href="../user-guide">GGUS user guide&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://wiki.egi.eu/wiki/FAQ_GGUS-Short-Guide">GGUS short guide&lt;/a>&lt;/li>
-&lt;li>&lt;a href="../support-staff-guide">GGUS support staff guide&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Internal: Helpdesk features</title><link>/internal/helpdesk/features/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/</guid><description>
+&lt;li>Supporters who manage and update tickets throughout the system.&lt;/li>
+&lt;li>Permissions:
+&lt;ul>
+&lt;li>Full read and write access to all tickets.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="roles-with-specific-capabilities">Roles with Specific Capabilities&lt;/h3>
+&lt;p>These roles provide additional capabilities beyond the standard roles and are
+assigned based on specific needs. The prerequisite for obtaining any of these
+roles is having at least the Common role, which is usually sufficient for most
+users.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>GGUS Expert&lt;/strong>
+&lt;ul>
+&lt;li>Advanced supporters who can submit tickets to the Third Level and Product
+Teams.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>VO&lt;/strong>
+&lt;ul>
+&lt;li>Indicator of Membership in the Virtual Organization (VO).&lt;/li>
+&lt;li>Enables VO specific features such as overviews and ticket areas.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>VO_team&lt;/strong>
+&lt;ul>
+&lt;li>Permissions:
+&lt;ul>
+&lt;li>Ability to submit &lt;strong>&lt;a href="../features/team-tickets/">Team tickets&lt;/a>&lt;/strong>
+on behalf of a VO.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Use Case: Users representing teams and submitting team-related tickets.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>TPM (&lt;a href="https://confluence.egi.eu/x/F4a_Bw">Ticket Process Manager&lt;/a>)&lt;/strong>
+&lt;ul>
+&lt;li>Permissions:
+&lt;ul>
+&lt;li>Additional section in the Overview showing tickets submitted to the TPM.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Use Case: Users who are involved in the First Level Support activity.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Alarm&lt;/strong>
+&lt;ul>
+&lt;li>Permissions:
+&lt;ul>
+&lt;li>Ability to create &lt;strong>&lt;a href="../features/alarm-tickets/">Alarm tickets&lt;/a>&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Use Case: Users who need to notify WLCG Tier-0 and Tier-1 administrators
+about serious problems of the site at any time, independent from usual office
+hours.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Multisites&lt;/strong>
+&lt;ul>
+&lt;li>Permissions:
+&lt;ul>
+&lt;li>Ability to create tickets to many sites in one go.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Use Case: EGI and WLCG Operations to conduct middleware related campaigns.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Mini-Admins&lt;/strong>
+&lt;ul>
+&lt;li>Permissions:
+&lt;ul>
+&lt;li>Ability to grant particular roles, e.g. VO role to other users&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Use Case: Management of VO users in the helpdesk&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="contact">Contact&lt;/h2>
+&lt;p>If you have any issues with roles or general questions regarding the helpdesk,
+please submit a ticket to the group &amp;ldquo;Second Level › Services › EGI Services and
+Service Components › Helpdesk (GGUS)&amp;rdquo; (start typing &amp;ldquo;ggus&amp;rdquo; in the group field
+for quick access).&lt;/p></description></item><item><title>Internal: Helpdesk features</title><link>/internal/helpdesk/features/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/features/</guid><description>
 &lt;p>The pages of this section detail multiple features of the &lt;a href="../">EGI Helpdesk&lt;/a>.&lt;/p></description></item><item><title>Internal: Support Staff Guide</title><link>/internal/helpdesk/support-staff-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/support-staff-guide/</guid><description>
 &lt;h2 id="whats-new-in-the-latest-release">What’s new in the latest release?&lt;/h2>
 &lt;p>Please see the &lt;a href="https://ggus.eu/index.php?mode=release_notes">release notes&lt;/a> for
