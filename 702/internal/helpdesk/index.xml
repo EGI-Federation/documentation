@@ -66,7 +66,7 @@
 &lt;!-- markdownlint-enable no-inline-html no-bare-urls --></description></item><item><title>Internal: Access and roles</title><link>/internal/helpdesk/access-and-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/internal/helpdesk/access-and-roles/</guid><description>
 &lt;h2 id="access-the-egi-helpdesk-service">Access the EGI Helpdesk service&lt;/h2>
 &lt;p>Users can access the &lt;a href="https://helpdesk.egi.eu/">EGI Helpdesk service GGUS&lt;/a>
-with an existing institutional/social account through EGI Check-in.&lt;/p>
+with an existing EGI Check-in account.&lt;/p>
 &lt;p>When you access the service for the first time, you are automatically assigned
 a role with minimal privileges by default: in such a situation you can only
 create user tickets and can&amp;rsquo;t access tickets created by other users.&lt;/p>
