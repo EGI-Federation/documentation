@@ -476,6 +476,7 @@ oph
 ophuser
 orcid
 organisations
+OSG
 osidle
 ost
 OTHERDESCR
@@ -546,7 +547,6 @@ RWO
 rxtx
 Sars
 sbdii
-scai
 schedd
 scipy
 scotgrid
@@ -579,6 +579,7 @@ softver
 somekey
 sourcing
 southgrid
+spam
 srce
 srm
 srun
