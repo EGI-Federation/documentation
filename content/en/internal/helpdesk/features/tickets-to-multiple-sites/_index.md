@@ -47,9 +47,9 @@ submission to multiple sites.
 
 In addition to the usual fields, the users can also select proper values for:
 
-  - SITE TYPE: EGI or OSG
-  - TIER LEVELS
-  - NGIs
+- SITE TYPE: EGI or OSG
+- TIER LEVELS
+- NGIs
 
 Then the "NOTIFIED SITES" field will be filled automatically based on the
 selections made for the aforementioned fields (it is also possible to further
