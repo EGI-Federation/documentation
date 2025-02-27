@@ -143,7 +143,7 @@ The webinar will provide tutorial and demonstration of using fedcloudclient in E
 <br/><br/>
 <b>Suggested tutorials</b>
 <ul>
-<li><a href="../tutorials-adhoc/oidc-agent-fedcloudclient-terraform/">Automate with oidc-agent, fedcloudclient, terraform and Ansible</a>: Step by step guide to automating the deployment using Ansible with Terraform, oidc-agent and fedcloudclient</li>
+<li><a href="../adhoc/oidc-agent-fedcloudclient-terraform/">Automate with oidc-agent, fedcloudclient, terraform and Ansible</a>: Step by step guide to automating the deployment using Ansible with Terraform, oidc-agent and fedcloudclient</li>
 </ul>
 </td>
 </tr>
@@ -249,8 +249,8 @@ In this webinar, you will learn how to:
 </ol>
 <b>Suggested tutorials</b>
 <ul>
-<li><a href="../tutorials-adhoc/vm-datahub/">Access DataHub from a VM</a>: Use data in EGI DataHub from a virtual machine.</li>
-<li><a href="../tutorials-adhoc/jupyter-datahub-virtual-machine/">Create a VM with Jupyter and DataHub</a>: Step by step guide to get a Virtual Machine for Jupyter and DataHub in your cloud provider</li>
+<li><a href="../adhoc/vm-datahub/">Access DataHub from a VM</a>: Use data in EGI DataHub from a virtual machine.</li>
+<li><a href="../adhoc/jupyter-datahub-virtual-machine/">Create a VM with Jupyter and DataHub</a>: Step by step guide to get a Virtual Machine for Jupyter and DataHub in your cloud provider</li>
 </ul>
 </td>
 </tr>
