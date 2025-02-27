@@ -14,10 +14,52 @@ description: >
 <td>
 <b>Target Audience</b>:
 <ul>
-<li>Oceanographers</li>
-<li>Climate Researchers</li>
-<li>Ocean Modellers</li>
-<li>Ocean Data Managers</li>
+<li>Data scientists</li>
+<li>Domain scientists and research (in Environmental, Climate research)</li>
+<li>e-Infrastructure platform/ technology & service providers</li>
+</ul>
+</td>
+<td>
+<i>"Harnessing Advanced Research Infrastructures for Earth and Environmental Data Management and Analysis: A MATLAB Perspective" (May, 2024)</i>
+<br/><br/>
+Agenda, slides and recording: <a href="https://www.egi.eu/event/harnessing-advanced-research-infrastructures-for-earth-and-environmental-data-management-and-analysis-a-matlab-perspective/">https://www.egi.eu/event/harnessing-advanced-research-infrastructures-for-earth-and-environmental-data-management-and-analysis-a-matlab-perspective/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/2d9z6kH4fWw"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: The increasing volume and complexity of Earth and environmental data
+requires an efficient interdisciplinary collaboration and management. The use of
+advanced research infrastructures enables data integration, interoperability, and
+seamless data exchange, leveraging analysis and visualization tools and cloud facilities.
+In the first part of the presentation there is an introduction to MATLAB and a review of
+existing and new features relevant to the EGI users.
+<br/><br/>
+In the second part, a case study is presented on the ENES Data Space,
+a cloud-based data science environment for climate data analysis,
+part of the European Open Science Cloud (EOSC) Compute Platform.
+Users can access and work with climate datasets, including past recordings
+and future projections from the CMIP project. The case study demonstrates
+geodata import, analysis, and visualization using MATLAB Online and Jupyter
+notebooks, emphasizing ease of use, data manipulation, and sharing
+capabilities within the ENES workspace without requiring local software
+installations or data downloads.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>:
+<ul>
+<li>oceanographers</li>
+<li>climate researchers</li>
+<li>ocean modellers</li>
+<li>ocean data managers</li>
 </ul>
 </td>
 <td>
