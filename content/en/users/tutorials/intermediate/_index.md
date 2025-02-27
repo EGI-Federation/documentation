@@ -17,6 +17,38 @@ description: >
 <table>
 <tr>
 <td>
+<b>Target Audience</b>: Researchers, and IT-service providers who support research and education.
+</td>
+<td>
+<i>"Webinar: EGI Cloud Services: Updates, Innovations, and Future Directions" (February, 2025)</i>
+<br/><br/>
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/webinar-egi-cloud-services-updates-innovations-and-future-directions/">https://www.egi.eu/event/webinar-egi-cloud-services-updates-innovations-and-future-directions/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/RF3bSSZdEz0"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: This webinar highlights the latest developments in EGI Cloud Service, designed to
+support cutting-edge research and innovation. It provides an overview of the service features,
+recent updates to the EGI Cloud infrastructure, and new capabilities introduced to address
+the evolving needs of the scientific community.
+<br/><br/>
+<b>Suggested tutorials</b>
+<ul>
+<li><a href="../adhoc/create-your-first-virtual-machine/">Create your first Virtual Machine (VM)</a>: Step by step guide to get your first Virtual Machine up and running</li>
+<li><a href="../adhoc/accessing-vm-with-ssh/">Accessing virtual machines with SSH</a>: Accessing virtual machines with SSH</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
 <b>Target Audience</b>: Scientific communities, developers, IT service providers, and end users.
 </td>
 <td>
@@ -79,7 +111,7 @@ in order to schedule transfers.
 <br/><br/>
 <b>Suggested tutorials</b>
 <ul>
-<li><a href="../tutorials-adhoc/data-transfer-grid-storage/">Data transfer with grid storage</a>: Use EGI Data transfer to handle data in grid storage</li>
+<li><a href="../adhoc/data-transfer-grid-storage/">Data transfer with grid storage</a>: Use EGI Data transfer to handle data in grid storage</li>
 </ul>
 </td>
 </tr>
@@ -510,49 +542,6 @@ and user authentication systems.
 <br/><br/>
 During the webinar Enol will go through the main features of the EGI Notebooks service and
 he will explain how to use it with Binder and other open-source solutions to implement Open Science.
-</td>
-</tr>
-<tr>
-<td>
-<b>Target Audience</b>: Researchers, and IT-service providers who support research and education.
-</td>
-<td>
-<i>"Introduction of the EGI Cloud Compute service" (April 2020)</i>
-<br/><br/>
-Agenda, slides and recording: <a href="https://indico.egi.eu/event/5085/">https://indico.egi.eu/event/5085/</a>
-<br/><br/>
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/lkJVV0OmweM"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
-<br/><br/>
-<b>About</b>: The EGI Federated Cloud is a IaaS-type cloud, made of academic private
-clouds and virtualized resources and built around open standards. Its development is
-driven by requirements of the scientific community. The result is a new type of research
-e-infrastructure, based on the mature federated operations services that make EGI a reliable
-resource for science.
-<br/><br/>
-When using EGI Federated Cloud resources, researchers and research communities can
-count on: a.) Total control over deployed applications, b.) Elastic resource consumption
-based on real need, c.) Immediately processed workloads – no more waiting time,
-d.) An extended e-Infrastructure across resource providers in Europe, and
-e.) Service performance scaled with elastic resource consumption.
-<br/><br/>
-In this webinar an overview of the EGI Federated Cloud and how this scalable computing
-platform can be used for data and/or compute driven research and/or support the development
-of advanced services for research and science will be provided by Enol Fernandez. The webinar
-will be relevant for researchers, and IT-service providers who support research and education.
-<br/><br/>
-<b>Suggested tutorials</b>
-<ul>
-<li><a href="../tutorials-adhoc/create-your-first-virtual-machine/">Create your first Virtual Machine (VM)</a>: Step by step guide to get your first Virtual Machine up and running</li>
-<li><a href="../tutorials-adhoc/accessing-vm-with-ssh/">Accessing virtual machines with SSH</a>: Accessing virtual machines with SSH</li>
-</ul>
 </td>
 </tr>
 <tr>
