@@ -235,7 +235,7 @@ to serve COVID-related projects.
 <br/><br/>
 <b>Suggested tutorials</b>
 <ul>
-<li><a href="../tutorials-adhoc/htc-job-submission/">Submitting HTC Jobs</a>: Submitting High Throughput Compute jobs</li>
+<li><a href="../adhoc/htc-job-submission/">Submitting HTC Jobs</a>: Submitting High Throughput Compute jobs</li>
 </ul>
 </td>
 </tr>
