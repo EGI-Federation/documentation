@@ -20,7 +20,8 @@ description: >
 </ul>
 </td>
 <td>
-<i>"Harnessing Advanced Research Infrastructures for Earth and Environmental Data Management and Analysis: A MATLAB Perspective" (May, 2024)</i>
+<i>"Harnessing Advanced Research Infrastructures for Earth and Environmental Data Management
+and Analysis: A MATLAB Perspective" (May, 2024)</i>
 <br/><br/>
 Agenda, slides and recording: <a href="https://www.egi.eu/event/harnessing-advanced-research-infrastructures-for-earth-and-environmental-data-management-and-analysis-a-matlab-perspective/">https://www.egi.eu/event/harnessing-advanced-research-infrastructures-for-earth-and-environmental-data-management-and-analysis-a-matlab-perspective/</a>
 <br/><br/>
