@@ -152,3 +152,4 @@ mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 \ba2enmod\b
 \beduGAIN\b
 \b-field\b
+\bSars-Cov2\b

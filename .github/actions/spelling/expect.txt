@@ -27,7 +27,6 @@ pravda
 prettierrc
 reponame
 rsa
-Sars-Cov2
 scp
 seadatanet
 sgm
