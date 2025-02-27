@@ -49,6 +49,100 @@ the evolving needs of the scientific community.
 </tr>
 <tr>
 <td>
+<b>Target Audience</b>: This presentation is intended for site administrators, site managers,
+security professionals, EGI management, and anyone who could be affected by a security incident
+and required to manage or respond to it.
+</td>
+<td>
+<i>"EGI CSIRT IRTF 2024 in Review: Incidents, Learnings, and Plans for 2025" (January, 2025)</i>
+<br/><br/>
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/webinar-egi-irtf-2024-in-review-incidents-learnings-and-plans-for-2025/">https://www.egi.eu/event/webinar-egi-irtf-2024-in-review-incidents-learnings-and-plans-for-2025/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/e-Se1tpwCJ4"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: We will start by presenting the role of the EGI CSIRT Incident Response Task Force (IRTF)
+in strengthening security across our community. Discover who we are, what drives our mission,
+and how we collaborate with key partners to protect the computing grid. Then, we’ll explain the initiatives
+from 2024, sharing the results of the Communications Challenges, the metrics of security monitoring,
+and present the various incidents that occurred during the year, along with the lessons that can be
+learned from them. Looking ahead, we will present our initiatives for 2025, designed to enhance
+visibility into the security status of sites, strengthen collaboration with VOs, and foster
+greater engagement from sites to improve their overall security posture.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, developers, IT service providers, and end users.
+</td>
+<td>
+<i>"Webinar: EGI DataHub: an innovative platform for ingestion, management and publishing of distributed scientific data" (September, 2024)</i>
+<br/><br/>
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/egi-datahub-platform-ingestion-management-publishing-distributed-scientific-data/">https://www.egi.eu/event/egi-datahub-platform-ingestion-management-publishing-distributed-scientific-data/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/pmIG_N0627o"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: Watch our webinar on the latest advancements in
+<a href="https://www.egi.eu/service/datahub/">EGI DataHub</a>, an innovative distributed
+data access and management platform powered by Onedata technology. EGI DataHub unites
+18 data providers across Europe, offering seamless data access and management capabilities.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>:
+<ul>
+<li>e-Infrastructure platform/technology providers</li>
+<li>Domain scientists and research</li>
+<li>Data Scientists</li>
+</ul>
+</td>
+<td>
+<i>"Webinar: Managing Secrets in the EGI Infrastructure with EGI Secrets Store" (July, 2024)</i>
+<br/><br/>
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/webinar-managing-secrets-in-the-egi-infrastructure-with-egi-secrets-store/">https://www.egi.eu/event/webinar-managing-secrets-in-the-egi-infrastructure-with-egi-secrets-store/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/gHmJiRDp93g"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: In this session, we will explore the
+<a href="https://www.egi.eu/service/secrets-store/">EGI Secrets Store</a>,
+a powerful solution designed to help you securely manage credentials,
+tokens, passwords, and other sensitive information required by your
+applications and services during deployment and operation. Traditional
+methods of storing these secrets in clear text within code repositories
+or configuration files pose significant security risks and make rotation
+cumbersome. EGI Secrets Store addresses these challenges by providing
+a secure, efficient, and standardised way to handle secrets.
+</td>
+</tr>
+<tr>
+<td>
 <b>Target Audience</b>: Scientific communities, developers, IT service providers, and end users.
 </td>
 <td>
@@ -423,41 +517,6 @@ be used with several popular container runtimes, such as docker, podman, singula
 We will also show how operating system containers themselves can be efficiently distributed through
 CernVM-FS. Lastly, we will highlight an upcoming new way of publishing content from within a container.
 This makes it easy to set up, build and test and deploy-to-cvmfs pipelines on kubernetes.
-</td>
-</tr>
-<tr>
-<td>
-<b>Target Audience</b>: Scientific communities, and IT-service providers who support research and education.
-</td>
-<td>
-<i>"The EGI Datahub to federate distributed data sets for data-intensive applications in the cloud" (June 2020)</i>
-<br/><br/>
-Agenda, slides and recording: <a href="https://indico.egi.eu/event/5089/">https://indico.egi.eu/event/5089/</a>
-<br/><br/>
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/ayAplV2kEN4"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
-<br/><br/>
-<b>About</b>: The EGI DataHub allows users to make their data available using different
-levels of access: from completely unrestricted open access to open data to authenticated
-access to closed data sets. This is possible as a result of the seamless integration with
-the EGI AAI service. The data hosted on the EGI DataHub can be readily accessible by cloud
-Virtual Machines (VMs) or running grid jobs thanks to full integration with EGI Federated
-Cloud and High-Throughput compute resources. The use of protocols such as POSIX and web
-services guarantees easy and scalable access to data from cloud and HTC applications. This
-ensures maximum compatibility with existing applications and minimum hassle for developers
-and users alike. The EGI DataHub is built on top of the EGI Open Data Platform using Onedata
-technology to connect a wide range of existing storage services, regardless of their underlying
-technology (e.g. Lustre, Amazon S3, Ceph, NFS, or dCache).
-<br/><br/>
-During this webinar the QoS and hybrid cloud data processing scenarios for distributed EOSC
-environments based on EGI DataHub and Onedata solutions will be introduced.
 </td>
 </tr>
 <tr>
