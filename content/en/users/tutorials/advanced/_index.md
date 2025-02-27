@@ -12,7 +12,7 @@ description: >
 <table>
 <tr>
 <td>
-<b>Target Audience</b>: cientific communities, for programmers and IT-service providers who support research and education.
+<b>Target Audience</b>: Scientific communities, for programmers and IT-service providers who support research and education.
 </td>
 <td>
 <i>"Webinar: TOSCA-based cloud orchestration and deployment with Infrastructure Manager (IM)" (June, 2024)</i>

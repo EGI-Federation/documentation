@@ -357,7 +357,7 @@ of EGI infrastructure. The webinar will conclude with a demo of I-NERGY services
 <b>Target Audience</b>: Scientific communities and end users.
 </td>
 <td>
-<i>"Access to the EISCAT tools with help of EGI checkin" (June 2023)</i>
+<i>"Access to the EISCAT tools with help of EGI Check-in" (June 2023)</i>
 <br/><br/>
 <iframe
   width="560"

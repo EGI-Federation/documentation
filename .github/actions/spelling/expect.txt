@@ -8,6 +8,7 @@ delims
 diracsgm
 findstr
 galdyn
+geodata
 getstate
 glast
 hmac
@@ -26,6 +27,7 @@ pravda
 prettierrc
 reponame
 rsa
+Sars-Cov2
 scp
 seadatanet
 sgm
