@@ -17,6 +17,132 @@ description: >
 <table>
 <tr>
 <td>
+<b>Target Audience</b>: Researchers, and IT-service providers who support research and education.
+</td>
+<td>
+<i>"Webinar: EGI Cloud Services: Updates, Innovations, and Future Directions" (February, 2025)</i>
+<br/><br/>
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/webinar-egi-cloud-services-updates-innovations-and-future-directions/">https://www.egi.eu/event/webinar-egi-cloud-services-updates-innovations-and-future-directions/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/RF3bSSZdEz0"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: This webinar highlights the latest developments in EGI Cloud Service, designed to
+support cutting-edge research and innovation. It provides an overview of the service features,
+recent updates to the EGI Cloud infrastructure, and new capabilities introduced to address
+the evolving needs of the scientific community.
+<br/><br/>
+<b>Suggested tutorials</b>
+<ul>
+<li><a href="../adhoc/create-your-first-virtual-machine/">Create your first Virtual Machine (VM)</a>: Step by step guide to get your first Virtual Machine up and running</li>
+<li><a href="../adhoc/accessing-vm-with-ssh/">Accessing virtual machines with SSH</a>: Accessing virtual machines with SSH</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: This presentation is intended for site administrators, site managers,
+security professionals, EGI management, and anyone who could be affected by a security incident
+and required to manage or respond to it.
+</td>
+<td>
+<i>"EGI CSIRT IRTF 2024 in Review: Incidents, Learnings, and Plans for 2025" (January, 2025)</i>
+<br/><br/>
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/webinar-egi-irtf-2024-in-review-incidents-learnings-and-plans-for-2025/">https://www.egi.eu/event/webinar-egi-irtf-2024-in-review-incidents-learnings-and-plans-for-2025/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/e-Se1tpwCJ4"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: We will start by presenting the role of the EGI CSIRT Incident Response Task Force (IRTF)
+in strengthening security across our community. Discover who we are, what drives our mission,
+and how we collaborate with key partners to protect the computing grid. Then, we’ll explain the initiatives
+from 2024, sharing the results of the Communications Challenges, the metrics of security monitoring,
+and present the various incidents that occurred during the year, along with the lessons that can be
+learned from them. Looking ahead, we will present our initiatives for 2025, designed to enhance
+visibility into the security status of sites, strengthen collaboration with VOs, and foster
+greater engagement from sites to improve their overall security posture.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>: Scientific communities, developers, IT service providers, and end users.
+</td>
+<td>
+<i>"Webinar: EGI DataHub: an innovative platform for ingestion, management and publishing of distributed scientific data" (September, 2024)</i>
+<br/><br/>
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/egi-datahub-platform-ingestion-management-publishing-distributed-scientific-data/">https://www.egi.eu/event/egi-datahub-platform-ingestion-management-publishing-distributed-scientific-data/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/pmIG_N0627o"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: Watch our webinar on the latest advancements in
+<a href="https://www.egi.eu/service/datahub/">EGI DataHub</a>, an innovative distributed
+data access and management platform powered by Onedata technology. EGI DataHub unites
+18 data providers across Europe, offering seamless data access and management capabilities.
+</td>
+</tr>
+<tr>
+<td>
+<b>Target Audience</b>:
+<ul>
+<li>e-Infrastructure platform/technology providers</li>
+<li>Domain scientists and research</li>
+<li>Data Scientists</li>
+</ul>
+</td>
+<td>
+<i>"Webinar: Managing Secrets in the EGI Infrastructure with EGI Secrets Store" (July, 2024)</i>
+<br/><br/>
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/webinar-managing-secrets-in-the-egi-infrastructure-with-egi-secrets-store/">https://www.egi.eu/event/webinar-managing-secrets-in-the-egi-infrastructure-with-egi-secrets-store/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/gHmJiRDp93g"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: In this session, we will explore the
+<a href="https://www.egi.eu/service/secrets-store/">EGI Secrets Store</a>,
+a powerful solution designed to help you securely manage credentials,
+tokens, passwords, and other sensitive information required by your
+applications and services during deployment and operation. Traditional
+methods of storing these secrets in clear text within code repositories
+or configuration files pose significant security risks and make rotation
+cumbersome. EGI Secrets Store addresses these challenges by providing
+a secure, efficient, and standardised way to handle secrets.
+</td>
+</tr>
+<tr>
+<td>
 <b>Target Audience</b>: Scientific communities, developers, IT service providers, and end users.
 </td>
 <td>
@@ -79,7 +205,7 @@ in order to schedule transfers.
 <br/><br/>
 <b>Suggested tutorials</b>
 <ul>
-<li><a href="../tutorials-adhoc/data-transfer-grid-storage/">Data transfer with grid storage</a>: Use EGI Data transfer to handle data in grid storage</li>
+<li><a href="../adhoc/data-transfer-grid-storage/">Data transfer with grid storage</a>: Use EGI Data transfer to handle data in grid storage</li>
 </ul>
 </td>
 </tr>
@@ -111,7 +237,7 @@ The webinar will provide tutorial and demonstration of using fedcloudclient in E
 <br/><br/>
 <b>Suggested tutorials</b>
 <ul>
-<li><a href="../tutorials-adhoc/oidc-agent-fedcloudclient-terraform/">Automate with oidc-agent, fedcloudclient, terraform and Ansible</a>: Step by step guide to automating the deployment using Ansible with Terraform, oidc-agent and fedcloudclient</li>
+<li><a href="../adhoc/oidc-agent-fedcloudclient-terraform/">Automate with oidc-agent, fedcloudclient, terraform and Ansible</a>: Step by step guide to automating the deployment using Ansible with Terraform, oidc-agent and fedcloudclient</li>
 </ul>
 </td>
 </tr>
@@ -217,8 +343,8 @@ In this webinar, you will learn how to:
 </ol>
 <b>Suggested tutorials</b>
 <ul>
-<li><a href="../tutorials-adhoc/vm-datahub/">Access DataHub from a VM</a>: Use data in EGI DataHub from a virtual machine.</li>
-<li><a href="../tutorials-adhoc/jupyter-datahub-virtual-machine/">Create a VM with Jupyter and DataHub</a>: Step by step guide to get a Virtual Machine for Jupyter and DataHub in your cloud provider</li>
+<li><a href="../adhoc/vm-datahub/">Access DataHub from a VM</a>: Use data in EGI DataHub from a virtual machine.</li>
+<li><a href="../adhoc/jupyter-datahub-virtual-machine/">Create a VM with Jupyter and DataHub</a>: Step by step guide to get a Virtual Machine for Jupyter and DataHub in your cloud provider</li>
 </ul>
 </td>
 </tr>
@@ -395,41 +521,6 @@ This makes it easy to set up, build and test and deploy-to-cvmfs pipelines on ku
 </tr>
 <tr>
 <td>
-<b>Target Audience</b>: Scientific communities, and IT-service providers who support research and education.
-</td>
-<td>
-<i>"The EGI Datahub to federate distributed data sets for data-intensive applications in the cloud" (June 2020)</i>
-<br/><br/>
-Agenda, slides and recording: <a href="https://indico.egi.eu/event/5089/">https://indico.egi.eu/event/5089/</a>
-<br/><br/>
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/ayAplV2kEN4"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
-<br/><br/>
-<b>About</b>: The EGI DataHub allows users to make their data available using different
-levels of access: from completely unrestricted open access to open data to authenticated
-access to closed data sets. This is possible as a result of the seamless integration with
-the EGI AAI service. The data hosted on the EGI DataHub can be readily accessible by cloud
-Virtual Machines (VMs) or running grid jobs thanks to full integration with EGI Federated
-Cloud and High-Throughput compute resources. The use of protocols such as POSIX and web
-services guarantees easy and scalable access to data from cloud and HTC applications. This
-ensures maximum compatibility with existing applications and minimum hassle for developers
-and users alike. The EGI DataHub is built on top of the EGI Open Data Platform using Onedata
-technology to connect a wide range of existing storage services, regardless of their underlying
-technology (e.g. Lustre, Amazon S3, Ceph, NFS, or dCache).
-<br/><br/>
-During this webinar the QoS and hybrid cloud data processing scenarios for distributed EOSC
-environments based on EGI DataHub and Onedata solutions will be introduced.
-</td>
-</tr>
-<tr>
-<td>
 <b>Target Audience</b>: Scientific communities and IT-service providers who operate IdP for them.
 </td>
 <td>
@@ -514,49 +605,6 @@ he will explain how to use it with Binder and other open-source solutions to imp
 </tr>
 <tr>
 <td>
-<b>Target Audience</b>: Researchers, and IT-service providers who support research and education.
-</td>
-<td>
-<i>"Introduction of the EGI Cloud Compute service" (April 2020)</i>
-<br/><br/>
-Agenda, slides and recording: <a href="https://indico.egi.eu/event/5085/">https://indico.egi.eu/event/5085/</a>
-<br/><br/>
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/lkJVV0OmweM"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
-<br/><br/>
-<b>About</b>: The EGI Federated Cloud is a IaaS-type cloud, made of academic private
-clouds and virtualized resources and built around open standards. Its development is
-driven by requirements of the scientific community. The result is a new type of research
-e-infrastructure, based on the mature federated operations services that make EGI a reliable
-resource for science.
-<br/><br/>
-When using EGI Federated Cloud resources, researchers and research communities can
-count on: a.) Total control over deployed applications, b.) Elastic resource consumption
-based on real need, c.) Immediately processed workloads – no more waiting time,
-d.) An extended e-Infrastructure across resource providers in Europe, and
-e.) Service performance scaled with elastic resource consumption.
-<br/><br/>
-In this webinar an overview of the EGI Federated Cloud and how this scalable computing
-platform can be used for data and/or compute driven research and/or support the development
-of advanced services for research and science will be provided by Enol Fernandez. The webinar
-will be relevant for researchers, and IT-service providers who support research and education.
-<br/><br/>
-<b>Suggested tutorials</b>
-<ul>
-<li><a href="../tutorials-adhoc/create-your-first-virtual-machine/">Create your first Virtual Machine (VM)</a>: Step by step guide to get your first Virtual Machine up and running</li>
-<li><a href="../tutorials-adhoc/accessing-vm-with-ssh/">Accessing virtual machines with SSH</a>: Accessing virtual machines with SSH</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
 <b>Target Audience</b>: Scientific communities, for programmers and IT-service providers who support research and education.
 </td>
 <td>
@@ -579,7 +627,7 @@ the motivations to use Slurm and provide a list of commands to get started with 
 <br/><br/>
 <b>Suggested material</b>
 <ul>
-<li><a href="https://docs.google.com/presentation/d/1Qo_Zpqe9MT6X6s7o2Mz_8PplET28_WAf/">Slides</a></li>
+<li><a href="https://www.slideshare.net/slideshow/cscale-tutorial-slurm/260942835">Slides</a></li>
 </ul>
 </td>
 </tr>

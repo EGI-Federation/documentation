@@ -12,6 +12,33 @@ description: >
 <table>
 <tr>
 <td>
+<b>Target Audience</b>: Scientific communities, for programmers and IT-service providers who support research and education.
+</td>
+<td>
+<i>"Webinar: TOSCA-based cloud orchestration and deployment with Infrastructure Manager (IM)" (June, 2024)</i>
+<br/><br/>
+Agenda, slides and recording:
+<a href="https://www.egi.eu/event/tosca-based-cloud-orchestration-and-deployment-with-infrastructure-manager-im/">https://www.egi.eu/event/tosca-based-cloud-orchestration-and-deployment-with-infrastructure-manager-im/</a>
+<br/><br/>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/7UWI_SiBN_A"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+<br/><br/>
+<b>About</b>: In this webinar we focus on the usage of the <a href="https://im.egi.eu/">IM Dashboard</a>,
+an easy-to-use web interface, designed for users to deploy a set of predefined and well-tested customisable
+virtual infrastructures on top of a wide range of cloud providers with a set of mouse clicks.
+Furthermore, it uses a two-step wizard that enables it to compose more complex templates,
+as shown in the demo.
+</td>
+</tr>
+<tr>
+<td>
 <b>Target Audience</b>: Scientific communities, developers, integrators and end users.
 </td>
 <td>
@@ -253,46 +280,6 @@ docker capabilities aimed at container execution.
 <br/><br/>
 In this webinar we will explain the udocker fundamental, how to use udocker to execute
 Linux containers and how to best exploit the several execution engines.
-</td>
-</tr>
-<tr>
-<td>
-<b>Target Audience</b>: Scientific communities, for programmers and IT-service providers
-who support research and education.
-</td>
-<td>
-<i>"Deploying virtual infrastructures with Infrastructure Manager (IM)" (May, 2021)</i>
-<br/><br/>
-Agenda, slides and recording: <a href="https://indico.egi.eu/event/5495/">https://indico.egi.eu/event/5495/</a>
-<br/><br/>
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/Q9VsYjI1mD4"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
-<br/><br/>
-<b>About</b>: The <a href="https://im.egi.eu/">Infrastructure Manager (IM)</a> is a framework that eases the
-access and the usability of IaaS clouds by automating the VMI selection, deployment,
-configuration, software installation, monitoring and update of Virtual Appliances.
-It supports APIs from a large number of virtual platforms, making user applications
-cloud-agnostic. In addition it integrates a contextualization system to enable the
-installation and configuration of all the user required applications providing the
-user with a fully functional infrastructure. It is a service that features a web-based GUI,
-a XML-RPC API, a REST API and a command-line application.
-<br/><br/>
-In this webinar we will focus the usage of the IM Dashboard an easy to use web interface
-designed to enable not advanced users to deploy a set of predefined and well tested customizable
-virtual infrastructures (Kubernetes, SLURM, Mesos, Galaxy, …) in top of a wide range of cloud providers
-(EGI Cloud Compute and also commercial and open clouds – AWS, Google Cloud, Azure, OpenStack, OpenNebula, …)
-with a single set of mouse clicks.
-<br/><br/>
-IM has been developed by the <a href="http://www.grycap.upv.es/">Grid and High Performance Computing Group (GRyCAP)</a>
-at the <a href="http://www.i3m.upv.es/">Instituto de Instrumentacion para Imagen Molecular (I3M)</a>
-from the <a href="http://www.upv.es/">Universitat Politecnica de Valencia (UPV)</a>.
 </td>
 </tr>
 <tr>
