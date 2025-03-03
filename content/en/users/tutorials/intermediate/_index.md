@@ -627,7 +627,7 @@ the motivations to use Slurm and provide a list of commands to get started with 
 <br/><br/>
 <b>Suggested material</b>
 <ul>
-<li><a href="https://docs.google.com/presentation/d/1Qo_Zpqe9MT6X6s7o2Mz_8PplET28_WAf/">Slides</a></li>
+<li><a href="https://www.slideshare.net/slideshow/cscale-tutorial-slurm/260942835">Slides</a></li>
 </ul>
 </td>
 </tr>
