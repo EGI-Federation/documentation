@@ -9,16 +9,22 @@ menu:
 ---
 
 Support for EGI services is available through the
-[EGI Helpdesk](https://helpdesk.egi.eu/), an internal EGI
-[service](../internal/helpdesk).
+[EGI Helpdesk](https://helpdesk.egi.eu/). To get started
+with the EGI Helpdesk check out the
+[documentation](../internal/helpdesk/access-and-roles/).
 
-The EGI Helpdesk is a distributed tool with central coordination, which
-provides the information and support needed to troubleshoot product and
-service problems. Users can **report incidents**, **bugs** or **request
-changes**.
+Every ticket in the Helpdesk is assigned to a **Support Unit**.
+If you are unsure about what Support Unit to choose, the
+ticket will be assigned to the default, first-level *TPM*
+Support Unit (*Ticket Processing Manager*). Then TPM will
+reassign the ticket to the relevant, second-level Support Unit.
+To accelerate response time and obtain a quick assistance,
+we recommend selecting the *User Community Support* Unit
+when you submit your ticket. For that, please search for
+User Community Support in the *Group* box as show in the
+image below:
 
-The support activities are grouped into first and second level
-support.
+![GGUS Group](ggus-group.png "User Community Support")
 
 {{% alert title="Note" color="info" %}} Support is also available by contacting
 us at `support` `<at>` `egi.eu`.
