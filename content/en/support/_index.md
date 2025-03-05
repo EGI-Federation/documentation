@@ -23,7 +23,7 @@ In order to speed up response time we suggest to choose the
 please search for User Community Support in the *Group* box as
 show in the image below:
 
-![GGUS Group](./ggus-group.png "User Community Support")
+![GGUS Group](ggus-group.png "User Community Support")
 
 {{% alert title="Note" color="info" %}} Support is also available by contacting
 us at `support` `<at>` `egi.eu`.
