@@ -18,10 +18,11 @@ If you are unsure about what Support Unit to choose, the
 ticket will be assigned to the default, first-level *TPM*
 Support Unit (*Ticket Processing Manager*). Then TPM will
 reassign the ticket to the relevant, second-level Support Unit.
-In order to speed up response time we suggest to choose the
-*User Community Support* Unit when opening your ticket. For that,
-please search for User Community Support in the *Group* box as
-show in the image below:
+To accelerate response time and obtain a quick assistance,
+we recommend selecting the *User Community Support* Unit
+when you submit your ticket. For that, please search for
+User Community Support in the *Group* box as show in the
+image below:
 
 ![GGUS Group](ggus-group.png "User Community Support")
 
