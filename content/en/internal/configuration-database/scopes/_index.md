@@ -21,7 +21,7 @@ type: "docs"
   its service scopes plus any other site specific tags defined by the site.
 - By defining scope tags, resources can be ‘filtered-by-scope-tag’ when querying
   for data in the PI using the ‘scope’ and ‘scope_match’ parameters, see
-  [GOCDB Programmatic Interface](https://gocdb.github.io/api/n) for details.
+  [GOCDB Programmatic Interface](https://gocdb.github.io/api/) for details.
 
 ## Clear Separation of Concerns
 
