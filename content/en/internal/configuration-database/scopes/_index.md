@@ -85,6 +85,10 @@ It is important to understand that scopes and Projects are distinct:
   authorisation is given, please contact the Configuration Database admins with
   details of the approval (e.g. link to an [EGI Helpdesk](../../helpdesk) ticket
   that approves the tag assignment).
+- Users with a suitable role over a Site, or a Site's parent NGI can remove
+  reserved scope tags from their Site and its child Services. As part of
+  maintaining their Site information in GOCDB, Users should remove reserved
+  scope tags from their Sites and/or their Services when they cease to be relevant.
 
 ### FedCloud Reserved Tag
 
