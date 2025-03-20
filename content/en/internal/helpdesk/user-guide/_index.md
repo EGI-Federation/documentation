@@ -69,6 +69,18 @@ fields on the submit form are optional.
 
 ![Support Groups field](support-groups-field.png)
 
+- “SITE” provides a drop-down list with all the EGI sites registered in GOCDB
+  and OSG sites registered in OIM DB. When selecting a site from the list, the
+  appropriate NGI/ROC is set automatically, and they will be both notified about
+  this ticket by email once created.
+- “TICKET AREA” provides a drop-down list with possible values. This field is
+  for categorizing the issue. It defaults to “Other”.
+  Check "Issue type values" page .
+- “PRIORITY” (mandatory) provides a drop-down list with possible priority
+  values. They are “less urgent” (which is the default), “urgent”, and “very
+  urgent”. See the page
+  [Ticket priority](https://docs.egi.eu/internal/helpdesk/features/ticket-priority/)
+
 1. User information
 
 Most fields in the user information section are pre-filled by GGUS system.
