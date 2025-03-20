@@ -14,69 +14,20 @@ what happens to the ticket in order to get it from creation to solution.
 However, an understanding of the operation of the system may be helpful to
 explaining what happens when you request help.
 
-Tickets can be created through the GGUS [web interface](https://ggus.eu/), which
-is described in section "Accessing the web interface to GGUS" of this note.
+Tickets can be created through the GGUS
+[web interface](https://helpdesk.ggus.eu/), whose access is described in the
+page [Access and roles](../access-and-roles)
 
-Once the ticket has entered GGUS, it is processed by assigning it to the
-appropriate group to deal with the issue. The groups are generally addressed via
-mailing lists, and so GGUS assigns the ticket to a group, and an email message
-is sent to people on the appropriate list. Sometimes, a ticket is simple and it
-is assigned to the correct group immediately and dealt with immediately.
+Once the ticket has been created in GGUS, it is processed by supporters and
+assigned to the appropriate group to deal with the issue. The groups are
+generally addressed via mailing lists, so when a ticket is assigned to a support
+group, an email message is sent to people included to the associated list.
 
 ## Submitting a ticket using the web interface
 
 Before using this route, it is essential to have either a digital certificate
 installed in the appropriate manner in the web browser or an EGI Check-in
 account.
-
-### Accessing the web interface to GGUS
-
-If the user carries out all of the steps above, but is not registered to use
-GGUS, then the home page is like the one shown in the following figure:
-
-![GGUS home page for unregistered users](UG_Unregistered_User.png)
-
-If the user faces problems with their certificate, they may get help at
-[wiki.egi.eu: Getting certificate](https://wiki.egi.eu/wiki/USG_Getting_Certificate)
-
-For accessing GGUS users have to register first. Registration process is
-described in chapter Registering at GGUS.
-
-### Registering at GGUS
-
-For getting supporter privileges users need to be registered. For registering at
-GGUS the user should go to [GGUS home](https://ggus.eu/index.php?mode=index) and
-click the [registration link](https://ggus.eu/index.php?mode=register_info).
-This link opens the registration form that the user has to fill in. In addition,
-there are some links where the user can find information about X509 personal
-certificates. Users who do not have a valid digital certificate can access GGUS
-via EGI SSO. After filling in the registration form, the user receives an email
-from the GGUS team with his access data to GGUS.
-
-### Accessing GGUS with certificate
-
-The primary address of the GGUS portal is: [https://ggus.eu](https://ggus.eu).
-If the user enters this in the browser, a warning will be displayed by the
-browser prompting the user to specify which certificate to use (if the user has
-not selected to automatically select the certificate in the browser settings).
-The reason for this warning is that GGUS has to validate the user in order to
-allow access. After that, the user will no longer be asked to identify himself.
-
-The user identifies themselves with their digital certificate. At this point in
-time, GGUS has identified the user and displays the start page as shown in the
-following figure:
-
-![GGUS home page for recognized users](GGUS_Home.png)
-
-Note that in this case, the user's identity is displayed on the page and GGUS
-has recognized that this user is registered to submit tickets. If authentication
-by certificate fails, you will be taken to the login page.
-
-### Accessing GGUS via EGI Check-in
-
-When choosing "Login via EGI AAI CheckIn" on the login page the user is guided
-to the EGI Check-in page were the users Identity Provider can be selected. After
-authenticating there, the user will be redirected to GGUS.
 
 ### The ticket submit form on web interface
 
