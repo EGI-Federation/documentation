@@ -41,13 +41,11 @@ form.
 
 ### The ticket submit form on web interface
 
-The tickets submit form offers a set of fields which should help the user to
-describe his issue as detailed as possible. Most of the fields on the submit
-form are optional. Only field “Subject” is required. The submit form consists of
-three main sections: the **user information**, the **issue information** and the
-**routing information**.
+The tickets submit form offers a set of fields which should help you to
+describe the issue you want to record as detailed as possible. Most of the
+fields on the submit form are optional. 
 
-![Ticket submit form on web interface](Ticket_Submit_Form.png)
+![Ticket submit form on web interface](new-ticket-form.png)
 
 1. User information
 
