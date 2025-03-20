@@ -25,9 +25,8 @@ group, an email message is sent to people included to the associated list.
 
 ## Submitting a ticket using the web interface
 
-Before using this route, it is essential to have either a digital certificate
-installed in the appropriate manner in the web browser or an EGI Check-in
-account.
+To submit a ticket through GGUS you first need to login through EGI Check-in, as
+explained in the page [Access and roles](../access-and-roles).
 
 ### The ticket submit form on web interface
 
