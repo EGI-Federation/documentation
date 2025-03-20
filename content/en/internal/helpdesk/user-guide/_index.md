@@ -92,23 +92,12 @@ fields on the submit form are optional.
 After clicking the “Create” button you get a confirmation page showing the
 information submitted and the ticket ID.
 
-### Bypassing the TPM
+### Special tickets
 
-The TPM (Ticket Processing Manager) is the 1st Line Support in GGUS. Users can
-bypass the TPM if they have good knowledge about where the problem is. For this
-purpose at the bottom of ticket submit form there is a section "Routing
-information". Selecting either a site from the
-["Notify SITE"](../features/tickets-to-multiple-sites) drop-down menu
-or a support unit from the "Assign to support unit" drop-down menu routes the
-ticket directly to the selected support unit. If selecting a site name the
-NGI/ROC the site belongs to is set automatically. Hence the ticket is assigned
-to the relevant NGI/ROC. Additionally the site will receive a notification about
-the ticket. Selecting both, the "Notify SITE" and the "Assign to support unit"
-is not possible.
-
-Tickets of type [TEAM](../features/team-tickets) and
-[ALARM](../features/alarm-tickets) are always routed to
-the relevant NGI/ROC by default.
+Users with special roles can submit special kind of tickets, such as:
+- ["Multisite tickets"](../features/tickets-to-multiple-sites)
+- [ALARM tickets](../features/alarm-tickets)
+- [TEAM tickets](../features/team-tickets)
 
 ## Browsing your own tickets
 
