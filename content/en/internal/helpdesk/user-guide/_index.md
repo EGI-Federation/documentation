@@ -28,6 +28,17 @@ group, an email message is sent to people included to the associated list.
 To submit a ticket through GGUS you first need to login through EGI Check-in, as
 explained in the page [Access and roles](../access-and-roles).
 
+After login, you are prompted to the dashboard page:
+
+![Dashboard page]](dashboard-page.png)
+
+In the lower left corner, you can find a "+" button:
+
+![Create ticket]](create-ticket.png)
+
+Click on it and select "New ticket": you will be prompted to the ticket submit
+form.
+
 ### The ticket submit form on web interface
 
 The tickets submit form offers a set of fields which should help the user to
