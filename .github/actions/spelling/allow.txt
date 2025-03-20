@@ -81,6 +81,7 @@ cff
 cfg
 cfssl
 cfssljson
+checkbox
 chipster
 ciemat
 cilogon
@@ -98,6 +99,7 @@ cloudkey
 clouduser
 cmdb
 cmfs
+cms
 cmssw
 cnaf
 cnrs
