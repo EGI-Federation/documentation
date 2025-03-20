@@ -47,6 +47,13 @@ fields on the submit form are optional.
 
 ![Ticket submit form on web interface](new-ticket-form.png)
 
+- “TITLE” is a mandatory field. It should give a short description of the
+  issue.
+- "CUSTOMER": name and email address of the user creating the ticket
+- "CC": you can notify other people about the ticket creation by adding their
+  email address into this field
+- "TEXT": here you can add a detailed description of the issue.
+
 1. User information
 
 Most fields in the user information section are pre-filled by GGUS system.
