@@ -30,11 +30,11 @@ explained in the page [Access and roles](../access-and-roles).
 
 After login, you are prompted to the dashboard page:
 
-![Dashboard page]](dashboard-page.png)
+![Dashboard page](dashboard-page.png)
 
 In the lower left corner, you can find a "+" button:
 
-![Create ticket]](create-ticket.png)
+![Create ticket](create-ticket.png)
 
 Click on it and select "New ticket": you will be prompted to the ticket submit
 form.
