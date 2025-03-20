@@ -53,6 +53,21 @@ fields on the submit form are optional.
 - "CC": you can notify other people about the ticket creation by adding their
   email address into this field
 - "TEXT": here you can add a detailed description of the issue.
+- “CATEGORY” (mandatory) provides a drop-down list with possible values, like
+  Incidents and Service Request. Choose the appropriate value according to the
+  issue you are going to record.
+- "GROUP": provides a drop-down list of all the support groups enabled in GGUS,
+  which are grouped by category: click on the green arrow besides the name
+  of each category to see eventual sub-categories and finally the support
+  groups. If you already know the name of the support group, you can start to
+  type it in the field to display it and then to select it. If you don't know
+  whom to address your ticket, you can leave this field unselected, and the
+  ticket will be automatically assigned to TPM, the
+  [EGI First Level support](https://confluence.egi.eu/display/EGIPP/TPM+-+Ticket+Processing+Manager)
+  who will process your ticket and assign it to the most appropriate support
+  group.
+
+![Support Groups field](support-groups-field.png)
 
 1. User information
 
