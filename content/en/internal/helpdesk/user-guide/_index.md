@@ -152,6 +152,17 @@ similar way as explained in the previous section. When you have completed your
 reply, click on the "Update" button in the bottom right corner of the screen to
 add your response to the ticket.
 
+If you click on the copybook icon on the left side of the text box, it will
+appear also a mail envelope icon:
+
+![Text box icons](text-box-icons1.png)
+
+Clicking on this icon will offer you the option to send your answer also to
+other recipients not directly involved in the ticket: two new fields will be
+displayed ("TO" and "CC") where you can add their email address. **Note: in this
+way only your answer will be sent to those additional recipients**.
+
+![Text box involve](text-box-involve.png)
 
 ## Modifying tickets
 
