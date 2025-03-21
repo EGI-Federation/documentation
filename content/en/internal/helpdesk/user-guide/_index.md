@@ -99,6 +99,24 @@ Users with special roles can submit special kind of tickets, such as:
 - [ALARM tickets](../features/alarm-tickets)
 - [TEAM tickets](../features/team-tickets)
 
+## Tickets overview
+
+After the login, you land to the dashboard page as explained above. If you click
+on "Overviews" in the menu on the left you will have an overview of the tickets
+created in the helpdesk. Several views are available: in each view you can
+further filter the list of tickets by GROUP, STATUS, and PRIORITY; besides,
+depending on the roles you own, in the displayed lists you will see only the
+tickets you are allowed to access.
+
+- "My Tickets": here you have the list of tickets that you created.
+- "My Subscribed Tickets": the list of tickets you subscribed to.
+- "My Assigned Tickets Open": the list of tickets specifically assigned to you
+  in any of the open statuses.
+- "My Assigned Tickets All": the list of tickets specifically assigned to you
+  in any status.
+- "Tickets Open": all the tickets in any open status
+- "Tickets All": all the tickets, also the ones that were closed.
+
 ## Browsing your own tickets
 
 After authenticating themselves the user has access to the GGUS homepage. On
