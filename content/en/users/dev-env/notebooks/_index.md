@@ -49,13 +49,13 @@ in, write and play and re-play notebooks by:
 
 1. [creating an EGI account](../../aai/check-in/signup)
 2. Enrolling to the one of the supported VOs such as
-   [vo.notebooks.egi.eu VO](https://aai.egi.eu/registry/co_petitions/start/coef:111)
+   [vo.notebooks.egi.eu VO](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu)
 3. [accessing https://notebooks.egi.eu/](https://notebooks.egi.eu/)
 
 The central instance supports the following VOs:
 
 - [vo.notebooks.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu),
-  enroll [here](https://aai.egi.eu/registry/co_petitions/start/coef:111)
+  enroll [here](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu)
 - [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
 - [auger](https://operations-portal.egi.eu/vo/view/voname/auger)
 - [biomed](https://operations-portal.egi.eu/vo/view/voname/biomed)

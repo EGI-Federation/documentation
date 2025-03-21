@@ -147,6 +147,7 @@ dbhost
 dbpwd
 dbuser
 debian
+dependant
 desy
 desynchronise
 dgas
@@ -439,6 +440,7 @@ nodejs
 nodiratime
 nokeys
 noout
+NOPASSWD
 nordugrid
 northgrid
 nostreams
@@ -526,6 +528,7 @@ RCs
 RDIG
 rdkit
 rdm
+RDN
 reassignable
 redis
 refeds
@@ -550,6 +553,7 @@ RWO
 rxtx
 Sars
 sbdii
+SCAI
 schedd
 scipy
 scotgrid
@@ -635,6 +639,8 @@ timeleft
 timelifet
 timespan
 timewise
+TLS
+toolbar
 topbdii
 torito
 tpctest
@@ -665,6 +671,7 @@ userinfo
 userjdoe
 userkey
 utilisation
+uuid
 uwsgi
 validgrid
 varchar
@@ -672,9 +679,11 @@ vcpus
 vda
 vdb
 vdc
+venv
 Verdana
 veryverysecret
 virsh
+virtualenvs
 virtualisation
 virtualised
 visualisations
@@ -729,3 +738,4 @@ yourhostname
 yourprivatekey
 Youtube
 zenodo
+zshrc
