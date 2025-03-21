@@ -27,7 +27,7 @@ We have a dedicated VO called
 [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
 for piloting purposes. If you are not sure about which VO to enrol to, please request
 access to the _vo.access.egi.eu_ VO with your EGI account by visiting the
-[enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240). Check
+[enrollment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu). Check
 [AppDB](https://appdb.egi.eu/store/vo/vo.access.egi.eu) to see the list of
 Virtual Appliances and Resource Providers participating in the _vo.access.egi.eu_ VO.
 AppDB is one of the service in the
