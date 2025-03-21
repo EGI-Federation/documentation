@@ -949,7 +949,7 @@ assigned to the GROUPS within the ticket category &amp;ldquo;VO Support&amp;rdqu
 assigned to the GROUPS within the ticket categories &amp;ldquo;LifeScience Services&amp;rdquo;,
 &amp;ldquo;Networking&amp;rdquo;, &amp;ldquo;Other Middleware&amp;rdquo;, &amp;ldquo;PITHYA Community&amp;rdquo;, and &amp;ldquo;WLCG&amp;rdquo;.&lt;/li>
 &lt;li>&amp;ldquo;Other Infrastructures Tickets Open&amp;rdquo;: the list of tickets in any of the open
-statuses assigned to the the OSG related groups&lt;/li>
+statuses assigned to the OSG related groups.&lt;/li>
 &lt;li>&amp;ldquo;Other Projects Tickets Open&amp;rdquo;: the list of tickets in any of the open statuses
 assigned to the GROUPS representing the several middleware products (3rd
 level support).&lt;/li>
