@@ -133,35 +133,6 @@ tickets you are allowed to access.
   assigned to the GROUPS representing the several middleware products (3rd
   level support).
 
-## Browsing your own tickets
-
-After authenticating themselves the user has access to the GGUS homepage. On
-this page they see a list of their own open tickets and a list of the latest
-open tickets of all users (Figure 2). Below the list of the user’s own open
-tickets there are two links for further browsing possibilities of the user’s own
-tickets:
-
-- Show my complete ticket list,
-- My Team Tickets.
-
-The system only shows the user tickets which have been created with the same
-authentication information the user is currently logged in. This means if a user
-submits tickets with different certificates he does not see all of their
-tickets. The reason for this is that the DN string of the certificate is stored
-in each ticket. Showing all tickets of a user can be done by using the GGUS
-search engine. In the GGUS search engine users can search by username amongst
-others. This search will show all tickets of a user independent from the
-authentication information.
-
-### Show my complete ticket list
-
-This link opens a new window showing tables of all open and closed tickets of
-the user and all tickets of other users the user has subscribed to. Information
-on how to subscribe to a ticket is available in section "Subscribing to a ticket
-of another user."
-
-![Complete ticket list on GGUS home](Complete_Ticket_List.png)
-
 ## Modifying tickets
 
 ### Modifying your tickets using the web
