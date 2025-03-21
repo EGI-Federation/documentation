@@ -177,9 +177,12 @@ you can now see also:
 - "Owner": (Only if you have a at least supporter role) The given support group
   can appoint one of their members to directly follow-up the ticket.
 - "TAGS": you can tag your ticket with a word (useful for example if you want to
-  associate tickets per topic without directly linking them).
+  associate tickets per topic without directly linking them, but that topic is
+  not included in the "TICKET AREA" field).
 - "LINKS": you can link your ticket to another one, using in case the PARENT/CHILD
   relation
+- "RELATED ANSWERS": you can link a page from the Knowledge page if related to
+  the topic discussed in the ticket.
 - Subscribe button: if you have the rights to see a ticket and you are
   interested in follow its progress, you can subscribe to it: at any update of
   the ticket you will get an email notification.
