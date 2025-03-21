@@ -164,6 +164,11 @@ way only your answer will be sent to those additional recipients**.
 
 ![Text box involve](text-box-involve.png)
 
+If you are have a supporter role and you want to share your reply only with the
+other supporters following up the ticket, you can click on the *lock* icon to
+keep your comment as "internal": in this way the ticket submitter will not
+receive any notification related to your reply.
+
 ## Modifying tickets
 
 ### Modifying your tickets using the web
