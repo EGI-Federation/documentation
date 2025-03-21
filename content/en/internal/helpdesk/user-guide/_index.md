@@ -43,7 +43,7 @@ form.
 
 The tickets submit form offers a set of fields which should help you to
 describe the issue you want to record as detailed as possible. Most of the
-fields on the submit form are optional. 
+fields on the submit form are optional.
 
 ![Ticket submit form on web interface](new-ticket-form.png)
 
@@ -95,6 +95,7 @@ information submitted and the ticket ID.
 ### Special tickets
 
 Users with special roles can submit special kind of tickets, such as:
+
 - ["Multisite tickets"](../features/tickets-to-multiple-sites)
 - [ALARM tickets](../features/alarm-tickets)
 - [TEAM tickets](../features/team-tickets)
