@@ -116,6 +116,22 @@ tickets you are allowed to access.
   in any status.
 - "Tickets Open": all the tickets in any open status
 - "Tickets All": all the tickets, also the ones that were closed.
+- "Alarm Tickets": the list of Alarm tickets.
+- "Site Tickets Open": the list of tickets in any of the open statuses where a
+  site is involved.
+- "EGI Services Tickets Open": the list of tickets in any of the open statuses
+  assigned to the GROUPS within the ticket category "EGI Services and Service
+  Components"
+- "VO Support Tickets Open": the list of tickets in any of the open statuses
+  assigned to the GROUPS within the ticket category "VO Support"
+- "Second Level Tickets Open": the list of tickets in any of the open statuses
+  assigned to the GROUPS within the ticket categories "LifeScience Services",
+  "Networking", "Other Middleware", "PITHYA Community", and "WLCG".
+- "Other Infrastructures Tickets Open": the list of tickets in any of the open
+  statuses assigned to the the OSG related groups
+- "Other Projects Tickets Open": the list of tickets in any of the open statuses
+  assigned to the GROUPS representing the several middleware products (3rd
+  level support).
 
 ## Browsing your own tickets
 
