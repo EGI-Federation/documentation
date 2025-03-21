@@ -179,8 +179,8 @@ you can now see also:
 - "TAGS": you can tag your ticket with a word (useful for example if you want to
   associate tickets per topic without directly linking them, but that topic is
   not included in the "TICKET AREA" field).
-- "LINKS": you can link your ticket to another one, using in case the PARENT/CHILD
-  relation
+- "LINKS": you can link your ticket to another one, using in case the
+  PARENT/CHILD relation.
 - "RELATED ANSWERS": you can link a page from the Knowledge page if related to
   the topic discussed in the ticket.
 - Subscribe button: if you have the rights to see a ticket and you are
@@ -191,163 +191,13 @@ you can now see also:
 
 ## Ticket Participation
 
-GGUS system offers various possibilities for participating in tickets. They are
+As described in the previous sections, GGUS system offers various possibilities
+for involving additional people in the tickets. In summary, there are three
+ways:
 
-- the CC field,
-- the Involve others field and
-- the Subscribe field.
-
-An overview on these fields is given in the table below. Ticket participation
-can be done by adding a valid mail address to one of these fields. Please avoid
-adding closed mailing lists as such produce a lot of mail errors! Several mail
-addresses have to be separated by semicolon.
-
-|                | User submit | User modify | Supporter modify |
-| -------------- | ----------- | ----------- | ---------------- |
-| CC             | Yes         | No          | Yes              |
-| Involve others | No          | No          | Yes              |
-| Subscribe      | No          | Yes         | Yes              |
-
-### The “CC” field
-
-The CC field can be set by the user in the ticket submit form. Updates are only
-possible for supporters for correcting or removing invalid mail addresses. Every
-ticket update triggers a notification email to the mail address specified in the
-“CC” field.
-
-### The “Involve others” field
-
-The “Involve others” field is only for supporters use. Every ticket update
-triggers a notification email to the mail address specified in the “Involve
-others” field.
-
-### Subscribing to a ticket of another user
-
-Figure 11: Ticket subscribe Every user could subscribe to tickets of other users
-if he is interested in the solution of any. For subscribing a valid email
-address has to be provided. The user gets a notification once the ticket is
-solved. After subscribing to a ticket the user could change the notification
-mode or unsubscribe if he wants to (Figure 11). Accessing the system with the
-same credentials as used for subscription is necessary for this. Additional
-information on subscribing to tickets is available by clicking on the question
-mark at the right hand side of the label “Subscribe to this ticket”.
-
-![Ticket subscribe](GGUS_Subscribe.png)
-
-### Who gets what email notification from GGUS?
-
-The ticket "submitter" gets emails according to the "Notification mode" value
-(s)he selected when submitting the ticket. If the selected "Notification mode"
-value is "on every change" then all updates are sent to the "submitter". "Public
-Diary" entries are sent to the submitter regardless the value of the
-"Notification mode". "Internal Diary" entries never go to the "submitter". They
-are reserved for exchanges amongst supporters.
-
-The email addresses in the "Cc:" field can be entered by the "submitter" and
-receive the same notifications as the submitter. "Public Diary" entries are sent
-to the addresses in the "Cc:" field. "Internal Diary" entries never go to the
-people in the "Cc:" field. They are reserved for exchanges amongst supporters.
-
-The email addresses in the "Involve others:" field can be entered by supporters
-only and receive the same notifications as the Support Unit (SU) to which the
-ticket is assigned. "Internal Diary" entries are sent to the relevant SU members
-AND the people in the "Involve others:" field, as they are supposed to be
-experts and contribute to the ticket solution.
-
-The email address in the "Assign to one person:" field can be entered by
-supporters only and receive the same notifications as the Support Unit (SU) to
-which the ticket is assigned. "Internal Diary" entries are sent to the relevant
-SU members AND the people in the "Involve others:" field AND the email address
-in the "Assign to one person:" field as they are, all, supposed to be experts
-and contribute to the ticket solution.
-
-Every ticket update triggers an email to the addresses in the "Cc:", "Involve
-others:" and to ticket subscribers, i.e. GGUS users, unrelated to the specific
-ticket, who entered their own email in the "Subscribe to this ticket" field.
-
-GGUS email notifications highlight the fields changed with the specific update.
-
-Please avoid including closed mailing lists, e-groups in these fields as mail
-delivery will fail.
-
-## Browsing all tickets
-
-At the bottom of the home page there are additional links for browsing:
-
-- Search ticket database,
-- Show all open tickets,
-
-### GGUS search engine
-
-For browsing all tickets the GGUS search engine is a useful tool.
-
-![GGUS search engine](GGUS_User_Search.png)
-
-The GGUS search engine can be entered by clicking on link “Search ticket
-database”. When accessing the search engine a default search is performed like
-shown in Figure 12: GGUS search engine. Searching via Ticket ID is the easiest
-and fastest way to look at a ticket. When searching via Ticket ID all other
-search parameters were ignored. Besides searching for all open tickets this is
-the recommended kind of search, because it avoids needless workload on the
-system. When searching via ticket ID the ticket details are shown in the same
-window. For getting back to the main page use the "Back" button of your browser.
-The various search parameters can be combined in any way wanted except
-“Untouched since”. Description fields “Keyword”, “Involved supporter” and
-“Assigned to person” trigger a LIKE search to the database. Concatenating
-keywords with “AND” or “OR” is currently not possible. The search can either be
-started by clicking on "go" or just hitting the return key. The result of a
-search by parameters is shown in the result list. For viewing ticket details
-just click on the ID. A new window opens showing ticket details. For getting
-back to the search result just close the window with the ticket details.
-
-### Showing all open tickets
-
-Clicking on this link shows all open tickets that are currently in the system.
-Unlike “Showing all open tickets” the default search in GGUS search engine uses
-a timeframe of one week for showing open tickets.
-
-## Contacting the GGUS team
-
-Users can click on the “Envelope” icon in the menu bar for sending an email to
-the GGUS team with any comments. Note: This must not be used for submitting
-support requests as it does not create a ticket in the system!
-
-## GGUS development plans
-
-On GGUS home page there are a couple of links where users can get more
-information on the
-[GGUS development plans](https://ggus.eu/index.php?mode=development) as well as
-submit own feature requests. Feature requests are collected in the GGUS shopping
-lists in JIRA (only for users having a CERN account) and EGI RT.
-
-## Operation of GGUS
-
-The GGUS system is running on servers located at Karlsruhe Institute of
-Technology (KIT), Germany. Besides the GGUS production system a backup system is
-in place. Switching from production system to backup system currently needs
-manual interaction. An automatic switch in case of fail-over will be
-implemented. GGUS staffs at Karlsruhe are not providing support apart from
-requests concerning GGUS system itself. They can be contacted by email to
-support "at" ggus.eu. Usual office hours for GGUS staffs are from 07:00 to 15:00
-o’clock (UTC).
-
-### TPM
-
-TPM (Ticket Processing Manager) is the most important part of the support system
-for the grid. The purpose of TPM is:
-
-- closing simple trouble tickets,
-- ensuring that other tickets are sent to the correct place for processing,
-- reacting to alarms that tickets have not been processed,
-
-The TPM teams consist of people with a broad knowledge of the Grid.
-
-### Ticket Monitoring
-
-Besides developing and maintaining GGUS system the GGUS team is also doing the
-ticket monitoring. The ticket monitoring team is responsible for:
-
-- [reminding users](../workflows/waiting-for-submitter) in case their input is
-  required for further ticket processing
-- reminding supporters in case tickets are not processed
-- assisting in any problem during ticket processing
+- involve other support groups in the progress of a ticket ("Notified groups"
+  field).
+- Send to additional people an email notification related to an answer to a
+  ticket by specifically adding their email address in the "TO" and "CC" fields
+  when filling in the reply to a ticket.
+- Subscribe yourself to a ticket.
