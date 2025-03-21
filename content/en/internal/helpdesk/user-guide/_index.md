@@ -96,7 +96,7 @@ information submitted and the ticket ID.
 
 Users with special roles can submit special kind of tickets, such as:
 
-- ["Multisite tickets"](../features/tickets-to-multiple-sites)
+- [Multisite tickets](../features/tickets-to-multiple-sites)
 - [ALARM tickets](../features/alarm-tickets)
 - [TEAM tickets](../features/team-tickets)
 
@@ -127,7 +127,7 @@ tickets you are allowed to access.
   assigned to the GROUPS within the ticket category "VO Support"
 - "Second Level Tickets Open": the list of tickets in any of the open statuses
   assigned to the GROUPS within the ticket categories "LifeScience Services",
-  "Networking", "Other Middleware", "PITHYA Community", and "WLCG".
+  "Networking", "Other Middleware", "PITHIA Community", and "WLCG".
 - "Other Infrastructures Tickets Open": the list of tickets in any of the open
   statuses assigned to the OSG related groups.
 - "Other Projects Tickets Open": the list of tickets in any of the open statuses
