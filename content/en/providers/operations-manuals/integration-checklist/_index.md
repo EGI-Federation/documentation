@@ -32,8 +32,7 @@ Resource Centre integrated into the EGI Federation.
      their RC
      - The Supporter role can be requested either directly on GGUS by using the
        own X509 personal certificate or by
-       [enrolling to the ggus-supporters](
-       https://aai.egi.eu/registry/co_petitions/start/coef:69)
+       [enrolling to the ggus-supporters](https://aai.egi.eu/registry/co_petitions/start/coef:69)
        group in Check-in.
 
 1. Security:

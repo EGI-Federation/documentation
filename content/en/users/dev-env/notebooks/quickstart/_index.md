@@ -55,7 +55,7 @@ the current name.
 
 ### Structure of a notebook
 
-The notebook consists of a sequence of cells. A cell is a multiline text input
+The notebook consists of a sequence of cells. A cell is a multi-line text input
 field, and its contents can be executed by using `Shift-Enter`, or by clicking
 either the "Play" button in the toolbar, or Cell -\> Run in the menu bar.
 
