@@ -169,6 +169,23 @@ other supporters following up the ticket, you can click on the *lock* icon to
 keep your comment as "internal": in this way the ticket submitter will not
 receive any notification related to your reply.
 
+In addition to the reply to the ticket, you can also modify the other fields
+associated to it (if you the required permissions associated to the role owned
+in the system). Besides the fields that were mentioned in the previous section,
+you can now see also:
+
+- "Owner": (Only if you have a at least supporter role) The given support group
+  can appoint one of their members to directly follow-up the ticket.
+- "TAGS": you can tag your ticket with a word (useful for example if you want to
+  associate tickets per topic without directly linking them).
+- "LINKS": you can link your ticket to another one, using in case the PARENT/CHILD
+  relation
+- Subscribe button: if you have the rights to see a ticket and you are
+  interested in follow its progress, you can subscribe to it: at any update of
+  the ticket you will get an email notification.
+
+![Tags and Links](tags-links.png)
+
 ## Modifying tickets
 
 ### Modifying your tickets using the web
