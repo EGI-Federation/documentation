@@ -32,7 +32,7 @@ components:
 
 1. Start by [creating an EGI account](../../../aai/check-in/signup)
 1. Then enroll
-   [vo.notebooks.egi.eu VO](https://aai.egi.eu/registry/co_petitions/start/coef:111)
+   [vo.notebooks.egi.eu VO](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu)
 1. Go to [https://notebooks.egi.eu/](https://notebooks.egi.eu/)
 1. Start the authentication process by clicking on **Continue with EGI
    Check-in!** button
