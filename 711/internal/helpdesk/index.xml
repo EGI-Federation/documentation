@@ -917,7 +917,7 @@ information submitted and the ticket ID.&lt;/p>
 &lt;h3 id="special-tickets">Special tickets&lt;/h3>
 &lt;p>Users with special roles can submit special kind of tickets, such as:&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="../features/tickets-to-multiple-sites">&amp;ldquo;Multisite tickets&amp;rdquo;&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../features/tickets-to-multiple-sites">Multisite tickets&lt;/a>&lt;/li>
 &lt;li>&lt;a href="../features/alarm-tickets">ALARM tickets&lt;/a>&lt;/li>
 &lt;li>&lt;a href="../features/team-tickets">TEAM tickets&lt;/a>&lt;/li>
 &lt;/ul>
@@ -947,7 +947,7 @@ Components&amp;rdquo;&lt;/li>
 assigned to the GROUPS within the ticket category &amp;ldquo;VO Support&amp;rdquo;&lt;/li>
 &lt;li>&amp;ldquo;Second Level Tickets Open&amp;rdquo;: the list of tickets in any of the open statuses
 assigned to the GROUPS within the ticket categories &amp;ldquo;LifeScience Services&amp;rdquo;,
-&amp;ldquo;Networking&amp;rdquo;, &amp;ldquo;Other Middleware&amp;rdquo;, &amp;ldquo;PITHYA Community&amp;rdquo;, and &amp;ldquo;WLCG&amp;rdquo;.&lt;/li>
+&amp;ldquo;Networking&amp;rdquo;, &amp;ldquo;Other Middleware&amp;rdquo;, &amp;ldquo;PITHIA Community&amp;rdquo;, and &amp;ldquo;WLCG&amp;rdquo;.&lt;/li>
 &lt;li>&amp;ldquo;Other Infrastructures Tickets Open&amp;rdquo;: the list of tickets in any of the open
 statuses assigned to the OSG related groups.&lt;/li>
 &lt;li>&amp;ldquo;Other Projects Tickets Open&amp;rdquo;: the list of tickets in any of the open statuses
