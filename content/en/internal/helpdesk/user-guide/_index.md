@@ -142,13 +142,13 @@ the correct way, please pay attention on not to change the subject line of the
 email message you received.
 
 The other way is to use the web interface, which allows you to modify also other
-aspects of a ticket. When you display a ticket in your webbrowser, if you scroll
-down at the bottom of the page you can find a text box to add your reply to the
-ticket.
+aspects of a ticket. When you display a ticket in your web browser, if you
+scroll down at the bottom of the page you can find a text box to add your reply
+to the ticket.
 
 ![Text box](text-box.png)
 
-You also have the opportunity to attache files along with your text reply, in a
+You also have the opportunity to attach files along with your text reply, in a
 similar way as explained in the previous section. When you have completed your
 reply, click on the "Update" button in the bottom right corner of the screen to
 add your response to the ticket.
