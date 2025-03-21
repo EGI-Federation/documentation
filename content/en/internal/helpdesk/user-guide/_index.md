@@ -129,7 +129,7 @@ tickets you are allowed to access.
   assigned to the GROUPS within the ticket categories "LifeScience Services",
   "Networking", "Other Middleware", "PITHYA Community", and "WLCG".
 - "Other Infrastructures Tickets Open": the list of tickets in any of the open
-  statuses assigned to the the OSG related groups
+  statuses assigned to the OSG related groups.
 - "Other Projects Tickets Open": the list of tickets in any of the open statuses
   assigned to the GROUPS representing the several middleware products (3rd
   level support).
