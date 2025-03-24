@@ -159,7 +159,7 @@ the users' requests before granting the access to the resources.
 
 1. Create an [EGI Check-In account](../aai/check-in/).
 2. Enroll the `vo.access.egi.eu` Virtual Organisation by following the
-   [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240).
+   [enrollment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu).
    Make sure you use your EGI Check-In account for the enrollment.
 
 Once your petition is approved, you will be granted access. The grant to run
