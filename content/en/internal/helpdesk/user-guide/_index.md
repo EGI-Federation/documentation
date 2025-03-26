@@ -110,7 +110,7 @@ time. Currently the following values are available for selection:
     services of the EGI portfolio.
 - Documentation (used to request creation and update on documentation).
 - Release (used when a new version of the EGI Core Services is ready to be
-  tested; see the 
+  tested; see the
   [Change, Release, and Deployment Management procedures](https://confluence.egi.eu/x/g4VTEg))
 - CMS Internal (for cms VO specific tickets)
 - EGI Coordination/Planning (to track activities not falling into the service
