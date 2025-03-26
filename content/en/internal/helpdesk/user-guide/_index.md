@@ -50,8 +50,6 @@ fields on the submit form are optional.
 - “TITLE” is a mandatory field. It should give a short description of the
   issue.
 - "CUSTOMER": name and email address of the user creating the ticket
-- "CC": you can notify other people about the ticket creation by adding their
-  email address into this field
 - "TEXT": here you can add a detailed description of the issue.
 - “CATEGORY” (mandatory) provides a drop-down list with possible values, like
   Incidents and Service Request. Choose the appropriate value according to the
@@ -84,6 +82,8 @@ fields on the submit form are optional.
 - “TIME OF ISSUE” defaults to the submitting time.
 - "NOTIFIED GROUPS": with this field you can select other support groups that
   might be interested in following the progress of your ticket.
+- "NOTIFIED USERS": you can involve other people in the ticket by adding their
+  email address into this field.
 - "NOTIFICATION MODE" defaults to “on every change”. The Notification mode
   manages the update notifications the user receives. If “On solution” is
   selected, then you only get notified when the ticket status is set to
@@ -153,22 +153,10 @@ similar way as explained in the previous section. When you have completed your
 reply, click on the "Update" button in the bottom right corner of the screen to
 add your response to the ticket.
 
-If you click on the copybook icon on the left side of the text box, it will
-appear also a mail envelope icon:
-
-![Text box icons](text-box-icons1.png)
-
-Clicking on this icon will offer you the option to send your answer also to
-other recipients not directly involved in the ticket: two new fields will be
-displayed ("TO" and "CC") where you can add their email address. **Note: in this
-way only your answer will be sent to those additional recipients**.
-
-![Text box involve](text-box-involve.png)
-
-If you are have a supporter role and you want to share your reply only with the
-other supporters following up the ticket, you can click on the *lock* icon to
-keep your comment as "internal": in this way the ticket submitter will not
-receive any notification related to your reply.
+If you have a supporter role and you want to share your reply only with the
+other supporters following up the ticket, you can click on the *lock* icon on
+the left side of the text box to keep your comment as "internal": in this way,
+the ticket submitter will not receive any notification related to your reply.
 
 In addition to the reply to the ticket, you can also modify the other fields
 associated to it (if you the required permissions associated to the role owned
@@ -198,7 +186,6 @@ ways:
 
 - involve other support groups in the progress of a ticket ("Notified groups"
   field).
-- Send to additional people an email notification related to an answer to a
-  ticket by specifically adding their email address in the "TO" and "CC" fields
-  when filling in the reply to a ticket.
+- Involve individual people in the progress of a ticket by specifically adding
+  their email address in the "NOTIFIED USERS" field.
 - Subscribe yourself to a ticket.
