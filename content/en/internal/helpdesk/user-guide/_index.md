@@ -205,6 +205,33 @@ you can now see also:
 
 ![Tags and Links](tags-links.png)
 
+### Ticket state
+
+Setting the right ticket state is important to say the users if for example the
+ticket has been ackonowledged by someone or if some feedback from the submitter
+is required to progress with the processing of a given ticket. Here is a
+description of the different state values and how they should be used.
+
+- assigned: this status is set automatically and can't be selected in the
+  drop-down list menu. After a ticket is assigned to a support group, this group
+  is notified via email about the ticket assignment.
+- in progress: support staff who work on the ticket should change status to “in
+  progress” when they ackonwledge it. This is necessary to announce that someone
+  is taking care of the ticket and is working on it.
+- waiting for submitter's reply: this status value should be set ONLY by the
+  supporters and ONLY when asking the SUBMITTER for further information.
+- on hold: this status should be used in those situations where a solution
+  cannot be provided in short times but is planned for a certain point in the
+  future becasue depending for example on the release of a software fix or on
+  other related activities that require more time to be completed.
+- solved: this state is used to close a ticket when a solution is provided.
+  Adding a full explanation of the solution is reccommended and will be helpful
+  when the given ticket is used as a reference and to create documentation from
+  it.
+- unsolved: This status is for tickets that can not be solved due to any reason
+  (ticket duplicated, topic not valid any longer, won't fix, etc.). Please add a
+  comment in the text field explaining why it can't be solved.
+
 ## Ticket history
 
 If you click on the word "Ticket" displayed in top-right corner of the page, you
