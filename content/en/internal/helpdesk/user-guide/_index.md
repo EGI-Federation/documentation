@@ -45,7 +45,7 @@ The tickets submit form offers a set of fields which should help you to
 describe the issue you want to record as detailed as possible. Most of the
 fields on the submit form are optional.
 
-![Ticket submit form on web interface](new-ticket-form.png)
+![Ticket submit form on web interface](new-ticket-form2.png)
 
 - “TITLE” is a mandatory field. It should give a short description of the
   issue.
