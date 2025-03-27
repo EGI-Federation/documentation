@@ -205,6 +205,30 @@ you can now see also:
 
 ![Tags and Links](tags-links.png)
 
+## Ticket history
+
+If you click on the word "Ticket" displayed in top-right corner of the page, you
+can access the ticket history. It shows all relevant changes of the ticket in
+chronological order. Changes of these fields lead to a new entry in ticket history:
+
+- Category
+- Group
+- Owner
+- Ticket Area
+- State
+- Priority
+- Affected VO
+- Time of Issue
+- Notified Groups
+- Notified Users
+- Notification Mode
+- TAGS
+- LINKS
+- Related Answers
+- Notifications (subscriptions)
+
+![Ticket history](ticket-history.png)
+
 ## Ticket Participation
 
 As described in the previous sections, GGUS system offers various possibilities
