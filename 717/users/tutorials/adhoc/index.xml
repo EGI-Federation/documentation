@@ -1580,30 +1580,37 @@ status of the specified job:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>https://fts-public-003.cern.ch:8449/fts3/ftsmon/#/job/247b7ca2-4c4d-11ec-84d0-fa163e5dcbe0
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="CERN-PROD-FTS3.png" alt="WebFTS credential delegation">&lt;/p></description></item><item><title>Users: Data redundancy</title><link>/users/tutorials/adhoc/data-redundancy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/users/tutorials/adhoc/data-redundancy/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>Data redundancy in cloud environments is crucial to ensure high availability, data integrity, and disaster recovery. In federated infrastructures like EGI, redundancy mitigates risks such as hardware failures, accidental deletions, and data corruption.
-Without proper redundancy, critical data may be lost permanently or become inaccessible during infrastructure failures.
-Redundancy enables resilience against failures and provides consistent service availability in Kubernetes (k8s) and OpenStack deployments. Relying on multiple geographically distributed sites supporting redundancy is essential for use cases that require cross-site data protection, compliance, and disaster recovery strategies.&lt;/p>
+&lt;p>Data redundancy in cloud environments is crucial to ensure high availability, data integrity, and disaster recovery.
+In federated infrastructures like EGI, redundancy mitigates risks such as hardware failures, accidental deletions, and
+data corruption. Without proper redundancy, critical data may be lost permanently or become inaccessible during
+infrastructure failures.
+Redundancy enables resilience against failures and provides consistent service availability in Kubernetes (k8s) and
+OpenStack deployments. Relying on multiple geographically distributed sites supporting redundancy is essential for use
+cases that require cross-site data protection, compliance, and disaster recovery strategies.&lt;/p>
 &lt;p>This guide covers two approaches to achieving redundancy:&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>Using Rsync and Snapshot Replication&lt;/strong> between two OpenStack installations.&lt;/li>
 &lt;li>&lt;strong>Using MinIO for Object Storage&lt;/strong>, providing an S3-compatible alternative for data redundancy.&lt;/li>
 &lt;/ol>
-&lt;p>Both solutions provide redundancy but cater to different use cases. The OpenStack rsync method is best for VM failover, while MinIO offers flexible object storage redundancy.&lt;/p>
+&lt;p>Both solutions provide redundancy but cater to different use cases. The OpenStack rsync method is best for VM failover,
+while MinIO offers flexible object storage redundancy.&lt;/p>
 &lt;blockquote>
-&lt;p>For a blend of security and granular control, Restic&amp;rsquo;s encrypted, deduplicated backups offer a compelling alternative to solely relying on OpenStack or MinIO redundancy.
-&lt;a href="https://github.com/restic/restic">https://github.com/restic/restic&lt;/a>&lt;/p>
+&lt;p>For a blend of security and granular control, &lt;code>Restic&lt;/code>&amp;rsquo;s encrypted, deduplicated backups offer a compelling
+alternative to solely relying on OpenStack or MinIO redundancy. &lt;a href="https://github.com/restic/restic">
+https://github.com/restic/restic&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;hr>
 &lt;h2 id="solution-1-redundant-openstack-setup">Solution 1: Redundant OpenStack Setup&lt;/h2>
 &lt;p>&lt;em>&lt;strong>Using Rsync and Snapshot Replication&lt;/strong>&lt;/em>&lt;/p>
 &lt;h3 id="overview">Overview&lt;/h3>
-&lt;p>This solution synchronizes virtual machine (VM) snapshots between two OpenStack instances, ensuring high availability and data redundancy.&lt;/p>
+&lt;p>This solution synchronizes virtual machine (VM) snapshots between two OpenStack instances, ensuring high availability
+and data redundancy.&lt;/p>
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
 &lt;ul>
 &lt;li>A virtual organization with access to two OpenStack sites (Source and Destination sites)&lt;/li>
 &lt;li>A migration instance on both sites&lt;/li>
 &lt;li>SSH access between sites&lt;/li>
-&lt;li>OpenStack CLI tools installed&lt;/li>
+&lt;li>OpenStack command-line tools installed&lt;/li>
 &lt;li>Sufficient storage capacity&lt;/li>
 &lt;/ul>
 &lt;h3 id="step-1-configure-ssh-for-passwordless-authentication">Step 1: Configure SSH for Passwordless Authentication&lt;/h3>
@@ -1616,7 +1623,7 @@ Redundancy enables resilience against failures and provides consistent service a
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="22-transfer-the-snapshot-to-the-destination">2.2 Transfer the Snapshot to the Destination&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>openstack image list &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep instance_snapshot
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openstack image save --file instance_snapshot.img SNAPSHOT_ID
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>scp instance_snapshot.img user@destination_host:/tmp/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rsync -avz instance_snapshot.img user@destination_host:/tmp/
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="23-import-snapshot-on-destination">2.3 Import Snapshot on Destination&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>openstack image create --file /tmp/instance_snapshot.img --disk-format qcow2 --container-format bare instance_snapshot
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-automate-snapshot-replication">Step 3: Automate Snapshot Replication&lt;/h3>
@@ -1624,19 +1631,24 @@ Redundancy enables resilience against failures and provides consistent service a
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>crontab -e
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> * * * openstack server snapshot create --name instance_snapshot-&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>date +&lt;span style="color:#4e9a06">\%&lt;/span>F&lt;span style="color:#204a87;font-weight:bold">)&lt;/span> INSTANCE_ID
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> * * * openstack image save --file /tmp/instance_snapshot-&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>date +&lt;span style="color:#4e9a06">\%&lt;/span>F&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>.img &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>openstack image list &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep instance_snapshot-&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>date +&lt;span style="color:#4e9a06">\%&lt;/span>F&lt;span style="color:#204a87;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> awk &lt;span style="color:#4e9a06">&amp;#39;{print $2}&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span> * * * scp /tmp/instance_snapshot-&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>date +&lt;span style="color:#4e9a06">\%&lt;/span>F&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>.img user@destination_host:/tmp/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">5&lt;/span> * * * ssh user@destination_host &lt;span style="color:#4e9a06">&amp;#39;openstack image create --file /tmp/instance_snapshot-$(date +\%F).img --disk-format qcow2 --container-format bare instance_snapshot-$(date +\%F)&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span> * * * openstack image save --file /tmp/instance_snapshot-&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>date +&lt;span style="color:#4e9a06">\%&lt;/span>F&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>.img &lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>openstack image list &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span> grep instance_snapshot-&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>date +&lt;span style="color:#4e9a06">\%&lt;/span>F&lt;span style="color:#204a87;font-weight:bold">)&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> awk &lt;span style="color:#4e9a06">&amp;#39;{print $2}&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span> * * * rsync -avz /tmp/instance_snapshot-&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>date +&lt;span style="color:#4e9a06">\%&lt;/span>F&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>.img user@destination_host:/tmp/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">5&lt;/span> * * * ssh user@destination_host &lt;span style="color:#4e9a06">&amp;#39;openstack image create --file /tmp/instance_snapshot-$(date +\%F).img \
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> --disk-format qcow2 --container-format bare instance_snapshot-$(date +\%F)&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-testing-failover">Step 4: Testing Failover&lt;/h3>
 &lt;p>On the destination site:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>openstack server create --flavor FLAVOR_ID --image instance_snapshot --network NETWORK_ID new_instance
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="results">Results&lt;/h3>
-&lt;p>By utilizing rsync and snapshot replication, VM state consistency is ensured between sites, improving failover readiness.&lt;/p>
+&lt;p>By utilizing rsync and snapshot replication, VM state consistency is ensured between sites, improving failover
+readiness.&lt;/p>
 &lt;hr>
 &lt;h2 id="solution-2-redundant-object-storage">Solution 2: Redundant Object Storage&lt;/h2>
 &lt;p>&lt;em>&lt;strong>with MinIO&lt;/strong>&lt;/em>&lt;/p>
 &lt;h3 id="overview-1">Overview&lt;/h3>
-&lt;p>MinIO is an open-source, high-performance object storage solution compatible with Amazon S3. It enables redundancy and data replication across multiple sites, making it a good alternative for OpenStack Swift or AWS S3 in a private or federated cloud.&lt;/p>
+&lt;p>MinIO is an open-source, high-performance object storage solution compatible with Amazon S3. It enables redundancy and
+data replication across multiple sites, making it a good alternative for OpenStack Swift or AWS S3 in a private or
+federated cloud.&lt;/p>
 &lt;h3 id="deployment-in-fedcloud">Deployment in FedCloud&lt;/h3>
 &lt;p>MinIO is available in FedCloud with different deployment options:&lt;/p>
 &lt;ul>
@@ -1653,7 +1665,7 @@ Redundancy enables resilience against failures and provides consistent service a
 &lt;p>To configure MinIO for redundancy, follow these steps:&lt;/p>
 &lt;h4 id="step-1-access-the-minio-web-interface">Step 1: Access the MinIO Web Interface&lt;/h4>
 &lt;ul>
-&lt;li>Open your browser and navigate to http://&amp;lt;minio_host&amp;gt;:9001.&lt;/li>
+&lt;li>Open your browser and navigate to &lt;code>http://&amp;lt;minio_host&amp;gt;:9001&lt;/code>.&lt;/li>
 &lt;li>Log in with your MinIO credentials (admin username and password).&lt;/li>
 &lt;/ul>
 &lt;h4 id="step-2-create-buckets">Step 2: Create Buckets&lt;/h4>
@@ -1677,7 +1689,7 @@ Redundancy enables resilience against failures and provides consistent service a
 &lt;/ul>
 &lt;h4 id="step-4-verify-replication">Step 4: Verify Replication&lt;/h4>
 &lt;p>Upload an object to the source MinIO instance and check if it appears in the destination MinIO bucket.&lt;/p>
-&lt;h3 id="alternate-minio-configuration-using-cli">Alternate MinIO Configuration using cli&lt;/h3>
+&lt;h3 id="alternate-minio-configuration-using-command-line">Alternate MinIO Configuration using Command-line&lt;/h3>
 &lt;h4 id="step-1-install-and-configure-minio">Step 1: Install and Configure MinIO&lt;/h4>
 &lt;p>On each site:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker run -d --name minio &lt;span style="color:#4e9a06">\
