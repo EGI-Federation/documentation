@@ -31,6 +31,7 @@ while MinIO offers flexible object storage redundancy.
 ---
 
 ## Solution 1: Redundant OpenStack Setup
+
 _**Using Rsync and Snapshot Replication**_
 
 ### Overview
@@ -195,4 +196,3 @@ mc mirror --watch source/bucket destination/bucket
 ```
 
 ---
-
