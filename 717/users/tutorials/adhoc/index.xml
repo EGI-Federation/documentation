@@ -1596,8 +1596,8 @@ cases that require cross-site data protection, compliance, and disaster recovery
 while MinIO offers flexible object storage redundancy.&lt;/p>
 &lt;blockquote>
 &lt;p>For a blend of security and granular control, &lt;code>Restic&lt;/code>&amp;rsquo;s encrypted, deduplicated backups offer a compelling
-alternative to solely relying on OpenStack or MinIO redundancy. &lt;a href="https://github.com/restic/restic">
-https://github.com/restic/restic&lt;/a>&lt;/p>
+alternative to solely relying on OpenStack or MinIO redundancy.
+&lt;a href="https://github.com/restic/restic">https://github.com/restic/restic&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;hr>
 &lt;h2 id="solution-1-redundant-openstack-setup">Solution 1: Redundant OpenStack Setup&lt;/h2>
