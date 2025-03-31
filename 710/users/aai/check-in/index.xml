@@ -428,8 +428,8 @@ will have a &lt;strong>pending membership&lt;/strong> status until the specified
 the start date arrives, the membership will automatically activate, changing
 their status from pending to active.&lt;/p>
 &lt;h3 id="view-group-details-and-manage-group-roles">View Group Details and Manage Group Roles&lt;/h3>
-&lt;p>The &lt;strong>Group Details Tab&lt;/strong> provides essential information and management
-options, including:&lt;/p>
+&lt;p>The &lt;strong>Group Details Tab&lt;/strong> provides essential information and management options,
+including:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Available Group Roles&lt;/strong>: Lists roles within the Group and displays the
 entitlements granted to users with these roles.&lt;/li>
@@ -451,21 +451,16 @@ and select the target group to access its Group Configuration Page.
 &lt;img src="./admin-group-details-tab.png" alt="Admin Groups Details View">&lt;/li>
 &lt;/ol>
 &lt;h4 id="create-group-role">Create Group Role&lt;/h4>
-&lt;ol start="4">
-&lt;li>To add a new role, enter the role name in the text input field and click the
+&lt;p>To add a new role, enter the role name in the text input field and click the
 plus button to create it.&lt;br>
-&lt;img src="./admin-group-create-group-role.png" alt="Admin Groups Create Group Role">&lt;/li>
-&lt;/ol>
+&lt;img src="./admin-group-create-group-role.png" alt="Admin Groups Create Group Role">&lt;/p>
 &lt;h4 id="delete-group-role">Delete Group Role&lt;/h4>
 &lt;blockquote>
 &lt;p>&lt;strong>Note:&lt;/strong> A role cannot be deleted from a group if it is assigned to any
 members.&lt;/p>
 &lt;/blockquote>
-&lt;ol start="4">
-&lt;li>Locate the role you want to remove and use the minus button next to it to
-delete it.
-&lt;img src="./admin-group-delete-group-role.png" alt="Admin Groups Delete Group Role">&lt;/li>
-&lt;/ol>
+&lt;p>Locate the role you want to remove and use the minus button next to it to delete
+it. &lt;img src="./admin-group-delete-group-role.png" alt="Admin Groups Delete Group Role">&lt;/p>
 &lt;h3 id="create-sub-group">Create Sub Group&lt;/h3>
 &lt;p>There are two ways to create a subgroup within the platform:&lt;/p>
 &lt;h4 id="a-through-the-group-management-pagehttpsaaiegieuauthrealmsidaccountgroupsadmingroups">A) Through the &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups">Group Management Page&lt;/a>&lt;/h4>
@@ -553,7 +548,7 @@ Check-in account to accept or reject the invitation.&lt;/li>
 &lt;li>Direct Add: Admins can directly add new members by selecting users who are
 already registered and belong to a group where they have admin rights.&lt;/li>
 &lt;/ul>
-&lt;p>Sending an Invitation to a User or directly adding them the the group can be
+&lt;p>Sending an Invitation to a User or directly adding them the group can be
 achieved by:&lt;/p>
 &lt;ol>
 &lt;li>Login to
@@ -708,7 +703,7 @@ the notification sent to the User and the group Admins.
 &lt;li>Click the YES button to submit your action&lt;/li>
 &lt;/ol>
 &lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Once a group member is activated/suspended, admins of the group
+&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Once a group member is activated/suspended, admins of the group&lt;br>
 and the user will receive an email notification.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="admin-management">Admin Management&lt;/h2>
@@ -744,11 +739,8 @@ invitation.&lt;br>
 &lt;/ol>
 &lt;blockquote>
 &lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Selecting a user discovered in the select input and will add the
-user immediately.&lt;/p>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;p>&lt;strong>&lt;em>NOTE:&lt;/em>&lt;/strong> Once a User accepts or rejects an invitation and when a user is
-added directly to a group group admins receive email notification&lt;/p>
+user immediately. Once a User accepts or rejects an invitation and when a user
+is added directly to a group, group admins receive email notification&lt;/p>
 &lt;/blockquote>
 &lt;h3 id="remove-group-admin">Remove Group Admin&lt;/h3>
 &lt;ol>
