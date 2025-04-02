@@ -45,13 +45,11 @@ The tickets submit form offers a set of fields which should help you to
 describe the issue you want to record as detailed as possible. Most of the
 fields on the submit form are optional.
 
-![Ticket submit form on web interface](new-ticket-form.png)
+![Ticket submit form on web interface](new-ticket-form2.png)
 
 - “TITLE” is a mandatory field. It should give a short description of the
   issue.
 - "CUSTOMER": name and email address of the user creating the ticket
-- "CC": you can notify other people about the ticket creation by adding their
-  email address into this field
 - "TEXT": here you can add a detailed description of the issue.
 - “CATEGORY” (mandatory) provides a drop-down list with possible values, like
   Incidents and Service Request. Choose the appropriate value according to the
@@ -84,6 +82,8 @@ fields on the submit form are optional.
 - “TIME OF ISSUE” defaults to the submitting time.
 - "NOTIFIED GROUPS": with this field you can select other support groups that
   might be interested in following the progress of your ticket.
+- "NOTIFIED USERS": you can involve other people in the ticket by adding their
+  email address into this field.
 - "NOTIFICATION MODE" defaults to “on every change”. The Notification mode
   manages the update notifications the user receives. If “On solution” is
   selected, then you only get notified when the ticket status is set to
@@ -91,6 +91,33 @@ fields on the submit form are optional.
 
 After clicking the “Create” button you get a confirmation page showing the
 information submitted and the ticket ID.
+
+### Ticket categories
+
+The ticket category is for differentiating between incidents and service
+requests. This distinction is helpful for supporters as well as for the GGUS
+reporting, e.g. for excluding test tickets. Other categories were added over the
+time. Currently the following values are available for selection:
+
+- Incident (see the
+  [FitSM definition](https://ims.egi.eu/display/EGIG/Incident)).
+- Service request (see the
+  [FitSM definition](https://ims.egi.eu/display/EGIG/Service+request)).
+  - See the list of service requests for the
+    [internal](https://confluence.egi.eu/display/EGISLM/EGI+Internal+Service+requests)
+    and for the
+    [external](https://confluence.egi.eu/display/EGISLM/EGI+Service+requests)
+    services of the EGI portfolio.
+- Documentation (used to request creation and update on documentation).
+- Release (used when a new version of the EGI Core Services is ready to be
+  tested; see the
+  [Change, Release, and Deployment Management procedures](https://confluence.egi.eu/x/g4VTEg))
+- CMS Internal (for cms VO specific tickets)
+- EGI Coordination/Planning (to track activities not falling into the service
+  request definition)
+- WLCG Coordination/Planning (to track activities not falling into the service
+  request definition)
+- Test
 
 ### Special tickets
 
@@ -153,22 +180,10 @@ similar way as explained in the previous section. When you have completed your
 reply, click on the "Update" button in the bottom right corner of the screen to
 add your response to the ticket.
 
-If you click on the copybook icon on the left side of the text box, it will
-appear also a mail envelope icon:
-
-![Text box icons](text-box-icons1.png)
-
-Clicking on this icon will offer you the option to send your answer also to
-other recipients not directly involved in the ticket: two new fields will be
-displayed ("TO" and "CC") where you can add their email address. **Note: in this
-way only your answer will be sent to those additional recipients**.
-
-![Text box involve](text-box-involve.png)
-
-If you are have a supporter role and you want to share your reply only with the
-other supporters following up the ticket, you can click on the *lock* icon to
-keep your comment as "internal": in this way the ticket submitter will not
-receive any notification related to your reply.
+If you have a supporter role and you want to share your reply only with the
+other supporters following up the ticket, you can click on the *lock* icon on
+the left side of the text box to keep your comment as "internal": in this way,
+the ticket submitter will not receive any notification related to your reply.
 
 In addition to the reply to the ticket, you can also modify the other fields
 associated to it (if you the required permissions associated to the role owned
@@ -190,6 +205,57 @@ you can now see also:
 
 ![Tags and Links](tags-links.png)
 
+### Ticket state
+
+Setting the right ticket state is important to say the users if for example the
+ticket has been acknowledged by someone or if some feedback from the submitter
+is required to progress with the processing of a given ticket. Here is a
+description of the different state values and how they should be used.
+
+- assigned: this status is set automatically and can't be selected in the
+  drop-down list menu. After a ticket is assigned to a support group, this group
+  is notified via email about the ticket assignment.
+- in progress: support staff who work on the ticket should change status to “in
+  progress” when they acknowledge it. This is necessary to announce that someone
+  is taking care of the ticket and is working on it.
+- waiting for submitter's reply: this status value should be set ONLY by the
+  supporters and ONLY when asking the SUBMITTER for further information.
+- on hold: this status should be used in those situations where a solution
+  cannot be provided in short times but is planned for a certain point in the
+  future because depending for example on the release of a software fix or on
+  other related activities that require more time to be completed.
+- solved: this state is used to close a ticket when a solution is provided.
+  Adding a full explanation of the solution is recommended and will be helpful
+  when the given ticket is used as a reference and to create documentation from
+  it.
+- unsolved: This status is for tickets that can not be solved due to any reason
+  (ticket duplicated, topic not valid any longer, won't fix, etc.). Please add a
+  comment in the text field explaining why it can't be solved.
+
+## Ticket history
+
+If you click on the word "Ticket" displayed in top-right corner of the page, you
+can access the ticket history. It shows all relevant changes of the ticket in
+chronological order. Changes of these fields lead to a new entry in ticket history:
+
+- Category
+- Group
+- Owner
+- Ticket Area
+- State
+- Priority
+- Affected VO
+- Time of Issue
+- Notified Groups
+- Notified Users
+- Notification Mode
+- TAGS
+- LINKS
+- Related Answers
+- Notifications (subscriptions)
+
+![Ticket history](ticket-history.png)
+
 ## Ticket Participation
 
 As described in the previous sections, GGUS system offers various possibilities
@@ -198,7 +264,6 @@ ways:
 
 - involve other support groups in the progress of a ticket ("Notified groups"
   field).
-- Send to additional people an email notification related to an answer to a
-  ticket by specifically adding their email address in the "TO" and "CC" fields
-  when filling in the reply to a ticket.
+- Involve individual people in the progress of a ticket by specifically adding
+  their email address in the "NOTIFIED USERS" field.
 - Subscribe yourself to a ticket.

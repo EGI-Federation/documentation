@@ -717,6 +717,7 @@ wlcgname
 WMS
 wns
 workdir
+workaround
 wps
 wroc
 WSGI
