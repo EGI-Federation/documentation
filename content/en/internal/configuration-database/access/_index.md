@@ -40,7 +40,7 @@ joining a specific group, by performing the steps below. Using a compliant IdP
 is the preferable solution.
 
 1. User should ask to join the
-   [GOCDB user group](https://aai.egi.eu/registry/co_petitions/start/coef:41).
+   [GOCDB user group](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/goc.egi.eu).
 1. The access request will be managed by the EGI Operations team. {{% /alert %}}
 
 ## Using an X.509 digital certificate
