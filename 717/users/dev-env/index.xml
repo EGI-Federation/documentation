@@ -33,13 +33,13 @@ in, write and play and re-play notebooks by:&lt;/p>
 &lt;ol>
 &lt;li>&lt;a href="../../aai/check-in/signup">creating an EGI account&lt;/a>&lt;/li>
 &lt;li>Enrolling to the one of the supported VOs such as
-&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:111">vo.notebooks.egi.eu VO&lt;/a>&lt;/li>
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu">vo.notebooks.egi.eu VO&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://notebooks.egi.eu/">accessing https://notebooks.egi.eu/&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;p>The central instance supports the following VOs:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.notebooks.egi.eu">vo.notebooks.egi.eu&lt;/a>,
-enroll &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:111">here&lt;/a>&lt;/li>
+enroll &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.notebooks.egi.eu">here&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/auger">auger&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://operations-portal.egi.eu/vo/view/voname/biomed">biomed&lt;/a>&lt;/li>
