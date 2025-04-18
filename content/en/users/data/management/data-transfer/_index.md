@@ -67,4 +67,3 @@ N.B. if you access the endpoints via Browser the following CA certificates need
 to be installed:
 
 - [CERN CA certificates](https://cafiles.cern.ch/cafiles/certificates/)
-
