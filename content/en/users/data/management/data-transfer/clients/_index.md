@@ -27,8 +27,7 @@ Users from other distributions should refer to the
 
 ## Installation
 
-The CLI can be installed from the EPEL repositories 
-with the following package:
+The CLI can be installed from the EPEL repositories with the following package:
 
 ```shell
 yum install fts-rest-cli -y
@@ -39,18 +38,15 @@ yum install fts-rest-cli -y
 This section describes some of the commands that can be issues via the FTS CLI.
 As per the API, in order to authenticate to the FTS REST server you need an
 X.509 User certificate or an EGI Check-in token, please refer to this
-[section](../api/#authentication--authorisation)  
-for more information. 
+[section](../api/#authentication--authorisation) for more information. 
 
-Please note that when authenticating via EGI-Check-in only https/s3 transfers 
-are supported.
+Please note that when authenticating via EGI-Check-in only https/s3 transfers are supported.
 
 Check the [full documentation about the FTS CLI](https://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/cli/index.html)
 
 ### fts-rest-whoami
 
-This command can be used to check, as the name suggests, who are we for the
-server.
+This command can be used to check, as the name suggests, who are we for the server.
 
 #### Usage
 

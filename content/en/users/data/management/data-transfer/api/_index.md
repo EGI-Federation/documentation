@@ -39,7 +39,7 @@ During the authentication phase, credentials are delegated to the FTS service,
 which will contact the storages to steer the data transfers on behalf of the
 users.
 
-For authentication and authorisation., the FTS service supports both plain X.509 proxies 
+For authentication and authorisation, the FTS service supports both plain X.509 proxies
 and
 [X.509 proxies extended with VO information](https://italiangrid.github.io/voms/index.html) (VOMS)
  You can learn more about
@@ -152,8 +152,7 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
 
 ## RESTFul API with EGI Check-in
 
-[EGI Check-in](../../../../aai/check-in) can be obtained easily via the 
-Token portal https://aai.egi.eu/token/ 
+[EGI Check-in](../../../../aai/check-in) can be obtained easily via the Token portal `https://aai.egi.eu/token/`
 
 ### Checking how the server sees the identity of the user
 
@@ -191,6 +190,7 @@ curl  -k -H "Authorization: Bearer $TOKEN" https://fts-egi.cern.ch:8446/whoami |
   "get_granted_level_for": {}
 }
 ```
+
 ### Submitting a transfer
 
 Example json file to submit a transfer job (e.g. job.json)
@@ -217,11 +217,11 @@ Example json file to submit a transfer job (e.g. job.json)
   "params": {
     "overwrite": true
 ```
+
 ```shell
 curl  -k -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $TOKEN" https://fts-egi.cern.ch:8446/jobs -d @job.json
 {"job_id": "47b42b78-1ad1-11f0-9cbe-fa163edd14cf"}
 ```
-
 
 ## Python Bindings
 
@@ -233,8 +233,7 @@ yum install python-fts -y
 ```
 
 {{% alert title="Important" color="warning" %}} Authentication requires an
-**X.509 user certificate*. [EGI Check-in](../../../../aai/check-in)  is not 
-yet supported.
+**X.509 user certificate*. [EGI Check-in](../../../../aai/check-in) is not yet supported.
 {{% /alert %}}
 
 For using the bindings, you need to import `fts3.rest.client.easy`, although for
