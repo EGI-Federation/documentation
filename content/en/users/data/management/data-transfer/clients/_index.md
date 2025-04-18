@@ -38,7 +38,7 @@ yum install fts-rest-cli -y
 This section describes some of the commands that can be issues via the FTS CLI.
 As per the API, in order to authenticate to the FTS REST server you need an
 X.509 User certificate or an EGI Check-in token, please refer to this
-[section](../api/#authentication--authorisation) for more information. 
+[section](../api/#authentication--authorisation) for more information.
 
 Please note that when authenticating via EGI-Check-in only https/s3 transfers are supported.
 
