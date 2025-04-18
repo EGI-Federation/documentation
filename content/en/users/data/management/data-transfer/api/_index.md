@@ -45,7 +45,7 @@ and
  You can learn more about
 [VOMS configuration and proxy creation](../../../../aai/check-in/vos/voms#creating-a-proxy).
 
-## RESTFul API with X.509 Crendentials
+## RESTFul API with X.509 Credentials
 
 The User RESTFul APIs can be used to submit transfers jobs (collections of
 single transfers), monitor and cancel existing transfers. Please check the CERN
