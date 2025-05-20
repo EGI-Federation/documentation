@@ -2,17 +2,17 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/oxsecurity/megalinter
-    rev: v6.8.0
+    rev: v8.7.0
     hooks:
       - id: megalinter-incremental
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.28.0
+    rev: 0.33.0
     hooks:
       - id: check-github-workflows
   # Disabling markdown-link-check because it can not reliably check anchors and links against the source code.
   # Suggest using lychee instead (way faster and more accurate)
   - repo: https://github.com/tcort/markdown-link-check
-    rev: v3.11.2
+    rev: v3.13.7
     hooks:
       - id: markdown-link-check
         args:

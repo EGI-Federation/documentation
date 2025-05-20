@@ -9,3 +9,6 @@ node_modules/
 .envrc
 flake.nix
 flake.lock
+
+# ignore local megalinter reports
+megalinter-reports
