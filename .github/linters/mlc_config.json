@@ -91,6 +91,12 @@
     },
     {
       "pattern": "^../.*/providers/cloud-compute/openstack/*"
+    },
+    {
+      "pattern": "^https://fts-egi.cern.ch:8446/"
+    },
+    {
+      "pattern": "^https://fts-egi.cern.ch/fts3/ftsmon/"
     }
   ]
 }
