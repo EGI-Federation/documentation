@@ -9,70 +9,67 @@ description: >
   Register an account with Check-in to get access to EGI services
 ---
 
-## Sign up
+## Why do I have to sign up? 
 
-You need to sign up for an account for accessing the EGI services. As part of
-this process you will be assigned a personal unique **EGI ID** which will be
-then used across all EGI tools and services. Follow the instructions below to
-get started:
+Before accessing EGI services, you’ll first need an account through EGI Check-in, which is the Identity and Access Management (IAM) system used by EGI. An Identity Manager (or IAM system) is a secure layer that handles who you are, how you log in, and what you’re allowed to access across all participating platforms and services.
 
-1. Go to <https://aai.egi.eu/signup>. This will show you the identity provider
-   discovery page: browse through the list of Identity Providers to find your
-   Home Organisation, _or, alternatively,_ type the name of your Home
-   Organisation in the search box. Note that the names are localised based on
-   the selected language.
+ ![Check-in Graph](./check-in-graph.png)
+
+Instead of creating a new username and password for every service, EGI Check-in allows you to log in using an existing identity you already trust — like your institutional account, ORCID, Google, or even an X.509 certificate. It does this by acting as a central gateway that connects your trusted login with the services and resources you need across the European research ecosystem.
+
+
+This approach offers major benefits:
+- You don’t need to remember another password.
+- You can access multiple services with a single, consistent profile.
+- Your permissions and roles are automatically applied based on your identity.
+- If you later switch institutions or accounts, you can still retain your access (especially if you link identities, which will be discussed later on).
+
+## How do I sign up?
+
+Signing up is simple. You don’t create a new account from scratch — instead, you sign in once using an identity provider (IdP) you already have, and EGI Check-in creates a secure profile for you.
+
+
+1. Go to https://aai.egi.eu/auth/realms/id/account/#/
+2. Choose your identity provider: You’ll see a list of login options — such as “University of X,” “ORCID,” “Google,” and many others. You can use the search bar to find your institution or provider.
 
    ![Check-in IdP discovery](./check-in-idp-discovery.png)
-
-1. Enter your login credentials to authenticate yourself with your Home
+3. Enter your login credentials to authenticate yourself with your Home
    Organisation
 
-1. After successful authentication, you may be prompted by your Home
+4. After successful authentication, you may be prompted by your Home
    Organisation to consent to the release of personal information to the **EGI
    AAI Service Provider Proxy**.
 
-1. After successful authentication, you will be redirected to the EGI account
-   registration form. On the introductory page, click **Begin** to start the
+5. After successful authentication, you will be redirected to the EGI account
+   registration form. On the introductory page, click **Sign up** to start the
    registration process.
 
-   ![Check-in sign up intro](./check-in-sign-up-intro.png)
-
-1. EGI requires some basic information from you, depending on the attributes
+6.    {{% alert title="Note" color="warning" %}} EGI requires some basic information from you, depending on the attributes
    released by your Identity Provider, you may need to provide the values of the
-   missing attributes.
+   missing attributes. {{% /alert %}}
 
-   ![Check-in sign up attributes](./check-in-sign-up-attributes.png)
+7. On the registration form, click **Review Terms and Conditions**
+   ([Acceptable Use Policy and Conditions of Use - EGI AUP](https://aai.egi.eu/auth/realms/id/theme-info/terms-of-use))
 
-1. On the registration form, click **Review Terms and Conditions**
-   ([Acceptable Use Policy and Conditions of Use - EGI AUP](https://documents.egi.eu/document/2623))
+8. If you agree to the Terms of Use, select the **I Agree** option.
 
-1. If you agree to the Terms of Use, select the **I Agree** option.
 
-   {{% alert title="Important" color="warning" %}} You will not be able to agree
-   to the terms until you review them. {{% /alert %}}
+9. Finally, click **Submit** to submit your request.
 
-   ![Check-in ToU agreement](./check-in-tou-agreement.png)
-
-1. Finally, click **Submit** to submit your request.
-
-   {{% alert title="Important" color="warning" %}} You will not be able to
+   {{% alert title="Very Important" color="warning" %}} You will not be able to
    submit your request until you agree to the terms. {{% /alert %}}
 
-1. After submitting your request, Check-in will send you an email with a
-   verification link. After you click that link, you'll be taken to the request
-   confirmation page.
+10. You will receive an email to confirm your new identity linked to EGI Check-in. Confirm your identity to continue: 
 
-   {{% alert title="Important" color="warning" %}} If you do not find the email
-   in your Inbox, please check your Spam or Junk folder for an email from "EGI
-   AAI Notifications". If you do find the email in these folders, mark the email
-   as "safe" or "not spam" to ensure that you receive any future notifications
-   about your EGI ID. {{% /alert %}}
 
-1. After reviewing your request, click **Confirm** and re-authenticate yourself
-   using the Identity Provider you selected before.
 
-Note: After your registration has been completed, you can manage your profile
-through the [EGI Account Registry portal](https://aai.egi.eu/registry).
+   ![Check-in Email verification](./check-in-email-verification.png)
+  
+  
+   {{% alert title="Important" color="warning" %}}- You do not need a new password for EGI Check-in — it always uses your existing account's login system. 
+- If you don’t see your institution in the list, check whether they are part of the eduGAIN federation, or consider using ORCID or another supported identity.
+- If you plan to use certificates, make sure they are installed in your browser before logging in. {{% /alert %}}
+
 
 ## Viewing user profile information
 
