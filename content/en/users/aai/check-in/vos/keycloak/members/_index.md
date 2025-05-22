@@ -24,7 +24,8 @@ You can access the desired group from the
 The Group Members tab shows the list of users belonging to the group, together
 with other useful information.
 
-![List of members](./members_list.png) {.img-screenshot}
+![List of members](./members_list.png)
+{.img-screenshot}
 
 1.  The “Direct Members” allows to visualise only direct members or all members
     (direct + indirect). Direct members are those that are explicit members of
@@ -50,15 +51,19 @@ of several subgroups.
 6.  The date when the user membership will stop working. When the membership is
     close to expire an indication will be displayed.
 
-![Membership expiration warning](./expiration_warning.png) {.img-screenshot}
+![Membership expiration warning](./expiration_warning.png)
+{.img-screenshot}
 
 7.  A user can be one of these three [membership states](#membership-status):
 
-![Active status](status_green.png) **Active** {.img-icon}
+![Active status](status_green.png) **Active**
+{.img-icon}
 
-![Suspended status](status_red.png) **Suspended** {.img-icon}
+![Suspended status](status_red.png) **Suspended**
+{.img-icon}
 
-![Pending status](status_yellow.png) **Pending** {.img-icon}
+![Pending status](status_yellow.png) **Pending**
+{.img-icon}
 
 Additionally, there is a filter option to show users that have only a certain
 status.
@@ -80,7 +85,8 @@ A user in a group can be in one of these three states:
 
 a. ![Active status](./status_green.png) **Active**, when the user is a full
 member of the group and receives all entitlements (the permissions) associated
-with the roles that he/she has assigned in the group. {.img-icon}
+with the roles that he/she has assigned in the group.
+{.img-icon}
 
 b. ![Suspended status](./status_red.png) **Suspended**, when a user has been
 revoked from the group, either by an membership expiration date or manually by
@@ -93,7 +99,8 @@ c. ![Pending status](./status_yellow.png) **Pending**, when a user has been
 accepted to join a group at a specific future time. The user will become Active
 automatically at the defined date. Alternatively, administrators can force the
 Active membership manually before the defined time. This is discussed in the
-[creation of enrolments](#creation-of-group-enrolments). {.img-icon}
+[creation of enrolments](#creation-of-group-enrolments).
+{.img-icon}
 
 ![Membership states](./Membership_states.png)
 
@@ -122,12 +129,14 @@ effective dates are shown only when the expiration of a parent date comes before
 the direct expiration date of the current group. A link will be shown to make it
 easier to see which group is responsible for the effective date.
 
-![Check expiration](./membership_expiration.png) {.img-screenshot}
+![Check expiration](./membership_expiration.png)
+{.img-screenshot}
 
 When a membership is close to expire for a user, Group Admins will have the
 option to extend it by using the “Extend” button directly.
 
-![Extend membership](./expiration_extension.png) {.img-screenshot}
+![Extend membership](./expiration_extension.png)
+{.img-screenshot}
 
 ## Group Enrolments
 
@@ -157,19 +166,22 @@ To see the enrolments defined for a group, access the
 locate the desired group and click on it. Its enrolments can be found in the
 “Group Enrolment Configuration” tab.
 
-![List of group enrolments](./enrolment_list.png) {.img-screenshot}
+![List of group enrolments](./enrolment_list.png)
+{.img-screenshot}
 
 ### Default Group Enrolment
 
 Every group has a default enrolment to join the group, which is marked in the
 list of enrolment configurations.
 
-![Default group enrolments](./enrolment_list_default.png) {.img-screenshot}
+![Default group enrolments](./enrolment_list_default.png)
+{.img-screenshot}
 
 To change it, just click on the three-dot menu on the right of the enrolment
 entry and use the option “Set this enrolment as default”.
 
-![Change default group enrolments](./enrolment_default.png) {.img-screenshot}
+![Change default group enrolments](./enrolment_default.png)
+{.img-screenshot}
 
 {{% alert title="NOTE" color="infobox" %}} The AUP of the enrolment created by
 default for a VO (the root group) uses the “AUP text” defined in the
@@ -182,7 +194,8 @@ change the URL to point to the updated version of the AUP. {{% /alert %}}
 To create an enrolment, access the “Group Enrolment Configuration” tab and click
 on the “+” button.
 
-![Access to create group enrolment](./enrolment_create1.png) {.img-screenshot}
+![Access to create group enrolment](./enrolment_create1.png)
+{.img-screenshot}
 
 This will open a form for the creation of the enrolment.
 
@@ -195,7 +208,8 @@ The necessary information for the enrolment creation is the following:
 2.  The number of days that the membership will last for the user, once he/she
     joins the group.
 
-![Membership lenght](./enrolment_membership.png) {.img-screenshot}
+![Membership lenght](./enrolment_membership.png)
+{.img-screenshot}
 
 The VO (or root group) must have an expiration date of 365 days or less, but
 other subgroups can have any length, including no expiration. However, consider
@@ -234,7 +248,8 @@ was your intention.
    to fill in the comment field. The user will visualise this information as
    shown in the following image.
 
-![Comments in an enrolment](./enrolment_comments.png) {.img-screenshot}
+![Comments in an enrolment](./enrolment_comments.png)
+{.img-screenshot}
 
 6.  The link for the Acceptable Use Policy of the group. This link will be
     presented to the user and its acceptance must be acknowledged as a
@@ -248,7 +263,8 @@ was your intention.
     [default enrolment link](#default-group-enrolment) of the group will be able
     to choose the enrolment to join the group.
 
-![Visible enrolments](./enrolment_select_visible.png) {.img-screenshot}
+![Visible enrolments](./enrolment_select_visible.png)
+{.img-screenshot}
 
 9.  If the enrolment is enabled or disabled. This is useful to disable an
     enrolment temporarily, instead of deleting it.
@@ -258,7 +274,8 @@ was your intention.
 To modify an existing enrolment, access the enrolment data by clicking on the
 name of the enrolment.
 
-![Access existing group enrolment](./enrolment_access.png) {.img-screenshot}
+![Access existing group enrolment](./enrolment_access.png)
+{.img-screenshot}
 
 This will open a window with the enrolment data, which can be modified. After
 finishing your modifications, click “Submit” to save changes.
@@ -268,11 +285,13 @@ finishing your modifications, click “Submit” to save changes.
 To delete an enrolment, first access the enrolment data by clicking on the name
 of the enrolment.
 
-![Access existing group enrolment](./enrolment_access.png) {.img-screenshot}
+![Access existing group enrolment](./enrolment_access.png)
+{.img-screenshot}
 
 In the window with the enrolment data, click on the “trash” button to delete it.
 
-![Delete group enrolment](./enrolment_delete2.png) {.img-screenshot}
+![Delete group enrolment](./enrolment_delete2.png)
+{.img-screenshot}
 
 ## Adding users to a group
 
@@ -314,7 +333,8 @@ As a Group Admin, the enrolment link can be obtained from different ways:
   three-dot menu on the right of the group. Finally, click on “**Copy Enrolment
   Discovery Page link**”.
 
-![Copy Enrolment Discovery Page link](./enrolment_copyURL.png) {.img-screenshot}
+![Copy Enrolment Discovery Page link](./enrolment_copyURL.png)
+{.img-screenshot}
 
 The Enrolment Discovery Page will let the user choose which enrolment to use
 from those publicly available (those with the
@@ -333,7 +353,8 @@ Once the user follows the link, the specific enrolment can be selected from the
   **not necessary** that the enrolment has the attribute “Visible to
   non-members“ enabled.
 
-![Copy Group Enrolment direct link](./enrolment_copyURL2.png) {.img-screenshot}
+![Copy Group Enrolment direct link](./enrolment_copyURL2.png)
+{.img-screenshot}
 
 When the user accesses an enrolment URL, they will find the enrolment page to
 collect additional information for the membership request.
@@ -351,7 +372,8 @@ users the option to choose one or more roles.
 Once submitted, the user will get an entry for the pending request under the
 menu option “Groups > View My Enrolment Requests”.
 
-![View Enrolment Requests](./enrolment_menu.png) {.img-screenshot}
+![View Enrolment Requests](./enrolment_menu.png)
+{.img-screenshot}
 
 ### Adding users by invitation
 
@@ -363,11 +385,13 @@ To send an invitation, access the
 locate the desired group, click on it and access the “Group Members” tab. Click
 on the “Add Member” button.
 
-![Add Member option](./member_add0.png) {.img-screenshot}
+![Add Member option](./member_add0.png)
+{.img-screenshot}
 
 The first step is to select one of the available enrolment configurations.
 
-![Select enrolment configuration](./member_add.png) {.img-screenshot}
+![Select enrolment configuration](./member_add.png)
+{.img-screenshot}
 
 Then, select the role(s) for the user for this invitation and click “**Next**”.
 
@@ -377,12 +401,14 @@ Then, select the role(s) for the user for this invitation and click “**Next**�
 Input the user email address and click on “**Send invite to this email
 address**…”.
 
-![Send invite](./member_invite.png) {.img-screenshot}
+![Send invite](./member_invite.png)
+{.img-screenshot}
 
 Finally, make sure that the “Choose Action” is set to “**Invite Member**” and
 click “**Confirm**”.
 
-![Invite Member](./member_invite2.png) {.img-screenshot}
+![Invite Member](./member_invite2.png)
+{.img-screenshot}
 
 ### Adding users by direct registration
 
@@ -405,11 +431,13 @@ To add a user directly, access the
 locate the desired group, click on it and access the “Group Members” tab. Click
 on the “Add Member” button.
 
-![Add Member option](./member_add0.png) {.img-screenshot}
+![Add Member option](./member_add0.png)
+{.img-screenshot}
 
 The first step is to select one of the available enrolment configurations.
 
-![Select enrolment configuration](./member_add.png) {.img-screenshot}
+![Select enrolment configuration](./member_add.png)
+{.img-screenshot}
 
 Then, select the role(s) for the user for this invitation and click “**Next**”.
 
@@ -422,7 +450,8 @@ you cannot add the user directly and you will need to
 will be able to click on “**Add Member Directly**” and then “**Confirm**”. The
 user will be notified and will be immediately made a member of the group.
 
-![Add Member Directly](./member_add3.png) {.img-screenshot}
+![Add Member Directly](./member_add3.png)
+{.img-screenshot}
 
 The user will be notified of this and will become immediately a member of the
 group.
@@ -433,7 +462,8 @@ Once the user has submitted a request to join a group, the Group Admins will get
 a notification by email and the request will be visible as “Pending Approval”
 under the menu option “Group management > Review Enrolment Requests”.
 
-![Enrolment Request statuses](./enrolment_status.png) {.img-screenshot}
+![Enrolment Request statuses](./enrolment_status.png)
+{.img-screenshot}
 
 Following the link from the notification email or clicking on the “Review”
 button of the request, will show the basic information of the request, which is
@@ -472,7 +502,8 @@ the user or the membership expiration. To edit the user membership, locate the
 user in the “Group Members” tab of the group and click on the Edit icon on the
 right of the user entry.
 
-![Edit user](./member_edit.png) {.img-screenshot}
+![Edit user](./member_edit.png)
+{.img-screenshot}
 
 This will open a dialog where some aspects of the user membership can be
 modified.
@@ -502,7 +533,8 @@ To manually suspend a user’s membership, access the “Group Members” tab of
 group, locate the user that you want to remove and click on the lock button on
 the right of the user entry.
 
-![Suspend user membership](./member_suspend.png) {.img-screenshot}
+![Suspend user membership](./member_suspend.png)
+{.img-screenshot}
 
 A justification for this suspension can be specified. This justification will be
 sent to the user by email.
@@ -517,4 +549,5 @@ To manually remove a user from a group, access the “Group Members” tab of th
 group, locate the user that you want to remove and click on the cross button on
 the right of the user entry.
 
-![Remove user](./member_delete.png) {.img-screenshot}
+![Remove user](./member_delete.png)
+{.img-screenshot}

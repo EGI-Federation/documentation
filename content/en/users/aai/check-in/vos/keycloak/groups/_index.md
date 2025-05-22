@@ -15,7 +15,8 @@ When clicking on a group from the
 [Group Management page](https://aai.egi.eu/auth/realms/id/account/#/groups/admingroups),
 the following group information is shown.
 
-![Group details](./group_details.jpg) {.img-screenshot}
+![Group details](./group_details.jpg)
+{.img-screenshot}
 
 1.  The name of the group, together with an icon to delete the group.
 2.  The description of the group, together with an icon to modify it.
@@ -43,12 +44,14 @@ To create a group, access the
 and navigate the hierarchy of groups to locate where you want to create a
 subgroup.
 
-![Menu option Group management](./menu_groupmanagement.png) {.img-screenshot}
+![Menu option Group management](./menu_groupmanagement.png)
+{.img-screenshot}
 
 Using the three-dot menu on the right of the parent group, click on “Create Sub
 Group”.
 
-![Create subgroup from main list](./subgroup_create.png) {.img-screenshot}
+![Create subgroup from main list](./subgroup_create.png)
+{.img-screenshot}
 
 Alternatively, you can use the “Create Sub Group” option from the “Sub Groups”
 tab of any group.
@@ -58,7 +61,8 @@ tab of any group.
 
 Fill in the details and the group will be created.
 
-![Details for subgroup creation](./subgroup_create_detail.png) {.img-screenshot}
+![Details for subgroup creation](./subgroup_create_detail.png)
+{.img-screenshot}
 
 ## Deleting groups
 
@@ -67,11 +71,13 @@ To delete a group, access the
 and navigate the hierarchy of groups. Locate the group you want to delete and
 click on it.
 
-![Menu option Group management](./menu_groupmanagement.png) {.img-screenshot}
+![Menu option Group management](./menu_groupmanagement.png)
+{.img-screenshot}
 
 Use the “trash” icon to delete the group.
 
-![Delete group from group details](./subgroup_delete.png) {.img-screenshot}
+![Delete group from group details](./subgroup_delete.png)
+{.img-screenshot}
 
 {{% alert title="NOTE" color="infobox" %}} The "trash" icon will not be
 available if the group has any subgroups .A group cannot be deleted if it has
@@ -81,7 +87,10 @@ Alternatively, you can delete a group from its parent group, by using the “Sub
 Groups” tab. Using the three-dot menu on the right of the group to be deleted,
 click on “Delete Group”.
 
-![Delete group from list of subgroups](./subgroup_delete2.png) {.img-screenshot}
+![Delete group from list of subgroups](./subgroup_delete2.png)
+{.img-screenshot}
 
-{{% alert title="NOTE" color="infobox" %}} VOs (the root groups) cannot be
-deleted through the interface. {{% /alert %}}
+{{% alert title="NOTE" color="infobox" %}}
+VOs (the root groups) cannot be
+deleted through the interface.
+{{% /alert %}}

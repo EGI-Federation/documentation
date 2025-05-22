@@ -14,7 +14,8 @@ Access the
 and navigate the hierarchy of groups to locate the group where the administrator
 must be added. Click on the group and then on the “Group Admins” tab.
 
-![Group Admins](./admin_menu.png) {.img-screenshot}
+![Group Admins](./admin_menu.png)
+{.img-screenshot}
 
 This will list all the administrators of the group, including details about the
 group admin being a direct admin or not. A **direct admin** has been added for
@@ -29,7 +30,8 @@ permissions as part of the group hierarchy: Group Admins become
 
 Admins can be added in the “Add New Group Admin” section.
 
-![Add new group admin](./admin_add.png) {.img-screenshot}
+![Add new group admin](./admin_add.png)
+{.img-screenshot}
 
 To add an administrator, add the name or email of the user to locate him/her and
 click on the button. The user **will become an administrator immediately**.
@@ -42,13 +44,15 @@ locate the user by name, and **an email invitation will have to be sent** to
 his/her email address. Just specify the email address in the box. A message will
 indicate that the user will be invited through an email.
 
-![Invite group admin](./admin_add_email1.png) {.img-screenshot}
+![Invite group admin](./admin_add_email1.png)
+{.img-screenshot}
 
 Once you click on “Invite with email…. “, the icon of the button will change,
 indicating that an invitation will be sent by email. The user will become an
 administrator **just after the invitation is accepted**.
 
-![Send email to invite group admin](./admin_add_email2.png) {.img-screenshot}
+![Send email to invite group admin](./admin_add_email2.png)
+{.img-screenshot}
 
 {{% alert title="NOTE" color="infobox" %}} Being a Group Admin is a status local
 to Check-in, so Check-in does not release any specific entitlement for
@@ -59,4 +63,5 @@ be modelled with a specific “administrator” role or subgroup. {{% /alert %}}
 
 Administrators can be removed by using the cross icon in the “Group Admins” tab.
 
-![Remove group admin](./admin_delete.png) {.img-screenshot}
+![Remove group admin](./admin_delete.png)
+{.img-screenshot}

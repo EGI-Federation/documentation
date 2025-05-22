@@ -25,7 +25,8 @@ Existing VOs can be found in the
 Click on the icon under the “Details” column to access more detailed information
 of the VO.
 
-![List of VOs in the Operations Portal](./OP_VO_details.png) {.img-screenshot}
+![List of VOs in the Operations Portal](./OP_VO_details.png)
+{.img-screenshot}
 
 ## How to join a Virtual Organisation
 
