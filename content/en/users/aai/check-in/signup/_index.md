@@ -56,7 +56,7 @@ Signing up is simple. You don’t create a new account from scratch — instead,
 
 9. Finally, click **Submit** to submit your request.
 
-   {{% alert title="Very Important" color="warning" %}} You will not be able to
+   {{% alert title="Very Important" color="warning" %}} You wont be able to
    submit your request until you agree to the terms. {{% /alert %}}
 
 10. You will receive an email to confirm your new identity linked to EGI Check-in. Confirm your identity to continue: 
