@@ -5,15 +5,18 @@ csr
 CVMFS
 dearmor
 delims
+dependant
 diracsgm
 findstr
 galdyn
+gecos
 geodata
 getstate
 glast
 hmac
 hyperk
 iframe
+Initialising
 jscpd
 jwt
 ligo
@@ -21,6 +24,7 @@ lsb
 markdownlint
 mega
 mytoken
+mytokens
 newkey
 pem
 pheno
