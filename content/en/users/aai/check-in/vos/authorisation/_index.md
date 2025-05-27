@@ -33,7 +33,7 @@ Entitlements are formated as **URN**s, in this format:
 `<NAMESPACE>:group:<VO>[:<SUBGROUP>*][:role=<ROLE>]#<GROUP-AUTHORITY>`
 
 This format is described in the
-[AARC-G002](https://aarc-community.org/guidelines/aarc-g002/) specification:
+[AARC-G069](https://aarc-community.org/guidelines/aarc-g069/) specification:
 
 ![Structure of an entitlement](entitlements.jpg)
 
