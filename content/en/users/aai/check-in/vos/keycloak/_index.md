@@ -22,7 +22,7 @@ and these can also have subgroups, creating a hierarchy.
 ![Groups hierarchy](./general_groups-01.png)
 
 Operationally, a VO can be considered a group as any other, with the
-particularity that it has a special behaviour (VOs they cannot be deleted, and
+particularity that it has a special behaviour (VOs cannot be deleted, and
 their membership must be renewed at least once every year), and that it is the
 root group, the highest group in its hierarchy. The hierarchy can be expressed
 as a “**group path**”. For example, the group path of the “External” group of
