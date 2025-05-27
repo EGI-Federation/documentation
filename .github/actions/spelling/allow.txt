@@ -233,7 +233,6 @@ fqan
 fqdns
 fts
 FZK
-FZK
 gcloud
 gcube
 geant
@@ -402,7 +401,6 @@ micafer
 micromamba
 miniconda
 minio
-Minio
 mitaka
 morecolor
 mpi
@@ -502,7 +500,7 @@ pakiti
 pangeo
 passphrase
 passthrough
-Passwordless
+passwordless
 pbs
 peachnote
 perun
@@ -664,7 +662,6 @@ ucert
 ucst
 udocker
 ukey
-UKNGS
 UKNGS
 ukri
 ulakbim
