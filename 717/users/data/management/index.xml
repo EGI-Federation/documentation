@@ -110,7 +110,7 @@ retry in case of failures.&lt;/p>
 &lt;p>The main features of EGI Data Transfer are:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Simplicity&lt;/strong>. Easy user interfaces for submitting transfers (command-line,
-Python bindings, WebFTS, Web Monitoring).&lt;/li>
+Python bindings, Web Monitoring).&lt;/li>
 &lt;li>&lt;strong>Reliability&lt;/strong>. Checksums are automatically calculated for each transfer and
 failed transfers are retried.&lt;/li>
 &lt;li>&lt;strong>Flexibility&lt;/strong>. Multi-protocol support (WebDAV/HTTPS, GridFTP, xrootd, SRM, S3, GCloud).&lt;/li>
@@ -144,32 +144,16 @@ bindings&lt;/p>
 &lt;dd>
 &lt;p>A Web interface to monitor transfers activity and server parameters&lt;/p>
 &lt;/dd>
-&lt;dt>WebFTS&lt;/dt>
-&lt;dd>
-&lt;p>A web interface that provides a file transfer and management solution in order
-to allow users to invoke reliable, managed data transfers on distributed
-infrastructures&lt;/p>
-&lt;/dd>
 &lt;/dl>
 &lt;h2 id="service-instances">Service Instances&lt;/h2>
-&lt;p>EGI has signed OLAs with 2 Providers, CERN and UKRI-STFC, in order to access their
-FTS3 Service instances.&lt;/p>
 &lt;p>The following endpoints are available:&lt;/p>
 &lt;h3 id="cern">CERN&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://fts3-public.cern.ch:8446/">FTS REST&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://fts3-public.cern.ch/fts3/ftsmon/">FTS Mon&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://webfts.cern.ch/">WebFTS&lt;/a> - N.B. Needs personal X.509 certificate
-installed in your Browser&lt;/li>
-&lt;/ul>
-&lt;h3 id="ukri-stfc">UKRI-STFC&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://fts3egi.scd.rl.ac.uk:8446/">FTS REST&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://fts3egi.scd.rl.ac.uk:8449/fts3/ftsmon/">FTS Mon&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://fts-egi.cern.ch:8446/">FTS REST&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://fts-egi.cern.ch/fts3/ftsmon/">FTS Mon&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>N.B. if you access the endpoints via Browser the following CA certificates need
 to be installed:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://cafiles.cern.ch/cafiles/certificates/">CERN CA certificates&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://www.ngs.ac.uk/ukca/certificates/cacerts.html">UK eScience CA certificates&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>
