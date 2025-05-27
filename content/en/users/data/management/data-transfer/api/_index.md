@@ -30,9 +30,7 @@ Users have to authenticate before they can call the API.
 <!-- markdownlint-disable no-inline-html -->
 
 {{% alert title="Important" color="warning" %}} Authentication requires an
-**X.509 user certificate**.<br/>
-Integration with [EGI Check-in](../../../../aai/check-in), which will allow
-authentication using OIDC tokens is under development.
+**X.509 user certificate** or an [EGI Check-in](../../../../aai/check-in) token.
 {{% /alert %}}
 
 <!-- markdownlint-enable no-inline-html -->
@@ -41,12 +39,13 @@ During the authentication phase, credentials are delegated to the FTS service,
 which will contact the storages to steer the data transfers on behalf of the
 users.
 
-The FTS service supports both plain X.509 proxies and
+For authentication and authorisation, the FTS service supports both plain X.509 proxies
+and
 [X.509 proxies extended with VO information](https://italiangrid.github.io/voms/index.html) (VOMS)
-for authentication and authorisation. You can learn more about
+ You can learn more about
 [VOMS configuration and proxy creation](../../../../aai/check-in/vos/voms#creating-a-proxy).
 
-## RESTFul API
+## RESTFul API with X.509 Credentials
 
 The User RESTFul APIs can be used to submit transfers jobs (collections of
 single transfers), monitor and cancel existing transfers. Please check the CERN
@@ -58,7 +57,7 @@ Curl client.
 
 ```shell
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
-  --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/whoami
+  --cacert $X509_USER_PROXY https://fts-egi.cern.ch:8446/whoami
 {
   "dn": [
     "/DC=org/DC=terena/DC=tcs/C=NL/O=Stichting EGI/CN=Jane Doe",
@@ -91,7 +90,7 @@ Filtered by VO
 
 ```shell
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
-  --cacert $X509_USER_PROXY https://fts3-public.cern.ch:8446/jobs?vo_name=dteam
+  --cacert $X509_USER_PROXY https://fts-egi.cern.ch:8446/jobs?vo_name=dteam
 
 [
   {
@@ -134,7 +133,7 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
   --cacert $X509_USER_PROXY \
    -X DELETE \
-  https://fts3-pilot.cern.ch:8446/jobs/a40b82b7-1132-459f-a641-f8b49137a713
+  https://fts-egi.cern.ch:8446/jobs/a40b82b7-1132-459f-a641-f8b49137a713
 ```
 
 ### Getting expiration time of delegated credentials
@@ -142,7 +141,7 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
 ```shell
 curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
   --cacert $X509_USER_PROXY \
-  https://fts3-public.cern.ch:8446/delegation/9ab8068853808c6b
+  https://fts-egi.cern.ch:8446/delegation/9ab8068853808c6b
 {
   "voms_attrs": [
     "/dteam/Role=NULL/Capability=NULL"
@@ -151,14 +150,91 @@ curl --capath /etc/grid-security/certificates -E $X509_USER_PROXY \
 }
 ```
 
+## RESTFul API with EGI Check-in
+
+[EGI Check-in](../../../../aai/check-in) can be obtained easily via the Token portal `https://aai.egi.eu/token/`
+
+### Checking how the server sees the identity of the user
+
+```shell
+curl  -k -H "Authorization: Bearer $TOKEN" https://fts-egi.cern.ch:8446/whoami | jq .
+{
+  "user_dn": "2dee939532f16e482748b6c25f6ebbf2cac57abd28ca98bee06a114393d14a89@egi.eu",
+  "dn": [
+    "2dee939532f16e482748b6c25f6ebbf2cac57abd28ca98bee06a114393d14a89@egi.eu"
+  ],
+  "base_id": "01874efb-4735-4595-bc9c-591aef8240c9",
+  "voms_cred": [
+    "eduperson_entitlement",
+    "email",
+    "openid",
+    "profile",
+    "voperson_id"
+  ],
+  "vos": [
+    "aai.egi.eu"
+  ],
+  "vos_id": [
+    "2b4ace55-1b2e-5bf3-837d-03e3b08777d9"
+  ],
+  "roles": [],
+  "level": {
+    "transfer": "vo"
+  },
+  "delegation_id": "bd9a59d81b2c37ab",
+  "method": "oauth2",
+  "is_root": false,
+  "oauth2_scope": "eduperson_entitlement email openid profile voperson_id",
+  "wlcg_profile": false,
+  "get_granted_level_for_overriden": {},
+  "get_granted_level_for": {}
+}
+```
+
+### Submitting a transfer
+
+Example json file to submit a transfer job (e.g. job.json)
+
+```shell
+{
+  "files": [
+    {
+      "sources": [
+        "https://eospublic.cern.ch/eos/opstest/dteam/test.file"
+      ],
+      "destinations": [
+        "https://eospps.cern.ch/eos/opstest/dteam/destination.file"
+      ],
+      "source_tokens": [
+        "xxxx"
+      ],
+      "destination_tokens" : [
+        "xxxx"
+      ],
+      "checksum": "ADLER32"
+    }
+  ],
+  "params": {
+    "overwrite": true
+```
+
+```shell
+curl  -k -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $TOKEN" https://fts-egi.cern.ch:8446/jobs -d @job.json
+{"job_id": "47b42b78-1ad1-11f0-9cbe-fa163edd14cf"}
+```
+
 ## Python Bindings
 
 The Python bindings for FTS can be installed from the EPEL package repository
-(EL6 and EL7 packages are available) with Python 2.7 being supported.
+with python3 being supported.
 
 ```shell
 yum install python-fts -y
 ```
+
+{{% alert title="Important" color="warning" %}} Authentication requires an
+**X.509 user certificate*. [EGI Check-in](../../../../aai/check-in) is not yet supported.
+{{% /alert %}}
 
 For using the bindings, you need to import `fts3.rest.client.easy`, although for
 convenience it can be renamed as something else:
@@ -182,7 +258,7 @@ the following format:
 
 `https://\<host>:\<port>`
 
-for instance `https://fts3-public.cern.ch:8446`
+for instance `https://fts-egi.cern.ch:8446`
 
 If you are using a proxy certificate, you can either specify only
 `user_certificate`, or point both parameters to the proxy. `user_certificate`
@@ -201,7 +277,7 @@ transfer and getting the job status:
 >>> pp = pprint.PrettyPrinter(indent=4)
 
 # creating the context
->>> context = fts3.Context("https://fts3-public.cern.ch:8446")
+>>> context = fts3.Context("https://fts-egi.cern.ch:8446")
 # printing the whoami info
 >>>  pp.pprint (fts3.whoami(context))
 
