@@ -80,7 +80,7 @@ Use the “trash” icon to delete the group.
 {.img-screenshot}
 
 {{% alert title="NOTE" color="infobox" %}} The "trash" icon will not be
-available if the group has any subgroups .A group cannot be deleted if it has
+available if the group has any subgroups. A group cannot be deleted if it has
 any associated subgroup. {{% /alert %}}
 
 Alternatively, you can delete a group from its parent group, by using the “Sub
