@@ -49,61 +49,143 @@ and data redundancy.
 
 ### Step 1: Configure SSH for Passwordless Authentication
 
-On the source site:
+On the source migration instance:
 
 ```sh
+# If you don't have an SSH key pair already
 ssh-keygen -t rsa
-ssh-copy-id user@destination_host
+
+# Replace user@destination_migration_host with the actual username and hostname/IP
+ssh-copy-id ${DESTINATION_USER}@${DESTINATION_HOST}
 ```
 
-### Step 2: Snapshot Replication
-
-#### 2.1 Create a Snapshot on the Source
+Test the connection:
 
 ```sh
-openstack server snapshot create --name instance_snapshot INSTANCE_ID
+ssh user@destination_host "hostname"
 ```
 
-#### 2.2 Transfer the Snapshot to the Destination
+This should execute hostname on the destination migration instance without asking for a password.
+
+### Step 2: Manual Snapshot Replication (Testing the Process)
+
+Steps for testing the process manually before automating it.
+
+#### 2.1 Define Variables (Source Site)
+
+On the source migration instance:
 
 ```sh
-openstack image list | grep instance_snapshot
-openstack image save --file instance_snapshot.img SNAPSHOT_ID
-rsync -avz instance_snapshot.img user@destination_host:/tmp/
+# --- Configuration ---
+INSTANCE_ID="12345678-90ab-cdef-1234-567890abcdef"     # ID of the VM to snapshot
+BASE_SNAPSHOT_NAME="instance_snapshot"                 # Base name for snapshots
+LOCAL_OPENRC_PATH="$HOME/source_openrc"                # Path to the OpenStack RC file for the source site
+
+DESTINATION_USER="cloudadm"                            # SSH user on the destination migration instance
+DESTINATION_HOST="destination_host"                    # Hostname or IP of the destination migration instance
+DESTINATION_OPENRC_PATH="~/destination_openrc"         # Path to OpenStack RC file on destination instance
+REMOTE_TMP_DIR="/tmp"                                  # Temporary directory on destination for the image
+
+# --- Dynamic Variables ---
+TODAYS_DATE=$(date +%Y-%m-%d)
+SNAPSHOT_NAME_WITH_DATE="${BASE_SNAPSHOT_NAME}-${TODAYS_DATE}"
+LOCAL_IMAGE_FILE="/tmp/${SNAPSHOT_NAME_WITH_DATE}.img"
+REMOTE_IMAGE_FILE="${REMOTE_TMP_DIR}/${SNAPSHOT_NAME_WITH_DATE}.img"
 ```
 
-#### 2.3 Import Snapshot on Destination
+#### 2.2 Create a Snapshot on the Source
+
+On the source migration instance:
 
 ```sh
-openstack image create --file /tmp/instance_snapshot.img --disk-format qcow2 --container-format bare instance_snapshot
+echo "Sourcing OpenStack RC file for source: ${LOCAL_OPENRC_PATH}"
+source "${LOCAL_OPENRC_PATH}"
+
+echo "Creating snapshot '${SNAPSHOT_NAME_WITH_DATE}' for instance '${INSTANCE_ID}'..."
+SNAPSHOT_ID=$(openstack server image create \
+  --name "${SNAPSHOT_NAME_WITH_DATE}" \
+  "${INSTANCE_ID}" \
+  -f value -c id)
+
+if [ -z "$SNAPSHOT_ID" ]; then
+  echo "Error: Failed to create snapshot. SNAPSHOT_ID is empty."
+  exit 1
+fi
+echo "Snapshot created with ID: ${SNAPSHOT_ID}"
 ```
 
-### Step 3: Automate Snapshot Replication
+#### 2.3 Transfer the Snapshot to the Destination
 
-Edit the cron job:
+On the source migration instance:
+
+```sh
+echo "Saving snapshot image to '${LOCAL_IMAGE_FILE}'..."
+openstack image save --file "${LOCAL_IMAGE_FILE}" "${SNAPSHOT_ID}"
+
+echo "Transferring image file to ${DESTINATION_USER}@${DESTINATION_HOST}:${REMOTE_TMP_DIR}/ ..."
+rsync -avz --progress "${LOCAL_IMAGE_FILE}" "${DESTINATION_USER}@${DESTINATION_HOST}:${REMOTE_TMP_DIR}/"
+```
+
+#### 2.4 Import Snapshot on Destination
+
+On the destination migration instance:
+
+```sh
+echo 'Sourcing OpenStack RC file on destination: ${DESTINATION_OPENRC_PATH}'
+source '${DESTINATION_OPENRC_PATH}'
+
+echo 'Creating image from transferred file: ${REMOTE_IMAGE_FILE}'
+openstack image create \\
+  --file '${REMOTE_IMAGE_FILE}' \\
+  --disk-format qcow2 \\
+  --container-format bare \\
+  '${SNAPSHOT_NAME_WITH_DATE}'
+```
+
+#### 2.5 Cleanup (Source)
+
+On the source migration instance:
+
+```sh
+echo "Cleaning up local image file: ${LOCAL_IMAGE_FILE}"
+rm -f "${LOCAL_IMAGE_FILE}"
+# Optional: Consider a strategy for deleting old snapshots on the source OpenStack to save space.
+# openstack image delete OLD_SNAPSHOT_NAME_OR_ID
+```
+
+### Step 3: Automate Snapshot Replication with a Script
+
+On the source migration instance create a script file to combine all the above steps, for example, `~/replicate_vm_snapshot.sh`
+# Ensure INSTANCE_ID and other critical variables are correctly set within the script itself or sourced from a config file.
+
+Make the script executable:
+
+```sh
+chmod +x ~/replicate_vm_snapshot.sh
+```
+
+Test the script manually:
+```sh
+~/replicate_vm_snapshot.sh
+```
+
+Check the ~/snapshot_replication.log file for output.
+
+Add the script to Cron Edit the crontab on the *source migration instance*:
 
 ```sh
 crontab -e
 ```
 
-Add:
+Add an entry to run the script daily at, for example, 2:00 AM:
 
 ```sh
-0 2 * * * openstack server snapshot create --name instance_snapshot-$(date +\%F) INSTANCE_ID
-0 3 * * * openstack image save --file /tmp/instance_snapshot-$(date +\%F).img $(openstack image list | \
-    grep instance_snapshot-$(date +\%F) | awk '{print $2}')
-0 4 * * * rsync -avz /tmp/instance_snapshot-$(date +\%F).img user@destination_host:/tmp/
-0 5 * * * ssh user@destination_host 'openstack image create --file /tmp/instance_snapshot-$(date +\%F).img \
-    --disk-format qcow2 --container-format bare instance_snapshot-$(date +\%F)'
+# Redirect all output (stdout and stderr) from cron to the log file handled by the script, or to /dev/null if confident.
+0 2 * * * /bin/bash /home/your_user/replicate_vm_snapshot.sh >> /home/your_user/snapshot_replication.log 2>&1
 ```
 
-### Step 4: Testing Failover
+Replace /home/your_user/ with the actual path to the script and log file.
 
-On the destination site:
-
-```sh
-openstack server create --flavor FLAVOR_ID --image instance_snapshot --network NETWORK_ID new_instance
-```
 
 ### Results
 
