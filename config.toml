@@ -181,3 +181,7 @@ enable = true
 
 [params.print]
 disable_toc = true
+
+[markup.goldmark.parser.attribute]
+block = true
+title = true
