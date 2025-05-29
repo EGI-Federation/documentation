@@ -966,7 +966,7 @@ providers. &lt;strong>Back-up frequently to avoid losing your work!&lt;/strong>&
 &lt;/ul>
 &lt;/div>
 &lt;p>For joining this VO, please click on the
-&lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:240">enrollment URL&lt;/a>
+&lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrollment URL&lt;/a>
 using your &lt;a href="../../../aai/check-in/">EGI account&lt;/a>.&lt;/p>
 &lt;h3 id="other-vos">Other VOs&lt;/h3>
 &lt;p>Preexisting VOs of EGI can be also used on IaaS cloud providers. Consult with
@@ -1264,7 +1264,7 @@ Machine will make the hardware available to the user.&lt;/p>
 &lt;a href="https://confluence.egi.eu/display/EGIG/Virtual+organisation">Virtual Organisations (VOs)&lt;/a>.
 If you are not sure what VO to join, request access to the pilot VO
 &lt;a href="https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu">vo.access.egi.eu&lt;/a>
-by visiting the &lt;a href="https://aai.egi.eu/registry/co_petitions/start/coef:240">enrollment URL&lt;/a>
+by visiting the &lt;a href="https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu">enrollment URL&lt;/a>
 with your Check-In account. More information is available in the
 &lt;a href="../../../aai//check-in/joining-virtual-organisation">Check-in&lt;/a> section.&lt;/p>
 &lt;p>GPUs sites can be accessed in different ways: via site-specific dashboards and
