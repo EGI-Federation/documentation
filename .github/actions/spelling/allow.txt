@@ -37,6 +37,7 @@ atrope
 Authtype
 autoprofixer
 avanzato
+avz
 azp
 backticks
 basemap
@@ -211,6 +212,7 @@ eumed
 eventlet
 explorecube
 FaaS
+failover
 fakedomaindonotexist
 faqs
 fedcloud
@@ -315,6 +317,7 @@ igtf
 ihep
 iisas
 ijs
+img
 inaf
 infn
 infngrid
@@ -348,6 +351,7 @@ JWKS
 kernel
 keycloak
 keyfile
+keygen
 keyout
 keypair
 keyring
@@ -359,8 +363,8 @@ kubectl
 kubernetes
 kubeserver
 labhub
-LCG
 lcg
+LCG
 lcgnames
 lcgpbs
 ldap
@@ -397,7 +401,7 @@ metalink
 micafer
 micromamba
 miniconda
-Minio
+minio
 mitaka
 morecolor
 mpi
@@ -498,6 +502,7 @@ pakiti
 pangeo
 passphrase
 passthrough
+passwordless
 pbs
 peachnote
 perun
@@ -542,6 +547,7 @@ refeds
 refreshtoken
 reportgroups
 resourced
+Restic
 rfc
 rfio
 rght
@@ -725,8 +731,8 @@ wlcg
 wlcgname
 WMS
 wns
-workdir
 workaround
+workdir
 wps
 wroc
 WSGI
