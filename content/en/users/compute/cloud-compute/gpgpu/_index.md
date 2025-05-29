@@ -33,7 +33,7 @@ Check whether you belong to one of the supported
 [Virtual Organisations (VOs)](https://confluence.egi.eu/display/EGIG/Virtual+organisation).
 If you are not sure what VO to join, request access to the pilot VO
 [vo.access.egi.eu](https://operations-portal.egi.eu/vo/view/voname/vo.access.egi.eu)
-by visiting the [enrollment URL](https://aai.egi.eu/registry/co_petitions/start/coef:240)
+by visiting the [enrollment URL](https://aai.egi.eu/auth/realms/id/account/#/enroll?groupPath=/vo.access.egi.eu)
 with your Check-In account. More information is available in the
 [Check-in](../../../aai//check-in/joining-virtual-organisation) section.
 
