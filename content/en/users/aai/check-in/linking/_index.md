@@ -57,7 +57,7 @@ This means that no matter which identity you use to log in, you will access the 
 
    ![Link new identity](./check-in-link-new.png)
 
-5. Search for your desired identity. In case you cannot see it at first glance, you can use the searchbox. 
+5. Search for your desired identity. In case you cannot see it at first glance, you can use the search box. 
 
 ![Search my identity](./search_identity.png)
 
