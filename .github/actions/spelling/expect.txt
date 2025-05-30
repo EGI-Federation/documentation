@@ -19,6 +19,7 @@ jwt
 ligo
 lsb
 markdownlint
+mega
 mytoken
 newkey
 pem
@@ -34,7 +35,9 @@ snoplus
 supernemo
 tmp
 toml
+TRIVY
 unconfigured
 Unregistering
 workflows
+yml
 yyy
